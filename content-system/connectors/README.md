@@ -60,12 +60,27 @@ Not in the connector directory.
 Once a month: GSC → Performance → Search results → last 3 months → **Export → Google Sheets**. Save into Drive folder `Wedded SEO/GSC exports/`. Agents read it through the Google Drive connector.
 
 **Route B: live, with a service account**
-1. console.cloud.google.com → project picker → **New Project** (e.g. `wedded-seo`). No billing needed.
-2. APIs & Services → Library → **Google Search Console API** → Enable.
-3. IAM & Admin → Service Accounts → **Create** (e.g. `wedded-gsc-reader`). Skip project roles.
-4. Open it → **Keys** → Add key → Create new key → **JSON**. It downloads once.
+
+> Search Console and Google Cloud Console are **different sites**. Steps 1 to 4 are in Google Cloud Console; only step 5 is in Search Console.
+
+*In Google Cloud Console (https://console.cloud.google.com), signed in with the same Google account you use for Search Console:*
+1. Click the **project picker** (top left, next to the Google Cloud logo) → **New Project** → name it `wedded-seo` → Create. No billing needed. Make sure the picker now shows `wedded-seo`.
+2. Turn on the API, using any of these:
+   - ☰ menu (top left) → **APIs & Services** → **Library** (if it isn't listed, click **View all products** first), then search "Google Search Console API"
+   - the search bar at the top of the page: type "Google Search Console API"
+   - direct link: https://console.cloud.google.com/apis/library/searchconsole.googleapis.com
+
+   Open **Google Search Console API** and click **Enable**.
+3. ☰ menu → **IAM & Admin** → **Service Accounts** → **Create service account** (e.g. `wedded-gsc-reader`). Skip both optional permission steps → Done.
+4. Click the new account → **Keys** tab → Add key → Create new key → **JSON** → Create. It downloads once.
    If blocked by `iam.disableServiceAccountKeyCreation`, a Google admin must allow it for this project.
-5. Copy the service account email. In GSC → Settings → Users and permissions → **Add user** → paste → **Restricted**. You must be an Owner.
+
+*In Search Console (https://search.google.com/search-console):*
+
+5. Copy the service account email from its Details tab in Cloud Console (`wedded-gsc-reader@wedded-seo.iam.gserviceaccount.com`). In Search Console, select the weddedwonderland.com property → Settings → Users and permissions → **Add user** → paste → **Restricted**. You must be an Owner.
+
+*In this Claude environment:*
+
 6. Environment settings:
    - Network secrets / Environment variables: `GSC_SERVICE_ACCOUNT_JSON` = the whole JSON file (or one-line base64 of it)
    - Allowed domains: `searchconsole.googleapis.com`, `oauth2.googleapis.com`, `www.googleapis.com`
