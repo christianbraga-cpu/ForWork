@@ -14,8 +14,8 @@ Checked 2026-10-20. Connectors load when a session **starts**, so start a new se
 | Non-place illustrative images | **Higgsfield** | ✅ Connected | visual-curator (rare) |
 | CRM for persona calibration | **Zoho CRM** | ✅ Connected | /wedded-calibrate |
 | SERP + keyword volume by location | **DataForSEO** | ❌ Not connected | seo-researcher (preferred) |
-| Keyword difficulty, backlinks | **Semrush or Ahrefs** | ❌ Not connected | seo-researcher |
-| Rankings per page/query | **Google Search Console** | ❌ Not connected | seo-researcher, /wedded-refresh |
+| Keyword difficulty, backlinks | **Semrush** | ✅ Connected (2026-10-20) | seo-researcher |
+| Rankings per page/query | **Google Search Console** | ⏳ Set up; `.mcp.json` added, test in a new session | seo-researcher, /wedded-refresh |
 | Typing into the CMS | **Claude in Chrome** | ❌ Not in cloud sessions | cms-publisher |
 
 ---
