@@ -15,7 +15,7 @@ Checked 2026-10-20. Connectors load when a session **starts**, so start a new se
 | CRM for persona calibration | **Zoho CRM** | ✅ Connected | /wedded-calibrate |
 | SERP + keyword volume by location | **DataForSEO** | ❌ Not connected | seo-researcher (preferred) |
 | Keyword difficulty, backlinks | **Semrush** | ✅ Connected (2026-10-20) | seo-researcher |
-| Rankings per page/query | **Google Search Console** | ⏳ Set up; `.mcp.json` added, test in a new session | seo-researcher, /wedded-refresh |
+| Rankings per page/query | **Google Search Console** | ✅ Via monthly Drive export (Option A); see `content-system/seo/gsc.md` | seo-researcher, /wedded-refresh, /wedded-calendar |
 | Typing into the CMS | **Claude in Chrome** | ❌ Not in cloud sessions | cms-publisher |
 
 ---
@@ -57,7 +57,9 @@ Both are in the Claude connector directory.
 Not in the connector directory.
 
 **Route A: no-code (start here)**
-Once a month: GSC → Performance → Search results → last 3 months → **Export → Google Sheets**. Save into Drive folder `Wedded SEO/GSC exports/`. Agents read it through the Google Drive connector.
+Once a month: GSC → Performance → Search results → last 3 months → **Export → Google Sheets**. Save into Drive folder `Wedded SEO/GSC exports/`. Agents read it through the Google Drive connector (details in `content-system/seo/gsc.md`).
+
+The export lands in the Drive of the Google account you're signed into in Search Console. If that isn't the account connected to Claude's Drive connector, **share the `Wedded SEO` folder (Viewer) with the connected account**, or the agents won't see it.
 
 **Route B: live, with a service account**
 
@@ -84,7 +86,7 @@ Once a month: GSC → Performance → Search results → last 3 months → **Exp
 6. Environment settings:
    - Network secrets / Environment variables: `GSC_SERVICE_ACCOUNT_JSON` = the whole JSON file (or one-line base64 of it)
    - Allowed domains: `searchconsole.googleapis.com`, `oauth2.googleapis.com`, `www.googleapis.com`
-7. Copy the `gsc` block from `mcp.example.json` into the root `.mcp.json`. It runs `start-gsc.sh`, which writes the secret to a private temp file and starts `mcp-server-gsc` (third-party, pinned to 0.3.0; review before upgrading).
+7. Copy the `gsc` block from `mcp.example.json` into a root `.mcp.json` (not currently in use: we use Option A). It runs `start-gsc.sh`, which writes the secret to a private temp file and starts `mcp-server-gsc` (third-party, pinned to 0.3.0; review before upgrading).
 8. Start a new session; test with top queries for the last 28 days.
 9. Rotate the key every 90 days. If it leaks, delete it in the Keys tab.
 

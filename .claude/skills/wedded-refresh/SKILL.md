@@ -7,7 +7,7 @@ description: 30/90-day review of a published Wedded Wonderland post. Rechecks ra
 
 1. Find the post folder (`content/posts/<slug>/`) from the URL or slug. If none exists, create `content/posts/<slug>/` with just a `00-input.json` holding the URL.
 2. **Rankings:** rerun the primary keyword SERP in every location in `content-system/research/locations.yaml` (same source order as the seo-researcher). Record our position (or "not in top 10") and the new top 3.
-3. **GSC:** if connected (live MCP or the latest Drive export in `Wedded SEO/GSC exports/`), pull clicks, impressions, CTR and average position for the URL and its top queries.
+3. **GSC:** read the latest Search Console export from Drive (see `content-system/seo/gsc.md`). From **Pages**, the URL's clicks, impressions, CTR and position; from **Queries**, the related queries. If the export predates the post or is older than 45 days, say so and ask the person to export a fresh one.
 4. **Links:** scrape the live page with Firecrawl; check every link is live; recheck government/legal links and compare to the facts in `03-source-pack.json`.
 5. **Facts:** for each fact with `checked` older than 90 days, re-scrape its source; flag changes.
 6. **Conversions:** if WeddedAdmin is connected, note enquiries attributed to `utm_campaign=<slug>`.

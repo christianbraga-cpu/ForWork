@@ -9,7 +9,7 @@ description: Plan a Wedded Wonderland content backlog from a list of titles/keyw
 
 1. Take the person's list (pasted text, a CSV, or a Drive file). Each item needs title, keyword and audience; infer audience from context only if the person says so, otherwise leave a note.
 2. For each item:
-   - Check `content-system/seo/link-map.csv` for an existing page on the same keyword or topic (cannibalisation). If found, set `status: conflict` and note the URL.
+   - Check `content-system/seo/link-map.csv` and the latest Search Console export (`content-system/seo/gsc.md`, **Pages** and **Queries** tabs) for an existing page on the same keyword or topic (cannibalisation). If found, set `status: conflict` and note the URL and its GSC position.
    - Suggest `content_type` and `primary_category`.
    - If DataForSEO or Semrush/Ahrefs is connected, add AU search volume and difficulty to `notes`.
 3. Set `priority`: high for commercial-investigation keywords tied to a package or destination we sell, medium for planning guides, low for trends/news.
