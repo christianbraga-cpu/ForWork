@@ -1,0 +1,37 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Images payload",
+  "type": "object",
+  "required": ["slots", "reference_only"],
+  "properties": {
+    "slots": {
+      "type": "array", "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["slot_id", "placement", "purpose", "shot_brief", "status", "file"],
+        "properties": {
+          "slot_id": {"type": "string"},
+          "placement": {"type": "string", "description": "featured | after_h2:<n>"},
+          "purpose": {"type": "string"},
+          "shot_brief": {"type": "string"},
+          "status": {"enum": ["approved", "needed", "pending_permission"]},
+          "file": {"type": "string", "description": "Prepared file path, or planned filename if needed"},
+          "source": {"type": "object", "properties": {"type": {"enum": ["library", "own_site", "canva", "venue_press", "stock", "ai_illustrative"]}, "origin": {"type": "string"}, "credit": {"type": "string"}}},
+          "location": {"type": "object", "properties": {"venue": {"type": "string"}, "town": {"type": "string"}, "verified_by": {"type": "string"}}},
+          "licence": {"type": "object", "properties": {"scope": {"type": "array", "items": {"type": "string"}}, "credit_required": {"type": "boolean"}, "expires": {"type": ["string", "null"]}}},
+          "consent": {"type": "object"},
+          "alt": {"type": "string", "maxLength": 125},
+          "caption": {"type": "string"},
+          "fit_reason": {"type": "string"},
+          "scores": {"type": "object", "properties": {"brand_fit": {"type": "integer"}, "story_value": {"type": "integer"}, "uniqueness": {"type": "integer"}}},
+          "lens_check": {"type": "string"}
+        },
+        "allOf": [
+          {"if": {"properties": {"status": {"const": "approved"}}}, "then": {"required": ["source", "location", "licence", "alt", "caption", "fit_reason"]}}
+        ]
+      }
+    },
+    "reference_only": {"type": "array", "items": {"type": "object", "required": ["file", "source_url"], "properties": {"file": {"type": "string"}, "source_url": {"type": "string"}, "note": {"type": "string"}}}},
+    "permission_requests": {"type": "array", "items": {"type": "object", "properties": {"venue": {"type": "string"}, "gmail_draft_id": {"type": "string"}, "images": {"type": "array", "items": {"type": "string"}}}}}
+  }
+}

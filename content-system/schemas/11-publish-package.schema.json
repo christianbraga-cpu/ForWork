@@ -1,0 +1,30 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Publish package payload",
+  "type": "object",
+  "required": ["title", "slug", "categories", "primary_category", "excerpt", "key_takeaways", "body_markdown_file", "images", "cta", "seo", "schema_jsonld", "status", "verify_items"],
+  "properties": {
+    "title": {"type": "string"},
+    "slug": {"type": "string", "pattern": "^[a-z0-9-]+$"},
+    "categories": {"type": "array", "items": {"type": "string"}, "minItems": 1},
+    "primary_category": {"type": "string", "description": "Must equal categories[0]"},
+    "tags": {"type": "array", "items": {"type": "string"}},
+    "excerpt": {"type": "string", "maxLength": 300},
+    "key_takeaways": {"type": "array", "items": {"type": "string"}, "minItems": 3, "maxItems": 5},
+    "body_markdown_file": {"type": "string"},
+    "faq": {"type": "array", "items": {"type": "object", "required": ["q", "a"], "properties": {"q": {"type": "string"}, "a": {"type": "string"}}}},
+    "images": {
+      "type": "array",
+      "items": {"type": "object", "required": ["slot_id", "file", "role", "status"], "properties": {"slot_id": {"type": "string"}, "file": {"type": "string"}, "role": {"enum": ["featured", "inline"]}, "alt": {"type": "string"}, "caption": {"type": "string"}, "status": {"enum": ["approved", "needed", "pending_permission"]}}}
+    },
+    "cta": {"type": "object", "required": ["text", "link", "placement"], "properties": {"text": {"type": "string"}, "subtext": {"type": "string"}, "link": {"type": "string"}, "placement": {"type": "string"}}},
+    "secondary_cta": {"type": "object"},
+    "seo": {"type": "object", "required": ["meta_title", "meta_description", "focus_keyword"], "properties": {"meta_title": {"type": "string"}, "meta_description": {"type": "string"}, "focus_keyword": {"type": "string"}, "canonical": {"type": "string"}, "og_image_slot": {"type": "string"}}},
+    "schema_jsonld": {"type": "object"},
+    "author": {"type": "string"},
+    "status": {"const": "draft"},
+    "verify_items": {"type": "array", "items": {"type": "string"}},
+    "needs_signoff": {"type": "array", "items": {"type": "string"}},
+    "draft_note": {"type": "string", "description": "Text placed in the CMS draft's internal note field"}
+  }
+}

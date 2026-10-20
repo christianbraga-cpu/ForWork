@@ -1,0 +1,20 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Panel payload",
+  "type": "object",
+  "required": ["personas_run", "weighted_enquiry_likelihood", "must_fix", "should_fix", "consider", "keep", "gate"],
+  "properties": {
+    "personas_run": {"type": "array", "items": {"type": "string"}},
+    "weighted_enquiry_likelihood": {"type": "number"},
+    "weighted_scores": {"type": "object"},
+    "must_fix": {"type": "array", "items": {"$ref": "#/$defs/action"}},
+    "should_fix": {"type": "array", "items": {"$ref": "#/$defs/action"}},
+    "consider": {"type": "array", "items": {"$ref": "#/$defs/action"}},
+    "keep": {"type": "array", "items": {"type": "string"}},
+    "conflicts_resolved": {"type": "array", "items": {"type": "string"}},
+    "gate": {"enum": ["pass", "revise", "stop"]}
+  },
+  "$defs": {
+    "action": {"type": "object", "required": ["issue", "flagged_by", "owner"], "properties": {"issue": {"type": "string"}, "flagged_by": {"type": "array", "items": {"type": "string"}}, "owner": {"type": "string"}, "fix": {"type": "string"}}}
+  }
+}

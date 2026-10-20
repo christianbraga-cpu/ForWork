@@ -1,0 +1,21 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "ICP reader payload",
+  "type": "object",
+  "required": ["persona_id", "first_impression", "journey", "unanswered_questions", "turn_offs_found", "cta_reaction", "scores", "top_3_changes"],
+  "properties": {
+    "persona_id": {"type": "string"},
+    "first_impression": {"type": "object", "required": ["kept_reading_after_intro", "reaction"], "properties": {"kept_reading_after_intro": {"type": "boolean"}, "reaction": {"type": "string"}}},
+    "journey": {"type": "array", "items": {"type": "object", "required": ["section", "quote", "reaction", "type", "severity"], "properties": {"section": {"type": "string"}, "quote": {"type": "string"}, "reaction": {"type": "string"}, "type": {"enum": ["gained_trust", "lost_trust", "confused", "bored", "excited", "objection"]}, "severity": {"enum": ["positive", "low", "medium", "high"]}}}},
+    "unanswered_questions": {"type": "array", "items": {"type": "string"}},
+    "turn_offs_found": {"type": "array", "items": {"type": "object", "required": ["quote", "why"], "properties": {"quote": {"type": "string"}, "why": {"type": "string"}}}},
+    "would_share_with": {"type": "array", "items": {"type": "string"}},
+    "cta_reaction": {"type": "object", "required": ["would_click", "why"], "properties": {"quote": {"type": "string"}, "would_click": {"enum": ["yes", "maybe", "no"]}, "why": {"type": "string"}}},
+    "scores": {
+      "type": "object",
+      "required": ["relevance_to_me", "trust", "clarity", "brand_feels_premium", "likelihood_to_enquire"],
+      "additionalProperties": {"type": "number", "minimum": 1, "maximum": 5}
+    },
+    "top_3_changes": {"type": "array", "items": {"type": "string"}, "maxItems": 3}
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Source pack payload",
+  "type": "object",
+  "required": ["facts", "insider_details", "verify_items", "must_include_coverage"],
+  "properties": {
+    "facts": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["fact_id", "claim", "source", "source_type", "checked"],
+        "properties": {
+          "fact_id": {"type": "string", "pattern": "^fact_[0-9]{2,}$"},
+          "claim": {"type": "string"},
+          "source": {"type": "string"},
+          "source_type": {"enum": ["official_venue", "government", "tourism_board", "brand_page", "repo_notes", "editorial", "other"]},
+          "checked": {"type": "string", "description": "Date checked YYYY-MM-DD"},
+          "is_price": {"type": "boolean"},
+          "conflicts": {"type": "string"}
+        }
+      }
+    },
+    "insider_details": {"type": "array", "items": {"type": "object", "required": ["detail", "fact_ids"], "properties": {"detail": {"type": "string"}, "fact_ids": {"type": "array", "items": {"type": "string"}}}}},
+    "quotes": {"type": "array", "items": {"type": "object", "required": ["speaker", "text", "source"], "properties": {"speaker": {"type": "string"}, "text": {"type": "string"}, "source": {"type": "string"}}}},
+    "real_weddings": {"type": "array", "items": {"type": "object", "required": ["name", "consent"], "properties": {"name": {"type": "string"}, "url": {"type": "string"}, "consent": {"type": "boolean"}}}},
+    "budget_range_aud": {"type": "array", "items": {"type": "number"}},
+    "verify_items": {"type": "array", "items": {"type": "string"}},
+    "needs_signoff": {"type": "array", "items": {"type": "string"}},
+    "must_include_coverage": {"type": "array", "items": {"type": "object", "required": ["item", "covered_by"], "properties": {"item": {"type": "string"}, "covered_by": {"type": "array", "items": {"type": "string"}}}}}
+  }
+}

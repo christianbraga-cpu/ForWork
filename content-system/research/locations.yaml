@@ -1,0 +1,20 @@
+# SERP research locations. The seo-researcher checks the top 3 organic results for each keyword in each location.
+# location_name / language_code follow DataForSEO naming; Apify fallback uses country_code + uule/city.
+locations:
+  - {id: sydney,     region: AU,   city: Sydney,       location_name: "Sydney,New South Wales,Australia", country_code: au, languages: [en]}
+  - {id: melbourne,  region: AU,   city: Melbourne,    location_name: "Melbourne,Victoria,Australia",     country_code: au, languages: [en]}
+  - {id: new_york,   region: US,   city: New York,     location_name: "New York,New York,United States",  country_code: us, languages: [en]}
+  - {id: los_angeles,region: US,   city: Los Angeles,  location_name: "Los Angeles,California,United States", country_code: us, languages: [en]}
+  - {id: dubai,      region: ME,   city: Dubai,        location_name: "Dubai,Dubai,United Arab Emirates", country_code: ae, languages: [en, ar]}
+  - {id: abu_dhabi,  region: ME,   city: Abu Dhabi,    location_name: "Abu Dhabi,Abu Dhabi,United Arab Emirates", country_code: ae, languages: [en]}
+  - {id: riyadh,     region: ME,   city: Riyadh,       location_name: "Riyadh,Riyadh Province,Saudi Arabia", country_code: sa, languages: [en, ar]}
+  - {id: doha,       region: ME,   city: Doha,         location_name: "Doha,Qatar",                       country_code: qa, languages: [en]}
+  - {id: singapore,  region: ASIA, city: Singapore,    location_name: "Singapore",                        country_code: sg, languages: [en]}
+  - {id: hong_kong,  region: ASIA, city: Hong Kong,    location_name: "Hong Kong",                        country_code: hk, languages: [en]}
+
+# Arabic queries: translate the primary keyword naturally (not word for word) and record the translation in 02-seo.json.
+# Keep each run to: primary keyword × all locations (+ Arabic in dubai/riyadh) + up to 2 secondary keywords × AU locations.
+defaults:
+  depth: 10        # fetch top 10, analyse top 3 organic
+  analyse_top: 3
+  device: desktop

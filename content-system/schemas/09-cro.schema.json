@@ -1,0 +1,17 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "CRO payload",
+  "type": "object",
+  "required": ["primary_cta", "journey_stage", "tracking"],
+  "properties": {
+    "journey_stage": {"type": "string"},
+    "primary_cta": {"$ref": "#/$defs/cta"},
+    "secondary_cta": {"$ref": "#/$defs/cta"},
+    "lead_magnet": {"type": "object", "properties": {"name": {"type": "string"}, "link": {"type": "string"}, "placement": {"type": "string"}, "exists": {"type": "boolean"}}},
+    "tracking": {"type": "array", "items": {"type": "string"}},
+    "rationale": {"type": "string"}
+  },
+  "$defs": {
+    "cta": {"type": "object", "required": ["text", "link", "placement"], "properties": {"text": {"type": "string"}, "subtext": {"type": "string"}, "link": {"type": "string"}, "placement": {"type": "string"}}}
+  }
+}

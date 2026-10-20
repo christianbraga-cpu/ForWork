@@ -1,0 +1,46 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "SEO payload",
+  "type": "object",
+  "required": ["primary_keyword", "secondary_keywords", "intent", "slug", "meta_title", "meta_description", "outline", "internal_links", "external_links", "serp_summary", "serp_source"],
+  "properties": {
+    "primary_keyword": {"type": "string"},
+    "secondary_keywords": {"type": "array", "items": {"type": "string"}},
+    "intent": {"enum": ["informational", "commercial investigation", "transactional", "navigational"]},
+    "slug": {"type": "string", "pattern": "^[a-z0-9-]+$"},
+    "url_path": {"type": "string"},
+    "meta_title": {"type": "string", "maxLength": 65},
+    "meta_description": {"type": "string", "maxLength": 160},
+    "outline": {
+      "type": "array", "minItems": 3,
+      "items": {"type": "object", "required": ["h2", "answers"], "properties": {"h2": {"type": "string"}, "answers": {"type": "string"}, "h3": {"type": "array", "items": {"type": "string"}}, "notes": {"type": "string"}}}
+    },
+    "faq_questions": {"type": "array", "items": {"type": "string"}},
+    "internal_links": {
+      "type": "array",
+      "items": {"type": "object", "required": ["anchor", "target", "type"], "properties": {"anchor": {"type": "string"}, "target": {"type": "string"}, "type": {"enum": ["hub", "related", "commercial"]}, "placement": {"type": "string"}, "verified_live": {"type": "string"}}}
+    },
+    "external_links": {
+      "type": "array",
+      "items": {"type": "object", "required": ["anchor", "url", "type"], "properties": {"anchor": {"type": "string"}, "url": {"type": "string"}, "type": {"enum": ["authority", "venue", "partner", "editorial", "sponsored"]}, "rel": {"type": "string"}, "verified_live": {"type": "string"}}}
+    },
+    "backlinks_to_add": {
+      "type": "array",
+      "items": {"type": "object", "required": ["from", "anchor"], "properties": {"from": {"type": "string"}, "anchor": {"type": "string"}, "sentence": {"type": "string"}}}
+    },
+    "serp_source": {"enum": ["dataforseo", "semrush", "ahrefs", "apify", "firecrawl", "mixed"]},
+    "serp_summary": {
+      "type": "object",
+      "required": ["locations_checked", "locations_failed", "common_angles", "gaps"],
+      "properties": {
+        "locations_checked": {"type": "array", "items": {"type": "string"}},
+        "locations_failed": {"type": "array", "items": {"type": "string"}},
+        "common_angles": {"type": "array", "items": {"type": "string"}},
+        "gaps": {"type": "array", "items": {"type": "string"}},
+        "regional_differences": {"type": "array", "items": {"type": "string"}},
+        "recommended_scope": {"enum": ["global", "au_focus", "regional_versions"]}
+      }
+    },
+    "cannibalisation": {"type": "array", "items": {"type": "string"}}
+  }
+}

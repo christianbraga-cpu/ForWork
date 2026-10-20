@@ -1,0 +1,23 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Edit payload",
+  "type": "object",
+  "required": ["draft_file", "rubric", "average", "blocking_issues", "decision", "edits", "fact_check_log", "compliance", "originality"],
+  "properties": {
+    "draft_file": {"type": "string"},
+    "rubric": {
+      "type": "object",
+      "required": ["voice", "expertise", "accuracy", "seo_fit", "commercial_link", "structure", "brief_fit"],
+      "additionalProperties": {"type": "number", "minimum": 1, "maximum": 5}
+    },
+    "average": {"type": "number"},
+    "blocking_issues": {"type": "array", "items": {"type": "string"}},
+    "decision": {"enum": ["pass", "pass_with_edits", "revise", "stop"]},
+    "edits": {"type": "array", "items": {"type": "object", "required": ["location", "issue", "fix"], "properties": {"location": {"type": "string"}, "issue": {"type": "string"}, "fix": {"type": "string"}}}},
+    "fact_check_log": {"type": "array", "items": {"type": "object", "required": ["claim", "status"], "properties": {"claim": {"type": "string"}, "fact_id": {"type": "string"}, "status": {"enum": ["confirmed", "verify", "removed", "unsupported"]}}}},
+    "compliance": {"type": "object", "required": ["pass"], "properties": {"pass": {"type": "boolean"}, "issues": {"type": "array", "items": {"type": "string"}}}},
+    "originality": {"type": "object", "required": ["pass"], "properties": {"pass": {"type": "boolean"}, "matches": {"type": "array", "items": {"type": "string"}}}},
+    "banned_phrases_found": {"type": "array", "items": {"type": "string"}},
+    "needs_signoff": {"type": "array", "items": {"type": "string"}}
+  }
+}

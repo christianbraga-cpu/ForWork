@@ -1,0 +1,39 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "envelope.schema.json",
+  "title": "Stage envelope",
+  "type": "object",
+  "required": ["agent", "task_id", "stage", "status", "inputs_used", "payload", "self_qa", "open_questions", "assumptions", "next_agent"],
+  "properties": {
+    "agent": {"type": "string"},
+    "task_id": {"type": "string", "description": "The post slug"},
+    "stage": {"type": "string", "pattern": "^[0-9]{2}b?$"},
+    "status": {"enum": ["complete", "needs_input", "blocked", "revision"]},
+    "round": {"type": "integer", "minimum": 1},
+    "inputs_used": {"type": "array", "items": {"type": "string"}},
+    "payload": {"type": "object"},
+    "self_qa": {
+      "type": "object",
+      "required": ["checks", "confidence"],
+      "properties": {
+        "checks": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["check", "pass"],
+            "properties": {"check": {"type": "string"}, "pass": {"type": "boolean"}, "note": {"type": "string"}}
+          }
+        },
+        "confidence": {"type": "number", "minimum": 0, "maximum": 1}
+      }
+    },
+    "open_questions": {
+      "type": "array",
+      "items": {"type": "object", "required": ["to", "question"], "properties": {"to": {"type": "string"}, "question": {"type": "string"}, "blocking": {"type": "boolean"}}}
+    },
+    "assumptions": {"type": "array", "items": {"type": "string"}},
+    "verify_items": {"type": "array", "items": {"type": "string"}, "description": "[[VERIFY]] items raised at this stage"},
+    "tools_used": {"type": "array", "items": {"type": "string"}},
+    "next_agent": {"type": "array", "items": {"type": "string"}}
+  }
+}
