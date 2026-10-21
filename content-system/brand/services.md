@@ -8,7 +8,7 @@ Every post links to at least one of these. The CRO agent chooses the primary CTA
 | **Destination packages** | Couples who have a destination or venue in mind | `/packages/<country>/<region>/<venue>` | "See the [venue] offers" |
 | **Guest travel + Wedded Privileges** | Couples with many travelling guests | no page yet (`/privileges` 404s); use `/travel` | "Plan travel for your guests" |
 | **Wedded Marketplace** | Couples who want to make their own arrangements | `/marketplace` | "Browse venues and vendors" |
-| **Wonderland Studio** | Couples organising seating, RSVPs | `/expert-advice/prismm-vs-wonderland-studio` (until a product page is confirmed) | "Try Wonderland Studio" |
+| **Wonderland Studio** | Couples organising seating, RSVPs | `/wonderland-studio` (free); tools overview `/wedding-planning-tools` | "Try Wonderland Studio" |
 | **Digital magazine** (lead magnet) | Early-stage dreamers | `/magazine` | "Read the free magazine" |
 
 ## Choosing the primary CTA
