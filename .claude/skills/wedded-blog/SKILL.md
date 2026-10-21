@@ -56,6 +56,7 @@ For every subagent call, the prompt must include: the slug, the post folder path
 2. Write `backlinks-todo.md` from `02-seo.json` `backlinks_to_add` using `content-system/templates/backlinks-todo.md`.
 3. Write `13-run-report.md` from `content-system/templates/run-report.md`: gates and rounds, every `[[VERIFY]]` (collect from all envelopes' `verify_items` + scan `08-final.md`), Nic sign-off prices, images needed, low-confidence stages, panel highlights, research summary, tools used, draft link.
 4. Add a row to `content/calendar.csv` (status `draft`, slug, date).
+4b. Make the Word version for human review: `node content-system/scripts/md_to_docx.js content/posts/<slug>/11-body.md content/posts/<slug>/<slug>-draft.docx content/posts/<slug>/11-publish-package.json`, and send it to the person as a download along with the run report.
 5. Run the validator one last time and include its result in the report.
 6. Commit the post folder and link map on the current branch with a message like `Add draft: <title>` and push (follow the session's git instructions).
 7. Reply to the person in under 15 lines: status, draft link or package location, the top `[[VERIFY]]` items, prices to sign off, images needed, and the path to `13-run-report.md`.
