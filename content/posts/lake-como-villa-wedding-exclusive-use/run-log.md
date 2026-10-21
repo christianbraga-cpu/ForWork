@@ -10,3 +10,4 @@
 07:36 05r2 luxury-writer complete 25/25 edits, 3,729 words (within brief +10%), 17 VERIFY
 07:40 07b icp-panel-chair revise: weighted enquiry 2.70; 10 must_fix (3 writer, 1 sme, 6 business VERIFY), 4 should_fix
 07:41 07b orchestrator person decided: defer the 6 business must_fix items (fee model, deposits/contracts, From AUD range, Wedded Privileges, named Advisor/phone, real wedding). No new copy or VERIFY markers for them in this draft; listed as deferred in run report. Person will QA the draft personally.
+08:06 03r2 planner-sme top-up: towns Pliniana (Torno) + Làrio (Pognana Lario), airports, hotel towns; no accessibility statements; 60 facts
