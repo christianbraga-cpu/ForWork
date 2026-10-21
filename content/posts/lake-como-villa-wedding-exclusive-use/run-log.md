@@ -12,3 +12,4 @@
 07:41 07b orchestrator person decided: defer the 6 business must_fix items (fee model, deposits/contracts, From AUD range, Wedded Privileges, named Advisor/phone, real wedding). No new copy or VERIFY markers for them in this draft; listed as deferred in run report. Person will QA the draft personally.
 08:06 03r2 planner-sme top-up: towns Pliniana (Torno) + Làrio (Pognana Lario), airports, hotel towns; no accessibility statements; 60 facts
 08:10 08 luxury-writer complete 3,860 words, 17 VERIFY, panel copy fixes applied, deferred items not added
+08:12 08b editor pass (blocking check), avg 4.43, no edits
