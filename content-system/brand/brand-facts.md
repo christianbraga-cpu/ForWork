@@ -49,7 +49,7 @@ The only brand claims agents may state as fact. Anything else about the business
 | Venues | `/venue/<slug>` |
 | Expert advice | `/expert-advice/<slug>` |
 | Marketplace | `/marketplace` |
-| Privileges | `/privileges` |
+| Privileges | none yet (`/privileges` is a 404 as at 2026-10-21); link `/travel` or `/wonderland-concierge` instead |
 | Magazine | `/magazine` |
 
 ## Never

@@ -6,7 +6,7 @@ Every post links to at least one of these. The CRO agent chooses the primary CTA
 |---|---|---|---|
 | **Wedded Concierge** (end-to-end destination planning) | Couples planning abroad who want one person to handle venue, travel, vendors and payments | `/wonderland-concierge` | "Speak with a Wedded Advisor" |
 | **Destination packages** | Couples who have a destination or venue in mind | `/packages/<country>/<region>/<venue>` | "See the [venue] offers" |
-| **Guest travel + Wedded Privileges** | Couples with many travelling guests | `/privileges` | "How Wedded Privileges works" |
+| **Guest travel + Wedded Privileges** | Couples with many travelling guests | no page yet (`/privileges` 404s); use `/travel` | "Plan travel for your guests" |
 | **Wedded Marketplace** | Couples who want to make their own arrangements | `/marketplace` | "Browse venues and vendors" |
 | **Wonderland Studio** | Couples organising seating, RSVPs | `/expert-advice/prismm-vs-wonderland-studio` (until a product page is confirmed) | "Try Wonderland Studio" |
 | **Digital magazine** (lead magnet) | Early-stage dreamers | `/magazine` | "Read the free magazine" |
