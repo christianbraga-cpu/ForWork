@@ -1,5 +1,7 @@
 # Link rules
 
+Use `content-system/seo/priority-link-targets.md` first (it also lists pages never to link), then the link map for related articles.
+
 ## Internal (per post)
 | Type | Count | Notes |
 |---|---|---|
