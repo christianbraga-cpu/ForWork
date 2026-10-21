@@ -1,0 +1,69 @@
+{
+  "agent": "cro-specialist",
+  "task_id": "lake-como-villa-wedding-exclusive-use",
+  "stage": "09",
+  "status": "complete",
+  "round": 1,
+  "inputs_used": [
+    "CLAUDE.md",
+    "content-system/brand/services.md",
+    "content-system/brand/brand-facts.md",
+    "content-system/seo/priority-link-targets.md",
+    "content-system/seo/link-map.csv",
+    "content-system/schemas/09-cro.schema.json",
+    "content-system/schemas/envelope.schema.json",
+    "content/posts/lake-como-villa-wedding-exclusive-use/01-brief.json",
+    "content/posts/lake-como-villa-wedding-exclusive-use/07-panel.json",
+    "content/posts/lake-como-villa-wedding-exclusive-use/07-icp/*.json",
+    "content/posts/lake-como-villa-wedding-exclusive-use/08-final.md",
+    "firecrawl_scrape https://weddedwonderland.com/destination-wedding-guide (2026-10-21, status 200, live free download)"
+  ],
+  "payload": {
+    "journey_stage": "comparing",
+    "primary_cta": {
+      "text": "Check your villa shortlist",
+      "subtext": "Your Wedded Advisor quotes in AUD and agrees the fee and inclusions in writing before you commit.",
+      "link": "/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=lake-como-villa-wedding-exclusive-use&utm_content=primary",
+      "placement": "Existing <!-- CTA: primary --> marker (08-final.md line 218), directly after the like-for-like comparison table and its inline line 'If you have two or three villas in mind, ask a Wedded Advisor to check your shortlist...'. Kept here: this is where the reader has just seen how many fields are 'Ask', so the question the CTA answers ('who asks the villas for me, in writing?') peaks. The panel's cta_reaction notes do not argue for moving it."
+    },
+    "secondary_cta": {
+      "text": "Send us your villa shortlist",
+      "link": "/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=lake-como-villa-wedding-exclusive-use&utm_content=secondary",
+      "placement": "End of the closing section 'Shortlist your villas with a Wedded Advisor', immediately after the final sentence 'Tell us your date, your guest count and the villas you have in mind, and we will tell you which are available on your date.' (08-final.md line 304). No new subtext: the paragraph above it already states the approved AUD and in-writing line."
+    },
+    "lead_magnet": {
+      "name": "The Ultimate Destination Wedding Location Guide 2026 (free download)",
+      "link": "/destination-wedding-guide?utm_source=blog&utm_medium=content&utm_campaign=lake-como-villa-wedding-exclusive-use&utm_content=magnet",
+      "placement": "One soft line after the secondary CTA at the very end of the post, for readers still researching (e.g. 'Still weighing destinations? Download the free destination wedding guide.'). Not placed above the primary CTA so it does not pull comparing-stage readers away from the Concierge enquiry.",
+      "exists": true
+    },
+    "tracking": [
+      "/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=lake-como-villa-wedding-exclusive-use&utm_content=primary",
+      "/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=lake-como-villa-wedding-exclusive-use&utm_content=secondary",
+      "/destination-wedding-guide?utm_source=blog&utm_medium=content&utm_campaign=lake-como-villa-wedding-exclusive-use&utm_content=magnet"
+    ],
+    "rationale": "Brief sets journey_stage 'comparing', so per services.md the primary CTA is a Wedded Concierge consultation at /wonderland-concierge (live in link-map, default commercial CTA target). CTA text is 4 words, no exclamation mark, and avoids 'Speak with' because no call or phone option is confirmed. Subtext uses only the approved line already in 08-final.md (AUD quotes; fee and inclusions in writing before you commit); no fee model, deposit, price range, Wedded Privileges, named Advisor or call-booking claim, as these are deferred until the business confirms them. Panel: all five personas answered 'maybe'. What they want to see before the CTA is all business-owned and deferred: a real wedding at one of the villas (planner_couple), a rough 'From AUD' cost (planner_couple, search_visitor), how the fee works and whether commissions are taken (sceptic), a phone call with a named person (funding_parent), and a private or confidential enquiry route (uhnw). None can be added without inventing facts, so no copy change is requested now and the placement stays at the marker. When the business supplies these, the cro-specialist should revisit: a real-wedding link placed just above the primary CTA, and a 'book a call' secondary CTA if a call option exists. Lead magnet: /destination-wedding-guide is in priority-link-targets.md and the link map, and the Firecrawl scrape on 2026-10-21 returned 200 with the free 2026 download live, so exists is true. It covers 13 destinations including Tuscany but does not appear to feature Lake Como, so it suits only earlier-stage readers (search_visitor said they would bookmark rather than enquire) and sits last. Suggested magnet that does not exist yet: a 'Lake Como exclusive-use villa question sheet' (the comparison-table fields as a printable checklist to send each villa); the sceptic said they would share the post as exactly that checklist. Not placed. /magazine was not used because no Lake Como or Italy magazine edition is listed."
+  },
+  "self_qa": {
+    "checks": [
+      {"check": "Primary CTA text 6 words or fewer, no 'click here', no exclamation mark", "pass": true, "note": "'Check your villa shortlist' (4 words)."},
+      {"check": "Subtext limited to the approved line already in 08-final.md", "pass": true},
+      {"check": "No call-booking CTA, fee claim, price, deposit, Privileges or named Advisor", "pass": true},
+      {"check": "All links exist in link-map and priority-link-targets; no /privileges", "pass": true},
+      {"check": "Lead magnet verified live before exists: true", "pass": true, "note": "Firecrawl scrape 2026-10-21, statusCode 200."},
+      {"check": "UTM format matches services.md", "pass": true},
+      {"check": "Australian English, no em dashes", "pass": true}
+    ],
+    "confidence": 0.85
+  },
+  "open_questions": [
+    {"to": "orchestrator", "question": "The inline concierge link in 08-final.md line 216 ('ask a Wedded Advisor to check your shortlist') has no UTMs. Should it carry the primary UTM string, or should the CMS step render the primary CTA block at line 218 as the only tracked link? Small copy-free change to 08-final.md.", "blocking": false},
+    {"to": "orchestrator", "question": "Business-owned items behind every persona's 'maybe' (real wedding at one of the villas, From AUD range, fee model and commissions, call option with a named Advisor, confidential enquiry route) remain deferred. Re-run cro-specialist once any is confirmed.", "blocking": false}
+  ],
+  "assumptions": [
+    "The CMS can render a CTA block with text, subtext and link at the <!-- CTA: primary --> marker and a secondary block at the end of the post."
+  ],
+  "verify_items": [],
+  "tools_used": ["Bash (cat, grep, python3 -I)", "mcp__Lead_MCP__firecrawl_scrape"],
+  "next_agent": ["distribution"]
+}
