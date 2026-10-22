@@ -12,3 +12,7 @@
 | G8 CMS | 11 | CMS publisher | Draft saved, preview matches package, primary category confirmed | Stop and report; never publish |
 
 Every stage also runs its own `self_qa` checks. Any `confidence` below 0.7 is listed in the run report for a human to look at.
+
+## What gets a [[VERIFY]] marker (and what doesn't)
+- **Marker:** any claim the article actually makes that isn't fully sourced: prices, legal steps, addresses, capacities we state, borderline inclusions, conflicting sources.
+- **No marker:** details a venue simply doesn't publish (curfew, minimum nights, standing capacity, rain plan, set-up times). The article says they're "not published" and, once per section, that your Wedded Advisor confirms them in writing. The planner lists them in `booking_checklist` (in `assumptions` if the schema has no field) and the run report carries them as a booking checklist, not as publishing blockers.

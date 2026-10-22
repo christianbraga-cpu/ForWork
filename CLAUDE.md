@@ -23,7 +23,7 @@ Read `content-system/README.md` for the full pipeline.
 
 ## Non-negotiable rules (all agents)
 
-1. **No invented facts.** If a price, capacity, legal step, distance or date can't be traced to a source, write `[[VERIFY: what to check]]` and list it. Never guess.
+1. **No invented facts.** If a price, capacity, legal step, distance or date the article states can't be traced to a source, write `[[VERIFY: what to check]]` and list it. Never guess. Details a venue simply doesn't publish are written as "not published" without a marker and go on the booking checklist (see `content-system/rubrics/qa-gates.md`).
 2. **No unlicensed images.** Competitor and search-result images are reference only and live in `reference-only/`. AI images are never used for a real venue, destination or wedding.
 3. **Never publish.** The CMS step saves a **Draft** only. A human clicks Publish.
 4. **Never handle passwords.** Never ask for credentials, keys or tokens in chat. The person logs into the CMS in Chrome themselves, and connector keys live in environment secrets.

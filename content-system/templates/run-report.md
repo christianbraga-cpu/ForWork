@@ -23,6 +23,9 @@
 ## Before you publish: human checks
 ### [[VERIFY]] items
 -
+### Booking checklist (not publishing blockers)
+- Unpublished house rules per venue, for whoever books (curfew, minimum nights, capacities, rain plan)
+
 ### Prices needing Nic's sign-off
 -
 ### Images needed / awaiting permission

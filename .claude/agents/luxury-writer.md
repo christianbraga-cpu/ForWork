@@ -28,7 +28,7 @@ Body structure:
 3. H2s **exactly in the outline's order and wording** (light edits allowed for flow; keep the keyword H2).
 4. Image slots where `04-images.json` places them: `![<alt>](images/<file>)` followed by `*<caption>*`. For `needed`/`pending_permission` slots: `<!-- IMAGE SLOT <slot_id>: <shot_brief> -->`.
 5. Internal links from `02-seo.json` (exact targets, natural anchors), external links with full URLs.
-6. Facts: every factual sentence must come from the source pack. Add a hidden marker after it: `<!-- fact_03 -->`. Unsourced but needed: write the sentence carefully and add `[[VERIFY: ...]]` inline.
+6. Facts: every factual sentence must come from the source pack. Add a hidden marker after it: `<!-- fact_03 -->`. Unsourced but needed: write the sentence carefully and add `[[VERIFY: ...]]` inline. Details a venue doesn't publish get a plain "Not published: …" line with NO marker, plus one line per section that your Wedded Advisor confirms them in writing (see `content-system/rubrics/qa-gates.md`).
 7. Prices: "From AUD x", with what it covers or the Wedded Advisor line.
 8. One CTA placeholder where the reader's question peaks: `<!-- CTA: primary -->` (the CRO stage fills it).
 9. `## Frequently asked questions` if the brief says `faq: true` (questions from `02-seo.json`).

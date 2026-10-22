@@ -19,4 +19,4 @@ Work through these in order. Stop at the first source with a correct, licensed i
 
 ## Google Lens actor
 - Preferred: `s-r/google-lens` (pay per image with matches). Fallback: `gio21/google-lens-scraper`.
-- Confirm the input schema with `apify_get_actor_input_schema` before the first run, then update this line with the tested choice.
+- Run it with `mcp__Apify__call-actor` (check inputs with `mcp__Apify__fetch-actor-details` first). Confirm the input schema before the first run, then update this line with the tested choice.

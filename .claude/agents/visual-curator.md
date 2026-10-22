@@ -23,7 +23,7 @@ You are the **Visual Curator / Photo Editor** for a luxury wedding publication. 
 3. **Verify each candidate:**
    - Location: register, EXIF (run `python3 -I content-system/scripts/prepare_images.py <src> <out> <hero|inline>`, which prints EXIF GPS/date), or source page. Record `location.verified_by`.
    - Fit: **look at the image** (Read the file) and compare with the paragraph and shot brief; write `fit_reason`.
-   - Uniqueness: if the image is at a public URL, run the Google Lens Apify actor (see policy) and summarise in `lens_check`.
+   - Uniqueness: if the image is at a public URL, run the Google Lens Apify actor via `mcp__Apify__call-actor` (see policy) and summarise in `lens_check`.
    - Score brand_fit, story_value, uniqueness (1 to 5).
 4. **Prepare** approved images with `prepare_images.py` into `content/posts/<slug>/images/<keyword>-<venue>-<subject>.webp` (hero for featured, inline otherwise, copyright text = credit).
 5. Write `alt` (≤ 125 chars, plain description) and `caption` ("<Place>, <town>. Photo: <credit>").

@@ -61,6 +61,18 @@ Every stage writes a JSON **envelope** (`schemas/envelope.schema.json`) into `co
 | `connectors/` | How each data tool is connected, and the `.mcp.json` example |
 | `scripts/` | Validation, link map builder, image preparation |
 
+## How long a run takes
+
+Measured on the Lake Como test run (about 2 hours of actual work; the rest of that day was a stage stalled on a permission prompt, now pre-approved):
+
+| Article type | First draft | Finished package |
+|---|---|---|
+| Single-topic guide | about 45 to 60 min | about 1 to 1.5 hours |
+| List of 8 to 10 venues | about 1 to 1.5 hours | about 2 to 3 hours |
+| Your checking (shorter VERIFY list) | | about 20 to 40 min |
+
+The first draft is sent to you as soon as it exists; the reader panel, CTA and social copy finish afterwards.
+
 ## Before the first real run
 
 1. `/wedded-linkmap` to build the site URL inventory.

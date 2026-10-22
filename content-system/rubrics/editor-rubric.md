@@ -14,7 +14,7 @@ Score each criterion 1 to 5. **Pass = average ≥ 4.0 and no criterion below 3 a
 
 ## Blocking issues (fail regardless of score)
 - Any banned phrase or em dash left in
-- A price, capacity or legal statement with no source and no `[[VERIFY]]`
+- A price, capacity or legal statement with no source and no `[[VERIFY]]` (a plain "not published" line about a venue's unpublished house rules is fine and needs no marker)
 - A competitor brand named (outside an approved citation)
 - An image slot pointing to a `reference-only` image
 - Originality: any passage of 12+ consecutive words matching a scraped competitor page, or close paraphrase of a whole paragraph

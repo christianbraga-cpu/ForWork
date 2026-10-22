@@ -52,6 +52,18 @@ The only brand claims agents may state as fact. Anything else about the business
 | Privileges | none yet (`/privileges` is a 404 as at 2026-10-21); link `/travel` or `/wonderland-concierge` instead |
 | Magazine | `/magazine` |
 
+## Confirmed business answers
+Add answers here once the business confirms them. Agents may state these as fact; until then they are "deferred" and never invented.
+
+| Topic | Answer | Confirmed by / date |
+|---|---|---|
+| Wedded Concierge fee model and commissions | deferred | |
+| Deposits, refunds, contracts | deferred | |
+| "From AUD" price ranges by destination | deferred (Nic signs off) | |
+| What Wedded Privileges is | deferred | |
+| Named Advisor / phone line / on-the-day contact | deferred | |
+| Real weddings we can feature (with consent) | deferred | |
+
 ## Never
 - Mention or copy Easy Weddings or any competitor's branding, claims or images.
 - Show venue contact details. Enquiries go to Wedded Concierge.
