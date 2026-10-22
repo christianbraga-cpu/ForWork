@@ -1,7 +1,8 @@
 # Brand profile: Wedded Wonderland
 
 Every agent reads this file first, except the ICP readers. Facts here come from
-the live package pages (see `site/packages/italy/tuscany/cappuccina-country-resort/`).
+the live site (weddedwonderland.com) and the draft package page in
+`site/packages/italy/tuscany/cappuccina-country-resort/`.
 Anything marked TO CONFIRM must not be stated as fact in an article.
 
 ## Who we are
@@ -68,6 +69,9 @@ paying, who wants to know it is safe. Full style rules are in `style-guide.md`.
 - CMS in use and its category list (see `categories.md`).
 - Blog URL pattern (assumed `/blog/<slug>`).
 - Named authors who may appear on bylines.
+- Package prices: the draft Tuscany package prices (From AUD 35,600 to
+  38,550) are unconfirmed, and AUD 38,550 was copied from a competitor page.
+  Do not use any of them until Nic confirms them as ours.
 - Whether a Key Takeaways block and a CTA block already exist in the CMS.
 - Service naming: the page is titled "Wonderland Concierge" while site copy says
   "Wedded Concierge" and "Wedded Advisor". Articles use the copy names and link

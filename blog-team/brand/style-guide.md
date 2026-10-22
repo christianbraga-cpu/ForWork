@@ -24,7 +24,7 @@ AUD 200K trust us after reading it?
 3. **Key takeaways:** 3 to 5 bullets, each a complete, specific sentence.
 4. **Body:** H2 sections that each answer one question a reader actually has.
    At least one section shows the invisible work of end-to-end planning.
-5. **Mid-article soft CTA** (one sentence, links to `/concierge` or a package).
+5. **Mid-article soft CTA** (one sentence, links to `/wonderland-concierge` or another page from `link-map.md`).
 6. **FAQ:** 4 to 6 questions with direct answers (feeds FAQ schema).
 7. **Closing CTA** from `cta-library.md`.
 

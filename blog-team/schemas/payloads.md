@@ -104,7 +104,7 @@ image_slots:
 claims_register:
   - { id: C-01, text: "...", fact_ref: F-01, status: sourced|needs }
 links_register:
-  - { id: L-01, type: internal, anchor: "...", url: "/concierge", role: service }
+  - { id: L-01, type: internal, anchor: "...", url: "/wonderland-concierge", role: service }
   - { id: L-02, type: external, anchor: "...", url: "https://...", purpose: "source for F-03", rel: "noopener" }
 faq:
   - { q: "...", a: "..." }
