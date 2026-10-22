@@ -131,7 +131,7 @@ An Art Nouveau estate of about 4 acres, built in 1892, on the hill above Como to
 - **Minimum nights:** Three nights for exclusive hire, all year. <!-- fact_63 -->
 - **Ceremony:** Small garden ceremonies. The site does not say whether a civil ceremony can be held on site. <!-- fact_64 -->
 - **Dock and boats:** None. The estate is on the hill, so guests arrive by road. <!-- fact_61 --> The house arranges group transfers as an extra and asks you to check coach access with it. <!-- fact_65 -->
-- **Wet weather:** There is no indoor room for the full dinner. The villa calls the tented dinner for about 100 a format for the warmer months; indoors, the dining room seats 12 and the Dependance 20. <!-- fact_64 --> Choose a date in the warmer months and agree what happens if the weather turns.
+- **Wet weather:** There is no indoor room for the full dinner. The villa calls the tented dinner for about 100 a format for the warmer months; indoors, the dining room seats 12 and the Dependance room 20 boardroom-style. <!-- fact_64 --> Choose a date in the warmer months and agree what happens if the weather turns.
 - **Not published:** civil ceremony, curfew, standing capacity, tent terms, coach access. [[VERIFY: Villino Rubini: whether a civil (legally binding) ceremony can be held on site or only a symbolic garden ceremony; music curfew; standing capacity; whether the tent for about 100 guests is included or hired separately; coach access up the Brunate road for a wedding guest shuttle]]
 
 Exclusive hire includes housekeeping, Italian breakfast, full staff support and private parking, with private chef dinners on request. <!-- fact_63 --> The estate closes for winter, although winter exclusive-hire requests are considered. <!-- fact_61 -->
@@ -270,7 +270,7 @@ Charter private boats for guest shuttles and your arrival, with a road transfer 
 
 ### Older guests: steps, lifts and boats
 
-Eight of the ten villas, checked in October 2026, publish no accessibility statement: nothing on step-free access, lifts or accessible rooms. <!-- fact_60 --> Villino Rubini and Villa La Felice were added after that check, so ask them too. If grandparents are coming, ask each villa in writing:
+When we checked the official sites of eight of these villas in October 2026, none published an accessibility statement: nothing on step-free access, lifts or accessible rooms. <!-- fact_60 --> Assume the same for all ten until a villa tells you otherwise. If grandparents are coming, ask each villa in writing:
 
 - How many steps are there from the car drop-off or the dock to the ceremony spot, the dinner terrace and the nearest bedroom?
 - Is there a lift, or a ground-floor bedroom?
