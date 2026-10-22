@@ -10,7 +10,7 @@ writer may only state what you can source. Your job is accuracy, not prose.
 - The article's `00-brief.json` and `01-serp.json`
 - `blog-team/brand/brand-profile.md` and `domains.md`
 - `blog-team/schemas/payloads.md` (section `02-research.json`)
-- Any brand pages in `site/` that relate to the topic (e.g. package pages and their NOTES.md)
+- Brand facts come only from `brand-profile.md` or live weddedwonderland.com pages (Firecrawl). **Never use the repo's `site/` drafts as a source.**
 
 ## Method
 1. List every factual question the outline needs answered: seasons and

@@ -1,85 +1,120 @@
 # Brand profile: Wedded Wonderland
 
-Every agent reads this file first, except the ICP readers. Facts here come from
-the live site (weddedwonderland.com) and the draft package page in
-`site/packages/italy/tuscany/cappuccina-country-resort/`.
-Anything marked TO CONFIRM must not be stated as fact in an article.
+Every agent reads this file first, except the ICP readers. **Every fact here
+comes from the live site (weddedwonderland.com), read with Firecrawl on
+22 October 2026**, and names the page it came from. Never use drafts in the
+repo's `site/` folder as a brand source. Anything marked TO CONFIRM must not be
+stated as fact in an article.
 
 ## Who we are
 
-- **Wedded Wonderland** (weddedwonderland.com): destination weddings and
-  celebrations, planned from Australia by one Wedded Advisor.
-- Based in Australia. Our readers are mostly Australians marrying overseas,
-  plus the international markets we research (US, UAE, KSA, Qatar, Singapore,
-  Hong Kong, India).
+- **Wedded Wonderland** (weddedwonderland.com): a luxury, cultural and
+  destination wedding platform. It connects couples with "top-tier luxury,
+  cultural and destination wedding planners, vendors and venues" (home page).
+- Led by founder **Wendy El-Khoury** and a team of "editors, planners and
+  destination specialists" (`/wonderland-concierge`).
+- The team plans "Lebanese, Egyptian, Indian, Western and multicultural
+  celebrations" (`/wonderland-concierge`).
+- Based in Australia (Sydney). Serves couples worldwide; our core reader is the
+  affluent Australian couple marrying overseas.
 - Spelling: Australian English (colour, organise, travelled, licence as a noun).
 
-## What we sell
+## What we offer (live pages)
 
-| Offer | What it is | When to point readers to it |
+| Offer | What it is, in the site's words | URL |
 |---|---|---|
-| **Wedded Concierge** (page: Wonderland Concierge, `/wonderland-concierge`) | End-to-end planning. One Wedded Advisor from first idea to last dance. | Default CTA for luxury, complex or multi-day weddings, and any reader who wants it handled. |
-| **Wedded Marketplace** (`/vendor`, `/venue`, `/cities`) | Browse venues and vendor profiles, contact professionals directly. | Readers who want to plan themselves. Secondary option only. |
-| **Packages** (`/destination-wedding-packages`, `/destination-packages`, `/destination-honeymoon-packages`) | All-inclusive and combined packages. The `/packages/<country>/<region>/<venue>` pages with "From AUD" prices are a draft structure, NOT LIVE. | Package and budget-structure posts. |
-| **Wedded Privileges** (described on `/travel`) | Benefits on every room booked through us, via invitation-only hotel programs. | Accommodation and guest-stay content. |
+| **Wedded Wonderland Concierge** | "A luxury wedding advisory and matchmaking service for modern couples." Helps couples choose the destination, find the venue, connect with trusted planners, source vendors. "Unlike a traditional wedding planner, we act as your trusted advisor and strategic partner during the sourcing and decision-making process. Depending on your wedding, we may recommend a partnered planner, or help you move forward confidently without one." | `/wonderland-concierge` |
+| **Free Discovery Call** | "A complimentary, no-obligation call with a Wedding Concierge Advisor." | `/wonderland-concierge` |
+| **Wedded Consultation / Advisory Session** | 60-minute strategy consultation: roadmap, budget guidance, destination and venue recommendations, planning assessment. | `/wonderland-concierge`, `/plan-your-destination-wedding` |
+| **Destination Wedding and Celebration Concierge** | Destination strategy, venue sourcing and planner recommendations, multi-country vendor management, guest travel and accommodation concierge, currency and international payments coordinated, honeymoon travel, Wonderland Benefits across the room block. | `/wonderland-concierge` |
+| **Wonderland Benefits** (also called Wedded Privileges on some pages) | At partner, preferred and consortia properties: suite upgrades, property credit per booked room, daily breakfast, late checkout, early check-in, negotiated group rates. "Benefits apply at our partner, preferred and consortia properties and vary by hotel and by program." | `/wonderland-concierge`, `/travel` |
+| **Wonderland Studio** | Free planning suite: website and RSVPs, guest list and seating, budget (multi-currency), timeline, vendor shortlists, AI planning assistant. "Free to use, no credit card required." | `/wonderland-studio` |
+| **Vendor and venue marketplace** | "50,000+ vendors, filtered to the ones our team has actually worked with in-market." | `/vendor`, `/venue`, `/plan-your-destination-wedding` |
+| **Packages collection** | Properties "visited and vetted by the Wedded Wonderland team". | `/destination-packages`, `/destination-wedding-packages` |
 
-## Proof points we can state (true on our live pages)
+## The concierge process (use these step names)
 
-- One Wedded Advisor, start to finish, working in the client's time zone (phone, video or chat).
-- Quotes and payments in AUD, removing currency risk.
-- The planning fee is agreed in writing before any work begins.
-- Suppliers are paid at standardised industry rates, never a marked-up quote.
-- Wedded Privileges on every room guests book (benefits vary by property; conditions apply).
-- Every room guests book counts as one reservation made by one house, on relationships 17 years old.
-- Enquiries get a reply within one business day.
+From `/wonderland-concierge`, "How It Works":
+1. Discovery Call
+2. Destination and Venue Strategy
+3. Planning Assessment
+4. Vendor Curation
+5. Concierge Support
+6. Travel and Honeymoon Concierge
 
-## The 5-step process (use these names)
+## Proof points we can state
 
-1. Tell us anything
-2. Meet your Wedded Advisor, and agree the fee
-3. See real options, and choose
-4. We contract and hold
-5. You show up
+| Claim | Source page |
+|---|---|
+| 800+ weddings and celebrations | `/wonderland-concierge`, `/plan-your-destination-wedding` |
+| 54 countries | same |
+| 50k+ vetted vendors | same |
+| 15 years of editorial authority | same |
+| One dedicated point of contact; wedding and travel under one roof | `/wonderland-concierge` "Why Choose Us" |
+| Concierge handles deposits, payments and currency across borders | `/wonderland-concierge` |
+| Enquiries: "Reply in 24 hours", "Fully confidential", "No obligation" | `/wonderland-concierge` enquiry form |
+
+Use the numbers sparingly (at most one or two per article) and never inflate them.
+
+## Prices (house rule)
+
+- **Do not quote Concierge prices in articles** until Nic confirms them. The
+  live pages disagree: `/wonderland-concierge` shows the consultation at $250
+  and destination concierge "starting from $3,500" without a currency;
+  `/plan-your-destination-wedding` shows the Advisory Session at $258.75, or
+  A$408.83 in Australia including a 3.5% service fee.
+- Any other cost figure (planner fees, venue hire, budgets) needs a dated
+  source, written in its original currency with an AUD approximation and the
+  conversion date, and goes to Nic in the run log.
+
+## Do not use
+
+- **Testimonials on `/plan-your-destination-wedding`:** the live page labels
+  them "Placeholder quotes... pending approval".
+- **Real-wedding quotes on `/wonderland-concierge`** (Anya and Raoul, Leila and
+  Faisal, Sofía and James): not to be reused in articles until the marketing
+  team confirms they are approved, consented client testimonials.
+- Anything from the repo's `site/` drafts (Cappuccina package page and notes):
+  draft structure, unverified prices, not live.
 
 ## House rules (non-negotiable)
 
-- **Prices:** always "From AUD X", with a note that the Wedded Advisor confirms
-  the real cost on the client's dates. Every price needs **Nic's sign-off** and
-  is listed in the run log for Nic.
-- **Never invent:** real weddings, couples, planner quotes, testimonials, prices,
-  capacities or statistics. Use `[[NEEDS: ...]]` placeholders instead.
+- **Never invent:** real weddings, couples, planner quotes, testimonials,
+  prices, capacities or statistics. Use `[[NEEDS: ...]]` placeholders instead.
 - **Competitors:** never use their branding, images, copy or proprietary claims,
   and never link to them. Easy Weddings is a direct competitor.
+- **Planners:** Italian planners and other vendors are partners. Name or link a
+  planner only through their profile on our site (`/vendor/<slug>`), and only
+  after confirming the profile exists. Never name or link a planner who is not
+  on our site.
 - **Legal statements** (marriage requirements abroad) must cite an official
-  source checked within 12 months, and end by saying the Wedded Advisor confirms
-  the current process for the couple's passports.
+  source checked within 12 months, and say that requirements should be
+  confirmed for the couple's own passports.
 - **No guarantees:** never promise weather, availability, approvals or outcomes.
 - **Punctuation:** no em dashes. Use commas, colons, full stops or parentheses.
 
 ## Our voice in one paragraph
 
 Calm, specific and quietly expert, like a well-travelled friend who happens to
-run weddings for a living. We show the invisible work (transfers, wet-weather
-plans, legal paperwork, room blocks) rather than adjectives. We write to two
-readers at once: the couple, who want it to feel like theirs, and the person
-paying, who wants to know it is safe. Full style rules are in `style-guide.md`.
+know every good planner in Italy. We show the invisible work (sourcing,
+vetting, guest travel, payments across currencies) rather than adjectives. We
+are honest that not every wedding needs a full planner, because the live
+concierge page says so. Full style rules are in `style-guide.md`.
 
 ## TO CONFIRM (ask the marketing team before relying on these)
 
-- CMS in use and its category list (see `categories.md`).
-- Blog URL pattern (assumed `/blog/<slug>`).
+- CMS in use and its full category list (see `categories.md`).
 - Named authors who may appear on bylines.
-- Package prices: the draft Tuscany package prices (From AUD 35,600 to
-  38,550) are unconfirmed, and AUD 38,550 was copied from a competitor page.
-  Do not use any of them until Nic confirms them as ours.
+- Concierge prices and currency (see Prices above).
+- Whether the real-wedding quotes on `/wonderland-concierge` are approved for reuse.
+- Service naming: "Wedded Wonderland Concierge" (page), "Wedded Concierge" and
+  "Wedded Advisor" (other pages), "Wedding Concierge Advisor" and "Wonderland
+  Luxury Advisors" (concierge page). Articles say "Wedded Wonderland Concierge"
+  on first mention and "your concierge" or "a Wedded Wonderland advisor" after.
 - Whether a Key Takeaways block and a CTA block already exist in the CMS.
-- Service naming: the page is titled "Wonderland Concierge" while site copy says
-  "Wedded Concierge" and "Wedded Advisor". Articles use the copy names and link
-  `/wonderland-concierge` until marketing confirms.
 
 ## Also on the site (link where relevant, see link-map.md)
 
 - **Wedded World Melbourne:** luxury wedding showcase, 1 Hotel Melbourne, 7 and 8 November 2026.
-- **Wonderland Studio:** free wedding website and planning tools, with culture-specific templates.
 - **Destination Wedding Guide 2026** (free download) and the **Destination Wedding Quiz**.
-- **Founder:** Wendy El-Khoury.
+- **Concierge Gift** (`/wonderland-concierge-gift`).

@@ -75,5 +75,5 @@ to built-in web search and fetch:
 ## House rules every agent follows
 
 No invented weddings, quotes, prices or statistics (gaps become `[[NEEDS: ...]]`).
-Prices are "From AUD" and go to Nic. No competitor branding, copy, images or
+Prices need a dated source and go to Nic; no Concierge prices until confirmed. No competitor branding, copy, images or
 links. Legal claims cite official sources. No em dashes.

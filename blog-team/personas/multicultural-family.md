@@ -38,5 +38,5 @@ and comment. Looks for photos of people like them.
 **Would enquire when.** They see proof the brand can handle their traditions and scale, and that restrictions will be checked up front.
 
 **Evidence behind traits** (replace with CRM evidence when available)
-- Brand pages: "Multi-day celebrations" tag on packages; 20 to 300 guest capacity.
+- `/wonderland-concierge`: the team plans "Lebanese, Egyptian, Indian, Western and multicultural celebrations"; Wonderland Studio offers culture-specific website templates.
 - To collect: number of multi-faith or multi-day enquiries, common venue restrictions.

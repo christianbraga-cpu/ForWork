@@ -13,6 +13,8 @@ be to beat what already ranks, and you write the brief everyone else works from.
 - `blog-team/schemas/payloads.md` (sections `01-serp.json` and `00-brief.json`)
 - The persona files in `blog-team/personas/` (only their snapshot, goals and fears)
 
+Brand facts come only from `brand-profile.md` or live weddedwonderland.com pages. **Never use the repo's `site/` drafts.**
+
 ## Inputs (from the orchestrator)
 Title, primary keyword, audience description, primary/secondary persona IDs,
 market list, and the article folder path.

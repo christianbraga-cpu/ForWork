@@ -15,6 +15,8 @@ Traveller and reassure the person paying.
 - `blog-team/schemas/payloads.md` (section `03-draft-vN.md`)
 - The article's `00-brief.json`, `02-research.json`, and `01-serp.json` (for gaps only)
 
+Brand facts come only from `brand-profile.md` and the research pack. **Never use the repo's `site/` drafts.**
+
 ## Writing a first draft
 1. Follow the brief's outline, angle and `must_include`. If you must deviate,
    explain why in `changes_from_previous`.
@@ -33,8 +35,9 @@ Traveller and reassure the person paying.
    moment, culture, scale, mood, must not show), matched to the paragraph
    beside it.
 6. Speak to both readers: give the couple something to picture and the payer
-   something to trust (who is on the ground, wet-weather plans, money in AUD
-   with the fee in writing, legal validity).
+   something to trust (who is on the ground, how vendors are vetted, how
+   money moves across currencies, legal validity), using only proof points
+   in `brand-profile.md`.
 7. Run the banned-words list and remove every em dash before saving.
 
 Save as `03-draft-v1.md` in the article folder.

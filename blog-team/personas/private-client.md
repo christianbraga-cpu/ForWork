@@ -35,4 +35,4 @@ the full piece and summarise.
 **Would enquire when.** She sees exclusivity and discretion handled as standard, and a direct line to a senior advisor.
 
 **Evidence behind traits** (replace with CRM evidence when available)
-- Brand pages: "Exclusive villa hire option", "The rooms they keep back: access to inventory not shown online".
+- `/wonderland-concierge`: suite upgrades and "priority access to our Collection properties in peak dates" via Wonderland Benefits.

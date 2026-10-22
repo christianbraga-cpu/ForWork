@@ -27,7 +27,7 @@ organised anything overseas.
 **Knowledge level.** Low on destination weddings. Does not know what a Nulla
 Osta, an apostille or a room block is. Reads carefully, often twice.
 
-**Trust signals.** Named people, written fee agreements, AUD pricing, a clear
+**Trust signals.** Named people, clear written agreements, AUD figures, a clear
 wet-weather plan, accessibility detail, official sources for legal claims,
 years in business and supplier relationships.
 
@@ -41,6 +41,6 @@ link to her husband with questions, may phone before filling in a form.
 she can see who she would be dealing with and how money is handled.
 
 **Evidence behind traits** (replace with CRM evidence when available)
-- Brand pages: "A fee agreed in writing before any work begins", "Suppliers paid at standardised industry rates" (mark-up fear).
-- Brand pages: "Marrying legally... documents translated and legalised" (legal fear).
-- Brand pages: wet-weather plans on package pages (weather fear).
+- `/wonderland-concierge`: the concierge coordinates "deposits, payments and currency so nothing gets lost across borders" (money fear).
+- To calibrate: legal-validity questions in CRM enquiries (legal fear).
+- To calibrate: weather and accessibility questions in CRM enquiries (weather fear).

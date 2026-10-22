@@ -5,10 +5,11 @@ most CMSs (including WordPress with Yoast or RankMath) ticking a category does
 not make it primary; the primary is set separately with "Make primary". The
 upload prompt sets it explicitly and checks the breadcrumb.
 
-## Working category list (TO CONFIRM against the CMS)
+## Category list (only Destination Weddings is confirmed; the rest are TO CONFIRM against the CMS)
 
 | Category | Use as primary when |
 |---|---|
+| **Destination Weddings** (CONFIRMED, URL base `/destination-weddings/`) | Destination wedding guides: planning, planners, legal and logistics for marrying abroad |
 | Italy Weddings | The article is mainly about Italy or an Italian region or venue |
 | Greece Weddings | Mainly Greece |
 | Bali and Indonesia Weddings | Mainly Bali or Indonesia |

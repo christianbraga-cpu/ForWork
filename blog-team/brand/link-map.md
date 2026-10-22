@@ -150,6 +150,7 @@ Real weddings in Tuscany (use as inspiration links, never as our own client stor
 
 | URL | Title | Owns |
 |---|---|---|
+| `/how-to-choose-the-right-destination-wedding-planner` | How to choose the right destination wedding planner (title TO CONFIRM) | choose destination wedding planner (CANNIBALISATION CHECK for planner posts) |
 | `/how-to-plan-a-destination-wedding` | How to Plan a Destination Wedding: The Complete Guide | how to plan a destination wedding |
 | `/expert-advice/do-you-need-a-wedding-welcome-party` | Do You Need a Wedding Welcome Party? | wedding welcome party |
 | `/expert-advice/when-to-send-wedding-invitations` | When to Send Wedding Invitations | when to send wedding invitations |
@@ -192,6 +193,11 @@ Link when the topic matches:
 | Fiji magazine | Link `/destinations/oceania/fiji` instead |
 | Get Wedded in Australia pre-register page | Still says "Coming This Spring"; check it is current before linking |
 | `/concierge`, `/marketplace`, `/privileges`, `/destinations/italy`, `/packages`, `/packages/italy`, `/packages/italy/tuscany`, `/packages/italy/tuscany/*` | **NOT LIVE.** Draft site structure from the Cappuccina page build; do not link until launched |
+
+## URL patterns for new articles
+
+- Destination Weddings category: `/destination-weddings/<slug>` (confirmed by Zoho task WC3-T304).
+- Other categories: TO CONFIRM.
 
 ## Blog articles written by this team
 

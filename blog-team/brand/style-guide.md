@@ -14,7 +14,7 @@ ICP readers never see it.
 | Honest about trade-offs (heat in August, transfer times) | Promising perfection |
 
 **Benchmark:** would Condé Nast Traveller run it, and would a parent paying
-AUD 200K trust us after reading it?
+AUD 150K or more trust us after reading it?
 
 ## Structure of every article
 
@@ -46,11 +46,15 @@ it's no secret, embark, journey (for planning), delve, tapestry, testament.
 - **No em dashes.** Use a comma, colon, full stop or parentheses.
 - Australian spelling. Numbers: words for one to nine, digits from 10; always
   digits for guest counts, prices, distances and times.
-- Prices: "From AUD 38,550". Never "$" alone. Never a price without "From".
+- Prices: never "$" alone. Give the currency (EUR 8,000, AUD 13,500), the
+  source and the date. For Australian readers, add an AUD approximation to
+  foreign-currency figures with the conversion date. No Concierge prices
+  until Nic confirms them (see brand-profile).
 - Distances in km. Temperatures in °C.
 - Dates: 12 May 2027. Seasons named by month, since hemispheres differ.
-- Brand names exactly: Wedded Wonderland, Wedded Concierge, Wedded Advisor,
-  Wedded Marketplace, Wedded Privileges.
+- Brand names exactly: Wedded Wonderland, Wedded Wonderland Concierge (first
+  mention; then "your concierge" or "a Wedded Wonderland advisor"), Wonderland
+  Studio, Wonderland Benefits, Wedded World.
 - Headings in sentence case.
 
 ## Writing for two readers

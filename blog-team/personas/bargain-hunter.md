@@ -20,8 +20,8 @@ many providers, compares on price only.
 - Promises that it can be done for less.
 
 **How to judge the article from her point of view.** React honestly. If the
-piece talks about fees agreed in writing, advisors, exclusivity and "From AUD
-35,000+" pricing, you will probably decide it is not for you. That is the
+piece talks about paid concierge advice, vetted planners, exclusivity and
+AUD 150K+ weddings, you will probably decide it is not for you. That is the
 desired outcome.
 
 **Scoring note for the orchestrator.** A `would_enquire` score of 4 or 5 from

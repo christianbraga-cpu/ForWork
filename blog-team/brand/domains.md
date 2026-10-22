@@ -19,8 +19,10 @@ paid or affiliate links.
 
 ## Blocked (never link)
 
-- **Competing planners and wedding marketplaces:** easyweddings.com.au,
-  easyweddings.com, and any destination wedding planner or agency.
+- **Competing marketplaces and agencies:** easyweddings.com.au,
+  easyweddings.com, and any destination wedding agency or marketplace.
+- **Wedding planners' own websites:** planners are partners, but link them
+  only through their profile on our site (`/vendor/<slug>`), never their own site.
 - **Lead-selling directories:** sites that sell enquiries to venues or vendors
   (e.g. hitched, weddingwire, theknot, zola, bridebook listings).
 - **Content farms, AI-spun listicles, and pages ranking for our own keywords.**

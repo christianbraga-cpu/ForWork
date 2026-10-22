@@ -1,46 +1,56 @@
 ---
 id: couple
-role: primary for awareness and consideration pieces
-evidence_status: DRAFT, to calibrate against Zoho CRM enquiries and won deals
+role: primary for awareness and consideration pieces; the core ICP
+evidence_status: DRAFT from the marketing team's ICP definition (Oct 2026); calibrate against Zoho CRM enquiries and won deals
 ---
 
-# The Couple: Mia and James
+# The Couple: Sophie and Marcus
 
-**Snapshot.** Mia (33, marketing director) and James (35, engineer), Sydney.
-Engaged 4 months. Want to marry in Europe in 12 to 18 months, 60 to 100
-guests, budget roughly AUD 120K to 180K, partly helped by parents. Well
-travelled; have been to Italy twice as tourists.
+**Snapshot.** Sophie (34, senior lawyer) and Marcus (36, works in finance),
+Sydney (Paddington). Engaged 5 months. Want to marry in Italy in 12 to 18
+months with 70 to 110 guests. Budget AUD 150K to 250K, mostly their own money
+with some help from family. Well travelled: Europe most years, have stayed at
+luxury hotels in Italy, but have never organised anything there. This is the
+marketing team's stated ICP: affluent Australian couples in their late 20s to
+30s (mostly 30s), AUD 150K+, planning a destination wedding in Italy and
+needing a planner to help.
 
 **Goals**
-- A wedding that feels like *them*, not a template.
-- Guests to have a holiday, not just attend an event.
-- To understand quickly which destination and season suits them.
-- To keep their own jobs going while planning.
+- A wedding that feels like *them* and looks considered, not like a package.
+- Guests to have a great few days in Italy, not just attend a ceremony.
+- To find the right planner quickly and know they can trust them.
+- To keep demanding careers going while planning, with minimal admin.
 
 **Fears**
-1. Planning from the other side of the world, in the wrong time zone, with no one on the ground.
-2. Choosing a place that looks good online but disappoints (crowds, heat, a venue that feels like a factory).
-3. Guests not coming because it is too hard or too expensive to get there.
-4. Hidden costs and currency swings blowing the budget.
+1. Hiring the wrong planner in Italy: someone who looks polished on Instagram
+   but is unreliable, overstretched, or takes kickbacks from suppliers.
+2. Planning from the other side of the world: time zones, slow replies, no one
+   they know on the ground.
+3. Spending a lot and still getting something generic, or being treated as
+   "rich foreigners" and overcharged.
+4. Losing control of the budget across currencies, deposits and contracts in Italian.
 
-**Knowledge level.** Knows destinations as tourists. Does not know what a
-symbolic ceremony is, how room blocks work, or what paperwork is needed.
+**Knowledge level.** Knows Italy as a traveller. Does not know how Italian
+planners charge (flat fee vs percentage), what "full planning" vs
+"coordination" includes, or how to check a planner's references.
 
-**Trust signals.** Specific detail (names, months, distances), honest
-trade-offs, real examples, a clear "what happens next", one named person
-they would deal with.
+**Trust signals.** Specific, practical criteria; honest trade-offs; named
+people; evidence of real experience in Italy; clear next steps; respect for
+their intelligence.
 
-**Turn-offs.** Clichés ("dream wedding", "magical"), generic stock photos,
-listicles that could be about anywhere, pushy CTAs, no sense of who is behind
-the brand.
+**Turn-offs.** Clichés ("dream wedding", "magical"), generic listicles, stock
+photos, pushy sales language, anything that feels like a lead-gen funnel,
+advice that clearly was not written for Australians.
 
-**Reading behaviour.** Reads on phone at night, skims headings first, saves to
-Pinterest or sends to partner. Comes back on desktop if it is worth it.
+**Reading behaviour.** Reads on phone at night, saves to read properly on the
+weekend, sends to partner with "thoughts?". Skims headings first.
 
-**Would enquire when.** They can picture their wedding in the place, their top
-2 fears are answered, and the next step feels low-pressure.
+**Would enquire when.** They feel more confident choosing a planner than before
+reading, their top 2 fears are answered, and the next step is low-pressure
+(a free call, not a hard sell).
 
-**Evidence behind traits** (replace with CRM evidence when available)
-- Brand pages: "Planning from Australia? Your Wedded Advisor works in your time zone" (time-zone fear).
-- Brand pages: "Quotes and payments in AUD... no currency surprise" (currency fear).
-- Planning-team knowledge to collect: typical lead time, guest count and budget bands.
+**Evidence behind traits**
+- ICP definition from the marketing team, 22 Oct 2026 (age, budget, Australian, Italy, needs a planner).
+- `/wonderland-concierge` lists the questions couples ask: "Do we need a wedding planner?", "Who can we trust?", "How do we avoid making expensive mistakes?"
+- `/plan-your-destination-wedding` names time zones, vendor vetting and exchange-rate risk as the problems destination couples hit.
+- To calibrate from Zoho CRM: real budget bands, lead times and lost-deal reasons.
