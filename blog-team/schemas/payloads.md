@@ -60,7 +60,9 @@ article folder under the file name shown.
   "must_include": [], "must_avoid": [],
   "word_count": [1600, 2200],
   "cta": { "primary": "<cta id>", "soft": "<line or null>" },
-  "internal_links_planned": [{ "url": "...", "role": "hub|service|related|package" }],
+  "internal_links_planned": [{ "url": "...", "role": "service|destination|event|related|tool|venue" }],
+  "cannibalisation_risk": [{ "url": "...", "owns": "...", "overlap": "none|partial|total" }],
+  "differentiation": "...",
   "categories": ["<primary>", "<secondary>"], "tags": [],
   "image_count": 6
 }

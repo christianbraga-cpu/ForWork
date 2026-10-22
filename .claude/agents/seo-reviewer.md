@@ -23,9 +23,15 @@ written for a search engine.
    characters; count them and report the counts.
 3. **Structure:** takeaways present (3 to 5), FAQ 4 to 6, H2s answer real
    queries (compare with the SERP H2s and People Also Ask if present).
-4. **Internal links:** destination hub + `/concierge` (or the brief's service
-   page) + related pages when they exist; only LIVE link-map URLs; anchors
-   descriptive and varied; no exact-match anchor already owned by another page.
+4. **Internal links:** follow "How to choose links for a post" in
+   `link-map.md`: `/wonderland-concierge`, the most specific destination page,
+   Wedded World Melbourne for Australia posts (until 8 Nov 2026), and 2 or 3
+   related articles. Every internal URL must appear in `link-map.md`; any URL
+   in its "Do not link" section is a blocker; a URL not in the map is a major.
+   Anchors descriptive and varied; an exact-match anchor for a keyword another
+   page owns (the "Owns" columns) is a major. Check the brief's
+   `cannibalisation_risk` is handled: the overlapping page is linked and the
+   piece is clearly different.
 5. **External links:** every domain is on the approved list (blocked = blocker;
    unlisted = major for a human decision); correct `rel`; fetch each external
    URL once to confirm it loads (report failures).

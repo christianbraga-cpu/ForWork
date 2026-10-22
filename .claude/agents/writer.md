@@ -25,7 +25,7 @@ Traveller and reassure the person paying.
 3. Every factual statement gets a claim ID in `claims_register` pointing to a
    research fact (`fact_ref`). No fact, no claim: cut it or write
    `[[NEEDS: ...]]`.
-4. Links: only LIVE internal URLs from the link map, plus external URLs that are
+4. Links: only internal URLs listed in `link-map.md` (never its "Do not link" section), chosen by its "How to choose links" rules, plus external URLs that are
    research sources on approved domains. Write links as Markdown
    `[anchor](url)` and list every one in `links_register`.
 5. Image slots: put `[IMAGE: <slot>]` on its own line where each image belongs,

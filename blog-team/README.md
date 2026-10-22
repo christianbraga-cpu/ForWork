@@ -59,7 +59,7 @@ to built-in web search and fetch:
 | `brand/brand-profile.md` | Facts, offers, proof points, house rules |
 | `brand/style-guide.md` | Voice and banned phrases |
 | `brand/cta-library.md` | Approved CTAs |
-| `brand/link-map.md` | Internal links; mark pages LIVE when published |
+| `brand/link-map.md` | Internal link targets (from the marketing team's WW Internal Link Targets list plus Firecrawl); add new posts and pages |
 | `brand/domains.md` | Approved and blocked outbound domains |
 | `brand/categories.md` | Your real CMS categories |
 | `personas/*.md` | Ideal-client readers; calibrate from Zoho CRM |
@@ -69,7 +69,6 @@ to built-in web search and fetch:
 - [ ] Your CMS, its admin URL and real category list (`categories.md`)
 - [ ] Blog URL pattern (assumed `/blog/<slug>`) and named authors
 - [ ] Whether Key Takeaways and CTA reusable blocks exist in the CMS
-- [ ] Destination hub URLs beyond Italy (`link-map.md`, TO CONFIRM rows)
 - [ ] Persona calibration from Zoho CRM enquiries, won deals and lost-deal reasons
 - [ ] Image library location (Google Drive folder) for the photo curator
 

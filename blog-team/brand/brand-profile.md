@@ -17,10 +17,10 @@ Anything marked TO CONFIRM must not be stated as fact in an article.
 
 | Offer | What it is | When to point readers to it |
 |---|---|---|
-| **Wedded Concierge** (`/concierge`) | End-to-end planning. One Wedded Advisor from first idea to last dance. | Default CTA for luxury, complex or multi-day weddings, and any reader who wants it handled. |
-| **Wedded Marketplace** (`/marketplace`) | Browse venues and vendor profiles, contact professionals directly. | Readers who want to plan themselves. Secondary option only. |
-| **Packages** (`/packages/...`) | Venue packages with "From AUD" prices. | When the article names a venue or region we have packages for. |
-| **Wedded Privileges** (`/privileges`) | Benefits on every room booked through us, via invitation-only hotel programs. | Accommodation and guest-stay content. |
+| **Wedded Concierge** (page: Wonderland Concierge, `/wonderland-concierge`) | End-to-end planning. One Wedded Advisor from first idea to last dance. | Default CTA for luxury, complex or multi-day weddings, and any reader who wants it handled. |
+| **Wedded Marketplace** (`/vendor`, `/venue`, `/cities`) | Browse venues and vendor profiles, contact professionals directly. | Readers who want to plan themselves. Secondary option only. |
+| **Packages** (`/destination-wedding-packages`, `/destination-packages`, `/destination-honeymoon-packages`) | All-inclusive and combined packages. The `/packages/<country>/<region>/<venue>` pages with "From AUD" prices are a draft structure, NOT LIVE. | Package and budget-structure posts. |
+| **Wedded Privileges** (described on `/travel`) | Benefits on every room booked through us, via invitation-only hotel programs. | Accommodation and guest-stay content. |
 
 ## Proof points we can state (true on our live pages)
 
@@ -69,3 +69,13 @@ paying, who wants to know it is safe. Full style rules are in `style-guide.md`.
 - Blog URL pattern (assumed `/blog/<slug>`).
 - Named authors who may appear on bylines.
 - Whether a Key Takeaways block and a CTA block already exist in the CMS.
+- Service naming: the page is titled "Wonderland Concierge" while site copy says
+  "Wedded Concierge" and "Wedded Advisor". Articles use the copy names and link
+  `/wonderland-concierge` until marketing confirms.
+
+## Also on the site (link where relevant, see link-map.md)
+
+- **Wedded World Melbourne:** luxury wedding showcase, 1 Hotel Melbourne, 7 and 8 November 2026.
+- **Wonderland Studio:** free wedding website and planning tools, with culture-specific templates.
+- **Destination Wedding Guide 2026** (free download) and the **Destination Wedding Quiz**.
+- **Founder:** Wendy El-Khoury.

@@ -48,6 +48,18 @@ signals, gaps, image count and style, schema types, updated date.
 Competitor pages are **read for structure and gaps only**. Never copy text.
 Images seen there go in `reference_only_images` and are never proposed for use.
 
+### 3b. Check our own site (cannibalisation and related pages)
+Run Firecrawl `firecrawl_map` on `https://weddedwonderland.com` with
+`search` set to the topic (e.g. "tuscany villa wedding") and `limit` 40. Then:
+- List the related pages that should be linked; add any useful new ones to the
+  brief's `internal_links_planned` and note them for `link-map.md`.
+- **Flag cannibalisation:** if an existing page's title already targets the
+  primary keyword or a close variant, record it in the brief as
+  `cannibalisation_risk` with the URL, and set `differentiation`: how this
+  piece is different (intent, audience, angle) and that it links to the
+  existing page. If the overlap is total, say so and recommend updating the
+  existing page instead of writing a new one.
+
 ### 4. Compare and decide
 Write `cross_market_insights` (what differs by market, what nobody covers) and
 choose an angle that wins at least one real gap while showing what end-to-end
