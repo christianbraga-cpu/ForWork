@@ -21,3 +21,5 @@
 06:04 08b editor pass_with_edits (4.29); orchestrator applied 2 required edits (accessibility wording, Dependance boardroom)
 06:06 13 orchestrator rebuilt package (10 villas), run report updated, Word file made. RUN COMPLETE (10 villas)
 06:26 08r5 re-tagged under new marker policy: 19 -> 9 VERIFY; booking-checklist.md written
+06:27 11 cms-publisher rebuilt package + report for round 5 (9 VERIFY), not uploaded, validates clean
+06:27 11 package, run report and Word file rebuilt after re-tag (9 VERIFY)

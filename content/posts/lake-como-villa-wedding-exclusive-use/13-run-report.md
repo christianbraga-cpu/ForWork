@@ -24,26 +24,19 @@
 | G8 CMS | Not run | | No browser connection; run /wedded-cms-discovery locally first |
 
 ## Before you publish: human checks
-### [[VERIFY]] items (19)
-- minimum nights, check-in and check-out times, and set-up and breakdown windows for each villa
-- curfew times and outdoor music rules for each villa on the couple's dates
-- in-house or approved-supplier rules for the remaining villas
-- Nic sign-off on the Nulla Osta fee before publishing
-- Villa Balbiano: total guests sleeping on site and whether other buildings add rooms; seated and standing capacity; minimum nights; music curfew; civil or symbolic ceremony on site; indoor space for dinner and ceremony
-- Villa Sola Cabiati, with Grand Hotel Tremezzo: wedding terms; seated and standing capacity; minimum nights; music curfew; civil or symbolic ceremony on site; whether the indoor rooms serve as the rain plan, and for how many
-- Villa La Felice: confirm in writing that "no curfew" holds under Pianello del Lario municipal noise rules for amplified music; minimum nights for a wedding booking; whether there is a private dock for boat arrivals or only a lakeside gate; street address, comune and drive time from Menaggio; maximum wedding guest numbers (12 sleeping, 30 ceremony, 14 dining) and the Celebration Weekend package guest count
-- Relais Villa Vittoria: western-shore placement from an official source; room count and beds; standing capacity; minimum nights; music curfew
-- Villino Rubini: whether a civil (legally binding) ceremony can be held on site or only a symbolic garden ceremony; music curfew; standing capacity; whether the tent for about 100 guests is included or hired separately; coach access up the Brunate road for a wedding guest shuttle
-- Villa Pliniana: current room count and guest capacity with Sereno Hotels; minimum nights; music curfew; civil or symbolic ceremony on site; indoor ceremony option
-- Villa Làrio: eastern-shore placement; room count and guests sleeping on site; seated and standing capacity; minimum nights; music curfew; indoor capacity for dinner and ceremony
-- Villa Aura del Lago: whether the whole estate is exclusive during a wedding; standing capacity and marquee size; music curfew; whether a legal ceremony is possible on site; indoor ceremony option
-- Villa Cipressi: room count; seated and standing capacity; exclusive-use minimum nights; music curfew and live music rules; current civil-ceremony status and whether non-residents can marry here; indoor capacity
-- Villa Lario Resort: standing capacity; minimum nights; music curfew; indoor ceremony option
+### [[VERIFY]] items (9, re-tagged under the new policy on 2026-10-22)
+- Nic sign-off on the Nulla Osta AUD 80 fee
+- Villa Sola Cabiati wedding terms, not on its own pages
+- Villa La Felice "no curfew" against local noise rules; comune, Pianello del Lario or near Menaggio
+- Relais Villa Vittoria western-shore placement
+- Villa Pliniana room count, 17 or 18 bedrooms, 34 to about 40 guests
+- Villa Làrio eastern-shore placement
+- Villa Aura del Lago whole estate exclusive during a wedding
+- Villa Cipressi civil-ceremony status, from a 2024 page
 - Villa d'Este wedding buyout terms
-- whether a legally binding civil ceremony can be held at Balbianello
-- coach transfer times from Malpensa, Linate and Bergamo to each villa for the wedding date
-- step-free access, lifts and accessible rooms at each shortlisted villa
-- hotel-to-villa transfer times for each room-block town
+
+### Booking checklist (not publishing blockers)
+- Unpublished house rules per villa: see `booking-checklist.md`
 
 ### Prices needing Nic's sign-off
 - Nulla Osta fee: "the euro equivalent of AUD 80 per Australian citizen" (Australian Embassy Rome, as at October 2026). No venue prices are printed.
