@@ -1,20 +1,20 @@
 ---
-title: 8 Lake Como Villas You Can Book for an Exclusive-Use Wedding
+title: 10 Lake Como Villas You Can Book for an Exclusive-Use Wedding
 slug: lake-como-villa-wedding-exclusive-use
 primary_keyword: lake como villa wedding exclusive use
-round: 3
+round: 4
 ---
 
 <!-- IMAGE SLOT featured: Official exterior of one of the villas confirmed in this post (planner-sme list), photographed from the water or a high garden terrace: villa facade, lawn or terrace and its own lakefront/dock in one frame, mountains behind. Late spring to early autumn (May to September), golden-hour or soft morning light, calm water. No people, or only distant unidentifiable figures; no other hotels or public lidos in frame. Landscape 3:2, room for a title crop. Location must be proven by the villa's own media kit or register, not appearance. -->
 
 For a Lake Como villa wedding, exclusive use means the whole property is yours: house, gardens, dock and bedrooms, closed to everyone but your guests. Not every famous name on the lake offers it. Some are hotels that host weddings in their function rooms; some are heritage gardens with no bedrooms.
 
-This guide covers eight villas whose owners or operators confirm exclusive use on their own websites, with the same checks for each: who sleeps on site, how many you can seat, and the house rules to confirm. For the wider picture, see [our Lake Como wedding collection](/destinations/europe/italy/lake-como-wedding).
+This guide covers ten villas whose owners or operators confirm exclusive use on their own websites, with the same checks for each: who sleeps on site, how many you can seat, and the house rules to confirm. For the wider picture, see [our Lake Como wedding collection](/destinations/europe/italy/lake-como-wedding).
 
 ## Key takeaways
 
-- Eight villas on our shortlist could be confirmed as bookable for exclusive use from their own official sources. Several are boutique hotels that offer a whole-property option rather than private homes. None publishes an exclusive-use fee, so start with [what a Lake Como wedding costs](/expert-advice/how-much-does-a-lake-como-wedding-cost).
-- Beds, not dinner seats, are the limit. Where they publish figures, these villas seat about 70 to 200 for dinner but sleep 12 to about 40, so most Australian guest lists need a nearby room block as well.
+- Ten villas on our shortlist could be confirmed as bookable for exclusive use from their own official sources. Several are boutique hotels that offer a whole-property option rather than private homes. None publishes an exclusive-use fee, so start with [what a Lake Como wedding costs](/expert-advice/how-much-does-a-lake-como-wedding-cost).
+- Beds, not dinner seats, are the limit. Where they publish figures, these villas seat from 14 (Villa La Felice) to 200 for dinner but sleep 12 to about 40, so most Australian guest lists need a nearby room block as well.
 - A legal civil ceremony on site is the exception: Villa Làrio and Relais Villa Vittoria state it, Varenna's tourism site lists Villa Cipressi (on a 2024 page), and Villa Lario Resort offers a symbolic ceremony.
 - Australians marrying in Italy need a Nulla Osta, sworn in person at the Australian Embassy in Rome or the Consulate-General in Milan. A Certificate of No Impediment is not accepted.
 - Minimum nights, music curfews and standing capacity are rarely published. Get them in writing for your dates before you commit.
@@ -33,11 +33,11 @@ Every villa on this list has bedrooms on site, but fewer than most couples expec
 
 ### Minimum nights, check-in and set-up windows
 
-Of the eight villas, only Villa Aura del Lago publishes a minimum stay for weddings: three nights. <!-- fact_43 --> Build the weekend around it: welcome evening, wedding, farewell lunch. The others do not publish a minimum stay or set-up windows. [[VERIFY: minimum nights, check-in and check-out times, and set-up and breakdown windows for each villa]]
+Of the ten villas, only two publish a minimum stay, both three nights: Villa Aura del Lago for weddings, and Villino Rubini for exclusive hire all year. <!-- fact_43 --> <!-- fact_63 --> Villa La Felice's Intimate Wedding package is three nights, though the villa does not state it as a minimum. <!-- fact_68 --> Build the weekend around three nights: welcome evening, wedding, farewell lunch. The others do not publish a minimum stay or set-up windows. [[VERIFY: minimum nights, check-in and check-out times, and set-up and breakdown windows for each villa]]
 
 ### Music curfew and where the party goes after
 
-None of the official pages we checked publishes a music curfew time. [[VERIFY: curfew times and outdoor music rules for each villa on the couple's dates]] At Relais Villa Vittoria, the rock-cut wine cellar, La Barrique, becomes a private disco only when you hire the entire villa. <!-- fact_48 -->
+Only Villa La Felice addresses it: its weddings page says there is no curfew. <!-- fact_69 --> None of the others publishes a curfew time. [[VERIFY: curfew times and outdoor music rules for each villa on the couple's dates]] At Relais Villa Vittoria, the rock-cut wine cellar, La Barrique, becomes a private disco only when you hire the entire villa. <!-- fact_48 -->
 
 ### In-house caterers or an approved supplier list
 
@@ -51,15 +51,15 @@ For Australians, as at October 2026, the Australian Embassy in Rome says two doc
 
 The Embassy lists the fee as the euro equivalent of AUD 80 per Australian citizen, valid for six months, subject to change. <!-- fact_05 --> [[VERIFY: Nic sign-off on the Nulla Osta fee before publishing]] Between May and September, appointments with the celebrant and for the Apostille can be hard to get. <!-- fact_06 --> Your Wedded Advisor confirms current requirements. Read [how a legal ceremony works at Lake Como](/expert-advice/how-do-you-get-a-lake-como-wedding) and [the legal steps for marrying in Italy](/expert-advice/getting-married-in-italy-the-complete-legal-guide-for-destination-couples), along with [Smartraveller's advice on getting married overseas](https://www.smartraveller.gov.au/planning-trip/advice-your-planned-activities/getting-married-overseas).
 
-## 8 Lake Como villas you can book for exclusive use, by shore
+## 10 Lake Como villas you can book for exclusive use, by shore
 
-The list runs by shore, not by rank: the western shore first, then three villas on the Como branch (Laglio on its western side, Torno and Pognana Lario on its eastern side), then Bellagio and the eastern shore.
+The list runs by shore, not by rank: the western shore first, then four villas on the Como branch (Laglio on its western side, Villino Rubini on the hill above Como at Brunate, Torno and Pognana Lario on its eastern side), then Bellagio and the eastern shore.
 
 Two names to keep apart: Villa Làrio and Villa Lario Resort in Mandello del Lario are different properties with different rules. <!-- fact_33 --> Tell your Wedded Advisor which one you mean so quotes are not mixed up. Where a villa does not publish a detail, its entry says so in one line, and your Wedded Advisor confirms those details in writing.
 
 ### Villa Balbiano, Ossuccio (western shore)
 
-<!-- IMAGE SLOT villa-01: Official exterior or lakeside terrace of the villa named in H3 #1 (planner-sme list), ideally shot from the lake so the shore position and private dock (if any) are visible; otherwise the main terrace or garden where ceremonies or dinners are held. Daylight or golden hour, May to September, no identifiable guests. Source: the villa's own media kit/press office, or our own venue page if the supply agreement covers blog use. Never a competitor, planner or photographer blog image without written permission. -->
+<!-- IMAGE SLOT villa-01: Official exterior or lakeside terrace of Villa Balbiano, ideally shot from the lake so the shore position and private dock (if any) are visible; otherwise the main terrace or garden where ceremonies or dinners are held. Daylight or golden hour, May to September, no identifiable guests. Source: the villa's own media kit/press office, or our own venue page if the supply agreement covers blog use. Never a competitor, planner or photographer blog image without written permission. -->
 
 The owner, The Heritage Collection, lists [Villa Balbiano](https://theheritage-collection.com/villa-balbiano/) for private rental and offers it for events including destination weddings. <!-- fact_18 --> See our [Villa Balbiano](/venue/villa-balbiano) profile.
 
@@ -72,7 +72,7 @@ The grounds run to more than 2 hectares, with a garden and an outdoor pool. <!--
 
 ### Villa Sola Cabiati, Tremezzo (western shore)
 
-<!-- IMAGE SLOT villa-02: Official exterior or lakeside terrace of the villa named in H3 #2 (planner-sme list), ideally shot from the lake so the shore position and private dock (if any) are visible; otherwise the main terrace or garden where ceremonies or dinners are held. Daylight or golden hour, May to September, no identifiable guests. Source: the villa's own media kit/press office, or our own venue page if the supply agreement covers blog use. Never a competitor, planner or photographer blog image without written permission. -->
+<!-- IMAGE SLOT villa-02: Official exterior or lakeside terrace of Villa Sola Cabiati, ideally shot from the lake so the shore position and private dock (if any) are visible; otherwise the main terrace or garden where ceremonies or dinners are held. Daylight or golden hour, May to September, no identifiable guests. Source: the villa's own media kit/press office, or our own venue page if the supply agreement covers blog use. Never a competitor, planner or photographer blog image without written permission. -->
 
 Grand Hotel Tremezzo, which runs the villa, says it can be booked in exclusivity with its own private staff: butler, housekeepers, chambermaid and private chef. <!-- fact_22 --> A borderline entry: the hotel's villa pages do not mention weddings, although sister hotel Passalacqua says the villa suits events large and small. <!-- fact_23 -->
 
@@ -84,9 +84,27 @@ Grand Hotel Tremezzo, which runs the villa, says it can be booked in exclusivity
 
 The arabesque gardens in front of the villa are used for candlelit dinners, and there is a private pool in the park behind. <!-- fact_25 -->
 
+### Villa La Felice, Pianello del Lario (western shore)
+
+<!-- IMAGE SLOT villa-09: Official exterior or lakefront garden of Villa La Felice, Pianello del Lario (the third H3 in the list), ideally shot from the lake so the shore position and the garden running down to its private waterfront gate are visible; otherwise the Lakefront Garden set for a small ceremony or the glass-walled Conservatory laid for one long table. Daylight or golden hour, May to September, no identifiable guests. Source: the villa's own media kit/press office, or our own venue page if the supply agreement covers blog use. Never a competitor, planner or photographer blog image without written permission. -->
+
+A six-bedroom villa on the upper western shore, with gardens that fall to the water, made for small weddings. <!-- fact_66 --> The villa says every booking is exclusive hire, with nobody else on the property, and its wedding offer covers the entire villa and grounds for the weekend. <!-- fact_67 -->
+
+- **Where it is:** Pianello del Lario, on the upper western shore; the villa's own pages also describe it as near Menaggio. <!-- fact_66 -->
+- **Sleeps on site:** Up to 12, in six en-suite bedrooms. <!-- fact_68 -->
+- **Event capacity:** The Lakefront Garden seats about 30 for a ceremony, and the glass-walled Conservatory seats 14 at one long table. <!-- fact_69 --> Wedding packages run from an elopement for 2 to 4 guests to an intimate wedding for up to 12. <!-- fact_68 -->
+- **Minimum nights:** Not stated as a rule. The Intimate Wedding package is three nights of exclusive hire, and the villa says most couples book three. <!-- fact_68 -->
+- **Music:** There is no curfew, in the villa's own words on its weddings page. <!-- fact_69 -->
+- **Ceremony:** Symbolic, in the Lakefront Garden or, for very small groups, on the Upper Terrace. The villa notes that a civil ceremony must take place at the town hall. <!-- fact_69 -->
+- **Dock and boats:** Direct lake access through a private gate to the waterfront; the site does not mention a private dock. <!-- fact_69 -->
+- **Wet weather:** The Conservatory, the villa's stated option for autumn or winter ceremonies and for the wedding dinner, seating 14. <!-- fact_69 -->
+- **Not published:** street address, a private dock, minimum nights as a rule, and whether the curfew position meets local noise rules. [[VERIFY: Villa La Felice: confirm in writing that "no curfew" holds under Pianello del Lario municipal noise rules for amplified music; minimum nights for a wedding booking; whether there is a private dock for boat arrivals or only a lakeside gate; street address, comune and drive time from Menaggio; maximum wedding guest numbers (12 sleeping, 30 ceremony, 14 dining) and the Celebration Weekend package guest count]]
+
+A private chef, a dedicated wedding coordinator and guest concierge come with the wedding offer. <!-- fact_68 --> This is a villa for a wedding of 12, not 120.
+
 ### Relais Villa Vittoria, Laglio (Como branch, western shore)
 
-<!-- IMAGE SLOT villa-03: Official exterior or lakeside terrace of the villa named in H3 #3 (planner-sme list), ideally shot from the lake so the shore position and private dock (if any) are visible; otherwise the main terrace or garden where ceremonies or dinners are held. Daylight or golden hour, May to September, no identifiable guests. Source: the villa's own media kit/press office, or our own venue page if the supply agreement covers blog use. Never a competitor, planner or photographer blog image without written permission. -->
+<!-- IMAGE SLOT villa-03: Official exterior or lakeside terrace of Relais Villa Vittoria, ideally shot from the lake so the shore position and private dock (if any) are visible; otherwise the main terrace or garden where ceremonies or dinners are held. Daylight or golden hour, May to September, no identifiable guests. Source: the villa's own media kit/press office, or our own venue page if the supply agreement covers blog use. Never a competitor, planner or photographer blog image without written permission. -->
 
 A 19th-century villa run as a boutique hotel. <!-- fact_49 --> Weddings of up to 30 can be held without taking the whole property; above 30, exclusive use of the villa and every room is required. <!-- fact_45 -->
 
@@ -101,9 +119,26 @@ A 19th-century villa run as a boutique hotel. <!-- fact_49 --> Weddings of up to
 
 Without whole-villa hire, the lakeside gardens are kept for hotel guests until 7pm. <!-- fact_47 -->
 
+### Villino Rubini, Brunate (Como branch, on the hill above Como)
+
+<!-- IMAGE SLOT villa-10: Official exterior or garden of Villino Rubini, Brunate (the fifth H3 in the list): the 1892 Art Nouveau villa with its gardens and the view down over Como and the lake, since the estate sits on the hill above Como, not on the shore (no dock, so no boat shot). Alternatively the gardens set for a tented dinner or a small garden ceremony. Daylight or golden hour, May to September, no identifiable guests. Source: the villa's own media kit/press office, or our own venue page if the supply agreement covers blog use. Never a competitor, planner or photographer blog image without written permission. -->
+
+An Art Nouveau estate of about 4 acres, built in 1892, on the hill above Como town rather than on the shore. <!-- fact_61 --> Its own pages say the estate goes to one group at a time: take it for your wedding and the whole property is yours, with your guests staying on site. <!-- fact_62 -->
+
+- **Where it is:** Via Giacomo Scalini, Brunate, above Como at the south-western end of the lake. Not lakeside. <!-- fact_61 --> About 15 minutes by road from Como; the funicular from the Como lakeside up to Brunate takes 7 minutes. <!-- fact_65 -->
+- **Sleeps on site:** 19, in ten rooms across three buildings: five in the Villa, three in the Dependance and two Orangerie garden rooms by the pool. <!-- fact_63 -->
+- **Event capacity:** About 100 seated for dinner, outdoors under a tent in the gardens. <!-- fact_64 -->
+- **Minimum nights:** Three nights for exclusive hire, all year. <!-- fact_63 -->
+- **Ceremony:** Small garden ceremonies. The site does not say whether a civil ceremony can be held on site. <!-- fact_64 -->
+- **Dock and boats:** None. The estate is on the hill, so guests arrive by road. <!-- fact_61 --> The house arranges group transfers as an extra and asks you to check coach access with it. <!-- fact_65 -->
+- **Wet weather:** There is no indoor room for the full dinner. The villa calls the tented dinner for about 100 a format for the warmer months; indoors, the dining room seats 12 and the Dependance 20. <!-- fact_64 --> Choose a date in the warmer months and agree what happens if the weather turns.
+- **Not published:** civil ceremony, curfew, standing capacity, tent terms, coach access. [[VERIFY: Villino Rubini: whether a civil (legally binding) ceremony can be held on site or only a symbolic garden ceremony; music curfew; standing capacity; whether the tent for about 100 guests is included or hired separately; coach access up the Brunate road for a wedding guest shuttle]]
+
+Exclusive hire includes housekeeping, Italian breakfast, full staff support and private parking, with private chef dinners on request. <!-- fact_63 --> The estate closes for winter, although winter exclusive-hire requests are considered. <!-- fact_61 -->
+
 ### Villa Pliniana, Torno (Como branch, eastern shore)
 
-<!-- IMAGE SLOT villa-04: Official exterior or lakeside terrace of the villa named in H3 #4 (planner-sme list), ideally shot from the lake so the shore position and private dock (if any) are visible; otherwise the main terrace or garden where ceremonies or dinners are held. Daylight or golden hour, May to September, no identifiable guests. Source: the villa's own media kit/press office, or our own venue page if the supply agreement covers blog use. Never a competitor, planner or photographer blog image without written permission. -->
+<!-- IMAGE SLOT villa-04: Official exterior or lakeside terrace of Villa Pliniana, ideally shot from the lake so the shore position and private dock (if any) are visible; otherwise the main terrace or garden where ceremonies or dinners are held. Daylight or golden hour, May to September, no identifiable guests. Source: the villa's own media kit/press office, or our own venue page if the supply agreement covers blog use. Never a competitor, planner or photographer blog image without written permission. -->
 
 Sereno Hotels describes the estate as ideal for exclusive use for weddings, with a full staff looking after the whole stay from set-up to clean-up. <!-- fact_26 -->
 
@@ -118,7 +153,7 @@ Sereno recommends arriving by private boat and mentions helicopter transfers fro
 
 ### Villa Làrio, Pognana Lario (Como branch, eastern shore)
 
-<!-- IMAGE SLOT villa-05: Official exterior or lakeside terrace of the villa named in H3 #5 (planner-sme list), ideally shot from the lake so the shore position and private dock (if any) are visible; otherwise the main terrace or garden where ceremonies or dinners are held. Daylight or golden hour, May to September, no identifiable guests. Source: the villa's own media kit/press office, or our own venue page if the supply agreement covers blog use. Never a competitor, planner or photographer blog image without written permission. -->
+<!-- IMAGE SLOT villa-05: Official exterior or lakeside terrace of Villa Làrio, ideally shot from the lake so the shore position and private dock (if any) are visible; otherwise the main terrace or garden where ceremonies or dinners are held. Daylight or golden hour, May to September, no identifiable guests. Source: the villa's own media kit/press office, or our own venue page if the supply agreement covers blog use. Never a competitor, planner or photographer blog image without written permission. -->
 
 Villa Làrio lets you celebrate at Il Palazzo or take the entire estate, and hosts a limited number of weddings each year. <!-- fact_30 -->
 
@@ -133,7 +168,7 @@ Villa Bianca houses the restaurant, and there is an infinity pool. <!-- fact_32 
 
 ### Villa Aura del Lago, Limonta (near Bellagio)
 
-<!-- IMAGE SLOT villa-06: Official exterior or lakeside terrace of the villa named in H3 #6 (planner-sme list), ideally shot from the lake so the shore position and private dock (if any) are visible; otherwise the main terrace or garden where ceremonies or dinners are held. Daylight or golden hour, May to September, no identifiable guests. Source: the villa's own media kit/press office, or our own venue page if the supply agreement covers blog use. Never a competitor, planner or photographer blog image without written permission. -->
+<!-- IMAGE SLOT villa-06: Official exterior or lakeside terrace of Villa Aura del Lago, ideally shot from the lake so the shore position and private dock (if any) are visible; otherwise the main terrace or garden where ceremonies or dinners are held. Daylight or golden hour, May to September, no identifiable guests. Source: the villa's own media kit/press office, or our own venue page if the supply agreement covers blog use. Never a competitor, planner or photographer blog image without written permission. -->
 
 A private lakefront estate of 10,000 square metres with 200 metres of shoreline, held by the Guido family for four generations, which hosts weddings of up to 100 guests. <!-- fact_42 --> A borderline entry: the events page also offers the first and second floors separately, so confirm that the whole estate is reserved for you for the wedding weekend. <!-- fact_42 -->
 
@@ -150,7 +185,7 @@ With 16 beds and 100 seats, it is the closest thing on the list to a family hous
 
 ### Villa Cipressi, Varenna (eastern shore)
 
-<!-- IMAGE SLOT villa-07: Official exterior or lakeside terrace of the villa named in H3 #7 (planner-sme list), ideally shot from the lake so the shore position and private dock (if any) are visible; otherwise the main terrace or garden where ceremonies or dinners are held. Daylight or golden hour, May to September, no identifiable guests. Source: the villa's own media kit/press office, or our own venue page if the supply agreement covers blog use. Never a competitor, planner or photographer blog image without written permission. -->
+<!-- IMAGE SLOT villa-07: Official exterior or lakeside terrace of Villa Cipressi, ideally shot from the lake so the shore position and private dock (if any) are visible; otherwise the main terrace or garden where ceremonies or dinners are held. Daylight or golden hour, May to September, no identifiable guests. Source: the villa's own media kit/press office, or our own venue page if the supply agreement covers blog use. Never a competitor, planner or photographer blog image without written permission. -->
 
 Hotel Villa Cipressi says its wedding venue in Varenna can be booked for your exclusive use, with a banquet by the hotel's chef. <!-- fact_38 -->
 
@@ -166,7 +201,7 @@ The botanical garden, laid out in terraces, is used for the aperitivo and photog
 
 ### Villa Lario Resort, Mandello del Lario (Lecco branch, eastern shore)
 
-<!-- IMAGE SLOT villa-08: Official exterior or lakeside terrace of the villa named in H3 #8 (planner-sme list), ideally shot from the lake so the shore position and private dock (if any) are visible; otherwise the main terrace or garden where ceremonies or dinners are held. Daylight or golden hour, May to September, no identifiable guests. Source: the villa's own media kit/press office, or our own venue page if the supply agreement covers blog use. Never a competitor, planner or photographer blog image without written permission. -->
+<!-- IMAGE SLOT villa-08: Official exterior or lakeside terrace of Villa Lario Resort, ideally shot from the lake so the shore position and private dock (if any) are visible; otherwise the main terrace or garden where ceremonies or dinners are held. Daylight or golden hour, May to September, no identifiable guests. Source: the villa's own media kit/press office, or our own venue page if the supply agreement covers blog use. Never a competitor, planner or photographer blog image without written permission. -->
 
 Its wedding page offers exclusive use of the entire location, indoors and out. <!-- fact_33 -->
 
@@ -204,14 +239,16 @@ For an Australian guest list, rooms on site matter more than usual: guests who h
 |---|---|---|---|---|
 | Villa Balbiano | Ossuccio, western shore <!-- fact_19 --> | 6 suites <!-- fact_20 --> | Ask | Ask |
 | Villa Sola Cabiati | Tremezzo, western shore <!-- fact_24 --> | 12 <!-- fact_24 --> | Ask | Ask |
+| Villa La Felice | Pianello del Lario, western shore <!-- fact_66 --> | 12 <!-- fact_68 --> | 14 indoors <!-- fact_69 --> | Symbolic only <!-- fact_69 --> |
 | Relais Villa Vittoria | Laglio, Como branch <!-- fact_49 --> | Every room; ask the count <!-- fact_45 --> | 68 to 70 <!-- fact_46 --> | Yes <!-- fact_47 --> |
+| Villino Rubini | Brunate, above Como (not lakeside) <!-- fact_61 --> | 19 <!-- fact_63 --> | About 100, outdoors under a tent <!-- fact_64 --> | Ask |
 | Villa Pliniana | Torno, Como branch <!-- fact_52 --> | 34 to about 40 <!-- fact_28 --> | 200 <!-- fact_27 --> | Ask |
 | Villa Làrio | Pognana Lario, Como branch <!-- fact_54 --> | Suites in 4 buildings <!-- fact_32 --> | Ask | Yes <!-- fact_31 --> |
 | Villa Aura del Lago | Limonta, near Bellagio <!-- fact_42 --> | 16 <!-- fact_44 --> | 100 <!-- fact_43 --> | Ask |
 | Villa Cipressi | Varenna, eastern shore <!-- fact_38 --> | Ask <!-- fact_41 --> | Ask | Listed on a 2024 page <!-- fact_08 --> |
 | Villa Lario Resort | Mandello del Lario, Lecco branch <!-- fact_37 --> | 9 suites <!-- fact_37 --> | 110, or 170 with marquee <!-- fact_34 --> | Symbolic only <!-- fact_35 --> |
 
-"Ask" means the official pages do not publish it. Minimum nights, curfew and rain plans are rarely published; we list what each villa states in its entry above. Villa Pliniana's own pages disagree on its room count. <!-- fact_28 --> Villa Sola Cabiati and Villa Aura del Lago need their wedding terms confirmed in writing before they go on a final shortlist.
+"Ask" means the official pages do not publish it. Minimum nights, curfew and rain plans are rarely published; we list what each villa states in its entry above. Villa Pliniana's own pages disagree on its room count. <!-- fact_28 --> Villa Sola Cabiati and Villa Aura del Lago need their wedding terms confirmed in writing before they go on a final shortlist, and Villa La Felice its package guest counts. <!-- fact_69 -->
 
 If you have two or three villas in mind, [ask a Wedded Advisor to check your shortlist](/wonderland-concierge) against your date and guest count: one person who quotes in AUD and confirms inclusions in writing before you commit. <!-- fact_50 -->
 
@@ -221,19 +258,19 @@ If you have two or three villas in mind, [ask a Wedded Advisor to check your sho
 
 Lake Como's official tourism site names four main airports: Milan Malpensa, Milan Linate, Bergamo Orio al Serio and Lugano-Agno. <!-- fact_56 --> Lugano is across the border in Switzerland. <!-- fact_55 --> The site puts the lake about 50 km from Milan, with both Como and Lecco under an hour from Milan by car. <!-- fact_56 -->
 
-Only two of the eight villas publish airport drive times, both their own figures for a car. Villa Pliniana puts Torno 45 minutes from Malpensa, 15 minutes by boat from Como and 20 minutes by helicopter from Milan. <!-- fact_53 --> Villa Làrio puts Malpensa a short 45 minutes away, and Linate and Bergamo about an hour and a half; it can arrange a car pick-up at the airport. <!-- fact_55 --> Villa Balbiano's owner puts Ossuccio 40 minutes from central Milan, not from an airport. <!-- fact_19 -->
+Four of the ten villas publish airport travel times, all their own figures. Villa Pliniana puts Torno 45 minutes from Malpensa, 15 minutes by boat from Como and 20 minutes by helicopter from Milan. <!-- fact_53 --> Villa Làrio puts Malpensa a short 45 minutes away, and Linate and Bergamo about an hour and a half; it can arrange a car pick-up at the airport. <!-- fact_55 --> Villino Rubini puts Malpensa about an hour away by car, and Linate and Lugano about 1 hour 10 minutes. <!-- fact_65 --> Villa La Felice puts Malpensa about 1 hour 15 minutes by car, and Linate and Bergamo around 1.5 to 2 hours. <!-- fact_70 --> Villa Balbiano's owner puts Ossuccio 40 minutes from central Milan, not from an airport. <!-- fact_19 -->
 
 Fly guests into Malpensa where you can, and allow a guest coach extra time on lakeside roads. [[VERIFY: coach transfer times from Malpensa, Linate and Bergamo to each villa for the wedding date]]
 
 <!-- IMAGE SLOT getting-there-boat: A wooden Lake Como motorboat (water taxi or private launch) at or approaching the private dock of a villa confirmed in this post, guests or couple seen from behind or unidentifiable. Daylight, summer. Location proven by the villa or boat operator's media kit. Not a generic stock boat on an unnamed lake. -->
 
-Boats are logistics, not just photographs. All eight villas have a dock, pier, jetty or pontoon, so guests and the couple can arrive from the water. <!-- fact_21 --> <!-- fact_25 --> <!-- fact_49 --> <!-- fact_29 --> <!-- fact_32 --> <!-- fact_43 --> <!-- fact_40 --> <!-- fact_36 --> Do not rely on the public ferry for wedding-night movements. Navigazione Laghi, the government-run lake service, publishes seasonal timetables, and in 2026 a new one took over on 4 October. <!-- fact_17 --> On strike days, guaranteed services run only from 6am to 9am and from 5.55pm to 8.55pm. <!-- fact_17 -->
+Boats are logistics, not just photographs. Eight of the ten villas have a dock, pier, jetty or pontoon, so guests and the couple can arrive from the water. <!-- fact_21 --> <!-- fact_25 --> <!-- fact_49 --> <!-- fact_29 --> <!-- fact_32 --> <!-- fact_43 --> <!-- fact_40 --> <!-- fact_36 --> Villa La Felice has a private gate to the waterfront, and Villino Rubini, on the hill above Como, is reached by road. <!-- fact_69 --> <!-- fact_61 --> Do not rely on the public ferry for wedding-night movements. Navigazione Laghi, the government-run lake service, publishes seasonal timetables, and in 2026 a new one took over on 4 October. <!-- fact_17 --> On strike days, guaranteed services run only from 6am to 9am and from 5.55pm to 8.55pm. <!-- fact_17 -->
 
 Charter private boats for guest shuttles and your arrival, with a road transfer as backup. Before you travel, read [Smartraveller travel advice for Italy](https://www.smartraveller.gov.au/destinations/europe/italy).
 
 ### Older guests: steps, lifts and boats
 
-None of the eight villas publishes an accessibility statement: nothing on step-free access, lifts or accessible rooms. <!-- fact_60 --> If grandparents are coming, ask each villa in writing:
+Eight of the ten villas, checked in October 2026, publish no accessibility statement: nothing on step-free access, lifts or accessible rooms. <!-- fact_60 --> Villino Rubini and Villa La Felice were added after that check, so ask them too. If grandparents are coming, ask each villa in writing:
 
 - How many steps are there from the car drop-off or the dock to the ceremony spot, the dinner terrace and the nearest bedroom?
 - Is there a lift, or a ground-floor bedroom?
@@ -250,8 +287,8 @@ If you are inviting 60 to 120 guests to a villa that sleeps 12 to about 40, most
 
 The lake is split between the provinces of Como and Lecco. <!-- fact_56 --> The lake's tourism site lists its five-star hotels by town, a useful map for room blocks: <!-- fact_57 -->
 
-- **Como branch** (Relais Villa Vittoria, Villa Pliniana, Villa Làrio): Como's historic centre, Blevio, Brunate, Cernobbio, Moltrasio and Torno. <!-- fact_57 -->
-- **Western shore** (Villa Balbiano, Villa Sola Cabiati): Tremezzina, a string of small villages facing Bellagio and Isola Comacina, plus Cadenabbia, Sala Comacina and Menaggio. <!-- fact_57 --> <!-- fact_58 -->
+- **Como branch** (Relais Villa Vittoria, Villino Rubini, Villa Pliniana, Villa Làrio): Como's historic centre, Blevio, Brunate, Cernobbio, Moltrasio and Torno. <!-- fact_57 -->
+- **Western shore** (Villa Balbiano, Villa Sola Cabiati, Villa La Felice): Tremezzina, a string of small villages facing Bellagio and Isola Comacina, plus Cadenabbia, Sala Comacina and Menaggio. <!-- fact_57 --> <!-- fact_58 -->
 - **Bellagio** (Villa Aura del Lago at Limonta). <!-- fact_57 --> <!-- fact_42 -->
 - **Lecco branch** (Villa Lario Resort): Mandello del Lario. <!-- fact_57 -->
 
@@ -261,9 +298,9 @@ Your Wedded Advisor holds the guest room block for you. <!-- fact_50 --> See [gr
 
 ## What drives the cost of an exclusive-use villa
 
-None of the eight villas publishes an exclusive-use fee, so we have not printed one. Here is what moves the number.
+None of the ten villas publishes an exclusive-use fee, so we have not printed one. <!-- fact_63 --> <!-- fact_68 --> Here is what moves the number.
 
-- **Nights.** A minimum stay multiplies the fee. Villa Aura del Lago's three-night minimum means you are hiring a weekend, not a day. <!-- fact_43 -->
+- **Nights.** A minimum stay multiplies the fee. The three-night minimums at Villa Aura del Lago and Villino Rubini mean you are hiring a weekend, not a day. <!-- fact_43 --> <!-- fact_63 -->
 - **Guest count.** At Relais Villa Vittoria, crossing 30 guests moves you from a wedding at the hotel to taking the whole villa and every room. <!-- fact_45 -->
 - **Season and date.** Villa Lario Resort's 2026 season runs from 2 April to 1 November. <!-- fact_37 --> Ask how the fee changes between a Saturday in July and a weekday in early autumn.
 - **What is in-house.** Ask which items (catering, music, staff) are included and which are billed on top.
@@ -279,19 +316,19 @@ Yes, at some. Villa Làrio says it is licensed for civil ceremonies with legal e
 
 ### How many nights do exclusive-use villas on Lake Como require?
 
-Most do not publish a minimum. Villa Aura del Lago states three nights for weddings. <!-- fact_43 --> For every other villa, ask for the minimum stay on your dates before you commit.
+Most do not publish a minimum. Villa Aura del Lago states three nights for weddings, and Villino Rubini three nights for exclusive hire, all year. <!-- fact_43 --> <!-- fact_63 --> For every other villa, ask for the minimum stay on your dates before you commit.
 
 ### Is there a music curfew at Lake Como villas, and where does the party go after?
 
-None of the eight publishes a curfew time, so ask each one. Relais Villa Vittoria's wine cellar becomes a private disco under whole-villa hire. <!-- fact_48 -->
+Of the ten, only Villa La Felice addresses it, saying there is no curfew; confirm in writing that this holds under local noise rules. <!-- fact_69 --> For the others, ask each one. Relais Villa Vittoria's wine cellar becomes a private disco under whole-villa hire. <!-- fact_48 -->
 
 ### Can all our guests stay at the villa?
 
-Usually not. Those that publish a figure sleep from 12 (Villa Sola Cabiati) to about 40 (Villa Pliniana). <!-- fact_24 --> <!-- fact_28 --> Plan a nearby room block for everyone else.
+Usually not. Those that publish a figure sleep from 12 (Villa Sola Cabiati and Villa La Felice) to about 40 (Villa Pliniana). <!-- fact_24 --> <!-- fact_68 --> <!-- fact_28 --> Plan a nearby room block for everyone else.
 
 ### What happens if it rains on our Lake Como villa wedding?
 
-Relais Villa Vittoria moves ceremony and dinner into the Salone, with exclusive hire. <!-- fact_48 --> Villa Lario Resort uses its hall, veranda or marquee. <!-- fact_34 --> Agree the rain plan, and when you will call it, at booking.
+Relais Villa Vittoria moves ceremony and dinner into the Salone, with exclusive hire. <!-- fact_48 --> Villa Lario Resort uses its hall, veranda or marquee. <!-- fact_34 --> At Villino Rubini, dinner for about 100 is outdoors under a tent, a warm-months format, and indoor rooms seat only small groups. <!-- fact_64 --> Agree the rain plan, and when you will call it, at booking.
 
 ### Can you book Villa d'Este or Villa del Balbianello for exclusive use?
 

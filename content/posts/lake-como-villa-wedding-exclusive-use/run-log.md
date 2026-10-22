@@ -17,3 +17,4 @@
 21:55 10 distribution complete 3 pins, 8-slide carousel, newsletter
 21:57 11 cms-publisher package built, not uploaded; 13 run report, backlinks-todo, link map + calendar updated. RUN COMPLETE
 05:59 03r3 planner-sme added Villino Rubini (Brunate) + Villa La Felice (Pianello del Lario); 71 facts; title back to 10
+06:02 08r4 luxury-writer added 2 villas: ~4,615 words (over brief; accepted for 10 villas), 19 VERIFY; orchestrator renamed villa image slots by name, added villa-09/10 to 04-images
