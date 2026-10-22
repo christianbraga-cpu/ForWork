@@ -20,3 +20,4 @@
 06:02 08r4 luxury-writer added 2 villas: ~4,615 words (over brief; accepted for 10 villas), 19 VERIFY; orchestrator renamed villa image slots by name, added villa-09/10 to 04-images
 06:04 08b editor pass_with_edits (4.29); orchestrator applied 2 required edits (accessibility wording, Dependance boardroom)
 06:06 13 orchestrator rebuilt package (10 villas), run report updated, Word file made. RUN COMPLETE (10 villas)
+06:26 08r5 re-tagged under new marker policy: 19 -> 9 VERIFY; booking-checklist.md written
