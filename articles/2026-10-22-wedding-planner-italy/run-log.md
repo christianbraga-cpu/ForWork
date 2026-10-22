@@ -13,3 +13,5 @@
 - Brand sources: live site only (brand kit rebuilt 22 Oct 2026)
 
 ## Stages
+- Stage 0 (content-strategist, 22 Oct 2026): 01-serp.json and 00-brief.json written. DataForSEO SERPs for 9 locations (Doha run at country level after a location error); Semrush had no API units, so volumes come from DataForSEO Google Ads (AU 90, US 1,300). 12 pages fetched. Cannibalisation: partial overlap only (7 pages), so a new article is right. Four new live URLs need adding to link-map.md.
+- **Stage 0 (content-strategist):** DONE. DataForSEO, 9 markets (Qatar at country level). Gap: no top-3 page in any market explains how to choose and check a planner in Italy (fees, who they work for, judging answers, planning from Australia). Brief: 8 H2s, 2,400 to 3,000 words, CTA planner_match, closing discovery_call, categories Destination Weddings (primary), Italy Weddings, Planning Advice. Overlap with 7 own pages, partial only. Brief gate: PASS. Link map: 3 live pages added; top-10 planner list and the 2 vendor profiles held pending marketing.

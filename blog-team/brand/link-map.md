@@ -150,6 +150,9 @@ Real weddings in Tuscany (use as inspiration links, never as our own client stor
 
 | URL | Title | Owns |
 |---|---|---|
+| `/expert-advice/cost-of-wedding-planner` | Cost of a wedding planner | wedding planner cost |
+| `/expert-advice/do-you-really-need-a-wedding-planner-for-a-destination-wedding` | Do you really need a wedding planner for a destination wedding? | need a wedding planner destination wedding |
+| `/how-to-choose-wedding-vendors-abroad` | How to choose wedding vendors abroad | choose wedding vendors abroad |
 | `/how-to-choose-the-right-destination-wedding-planner` | How to choose the right destination wedding planner (title TO CONFIRM) | choose destination wedding planner (CANNIBALISATION CHECK for planner posts) |
 | `/how-to-plan-a-destination-wedding` | How to Plan a Destination Wedding: The Complete Guide | how to plan a destination wedding |
 | `/expert-advice/do-you-need-a-wedding-welcome-party` | Do You Need a Wedding Welcome Party? | wedding welcome party |
@@ -186,6 +189,8 @@ Link when the topic matches:
 
 | URL | Reason |
 |---|---|
+| `/italian-wedding-planners-luxury-wedding-italy` | Top-10 planner list links planners via Instagram (breaks the planner rule). Hold until marketing confirms |
+| `/vendor/italian-style-weddings`, `/vendor/giritaly` | Live vendor profiles, but do not name as partner planners until marketing confirms they are partners |
 | `/wedded-world/melbourne/partners`, `/wedded-world-partners`, `/for-wedding-planners`, `/try-wedded-planner` | Business pages, not for couples |
 | `/get-wedded-in-dubai`, `/get-wedded-in-fiji`, `/wedded-world-showcase-2026`, `/wedded-world-preston-bailey` | Redirects: link the page they lead to instead |
 | `/destinations/africa`, `/destinations/latin-america-caribbean` | Hidden from Google |
