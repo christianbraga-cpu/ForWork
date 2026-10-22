@@ -24,8 +24,7 @@
 | G8 CMS | Not run | | No browser connection; run /wedded-cms-discovery locally first |
 
 ## Before you publish: human checks
-### [[VERIFY]] items (9, re-tagged under the new policy on 2026-10-22)
-- Nic sign-off on the Nulla Osta AUD 80 fee
+### [[VERIFY]] items (8, re-tagged under the new policy on 2026-10-22)
 - Villa Sola Cabiati wedding terms, not on its own pages
 - Villa La Felice "no curfew" against local noise rules; comune, Pianello del Lario or near Menaggio
 - Relais Villa Vittoria western-shore placement
@@ -39,7 +38,7 @@
 - Unpublished house rules per villa: see `booking-checklist.md`
 
 ### Prices needing Nic's sign-off
-- Nulla Osta fee: "the euro equivalent of AUD 80 per Australian citizen" (Australian Embassy Rome, as at October 2026). No venue prices are printed.
+- None. The Nulla Osta fee figure was replaced with "a consular fee applies" (2026-10-22). No venue prices are printed.
 
 ### Images needed (14 slots, all placeholders)
 - featured, exclusive-use-covers, villa-01 to villa-10, getting-there-boat, guests-stay-town (shot briefs in `04-images.json`)
