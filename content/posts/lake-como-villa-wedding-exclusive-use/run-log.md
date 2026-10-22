@@ -19,3 +19,4 @@
 05:59 03r3 planner-sme added Villino Rubini (Brunate) + Villa La Felice (Pianello del Lario); 71 facts; title back to 10
 06:02 08r4 luxury-writer added 2 villas: ~4,615 words (over brief; accepted for 10 villas), 19 VERIFY; orchestrator renamed villa image slots by name, added villa-09/10 to 04-images
 06:04 08b editor pass_with_edits (4.29); orchestrator applied 2 required edits (accessibility wording, Dependance boardroom)
+06:06 13 orchestrator rebuilt package (10 villas), run report updated, Word file made. RUN COMPLETE (10 villas)
