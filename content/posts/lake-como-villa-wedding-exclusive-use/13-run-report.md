@@ -24,15 +24,8 @@
 | G8 CMS | Not run | | No browser connection; run /wedded-cms-discovery locally first |
 
 ## Before you publish: human checks
-### [[VERIFY]] items (8, re-tagged under the new policy on 2026-10-22)
-- Villa Sola Cabiati wedding terms, not on its own pages
-- Villa La Felice "no curfew" against local noise rules; comune, Pianello del Lario or near Menaggio
-- Relais Villa Vittoria western-shore placement
-- Villa Pliniana room count, 17 or 18 bedrooms, 34 to about 40 guests
-- Villa Làrio eastern-shore placement
-- Villa Aura del Lago whole estate exclusive during a wedding
-- Villa Cipressi civil-ceremony status, from a 2024 page
-- Villa d'Este wedding buyout terms
+### [[VERIFY]] items (0)
+- None. On 2026-10-22 Villa Sola Cabiati was reworded around confirmed facts (Option B) and the other 7 markers were removed at the person's request. All 8 points are in `booking-checklist.md` under "Confirm before quoting".
 
 ### Booking checklist (not publishing blockers)
 - Unpublished house rules per villa: see `booking-checklist.md`

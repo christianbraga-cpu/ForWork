@@ -1,6 +1,19 @@
 # Booking checklist: Lake Como villa wedding, exclusive use
 
-These details are not published by the venues, so they don't block publishing. The Wedded Advisor confirms each one in writing with the villa for the couple's dates before anyone commits. Items that are still open in the article itself (contested or not fully sourced) keep their `[[VERIFY]]` marker in `08-final.md` and are not repeated here.
+These details are not published by the venues, so they don't block publishing. The Wedded Advisor confirms each one in writing with the villa for the couple's dates before anyone commits. The article has no `[[VERIFY]]` markers left; the points the person chose to clear from the copy (2026-10-22) are listed under "Confirm before quoting" below.
+
+## Confirm before quoting
+
+Removed from the article as markers on 2026-10-22 (the wording in the copy already carries the caveat). Check these before quoting a couple or naming terms:
+
+- Villa Sola Cabiati: wedding terms in writing from Grand Hotel Tremezzo (the villa's own pages do not mention weddings; Passalacqua says it suits events)
+- Villa La Felice: whether "no curfew" meets local noise rules, and the comune (Pianello del Lario or near Menaggio)
+- Relais Villa Vittoria: western-shore placement
+- Villa Pliniana: 17 or 18 bedrooms, sleeping 34 to about 40 guests (Sereno's pages differ)
+- Villa Làrio: eastern-shore placement
+- Villa Aura del Lago: that the whole estate is exclusive during a wedding (floors are also offered separately)
+- Villa Cipressi: civil-ceremony status is current (source page last updated July 2024)
+- Villa d'Este (not on the list): whether a wedding buyout is possible
 
 ## General
 

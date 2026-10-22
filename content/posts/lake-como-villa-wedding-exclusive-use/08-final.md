@@ -74,13 +74,13 @@ The grounds run to more than 2 hectares, with a garden and an outdoor pool. <!--
 
 <!-- IMAGE SLOT villa-02: Official exterior or lakeside terrace of Villa Sola Cabiati, ideally shot from the lake so the shore position and private dock (if any) are visible; otherwise the main terrace or garden where ceremonies or dinners are held. Daylight or golden hour, May to September, no identifiable guests. Source: the villa's own media kit/press office, or our own venue page if the supply agreement covers blog use. Never a competitor, planner or photographer blog image without written permission. -->
 
-Grand Hotel Tremezzo, which runs the villa, says it can be booked in exclusivity with its own private staff: butler, housekeepers, chambermaid and private chef. <!-- fact_22 --> A borderline entry: the hotel's villa pages do not mention weddings, although sister hotel Passalacqua says the villa suits events large and small. <!-- fact_23 -->
+Grand Hotel Tremezzo, which runs the villa, says it can be booked in exclusivity with its own private staff: butler, housekeepers, chambermaid and private chef. <!-- fact_22 --> Its sister hotel, Passalacqua, describes the villa as suited to events large and small. <!-- fact_23 --> As with every villa here, your Wedded Advisor confirms ceremony and reception terms in writing.
 
 - **Where it is:** Tremezzo, western shore, minutes from Grand Hotel Tremezzo by car or boat. <!-- fact_24 -->
 - **Sleeps on site:** Six suites, each with an ensuite and sitting area, sleeping 12. <!-- fact_24 -->
 - **Dock and boats:** The villa has its own jetty. <!-- fact_25 -->
 - **Indoor rooms:** These include the Sala degli Stucchi. <!-- fact_25 -->
-- **Not published:** wedding terms, event capacity, minimum nights, curfew, ceremony type, rain plan. [[VERIFY: Villa Sola Cabiati wedding terms, not on its own pages]]
+- **Not published:** wedding terms, event capacity, minimum nights, curfew, ceremony type, rain plan.
 
 The arabesque gardens in front of the villa are used for candlelit dinners, and there is a private pool in the park behind. <!-- fact_25 -->
 
@@ -98,7 +98,7 @@ A six-bedroom villa on the upper western shore, with gardens that fall to the wa
 - **Ceremony:** Symbolic, in the Lakefront Garden or, for very small groups, on the Upper Terrace. The villa notes that a civil ceremony must take place at the town hall. <!-- fact_69 -->
 - **Dock and boats:** Direct lake access through a private gate to the waterfront; the site does not mention a private dock. <!-- fact_69 -->
 - **Wet weather:** The Conservatory, the villa's stated option for autumn or winter ceremonies and for the wedding dinner, seating 14. <!-- fact_69 -->
-- **Not published:** street address, a private dock, minimum nights as a rule, and whether the curfew position meets local noise rules. [[VERIFY: Villa La Felice "no curfew" against local noise rules; comune, Pianello del Lario or near Menaggio]]
+- **Not published:** street address, a private dock, minimum nights as a rule, and whether the curfew position meets local noise rules.
 
 A private chef, a dedicated wedding coordinator and guest concierge come with the wedding offer. <!-- fact_68 --> This is a villa for a wedding of 12, not 120.
 
@@ -115,7 +115,7 @@ A 19th-century villa run as a boutique hotel. <!-- fact_49 --> Weddings of up to
 - **Ceremony:** Civil. The villa serves as a municipal wedding location, and the Comune di Laglio sets costs and availability. The lakeside gardens take ceremonies of up to 70. <!-- fact_47 -->
 - **Dock and boats:** A private dock, with free kayaks for guests. <!-- fact_49 -->
 - **Wet weather:** The Salone takes the ceremony and dinner if it rains. The pergola has side curtains for wind. <!-- fact_48 --> <!-- fact_46 -->
-- **Not published:** room count, standing capacity, minimum nights, curfew. [[VERIFY: Relais Villa Vittoria western-shore placement]]
+- **Not published:** room count, standing capacity, minimum nights, curfew.
 
 Without whole-villa hire, the lakeside gardens are kept for hotel guests until 7pm. <!-- fact_47 -->
 
@@ -143,7 +143,7 @@ Exclusive hire includes housekeeping, Italian breakfast, full staff support and 
 Sereno Hotels describes the estate as ideal for exclusive use for weddings, with a full staff looking after the whole stay from set-up to clean-up. <!-- fact_26 -->
 
 - **Where it is:** On a promontory next to the village of Torno, running about 230 metres along the eastern shore. <!-- fact_52 --> The estate covers 18 acres on an inlet of the lake. <!-- fact_29 -->
-- **Sleeps on site:** Sereno's own pages differ: 17 or 18 bedrooms, sleeping from 34 to about 40 guests. <!-- fact_28 --> [[VERIFY: Villa Pliniana room count, 17 or 18 bedrooms, 34 to about 40 guests]]
+- **Sleeps on site:** Sereno's own pages differ: 17 or 18 bedrooms, sleeping from 34 to about 40 guests. <!-- fact_28 -->
 - **Event capacity:** Up to 200 seated for dinner in the ballrooms; the waterfront gardens host up to 500. <!-- fact_27 -->
 - **Dock and boats:** A private boat dock with safe harbouring, plus an on-site helipad. <!-- fact_29 -->
 - **Wet weather:** The ballrooms seat 200 for dinner. <!-- fact_27 -->
@@ -162,7 +162,7 @@ Villa Làrio lets you celebrate at Il Palazzo or take the entire estate, and hos
 - **Ceremony:** Civil. The villa is licensed for civil ceremonies with legal effect, with the village mayor. <!-- fact_31 -->
 - **Dock and boats:** A private pontoon. <!-- fact_32 -->
 - **Wet weather:** Il Palazzo's reception area and terrace host private events. <!-- fact_32 -->
-- **Not published:** suite count and guests sleeping on site, event capacity, minimum nights, curfew, indoor capacity. [[VERIFY: Villa Làrio eastern-shore placement]]
+- **Not published:** suite count and guests sleeping on site, event capacity, minimum nights, curfew, indoor capacity.
 
 Villa Bianca houses the restaurant, and there is an infinity pool. <!-- fact_32 -->
 
@@ -179,7 +179,7 @@ A private lakefront estate of 10,000 square metres with 200 metres of shoreline,
 - **Ceremony:** Private lakefront ceremonies. <!-- fact_42 -->
 - **Dock and boats:** A private dock; guests can arrive by boat during the stay. <!-- fact_43 -->
 - **Wet weather:** Dinners are held in the old hall under frescoed ceilings. <!-- fact_43 -->
-- **Not published:** standing capacity, curfew, ceremony type (civil or symbolic), indoor ceremony option. [[VERIFY: Villa Aura del Lago whole estate exclusive during a wedding]]
+- **Not published:** standing capacity, curfew, ceremony type (civil or symbolic), indoor ceremony option.
 
 With 16 beds and 100 seats, it is the closest thing on the list to a family house for a wedding weekend. <!-- fact_44 --> <!-- fact_43 -->
 
@@ -192,7 +192,7 @@ Hotel Villa Cipressi says its wedding venue in Varenna can be booked for your ex
 - **Where it is:** Varenna, on the eastern shore. <!-- fact_38 -->
 - **Sleeps on site:** A 4-star hotel with five types of suite and three types of room, all facing the lake. <!-- fact_41 -->
 - **Music:** An audio system with pre-recorded music is available. <!-- fact_40 -->
-- **Ceremony:** Civil, with a caveat. Varenna's tourism site lists Villa Cipressi as one of the town's civil-ceremony locations, on a page last updated in July 2024. <!-- fact_08 --> [[VERIFY: Villa Cipressi civil-ceremony status, from a 2024 page]]
+- **Ceremony:** Civil, with a caveat. Varenna's tourism site lists Villa Cipressi as one of the town's civil-ceremony locations, on a page last updated in July 2024. <!-- fact_08 -->
 - **Dock and boats:** Boats can be hired and moored at a private dock. <!-- fact_40 -->
 - **Wet weather:** Three reception rooms with frescoes from the 1400s, large fireplaces and crystal chandeliers. <!-- fact_39 -->
 - **Not published:** room count, event capacity, minimum nights, curfew, reception-room capacity.
@@ -219,7 +219,7 @@ The resort offers fireworks over the lake and a lakeside terrace for the aperiti
 
 Several names you will see on Instagram are booked differently, or their official pages do not confirm a whole-property booking with guests sleeping on site. That is not a judgement on them.
 
-- **Villa d'Este, Cernobbio:** an operating hotel. Its events page offers weddings in function rooms and gardens but does not describe a whole-property buyout. <!-- fact_11 --> [[VERIFY: Villa d'Este wedding buyout terms]]
+- **Villa d'Este, Cernobbio:** an operating hotel. Its events page offers weddings in function rooms and gardens but does not describe a whole-property buyout. <!-- fact_11 -->
 - **Villa del Balbianello, Tremezzina:** a different property from Villa Balbiano. The [FAI (Fondo Ambiente Italiano)](https://fondoambiente.it/luoghi/villa-del-balbianello) offers it for weddings and receptions of up to 130 guests, but it is open to the public and has no overnight rooms. <!-- fact_10 -->
 - **Villa Monastero, Varenna:** a house museum and botanical garden that offers paid symbolic ceremonies. <!-- fact_09 -->
 - **Villa Erba, Cernobbio:** hosts large weddings, but its page does not mention overnight rooms or whole-property use. <!-- fact_12 -->

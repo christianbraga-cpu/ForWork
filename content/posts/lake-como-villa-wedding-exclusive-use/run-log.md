@@ -24,3 +24,4 @@
 06:27 11 cms-publisher rebuilt package + report for round 5 (9 VERIFY), not uploaded, validates clean
 06:27 11 package, run report and Word file rebuilt after re-tag (9 VERIFY)
 06:33 person: Nulla Osta fee figure replaced with 'a consular fee applies'; marker removed (8 VERIFY), no Nic sign-off needed
+06:50 person: Option B for Villa Sola Cabiati (reworded around confirmed facts); remaining 7 markers removed (0 VERIFY); points moved to booking-checklist.md; package, run report and Word file rebuilt
