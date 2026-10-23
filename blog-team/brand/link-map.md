@@ -208,4 +208,4 @@ Link when the topic matches:
 
 | URL | Title | Primary keyword (owned) | Status |
 |---|---|---|---|
-| _none yet_ | | | |
+| `/destination-weddings/wedding-planner-italy` | How to choose a wedding planner in Italy | wedding planner italy | DRAFT (not published) |

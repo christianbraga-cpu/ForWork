@@ -22,3 +22,26 @@
 - **Stage 3 re-review v2:** voice APPROVED (4.7), accuracy APPROVED (4.4, 0 blockers, 0 majors), reader:couple still trust 3 / would_enquire 3 (blocked on business facts only the team can supply: referral arrangements, concierge pricing, named contact). Awaiting user decision: answer the business questions for loop 2, or accept and finish with the reader gap flagged.
 - **User decision (23 Oct):** accept v2 and finish now; reader:couple gap (referral arrangements, concierge pricing, named contact) flagged as must-fix before publish. Proceeding to stage 5 (photo-curator) on 03-draft-v2.md.
 - **Stage 5 (photo-curator):** DONE. 05-assets.json, 6 slots. Drive searched read-only by file name: candidates for service-ladder and wet-weather (Montelodoli Sep 2024; Gideon Hermosa Tuscany May 2024), invisible-work (@safitevent Lake Como, low-res, needs permission). No image cleared yet: credits, licences and consents open for all slots.
+- **Stage 6 (copy-editor):** DONE. final.md (about 2,954 reader-facing words), publish-package.json (status draft), chrome-upload-prompt.md, article.docx. Checks: 0 em dashes; 8 external domains, none blocked; no visible placeholders.
+
+## Final scores
+| Dimension | v1 | v2 |
+|---|---|---|
+| voice | FAIL (brief_fidelity 3) | APPROVED 4.7 |
+| accuracy | FAIL (2 blockers) | APPROVED 4.4 |
+| seo | APPROVED 4.3 | not re-run |
+| reader:couple (primary) | trust 3, enquire 3 | trust 3, enquire 3 |
+| reader:paying_parent | trust 3, enquire 3 | not re-run (advisory) |
+| reader:bargain_hunter (anti) | enquire 2, PASS | not re-run |
+
+Verdict: APPROVED by editorial, accuracy and SEO; NOT approved by the primary reader. Accepted by the user to finish, with the reader gap as must-fix before publish. Revision loops used: 1 of 2.
+
+## Must-fix before publish (humans)
+1. Reader-panel gap: disclose referral arrangements with partner planners, say how the concierge is priced, name a contact (N-08, N-09).
+2. Nic: sign off planner fee figures and VAT (NIC-FEES); confirm concierge prices across live pages.
+3. Wedded Advisor: confirm the current Italy legal process for Australians (N-04).
+4. Domains: confirm italiaoggi.it (nofollow) and siae.it; re-check all external links live (review sandbox DNS failed).
+5. Images: credits, licences and consents for all 6 slots; hero has no Drive match.
+6. Named author; CMS admin URL; confirm "Italy Weddings" category exists.
+7. Older page /how-to-plan-a-destination-wedding-in-italy-if-youre-overseas: fix the unsourced 10% to 15% fee and the Nulla Osta = CNI error, then link both ways.
+8. Optional business inputs: partner fee ranges (N-01), booking lead time (N-05), vetting criteria (N-06), insurance (N-07).
