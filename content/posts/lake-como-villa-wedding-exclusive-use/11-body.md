@@ -13,11 +13,10 @@ This guide covers ten villas whose owners or operators confirm exclusive use on 
 
 ## Key takeaways
 
-- Ten villas on our shortlist could be confirmed as bookable for exclusive use from their own official sources. Several are boutique hotels that offer a whole-property option rather than private homes. None publishes an exclusive-use fee, so start with [what a Lake Como wedding costs](/expert-advice/how-much-does-a-lake-como-wedding-cost).
-- Beds, not dinner seats, are the limit. Where they publish figures, these villas seat from 14 (Villa La Felice) to 200 for dinner but sleep 12 to about 40, so most Australian guest lists need a nearby room block as well.
-- A legal civil ceremony on site is the exception: Villa Làrio and Relais Villa Vittoria state it, Varenna's tourism site lists Villa Cipressi (on a 2024 page), and Villa Lario Resort offers a symbolic ceremony.
-- Australians marrying in Italy need a Nulla Osta, sworn in person at the Australian Embassy in Rome or the Consulate-General in Milan. A Certificate of No Impediment is not accepted.
-- Minimum nights, music curfews and standing capacity are rarely published. Get them in writing for your dates before you commit.
+- All 10 villas confirm exclusive use on their own official sites, but none publishes a fee, so get the price and house rules in writing for your dates.
+- Beds, not dinner seats, are the limit: these villas sleep 12 to about 40, so most guest lists also need a nearby room block.
+- A legal civil ceremony on site is the exception, so confirm it before booking if you want to marry legally at the villa.
+- Australians need a Nulla Osta, sworn in person at the Australian Embassy in Rome or the Consulate-General in Milan, not a Certificate of No Impediment.
 
 ## What exclusive use means for a Lake Como villa wedding, and what it covers
 
