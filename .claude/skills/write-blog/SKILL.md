@@ -19,7 +19,8 @@ three required parts is missing, ask once for it, then proceed.
 - **Slug:** lower-case, hyphenated keyword-led version of the title (max 60 chars).
 - **Folder:** `articles/<YYYY-MM-DD>-<slug>/` (create it).
 - **Personas:** map the audience to persona IDs in `blog-team/personas/`:
-  couples or engaged → `couple`; parents, family paying, "decision makers" →
+  couples or engaged → `couple` (Australian) or `us_couple` (American or
+  US-based); parents, family paying, "decision makers" →
   `paying_parent`; cultural, religious, multi-day, large families →
   `multicultural_family`; ultra-luxury, exclusive use, privacy → `private_client`.
   Choose one **primary** and one **secondary** (default secondary:
@@ -96,8 +97,12 @@ Spawn `copy-editor` with the folder path. It writes `final.md`,
 `publish-package.json`, `chrome-upload-prompt.md` and `article.docx`.
 
 Verify yourself:
-- `grep -c "—"` on `final.md`, `publish-package.json`, `chrome-upload-prompt.md` returns 0.
-- No link in `final.md` goes to a domain on the blocked list in `blog-team/brand/domains.md`.
+- Run `python3 blog-team/scripts/build_docx.py --check articles/<folder>/final.md`:
+  `em_dashes` 0, `visible_placeholders` 0, `possibly_blocked` none, and
+  `reader_words` inside the brief's range. Use the same `--check` on each
+  draft to report word counts at the review gate.
+- Grep `publish-package.json` and `chrome-upload-prompt.md` for the em dash
+  character (Grep tool, not shell): zero matches.
 - `article.docx` exists.
 
 ## 8. Wrap up
@@ -124,3 +129,23 @@ article folder and push.
 - Never let an invented fact, competitor link or em dash through a gate.
 - Keep subagent prompts short: give paths, not file contents.
 - If a connector fails, use the fallback the agent describes and record it in the run log.
+
+## Running without permission prompts
+
+The project allow rules in `.claude/settings.json` only match simple, single
+commands. Compound shell commands (`cd ... && ...`, pipes, `echo >>`,
+heredocs) always prompt. So:
+
+- Update `run-log.md` and other text files with the Edit or Write tool, never
+  with `echo >>` or a script.
+- Run git as separate, single commands from the repo root, each its own Bash
+  call: `git add articles` (or the specific path), then
+  `git commit -m "<message>"`, then
+  `git push -q origin claude/jolly-albattani-3f1maa`. No `cd`, no `&&`.
+- Use the Read, Grep and Glob tools for checks; use
+  `python3 blog-team/scripts/build_docx.py --check <file>` for word counts,
+  dashes, placeholders and domains.
+- Tell every subagent: no Bash (except the copy editor's docx build), save
+  with the Write tool, and write files as soon as they are ready so a
+  container restart loses as little as possible.
+- Commit and push after every stage.

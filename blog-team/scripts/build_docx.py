@@ -195,7 +195,30 @@ def main(folder):
     print(f"Wrote {out}")
 
 
+def check(path):
+    """Print QA counts for a draft or final.md: words, dashes, placeholders, domains."""
+    path = Path(path)
+    _, body = split_front_matter(path.read_text(encoding="utf-8"))
+    prose = re.sub(r"\[([^\]]+)\]\([^)]+\)", r"\1", body)
+    prose = re.sub(r"^\s*(#{1,6}|[-*]|\d+[.)]|>)\s+", "", prose, flags=re.M)
+    prose = re.sub(r"\[IMAGE:[^\]]*\]|\[CTA:[^\]]*\]|\|", " ", prose)
+    words = [w for w in prose.split() if re.search(r"\w", w)]
+    print(f"file: {path}")
+    print(f"reader_words: {len(words)}")
+    print(f"em_dashes: {body.count(chr(0x2014))}  en_dashes: {body.count(chr(0x2013))}")
+    print(f"visible_placeholders: {len(re.findall(r'\[\[(NEEDS|LINK NEEDED)', body))}")
+    domains = sorted({d.lower() for d in re.findall(r"\]\(https?://([^/)]+)", body)})
+    blocked_file = Path(__file__).resolve().parents[1] / "brand" / "domains.md"
+    blocked_text = blocked_file.read_text(encoding="utf-8").split("## Blocked", 1)[-1].split("## Research-only", 1)[0].lower()
+    flagged = [d for d in domains if d.removeprefix("www.").split(".")[0] in blocked_text]
+    print(f"external_domains: {', '.join(domains) or 'none'}")
+    print(f"possibly_blocked: {', '.join(flagged) or 'none'}")
+
+
 if __name__ == "__main__":
-    if len(sys.argv) != 2:
-        sys.exit("Usage: build_docx.py articles/<slug>")
-    main(sys.argv[1])
+    if len(sys.argv) == 3 and sys.argv[1] == "--check":
+        check(sys.argv[2])
+    elif len(sys.argv) == 2:
+        main(sys.argv[1])
+    else:
+        sys.exit("Usage: build_docx.py articles/<slug>  |  build_docx.py --check <file.md>")
