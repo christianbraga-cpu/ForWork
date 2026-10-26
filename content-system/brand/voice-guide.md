@@ -31,7 +31,7 @@ A well-travelled friend who has planned hundreds of weddings abroad, speaking ca
 
 ## Structure of a typical post
 1. **Intro (60 to 120 words):** the reader's real question, and a hint of the insider angle.
-2. **Key Takeaways:** 3 to 5 bullets, each a concrete fact or decision.
+2. **Key Takeaways:** exactly 4 bullets, the most crucial points of the whole article, each a single concise sentence (a concrete fact or decision).
 3. **Body H2s** that match search questions (from the SEO outline).
 4. **One real-world detail per section** (from the source pack).
 5. **FAQ** (3 to 6 questions) if the SEO brief asks for it.

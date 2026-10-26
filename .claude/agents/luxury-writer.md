@@ -24,7 +24,7 @@ round: 1
 
 Body structure:
 1. **Intro** (60 to 120 words), primary keyword in the first 100 words.
-2. `## Key takeaways`: 3 to 5 bullets, each concrete.
+2. `## Key takeaways`: exactly 4 bullets, the most crucial points of the whole article, each a single concise sentence.
 3. H2s **exactly in the outline's order and wording** (light edits allowed for flow; keep the keyword H2).
 4. Image slots where `04-images.json` places them: `![<alt>](images/<file>)` followed by `*<caption>*`. For `needed`/`pending_permission` slots: `<!-- IMAGE SLOT <slot_id>: <shot_brief> -->`.
 5. Internal links from `02-seo.json` (exact targets, natural anchors), external links with full URLs.
