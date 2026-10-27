@@ -1,0 +1,452 @@
+{
+  "agent": "editor",
+  "task_id": "engagement-ring-setting-for-active-lifestyle",
+  "stage": "06",
+  "status": "complete",
+  "round": 1,
+  "inputs_used": [
+    "content/posts/engagement-ring-setting-for-active-lifestyle/05-draft.md",
+    "content/posts/engagement-ring-setting-for-active-lifestyle/01-brief.json",
+    "content/posts/engagement-ring-setting-for-active-lifestyle/02-seo.json",
+    "content/posts/engagement-ring-setting-for-active-lifestyle/03-source-pack.json",
+    "content/posts/engagement-ring-setting-for-active-lifestyle/04-images.json",
+    "content/posts/engagement-ring-setting-for-active-lifestyle/02-research/pages/",
+    "content-system/rubrics/editor-rubric.md",
+    "content-system/rubrics/compliance-checklist.md",
+    "content-system/rubrics/link-rules.md",
+    "content-system/brand/banned-phrases.md",
+    "content-system/brand/brand-facts.md",
+    "content-system/seo/link-map.csv"
+  ],
+  "self_qa": {
+    "checks": [
+      {
+        "check": "scan_copy.py run and reflected",
+        "pass": true,
+        "note": "0 banned, 0 dashes, 0 overlaps; 1 flagged 'perfect' is inside a URL path only"
+      },
+      {
+        "check": "Every factual sentence logged",
+        "pass": true,
+        "note": "44 facts confirmed against markers; FAQ 'most common' and flush-FAQ overstatement fixed"
+      },
+      {
+        "check": "Key takeaways exactly 4, one sentence each",
+        "pass": true
+      },
+      {
+        "check": "No prices; needs_signoff empty",
+        "pass": true
+      },
+      {
+        "check": "Links within limits",
+        "pass": true,
+        "note": "1 hub, 4 related (brief asked 6; 4 accepted per link-rules 2 to 4), 1 commercial; 4 external authority links, no competitors. /expert-advice/proposal-ideas is the live redirect target; link-map.csv still lists the old 45-proposal-ideas URL"
+      },
+      {
+        "check": "Images: every slot matches 04-images.json, none reference-only",
+        "pass": true,
+        "note": "12 slots, all status needed"
+      },
+      {
+        "check": "SEO: keyword in title, first 100 words, one H2",
+        "pass": true,
+        "note": "After edit 1 the keyword is in an H2; meta title and description still fit"
+      },
+      {
+        "check": "Decision consistent with scores and blocking issues",
+        "pass": true,
+        "note": "avg 4.29, min 4, no blocking issues, edits present: pass_with_edits"
+      }
+    ],
+    "confidence": 0.85
+  },
+  "open_questions": [
+    {
+      "to": "orchestrator",
+      "question": "Update link-map.csv: add /expert-advice/proposal-ideas (live redirect target of /expert-advice/45-proposal-ideas-for-every-kind-of-couple).",
+      "blocking": false
+    }
+  ],
+  "assumptions": [
+    "Internal related links held at 4 (brief asked 6) as instructed; trends and Italy proposal pages dropped.",
+    "Finger swelling and cold-water specifics (brief must_include) omitted because unsourced; acceptable under rule 1.",
+    "GIA close-paraphrase treated as must-fix edits, not a blocking originality issue, since GIA is an attributed, cited source rather than a competitor."
+  ],
+  "verify_items": [],
+  "tools_used": [
+    "scan_copy.py",
+    "validate.py"
+  ],
+  "next_agent": [
+    "icp-reader"
+  ],
+  "payload": {
+    "draft_file": "content/posts/engagement-ring-setting-for-active-lifestyle/05-draft.md",
+    "rubric": {
+      "voice": 4,
+      "expertise": 5,
+      "accuracy": 4,
+      "seo_fit": 4,
+      "commercial_link": 4,
+      "structure": 5,
+      "brief_fit": 4
+    },
+    "average": 4.29,
+    "blocking_issues": [],
+    "decision": "pass_with_edits",
+    "edits": [
+      {
+        "location": "## How to choose ... (H2 heading)",
+        "issue": "Primary keyword is in the title variant and first 100 words but in no H2. Add it to the framework H2 (outline intent unchanged).",
+        "fix": "Replace \"## How to choose a ring setting when you live an active life\" with \"## How to choose an engagement ring setting for an active lifestyle\"",
+        "old": "## How to choose a ring setting when you live an active life",
+        "new": "## How to choose an engagement ring setting for an active lifestyle"
+      },
+      {
+        "location": "## 1. Full bezel setting, para 1",
+        "issue": "GIA material too close to the source wording (near-verbatim run of fact_02). Put it in our own words.",
+        "fix": "Replace \"GIA says bezels resist chips and everyday wear well, their smooth edges are less likely to catch on clothing or gloves, and they are a practical choice for people who work with their hands or lead an active life. <!-- fact_02 -->\" with \"In GIA's assessment, a bezel stands up well to daily knocks and chipping, and with no tips to snag a glove or a jumper, it is one of the most practical options for hands that work or play hard. <!-- fact_02 -->\"",
+        "old": "GIA says bezels resist chips and everyday wear well, their smooth edges are less likely to catch on clothing or gloves, and they are a practical choice for people who work with their hands or lead an active life. <!-- fact_02 -->",
+        "new": "In GIA's assessment, a bezel stands up well to daily knocks and chipping, and with no tips to snag a glove or a jumper, it is one of the most practical options for hands that work or play hard. <!-- fact_02 -->"
+      },
+      {
+        "location": "## 3. Flush (gypsy) setting, para 1",
+        "issue": "Close paraphrase of GIA (fact_06 phrasing lifted as a list).",
+        "fix": "Replace \"GIA describes it as low profile, highly durable and unlikely to catch on clothing or gloves. <!-- fact_06 -->\" with \"With nothing standing proud of the metal, GIA rates it as very hard wearing and about as snag-free as a setting gets. <!-- fact_06 -->\"",
+        "old": "GIA describes it as low profile, highly durable and unlikely to catch on clothing or gloves. <!-- fact_06 -->",
+        "new": "With nothing standing proud of the metal, GIA rates it as very hard wearing and about as snag-free as a setting gets. <!-- fact_06 -->"
+      },
+      {
+        "location": "## 3. Flush (gypsy) setting, Skip it if",
+        "issue": "'keeps' misstates GIA (it advises, it does not keep); wording unclear.",
+        "fix": "Replace \"GIA also keeps flush setting for durable stones such as diamond, given the stress of setting. <!-- fact_08 -->\" with \"GIA advises it only for durable stones such as diamond, because the setting process puts the stone under stress. <!-- fact_08 -->\"",
+        "old": "GIA also keeps flush setting for durable stones such as diamond, given the stress of setting. <!-- fact_08 -->",
+        "new": "GIA advises it only for durable stones such as diamond, because the setting process puts the stone under stress. <!-- fact_08 -->"
+      },
+      {
+        "location": "## 4. Low-profile claw solitaire, para 2",
+        "issue": "'First, ...' has no lead-in, so the list of two changes reads as a fragment.",
+        "fix": "Replace \"First, six claws rather than four:\" with \"Two changes make claws far safer on active hands. First, six claws rather than four:\"",
+        "old": "First, six claws rather than four:",
+        "new": "Two changes make claws far safer on active hands. First, six claws rather than four:"
+      },
+      {
+        "location": "## 5. Tension-style setting, H3 True tension, para 1",
+        "issue": "fact_18 source pack note says 'describe in our own words'; current sentence tracks the source claim closely.",
+        "fix": "Replace \"Many rings sold as \"tension style\" quietly hold the stone with small hidden claws or a partial bezel, while a true tension setting relies on the metal's pressure alone. <!-- fact_18 -->\" with \"A ring labelled \"tension style\" often has a little help: discreet claws or a partial bezel tucked out of sight. A true tension setting has none, and the band's pressure does all the work. <!-- fact_18 -->\"",
+        "old": "Many rings sold as \"tension style\" quietly hold the stone with small hidden claws or a partial bezel, while a true tension setting relies on the metal's pressure alone. <!-- fact_18 -->",
+        "new": "A ring labelled \"tension style\" often has a little help: discreet claws or a partial bezel tucked out of sight. A true tension setting has none, and the band's pressure does all the work. <!-- fact_18 -->"
+      },
+      {
+        "location": "## 6. Channel setting, para 1",
+        "issue": "Close paraphrase of GIA (fact_19 clause order and wording).",
+        "fix": "Replace \"GIA describes the stones as protected by the metal, durable, suited to everyday wear and less likely to catch than claw-set accents. <!-- fact_19 -->\" with \"Because the walls shield the stones' edges, GIA considers the style tough enough for daily wear and less snag-prone than accent stones held by claws. <!-- fact_19 -->\"",
+        "old": "GIA describes the stones as protected by the metal, durable, suited to everyday wear and less likely to catch than claw-set accents. <!-- fact_19 -->",
+        "new": "Because the walls shield the stones' edges, GIA considers the style tough enough for daily wear and less snag-prone than accent stones held by claws. <!-- fact_19 -->"
+      },
+      {
+        "location": "## 7. Bar setting, para 1",
+        "issue": "Near-verbatim run of fact_22 ('more exposed than channel-set ones and may be slightly more vulnerable to impact or chipping, though the bars still give good security').",
+        "fix": "Replace \"Bar-set stones are more exposed than channel-set ones and may be slightly more vulnerable to impact or chipping, though the bars still give good security. <!-- fact_22 -->\" with \"The trade-off is that the open sides leave each stone a little more open to a knock or chip than in a channel, though GIA still counts the bars as a secure hold. <!-- fact_22 -->\"",
+        "old": "Bar-set stones are more exposed than channel-set ones and may be slightly more vulnerable to impact or chipping, though the bars still give good security. <!-- fact_22 -->",
+        "new": "The trade-off is that the open sides leave each stone a little more open to a knock or chip than in a channel, though GIA still counts the bars as a secure hold. <!-- fact_22 -->"
+      },
+      {
+        "location": "Think twice H3, para 1",
+        "issue": "Close paraphrase of fact_25 and fact_26 phrasing.",
+        "fix": "Replace \"and GIA notes the raised structure may be more likely to catch on clothing or objects. <!-- fact_25 --> Halo and pavé designs carry many small stones and may need more maintenance to keep them secure and clean. <!-- fact_26 -->\" with \"and GIA points out that extra height gives sleeves and straps more to catch on. <!-- fact_25 --> Halo and pavé designs rely on many tiny stones, and every one of them needs checking and cleaning to stay put. <!-- fact_26 -->\"",
+        "old": "and GIA notes the raised structure may be more likely to catch on clothing or objects. <!-- fact_25 --> Halo and pavé designs carry many small stones and may need more maintenance to keep them secure and clean. <!-- fact_26 -->",
+        "new": "and GIA points out that extra height gives sleeves and straps more to catch on. <!-- fact_25 --> Halo and pavé designs rely on many tiny stones, and every one of them needs checking and cleaning to stay put. <!-- fact_26 -->"
+      },
+      {
+        "location": "Ring care, Hiking and climbing",
+        "issue": "Says a destination 'suits' a setting, which is a non sequitur and unsupported.",
+        "fix": "Replace \"Planning an outdoor proposal? Our [proposal spots in New Zealand](/proposal-destinations-in-new-zealand) suit a bezel or flush setting.\" with \"Planning an outdoor proposal? Browse our [proposal spots in New Zealand](/proposal-destinations-in-new-zealand), and choose a bezel or flush setting for the walk in.\"",
+        "old": "Planning an outdoor proposal? Our [proposal spots in New Zealand](/proposal-destinations-in-new-zealand) suit a bezel or flush setting.",
+        "new": "Planning an outdoor proposal? Browse our [proposal spots in New Zealand](/proposal-destinations-in-new-zealand), and choose a bezel or flush setting for the walk in."
+      },
+      {
+        "location": "Ring care, Before a destination wedding, para 1",
+        "issue": "'Four to six weeks' is unsourced planner advice (source pack insider_details), and the fact_11/13 markers read as if GIA set that timing. Keep the tip, but frame it as our rule of thumb and anchor it to GIA's six-monthly check.",
+        "fix": "Replace \"Book a setting check four to six weeks before you fly, so any re-tipping or tightening is done with time to spare. <!-- fact_11 --> <!-- fact_13 -->\" with \"Our rule of thumb: book a setting check four to six weeks before you fly, so any re-tipping or tightening is finished with time to spare. It also counts as one of the six-monthly checks GIA suggests. <!-- fact_11 --> <!-- fact_13 -->\"",
+        "old": "Book a setting check four to six weeks before you fly, so any re-tipping or tightening is done with time to spare. <!-- fact_11 --> <!-- fact_13 -->",
+        "new": "Our rule of thumb: book a setting check four to six weeks before you fly, so any re-tipping or tightening is finished with time to spare. It also counts as one of the six-monthly checks GIA suggests. <!-- fact_11 --> <!-- fact_13 -->"
+      },
+      {
+        "location": "FAQ: What is the most durable engagement ring setting?",
+        "issue": "Overstates GIA: only bezels are named practical for active wearers (fact_02); flush is described as highly durable and snag-free (fact_06).",
+        "fix": "Replace \"A full bezel or flush setting, both named by GIA as practical for active wearers. <!-- fact_02 --> <!-- fact_06 -->\" with \"A full bezel or a flush setting. GIA calls bezels a practical choice for active hands and rates flush settings as hard wearing and unlikely to snag. <!-- fact_02 --> <!-- fact_06 -->\"",
+        "old": "A full bezel or flush setting, both named by GIA as practical for active wearers. <!-- fact_02 --> <!-- fact_06 -->",
+        "new": "A full bezel or a flush setting. GIA calls bezels a practical choice for active hands and rates flush settings as hard wearing and unlikely to snag. <!-- fact_02 --> <!-- fact_06 -->"
+      },
+      {
+        "location": "FAQ: What is the most common engagement ring setting...",
+        "issue": "'The claw solitaire' asserts it is the most common setting; no source in the pack. Answer without the unsourced superlative.",
+        "fix": "Replace \"The claw solitaire. Raised claws can catch and need regular checks, so choose six claws and a low head. <!-- fact_09 --> <!-- fact_10 -->\" with \"Many classic engagement rings are claw solitaires, and they can work on active hands with care: raised claws can catch and need regular checks, so choose six claws and a low head. <!-- fact_09 --> <!-- fact_10 -->\"",
+        "old": "The claw solitaire. Raised claws can catch and need regular checks, so choose six claws and a low head. <!-- fact_09 --> <!-- fact_10 -->",
+        "new": "Many classic engagement rings are claw solitaires, and they can work on active hands with care: raised claws can catch and need regular checks, so choose six claws and a low head. <!-- fact_09 --> <!-- fact_10 -->"
+      }
+    ],
+    "fact_check_log": [
+      {
+        "claim": "Full bezel wraps whole girdle for maximum protection",
+        "status": "confirmed",
+        "fact_id": "fact_01"
+      },
+      {
+        "claim": "Bezels resist chips/wear, smooth edges less likely to catch, practical for active/hands-on",
+        "status": "confirmed",
+        "fact_id": "fact_02"
+      },
+      {
+        "claim": "Bezel covers more edge, slightly less light",
+        "status": "confirmed",
+        "fact_id": "fact_03"
+      },
+      {
+        "claim": "Half bezel balances visibility and protection",
+        "status": "confirmed",
+        "fact_id": "fact_04"
+      },
+      {
+        "claim": "Partial bezels shield vulnerable points from chipping",
+        "status": "confirmed",
+        "fact_id": "fact_05"
+      },
+      {
+        "claim": "Flush: level with metal, low profile, durable, unlikely to catch",
+        "status": "confirmed",
+        "fact_id": "fact_06"
+      },
+      {
+        "claim": "Flush needs wider, thicker band, less light",
+        "status": "confirmed",
+        "fact_id": "fact_07"
+      },
+      {
+        "claim": "Flush best for durable stones such as diamond (wording fixed: 'keeps' -> 'advises')",
+        "status": "confirmed",
+        "fact_id": "fact_08"
+      },
+      {
+        "claim": "Claws let most light in, tips catch, need checks",
+        "status": "confirmed",
+        "fact_id": "fact_09"
+      },
+      {
+        "claim": "Six claws vs four: stone likely stays, better girdle protection",
+        "status": "confirmed",
+        "fact_id": "fact_10"
+      },
+      {
+        "claim": "Claw check every six months or at least yearly",
+        "status": "confirmed",
+        "fact_id": "fact_11"
+      },
+      {
+        "claim": "Bent claw exposes stone to chipping; loose diamond can cut through claws",
+        "status": "confirmed",
+        "fact_id": "fact_12"
+      },
+      {
+        "claim": "Re-tipping and tightening over time",
+        "status": "confirmed",
+        "fact_id": "fact_13"
+      },
+      {
+        "claim": "Compass-set = claws at 12, 3, 6, 9 o'clock; framed as style only, not safety (verify item 3 resolved)",
+        "status": "confirmed",
+        "fact_id": "fact_14"
+      },
+      {
+        "claim": "Tension suspends stone by pressure, hard stones",
+        "status": "confirmed",
+        "fact_id": "fact_15"
+      },
+      {
+        "claim": "Tension stone more exposed; hard blow can shift/loosen; careful wear",
+        "status": "confirmed",
+        "fact_id": "fact_16"
+      },
+      {
+        "claim": "Tension very difficult, sometimes impossible, to resize (GIA wording used per conflict note)",
+        "status": "confirmed",
+        "fact_id": "fact_17"
+      },
+      {
+        "claim": "Tension-style hides claws/partial bezel vs true tension (reworded in own words)",
+        "status": "confirmed",
+        "fact_id": "fact_18"
+      },
+      {
+        "claim": "Channel: row between two walls, protected, durable, less snag than claw accents",
+        "status": "confirmed",
+        "fact_id": "fact_19"
+      },
+      {
+        "claim": "Channel difficult to resize",
+        "status": "confirmed",
+        "fact_id": "fact_20"
+      },
+      {
+        "claim": "Channel keeps side stones flush",
+        "status": "confirmed",
+        "fact_id": "fact_21"
+      },
+      {
+        "claim": "Bar: vertical bars, more exposed than channel, good security",
+        "status": "confirmed",
+        "fact_id": "fact_22"
+      },
+      {
+        "claim": "Bar harder to resize",
+        "status": "confirmed",
+        "fact_id": "fact_23"
+      },
+      {
+        "claim": "Basket supports steady claws",
+        "status": "confirmed",
+        "fact_id": "fact_24"
+      },
+      {
+        "claim": "Cathedral raises stone, more likely to catch, arches add stability",
+        "status": "confirmed",
+        "fact_id": "fact_25"
+      },
+      {
+        "claim": "Halo/pave many small stones, more maintenance",
+        "status": "confirmed",
+        "fact_id": "fact_26"
+      },
+      {
+        "claim": "Some settings low upkeep, open designs need inspection",
+        "status": "confirmed",
+        "fact_id": "fact_27"
+      },
+      {
+        "claim": "Take ring off for risky activities; exercise, snagging, knocks take toll",
+        "status": "confirmed",
+        "fact_id": "fact_28"
+      },
+      {
+        "claim": "Mohs non-linear, diamond 10, sapphire 9, only diamond scratches diamond",
+        "status": "confirmed",
+        "fact_id": "fact_29"
+      },
+      {
+        "claim": "Diamond not toughest; hard blow can cleave/fracture",
+        "status": "confirmed",
+        "fact_id": "fact_30"
+      },
+      {
+        "claim": "V-shaped claws for pear, marquise, princess, heart",
+        "status": "confirmed",
+        "fact_id": "fact_31"
+      },
+      {
+        "claim": "Moissanite 9.25",
+        "status": "confirmed",
+        "fact_id": "fact_32"
+      },
+      {
+        "claim": "Morganite 7.5 to 8 needs more care; emerald not tough",
+        "status": "confirmed",
+        "fact_id": "fact_33"
+      },
+      {
+        "claim": "Spinel, morganite, zircon, tsavorite, tourmaline daily with care, 'no rock climbing'",
+        "status": "confirmed",
+        "fact_id": "fact_34"
+      },
+      {
+        "claim": "Thermal shock can create/spread fractures",
+        "status": "confirmed",
+        "fact_id": "fact_35"
+      },
+      {
+        "claim": "Platinum wear resistant, patina polishes away",
+        "status": "confirmed",
+        "fact_id": "fact_36"
+      },
+      {
+        "claim": "White gold rhodium plated, wears, needs replating",
+        "status": "confirmed",
+        "fact_id": "fact_37"
+      },
+      {
+        "claim": "Higher karat gold softer, scratches and dents",
+        "status": "confirmed",
+        "fact_id": "fact_38"
+      },
+      {
+        "claim": "Chlorine erodes alloys, loosens claws; remove before pool/hot tub",
+        "status": "confirmed",
+        "fact_id": "fact_39"
+      },
+      {
+        "claim": "Carry-on not checked; tell insurer travel dates",
+        "status": "confirmed",
+        "fact_id": "fact_40"
+      },
+      {
+        "claim": "Store separately in padded box or pouch",
+        "status": "confirmed",
+        "fact_id": "fact_41"
+      },
+      {
+        "claim": "Insurance covers loss and damage as well as theft; read carefully",
+        "status": "confirmed",
+        "fact_id": "fact_42"
+      },
+      {
+        "claim": "JAA: revalue about every two years",
+        "status": "confirmed",
+        "fact_id": "fact_43"
+      },
+      {
+        "claim": "Leave fragile pieces/softer gems at home for hard trips",
+        "status": "confirmed",
+        "fact_id": "fact_44"
+      },
+      {
+        "claim": "Book a setting check four to six weeks before flying: planner advice from source pack insider_details, not a GIA timing; kept as 'our rule of thumb' (edit)",
+        "status": "confirmed",
+        "fact_id": "fact_11"
+      },
+      {
+        "claim": "Claw solitaire is the most common setting (FAQ): no source; reworded to drop the superlative",
+        "status": "removed"
+      },
+      {
+        "claim": "Flush named by GIA as practical for active wearers (FAQ): overstated; reworded",
+        "status": "removed",
+        "fact_id": "fact_06"
+      },
+      {
+        "claim": "Rinse off salt and sunscreen before rings go back on: general care advice, no factual claim (verify item 2 resolved by phrasing)",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Finger swelling on flights / cold water (verify item 1): omitted from draft, so no marker needed",
+        "status": "removed"
+      },
+      {
+        "claim": "Wedded Concierge plans venue, travel, vendors and payments anywhere in the world; one Wedded Advisor as single point of contact (brand-facts.md)",
+        "status": "confirmed"
+      }
+    ],
+    "compliance": {
+      "pass": true,
+      "issues": [],
+      "notes": "No prices, no statistics or awards, no competitor or jeweller names (Jewellers Association of Australia is an industry body, cited). No marriage-legal, visa or entry requirements are stated; Smartraveller is linked for general insurance advice only, so the 'Wedded Advisor confirms current requirements' line is not required. Brand claims in the CTA match brand-facts.md."
+    },
+    "originality": {
+      "pass": true,
+      "matches": [],
+      "notes": "scan_copy.py: 0 overlaps with the 6 scraped competitor pages. Separately, 7 GIA-sourced sentences tracked the source wording too closely; edits rewrite them in our own words."
+    },
+    "banned_phrases_found": [],
+    "needs_signoff": []
+  }
+}

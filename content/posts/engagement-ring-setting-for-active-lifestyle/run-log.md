@@ -4,3 +4,5 @@
 05:27 03 planner-sme complete 44 facts (GIA-led), 3 VERIFY; waiting on 02
 05:29 02 seo-researcher complete 5 cities, global scope, 8 internal/4 external; report.md saved; writer to keep 4 related links
 05:33 05 luxury-writer complete ~2,355 words, 0 VERIFY; first draft sent; 06 + 07x5 launched in parallel
+05:34 07 icp-reader x5 complete; enquire 1-2; asks: comparison table, practical bridge, fewer sales lines
+05:35 06 editor pass_with_edits 4.29, 13 edits applied by orchestrator -> 05-draft-r2.md
