@@ -7,3 +7,4 @@
 03:11 05 luxury-writer complete ~2,150 words, 4 takeaways, 1 VERIFY; first draft sent
 03:14 06 editor revise 4.43, 1 blocking (compliance line), 17 exact edits
 03:15 05r2 luxury-writer complete 17 edits applied, ~2,430 words; 06-edit.json renamed to 06-edit-r1.json
+03:17 06 editor round 2 pass_with_edits 4.57; 5 trim edits applied by orchestrator to 05-draft-r2.md (~2,330 words)

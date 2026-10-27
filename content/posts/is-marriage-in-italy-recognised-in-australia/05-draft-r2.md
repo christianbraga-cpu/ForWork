@@ -24,7 +24,7 @@ Yes, in most cases, with no form to lodge when you land. [Smartraveller's advice
 
 <!-- IMAGE SLOT home-again: Landscape, min 1400 px. A couple at home in Australia a few weeks after an Italian wedding: relaxed, at a kitchen bench or on a sunlit verandah, looking through a printed wedding album or an envelope of documents, Australian light and setting (eucalypts, timber deck or city apartment). Identifiable couple only with consent; or shot from behind. Location (Australian suburb or city) named by photographer. Not AI. -->
 
-[The Attorney-General's Department guide to getting married](https://www.ag.gov.au/families-and-marriage/marriage/get-married) states the same conditions, and adds that an Australian-authorised celebrant cannot perform a marriage overseas. <!-- fact_03 --> The legal weight sits entirely with the Italian ceremony and its record.
+[The Attorney-General's Department guide to getting married](https://www.ag.gov.au/families-and-marriage/marriage/get-married) states the same conditions, and adds that an Australian-authorised celebrant cannot perform a marriage overseas. <!-- fact_03 -->
 
 Smartraveller suggests a lawyer confirm your certificate is valid here, which is worth doing if either of you was married before. <!-- fact_02 -->
 
@@ -77,11 +77,11 @@ Not published: whether any Australian agency accepts an Italian multilingual ext
 
 The apostille is the form of legalisation set by the Hague Convention of 5 October 1961, and the Prefettura apostilles certificates issued by the comune. The apostille itself does not expire, though the certificate it is attached to may have its own validity period. <!-- fact_17 -->
 
-The apostille does not make your marriage valid or recognised; Italian law and s 88D do that. It authenticates the certificate as a genuine Italian public document. It is the Hague Convention form of legalisation, and the Passport Office says foreign certificates must be legalised. <!-- fact_17 --> <!-- fact_21 -->
+The apostille does not make your marriage valid or recognised; Italian law and s 88D do that. It authenticates the certificate as a genuine Italian public document, and the Passport Office says foreign certificates must be legalised. <!-- fact_17 --> <!-- fact_21 -->
 
-The Australian Embassy in Rome advises using the Prefettura of the city where you marry, and warns appointments are hard to get from May to September. <!-- fact_16 --> Book it for the first working days after the wedding, before anyone flies home.
+The Australian Embassy in Rome advises using the Prefettura of the city where you marry, and warns appointments are hard to get from May to September. <!-- fact_16 --> Book it for the first working days after the wedding.
 
-Not published: Prefettura processing times. Ask your Wedded Advisor to build the appointment into your plan before you book flights home.
+Not published: Prefettura processing times. Ask your Wedded Advisor to build the appointment into your plan.
 
 ### When you need a NAATI translation
 
@@ -142,7 +142,7 @@ Part VA only reaches a marriage that was valid under Italian law. <!-- fact_04 -
 
 ### The trade-offs if Italy should be 'the' wedding
 
-The cost is emotional. Your legal anniversary becomes a short ceremony at home, and some couples feel the Italian vows repeat something already done. Others like that the day in Italy carries no admin at all. Weigh [whether to marry legally abroad or hold a symbolic ceremony](https://weddedwonderland.com/expert-advice/should-you-marry-legally-abroad-or-have-a-symbolic-ceremony) before you put down a venue deposit.
+The cost is emotional. Your legal anniversary becomes a short ceremony at home, and some couples feel the Italian vows repeat something already done. Weigh [whether to marry legally abroad or hold a symbolic ceremony](https://weddedwonderland.com/expert-advice/should-you-marry-legally-abroad-or-have-a-symbolic-ceremony) before you put down a venue deposit.
 
 <!-- CTA: primary -->
 
