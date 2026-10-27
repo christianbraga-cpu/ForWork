@@ -210,7 +210,14 @@ def check(path):
     domains = sorted({d.lower() for d in re.findall(r"\]\(https?://([^/)]+)", body)})
     blocked_file = Path(__file__).resolve().parents[1] / "brand" / "domains.md"
     blocked_text = blocked_file.read_text(encoding="utf-8").split("## Blocked", 1)[-1].split("## Research-only", 1)[0].lower()
-    flagged = [d for d in domains if d.removeprefix("www.").split(".")[0] in blocked_text]
+    def site_name(domain):
+        labels = domain.removeprefix("www.").split(".")
+        # e.g. it.usembassy.gov -> usembassy; easyweddings.com.au -> easyweddings
+        if len(labels) >= 3 and labels[-2] in {"com", "co", "org", "net", "gov", "edu"}:
+            return labels[-3]
+        return labels[-2] if len(labels) >= 2 else labels[0]
+
+    flagged = [d for d in domains if re.search(rf"\b{re.escape(site_name(d))}\b", blocked_text)]
     print(f"external_domains: {', '.join(domains) or 'none'}")
     print(f"possibly_blocked: {', '.join(flagged) or 'none'}")
 
