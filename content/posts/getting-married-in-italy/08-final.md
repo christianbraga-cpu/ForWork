@@ -136,7 +136,7 @@ Bagno a Ripoli asks for at least 90 days' notice, and appointments are harder to
 
 The squeeze is in the middle. Both documents expire six months after signing, so a date that moves late can mean signing again. <!-- fact_07 --> <!-- fact_21 -->
 
-Some steps are yours alone. Both of you attend the Atto Notorio with your witnesses, and each Australian signs the Nulla Osta in person in Rome or Milan. <!-- fact_06 --> <!-- fact_17 -->
+Some steps are yours alone. In Sydney, both of you attend the Atto Notorio with your witnesses, and each Australian signs the Nulla Osta in person in Rome or Milan. <!-- fact_06 --> <!-- fact_17 -->
 
 <!-- CTA: primary -->
 
@@ -192,7 +192,7 @@ Most official steps carry a fee, and amounts move with exchange rates or annual 
 - **Prefettura:** a fee applies as a revenue stamp (marca da bollo), bought at a tabaccaio before you go. <!-- fact_26 -->
 - **Comune:** a fee applies for the marriage hall and varies by location. <!-- fact_28 --> In Bagno a Ripoli, the sworn declaration itself has no cost. <!-- fact_30 -->
 
-Not published: interpreter and translation rates. Your Wedded Advisor costs the full paperwork in AUD for your comune.
+Not published: interpreter and translation rates. Your Wedded Advisor confirms the current requirements for your comune and costs the full paperwork in AUD.
 
 ## Frequently asked questions
 
