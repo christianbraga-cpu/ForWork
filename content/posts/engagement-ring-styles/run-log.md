@@ -6,3 +6,4 @@
 22:51 05 luxury-writer complete ~3,070 words, 0 VERIFY; first draft sent; 06 + 07x5 in parallel
 22:51 07 icp-reader x5 complete; enquire 1-2; asks: name the 15 styles up front, table higher, cut pitch line
 22:53 06 editor pass_with_edits 4.43; 17 edits applied by orchestrator -> 05-draft-r2.md
+22:55 07b icp-panel-chair revise (enquire 1.7, early-stage); 1 must-fix, 2 should-fix
