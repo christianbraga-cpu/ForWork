@@ -229,7 +229,7 @@ When you fly to your own wedding, the engagement ring and wedding bands travel t
 
 <!-- CTA: primary -->
 
-When you are ready, [browse destination wedding locations by region](/destinations). If you would rather hand over the logistics, Wedded Concierge plans venue, travel, vendors and payments, with one Wedded Advisor as your single point of contact from start to finish. [Talk to a Wedded Concierge about a wedding abroad](/wonderland-concierge).
+When you are ready, [browse wedding destinations by region](/destinations?utm_source=blog&utm_medium=content&utm_campaign=engagement-ring-setting-for-active-lifestyle&utm_content=primary). If you would rather hand over the logistics, Wedded Concierge plans venue, travel, vendors and payments, with one Wedded Advisor as your single point of contact from start to finish, and the fee is agreed in writing before any work begins. [Speak with a Wedded Advisor](/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=engagement-ring-setting-for-active-lifestyle&utm_content=secondary).
 
 ## Frequently asked questions
 
@@ -257,4 +257,4 @@ Platinum is very wear resistant; higher karat gold is softer and dents more easi
 
 Yes. Chlorine can loosen claws, so remove it before pools and hot tubs, and wear the travel band in the ocean. <!-- fact_39 -->
 
-When the ring is sorted and the conversation turns to where, your Wedded Advisor starts with your date and your guest list.
+When the ring is sorted and the conversation turns to where, [read the free Wedded Wonderland magazine](/magazine?utm_source=blog&utm_medium=content&utm_campaign=engagement-ring-setting-for-active-lifestyle&utm_content=magnet).

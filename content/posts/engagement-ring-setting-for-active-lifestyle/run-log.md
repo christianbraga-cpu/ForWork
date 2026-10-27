@@ -9,3 +9,5 @@
 05:37 07b icp-panel-chair revise (enquire 1.6, dreaming-stage topic); 2 must-fix, table and bands should-fix
 05:39 08 luxury-writer complete final 2,552 words, table + travel section, 0 VERIFY; 08b+09+10 launched in parallel
 05:40 10 distribution complete
+05:40 09 cro-specialist complete; 2 copy changes applied (UTMs, fee-in-writing clause, magazine close)
+05:40 08b editor pass (4.43), 0 blocking; keyword wording kept natural
