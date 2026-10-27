@@ -1,0 +1,9 @@
+# Backlinks to add: Italian Marriage Recognition in Australia Explained
+
+New post: /destination-weddings/is-marriage-in-italy-recognised-in-australia
+
+| Older page | Sentence where the link fits | Anchor text | Done |
+|---|---|---|---|
+| https://weddedwonderland.com/destination-weddings/getting-married-in-italy | One catch if you are changing your name. In NSW and Victoria, an overseas marriage certificate cannot be used to take your spouse's surname, so you apply for a change of name instead. That does not mean the marriage is not recognised. (Sister draft 08-final.md line 173, 'Is an Italian marriage recognised in Australia?' H2; append: 'We explain [how proof and surname changes work after an Italian wedding].' If the human approves the trim, this H2 shrinks to 2 or 3 sentences ending in this link.) | how proof and surname changes work after an Italian wedding | [ ] |
+| https://weddedwonderland.com/expert-advice/getting-married-in-italy-the-complete-legal-guide-for-destination-couples | A marriage legally performed in Italy is generally recognised abroad, and an apostilled certificate makes that easier to prove. (FAQ 'Will our marriage be recognised at home?'; append: 'Australian couples can read [how Australia recognises an Italian marriage].') | how Australia recognises an Italian marriage | [ ] |
+| https://weddedwonderland.com/expert-advice/do-you-have-to-register-an-overseas-marriage-at-home | Recognition is governed by the Marriage Act 1961. In broad terms, the law of the country where you married must consider the marriage valid, and Australian law must recognise it as valid as if it had taken place in Australia. (H2 'When Australia Recognises an Overseas Marriage'; append: 'Here is [what this means if you marry in Italy].') | what this means if you marry in Italy | [ ] |
