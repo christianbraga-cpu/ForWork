@@ -198,8 +198,8 @@ Yes, if one of you is eligible, for example as an Australian citizen. You must h
 
 Marrying at the comune or at home first shapes your venue, dates and paperwork, so decide before any deposit.
 
-A Wedded Advisor is the one person you deal with for the route you choose, planning venue, travel, vendors and payments in your time zone and quoting in AUD. The fee is agreed before any work begins, and your Advisor confirms in writing which steps are included before you commit, so you know who handles the apostille and translation.
+A Wedded Advisor is the one person you deal with for the route you choose, planning venue, travel, vendors and payments in your time zone and quoting in AUD. The fee is agreed in writing before any work begins, and your Advisor confirms in writing which steps are included before you commit, so you know who handles the apostille and translation.
 
-If Italy is still an open map, start with [Italian wedding destinations from Lake Como to the Amalfi Coast](https://weddedwonderland.com/destinations/europe/italy). When you are ready, [speak with a Wedded Advisor](https://weddedwonderland.com/wonderland-concierge) about which route suits you.
+If Italy is still an open map, start with [Italian wedding destinations from Lake Como to the Amalfi Coast](https://weddedwonderland.com/destinations/europe/italy). When you are ready, [speak with a Wedded Advisor](https://weddedwonderland.com/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=is-marriage-in-italy-recognised-in-australia&utm_content=secondary) about which route suits you.
 
 This guide summarises official Australian and Italian guidance as at October 2026. Requirements change, so your Wedded Advisor confirms the current requirements for your dates before you book. It is not legal advice; for your own circumstances, speak with a family lawyer.
