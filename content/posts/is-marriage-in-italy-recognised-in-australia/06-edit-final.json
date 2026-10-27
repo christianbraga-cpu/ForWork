@@ -1,0 +1,255 @@
+{
+ "agent": "editor",
+ "task_id": "is-marriage-in-italy-recognised-in-australia",
+ "stage": "06",
+ "status": "complete",
+ "round": "final",
+ "inputs_used": [
+  "content/posts/is-marriage-in-italy-recognised-in-australia/08-final.md",
+  "content/posts/is-marriage-in-italy-recognised-in-australia/05-draft-r2.md",
+  "content/posts/is-marriage-in-italy-recognised-in-australia/07-panel.json",
+  "content/posts/is-marriage-in-italy-recognised-in-australia/03-source-pack.json",
+  "content/posts/is-marriage-in-italy-recognised-in-australia/02-seo.json",
+  "content/posts/is-marriage-in-italy-recognised-in-australia/04-images.json",
+  "content/posts/is-marriage-in-italy-recognised-in-australia/02-research/pages/",
+  "content-system/brand/brand-facts.md",
+  "content-system/rubrics/editor-rubric.md",
+  "content-system/rubrics/compliance-checklist.md",
+  "content-system/rubrics/link-rules.md",
+  "content-system/rubrics/qa-gates.md",
+  "content-system/seo/link-map.csv"
+ ],
+ "self_qa": {
+  "checks": [
+   {
+    "check": "scan_copy.py run on 08-final.md and reflected",
+    "pass": true,
+    "note": "0 banned, 0 flagged, 0 dashes; overlaps only Smartraveller (attributed)"
+   },
+   {
+    "check": "Every changed or new factual sentence since 05-draft-r2 logged",
+    "pass": true,
+    "note": "Scope is the blocking-issue check on the r2 to final diff; unchanged copy carries the round 2 log"
+   },
+   {
+    "check": "Structure",
+    "pass": true,
+    "note": "Exactly 4 Key takeaways, one sentence each; compliance line present as last paragraph; one <!-- CTA: primary --> placeholder; 6 image slots match 04-images.json (featured, home-again, proof-documents, passport-name, symbolic-ceremony, australian-celebration), all 'needed', none reference-only"
+   },
+   {
+    "check": "Links",
+    "pass": true,
+    "note": "6 internal links all in 02-seo.json and link-map.csv (sister link is a known draft, carried); 5 external links all official government sources from 02-seo.json, no competitors"
+   },
+   {
+    "check": "Decision consistent with scores and blocking issues",
+    "pass": true,
+    "note": "Avg 4.57 but 5 blocking issues, so revise; all five fixes are one-sentence (or one-row) exact replacements the orchestrator can apply without another scoring round"
+   }
+  ],
+  "confidence": 0.88
+ },
+ "open_questions": [],
+ "assumptions": [
+  "Queensland: fact_29's source-pack wording is taken as given; reverting to the supported first half avoids relying on the ambiguous condition.",
+  "Style changes from the panel round (glosses, table trims, CTA reword) are not reviewed beyond accuracy, as instructed."
+ ],
+ "verify_items": [
+  "[[VERIFY: how Australia treats an Italian unione civile; AGD, Smartraveller, NSW and Victorian pages are silent as at October 2026]]"
+ ],
+ "tools_used": [
+  "scan_copy.py",
+  "validate.py"
+ ],
+ "next_agent": [
+  "luxury-writer"
+ ],
+ "payload": {
+  "draft_file": "content/posts/is-marriage-in-italy-recognised-in-australia/08-final.md",
+  "rubric": {
+   "voice": 5,
+   "expertise": 5,
+   "accuracy": 3,
+   "seo_fit": 4,
+   "commercial_link": 5,
+   "structure": 5,
+   "brief_fit": 5
+  },
+  "average": 4.57,
+  "blocking_issues": [
+   "New H3 'If you live overseas or only one of you is Australian': the age sentence applies s 88D(3) (under 16, neither domiciled in Australia) under a heading that equates nationality with domicile and omits s 88D(2)(b) for couples where one partner was domiciled here (edit 1).",
+   "New H3 passport line says citizens living overseas can sometimes use a legalised Italian certificate, omitting fact_21's citizen-before-marriage condition and fact_20's rule that Australian-born citizens always need an Australian name change certificate (edit 2).",
+   "New H3 claims the Wedded Advisor 'confirms anything particular to your situation' (personal legal advice); not in brand-facts.md and against the compliance wording rule (edit 3).",
+   "Queensland row's added sentence is a circular, unactionable rendering of fact_29 (edit 4).",
+   "'A fee applies' for NSW/Victorian change of name has no source in the pack (edit 5)."
+  ],
+  "decision": "revise",
+  "edits": [
+   {
+    "location": "H2 'The legal test', H3 'If you live overseas or only one of you is Australian', paragraph 1, sentence 2",
+    "issue": "BLOCKING (legal). Matches fact_06 (s 88D(3)) literally, but under a heading that equates nationality with domicile it tells a couple where one partner is Australian (and likely domiciled here) that the under-16 rule is theirs. When either party was domiciled in Australia, s 88D(2)(b) applies instead (marriageable age under Part II, fact_05). 'Simpler' also mischaracterises a lower threshold.",
+    "fix": "Replace \"Where neither of you is domiciled in Australia, the age rule is simpler, and the marriage is not recognised while either of you is under 16. <!-- fact_06 -->\" with \"If either of you was domiciled in Australia at the wedding, both of you must have been of marriageable age under Australian law; if neither was, the marriage is not recognised while either of you is under 16. <!-- fact_05 --> <!-- fact_06 -->\""
+   },
+   {
+    "location": "Same H3, paragraph 2, sentence 1 (passport line)",
+    "issue": "BLOCKING (legal). 'Citizens living overseas can sometimes use a legalised, translated Italian certificate' omits both conditions: fact_21 requires citizenship before the marriage, and fact_20 says an Australian-born citizen who marries overseas always needs an Australian name change certificate, wherever they live. Most readers in this H3 (Australian-born, living abroad) would wrongly think the Italian certificate works for them.",
+    "fix": "Replace \"Citizens living overseas can sometimes use a legalised, translated Italian certificate for a passport (see the table below), and embassies keep lists of approved translators. <!-- fact_21 --> <!-- fact_22 -->\" with \"Living overseas does not change the passport rule for Australian-born citizens, who always need an Australian name change certificate; a legalised Italian certificate, translated in full by an accredited translator, is accepted only if you were born overseas and became a citizen before marrying. <!-- fact_20 --> <!-- fact_21 --> <!-- fact_22 -->\""
+   },
+   {
+    "location": "Same H3, paragraph 2, last sentence",
+    "issue": "BLOCKING (brand claim). 'Your Wedded Advisor confirms anything particular to your situation' after domicile and visa points implies the Advisor gives personal legal advice. brand-facts.md supports no such claim, and the compliance checklist allows only 'the Advisor confirms current requirements, rather than giving legal advice'. It also contradicts the closing 'not legal advice' line.",
+    "fix": "Replace \"Your Wedded Advisor confirms anything particular to your situation.\" with \"Your Wedded Advisor confirms the current requirements for your dates, and a family lawyer can advise on domicile or anything else particular to your situation.\""
+   },
+   {
+    "location": "H2 'Changing your surname', H3 'Other states and territories', table, Queensland row",
+    "issue": "BLOCKING (legal clarity). The added second sentence ('If you had earlier changed your name with the Registry to your partner's, change it at the Registry') is circular and does not say what to change it to; it compresses fact_29's condition into an instruction a reader cannot act on and may misread. The first half is supported and is enough for the table.",
+    "fix": "Replace \"| Queensland | Not always automatic; some organisations need an official change of name. If you had earlier changed your name with the Registry to your partner's, change it at the Registry <!-- fact_29 --> |\" with \"| Queensland | You may not be able to take your partner's name automatically, and some organisations need an official change of name document <!-- fact_29 --> |\""
+   },
+   {
+    "location": "H3 'NSW and Victoria: a change of name application', last sentence",
+    "issue": "BLOCKING (fee claim). 'A fee applies' is a new, unmarked factual claim; neither fact_27 (NSW) nor fact_28 (Victoria) mentions a fee, and the source pack holds no registry fee. No figure is stated, so nothing goes to Nic, but the assertion itself is unsupported.",
+    "fix": "Replace \"A fee applies; check your registry's page for the current fee and timing.\" with \"Check your registry's page for any fee and the current processing time.\""
+   }
+  ],
+  "fact_check_log": [
+   {
+    "claim": "New H3: Part VA covers any marriage valid where it took place",
+    "fact_id": "fact_04",
+    "status": "confirmed"
+   },
+   {
+    "claim": "New H3: where neither party is domiciled in Australia, not recognised while either is under 16 (literal match to s 88D(3), but misleading in context without s 88D(2)(b); see edit 1)",
+    "fact_id": "fact_06",
+    "status": "unsupported"
+   },
+   {
+    "claim": "New H3: citizens living overseas can sometimes use a legalised, translated Italian certificate for a passport (omits citizen-before-marriage and the Australian-born rule; see edit 2)",
+    "fact_id": "fact_21, fact_20",
+    "status": "unsupported"
+   },
+   {
+    "claim": "New H3: embassies keep lists of approved translators",
+    "fact_id": "fact_22",
+    "status": "confirmed"
+   },
+   {
+    "claim": "New H3: Wedded Advisor confirms anything particular to your situation (not in brand-facts; see edit 3)",
+    "status": "unsupported"
+   },
+   {
+    "claim": "Takeaway 2: comune (town hall) certificate, Prefettura apostille, translated in full",
+    "fact_id": "fact_10, fact_16, fact_22",
+    "status": "confirmed"
+   },
+   {
+    "claim": "Consent not real if duress, fraud, or mistake about the person or the ceremony (shortened; s 23B(1)(d)(iii) no longer listed, still accurate as far as it goes)",
+    "fact_id": "fact_07",
+    "status": "confirmed"
+   },
+   {
+    "claim": "Comune glossed as the town hall that runs the civil register; Bagno a Ripoli registrar transcribes and issues certificate or extract",
+    "fact_id": "fact_13",
+    "status": "confirmed"
+   },
+   {
+    "claim": "Multilingual extract: short standard-form extract, Vienna Convention 8 September 1976, Australia not a Convention country",
+    "fact_id": "fact_18",
+    "status": "confirmed"
+   },
+   {
+    "claim": "No Australian agency says whether it accepts the multilingual extract on its own",
+    "fact_id": "fact_18",
+    "status": "confirmed"
+   },
+   {
+    "claim": "Apostille authenticates an Italian public document for use abroad; Hague Convention 5 October 1961; Prefettura (Ministry of the Interior office) apostilles comune certificates; apostille does not expire",
+    "fact_id": "fact_17",
+    "status": "confirmed"
+   },
+   {
+    "claim": "Passport Office says foreign certificates must be legalised",
+    "fact_id": "fact_21",
+    "status": "confirmed"
+   },
+   {
+    "claim": "Embassy Rome: apostille at the Prefettura of the city where you marry; appointments hard May to September",
+    "fact_id": "fact_16",
+    "status": "confirmed"
+   },
+   {
+    "claim": "Prefettura does not publish processing times (not-published convention; fact_17 conflicts note bars quoting times)",
+    "fact_id": "fact_17",
+    "status": "confirmed"
+   },
+   {
+    "claim": "Proof table rows shortened (proof, passport, Centrelink, banks, visas)",
+    "fact_id": "fact_25, fact_20, fact_21, fact_23, fact_29, fact_30, fact_31, fact_24",
+    "status": "confirmed"
+   },
+   {
+    "claim": "A fee applies to NSW/Victorian change of name (no source; see edit 5)",
+    "fact_id": "fact_27, fact_28",
+    "status": "unsupported"
+   },
+   {
+    "claim": "Queensland row second sentence on earlier Registry name change (unclear rendering; see edit 4)",
+    "fact_id": "fact_29",
+    "status": "unsupported"
+   },
+   {
+    "claim": "Northern Territory: no guidance found on registry pages (not-published convention)",
+    "status": "confirmed"
+   },
+   {
+    "claim": "NOIM at least one month, no more than 18 months; separate in-person meetings since 12 June 2024 (shorter-period exception removed, which is an omission, not an error; 'so the legal ceremony can be done well before you fly' is advice, not a claim)",
+    "fact_id": "fact_35",
+    "status": "confirmed"
+   },
+   {
+    "claim": "s 113 bars a couple already legally married from marrying each other again in Australia (paraphrase of s 113(1)(a))",
+    "fact_id": "fact_36",
+    "status": "confirmed"
+   },
+   {
+    "claim": "s 113(2) genuine-doubt sentence removed",
+    "fact_id": "fact_37",
+    "status": "removed"
+   },
+   {
+    "claim": "FAQ symbolic ceremony: comune does not register a symbolic ceremony as a marriage",
+    "fact_id": "fact_04, fact_13",
+    "status": "confirmed"
+   },
+   {
+    "claim": "FAQ divorce moved after visa question; text unchanged",
+    "fact_id": "fact_45",
+    "status": "confirmed"
+   },
+   {
+    "claim": "Closing: one Advisor for the route you choose; plans venue, travel, vendors and payments; time zone; quotes in AUD; fee agreed before any work begins; inclusions confirmed in writing before commitment",
+    "status": "confirmed"
+   },
+   {
+    "claim": "Same-sex: Italian unione civile treatment in Australia",
+    "status": "verify"
+   }
+  ],
+  "compliance": {
+   "pass": false,
+   "issues": [
+    "Advisor-as-legal-adviser wording in new H3 (edit 3); closing compliance line itself is present and correct",
+    "Unsourced fee assertion (edit 5); no fee figures or prices anywhere, so nothing for Nic to sign off",
+    "Carried, not new: [[VERIFY]] on Italian unione civile recognition stays open",
+    "Carried, not new: sister link /destination-weddings/getting-married-in-italy is a draft in link-map (404 today); publish both posts together or hold the link"
+   ]
+  },
+  "originality": {
+   "pass": true,
+   "matches": [
+    "Overlaps only with Smartraveller (official, attributed): 6 short phrases including the attributed proof-of-marriage line and the URL path"
+   ]
+  },
+  "banned_phrases_found": [],
+  "needs_signoff": []
+ }
+}

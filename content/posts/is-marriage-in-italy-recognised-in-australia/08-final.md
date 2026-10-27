@@ -49,9 +49,9 @@ For most couples none of this applies. The one to check is an earlier divorce, w
 
 ### If you live overseas or only one of you is Australian
 
-The test does not change: Part VA covers any marriage that was valid where it took place. <!-- fact_04 --> Where neither of you is domiciled in Australia, the age rule is simpler, and the marriage is not recognised while either of you is under 16. <!-- fact_06 -->
+The test does not change: Part VA covers any marriage that was valid where it took place. <!-- fact_04 --> If either of you was domiciled in Australia at the wedding, both of you must have been of marriageable age under Australian law; if neither was, the marriage is not recognised while either of you is under 16. <!-- fact_05 --> <!-- fact_06 -->
 
-Citizens living overseas can sometimes use a legalised, translated Italian certificate for a passport (see the table below), and embassies keep lists of approved translators. <!-- fact_21 --> <!-- fact_22 --> If your partner is not Australian, see the visa question in the FAQ. Your Wedded Advisor confirms anything particular to your situation.
+Living overseas does not change the passport rule for Australian-born citizens, who always need an Australian name change certificate; a legalised Italian certificate, translated in full by an accredited translator, is accepted only if you were born overseas and became a citizen before marrying. <!-- fact_20 --> <!-- fact_21 --> <!-- fact_22 --> If your partner is not Australian, see the visa question in the FAQ. Your Wedded Advisor confirms the current requirements for your dates, and a family lawyer can advise on domicile or anything else particular to your situation.
 
 ## Do you need to register an Italian marriage in Australia?
 
@@ -115,13 +115,13 @@ The Passport Office will always need a name change certificate if you were born 
 
 ### NSW and Victoria: a change of name application
 
-In NSW you apply for an official change of name, as set out in [the NSW registry's guidance on overseas marriages](https://www.nsw.gov.au/family-and-relationships/marriages/if-youre-not-getting-married-nsw). <!-- fact_27 --> In Victoria, if you were born or married overseas you cannot take your spouse's family name automatically and need to apply to change it. <!-- fact_28 --> A fee applies; check your registry's page for the current fee and timing.
+In NSW you apply for an official change of name, as set out in [the NSW registry's guidance on overseas marriages](https://www.nsw.gov.au/family-and-relationships/marriages/if-youre-not-getting-married-nsw). <!-- fact_27 --> In Victoria, if you were born or married overseas you cannot take your spouse's family name automatically and need to apply to change it. <!-- fact_28 --> Check your registry's page for any fee and the current processing time.
 
 ### Other states and territories
 
 | State or territory | What the registry says |
 |---|---|
-| Queensland | Not always automatic; some organisations need an official change of name. If you had earlier changed your name with the Registry to your partner's, change it at the Registry <!-- fact_29 --> |
+| Queensland | You may not be able to take your partner's name automatically, and some organisations need an official change of name document <!-- fact_29 --> |
 | Western Australia | You may need to register a formal change of name before some organisations accept it <!-- fact_30 --> |
 | South Australia | Ask each authority or business, such as your bank, what evidence it needs <!-- fact_31 --> |
 | Tasmania | The same advice as South Australia <!-- fact_32 --> |
