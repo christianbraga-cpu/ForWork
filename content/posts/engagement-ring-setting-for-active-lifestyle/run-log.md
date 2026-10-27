@@ -6,3 +6,4 @@
 05:33 05 luxury-writer complete ~2,355 words, 0 VERIFY; first draft sent; 06 + 07x5 launched in parallel
 05:34 07 icp-reader x5 complete; enquire 1-2; asks: comparison table, practical bridge, fewer sales lines
 05:35 06 editor pass_with_edits 4.29, 13 edits applied by orchestrator -> 05-draft-r2.md
+05:37 07b icp-panel-chair revise (enquire 1.6, dreaming-stage topic); 2 must-fix, table and bands should-fix
