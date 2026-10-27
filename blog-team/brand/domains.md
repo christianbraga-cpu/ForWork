@@ -11,6 +11,8 @@ flags any domain that is in neither list for a human decision.
 | Official tourism boards | italia.it, visittuscany.com, visitgreece.gr, indonesia.travel, visitdubai.com, france.fr, spain.info, visitportugal.com |
 | Official venue sites | The venue's own domain (e.g. cappuccinacountryresort.com), only for venues we work with or name |
 | Airports and transport | Official airport and rail operator sites (e.g. aeroporto.firenze.it, pisa-airport.com, trenitalia.com) |
+| US government (added 27 Oct 2026 for US articles) | it.usembassy.gov, travel.state.gov, fam.state.gov, ssa.gov, irs.gov, healthcare.gov, dos.ny.gov, health.ny.gov, cityclerk.nyc.gov, portal.311.nyc.gov, sos.ca.gov, lavote.gov |
+| Italian government and consular (added 27 Oct 2026) | consnewyork.esteri.it, conslosangeles.esteri.it and other esteri.it consulates, prefettura.it, comune.<town>.it town halls |
 | Weather and climate | Official meteorological services (e.g. bom.gov.au for comparisons, meteoam.it) |
 
 Use `rel="noopener"` when opening in a new tab. Use `rel="nofollow"` for any
