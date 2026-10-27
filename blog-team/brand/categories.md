@@ -16,6 +16,7 @@ upload prompt sets it explicitly and checks the breadcrumb.
 | France Weddings | Mainly France |
 | Destination Guides | Multi-destination or "where to marry" pieces |
 | Planning Advice | Process, logistics, legal, budget pieces not tied to one country |
+| **Style Advice** (CONFIRMED by the user 27 Oct 2026, URL base `/style-advice/`) | Rings, jewellery, fashion and celebrity style pieces (cluster: Rings and Jewellery) |
 | Guest Experience | Travel, accommodation, transfers and guest care |
 | Real Weddings | Case studies (only with client consent) |
 | Venues | Venue round-ups and comparisons |
