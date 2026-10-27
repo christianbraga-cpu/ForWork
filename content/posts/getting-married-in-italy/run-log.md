@@ -14,3 +14,4 @@
 00:26 08b editor revise: 2 blocking one-sentence fixes, applied by orchestrator; 0 blocking left
 00:27 09 cro-specialist complete; close CTA reworded for planning stage (applied); magazine line skipped (optional)
 00:28 10 distribution complete 3 pins, 8-slide carousel, newsletter
+00:30 11 cms-publisher package built, not uploaded (no Chrome); 13 orchestrator run report, booking checklist, backlinks, link map, calendar, Word file. RUN COMPLETE

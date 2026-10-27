@@ -1,0 +1,377 @@
+{
+  "agent": "cms-publisher",
+  "task_id": "getting-married-in-italy",
+  "stage": "11",
+  "status": "complete",
+  "round": 1,
+  "inputs_used": [
+    "CLAUDE.md",
+    "content-system/cms/field-map.md",
+    "content-system/cms/publish-checklist.md",
+    "content-system/schemas/11-publish-package.schema.json",
+    "content/posts/getting-married-in-italy/00-input.json",
+    "content/posts/getting-married-in-italy/01-brief.json",
+    "content/posts/getting-married-in-italy/02-seo.json",
+    "content/posts/getting-married-in-italy/03-source-pack.json",
+    "content/posts/getting-married-in-italy/04-images.json",
+    "content/posts/getting-married-in-italy/07-panel.json",
+    "content/posts/getting-married-in-italy/08-final.md",
+    "content/posts/getting-married-in-italy/09-cro.json",
+    "content/posts/getting-married-in-italy/10-distribution.json",
+    "content/posts/getting-married-in-italy/run-log.md",
+    "content/posts/lake-como-villa-wedding-exclusive-use/11-publish-package.json",
+    "content/posts/lake-como-villa-wedding-exclusive-use/11-body.md",
+    "site/packages/italy/tuscany/cappuccina-country-resort/index.html"
+  ],
+  "self_qa": {
+    "checks": [
+      {
+        "check": "primary_category equals categories[0] (Destination Weddings, fixed by person)",
+        "pass": true
+      },
+      {
+        "check": "Front matter and all <!-- fact_xx --> markers removed; [[VERIFY]] markers and image-slot comments kept",
+        "pass": true,
+        "note": "2 VERIFY markers, 7 image-slot comments in 11-body.md"
+      },
+      {
+        "check": "Primary CTA placed at the CTA marker per 09-cro.json with UTMs",
+        "pass": true
+      },
+      {
+        "check": "Exactly 4 key takeaways and all FAQs extracted from 08-final.md; FAQPage carries all FAQs",
+        "pass": true,
+        "note": "8 FAQs"
+      },
+      {
+        "check": "needs_signoff empty; no prices printed",
+        "pass": true
+      },
+      {
+        "check": "All image slots from 04-images.json listed",
+        "pass": true,
+        "note": "7 slots, all needed"
+      },
+      {
+        "check": "Status draft; nothing uploaded, published or scheduled",
+        "pass": true
+      },
+      {
+        "check": "Image alt and caption filled",
+        "pass": false,
+        "note": "No approved images and no alt/caption in 04-images.json; left empty rather than invented."
+      }
+    ],
+    "confidence": 0.85
+  },
+  "open_questions": [
+    {
+      "to": "orchestrator",
+      "question": "CMS upload not attempted: no browser connection in this cloud session and content-system/cms/field-map.md is not CONFIRMED (\"NOT YET MAPPED\"). Run /wedded-cms-discovery locally, then /wedded-blog resume=getting-married-in-italy.",
+      "blocking": true
+    },
+    {
+      "to": "person",
+      "question": "Print the official fees (DFAT apostille, Atto Notorio, marca da bollo, Nulla Osta) with an as-at date? Currently \"a fee applies\"; any figure needs Nic sign-off.",
+      "blocking": false
+    },
+    {
+      "to": "person",
+      "question": "Does Wedded Concierge book the Nulla Osta appointment, find interpreters and attend offices (Rome or Milan, Prefettura, comune)? Not stated in the copy until confirmed in brand-facts.md.",
+      "blocking": false
+    },
+    {
+      "to": "orchestrator",
+      "question": "No author named in any input; package uses \"Wedded Wonderland\" (organisation). Confirm the byline.",
+      "blocking": false
+    }
+  ],
+  "assumptions": [
+    "Breadcrumb level 2 URL is https://weddedwonderland.com/destination-weddings, from the fixed URL path in 00-input.json.",
+    "Excerpt is the opening paragraph of the post (no separate excerpt supplied).",
+    "FAQPage answer text has Markdown link syntax stripped (no FAQ answer currently contains a link).",
+    "Article description uses the meta description from 02-seo.json."
+  ],
+  "verify_items": [
+    "[[VERIFY: Italy offers same-sex couples a civil union, not marriage; confirm against Law 76/2016 and D.Lgs. 7/2017]]",
+    "[[VERIFY: how Australia treats an Italian unione civile; no Australian government source found as at October 2026]]"
+  ],
+  "tools_used": [
+    "Bash (python3 -I)"
+  ],
+  "next_agent": [
+    "orchestrator"
+  ],
+  "payload": {
+    "title": "Getting Married in Italy as an Australian",
+    "slug": "getting-married-in-italy",
+    "url_path": "/destination-weddings/getting-married-in-italy",
+    "content_type": "Legal",
+    "cluster": "Getting Married in Italy",
+    "categories": [
+      "Destination Weddings",
+      "Italy",
+      "Expert Advice"
+    ],
+    "primary_category": "Destination Weddings",
+    "tags": [
+      "Italy",
+      "Legal",
+      "Nulla Osta",
+      "Australian couples",
+      "Destination wedding paperwork",
+      "Getting Married in Italy (cluster)"
+    ],
+    "excerpt": "Getting married in Italy as an Australian takes two documents, two countries and a sequence that has to run in the right order. Most guides online are written for British or American couples and talk about a Certificate of No Impediment, which Italy will not accept from you.",
+    "key_takeaways": [
+      "Australians need two documents to marry in Italy: an Atto Notorio from the Italian consulate for your state, and a Nulla Osta sworn in person at the Australian Embassy in Rome or the Consulate-General in Milan.",
+      "Order certificates and apostilles early, because DFAT publishes no set turnaround and the Atto Notorio, signed with four unrelated witnesses, cannot be issued more than six months before the wedding.",
+      "In Italy the order is fixed: sign the Nulla Osta, legalise it at a Prefettura, then lodge your declaration at the comune before the ceremony.",
+      "An Italian marriage cannot be registered in Australia but is generally recognised here, so bring home the marriage certificate with an Apostille."
+    ],
+    "body_markdown_file": "content/posts/getting-married-in-italy/11-body.md",
+    "faq": [
+      {
+        "q": "Can Australians get legally married in Italy?",
+        "a": "Yes, with an Atto Notorio and a Nulla Osta, in a civil ceremony at the comune or a Catholic ceremony with civil effect. You cannot marry at the Australian Embassy."
+      },
+      {
+        "q": "Am I legally married in Australia if I married overseas?",
+        "a": "In most cases, yes, if the marriage was valid where it took place and would have been valid in Australia."
+      },
+      {
+        "q": "Do we need to register our Italian marriage in Australia?",
+        "a": "No. Overseas marriages cannot be registered here; keep the Italian certificate as evidence."
+      },
+      {
+        "q": "How long does it take to get a Nulla Osta in Italy?",
+        "a": "It is signed at your appointment in Rome or Milan, then legalised at a Prefettura. Appointment lead times are not published, so book before you fly."
+      },
+      {
+        "q": "How long is a Nulla Osta valid for?",
+        "a": "Six months, the same as the Atto Notorio."
+      },
+      {
+        "q": "Can we use an Australian Certificate of No Impediment in Italy?",
+        "a": "No. The Embassy says Certificates of No Impediment are not valid for use in Italy."
+      },
+      {
+        "q": "How early should we arrive in Italy before the wedding?",
+        "a": "It depends on the comune: the Embassy says the declaration and ceremony may fall on the same day, but some comuni want the declaration three days before. Add time for Rome or Milan and the Prefettura."
+      },
+      {
+        "q": "Can we marry legally in Australia and have a symbolic ceremony in Italy?",
+        "a": "Yes. Lodge a Notice of Intended Marriage with an authorised celebrant at least one month before the Australian ceremony."
+      }
+    ],
+    "images": [
+      {
+        "slot_id": "featured",
+        "file": "content/posts/getting-married-in-italy/images/getting-married-in-italy-as-an-australian-comune-town-hall-couple-hero.webp",
+        "role": "featured",
+        "status": "needed"
+      },
+      {
+        "slot_id": "piazza",
+        "file": "content/posts/getting-married-in-italy/images/getting-married-in-italy-as-an-australian-piazza-palazzo-comunale.webp",
+        "role": "inline",
+        "status": "needed"
+      },
+      {
+        "slot_id": "documents",
+        "file": "content/posts/getting-married-in-italy/images/getting-married-in-italy-as-an-australian-documents-flat-lay.webp",
+        "role": "inline",
+        "status": "needed"
+      },
+      {
+        "slot_id": "civil-ceremony",
+        "file": "content/posts/getting-married-in-italy/images/getting-married-in-italy-as-an-australian-municipio-civil-ceremony-sash.webp",
+        "role": "inline",
+        "status": "needed"
+      },
+      {
+        "slot_id": "symbolic-ceremony",
+        "file": "content/posts/getting-married-in-italy/images/getting-married-in-italy-as-an-australian-symbolic-ceremony-villa-garden.webp",
+        "role": "inline",
+        "status": "needed"
+      },
+      {
+        "slot_id": "certificate",
+        "file": "content/posts/getting-married-in-italy/images/getting-married-in-italy-as-an-australian-signing-marriage-register.webp",
+        "role": "inline",
+        "status": "needed"
+      },
+      {
+        "slot_id": "same-sex",
+        "file": "content/posts/getting-married-in-italy/images/getting-married-in-italy-as-an-australian-same-sex-civil-union-couple.webp",
+        "role": "inline",
+        "status": "needed"
+      }
+    ],
+    "cta": {
+      "text": "Speak with a Wedded Advisor",
+      "subtext": "No date or town yet? Nothing is too early or too vague.",
+      "link": "/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=getting-married-in-italy&utm_content=primary",
+      "placement": "At the former <!-- CTA: primary --> marker, directly after the timeline section (\"Some steps are yours alone...\"), marked <!-- CTA BLOCK: primary --> in 11-body.md."
+    },
+    "secondary_cta": {
+      "text": "Speak with a Wedded Advisor",
+      "subtext": "The fee is agreed in writing before any work begins.",
+      "link": "/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=getting-married-in-italy&utm_content=secondary",
+      "placement": "Already in the copy: the closing link \"Speak with a Wedded Advisor about your paperwork timeline\" in \"Plan the paperwork with one person\" carries the secondary UTM (absolute URL). No separate block added; the subtext sits in the paragraph above it."
+    },
+    "lead_magnet": {
+      "name": "Wedded Wonderland digital magazine (free)",
+      "link": "/magazine?utm_source=blog&utm_medium=content&utm_campaign=getting-married-in-italy&utm_content=magnet",
+      "placement": "Not placed: optional per 09-cro.json and skipped at stage 09 (run-log). Add only if the person wants it."
+    },
+    "tracking_links": [
+      "/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=getting-married-in-italy&utm_content=primary",
+      "/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=getting-married-in-italy&utm_content=secondary",
+      "/magazine?utm_source=blog&utm_medium=content&utm_campaign=getting-married-in-italy&utm_content=magnet"
+    ],
+    "seo": {
+      "meta_title": "Getting Married in Italy as an Australian: Legal Steps",
+      "meta_description": "How Australians legally marry in Italy: the Atto Notorio and Nulla Osta, DFAT apostilles, a timeline from Australia and recognition back home.",
+      "focus_keyword": "getting married in italy as an australian",
+      "canonical": "https://weddedwonderland.com/destination-weddings/getting-married-in-italy",
+      "og_image_slot": "featured"
+    },
+    "schema_jsonld": {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Article",
+          "@id": "https://weddedwonderland.com/destination-weddings/getting-married-in-italy#article",
+          "headline": "Getting Married in Italy as an Australian",
+          "description": "How Australians legally marry in Italy: the Atto Notorio and Nulla Osta, DFAT apostilles, a timeline from Australia and recognition back home.",
+          "author": {
+            "@type": "Organization",
+            "name": "Wedded Wonderland",
+            "url": "https://weddedwonderland.com/"
+          },
+          "publisher": {
+            "@type": "Organization",
+            "name": "Wedded Wonderland",
+            "url": "https://weddedwonderland.com/"
+          },
+          "datePublished": "",
+          "mainEntityOfPage": "https://weddedwonderland.com/destination-weddings/getting-married-in-italy",
+          "inLanguage": "en-AU"
+        },
+        {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Home",
+              "item": "https://weddedwonderland.com/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Destination Weddings",
+              "item": "https://weddedwonderland.com/destination-weddings"
+            },
+            {
+              "@type": "ListItem",
+              "position": 3,
+              "name": "Getting Married in Italy as an Australian",
+              "item": "https://weddedwonderland.com/destination-weddings/getting-married-in-italy"
+            }
+          ]
+        },
+        {
+          "@type": "FAQPage",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "Can Australians get legally married in Italy?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes, with an Atto Notorio and a Nulla Osta, in a civil ceremony at the comune or a Catholic ceremony with civil effect. You cannot marry at the Australian Embassy."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Am I legally married in Australia if I married overseas?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "In most cases, yes, if the marriage was valid where it took place and would have been valid in Australia."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Do we need to register our Italian marriage in Australia?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "No. Overseas marriages cannot be registered here; keep the Italian certificate as evidence."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "How long does it take to get a Nulla Osta in Italy?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "It is signed at your appointment in Rome or Milan, then legalised at a Prefettura. Appointment lead times are not published, so book before you fly."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "How long is a Nulla Osta valid for?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Six months, the same as the Atto Notorio."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Can we use an Australian Certificate of No Impediment in Italy?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "No. The Embassy says Certificates of No Impediment are not valid for use in Italy."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "How early should we arrive in Italy before the wedding?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "It depends on the comune: the Embassy says the declaration and ceremony may fall on the same day, but some comuni want the declaration three days before. Add time for Rome or Milan and the Prefettura."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Can we marry legally in Australia and have a symbolic ceremony in Italy?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes. Lodge a Notice of Intended Marriage with an authorised celebrant at least one month before the Australian ceremony."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    "author": "Wedded Wonderland",
+    "status": "draft",
+    "verify_items": [
+      "[[VERIFY: Italy offers same-sex couples a civil union, not marriage; confirm against Law 76/2016 and D.Lgs. 7/2017]]",
+      "[[VERIFY: how Australia treats an Italian unione civile; no Australian government source found as at October 2026]]"
+    ],
+    "needs_signoff": [],
+    "deferred_business_items": [
+      "Wedded Concierge fee amount, fee model and commissions",
+      "Deposits, refunds and contracts",
+      "\"From AUD\" price ranges and a rough all-in AUD paperwork range",
+      "Named Wedded Advisor, phone line or private referral line",
+      "Real wedding: an Australian couple married legally in Italy",
+      "Wedded Privileges explanation"
+    ],
+    "person_questions": [
+      "Print the official fees (DFAT apostille, Atto Notorio, marca da bollo, Nulla Osta) with an as-at date? Currently \"a fee applies\"; any figure needs Nic sign-off.",
+      "Does Wedded Concierge book the Nulla Osta appointment, find interpreters and attend offices (Rome or Milan, Prefettura, comune)? Not stated in the copy until confirmed in brand-facts.md."
+    ],
+    "draft_note": "DRAFT. Do not publish until checked:\n\n1. [[VERIFY]] items (2):\n   - [[VERIFY: Italy offers same-sex couples a civil union, not marriage; confirm against Law 76/2016 and D.Lgs. 7/2017]]\n   - [[VERIFY: how Australia treats an Italian unione civile; no Australian government source found as at October 2026]]\n\n2. Nic sign-off on prices: none (no prices printed).\n\n3. Image slots needed (7, none approved yet; alt and caption to add when approved):\n   - featured (needed)\n   - piazza (needed)\n   - documents (needed)\n   - civil-ceremony (needed)\n   - symbolic-ceremony (needed)\n   - certificate (needed)\n   - same-sex (needed)\n\n4. Deferred business items (6, person's decision, not in this draft):\n   - Wedded Concierge fee amount, fee model and commissions\n   - Deposits, refunds and contracts\n   - \"From AUD\" price ranges and a rough all-in AUD paperwork range\n   - Named Wedded Advisor, phone line or private referral line\n   - Real wedding: an Australian couple married legally in Italy\n   - Wedded Privileges explanation\n\n5. Questions for the person:\n   - Print the official fees (DFAT apostille, Atto Notorio, marca da bollo, Nulla Osta) with an as-at date? Currently \"a fee applies\"; any figure needs Nic sign-off.\n   - Does Wedded Concierge book the Nulla Osta appointment, find interpreters and attend offices (Rome or Milan, Prefettura, comune)? Not stated in the copy until confirmed in brand-facts.md."
+  }
+}
