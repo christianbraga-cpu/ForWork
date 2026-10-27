@@ -7,3 +7,4 @@
 00:09 03 planner-sme complete 45 facts, 5 VERIFY, 9 fee lines for Nic; 04 visual-curator complete 7 placeholders
 00:14 05 luxury-writer complete ~2,560 words, 4 takeaways, 2 VERIFY, no fee figures; first draft sent
 00:18 06 editor pass_with_edits 4.57, 17 edits, 0 blocking; DFAT fees link added to 02-seo.json
+00:18 05r2 luxury-writer complete 17 edits applied, ~2,735 words (within +10%), scan clean
