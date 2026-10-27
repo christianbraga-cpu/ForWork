@@ -10,3 +10,4 @@
 03:17 06 editor round 2 pass_with_edits 4.57; 5 trim edits applied by orchestrator to 05-draft-r2.md (~2,330 words)
 03:18 07 icp-reader x5 complete; enquire 2-3; asks: what the Advisor does, costs/timing, plain-English terms, couples abroad, smaller states
 03:21 07b icp-panel-chair revise (enquire 2.2); 3 must-fix copy items
+03:24 08 luxury-writer complete final ~2,350 words, 1 VERIFY, scan clean
