@@ -45,6 +45,15 @@ For every subagent call, the prompt must include: the slug, the post folder path
 - **Panel (G6):** `revise` → writer makes `08-final.md` with must_fix + should_fix → editor blocking-issue check. No second panel round. If must_fix items need facts, run `planner-sme` once for just those items first.
 - If `planner-sme` or `visual-curator` returns `needs_input`, rerun once with the missing input; then continue with `[[VERIFY]]` / `needed` placeholders rather than stopping (the run is automatic).
 
+### Fast mode (default; target about 45 minutes)
+Measured on the ring-settings run: about 25 minutes to a finished package. Use it unless the person asks for a full run.
+- **After the brief, run 02, 03 and 04 in parallel.** The brief must name the list items or must-includes so `planner-sme` can start without the outline; the writer merges both.
+- **Lean SERP:** 5 cities, one per region (Sydney, Melbourne, New York, Dubai, Singapore). Read the Sydney top 3 plus any page in the top 3 of 2+ cities. No Arabic queries, ranked keywords or GSC unless the topic needs them.
+- **Time budgets in every prompt:** brief 5 min, SEO 10, facts 15 (save as you go), images 8, draft 8, final 7, each check 5. Over budget → save and finish; gaps become "not published" or `[[VERIFY]]`, never more searching.
+- **Editor and the 5 readers run in parallel** on the first draft. The orchestrator applies the editor's exact `old`/`new` edits itself (`05-draft-r2.md`), then the panel chair merges the reader feedback, noting what the editor already fixed.
+- **One combined final pass** by the writer, then the blocking check, CRO and distribution **in parallel**. The orchestrator applies CRO's exact copy changes and any one-sentence blocking fixes itself.
+- Legal or venue-list articles may still need the full planner budget (about 25 to 35 min); give the planner the sister post's source pack to re-check when one exists.
+
 ### Keep it moving
 - Run every stage in the background and check in when it reports. If a stage hasn't reported within 20 minutes of its usual time, check whether it's waiting on a permission prompt or stuck, and tell the person in one line.
 - Business answers the person has confirmed live in `content-system/brand/brand-facts.md` under "Confirmed business answers". Tell the panel chair that anything listed there or listed as "deferred" is not a must-fix.

@@ -71,6 +71,8 @@ Measured on the Lake Como test run (about 2 hours of actual work; the rest of th
 | List of 8 to 10 venues | about 1 to 1.5 hours | about 2 to 3 hours |
 | Your checking (shorter VERIFY list) | | about 20 to 40 min |
 
+**Fast mode** (now the default; see the skill): the ring-settings list ran in about 25 minutes, with the first draft at 13 minutes. Legal articles that need deeper fact-checking take about 45 to 60 minutes.
+
 The first draft is sent to you as soon as it exists; the reader panel, CTA and social copy finish afterwards.
 
 ## Before the first real run
