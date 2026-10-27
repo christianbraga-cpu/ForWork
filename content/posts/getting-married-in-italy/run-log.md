@@ -13,3 +13,4 @@
 00:24 08 luxury-writer complete final ~2,594 words, 4 takeaways, 2 VERIFY, scan clean
 00:26 08b editor revise: 2 blocking one-sentence fixes, applied by orchestrator; 0 blocking left
 00:27 09 cro-specialist complete; close CTA reworded for planning stage (applied); magazine line skipped (optional)
+00:28 10 distribution complete 3 pins, 8-slide carousel, newsletter
