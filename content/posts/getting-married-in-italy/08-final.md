@@ -234,4 +234,4 @@ The documents are straightforward. What takes care is the sequence: a six-month 
 
 Wedded Concierge gives you one Wedded Advisor, who works in your time zone, quotes in AUD and plans venue, travel, vendors and payments. We contract and hold your suppliers, the fee is agreed in writing before any work begins, and someone on the ground looks after the days that matter.
 
-[Speak with a Wedded Advisor about your paperwork timeline](https://weddedwonderland.com/wonderland-concierge), starting with your date and your comune.
+[Speak with a Wedded Advisor about your paperwork timeline](https://weddedwonderland.com/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=getting-married-in-italy&utm_content=secondary), even before you have chosen a date or a town. Nothing is too early or too vague.

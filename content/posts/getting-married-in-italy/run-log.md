@@ -12,3 +12,4 @@
 00:23 07b icp-panel-chair revise (enquire 2.0); 3 must-fix copy items; fee figures and Advisor scope are person questions
 00:24 08 luxury-writer complete final ~2,594 words, 4 takeaways, 2 VERIFY, scan clean
 00:26 08b editor revise: 2 blocking one-sentence fixes, applied by orchestrator; 0 blocking left
+00:27 09 cro-specialist complete; close CTA reworded for planning stage (applied); magazine line skipped (optional)
