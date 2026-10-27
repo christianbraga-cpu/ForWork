@@ -14,3 +14,4 @@
 - Brand sources: live site only (brand-profile.md)
 
 ## Stages
+- **Stage 0 (content-strategist):** DONE. DataForSEO SERPs (NY, LA, Sydney, Dubai, Singapore); US volumes: "married in italy" 210/mo, "get married in italy" 260, "how to get married in italy as an american" 70, "nulla osta italy" 70. Gap: no ranking page gives Americans the US-side order of steps, consulate and Prefettura by region, Atto Notorio at the Italian consulate for their state, official fees in EUR and USD, and what to do back home. Overlap with the general Italy legal guide: partial. Brief: 8 H2s, 1,900 to 2,400 words, CTA discovery_call. Brief gate: PASS. Link map: 3 live pages added; planner article marked LIVE.

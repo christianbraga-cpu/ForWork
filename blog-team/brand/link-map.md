@@ -138,6 +138,9 @@ Venue profiles confirmed by Firecrawl (Italy): `/venue/villa-deste`, `/venue/vil
 | `/expert-advice/how-do-you-get-a-lake-como-wedding` | Lake Como Wedding: Legal Guide | lake como wedding legal |
 | `/expert-advice/how-much-does-a-lake-como-wedding-cost` | Lake Como Wedding Cost: 2026-27 Budget Guide | lake como wedding cost |
 | `/expert-advice/what-is-included-in-lake-como-wedding-packages` | Lake Como Wedding Packages: What's Included | lake como wedding packages |
+| `/destination-weddings/civil-ceremony-in-italy-vs-catholic-and-symbolic-rites` | Civil ceremony in Italy vs Catholic and symbolic rites (live, found 26 Oct 2026) | civil ceremony italy |
+| `/expert-advice/overseas-marriage-certificate` | Overseas marriage certificate (live, found 26 Oct 2026) | overseas marriage certificate |
+| `/destination-weddings/is-gay-marriage-legal-in-italy` | Is gay marriage legal in Italy? (live, found 26 Oct 2026) | gay marriage italy |
 | `/trending/lake-como-wedding-guide` | Your Complete Guide to Getting Married in Lake Como | lake como wedding guide |
 
 Real weddings in Tuscany (use as inspiration links, never as our own client stories unless the team confirms they were ours):
@@ -208,4 +211,4 @@ Link when the topic matches:
 
 | URL | Title | Primary keyword (owned) | Status |
 |---|---|---|---|
-| `/destination-weddings/wedding-planner-italy` | How to choose a wedding planner in Italy | wedding planner italy | DRAFT (not published) |
+| `/destination-weddings/wedding-planner-italy` | Wedding Planner Italy: How to Choose One from Australia | wedding planner italy | LIVE (seen by Firecrawl, 26 Oct 2026) |
