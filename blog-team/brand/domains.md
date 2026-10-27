@@ -13,6 +13,9 @@ flags any domain that is in neither list for a human decision.
 | Airports and transport | Official airport and rail operator sites (e.g. aeroporto.firenze.it, pisa-airport.com, trenitalia.com) |
 | US government (added 27 Oct 2026 for US articles) | it.usembassy.gov, travel.state.gov, fam.state.gov, ssa.gov, irs.gov, healthcare.gov, dos.ny.gov, health.ny.gov, cityclerk.nyc.gov, portal.311.nyc.gov, sos.ca.gov, lavote.gov |
 | Italian government and consular (added 27 Oct 2026) | consnewyork.esteri.it, conslosangeles.esteri.it and other esteri.it consulates, prefettura.it, comune.<town>.it town halls |
+| Jewellery authorities and auction houses (added 27 Oct 2026) | gia.edu, sothebys.com, christies.com, and the official heritage or press page of the house that made a ring (e.g. cartier.com, tiffany.com, harrywinston.com), never their shop pages |
+| Royal and Australian government (added 27 Oct 2026) | royal.uk, abf.gov.au |
+| Major publications, for reported facts (added 27 Oct 2026) | vogue.com, vogue.com.au, people.com, harpersbazaar.com, townandcountrymag.com, bbc.com, apnews.com, reuters.com. Cite as "reported by"; prefer two independent sources for any carat or value |
 | Weather and climate | Official meteorological services (e.g. bom.gov.au for comparisons, meteoam.it) |
 
 Use `rel="noopener"` when opening in a new tab. Use `rel="nofollow"` for any
@@ -28,6 +31,7 @@ paid or affiliate links.
 - **Lead-selling directories:** sites that sell enquiries to venues or vendors
   (e.g. hitched, weddingwire, theknot, zola, bridebook listings).
 - **Content farms, AI-spun listicles, and pages ranking for our own keywords.**
+- **Ring retailers' celebrity and "lookalike" pages** (they rank for celebrity engagement rings and sell copies); research-only.
 - **Venue aggregators used only for cross-checking** (e.g. lalista.com): fine as
   research sources, never as outbound links.
 

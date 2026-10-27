@@ -188,6 +188,28 @@ Link when the topic matches:
 `/trending/how-was-dolly-partons-lost-wedding-dress-found`,
 `/trending/inside-bella-hadids-30th-birthday-weekend-at-blackberry-farm`.
 
+Note (27 Oct 2026): Firecrawl map shows the 45 proposal ideas article at
+`/45-proposal-ideas-for-every-kind-of-couple` (no `/expert-advice/`). Use that
+URL until a human confirms the other resolves.
+
+## 9. Rings and Jewellery cluster (Firecrawl map, 27 Oct 2026)
+
+Hub: `/style-advice/celebrity-engagement-rings` (in production). Spokes:
+
+| URL | Title | Owns |
+|---|---|---|
+| `/expert-advice/our-favourite-engagement-rings-from-recently-engaged-celebrities` | The Engagement Rings Every Bride-to-Be Will Be Saving (2026) | recent celebrity engagement rings 2026 |
+| `/celebrity-engagement-rings-of-2024` | All the Celebrity Engagement Rings of 2024 | celebrity engagement rings 2024 |
+| `/how-big-is-too-big-10-celebrity-rings-that-are-all-about-size` | How Big Is Too Big: 10 Celebrity Rings (2015) | biggest celebrity engagement rings (redirect candidate after the hub launches) |
+| `/style-advice/wedding-rings` | Wedding Rings That Match Your Engagement Ring | wedding rings |
+| `/style-advice/engagement-ring-setting-for-active-lifestyle` | 9 Engagement Ring Settings for an Active Lifestyle | engagement ring setting active lifestyle |
+| `/all-the-practical-ways-to-keep-your-engagement-ring-safe-while-traveling` | Keep Your Engagement Ring Safe While Travelling | engagement ring travel safety |
+| `/expert-advice/proposal-ideas` | 30 Proposal Ideas | proposal ideas |
+| `/top-22-proposal-destinations-around-the-world` | Top 22 Proposal Destinations Around the World | proposal destinations |
+| `/10-reasons-to-say-yes-to-a-lab-grown-diamond-engagement-ring` | Lab-Grown Diamond Engagement Ring | lab grown diamond engagement ring |
+| `/inside-zo-kravitzs-500k-engagement-ring-from-harry-styles` | Inside Zoe Kravitz's Engagement Ring | (single-ring spoke) |
+| `/trending/post-malone-engagement-ring-for-christy-lee-is-officially-20-plus-carats` | Inside Post Malone's Engagement Ring | (single-ring spoke) |
+
 ## Do not link from blogs
 
 | URL | Reason |
@@ -205,6 +227,7 @@ Link when the topic matches:
 ## URL patterns for new articles
 
 - Destination Weddings category: `/destination-weddings/<slug>` (confirmed by Zoho task WC3-T304).
+- Style Advice category: `/style-advice/<slug>` (confirmed by the user, 27 Oct 2026).
 - Other categories: TO CONFIRM.
 
 ## Blog articles written by this team
