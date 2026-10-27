@@ -11,3 +11,4 @@
 05:40 10 distribution complete
 05:40 09 cro-specialist complete; 2 copy changes applied (UTMs, fee-in-writing clause, magazine close)
 05:40 08b editor pass (4.43), 0 blocking; keyword wording kept natural
+05:42 11 package built; duplicate primary link removed; 13 run report, backlinks, link map, calendar, Word file. RUN COMPLETE

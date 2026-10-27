@@ -1,0 +1,382 @@
+{
+  "agent": "cms-publisher",
+  "task_id": "engagement-ring-setting-for-active-lifestyle",
+  "stage": "11",
+  "status": "complete",
+  "round": 1,
+  "inputs_used": [
+    "CLAUDE.md",
+    "content-system/cms/field-map.md",
+    "content-system/schemas/11-publish-package.schema.json",
+    "content/posts/engagement-ring-setting-for-active-lifestyle/00-input.json",
+    "content/posts/engagement-ring-setting-for-active-lifestyle/01-brief.json",
+    "content/posts/engagement-ring-setting-for-active-lifestyle/02-seo.json",
+    "content/posts/engagement-ring-setting-for-active-lifestyle/04-images.json",
+    "content/posts/engagement-ring-setting-for-active-lifestyle/08-final.md",
+    "content/posts/engagement-ring-setting-for-active-lifestyle/09-cro.json",
+    "content/posts/engagement-ring-setting-for-active-lifestyle/10-distribution.json",
+    "content/posts/is-marriage-in-italy-recognised-in-australia/11-publish-package.json",
+    "content/posts/is-marriage-in-italy-recognised-in-australia/11-body.md"
+  ],
+  "self_qa": {
+    "checks": [
+      {
+        "check": "primary_category equals categories[0] (Style Advice, fixed by person)",
+        "pass": true
+      },
+      {
+        "check": "Front matter and all <!-- fact_xx --> markers removed; image-slot comments kept",
+        "pass": true,
+        "note": "0 VERIFY markers, 12 image-slot comments in 11-body.md"
+      },
+      {
+        "check": "Primary CTA block from 09-cro.json placed at the CTA marker with UTMs",
+        "pass": true
+      },
+      {
+        "check": "Exactly 4 key takeaways and all FAQs extracted from 08-final.md; FAQPage carries all FAQs",
+        "pass": true,
+        "note": "6 FAQs"
+      },
+      {
+        "check": "needs_signoff empty; no prices printed",
+        "pass": true
+      },
+      {
+        "check": "All image slots from 04-images.json listed",
+        "pass": true,
+        "note": "12 slots, all needed"
+      },
+      {
+        "check": "Status draft; nothing uploaded, published or scheduled",
+        "pass": true
+      },
+      {
+        "check": "No em dashes; Australian English",
+        "pass": true
+      },
+      {
+        "check": "Image alt and caption filled",
+        "pass": false,
+        "note": "No approved images and no alt/caption in 04-images.json; left empty rather than invented."
+      }
+    ],
+    "confidence": 0.86
+  },
+  "open_questions": [
+    {
+      "to": "orchestrator",
+      "question": "CMS upload not attempted: no browser tool in this session and content-system/cms/field-map.md is not CONFIRMED ('NOT YET MAPPED'). Run /wedded-cms-discovery locally, then /wedded-blog resume=engagement-ring-setting-for-active-lifestyle.",
+      "blocking": true
+    },
+    {
+      "to": "person",
+      "question": "Confirm the byline: no author named in any input; package uses \"Wedded Wonderland\" (organisation), unconfirmed.",
+      "blocking": false
+    },
+    {
+      "to": "person",
+      "question": "Vendor images: /vendor/ernesto-buono-fine-jewellery and /vendor/simon-curwood-custom-jeweller exist, but no supply agreement covering blog use is on file. Use their images only if Nic confirms the agreement covers blog use.",
+      "blocking": false
+    },
+    {
+      "to": "person",
+      "question": "Primary destinations link appears twice with the same utm_content=primary (CTA block and the paragraph below it). Keep both, or drop the link from the paragraph? Left as supplied.",
+      "blocking": false
+    }
+  ],
+  "assumptions": [
+    "Breadcrumb level 2 URL is https://weddedwonderland.com/style-advice, from the fixed URL path in 00-input.json.",
+    "Excerpt is the meta description (opening paragraph over 300 characters).",
+    "Categories and tags from 01-brief.json; cluster tag added as in the reference package.",
+    "FAQPage answer text has Markdown link syntax stripped.",
+    "Article description uses the meta description from 02-seo.json; focus keyword is the primary keyword.",
+    "Byline 'Wedded Wonderland' (organisation) is unconfirmed."
+  ],
+  "verify_items": [],
+  "tools_used": [
+    "Bash (python3 -I)"
+  ],
+  "next_agent": [
+    "orchestrator"
+  ],
+  "payload": {
+    "title": "9 Engagement Ring Settings for an Active Lifestyle",
+    "slug": "engagement-ring-setting-for-active-lifestyle",
+    "url_path": "/style-advice/engagement-ring-setting-for-active-lifestyle",
+    "content_type": "Pillar",
+    "cluster": "Rings and Jewellery",
+    "categories": [
+      "Style Advice",
+      "Rings and Jewellery",
+      "Proposals & Rings"
+    ],
+    "primary_category": "Style Advice",
+    "tags": [
+      "engagement rings",
+      "ring settings",
+      "active lifestyle",
+      "bezel setting",
+      "travel",
+      "destination wedding",
+      "adventure couples",
+      "Rings and Jewellery (cluster)"
+    ],
+    "excerpt": "Bezel, flush, low claw and more: 9 engagement ring settings rated for snag risk, stone protection and upkeep, plus ring care for sport and travel.",
+    "key_takeaways": [
+      "A full bezel is the safest all-round choice for active hands, trading a little sparkle for a smooth, covered edge.",
+      "If you love claws, choose six over four, keep the head low and have them checked every six months.",
+      "Tension, channel and bar settings can be hard or even impossible to resize, so confirm the size before you order.",
+      "For diving, climbing, skiing and gym days, a plain or flush-set travel band keeps the engagement ring safe."
+    ],
+    "body_markdown_file": "content/posts/engagement-ring-setting-for-active-lifestyle/11-body.md",
+    "faq": [
+      {
+        "q": "Is it okay to wear an engagement ring while working out?",
+        "a": "It is safer to swap to a plain or flush-set band, as exercise and knocks take their toll."
+      },
+      {
+        "q": "What is the most durable engagement ring setting?",
+        "a": "A full bezel or a flush setting. GIA calls bezels a practical choice for active hands and rates flush settings as hard wearing and unlikely to snag."
+      },
+      {
+        "q": "What is the most common engagement ring setting, and is it good for active hands?",
+        "a": "Many classic engagement rings are claw solitaires, and they can work on active hands with care: raised claws can catch and need regular checks, so choose six claws and a low head."
+      },
+      {
+        "q": "Is a bezel setting good for an active lifestyle?",
+        "a": "Yes: it resists chips and is less likely to catch on gloves, at the cost of slightly less light."
+      },
+      {
+        "q": "Is platinum or gold better for an active lifestyle engagement ring?",
+        "a": "Platinum is very wear resistant; higher karat gold is softer and dents more easily."
+      },
+      {
+        "q": "Should I take my engagement ring off to swim, surf or dive?",
+        "a": "Yes. Chlorine can loosen claws, so remove it before pools and hot tubs, and wear the travel band in the ocean."
+      }
+    ],
+    "images": [
+      {
+        "slot_id": "featured",
+        "file": "content/posts/engagement-ring-setting-for-active-lifestyle/images/engagement-ring-setting-for-active-lifestyle-hero-hand-hiking-trail.webp",
+        "role": "featured",
+        "status": "needed"
+      },
+      {
+        "slot_id": "setting_1",
+        "file": "content/posts/engagement-ring-setting-for-active-lifestyle/images/engagement-ring-setting-for-active-lifestyle-full-bezel-closeup.webp",
+        "role": "inline",
+        "status": "needed"
+      },
+      {
+        "slot_id": "setting_2",
+        "file": "content/posts/engagement-ring-setting-for-active-lifestyle/images/engagement-ring-setting-for-active-lifestyle-half-bezel-closeup.webp",
+        "role": "inline",
+        "status": "needed"
+      },
+      {
+        "slot_id": "setting_3",
+        "file": "content/posts/engagement-ring-setting-for-active-lifestyle/images/engagement-ring-setting-for-active-lifestyle-flush-gypsy-closeup.webp",
+        "role": "inline",
+        "status": "needed"
+      },
+      {
+        "slot_id": "setting_4",
+        "file": "content/posts/engagement-ring-setting-for-active-lifestyle/images/engagement-ring-setting-for-active-lifestyle-low-profile-six-claw-closeup.webp",
+        "role": "inline",
+        "status": "needed"
+      },
+      {
+        "slot_id": "setting_5",
+        "file": "content/posts/engagement-ring-setting-for-active-lifestyle/images/engagement-ring-setting-for-active-lifestyle-tension-style-closeup.webp",
+        "role": "inline",
+        "status": "needed"
+      },
+      {
+        "slot_id": "setting_6",
+        "file": "content/posts/engagement-ring-setting-for-active-lifestyle/images/engagement-ring-setting-for-active-lifestyle-channel-set-band-closeup.webp",
+        "role": "inline",
+        "status": "needed"
+      },
+      {
+        "slot_id": "setting_7",
+        "file": "content/posts/engagement-ring-setting-for-active-lifestyle/images/engagement-ring-setting-for-active-lifestyle-bar-set-band-closeup.webp",
+        "role": "inline",
+        "status": "needed"
+      },
+      {
+        "slot_id": "setting_8",
+        "file": "content/posts/engagement-ring-setting-for-active-lifestyle/images/engagement-ring-setting-for-active-lifestyle-basket-vs-cathedral-closeup.webp",
+        "role": "inline",
+        "status": "needed"
+      },
+      {
+        "slot_id": "setting_9",
+        "file": "content/posts/engagement-ring-setting-for-active-lifestyle/images/engagement-ring-setting-for-active-lifestyle-travel-band-swap-closeup.webp",
+        "role": "inline",
+        "status": "needed"
+      },
+      {
+        "slot_id": "lifestyle_hike",
+        "file": "content/posts/engagement-ring-setting-for-active-lifestyle/images/engagement-ring-setting-for-active-lifestyle-lifestyle-hand-hiking.webp",
+        "role": "inline",
+        "status": "needed"
+      },
+      {
+        "slot_id": "lifestyle_swim",
+        "file": "content/posts/engagement-ring-setting-for-active-lifestyle/images/engagement-ring-setting-for-active-lifestyle-lifestyle-hand-swim-band.webp",
+        "role": "inline",
+        "status": "needed"
+      }
+    ],
+    "cta": {
+      "text": "Browse wedding destinations by region",
+      "subtext": "Look around at your own pace, no enquiry needed",
+      "link": "/destinations?utm_source=blog&utm_medium=content&utm_campaign=engagement-ring-setting-for-active-lifestyle&utm_content=primary",
+      "placement": "At the former <!-- CTA: primary --> marker in 'From the ring to the adventure: planning a wedding abroad', directly after the insurance and revaluation paragraph and before the 'When you are ready' paragraph, marked <!-- CTA BLOCK: primary --> in 11-body.md."
+    },
+    "secondary_cta": {
+      "text": "Speak with a Wedded Advisor",
+      "subtext": "The fee is agreed in writing before any work begins",
+      "link": "/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=engagement-ring-setting-for-active-lifestyle&utm_content=secondary",
+      "placement": "Already in the copy: 'Speak with a Wedded Advisor' link with the secondary UTM, closing the paragraph directly below the primary CTA block. No separate block added."
+    },
+    "lead_magnet": {
+      "name": "Wedded Wonderland digital magazine",
+      "link": "/magazine?utm_source=blog&utm_medium=content&utm_campaign=engagement-ring-setting-for-active-lifestyle&utm_content=magnet",
+      "placement": "Already in the copy: final line of the post after the last FAQ answer."
+    },
+    "tracking_links": [
+      "/destinations?utm_source=blog&utm_medium=content&utm_campaign=engagement-ring-setting-for-active-lifestyle&utm_content=primary",
+      "/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=engagement-ring-setting-for-active-lifestyle&utm_content=secondary",
+      "/magazine?utm_source=blog&utm_medium=content&utm_campaign=engagement-ring-setting-for-active-lifestyle&utm_content=magnet"
+    ],
+    "seo": {
+      "meta_title": "9 Engagement Ring Settings for an Active Lifestyle",
+      "meta_description": "Bezel, flush, low claw and more: 9 engagement ring settings rated for snag risk, stone protection and upkeep, plus ring care for sport and travel.",
+      "focus_keyword": "engagement ring setting for active lifestyle",
+      "canonical": "https://weddedwonderland.com/style-advice/engagement-ring-setting-for-active-lifestyle",
+      "og_image_slot": "featured"
+    },
+    "schema_jsonld": {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Article",
+          "@id": "https://weddedwonderland.com/style-advice/engagement-ring-setting-for-active-lifestyle#article",
+          "headline": "9 Engagement Ring Settings for an Active Lifestyle",
+          "description": "Bezel, flush, low claw and more: 9 engagement ring settings rated for snag risk, stone protection and upkeep, plus ring care for sport and travel.",
+          "author": {
+            "@type": "Organization",
+            "name": "Wedded Wonderland",
+            "url": "https://weddedwonderland.com/"
+          },
+          "publisher": {
+            "@type": "Organization",
+            "name": "Wedded Wonderland",
+            "url": "https://weddedwonderland.com/"
+          },
+          "datePublished": "",
+          "mainEntityOfPage": "https://weddedwonderland.com/style-advice/engagement-ring-setting-for-active-lifestyle",
+          "inLanguage": "en-AU"
+        },
+        {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Home",
+              "item": "https://weddedwonderland.com/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Style Advice",
+              "item": "https://weddedwonderland.com/style-advice"
+            },
+            {
+              "@type": "ListItem",
+              "position": 3,
+              "name": "9 Engagement Ring Settings for an Active Lifestyle",
+              "item": "https://weddedwonderland.com/style-advice/engagement-ring-setting-for-active-lifestyle"
+            }
+          ]
+        },
+        {
+          "@type": "FAQPage",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "Is it okay to wear an engagement ring while working out?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "It is safer to swap to a plain or flush-set band, as exercise and knocks take their toll."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "What is the most durable engagement ring setting?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "A full bezel or a flush setting. GIA calls bezels a practical choice for active hands and rates flush settings as hard wearing and unlikely to snag."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "What is the most common engagement ring setting, and is it good for active hands?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Many classic engagement rings are claw solitaires, and they can work on active hands with care: raised claws can catch and need regular checks, so choose six claws and a low head."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Is a bezel setting good for an active lifestyle?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes: it resists chips and is less likely to catch on gloves, at the cost of slightly less light."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Is platinum or gold better for an active lifestyle engagement ring?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Platinum is very wear resistant; higher karat gold is softer and dents more easily."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Should I take my engagement ring off to swim, surf or dive?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes. Chlorine can loosen claws, so remove it before pools and hot tubs, and wear the travel band in the ocean."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    "author": "Wedded Wonderland",
+    "status": "draft",
+    "verify_items": [],
+    "needs_signoff": [],
+    "deferred_business_items": [
+      "Wedded Concierge fee model and commissions (only \"the fee is agreed in writing before any work begins\" is stated)",
+      "Deposits, refunds and contracts",
+      "\"From AUD\" price ranges",
+      "Named Wedded Advisor, phone line or private referral line",
+      "Real weddings to feature (with consent)",
+      "Wedded Privileges explanation"
+    ],
+    "person_questions": [
+      "Confirm the byline: no author named in any input; package uses \"Wedded Wonderland\" (organisation), unconfirmed.",
+      "Vendor images: /vendor/ernesto-buono-fine-jewellery and /vendor/simon-curwood-custom-jeweller exist, but no supply agreement covering blog use is on file. Use their images only if Nic confirms the agreement covers blog use.",
+      "Primary destinations link appears twice with the same utm_content=primary (CTA block and the paragraph below it). Keep both, or drop the link from the paragraph? Left as supplied."
+    ],
+    "last_updated_note": "Set the CMS last-updated date at publish, not in body copy.",
+    "draft_note": "DRAFT. Do not publish until checked:\n\n1. [[VERIFY]] items: none.\n\n2. Nic sign-off on prices: none (no prices printed).\n\n3. Image slots needed (12, none approved yet; alt and caption to add when approved):\n   - featured (needed, licensed photography only)\n   - setting_1 (needed, AI illustrative close-up allowed only if approved and labelled \"Illustrative image\")\n   - setting_2 (needed, AI illustrative close-up allowed only if approved and labelled \"Illustrative image\")\n   - setting_3 (needed, AI illustrative close-up allowed only if approved and labelled \"Illustrative image\")\n   - setting_4 (needed, AI illustrative close-up allowed only if approved and labelled \"Illustrative image\")\n   - setting_5 (needed, AI illustrative close-up allowed only if approved and labelled \"Illustrative image\")\n   - setting_6 (needed, AI illustrative close-up allowed only if approved and labelled \"Illustrative image\")\n   - setting_7 (needed, AI illustrative close-up allowed only if approved and labelled \"Illustrative image\")\n   - setting_8 (needed, AI illustrative close-up allowed only if approved and labelled \"Illustrative image\")\n   - setting_9 (needed, AI illustrative close-up allowed only if approved and labelled \"Illustrative image\")\n   - lifestyle_hike (needed, licensed photography only)\n   - lifestyle_swim (needed, licensed photography only)\n\n4. Deferred business items (6, person's decision, not in this draft):\n   - Wedded Concierge fee model and commissions (only \"the fee is agreed in writing before any work begins\" is stated)\n   - Deposits, refunds and contracts\n   - \"From AUD\" price ranges\n   - Named Wedded Advisor, phone line or private referral line\n   - Real weddings to feature (with consent)\n   - Wedded Privileges explanation\n\n5. Questions for the person:\n   - Confirm the byline: no author named in any input; package uses \"Wedded Wonderland\" (organisation), unconfirmed.\n   - Vendor images: /vendor/ernesto-buono-fine-jewellery and /vendor/simon-curwood-custom-jeweller exist, but no supply agreement covering blog use is on file. Use their images only if Nic confirms the agreement covers blog use.\n   - Primary destinations link appears twice with the same utm_content=primary (CTA block and the paragraph below it). Keep both, or drop the link from the paragraph? Left as supplied.\n\n6. Last-updated date: set the CMS last-updated date field at publish (not in body copy)."
+  }
+}
