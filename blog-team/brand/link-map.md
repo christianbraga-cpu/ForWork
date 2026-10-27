@@ -212,3 +212,4 @@ Link when the topic matches:
 | URL | Title | Primary keyword (owned) | Status |
 |---|---|---|---|
 | `/destination-weddings/wedding-planner-italy` | Wedding Planner Italy: How to Choose One from Australia | wedding planner italy | LIVE (seen by Firecrawl, 26 Oct 2026) |
+| `/destination-weddings/married-in-italy` | How to Get Married in Italy From the USA | married in italy | DRAFT (final.md 27 Oct 2026; not yet published) |

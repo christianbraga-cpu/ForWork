@@ -23,3 +23,28 @@
 - **Stage 4 loop 2 (writer):** DONE. 03-draft-v3.md. --check: 2,385 reader words, 0 dashes, 0 visible placeholders, 13 external domains (healthcare.gov removed with the insurance bullet), none blocked. YAML valid; 66 claims, 39 links. Writer departures (accepted): C-43 shortened (no interpreter/witness clause, steps 3 and 4 already cover it); fee note says "other EUR fees are converted at that rate" (more accurate than merged.md); US-registration sentence kept in FAQ and takeaway 4, cut from the after-wedding section.
 - **Stage 3 review v3 (final):** accuracy spot-check PASS (0 blockers, 0 majors; minors on C-67 witness travel, C-33 timing and Genoa). us_couple: relevance 5, trust 4, clarity 3, would_enquire 3 (FAIL). Majors: concierge price and planner payments (CONCIERGE-PAY, user input); six-month timing clarity; route trade-offs. Loop limit reached: wording fixes handed to the copy editor in 04-reviews/v3/final-fixes.md; the rest goes to the must-fix list.
 - **Stage 5 (photo-curator):** DONE. 05-assets.json, 6 slots, no image selected; all file, credit, licence and consent fields open (no library supplied). Drive candidates by file name: Montelodoli and Gideon Hermosa galleries (hero), two welcome-dinner series (one owned by an external account), "Milan Wedding J&D.jpg" (weak). Captions repeat body claims only.
+- **Stage 6 (copy-editor):** DONE. final.md, publish-package.json, chrome-upload-prompt.md, article.docx. --check: 2,392 reader words, 0 dashes, 0 visible placeholders, 13 external domains, none blocked. YAML and package JSON validated by the orchestrator. All five final fixes applied. Consulate-city image file name is a stand-in (IMAGE-CITY). Front matter points to v3 for the full claims register. Link map: added as DRAFT.
+
+## Final scores
+| Dimension | Score | Result |
+|---|---|---|
+| voice | 4.5 (v2) | PASS |
+| accuracy | 4.4 (v2), spot-check v3 PASS | PASS |
+| seo | 4.8 (v2) | PASS |
+| reader:us_couple | relevance 5, trust 4, clarity 3 (v3; six-month and jargon fixes applied after), would_enquire 3 | FAIL on would_enquire (capped by CONCIERGE-PAY) |
+| reader:paying_parent (advisory, v1) | clarity 3 | parent sentence and older-guest line added since |
+| reader:bargain_hunter (anti, v1) | would_enquire 2 | PASS |
+
+## Must fix before publish
+1. **CONCIERGE-PAY (user):** concierge price or range, whether partnered planners pay Wedded Wonderland anything, and a named contact. Main reason the primary reader will not enquire.
+2. **Nic sign-off (N-09):** all prices and the EUR 1 = USD 1.1516 rate (list in publish-package.json nic_signoff).
+3. **N-11:** re-verify the SSA and passport translation statements on the live pages.
+4. **N-10:** New York consulate fee table and whether the Atto Notorio fee is per couple or per partner.
+5. **Links:** click through all 23 external links (13 domains) once; not checkable from this environment.
+6. **Images:** pick files and record credit, licence and consent for all 6 slots; confirm the consulate city and rename the stand-in file (IMAGE-CITY).
+7. **CMS:** author name, CMS admin URL, confirm the 'Italy Weddings' category (else Destination Weddings only).
+
+## Nice to have (next edit)
+- Route trade-offs (legal in Italy vs legal at home first) beyond one sentence.
+- Typical translation and interpreter costs (N-02) and the Prefettura apostille fee (N-08) once sourced.
+- A line on health insurance after marriage (cut for length).
