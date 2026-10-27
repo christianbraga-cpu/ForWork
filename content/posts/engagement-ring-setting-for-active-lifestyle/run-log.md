@@ -7,3 +7,4 @@
 05:34 07 icp-reader x5 complete; enquire 1-2; asks: comparison table, practical bridge, fewer sales lines
 05:35 06 editor pass_with_edits 4.29, 13 edits applied by orchestrator -> 05-draft-r2.md
 05:37 07b icp-panel-chair revise (enquire 1.6, dreaming-stage topic); 2 must-fix, table and bands should-fix
+05:39 08 luxury-writer complete final 2,552 words, table + travel section, 0 VERIFY; 08b+09+10 launched in parallel
