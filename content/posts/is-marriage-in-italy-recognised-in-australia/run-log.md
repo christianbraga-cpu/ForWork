@@ -4,3 +4,4 @@
 02:27 02 orchestrator report.md saved; scope au_focus (no 2b); writer to keep link limits (4 related, 5 external); sister link kept, publish together
 02:29 04 visual-curator complete 6 placeholders
 03:06 03 planner-sme complete 47 facts, 4 VERIFY candidates, no prices
+03:11 05 luxury-writer complete ~2,150 words, 4 takeaways, 1 VERIFY; first draft sent
