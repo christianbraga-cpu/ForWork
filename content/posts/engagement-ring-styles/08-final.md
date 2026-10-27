@@ -280,8 +280,6 @@ A clean stone looks brighter, so book a professional clean before you leave. <!-
 
 Tell your insurer your travel dates and check the policy covers loss and damage as well as theft. <!-- fact_49 -->
 
-<!-- CTA: primary -->
-
 ## How to choose: shortlist two or three styles
 
 - **Minimal taste, active life:** solitaire (kept low) or bezel style.
@@ -293,9 +291,11 @@ Tell your insurer your travel dates and check the policy covers loss and damage 
 
 ## From the ring to the wedding abroad
 
-Once the ring is chosen, the next question is usually where. Start by browsing [destination wedding locations by region](/destinations).
+Once the ring is chosen, the next question is usually where.
 
-When you are ready, [talk to Wedded Concierge about a wedding abroad](/wonderland-concierge). A Wedded Advisor plans venue, travel, vendors and payments as your one point of contact, and the fee is agreed in writing before any work begins.
+<!-- CTA: primary -->
+
+When you are ready, [speak with a Wedded Advisor](/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=engagement-ring-styles&utm_content=secondary). A Wedded Advisor plans venue, travel, vendors and payments as your one point of contact, and the fee is agreed in writing before any work begins.
 
 ## Frequently asked questions
 
@@ -325,4 +325,4 @@ Yes, with the right stone: sapphire and ruby are 9 on the Mohs scale, while emer
 
 ## Start the conversation
 
-When you have a shortlist and a rough date in mind, tell us about it. Your Wedded Advisor will take it from there, in your time zone and, for Australian couples, quoting in AUD.
+When you have a shortlist and a rough date in mind, tell us about it. Your Wedded Advisor will take it from there, in your time zone and, for Australian couples, quoting in AUD. Still dreaming? [Read the free Wedded Wonderland magazine](/magazine?utm_source=blog&utm_medium=content&utm_campaign=engagement-ring-styles&utm_content=magnet).

@@ -9,3 +9,4 @@
 22:55 07b icp-panel-chair revise (enquire 1.7, early-stage); 1 must-fix, 2 should-fix
 22:56 08 luxury-writer complete final ~3,016 words, 0 VERIFY; 08b+09+10 launched in parallel
 22:57 10 distribution complete
+22:57 08b editor pass, 0 blocking; 09 cro complete, 4 copy changes applied (CTA moved, no duplicate link)
