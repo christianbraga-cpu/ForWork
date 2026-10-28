@@ -106,7 +106,7 @@ unless the brief records a reason not to.
 | `checklists/` | Self-check and review checklists per role, plus the QA gate |
 | `schemas/` | Envelope and payload JSON schemas |
 | `personas/` | The ICP panel and its evidence (see `personas/README.md`) |
-| `tools/` | `validate_envelope.py`, `check_page.py`, `check_copy.py`, `aggregate_personas.py`, `handoff_docx.js` |
+| `tools/` | `validate_envelope.py`, `check_page.py`, `check_copy.py`, `aggregate_personas.py`, `review_docx.js` (simple review doc), `handoff_docx.js` (technical handoff) |
 | `facts-library/` | Verified facts reused across runs (90-day reuse) |
 | `brand-answers.md` | Approved business answers (fees, advisor, proof and so on), filled in once |
 | `runs/` | One folder per run |
