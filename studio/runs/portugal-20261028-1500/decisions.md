@@ -138,3 +138,13 @@ search results. Listed in NOTES.md for a browser check before publishing. Not tr
 ## D17. Persona panel on the built page
 2 runs per persona on screenshots (not 3): this is the third panel round on the same content, and
 screenshot reviews cost more. An issue must appear in both runs to count.
+
+## D18. Project Lead edits after the revision 3 render (revision 4)
+Two mechanical fixes made directly, not a new copy round (the revision limit is reached):
+PL-01 removed the Lisbon card's "Guests:" line (it held a transfer time, duplicated the Getting
+there tab and rested on unconfirmed F060); PL-02 aligned FAQ 2's Australian line with the
+restored legal-tab hedge. Left as they are and noted in the handoff: thinner Douro, Comporta and
+Madeira cards (no facts to add), "What Your Wedded Advisor Checks" heading with "we check" body
+(heading is from the user's plan), captions ending with the arrival airport (minor), and the
+sticky bar button wrapping at 390px (label is from the user's plan; dev can shorten the
+button style or the user can choose a shorter label).
