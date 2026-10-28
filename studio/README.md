@@ -70,7 +70,11 @@ persona/<stage>-<persona_id>-r<n>.json       screens/           decisions.md
 CHANGELOG.md (optimise, refresh)             SUMMARY.md
 ```
 
-The page itself goes to `site/<page path>/index.html` with `NOTES.md` next to it.
+The page itself goes to `site/<page path>/index.html` with `NOTES.md` and
+`CMS-HANDOFF.md` next to it. `CMS-HANDOFF.md` is the file you take to the CMS: a
+ready-to-paste prompt for the Claude in Chrome extension, plus an ordered change list
+(exact current text, exact new text, reason, what to check after). For pages that
+already exist in the CMS it lists changes, not a whole-page replacement.
 
 ## Reference page
 
@@ -85,6 +89,8 @@ unless the brief records a reason not to.
 |---|---|
 | `config.json` | Brand, sign-off owners, source of truth order, markets, QA limits |
 | `intake/` | The intake template |
+| `templates/` | The CMS handoff template |
+| `cms-profile.md` | How the custom CMS is edited (fill in once) |
 | `standards/` | Brand voice, banned phrases, linking, images, performance budget |
 | `checklists/` | Self-check and review checklists per role, plus the QA gate |
 | `schemas/` | Envelope and payload JSON schemas |

@@ -177,6 +177,25 @@ Never publish live. The package is:
 3. A Word draft for reviewers (use the docx skill) when the action is `create` or `optimise`.
 4. For `optimise` and `refresh`: `CHANGELOG.md` in the run folder, listing every
    change with its reason and the finding that triggered it.
+5. **`CMS-HANDOFF.md`** next to the page (always, except for `audit`). This is the file
+   the user takes to the custom CMS, where they or the Claude in Chrome extension apply
+   the changes. Build it from `studio/templates/CMS-HANDOFF.md`:
+   - For pages that already exist in the CMS (`optimise`, `refresh`), Part B is a
+     change list, not a whole-page replacement. Diff the approved page against
+     `current.html` and write one change per field or section, with the exact current
+     text (so the editor can confirm it is in the right place) and the exact new text.
+   - Order: meta, copy top to bottom, images, links, then code (schema, form, tracking).
+     Code changes are listed separately because CMS editors may strip them.
+   - Every change cites the finding that caused it, and any fact it depends on that
+     still needs sign-off.
+   - Part C lists what was deliberately kept.
+   - For `create`, Part B is the new page section by section, plus the full HTML in
+     `index.html` for reference.
+   - Fill the "Where" fields using `studio/cms-profile.md` when it describes the
+     CMS's fields. Otherwise use section headings and their position on the page.
+6. When the user sends back a live URL after publishing, fetch it and run `check_page.py`
+   on it with the run's facts and brief. Report anything the CMS dropped (schema, form
+   attributes, noindex, links) as a numbered fix list in the same change format.
 
 ### 8. Amplify plan (parallel)
 
