@@ -1,0 +1,288 @@
+{
+  "envelope_version": "1.0",
+  "run_id": "portugal-20261028-1500",
+  "stage": "review",
+  "from_agent": "qa-reviewer",
+  "to_agents": [
+    "project-lead",
+    "copywriter"
+  ],
+  "status": "ready_for_review",
+  "revision": 1,
+  "inputs_consumed": [
+    {
+      "artifact": "studio/runs/portugal-20261028-1500/30-page-copy.json"
+    },
+    {
+      "artifact": "studio/runs/portugal-20261028-1500/20-content-brief.json"
+    },
+    {
+      "artifact": "studio/runs/portugal-20261028-1500/23-brief-addendum.md"
+    },
+    {
+      "artifact": "studio/runs/portugal-20261028-1500/10-keyword-research.json"
+    },
+    {
+      "artifact": "studio/runs/portugal-20261028-1500/11-ai-search.json"
+    },
+    {
+      "artifact": "studio/runs/portugal-20261028-1500/decisions.md"
+    },
+    {
+      "artifact": "studio/checklists/seo-strategist.md"
+    },
+    {
+      "artifact": "studio/standards/linking.md"
+    },
+    {
+      "artifact": "studio/schemas/payloads/review.schema.json"
+    }
+  ],
+  "payload_type": "review",
+  "payload": {
+    "artifact": "studio/runs/portugal-20261028-1500/30-page-copy.json",
+    "lens": "studio/checklists/seo-strategist.md (applied to copy) + studio/standards/linking.md + 11-ai-search content_requirements + decisions D7, D9, D14",
+    "verdict": "changes_requested",
+    "scores": {
+      "intent_match": 4,
+      "keyword_coverage": 3,
+      "link_plan_implementation": 4,
+      "faq_paa_alignment": 4,
+      "ai_search_requirements": 4
+    },
+    "findings": [
+      {
+        "id": "SEO-01",
+        "severity": "major",
+        "location": "payload.meta.title; payload.h1; payload.sections[*].heading",
+        "issue": "'Portugal wedding venues', the largest term in the set (US 1,900, UK 1,300, AU 90 per 10-keyword-research), is not in the title as a phrase, not in the H1 and not in any H2 or H3. The live page targets it in both title and H1 (F013), so this revision removes it from every heading-level signal at once. Title (D7) and H1 (D12) are binding, so the remaining lever is one heading.",
+        "evidence": "Title: 'Wedding in Portugal | Venues by Region | Wedded Wonderland'. H1: 'Get Married in Portugal, from a Sintra Palace to an Algarve Cliff'. H2s: 'Fall for Portugal Before You Choose a Venue', 'Choose Your Region of Portugal', 'See Why Couples Marry in Portugal', 'Pick the Setting for Your Ceremony', ... Exact phrase count in the whole payload: 3 (hero first sentence, s2 intro). Self-QA check 8 reports a pass because the H1 carries 'Get Married in Portugal', which is neither target phrase.",
+        "suggested_fix": "Project Lead: ask the user to approve the phrase in one H2, for example s2 'Choose Your Region: Portugal Wedding Venues' or s4 'Pick the Setting: Portugal Wedding Venues by Type' (title case per D14). Copywriter: put 'wedding in Portugal' or 'Portugal wedding venues' in og_title, which no decision fixes (it currently repeats the H1), and correct self_qa check 8 to say the H1 carries neither target phrase and that D12 accepts this."
+      },
+      {
+        "id": "SEO-02",
+        "severity": "major",
+        "location": "payload.sections[id=s5-plan], [id=add-cost-bands], [id=s11-faq]; payload.word_count",
+        "issue": "Copy is over the brief range of 2,400 to 3,200 words. D14 requires the cut in revision 2. The two cuts D14 names (about 200 words) are not enough by themselves.",
+        "evidence": "payload.word_count = 3634. Reviewer's count of visible fallback copy (form, hidden s8 and the duplicate add-beach-line entry excluded): about 3,520. By block: s5-plan 937 (When to go 111, Getting there 60, Entry rules 133, Marrying legally 466, Timeline 89, Your weekend 50), s11-faq 730, s2-regions 261, b16-spotlight 223, s10-advisor 192, s3-reasons 152, s4-settings 146.",
+        "suggested_fix": "Best cuts, largest and least harmful first: (1) Remove the When to go tab, about 111 words (D14). FAQ 5 keeps the PAA answer; move the wildfire line ('wildfire risk is highest from June to September', F068) into FAQ 5 or the Your weekend tab because that is its only home. (2) Remove the Timeline tab, about 89 words (D14). The one-month and six-month rules are already in the Marrying legally steps and FAQ 1. (3) Drop the repeated brand sentence in s10-advisor, about 28 words. It is word for word the hero sentence; the GEO requirement asks for it once. (4) Repeated beach-permit rule, about 60 words: keep it in the s2 Algarve card and FAQ 8. Cut the permit sentence from FAQ 7, the permit clauses from s3 'Beaches and clifftops', s4 'Clifftop or beach' and s9 'Vow renewal', and the permit sentence from the b16 fallback card. It appears 8 times now. (5) s10 'Your Wedded Advisor' paragraph, about 25 words: shorten the restated contract-check list (rooms, buy-outs, minimums, VAT) to 'checks each venue contract before you sign', because add-venue-charges carries the detail. (6) Your weekend tab first sentence, about 25 words: it repeats the s6 list. (7) s7 airport sentence, about 15 words: airports are already on every region card, in s3, in Getting there and in FAQ 6. Keep the entry-rules link. (8) b16 Monserrate roof clause, about 10 words: it is repeated in the caption, the palace strip and FAQ 10. Together these come to about 360 words and bring the page to roughly 3,150 to 3,270 by either count. Re-measure after cutting. Do not cut the per-card 'Best months' or 'Guests' lines: the brief and 11-ai-search require the same labelled lines on every card."
+      },
+      {
+        "id": "SEO-03",
+        "severity": "major",
+        "location": "payload.sections[id=s9-celebrations].body_md '#### Honeymoon'; payload.sections[id=s12-articles].body_md '#### [Where to honeymoon in Portugal]' and '#### [The traditions behind a Portuguese wedding]'",
+        "issue": "The cannibalisation plans say 'No honeymoon heading' on the hub and never use 'Portuguese wedding' or 'traditions' in hub headings (the rule names title, H1 and H2s). The copy marks honeymoon and traditions up as headings (H4). The s9 change_reason says 'no honeymoon heading', which the body contradicts.",
+        "evidence": "s9: '#### Honeymoon'. s12: '#### [The traditions behind a Portuguese wedding](/7-ancient-...)' and '#### [Where to honeymoon in Portugal](/top-7-honeymoon-...)'. 10-keyword-research cannibalisation_risks: 'No honeymoon heading, no destination list on the hub'; brief s9: 'no honeymoon heading or destination list'.",
+        "suggested_fix": "Render the s9 card titles and s12 article card titles as styled labels or link text (p or a), not heading elements. Alternatively, retitle the s9 card without the term (for example 'After the wedding') and keep the anchor 'honeymoon in Portugal' in the body line. Then correct the s9 change_reason."
+      },
+      {
+        "id": "SEO-04",
+        "severity": "major",
+        "location": "payload.sections[id=s5-plan].body_md '### Entry rules by passport', '### Marrying legally, by passport', '#### Australian passport' / '#### US passport' / '#### UK passport'; [id=s3-reasons] H4s; [id=s9-celebrations] H4s; [id=b16-spotlight] '#### The Algarve coast'",
+        "issue": "D14 (binding) sets title case for headings. Several H3 and H4 headings are in sentence case, so heading case is mixed on the page. Self-QA check 13 says headings follow title case.",
+        "evidence": "H3: 'Entry rules by passport', 'Marrying legally, by passport'. H4: 'A legal route for foreign couples', 'Palaces you can book', 'A UNESCO wine landscape', 'Beaches and clifftops', 'Easy to reach on three passports', 'Anniversary in the Douro', 'Vow renewal on the Algarve', 'Milestone birthday', 'The Algarve coast', 'Australian passport'. Compare H3 'How It Works', 'Booking a Sintra Palace', 'Tell Us Your Plans'.",
+        "suggested_fix": "Apply title case to every heading element, for example 'Entry Rules by Passport', 'Marrying Legally, by Passport', 'A Legal Route for Foreign Couples'. Or, if card titles become non-heading labels (see SEO-07), record which elements count as headings under D14."
+      },
+      {
+        "id": "SEO-05",
+        "severity": "major",
+        "location": "payload.sections[id=s10-form].body_md 'Hidden fields' entry_point list; envelope open_questions[12]",
+        "issue": "Tracking is inconsistent. The s9 button sets entry_point=celebrations, which D14 approves, but the form spec's hidden-field enumeration leaves the value out, so the CMS build may drop or reject it. Open question 13 still asks the Project Lead to approve a value that D14 has already approved.",
+        "evidence": "s10-form: 'entry_point = hero | b9 | region-card | tab-link | closing | sticky'. s9: '(sets Celebration from the card chosen; entry_point=celebrations)'. D14: 'Hidden field entry_point=celebrations approved for the celebrations section links.'",
+        "suggested_fix": "Add 'celebrations' to the s10-form entry_point list. Remove open_questions[12] and the 'proposed addition' wording in the s9 change_reason."
+      },
+      {
+        "id": "SEO-06",
+        "severity": "major",
+        "location": "payload.sections[id=s7-guests].links[1] '(Wonderland Studio, CMS global)'; payload.sections[id=s10-form] consent line Privacy Policy link",
+        "issue": "These internal links are not in link_plan.must_link_to, and the copy gives no URL, so neither target is confirmed to exist (seo-strategist check 8, linking.md rule 9). The brief requires the 'Start for free' button, but its target still has to be confirmed or marked unconfirmed.",
+        "evidence": "s7 links: {\"url\": \"(Wonderland Studio, CMS global)\", \"anchor\": \"Start for free\"}. Form: 'See our Privacy Policy. (Privacy Policy links to the site-wide policy page.)'",
+        "suggested_fix": "Give the confirmed live URL for the Wonderland Studio sign-up and the privacy page. If either cannot be confirmed, mark it 'unconfirmed' in the links entry and list it for NOTES.md."
+      },
+      {
+        "id": "SEO-07",
+        "severity": "minor",
+        "location": "payload.sections[id=s3-reasons], [id=b16-spotlight], [id=s2-regions], [id=s9-celebrations], [id=s12-articles]",
+        "issue": "Heading levels skip from H2 to H4 with no H3 in five sections, which weakens the outline that crawlers and assistive technology see.",
+        "evidence": "s3: '## See Why Couples Marry in Portugal' then '#### A legal route for foreign couples'. s2: '## Choose Your Region of Portugal' then '#### Lisbon, Sintra and Cascais'.",
+        "suggested_fix": "Make card titles H3. Or render them as non-heading labels, which also resolves SEO-03 for s9 and s12."
+      },
+      {
+        "id": "SEO-08",
+        "severity": "minor",
+        "location": "payload.sections[id=s3-reasons].body_md intro; [id=s2-regions] Porto card; [id=s7-guests]",
+        "issue": "Brief keyword assignments are partly unmet. 'destination wedding portugal' (US 170, the page's best GSC query, brief keywords for s1, s3 and s7) appears 0 times. 'best wedding venues in porto portugal' (brief s2, new US related search) has no Porto venue phrasing. 'sintra wedding' appears 0 times as a phrase.",
+        "evidence": "Payload phrase counts: 'destination wedding portugal' or 'destination wedding in Portugal' 0; 'sintra wedding' 0. Porto card Setting: 'terraced vineyards and wine quintas in the UNESCO-listed Douro'.",
+        "suggested_fix": "s3 intro: work in 'destination wedding in Portugal' (for example 'For a destination wedding, Portugal gives couples five things in one country'). Porto card: add 'Porto and Douro wedding venues' to the Setting line. Palace strip or s4: use 'Sintra wedding' once, for example 'For a Sintra wedding, Parques de Sintra hires out...'. No new facts are needed."
+      },
+      {
+        "id": "SEO-09",
+        "severity": "minor",
+        "location": "payload.faq[1].q; payload.faq[2].q",
+        "issue": "FAQ 2 departs from the PAA wording it targets, and FAQ 3 has no PAA or related-search source (seo-strategist check 5).",
+        "evidence": "FAQ 2: 'Can Australian, US or UK citizens marry legally in Portugal?'. PAA: 'Can US citizens get legally married in Portugal?' (US) and 'Can UK citizens get married in Portugal?' (UK). FAQ 3: 'Is a Catholic or symbolic ceremony legal in Portugal?' is not among the question_keywords in 10-keyword-research.",
+        "suggested_fix": "FAQ 2: 'Can US, UK or Australian citizens get legally married in Portugal?' (the US-led order matches 97% of demand, D5, and keeps the PAA verb). FAQ 3 can stay because the brief lists it. Record in its change_reason that it is persona-driven ('Can we have a Catholic ceremony?'), not PAA."
+      },
+      {
+        "id": "SEO-10",
+        "severity": "minor",
+        "location": "payload.meta.description",
+        "issue": "The meta lists 'Lisbon, Sintra, Algarve and Douro regions', which does not match the page's five region names. Sintra is part of the Lisbon card, and Comporta and Madeira are left out.",
+        "evidence": "'Plan a wedding in Portugal: compare Lisbon, Sintra, Algarve and Douro regions, check the legal steps for your passport and speak with a Wedded Advisor.' (151 characters)",
+        "suggested_fix": "Keep 140 to 160 characters. For example: 'Plan a wedding in Portugal: compare five regions from Sintra palaces to Algarve cliffs, check the legal steps for your passport and speak with a Wedded Advisor.' Count before use."
+      },
+      {
+        "id": "SEO-11",
+        "severity": "minor",
+        "location": "payload.sections[id=s5-plan].links (external)",
+        "issue": "Two external links in the same section both use the anchor 'Smartraveller' but go to different URLs (linking.md rule 6). The section has 11 outbound links, against linking.md 'link out sparingly'.",
+        "evidence": "Anchors 'Smartraveller' to /destinations/europe/portugal and to /planning-trip/advice-your-planned-activities/getting-married-overseas. 11 external links in s5-plan, plus 1 in add-palace-rules.",
+        "suggested_fix": "Rename the anchors, for example 'Smartraveller Portugal advice' and 'Smartraveller on marrying overseas'. When the When to go tab is cut (SEO-02), check that its source links go too. Consider citing Justiça and IRN once each and dropping duplicate authority links if the count needs trimming."
+      },
+      {
+        "id": "SEO-12",
+        "severity": "minor",
+        "location": "payload.sections[id=s5-plan] Marrying legally tab; [id=s2-regions]; envelope change_reason",
+        "issue": "Some 11-ai-search content requirements are not met because the brief or fact audit overrides them, but the copy does not record those deferrals: the AU apostille clause (GEO-P02, corrected by C03), the Douro 'about 3 hours north of Lisbon' line (GEO-P07, F064, C16) and the 23% VAT clause (deferral recorded). The residency line (F044), F070 venue spend (D8), 'all beaches public' (F057) and the Douro harvest (F065) are recorded.",
+        "evidence": "Marrying legally CR and s2 CR have no mention of 'apostille' or F064.",
+        "suggested_fix": "Add one clause each to the s5-plan and s2-regions change_reason ('apostille line not used, C03'; 'Douro drive time not used, F064 unsourced, C16') so the GEO requirement list closes as met or deferred."
+      },
+      {
+        "id": "SEO-13",
+        "severity": "minor",
+        "location": "payload.sections[id=s5-plan] Marrying legally tab",
+        "issue": "This is a future cannibalisation risk with the planned T20 legal page (/destinations/legal-requirements/portugal), whose plan says 'Detailed document lists live on T20 only'. The hub tab is 466 words of document-level detail. That is acceptable while T20 is 404, but no trigger to trim is recorded.",
+        "evidence": "10-keyword-research cannibalisation_risks[4].plan: 'Detailed document lists live on T20 only.' Marrying legally tab: 466 words.",
+        "suggested_fix": "Add a CMS or NOTES.md line: when T20 goes live, cut the tab to the 4 steps and the passport summary lines and add the 'See the full rules by passport' link."
+      }
+    ]
+  },
+  "assumptions": [
+    "Word counts exclude the form, hidden s8, CMS notes, the APPLY AFTER SIGN-OFF variants and the duplicate add-beach-line entry; the fallback version is counted.",
+    "Title (D7), H1 (D12), heading wording from the user's plan, and hero and closing button targets (D14) are treated as binding. Findings against them are addressed to the Project Lead, not the copywriter.",
+    "External official-source links are allowed under D14, so 'only must_link_to URLs' is applied to internal links only."
+  ],
+  "open_questions": [
+    {
+      "to": "project-lead",
+      "question": "SEO-01: will you ask the user to allow 'Portugal Wedding Venues' in one H2? It is the largest term, and the title and H1 decisions remove it from every heading.",
+      "blocking": false
+    }
+  ],
+  "confidence": 0.85,
+  "timestamp": "2026-10-28T04:30:00Z",
+  "self_qa": {
+    "checklist": "studio/checklists/seo-strategist.md",
+    "results": [
+      {
+        "check": "Primary keyword 'wedding in portugal' in title",
+        "pass": true,
+        "severity": "major",
+        "detail": "'Wedding in Portugal | Venues by Region | Wedded Wonderland'"
+      },
+      {
+        "check": "'portugal wedding venues' in title",
+        "pass": false,
+        "severity": "major",
+        "detail": "Only 'Venues' as a separate word; title is D7-approved (see SEO-01)"
+      },
+      {
+        "check": "Keyword in H1",
+        "pass": false,
+        "severity": "major",
+        "detail": "'Get Married in Portugal, from a Sintra Palace to an Algarve Cliff' carries neither phrase; H1 is binding under D12 (SEO-01)"
+      },
+      {
+        "check": "Both phrases in first 100 words",
+        "pass": true,
+        "severity": "major",
+        "detail": "First sentence: 'Portugal wedding venues run from Sintra palaces to Algarve cliffs, and a legal wedding in Portugal for foreign couples starts at least one month ahead.'"
+      },
+      {
+        "check": "Keywords in headings",
+        "pass": false,
+        "severity": "major",
+        "detail": "'wedding in Portugal' in H2 'Celebrate More Than a Wedding in Portugal' and H3 'What a Wedding in Portugal Costs'; 'Portugal wedding venues' in no heading (SEO-01)"
+      },
+      {
+        "check": "Intent match: commercial investigation",
+        "pass": true,
+        "severity": "major",
+        "detail": "Region chooser, settings, venue contract checks, cost table, weekend, enquiry form; no package or price invented (F003)"
+      },
+      {
+        "check": "Outline followed (brief + addendum)",
+        "pass": true,
+        "severity": "major",
+        "detail": "All brief section ids present in order; addendum items 1 to 15 applied (small-wedding FAQ 9 replaces 'Can your guests stay at the venue?', palace strip order, venue box reframed, hero order, no fee line, B9 label, sticky bar)"
+      },
+      {
+        "check": "Link plan: all must_link_to placed, varied descriptive anchors",
+        "pass": true,
+        "severity": "major",
+        "detail": "13 of 13 placed. /destinations/europe 'Europe wedding destinations' (s3) and 'destination weddings in Europe' (s13); traditions and honeymoon linked twice with different anchors; 5 siblings; 4 trending. /wonderland-concierge only in s10, per D14"
+      },
+      {
+        "check": "Only must_link_to internal URLs",
+        "pass": false,
+        "severity": "major",
+        "detail": "The Wonderland Studio button and Privacy Policy link are not in the plan and have no confirmed URL (SEO-06)"
+      },
+      {
+        "check": "linking.md rules 1, 7, 8, 9",
+        "pass": true,
+        "severity": "major",
+        "detail": "Region hub, Concierge, 5 comparables; 5 contextual internal body links; one next step (#enquire); planned 404 pages and held real weddings not linked"
+      },
+      {
+        "check": "Title 60 characters or fewer; meta 140 to 160",
+        "pass": true,
+        "severity": "minor",
+        "detail": "Title 58, D7 wording exactly; meta 151"
+      },
+      {
+        "check": "FAQ questions match PAA",
+        "pass": true,
+        "severity": "minor",
+        "detail": "FAQ 1, 4, 5 (D9), 6, 7 exact PAA; FAQ 8 related search; FAQ 2 merged variant (SEO-09)"
+      },
+      {
+        "check": "No 'Portuguese wedding' or 'traditions' in title, H1, H2s",
+        "pass": true,
+        "severity": "major",
+        "detail": "None in title, H1 or any H2; H4 card titles in s12 flagged in SEO-03"
+      },
+      {
+        "check": "Honeymoon cannibalisation plan",
+        "pass": false,
+        "severity": "major",
+        "detail": "'#### Honeymoon' in s9 (SEO-03)"
+      },
+      {
+        "check": "D7 title, D9 FAQ 5, D14 title case",
+        "pass": false,
+        "severity": "major",
+        "detail": "D7 and D9 met; D14 not met in several H3 and H4 headings (SEO-04)"
+      },
+      {
+        "check": "11-ai-search content_requirements met or deferred",
+        "pass": true,
+        "severity": "major",
+        "detail": "17 requirements met or overridden by brief or decisions; 2 deferrals not recorded in the copy (SEO-12, minor)"
+      },
+      {
+        "check": "Word count 2,400 to 3,200",
+        "pass": false,
+        "severity": "major",
+        "detail": "3,634 per copy; about 3,520 by reviewer count (SEO-02)"
+      }
+    ],
+    "scores": {
+      "intent_match": 4,
+      "keyword_coverage": 3,
+      "link_plan_implementation": 4,
+      "faq_paa_alignment": 4,
+      "ai_search_requirements": 4
+    }
+  }
+}

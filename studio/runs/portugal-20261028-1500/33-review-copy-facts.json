@@ -1,0 +1,643 @@
+{
+  "envelope_version": "1.0",
+  "run_id": "portugal-20261028-1500",
+  "stage": "review",
+  "from_agent": "fact-checker",
+  "to_agents": [
+    "project-lead",
+    "copywriter"
+  ],
+  "status": "changes_requested",
+  "revision": 1,
+  "inputs_consumed": [
+    {
+      "artifact": "30-page-copy.json",
+      "from_agent": "copywriter",
+      "revision": 1
+    },
+    {
+      "artifact": "facts.json",
+      "from_agent": "project-lead"
+    },
+    {
+      "artifact": "decisions.md",
+      "from_agent": "project-lead"
+    },
+    {
+      "artifact": "12-fact-audit.json",
+      "from_agent": "fact-checker",
+      "revision": 1
+    },
+    {
+      "artifact": "23-brief-addendum.md",
+      "from_agent": "project-lead"
+    },
+    {
+      "artifact": "20-content-brief.json (s1 and form lines, grep only)",
+      "from_agent": "seo-strategist"
+    },
+    {
+      "artifact": "21-ux-consult.json (consent and Start for free lines, grep only)",
+      "from_agent": "ux-conversion"
+    },
+    {
+      "artifact": "current.md (symbolic ceremony line, grep only)"
+    },
+    {
+      "artifact": "studio/checklists/fact-checker.md"
+    },
+    {
+      "artifact": "studio/config.json (source_of_truth_order)"
+    }
+  ],
+  "payload_type": "review",
+  "payload": {
+    "artifact": "30-page-copy.json",
+    "lens": "fact-checker on copy",
+    "verdict": "changes_requested",
+    "scores": {
+      "blockers": 4,
+      "majors": 9,
+      "minors": 13,
+      "sections_checked": 23,
+      "faq_checked": 10
+    },
+    "findings": [
+      {
+        "id": "FC3-01",
+        "severity": "blocker",
+        "location": "s5-plan Tab Marrying legally, US passport block; s11-faq FAQ 2",
+        "issue": "Unconfirmed sign-off fact F043 (statement of eligibility before a consular officer) is presented outside the APPLY AFTER SIGN-OFF pair, and the fallback line still carries part of F043 (that a consular notarial fee applies). F043 as a whole is status unconfirmed with needs_sign_off_by Nic; the ledger note says to re-verify before publish. The US Embassy page could not be re-read again today (see source_checks), so F043 cannot be upgraded.",
+        "evidence": "s5: \"The Embassy says you sign a statement of eligibility to marry before a consular officer instead:\" ... \"[FALLBACK UNTIL THEN] a consular notarial fee applies.\" FAQ 2: \"US citizens: the US Embassy in Lisbon does not issue a CNI, and says you sign a statement of eligibility before a consular officer instead.\"",
+        "fact_id": "F043",
+        "suggested_fix": "Move the statement-of-eligibility sentence and the fee into the APPLY pair. Fallback (s5 and FAQ 2) uses only confirmed F042: \"The US Embassy in Lisbon does not issue a CNI, because no US authority exists to issue one. Check the Embassy's marriage page for the document it provides instead.\" Drop \"a consular notarial fee applies\" from the fallback."
+      },
+      {
+        "id": "FC3-02",
+        "severity": "blocker",
+        "location": "s4-settings 'Catholic church or another faith'; s4 caption s4_church; s11-faq FAQ 3",
+        "issue": "Legal claim goes beyond its official source. F029 says a Catholic marriage is one of three recognised forms and that the priest can start the process; it does not say a Catholic marriage is recognised 'on its own'. F022 (confirmed) says a marriage is valid only once registered, so 'on its own' can lead a couple to skip the civil registry process.",
+        "evidence": "s4: \"A Catholic marriage is legally recognised on its own.\" Caption: \"A Catholic ceremony, legally recognised in Portugal on its own.\" FAQ 3: \"a Catholic marriage is legally recognised in Portugal on its own.\"",
+        "fact_id": "F029",
+        "suggested_fix": "s4: \"A Catholic marriage is one of the three forms Portuguese law recognises; it still goes through the civil registry process and is valid once registered.\" Caption: \"A Catholic ceremony, one of the forms of marriage recognised in Portugal.\" FAQ 3 first sentence: \"Yes: Catholic marriage is one of three legally recognised forms, and it is valid once registered with the civil registry.\" (F029, F022)"
+      },
+      {
+        "id": "FC3-03",
+        "severity": "blocker",
+        "location": "s2-regions intro; s11-faq FAQ 6",
+        "issue": "Conflicts with confirmed F081 and with the cards themselves: five regions are served by four airports (Lisbon LIS serves both Lisbon, Sintra and Cascais and Comporta and the Alentejo), so the regions do not each have their own airport.",
+        "evidence": "s2: \"Portugal wedding venues fall into five regions, each with its own setting and airport.\" FAQ 6: \"Five regions, each with its own setting and airport\"",
+        "fact_id": "F081",
+        "suggested_fix": "s2: \"We group Portugal wedding venues into five regions, each with its own setting, served by four airports.\" FAQ 6: \"Five regions, each with its own setting, served by four airports: ...\""
+      },
+      {
+        "id": "FC3-04",
+        "severity": "blocker",
+        "location": "s5-plan Tab Timeline, lead line",
+        "issue": "Conflicts with confirmed F023. There are two official time limits (at least one month ahead, F021; marry within six months of approval, F023). The tab's own list marks the six-month window as an official rule.",
+        "evidence": "\"The only official deadline is one month: the civil process must be organised at least one month before your date. Every other timing below is advice, not a rule.\"",
+        "fact_id": "F023",
+        "suggested_fix": "\"Two timings are official: organise the civil process at least one month before your date, and marry within six months of approval. Every other timing below is advice, not a rule.\" (Note D14 may remove this tab in revision 2; fix it if it stays.)"
+      },
+      {
+        "id": "FC3-05",
+        "severity": "major",
+        "location": "s1-hero line 2; s11-faq FAQ 3 last sentence; FAQ 9 fallback",
+        "issue": "Claim has no fact id. 12-fact-audit classed it third_party_only (The Knot, Rita Placido): fine as general advice, not as a statistic. 'Many couples' reads as a frequency claim.",
+        "evidence": "\"Many couples hold a symbolic ceremony in Portugal and marry legally at home.\"",
+        "fact_id": "F087 (proposed)",
+        "suggested_fix": "Add fact_ref F087 (proposed below, unconfirmed, third party). Reword as advice: \"Some couples hold a symbolic ceremony in Portugal and marry legally at home.\" Same in FAQ 3 and the FAQ 9 fallback."
+      },
+      {
+        "id": "FC3-06",
+        "severity": "major",
+        "location": "s1-hero brand sentence; s10-advisor lead and How It Works step 3; b8 fallback; advisor_band caption",
+        "issue": "Service claim (Wedded Concierge plans Portugal weddings for AU, US and UK couples, with one Wedded Advisor from first enquiry to the wedding weekend) has no ledger entry. Its refs F078 (brand names), F079 (enquiry route) and F011 (search markets) do not state it. The wording is Project Lead approved (brief s1, addendum 7, D13), so this is a ledger gap, not a copy error.",
+        "evidence": "\"Wedded Concierge plans weddings in Portugal for couples from Australia, the United States and the United Kingdom, with one Wedded Advisor from first enquiry to the wedding weekend.\"",
+        "fact_id": "F088 (proposed)",
+        "suggested_fix": "Project Lead records F088 (approved brand entity sentence) and the copy cites it. No wording change needed."
+      },
+      {
+        "id": "FC3-07",
+        "severity": "major",
+        "location": "s2-regions cards (Lisbon, Sintra and Cascais; Comporta and the Alentejo; Madeira) and captions; s11-faq FAQ 6; b16-spotlight traditions line and azulejo and fado captions",
+        "issue": "Claims rest on PROPOSED-1 and PROPOSED-2, which have no ledger id yet. Official sources were found for each (F082 to F086 below), but only as search-index text; the pages themselves were blocked (proxy 403, Anubis bot wall), so all five are proposed as unconfirmed.",
+        "evidence": "\"the Alentejo coast and countryside south of Lisbon\"; \"Portugal's Atlantic island region, around Funchal\"; \"Lisbon and the Cascais coast\"; \"from hand-painted azulejo tiles to fado in Lisbon after dark\"",
+        "fact_id": "F082, F083, F084, F085, F086 (proposed)",
+        "suggested_fix": "Replace PROPOSED-1 with F082 (Madeira), F083 (Cascais), F084 (Comporta) and PROPOSED-2 with F085 (fado), F086 (azulejo). Wording can stay, apart from the minor fixes in FC3-15 and FC3-17. Project Lead: one browser read of each source URL upgrades them to confirmed."
+      },
+      {
+        "id": "FC3-08",
+        "severity": "major",
+        "location": "s2-regions all five cards 'Best months'; s5-plan When to go table, Summer row",
+        "issue": "Hedge missing on unconfirmed F061 (competitor media, The Knot 2024). On the cards, 'as a national guide' does not say whose guide, and applying a mainland season line to Madeira goes beyond the source. In the Summer row, 'peak-season travel costs more' is stated without attribution.",
+        "evidence": "\"Best months: spring and autumn, as a national guide\" (x5); \"Hot, and peak-season travel costs more\"",
+        "fact_id": "F061",
+        "suggested_fix": "Cards: \"Best months: spring and autumn, according to travel guides\"; for Madeira, \"Best months: ask your Wedded Advisor\" (no source covers Madeira's seasons). Summer row: \"Hot; travel guides say peak-season travel costs more. Heat waves are common in July and August, and wildfire risk is highest from June to September.\""
+      },
+      {
+        "id": "FC3-09",
+        "severity": "major",
+        "location": "s4-settings Quinta; s7-guests para 1; captions s4_quinta, s7, b16 quinta_staircase",
+        "issue": "No fact id says many quintas have rooms, defines a quinta, or says nearby hotels exist. The cited F059 is about exclusivity costs (paying for unoccupied rooms), not about how many quintas have rooms. F075 says only that the Douro has 'wine quintas'.",
+        "evidence": "\"A Portuguese country or wine estate. Many have rooms, so guests can stay where you marry\"; \"Many quintas have rooms, so your closest guests can stay where you marry, with nearby hotels for everyone else.\"",
+        "fact_id": "F059",
+        "suggested_fix": "Either source it (Project Lead to add a ledger fact from an official source) or soften: \"A Portuguese country or wine estate. Some have rooms, so guests can stay where you marry\" and \"Some quintas have rooms for your closest guests; your Wedded Advisor checks the options nearby for everyone else.\" Captions: \"some estates have rooms\"."
+      },
+      {
+        "id": "FC3-10",
+        "severity": "major",
+        "location": "s6-weekend inclusions list",
+        "issue": "Capability claim with no fact id: that Wedded Concierge can supply an on-the-day coordinator in Portugal. 'Can include' avoids a guarantee, but D10 says no approved on-the-day line exists, and the copywriter's own open question asks the user about it.",
+        "evidence": "\"- An on-the-day coordinator\"",
+        "fact_id": "",
+        "suggested_fix": "Remove the line until the user answers the on-the-day question, or keep it only if Wedded Concierge confirms it arranges a coordinator for Portugal weddings (then add a ledger fact)."
+      },
+      {
+        "id": "FC3-11",
+        "severity": "major",
+        "location": "s10-advisor Wedded Privileges",
+        "issue": "Factual claim with no fact id: that Portugal properties for Wedded Privileges are 'still being confirmed'. Nothing in facts.json or config says Portugal properties are in progress.",
+        "evidence": "\"Portugal properties are still being confirmed, so your Wedded Advisor tells you what applies to your dates.\"",
+        "fact_id": "",
+        "suggested_fix": "\"Plan with Wedded Concierge and ask your Wedded Advisor which Wedded Privileges apply to your dates.\""
+      },
+      {
+        "id": "FC3-12",
+        "severity": "major",
+        "location": "s10-form consent line",
+        "issue": "Data-use statement (a privacy and legal claim) with no source. 21-ux-consult notes the legal wording is for the Project Lead to confirm. The form also captures UTM fields, which 'only to reply' may not cover.",
+        "evidence": "\"We use your details only to reply to your enquiry. See our Privacy Policy.\"",
+        "fact_id": "",
+        "suggested_fix": "Project Lead confirms the line against the site Privacy Policy, or uses the policy's own wording, for example: \"We use your details as set out in our Privacy Policy.\""
+      },
+      {
+        "id": "FC3-13",
+        "severity": "major",
+        "location": "s7-guests Wonderland Studio line and button",
+        "issue": "Product and price claim ('free') with no ledger entry. It is not a From AUD price, but it is a WW pricing statement. The brief prescribes the label, so this is a ledger gap.",
+        "evidence": "\"Guest website in Wonderland Studio: share the schedule, travel and entry rules in one place.\" [Button: Start for free]",
+        "fact_id": "",
+        "suggested_fix": "Project Lead confirms that Wonderland Studio offers a free guest website and adds it to the ledger (source: the live Wonderland Studio page). Otherwise use the label \"Build a guest website\" (UX suggestion)."
+      },
+      {
+        "id": "FC3-14",
+        "severity": "minor",
+        "location": "b16-spotlight intro",
+        "issue": "Overstatement: palaces and UNESCO wine landscapes are not unique to Portugal.",
+        "evidence": "\"see what only Portugal offers\"",
+        "fact_id": "F051, F075",
+        "suggested_fix": "\"see what Portugal offers\""
+      },
+      {
+        "id": "FC3-15",
+        "severity": "minor",
+        "location": "b16-spotlight traditions line; captions azulejo, fado",
+        "issue": "Overstates the proposed sources. F086 does not say the tiles are hand-painted, and F085 (UNESCO) ties fado to Lisbon communities but says nothing of 'after dark' or receptions.",
+        "evidence": "\"from hand-painted azulejo tiles to fado in Lisbon after dark\"; \"Hand-painted azulejo tiles\"; \"A fado guitar at a night reception in Lisbon.\"",
+        "fact_id": "F085, F086 (proposed)",
+        "suggested_fix": "\"from azulejo tiles to fado, the Lisbon song UNESCO lists as intangible heritage\". Caption: \"Azulejo tiles, a detail you will find across Portuguese buildings.\" The fado caption is fine only if the image really shows a reception (Visual Lead to confirm)."
+      },
+      {
+        "id": "FC3-16",
+        "severity": "minor",
+        "location": "s1-hero line 3; s5-plan When to go lead; s11-faq FAQ 5",
+        "issue": "'Most often' implies a survey of travel guides, but F061 is one source. 'Bring heat waves' turns F068's 'common' into a certainty.",
+        "evidence": "\"Travel guides most often recommend spring or autumn; July and August bring heat waves.\"",
+        "fact_id": "F061, F068",
+        "suggested_fix": "\"Travel guides often recommend spring or autumn; heat waves are common in July and August.\""
+      },
+      {
+        "id": "FC3-17",
+        "severity": "minor",
+        "location": "s2-regions Douro card and caption; s9 anniversary caption",
+        "issue": "UNESCO lists the Alto Douro Wine Region, not the whole Douro.",
+        "evidence": "\"terraced vineyards and wine quintas in the UNESCO-listed Douro\"",
+        "fact_id": "F075",
+        "suggested_fix": "\"in the UNESCO-listed Alto Douro Wine Region\""
+      },
+      {
+        "id": "FC3-18",
+        "severity": "minor",
+        "location": "s3-reasons 'Easy to reach on three passports'",
+        "issue": "Simplifies the official rule: F048 and F050 say 90 days in any 180-day period. Dropping the 180-day part can mislead someone who has already spent time in the Schengen area.",
+        "evidence": "\"can visit visa-free for up to 90 days\"",
+        "fact_id": "F048, F049, F050",
+        "suggested_fix": "\"can visit visa-free for up to 90 days (in any 180-day period for the Schengen area)\""
+      },
+      {
+        "id": "FC3-19",
+        "severity": "minor",
+        "location": "s3-reasons intro",
+        "issue": "Unsourced comparison with other destinations. 'We plan' implies a volume of Europe planning that has no fact.",
+        "evidence": "\"Of all the Europe wedding destinations we plan, Portugal gives couples five things in one country.\"",
+        "fact_id": "F005",
+        "suggested_fix": "\"Among the [Europe wedding destinations](/destinations/europe) on Wedded Wonderland, Portugal gives couples five things in one country.\""
+      },
+      {
+        "id": "FC3-20",
+        "severity": "minor",
+        "location": "s5-plan Australian passport block",
+        "issue": "Drops F040's conditions (the marriage must be valid where it took place and valid under Australian law). 'In most cases' is kept, so the risk is low.",
+        "evidence": "\"An overseas marriage cannot be registered in Australia, but in most cases it is legally recognised.\"",
+        "fact_id": "F040",
+        "suggested_fix": "\"... but in most cases it is legally recognised if it was valid in Portugal and would be valid under Australian law.\""
+      },
+      {
+        "id": "FC3-21",
+        "severity": "minor",
+        "location": "s5-plan lead line",
+        "issue": "Getting there, Timeline and the Costs fallback name no source, so 'sources named in each tab' is not accurate while the fallbacks are live.",
+        "evidence": "\"Legal and cost details checked October 2026, with sources named in each tab.\"",
+        "fact_id": "",
+        "suggested_fix": "\"Legal and travel details checked October 2026, with official sources named.\""
+      },
+      {
+        "id": "FC3-22",
+        "severity": "minor",
+        "location": "add-cost-bands text link",
+        "issue": "'Estimate' implies a priced quote from Wedded Concierge. Addendum 9 and D10 allow only 'talks you through options'.",
+        "evidence": "\"Ask your Wedded Advisor for an estimate for your guest count, region and season\"",
+        "fact_id": "",
+        "suggested_fix": "\"Ask your Wedded Advisor what drives cost for your guest count, region and season\""
+      },
+      {
+        "id": "FC3-23",
+        "severity": "minor",
+        "location": "s11-faq FAQ 7",
+        "issue": "Unsourced ranking of Algarve venue types.",
+        "evidence": "\"Clifftop and beach settings lead the Algarve's wedding venues\"",
+        "fact_id": "F056",
+        "suggested_fix": "\"Algarve wedding venues include clifftop and beach settings\""
+      },
+      {
+        "id": "FC3-24",
+        "severity": "minor",
+        "location": "s11-faq FAQ 8",
+        "issue": "F056 ties only the municipal licensing to Decree-Law 97/2018; the Captain of the Port's remaining role is not attributed to that decree.",
+        "evidence": "\"The rule comes from Decree-Law 97/2018.\"",
+        "fact_id": "F056",
+        "suggested_fix": "\"Councils license events on bathing beaches under Decree-Law 97/2018.\""
+      },
+      {
+        "id": "FC3-25",
+        "severity": "minor",
+        "location": "s8-real-weddings later card plan (hidden)",
+        "issue": "The card names Palacio do Freixo as the venue of /wedding-of-patricia-pinto-lopes-in-portugal, but no fact id says so (F058 is unconfirmed, The Knot). No launch impact because the block is hidden.",
+        "evidence": "\"'A Palácio do Freixo wedding in Porto'\"",
+        "fact_id": "F018, F058",
+        "suggested_fix": "Verify the venue from the published article before the block shows, or use 'A wedding in Porto'."
+      },
+      {
+        "id": "FC3-26",
+        "severity": "minor",
+        "location": "add-cost-bands table and FAQ 4 (inside APPLY pairs)",
+        "issue": "The year 2025 comes from the research doc (tier 4); facts.json says the source page shows no date. It is inside the pair, so it does not block.",
+        "evidence": "\"Rita Plácido Photography, 2025\"",
+        "fact_id": "F069",
+        "suggested_fix": "Nic confirms the year at sign-off, or the copy uses \"listed October 2026\" in place of the year."
+      }
+    ],
+    "claim_checks": [
+      {
+        "section": "meta",
+        "result": "pass",
+        "note": "Title D7; description and OG lines factual (F051, F056, F021 to F050); no price."
+      },
+      {
+        "section": "s1-hero",
+        "result": "changes",
+        "note": "F021, F051, F061 (hedged as travel guides), F068 ok; symbolic line FC3-05; brand sentence FC3-06; FC3-16."
+      },
+      {
+        "section": "b9-qualifier",
+        "result": "pass",
+        "note": "No factual claims beyond F079 routing."
+      },
+      {
+        "section": "b8-proof-strip",
+        "result": "pass",
+        "note": "F019 only inside the pair; fallback carries no number (FC3-06 ledger gap only)."
+      },
+      {
+        "section": "b16-spotlight",
+        "result": "changes",
+        "note": "F072, F062, F073, F054, F074, F075 match. F076 pair fallback is clean (F056 only). FC3-07, FC3-14, FC3-15."
+      },
+      {
+        "section": "s2-regions",
+        "result": "changes",
+        "note": "F081, F033, F056 match; FC3-03, FC3-07, FC3-08, FC3-17."
+      },
+      {
+        "section": "add-palace-rules",
+        "result": "pass",
+        "note": "F051, F074, F073, F052, F053, F054 match; 'early 2027' equals Q1 2027."
+      },
+      {
+        "section": "add-beach-line",
+        "result": "pass",
+        "note": "F056 wording, C11 respected."
+      },
+      {
+        "section": "s3-reasons",
+        "result": "changes",
+        "note": "F021, F025, F051, F075, F081 match; F066 pair fallback clean; FC3-18, FC3-19."
+      },
+      {
+        "section": "s4-settings",
+        "result": "changes",
+        "note": "F055 (no convents), F056, F033, F075 and the F029 other-faiths line match; FC3-02, FC3-09."
+      },
+      {
+        "section": "add-venue-charges",
+        "result": "pass",
+        "note": "F059 hedged (can, often, may); no VAT rate; Advisor check per addendum 3."
+      },
+      {
+        "section": "s5-plan",
+        "result": "changes",
+        "note": "Entry rules match F048, F049, F050 word for word. Steps match F021, F022, F023, F025, F034. Good-to-know lines match F026, F027, F028, F029, F030. F024 pair fallback clean. AU block follows D3 (F041 not relied on). UK block F045, F046 (F047 not relied on). F044 attributed and hedged. F060 hedged. FC3-01, FC3-04, FC3-08, FC3-20, FC3-21."
+      },
+      {
+        "section": "add-cost-bands",
+        "result": "changes",
+        "note": "F069 only inside the pair; fallback has no figure; no WW price; FC3-22, FC3-26."
+      },
+      {
+        "section": "s6-weekend",
+        "result": "changes",
+        "note": "F003 no package, ok; FC3-10."
+      },
+      {
+        "section": "s7-guests",
+        "result": "changes",
+        "note": "F081 and the entry link ok; F077 pair fallback clean (F075 only); FC3-09, FC3-13."
+      },
+      {
+        "section": "s8-real-weddings",
+        "result": "pass (hidden)",
+        "note": "F018 ok; FC3-25 for later."
+      },
+      {
+        "section": "s9-celebrations",
+        "result": "pass",
+        "note": "F075, F072, F056 ok; FC3-17 caption."
+      },
+      {
+        "section": "s10-advisor",
+        "result": "changes",
+        "note": "Paperwork line per addendum 2; contract checks per addendum 3; no fee, currency or named advisor (D10). FC3-06, FC3-11."
+      },
+      {
+        "section": "s10-form",
+        "result": "changes",
+        "note": "No contact details; routing F079; FC3-12."
+      },
+      {
+        "section": "s11-faq",
+        "result": "changes",
+        "note": "FAQ 1, 5, 9 (pair), 10 match. FAQ 4 pair clean. FC3-01 (FAQ 2), FC3-02 (FAQ 3), FC3-03 (FAQ 6), FC3-05, FC3-23, FC3-24."
+      },
+      {
+        "section": "closing-cta, s12-articles, s13-europe, sticky-bar",
+        "result": "pass",
+        "note": "Links and labels only; no price in the sticky bar."
+      }
+    ],
+    "proposed_facts": [
+      {
+        "id": "F082",
+        "group": "regions_geography",
+        "fact": "Madeira",
+        "value": "Madeira is an autonomous region of Portugal: an Atlantic archipelago whose inhabited islands are Madeira and Porto Santo. Its capital, Funchal, is on the south coast of Madeira island.",
+        "status": "unconfirmed",
+        "source": "https://visitmadeira.com/en/travel-info/about-us-and-where-we-are/ ; https://visitmadeira.com/en/where-to-go/madeira/south-coast/funchal/ ; https://www.visitportugal.com/en/content/funchal",
+        "source_tier": "government_or_tourism_board_source",
+        "signed_off_by": null,
+        "needs_sign_off_by": "Project Lead (human)",
+        "notes": "28 Oct 2026, search-index text of the official Visit Madeira pages: 'The capital of Madeira, Funchal is situated on the south coast of the island'; 'The islands of Madeira and Porto Santo, the only inhabited islands, and also the Desertas and Selvagens islands'. Page bodies blocked (proxy 403). Supports 'Portugal's Atlantic island region, around Funchal'. Low risk; one browser read upgrades it to confirmed.",
+        "added_by": "fact-checker",
+        "replaces": "PROPOSED-1 (Madeira part)"
+      },
+      {
+        "id": "F083",
+        "group": "regions_geography",
+        "fact": "Cascais",
+        "value": "Cascais is on Portugal's Atlantic coast about 20 km west of Lisbon, between the Sintra hills and the Atlantic.",
+        "status": "unconfirmed",
+        "source": "https://jmj2023.cascais.pt/en/geral/about-cascais ; https://www.visitlisboa.com/en/regions/cascais",
+        "source_tier": "government_or_tourism_board_source",
+        "signed_off_by": null,
+        "needs_sign_off_by": "Project Lead (human)",
+        "notes": "28 Oct 2026, search-index text of the Cascais municipality page: 'in the Portuguese west coast ... 20 km away from Lisbon'; 'west of the Tagus estuary, between the Sintra mountains and the Atlantic Ocean'. Turismo de Lisboa (visitlisboa.com) lists Cascais as a region with beaches. Page bodies not read. Supports 'Lisbon and the Cascais coast'.",
+        "added_by": "fact-checker",
+        "replaces": "PROPOSED-1 (Cascais part)"
+      },
+      {
+        "id": "F084",
+        "group": "regions_geography",
+        "fact": "Comporta",
+        "value": "Comporta is a civil parish of the municipality of Alcácer do Sal, in the Alentejo Litoral, between the ocean coast and the Sado estuary.",
+        "status": "unconfirmed",
+        "source": "https://cm-alcacerdosal.pt/municipio/concelho/freguesias/freguesia-da-comporta/?lang=en ; http://www.portalautarquico.dgal.gov.pt/pt-PT/entidades-locais/freguesias/comporta--alcacer-do-sal-/",
+        "source_tier": "government_or_tourism_board_source",
+        "signed_off_by": null,
+        "needs_sign_off_by": "Project Lead (human)",
+        "notes": "28 Oct 2026, search-index text of the municipal parish page (area 154.8 km2 between the ocean coast and the Sado estuary) and the DGAL local-authority portal. Supports 'Alentejo coast'. 'South of Lisbon' is plain geography but not stated on these pages. visitportugal.com blocked by a bot wall (Anubis). No distance claim allowed (the live 'an hour south of Lisbon' stays out).",
+        "added_by": "fact-checker",
+        "replaces": "PROPOSED-1 (Comporta part)"
+      },
+      {
+        "id": "F085",
+        "group": "culture",
+        "fact": "Fado",
+        "value": "UNESCO inscribed 'Fado, urban popular song of Portugal' on the Representative List of the Intangible Cultural Heritage of Humanity in 2011, describing it as a performance genre of music and poetry widely practised by communities in Lisbon.",
+        "status": "unconfirmed",
+        "source": "https://ich.unesco.org/en/RL/fado-urban-popular-song-of-portugal-00563/",
+        "source_tier": "government_or_tourism_board_source",
+        "signed_off_by": null,
+        "needs_sign_off_by": "Project Lead (human)",
+        "notes": "28 Oct 2026: WebFetch host not allowed; DataForSEO parse error; proxy 403. Search-index text of the UNESCO entry gives the inscription (2011, 6.COM) and the Lisbon description. Supports 'fado in Lisbon'; does not support 'after dark' or 'receptions'.",
+        "added_by": "fact-checker",
+        "replaces": "PROPOSED-2 (fado part)"
+      },
+      {
+        "id": "F086",
+        "group": "culture",
+        "fact": "Azulejo tiles",
+        "value": "Visit Portugal describes azulejo tiles as a Portuguese tradition found in churches, convents, palaces, homes, gardens, fountains and staircases, and names the National Tile Museum in Lisbon as the place to trace their history.",
+        "status": "unconfirmed",
+        "source": "https://www.visitportugal.com/en/node/73867",
+        "source_tier": "government_or_tourism_board_source",
+        "signed_off_by": null,
+        "needs_sign_off_by": "Project Lead (human)",
+        "notes": "28 Oct 2026, 'In the country of tiles', search-index text only (Anubis bot wall for DataForSEO, proxy 403 for curl). Does not say 'hand-painted'.",
+        "added_by": "fact-checker",
+        "replaces": "PROPOSED-2 (azulejo part)"
+      },
+      {
+        "id": "F087",
+        "group": "legal_all",
+        "fact": "Symbolic ceremony practice",
+        "value": "Some couples hold a symbolic ceremony in Portugal and complete the legal marriage at home.",
+        "status": "unconfirmed",
+        "source": "https://www.theknot.com/content/destination-wedding-portugal ; https://www.ritaplacidophotography.com/cost-to-get-married-in-portugal/",
+        "source_tier": "marketplace_or_competitor_listing",
+        "signed_off_by": null,
+        "needs_sign_off_by": null,
+        "notes": "Classified third_party_only in 12-fact-audit (claim from the live page). General advice only, never a statistic. Neither source is named on the page (no competitor branding).",
+        "added_by": "fact-checker"
+      },
+      {
+        "id": "F088",
+        "group": "brand",
+        "fact": "Brand entity sentence",
+        "value": "Wedded Concierge plans weddings in Portugal for couples from Australia, the United States and the United Kingdom, with one Wedded Advisor from first enquiry to the wedding weekend.",
+        "status": "unconfirmed",
+        "source": "20-content-brief.json s1 (Project Lead wording); 23-brief-addendum.md item 7; decisions.md D10, D13",
+        "source_tier": "existing_page_facts",
+        "signed_off_by": null,
+        "needs_sign_off_by": "Project Lead (human)",
+        "notes": "Approved run wording, not yet a ledger fact. Project Lead records it so the s1, s10 and b8 lines carry a fact id. No volume, years or frequency claim.",
+        "added_by": "fact-checker"
+      }
+    ],
+    "source_checks": [
+      {
+        "url": "https://pt.usembassy.gov/marriage-in-portugal/",
+        "for": "F043, F044",
+        "date": "2026-10-28",
+        "result": "not read. WebFetch: getaddrinfo ENOTFOUND (host outside the session's allowed network domains). DataForSEO on_page_content_parsing, with and without JavaScript: error 'Cannot read properties of undefined (reading page_as_markdown)'. curl: proxy CONNECT 403. WebSearch did not return the page. F043 stays unconfirmed with Nic sign-off; F044 stays unconfirmed (four weeks is also on the Australian Embassy page, F039; six months is confirmed by IRN, F023). Fix: allow pt.usembassy.gov in the session's network settings, or a human reads it in a browser."
+      },
+      {
+        "url": "https://ich.unesco.org/en/RL/fado-urban-popular-song-of-portugal-00563/",
+        "for": "F085",
+        "date": "2026-10-28",
+        "result": "Page body blocked (WebFetch host not allowed, DataForSEO parse error, proxy 403). Search-index text used."
+      },
+      {
+        "url": "https://www.visitportugal.com/en/node/73867",
+        "for": "F086",
+        "date": "2026-10-28",
+        "result": "Anubis bot wall for DataForSEO (with and without JavaScript); proxy 403 for curl. Search-index text used."
+      },
+      {
+        "url": "https://visitmadeira.com/en/travel-info/about-us-and-where-we-are/",
+        "for": "F082",
+        "date": "2026-10-28",
+        "result": "Search-index text only."
+      },
+      {
+        "url": "https://jmj2023.cascais.pt/en/geral/about-cascais",
+        "for": "F083",
+        "date": "2026-10-28",
+        "result": "Search-index text only."
+      },
+      {
+        "url": "https://cm-alcacerdosal.pt/municipio/concelho/freguesias/freguesia-da-comporta/?lang=en",
+        "for": "F084",
+        "date": "2026-10-28",
+        "result": "Search-index text only."
+      }
+    ],
+    "fact_status_notes": {
+      "F076": "Still unconfirmed, with Project Lead sign-off needed. Not re-fetched this round (visitalgarve.pt did not render for DataForSEO on 15 and 28 Oct). The copy correctly keeps it inside APPLY pairs (b16 card and caption), and both fallbacks are clean. Needs a browser check.",
+      "F077": "Still unconfirmed, with Project Lead sign-off needed. Not fetched. The s7 pair is correct and the fallback uses only F075. 'River trips from Porto' still needs the Porto and North tourism board page read in a browser.",
+      "F043": "Unconfirmed, needs Nic's sign-off; re-read failed again (see source_checks). See FC3-01.",
+      "F044": "Unconfirmed; re-read failed again. Copy hedge and attribution are acceptable."
+    },
+    "passed": [
+      "No Wedded Wonderland price anywhere and no From AUD needed (F003, 0 packages); the sticky bar has no price.",
+      "Every sign-off fact (F019, F024, F066, F069, F076, F077) appears only inside an APPLY AFTER SIGN-OFF pair, and each fallback is free of the fact. Only F043 fails (FC3-01).",
+      "Legal lines match IRN or Justica over the Embassy (D1): six months, translation only for documents not in English, French or Spanish, witnesses optional, age 18, three forms.",
+      "Australian CNI hedged per D3 (F041 not relied on); F047 not relied on; F031 and F032 kept off the page.",
+      "Beach permits use F056 (C11); Pousadas drops 'convents' (C13); Queluz not called Baroque; Monserrate works stated (F054).",
+      "No venue or supplier contact details; no competitor names (The Knot and Kay Northrup not named, D8); no em or en dashes.",
+      "No fee model, currency promise, named advisor or filing claim (D10, addendum 2)."
+    ]
+  },
+  "self_qa": {
+    "checklist": "studio/checklists/fact-checker.md",
+    "results": [
+      {
+        "check": "1 Every factual claim in the artefact is listed and classified",
+        "pass": true,
+        "severity": "blocker",
+        "detail": "All 23 sections, 10 FAQ answers, cards, tabs and captions checked; per-section results in payload.claim_checks; each defect is a finding."
+      },
+      {
+        "check": "2 Every classification cites a fact id or a source URL",
+        "pass": true,
+        "severity": "blocker",
+        "detail": "Each finding carries a fact_id, or is marked as having none (FC3-10 to FC3-13, FC3-21, FC3-22: claims with no fact in the ledger). Proposed facts carry source URLs."
+      },
+      {
+        "check": "3 Conflicts between sources listed explicitly with both values",
+        "pass": true,
+        "severity": "blocker",
+        "detail": "No new source conflicts. Copy-versus-ledger conflicts: FC3-03 (five regions, four airports, F081) and FC3-04 (one official deadline versus F023's six months). C01 to C16 from 12-fact-audit are respected in the copy."
+      },
+      {
+        "check": "4 Source tier follows config.source_of_truth_order",
+        "pass": true,
+        "severity": "major",
+        "detail": "Government and tourism-board sources proposed for F082 to F086; F087 marked as marketplace tier."
+      },
+      {
+        "check": "5 Prices, capacities, room counts, distances, legal or visa claims all checked",
+        "pass": true,
+        "severity": "blocker",
+        "detail": "No WW price or capacity. Distances only F060 (hedged). Legal and visa lines checked against F021 to F050; defects in FC3-01, FC3-02, FC3-04, FC3-18, FC3-20."
+      },
+      {
+        "check": "6 Proposed new facts are unconfirmed unless an official source states them plainly",
+        "pass": true,
+        "severity": "major",
+        "detail": "F082 to F088 are all unconfirmed: official pages found but read only through search-index text, because the proxy blocked them."
+      },
+      {
+        "check": "7 No marketplace or competitor listing used as the only source for a confirmed fact",
+        "pass": true,
+        "severity": "major",
+        "detail": "F087 rests on The Knot plus Rita Placido and is proposed as unconfirmed."
+      },
+      {
+        "check": "Task: the US Embassy page re-read attempted (WebFetch, then DataForSEO)",
+        "pass": false,
+        "severity": "major",
+        "detail": "Both failed (see payload.source_checks). F043 and F044 unchanged. Not a blocker for this review because FC3-01 keeps F043 inside the pair."
+      }
+    ]
+  },
+  "assumptions": [
+    "Nic's sign-off on F043 covers the whole fact, not just the USD 50 fee: facts.json sets needs_sign_off_by on F043, which includes the statement-of-eligibility wording. So the statement wording sits inside the pair (FC3-01).",
+    "Search-index text of an official page is enough to propose a fact, but not to confirm it (same treatment as F066 in 12-fact-audit).",
+    "The approved brand sentence and the Wedded Advisor capability lines (addenda 2, 3, 7; D10, D13) count as Project Lead decisions, so they are ledger gaps (major), not unbacked capability claims (blocker).",
+    "Captions describe images the Visual Lead will supply; only their factual parts were checked."
+  ],
+  "open_questions": [
+    {
+      "to": "user",
+      "question": "Please allow pt.usembassy.gov, ich.unesco.org, www.visitportugal.com and visitmadeira.com in this session's network settings (proxy 403), or have someone read them in a browser, so F043, F044 and F082 to F086 can be confirmed.",
+      "blocking": false
+    },
+    {
+      "to": "project-lead",
+      "question": "Accept F082 to F088 into facts.json? F082 to F086 can become confirmed after one browser read of each URL; F088 needs your recording of the approved brand sentence.",
+      "blocking": false
+    },
+    {
+      "to": "project-lead",
+      "question": "Confirm the s10-form consent line against the site Privacy Policy (FC3-12), and whether Wonderland Studio's guest website is free (FC3-13).",
+      "blocking": false
+    },
+    {
+      "to": "project-lead",
+      "question": "F076 and F077 still need a browser check before their pairs can be applied; the copy is safe meanwhile.",
+      "blocking": false
+    }
+  ],
+  "confidence": 0.85,
+  "timestamp": "2026-10-28T03:45:00Z"
+}
