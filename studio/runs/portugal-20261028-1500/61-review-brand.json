@@ -1,0 +1,246 @@
+{
+  "envelope_version": "1.0",
+  "run_id": "portugal-20261028-1500",
+  "stage": "qa_gate",
+  "from_agent": "qa-reviewer",
+  "to_agents": [
+    "project-lead"
+  ],
+  "status": "ready_for_review",
+  "revision": 1,
+  "inputs_consumed": [
+    {
+      "artifact": "studio/runs/portugal-20261028-1500/30-page-copy.json",
+      "from_agent": "copywriter",
+      "revision": 2
+    },
+    {
+      "artifact": "studio/runs/portugal-20261028-1500/decisions.md",
+      "from_agent": "project-lead"
+    },
+    {
+      "artifact": "studio/standards/brand-voice.md"
+    },
+    {
+      "artifact": "studio/standards/banned-phrases.txt"
+    },
+    {
+      "artifact": "studio/checklists/copywriter.md"
+    },
+    {
+      "artifact": "studio/schemas/payloads/review.schema.json"
+    }
+  ],
+  "payload_type": "review",
+  "payload": {
+    "artifact": "studio/runs/portugal-20261028-1500/30-page-copy.json",
+    "lens": "studio/standards/brand-voice.md (rubric) + studio/standards/banned-phrases.txt + studio/checklists/copywriter.md items 5, 6, 7, 12, 13; binding context decisions.md D10, D14, D15",
+    "verdict": "changes_requested",
+    "scores": {
+      "Specificity": {
+        "score": 4,
+        "note": "Named palaces, decree, airports, registry steps, official sources. Lapses: identical Guests and Best months rows in the region cards; FAQ 7 names no venue."
+      },
+      "Proof": {
+        "score": 3,
+        "note": "Official sources and named spaces. No real weddings yet (B6 hidden), B8 numbers wait for sign-off, and the fallback proof is only 'checked against official sources'. This is a known business gap (D12)."
+      },
+      "Tone": {
+        "score": 4,
+        "note": "Calm, no urgency, no exclamation marks, no banned phrases. Lapses: 'Easy to Reach' and the advisor refrain."
+      },
+      "Clarity": {
+        "score": 3,
+        "note": "Scannable headings and short steps, but 3,113 words, dense legal tab, and several hard-to-parse lines (Queluz card, Wedded Privileges, FAQ 3 opener)."
+      },
+      "Reassurance": {
+        "score": 4,
+        "note": "F088 sentence in the hero; s10 gives the steps and the one contact before the form; the form intro welcomes small weddings. Fee, currency and on-the-day gaps excluded per D10/D15."
+      },
+      "Honesty": {
+        "score": 4,
+        "note": "Sign-off pairs and hedges are consistent and the fallbacks are safe. Overstatements: the region Guests range, 'Easy to Reach', and the unhedged rooms in s6."
+      }
+    },
+    "checklist_results": [
+      {
+        "item": 5,
+        "check": "No banned phrases",
+        "result": "pass",
+        "evidence": "Scanned meta, h1, sections, captions, link anchors and FAQ against all 24 entries in banned-phrases.txt: 0 matches."
+      },
+      {
+        "item": 6,
+        "check": "No em dashes",
+        "result": "pass",
+        "evidence": "0 U+2014 and 0 U+2013 in the visible copy; ranges use 'to' (\"25,000 to 70,000\", \"30 to 60\")."
+      },
+      {
+        "item": 7,
+        "check": "No competitor or marketplace names",
+        "result": "pass",
+        "evidence": "Season source given only as \"according to travel guides\"; the one named third party is \"Rita Plácido Photography\", approved by D8; Kay Northrup Events is absent."
+      },
+      {
+        "item": 12,
+        "check": "End-to-end service and contact person before the form",
+        "result": "pass",
+        "evidence": "s1: \"Wedded Concierge pairs you with a Wedded Advisor who plans with you from the first enquiry to the last dance.\"; s10 (before s10-form): \"Your Wedded Advisor is your one contact at Wedded Concierge, instead of one conversation per venue.\" plus the 3-step How It Works."
+      },
+      {
+        "item": 13,
+        "check": "Brand voice rubric, no dimension below 3",
+        "result": "pass",
+        "evidence": "Lowest scores: Proof 3 and Clarity 3; see scores."
+      }
+    ],
+    "findings": [
+      {
+        "id": "BR-01",
+        "severity": "blocker",
+        "location": "sections[id=s2-regions].body_md, Guests line in all five region cards",
+        "issue": "Claim with no support: every region, Madeira and Comporta included, is said to handle anything from elopements to large weekends. No fact gives venue capacity for any region and Portugal has 0 packages (F003). The cited fact (F078) covers only the advisor. The same line also repeats word for word five times.",
+        "evidence": "\"Guests: from elopements to large weekends; your Wedded Advisor matches venues to your numbers\" (x5)",
+        "suggested_fix": "Remove the capacity range. Either drop the Guests row or replace it with one line under the cards, for example \"Your Wedded Advisor matches venues to your guest count\", stated once."
+      },
+      {
+        "id": "BR-02",
+        "severity": "blocker",
+        "location": "sections[id=s3-reasons].body_md, H3 \"Easy to Reach on Three Passports\"",
+        "issue": "Claim with no support, and a judgement the body does not prove. The card only supports visa-free entry and four airports. For the Australian secondary persona (D5), Portugal is a long-haul trip, so 'easy' overstates it. This breaks brand-voice principle 1 ('Specific beats superlative').",
+        "evidence": "\"### Easy to Reach on Three Passports\"",
+        "suggested_fix": "Make the heading say the fact, for example \"Visa-Free Visits on Three Passports\" (keep title case per D14)."
+      },
+      {
+        "id": "BR-03",
+        "severity": "major",
+        "location": "Whole page: sections s1-hero, s2-regions, s4, add-venue-charges, s5-plan, add-cost-bands, s6, s7, s10-advisor, s11-faq, closing-cta, sticky-bar",
+        "issue": "Repetition. 'Wedded Advisor' appears 39 times in the section copy and meta, and the FAQ adds more. 'your Wedded Advisor' appears 28 times, mostly as the closing clause of a paragraph. The phrase becomes a refrain, which is the 'slogan again' problem the skeptic persona raised. It also makes the copy read as templated.",
+        "evidence": "\"your Wedded Advisor helps you choose\"; \"your Wedded Advisor confirms the transfer time\"; \"Your Wedded Advisor checks the terms before you book\"; \"your Wedded Advisor checks the options nearby ... so your Wedded Advisor weighs it\" (s7, two in consecutive sentences); \"Ask your Wedded Advisor about Algarve wedding venues\"; \"Ask your Wedded Advisor which applies\"",
+        "suggested_fix": "Keep the advisor where it marks the next step: hero, s10, the tab links and the CTAs. Elsewhere, cut it or use 'we' or 'they' after the first mention in a section. Cut at least the s2 card repeats, the second mention in s7, and the trailing mentions in FAQ 7 and 8."
+      },
+      {
+        "id": "BR-04",
+        "severity": "minor",
+        "location": "sections[id=s6-weekend].body_md, first list item",
+        "issue": "Hedge dropped. Everywhere else on the page, rooms are hedged with 'some' (FC3-09, F059). Here they are listed as a flat inclusion under a heading that says 'Includes'.",
+        "evidence": "\"- Venue nights, with rooms for you and your closest guests\"",
+        "suggested_fix": "\"Venue nights, at an estate with rooms for you and your closest guests\" or \"Venue nights (some estates have rooms on site)\"."
+      },
+      {
+        "id": "BR-05",
+        "severity": "minor",
+        "location": "sections b16-spotlight, s2-regions, s3-reasons, s4-settings, s9-celebrations (bodies and captions)",
+        "issue": "Repetition. The Douro UNESCO line appears in almost every section, and 'UNESCO' occurs 13 times. 'Best months: spring and autumn, according to travel guides' appears four times word for word, on top of the hero and FAQ 5. The check-date line appears 5 times.",
+        "evidence": "\"UNESCO World Heritage since 2001\" (B16 card, B16 caption, s3 card, s4 caption, s9 caption); \"spring and autumn, according to travel guides\" (x4); \"Legal and travel details checked against official sources, October 2026.\" (B8) and \"Legal and travel details checked October 2026, with official sources named.\" (s5)",
+        "suggested_fix": "Keep the full UNESCO and 2001 line in B16 and s3 only, and shorten it to 'Alto Douro Wine Region' elsewhere. Replace the four season rows with one line above the cards. Change the s5 freshness line so it does not echo B8 word for word."
+      },
+      {
+        "id": "BR-06",
+        "severity": "minor",
+        "location": "sections[id=s11-faq].body_md FAQ 10 and faq[9].a vs b16-spotlight.captions.monserrate and add-palace-rules line 2",
+        "issue": "Brand fact worded two ways, although the change_reason says there is 'one wording' (P-6).",
+        "evidence": "\"Palace roof works run until the first quarter of 2027\" / \"with roof works until the first quarter of 2027\" vs FAQ 10 \"Monserrate's roof restoration runs until the first quarter of 2027\"",
+        "suggested_fix": "Use 'roof works' in FAQ 10."
+      },
+      {
+        "id": "BR-07",
+        "severity": "minor",
+        "location": "sections[id=s7-guests].body_md",
+        "issue": "Brand name inconsistency and ambiguity. 'Wonderland Studio' is not in the brand name list in brand-voice.md Mechanics. 'free' is used in two senses within three lines.",
+        "evidence": "\"Build a guest website in Wonderland Studio\"; \"Give guests a free day in the Douro\"; \"[Button, secondary: Start for free]\"",
+        "suggested_fix": "Have the Project Lead confirm the exact product name and add it to the brand list. Change 'a free day' to 'a day off' or 'a spare day'."
+      },
+      {
+        "id": "BR-08",
+        "severity": "minor",
+        "location": "sections[id=b16-spotlight].body_md, Queluz card",
+        "issue": "Hard to read on a phone. The reader has to parse a fronted object clause.",
+        "evidence": "\"A national palace near Lisbon whose upper gardens and Throne Room Parques de Sintra offers for celebrations.\"",
+        "suggested_fix": "\"A national palace near Lisbon. Parques de Sintra offers its upper gardens and Throne Room for celebrations.\""
+      },
+      {
+        "id": "BR-09",
+        "severity": "minor",
+        "location": "sections[id=s10-advisor].body_md, Wedded Privileges",
+        "issue": "Garden-path sentence: 'Plan with Wedded Concierge and your Wedded Advisor' first reads as one compound object. It also gives the reader no information.",
+        "evidence": "\"Plan with Wedded Concierge and your Wedded Advisor explains what the programme offers for your dates.\"",
+        "suggested_fix": "\"When you plan with Wedded Concierge, your Wedded Advisor explains what Wedded Privileges offers for your dates.\""
+      },
+      {
+        "id": "BR-10",
+        "severity": "minor",
+        "location": "faq[2].a (FAQ 3)",
+        "issue": "Awkward elliptical opener before a colon. It is hard to parse.",
+        "evidence": "\"A Catholic ceremony is: Catholic marriage is one of three legally recognised forms in Portugal\"",
+        "suggested_fix": "\"Yes for a Catholic ceremony: Catholic marriage is one of three legally recognised forms...\""
+      },
+      {
+        "id": "BR-11",
+        "severity": "minor",
+        "location": "faq[6].a (FAQ 7); sections[id=s2-regions] Lisbon card Setting line",
+        "issue": "Keyword repetition reads as stuffing. FAQ 7 also names no venue, which weakens Specificity.",
+        "evidence": "\"Algarve wedding venues include clifftop and beach settings ... Ask your Wedded Advisor about Algarve wedding venues for your guest count.\"; \"Setting: Portugal wedding venues from Sintra's palaces to Lisbon and the Cascais coast\"",
+        "suggested_fix": "Use the keyword once per answer, for example \"...Ask us which suit your guest count.\" In the Lisbon card, use \"Setting: Sintra's palaces, Lisbon and the Cascais coast\" (the keyword is already in the s2 intro)."
+      },
+      {
+        "id": "BR-12",
+        "severity": "minor",
+        "location": "sections[id=s1-hero].body_md, first sentence; sections[id=b16-spotlight].body_md intro",
+        "issue": "Hero: two ideas in one sentence, and the wedding is said to 'start' a month ahead when it is the process that starts. B16: the capital R in 'Romantic' after the colon reads as a typo to a lay reader.",
+        "evidence": "\"Portugal wedding venues run from Sintra palaces to Algarve cliffs, and a legal wedding in Portugal for foreign couples starts at least one month ahead.\"; \"see what Portugal offers: Romantic palaces in the Sintra hills\"",
+        "suggested_fix": "Split the hero sentence: \"...to Algarve cliffs. Foreign couples start the legal process at least one month before the date.\" In B16, write \"19th-century Romantic-style palaces\" or use lower case."
+      }
+    ]
+  },
+  "self_qa": {
+    "checklist": "studio/checklists/copywriter.md",
+    "results": [
+      {
+        "check": "5 No banned phrases",
+        "pass": true,
+        "severity": "major",
+        "detail": "Scanned meta, h1, sections, captions, link anchors and FAQ against all 24 entries in banned-phrases.txt: 0 matches."
+      },
+      {
+        "check": "6 No em dashes",
+        "pass": true,
+        "severity": "major",
+        "detail": "0 U+2014 and 0 U+2013 in the visible copy; ranges use 'to' (\"25,000 to 70,000\", \"30 to 60\")."
+      },
+      {
+        "check": "7 No competitor or marketplace names",
+        "pass": true,
+        "severity": "blocker",
+        "detail": "Season source given only as \"according to travel guides\"; the one named third party is \"Rita Plácido Photography\", approved by D8; Kay Northrup Events is absent."
+      },
+      {
+        "check": "12 End-to-end service and contact person before the form",
+        "pass": true,
+        "severity": "major",
+        "detail": "s1: \"Wedded Concierge pairs you with a Wedded Advisor who plans with you from the first enquiry to the last dance.\"; s10 (before s10-form): \"Your Wedded Advisor is your one contact at Wedded Concierge, instead of one conversation per venue.\" plus the 3-step How It Works."
+      },
+      {
+        "check": "13 Brand voice rubric, no dimension below 3",
+        "pass": true,
+        "severity": "major",
+        "detail": "Lowest scores: Proof 3 and Clarity 3; see scores."
+      }
+    ]
+  },
+  "assumptions": [
+    "Visible copy = meta, h1, section bodies, captions, link anchors and FAQ. CMS notes, change_reason, hidden s8 and form field specs were excluded from the tone judgement but scanned for banned phrases and em dashes.",
+    "Both APPLY and FALLBACK versions were judged; no finding depends on which one ships.",
+    "Title case headings (D14), absent fee, currency and on-the-day claims (D10, D15), the on-the-day coordinator and 'Start for free' (D15), and Rita Plácido Photography (D8) are accepted context, not findings.",
+    "Factual accuracy against facts.json was out of scope for this lens. Claims were judged only as supported or unsupported from the copy, its fact_refs and decisions.md."
+  ],
+  "open_questions": [
+    {
+      "to": "project-lead",
+      "question": "Confirm 'Wonderland Studio' as an official product name and add it to the brand name list in brand-voice.md (BR-07).",
+      "blocking": false
+    }
+  ],
+  "confidence": 0.8,
+  "timestamp": "2026-10-28T03:43:22Z"
+}
