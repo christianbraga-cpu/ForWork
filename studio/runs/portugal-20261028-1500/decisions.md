@@ -41,3 +41,29 @@ The CRM has no Australian Portugal enquiries and only 2 to 3 real Portugal enqui
 ## D6. Other branches are not used
 Per the user, the France and Greece pages and the content system on other branches are
 not approved and are not referenced in this run.
+
+## D7. Title
+Approved: "Wedding in Portugal | Venues by Region | Wedded Wonderland" (58 characters). The full
+brand name fits, so the "| WW" version in the doc is not needed.
+
+## D8. Cost sources
+Name only Rita Plácido Photography (a photographer, not a competing planner), unlinked,
+with the year. Kay Northrup Events is a wedding planner that ranks for our terms, so it is
+not named (no competitor branding). All cost lines still wait for Nic's sign-off (D2).
+This overrides the doc's open question 6; the user can reverse it.
+
+## D9. FAQ 5
+Replace "Is a wedding in Portugal cheaper than at home?" (no sourced comparison) with the UK
+People Also Ask question "When can you get married in Portugal?", answered from F021 to F023
+and the season facts.
+
+## D10. Section 10: no fee, currency or on-the-day claims
+No approved wording exists in this branch for how Wedded Concierge fees work, the currency,
+or what happens if something goes wrong on the day. Section 10 describes the steps and the
+one Wedded Advisor only. The question goes to the user in SUMMARY.md.
+
+## D11. Persona panel for this page
+Panel: intl-couple-europe-full-service (primary), au-couple-marrying-abroad,
+intimate-destination-elopement, discerning-skeptic. 3 runs each. The cultural and
+aspirational personas are left out: no Portugal CRM signal for either, and the run cost
+should stay in proportion to a P3 fix.
