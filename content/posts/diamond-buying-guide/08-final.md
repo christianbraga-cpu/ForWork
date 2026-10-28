@@ -190,6 +190,9 @@ A good jeweller will answer plainly, including "we don't know" where that is the
 
 ## Buying a diamond overseas or travelling with one
 
+<!-- IMAGE SLOT travel: Travel flat-lay: a closed plain ring box, a passport (cover not legible), a plain folder holding a generic document marked 'SAMPLE', a soft carry-on pouch, linen and a sunlit table. No airline, airport, hotel or brand marks, no recognisable place. Soft warm light, 3:2. -->
+
+
 Buying the stone abroad, or carrying it to a proposal overseas, is straightforward with the right paperwork and insurance in place. If you are still planning the moment itself, our step-by-step guide on [how to propose](/proposal/how-to-propose-a-step-by-step-guide-to-the-perfect-moment) covers it.
 
 ### Declaring it on return to Australia

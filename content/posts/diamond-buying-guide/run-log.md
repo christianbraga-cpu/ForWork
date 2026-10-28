@@ -10,3 +10,4 @@
 23:13 08 luxury-writer complete final 3,467 words, 1 VERIFY (ACCC); 08b+09+10 launched
 23:14 10 distribution complete
 23:14 09 cro complete; 4 copy changes applied
+23:15 08b editor pass (4.43), 0 blocking; travel image slot inserted
