@@ -1,0 +1,440 @@
+{
+ "envelope_version": "1.0",
+ "run_id": "portugal-20261028-1500",
+ "stage": "qa_gate",
+ "from_agent": "fact-checker",
+ "to_agents": [
+  "project-lead"
+ ],
+ "status": "approved",
+ "revision": 2,
+ "inputs_consumed": [
+  {
+   "artifact": "studio/runs/portugal-20261028-1500/30-page-copy.json",
+   "from_agent": "copywriter",
+   "revision": 2
+  },
+  {
+   "artifact": "studio/runs/portugal-20261028-1500/30-page-copy-r1.json (sentence diff only)",
+   "from_agent": "copywriter",
+   "revision": 1
+  },
+  {
+   "artifact": "studio/runs/portugal-20261028-1500/facts.json",
+   "from_agent": "fact-checker"
+  },
+  {
+   "artifact": "studio/runs/portugal-20261028-1500/decisions.md",
+   "from_agent": "project-lead"
+  },
+  {
+   "artifact": "studio/runs/portugal-20261028-1500/33-review-copy-facts.json",
+   "from_agent": "fact-checker",
+   "revision": 1
+  },
+  {
+   "artifact": "studio/runs/portugal-20261028-1500/36-fix-list-r2.md",
+   "from_agent": "project-lead"
+  },
+  {
+   "artifact": "studio/checklists/fact-checker.md"
+  },
+  {
+   "artifact": "studio/schemas/envelope.schema.json"
+  },
+  {
+   "artifact": "studio/schemas/payloads/review.schema.json"
+  }
+ ],
+ "payload_type": "review",
+ "payload": {
+  "artifact": "30-page-copy.json (revision 2)",
+  "lens": "fact-checker final pass",
+  "verdict": "approved",
+  "scores": {
+   "blockers": 0,
+   "majors": 1,
+   "minors": 1,
+   "revision_1_findings_resolved": 26,
+   "revision_1_findings_open": 0,
+   "sections_checked": 23,
+   "faq_checked": 10
+  },
+  "findings": [
+   {
+    "id": "FC6-01",
+    "severity": "major",
+    "location": "s5-plan, Marrying legally tab, Australian Passport block",
+    "issue": "The D3 hedge got weaker in revision 2. Revision 1 told Australians to confirm 'which document you need and where it must be issued'. Revision 2 drops 'and where it must be issued' but keeps 'DFAT also issues CNIs in Australia'. Read together, this suggests a CNI issued in Australia will do. No official source says Portugal accepts one (F041, unconfirmed), and F036 itself warns that some authorities only accept CNIs issued in their own country. The page makes no explicit claim, so this is not a blocker, but it is a legal line by passport and the earlier hedge was stronger.",
+    "evidence": "\"The Australian Embassy in Lisbon can issue a CNI, and DFAT also issues CNIs in Australia. Confirm with the Registo Civil or the Embassy of Portugal in Canberra which document you need.\"",
+    "fact_id": "F041, F036, F038",
+    "suggested_fix": "Restore the revision 1 ending: \"Confirm with the Registo Civil or the Embassy of Portugal in Canberra which document you need and where it must be issued.\" Or add F036's caveat after the DFAT clause: \"DFAT also issues CNIs in Australia, but some countries accept only a CNI issued locally.\" FAQ 2 has no DFAT clause and can stay."
+   },
+   {
+    "id": "FC6-02",
+    "severity": "minor",
+    "location": "s1-hero caption; s9-celebrations honeymoon caption and 'After the Wedding' card",
+    "issue": "Fact ids missing from fact_refs, although the facts are in the ledger. The hero caption ('Ferdinand II's palace above its wooded park') rests on F072, which is not in s1 fact_refs. The s9 Madeira caption ('Madeira's Atlantic coast: fly into Funchal (FNC)') rests on F081 and F082, and neither is in s9 fact_refs. The s9 card ('Madeira, the Azores or the Algarve') describes the linked honeymoon article and has no fact id. It passed in revision 1 and the risk is low.",
+    "evidence": "s1 fact_refs: F051, F021, F025, F087, F061, F068, F088, F078, F079. s9 fact_refs: F075, F072.",
+    "fact_id": "F072, F081, F082",
+    "suggested_fix": "Add F072 to s1 fact_refs, and F081 and F082 to s9 fact_refs. Before publishing, check that the linked honeymoon article covers Madeira, the Azores and the Algarve. No wording change."
+   }
+  ],
+  "revision_1_resolution": [
+   {
+    "id": "FC3-01",
+    "status": "resolved",
+    "note": "Resolved. s5 US block and FAQ 2: the whole of F043 (statement of eligibility and USD 50 fee) sits inside the APPLY pair; both fallbacks use F042 only ('Check the US Embassy's marriage page for the document Portugal accepts')."
+   },
+   {
+    "id": "FC3-02",
+    "status": "resolved",
+    "note": "Resolved. s4: 'Catholic marriage is one of three recognised forms and is still registered through the civil registry.' Caption s4_church and FAQ 3 match F029 and F022; no 'on its own' anywhere."
+   },
+   {
+    "id": "FC3-03",
+    "status": "resolved",
+    "note": "Resolved. s2 intro, s3, Getting there tab and FAQ 6 all say five regions served by four airports; LIS serves both Lisbon, Sintra and Cascais and Comporta and the Alentejo (F081)."
+   },
+   {
+    "id": "FC3-04",
+    "status": "resolved",
+    "note": "Resolved. Timeline tab removed (SEO-02). Both official limits (F021 one month, F023 six months) are stated in s5 steps 3 and 4, FAQ 1 and FAQ 5."
+   },
+   {
+    "id": "FC3-05",
+    "status": "resolved",
+    "note": "Resolved. 'Some couples' in the hero and FAQ 9, citing F087; worded as advice, no source named."
+   },
+   {
+    "id": "FC3-06",
+    "status": "resolved",
+    "note": "Resolved. F088 wording used verbatim, once in the hero and once in s10 (D15). The markets line is gone."
+   },
+   {
+    "id": "FC3-07",
+    "status": "resolved",
+    "note": "Resolved. F082 to F086 replace PROPOSED-1 and PROPOSED-2; 'hand-painted' and 'after dark' dropped. Used plainly under D16 (low-risk geography and culture, browser check listed for NOTES.md)."
+   },
+   {
+    "id": "FC3-08",
+    "status": "resolved",
+    "note": "Resolved. Four cards say 'according to travel guides'; Madeira says 'ask your Wedded Advisor'. The When to go table is removed."
+   },
+   {
+    "id": "FC3-09",
+    "status": "resolved",
+    "note": "Resolved. 'Some have rooms', 'Some quintas have rooms', captions 'some estates have rooms'."
+   },
+   {
+    "id": "FC3-10",
+    "status": "resolved",
+    "note": "Resolved by decision D15 (user's plan lists it; written under 'can include'). Still no ledger fact: see open questions."
+   },
+   {
+    "id": "FC3-11",
+    "status": "resolved",
+    "note": "Resolved. 'Portugal properties are still being confirmed' removed; s10 says the Wedded Advisor explains what the programme offers."
+   },
+   {
+    "id": "FC3-12",
+    "status": "resolved",
+    "note": "Resolved per D15. Neutral consent line; Privacy Policy URL marked [URL to confirm]."
+   },
+   {
+    "id": "FC3-13",
+    "status": "resolved",
+    "note": "Resolved by decision D15 ('Start for free' kept from the user's plan; URL marked to confirm). Still no ledger fact for a free tier: see open questions."
+   },
+   {
+    "id": "FC3-14",
+    "status": "resolved",
+    "note": "Resolved. 'see what Portugal offers'."
+   },
+   {
+    "id": "FC3-15",
+    "status": "resolved",
+    "note": "Resolved. Traditions line, azulejo and fado captions now match F085 and F086."
+   },
+   {
+    "id": "FC3-16",
+    "status": "resolved",
+    "note": "Resolved. 'often recommend' and 'heat waves are common' in the hero, FAQ 5 and the weekend tab."
+   },
+   {
+    "id": "FC3-17",
+    "status": "resolved",
+    "note": "Resolved. 'Alto Douro Wine Region' wherever UNESCO is named (s2 card and caption, s3, s4, b16, s9). Plain 'Douro' remains only where no UNESCO claim is made."
+   },
+   {
+    "id": "FC3-18",
+    "status": "resolved",
+    "note": "Resolved. s3 adds '(in any 180-day period for the Schengen area)'."
+   },
+   {
+    "id": "FC3-19",
+    "status": "resolved",
+    "note": "Resolved. 'Among the Europe wedding destinations on Wedded Wonderland'."
+   },
+   {
+    "id": "FC3-20",
+    "status": "resolved",
+    "note": "Resolved. AU block keeps F040's conditions."
+   },
+   {
+    "id": "FC3-21",
+    "status": "resolved",
+    "note": "Resolved. 'Legal and travel details checked October 2026, with official sources named.'"
+   },
+   {
+    "id": "FC3-22",
+    "status": "resolved",
+    "note": "Resolved. 'Ask your Wedded Advisor what drives cost for ...'."
+   },
+   {
+    "id": "FC3-23",
+    "status": "resolved",
+    "note": "Resolved. 'Algarve wedding venues include clifftop and beach settings'."
+   },
+   {
+    "id": "FC3-24",
+    "status": "resolved",
+    "note": "Resolved. FAQ 8 ties only council licensing on designated bathing beaches to Decree-Law 97/2018; the Captain of the Port line is not attributed to it."
+   },
+   {
+    "id": "FC3-25",
+    "status": "resolved",
+    "note": "Resolved for launch. Venue name removed ('A wedding in Porto'); block hidden. The Porto location also needs checking against the published article before the block shows."
+   },
+   {
+    "id": "FC3-26",
+    "status": "resolved",
+    "note": "Resolved. 'listed October 2026' replaces the year in the table and FAQ 4 (inside the pairs)."
+   }
+  ],
+  "unresolved_revision_1_findings": [],
+  "claim_checks": [
+   {
+    "section": "meta",
+    "result": "pass",
+    "note": "Title D7. Description and OG lines: five regions (F081), palace rules (F051 to F054), beach permits (F056), passports US, UK, AU. No price."
+   },
+   {
+    "section": "s1-hero",
+    "result": "pass (minor FC6-02)",
+    "note": "F021 one month; F087 'some couples'; F061 attributed to travel guides; F068 'common'; F088 verbatim. Caption needs F072 in refs."
+   },
+   {
+    "section": "b9-qualifier",
+    "result": "pass",
+    "note": "No factual claims beyond F079."
+   },
+   {
+    "section": "b8-proof-strip",
+    "result": "pass",
+    "note": "F019 only inside the pair. Fallback 'Legal and travel details checked against official sources, October 2026' has no number."
+   },
+   {
+    "section": "b16-spotlight",
+    "result": "pass",
+    "note": "F072, F062, F073, F074, F075 match. F076 pair: the fallback card and caption name only general Algarve clifftop and beach settings. F085 and F086 under D16. Monserrate caption carries F054."
+   },
+   {
+    "section": "s2-regions",
+    "result": "pass",
+    "note": "Five regions, four airports (F081). Comporta is LIS. F082 to F084 under D16. F061 attributed on four cards, not used for Madeira. Guest line has no numbers. Beach permit line matches F056, stated only here and in FAQ 8. F033 Lisbon."
+   },
+   {
+    "section": "add-palace-rules",
+    "result": "pass",
+    "note": "How to book leads (D12). The five venues match F051, Queluz F074, Monserrate F073 and F054 ('until the first quarter of 2027'). Conditions: F052 ('can cancel' matches 'may have to be cancelled'), F053. The Advisor check line invents no policy (P-4)."
+   },
+   {
+    "section": "add-beach-line",
+    "result": "pass",
+    "note": "F056: council on designated bathing beaches, Captain of the Port elsewhere. F057 not used."
+   },
+   {
+    "section": "s3-reasons",
+    "result": "pass",
+    "note": "F021, F051, F075, F081 match. The F066 pair fallback has no Blue Flag claim. Visa line has the 180-day qualifier (F048, F050)."
+   },
+   {
+    "section": "s4-settings",
+    "result": "pass",
+    "note": "Catholic line matches F029 and F022. 'Civil marriage in religious form' for other faiths (F029). F055 pousadas without convents. F033. Quinta 'some have rooms' (F059 hedged)."
+   },
+   {
+    "section": "add-venue-charges",
+    "result": "pass",
+    "note": "F059 hedged ('can', 'often', 'may'). No VAT rate. Advisor check per addendum 3."
+   },
+   {
+    "section": "s5-plan Getting there",
+    "result": "pass",
+    "note": "F081 airport map. F060 hedged ('many', 'as a guide', confirmed per venue)."
+   },
+   {
+    "section": "s5-plan Entry rules",
+    "result": "pass",
+    "note": "US F049, UK F050, AU F048, each matching its source word for word, in US, UK, AU order (D15)."
+   },
+   {
+    "section": "s5-plan Marrying legally",
+    "result": "pass (major FC6-01)",
+    "note": "Steps match F021, F025, F034, F023, F022. Good-to-know lines match F026, F027, F028, F030, F029. F024 pair: the fallback says only that a fee is charged, with no amount (sign-off covers showing the EUR figure, D4). US: F042 confirmed; F043 entirely in the pair; F044 attributed ('The Embassy advises'), with no residency claim. UK: F046 and F045 match; F047 not relied on. AU: F035, F038, F037, F040. D3 hedge is weaker (FC6-01). Six-month window follows IRN, not the Embassy's three months (D1, F039 not used)."
+   },
+   {
+    "section": "add-cost-bands",
+    "result": "pass",
+    "note": "All F069 figures are inside the pair and match the ledger. Labelled third-party, not Wedded Wonderland prices. Fallback has no figure."
+   },
+   {
+    "section": "s5-plan Your weekend",
+    "result": "pass",
+    "note": "F068 and F062 only."
+   },
+   {
+    "section": "s6-weekend",
+    "result": "pass",
+    "note": "F003 'no set Portugal package'. List under 'can include'. On-the-day coordinator kept per D15. Ceremony types match F029."
+   },
+   {
+    "section": "s7-guests",
+    "result": "pass",
+    "note": "F059 hedged. The F077 pair fallback uses F075 only. Wonderland Studio 'Start for free' kept per D15 (URL to confirm)."
+   },
+   {
+    "section": "s8-real-weddings",
+    "result": "pass",
+    "note": "Hidden at launch (F018: 2 of the 3 needed). Venue name removed."
+   },
+   {
+    "section": "s9-celebrations",
+    "result": "pass (minor FC6-02)",
+    "note": "F075 Alto Douro, F072 Pena. Madeira caption needs F081 and F082 in refs."
+   },
+   {
+    "section": "s10-advisor",
+    "result": "pass",
+    "note": "F088 verbatim, second and last use. F079 routing. Advisor lines per D12 and addenda 2 and 3. No fee, currency or on-the-day claim (D10). Privileges lists no benefits (D15)."
+   },
+   {
+    "section": "s10-form",
+    "result": "pass",
+    "note": "No contact details. Consent line neutral (D15). Hidden fields include entry_point=celebrations."
+   },
+   {
+    "section": "s11-faq",
+    "result": "pass",
+    "note": "FAQ 1 and 5: both official limits. FAQ 2: F043 in the pair; fallback uses F042 only; UK and AU as in s5. FAQ 3: F029 and F022. FAQ 4: F069 in the pair; fallback has no figure. FAQ 6: five regions, four airports. FAQ 7: F033, no ranking. FAQ 8: F056, decree attributed correctly. FAQ 9: F028, F021; F024 in the pair, fallback 'for a fee' with no amount; F087. FAQ 10: F051, F052, F054."
+   },
+   {
+    "section": "closing-cta, s12-articles, s13-europe, sticky-bar",
+    "result": "pass",
+    "note": "No factual claims beyond link descriptions and F005. No price in the sticky bar."
+   }
+  ],
+  "focus_checks": [
+   "No sign-off fact in any fallback line: pass. Fallbacks checked: b8 (F019), b16 card and caption (F076), s3 (F066), s5 and FAQ 9 (F024: fee exists, no amount), s5 and FAQ 2 (F043), Costs tab and FAQ 4 (F069), s7 (F077). F020 and F080 (founder) and F070 and F071 (other cost sources) do not appear anywhere.",
+   "Legal lines by passport: pass, apart from FC6-01 (AU hedge, major).",
+   "Four airports / five regions: consistent in s2, s3, Getting there and FAQ 6 (F081).",
+   "Catholic and religious forms: s4, s4 caption, s6 and FAQ 3 all match F029 and F022.",
+   "Six-month window: F023 marriage window and F025 document age, both correct. The Embassy's three months (F039) is not used (D1).",
+   "Beach licensing: F056 only, in the Algarve card and FAQ 8.",
+   "Palace conditions: F052, F053, F054 stated, with how-to-book first. No invented change policy.",
+   "Cost lines only inside pairs: pass. No cost figure outside an APPLY pair. No Wedded Wonderland price, so no 'From AUD' needed (F003)."
+  ],
+  "passed": [
+   "No em or en dashes in the copy file. Competitors (The Knot, Kay Northrup, Pedro Pulido, Hello Portugal) are not named on the page.",
+   "No venue or supplier contact details. Every enquiry routes to Wedded Concierge (F079).",
+   "Brand names follow F078. Wonderland Studio and Wedded Privileges each appear once, in their own block.",
+   "Monserrate works worded as 'until the first quarter of 2027' everywhere (F054).",
+   "Unconfirmed non-sign-off facts are hedged or attributed: F044, F059, F060, F061, F087. F082 to F086 are used under D16."
+  ]
+ },
+ "self_qa": {
+  "checklist": "studio/checklists/fact-checker.md",
+  "results": [
+   {
+    "check": "1 Every factual claim in the artefact is listed and classified",
+    "pass": true,
+    "severity": "blocker",
+    "detail": "All 23 sections, captions and 10 FAQ answers checked. Results in payload.claim_checks; new sentences found by a sentence diff against revision 1."
+   },
+   {
+    "check": "2 Every classification cites a fact id or a source URL",
+    "pass": true,
+    "severity": "blocker",
+    "detail": "Every claim maps to a fact id. FC6-02 records three ids missing from fact_refs, though the facts are in the ledger. The D15 service lines (coordinator, Start for free) have no fact id by decision and are listed in open questions."
+   },
+   {
+    "check": "3 Conflicts between sources are listed explicitly with both values",
+    "pass": true,
+    "severity": "blocker",
+    "detail": "No new conflicts. C05 (IRN six months against the Australian Embassy's three months, F039) and C03 (translation) are resolved in the copy per D1."
+   },
+   {
+    "check": "4 Source tier follows config.source_of_truth_order",
+    "pass": true,
+    "severity": "major",
+    "detail": "IRN and Justiça over the embassy summaries (D1). Official venue source for the palaces. Third-party tiers (F059, F060, F061, F087) hedged or attributed."
+   },
+   {
+    "check": "5 Prices, capacities, room counts, distances, legal or visa claims all checked",
+    "pass": true,
+    "severity": "blocker",
+    "detail": "No Wedded Wonderland price or capacity. The only distance is F060, hedged. Fees F024, F043 and F069 are inside pairs. Legal and visa lines match F021 to F050. Weaker AU hedge recorded as FC6-01 (major)."
+   },
+   {
+    "check": "6 Proposed new facts are unconfirmed unless an official source states them plainly",
+    "pass": true,
+    "severity": "major",
+    "detail": "No new facts proposed this round. F082 to F087 stay unconfirmed in facts.json."
+   },
+   {
+    "check": "7 No marketplace or competitor listing used as the only source for a confirmed fact",
+    "pass": true,
+    "severity": "major",
+    "detail": "F061 and F087 (marketplace tier) stay unconfirmed and attributed."
+   },
+   {
+    "check": "Task: each revision 1 finding (FC3-01 to FC3-26) confirmed resolved",
+    "pass": true,
+    "severity": "blocker",
+    "detail": "26 of 26 resolved. FC3-10 and FC3-13 were resolved by decision D15."
+   },
+   {
+    "check": "Task: verdict approved only with zero blockers",
+    "pass": true,
+    "severity": "blocker",
+    "detail": "0 blockers, 1 major, 1 minor."
+   }
+  ]
+ },
+ "assumptions": [
+  "The sign-off on F024 covers showing the EUR amounts (D4, F024 notes). A fallback that says only that the registry charges a fee does not disclose the sign-off item. I passed the same lines in revision 1.",
+  "Under D16, F082 to F086 can appear without per-sentence hedging. Their browser check is a NOTES.md item, not a blocker.",
+  "A major finding does not block approval. Per the task, approval depends only on zero blockers. FC6-01 is a one-clause fix the Project Lead can apply at handoff.",
+  "No web fetching was done. No claim in revision 2 relies on a source not already in facts.json."
+ ],
+ "open_questions": [
+  {
+   "to": "project-lead",
+   "question": "Apply FC6-01: restore 'and where it must be issued' (or add F036's caveat) in the s5 Australian block before handoff.",
+   "blocking": false
+  },
+  {
+   "to": "project-lead",
+   "question": "Record ledger facts for the D15 service lines: Wonderland Studio guest website 'Start for free' (source: live Wonderland Studio page) and the on-the-day coordinator. Both are on the page by decision with no fact id.",
+   "blocking": false
+  },
+  {
+   "to": "user",
+   "question": "F043 and F044 (US Embassy), F076, F077 and F082 to F086 still need a browser read of their official URLs. The pairs and fallbacks keep the page safe until then.",
+   "blocking": false
+  }
+ ],
+ "confidence": 0.9,
+ "timestamp": "2026-10-28T03:45:14Z"
+}
