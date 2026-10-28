@@ -128,3 +128,13 @@ FAQ 5 and the fee line fixed through the addendum, not a second brief round, to 
   of allowing it in an H2 goes to the user.
 - Passport order (persona finding): US, UK, then AU in the passport tabs and FAQ answers, because US
   and UK hold about 97% of demand (D5). AU stays complete.
+
+## D16. Geography and culture facts F082 to F086
+Used outside sign-off pairs with light hedging. They are low-risk descriptive facts (Cascais is on
+the coast west of Lisbon; Comporta is on the Alentejo coast; Madeira is an Atlantic island region;
+fado is on UNESCO's list; azulejo tiles), each with an official source found but read only through
+search results. Listed in NOTES.md for a browser check before publishing. Not treated as blockers.
+
+## D17. Persona panel on the built page
+2 runs per persona on screenshots (not 3): this is the third panel round on the same content, and
+screenshot reviews cost more. An issue must appear in both runs to count.
