@@ -101,3 +101,14 @@ price, text links to the form from the Costs and Legal tabs, UX13 form copy with
 Year, and the hidden field list. Kept as the user's plan states (UX suggestions go to the
 user): the B9 button "Check your date" and the FAQ heading "Get Answers Before You Enquire".
 FAQ 5 and the fee line fixed through the addendum, not a second brief round, to save a cycle.
+
+## D14. Copy round 1 calls
+- Headings use the title case in the user's section plan (it is page-specific and the user's
+  own). studio/standards/brand-voice.md says sentence case; that standard was drafted by
+  Claude, so the user's plan wins. Flag to the user to settle the standard.
+- Word count: cut to the brief range in revision 2 (remove the When to go table and the
+  Timeline tab duplicates, about 160 words, plus any other repetition the reviews find).
+- Hidden field `entry_point=celebrations` approved for the celebrations section links.
+- Official external source links in the legal tab are allowed (linking.md permits official
+  sources).
+- Hero and closing buttons go to the on-page form; /wonderland-concierge is linked in s10.
