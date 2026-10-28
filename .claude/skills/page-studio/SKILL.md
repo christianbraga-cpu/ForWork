@@ -21,8 +21,8 @@ The user gives four inputs. Collect them before anything else.
 | Research doc | Drive link or name (Google Drive connector), Notion link (Notion connector), repo path, pasted text | Ask |
 | Existing page facts | Table, sheet, pasted list | Ask. For `create` with no facts yet, the user may say "none"; every fact is then `unconfirmed` |
 
-Optional: `scope` (`copy` or `full`). If not given, use `config.default_scope` for
-the action. Do not ask anything else unless a stage is blocked. Defaults live in
+Optional: `mode` (`fast` or `full`) and `scope` (`copy` or `full`). If not given, use
+`config.default_mode` and `config.default_scope` for the action. Do not ask anything else unless a stage is blocked. Defaults live in
 `studio/config.json`.
 
 Then:
@@ -50,6 +50,40 @@ Then:
 | 7 Publish package | yes | yes | yes | audit report only |
 | 8 Amplify plan | yes | yes | no | recommendations only |
 | 9 Measurement plan | yes | yes | no | baseline only |
+
+## Mode: `fast` (the default for `optimise`, `refresh` and `audit`)
+
+Target: the final copy and the Word handoff within **60 minutes** of intake. The mode
+comes from `config.default_mode`; the user can say "full mode" to get the full pipeline
+below instead (the default for `create`). Fast mode always uses `scope: copy`.
+
+Before starting, read `studio/brand-answers.md` (approved business answers; use only rows
+with Status `approved`) and the facts library (`studio/facts-library/general.json` and the
+destination's file, if any).
+
+| Step | Budget | What runs |
+|---|---|---|
+| F0 Intake | 5 min | The 4 inputs. Save the research doc and the live copy (DataForSEO `on_page_content_parsing` if the site is blocked). Build `facts.json`: the user's page facts, plus every library fact whose `reverify_after` is in the future (keep its status), plus the research doc's sourced facts as `unconfirmed`. |
+| F1 Fact delta | 10 min | One `fact-checker` call, checking only: legal and visa lines, prices and fees, capacities, and expired library facts. Everything else from the research doc stays `unconfirmed` and is hedged or held. No SEO or GEO refresh if the research doc is under `config.fast.research_refresh_if_doc_older_than_days` old. No separate brief: the research doc's section plan is the brief. |
+| F2 Copy | 15 min | One `copywriter` call writing straight from the research doc's section plan, with `studio/standards/copy-limits.json`, the standing button and form rules in this file, `brand-answers.md`, and the decisions template below. Same `page_copy` format and sign-off pairs. |
+| F3 Parallel review | 10 min | All at once: `fact-checker` on the copy, `qa-reviewer` with the SEO lens, `qa-reviewer` with the brand-voice lens, and `persona-reader` once for each of up to 4 personas (primary, AU home market, one more by fit, and the skeptic). Also run `python3 studio/tools/check_copy.py`. Personas do not raise items listed as pending in `brand-answers.md`; those go straight to the user's question list. |
+| F4 One revision | 10 min | One combined fix list (fact blockers, then copy-check failures, persona issues, SEO, brand) and one `copywriter` revision. Re-run `check_copy.py` and a quick `fact-checker` pass only if there was a fact blocker. No second round: what remains goes to the user. |
+| F5 Handoff | 5 min | `node studio/tools/handoff_docx.js <run> <run>/<Page>-CMS-Handoff.docx`, plus `CMS-HANDOFF.md`, NOTES.md and SUMMARY.md. Add newly verified facts to the facts library. |
+
+Not in fast mode: the persona review of a brief, screenshots and the preview page, the UX
+consult (its rules are now in `copy-limits.json` and below), more than one persona run, and
+stages 8 and 9 (the amplify and measurement plans can be asked for separately).
+
+Fast-mode standing rules (from the Portugal run):
+- Hero: H1, a quick answer of 3 lines, then the buttons, then the one brand sentence (F088 wording).
+- Buttons and form: the research doc's exact button labels; the B9 bar fills in the form; hidden
+  fields route_to, destination, page_slug, offer, entry_point and the five UTM fields.
+- Passport order: the markets with the most demand first (usually US, UK, then AU).
+- "Wedded Advisor" about 15 times per page, never in two consecutive sentences.
+- Repeat a rule (for example legal steps or beach permits) once in full, then link to it.
+- Live pages keep index, follow; lines that need sign-off are held with a fallback (D2 pattern).
+
+If a step goes over budget, carry on but say so in SUMMARY.md, with the reason.
 
 ### Scope: `copy` (the default for `optimise`)
 

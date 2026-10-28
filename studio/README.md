@@ -34,6 +34,14 @@ Or type `/page-studio` and paste the filled-in `intake/TEMPLATE.md`.
 | `persona-reader` | Synthetic ICP reader, one persona at a time | 2b, 3b, 6 |
 | `qa-reviewer` | Independent rubric and checklist judge | 3, 6 |
 
+## Fast mode (default for optimise and refresh)
+
+Final copy and the Word handoff within about 60 minutes: a fact check of the risky lines
+only, copy written straight from your section plan, one parallel review (facts, SEO,
+brand voice, one persona pass) and one revision. It reuses verified facts from
+`facts-library/` and your approved answers in `brand-answers.md`. Say "full mode" for the
+full pipeline below.
+
 ## Workflow
 
 ```
@@ -98,7 +106,9 @@ unless the brief records a reason not to.
 | `checklists/` | Self-check and review checklists per role, plus the QA gate |
 | `schemas/` | Envelope and payload JSON schemas |
 | `personas/` | The ICP panel and its evidence (see `personas/README.md`) |
-| `tools/` | `validate_envelope.py`, `check_page.py`, `aggregate_personas.py` |
+| `tools/` | `validate_envelope.py`, `check_page.py`, `check_copy.py`, `aggregate_personas.py`, `handoff_docx.js` |
+| `facts-library/` | Verified facts reused across runs (90-day reuse) |
+| `brand-answers.md` | Approved business answers (fees, advisor, proof and so on), filled in once |
 | `runs/` | One folder per run |
 
 ## Connectors used

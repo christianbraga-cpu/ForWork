@@ -44,6 +44,7 @@ as `unconfirmed`.
 
 ## Optional
 
+- Mode: `fast` (default for optimise and refresh, about 60 minutes) or `full`
 - Scope: `copy` (default for optimise and refresh: headings, body, meta, FAQ,
   captions, CTAs) or `full` (also layout, images, form and code)
 - Target ICPs for this page (default: the panel chooses from `studio/personas/`)

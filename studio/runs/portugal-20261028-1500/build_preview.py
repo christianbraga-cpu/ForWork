@@ -67,6 +67,98 @@ def strip_md_links(s):
     return re.sub(r"\[([^\]]+)\]\([^)]+\)", r"\1", s).replace("**", "")
 
 
+
+# ---------------------------------------------------------------- structure helpers
+# The generator parses copy by section id and markdown structure (headings,
+# lists, link lines, sign-off markers), never by exact sentences, so copy
+# revisions do not break it. Image slots are assigned by position in a section.
+LINK_LINE = re.compile(r"^\s*(\[[^\]]+\]\([^)]*\)\s*)+(\([^)]*\))?\s*$")
+BTN_RE = re.compile(r"\[(Button[^:\]]*): ([^\]]+)\]\(([^)]+)\)")
+NOTE_RE = re.compile(r"\s*\((?:CMS|Dev)[^)]*\)\s*$")
+
+
+def blocks(md):
+    """Split body_md into blank-line separated blocks of non-empty lines."""
+    return [[l.rstrip() for l in b.split("\n") if l.strip()] for b in re.split(r"\n\s*\n", md) if b.strip()]
+
+
+def is_note(line):
+    return bool(re.match(r"^(CMS note|CMS:|Placement:|Tabs \(all panels|Hidden at launch|No price slot)", line))
+
+
+def is_link_line(line):
+    return bool(LINK_LINE.match(line))
+
+
+def resolve_pairs(lines):
+    """Launch state for a list of lines: drop APPLY lines, keep FALLBACK text.
+    Returns [(text, signoff_ids_or_None)]."""
+    out, ids = [], None
+    for l in lines:
+        m = APPLY_RE.match(l)
+        if m:
+            ids = fact_ids(m.group(1))
+            continue
+        if l.startswith(FALLBACK):
+            out.append((l[len(FALLBACK):].strip(), ids))
+            ids = None
+            continue
+        out.append((l, None))
+    return out
+
+
+def section_links(sid):
+    return S[sid].get("links", [])
+
+
+def entry_for(sid, url, anchor):
+    for l in section_links(sid):
+        if l.get("url") == url and l.get("anchor") == anchor:
+            return l.get("entry_point")
+    return None
+
+
+def button_line(sid, line, default_entry=None):
+    """Render a '[Button...: label](url) ...' line, entry points from the section's links list."""
+    parts = []
+    for kind, label, url in BTN_RE.findall(line):
+        cls = "btn btn--secondary" if "secondary" in kind else "btn"
+        parts.append(link(url, label, cls=cls, entry=entry_for(sid, url, label) or default_entry))
+    return '<p class="actions">' + " ".join(parts) + "</p>"
+
+
+def h3_titles(md):
+    """Visible H3 titles in launch state (fallback heading replaces the applied one)."""
+    titles = []
+    for text, _ in resolve_pairs(md.split("\n")):
+        m = re.match(r"^### (.+)$", text)
+        if m:
+            titles.append(m.group(1))
+    return titles
+
+
+def positional(slots, section, label):
+    """Return an after_heading hook that hands out slots in order of the H3s."""
+    it = iter(slots)
+    used = []
+    cards = set(h3_titles(S[section]["body_md"]))
+
+    def hook(text):
+        if text not in cards:  # only H3 card titles take a slot
+            return None
+        try:
+            s = next(it)
+        except StopIteration:
+            WARN.append(f"{section}: more H3 cards than image slots ('{text}' has none)")
+            return None
+        used.append(text)
+        return s(text)
+    hook.used = used
+    return hook
+
+
+WARN = []
+
 # ---------------------------------------------------------------- image slots
 def slot(file, alt, caption=None, tone=None, hero=False, signoff=None, ratio="r32"):
     t = f' data-tone="{tone}"' if tone else ""
@@ -211,11 +303,14 @@ def render(md, hooks=None, wrap_h3=None, heading_ids=None, skip_first_heading=Fa
             continue
         if line.startswith("(anchor:") or line.startswith("(Tab label:"):
             m = re.search(r"anchor: #([\w-]+)", line)
-            if "Tab label: Costs" in line and "costs" in hooks:
+            tl = re.search(r"Tab label: ([^;.)]+)", line)
+            if tl and "costs" in hooks and "add-cost-bands" in line:
                 flush()
                 close_group()
-                out.append(hooks["costs"]())
+                out.append(hooks["costs"](tl.group(1).strip()))
                 continue
+            if not m and tl:
+                m = re.match(r"(.*)", re.sub(r"[^a-z0-9]+", "-", tl.group(1).strip().lower()).strip("-"))
             if m:
                 # attach id to last heading
                 for i in range(len(out) - 1, -1, -1):
@@ -301,20 +396,34 @@ def render_table(rows):
 # ---------------------------------------------------------------- sections
 def hero():
     s = S["s1-hero"]
-    lines = [l for l in s["body_md"].split("\n") if l.strip()]
-    h1 = lines[0][2:]
-    assert h1 == P["h1"]
-    quick = lines[1:4]
+    bl = blocks(s["body_md"])
+    h1 = next(l[2:] for b in bl for l in b if l.startswith("# "))
+    assert h1 == P["h1"], (h1, P["h1"])
+    rest = [b for b in bl if not b[0].startswith("# ")]
+    btn_i = next(i for i, b in enumerate(rest) if BTN_RE.search(b[0]))
+    quick = [l for b in rest[:btn_i] for l in b]
+    html_parts = [f'<p class="lede">{"<br>".join(inline(l) for l in quick)}</p>',
+                  button_line("s1-hero", rest[btn_i][0])]
+    after = rest[btn_i + 1:]
+    first_prose = True
+    for b in after:
+        line = " ".join(b)
+        if is_link_line(line):
+            m = re.match(r"^\[([^\]]+)\]\(([^)]+)\)", line)
+            html_parts.append(f'<p class="textlink">{link(m.group(2), m.group(1))}</p>')
+        elif is_note(line):
+            html_parts.append(f"<!-- {esc(line)} -->")
+        else:
+            cls = "brand-line" if first_prose else "small"
+            first_prose = False
+            html_parts.append(f'<p class="{cls}">{inline(line)}</p>')
+    body = "\n      ".join(html_parts)
     return f"""
 <section class="hero" id="top" aria-labelledby="h1">
   <div class="wrap hero-grid">
     <div class="hero-text">
       <h1 id="h1">{esc(h1)}</h1>
-      <p class="lede">{"<br>".join(inline(l) for l in quick)}</p>
-      <p class="actions">{link('#regions', 'Find your region in Portugal', cls='btn', entry='hero')} {link('#enquire', 'Speak with a Wedded Advisor', cls='btn btn--secondary', entry='hero')}</p>
-      <p class="textlink">{link('#marrying-legally', 'Check the rules for your passport')}</p>
-      <p class="brand-line">{esc(lines[6])}</p>
-      <p class="small">{esc(lines[7])}</p>
+      {body}
     </div>
     {capslot('s1-hero', 'hero', 'pena-palace-sintra-hills-wedding-in-portugal.jpg',
              'Pena Palace on its wooded hilltop above Sintra, a palace setting for a wedding in Portugal',
@@ -323,147 +432,171 @@ def hero():
 </section>"""
 
 
+B9_NAMES = ["season", "guests", "celebration"]
+
+
 def b9():
-    md = S["b9-qualifier"]["body_md"]
-    groups = re.findall(r"^([^\n-][^\n]*\?)\n((?:- [^\n]+\n?)+)", md, re.M)
-    names = ["season", "guests", "celebration"]
-    fields = []
-    for (q, opts), name in zip(groups, names):
-        o = "".join(f"<option>{esc(x[2:].strip())}</option>" for x in opts.strip().split("\n"))
-        fields.append(f'<div class="field"><label for="b9-{name}">{esc(q)}</label>'
-                      f'<select id="b9-{name}" data-b9="{name}"><option value="">Choose</option>{o}</select></div>')
-    helper = re.search(r"\n(Your Wedded Advisor confirms[^(]+?)\s*\(CMS", md).group(1)
+    sid = "b9-qualifier"
+    fields, helper, notes, btn = [], [], [], ""
+    for b in blocks(S[sid]["body_md"]):
+        if len(b) > 1 and all(l.startswith("- ") for l in b[1:]):  # question + options
+            name = B9_NAMES[len(fields)] if len(fields) < len(B9_NAMES) else f"q{len(fields)}"
+            o = "".join(f"<option>{esc(x[2:].strip())}</option>" for x in b[1:])
+            fields.append(f'<div class="field"><label for="b9-{name}">{esc(b[0])}</label>'
+                          f'<select id="b9-{name}" data-b9="{name}"><option value="">Choose</option>{o}</select></div>')
+        elif BTN_RE.search(b[0]):
+            kind, label, url = BTN_RE.search(b[0]).groups()
+            btn = f'<a class="btn" href="{attr(url)}" id="b9-go" data-entry-point="b9">{esc(label)}</a>'
+        elif is_note(b[0]):
+            notes.append(" ".join(b))
+        else:
+            helper.append(NOTE_RE.sub("", " ".join(b)))
+    assert len(fields) == 3, f"B9 expected 3 question groups, found {len(fields)}"
+    help_html = "".join(f'<p class="small helper">{inline(h)}</p>' for h in helper)
     return f"""
-<section class="b9" aria-label="Check your date">
+<section class="b9" aria-label="Your plans">
   <div class="wrap">
-    <!-- B9 qualifier bar. CMS note: the button does not submit. It carries the three answers into the matching Season, Guests and Celebration fields of the enquiry form (s10-form), sets entry_point=b9 and scrolls to #enquire. -->
+    {''.join(f'<!-- {esc(n)} -->' for n in notes)}
     <div class="b9-bar" role="group" aria-label="Your plans">
       {''.join(fields)}
-      <div class="field field--btn"><a class="btn" href="#enquire" id="b9-go" data-entry-point="b9">Check your date</a></div>
+      <div class="field field--btn">{btn}</div>
     </div>
-    <p class="small helper">{esc(helper)}</p>
+    {help_html}
   </div>
 </section>"""
 
 
 def b8():
-    md = S["b8-proof-strip"]["body_md"]
-    ids = fact_ids(APPLY_RE.match(md).group(1))
-    fb = md.split(FALLBACK, 1)[1].strip()
+    lines = resolve_pairs([l for l in S["b8-proof-strip"]["body_md"].split("\n") if l.strip()])
+    ps = "".join(f'<p data-signoff="{i}">{inline(t)}</p>' if i else f"<p>{inline(t)}</p>" for t, i in lines)
     return f"""
 <section class="b8" aria-label="How this page is checked">
-  <!-- Apply after sign-off ({ids}): numeric proof line replaced by the fallback below until then -->
-  <div class="wrap"><p data-signoff="{ids}">{esc(fb)}</p></div>
+  <!-- Apply after sign-off lines replaced by their fallback until signed off -->
+  <div class="wrap">{ps}</div>
 </section>"""
 
 
-B16_SLOTS = {
-    "Pena, Sintra": ("pena", "pena-palace-above-trees-sintra.jpg", "Pena Palace rising above the wooded park in the Sintra hills, wrapped in light mist"),
-    "Monserrate, Sintra": ("monserrate", "monserrate-palace-arches-lawns-sintra.jpg", "Monserrate Palace arches above the lawns of its Romantic park in Sintra"),
-    "Queluz, Near Lisbon": ("queluz", "queluz-national-palace-facade-dusk.jpg", "Facade of the National Palace of Queluz near Lisbon at dusk"),
-    "The Douro Valley": ("douro", "douro-valley-terraced-vineyards.jpg", "Steep terraced vineyards in the Alto Douro Wine Region"),
-    "The Algarve Coast": ("ponta_da_piedade", "algarve-coast-clifftops-atlantic.jpg", "Golden clifftops above the Atlantic on the Algarve coast"),
-}
+# Slots by position: (caption key or None, file, alt). Captions are looked up by key.
+B16_SLOTS = [
+    ("pena", "pena-palace-above-trees-sintra.jpg", "Pena Palace rising above the wooded park in the Sintra hills, wrapped in light mist"),
+    ("monserrate", "monserrate-palace-arches-lawns-sintra.jpg", "Monserrate Palace arches above the lawns of its Romantic park in Sintra"),
+    ("queluz", "queluz-national-palace-facade-dusk.jpg", "Facade of the National Palace of Queluz near Lisbon at dusk"),
+    ("douro", "douro-valley-terraced-vineyards.jpg", "Steep terraced vineyards in the Alto Douro Wine Region"),
+    ("ponta_da_piedade", "algarve-coast-clifftops-atlantic.jpg", "Golden clifftops above the Atlantic on the Algarve coast"),
+]
+B16_STRIP = [
+    ("azulejo", "azulejo-tile-wall-detail-portugal.jpg", "Close-up of blue and white azulejo tiles on a Portuguese wall"),
+    ("fado", "fado-guitar-portugal.jpg", "A Portuguese guitar used to play fado"),
+    ("quinta_staircase", "quinta-stone-staircase-couple-portugal.jpg", "Couple on the stone staircase of a Portuguese quinta before dinner"),
+]
+
+
+def slot_fn(section, spec, **kw):
+    key, f, alt = spec
+    if key and key in S[section].get("captions", {}):
+        return lambda _t: capslot(section, key, f, alt, **kw)
+    if key:
+        WARN.append(f"{section}: caption key '{key}' missing in copy; slot rendered without caption")
+    return lambda _t: slot(f, alt, **kw)
 
 
 def b16():
-    s = S["b16-spotlight"]
-
-    def after(text):
-        if text in B16_SLOTS:
-            key, f, alt = B16_SLOTS[text]
-            return capslot("b16-spotlight", key, f, alt)
+    sid = "b16-spotlight"
+    hook = positional([slot_fn(sid, s) for s in B16_SLOTS], sid, "cards")
+    strip_done = []
 
     def before(line):
-        if line.startswith("For the customs behind the day"):
-            return ('<div class="strip3">'
-                    + capslot("b16-spotlight", "azulejo", "azulejo-tile-wall-detail-portugal.jpg", "Close-up of blue and white azulejo tiles on a Portuguese wall")
-                    + capslot("b16-spotlight", "fado", "fado-guitar-portugal.jpg", "A Portuguese guitar used to play fado")
-                    + capslot("b16-spotlight", "quinta_staircase", "quinta-stone-staircase-couple-portugal.jpg", "Couple on the stone staircase of a Portuguese quinta before dinner")
-                    + "</div>")
+        # the 3-image detail strip goes before the first prose paragraph after the cards
+        if not strip_done and "](/" in line and not line.startswith("[Button"):
+            strip_done.append(1)
+            return '<div class="strip3">' + "".join(slot_fn(sid, s)(None) for s in B16_STRIP) + "</div>"
 
-    body = render(s["body_md"], hooks={"after_heading": after, "before_para": before}, wrap_h3="card")
+    body = render(S[sid]["body_md"], hooks={"after_heading": hook, "before_para": before}, wrap_h3="card")
+    if not strip_done:
+        WARN.append(f"{sid}: no body link line found for the detail strip; strip appended at the end")
+        body += '<div class="strip3">' + "".join(slot_fn(sid, s)(None) for s in B16_STRIP) + "</div>"
     return f'<section class="section section--linen" id="spotlight">\n<div class="wrap">\n{body}\n</div>\n</section>'
 
 
-S2_SLOTS = {
-    "Lisbon, Sintra and Cascais": ("lisbon_sintra_cascais", "lisbon-sintra-cascais-pena-palace-forest.jpg", "Pena Palace above the forest in Sintra, in the Lisbon, Sintra and Cascais region"),
-    "The Algarve": ("algarve", "algarve-clifftops-beach-sea-stacks.jpg", "Sea stacks and a sandy beach below the Algarve clifftops"),
-    "Porto and the Douro Valley": ("porto_douro", "porto-douro-terraced-vineyards-river.jpg", "Terraced vineyards above the Douro river in the Alto Douro Wine Region"),
-    "Comporta and the Alentejo": ("comporta_alentejo", "comporta-alentejo-coast-dunes-dusk.jpg", "Dunes on the Alentejo coast at Comporta at dusk"),
-    "Madeira": ("madeira", "madeira-atlantic-cliffs-green-hills.jpg", "Green cliffs above the Atlantic on the island of Madeira"),
-}
+S2_SLOTS = [
+    ("lisbon_sintra_cascais", "lisbon-sintra-cascais-pena-palace-forest.jpg", "Pena Palace above the forest in Sintra, in the Lisbon, Sintra and Cascais region"),
+    ("algarve", "algarve-clifftops-beach-sea-stacks.jpg", "Sea stacks and a sandy beach below the Algarve clifftops"),
+    ("porto_douro", "porto-douro-terraced-vineyards-river.jpg", "Terraced vineyards above the Douro river in the Alto Douro Wine Region"),
+    ("comporta_alentejo", "comporta-alentejo-coast-dunes-dusk.jpg", "Dunes on the Alentejo coast at Comporta at dusk"),
+    ("madeira", "madeira-atlantic-cliffs-green-hills.jpg", "Green cliffs above the Atlantic on the island of Madeira"),
+]
 
 
 def palace():
-    s = S["add-palace-rules"]
-    body = render(s["body_md"])
+    body = render(S["add-palace-rules"]["body_md"])
     return f'<aside class="callout" id="palace-rules" aria-labelledby="palace-h">\n{body.replace("<h3>", "<h3 id=\"palace-h\">", 1)}\n</aside>'
 
 
+def region_names():
+    return h3_titles(S["s2-regions"]["body_md"])
+
+
 def s2():
-    s = S["s2-regions"]
-
-    def after(text):
-        if text in S2_SLOTS:
-            key, f, alt = S2_SLOTS[text]
-            return capslot("s2-regions", key, f, alt, tone="warm")
-
-    body = render(s["body_md"], hooks={"after_heading": after, "palace": palace}, wrap_h3="card region")
+    sid = "s2-regions"
+    hook = positional([slot_fn(sid, s, tone="warm") for s in S2_SLOTS], sid, "regions")
+    body = render(S[sid]["body_md"], hooks={"after_heading": hook, "palace": palace}, wrap_h3="card region")
     body = body.replace("<h2>", '<h2 id="regions-h">', 1)
     return (f'<section class="section" id="regions" aria-labelledby="regions-h">\n<div class="wrap">\n{body}\n'
-            f'<!-- add-beach-line: entered once as the extra line of The Algarve card above (no separate block) -->\n</div>\n</section>')
+            f'<!-- add-beach-line: entered once in the Algarve card above (see its placement note) -->\n</div>\n</section>')
 
 
-S3_SLOTS = {
-    "A Legal Route for Foreign Couples": ("registry-table-signing-portugal.jpg", "Couple signing the marriage register at a civil registry table in Portugal"),
-    "Palaces You Can Book": ("monserrate-gardens-sintra.jpg", "Gardens of the Park and Palace of Monserrate in Sintra"),
-    "A UNESCO Wine Landscape": ("douro-slate-terraces-vineyards.jpg", "Slate terraces lined with vines in the Douro Valley"),
-    "Beaches and Clifftops": ("algarve-beach-low-sun.jpg", "Algarve beach and clifftops in low evening sun"),
-    "Easy to Reach on Three Passports": ("lisbon-arrival-couple-city-street.jpg", "Couple arriving in Lisbon, walking a city street with their luggage"),
-}
+S3_SLOTS = [
+    (None, "registry-table-signing-portugal.jpg", "Couple signing the marriage register at a civil registry table in Portugal"),
+    (None, "monserrate-gardens-sintra.jpg", "Gardens of the Park and Palace of Monserrate in Sintra"),
+    (None, "douro-slate-terraces-vineyards.jpg", "Slate terraces lined with vines in the Douro Valley"),
+    (None, "algarve-beach-low-sun.jpg", "Algarve beach and clifftops in low evening sun"),
+    (None, "lisbon-arrival-couple-city-street.jpg", "Couple arriving in Lisbon, walking a city street with their luggage"),
+]
 
 
 def s3():
-    s = S["s3-reasons"]
-
-    def after(text):
-        if text in S3_SLOTS:
-            f, alt = S3_SLOTS[text]
-            return slot(f, alt)
-
-    body = render(s["body_md"], hooks={"after_heading": after}, wrap_h3="card")
+    sid = "s3-reasons"
+    hook = positional([slot_fn(sid, s) for s in S3_SLOTS], sid, "reasons")
+    body = render(S[sid]["body_md"], hooks={"after_heading": hook}, wrap_h3="card")
     return f'<section class="section section--linen" id="why-portugal">\n<div class="wrap">\n{body}\n</div>\n</section>'
 
 
-S4_SLOTS = {
-    "**Quinta.**": ("s4_quinta", "quinta-courtyard-dinner-table-portugal.jpg", "Quinta courtyard laid with a long table for a wedding dinner"),
-    "**Palace or pousada.**": ("s4_pousada", "pousada-historic-castle-cloister.jpg", "Stone cloister of a pousada in a historic Portuguese castle"),
-    "**Clifftop or beach.**": ("s4_clifftop", "algarve-clifftop-ceremony-aisle.jpg", "Ceremony aisle set on an Algarve clifftop above the Atlantic"),
-    "**Vineyard estate.**": ("s4_vineyard", "douro-wine-quinta-vineyard-terrace.jpg", "Vineyard terrace at a wine quinta in the Douro Valley"),
-    "**In the city.**": ("s4_city", "lisbon-civil-ceremony-salon.jpg", "Civil wedding ceremony in an ornate salon in Lisbon"),
-    "**Catholic church or another faith.**": ("s4_church", "portugal-church-doorway-ceremony.jpg", "Couple at the doorway of a church in Portugal after a Catholic ceremony"),
-}
+S4_SLOTS = [
+    ("s4_quinta", "quinta-courtyard-dinner-table-portugal.jpg", "Quinta courtyard laid with a long table for a wedding dinner"),
+    ("s4_pousada", "pousada-historic-castle-cloister.jpg", "Stone cloister of a pousada in a historic Portuguese castle"),
+    ("s4_clifftop", "algarve-clifftop-ceremony-aisle.jpg", "Ceremony aisle set on an Algarve clifftop above the Atlantic"),
+    ("s4_vineyard", "douro-wine-quinta-vineyard-terrace.jpg", "Vineyard terrace at a wine quinta in the Douro Valley"),
+    ("s4_city", "lisbon-civil-ceremony-salon.jpg", "Civil wedding ceremony in an ornate salon in Lisbon"),
+    ("s4_church", "portugal-church-doorway-ceremony.jpg", "Couple at the doorway of a church in Portugal after a Catholic ceremony"),
+]
 
 
 def s4():
-    s = S["s4-settings"]
-    md = s["body_md"]
-    head, rest = md.split("\n\n", 2)[0:2], md.split("\n\n", 2)[2]
-    cards = []
-    for para in rest.split("\n\n"):
-        key = next(k for k in S4_SLOTS if para.startswith(k))
-        ck, f, alt = S4_SLOTS[key]
-        cards.append(f'<div class="card">{capslot("s4-settings", ck, f, alt)}<p>{inline(para)}</p></div>')
+    sid = "s4-settings"
+    head, cards, other = [], [], []
+    slots = iter(S4_SLOTS)
+    for b in blocks(S[sid]["body_md"]):
+        line = " ".join(b)
+        if line.startswith("**"):  # a setting card: bold lead-in paragraph
+            spec = next(slots, None)
+            if spec is None:
+                WARN.append(f"{sid}: more settings than image slots")
+                cards.append(f'<div class="card"><p>{inline(line)}</p></div>')
+            else:
+                cards.append(f'<div class="card">{slot_fn(sid, spec)(None)}<p>{inline(line)}</p></div>')
+        elif not cards:
+            head.append("\n".join(b))
+        else:
+            other.append("\n".join(b))
     vc = render(S["add-venue-charges"]["body_md"])
     return f"""
 <section class="section" id="settings">
 <div class="wrap">
-{render(head[0])}
-<p>{inline(head[1])}</p>
+{render(chr(10).join(x + chr(10) for x in head))}
 <div class="grid3">
 {chr(10).join(cards)}
 </div>
+{render(chr(10).join(other)) if other else ""}
 <aside class="callout" id="venue-charges-box">
 {vc}
 </aside>
@@ -471,147 +604,193 @@ def s4():
 </section>"""
 
 
-def costs_panel():
-    s = S["add-cost-bands"]
-    md = s["body_md"]
-    # Launch state: drop everything from the APPLY marker to the FALLBACK marker
-    m = APPLY_RE.search(md.split("\n\n", 1)[1]) or re.search(r"\[APPLY AFTER SIGN-OFF: ([^\]]+)\]", md)
-    ids = fact_ids(m.group(1))
-    head = md.split("\n\n", 1)[0]
-    after = md.split(FALLBACK, 1)[1]
-    fb_line, tail = after.strip().split("\n", 1)
-    return (f'<div class="tab-panel" id="costs">\n<!-- Tab label: Costs -->\n'
-            f'{render(head)}\n'
-            f'<!-- Apply after sign-off ({esc(m.group(1))}): named third-party cost table (Rita Plácido Photography, EUR ranges) replaced by the fallback below until then -->\n'
-            f'<p data-signoff="{ids}">{inline(fb_line)}</p>\n'
-            f'{render(tail.strip())}\n</div>')
-
-
-TAB_IDS = {"Getting There": "getting-there", "Entry Rules by Passport": "entry-rules",
-           "Marrying Legally, by Passport": "marrying-legally", "What to Wear for Your Weekend": "your-weekend"}
+def costs_panel(tab_label="Costs"):
+    tid = re.sub(r"[^a-z0-9]+", "-", tab_label.lower()).strip("-")
+    body = render(S["add-cost-bands"]["body_md"])
+    return f'<div class="tab-panel" id="{tid}">\n<!-- Tab label: {esc(tab_label)} -->\n{body}\n</div>'
 
 
 def s5():
-    s = S["s5-plan"]
-    md = s["body_md"]
-    # Wrap each tab panel: render with wrap_h3 groups, ids on the panel headings
+    sid = "s5-plan"
+    md = S[sid]["body_md"]
     body = render(md, hooks={"costs": costs_panel}, wrap_h3="tab-panel")
-    # move heading ids to the panel wrapper so anchors land on the panel
-    for title, tid in TAB_IDS.items():
-        body = re.sub(r'<div class="tab-panel">\n<h3( id="[\w-]+")?>' + re.escape(esc(title)),
-                      f'<div class="tab-panel" id="{tid}">\n<h3>{esc(title)}', body)
-    tabs = ('<nav class="tabs" aria-label="Plan your wedding">'
-            '<a href="#getting-there">Getting there</a><a href="#entry-rules">Entry rules</a>'
-            '<a href="#marrying-legally">Marrying legally</a><a href="#costs">Costs</a>'
-            '<a href="#your-weekend">Your weekend</a></nav>')
-    body = body.replace("</p>", "</p>\n" + tabs, 1)  # after the freshness line
+    # move each panel heading id onto its panel wrapper
+    body = re.sub(r'<div class="tab-panel">\n(<!--[^\n]*-->\n)?<h3 id="([\w-]+)">',
+                  lambda m: f'<div class="tab-panel" id="{m.group(2)}">\n{m.group(1) or ""}<h3>', body)
+    tm = re.search(r"^Tabs \([^)]*\): (.+)$", md, re.M)
+    labels = [t.strip() for t in tm.group(1).split("|")] if tm else []
+    ids = re.findall(r'<div class="tab-panel" id="([\w-]+)"', body)
+    nav = []
+    for lab in labels:
+        tid = re.sub(r"[^a-z0-9]+", "-", lab.lower()).strip("-")
+        if tid not in ids:
+            WARN.append(f"{sid}: tab '{lab}' has no panel with id #{tid}")
+        nav.append(f'<a href="#{tid}">{esc(lab)}</a>')
+    tabs = '<nav class="tabs" aria-label="Plan your wedding">' + "".join(nav) + "</nav>"
+    # nav goes right before the first panel
+    body = body.replace('<div class="tab-panel"', tabs + '\n<div class="tab-panel"', 1)
     return f'<section class="section section--linen" id="plan">\n<div class="wrap narrow">\n{body}\n</div>\n</section>'
 
 
 def s6():
     body = render(S["s6-weekend"]["body_md"])
     return (f'<section class="section" id="weekend">\n<div class="wrap split">\n<div>{body}</div>\n'
-            + capslot("s6-weekend", "s6", "quinta-long-dinner-table-portuguese-wine.jpg",
-                      "Long dinner table with Portuguese wine at a quinta after the ceremony", tone="dusk")
+            + slot_fn("s6-weekend", ("s6", "quinta-long-dinner-table-portuguese-wine.jpg",
+                      "Long dinner table with Portuguese wine at a quinta after the ceremony"), tone="dusk")(None)
             + "\n</div>\n</section>")
 
 
 def s7():
     body = render(S["s7-guests"]["body_md"])
     return (f'<section class="section section--sage" id="guests">\n<div class="wrap split">\n<div>{body}</div>\n'
-            + capslot("s7-guests", "s7", "quinta-terrace-guests-morning-after.jpg",
-                      "Wedding guests at breakfast on a quinta terrace the morning after")
+            + slot_fn("s7-guests", ("s7", "quinta-terrace-guests-morning-after.jpg",
+                      "Wedding guests at breakfast on a quinta terrace the morning after"))(None)
             + "\n</div>\n</section>")
 
 
-S9_SLOTS = {
-    "After the Wedding": ("honeymoon", "madeira-atlantic-coast-honeymoon.jpg", "Madeira's Atlantic coastline seen from a clifftop viewpoint"),
-    "Anniversary in the Douro": ("anniversary", "douro-anniversary-wine-tasting-terraces.jpg", "Couple at a wine tasting above the Douro Valley terraces"),
-    "Proposal in Sintra": ("proposal", "sintra-pena-park-proposal.jpg", "Proposal in the wooded park below Pena Palace, Sintra"),
-    "Vow Renewal on the Algarve": ("vow_renewal", "algarve-clifftop-vow-renewal.jpg", "Couple renewing their vows on an Algarve clifftop above the Atlantic"),
-    "Milestone Birthday": ("birthday", "douro-quinta-birthday-lunch.jpg", "Family birthday lunch at a long table at a Douro wine quinta"),
-}
+S9_SLOTS = [
+    ("honeymoon", "madeira-funchal-south-coast.jpg", "Funchal on the south coast of Madeira, seen from above the bay"),
+    ("anniversary", "douro-anniversary-wine-tasting-terraces.jpg", "Couple at a wine tasting above the Douro Valley terraces"),
+    ("proposal", "sintra-pena-park-proposal.jpg", "Proposal in the wooded park below Pena Palace, Sintra"),
+    ("vow_renewal", "algarve-clifftop-vow-renewal.jpg", "Couple renewing their vows on an Algarve clifftop above the Atlantic"),
+    ("birthday", "douro-quinta-birthday-lunch.jpg", "Family birthday lunch at a long table at a Douro wine quinta"),
+]
 
 
 def s9():
-    md = S["s9-celebrations"]["body_md"]
-    parts = md.split("\n\n")
-    h2 = parts[0]
-    cards = []
-    tail = []
-    for p in parts[1:]:
-        m = re.match(r"^\*\*(.+?)\*\*\n(.+)$", p, re.S)
-        if m:
-            key, f, alt = S9_SLOTS[m.group(1)]
-            cards.append(f'<div class="card">{capslot("s9-celebrations", key, f, alt, tone="warm")}'
-                         f'<p class="label">{esc(m.group(1))}</p><p>{inline(m.group(2))}</p></div>')
+    sid = "s9-celebrations"
+    cards, head, tail = [], [], []
+    slots = iter(S9_SLOTS)
+    for b in blocks(S[sid]["body_md"]):
+        m = re.match(r"^\*\*(.+?)\*\*$", b[0])
+        if m and len(b) > 1:  # styled label + body line(s)
+            spec = next(slots, None)
+            img = slot_fn(sid, spec, tone="warm")(None) if spec else ""
+            if spec is None:
+                WARN.append(f"{sid}: more cards than image slots")
+            cards.append(f'<div class="card">{img}<p class="label">{inline(m.group(1))}</p>'
+                         f'<p>{"<br>".join(inline(l) for l in b[1:])}</p></div>')
+        elif not cards:
+            head.append("\n".join(b))
         else:
-            tail.append(p)
-    return (f'<section class="section section--linen" id="celebrations">\n<div class="wrap">\n{render(h2)}\n'
-            f'<div class="grid3">{"".join(cards)}</div>\n{render(chr(10).join(tail))}\n</div>\n</section>')
+            tail.append("\n".join(b))
+    return (f'<section class="section section--linen" id="celebrations">\n<div class="wrap">\n{render(chr(10).join(head))}\n'
+            f'<div class="grid3">{"".join(cards)}</div>\n{render(chr(10) + chr(10).join(tail))}\n</div>\n</section>')
 
 
 def s10():
     body = render(S["s10-advisor"]["body_md"])
     return (f'<section class="section" id="advisor-section">\n<div class="wrap split">\n<div>{body}</div>\n'
-            + capslot("s10-advisor", "advisor_band", "wedded-advisor-planning-with-couple.jpg",
-                      "Wedded Advisor planning with a couple at a table, laptop and notes open")
+            + slot_fn("s10-advisor", ("advisor_band", "wedded-advisor-planning-with-couple.jpg",
+                      "Wedded Advisor planning with a couple at a table, laptop and notes open"))(None)
             + "\n</div>\n</section>")
 
 
-def form():
+def form_spec():
+    """Parse the s10-form body by its bold-labelled blocks."""
     md = S["s10-form"]["body_md"]
-    intro = re.search(r"\n\n(Tell us your region[^\n]+)", md).group(1)
+    spec = {"intro": [], "fields": [], "button": "", "consent": "", "errors": [], "success": {}, "hidden": []}
+    heading = None
+    for b in blocks(md):
+        first = b[0]
+        if first.startswith("### "):
+            heading = first[4:]
+            continue
+        if first.startswith("(anchor:"):
+            continue
+        lab = re.match(r"^\*\*([^*]+?):?\*\*:?\s*(.*)$", first)
+        if not lab:
+            if not spec["fields"]:
+                spec["intro"].append(" ".join(b))
+            continue
+        key, rest = lab.group(1).lower(), lab.group(2)
+        items = [l[2:].strip() for l in b[1:] if l.startswith("- ")]
+        if key.startswith("visible fields"):
+            for it in items:
+                m = re.match(r"^(.+?)(?:\s*\((required|optional)\))?(?::\s*(.+)|\? Placeholder:\s*(.+))?$", it)
+                label, flag, opts, ph = m.group(1).strip(), m.group(2), m.group(3), m.group(4)
+                if ph is not None:
+                    label += "?"
+                spec["fields"].append({"label": label, "flag": flag,
+                                       "options": [o.strip() for o in opts.split("|")] if opts else None,
+                                       "placeholder": ph})
+        elif key.startswith("button"):
+            spec["button"] = rest.strip()
+        elif key.startswith("consent"):
+            spec["consent"] = re.sub(r"\s*\(Dev:[^)]*\)\s*$", "", rest).strip()
+        elif key.startswith("error"):
+            spec["errors"] = [tuple(x.split(": ", 1)) for x in items]
+        elif key.startswith("success"):
+            spec["success"] = dict(x.split(": ", 1) for x in items)
+        elif key.startswith("hidden"):
+            spec["hidden"] = items
+    spec["heading"] = heading
+    return spec
 
-    def opts(label):
-        line = re.search(r"^- " + re.escape(label) + r": (.+)$", md, re.M).group(1)
-        return [o.strip() for o in line.split("|")]
 
-    def select(fid, name, label, options, required=False, optional=False):
-        lab = esc(label) + (' <span class="opt">(optional)</span>' if optional else "")
-        req = " required" if required else ""
-        o = "".join(f"<option>{esc(x)}</option>" for x in options)
-        return (f'<div class="field"><label for="{fid}">{lab}</label>'
-                f'<select id="{fid}" name="{name}"{req}><option value="">Choose</option>{o}</select></div>')
+FIELD_NAMES = {"first name": ("first_name", "text", "given-name"), "last name": ("last_name", "text", "family-name"),
+               "email": ("email", "email", "email"), "phone": ("phone", "tel", "tel"),
+               "region": ("region", None, None), "season": ("season", None, None), "year": ("year", None, None),
+               "how many guests?": ("guests", None, None), "what are you celebrating?": ("celebration", None, None),
+               "ceremony type": ("ceremony_type", None, None), "anything we should know?": ("message", None, None)}
 
-    errs = dict(re.findall(r"^- ([^:]+): (.+)$", md.split("**Error messages:**")[1].split("**Success")[0], re.M))
-    succ_h = re.search(r"- Heading: (.+)", md).group(1)
-    succ_b = re.search(r"- Body: (.+)", md).group(1)
-    hidden = {"route_to": ROUTE, "destination": "Portugal", "page_slug": "/destinations/europe/portugal",
-              "offer": "", "entry_point": ""}
-    hid = "".join(f'<input type="hidden" name="{k}" value="{attr(v)}">' for k, v in hidden.items())
-    hid += "".join(f'<input type="hidden" name="{u}" value="">' for u in
-                   ("utm_source", "utm_medium", "utm_campaign", "utm_term", "utm_content"))
+
+def form():
+    sp = form_spec()
+
+    def err_for(label, kind):
+        for k, v in sp["errors"]:
+            if k.lower().startswith(label.lower()) and kind in k.lower():
+                return v
+        return None
+
+    rows = []
+    for f in sp["fields"]:
+        lk = f["label"].lower()
+        name, typ, ac = FIELD_NAMES.get(lk, (re.sub(r"[^a-z0-9]+", "_", lk).strip("_"), "text", None))
+        fid = "f-" + name.replace("_", "-")
+        opt = ' <span class="opt">(optional)</span>' if f["flag"] == "optional" else ""
+        req = " required" if f["flag"] == "required" else ""
+        msgs = ""
+        for kind, attrname in (("empty", "data-msg-required"), ("not valid", "data-msg-invalid")):
+            e = err_for(f["label"], kind)
+            if e:
+                msgs += f' {attrname}="{attr(e)}"'
+        lab = f'<label for="{fid}">{esc(f["label"])}{opt}</label>'
+        if f["options"]:
+            o = "".join(f"<option>{esc(x)}</option>" for x in f["options"])
+            ctl = f'<select id="{fid}" name="{name}"{req}><option value="">Choose</option>{o}</select>'
+        elif f["placeholder"] is not None:
+            ctl = f'<textarea id="{fid}" name="{name}" rows="4" placeholder="{attr(f["placeholder"])}"></textarea>'
+        else:
+            acs = f' autocomplete="{ac}"' if ac else ""
+            ctl = f'<input id="{fid}" name="{name}" type="{typ or "text"}"{acs}{req}{msgs}>'
+        rows.append(f'<div class="field">{lab}{ctl}</div>')
+    # hidden fields from the copy's list
+    hidden = []
+    for h in sp["hidden"]:
+        names, _, val = h.partition(" = ")
+        for n in [x.strip() for x in names.split(",")]:
+            fixed = val.strip() if re.fullmatch(r"[\w/.-]+", val.strip()) else ""
+            hidden.append(f'<input type="hidden" name="{attr(n)}" value="{attr(fixed)}">')
+    hidden_note = "; ".join(sp["hidden"])
+    assert any('name="route_to" value="' + ROUTE + '"' in h for h in hidden), "route_to hidden field missing"
+    submit_err = err_for("Submit failed", "") or ""
+    succ = sp["success"]
     return f"""
 <section class="section section--sage" id="enquire" aria-labelledby="enquire-h">
 <div class="wrap narrow">
-<h3 id="enquire-h">Tell Us Your Plans</h3>
-<p>{esc(intro)}</p>
+<h3 id="enquire-h">{esc(sp['heading'])}</h3>
+{''.join(f'<p>{inline(i)}</p>' for i in sp['intro'])}
 <form class="enquiry" action="{ENDPOINT}" method="post" novalidate>
-  <!-- Hidden fields (approved, addendum 13, UX13, D13). entry_point = hero | b9 | region-card | tab-link | celebrations | closing | sticky; offer = region card title when opened from a region card, otherwise blank; utm_* captured from the URL. -->
-  {hid}
-  <div class="row2">
-    <div class="field"><label for="f-first">First name</label><input id="f-first" name="first_name" type="text" autocomplete="given-name" required data-msg-required="{attr(errs['First name empty'])}"></div>
-    <div class="field"><label for="f-last">Last name</label><input id="f-last" name="last_name" type="text" autocomplete="family-name" required data-msg-required="{attr(errs['Last name empty'])}"></div>
-  </div>
-  <div class="row2">
-    <div class="field"><label for="f-email">Email</label><input id="f-email" name="email" type="email" autocomplete="email" required data-msg-required="{attr(errs['Email empty'])}" data-msg-invalid="{attr(errs['Email not valid'])}"></div>
-    <div class="field"><label for="f-phone">Phone <span class="opt">(optional)</span></label><input id="f-phone" name="phone" type="tel" autocomplete="tel"></div>
-  </div>
-  {select('f-region', 'region', 'Region', opts('Region'))}
-  <div class="row2">
-    {select('f-season', 'season', 'Season', opts('Season'))}
-    {select('f-year', 'year', 'Year', opts('Year (optional)'), optional=True)}
-  </div>
-  {select('f-guests', 'guests', 'How many guests?', opts('How many guests?'))}
-  {select('f-celebration', 'celebration', 'What are you celebrating?', opts('What are you celebrating?'))}
-  {select('f-ceremony', 'ceremony_type', 'Ceremony type', opts('Ceremony type (optional)'), optional=True)}
-  <div class="field"><label for="f-notes">Anything we should know?</label><textarea id="f-notes" name="message" rows="4" placeholder="Budget, dates you have in mind, anything else"></textarea></div>
-  <p class="form-error" role="alert" hidden data-msg-submit="{attr(errs['Submit failed'])}"></p>
-  <button class="btn btn--full" type="submit">Send your enquiry</button>
-  <p class="small consent">By sending this form you agree to our {link(TODO_URL, 'Privacy Policy')}.</p>
+  <!-- Hidden fields (from the copy's form section): {esc(hidden_note)} -->
+  {''.join(hidden)}
+  {chr(10).join(rows)}
+  <p class="form-error" role="alert" hidden data-msg-submit="{attr(submit_err)}"></p>
+  <button class="btn btn--full" type="submit">{esc(sp['button'])}</button>
+  <p class="small consent">{inline(sp['consent'])}</p>
 </form>
-<template id="enquiry-success"><div class="success" role="status"><h4>{esc(succ_h)}</h4><p>{esc(succ_b)}</p></div></template>
+<template id="enquiry-success"><div class="success" role="status"><h4>{esc(succ.get('Heading', ''))}</h4><p>{esc(succ.get('Body', ''))}</p></div></template>
 </div>
 </section>"""
 
@@ -640,42 +819,55 @@ def faq_items():
 
 def faq():
     items = faq_items()
-    # check the s11 body says the same thing as payload.faq
     body = S["s11-faq"]["body_md"]
     for f in P["faq"]:
-        assert f["q"] in body and f["a"] in body, f["q"]
+        if not (f["q"] in body and f["a"] in body):
+            WARN.append(f"s11-faq body and payload.faq differ for '{f['q']}' (payload.faq rendered)")
+    h2 = next((l[3:] for l in body.split("\n") if l.startswith("## ")), S["s11-faq"]["heading"])
     qa = "\n".join(f'<div class="qa"><h3>{esc(h)}</h3><p>{a}</p></div>' for h, _, a, _ in items)
+    notes = "".join(f"<!-- {esc(l)} -->" for l in body.split("\n") if is_note(l))
     return f"""
 <section class="section" id="faq" aria-labelledby="faq-h">
 <div class="wrap narrow">
-<h2 id="faq-h">Get Answers Before You Enquire</h2>
+<h2 id="faq-h">{esc(h2)}</h2>
 <div class="faq">
 {qa}
 </div>
-<!-- CMS note: FAQPage schema uses the visible text word for word; while a sign-off is pending, schema carries the FALLBACK text. In schema, the FAQ 1 link becomes plain text. -->
+{notes}
 </div>
 </section>"""
 
 
 def closing():
-    md = S["closing-cta"]["body_md"]
-    first = md.split("\n\n")[0]
+    sid = "closing-cta"
+    prose, btns = [], []
+    for b in blocks(S[sid]["body_md"]):
+        line = " ".join(b)
+        if BTN_RE.search(line):
+            btns.append(button_line(sid, line))
+        elif not is_note(line):
+            prose.append(f"<p>{inline(line)}</p>")
     return f"""
-<section class="closing" aria-label="Speak with a Wedded Advisor">
-<div class="wrap narrow"><p>{esc(first)}</p><p class="actions">{link('#enquire', 'Speak with a Wedded Advisor', cls='btn', entry='closing')}</p></div>
+<section class="closing" aria-label="Closing call to action">
+<div class="wrap narrow">{''.join(prose)}{''.join(btns)}</div>
 </section>"""
 
 
 def s12():
-    md = S["s12-articles"]["body_md"]
-    parts = md.split("\n\n")
-    out = [render(parts[0]), '<div class="grid2">']
-    for p in parts[1:3]:
-        a, d = p.split("\n")
-        m = re.match(r"\[(.+)\]\((.+)\)", a)
-        out.append(f'<div class="card article">{link(m.group(2), m.group(1), cls="card-title")}<p class="small">{esc(d)}</p></div>')
-    out.append("</div>")
-    out.append(render("\n\n".join(parts[3:])).replace("<p><strong>Trending row</strong></p>", '<p class="label">Trending row</p>'))
+    sid = "s12-articles"
+    out, cards = [], []
+    for b in blocks(S[sid]["body_md"]):
+        m = re.match(r"^\[([^\]]+)\]\(([^)]+)\)$", b[0])
+        if m and len(b) == 2 and not b[1].startswith("- "):  # article card: link line + description
+            cards.append(f'<div class="card article">{link(m.group(2), m.group(1), cls="card-title")}<p class="small">{inline(b[1])}</p></div>')
+            continue
+        if cards:
+            out.append('<div class="grid2">' + "".join(cards) + "</div>")
+            cards = []
+        r = render("\n".join(b))
+        out.append(re.sub(r"<p><strong>([^<]+)</strong></p>", r'<p class="label">\1</p>', r))
+    if cards:
+        out.append('<div class="grid2">' + "".join(cards) + "</div>")
     return f'<section class="section section--linen" id="articles">\n<div class="wrap">\n' + "\n".join(out) + "\n</div>\n</section>"
 
 
@@ -686,17 +878,34 @@ def s13():
 
 
 def sticky():
-    return """
+    sid = "sticky-bar"
+    label, btn, notes = "", "", []
+    for b in blocks(S[sid]["body_md"]):
+        line = " ".join(b)
+        m = re.match(r"^Label:\s*(.+)$", line)
+        if m:
+            label = m.group(1)
+        elif BTN_RE.search(line):
+            kind, lab, url = BTN_RE.search(line).groups()
+            btn = link(url, lab, cls="btn", entry=entry_for(sid, url, lab) or "sticky")
+        else:
+            notes.append(line)
+    return f"""
 <div class="sticky-cta" id="sticky-cta" aria-label="Enquire">
-  <!-- Mobile sticky bar. No price slot. Hidden while the enquiry form is in view. -->
-  <span class="sticky-label">Wedding in Portugal</span>
-  <a class="btn" href="#enquire" data-entry-point="sticky">Speak with a Wedded Advisor</a>
+  <!-- Mobile sticky bar. {esc(' '.join(notes))} -->
+  <span class="sticky-label">{esc(label)}</span>
+  {btn}
 </div>"""
 
 
 # ---------------------------------------------------------------- schema
-REGIONS = ["Lisbon, Sintra and Cascais", "The Algarve", "Porto and the Douro Valley",
-           "Comporta and the Alentejo", "Madeira"]
+def brand_sentence():
+    """The hero paragraph that follows the passport text link (F088 brand line)."""
+    bl = blocks(S["s1-hero"]["body_md"])
+    for i, b in enumerate(bl):
+        if is_link_line(" ".join(b)) and not BTN_RE.search(b[0]) and i + 1 < len(bl):
+            return " ".join(bl[i + 1])
+    return None
 
 
 def schema():
@@ -707,15 +916,19 @@ def schema():
             "description": P["meta"]["description"],
             "containedInPlace": {"@type": "Continent", "name": "Europe"},
             "touristType": "Couples planning a destination wedding"}
-    il = {"@type": "ItemList", "@id": CANON + "#regions", "name": "Choose Your Region of Portugal",
-          "numberOfItems": len(REGIONS),
-          "itemListElement": [{"@type": "ListItem", "position": i, "name": r} for i, r in enumerate(REGIONS, 1)]}
+    regions = region_names()
+    s2h = next(l[3:] for l in S["s2-regions"]["body_md"].split("\n") if l.startswith("## "))
+    il = {"@type": "ItemList", "@id": CANON + "#regions", "name": s2h,
+          "numberOfItems": len(regions),
+          "itemListElement": [{"@type": "ListItem", "position": i, "name": r} for i, r in enumerate(regions, 1)]}
     svc = {"@type": "Service", "@id": CANON + "#concierge", "name": CONFIG["brand"]["concierge_name"],
            "serviceType": "Destination wedding planning",
-           "description": "Wedded Concierge pairs you with a Wedded Advisor who plans with you from the first enquiry to the last dance.",
            "provider": {"@id": org["@id"]},
            "areaServed": {"@type": "Country", "name": "Portugal"},
            "url": DOMAIN + "/wonderland-concierge"}
+    bs = brand_sentence()
+    if bs:
+        svc["description"] = strip_md_links(bs)
     bc = {"@type": "BreadcrumbList", "@id": CANON + "#breadcrumb", "itemListElement": [
         {"@type": "ListItem", "position": 1, "name": "Home", "item": DOMAIN + "/"},
         {"@type": "ListItem", "position": 2, "name": "Destinations", "item": DOMAIN + "/destinations"},
@@ -871,7 +1084,7 @@ def page():
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<!-- PREVIEW ONLY (Page Studio run portugal-20261028-1500, Stage 5, copy scope). Not the deliverable; launch state with fallback lines for every sign-off pair. -->
+<!-- PREVIEW ONLY (Page Studio run portugal-20261028-1500, Stage 5, copy scope, copy revision {COPY['revision']}). Not the deliverable; launch state with fallback lines for every sign-off pair. -->
 <title>{esc(m['title'])}</title>
 <meta name="description" content="{attr(m['description'])}">
 <meta name="robots" content="index, follow">
@@ -913,4 +1126,6 @@ if __name__ == "__main__":
     (RUN / "schema.jsonld").write_text(
         '<script type="application/ld+json">\n' + json.dumps(ld, indent=2, ensure_ascii=False) + "\n</script>\n"
         if "--script" in sys.argv else json.dumps(ld, indent=2, ensure_ascii=False) + "\n")
-    print("ok", len(doc))
+    print("ok", len(doc), "revision", COPY["revision"])
+    for w in WARN:
+        print("WARN", w)

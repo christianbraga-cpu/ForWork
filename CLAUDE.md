@@ -25,5 +25,7 @@ the page, the action, the research doc and the existing page facts. Start with
 ```bash
 python3 studio/tools/validate_envelope.py <file.json>
 python3 studio/tools/check_page.py <index.html> --facts <facts.json> --brief <brief.json>
+python3 studio/tools/check_copy.py <30-page-copy.json> --brief <brief.json> --facts <facts.json>
 python3 studio/tools/aggregate_personas.py <run_dir> <brief|copy|page>
+node studio/tools/handoff_docx.js <run_dir> <out.docx>
 ```

@@ -7,12 +7,21 @@
     "project-lead"
   ],
   "status": "ready_for_review",
-  "revision": 1,
+  "revision": 3,
   "inputs_consumed": [
     {
       "artifact": "studio/runs/portugal-20261028-1500/30-page-copy.json",
       "from_agent": "copywriter",
+      "revision": 3
+    },
+    {
+      "artifact": "studio/runs/portugal-20261028-1500/30-page-copy-r2.json",
+      "from_agent": "copywriter",
       "revision": 2
+    },
+    {
+      "artifact": "studio/runs/portugal-20261028-1500/37-fix-list-r3.md",
+      "from_agent": "project-lead"
     },
     {
       "artifact": "studio/runs/portugal-20261028-1500/20-content-brief.json",
@@ -58,6 +67,7 @@
     "files_written": [
       "studio/runs/portugal-20261028-1500/preview.html",
       "studio/runs/portugal-20261028-1500/schema.jsonld",
+      "studio/runs/portugal-20261028-1500/build_preview.py",
       "studio/runs/portugal-20261028-1500/60-automated-qa.json",
       "studio/runs/portugal-20261028-1500/50-build-report.json",
       "studio/runs/portugal-20261028-1500/screens/desktop-01.png",
@@ -121,7 +131,7 @@
       "studio/runs/portugal-20261028-1500/screens/mobile-38.png",
       "studio/runs/portugal-20261028-1500/screens/mobile-full.png"
     ],
-    "build_scope": "Copy-scope PREVIEW only: a standalone, mobile-first rendering of 30-page-copy.json revision 2 in launch state, for the QA gate's automated checks and screenshots. Not the deliverable; nothing written under site/. Live raw HTML unavailable (weddedwonderland.com blocked), so the live template was not reproduced.",
+    "build_scope": "Copy-scope PREVIEW only: a standalone, mobile-first rendering of 30-page-copy.json revision 3 (rebuilt from revision 2; all revision 2 screenshots deleted and retaken) in launch state, for the QA gate's automated checks and screenshots. Not the deliverable; nothing written under site/. Live raw HTML unavailable (weddedwonderland.com blocked), so the live template was not reproduced.",
     "schema_types": [
       "BreadcrumbList",
       "FAQPage",
@@ -135,7 +145,7 @@
       "No Article, Person, Offer, AggregateRating or ImageObject (images not final). No unconfirmed sign-off fact in schema: FAQ answers carry only the fallback lines, the same text as the page.",
       "schema.jsonld is the bare JSON-LD object (no <script> wrapper) for the CMS handoff; it is byte-identical in content to the block in preview.html (verified by parse and compare)."
     ],
-    "automated_checks": "python3 studio/tools/check_page.py studio/runs/portugal-20261028-1500/preview.html --facts studio/runs/portugal-20261028-1500/facts.json --brief studio/runs/portugal-20261028-1500/20-content-brief.json --out studio/runs/portugal-20261028-1500/60-automated-qa.json: 29/30 passed; blockers=1 (noindex_while_unconfirmed, accepted by design under D2), majors=0, minors=0. Word count 3632 (visible text including captions, form labels and header; brief 2400-3200, checker tolerance 1920-4800), internal links 19, external links 11 (10 official sources plus Parques de Sintra, all target _blank rel noopener).",
+    "automated_checks": "python3 studio/tools/check_page.py studio/runs/portugal-20261028-1500/preview.html --facts studio/runs/portugal-20261028-1500/facts.json --brief studio/runs/portugal-20261028-1500/20-content-brief.json --out studio/runs/portugal-20261028-1500/60-automated-qa.json: 29/30 passed; blockers=1 (noindex_while_unconfirmed, accepted by design under D2), majors=0, minors=0. Rendered visible word count 3527 (copy's own count 3,045; brief 2400-3200, checker tolerance 1920-4800), internal links 19, external links 11 (all target _blank rel noopener). FAQPage answers verified word for word against visible text; schema.jsonld identical to the in-page block.",
     "screenshots": [
       "studio/runs/portugal-20261028-1500/screens/desktop-01.png",
       "studio/runs/portugal-20261028-1500/screens/desktop-02.png",
@@ -198,7 +208,7 @@
       "studio/runs/portugal-20261028-1500/screens/mobile-38.png",
       "studio/runs/portugal-20261028-1500/screens/mobile-full.png"
     ],
-    "screenshot_notes": "Playwright chromium, deviceScaleFactor 1, file:// URL. mobile-full.png (390x844 viewport, page height about 32,000 px) and desktop-full.png (1440x900, about 17,500 px); mobile-01 to mobile-38 and desktop-01 to desktop-20 are viewport-height slices taken by scrolling, so the mobile sticky bar shows at the bottom of each mobile slice (as a user sees it) and hides while the form is in view. In the full-page mobile capture the fixed sticky bar appears once, over the hero area. No horizontal scroll at 390 px (scrollWidth 390).",
+    "screenshot_notes": "Playwright chromium, deviceScaleFactor 1, file:// URL. mobile-full.png (390x844 viewport, page height about 31,300 px) and desktop-full.png (1440x900, about 17,500 px); mobile-01 to mobile-38 and desktop-01 to desktop-20 are viewport-height slices taken by scrolling, so the mobile sticky bar shows at the bottom of each mobile slice (as a user sees it) and hides while the form is in view. In the full-page mobile capture the fixed sticky bar appears once, over the hero area. No horizontal scroll at 390 px (scrollWidth 390).",
     "lighthouse": {
       "status": "not_run",
       "reason": "No public URL: the preview is a local file in the run folder (file://) and the live site is blocked from this environment, so DataForSEO on_page_lighthouse cannot reach it. Run Lighthouse on staging after the CMS changes are applied."
@@ -206,7 +216,7 @@
     "noindex": false,
     "robots": "index, follow (D2: live, indexed page; sign-off-dependent copy is held behind fallbacks instead of adding noindex)",
     "rendering_rules_applied": [
-      "Every [APPLY AFTER SIGN-OFF] / [FALLBACK UNTIL THEN] pair renders only the fallback, with data-signoff on its element: F019 (B8 strip), F076 (B16 Algarve card heading, body and caption), F066 (s3 Beaches card heading and body), F024 (legal tab bullet, FAQ 9), F043 (US block, FAQ 2), F069 (Costs tab, FAQ 4), F077 (s7 Douro line). The applied lines and the cost table are HTML comments only. Scripted scan of visible text: no Blue Flag, Ponta da Piedade, Lagos, river trips, EUR or USD amounts, 120,000+/17+ or Rita Plácido text.",
+      "Every [APPLY AFTER SIGN-OFF] / [FALLBACK UNTIL THEN] pair renders only the fallback, with data-signoff on its element: F019 (B8 strip), F076 (B16 Algarve card heading, body and caption), F066 (s3 Beaches card heading and body), F024 (legal tab bullet, FAQ 9), F043 (US block, FAQ 2), F069 (Costs tab, FAQ 4), F077 (s7 Douro line). The applied lines and the cost table are HTML comments only. Scripted scan of visible text: no Blue Flag, Ponta da Piedade, Lagos, river trips, EUR or USD amounts, 120,000+/17+, statement of eligibility or Rita Plácido text.",
       "s8 real weddings not rendered; an HTML comment marks the slot. CMS notes, tab labels, anchors and placement notes are HTML comments. add-beach-line appears once, inside the Algarve card, as its placement note says; the palace strip sits under the Lisbon card.",
       "s5 tabs render as a chip nav of anchor links plus stacked panels (#getting-there, #entry-rules, #marrying-legally, #costs, #your-weekend). FAQ renders as visible H3 question plus answer pairs.",
       "33 image slots as <div class=\"ph\" data-img=... role=\"img\" aria-label=...> with neutral backgrounds; file names kebab-case and descriptive; alt text 125 characters or fewer, from the copy captions and research-doc section 6 shot briefs; captions shown as figcaption. Hero slot marked data-fetchpriority=high, the rest data-loading=lazy (no <img> elements yet, so width/height/srcset apply at image delivery). Slots that would depict unsigned facts use generic names and alt (algarve-coast-clifftops-atlantic.jpg, no Ponta da Piedade; Douro without boats).",
@@ -238,29 +248,46 @@
         "detail": "No og:image yet (needs a final, rights-cleared 1200x630 hero). ImageObject schema and responsive srcset wait for final images."
       },
       {
-        "id": "B-05",
+        "id": "R3-01",
         "type": "copy",
         "severity": "minor",
-        "detail": "Captions repeat their card body almost word for word in places (B16 Queluz, Pena and Douro; s9 cards), which reads as duplication on screen. Copy or design call: drop captions on cards, or vary them. The preview shows captions because they are approved copy."
+        "detail": "s2 Lisbon card: the 'Guests:' label now carries a transfer-time line ('many venues are 15 to 30 minutes from Lisbon's centre, as a guide'), so the label does not match its content. It also repeats the Getting there tab line and rests on F060, which is unconfirmed (hedged 'as a guide')."
       },
       {
-        "id": "B-06",
+        "id": "R3-02",
         "type": "copy",
         "severity": "minor",
-        "detail": "B16 Queluz card line reads awkwardly: 'whose upper gardens and Throne Room Parques de Sintra offers for celebrations'. FAQ 3 opens 'A Catholic ceremony is: Catholic marriage is...', also awkward. Not changed (copy is approved)."
+        "detail": "Region cards are now uneven: Lisbon has 3 bullets plus a body line, the Algarve has 2 bullets plus the permit line, and Douro, Comporta and Madeira have only 2 bullets each. On desktop they read as thin next to Lisbon (screens/desktop-04.png to desktop-06.png)."
       },
       {
-        "id": "B-07",
+        "id": "R3-03",
         "type": "copy",
         "severity": "minor",
-        "detail": "Sticky bar button 'Speak with a Wedded Advisor' wraps to two lines at 390 px and the label wraps beside it (known label question, copy_limits sticky_bar 12 characters)."
+        "detail": "FAQ 2's Australian line still says 'confirm ... which document you need' without the FC6-01 wording 'and where it must be issued', which the Marrying legally tab now has. The tab and the FAQ give slightly different advice."
       },
       {
-        "id": "B-08",
+        "id": "R3-04",
         "type": "copy",
         "severity": "minor",
-        "detail": "Rendered visible word count is 3,632 including captions, form and chrome; the copy's own count is 3,113 against the 2400-3200 brief. Within checker tolerance; no failure."
+        "detail": "The venue charges box heading says 'What Your Wedded Advisor Checks in Every Venue Contract' but its body now says 'we check four things with you' (BR-03 rewording). The voice changes between heading and body; the heading is from the user's plan, so it was not touched."
+      },
+      {
+        "id": "R3-05",
+        "type": "copy",
+        "severity": "minor",
+        "detail": "Captions now lean heavily on airport codes: four of the five s9 captions, all five s2 captions and the B16 Queluz caption end with 'fly into ...' or '(LIS)'. They read as repetitive when scrolled on mobile. The revision 2 caption-versus-body duplication (old B-05) is mostly fixed."
+      },
+      {
+        "id": "R3-06",
+        "type": "copy",
+        "severity": "minor",
+        "detail": "Sticky bar button 'Speak with a Wedded Advisor' still wraps to two lines at 390 px (label question unchanged)."
       }
+    ],
+    "generator": "studio/runs/portugal-20261028-1500/build_preview.py parses the copy by section id and markdown structure, not exact sentences: hero by block type (H1, quick-answer lines before the button line, link lines, prose); B9 by question-plus-options lists and the button line; sign-off pairs by their markers; image slots handed out by H3 position (or bold lead-in / label position in s4 and s9) with captions looked up by caption key; tab ids from the 'Tabs' and 'Tab label/anchor' lines; form fields, errors, success state and hidden fields from the bold-labelled blocks of s10-form; button entry points from each section's links list; ItemList regions from the s2 H3s; Service description from the hero brand line. It prints WARN lines for any count mismatch (slots, tabs, FAQ body versus payload.faq); the revision 3 build printed none.",
+    "revision_3_checks": [
+      "Visible counts after render: 'Wedded Advisor' 11 times in visible text (16 in the HTML including alt text and comments), UNESCO 4, 'travel guides' 2, 'October 2026' once (s5 freshness line), matching the r3 fix list limits (BR-03, BR-05).",
+      "BR-01 rendered: only the Lisbon card keeps a Guests line; the other four cards show Setting and Nearest airport only. BR-02 rendered: s3 card reads 'Visa-Free for US, UK and AU Passports'. FC6-01 rendered in the Australian Passport block of the Marrying legally tab."
     ]
   },
   "self_qa": {
@@ -270,7 +297,7 @@
         "check": "1 check_page.py has no blocker failures",
         "pass": false,
         "severity": "blocker",
-        "detail": "Only blocker is noindex_while_unconfirmed, accepted under D2 (see open_questions). All other 29 checks pass."
+        "detail": "Revision 3: only blocker is noindex_while_unconfirmed, accepted under D2. All other 29 checks pass."
       },
       {
         "check": "2 noindex present while any fact needing sign-off is unconfirmed",
@@ -318,7 +345,7 @@
         "check": "9 Mobile and desktop screenshots saved",
         "pass": true,
         "severity": "major",
-        "detail": "60 PNGs in studio/runs/portugal-20261028-1500/screens/ (2 full-page plus 38 mobile and 20 desktop slices)."
+        "detail": "60 PNGs in studio/runs/portugal-20261028-1500/screens/ (2 full-page plus 38 mobile and 20 desktop slices), revision 3; old slices deleted first."
       },
       {
         "check": "10 No venue or supplier contact details on the page",
@@ -338,7 +365,8 @@
     "Captions in the copy are visible figcaptions (approved copy); s3 cards have no captions in the copy, so their slots have alt text only.",
     "Image file names and alt text are proposals from the copy captions and research-doc section 6 shot briefs, pending the Visual Lead's image set.",
     "The form's entry_point and offer default to blank when the form is used directly; utm fields are filled from the URL by inline script.",
-    "B9 is rendered as a field group, not a second <form>, so the enquiry form is the only form element and B9 cannot submit."
+    "B9 is rendered as a field group, not a second <form>, so the enquiry form is the only form element and B9 cannot submit.",
+    "Revision 3 heading and caption keys are unchanged from revision 2, so the same image file names and alt text are reused by position; the s9 honeymoon slot was renamed (madeira-funchal-south-coast.jpg) to match its new Funchal caption."
   ],
   "open_questions": [
     {
@@ -353,10 +381,10 @@
     },
     {
       "to": "project-lead",
-      "question": "Copy or design call on captions that repeat card text (B-05) and the two awkward lines (B-06); no copy was changed in this stage.",
+      "question": "Copy calls on R3-01 to R3-05 (Lisbon 'Guests' line, uneven region cards, FAQ 2 versus tab AU wording, venue box voice, airport-heavy captions). No copy was changed.",
       "blocking": false
     }
   ],
   "confidence": 0.85,
-  "timestamp": "2026-10-28T04:30:00Z"
+  "timestamp": "2026-10-28T05:10:00Z"
 }

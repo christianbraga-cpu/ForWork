@@ -91,13 +91,18 @@ function shadedPara(text, fill, label) {
 // Render body markdown into paragraphs. Sign-off pairs are highlighted.
 function mdToParas(md) {
   const out = [];
+  let held = null; // inside a sign-off block until the fallback line
   for (const raw of md.split('\n')) {
     const line = raw.trimEnd();
     if (!line.trim()) continue;
+    if (held && !/\[FALLBACK UNTIL THEN\]|\[APPLY AFTER SIGN-OFF/.test(line)) {
+      out.push(shadedPara(line.replace(/^\s*[-*]\s+/, '\u2022 '), SIGNOFF_FILL, ''));
+      continue;
+    }
     const signoff = line.match(/^\s*(?:[-*]\s+)?\[APPLY AFTER SIGN-OFF:?\s*([^\]]*)\]\s*(.*)$/);
     const fallback = line.match(/^\s*(?:[-*]\s+)?\[FALLBACK UNTIL THEN\]\s*(.*)$/);
-    if (signoff) { out.push(shadedPara(signoff[2], SIGNOFF_FILL, `APPLY AFTER SIGN-OFF (${signoff[1].trim()}): `)); continue; }
-    if (fallback) { out.push(shadedPara(fallback[1], FALLBACK_FILL, 'USE UNTIL SIGNED OFF: ')); continue; }
+    if (signoff) { held = signoff[1]; out.push(shadedPara(signoff[2], SIGNOFF_FILL, `APPLY AFTER SIGN-OFF (${signoff[1].trim()}): `)); continue; }
+    if (fallback) { held = null; out.push(shadedPara(fallback[1], FALLBACK_FILL, 'USE UNTIL SIGNED OFF: ')); continue; }
     const h = line.match(/^(#{1,6})\s+(.*)$/);
     if (h) {
       out.push(new Paragraph({ spacing: { before: 120, after: 60 }, children: [new TextRun({ text: `${h[1]} `, color: GREY, size: 18 }), new TextRun({ text: h[2], bold: true })] }));
