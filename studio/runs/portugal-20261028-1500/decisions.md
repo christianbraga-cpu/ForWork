@@ -148,3 +148,11 @@ Madeira cards (no facts to add), "What Your Wedded Advisor Checks" heading with 
 (heading is from the user's plan), captions ending with the arrival airport (minor), and the
 sticky bar button wrapping at 390px (label is from the user's plan; dev can shorten the
 button style or the user can choose a shorter label).
+
+## D19. Final edits from the page persona panel
+PL-03: the B7 block label "Trending row" was showing as visible text; it is now "Celebrity
+weddings in Portugal". The second Ronaldo and Georgina link
+(/trending/cristiano-ronaldo-georgina-rodrguez--intimate-portugal-wedding) is removed, although
+the link plan listed it, because two links to the same story read as filler (skeptic and
+intimate personas). The higher-value donor link (/trending/cristiano-ronaldo-georgina-rodriguez-wedding)
+stays. check_copy.py now reports that link-plan item as a known, accepted deviation.

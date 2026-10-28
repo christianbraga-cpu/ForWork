@@ -195,11 +195,11 @@ children.push(para('Part B is the page in order, one numbered change per field o
 children.push(shadedPara('lines in this colour depend on a fact that still needs sign-off. Do not apply them yet.', SIGNOFF_FILL, 'Amber: '));
 children.push(shadedPara('the line to use until that sign-off arrives.', FALLBACK_FILL, 'Green: '));
 children.push(para('Grey text in brackets after a link is its URL. Lines starting with #### are card or tab titles inside a block.', { run: { color: GREY } }));
-children.push(para('Section 10 lists issues the reviewers have already found, so you do not need to flag them again.'));
+children.push(para(isFinal ? 'Section 10 shows the QA gate results. The full schema JSON-LD is in the appendix.' : 'Section 10 lists issues the reviewers have already found, so you do not need to flag them again.'));
 
 // 2. Decisions needed
 children.push(heading('2. Decisions needed from you', HeadingLevel.HEADING_1));
-const userQs = (copyEnv.open_questions || []).filter((q) => !/fact-checker|Please add PROPOSED|re-read pt\.usembassy|Word count is|entry_point=celebrations/i.test(q.question));
+const userQs = (copyEnv.open_questions || []).filter((q) => !/fact-checker|Please add PROPOSED|re-read pt\.usembassy|Word count is|entry_point=celebrations|Trending row|FC6-02|BR-03|counted 'Wedded Advisor'/i.test(q.question));
 children.push(table(['#', 'Question', 'Blocking?'], userQs.map((q, i) => [String(i + 1), q.question, q.blocking ? 'Yes' : 'No, a fallback is in place']), [500, 7638, 1500]));
 
 // 3. Sign-off items
@@ -269,7 +269,7 @@ children.push(table(['Live item', 'Action', 'Note'], removals.map((c) => [c.live
 
 // Code changes
 children.push(heading('7. Code changes (the CMS may strip these)', HeadingLevel.HEADING_1));
-children.push(...noteBox(['The final schema JSON-LD is produced at the build stage (after copy revision 2). This section lists what will change so dev can check the CMS supports it.']));
+children.push(...noteBox([isFinal && exists('schema.jsonld') ? 'The full JSON-LD is in the appendix and in schema.jsonld in the run folder. Ask dev to confirm the CMS keeps it.' : 'The final schema JSON-LD is produced at the build stage. This section lists what will change so dev can check the CMS supports it.']));
 children.push(table(['#', 'Change', 'Detail'], [
   ['C1', 'Schema types', `Use: ${brief.schema_types.join(', ')}. Remove: Article and Person author. No Offer, no AggregateRating.`],
   ['C2', 'FAQPage', 'Exactly the 10 visible FAQ questions and answers, word for word (fallback versions while sign-offs are pending).'],
