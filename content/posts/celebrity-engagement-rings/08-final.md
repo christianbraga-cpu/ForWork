@@ -270,6 +270,8 @@ Grouped by style family, the 25 rings narrow to eight looks. Each is covered in 
 
 Some rings sit in two families. Emma Stone's pearl cluster stands slightly apart from all eight, as an alternative centre stone.
 
+Still gathering ideas? [Read the free Wedded Wonderland magazine](/magazine?utm_source=blog&utm_medium=content&utm_campaign=celebrity-engagement-rings&utm_content=magnet).
+
 ## Wearing and photographing a statement ring at a destination wedding
 
 A ring chosen at home meets a different set of conditions abroad: sun, sand, sunscreen, salt water and a long flight either side. None of this should change the style you love, but it may change the setting, and the habits you bring with you.
@@ -292,9 +294,9 @@ Coloured stones photograph differently in harsh midday sun than in late afternoo
 
 If your engagement ring came with matching bands, as Princess Beatrice's did, photograph the set together on the morning of the wedding, before the rings are separated for the ceremony. <!-- fact_46 -->
 
-<!-- CTA: primary -->
+If you are already picturing where the ring will make its first trip, start with the light, the season and the setting.
 
-If you are already picturing where the ring will make its first trip, browse [destination wedding locations by region](/destinations?utm_source=blog&utm_medium=internal&utm_campaign=celebrity-engagement-rings) and start with the light, the season and the setting.
+<!-- CTA: primary -->
 
 ## Frequently asked questions
 
@@ -328,4 +330,4 @@ Wedded Wonderland plans destination weddings through Wedded Concierge. A ring is
 
 If the next one is where to marry, one Wedded Advisor plans venue, travel, vendors and payments as your one point of contact, and the fee is agreed in writing before any work begins.
 
-When you are ready to talk it through, [Wedded Concierge](/wonderland-concierge?utm_source=blog&utm_medium=internal&utm_campaign=celebrity-engagement-rings) is the place to start.
+When you are ready to talk it through, [Wedded Concierge](/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=celebrity-engagement-rings&utm_content=secondary) is the place to start.

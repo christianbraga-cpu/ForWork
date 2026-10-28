@@ -10,3 +10,4 @@
 00:25 07b icp-panel-chair revise (enquire 1.6, early-stage list); 1 must-fix, 3 should-fix
 00:27 08 luxury-writer complete final ~4,210 words, 1 VERIFY; orchestrator removed unsourced 'we do not sell rings'; 08b+09+10 launched
 00:28 08b editor pass, 0 blocking
+00:28 09 cro complete; 3 copy changes applied
