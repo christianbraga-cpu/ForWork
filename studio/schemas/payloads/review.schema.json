@@ -1,0 +1,67 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "payloads/review.schema.json",
+  "type": "object",
+  "required": [
+    "artifact",
+    "lens",
+    "verdict",
+    "findings"
+  ],
+  "properties": {
+    "artifact": {
+      "type": "string"
+    },
+    "lens": {
+      "type": "string"
+    },
+    "verdict": {
+      "enum": [
+        "approved",
+        "changes_requested"
+      ]
+    },
+    "scores": {
+      "type": "object"
+    },
+    "findings": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "severity",
+          "location",
+          "issue"
+        ],
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "severity": {
+            "enum": [
+              "blocker",
+              "major",
+              "minor"
+            ]
+          },
+          "location": {
+            "type": "string"
+          },
+          "issue": {
+            "type": "string"
+          },
+          "evidence": {
+            "type": "string"
+          },
+          "fact_id": {
+            "type": "string"
+          },
+          "suggested_fix": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,117 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "payloads/page_copy.schema.json",
+  "type": "object",
+  "required": [
+    "meta",
+    "h1",
+    "sections",
+    "faq",
+    "unconfirmed_used"
+  ],
+  "properties": {
+    "meta": {
+      "type": "object",
+      "required": [
+        "title",
+        "description"
+      ],
+      "properties": {
+        "title": {
+          "type": "string",
+          "minLength": 20,
+          "maxLength": 65
+        },
+        "description": {
+          "type": "string",
+          "minLength": 100,
+          "maxLength": 165
+        },
+        "og_title": {
+          "type": "string"
+        },
+        "og_description": {
+          "type": "string"
+        }
+      }
+    },
+    "h1": {
+      "type": "string"
+    },
+    "sections": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "heading",
+          "body_md",
+          "fact_refs"
+        ],
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "heading": {
+            "type": "string"
+          },
+          "body_md": {
+            "type": "string"
+          },
+          "fact_refs": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "links": {
+            "type": "array"
+          },
+          "cta": {
+            "type": "string"
+          },
+          "captions": {
+            "type": "object"
+          },
+          "change_reason": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "faq": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "q",
+          "a"
+        ],
+        "properties": {
+          "q": {
+            "type": "string"
+          },
+          "a": {
+            "type": "string"
+          },
+          "fact_refs": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "unconfirmed_used": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "word_count": {
+      "type": "integer"
+    }
+  }
+}

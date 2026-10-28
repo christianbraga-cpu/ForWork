@@ -1,0 +1,52 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "payloads/fact_audit.schema.json",
+  "type": "object",
+  "required": [
+    "claims",
+    "proposed_facts",
+    "conflicts"
+  ],
+  "properties": {
+    "claims": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "claim",
+          "where",
+          "classification"
+        ],
+        "properties": {
+          "claim": {
+            "type": "string"
+          },
+          "where": {
+            "type": "string"
+          },
+          "classification": {
+            "enum": [
+              "matches_confirmed",
+              "conflicts_with_confirmed",
+              "verified_official",
+              "third_party_only",
+              "unverifiable"
+            ]
+          },
+          "fact_id": {
+            "type": "string"
+          },
+          "source_url": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "proposed_facts": {
+      "type": "array"
+    },
+    "conflicts": {
+      "type": "array"
+    }
+  }
+}

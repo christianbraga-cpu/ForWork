@@ -1,0 +1,187 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "payloads/keyword_research.schema.json",
+  "type": "object",
+  "required": [
+    "primary_keyword",
+    "secondary_keywords",
+    "question_keywords",
+    "competitors",
+    "serp_features"
+  ],
+  "properties": {
+    "primary_keyword": {
+      "type": "object",
+      "required": [
+        "keyword",
+        "intent"
+      ],
+      "properties": {
+        "keyword": {
+          "type": "string"
+        },
+        "intent": {
+          "enum": [
+            "informational",
+            "commercial_investigation",
+            "transactional",
+            "navigational"
+          ]
+        },
+        "markets": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "object",
+            "properties": {
+              "volume": {
+                "type": [
+                  "integer",
+                  "null"
+                ]
+              },
+              "difficulty": {
+                "type": [
+                  "number",
+                  "null"
+                ]
+              },
+              "source": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      }
+    },
+    "secondary_keywords": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "keyword",
+          "intent"
+        ],
+        "properties": {
+          "keyword": {
+            "type": "string"
+          },
+          "intent": {
+            "enum": [
+              "informational",
+              "commercial_investigation",
+              "transactional",
+              "navigational"
+            ]
+          },
+          "markets": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "object",
+              "properties": {
+                "volume": {
+                  "type": [
+                    "integer",
+                    "null"
+                  ]
+                },
+                "difficulty": {
+                  "type": [
+                    "number",
+                    "null"
+                  ]
+                },
+                "source": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "question_keywords": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "keyword",
+          "intent"
+        ],
+        "properties": {
+          "keyword": {
+            "type": "string"
+          },
+          "intent": {
+            "enum": [
+              "informational",
+              "commercial_investigation",
+              "transactional",
+              "navigational"
+            ]
+          },
+          "markets": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "object",
+              "properties": {
+                "volume": {
+                  "type": [
+                    "integer",
+                    "null"
+                  ]
+                },
+                "difficulty": {
+                  "type": [
+                    "number",
+                    "null"
+                  ]
+                },
+                "source": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "competitors": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "url"
+        ],
+        "properties": {
+          "url": {
+            "type": "string"
+          },
+          "covers_that_we_dont": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "serp_features": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "currently_ranking": {
+      "type": "array"
+    },
+    "cannibalisation_risks": {
+      "type": "array"
+    },
+    "data_sources": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  }
+}

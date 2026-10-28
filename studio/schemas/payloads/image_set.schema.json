@@ -1,0 +1,107 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "payloads/image_set.schema.json",
+  "type": "object",
+  "required": [
+    "images"
+  ],
+  "properties": {
+    "images": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "asset_id",
+          "slot",
+          "story_role",
+          "file_name",
+          "alt",
+          "rights",
+          "is_ai_generated"
+        ],
+        "properties": {
+          "asset_id": {
+            "type": "string"
+          },
+          "slot": {
+            "type": "string"
+          },
+          "story_role": {
+            "type": "string"
+          },
+          "source": {
+            "type": "string"
+          },
+          "shot_brief": {
+            "type": "string"
+          },
+          "file_name": {
+            "type": "string",
+            "pattern": "^[a-z0-9]+(-[a-z0-9]+)*(\\.[a-z0-9]+)?$"
+          },
+          "alt": {
+            "type": "string",
+            "maxLength": 160
+          },
+          "caption_hint": {
+            "type": "string"
+          },
+          "credit": {
+            "type": "string"
+          },
+          "rights": {
+            "type": "object",
+            "required": [
+              "status"
+            ],
+            "properties": {
+              "status": {
+                "enum": [
+                  "cleared",
+                  "to_confirm",
+                  "not_cleared"
+                ]
+              },
+              "register_id": {
+                "type": "string"
+              },
+              "scope": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "expires": {
+                "type": "string"
+              },
+              "couple_consent": {
+                "type": [
+                  "boolean",
+                  "null"
+                ]
+              }
+            }
+          },
+          "is_ai_generated": {
+            "type": "boolean"
+          },
+          "icp_signal": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "crops_needed": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "priority": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,73 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "payloads/fact_ledger.schema.json",
+  "title": "Fact ledger (facts.json)",
+  "type": "object",
+  "required": [
+    "page",
+    "facts"
+  ],
+  "properties": {
+    "page": {
+      "type": "string"
+    },
+    "facts": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "fact",
+          "value",
+          "status",
+          "source"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^F[0-9]{3,}$"
+          },
+          "fact": {
+            "type": "string"
+          },
+          "value": {},
+          "unit": {
+            "type": "string"
+          },
+          "status": {
+            "enum": [
+              "confirmed",
+              "unconfirmed",
+              "conflict",
+              "retired"
+            ]
+          },
+          "source": {
+            "type": "string"
+          },
+          "source_tier": {
+            "type": "string"
+          },
+          "signed_off_by": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "needs_sign_off_by": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "notes": {
+            "type": "string"
+          },
+          "added_by": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}

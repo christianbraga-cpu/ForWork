@@ -1,0 +1,167 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "payloads/persona_review.schema.json",
+  "type": "object",
+  "required": [
+    "persona_id",
+    "persona_version",
+    "stage",
+    "run",
+    "first_impression",
+    "attention_map",
+    "questions_answered",
+    "objections_triggered",
+    "decision",
+    "decision_reason",
+    "verbatim_reaction"
+  ],
+  "properties": {
+    "persona_id": {
+      "type": "string"
+    },
+    "persona_version": {
+      "type": "string"
+    },
+    "stage": {
+      "enum": [
+        "brief",
+        "copy",
+        "page"
+      ]
+    },
+    "run": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "first_impression": {
+      "type": "object",
+      "required": [
+        "understood_offer",
+        "summary_in_own_words",
+        "would_keep_reading"
+      ],
+      "properties": {
+        "understood_offer": {
+          "type": "boolean"
+        },
+        "summary_in_own_words": {
+          "type": "string"
+        },
+        "would_keep_reading": {
+          "type": "boolean"
+        }
+      }
+    },
+    "attention_map": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "section",
+          "reaction"
+        ],
+        "properties": {
+          "section": {
+            "type": "string"
+          },
+          "reaction": {
+            "enum": [
+              "engaged",
+              "skimmed",
+              "lost_interest",
+              "confused",
+              "put_off"
+            ]
+          },
+          "quote": {
+            "type": "string"
+          },
+          "why": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "questions_answered": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "question",
+          "answered"
+        ],
+        "properties": {
+          "question": {
+            "type": "string"
+          },
+          "answered": {
+            "enum": [
+              "yes",
+              "partially",
+              "no"
+            ]
+          },
+          "evidence": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "objections_triggered": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "objection",
+          "severity"
+        ],
+        "properties": {
+          "objection": {
+            "type": "string"
+          },
+          "triggered_by": {
+            "type": "string"
+          },
+          "severity": {
+            "enum": [
+              "blocker",
+              "major",
+              "minor"
+            ]
+          }
+        }
+      }
+    },
+    "trust_signals_noticed": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "turn_offs_noticed": {
+      "type": "array"
+    },
+    "images": {
+      "type": "object"
+    },
+    "emotional_response": {
+      "type": "object"
+    },
+    "decision": {
+      "enum": [
+        "enquire",
+        "save_for_later",
+        "leave"
+      ]
+    },
+    "decision_reason": {
+      "type": "string"
+    },
+    "verbatim_reaction": {
+      "type": "string"
+    },
+    "confidence": {
+      "type": "number"
+    }
+  }
+}
