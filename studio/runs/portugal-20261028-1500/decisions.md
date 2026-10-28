@@ -94,3 +94,10 @@ Copy cannot fix (business answers needed, go to the user in SUMMARY.md):
 Known tool limit: the aggregator matches objections by text, so the same concern worded
 differently across runs (for example "no Portugal proof") can fall below the 2-run filter. The
 Project Lead read all 12 reviews and included those concerns above.
+
+## D13. UX consult calls
+Approved: hero order and Wedded Concierge sentence in the hero, sticky bar copy without a
+price, text links to the form from the Costs and Legal tabs, UX13 form copy with Season plus
+Year, and the hidden field list. Kept as the user's plan states (UX suggestions go to the
+user): the B9 button "Check your date" and the FAQ heading "Get Answers Before You Enquire".
+FAQ 5 and the fee line fixed through the addendum, not a second brief round, to save a cycle.
