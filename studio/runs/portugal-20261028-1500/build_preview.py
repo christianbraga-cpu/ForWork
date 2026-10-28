@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """Build the Portugal copy preview (studio/runs/portugal-20261028-1500/preview.html)
-and schema.jsonld from 30-page-copy.json revision 2. Launch state: only the
+and schema.jsonld from 30-page-copy.json (latest revision). Launch state: only the
 [FALLBACK UNTIL THEN] line of every sign-off pair is rendered."""
 import html
 import json
@@ -11,7 +11,7 @@ from pathlib import Path
 RUN = Path("/home/user/ForWork/studio/runs/portugal-20261028-1500")
 CONFIG = json.loads(Path("/home/user/ForWork/studio/config.json").read_text())
 COPY = json.loads((RUN / "30-page-copy.json").read_text())
-assert COPY["revision"] == 2, COPY["revision"]
+assert COPY["revision"] >= 2, COPY["revision"]
 P = COPY["payload"]
 S = {s["id"]: s for s in P["sections"]}
 DOMAIN = CONFIG["brand"]["domain"]
