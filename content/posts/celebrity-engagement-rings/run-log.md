@@ -5,3 +5,5 @@
 00:04 03A planner-sme complete 38 facts (royal), Firecrawl out of credits (402), facts from search summaries; merged: 86 facts, 13 verify items; waiting on 02
 00:17 02 seo-researcher complete 5 cities; 320/mo AU KD 0; styles post is a draft (publish together)
 00:21 05 luxury-writer complete ~4,080 words, 1 VERIFY (Mary Hobart); first draft sent; 06 + 07x5 in parallel
+00:22 07 icp-reader x5 complete; enquire 1-2; asks: remove 'source pack', shrink method section, names up front, concrete close
+00:23 06 editor pass_with_edits 4.43; edits applied by orchestrator except link hold (styles post publishes first/together)

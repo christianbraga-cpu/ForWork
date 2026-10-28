@@ -1,0 +1,650 @@
+{
+  "agent": "editor",
+  "task_id": "celebrity-engagement-rings",
+  "stage": "06",
+  "status": "complete",
+  "round": 1,
+  "inputs_used": [
+    "content/posts/celebrity-engagement-rings/05-draft.md",
+    "content/posts/celebrity-engagement-rings/00-input.json",
+    "content/posts/celebrity-engagement-rings/01-brief.json",
+    "content/posts/celebrity-engagement-rings/02-seo.json",
+    "content/posts/celebrity-engagement-rings/03-source-pack.json",
+    "content/posts/celebrity-engagement-rings/03-source-pack-part-2.json",
+    "content/posts/celebrity-engagement-rings/02-research/pages/",
+    "content-system/rubrics/editor-rubric.md",
+    "content-system/rubrics/qa-gates.md",
+    "content-system/brand/brand-facts.md",
+    "content-system/seo/link-map.csv"
+  ],
+  "self_qa": {
+    "checks": [
+      {
+        "check": "scan_copy.py run",
+        "pass": true,
+        "note": "0 banned, 1 flagged ('iconic', title only, from brief and meta), 0 dashes, 0 competitor overlaps"
+      },
+      {
+        "check": "Every factual sentence logged against its marker",
+        "pass": true,
+        "note": "97 log entries; one mismatch (fact_15 carat) fixed"
+      },
+      {
+        "check": "Each edit 'old' occurs exactly once in 05-draft.md",
+        "pass": true
+      },
+      {
+        "check": "Decision consistent with scores and blocking issues",
+        "pass": true,
+        "note": "average 4.43, none below 4, no blocking issues after edits"
+      },
+      {
+        "check": "4 one-sentence takeaways; keyword in title, first 100 words and H2 'Modern celebrity engagement rings'; ~4,200 words in 3,800 to 4,800",
+        "pass": true
+      }
+    ],
+    "confidence": 0.82
+  },
+  "open_questions": [
+    {
+      "to": "orchestrator",
+      "question": "Resolve the Hobart [[VERIFY]] against kongehuset.dk (or drop the sentence and the FAQ answer's first clause) before the CMS step; restore the styles-guide link only if the sister post is live.",
+      "blocking": false
+    }
+  ],
+  "assumptions": [
+    "Insider_details marked 'general advice' and tied to fact ids count as sourced for care and setting advice.",
+    "Facts came from search summaries (Firecrawl out of credits); spot-check of wording on publication remains an open verify item from the source pack."
+  ],
+  "verify_items": [
+    "[[VERIFY: Queen Mary of Denmark is Australian-born (Hobart); cite kongehuset.dk or a major outlet]]"
+  ],
+  "tools_used": [
+    "Bash",
+    "Read"
+  ],
+  "next_agent": [
+    "icp-reader"
+  ],
+  "payload": {
+    "draft_file": "content/posts/celebrity-engagement-rings/05-draft.md",
+    "rubric": {
+      "voice": 4,
+      "expertise": 5,
+      "accuracy": 4,
+      "seo_fit": 4,
+      "commercial_link": 4,
+      "structure": 5,
+      "brief_fit": 5
+    },
+    "blocking_issues": [],
+    "decision": "pass_with_edits",
+    "edits": [
+      {
+        "location": "Intro, paragraph 2",
+        "issue": "Internal link to /style-advice/engagement-ring-styles is noindex=draft in link-map.csv and returned 404 on 2026-10-28 (link-rules: no noindex targets). Hold the link until the sister post is live; the orchestrator restores it at the CMS step if the sister post publishes first.",
+        "fix": "Replace the old text with the new text exactly.",
+        "old": "[engagement ring styles](/style-advice/engagement-ring-styles)",
+        "new": "engagement ring styles <!-- HOLD LINK: /style-advice/engagement-ring-styles is noindex draft (404 on 2026-10-28); restore as a link only once the sister post is live -->"
+      },
+      {
+        "location": "3. Grace Kelly, paragraph 1",
+        "issue": "Carat weight does not match fact_15, which reports about 10.47 carats. Rounding a reported figure changes the claim.",
+        "fix": "Replace the old text with the new text exactly.",
+        "old": "reported as about 10.5 carats.",
+        "new": "reported as about 10.47 carats."
+      },
+      {
+        "location": "10. Princess Eugenie, paragraph 2",
+        "issue": "Direct quote has no source marker. It is in the source pack quotes array (Jack Brooksbank, etonline.com), so attribute it there rather than drop it.",
+        "fix": "Replace the old text with the new text exactly.",
+        "old": "which is what I think of Eugenie.\"",
+        "new": "which is what I think of Eugenie.\" <!-- quote: Jack Brooksbank, 03-source-pack quotes[0], etonline.com -->"
+      },
+      {
+        "location": "20. Selena Gomez, Get the look",
+        "issue": "'Vulnerable' points and 'protective claws or V-tips' are unsourced technical advice (not in facts or insider_details). Keep the reader action, drop the unsupported specifics.",
+        "fix": "Replace the old text with the new text exactly.",
+        "old": "Those points are vulnerable, so ask for protective claws or V-tips.",
+        "new": "Ask your jeweller how the setting protects those points."
+      },
+      {
+        "location": "How celebrity rings shape engagement ring trends, paragraph 2",
+        "issue": "'Yellow gold carries three rings' overlooks Zendaya's white and yellow gold setting (fact_239), so the count reads as complete when it is not.",
+        "fix": "Replace the old text with the new text exactly.",
+        "old": "And yellow gold carries three rings that span 2017 to 2025: Meghan's, Eugenie's and Taylor Swift's. <!-- fact_38 --> <!-- fact_41 --> <!-- fact_236 -->",
+        "new": "And yellow gold sets three rings from 2017 to 2025, Meghan's, Eugenie's and Taylor Swift's, while Zendaya's mixes white and yellow gold. <!-- fact_38 --> <!-- fact_41 --> <!-- fact_236 --> <!-- fact_239 -->"
+      },
+      {
+        "location": "Styles at a glance table, Solitaire row",
+        "issue": "Grace Kelly's ring has two tapered baguettes (fact_16) and the entry's own Get the look says 'with baguette side stones'. Listing it as a solitaire contradicts the article's own point that side stones are easy to miss.",
+        "fix": "Replace the old text with the new text exactly.",
+        "old": "| Solitaire | Grace Kelly, Beyonce,",
+        "new": "| Solitaire | Beyonce,"
+      },
+      {
+        "location": "Styles at a glance table, Three-stone and side-stone row",
+        "issue": "Companion to the previous edit: add Grace Kelly here.",
+        "fix": "Replace the old text with the new text exactly.",
+        "old": "| Three-stone and side-stone | Queen Elizabeth II,",
+        "new": "| Three-stone and side-stone | Grace Kelly, Queen Elizabeth II,"
+      },
+      {
+        "location": "Wearing and photographing, Sun, salt water and long-haul flights, paragraph 3",
+        "issue": "Insurance and luggage advice is not in the source pack and is phrased as rules ('never'). Keep it as general advice the reader acts on, without stating insurance cover as fact.",
+        "fix": "Replace the old text with the new text exactly.",
+        "old": "Before you leave, check that the ring is covered by your insurance while travelling overseas, and keep a recent photograph of it with your travel documents. Carry it on your hand or in your cabin bag, never in checked luggage.",
+        "new": "Before you leave, ask your insurer whether the ring is covered while you travel overseas, and keep a recent photograph of it with your travel documents. Wear it or keep it in your cabin bag rather than in checked luggage."
+      },
+      {
+        "location": "Where your ring goes next, paragraph 1",
+        "issue": "'Anywhere in the world' is in brand-facts but readers on earlier posts disliked it. Use the shorter brand-facts line (one Wedded Advisor, single point of contact).",
+        "fix": "Replace the old text with the new text exactly.",
+        "old": "a Wedded Advisor can plan the venue, travel, vendors and payments, anywhere in the world, as your single point of contact from the first idea to the last dance.",
+        "new": "one Wedded Advisor can plan the venue, travel, vendors and payments with you, as your single point of contact from the first idea to the last dance."
+      }
+    ],
+    "fact_check_log": [
+      {
+        "claim": "According to the V&A, Prince Albert gave Queen Victoria an emerald ring in the shape of a serpent for their engagement.",
+        "fact_id": "fact_05",
+        "status": "confirmed"
+      },
+      {
+        "claim": "The engagement took place in 1839.",
+        "fact_id": "fact_06",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Country Life describes a coiled gold serpent with an emerald set in the head, ruby eyes and diamonds at the mouth, and reports that the emerald was Victoria's birthstone.",
+        "fact_id": "fact_07",
+        "status": "confirmed"
+      },
+      {
+        "claim": "The V&A notes that serpent jewellery was most fashionable in the 1840s, the decade after the engagement.",
+        "fact_id": "fact_02",
+        "status": "confirmed"
+      },
+      {
+        "claim": "The engagement of Princess Elizabeth and Lieutenant Philip Mountbatten was made public on 9 July 1947.",
+        "fact_id": "fact_10",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Philip designed the ring himself, using diamonds from a tiara that belonged to his mother, Princess Alice of Battenberg.",
+        "fact_id": "fact_11",
+        "status": "confirmed"
+      },
+      {
+        "claim": "The jeweller Philip Antrobus made it in platinum, with a round brilliant centre diamond reported as about 3 carats and smaller pave-set diamonds either side.",
+        "fact_id": "fact_12",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Prince Rainier III sealed the engagement with a platinum Cartier ring in January 1956.",
+        "fact_id": "fact_14",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Grace Kelly carat: draft said about 10.5; fact_15 says about 10.47. Fixed by edit. | 5 carats.",
+        "fact_id": "fact_15",
+        "status": "confirmed"
+      },
+      {
+        "claim": "It sits between two tapered baguette diamonds, and Kelly reportedly wore it on the set of High Society.",
+        "fact_id": "fact_16",
+        "status": "confirmed"
+      },
+      {
+        "claim": "An earlier ring from Rainier is reported as a Cartier eternity band of rubies and diamonds.",
+        "fact_id": "fact_14",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Mel Ferrer proposed with a diamond eternity band, and the couple married in 1954.",
+        "fact_id": "fact_17",
+        "status": "confirmed"
+      },
+      {
+        "claim": "The band is described as set all the way round with baguette-cut diamonds.",
+        "fact_id": "fact_18",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Harper's Bazaar Singapore lists her set as three bands, in yellow gold, rose gold and white gold with diamonds, a combination often credited with the stacked-ring look.",
+        "fact_id": "fact_19",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Kennedy proposed with a Van Cleef & Arpels toi et moi ring.",
+        "fact_id": "fact_20",
+        "status": "confirmed"
+      },
+      {
+        "claim": "88 carats, originally flanked by baguettes.",
+        "fact_id": "fact_21",
+        "status": "confirmed"
+      },
+      {
+        "claim": "During her White House years the ring was reworked with Van Cleef & Arpels, and the baguettes were replaced with marquise and round diamonds in a laurel pattern.",
+        "fact_id": "fact_22",
+        "status": "confirmed"
+      },
+      {
+        "claim": "The engagement was announced on 16 November 2010.",
+        "fact_id": "fact_24",
+        "status": "confirmed"
+      },
+      {
+        "claim": "The ring, from Garrard, is an oval blue sapphire reported as about 12 carats, surrounded by 14 diamonds and set in white gold.",
+        "fact_id": "fact_25",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Because Catherine's ring size differed from Diana's, small platinum beads were reportedly added inside the band to make it fit.",
+        "fact_id": "fact_26",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Prince Edward proposed in January 1999, and the couple married on 19 June 1999 at St George's Chapel, Windsor Castle.",
+        "fact_id": "fact_29",
+        "status": "confirmed"
+      },
+      {
+        "claim": "The Garrard ring has an oval diamond reported as about 2 carats, flanked by two smaller heart-shaped diamonds.",
+        "fact_id": "fact_30",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Crown Prince Frederik and Mary Donaldson's engagement was made official on 8 October 2003, after Queen Margrethe II gave her consent.",
+        "fact_id": "fact_32",
+        "status": "confirmed"
+      },
+      {
+        "claim": "dk or a major outlet]] The ring sets a large centre diamond between two rubies, with the colours reported as chosen by Frederik to echo the Danish flag.",
+        "fact_id": "fact_33",
+        "status": "confirmed"
+      },
+      {
+        "claim": "It was later updated with two more diamond baguettes either side of the rubies.",
+        "fact_id": "fact_34",
+        "status": "confirmed"
+      },
+      {
+        "claim": "The engagement of Prince Harry and Meghan Markle was announced on 27 November 2017.",
+        "fact_id": "fact_36",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Prince Harry designed the ring: a centre diamond from Botswana flanked by two diamonds from his mother Diana's collection.",
+        "fact_id": "fact_37",
+        "status": "confirmed"
+      },
+      {
+        "claim": "The stones sit on a yellow gold band, and the ring was reported as made by Cleave and Company.",
+        "fact_id": "fact_38",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Princess Eugenie and Jack Brooksbank's engagement was announced in January 2018.",
+        "fact_id": "fact_40",
+        "status": "confirmed"
+      },
+      {
+        "claim": "The ring is an oval padparadscha sapphire, a pink-orange stone, surrounded by a halo of diamonds on a yellow gold band; the jeweller was not publicly identified.",
+        "fact_id": "fact_41",
+        "status": "confirmed"
+      },
+      {
+        "claim": "The design is widely noted as similar to her mother Sarah, Duchess of York's engagement ring, which has a ruby centre.",
+        "fact_id": "fact_42",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Edoardo Mapelli Mozzi designed the ring with British jeweller Shaun Leane, and the engagement was announced in 2019.",
+        "fact_id": "fact_45",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Leane described the platinum and diamond ring as a fusion of Victorian and Art Deco design, and it came with two matching bands.",
+        "fact_id": "fact_46",
+        "status": "confirmed"
+      },
+      {
+        "claim": "5 carats, flanked by smaller round brilliants and tapered baguettes.",
+        "fact_id": "fact_47",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Beyonce's engagement ring from Jay-Z is attributed to jeweller Lorraine Schwartz and centres on an emerald-cut diamond.",
+        "fact_id": "fact_200",
+        "status": "confirmed"
+      },
+      {
+        "claim": "The couple were engaged before their April 2008 wedding.",
+        "fact_id": "fact_202",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Amal Alamuddin and George Clooney became engaged in 2014, and the ring was widely reported in late April and May that year.",
+        "fact_id": "fact_204",
+        "status": "confirmed"
+      },
+      {
+        "claim": "It is an emerald-cut diamond with a tapered baguette diamond on each side, set in platinum.",
+        "fact_id": "fact_205",
+        "status": "confirmed"
+      },
+      {
+        "claim": "George Clooney was reported to have been involved in designing it himself.",
+        "fact_id": "fact_206",
+        "status": "confirmed"
+      },
+      {
+        "claim": "The couple married in Venice later in 2014, one of [the most memorable celebrity destination weddings](/top-celebrity-destination-weddings-of-all-time).",
+        "fact_id": "fact_204",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Blake Lively's engagement ring from Ryan Reynolds is attributed to jeweller Lorraine Schwartz, with Reynolds reported to have been involved in the design.",
+        "fact_id": "fact_208",
+        "status": "confirmed"
+      },
+      {
+        "claim": "The centre stone is an oval pink diamond on a rose gold band set with pave diamonds.",
+        "fact_id": "fact_209",
+        "status": "confirmed"
+      },
+      {
+        "claim": "The couple became engaged in 2012 and married that September in South Carolina, and the ring was first widely seen after the wedding.",
+        "fact_id": "fact_210",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Hailey Baldwin and Justin Bieber became engaged in July 2018, and the ring appeared on the September 2018 cover of Vogue Mexico, revealed in August that year.",
+        "fact_id": "fact_212",
+        "status": "confirmed"
+      },
+      {
+        "claim": ", who told People it is an elongated oval diamond on a thin band.",
+        "fact_id": "fact_213",
+        "status": "confirmed"
+      },
+      {
+        "claim": "In 2024 she was reported to be wearing a new oval diamond ring attributed to Lorraine Schwartz.",
+        "fact_id": "fact_214",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Dave McCary announced the engagement on Instagram on 4 December 2019.",
+        "fact_id": "fact_216",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Kataoka confirmed to National Jeweler that the ring is its Pearl Snowflake Ring Supreme, made in 18-carat gold with an 8 mm untreated Akoya pearl framed by diamonds.",
+        "fact_id": "fact_217",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Priyanka Chopra and Nick Jonas confirmed their engagement on Instagram in August 2018.",
+        "fact_id": "fact_219",
+        "status": "confirmed"
+      },
+      {
+        "claim": "cushion-cut diamond with tapered baguette side stones, and Jonas was reported to have closed a Tiffany store to choose it.",
+        "fact_id": "fact_220",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Jennifer Lawrence's engagement to Cooke Maroney was reported in February 2019.",
+        "fact_id": "fact_245",
+        "status": "confirmed"
+      },
+      {
+        "claim": "She debuted the ring at Dior's Fall 2019 show during Paris Fashion Week later that month, a large elongated diamond solitaire on a thin band.",
+        "fact_id": "fact_246",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Jonathan Owens proposed to Simone Biles on Valentine's Day, 14 February 2022.",
+        "fact_id": "fact_222",
+        "status": "confirmed"
+      },
+      {
+        "claim": "The ring was made by Houston jeweller Zo Frost and has an oval diamond with a halo and a diamond band; Frost said Owens specifically wanted a halo around the oval.",
+        "fact_id": "fact_223",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Selena Gomez announced her engagement to Benny Blanco on Instagram on 11 December 2024.",
+        "fact_id": "fact_225",
+        "status": "confirmed"
+      },
+      {
+        "claim": "The ring is a marquise-cut diamond solitaire on a slim band.",
+        "fact_id": "fact_226",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Lady Gaga and Michael Polansky's engagement was reported in April 2024, and she referred to him publicly as her fiance at the Paris Olympics in July 2024.",
+        "fact_id": "fact_228",
+        "status": "confirmed"
+      },
+      {
+        "claim": "The ring is reported as a large oval-cut diamond on an 18-carat white and rose gold pave band with pink diamond accents, attributed to Sofia Jewelry.",
+        "fact_id": "fact_229",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Sofia Richie announced her engagement to Elliot Grainge on Instagram in April 2022, and the proposal was reported to have taken place in Hawaii.",
+        "fact_id": "fact_231",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Most outlets describe the ring as an emerald-cut diamond on a thin band.",
+        "fact_id": "fact_232",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Taylor Swift announced her engagement to Travis Kelce on Instagram on 26 August 2025, with a close-up of the ring.",
+        "fact_id": "fact_234",
+        "status": "confirmed"
+      },
+      {
+        "claim": "A representative confirmed that the ring was designed by Kindred Lubeck, who runs Artifex Fine Jewelry in New York, and her publicist said the diamond is an old mine brilliant cut.",
+        "fact_id": "fact_235",
+        "status": "confirmed"
+      },
+      {
+        "claim": "It sits in a yellow gold bezel setting.",
+        "fact_id": "fact_236",
+        "status": "confirmed"
+      },
+      {
+        "claim": "It suits someone who wants warmth and character over brightness, and anyone with an active life: a bezel protects the stone's edge better than raised claws.",
+        "fact_id": "fact_236",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Zendaya wore the ring at the Golden Globes in January 2025, after which People and TMZ reported her engagement to Tom Holland, citing sources.",
+        "fact_id": "fact_238",
+        "status": "confirmed"
+      },
+      {
+        "claim": "The ring is reported as an elongated cushion-cut diamond set east-west, meaning horizontally across the finger, in a Georgian-style cut-down setting in white and yellow gold.",
+        "fact_id": "fact_239",
+        "status": "confirmed"
+      },
+      {
+        "claim": "It is reported as about 5 carats.",
+        "fact_id": "fact_240",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Australian-born model Miranda Kerr announced her engagement to Evan Spiegel in July 2016.",
+        "fact_id": "fact_242",
+        "status": "confirmed"
+      },
+      {
+        "claim": "The ring has a round-cut centre diamond set between two tapered baguettes.",
+        "fact_id": "fact_243",
+        "status": "confirmed"
+      },
+      {
+        "claim": "After the November 2010 royal engagement, US jewellers reported a wave of requests for replicas of the oval sapphire and diamond ring, and one New York sapphire retailer's website crashed after the first photographs appeared.",
+        "fact_id": "fact_01",
+        "status": "confirmed"
+      },
+      {
+        "claim": "The influence is not new: serpent jewellery was at its most fashionable in the decade after Albert's ring for Victoria.",
+        "fact_id": "fact_02",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Step cuts recur across the modern entries, with Beyonce, Amal Clooney, Sofia Richie Grainge and Jennifer Lawrence all associated with emerald-cut or elongated stones.",
+        "fact_id": "fact_200, fact_205, fact_232, fact_246",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Colour arrives in both eras, from Diana's sapphire to Blake Lively's pink diamond and Lady Gaga's pink accents.",
+        "fact_id": "fact_25, fact_209, fact_229",
+        "status": "confirmed"
+      },
+      {
+        "claim": "And yellow gold carries three rings that span 2017 to 2025: Meghan's, Eugenie's and Taylor Swift's.",
+        "fact_id": "fact_38, fact_41, fact_236",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Queen Elizabeth II's ring reused diamonds from a tiara belonging to Prince Philip's mother, and the Duchess of Sussex's side stones came from Diana's collection.",
+        "fact_id": "fact_11, fact_37",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Priyanka Chopra Jonas's and Miranda Kerr's rings are often listed as solitaires, yet sources describe tapered baguettes on either side.",
+        "fact_id": "fact_220, fact_243",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Fingers swell in heat and on long-haul flights, so have the fit checked before you travel to a summer wedding.",
+        "fact_id": "fact_26",
+        "status": "confirmed"
+      },
+      {
+        "claim": "If a ring needs adjusting, it can sometimes be fitted without cutting the band, as the platinum beads added inside Diana's ring for Catherine show.",
+        "fact_id": "fact_26",
+        "status": "confirmed"
+      },
+      {
+        "claim": "A bezel, like Taylor Swift's, wraps the stone's edge and copes better with active days than tall claws.",
+        "fact_id": "fact_236",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Pearls, like the Akoya at the centre of Emma Stone's ring, are softer than diamonds, so take a pearl ring off for swimming, sunscreen and salt water.",
+        "fact_id": "fact_217",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Eternity bands are difficult to resize because the stones run the full circle, which is one more reason to confirm the size before you fly.",
+        "fact_id": "fact_18",
+        "status": "confirmed"
+      },
+      {
+        "claim": "If your engagement ring came with matching bands, as Princess Beatrice's did, photograph the set together on the morning of the wedding, before the rings are separated for the ceremony.",
+        "fact_id": "fact_46",
+        "status": "confirmed"
+      },
+      {
+        "claim": "After the 2010 engagement, US jewellers reported a wave of requests for replicas within days.",
+        "fact_id": "fact_01",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Queen Victoria's emerald was reported as her birthstone, and Queen Mary of Denmark's rubies were reported as chosen to echo the Danish flag.",
+        "fact_id": "fact_07, fact_33",
+        "status": "confirmed"
+      },
+      {
+        "claim": "In this list, the recent rings are varied: an old mine cut in a bezel, an east-west cushion, a marquise and several ovals.",
+        "fact_id": "fact_235, fact_239, fact_226, fact_229",
+        "status": "confirmed"
+      },
+      {
+        "claim": "In this list, Meghan, Princess Eugenie and Taylor Swift all wear yellow gold, while Queen Elizabeth II, Grace Kelly and Amal Clooney have platinum.",
+        "fact_id": "fact_38, fact_41, fact_236, fact_12, fact_14, fact_205",
+        "status": "confirmed"
+      },
+      {
+        "claim": "dk or a major outlet]], and Australian-born model Miranda Kerr wears a round three-stone ring.",
+        "fact_id": "fact_242, fact_243",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Mary was born in Hobart, Tasmania (body and FAQ). Not in the source pack; listed in verify_items. Kept with [[VERIFY]]: a single check against kongehuset.dk, and it is the post's main Australian hook.",
+        "status": "verify"
+      },
+      {
+        "claim": "Jack Brooksbank quote on the padparadscha stone. In the source pack quotes array (etonline.com); marker added by edit.",
+        "status": "confirmed",
+        "fact_id": "quotes[0]"
+      },
+      {
+        "claim": "Zendaya ring reported as about 5 carats, maker identified by Marion Fasel as Jessica McCormack, not confirmed by designer.",
+        "status": "confirmed",
+        "fact_id": "fact_240"
+      },
+      {
+        "claim": "Marquise points 'vulnerable', 'protective claws or V-tips'. Not in the source pack.",
+        "status": "removed"
+      },
+      {
+        "claim": "Ring insurance while travelling overseas; never in checked luggage. Not in the source pack; reworded as general advice by edit.",
+        "status": "unsupported"
+      },
+      {
+        "claim": "Fingers swell in heat and on flights; bezel protects better than claws; pearls softer than diamonds; eternity bands hard to resize. Each is general advice recorded in insider_details against fact_26, fact_236, fact_217, fact_18.",
+        "status": "confirmed",
+        "fact_id": "fact_26, fact_236, fact_217, fact_18"
+      },
+      {
+        "claim": "Grace Kelly listed as a solitaire in the style table despite baguette side stones (fact_16). Moved to three-stone and side-stone by edit.",
+        "status": "confirmed",
+        "fact_id": "fact_16"
+      },
+      {
+        "claim": "Yellow gold 'carries three rings' 2017 to 2025 omits Zendaya's white and yellow gold. Reworded by edit.",
+        "status": "confirmed",
+        "fact_id": "fact_239"
+      },
+      {
+        "claim": "Several were first seen on Instagram (section intro): Emma Stone, Priyanka Chopra Jonas, Selena Gomez, Sofia Richie Grainge, Taylor Swift announcements.",
+        "status": "confirmed",
+        "fact_id": "fact_216, fact_219, fact_225, fact_231, fact_234"
+      },
+      {
+        "claim": "Disputed items correctly left out: Beyonce year and carat, Audrey Hepburn maker and metal, Jacqueline Kennedy diamond cut, Mary's centre diamond cut, Lady Gaga rose cut, Taylor Swift shape and carat, Simone Biles carat, Amal Clooney and Sofia Richie Grainge carat estimates.",
+        "status": "removed"
+      }
+    ],
+    "compliance": {
+      "pass": true,
+      "issues": [
+        "No prices, valuations or AUD figures in copy (source URL containing a GBP figure is not linked or quoted).",
+        "Designer and house names (Cartier, Van Cleef & Arpels, Garrard, Tiffany & Co., Lorraine Schwartz, Shaun Leane, Kindred Lubeck, Jessica McCormack and others) appear only as attributed facts, unlinked, no endorsement.",
+        "Tone neutral: no gossip, divorce or relationship speculation; Hailey Bieber's 2024 ring reported neutrally.",
+        "Brand terms correct (Wedded Advisor, Wedded Concierge); Advisor claim from brand-facts only.",
+        "Images are shot-brief placeholders only; no file paths, no reference-only images, AI excluded for real people.",
+        "Open [[VERIFY]]: Queen Mary of Denmark born in Hobart (2 instances). Must be resolved or removed before the CMS step.",
+        "Publish dependency: /style-advice/engagement-ring-styles must go live first or the held link stays as plain text; the post refers to 'the engagement ring styles guide' 4 times."
+      ]
+    },
+    "originality": {
+      "pass": true,
+      "matches": []
+    },
+    "banned_phrases_found": [],
+    "needs_signoff": [],
+    "average": 4.43
+  }
+}
