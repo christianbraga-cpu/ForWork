@@ -1,0 +1,130 @@
+{
+  "agent": "cro-specialist",
+  "task_id": "celebrity-engagement-rings",
+  "stage": "09",
+  "status": "complete",
+  "round": 1,
+  "inputs_used": [
+    "content/posts/celebrity-engagement-rings/01-brief.json",
+    "content/posts/celebrity-engagement-rings/02-seo.json",
+    "content/posts/celebrity-engagement-rings/07-panel.json",
+    "content/posts/celebrity-engagement-rings/08-final.md",
+    "content-system/brand/services.md",
+    "content-system/brand/brand-facts.md",
+    "content-system/seo/link-map.csv",
+    "content/posts/engagement-ring-styles/09-cro.json"
+  ],
+  "payload": {
+    "journey_stage": "dreaming",
+    "primary_cta": {
+      "text": "Browse wedding destinations by region",
+      "subtext": "Look around at your own pace, no enquiry needed",
+      "link": "/destinations?utm_source=blog&utm_medium=content&utm_campaign=celebrity-engagement-rings&utm_content=primary",
+      "placement": "Keep the <!-- CTA: primary --> marker at the end of 'Wearing and photographing a statement ring at a destination wedding', but move it below the 'If you are already picturing where the ring will make its first trip' sentence, so the 'where' question is raised first and the CTA block answers it. That sentence's own /destinations link is removed so the CTA block is the only primary link (no duplicate)."
+    },
+    "secondary_cta": {
+      "text": "Wedded Concierge",
+      "subtext": "One Wedded Advisor, and the fee agreed in writing before any work begins",
+      "link": "/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=celebrity-engagement-rings&utm_content=secondary",
+      "placement": "Existing inline link in the last line of 'Where your ring goes next'. Wording is unchanged (the panel set this closing); only the URL's UTMs change from utm_medium=internal to the CTA format with utm_content=secondary. The subtext is already carried by the preceding panel-set sentence, so nothing is added."
+    },
+    "lead_magnet": {
+      "name": "Wedded Wonderland digital magazine (free)",
+      "link": "/magazine?utm_source=blog&utm_medium=content&utm_campaign=celebrity-engagement-rings&utm_content=magnet",
+      "exists": true,
+      "placement": "One quiet line after 'Some rings sit in two families...' at the end of 'What these 25 rings teach us: the styles at a glance', where the reader has finished the list and is still in browsing mode. Kept away from the primary CTA and the closing so the three asks do not crowd."
+    },
+    "tracking": [
+      "/destinations?utm_source=blog&utm_medium=content&utm_campaign=celebrity-engagement-rings&utm_content=primary",
+      "/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=celebrity-engagement-rings&utm_content=secondary",
+      "/magazine?utm_source=blog&utm_medium=content&utm_campaign=celebrity-engagement-rings&utm_content=magnet"
+    ],
+    "rationale": "Brief sets journey_stage dreaming, service_link /destinations, Wedded Concierge secondary, matching the services.md early-stage rule and the sister post engagement-ring-styles. Weighted enquiry likelihood is 1.6, so the primary is the low-pressure destinations hub, not an enquiry. The current marker sits above the 'first trip' sentence, so the CTA block would appear before the question it answers and directly beside a second /destinations link; moving the marker below the sentence and dropping the inline link fixes both. The panel's must_fix on the closing (vague hand-off, fee worry) is resolved in 08-final.md with brand-facts wording (one Wedded Advisor, venue, travel, vendors and payments, fee agreed in writing before any work begins); that closing is left as set, with only the UTM on its existing Concierge link brought into the CTA format. Deferred items (fee model, commission, deposits, named Advisor or phone line, scale) are not stated. No prices. /magazine exists (link-map, type magazine, topic lead magnet) and services.md lists it as the early-stage magnet. Suggested future magnet, not placed (exists: false on the site): a printable 'take this to your jeweller' ring style checklist built from the styles table. All targets confirmed in content-system/seo/link-map.csv (last_seen 2026-10-20); /wonderland-concierge is the brand-facts main commercial page."
+  },
+  "self_qa": {
+    "checks": [
+      {
+        "check": "journey_stage taken from the brief",
+        "pass": true,
+        "note": "dreaming"
+      },
+      {
+        "check": "Primary CTA text 6 words or fewer, no 'click here', no exclamation mark",
+        "pass": true,
+        "note": "5 words"
+      },
+      {
+        "check": "Secondary CTA text 6 words or fewer",
+        "pass": true,
+        "note": "2 words, existing anchor kept"
+      },
+      {
+        "check": "UTM format matches agent rules",
+        "pass": true
+      },
+      {
+        "check": "All link targets exist in link-map.csv",
+        "pass": true,
+        "note": "/destinations, /wonderland-concierge, /magazine"
+      },
+      {
+        "check": "No duplicate primary link next to the CTA block",
+        "pass": true,
+        "note": "Inline /destinations link removed from the adjacent sentence"
+      },
+      {
+        "check": "Closing line set by the panel unchanged",
+        "pass": true,
+        "note": "Wording untouched; UTM only on the final link"
+      },
+      {
+        "check": "Lead magnet exists on the site",
+        "pass": true
+      },
+      {
+        "check": "Claims only from brand-facts.md; no prices",
+        "pass": true
+      },
+      {
+        "check": "Australian English, no em dashes",
+        "pass": true
+      }
+    ],
+    "confidence": 0.8
+  },
+  "open_questions": [
+    {
+      "to": "orchestrator",
+      "blocking": false,
+      "question": "Copy change 1 (08-final.md, end of 'Wearing and photographing a statement ring'; put the question before the CTA block and drop the duplicate /destinations link). OLD: \"<!-- CTA: primary -->\n\nIf you are already picturing where the ring will make its first trip, browse [destination wedding locations by region](/destinations?utm_source=blog&utm_medium=internal&utm_campaign=celebrity-engagement-rings) and start with the light, the season and the setting.\" NEW: \"If you are already picturing where the ring will make its first trip, start with the light, the season and the setting.\n\n<!-- CTA: primary -->\""
+    },
+    {
+      "to": "orchestrator",
+      "blocking": false,
+      "question": "Copy change 2 (08-final.md, last line of 'Where your ring goes next'; UTM only, wording unchanged). OLD: \"[Wedded Concierge](/wonderland-concierge?utm_source=blog&utm_medium=internal&utm_campaign=celebrity-engagement-rings)\" NEW: \"[Wedded Concierge](/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=celebrity-engagement-rings&utm_content=secondary)\""
+    },
+    {
+      "to": "orchestrator",
+      "blocking": false,
+      "question": "Copy change 3 (08-final.md, end of 'What these 25 rings teach us'; lead magnet). OLD: \"Some rings sit in two families. Emma Stone's pearl cluster stands slightly apart from all eight, as an alternative centre stone.\" NEW: \"Some rings sit in two families. Emma Stone's pearl cluster stands slightly apart from all eight, as an alternative centre stone.\n\nStill gathering ideas? [Read the free Wedded Wonderland magazine](/magazine?utm_source=blog&utm_medium=content&utm_campaign=celebrity-engagement-rings&utm_content=magnet).\""
+    },
+    {
+      "to": "human",
+      "blocking": false,
+      "question": "Readers raised fee model and commission, deposits and AUD quotes, a named Advisor or phone line, and scale. All are deferred in brand-facts.md; confirming any would let future CTAs answer these worries."
+    }
+  ],
+  "assumptions": [
+    "The magazine is free, per the services.md default CTA wording 'Read the free magazine'.",
+    "The primary subtext describes page behaviour (browsing the hub needs no enquiry), not a brand claim.",
+    "Only CTA links carry utm_medium=content; the change list covers both body links that used utm_medium=internal.",
+    "The CTA block rendered at package stage carries the primary text, subtext and UTM link from this file."
+  ],
+  "verify_items": [],
+  "tools_used": [
+    "Bash"
+  ],
+  "next_agent": [
+    "distribution"
+  ]
+}
