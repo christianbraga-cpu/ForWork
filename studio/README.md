@@ -43,8 +43,11 @@ Intake ─► 1 Research ─► 2 Architecture ─► 2b Personas ─► 3 Conte
           baseline                                       peer review                                          personas
 ```
 
-Which stages run depends on the action (`create`, `optimise`, `refresh`, `audit`).
-The table is in the skill file.
+Which stages run depends on the action (`create`, `optimise`, `refresh`, `audit`)
+and the scope. Optimise and refresh default to `scope: copy`: research, brief,
+copy, persona and fact reviews run in full, but there are no image, layout or code
+changes, and the output is a copy change list for the CMS. Ask for `scope: full`
+when you want more. The tables are in the skill file.
 
 ## QA in three layers
 

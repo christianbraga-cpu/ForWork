@@ -21,7 +21,8 @@ The user gives four inputs. Collect them before anything else.
 | Research doc | Drive link or name (Google Drive connector), Notion link (Notion connector), repo path, pasted text | Ask |
 | Existing page facts | Table, sheet, pasted list | Ask. For `create` with no facts yet, the user may say "none"; every fact is then `unconfirmed` |
 
-Do not ask anything else unless a stage is blocked. Defaults live in
+Optional: `scope` (`copy` or `full`). If not given, use `config.default_scope` for
+the action. Do not ask anything else unless a stage is blocked. Defaults live in
 `studio/config.json`.
 
 Then:
@@ -49,6 +50,32 @@ Then:
 | 7 Publish package | yes | yes | yes | audit report only |
 | 8 Amplify plan | yes | yes | no | recommendations only |
 | 9 Measurement plan | yes | yes | no | baseline only |
+
+### Scope: `copy` (the default for `optimise`)
+
+Most optimise runs change copy only: headings, body text, meta, FAQ, captions, CTAs
+and anchor text. Use `scope: full` only when the user asks for layout, image, form or
+code changes. The default comes from `config.default_scope.optimise`.
+
+With `scope: copy`:
+
+| Stage | What runs |
+|---|---|
+| 1 Research | full (keywords, AI search, fact audit, baseline) |
+| 2 Architecture | brief maps the outline onto the **existing** sections. New sections only if research shows a clear gap, each marked `new_section` so the user can decide |
+| 2b, 3b Persona reviews | yes |
+| 3 Content | copywriter only. Visual lead is skipped, but the copywriter still revises alt text and captions where they are copy |
+| 3 Peer reviews | SEO lens and fact-checker on copy. No image review |
+| 4 UX / design | skipped. UX gives one consult on copy length and CTA wording only (`review` payload) |
+| 5 Build | technical-seo applies the approved copy to a copy of `current.html` as `preview.html` in the run folder. No structural, image or code changes. This exists only so the gate can check and screenshot the result |
+| 6 QA gate | `check_page.py` on `preview.html`, brand voice review, final fact pass, persona page review on preview screenshots |
+| 7 Package | `CMS-HANDOFF.md` with copy and meta changes only, `CHANGELOG.md`, NOTES.md. No new `index.html` in `site/` |
+| 8 Amplify | GEO plan only (it is copy-driven). PR and local are skipped unless asked |
+| 9 Measurement | yes |
+
+If research or a review finds a non-copy issue (broken schema, a missing alt
+attribute, a form problem), do not fix it. List it in `CMS-HANDOFF.md` under
+"Outside this run's scope" with the finding and a suggested fix.
 
 ## How to call an agent
 

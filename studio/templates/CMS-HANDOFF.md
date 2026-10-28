@@ -72,6 +72,13 @@ images, then links, then code}
 
 ---
 
+## Outside this run's scope
+
+Issues found that are not copy (copy-scope runs only). Nothing here was changed:
+- {finding id, issue, suggested fix}
+
+---
+
 ## Part C: do not change
 
 Things on the current page that Page Studio reviewed and decided to keep, so
