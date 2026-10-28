@@ -1,0 +1,467 @@
+{
+  "agent": "cms-publisher",
+  "task_id": "celebrity-engagement-rings",
+  "stage": "11",
+  "status": "complete",
+  "round": 1,
+  "inputs_used": [
+    "CLAUDE.md",
+    "content-system/cms/field-map.md",
+    "content-system/schemas/11-publish-package.schema.json",
+    "content/posts/celebrity-engagement-rings/00-input.json",
+    "content/posts/celebrity-engagement-rings/01-brief.json",
+    "content/posts/celebrity-engagement-rings/02-seo.json",
+    "content/posts/celebrity-engagement-rings/04-images.json",
+    "content/posts/celebrity-engagement-rings/08-final.md",
+    "content/posts/celebrity-engagement-rings/09-cro.json",
+    "content/posts/celebrity-engagement-rings/10-distribution.json",
+    "content/posts/engagement-ring-styles/11-publish-package.json",
+    "content/posts/engagement-ring-styles/11-body.md"
+  ],
+  "self_qa": {
+    "confidence": 0.9,
+    "checks": [
+      {
+        "check": "primary_category equals categories[0] (Style Advice, fixed by person)",
+        "pass": true
+      },
+      {
+        "check": "Front matter and all <!-- fact_xx --> markers removed; image-slot comments and [[VERIFY]] kept",
+        "pass": true,
+        "note": "2 VERIFY markers (one item, two places), 26 image-slot comments in 11-body.md"
+      },
+      {
+        "check": "Primary CTA block from 09-cro.json placed at the CTA marker with UTMs",
+        "pass": true
+      },
+      {
+        "check": "Jump-link anchor kept in intro",
+        "pass": true
+      },
+      {
+        "check": "Exactly 4 key takeaways and all FAQs extracted; FAQPage carries all FAQs (VERIFY marker stripped from schema text only)",
+        "pass": true,
+        "note": "6 FAQs"
+      },
+      {
+        "check": "needs_signoff empty; no prices printed",
+        "pass": true
+      },
+      {
+        "check": "All 26 image slots listed, all needed",
+        "pass": true
+      },
+      {
+        "check": "Status draft; nothing uploaded, published or scheduled",
+        "pass": true
+      },
+      {
+        "check": "No em dashes; Australian English",
+        "pass": true
+      }
+    ]
+  },
+  "open_questions": [
+    {
+      "to": "orchestrator",
+      "question": "CMS upload not attempted: no browser tool in this session and content-system/cms/field-map.md is not CONFIRMED ('NOT YET MAPPED'). Run /wedded-cms-discovery locally, then /wedded-blog resume=celebrity-engagement-rings.",
+      "blocking": true
+    },
+    {
+      "to": "person",
+      "question": "Confirm the byline: no author named in any input; package uses \"Wedded Wonderland\" (organisation), unconfirmed.",
+      "blocking": false
+    },
+    {
+      "to": "person",
+      "question": "04-images.json lists ring_18 as Serena Williams, but 08-final.md entry 18 and its slot comment are Jennifer Lawrence. Package uses the body (file name changed to ...-jennifer-lawrence-ring.webp); source the Jennifer Lawrence image, not Serena Williams.",
+      "blocking": false
+    }
+  ],
+  "assumptions": [
+    "Primary category, URL, content type and cluster fixed by the person (00-input.json).",
+    "Excerpt is the meta description.",
+    "Categories and tags from 01-brief.json; cluster tag added as in the reference package.",
+    "FAQPage answer text has the [[VERIFY]] marker stripped; the body keeps it.",
+    "ring_18 file name follows the body (Jennifer Lawrence), not the stale 04-images.json entry (Serena Williams)."
+  ],
+  "verify_items": [
+    "Queen Mary of Denmark is Australian-born (Hobart); cite kongehuset.dk or a major outlet. Appears twice: entry 8 and the FAQ 'Which celebrity engagement rings have an Australian connection?'"
+  ],
+  "tools_used": [
+    "Bash (python3 -I)"
+  ],
+  "next_agent": [
+    "orchestrator"
+  ],
+  "payload": {
+    "title": "25 Most Iconic Celebrity Engagement Rings",
+    "slug": "celebrity-engagement-rings",
+    "url_path": "/style-advice/celebrity-engagement-rings",
+    "content_type": "Pillar",
+    "cluster": "Rings and Jewellery",
+    "categories": [
+      "Style Advice",
+      "Rings and Jewellery",
+      "Trends & Celebrity",
+      "Proposals & Rings"
+    ],
+    "primary_category": "Style Advice",
+    "tags": [
+      "engagement rings",
+      "celebrity engagement rings",
+      "royal engagement rings",
+      "solitaire",
+      "three-stone",
+      "toi et moi",
+      "halo",
+      "coloured gemstones",
+      "vintage engagement rings",
+      "Rings and Jewellery (cluster)"
+    ],
+    "excerpt": "From Grace Kelly to Taylor Swift: 25 celebrity and royal engagement rings decoded by cut, setting and style, with who each look suits. No price tags.",
+    "key_takeaways": [
+      "Every celebrity ring here belongs to a style family you can ask a jeweller for by name, from the emerald-cut solitaire to the toi et moi.",
+      "Royal rings lean on meaning more than size, using heirloom diamonds, birthstones and national colours.",
+      "Three-stone and side-stone settings are more common in this list than they first appear, because tapered baguettes are easy to miss in photographs.",
+      "For a destination wedding, a low or bezel setting travels better than a tall claw setting, and pearls should come off before the beach."
+    ],
+    "body_markdown_file": "content/posts/celebrity-engagement-rings/11-body.md",
+    "faq": [
+      {
+        "q": "What is the most famous engagement ring in the world?",
+        "a": "There is no official ranking, but the oval sapphire and diamond ring worn first by Diana and then by Catherine, Princess of Wales, has a strong claim. After the 2010 engagement, US jewellers reported a wave of requests for replicas within days."
+      },
+      {
+        "q": "Why do royals often choose coloured gemstone engagement rings?",
+        "a": "Often for meaning. Queen Victoria's emerald was reported as her birthstone, and Queen Mary of Denmark's rubies were reported as chosen to echo the Danish flag. Coloured stones also make a ring personal in a way that size alone does not."
+      },
+      {
+        "q": "What engagement ring style is most popular with celebrities right now?",
+        "a": "In this list, the recent rings are varied: an old mine cut in a bezel, an east-west cushion, a marquise and several ovals. The common thread is an antique cut or an elongated shape rather than a single dominant style."
+      },
+      {
+        "q": "Do celebrity engagement rings usually use yellow gold?",
+        "a": "Not as a rule. In this list, Meghan, Princess Eugenie and Taylor Swift all wear yellow gold, while Queen Elizabeth II, Grace Kelly and Amal Clooney have platinum."
+      },
+      {
+        "q": "How can you get a celebrity engagement ring look in your own style?",
+        "a": "Name the style family, not the celebrity. Ask a jeweller for \"an emerald-cut solitaire\" or \"a three-stone with tapered baguettes\", then adjust the size, metal and details to your hand and your life. The engagement ring styles guide explains each family."
+      },
+      {
+        "q": "Which celebrity engagement rings have an Australian connection?",
+        "a": "Two in this list. Queen Mary of Denmark was born in Hobart [[VERIFY: Queen Mary of Denmark Australian-born (Hobart); cite kongehuset.dk or a major outlet]], and Australian-born model Miranda Kerr wears a round three-stone ring."
+      }
+    ],
+    "images": [
+      {
+        "slot_id": "featured",
+        "file": "content/posts/celebrity-engagement-rings/images/celebrity-engagement-rings-hero-ring-styles-still-life.webp",
+        "role": "featured",
+        "status": "needed"
+      },
+      {
+        "slot_id": "ring_1",
+        "file": "content/posts/celebrity-engagement-rings/images/celebrity-engagement-rings-queen-victoria-ring.webp",
+        "role": "inline",
+        "status": "needed"
+      },
+      {
+        "slot_id": "ring_2",
+        "file": "content/posts/celebrity-engagement-rings/images/celebrity-engagement-rings-queen-elizabeth-ii-ring.webp",
+        "role": "inline",
+        "status": "needed"
+      },
+      {
+        "slot_id": "ring_3",
+        "file": "content/posts/celebrity-engagement-rings/images/celebrity-engagement-rings-grace-kelly-ring.webp",
+        "role": "inline",
+        "status": "needed"
+      },
+      {
+        "slot_id": "ring_4",
+        "file": "content/posts/celebrity-engagement-rings/images/celebrity-engagement-rings-audrey-hepburn-ring.webp",
+        "role": "inline",
+        "status": "needed"
+      },
+      {
+        "slot_id": "ring_5",
+        "file": "content/posts/celebrity-engagement-rings/images/celebrity-engagement-rings-jacqueline-kennedy-ring.webp",
+        "role": "inline",
+        "status": "needed"
+      },
+      {
+        "slot_id": "ring_6",
+        "file": "content/posts/celebrity-engagement-rings/images/celebrity-engagement-rings-princess-of-wales-ring.webp",
+        "role": "inline",
+        "status": "needed"
+      },
+      {
+        "slot_id": "ring_7",
+        "file": "content/posts/celebrity-engagement-rings/images/celebrity-engagement-rings-duchess-of-edinburgh-ring.webp",
+        "role": "inline",
+        "status": "needed"
+      },
+      {
+        "slot_id": "ring_8",
+        "file": "content/posts/celebrity-engagement-rings/images/celebrity-engagement-rings-queen-mary-of-denmark-ring.webp",
+        "role": "inline",
+        "status": "needed"
+      },
+      {
+        "slot_id": "ring_9",
+        "file": "content/posts/celebrity-engagement-rings/images/celebrity-engagement-rings-duchess-of-sussex-ring.webp",
+        "role": "inline",
+        "status": "needed"
+      },
+      {
+        "slot_id": "ring_10",
+        "file": "content/posts/celebrity-engagement-rings/images/celebrity-engagement-rings-princess-eugenie-ring.webp",
+        "role": "inline",
+        "status": "needed"
+      },
+      {
+        "slot_id": "ring_11",
+        "file": "content/posts/celebrity-engagement-rings/images/celebrity-engagement-rings-princess-beatrice-ring.webp",
+        "role": "inline",
+        "status": "needed"
+      },
+      {
+        "slot_id": "ring_12",
+        "file": "content/posts/celebrity-engagement-rings/images/celebrity-engagement-rings-beyonce-ring.webp",
+        "role": "inline",
+        "status": "needed"
+      },
+      {
+        "slot_id": "ring_13",
+        "file": "content/posts/celebrity-engagement-rings/images/celebrity-engagement-rings-amal-clooney-ring.webp",
+        "role": "inline",
+        "status": "needed"
+      },
+      {
+        "slot_id": "ring_14",
+        "file": "content/posts/celebrity-engagement-rings/images/celebrity-engagement-rings-blake-lively-ring.webp",
+        "role": "inline",
+        "status": "needed"
+      },
+      {
+        "slot_id": "ring_15",
+        "file": "content/posts/celebrity-engagement-rings/images/celebrity-engagement-rings-hailey-bieber-ring.webp",
+        "role": "inline",
+        "status": "needed"
+      },
+      {
+        "slot_id": "ring_16",
+        "file": "content/posts/celebrity-engagement-rings/images/celebrity-engagement-rings-emma-stone-ring.webp",
+        "role": "inline",
+        "status": "needed"
+      },
+      {
+        "slot_id": "ring_17",
+        "file": "content/posts/celebrity-engagement-rings/images/celebrity-engagement-rings-priyanka-chopra-jonas-ring.webp",
+        "role": "inline",
+        "status": "needed"
+      },
+      {
+        "slot_id": "ring_18",
+        "file": "content/posts/celebrity-engagement-rings/images/celebrity-engagement-rings-jennifer-lawrence-ring.webp",
+        "role": "inline",
+        "status": "needed"
+      },
+      {
+        "slot_id": "ring_19",
+        "file": "content/posts/celebrity-engagement-rings/images/celebrity-engagement-rings-simone-biles-ring.webp",
+        "role": "inline",
+        "status": "needed"
+      },
+      {
+        "slot_id": "ring_20",
+        "file": "content/posts/celebrity-engagement-rings/images/celebrity-engagement-rings-selena-gomez-ring.webp",
+        "role": "inline",
+        "status": "needed"
+      },
+      {
+        "slot_id": "ring_21",
+        "file": "content/posts/celebrity-engagement-rings/images/celebrity-engagement-rings-lady-gaga-ring.webp",
+        "role": "inline",
+        "status": "needed"
+      },
+      {
+        "slot_id": "ring_22",
+        "file": "content/posts/celebrity-engagement-rings/images/celebrity-engagement-rings-sofia-richie-grainge-ring.webp",
+        "role": "inline",
+        "status": "needed"
+      },
+      {
+        "slot_id": "ring_23",
+        "file": "content/posts/celebrity-engagement-rings/images/celebrity-engagement-rings-taylor-swift-ring.webp",
+        "role": "inline",
+        "status": "needed"
+      },
+      {
+        "slot_id": "ring_24",
+        "file": "content/posts/celebrity-engagement-rings/images/celebrity-engagement-rings-zendaya-ring.webp",
+        "role": "inline",
+        "status": "needed"
+      },
+      {
+        "slot_id": "ring_25",
+        "file": "content/posts/celebrity-engagement-rings/images/celebrity-engagement-rings-miranda-kerr-ring.webp",
+        "role": "inline",
+        "status": "needed"
+      }
+    ],
+    "cta": {
+      "text": "Browse wedding destinations by region",
+      "subtext": "Look around at your own pace, no enquiry needed",
+      "link": "/destinations?utm_source=blog&utm_medium=content&utm_campaign=celebrity-engagement-rings&utm_content=primary",
+      "placement": "At the former <!-- CTA: primary --> marker at the end of 'Wearing and photographing a statement ring at a destination wedding', directly after 'If you are already picturing where the ring will make its first trip, start with the light, the season and the setting.' and before 'Frequently asked questions', marked <!-- CTA BLOCK: primary --> in 11-body.md."
+    },
+    "secondary_cta": {
+      "text": "Wedded Concierge",
+      "subtext": "One Wedded Advisor, and the fee agreed in writing before any work begins",
+      "link": "/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=celebrity-engagement-rings&utm_content=secondary",
+      "placement": "Already in the copy: inline 'Wedded Concierge' link in the last line of 'Where your ring goes next'. No separate block added."
+    },
+    "lead_magnet": {
+      "name": "Wedded Wonderland digital magazine (free)",
+      "link": "/magazine?utm_source=blog&utm_medium=content&utm_campaign=celebrity-engagement-rings&utm_content=magnet",
+      "placement": "Already in the copy: one line after the styles-at-a-glance table."
+    },
+    "tracking_links": [
+      "/destinations?utm_source=blog&utm_medium=content&utm_campaign=celebrity-engagement-rings&utm_content=primary",
+      "/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=celebrity-engagement-rings&utm_content=secondary",
+      "/magazine?utm_source=blog&utm_medium=content&utm_campaign=celebrity-engagement-rings&utm_content=magnet"
+    ],
+    "seo": {
+      "meta_title": "25 Iconic Celebrity Engagement Rings and Their Styles",
+      "meta_description": "From Grace Kelly to Taylor Swift: 25 celebrity and royal engagement rings decoded by cut, setting and style, with who each look suits. No price tags.",
+      "focus_keyword": "celebrity engagement rings",
+      "canonical": "https://weddedwonderland.com/style-advice/celebrity-engagement-rings",
+      "og_image_slot": "featured"
+    },
+    "schema_jsonld": {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Article",
+          "@id": "https://weddedwonderland.com/style-advice/celebrity-engagement-rings#article",
+          "headline": "25 Most Iconic Celebrity Engagement Rings",
+          "description": "From Grace Kelly to Taylor Swift: 25 celebrity and royal engagement rings decoded by cut, setting and style, with who each look suits. No price tags.",
+          "author": {
+            "@type": "Organization",
+            "name": "Wedded Wonderland",
+            "url": "https://weddedwonderland.com/"
+          },
+          "publisher": {
+            "@type": "Organization",
+            "name": "Wedded Wonderland",
+            "url": "https://weddedwonderland.com/"
+          },
+          "datePublished": "",
+          "mainEntityOfPage": "https://weddedwonderland.com/style-advice/celebrity-engagement-rings",
+          "image": "",
+          "inLanguage": "en-AU"
+        },
+        {
+          "@type": "BreadcrumbList",
+          "@id": "https://weddedwonderland.com/style-advice/celebrity-engagement-rings#breadcrumb",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Home",
+              "item": "https://weddedwonderland.com/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Style Advice",
+              "item": "https://weddedwonderland.com/style-advice"
+            },
+            {
+              "@type": "ListItem",
+              "position": 3,
+              "name": "25 Most Iconic Celebrity Engagement Rings",
+              "item": "https://weddedwonderland.com/style-advice/celebrity-engagement-rings"
+            }
+          ]
+        },
+        {
+          "@type": "FAQPage",
+          "@id": "https://weddedwonderland.com/style-advice/celebrity-engagement-rings#faq",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "What is the most famous engagement ring in the world?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "There is no official ranking, but the oval sapphire and diamond ring worn first by Diana and then by Catherine, Princess of Wales, has a strong claim. After the 2010 engagement, US jewellers reported a wave of requests for replicas within days."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Why do royals often choose coloured gemstone engagement rings?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Often for meaning. Queen Victoria's emerald was reported as her birthstone, and Queen Mary of Denmark's rubies were reported as chosen to echo the Danish flag. Coloured stones also make a ring personal in a way that size alone does not."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "What engagement ring style is most popular with celebrities right now?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "In this list, the recent rings are varied: an old mine cut in a bezel, an east-west cushion, a marquise and several ovals. The common thread is an antique cut or an elongated shape rather than a single dominant style."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Do celebrity engagement rings usually use yellow gold?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Not as a rule. In this list, Meghan, Princess Eugenie and Taylor Swift all wear yellow gold, while Queen Elizabeth II, Grace Kelly and Amal Clooney have platinum."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "How can you get a celebrity engagement ring look in your own style?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Name the style family, not the celebrity. Ask a jeweller for \"an emerald-cut solitaire\" or \"a three-stone with tapered baguettes\", then adjust the size, metal and details to your hand and your life. The engagement ring styles guide explains each family."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Which celebrity engagement rings have an Australian connection?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Two in this list. Queen Mary of Denmark was born in Hobart, and Australian-born model Miranda Kerr wears a round three-stone ring."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    "author": "Wedded Wonderland",
+    "status": "draft",
+    "verify_items": [
+      "Queen Mary of Denmark is Australian-born (Hobart); cite kongehuset.dk or a major outlet. Appears twice: entry 8 and the FAQ 'Which celebrity engagement rings have an Australian connection?'"
+    ],
+    "needs_signoff": [],
+    "deferred_business_items": [
+      "Wedded Concierge fee model and commissions (only \"the fee is agreed in writing before any work begins\" is stated)",
+      "Deposits, refunds and contracts",
+      "\"From AUD\" price ranges",
+      "Named Wedded Advisor, phone line or private referral line",
+      "Real weddings to feature (with consent)",
+      "Wedded Privileges explanation"
+    ],
+    "person_questions": [
+      "Confirm the byline: no author named in any input; package uses \"Wedded Wonderland\" (organisation), unconfirmed.",
+      "04-images.json lists ring_18 as Serena Williams, but 08-final.md entry 18 and its slot comment are Jennifer Lawrence. Package uses the body (file name changed to ...-jennifer-lawrence-ring.webp); source the Jennifer Lawrence image, not Serena Williams."
+    ],
+    "last_updated_note": "Set the CMS last-updated date at publish, not in body copy.",
+    "draft_note": "DRAFT. Do not publish until checked:\n\n1. [[VERIFY]] items (1):\n   - Queen Mary of Denmark is Australian-born (Hobart); cite kongehuset.dk or a major outlet. Appears twice: entry 8 and the FAQ 'Which celebrity engagement rings have an Australian connection?'\n\n2. Nic sign-off on prices: none (no prices printed).\n\n3. Image slots needed (26, none approved yet; alt and caption to add when approved). Celebrity and royal ring photos only via licensed editorial agency images, never AI of real people. The featured still life may be AI illustrative only if approved and labelled \"Illustrative image\".\n   - featured (needed, licensed stock or commissioned still life preferred; AI only if approved, labelled \"Illustrative image\", generic unbranded rings, never a recreation of a celebrity ring)\n   - ring_1 (needed, licensed editorial agency image only, never AI of a real person; if no licence, publish without an image or use a text style card)\n   - ring_2 (needed, licensed editorial agency image only, never AI of a real person; if no licence, publish without an image or use a text style card)\n   - ring_3 (needed, licensed editorial agency image only, never AI of a real person; if no licence, publish without an image or use a text style card)\n   - ring_4 (needed, licensed editorial agency image only, never AI of a real person; if no licence, publish without an image or use a text style card)\n   - ring_5 (needed, licensed editorial agency image only, never AI of a real person; if no licence, publish without an image or use a text style card)\n   - ring_6 (needed, licensed editorial agency image only, never AI of a real person; if no licence, publish without an image or use a text style card)\n   - ring_7 (needed, licensed editorial agency image only, never AI of a real person; if no licence, publish without an image or use a text style card)\n   - ring_8 (needed, licensed editorial agency image only, never AI of a real person; if no licence, publish without an image or use a text style card)\n   - ring_9 (needed, licensed editorial agency image only, never AI of a real person; if no licence, publish without an image or use a text style card)\n   - ring_10 (needed, licensed editorial agency image only, never AI of a real person; if no licence, publish without an image or use a text style card)\n   - ring_11 (needed, licensed editorial agency image only, never AI of a real person; if no licence, publish without an image or use a text style card)\n   - ring_12 (needed, licensed editorial agency image only, never AI of a real person; if no licence, publish without an image or use a text style card)\n   - ring_13 (needed, licensed editorial agency image only, never AI of a real person; if no licence, publish without an image or use a text style card)\n   - ring_14 (needed, licensed editorial agency image only, never AI of a real person; if no licence, publish without an image or use a text style card)\n   - ring_15 (needed, licensed editorial agency image only, never AI of a real person; if no licence, publish without an image or use a text style card)\n   - ring_16 (needed, licensed editorial agency image only, never AI of a real person; if no licence, publish without an image or use a text style card)\n   - ring_17 (needed, licensed editorial agency image only, never AI of a real person; if no licence, publish without an image or use a text style card)\n   - ring_18 (needed, licensed editorial agency image only, never AI of a real person; if no licence, publish without an image or use a text style card)\n   - ring_19 (needed, licensed editorial agency image only, never AI of a real person; if no licence, publish without an image or use a text style card)\n   - ring_20 (needed, licensed editorial agency image only, never AI of a real person; if no licence, publish without an image or use a text style card)\n   - ring_21 (needed, licensed editorial agency image only, never AI of a real person; if no licence, publish without an image or use a text style card)\n   - ring_22 (needed, licensed editorial agency image only, never AI of a real person; if no licence, publish without an image or use a text style card)\n   - ring_23 (needed, licensed editorial agency image only, never AI of a real person; if no licence, publish without an image or use a text style card)\n   - ring_24 (needed, licensed editorial agency image only, never AI of a real person; if no licence, publish without an image or use a text style card)\n   - ring_25 (needed, licensed editorial agency image only, never AI of a real person; if no licence, publish without an image or use a text style card)\n\n4. Fact spot-check: ring facts were gathered from search summaries because Firecrawl was out of credits, so spot-check ring details (cuts, carats, makers, dates) against the cited sources before publishing.\n\n5. Internal link dependency: publish /style-advice/engagement-ring-styles first (linked from the intro, the styles table and the FAQ).\n\n6. Jump link: confirm the CMS heading id for \"What these 25 rings teach us: the styles at a glance\" matches #what-these-25-rings-teach-us-the-styles-at-a-glance (intro jump link).\n\n7. Deferred business items (6, person's decision, not in this draft):\n   - Wedded Concierge fee model and commissions (only \"the fee is agreed in writing before any work begins\" is stated)\n   - Deposits, refunds and contracts\n   - \"From AUD\" price ranges\n   - Named Wedded Advisor, phone line or private referral line\n   - Real weddings to feature (with consent)\n   - Wedded Privileges explanation\n\n8. Questions for the person:\n   - Confirm the byline: no author named in any input; package uses \"Wedded Wonderland\" (organisation), unconfirmed.\n   - 04-images.json lists ring_18 as Serena Williams, but 08-final.md entry 18 and its slot comment are Jennifer Lawrence. Package uses the body (file name changed to ...-jennifer-lawrence-ring.webp); source the Jennifer Lawrence image, not Serena Williams.\n\n9. Last-updated date: set the CMS last-updated date field at publish (not in body copy)."
+  }
+}
