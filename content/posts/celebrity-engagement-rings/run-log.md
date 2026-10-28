@@ -4,3 +4,4 @@
 00:02 03B planner-sme complete 48 facts (modern rings), Serena Williams swapped for Jennifer Lawrence, 6 verify items
 00:04 03A planner-sme complete 38 facts (royal), Firecrawl out of credits (402), facts from search summaries; merged: 86 facts, 13 verify items; waiting on 02
 00:17 02 seo-researcher complete 5 cities; 320/mo AU KD 0; styles post is a draft (publish together)
+00:21 05 luxury-writer complete ~4,080 words, 1 VERIFY (Mary Hobart); first draft sent; 06 + 07x5 in parallel
