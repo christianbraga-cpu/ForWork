@@ -67,3 +67,30 @@ Panel: intl-couple-europe-full-service (primary), au-couple-marrying-abroad,
 intimate-destination-elopement, discerning-skeptic. 3 runs each. The cultural and
 aspirational personas are left out: no Portugal CRM signal for either, and the run cost
 should stay in proportion to a P3 fix.
+
+## D12. Persona panel on the brief: what copy can fix and what it cannot
+12 runs: 11 save for later, 1 leave (skeptic), 0 enquire. Recurring gaps, sorted:
+
+Copy can fix (sent to the copywriter as a brief addendum, 23-brief-addendum.md):
+- Small groups look unwelcome: add a sourced small-wedding FAQ (witnesses optional, registry
+  route) and an explicit invitation for elopements and small weddings in the region chooser
+  and form intro. No small-wedding price (no source).
+- "Who handles the paperwork": reuse the live page's own claim that the Wedded Advisor walks the
+  couple through the route for their nationality. No new capability claims.
+- The venue charges box reads as a warning: reframe as "what your Wedded Advisor checks in every
+  venue contract", same facts.
+- Travel time: add drive times only where a fact exists; otherwise airport codes only.
+- H1 promises a Sintra palace while the strip warns of state-event cancellations: keep the H1
+  (user's plan), but the palace strip leads with how to book, then the conditions.
+
+Copy cannot fix (business answers needed, go to the user in SUMMARY.md):
+- Proof: B8 numbers need sign-off (F019); only 2 Portugal real weddings exist (B6 needs 3).
+- How Wedded Concierge charges, in what currency, and what is included (D10).
+- A named Wedded Advisor or senior planner for Portugal.
+- What happens on the day if something goes wrong.
+- Any "From AUD" Portugal price (none exists; 0 packages).
+- Why an Australian-based firm for a Portugal wedding (an approved positioning line).
+
+Known tool limit: the aggregator matches objections by text, so the same concern worded
+differently across runs (for example "no Portugal proof") can fall below the 2-run filter. The
+Project Lead read all 12 reviews and included those concerns above.
