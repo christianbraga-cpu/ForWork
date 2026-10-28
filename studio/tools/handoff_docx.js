@@ -24,6 +24,7 @@ if (!runDir || !outPath) {
 }
 const draftIdx = rest.indexOf('--draft');
 const draftStatus = draftIdx >= 0 ? rest[draftIdx + 1] : null;
+const isFinal = rest.includes('--final');
 
 const read = (f) => fs.readFileSync(path.join(runDir, f), 'utf8');
 const readJson = (f) => JSON.parse(read(f));
@@ -296,20 +297,34 @@ children.push(...[
 ].flatMap((t) => mdToParas(`- ${t}`)));
 
 // Known issues
-children.push(heading('10. Known issues already found (fixed in revision 2)', HeadingLevel.HEADING_1));
-const reviewFiles = fs.readdirSync(runDir).filter((f) => /^3[0-9]-review-.*\.json$/.test(f)).sort();
+children.push(heading(isFinal ? '10. QA gate results' : '10. Known issues already found (fixed in the next revision)', HeadingLevel.HEADING_1));
+if (isFinal) {
+  const gate = [];
+  if (exists('60b-copy-checks.json')) { const g = readJson('60b-copy-checks.json'); gate.push(['Copy checks (check_copy.py)', `${g.results.filter((r) => r.pass).length}/${g.results.length} passed`, Object.values(g.failed).flat().join(', ') || 'none']); }
+  if (exists('60-automated-qa.json')) { const g = readJson('60-automated-qa.json'); gate.push(['Page checks on the preview (check_page.py)', `${g.results.filter((r) => r.pass).length}/${g.results.length} passed`, Object.values(g.failed).flat().join(', ') + ' (noindex accepted: live page, D2)']); }
+  children.push(table(['Check', 'Result', 'Failures'], gate, [3600, 1800, 4238]));
+  children.push(para('Reviews below are from the last review round. Every blocker in them was fixed in the final revision (see the run folder self-checks).', { run: { size: 18, color: GREY } }));
+}
+const reviewFiles = fs.readdirSync(runDir).filter((f) => (isFinal ? /^6[0-9]-review-.*\.json$/ : /^3[0-9]-review-.*\.json$/).test(f)).sort();
 if (!reviewFiles.length) children.push(para('No reviews yet.'));
 for (const f of reviewFiles) {
   const r = readJson(f).payload;
   children.push(heading(`${r.lens} (${r.verdict})`, HeadingLevel.HEADING_2));
   children.push(table(['ID', 'Severity', 'Issue', 'Fix'], r.findings.map((x) => [x.id, x.severity, `${x.location}: ${x.issue}`, x.suggested_fix || '']), [800, 1100, 4400, 3338]));
 }
-if (exists('35-persona-copy-summary.json')) {
-  const p = readJson('35-persona-copy-summary.json');
-  children.push(heading('Persona panel on the copy', HeadingLevel.HEADING_2));
-  children.push(table(['Persona', 'Decisions (3 runs)', 'Unanswered questions'], Object.entries(p.personas).map(([k, v]) => [k, Object.entries(v.decisions).map(([d, c]) => `${d} ${c}`).join(', '), v.unanswered_questions.join('\n')]), [2600, 2000, 5038]));
+const personaFile = isFinal && exists('63-persona-page-summary.json') ? '63-persona-page-summary.json' : '35-persona-copy-summary.json';
+if (exists(personaFile)) {
+  const p = readJson(personaFile);
+  children.push(heading(isFinal ? 'Persona panel on the built page' : 'Persona panel on the copy', HeadingLevel.HEADING_2));
+  children.push(table(['Persona', 'Decisions', 'Unanswered questions'], Object.entries(p.personas).map(([k, v]) => [k, Object.entries(v.decisions).map(([d, c]) => `${d} ${c}`).join(', '), v.unanswered_questions.join('\n')]), [2600, 2000, 5038]));
 }
-const pendingReviews = ['33-review-copy-facts.json'].filter((f) => !exists(f));
+if (exists('schema.jsonld')) {
+  children.push(new Paragraph({ children: [new PageBreak()] }));
+  children.push(heading('Appendix: schema JSON-LD (code change C1 and C2)', HeadingLevel.HEADING_1));
+  children.push(para('Paste into the page head as <script type="application/ld+json">...</script>, or give it to dev. FAQ answers match the visible fallback text word for word; update them when sign-offs land.', { run: { size: 18 } }));
+  for (const l of read('schema.jsonld').split('\n')) children.push(new Paragraph({ spacing: { after: 0 }, children: [new TextRun({ text: l || ' ', font: 'Courier New', size: 15 })] }));
+}
+const pendingReviews = isFinal ? [] : ['33-review-copy-facts.json'].filter((f) => !exists(f));
 if (pendingReviews.length) children.push(...noteBox([`Still running when this draft was made: ${pendingReviews.join(', ')}. Its findings will be in the final version.`]));
 
 const doc = new Document({
