@@ -7,3 +7,4 @@
 23:07 07 icp-reader x5 complete; enquire 1-2; asks: customs takeaway -> lab-grown takeaway, move Advisor line, trim fluorescence stats, checklist jump link
 23:10 06 editor pass_with_edits 4.29; 17 edits applied by orchestrator; VERIFY 9 -> 1 (ACL)
 23:11 07b icp-panel-chair revise (enquire 1.7, early-stage guide); 1 must-fix, 2 should-fix
+23:13 08 luxury-writer complete final 3,467 words, 1 VERIFY (ACCC); 08b+09+10 launched
