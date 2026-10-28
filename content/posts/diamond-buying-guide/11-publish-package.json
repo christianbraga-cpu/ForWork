@@ -1,0 +1,364 @@
+{
+  "agent": "cms-publisher",
+  "task_id": "diamond-buying-guide",
+  "stage": "11",
+  "status": "complete",
+  "round": 1,
+  "inputs_used": [
+    "CLAUDE.md",
+    "content-system/cms/field-map.md",
+    "content-system/schemas/11-publish-package.schema.json",
+    "content/posts/diamond-buying-guide/00-input.json",
+    "content/posts/diamond-buying-guide/01-brief.json",
+    "content/posts/diamond-buying-guide/02-seo.json",
+    "content/posts/diamond-buying-guide/04-images.json",
+    "content/posts/diamond-buying-guide/08-final.md",
+    "content/posts/diamond-buying-guide/09-cro.json",
+    "content/posts/diamond-buying-guide/10-distribution.json",
+    "content/posts/celebrity-engagement-rings/11-publish-package.json",
+    "content/posts/celebrity-engagement-rings/11-body.md"
+  ],
+  "self_qa": {
+    "confidence": 0.9,
+    "checks": [
+      {
+        "check": "primary_category equals categories[0] (Style Advice, fixed by person)",
+        "pass": true
+      },
+      {
+        "check": "Front matter and all <!-- fact_xx --> markers removed; image-slot comments and [[VERIFY]] kept",
+        "pass": true,
+        "note": "1 VERIFY marker, 9 image-slot comments in 11-body.md"
+      },
+      {
+        "check": "Primary CTA block from 09-cro.json placed at the CTA marker with UTMs",
+        "pass": true
+      },
+      {
+        "check": "Jump-link anchor #your-diamond-shortlist-checklist kept in intro",
+        "pass": true
+      },
+      {
+        "check": "Exactly 4 key takeaways and all FAQs extracted; FAQPage carries all FAQs",
+        "pass": true,
+        "note": "6 FAQs; no VERIFY marker in any FAQ"
+      },
+      {
+        "check": "needs_signoff lists the ABF AUD900 government allowance only (not a price); no prices printed",
+        "pass": true
+      },
+      {
+        "check": "All 9 image slots listed, all needed",
+        "pass": true
+      },
+      {
+        "check": "Status draft; nothing uploaded, published or scheduled",
+        "pass": true
+      },
+      {
+        "check": "No em dashes; Australian English",
+        "pass": true
+      }
+    ]
+  },
+  "open_questions": [
+    {
+      "to": "orchestrator",
+      "question": "CMS upload not attempted: no browser tool in this session and content-system/cms/field-map.md is not CONFIRMED ('NOT YET MAPPED'). Run /wedded-cms-discovery locally, then /wedded-blog resume=diamond-buying-guide.",
+      "blocking": true
+    },
+    {
+      "to": "person",
+      "question": "Confirm the byline: no author named in any input; package uses \"Wedded Wonderland\" (organisation), unconfirmed.",
+      "blocking": false
+    },
+    {
+      "to": "person",
+      "question": "Not a price: the Australian Border Force duty-free allowance of AUD900 of general goods for travellers aged 18 and over (government limit, 'as at October 2026'; body section 'Declaring it on return to Australia' and the FAQ 'Do I need to declare a diamond ring bought overseas...'). Nic to confirm the post may state it; re-check abf.gov.au at publish.",
+      "blocking": false
+    }
+  ],
+  "assumptions": [
+    "Primary category, URL, content type and cluster fixed by the person (00-input.json).",
+    "Excerpt is the meta description.",
+    "Categories and tags from 01-brief.json; cluster tag added as in the reference package.",
+    "08-final.md already carries the 09-cro.json copy changes (marker moved, secondary UTM, magazine line); only the marker was replaced."
+  ],
+  "verify_items": [
+    "Australian Consumer Law: confirm on accc.gov.au that the ACL prohibits misleading or deceptive conduct, including how a product is described, and link that page in 'What Australian consumer law expects' (fact_31). One marker in the body; not in any FAQ."
+  ],
+  "tools_used": [
+    "Bash (python3 -I)"
+  ],
+  "next_agent": [
+    "orchestrator"
+  ],
+  "payload": {
+    "title": "Diamond Buying Guide for Engagement Rings",
+    "slug": "diamond-buying-guide",
+    "url_path": "/style-advice/diamond-buying-guide",
+    "content_type": "Guide",
+    "cluster": "Rings and Jewellery",
+    "categories": [
+      "Style Advice",
+      "Rings and Jewellery",
+      "Proposals & Rings"
+    ],
+    "primary_category": "Style Advice",
+    "tags": [
+      "diamond buying guide",
+      "4Cs",
+      "engagement rings",
+      "GIA",
+      "IGI",
+      "lab-grown diamonds",
+      "Kimberley Process",
+      "fluorescence",
+      "diamond shapes",
+      "travel",
+      "Rings and Jewellery (cluster)"
+    ],
+    "excerpt": "How to choose a diamond: which of the 4Cs matters most, how to check a GIA or IGI report, lab-grown vs natural, ethics and travelling with the stone.",
+    "key_takeaways": [
+      "For a round brilliant, cut quality has the greatest effect on sparkle, so settle the cut grade before you trade colour, clarity and size against each other.",
+      "Carat measures weight rather than size, so two stones of the same weight can look quite different once set.",
+      "Before paying, enter the report number on the grading lab's own website and, where the stone is inscribed, match it to the number on the girdle.",
+      "Lab-grown and natural diamonds look and behave essentially the same, so get natural or lab-grown confirmed in writing on both the receipt and the report."
+    ],
+    "body_markdown_file": "content/posts/diamond-buying-guide/11-body.md",
+    "faq": [
+      {
+        "q": "What is the most important of the 4Cs when buying a diamond?",
+        "a": "For a round brilliant, cut has the greatest effect on how the stone looks, because it governs brightness, fire and scintillation. For fancy shapes there is no GIA cut grade, so you judge the cut in person and then balance colour, clarity and carat to suit your priorities."
+      },
+      {
+        "q": "Is a GIA or IGI certificate better?",
+        "a": "Both are grading laboratories that issue reports for natural and lab-grown diamonds. We found no independent published comparison of the two that we could cite. Rather than choosing by name, read the report in full, check the number on the lab's own website and confirm the girdle inscription matches."
+      },
+      {
+        "q": "How do I check a diamond grading report is real?",
+        "a": "Type the report number into the issuing lab's own verification service: GIA Report Check for GIA reports, or IGI's own website for IGI reports. Then match the online record to the paper report and to the number inscribed on the girdle."
+      },
+      {
+        "q": "Is a lab-grown diamond a real diamond?",
+        "a": "Yes. Lab-grown diamonds have essentially the same optical, physical and chemical properties as mined diamonds, which is why US guides allow them to be called \"laboratory-grown diamonds\". The difference is origin, which should be disclosed clearly on the report, the inscription and your receipt."
+      },
+      {
+        "q": "Does fluorescence make a diamond look worse?",
+        "a": "Usually not. In a GIA study, average observers saw no systematic effect, and fluorescence intensifies haziness only in rare stones that already have it. View a fluorescent stone in daylight beside stones of the same grade before deciding."
+      },
+      {
+        "q": "Do I need to declare a diamond ring bought overseas when I return to Australia?",
+        "a": "If it takes you over the general goods duty-free allowance, yes. As at October 2026 that allowance is AUD900 for travellers aged 18 and over, and jewellery counts as general goods. Declare it, carry proof of purchase, and check the current rules with the Australian Border Force before you fly."
+      }
+    ],
+    "images": [
+      {
+        "slot_id": "featured",
+        "file": "content/posts/diamond-buying-guide/images/diamond-buying-guide-loose-diamond-tweezers-loupe-hero.webp",
+        "role": "featured",
+        "status": "needed"
+      },
+      {
+        "slot_id": "cut",
+        "file": "content/posts/diamond-buying-guide/images/diamond-buying-guide-round-brilliant-cut-diagram.webp",
+        "role": "inline",
+        "status": "needed"
+      },
+      {
+        "slot_id": "colour",
+        "file": "content/posts/diamond-buying-guide/images/diamond-buying-guide-diamond-colour-scale-diagram.webp",
+        "role": "inline",
+        "status": "needed"
+      },
+      {
+        "slot_id": "clarity",
+        "file": "content/posts/diamond-buying-guide/images/diamond-buying-guide-diamond-clarity-scale-diagram.webp",
+        "role": "inline",
+        "status": "needed"
+      },
+      {
+        "slot_id": "carat",
+        "file": "content/posts/diamond-buying-guide/images/diamond-buying-guide-same-carat-round-vs-oval-faceup.webp",
+        "role": "inline",
+        "status": "needed"
+      },
+      {
+        "slot_id": "shape",
+        "file": "content/posts/diamond-buying-guide/images/diamond-buying-guide-diamond-shapes-grid.webp",
+        "role": "inline",
+        "status": "needed"
+      },
+      {
+        "slot_id": "grading_report",
+        "file": "content/posts/diamond-buying-guide/images/diamond-buying-guide-grading-report-sample-mockup.webp",
+        "role": "inline",
+        "status": "needed"
+      },
+      {
+        "slot_id": "lab_vs_natural",
+        "file": "content/posts/diamond-buying-guide/images/diamond-buying-guide-natural-vs-lab-grown-side-by-side.webp",
+        "role": "inline",
+        "status": "needed"
+      },
+      {
+        "slot_id": "travel",
+        "file": "content/posts/diamond-buying-guide/images/diamond-buying-guide-travelling-with-engagement-ring-flat-lay.webp",
+        "role": "inline",
+        "status": "needed"
+      }
+    ],
+    "cta": {
+      "text": "Browse wedding destinations by region",
+      "subtext": "Look around at your own pace, no enquiry needed",
+      "link": "/destinations?utm_source=blog&utm_medium=content&utm_campaign=diamond-buying-guide&utm_content=primary",
+      "placement": "At the former <!-- CTA: primary --> marker at the opening of 'From the ring to the destination', directly after 'Where you ask, and later where you marry, are the next decisions, and both are easier once you can picture the place.' and before the Wedded Concierge paragraph, marked <!-- CTA BLOCK: primary --> in 11-body.md."
+    },
+    "secondary_cta": {
+      "text": "Talk to a Wedded Concierge",
+      "link": "/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=diamond-buying-guide&utm_content=secondary",
+      "placement": "Already in the copy: inline 'talk to a Wedded Concierge about a proposal or wedding abroad' link at the start of the second paragraph of 'From the ring to the destination'. No separate block added."
+    },
+    "lead_magnet": {
+      "name": "Wedded Wonderland digital magazine (free)",
+      "link": "/magazine?utm_source=blog&utm_medium=content&utm_campaign=diamond-buying-guide&utm_content=magnet",
+      "placement": "Already in the copy: one line at the end of 'Diamond shapes and how each changes the 4Cs'."
+    },
+    "tracking_links": [
+      "/destinations?utm_source=blog&utm_medium=content&utm_campaign=diamond-buying-guide&utm_content=primary",
+      "/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=diamond-buying-guide&utm_content=secondary",
+      "/magazine?utm_source=blog&utm_medium=content&utm_campaign=diamond-buying-guide&utm_content=magnet"
+    ],
+    "seo": {
+      "meta_title": "Diamond Buying Guide: 4Cs, Grading Reports and Buying Abroad",
+      "meta_description": "How to choose a diamond: which of the 4Cs matters most, how to check a GIA or IGI report, lab-grown vs natural, ethics and travelling with the stone.",
+      "focus_keyword": "diamond buying guide",
+      "canonical": "https://weddedwonderland.com/style-advice/diamond-buying-guide",
+      "og_image_slot": "featured"
+    },
+    "schema_jsonld": {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Article",
+          "@id": "https://weddedwonderland.com/style-advice/diamond-buying-guide#article",
+          "headline": "Diamond Buying Guide for Engagement Rings",
+          "description": "How to choose a diamond: which of the 4Cs matters most, how to check a GIA or IGI report, lab-grown vs natural, ethics and travelling with the stone.",
+          "author": {
+            "@type": "Organization",
+            "name": "Wedded Wonderland",
+            "url": "https://weddedwonderland.com/"
+          },
+          "publisher": {
+            "@type": "Organization",
+            "name": "Wedded Wonderland",
+            "url": "https://weddedwonderland.com/"
+          },
+          "datePublished": "",
+          "mainEntityOfPage": "https://weddedwonderland.com/style-advice/diamond-buying-guide",
+          "image": "",
+          "inLanguage": "en-AU"
+        },
+        {
+          "@type": "BreadcrumbList",
+          "@id": "https://weddedwonderland.com/style-advice/diamond-buying-guide#breadcrumb",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Home",
+              "item": "https://weddedwonderland.com/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Style Advice",
+              "item": "https://weddedwonderland.com/style-advice"
+            },
+            {
+              "@type": "ListItem",
+              "position": 3,
+              "name": "Diamond Buying Guide for Engagement Rings",
+              "item": "https://weddedwonderland.com/style-advice/diamond-buying-guide"
+            }
+          ]
+        },
+        {
+          "@type": "FAQPage",
+          "@id": "https://weddedwonderland.com/style-advice/diamond-buying-guide#faq",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "What is the most important of the 4Cs when buying a diamond?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "For a round brilliant, cut has the greatest effect on how the stone looks, because it governs brightness, fire and scintillation. For fancy shapes there is no GIA cut grade, so you judge the cut in person and then balance colour, clarity and carat to suit your priorities."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Is a GIA or IGI certificate better?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Both are grading laboratories that issue reports for natural and lab-grown diamonds. We found no independent published comparison of the two that we could cite. Rather than choosing by name, read the report in full, check the number on the lab's own website and confirm the girdle inscription matches."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "How do I check a diamond grading report is real?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Type the report number into the issuing lab's own verification service: GIA Report Check for GIA reports, or IGI's own website for IGI reports. Then match the online record to the paper report and to the number inscribed on the girdle."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Is a lab-grown diamond a real diamond?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes. Lab-grown diamonds have essentially the same optical, physical and chemical properties as mined diamonds, which is why US guides allow them to be called \"laboratory-grown diamonds\". The difference is origin, which should be disclosed clearly on the report, the inscription and your receipt."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Does fluorescence make a diamond look worse?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Usually not. In a GIA study, average observers saw no systematic effect, and fluorescence intensifies haziness only in rare stones that already have it. View a fluorescent stone in daylight beside stones of the same grade before deciding."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Do I need to declare a diamond ring bought overseas when I return to Australia?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "If it takes you over the general goods duty-free allowance, yes. As at October 2026 that allowance is AUD900 for travellers aged 18 and over, and jewellery counts as general goods. Declare it, carry proof of purchase, and check the current rules with the Australian Border Force before you fly."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    "author": "Wedded Wonderland",
+    "status": "draft",
+    "verify_items": [
+      "Australian Consumer Law: confirm on accc.gov.au that the ACL prohibits misleading or deceptive conduct, including how a product is described, and link that page in 'What Australian consumer law expects' (fact_31). One marker in the body; not in any FAQ."
+    ],
+    "needs_signoff": [
+      "Not a price: the Australian Border Force duty-free allowance of AUD900 of general goods for travellers aged 18 and over (government limit, 'as at October 2026'; body section 'Declaring it on return to Australia' and the FAQ 'Do I need to declare a diamond ring bought overseas...'). Nic to confirm the post may state it; re-check abf.gov.au at publish."
+    ],
+    "deferred_business_items": [
+      "Wedded Concierge fee model and commissions, including any jeweller referral fees (only \"the fee is agreed in writing before any work begins\" is stated)",
+      "Deposits, refunds, contracts and how payments are protected",
+      "\"From AUD\" price ranges",
+      "Named Wedded Advisor, phone line or private referral line",
+      "Scale (how many couples or weddings planned)",
+      "Wedded Privileges explanation"
+    ],
+    "person_questions": [
+      "Confirm the byline: no author named in any input; package uses \"Wedded Wonderland\" (organisation), unconfirmed."
+    ],
+    "last_updated_note": "Set the CMS last-updated date at publish, not in body copy.",
+    "draft_note": "DRAFT. Do not publish until checked:\n\n1. [[VERIFY]] items (1):\n   - Australian Consumer Law: confirm on accc.gov.au that the ACL prohibits misleading or deceptive conduct, including how a product is described, and link that page in 'What Australian consumer law expects' (fact_31). One marker in the body; not in any FAQ.\n\n2. Nic sign-off on prices: none (no prices printed). Only figure for Nic: the ABF duty-free allowance of AUD900 is a government limit, not a price; confirm the post may state it, and re-check the figure on abf.gov.au at publish (it is written \"as at October 2026\", in the body and the FAQ).\n\n3. Image slots needed (9, none approved yet; alt and caption to add when approved). The grading report image must be a fictional SAMPLE mock-up made in Canva, never a real report or lab logo. AI images are illustrative only, labelled \"Illustrative image\", and only if the person approves.\n   - featured (needed, licensed photography preferred; AI only if approved, labelled \"Illustrative image\")\n   - cut (needed, best built as own brand diagram in Canva; never copy GIA or IGI diagrams; AI stone artwork only if approved, labelled \"Illustrative image\")\n   - colour (needed, best built as own brand diagram in Canva; never copy GIA or IGI diagrams; AI stone artwork only if approved, labelled \"Illustrative image\")\n   - clarity (needed, best built as own brand diagram in Canva; never copy GIA or IGI diagrams; AI stone artwork only if approved, labelled \"Illustrative image\")\n   - carat (needed, licensed photo preferred; AI only if approved, labelled \"Illustrative image\"; no logos, never copy GIA or IGI diagrams)\n   - shape (needed, licensed photo preferred; AI only if approved, labelled \"Illustrative image\"; no logos, never copy GIA or IGI diagrams)\n   - grading_report (needed, fictional SAMPLE mock-up built in Canva by the team: invented layout, 'SAMPLE' across it, obviously fake report number; never a real GIA or IGI report, never a lab name or logo, never a copy of either lab's layout; not AI)\n   - lab_vs_natural (needed, licensed photo preferred; AI only if approved, labelled \"Illustrative image\"; no logos, never copy GIA or IGI diagrams)\n   - travel (needed, licensed photo preferred; AI only if approved, labelled \"Illustrative image\"; no logos, never copy GIA or IGI diagrams)\n\n4. Fact spot-check: some lab-site facts (GIA and IGI report check, inscriptions, lab-grown reporting) came from search summaries, so spot-check them against the lab sites before publishing.\n\n5. Internal link dependency: publish /style-advice/engagement-ring-styles first (linked from 'Diamond shapes and how each changes the 4Cs').\n\n6. Jump link: confirm the CMS heading id for \"Your diamond shortlist checklist\" matches #your-diamond-shortlist-checklist (intro jump link).\n\n7. Deferred business items (6, person's decision, not in this draft):\n   - Wedded Concierge fee model and commissions, including any jeweller referral fees (only \"the fee is agreed in writing before any work begins\" is stated)\n   - Deposits, refunds, contracts and how payments are protected\n   - \"From AUD\" price ranges\n   - Named Wedded Advisor, phone line or private referral line\n   - Scale (how many couples or weddings planned)\n   - Wedded Privileges explanation\n\n8. Questions for the person:\n   - Confirm the byline: no author named in any input; package uses \"Wedded Wonderland\" (organisation), unconfirmed.\n\n9. Last-updated date: set the CMS last-updated date field at publish (not in body copy)."
+  }
+}

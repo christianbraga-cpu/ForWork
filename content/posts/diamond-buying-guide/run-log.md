@@ -11,3 +11,4 @@
 23:14 10 distribution complete
 23:14 09 cro complete; 4 copy changes applied
 23:15 08b editor pass (4.43), 0 blocking; travel image slot inserted
+23:17 11 package built; 13 run report, backlinks, link map, calendar, Word file. RUN COMPLETE
