@@ -7,3 +7,4 @@
 00:21 05 luxury-writer complete ~4,080 words, 1 VERIFY (Mary Hobart); first draft sent; 06 + 07x5 in parallel
 00:22 07 icp-reader x5 complete; enquire 1-2; asks: remove 'source pack', shrink method section, names up front, concrete close
 00:23 06 editor pass_with_edits 4.43; edits applied by orchestrator except link hold (styles post publishes first/together)
+00:25 07b icp-panel-chair revise (enquire 1.6, early-stage list); 1 must-fix, 3 should-fix
