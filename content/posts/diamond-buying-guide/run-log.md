@@ -9,3 +9,4 @@
 23:11 07b icp-panel-chair revise (enquire 1.7, early-stage guide); 1 must-fix, 2 should-fix
 23:13 08 luxury-writer complete final 3,467 words, 1 VERIFY (ACCC); 08b+09+10 launched
 23:14 10 distribution complete
+23:14 09 cro complete; 4 copy changes applied

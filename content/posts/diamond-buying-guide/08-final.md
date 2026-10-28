@@ -117,6 +117,8 @@ Pointed shapes need care for another reason. Stones with exposed points or very 
 
 Emerald and Asscher are step cuts, with long, open facets rather than a brilliant's many small ones. Before you settle on a clarity grade for one, ask the jeweller where its inclusions are plotted, then view the stone face up without magnification.
 
+Still gathering ideas? [Read the free Wedded Wonderland magazine](/magazine?utm_source=blog&utm_medium=content&utm_campaign=diamond-buying-guide&utm_content=magnet).
+
 ## Diamond grading reports: GIA vs IGI and how to check one
 
 <!-- IMAGE SLOT grading_report: Generic, fictional mock-up of a diamond grading report built by the team: invented neutral layout, the word "SAMPLE" across it, placeholder report number clearly fake (e.g. "Report no. 0000000000"), labelled callouts to report number, shape and measurements, colour, clarity, cut (where graded), fluorescence, origin (natural or laboratory-grown) and laser inscription. Optional inset: stylised girdle with an inscription line. Never a real GIA or IGI report, never a lab name or logo, never a copy of either lab's layout, fonts or security features. Built in Canva, not AI. -->
@@ -204,8 +206,6 @@ Keep the ring in your hand luggage, never in checked bags. GIA advises carrying 
 
 Travel with copies of the grading report and receipt, kept separately from the ring itself.
 
-<!-- CTA: primary -->
-
 ## Your diamond shortlist checklist
 
 Take this into every appointment, at home or overseas.
@@ -225,9 +225,11 @@ Take this into every appointment, at home or overseas.
 
 ## From the ring to the destination
 
-Where you ask, and later where you marry, are the next decisions. When you are ready to picture them, [browse destination wedding locations by region](/destinations).
+Where you ask, and later where you marry, are the next decisions, and both are easier once you can picture the place.
 
-If the proposal or the wedding is heading overseas, [talk to a Wedded Concierge about a proposal or wedding abroad](/wonderland-concierge). Wedded Concierge plans venue, travel, vendors and payments anywhere in the world, with one Wedded Advisor as your single point of contact from start to finish <!-- fact_42 -->. If you plan with Wedded Concierge, your Wedded Advisor confirms the current requirements for carrying and declaring a ring with you before you travel, as these rules can change.
+<!-- CTA: primary -->
+
+If the proposal or the wedding is heading overseas, [talk to a Wedded Concierge about a proposal or wedding abroad](/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=diamond-buying-guide&utm_content=secondary). Wedded Concierge plans venue, travel, vendors and payments anywhere in the world, with one Wedded Advisor as your single point of contact from start to finish <!-- fact_42 -->. If you plan with Wedded Concierge, your Wedded Advisor confirms the current requirements for carrying and declaring a ring with you before you travel, as these rules can change.
 
 The fee is agreed in writing before any work begins, and your Wedded Advisor confirms inclusions in writing before you commit.
 
