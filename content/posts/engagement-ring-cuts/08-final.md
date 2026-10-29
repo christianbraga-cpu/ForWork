@@ -66,6 +66,8 @@ For wider fingers, GIA suggests a medium to wide band that is comfortable rather
 
 GIA's closing advice is the most useful: the engagement ring will be worn with a wedding band, and the pair changes the overall look. <!-- fact_10 --> Try them together from the first appointment. For halo, three-stone and other overall looks, see [engagement ring styles and who each one suits](/style-advice/engagement-ring-styles).
 
+Still gathering ideas? [Read the free Wedded Wonderland magazine](/magazine?utm_source=blog&utm_medium=content&utm_campaign=engagement-ring-cuts&utm_content=magnet).
+
 ## 1. Round brilliant
 
 <!-- IMAGE SLOT round_brilliant: A single round brilliant solitaire on the ring finger, hand resting flat, photographed from directly above so the circular outline reads clearly, with a faint catch of sparkle. Medium-toned skin, medium-length fingers. Anonymous cropped hand, plain platinum or white-gold band, soft daylight, neutral backdrop. Landscape 3:2. -->
@@ -191,11 +193,11 @@ GIA's advice is to try various diamonds and settings on and see how they look. <
 
 ## From the ring to the destination
 
-Once the shape is settled, the next question is usually where. If you are already picturing the ring in a particular light, [browse destination wedding locations by region](/destinations?utm_source=blog&utm_medium=content&utm_campaign=engagement-ring-cuts&utm_content=bridge).
-
-When you are ready to plan, Wedded Concierge gives you one Wedded Advisor, who plans venue, travel, vendors and payments as your one point of contact, and the fee is agreed in writing before any work begins. <!-- fact_36 --> If a proposal or wedding abroad is on your mind, [speak with a Wedded Advisor](/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=engagement-ring-cuts&utm_content=bridge).
+Once the shape is settled, the next question is usually where. If you are already picturing the ring in a particular light, start with the place.
 
 <!-- CTA: primary -->
+
+When you are ready to plan, Wedded Concierge gives you one Wedded Advisor, who plans venue, travel, vendors and payments as your one point of contact, and the fee is agreed in writing before any work begins. <!-- fact_36 --> If a proposal or wedding abroad is on your mind, [speak with a Wedded Advisor](/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=engagement-ring-cuts&utm_content=secondary).
 
 ## Frequently asked questions
 
