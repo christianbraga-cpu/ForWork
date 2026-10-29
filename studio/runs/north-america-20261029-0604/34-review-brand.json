@@ -1,0 +1,327 @@
+{
+  "envelope_version": "1.0",
+  "run_id": "north-america-20261029-0604",
+  "stage": "review",
+  "from_agent": "qa-reviewer",
+  "to_agents": [
+    "project-lead",
+    "copywriter"
+  ],
+  "status": "changes_requested",
+  "revision": 1,
+  "inputs_consumed": [
+    {
+      "artifact": "studio/runs/north-america-20261029-0604/30-page-copy.json",
+      "from_agent": "copywriter",
+      "revision": 1
+    },
+    {
+      "artifact": "studio/runs/north-america-20261029-0604/decisions.md",
+      "from_agent": "project-lead"
+    },
+    {
+      "artifact": "studio/standards/brand-voice.md"
+    },
+    {
+      "artifact": "studio/standards/banned-phrases.txt"
+    },
+    {
+      "artifact": "studio/standards/copy-limits.json"
+    },
+    {
+      "artifact": "studio/schemas/payloads/review.schema.json"
+    }
+  ],
+  "payload_type": "review",
+  "payload": {
+    "artifact": "studio/runs/north-america-20261029-0604/30-page-copy.json",
+    "lens": "studio/standards/brand-voice.md rubric; studio/standards/banned-phrases.txt; studio/standards/copy-limits.json; context studio/runs/north-america-20261029-0604/decisions.md",
+    "verdict": "changes_requested",
+    "scores": {
+      "Specificity": 4,
+      "Proof": 3,
+      "Tone": 4,
+      "Clarity": 3,
+      "Reassurance": 4,
+      "Honesty": 3
+    },
+    "score_notes": {
+      "Specificity": "Named places, Hawaii DOH steps, NYC appointment rule and dated passport rules are concrete. Lapses: 'the city that never needs a backdrop', 'Few regions change this much in one flight'.",
+      "Proof": "Official-source fallbacks with check dates, six real weddings, and B8 held correctly. No venue or space proof, as decisions allow. Unsupported 'Only here' and Marketplace scope lines pull the score down.",
+      "Tone": "Calm, with no exclamation marks or urgency. Lapses: 'glamorous', 'Viral... K-pop royalty', a repeated 'Speak with a Wedded Advisor' loop.",
+      "Clarity": "Scannable headings and short answers. The s3 legal and passport blocks are dense on a phone, and the spotlight intro is a 35-word sentence.",
+      "Reassurance": "The s7 process, single contact and Concierge routing all come before the form. The brand sentence appears early in the hero.",
+      "Honesty": "Most held facts are correctly paired, but F049 (FAQ 8), AU authorisation (FAQ 2), Marketplace coverage, 'simplest' and 'Only here' overstate."
+    },
+    "findings": [
+      {
+        "id": "BV01",
+        "severity": "blocker",
+        "location": "payload.faq[7].a (FAQ 8)",
+        "issue": "Proposed, unconfirmed fact F049 is stated as a certainty with no hedge. unconfirmed_used admits it is 'proposed'. Honesty principle 5 and the CLAUDE.md hedging rule are broken. 'We explain each line before you commit' is also an unconfirmed service promise.",
+        "evidence": "\"Most Hawaii weddings are built at luxury hotels that price the ceremony, dinner and rooms separately, rather than sold as one all-inclusive package.\" / \"We explain each line before you commit.\"",
+        "suggested_fix": "Either put the line in an APPLY AFTER SIGN-OFF / FALLBACK pair for F049, or hedge it (\"Many Hawaii hotels price the ceremony, dinner and rooms separately; your Wedded Advisor confirms how your shortlist prices it\"). Drop the 'before you commit' promise until brand-answers approves it.",
+        "fact_id": "F049"
+      },
+      {
+        "id": "BV02",
+        "severity": "blocker",
+        "location": "payload.faq[1].a (FAQ 2)",
+        "issue": "States AU travel authorisation as certain outside a sign-off pair. F038 and F041 are held, and D12 says the AU line must be hedged. This contradicts the hedged pairs in s3 #entry and FAQ 6.",
+        "evidence": "\"For guests from Australia or the UK, both countries are long-haul and need travel authorisation before flying, so allow more planning time.\"",
+        "suggested_fix": "Limit the certain claim to UK guests (\"UK guests need travel authorisation before flying\"). For AU, either use a sign-off pair or write \"Australian guests should check the official US and Canadian sites before booking\".",
+        "fact_id": "F038"
+      },
+      {
+        "id": "BV03",
+        "severity": "blocker",
+        "location": "sections[s8-ways-to-plan].body_md, ### Marketplace",
+        "issue": "Unsupported scope claim. The card's own CMS note says there is 'one US listing today', yet the copy promises partner venues and suppliers in both countries, plural.",
+        "evidence": "\"Browse partner venues and suppliers in the United States and Canada, and send every enquiry through Wedded Concierge.\" / CMS note: \"one US listing today\"",
+        "suggested_fix": "Remove the card until the listings exist, or reword so it does not claim coverage (\"Browse partner listings as they are added, with every enquiry going through Wedded Concierge\"). Do not name Canada."
+      },
+      {
+        "id": "BV04",
+        "severity": "blocker",
+        "location": "sections[s1-hero].body_md, sentence 2",
+        "issue": "'Simplest' is an unsupported comparison. The rules for every other state and province are unconfirmed (F030 to F034, D11), so the copy cannot rank Hawaii against them. D11 allows Hawaii only 'as a legal example'.",
+        "evidence": "\"Hawaii is the simplest legal example: no residency rule, and no waiting period once your licence is issued.\"",
+        "suggested_fix": "\"Take Hawaii as an example: no residency rule, and no waiting period once your licence is issued.\"",
+        "fact_id": "F030"
+      },
+      {
+        "id": "BV05",
+        "severity": "blocker",
+        "location": "sections[b16-spotlight].body_md, **Only here** list",
+        "issue": "The exclusivity claims cannot be supported. A frozen-lake grand-hotel wedding is not unique to this region, and no confirmed fact shows that other US states or countries require residency or a waiting period, so 'only here' overstates the Hawaii legal line too. F048 is a proposed fact.",
+        "evidence": "\"**Only here**\" / \"A legal Hawaii marriage with no residency rule and no waiting period once your licence is issued.\" / \"A winter wedding in a grand hotel above a frozen lake.\"",
+        "suggested_fix": "Rename the label to something without exclusivity (\"What sets the region apart\" or \"Worth knowing\"), or keep only the New Orleans second line, which is genuinely local.",
+        "fact_id": "F048"
+      },
+      {
+        "id": "BV06",
+        "severity": "blocker",
+        "location": "sections[b16-spotlight].body_md, intro",
+        "issue": "An unsupported comparative claim, and a misleading one: Maui, Napa, Lake Louise and Charleston are not 'one flight' apart, and no fact backs a ranking against other regions.",
+        "evidence": "\"Few regions change this much in one flight.\"",
+        "suggested_fix": "Delete the sentence, or replace it with a specific, checkable line (\"From one region you can choose Hawaii's beaches, California's vines, the Rockies' lakes or the South's oaks.\").",
+        "fact_id": "F048"
+      },
+      {
+        "id": "BV07",
+        "severity": "major",
+        "location": "sections[s5-real-weddings].body_md, item 1",
+        "issue": "A variant of the banned phrase 'fairytale wedding' is visible as link text.",
+        "evidence": "\"[A fairy-tale wedding in Hawaii](/real-wedding-fairy-tale-wedding-in-hawaii)\"",
+        "suggested_fix": "Write a plain anchor such as \"A real wedding in Hawaii\" or a specific one (\"A Hawaii beach wedding\"). The slug can stay."
+      },
+      {
+        "id": "BV08",
+        "severity": "major",
+        "location": "sections[s2-places].body_md, US card",
+        "issue": "'Quick' suggests the Nevada licence process is fast. D11 forbids Las Vegas rule or speed claims without a source (F030 is unconfirmed). 'Glamorous' is unsupported decoration.",
+        "evidence": "\"Las Vegas suits a quick, glamorous ceremony; Nevada sets its own licence rules\"",
+        "suggested_fix": "\"Las Vegas suits a small chapel or city ceremony; Nevada sets its own licence rules, and your Wedded Advisor checks them before you book flights.\"",
+        "fact_id": "F030"
+      },
+      {
+        "id": "BV09",
+        "severity": "major",
+        "location": "Whole page: hero, spotlight, s2, s3, s7, s11, sticky, FAQ 7, 9, 10",
+        "issue": "'Wedded Advisor' is overused: 14 mentions in visible copy, including the same button label 'Speak with a Wedded Advisor' 3 times (hero, spotlight, sticky) and 3 mentions in s7 alone. On a phone the repetition reads as a sales loop and weakens the brand term.",
+        "evidence": "s7: \"Wedded Concierge pairs you with a Wedded Advisor...\", \"Your Wedded Advisor is your one contact\", \"ask your Wedded Advisor what the programme offers\"; FAQ 7, 9, 10 each repeat \"your Wedded Advisor\".",
+        "suggested_fix": "Keep the full brand term in the hero, s7 and the CTA buttons. Elsewhere use 'we' or 'your advisor' (s2, s3 x2, FAQ 7, FAQ 9, FAQ 10), and change the spotlight button to a non-repeating label such as 'Ask about these places'."
+      },
+      {
+        "id": "BV10",
+        "severity": "minor",
+        "location": "sections[s8-ways-to-plan].body_md, ### Wedded Concierge",
+        "issue": "Close duplicate of the brand sentence, now a third time, in different wording. It also uses lower-case 'advisor' and 'the first call' where s1 and s7 say 'the first enquiry'. D3 allows the brand sentence only twice.",
+        "evidence": "\"One advisor plans the whole celebration with you, from the first call to the guest list.\"",
+        "suggested_fix": "Use a different, factual line (\"Plan the whole celebration with Wedded Concierge, with every enquiry in one place.\") and do not echo the brand sentence."
+      },
+      {
+        "id": "BV11",
+        "severity": "minor",
+        "location": "sections[s8-ways-to-plan].body_md, ### Wonderland Studio guest website",
+        "issue": "The brand name is outside the list in brand-voice.md (Wedded Wonderland, Wedded Concierge, Wedded Advisor, Wedded Privileges). It needs confirming as an official product name. The link slug '/wonderland-concierge' next to 'Wedded Concierge' also shows the naming is mixed.",
+        "evidence": "\"### Wonderland Studio guest website\"; \"[Explore Wedded Concierge](/wonderland-concierge)\"",
+        "suggested_fix": "Confirm the product name with the Project Lead and use it consistently, or write 'Guest website'."
+      },
+      {
+        "id": "BV12",
+        "severity": "minor",
+        "location": "payload.faq[0].a (FAQ 1)",
+        "issue": "'We track' is internal jargon and turns keyword data into an implied market claim that a reader cannot check.",
+        "evidence": "\"Hawaii draws more searches than any other US wedding destination we track\"",
+        "suggested_fix": "\"Hawaii is the US wedding destination couples search for most, but the right place depends on your style.\" (keep F008 as the source), or simply \"Many couples start with Hawaii\".",
+        "fact_id": "F008"
+      },
+      {
+        "id": "BV13",
+        "severity": "minor",
+        "location": "sections[b16-spotlight].body_md, ### New York City",
+        "issue": "A vague, cliché-adjacent line that tells the reader nothing specific.",
+        "evidence": "\"dinner in the city that never needs a backdrop\"",
+        "suggested_fix": "\"Rooftop skylines, a Central Park portrait and dinner in Manhattan.\""
+      },
+      {
+        "id": "BV14",
+        "severity": "minor",
+        "location": "sections[b16-spotlight].body_md, intro",
+        "issue": "Repetition: 'gives you' four times in one sentence. It is long for a phone (35 words).",
+        "evidence": "\"Hawaii gives you beach and lava coast, California gives you vines and cliffs, the Rockies give you lakes and snow, and the South gives you oaks and brass bands.\"",
+        "suggested_fix": "Split into short lines or a list: \"Hawaii: beach and lava coast. California: vines and cliffs. The Rockies: lakes and snow. The South: oaks and brass bands.\""
+      },
+      {
+        "id": "BV15",
+        "severity": "minor",
+        "location": "sections[s3-compare] table rows 4 to 10, s1 hero, FAQ 5",
+        "issue": "Repetition of 'we check them for your date' (hero, six table cells, FAQ 5). It reads as boilerplate.",
+        "evidence": "\"Rules set by California; we check them for your date\" (repeated for California x2, Colorado, South Carolina, Nevada, Alberta)",
+        "suggested_fix": "Say 'Set by <state>' in the cells and state the 'we check for your date' promise once in the table caption."
+      },
+      {
+        "id": "BV16",
+        "severity": "minor",
+        "location": "sections[s3-compare].body_md, ### Every other state and province; ### Travel by passport bullets",
+        "issue": "Hard to read on a phone. One paragraph packs three ideas and two inline links, and the US and UK passport bullets each run 40+ words with source links in the middle of sentences.",
+        "evidence": "\"In New York City, licences and City Clerk ceremonies are by appointment only, with no walk-ins ([NYC City Clerk](...), last checked October 2026). UK citizens: whether you can marry depends on local law...\"",
+        "suggested_fix": "Split it into three short paragraphs (all states, NYC, UK citizens). In the passport bullets, give the US and Canada lines separately and put the source link at the end of each line."
+      },
+      {
+        "id": "BV17",
+        "severity": "minor",
+        "location": "sections[s7-how-it-works].body_md, step 4",
+        "issue": "Overreach: checking 'the entry rules for every passport in your group' is broader than any confirmed service scope (brand-answers rows pending, D3).",
+        "evidence": "\"We check the licence rules for your state or province and the entry rules for every passport in your group.\"",
+        "suggested_fix": "\"We check the licence rules for your state or province and point your guests to the official entry rules for their passports.\""
+      },
+      {
+        "id": "BV18",
+        "severity": "minor",
+        "location": "payload.faq[5].a (FAQ 6)",
+        "issue": "Market order breaks D5 (US first). The US line comes last, after the UK and AU lines.",
+        "evidence": "\"UK guests need an ESTA...\" ... \"US guests need no authorisation to visit Canada for stays under 180 days.\"",
+        "suggested_fix": "Put the US line first, then UK and AU, matching s3 #entry."
+      },
+      {
+        "id": "BV19",
+        "severity": "minor",
+        "location": "sections[s1-hero].body_md quick answer",
+        "issue": "Over the copy-limits hero_quick_answer total: 62 words against a 60-word maximum.",
+        "evidence": "Sentences of 24, 18 and 20 words.",
+        "suggested_fix": "Trim 2 or more words, for example \"Canada adds the lakes of Banff\" becomes \"Canada adds Banff\"."
+      },
+      {
+        "id": "BV20",
+        "severity": "minor",
+        "location": "payload.faq[2].a (FAQ 3); payload.faq[8].q (FAQ 9)",
+        "issue": "Over copy-limits faq rules: FAQ 3's first sentence is 31 words (max 30), and the FAQ 9 question is 72 characters (max 70).",
+        "evidence": "FAQ 3: \"Hawaii is a strong choice for just the two of you: there is no residency rule, no waiting period once your licence is issued, and you both apply in person together.\" FAQ 9 q: \"When is the best time to marry in Hawaii, on the mainland and in Canada?\"",
+        "suggested_fix": "Cut 'together' from FAQ 3. Shorten FAQ 9 to \"When is the best time to marry in Hawaii, the mainland or Canada?\" if the doc wording allows."
+      },
+      {
+        "id": "BV21",
+        "severity": "minor",
+        "location": "sections[sticky-bar]; sections[b9-qualifier]",
+        "issue": "Copy-limit overruns that the copywriter acknowledged but did not fix: the sticky button is 27 characters (max 12), and the b9 option 'Just the two of you' is 19 characters (max 16).",
+        "evidence": "\"The button label runs 27 characters, over the 12-character sticky limit; kept as the plan names it.\"",
+        "suggested_fix": "Project Lead to accept in writing, or use 'Enquire' (7) for the sticky button and 'Two of you' (10) for the option, keeping the form label in sync."
+      },
+      {
+        "id": "BV22",
+        "severity": "minor",
+        "location": "sections[s9-articles].body_md, Trending",
+        "issue": "The tone of 'Viral' and 'K-pop royalty' clashes with the calm, specific voice. These are titles of external trend posts.",
+        "evidence": "\"[Viral weddings, from K-pop royalty to Napa Valley romance]\"",
+        "suggested_fix": "Shorten the card title to a neutral one (\"Napa Valley and other weddings in the news\"), as the CMS note allows titles to be shortened."
+      },
+      {
+        "id": "BV23",
+        "severity": "minor",
+        "location": "sections[s5-real-weddings].body_md intro",
+        "issue": "'City ballrooms' is not backed by the six cards (a lodge, a Gatsby party, an earthy wedding and others).",
+        "evidence": "\"Weddings we have featured across the region, from island beaches to city ballrooms.\"",
+        "suggested_fix": "\"Weddings we have featured across the region, from Hawaii to Toronto.\""
+      }
+    ]
+  },
+  "self_qa": {
+    "checklist": "studio/standards/brand-voice.md rubric + banned-phrases.txt + copy-limits.json",
+    "results": [
+      {
+        "check": "No em or en dashes",
+        "pass": true
+      },
+      {
+        "check": "No bare $ prices",
+        "pass": true
+      },
+      {
+        "check": "No banned phrases",
+        "pass": false,
+        "severity": "major",
+        "detail": "BV07 fairy-tale wedding"
+      },
+      {
+        "check": "No exclamation marks in body copy",
+        "pass": true
+      },
+      {
+        "check": "Brand names exact and consistent",
+        "pass": false,
+        "severity": "minor",
+        "detail": "BV10, BV11"
+      },
+      {
+        "check": "No unsupported or off-brand claims",
+        "pass": false,
+        "severity": "blocker",
+        "detail": "BV01 to BV06"
+      },
+      {
+        "check": "All rubric scores 3 or above",
+        "pass": true
+      },
+      {
+        "check": "Copy limits met",
+        "pass": false,
+        "severity": "minor",
+        "detail": "BV19 to BV21"
+      },
+      {
+        "check": "Headings, fee, currency, on-the-day and proof omissions not flagged (decisions.md)",
+        "pass": true
+      }
+    ],
+    "scores": {
+      "Specificity": 4,
+      "Proof": 3,
+      "Tone": 4,
+      "Clarity": 3,
+      "Reassurance": 4,
+      "Honesty": 3
+    }
+  },
+  "assumptions": [
+    "Headings are the user's wording (D4, D9), so heading case and the 66-character H1 are not flagged.",
+    "For sign-off pairs, both the APPLY line and the FALLBACK were judged; none of the pairs breaks brand voice.",
+    "The confirmed brand sentence (F021) is used verbatim as D3 allows; 'to the last dance' is not flagged as an on-the-day promise.",
+    "facts.json was not read (not part of the lens); fact status comes from payload.unconfirmed_used and decisions.md."
+  ],
+  "open_questions": [
+    {
+      "to": "project-lead",
+      "question": "Is 'Wonderland Studio' an approved product name for the guest website?",
+      "blocking": false
+    },
+    {
+      "to": "project-lead",
+      "question": "Accept in writing the sticky button (27 characters) and b9 option (19 characters) overruns, or require the shorter labels?",
+      "blocking": false
+    }
+  ],
+  "confidence": 0.8,
+  "timestamp": "2026-10-29T06:38:08Z"
+}

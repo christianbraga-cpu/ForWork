@@ -1,0 +1,156 @@
+{
+  "envelope_version": "1.0",
+  "run_id": "north-america-20261029-0604",
+  "stage": "review",
+  "from_agent": "qa-reviewer",
+  "to_agents": [
+    "project-lead",
+    "copywriter"
+  ],
+  "status": "ready_for_review",
+  "revision": 1,
+  "inputs_consumed": [
+    {
+      "artifact": "studio/runs/north-america-20261029-0604/30-page-copy.json",
+      "from_agent": "copywriter",
+      "revision": 1
+    },
+    {
+      "artifact": "studio/runs/north-america-20261029-0604/20-content-brief.json",
+      "from_agent": "project-lead",
+      "revision": 1
+    },
+    {
+      "artifact": "studio/runs/north-america-20261029-0604/decisions.md",
+      "from_agent": "project-lead"
+    },
+    {
+      "artifact": "studio/checklists/seo-strategist.md"
+    },
+    {
+      "artifact": "studio/standards/linking.md"
+    },
+    {
+      "artifact": "studio/schemas/payloads/review.schema.json"
+    }
+  ],
+  "payload_type": "review",
+  "payload": {
+    "artifact": "studio/runs/north-america-20261029-0604/30-page-copy.json",
+    "lens": "studio/checklists/seo-strategist.md (applied to copy) + studio/standards/linking.md",
+    "verdict": "changes_requested",
+    "scores": {
+      "keyword_placement": 2,
+      "internal_linking": 4,
+      "meta_lengths": 4,
+      "summary": "Checklist and brief checks: primary keyword in title PASS ('Destination Wedding in the USA or Canada'). Primary in H1 PARTIAL, accepted under D4/D9 (H1 fixed: 'Choose your wedding in the USA or Canada...'). Primary in first 100 words PASS (first sentence: 'A destination wedding in the USA runs from Hawaii's beaches...'). Primary in a heading FAIL (SEO-02). Hawaii and Canada terms FAIL (SEO-01). Item 3 intent PASS (commercial_investigation hub with comparison table and enquiry). Item 4 cannibalisation FAIL (SEO-03). Item 5 PAA UNVERIFIED (SEO-06). Item 7 link_plan PASS (/destinations s12, /destinations/latin-america-caribbean s2 once, /wonderland-concierge s7 and s8 with different anchors, /destinations/europe s12; 29 unique internal URLs, max 40). Item 8 link targets PARTIAL (SEO-08). No 404 child page linked PASS (planned URLs are in a CMS note only, D7). Item 9 title 60 PASS; meta 157 FAIL against brief's 155 (SEO-04). H2s match brief heading_intent word for word PASS (D9). Linking.md rules 6 (SEO-07), 7 (3 to 8 contextual body links: s2, s4, s6, s7, s8, s12 PASS) and 8 (single next step: Wedded Concierge enquiry PASS). Items 1, 2, 6, 10, 11 apply to the brief, not the copy: N/A."
+    },
+    "findings": [
+      {
+        "id": "SEO-01",
+        "severity": "major",
+        "location": "payload.sections[*].body_md, payload.faq[*] (whole page)",
+        "issue": "None of the five brief secondary keywords appears in the copy as a phrase or close variant. 'hawaii destination wedding', 'canada destination wedding', 'california destination wedding', 'destination wedding locations usa' and 'best destination wedding locations in the us' each occur 0 times. The nearest Hawaii variant is 'Hawaii wedding' (FAQ 8 only). The only Canada variant is the button anchor 'Plan a wedding in Canada'. California is never paired with 'wedding'.",
+        "evidence": "Brief secondary_keywords list. Scripted count across all body_md and FAQ text: hawaii destination wedding 0, canada destination wedding 0, california destination wedding 0, destination wedding locations 0, best destination wedding 0.",
+        "suggested_fix": "Work each term in once where it reads naturally, outside the fixed H1 and H2s. For example: s2 Canada card body ('a Canada destination wedding in Banff or Lake Louise'), the s3 '### Marry legally in Hawaii' intro or FAQ 3 ('a Hawaii destination wedding'), the s2 US card ('a California destination wedding in Napa or Big Sur'), and the s3 intro ('the destination wedding locations in the USA couples ask about most')."
+      },
+      {
+        "id": "SEO-02",
+        "severity": "major",
+        "location": "payload.sections[b16-spotlight|s2-places|s3-compare|s8-ways-to-plan] H3 headings",
+        "issue": "No heading on the page carries the primary keyword or any secondary keyword. D9 fixes only the H1 and H2s, so the 15 H3s are free, and none is used. 'The United States', 'Canada' and 'Marry legally in Hawaii' are the natural places for keyword variants.",
+        "evidence": "H3s: 'Maui and the Big Island', 'Lake Louise and Banff', 'The United States', 'Canada', 'Marry legally in Hawaii', 'Every other state and province', 'Travel by passport', 'Seasons at a glance', among others. None contains 'destination wedding'.",
+        "suggested_fix": "Revise 2 or 3 H3s where it reads naturally, for example s2 '### Destination wedding locations in the USA', s2 '### A Canada destination wedding' and s3 '### Marry legally in Hawaii' (keep). Do not change the H1 or the H2s (D9)."
+      },
+      {
+        "id": "SEO-03",
+        "severity": "major",
+        "location": "payload.sections[s4-questions].links[1], payload.sections[s9-articles].links[0]; whole envelope",
+        "issue": "Cannibalisation is not addressed. The copy never mentions doc section 11's WW-304 or WW-282, and it records no plan for them. Two linked posts target the hub's own terms: '/how-to-plan-a-destination-wedding-in-the-usa-if-youre-overseas' (slug contains the primary keyword) and '/10-captivating-venues-in-the-usa-to-consider-for-your-destination-wedding' (secondaries 'destination wedding locations usa' and 'best destination wedding locations in the us'). The s9 anchor '10 venues in the USA to consider for your destination wedding' passes the hub's own keyword signal to the post. I could not open the doc to confirm which URLs WW-304 and WW-282 are (see SEO-06).",
+        "evidence": "grep for 'WW-' and 'cannibal' in 30-page-copy.json: 0 matches. The brief lists the venues post under should_receive_links_from, which signals overlap.",
+        "suggested_fix": "Map WW-304 and WW-282 to their URLs from doc section 11 and record the plan in the copy's assumptions and in NOTES.md: the hub owns 'destination wedding in the usa' and the location terms, and the posts link up to the hub with a keyword anchor. Change the s9 anchor to a non-competing title, for example 'Ten US venues worth a look'. Keep the s4 anchor, which already avoids the primary keyword."
+      },
+      {
+        "id": "SEO-04",
+        "severity": "minor",
+        "location": "payload.meta.description",
+        "issue": "Meta description is 157 characters, over the brief limit of 155. The copywriter's self_qa (check 9) marks it as a pass against a 140 to 160 range, which ignores the brief.",
+        "evidence": "Brief meta_description_draft: '155 characters or fewer, no price promise'. Measured length 157.",
+        "suggested_fix": "Trim at least 2 characters, for example replace 'from Maui and Napa to NYC and Banff' with 'from Maui and Napa to NYC or Banff', or drop 'and' before 'travel rules' (re-measure)."
+      },
+      {
+        "id": "SEO-05",
+        "severity": "minor",
+        "location": "payload.meta.title",
+        "issue": "Title (60 characters, within the limit) drops 'Hawaii', which the brief title_draft carries and which is a secondary keyword with its own demand.",
+        "evidence": "Copy: 'Destination Wedding in the USA or Canada | Wedded Wonderland'. Brief: 'Destination Wedding USA | Hawaii, Canada | Wedded Wonderland'.",
+        "suggested_fix": "Keep the exact primary phrase and add Hawaii within 60 characters, or use the brief draft (60 characters). Record the choice in assumptions."
+      },
+      {
+        "id": "SEO-06",
+        "severity": "major",
+        "location": "payload.faq[0..9].q",
+        "issue": "FAQ wording could not be checked against the People Also Ask phrasing in doc section 7. The Google Drive read tool was not available to this reviewer, so checklist item 5 cannot be passed on evidence. Two questions are known to depart from the doc: FAQ 8 was reworded ('Why is a Hawaii wedding not usually all-inclusive?', which drops the Caribbean comparison under D6). FAQ 6 ('Do AU and UK guests need travel authorisation for the US or Canada?') uses internal market shorthand, 'AU', that searchers do not type.",
+        "evidence": "Copy assumptions: 'FAQ 8 was reworded ...'. s10 change_reason: 'the all-inclusive question drops the Caribbean comparison from its wording'.",
+        "suggested_fix": "Project Lead or SEO: compare all 10 questions word for word with doc section 7 PAA. Restore PAA wording wherever D6 allows. Spell out 'Australian and UK' in FAQ 6. Record each deviation and its reason."
+      },
+      {
+        "id": "SEO-07",
+        "severity": "minor",
+        "location": "payload.sections[s3-compare].links (outbound)",
+        "issue": "The anchors 'GOV.UK' and 'US State Department' are each used twice for different destination URLs. That breaks linking.md rule 6 (descriptive, varied anchors).",
+        "evidence": "'US State Department' -> .../Canada.html and .../visa-waiver-program.html. 'GOV.UK' -> /marriage-abroad/y/usa and /foreign-travel-advice/canada/entry-requirements.",
+        "suggested_fix": "Make each anchor describe its target, for example 'US State Department advice on Canada', 'Visa Waiver Program rules', 'GOV.UK marriage abroad: USA' and 'GOV.UK Canada entry requirements'."
+      },
+      {
+        "id": "SEO-08",
+        "severity": "minor",
+        "location": "payload.sections[s4-questions|s5-real-weddings|s6-celebrations|s9-articles|s12-regions].links",
+        "issue": "Linking.md rule 9: 22 internal blog, guide, quiz and hub URLs are linked as live, but only the s5 cards carry a live-check note. Under D7 no 404 child page is linked (pass), and the three '[URL to confirm]' placeholders are flagged. Existence of /destination-wedding-guide, /destination-wedding-quiz, /travel, the /trending/ posts and the sibling hubs is not recorded as confirmed.",
+        "evidence": "s5 CMS note: 'Live-check all six URLs before publishing'. s4, s6, s9 and s12 have no equivalent note.",
+        "suggested_fix": "Mark each of these URLs confirmed (doc section 11 or a crawl) or unconfirmed, and list the unconfirmed ones in NOTES.md for the Technical SEO live check."
+      },
+      {
+        "id": "SEO-09",
+        "severity": "minor",
+        "location": "payload.sections[s9-articles].links[3]",
+        "issue": "The secondary keyword 'las vegas wedding' appears only as the anchor of a link to the blog post '/how-to-pull-off-a-las-vegas-wedding', which sends the term to the post. The hub's own Las Vegas copy (s2, s3 table) never uses the phrase.",
+        "evidence": "s2: 'Las Vegas suits a quick, glamorous ceremony'. s3 row: 'Las Vegas | City and chapels'.",
+        "suggested_fix": "Use 'a Las Vegas wedding' once in the s2 US card line, for example 'A Las Vegas wedding suits a quick, glamorous ceremony'."
+      }
+    ]
+  },
+  "assumptions": [
+    "Research doc 1R9BhIct1aQju8jsIjKzgXJpjtyd4skE3cuc9Qln5iUc was not read: the Google Drive read tool was not available to this reviewer. The section 7 PAA comparison and the WW-304/WW-282 URL mapping are unverified (SEO-03, SEO-06).",
+    "Keyword counts were scripted over all body_md and FAQ text, case-insensitive, exact phrase."
+  ],
+  "open_questions": [
+    {
+      "to": "project-lead",
+      "question": "Which URLs are WW-304 and WW-282 in doc section 11, and is the hub or the post meant to own 'destination wedding in the usa'?",
+      "blocking": false
+    },
+    {
+      "to": "project-lead",
+      "question": "Please check the 10 FAQ questions against doc section 7 PAA wording, or give the reviewer doc access.",
+      "blocking": false
+    }
+  ],
+  "confidence": 0.7,
+  "timestamp": "2026-10-29T08:00:00Z",
+  "self_qa": {
+    "checklist": "studio/checklists/seo-strategist.md",
+    "results": [
+      {
+        "check": "Every checklist item applicable to copy assessed with evidence",
+        "pass": true,
+        "detail": "Items 3,4,5,7,8,9 plus keyword placement and linking.md rules 6 to 9; items 1,2,6,10,11 N/A to copy."
+      },
+      {
+        "check": "Research doc sections 7 and 11 read",
+        "pass": false,
+        "detail": "Google Drive read tool unavailable; recorded as SEO-06 and in assumptions."
+      }
+    ]
+  }
+}
