@@ -158,7 +158,7 @@ The pear, or teardrop, takes its brilliance from the round and its drama from th
 
 The marquise, also called the navette (Old French for "little ship"), is an elongated brilliant with two pointed ends. <!-- fact_28 --> A classic marquise is about twice as long as it is wide, and stones submitted to GIA most often fall between 1.6:1 and 2.2:1. <!-- fact_28 -->
 
-Legend has it Louis XV commissioned the cut in the 1740s and named it for the Marquise de Pompadour. <!-- fact_31 --> It was popular again in the Edwardian era and from the 1970s to the 1990s, and is attracting renewed interest. <!-- fact_31 -->
+Legend has it Louis XV commissioned the cut in the 1740s and named it for the Marquise de Pompadour. <!-- fact_31 --> It was popular in the Edwardian era and again from the 1970s to the 1990s, and is attracting renewed interest. <!-- fact_31 -->
 
 Face-up, a marquise often looks larger than a round diamond of the same carat weight. <!-- fact_29 -->
 

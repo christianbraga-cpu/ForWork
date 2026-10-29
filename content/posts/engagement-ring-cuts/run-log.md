@@ -9,3 +9,4 @@
 23:59 07b icp-panel-chair revise (enquire 1.6, dreaming-stage); 0 must-fix, 1 should-fix, 7 consider
 00:01 08 luxury-writer complete final ~2,560 words, 0 VERIFY; 08b+09+10 launched
 00:02 09 cro complete; 3 copy changes applied
+00:02 08b editor 1 blocking one-word fix (marquise 'again'), applied; 10 distribution complete
