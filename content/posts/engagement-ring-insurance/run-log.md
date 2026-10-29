@@ -8,3 +8,4 @@
 22:55 07 icp-reader search_visitor, planner_couple, uhnw, sceptic complete (5/5); no must-fix; waiting on editor
 22:56 06 editor pass_with_edits 4.14; 13 edits applied by orchestrator -> 05-draft-r2.md; TMD VERIFY stays
 22:56 06 orchestrator reverted ring-budget anchor to writer's wording (banned word 'budget')
+22:58 07b icp-panel-chair revise; weighted enquire 1.7; 2 must_fix, 2 should_fix; final pass launched
