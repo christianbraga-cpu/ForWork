@@ -8,3 +8,4 @@
 00:34 07 icp-reader uhnw, sceptic, planner_couple complete (5/5); waiting on editor
 00:35 06 editor pass_with_edits 4.43; 8 edits applied by orchestrator -> 05-draft-r2.md; also removed unsourced 'We sell neither.'
 00:35 07 envelope fields added to 2 reader files; all valid
+00:37 07b icp-panel-chair revise; weighted enquire 1.7; 1 must_fix, 4 should_fix; final pass launched
