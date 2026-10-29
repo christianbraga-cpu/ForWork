@@ -1,0 +1,355 @@
+{
+  "agent": "cms-publisher",
+  "task_id": "engagement-ring-cuts",
+  "stage": "11",
+  "status": "complete",
+  "round": 1,
+  "inputs_used": [
+    "CLAUDE.md",
+    "content-system/cms/field-map.md",
+    "content-system/schemas/11-publish-package.schema.json",
+    "content/posts/engagement-ring-cuts/00-input.json",
+    "content/posts/engagement-ring-cuts/01-brief.json",
+    "content/posts/engagement-ring-cuts/02-seo.json",
+    "content/posts/engagement-ring-cuts/04-images.json",
+    "content/posts/engagement-ring-cuts/08-final.md",
+    "content/posts/engagement-ring-cuts/09-cro.json",
+    "content/posts/engagement-ring-cuts/10-distribution.json",
+    "content/posts/diamond-buying-guide/11-publish-package.json",
+    "content/posts/diamond-buying-guide/11-body.md",
+    "content-system/seo/link-map.csv"
+  ],
+  "self_qa": {
+    "confidence": 0.9,
+    "checks": [
+      {
+        "check": "primary_category equals categories[0] (Style Advice, fixed by person)",
+        "pass": true
+      },
+      {
+        "check": "Front matter and all <!-- fact_xx --> markers removed; image-slot comments kept",
+        "pass": true,
+        "note": "0 VERIFY markers, 10 image-slot comments in 11-body.md"
+      },
+      {
+        "check": "Primary CTA block from 09-cro.json placed at the CTA marker with UTMs",
+        "pass": true
+      },
+      {
+        "check": "Exactly 4 key takeaways and all FAQs extracted; FAQPage carries all FAQs",
+        "pass": true,
+        "note": "6 FAQs; closing Advisor line after the last FAQ kept in body, not in the FAQ answer"
+      },
+      {
+        "check": "verify_items none; needs_signoff empty; no prices printed",
+        "pass": true
+      },
+      {
+        "check": "All 10 image slots listed, all needed",
+        "pass": true
+      },
+      {
+        "check": "Status draft; nothing uploaded, published or scheduled",
+        "pass": true
+      },
+      {
+        "check": "No em dashes; Australian English",
+        "pass": true
+      }
+    ]
+  },
+  "open_questions": [
+    {
+      "to": "orchestrator",
+      "question": "CMS upload not attempted: no browser tool in this session and content-system/cms/field-map.md is not CONFIRMED ('NOT YET MAPPED'). Run /wedded-cms-discovery locally, then /wedded-blog resume=engagement-ring-cuts.",
+      "blocking": true
+    },
+    {
+      "to": "person",
+      "question": "Confirm the byline: no author named in any input; package uses \"Wedded Wonderland\" (organisation), unconfirmed.",
+      "blocking": false
+    }
+  ],
+  "assumptions": [
+    "Primary category, URL, content type (Guide) and cluster fixed by the person (00-input.json); brief's content_type 'comparison' overridden.",
+    "Excerpt is the meta description.",
+    "Categories and tags from 01-brief.json; cluster tag added as in the reference package.",
+    "08-final.md already carries the 09-cro.json copy changes (marker moved, secondary UTM, magazine line); only the marker was replaced.",
+    "FAQ schema answers have markdown links stripped to plain text (none present)."
+  ],
+  "verify_items": [],
+  "tools_used": [
+    "Bash (python3 -I)"
+  ],
+  "next_agent": [
+    "orchestrator"
+  ],
+  "payload": {
+    "title": "8 Engagement Ring Cuts and the Hands They Flatter",
+    "slug": "engagement-ring-cuts",
+    "url_path": "/style-advice/engagement-ring-cuts",
+    "content_type": "Guide",
+    "cluster": "Rings and Jewellery",
+    "categories": [
+      "Style Advice",
+      "Rings and Jewellery",
+      "Proposals & Rings"
+    ],
+    "primary_category": "Style Advice",
+    "tags": [
+      "engagement rings",
+      "engagement ring cuts",
+      "diamond shapes",
+      "oval",
+      "emerald cut",
+      "pear",
+      "marquise",
+      "proposal",
+      "Rings and Jewellery (cluster)"
+    ],
+    "excerpt": "Round, oval, emerald, pear and more: what each engagement ring cut does on the hand, what GIA says, and a simple try-on routine before you choose.",
+    "key_takeaways": [
+      "GIA says round brilliant and princess cuts suit almost any finger length and shape.",
+      "Oval, pear, marquise and rectangular shapes set north-south can lengthen the look of the finger, though some wearers prefer a more compact stone.",
+      "Step cuts such as emerald and Asscher trade sparkle for broad flashes of light and show inclusions and colour more readily than brilliant cuts.",
+      "Try every shape with the wedding band you plan to wear, and see elongated stones in several lights before you decide."
+    ],
+    "body_markdown_file": "content/posts/engagement-ring-cuts/11-body.md",
+    "faq": [
+      {
+        "q": "What is the most suitable shape for an engagement ring?",
+        "a": "There is no single answer. GIA says round brilliant and princess cuts suit almost any finger length and shape, which makes them the safest starting points. Beyond that, decide whether the wearer wants a longer line or a compact one."
+      },
+      {
+        "q": "What is the difference between a diamond cut and a diamond shape?",
+        "a": "Shape is the outline of the stone seen from above. Cut style is how the facets are arranged and angled, which changes the sparkle and overall look."
+      },
+      {
+        "q": "Which engagement ring cut suits shorter fingers?",
+        "a": "Elongated shapes set north-south, such as an oval or pear, can lengthen the look of the finger. Some wearers prefer a ring in harmony with shorter fingers instead, and GIA's example is a round brilliant or princess with small side stones on a narrow band."
+      },
+      {
+        "q": "Which diamond shape looks the biggest on the hand?",
+        "a": "GIA says a marquise often looks larger face-up than a round diamond of the same carat weight. Cushions, by contrast, can look slightly smaller face-up because of their deeper proportions. This is about appearance, not value."
+      },
+      {
+        "q": "Is an Asscher cut the same as an emerald cut?",
+        "a": "No, though they are related. Both are step cuts with a hall of mirrors effect, but the Asscher is square, with a high crown, a small table and often an \"X\" pattern face-up, while the emerald is rectangular."
+      },
+      {
+        "q": "Which engagement ring cut sparkles the most?",
+        "a": "GIA says the round brilliant has the most brightness of all diamond cuts. For a rectangular outline with sparkle, the radiant uses brilliant-style faceting."
+      }
+    ],
+    "images": [
+      {
+        "slot_id": "featured",
+        "file": "content/posts/engagement-ring-cuts/images/engagement-ring-cuts-three-shapes-hands-hero.webp",
+        "role": "featured",
+        "status": "needed"
+      },
+      {
+        "slot_id": "round_brilliant",
+        "file": "content/posts/engagement-ring-cuts/images/engagement-ring-cuts-round-brilliant-solitaire-hand.webp",
+        "role": "inline",
+        "status": "needed"
+      },
+      {
+        "slot_id": "oval",
+        "file": "content/posts/engagement-ring-cuts/images/engagement-ring-cuts-oval-north-south-hand.webp",
+        "role": "inline",
+        "status": "needed"
+      },
+      {
+        "slot_id": "emerald",
+        "file": "content/posts/engagement-ring-cuts/images/engagement-ring-cuts-emerald-cut-step-facets-hand.webp",
+        "role": "inline",
+        "status": "needed"
+      },
+      {
+        "slot_id": "cushion",
+        "file": "content/posts/engagement-ring-cuts/images/engagement-ring-cuts-cushion-cut-soft-corners-hand.webp",
+        "role": "inline",
+        "status": "needed"
+      },
+      {
+        "slot_id": "princess",
+        "file": "content/posts/engagement-ring-cuts/images/engagement-ring-cuts-princess-cut-square-hand.webp",
+        "role": "inline",
+        "status": "needed"
+      },
+      {
+        "slot_id": "pear",
+        "file": "content/posts/engagement-ring-cuts/images/engagement-ring-cuts-pear-shape-teardrop-hand.webp",
+        "role": "inline",
+        "status": "needed"
+      },
+      {
+        "slot_id": "marquise",
+        "file": "content/posts/engagement-ring-cuts/images/engagement-ring-cuts-marquise-boat-shape-hand.webp",
+        "role": "inline",
+        "status": "needed"
+      },
+      {
+        "slot_id": "radiant",
+        "file": "content/posts/engagement-ring-cuts/images/engagement-ring-cuts-radiant-cut-trimmed-corners-hand.webp",
+        "role": "inline",
+        "status": "needed"
+      },
+      {
+        "slot_id": "same_carat_comparison",
+        "file": "content/posts/engagement-ring-cuts/images/engagement-ring-cuts-same-size-shapes-comparison-hand.webp",
+        "role": "inline",
+        "status": "needed"
+      }
+    ],
+    "cta": {
+      "text": "Browse wedding destinations by region",
+      "subtext": "Look around at your own pace, no enquiry needed",
+      "link": "/destinations?utm_source=blog&utm_medium=content&utm_campaign=engagement-ring-cuts&utm_content=primary",
+      "placement": "At the former <!-- CTA: primary --> marker in 'From the ring to the destination', directly after 'If you are already picturing the ring in a particular light, start with the place.' and before the Wedded Concierge paragraph, marked <!-- CTA BLOCK: primary --> in 11-body.md."
+    },
+    "secondary_cta": {
+      "text": "Speak with a Wedded Advisor",
+      "link": "/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=engagement-ring-cuts&utm_content=secondary",
+      "placement": "Already in the copy: inline 'speak with a Wedded Advisor' link closing the Concierge paragraph of 'From the ring to the destination'. No separate block added."
+    },
+    "lead_magnet": {
+      "name": "Wedded Wonderland digital magazine (free)",
+      "link": "/magazine?utm_source=blog&utm_medium=content&utm_campaign=engagement-ring-cuts&utm_content=magnet",
+      "placement": "Already in the copy: one line at the end of 'The wedding band beside it'."
+    },
+    "tracking_links": [
+      "/destinations?utm_source=blog&utm_medium=content&utm_campaign=engagement-ring-cuts&utm_content=primary",
+      "/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=engagement-ring-cuts&utm_content=secondary",
+      "/magazine?utm_source=blog&utm_medium=content&utm_campaign=engagement-ring-cuts&utm_content=magnet"
+    ],
+    "seo": {
+      "meta_title": "Engagement Ring Cuts: 8 Diamond Shapes on the Hand",
+      "meta_description": "Round, oval, emerald, pear and more: what each engagement ring cut does on the hand, what GIA says, and a simple try-on routine before you choose.",
+      "focus_keyword": "engagement ring cuts",
+      "canonical": "https://weddedwonderland.com/style-advice/engagement-ring-cuts",
+      "og_image_slot": "featured"
+    },
+    "schema_jsonld": {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Article",
+          "@id": "https://weddedwonderland.com/style-advice/engagement-ring-cuts#article",
+          "headline": "8 Engagement Ring Cuts and the Hands They Flatter",
+          "description": "Round, oval, emerald, pear and more: what each engagement ring cut does on the hand, what GIA says, and a simple try-on routine before you choose.",
+          "author": {
+            "@type": "Organization",
+            "name": "Wedded Wonderland",
+            "url": "https://weddedwonderland.com/"
+          },
+          "publisher": {
+            "@type": "Organization",
+            "name": "Wedded Wonderland",
+            "url": "https://weddedwonderland.com/"
+          },
+          "datePublished": "",
+          "mainEntityOfPage": "https://weddedwonderland.com/style-advice/engagement-ring-cuts",
+          "image": "",
+          "inLanguage": "en-AU"
+        },
+        {
+          "@type": "BreadcrumbList",
+          "@id": "https://weddedwonderland.com/style-advice/engagement-ring-cuts#breadcrumb",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Home",
+              "item": "https://weddedwonderland.com/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Style Advice",
+              "item": "https://weddedwonderland.com/style-advice"
+            },
+            {
+              "@type": "ListItem",
+              "position": 3,
+              "name": "8 Engagement Ring Cuts and the Hands They Flatter",
+              "item": "https://weddedwonderland.com/style-advice/engagement-ring-cuts"
+            }
+          ]
+        },
+        {
+          "@type": "FAQPage",
+          "@id": "https://weddedwonderland.com/style-advice/engagement-ring-cuts#faq",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "What is the most suitable shape for an engagement ring?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "There is no single answer. GIA says round brilliant and princess cuts suit almost any finger length and shape, which makes them the safest starting points. Beyond that, decide whether the wearer wants a longer line or a compact one."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "What is the difference between a diamond cut and a diamond shape?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Shape is the outline of the stone seen from above. Cut style is how the facets are arranged and angled, which changes the sparkle and overall look."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Which engagement ring cut suits shorter fingers?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Elongated shapes set north-south, such as an oval or pear, can lengthen the look of the finger. Some wearers prefer a ring in harmony with shorter fingers instead, and GIA's example is a round brilliant or princess with small side stones on a narrow band."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Which diamond shape looks the biggest on the hand?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "GIA says a marquise often looks larger face-up than a round diamond of the same carat weight. Cushions, by contrast, can look slightly smaller face-up because of their deeper proportions. This is about appearance, not value."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Is an Asscher cut the same as an emerald cut?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "No, though they are related. Both are step cuts with a hall of mirrors effect, but the Asscher is square, with a high crown, a small table and often an \"X\" pattern face-up, while the emerald is rectangular."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Which engagement ring cut sparkles the most?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "GIA says the round brilliant has the most brightness of all diamond cuts. For a rectangular outline with sparkle, the radiant uses brilliant-style faceting."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    "author": "Wedded Wonderland",
+    "status": "draft",
+    "verify_items": [],
+    "needs_signoff": [],
+    "deferred_business_items": [
+      "Wedded Concierge fee model and commissions (only \"the fee is agreed in writing before any work begins\" is stated)",
+      "Deposits, refunds, contracts and how payments are protected (including AUD payments)",
+      "\"From AUD\" price ranges",
+      "Named Wedded Advisor, phone line or after-hours contact overseas",
+      "Real weddings with budgets; scale and privacy for large weddings",
+      "Wedded Privileges explanation"
+    ],
+    "person_questions": [
+      "Confirm the byline: no author named in any input; package uses \"Wedded Wonderland\" (organisation), unconfirmed."
+    ],
+    "last_updated_note": "Set the CMS last-updated date at publish, not in body copy.",
+    "draft_note": "DRAFT. Do not publish until checked:\n\n1. [[VERIFY]] items: none (no markers in the body or FAQ).\n\n2. Nic sign-off on prices: none (no prices printed).\n\n3. Image slots needed (10, none approved yet; alt and caption to add when approved). AI images only as illustrative close-ups of a generic cut on anonymous, diverse hands (vary skin tones light to deep and finger lengths; never framed as fixing a hand), labelled \"Illustrative image\", and only if the person approves. No carat weights, grades or prices stated in any image or caption.\n   - featured (needed, licensed photography preferred; AI only if the person explicitly approves, labelled \"Illustrative image\")\n   - round_brilliant (needed, AI illustrative close-up on an anonymous hand only if approved, labelled \"Illustrative image\"; licensed photo preferred)\n   - oval (needed, AI illustrative close-up on an anonymous hand only if approved, labelled \"Illustrative image\"; licensed photo preferred)\n   - emerald (needed, AI illustrative close-up on an anonymous hand only if approved, labelled \"Illustrative image\"; licensed photo preferred)\n   - cushion (needed, AI illustrative close-up on an anonymous hand only if approved, labelled \"Illustrative image\"; licensed photo preferred)\n   - princess (needed, AI illustrative close-up on an anonymous hand only if approved, labelled \"Illustrative image\"; licensed photo preferred)\n   - pear (needed, AI illustrative close-up on an anonymous hand only if approved, labelled \"Illustrative image\"; licensed photo preferred)\n   - marquise (needed, AI illustrative close-up on an anonymous hand only if approved, labelled \"Illustrative image\"; licensed photo preferred)\n   - radiant (needed, AI illustrative close-up on an anonymous hand only if approved, labelled \"Illustrative image\"; licensed photo preferred)\n   - same_carat_comparison (needed, optional; best as a real licensed photo series of one consenting hand model; AI only if approved, labelled \"Illustrative image. Shapes shown at similar visual size for comparison only.\"; Canva labels in own wording; no weights or measurements)\n\n4. Internal link dependencies: publish /style-advice/diamond-buying-guide (still draft in the link map; linked from the intro and 'Cut or shape?'), /style-advice/engagement-ring-styles ('The wedding band beside it') and /style-advice/celebrity-engagement-rings ('Engagement ring cuts compared') first.\n\n5. Deferred business items (6, person's decision, not in this draft):\n   - Wedded Concierge fee model and commissions (only \"the fee is agreed in writing before any work begins\" is stated)\n   - Deposits, refunds, contracts and how payments are protected (including AUD payments)\n   - \"From AUD\" price ranges\n   - Named Wedded Advisor, phone line or after-hours contact overseas\n   - Real weddings with budgets; scale and privacy for large weddings\n   - Wedded Privileges explanation\n\n6. Questions for the person:\n   - Confirm the byline: no author named in any input; package uses \"Wedded Wonderland\" (organisation), unconfirmed.\n\n7. Last-updated date: set the CMS last-updated date field at publish (not in body copy)."
+  }
+}

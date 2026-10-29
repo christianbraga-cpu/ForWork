@@ -10,3 +10,4 @@
 00:01 08 luxury-writer complete final ~2,560 words, 0 VERIFY; 08b+09+10 launched
 00:02 09 cro complete; 3 copy changes applied
 00:02 08b editor 1 blocking one-word fix (marquise 'again'), applied; 10 distribution complete
+00:04 11 package built; 13 run report, backlinks, link map, calendar, Word file. RUN COMPLETE
