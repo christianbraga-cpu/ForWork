@@ -5,3 +5,4 @@
 23:35 02 seo-researcher complete; live old page is /...-in-the-world (US #4 old wedding traditions); de-bunked AU #80; redirect both; report.md written by orchestrator (agent write refused)
 23:36 03 planner-sme batch A complete 20 facts, 14 VERIFY (WebFetch blocked; Apify only); top-up batch launched for key origins
 23:37 03 planner-sme batch C (destinations) complete 14 facts, 11 VERIFY; destinations top-up launched
+23:37 03 planner-sme batch B complete 24 facts (confidence 0.78); waiting on 2 top-ups
