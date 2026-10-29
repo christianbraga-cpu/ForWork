@@ -37,8 +37,8 @@
 | G8 CMS | Not run | | No browser connection |
 
 ## Before you publish: human checks
-### [[VERIFY]] items (1)
-- Australian Consumer Law: confirm on accc.gov.au and link that page in "What Australian consumer law expects"
+### [[VERIFY]] items
+- None. The ACCC page is now linked (resolved 29 Oct 2026, from the lab-grown run's live read)
 
 ### Also before publishing
 - ABF duty-free allowance (AUD900, "as at October 2026"): re-check on abf.gov.au at publish
@@ -80,3 +80,10 @@
 
 ## Distribution assets
 - See `10-distribution.json`: 3 Pinterest pins, 8-slide carousel, newsletter section
+
+## Update 29 Oct 2026 (approved)
+- Lab-grown section: GIA's confirmed format added ("Premium" or "Standard" since 1 October 2025, "Laboratory-Grown" girdle inscription, earlier reports remain valid) with a link to /style-advice/lab-grown-diamonds; facts copied as fact_43 to fact_45
+- ACCC sentence reworded to the ACCC page and linked (fact_46); VERIFY count now 0
+- Shapes heading renamed "How shape changes the 4Cs" and linked to /style-advice/engagement-ring-cuts
+- "lab grown vs natural diamond" removed from this guide's secondary keywords (owned by the lab-grown post)
+- Publish the ring cuts and lab-grown posts with or before this guide (both now linked)

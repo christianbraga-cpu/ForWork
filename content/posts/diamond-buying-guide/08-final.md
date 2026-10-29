@@ -99,11 +99,11 @@ GIA describes 1.00, 1.50 and 2.00 carats as "magic sizes", because buyers find t
 
 If a round number matters to you, choose it knowingly; if not, ask to see stones just under each magic size too.
 
-## Diamond shapes and how each changes the 4Cs
+## How shape changes the 4Cs
 
 <!-- IMAGE SLOT shape: Grid of nine loose diamond shapes, face-up from above in a consistent scale and lighting: round, oval, cushion, emerald, pear, princess, radiant, marquise, Asscher, each with a small plain label. Option: a second small detail showing the bow-tie shadow in an oval or pear. Neutral background, soft diffused daylight. No logos; never copy GIA or IGI diagrams. If AI, label "Illustrative image" and check step-cut facet patterns. Landscape 3:2. -->
 
-The main shapes you will be shown are round, oval, cushion, emerald, pear, princess, radiant, marquise and Asscher. For the overall look of each and who it tends to suit, see our guide to [engagement ring styles and who each one suits](/style-advice/engagement-ring-styles). Here, the question is narrower: how shape changes the way you read the 4Cs.
+The main shapes you will be shown are round, oval, cushion, emerald, pear, princess, radiant, marquise and Asscher. For the overall look of each and who it tends to suit, see our guide to [engagement ring styles and who each one suits](/style-advice/engagement-ring-styles). Here, the question is narrower: how shape changes the way you read the 4Cs. For how each shape looks on the hand, see our guide to [engagement ring cuts and the hands they flatter](/style-advice/engagement-ring-cuts).
 
 The first difference is cut grading. Only round brilliants receive a GIA cut grade; every other shape is a fancy shape judged without one <!-- fact_03 -->. The second is proportion. Elongated shapes such as marquise, oval and pear have a north-south line that can make the finger look longer <!-- fact_16 -->.
 
@@ -155,13 +155,13 @@ The choice is personal. Neither is automatically the more ethical option, and th
 
 ### How labs report and disclose origin
 
-Both GIA and IGI issue reports for laboratory-grown diamonds, and both inscribe origin on the stone as described above <!-- fact_21 --> <!-- fact_22 -->. Do not assume a lab-grown report reads like a natural one; check the lab's own site for how it currently reports lab-grown stones.
+Both GIA and IGI issue reports for laboratory-grown diamonds, and both inscribe origin on the stone as described above <!-- fact_21 --> <!-- fact_22 -->. Since 1 October 2025, GIA describes colourless to near-colourless lab-grown stones as "Premium" or "Standard" rather than on the colour and clarity scales it uses for natural diamonds, and inscribes the girdle "Laboratory-Grown" with the assessment number <!-- fact_44 --> <!-- fact_45 -->. GIA lab-grown reports issued under the earlier format remain valid <!-- fact_43 -->. For the full comparison, see [are lab-grown diamonds worth it?](/style-advice/lab-grown-diamonds).
 
 The disclosure question is not new. In 2019, FTC staff in the US sent warning letters to companies whose advertising did not make clear that their diamonds were not mined <!-- fact_30 -->.
 
 ### What Australian consumer law expects
 
-In general terms, Australian Consumer Law prohibits misleading or deceptive conduct, which includes how a product is described to you <!-- fact_31 --> [[VERIFY: confirm on accc.gov.au and link that page here (fact_31)]]. As at October 2026, we found no Australian guidance written specifically for lab-grown diamonds <!-- fact_31 -->.
+The ACCC says any claim a business makes about its products, including in advertising, online and in what staff tell you, must be [accurate, truthful and based on reasonable grounds](https://www.accc.gov.au/consumers/advertising-and-promotions/false-or-misleading-claims) <!-- fact_46 -->. As at October 2026, we found no Australian guidance written specifically for lab-grown diamonds <!-- fact_31 -->.
 
 ## Diamond fluorescence: when it matters
 

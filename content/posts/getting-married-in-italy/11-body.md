@@ -157,7 +157,7 @@ A civil wedding works differently: where both partners are foreign and neither l
 
 ### Marry legally in Australia, celebrate in Italy
 
-You can also sign the legal papers at home. You give a Notice of Intended Marriage to an authorised celebrant at least one month and no more than 18 months before, and it can be completed from overseas; an Australian celebrant cannot marry you abroad. The trade-off is fewer steps in Italy, but the legal wedding happens at home before an authorised celebrant and two witnesses, and the day in Italy is symbolic. Weigh [whether to marry legally abroad or hold a symbolic ceremony](https://weddedwonderland.com/expert-advice/should-you-marry-legally-abroad-or-have-a-symbolic-ceremony) before you commit.
+You can also sign the legal papers at home. You give a Notice of Intended Marriage to an authorised celebrant at least one month and no more than 18 months before; an Australian celebrant cannot marry you abroad. The trade-off is fewer steps in Italy, but the legal wedding happens at home before an authorised celebrant and two witnesses, and the day in Italy is symbolic. Weigh [whether to marry legally abroad or hold a symbolic ceremony](https://weddedwonderland.com/expert-advice/should-you-marry-legally-abroad-or-have-a-symbolic-ceremony) before you commit.
 
 ## Is an Italian marriage recognised in Australia?
 

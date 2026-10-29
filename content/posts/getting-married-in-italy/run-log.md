@@ -15,3 +15,4 @@
 00:27 09 cro-specialist complete; close CTA reworded for planning stage (applied); magazine line skipped (optional)
 00:28 10 distribution complete 3 pins, 8-slide carousel, newsletter
 00:30 11 cms-publisher package built, not uploaded (no Chrome); 13 orchestrator run report, booking checklist, backlinks, link map, calendar, Word file. RUN COMPLETE
+23:16 update (approved): removed 'and it can be completed from overseas' (NOIM line); docx rebuilt

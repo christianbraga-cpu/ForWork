@@ -12,3 +12,4 @@
 23:14 09 cro complete; 4 copy changes applied
 23:15 08b editor pass (4.43), 0 blocking; travel image slot inserted
 23:17 11 package built; 13 run report, backlinks, link map, calendar, Word file. RUN COMPLETE
+23:16 update (approved): lab-grown section updated with GIA Premium/Standard format + link to lab-grown post; ACCC linked, VERIFY 0; shapes H2 renamed and linked to ring cuts; secondary keyword moved; docx rebuilt
