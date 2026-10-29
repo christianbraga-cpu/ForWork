@@ -10,3 +10,4 @@
 23:47 03 origins top-up complete 6 facts (RCT, Britannica); merged 5 packs: 74 facts, 50 verify items (many superseded); writer launched
 23:52 05 luxury-writer complete ~4,180 words; 1 VERIFY (handfast definition); 10 image slots; first draft sent
 23:53 07 icp-reader search_visitor complete
+23:53 07 icp-reader planner_couple, uhnw complete
