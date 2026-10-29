@@ -61,3 +61,15 @@ same way. "Last checked October 2026" next to confirmed lines.
 ## D13. Real weddings
 The doc lists 10 US and Canada real weddings, so section 5 shows 6 cards (first names only, no
 couple surnames). URLs are listed in NOTES.md for a live check before publishing.
+
+## D14. Revision calls (fast mode, one round)
+- Marketplace card (s8): hidden until 3 or more US or Canada listings exist (doc open question 6;
+  fact and brand blockers). s8 keeps Concierge and the Studio guest website. The user decides.
+- F049 (Hawaii pricing logic) rejected: its only source is a competitor (D10). FAQ 8 explains that
+  costs depend on what couples choose, without the competitor's claim.
+- "One contact": use the confirmed brand sentence wording (one Wedded Advisor who plans with you from
+  the first enquiry to the last dance). No other scope wording.
+- F050 "licence rules are set by each state and province": accepted as a low-risk general fact
+  (like Portugal D16), listed for a check. The table states it once in a note, not on every row.
+- Real-wedding counts dropped from s2 (F047 held); the 6 cards stay, URLs checked before publishing.
+- Hawaii witnesses: not mentioned (not on the official page).

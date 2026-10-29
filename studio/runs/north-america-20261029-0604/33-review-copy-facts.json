@@ -1,0 +1,612 @@
+{
+  "envelope_version": "1.0",
+  "run_id": "north-america-20261029-0604",
+  "stage": "review",
+  "from_agent": "fact-checker",
+  "to_agents": [
+    "project-lead",
+    "copywriter"
+  ],
+  "status": "changes_requested",
+  "revision": 1,
+  "inputs_consumed": [
+    {
+      "artifact": "studio/runs/north-america-20261029-0604/30-page-copy.json",
+      "from_agent": "copywriter",
+      "revision": 1
+    },
+    {
+      "artifact": "studio/runs/north-america-20261029-0604/facts.json",
+      "from_agent": "fact-checker"
+    },
+    {
+      "artifact": "studio/runs/north-america-20261029-0604/12-fact-audit.json",
+      "from_agent": "fact-checker"
+    },
+    {
+      "artifact": "studio/runs/north-america-20261029-0604/decisions.md",
+      "from_agent": "project-lead"
+    },
+    {
+      "artifact": "studio/checklists/fact-checker.md"
+    },
+    {
+      "artifact": "studio/config.json (source_of_truth_order)"
+    },
+    {
+      "artifact": "studio/schemas/envelope.schema.json"
+    },
+    {
+      "artifact": "studio/schemas/payloads/review.schema.json"
+    },
+    {
+      "artifact": "studio/schemas/payloads/fact_ledger.schema.json"
+    }
+  ],
+  "payload_type": "review",
+  "payload": {
+    "artifact": "studio/runs/north-america-20261029-0604/30-page-copy.json (revision 1)",
+    "lens": "fact-checker on copy",
+    "verdict": "changes_requested",
+    "scores": {
+      "blockers": 3,
+      "majors": 7,
+      "minors": 12,
+      "claims_checked": 34
+    },
+    "findings": [
+      {
+        "id": "FC-B1",
+        "severity": "blocker",
+        "location": "faq[1] 'Should you marry in the USA, in Canada or further abroad?'",
+        "issue": "States that Australian guests need travel authorisation before flying to the US and Canada. That is the held fact F038/F041 (unconfirmed, Project Lead sign-off) outside an APPLY AFTER SIGN-OFF pair. The same answer's UK half is fine (F037, F040).",
+        "evidence": "\"For guests from Australia or the UK, both countries are long-haul and need travel authorisation before flying, so allow more planning time.\"",
+        "fact_id": "F038",
+        "suggested_fix": "Split it: \"For guests from the UK, both countries are long-haul and need travel authorisation before flying (an ESTA or visa for the US, an eTA to fly into Canada). Guests from Australia face the same long-haul trip; [Travel by passport](#entry) shows what to check before booking.\" Or put the AU clause in its own F038, F041 pair, with a fallback that has no authorisation claim."
+      },
+      {
+        "id": "FC-B2",
+        "severity": "blocker",
+        "location": "faq[7] 'Why is a Hawaii wedding not usually all-inclusive?'",
+        "issue": "The market claim rests only on proposed F049, which comes from doc section 4 addition D. The only source behind that is the named competitor DestinationWeddings.com (D10). It is presented as certain ('Most Hawaii weddings...'), and the question itself asserts it. Under checklist item 7 a competitor cannot be the only source, and an unconfirmed fact cannot appear outside a pair. 'We explain each line before you commit' is also a service promise with no fact id (D3).",
+        "evidence": "\"Most Hawaii weddings are built at luxury hotels that price the ceremony, dinner and rooms separately, rather than sold as one all-inclusive package.\" / \"We explain each line before you commit.\"",
+        "fact_id": "F049",
+        "suggested_fix": "Reword the question so it makes no claim, and answer without a market claim. For example, Q: \"Is a Hawaii wedding all-inclusive?\" A: \"It can be planned either way. Some couples want one hotel to handle the ceremony, dinner and rooms; others prefer to choose each part separately. Share your guest count and style in the form, and your Wedded Advisor talks you through both routes.\" Keep F049 out of the copy."
+      },
+      {
+        "id": "FC-B3",
+        "severity": "blocker",
+        "location": "s8-ways-to-plan, Marketplace card",
+        "issue": "This is an invented business claim (D3). The copy says there are partner venues and suppliers, plural, in both the United States and Canada. The only evidence is the legacy module (F013): Waldorf Astoria (US) and Acamaya Weddings (Mexico, removed under D6). The copywriter's own open question says there is one US listing today, and there is no Canadian listing.",
+        "evidence": "\"Browse partner venues and suppliers in the United States and Canada, and send every enquiry through Wedded Concierge.\"",
+        "fact_id": "F013",
+        "suggested_fix": "Until the user confirms the route and its listings: \"Browse partner venues listed for North America, and send every enquiry through Wedded Concierge.\" Better still, hide the card (as the CMS note already allows) until 3 or more listings are confirmed. Never name Canada without a Canadian listing."
+      },
+      {
+        "id": "FC-M1",
+        "severity": "major",
+        "location": "faq[2] 'Where can I get married with just the two of us?'",
+        "issue": "The answer pairs the Hawaii legal facts with 'just the two of you', which implies a legal Hawaii ceremony needs no witnesses. The witness rule is F029 (unconfirmed, 'Do not state a witness requirement for Hawaii'), so the implication goes beyond the ledger.",
+        "evidence": "\"Hawaii is a strong choice for just the two of you: there is no residency rule, no waiting period once your licence is issued, and you both apply in person together.\"",
+        "fact_id": "F029",
+        "suggested_fix": "\"Hawaii suits a small ceremony: there is no residency rule and no waiting period once your licence is issued. You apply online, then appear together in person, and your Wedded Advisor confirms who else the ceremony needs, such as your licensed officiant.\""
+      },
+      {
+        "id": "FC-M2",
+        "severity": "major",
+        "location": "faq[3] 'Is a destination wedding legal in the US?'",
+        "issue": "This is a general US legal rule stated as fact ('legal when you hold a marriage licence from the state where you marry') with no confirmed fact behind it. Its fact_refs F030, F031 and F032 all read 'Not checked'. The rest of the answer (Hawaii F025/F026, UK F035) is fine.",
+        "evidence": "\"Yes, a wedding in the US is legal when you hold a marriage licence from the state where you marry and follow its rules. Each state sets its own.\"",
+        "fact_id": "F030",
+        "suggested_fix": "\"Yes, when you follow the licence rules of the state where you marry. Each state sets its own, and your Wedded Advisor checks them for your date (D11 wording).\" Then add proposed F050 to the ledger and cite it."
+      },
+      {
+        "id": "FC-M3",
+        "severity": "major",
+        "location": "s2-places, United States card",
+        "issue": "'Quick' implies a fast Nevada licence and no waiting period. Nevada rules are F030 (unconfirmed, blocked), and D11 allows no Las Vegas rule claims without a source. The sentence later says Nevada sets its own rules, which contradicts the speed promise.",
+        "evidence": "\"Las Vegas suits a quick, glamorous ceremony; Nevada sets its own licence rules, and your Wedded Advisor checks them before you book flights.\"",
+        "fact_id": "F030",
+        "suggested_fix": "\"Las Vegas suits a glamorous chapel or hotel ceremony; Nevada sets its own licence rules, and your Wedded Advisor checks them before you book flights.\""
+      },
+      {
+        "id": "FC-M4",
+        "severity": "major",
+        "location": "b16-spotlight (all sub-blocks)",
+        "issue": "The scenery is stated plainly, but it rests on proposed F048, which is research-doc tier from third-party listicles. Stronger sources exist (tourism board tier ranks above the research doc in source_of_truth_order). The claims are low risk and descriptive, with no prices, capacities or legal points, so this is not a blocker. F048 should still be checked against tourism board pages before publishing.",
+        "evidence": "\"On the Big Island, black sand beaches and lava fields meet the sea.\" / \"A grand hotel above a lake that freezes in winter\" / \"a second line follows the couple out of the ceremony, with a brass band and guests waving handkerchiefs\"",
+        "fact_id": "F048",
+        "suggested_fix": "No copy change needed if F048 is confirmed against gohawaii.com (Maui resort coasts, Big Island black sand), banfflakelouise.com or pc.gc.ca (Lake Louise freezing in winter), neworleans.com (second line) and explorecharleston.com (live oaks). Until then, list F048 as unconfirmed in NOTES.md."
+      },
+      {
+        "id": "FC-M5",
+        "severity": "major",
+        "location": "s7-how-it-works step 2; faq[9]",
+        "issue": "'Your one contact' is a service promise that goes beyond F021, which says the advisor 'plans with you from the first enquiry to the last dance', not that they are the only contact. brand-answers has no approved row for it (D3). It has no fact id.",
+        "evidence": "\"Your Wedded Advisor is your one contact: they explain your options...\" / \"Your Wedded Advisor is your one contact for places, venues, legal steps and guest travel\"",
+        "fact_id": "F021",
+        "suggested_fix": "\"Your Wedded Advisor plans with you throughout: they explain your options...\" and \"Your Wedded Advisor helps with places, venues, legal steps and guest travel\". Or get a brand-answers row approved for a single point of contact."
+      },
+      {
+        "id": "FC-M6",
+        "severity": "major",
+        "location": "s3-compare table rows Aspen, Charleston, Banff and Lake Louise; s1 and s3 'every other state and province'",
+        "issue": "'Rules set by Colorado', 'Rules set by South Carolina' and 'Rules set by Alberta' have no fact id. F031 covers California, F032 New York, F030 Nevada, and F034 lists only BC, Quebec and Ontario. The wording follows D11, but the ledger has no general 'each state or province sets its own rules' fact.",
+        "evidence": "\"| Aspen | Mountains | Rules set by Colorado; we check them for your date |\" / \"| Banff and Lake Louise | ... | Rules set by Alberta; we check them for your date |\"",
+        "fact_id": "F034",
+        "suggested_fix": "No copy change. Ledger fixes: (a) add proposed F050 (licence rules are set by each US state and each Canadian province) and cite it on these rows, in s1 and in the 'Every other state and province' paragraph; (b) Project Lead to extend F034's value to cover Alberta."
+      },
+      {
+        "id": "FC-M7",
+        "severity": "major",
+        "location": "faq[0] 'Where is the most popular wedding destination in the United States?'",
+        "issue": "The superlative search claim is not supported by the cited facts. F008 (Hawaii 880, US) is compared only with F007 terms. The US volume for 'las vegas wedding' is not in the ledger (F009 is AU only), so 'more searches than any other US wedding destination we track' cannot be shown, and it reads as a market-wide claim.",
+        "evidence": "\"Hawaii draws more searches than any other US wedding destination we track, but the right place depends on your style.\"",
+        "fact_id": "F008",
+        "suggested_fix": "\"Hawaii is one of the most searched US wedding destinations, but the right place depends on your style.\" (F008, 880 a month in the US), or drop the search claim: \"There is no single answer: the right place depends on your style.\""
+      },
+      {
+        "id": "FC-m1",
+        "severity": "minor",
+        "location": "s1-hero, line 2",
+        "issue": "'Simplest' is a comparative claim. The ledger supports the Hawaii facts (F025, F026) but not a ranking against other states.",
+        "evidence": "\"Hawaii is the simplest legal example: no residency rule, and no waiting period once your licence is issued.\"",
+        "fact_id": "F026",
+        "suggested_fix": "\"Take Hawaii as the legal example: no residency rule, and no waiting period once your licence is issued.\""
+      },
+      {
+        "id": "FC-m2",
+        "severity": "minor",
+        "location": "b16-spotlight, intro",
+        "issue": "'Few regions change this much in one flight' is an unsupported comparison. Hawaii to Banff is not normally one flight.",
+        "evidence": "\"Few regions change this much in one flight.\"",
+        "fact_id": "F048",
+        "suggested_fix": "\"Few regions change this much from one place to the next.\" or cut the sentence."
+      },
+      {
+        "id": "FC-m3",
+        "severity": "minor",
+        "location": "b16-spotlight, 'Only here' list item 1",
+        "issue": "Presenting no residency rule and no waiting period as unique to Hawaii overstates F025/F026, which make no comparison with other places.",
+        "evidence": "\"Only here ... A legal Hawaii marriage with no residency rule and no waiting period once your licence is issued.\"",
+        "fact_id": "F025",
+        "suggested_fix": "Rename the list 'Why couples choose it', or keep 'Only here' and swap this item for a scenery line (for example, black sand beaches on the Big Island)."
+      },
+      {
+        "id": "FC-m4",
+        "severity": "minor",
+        "location": "faq[2]",
+        "issue": "'Apply in person together' is not accurate. F024 says you apply online, then both partners meet the agent together in person.",
+        "evidence": "\"you both apply in person together\"",
+        "fact_id": "F024",
+        "suggested_fix": "\"you apply online, then appear together in person\" (covered by the FC-M1 fix)."
+      },
+      {
+        "id": "FC-m5",
+        "severity": "minor",
+        "location": "faq[5], last line",
+        "issue": "'No authorisation' is broader than F043, which says no tourist visa under 180 days and still requires a passport, passport card or NEXUS. The ledger does not state an eTA exemption for US citizens.",
+        "evidence": "\"US guests need no authorisation to visit Canada for stays under 180 days.\"",
+        "fact_id": "F043",
+        "suggested_fix": "\"US guests need no tourist visa to visit Canada for stays under 180 days; fly on a US passport.\""
+      },
+      {
+        "id": "FC-m6",
+        "severity": "minor",
+        "location": "s3 'Travel by passport', UK line",
+        "issue": "It leaves out the VWP condition in F037 (unrestricted right of abode in the UK). This is optional, but it is the one condition that changes the answer for some UK passport holders.",
+        "evidence": "\"UK passports: an ESTA under the Visa Waiver Program, or a visa, before travel to the US\"",
+        "fact_id": "F037",
+        "suggested_fix": "Add: \"(the Visa Waiver Program needs an unrestricted right of abode in the UK)\"."
+      },
+      {
+        "id": "FC-m7",
+        "severity": "minor",
+        "location": "s7-how-it-works last line; faq[9]",
+        "issue": "'For your dates and hotel' suggests Privileges benefits linked to hotels. D3 allows no Privileges benefits until brand-answers row 7 is approved.",
+        "evidence": "\"Wedded Privileges: ask your Wedded Advisor what the programme offers for your dates and hotel.\"",
+        "fact_id": "F019",
+        "suggested_fix": "\"Wedded Privileges: ask your Wedded Advisor what the programme offers.\""
+      },
+      {
+        "id": "FC-m8",
+        "severity": "minor",
+        "location": "s8-ways-to-plan, Concierge and Studio cards",
+        "issue": "The Studio feature list (travel times, rooms, dress codes, plans for children) goes beyond F023, which says only that there is a guest website. 'One advisor plans the whole celebration' strengthens F021.",
+        "evidence": "\"Give your guests one place for travel times, rooms, dress codes and plans for children.\" / \"One advisor plans the whole celebration with you\"",
+        "fact_id": "F023",
+        "suggested_fix": "\"Give your guests one website for your plans.\" and \"A Wedded Advisor plans with you, from the first call to the guest list.\""
+      },
+      {
+        "id": "FC-m9",
+        "severity": "minor",
+        "location": "meta.og_description",
+        "issue": "'The legal ... steps for US, UK and AU passports' overstates the page. Full legal steps are given only for Hawaii (and the NYC appointment rule); AU entry is held.",
+        "evidence": "\"with the legal and travel steps for US, UK and AU passports\"",
+        "fact_id": "F026",
+        "suggested_fix": "\"with Hawaii's licence steps and travel rules for US, UK and AU passports\" (matches meta.description)."
+      },
+      {
+        "id": "FC-m10",
+        "severity": "minor",
+        "location": "b8-proof-strip, fallback line",
+        "issue": "The fallback suggests all legal rules come from official sites. Only Hawaii (F024 to F028) and the NYC rule (F033) do; the other states and provinces are hedged.",
+        "evidence": "\"[FALLBACK UNTIL THEN] Legal and entry rules from official government sites, checked October 2026.\"",
+        "fact_id": "F024",
+        "suggested_fix": "\"[FALLBACK UNTIL THEN] Hawaii licence steps and entry rules from official government sites, checked October 2026.\""
+      },
+      {
+        "id": "FC-m11",
+        "severity": "minor",
+        "location": "s2-places, United States card",
+        "issue": "'The places couples ask about most' is a demand claim, so it needs the keyword facts as refs. Only F009 is cited.",
+        "evidence": "\"Hawaii, California and the places couples ask about most\"",
+        "fact_id": "F007",
+        "suggested_fix": "Add F006, F007 and F008 to s2 fact_refs; the wording is acceptable under D10."
+      },
+      {
+        "id": "FC-m12",
+        "severity": "minor",
+        "location": "s11-form intro",
+        "issue": "'A Wedded Advisor replies' is a reply promise. F020 confirms routing to Wedded Concierge, not who replies.",
+        "evidence": "\"A Wedded Advisor replies.\"",
+        "fact_id": "F020",
+        "suggested_fix": "\"Every enquiry goes to Wedded Concierge.\""
+      }
+    ],
+    "claim_map": [
+      {
+        "location": "s1",
+        "claim": "No residency rule; no waiting period once issued (Hawaii)",
+        "fact_ids": "F025,F026",
+        "classification": "matches_confirmed"
+      },
+      {
+        "location": "s1, s3, faq[3], faq[4]",
+        "claim": "Every other state and each province sets its own rules",
+        "fact_ids": "F030,F031,F032,F034 (+F050 proposed)",
+        "classification": "unverifiable (D11 hedge wording)"
+      },
+      {
+        "location": "s1, s7",
+        "claim": "Brand entity sentence",
+        "fact_ids": "F021",
+        "classification": "matches_confirmed (sign-off listed; used per D3)"
+      },
+      {
+        "location": "b8",
+        "claim": "120,000+ celebrations. 17+ years.",
+        "fact_ids": "F046 proposed",
+        "classification": "unverifiable: held in pair, fallback clean"
+      },
+      {
+        "location": "b16",
+        "claim": "Maui resort coasts, Big Island black sand and lava, Lake Louise freezes, Napa vineyards, Charleston oaks, NOLA second line, Aspen, NYC",
+        "fact_ids": "F048 proposed",
+        "classification": "third_party_only (FC-M4)"
+      },
+      {
+        "location": "b16 'Only here'",
+        "claim": "Legal Hawaii marriage without residency or waiting period",
+        "fact_ids": "F025,F026",
+        "classification": "matches_confirmed, overstated as unique (FC-m3)"
+      },
+      {
+        "location": "s2",
+        "claim": "Las Vegas quick ceremony",
+        "fact_ids": "F030",
+        "classification": "unverifiable (FC-M3)"
+      },
+      {
+        "location": "s2",
+        "claim": "8 US and 2 Canada real weddings featured",
+        "fact_ids": "F047 proposed",
+        "classification": "held in pair, fallback clean"
+      },
+      {
+        "location": "s2",
+        "claim": "Mexico and Caribbean cross-link only",
+        "fact_ids": "F002",
+        "classification": "matches_confirmed (D6 clean)"
+      },
+      {
+        "location": "s3 Hawaii",
+        "claim": "Apply online, meet agent together in person, photo ID, passport accepted, no proxies",
+        "fact_ids": "F024",
+        "classification": "matches_confirmed"
+      },
+      {
+        "location": "s3 Hawaii",
+        "claim": "Collect no sooner than 30 days before; no waiting period; valid 30 days; Hawaii only",
+        "fact_ids": "F025",
+        "classification": "matches_confirmed"
+      },
+      {
+        "location": "s3 Hawaii",
+        "claim": "No residence or citizenship requirement, no blood test, 18 or over, same for US/AU/UK",
+        "fact_ids": "F026",
+        "classification": "matches_confirmed"
+      },
+      {
+        "location": "s3 Hawaii",
+        "claim": "Officiant licensed by Hawaii DOH",
+        "fact_ids": "F028",
+        "classification": "matches_confirmed"
+      },
+      {
+        "location": "s3 Hawaii",
+        "claim": "USD 65 non-refundable",
+        "fact_ids": "F027",
+        "classification": "held in pair for Nic, fallback clean"
+      },
+      {
+        "location": "s3",
+        "claim": "NYC licences and City Clerk ceremonies by appointment, no walk-ins",
+        "fact_ids": "F033",
+        "classification": "matches_confirmed"
+      },
+      {
+        "location": "s3",
+        "claim": "UK citizens: depends on local law; free-to-marry documents",
+        "fact_ids": "F035",
+        "classification": "matches_confirmed"
+      },
+      {
+        "location": "s3, faq[1]",
+        "claim": "US passports into Canada: no tourist visa under 180 days; passport card not for flights",
+        "fact_ids": "F043",
+        "classification": "matches_confirmed"
+      },
+      {
+        "location": "s3, faq[5]",
+        "claim": "UK: ESTA or visa for US, 90 days or less",
+        "fact_ids": "F036,F037",
+        "classification": "matches_confirmed"
+      },
+      {
+        "location": "s3, faq[5]",
+        "claim": "UK: eTA to fly into Canada, none by land or sea",
+        "fact_ids": "F040",
+        "classification": "matches_confirmed"
+      },
+      {
+        "location": "s3, faq[5]",
+        "claim": "AU: VWP and ESTA; eTA for Canada",
+        "fact_ids": "F038,F041",
+        "classification": "held in pair, fallback clean"
+      },
+      {
+        "location": "faq[1]",
+        "claim": "AU guests need travel authorisation",
+        "fact_ids": "F038,F041",
+        "classification": "unconfirmed outside pair (FC-B1)"
+      },
+      {
+        "location": "s3, faq[8]",
+        "claim": "Seasons",
+        "fact_ids": "F045",
+        "classification": "held in pair, fallbacks clean"
+      },
+      {
+        "location": "s3 table",
+        "claim": "Rules set by Colorado / South Carolina / Alberta",
+        "fact_ids": "none",
+        "classification": "no fact id (FC-M6)"
+      },
+      {
+        "location": "faq[0]",
+        "claim": "Hawaii most searched",
+        "fact_ids": "F008,F007",
+        "classification": "overstated (FC-M7)"
+      },
+      {
+        "location": "faq[2]",
+        "claim": "Just the two of you in Hawaii",
+        "fact_ids": "F024,F025,F026,F029",
+        "classification": "implicit F029 (FC-M1)"
+      },
+      {
+        "location": "faq[3]",
+        "claim": "US wedding legal with a state licence",
+        "fact_ids": "F030-F032",
+        "classification": "unverifiable (FC-M2)"
+      },
+      {
+        "location": "faq[6]",
+        "claim": "Budget drivers, no figures",
+        "fact_ids": "F015, D10",
+        "classification": "matches_confirmed (no figures)"
+      },
+      {
+        "location": "faq[7]",
+        "claim": "Most Hawaii weddings priced separately at luxury hotels",
+        "fact_ids": "F049 proposed",
+        "classification": "third_party_only, competitor (FC-B2)"
+      },
+      {
+        "location": "faq[9]",
+        "claim": "Wedded Concierge plans across US and Canada",
+        "fact_ids": "F002,F020; current.md existing claim minus Mexico/Caribbean",
+        "classification": "matches_confirmed"
+      },
+      {
+        "location": "s7, faq[9]",
+        "claim": "Advisor is your one contact",
+        "fact_ids": "F021",
+        "classification": "no fact id (FC-M5)"
+      },
+      {
+        "location": "s8",
+        "claim": "Partner venues and suppliers in US and Canada",
+        "fact_ids": "F013",
+        "classification": "conflicts_with_confirmed (FC-B3)"
+      },
+      {
+        "location": "s8, s7",
+        "claim": "Wonderland Studio guest website",
+        "fact_ids": "F023",
+        "classification": "matches_confirmed; feature list overstated (FC-m8)"
+      },
+      {
+        "location": "s11, b9",
+        "claim": "Enquiries route to Wedded Concierge; no supplier contacts",
+        "fact_ids": "F020",
+        "classification": "matches_confirmed"
+      },
+      {
+        "location": "s5",
+        "claim": "Six real wedding cards, first names only",
+        "fact_ids": "F047 proposed, D13",
+        "classification": "unverifiable until live URL check"
+      }
+    ],
+    "proposed_facts": [
+      {
+        "id": "F046",
+        "fact": "B8 proof numbers",
+        "value": "120,000+ celebrations. 17+ years.",
+        "status": "unconfirmed",
+        "source": "studio/brand-answers.md row 6 (pending, not approved)",
+        "source_tier": "existing_page_facts",
+        "signed_off_by": null,
+        "needs_sign_off_by": "Project Lead (human)",
+        "notes": "Business proof claim (D3). Only inside the b8 sign-off pair. Assessment: accept as a held entry; must not appear in any fallback.",
+        "added_by": "fact-checker"
+      },
+      {
+        "id": "F047",
+        "fact": "Real weddings featured in the US and Canada",
+        "value": "10 published real weddings in the US and Canada (8 US, 2 Canada) per research doc section 11; six used on the page: /real-wedding-fairy-tale-wedding-in-hawaii, /tia-and-michaels-earthy-destination-wedding-in-new-york-usa, /kristin-and-ralphs-new-york-city-wedding, /this-colorado-lodge-wedding-had-a-fireplace, /real-wedding-a-great-gatsby-wedding-in-vancouver, /ishita-devins-cultural-wedding-in-toronto",
+        "status": "unconfirmed",
+        "source": "Research doc 1R9BhIct1aQju8jsIjKzgXJpjtyd4skE3cuc9Qln5iUc section 11 (D9, D13)",
+        "source_tier": "research_doc",
+        "signed_off_by": null,
+        "needs_sign_off_by": "Project Lead (human)",
+        "notes": "Confirm by a live 200 check of each URL before publishing (D13). Counts in s2 stay in sign-off pairs; recommend dropping the counts, because they go stale.",
+        "added_by": "fact-checker"
+      },
+      {
+        "id": "F048",
+        "fact": "Spotlight scenery (descriptive)",
+        "value": "Maui resort coasts at Wailea, Kaanapali and Kapalua; Big Island black sand beaches and lava fields; Lake Louise grand hotel above a lake that freezes in winter; Napa and Sonoma vineyard ceremonies; Charleston live oak avenues; New Orleans French Quarter courtyards and second line parades; Aspen summer meadows and snow; NYC rooftops and Central Park",
+        "status": "unconfirmed",
+        "source": "Research doc section 6b (third-party listicles, not named per D10)",
+        "source_tier": "research_doc",
+        "signed_off_by": null,
+        "needs_sign_off_by": null,
+        "notes": "Descriptive, low risk, no sign-off pair needed. Before publishing, confirm against tourism board tier sources: gohawaii.com, banfflakelouise.com or pc.gc.ca, visitnapavalley.com, explorecharleston.com, neworleans.com, aspenchamber.org. Does not cover 'Only here' exclusivity or 'one flight' claims (FC-m2, FC-m3).",
+        "added_by": "fact-checker"
+      },
+      {
+        "id": "F049",
+        "fact": "Hawaii weddings priced a la carte at luxury hotels",
+        "value": "Most Hawaii weddings are built at luxury hotels that price ceremony, dinner and rooms separately rather than as all-inclusive packages",
+        "status": "unconfirmed",
+        "source": "Research doc section 4 addition D, which draws on DestinationWeddings.com (named competitor, D10)",
+        "source_tier": "marketplace_or_competitor_listing",
+        "signed_off_by": null,
+        "needs_sign_off_by": "Project Lead (human)",
+        "notes": "REJECT for page use: the only source is a competitor (checklist item 7, D10). Do not state, even in a sign-off pair, unless an official or venue source is found. FAQ 8 to be rewritten without it (FC-B2).",
+        "added_by": "fact-checker"
+      },
+      {
+        "id": "F050",
+        "fact": "Marriage licence rules set by each US state and Canadian province",
+        "value": "Marriage licence rules are set by each US state (many issue licences at county level) and by each Canadian province; there is no single national licence process",
+        "status": "unconfirmed",
+        "source": "To check: https://www.gov.uk/marriage-abroad/y/usa (F035 page, defers to local law) and provincial vital statistics sites",
+        "source_tier": "government_or_tourism_board_source",
+        "signed_off_by": null,
+        "needs_sign_off_by": null,
+        "notes": "New entry proposed by the fact checker to back the D11 hedge wording ('Rules set by <state or province>') in s1, s3 and FAQ 4 and 5. It states no state-specific rule. Not fetched (fast mode).",
+        "added_by": "fact-checker"
+      }
+    ],
+    "ledger_amendments": [
+      "F034: extend the value to name Alberta (Banff and Lake Louise row), still unconfirmed, hedge per province.",
+      "F021: the ledger lists Project Lead sign-off while D3 directs its use; Project Lead to record signed_off_by or confirm that D3 is the sign-off."
+    ],
+    "passed_checks": [
+      "Hawaii licence block matches F024, F025, F026 and F028 word for word in substance; the F027 fee is held in a pair for Nic, and its fallback contains no figure.",
+      "NYC appointment rule matches F033; no other state or province legal rule is stated as fact, apart from the general rule in FAQ 4 (FC-M2).",
+      "Entry rules for US (F043) and UK (F036, F037, F040) match; AU (F038, F041) is held correctly in s3 and FAQ 6, with fallbacks that have no authorisation claim.",
+      "Season lines (F045) are held in s3 and FAQ 9; the fallbacks contain no months.",
+      "No Wedded Wonderland price, no AUD figure and no third-party cost figure (D10). ESTA and eTA fees are omitted (F039, F042). No witness rule (F029 stated nowhere explicitly).",
+      "Mexico and the Caribbean appear only in the single s2 cross-link (D6). No child page linked (D7).",
+      "check_copy.py: 18/18 passed, 0 blockers."
+    ]
+  },
+  "self_qa": {
+    "checklist": "studio/checklists/fact-checker.md",
+    "results": [
+      {
+        "check": "1 Every factual claim in the artefact is listed and classified",
+        "pass": true,
+        "severity": "blocker",
+        "detail": "34 claim groups in payload.claim_map, covering all sections, the 10 FAQs and meta."
+      },
+      {
+        "check": "2 Every classification cites a fact id or a source URL",
+        "pass": true,
+        "severity": "blocker",
+        "detail": "Every claim_map row and finding has a fact id; claims with no ledger fact are marked 'none' and given a proposed id (F050) or a fix."
+      },
+      {
+        "check": "3 Conflicts between sources are listed explicitly with both values",
+        "pass": true,
+        "severity": "blocker",
+        "detail": "FC-B3: copy says partners in US and Canada; F013 shows one US listing plus a Mexico listing (removed). FC-M7: Hawaii 880 (F008) against a missing US Las Vegas volume. No new source conflicts beyond 12-fact-audit."
+      },
+      {
+        "check": "4 Source tier follows config.source_of_truth_order",
+        "pass": false,
+        "severity": "major",
+        "detail": "Copy issue, not a review issue: F048 uses research-doc tier where tourism board tier exists (FC-M4), and F049 is competitor tier (FC-B2). Both are flagged."
+      },
+      {
+        "check": "5 Prices, capacities, room counts, distances, legal or visa claims all checked",
+        "pass": true,
+        "severity": "blocker",
+        "detail": "All legal and visa lines checked against F024 to F043; the only figure is F027, held in a pair. No capacities, room counts or distances in the copy."
+      },
+      {
+        "check": "6 Proposed new facts are unconfirmed unless an official source states them plainly",
+        "pass": true,
+        "severity": "major",
+        "detail": "F046 to F050 are all proposed as unconfirmed; F049 is rejected for page use."
+      },
+      {
+        "check": "7 No marketplace or competitor listing used as the only source for a confirmed fact",
+        "pass": false,
+        "severity": "major",
+        "detail": "F049 (DestinationWeddings.com via doc section 4D) is the only source for the FAQ 8 claim; flagged as blocker FC-B2 for the copywriter to fix. It is not confirmed in the ledger."
+      }
+    ]
+  },
+  "assumptions": [
+    "In fast mode, no web fetches were made. No new legal claim needed one; F050 was proposed with a URL to check instead.",
+    "D11's hedge wording ('Rules set by <state or province>') is treated as allowed, and the missing fact id behind it as a major finding, not a blocker.",
+    "Holding F046 proof numbers in a sign-off pair is treated as compliant with D3, since they come from brand-answers row 6 and are not invented.",
+    "F021 is used as D3 directs, even though the ledger lists Project Lead sign-off.",
+    "The descriptive scenery (F048) needs no sign-off pair; it is marked major for source tier, not as an unconfirmed fact stated as certain."
+  ],
+  "open_questions": [
+    {
+      "to": "project-lead",
+      "question": "Is 'your Wedded Advisor is your one contact' (s7, FAQ 10) an approved service promise? If not, use the F021-based wording in FC-M5.",
+      "blocking": false
+    },
+    {
+      "to": "user",
+      "question": "Marketplace route: which partner listings exist for the US and Canada today? Until answered, the s8 card must not claim Canadian or plural partners (FC-B3).",
+      "blocking": true
+    },
+    {
+      "to": "project-lead",
+      "question": "Approve proposed F050 (licence rules set by each state and province) and the F034 extension to Alberta, so the D11 hedge rows carry a fact id?",
+      "blocking": false
+    }
+  ],
+  "confidence": 0.85,
+  "timestamp": "2026-10-29T07:20:00Z"
+}
