@@ -6,3 +6,4 @@
 22:54 05 luxury-writer complete ~2,720 words; 1 VERIFY (TMD definition); 7 image slots; first draft sent
 22:55 07 icp-reader funding_parent complete
 22:55 07 icp-reader search_visitor, planner_couple, uhnw, sceptic complete (5/5); no must-fix; waiting on editor
+22:56 06 editor pass_with_edits 4.14; 13 edits applied by orchestrator -> 05-draft-r2.md; TMD VERIFY stays
