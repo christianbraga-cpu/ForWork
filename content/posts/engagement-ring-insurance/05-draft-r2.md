@@ -28,7 +28,7 @@ You may also see a Target Market Determination (TMD), a short document describin
 
 ## Three ways to insure an engagement ring in Australia
 
-There are three places a ring can sit: your home contents policy, a separate policy for valuables, or travel insurance while you are away. Travel insurance covers only the trip itself, so the first two are where the ring sits between trips. If you are still choosing the ring, [setting a ring budget you are comfortable insuring](/expert-advice/how-much-should-you-spend-on-an-engagement-ring) is a sensible place to start.
+There are three places a ring can sit: your home contents policy, a separate policy for valuables, or travel insurance while you are away. Travel insurance covers only the trip itself, so the first two are where the ring sits between trips. If you are still choosing the ring, [deciding how much to spend on a ring you are comfortable insuring](/expert-advice/how-much-should-you-spend-on-an-engagement-ring) is a sensible place to start.
 
 <!-- IMAGE SLOT three_ways: Three-column brand graphic with simple line icons (house, ring, suitcase) and one short label each; neutral, no numbers, no 'best' wording. -->
 
