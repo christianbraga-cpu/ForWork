@@ -1,0 +1,368 @@
+{
+  "agent": "cms-publisher",
+  "task_id": "engagement-ring-insurance",
+  "stage": "11",
+  "status": "complete",
+  "round": 1,
+  "inputs_used": [
+    "CLAUDE.md",
+    "content-system/cms/field-map.md",
+    "content-system/schemas/11-publish-package.schema.json",
+    "content/posts/engagement-ring-insurance/00-input.json",
+    "content/posts/engagement-ring-insurance/01-brief.json",
+    "content/posts/engagement-ring-insurance/02-seo.json",
+    "content/posts/engagement-ring-insurance/04-images.json",
+    "content/posts/engagement-ring-insurance/08-final.md",
+    "content/posts/engagement-ring-insurance/09-cro.json",
+    "content/posts/engagement-ring-setting-for-active-lifestyle/11-publish-package.json (pattern)"
+  ],
+  "self_qa": {
+    "checks": [
+      {
+        "check": "Body is 08-final.md wording unchanged apart from CTA render, fact markers and non-image comments removed, frontmatter dropped",
+        "pass": true
+      },
+      {
+        "check": "7 IMAGE SLOT comments kept in place; [[VERIFY]] TMD marker visible in body",
+        "pass": true
+      },
+      {
+        "check": "Exactly 4 key takeaways matching 08-final.md",
+        "pass": true
+      },
+      {
+        "check": "primary_category equals categories[0] = Style Advice (fixed by the person)",
+        "pass": true
+      },
+      {
+        "check": "FAQ (6) extracted and mirrored in FAQPage schema; BreadcrumbList Home > Style Advice > post; datePublished empty",
+        "pass": true
+      },
+      {
+        "check": "Status draft; no CMS upload attempted (no browser tool, field map not CONFIRMED)",
+        "pass": true
+      },
+      {
+        "check": "No em dashes, no prices, no insurer names in package text",
+        "pass": true
+      },
+      {
+        "check": "Images all 'needed'; none approved, so captions left for when approved",
+        "pass": true,
+        "note": "Featured image must be sourced before publish."
+      }
+    ],
+    "confidence": 0.88
+  },
+  "open_questions": [
+    {
+      "to": "orchestrator",
+      "question": "CMS upload not attempted: no browser tool in this cloud session and content-system/cms/field-map.md says 'Status: NOT YET MAPPED'. Run /wedded-cms-discovery locally in a logged-in Chrome tab, then /wedded-blog resume=engagement-ring-insurance.",
+      "blocking": true
+    },
+    {
+      "to": "planner-sme",
+      "question": "Resolve the TMD [[VERIFY]]: find a live ASIC or Moneysmart plain-English definition of a Target Market Determination (both pages returned 404 on 29 Oct 2026).",
+      "blocking": true
+    },
+    {
+      "to": "visual-curator",
+      "question": "All 7 image slots are 'needed'; source licensed images or brand graphics before publish.",
+      "blocking": true
+    },
+    {
+      "to": "person",
+      "question": "Confirm the CMS CTA block can render subtext; if not, drop the subtext rather than adding it to body copy.",
+      "blocking": false
+    },
+    {
+      "to": "person",
+      "question": "Primary CTA is Concierge, not the brief's /destinations (CRO decision). Confirm or swap.",
+      "blocking": false
+    },
+    {
+      "to": "human (Nic)",
+      "question": "Does the CMS post template have an end-of-post module for the /magazine lead magnet?",
+      "blocking": false
+    }
+  ],
+  "assumptions": [
+    "Byline 'Wedded Wonderland' (organisation), as instructed.",
+    "Excerpt reuses the SEO meta description (148 characters).",
+    "CTA rendered as a bold link plus subtext line with no wrapper comments, because the run asked for all non-image HTML comments to be removed; the CMS publisher maps it to the CTA block from the package 'cta' field.",
+    "Frontmatter dropped from 11-body.md; the CMS title field holds the H1.",
+    "Plan ref WW-049 recorded as given."
+  ],
+  "verify_items": [
+    "[[VERIFY: ASIC or Moneysmart plain-English definition of a Target Market Determination (TMD); ASIC DDO page and Moneysmart TMD glossary returned 404 on 29 Oct 2026]]"
+  ],
+  "tools_used": [
+    "Bash",
+    "Read"
+  ],
+  "next_agent": [
+    "orchestrator"
+  ],
+  "payload": {
+    "title": "Engagement Ring Insurance and How to Get It",
+    "slug": "engagement-ring-insurance",
+    "url_path": "/style-advice/engagement-ring-insurance",
+    "plan_ref": "WW-049",
+    "content_type": "Guide",
+    "cluster": "Rings and Jewellery",
+    "categories": [
+      "Style Advice",
+      "Rings and Jewellery",
+      "Proposals & Rings"
+    ],
+    "primary_category": "Style Advice",
+    "tags": [
+      "engagement ring insurance",
+      "jewellery insurance",
+      "contents insurance",
+      "specified items",
+      "travel insurance",
+      "agreed value",
+      "jewellery valuation",
+      "AFCA",
+      "destination wedding",
+      "proposal abroad"
+    ],
+    "excerpt": "Contents, standalone or travel cover? What to check in a policy, the paperwork to keep, and how to protect your ring on a proposal or wedding abroad.",
+    "key_takeaways": [
+      "A contents policy can cover your ring, but per-item limits mean you may need to add it and check its value against the limit.",
+      "Travel insurance often caps each valuable item and rarely pays for theft of anything left unattended, so it is not a substitute for jewellery cover.",
+      "Keep the receipt, grading report, a valuation and photos together, and have the ring revalued about every two years.",
+      "If a claim goes wrong, complain to the insurer first and then take it to AFCA, which is free and independent."
+    ],
+    "body_markdown_file": "content/posts/engagement-ring-insurance/11-body.md",
+    "faq": [
+      {
+        "q": "Is my engagement ring covered by home contents insurance?",
+        "a": "It can be. Contents insurance covers personal belongings, including jewellery, if they are damaged, lost or stolen, but most policies limit what you can claim for certain items. Check whether the ring needs to be added with its own value."
+      },
+      {
+        "q": "Does travel insurance cover my engagement ring overseas?",
+        "a": "Travel insurance can cover lost, damaged or stolen valuables, but policies often limit each item's value. Theft of unattended items, items not in an available hotel safe and items in checked baggage are typically excluded."
+      },
+      {
+        "q": "Does insurance cover a lost engagement ring or a lost stone?",
+        "a": "It depends on the policy. Check that it covers loss and damage as well as theft. Ask your insurer directly how a stone lost from its setting is treated."
+      },
+      {
+        "q": "Should I insure the ring before I propose?",
+        "a": "Ask your insurer how and when a new ring can be added before you collect it. If you are proposing abroad, carry it on board and tell your insurer your travel dates."
+      },
+      {
+        "q": "What is the difference between agreed value and market value?",
+        "a": "In general terms, agreed value is a fixed amount set when you take out or renew a policy, and market value is assessed at claim time and can fall. Jewellery policies vary, so check which basis yours uses."
+      },
+      {
+        "q": "How often should I get my engagement ring revalued?",
+        "a": "The Jewellers Association of Australia recommends approximately every two years. Update the insured value at the next renewal."
+      }
+    ],
+    "images": [
+      {
+        "slot_id": "featured",
+        "file": "content/posts/engagement-ring-insurance/images/engagement-ring-insurance-ring-box-travel-pouch-hero.webp",
+        "role": "featured",
+        "status": "needed",
+        "alt": "Solitaire engagement ring in an open box on linen beside a silk travel pouch"
+      },
+      {
+        "slot_id": "three_ways",
+        "file": "content/posts/engagement-ring-insurance/images/engagement-ring-insurance-three-ways-to-insure-graphic.webp",
+        "role": "inline",
+        "status": "needed",
+        "alt": "Graphic comparing contents insurance, standalone jewellery cover and travel insurance for a ring"
+      },
+      {
+        "slot_id": "policy_checks",
+        "file": "content/posts/engagement-ring-insurance/images/engagement-ring-insurance-policy-checks-checklist.webp",
+        "role": "inline",
+        "status": "needed",
+        "alt": "Checklist of questions to ask before relying on an engagement ring insurance policy"
+      },
+      {
+        "slot_id": "paperwork",
+        "file": "content/posts/engagement-ring-insurance/images/engagement-ring-insurance-ring-loupe-flat-lay.webp",
+        "role": "inline",
+        "status": "needed",
+        "alt": "Engagement ring on white card beside a jeweller's loupe, photographed from above"
+      },
+      {
+        "slot_id": "proposal_abroad",
+        "file": "content/posts/engagement-ring-insurance/images/engagement-ring-insurance-ring-box-carry-on.webp",
+        "role": "inline",
+        "status": "needed",
+        "alt": "Velvet ring box tucked into the inside pocket of a leather carry-on bag"
+      },
+      {
+        "slot_id": "travel_wedding",
+        "file": "content/posts/engagement-ring-insurance/images/engagement-ring-insurance-rings-travel-case.webp",
+        "role": "inline",
+        "status": "needed",
+        "alt": "Engagement ring and two wedding bands in a small travel ring case"
+      },
+      {
+        "slot_id": "claims_checklist",
+        "file": "content/posts/engagement-ring-insurance/images/engagement-ring-insurance-claims-steps-graphic.webp",
+        "role": "inline",
+        "status": "needed",
+        "alt": "Three-step graphic showing how to make a ring claim and when to go to AFCA"
+      }
+    ],
+    "cta": {
+      "text": "Speak with a Wedded Advisor",
+      "subtext": "Fee agreed in writing before any work begins",
+      "link": "/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=engagement-ring-insurance&utm_content=primary",
+      "placement": "Rendered in 11-body.md at the former <!-- CTA: primary --> marker in 'Travelling to your destination wedding', directly after the Advisor paragraph ending 'settling with the venue.'"
+    },
+    "secondary_cta": {
+      "text": "Browse destination wedding locations by region",
+      "link": "/destinations?utm_source=blog&utm_medium=content&utm_campaign=engagement-ring-insurance&utm_content=secondary",
+      "placement": "Already in the copy: inline link in the closing paragraph after 'The next question is where.' No separate block."
+    },
+    "lead_magnet": {
+      "name": "Wedded Wonderland digital magazine (free)",
+      "link": "/magazine?utm_source=blog&utm_medium=content&utm_campaign=engagement-ring-insurance&utm_content=magnet",
+      "placement": "Not placed in the body (CRO decision). Only for a CMS end-of-post module if the template has one."
+    },
+    "tracking_links": [
+      "/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=engagement-ring-insurance&utm_content=primary",
+      "/destinations?utm_source=blog&utm_medium=content&utm_campaign=engagement-ring-insurance&utm_content=secondary"
+    ],
+    "seo": {
+      "meta_title": "Engagement Ring Insurance: How to Get Covered in Australia",
+      "meta_description": "Contents, standalone or travel cover? What to check in a policy, the paperwork to keep, and how to protect your ring on a proposal or wedding abroad.",
+      "focus_keyword": "engagement ring insurance",
+      "canonical": "https://weddedwonderland.com/style-advice/engagement-ring-insurance",
+      "og_image_slot": "featured"
+    },
+    "schema_jsonld": {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Article",
+          "@id": "https://weddedwonderland.com/style-advice/engagement-ring-insurance#article",
+          "headline": "Engagement Ring Insurance and How to Get It",
+          "description": "Contents, standalone or travel cover? What to check in a policy, the paperwork to keep, and how to protect your ring on a proposal or wedding abroad.",
+          "author": {
+            "@type": "Organization",
+            "name": "Wedded Wonderland",
+            "url": "https://weddedwonderland.com/"
+          },
+          "publisher": {
+            "@type": "Organization",
+            "name": "Wedded Wonderland",
+            "url": "https://weddedwonderland.com/"
+          },
+          "datePublished": "",
+          "mainEntityOfPage": "https://weddedwonderland.com/style-advice/engagement-ring-insurance",
+          "inLanguage": "en-AU"
+        },
+        {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Home",
+              "item": "https://weddedwonderland.com/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Style Advice",
+              "item": "https://weddedwonderland.com/style-advice"
+            },
+            {
+              "@type": "ListItem",
+              "position": 3,
+              "name": "Engagement Ring Insurance and How to Get It",
+              "item": "https://weddedwonderland.com/style-advice/engagement-ring-insurance"
+            }
+          ]
+        },
+        {
+          "@type": "FAQPage",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "Is my engagement ring covered by home contents insurance?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "It can be. Contents insurance covers personal belongings, including jewellery, if they are damaged, lost or stolen, but most policies limit what you can claim for certain items. Check whether the ring needs to be added with its own value."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Does travel insurance cover my engagement ring overseas?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Travel insurance can cover lost, damaged or stolen valuables, but policies often limit each item's value. Theft of unattended items, items not in an available hotel safe and items in checked baggage are typically excluded."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Does insurance cover a lost engagement ring or a lost stone?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "It depends on the policy. Check that it covers loss and damage as well as theft. Ask your insurer directly how a stone lost from its setting is treated."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Should I insure the ring before I propose?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Ask your insurer how and when a new ring can be added before you collect it. If you are proposing abroad, carry it on board and tell your insurer your travel dates."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "What is the difference between agreed value and market value?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "In general terms, agreed value is a fixed amount set when you take out or renew a policy, and market value is assessed at claim time and can fall. Jewellery policies vary, so check which basis yours uses."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "How often should I get my engagement ring revalued?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "The Jewellers Association of Australia recommends approximately every two years. Update the insured value at the next renewal."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    "author": "Wedded Wonderland",
+    "status": "draft",
+    "verify_items": [
+      "[[VERIFY: ASIC or Moneysmart plain-English definition of a Target Market Determination (TMD); ASIC DDO page and Moneysmart TMD glossary returned 404 on 29 Oct 2026]]"
+    ],
+    "needs_signoff": [],
+    "deferred_business_items": [
+      "Wedded Concierge fee model and commissions (only \"the fee is agreed in writing before any work begins\" is stated)",
+      "Deposits, refunds and contracts",
+      "\"From AUD\" price ranges",
+      "Named Wedded Advisor, phone line or private referral line",
+      "Real weddings to feature (with consent)",
+      "Wedded Privileges explanation"
+    ],
+    "person_questions": [
+      "Confirm the byline: \"Wedded Wonderland\" (organisation) as instructed for this run.",
+      "Confirm the CMS CTA block can render subtext (\"Fee agreed in writing before any work begins\"); if not, drop the subtext rather than adding it to body copy (CRO open question).",
+      "Primary CTA is /wonderland-concierge, not the brief's /destinations (CRO rationale); /destinations is the secondary, inline in the close. Confirm, or swap per the CRO orchestrator flag.",
+      "Does the CMS post template have an end-of-post module for the /magazine lead magnet? Not placed in the body.",
+      "Plan ref WW-049 recorded as given; no plan document with that ref is in the repo.",
+      "Backlinks to add after publish: the short insurance sections in /style-advice/engagement-ring-setting-for-active-lifestyle and /style-advice/engagement-ring-styles should link to this guide."
+    ],
+    "last_updated_note": "Set the CMS last-updated date at publish, not in body copy.",
+    "draft_note": "DRAFT. Do not publish until checked:\n\n1. [[VERIFY]] items (1, visible in the body for the reviewer, remove the marker once resolved):\n   - [[VERIFY: ASIC or Moneysmart plain-English definition of a Target Market Determination (TMD); ASIC DDO page and Moneysmart TMD glossary returned 404 on 29 Oct 2026]]\n\n2. Nic sign-off on prices: none (no prices, premiums, excesses or limits printed).\n\n3. Image slots needed (7, none approved yet; alt drafts in the package, captions to add when approved):\n   - featured (needed, stock; AI illustrative fallback only if the person approves and it is captioned \"Illustrative image\")\n   - three_ways (needed, canva; Canva brand graphic)\n   - policy_checks (needed, canva; Canva brand graphic)\n   - paperwork (needed, stock; AI illustrative fallback only if the person approves and it is captioned \"Illustrative image\")\n   - proposal_abroad (needed, stock; AI illustrative fallback only if the person approves and it is captioned \"Illustrative image\")\n   - travel_wedding (needed, stock; AI illustrative fallback only if the person approves and it is captioned \"Illustrative image\")\n   - claims_checklist (needed, canva; Canva brand graphic)\n\n4. Compliance: general information only, no insurer named; the 'general information, not financial advice' line appears near the top and in the close. Confirm it stays verbatim.\n\n5. Deferred business items (person's decision, not in this draft):\n   - Wedded Concierge fee model and commissions (only \"the fee is agreed in writing before any work begins\" is stated)\n   - Deposits, refunds and contracts\n   - \"From AUD\" price ranges\n   - Named Wedded Advisor, phone line or private referral line\n   - Real weddings to feature (with consent)\n   - Wedded Privileges explanation\n\n6. Questions for the person:\n   - Confirm the byline: \"Wedded Wonderland\" (organisation) as instructed for this run.\n   - Confirm the CMS CTA block can render subtext (\"Fee agreed in writing before any work begins\"); if not, drop the subtext rather than adding it to body copy (CRO open question).\n   - Primary CTA is /wonderland-concierge, not the brief's /destinations (CRO rationale); /destinations is the secondary, inline in the close. Confirm, or swap per the CRO orchestrator flag.\n   - Does the CMS post template have an end-of-post module for the /magazine lead magnet? Not placed in the body.\n   - Plan ref WW-049 recorded as given; no plan document with that ref is in the repo.\n   - Backlinks to add after publish: the short insurance sections in /style-advice/engagement-ring-setting-for-active-lifestyle and /style-advice/engagement-ring-styles should link to this guide.\n\n7. Last-updated date: set the CMS last-updated date field at publish (not in body copy)."
+  }
+}

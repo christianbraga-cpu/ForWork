@@ -13,3 +13,4 @@
 23:00 09 cro-specialist complete; Concierge primary at travel marker; 2 copy changes applied by orchestrator
 23:00 10 distribution complete 3 pins, 8-slide carousel, newsletter
 23:00 08b editor 2 blocking one-sentence fixes applied by orchestrator (+1 matching social copy fix); blocking now 0
+23:02 11 cms-publisher package complete; finish: report, backlinks, link map, calendar id 11, docx
