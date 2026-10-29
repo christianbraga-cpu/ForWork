@@ -5,3 +5,4 @@
 22:52 02 seo-researcher complete; 1,600/mo KD 0; page one mostly insurer sales pages; Smartraveller link timed out for SEO but read live by planner via Apify
 22:54 05 luxury-writer complete ~2,720 words; 1 VERIFY (TMD definition); 7 image slots; first draft sent
 22:55 07 icp-reader funding_parent complete
+22:55 07 icp-reader search_visitor, planner_couple, uhnw, sceptic complete (5/5); no must-fix; waiting on editor
