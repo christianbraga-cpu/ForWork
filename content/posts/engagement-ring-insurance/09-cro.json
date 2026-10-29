@@ -1,0 +1,109 @@
+{
+  "agent": "cro-specialist",
+  "task_id": "engagement-ring-insurance",
+  "stage": "09",
+  "status": "complete",
+  "round": 1,
+  "inputs_used": [
+    "content/posts/engagement-ring-insurance/01-brief.json",
+    "content/posts/engagement-ring-insurance/02-seo.json",
+    "content/posts/engagement-ring-insurance/07-panel.json",
+    "content/posts/engagement-ring-insurance/08-final.md",
+    "content-system/brand/services.md",
+    "content-system/brand/brand-facts.md",
+    "content-system/seo/link-map.csv",
+    "content-system/schemas/09-cro.schema.json"
+  ],
+  "payload": {
+    "journey_stage": "dreaming",
+    "primary_cta": {
+      "text": "Speak with a Wedded Advisor",
+      "subtext": "Fee agreed in writing before any work begins",
+      "link": "/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=engagement-ring-insurance&utm_content=primary",
+      "placement": "Existing <!-- CTA: primary --> marker in 'Travelling to your destination wedding', directly after the Advisor paragraph that ends 'worth settling with the venue too.' The paragraph's inline 'See [how a Wedded Advisor plans the wedding travel](/wonderland-concierge).' sentence is removed (copy_changes[0]) so the CTA block is the only Concierge link at that point."
+    },
+    "secondary_cta": {
+      "text": "Browse destination wedding locations by region",
+      "link": "/destinations?utm_source=blog&utm_medium=content&utm_campaign=engagement-ring-insurance&utm_content=secondary",
+      "placement": "Existing inline link in the closing paragraph, straight after 'The next question is where.' Wording is unchanged (SEO-approved anchor, panel-approved close); only UTMs are added (copy_changes[1]). No separate CTA block, so the close stays quiet."
+    },
+    "lead_magnet": {
+      "name": "Wedded Wonderland digital magazine (free)",
+      "link": "/magazine?utm_source=blog&utm_medium=content&utm_campaign=engagement-ring-insurance&utm_content=magnet",
+      "exists": true,
+      "placement": "Not placed in the body. An insurance explainer already carries a compliance line and two service links; a third ask would crowd it and work against the sceptic's trust. Available for a CMS end-of-post module if the template has one."
+    },
+    "copy_changes": [
+      {
+        "old": " See [how a Wedded Advisor plans the wedding travel](/wonderland-concierge).",
+        "new": "",
+        "reason": "The primary CTA block sits directly below this paragraph and links the same target; drop the inline link so there is one Concierge link at this point."
+      },
+      {
+        "old": "[browse destination wedding locations by region](/destinations)",
+        "new": "[browse destination wedding locations by region](/destinations?utm_source=blog&utm_medium=content&utm_campaign=engagement-ring-insurance&utm_content=secondary)",
+        "reason": "Add CTA UTMs to the secondary link; anchor text unchanged."
+      }
+    ],
+    "tracking": [
+      "/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=engagement-ring-insurance&utm_content=primary",
+      "/destinations?utm_source=blog&utm_medium=content&utm_campaign=engagement-ring-insurance&utm_content=secondary"
+    ],
+    "rationale": "The brief names /destinations primary and /wonderland-concierge secondary, but the <!-- CTA: primary --> marker sits under the Advisor paragraph about who carries the rings on travel days, where they are kept at the venue and who hands them over. The question raised at that moment is 'who handles this?', which Concierge answers; a destinations block there would be a non sequitur. The 'where' question is raised only in the close ('The next question is where.'), and the existing /destinations link already answers it in place, so it becomes the secondary with UTMs. Both targets stay linked, so the SEO internal-link plan is intact. Weighted enquiry likelihood is 1.7 (dreaming stage), so the primary uses the brand default wording, no urgency, and one subtext line taken from brand-facts.md ('The fee is agreed in writing before any work begins') to remove the main money worry without describing any fee model. The panel's CTA-relevant must_fix (ring-specific Advisor paragraph) and the close cliche fix are already in 08-final.md, and the CTA follows the evidence as the sceptic asked. The panel's 'last updated' consider item is for the CMS date field, not copy. Not added (deferred in brand-facts): fee amounts or model, commissions, deposit protection, a named Advisor or phone line, guest travel insurance help. Magazine is live (/magazine in link-map) but deliberately not placed in the body.",
+    "orchestrator_flags": [
+      "If the orchestrator prefers to follow the brief literally (/destinations as primary), swap the two CTAs and move the marker below 'The next question is where.' in the close, removing that sentence's inline /destinations link instead; the travel-section Concierge link then keeps its inline anchor with utm_content=secondary."
+    ]
+  },
+  "open_questions": [
+    {
+      "question": "Confirm the CMS CTA block can render subtext; if not, drop the subtext rather than adding it to body copy.",
+      "blocking": false,
+      "to": "cms-publisher"
+    },
+    {
+      "question": "Does the CMS post template have an end-of-post module where the /magazine lead magnet could sit?",
+      "blocking": false,
+      "to": "human (Nic)"
+    }
+  ],
+  "next_agent": [
+    "distribution"
+  ],
+  "self_qa": {
+    "confidence": 0.85,
+    "checks": [
+      {
+        "check": "CTA text 6 words or fewer, no 'click here', no exclamation mark",
+        "pass": true
+      },
+      {
+        "check": "UTMs match services.md format with utm_campaign=engagement-ring-insurance",
+        "pass": true
+      },
+      {
+        "check": "Targets exist in link-map.csv (/wonderland-concierge, /destinations, /magazine)",
+        "pass": true
+      },
+      {
+        "check": "Each copy_changes old string occurs exactly once in 08-final.md",
+        "pass": true
+      },
+      {
+        "check": "No prices, insurer names, advice framing, fee model, Advisor names, phone lines or deposit protection",
+        "pass": true
+      },
+      {
+        "check": "No em dashes and no banned words in new copy",
+        "pass": true
+      },
+      {
+        "check": "Primary CTA deviates from the brief's /destinations; reason stated in rationale and a swap option flagged",
+        "pass": true
+      }
+    ]
+  },
+  "assumptions": [
+    "The CTA block component renders text, optional subtext and link, as in earlier posts.",
+    "The orchestrator applies copy_changes before the distribution and CMS stages."
+  ]
+}

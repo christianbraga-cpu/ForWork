@@ -147,7 +147,7 @@ GIA's advice applies to all three rings: pack them in your carry-on and tell you
 
 [Smartraveller's travel insurance advice](https://www.smartraveller.gov.au/travel-essentials/travel-insurance) also reminds you to read the PDS before buying, as it sets out inclusions, exclusions and the claims process. <!-- fact_12 -->
 
-A destination wedding has many moving parts: flights for the two of you, guests arriving on different days, a rehearsal dinner, a beach day. A Wedded Advisor plans venue, travel, vendors and payments, anywhere in the world, as your single point of contact. Who carries the rings on the travel days, where they are kept at the venue and who hands them over at the ceremony become part of that plan, and worth settling with the venue too. See [how a Wedded Advisor plans the wedding travel](/wonderland-concierge).
+A destination wedding has many moving parts: flights for the two of you, guests arriving on different days, a rehearsal dinner, a beach day. A Wedded Advisor plans venue, travel, vendors and payments, anywhere in the world, as your single point of contact. Who carries the rings on the travel days, where they are kept at the venue and who hands them over at the ceremony become part of that plan, and worth settling with the venue too.
 
 <!-- CTA: primary -->
 
@@ -201,6 +201,6 @@ The Jewellers Association of Australia recommends approximately every two years.
 
 ## Where the ring goes next
 
-Once the ring is listed, valued and photographed, it is ready to travel. The next question is where. You can [browse destination wedding locations by region](/destinations), and when you are ready, a Wedded Advisor can plan the venue and the travel with you, working in your time zone and quoting in AUD.
+Once the ring is listed, valued and photographed, it is ready to travel. The next question is where. You can [browse destination wedding locations by region](/destinations?utm_source=blog&utm_medium=content&utm_campaign=engagement-ring-insurance&utm_content=secondary), and when you are ready, a Wedded Advisor can plan the venue and the travel with you, working in your time zone and quoting in AUD.
 
 This is general information, not financial advice. Read the Product Disclosure Statement (PDS) and Target Market Determination (TMD) before you buy.

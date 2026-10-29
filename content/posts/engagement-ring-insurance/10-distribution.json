@@ -1,0 +1,157 @@
+{
+  "agent": "distribution-lead",
+  "task_id": "engagement-ring-insurance",
+  "stage": "10",
+  "status": "complete",
+  "round": 1,
+  "inputs_used": [
+    "CLAUDE.md",
+    "content-system/brand/banned-phrases.md",
+    "content-system/schemas/10-distribution.schema.json",
+    "content/posts/engagement-ring-insurance/01-brief.json",
+    "content/posts/engagement-ring-insurance/02-seo.json",
+    "content/posts/engagement-ring-insurance/04-images.json",
+    "content/posts/engagement-ring-insurance/08-final.md",
+    "content/posts/engagement-ring-insurance/09-cro.json"
+  ],
+  "self_qa": {
+    "checks": [
+      {
+        "check": "Pin titles <= 100 chars",
+        "pass": true,
+        "note": "70, 78, 83"
+      },
+      {
+        "check": "Pin descriptions <= 500 chars",
+        "pass": true,
+        "note": "410, 393, 395"
+      },
+      {
+        "check": "Pins tied to 04-images.json slot ids",
+        "pass": true,
+        "note": "featured, policy_checks, travel_wedding (all status 'needed'; pins wait for approved images)"
+      },
+      {
+        "check": "Keyword in every pin title",
+        "pass": true,
+        "note": "primary keyword; 'how to insure an engagement ring'; primary keyword"
+      },
+      {
+        "check": "Carousel 5 to 8 slides, last invites Wedded Advisor conversation",
+        "pass": true,
+        "note": "8 slides"
+      },
+      {
+        "check": "Caption <= 2,200 chars",
+        "pass": true,
+        "note": "1023 chars"
+      },
+      {
+        "check": "5 to 10 hashtags",
+        "pass": true,
+        "note": "9"
+      },
+      {
+        "check": "Newsletter subject <= 60, preview <= 110, blurb 60 to 100 words",
+        "pass": true,
+        "note": "subject 41, preview 105, blurb 72 words"
+      },
+      {
+        "check": "UTMs on every link",
+        "pass": true,
+        "note": "pinterest/social, instagram via link in bio (no link field), newsletter/email; campaign = slug"
+      },
+      {
+        "check": "No em/en dashes, banned phrases, 'budget', [[VERIFY]] content, figures, percentages, insurer or jeweller names",
+        "pass": true,
+        "note": "scan found: none"
+      },
+      {
+        "check": "General information framing, no advice; compliance line in caption and newsletter blurb",
+        "pass": true,
+        "note": "questions to ask the insurer, not recommendations of any product"
+      },
+      {
+        "check": "Facts drawn only from 08-final.md; nothing from the TMD [[VERIFY]] sentence",
+        "pass": true,
+        "note": "TMD only named in the verbatim compliance line, never defined"
+      }
+    ],
+    "confidence": 0.85
+  },
+  "open_questions": [
+    {
+      "question": "All three pin image slots (featured, policy_checks, travel_wedding) are still status 'needed' in 04-images.json. Schedule pins only after licensed or approved images exist.",
+      "to": "human",
+      "blocking": false
+    },
+    {
+      "question": "The TMD [[VERIFY]] in 08-final.md is unresolved; social assets name TMD only inside the verbatim compliance line. Confirm that line is approved for social use.",
+      "to": "editor",
+      "blocking": false
+    }
+  ],
+  "assumptions": [
+    "Post URL is https://weddedwonderland.com/style-advice/engagement-ring-insurance (02-seo.json url_path).",
+    "Instagram carousel has no link field; traffic goes via link in bio, and the closing slide echoes the 09-cro.json primary CTA (Speak with a Wedded Advisor).",
+    "GIA and JAA are not named in social assets to keep them free of any organisation that could read as a seller."
+  ],
+  "next_agent": [
+    "cms-publisher"
+  ],
+  "payload": {
+    "pinterest": [
+      {
+        "title": "Engagement Ring Insurance: How to Protect Your Ring at Home and Abroad",
+        "description": "Engagement ring insurance is not automatic. A contents policy can cover jewellery, but per-item limits mean you may need to add the ring and check its value. Travel insurance often caps each valuable and rarely pays for unattended items, so it is not a substitute. Our general information guide covers the three ways to insure a ring, what to check in a PDS and how to carry it on a proposal or wedding abroad.",
+        "image_slot": "featured",
+        "board": "Engagement Ring Ideas",
+        "link": "https://weddedwonderland.com/style-advice/engagement-ring-insurance?utm_source=pinterest&utm_medium=social&utm_campaign=engagement-ring-insurance&utm_content=pin-featured"
+      },
+      {
+        "title": "How to Insure an Engagement Ring: Questions to Ask Before You Rely on a Policy",
+        "description": "Before you rely on any policy for your engagement ring, ask: is loss covered as well as theft and damage? Does cover apply overseas, and for how long? Is it agreed, market or replacement value? Repair, replace or cash? What conditions apply to unattended items and luggage? When does cover start? Save this checklist and read it against the PDS. General information only, not financial advice.",
+        "image_slot": "policy_checks",
+        "board": "Wedding Planning Tips",
+        "link": "https://weddedwonderland.com/style-advice/engagement-ring-insurance?utm_source=pinterest&utm_medium=social&utm_campaign=engagement-ring-insurance&utm_content=pin-policy-checks"
+      },
+      {
+        "title": "Travelling With Your Rings to a Destination Wedding: Engagement Ring Insurance Tips",
+        "description": "Three rings usually travel to a destination wedding. Pack them in your carry-on, tell your insurer your travel dates and keep them on a hand or in the room safe. Standard travel policies typically exclude items left unattended, items not in an available hotel safe and theft from checked baggage. On pool and boat days, swap to a plain band. If a ring is stolen, report it to local police first.",
+        "image_slot": "travel_wedding",
+        "board": "Destination Wedding Planning",
+        "link": "https://weddedwonderland.com/style-advice/engagement-ring-insurance?utm_source=pinterest&utm_medium=social&utm_campaign=engagement-ring-insurance&utm_content=pin-travel-wedding"
+      }
+    ],
+    "instagram_carousel": {
+      "slides": [
+        "Is your engagement ring actually insured? It is not automatic.",
+        "Three places a ring can sit: your home contents policy, a separate policy for valuables, or travel insurance while you are away.",
+        "Contents cover can include jewellery, but most policies cap what you can claim per item. You may need to add the ring with its own value.",
+        "Travel insurance is not a substitute. It often caps each valuable and typically excludes unattended items and theft from checked baggage.",
+        "Questions for your insurer: loss as well as theft? Overseas cover? Agreed, market or replacement value? Repair, replace or cash? When does cover start?",
+        "Keep the kit together: receipt, grading report, valuation and photos. Note any laser inscription and revalue about every two years.",
+        "Flying to propose or to the wedding? Rings go in your carry-on, tell your insurer your travel dates, and use the room safe.",
+        "Planning a wedding abroad? Talk to a Wedded Advisor about the venue, the travel and who carries the rings. Link in bio."
+      ],
+      "caption": "Engagement ring insurance is not automatic, and travel is where the gaps tend to show.\n\nOur new guide follows the ring from the counter to a proposal abroad and on to the wedding, using only public Australian sources. Inside:\n- The three ways to insure a ring, and why travel insurance is not a substitute\n- The questions to put to your insurer before you rely on a policy\n- The paperwork to keep: receipt, grading report, valuation and photos\n- Carry-on, travel dates and hotel safes for the trip\n- What to do if a claim goes wrong, including the free and independent AFCA\n\nSave this for the day you collect the ring.\n\nPlanning a destination wedding? A Wedded Advisor plans venue, travel, vendors and payments as your single point of contact, including who carries the rings on the travel days. Send us a message to start the conversation.\n\nThis is general information, not financial advice. Read the Product Disclosure Statement (PDS) and Target Market Determination (TMD) before you buy.\n\nFull guide via the link in bio.",
+      "hashtags": [
+        "#engagementringinsurance",
+        "#engagementring",
+        "#engagedaustralia",
+        "#destinationwedding",
+        "#weddingplanningtips",
+        "#australianbride",
+        "#proposalideas",
+        "#jewellerycare",
+        "#weddedwonderland"
+      ]
+    },
+    "newsletter": {
+      "subject": "Is your engagement ring actually insured?",
+      "preview": "Contents, standalone or travel cover: what to check before you rely on it, and how to fly with the rings.",
+      "blurb": "The ring may be the most valuable thing either of you wears every day, and it is easy to assume it is already covered. It is not automatic. Our new guide explains the three ways to insure an engagement ring, the questions to ask before you rely on a policy, the paperwork worth keeping, and how to carry the rings to a proposal or wedding abroad. General information only, not financial advice.",
+      "link": "https://weddedwonderland.com/style-advice/engagement-ring-insurance?utm_source=newsletter&utm_medium=email&utm_campaign=engagement-ring-insurance&utm_content=newsletter-feature"
+    }
+  }
+}
