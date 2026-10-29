@@ -11,3 +11,4 @@
 23:52 05 luxury-writer complete ~4,180 words; 1 VERIFY (handfast definition); 10 image slots; first draft sent
 23:53 07 icp-reader search_visitor complete
 23:53 07 icp-reader planner_couple, uhnw complete
+23:53 07 icp-reader sceptic, funding_parent complete (5/5); no must-fix; waiting on editor
