@@ -13,3 +13,4 @@
 00:38 10 distribution complete 3 pins, 8-slide carousel, newsletter
 00:39 09 cro-specialist complete; 3 copy changes applied by orchestrator
 00:39 08b editor 5 blocking one-sentence fixes applied by orchestrator (+1 consistency fix); blocking now 0
+00:41 11 cms-publisher package complete (image slot comments restored in 11-body); finish: report, backlinks, link map, calendar id 10, docx
