@@ -9,3 +9,4 @@
 23:47 03 destinations top-up complete 10 facts; 8 VERIFY remain; Lebanese page unsourced legal claim flagged; waiting on origins top-up
 23:47 03 origins top-up complete 6 facts (RCT, Britannica); merged 5 packs: 74 facts, 50 verify items (many superseded); writer launched
 23:52 05 luxury-writer complete ~4,180 words; 1 VERIFY (handfast definition); 10 image slots; first draft sent
+23:53 07 icp-reader search_visitor complete
