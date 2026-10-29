@@ -34,3 +34,30 @@ are not linked until they return 200. Place cards route to the enquiry form with
 prefilled, and list the planned URL in NOTES.md.
 
 ## D8. Other branches are not used.
+
+## D9. Research doc
+Use the user's copy of the doc (fileId 1R9BhIct1aQju8jsIjKzgXJpjtyd4skE3cuc9Qln5iUc). Its section
+plan (doc section 4) is binding: H1 and H2s word for word.
+
+## D10. Third-party costs from a competitor are not named
+DestinationWeddings.com is a named competitor (doc section 3), so its cost figures (USD 18,900
+Hawaii average; USD 9,850 vs 36,000) are not used or named. The budget FAQ explains what drives
+cost without figures. Same rule as Portugal D8. Venue and place names from listicles may appear
+as places couples ask about, hedged, without naming the listicle.
+
+## D11. State and province rules
+Only Hawaii is stated as a legal example (confirmed on health.hawaii.gov; the USD 65 fee waits for
+Nic). New York City appointment rule is confirmed. Every other state and province row in the
+section 3 table says the rules are set by that state or province and that the Wedded Advisor
+checks them, with the T20 legal page linked when it exists. Las Vegas: "chapels open daily" style
+claims only with a source; no licence fee or rule stated.
+
+## D12. Travel authorisation
+US: AU and UK passports travel under the Visa Waiver Program with an ESTA (UK confirmed; AU held
+as unconfirmed until the official page is read, so the AU line is hedged: "check ESTA eligibility
+on the official US site"). Canada: UK passports need an eTA to fly in (confirmed); AU held the
+same way. "Last checked October 2026" next to confirmed lines.
+
+## D13. Real weddings
+The doc lists 10 US and Canada real weddings, so section 5 shows 6 cards (first names only, no
+couple surnames). URLs are listed in NOTES.md for a live check before publishing.
