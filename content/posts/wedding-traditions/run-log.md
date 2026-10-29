@@ -3,3 +3,4 @@
 23:24 01 content-strategist complete; old URL returns 404 (not archived); 15 traditions + 9 destination entries; 02+03 (3 batches)+04 launched
 23:25 04 visual-curator complete 10 placeholders; licence questions for Drive real-wedding folders
 23:35 02 seo-researcher complete; live old page is /...-in-the-world (US #4 old wedding traditions); de-bunked AU #80; redirect both; report.md written by orchestrator (agent write refused)
+23:36 03 planner-sme batch A complete 20 facts, 14 VERIFY (WebFetch blocked; Apify only); top-up batch launched for key origins
