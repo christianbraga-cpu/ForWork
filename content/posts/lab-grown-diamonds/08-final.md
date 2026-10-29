@@ -7,7 +7,7 @@ round: final
 
 <!-- IMAGE SLOT featured: Two similar loose round brilliant diamonds resting side by side on soft ivory linen or pale travertine, a jeweller's loupe in soft focus behind. Neither stone labelled or favoured. Late-morning window light, crisp sparkle, shallow depth of field, generous negative space for a title crop. No people. No real place. Landscape 3:2. Licensed photography preferred (stock bought by a human and registered in library-index.csv, or a commissioned shoot). No jeweller, lab or brand logos, packaging or recognisable designs. Never copy GIA or IGI diagrams, photos or report layouts. -->
 
-Lab grown diamonds have moved from curiosity to the centre of the engagement ring conversation, and almost everything written about them comes from someone selling one side. If you can comfortably choose either stone, the question is not whether you can afford natural. It is whether a lab-grown stone gives you what you actually care about. Wedded Wonderland plans destination weddings, so this guide is written from the planning side, not the jeweller's counter.
+Lab grown diamonds have moved from curiosity to the centre of the engagement ring conversation, and almost everything written about them comes from someone selling one side. If you can comfortably choose either stone, the question is not whether you can afford natural. It is whether a lab-grown stone gives you what you actually care about. Wedded Wonderland plans destination weddings, so this guide is written from the planning side.
 
 This guide separates what is settled (the material, the hardness, the grading and the naming rules) from what is genuinely uncertain, then answers "worth it" as a question of values, with the paperwork to insist on either way.
 
@@ -22,7 +22,7 @@ This guide separates what is settled (the material, the hardness, the grading an
 
 For many couples, yes, provided they are buying the stone for what it is rather than for a promise of future value. GIA notes that lab-grown diamonds are offered at a reduced price point, and that demand has risen in recent years. <!-- fact_22 -->
 
-What you give up is not sparkle or strength. It is the geological age and rarity that natural stones carry. <!-- fact_08 --> What either stone might be worth if you ever sell it is a separate question, and neither should be bought as an investment. Decide which of those you care about, and the answer usually follows.
+What you give up is not sparkle or strength. It is the natural origin, the very different growth history that a mined stone carries. <!-- fact_08 --> What either stone might be worth if you ever sell it is a separate question, and neither should be bought as an investment. Decide which of those you care about, and the answer usually follows.
 
 ## Are lab-grown diamonds real diamonds?
 
@@ -125,7 +125,7 @@ In 2019, FTC staff sent [warning letters](https://www.ftc.gov/business-guidance/
 
 ## Do lab-grown diamonds hold their value?
 
-GIA's only general statement on cost is that lab-grown diamonds come at a reduced price point. <!-- fact_22 --> How either kind of stone holds its value over time is a separate question, and neither should be bought as an investment.
+GIA says lab-grown diamonds are offered at a reduced price point. <!-- fact_22 --> How either kind of stone holds its value over time is a separate question, and neither should be bought as an investment.
 
 If resale matters to you, make it part of the conversation before you buy:
 
@@ -152,7 +152,7 @@ A vague answer tells you how much weight to give the claim.
 
 ## Heirloom, rarity and what "forever" means to you
 
-GIA notes that natural diamonds are famous for their age; colourless lab-grown stones have been available commercially only since the mid-2010s. <!-- fact_08 --> For some couples, a stone formed deep in the Earth is the whole point. For others, the meaning sits in the proposal, the person and the years ahead, not the geology.
+GIA notes that colourless lab-grown stones have been available in commercial quantities only since the mid-2010s. <!-- fact_08 --> For some couples, a stone formed deep in the Earth is the whole point. For others, the meaning sits in the proposal, the person and the years ahead, not the geology.
 
 You may hear firm opinions on both sides, from jewellers and from family. Neither view makes the other wrong. If the ring may be handed down, talk about it with whoever will one day wear it, and choose the story you would be happy to tell.
 
@@ -167,7 +167,7 @@ You may hear firm opinions on both sides, from jewellers and from family. Neithe
 
 **Think twice if:**
 
-- Rarity and geological age are a large part of what the ring means to you or your family.
+- A natural origin is a large part of what the ring means to you or your family.
 - You expect the stone to be sold, traded or valued later, and the seller cannot give you buy-back or upgrade terms in writing.
 - An environmental claim is the main reason you are choosing it, and the seller cannot substantiate it.
 - Someone who will inherit or wear the ring has strong feelings, and you have not yet had that conversation.
@@ -213,7 +213,7 @@ Treat neither lab-grown nor natural as an investment. If resale matters, ask the
 
 ### Are lab-grown diamonds legal to sell in Australia?
 
-We found no Australian rule that restricts their sale. As at October 2026, no ACCC guidance specific to lab-grown diamonds was found, and the general Australian Consumer Law rule applies: claims must be accurate, truthful and based on reasonable grounds. <!-- fact_19 --> <!-- fact_21 --> This is general information, not legal advice.
+Our research found no Australian restriction specific to lab-grown diamonds. <!-- fact_21 --> As at October 2026, no ACCC guidance specific to lab-grown diamonds was found, and the general Australian Consumer Law rule applies: claims must be accurate, truthful and based on reasonable grounds. <!-- fact_19 --> <!-- fact_21 --> This is general information, not legal advice.
 
 ### Is a lab-grown diamond the same as cubic zirconia or moissanite?
 
