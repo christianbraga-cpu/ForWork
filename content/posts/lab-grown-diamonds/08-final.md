@@ -176,6 +176,8 @@ Lab grown diamond engagement rings and natural ones can look the same across a d
 
 <!-- IMAGE SLOT decision_checklist: Brand graphic in Canva: two balanced columns, 'Worth it if' and 'Think twice if', with three to four short points each taken word for word from the final article, plus a slim footer strip 'Either way, ask for: origin in writing, report number, inscription check'. Equal visual weight for both columns so neither option is favoured. Brand palette and fonts, cream background, generous spacing, readable on mobile. Square or 4:5. No logos other than Wedded Wonderland. No jeweller, lab or brand logos, packaging or recognisable designs. Never copy GIA or IGI diagrams, photos or report layouts. -->
 
+If the ring is for a proposal abroad, or the first step towards a wedding overseas, the planning around it is where Wedded Concierge comes in.
+
 <!-- CTA: primary -->
 
 ## The paperwork to insist on either way
@@ -191,9 +193,9 @@ For the 4Cs and a full shortlist checklist, use [our diamond buying guide and sh
 
 ## From the ring to the destination
 
-Once the ring is decided, the next question is where you will ask, and where you might marry. If you are picturing a proposal or wedding overseas, [browse destination wedding locations by region](/destinations) to see what each place offers in the season you have in mind.
+Once the ring is decided, the next question is where you will ask, and where you might marry. If you are picturing a proposal or wedding overseas, [browse destination wedding locations by region](/destinations?utm_source=blog&utm_medium=content&utm_campaign=lab-grown-diamonds&utm_content=secondary) to see what each place offers in the season you have in mind.
 
-When you are ready, your Wedded Advisor plans venue, travel, vendors and payments as your one point of contact, and the fee is agreed in writing before any work begins. You can [talk to a Wedded Concierge about a proposal or wedding abroad](/wonderland-concierge).
+When you are ready, your Wedded Advisor plans venue, travel, vendors and payments as your one point of contact, and the fee is agreed in writing before any work begins.
 
 ## Frequently asked questions
 
