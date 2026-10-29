@@ -9,7 +9,7 @@ round: final
 
 The ring may be the most valuable thing either of you wears every day, and it is easy to assume it is already covered. Engagement ring insurance is not automatic. A contents policy can cover jewellery, but you may need to add a valuable piece and check its limits yourself. <!-- fact_05 --> <!-- fact_06 -->
 
-Travel is where the gaps tend to show. Travel insurance often limits what it pays for each item, and theft from checked baggage or of something left unattended is commonly excluded. <!-- fact_13 --> <!-- fact_15 --> This guide follows the ring from the counter to a proposal abroad and on to the wedding, using only public Australian sources.
+Travel is where the gaps tend to show. Travel insurance often limits what it pays for each item, and theft from checked baggage or of something left unattended is commonly excluded. <!-- fact_13 --> <!-- fact_15 --> This guide follows the ring from the counter to a proposal abroad and on to the wedding, using public guidance from Australian regulators, industry bodies and gemmological laboratories.
 
 This is general information, not financial advice. Read the Product Disclosure Statement (PDS) and Target Market Determination (TMD) before you buy.
 
@@ -147,7 +147,7 @@ GIA's advice applies to all three rings: pack them in your carry-on and tell you
 
 [Smartraveller's travel insurance advice](https://www.smartraveller.gov.au/travel-essentials/travel-insurance) also reminds you to read the PDS before buying, as it sets out inclusions, exclusions and the claims process. <!-- fact_12 -->
 
-A destination wedding has many moving parts: flights for the two of you, guests arriving on different days, a rehearsal dinner, a beach day. A Wedded Advisor plans venue, travel, vendors and payments, anywhere in the world, as your single point of contact. Who carries the rings on the travel days, where they are kept at the venue and who hands them over at the ceremony become part of that plan, and worth settling with the venue too.
+A destination wedding has many moving parts: flights for the two of you, guests arriving on different days, a rehearsal dinner, a beach day. A Wedded Advisor plans venue, travel, vendors and payments, anywhere in the world, as your single point of contact. Who carries the rings on the travel days, where they are kept at the venue and who hands them over at the ceremony are worth raising with your Advisor and settling with the venue.
 
 <!-- CTA: primary -->
 
