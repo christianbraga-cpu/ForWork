@@ -6,3 +6,5 @@
 00:32 05 luxury-writer complete ~2,700 words; 0 VERIFY; 7 image slots; first draft sent
 00:33 07 icp-reader funding_parent, search_visitor complete
 00:34 07 icp-reader uhnw, sceptic, planner_couple complete (5/5); waiting on editor
+00:35 06 editor pass_with_edits 4.43; 8 edits applied by orchestrator -> 05-draft-r2.md; also removed unsourced 'We sell neither.'
+00:35 07 envelope fields added to 2 reader files; all valid
