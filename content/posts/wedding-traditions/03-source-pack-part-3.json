@@ -1,0 +1,206 @@
+{
+  "agent": "planner-sme",
+  "task_id": "wedding-traditions",
+  "stage": "03",
+  "status": "complete",
+  "round": 1,
+  "inputs_used": [
+    "CLAUDE.md",
+    "content/posts/wedding-traditions/01-brief.json",
+    "content/posts/wedding-traditions/03-source-pack.json",
+    "content-system/schemas/03-source-pack.schema.json"
+  ],
+  "self_qa": {
+    "checks": [
+      {
+        "check": "Every fact has a source URL and date read",
+        "pass": true
+      },
+      {
+        "check": "No price without a source; all prices in needs_signoff",
+        "pass": true,
+        "note": "No prices."
+      },
+      {
+        "check": "Pages read in full, not search summaries",
+        "pass": true,
+        "note": "All six facts come from pages fetched in full via Apify web-fetch on 2026-10-29. No search-summary-only facts recorded."
+      },
+      {
+        "check": "No invented quotes, statistics or real weddings; bridesmaid decoy story not recorded",
+        "pass": true
+      },
+      {
+        "check": "All six priority claims re-sourced",
+        "pass": false,
+        "note": "Dress, pre-1840 colours, vena amoris and Roman rings re-sourced. 'Something old' rhyme date and sixpence, Roman flammeum, and handfasting (beyond ScotlandsPeople) found no reputable page in budget. V&A URLs tried returned 404; Britannica flammeum and handfasting pages 404; NRS guide URL 404."
+      }
+    ],
+    "confidence": 0.7
+  },
+  "open_questions": [
+    {
+      "to": "orchestrator",
+      "question": "fact_14 (rhyme, 1871 St James's Magazine) and fact_15 (sixpence, Royal Mint blog) still rest on phrases.org.uk and a commercial blog. Accept 'traditionally said' wording, or fund another sourcing run (e.g. Oxford Dictionary of Phrase and Fable, Folklore Society)?",
+      "blocking": false
+    },
+    {
+      "to": "orchestrator",
+      "question": "fact_16 (Roman flammeum) still rests on Wikipedia. Allow a run against a classical reference (e.g. Oxford Classical Dictionary, LacusCurtius Smith's Dictionary 'Matrimonium') or cut colour detail to 'a flame-coloured veil called the flammeum' marked [[VERIFY]]?",
+      "blocking": false
+    },
+    {
+      "to": "luxury-writer",
+      "question": "Use 'popularised' not 'first' for the white dress: Britannica's Today in History headline says 'for the First Time' but its own explainer and RCT say she formalised and popularised white.",
+      "blocking": false
+    }
+  ],
+  "assumptions": [
+    "PART 3 top-up of batch A. Fact ids fact_300 to fact_305 used of the fact_300 to fact_399 range. Each fact has a 'replaces' note naming the batch-A fact or VERIFY item it upgrades; batch-A facts are not edited.",
+    "Handfasting facts 17 and 18 already rest on ScotlandsPeople (run by National Records of Scotland), which counts as government; only fact_19 (DSL, editorial, acceptable) and fact_20 (Wikipedia for Anton 1958 and 'year and a day') remain weak.",
+    "Bridesmaid decoy story deliberately not recorded, per instruction."
+  ],
+  "verify_items": [
+    "[[VERIFY: earliest printed 'something old, something new' rhyme and date (fact_14) from a reputable reference; currently phrases.org.uk only]]",
+    "[[VERIFY: sixpence-in-the-shoe custom (fact_15) from a non-commercial source; currently Royal Mint blog only]]",
+    "[[VERIFY: Roman flammeum colour and meaning (fact_16) from a classical reference or museum; currently Wikipedia only]]",
+    "[[VERIFY: Henry Swinburne as earliest English source for the vena amoris and the 1686 date (fact_13); Britannica confirms only the myth and that no such vein exists]]",
+    "[[VERIFY: handfasting as 'trial marriage for a year and a day' and A. E. Anton 1958 finding (fact_20) from National Museums Scotland, NRS or the Scottish Historical Review; currently Wikipedia]]",
+    "[[VERIFY: countries other than Chile and Brazil where the wedding ring is worn on the right hand]]"
+  ],
+  "next_agent": [
+    "luxury-writer"
+  ],
+  "payload": {
+    "facts": [
+      {
+        "fact_id": "fact_300",
+        "claim": "Queen Victoria's wedding dress (RCIN 71975) is attributed to Mary Bettans, a court dressmaker, and was worn for her marriage to Prince Albert on 10 February 1840. Royal Collection Trust says the dress was notable for establishing a form of bridal fashion that persists today, 'formalising as it did the wearing of white wedding dresses', and that her choice made white desirable at all levels of society and a symbol of romantic love and purity.",
+        "source": "https://www.rct.uk/collection/stories/women-artists/queen-victorias-wedding-dress",
+        "source_type": "editorial",
+        "checked": "2026-10-29",
+        "is_price": false,
+        "replaces": "fact_12 (date, collection number and role in popularising white; read in full via Apify, rendered text)"
+      },
+      {
+        "fact_id": "fact_301",
+        "claim": "Britannica (Today in History, 10 February): Victoria wore a white satin gown with British-made lace, a wreath of orange blossoms and an 18-foot train; she chose white because she liked the simple style and wanted to support the struggling British lace industry, not for the meanings of purity and wealth attached to it later. Twelve bridesmaids also wore white. Her wedding was widely publicised, unlike earlier low-key royal weddings in state robes.",
+        "source": "https://www.britannica.com/today-in-history/February-10-The-Bride-Wore-White",
+        "source_type": "editorial",
+        "checked": "2026-10-29",
+        "is_price": false,
+        "replaces": "fact_12 (detail and motive)",
+        "conflicts": "The page headline says 'The Bride Wore White (for the First Time)', but Britannica's own 'Why Do Brides Wear White?' (fact_302) and the brief say white was not new, only rare. Do not repeat 'first time'; write 'popularised'. RCT (fact_300) says the dress has a Honiton lace flounce per batch A; Britannica 'Why Do Brides Wear White?' names Honiton lace, so 'Honiton lace' is now sourced (fact_302)."
+      },
+      {
+        "fact_id": "fact_302",
+        "claim": "Britannica ('Why Do Brides Wear White?'): for many centuries in Western societies wedding dresses were of all different colours; brides tended to buy a dress they could wear again or simply wore the best dress they already owned, and white was impractical to keep clean. Today's white dress is largely thanks to a trend that began with Queen Victoria's 1840 wedding; she reportedly chose white to show off Honiton lace from the struggling British lace industry. The trend was first taken up by wealthier brides, spread across all economic levels, and was cemented as 'tradition' in the 20th century.",
+        "source": "https://www.britannica.com/story/why-do-brides-wear-white",
+        "source_type": "editorial",
+        "checked": "2026-10-29",
+        "is_price": false,
+        "replaces": "[[VERIFY: what brides wore before 1840]] (resolved at encyclopaedia level; no V&A page found) and supports fact_12"
+      },
+      {
+        "fact_id": "fact_303",
+        "claim": "MYTH, now sourced as such: Britannica says 'a few sources suggest' ancient cultures put the ring on the fourth finger of the left hand because they believed the 'vena amoris' or 'vein of love' ran from there directly to the heart, and that modern medicine has shown there is no such vein. (Britannica does not name Henry Swinburne or a date.)",
+        "source": "https://www.britannica.com/topic/How-Did-the-Tradition-of-Wedding-Rings-Start",
+        "source_type": "editorial",
+        "checked": "2026-10-29",
+        "is_price": false,
+        "replaces": "fact_13 (myth status and 'no such vein'; Wikipedia no longer needed for these points). The Swinburne 1686 attribution remains unsourced."
+      },
+      {
+        "fact_id": "fact_304",
+        "claim": "Britannica (Alicja Zelazko, fact-checked by Britannica Editors): the custom of giving a bride-to-be a ring may have started with the ancient Egyptians, but the earliest concrete evidence of engagement rings is Roman. Romans treated the ring as a sign of a legal agreement to marry; a woman traditionally received an iron ring, and women from wealthier families also received a gold ring worn in public. In the 12th century the Roman Catholic Church made marriage a sacrament and brought placing a ring on the bride's finger into the ceremony.",
+        "source": "https://www.britannica.com/topic/How-Did-the-Tradition-of-Wedding-Rings-Start",
+        "source_type": "editorial",
+        "checked": "2026-10-29",
+        "is_price": false,
+        "replaces": "[[VERIFY: Roman use of betrothal rings]] (resolved)"
+      },
+      {
+        "fact_id": "fact_305",
+        "claim": "Britannica: in some South American countries such as Chile and Brazil, each partner wears a ring on the fourth finger of the right hand during the engagement and moves it to the fourth finger of the left hand at the wedding.",
+        "source": "https://www.britannica.com/topic/How-Did-the-Tradition-of-Wedding-Rings-Start",
+        "source_type": "editorial",
+        "checked": "2026-10-29",
+        "is_price": false,
+        "replaces": "[[VERIFY: which countries wear the ring on the right hand]] (partly: Chile and Brazil engagement only; other right-hand countries still unsourced)"
+      }
+    ],
+    "insider_details": [
+      {
+        "detail": "When couples ask whether the white dress is 'traditional', the honest answer is that it is a Victorian fashion that became tradition: before 1840 brides wore their best dress in any colour, so a coloured or re-wearable dress for a destination wedding has strong historical precedent.",
+        "fact_ids": [
+          "fact_300",
+          "fact_302"
+        ]
+      },
+      {
+        "detail": "For couples marrying in Chile or Brazil, or with family from there, expect rings worn on the right hand during the engagement and moved to the left at the ceremony; plan a moment in the order of service for the switch.",
+        "fact_ids": [
+          "fact_305"
+        ]
+      },
+      {
+        "detail": "The 'vein of love' line makes a lovely celebrant moment, but it should be framed as a story people once believed, not anatomy: Britannica is clear no such vein exists.",
+        "fact_ids": [
+          "fact_303"
+        ]
+      }
+    ],
+    "quotes": [],
+    "real_weddings": [],
+    "verify_items": [
+      "[[VERIFY: earliest printed 'something old, something new' rhyme and date (fact_14) from a reputable reference; currently phrases.org.uk only]]",
+      "[[VERIFY: sixpence-in-the-shoe custom (fact_15) from a non-commercial source; currently Royal Mint blog only]]",
+      "[[VERIFY: Roman flammeum colour and meaning (fact_16) from a classical reference or museum; currently Wikipedia only]]",
+      "[[VERIFY: Henry Swinburne as earliest English source for the vena amoris and the 1686 date (fact_13); Britannica confirms only the myth and that no such vein exists]]",
+      "[[VERIFY: handfasting as 'trial marriage for a year and a day' and A. E. Anton 1958 finding (fact_20) from National Museums Scotland, NRS or the Scottish Historical Review; currently Wikipedia]]",
+      "[[VERIFY: countries other than Chile and Brazil where the wedding ring is worn on the right hand]]"
+    ],
+    "needs_signoff": [],
+    "must_include_coverage": [
+      {
+        "item": "Rings on the fourth finger of the left hand: documented origin plus vena amoris myth",
+        "covered_by": [
+          "fact_303",
+          "fact_304",
+          "fact_305",
+          "[[VERIFY: Swinburne attribution]]",
+          "[[VERIFY: other right-hand countries]]"
+        ]
+      },
+      {
+        "item": "White dress: Queen Victoria 1840, before 1840, red in China and India",
+        "covered_by": [
+          "fact_300",
+          "fact_301",
+          "fact_302",
+          "[[VERIFY: red bridal colour China and India]] (not in this top-up)"
+        ]
+      },
+      {
+        "item": "Something old, something new and the sixpence",
+        "covered_by": [
+          "[[VERIFY: rhyme first recorded date]]",
+          "[[VERIFY: sixpence non-commercial source]]"
+        ]
+      },
+      {
+        "item": "Bridal veil: Roman flammeum",
+        "covered_by": [
+          "[[VERIFY: flammeum classical source]]"
+        ]
+      },
+      {
+        "item": "Handfasting: Scottish betrothal meaning, year-and-a-day as often said",
+        "covered_by": [
+          "fact_17 and fact_18 (batch A, ScotlandsPeople, unchanged)",
+          "[[VERIFY: year and a day / Anton 1958]]"
+        ]
+      }
+    ]
+  }
+}
