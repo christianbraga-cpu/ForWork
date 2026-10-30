@@ -15,3 +15,4 @@
 00:01 06 editor pass_with_edits 4.29; 11 of 16 edits applied; 5 link removals skipped: pages are live (HTTP 200, DataForSEO) and added to link-map.csv; zaffe fact marker added
 00:04 07b icp-panel-chair revise; enquire 1.7; 1 must_fix, 3 should_fix (La Serenata skipped: own-page source)
 00:04 orchestrator: DSL 'handfast' entry fails to display (source file error); sentence cut instead of VERIFY; final pass launched (5 min budget)
+00:05 08 luxury-writer complete; 0 VERIFY; table moved up; scan clean; 8b+CRO+distribution launched
