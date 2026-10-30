@@ -228,7 +228,7 @@ In Italy, confetti means sugared almonds or small round sweets rather than paper
 
 ### Arab and Gulf weddings
 
-Henna is one of the most widely shared wedding customs in the Arab world. In 2024 UNESCO inscribed "Henna: rituals, aesthetic and social practices" on its [Representative List of the Intangible Cultural Heritage of Humanity](https://ich.unesco.org/en/RL/henna-rituals-aesthetic-and-social-practices-02116), nominated jointly by 16 Arab states. <!-- fact_204 --> UNESCO describes henna as a symbol of joy used at births and weddings, often accompanied by chants, songs, proverbs and poems. <!-- fact_205 --> Our guide to [Arab wedding traditions](/guides/arab-wedding-traditions) explains how it fits the wider celebration.
+Henna is a wedding custom shared across many Arab states. <!-- fact_204 --> In 2024 UNESCO inscribed "Henna: rituals, aesthetic and social practices" on its [Representative List of the Intangible Cultural Heritage of Humanity](https://ich.unesco.org/en/RL/henna-rituals-aesthetic-and-social-practices-02116), nominated jointly by 16 Arab states. <!-- fact_204 --> UNESCO describes henna as a symbol of joy used at births and weddings, often accompanied by chants, songs, proverbs and poems. <!-- fact_205 --> Our guide to [Arab wedding traditions](/guides/arab-wedding-traditions) explains how it fits the wider celebration.
 
 ### Lebanese weddings
 
@@ -240,7 +240,7 @@ In a Muslim marriage the groom promises a mahr, a commitment to provide his brid
 
 ### India and Indian weddings abroad
 
-In saptapadi the couple take seven steps around the sacred fire. In the form described by The Hindu, the groom recites a blessing for each step and ends: "You and I have walked seven steps together and have become friends". <!-- fact_402 --> Wording differs between communities, so follow your priest's form. Open-flame rules are rarely published, so confirm them with the venue in writing first. Our guide to [Indian wedding traditions](/6-indian-wedding-traditions-you-have-to-read-to-believe) covers mehndi, haldi and the rest of a multi-day celebration.
+In saptapadi the couple take seven steps together at the sacred fire. In the form described by The Hindu, the groom recites a blessing for each step and ends: "You and I have walked seven steps together and have become friends". <!-- fact_402 --> Wording differs between communities, so follow your priest's form. Open-flame rules are rarely published, so confirm them with the venue in writing first. Our guide to [Indian wedding traditions](/6-indian-wedding-traditions-you-have-to-read-to-believe) covers mehndi, haldi and the rest of a multi-day celebration.
 
 ### Orthodox weddings in Greece and beyond
 
