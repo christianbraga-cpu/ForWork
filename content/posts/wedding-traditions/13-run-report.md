@@ -1,7 +1,7 @@
 # Run report: What Are the Wedding Traditions Worth Keeping?
 
 - **Slug:** wedding-traditions (CMS slug as given)  ·  **Run date:** 2026-10-29 to 30  ·  **Status:** Package ready (no Chrome)
-- **Mode:** fast mode, refresh. Started 23:19 UTC, first draft 23:52, package about 00:10. About 50 minutes in total; sourcing tradition origins took about 25 of them.
+- **Mode:** fast mode, refresh. Started 23:19 UTC, first draft 23:52, package 00:08. About 49 minutes in total; sourcing tradition origins took about 25 of them.
 - **Draft:** not uploaded (no Chrome in the cloud session; CMS field map not yet confirmed)
 - **Word file:** `wedding-traditions-draft.docx`
 

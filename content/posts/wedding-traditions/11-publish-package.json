@@ -1,0 +1,387 @@
+{
+  "agent": "cms-publisher",
+  "task_id": "wedding-traditions",
+  "stage": "11",
+  "status": "complete",
+  "round": 1,
+  "inputs_used": [
+    "CLAUDE.md",
+    "content-system/cms/field-map.md",
+    "content-system/schemas/11-publish-package.schema.json",
+    "content/posts/wedding-traditions/00-input.json",
+    "content/posts/wedding-traditions/01-brief.json",
+    "content/posts/wedding-traditions/02-seo.json",
+    "content/posts/wedding-traditions/02-research/report.md",
+    "content/posts/wedding-traditions/04-images.json",
+    "content/posts/wedding-traditions/06-edit-final.json",
+    "content/posts/wedding-traditions/08-final.md",
+    "content/posts/wedding-traditions/09-cro.json",
+    "content/posts/getting-married-in-italy/11-publish-package.json"
+  ],
+  "self_qa": {
+    "checks": [
+      {
+        "check": "primary_category equals categories[0] (Expert Advice, fixed by person)",
+        "pass": true
+      },
+      {
+        "check": "Front matter, all fact markers and non-image comments removed; image-slot comments kept; wording of 08-final.md unchanged",
+        "pass": true,
+        "note": "10 image-slot comments in 11-body.md"
+      },
+      {
+        "check": "Primary CTA from 09-cro.json rendered at the CTA marker with UTMs",
+        "pass": true
+      },
+      {
+        "check": "Exactly 4 key takeaways matching 08-final.md; all FAQs extracted and in FAQPage",
+        "pass": true,
+        "note": "5 FAQs"
+      },
+      {
+        "check": "No em dashes in 11-body.md or package",
+        "pass": true
+      },
+      {
+        "check": "needs_signoff empty; no prices printed; no [[VERIFY]] markers in final copy",
+        "pass": true
+      },
+      {
+        "check": "All 10 image slots from 04-images.json listed",
+        "pass": true,
+        "note": "all needed"
+      },
+      {
+        "check": "redirects_recommended lists the 3 old paths, 301 to /expert-advice/wedding-traditions, recommendation only",
+        "pass": true
+      },
+      {
+        "check": "Status draft; nothing uploaded, published or scheduled",
+        "pass": true
+      },
+      {
+        "check": "Image alt and caption filled",
+        "pass": false,
+        "note": "No approved images and no alt/caption in 04-images.json; left empty rather than invented."
+      }
+    ],
+    "confidence": 0.85
+  },
+  "open_questions": [
+    {
+      "to": "orchestrator",
+      "question": "CMS upload not attempted: no browser in this cloud session and content-system/cms/field-map.md says \"NOT YET MAPPED\". Run /wedded-cms-discovery locally, then /wedded-blog resume=wedding-traditions.",
+      "blocking": true
+    },
+    {
+      "to": "person",
+      "question": "Approve the three 301 redirects (old traditions URLs to /expert-advice/wedding-traditions) for publish day, and the internal-link update (needs a site crawl). Recommendation only; nothing on the live site was changed.",
+      "blocking": false
+    },
+    {
+      "to": "person",
+      "question": "All 10 image slots are still needed; alt text and captions will be written once images are approved.",
+      "blocking": false
+    }
+  ],
+  "assumptions": [
+    "Breadcrumb level 2 URL is https://weddedwonderland.com/expert-advice, from the fixed URL path in 00-input.json.",
+    "Excerpt is the opening paragraph of the post (no separate excerpt supplied).",
+    "FAQPage answer text has Markdown link syntax stripped.",
+    "Article description uses the meta description from 02-seo.json.",
+    "Secondary CTA stays as the inline link already in 08-final.md (per 09-cro.json), so no second block was added."
+  ],
+  "verify_items": [],
+  "tools_used": [
+    "Bash (python3 -I)"
+  ],
+  "next_agent": [
+    "orchestrator"
+  ],
+  "payload": {
+    "title": "What Are the Wedding Traditions Worth Keeping?",
+    "slug": "wedding-traditions",
+    "url_path": "/expert-advice/wedding-traditions",
+    "content_type": "Pillar",
+    "cluster": "Wedding Traditions",
+    "refresh_of": "/10-of-the-oldest-and-most-fascinating-wedding-traditions",
+    "categories": [
+      "Expert Advice",
+      "Wedding Traditions",
+      "Ceremony",
+      "Cultural Weddings",
+      "Destination Weddings"
+    ],
+    "primary_category": "Expert Advice",
+    "tags": [
+      "wedding traditions",
+      "wedding customs",
+      "ceremony ideas",
+      "cultural weddings",
+      "destination weddings",
+      "wedding history"
+    ],
+    "excerpt": "Most couples inherit their wedding traditions before they choose them. The ring goes on a particular finger, someone walks someone down an aisle, a cake is cut, and nobody quite remembers why.",
+    "key_takeaways": [
+      "Many popular origin stories, including the \"vein of love\" and the month of mead behind \"honeymoon\", are not supported by the documented record.",
+      "The white wedding dress is a Victorian fashion that Queen Victoria's 1840 wedding helped make a tradition, so colour is genuinely your call.",
+      "At a destination wedding, rituals such as handfasting, a quaich or personal vows sit well in a symbolic ceremony, while the legal marriage must be valid both where it happens and under Australian law.",
+      "Customs from another culture or faith are best included by invitation, led by someone from that tradition, rather than borrowed as decoration."
+    ],
+    "body_markdown_file": "content/posts/wedding-traditions/11-body.md",
+    "faq": [
+      {
+        "q": "What are the four things a bride should have on her wedding day?",
+        "a": "Something old, something new, something borrowed and something blue; some versions add a sixpence in the shoe. Anyone in the couple can carry them."
+      },
+      {
+        "q": "Why do we throw rice at weddings?",
+        "a": "Rice and grain are often said to wish the couple plenty, but we could not find that origin documented. What is documented is the word confetti, which comes from the Italian for a sugared sweet and was applied to paper by 1846. Whatever you throw, check the venue's rules first."
+      },
+      {
+        "q": "Who walks the mother of the bride down the aisle?",
+        "a": "There is no fixed rule: a family member, an usher or her partner can escort her to her seat. In the Church of England's current service a mother can also present the bride herself."
+      },
+      {
+        "q": "What is the oldest wedding tradition?",
+        "a": "Rings are among the oldest with firm evidence: Britannica says the earliest concrete evidence of engagement rings is Roman. Lifting a bride over the threshold was already old enough in Roman times for Plutarch to wonder why it was done."
+      },
+      {
+        "q": "Can we include a cultural tradition that isn't from our own background?",
+        "a": "Often, yes, if you are invited into it and someone from that tradition leads it. Religious rites such as the Orthodox crowning or saptapadi belong to their faiths. UNESCO's warning about decontextualisation is a useful guide."
+      }
+    ],
+    "images": [
+      {
+        "slot_id": "featured",
+        "file": "content/posts/wedding-traditions/images/wedding-traditions-destination-ceremony-ring-exchange-hero.webp",
+        "role": "featured",
+        "alt": "",
+        "caption": "",
+        "status": "needed"
+      },
+      {
+        "slot_id": "rings",
+        "file": "content/posts/wedding-traditions/images/wedding-traditions-ring-fourth-finger-hands.webp",
+        "role": "inline",
+        "alt": "",
+        "caption": "",
+        "status": "needed"
+      },
+      {
+        "slot_id": "veil_dress",
+        "file": "content/posts/wedding-traditions/images/wedding-traditions-veil-white-dress-destination.webp",
+        "role": "inline",
+        "alt": "",
+        "caption": "",
+        "status": "needed"
+      },
+      {
+        "slot_id": "something_blue",
+        "file": "content/posts/wedding-traditions/images/wedding-traditions-something-old-new-borrowed-blue-still-life.webp",
+        "role": "inline",
+        "alt": "",
+        "caption": "",
+        "status": "needed"
+      },
+      {
+        "slot_id": "handfasting",
+        "file": "content/posts/wedding-traditions/images/wedding-traditions-handfasting-ribbon-hands.webp",
+        "role": "inline",
+        "alt": "",
+        "caption": "",
+        "status": "needed"
+      },
+      {
+        "slot_id": "breaking_glass",
+        "file": "content/posts/wedding-traditions/images/wedding-traditions-breaking-the-glass-chuppah.webp",
+        "role": "inline",
+        "alt": "",
+        "caption": "",
+        "status": "needed"
+      },
+      {
+        "slot_id": "cake",
+        "file": "content/posts/wedding-traditions/images/wedding-traditions-wedding-cake-terrace.webp",
+        "role": "inline",
+        "alt": "",
+        "caption": "",
+        "status": "needed"
+      },
+      {
+        "slot_id": "confetti",
+        "file": "content/posts/wedding-traditions/images/wedding-traditions-petal-confetti-exit.webp",
+        "role": "inline",
+        "alt": "",
+        "caption": "",
+        "status": "needed"
+      },
+      {
+        "slot_id": "destination_italy",
+        "file": "content/posts/wedding-traditions/images/wedding-traditions-italy-confetti-bomboniere.webp",
+        "role": "inline",
+        "alt": "",
+        "caption": "",
+        "status": "needed"
+      },
+      {
+        "slot_id": "destination_cultural",
+        "file": "content/posts/wedding-traditions/images/wedding-traditions-destination-zaffe-lake-como.webp",
+        "role": "inline",
+        "alt": "",
+        "caption": "",
+        "status": "needed"
+      }
+    ],
+    "cta": {
+      "text": "Read the free magazine",
+      "subtext": "Destination wedding inspiration, free to read",
+      "link": "/magazine?utm_source=blog&utm_medium=content&utm_campaign=wedding-traditions&utm_content=primary",
+      "placement": "Closing section 'Planning a ceremony that is yours', at the <!-- CTA: primary --> marker, rendered as a bold link plus subtext in 11-body.md"
+    },
+    "secondary_cta": {
+      "text": "Speak with a Wedded Advisor",
+      "subtext": "The fee is agreed in writing before any work begins",
+      "link": "/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=wedding-traditions&utm_content=secondary",
+      "placement": "Inline link already in the body at the end of 'Local wedding traditions you can borrow at your destination' (no separate block)"
+    },
+    "lead_magnet": {
+      "name": "Wedded Wonderland digital magazine",
+      "link": "/magazine?utm_source=blog&utm_medium=content&utm_campaign=wedding-traditions&utm_content=magnet",
+      "placement": "Not placed separately: the magazine is the primary CTA on this post, so a second magnet slot would repeat it. Link and utm_content=magnet provided for distribution/social use only.",
+      "exists": true
+    },
+    "tracking_links": [
+      "/magazine?utm_source=blog&utm_medium=content&utm_campaign=wedding-traditions&utm_content=primary",
+      "/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=wedding-traditions&utm_content=secondary",
+      "/magazine?utm_source=blog&utm_medium=content&utm_campaign=wedding-traditions&utm_content=magnet"
+    ],
+    "seo": {
+      "meta_title": "Wedding Traditions: Which to Keep, Adapt or Skip",
+      "meta_description": "Where wedding traditions really come from, which origin stories are myths, and which to keep, adapt or skip for a destination wedding.",
+      "focus_keyword": "wedding traditions",
+      "canonical": "https://weddedwonderland.com/expert-advice/wedding-traditions",
+      "og_image_slot": "featured"
+    },
+    "schema_jsonld": {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Article",
+          "@id": "https://weddedwonderland.com/expert-advice/wedding-traditions#article",
+          "headline": "What Are the Wedding Traditions Worth Keeping?",
+          "description": "Where wedding traditions really come from, which origin stories are myths, and which to keep, adapt or skip for a destination wedding.",
+          "author": {
+            "@type": "Organization",
+            "name": "Wedded Wonderland",
+            "url": "https://weddedwonderland.com/"
+          },
+          "publisher": {
+            "@type": "Organization",
+            "name": "Wedded Wonderland",
+            "url": "https://weddedwonderland.com/"
+          },
+          "datePublished": "",
+          "mainEntityOfPage": "https://weddedwonderland.com/expert-advice/wedding-traditions",
+          "inLanguage": "en-AU"
+        },
+        {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Home",
+              "item": "https://weddedwonderland.com/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Expert Advice",
+              "item": "https://weddedwonderland.com/expert-advice"
+            },
+            {
+              "@type": "ListItem",
+              "position": 3,
+              "name": "What Are the Wedding Traditions Worth Keeping?",
+              "item": "https://weddedwonderland.com/expert-advice/wedding-traditions"
+            }
+          ]
+        },
+        {
+          "@type": "FAQPage",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "What are the four things a bride should have on her wedding day?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Something old, something new, something borrowed and something blue; some versions add a sixpence in the shoe. Anyone in the couple can carry them."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Why do we throw rice at weddings?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Rice and grain are often said to wish the couple plenty, but we could not find that origin documented. What is documented is the word confetti, which comes from the Italian for a sugared sweet and was applied to paper by 1846. Whatever you throw, check the venue's rules first."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Who walks the mother of the bride down the aisle?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "There is no fixed rule: a family member, an usher or her partner can escort her to her seat. In the Church of England's current service a mother can also present the bride herself."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "What is the oldest wedding tradition?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Rings are among the oldest with firm evidence: Britannica says the earliest concrete evidence of engagement rings is Roman. Lifting a bride over the threshold was already old enough in Roman times for Plutarch to wonder why it was done."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Can we include a cultural tradition that isn't from our own background?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Often, yes, if you are invited into it and someone from that tradition leads it. Religious rites such as the Orthodox crowning or saptapadi belong to their faiths. UNESCO's warning about decontextualisation is a useful guide."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    "author": "Wedded Wonderland",
+    "status": "draft",
+    "verify_items": [],
+    "needs_signoff": [],
+    "redirects_recommended": [
+      {
+        "from": "/10-of-the-oldest-and-most-fascinating-wedding-traditions-in-the-world",
+        "to": "/expert-advice/wedding-traditions",
+        "type": 301,
+        "when": "at publish",
+        "status": "recommendation only, not done"
+      },
+      {
+        "from": "/10-wedding-traditions-de-bunked",
+        "to": "/expert-advice/wedding-traditions",
+        "type": 301,
+        "when": "at publish",
+        "status": "recommendation only, not done"
+      },
+      {
+        "from": "/10-of-the-oldest-and-most-fascinating-wedding-traditions",
+        "to": "/expert-advice/wedding-traditions",
+        "type": 301,
+        "when": "at publish",
+        "status": "recommendation only, not done"
+      }
+    ],
+    "draft_note": "DRAFT. Do not publish until checked:\n\n1. [[VERIFY]] items: none in the final copy (0 markers).\n\n2. Nic sign-off on prices: none (no prices printed).\n\n3. Image slots needed (10, none approved yet; alt and caption to add when approved):\n   - featured (needed)\n   - rings (needed)\n   - veil_dress (needed)\n   - something_blue (needed)\n   - handfasting (needed)\n   - breaking_glass (needed)\n   - cake (needed)\n   - confetti (needed)\n   - destination_italy (needed)\n   - destination_cultural (needed)\n\n4. Redirects (recommendation only, set at publish by a human): 301 from\n   - /10-of-the-oldest-and-most-fascinating-wedding-traditions-in-the-world\n   - /10-wedding-traditions-de-bunked\n   - /10-of-the-oldest-and-most-fascinating-wedding-traditions\n   to /expert-advice/wedding-traditions, and update internal links pointing at the old URLs.\n\n5. Status: Draft only. A human clicks Publish."
+  }
+}
