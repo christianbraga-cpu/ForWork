@@ -1,0 +1,166 @@
+{
+  "agent": "distribution-lead",
+  "task_id": "wedding-traditions",
+  "stage": "10",
+  "status": "complete",
+  "round": 1,
+  "inputs_used": [
+    "CLAUDE.md",
+    "content-system/brand/banned-phrases.md",
+    "content-system/schemas/10-distribution.schema.json",
+    "content/posts/wedding-traditions/01-brief.json",
+    "content/posts/wedding-traditions/02-seo.json",
+    "content/posts/wedding-traditions/04-images.json",
+    "content/posts/wedding-traditions/08-final.md"
+  ],
+  "self_qa": {
+    "checks": [
+      {
+        "check": "Pin titles <= 100 chars, keyword in each",
+        "pass": true,
+        "note": "66, 75, 73"
+      },
+      {
+        "check": "Pin descriptions <= 500 chars",
+        "pass": true,
+        "note": "443, 444, 422"
+      },
+      {
+        "check": "Pins tied to 04-images.json slot ids",
+        "pass": true,
+        "note": "featured, rings, something_blue (all status 'needed'; placeholders)"
+      },
+      {
+        "check": "Carousel 5 to 8 slides, last invites Wedded Advisor conversation",
+        "pass": true,
+        "note": "8 slides"
+      },
+      {
+        "check": "Caption <= 2,200 chars, 5 to 10 hashtags",
+        "pass": true,
+        "note": "1166 chars, 8 hashtags"
+      },
+      {
+        "check": "Newsletter subject <= 60, preview <= 110, blurb 60 to 100 words",
+        "pass": true,
+        "note": "subject 56, preview 105, blurb 83 words"
+      },
+      {
+        "check": "UTMs on every link",
+        "pass": true,
+        "note": "pinterest/social, newsletter/email, campaign wedding-traditions"
+      },
+      {
+        "check": "Myth lines match 08-final.md wording",
+        "pass": true,
+        "note": "vena amoris: 'modern medicine has shown there is no such vein'; white dress: 'Victorian fashion that Queen Victoria's 1840 wedding helped make a tradition' (article does not use 'popularised', so that word is avoided); honeymoon: 'not supported by the dictionary record'"
+      },
+      {
+        "check": "Cultural and religious customs handled respectfully",
+        "pass": true,
+        "note": "Only the article's invitation-led framing used; jumping the broom and breaking the glass not used as hooks; no image slot for cultural rites used"
+      },
+      {
+        "check": "No em or en dashes, no banned or flagged phrases, no prices, no vendor names, no [[VERIFY]]",
+        "pass": true,
+        "note": "scripted scan clean"
+      },
+      {
+        "check": "Australian English",
+        "pass": true,
+        "note": "colour, encyclopaedia"
+      }
+    ],
+    "confidence": 0.85
+  },
+  "open_questions": [
+    {
+      "to": "human",
+      "question": "All three pin slots (featured, rings, something_blue) are still 'needed' in 04-images.json. Pins and carousel cannot be scheduled until approved, licensed images exist (something_blue AI fallback only with approval, labelled 'Illustrative image').",
+      "blocking": false
+    },
+    {
+      "to": "human",
+      "question": "Confirm the final URL /expert-advice/wedding-traditions (from the 01-brief redirect plan; 02-seo url_path is null) and the 301 from /10-of-the-oldest-and-most-fascinating-wedding-traditions before links go live.",
+      "blocking": false
+    },
+    {
+      "to": "human",
+      "question": "Confirm Pinterest boards 'Wedding Ceremony Ideas' and 'Wedding Traditions and Etiquette' exist, or map them to existing boards.",
+      "blocking": false
+    },
+    {
+      "to": "human",
+      "question": "Instagram captions have no clickable links: set link-in-bio to the post URL with utm_source=instagram&utm_medium=social&utm_campaign=wedding-traditions.",
+      "blocking": false
+    }
+  ],
+  "assumptions": [
+    "09-cro.json does not exist for this post; the CTA wording follows 08-final.md (talk it through with a Wedded Advisor).",
+    "Post URL https://weddedwonderland.com/expert-advice/wedding-traditions taken from the 01-brief.json redirect plan. utm_content added per asset.",
+    "Only facts stated in 08-final.md are used; undocumented stories (veil, bridesmaids, rice, toasts, quaich handles) are not repeated, even as myths, except those the article itself debunks with a source.",
+    "Jumping the broom, breaking the glass, henna, saptapadi and the Orthodox crowning are not used as social hooks; the destination_cultural and breaking_glass slots are not used."
+  ],
+  "verify_items": [],
+  "tools_used": [
+    "Bash",
+    "Read"
+  ],
+  "next_agent": [
+    "cms-publisher"
+  ],
+  "payload": {
+    "pinterest": [
+      {
+        "title": "Wedding Traditions Worth Keeping: Where Each One Really Comes From",
+        "description": "Most couples inherit their wedding traditions before they choose them. Our guide traces rings, vows, the white dress, handfasting, confetti and the honeymoon back to museum, encyclopaedia and church sources, flags the origin stories that do not hold up, and gives our keep, adapt or skip view for a destination wedding. Plus how to include a custom from another culture or faith respectfully: by invitation, led by someone from that tradition.",
+        "image_slot": "featured",
+        "board": "Wedding Ceremony Ideas",
+        "link": "https://weddedwonderland.com/expert-advice/wedding-traditions?utm_source=pinterest&utm_medium=social&utm_campaign=wedding-traditions&utm_content=pin-featured"
+      },
+      {
+        "title": "Wedding Traditions: Why the Ring Goes on the Fourth Finger of the Left Hand",
+        "description": "The fourth finger of the left hand is written into the 1662 Book of Common Prayer marriage service, with the words \"With this ring I thee wed\". The \"vena amoris\" or vein of love story? Britannica records that modern medicine has shown there is no such vein. And not every country follows the left-hand rule: in Chile and Brazil the ring moves from the right hand to the left at the wedding. Read the origins of wedding traditions, myth by myth.",
+        "image_slot": "rings",
+        "board": "Wedding Traditions and Etiquette",
+        "link": "https://weddedwonderland.com/expert-advice/wedding-traditions?utm_source=pinterest&utm_medium=social&utm_campaign=wedding-traditions&utm_content=pin-rings"
+      },
+      {
+        "title": "Something Old, Something New, Something Borrowed, Something Blue: Keep It",
+        "description": "Four small things carried on the day and, in the longer version, a sixpence in the shoe. This wedding tradition costs nothing and travels in a carry-on. Make something borrowed a family heirloom: a grandmother's brooch, a father's cufflinks, a handkerchief that has been to three generations of weddings. Confident dates and official meanings are hard to confirm, so choose your own. Partners of any gender can carry them.",
+        "image_slot": "something_blue",
+        "board": "Wedding Traditions and Etiquette",
+        "link": "https://weddedwonderland.com/expert-advice/wedding-traditions?utm_source=pinterest&utm_medium=social&utm_campaign=wedding-traditions&utm_content=pin-something-blue"
+      }
+    ],
+    "instagram_carousel": {
+      "slides": [
+        "Wedding traditions you inherited. Which ones are worth keeping?",
+        "The ring finger and the \"vein of love\": Britannica records that modern medicine has shown there is no such vein. The fourth finger of the left hand comes from the 1662 Book of Common Prayer.",
+        "The white dress is a Victorian fashion that Queen Victoria's 1840 wedding helped make a tradition. She did not invent white. Colour is genuinely your call.",
+        "\"Honeymoon\" from a month of mead? The dictionary record does not support it. \"Hony moone\" appears in English from the 1540s, meaning the tender first period of a marriage.",
+        "Giving away is optional, even in the Church of England's current service. One version asks both sets of parents, and both answer \"We will\".",
+        "Marrying abroad? Customs from another culture or faith are best included by invitation, led by someone from that tradition, rather than borrowed as decoration.",
+        "Keep a tradition if it means something to you, means something to your family, or works where you are marrying.",
+        "Bringing a family tradition and a local custom into one ceremony? Tell us which ones matter to you and talk it through with a Wedded Advisor."
+      ],
+      "caption": "Most couples inherit their wedding traditions before they choose them. The ring goes on a particular finger, someone walks someone down an aisle, a cake is cut, and nobody quite remembers why.\n\nWe traced the traditions back to museum, encyclopaedia and church sources. A few things we found:\n\nThe \"vein of love\" behind the ring finger? Britannica records that modern medicine has shown there is no such vein.\nThe white dress is a Victorian fashion that Queen Victoria's 1840 wedding helped make a tradition.\nThe month of mead behind \"honeymoon\" is not supported by the dictionary record.\n\nAt a destination wedding, rituals such as handfasting, a quaich or personal vows sit well in a symbolic ceremony, while the legal marriage must be valid both where it happens and under Australian law.\n\nAnd if a custom comes from another culture or faith, be invited into it, with someone from that tradition leading it. Religious rites such as the Orthodox crowning or saptapadi belong to their faiths.\n\nWhich tradition would your family genuinely miss? Tell us in the comments, or send us a message to talk it through with a Wedded Advisor. Full guide via the link in our bio.",
+      "hashtags": [
+        "#weddingtraditions",
+        "#destinationwedding",
+        "#weddingceremony",
+        "#weddingplanning",
+        "#australianwedding",
+        "#handfasting",
+        "#somethingblue",
+        "#symbolicceremony"
+      ]
+    },
+    "newsletter": {
+      "subject": "Wedding traditions worth keeping (and the myths to skip)",
+      "preview": "The ring finger, the white dress and the honeymoon: where they really come from, and what to keep abroad.",
+      "blurb": "Why does the ring go on the fourth finger of the left hand? Is the white dress an ancient rule? Our new guide traces the best-known wedding traditions back to museum, encyclopaedia and church sources and flags the stories that do not hold up, from the \"vein of love\" to the month of mead. Then we give our view on what to keep, adapt or quietly skip at a destination wedding, and how to include a custom from another culture or faith respectfully.",
+      "link": "https://weddedwonderland.com/expert-advice/wedding-traditions?utm_source=newsletter&utm_medium=email&utm_campaign=wedding-traditions&utm_content=newsletter-feature"
+    }
+  }
+}

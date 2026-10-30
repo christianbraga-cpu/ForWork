@@ -1,0 +1,120 @@
+{
+  "agent": "cro-specialist",
+  "task_id": "wedding-traditions",
+  "stage": "09",
+  "status": "complete",
+  "round": 1,
+  "inputs_used": [
+    "content-system/brand/services.md",
+    "content-system/brand/brand-facts.md",
+    "content/posts/wedding-traditions/01-brief.json",
+    "content/posts/wedding-traditions/07-panel.json",
+    "content/posts/wedding-traditions/08-final.md",
+    "content-system/seo/link-map.csv",
+    "content-system/schemas/09-cro.schema.json"
+  ],
+  "payload": {
+    "journey_stage": "dreaming",
+    "primary_cta": {
+      "text": "Read the free magazine",
+      "subtext": "Destination wedding inspiration, free to read",
+      "link": "/magazine?utm_source=blog&utm_medium=content&utm_campaign=wedding-traditions&utm_content=primary",
+      "placement": "Moved from the top of 'How to choose which traditions to keep' (where it sat directly under the Concierge invitation, giving two CTAs back to back) to the closing section 'Planning a ceremony that is yours', after the line 'The traditions worth keeping are the ones you can explain...'. It replaces the inline /magazine link there, so the block does not duplicate it. See copy_changes 1 and 2."
+    },
+    "secondary_cta": {
+      "text": "Speak with a Wedded Advisor",
+      "subtext": "The fee is agreed in writing before any work begins",
+      "link": "/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=wedding-traditions&utm_content=secondary",
+      "placement": "Inline, existing paragraph at the end of 'Local wedding traditions you can borrow at your destination' ('Wondering how to bring a family tradition and a local custom into one ceremony, legally and respectfully?'), per the brief: this is where the legal and respectful question peaks. Existing link gets UTMs (copy_change 3). The closing 'in writing' sentence (panel must_fix) stays directly after the primary block as reassurance."
+    },
+    "lead_magnet": {
+      "name": "Wedded Wonderland digital magazine",
+      "link": "/magazine?utm_source=blog&utm_medium=content&utm_campaign=wedding-traditions&utm_content=magnet",
+      "placement": "Not placed separately: the magazine is the primary CTA on this post, so a second magnet slot would repeat it. Link and utm_content=magnet provided for distribution/social use only.",
+      "exists": true
+    },
+    "copy_changes": [
+      {
+        "old": "## How to choose which traditions to keep\n\n<!-- CTA: primary -->\n\n",
+        "new": "## How to choose which traditions to keep\n\n"
+      },
+      {
+        "old": "If you are still gathering ideas, the [Wedded Wonderland magazine](/magazine) is a good place to start. When you",
+        "new": "<!-- CTA: primary -->\n\nWhen you"
+      },
+      {
+        "old": "Through [Wedded Concierge](/wonderland-concierge), one",
+        "new": "Through [Wedded Concierge](/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=wedding-traditions&utm_content=secondary), one"
+      }
+    ],
+    "tracking": [
+      "/magazine?utm_source=blog&utm_medium=content&utm_campaign=wedding-traditions&utm_content=primary",
+      "/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=wedding-traditions&utm_content=secondary",
+      "/magazine?utm_source=blog&utm_medium=content&utm_campaign=wedding-traditions&utm_content=magnet"
+    ],
+    "rationale": "Dreaming-stage reader (brief), weighted enquiry likelihood 1.7, so services.md rules put the magazine first and Concierge second. Primary wording is the services.md default ('Read the free magazine', 4 words, no exclamation mark); subtext uses only the 'free' fact from services.md. The marker originally sat immediately below the Concierge invitation, which stacked two asks and interrupted the three tests; the natural moment for a 'keep exploring' invitation is after the reader has their answer, at the close. The block replaces the inline /magazine link there. Secondary stays where the legal and respectful question is raised; its subtext is brand-facts wording and answers the panel's trust gap (planner_couple, sceptic, funding_parent, uhnw wanted a concrete reason to trust the next step), which 08-final already addresses in the closing 'in writing' line, now sitting right after the primary block. No prices, no new business details. Suggestion only (not placed): a downloadable 'keep, adapt or skip' traditions checklist would be an ideal magnet, since panel personas said they would share the table with family; it does not exist on the site (exists: false)."
+  },
+  "self_qa": {
+    "checks": [
+      {
+        "check": "journey_stage matches brief (dreaming)",
+        "pass": true
+      },
+      {
+        "check": "Primary CTA <= 6 words, no 'click here', no exclamation mark",
+        "pass": true
+      },
+      {
+        "check": "Targets /magazine and /wonderland-concierge exist in link-map.csv",
+        "pass": true
+      },
+      {
+        "check": "UTMs use utm_campaign=wedding-traditions and utm_content primary|secondary|magnet",
+        "pass": true
+      },
+      {
+        "check": "Each copy_changes.old occurs exactly once in 08-final.md",
+        "pass": true
+      },
+      {
+        "check": "CTA block does not sit next to an inline link to the same target (inline /magazine link removed)",
+        "pass": true
+      },
+      {
+        "check": "No prices, no invented business details; subtexts from services.md and brand-facts.md",
+        "pass": true
+      },
+      {
+        "check": "Australian English, no em dashes",
+        "pass": true
+      }
+    ],
+    "confidence": 0.85
+  },
+  "open_questions": [
+    {
+      "to": "cms-publisher",
+      "question": "search_visitor (via panel) asked for a visible 'last updated' date near the top. content-system/cms/field-map.md does not mention a date or updated field; confirm whether the blog template shows one.",
+      "blocking": false
+    },
+    {
+      "to": "orchestrator",
+      "question": "Apply copy_changes in order, then confirm the <!-- CTA: primary --> marker appears once, in 'Planning a ceremony that is yours'.",
+      "blocking": false
+    },
+    {
+      "to": "orchestrator",
+      "question": "Should a 'keep, adapt or skip' traditions checklist be built as a lead magnet? Not on the site today, so not placed.",
+      "blocking": false
+    }
+  ],
+  "assumptions": [
+    "The magazine is free to read, per services.md ('Read the free magazine').",
+    "The orchestrator renders the primary CTA block from text, subtext and link at the marker.",
+    "The closing Advisor sentence is left unlinked so the end of the page has one clear ask; the ready reader already met the Concierge link in the destination section.",
+    "The table move requested by the panel (should_fix) is already reflected in 08-final.md and is unaffected by these changes."
+  ],
+  "next_agent": [
+    "distribution"
+  ]
+}

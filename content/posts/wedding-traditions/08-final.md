@@ -256,11 +256,9 @@ The quaich is a shallow, two-handled cup, and many couples share one at Scottish
 
 <!-- IMAGE SLOT destination_cultural: Landscape 3:2. Either (a) the zaffe procession with drummers at the Lebanese wedding in Lake Como featured on our site, or (b) mehndi or saat phere at an Indian wedding. Licensed real photography only, consent from couple; respectful, documentary framing. Never AI, never stock of cultural dress or ceremony. -->
 
-Wondering how to bring a family tradition and a local custom into one ceremony, legally and respectfully? Through [Wedded Concierge](/wonderland-concierge), one Wedded Advisor plans the venue, travel, vendors and payments with you, start to finish.
+Wondering how to bring a family tradition and a local custom into one ceremony, legally and respectfully? Through [Wedded Concierge](/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=wedding-traditions&utm_content=secondary), one Wedded Advisor plans the venue, travel, vendors and payments with you, start to finish.
 
 ## How to choose which traditions to keep
-
-<!-- CTA: primary -->
 
 A tradition earns its place in your day if it passes at least one of three tests.
 
@@ -298,4 +296,6 @@ Often, yes, if you are invited into it and someone from that tradition leads it.
 
 The traditions worth keeping are the ones you can explain, your family would miss, and that work where you marry.
 
-If you are still gathering ideas, the [Wedded Wonderland magazine](/magazine) is a good place to start. When you, or your parents, are ready to talk it through, a Wedded Advisor agrees the fee and inclusions with you in writing before you commit.
+<!-- CTA: primary -->
+
+When you, or your parents, are ready to talk it through, a Wedded Advisor agrees the fee and inclusions with you in writing before you commit.
