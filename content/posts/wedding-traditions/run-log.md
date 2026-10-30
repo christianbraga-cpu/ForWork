@@ -12,3 +12,4 @@
 23:53 07 icp-reader search_visitor complete
 23:53 07 icp-reader planner_couple, uhnw complete
 23:53 07 icp-reader sceptic, funding_parent complete (5/5); no must-fix; waiting on editor
+00:01 06 editor pass_with_edits 4.29; 11 of 16 edits applied; 5 link removals skipped: pages are live (HTTP 200, DataForSEO) and added to link-map.csv; zaffe fact marker added
