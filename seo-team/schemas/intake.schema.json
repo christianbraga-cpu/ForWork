@@ -1,0 +1,47 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "intake.schema.json",
+  "title": "Intake payload (00-intake.json)",
+  "type": "object",
+  "required": ["page", "action", "inputs", "page_type", "existing_page", "phase_plan"],
+  "properties": {
+    "page": {
+      "type": "object",
+      "required": ["path", "canonical_url", "slug"],
+      "properties": {
+        "path": {"type": "string", "description": "/destinations/amalfi-coast"},
+        "canonical_url": {"type": "string"},
+        "slug": {"type": "string"},
+        "site_file": {"type": "string", "description": "site/<path>/index.html"}
+      }
+    },
+    "action": {"type": "string", "enum": ["create", "optimise", "refresh", "audit"]},
+    "inputs": {
+      "type": "object",
+      "required": ["research_doc", "page_facts"],
+      "properties": {
+        "research_doc": {"type": "string", "description": "Path inside the run's inputs/ folder"},
+        "page_facts": {"type": "string"},
+        "existing_page_snapshot": {"type": "string"}
+      }
+    },
+    "page_type": {"type": "string", "enum": ["home", "hub", "destination_hub", "venue", "package", "service", "guide", "real_wedding", "planner_profile", "other"]},
+    "existing_page": {
+      "type": "object",
+      "required": ["exists"],
+      "properties": {
+        "exists": {"type": "boolean"},
+        "source": {"type": "string", "enum": ["repo", "live_url", "none"]},
+        "indexed": {"type": "boolean"}
+      }
+    },
+    "market": {"type": "string", "default": "AU"},
+    "phase_plan": {
+      "type": "array",
+      "description": "Phases that will run for this action, from workflows/pipeline.md",
+      "items": {"type": "string"}
+    },
+    "panel": {"type": "array", "items": {"type": "string"}, "description": "Persona IDs, filled after the brief"},
+    "input_gaps": {"type": "array", "items": {"type": "string"}}
+  }
+}

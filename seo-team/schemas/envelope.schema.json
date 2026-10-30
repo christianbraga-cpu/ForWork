@@ -1,0 +1,60 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "envelope.schema.json",
+  "title": "Agent message envelope",
+  "description": "Every agent output in a run folder is one of these. The payload shape depends on task_type; see payloads.md.",
+  "type": "object",
+  "required": ["message_id", "run_id", "from_agent", "to_agent", "task_type", "status", "version", "created_at", "payload", "self_qa", "confidence", "assumptions", "open_questions", "sources", "requires_human_review"],
+  "properties": {
+    "message_id": {"type": "string", "description": "<run_id>-<phase>-<role>-v<version>"},
+    "run_id": {"type": "string", "description": "Run folder name, e.g. 2026-10-30-amalfi-coast-weddings-optimise"},
+    "from_agent": {"type": "string"},
+    "to_agent": {"type": "string", "description": "Usually 'orchestrator'"},
+    "task_type": {
+      "type": "string",
+      "enum": ["intake", "fact_ledger", "keyword_map", "tech_audit", "ai_search_baseline", "page_brief", "link_plan", "conversion_spec", "copy", "image_plan", "build", "qa_gate", "icp_critique", "icp_synthesis", "revisions", "pr_plan", "entity_plan", "measurement_plan"]
+    },
+    "status": {"type": "string", "enum": ["complete", "blocked", "needs_input", "revise"]},
+    "blocked_on": {"type": "string", "description": "Required when status is blocked or needs_input"},
+    "version": {"type": "integer", "minimum": 1},
+    "created_at": {"type": "string", "description": "ISO 8601"},
+    "payload": {"type": "object"},
+    "self_qa": {
+      "type": "object",
+      "required": ["checklist_id", "passed", "failed", "warnings"],
+      "properties": {
+        "checklist_id": {"type": "string", "description": "Section ID from qa/checklists.md"},
+        "passed": {"type": "array", "items": {"type": "string"}},
+        "failed": {"type": "array", "items": {"type": "string"}},
+        "warnings": {"type": "array", "items": {"type": "string"}}
+      }
+    },
+    "confidence": {"type": "number", "minimum": 0, "maximum": 1},
+    "assumptions": {"type": "array", "items": {"type": "string"}},
+    "open_questions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["question", "for"],
+        "properties": {
+          "question": {"type": "string"},
+          "for": {"type": "string", "enum": ["sme_planner", "venue", "price_approver", "brand_owner", "dev_team", "strategist", "programme_owner"]},
+          "blocking": {"type": "boolean"}
+        }
+      }
+    },
+    "sources": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["kind", "ref"],
+        "properties": {
+          "kind": {"type": "string", "enum": ["page_facts", "research_doc", "existing_page", "fact_ledger", "tool", "web", "run_file", "registry", "brand"]},
+          "ref": {"type": "string", "description": "File path, fact ID, tool+report name, or URL"},
+          "date": {"type": "string"}
+        }
+      }
+    },
+    "requires_human_review": {"type": "boolean"}
+  }
+}

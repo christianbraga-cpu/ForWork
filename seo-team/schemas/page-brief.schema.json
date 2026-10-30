@@ -1,0 +1,58 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "page-brief.schema.json",
+  "title": "Page Brief payload (02a-page-brief.json)",
+  "description": "The contract every producer works to. Producers may not add sections, keywords or claims that are not here without a revision request.",
+  "type": "object",
+  "required": ["url", "action", "page_type", "goal", "target_icps", "search", "title_tag", "meta_description", "h1", "sections", "faqs", "internal_links_required", "conversion_goal", "schema_types", "word_count_range", "forbidden_terms", "acceptance_criteria", "kpis"],
+  "properties": {
+    "url": {"type": "string"},
+    "action": {"type": "string", "enum": ["create", "optimise", "refresh"]},
+    "page_type": {"type": "string"},
+    "goal": {"type": "string", "description": "One sentence: what this page must make the reader do and believe"},
+    "target_icps": {"type": "array", "items": {"type": "string"}, "description": "Persona IDs from personas/"},
+    "search": {
+      "type": "object",
+      "required": ["primary_keyword", "secondary_keywords", "intent", "excluded_keywords"],
+      "properties": {
+        "primary_keyword": {"type": "string"},
+        "secondary_keywords": {"type": "array", "items": {"type": "string"}},
+        "intent": {"type": "string", "enum": ["commercial", "commercial_investigation", "informational", "navigational", "transactional"]},
+        "excluded_keywords": {"type": "array", "items": {"type": "object", "properties": {"term": {"type": "string"}, "reason": {"type": "string"}}}},
+        "serp_features_to_target": {"type": "array", "items": {"type": "string"}},
+        "competitor_benchmark": {"type": "array", "items": {"type": "string"}}
+      }
+    },
+    "title_tag": {"type": "object", "properties": {"guidance": {"type": "string"}, "max_chars": {"type": "integer", "default": 60}}},
+    "meta_description": {"type": "object", "properties": {"guidance": {"type": "string"}, "max_chars": {"type": "integer", "default": 155}}},
+    "h1": {"type": "string"},
+    "sections": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "heading_guidance", "purpose", "must_cover", "fact_ids"],
+        "properties": {
+          "id": {"type": "string", "description": "Stable section ID, also used as HTML id"},
+          "heading_guidance": {"type": "string"},
+          "purpose": {"type": "string", "description": "What this section proves or answers"},
+          "must_cover": {"type": "array", "items": {"type": "string"}},
+          "keywords": {"type": "array", "items": {"type": "string"}},
+          "fact_ids": {"type": "array", "items": {"type": "string"}, "description": "Ledger facts this section may use"},
+          "persona_fears_addressed": {"type": "array", "items": {"type": "string"}},
+          "image_need": {"type": "string"},
+          "decision": {"type": "string", "enum": ["new", "keep", "change", "remove"], "description": "optimise/refresh only"},
+          "decision_reason": {"type": "string"}
+        }
+      }
+    },
+    "faqs": {"type": "array", "items": {"type": "object", "properties": {"question": {"type": "string"}, "source_query": {"type": "string"}, "fact_ids": {"type": "array", "items": {"type": "string"}}}}},
+    "internal_links_required": {"type": "array", "items": {"type": "string"}},
+    "conversion_goal": {"type": "string", "enum": ["enquiry", "consultation_request", "date_check"]},
+    "schema_types": {"type": "array", "items": {"type": "string"}},
+    "word_count_range": {"type": "array", "items": {"type": "integer"}, "minItems": 2, "maxItems": 2},
+    "forbidden_terms": {"type": "array", "items": {"type": "string"}},
+    "acceptance_criteria": {"type": "array", "items": {"type": "string"}, "description": "Testable statements the SEO gate checks"},
+    "kpis": {"type": "array", "items": {"type": "object", "properties": {"metric": {"type": "string"}, "target": {"type": "string"}, "by_day": {"type": "integer"}}}},
+    "open_questions": {"type": "array", "items": {"type": "string"}}
+  }
+}

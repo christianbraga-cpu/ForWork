@@ -1,0 +1,54 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "fact-ledger.schema.json",
+  "title": "Fact Ledger payload (00-fact-ledger.json)",
+  "description": "Every publishable fact about the page. Copy, schema, images and FAQs may only state facts that are in here. Precedence: page_facts > research_doc > existing_page > web.",
+  "type": "object",
+  "required": ["facts", "conflicts", "gaps"],
+  "properties": {
+    "facts": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "category", "claim", "value", "source", "status", "risk"],
+        "properties": {
+          "id": {"type": "string", "description": "F-001, F-002 ..."},
+          "category": {"type": "string", "enum": ["price", "offer", "capacity", "rooms", "spaces", "inclusions", "location", "distance", "travel", "legal", "season", "dining", "activities", "history", "brand_programme", "other"]},
+          "claim": {"type": "string", "description": "The fact as one plain sentence"},
+          "value": {"description": "Machine-usable value, e.g. 38550, '20 to 300', '2 km'"},
+          "unit": {"type": "string"},
+          "source": {"type": "string", "description": "page_facts:<line or heading> | research_doc:<section> | existing_page:<selector> | web:<url>"},
+          "source_date": {"type": "string"},
+          "status": {"type": "string", "enum": ["verified", "signed_off", "research", "conflict", "unverified"]},
+          "signed_off_by": {"type": "string"},
+          "risk": {"type": "string", "enum": ["high", "medium", "low"], "description": "high: prices, capacities, legal, anything a couple would plan around"},
+          "publishable": {"type": "boolean", "description": "false when status is conflict or unverified and risk is high"},
+          "notes": {"type": "string"}
+        }
+      }
+    },
+    "conflicts": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["topic", "values", "resolution"],
+        "properties": {
+          "topic": {"type": "string"},
+          "values": {"type": "array", "items": {"type": "object", "properties": {"value": {}, "source": {"type": "string"}}}},
+          "resolution": {"type": "string", "description": "Which value the page uses and why, or 'needs_human'"},
+          "fact_ids": {"type": "array", "items": {"type": "string"}}
+        }
+      }
+    },
+    "gaps": {
+      "type": "array",
+      "description": "Facts the page needs but nobody has supplied",
+      "items": {"type": "object", "properties": {"topic": {"type": "string"}, "ask": {"type": "string", "enum": ["sme_planner", "venue", "price_approver", "brand_owner", "dev_team", "programme_owner"]}}}
+    },
+    "diff_against_live": {
+      "type": "array",
+      "description": "refresh/optimise only: facts that differ from what the live page says",
+      "items": {"type": "object", "properties": {"fact_id": {"type": "string"}, "page_says": {"type": "string"}, "ledger_says": {"type": "string"}, "location": {"type": "string"}}}
+    }
+  }
+}
