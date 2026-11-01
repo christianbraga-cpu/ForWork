@@ -9,3 +9,4 @@
 23:42 05 luxury-writer complete ~2,657 words; 1 VERIFY (katb al-kitab detail); 7 image slots; first draft sent
 23:42 07 icp-reader sceptic complete
 23:43 07 icp-reader search_visitor, uhnw, funding_parent, planner_couple complete (5/5); no must-fix; waiting on editor
+23:46 06 editor pass_with_edits 4.14; 16 edits applied by orchestrator -> 05-draft-r2.md (henna per fact_16; Advisor line; katb al-kitab legal line)
