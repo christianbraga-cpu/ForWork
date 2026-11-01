@@ -102,7 +102,7 @@ On travel, Australians can visit the Schengen area for up to 90 days in any 180-
 
 This section is general information, not legal advice. Check current requirements with the Standesamt where you plan to marry before you book.
 
-If the paperwork is the part keeping you up at night, [speak with a Wedded Advisor](/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=german-wedding-traditions&utm_content=standesamt). One person works in your time zone and plans the venue, travel, vendors and payments with you, with the fee agreed in writing before any work begins. For more on [destination weddings in Europe](/destinations/europe), start with our hub.
+If the paperwork is the part keeping you up at night, [speak with a Wedded Advisor](/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=german-wedding-traditions&utm_content=secondary). One person works in your time zone and plans the venue, travel, vendors and payments with you, with the fee agreed in writing before any work begins. For more on [destination weddings in Europe](/destinations/europe), start with our hub.
 
 ## On the day: ceremony customs
 

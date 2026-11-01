@@ -1,0 +1,78 @@
+{
+  "agent": "cro-specialist",
+  "task_id": "german-wedding-traditions",
+  "stage": "09",
+  "status": "complete",
+  "round": 1,
+  "inputs_used": [
+    "content/posts/german-wedding-traditions/01-brief.json",
+    "content/posts/german-wedding-traditions/07-panel.json",
+    "content/posts/german-wedding-traditions/07-icp/*.json",
+    "content/posts/german-wedding-traditions/08-final.md",
+    "content-system/brand/services.md",
+    "content-system/brand/brand-facts.md",
+    "content-system/seo/link-map.csv",
+    "content-system/schemas/09-cro.schema.json"
+  ],
+  "payload": {
+    "journey_stage": "dreaming",
+    "primary_cta": {
+      "text": "Read the free magazine",
+      "subtext": "Something to save and enjoy at your own pace",
+      "link": "/magazine?utm_source=blog&utm_medium=content&utm_campaign=german-wedding-traditions&utm_content=primary",
+      "placement": "Fill the existing <!-- CTA: primary --> marker in place: after 'How traditions differ across Bavaria, the north, Austria and Switzerland' (ending with the further reading links) and before 'Frequently asked questions'. The reader has finished the customs and is in browse-and-save mode, which is where planner_couple and search_visitor said they would bookmark and keep reading. There is no inline /magazine link anywhere in 08-final.md, so nothing to drop."
+    },
+    "secondary_cta": {
+      "text": "Speak with a Wedded Advisor",
+      "link": "/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=german-wedding-traditions&utm_content=secondary",
+      "placement": "Existing inline link in the paragraph straight after the 'general information, not legal advice' line at the end of the Standesamt section, as the brief asks. Anchor wording and the panel-praised opener are unchanged; only utm_content moves from 'standesamt' to 'secondary' (see copy_changes). No separate CTA block is added here, so the inline link stays and is not duplicated. No subtext, because the paragraph already carries 'with the fee agreed in writing before any work begins' (brand-facts.md)."
+    },
+    "lead_magnet": {
+      "name": "Wedded Wonderland digital magazine",
+      "link": "/magazine?utm_source=blog&utm_medium=content&utm_campaign=german-wedding-traditions&utm_content=primary",
+      "placement": "Served by the primary CTA block; no separate magnet placement, so the page carries only two asks.",
+      "exists": true
+    },
+    "copy_changes": [
+      {
+        "old": "utm_content=standesamt",
+        "new": "utm_content=secondary"
+      }
+    ],
+    "tracking": [
+      "/magazine?utm_source=blog&utm_medium=content&utm_campaign=german-wedding-traditions&utm_content=primary",
+      "/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=german-wedding-traditions&utm_content=secondary"
+    ],
+    "rationale": "Brief sets journey_stage dreaming, primary /magazine and the Wedded Advisor secondary after the Standesamt section, matching the services.md early-stage rule. Primary text is the services.md default for the magazine (4 words, no exclamation mark); the subtext removes the main dreaming-stage worry, being pushed into an enquiry, without claiming anything about the magazine beyond 'free' (services.md). Panel cta_reactions on the Advisor link: planner_couple, funding_parent, sceptic and uhnw 'maybe', search_visitor 'no'. The 'X first' items they named are a real Germany or Europe wedding (planner_couple), a phone call or call-back (funding_parent), the commission policy (sceptic) and scale, exclusive use and discretion (uhnw). None can be answered from brand-facts.md, and the panel chair deferred them as business items, so no copy is added before the CTA and they go to open_questions. The panel kept the 'paperwork keeping you up at night' opener (uhnw's calmer variant is logged for a later test only). Gap noted as a suggestion, not placed: the link map has magazine editions for Australia, Fiji and Dubai but none for Germany or Europe; a Europe edition would be the ideal magnet for this post and the wider traditions cluster.",
+    "test_ideas": [
+      "Later A/B on the secondary opener: current 'If the paperwork is the part keeping you up at night' versus a calmer variant such as 'If you would rather someone else handled the paperwork' (uhnw consider item)."
+    ]
+  },
+  "self_qa": {
+    "checks": [
+      {"check": "journey_stage taken from the brief", "pass": true, "note": "dreaming"},
+      {"check": "Primary CTA text 6 words or fewer, no 'click here', no exclamation mark", "pass": true, "note": "'Read the free magazine', 4 words"},
+      {"check": "All CTA targets exist in link-map.csv", "pass": true, "note": "/magazine (row 307) and /wonderland-concierge (services.md)"},
+      {"check": "UTMs follow services.md format with utm_campaign=german-wedding-traditions", "pass": true},
+      {"check": "copy_changes old string occurs exactly once in 08-final.md", "pass": true, "note": "grep count 1"},
+      {"check": "No CTA block next to an inline link to the same target", "pass": true, "note": "No inline /magazine link; secondary uses the existing inline link with no added block"},
+      {"check": "No prices, no invented business details, no em dashes, Australian English", "pass": true},
+      {"check": "Lead magnet only if it exists", "pass": true, "note": "/magazine exists; Europe edition suggested in rationale only"}
+    ],
+    "confidence": 0.85
+  },
+  "open_questions": [
+    {"to": "person", "question": "Can we add a real Germany or Europe wedding to link before the Advisor CTA? planner_couple and sceptic both said they would want to see one first.", "blocking": false},
+    {"to": "person", "question": "Can brand-facts.md confirm a phone call or call-back option, and the commission policy? funding_parent and sceptic named these as what they need before clicking the Advisor link.", "blocking": false},
+    {"to": "person", "question": "Is a Europe or Germany edition of the digital magazine planned? It would make a better-matched magnet than the general /magazine page.", "blocking": false},
+    {"to": "orchestrator", "question": "Apply the single copy_changes pair (utm_content=standesamt to utm_content=secondary) to 08-final.md and render the primary CTA block at the existing marker.", "blocking": false}
+  ],
+  "assumptions": [
+    "The /magazine page is free to read, per services.md default wording; whether it asks for an email is not known, so the subtext makes no claim about sign-up.",
+    "The panel-praised secondary paragraph stays as an inline link rather than a styled block, so the sentence and fee line read naturally.",
+    "No separate lead magnet placement, because the primary CTA is the magazine itself."
+  ],
+  "verify_items": [],
+  "tools_used": ["Bash"],
+  "next_agent": ["distribution"]
+}
