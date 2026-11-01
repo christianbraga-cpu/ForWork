@@ -3,3 +3,4 @@
 23:27 01 content-strategist complete; Smartraveller 'Do not travel' (updated 14 Sep 2026); 12 customs in 2 batches; old page live, unsourced; 02+03(A,B)+04 launched
 23:29 04 visual-curator complete 7 placeholders
 23:35 02 seo-researcher complete; old page US #1 'wedding in palestine', #2 'palestinian wedding', #3 primary; no other ranking page; 301 recommended
+23:38 03 planner-sme batch B complete 17 facts; UNESCO dabkeh 2023 + henna 2024; Smartraveller Jordan 'Reconsider', UAE 'high degree of caution'; waiting on batch A
