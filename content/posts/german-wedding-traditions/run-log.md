@@ -11,3 +11,4 @@
 23:06 07b icp-panel-chair revise; enquire 2.1; 1 must_fix, 4 should_fix; final pass launched
 23:07 08 luxury-writer complete ~2,700 words; scan clean; 8b+CRO+distribution launched
 23:08 09 cro-specialist complete; /magazine primary, Advisor secondary; 1 UTM change applied
+23:08 08b editor pass, 0 blocking; orchestrator tightened Key takeaway 3 (overstated)

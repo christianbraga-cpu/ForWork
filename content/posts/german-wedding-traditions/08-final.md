@@ -15,7 +15,7 @@ It is the German chapter of our guide to [wedding traditions worth keeping](/exp
 
 - In Germany, only the declaration before the registrar at the Standesamt creates a legal marriage, so the civil ceremony comes first.
 - The Polterabend is a noisy pre-wedding party where guests smash porcelain, never glass, and the couple sweep up the shards together.
-- Most reception customs, from sawing a log to the veil dance, are games that test the couple as a team and largely replace speeches.
+- Many reception customs, from sawing a log together to the veil dance, are playful rituals the guests join in.
 - Customs vary by region, so treat them as a menu to choose from with your family rather than a checklist.
 
 ## German wedding traditions at a glance
