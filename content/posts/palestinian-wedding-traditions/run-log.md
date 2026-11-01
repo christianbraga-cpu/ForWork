@@ -6,3 +6,4 @@
 23:38 03 planner-sme batch B complete 17 facts; UNESCO dabkeh 2023 + henna 2024; Smartraveller Jordan 'Reconsider', UAE 'high degree of caution'; waiting on batch A
 23:38 03 planner-sme batch A complete 18 facts (UNESCO, Glasgow Museums, MEE); merged; writer launched
 23:39 03 orchestrator deduped batch B part file (scratchpad clash, 16 exact duplicates); merged
+23:42 05 luxury-writer complete ~2,657 words; 1 VERIFY (katb al-kitab detail); 7 image slots; first draft sent
