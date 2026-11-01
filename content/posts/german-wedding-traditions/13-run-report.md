@@ -1,7 +1,7 @@
 # Run report: What Are the German Wedding Traditions You Did Not Know?
 
 - **Slug:** german-wedding-traditions (CMS slug as given)  ·  **Run date:** 2026-11-01  ·  **Status:** Package ready (no Chrome)
-- **Mode:** fast mode, refresh. Started 22:47 UTC, first draft 23:02, package RUNEND. About RUNMIN minutes in total.
+- **Mode:** fast mode, refresh. Started 22:47 UTC, first draft 23:02, package 23:10. About 23 minutes in total.
 - **Draft:** not uploaded (no Chrome in the cloud session; CMS field map not yet confirmed)
 - **Word file:** `german-wedding-traditions-draft.docx`
 
