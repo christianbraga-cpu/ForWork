@@ -48,7 +48,7 @@ The mahr is part of an Islamic marriage contract: the groom promises it as a com
 
 How the mahr is set is a private matter between families, and it is not a figure to compare between weddings, so we give no amounts here.
 
-### Laylat al-henna: the henna night ("palestinian henna party")
+### Laylat al-henna: the henna night
 
 The henna gathering is described as a gathering for women, centred on the bride and her closest female friends and relatives. It may be held at the sahra or on its own day, it is sometimes now folded into a bridal shower, and the women sing traditional Arabic songs of joy and love. <!-- fact_16 -->
 
@@ -58,7 +58,7 @@ In 2024, UNESCO added "Henna: rituals, aesthetic and social practices" to its Re
 
 <!-- IMAGE SLOT henna-night: Landscape 3:2, min 1600 px. Still life: a small brass or ceramic bowl of mixed henna paste, a few henna cones, fresh flowers and lit candles on a plain linen cloth, soft warm light. No hands, no people, no embroidery, no identifiable place. Real photo preferred. AI illustrative candidate ONLY if no real image is found, captioned 'Illustrative image' and approved by a human before use. -->
 
-### Tatreez and the wedding thobe (UNESCO 2021) ("palestinian wedding dress")
+### Tatreez and the wedding thobe (UNESCO 2021)
 
 Tatreez is Palestinian embroidery, and the bride's dress is where it reaches its height. In 2021, UNESCO inscribed [the art of embroidery in Palestine](https://ich.unesco.org/en/RL/the-art-of-embroidery-in-palestine-practices-skills-knowledge-and-rituals-01722) on its Representative List of the Intangible Cultural Heritage of Humanity, nominated by the State of Palestine. <!-- fact_01 -->
 
@@ -96,7 +96,7 @@ Zaghareet are described as among the oldest Palestinian song forms, traditionall
 
 You will hear it at moments of arrival and joy. It is not a performance to book; it comes from the guests.
 
-### Dabke ("palestinian dabke")
+### Dabke
 
 In 2023, UNESCO inscribed [Dabkeh, traditional dance in Palestine](https://ich.unesco.org/en/RL/dabkeh-traditional-dance-in-palestine-01998) on its Representative List. <!-- fact_103 --> UNESCO describes it as a popular group dance accompanied by traditional wind instruments and popular singing, performed at festivals, celebrations and events such as weddings and graduations. <!-- fact_104 -->
 
