@@ -6,3 +6,4 @@
 22:59 03 planner-sme batch B complete 26 facts (BGB s1310, Hannover, Smartraveller, The Local); merged; writer launched
 23:02 05 luxury-writer complete ~2,670 words; 0 VERIFY; 12 customs; 7 image slots; first draft sent
 23:03 07 icp-reader funding_parent complete
+23:03 07 icp-reader search_visitor, uhnw, sceptic, planner_couple complete (5/5); no must-fix; waiting on editor
