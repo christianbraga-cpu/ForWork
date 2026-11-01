@@ -10,3 +10,4 @@
 23:42 07 icp-reader sceptic complete
 23:43 07 icp-reader search_visitor, uhnw, funding_parent, planner_couple complete (5/5); no must-fix; waiting on editor
 23:46 06 editor pass_with_edits 4.14; 16 edits applied by orchestrator -> 05-draft-r2.md (henna per fact_16; Advisor line; katb al-kitab legal line)
+23:48 07b icp-panel-chair revise; enquire 2.4; 1 must_fix (katb al-kitab: resolved by rewording without a factual claim instead of a sourcing round), 3 should_fix; final pass launched
