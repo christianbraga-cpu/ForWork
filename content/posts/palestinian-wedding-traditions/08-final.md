@@ -122,7 +122,7 @@ Which dishes are served, and which family hosts which meal, varies from househol
 
 <!-- IMAGE SLOT feast: Landscape 3:2, min 1600 px. Still life: a long table of shared platters and a tray of sweets (e.g. pastries, dates), glasses and flowers, no people, no labels or branding, no identifiable venue. Real photo preferred; AI illustrative only if no real image is found, captioned 'Illustrative image' and approved by a human before use. -->
 
-### Church customs of Palestinian Christian families ("palestinian christian wedding traditions")
+### Church customs of Palestinian Christian families
 
 Palestinian Christian families marry in church, following the rites of their own church. The sources we used do not describe those rites for Palestinian families specifically, so we will not guess at them. Your priest or minister is the right guide to the service itself; the celebration that follows can carry any of the customs above.
 
@@ -144,7 +144,9 @@ Wherever you marry, these customs ask specific things of a venue.
 - **Catering for a shared feast.** Brief the caterer on family-style service and the dishes your families expect, ask whether the kitchen can cater halal if your families need it, and taste the menu with an elder present.
 - **Care for the thobe.** If a family thobe is being made or adapted, start early, and arrange safe storage and steaming at the venue.
 
-Ask each venue about its sound limits, floor size and finishing time before you shortlist it. Your Wedded Advisor agrees the fee in writing before any work begins and confirms inclusions in writing before you commit. If you would like help shaping these evenings into one plan, [speak with a Wedded Advisor](/wonderland-concierge?utm_source=blog&utm_medium=internal&utm_campaign=palestinian-wedding-traditions&utm_content=destination-section).
+Ask each venue about its sound limits, floor size and finishing time before you shortlist it. Your Wedded Advisor agrees the fee in writing before any work begins and confirms inclusions in writing before you commit. If you would like help shaping these evenings into one plan, a Wedded Advisor can bring them together.
+
+<!-- CTA: secondary -->
 
 <!-- IMAGE SLOT destination-planning: Landscape 3:2, min 1600 px. An empty, elegantly styled reception space at a Wedded Wonderland partner venue outside Palestine (or in Australia) with a clear dance floor, a stage for live music and an entrance suitable for a procession. Real licensed photography only. No political imagery, flags, maps, slogans or symbols. -->
 
@@ -176,7 +178,7 @@ Palestinian Christian families marry in church, following their own church's rit
 
 ## Read the Wedded Wonderland magazine
 
-Every family carries these customs a little differently, and the best version is the one your grandmothers would recognise. For more on cultural weddings and how couples honour them abroad, explore our guide to [wedding traditions worth keeping](/expert-advice/wedding-traditions), or [read the digital magazine](/magazine?utm_source=blog&utm_medium=internal&utm_campaign=palestinian-wedding-traditions&utm_content=close).
+Every family carries these customs a little differently, and the best version is the one your grandmothers would recognise. For more on cultural weddings and how couples honour them abroad, explore our guide to [wedding traditions worth keeping](/expert-advice/wedding-traditions).
 
 <!-- CTA: primary -->
 
