@@ -5,3 +5,4 @@
 23:35 02 seo-researcher complete; old page US #1 'wedding in palestine', #2 'palestinian wedding', #3 primary; no other ranking page; 301 recommended
 23:38 03 planner-sme batch B complete 17 facts; UNESCO dabkeh 2023 + henna 2024; Smartraveller Jordan 'Reconsider', UAE 'high degree of caution'; waiting on batch A
 23:38 03 planner-sme batch A complete 18 facts (UNESCO, Glasgow Museums, MEE); merged; writer launched
+23:39 03 orchestrator deduped batch B part file (scratchpad clash, 16 exact duplicates); merged
