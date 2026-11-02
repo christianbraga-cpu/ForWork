@@ -1,7 +1,7 @@
 # Run report: What Are the Turkish Wedding Traditions You Did Not Know?
 
 - **Slug:** turkish-wedding-traditions (CMS slug as given)  ·  **Run date:** 2026-11-02  ·  **Status:** Package ready (no Chrome)
-- **Mode:** fast mode, refresh. Started 00:58 UTC, first draft 01:39, package ENDTIME. About MINS minutes in total; fact-check batch B ran about 33 minutes (slow page readers, embassy page HTTP 500).
+- **Mode:** fast mode, refresh. Started 00:58 UTC, first draft 01:39, package 01:47. About 49 minutes in total; fact-check batch B ran about 33 minutes (slow page readers, embassy page HTTP 500).
 - **Draft:** not uploaded (no Chrome in the cloud session; CMS field map not yet confirmed)
 - **Word file:** `turkish-wedding-traditions-draft.docx`
 

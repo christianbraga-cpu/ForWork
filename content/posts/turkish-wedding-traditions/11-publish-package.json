@@ -1,0 +1,341 @@
+{
+  "agent": "cms-publisher",
+  "task_id": "turkish-wedding-traditions",
+  "stage": "11",
+  "status": "complete",
+  "round": 1,
+  "inputs_used": [
+    "CLAUDE.md",
+    "content-system/cms/field-map.md",
+    "content-system/schemas/11-publish-package.schema.json",
+    "content/posts/turkish-wedding-traditions/00-input.json",
+    "content/posts/turkish-wedding-traditions/01-brief.json",
+    "content/posts/turkish-wedding-traditions/02-seo.json",
+    "content/posts/turkish-wedding-traditions/04-images.json",
+    "content/posts/turkish-wedding-traditions/08-final.md",
+    "content/posts/turkish-wedding-traditions/09-cro.json",
+    "content/posts/celebrity-engagement-rings/11-publish-package.json (format reference)"
+  ],
+  "self_qa": {
+    "confidence": 0.88,
+    "checks": [
+      {
+        "check": "primary_category Expert Advice equals categories[0] (fixed by person)",
+        "pass": true
+      },
+      {
+        "check": "Front matter, fact markers and non-image comments removed; image-slot comments kept",
+        "pass": true,
+        "note": "7 image-slot comments"
+      },
+      {
+        "check": "Primary CTA block from 09-cro.json at the CTA marker, UTMs kept",
+        "pass": true
+      },
+      {
+        "check": "Exactly 4 key takeaways matching 08-final.md",
+        "pass": true
+      },
+      {
+        "check": "All 5 FAQs extracted into faq and FAQPage",
+        "pass": true
+      },
+      {
+        "check": "08-final.md wording unchanged",
+        "pass": true
+      },
+      {
+        "check": "No em dashes; no prices; status draft; nothing uploaded, published or scheduled",
+        "pass": true
+      }
+    ]
+  },
+  "open_questions": [
+    {
+      "to": "orchestrator",
+      "question": "CMS upload not attempted: fast mode, package only, no browser tool used, and content-system/cms/field-map.md says \"NOT YET MAPPED\" (not CONFIRMED). Run /wedded-cms-discovery, then /wedded-blog resume=turkish-wedding-traditions.",
+      "blocking": true
+    },
+    {
+      "to": "person",
+      "question": "Set the two 301 redirects at publish, each directly to /expert-advice/turkish-wedding-traditions (no chain): /culture/8-turkish-wedding-traditions-you-didnt-know and /5-turkish-wedding-traditions-you-didnt-know. Recommendation only.",
+      "blocking": false
+    },
+    {
+      "to": "person",
+      "question": "Re-check Smartraveller Türkiye advice on publish day and update the travel advice section if levels or areas changed.",
+      "blocking": false
+    },
+    {
+      "to": "person",
+      "question": "Approve or decline AI neutral still lifes for coffee-asking and taki-toreni (captioned 'Illustrative image'); all 7 slots still need images, alt and captions.",
+      "blocking": false
+    },
+    {
+      "to": "person",
+      "question": "Confirm the byline \"Wedded Wonderland\" (organisation); no author named in inputs.",
+      "blocking": false
+    }
+  ],
+  "assumptions": [
+    "Primary category, URL path and CMS slug fixed by the person (00-input.json).",
+    "Excerpt is the meta description.",
+    "Categories and tags from 01-brief.json.",
+    "Image alt and caption left empty: no image chosen and 04-images.json gives none.",
+    "No [[VERIFY]] markers in 08-final.md, so verify_items is empty."
+  ],
+  "verify_items": [],
+  "tools_used": [
+    "Bash (python3 -I)"
+  ],
+  "next_agent": [
+    "orchestrator"
+  ],
+  "payload": {
+    "title": "What Are the Turkish Wedding Traditions You Did Not Know?",
+    "slug": "turkish-wedding-traditions",
+    "url_path": "/expert-advice/turkish-wedding-traditions",
+    "content_type": "Listicle",
+    "cluster": "Wedding Traditions",
+    "refresh_of": [
+      "/culture/8-turkish-wedding-traditions-you-didnt-know"
+    ],
+    "categories": [
+      "Expert Advice",
+      "Wedding Traditions",
+      "Cultural Weddings",
+      "Destination Weddings",
+      "Europe"
+    ],
+    "primary_category": "Expert Advice",
+    "tags": [
+      "turkish wedding traditions",
+      "kina gecesi",
+      "taki toreni",
+      "getting married in turkiye",
+      "wedding traditions"
+    ],
+    "excerpt": "Turkish wedding traditions in order, from kız isteme and the henna night to the takı and halay, plus what Australians need to marry legally in Türkiye.",
+    "key_takeaways": [
+      "A traditional Turkish wedding moves through kız isteme, söz and nişan, the çeyiz and the kına gecesi before the wedding day itself.",
+      "The kına gecesi is usually held the night before the wedding, or a day or two before, not weeks ahead.",
+      "Customs differ from region to region and family to family, so ask both families what they expect before you plan the programme.",
+      "For Australians, the legal marriage goes through a municipal marriage office in Türkiye, and the paperwork, including a certified certificate of eligibility to marry, should start well before you fly."
+    ],
+    "body_markdown_file": "content/posts/turkish-wedding-traditions/11-body.md",
+    "faq": [
+      {
+        "q": "What happens at a Turkish henna night?",
+        "a": "The kına gecesi is usually held at the bride's home on the night before the wedding, or a day or two before. Folk songs are sung, unmarried girls circle the bride with candles, and henna is applied to her palm, with the mother-in-law placing a gold coin in her closed hand as a henna gift."
+      },
+      {
+        "q": "What gifts do guests give at a Turkish wedding?",
+        "a": "Gold features in the sourced customs: the mother-in-law's coin at the henna night is described as a henna gift. On arrival at the groom's home, gifts to coax the bride down from the car or horse are seen in almost every region. For the reception, follow the families' lead."
+      },
+      {
+        "q": "Is Turkish coffee part of a Turkish wedding?",
+        "a": "UNESCO, which listed Turkish coffee culture and tradition in 2013, says it plays an important role on social occasions such as engagement ceremonies."
+      },
+      {
+        "q": "Is a Turkish civil marriage recognised in Australia?",
+        "a": "Smartraveller says an overseas marriage is legally recognised in most cases if it was valid where it took place and would have been valid under Australian law, though you cannot register it in Australia. Talk to a lawyer to confirm your situation."
+      },
+      {
+        "q": "Do Turkish wedding customs differ by region?",
+        "a": "Yes. GoTürkiye says almost every region of Türkiye has its own wedding traditions, with the longest lists in traditional, rural weddings. Family and faith shape them too, so ask both families what they expect."
+      }
+    ],
+    "images": [
+      {
+        "slot_id": "featured",
+        "file": "content/posts/turkish-wedding-traditions/images/turkish-wedding-traditions-hero.webp",
+        "role": "featured",
+        "status": "needed"
+      },
+      {
+        "slot_id": "coffee-asking",
+        "file": "content/posts/turkish-wedding-traditions/images/turkish-wedding-traditions-turkish-coffee-tray.webp",
+        "role": "inline",
+        "status": "needed"
+      },
+      {
+        "slot_id": "henna-night",
+        "file": "content/posts/turkish-wedding-traditions/images/turkish-wedding-traditions-kina-gecesi-henna.webp",
+        "role": "inline",
+        "status": "needed"
+      },
+      {
+        "slot_id": "bindalli",
+        "file": "content/posts/turkish-wedding-traditions/images/turkish-wedding-traditions-bindalli-dress.webp",
+        "role": "inline",
+        "status": "needed"
+      },
+      {
+        "slot_id": "davul-zurna-halay",
+        "file": "content/posts/turkish-wedding-traditions/images/turkish-wedding-traditions-davul-zurna-halay.webp",
+        "role": "inline",
+        "status": "needed"
+      },
+      {
+        "slot_id": "taki-toreni",
+        "file": "content/posts/turkish-wedding-traditions/images/turkish-wedding-traditions-taki-gold-coins.webp",
+        "role": "inline",
+        "status": "needed"
+      },
+      {
+        "slot_id": "destination-legal",
+        "file": "content/posts/turkish-wedding-traditions/images/turkish-wedding-traditions-turkiye-destination.webp",
+        "role": "inline",
+        "status": "needed"
+      }
+    ],
+    "cta": {
+      "text": "Read the free magazine",
+      "subtext": "Free to read, no enquiry needed",
+      "link": "/magazine?utm_source=blog&utm_medium=content&utm_campaign=turkish-wedding-traditions&utm_content=primary",
+      "placement": "At the former <!-- CTA: primary --> marker at the end of 'Bringing Turkish traditions into your celebration', directly after the closing paragraph; marked <!-- CTA BLOCK: primary --> in 11-body.md. Last element of the post."
+    },
+    "secondary_cta": {
+      "text": "Speak with a Wedded Advisor",
+      "link": "/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=turkish-wedding-traditions&utm_content=secondary",
+      "placement": "Already in the copy: inline link in the last paragraph of the legal section, before the FAQ. No separate block."
+    },
+    "lead_magnet": {
+      "name": "Wedded Wonderland digital magazine",
+      "link": "/magazine?utm_source=blog&utm_medium=content&utm_campaign=turkish-wedding-traditions&utm_content=primary",
+      "placement": "Served by the primary CTA; not placed a second time.",
+      "exists": true
+    },
+    "tracking_links": [
+      "/magazine?utm_source=blog&utm_medium=content&utm_campaign=turkish-wedding-traditions&utm_content=primary",
+      "/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=turkish-wedding-traditions&utm_content=secondary"
+    ],
+    "seo": {
+      "meta_title": "Turkish Wedding Traditions and What Each Custom Means",
+      "meta_description": "Turkish wedding traditions in order, from kız isteme and the henna night to the takı and halay, plus what Australians need to marry legally in Türkiye.",
+      "focus_keyword": "turkish wedding traditions",
+      "canonical": "https://weddedwonderland.com/expert-advice/turkish-wedding-traditions",
+      "og_image_slot": "featured"
+    },
+    "schema_jsonld": {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Article",
+          "@id": "https://weddedwonderland.com/expert-advice/turkish-wedding-traditions#article",
+          "headline": "What Are the Turkish Wedding Traditions You Did Not Know?",
+          "description": "Turkish wedding traditions in order, from kız isteme and the henna night to the takı and halay, plus what Australians need to marry legally in Türkiye.",
+          "author": {
+            "@type": "Organization",
+            "name": "Wedded Wonderland",
+            "url": "https://weddedwonderland.com/"
+          },
+          "publisher": {
+            "@type": "Organization",
+            "name": "Wedded Wonderland",
+            "url": "https://weddedwonderland.com/"
+          },
+          "datePublished": "",
+          "mainEntityOfPage": "https://weddedwonderland.com/expert-advice/turkish-wedding-traditions",
+          "image": "",
+          "inLanguage": "en-AU"
+        },
+        {
+          "@type": "BreadcrumbList",
+          "@id": "https://weddedwonderland.com/expert-advice/turkish-wedding-traditions#breadcrumb",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Home",
+              "item": "https://weddedwonderland.com/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Expert Advice",
+              "item": "https://weddedwonderland.com/expert-advice"
+            },
+            {
+              "@type": "ListItem",
+              "position": 3,
+              "name": "What Are the Turkish Wedding Traditions You Did Not Know?",
+              "item": "https://weddedwonderland.com/expert-advice/turkish-wedding-traditions"
+            }
+          ]
+        },
+        {
+          "@type": "FAQPage",
+          "@id": "https://weddedwonderland.com/expert-advice/turkish-wedding-traditions#faq",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "What happens at a Turkish henna night?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "The kına gecesi is usually held at the bride's home on the night before the wedding, or a day or two before. Folk songs are sung, unmarried girls circle the bride with candles, and henna is applied to her palm, with the mother-in-law placing a gold coin in her closed hand as a henna gift."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "What gifts do guests give at a Turkish wedding?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Gold features in the sourced customs: the mother-in-law's coin at the henna night is described as a henna gift. On arrival at the groom's home, gifts to coax the bride down from the car or horse are seen in almost every region. For the reception, follow the families' lead."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Is Turkish coffee part of a Turkish wedding?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "UNESCO, which listed Turkish coffee culture and tradition in 2013, says it plays an important role on social occasions such as engagement ceremonies."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Is a Turkish civil marriage recognised in Australia?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Smartraveller says an overseas marriage is legally recognised in most cases if it was valid where it took place and would have been valid under Australian law, though you cannot register it in Australia. Talk to a lawyer to confirm your situation."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Do Turkish wedding customs differ by region?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes. GoTürkiye says almost every region of Türkiye has its own wedding traditions, with the longest lists in traditional, rural weddings. Family and faith shape them too, so ask both families what they expect."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    "author": "Wedded Wonderland",
+    "status": "draft",
+    "verify_items": [],
+    "needs_signoff": [],
+    "redirects_recommended": [
+      {
+        "from": "/culture/8-turkish-wedding-traditions-you-didnt-know",
+        "to": "/expert-advice/turkish-wedding-traditions",
+        "type": 301,
+        "when": "at publish",
+        "note": "Direct, no chain. Recommendation only; a human sets it."
+      },
+      {
+        "from": "/5-turkish-wedding-traditions-you-didnt-know",
+        "to": "/expert-advice/turkish-wedding-traditions",
+        "type": 301,
+        "when": "at publish",
+        "note": "Direct, no chain (do not route via the /culture/ URL). Recommendation only; a human sets it."
+      }
+    ],
+    "publish_day_checks": [
+      "Re-read Smartraveller Türkiye advice (https://www.smartraveller.gov.au/destinations/europe/turkiye) on publish day: overall Level 2, Level 4 within 10km of the Syrian border, Level 3 Hakkari and Şırnak, page updated 30 October 2026. If anything changed, update the \"Travel advice as at November 2026\" section and the destination-legal image brief before publishing.",
+      "Re-check the Beyoğlu Municipality marriage office page (hours, documents, certification, no fee listed) is unchanged."
+    ],
+    "draft_note": "DRAFT. Do not publish until checked:\n\n1. [[VERIFY]] items: none in the body (0 markers).\n\n2. Nic sign-off on prices: none (no prices printed).\n\n3. Image slots needed (7, none approved; alt and caption to add when approved):\n   - featured (needed, licensed real photo with consent (library, commissioned or licensed stock); never AI, never from a competitor or the old page)\n   - coffee-asking (needed, licensed or commissioned still life preferred; AI neutral still life only with Nic's approval, captioned \"Illustrative image\")\n   - henna-night (needed, licensed real photo with consent (library, commissioned or licensed stock); never AI, never from a competitor or the old page)\n   - bindalli (needed, licensed real photo with consent (library, commissioned or licensed stock); never AI, never from a competitor or the old page)\n   - davul-zurna-halay (needed, licensed real photo with consent (library, commissioned or licensed stock); never AI, never from a competitor or the old page)\n   - taki-toreni (needed, licensed or commissioned still life preferred; AI neutral still life only with Nic's approval, captioned \"Illustrative image\")\n   - destination-legal (needed, licensed real photo with consent (library, commissioned or licensed stock); never AI, never from a competitor or the old page)\n\n4. Publish-day checks:\n   - Re-read Smartraveller Türkiye advice (https://www.smartraveller.gov.au/destinations/europe/turkiye) on publish day: overall Level 2, Level 4 within 10km of the Syrian border, Level 3 Hakkari and Şırnak, page updated 30 October 2026. If anything changed, update the \"Travel advice as at November 2026\" section and the destination-legal image brief before publishing.\n   - Re-check the Beyoğlu Municipality marriage office page (hours, documents, certification, no fee listed) is unchanged.\n\n5. Redirects to set at publish (recommendation only): 301 /culture/8-turkish-wedding-traditions-you-didnt-know and 301 /5-turkish-wedding-traditions-you-didnt-know, each directly to /expert-advice/turkish-wedding-traditions, no chain.\n\n6. Heading check: 'The civil ceremony and the foot-stepping story' names a story the section does not tell (the foot-stepping custom was dropped as unsourced). Editor to decide whether to rename the H3; wording not changed at stage 11.\n\nNever Publish or Schedule from the automation; a human clicks Publish."
+  }
+}

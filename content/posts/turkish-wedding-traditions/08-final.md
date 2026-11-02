@@ -106,7 +106,7 @@ That carrying sound is the point. For a hotel or villa arrival, check the venue'
 
 <!-- IMAGE SLOT davul-zurna-halay: Real wedding: davul and zurna players leading guests, or the halay line with linked little fingers and the lead dancer's handkerchief, motion blur welcome, daylight or evening. Consent on file, no identifiable children. Landscape 3:2. -->
 
-### The civil ceremony and the foot-stepping story
+### The civil ceremony
 
 For the marriage itself, applications go through a municipal marriage office (evlendirme dairesi). <!-- fact_103 --> We cover what that means for Australians in the legal section below.
 

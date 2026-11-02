@@ -13,3 +13,4 @@
 01:45 08b editor 1 blocking fix (unsourced same-sex line) + 3 cuts applied; blocking now 0
 01:45 09 cro-specialist complete; 2 copy changes applied
 01:45 10 distribution complete 3 pins, 8-slide carousel, newsletter
+01:47 11 cms-publisher package complete; orchestrator fixed stale H3; finish: report, backlinks+redirects, link map, calendar id 16, docx
