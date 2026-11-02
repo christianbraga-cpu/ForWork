@@ -16,7 +16,7 @@ This guide follows a Portuguese wedding in order, from the asking to the feast. 
 - The padrinhos are, by dictionary definition, wedding witnesses, so choosing them is a real role at the ceremony rather than an honorary title.
 - The Minho bridal costume and Viana gold filigree belong to the north, so customs vary by region and family rather than applying across Portugal.
 - The main customs are the asking and noivado, the padrinhos, the enxoval, the Minho bride and Viana gold, the copo-d'água feast, and music from folk dances to Fado.
-- Australians marrying legally in Portugal need a Certificate of No Impediment to Marriage, which the embassy says takes at least four weeks, before the registry's process of at least one month.
+- Australians marrying legally in Portugal need a Certificate of No Impediment to Marriage from the Australian Embassy, and IRN asks couples to start the registry process at least one month before the date.
 
 ## What makes a Portuguese wedding different
 
@@ -50,7 +50,7 @@ A family piece still has a place today. An embroidered runner on the welcome tab
 
 ### The Minho bride and Viana gold filigree
 
-In the Viana do Castelo area of the Minho, the traditional bridal costume is often described as black, worn with embroidery and layered gold. It is a regional dress, not a national one.
+The Minho, in Portugal's far north, has its own traditional bridal costume. It is a regional dress, not a national one.
 
 <!-- IMAGE SLOT minho_dress: Vertical, Viana do Castelo (festival such as the Romaria d'Agonia or museum display at Museu do Traje), black bridal costume with embroidery and gold, daylight; museum object or consented wearer; name and description must match the sourced text. -->
 
@@ -199,7 +199,7 @@ There is no single documented rule. Some families keep money customs such as pas
 
 ### Can Australians get legally married in Portugal?
 
-Yes. You start the process at a Portuguese civil registry office with identification, a birth certificate and a certificate of capacity to marry, which for Australians is the CNI issued by the Australian Embassy in Lisbon. <!-- fact_111 --> <!-- fact_106 --> Allow at least four weeks for the CNI from the embassy, then start the registry process at least one month before your date. <!-- fact_105 --> <!-- fact_108 -->
+Yes. You start the process at a Portuguese civil registry office with identification, a birth certificate and a certificate of capacity to marry, which for Australians is the CNI issued by the Australian Embassy in Lisbon. <!-- fact_111 --> <!-- fact_106 --> The embassy says processing takes a minimum of four weeks, and IRN asks couples to start the registry process at least one month before the date, so begin the paperwork early. <!-- fact_105 --> <!-- fact_108 -->
 
 ### Is Portugal a good place for a destination wedding?
 
