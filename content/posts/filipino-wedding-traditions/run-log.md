@@ -4,3 +4,4 @@
 00:03 04 visual-curator complete 7 placeholders
 00:38 02 seo-researcher complete (cannibalisation entries normalised to strings)
 00:38 03 batches A and B complete but weak (10 facts each, ~34 min each, over budget); merged 20 facts; orchestrator attire fetch: Britannica 404; writer launched with honest framing
+00:39 02 orchestrator fixed 02-seo.json schema errors (types, serp_summary fields); all valid
