@@ -66,11 +66,11 @@ The bread is often shared at the reception, and some families lift it over the c
 
 ## The wedding day
 
-The wedding day itself often begins early and at two houses at once, with family and music at each. In many families, the morning also includes the groom's ceremonial shave.
+The wedding day itself often begins early and at two houses at once, with family and music at each. Some families also keep a ceremonial shave for the groom that morning.
 
 ### The groom's shave
 
-In many families, the groom is shaved on the wedding morning in front of family and friends, often with music and plenty of commentary.
+It is often told that the groom is shaved before the wedding in front of family and friends, sometimes with music.
 
 One account of the Galičnik wedding also mentions the groom's shave. <!-- fact_07 -->
 
@@ -118,7 +118,7 @@ The most useful thing you can do is ask. Sit down with parents and grandparents,
 
 ## The Galičnik Wedding Festival
 
-For a sense of how one region keeps its customs alive, look to Galičnik. One couple is married each year. <!-- fact_03 -->
+For a sense of how one region keeps its customs alive, look to Galičnik. One couple is married each year. <!-- fact_01 -->
 
 The Galičnik Wedding Festival is described as an annual festival in the village of Galičnik, near Debar, in which a selected couple marries in the traditional Galička style. <!-- fact_01 --> It is described as held in July on Petrovden, St Peter's Day, the feast of the village's patron saint. <!-- fact_05 -->
 

@@ -1,0 +1,93 @@
+{
+  "agent": "editor",
+  "task_id": "macedonian-wedding-traditions",
+  "stage": "06",
+  "status": "complete",
+  "round": "final",
+  "inputs_used": [
+    "content/posts/macedonian-wedding-traditions/08-final.md",
+    "content/posts/macedonian-wedding-traditions/03-source-pack.json",
+    "content-system/brand/brand-facts.md",
+    "content-system/scripts/scan_copy.py"
+  ],
+  "payload": {
+    "draft_file": "08-final.md",
+    "mode": "08b blocking-issue check (fast)",
+    "decision": "pass_with_edits",
+    "blocking_issues": [
+      "Groom's shave stated as a wedding-morning custom with music without a source (2 sentences)",
+      "Broken marker: 'One couple is married each year' cites fact_03 instead of fact_01"
+    ],
+    "edits": [
+      {
+        "location": "08-final.md",
+        "old": "In many families, the morning also includes the groom's ceremonial shave.",
+        "new": "Some families also keep a ceremonial shave for the groom that morning.",
+        "issue": "Custom stated as fact; shave timing is unsourced (verify item: groom's shave).",
+        "fix": "Some families also keep a ceremonial shave for the groom that morning."
+      },
+      {
+        "location": "08-final.md",
+        "old": "In many families, the groom is shaved on the wedding morning in front of family and friends, often with music and plenty of commentary.",
+        "new": "It is often told that the groom is shaved before the wedding in front of family and friends, sometimes with music.",
+        "issue": "Wedding-morning timing, audience and music stated as fact; source pack only has fact_07 (business-club blog) and fact_09 (stock captions) for Galičnik, and lists this as an open verify item.",
+        "fix": "It is often told that the groom is shaved before the wedding in front of family and friends, sometimes with music."
+      },
+      {
+        "location": "08-final.md",
+        "old": "One couple is married each year. <!-- fact_03 -->",
+        "new": "One couple is married each year. <!-- fact_01 -->",
+        "issue": "Broken fact marker: fact_03 is the competition claim; the annual selected couple is fact_01.",
+        "fix": "One couple is married each year. <!-- fact_01 -->"
+      }
+    ],
+    "checks": {
+      "scan_copy": "0 banned, 0 flagged, 0 dashes, 0 overlaps",
+      "key_takeaways": "4 bullets, one sentence each: pass",
+      "em_dashes": 0,
+      "smartraveller_lines": "fact_100 to fact_104, fact_110 match source pack",
+      "embassy_lines": "fact_105 to fact_108 match source pack",
+      "political_framing": "North Macedonia named correctly; 'ethnic Macedonians' note neutral; flag explicitly not national: pass",
+      "brand_claims": "Wedded Advisor single point of contact and fee agreed in writing are in brand-facts.md: pass",
+      "prices": "none",
+      "vendor_names": "none",
+      "headings": "no pasted keywords; one H2 carries the keyword naturally",
+      "known_verify": "church-vs-civil [[VERIFY]] appears twice (body and FAQ), known"
+    },
+    "needs_signoff": []
+  },
+  "self_qa": {
+    "checks": [
+      {
+        "check": "scan_copy.py run",
+        "pass": true
+      },
+      {
+        "check": "each edit old string occurs once in 08-final.md",
+        "pass": true
+      },
+      {
+        "check": "fact markers cross-checked against source pack",
+        "pass": true,
+        "note": "eligibility line cites fact_07, the conflicting source; accepted as hedged"
+      }
+    ],
+    "confidence": 0.85
+  },
+  "open_questions": [
+    {
+      "to": "orchestrator",
+      "question": "Apply the 3 edits to 08-final.md; no re-scoring needed."
+    },
+    {
+      "to": "planner-sme",
+      "question": "Can a reputable source confirm when and how the groom's shave is done, so the hedge can be lifted later?"
+    }
+  ],
+  "next_agent": [
+    "luxury-writer"
+  ],
+  "assumptions": [
+    "Fast mode: only blocking issues reported; wider unsourced-custom lines (asking, collecting the bride) were accepted in earlier rounds and left as is."
+  ]
+}
