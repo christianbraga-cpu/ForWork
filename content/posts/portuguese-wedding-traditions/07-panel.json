@@ -1,0 +1,160 @@
+{
+  "agent": "icp-panel-chair",
+  "task_id": "portuguese-wedding-traditions",
+  "stage": "07b",
+  "status": "complete",
+  "round": 1,
+  "inputs_used": [
+    "content/posts/portuguese-wedding-traditions/01-brief.json",
+    "content/posts/portuguese-wedding-traditions/06-edit.json",
+    "content/posts/portuguese-wedding-traditions/05-draft-r2.md",
+    "content/posts/portuguese-wedding-traditions/07-icp/funding_parent.json",
+    "content/posts/portuguese-wedding-traditions/07-icp/planner_couple.json",
+    "content/posts/portuguese-wedding-traditions/07-icp/sceptic.json",
+    "content/posts/portuguese-wedding-traditions/07-icp/search_visitor.json",
+    "content/posts/portuguese-wedding-traditions/07-icp/uhnw.json",
+    "content-system/personas/*.yaml (weights)",
+    "content-system/schemas/07-panel.schema.json",
+    "CLAUDE.md"
+  ],
+  "payload": {
+    "personas_run": [
+      "planner_couple",
+      "funding_parent",
+      "uhnw",
+      "sceptic",
+      "search_visitor"
+    ],
+    "weights_used": {
+      "planner_couple": 0.4,
+      "funding_parent": 0.2,
+      "uhnw": 0.2,
+      "sceptic": 0.1,
+      "search_visitor": 0.1
+    },
+    "weighted_scores": {
+      "relevance_to_me": 3.1,
+      "trust": 4.4,
+      "clarity": 3.9,
+      "brand_feels_premium": 3.5,
+      "likelihood_to_enquire": 2.5
+    },
+    "weighted_enquiry_likelihood": 2.5,
+    "must_fix": [
+      {
+        "issue": "Legal lead time understated. The takeaway and FAQ say 'allow at least a month', but the embassy's CNI takes a minimum of four weeks and the IRN process must start at least one month before the date, so the two run in sequence. Trust loss on legality. r2 lines: \"- Australians marrying legally in Portugal start the process at a civil registry office with a Certificate of No Impediment to Marriage, and should allow at least a month.\" and (FAQ) \"Allow at least a month. <!-- fact_108 -->\"",
+        "flagged_by": [
+          "sceptic"
+        ],
+        "owner": "luxury-writer",
+        "fix": "Reword both from the two sourced facts only (fact_105, fact_108), no new total: e.g. takeaway '...with a Certificate of No Impediment to Marriage, which the embassy says takes at least four weeks, before the registry's process of at least one month.' FAQ: 'Allow at least four weeks for the CNI from the embassy, then start the registry process at least one month before your date.' Keep fact markers."
+      }
+    ],
+    "should_fix": [
+      {
+        "issue": "No plain answer to the search near the top; takeaways read as a fact-check. r2 line: \"- The groom's tie, the bride's shoe and the sugared almonds are often told rather than documented, so ask your family which ones they actually keep.\"",
+        "flagged_by": [
+          "search_visitor",
+          "planner_couple"
+        ],
+        "owner": "luxury-writer",
+        "fix": "Swap this takeaway for one plain line naming the main customs already in the draft (the asking and noivado, the padrinhos, the enxoval, the Minho bride and Viana gold, the copo-d'água feast, music from folk dances to Fado). Keep exactly 4 takeaways; net words must not rise. The 'often told' point moves to the framing line in the next fix."
+      },
+      {
+        "issue": "Repeated 'often told' hedging makes the middle third hard to skim. r2 lines, e.g.: \"In villages, it is often told that the bride walked to the church with her family and guests.\" and \"...and marked the rest of this guide's customs as often told.\"",
+        "flagged_by": [
+          "planner_couple",
+          "search_visitor"
+        ],
+        "owner": "luxury-writer",
+        "fix": "Keep one clear framing line (the intro's 'It separates what dictionaries, UNESCO and official registries record from what is only often told') and reduce each custom's caveat to a brief tag such as '(often told)'. Do not remove any caveat entirely and do not upgrade an often-told custom to fact. Net words must fall."
+      },
+      {
+        "issue": "Older and less mobile guests are not addressed. Anchor r2 line: \"- **Arrival delays.** Biometric registration on arrival under the EU Entry/Exit System can slow the border, especially at Lisbon airport. <!-- fact_119 --> Build time into guest transfers.\"",
+        "flagged_by": [
+          "funding_parent",
+          "planner_couple"
+        ],
+        "owner": "luxury-writer",
+        "fix": "Add one bullet after it, phrased as questions to ask, no claims: '**Older or less mobile guests.** Ask the venue about steps, access and shade, and ask guests to check their travel and medical insurance covers the trip.' No Wedded Wonderland service claims."
+      }
+    ],
+    "consider": [
+      {
+        "issue": "Last [[VERIFY]] on the black bridal costume. r2 lines: \"### The Minho bride in black and Viana gold filigree\" and \"...is often described as black, worn with embroidery and layered gold. [[VERIFY: Viana do Castelo traditional bridal costume (traje de noiva) is black; confirm with the Museu do Traje or the municipality]]\"",
+        "flagged_by": [
+          "panel-chair (carried from 06-edit)"
+        ],
+        "owner": "luxury-writer",
+        "fix": "Retitle the H3 to 'The Minho bride and Viana gold filigree'; keep the sentence as 'often described as black' and remove the [[VERIFY]] marker. The heading no longer asserts the colour, so the hedged sentence stands. Update the TOC and anchors to match. Image slot text stays as is (visual-curator to confirm the caption matches 'often described')."
+      }
+    ],
+    "keep": [
+      "Intro line: 'Portuguese wedding traditions are quieter and more local than most lists suggest, and several customs repeated online have no Portuguese source at all.' (praised by all 5)",
+      "Padrinhos as witnesses, including 'Two to four witnesses may take part, but they are not compulsory.'",
+      "19.2 carat gold detail and 'plan your neckline and any other jewellery around it'",
+      "Enxoval idea: grandmother's linen under the cake",
+      "'Customs that are often told but hard to trace' section, including the Brazilian-origin evidence and 'The best source for your wedding is your own family...'",
+      "'Australian venues often run to a set finish time...' line",
+      "Dated Smartraveller framing and 'summary of official sources as at November 2026, not legal advice'"
+    ],
+    "conflicts_resolved": [
+      "Title: sceptic calls it clickbait. The title is the person's choice; not changed. Noted for them only.",
+      "Legal takeaway: search_visitor wants it swapped out; the primary persona (planner_couple) read the legal section properly and the brief requires it. Keep it, fix its accuracy (must_fix); swap the tie/shoe/almond takeaway instead.",
+      "Business detail asks (accountability for deposits, Advisor scope on paperwork, real Portugal weddings, scale, discretion, fee model): deferred, not must-fix. No Advisor claims beyond brand-facts.md; no prices or fee figures. Logged as open questions for Nic.",
+      "UHNW 'drop free from the magazine link': single mention, low weight against the brief's primary CTA; left for the person."
+    ],
+    "gate": "revise",
+    "gate_reason": "Weighted enquiry likelihood 2.5 (< 3.8) and one must_fix. Score reflects a dreaming-stage culture guide whose primary CTA is the magazine, not enquiry; fixes target trust and skimmability, not a rewrite."
+  },
+  "self_qa": {
+    "confidence": 0.85,
+    "checks": [
+      {
+        "check": "weights sum 1.0",
+        "pass": true
+      },
+      {
+        "check": "max 6 actions",
+        "pass": true
+      },
+      {
+        "check": "each action quotes r2 text",
+        "pass": true
+      },
+      {
+        "check": "no new facts, prices or Advisor claims introduced",
+        "pass": true
+      },
+      {
+        "check": "Australian English, no em dashes",
+        "pass": true
+      }
+    ]
+  },
+  "open_questions": [
+    {
+      "to": "Nic",
+      "question": "Can Wedded Advisors coordinate the registry step or representative for Australians marrying in Portugal? Needed before any line near the Advisor CTA says so."
+    },
+    {
+      "to": "Nic",
+      "question": "Is there a real Portugal wedding (venue, date) or Portugal destination page with one we can link?"
+    },
+    {
+      "to": "Nic",
+      "question": "Accountability for overseas supplier deposits and the 2am on-the-day contact: what can we say, per brand-facts.md?"
+    },
+    {
+      "to": "person",
+      "question": "Keep the title as is? Sceptic reader found 'You Did Not Know?' clickbait-like; your call."
+    }
+  ],
+  "assumptions": [
+    "Persona weights are uncalibrated estimates from the YAML files.",
+    "Sceptic's 'many venues now ask for petals only' objection is already resolved: the line is absent from r2."
+  ],
+  "next_agent": [
+    "luxury-writer"
+  ]
+}
