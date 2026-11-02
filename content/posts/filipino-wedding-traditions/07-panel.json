@@ -1,0 +1,111 @@
+{
+  "agent": "panel-chair",
+  "task_id": "filipino-wedding-traditions",
+  "stage": "07b",
+  "status": "complete",
+  "round": 1,
+  "inputs_used": [
+    "CLAUDE.md",
+    "content/posts/filipino-wedding-traditions/01-brief.json",
+    "content/posts/filipino-wedding-traditions/06-edit.json",
+    "content/posts/filipino-wedding-traditions/05-draft-r2.md",
+    "content/posts/filipino-wedding-traditions/07-icp/funding_parent.json",
+    "content/posts/filipino-wedding-traditions/07-icp/planner_couple.json",
+    "content/posts/filipino-wedding-traditions/07-icp/sceptic.json",
+    "content/posts/filipino-wedding-traditions/07-icp/search_visitor.json",
+    "content/posts/filipino-wedding-traditions/07-icp/uhnw.json",
+    "content-system/personas/*.yaml (weights)",
+    "content-system/brand/brand-facts.md",
+    "content-system/schemas/07-panel.schema.json"
+  ],
+  "payload": {
+    "personas_run": ["funding_parent", "planner_couple", "sceptic", "search_visitor", "uhnw"],
+    "weights_used": {"funding_parent": 0.20, "planner_couple": 0.40, "sceptic": 0.10, "search_visitor": 0.10, "uhnw": 0.20},
+    "weighted_scores": {
+      "relevance_to_me": 3.4,
+      "trust": 3.8,
+      "clarity": 4.4,
+      "brand_feels_premium": 3.4,
+      "likelihood_to_enquire": 2.5
+    },
+    "weighted_enquiry_likelihood": 2.5,
+    "must_fix": [
+      {
+        "issue": "Advisor CTA closes on a slogan. r2 line: \"One person works with you in your time zone, from first idea to the last dance.\" Read as a slogan or as too eager by planner_couple (medium objection, primary persona), sceptic (lost_trust), uhnw (lost_trust, medium) and funding_parent (wants plain words on what the Advisor does and who is accountable, near this link).",
+        "flagged_by": ["planner_couple", "sceptic", "uhnw", "funding_parent"],
+        "owner": "luxury-writer",
+        "fix": "Replace that sentence only, using claims listed under 'Claims we can make' in brand-facts.md, e.g. \"Your Wedded Advisor is your single point of contact, works in your time zone, and plans venue, travel, vendors and payments with you, anywhere in the world.\" Do not add prices, fees, guest numbers or any claim not in brand-facts.md."
+      }
+    ],
+    "should_fix": [
+      {
+        "issue": "Key takeaways lean to paperwork and travel advice, not traditions. r2 lines: \"Proof that you are free to marry can be a long-lead item, so start the paperwork with the Australian Embassy in Manila and the local civil registrar well before invitations go out.\" and \"As at November 2026, Smartraveller rates the Philippines \"Exercise a high degree of caution\" overall, with higher levels in parts of Mindanao and the Sulu region.\" search_visitor (brief's secondary persona, medium objection plus turn-off) wants the takeaways to name the customs; this matches the primary keyword intent.",
+        "flagged_by": ["search_visitor"],
+        "owner": "luxury-writer",
+        "fix": "Keep exactly 4 bullets, one sentence each. Make 3 about the traditions (for example: customs vary by family, faith and region; who the principal and secondary sponsors are and which rites the secondary sponsors handle; the arras, veil, cord and candle rites can sit in a civil or celebrant-led ceremony because the law needs two witnesses and no religious rite). Keep 1 legal or travel bullet, ideally one sentence combining the early free-to-marry paperwork with the dated Smartraveller rating, since funding_parent and sceptic praised that rating being up front. Use only facts already stated and sourced in the body."
+      },
+      {
+        "issue": "No planning note for holding the sponsor, veil, cord and arras rites at a destination outside the Philippines. r2 line: \"Brief them on timing at the rehearsal so each pair knows their cue.\" planner_couple (primary persona, medium objection and top change) asks who briefs travelling sponsors, who brings the veil, cord and arras, and how the celebrant is prepared.",
+        "flagged_by": ["planner_couple"],
+        "owner": "luxury-writer",
+        "fix": "Add 2 to 3 sentences after that line, phrased only as questions to ask the celebrant or venue: whether the celebrant has run the veil, cord and arras rites before and in what order; whether a rehearsal slot is available for sponsors arriving from overseas; who keeps the veil, cord and arras safe before the ceremony. No new facts, no claims about local law or what any venue offers."
+      },
+      {
+        "issue": "Nothing on looking after older or less mobile guests. r2 line: \"Shortlist only places outside the higher-level areas, and recheck [Smartraveller advice for the Philippines](https://www.smartraveller.gov.au/destinations/asia/philippines) before you pay any deposits, since the page is updated regularly.\" funding_parent (medium objection, mother in her late eighties) and planner_couple (unanswered question on older relatives and airport transfers).",
+        "flagged_by": ["funding_parent", "planner_couple"],
+        "owner": "luxury-writer",
+        "fix": "Add one short paragraph near that line framed as questions for the venue: step-free access to the ceremony and reception spaces, distance and transfer time from the airport, seating and shade for older guests, and what medical help is nearby. Do not state distances, hospital names or insurance advice; anything stated as fact needs a source or a [[VERIFY]] marker."
+      }
+    ],
+    "consider": [
+      {
+        "issue": "Business details readers asked for (deposits and currency, who holds supplier contracts, Advisor fee and commission, a phone call with a named Advisor, large-scale and security-led weddings). Context r2 line: \"Not published: a single official checklist of documents and timelines for Australians marrying in the Philippines. Your Wedded Advisor can talk you through the current requirements, and confirms the fee and inclusions in writing before you commit.\" Deferred to business pages per orchestrator; the existing in-writing line already matches brand-facts.md.",
+        "flagged_by": ["funding_parent", "sceptic", "uhnw"],
+        "owner": "cro-specialist",
+        "fix": "No change in this article. Log for the /wonderland-concierge page and the CRO pass. Any deposit, contract or fee wording needs business confirmation and Nic's sign-off before it appears anywhere."
+      }
+    ],
+    "keep": [
+      "Intro line \"Filipino wedding traditions are rarely written down in one place, and most families hold their own version.\" (planner_couple, uhnw)",
+      "Intro questions about the ninong and ninang, the coins and the cord (search_visitor)",
+      "The at-a-glance table and \"The table below is a starting point, not a script.\" (planner_couple, search_visitor)",
+      "The Catholic, Protestant and Muslim families line (uhnw)",
+      "Pamamanhikan advice to meet before you lock the date (planner_couple, funding_parent, uhnw)",
+      "\"If a grandparent raises one, it is usually easier to listen and adjust a small detail than to argue the point.\" (planner_couple, funding_parent)",
+      "\"The law itself speaks of witnesses, not sponsors.\" and the 'often told' hedging on rite meanings (sceptic)",
+      "The dated Smartraveller rating, kept in one takeaway and in the body (funding_parent, sceptic)",
+      "The Tuscany real wedding link (planner_couple)",
+      "Closing CTA \"When you are ready to talk dates, families and paperwork, your Wedded Advisor is one conversation away.\" (calm and not pushy for planner_couple, sceptic, search_visitor)"
+    ],
+    "conflicts_resolved": [
+      "Takeaways: search_visitor wants travel and paperwork out; funding_parent and sceptic praised the Smartraveller rating up front. Primary persona planner_couple shares the Smartraveller section with parents, so keep one legal or travel takeaway and turn the other three to traditions.",
+      "Slogan versus business detail: funding_parent and sceptic want fees, deposits and contracts named near the Advisor link. Business details are deferred, so the must-fix is limited to replacing the slogan with brand-facts.md wording; nothing about money is added.",
+      "Scale: uhnw wants 200 to 400 guest, security and exclusive-use lines. The brief's reader is the planner couple and no source backs such claims, so nothing is added; logged under consider.",
+      "Title: search_visitor finds it slightly clickbait. Title is the person's choice, so no change.",
+      "Rite order and guest attire (search_visitor): single mentions needing sourced facts; not actioned in this round within the 5-item cap. Do not add an order of rites without a source."
+    ],
+    "gate": "revise"
+  },
+  "self_qa": {
+    "checks": [
+      {"check": "Weighted scores use persona yaml weights, sum 1.0", "pass": true},
+      {"check": "Every item quotes an exact r2 line", "pass": true},
+      {"check": "No prices or new unsourced facts introduced in fixes", "pass": true},
+      {"check": "Max 5 items", "pass": true},
+      {"check": "Gate consistent: enquiry 2.5 < 3.8 and one must_fix", "pass": true}
+    ],
+    "confidence": 0.8
+  },
+  "open_questions": [
+    {"to": "orchestrator", "question": "Weighted enquiry likelihood (2.5) is held down by a dreaming-stage brief with a magazine primary CTA; consider whether the 3.8 bar should apply to this journey stage.", "blocking": false},
+    {"to": "cro-specialist", "question": "Business details (deposits, contracts, fees, phone call with a named Advisor) belong on /wonderland-concierge; confirm who owns that update.", "blocking": false},
+    {"to": "planner-sme", "question": "Can a source be found for the usual order of the candle, veil and cord rites so a refresh can answer the intro question directly?", "blocking": false}
+  ],
+  "assumptions": [
+    "ICP readers read an earlier wording of some lines (e.g. the sponsors rehearsal line); actions quote the current r2 text.",
+    "Persona weights are estimates until /wedded-calibrate runs.",
+    "Business details are deferred per orchestrator instruction, so money and accountability questions are logged under consider rather than must_fix."
+  ],
+  "verify_items": [],
+  "next_agent": ["luxury-writer"]
+}
