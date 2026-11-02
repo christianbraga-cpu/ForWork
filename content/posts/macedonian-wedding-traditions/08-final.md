@@ -115,6 +115,9 @@ Macedonian-Australian families often adapt customs to life here, and none of tha
 The most useful thing you can do is ask. Sit down with parents and grandparents, list the customs they remember, and decide together which ones you will keep. You may find, as many couples do, that the conversation itself becomes part of the wedding.
 
 <!-- CTA: primary -->
+**Read the free magazine**
+
+Ideas and destinations to bring to that family conversation, free to read whenever you are ready. [Read the free magazine](/magazine?utm_source=blog&utm_medium=content&utm_campaign=macedonian-wedding-traditions&utm_content=primary)
 
 ## The Galičnik Wedding Festival
 
@@ -180,7 +183,7 @@ Read the latest [Smartraveller advice for North Macedonia](https://www.smartrave
 
 <!-- IMAGE SLOT destination-legal: North Macedonia destination, e.g. Lake Ohrid at golden hour or a mountain village setting, no people or only distant figures, no wedding staged. Not in areas bordering Kosovo (Smartraveller caution). -->
 
-If you would like help with the paperwork, venues and travel, [talk to a Wedded Advisor about a wedding in North Macedonia](/wonderland-concierge). Your Advisor is a single point of contact from start to finish, and the fee is agreed in writing before any work begins.
+If you would like help with the paperwork, venues and travel for a wedding in North Macedonia, [talk to a Wedded Advisor](/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=macedonian-wedding-traditions&utm_content=secondary). Nothing is too early or too vague to ask. Your Advisor is a single point of contact from start to finish, and the fee is agreed in writing before any work begins.
 
 ## What to wear as a guest
 

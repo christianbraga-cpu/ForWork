@@ -1,0 +1,114 @@
+{
+  "agent": "cro",
+  "task_id": "macedonian-wedding-traditions",
+  "stage": "09",
+  "status": "complete",
+  "round": 1,
+  "inputs_used": [
+    "content/posts/macedonian-wedding-traditions/01-brief.json",
+    "content/posts/macedonian-wedding-traditions/07-panel.json",
+    "content/posts/macedonian-wedding-traditions/07-icp/*.json",
+    "content/posts/macedonian-wedding-traditions/08-final.md",
+    "content-system/brand/services.md",
+    "content-system/brand/brand-facts.md",
+    "content-system/seo/link-map.csv",
+    "CLAUDE.md"
+  ],
+  "payload": {
+    "journey_stage": "dreaming",
+    "primary_cta": {
+      "text": "Read the free magazine",
+      "subtext": "Ideas and destinations to bring to that family conversation, free to read whenever you are ready.",
+      "link": "/magazine?utm_source=blog&utm_medium=content&utm_campaign=macedonian-wedding-traditions&utm_content=primary",
+      "placement": "<!-- CTA: primary --> marker, end of 'How Macedonian wedding traditions vary by village, region and family' (after 'the conversation itself becomes part of the wedding'), before 'The Galičnik Wedding Festival'. Kept: the dreaming-stage question peaks at 'which customs do we keep', and the magazine is the low-commitment next step."
+    },
+    "secondary_cta": {
+      "text": "Talk to a Wedded Advisor",
+      "subtext": "Nothing is too early or too vague to ask. The fee is agreed in writing before any work begins.",
+      "link": "/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=macedonian-wedding-traditions&utm_content=secondary",
+      "placement": "Existing inline link in the paragraph straight after the legal section 'Marrying legally in North Macedonia as an Australian' (after the destination-legal image slot), per brief. Kept inline, no separate CTA block, so there is no duplicate link to the same target. Closing line in 'Planning your own' stays unlinked."
+    },
+    "lead_magnet": {
+      "name": "Macedonian heritage or Balkans destination guide (magazine edition or real-wedding feature)",
+      "link": "",
+      "placement": "not placed",
+      "exists": false
+    },
+    "copy_changes": [
+      {
+        "old": "<!-- CTA: primary -->",
+        "new": "<!-- CTA: primary -->\n**Read the free magazine**\n\nIdeas and destinations to bring to that family conversation, free to read whenever you are ready. [Read the free magazine](/magazine?utm_source=blog&utm_medium=content&utm_campaign=macedonian-wedding-traditions&utm_content=primary)",
+        "reason": "Fill primary CTA marker with UTM-tagged /magazine CTA (services.md default wording)."
+      },
+      {
+        "old": "If you would like help with the paperwork, venues and travel, [talk to a Wedded Advisor about a wedding in North Macedonia](/wonderland-concierge). Your Advisor is a single point of contact from start to finish, and the fee is agreed in writing before any work begins.",
+        "new": "If you would like help with the paperwork, venues and travel for a wedding in North Macedonia, [talk to a Wedded Advisor](/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=macedonian-wedding-traditions&utm_content=secondary). Nothing is too early or too vague to ask. Your Advisor is a single point of contact from start to finish, and the fee is agreed in writing before any work begins.",
+        "reason": "Add utm_content=secondary to the inline Advisor link; shorten anchor to 5 words; add brand-facts line 'Nothing is too early or too vague' for planner_couple ('14 months out, haven't picked a country')."
+      }
+    ],
+    "tracking": [
+      "/magazine?utm_source=blog&utm_medium=content&utm_campaign=macedonian-wedding-traditions&utm_content=primary",
+      "/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=macedonian-wedding-traditions&utm_content=secondary"
+    ],
+    "rationale": "Brief and services.md: dreaming stage, so the free magazine leads and the Wedded Advisor is secondary after the legal section, where planner_couple, funding_parent and sceptic all said 'maybe' and called the timing right. No new CTA block was added next to the Advisor link (rule: no block beside an inline link to the same target). Panel 'maybe' blockers cannot be fixed in copy without new business facts: funding_parent wants a phone call first and word on deposits; sceptic wants the fee model and whether there are supplier commissions (brand-facts lists fee model and commissions as deferred); planner_couple wants a real wedding in North Macedonia or a Macedonian-Australian wedding. These are open questions, not copy changes. Lead magnet suggestion: no Europe, Balkans or Macedonia magazine edition exists in the link map (only Australia, Fiji, Dubai), so a Macedonian heritage guide or real-wedding feature is suggested with exists: false and not placed. search_visitor and uhnw said 'no'; no CTA change would move them from a blog post. No prices, no urgency, no exclamation marks."
+  },
+  "self_qa": {
+    "checks": [
+      {
+        "check": "Each copy_changes old occurs exactly once in 08-final.md",
+        "pass": true
+      },
+      {
+        "check": "Targets /magazine and /wonderland-concierge exist in link-map.csv",
+        "pass": true
+      },
+      {
+        "check": "UTMs utm_source=blog, utm_medium=content, utm_campaign=macedonian-wedding-traditions, utm_content primary/secondary",
+        "pass": true
+      },
+      {
+        "check": "CTA text 6 words or fewer, no 'click here', no exclamation mark",
+        "pass": true
+      },
+      {
+        "check": "No prices, no em dashes, no 'budget', no invented business details (only brand-facts lines used)",
+        "pass": true
+      },
+      {
+        "check": "No duplicate inline link beside a CTA block to the same target",
+        "pass": true
+      }
+    ],
+    "confidence": 0.85
+  },
+  "open_questions": [
+    {
+      "to": "orchestrator",
+      "question": "Can the Advisor page or copy say a phone call is available before any commitment? funding_parent's click depends on it; not in brand-facts, so not added.",
+      "blocking": false
+    },
+    {
+      "to": "orchestrator",
+      "question": "Fee model and supplier commissions are 'deferred' in brand-facts.md; sceptic will not enquire without them. Nic to confirm what can be said.",
+      "blocking": false
+    },
+    {
+      "to": "orchestrator",
+      "question": "Is there a real Macedonian or Macedonian-Australian wedding (with consent) to link before the Advisor CTA? planner_couple wants to see one first.",
+      "blocking": false
+    },
+    {
+      "to": "content-strategist",
+      "question": "Consider a Europe/Balkans or Macedonian heritage magazine edition as a future lead magnet (does not exist yet).",
+      "blocking": false
+    }
+  ],
+  "assumptions": [
+    "Primary CTA renders as a markdown block below the kept <!-- CTA: primary --> comment; cms-publisher maps it to the CTA component if one exists.",
+    "'free' magazine wording follows services.md default CTA wording.",
+    "/magazine is readable without an enquiry form; not verified, so not claimed in copy."
+  ],
+  "next_agent": [
+    "distribution"
+  ]
+}

@@ -10,3 +10,5 @@
 06:48 07b icp-panel-chair revise; enquire 1.9; 0 must_fix, 3 should_fix, 2 consider; final pass launched
 06:49 08 luxury-writer complete ~2,500 words; 1 VERIFY kept; scan clean; 8b+CRO+distribution launched
 06:49 08b editor 2 blocking issues fixed by 3 edits (shave hedged; Galicnik marker corrected); blocking now 0
+06:50 09 cro-specialist complete; copy changes applied
+06:50 10 distribution complete 3 pins, 8-slide carousel, newsletter
