@@ -3,3 +3,4 @@
 22:49 04 visual-curator complete 7 placeholders
 22:54 02 seo-researcher complete; old page US #4-6 for ~10 variants, no AU; no other ranking pages; 301 recommended; schema valid
 22:56 03 planner-sme batch B complete 22 facts; legal fully sourced (IRN, Lisbon embassy, Smartraveller, Law 9/2010); customs unsourced; waiting on batch A
+22:58 03 planner-sme batch A complete 9 facts (Priberam, pt.Wikipedia, Povoa de Lanhoso); black Viana dress unsourced; merged; writer launched
