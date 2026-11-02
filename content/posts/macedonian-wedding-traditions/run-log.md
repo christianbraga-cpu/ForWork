@@ -12,3 +12,4 @@
 06:49 08b editor 2 blocking issues fixed by 3 edits (shave hedged; Galicnik marker corrected); blocking now 0
 06:50 09 cro-specialist complete; copy changes applied
 06:50 10 distribution complete 3 pins, 8-slide carousel, newsletter
+06:51 11 cms-publisher package complete; finish: report, backlinks+redirect, link map, calendar id 17, docx

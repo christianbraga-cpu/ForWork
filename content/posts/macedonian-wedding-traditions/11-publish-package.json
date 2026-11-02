@@ -1,0 +1,367 @@
+{
+  "agent": "cms-publisher",
+  "task_id": "macedonian-wedding-traditions",
+  "stage": "11",
+  "status": "complete",
+  "round": 1,
+  "inputs_used": [
+    "CLAUDE.md",
+    "content-system/cms/field-map.md",
+    "content-system/schemas/11-publish-package.schema.json",
+    "content/posts/macedonian-wedding-traditions/00-input.json",
+    "content/posts/macedonian-wedding-traditions/01-brief.json",
+    "content/posts/macedonian-wedding-traditions/02-seo.json",
+    "content/posts/macedonian-wedding-traditions/04-images.json",
+    "content/posts/macedonian-wedding-traditions/08-final.md",
+    "content/posts/macedonian-wedding-traditions/09-cro.json",
+    "content/posts/turkish-wedding-traditions/11-publish-package.json (format reference)"
+  ],
+  "self_qa": {
+    "confidence": 0.86,
+    "checks": [
+      {
+        "check": "primary_category Expert Advice equals categories[0] (fixed by person)",
+        "pass": true
+      },
+      {
+        "check": "Front matter, fact markers and non-image comments removed; image-slot comments kept",
+        "pass": true,
+        "note": "7 image-slot comments"
+      },
+      {
+        "check": "Primary CTA block from 09-cro.json rendered at the CTA marker, UTMs kept",
+        "pass": true
+      },
+      {
+        "check": "Exactly 4 key takeaways matching 08-final.md",
+        "pass": true
+      },
+      {
+        "check": "All 6 FAQs extracted into faq and FAQPage",
+        "pass": true
+      },
+      {
+        "check": "[[VERIFY]] text kept visible in body and listed in verify_items and draft_note",
+        "pass": true
+      },
+      {
+        "check": "08-final.md wording unchanged",
+        "pass": true
+      },
+      {
+        "check": "No em dashes; no prices; status draft; nothing uploaded, published or scheduled",
+        "pass": true
+      }
+    ]
+  },
+  "open_questions": [
+    {
+      "to": "orchestrator",
+      "question": "CMS upload not attempted: fast mode, package only, no browser tool used, and content-system/cms/field-map.md says \"NOT YET MAPPED\" (not CONFIRMED). Run /wedded-cms-discovery, then /wedded-blog resume=macedonian-wedding-traditions.",
+      "blocking": true
+    },
+    {
+      "to": "fact-checker",
+      "question": "Resolve the one [[VERIFY]]: whether a church wedding alone is legally recognised in North Macedonia or a civil ceremony at the registry office is required (North Macedonia official source).",
+      "blocking": true
+    },
+    {
+      "to": "person",
+      "question": "Set the 301 at publish: /7-exciting-and-unusual-things-to-expect-at-a-macedonian-wedding directly to /expert-advice/macedonian-wedding-traditions (no chain). Recommendation only.",
+      "blocking": false
+    },
+    {
+      "to": "person",
+      "question": "Re-check Smartraveller North Macedonia advice on publish day and update the safety section if levels, dates or rules changed.",
+      "blocking": false
+    },
+    {
+      "to": "person",
+      "question": "All 7 image slots still need images, alt and captions; approve or decline an AI neutral still life for wedding-bread only (captioned \"Illustrative image\").",
+      "blocking": false
+    },
+    {
+      "to": "person",
+      "question": "Confirm the byline \"Wedded Wonderland\" (organisation); no author named in inputs.",
+      "blocking": false
+    }
+  ],
+  "assumptions": [
+    "Primary category, URL path and CMS slug fixed by the person (00-input.json).",
+    "Excerpt is the meta description.",
+    "Categories and tags from 01-brief.json; meta title and description from 02-seo.json.",
+    "Image alt and caption left empty: no image chosen yet.",
+    "08-final.md already carried the CRO CTA text under the marker; 11-body.md renders it once as a CTA block (marked <!-- CTA BLOCK: primary -->), no duplicate.",
+    "Secondary Advisor CTA stays inline in the copy, no separate block."
+  ],
+  "verify_items": [
+    "[[VERIFY: whether a church wedding alone is legally recognised in North Macedonia or a civil ceremony at the registry office is required; North Macedonia official source]]"
+  ],
+  "tools_used": [
+    "Bash (python3 -I)"
+  ],
+  "next_agent": [
+    "orchestrator"
+  ],
+  "payload": {
+    "title": "What Are the Macedonian Wedding Traditions You Did Not Know?",
+    "slug": "macedonian-wedding-traditions",
+    "url_path": "/expert-advice/macedonian-wedding-traditions",
+    "content_type": "Listicle",
+    "cluster": "Wedding Traditions",
+    "refresh_of": [
+      "/7-exciting-and-unusual-things-to-expect-at-a-macedonian-wedding"
+    ],
+    "categories": [
+      "Expert Advice",
+      "Wedding Traditions",
+      "Cultural Weddings",
+      "Destination Weddings",
+      "Europe"
+    ],
+    "primary_category": "Expert Advice",
+    "tags": [
+      "macedonian wedding traditions",
+      "kum and kuma",
+      "galicnik wedding festival",
+      "getting married in north macedonia",
+      "wedding traditions"
+    ],
+    "excerpt": "From the asking to the last oro: Macedonian wedding traditions in order, what each means, and what Australians need to marry in North Macedonia.",
+    "key_takeaways": [
+      "A traditional Macedonian wedding often runs from the formal asking and the engagement through the gifts, the wedding flag and the bread, collecting the bride and the Orthodox crowning, to the welcome at the groom's home and the oro.",
+      "The kum and kuma, the couple's wedding sponsors, are the people many families honour most after the couple themselves.",
+      "Customs vary by village, region and family, and in the mountain village of Galičnik one selected couple is still married each year in the traditional regional style at the Galičnik Wedding Festival.",
+      "Australians marrying in North Macedonia should check the legal steps and any fees with the registry office and the Australian Embassy in Belgrade, which covers North Macedonia."
+    ],
+    "body_markdown_file": "content/posts/macedonian-wedding-traditions/11-body.md",
+    "faq": [
+      {
+        "q": "What happens at a Macedonian wedding?",
+        "a": "Many families keep a sequence of customs: the asking and engagement, choosing the kum and kuma, gifts, the wedding flag and bread, collecting the bride, the Orthodox church service, the welcome at the groom's home and the oro. Customs vary by family and region."
+      },
+      {
+        "q": "Who are the kum and kuma at a Macedonian wedding?",
+        "a": "They are the couple's wedding sponsors, sometimes called godparents in English. Many families treat the role as a lifelong bond and honour the kum and kuma throughout the day."
+      },
+      {
+        "q": "What happens at a Macedonian Orthodox wedding ceremony?",
+        "a": "The couple wear wedding crowns during the service, and the kum takes part alongside them. The parish priest sets the order of service, so ask your priest to walk you through it."
+      },
+      {
+        "q": "What is the oro?",
+        "a": "The oro is a line or circle dance with guests linked by the hands. At many weddings it is played by live musicians and runs for much of the night."
+      },
+      {
+        "q": "What do you wear to a Macedonian wedding?",
+        "a": "Follow the invitation and ask the couple. For a church service, check the parish's dress expectations, and bring shoes you can dance in."
+      },
+      {
+        "q": "Is a church wedding in North Macedonia legally recognised?",
+        "a": "Check with the registry office in North Macedonia before you plan around it. [[VERIFY: whether a church wedding alone is legally recognised in North Macedonia or a civil ceremony at the registry office is required; North Macedonia official source]] For the Australian side, the Embassy in Belgrade provides Certificates of No Impediment to Marriage."
+      }
+    ],
+    "images": [
+      {
+        "slot_id": "featured",
+        "file": "content/posts/macedonian-wedding-traditions/images/macedonian-wedding-traditions-hero.webp",
+        "role": "featured",
+        "alt": "",
+        "caption": "",
+        "status": "needed"
+      },
+      {
+        "slot_id": "wedding-flag",
+        "file": "content/posts/macedonian-wedding-traditions/images/macedonian-wedding-traditions-wedding-flag.webp",
+        "role": "inline",
+        "alt": "",
+        "caption": "",
+        "status": "needed"
+      },
+      {
+        "slot_id": "wedding-bread",
+        "file": "content/posts/macedonian-wedding-traditions/images/macedonian-wedding-traditions-wedding-bread.webp",
+        "role": "inline",
+        "alt": "",
+        "caption": "",
+        "status": "needed"
+      },
+      {
+        "slot_id": "crowning",
+        "file": "content/posts/macedonian-wedding-traditions/images/macedonian-wedding-traditions-orthodox-crowning.webp",
+        "role": "inline",
+        "alt": "",
+        "caption": "",
+        "status": "needed"
+      },
+      {
+        "slot_id": "oro",
+        "file": "content/posts/macedonian-wedding-traditions/images/macedonian-wedding-traditions-oro-circle-dance.webp",
+        "role": "inline",
+        "alt": "",
+        "caption": "",
+        "status": "needed"
+      },
+      {
+        "slot_id": "galicnik",
+        "file": "content/posts/macedonian-wedding-traditions/images/macedonian-wedding-traditions-galicnik-wedding-festival.webp",
+        "role": "inline",
+        "alt": "",
+        "caption": "",
+        "status": "needed"
+      },
+      {
+        "slot_id": "destination-legal",
+        "file": "content/posts/macedonian-wedding-traditions/images/macedonian-wedding-traditions-north-macedonia-lake-ohrid.webp",
+        "role": "inline",
+        "alt": "",
+        "caption": "",
+        "status": "needed"
+      }
+    ],
+    "cta": {
+      "text": "Read the free magazine",
+      "subtext": "Ideas and destinations to bring to that family conversation, free to read whenever you are ready.",
+      "link": "/magazine?utm_source=blog&utm_medium=content&utm_campaign=macedonian-wedding-traditions&utm_content=primary",
+      "placement": "At the former <!-- CTA: primary --> marker, end of 'How Macedonian wedding traditions vary by village, region and family', before 'The Galičnik Wedding Festival'; marked <!-- CTA BLOCK: primary --> in 11-body.md."
+    },
+    "secondary_cta": {
+      "text": "Talk to a Wedded Advisor",
+      "link": "/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=macedonian-wedding-traditions&utm_content=secondary",
+      "placement": "Already in the copy: inline link after the legal section, before What to wear as a guest. No separate block."
+    },
+    "tracking_links": [
+      "/magazine?utm_source=blog&utm_medium=content&utm_campaign=macedonian-wedding-traditions&utm_content=primary",
+      "/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=macedonian-wedding-traditions&utm_content=secondary"
+    ],
+    "seo": {
+      "meta_title": "Macedonian Wedding Traditions: Customs, Kum & Oro",
+      "meta_description": "From the asking to the last oro: Macedonian wedding traditions in order, what each means, and what Australians need to marry in North Macedonia.",
+      "focus_keyword": "macedonian wedding traditions",
+      "canonical": "https://weddedwonderland.com/expert-advice/macedonian-wedding-traditions",
+      "og_image_slot": "featured"
+    },
+    "schema_jsonld": {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Article",
+          "@id": "https://weddedwonderland.com/expert-advice/macedonian-wedding-traditions#article",
+          "headline": "What Are the Macedonian Wedding Traditions You Did Not Know?",
+          "description": "From the asking to the last oro: Macedonian wedding traditions in order, what each means, and what Australians need to marry in North Macedonia.",
+          "author": {
+            "@type": "Organization",
+            "name": "Wedded Wonderland",
+            "url": "https://weddedwonderland.com/"
+          },
+          "publisher": {
+            "@type": "Organization",
+            "name": "Wedded Wonderland",
+            "url": "https://weddedwonderland.com/"
+          },
+          "datePublished": "",
+          "mainEntityOfPage": "https://weddedwonderland.com/expert-advice/macedonian-wedding-traditions",
+          "inLanguage": "en-AU",
+          "keywords": "macedonian wedding traditions"
+        },
+        {
+          "@type": "BreadcrumbList",
+          "@id": "https://weddedwonderland.com/expert-advice/macedonian-wedding-traditions#breadcrumb",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Home",
+              "item": "https://weddedwonderland.com/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Expert Advice",
+              "item": "https://weddedwonderland.com/expert-advice"
+            },
+            {
+              "@type": "ListItem",
+              "position": 3,
+              "name": "What Are the Macedonian Wedding Traditions You Did Not Know?",
+              "item": "https://weddedwonderland.com/expert-advice/macedonian-wedding-traditions"
+            }
+          ]
+        },
+        {
+          "@type": "FAQPage",
+          "@id": "https://weddedwonderland.com/expert-advice/macedonian-wedding-traditions#faq",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "What happens at a Macedonian wedding?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Many families keep a sequence of customs: the asking and engagement, choosing the kum and kuma, gifts, the wedding flag and bread, collecting the bride, the Orthodox church service, the welcome at the groom's home and the oro. Customs vary by family and region."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Who are the kum and kuma at a Macedonian wedding?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "They are the couple's wedding sponsors, sometimes called godparents in English. Many families treat the role as a lifelong bond and honour the kum and kuma throughout the day."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "What happens at a Macedonian Orthodox wedding ceremony?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "The couple wear wedding crowns during the service, and the kum takes part alongside them. The parish priest sets the order of service, so ask your priest to walk you through it."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "What is the oro?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "The oro is a line or circle dance with guests linked by the hands. At many weddings it is played by live musicians and runs for much of the night."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "What do you wear to a Macedonian wedding?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Follow the invitation and ask the couple. For a church service, check the parish's dress expectations, and bring shoes you can dance in."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Is a church wedding in North Macedonia legally recognised?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Check with the registry office in North Macedonia before you plan around it. [[VERIFY: whether a church wedding alone is legally recognised in North Macedonia or a civil ceremony at the registry office is required; North Macedonia official source]] For the Australian side, the Embassy in Belgrade provides Certificates of No Impediment to Marriage."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    "author": "Wedded Wonderland",
+    "status": "draft",
+    "verify_items": [
+      "[[VERIFY: whether a church wedding alone is legally recognised in North Macedonia or a civil ceremony at the registry office is required; North Macedonia official source]]"
+    ],
+    "needs_signoff": [],
+    "redirects_recommended": [
+      {
+        "from": "/7-exciting-and-unusual-things-to-expect-at-a-macedonian-wedding",
+        "to": "/expert-advice/macedonian-wedding-traditions",
+        "type": 301,
+        "when": "at publish",
+        "note": "Direct, no chain. Recommendation only; a human sets it."
+      }
+    ],
+    "publish_day_checks": [
+      "Re-read Smartraveller North Macedonia advice (https://www.smartraveller.gov.au/destinations/europe/north-macedonia) on publish day: as at November 2026, overall 'Exercise normal safety precautions', no higher-level areas, page updated 02 September 2026; forest and national park access rule 1 July to 30 September; Kosovo border caution; Macedonian heritage and dual nationality note; 90 days in 6 months visa-free. If anything changed, update 'Safety and seasonal access', the Galičnik July note and the destination-legal image brief before publishing."
+    ],
+    "draft_note": "DRAFT. Do not publish until checked:\n\n1. [[VERIFY]] items (1 unique, appears 2 times: legal section 'The civil ceremony at the registry office' and FAQ 'Is a church wedding in North Macedonia legally recognised?'):\n   - [[VERIFY: whether a church wedding alone is legally recognised in North Macedonia or a civil ceremony at the registry office is required; North Macedonia official source]]\n\n2. Nic sign-off on prices: none (no prices printed).\n\n3. Image slots needed (7, none approved; alt and caption to add when approved):\n   - featured (needed; licensed real photo with consent, never AI, never from a competitor or the old page)\n   - wedding-flag (needed; licensed real photo with consent, never AI, never from a competitor or the old page)\n   - wedding-bread (needed; AI illustrative still life only with Nic approval, captioned \"Illustrative image\")\n   - crowning (needed; licensed real photo with consent, never AI, never from a competitor or the old page)\n   - oro (needed; licensed real photo with consent, never AI, never from a competitor or the old page)\n   - galicnik (needed; licensed real photo with consent, never AI, never from a competitor or the old page)\n   - destination-legal (needed; licensed real photo with consent, never AI, never from a competitor or the old page)\n\n4. Publish day: re-check Smartraveller North Macedonia advice and update the safety section if it changed.\n\n5. At publish (a human sets it): 301 /7-exciting-and-unusual-things-to-expect-at-a-macedonian-wedding to /expert-advice/macedonian-wedding-traditions, direct."
+  }
+}
