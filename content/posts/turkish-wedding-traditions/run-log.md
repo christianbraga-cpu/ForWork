@@ -11,3 +11,5 @@
 01:43 07b icp-panel-chair revise; enquire 2.5; 2 must_fix, 2 should_fix (consider item skipped to keep 0 VERIFY); final pass launched
 01:44 08 luxury-writer complete ~2,960 words (60 over brief ceiling); scan clean; 8b+CRO+distribution launched
 01:45 08b editor 1 blocking fix (unsourced same-sex line) + 3 cuts applied; blocking now 0
+01:45 09 cro-specialist complete; 2 copy changes applied
+01:45 10 distribution complete 3 pins, 8-slide carousel, newsletter

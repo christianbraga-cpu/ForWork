@@ -156,7 +156,7 @@ As at November 2026, Smartraveller's overall advice for Türkiye is "Exercise a 
 
 Levels change, so read [Smartraveller's Türkiye advice](https://www.smartraveller.gov.au/destinations/europe/turkiye) again before you book and before you fly.
 
-For the practical side of [planning a wedding in Türkiye](/destinations/europe/turkey), see [why couples choose Türkiye](/why-is-turkey-so-popular-for-destination-weddings) and our shortlist of [venues in Türkiye](/10-exquisite-venues-in-turkiye-to-consider-for-your-destination-wedding). If you would rather have one person plan the venue, travel and vendors around your marriage office dates, [speak with a Wedded Advisor](/wonderland-concierge), your single point of contact from start to finish, with inclusions and the fee confirmed in writing before you commit.
+For the practical side of [planning a wedding in Türkiye](/destinations/europe/turkey), see [why couples choose Türkiye](/why-is-turkey-so-popular-for-destination-weddings) and our shortlist of [venues in Türkiye](/10-exquisite-venues-in-turkiye-to-consider-for-your-destination-wedding). If you would rather have one person plan the venue, travel and vendors around your marriage office dates, [speak with a Wedded Advisor](/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=turkish-wedding-traditions&utm_content=secondary), your single point of contact from start to finish, with inclusions and the fee confirmed in writing before you commit.
 
 ## Frequently asked questions
 
@@ -184,6 +184,6 @@ Yes. GoTürkiye says almost every region of Türkiye has its own wedding traditi
 
 You do not need every custom to honour a Turkish family. Coffee served properly, a henna night the evening before, davul and zurna leading the way in: a few customs chosen with both families say more than a long list.
 
-For more on how other cultures mark the same moments, return to [our guide to wedding traditions around the world](/expert-advice/wedding-traditions), or [read the free Wedded Wonderland magazine](/magazine). When you are ready to talk dates, documents and where in Türkiye your families will gather, your Wedded Advisor is a conversation away.
+For more on how other cultures mark the same moments, return to [our guide to wedding traditions around the world](/expert-advice/wedding-traditions), or browse the free Wedded Wonderland magazine below. When you are ready to talk dates, documents and where in Türkiye your families will gather, your Wedded Advisor is a conversation away.
 
 <!-- CTA: primary -->
