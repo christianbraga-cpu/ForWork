@@ -8,3 +8,4 @@
 06:45 07 icp-reader uhnw, planner_couple, sceptic, funding_parent complete (5/5); no must-fix; waiting on editor
 06:46 06 editor pass_with_edits 4.0; 19 edits applied by orchestrator -> 05-draft-r2.md (~2,500 words); Lebanese link removed from 02-seo
 06:48 07b icp-panel-chair revise; enquire 1.9; 0 must_fix, 3 should_fix, 2 consider; final pass launched
+06:49 08 luxury-writer complete ~2,500 words; 1 VERIFY kept; scan clean; 8b+CRO+distribution launched
