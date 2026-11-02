@@ -52,7 +52,7 @@ A family piece still has a place today. An embroidered runner on the welcome tab
 
 The Minho, in Portugal's far north, has its own traditional bridal costume. It is a regional dress, not a national one.
 
-<!-- IMAGE SLOT minho_dress: Vertical, Viana do Castelo (festival such as the Romaria d'Agonia or museum display at Museu do Traje), black bridal costume with embroidery and gold, daylight; museum object or consented wearer; name and description must match the sourced text. -->
+<!-- IMAGE SLOT minho_dress: Vertical, Viana do Castelo (festival such as the Romaria d'Agonia or museum display at Museu do Traje), traditional bridal costume with embroidery and gold, daylight; museum object or consented wearer; name and description must match the sourced text. -->
 
 The gold matters as much as the dress. Filigree (*filigrana*) is ornamental work made from very fine wires and tiny metal beads soldered into a design, usually in gold or silver. Portuguese Wikipedia describes it as often worn in northern Portugal with the traditional bridal costume and with women's costume in Minho folk groups. <!-- fact_05 -->
 
@@ -123,6 +123,10 @@ Gold is another easy bridge: a Coração de Viana pendant handed down through th
 The feast is harder to translate. If your family expects a late, unhurried copo-d'água, ask about finish times early when you compare venues.
 
 <!-- CTA: primary -->
+**[Read the free magazine](/magazine?utm_source=blog&utm_medium=content&utm_campaign=portuguese-wedding-traditions&utm_content=primary)**
+
+Free to read, at your own pace.
+<!-- /CTA: primary -->
 
 ## Marrying legally in Portugal as an Australian
 
@@ -167,7 +171,7 @@ You cannot register an overseas marriage in Australia, but in most cases it is l
 
 We explain this further in our guide on [whether you need to register an overseas marriage at home](/expert-advice/do-you-have-to-register-an-overseas-marriage-at-home), and in [whether to marry legally abroad or hold a symbolic ceremony](/expert-advice/should-you-marry-legally-abroad-or-have-a-symbolic-ceremony).
 
-If the paperwork feels like the part that could unravel the plan, [speak with a Wedded Advisor](/wonderland-concierge?utm_source=blog&utm_medium=article&utm_campaign=portuguese-wedding-traditions). You have one Advisor as a single point of contact from start to finish, and the fee is agreed in writing before any work begins.
+If you would rather one person held the whole plan together, [speak with a Wedded Advisor](/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=portuguese-wedding-traditions&utm_content=secondary). You have one Advisor as a single point of contact from start to finish, and the fee is agreed in writing before any work begins.
 
 ## Travel and safety notes for guests
 
@@ -207,6 +211,6 @@ Lisbon and Albufeira, in the Algarve, both offer public municipal spaces for civ
 
 ## Planning a Portuguese wedding
 
-Whether you are marrying in the Douro or bringing your grandmother's filigree to a wedding at home, the details are what make it yours. For more cultures and customs, return to [our guide to wedding traditions around the world](/expert-advice/wedding-traditions), or [read the free Wedded Wonderland magazine](/magazine?utm_source=blog&utm_medium=article&utm_campaign=portuguese-wedding-traditions).
+Whether you are marrying in the Douro or bringing your grandmother's filigree to a wedding at home, the details are what make it yours. For more cultures and customs, return to [our guide to wedding traditions around the world](/expert-advice/wedding-traditions), or [read the free Wedded Wonderland magazine](/magazine?utm_source=blog&utm_medium=content&utm_campaign=portuguese-wedding-traditions&utm_content=magnet).
 
 When you are ready to plan, a Wedded Advisor will talk it through with you, confirm inclusions in writing before you commit, and stay your single point of contact to the end.

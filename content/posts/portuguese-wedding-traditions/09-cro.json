@@ -1,0 +1,115 @@
+{
+  "agent": "cro",
+  "task_id": "portuguese-wedding-traditions",
+  "stage": "09",
+  "status": "complete",
+  "round": 1,
+  "inputs_used": [
+    "content-system/brand/services.md",
+    "content-system/brand/brand-facts.md",
+    "content/posts/portuguese-wedding-traditions/01-brief.json",
+    "content/posts/portuguese-wedding-traditions/07-panel.json",
+    "content/posts/portuguese-wedding-traditions/08-final.md",
+    "content-system/seo/link-map.csv",
+    "content-system/schemas/09-cro.schema.json"
+  ],
+  "payload": {
+    "journey_stage": "dreaming",
+    "primary_cta": {
+      "text": "Read the free magazine",
+      "subtext": "Free to read, at your own pace.",
+      "link": "/magazine?utm_source=blog&utm_medium=content&utm_campaign=portuguese-wedding-traditions&utm_content=primary",
+      "placement": "Fill the existing <!-- CTA: primary --> marker at the end of 'Bringing Portuguese wedding traditions home to Australia', just before 'Marrying legally in Portugal as an Australian'. The reader has finished the customs and is still dreaming, so a low-pressure read fits better than an enquiry here. Not moved."
+    },
+    "secondary_cta": {
+      "text": "Speak with a Wedded Advisor",
+      "subtext": "You have one Advisor as a single point of contact from start to finish, and the fee is agreed in writing before any work begins.",
+      "link": "/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=portuguese-wedding-traditions&utm_content=secondary",
+      "placement": "Existing inline link at the end of 'Registering your marriage back home', the close of the legal section, as the brief asks. Wording unchanged; the following sentence already carries the subtext from brand-facts.md, so nothing is added. Only the UTMs change."
+    },
+    "lead_magnet": {
+      "name": "Wedded Wonderland digital magazine (free)",
+      "link": "/magazine?utm_source=blog&utm_medium=content&utm_campaign=portuguese-wedding-traditions&utm_content=magnet",
+      "exists": true,
+      "placement": "Existing inline link in the closing 'Planning a Portuguese wedding' paragraph, UTM retagged as magnet. About 85 lines from the primary block, so the asks do not crowd. A Portugal-specific magazine edition would suit better but none exists in link-map.csv (only Australia, Fiji, Dubai editions), so it is suggested, not placed."
+    },
+    "tracking": [
+      "/magazine?utm_source=blog&utm_medium=content&utm_campaign=portuguese-wedding-traditions&utm_content=primary",
+      "/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=portuguese-wedding-traditions&utm_content=secondary",
+      "/magazine?utm_source=blog&utm_medium=content&utm_campaign=portuguese-wedding-traditions&utm_content=magnet"
+    ],
+    "copy_changes": [
+      {
+        "old": "<!-- CTA: primary -->",
+        "new": "<!-- CTA: primary -->\n**[Read the free magazine](/magazine?utm_source=blog&utm_medium=content&utm_campaign=portuguese-wedding-traditions&utm_content=primary)**\n\nFree to read, at your own pace.\n<!-- /CTA: primary -->",
+        "why": "Fill the primary CTA marker. Sits after 'Bringing Portuguese wedding traditions home to Australia', where the dreaming reader has finished the customs and before the legal detail begins."
+      },
+      {
+        "old": "[speak with a Wedded Advisor](/wonderland-concierge?utm_source=blog&utm_medium=article&utm_campaign=portuguese-wedding-traditions)",
+        "new": "[speak with a Wedded Advisor](/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=portuguese-wedding-traditions&utm_content=secondary)",
+        "why": "Secondary CTA: fix UTMs to the services.md format (utm_medium=content) and add utm_content=secondary. Wording unchanged."
+      },
+      {
+        "old": "[read the free Wedded Wonderland magazine](/magazine?utm_source=blog&utm_medium=article&utm_campaign=portuguese-wedding-traditions)",
+        "new": "[read the free Wedded Wonderland magazine](/magazine?utm_source=blog&utm_medium=content&utm_campaign=portuguese-wedding-traditions&utm_content=magnet)",
+        "why": "Closing magazine link: fix UTMs (utm_medium=content) and tag utm_content=magnet so it is tracked apart from the mid-article primary block. No CTA block sits beside it, so the inline link stays."
+      }
+    ],
+    "rationale": "Brief sets journey_stage dreaming, primary /magazine and Wedded Concierge secondary after the legal section, matching the services.md early-stage rule. Weighted enquiry likelihood from the panel is 2.5, so the main ask stays a free read and the Advisor ask sits where the paperwork question peaks (end of the legal section). Both targets exist in link-map.csv (/magazine, /wonderland-concierge). Subtexts use only brand-facts.md lines; no prices, no new service claims. The existing inline links used utm_medium=article and no utm_content; both are retagged to the services.md format. No CTA block sits next to an inline link to the same target, so no inline link is dropped. Suggestion for later: a Portugal (or Europe) edition of the magazine would be the ideal magnet for this post; it does not exist yet."
+  },
+  "self_qa": {
+    "confidence": 0.82,
+    "checks": [
+      {
+        "check": "Primary CTA text 6 words or fewer, no exclamation mark, no 'click here'",
+        "pass": true
+      },
+      {
+        "check": "All CTA targets exist in link-map.csv",
+        "pass": true
+      },
+      {
+        "check": "UTMs match services.md format with utm_campaign=portuguese-wedding-traditions and correct utm_content",
+        "pass": true
+      },
+      {
+        "check": "Each copy_changes old string occurs exactly once in 08-final.md",
+        "pass": true
+      },
+      {
+        "check": "No prices, no invented business details, no em dashes, no banned spend wording",
+        "pass": true
+      },
+      {
+        "check": "Panel must_fix (legal lead time) resolved in 08-final.md",
+        "pass": true,
+        "note": "Not a CRO change; the orchestrator should confirm the writer's fix landed before publish."
+      }
+    ]
+  },
+  "open_questions": [
+    {
+      "to": "Nic",
+      "question": "Can Wedded Advisors help with the Portuguese registry paperwork for Australians? The line before the Advisor link ('If the paperwork feels like the part that could unravel the plan') implies it. If not, soften it to a general planning prompt.",
+      "blocking": false
+    },
+    {
+      "to": "Nic",
+      "question": "Is the /magazine page gated (email capture) or open to read? The subtext 'Free to read, at your own pace' assumes free access, which services.md supports; confirm nothing contradicts 'at your own pace'.",
+      "blocking": false
+    },
+    {
+      "to": "orchestrator",
+      "question": "A Portugal or Europe magazine edition would be the ideal lead magnet here; add to the content backlog if wanted.",
+      "blocking": false
+    }
+  ],
+  "assumptions": [
+    "The <!-- /CTA: primary --> closing comment is acceptable to the CMS field map; if not, the publisher can drop it.",
+    "The panel's should_fix items were handled by the writer in 08-final.md and do not affect CTA placement.",
+    "The closing magazine link counts as the lead magnet placement, kept separate from the primary block by tracking tag."
+  ],
+  "next_agent": [
+    "distribution"
+  ]
+}
