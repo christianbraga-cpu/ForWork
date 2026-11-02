@@ -110,8 +110,6 @@ That carrying sound is the point. For a hotel or villa arrival, check the venue'
 
 For the marriage itself, applications go through a municipal marriage office (evlendirme dairesi). <!-- fact_103 --> We cover what that means for Australians in the legal section below.
 
-Often told, though we found no reputable source for it, is that the couple race to step on each other's foot at the signing.
-
 ### Takı töreni: pinning the gold
 
 Often told in accounts of Turkish weddings is the takı töreni, a moment at the reception when guests give the couple gold. We found no cultural or academic source for its details, so we leave the specifics to your families, who will know how they do it.
@@ -126,8 +124,6 @@ Often told is the halay, a folk dance in a line. We found no source on its form 
 
 The Hatay study, a single region's record, shows how far one place can differ, with söz and nişan named by the size of the gathering rather than as separate steps. <!-- fact_12 -->
 
-Time matters as much as place, from smaller engagements to henna nights held in urban venues. <!-- fact_12 --> <!-- fact_115 -->
-
 Faith shapes the day too, as does whether the families live in Türkiye or abroad. The honest approach is to ask both families early which customs they want to keep, which they would happily skip, and who should lead each one.
 
 ## Marrying legally in Türkiye as an Australian
@@ -140,8 +136,6 @@ In Türkiye, marriage applications are handled by a municipal marriage office (e
 
 At Beyoğlu, the couple must attend the application together on a weekday, between 9am and 12pm or 1pm and 4.30pm, or appoint a proxy with a specific power of attorney that includes a photo. <!-- fact_106 --> Incomplete applications are not accepted. <!-- fact_106 --> No fee is listed on the page. <!-- fact_106 --> Check the ceremony format, whether it can be held at a venue, and any fees with the marriage office and the Australian Embassy.
 
-In practice, arrive with working days to spare.
-
 ### Documents Australians are asked for
 
 Beyoğlu Municipality lists these for foreign nationals: three passport photos taken within the last six months; a health report showing no impediment to the marriage, from a family physician or a state hospital (or a private one approved by a family physician); a Marriage Eligibility Certificate or Certificate of Celibacy; and a notarised translation of the passport or photo ID. <!-- fact_104 -->
@@ -152,7 +146,7 @@ Smartraveller explains that some countries ask you to prove you are free to marr
 
 Back home, Smartraveller says you cannot register an overseas marriage in Australia, but in most cases it is legally recognised if it was valid where it took place and would have been valid under Australian law; a foreign marriage certificate is usually accepted as proof, though it may not work for a name change. <!-- fact_108 --> It recommends talking to a lawyer to confirm validity. <!-- fact_108 --> More in our explainer on [whether you have to register an overseas marriage at home](/expert-advice/do-you-have-to-register-an-overseas-marriage-at-home).
 
-Türkiye does not legally recognise same-sex marriages, civil unions or domestic partnerships. <!-- fact_102 --> Same-sex couples can still celebrate there, with the legal marriage done elsewhere.
+Türkiye does not legally recognise same-sex marriages, civil unions or domestic partnerships. <!-- fact_102 --> If you are a same-sex couple, read Smartraveller's full Türkiye advice before planning a celebration there.
 
 <!-- IMAGE SLOT destination-legal: Licensed landscape of a destination outside Smartraveller's higher-level areas (not within 10km of the Syrian border, not Hakkari or Şırnak), e.g. an Aegean or Istanbul view, soft morning light, no people or with tiny distant figures, no venue branding. Location must be verified (EXIF, register or source page). Landscape 16:9. -->
 

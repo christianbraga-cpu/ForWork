@@ -1,0 +1,108 @@
+{
+  "agent": "editor",
+  "task_id": "turkish-wedding-traditions",
+  "stage": "06",
+  "status": "complete",
+  "round": "final",
+  "inputs_used": [
+    "/home/user/ForWork/content/posts/turkish-wedding-traditions/08-final.md",
+    "/home/user/ForWork/content/posts/turkish-wedding-traditions/03-source-pack.json",
+    "/home/user/ForWork/content-system/brand/brand-facts.md"
+  ],
+  "self_qa": {
+    "checks": [
+      {
+        "check": "scan_copy.py run",
+        "pass": true,
+        "note": "0 banned, 0 dashes; flagged 'exclusive' is venue exclusive use, not a brand claim; overlaps are Smartraveller official level wording only"
+      },
+      {
+        "check": "Smartraveller lines match fact_100, fact_101, fact_102, fact_107, fact_108",
+        "pass": true
+      },
+      {
+        "check": "Brand claim (single point of contact, inclusions and fee in writing) in brand-facts.md",
+        "pass": true
+      },
+      {
+        "check": "Prices, vendor names, stereotypes",
+        "pass": true,
+        "note": "no prices, no vendor names; 'often told' items labelled unsourced"
+      },
+      {
+        "check": "Fact markers resolve to source-pack ids",
+        "pass": true
+      },
+      {
+        "check": "Exactly 4 one-sentence Key takeaways",
+        "pass": true
+      },
+      {
+        "check": "No em dashes; headings not keyword-stuffed",
+        "pass": true
+      },
+      {
+        "check": "Each edit old occurs once in 08-final.md",
+        "pass": true
+      }
+    ],
+    "confidence": 0.8
+  },
+  "open_questions": [
+    {
+      "to": "orchestrator",
+      "question": "Cuts total about 50 words; if still over the 2900 ceiling, also cut the ring-ribbon 'Often told' paragraph in Söz and nişan.",
+      "blocking": false
+    },
+    {
+      "to": "orchestrator",
+      "question": "Takeaway 4 says the eligibility certificate must be certified; that is Beyoğlu's rule (fact_105). Acceptable as a summary, or add 'at many offices'?",
+      "blocking": false
+    }
+  ],
+  "assumptions": [
+    "Fast mode: only blocking issues checked, no rubric re-score; 07-panel scores stand."
+  ],
+  "verify_items": [],
+  "tools_used": [
+    "Bash"
+  ],
+  "next_agent": [
+    "luxury-writer"
+  ],
+  "payload": {
+    "draft_file": "/home/user/ForWork/content/posts/turkish-wedding-traditions/08-final.md",
+    "blocking_issues": [
+      "Unsourced claim that same-sex couples can still celebrate in Türkiye (fixed by edit 1)."
+    ],
+    "decision": "pass_with_edits",
+    "edits": [
+      {
+        "location": "Marrying legally > Documents, last paragraph",
+        "issue": "BLOCKING: unsourced travel/legal claim that same-sex couples 'can still celebrate there'; fact_102 only covers non-recognition.",
+        "old": "Same-sex couples can still celebrate there, with the legal marriage done elsewhere.",
+        "new": "If you are a same-sex couple, read Smartraveller's full Türkiye advice before planning a celebration there."
+      },
+      {
+        "location": "On the wedding day > The civil ceremony",
+        "issue": "Word cut (~60 over ceiling): unsourced 'often told' sentence, adds no sourced value.",
+        "old": "\n\nOften told, though we found no reputable source for it, is that the couple race to step on each other's foot at the signing.",
+        "new": ""
+      },
+      {
+        "location": "How Turkish wedding traditions change by region and family",
+        "issue": "Word cut: repeats fact_12 and fact_115 already stated in full above.",
+        "old": "Time matters as much as place, from smaller engagements to henna nights held in urban venues. <!-- fact_12 --> <!-- fact_115 -->\n\n",
+        "new": ""
+      },
+      {
+        "location": "Marrying legally > The civil marriage",
+        "issue": "Word cut: repeats the 'Requirements change' caution and adds nothing.",
+        "old": "\n\nIn practice, arrive with working days to spare.",
+        "new": ""
+      }
+    ],
+    "needs_signoff": [],
+    "banned_phrases_found": []
+  }
+}

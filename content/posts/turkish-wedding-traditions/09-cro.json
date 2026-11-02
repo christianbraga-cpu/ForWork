@@ -1,0 +1,75 @@
+{
+  "agent": "cro-specialist",
+  "task_id": "turkish-wedding-traditions",
+  "stage": "09",
+  "status": "complete",
+  "round": 1,
+  "inputs_used": [
+    "content/posts/turkish-wedding-traditions/01-brief.json",
+    "content/posts/turkish-wedding-traditions/07-panel.json",
+    "content/posts/turkish-wedding-traditions/07-icp/*.json (cta_reaction)",
+    "content/posts/turkish-wedding-traditions/08-final.md",
+    "content-system/brand/services.md",
+    "content-system/brand/brand-facts.md",
+    "content-system/seo/link-map.csv",
+    "content/posts/german-wedding-traditions/09-cro.json (copy_changes format)"
+  ],
+  "payload": {
+    "journey_stage": "dreaming",
+    "primary_cta": {
+      "text": "Read the free magazine",
+      "subtext": "Free to read, no enquiry needed",
+      "link": "/magazine?utm_source=blog&utm_medium=content&utm_campaign=turkish-wedding-traditions&utm_content=primary",
+      "placement": "Existing <!-- CTA: primary --> marker at the end of 'Bringing Turkish traditions into your celebration', directly after the closing paragraph. The closing paragraph's inline /magazine link sits next to the block, so it is dropped (copy_changes[0]) and the block is the only magazine link."
+    },
+    "secondary_cta": {
+      "text": "Speak with a Wedded Advisor",
+      "link": "/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=turkish-wedding-traditions&utm_content=secondary",
+      "placement": "Existing inline link in the last paragraph of the legal section (after 'Travel advice as at November 2026', before the FAQ). Anchor wording unchanged (services.md default); UTMs added (copy_changes[1]). No separate block and no subtext, because the sentence already says the inclusions and fee are confirmed in writing before you commit."
+    },
+    "lead_magnet": {
+      "name": "Wedded Wonderland digital magazine",
+      "link": "/magazine?utm_source=blog&utm_medium=content&utm_campaign=turkish-wedding-traditions&utm_content=primary",
+      "placement": "Served by the primary CTA; not placed a second time.",
+      "exists": true
+    },
+    "copy_changes": [
+      {
+        "old": "return to [our guide to wedding traditions around the world](/expert-advice/wedding-traditions), or [read the free Wedded Wonderland magazine](/magazine). When you are ready",
+        "new": "return to [our guide to wedding traditions around the world](/expert-advice/wedding-traditions), or browse the free Wedded Wonderland magazine below. When you are ready"
+      },
+      {
+        "old": "[speak with a Wedded Advisor](/wonderland-concierge)",
+        "new": "[speak with a Wedded Advisor](/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=turkish-wedding-traditions&utm_content=secondary)"
+      }
+    ],
+    "tracking": [
+      "/magazine?utm_source=blog&utm_medium=content&utm_campaign=turkish-wedding-traditions&utm_content=primary",
+      "/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=turkish-wedding-traditions&utm_content=secondary"
+    ],
+    "rationale": "Brief sets journey_stage dreaming, primary /magazine and a Wedded Advisor secondary after the legal section, matching the services.md early-stage rule. The primary sits at the close, where a reader who came for the customs has finished and the natural next step is more reading, not an enquiry. The secondary sits where the panel's question peaks: the legal and travel-advice section raises 'who handles the marriage office dates, documents and travel', and the line answers it with brand-facts.md claims only (single point of contact, venue, travel and vendors, inclusions and fee in writing). Panel cta_reactions: planner_couple 'maybe', wants to see what the Advisor does before the link (venue, travel, vendors and the in-writing line already precede it) and a real Turkish wedding (we hold none; open question); sceptic 'maybe' pending what the fee buys (fee-in-writing line precedes the link; fee model is not in brand-facts.md, so not added); funding_parent 'maybe' if it means a phone call with a named person and uhnw 'maybe' wanting scale and privacy (neither in brand-facts.md, not added); search_visitor 'no', prefers the pillar link, which stays. Weighted enquiry likelihood 2.5 is expected for a dreaming-stage culture guide. Lead magnet suggestion: a Türkiye or Europe issue of the magazine (link map lists only Australia, Fiji and Dubai issues) would be the ideal magnet for this post; it does not exist, so it is not placed. No prices, no new business details, no em dashes."
+  },
+  "self_qa": {
+    "checks": [
+      {"check": "Primary CTA text 6 words or fewer, no 'click here', no exclamation mark", "pass": true, "note": "'Read the free magazine' (4 words), services.md default."},
+      {"check": "Targets exist in link-map.csv", "pass": true, "note": "/magazine and /wonderland-concierge both listed."},
+      {"check": "UTMs follow services.md format with utm_campaign=turkish-wedding-traditions", "pass": true},
+      {"check": "Each copy_changes old string occurs exactly once in 08-final.md", "pass": true, "note": "Checked with grep -c."},
+      {"check": "Inline link next to a CTA block to the same target dropped", "pass": true, "note": "Closing /magazine inline link removed; block is the only one."},
+      {"check": "No prices, no claims beyond brand-facts.md, Australian English, no em dashes", "pass": true}
+    ],
+    "confidence": 0.85
+  },
+  "open_questions": [
+    {"to": "orchestrator", "question": "Apply copy_changes[0] and [1] to 08-final.md before distribution and the CMS step.", "blocking": false},
+    {"to": "person", "question": "Is a Türkiye or Europe issue of the digital magazine planned? It would be a better-fitting magnet for this post.", "blocking": false},
+    {"to": "planner-sme", "question": "Is there a consented real wedding in Türkiye we could link near the Advisor line? planner_couple wanted proof before enquiring.", "blocking": false}
+  ],
+  "assumptions": [
+    "The CTA block renders the text, subtext and link directly below the closing paragraph, so 'below' in the closing line points to it.",
+    "'Free to read, no enquiry needed' relies on services.md describing the magazine as free; no other magazine details are claimed.",
+    "The closing line 'your Wedded Advisor is a conversation away' is kept as written; panel readers rated it non-pushy and it adds no new claim."
+  ],
+  "tools_used": ["Bash"],
+  "next_agent": ["distribution"]
+}

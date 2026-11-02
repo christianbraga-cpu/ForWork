@@ -10,3 +10,4 @@
 01:42 06 editor pass_with_edits 4.14; 14 edits applied by orchestrator -> 05-draft-r2.md
 01:43 07b icp-panel-chair revise; enquire 2.5; 2 must_fix, 2 should_fix (consider item skipped to keep 0 VERIFY); final pass launched
 01:44 08 luxury-writer complete ~2,960 words (60 over brief ceiling); scan clean; 8b+CRO+distribution launched
+01:45 08b editor 1 blocking fix (unsourced same-sex line) + 3 cuts applied; blocking now 0
