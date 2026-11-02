@@ -6,3 +6,4 @@
 06:44 05 luxury-writer complete ~2,806 words; 1 VERIFY (civil vs church legal form); 7 image slots; first draft sent
 06:44 07 icp-reader search_visitor complete
 06:45 07 icp-reader uhnw, planner_couple, sceptic, funding_parent complete (5/5); no must-fix; waiting on editor
+06:46 06 editor pass_with_edits 4.0; 19 edits applied by orchestrator -> 05-draft-r2.md (~2,500 words); Lebanese link removed from 02-seo
