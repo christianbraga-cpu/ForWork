@@ -15,3 +15,4 @@
 23:08 08b editor 3 blocking fixes applied (CNI timing wording, unsourced black costume line cut); blocking now 0
 23:09 09 cro-specialist complete; 3 copy changes applied; orchestrator reworded Advisor lead-in (paperwork help not in brand facts)
 23:09 orchestrator removed unsourced black-costume wording from social copy and image brief
+23:10 11 cms-publisher package complete; finish: report, backlinks+redirect, link map, calendar id 18, docx

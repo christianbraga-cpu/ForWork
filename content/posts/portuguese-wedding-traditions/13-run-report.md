@@ -1,7 +1,7 @@
 # Run report: What Are the Portuguese Wedding Traditions You Did Not Know?
 
 - **Slug:** portuguese-wedding-traditions (CMS slug as given)  ·  **Run date:** 2026-11-02  ·  **Status:** Package ready (no Chrome)
-- **Mode:** fast mode, refresh. Started 22:44 UTC, first draft 23:01, package ENDTIME. About MINS minutes in total.
+- **Mode:** fast mode, refresh. Started 22:44 UTC, first draft 23:01, package 23:10. About 26 minutes in total.
 - **Draft:** not uploaded (no Chrome in the cloud session; CMS field map not yet confirmed)
 - **Word file:** `portuguese-wedding-traditions-draft.docx`
 
