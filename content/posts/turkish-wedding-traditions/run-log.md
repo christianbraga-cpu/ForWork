@@ -5,3 +5,4 @@
 01:10 03 planner-sme batch A complete 21 facts (UNESCO coffee, GoTurkiye, TDK, Ministry Hatay study); ribbon as 'often told' (no follow-up); waiting on batch B
 01:36 03 planner-sme batch B complete 17 facts (Smartraveller, Beyoglu Municipality, Alpyildiz 2020); merged; writer launched
 01:39 05 luxury-writer complete ~2,875 words; 0 VERIFY; red sash dropped; 7 image slots; first draft sent
+01:40 07 icp-reader search_visitor complete
