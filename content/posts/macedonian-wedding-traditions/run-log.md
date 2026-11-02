@@ -5,3 +5,4 @@
 06:41 03 batches A (10 facts, Galicnik via Wikipedia) and B (12 facts, legal via Belgrade embassy) complete, both thin and over budget; orchestrator UNESCO URL guesses opened unrelated listings (not claimed); merged; writer launched
 06:44 05 luxury-writer complete ~2,806 words; 1 VERIFY (civil vs church legal form); 7 image slots; first draft sent
 06:44 07 icp-reader search_visitor complete
+06:45 07 icp-reader uhnw, planner_couple, sceptic, funding_parent complete (5/5); no must-fix; waiting on editor
