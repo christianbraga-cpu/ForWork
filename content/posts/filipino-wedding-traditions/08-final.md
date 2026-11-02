@@ -164,7 +164,7 @@ You cannot register an overseas marriage in Australia, but Smartraveller says it
 
 Australia does not recognise an overseas marriage where either person is already married, not old enough, too closely related or forced to marry. <!-- fact_107 --> To confirm your marriage is valid, Smartraveller suggests talking to a lawyer. <!-- fact_106 --> Our guide to [registering an overseas marriage at home](/expert-advice/do-you-have-to-register-an-overseas-marriage-at-home) explains more, and [our destination wedding checklist](/expert-advice/destination-wedding-checklist) helps you time each step.
 
-If the paperwork is where your planning has stalled, you can [speak with a Wedded Advisor](/wonderland-concierge?utm_source=blog&utm_medium=article&utm_campaign=filipino-wedding-traditions&utm_content=legal-section). Your Wedded Advisor is your single point of contact, works in your time zone, and plans venue, travel, vendors and payments with you, anywhere in the world.
+If the paperwork is where your planning has stalled, you can [speak with a Wedded Advisor](/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=filipino-wedding-traditions&utm_content=secondary). Your Wedded Advisor is your single point of contact, works in your time zone, and plans venue, travel, vendors and payments with you, anywhere in the world.
 
 ## Smartraveller advice before you book
 
@@ -208,7 +208,7 @@ The 13 coins of the arras are often told to stand for provision and a shared hou
 
 You do not need to keep every custom in this guide. Many couples choose a handful that mean something to their families, perhaps the sponsors, the veil and cord, and a money dance, and let the rest go gently. The conversations with parents and grandparents along the way are often the part that is remembered longest.
 
-For more ideas from other cultures, see our guide to [wedding traditions worth keeping](/expert-advice/wedding-traditions), or [read the Wedded Wonderland magazine](/magazine?utm_source=blog&utm_medium=article&utm_campaign=filipino-wedding-traditions&utm_content=close) for real weddings and planning notes.
+For more ideas from other cultures, see our guide to [wedding traditions worth keeping](/expert-advice/wedding-traditions).
 
 <!-- CTA: primary -->
 

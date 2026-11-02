@@ -12,3 +12,5 @@
 00:45 07b icp-panel-chair revise; enquire 2.5; 1 must_fix (slogan), 3 should_fix; final pass launched
 00:45 08 luxury-writer complete ~2,790 words; 2 VERIFY kept; scan clean; 8b+CRO+distribution launched
 00:46 08b editor 1 blocking one-sentence fix applied (unsourced fee line); blocking now 0
+00:47 09 cro-specialist complete; 2 copy changes applied
+00:47 10 distribution complete 3 pins, 8-slide carousel, newsletter
