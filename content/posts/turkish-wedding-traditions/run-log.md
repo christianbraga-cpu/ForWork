@@ -8,3 +8,4 @@
 01:40 07 icp-reader search_visitor complete
 01:40 07 icp-reader sceptic, uhnw, funding_parent, planner_couple complete (5/5); no must-fix; waiting on editor
 01:42 06 editor pass_with_edits 4.14; 14 edits applied by orchestrator -> 05-draft-r2.md
+01:43 07b icp-panel-chair revise; enquire 2.5; 2 must_fix, 2 should_fix (consider item skipped to keep 0 VERIFY); final pass launched
