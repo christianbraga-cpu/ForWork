@@ -14,3 +14,4 @@
 00:46 08b editor 1 blocking one-sentence fix applied (unsourced fee line); blocking now 0
 00:47 09 cro-specialist complete; 2 copy changes applied
 00:47 10 distribution complete 3 pins, 8-slide carousel, newsletter
+00:48 11 cms-publisher package complete; finish: report, backlinks+redirect, link map, calendar id 15, docx
