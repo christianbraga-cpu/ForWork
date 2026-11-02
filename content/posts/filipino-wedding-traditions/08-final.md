@@ -152,7 +152,7 @@ Smartraveller says some countries ask you to prove you are not already married, 
 
 Local authorities may also ask for divorce papers, the death certificate of a deceased spouse, and your original birth certificate and passport. <!-- fact_105 --> Australian registries can issue a no-record statement or a Single Status certificate, so order these early. <!-- fact_105 -->
 
-For the marriage licence, any waiting period and the exact documents, check with the local civil registrar where you will marry and the [Australian Embassy in Manila](https://philippines.embassy.gov.au/). A fee applies. [[VERIFY: certificate of legal capacity to marry for Australians, marriage licence steps and any waiting period, from the Australian Embassy Manila or a Philippine government page]]
+For the marriage licence, any waiting period and the exact documents, check with the local civil registrar where you will marry and the [Australian Embassy in Manila](https://philippines.embassy.gov.au/), including any fees. [[VERIFY: certificate of legal capacity to marry for Australians, marriage licence steps and any waiting period, from the Australian Embassy Manila or a Philippine government page]]
 
 Not published: a single official checklist of documents and timelines for Australians marrying in the Philippines. Your Wedded Advisor can talk you through the current requirements, and confirms the fee and inclusions in writing before you commit.
 

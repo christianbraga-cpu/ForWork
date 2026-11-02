@@ -11,3 +11,4 @@
 00:43 06 editor pass_with_edits 4.0; 29 edits applied by orchestrator -> 05-draft-r2.md
 00:45 07b icp-panel-chair revise; enquire 2.5; 1 must_fix (slogan), 3 should_fix; final pass launched
 00:45 08 luxury-writer complete ~2,790 words; 2 VERIFY kept; scan clean; 8b+CRO+distribution launched
+00:46 08b editor 1 blocking one-sentence fix applied (unsourced fee line); blocking now 0

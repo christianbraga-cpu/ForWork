@@ -1,0 +1,84 @@
+{
+  "agent": "cro-specialist",
+  "task_id": "filipino-wedding-traditions",
+  "stage": "09",
+  "status": "complete",
+  "round": 1,
+  "inputs_used": [
+    "content/posts/filipino-wedding-traditions/01-brief.json",
+    "content/posts/filipino-wedding-traditions/07-panel.json",
+    "content/posts/filipino-wedding-traditions/07-icp/*.json",
+    "content/posts/filipino-wedding-traditions/08-final.md",
+    "content-system/brand/services.md",
+    "content-system/brand/brand-facts.md",
+    "content-system/seo/link-map.csv",
+    "content-system/schemas/09-cro.schema.json"
+  ],
+  "payload": {
+    "journey_stage": "dreaming",
+    "primary_cta": {
+      "text": "Read the free magazine",
+      "subtext": "Real weddings and planning notes to enjoy at your own pace",
+      "link": "/magazine?utm_source=blog&utm_medium=content&utm_campaign=filipino-wedding-traditions&utm_content=primary",
+      "placement": "Fill the existing <!-- CTA: primary --> marker in place: after the 'Bringing Filipino traditions into your celebration' paragraphs and before the closing Advisor line. The reader has finished the customs, the legal section and the FAQs, which is where planner_couple and search_visitor said they would bookmark and keep reading. The inline /magazine link in the paragraph just above the marker is dropped (see copy_changes) so the page asks once, and its 'real weddings and planning notes' wording moves into the subtext."
+    },
+    "secondary_cta": {
+      "text": "Speak with a Wedded Advisor",
+      "link": "/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=filipino-wedding-traditions&utm_content=secondary",
+      "placement": "Existing inline link in the paragraph straight after 'Registering your marriage back home', as the brief asks. Anchor text and the revised brand-facts sentence (the panel must-fix) are unchanged; only the UTM parameters are corrected from utm_medium=article / utm_content=legal-section to the services.md format (see copy_changes). No separate block is added, so the inline link is not duplicated. No subtext, because the 'Not published' line just above already says the Advisor confirms the fee and inclusions in writing before you commit."
+    },
+    "lead_magnet": {
+      "name": "Wedded Wonderland digital magazine",
+      "link": "/magazine?utm_source=blog&utm_medium=content&utm_campaign=filipino-wedding-traditions&utm_content=primary",
+      "placement": "Served by the primary CTA block; no separate magnet placement, so the page carries two asks only.",
+      "exists": true
+    },
+    "copy_changes": [
+      {
+        "old": "utm_medium=article&utm_campaign=filipino-wedding-traditions&utm_content=legal-section",
+        "new": "utm_medium=content&utm_campaign=filipino-wedding-traditions&utm_content=secondary"
+      },
+      {
+        "old": ", or [read the Wedded Wonderland magazine](/magazine?utm_source=blog&utm_medium=article&utm_campaign=filipino-wedding-traditions&utm_content=close) for real weddings and planning notes.",
+        "new": "."
+      }
+    ],
+    "tracking": [
+      "/magazine?utm_source=blog&utm_medium=content&utm_campaign=filipino-wedding-traditions&utm_content=primary",
+      "/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=filipino-wedding-traditions&utm_content=secondary"
+    ],
+    "rationale": "The brief sets journey_stage to dreaming, with /magazine as primary and the Wedded Advisor as secondary straight after the legal section, which matches the services.md early-stage rule. The primary text is the services.md default for the magazine (4 words, no exclamation mark). The subtext answers the dreaming-stage worry of being pushed into an enquiry and reuses wording already in 08-final.md, making no claim about sign-up or cost beyond 'free' (services.md). Panel cta_reactions on the closing Advisor line: planner_couple, funding_parent and sceptic said 'maybe', search_visitor and uhnw said 'no'. The 'X first' items they named were more real weddings such as the Tuscany story (planner_couple, already linked in the body), a phone call with a named Advisor plus how deposits and fees are handled (funding_parent), a fee and commission model (sceptic), and scale, exclusive use and security (uhnw). None of these can be answered from brand-facts.md, and the panel chair deferred them to the business pages, so I add no copy before the CTA and log them in open_questions. The panel kept the closing Advisor line, so it stays as plain copy with no extra link. Suggestion, not placed: a magazine edition or guide on cultural and multicultural weddings would be a better-matched magnet for this post and the traditions cluster.",
+    "test_ideas": [
+      "Later A/B on the primary subtext: the current 'Real weddings and planning notes to enjoy at your own pace' against a family-sharing variant such as 'Something to share with parents and grandparents', since planner_couple shares this kind of page with family."
+    ]
+  },
+  "self_qa": {
+    "checks": [
+      {"check": "journey_stage taken from the brief", "pass": true, "note": "dreaming"},
+      {"check": "Primary CTA text 6 words or fewer, no 'click here', no exclamation mark", "pass": true, "note": "'Read the free magazine', 4 words"},
+      {"check": "All CTA targets exist in link-map.csv", "pass": true, "note": "/magazine (lead magnet row) and /wonderland-concierge (default commercial CTA target)"},
+      {"check": "UTMs follow services.md format with utm_campaign=filipino-wedding-traditions", "pass": true, "note": "Both existing inline links used utm_medium=article; corrected or removed via copy_changes"},
+      {"check": "Each copy_changes old string occurs exactly once in 08-final.md", "pass": true, "note": "grep count 1 for each"},
+      {"check": "No CTA block next to an inline link to the same target", "pass": true, "note": "Inline /magazine link directly above the marker is dropped; secondary stays as the existing inline link with no added block"},
+      {"check": "No prices, no invented business details, no em dashes, no 'budget', Australian English", "pass": true},
+      {"check": "Lead magnet only if it exists", "pass": true, "note": "/magazine exists; cultural weddings edition suggested in rationale only"}
+    ],
+    "confidence": 0.85
+  },
+  "open_questions": [
+    {"to": "orchestrator", "question": "Apply the two copy_changes pairs to 08-final.md (correct the secondary UTMs; drop the inline /magazine link above the marker) and render the primary CTA block at the existing <!-- CTA: primary --> marker.", "blocking": false},
+    {"to": "orchestrator", "question": "/expert-advice/wedding-traditions is still marked draft in link-map.csv. Confirm it is live (or will be published first) before this post goes out, as the closing paragraph links to it.", "blocking": false},
+    {"to": "person", "question": "Can brand-facts.md confirm a phone call option with a named Advisor, how deposits and fees are handled, and the commission policy? funding_parent and sceptic named these as what they need before clicking the Advisor link. Any wording needs business confirmation and Nic's sign-off.", "blocking": false},
+    {"to": "person", "question": "Is there a real Filipino or multicultural wedding we could link before the Advisor CTA? planner_couple and sceptic both said they would want to see one first.", "blocking": false},
+    {"to": "person", "question": "Is a magazine edition or guide on cultural and multicultural weddings planned? It would make a better-matched magnet than the general /magazine page.", "blocking": false}
+  ],
+  "assumptions": [
+    "The /magazine page is free to read, per the services.md default wording; whether it asks for an email is not known, so the subtext makes no claim about sign-up.",
+    "The secondary stays as an inline link rather than a styled block, so the panel-approved paragraph reads naturally.",
+    "No separate lead magnet placement, because the primary CTA is the magazine itself.",
+    "The closing Advisor line after the marker stays unlinked, as the panel kept it as written and a second Concierge link would add a third ask."
+  ],
+  "verify_items": [],
+  "tools_used": ["Bash"],
+  "next_agent": ["distribution"]
+}
