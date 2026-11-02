@@ -6,3 +6,4 @@
 01:36 03 planner-sme batch B complete 17 facts (Smartraveller, Beyoglu Municipality, Alpyildiz 2020); merged; writer launched
 01:39 05 luxury-writer complete ~2,875 words; 0 VERIFY; red sash dropped; 7 image slots; first draft sent
 01:40 07 icp-reader search_visitor complete
+01:40 07 icp-reader sceptic, uhnw, funding_parent, planner_couple complete (5/5); no must-fix; waiting on editor
