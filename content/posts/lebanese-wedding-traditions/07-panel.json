@@ -1,0 +1,107 @@
+{
+  "agent": "panel-chair",
+  "task_id": "lebanese-wedding-traditions",
+  "stage": "07b",
+  "status": "complete",
+  "round": 1,
+  "inputs_used": [
+    "content/posts/lebanese-wedding-traditions/01-brief.json",
+    "content/posts/lebanese-wedding-traditions/05-draft-r2.md",
+    "content/posts/lebanese-wedding-traditions/06-edit.json",
+    "content/posts/lebanese-wedding-traditions/07-icp/planner_couple.json",
+    "content/posts/lebanese-wedding-traditions/07-icp/funding_parent.json",
+    "content/posts/lebanese-wedding-traditions/07-icp/uhnw.json",
+    "content/posts/lebanese-wedding-traditions/07-icp/sceptic.json",
+    "content/posts/lebanese-wedding-traditions/07-icp/search_visitor.json",
+    "content-system/personas/*.yaml (weights: planner_couple 0.40, funding_parent 0.20, uhnw 0.20, sceptic 0.10, search_visitor 0.10)",
+    "content-system/schemas/07-panel.schema.json",
+    "CLAUDE.md"
+  ],
+  "payload": {
+    "personas_run": ["planner_couple", "funding_parent", "uhnw", "sceptic", "search_visitor"],
+    "weighted_scores": {
+      "relevance_to_me": 3.5,
+      "trust": 3.8,
+      "clarity": 3.9,
+      "brand_feels_premium": 3.6,
+      "likelihood_to_enquire": 2.5
+    },
+    "weighted_enquiry_likelihood": 2.5,
+    "must_fix": [
+      {
+        "issue": "Stacked hedging in the early sections ('In Arab weddings generally ... is described as ... though that account is framed around ...') reads like footnotes, not a guide. Raised by planner_couple (primary, top-3 change), uhnw, search_visitor and funding_parent (the crowning source stack). r2 line 35: \"The tulbeh (also written tulba, toulbe or tolbe) is the formal request for the bride's hand. In Arab weddings generally, it is described as a private visit limited to relatives: once both families have agreed to the couple's decision, the groom and his family ask the bride and her family, and the families then formally recognise that the couple will marry. <!-- fact_08 -->\"; line 37: \"Coffee is often told as part of the visit. In Arab weddings generally, the families reading the Fatiha after the father agrees is described as typically accompanied by Arabic coffee in the Levant, though that account is framed around Muslim families in Egypt, Palestine and Jordan rather than Lebanon. <!-- fact_10 --> Treat the details as your family's to decide.\"; line 41: \"The engagement is the khutbeh (printed khutubah in some sources). <!-- fact_09 --> In Arab weddings generally, engagements are described as usually taking place at a simpler party or family dinner, without a zaffeh, and the couple exchange rings, placing them on each other's right-hand ring finger. <!-- fact_09 -->\"; line 49: \"The henna night, laylat al-henna, is a pre-wedding evening that many families keep. In Arab weddings generally, it is described as having changed over time: historically, in accounts from Palestine, the groom's family danced through the village to the bride's house, where henna was mixed and applied to the couple's hands. <!-- fact_15 --> Today, especially outside Palestine, it is described as closer to a women's celebration with music, food and dancing, and henna drawn on the palms and feet of the bride and her guests. <!-- fact_15 -->\"; also lines 77 and 79 (katb al-kitab: \"In Arab weddings generally it is described as the focus of the official ceremony\" and \"In the Levant, it is described as usually held at the bride's or groom's family home\").",
+        "flagged_by": ["planner_couple", "uhnw", "search_visitor", "funding_parent"],
+        "owner": "luxury-writer",
+        "fix": "One framing line per section, then plain sentences. Keep every fact comment and keep the attribution honest. Example for the tulbeh: open with \"Most written accounts describe Arab weddings across the region rather than Lebanon alone, so read this as the common pattern and let your families fill in their own.\" then \"The tulbeh (also written tulba, toulbe or tolbe) is the formal request for the bride's hand: a private visit, limited to relatives, in which the groom and his family ask the bride and her family once both families have agreed, and the families then formally recognise that the couple will marry. <!-- fact_08 -->\" For line 37 keep the source scope visible in one clause: \"Arabic coffee is often part of the visit. One account, written about Muslim families in Egypt, Palestine and Jordan, has the families read the Fatiha once the father agrees, typically over Arabic coffee in the Levant. <!-- fact_10 --> Treat the details as your family's to decide.\" Engagement (line 41), henna (line 49) and katb al-kitab (lines 77, 79): drop the repeated 'In Arab weddings generally ... is described as' and state the fact plainly under that section's single framing line; keep 'in accounts from Palestine' and 'especially outside Palestine' because they limit the claim. No new facts, no new sources."
+      }
+    ],
+    "should_fix": [
+      {
+        "issue": "Search readers want the main customs named near the top; the takeaways are planning advice. r2 line 16: \"- Lebanese families are Christian, Muslim and Druze, so ask each side which customs they actually keep before you plan the programme.\" and line 17: \"- The steps before the wedding (the asking, the engagement, the henna night and the ceremony itself) matter to families as much as the reception.\"",
+        "flagged_by": ["search_visitor"],
+        "owner": "luxury-writer",
+        "fix": "Promoted from consider: secondary persona in the brief and the keyword's intent. Straight after Key takeaways (or replacing line 17), add a short plain list reusing the first FAQ answer (line 171), no new facts: formal asking (tulbeh); engagement (khutbeh); henna night (laylat al-henna); church crowning or katb al-kitab; zaffeh entrance; dabke; zaghareet; cutting the cake with a sword; sugared almonds and sweets. Follow with \"Customs vary between Christian, Muslim and Druze families. <!-- fact_06 -->\" Keep the takeaways otherwise as they are, including the Smartraveller line."
+      },
+      {
+        "issue": "The Britannica population paragraph delays the traditions for someone who searched the keyword. r2 line 23: \"There is no single Lebanese wedding. Britannica lists Shia and Sunni Muslims as Lebanon's two largest religious groups, with Maronite Christians making up more than one-fifth of the population, alongside other Christian communities, the Druze and a small Jewish minority. <!-- fact_06 --> The country has no official religion. <!-- fact_06 -->\"",
+        "flagged_by": ["search_visitor"],
+        "owner": "luxury-writer",
+        "fix": "Promoted from consider because it pairs with the list above. Once the customs list sits near the top, the section can stay where it is but open with \"There is no single Lebanese wedding.\" and the line 25 sentence on customs varying, with the Britannica figures moved to the end of the section as supporting detail. Keep the sentence and its fact_06 comments word for word (sceptic praised it as checkable). If the list is not added, move the whole section below 'Before the wedding' instead."
+      },
+      {
+        "issue": "Crowning section leads with liturgical detail and source after source; the planning point comes last. r2 line 63: \"Many Lebanese Christian couples marry in Eastern churches, where the heart of the service is the crowning. The Melkite Greek Catholic Eparchy of Newton calls the Eastern Churches' marriage service the Mystery of Crowning. <!-- fact_16 -->\" and line 71: \"One line stands out for Lebanese couples: a crowning prayer in the Orthodox text asks God to \\\"exalt them like the cedars of Lebanon, like a luxuriant vine\\\". <!-- fact_04 --> If you would like it in the order of service, ask your priest.\"",
+        "flagged_by": ["planner_couple", "funding_parent"],
+        "owner": "luxury-writer",
+        "fix": "Order: (1) line 63 first sentence; (2) the planning point, reusing r2 wording only: line 73 (\"How the rite runs in a Maronite or Antiochian Orthodox parish, and who holds the crowns, varies by church and family. Your priest is the person to ask.\"), the clear-aisle sentence from line 147 (\"A crowning procession circles the central table or lectern, so the ceremony space needs a clear aisle and room around it. <!-- fact_03 --> <!-- fact_16 -->\") and the cedars line 71; (3) then the service description (rest of line 63, lines 65, 67) under a single framing line such as \"Church texts describe the service like this:\". Keep each source named once (Melkite Eparchy, Orthodox Church in America) and every fact comment. Leave line 147 in place in the abroad section or trim it there to avoid repetition."
+      }
+    ],
+    "consider": [
+      {
+        "issue": "Older or less mobile guests are not mentioned. Funding parent: 'My mother uses a walking frame.' r2 line 143: \"A henna night works best once the close family has landed and slept. For a destination wedding, that usually means two nights before the wedding, leaving the night before free for rest and a rehearsal.\"",
+        "flagged_by": ["funding_parent"],
+        "owner": "luxury-writer",
+        "fix": "After line 143, add questions only, no new facts or Advisor claims: \"If older or less mobile guests are coming, ask the venue about steps, slopes and terraces between the ceremony, dinner and dance floor, and ask your planner how guests will get between the hotel and each evening's event.\""
+      }
+    ],
+    "keep": [
+      "Intro opening: \"A Lebanese wedding rarely starts on the wedding day. It starts weeks or months earlier, in a living room, when one family visits another to ask a question.\" (uhnw, planner_couple, funding_parent)",
+      "Key takeaway: \"Smartraveller rates Lebanon \\\"Do not travel\\\" (as at November 2026), so this guide is about bringing the customs to a wedding elsewhere.\" (funding_parent, sceptic, search_visitor)",
+      "\"So customs vary between Christian, Muslim and Druze families, and between regions and households within each.\" and \"The practical point for planning: ask both families early which steps they want, rather than working from a list.\" (planner_couple, uhnw, funding_parent)",
+      "Engagement dinner as an early welcome for guests who arrive a few days before (planner_couple)",
+      "The cedars of Lebanon crowning prayer line (uhnw, planner_couple)",
+      "The scope admission 'framed around Muslim families in Egypt, Palestine and Jordan rather than Lebanon' in substance (sceptic): shorten it, do not delete it",
+      "Low-pressure Advisor line \"If you would like one person to hold all of this together, you can speak with a Wedded Advisor.\" and its placement after the abroad section (all five)",
+      "The 'often told' labels on unsourced celebration customs (brief requirement; sceptic wants them plain, not removed)",
+      "Short two-paragraph intro and the FAQ (search_visitor, sceptic)"
+    ],
+    "conflicts_resolved": [
+      "Sourcing vs readability: sceptic wants more sources on the celebration claims; planner_couple, uhnw and search_visitor want less hedging. Primary persona wins on reading flow, but attribution stays honest: one framing line per section, fact comments kept, scope limits kept, 'often told' kept where no source exists. No new sources or claims are added in fast mode.",
+      "Title: search_visitor and planner_couple find 'You Did Not Know?' clickbaity. The title is the person's choice; not changed.",
+      "'Free' magazine link: uhnw finds it mass-market; the primary persona did not object and the magazine is the brief's primary CTA. Not changed.",
+      "Business detail (fee model, commissions, deposits, named Advisor, what 'travel' covers, supplier failure, 2am contact, large weddings, exclusive use, security, discretion, supplier sourcing abroad): raised by every persona except search_visitor, but deferred by instruction and brand-facts.md does not cover them. Not must-fix; no Advisor claims are added. Listed as open questions.",
+      "'for most shortlisted venues' (sceptic): single low-severity mention outside the 5-item cap; left to the writer's judgement."
+    ],
+    "gate": "revise"
+  },
+  "self_qa": {
+    "confidence": 0.8,
+    "checks": [
+      {"check": "Weighted maths uses all five weights (sum 1.0); enquiry 3x0.4 + 3x0.2 + 2x0.2 + 2x0.1 + 1x0.1 = 2.5.", "pass": true},
+      {"check": "Max 5 action items, each quoting the exact r2 line(s).", "pass": true},
+      {"check": "No prices, fee figures, new unsourced facts or Advisor claims in any fix; fixes reuse r2 lines 71, 73, 147, 171 and existing fact comments.", "pass": true},
+      {"check": "Nothing suggests travel to Lebanon; Smartraveller line kept.", "pass": true},
+      {"check": "Australian English, no em dashes.", "pass": true}
+    ]
+  },
+  "open_questions": [
+    {"to": "Nic", "question": "Can brand-facts.md state the Advisor fee model, whether Advisors take supplier commission, what 'plans travel' covers (guest transfers between evenings), and who is accountable on the ground if a supplier falls through? Raised by sceptic, funding_parent and planner_couple; deferred until confirmed."},
+    {"to": "Nic", "question": "Is there a private or referral route to an Advisor, and can the business speak to large guest numbers, exclusive use, discretion and security for UHNW families? Deferred; no copy added."},
+    {"to": "planner-sme", "question": "Search visitors ask how long before the wedding the tulbeh and engagement usually happen, and whether coffee at the tulbeh is Lebanese practice specifically. Only add if a source is found; otherwise leave as is."}
+  ],
+  "assumptions": [
+    "Weighted enquiry 2.5 is below the 3.8 gate and there is one must_fix, so the gate is revise. The low enquiry score is driven mainly by deferred business questions, so copy fixes alone are unlikely to reach 3.8.",
+    "Fast mode: capped at 5 actions; the customs list and Britannica move were promoted from consider to should_fix because they were expected items and serve the secondary persona.",
+    "Title stays as given by the person."
+  ],
+  "next_agent": ["luxury-writer"]
+}
