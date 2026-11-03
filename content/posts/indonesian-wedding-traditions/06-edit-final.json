@@ -1,0 +1,175 @@
+{
+  "agent": "editor",
+  "task_id": "indonesian-wedding-traditions",
+  "stage": "06",
+  "status": "complete",
+  "round": "final",
+  "inputs_used": [
+    "content/posts/indonesian-wedding-traditions/08-final.md",
+    "content/posts/indonesian-wedding-traditions/03-source-pack.json",
+    "content/posts/indonesian-wedding-traditions/03-source-pack-part-1.json",
+    "content/posts/indonesian-wedding-traditions/02-research/pages/smartraveller.md",
+    "content/posts/indonesian-wedding-traditions/02-seo.json",
+    "content-system/brand/brand-facts.md",
+    "content-system/seo/link-map.csv"
+  ],
+  "self_qa": {
+    "confidence": "high",
+    "checks": [
+      {
+        "check": "scan_copy.py run on 08-final.md",
+        "pass": true,
+        "note": "0 banned, 0 flagged, 0 dashes, 0 overlaps"
+      },
+      {
+        "check": "All 36 fact markers exist in source pack",
+        "pass": true,
+        "note": "fact_109 used for two claims its text does not hold (edits 1-2)"
+      },
+      {
+        "check": "Complaint-based line and emergency numbers vs smartraveller.md",
+        "pass": true,
+        "note": "Wording accurate to lines 9 and 11; marker fix only"
+      },
+      {
+        "check": "Customs list count",
+        "pass": true,
+        "note": "10 bullets, each covered by a body section"
+      },
+      {
+        "check": "Key takeaways exactly 4 one-sentence bullets",
+        "pass": true,
+        "note": ""
+      },
+      {
+        "check": "UNESCO kebaya and Bali dance not linked to weddings",
+        "pass": true,
+        "note": "Both explicitly say UNESCO does not mention weddings; batik link backed by fact_02"
+      },
+      {
+        "check": "Brand claims vs brand-facts.md",
+        "pass": true,
+        "note": "Single point of contact, fee and inclusions in writing are listed claims; paperwork explicitly left with couple; no 'first idea to the last dance'; anchor fixed in edit 5"
+      },
+      {
+        "check": "Prices, amounts, vendor names, em dashes, keyword-stuffed headings",
+        "pass": true,
+        "note": "None found; uang panai has no amount"
+      },
+      {
+        "check": "Mixed-faith line",
+        "pass": true,
+        "note": "Framed as an option to check with the embassy, not stated as fact"
+      },
+      {
+        "check": "Each edit old occurs exactly once",
+        "pass": true,
+        "note": "5 edits asserted"
+      }
+    ]
+  },
+  "open_questions": [
+    {
+      "to": "orchestrator",
+      "question": "Add fact_121 to 03-source-pack.json before applying edit 1: 'Smartraveller Indonesia (updated 21 October 2026): revised criminal code includes penalties for cohabitation, adultery and sex outside marriage between a man and a woman; these are complaint-based (spouse, or child or parent if unmarried).' Source: smartraveller.md line 9.",
+      "blocking": true
+    },
+    {
+      "to": "orchestrator",
+      "question": "Add fact_122 to 03-source-pack.json before applying edit 2: 'Smartraveller Indonesia lists emergency numbers: fire 113, ambulance 118, medical 119, police 110 or 112.' Source: smartraveller.md line 11.",
+      "blocking": true
+    }
+  ],
+  "assumptions": [
+    "Fast-mode check limited to blocking issues; rubric not re-scored."
+  ],
+  "verify_items": [],
+  "tools_used": [
+    "Bash",
+    "content-system/scripts/scan_copy.py"
+  ],
+  "next_agent": [
+    "luxury-writer"
+  ],
+  "payload": {
+    "draft_file": "08-final.md",
+    "blocking_issues": [
+      "fact_109 marker used for the criminal-code/complaint-based line and the emergency-numbers line, which its claim does not cover (broken fact markers; content itself accurate to smartraveller.md).",
+      "Unsourced count 'hundreds of ethnic groups'.",
+      "Palace-only statement on bride's side hosting read as general Javanese practice.",
+      "Closing anchor 'destination weddings we plan' diverges from the 02-seo anchor for a packages page."
+    ],
+    "decision": "revise",
+    "edits": [
+      {
+        "location": "Can Australians marry legally in Bali? > Travel",
+        "issue": "Criminal code and complaint-based line carries fact_109, but fact_109's claim covers only levels, Aceh and missions. Wording is accurate to smartraveller.md line 9; the marker is not. Needs its own fact.",
+        "old": "Indonesia's revised criminal code includes penalties for cohabitation and sex outside marriage, and Aceh applies Sharia law. <!-- fact_109 --> Smartraveller describes these penalties as complaint-based. <!-- fact_109 -->",
+        "new": "Indonesia's revised criminal code includes penalties for cohabitation and sex outside marriage, which Smartraveller describes as complaint-based. <!-- fact_121 --> Aceh applies Sharia law. <!-- fact_109 -->"
+      },
+      {
+        "location": "Can Australians marry legally in Bali? > Older guests",
+        "issue": "Emergency numbers carry fact_109, whose claim has no numbers. Numbers match smartraveller.md line 11 (ambulance 118, police 110 or 112); marker must point to a fact that holds them.",
+        "old": "including 118 for an ambulance and 110 or 112 for police? <!-- fact_109 -->",
+        "new": "including 118 for an ambulance and 110 or 112 for police? <!-- fact_122 -->"
+      },
+      {
+        "location": "Why Indonesian wedding traditions are many, not one, para 1",
+        "issue": "'hundreds of ethnic groups' is a count with no source in the pack.",
+        "old": "Indonesia is home to hundreds of ethnic groups and several faiths",
+        "new": "Indonesia is home to many ethnic groups and several faiths"
+      },
+      {
+        "location": "The Javanese wedding, step by step, para 2",
+        "issue": "Palace statement (fact_07) read as general fact; attribute it to the palace.",
+        "old": "In Javanese tradition the wedding is hosted by the bride's side. <!-- fact_07 -->",
+        "new": "The palace adds that in Javanese tradition the wedding is hosted by the bride's side. <!-- fact_07 -->"
+      },
+      {
+        "location": "Begin the conversation",
+        "issue": "Anchor 'destination weddings we plan' does not match the 02-seo anchor and target page (/destination-wedding-packages, a packages page); it also implies a planning claim tied to a packages page.",
+        "old": "[destination weddings we plan](/destination-wedding-packages)",
+        "new": "[destination wedding packages](/destination-wedding-packages)"
+      }
+    ],
+    "fact_check_log": [
+      {
+        "fact_id": "fact_109",
+        "sentence": "Smartraveller levels, Bali outside, Aceh Sharia",
+        "result": "supported"
+      },
+      {
+        "fact_id": "fact_109",
+        "sentence": "criminal code penalties complaint-based",
+        "result": "accurate to source page, marker wrong; fix to fact_121"
+      },
+      {
+        "fact_id": "fact_109",
+        "sentence": "emergency numbers 118, 110 or 112",
+        "result": "accurate to source page, marker wrong; fix to fact_122"
+      },
+      {
+        "fact_id": "fact_07",
+        "sentence": "wedding hosted by the bride's side",
+        "result": "supported, attribute to palace"
+      },
+      {
+        "fact_id": "fact_02",
+        "sentence": "UNESCO batik listing links cloth to marriage",
+        "result": "supported"
+      },
+      {
+        "fact_id": "fact_103",
+        "sentence": "recognised religions; conducted per religion",
+        "result": "supported"
+      },
+      {
+        "fact_id": null,
+        "sentence": "Indonesia is home to hundreds of ethnic groups",
+        "result": "unsupported; softened"
+      }
+    ],
+    "needs_signoff": [],
+    "banned_phrases_found": []
+  }
+}

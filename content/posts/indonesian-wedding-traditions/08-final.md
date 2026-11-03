@@ -31,7 +31,7 @@ Some details are recorded by a royal palace, a university journal or UNESCO. Oth
 
 ## Why Indonesian wedding traditions are many, not one
 
-Indonesia is home to hundreds of ethnic groups and several faiths, so customs differ from island to island and from family to family. A ritual described here belongs to the community named beside it. It is not a national template.
+Indonesia is home to many ethnic groups and several faiths, so customs differ from island to island and from family to family. A ritual described here belongs to the community named beside it. It is not a national template.
 
 The Australian Embassy lists the religions the Indonesian Government recognises for marriage as including Islam, Hinduism, Buddhism and Christianity. <!-- fact_103 --> Faith and ethnicity overlap, which is why a Javanese Muslim wedding can hold both a Javanese bath and an Islamic vow.
 
@@ -39,7 +39,7 @@ The Australian Embassy lists the religions the Indonesian Government recognises 
 
 The clearest account of the Javanese sequence comes from the Kraton Yogyakarta, the palace in Yogyakarta, describing its own royal weddings. Read it as the palace's account of a court ceremony, simplified over time, rather than a rulebook for every Javanese family. <!-- fact_07 -->
 
-The palace notes that Javanese marriage has three stages, before, during and after the wedding, and that marriage stands with birth and death as one of life's three key passages. <!-- fact_15 --> In Javanese tradition the wedding is hosted by the bride's side. <!-- fact_07 -->
+The palace notes that Javanese marriage has three stages, before, during and after the wedding, and that marriage stands with birth and death as one of life's three key passages. <!-- fact_15 --> The palace adds that in Javanese tradition the wedding is hosted by the bride's side. <!-- fact_07 -->
 
 ### Siraman, the flower bath
 
@@ -161,9 +161,9 @@ If you do not share a religion, ask the embassy what that means for you before y
 
 **What to check.** Same-sex marriage and fees are not set out on the pages we read, and the Embassy says document requirements vary by province. Check with the embassy and the registry, including any fees, before you set a date.
 
-**Travel.** [Smartraveller advice for Indonesia](https://www.smartraveller.gov.au/destinations/asia/indonesia) (updated 21 October 2026) is to exercise a high degree of caution overall, and to reconsider your need to travel to Papua Pegunungan and Papua Tengah. <!-- fact_109 --> Bali is outside those areas, and we suggest only places outside them. <!-- fact_109 --> Indonesia's revised criminal code includes penalties for cohabitation and sex outside marriage, and Aceh applies Sharia law. <!-- fact_109 --> Smartraveller describes these penalties as complaint-based. <!-- fact_109 --> Read Smartraveller's local laws section before you travel, and share it with your guests.
+**Travel.** [Smartraveller advice for Indonesia](https://www.smartraveller.gov.au/destinations/asia/indonesia) (updated 21 October 2026) is to exercise a high degree of caution overall, and to reconsider your need to travel to Papua Pegunungan and Papua Tengah. <!-- fact_109 --> Bali is outside those areas, and we suggest only places outside them. <!-- fact_109 --> Indonesia's revised criminal code includes penalties for cohabitation and sex outside marriage, which Smartraveller describes as complaint-based. <!-- fact_121 --> Aceh applies Sharia law. <!-- fact_109 --> Read Smartraveller's local laws section before you travel, and share it with your guests.
 
-**Older guests.** Does everyone know that the Australian Consulate-General in Bali is the mission that covers the island? <!-- fact_105 --> Have you shared Indonesia's emergency numbers as Smartraveller lists them, including 118 for an ambulance and 110 or 112 for police? <!-- fact_109 --> And have older guests read Smartraveller's health and local laws advice for Indonesia before they commit?
+**Older guests.** Does everyone know that the Australian Consulate-General in Bali is the mission that covers the island? <!-- fact_105 --> Have you shared Indonesia's emergency numbers as Smartraveller lists them, including 118 for an ambulance and 110 or 112 for police? <!-- fact_122 --> And have older guests read Smartraveller's health and local laws advice for Indonesia before they commit?
 
 For the destination itself, see our notes on [planning a wedding in Bali](/destinations/asia/bali). The paperwork stays with you, the registry and the embassy; a Wedded Advisor can be your single point of contact for the rest of the plan, with the fee agreed in writing before any work begins and the inclusions confirmed in writing before you commit. When you are ready, [speak with a Wedded Advisor](/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=indonesian-wedding-traditions&utm_content=secondary).
 
@@ -199,4 +199,4 @@ Yes, with care. Choose customs you have been invited into, keep sacred rites wit
 
 ## Begin the conversation
 
-Whether you are honouring a partner's family or simply drawn to Bali, the best wedding there starts with the right questions. When you would like to talk them through, begin with a Wedded Advisor; you can also see the [destination weddings we plan](/destination-wedding-packages) elsewhere.
+Whether you are honouring a partner's family or simply drawn to Bali, the best wedding there starts with the right questions. When you would like to talk them through, begin with a Wedded Advisor; you can also see the [destination wedding packages](/destination-wedding-packages) elsewhere.

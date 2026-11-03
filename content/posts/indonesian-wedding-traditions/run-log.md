@@ -13,3 +13,4 @@
 23:22 08 luxury-writer complete 2,897 words; 0 VERIFY; scan clean; 8b+CRO+distribution launched
 23:23 09 cro-specialist complete; 0 copy changes (magazine CTA at marker; Advisor link already secondary)
 23:23 10 distribution complete 3 pins, 8-slide carousel, newsletter
+23:24 08b editor revise; 5 blocking fixes applied (fact_121/122 added from smartraveller.md; 'many ethnic groups'; palace attribution; packages anchor); blocking 0; cms-publisher launched
