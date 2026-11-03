@@ -14,3 +14,4 @@
 01:39 10 distribution complete 3 pins, 8-slide carousel, newsletter
 01:39 09 cro-specialist complete; 2 copy changes (magazine CTA block; closing Advisor line); applying after 8b
 01:40 08b editor pass_with_edits 4.14; 16 hedging fixes + 2 CRO changes applied to 08-final.md; blocking 0; scan clean; cms-publisher launched
+01:42 11 cms-publisher package complete (not uploaded, no Chrome); validate all valid; scan 0 dashes; docx built; run report, backlinks, link map, calendar 20; FINISHED (~31 min)
