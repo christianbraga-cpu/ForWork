@@ -15,9 +15,9 @@ It also covers what an Australian couple should know about marrying legally in B
 
 ## Key takeaways
 
-- Many couples wear the aliança on the right hand while engaged and move it to the left hand during the wedding.
+- It is often told that couples wear the aliança on the right hand while engaged and move it to the left hand during the wedding.
 - Padrinhos and madrinhas are formal witnesses to the wedding, so choose them for the role and not only for the photographs.
-- Lighter customs include Santo Antônio's June festivities, unmarried friends' names written inside the bride's hem, the groom's tie cut into keepsakes and bem-casados handed to guests as they leave.
+- Lighter customs that are often told include Santo Antônio's June festivities, unmarried friends' names written inside the bride's hem, the groom's tie cut into keepsakes and bem-casados handed to guests as they leave.
 - Australians marrying in Brazil should confirm documents with the cartório first, then book any notarial appointment in Brasília or São Paulo, not Rio de Janeiro.
 
 ## Why customs vary across Brazil
@@ -36,7 +36,7 @@ That last sense matters for planning. Many Brazilian families expect an engageme
 
 The ring itself is the aliança, a word the Michaelis dictionary defines as a ring used as a symbol of engagement or of marriage. <!-- fact_07 --> One band can therefore carry through from noivado to wedding day.
 
-Many couples wear their alianças on the right hand while engaged and move them to the left hand during the wedding. It is often told that the move marks the moment the promise becomes a marriage. Many couples also choose matching bands, so both partners wear one through the engagement.
+It is often told that couples wear their alianças on the right hand while engaged and move them to the left hand during the wedding, and that the move marks the moment the promise becomes a marriage. Matching bands, so both partners wear one through the engagement, are often mentioned too.
 
 <!-- IMAGE SLOT rings: Licensed close-up photo of a couple's hands, matching gold bands (aliancas) on the right hand, soft natural daylight, neutral linen or skin-tone background, faces not required. Real couple with consent; no brand logos on jewellery boxes. -->
 
@@ -44,7 +44,7 @@ Many couples wear their alianças on the right hand while engaged and move them 
 
 The chá de panela is a gathering, usually of women, at which a bride about to marry receives gifts for her new home from her friends. It is also called chá de cozinha, a kitchen tea. <!-- fact_04 -->
 
-For a wedding abroad, the chá de panela is normally held at home before anyone travels, so it rarely touches the destination schedule. Many couples now host a mixed version with both partners and their friends, and the guest list is entirely a family decision.
+For a wedding abroad, the chá de panela is normally held at home before anyone travels, so it rarely touches the destination schedule. A mixed version with both partners and their friends is an option too, and the guest list is entirely a family decision.
 
 ### Padrinhos and madrinhas
 
@@ -52,7 +52,7 @@ Padrinhos and madrinhas are among the most personal Brazilian wedding customs. T
 
 The groom's padrinho even has a formal name, paraninfo, so the honour is a witnessing role rather than a decorative one. <!-- fact_09 -->
 
-Many couples ask several pairs, often married couples, to stand with them, and choose them from both sides of the family. Because the role is formal, decide early who will sign as a legal witness at a civil ceremony and who will stand as an honorary padrinho. The number of legal witnesses is something to confirm with the cartório, not to assume.
+It is often told that couples ask several pairs, often married couples, to stand with them, chosen from both sides of the family. Because the role is formal, decide early who will sign as a legal witness at a civil ceremony and who will stand as an honorary padrinho. The number of legal witnesses is something to confirm with the cartório, not to assume.
 
 The words come from the same Portuguese language as the customs of Portugal, and you can compare them with our guide to [Portuguese wedding traditions](/expert-advice/portuguese-wedding-traditions).
 
@@ -60,9 +60,9 @@ The words come from the same Portuguese language as the customs of Portugal, and
 
 ### Civil and religious ceremonies
 
-Many Brazilian couples hold two ceremonies: a civil marriage and a religious or spiritual ceremony, sometimes on the same day and sometimes weeks apart. Others choose only one.
+Brazilian couples may hold two ceremonies, a civil marriage and a religious or spiritual ceremony, sometimes on the same day and sometimes weeks apart, or choose only one.
 
-A church wedding is a choice, not a requirement. Couples marry in Catholic and Protestant churches, in evangelical congregations, with Afro-Brazilian religious ceremonies, or with a celebrant and no religious element at all.
+Whether to hold a church wedding is a family and faith decision. Couples marry in Catholic and Protestant churches, in evangelical congregations, with Afro-Brazilian religious ceremonies, or with a celebrant and no religious element at all.
 
 ### Santo Antônio and the Festa Junina mock wedding
 
@@ -72,7 +72,7 @@ In Lisbon, the festival around 13 June includes matchmaking traditions, such as 
 
 In Brazil, Santo Antônio is often described as the marrying saint. It is often told that people hoping to find a partner ask for his help in June, and the small rituals for doing so differ from family to family.
 
-June is also the month of the Festas Juninas, and many of these festivals stage a playful mock country wedding, with a bride, a groom and a crowd that joins in the joke. It is a festival entertainment, not a real ceremony.
+June is also the month of the Festas Juninas, and it is often told that many of these festivals stage a playful mock country wedding, with a bride, a groom and a crowd that joins in the joke. It is a festival entertainment, not a real ceremony.
 
 If you are considering a June date in Brazil, those festivities can be a joy for guests. They can also add demand for transport and rooms, so plan around them.
 
@@ -80,7 +80,7 @@ If you are considering a June date in Brazil, those festivities can be a joy for
 
 ### Names inside the dress
 
-In many families, the bride writes the names of unmarried friends inside the hem of her dress or on the sole of her shoe. It is often told that whoever's name has worn away by the end of the night will be the next to marry.
+It is often told that some brides write the names of unmarried friends inside the hem of the dress or on the sole of a shoe, and that whoever's name has worn away by the end of the night will be the next to marry.
 
 ## The celebration
 
@@ -88,9 +88,9 @@ In many families, the bride writes the names of unmarried friends inside the hem
 
 The Priberam dictionary defines a bem-casado as a small cake of soft sponge made from eggs and wheat flour, composed of two halves. <!-- fact_104 --> The name translates as "well married".
 
-Many couples wrap each one individually and hand them to guests as they leave. It is often told that the two halves joined by a sweet filling stand for the couple, and that eating one wishes them a good marriage.
+It is often told that couples wrap each one individually and hand them to guests as they leave. It is often told that the two halves joined by a sweet filling stand for the couple, and that eating one wishes them a good marriage.
 
-Bem-casados usually sit alongside docinhos, the small sweets that fill a Brazilian dessert table. Brigadeiros are the best known.
+Bem-casados usually sit alongside docinhos, the small sweets that fill a Brazilian dessert table. Brigadeiros are one familiar example.
 
 Outside Brazil, find a baker who has made bem-casados before and taste a batch well ahead.
 
@@ -98,7 +98,7 @@ Outside Brazil, find a baker who has made bem-casados before and taste a batch w
 
 ### The groom's tie
 
-At some receptions, friends playfully cut the groom's tie into small pieces and hand them round as keepsakes. It is often told that guests offer a small token for the couple in return, but it is a light-hearted moment, and many families leave it out.
+It is often told that at some receptions friends playfully cut the groom's tie into small pieces and hand them round as keepsakes, and that guests offer a small token for the couple in return, but it is a light-hearted moment, and many families leave it out.
 
 ### Music and dance
 
@@ -116,7 +116,7 @@ Neither is a wedding custom in UNESCO's description. They are music a couple wit
 
 ### How late the party runs
 
-Many Brazilian receptions keep dancing late into the night, and guests often expect a meal or snacks well after the main dinner.
+It is often told that Brazilian receptions keep dancing late into the night, and that guests expect a meal or snacks well after the main dinner.
 
 When you choose a venue, ask for its music curfew, last finish time and late-food options in writing. For a wedding outside Brazil, this is a detail that often differs from what Brazilian guests expect.
 
@@ -192,6 +192,10 @@ Many Brazilian-Australian couples marry in Australia or in a third country, and 
 Padrinhos and madrinhas work anywhere. So do alianças moved from right hand to left during the vows, names written inside a hem, and a table of bem-casados by the door.
 
 <!-- CTA: primary -->
+**Read the free magazine**
+Free to read, whenever you are ready.
+[Read the free magazine](/magazine?utm_source=blog&utm_medium=content&utm_campaign=brazilian-wedding-traditions&utm_content=primary)
+<!-- /CTA: primary -->
 
 If you are weighing a celebration somewhere between both families, our guide to [weddings in Latin America and the Caribbean](/destinations/latin-america-caribbean) is a useful place to compare destinations.
 
@@ -199,7 +203,7 @@ If you are weighing a celebration somewhere between both families, our guide to 
 
 ### What finger do Brazilians wear their wedding ring on?
 
-Many Brazilian couples wear the aliança on the right ring finger during the engagement and move it to the left ring finger at the wedding. The aliança itself is a ring that symbolises engagement or marriage. <!-- fact_07 --> Practice varies by family.
+It is often told that Brazilian couples wear the aliança on the right ring finger during the engagement and move it to the left ring finger at the wedding. The aliança itself is a ring that symbolises engagement or marriage. <!-- fact_07 --> Practice varies by family.
 
 ### What happens if I marry a Brazilian in Brazil?
 
@@ -207,7 +211,7 @@ A civil marriage goes through the cartório de registro civil and a process call
 
 ### How much does it cost to get married in Brazil?
 
-There is no single figure. Cartório fees are set locally, so ask the cartório directly, and a fee applies to an Australian CNI and to notarial services. <!-- fact_106 --> Celebration costs depend on the place, the season and the guest list, so ask for every quote and its inclusions in writing.
+There is no single figure. Ask the cartório directly about its fees, and note that a fee applies to an Australian CNI and to notarial services. <!-- fact_106 --> Celebration costs depend on the place, the season and the guest list, so ask for every quote and its inclusions in writing.
 
 ### What are bem-casados and why are they given at weddings?
 
@@ -219,10 +223,10 @@ Follow the dress code on the invitation, and ask the couple if it is unclear. Fo
 
 ### Who are padrinhos and madrinhas at a Brazilian wedding?
 
-They are the couple's wedding sponsors and witnesses: the Priberam dictionary defines a madrinha as a woman who serves as a witness at a baptism or wedding. <!-- fact_06 --> Many couples choose several pairs from both families.
+They are the couple's wedding sponsors and witnesses: the Priberam dictionary defines a madrinha as a woman who serves as a witness at a baptism or wedding. <!-- fact_06 --> It is often told that couples choose several pairs from both families.
 
 ## Planning a Brazilian wedding, wherever it happens
 
 Brazilian weddings reward couples who decide early which customs belong to them. Talk to both families, choose the traditions that carry meaning for you, and leave the rest without apology.
 
-When you are ready to plan, a Wedded Advisor can be your single point of contact from the first conversation, with the fee agreed in writing before any work begins. For more customs from around the world, return to our guide to [wedding traditions worth keeping](/expert-advice/wedding-traditions).
+When you are ready to plan, a Wedded Advisor can be your single point of contact from start to finish, with the fee agreed in writing before any work begins. For more customs from around the world, return to our guide to [wedding traditions worth keeping](/expert-advice/wedding-traditions).

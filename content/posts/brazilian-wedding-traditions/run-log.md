@@ -13,3 +13,4 @@
 01:38 08 luxury-writer complete ~2,800 words; 0 VERIFY; scan clean; 8b+CRO+distribution launched
 01:39 10 distribution complete 3 pins, 8-slide carousel, newsletter
 01:39 09 cro-specialist complete; 2 copy changes (magazine CTA block; closing Advisor line); applying after 8b
+01:40 08b editor pass_with_edits 4.14; 16 hedging fixes + 2 CRO changes applied to 08-final.md; blocking 0; scan clean; cms-publisher launched

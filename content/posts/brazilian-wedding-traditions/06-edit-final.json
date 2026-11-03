@@ -1,0 +1,387 @@
+{
+  "agent": "editor",
+  "task_id": "brazilian-wedding-traditions",
+  "stage": "06",
+  "status": "complete",
+  "round": "final",
+  "inputs_used": [
+    "content/posts/brazilian-wedding-traditions/08-final.md",
+    "content/posts/brazilian-wedding-traditions/03-source-pack.json",
+    "content/posts/brazilian-wedding-traditions/02-research/pages/smartraveller.md",
+    "content-system/brand/brand-facts.md"
+  ],
+  "self_qa": {
+    "checks": [
+      {
+        "check": "scan_copy.py run on 08-final.md",
+        "pass": true,
+        "note": "0 banned, 0 flagged, 0 dashes, 0 overlaps"
+      },
+      {
+        "check": "Every fact marker resolves to the source pack",
+        "pass": true,
+        "note": "fact_01-09, 100-113 all exist; claims match"
+      },
+      {
+        "check": "Smartraveller/DFAT/Embassy/CNJ lines match sources",
+        "pass": true,
+        "note": "level, 27 Oct update, no higher-level areas, states, consular and notarial posts all match"
+      },
+      {
+        "check": "UNESCO forms not presented as wedding customs",
+        "pass": true,
+        "note": "explicit 'Neither is a wedding custom'"
+      },
+      {
+        "check": "Brand claims within brand-facts.md",
+        "pass": true,
+        "note": "single point of contact, fee and inclusions in writing; no paperwork help; no 'first idea to the last dance'"
+      },
+      {
+        "check": "No prices, vendor names, em dashes",
+        "pass": true,
+        "note": "none found"
+      },
+      {
+        "check": "Key takeaways exactly 4 one-sentence bullets",
+        "pass": true,
+        "note": "4 bullets, one sentence each, preserved after edits"
+      },
+      {
+        "check": "Headings free of pasted keywords",
+        "pass": true,
+        "note": "one H2 carries the keyword and reads naturally"
+      },
+      {
+        "check": "Each edit old occurs exactly once in 08-final.md; all apply cleanly",
+        "pass": true,
+        "note": "16 edits tested"
+      },
+      {
+        "check": "Decision consistent with blocking issues",
+        "pass": true,
+        "note": "blocking issues are small hedging edits; pass_with_edits"
+      }
+    ],
+    "confidence": 0.85
+  },
+  "open_questions": [
+    {
+      "to": "orchestrator",
+      "question": "Apply the 16 hedging edits to 08-final.md without another scoring round; all are 'often told' conversions or removal of two unsourced legal phrasings.",
+      "blocking": true
+    },
+    {
+      "to": "planner-sme",
+      "question": "If a reputable Brazilian source (IPHAN, gov.br, Michaelis full entry) is found for the ring hand-switch, bem-casado wrapping or casamento caipira, the 'often told' wording can be firmed up later.",
+      "blocking": false
+    }
+  ],
+  "assumptions": [
+    "'Many couples...' with no source counts as a custom stated as fact."
+  ],
+  "verify_items": [
+    "[[VERIFY: Código Civil arts. 1.515/1.516, 1.525 to 1.534 remain open; the article states nothing that depends on them after edit 7.]]"
+  ],
+  "tools_used": [
+    "Bash",
+    "python3 scan_copy.py"
+  ],
+  "next_agent": [
+    "orchestrator"
+  ],
+  "payload": {
+    "draft_file": "content/posts/brazilian-wedding-traditions/08-final.md",
+    "rubric": {
+      "voice": 4,
+      "expertise": 4,
+      "accuracy": 4,
+      "seo_fit": 4,
+      "commercial_link": 4,
+      "structure": 5,
+      "brief_fit": 4
+    },
+    "average": 4.14,
+    "blocking_issues": [
+      "Unsourced customs stated as fact (ring hand-switch in takeaways, body and FAQ; names in hem; groom's tie; Festa Junina mock wedding; bem-casado wrapping; sponsor pairs; two ceremonies; late parties): convert to 'often told' per source pack.",
+      "Two unsourced legal phrasings: 'A church wedding is a choice, not a requirement' and 'Cartório fees are set locally'."
+    ],
+    "decision": "pass_with_edits",
+    "edits": [
+      {
+        "location": "Key takeaways, bullet 1",
+        "issue": "Ring hand-switch is 'often told' in the source pack (fact_07 says the dictionary does not name a hand); stated as fact.",
+        "fix": "Replace exactly: - Many couples wear the aliança on the right hand while engaged and move it to the left hand during the wedding. WITH: - It is often told that couples wear the aliança on the right hand while engaged and move it to the left hand during the wedding.",
+        "old": "- Many couples wear the aliança on the right hand while engaged and move it to the left hand during the wedding.",
+        "new": "- It is often told that couples wear the aliança on the right hand while engaged and move it to the left hand during the wedding."
+      },
+      {
+        "location": "Key takeaways, bullet 3",
+        "issue": "Names-in-hem, tie-cutting and June festivities are unsourced customs listed as fact.",
+        "fix": "Replace exactly: - Lighter customs include Santo Antônio's June festivities, WITH: - Lighter customs that are often told include Santo Antônio's June festivities,",
+        "old": "- Lighter customs include Santo Antônio's June festivities,",
+        "new": "- Lighter customs that are often told include Santo Antônio's June festivities,"
+      },
+      {
+        "location": "Noivado and the ring, para 4",
+        "issue": "Ring hand-switch and matching bands stated as fact; source pack says write as often told.",
+        "fix": "Replace exactly: Many couples wear their alianças on the right hand while engaged and move them to the left hand during the wedding. It is often told that the move marks the moment the promise becomes a marriage. Many couples also choose matching bands, so both partners wear one through the engagement. WITH: It is often told that couples wear their alianças on the right hand while engaged and move them to the left hand during the wedding, and that the move marks the moment the promise becomes a marriage. Matching bands, so both partners wear one through the engagement, are often mentioned too.",
+        "old": "Many couples wear their alianças on the right hand while engaged and move them to the left hand during the wedding. It is often told that the move marks the moment the promise becomes a marriage. Many couples also choose matching bands, so both partners wear one through the engagement.",
+        "new": "It is often told that couples wear their alianças on the right hand while engaged and move them to the left hand during the wedding, and that the move marks the moment the promise becomes a marriage. Matching bands, so both partners wear one through the engagement, are often mentioned too."
+      },
+      {
+        "location": "Chá de panela, para 2",
+        "issue": "Unsourced trend claim.",
+        "fix": "Replace exactly: Many couples now host a mixed version with both partners and their friends, and the guest list is entirely a family decision. WITH: A mixed version with both partners and their friends is an option too, and the guest list is entirely a family decision.",
+        "old": "Many couples now host a mixed version with both partners and their friends, and the guest list is entirely a family decision.",
+        "new": "A mixed version with both partners and their friends is an option too, and the guest list is entirely a family decision."
+      },
+      {
+        "location": "Padrinhos and madrinhas, para 3",
+        "issue": "Number and choice of sponsor pairs is unsourced custom stated as fact.",
+        "fix": "Replace exactly: Many couples ask several pairs, often married couples, to stand with them, and choose them from both sides of the family. WITH: It is often told that couples ask several pairs, often married couples, to stand with them, chosen from both sides of the family.",
+        "old": "Many couples ask several pairs, often married couples, to stand with them, and choose them from both sides of the family.",
+        "new": "It is often told that couples ask several pairs, often married couples, to stand with them, chosen from both sides of the family."
+      },
+      {
+        "location": "Civil and religious ceremonies, para 1",
+        "issue": "Unsourced custom generalisation stated as fact.",
+        "fix": "Replace exactly: Many Brazilian couples hold two ceremonies: a civil marriage and a religious or spiritual ceremony, sometimes on the same day and sometimes weeks apart. Others choose only one. WITH: Brazilian couples may hold two ceremonies, a civil marriage and a religious or spiritual ceremony, sometimes on the same day and sometimes weeks apart, or choose only one.",
+        "old": "Many Brazilian couples hold two ceremonies: a civil marriage and a religious or spiritual ceremony, sometimes on the same day and sometimes weeks apart. Others choose only one.",
+        "new": "Brazilian couples may hold two ceremonies, a civil marriage and a religious or spiritual ceremony, sometimes on the same day and sometimes weeks apart, or choose only one."
+      },
+      {
+        "location": "Civil and religious ceremonies, para 2",
+        "issue": "Legal claim without source (civil effect of religious marriage is an open VERIFY item, Código Civil arts. 1.515/1.516).",
+        "fix": "Replace exactly: A church wedding is a choice, not a requirement. WITH: Whether to hold a church wedding is a family and faith decision.",
+        "old": "A church wedding is a choice, not a requirement.",
+        "new": "Whether to hold a church wedding is a family and faith decision."
+      },
+      {
+        "location": "Santo Antônio, Festa Junina para",
+        "issue": "Casamento caipira is 'often told' in the source pack (no IPHAN or gov.br source); stated as fact.",
+        "fix": "Replace exactly: June is also the month of the Festas Juninas, and many of these festivals stage a playful mock country wedding, WITH: June is also the month of the Festas Juninas, and it is often told that many of these festivals stage a playful mock country wedding,",
+        "old": "June is also the month of the Festas Juninas, and many of these festivals stage a playful mock country wedding,",
+        "new": "June is also the month of the Festas Juninas, and it is often told that many of these festivals stage a playful mock country wedding,"
+      },
+      {
+        "location": "Names inside the dress",
+        "issue": "Custom stated as fact; source pack: often told, no reputable source.",
+        "fix": "Replace exactly: In many families, the bride writes the names of unmarried friends inside the hem of her dress or on the sole of her shoe. It is often told that whoever's name WITH: It is often told that some brides write the names of unmarried friends inside the hem of the dress or on the sole of a shoe, and that whoever's name",
+        "old": "In many families, the bride writes the names of unmarried friends inside the hem of her dress or on the sole of her shoe. It is often told that whoever's name",
+        "new": "It is often told that some brides write the names of unmarried friends inside the hem of the dress or on the sole of a shoe, and that whoever's name"
+      },
+      {
+        "location": "Bem-casados, para 2",
+        "issue": "Individual wrapping is an open VERIFY item (Priberam summary does not confirm it); stated as fact.",
+        "fix": "Replace exactly: Many couples wrap each one individually and hand them to guests as they leave. WITH: It is often told that couples wrap each one individually and hand them to guests as they leave.",
+        "old": "Many couples wrap each one individually and hand them to guests as they leave.",
+        "new": "It is often told that couples wrap each one individually and hand them to guests as they leave."
+      },
+      {
+        "location": "Bem-casados, para 3",
+        "issue": "'Best known' superlative for brigadeiros unsourced (VERIFY item: no sweet-sense entry read).",
+        "fix": "Replace exactly: Brigadeiros are the best known. WITH: Brigadeiros are one familiar example.",
+        "old": "Brigadeiros are the best known.",
+        "new": "Brigadeiros are one familiar example."
+      },
+      {
+        "location": "The groom's tie",
+        "issue": "Custom not in the source pack at all; stated as fact.",
+        "fix": "Replace exactly: At some receptions, friends playfully cut the groom's tie into small pieces and hand them round as keepsakes. It is often told that guests offer WITH: It is often told that at some receptions friends playfully cut the groom's tie into small pieces and hand them round as keepsakes, and that guests offer",
+        "old": "At some receptions, friends playfully cut the groom's tie into small pieces and hand them round as keepsakes. It is often told that guests offer",
+        "new": "It is often told that at some receptions friends playfully cut the groom's tie into small pieces and hand them round as keepsakes, and that guests offer"
+      },
+      {
+        "location": "How late the party runs, para 1",
+        "issue": "Unsourced custom generalisation stated as fact.",
+        "fix": "Replace exactly: Many Brazilian receptions keep dancing late into the night, and guests often expect WITH: It is often told that Brazilian receptions keep dancing late into the night, and that guests expect",
+        "old": "Many Brazilian receptions keep dancing late into the night, and guests often expect",
+        "new": "It is often told that Brazilian receptions keep dancing late into the night, and that guests expect"
+      },
+      {
+        "location": "FAQ: What finger",
+        "issue": "Ring hand-switch stated as fact.",
+        "fix": "Replace exactly: Many Brazilian couples wear the aliança on the right ring finger during the engagement and move it to the left ring finger at the wedding. WITH: It is often told that Brazilian couples wear the aliança on the right ring finger during the engagement and move it to the left ring finger at the wedding.",
+        "old": "Many Brazilian couples wear the aliança on the right ring finger during the engagement and move it to the left ring finger at the wedding.",
+        "new": "It is often told that Brazilian couples wear the aliança on the right ring finger during the engagement and move it to the left ring finger at the wedding."
+      },
+      {
+        "location": "FAQ: How much does it cost",
+        "issue": "'Cartório fees are set locally' is an unsourced legal claim.",
+        "fix": "Replace exactly: Cartório fees are set locally, so ask the cartório directly, and a fee applies WITH: Ask the cartório directly about its fees, and note that a fee applies",
+        "old": "Cartório fees are set locally, so ask the cartório directly, and a fee applies",
+        "new": "Ask the cartório directly about its fees, and note that a fee applies"
+      },
+      {
+        "location": "FAQ: padrinhos",
+        "issue": "Unsourced custom stated as fact.",
+        "fix": "Replace exactly: Many couples choose several pairs from both families. WITH: It is often told that couples choose several pairs from both families.",
+        "old": "Many couples choose several pairs from both families.",
+        "new": "It is often told that couples choose several pairs from both families."
+      }
+    ],
+    "fact_check_log": [
+      {
+        "claim": "Noivado definition",
+        "fact_id": "fact_08",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Aliança definition",
+        "fact_id": "fact_07",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Chá de panela / chá de cozinha",
+        "fact_id": "fact_04",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Madrinha as witness",
+        "fact_id": "fact_06",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Paraninfo = groom's padrinho",
+        "fact_id": "fact_09",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Saint Anthony dates and feast day",
+        "fact_id": "fact_01",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Patron of Portugal and Padua, lost things",
+        "fact_id": "fact_02",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Lisbon basil and televised weddings",
+        "fact_id": "fact_03",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Bem-casado definition",
+        "fact_id": "fact_104",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Samba de Roda inscribed 2008, description",
+        "fact_id": "fact_100",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Samba de Roda occasions, roda, beginners",
+        "fact_id": "fact_101",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Frevo inscribed 2012, passo",
+        "fact_id": "fact_102",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Habilitação; CNJ Res. 175 same-sex marriage; refusal reported to judge",
+        "fact_id": "fact_103",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Embassy will not advise on documents; cartório-witnessed mail CNI",
+        "fact_id": "fact_110",
+        "status": "confirmed"
+      },
+      {
+        "claim": "CNI issued by DFAT channels; citizen or PR",
+        "fact_id": "fact_105",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Single Status / No Record certificate alternatives",
+        "fact_id": "fact_107",
+        "status": "confirmed"
+      },
+      {
+        "claim": "CNI fee paid on application",
+        "fact_id": "fact_106",
+        "status": "confirmed"
+      },
+      {
+        "claim": "CNI authorised witness; English translation",
+        "fact_id": "fact_108",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Apostille Convention in force Aug 2016",
+        "fact_id": "fact_112",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Notarial services Brasília/São Paulo by appointment, fees",
+        "fact_id": "fact_109",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Rio Honorary Consulate no notarial services",
+        "fact_id": "fact_111",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Visa before arrival; dual nationals; same-sex relationships",
+        "fact_id": "fact_113",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Smartraveller level, 27 Oct update, no higher-level areas, border states, military service, insurance, wet season, wildfires, spiking, yellow fever, inauguration, consular posts",
+        "fact_id": "smartraveller.md",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Ring hand-switch, matching bands",
+        "fact_id": "",
+        "status": "unsupported"
+      },
+      {
+        "claim": "Names inside hem",
+        "fact_id": "",
+        "status": "unsupported"
+      },
+      {
+        "claim": "Groom's tie",
+        "fact_id": "",
+        "status": "unsupported"
+      },
+      {
+        "claim": "Festa Junina mock wedding",
+        "fact_id": "",
+        "status": "unsupported"
+      },
+      {
+        "claim": "Bem-casado individual wrapping; brigadeiros best known",
+        "fact_id": "",
+        "status": "unsupported"
+      },
+      {
+        "claim": "Two ceremonies, sponsor pairs, late parties, mixed chá",
+        "fact_id": "",
+        "status": "unsupported"
+      },
+      {
+        "claim": "Church wedding not a requirement; cartório fees set locally",
+        "fact_id": "",
+        "status": "unsupported"
+      }
+    ],
+    "compliance": {
+      "pass": true,
+      "issues": []
+    },
+    "originality": {
+      "pass": true,
+      "matches": []
+    },
+    "banned_phrases_found": [],
+    "needs_signoff": []
+  }
+}
