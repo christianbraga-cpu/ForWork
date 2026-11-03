@@ -7,3 +7,4 @@
 01:34 05 luxury-writer complete ~2,770 words; 1 VERIFY (civil act); 7 image slots; first draft sent; editor + 5 readers launched
 01:35 07 icp-reader search_visitor complete; no must-fix (takeaway mix)
 01:35 07 icp-reader sceptic, uhnw complete; no must-fix; waiting on planner_couple, funding_parent, editor
+01:35 07 icp-reader funding_parent, planner_couple complete; no must-fix; waiting on editor
