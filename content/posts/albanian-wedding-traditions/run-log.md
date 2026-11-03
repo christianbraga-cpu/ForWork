@@ -1,2 +1,3 @@
 23:42 00 orchestrator complete input written; FAST MODE start; refresh of /9-albanian-wedding-traditions-thatll-have-you-partying-all-week
 00:29 orchestrator: container restarted twice; brief lost before writing; restarting brief
+00:33 01 content-strategist complete; 11 customs + legal; Smartraveller high caution (updated 16 Oct 2026); Rome embassy covers Albania; 10 old page errors listed; 02+03(A,B)+04 launched
