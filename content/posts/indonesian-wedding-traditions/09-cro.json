@@ -1,0 +1,71 @@
+{
+  "agent": "cro-specialist",
+  "task_id": "indonesian-wedding-traditions",
+  "stage": "09",
+  "status": "complete",
+  "round": 1,
+  "inputs_used": [
+    "content/posts/indonesian-wedding-traditions/01-brief.json",
+    "content/posts/indonesian-wedding-traditions/07-panel.json",
+    "content/posts/indonesian-wedding-traditions/07-icp/*.json",
+    "content/posts/indonesian-wedding-traditions/08-final.md",
+    "content-system/brand/services.md",
+    "content-system/brand/brand-facts.md",
+    "content-system/seo/link-map.csv",
+    "content-system/schemas/09-cro.schema.json"
+  ],
+  "payload": {
+    "journey_stage": "dreaming",
+    "primary_cta": {
+      "text": "Read the free magazine",
+      "subtext": "Something to enjoy at your own pace, before you plan",
+      "link": "/magazine?utm_source=blog&utm_medium=content&utm_campaign=indonesian-wedding-traditions&utm_content=primary",
+      "placement": "Fill the existing <!-- CTA: primary --> marker in place: after the Bugis uang panai and mappacci section and before 'Can Australians marry legally in Bali?'. The reader has just finished the customs, which is the dreaming-stage peak; planner_couple and search_visitor said they would bookmark and keep reading rather than enquire. There is no inline /magazine link anywhere in 08-final.md, so nothing sits next to the block and no link needs dropping."
+    },
+    "secondary_cta": {
+      "text": "Speak with a Wedded Advisor",
+      "link": "/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=indonesian-wedding-traditions&utm_content=secondary",
+      "placement": "Existing inline link at the end of the paragraph straight after the legal section (the 'For the destination itself...' paragraph), as the brief asks and the panel kept. Its UTMs already match the services.md format with utm_content=secondary, so no change. No separate block is added, so the inline link is not duplicated. The closing 'Begin the conversation' Advisor mention stays unlinked."
+    },
+    "lead_magnet": {
+      "name": "Wedded Wonderland digital magazine",
+      "link": "/magazine?utm_source=blog&utm_medium=content&utm_campaign=indonesian-wedding-traditions&utm_content=primary",
+      "placement": "Served by the primary CTA block; no separate magnet placement, so the page carries two asks only and no utm_content=magnet link is needed.",
+      "exists": true
+    },
+    "copy_changes": [],
+    "tracking": [
+      "/magazine?utm_source=blog&utm_medium=content&utm_campaign=indonesian-wedding-traditions&utm_content=primary",
+      "/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=indonesian-wedding-traditions&utm_content=secondary"
+    ],
+    "rationale": "The brief sets journey_stage to dreaming with /magazine as primary and the Wedded Advisor as secondary straight after the legal section, which matches the services.md early-stage rule. Primary text is the services.md default (4 words, no exclamation mark). The subtext removes the dreaming-stage worry of being pushed into an enquiry without claiming anything about sign-up, content or cost beyond the 'free' in the services.md default. Panel cta_reactions on the Advisor link: planner_couple, funding_parent, sceptic and uhnw said 'maybe', search_visitor said 'no'. The 'X first' items they named (a real Bali wedding, a phone call with a named Advisor, deposits and fee model, scale and privacy) are not in brand-facts.md or the source pack, and the panel chair deferred them to Nic, so I add no copy (the article is at 2,897 of 2,900 words) and log them in open_questions. The fee-in-writing reassurance the personas valued already sits directly before the secondary link. The panel's 'Bali destination page' wish is met by the /destinations/asia/bali link in the same paragraph, before the CTA. Suggestion only, not placed: a magazine edition or guide on Bali or cultural and multicultural weddings would be a better-matched magnet than the general /magazine page."
+  },
+  "self_qa": {
+    "checks": [
+      {"check": "journey_stage taken from the brief", "pass": true, "note": "dreaming"},
+      {"check": "Primary CTA text 6 words or fewer, no 'click here', no exclamation mark", "pass": true, "note": "'Read the free magazine', 4 words"},
+      {"check": "All CTA targets exist in link-map.csv", "pass": true, "note": "/magazine (lead magnet row) and /wonderland-concierge (default commercial CTA target)"},
+      {"check": "UTMs follow services.md format with utm_campaign=indonesian-wedding-traditions", "pass": true, "note": "Existing secondary inline link already correct; no other UTM links in 08-final.md"},
+      {"check": "copy_changes old strings occur exactly once in 08-final.md", "pass": true, "note": "No copy changes needed"},
+      {"check": "No CTA block next to an inline link to the same target", "pass": true, "note": "No inline /magazine link exists; secondary is inline only"},
+      {"check": "No prices, invented business details, paperwork-help claims, banned phrases, em dashes; Australian English", "pass": true},
+      {"check": "Lead magnet only if it exists", "pass": true, "note": "/magazine exists; better-matched edition suggested in rationale only"}
+    ],
+    "confidence": 0.86
+  },
+  "open_questions": [
+    {"to": "orchestrator", "question": "Render the primary CTA block (text, subtext, link above) at the existing <!-- CTA: primary --> marker. No other copy changes.", "blocking": false},
+    {"to": "orchestrator", "question": "/expert-advice/wedding-traditions appears in link-map.csv; confirm it is live before this post goes out, as the intro links to it.", "blocking": false},
+    {"to": "person", "question": "Can brand-facts.md confirm a phone call with a named Advisor, how deposits and fees are handled, and the commission policy? funding_parent and sceptic named these before clicking the Advisor link. Any wording needs business confirmation and Nic's sign-off.", "blocking": false},
+    {"to": "person", "question": "Is there a real Bali or Indonesian wedding we could link before the Advisor CTA? planner_couple named it as what she would look for first.", "blocking": false},
+    {"to": "person", "question": "Is a magazine edition on Bali or cultural weddings planned? It would be a better-matched magnet than the general /magazine page.", "blocking": false}
+  ],
+  "assumptions": [
+    "The /magazine page is free to read, per the services.md default wording; whether it asks for an email is not known, so the subtext makes no claim about sign-up.",
+    "The primary marker stays where the writer placed it (end of customs, before the legal section), as that is the dreaming-stage peak and keeps the Advisor ask after the legal evidence.",
+    "No copy_changes, because the article is 3 words under the cap and the secondary link already carries the correct UTMs."
+  ],
+  "verify_items": [],
+  "tools_used": ["Bash"],
+  "next_agent": ["distribution"]
+}
