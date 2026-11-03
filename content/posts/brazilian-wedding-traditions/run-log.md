@@ -12,3 +12,4 @@
 01:37 07b icp-panel-chair revise; enquire 2.1; 0 must_fix, 4 should_fix, 1 consider (skipped: 'inclusions' is brand-facts wording); final pass launched
 01:38 08 luxury-writer complete ~2,800 words; 0 VERIFY; scan clean; 8b+CRO+distribution launched
 01:39 10 distribution complete 3 pins, 8-slide carousel, newsletter
+01:39 09 cro-specialist complete; 2 copy changes (magazine CTA block; closing Advisor line); applying after 8b
