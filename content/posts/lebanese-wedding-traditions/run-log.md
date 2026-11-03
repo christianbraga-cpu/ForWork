@@ -5,3 +5,5 @@
 02:16 02 seo-researcher complete; old page US #5-11, AU #13-21; legacy /how-to-plan-a-lebanese-wedding-2-2 found (page 1 in 4 cities); 2 x 301 recommended; /real-wedding-a-glamorous-and-traditional-wedding AU #8, link both ways; schema valid
 02:30 03 planner-sme batch A complete 19 facts (Britannica faith mix; OCA crowning text; Wikipedia 'Arab wedding' for tulbeh/khutbeh/henna/katb al-kitab as described-as, not Lebanon-specific); 4 VERIFY; merged; writer launched
 02:33 05 luxury-writer complete 2,761 words; 0 VERIFY; 7 image slots; first draft sent; editor + 5 readers launched
+02:34 07 icp-reader search_visitor complete; no must-fix (list of customs up top; fewer hedges)
+02:34 07 icp-reader uhnw, funding_parent complete; no must-fix; waiting on planner_couple, sceptic, editor
