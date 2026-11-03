@@ -1,0 +1,74 @@
+{
+  "agent": "cro",
+  "task_id": "lebanese-wedding-traditions",
+  "stage": "09",
+  "status": "complete",
+  "round": 1,
+  "inputs_used": [
+    "content-system/brand/services.md",
+    "content-system/brand/brand-facts.md",
+    "content/posts/lebanese-wedding-traditions/01-brief.json",
+    "content/posts/lebanese-wedding-traditions/07-panel.json",
+    "content/posts/lebanese-wedding-traditions/07-icp/*.json (cta_reaction)",
+    "content/posts/lebanese-wedding-traditions/08-final.md",
+    "content-system/seo/link-map.csv",
+    "content-system/schemas/09-cro.schema.json"
+  ],
+  "payload": {
+    "journey_stage": "dreaming",
+    "primary_cta": {
+      "text": "Read the free magazine",
+      "subtext": "Free to read, at your own pace.",
+      "link": "/magazine?utm_source=blog&utm_medium=content&utm_campaign=lebanese-wedding-traditions&utm_content=primary",
+      "placement": "Fill the existing <!-- CTA: primary --> marker, kept where it is: after 'Sugared almonds and wedding sweets', the close of the customs, just before 'Bringing Lebanese customs to a wedding abroad'. The dreaming reader has just finished the traditions, and the block sits well apart from the Wedded Advisor invitation at the end of the abroad section, so the two asks are not back to back. No inline /magazine link sits next to it."
+    },
+    "secondary_cta": {
+      "text": "Speak with a Wedded Advisor",
+      "subtext": "Fee agreed in writing before any work begins.",
+      "link": "/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=lebanese-wedding-traditions&utm_content=secondary",
+      "placement": "Existing inline link at the end of 'Blades, venue rules and the cake', the last part of the abroad section, as the brief asks. All five personas named this line as one to keep. It already carries utm_content=secondary and the next sentence already gives the single point of contact and fee-in-writing reassurance from brand-facts.md, so no separate block is added (a block here would duplicate the inline link to the same target). No copy change."
+    },
+    "lead_magnet": {
+      "name": "Wedded Wonderland digital magazine (free)",
+      "link": "/magazine?utm_source=blog&utm_medium=content&utm_campaign=lebanese-wedding-traditions&utm_content=magnet",
+      "exists": true,
+      "placement": "Existing inline link in the closing section 'Lebanese wedding traditions your families will recognise'. It is currently tagged utm_content=primary, which would double-count against the primary block; retagged as magnet (copy_change 1). It is about 75 lines from the primary block, so it is kept."
+    },
+    "tracking": [
+      "/magazine?utm_source=blog&utm_medium=content&utm_campaign=lebanese-wedding-traditions&utm_content=primary",
+      "/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=lebanese-wedding-traditions&utm_content=secondary",
+      "/magazine?utm_source=blog&utm_medium=content&utm_campaign=lebanese-wedding-traditions&utm_content=magnet"
+    ],
+    "copy_changes": [
+      {
+        "old": "[read the free Wedded Wonderland digital magazine](/magazine?utm_source=blog&utm_medium=content&utm_campaign=lebanese-wedding-traditions&utm_content=primary)",
+        "new": "[read the free Wedded Wonderland digital magazine](/magazine?utm_source=blog&utm_medium=content&utm_campaign=lebanese-wedding-traditions&utm_content=magnet)",
+        "why": "Only the primary block should carry utm_content=primary; the closing inline magazine link is the magnet placement."
+      }
+    ],
+    "rationale": "Dreaming-stage brief, so the magazine leads (services.md early-stage rule) and the Wedded Advisor follows the abroad section, where the practical questions (space, timing, blades, venue rules) peak. Weighted enquiry likelihood is 2.5, so no harder ask is added. Panel cta_reactions: four of five said 'maybe' to the Advisor line; planner_couple wants to read the Lake Como real wedding first, and that link already sits at the top of the abroad section, above the Advisor link, so no copy change is needed. funding_parent wants to know it leads to a named person, sceptic wants the fee model and commissions, uhnw wants discretion and scale: none of this is in brand-facts.md, so nothing is added and it is listed as an open question. search_visitor will not click; the magazine block and pillar links serve that reader. No prices, no paperwork-help claims, no new business details, nothing suggesting travel to Lebanon. Suggestion only: a Middle East or Lebanese-heritage edition of the magazine would suit this reader better, but no such page exists in link-map.csv, so it is not placed."
+  },
+  "self_qa": {
+    "confidence": 0.86,
+    "checks": [
+      {"check": "/magazine and /wonderland-concierge exist in link-map.csv", "pass": true},
+      {"check": "copy_changes old string occurs exactly once in 08-final.md", "pass": true},
+      {"check": "UTMs use utm_source=blog, utm_medium=content, utm_campaign=lebanese-wedding-traditions with primary, secondary and magnet", "pass": true},
+      {"check": "Inline Advisor link carries utm_content=secondary", "pass": true},
+      {"check": "No CTA block sits next to an inline link to the same target", "pass": true},
+      {"check": "CTA text 6 words or fewer, no exclamation mark, no 'click here'", "pass": true},
+      {"check": "No em dashes, prices, 'budget', paperwork-help claims, 'from first idea to the last dance' or travel-to-Lebanon suggestion in CRO copy", "pass": true}
+    ]
+  },
+  "assumptions": [
+    "The primary marker stays in its current spot; the panel did not show a question peak elsewhere that the magazine answers better.",
+    "Primary and secondary subtext reuse wording already in the post or brand-facts.md ('free' magazine; fee agreed in writing before any work begins).",
+    "The secondary CTA is the existing inline link rather than a separate block, so the CMS should not add a second Advisor button in that section."
+  ],
+  "open_questions": [
+    {"to": "orchestrator", "question": "Apply copy_change 1 (closing magazine link retagged utm_content=magnet) to 08-final.md before distribution and CMS upload?"},
+    {"to": "Nic", "question": "Personas asked whether the Advisor link leads to a named person or a form, how the fee and any commissions work, and how discretion and large weddings are handled. Can brand-facts.md be extended so a later refresh can answer these on the page?"},
+    {"to": "Nic", "question": "Is a Middle East or Lebanese-heritage magazine edition planned? It would be a better lead magnet for this post."}
+  ],
+  "next_agent": ["distribution"]
+}
