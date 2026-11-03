@@ -1,0 +1,145 @@
+{
+  "agent": "visual-curator",
+  "task_id": "armenian-wedding-traditions",
+  "stage": "04",
+  "status": "needs_input",
+  "round": 1,
+  "inputs_used": [
+    "CLAUDE.md",
+    "content/posts/armenian-wedding-traditions/00-input.json",
+    "content/posts/armenian-wedding-traditions/01-brief.json (tradition_plan, must_include, angle)",
+    "content/posts/armenian-wedding-traditions/02-research/pages/old-armenian.md (image credits)",
+    "content-system/images/library-index.csv (header only, no Armenian rows)",
+    "content-system/schemas/04-images.schema.json"
+  ],
+  "self_qa": {
+    "checks": [
+      {"check": "Zero reference-only or competitor images in slots", "pass": true},
+      {"check": "Every approved image has verified location, licence, alt, caption, fit_reason", "pass": true, "note": "No approved images; all 7 slots needed."},
+      {"check": "No AI image of people, cultural dress, ceremonies or places", "pass": true, "note": "AI offered only as a fallback neutral still life (lavash, pomegranates), not generated, pending approval."},
+      {"check": "Old-page photos of a real couple not reused", "pass": true, "note": "Listed only for licence and couple-consent check."},
+      {"check": "No political symbols; destination away from border areas", "pass": true, "note": "Destination brief limited to Garni (Kotayk) or central Yerevan; no Mount Ararat framing, flags or emblems."},
+      {"check": "Featured image exists (approved or needed with brief)", "pass": true, "note": "Needed with brief."},
+      {"check": "Placements match final H2 numbering", "pass": false, "note": "02-seo.json outline not available when written; after_h2 numbers follow tradition order (1 asking, 2 engagement, 3 godparents, 4 dressing and collection, 5 crowning, 6 lavash and plate, 7 welcome, 8 music and dance, 9 marrying in Armenia, 10 at home in Australia)."}
+    ],
+    "confidence": 0.6
+  },
+  "open_questions": [
+    {"to": "Nic", "question": "The old page uses photos of a real couple (credited Image Haus). Confirm licence scope and written couple consent before any reuse? Default: not reused.", "blocking": false},
+    {"to": "Nic", "question": "Source licensed photos for 7 slots (Armenian-Australian client weddings with signed consent, partner photographers, licensed stock with model and property releases)? Library returned nothing; Drive disconnected.", "blocking": true},
+    {"to": "Nic", "question": "Approve or decline an AI illustrative still life of folded lavash and pomegranates (no people, dress or place), captioned 'Illustrative image', for the lavash slot if no licensed photo is found?", "blocking": false},
+    {"to": "seo-researcher", "question": "Confirm H2 numbering once the outline exists and remap after_h2 placements.", "blocking": false}
+  ],
+  "assumptions": [
+    "Old weddedwonderland.com page images excluded until licence and couple consent are confirmed.",
+    "No venue in scope, so no press-kit permission emails drafted.",
+    "Google Drive disconnected and Firecrawl out of credits; Canva brand assets not searched in fast mode.",
+    "Church interiors need church permission as well as couple consent.",
+    "Saved by the orchestrator from the agent's reply because plan mode blocked the agent's write."
+  ],
+  "verify_items": [
+    "[[IMAGE NEEDED]] featured: church doorway hero",
+    "[[IMAGE NEEDED]] asking: khosk-kap family table",
+    "[[IMAGE NEEDED]] crowning: church crowning",
+    "[[IMAGE NEEDED]] lavash: lavash on the shoulders (or approved illustrative still life)",
+    "[[IMAGE NEEDED]] welcome: welcome at the groom's door",
+    "[[IMAGE NEEDED]] music: duduk or Kochari dance",
+    "[[IMAGE NEEDED]] destination: Garni Temple or central Yerevan",
+    "[[VERIFY licence]] old-page couple photos (Image Haus): licence scope and couple consent",
+    "[[VERIFY licence]] every sourced photo: credit, scope, model and property releases",
+    "[[VERIFY: destination photo location is outside Smartraveller higher-level areas, including the 5 km Azerbaijan border band]]"
+  ],
+  "next_agent": ["luxury-writer"],
+  "payload": {
+    "slots": [
+      {
+        "slot_id": "featured",
+        "placement": "featured",
+        "purpose": "Hero: an elegant, real and licensed sense of an Armenian church wedding without depending on one couple's identity.",
+        "shot_brief": "Licensed photo of the carved stone doorway of an Armenian Apostolic church in Yerevan or Kotayk, soft late-afternoon autumn light; either empty or with a consenting couple seen from behind. Wide 3:2 hero with headroom for a title crop. No flags, emblems, border landscapes or Mount Ararat framing.",
+        "status": "needed",
+        "file": "content/posts/armenian-wedding-traditions/images/armenian-wedding-traditions-church-doorway-hero.webp",
+        "source": {"type": "library", "origin": "[[IMAGE NEEDED]] library-index.csv has no Armenian rows; Google Drive disconnected", "credit": "[[VERIFY licence]]"},
+        "alt": "Carved stone doorway of an Armenian Apostolic church in soft afternoon light",
+        "caption": "<Church>, <town>. Photo: [[VERIFY credit]]",
+        "lens_check": "Not run: no candidate image."
+      },
+      {
+        "slot_id": "asking",
+        "placement": "after_h2:1",
+        "purpose": "Show the warmth of the formal asking (khosk-kap) at the bride's family home.",
+        "shot_brief": "Licensed interior photo of a family table set for the asking: sweets, fruit, glasses, flowers; hands only or no faces; warm evening lamplight. People optional, with signed consent if they can be identified.",
+        "status": "needed",
+        "file": "content/posts/armenian-wedding-traditions/images/armenian-wedding-traditions-khosk-kap-table.webp",
+        "source": {"type": "library", "origin": "[[IMAGE NEEDED]]", "credit": "[[VERIFY licence]]"},
+        "alt": "Family table set with sweets, fruit and glasses for a formal wedding asking",
+        "caption": "<Place>, <town>. Photo: [[VERIFY credit]]",
+        "lens_check": "Not run: no candidate image."
+      },
+      {
+        "slot_id": "crowning",
+        "placement": "after_h2:5",
+        "purpose": "Illustrate the Armenian Apostolic crowning, the heart of the ceremony.",
+        "shot_brief": "Licensed documentary photo inside an Armenian Apostolic church (Armenia or an Australian parish): couple wearing crowns before the priest, kavor standing behind holding the cross, candlelight. Requires couple, kavor and church consent. Never AI.",
+        "status": "needed",
+        "file": "content/posts/armenian-wedding-traditions/images/armenian-wedding-traditions-church-crowning.webp",
+        "source": {"type": "library", "origin": "[[IMAGE NEEDED]]", "credit": "[[VERIFY licence]]"},
+        "consent": {"couple": "required", "kavor": "required", "church": "required"},
+        "alt": "Couple wearing crowns before a priest during an Armenian Apostolic wedding ceremony",
+        "caption": "<Church>, <town>. Photo: [[VERIFY credit]]",
+        "lens_check": "Not run: no candidate image."
+      },
+      {
+        "slot_id": "lavash",
+        "placement": "after_h2:6",
+        "purpose": "Show lavash on the couple's shoulders at the door.",
+        "shot_brief": "Preferred: licensed photo of thin lavash draped over the couple's shoulders at a doorway, with consent. Fallback only if Nic approves: AI neutral still life of folded lavash and halved pomegranates on linen, no people, dress, setting or place, captioned 'Illustrative image'.",
+        "status": "needed",
+        "file": "content/posts/armenian-wedding-traditions/images/armenian-wedding-traditions-lavash-shoulders.webp",
+        "source": {"type": "library", "origin": "[[IMAGE NEEDED]]; ai_illustrative still life fallback pending Nic approval", "credit": "[[VERIFY licence]]"},
+        "alt": "Thin lavash bread draped over a newly married couple's shoulders at a doorway",
+        "caption": "<Place>, <town>. Photo: [[VERIFY credit]]",
+        "lens_check": "Not run: no candidate image."
+      },
+      {
+        "slot_id": "welcome",
+        "placement": "after_h2:7",
+        "purpose": "Show the welcome at the groom's home: plate and family at the threshold.",
+        "shot_brief": "Licensed photo at a home doorway: a plate ready to break, lavash held out by family; faces either consented or out of frame; warm daylight.",
+        "status": "needed",
+        "file": "content/posts/armenian-wedding-traditions/images/armenian-wedding-traditions-groom-home-welcome.webp",
+        "source": {"type": "library", "origin": "[[IMAGE NEEDED]]", "credit": "[[VERIFY licence]]"},
+        "alt": "Family welcoming newlyweds at a home doorway with a plate and lavash",
+        "caption": "<Place>, <town>. Photo: [[VERIFY credit]]",
+        "lens_check": "Not run: no candidate image."
+      },
+      {
+        "slot_id": "music",
+        "placement": "after_h2:8",
+        "purpose": "Bring the reception to life with the duduk or a circle dance.",
+        "shot_brief": "Licensed photo of a duduk player at a wedding reception, or guests joined in a circle dance; evening light; guests consented; no flags or political symbols.",
+        "status": "needed",
+        "file": "content/posts/armenian-wedding-traditions/images/armenian-wedding-traditions-duduk-kochari-dance.webp",
+        "source": {"type": "library", "origin": "[[IMAGE NEEDED]]", "credit": "[[VERIFY licence]]"},
+        "alt": "Duduk player performing as wedding guests dance in a circle",
+        "caption": "<Venue>, <town>. Photo: [[VERIFY credit]]",
+        "lens_check": "Not run: no candidate image."
+      },
+      {
+        "slot_id": "destination",
+        "placement": "after_h2:9",
+        "purpose": "Ground the marrying in Armenia section in a calm, safe-to-suggest location.",
+        "shot_brief": "Licensed landscape of Garni Temple (Kotayk) or central Yerevan in autumn light, no people. Must sit well outside Smartraveller higher-level areas, including the 5 km Azerbaijan border band. No Mount Ararat framing, flags, monuments with political meaning or border scenery. Never AI.",
+        "status": "needed",
+        "file": "content/posts/armenian-wedding-traditions/images/armenian-wedding-traditions-garni-yerevan.webp",
+        "source": {"type": "library", "origin": "[[IMAGE NEEDED]]", "credit": "[[VERIFY licence]]"},
+        "location": {"venue": "Garni Temple or central Yerevan (to confirm)", "town": "Garni or Yerevan", "verified_by": "[[VERIFY: EXIF GPS or source page]]"},
+        "alt": "Garni Temple in autumn light, Kotayk Province, Armenia",
+        "caption": "Garni Temple, Garni. Photo: [[VERIFY credit]]",
+        "lens_check": "Not run: no candidate image."
+      }
+    ],
+    "reference_only": [],
+    "permission_requests": []
+  }
+}
