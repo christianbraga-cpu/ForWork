@@ -5,3 +5,5 @@
 23:14 03 planner-sme batch A complete 17 facts (UNESCO Batik links weddings; kebaya 2024 no wedding link; Kraton Yogyakarta royal wedding pages; Widyaparwa 2021); akad details 2 VERIFY (KHI full text unread); waiting on batch B
 23:15 03 planner-sme batch B complete 21 facts (Embassy 'Marriage in Indonesia': same religion, CNI, Bali CG, KUA / Civil Registry 10 days; recognition; journal sources for Bali, suntiang, ulos, uang panai); UNESCO Bali dance no wedding link; merged; writer launched
 23:18 05 luxury-writer complete ~2,700 words; 0 VERIFY; 7 image slots; first draft sent; editor + 5 readers launched
+23:18 07 icp-reader uhnw complete; no must-fix (packages link reads mass-market)
+23:18 07 icp-reader sceptic, search_visitor complete; no must-fix; waiting on planner_couple, funding_parent, editor
