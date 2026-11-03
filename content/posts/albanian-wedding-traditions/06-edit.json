@@ -1,0 +1,532 @@
+{
+  "agent": "editor",
+  "task_id": "albanian-wedding-traditions",
+  "stage": "06",
+  "status": "complete",
+  "round": 1,
+  "inputs_used": [
+    "content/posts/albanian-wedding-traditions/05-draft.md",
+    "content/posts/albanian-wedding-traditions/01-brief.json",
+    "content/posts/albanian-wedding-traditions/02-seo.json",
+    "content/posts/albanian-wedding-traditions/03-source-pack.json",
+    "content/posts/albanian-wedding-traditions/04-images.json",
+    "content/posts/albanian-wedding-traditions/02-research/pages/old-albanian.md",
+    "content/posts/albanian-wedding-traditions/02-research/pages/smartraveller.md",
+    "content-system/brand/brand-facts.md",
+    "content-system/seo/link-map.csv",
+    "content-system/schemas/06-edit.schema.json",
+    "https://weddedwonderland.com/real-wedding-a-lavish-albanian-wedding-at-the-manor-of-high-melbourne (DataForSEO on_page_instant_pages 2026-11-03, HTTP 200)"
+  ],
+  "self_qa": {
+    "checks": [
+      {
+        "check": "scan_copy.py run",
+        "pass": true,
+        "note": "0 banned, 0 flagged, 0 dashes, 0 overlaps"
+      },
+      {
+        "check": "Every factual sentence logged",
+        "pass": true,
+        "note": "37 entries"
+      },
+      {
+        "check": "Each edit old occurs exactly once in 05-draft.md; all edits apply cleanly",
+        "pass": true,
+        "note": "32 edits, verified by script"
+      },
+      {
+        "check": "Keyword in title, first 100 words and one H2 after edit",
+        "pass": true
+      },
+      {
+        "check": "Exactly 4 one-sentence Key takeaways",
+        "pass": true
+      },
+      {
+        "check": "Internal links in link-map, verified Real Weddings URL or draft pillar",
+        "pass": true,
+        "note": "Pillar /expert-advice/wedding-traditions is draft in link-map: publish first or together. Real Weddings URL not in link-map but verified live"
+      },
+      {
+        "check": "Image slots are approved 04-images slot ids, no reference-only",
+        "pass": true,
+        "note": "8 slot comments, all match 04-images; none filled yet (status needed)"
+      },
+      {
+        "check": "Decision consistent with scores",
+        "pass": true,
+        "note": "accuracy 3 and average 3.86 below 4.0 so revise; post-edit expected about 4.4"
+      }
+    ],
+    "confidence": 0.8
+  },
+  "open_questions": [
+    {
+      "to": "orchestrator",
+      "question": "Pillar /expert-advice/wedding-traditions is a draft in link-map.csv; publish it first or together, or remove both links.",
+      "blocking": false
+    },
+    {
+      "to": "orchestrator",
+      "question": "Add /real-wedding-a-lavish-albanian-wedding-at-the-manor-of-high-melbourne to link-map.csv (verified live 2026-11-03) via /wedded-linkmap.",
+      "blocking": false
+    },
+    {
+      "to": "luxury-writer",
+      "question": "Kufeta term and henna/honey meanings are unsourced and kept only as 'often told'; add a source next round if one is found, or keep as is.",
+      "blocking": false
+    }
+  ],
+  "assumptions": [
+    "Wikipedia-only facts (fact_05 to fact_09) are acceptable with 'described as' wording per the orchestrator; source-pack VERIFY items for them stay open.",
+    "The Smartraveller protest line is safety advice, not political framing."
+  ],
+  "verify_items": [
+    "[[VERIFY: Albanian civil marriage procedure for foreign nationals at the civil status office]]",
+    "[[VERIFY: Whether a religious ceremony in Albania has civil effect without a civil marriage]]",
+    "[[VERIFY: Whether Albanian authorities accept a CNI issued in Australia]]"
+  ],
+  "tools_used": [
+    "Bash",
+    "mcp__DataForSEO__on_page_instant_pages"
+  ],
+  "next_agent": [
+    "luxury-writer"
+  ],
+  "payload": {
+    "draft_file": "content/posts/albanian-wedding-traditions/05-draft.md",
+    "rubric": {
+      "voice": 4,
+      "expertise": 4,
+      "accuracy": 3,
+      "seo_fit": 4,
+      "commercial_link": 4,
+      "structure": 4,
+      "brief_fit": 4
+    },
+    "average": 3.86,
+    "blocking_issues": [],
+    "decision": "revise",
+    "edits": [
+      {
+        "location": "H2 'Who keeps...'",
+        "issue": "Primary keyword 'albanian wedding traditions' is in no H2.",
+        "fix": "## Who keeps Albanian wedding traditions today",
+        "old": "## Who keeps Albanian wedding customs today",
+        "new": "## Who keeps Albanian wedding traditions today"
+      },
+      {
+        "location": "Key takeaways, bullet 2",
+        "issue": "'world heritage' is wrong: iso-polyphony is on UNESCO's Representative List of the Intangible Cultural Heritage of Humanity (fact_100); must match fact_101 exactly.",
+        "fix": "- Albanian folk iso-polyphony, a drone-based singing tradition on UNESCO's Representative List of the Intangible Cultural Heritage of Humanity, traditionally accompanies social events such as weddings, so live folk music is worth planning around.",
+        "old": "- Albanian folk iso-polyphony, the drone-based singing UNESCO lists as world heritage, traditionally accompanies weddings, so live folk music is worth planning around.",
+        "new": "- Albanian folk iso-polyphony, a drone-based singing tradition on UNESCO's Representative List of the Intangible Cultural Heritage of Humanity, traditionally accompanies social events such as weddings, so live folk music is worth planning around."
+      },
+      {
+        "location": "Who keeps..., para 2",
+        "issue": "'order of the days' difference is unsourced; fact_102 covers singing styles only.",
+        "fix": "Families often say a north and south difference shows up in dress and songs too, and your own family will know which side of it they sit on.",
+        "old": "The same north and south difference shows up in dress, songs and the order of the days, and your own family will know which side of it they sit on.",
+        "new": "Families often say a north and south difference shows up in dress and songs too, and your own family will know which side of it they sit on."
+      },
+      {
+        "location": "Who keeps..., para 3",
+        "issue": "Unsourced generalisation about who marries into Albanian families; keep neutral.",
+        "fix": "If one of you comes from another background, most of these customs adapt easily.",
+        "old": "Many couples marry into an Albanian family from another background, and most of these customs adapt easily.",
+        "new": "If one of you comes from another background, most of these customs adapt easily."
+      },
+      {
+        "location": "H3 numbering",
+        "issue": "Clean headings: outline H3s are unnumbered; numbering echoes the old listicle.",
+        "fix": "### The engagement (fejesa)",
+        "old": "### 1. The engagement (fejesa)",
+        "new": "### The engagement (fejesa)"
+      },
+      {
+        "location": "H3 numbering",
+        "issue": "Clean headings.",
+        "fix": "### Gifts and sugared almonds between the families",
+        "old": "### 2. Gifts and sugared almonds between the families",
+        "new": "### Gifts and sugared almonds between the families"
+      },
+      {
+        "location": "H3 numbering",
+        "issue": "Clean headings.",
+        "fix": "### The trousseau (paja) and its display",
+        "old": "### 3. The trousseau (paja) and its display",
+        "new": "### The trousseau (paja) and its display"
+      },
+      {
+        "location": "H3 numbering",
+        "issue": "Clean headings.",
+        "fix": "### The henna night",
+        "old": "### 4. The henna night",
+        "new": "### The henna night"
+      },
+      {
+        "location": "H3 numbering",
+        "issue": "Clean headings.",
+        "fix": "### The bride's dress and the xhubleta",
+        "old": "### 5. The bride's dress and the xhubleta",
+        "new": "### The bride's dress and the xhubleta"
+      },
+      {
+        "location": "H3 numbering",
+        "issue": "Clean headings.",
+        "fix": "### The flag and the flag-bearer",
+        "old": "### 6. The flag and the flag-bearer",
+        "new": "### The flag and the flag-bearer"
+      },
+      {
+        "location": "H3 numbering",
+        "issue": "Clean headings.",
+        "fix": "### The krushqit collect the bride",
+        "old": "### 7. The krushqit collect the bride",
+        "new": "### The krushqit collect the bride"
+      },
+      {
+        "location": "H3 numbering",
+        "issue": "Clean headings.",
+        "fix": "### Honey and bread at the groom's door",
+        "old": "### 8. Honey and bread at the groom's door",
+        "new": "### Honey and bread at the groom's door"
+      },
+      {
+        "location": "H3 numbering",
+        "issue": "Clean headings.",
+        "fix": "### Valle, music and iso-polyphony",
+        "old": "### 9. Valle, music and iso-polyphony",
+        "new": "### Valle, music and iso-polyphony"
+      },
+      {
+        "location": "H3 numbering",
+        "issue": "Clean headings.",
+        "fix": "### Money gifts on the dance floor",
+        "old": "### 10. Money gifts on the dance floor",
+        "new": "### Money gifts on the dance floor"
+      },
+      {
+        "location": "H3 numbering",
+        "issue": "Clean headings.",
+        "fix": "### A celebration over several days",
+        "old": "### 11. A celebration over several days",
+        "new": "### A celebration over several days"
+      },
+      {
+        "location": "Fejesa, para 1",
+        "issue": "Visit, rings and coffee details are unsourced; keep as 'often told'.",
+        "fix": "It is often told that the groom's family visits the bride's family, the couple exchange rings or a token, and both families share food and sweets.",
+        "old": "The groom's family visits the bride's family, the couple exchange rings or a token, and the families mark it with food, coffee and sweets.",
+        "new": "It is often told that the groom's family visits the bride's family, the couple exchange rings or a token, and both families share food and sweets."
+      },
+      {
+        "location": "Paja, para 2",
+        "issue": "Alternative term 'çeizi' unsourced.",
+        "fix": "In many homes",
+        "old": "Some families still call it the çeizi. In many homes",
+        "new": "In many homes"
+      },
+      {
+        "location": "Xhubleta, UNESCO inscription",
+        "issue": "Must match fact_01 exactly: the element is the xhubleta's skills, craftsmanship and forms of usage.",
+        "fix": "In 2022 UNESCO inscribed the xhubleta's skills, craftsmanship and forms of usage on the List of Intangible Cultural Heritage in Need of Urgent Safeguarding.",
+        "old": "In 2022 UNESCO added its craftsmanship to the List of Intangible Cultural Heritage in Need of Urgent Safeguarding.",
+        "new": "In 2022 UNESCO inscribed the xhubleta's skills, craftsmanship and forms of usage on the List of Intangible Cultural Heritage in Need of Urgent Safeguarding."
+      },
+      {
+        "location": "Dress section, 'So what colour...'",
+        "issue": "'Many now marry in a white gown' is an unsourced trend claim.",
+        "fix": "So what colour do Albanian brides wear? Today it depends on the family: some brides choose a white gown, and some change into a regional outfit for part of the celebration.",
+        "old": "So what colour do Albanian brides wear? Many now marry in a white gown and change into a regional outfit for part of the celebration.",
+        "new": "So what colour do Albanian brides wear? Today it depends on the family: some brides choose a white gown, and some change into a regional outfit for part of the celebration."
+      },
+      {
+        "location": "Flag, para 1",
+        "issue": "Flag custom has no source in the pack; keep general, no timing.",
+        "fix": "It is often told that a flag is raised at the groom's home before the wedding and travels with the groom's party when they set out to collect the bride.",
+        "old": "In many families a flag is raised at the groom's home in the days before the wedding, and it travels with the groom's party when they set out to collect the bride.",
+        "new": "It is often told that a flag is raised at the groom's home before the wedding and travels with the groom's party when they set out to collect the bride."
+      },
+      {
+        "location": "Flag, para 2",
+        "issue": "'lead car of a decorated convoy' is unsourced and echoes the old page ('decorated car convoy').",
+        "fix": "Today it may travel in one of the wedding cars. It is a family custom of celebration,",
+        "old": "Today the flag usually rides in the lead car of a decorated convoy. It is a family custom of celebration,",
+        "new": "Today it may travel in one of the wedding cars. It is a family custom of celebration,"
+      },
+      {
+        "location": "Krushqit, para 2",
+        "issue": "Grammar: 'before the leaving'.",
+        "fix": "they are welcomed with food and drink before the bride leaves.",
+        "old": "they are welcomed with food and drink before the leaving.",
+        "new": "they are welcomed with food and drink before the bride leaves."
+      },
+      {
+        "location": "Valle, iso-polyphony",
+        "issue": "fact_102: 'rendered mainly by male singers' describes the music, not the drone.",
+        "fix": "Its \"iso\" is a drone that accompanies the polyphonic singing, and UNESCO notes the music is rendered mainly by male singers.",
+        "old": "The \"iso\" is a drone that accompanies polyphonic singing, rendered mainly by male singers.",
+        "new": "Its \"iso\" is a drone that accompanies the polyphonic singing, and UNESCO notes the music is rendered mainly by male singers."
+      },
+      {
+        "location": "Money gifts, para 1",
+        "issue": "Unsourced custom stated as fact; keep as 'often told'.",
+        "fix": "It is often told that guests give money to the couple during the dancing, placing notes in their hands as they dance, as a way of wishing them a prosperous start.",
+        "old": "In many Albanian families guests give money to the couple during the dancing, pinning notes to them or placing them in their hands as they dance. It is often told as a way of wishing the couple a prosperous start.",
+        "new": "It is often told that guests give money to the couple during the dancing, placing notes in their hands as they dance, as a way of wishing them a prosperous start."
+      },
+      {
+        "location": "Several days, para 1",
+        "issue": "Multi-day length unsourced; old-page claim. Keep as 'often told'.",
+        "fix": "It is often told that Albanian weddings run over several days, with gatherings at each family's home before the main celebration.",
+        "old": "Many Albanian weddings run over several days, with separate gatherings at each family's home before the main celebration.",
+        "new": "It is often told that Albanian weddings run over several days, with gatherings at each family's home before the main celebration."
+      },
+      {
+        "location": "Civil marriage, para 2",
+        "issue": "Logic: apostille clause does not follow; add that local acceptance must be checked (no Australian mission in Albania).",
+        "fix": "Some authorities only accept a CNI issued in their own country, so ask the Albanian authorities which they accept and whether the CNI needs an apostille,",
+        "old": "Some authorities only accept a CNI issued in their own country, so ask whether the CNI needs an apostille,",
+        "new": "Some authorities only accept a CNI issued in their own country, so ask the Albanian authorities which they accept and whether the CNI needs an apostille,"
+      },
+      {
+        "location": "Advisor CTA",
+        "issue": "utm_medium must be 'content'; Advisor line must match brand-facts (fee agreed in writing before work begins; inclusions confirmed in writing before the couple commits).",
+        "fix": "[speak with a Wedded Advisor](/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=albanian-wedding-traditions). Your Wedded Advisor is your single point of contact from start to finish, the fee is agreed in writing before any work begins, and inclusions are confirmed in writing before you commit.",
+        "old": "[speak with a Wedded Advisor](/wonderland-concierge?utm_source=blog&utm_medium=article&utm_campaign=albanian-wedding-traditions). Your Advisor is your single point of contact from start to finish, and the fee and inclusions are agreed in writing before any work begins.",
+        "new": "[speak with a Wedded Advisor](/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=albanian-wedding-traditions). Your Wedded Advisor is your single point of contact from start to finish, the fee is agreed in writing before any work begins, and inclusions are confirmed in writing before you commit."
+      },
+      {
+        "location": "FAQ: Who pays",
+        "issue": "fact_08 says gifts for 'her husband and close relatives', not 'his'.",
+        "fix": "gifts for her husband and close relatives,",
+        "old": "gifts for her husband and his close relatives,",
+        "new": "gifts for her husband and close relatives,"
+      },
+      {
+        "location": "FAQ: What colour",
+        "issue": "Unsourced trend claim.",
+        "fix": "It depends on the family: some brides wear a white gown and some change into a regional outfit later.",
+        "old": "Many brides now wear a white gown for the ceremony and a regional outfit later.",
+        "new": "It depends on the family: some brides wear a white gown and some change into a regional outfit later."
+      },
+      {
+        "location": "FAQ: How long",
+        "issue": "Multi-day length unsourced.",
+        "fix": "It is often told that Albanian weddings run over several days, from a henna night to the main celebration.",
+        "old": "Many Albanian weddings run over several days, from a henna night to the main celebration.",
+        "new": "It is often told that Albanian weddings run over several days, from a henna night to the main celebration."
+      },
+      {
+        "location": "FAQ: marrying someone not Albanian",
+        "issue": "Unsourced claim about Albanian-Australian couples; reword neutrally.",
+        "fix": "Yes. Couples from different backgrounds can choose the customs that suit both families, and most of those in this guide adapt easily to a shared celebration.",
+        "old": "Yes. Many Albanian-Australian couples marry partners from other backgrounds and choose the customs that suit both families.",
+        "new": "Yes. Couples from different backgrounds can choose the customs that suit both families, and most of those in this guide adapt easily to a shared celebration."
+      },
+      {
+        "location": "Close: Greek link and magazine UTM",
+        "issue": "Greek link kept but framed as a separate, related culture (no conflation); utm_medium must be 'content'.",
+        "fix": "explore a neighbouring culture's customs in [Greek wedding traditions](/8-greek-wedding-traditions-you-didnt-know-about), or [read the free Wedded Wonderland digital magazine](/magazine?utm_source=blog&utm_medium=content&utm_campaign=albanian-wedding-traditions)",
+        "old": "compare the customs in [Greek wedding traditions](/8-greek-wedding-traditions-you-didnt-know-about), or [read the free Wedded Wonderland digital magazine](/magazine?utm_source=blog&utm_medium=article&utm_campaign=albanian-wedding-traditions)",
+        "new": "explore a neighbouring culture's customs in [Greek wedding traditions](/8-greek-wedding-traditions-you-didnt-know-about), or [read the free Wedded Wonderland digital magazine](/magazine?utm_source=blog&utm_medium=content&utm_campaign=albanian-wedding-traditions)"
+      }
+    ],
+    "fact_check_log": [
+      {
+        "claim": "UNESCO: two main singing styles, Ghegs (north) and Tosks and Labs (south)",
+        "fact_id": "fact_102",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Dhunti in Shkodra: clothes, jewellery, gold ornaments, sent a few days before; prepared with great care (Wikipedia, 'described as')",
+        "fact_id": "fact_09",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Paja: goods from the bride's parents; woven on looms; ritual songs; parents' obligation (Wikipedia, 'described as')",
+        "fact_id": "fact_08",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Traditional clothes now worn mostly for festivals, religious holidays, weddings, dance groups (Wikipedia, 'described as')",
+        "fact_id": "fact_06",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Shkodra bridal dress: Muslim black-based or red, gold-worked belt; Catholic shiny white with gold thread (Wikipedia, 'described as')",
+        "fact_id": "fact_07",
+        "status": "confirmed"
+      },
+      {
+        "claim": "UNESCO: xhubleta handcrafted, highland women and girls, northern Albania, undulating bell form, mostly black, colourful embroidery",
+        "fact_id": "fact_02",
+        "status": "confirmed"
+      },
+      {
+        "claim": "UNESCO: once worn daily from puberty, showed social and economic status; few women know the whole process",
+        "fact_id": "fact_03",
+        "status": "confirmed"
+      },
+      {
+        "claim": "UNESCO 2022 Urgent Safeguarding inscription of xhubleta skills, craftsmanship and forms of usage (wording corrected by edit)",
+        "fact_id": "fact_01",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Xhubleta white for unmarried, black for married (Wikipedia, 'described as'; source-pack VERIFY item stands)",
+        "fact_id": "fact_05",
+        "status": "confirmed"
+      },
+      {
+        "claim": "UNESCO 2008 Representative List inscription of iso-polyphony",
+        "fact_id": "fact_100",
+        "status": "confirmed"
+      },
+      {
+        "claim": "UNESCO: accompanies weddings, funerals, harvest feasts, religious celebrations, festivals",
+        "fact_id": "fact_101",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Iso is a drone; rendered mainly by male singers (attribution corrected by edit); transmitted mainly via professional folk artists",
+        "fact_id": "fact_102",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Smartraveller: prove not already married; CNI or registry certificate; divorce papers, death certificate, birth certificate, passport",
+        "fact_id": "fact_108",
+        "status": "confirmed"
+      },
+      {
+        "claim": "DFAT issues CNIs via APOs, missions, mail; one applicant citizen or PR; local-CNI rule; apostille; English translation",
+        "fact_id": "fact_109",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Fee applies for CNI and apostille, no amount",
+        "fact_id": "fact_110",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Overseas marriage cannot be registered in Australia but usually recognised; certificate may not prove name change",
+        "fact_id": "fact_111",
+        "status": "confirmed"
+      },
+      {
+        "claim": "No Australian embassy or consulate in Albania; consular help from Rome",
+        "fact_id": "fact_104",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Embassy Rome covers Italy, San Marino, Albania, Libya; consular page links notarial, marriage overseas, apostilles",
+        "fact_id": "fact_103",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Smartraveller level 'Exercise a high degree of caution', limited healthcare, no higher-level areas; updated 16 Oct 2026, current 3 Nov 2026",
+        "fact_id": "fact_104",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Limited medical facilities outside Tirana; insurance must cover medical evacuation; heat and fires Apr to Oct; protests, avoid large gatherings",
+        "fact_id": "fact_107",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Albanian nationality by birth or parent; male dual nationals may face military service",
+        "fact_id": "fact_106",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Same-sex relationships legal but not widely accepted",
+        "fact_id": "fact_105",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Key takeaway: iso-polyphony 'UNESCO lists as world heritage'",
+        "fact_id": "fact_100",
+        "status": "removed"
+      },
+      {
+        "claim": "Fejesa visit, rings, food (no source)",
+        "status": "removed"
+      },
+      {
+        "claim": "Kufeta meaning (no source; 'often told' wording kept)",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Paja also called çeizi (no source)",
+        "status": "removed"
+      },
+      {
+        "claim": "Henna night meaning (no source; 'often told' kept; Albanian name deliberately not given)",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Flag raised in the days before; lead car of convoy (no source)",
+        "status": "removed"
+      },
+      {
+        "claim": "Krushqit definition ('often explained', search summary only, not a source)",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Honey at the groom's door ('often told')",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Money pinned during the dance (no source)",
+        "status": "removed"
+      },
+      {
+        "claim": "Weddings run several days (no source; now 'often told')",
+        "status": "removed"
+      },
+      {
+        "claim": "North/south difference in 'order of the days' (no source)",
+        "status": "removed"
+      },
+      {
+        "claim": "'Many now marry in a white gown' trend (no source)",
+        "status": "removed"
+      },
+      {
+        "claim": "FAQ: many Albanian-Australian couples marry partners from other backgrounds (no source)",
+        "status": "removed"
+      },
+      {
+        "claim": "Albanian civil procedure, notice period, religious ceremony civil effect: written as not published, checked with office and embassy",
+        "status": "verify"
+      },
+      {
+        "claim": "Real Weddings URL /real-wedding-a-lavish-albanian-wedding-at-the-manor-of-high-melbourne live (DataForSEO instant pages 2026-11-03: HTTP 200, self-canonical, follow)",
+        "status": "confirmed"
+      }
+    ],
+    "compliance": {
+      "pass": false,
+      "issues": [
+        "UTMs used utm_medium=article (2 links); fixed by edits",
+        "Advisor line merged fee and inclusions into one claim not in brand-facts.md; fixed by edit",
+        "Several unsourced customs stated as fact (fejesa details, flag timing, money pinning, multi-day length, white-gown trend, mixed-marriage FAQ); fixed by edits",
+        "UNESCO wording errors (iso-polyphony 'world heritage'; xhubleta element name; male singers attribution); fixed by edits",
+        "No prices, no vendor names, no em dashes, no 'budget', Australian English OK; no political framing (protest line is Smartraveller safety advice, kept)"
+      ]
+    },
+    "originality": {
+      "pass": false,
+      "matches": [
+        "'decorated convoy' echoes old page item 5 'decorated car convoy' (fixed by edit)",
+        "Numbered H3 listicle structure echoes old page (numbers removed by edit)",
+        "scan_copy.py: 0 overlaps"
+      ]
+    },
+    "banned_phrases_found": [],
+    "needs_signoff": [
+      "No prices in the draft. fact_110 (DFAT CNI and apostille fees) stated only as 'a fee applies'; Nic to sign off if any amount is ever added."
+    ]
+  }
+}
