@@ -6,3 +6,4 @@
 00:51 03 planner-sme batch A complete 10 facts (UNESCO xhubleta 2022 USL; Wikipedia for paja, dhunti, Shkodra dress); waiting on batch B
 00:51 03 planner-sme batch B complete 13 facts (UNESCO iso-polyphony names weddings; Rome embassy, Smartraveller, DFAT); Albanian civil procedure unsourced; merged; writer launched
 00:53 05 luxury-writer complete ~2,657 words; 0 VERIFY; 8 image slots; first draft sent
+00:54 07 icp-reader sceptic complete
