@@ -8,3 +8,4 @@
 23:18 07 icp-reader uhnw complete; no must-fix (packages link reads mass-market)
 23:18 07 icp-reader sceptic, search_visitor complete; no must-fix; waiting on planner_couple, funding_parent, editor
 23:18 07 icp-reader funding_parent, planner_couple complete; no must-fix; waiting on editor
+23:20 06 editor pass_with_edits 4.29; 10 edits applied -> 05-draft-r2.md (H2 rename accepted); 0 VERIFY; panel chair launched

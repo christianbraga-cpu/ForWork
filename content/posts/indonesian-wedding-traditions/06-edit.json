@@ -1,0 +1,429 @@
+{
+  "agent": "editor",
+  "task_id": "indonesian-wedding-traditions",
+  "stage": "06",
+  "status": "complete",
+  "round": 1,
+  "inputs_used": [
+    "content/posts/indonesian-wedding-traditions/05-draft.md",
+    "content/posts/indonesian-wedding-traditions/01-brief.json",
+    "content/posts/indonesian-wedding-traditions/02-seo.json",
+    "content/posts/indonesian-wedding-traditions/03-source-pack.json",
+    "content/posts/indonesian-wedding-traditions/04-images.json",
+    "content/posts/indonesian-wedding-traditions/02-research/pages/smartraveller.md",
+    "content/posts/indonesian-wedding-traditions/02-research/pages/old-indonesian.md",
+    "content-system/brand/brand-facts.md",
+    "content-system/seo/link-map.csv",
+    "content-system/schemas/06-edit.schema.json"
+  ],
+  "self_qa": {
+    "checks": [
+      {
+        "check": "scan_copy.py run",
+        "pass": true,
+        "note": "0 banned, 0 flagged, 0 dashes, 0 overlaps"
+      },
+      {
+        "check": "Every factual sentence logged",
+        "pass": true,
+        "note": "46 entries"
+      },
+      {
+        "check": "Each edit old occurs exactly once; all apply cleanly",
+        "pass": true,
+        "note": "10 edits verified by script; post-edit draft has no em dash, 'budget' or 'first idea to the last dance'"
+      },
+      {
+        "check": "Keyword in title, first 100 words and one H2",
+        "pass": true,
+        "note": "H2 after edit 1"
+      },
+      {
+        "check": "Exactly 4 one-sentence Key takeaways",
+        "pass": true
+      },
+      {
+        "check": "Customs tied to the group their source names; royal details framed as palace practice",
+        "pass": true,
+        "note": "uang panai fixed by edit 7"
+      },
+      {
+        "check": "UNESCO kebaya and Bali dance not cited for a wedding link; batik is",
+        "pass": true,
+        "note": "kebaya sentence tightened by edit 6"
+      },
+      {
+        "check": "Internal links in link-map, 02-seo.json or draft pillar; UTM utm_medium=content",
+        "pass": true,
+        "note": "/expert-advice/wedding-traditions (draft pillar), Javanese rituals page (02-seo, verified 2026-11-03), /guides/nikah-ceremony, /expert-advice/do-you-have-to-register-an-overseas-marriage-at-home, /destinations/asia/bali, /wonderland-concierge, /destination-wedding-packages"
+      },
+      {
+        "check": "Image slots match 04-images, no reference-only",
+        "pass": true,
+        "note": "slot comments only"
+      },
+      {
+        "check": "Decision consistent with scores",
+        "pass": true,
+        "note": "avg 4.29, none below 4, no blocking issues"
+      }
+    ],
+    "confidence": 0.8
+  },
+  "open_questions": [
+    {
+      "to": "orchestrator",
+      "question": "Pillar /expert-advice/wedding-traditions is draft in link-map.csv; publish it first or together, or drop the intro link.",
+      "blocking": false
+    },
+    {
+      "to": "orchestrator",
+      "question": "Edit 1 renames the first H2 from the 02-seo outline wording to carry the keyword; accept or keep the outline wording and place the keyword in another H2.",
+      "blocking": false
+    },
+    {
+      "to": "orchestrator",
+      "question": "All images are status 'needed' (no licensed candidates); human sourcing required before CMS.",
+      "blocking": false
+    }
+  ],
+  "assumptions": [
+    "'Often told' customs without sources are acceptable as long as no meaning is stated as fact.",
+    "smartraveller.md is a valid source for the criminal code and Aceh lines.",
+    "The blessing line is a fair reading of fact_106 (registration required for legality) in the non-Muslim paragraph, so it stays."
+  ],
+  "verify_items": [],
+  "tools_used": [
+    "Bash"
+  ],
+  "next_agent": [
+    "icp-reader"
+  ],
+  "payload": {
+    "draft_file": "content/posts/indonesian-wedding-traditions/05-draft.md",
+    "rubric": {
+      "voice": 4.5,
+      "expertise": 4.5,
+      "accuracy": 4,
+      "seo_fit": 4,
+      "commercial_link": 4,
+      "structure": 4.5,
+      "brief_fit": 4.5
+    },
+    "blocking_issues": [],
+    "decision": "pass_with_edits",
+    "edits": [
+      {
+        "location": "H2 'Why Indonesia has many wedding traditions, not one'",
+        "issue": "Primary keyword is in no H2 (rubric requires one). Minimal rename keeps the outline's intent.",
+        "fix": "Replace with: ## Why Indonesian wedding traditions are many, not one",
+        "old": "## Why Indonesia has many wedding traditions, not one",
+        "new": "## Why Indonesian wedding traditions are many, not one"
+      },
+      {
+        "location": "Javanese: Panggih, MC narration",
+        "issue": "'often' generalises a single study of one style; keep the journal attribution light.",
+        "fix": "Replace with: In some Javanese weddings a master of ceremonies narrates panggih in poetic Javanese.",
+        "old": "A master of ceremonies often narrates panggih in poetic Javanese.",
+        "new": "In some Javanese weddings a master of ceremonies narrates panggih in poetic Javanese."
+      },
+      {
+        "location": "Akad nikah in Muslim weddings, KHI paragraph",
+        "issue": "States the KHI sets who must be present and what is given; the source pack only read the 1991 Instruction, and the KHI requirements are an open verify item. Remove the claim, keep the advice.",
+        "fix": "Replace with: The detailed requirements are best explained by the officiant, so ask the family's imam or the local office rather than relying on a list online.",
+        "old": "The requirements for who must be present and what is given are set there and explained by the officiant, so ask the family's imam or the local office rather than relying on a list online.",
+        "new": "The detailed requirements are best explained by the officiant, so ask the family's imam or the local office rather than relying on a list online."
+      },
+      {
+        "location": "Kebaya and batik, UNESCO batik sentence",
+        "issue": "UNESCO says special varieties are 'incorporated' into celebrations; 'woven' misdescribes batik, which is drawn in wax, and misquotes the source.",
+        "fix": "Replace with: its own description says special varieties are part of celebrations of marriage and pregnancy",
+        "old": "its own description says special varieties are woven into celebrations of marriage and pregnancy",
+        "new": "its own description says special varieties are part of celebrations of marriage and pregnancy"
+      },
+      {
+        "location": "Kebaya and batik, motifs line",
+        "issue": "'Families often choose particular motifs' is unsourced and stated as fact; frame it as often told, with no meanings.",
+        "fix": "Replace with: Particular motifs are often said to suit a wedding, and the meanings told about each one vary by region.",
+        "old": "Families often choose particular motifs for a wedding, and the meanings told about each one vary by region.",
+        "new": "Particular motifs are often said to suit a wedding, and the meanings told about each one vary by region."
+      },
+      {
+        "location": "Kebaya and batik, last kebaya sentence",
+        "issue": "'many brides choose it as formal dress' is unsourced but carries the fact_05 marker; fact_05 also lists casual events and gatherings. Keep only what UNESCO says.",
+        "fix": "Replace with: Its listing speaks of casual and formal events, social gatherings and festivals, and does not mention weddings.",
+        "old": "Its listing speaks of formal events and festivals rather than weddings, but many brides choose it as formal dress.",
+        "new": "Its listing speaks of casual and formal events, social gatherings and festivals, and does not mention weddings."
+      },
+      {
+        "location": "Bugis uang panai and mappacci, first paragraph",
+        "issue": "Ties the custom to South Sulawesi, but the only source studied Bugis-Makassar people in Bontang, East Kalimantan. Name the group and the community the source names.",
+        "fix": "Replace with: Among Bugis and Makassar families, uang panai is a gift from the groom's side to the bride's family. A 2020 thesis studying one Bugis-Makassar community in Bontang, East Kalimantan, found",
+        "old": "Among Bugis and Makassar families of South Sulawesi, uang panai is a gift from the groom's side to the bride's family. A 2020 thesis studying one community found",
+        "new": "Among Bugis and Makassar families, uang panai is a gift from the groom's side to the bride's family. A 2020 thesis studying one Bugis-Makassar community in Bontang, East Kalimantan, found"
+      },
+      {
+        "location": "Bugis uang panai, adat sentence",
+        "issue": "'agreed between the two families' reads as if the obligation itself is negotiated; the source says the amount is agreed. No figure is given.",
+        "fix": "Replace with: In adat it is treated as an obligation, and what is given is agreed between the two families.",
+        "old": "In adat it is treated as an obligation, agreed between the two families.",
+        "new": "In adat it is treated as an obligation, and what is given is agreed between the two families."
+      },
+      {
+        "location": "Can Australians marry legally in Bali?, 'What to check'",
+        "issue": "Inaccurate: the Embassy page does list documents (CNI, passports, birth certificates, proof of a previous marriage ending, photos) and says requirements vary by province.",
+        "fix": "Replace with: Same-sex marriage and fees are not set out on the pages we read, and the Embassy says document requirements vary by province.",
+        "old": "Same-sex marriage, fees and document details are not set out on the pages we read.",
+        "new": "Same-sex marriage and fees are not set out on the pages we read, and the Embassy says document requirements vary by province."
+      },
+      {
+        "location": "Legal section, Wedded Advisor line",
+        "issue": "Match brand-facts.md exactly: the fee is agreed in writing before any work begins; inclusions are confirmed in writing before the couple commits.",
+        "fix": "Replace with: with the fee agreed in writing before any work begins and the inclusions confirmed in writing before you commit.",
+        "old": "with the fee and inclusions agreed in writing before you commit.",
+        "new": "with the fee agreed in writing before any work begins and the inclusions confirmed in writing before you commit."
+      }
+    ],
+    "fact_check_log": [
+      {
+        "claim": "No single Indonesian wedding; customs vary by community and faith",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Embassy lists recognised religions incl. Islam, Hinduism, Buddhism, Christianity",
+        "status": "confirmed",
+        "fact_id": "fact_103"
+      },
+      {
+        "claim": "Kraton account is of a royal wedding, simplified over time; bride's side hosts",
+        "status": "confirmed",
+        "fact_id": "fact_07"
+      },
+      {
+        "claim": "Three stages; marriage with birth and death as key passages",
+        "status": "confirmed",
+        "fact_id": "fact_15"
+      },
+      {
+        "claim": "Siraman cleanses both; mother, future mother-in-law, elders; separate, bride first",
+        "status": "confirmed",
+        "fact_id": "fact_08"
+      },
+      {
+        "claim": "Seven springs water at court, framed as royal practice",
+        "status": "confirmed",
+        "fact_id": "fact_09"
+      },
+      {
+        "claim": "Sundanese siraman 'often said'",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Ngerik shaving to shape paes ageng outline",
+        "status": "confirmed",
+        "fact_id": "fact_10"
+      },
+      {
+        "claim": "Midodareni night before; bidadari; nymphs near midnight; Jaka Tarub and Nawangsih",
+        "status": "confirmed",
+        "fact_id": "fact_11"
+      },
+      {
+        "claim": "Groom's family visit 'often told'",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Akad nikah core rite, ijab qobul; royal version at Masjid Panepen, Sultan officiates",
+        "status": "confirmed",
+        "fact_id": "fact_12"
+      },
+      {
+        "claim": "Panggih after legal marriage; gantal groom first; foot-washing; egg broken",
+        "status": "confirmed",
+        "fact_id": "fact_13"
+      },
+      {
+        "claim": "Egg-stepping and sindur walk 'often told', no meanings",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Tampa kaya and dhahar klimah",
+        "status": "confirmed",
+        "fact_id": "fact_14"
+      },
+      {
+        "claim": "Widyaparwa 2021 study of panggih narration, Surakarta style (edit 2 softens 'often')",
+        "status": "confirmed",
+        "fact_id": "fact_16"
+      },
+      {
+        "claim": "KHI Book I marriage; 1991 Presidential Instruction to religious affairs ministry",
+        "status": "confirmed",
+        "fact_id": "fact_17"
+      },
+      {
+        "claim": "KHI sets who must be present and what is given",
+        "status": "removed",
+        "fact_id": "fact_17"
+      },
+      {
+        "claim": "KUA performs Muslim weddings, issues Buku Nikah",
+        "status": "confirmed",
+        "fact_id": "fact_106"
+      },
+      {
+        "claim": "Pawiwahan from Sanskrit wiwaha; sacred rite; three witnesses (study)",
+        "status": "confirmed",
+        "fact_id": "fact_112"
+      },
+      {
+        "claim": "Pawiwahan sequence (study)",
+        "status": "confirmed",
+        "fact_id": "fact_113"
+      },
+      {
+        "claim": "Mekala-kalaan: bamboo, step three times, egg, holy water, white thread",
+        "status": "confirmed",
+        "fact_id": "fact_114"
+      },
+      {
+        "claim": "Mewidhi widana by high priest; prayers at groom's shrine; bride's leave-taking",
+        "status": "confirmed",
+        "fact_id": "fact_115"
+      },
+      {
+        "claim": "UNESCO three genres of Balinese dance, 2015, gamelan; no wedding link claimed",
+        "status": "confirmed",
+        "fact_id": "fact_100"
+      },
+      {
+        "claim": "UNESCO does not discuss weddings; traditions, customs, religious values",
+        "status": "confirmed",
+        "fact_id": "fact_101"
+      },
+      {
+        "claim": "UNESCO batik 2009; marriage and pregnancy; slings to funerary cloth (edit 4 fixes 'woven')",
+        "status": "confirmed",
+        "fact_id": "fact_01, fact_02"
+      },
+      {
+        "claim": "Batik method; handed down in families",
+        "status": "confirmed",
+        "fact_id": "fact_03"
+      },
+      {
+        "claim": "Wedding motifs (edit 5 reframes as often said)",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Kebaya joint 2024 inscription, five states",
+        "status": "confirmed",
+        "fact_id": "fact_04"
+      },
+      {
+        "claim": "Kebaya description",
+        "status": "confirmed",
+        "fact_id": "fact_06"
+      },
+      {
+        "claim": "'many brides choose it as formal dress'",
+        "status": "removed",
+        "fact_id": "fact_05"
+      },
+      {
+        "claim": "Suntiang: gold-coloured tiers, anak daro, motifs, materials, weight symbolism (Gorga 2019, abstract)",
+        "status": "confirmed",
+        "fact_id": "fact_116"
+      },
+      {
+        "claim": "Suntiang gadang of Padang Pariaman",
+        "status": "confirmed",
+        "fact_id": "fact_117"
+      },
+      {
+        "claim": "Malam bainai 'often told'",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Ulos means blanket; mangulosi for couple; informants say married in adat; births and mourning",
+        "status": "confirmed",
+        "fact_id": "fact_118"
+      },
+      {
+        "claim": "Mangulosi by higher standing, on shoulders, blessing",
+        "status": "confirmed",
+        "fact_id": "fact_120"
+      },
+      {
+        "claim": "Toba Batak sequence, mangulosi after blessing, cloth by kinship position",
+        "status": "confirmed",
+        "fact_id": "fact_119"
+      },
+      {
+        "claim": "Uang panai separate from mahar, pays celebration, respect, adat obligation (edits 7-8 fix group and wording)",
+        "status": "confirmed",
+        "fact_id": "fact_110"
+      },
+      {
+        "claim": "Mappacci 'often told'",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Same religion or one converts, Law 1/1974 as Embassy summarises",
+        "status": "confirmed",
+        "fact_id": "fact_104"
+      },
+      {
+        "claim": "Conducted per religion and laws of both countries",
+        "status": "confirmed",
+        "fact_id": "fact_103"
+      },
+      {
+        "claim": "CNI from Embassy Jakarta or a CG; Bali CG covers Bali, NTB, NTT; 3 months; cannot marry at Embassy",
+        "status": "confirmed",
+        "fact_id": "fact_105"
+      },
+      {
+        "claim": "Notice at least 10 days; registration required to be legal; blessing-only line is a fair reading",
+        "status": "confirmed",
+        "fact_id": "fact_106"
+      },
+      {
+        "claim": "Overseas marriage generally recognised; cannot register in Australia; talk to a lawyer",
+        "status": "confirmed",
+        "fact_id": "fact_107, fact_108"
+      },
+      {
+        "claim": "Same-sex marriage, fees not on pages read; documents vary by province (edit 9)",
+        "status": "confirmed",
+        "fact_id": "fact_106"
+      },
+      {
+        "claim": "Smartraveller 21 October 2026: high degree of caution; reconsider Papua Pegunungan and Papua Tengah; Bali outside; criminal code; Aceh Sharia",
+        "status": "confirmed",
+        "fact_id": "fact_109"
+      },
+      {
+        "claim": "Wedded Advisor single point of contact, fee and inclusions in writing (edit 10 aligns)",
+        "status": "confirmed",
+        "fact_id": "brand-facts.md"
+      }
+    ],
+    "compliance": {
+      "pass": true,
+      "issues": [
+        "No prices, amounts or vendor names; no em dashes; no 'budget'; Australian English; brand terms correct after edit 10.",
+        "Legal and travel lines match Embassy (fact_103 to fact_107) and smartraveller.md; 'as at November 2026' dated."
+      ]
+    },
+    "originality": {
+      "pass": true,
+      "matches": [
+        "Only 7-word overlaps with old page are the Javanese link slug/title and the Embassy URL; no reused prose."
+      ]
+    },
+    "banned_phrases_found": [],
+    "needs_signoff": [],
+    "average": 4.29
+  }
+}
