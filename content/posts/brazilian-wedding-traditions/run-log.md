@@ -8,3 +8,4 @@
 01:35 07 icp-reader search_visitor complete; no must-fix (takeaway mix)
 01:35 07 icp-reader sceptic, uhnw complete; no must-fix; waiting on planner_couple, funding_parent, editor
 01:35 07 icp-reader funding_parent, planner_couple complete; no must-fix; waiting on editor
+01:36 06 editor pass_with_edits 4.29; 12 edits applied -> 05-draft-r2.md; 'last dance' slogan stripped from edit 8; 0 VERIFY; panel chair launched

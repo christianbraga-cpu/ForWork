@@ -1,0 +1,400 @@
+{
+  "agent": "editor",
+  "task_id": "brazilian-wedding-traditions",
+  "stage": "06",
+  "status": "complete",
+  "round": 1,
+  "inputs_used": [
+    "content/posts/brazilian-wedding-traditions/05-draft.md",
+    "content/posts/brazilian-wedding-traditions/01-brief.json",
+    "content/posts/brazilian-wedding-traditions/02-seo.json",
+    "content/posts/brazilian-wedding-traditions/03-source-pack.json",
+    "content/posts/brazilian-wedding-traditions/04-images.json",
+    "content/posts/brazilian-wedding-traditions/02-research/pages/smartraveller.md",
+    "content/posts/brazilian-wedding-traditions/02-research/pages/old-brazilian.md",
+    "content-system/brand/brand-facts.md",
+    "content-system/seo/link-map.csv",
+    "content-system/schemas/06-edit.schema.json"
+  ],
+  "self_qa": {
+    "checks": [
+      {
+        "check": "scan_copy.py run",
+        "pass": true,
+        "note": "0 banned, 0 flagged, 0 dashes, 0 overlaps"
+      },
+      {
+        "check": "Every factual sentence logged",
+        "pass": true,
+        "note": "40 entries"
+      },
+      {
+        "check": "Each edit old occurs exactly once in 05-draft.md; all apply cleanly",
+        "pass": true,
+        "note": "12 edits verified by script; post-edit draft has 0 [[VERIFY]], no 'honeymoon', no em dashes, no 'budget'"
+      },
+      {
+        "check": "Keyword in title, first 100 words and one H2",
+        "pass": true
+      },
+      {
+        "check": "Exactly 4 one-sentence Key takeaways",
+        "pass": true
+      },
+      {
+        "check": "Internal links in link-map or draft pillar/Portuguese guide",
+        "pass": true,
+        "note": "/expert-advice/wedding-traditions (draft pillar), /expert-advice/portuguese-wedding-traditions, /expert-advice/do-you-have-to-register-an-overseas-marriage-at-home, /destinations/latin-america-caribbean, /wonderland-concierge all in link-map; UTM utm_medium=content"
+      },
+      {
+        "check": "UNESCO forms not presented as wedding customs",
+        "pass": true,
+        "note": "Draft says explicitly neither is a wedding custom"
+      },
+      {
+        "check": "Image slots match 04-images, no reference-only",
+        "pass": true,
+        "note": "slot comments only, none filled"
+      },
+      {
+        "check": "Decision consistent with scores",
+        "pass": true,
+        "note": "avg 4.29, no criterion below 4, no blocking issues, small edits"
+      }
+    ],
+    "confidence": 0.8
+  },
+  "open_questions": [
+    {
+      "to": "orchestrator",
+      "question": "Pillar /expert-advice/wedding-traditions is draft in link-map.csv; publish it first or together, or drop both links.",
+      "blocking": false
+    },
+    {
+      "to": "orchestrator",
+      "question": "Source-pack verify items (Código Civil arts. 1.515, 1.516, 1.534) stay open in 03 but the article no longer states anything that depends on them after edits 5 to 7.",
+      "blocking": false
+    }
+  ],
+  "assumptions": [
+    "Customs without sources (hand move, names in hem, Festa Junina mock wedding, tie, bem-casado symbolism) are acceptable as general 'often told' content per the brief.",
+    "smartraveller.md research page is a valid source for Smartraveller lines per the orchestrator."
+  ],
+  "verify_items": [],
+  "tools_used": [
+    "Bash"
+  ],
+  "next_agent": [
+    "icp-reader"
+  ],
+  "payload": {
+    "draft_file": "05-draft.md",
+    "rubric": {
+      "voice": 4,
+      "expertise": 4,
+      "accuracy": 4,
+      "seo_fit": 5,
+      "commercial_link": 4,
+      "structure": 5,
+      "brief_fit": 4
+    },
+    "average": 4.29,
+    "blocking_issues": [],
+    "decision": "pass_with_edits",
+    "edits": [
+      {
+        "location": "Celebration: The groom's tie",
+        "issue": "Reads as a money collection and echoes the old page's 'sold'/'honeymoon auction' framing; unsourced, so keep it light and general.",
+        "fix": "Replace with: At some receptions, friends playfully cut the groom's tie into small pieces and hand them round as keepsakes. It is often told that guests offer a small token for the couple in return, but it is a light-hearted moment, and many families leave it out.",
+        "old": "At some receptions, friends cut the groom's tie into small pieces and offer them to guests, who give a contribution towards the couple's new life in return. It is often told that the money helps with the honeymoon.",
+        "new": "At some receptions, friends playfully cut the groom's tie into small pieces and hand them round as keepsakes. It is often told that guests offer a small token for the couple in return, but it is a light-hearted moment, and many families leave it out."
+      },
+      {
+        "location": "Celebration: Bem-casados and docinhos",
+        "issue": "Unsourced generalisation about how families judge a wedding.",
+        "fix": "Replace with: Brigadeiros are the best known.",
+        "old": "Brigadeiros are the best known, and many families judge a wedding by how generous the sweets table is.",
+        "new": "Brigadeiros are the best known."
+      },
+      {
+        "location": "Santo Antônio section",
+        "issue": "'Many families call' states a sourced-sounding fact; Britannica does not mention Brazil, so keep the Brazil link as 'often told'.",
+        "fix": "Replace with: In Brazil, Santo Antônio is often described as the marrying saint. It is often told that people hoping to find a partner ask for his help in June, and the small rituals for doing so differ from family to family.",
+        "old": "In Brazil, many families call Santo Antônio the marrying saint. It is often told that people hoping to find a partner ask for his help in June, and the small rituals for doing so differ from family to family.",
+        "new": "In Brazil, Santo Antônio is often described as the marrying saint. It is often told that people hoping to find a partner ask for his help in June, and the small rituals for doing so differ from family to family."
+      },
+      {
+        "location": "How late the party runs",
+        "issue": "Unsupported superlative.",
+        "fix": "Replace with: this is a detail that often differs from what Brazilian guests expect.",
+        "old": "this is the single detail most likely to differ from what Brazilian guests expect.",
+        "new": "this is a detail that often differs from what Brazilian guests expect."
+      },
+      {
+        "location": "Habilitação at the cartório, paragraph 1",
+        "issue": "The only [[VERIFY]] can become a 'check with the cartório' line, which removes the need for it.",
+        "fix": "Replace with: In Brazil, start with the cartório de registro civil (the civil registry office). Check with the cartório what makes your marriage legally valid there, and whether a religious ceremony can also carry civil effect once registered.",
+        "old": "In Brazil, the civil marriage before the cartório de registro civil (the civil registry office) is the legal act of marriage. [[VERIFY: civil marriage at the cartório de registro civil as the legal act, and whether a religious ceremony registered there can have civil effect, against Código Civil arts. 1.512 to 1.516 on planalto.gov.br]]",
+        "new": "In Brazil, start with the cartório de registro civil (the civil registry office). Check with the cartório what makes your marriage legally valid there, and whether a religious ceremony can also carry civil effect once registered."
+      },
+      {
+        "location": "Habilitação at the cartório, paragraph 2",
+        "issue": "Definition of habilitação ('checks that both partners are free to marry') is not in the source pack; tie it to the CNJ 175 fact only.",
+        "fix": "Replace with: Before a civil marriage comes a process called habilitação. <!-- fact_103 --> The steps,",
+        "old": "Before the ceremony, couples go through a process called habilitação, in which the cartório checks that both partners are free to marry. The steps,",
+        "new": "Before a civil marriage comes a process called habilitação. <!-- fact_103 --> The steps,"
+      },
+      {
+        "location": "Habilitação at the cartório, paragraph 3",
+        "issue": "Now duplicates the rewritten paragraph 1; cut.",
+        "fix": "Delete.",
+        "old": "Whether a religious ceremony can also carry civil effect, and what registering it involves, is another question for the cartório directly.\n\n",
+        "new": ""
+      },
+      {
+        "location": "Recognition back in Australia: Advisor line",
+        "issue": "Advisor wording must match brand-facts.md exactly; 'for venue, travel and suppliers' is not in brand facts.",
+        "fix": "Replace with: A Wedded Advisor is your single point of contact from first idea to the last dance, with the fee agreed in writing before any work begins and inclusions confirmed in writing before you commit.",
+        "old": "A Wedded Advisor is your single point of contact for venue, travel and suppliers, with the fee and inclusions agreed in writing before you commit.",
+        "new": "A Wedded Advisor is your single point of contact from first idea to the last dance, with the fee agreed in writing before any work begins and inclusions confirmed in writing before you commit."
+      },
+      {
+        "location": "Smartraveller advice level, paragraph 2",
+        "issue": "Unsourced claim about what most couples do.",
+        "fix": "Replace with: For a wedding, consider places outside those states.",
+        "old": "For a wedding, most couples look at places outside those states.",
+        "new": "For a wedding, consider places outside those states."
+      },
+      {
+        "location": "Smartraveller bullets: inauguration",
+        "issue": "'avoid protests' is not in the Smartraveller summary read; keep to the source.",
+        "fix": "Replace with: may bring demonstrations and increased security before, during and after.",
+        "old": "may bring demonstrations and tighter security; avoid protests.",
+        "new": "may bring demonstrations and increased security before, during and after."
+      },
+      {
+        "location": "FAQ: What happens if I marry a Brazilian in Brazil?",
+        "issue": "Stated as fact without a source; phrase as a check.",
+        "fix": "Replace with: A civil marriage goes through the cartório de registro civil and a process called habilitação, so confirm the steps, documents and fees with the cartório and the Australian Embassy in Brasília.",
+        "old": "The marriage takes place at the cartório de registro civil after the habilitação process, and the steps, documents and fees are confirmed by the cartório and the Australian Embassy in Brasília.",
+        "new": "A civil marriage goes through the cartório de registro civil and a process called habilitação, so confirm the steps, documents and fees with the cartório and the Australian Embassy in Brasília."
+      },
+      {
+        "location": "FAQ: How much does it cost to get married in Brazil?",
+        "issue": "Cut the claim that the Advisor costs the celebration (orchestrator rule).",
+        "fix": "Replace with: Celebration costs depend on the place, the season and the guest list, so ask for every quote and its inclusions in writing.",
+        "old": "Celebration costs depend on the place, the season and the guest list, and your Wedded Advisor can cost them on your dates.",
+        "new": "Celebration costs depend on the place, the season and the guest list, so ask for every quote and its inclusions in writing."
+      }
+    ],
+    "fact_check_log": [
+      {
+        "claim": "Noivado definition (Michaelis)",
+        "status": "confirmed",
+        "fact_id": "fact_08"
+      },
+      {
+        "claim": "Aliança defined as engagement or marriage ring (Michaelis)",
+        "status": "confirmed",
+        "fact_id": "fact_07"
+      },
+      {
+        "claim": "Right-to-left hand move (no source; kept general as 'often told' or customs framing, no origins or amounts, acceptable per brief)",
+        "status": "unsupported"
+      },
+      {
+        "claim": "Chá de panela and chá de cozinha (Michaelis)",
+        "status": "confirmed",
+        "fact_id": "fact_04"
+      },
+      {
+        "claim": "Madrinha as witness at baptism or wedding (Priberam)",
+        "status": "confirmed",
+        "fact_id": "fact_06"
+      },
+      {
+        "claim": "Paraninfo as groom's padrinho (Priberam)",
+        "status": "confirmed",
+        "fact_id": "fact_09"
+      },
+      {
+        "claim": "Number of legal witnesses left to the cartório",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Saint Anthony born Lisbon 1195, died 13 June 1231, feast 13 June",
+        "status": "confirmed",
+        "fact_id": "fact_01"
+      },
+      {
+        "claim": "Patron of Portugal and Padua, lost things (Britannica)",
+        "status": "confirmed",
+        "fact_id": "fact_02"
+      },
+      {
+        "claim": "Lisbon basil plant and televised mass wedding",
+        "status": "confirmed",
+        "fact_id": "fact_03"
+      },
+      {
+        "claim": "Santo Antônio as marrying saint in Brazil (no source; kept general as 'often told' or customs framing, no origins or amounts, acceptable per brief)",
+        "status": "unsupported"
+      },
+      {
+        "claim": "Festa Junina mock wedding (general) (no source; kept general as 'often told' or customs framing, no origins or amounts, acceptable per brief)",
+        "status": "unsupported"
+      },
+      {
+        "claim": "Names inside the dress (no source; kept general as 'often told' or customs framing, no origins or amounts, acceptable per brief)",
+        "status": "unsupported"
+      },
+      {
+        "claim": "Bem-casado definition (Priberam); 'well married' as plain translation",
+        "status": "confirmed",
+        "fact_id": "fact_104"
+      },
+      {
+        "claim": "Two halves symbolism (no source; kept general as 'often told' or customs framing, no origins or amounts, acceptable per brief)",
+        "status": "unsupported"
+      },
+      {
+        "claim": "Groom's tie custom (no source; kept general as 'often told' or customs framing, no origins or amounts, acceptable per brief)",
+        "status": "unsupported"
+      },
+      {
+        "claim": "Samba de Roda inscribed 2008, description",
+        "status": "confirmed",
+        "fact_id": "fact_100"
+      },
+      {
+        "claim": "Samba de Roda performance settings, roda open to all",
+        "status": "confirmed",
+        "fact_id": "fact_101"
+      },
+      {
+        "claim": "Frevo inscribed 2012, passo",
+        "status": "confirmed",
+        "fact_id": "fact_102"
+      },
+      {
+        "claim": "Civil marriage at cartório as legal act (VERIFY removed by edit; rephrased as a check with the cartório)",
+        "status": "verify"
+      },
+      {
+        "claim": "CNJ Resolution 175 same-sex marriage, refusal reported to judge",
+        "status": "confirmed",
+        "fact_id": "fact_103"
+      },
+      {
+        "claim": "Embassy will not advise which documents; cartório-witnessed signature for mailed CNI",
+        "status": "confirmed",
+        "fact_id": "fact_110"
+      },
+      {
+        "claim": "CNI issued by DFAT, citizen or PR requirement",
+        "status": "confirmed",
+        "fact_id": "fact_105"
+      },
+      {
+        "claim": "Fee applies to CNI, paid on application",
+        "status": "confirmed",
+        "fact_id": "fact_106"
+      },
+      {
+        "claim": "Single Status or No Record Result Certificate alternatives",
+        "status": "confirmed",
+        "fact_id": "fact_107"
+      },
+      {
+        "claim": "CNI signed before authorised witness; English translation",
+        "status": "confirmed",
+        "fact_id": "fact_108"
+      },
+      {
+        "claim": "Apostille Convention in force in Brazil since August 2016 (CNJ)",
+        "status": "confirmed",
+        "fact_id": "fact_112"
+      },
+      {
+        "claim": "Notarial services Brasília and São Paulo by appointment, fees; outside São Paulo book Brasília",
+        "status": "confirmed",
+        "fact_id": "fact_109"
+      },
+      {
+        "claim": "Rio Honorary Consulate not authorised for notarial services",
+        "status": "confirmed",
+        "fact_id": "fact_111"
+      },
+      {
+        "claim": "Smartraveller level 'Exercise a high degree of caution', no higher-level areas, updated 27 Oct 2026",
+        "status": "confirmed",
+        "fact_id": "smartraveller.md"
+      },
+      {
+        "claim": "Border states and Foz do Iguaçu",
+        "status": "confirmed",
+        "fact_id": "smartraveller.md"
+      },
+      {
+        "claim": "Visa before arrival; dual nationals Brazilian passport",
+        "status": "confirmed",
+        "fact_id": "fact_113"
+      },
+      {
+        "claim": "Male dual nationals military service",
+        "status": "confirmed",
+        "fact_id": "smartraveller.md"
+      },
+      {
+        "claim": "Same-sex relationships legal, not always accepted (rural)",
+        "status": "confirmed",
+        "fact_id": "fact_113"
+      },
+      {
+        "claim": "Insurance with evacuation; wet seasons; wildfires May to September; drink spiking and methanol; yellow fever certificate",
+        "status": "confirmed",
+        "fact_id": "smartraveller.md"
+      },
+      {
+        "claim": "Inauguration 5 January 2027 demonstrations and security",
+        "status": "confirmed",
+        "fact_id": "smartraveller.md"
+      },
+      {
+        "claim": "'avoid protests'",
+        "status": "removed"
+      },
+      {
+        "claim": "Consular assistance Brasília and São Paulo",
+        "status": "confirmed",
+        "fact_id": "smartraveller.md"
+      },
+      {
+        "claim": "Advisor single point of contact; fee and inclusions in writing",
+        "status": "confirmed",
+        "fact_id": "brand-facts.md"
+      },
+      {
+        "claim": "Advisor 'can cost them on your dates'",
+        "status": "removed"
+      }
+    ],
+    "compliance": {
+      "pass": true,
+      "issues": [
+        "Advisor line reworded to brand-facts wording (edit 8).",
+        "Advisor 'cost them on your dates' cut (edit 12).",
+        "No prices, amounts or vendor names; no em dashes; no 'budget'; Australian English."
+      ]
+    },
+    "originality": {
+      "pass": true,
+      "matches": [
+        "scan_copy.py: 0 overlaps with 02-research/pages (incl. old-brazilian.md).",
+        "Groom's tie 'honeymoon' money framing echoed the old page's honeymoon auction idea; removed by edit 1."
+      ]
+    },
+    "banned_phrases_found": [],
+    "needs_signoff": []
+  }
+}
