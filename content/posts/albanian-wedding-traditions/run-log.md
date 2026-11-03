@@ -13,3 +13,4 @@
 01:04 07b icp-panel-chair revise; enquire 2.5; 0 must_fix, 3 should_fix, 1 consider; final pass launched
 01:05 08 luxury-writer complete ~2,680 words; 0 VERIFY; scan clean; 8b+CRO+distribution launched
 01:06 09 cro-specialist complete; 4 copy changes applied (primary CTA moved before the legal section)
+01:06 10 distribution complete 3 pins, 8-slide carousel, newsletter
