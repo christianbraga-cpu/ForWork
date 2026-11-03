@@ -8,3 +8,4 @@
 02:34 07 icp-reader search_visitor complete; no must-fix (list of customs up top; fewer hedges)
 02:34 07 icp-reader uhnw, funding_parent complete; no must-fix; waiting on planner_couple, sceptic, editor
 02:34 07 icp-reader sceptic complete; no must-fix; waiting on planner_couple, editor
+02:34 07 icp-reader planner_couple complete; no must-fix; waiting on editor
