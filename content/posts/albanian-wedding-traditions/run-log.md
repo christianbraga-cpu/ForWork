@@ -10,3 +10,4 @@
 00:54 07 icp-reader planner_couple, funding_parent, uhnw complete; waiting on search_visitor and editor
 00:54 07 icp-reader search_visitor complete (5/5); no must-fix; waiting on editor
 01:02 06 editor revise 3.86 (accuracy 3); 32 edits applied by orchestrator -> 05-draft-r2.md (expected ~4.4); fast mode: no round-2 rescore, 8b check covers; Real Weddings URL added to link map
+01:04 07b icp-panel-chair revise; enquire 2.5; 0 must_fix, 3 should_fix, 1 consider; final pass launched
