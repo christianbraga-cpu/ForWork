@@ -7,3 +7,4 @@
 00:51 03 planner-sme batch B complete 13 facts (UNESCO iso-polyphony names weddings; Rome embassy, Smartraveller, DFAT); Albanian civil procedure unsourced; merged; writer launched
 00:53 05 luxury-writer complete ~2,657 words; 0 VERIFY; 8 image slots; first draft sent
 00:54 07 icp-reader sceptic complete
+00:54 07 icp-reader planner_couple, funding_parent, uhnw complete; waiting on search_visitor and editor
