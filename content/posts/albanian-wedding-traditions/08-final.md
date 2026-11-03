@@ -14,7 +14,7 @@ This guide follows those customs in the order many families keep them, explains 
 ## Key takeaways
 
 - Many Albanian families still mark the engagement (fejesa), the trousseau (paja) and the henna night, though each family keeps its own version.
-- The krushqit, the groom's wedding party of relatives and in-laws, travel to collect the bride, and the valle, a circle or line dance, sits at the heart of the reception.
+- In many families the krushqit, the groom's party of relatives and in-laws, travel to collect the bride, and the valle, a circle or line dance, is often the heart of the reception.
 - Albanian folk iso-polyphony, a drone-based singing tradition on UNESCO's Representative List of the Intangible Cultural Heritage of Humanity, traditionally accompanies social events such as weddings, so live folk music is worth planning around.
 - Smartraveller rates Albania "Exercise a high degree of caution" because of limited healthcare, so guests need travel insurance that covers medical evacuation.
 
@@ -56,7 +56,7 @@ In many homes the folded textiles, embroidered linens and rugs are laid out for 
 
 ### The henna night
 
-The henna night is held for the bride, usually among the women of her family, in the days before the wedding. Henna is applied to her hands, songs are sung, and it is often told that the evening marks her last night as a daughter of the house before she joins her husband's family.
+In many families a henna night is held for the bride, often among the women of her family, in the days before the wedding. It is often told that henna is applied to her hands and songs are sung, and that the evening marks her last night as a daughter of the house before she joins her husband's family.
 
 Not every family holds one, and the details change from region to region. It is a natural fit for a smaller gathering at home or in a private room the night before.
 
@@ -80,15 +80,15 @@ The wedding day itself moves between two homes. The groom's side sets out, the b
 
 It is often told that a flag is raised at the groom's home before the wedding and travels with the groom's party when they set out to collect the bride. The flag-bearer, the flamurtar, is often a close relative chosen for the honour.
 
-Today it may travel in one of the wedding cars. It is a family custom of celebration, and couples who want it should simply agree with both families who carries it and where it goes.
+Today it may travel in one of the wedding cars. Families who keep it treat it as part of the celebration, and couples who want it should simply agree with both families who carries it and where it goes.
 
 <!-- IMAGE SLOT flag: Licensed documentary photo of the wedding flag raised at the groom's family home or carried by the flag-bearer (flamurtar) in the krushqit procession, daytime outdoor light. Wedding flag only: no political banners, slogans, maps or other symbols; nothing that frames it as a political statement. -->
 
 ### The krushqit collect the bride
 
-The krushqit are not groomsmen. The word is often explained as the groom's wedding party of relatives and in-laws, who travel together to the bride's family home to collect her and bring her back to the groom's side.
+The krushqit are not quite the same as groomsmen. The word is often explained as the groom's wedding party of relatives and in-laws, who travel together to the bride's family home to collect her and bring her back to the groom's side.
 
-At the bride's home they are welcomed with food and drink before the bride leaves. This is the moment of the bride's farewell: her family sees her off, and in many families songs are sung as she leaves. It is often told that tears at this point are expected and honoured, a sign of how much she is loved at home.
+At the bride's home they are often welcomed with food and drink before the bride leaves. In many families this is the moment of the bride's farewell: her family sees her off, and in many families songs are sung as she leaves. It is often told that tears at this point are expected and honoured, a sign of how much she is loved at home.
 
 For a destination wedding, the krushqit can travel from the groom's hotel to the bride's, and the farewell can happen at her villa rather than a family house. Allow time for it in the run sheet; it is rarely quick.
 
@@ -100,7 +100,7 @@ It is a brief moment, so let your photographer know it is coming. If you are not
 
 ### Valle, music and iso-polyphony
 
-The valle is the circle or line dance at the heart of an Albanian reception. Guests link hands or shoulders and follow a leader, and the line grows as the night goes on.
+The valle is often described as the circle or line dance at the heart of an Albanian reception. In many families guests link hands or shoulders and follow a leader, and the line grows as the night goes on.
 
 The music behind it has deep roots. UNESCO inscribed [Albanian folk iso-polyphony](https://ich.unesco.org/en/RL/albanian-folk-iso-polyphony-00155) on the Representative List of the Intangible Cultural Heritage of Humanity in 2008. <!-- fact_100 --> Its "iso" is a drone that accompanies the polyphonic singing, and UNESCO notes the music is rendered mainly by male singers. <!-- fact_102 --> UNESCO says this music traditionally accompanies a wide range of social events, such as weddings, funerals, harvest feasts, religious celebrations and festivals. <!-- fact_101 --> Today it is passed on mainly through professional folk artists rather than within the family. <!-- fact_102 -->
 
@@ -176,7 +176,7 @@ Yes. Couples from different backgrounds can choose the customs that suit both fa
 
 ### Can Australians get legally married in Albania?
 
-The steps are set by Albania's civil status office, so confirm documents, timing and any fees with that office and the Australian Embassy in Rome, which covers Albania. <!-- fact_103 --> Expect to be asked for proof you are free to marry, such as a CNI. <!-- fact_108 -->
+Each country decides what proof of freedom to marry it accepts, <!-- fact_108 --> so confirm documents, timing and any fees with Albania's civil status office and the Australian Embassy in Rome, which covers Albania. <!-- fact_103 --> Expect to be asked for proof you are free to marry, such as a CNI. <!-- fact_108 -->
 
 ## Plan the customs that matter to you
 
