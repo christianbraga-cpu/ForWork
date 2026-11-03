@@ -7,3 +7,4 @@
 23:18 05 luxury-writer complete ~2,700 words; 0 VERIFY; 7 image slots; first draft sent; editor + 5 readers launched
 23:18 07 icp-reader uhnw complete; no must-fix (packages link reads mass-market)
 23:18 07 icp-reader sceptic, search_visitor complete; no must-fix; waiting on planner_couple, funding_parent, editor
+23:18 07 icp-reader funding_parent, planner_couple complete; no must-fix; waiting on editor
