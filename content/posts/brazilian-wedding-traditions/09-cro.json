@@ -1,0 +1,76 @@
+{
+  "agent": "cro",
+  "task_id": "brazilian-wedding-traditions",
+  "stage": "09",
+  "status": "complete",
+  "round": 1,
+  "inputs_used": [
+    "content-system/brand/services.md",
+    "content-system/brand/brand-facts.md",
+    "content/posts/brazilian-wedding-traditions/01-brief.json",
+    "content/posts/brazilian-wedding-traditions/07-panel.json",
+    "content/posts/brazilian-wedding-traditions/08-final.md",
+    "content-system/seo/link-map.csv",
+    "content-system/schemas/09-cro.schema.json"
+  ],
+  "payload": {
+    "journey_stage": "dreaming",
+    "primary_cta": {
+      "text": "Read the free magazine",
+      "subtext": "Free to read, whenever you are ready.",
+      "link": "/magazine?utm_source=blog&utm_medium=content&utm_campaign=brazilian-wedding-traditions&utm_content=primary",
+      "placement": "Fill the existing <!-- CTA: primary --> marker in 'Bringing Brazilian customs to a wedding elsewhere' (copy_change 1). The reader has just finished the customs, travel and legal detail and is choosing which traditions to carry, still in the dreaming stage. The marker sits a full travel section away from the Advisor invitation, so the two asks are not back to back. The following line links /destinations/latin-america-caribbean, a different target, so it stays."
+    },
+    "secondary_cta": {
+      "text": "Speak with a Wedded Advisor",
+      "subtext": "Fee agreed in writing before any work begins.",
+      "link": "/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=brazilian-wedding-traditions&utm_content=secondary",
+      "placement": "Existing inline link closing 'Recognition back in Australia', straight after the legal section as the brief asks. It already carries utm_content=secondary and the brand-facts reassurances (single point of contact, fee agreed in writing, inclusions confirmed in writing) plus the panel's warmer legal hand-off line with no paperwork claim. No separate block is added, so there is no block next to a duplicate inline link."
+    },
+    "lead_magnet": {
+      "name": "Wedded Wonderland digital magazine (free)",
+      "link": "/magazine?utm_source=blog&utm_medium=content&utm_campaign=brazilian-wedding-traditions&utm_content=primary",
+      "exists": true,
+      "placement": "Same as the primary CTA block; no second magazine link is placed, to avoid a duplicate ask."
+    },
+    "tracking": [
+      "/magazine?utm_source=blog&utm_medium=content&utm_campaign=brazilian-wedding-traditions&utm_content=primary",
+      "/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=brazilian-wedding-traditions&utm_content=secondary"
+    ],
+    "copy_changes": [
+      {
+        "old": "<!-- CTA: primary -->",
+        "new": "<!-- CTA: primary -->\n**Read the free magazine**\nFree to read, whenever you are ready.\n[Read the free magazine](/magazine?utm_source=blog&utm_medium=content&utm_campaign=brazilian-wedding-traditions&utm_content=primary)\n<!-- /CTA: primary -->",
+        "why": "Fill the primary marker with the magazine CTA block (text, subtext, UTM-tagged link)."
+      },
+      {
+        "old": "a Wedded Advisor can be your single point of contact from the first conversation, with the fee agreed in writing before any work begins.",
+        "new": "a Wedded Advisor can be your single point of contact from start to finish, with the fee agreed in writing before any work begins.",
+        "why": "Align the closing Advisor line with the brand-facts.md claim ('One Wedded Advisor, start to finish, as a single point of contact'). Unlinked, so no duplicate CTA."
+      }
+    ],
+    "rationale": "Brief sets journey_stage dreaming, so services.md puts the magazine first and Concierge second. 07-panel.json has no per-persona cta_reaction field; its should_fix items on the Advisor paragraph (warmer legal hand-off, no paperwork claim) and guest care for older relatives are already applied in 08-final.md, so nothing the panel wanted to see is missing before either CTA. The 'consider' swap of 'inclusions' for 'scope' is not made because brand-facts.md uses 'inclusions'. Both targets exist in link-map.csv (/magazine as lead magnet, /wonderland-concierge as default commercial CTA). Suggestion only, not placed: a Latin America or Brazil edition of the magazine would fit this post better than the general magazine; none exists in the link map (only Australia, Fiji and Dubai editions)."
+  },
+  "self_qa": {
+    "confidence": 0.85,
+    "checks": [
+      {"check": "Both targets exist in link-map.csv", "pass": true},
+      {"check": "Each copy_changes old string occurs exactly once in 08-final.md", "pass": true},
+      {"check": "UTMs follow services.md format with utm_campaign=brazilian-wedding-traditions", "pass": true},
+      {"check": "Inline Advisor link carries utm_content=secondary", "pass": true},
+      {"check": "No CTA block next to an inline link to the same target", "pass": true},
+      {"check": "Primary text 6 words or fewer, no exclamation mark, no 'click here'", "pass": true},
+      {"check": "No prices, invented business details, paperwork-help claims, banned Advisor slogan or em dashes", "pass": true}
+    ]
+  },
+  "assumptions": [
+    "The CTA block markup (bold heading, subtext line, link, closing comment) is rendered by the CMS publisher per the field map; adjust the wrapper if the field map uses a different CTA component.",
+    "The magazine link reuses utm_content=primary for the lead magnet because the magazine is the primary CTA; no separate magnet link is placed.",
+    "Panel CTA reactions read from should_fix and keep items, as 07-panel.json has no cta_reaction field."
+  ],
+  "open_questions": [
+    {"to": "orchestrator", "question": "Apply copy_changes 1 and 2 to 08-final.md before distribution and CMS upload?", "blocking": false},
+    {"to": "Nic", "question": "Is a Latin America or Brazil magazine edition planned? It would be a better lead magnet for this post.", "blocking": false}
+  ],
+  "next_agent": ["distribution"]
+}

@@ -11,3 +11,4 @@
 01:36 06 editor pass_with_edits 4.29; 12 edits applied -> 05-draft-r2.md; 'last dance' slogan stripped from edit 8; 0 VERIFY; panel chair launched
 01:37 07b icp-panel-chair revise; enquire 2.1; 0 must_fix, 4 should_fix, 1 consider (skipped: 'inclusions' is brand-facts wording); final pass launched
 01:38 08 luxury-writer complete ~2,800 words; 0 VERIFY; scan clean; 8b+CRO+distribution launched
+01:39 10 distribution complete 3 pins, 8-slide carousel, newsletter
