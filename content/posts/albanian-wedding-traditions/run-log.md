@@ -12,3 +12,4 @@
 01:02 06 editor revise 3.86 (accuracy 3); 32 edits applied by orchestrator -> 05-draft-r2.md (expected ~4.4); fast mode: no round-2 rescore, 8b check covers; Real Weddings URL added to link map
 01:04 07b icp-panel-chair revise; enquire 2.5; 0 must_fix, 3 should_fix, 1 consider; final pass launched
 01:05 08 luxury-writer complete ~2,680 words; 0 VERIFY; scan clean; 8b+CRO+distribution launched
+01:06 09 cro-specialist complete; 4 copy changes applied (primary CTA moved before the legal section)

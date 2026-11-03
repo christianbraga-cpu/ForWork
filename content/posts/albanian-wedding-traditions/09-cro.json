@@ -1,0 +1,107 @@
+{
+  "agent": "cro",
+  "task_id": "albanian-wedding-traditions",
+  "stage": "09",
+  "status": "complete",
+  "round": 1,
+  "inputs_used": [
+    "content-system/brand/services.md",
+    "content-system/brand/brand-facts.md",
+    "content/posts/albanian-wedding-traditions/01-brief.json",
+    "content/posts/albanian-wedding-traditions/07-panel.json",
+    "content/posts/albanian-wedding-traditions/08-final.md",
+    "content-system/seo/link-map.csv",
+    "content-system/schemas/09-cro.schema.json"
+  ],
+  "payload": {
+    "journey_stage": "dreaming",
+    "primary_cta": {
+      "text": "Read the free magazine",
+      "subtext": "Free to read, at your own pace.",
+      "link": "/magazine?utm_source=blog&utm_medium=content&utm_campaign=albanian-wedding-traditions&utm_content=primary",
+      "placement": "Fill the <!-- CTA: primary --> marker, moved (copy_changes 1 and 2) from just before 'Frequently asked questions' to the end of 'A celebration over several days', just before 'Marrying legally in Albania as an Australian'. The reader has finished the customs and is still dreaming, and the old spot sat directly under the Wedded Advisor invitation."
+    },
+    "secondary_cta": {
+      "text": "Speak with a Wedded Advisor",
+      "subtext": "The fee is agreed in writing before any work begins.",
+      "link": "/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=albanian-wedding-traditions&utm_content=secondary",
+      "placement": "Existing inline link at the close of the legal and travel section ('If you would rather have one person holding the plan together...'), as the brief asks. Wording unchanged; the next sentence already carries the single point of contact and fee-in-writing reassurance from brand-facts.md, so no block is added. Only the UTM changes (copy_change 3)."
+    },
+    "lead_magnet": {
+      "name": "Wedded Wonderland digital magazine (free)",
+      "link": "/magazine?utm_source=blog&utm_medium=content&utm_campaign=albanian-wedding-traditions&utm_content=magnet",
+      "exists": true,
+      "placement": "Existing inline link in the closing 'Plan the customs that matter to you' paragraph, retagged as magnet (copy_change 4). Not adjacent to the primary block, so it is kept."
+    },
+    "tracking": [
+      "/magazine?utm_source=blog&utm_medium=content&utm_campaign=albanian-wedding-traditions&utm_content=primary",
+      "/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=albanian-wedding-traditions&utm_content=secondary",
+      "/magazine?utm_source=blog&utm_medium=content&utm_campaign=albanian-wedding-traditions&utm_content=magnet"
+    ],
+    "copy_changes": [
+      {
+        "old": "spread across a few days.\n\n## Marrying legally in Albania as an Australian",
+        "new": "spread across a few days.\n\n<!-- CTA: primary -->\n\n## Marrying legally in Albania as an Australian",
+        "why": "Move the primary marker to the close of the customs, where the dreaming reader has finished the traditions and before the legal section."
+      },
+      {
+        "old": "<!-- CTA: primary -->\n\n## Frequently asked questions",
+        "new": "## Frequently asked questions",
+        "why": "Remove the old marker position so the magazine block does not sit straight after the Wedded Advisor invitation (two asks back to back)."
+      },
+      {
+        "old": "(/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=albanian-wedding-traditions)",
+        "new": "(/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=albanian-wedding-traditions&utm_content=secondary)",
+        "why": "Inline Advisor link carries utm_content=secondary."
+      },
+      {
+        "old": "(/magazine?utm_source=blog&utm_medium=content&utm_campaign=albanian-wedding-traditions)",
+        "new": "(/magazine?utm_source=blog&utm_medium=content&utm_campaign=albanian-wedding-traditions&utm_content=magnet)",
+        "why": "Closing magazine link retagged as magnet; it is about 60 lines from the primary block, so it is kept."
+      }
+    ],
+    "rationale": "Dreaming-stage brief, so the magazine leads (services.md early-stage rule) and the Wedded Advisor follows the legal section, where the panel's unanswered questions (civil status documents, fees, who to call) peak. Weighted enquiry likelihood is 2.5, so no harder ask is added. Panel CTA reactions wanted the 'not published' gaps and Smartraveller advice before any ask; both already sit above the Advisor link, so no copy change is needed for that. No prices, no paperwork-help claims, no new business details. Suggestion only: an Albania or Europe edition of the magazine would suit this reader better, but none exists in link-map.csv (Australia, Fiji, Dubai only), so it is not placed."
+  },
+  "self_qa": {
+    "confidence": 0.85,
+    "checks": [
+      {
+        "check": "All three targets exist in link-map.csv",
+        "pass": true
+      },
+      {
+        "check": "Each copy_changes old string occurs exactly once in 08-final.md",
+        "pass": true
+      },
+      {
+        "check": "UTMs follow services.md format",
+        "pass": true
+      },
+      {
+        "check": "Primary text 6 words or fewer, no exclamation mark, no 'click here'",
+        "pass": true
+      },
+      {
+        "check": "No em dashes, prices or Advisor paperwork claims",
+        "pass": true
+      }
+    ]
+  },
+  "assumptions": [
+    "Moving the marker is within CRO scope (agent instructions allow placement where the question peaks); if the orchestrator prefers the original spot, skip copy_changes 1 and 2.",
+    "Secondary subtext reuses brand-facts.md wording already in the post."
+  ],
+  "open_questions": [
+    {
+      "to": "orchestrator",
+      "question": "Apply copy_changes 1 to 4 to 08-final.md before distribution and CMS upload?"
+    },
+    {
+      "to": "Nic",
+      "question": "Is an Albania or Europe magazine edition planned? It would be a better lead magnet for this post."
+    }
+  ],
+  "next_agent": [
+    "distribution"
+  ]
+}

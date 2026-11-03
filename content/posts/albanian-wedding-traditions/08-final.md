@@ -120,6 +120,8 @@ It is often told that Albanian weddings run over several days, with gatherings a
 
 For a destination wedding, this works in your favour. Guests who have flown a long way tend to welcome a henna night, a welcome dinner and the wedding itself spread across a few days.
 
+<!-- CTA: primary -->
+
 ## Marrying legally in Albania as an Australian
 
 Couples looking at Tirana or the Albanian Riviera usually start with the setting, and it is easy to see why. Browse our [destination weddings in Europe](/destinations/europe) for the wider picture. The paperwork deserves equal attention, so here is what official Australian sources say, as at November 2026. This is general information, not legal advice.
@@ -148,9 +150,7 @@ For an outdoor wedding, note that Smartraveller warns of extreme temperatures an
 
 Albanian-Australian couples should read the dual nationality advice: a person born in Albania or with an Albanian parent is an Albanian national, and male dual nationals may face military service. <!-- fact_106 --> Smartraveller also notes that same-sex relationships are legal but not widely accepted. <!-- fact_105 --> Read the full [Smartraveller advice for Albania](https://www.smartraveller.gov.au/destinations/europe/albania) before you book, and share it with your guests.
 
-If you would rather have one person holding the plan together, [speak with a Wedded Advisor](/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=albanian-wedding-traditions). Your Wedded Advisor is your single point of contact from start to finish, the fee is agreed in writing before any work begins, and inclusions are confirmed in writing before you commit.
-
-<!-- CTA: primary -->
+If you would rather have one person holding the plan together, [speak with a Wedded Advisor](/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=albanian-wedding-traditions&utm_content=secondary). Your Wedded Advisor is your single point of contact from start to finish, the fee is agreed in writing before any work begins, and inclusions are confirmed in writing before you commit.
 
 ## Frequently asked questions
 
@@ -180,4 +180,4 @@ The steps are set by Albania's civil status office, so confirm documents, timing
 
 ## Plan the customs that matter to you
 
-The customs your family cares about most are the ones worth building the plan around, whether that is a henna night in Tirana or a valle that runs past midnight in Melbourne. For more cultures and customs, return to our guide to [wedding traditions worth keeping](/expert-advice/wedding-traditions), explore a neighbouring culture's customs in [Greek wedding traditions](/8-greek-wedding-traditions-you-didnt-know-about), or [read the free Wedded Wonderland digital magazine](/magazine?utm_source=blog&utm_medium=content&utm_campaign=albanian-wedding-traditions). When you are ready to talk dates and places, a Wedded Advisor is a conversation away.
+The customs your family cares about most are the ones worth building the plan around, whether that is a henna night in Tirana or a valle that runs past midnight in Melbourne. For more cultures and customs, return to our guide to [wedding traditions worth keeping](/expert-advice/wedding-traditions), explore a neighbouring culture's customs in [Greek wedding traditions](/8-greek-wedding-traditions-you-didnt-know-about), or [read the free Wedded Wonderland digital magazine](/magazine?utm_source=blog&utm_medium=content&utm_campaign=albanian-wedding-traditions&utm_content=magnet). When you are ready to talk dates and places, a Wedded Advisor is a conversation away.
