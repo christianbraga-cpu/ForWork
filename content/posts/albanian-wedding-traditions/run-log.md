@@ -15,3 +15,4 @@
 01:06 09 cro-specialist complete; 4 copy changes applied (primary CTA moved before the legal section)
 01:06 10 distribution complete 3 pins, 8-slide carousel, newsletter
 01:06 08b editor 7 blocking fixes applied (unsourced customs hedged; FAQ marker corrected); accuracy now 4/5, avg 4.0; blocking 0
+01:08 11 cms-publisher package complete (not uploaded, no Chrome); validate all valid; scan 0 dashes; docx built; run report, backlinks, link map, calendar 19; FINISHED (~39 min from restart)
