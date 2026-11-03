@@ -4,3 +4,4 @@
 00:35 04 visual-curator complete 8 placeholders
 00:40 02 seo-researcher complete; old page US #2 (320/mo), AU only 1 keyword; Real Weddings Albanian Melbourne post ranks (link to it); 301 recommended; schema valid
 00:51 03 planner-sme batch A complete 10 facts (UNESCO xhubleta 2022 USL; Wikipedia for paja, dhunti, Shkodra dress); waiting on batch B
+00:51 03 planner-sme batch B complete 13 facts (UNESCO iso-polyphony names weddings; Rome embassy, Smartraveller, DFAT); Albanian civil procedure unsourced; merged; writer launched
