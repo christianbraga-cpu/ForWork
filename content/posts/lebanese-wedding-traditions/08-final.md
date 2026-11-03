@@ -32,7 +32,7 @@ There is no single Lebanese wedding. Most families draw on the same set of custo
 - cutting the cake with a sword
 - sugared almonds and sweets
 
-Customs vary between Christian, Muslim and Druze families. <!-- fact_06 --> They vary between regions and households within each, too. A Maronite family and a Sunni family may share the dabke and the sweets, then mark the marriage itself in quite different ways.
+Lebanon's communities include Christian, Muslim and Druze families, <!-- fact_06 --> and customs vary between them, and between regions and households within each. A Maronite family and a Sunni family may share the dabke and the sweets, then mark the marriage itself in quite different ways.
 
 The practical point for planning: ask both families early which steps they want, rather than working from a list. If one partner is not of Lebanese heritage, the same conversation tells you where the two traditions sit comfortably side by side.
 
@@ -74,7 +74,7 @@ The idea is old. A Melkite Greek Catholic history of the crowning describes how,
 
 ### The church ceremony and the crowning
 
-Many Lebanese Christian couples marry in Eastern churches, where the heart of the service is the crowning. How the rite runs in a Maronite or Antiochian Orthodox parish, and who holds the crowns, varies by church and family. Your priest is the person to ask.
+In the Eastern churches, the heart of the marriage service is the crowning. <!-- fact_16 --> How the rite runs in a Maronite or Antiochian Orthodox parish, and who holds the crowns, varies by church and family. Your priest is the person to ask.
 
 A crowning procession circles the central table or lectern, so the ceremony space needs a clear aisle and room around it. <!-- fact_03 --> <!-- fact_16 --> One line stands out for Lebanese couples: a crowning prayer in the Orthodox text asks God to "exalt them like the cedars of Lebanon, like a luxuriant vine". <!-- fact_04 --> If you would like it in the order of service, ask your priest when you meet.
 
@@ -90,7 +90,7 @@ What do the crowns mean? The Orthodox text links them to the crowns of the marty
 
 For many Muslim families, the marriage itself is the katb al-kitab, the signing of the contract (also called aqd nikah or aqd zawaj). In regional accounts of Arab weddings, it is the focus of the official ceremony: a sheikh or imam gives a short address, the bride's father or eldest male relative accepts the proposal, the documents are completed and two witnesses sign. <!-- fact_11 -->
 
-In the Levant, it is usually held at the bride's or groom's family home, and sometimes at the wedding hall, a mosque or a court. <!-- fact_12 --> The same source treats the contract and its announcement as the only Islamic requirement, with the proposal, engagement, henna and reception as cultural additions. <!-- fact_13 -->
+Those accounts describe it as usually held, in the Levant, at the bride's or groom's family home, and sometimes at the wedding hall, a mosque or a court. <!-- fact_12 --> The same source treats the contract and its announcement as the only Islamic requirement, with the proposal, engagement, henna and reception as cultural additions. <!-- fact_13 -->
 
 Many families also agree a mahr. Britannica describes the mahr as a marriage custom but gives no Lebanon-specific detail, <!-- fact_05 --> so the details are a matter for the families and the officiant.
 
@@ -114,7 +114,7 @@ Dancers move in a straight line holding handkerchiefs high, and the first dancer
 
 <!-- IMAGE SLOT dabke: Wide shot of a dabke line, hands linked, feet visible, lead dancer with handkerchief if present, evening reception on a terrace or ballroom. Real wedding outside Lebanon; guest consent needed (identifiable faces). -->
 
-Zajal itself, the recited or sung poetry, was inscribed by UNESCO in 2014 for Lebanon on its Representative List of the Intangible Cultural Heritage of Humanity, which describes it as declaimed or sung at social and family celebrations and in daily life. <!-- fact_100 --> <!-- fact_101 --> See the [UNESCO listing for Al-Zajal](https://ich.unesco.org/en/RL/al-zajal-recited-or-sung-poetry-01000).
+Zajal itself, the recited or sung poetry, was inscribed by UNESCO in 2014 for Lebanon on its Representative List of the Intangible Cultural Heritage of Humanity, which describes it as declaimed or sung at social and family celebrations and in daily life. <!-- fact_100 --> <!-- fact_101 --> UNESCO does not name weddings, so treat zajal as part of Lebanon's wider folk culture rather than a set wedding custom. See the [UNESCO listing for Al-Zajal](https://ich.unesco.org/en/RL/al-zajal-recited-or-sung-poetry-01000).
 
 ### Zaghareet, the cry of joy
 
@@ -160,7 +160,7 @@ If older or less mobile guests are coming, ask the venue about steps, slopes and
 
 Henna is not a quick job, so book the artist early in the evening and keep the room warm and unhurried. A private dining room or a villa's lounge suits it better than a public space.
 
-If you are holding a katb al-kitab or a crowning, plan where it sits in the week as well. The contract can be signed at a family home, a mosque or the wedding venue, so a quiet room with a table for the signing and the witnesses is worth asking for. <!-- fact_12 --> For a crowning, ask for the clear aisle and room around the table described above.
+If you are holding a katb al-kitab or a crowning, plan where it sits in the week as well. Regional accounts describe the signing taking place at a family home, a mosque or the wedding hall, so a quiet room with a table for the signing and the witnesses is worth asking for. <!-- fact_12 --> For a crowning, ask for the clear aisle and room around the table described above.
 
 ### Blades, venue rules and the cake
 
@@ -196,7 +196,7 @@ The zaffeh is the musical procession that brings the couple in, often told as dr
 
 ### What is zalghouta?
 
-Zalghouta (or zaghrouta, plural zaghareet) is the long, trilling cry of joy that women in the room give at key moments, such as the bride leaving home or the couple's entrance.
+Zalghouta (or zaghrouta, plural zaghareet) is the long, trilling cry of joy often heard from women at key moments, such as the bride leaving home or the couple's entrance.
 
 ### Why is the cake cut with a sword at Lebanese weddings?
 
@@ -210,4 +210,4 @@ Follow the invitation and the families. Evening receptions are usually formal, a
 
 The customs that matter most are the ones both families recognise as their own. Start there, then find a venue with room for the zaffeh, a long floor for the dabke and a quiet space for the moments before.
 
-For more ideas from other cultures, see our [wedding traditions worth keeping from around the world](/expert-advice/wedding-traditions), or [read the free Wedded Wonderland digital magazine](/magazine?utm_source=blog&utm_medium=content&utm_campaign=lebanese-wedding-traditions&utm_content=primary). When you are ready to talk dates and places, a Wedded Advisor is glad to start the conversation.
+For more ideas from other cultures, see our [wedding traditions worth keeping from around the world](/expert-advice/wedding-traditions), or [read the free Wedded Wonderland digital magazine](/magazine?utm_source=blog&utm_medium=content&utm_campaign=lebanese-wedding-traditions&utm_content=magnet). When you are ready to talk dates and places, a Wedded Advisor is glad to start the conversation.
