@@ -1,1 +1,2 @@
 01:53 00 orchestrator complete input written; FAST MODE start; refresh of /7-big-and-electrifying-lebanese-wedding-traditions
+02:02 01 content-strategist complete; 11 customs (+Al-Zajal if linked) + travel/legal note; Smartraveller Do not travel (updated 24 Sep 2026) -> diaspora angle; Beirut embassy; old page errors listed; 02+03(A,B)+04 launched
