@@ -1,0 +1,79 @@
+{
+  "agent": "cro",
+  "task_id": "armenian-wedding-traditions",
+  "stage": "09",
+  "status": "complete",
+  "round": 1,
+  "inputs_used": [
+    "content-system/brand/services.md",
+    "content-system/brand/brand-facts.md",
+    "content/posts/armenian-wedding-traditions/01-brief.json",
+    "content/posts/armenian-wedding-traditions/07-panel.json",
+    "content/posts/armenian-wedding-traditions/07-icp/*.json (cta_reaction, unanswered_questions)",
+    "content/posts/armenian-wedding-traditions/08-final.md",
+    "content-system/seo/link-map.csv",
+    "content-system/schemas/09-cro.schema.json"
+  ],
+  "self_qa": {
+    "confidence": 0.85,
+    "checks": [
+      {"check": "/magazine and /wonderland-concierge exist in link-map.csv", "pass": true},
+      {"check": "Each copy_changes old string occurs exactly once in 08-final.md", "pass": true},
+      {"check": "UTMs use utm_source=blog, utm_medium=content, utm_campaign=armenian-wedding-traditions", "pass": true},
+      {"check": "Inline Advisor link carries utm_content=secondary", "pass": true},
+      {"check": "No CTA block next to an inline link to the same target", "pass": true},
+      {"check": "Primary text 6 words or fewer, no exclamation mark, no 'click here'", "pass": true},
+      {"check": "No prices, invented business details, paperwork-help claims, banned Advisor slogan, em dashes or the word the brief bans", "pass": true},
+      {"check": "Added copy kept minimal (one 2-line CTA block, one UTM fix); article stays near 2,881 words", "pass": true}
+    ]
+  },
+  "assumptions": [
+    "The CTA block markup (bold heading, subtext line, link, closing comment) follows the pattern used in earlier posts; the CMS publisher adapts it to the field map's CTA component if different.",
+    "The magazine is both the primary CTA and the lead magnet, so the lead magnet reuses the primary link and no second magazine link (utm_content=magnet) is placed.",
+    "The closing 'start a conversation with a Wedded Advisor' line stays unlinked so the Advisor ask is not duplicated."
+  ],
+  "open_questions": [
+    {"to": "orchestrator", "question": "Apply copy_changes 1 and 2 to 08-final.md before distribution and CMS upload?", "blocking": false},
+    {"to": "Nic", "question": "Has Wedded Wonderland planned an Armenian or Armenian-Australian wedding, or does it have partners on the ground in Armenia? Planner couple, sceptic and UHNW personas all said 'maybe' pending proof; a sourced real wedding or line could sit before the Advisor link.", "blocking": false},
+    {"to": "Nic", "question": "Is there a Europe or cultural-weddings magazine edition? It would be a closer lead magnet than the general /magazine page.", "blocking": false}
+  ],
+  "payload": {
+    "journey_stage": "dreaming",
+    "primary_cta": {
+      "text": "Read the free magazine",
+      "subtext": "Free to read, whenever you are ready.",
+      "link": "/magazine?utm_source=blog&utm_medium=content&utm_campaign=armenian-wedding-traditions&utm_content=primary",
+      "placement": "Fill the existing <!-- CTA: primary --> marker after the music and dance section (copy_change 1). The reader has just finished the full sequence of customs and is still dreaming; the marker sits two sections before the Advisor invitation, so the asks are not back to back. Neighbouring links go to the Smithsonian and /cultural-destination-weddings-go-beyond, not /magazine, so nothing is dropped."
+    },
+    "secondary_cta": {
+      "text": "Speak with a Wedded Advisor",
+      "subtext": "Fee agreed in writing before any work begins.",
+      "link": "/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=armenian-wedding-traditions&utm_content=secondary",
+      "placement": "Existing inline link closing 'Documents, translation and recognition at home', straight after the legal section as the brief asks (copy_change 2 adds utm_content=secondary). It already carries the panel-approved reassurances (single point of contact, fee agreed in writing) and sends legal and church steps to the registry and priest, with no paperwork-help claim. No separate block is added."
+    },
+    "lead_magnet": {
+      "name": "Wedded Wonderland digital magazine (free)",
+      "link": "/magazine?utm_source=blog&utm_medium=content&utm_campaign=armenian-wedding-traditions&utm_content=primary",
+      "exists": true,
+      "placement": "Same as the primary CTA block; no second magazine link is placed."
+    },
+    "tracking": [
+      "/magazine?utm_source=blog&utm_medium=content&utm_campaign=armenian-wedding-traditions&utm_content=primary",
+      "/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=armenian-wedding-traditions&utm_content=secondary"
+    ],
+    "copy_changes": [
+      {
+        "old": "<!-- CTA: primary -->",
+        "new": "<!-- CTA: primary -->\n**Read the free magazine**\nFree to read, whenever you are ready.\n[Read the free magazine](/magazine?utm_source=blog&utm_medium=content&utm_campaign=armenian-wedding-traditions&utm_content=primary)\n<!-- /CTA: primary -->",
+        "why": "Fill the primary marker with the magazine CTA block (text, subtext, UTM-tagged link)."
+      },
+      {
+        "old": "(/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=armenian-wedding-traditions)",
+        "new": "(/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=armenian-wedding-traditions&utm_content=secondary)",
+        "why": "Inline Advisor link lacked utm_content; tag it as the secondary CTA."
+      }
+    ],
+    "rationale": "Brief sets the dreaming stage with the magazine as primary and the Advisor after the legal section; services.md agrees for early-stage posts. Panel cta_reactions: four personas said 'maybe' to the Advisor link, citing 'fee agreed in writing' as the pull and asking for proof of Armenian experience and a named person rather than a form. Those proofs are not in brand-facts or the source pack, so no copy is added; the gap goes to Nic as an open question. The search visitor said 'no' to the closing line but found it unobtrusive, which supports the low-pressure magazine ask for that reader. Weighted enquiry likelihood was 2.5 against a 3.8 target; the panel notes CTA wording alone will not close it. Ideal magnet suggestion (not placed): an Armenian or cultural-weddings magazine edition, exists: false."
+  },
+  "next_agent": ["distribution"]
+}

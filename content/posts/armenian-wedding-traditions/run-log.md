@@ -10,3 +10,4 @@
 00:12 06 editor pass_with_edits 4.14; 11 edits applied -> 05-draft-r2.md; crowning on US parish sources accepted for this round (no extra sourcing, fast mode); panel chair launched
 00:13 07b icp-panel-chair revise; enquire 2.5; 0 must_fix, 5 items; final pass launched
 00:14 08 luxury-writer complete 2,881 words; 0 VERIFY; scan clean; 8b+CRO+distribution launched
+00:15 09 cro-specialist complete; 2 copy changes (fill CTA marker; Advisor utm_content=secondary); applying after 8b
