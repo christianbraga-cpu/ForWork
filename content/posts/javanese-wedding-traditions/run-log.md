@@ -17,3 +17,4 @@
 01:06 10 distribution complete 3 pins, 8-slide carousel, newsletter
 01:06 09 cro-specialist complete; 1 copy change (magazine CTA at marker); Advisor link stays in close; applying after 8b
 01:06 08b editor pass_with_edits; 4 blocking hedges (sido mukti, beskap, gantal folklore, legal step 5 as planning tip) + 1 CRO change applied; blocking 0; cms-publisher launched
+01:08 11 cms-publisher package complete (not uploaded, no Chrome); validate all valid; docx built; run report, backlinks, link map, calendar 24; FINISHED (~31 min)
