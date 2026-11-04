@@ -12,3 +12,4 @@
 01:00 07 icp-reader planner_couple complete; no must-fix; waiting on funding_parent, editor
 01:00 07 icp-reader funding_parent complete; no must-fix; waiting on editor
 01:02 06 editor pass_with_edits 4.29; 22 edits applied -> 05-draft-r2.md (palace/village attribution, snippet facts, sister-article echoes); panel chair launched
+01:04 07b icp-panel-chair revise; enquire 1.9; 2 must_fix (hedges; criminal code follow-up), 2 should_fix, 1 consider; final pass launched
