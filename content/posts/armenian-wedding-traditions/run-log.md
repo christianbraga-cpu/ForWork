@@ -7,3 +7,4 @@
 00:09 05 luxury-writer complete 2,763 words; 0 VERIFY; 7 image slots; 'Yeravan' typo fixed; first draft sent; editor + 5 readers launched
 00:10 07 icp-reader uhnw complete; no must-fix (scale/privacy deferred)
 00:10 07 icp-reader search_visitor, sceptic, funding_parent, planner_couple complete; no must-fix; waiting on editor
+00:12 06 editor pass_with_edits 4.14; 11 edits applied -> 05-draft-r2.md; crowning on US parish sources accepted for this round (no extra sourcing, fast mode); panel chair launched
