@@ -7,3 +7,4 @@
 23:52 05 luxury-writer complete 2,843 words; 1 VERIFY (ancient Greece section); ranking queries covered; first draft sent; editor + 5 readers launched
 23:53 07 icp-reader funding_parent complete; no must-fix
 23:53 07 icp-reader search_visitor, uhnw complete; no must-fix; waiting on planner_couple, sceptic, editor
+23:53 07 icp-reader planner_couple, sceptic complete; no must-fix; waiting on editor
