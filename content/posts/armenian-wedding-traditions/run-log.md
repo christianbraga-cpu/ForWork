@@ -13,3 +13,4 @@
 00:15 09 cro-specialist complete; 2 copy changes (fill CTA marker; Advisor utm_content=secondary); applying after 8b
 00:15 10 distribution complete 3 pins, 8-slide carousel, newsletter
 00:16 08b editor pass_with_edits 4.14; 5 blocking fixes (takeaway credited Smithsonian not UNESCO; Massachusetts removed; kavor cross as family custom; FAQ markers) + 2 CRO changes applied; blocking 0; cms-publisher launched
+00:18 11 cms-publisher package complete (not uploaded, no Chrome); validate all valid; docx built; run report, backlinks, link map, calendar 23; FINISHED (~27 min)
