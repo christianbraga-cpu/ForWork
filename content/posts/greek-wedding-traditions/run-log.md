@@ -1,3 +1,4 @@
 23:05 00 orchestrator complete input written; FAST MODE start; refresh of /8-greek-wedding-traditions-you-didnt-know-about (in-place slug change + 301)
 23:09 01 content-strategist complete; 12 customs + legal; Smartraveller normal precautions (updated 30 Sep 2026); Athens embassy; old page errors listed; /5-timeless-greek-engagement-traditions to check; 02+03(A,B)+04 launched
 23:10 04 visual-curator complete 7 placeholders
+23:23 02 seo-researcher complete; old page 35 US / 7 AU keywords (US 1,000/mo); scope global; 2 legacy pages compete (/greek-wedding-traditions-we-love, /10-charming-and-timeless-wedding-traditions-in-greece-2) -> 301 recommended; engagement page kept; 2 Greek Real Weddings to link; schema valid
