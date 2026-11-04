@@ -64,7 +64,7 @@ It is often told, too, that the bride's parents walk the couple forward wrapped 
 
 In some Javanese weddings a master of ceremonies narrates panggih in poetic Javanese. A 2021 study in the journal Widyaparwa traced the similes and metaphors of beauty and good wishes in this narration, in the Surakarta style.
 
-There is more on each stage in our piece on [Javanese wedding rituals in more depth](/traditional-javanese-wedding-rituals-and-their-modern-interpretations).
+There is more on each stage in our piece on [Javanese wedding rituals in more depth](/expert-advice/javanese-wedding-traditions).
 
 ## The akad nikah in Muslim weddings
 

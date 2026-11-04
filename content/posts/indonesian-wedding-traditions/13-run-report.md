@@ -14,7 +14,7 @@
 
 ## The page being refreshed
 - Live (HTTP 200). US #2 for the keyword (210/mo) and top 10 for 12 of its 25 US keywords; AU #3 for "indonesian wedding customs and traditions" and #4 for "indonesian wedding ceremony" (140/mo). AU volume for the keyword 70/mo, difficulty 0.
-- Related pages kept and linked: /traditional-javanese-wedding-rituals-and-their-modern-interpretations (US #1 for "javanese wedding") and /guides/nikah-ceremony. No other legacy Indonesian slugs found.
+- Related pages linked: the Javanese page, now refreshed as /expert-advice/javanese-wedding-traditions (draft, 2026-11-04; the old URL ranks US #1 for "javanese wedding" and is being updated in place), and /guides/nikah-ceremony. No other legacy Indonesian slugs found.
 - Old page errors dropped: 10 in the URL but about 15 customs on the page; 5 Key takeaways; the religion rule stated as undated fact; weak sources (Wikipedia, expat magazines, a wikisource law copy); the unverified "vetted network" claim; the 2013 Yogyakarta royal procession presented as a tradition; the Sasak merariq framed as "a kidnapping"; a CTA implying we arrange the legal or religious side; no Smartraveller level.
 
 ### At publish (recommendation; nothing changed on the live site)
@@ -88,3 +88,6 @@
 
 ## Validation
 - validate.py: all valid · scan_copy.py: 0 dashes
+
+## Update 2026-11-04
+- The link to the Javanese page now points to /expert-advice/javanese-wedding-traditions (the refreshed Javanese article, draft). Publish the two together, or keep the old URL until the Javanese page's slug change and 301 are live.

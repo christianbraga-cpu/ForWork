@@ -4,7 +4,7 @@ New post: /expert-advice/indonesian-wedding-traditions
 
 | Older page | Sentence where the link fits | Anchor text | Done |
 |---|---|---|---|
-| /traditional-javanese-wedding-rituals-and-their-modern-interpretations | Near the intro (page body not read this run). | wedding traditions across Indonesia | [ ] |
+| /expert-advice/javanese-wedding-traditions (refresh of the old Javanese page) | Already links here from the intro and legal section (draft). | Indonesian wedding traditions | [x] |
 | /expert-advice/wedding-traditions | In the pillar's list of country guides (draft; edit before publish). | Indonesian wedding traditions | [ ] |
 | /guides/nikah-ceremony | In the section on regional variations, if present. | how the akad nikah fits into Indonesian weddings | [ ] |
 | /destinations/asia/bali | A line pointing couples who want local customs to the guide (sentence to be chosen when the page is edited). | Indonesian wedding traditions | [ ] |
