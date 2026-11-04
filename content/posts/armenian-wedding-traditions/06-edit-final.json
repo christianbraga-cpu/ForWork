@@ -1,0 +1,341 @@
+{
+  "agent": "editor",
+  "task_id": "armenian-wedding-traditions",
+  "stage": "06",
+  "status": "complete",
+  "round": "final",
+  "inputs_used": [
+    "content/posts/armenian-wedding-traditions/08-final.md",
+    "content/posts/armenian-wedding-traditions/03-source-pack.json",
+    "content/posts/armenian-wedding-traditions/02-research/pages/smartraveller.md",
+    "content-system/brand/brand-facts.md"
+  ],
+  "self_qa": {
+    "checks": [
+      {
+        "check": "scan_copy.py run on 08-final.md",
+        "pass": true,
+        "note": "0 banned, 0 flagged, 0 dashes; 2 overlaps with smartraveller.md (official level wording, attributed)"
+      },
+      {
+        "check": "Every fact marker resolves to a source-pack fact",
+        "pass": true,
+        "note": "30 markers, all exist; no new fact needed"
+      },
+      {
+        "check": "Each edit old occurs exactly once in 08-final.md",
+        "pass": true,
+        "note": "5 edits checked by script"
+      },
+      {
+        "check": "Exactly 4 one-sentence Key takeaways",
+        "pass": true,
+        "note": "still 4 and one sentence after edit 1"
+      },
+      {
+        "check": "Brand claims within brand-facts.md",
+        "pass": true,
+        "note": "Advisor: single point of contact, fee agreed in writing, venue/travel/suppliers; no paperwork help; no 'first idea to the last dance'"
+      },
+      {
+        "check": "Travel framing",
+        "pass": true,
+        "note": "Neutral; 5 km band only as an area to avoid; image slot excludes it"
+      },
+      {
+        "check": "Prices, vendor names, em dashes",
+        "pass": true,
+        "note": "None"
+      },
+      {
+        "check": "Decision consistent",
+        "pass": true,
+        "note": "Blocking issues are all fixed by exact edits; pass_with_edits"
+      }
+    ],
+    "confidence": 0.85
+  },
+  "open_questions": [
+    {
+      "to": "orchestrator",
+      "question": "Apply the 5 edits to 08-final.md; no new facts are needed. Kavor-cross remains an open VERIFY item, now hedged as family telling.",
+      "blocking": false
+    },
+    {
+      "to": "orchestrator",
+      "question": "Closing H2 'Planning around your family's Armenian wedding traditions' is the only H2 carrying the keyword; it reads naturally, kept.",
+      "blocking": false
+    }
+  ],
+  "assumptions": [
+    "'St. Sarkis Armenian Apostolic Church in the United States' accepted as matching fact_06 ('St. Sarkis, US', Armenian Apostolic parish)",
+    "'Kochari is the dance that fills the floor' read as editorial colour, not a sourced or UNESCO claim"
+  ],
+  "verify_items": [
+    "[[VERIFY: kavor's role at the crowning]]",
+    "[[VERIFY: Australian diocese wedding rules]]",
+    "[[VERIFY: civil vs church validity in Armenia]]"
+  ],
+  "tools_used": [
+    "scan_copy.py"
+  ],
+  "next_agent": [
+    "cms-publisher"
+  ],
+  "payload": {
+    "draft_file": "content/posts/armenian-wedding-traditions/08-final.md",
+    "rubric": {
+      "voice": 4.5,
+      "expertise": 4,
+      "accuracy": 4,
+      "seo_fit": 4,
+      "commercial_link": 4,
+      "structure": 4.5,
+      "brief_fit": 4
+    },
+    "average": 4.14,
+    "blocking_issues": [
+      "Takeaway 2 attributes Smithsonian door customs to UNESCO",
+      "'Massachusetts' added to St. James, Watertown beyond the facts",
+      "Kavor holding the cross stated as fact without source",
+      "FAQ length answer: unsourced 'weeks or months' under fact_10",
+      "FAQ church answer: incomplete fact markers"
+    ],
+    "decision": "pass_with_edits",
+    "edits": [
+      {
+        "location": "Key takeaways, bullet 2",
+        "issue": "Blocking: honey and plate-breaking are Smithsonian (fact_13, fact_14), but the sentence reads as UNESCO-recorded. Misattributed source.",
+        "fix": "Attribute the door customs to the Smithsonian, one sentence kept.",
+        "old": "and at the groom's door the couple are offered honey and break plates before they enter.",
+        "new": "and the Smithsonian describes the couple being offered honey and breaking plates before they enter the groom's house."
+      },
+      {
+        "location": "Crowning section, intro paragraph",
+        "issue": "Blocking: 'Massachusetts' is not in fact_08/fact_09 (source says 'St. James, Watertown, US'). Parish must be attributed exactly as the facts say.",
+        "fix": "Remove the unsourced state.",
+        "old": ", Massachusetts",
+        "new": ""
+      },
+      {
+        "location": "Kavor and kavorkin section, para 2",
+        "issue": "Blocking: the kavor holding a cross is unsourced (open VERIFY item) but reads as documented church fact after the paragraph break; also grammar ('hold').",
+        "fix": "Keep it as family telling, fix verb.",
+        "old": "At the crowning, the kavor stands behind the couple and hold a cross over them.",
+        "new": "In many families, the kavor stands behind the couple at the crowning and holds a cross over them."
+      },
+      {
+        "location": "FAQ, How long are Armenian weddings?",
+        "issue": "Blocking: fact_10 supports only regional variation; 'weeks or months ahead' sat under the marker as if sourced.",
+        "fix": "Split sourced and unsourced parts so the marker sits only on the sourced sentence.",
+        "old": "There is no fixed length. The customs run from the formal asking and engagement, sometimes weeks or months ahead, to the crowning and reception, and each family and region does it differently. <!-- fact_10 -->",
+        "new": "There is no fixed length. The Smithsonian's curator noted that each region of Armenia has its own wedding style. <!-- fact_10 --> Some families spread the asking, engagement, crowning and reception across weeks or months; others hold them within a day or two."
+      },
+      {
+        "location": "FAQ, What happens at an Armenian church wedding?",
+        "issue": "Blocking: fact_03 covers only the crowning; hands, rings, cup and benediction need fact_01, fact_02, fact_04, fact_05.",
+        "fix": "Complete the markers.",
+        "old": "closing with a benediction. <!-- fact_03 -->",
+        "new": "closing with a benediction. <!-- fact_01 --> <!-- fact_02 --> <!-- fact_03 --> <!-- fact_04 --> <!-- fact_05 -->"
+      }
+    ],
+    "fact_check_log": [
+      {
+        "claim": "fact_01",
+        "fact_id": "fact_01",
+        "status": "confirmed",
+        "note": ""
+      },
+      {
+        "claim": "fact_02",
+        "fact_id": "fact_02",
+        "status": "confirmed",
+        "note": ""
+      },
+      {
+        "claim": "fact_03",
+        "fact_id": "fact_03",
+        "status": "confirmed",
+        "note": "FAQ markers completed by edit"
+      },
+      {
+        "claim": "fact_04",
+        "fact_id": "fact_04",
+        "status": "confirmed",
+        "note": ""
+      },
+      {
+        "claim": "fact_05",
+        "fact_id": "fact_05",
+        "status": "confirmed",
+        "note": ""
+      },
+      {
+        "claim": "fact_06",
+        "fact_id": "fact_06",
+        "status": "confirmed",
+        "note": ""
+      },
+      {
+        "claim": "fact_07",
+        "fact_id": "fact_07",
+        "status": "confirmed",
+        "note": ""
+      },
+      {
+        "claim": "fact_08",
+        "fact_id": "fact_08",
+        "status": "confirmed",
+        "note": "confirmed after edit removes Massachusetts"
+      },
+      {
+        "claim": "fact_09",
+        "fact_id": "fact_09",
+        "status": "confirmed",
+        "note": "confirmed after edit removes Massachusetts"
+      },
+      {
+        "claim": "fact_10",
+        "fact_id": "fact_10",
+        "status": "confirmed",
+        "note": "body confirmed; FAQ use fixed by edit"
+      },
+      {
+        "claim": "fact_11",
+        "fact_id": "fact_11",
+        "status": "confirmed",
+        "note": ""
+      },
+      {
+        "claim": "fact_12",
+        "fact_id": "fact_12",
+        "status": "confirmed",
+        "note": ""
+      },
+      {
+        "claim": "fact_13",
+        "fact_id": "fact_13",
+        "status": "confirmed",
+        "note": "takeaway 2 attribution fixed by edit"
+      },
+      {
+        "claim": "fact_14",
+        "fact_id": "fact_14",
+        "status": "confirmed",
+        "note": "takeaway 2 attribution fixed by edit"
+      },
+      {
+        "claim": "fact_16",
+        "fact_id": "fact_16",
+        "status": "confirmed",
+        "note": ""
+      },
+      {
+        "claim": "fact_17",
+        "fact_id": "fact_17",
+        "status": "confirmed",
+        "note": ""
+      },
+      {
+        "claim": "fact_100",
+        "fact_id": "fact_100",
+        "status": "confirmed",
+        "note": ""
+      },
+      {
+        "claim": "fact_101",
+        "fact_id": "fact_101",
+        "status": "confirmed",
+        "note": ""
+      },
+      {
+        "claim": "fact_102",
+        "fact_id": "fact_102",
+        "status": "confirmed",
+        "note": ""
+      },
+      {
+        "claim": "fact_103",
+        "fact_id": "fact_103",
+        "status": "confirmed",
+        "note": ""
+      },
+      {
+        "claim": "fact_104",
+        "fact_id": "fact_104",
+        "status": "confirmed",
+        "note": ""
+      },
+      {
+        "claim": "fact_105",
+        "fact_id": "fact_105",
+        "status": "confirmed",
+        "note": ""
+      },
+      {
+        "claim": "fact_106",
+        "fact_id": "fact_106",
+        "status": "confirmed",
+        "note": ""
+      },
+      {
+        "claim": "fact_107",
+        "fact_id": "fact_107",
+        "status": "confirmed",
+        "note": "Kochari not presented as a UNESCO wedding custom"
+      },
+      {
+        "claim": "fact_110",
+        "fact_id": "fact_110",
+        "status": "confirmed",
+        "note": "neutral, matches smartraveller.md (updated 17 June 2026)"
+      },
+      {
+        "claim": "fact_111",
+        "fact_id": "fact_111",
+        "status": "confirmed",
+        "note": ""
+      },
+      {
+        "claim": "fact_112",
+        "fact_id": "fact_112",
+        "status": "confirmed",
+        "note": ""
+      },
+      {
+        "claim": "fact_114",
+        "fact_id": "fact_114",
+        "status": "confirmed",
+        "note": ""
+      },
+      {
+        "claim": "fact_115",
+        "fact_id": "fact_115",
+        "status": "confirmed",
+        "note": ""
+      },
+      {
+        "claim": "fact_116",
+        "fact_id": "fact_116",
+        "status": "confirmed",
+        "note": ""
+      }
+    ],
+    "compliance": {
+      "pass": true,
+      "issues": [
+        "No prices, no vendor names, no em dashes, Australian English",
+        "Neutral Smartraveller wording, no political framing",
+        "Advisor copy matches brand-facts.md, no paperwork help"
+      ]
+    },
+    "originality": {
+      "pass": true,
+      "matches": [
+        "Smartraveller official level wording quoted with attribution"
+      ]
+    },
+    "banned_phrases_found": [],
+    "needs_signoff": []
+  }
+}

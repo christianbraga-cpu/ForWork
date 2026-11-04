@@ -14,7 +14,7 @@ We have followed them in the order families live them, and we have been plain ab
 ## Key takeaways
 
 - Parishes describe the church crowning as the high point of an Armenian Apostolic wedding, and the couple share a blessed cup as a sign they will share everything in life.
-- UNESCO records that lavash is placed on newlyweds' shoulders for fertility and prosperity, and at the groom's door the couple are offered honey and break plates before they enter.
+- UNESCO records that lavash is placed on newlyweds' shoulders for fertility and prosperity, and the Smithsonian describes the couple being offered honey and breaking plates before they enter the groom's house.
 - Kochari, the group dance UNESCO lists as performed at holidays, festive celebrations and family ceremonies, is open to everyone whatever their age.
 - Smartraveller rates Armenia Level 2 overall and Level 4 within 5 km of the Azerbaijan border, and Australia's consular help for Armenia comes from Moscow.
 
@@ -62,7 +62,7 @@ If you want a priest to bless the ring, ask your parish early.
 
 No official source records these roles; this is how families usually tell them. Choosing the godparents is one of the weightiest decisions in the whole sequence. The kavor (godfather) and kavorkin (godmother, often the kavor's wife) are the couple's sponsors for life: present at the crowning, honoured at the reception and, in many families, later asked to stand as godparents to the couple's children.
 
-At the crowning, the kavor stands behind the couple and hold a cross over them. Parish practice differs on the detail, so ask your priest what your kavor will do on the day.
+In many families, the kavor stands behind the couple at the crowning and holds a cross over them. Parish practice differs on the detail, so ask your priest what your kavor will do on the day.
 
 Parish rules can shape who you choose. St. Sarkis Armenian Apostolic Church in the United States asks that the best man be a member of the Armenian Church. <!-- fact_06 --> If the friend you had in mind belongs to another church, raise it with the priest before you ask them.
 
@@ -78,7 +78,7 @@ The bride's side brings gifts of its own. In the Smithsonian's account, her fami
 
 ## The crowning in the Armenian Apostolic Church
 
-The church service is the one part of the day with written sources behind it. We drew on how two Armenian Apostolic parishes in the United States, St. Sarkis and St. James in Watertown, Massachusetts, describe the service. These are US parish rules, not general ones, so ask your priest, as practice can vary.
+The church service is the one part of the day with written sources behind it. We drew on how two Armenian Apostolic parishes in the United States, St. Sarkis and St. James in Watertown, describe the service. These are US parish rules, not general ones, so ask your priest, as practice can vary.
 
 Parish guidance describes Holy Matrimony in the Armenian Church as the sacrament by which two baptised Christians enter a lifelong union by making vows before God and the Church. <!-- fact_07 --> During the vows, the bride's and groom's right hands are joined as a sign of their oneness. <!-- fact_01 --> The priest blesses the rings, which the couple then exchange. <!-- fact_02 -->
 
@@ -129,6 +129,10 @@ Kochari is the dance that fills the floor. UNESCO inscribed "Kochari, traditiona
 Read more on the dances and the rest of the day in the [Smithsonian Folklife Festival on Armenian wedding rituals](https://festival.si.edu/blog/rituals-symbols-armenian-wedding-celebration).
 
 <!-- CTA: primary -->
+**Read the free magazine**
+Free to read, whenever you are ready.
+[Read the free magazine](/magazine?utm_source=blog&utm_medium=content&utm_campaign=armenian-wedding-traditions&utm_content=primary)
+<!-- /CTA: primary -->
 
 ## Keeping the customs at an Armenian-Australian wedding
 
@@ -160,17 +164,17 @@ Local authorities may ask you to prove you are not already married. A Certificat
 
 Ask the same registry and embassy about translation of your documents into Armenian, and about how your marriage will be recognised once you are home. Our guide on whether you need to [register an overseas marriage at home](/expert-advice/do-you-have-to-register-an-overseas-marriage-at-home) is a useful next read.
 
-If you would like one person to coordinate the venue, travel and suppliers around those answers, [speak with a Wedded Advisor](/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=armenian-wedding-traditions). You will have a single point of contact, with the fee agreed in writing before any work begins; confirm the legal and church steps with the registry and your priest.
+If you would like one person to coordinate the venue, travel and suppliers around those answers, [speak with a Wedded Advisor](/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=armenian-wedding-traditions&utm_content=secondary). You will have a single point of contact, with the fee agreed in writing before any work begins; confirm the legal and church steps with the registry and your priest.
 
 ## Frequently asked questions
 
 ### How long are Armenian weddings?
 
-There is no fixed length. The customs run from the formal asking and engagement, sometimes weeks or months ahead, to the crowning and reception, and each family and region does it differently. <!-- fact_10 -->
+There is no fixed length. The Smithsonian's curator noted that each region of Armenia has its own wedding style. <!-- fact_10 --> Some families spread the asking, engagement, crowning and reception across weeks or months; others hold them within a day or two.
 
 ### What happens at an Armenian church wedding?
 
-Parishes describe the joining of right hands, the blessing and exchange of rings, the crowning of the couple as king and queen of their home, and a shared cup of blessed wine, closing with a benediction. <!-- fact_03 --> Ask your priest, as practice can vary.
+Parishes describe the joining of right hands, the blessing and exchange of rings, the crowning of the couple as king and queen of their home, and a shared cup of blessed wine, closing with a benediction. <!-- fact_01 --> <!-- fact_02 --> <!-- fact_03 --> <!-- fact_04 --> <!-- fact_05 --> Ask your priest, as practice can vary.
 
 ### What is the lavash tradition at Armenian weddings?
 
