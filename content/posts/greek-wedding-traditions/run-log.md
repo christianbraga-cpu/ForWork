@@ -3,3 +3,4 @@
 23:10 04 visual-curator complete 7 placeholders
 23:23 02 seo-researcher complete; old page 35 US / 7 AU keywords (US 1,000/mo); scope global; 2 legacy pages compete (/greek-wedding-traditions-we-love, /10-charming-and-timeless-wedding-traditions-in-greece-2) -> 301 recommended; engagement page kept; 2 Greek Real Weddings to link; schema valid
 23:27 03 planner-sme batch B partial (8 Smartraveller facts; customs unsourced, often told); orchestrator added 8 legal facts (fact_108-115) from Embassy Athens notarial page and Smartraveller 'Getting married overseas', read live; waiting on batch A
+23:49 03 planner-sme batch A partial 5 facts (OCA marriage page, shared Orthodox rite); Archdiocese page read declined by person; merged; writer launched with 'ask your parish priest' framing for Greek service steps
