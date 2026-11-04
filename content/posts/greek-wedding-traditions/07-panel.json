@@ -1,0 +1,203 @@
+{
+  "agent": "panel-chair",
+  "task_id": "greek-wedding-traditions",
+  "stage": "07b",
+  "status": "complete",
+  "round": 1,
+  "inputs_used": [
+    "content/posts/greek-wedding-traditions/01-brief.json",
+    "content/posts/greek-wedding-traditions/02-seo.json",
+    "content/posts/greek-wedding-traditions/03-source-pack.json",
+    "content/posts/greek-wedding-traditions/05-draft-r2.md",
+    "content/posts/greek-wedding-traditions/06-edit.json",
+    "content/posts/greek-wedding-traditions/07-icp/planner_couple.json",
+    "content/posts/greek-wedding-traditions/07-icp/funding_parent.json",
+    "content/posts/greek-wedding-traditions/07-icp/uhnw.json",
+    "content/posts/greek-wedding-traditions/07-icp/sceptic.json",
+    "content/posts/greek-wedding-traditions/07-icp/search_visitor.json",
+    "content-system/personas/*.yaml (weight)",
+    "content-system/schemas/07-panel.schema.json",
+    "CLAUDE.md"
+  ],
+  "payload": {
+    "personas_run": [
+      "planner_couple",
+      "funding_parent",
+      "uhnw",
+      "sceptic",
+      "search_visitor"
+    ],
+    "weights_used": {
+      "planner_couple": 0.4,
+      "funding_parent": 0.2,
+      "uhnw": 0.2,
+      "sceptic": 0.1,
+      "search_visitor": 0.1
+    },
+    "weighted_scores": {
+      "relevance_to_me": 2.9,
+      "trust": 4.0,
+      "clarity": 4.2,
+      "brand_feels_premium": 3.2,
+      "likelihood_to_enquire": 1.9
+    },
+    "weighted_enquiry_likelihood": 1.9,
+    "must_fix": [
+      {
+        "issue": "Question H3 'How long is a Greek Orthodox wedding service?' (ranking query 'how long is a greek wedding') reads as a dodge: the answer line does not answer. No source in 03-source-pack gives a duration, so no figure may be added.",
+        "flagged_by": [
+          "planner_couple",
+          "funding_parent",
+          "sceptic",
+          "search_visitor"
+        ],
+        "owner": "luxury-writer",
+        "r2_line": 111,
+        "quote": "Your priest is the right person to ask about timing, since the length depends on the parish, the music and the size of the wedding party.",
+        "fix": "Keep the H3 (it carries a ranking query). Replace the line with: \"The length is not fixed: it depends on the parish, the music and the size of the wedding party. Ask your priest before you set guest transport and the reception start.\" No minutes or hours figure. (+6 words)"
+      },
+      {
+        "issue": "Ancient Greece section still reads as a placeholder: the second paragraph repeats that it is a separate topic and names marriage age without answering it.",
+        "flagged_by": [
+          "planner_couple",
+          "sceptic",
+          "search_visitor"
+        ],
+        "owner": "luxury-writer",
+        "r2_line": 157,
+        "quote": "The weddings of ancient Greece, including the age at which people married, are a separate history topic, and this guide keeps to the customs couples meet today.",
+        "fix": "Delete line 157 entirely and end line 155 with: \"That makes it hard to draw a straight line from ancient ceremony to the modern church service, and this guide keeps to the customs couples meet today.\" (replacing the quoted r2 sentence on line 155: \"That makes it hard to draw a straight line from ancient ceremony to the modern church service.\"). Keep the H2 and fact_05. No new ancient facts. (-16 words)"
+      }
+    ],
+    "should_fix": [
+      {
+        "issue": "Filler line in the names-on-the-shoe section; reads like a brochure.",
+        "flagged_by": [
+          "sceptic",
+          "uhnw"
+        ],
+        "owner": "luxury-writer",
+        "r2_line": 61,
+        "quote": "It is a light moment that photographs well.",
+        "fix": "Delete the sentence. (-8 words)"
+      },
+      {
+        "issue": "No practical prompt for older or less mobile guests in summer heat (funding parent's mother; planner couple's grandparents).",
+        "flagged_by": [
+          "funding_parent",
+          "planner_couple"
+        ],
+        "owner": "luxury-writer",
+        "r2_line": 163,
+        "quote": "Summer brings wildfires and heatwaves from June to September, which is worth weighing if you are set on a midsummer date. <!-- fact_105 -->",
+        "fix": "Directly after the fact_105 marker, add one question-only sentence reusing fact_105, no new facts and no Advisor claim: \"With older or less mobile guests, ask about shade, seating and the walk to the church.\" (+16 words)"
+      }
+    ],
+    "consider": [
+      {
+        "issue": "Title reads as clickbait ('You Did Not Know?').",
+        "flagged_by": [
+          "planner_couple"
+        ],
+        "owner": "luxury-writer",
+        "fix": "No change. The title is the person's choice; noted for them only."
+      },
+      {
+        "issue": "Legal bullet in Key takeaways crowds out a traditions takeaway for search visitors.",
+        "flagged_by": [
+          "search_visitor"
+        ],
+        "owner": "luxury-writer",
+        "fix": "No change this round: the brief requires the legal section and the bullet is dated and accurate."
+      },
+      {
+        "issue": "Sceptic wants the CNI fee figure.",
+        "flagged_by": [
+          "sceptic"
+        ],
+        "owner": "planner-sme",
+        "fix": "No change. Keep 'A fee applies' with the existing Australian Embassy Notarial page link; no fee figures in copy."
+      }
+    ],
+    "keep": [
+      "Intro line: \"It says plainly which belong to the Church and which are simply often told.\" (praised by planner_couple, sceptic, uhnw)",
+      "Church vs folklore framing and 'custom, not a rule' hedges, e.g. the koumbaros baptism line",
+      "\"Check with your priest about who can stand as koumbaros before you ask anyone.\"",
+      "\"If one of you is not Orthodox, raise it with the priest first.\"",
+      "Crowning note: \"Tell your photographer and your guests that this, not the rings or a kiss, is the moment to watch.\"",
+      "Key takeaway on no vows and the crowning (search_visitor would screenshot it)",
+      "Money dance 'gather it discreetly' line (uhnw)",
+      "Legal section with dated Smartraveller facts, Greek nationality and military service note, and the 'fee and inclusions in writing' brand-facts wording",
+      "Calm, non-pushy Wedded Advisor CTA after the legal section"
+    ],
+    "conflicts_resolved": [
+      "Service length: planner_couple, funding_parent and search_visitor want a rough range; no source gives one and CLAUDE.md rule 1 forbids inventing it. Resolved for the primary persona with an honest 'what affects it and ask your priest' answer tied to their actual need (guest transport, reception start). H3 kept because it carries 'how long is a greek wedding'.",
+      "Ancient Greece: sceptic and search_visitor say fill it or cut it. Filling needs facts we do not have and cutting the H2 loses ranking queries, so the section stays as one short honest paragraph.",
+      "Title: planner_couple (primary) dislikes it, search_visitor says the content delivers on it. The title is the person's choice; not actioned.",
+      "Business asks (deposits, contracts, commissions, fee model, named Advisor or phone call, on-the-day accountability, guest travel logistics, scale and exclusive use, privacy and security, private senior introduction) from funding_parent, planner_couple, sceptic and uhnw are deferred to the service page and Nic, not fixed here, because they need business facts beyond brand-facts.md and the brief's goal is the magazine CTA.",
+      "uhnw asks to replace 'fee and inclusions' wording; it is brand-facts wording and stays."
+    ],
+    "length_check": "Net change about -2 words (+6, -16, -8, +16); stays within the word cap.",
+    "gate": "revise",
+    "gate_reason": "Two must_fix items and weighted enquiry likelihood 1.9 (below 3.8). The low enquiry score is expected for a dreaming-stage explainer whose goal is the magazine CTA; most of the gap comes from deferred business questions, not copy faults. Not 'stop': the piece meets the brief."
+  },
+  "self_qa": {
+    "checks": [
+      {
+        "check": "Weighted scores computed with persona weights (sum 1.0)",
+        "pass": true
+      },
+      {
+        "check": "Every item quotes an exact r2 line",
+        "pass": true
+      },
+      {
+        "check": "No new unsourced facts, prices or fee figures; no Advisor claims beyond brand-facts.md",
+        "pass": true
+      },
+      {
+        "check": "No ranking-query H2 or H3 removed",
+        "pass": true
+      },
+      {
+        "check": "Net-neutral length",
+        "pass": true,
+        "note": "about -2 words"
+      },
+      {
+        "check": "Max 5 action items",
+        "pass": true,
+        "note": "4 actionable, 3 consider items are no-change notes"
+      }
+    ],
+    "confidence": 0.8
+  },
+  "open_questions": [
+    {
+      "to": "Nic",
+      "question": "Business answers readers asked for (deposit protection, supplier contracts, commissions, fee model, phone call with a named Advisor, on-the-day accountability in Greece, guest travel and accessible transfers, large guest lists, exclusive use, privacy and security) belong on /wonderland-concierge, not this post. Confirm if any should be added there.",
+      "blocking": false
+    },
+    {
+      "to": "Nic",
+      "question": "Title 'What Are the Greek Wedding Traditions You Did Not Know?' was called clickbait by the primary persona; it is your choice and is unchanged.",
+      "blocking": false
+    },
+    {
+      "to": "planner-sme",
+      "question": "If a published parish or Archdiocese source gives a typical service length, add it in a refresh; until then no figure.",
+      "blocking": false
+    }
+  ],
+  "assumptions": [
+    "Persona weights are uncalibrated estimates from the persona yaml files.",
+    "Low weighted enquiry likelihood is not grounds for 'stop' because the brief's goal is the magazine CTA at the dreaming stage."
+  ],
+  "verify_items": [],
+  "tools_used": [
+    "Bash"
+  ],
+  "next_agent": [
+    "luxury-writer"
+  ]
+}
