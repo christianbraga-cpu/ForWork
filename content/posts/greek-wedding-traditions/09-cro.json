@@ -1,0 +1,107 @@
+{
+  "agent": "cro",
+  "task_id": "greek-wedding-traditions",
+  "stage": "09",
+  "status": "complete",
+  "round": 1,
+  "inputs_used": [
+    "content-system/brand/services.md",
+    "content/posts/greek-wedding-traditions/01-brief.json",
+    "content/posts/greek-wedding-traditions/07-panel.json",
+    "content/posts/greek-wedding-traditions/08-final.md",
+    "content-system/seo/link-map.csv",
+    "content-system/schemas/09-cro.schema.json"
+  ],
+  "self_qa": {
+    "confidence": 0.85,
+    "checks": [
+      {
+        "check": "/magazine and /wonderland-concierge exist in link-map.csv",
+        "pass": true
+      },
+      {
+        "check": "Each copy_changes old string occurs exactly once in 08-final.md",
+        "pass": true
+      },
+      {
+        "check": "UTMs use utm_source=blog, utm_medium=content, utm_campaign=greek-wedding-traditions",
+        "pass": true
+      },
+      {
+        "check": "Inline Advisor link already carries utm_content=secondary; no other /magazine link exists, so no magnet tag is needed",
+        "pass": true
+      },
+      {
+        "check": "No CTA block next to an inline link to the same target (nearest links to the marker go elsewhere; the Advisor ask stays inline only)",
+        "pass": true
+      },
+      {
+        "check": "Primary text 6 words or fewer, no exclamation mark, no 'click here'",
+        "pass": true
+      },
+      {
+        "check": "No prices, invented business details, paperwork-help claims, banned slogan, em dashes or the banned word",
+        "pass": true
+      },
+      {
+        "check": "Added copy minimal: one CTA block of about 12 words, nothing else",
+        "pass": true
+      }
+    ]
+  },
+  "assumptions": [
+    "The CTA block markup (bold heading, subtext line, link, closing comment) follows earlier posts; the CMS publisher adapts it to the field map's CTA component if different.",
+    "The magazine is both the primary CTA and the lead magnet, so no second magazine link (utm_content=magnet) is placed.",
+    "The existing inline Wedded Concierge paragraph after the legal section serves as the secondary CTA; it already says the paperwork belongs to the couple, priest and authorities, so no copy change is needed there.",
+    "The closing 'a Wedded Advisor is glad to start that conversation' line stays unlinked so the Advisor ask is not duplicated.",
+    "Per-persona cta_reaction detail in 07-icp was not read in full under the time budget; the panel 'keep' list (calm, non-pushy Advisor CTA after the legal section) was used instead."
+  ],
+  "open_questions": [
+    {
+      "to": "orchestrator",
+      "question": "Apply copy_change 1 (fill the primary marker) to 08-final.md before distribution and CMS upload? It adds about 12 words to an article at its word cap.",
+      "blocking": false
+    },
+    {
+      "to": "Nic",
+      "question": "Is there a Greece or Europe magazine edition? It would be a closer lead magnet than the general /magazine page.",
+      "blocking": false
+    }
+  ],
+  "payload": {
+    "journey_stage": "dreaming",
+    "primary_cta": {
+      "text": "Read the free magazine",
+      "subtext": "Free to read, whenever you are ready.",
+      "link": "/magazine?utm_source=blog&utm_medium=content&utm_campaign=greek-wedding-traditions&utm_content=primary",
+      "placement": "Fill the existing <!-- CTA: primary --> marker after the guest etiquette section, before the ancient Greece and legal sections. The reader has finished the customs and is still dreaming; it sits well before the Advisor invitation, so the asks are not back to back. No neighbouring link points to /magazine, so nothing is dropped."
+    },
+    "secondary_cta": {
+      "text": "Speak with a Wedded Advisor",
+      "subtext": "Fee agreed in writing before any work begins.",
+      "link": "/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=greek-wedding-traditions&utm_content=secondary",
+      "placement": "Existing inline Wedded Concierge link in the paragraph straight after the legal section, as the brief asks. Already tagged utm_content=secondary and carries the panel-approved reassurance (fee and inclusions in writing). No separate block is added."
+    },
+    "lead_magnet": {
+      "name": "Wedded Wonderland digital magazine (free)",
+      "link": "/magazine?utm_source=blog&utm_medium=content&utm_campaign=greek-wedding-traditions&utm_content=primary",
+      "exists": true,
+      "placement": "Same as the primary CTA block; no second magazine link is placed."
+    },
+    "tracking": [
+      "/magazine?utm_source=blog&utm_medium=content&utm_campaign=greek-wedding-traditions&utm_content=primary",
+      "/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=greek-wedding-traditions&utm_content=secondary"
+    ],
+    "copy_changes": [
+      {
+        "old": "<!-- CTA: primary -->",
+        "new": "<!-- CTA: primary -->\n**Read the free magazine**\nFree to read, whenever you are ready.\n[Read the free magazine](/magazine?utm_source=blog&utm_medium=content&utm_campaign=greek-wedding-traditions&utm_content=primary)\n<!-- /CTA: primary -->",
+        "why": "Fill the primary marker with the magazine CTA block (text, subtext, UTM-tagged link). Adds about 12 words."
+      }
+    ],
+    "rationale": "Brief sets journey_stage dreaming, so the free magazine leads (services.md: early stage gets the lead magnet, Concierge secondary). The panel kept the calm Advisor invitation after the legal section and asked for no CTA changes, so the only edit is filling the primary marker. Weighted enquiry likelihood is 1.9, which fits a low-commitment magazine ask rather than a harder Advisor push. Suggestion only: a Greece or Europe magazine edition would be a closer magnet if one exists."
+  },
+  "next_agent": [
+    "distribution"
+  ]
+}

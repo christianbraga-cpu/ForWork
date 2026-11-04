@@ -12,3 +12,4 @@
 23:55 orchestrator: intro 'to the last dance' reworded to avoid echoing the parked slogan
 23:56 07b icp-panel-chair revise; enquire 1.9; 2 must_fix (service length answer; ancient Greece), 2 should_fix; final pass launched
 23:57 08 luxury-writer complete 2,864 words; 0 VERIFY; scan clean; 8b+CRO+distribution launched
+23:58 09 cro-specialist complete; 1 copy change (magazine CTA at marker); applying after 8b
