@@ -6,3 +6,4 @@
 00:07 03 planner-sme batch A complete 17 facts (US Armenian Apostolic parish pages for crowning; Smithsonian Folklife 2018); asking, engagement, kavor often told; merged; writer launched
 00:09 05 luxury-writer complete 2,763 words; 0 VERIFY; 7 image slots; 'Yeravan' typo fixed; first draft sent; editor + 5 readers launched
 00:10 07 icp-reader uhnw complete; no must-fix (scale/privacy deferred)
+00:10 07 icp-reader search_visitor, sceptic, funding_parent, planner_couple complete; no must-fix; waiting on editor
