@@ -8,3 +8,5 @@
 23:53 07 icp-reader funding_parent complete; no must-fix
 23:53 07 icp-reader search_visitor, uhnw complete; no must-fix; waiting on planner_couple, sceptic, editor
 23:53 07 icp-reader planner_couple, sceptic complete; no must-fix; waiting on editor
+23:54 06 editor pass_with_edits 4.29; 12 edits applied -> 05-draft-r2.md; 0 VERIFY; Advisor utm_content set to secondary; panel chair launched
+23:55 orchestrator: intro 'to the last dance' reworded to avoid echoing the parked slogan
