@@ -4,3 +4,4 @@
 23:59 02 seo-researcher complete; old page US #9-20 (#12 keyword), no AU; no other Armenia pages; 301 after slug change; schema valid
 00:05 03 planner-sme batch B complete 16 facts (UNESCO lavash on newlyweds' shoulders; duduk at weddings; Kochari no wedding mention; Smartraveller CNI page); Armenian legal steps unread -> check-with; waiting on batch A
 00:07 03 planner-sme batch A complete 17 facts (US Armenian Apostolic parish pages for crowning; Smithsonian Folklife 2018); asking, engagement, kavor often told; merged; writer launched
+00:09 05 luxury-writer complete 2,763 words; 0 VERIFY; 7 image slots; 'Yeravan' typo fixed; first draft sent; editor + 5 readers launched
