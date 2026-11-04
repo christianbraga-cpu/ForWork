@@ -1,0 +1,285 @@
+{
+  "agent": "editor",
+  "task_id": "greek-wedding-traditions",
+  "stage": "06",
+  "status": "complete",
+  "round": 3,
+  "inputs_used": [
+    "CLAUDE.md",
+    "content-system/brand/brand-facts.md",
+    "content/posts/greek-wedding-traditions/08-final.md",
+    "content/posts/greek-wedding-traditions/03-source-pack.json",
+    "content/posts/greek-wedding-traditions/02-seo.json",
+    "content/posts/greek-wedding-traditions/02-research/pages/smartraveller.md"
+  ],
+  "self_qa": {
+    "checks": [
+      {
+        "check": "scan_copy.py run on 08-final.md",
+        "pass": true,
+        "note": "0 banned, 0 flagged, 0 dashes, 0 overlaps"
+      },
+      {
+        "check": "Fact markers resolve to source pack",
+        "pass": true,
+        "note": "fact_01 to 05, 100, 102 to 105, 108 to 115 all present and matching after edits"
+      },
+      {
+        "check": "Every edit old string occurs exactly once in 08-final.md",
+        "pass": true
+      },
+      {
+        "check": "Edits length neutral",
+        "pass": true,
+        "note": "each within a few characters"
+      },
+      {
+        "check": "All 02-seo outline H2s present",
+        "pass": true
+      },
+      {
+        "check": "Exactly 4 one-sentence Key takeaways",
+        "pass": true
+      },
+      {
+        "check": "No prices, amounts, vendor names, em dashes, 'last dance', paperwork help, or claims attributed to greekorthodox.org.au",
+        "pass": true
+      },
+      {
+        "check": "Brand claims match brand-facts.md",
+        "pass": true,
+        "note": "single point of contact, fee in writing, inclusions in writing"
+      }
+    ],
+    "confidence": 0.85
+  },
+  "open_questions": [
+    {
+      "to": "orchestrator",
+      "question": "Apply the 8 blocking edits in payload.edits to 08-final.md before the CMS step; no further scoring round needed.",
+      "blocking": true
+    },
+    {
+      "to": "planner-sme",
+      "question": "Greek service order still has no Greek-specific source; it is hedged throughout. Source it from the Archdiocese in a refresh.",
+      "blocking": false
+    },
+    {
+      "to": "seo-researcher",
+      "question": "Ancient Greece H2 has no encyclopaedia or museum source and relies on fact_05 only; acceptable for ranking protection but thin.",
+      "blocking": false
+    }
+  ],
+  "assumptions": [
+    "The Archdiocese link is a reading pointer only and attributes no claim, so it is allowed."
+  ],
+  "verify_items": [],
+  "tools_used": [
+    "Bash"
+  ],
+  "next_agent": [
+    "luxury-writer"
+  ],
+  "payload": {
+    "draft_file": "content/posts/greek-wedding-traditions/08-final.md",
+    "rubric": {
+      "voice": 5,
+      "expertise": 4,
+      "accuracy": 4,
+      "seo_fit": 4,
+      "commercial_link": 4,
+      "structure": 5,
+      "brief_fit": 4
+    },
+    "average": 4.29,
+    "blocking_issues": [
+      "Four Greek service steps stated as unhedged fact (rings, readings incl. Gospel under fact_02, common cup, Dance of Isaiah) and koumbaros role",
+      "Civil (dimos) or religious ceremony stated as legal fact; must be a check with the municipality and the embassy",
+      "Wildfire/heatwave line not attributed to Smartraveller as in fact_105",
+      "CNI apostille line drops 'authentication' from fact_113"
+    ],
+    "decision": "pass_with_edits",
+    "edits": [
+      {
+        "location": "Section 6, The betrothal and the rings",
+        "issue": "Greek service step stated as fact with no source (rings blessed and exchanged three times); service steps must stay hedged as usually described.",
+        "fix": "The priest usually blesses the rings, and they are then exchanged three times, most often by the koumbaros.",
+        "old": "The priest blesses the rings, and they are exchanged between the couple three times, most often by the koumbaros.",
+        "new": "The priest usually blesses the rings, and they are then exchanged three times, most often by the koumbaros."
+      },
+      {
+        "location": "Section 9, The Gospel and the common cup",
+        "issue": "fact_02 is shared Orthodox (OCA) and says only that the couple hears readings; 'including the Gospel' and the Greek order are not in the fact.",
+        "fix": "Scripture readings usually follow, as in the Orthodox rite. <!-- fact_02 -->",
+        "old": "Readings from Scripture follow, including the Gospel. <!-- fact_02 -->",
+        "new": "Scripture readings usually follow, as in the Orthodox rite. <!-- fact_02 -->"
+      },
+      {
+        "location": "Section 9, The Gospel and the common cup",
+        "issue": "Common cup step stated as fact with no source.",
+        "fix": "The couple then usually shares a common cup of wine, sipping from it three times.",
+        "old": "The couple then shares a common cup of wine, usually sipping from it three times.",
+        "new": "The couple then usually shares a common cup of wine, sipping from it three times."
+      },
+      {
+        "location": "Section 10, The Dance of Isaiah",
+        "issue": "Procession stated as fact with no source; hedge as usually described.",
+        "fix": "The priest then usually leads the crowned couple three times around the ceremony table, the koumbaros following with the ribbon.",
+        "old": "The priest then leads the crowned couple three times around the ceremony table, with the koumbaros following and holding the ribbon.",
+        "new": "The priest then usually leads the crowned couple three times around the ceremony table, the koumbaros following with the ribbon."
+      },
+      {
+        "location": "Section 2, The koumbaros and koumbara",
+        "issue": "Church role stated as fact with no source.",
+        "fix": "The koumbaros (or koumbara, if a woman) is usually called the couple's sponsor.",
+        "old": "The koumbaros (or koumbara, if a woman) is the couple's sponsor in the service.",
+        "new": "The koumbaros (or koumbara, if a woman) is usually called the couple's sponsor."
+      },
+      {
+        "location": "Marrying legally in Greece, Civil or church ceremony",
+        "issue": "Greek legal route stated as fact with no source (fact_101: legal steps must come from the embassy and Greek official sources). Must be framed as a check with the municipality and the embassy.",
+        "fix": "Ask the municipality (dimos) and the embassy whether a civil or a religious route suits you.",
+        "old": "Couples usually choose a civil ceremony with the local municipality (dimos) or a religious one.",
+        "new": "Ask the municipality (dimos) and the embassy whether a civil or a religious route suits you."
+      },
+      {
+        "location": "Marrying legally in Greece, opening",
+        "issue": "Travel claim not attributed and not matching fact_105 wording (Smartraveller: summer wildfires, June to September, and heatwaves).",
+        "fix": "Smartraveller notes summer wildfires (June to September) and heatwaves, worth weighing",
+        "old": "Summer brings wildfires and heatwaves from June to September, which is worth weighing",
+        "new": "Smartraveller notes summer wildfires (June to September) and heatwaves, worth weighing"
+      },
+      {
+        "location": "Marrying legally in Greece, Proving you are free to marry",
+        "issue": "Does not match fact_113 exactly: Smartraveller says 'authentication or apostille'.",
+        "fix": "and if it needs authentication or apostille, as some authorities",
+        "old": "and whether it needs an apostille, since some authorities",
+        "new": "and if it needs authentication or apostille, as some authorities"
+      }
+    ],
+    "fact_check_log": [
+      {
+        "claim": "No vows or oaths; sacrament not a legal contract (shared Orthodox, OCA)",
+        "status": "confirmed",
+        "fact_id": "fact_01"
+      },
+      {
+        "claim": "Procession, prayer, readings, crowning (shared Orthodox, OCA)",
+        "status": "confirmed",
+        "fact_id": "fact_02"
+      },
+      {
+        "claim": "Crowns of God's glory",
+        "status": "confirmed",
+        "fact_id": "fact_03"
+      },
+      {
+        "claim": "Sacrament for baptised members; may marry baptised non-Orthodox Christian",
+        "status": "confirmed",
+        "fact_id": "fact_04"
+      },
+      {
+        "claim": "Rite patterned on baptism and chrismation; no separate ritual for centuries",
+        "status": "confirmed",
+        "fact_id": "fact_05"
+      },
+      {
+        "claim": "Smartraveller level 1, updated 30 Sept 2026",
+        "status": "confirmed",
+        "fact_id": "fact_100"
+      },
+      {
+        "claim": "Embassy address",
+        "status": "confirmed",
+        "fact_id": "fact_102"
+      },
+      {
+        "claim": "Dress modestly in churches",
+        "status": "confirmed",
+        "fact_id": "fact_103"
+      },
+      {
+        "claim": "Greek descent, nationality and military service",
+        "status": "confirmed",
+        "fact_id": "fact_104"
+      },
+      {
+        "claim": "Summer wildfires June to September and heatwaves (fixed by edit)",
+        "status": "confirmed",
+        "fact_id": "fact_105"
+      },
+      {
+        "claim": "Embassy CNI and notices of intended marriage",
+        "status": "confirmed",
+        "fact_id": "fact_108"
+      },
+      {
+        "claim": "Appointment, CNI by post, two working days",
+        "status": "confirmed",
+        "fact_id": "fact_109"
+      },
+      {
+        "claim": "Fee applies; honorary consuls no notarial services",
+        "status": "confirmed",
+        "fact_id": "fact_110"
+      },
+      {
+        "claim": "Embassy gives no legal advice",
+        "status": "confirmed",
+        "fact_id": "fact_111"
+      },
+      {
+        "claim": "Proof free to marry: CNI and BDM certificates",
+        "status": "confirmed",
+        "fact_id": "fact_112"
+      },
+      {
+        "claim": "CNI questions incl. authentication or apostille (fixed by edit)",
+        "status": "confirmed",
+        "fact_id": "fact_113"
+      },
+      {
+        "claim": "Overseas marriage not registrable but usually recognised",
+        "status": "confirmed",
+        "fact_id": "fact_114"
+      },
+      {
+        "claim": "Certificate proof of marriage, not always name change",
+        "status": "confirmed",
+        "fact_id": "fact_115"
+      },
+      {
+        "claim": "Greek service steps (rings, candles, stefana, common cup, Dance of Isaiah, removal of crowns)",
+        "status": "hedged",
+        "fact_id": null,
+        "note": "No Greek-specific source; all hedged as 'usually' after edits, with 'Ask your parish priest' lead-in"
+      },
+      {
+        "claim": "Folklore (krevati, shoe names, foot step, koufeta odd numbers, ftou ftou, money dance)",
+        "status": "hedged",
+        "fact_id": null,
+        "note": "Framed as often told / in many families"
+      },
+      {
+        "claim": "Civil (dimos) or religious ceremony in Greece",
+        "status": "converted",
+        "fact_id": null,
+        "note": "Reframed as a check with the municipality and the embassy (edit)"
+      }
+    ],
+    "compliance": {
+      "pass": true,
+      "issues": [
+        "Legal line reframed as municipality and embassy check (edit)"
+      ],
+      "prices": "none",
+      "amounts": "none"
+    },
+    "originality": {
+      "pass": true,
+      "scan": "0 overlaps with competitor or Smartraveller pages"
+    },
+    "banned_phrases_found": [],
+    "needs_signoff": []
+  }
+}

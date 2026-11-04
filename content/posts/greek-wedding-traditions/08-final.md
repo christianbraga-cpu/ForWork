@@ -40,7 +40,7 @@ The engagement is often marked with a blessing of the rings and a gathering of b
 
 ### 2. The koumbaros and koumbara
 
-The koumbaros (or koumbara, if a woman) is the couple's sponsor in the service. In plain terms, this is the person who stands beside you at the altar and takes part in the rite itself. In the service as it is usually described, the koumbaros exchanges the rings and the stefana over the couple's heads.
+The koumbaros (or koumbara, if a woman) is usually called the couple's sponsor. In plain terms, this is the person who stands beside you at the altar and takes part in the rite itself. In the service as it is usually described, the koumbaros exchanges the rings and the stefana over the couple's heads.
 
 The tie often lasts well beyond the day. Many families say the koumbaros is later asked to baptise the couple's first child, though this is a custom, not a rule.
 
@@ -72,7 +72,7 @@ If one of you is not Orthodox, raise it with the priest first. It will shape the
 
 ### 6. The betrothal and the rings
 
-The service usually opens with the betrothal. The priest blesses the rings, and they are exchanged between the couple three times, most often by the koumbaros.
+The service usually opens with the betrothal. The priest usually blesses the rings, and they are then exchanged three times, most often by the koumbaros.
 
 There are no spoken vows at this point or any other. <!-- fact_01 --> If you want personal words, the reception speeches are the natural place for them.
 
@@ -92,11 +92,11 @@ Tell your photographer and your guests that this, not the rings or a kiss, is th
 
 ### 9. The Gospel and the common cup
 
-Readings from Scripture follow, including the Gospel. <!-- fact_02 --> The couple then shares a common cup of wine, usually sipping from it three times. It is commonly described as a sign of the life they will now share.
+Scripture readings usually follow, as in the Orthodox rite. <!-- fact_02 --> The couple then usually shares a common cup of wine, sipping from it three times. It is commonly described as a sign of the life they will now share.
 
 ### 10. The Dance of Isaiah
 
-The priest then leads the crowned couple three times around the ceremony table, with the koumbaros following and holding the ribbon. This short procession is known as the Dance of Isaiah, usually said to be named after a hymn sung as they walk.
+The priest then usually leads the crowned couple three times around the ceremony table, the koumbaros following with the ribbon. This short procession is known as the Dance of Isaiah, usually said to be named after a hymn sung as they walk.
 
 Afterwards the priest usually removes the crowns and gives a closing blessing. Guests often throw rice or petals as the couple leaves, a custom many families keep.
 
@@ -147,6 +147,10 @@ Bridal dress traditions are mostly about family rather than rules. Many brides w
 Gifts follow family custom. Many Greek families give money in a card, and others choose from a registry. If unsure, ask someone close to the couple. On who pays for what, families differ widely, and it is a conversation for the two families, not a rule of the culture.
 
 <!-- CTA: primary -->
+**Read the free magazine**
+Free to read, whenever you are ready.
+[Read the free magazine](/magazine?utm_source=blog&utm_medium=content&utm_campaign=greek-wedding-traditions&utm_content=primary)
+<!-- /CTA: primary -->
 
 ## Greek wedding traditions from ancient Greece
 
@@ -156,15 +160,15 @@ Ancient Greek marriage customs are a separate subject from the Orthodox service,
 
 This section reflects official advice as at November 2026 and is not legal advice. Rules change, so confirm each step yourself.
 
-Start with the basics. Smartraveller's advice level for Greece is "Exercise normal safety precautions", with no higher-level areas listed, last updated on 30 September 2026. <!-- fact_100 --> Summer brings wildfires and heatwaves from June to September, which is worth weighing if you are set on a midsummer date. <!-- fact_105 --> With older or less mobile guests, ask about shade, seating and the walk to the church.
+Start with the basics. Smartraveller's advice level for Greece is "Exercise normal safety precautions", with no higher-level areas listed, last updated on 30 September 2026. <!-- fact_100 --> Smartraveller notes summer wildfires (June to September) and heatwaves, worth weighing if you are set on a midsummer date. <!-- fact_105 --> With older or less mobile guests, ask about shade, seating and the walk to the church.
 
 Greek-Australian couples have one extra check. Smartraveller notes that someone of Greek descent who was born elsewhere may hold Greek nationality, with obligations such as military service, and advises getting advice from a Greek embassy or consulate before travelling. <!-- fact_104 -->
 
-**Proving you are free to marry.** Some countries ask for proof that you are free to marry, most often a Certificate of No Impediment (CNI) and certificates from a registry of births, deaths and marriages. <!-- fact_112 --> Smartraveller suggests asking the local authorities whether you need a CNI, whether you can get one in Australia, and whether it needs an apostille, since some authorities only accept CNIs issued in their own country. <!-- fact_113 -->
+**Proving you are free to marry.** Some countries ask for proof that you are free to marry, most often a Certificate of No Impediment (CNI) and certificates from a registry of births, deaths and marriages. <!-- fact_112 --> Smartraveller suggests asking the local authorities whether you need a CNI, whether you can get one in Australia, and if it needs authentication or apostille, as some authorities only accept CNIs issued in their own country. <!-- fact_113 -->
 
 **The Australian Embassy in Athens.** The embassy witnesses application forms for, and issues, Certificates of No Impediment to Marriage, and witnesses notices of intended marriage. <!-- fact_108 --> All notarial services are by appointment, though CNI documents can be submitted by post, and CNIs are available for collection within two working days. <!-- fact_109 --> A fee applies, and honorary consuls cannot provide notarial services. <!-- fact_110 --> The embassy does not give legal advice, so you need to know which service you are asking for. <!-- fact_111 --> You will find it at the [Australian Embassy in Greece](https://greece.embassy.gov.au/athn/Notarial.html), 5 Hatziyianni Mexi Street, Athens. <!-- fact_102 -->
 
-**Civil or church ceremony.** Couples usually choose a civil ceremony with the local municipality (dimos) or a religious one. Which documents, translations and notices apply, and whether any rules differ for same-sex couples, is for the Greek authorities. Check with the municipality and the embassy, including any fees, before you set a date. For an Orthodox church wedding, the parish priest and the diocese will have their own requirements, so speak to the priest first.
+**Civil or church ceremony.** Ask the municipality (dimos) and the embassy whether a civil or a religious route suits you. Which documents, translations and notices apply, and whether any rules differ for same-sex couples, is for the Greek authorities. Check with the municipality and the embassy, including any fees, before you set a date. For an Orthodox church wedding, the parish priest and the diocese will have their own requirements, so speak to the priest first.
 
 **Back home in Australia.** An overseas marriage cannot be registered in Australia, but in most cases it is legally recognised if it was valid where it took place and would have been valid under Australian law. <!-- fact_114 --> A foreign marriage certificate is usually accepted as proof of marriage but may not be accepted as proof of a name change, so check with your state registry. <!-- fact_115 -->
 
