@@ -9,3 +9,4 @@
 01:00 07 icp-reader search_visitor complete; no must-fix (customs list up top)
 01:00 07 icp-reader uhnw complete; no must-fix (scale/privacy deferred)
 01:00 07 icp-reader sceptic complete; no must-fix
+01:00 07 icp-reader planner_couple complete; no must-fix; waiting on funding_parent, editor
