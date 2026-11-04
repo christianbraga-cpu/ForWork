@@ -94,7 +94,7 @@ In the Girikerto record, panggih unites the pair as husband and wife after the r
 
 The palace gives its own order. <!-- fact_101 -->
 
-1. **Balangan gantal.** The groom carries four rolled betel leaves and the bride three, and he throws first, slowly. <!-- fact_101 --> Folklore says whoever lands first will love more.
+1. **Balangan gantal.** The groom carries four rolled betel leaves and the bride three, and he throws first, slowly. <!-- fact_101 --> It is often told whoever lands first will love more.
 2. **Foot washing and the egg.** The bride washes the groom's feet, then an egg is broken. <!-- fact_101 --> Many families say the groom treads on it, a step known as ngidak endog or wiji dadi.
 3. **Pondongan.** In the royal version only, the groom and the bride's uncle lift the bride to shoulder height to honour her as the Sultan's daughter. <!-- fact_101 -->
 4. **Tampa kaya.** The bride receives coins and grains poured out by the groom, read by the palace as his duty to provide. <!-- fact_102 -->
@@ -136,9 +136,9 @@ We have not found an official source that sets out those differences. A juru pae
 
 UNESCO inscribed [Indonesian batik](https://ich.unesco.org/en/RL/indonesian-batik-00170) on its Representative List of the Intangible Cultural Heritage of Humanity in 2009. <!-- fact_120 --> Its description says special varieties are incorporated into celebrations of marriage and pregnancy, and that the craft uses dots and lines of hot wax that resist dye. <!-- fact_120 --> A 2024 literature review published by Atlantis Press reads batik in Javanese wedding processions as hopes and prayers from the bride and her family for the household. <!-- fact_121 -->
 
-Custom has the parents in truntum batik and the couple in sido mukti. A 2026 paper in the journal DESILLES reads truntum as the parents' cloth in the film Kartini: Princess of Java. <!-- fact_122 -->
+It is often told that parents wear truntum and the couple sido mukti. A 2026 paper in the journal DESILLES reads truntum as the parents' cloth in the film Kartini: Princess of Java. <!-- fact_122 -->
 
-For the groom, the Yogyakarta culture office lists a kuluk headdress with formal reception dress. <!-- fact_109 --> By custom, grooms also wear a beskap jacket and blangkon headcloth at other points.
+For the groom, the Yogyakarta culture office lists a kuluk headdress with formal reception dress. <!-- fact_109 --> It is often told that grooms wear a beskap jacket and blangkon at other points.
 
 <!-- IMAGE SLOT paes-batik: Preferred: close-up of a Yogyakarta or Solo bride's paes ageng (black forehead shapes, gold cundhuk mentul hair ornaments) with batik kain visible, natural window light, consent and juru paes credit recorded. Fallback only if no licensed photo and with Nic's approval: AI illustrative still life of folded brown and cream batik cloth with a jasmine sprig on plain timber, no people, no place, no named motif claim, captioned 'Illustrative image'. Not generated in this run. -->
 
@@ -174,7 +174,7 @@ The Australian Embassy says neither DFAT nor its missions can advise on another 
 2. **Apply for a Certificate of No Impediment to Marriage (CNI)** from the right post: Yogyakarta, the Embassy in Jakarta; Solo and East and Central Java, the Consulate-General in Surabaya; Bali, the Consulate-General in Bali. <!-- fact_113 -->
 3. **Watch the date.** Civil Registry Offices do not normally accept a CNI issued more than 3 months before. <!-- fact_113 -->
 4. **Marry and register.** Muslim weddings are performed by the KUA, which issues the marriage book. Other faiths lodge a Notice of Intention to Marry with the Civil Registry Office at least 10 days before, then register there afterwards. <!-- fact_114 -->
-5. **Keep the CNI and the notice inside the same window.**
+5. **Our tip: lodge the notice while the CNI is under 3 months old.**
 
 Since 1 January 1995, a marriage legally performed overseas that would have been legal in Australia is generally recognised under Australian law, but you cannot register an overseas marriage in Australia. <!-- fact_115 --> Some couples ask whether to marry legally at home and hold the Javanese rites abroad; raise it with the embassy, and read our piece on a [legal or symbolic ceremony abroad](/expert-advice/should-you-marry-legally-abroad-or-have-a-symbolic-ceremony).
 
@@ -183,6 +183,9 @@ Since 1 January 1995, a marriage legally performed overseas that would have been
 Check every step, including any fees, with the [Australian Embassy in Indonesia](https://indonesia.embassy.gov.au/jakt/MarriageInd.html) and the registry. For the Bali side, see our guide to [weddings in Bali](/destinations/asia/bali), and for the wider Indonesian picture, our [Indonesian wedding traditions](/expert-advice/indonesian-wedding-traditions) overview.
 
 <!-- CTA: primary -->
+
+**[Read the free magazine](/magazine?utm_source=blog&utm_medium=content&utm_campaign=javanese-wedding-traditions&utm_content=primary)**  
+Ideas to enjoy at your own pace, before you plan.
 
 ## Frequently asked questions about Javanese weddings
 
