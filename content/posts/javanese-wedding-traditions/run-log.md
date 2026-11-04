@@ -5,3 +5,4 @@
 00:53 03 planner-sme batch A complete 23 facts (Kraton re-checked; Sleman village culture page; 2 journal abstracts); akad elements 2 VERIFY; waiting on batch B
 00:55 03 planner-sme batch B complete 23 facts (Kraton panggih re-checked; Embassy legal re-checked: Yogyakarta CNI via Jakarta, Solo/Central Java via Surabaya CG; UNESCO Gamelan no wedding mention); several panggih step names unsourced; merged; writer launched
 00:55 orchestrator: part-1 confidence 'medium' set to 0.6 and status partial->complete for merge; 8 string must_include_coverage entries normalised to objects; merged 46 facts; validate all valid
+00:59 05 luxury-writer complete 2,900 words; 0 VERIFY; ranking queries in H2s; 7 image slots; first draft sent; editor + 5 readers launched
