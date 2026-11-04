@@ -5,3 +5,5 @@
 23:27 03 planner-sme batch B partial (8 Smartraveller facts; customs unsourced, often told); orchestrator added 8 legal facts (fact_108-115) from Embassy Athens notarial page and Smartraveller 'Getting married overseas', read live; waiting on batch A
 23:49 03 planner-sme batch A partial 5 facts (OCA marriage page, shared Orthodox rite); Archdiocese page read declined by person; merged; writer launched with 'ask your parish priest' framing for Greek service steps
 23:52 05 luxury-writer complete 2,843 words; 1 VERIFY (ancient Greece section); ranking queries covered; first draft sent; editor + 5 readers launched
+23:53 07 icp-reader funding_parent complete; no must-fix
+23:53 07 icp-reader search_visitor, uhnw complete; no must-fix; waiting on planner_couple, sceptic, editor
