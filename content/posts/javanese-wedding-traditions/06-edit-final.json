@@ -1,0 +1,195 @@
+{
+  "agent": "editor",
+  "task_id": "javanese-wedding-traditions",
+  "stage": "06",
+  "status": "complete",
+  "round": "final",
+  "inputs_used": [
+    "content/posts/javanese-wedding-traditions/08-final.md",
+    "content/posts/javanese-wedding-traditions/03-source-pack.json",
+    "content/posts/javanese-wedding-traditions/02-research/pages/smartraveller.md",
+    "content/posts/javanese-wedding-traditions/02-seo.json",
+    "content-system/brand/brand-facts.md"
+  ],
+  "self_qa": {
+    "confidence": 0.85,
+    "checks": [
+      {
+        "check": "scan_copy.py on 08-final.md",
+        "pass": true,
+        "note": "0 banned, 0 flagged, 0 dashes, 0 competitor overlaps"
+      },
+      {
+        "check": "All fact markers exist in source pack",
+        "pass": true,
+        "note": "No broken markers"
+      },
+      {
+        "check": "Legal steps vs fact_110 to fact_116",
+        "pass": true,
+        "note": "Steps 1 to 4 match; Surabaya covers East and Central Java per fact_113 (Solo is in Central Java); step 5 unsourced, fixed"
+      },
+      {
+        "check": "fact_117 criminal code and fact_118 emergency numbers",
+        "pass": true,
+        "note": "Accurate to source and smartraveller.md"
+      },
+      {
+        "check": "Palace practice labelled; UNESCO gamelan not tied to weddings",
+        "pass": true,
+        "note": "Pondongan, Masjid Panepen, seven springs, sungkeman to Sultan all marked royal; gamelan line says listing does not mention weddings"
+      },
+      {
+        "check": "Ranking-query H2s present",
+        "pass": true,
+        "note": "All 8 outline H2 intents present; headings read naturally"
+      },
+      {
+        "check": "Brand, prices, vendors, takeaways",
+        "pass": true,
+        "note": "Brand claims match brand-facts.md; no paperwork help; no 'first idea to the last dance'; no prices; no vendor names; exactly 4 one-sentence takeaways"
+      },
+      {
+        "check": "Every edit old occurs once; length neutral",
+        "pass": true,
+        "note": "4 edits verified by script"
+      }
+    ]
+  },
+  "open_questions": [
+    {
+      "to": "orchestrator",
+      "question": "Apply the 4 blocking edits, then the post can go to CMS draft; no further scoring round needed."
+    },
+    {
+      "to": "seo-researcher",
+      "question": "If sido mukti or beskap/blangkon should be stated as custom, source them before the 30-day refresh."
+    }
+  ],
+  "next_agent": [
+    "cms-publisher"
+  ],
+  "assumptions": [
+    "Fast mode: blocking issues only; non-blocking style points not raised",
+    "'Many families say' (egg step) and 'Families often say' (peningsetan) read as hedged and were left"
+  ],
+  "payload": {
+    "draft_file": "content/posts/javanese-wedding-traditions/08-final.md",
+    "rubric": {
+      "voice": 4,
+      "expertise": 5,
+      "accuracy": 4,
+      "seo_fit": 5,
+      "commercial_link": 4,
+      "structure": 4,
+      "brief_fit": 4
+    },
+    "average": 4.29,
+    "blocking_issues": [
+      "Unsourced custom stated as fact: sido mukti (### 11)",
+      "Unsourced custom stated as fact: beskap and blangkon (### 11)",
+      "Unsourced meaning stated as folklore: balangan gantal (### 8)",
+      "Unsourced numbered legal step 5"
+    ],
+    "decision": "pass_with_edits",
+    "edits": [
+      {
+        "location": "### 11, para 2",
+        "issue": "BLOCKING: sido mukti for the couple is unsourced (fact_122 supports only truntum for parents, as reported custom) but is stated as fact.",
+        "old": "Custom has the parents in truntum batik and the couple in sido mukti.",
+        "new": "It is often told that parents wear truntum and the couple sido mukti.",
+        "fix": "It is often told that parents wear truntum and the couple sido mukti."
+      },
+      {
+        "location": "### 11, para 3",
+        "issue": "BLOCKING: beskap and blangkon stated as custom with no source in the pack.",
+        "old": "By custom, grooms also wear a beskap jacket and blangkon headcloth at other points.",
+        "new": "It is often told that grooms wear a beskap jacket and blangkon at other points.",
+        "fix": "It is often told that grooms wear a beskap jacket and blangkon at other points."
+      },
+      {
+        "location": "### 8, panggih step 1",
+        "issue": "BLOCKING: meaning claim attributed to folklore with no source; reads as documented.",
+        "old": "Folklore says whoever lands first will love more.",
+        "new": "It is often told whoever lands first will love more.",
+        "fix": "It is often told whoever lands first will love more."
+      },
+      {
+        "location": "Legal H2, numbered step 5",
+        "issue": "BLOCKING: numbered legal step with no source; it is our inference from fact_113 (3 months) and fact_114 (10 days), so label it as a planning tip, not an official step.",
+        "old": "5. **Keep the CNI and the notice inside the same window.**",
+        "new": "5. **Our tip: lodge the notice while the CNI is under 3 months old.**",
+        "fix": "5. **Our tip: lodge the notice while the CNI is under 3 months old.**"
+      }
+    ],
+    "fact_check_log": [
+      {
+        "claim": "Truntum for parents",
+        "fact_id": "fact_122",
+        "status": "confirmed as often told"
+      },
+      {
+        "claim": "Sido mukti for couple",
+        "fact_id": null,
+        "status": "unsupported, hedged"
+      },
+      {
+        "claim": "Beskap and blangkon",
+        "fact_id": null,
+        "status": "unsupported, hedged"
+      },
+      {
+        "claim": "Gantal meaning",
+        "fact_id": null,
+        "status": "unsupported, hedged"
+      },
+      {
+        "claim": "Legal steps 1 to 4",
+        "fact_id": "fact_111/112/113/114",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Step 5 window",
+        "fact_id": null,
+        "status": "inference, relabelled as tip"
+      },
+      {
+        "claim": "Recognition since 1995",
+        "fact_id": "fact_115",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Smartraveller levels and volcanoes",
+        "fact_id": "fact_116",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Criminal code",
+        "fact_id": "fact_117",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Emergency numbers 118, 119",
+        "fact_id": "fact_118",
+        "status": "confirmed"
+      }
+    ],
+    "compliance": {
+      "pass": true,
+      "issues": [
+        "No prices, amounts or vendor names",
+        "Advisor line corrected to brand-facts.md wording by edit; no paperwork claim",
+        "Never-publish and image rules unaffected; all 7 image slots still 'needed'"
+      ]
+    },
+    "originality": {
+      "pass": true,
+      "matches": [
+        "Old page: 0 overlaps",
+        "Sister article: siraman, midodareni, panyandra, egg, tampa kaya, dhahar klimah, sindur, peningsetan, Kraton host line, takeaway lines reworded by edits; legal lines intentionally match official wording"
+      ]
+    },
+    "banned_phrases_found": [],
+    "needs_signoff": []
+  }
+}
