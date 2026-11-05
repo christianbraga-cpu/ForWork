@@ -8,3 +8,4 @@
 01:11 07 icp-reader search_visitor complete; no must-fix
 01:11 07 icp-reader sceptic, uhnw, planner_couple complete; no must-fix; waiting on funding_parent, editor
 01:11 07 icp-reader funding_parent complete; no must-fix; waiting on editor
+01:13 06 editor pass_with_edits 4.71; 22 edits applied -> 05-draft-r2.md; panel chair launched
