@@ -1,0 +1,216 @@
+{
+  "agent": "visual-curator",
+  "task_id": "ukrainian-wedding-traditions",
+  "stage": "04",
+  "status": "needs_input",
+  "round": 1,
+  "inputs_used": [
+    "CLAUDE.md",
+    "content/posts/ukrainian-wedding-traditions/00-input.json",
+    "content/posts/ukrainian-wedding-traditions/01-brief.json (tradition_plan, angle)",
+    "content/posts/ukrainian-wedding-traditions/02-research/pages/old-page.md (image credits)",
+    "content-system/images/library-index.csv (header only, no Ukrainian rows)",
+    "content-system/schemas/04-images.schema.json"
+  ],
+  "self_qa": {
+    "checks": [
+      {
+        "check": "Zero reference-only or competitor images in slots",
+        "pass": true
+      },
+      {
+        "check": "Every approved image has verified location, licence, alt, caption, fit_reason",
+        "pass": true,
+        "note": "No approved images; all 7 slots needed."
+      },
+      {
+        "check": "No AI image of people, cultural dress, ceremonies or places",
+        "pass": true,
+        "note": "AI offered only as a fallback neutral still life for korovai and folded rushnyk, not generated, pending Nic's approval."
+      },
+      {
+        "check": "Old-page images not reused",
+        "pass": true,
+        "note": "Evil-eye hero and 'Image via Scoop Empire' image: unknown licence and not about Ukraine; excluded."
+      },
+      {
+        "check": "No images set in Ukraine; no political symbols or war imagery",
+        "pass": true,
+        "note": "All briefs set at Ukrainian-Australian parishes or receptions in Australia with consent."
+      },
+      {
+        "check": "Featured image exists (approved or needed with brief)",
+        "pass": true,
+        "note": "Needed with brief."
+      },
+      {
+        "check": "Placements match final H2 numbering",
+        "pass": false,
+        "note": "02-seo.json outline not present; after_h2 follows tradition_plan order (3 divych vechir and vinok, 4 korovai, 6 church and rushnyk, 7 bread and salt, 9 dances, 10 embroidery)."
+      }
+    ],
+    "confidence": 0.6
+  },
+  "open_questions": [
+    {
+      "to": "Nic",
+      "question": "Source licensed photos for 7 slots (Ukrainian-Australian client weddings with signed couple consent, partner photographers, or licensed stock with model and property releases)? Library has nothing; Drive disconnected.",
+      "blocking": true
+    },
+    {
+      "to": "Nic",
+      "question": "Approve or decline AI illustrative still lifes for the korovai and a folded embroidered rushnyk (no people, dress, ceremony or place), captioned 'Illustrative image', if no licensed photo is found?",
+      "blocking": false
+    },
+    {
+      "to": "Nic",
+      "question": "Church interior shots need parish permission as well as couple consent; is there a Ukrainian Catholic or Orthodox parish in Australia we already work with?",
+      "blocking": false
+    },
+    {
+      "to": "seo-researcher",
+      "question": "Confirm H2 numbering once 02-seo.json outline exists and remap after_h2 placements.",
+      "blocking": false
+    }
+  ],
+  "assumptions": [
+    "Old weddedwonderland.com page images (evil-eye hero, 'Image via Scoop Empire') excluded: unknown licence, not about Ukraine.",
+    "No venue in scope, so no press-kit permission emails drafted.",
+    "Google Drive disconnected; Firecrawl own-site, Canva and Lens checks skipped in fast mode because no candidates exist.",
+    "Nothing set in Ukraine per Smartraveller 'Do not travel'."
+  ],
+  "verify_items": [
+    "[[IMAGE NEEDED]] featured: rushnyk hands or church door hero",
+    "[[IMAGE NEEDED]] after_h2:3 vinok",
+    "[[IMAGE NEEDED]] after_h2:4 korovai",
+    "[[IMAGE NEEDED]] after_h2:6 church rushnyk and crowning",
+    "[[IMAGE NEEDED]] after_h2:7 bread and salt welcome",
+    "[[IMAGE NEEDED]] after_h2:9 music and circle dance",
+    "[[IMAGE NEEDED]] after_h2:10 embroidery detail",
+    "[[VERIFY licence]] every slot credit and licence once sourced",
+    "[[VERIFY]] couple consent, guest releases and parish permission for every people or church image"
+  ],
+  "next_agent": [
+    "luxury-writer"
+  ],
+  "payload": {
+    "slots": [
+      {
+        "slot_id": "featured",
+        "placement": "featured",
+        "purpose": "Hero: a warm, real, licensed sense of a Ukrainian-heritage wedding in Australia without depending on one couple's identity.",
+        "shot_brief": "Licensed photo at a Ukrainian Catholic or Orthodox parish in Australia (or the reception that follows): close detail of a couple's joined hands resting on an embroidered rushnyk, or the couple seen from behind at the church door; soft natural light, any season. Wide 3:2 hero with headroom for a title crop. Ukrainian-Australian parish or reception in Australia; written couple consent, guest releases and, for church interiors, parish permission required. Nothing set in Ukraine. No flags, political symbols or war imagery.",
+        "status": "needed",
+        "file": "content/posts/ukrainian-wedding-traditions/images/ukrainian-wedding-traditions-rushnyk-hands-hero.webp",
+        "source": {
+          "type": "library",
+          "origin": "[[IMAGE NEEDED]] library-index.csv has no Ukrainian rows; Google Drive disconnected",
+          "credit": "[[VERIFY licence]]"
+        },
+        "alt": "Couple's joined hands resting on a white embroidered Ukrainian rushnyk with red cross-stitch",
+        "caption": "<Parish>, <town>. Photo: [[VERIFY credit]]",
+        "lens_check": "Not run: no candidate image."
+      },
+      {
+        "slot_id": "vinok",
+        "placement": "after_h2:3",
+        "purpose": "Show the vinok and the divych vechir mood: friends, flowers, the bride's evening before the wedding.",
+        "shot_brief": "Licensed photo from a Ukrainian-Australian bride's evening or getting-ready morning in Australia: a floral vinok (wreath) with ribbons on a table or being placed by friends, faces optional, indoor warm light. Ukrainian-Australian parish or reception in Australia; written couple consent, guest releases and, for church interiors, parish permission required. Nothing set in Ukraine.",
+        "status": "needed",
+        "file": "content/posts/ukrainian-wedding-traditions/images/ukrainian-wedding-traditions-vinok-flower-wreath.webp",
+        "source": {
+          "type": "library",
+          "origin": "[[IMAGE NEEDED]] library-index.csv has no Ukrainian rows; Google Drive disconnected",
+          "credit": "[[VERIFY licence]]"
+        },
+        "alt": "Floral vinok wreath with trailing ribbons on a table before a Ukrainian-heritage wedding",
+        "caption": "<Venue>, <town>. Photo: [[VERIFY credit]]",
+        "lens_check": "Not run: no candidate image."
+      },
+      {
+        "slot_id": "korovai",
+        "placement": "after_h2:4",
+        "purpose": "Show the korovai as the centrepiece bread, with its dough birds and periwinkle decoration as the section describes.",
+        "shot_brief": "Licensed photo of a decorated korovai at a Ukrainian-Australian wedding reception or parish hall in Australia: round loaf with dough birds and greenery, on an embroidered rushnyk, no people needed, soft daylight, 3:2. Decoration must match what the text sources.",
+        "status": "needed",
+        "file": "content/posts/ukrainian-wedding-traditions/images/ukrainian-wedding-traditions-korovai-wedding-bread.webp",
+        "source": {
+          "type": "library",
+          "origin": "[[IMAGE NEEDED]] library-index.csv has no Ukrainian rows; Google Drive disconnected",
+          "credit": "[[VERIFY licence]]"
+        },
+        "alt": "Round korovai wedding bread decorated with dough birds and greenery on an embroidered cloth",
+        "caption": "<Venue>, <town>. Photo: [[VERIFY credit]]",
+        "lens_check": "Not run: no candidate image.",
+        "fallback": "Only if no licensed photo is found and Nic approves: AI illustrative still life of a decorated round wedding bread on a plain embroidered cloth (no people, place or ceremony), captioned 'Illustrative image', pending approval. Not generated."
+      },
+      {
+        "slot_id": "church-rushnyk",
+        "placement": "after_h2:6",
+        "purpose": "Show the couple standing on the rushnyk and the crowning, the visual core of the church section.",
+        "shot_brief": "Licensed photo inside a Ukrainian Catholic or Orthodox church in Australia: couple's feet on an embroidered rushnyk before the altar, or crowns held above the couple, shot from behind or the side, natural church light, no flash. Ukrainian-Australian parish or reception in Australia; written couple consent, guest releases and, for church interiors, parish permission required. Nothing set in Ukraine.",
+        "status": "needed",
+        "file": "content/posts/ukrainian-wedding-traditions/images/ukrainian-wedding-traditions-church-rushnyk-crowning.webp",
+        "source": {
+          "type": "library",
+          "origin": "[[IMAGE NEEDED]] library-index.csv has no Ukrainian rows; Google Drive disconnected",
+          "credit": "[[VERIFY licence]]"
+        },
+        "alt": "Couple standing on an embroidered rushnyk during a Ukrainian Catholic wedding service",
+        "caption": "<Parish>, <town>. Photo: [[VERIFY credit]]",
+        "lens_check": "Not run: no candidate image."
+      },
+      {
+        "slot_id": "bread-salt",
+        "placement": "after_h2:7",
+        "purpose": "Show the welcome with bread and salt on a rushnyk as parents greet the couple.",
+        "shot_brief": "Licensed photo at a Ukrainian-Australian reception entrance in Australia: parents holding a loaf with a small salt dish on an embroidered rushnyk as the couple arrive; faces optional, evening or golden-hour light. Ukrainian-Australian parish or reception in Australia; written couple consent, guest releases and, for church interiors, parish permission required. Nothing set in Ukraine.",
+        "status": "needed",
+        "file": "content/posts/ukrainian-wedding-traditions/images/ukrainian-wedding-traditions-bread-salt-welcome.webp",
+        "source": {
+          "type": "library",
+          "origin": "[[IMAGE NEEDED]] library-index.csv has no Ukrainian rows; Google Drive disconnected",
+          "credit": "[[VERIFY licence]]"
+        },
+        "alt": "Parents offering bread and salt on an embroidered rushnyk to a newly married couple",
+        "caption": "<Venue>, <town>. Photo: [[VERIFY credit]]",
+        "lens_check": "Not run: no candidate image."
+      },
+      {
+        "slot_id": "music-dance",
+        "placement": "after_h2:9",
+        "purpose": "Show the vesillia's energy: live folk music and circle dancing at the celebration.",
+        "shot_brief": "Licensed photo from a Ukrainian-Australian wedding reception in Australia: guests in a circle dance or musicians playing (violin, accordion, tsymbaly if present), motion blur welcome, warm evening light. Hopak only if the section names it. Ukrainian-Australian parish or reception in Australia; written couple consent, guest releases and, for church interiors, parish permission required. Nothing set in Ukraine.",
+        "status": "needed",
+        "file": "content/posts/ukrainian-wedding-traditions/images/ukrainian-wedding-traditions-reception-circle-dance.webp",
+        "source": {
+          "type": "library",
+          "origin": "[[IMAGE NEEDED]] library-index.csv has no Ukrainian rows; Google Drive disconnected",
+          "credit": "[[VERIFY licence]]"
+        },
+        "alt": "Wedding guests joining hands in a lively circle dance at a Ukrainian-heritage reception",
+        "caption": "<Venue>, <town>. Photo: [[VERIFY credit]]",
+        "lens_check": "Not run: no candidate image."
+      },
+      {
+        "slot_id": "embroidery",
+        "placement": "after_h2:10",
+        "purpose": "Close detail of embroidery (vyshyvanka or rushnyk) to support the embroidery section.",
+        "shot_brief": "Licensed macro photo of hand embroidery on a vyshyvanka sleeve or a folded rushnyk, red and black cross-stitch on white linen, worn by a consenting guest at a wedding in Australia or styled as a still life; daylight, shallow depth of field. No people's faces needed.",
+        "status": "needed",
+        "file": "content/posts/ukrainian-wedding-traditions/images/ukrainian-wedding-traditions-embroidered-rushnyk-detail.webp",
+        "source": {
+          "type": "library",
+          "origin": "[[IMAGE NEEDED]] library-index.csv has no Ukrainian rows; Google Drive disconnected",
+          "credit": "[[VERIFY licence]]"
+        },
+        "alt": "Close-up of red and black cross-stitch embroidery on white linen",
+        "caption": "<Venue>, <town>. Photo: [[VERIFY credit]]",
+        "lens_check": "Not run: no candidate image.",
+        "fallback": "Only if no licensed photo is found and Nic approves: AI illustrative still life of a folded embroidered rushnyk on linen (no person, dress worn, ceremony or place), captioned 'Illustrative image', pending approval. Motifs generic, not claimed as a specific regional pattern. Not generated."
+      }
+    ],
+    "reference_only": [],
+    "permission_requests": []
+  }
+}

@@ -1,2 +1,3 @@
 00:04 00 orchestrator complete input written; FAST MODE start; refresh of /7-wedding-superstitions-you-need-to-check-off (topic mismatch to check)
 00:08 01 content-strategist complete; old page is general superstitions (no Ukrainian content); likely real predecessor /7-quirky-traditions-to-expect-at-a-ukrainian-wedding; Smartraveller Do not travel (updated 2 Nov 2026) -> diaspora angle; 11 customs; redirect question for person (non-blocking for writing); 02+03(A,B)+04 launched
+00:09 04 visual-curator complete 7 placeholders (Ukrainian-Australian settings)
