@@ -1,0 +1,151 @@
+{
+  "agent": "visual-curator",
+  "task_id": "baltic-wedding-traditions",
+  "stage": "04",
+  "status": "needs_input",
+  "round": 1,
+  "inputs_used": [
+    "CLAUDE.md",
+    "content/posts/baltic-wedding-traditions/00-input.json",
+    "content/posts/baltic-wedding-traditions/01-brief.json (tradition_plan, avoid, angle)",
+    "content/posts/baltic-wedding-traditions/02-research/pages/old-baltic.md (image credits)",
+    "content/posts/baltic-wedding-traditions/02-research/pages/smartraveller.md (Latvia–Belarus border higher level)",
+    "content-system/images/library-index.csv (header only, no Baltic rows)",
+    "content-system/schemas/04-images.schema.json",
+    "content/posts/armenian-wedding-traditions/04-images.json (format)"
+  ],
+  "self_qa": {
+    "checks": [
+      {"check": "Zero reference-only or competitor images in slots", "pass": true},
+      {"check": "Every approved image has verified location, licence, alt, caption, fit_reason", "pass": true, "note": "No approved images; all 7 slots needed."},
+      {"check": "No AI image of people, cultural dress, ceremonies or places", "pass": true, "note": "AI offered only as a fallback neutral still life (wreath of rue, loaf of rye bread), not generated, pending Nic's approval."},
+      {"check": "Old-page images not reused", "pass": true, "note": "walkingdotphotography.com and angelareneephoto.com credited images, plus the old featured image, listed only for licence and couple-consent check."},
+      {"check": "No political symbols; destination away from border areas", "pass": true, "note": "Destination brief limited to Tallinn, Riga or Vilnius old towns; nothing near the Latvia–Belarus border; no flags, emblems or political monuments."},
+      {"check": "Each custom slot tied to the country its source names", "pass": true},
+      {"check": "Featured image exists (approved or needed with brief)", "pass": true, "note": "Needed with brief."},
+      {"check": "Placements match final H2 numbering", "pass": false, "note": "02-seo.json outline not available; after_h2 numbers follow tradition_plan order (1 mičošana, 2 Lithuanian wreath, 3 piršlybos, 4 stealing the bride, 5 bread and salt, 6 dowry chest, 7 gates, 8 Estonian bonnet, 9 Kihnu, 10 Seto leelo, 11 for Australians)."}
+    ],
+    "confidence": 0.6
+  },
+  "open_questions": [
+    {"to": "Nic", "question": "The old page uses images credited walkingdotphotography.com and angelareneephoto.com (licence unknown). Confirm licence scope and written couple consent before any reuse? Default: not reused.", "blocking": false},
+    {"to": "Nic", "question": "Source licensed photos for 7 slots (Baltic-Australian client weddings with signed consent, partner photographers, licensed stock with model and property releases)? Library returned nothing; Google Drive disconnected.", "blocking": true},
+    {"to": "Nic", "question": "Approve or decline an AI illustrative still life (a wreath of rue, or a loaf of dark rye bread with a small dish of salt; no people, dress or place), captioned 'Illustrative image', for the Lithuanian wreath or bread-and-salt slot if no licensed photo is found?", "blocking": false},
+    {"to": "seo-researcher", "question": "Confirm H2 numbering once the outline exists and remap after_h2 placements.", "blocking": false}
+  ],
+  "assumptions": [
+    "Old weddedwonderland.com page images excluded until licence and couple consent are confirmed.",
+    "No venue in scope, so no press-kit permission emails drafted.",
+    "Google Drive disconnected; own site, Canva and Google Lens not run in fast mode (no candidates).",
+    "Museum and church interiors need the institution's permission as well as any couple consent.",
+    "Folk dress and headdress images must show real, consenting people in real, licensed photos; never AI."
+  ],
+  "verify_items": [
+    "[[IMAGE NEEDED]] featured: Riga, Tallinn or Vilnius old-town wedding scene (no identifiable couple without consent)",
+    "[[IMAGE NEEDED]] micosana: Latvian married woman's headdress (Latvia)",
+    "[[IMAGE NEEDED]] lt-wreath: Lithuanian rue wreath (or approved illustrative still life)",
+    "[[IMAGE NEEDED]] bread-salt: Lithuanian bread and salt welcome (or approved illustrative still life)",
+    "[[IMAGE NEEDED]] dowry-chest: painted dowry chest (kraičio skrynia or pūrs), museum-licensed",
+    "[[IMAGE NEEDED]] estonia-bonnet: Estonian bonnet (tanu), museum or consented wedding photo",
+    "[[IMAGE NEEDED]] destination: Tallinn, Riga or Vilnius old town",
+    "[[VERIFY licence]] old-page images (walkingdotphotography.com, angelareneephoto.com, old featured 1153.jpg): licence scope and couple consent",
+    "[[VERIFY licence]] every sourced photo: credit, scope, model and property releases",
+    "[[VERIFY: destination photo location is a Tallinn, Riga or Vilnius old town, well away from Smartraveller's higher-level Latvia–Belarus border area]]",
+    "[[VERIFY: any AI illustrative still life approved by Nic before generation]]"
+  ],
+  "next_agent": ["luxury-writer"],
+  "payload": {
+    "slots": [
+      {
+        "slot_id": "featured",
+        "placement": "featured",
+        "purpose": "Hero: an elegant, real and licensed sense of a Baltic wedding in an old town, without depending on one couple's identity.",
+        "shot_brief": "Licensed photo of a cobbled old-town lane in Tallinn, Riga or Vilnius in soft late-afternoon early-autumn light, with a consenting couple seen from behind or a detail of a bridal bouquet with rue and wildflowers. Wide 3:2 hero with headroom for a title crop. No flags, emblems, political monuments or border scenery. Never AI.",
+        "status": "needed",
+        "file": "content/posts/baltic-wedding-traditions/images/baltic-wedding-traditions-old-town-hero.webp",
+        "source": {"type": "library", "origin": "[[IMAGE NEEDED]] library-index.csv has no Baltic rows; Google Drive disconnected", "credit": "[[VERIFY licence]]"},
+        "alt": "Newlyweds walking along a cobbled old-town lane in soft afternoon light",
+        "caption": "<Place>, <town>. Photo: [[VERIFY credit]]",
+        "lens_check": "Not run: no candidate image."
+      },
+      {
+        "slot_id": "micosana",
+        "placement": "after_h2:1",
+        "purpose": "Show the Latvian mičošana: the bride's wreath or veil giving way to a married woman's headdress.",
+        "shot_brief": "Licensed photo from a Latvian or Latvian-Australian wedding: the bride's wreath set aside and a married woman's headdress (cap or scarf) being placed by older women, warm evening light; faces consented or out of frame. Alternative: Latvian museum-licensed photo of a traditional married woman's headdress on its own. Latvia only. Never AI.",
+        "status": "needed",
+        "file": "content/posts/baltic-wedding-traditions/images/baltic-wedding-traditions-latvian-micosana-headdress.webp",
+        "source": {"type": "library", "origin": "[[IMAGE NEEDED]]", "credit": "[[VERIFY licence]]"},
+        "consent": {"couple": "required", "guests": "required if identifiable"},
+        "alt": "Older women placing a married woman's headdress on a Latvian bride",
+        "caption": "<Place>, <town>, Latvia. Photo: [[VERIFY credit]]",
+        "lens_check": "Not run: no candidate image."
+      },
+      {
+        "slot_id": "lt-wreath",
+        "placement": "after_h2:2",
+        "purpose": "Illustrate the Lithuanian rue wreath (rūtų vainikas) removed from the bride.",
+        "shot_brief": "Preferred: licensed photo of a green rue wreath at a Lithuanian or Lithuanian-Australian wedding, bride consented or wreath shown alone on linen. Fallback only if Nic approves: AI neutral still life of a small wreath of rue sprigs on plain linen, no people, dress, setting or place, captioned 'Illustrative image'.",
+        "status": "needed",
+        "file": "content/posts/baltic-wedding-traditions/images/baltic-wedding-traditions-lithuanian-rue-wreath.webp",
+        "source": {"type": "library", "origin": "[[IMAGE NEEDED]]; ai_illustrative still life fallback pending Nic approval", "credit": "[[VERIFY licence]]"},
+        "alt": "Bridal wreath woven from green rue sprigs resting on white linen",
+        "caption": "<Place>, <town>, Lithuania. Photo: [[VERIFY credit]] (or 'Illustrative image' if the approved AI fallback is used)",
+        "lens_check": "Not run: no candidate image."
+      },
+      {
+        "slot_id": "bread-salt",
+        "placement": "after_h2:5",
+        "purpose": "Show the Lithuanian bread and salt welcome for the newlyweds.",
+        "shot_brief": "Preferred: licensed photo of parents holding a round loaf of dark rye bread with a little salt on an embroidered cloth at a doorway, couple consented or out of frame, warm daylight. Fallback only if Nic approves: AI neutral still life of a loaf of rye bread and a small dish of salt on linen, no people, dress or place, captioned 'Illustrative image'.",
+        "status": "needed",
+        "file": "content/posts/baltic-wedding-traditions/images/baltic-wedding-traditions-lithuanian-bread-salt.webp",
+        "source": {"type": "library", "origin": "[[IMAGE NEEDED]]; ai_illustrative still life fallback pending Nic approval", "credit": "[[VERIFY licence]]"},
+        "alt": "Round loaf of dark rye bread with a small dish of salt on an embroidered cloth",
+        "caption": "<Place>, <town>, Lithuania. Photo: [[VERIFY credit]] (or 'Illustrative image' if the approved AI fallback is used)",
+        "lens_check": "Not run: no candidate image."
+      },
+      {
+        "slot_id": "dowry-chest",
+        "placement": "after_h2:6",
+        "purpose": "Show a painted dowry chest (Lithuanian kraičio skrynia or Latvian pūrs), labelled by its real country.",
+        "shot_brief": "Licensed photo of a painted wooden dowry chest in a national or open-air museum collection (Lithuanian or Latvian), with the museum's written permission and credit; even daylight, no people. Caption must name the chest's country. Never AI.",
+        "status": "needed",
+        "file": "content/posts/baltic-wedding-traditions/images/baltic-wedding-traditions-painted-dowry-chest.webp",
+        "source": {"type": "library", "origin": "[[IMAGE NEEDED]] museum collection licence to request", "credit": "[[VERIFY licence]]"},
+        "consent": {"museum": "required"},
+        "alt": "Painted wooden dowry chest with folk motifs in a museum collection",
+        "caption": "<Museum>, <town>. Photo: [[VERIFY credit]]",
+        "lens_check": "Not run: no candidate image."
+      },
+      {
+        "slot_id": "estonia-bonnet",
+        "placement": "after_h2:8",
+        "purpose": "Illustrate the Estonian bonnet ceremony (tanutamine), the custom that marks the bride as a married woman.",
+        "shot_brief": "Licensed photo of an Estonian married woman's bonnet (tanu), either from Estonian museum collections with permission, or from a consented Estonian or Estonian-Australian wedding as the bonnet is placed; soft daylight. Estonia only. Never AI.",
+        "status": "needed",
+        "file": "content/posts/baltic-wedding-traditions/images/baltic-wedding-traditions-estonian-bonnet-tanu.webp",
+        "source": {"type": "library", "origin": "[[IMAGE NEEDED]]", "credit": "[[VERIFY licence]]"},
+        "consent": {"couple": "required if a wedding photo", "museum": "required if a collection photo"},
+        "alt": "White Estonian married woman's bonnet being placed on a bride",
+        "caption": "<Place>, <town>, Estonia. Photo: [[VERIFY credit]]",
+        "lens_check": "Not run: no candidate image."
+      },
+      {
+        "slot_id": "destination",
+        "placement": "after_h2:11",
+        "purpose": "Ground the 'for Australians' section in a calm, safe-to-suggest Baltic capital.",
+        "shot_brief": "Licensed landscape of Tallinn, Riga or Vilnius old town (rooftops, cobbled square or church spires) in early-autumn golden light, no identifiable people. Capital old towns only, well away from Smartraveller's higher-level Latvia–Belarus border area. No flags, emblems, political monuments or memorials. Never AI.",
+        "status": "needed",
+        "file": "content/posts/baltic-wedding-traditions/images/baltic-wedding-traditions-old-town-rooftops.webp",
+        "source": {"type": "library", "origin": "[[IMAGE NEEDED]]", "credit": "[[VERIFY licence]]"},
+        "location": {"venue": "Tallinn, Riga or Vilnius old town (to confirm)", "town": "Tallinn, Riga or Vilnius", "verified_by": "[[VERIFY: EXIF GPS or source page]]"},
+        "alt": "Old-town rooftops and church spires of a Baltic capital in golden autumn light",
+        "caption": "<Old town>, <city>. Photo: [[VERIFY credit]]",
+        "lens_check": "Not run: no candidate image."
+      }
+    ],
+    "reference_only": [],
+    "permission_requests": []
+  }
+}
