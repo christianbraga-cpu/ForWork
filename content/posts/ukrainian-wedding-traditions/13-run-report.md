@@ -1,7 +1,7 @@
 # Run report: What Are the Ukrainian Wedding Traditions You Did Not Know?
 
 - **Slug:** ukrainian-wedding-traditions (CMS slug as given)  ·  **Run date:** 2026-11-05  ·  **Status:** Package ready (no Chrome); redirect method needs your choice
-- **Mode:** fast mode, refresh. Started 00:04 UTC, first draft about 00:42, package 00:35. About 31 minutes in total.
+- **Mode:** fast mode, refresh. Started 00:04 UTC, first draft 00:26, package 00:35. About 31 minutes in total.
 - **Draft:** not uploaded (no Chrome in the cloud session; CMS field map not yet confirmed)
 - **Word file:** `ukrainian-wedding-traditions-draft.docx`
 
