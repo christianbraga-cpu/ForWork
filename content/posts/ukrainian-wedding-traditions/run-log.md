@@ -12,3 +12,4 @@
 00:30 07b icp-panel-chair revise; enquire 2.1; 1 must_fix (hedges), 2 should_fix, 1 consider; final pass launched
 00:31 08 luxury-writer complete 2,811 words; 0 VERIFY; scan clean; 8b+CRO+distribution launched
 00:32 09 cro-specialist complete; 1 copy change (Concierge utm_content=secondary); magazine CTA at marker; applying after 8b
+00:32 10 distribution complete 3 pins, 8-slide carousel, newsletter

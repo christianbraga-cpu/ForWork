@@ -1,0 +1,165 @@
+{
+  "agent": "editor",
+  "task_id": "ukrainian-wedding-traditions",
+  "stage": "06",
+  "status": "complete",
+  "round": 3,
+  "inputs_used": [
+    "content/posts/ukrainian-wedding-traditions/08-final.md",
+    "content/posts/ukrainian-wedding-traditions/03-source-pack.json",
+    "content/posts/ukrainian-wedding-traditions/02-research/pages/smartraveller.md",
+    "content/posts/ukrainian-wedding-traditions/02-seo.json",
+    "content-system/brand/brand-facts.md"
+  ],
+  "self_qa": {
+    "checks": [
+      {
+        "check": "Travel/marriage in Ukraine",
+        "pass": true,
+        "note": "Only Smartraveller 'Do not travel' note; takeaway directs customs to Australia or elsewhere"
+      },
+      {
+        "check": "Political framing, UNESCO, hopak, prices, vendor names, em dashes",
+        "pass": true,
+        "note": "None found"
+      },
+      {
+        "check": "Smartraveller lines exact",
+        "pass": true,
+        "note": "Level, date, embassy, dual-nationality lines match smartraveller.md; overseas-marriage lines match fact_102/103"
+      },
+      {
+        "check": "Registry/parish line",
+        "pass": true,
+        "note": "'check the legal steps with the births, deaths and marriages registry' only; Advisor explicitly does not handle paperwork"
+      },
+      {
+        "check": "Brand claims vs brand-facts.md",
+        "pass": true,
+        "note": "Single point of contact, fee agreed in writing, inclusions in writing; no 'last dance'"
+      },
+      {
+        "check": "Hedges intact on pumpkin, Hirko, ring, bread and salt, folk trio, matchmaker rushnyky, divych vechir",
+        "pass": true
+      },
+      {
+        "check": "Hedges intact on rushnyk step and crowning",
+        "pass": false,
+        "note": "Both read as fact; fixed by edits 1 and 2"
+      },
+      {
+        "check": "Fact markers resolve to source pack",
+        "pass": true,
+        "note": "All fact_xx markers exist and match claims (spot-checked 01,07,08,09,104,105,106,107,108,110,111,112)"
+      },
+      {
+        "check": "Ranking-query H2/H3 coverage",
+        "pass": true,
+        "note": "pumpkin, vykup (buying the bride), blessing, ceremony, rushnyk, korovai, toasts all present"
+      },
+      {
+        "check": "Key takeaways",
+        "pass": true,
+        "note": "Exactly 4, each one sentence"
+      },
+      {
+        "check": "Edits length neutral, old occurs once",
+        "pass": true,
+        "note": "deltas [-7, -5] chars"
+      }
+    ],
+    "confidence": 0.85
+  },
+  "open_questions": [
+    {
+      "to": "orchestrator",
+      "question": "Apply the two edits to 08-final.md, then proceed; no further scoring round needed."
+    }
+  ],
+  "next_agent": [
+    "luxury-writer"
+  ],
+  "payload": {
+    "draft_file": "content/posts/ukrainian-wedding-traditions/08-final.md",
+    "rubric": {
+      "voice": 4,
+      "expertise": 4,
+      "accuracy": 4,
+      "seo_fit": 4,
+      "commercial_link": 4,
+      "structure": 5,
+      "brief_fit": 4
+    },
+    "average": 4.14,
+    "blocking_issues": [
+      "Rushnyk step in church reads as documented fact (no source)",
+      "Crowning stated as fact with an unsourced cross-rite claim"
+    ],
+    "decision": "pass_with_edits",
+    "edits": [
+      {
+        "location": "Church H3 'Stepping onto the rushnyk', first sentence",
+        "issue": "With 'It is often told' cut, the couple standing on a rushnyk in the service reads as documented fact. No source (fact_108 covers rushnyky in folk rites only).",
+        "old": "The couple stand together on an embroidered rushnyk during the service, and whoever steps onto it first, the joke goes, will have the final say in the marriage.",
+        "new": "It is often told that the couple stand on an embroidered rushnyk in the service, and whoever steps onto it first will have the final say in the marriage.",
+        "fix": "It is often told that the couple stand on an embroidered rushnyk in the service, and whoever steps onto it first will have the final say in the marriage.",
+        "delta": -7
+      },
+      {
+        "location": "Church H3 'The crowning in Orthodox and Greek Catholic rites', first sentence",
+        "issue": "Crowning and 'a moment shared with other Eastern rites' stated as fact with no source in the pack; church rite claims must be hedged and deferred to the priest.",
+        "old": "The couple may then be crowned, with crowns held above or placed on their heads, a moment shared with other Eastern rites.",
+        "new": "Families often describe a crowning, with crowns held above or placed on the couple's heads; ask your priest about it.",
+        "fix": "Families often describe a crowning, with crowns held above or placed on the couple's heads; ask your priest about it.",
+        "delta": -5
+      }
+    ],
+    "fact_check_log": [
+      {
+        "claim": "Gradually the church ceremony assumed the central role",
+        "fact_id": "fact_104",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Zustrich, welcome by mother-in-law; each act had songs",
+        "fact_id": "fact_105",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Ruthenian weddings in former Yugoslavia, rushnyky; Canada/US diaspora",
+        "fact_id": "fact_106",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Smartraveller Do not travel, updated 2 November 2026",
+        "fact_id": "fact_110",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Couple stand on rushnyk in church service",
+        "fact_id": null,
+        "status": "unsupported, hedged by edit 1"
+      },
+      {
+        "claim": "Crowning shared with other Eastern rites",
+        "fact_id": null,
+        "status": "unsupported, hedged by edit 2"
+      }
+    ],
+    "compliance": {
+      "pass": true,
+      "issues": []
+    },
+    "originality": {
+      "pass": true,
+      "matches": [
+        "Not rerun in fast mode; no new copy since round 2 scan"
+      ]
+    },
+    "banned_phrases_found": [],
+    "needs_signoff": []
+  },
+  "assumptions": [
+    "Fast mode blocking-only check; rubric carried from prior round. Blocking issues are resolved by the listed edits, so the orchestrator applies them without rescoring."
+  ]
+}
