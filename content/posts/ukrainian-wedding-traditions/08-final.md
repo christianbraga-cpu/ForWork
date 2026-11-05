@@ -118,13 +118,13 @@ The church marriage ceremony, the vinchannia, was usually held on a Sunday. <!--
 
 ### Stepping onto the rushnyk
 
-The couple stand together on an embroidered rushnyk during the service, and whoever steps onto it first, the joke goes, will have the final say in the marriage. It is not church teaching.
+It is often told that the couple stand on an embroidered rushnyk in the service, and whoever steps onto it first will have the final say in the marriage. It is not church teaching.
 
 <!-- IMAGE SLOT church-rushnyk: Licensed photo inside a Ukrainian Catholic or Orthodox church in Australia: couple's feet on an embroidered rushnyk before the altar, or crowns held above the couple, shot from behind or the side, natural church light, no flash. Written couple consent, guest releases and parish permission required. Nothing set in Ukraine. -->
 
 ### The crowning in Orthodox and Greek Catholic rites
 
-The couple may then be crowned, with crowns held above or placed on their heads, a moment shared with other Eastern rites. You will find a similar rite described in our guide to [Greek wedding traditions](/expert-advice/greek-wedding-traditions).
+Families often describe a crowning, with crowns held above or placed on the couple's heads; ask your priest about it. You will find a similar rite described in our guide to [Greek wedding traditions](/expert-advice/greek-wedding-traditions).
 
 The order of the service, and whether a rushnyk is used to bind the couple's hands, can differ. Ukrainian Catholic and Orthodox parishes may differ, so ask your parish priest.
 
@@ -228,4 +228,4 @@ Yes. Ukrainian communities abroad have long kept elements of the traditional wed
 
 The customs that matter most are usually the ones a parent or grandparent quietly asks for. Write them down early, talk to your parish, and then build the day around them.
 
-When you are ready, a Wedded Advisor from [Wedded Concierge](/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=ukrainian-wedding-traditions) can talk through how those moments fit the celebration you have in mind, as your single point of contact from the first conversation onwards.
+When you are ready, a Wedded Advisor from [Wedded Concierge](/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=ukrainian-wedding-traditions&utm_content=secondary) can talk through how those moments fit the celebration you have in mind, as your single point of contact from the first conversation onwards.
