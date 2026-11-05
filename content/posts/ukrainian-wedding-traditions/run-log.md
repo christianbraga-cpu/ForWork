@@ -3,3 +3,4 @@
 00:09 04 visual-curator complete 7 placeholders (Ukrainian-Australian settings)
 00:18 02 seo-researcher complete; quirky Ukrainian page = real predecessor (US 15 kw, #11 keyword; AU #5 'traditional ukrainian wedding'); superstitions page 1 kw, ~0 traffic -> keep live + link; recommend in-place update of quirky page; scope global; schema valid
 00:23 03 planner-sme batch B complete 14 facts (Encyclopedia of Ukraine wedding and embroidery; Smartraveller Do not travel; recognition); Petrykivka/Kosiv cut (no wedding mention); hopak, bread and salt unsourced; Cossack songs unread (no claim); waiting on batch A
+00:23 03 planner-sme batch A complete 11 facts (Encyclopedia of Ukraine Wedding, Korovai, Periwinkle); church section: ask your parish priest; merged; writer launched
