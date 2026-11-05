@@ -2,3 +2,4 @@
 23:17 01 content-strategist complete; old page Baltic (10 headings, 2016); Smartraveller EE/LT normal, LV normal + reconsider near Belarus border; embassies Stockholm (EE, LV), Warsaw (LT); batches A/B set; 02+03(A,B)+04 launched
 23:19 04 visual-curator complete 7 placeholders
 23:20 02 seo-researcher complete; old page US 6 kw (latvian wedding traditions #9, lithuanian wedding traditions #15), AU 0; no duplicates; 301 recommended; schema valid; orchestrator: drop 'old version got wrong' H2 at writing (in-place refresh)
+23:25 03 planner-sme batch B complete 23 facts (UNESCO 5 confirmed; Kihnu, Suiti, sutartinės mention weddings; Estonia term tanutamine; Smartraveller marriage + CNI; embassies Stockholm/Warsaw); waiting on batch A
