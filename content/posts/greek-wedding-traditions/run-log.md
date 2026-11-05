@@ -15,3 +15,4 @@
 23:58 09 cro-specialist complete; 1 copy change (magazine CTA at marker); applying after 8b
 23:58 10 distribution complete 3 pins, 8-slide carousel, newsletter
 23:59 08b editor pass_with_edits; 8 fixes for 4 blocking issues (service steps and koumbaros hedged; Gospel line; civil vs religious as check; wildfire attributed; authentication) + 1 CRO change applied; blocking 0; cms-publisher launched
+00:01 11 cms-publisher package complete (not uploaded, no Chrome); validate all valid; docx built; run report, backlinks, link map, calendar 25 (calendar line endings normalised to LF); FINISHED (~56 min incl. restart)
