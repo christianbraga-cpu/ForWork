@@ -7,3 +7,4 @@
 01:10 05 luxury-writer complete 2,842 words; 0 VERIFY; old headings covered; first draft sent; editor + 5 readers launched
 01:11 07 icp-reader search_visitor complete; no must-fix
 01:11 07 icp-reader sceptic, uhnw, planner_couple complete; no must-fix; waiting on funding_parent, editor
+01:11 07 icp-reader funding_parent complete; no must-fix; waiting on editor
