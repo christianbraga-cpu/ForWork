@@ -1,0 +1,73 @@
+{
+  "agent": "cro",
+  "task_id": "baltic-wedding-traditions",
+  "stage": "09",
+  "status": "complete",
+  "round": 1,
+  "inputs_used": [
+    "content-system/brand/brand-facts.md",
+    "content/posts/baltic-wedding-traditions/01-brief.json",
+    "content/posts/baltic-wedding-traditions/07-panel.json",
+    "content/posts/baltic-wedding-traditions/08-final.md",
+    "content-system/seo/link-map.csv (grep /magazine)",
+    "content-system/schemas/09-cro.schema.json",
+    "content/posts/serbian-wedding-traditions/09-cro.json (format)"
+  ],
+  "self_qa": {
+    "confidence": 0.85,
+    "checks": [
+      {"check": "Each copy_changes old string occurs exactly once in 08-final.md; 2 changes", "pass": true},
+      {"check": "UTMs use utm_source=blog, utm_medium=article, utm_campaign=baltic-wedding-traditions, utm_content primary or secondary", "pass": true},
+      {"check": "Primary text 6 words or fewer, no exclamation mark, no 'click here'", "pass": true},
+      {"check": "Advisor claims only from brand-facts.md (single point of contact, time zone, AUD, fee and inclusions in writing, nothing too early or too vague); no paperwork help, prices, 'last dance' or em dashes added", "pass": true},
+      {"check": "/magazine exists in link-map.csv (line 307, lead magnet)", "pass": true}
+    ]
+  },
+  "assumptions": [
+    "Caller set /wonderland-concierge as primary, overriding the brief's magazine-first goal; the magazine becomes the lead magnet.",
+    "The empty <!-- CTA: primary --> marker before the Australians section is left unfilled: line 159 already names a Wedded Advisor directly after it, so a CTA block there would duplicate the ask before the panel's trust gaps are answered. It is an HTML comment and renders nothing."
+  ],
+  "open_questions": [
+    {"to": "orchestrator", "question": "Apply copy_changes 1 and 2 to 08-final.md before distribution and CMS upload? Optionally delete the unused <!-- CTA: primary --> marker.", "blocking": false},
+    {"to": "Nic", "question": "Can a Baltic or Baltic-Australian wedding Wedded Wonderland has planned be named (with consent)? It would answer the sceptic's 'show me proof' reaction before the Advisor link (weighted enquiry likelihood 2.6).", "blocking": false}
+  ],
+  "payload": {
+    "journey_stage": "dreaming",
+    "primary_cta": {
+      "text": "Speak with a Wedded Advisor",
+      "subtext": "The fee is agreed in writing before any work begins.",
+      "link": "/wonderland-concierge?utm_source=blog&utm_medium=article&utm_campaign=baltic-wedding-traditions&utm_content=primary",
+      "placement": "Existing inline link in 'Bringing Baltic customs to a wedding at home' (line 191), moved from the marker to where the panel's questions peak: after safety, guest access, paperwork and recognition are answered. Retag utm_content=bridge to primary and utm_medium to article (copy_changes 1). The sentence after it already carries the subtext and the panel's must-fix wording."
+    },
+    "secondary_cta": {
+      "text": "Tell a Wedded Advisor",
+      "subtext": "Nothing is too early or too vague.",
+      "link": "/wonderland-concierge?utm_source=blog&utm_medium=article&utm_campaign=baltic-wedding-traditions&utm_content=secondary",
+      "placement": "Closing section 'Start with your family's customs' (line 221): link the existing words 'tell a Wedded Advisor' (copy_changes 2), for the reader who skimmed to the end. No new sentence added."
+    },
+    "lead_magnet": {
+      "name": "Wedded Wonderland digital magazine",
+      "link": "/magazine",
+      "placement": "Not placed in the article (caller limits in-article utm_content to primary and secondary). Available for distribution and email follow-up; tag with utm_content=magnet if used.",
+      "exists": true
+    },
+    "tracking": [
+      "utm_content=primary on the /wonderland-concierge inline link in the 'at home' section",
+      "utm_content=secondary on the /wonderland-concierge link in the closing section"
+    ],
+    "rationale": "Dreaming-stage reader with panel enquiry likelihood 2.6, so no new asks and no added copy beyond two links. The panel's main CTA hesitation was feeling alone with embassies and paperwork; the primary sits after that section and its rewritten line, so the reassurance comes before the ask, and the legal steps stay with the registry, church and embassy. Ideal magnet not on the site: a Latvian, Lithuanian and Estonian customs checklist for families (suggestion only, not placed).",
+    "copy_changes": [
+      {
+        "old": "/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=baltic-wedding-traditions&utm_content=bridge",
+        "new": "/wonderland-concierge?utm_source=blog&utm_medium=article&utm_campaign=baltic-wedding-traditions&utm_content=primary",
+        "why": "Make the in-context Advisor link the tracked primary CTA with the requested UTMs."
+      },
+      {
+        "old": "tell a Wedded Advisor your date",
+        "new": "[tell a Wedded Advisor](/wonderland-concierge?utm_source=blog&utm_medium=article&utm_campaign=baltic-wedding-traditions&utm_content=secondary) your date",
+        "why": "Turn the closing invitation into the secondary CTA without new copy."
+      }
+    ]
+  },
+  "next_agent": ["distribution"]
+}

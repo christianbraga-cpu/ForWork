@@ -11,3 +11,4 @@
 23:33 06 editor pass_with_edits 4.0; 20 edits applied -> 05-draft-r2.md; orchestrator reframed myth H2 (no 'old version' wording, in-place refresh); funding_parent enum fixed; panel chair launched
 23:35 07b icp-panel-chair revise; enquire 2.6; 1 must_fix (Advisor/Australian section reassurance), 4 should_fix; final pass launched
 23:36 08 luxury-writer complete 2,977 words; 2 VERIFY; scan clean; 8b+CRO+distribution launched
+23:37 10 distribution complete 3 pins, 8-slide carousel, newsletter
