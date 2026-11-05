@@ -1,0 +1,734 @@
+{
+  "agent": "wedding-planner-sme",
+  "task_id": "baltic-wedding-traditions",
+  "stage": "03",
+  "status": "complete",
+  "round": 1,
+  "inputs_used": [
+    "CLAUDE.md",
+    "content/posts/baltic-wedding-traditions/00-input.json",
+    "content/posts/baltic-wedding-traditions/01-brief.json (tradition_plan.batch_A)",
+    "content-system/schemas/03-source-pack.schema.json",
+    "content/posts/serbian-wedding-traditions/03-source-pack.json (format model)",
+    "https://www.latvia.travel/en/special-celebrations-weddings-latvia (Apify web-fetch 2026-11-05, HTTP 200)",
+    "https://www.vle.lt/straipsnis/vestuves/ (Visuotinė lietuvių enciklopedija; Apify web-fetch 2026-11-05, HTTP 200)",
+    "https://www.lrt.lt/en/news-in-english/19/2311863/hen-nights-of-yore-and-today-lithuanian-pre-wedding-traditions-make-a-comeback (Apify web-fetch 2026-11-05, HTTP 200)",
+    "https://www.lrt.lt/naujienos/tavo-lrt/15/111362/vestuviu-planuotoja-zmones-sako-kad-nori-atsisakyti-tradiciju-bet-is-tikro-ju-neatsisako (Apify web-fetch 2026-11-05, HTTP 200)",
+    "content/posts/baltic-wedding-traditions/01-brief.json",
+    "content/posts/baltic-wedding-traditions/02-research/pages/smartraveller.md",
+    "https://evm.ee/korralda-uritus/ideesahver/pulmad",
+    "https://ich.unesco.org/en/RL/baltic-song-and-dance-celebrations-00087",
+    "https://ich.unesco.org/en/RL/kihnu-cultural-space-00042",
+    "https://ich.unesco.org/en/RL/seto-leelo-seto-polyphonic-singing-tradition-00173",
+    "https://ich.unesco.org/en/RL/sutartines-lithuanian-multipart-songs-00433",
+    "https://ich.unesco.org/en/USL/suiti-cultural-space-00314",
+    "https://poland.embassy.gov.au/",
+    "https://sweden.embassy.gov.au/",
+    "https://www.folklore.ee/tagused/nr11/pulm.htm",
+    "https://www.smartraveller.gov.au/our-role/notarial-services/how-get-certificate-no-impediment-marriage",
+    "https://www.smartraveller.gov.au/planning-trip/advice-your-planned-activities/getting-married-overseas"
+  ],
+  "self_qa": {
+    "checks": [
+      {
+        "check": "Every fact has a source URL, exact quote, country and date read",
+        "pass": true,
+        "note": "18 facts, all read live 2026-11-05 via Apify web-fetch."
+      },
+      {
+        "check": "No price without a source; all prices in needs_signoff",
+        "pass": true,
+        "note": "No prices or amounts."
+      },
+      {
+        "check": "Every batch A must-include covered or listed as often told",
+        "pass": true,
+        "note": "Latvian bride stealing, pūrs, mičošana headdress details and 7b padlocks are often_told (empty covered_by)."
+      },
+      {
+        "check": "No invented quotes, statistics or real weddings",
+        "pass": true,
+        "note": "None."
+      },
+      {
+        "check": "Each custom tied to the country its source names; nothing pan-Baltic",
+        "pass": true,
+        "note": "Latvia facts from latvia.travel only; Lithuania facts from VLE and LRT only."
+      },
+      {
+        "check": "No Wikipedia, competitor or vendor blog sources",
+        "pass": true,
+        "note": "LRT (public broadcaster) used as editorial; the 2015 interview quotes a planner, used only for modern practice."
+      }
+    ],
+    "confidence": 0.7
+  },
+  "open_questions": [
+    {
+      "to": "luxury-writer",
+      "question": "Lithuanian term for the wreath rite: VLE gives 'gaubtuvės' (vainiko nuėmimas); 'marčios gobimas' not seen in sources read.",
+      "blocking": false
+    },
+    {
+      "to": "luxury-writer",
+      "question": "Return visit term is 'atgrąžtai' per VLE, not 'sugrįžtuvės' or 'Atgriztai'.",
+      "blocking": false
+    },
+    {
+      "to": "orchestrator",
+      "blocking": false,
+      "question": "Can a follow-up read the Stockholm and Warsaw embassy notarial pages to confirm CNI wording for each country?"
+    }
+  ],
+  "assumptions": [
+    "Fast mode: 15-minute hard budget, one sourcing round.",
+    "VLE (Lithuanian national encyclopedia, published by the national library's science and encyclopaedia centre) treated as an encyclopedic editorial source.",
+    "Lithuanian quotes kept in the original language with diacritics; claims are English paraphrases.",
+    "Unsourced customs listed in payload.often_told: write as 'often told', no meanings as fact, no [[VERIFY]] marker.",
+    "Latvian and Lithuanian customs kept separate; no Latvian bread and salt, gates or dowry chest lines without a Latvian source.",
+    "No venue names in the article: the Estonian Open Air Museum (fact_122) is a source for the custom, not a venue recommendation.",
+    "Translations from Estonian (fact_116 to fact_122) are the researcher's; the writer paraphrases, no quoted English translation as if it were the source's."
+  ],
+  "verify_items": [
+    "[[VERIFY: Australian Embassy Stockholm notarial/CNI page for Estonia and Latvia was not read (guessed URL 404); article should say 'ask the Australian Embassy in Stockholm' and state no CNI procedure for Estonia or Latvia]]",
+    "[[VERIFY: Australian Embassy Warsaw English notarial page for Lithuania was not read (fetch timed out); home page confirms notarial services by appointment only]]"
+  ],
+  "tools_used": [
+    "mcp__Apify__apify--web-search",
+    "mcp__Apify__apify--web-fetch",
+    "Bash"
+  ],
+  "next_agent": [
+    "luxury-writer"
+  ],
+  "payload": {
+    "facts": [
+      {
+        "fact_id": "fact_01",
+        "country": "Latvia",
+        "claim": "Latvia's official tourism site describes mičošana as a midnight ritual still part of modern Latvian weddings, in which the bride symbolically says goodbye to her status as a daughter and assumes the role of wife.",
+        "quote": "One tradition that is still a part of modern weddings, giving them a special atmosphere, is the midnight ritual – the mičošana, when the bride symbolically says goodbye to her status as a daughter and assumes the role of wife.",
+        "source": "https://www.latvia.travel/en/special-celebrations-weddings-latvia",
+        "source_type": "tourism_board",
+        "checked": "2026-11-05",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_02",
+        "country": "Latvia",
+        "claim": "The mičošana is often led by folklore groups, who sing songs and perform the ritual.",
+        "quote": "This ceremony is often led by folklore groups, who sing songs and perform an authentic ritual.",
+        "source": "https://www.latvia.travel/en/special-celebrations-weddings-latvia",
+        "source_type": "tourism_board",
+        "checked": "2026-11-05",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_03",
+        "country": "Latvia",
+        "claim": "In earlier times Latvian weddings were most often held in autumn after the harvest and could last several days or a whole week; at modern weddings guests still shout 'Rūgts!' (bitter) for the couple to kiss.",
+        "quote": "In ancient times, Latvian weddings were most often held in the fall after the harvest, and the celebrations used to last several days or even a whole week. ... Guests still shout \"Rūgts!\" at modern weddings, encouraging the young couple to kiss",
+        "source": "https://www.latvia.travel/en/special-celebrations-weddings-latvia",
+        "source_type": "tourism_board",
+        "checked": "2026-11-05",
+        "is_price": false,
+        "conflicts": "The same page spells the shout 'Rūgs!' in one paragraph and 'Rūgts!' in another; use 'Rūgts!' (the standard Latvian word for bitter)."
+      },
+      {
+        "fact_id": "fact_04",
+        "country": "Lithuania",
+        "claim": "According to ethnographer Nijolė Juta Gornatkevičė (LRT, 2024), on the hen night before a Lithuanian village wedding the girls sat the bride on a bread barrel, combed her hair into two braids placed on top of her head; this ritual combing marked her transition to womanhood, as after the wedding a married woman no longer displayed her hair and had to wear a hat.",
+        "quote": "The gathered girls would first sit the bride on a bread barrel and comb her hair. They'd make two braids, place them on top of her head and decorate with ribbons. This ritual combing marked the bride's transition from girlhood to womanhood, as according to the old tradition, after the wedding a woman was no longer allowed to display her hair and had to wear a hat",
+        "source": "https://www.lrt.lt/en/news-in-english/19/2311863/hen-nights-of-yore-and-today-lithuanian-pre-wedding-traditions-make-a-comeback",
+        "source_type": "editorial",
+        "checked": "2026-11-05",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_05",
+        "country": "Lithuania",
+        "claim": "In the same LRT account, the dressed bride went to say goodbye to her rue garden, which symbolised her youth, then made a round of the village with friends to say goodbye, collecting gifts from neighbours.",
+        "quote": "The dressed-up bride would first go to say goodbye to her rue garden, which symbolised her youth, and then, with a group of friends, she would make a round to say goodbye to the entire village, collecting gifts from neighbours.",
+        "source": "https://www.lrt.lt/en/news-in-english/19/2311863/hen-nights-of-yore-and-today-lithuanian-pre-wedding-traditions-make-a-comeback",
+        "source_type": "editorial",
+        "checked": "2026-11-05",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_06",
+        "country": "Lithuania",
+        "claim": "Around the beginning of the 20th century, parents usually chose the groom; the matchmaker took part in the groom's eve-of-wedding gathering with the groom, his father and cousins, and was known for jokes.",
+        "quote": "it was usually the parents who chose the groom for the bride ... the groom-to-be, his father, the matchmaker and cousins also celebrated the evening ... there was no shortage of jokes from the matchmaker, fatherly advice",
+        "source": "https://www.lrt.lt/en/news-in-english/19/2311863/hen-nights-of-yore-and-today-lithuanian-pre-wedding-traditions-make-a-comeback",
+        "source_type": "editorial",
+        "checked": "2026-11-05",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_07",
+        "country": "Lithuania",
+        "claim": "The Visuotinė lietuvių enciklopedija (Lithuanian national encyclopedia) says a son's wife was usually sought not by his father but by a village community member he authorised, the piršlys (matchmaker), who handled the piršlybos (matchmaking).",
+        "quote": "Sūnui žmonos dažniausiai ieškodavo ne tėvas – piršlybomis rūpindavosi jo įgaliotas kaimo bendruomenės narys piršlys.",
+        "source": "https://www.vle.lt/straipsnis/vestuves/",
+        "source_type": "editorial",
+        "checked": "2026-11-05",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_08",
+        "country": "Lithuania",
+        "claim": "During piršlybos the families got to know the girl's parents and agreed the economic and other terms of the marriage; after the sacred, legally binding sužadėtuvės (betrothal) rites, the wedding was agreed.",
+        "quote": "Per piršlybas būdavo susipažįstama su merginos tėvais, suderama dėl santuokos ekonominių ir kitų sąlygų. Atlikus juridinę galią turinčias sakralias sužadėtuvių apeigas buvo sutariama dėl vestuvių.",
+        "source": "https://www.vle.lt/straipsnis/vestuves/",
+        "source_type": "editorial",
+        "checked": "2026-11-05",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_09",
+        "country": "Lithuania",
+        "claim": "On the first Sunday after the wedding, at the atgrąžtai, the newlyweds visited the bride's parents' home for a small meal with both sets of parents, the matchmaker, the svočia and the wreath-pinners; the custom faded in the 20th century.",
+        "quote": "Pirmą sekmadienį po jungtuvių, per atgrąžtus, jaunavedžiai lankydavosi jaunosios tėvų namuose ... Čia būdavo rengiamos nedidelės jaunavedžių, abejų tėvų, jų šeimų narių, piršlio, svočios ir vainiksegių vaišės. 20 a. paprotys nunyko.",
+        "source": "https://www.vle.lt/straipsnis/vestuves/",
+        "source_type": "editorial",
+        "checked": "2026-11-05",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_10",
+        "country": "Lithuania",
+        "claim": "In the 19th and early 20th centuries in western and northern central Lithuania a mock 'matchmaker's trial' arose: as the wedding ended, the bride's groomsmen accused the matchmaker of deceiving her, 'judges' sentenced him to death, and the bride rescued him with a gifted towel; the custom later spread elsewhere.",
+        "quote": "19 a.–20 a. pradžioje Vakarų Lietuvoje ir Vidurio Lietuvos šiaurėje radosi piršlio teismas ... nuteisdavo myriop, vedamą pakarti išvaduodavo jaunoji dovanojamu rankšluosčiu. Vėliau paprotys išplito ir kitur.",
+        "source": "https://www.vle.lt/straipsnis/vestuves/",
+        "source_type": "editorial",
+        "checked": "2026-11-05",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_11",
+        "country": "Lithuania",
+        "claim": "One of the most important old Lithuanian wedding rites was the removal of the bride's wreath, called gaubtuvės; afterwards the woman was no longer entitled to braid her hair, and the rite meant she symbolically passed into her husband's authority.",
+        "quote": "Viena svarbiausių vestuvių senųjų apeigų buvo jaunosios vainiko nuėmimas – gaubtuvės. Mitulių arba vyriausiojo brolio išpintų kasų moteris neturėjo teisės pintis; apeigos reiškė, kad moteris simboliškai pereina į vyro valdžią.",
+        "source": "https://www.vle.lt/straipsnis/vestuves/",
+        "source_type": "editorial",
+        "checked": "2026-11-05",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_12",
+        "country": "Lithuania",
+        "claim": "When an older sister married, the groom's groomsmen placed the bride's little rue wreath (rūtų vainikėlis) on her younger sister at the wedding, officially marking her as next to marry.",
+        "quote": "Ištekėjus vyresniajai seseriai jaunesniajai per vestuves jaunikio pabroliai uždėdavo jaunosios rūtų vainikėlį, taip ji būdavo oficialiai pakeliama į būsimas marčias.",
+        "source": "https://www.vle.lt/straipsnis/vestuves/",
+        "source_type": "editorial",
+        "checked": "2026-11-05",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_13",
+        "country": "Lithuania",
+        "claim": "Throughout Lithuania newlyweds have long been welcomed as the most honoured guests with bread and salt and a drink; in the 20th century the groom was usually met peacefully with bread and salt and a glass of drink.",
+        "quote": "Visoje Lietuvoje nuo seno jaunavedžiai sutinkami kaip garbingiausi svečiai – su duona ir druska, gėrimu. ... 20 a. dažniausiai sutinkama taikingai, su duona ir druska, taurele gėrimo.",
+        "source": "https://www.vle.lt/straipsnis/vestuves/",
+        "source_type": "editorial",
+        "checked": "2026-11-05",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_14",
+        "country": "Lithuania",
+        "claim": "A Lithuanian wedding planner interviewed by LRT Radio (2015) said couples rarely give up being met at the reception venue with salt, bread and water, calling it a beautiful tradition from old times.",
+        "quote": "Kita tradicija – sutikimas pobūvio vietoje su druska, duona, vandeniu. Dažniausiai ir šios tradicijos niekas neatsisako. Tai yra labai graži tradicija, ateinanti iš senų laikų.",
+        "source": "https://www.lrt.lt/naujienos/tavo-lrt/15/111362/vestuviu-planuotoja-zmones-sako-kad-nori-atsisakyti-tradiciju-bet-is-tikro-ju-neatsisako",
+        "source_type": "editorial",
+        "checked": "2026-11-05",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_15",
+        "country": "Lithuania",
+        "claim": "Formerly only the couple's own village youth built welcome gates (sutiktuvių vartai) to honour them; since the late 20th century gates are put up along the whole route of the returning wedding party, mostly for a ransom (išpirka). When the groom's party reached the bride's home, the matchmaker with a bottle and the svočia with a karvojus (wedding loaf) bought their way through the gates.",
+        "quote": "Seniau pagerbdami jaunuosius sutiktuvių vartus statydavo tik savojo kaimo jaunimas, nuo 20 a. pabaigos vartai visame grįžtančių po santuokos vestuvininkų kelyje tveriami dažniausiai dėl išpirkos. ... Jaunikiui su savo palyda atvykus į nuotakos namus vartus išpirkdavo piršlys su buteliu ir svočia su karvojumi",
+        "source": "https://www.vle.lt/straipsnis/vestuves/",
+        "source_type": "editorial",
+        "checked": "2026-11-05",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_16",
+        "country": "Lithuania",
+        "claim": "In Aukštaitija there were vartininkai (gatekeepers) who built and guarded gates to meet the couple; since the second half of the 20th century uninvited guests mostly just set up road barriers.",
+        "quote": "Aukštaitijoje – vartininkai, taisantys ir saugantys vartus jauniesiems sutikti. ... Nuo 20 a. antros pusės nekviestieji dažniausiai taiso tik kelio užtvaras.",
+        "source": "https://www.vle.lt/straipsnis/vestuves/",
+        "source_type": "editorial",
+        "checked": "2026-11-05",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_17",
+        "country": "Lithuania",
+        "claim": "The bride's kraitis (trousseau or dowry) was taken to the groom's home by the kraitvežiai (dowry carriers) from the groom's side; under Soviet rule the kraitis lost its meaning along with matchmaking and the atgrąžtai.",
+        "quote": "Jaunosios kraitį išveždavo kraitvežiai. ... neteko prasmės piršlybos, jaunojo turto apžiūrėjimas (peržvalgos), merginos kraitis ir pasoga, neliko kvieslio, kraitvežių, atgrąžtų.",
+        "source": "https://www.vle.lt/straipsnis/vestuves/",
+        "source_type": "editorial",
+        "checked": "2026-11-05",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_18",
+        "country": "Lithuania",
+        "claim": "In the 19th century the arriving bride was met in the house by her mother-in-law with water and salt.",
+        "quote": "19 a. marčią pirmiausia vesdavo į trobą, ją pasitikdavo anyta su vandeniu ir druska.",
+        "source": "https://www.vle.lt/straipsnis/vestuves/",
+        "source_type": "editorial",
+        "checked": "2026-11-05",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_100",
+        "country": "Estonia",
+        "claim": "UNESCO element 'Kihnu cultural space' (Estonia) is live; inscribed in 2008 (3.COM) on the Representative List (originally proclaimed in 2003). Its text names wedding ceremonies among the traditions Kihnu women keep.",
+        "quote": "Kihnu women thus have become the principal custodians of the cultural traditions embodied in numerous songs, games, dances, wedding ceremonies and handicrafts.",
+        "source": "https://ich.unesco.org/en/RL/kihnu-cultural-space-00042",
+        "source_type": "other",
+        "checked": "2026-11-05",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_101",
+        "country": "Estonia",
+        "claim": "UNESCO describes Kihnu and Manija as small islands off Estonia's Baltic coast, and the women's woollen handicrafts (mittens, stockings, skirts, blouses with bright colours and stripes) as the most visible emblem of Kihnu culture. The text gives no detail of how a Kihnu wedding runs.",
+        "quote": "The most visible emblem of Kihnu culture remains the woolen handicrafts worn by the women of the community.",
+        "source": "https://ich.unesco.org/en/RL/kihnu-cultural-space-00042",
+        "source_type": "other",
+        "checked": "2026-11-05",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_102",
+        "country": "Estonia",
+        "claim": "UNESCO lists 'intrusion of tourists insensitive to the islands' traditions and natural environment' among threats to Kihnu culture (a respect note for guests, not a wedding fact).",
+        "quote": "Today, Kihnu culture is threatened by economic hardship, uncontrolled housing development and the intrusion of tourists insensitive to the islands' traditions and natural environment.",
+        "source": "https://ich.unesco.org/en/RL/kihnu-cultural-space-00042",
+        "source_type": "other",
+        "checked": "2026-11-05",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_103",
+        "country": "Estonia",
+        "claim": "UNESCO element 'Seto Leelo, Seto polyphonic singing tradition' (Estonia) is live; inscribed 2009 (4.COM) on the Representative List. Its body text does not mention weddings (only the page's keyword tags include 'Wedding'). It describes a lead singer and a choir, mostly women, performing in traditional costume. Describe the Seto community as living in south-eastern Estonia only.",
+        "quote": "Performed to traditional melodies and in traditional costume, leelo features a lead singer who delivers a verse line followed by a choir that joins in for the final syllables and then repeats the whole line.",
+        "source": "https://ich.unesco.org/en/RL/seto-leelo-seto-polyphonic-singing-tradition-00173",
+        "source_type": "other",
+        "checked": "2026-11-05",
+        "is_price": false,
+        "conflicts": "Body text has no wedding reference; only a 'Wedding' keyword tag. Article must not say UNESCO links leelo to weddings beyond 'singing formerly accompanied nearly all daily activities'."
+      },
+      {
+        "fact_id": "fact_104",
+        "country": "Estonia",
+        "claim": "UNESCO says leelo singing formerly accompanied nearly all daily activities in Seto rural communities and today remains alive in community events, increasingly on stage.",
+        "quote": "Singing formerly accompanied nearly all daily activities in the Seto's rural communities; today, although it is increasingly restricted to stage performance, the tradition remains prominently alive in community events",
+        "source": "https://ich.unesco.org/en/RL/seto-leelo-seto-polyphonic-singing-tradition-00173",
+        "source_type": "other",
+        "checked": "2026-11-05",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_105",
+        "country": "Estonia, Latvia, Lithuania",
+        "claim": "UNESCO element 'Baltic song and dance celebrations' (Estonia, Latvia, Lithuania) is live; inscribed 2008 (3.COM) on the Representative List (originally proclaimed 2003). Large festivals every fifth year in Estonia and Latvia and every fourth year in Lithuania. Its text does not mention weddings. This is the one sourced shared Baltic element.",
+        "quote": "this cultural expression culminates in large-scale festivals every fifth year in Estonia and Latvia and every fourth year in Lithuania.",
+        "source": "https://ich.unesco.org/en/RL/baltic-song-and-dance-celebrations-00087",
+        "source_type": "other",
+        "checked": "2026-11-05",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_106",
+        "country": "Lithuania",
+        "claim": "UNESCO element 'Sutartinės, Lithuanian multipart songs' (Lithuania) is live; inscribed 2010 (5.COM) on the Representative List. Polyphonic songs by female singers in north-east Lithuania; their poetic texts include weddings among many themes.",
+        "quote": "The poetic texts encompass many themes, including work, calendar rituals, weddings, family, wars, history and moments of daily life.",
+        "source": "https://ich.unesco.org/en/RL/sutartines-lithuanian-multipart-songs-00433",
+        "source_type": "other",
+        "checked": "2026-11-05",
+        "is_price": false,
+        "conflicts": "Canonical URL on the page is .../sutartins-lithuanian-multipart-songs-00433; the -sutartines- URL also loads (HTTP 200)."
+      },
+      {
+        "fact_id": "fact_107",
+        "country": "Latvia",
+        "claim": "UNESCO element 'Suiti cultural space' (Latvia) is live; inscribed 2009 (4.COM) on the List of Intangible Cultural Heritage in Need of Urgent Safeguarding. A small Catholic community in western Latvia; its text names wedding traditions among the space's distinct features.",
+        "quote": "The Suiti cultural space is characterized by a number of distinct features, including vocal drone singing performed by Suiti women, wedding traditions, colourful traditional costumes, the Suiti language, local cuisine, religious traditions, celebrations of the annual cycle",
+        "source": "https://ich.unesco.org/en/USL/suiti-cultural-space-00314",
+        "source_type": "other",
+        "checked": "2026-11-05",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_108",
+        "country": "Australia (all three)",
+        "claim": "Smartraveller 'Getting married overseas' (last updated 18/08/2026): some countries ask for proof you are free to marry; common documents are a CNI and registry certificates; ask the destination's embassy or consulate whether you need a CNI, whether it can be issued in Australia and whether it needs an authentication or apostille.",
+        "quote": "DFAT can issue a CNI in Australia. But some local authorities only accept CNIs issued in their country.",
+        "source": "https://www.smartraveller.gov.au/planning-trip/advice-your-planned-activities/getting-married-overseas",
+        "source_type": "government",
+        "checked": "2026-11-05",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_109",
+        "country": "Australia (all three)",
+        "claim": "Smartraveller: an overseas marriage cannot be registered in Australia but in most cases is legally recognised, if valid where it happened and valid under Australian law had it occurred in Australia; talk to a lawyer to confirm.",
+        "quote": "You can't register an overseas marriage in Australia. But in most cases, your marriage is legally recognised here.",
+        "source": "https://www.smartraveller.gov.au/planning-trip/advice-your-planned-activities/getting-married-overseas",
+        "source_type": "government",
+        "checked": "2026-11-05",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_110",
+        "country": "Australia (all three)",
+        "claim": "Smartraveller: a foreign marriage certificate is usually accepted as proof of marriage but may not work as proof of a name change; check with your local registry of births, deaths and marriages. Some countries require a period of residence before marrying.",
+        "quote": "A foreign marriage certificate is usually accepted as proof of the marriage. But you may be unable to use it as proof of a name change.",
+        "source": "https://www.smartraveller.gov.au/planning-trip/advice-your-planned-activities/getting-married-overseas",
+        "source_type": "government",
+        "checked": "2026-11-05",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_111",
+        "country": "Australia (all three)",
+        "claim": "Smartraveller 'How to get a Certificate of No Impediment to Marriage' (last updated 01/10/2026): DFAT issues CNIs through Australian Passport Offices, Australian embassies, high commissions and consulates overseas, and by mail; at least one applicant must be an Australian citizen or permanent resident; fees apply (no amounts in the article).",
+        "quote": "A CNI is a document from the Department of Foreign Affairs and Trade (DFAT) issued in support of your intended marriage overseas.",
+        "source": "https://www.smartraveller.gov.au/our-role/notarial-services/how-get-certificate-no-impediment-marriage",
+        "source_type": "government",
+        "checked": "2026-11-05",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_112",
+        "country": "Australia (all three)",
+        "claim": "Smartraveller CNI page: DFAT can't advise on another country's legal processes; ask the destination's embassy in Australia, a planner in that country, or the local marriage authority whether a CNI is needed, whether it must be issued in-country (then the Australian embassy there issues it) and whether it needs an apostille.",
+        "quote": "DFAT can't advise you on the legal processes in another country. It's your responsibility to find out.",
+        "source": "https://www.smartraveller.gov.au/our-role/notarial-services/how-get-certificate-no-impediment-marriage",
+        "source_type": "government",
+        "checked": "2026-11-05",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_113",
+        "country": "Estonia, Latvia",
+        "claim": "Australian Embassy, Stockholm site is live: accredited to Sweden, Finland and Latvia, and provides consular and passport services to Australian citizens in Estonia; its home page links 'Consular and Notarial help' and 'Notarial Services'. The specific notarial page was not read (the guessed URL returned 404), so CNI wording for Estonia and Latvia is 'ask the embassy'.",
+        "quote": "We are accredited to Sweden, Finland and Latvia and our role is to promote Australia's relationships in the region and to provide consular assistance to Australians overseas.  We also provide consular and passport services to Australian citizens in Estonia.",
+        "source": "https://sweden.embassy.gov.au/",
+        "source_type": "government",
+        "checked": "2026-11-05",
+        "is_price": false,
+        "conflicts": "Smartraveller (02-research/pages/smartraveller.md) says full consular assistance for Estonia is via Stockholm; the embassy home page says it is accredited to Latvia and serves Australians in Estonia (it does not say 'accredited to Estonia'). Write 'covers' not 'accredited to' for Estonia."
+      },
+      {
+        "fact_id": "fact_114",
+        "country": "Lithuania",
+        "claim": "Australian Embassy, Warsaw site is live; its header lists Poland, Czechia and Lithuania ('Polska / Czechy, Litwa') and it provides passport, consular and notarial services by appointment only. English notarial page not read in time.",
+        "quote": "Ambasada Australii w Warszawie świadczy usługi paszportowe, konsularne i notarialne tylko po uprzednim umówieniu się.",
+        "source": "https://poland.embassy.gov.au/",
+        "source_type": "government",
+        "checked": "2026-11-05",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_115",
+        "country": "Estonia, Latvia, Lithuania",
+        "claim": "Smartraveller levels (read 2026-11-05, still current at 06 November 2026): Estonia 'Exercise normal safety precautions' (updated 29 October 2026; don't approach the border zone in eastern Estonia); Latvia 'Exercise normal safety precautions overall' with 'Reconsider your need to travel' to areas near the border with Belarus (updated 02 June 2026); Lithuania 'Exercise normal safety precautions' (updated 14 April 2026). Consular: Tallinn and Riga consulates limited help; Vilnius honorary consulate does no notarial acts.",
+        "quote": "Reconsider your need to travel to areas near the border with Belarus due to ongoing civil unrest.",
+        "source": "content/posts/baltic-wedding-traditions/02-research/pages/smartraveller.md (https://www.smartraveller.gov.au/destinations/europe/estonia, /latvia, /lithuania)",
+        "source_type": "government",
+        "checked": "2026-11-05",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_116",
+        "country": "Estonia",
+        "claim": "Estonian term is 'tanutamine' (in northern Estonia also 'linutama'): the climax of the wedding as a rite of passage, when the bride was dressed in garments marking a married woman, turning the bride (mõrsja) into a young wife (noorik). Source is Ülo Tedre's wedding glossary in Mäetagused, the Estonian Literary Museum's folklore journal (academic). Text is in Estonian; quote translated in claim.",
+        "quote": "tanutamine vt ka linutama (Põhja-Eesti); pulma kui siirderiituse tipphetk - mõrsja varustamine naisele tunnuslike riideesemetega, sellega muutus mõrsja noorikuks",
+        "source": "https://www.folklore.ee/tagused/nr11/pulm.htm",
+        "source_type": "editorial",
+        "checked": "2026-11-05",
+        "is_price": false,
+        "conflicts": "Input note uses 'tanu panek'; the academic source uses 'tanutamine' (and 'tanu panija' for the person). Use 'tanutamine'."
+      },
+      {
+        "fact_id": "fact_117",
+        "country": "Estonia",
+        "claim": "Who put on the bonnet depended on where it happened: at the bride's home a married woman attendant (kaasanaine) or the bride's matron (kõrvane); at the groom's home the groom's mother or the best man's wife; a later form, mainly in south-east Estonia, had the schoolmaster do it.",
+        "quote": "kui tanutati mõrsjakodus, oli tanutajaks kaasanaine või kõrvane (harva oma ema, vististi hilisem ilming); kui peiukodus, siis peiuema või isamehe naine (harva isamees)",
+        "source": "https://www.folklore.ee/tagused/nr11/pulm.htm",
+        "source_type": "editorial",
+        "checked": "2026-11-05",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_118",
+        "country": "Estonia",
+        "claim": "Tanutamine took place at the bride's home (western Estonia) or the groom's home, mostly out of sight of the guests (only later done publicly); the bonnet (tanu) was put on three times; it was followed straight away by tying on an apron (põlletamine). The bonnet was the mark of a married woman.",
+        "quote": "Tanutamisele järgnes kohe põlletamine (enamasti ongi tanutamise all mõeldud nii tanu pähe asetamist kui ka põlle ette sidumist). Tanu oli abielunaise tunnus",
+        "source": "https://www.folklore.ee/tagused/nr11/pulm.htm",
+        "source_type": "editorial",
+        "checked": "2026-11-05",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_119",
+        "country": "Estonia",
+        "claim": "Gift giving (veimede jagamine), usually at the groom's home on the second wedding day, was the second key rite of the Estonian wedding after tanutamine: the bride gave handmade gifts (stockings, socks, mittens and so on), binding the two families; it varied greatly by locality.",
+        "quote": "veimede jagamine oli tanutamise järel teine oluline rituaal eesti pulmakombestikus: sellega sõlmiti sidemed mõrsja ja peiu suguseltsi vahel",
+        "source": "https://www.folklore.ee/tagused/nr11/pulm.htm",
+        "source_type": "editorial",
+        "checked": "2026-11-05",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_120",
+        "country": "Estonia",
+        "claim": "Playful 'stealing' (varastamine) was a widespread Estonian wedding custom: groomsmen took objects from the bride's home, someone tried to steal the bride on the wedding ride, and the dowry chest was targeted; its old ritual meaning later became playful, partly to raise money for the couple (the stolen item had to be bought back). Road blocks (tee kinnipanemine) by village youth also asked for a 'pass' of drink.",
+        "quote": "Omaaegne maagilis-rituaalne tähendus on hiljem muutunud mängulis-naljatlevaks tavaks, mille üheks eesmärgiks oli ka raha hankimine noorpaarile",
+        "source": "https://www.folklore.ee/tagused/nr11/pulm.htm",
+        "source_type": "editorial",
+        "checked": "2026-11-05",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_121",
+        "country": "Estonia (Kihnu)",
+        "claim": "The same glossary records Kihnu (Khn) wedding roles: 'tönk', a costumed wedding figure, a jester; and 'umbruk', the bride's attendant or a young girl serving at table. These are glossary entries only, not a description of a modern Kihnu wedding.",
+        "quote": "tönk (Khn) maskeeritud, täpsemalt, kostümeeritud pulmategelane - naljamees.",
+        "source": "https://www.folklore.ee/tagused/nr11/pulm.htm",
+        "source_type": "editorial",
+        "checked": "2026-11-05",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_122",
+        "country": "Estonia",
+        "claim": "The Estonian Open Air Museum (Eesti Vabaõhumuuseum) wedding page lists the bride's tanutamine among the ancestral customs it can include in a wedding, alongside a church ceremony, a carriage ride, games, dances and songs (no venue names or prices in the article; the page gives no fixed price).",
+        "quote": "Pidulik laulatus, pulmasõit kaarikul, õnnenaela tagumine, pruudi tanutamine, pikk lookas pulmalaud, traditsioonilised mängud, tantsud ja laulud.",
+        "source": "https://evm.ee/korralda-uritus/ideesahver/pulmad",
+        "source_type": "official_venue",
+        "checked": "2026-11-05",
+        "is_price": false
+      }
+    ],
+    "insider_details": [
+      {
+        "detail": "If a Latvian partner wants mičošana, book it as a midnight slot in the run sheet and ask the venue early whether a folklore group can perform; latvia.travel notes these groups often lead it.",
+        "fact_ids": [
+          "fact_01",
+          "fact_02"
+        ]
+      },
+      {
+        "detail": "For a Lithuanian reception, plan a short arrival welcome with bread and salt (and water or a drink) at the venue door; it is the custom couples rarely drop, so allow time and a table for it before guests sit.",
+        "fact_ids": [
+          "fact_13",
+          "fact_14"
+        ]
+      },
+      {
+        "detail": "Lithuanian friends may set up gates or barriers on the road back from the ceremony and ask for a 'ransom'; build slack into transfer timings and give the matchmaker or best man something to hand over.",
+        "fact_ids": [
+          "fact_15",
+          "fact_16"
+        ]
+      },
+      {
+        "detail": "A modern piršlys or MC who knows the ritual can run the traditional moments; the 2015 LRT interview notes some couples choose witnesses instead, so treat the role as optional.",
+        "fact_ids": [
+          "fact_07",
+          "fact_14"
+        ]
+      },
+      {
+        "detail": "Start the paperwork with the local registry, not the embassy: Smartraveller says DFAT can't advise on another country's law, so ask the Estonian, Latvian or Lithuanian registry whether it takes a CNI issued in Australia or only one issued locally, and whether it needs an apostille, before booking anything.",
+        "fact_ids": [
+          "fact_108",
+          "fact_112"
+        ]
+      },
+      {
+        "detail": "There is no Australian embassy in any of the three countries: Stockholm handles Estonia and Latvia, Warsaw handles Lithuania, and Warsaw sees people by appointment only, so build appointment lead time into the plan.",
+        "fact_ids": [
+          "fact_113",
+          "fact_114",
+          "fact_115"
+        ]
+      },
+      {
+        "detail": "If you want an Estonian bonnet moment, plan it as a private or semi-private beat: the academic record says tanutamine was mostly done away from the guests, with the bonnet and then the apron, by a married woman from either family.",
+        "fact_ids": [
+          "fact_116",
+          "fact_117",
+          "fact_118"
+        ]
+      },
+      {
+        "detail": "Kihnu is a living island community that UNESCO says is threatened by insensitive tourism, so treat it as a place to learn from with local permission, not a backdrop for a destination wedding.",
+        "fact_ids": [
+          "fact_100",
+          "fact_102"
+        ]
+      },
+      {
+        "detail": "Keep the name change separate from the wedding: Smartraveller says a foreign marriage certificate may not work as proof of a name change in Australia, so check with your state registry of births, deaths and marriages first.",
+        "fact_ids": [
+          "fact_110"
+        ]
+      }
+    ],
+    "quotes": [],
+    "real_weddings": [],
+    "verify_items": [
+      "[[VERIFY: Australian Embassy Stockholm notarial/CNI page for Estonia and Latvia was not read (guessed URL 404); article should say 'ask the Australian Embassy in Stockholm' and state no CNI procedure for Estonia or Latvia]]",
+      "[[VERIFY: Australian Embassy Warsaw English notarial page for Lithuania was not read (fetch timed out); home page confirms notarial services by appointment only]]"
+    ],
+    "needs_signoff": [],
+    "must_include_coverage": [
+      {
+        "item": "1 Latvia: mičošana, the midnight ritual turning bride to wife",
+        "covered_by": [
+          "fact_01",
+          "fact_02"
+        ]
+      },
+      {
+        "item": "1 Latvia: wreath or veil replaced by married woman's headdress; who performs it",
+        "covered_by": []
+      },
+      {
+        "item": "2 Lithuania: removing the bride's wreath (gaubtuvės) and her hair no longer braided or shown",
+        "covered_by": [
+          "fact_11",
+          "fact_04"
+        ]
+      },
+      {
+        "item": "2 Lithuania: rue wreath and rue as a symbol (as sourced)",
+        "covered_by": [
+          "fact_05",
+          "fact_12"
+        ]
+      },
+      {
+        "item": "3 Lithuania: piršlybos and the piršlys's role",
+        "covered_by": [
+          "fact_06",
+          "fact_07",
+          "fact_08",
+          "fact_10"
+        ]
+      },
+      {
+        "item": "3 Lithuania: sequence piršlybos, sužadėtuvės, wedding, atgrąžtai return visit (corrects 'Atgriztai')",
+        "covered_by": [
+          "fact_08",
+          "fact_09"
+        ]
+      },
+      {
+        "item": "4 Latvia: stealing the bride",
+        "covered_by": []
+      },
+      {
+        "item": "5 Lithuania: bread and salt welcome",
+        "covered_by": [
+          "fact_13",
+          "fact_14",
+          "fact_18"
+        ]
+      },
+      {
+        "item": "6 Lithuania: kraitis",
+        "covered_by": [
+          "fact_17"
+        ]
+      },
+      {
+        "item": "6 Latvia: pūrs",
+        "covered_by": []
+      },
+      {
+        "item": "7 Lithuania: gates and road barriers for a ransom",
+        "covered_by": [
+          "fact_15",
+          "fact_16"
+        ]
+      },
+      {
+        "item": "7b Bridges and padlocks (optional)",
+        "covered_by": []
+      },
+      {
+        "item": "Framing: Latvian weddings historically autumn, multi-day; Rūgts! still shouted",
+        "covered_by": [
+          "fact_03"
+        ]
+      },
+      {
+        "item": "Latvian mičošana and the Lithuanian and Estonian headdress customs explained as separate, country-specific rites (Estonian part)",
+        "covered_by": [
+          "fact_116",
+          "fact_117",
+          "fact_118",
+          "fact_122"
+        ]
+      },
+      {
+        "item": "Estonia: Kihnu weddings",
+        "covered_by": [
+          "fact_100",
+          "fact_101",
+          "fact_102",
+          "fact_121"
+        ]
+      },
+      {
+        "item": "Estonia: Seto wedding songs (leelo)",
+        "covered_by": [
+          "fact_103",
+          "fact_104"
+        ]
+      },
+      {
+        "item": "UNESCO elements quoted only as far as their own text links them to weddings (Kihnu 2008, Seto leelo 2009, Suiti 2009, sutartinės 2010, Baltic Song and Dance Celebrations 2008)",
+        "covered_by": [
+          "fact_100",
+          "fact_103",
+          "fact_105",
+          "fact_106",
+          "fact_107"
+        ]
+      },
+      {
+        "item": "Section for Australians: Smartraveller levels and dates, Latvia–Belarus border areas, embassies Stockholm and Warsaw, 'Getting married overseas', registry line",
+        "covered_by": [
+          "fact_108",
+          "fact_109",
+          "fact_110",
+          "fact_111",
+          "fact_112",
+          "fact_113",
+          "fact_114",
+          "fact_115"
+        ]
+      },
+      {
+        "item": "Civil registry steps for Estonia, Latvia and Lithuania",
+        "covered_by": []
+      },
+      {
+        "item": "Baltic-Australian weddings at home",
+        "covered_by": []
+      }
+    ]
+  }
+}
