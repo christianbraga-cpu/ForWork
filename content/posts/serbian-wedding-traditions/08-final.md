@@ -18,7 +18,7 @@ This guide walks the customs as the day unfolds, separates what the Serbian Orth
 - The service centres on rings, crowns, a white cloth binding the couple's right hands, a shared cup of wine and a threefold walk around the table.
 - Smartraveller rates Serbia "Exercise normal safety precautions" as at November 2026, and paperwork for a legal wedding there should be checked with the registry and the Australian Embassy in Belgrade.
 
-## Serbian wedding traditions: what the day looks like, in order
+## Serbian wedding traditions, in the order the day unfolds
 
 The current exhibition at the [Ethnographic Museum in Belgrade](https://etnografskimuzej.rs/en/izlozba/serbian-wedding-traditions/), "Serbian weddings 125 years ago", follows the wedding through its phases: the prosidba (the visit to ask for the bride's hand) and preparations, leading the bride out of her family home, the wedding itself, and her arrival at her new home. <!-- fact_01 --> The museum presents it as a major family, social and ritual event. <!-- fact_01 -->
 
@@ -32,7 +32,7 @@ So one framing line for everything below. The church rite is set by the Serbian 
 
 The prosidba, the proposal visit to ask for the bride's hand, opens the sequence. <!-- fact_01 --> It is a family occasion first, and the tone is set by the two households rather than by any rule.
 
-What follows, the engagement or veridba, is where family habits diverge. Many families include gifts between the households, and an apple or a ring offered to the bride. How much of this a family keeps is a question for the grandparents, not a guidebook.
+What follows, the engagement or veridba, is where family habits diverge. As it is often told, gifts pass between the households, and the bride is offered an apple or a ring. How much of this a family keeps is a question for the grandparents, not a guidebook.
 
 ### 2. The kum and kuma
 
@@ -40,7 +40,7 @@ If there is one person who holds a Serbian wedding together, it is the kum. As t
 
 That is why "best man" undersells the role. The kum is a witness to the sacrament, and during the service he exchanges the rings between the couple. <!-- fact_07 --> Later, he and the stari svat hold the couple's candles until the service ends. <!-- fact_08 -->
 
-Traditionally the kuma is the kum's female counterpart, frequently his wife, standing with the bride. Calling her the "maid of honour" is a loose translation, not a description the church uses.
+As it is often told, the kuma is the kum's female counterpart, often his wife, beside the bride. Calling her the "maid of honour" is a loose translation, not a description the church uses.
 
 Families often speak of kumstvo, the bond between the couple and their kum, as lasting well beyond the wedding, with the kum seen as the natural choice to baptise the couple's children. Treat that as family tradition rather than rule, and ask what yours expects.
 
@@ -50,7 +50,7 @@ Choose your kum early. The Church of Saint Sava in Belgrade, for one, asks for h
 
 ### 3. The barjak, the wedding flag
 
-On the morning of the wedding, the groom's party (the svatovi) sets out to collect the bride, traditionally with the barjak leading the way. The barjak is a wedding flag, and the man who carries it is the barjaktar.
+As it is often told, on the wedding morning the groom's party (the svatovi) sets out to collect the bride, the barjak leading. The barjak is a wedding flag, and the man who carries it is the barjaktar.
 
 Families decorate the barjak in their own way, some with flowers, a towel or an apple tied to the staff, and many give the role of barjaktar to a relative or close friend.
 
@@ -60,7 +60,7 @@ Families decorate the barjak in their own way, some with flowers, a towel or an 
 
 Leading the bride out of her family home is one of the phases the Ethnographic Museum names. <!-- fact_01 --> Around that moment sits one of the most playful customs.
 
-When the svatovi arrive, the bride's family traditionally makes them "buy" her rather than simply hand her over, with the dever, usually the groom's brother or a close male relative, doing the bargaining. Some families add a "fake bride", a relative in a veil presented first to tease the groom's side.
+When the svatovi arrive, as it is often told, the bride's family makes them "buy" her rather than hand her over, with the dever, usually the groom's brother or a close male relative, doing the bargaining. Some families add a "fake bride", a relative in a veil presented first to tease the groom's side.
 
 It is theatre, not commerce, and the haggling is the point.
 
@@ -94,7 +94,7 @@ Finally, the priest leads the couple three times around the table holding the cr
 
 ### 8. The kum's coins outside the church
 
-As the couple leave the church, the kum traditionally throws coins, and sometimes sweets, for the children waiting outside.
+As it is often told, the kum throws coins, and sometimes sweets, for children outside as the couple leave the church.
 
 What it means is a question for the family that keeps it.
 
@@ -102,7 +102,7 @@ What it means is a question for the family that keeps it.
 
 The museum's sequence ends with the bride's arrival at her new home. <!-- fact_01 --> The customs at the door are among the most varied of the day.
 
-In many families the bride is welcomed with bread, and a small child is placed on her lap. What each gesture means is best heard from the family keeping it.
+As it is often told, the bride is welcomed with bread, and a small child is placed on her lap. What each gesture means is best heard from the family keeping it.
 
 For a wedding in Australia, the welcome can move to the reception venue, with bread at the entrance.
 
@@ -120,11 +120,15 @@ The kolo is learnt mainly by joining in, with skilled dancers encouraging others
 
 ### 11. Music through the day
 
-In many families, live music runs from the morning procession to the end of the night, with brass bands or folk musicians leading the svatovi and the kolo. UNESCO describes the kolo as performed to the accompaniment of music. <!-- fact_101 -->
+As it is often told, live music runs from the morning procession to the end of the night, with brass bands or folk musicians leading the svatovi and the kolo. UNESCO describes the kolo as performed to the accompaniment of music. <!-- fact_101 -->
 
 Which songs belong to which moment is family and regional knowledge, so ask an older relative and brief your musicians early.
 
 <!-- CTA: primary -->
+**Read the free magazine**
+Free to read, whenever you are ready.
+[Read the free magazine](/magazine?utm_source=blog&utm_medium=content&utm_campaign=serbian-wedding-traditions&utm_content=primary)
+<!-- /CTA: primary -->
 
 ## Customs you may hear about, and how they are told
 
@@ -146,9 +150,9 @@ For Serbian-Australian couples, a wedding in Serbia can mean family close by, an
 
 The [Smartraveller advice for Serbia](https://www.smartraveller.gov.au/destinations/europe/serbia), updated 27 October 2026, is "Exercise normal safety precautions", one level for the whole country. <!-- fact_104 --> Its landmine warning applies only to the southern area bordering Kosovo, where it advises using well-known roads and paths. <!-- fact_104 -->
 
-Australians can visit as tourists without a visa for up to 90 days in any 6-month period, though entry conditions can change at short notice. <!-- fact_105 --> You must register with local police within 24 hours of arrival, and your hotel or host normally arranges it. <!-- fact_106 --> If guests are staying with family or in a private villa, confirm the host will register them.
+Australians can visit as tourists without a visa for up to 90 days in a 6-month period, though entry conditions can change at short notice. <!-- fact_105 --> You must register with local police within 24 hours of arrival, and your hotel or host normally arranges it. <!-- fact_106 --> If guests are staying with family or in a private villa, confirm the host will register them.
 
-For older or less mobile guests, ask early about transfers and step-free access at the church and venue. Smartraveller notes medical facilities are below Australian standards and Australia has no reciprocal healthcare agreement with Serbia, so every guest needs travel insurance. <!-- fact_116 -->
+For older or less mobile guests, ask early about transfers and step-free access at the church and venue. Smartraveller notes medical facilities are below Australian standards and Australia has no reciprocal healthcare agreement with Serbia, so take out travel insurance. <!-- fact_116 -->
 
 Smartraveller also asks travellers to declare currency and high-value items, such as jewellery and cameras, above a set threshold on arrival. <!-- fact_108 --> Mention it to anyone carrying wedding jewellery or camera gear.
 
