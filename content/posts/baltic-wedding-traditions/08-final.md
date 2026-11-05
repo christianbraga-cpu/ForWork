@@ -42,11 +42,11 @@ Treat it as a fixed midnight moment in the run sheet, and ask early whether a fo
 
 ### 2. Stealing the bride, played lightly (Latvia)
 
-In many Latvian families, friends spirit the bride away during the celebration and the groom wins her back with a forfeit. If you want it, keep it light and agree the limits beforehand.
+As it is often told, friends spirit the bride away during the celebration and the groom wins her back with a forfeit. If you want it, keep it light and agree the limits beforehand.
 
 ### 3. The pūrs (Latvia)
 
-Some Latvian families remember the pūrs as the bride's dowry chest, filled over years with the textiles she would take into married life. Its contents and meaning we leave to each family.
+As it is often told, the pūrs was the bride's dowry chest, filled over years with the textiles she would take into married life. Its contents and meaning we leave to each family.
 
 ## Lithuanian wedding traditions
 
@@ -90,7 +90,7 @@ Formerly, only the couple's own village youth built welcome gates (sutiktuvių v
 
 ### 9. The kraitis and the return visit (Lithuania)
 
-The bride's kraitis, her trousseau or dowry, was carried to the groom's home by the kraitvežiai, dowry carriers from the groom's side. <!-- fact_17 --> Some families also remember a painted chest to hold it.
+The bride's kraitis, her trousseau or dowry, was carried to the groom's home by the kraitvežiai, dowry carriers from the groom's side. <!-- fact_17 --> A painted chest to hold it is often told of, too.
 
 On the first Sunday after the wedding came the atgrąžtai, a small meal at the bride's parents' home with both sets of parents, the matchmaker, the svočia and the women who had pinned the wreath. <!-- fact_09 --> These customs lost their place over the 20th century. <!-- fact_09 --> <!-- fact_17 -->
 
@@ -188,7 +188,7 @@ You can't register an overseas marriage in Australia, but in most cases it is le
 
 Latvian-, Lithuanian- and Estonian-Australian couples who marry at home can carry one or two customs into the day: a Lithuanian bread and salt welcome, a Latvian midnight mičošana or a private Estonian bonnet moment. If one side of the family is German, our guide to [German wedding traditions](/expert-advice/german-wedding-traditions) shows how another family's customs can sit beside yours.
 
-If you are planning a wedding in the Baltics, or a Baltic-Australian celebration at home, you can [speak with a Wedded Advisor](/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=baltic-wedding-traditions&utm_content=bridge). One Wedded Advisor is your single point of contact from start to finish, working in your time zone and quoting in AUD, and someone on the ground looks after the days that matter. The fee is agreed in writing before any work begins, and your Wedded Advisor confirms the inclusions in writing before you commit. The registry, your church and the embassy decide the legal and church steps.
+If you are planning a wedding in the Baltics, or a Baltic-Australian celebration at home, you can [speak with a Wedded Advisor](/wonderland-concierge?utm_source=blog&utm_medium=article&utm_campaign=baltic-wedding-traditions&utm_content=primary). One Wedded Advisor is your single point of contact from start to finish, working in your time zone and quoting in AUD, and someone on the ground looks after the days that matter. The fee is agreed in writing before any work begins, and your Wedded Advisor confirms the inclusions in writing before you commit. The registry, your church and the embassy decide the legal and church steps.
 
 ## Frequently asked questions
 
@@ -218,4 +218,4 @@ Yes, but each country has its own process. Ask the local registry whether it nee
 
 ## Start with your family's customs
 
-Start with one question at the family table: which of these did your grandparents keep? If you would like help shaping it, in Riga, Vilnius, Tallinn or at home, tell a Wedded Advisor your date, your guest list and the customs you want to keep. Nothing is too early or too vague, and the fee is agreed in writing before any work begins.
+Start with one question at the family table: which of these did your grandparents keep? If you would like help shaping it, in Riga, Vilnius, Tallinn or at home, [tell a Wedded Advisor](/wonderland-concierge?utm_source=blog&utm_medium=article&utm_campaign=baltic-wedding-traditions&utm_content=secondary) your date, your guest list and the customs you want to keep. Nothing is too early or too vague, and the fee is agreed in writing before any work begins.
