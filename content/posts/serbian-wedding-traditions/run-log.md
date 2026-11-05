@@ -5,3 +5,5 @@
 01:07 03 planner-sme batch B complete 16 facts (UNESCO Kolo 01270, no wedding mention; Embassy Belgrade CNI and apostille, fees; Smartraveller recognition, CNI, 90 days, police registration); UNESCO URL corrected in brief/SEO; waiting on batch A
 01:07 03 planner-sme batch A complete 13 facts (Serbian Orthodox parish Gabba Brisbane; Saint Sava Belgrade; Ethnographic Museum Belgrade exhibition); barjak, dever, apple, kuma as often told; merged; writer launched
 01:10 05 luxury-writer complete 2,842 words; 0 VERIFY; old headings covered; first draft sent; editor + 5 readers launched
+01:11 07 icp-reader search_visitor complete; no must-fix
+01:11 07 icp-reader sceptic, uhnw, planner_couple complete; no must-fix; waiting on funding_parent, editor
