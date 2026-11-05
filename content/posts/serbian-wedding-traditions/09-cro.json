@@ -1,0 +1,111 @@
+{
+  "agent": "cro",
+  "task_id": "serbian-wedding-traditions",
+  "stage": "09",
+  "status": "complete",
+  "round": 1,
+  "inputs_used": [
+    "content-system/brand/services.md",
+    "content-system/brand/brand-facts.md",
+    "content/posts/serbian-wedding-traditions/01-brief.json",
+    "content/posts/serbian-wedding-traditions/07-panel.json",
+    "content/posts/serbian-wedding-traditions/08-final.md",
+    "content-system/seo/link-map.csv",
+    "content-system/schemas/09-cro.schema.json"
+  ],
+  "self_qa": {
+    "confidence": 0.85,
+    "checks": [
+      {
+        "check": "/magazine and /wonderland-concierge exist in link-map.csv",
+        "pass": true
+      },
+      {
+        "check": "Each copy_changes old string occurs exactly once in 08-final.md",
+        "pass": true
+      },
+      {
+        "check": "UTMs use utm_source=blog, utm_medium=content, utm_campaign=serbian-wedding-traditions",
+        "pass": true
+      },
+      {
+        "check": "Inline Concierge link already carries utm_content=secondary; no change needed",
+        "pass": true
+      },
+      {
+        "check": "No CTA block next to an inline link to the same target (no other /magazine link in 08-final.md)",
+        "pass": true
+      },
+      {
+        "check": "Primary text 6 words or fewer, no exclamation mark, no 'click here'",
+        "pass": true
+      },
+      {
+        "check": "Advisor claims at line 179 traced to brand-facts.md lines 25 and 30; no prices, paperwork-help claims, banned slogan, em dashes or 'budget' added",
+        "pass": true
+      },
+      {
+        "check": "Added copy minimal: one CTA block, about 12 words",
+        "pass": true
+      }
+    ]
+  },
+  "assumptions": [
+    "The CTA block markup (bold heading, subtext line, link, closing comment) follows earlier posts; the CMS publisher adapts it to the field map's CTA component if different.",
+    "The magazine is both the primary CTA and the lead magnet, so the lead magnet reuses the primary link and no second magazine link (utm_content=magnet) is placed.",
+    "The closing line in 'Plan the day in your own order' stays unlinked so the Advisor ask is not duplicated a few sections after the secondary CTA."
+  ],
+  "open_questions": [
+    {
+      "to": "orchestrator",
+      "question": "Apply copy_changes 1 to 08-final.md before distribution and CMS upload?",
+      "blocking": false
+    },
+    {
+      "to": "Nic",
+      "question": "Has Wedded Wonderland planned a Serbian or Serbian-Australian wedding, or does it have partners in Serbia? A sourced line before the Advisor link would answer the 'maybe, show me proof' reaction (weighted enquiry likelihood 2.6).",
+      "blocking": false
+    },
+    {
+      "to": "Nic",
+      "question": "Is there a Europe or cultural-weddings magazine edition? It would be a closer lead magnet than the general /magazine page.",
+      "blocking": false
+    }
+  ],
+  "payload": {
+    "journey_stage": "dreaming",
+    "primary_cta": {
+      "text": "Read the free magazine",
+      "subtext": "Free to read, whenever you are ready.",
+      "link": "/magazine?utm_source=blog&utm_medium=content&utm_campaign=serbian-wedding-traditions&utm_content=primary",
+      "placement": "Fill the existing <!-- CTA: primary --> marker after section 11 (music through the day), once the reader has the full sequence of customs and before the 'customs you may hear about' section. It sits well before the Advisor invitation, so the asks are not back to back. No inline /magazine link nearby, so nothing is dropped."
+    },
+    "secondary_cta": {
+      "text": "Speak with a Wedded Advisor",
+      "subtext": "The fee is agreed in writing before any work begins.",
+      "link": "/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=serbian-wedding-traditions&utm_content=secondary",
+      "placement": "Existing inline link in the 'bringing the customs to your wedding' section (line 179), as the brief asks. Already tagged utm_content=secondary and already states the church and legal steps stay with the parish, registry and embassy, so no copy change."
+    },
+    "lead_magnet": {
+      "name": "Wedded Wonderland digital magazine",
+      "link": "/magazine?utm_source=blog&utm_medium=content&utm_campaign=serbian-wedding-traditions&utm_content=primary",
+      "placement": "Same as primary CTA; no separate magnet placement.",
+      "exists": true
+    },
+    "tracking": [
+      "utm_content=primary on /magazine CTA block",
+      "utm_content=secondary on /wonderland-concierge inline link"
+    ],
+    "rationale": "Dreaming-stage reader (brief journey_stage) gets the low-commitment magazine first, per services.md early-stage rule; the Advisor is the in-context secondary after the 'carry the customs home' section where the panel's planning questions peak. Panel enquiry likelihood is 2.6, so no extra asks are added. Ideal magnet not on the site: a Serbian or Balkan customs checklist for families (suggestion only, exists false, not placed).",
+    "copy_changes": [
+      {
+        "old": "<!-- CTA: primary -->",
+        "new": "<!-- CTA: primary -->\n**Read the free magazine**\nFree to read, whenever you are ready.\n[Read the free magazine](/magazine?utm_source=blog&utm_medium=content&utm_campaign=serbian-wedding-traditions&utm_content=primary)\n<!-- /CTA: primary -->",
+        "why": "Fill the primary marker with the magazine CTA block (text, subtext, UTM-tagged link)."
+      }
+    ]
+  },
+  "next_agent": [
+    "distribution"
+  ]
+}
