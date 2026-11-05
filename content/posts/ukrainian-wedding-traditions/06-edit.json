@@ -1,0 +1,356 @@
+{
+  "agent": "editor",
+  "task_id": "ukrainian-wedding-traditions",
+  "stage": "06",
+  "status": "complete",
+  "round": 1,
+  "inputs_used": [
+    "content/posts/ukrainian-wedding-traditions/05-draft.md",
+    "content/posts/ukrainian-wedding-traditions/01-brief.json",
+    "content/posts/ukrainian-wedding-traditions/02-seo.json",
+    "content/posts/ukrainian-wedding-traditions/03-source-pack.json",
+    "content/posts/ukrainian-wedding-traditions/04-images.json",
+    "content/posts/ukrainian-wedding-traditions/02-research/pages/smartraveller.md",
+    "content/posts/ukrainian-wedding-traditions/02-research/pages/old-page.md",
+    "content-system/brand/brand-facts.md",
+    "content-system/seo/link-map.csv",
+    "content-system/schemas/06-edit.schema.json"
+  ],
+  "self_qa": {
+    "checks": [
+      {
+        "check": "scan_copy.py run",
+        "pass": true,
+        "note": "0 banned, 0 flagged, 0 dashes; 0 old-page overlaps; 16 smartraveller overlaps (required exact wording)"
+      },
+      {
+        "check": "Every factual sentence logged",
+        "pass": true,
+        "note": "28 entries"
+      },
+      {
+        "check": "Each edit old occurs exactly once in 05-draft.md",
+        "pass": true,
+        "note": "13 draft edits verified by script; 1 meta edit targets 02-seo.json"
+      },
+      {
+        "check": "Internal links in link-map or 02-seo",
+        "pass": true,
+        "note": "/expert-advice/wedding-traditions, /expert-advice/greek-wedding-traditions (after edit), /expert-advice/german-wedding-traditions, /10-unusual-wedding-traditions-around-the-world, /cultural-destination-weddings-go-beyond, /wonderland-concierge"
+      },
+      {
+        "check": "Exactly 4 one-sentence Key takeaways",
+        "pass": true
+      },
+      {
+        "check": "Images: only approved slot placeholders, none reference-only",
+        "pass": true,
+        "note": "6 slots match 04-images.json; all status needed"
+      },
+      {
+        "check": "SEO: keyword in title, first 100 words, one H2",
+        "pass": true
+      },
+      {
+        "check": "Decision consistent with scores",
+        "pass": true,
+        "note": "avg >= 4.0, no criterion < 3, no blocking issues, edits needed"
+      }
+    ],
+    "confidence": 0.85
+  },
+  "open_questions": [
+    {
+      "to": "orchestrator",
+      "question": "Apply the meta_description edit to 02-seo.json (current meta says 'in Ukraine and in Australia')."
+    },
+    {
+      "to": "orchestrator",
+      "question": "Update 02-seo.json internal_links Greek target to /expert-advice/greek-wedding-traditions to match the draft edit."
+    },
+    {
+      "to": "Nic",
+      "question": "Re-check Smartraveller Ukraine level and date at publish (recorded 'Do not travel', updated 2 November 2026)."
+    }
+  ],
+  "next_agent": [
+    "icp-reader"
+  ],
+  "payload": {
+    "draft_file": "content/posts/ukrainian-wedding-traditions/05-draft.md",
+    "rubric": {
+      "voice": 4,
+      "expertise": 4,
+      "accuracy": 4,
+      "seo_fit": 4,
+      "commercial_link": 4,
+      "structure": 5,
+      "brief_fit": 4
+    },
+    "blocking_issues": [],
+    "decision": "pass_with_edits",
+    "edits": [
+      {
+        "location": "Crowning H3, Greek internal link",
+        "issue": "Old Greek URL is being moved; link the draft expert-advice page (in link-map.csv).",
+        "fix": "[Greek wedding traditions](/expert-advice/greek-wedding-traditions)",
+        "old": "[Greek wedding traditions](/8-greek-wedding-traditions-you-didnt-know-about)",
+        "new": "[Greek wedding traditions](/expert-advice/greek-wedding-traditions)"
+      },
+      {
+        "location": "Working with your parish and your planner, Advisor line",
+        "issue": "Advisor claim must match brand-facts.md wording: fee agreed in writing before any work begins; Advisor confirms inclusions in writing before the couple commits.",
+        "fix": "A Wedded Advisor is your single point of contact, start to finish; the fee is agreed in writing before any work begins, and your Advisor confirms inclusions in writing before you commit.",
+        "old": "A Wedded Advisor is your single point of contact for the celebration, and the fee and inclusions are confirmed in writing before you commit.",
+        "new": "A Wedded Advisor is your single point of contact, start to finish; the fee is agreed in writing before any work begins, and your Advisor confirms inclusions in writing before you commit."
+      },
+      {
+        "location": "Closing CTA link",
+        "issue": "Commercial link must carry UTMs with utm_medium=content.",
+        "fix": "[Wedded Concierge](/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=ukrainian-wedding-traditions)",
+        "old": "[Wedded Concierge](/wonderland-concierge)",
+        "new": "[Wedded Concierge](/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=ukrainian-wedding-traditions)"
+      },
+      {
+        "location": "Circle and couple dances",
+        "issue": "Folk trio line states the instruments as fact ('typically'); often-told customs must carry no specifics as fact.",
+        "fix": "Many families tell of a small folk band, often remembered as fiddle, drum and hammered dulcimer, playing for circle and couple dances late into the night.",
+        "old": "Many families often tell of a folk trio, typically fiddle, drum and a hammered dulcimer, playing for circle and couple dances late into the night.",
+        "new": "Many families tell of a small folk band, often remembered as fiddle, drum and hammered dulcimer, playing for circle and couple dances late into the night."
+      },
+      {
+        "location": "Divych vechir, unbraiding",
+        "issue": "Unsourced modern-practice claim stated as fact; soften to a gentle suggestion.",
+        "fix": "If it appeals, a quiet version is easy to keep: a mother or grandmother brushing out the bride's hair before she dresses.",
+        "old": "Some families keep a version of this quietly, with a mother or grandmother brushing out the bride's hair before she dresses.",
+        "new": "If it appeals, a quiet version is easy to keep: a mother or grandmother brushing out the bride's hair before she dresses."
+      },
+      {
+        "location": "Zaruchyny, modern suggestion",
+        "issue": "Gentle suggestion is acceptable; tighten 'can be' to 'could be' so it reads as an idea, not current practice.",
+        "fix": "For a modern couple, this could be as simple as a family dinner",
+        "old": "For a modern couple, this can be as simple as a family dinner",
+        "new": "For a modern couple, this could be as simple as a family dinner"
+      },
+      {
+        "location": "Why the rushnyk runs through the day, Ruthenian line",
+        "issue": "Source is a 1993 encyclopaedia entry; 'are still decorated' reads as present-day fact. Attribute and put in the past.",
+        "fix": "It has also outlasted much of the old ceremony: the encyclopaedia records that guests at Ruthenian weddings in the former Yugoslavia were still decorated with rushnyky.",
+        "old": "It has also outlasted much of the old ceremony: guests at Ruthenian weddings in the former Yugoslavia are still decorated with rushnyky.",
+        "new": "It has also outlasted much of the old ceremony: the encyclopaedia records that guests at Ruthenian weddings in the former Yugoslavia were still decorated with rushnyky."
+      },
+      {
+        "location": "Parents' blessing intro",
+        "issue": "Source says the blessing and bread are preserved, not that the blessing 'survived best'.",
+        "fix": "The encyclopaedia names the blessing as one of two customs still preserved, and for many families it is the emotional centre of the morning.",
+        "old": "This is the custom the encyclopaedia says has survived best, and for many families it is the emotional centre of the morning.",
+        "new": "The encyclopaedia names the blessing as one of two customs still preserved, and for many families it is the emotional centre of the morning."
+      },
+      {
+        "location": "Parents' blessing, zustrich",
+        "issue": "fact_105 does not place the zustrich 'at the end of the day'.",
+        "fix": "Later in the scenario came the reception (zustrich)",
+        "old": "At the end of the day came the reception (zustrich)",
+        "new": "Later in the scenario came the reception (zustrich)"
+      },
+      {
+        "location": "Korovai intro",
+        "issue": "'the one every guest takes part in' reads as universal present-day practice; frame as traditional.",
+        "fix": "and traditionally every guest shared in it.",
+        "old": "and it is the one every guest takes part in.",
+        "new": "and traditionally every guest shared in it."
+      },
+      {
+        "location": "FAQ: wedding ring finger",
+        "issue": "'many Ukrainian couples wear' is an unsourced present-day claim; keep it as often told, no assertion of prevalence.",
+        "fix": "It is often told that the wedding ring is traditionally worn on the right hand in Ukrainian families.",
+        "old": "It is often told that many Ukrainian couples wear the wedding ring on the right hand.",
+        "new": "It is often told that the wedding ring is traditionally worn on the right hand in Ukrainian families."
+      },
+      {
+        "location": "Why the rushnyk runs through the day",
+        "issue": "Unsourced superlative 'most families recognise first'.",
+        "fix": "it is often the object families recognise first.",
+        "old": "it is the object most families recognise first.",
+        "new": "it is often the object families recognise first."
+      },
+      {
+        "location": "Key takeaways, bullet 4",
+        "issue": "Use Smartraveller's exact level wording and date.",
+        "fix": "Smartraveller's advice for Ukraine is \"Do not travel\" (updated 2 November 2026), so these customs are best brought to a wedding in Australia or another destination.",
+        "old": "Smartraveller advises Australians not to travel to Ukraine (as at November 2026), so these customs are best brought to a wedding in Australia or another destination.",
+        "new": "Smartraveller's advice for Ukraine is \"Do not travel\" (updated 2 November 2026), so these customs are best brought to a wedding in Australia or another destination."
+      },
+      {
+        "location": "02-seo.json meta_description (not in 05-draft.md)",
+        "issue": "Meta says customs couples keep 'in Ukraine and in Australia', which suggests a wedding in Ukraine (Do not travel).",
+        "fix": "From matchmaking and the korovai to the rushnyk and crowning, the Ukrainian wedding traditions families keep, and how to bring them to a wedding in Australia."
+      }
+    ],
+    "fact_check_log": [
+      {
+        "claim": "Vesillia was a ritual drama; bride and groom called princess and prince",
+        "fact_id": "fact_01",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Combined spoken word, song, dance, music and visual art",
+        "fact_id": "fact_104",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Scenario established 16th to 19th centuries, regional variations",
+        "fact_id": "fact_01",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Usually early spring or autumn, lasted several days",
+        "fact_id": "fact_11",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Church ceremony assumed the central role",
+        "fact_id": "fact_09",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Many rituals no longer practised; blessing and bread survive simplified",
+        "fact_id": "fact_10",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Rushnyky used in folk rites, particularly weddings and icons",
+        "fact_id": "fact_108",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Ruthenian weddings in former Yugoslavia: guests decorated with rushnyky (recast to past, attributed)",
+        "fact_id": "fact_106",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Svatannia: groom's representatives (starosty/svaty) and bride's parents",
+        "fact_id": "fact_02",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Zaruchyny (rukovyny, khustky), symbolised by joining hands",
+        "fact_id": "fact_03",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Rozpleteny, ritual combing of the bride; vinky made with periwinkle",
+        "fact_id": "fact_04",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Periwinkle in folklore, Easter and wedding rituals",
+        "fact_id": "fact_05",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Korovai: braided wheat bread, dough flags and figurines, baked by singing women at couple's new home",
+        "fact_id": "fact_07",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Korovai from flour donated by all participants; rozpodil",
+        "fact_id": "fact_06",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Couple blessed with korovai before ceremony; best man served guests",
+        "fact_id": "fact_07",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Bride ransom medieval-influenced, became mere play; pereima",
+        "fact_id": "fact_08",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Blahoslovlennia before church; vinchannia usually Sunday",
+        "fact_id": "fact_09",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Zustrich, mother-in-law welcomes bride (timing corrected)",
+        "fact_id": "fact_105",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Each act involved wedding songs and rituals",
+        "fact_id": "fact_105",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Embroidery on clothing; shirt for men and women; polyk/ustavka; cross-stitch",
+        "fact_id": "fact_107",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Regional patterns: Polisia, Hutsul, Dnipro; colours",
+        "fact_id": "fact_109",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Diaspora in Canada and the US keep elements as expression of identity",
+        "fact_id": "fact_106",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Smartraveller Ukraine: Do not travel, updated 2 November 2026",
+        "fact_id": "fact_110",
+        "status": "confirmed"
+      },
+      {
+        "claim": "No in-person consular or passport services; assistance severely limited",
+        "fact_id": "fact_111",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Dual nationality not recognised; quote; citizenship by birth or parent",
+        "fact_id": "fact_112",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Overseas marriage cannot be registered; in most cases recognised; validity test; lawyer",
+        "fact_id": "fact_102",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Some countries ask proof not already married; contact embassy",
+        "fact_id": "fact_103",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Matchmakers given rushnyky; pumpkin refusal; divych vechir; vykup door games; bread and salt; stepping on rushnyk; crowning; Hirko; right-hand ring; folk band (all framed as 'often told' family customs with no meaning or prevalence stated as fact; acceptable, no source claimed)",
+        "status": "unsupported"
+      }
+    ],
+    "compliance": {
+      "pass": true,
+      "issues": [
+        "Advisor fee/inclusions line paraphrased brand-facts (fixed by edit)",
+        "Concierge CTA link lacked UTMs (fixed by edit)",
+        "02-seo meta suggested a wedding in Ukraine (edit to meta)",
+        "No prices, amounts, vendor names, 'budget', 'last dance', hopak, UNESCO claims or em dashes found",
+        "Church section states Ukrainian Catholic and Orthodox parishes may differ and to ask the parish priest",
+        "No travel to or marrying in Ukraine suggested; no political framing"
+      ]
+    },
+    "originality": {
+      "pass": true,
+      "matches": [
+        "scan_copy: 0 overlaps with old-page.md; 16 overlaps with smartraveller.md are the required, attributed official wording"
+      ]
+    },
+    "banned_phrases_found": [],
+    "needs_signoff": [],
+    "average": 4.14
+  },
+  "assumptions": [
+    "Fast mode: old-page originality relied on scan_copy.py overlap check (0 matches).",
+    "Often-told customs without a source are acceptable as framed, since none states a meaning or prevalence as fact."
+  ]
+}
