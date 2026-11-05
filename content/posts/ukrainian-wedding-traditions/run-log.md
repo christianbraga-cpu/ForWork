@@ -15,3 +15,4 @@
 00:32 10 distribution complete 3 pins, 8-slide carousel, newsletter
 00:32 08b editor; 2 blocking fixes (rushnyk step and crowning re-hedged) + 1 CRO change applied; blocking 0; cms-publisher launched
 00:35 11 cms-publisher package complete (not uploaded, no Chrome); validate all valid; docx built; run report (redirect choice), backlinks, link map (+2 old pages), calendar 26; FINISHED (~31 min)
+00:41 person corrected refresh target to /7-quirky-traditions-to-expect-at-a-ukrainian-wedding; input, package, CMS report, run report, backlinks, link map, calendar updated to one method; docx rebuilt

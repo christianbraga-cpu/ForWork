@@ -22,8 +22,7 @@
 
 ## Redirects (person to choose)
 
-- **RECOMMENDED:** update `/7-quirky-traditions-to-expect-at-a-ukrainian-wedding` in place (the real Ukrainian predecessor, US #11 for the keyword), change its slug and path to `/expert-advice/ukrainian-wedding-traditions`, then confirm the old URL returns a 301. Keep `/7-wedding-superstitions-you-need-to-check-off` live (general superstitions, one minor ranking) and add a link from it to the new article.
-- **ALTERNATIVE (original instruction):** update the superstitions page in place and also 301 the quirky Ukrainian page to the new URL. Risk: the superstitions ranking may be lost.
+- **CONFIRMED (person, 2026-11-05):** update `/7-quirky-traditions-to-expect-at-a-ukrainian-wedding` in place (the real Ukrainian predecessor, US #11 for the keyword), change its slug and path to `/expert-advice/ukrainian-wedding-traditions`, then confirm the old URL returns a 301. Keep `/7-wedding-superstitions-you-need-to-check-off` live (general superstitions, one minor ranking) and add a link from it to the new article.
 
 ## Publish-day checks
 
