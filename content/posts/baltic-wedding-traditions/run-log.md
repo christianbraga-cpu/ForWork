@@ -5,3 +5,6 @@
 23:25 03 planner-sme batch B complete 23 facts (UNESCO 5 confirmed; Kihnu, Suiti, sutartinės mention weddings; Estonia term tanutamine; Smartraveller marriage + CNI; embassies Stockholm/Warsaw); waiting on batch A
 23:26 03 planner-sme batch A complete 18 facts (gaubtuvės, atgrąžtai, bread and salt, kraitis, gates: Lithuania; mičošana Latvia); Latvian bride stealing, pūrs as often told; padlocks cut; merged; writer launched
 23:30 05 luxury-writer complete ~2,970 words; 2 VERIFY (embassy CNI Stockholm, Warsaw); first draft sent; editor + 5 readers launched
+23:31 07 icp-reader planner_couple complete; must-fix: guest logistics, legal tone, title (title fixed by person)
+23:31 07 icp-reader search_visitor, funding_parent, sceptic complete; no must-fix beyond title (fixed by person); waiting on uhnw, editor
+23:31 07 icp-reader uhnw complete; enquire 2 (packages link, logistics); waiting on editor
