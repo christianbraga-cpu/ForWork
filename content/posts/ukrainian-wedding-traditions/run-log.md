@@ -5,3 +5,5 @@
 00:23 03 planner-sme batch B complete 14 facts (Encyclopedia of Ukraine wedding and embroidery; Smartraveller Do not travel; recognition); Petrykivka/Kosiv cut (no wedding mention); hopak, bread and salt unsourced; Cossack songs unread (no claim); waiting on batch A
 00:23 03 planner-sme batch A complete 11 facts (Encyclopedia of Ukraine Wedding, Korovai, Periwinkle); church section: ask your parish priest; merged; writer launched
 00:26 05 luxury-writer complete 2,784 words; 0 VERIFY; quirky page headings covered; first draft sent; editor + 5 readers launched
+00:27 07 icp-reader uhnw complete; no must-fix
+00:27 07 icp-reader search_visitor, sceptic, funding_parent complete; no must-fix; waiting on planner_couple, editor
