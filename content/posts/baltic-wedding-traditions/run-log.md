@@ -14,3 +14,5 @@
 23:37 10 distribution complete 3 pins, 8-slide carousel, newsletter
 23:38 09 cro-specialist complete; 2 copy changes; applying after 8b
 23:38 08b editor pass_with_edits; 3 blocking fixes (Latvian bride stealing, pūrs, Lithuanian painted chest re-hedged) + 2 CRO changes applied; cms-publisher launched
+23:40 11 cms-publisher package complete (not uploaded, no Chrome); validate all valid
+23:40 finish: docx, run report, backlinks, link map (+2), calendar 28; FINISHED (~27 min)
