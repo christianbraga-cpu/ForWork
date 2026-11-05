@@ -12,3 +12,4 @@
 23:35 07b icp-panel-chair revise; enquire 2.6; 1 must_fix (Advisor/Australian section reassurance), 4 should_fix; final pass launched
 23:36 08 luxury-writer complete 2,977 words; 2 VERIFY; scan clean; 8b+CRO+distribution launched
 23:37 10 distribution complete 3 pins, 8-slide carousel, newsletter
+23:38 09 cro-specialist complete; 2 copy changes; applying after 8b
