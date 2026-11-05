@@ -1,0 +1,91 @@
+{
+  "agent": "cro",
+  "task_id": "ukrainian-wedding-traditions",
+  "stage": "09",
+  "status": "complete",
+  "round": 1,
+  "inputs_used": [
+    "content-system/brand/services.md",
+    "content-system/brand/brand-facts.md",
+    "content/posts/ukrainian-wedding-traditions/01-brief.json",
+    "content/posts/ukrainian-wedding-traditions/07-panel.json",
+    "content/posts/ukrainian-wedding-traditions/08-final.md",
+    "content-system/seo/link-map.csv",
+    "content-system/schemas/09-cro.schema.json"
+  ],
+  "payload": {
+    "journey_stage": "dreaming",
+    "primary_cta": {
+      "text": "Read the free magazine",
+      "subtext": "Free to read, at your own pace.",
+      "link": "/magazine?utm_source=blog&utm_medium=content&utm_campaign=ukrainian-wedding-traditions&utm_content=primary",
+      "placement": "Fill the existing <!-- CTA: primary --> marker at the end of 'Working with your parish and your planner', just before '## Travel and legal notes for couples'. The dreaming reader has finished the customs and the planning section here, and the block sits before the travel and legal notes. Marker not moved. No inline /magazine link exists in 08-final.md, so nothing to drop."
+    },
+    "secondary_cta": {
+      "text": "Speak with a Wedded Advisor",
+      "subtext": "The fee is agreed in writing before any work begins.",
+      "link": "/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=ukrainian-wedding-traditions&utm_content=secondary",
+      "placement": "Existing inline Wedded Concierge link in the closing section 'A conversation worth having early'. Wording unchanged; no block added. Only utm_content=secondary is added (copy_changes 1)."
+    },
+    "lead_magnet": {
+      "name": "Wedded Wonderland digital magazine (free)",
+      "link": "/magazine?utm_source=blog&utm_medium=content&utm_campaign=ukrainian-wedding-traditions&utm_content=magnet",
+      "exists": true,
+      "placement": "Not placed as a second link. The magazine is already the primary CTA, and the post is above the word cap, so no extra magazine link is added. Tracking value reserved for distribution if a second magazine link is used later."
+    },
+    "tracking": [
+      "/magazine?utm_source=blog&utm_medium=content&utm_campaign=ukrainian-wedding-traditions&utm_content=primary",
+      "/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=ukrainian-wedding-traditions&utm_content=secondary"
+    ],
+    "copy_changes": [
+      {
+        "old": "(/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=ukrainian-wedding-traditions)",
+        "new": "(/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=ukrainian-wedding-traditions&utm_content=secondary)",
+        "why": "Wedded Concierge link must carry utm_content=secondary. Occurs once in 08-final.md."
+      }
+    ],
+    "rationale": "Brief sets journey_stage 'dreaming' with the magazine as primary and the Wedded Advisor as secondary, matching services.md for early-stage readers. Both /magazine and /wonderland-concierge exist in link-map.csv. Panel likelihood to enquire is 2.1, driven by deferred business details (fee model, named Advisor, scale, privacy) that cannot be answered in copy without new facts, so the CTAs stay low-pressure: a free read now and the Advisor invitation at the close. The panel's 'what next after paperwork' worry is already answered in the paragraph directly above the primary marker (registry and parish), so no copy is needed before the CTA. The subtexts reuse brand-facts wording (fee agreed in writing) and add no prices, business claims, paperwork help or travel to Ukraine. 08-final.md is about 3,387 words including markup, above the 3,000 cap, so added copy is limited to the CTA block text and one UTM change. Suggestion (not placed, exists: false): a Ukrainian or Eastern European heritage wedding checklist would be a stronger magnet for this reader; it does not exist on the site."
+  },
+  "self_qa": {
+    "confidence": 0.85,
+    "checks": [
+      {
+        "check": "Primary CTA text 6 words or fewer, no exclamation mark, no 'click here'",
+        "pass": true
+      },
+      {
+        "check": "UTMs follow services.md format with primary and secondary",
+        "pass": true
+      },
+      {
+        "check": "copy_changes old string occurs exactly once in 08-final.md",
+        "pass": true
+      },
+      {
+        "check": "No prices, em dashes, paperwork-help claims or travel to Ukraine",
+        "pass": true
+      },
+      {
+        "check": "Targets exist in link-map.csv",
+        "pass": true
+      }
+    ]
+  },
+  "assumptions": [
+    "The primary marker position (after the parish and planner section, before travel and legal notes) is the best point for a dreaming reader; panel gave no evidence of a better peak.",
+    "The CMS renders the <!-- CTA: primary --> marker as a CTA block using text, subtext and link from this file."
+  ],
+  "open_questions": [
+    {
+      "to": "orchestrator",
+      "question": "08-final.md is about 3,387 words (with markup) against a 3,000 cap. Confirm whether trimming is required before CMS; CRO added no body copy."
+    },
+    {
+      "to": "Nic",
+      "question": "Would a Ukrainian or Eastern European heritage checklist lead magnet be worth creating? Not on the site today, so not placed."
+    }
+  ],
+  "next_agent": [
+    "distribution"
+  ]
+}

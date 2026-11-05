@@ -11,3 +11,4 @@
 00:28 06 editor pass_with_edits 4.14; 12 edits applied -> 05-draft-r2.md; meta description and Greek link updated in 02-seo.json; panel chair launched
 00:30 07b icp-panel-chair revise; enquire 2.1; 1 must_fix (hedges), 2 should_fix, 1 consider; final pass launched
 00:31 08 luxury-writer complete 2,811 words; 0 VERIFY; scan clean; 8b+CRO+distribution launched
+00:32 09 cro-specialist complete; 1 copy change (Concierge utm_content=secondary); magazine CTA at marker; applying after 8b
