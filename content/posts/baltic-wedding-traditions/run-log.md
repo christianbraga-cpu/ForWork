@@ -9,3 +9,4 @@
 23:31 07 icp-reader search_visitor, funding_parent, sceptic complete; no must-fix beyond title (fixed by person); waiting on uhnw, editor
 23:31 07 icp-reader uhnw complete; enquire 2 (packages link, logistics); waiting on editor
 23:33 06 editor pass_with_edits 4.0; 20 edits applied -> 05-draft-r2.md; orchestrator reframed myth H2 (no 'old version' wording, in-place refresh); funding_parent enum fixed; panel chair launched
+23:35 07b icp-panel-chair revise; enquire 2.6; 1 must_fix (Advisor/Australian section reassurance), 4 should_fix; final pass launched
