@@ -12,3 +12,4 @@
 01:15 07b icp-panel-chair revise; enquire 2.6; 1 must_fix (hedges), 1 should_fix (older guests), consider items; orchestrator added fact_116 (Smartraveller medical/insurance) from smartraveller.md; final pass launched
 01:16 08 luxury-writer complete 2,901 words; 0 VERIFY; scan clean; 8b+CRO+distribution launched
 01:17 09 cro-specialist complete; 1 copy change (magazine CTA at marker); applying after 8b
+01:17 10 distribution complete 3 pins, 8-slide carousel, newsletter
