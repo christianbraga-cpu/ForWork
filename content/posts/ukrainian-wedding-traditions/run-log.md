@@ -2,3 +2,4 @@
 00:08 01 content-strategist complete; old page is general superstitions (no Ukrainian content); likely real predecessor /7-quirky-traditions-to-expect-at-a-ukrainian-wedding; Smartraveller Do not travel (updated 2 Nov 2026) -> diaspora angle; 11 customs; redirect question for person (non-blocking for writing); 02+03(A,B)+04 launched
 00:09 04 visual-curator complete 7 placeholders (Ukrainian-Australian settings)
 00:18 02 seo-researcher complete; quirky Ukrainian page = real predecessor (US 15 kw, #11 keyword; AU #5 'traditional ukrainian wedding'); superstitions page 1 kw, ~0 traffic -> keep live + link; recommend in-place update of quirky page; scope global; schema valid
+00:23 03 planner-sme batch B complete 14 facts (Encyclopedia of Ukraine wedding and embroidery; Smartraveller Do not travel; recognition); Petrykivka/Kosiv cut (no wedding mention); hopak, bread and salt unsourced; Cossack songs unread (no claim); waiting on batch A
