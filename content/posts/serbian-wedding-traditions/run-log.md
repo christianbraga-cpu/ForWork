@@ -14,3 +14,4 @@
 01:17 09 cro-specialist complete; 1 copy change (magazine CTA at marker); applying after 8b
 01:17 10 distribution complete 3 pins, 8-slide carousel, newsletter
 01:17 08b editor pass_with_edits 4.14; 10 blocking fixes (7 folk customs re-hedged; H2 keyword; 2 Smartraveller wording) + 1 CRO change applied; blocking 0; cms-publisher launched
+01:20 11 cms-publisher package complete (not uploaded, no Chrome); validate all valid; docx built; run report, backlinks, link map (+2 old pages), calendar 27; FINISHED (~28 min)
