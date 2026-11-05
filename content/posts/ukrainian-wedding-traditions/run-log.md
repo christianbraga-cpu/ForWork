@@ -14,3 +14,4 @@
 00:32 09 cro-specialist complete; 1 copy change (Concierge utm_content=secondary); magazine CTA at marker; applying after 8b
 00:32 10 distribution complete 3 pins, 8-slide carousel, newsletter
 00:32 08b editor; 2 blocking fixes (rushnyk step and crowning re-hedged) + 1 CRO change applied; blocking 0; cms-publisher launched
+00:35 11 cms-publisher package complete (not uploaded, no Chrome); validate all valid; docx built; run report (redirect choice), backlinks, link map (+2 old pages), calendar 26; FINISHED (~31 min)
