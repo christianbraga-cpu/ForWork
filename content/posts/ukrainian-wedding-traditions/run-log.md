@@ -9,3 +9,4 @@
 00:27 07 icp-reader search_visitor, sceptic, funding_parent complete; no must-fix; waiting on planner_couple, editor
 00:27 07 icp-reader planner_couple complete; no must-fix; waiting on editor
 00:28 06 editor pass_with_edits 4.14; 12 edits applied -> 05-draft-r2.md; meta description and Greek link updated in 02-seo.json; panel chair launched
+00:30 07b icp-panel-chair revise; enquire 2.1; 1 must_fix (hedges), 2 should_fix, 1 consider; final pass launched
