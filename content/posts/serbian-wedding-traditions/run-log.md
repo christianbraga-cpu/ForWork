@@ -10,3 +10,4 @@
 01:11 07 icp-reader funding_parent complete; no must-fix; waiting on editor
 01:13 06 editor pass_with_edits 4.71; 22 edits applied -> 05-draft-r2.md; panel chair launched
 01:15 07b icp-panel-chair revise; enquire 2.6; 1 must_fix (hedges), 1 should_fix (older guests), consider items; orchestrator added fact_116 (Smartraveller medical/insurance) from smartraveller.md; final pass launched
+01:16 08 luxury-writer complete 2,901 words; 0 VERIFY; scan clean; 8b+CRO+distribution launched
