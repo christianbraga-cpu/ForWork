@@ -1,2 +1,3 @@
 03:01 00 orchestrator complete input written; FAST MODE start; refresh of /5-samoan-wedding-traditions-that-will-leave-you-shocked-and-excited (in-place slug change + 301); first run under authority rule
 03:04 01 content-strategist complete; old page read (5 headings, 2017); Smartraveller Samoa normal precautions (05 Aug 2026); High Commission Apia; batches A (5) / B (3 + UNESCO + legal); 02+03(A,B)+04 launched
+03:05 04 visual-curator complete 8 placeholders

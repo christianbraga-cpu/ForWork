@@ -1,0 +1,267 @@
+{
+  "agent": "visual-curator",
+  "task_id": "samoan-wedding-traditions",
+  "stage": "04",
+  "status": "needs_input",
+  "round": 1,
+  "inputs_used": [
+    "CLAUDE.md",
+    "content/posts/samoan-wedding-traditions/00-input.json",
+    "content/posts/samoan-wedding-traditions/01-brief.json (tradition_plan, angle)",
+    "content/posts/samoan-wedding-traditions/02-research/pages/old-samoan.md (5 images, credit: Avelima's wedding, Rodney Macuja, The Paris Photographer; licence unconfirmed)",
+    "content-system/images/library-index.csv (header only, no Samoan rows)",
+    "content-system/schemas/04-images.schema.json",
+    "content/posts/chinese-wedding-traditions/04-images.json (format)"
+  ],
+  "self_qa": {
+    "checks": [
+      {
+        "check": "Zero reference-only or competitor images in slots",
+        "pass": true
+      },
+      {
+        "check": "Every approved image has verified location, licence, alt, caption, fit_reason",
+        "pass": true,
+        "note": "No approved images; all 8 slots needed."
+      },
+      {
+        "check": "No AI image of people, cultural dress, ceremonies or places",
+        "pass": true,
+        "note": "AI offered only as a fallback neutral still life (woven mat or frangipani), not generated, pending Nic's approval."
+      },
+      {
+        "check": "Old-page images not reused",
+        "pass": true,
+        "note": "Old page credits Avelima's wedding (Rodney Macuja, The Paris Photographer); licence scope and couple consent unconfirmed, so excluded."
+      },
+      {
+        "check": "Destination has no people and no venue",
+        "pass": true,
+        "note": "Upolu or Savai'i landscape only."
+      },
+      {
+        "check": "Featured image exists (approved or needed with brief)",
+        "pass": true,
+        "note": "Needed with brief."
+      },
+      {
+        "check": "Placements match final H2 numbering",
+        "pass": false,
+        "note": "02-seo.json outline not available; after_h2 follows tradition_plan order (1 fa'a Samoa and matai, 2 families' meeting and tulafale, 3 'ie toga and gifts, 4 church, 5 extended family and village, 6 dress, 7 siva and taualuga, 8 feast and umu, 9 UNESCO, 10 for Australians)."
+      }
+    ],
+    "confidence": 0.6
+  },
+  "open_questions": [
+    {
+      "to": "Nic",
+      "question": "The old page's 5 images are credited to Avelima's wedding (Rodney Macuja, The Paris Photographer). Confirm licence scope and couple consent before any reuse? Default: not reused.",
+      "blocking": false
+    },
+    {
+      "to": "Nic",
+      "question": "Source licensed photos for 8 slots (Samoan-Australian client weddings with signed consent, partner photographers, licensed stock with model and property releases)? Library returned nothing; Google Drive disconnected.",
+      "blocking": true
+    },
+    {
+      "to": "Nic",
+      "question": "Approve or decline an AI illustrative still life (a plain woven mat folded on linen, or frangipani flowers; no people, dress, ceremony or place), captioned 'Illustrative image', for the fine mats slot if no licensed photo is found?",
+      "blocking": false
+    },
+    {
+      "to": "seo-researcher",
+      "question": "Confirm H2 numbering once the outline exists and remap after_h2 placements.",
+      "blocking": false
+    }
+  ],
+  "assumptions": [
+    "Old-page images excluded until licence and couple consent are confirmed; not downloaded to reference-only.",
+    "No venue in scope, so no press-kit permission emails drafted.",
+    "Google Drive disconnected; own site, Canva and Google Lens not run in fast mode (no candidates).",
+    "Cultural dress (puletasi, ie faitaga), speeches, fine mat exchanges and the taualuga must show real, consenting people in real, licensed photos; never AI.",
+    "Church and venue interiors need permission as well as guest consent."
+  ],
+  "verify_items": [
+    "[[IMAGE NEEDED]] featured: couple's hands on a folded fine mat, consented couple",
+    "[[IMAGE NEEDED]] families-orator: tulafale speaking at the families' meeting",
+    "[[IMAGE NEEDED]] fine-mats: 'ie toga presented between families (or approved illustrative still life)",
+    "[[IMAGE NEEDED]] church-wedding: couple in a church aisle",
+    "[[IMAGE NEEDED]] dress: wedding party in puletasi and ie faitaga",
+    "[[IMAGE NEEDED]] taualuga: bride dancing the taualuga",
+    "[[IMAGE NEEDED]] feast: umu dishes on a shared table",
+    "[[IMAGE NEEDED]] destination: Upolu or Savai'i lagoon or coast, no people, no venue",
+    "[[VERIFY licence]] old-page images (Avelima's wedding; Rodney Macuja, The Paris Photographer): licence scope and couple consent",
+    "[[VERIFY licence]] every sourced photo: credit, scope, model and property releases",
+    "[[VERIFY: any AI illustrative still life approved by Nic before generation]]"
+  ],
+  "next_agent": [
+    "luxury-writer"
+  ],
+  "payload": {
+    "slots": [
+      {
+        "slot_id": "featured",
+        "placement": "featured",
+        "purpose": "Hero: a warm, real and licensed sense of a Samoan wedding as a meeting of two families, without depending on one couple's identity.",
+        "shot_brief": "Licensed photo from a consented Samoan or Samoan-Australian wedding: the couple's joined hands resting on a folded fine mat, a frangipani or flower ula softly in frame, warm late-afternoon daylight; faces out of frame or consented. Wide 3:2 hero with headroom for a title crop. No church, venue or village named unless licensed and cleared. Never AI.",
+        "status": "needed",
+        "file": "content/posts/samoan-wedding-traditions/images/samoan-wedding-traditions-couple-hands-fine-mat-hero.webp",
+        "source": {
+          "type": "library",
+          "origin": "[[IMAGE NEEDED]] library-index.csv has no Samoan rows; Google Drive disconnected",
+          "credit": "[[VERIFY licence]]"
+        },
+        "consent": {
+          "couple": "required"
+        },
+        "alt": "Newlyweds' joined hands resting on a folded woven fine mat with frangipani",
+        "caption": "<Place>, <town>. Photo: [[VERIFY credit]]",
+        "lens_check": "Not run: no candidate image."
+      },
+      {
+        "slot_id": "families-orator",
+        "placement": "after_h2:2",
+        "purpose": "Show the families' formal meeting and the tulafale (orator) speaking for one side, with dignity.",
+        "shot_brief": "Licensed photo from a consented Samoan family gathering: a tulafale standing to speak, holding a fue (fly whisk) and to'oto'o (staff) only if the family uses them, seated family members listening, soft daylight in a fale or hall. Respectful framing, no staged or costumed shot. Consent from the orator and all identifiable family. Never AI.",
+        "status": "needed",
+        "file": "content/posts/samoan-wedding-traditions/images/samoan-wedding-traditions-families-meeting-orator.webp",
+        "source": {
+          "type": "library",
+          "origin": "[[IMAGE NEEDED]] library-index.csv has no Samoan rows; Google Drive disconnected",
+          "credit": "[[VERIFY licence]]"
+        },
+        "consent": {
+          "couple": "required",
+          "family": "required",
+          "orator": "required"
+        },
+        "alt": "Samoan orator standing to speak to seated family members at a formal gathering",
+        "caption": "<Place>, <town>. Photo: [[VERIFY credit]]",
+        "lens_check": "Not run: no candidate image."
+      },
+      {
+        "slot_id": "fine-mats",
+        "placement": "after_h2:3",
+        "purpose": "Illustrate 'ie toga (fine mats) and the exchange of gifts between families, with no amounts or counts.",
+        "shot_brief": "Preferred: licensed detail photo of finely woven 'ie toga being presented or laid out at a consented family exchange, even daylight, hands only or consented people; no visible money, counts or amounts. Fallback only if Nic approves: AI neutral still life of a plain woven pandanus mat folded on linen, no people, dress, ceremony or place, captioned 'Illustrative image' (not presented as an 'ie toga).",
+        "status": "needed",
+        "file": "content/posts/samoan-wedding-traditions/images/samoan-wedding-traditions-ie-toga-fine-mats.webp",
+        "source": {
+          "type": "library",
+          "origin": "[[IMAGE NEEDED]] library-index.csv has no Samoan rows; Google Drive disconnected; ai_illustrative still life fallback pending Nic approval",
+          "credit": "[[VERIFY licence]]"
+        },
+        "consent": {
+          "family": "required if identifiable"
+        },
+        "alt": "Finely woven fine mats laid out for presentation between two families",
+        "caption": "<Place>, <town>. Photo: [[VERIFY credit]] (or 'Illustrative image' if the approved AI fallback is used)",
+        "lens_check": "Not run: no candidate image."
+      },
+      {
+        "slot_id": "church-wedding",
+        "placement": "after_h2:4",
+        "purpose": "Show the church wedding as the heart of the day for many Samoan families.",
+        "shot_brief": "Licensed photo from a consented Samoan or Samoan-Australian church wedding: the couple at the altar or walking down the aisle, white dress and formal attire, soft window light, family filling the pews. Church named only if the church and photographer license and clear it (no venue names in copy). Consent from couple and identifiable guests. Never AI.",
+        "status": "needed",
+        "file": "content/posts/samoan-wedding-traditions/images/samoan-wedding-traditions-church-wedding-aisle.webp",
+        "source": {
+          "type": "library",
+          "origin": "[[IMAGE NEEDED]] library-index.csv has no Samoan rows; Google Drive disconnected",
+          "credit": "[[VERIFY licence]]"
+        },
+        "consent": {
+          "couple": "required",
+          "guests": "required if identifiable",
+          "church": "required if interior identifiable"
+        },
+        "alt": "Bride and groom walking down a church aisle past family in the pews",
+        "caption": "<Place>, <town>. Photo: [[VERIFY credit]]",
+        "lens_check": "Not run: no candidate image."
+      },
+      {
+        "slot_id": "dress",
+        "placement": "after_h2:6",
+        "purpose": "Show wedding dress worn by real people: puletasi, ie faitaga and lavalava.",
+        "shot_brief": "Licensed photo from a consented Samoan or Samoan-Australian wedding: bridal party or family in coordinated puletasi and ie faitaga in matching fabric, outdoors in soft daylight; full-length, natural pose. Garment terms in caption only as sources give them. Consent from all identifiable people. Never AI.",
+        "status": "needed",
+        "file": "content/posts/samoan-wedding-traditions/images/samoan-wedding-traditions-puletasi-ie-faitaga-dress.webp",
+        "source": {
+          "type": "library",
+          "origin": "[[IMAGE NEEDED]] library-index.csv has no Samoan rows; Google Drive disconnected",
+          "credit": "[[VERIFY licence]]"
+        },
+        "consent": {
+          "couple": "required",
+          "guests": "required if identifiable"
+        },
+        "alt": "Wedding party in matching puletasi and ie faitaga standing outdoors in soft daylight",
+        "caption": "<Place>, <town>. Photo: [[VERIFY credit]]",
+        "lens_check": "Not run: no candidate image."
+      },
+      {
+        "slot_id": "taualuga",
+        "placement": "after_h2:7",
+        "purpose": "Capture the siva and the taualuga as a joyful, honoured moment.",
+        "shot_brief": "Licensed photo from a consented Samoan or Samoan-Australian reception: the bride or taupou dancing the taualuga, oiled arms and graceful hand movement, family nearby, warm evening light; no money visible on the dancer or floor. Respectful framing. Consent from the dancer and identifiable guests. Never AI.",
+        "status": "needed",
+        "file": "content/posts/samoan-wedding-traditions/images/samoan-wedding-traditions-taualuga-siva-dance.webp",
+        "source": {
+          "type": "library",
+          "origin": "[[IMAGE NEEDED]] library-index.csv has no Samoan rows; Google Drive disconnected",
+          "credit": "[[VERIFY licence]]"
+        },
+        "consent": {
+          "dancer": "required",
+          "guests": "required if identifiable"
+        },
+        "alt": "Bride dancing the taualuga with graceful hand movements at an evening reception",
+        "caption": "<Place>, <town>. Photo: [[VERIFY credit]]",
+        "lens_check": "Not run: no candidate image."
+      },
+      {
+        "slot_id": "feast",
+        "placement": "after_h2:8",
+        "purpose": "Show the shared wedding feast and the umu.",
+        "shot_brief": "Licensed photo of a long shared table or umu food laid on banana leaves at a consented Samoan or Samoan-Australian wedding (for example taro, palusami and roast pork), warm daylight; guests absent or consented. No venue named unless licensed and cleared. Never AI.",
+        "status": "needed",
+        "file": "content/posts/samoan-wedding-traditions/images/samoan-wedding-traditions-feast-umu-table.webp",
+        "source": {
+          "type": "library",
+          "origin": "[[IMAGE NEEDED]] library-index.csv has no Samoan rows; Google Drive disconnected",
+          "credit": "[[VERIFY licence]]"
+        },
+        "consent": {
+          "guests": "required if identifiable",
+          "venue": "required if interior identifiable"
+        },
+        "alt": "Long shared table of umu-cooked dishes on banana leaves at a wedding feast",
+        "caption": "<Place>, <town>. Photo: [[VERIFY credit]]",
+        "lens_check": "Not run: no candidate image."
+      },
+      {
+        "slot_id": "destination",
+        "placement": "after_h2:10",
+        "purpose": "Ground the 'for Australians' section in a calm Samoan landscape couples might choose.",
+        "shot_brief": "Licensed landscape of Upolu or Savai'i: a lagoon, white-sand beach or coastal lava field in soft morning light, no people, no resort, venue, signage or church identifiable. Avoid cyclone damage or storm imagery. Location confirmed by EXIF GPS or source page. Never AI.",
+        "status": "needed",
+        "file": "content/posts/samoan-wedding-traditions/images/samoan-wedding-traditions-upolu-lagoon-destination.webp",
+        "source": {
+          "type": "library",
+          "origin": "[[IMAGE NEEDED]] library-index.csv has no Samoan rows; Google Drive disconnected",
+          "credit": "[[VERIFY licence]]"
+        },
+        "location": {
+          "venue": "Lagoon or coastline, no venue (to confirm)",
+          "town": "Upolu or Savai'i (to confirm)",
+          "verified_by": "[[VERIFY: EXIF GPS or source page]]"
+        },
+        "alt": "Calm turquoise lagoon and palm-lined beach on a Samoan island in morning light",
+        "caption": "<Beach or lagoon>, <Upolu or Savai'i>. Photo: [[VERIFY credit]]",
+        "lens_check": "Not run: no candidate image."
+      }
+    ],
+    "reference_only": [],
+    "permission_requests": []
+  }
+}
