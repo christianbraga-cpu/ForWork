@@ -9,3 +9,4 @@
 06:03 07 icp-reader search_visitor, uhnw complete; no must-fix (tornaboda definition earlier; source credits in most paragraphs); waiting on planner_couple, funding_parent, editor
 06:03 07 icp-reader planner_couple, funding_parent complete; no must-fix (callejoneada states vs Smartraveller raised by 4 readers; guest logistics; registry line undercuts CTA); waiting on editor
 06:05 06 editor revise 3.86 (voice 3: ~20 source-credit lines); 33 edits applied -> 05-draft-r2.md; callejoneada no longer places weddings in Zacatecas; unverified /best-mexico-wedding-locations link removed; uhnw.json 'why' added; panel chair launched
+06:08 07b icp-panel-chair revise; enquire 2.6; must_fix: Advisor/CTA, guest questions, callejoneada -> Smartraveller pointer, Almoloya del Río once; real-wedding proof deferred (no VERIFY); final pass launched
