@@ -7,3 +7,4 @@
 06:02 05 luxury-writer complete ~2,979 words; 0 VERIFY; 0 research talk; first draft sent; editor + 5 readers launched
 06:03 07 icp-reader sceptic complete; no must-fix (callejoneada states need Smartraveller pointer)
 06:03 07 icp-reader search_visitor, uhnw complete; no must-fix (tornaboda definition earlier; source credits in most paragraphs); waiting on planner_couple, funding_parent, editor
+06:03 07 icp-reader planner_couple, funding_parent complete; no must-fix (callejoneada states vs Smartraveller raised by 4 readers; guest logistics; registry line undercuts CTA); waiting on editor
