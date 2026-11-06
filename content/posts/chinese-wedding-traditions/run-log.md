@@ -4,3 +4,4 @@
 00:26 02 seo-researcher complete; old page US 63 kw (chinese customs wedding #9, ~15 x 2400-vol variants #12-#21), AU 9 (#9-#44); no duplicates; /why-chinese-brides-wear-red-dresses kept and cross-linked; 301 recommended; schema valid
 00:29 03 planner-sme batch A complete 33 facts (mostly Singapore government heritage pages, Cantonese/Teochew tags where sourced; CHCP page self-described non-scholarly, flagged); waiting on batch B
 00:31 03 planner-sme batch B complete 19 facts (UNESCO tea 2022 and paper-cut 2009 mention weddings; V&A and British Museum on red, qun kwa, dragon and phoenix, hong bao, double happiness; Smartraveller marriage + CNI); merged; writer launched
+00:35 05 luxury-writer complete ~2,965 words; 1 VERIFY (embassy CNI); first draft sent; editor + 5 readers launched
