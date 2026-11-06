@@ -9,3 +9,4 @@
 00:36 07 icp-reader uhnw complete; enquire 2 (packages link); no must-fix
 00:36 07 icp-reader planner_couple, sceptic complete; no must-fix (unsourced 'calmer places', thin at-home logistics, hedges); waiting on funding_parent, editor
 00:36 07 icp-reader funding_parent complete; no must-fix (elderly guests, contact on the ground); waiting on editor
+00:37 06 editor pass_with_edits 4.14; 17 edits applied -> 05-draft-r2.md; panel chair launched

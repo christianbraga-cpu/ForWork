@@ -1,0 +1,505 @@
+{
+ "agent": "editor",
+ "task_id": "chinese-wedding-traditions",
+ "stage": "06",
+ "status": "complete",
+ "round": 1,
+ "inputs_used": [
+  "CLAUDE.md",
+  "content/posts/chinese-wedding-traditions/00-input.json",
+  "01-brief.json",
+  "02-seo.json",
+  "03-source-pack.json",
+  "04-images.json",
+  "05-draft.md",
+  "content-system/rubrics/editor-rubric.md",
+  "content-system/rubrics/qa-gates.md",
+  "content-system/brand/brand-facts.md",
+  "content-system/seo/link-map.csv",
+  "content-system/schemas/06-edit.schema.json",
+  "content/posts/baltic-wedding-traditions/06-edit.json (format model)"
+ ],
+ "self_qa": {
+  "checks": [
+   {
+    "check": "scan_copy.py run and results reflected",
+    "pass": true,
+    "note": "0 banned, 0 flagged, 0 dashes; 14 Smartraveller overlaps are consulate URL strings, removed by the Paperwork edit"
+   },
+   {
+    "check": "Every fact marker logged against the source pack",
+    "pass": true,
+    "note": "52 fact ids, all present"
+   },
+   {
+    "check": "Every edit 'old' occurs exactly once (applied in order)",
+    "pass": true,
+    "note": "verified by script; the insert edit's anchor is unique"
+   },
+   {
+    "check": "Exactly 4 one-sentence takeaways",
+    "pass": true
+   },
+   {
+    "check": "Singapore facts credited to Singapore communities",
+    "pass": true,
+    "note": "after takeaway and FAQ edits"
+   },
+   {
+    "check": "UNESCO limited to tea (2022) and paper-cut (2009) text",
+    "pass": true
+   },
+   {
+    "check": "Culture not politics; no prices, amounts, vendors, 'last dance', Advisor paperwork claims, em dashes; no reference to an earlier version",
+    "pass": true
+   },
+   {
+    "check": "Decision consistent with scores and blocking issues",
+    "pass": true,
+    "note": "avg 4.14, min 4, no blocking issues, edits outstanding"
+   }
+  ],
+  "confidence": 0.85
+ },
+ "next_agent": [
+  "icp-reader"
+ ],
+ "payload": {
+  "draft_file": "content/posts/chinese-wedding-traditions/05-draft.md",
+  "rubric": {
+   "voice": 4,
+   "expertise": 5,
+   "accuracy": 4,
+   "seo_fit": 4,
+   "commercial_link": 4,
+   "structure": 4,
+   "brief_fit": 4
+  },
+  "average": 4.14,
+  "blocking_issues": [],
+  "decision": "pass_with_edits",
+  "edits": [
+   {
+    "location": "Key takeaways > bullet 2",
+    "issue": "fact_01 is Singapore's National Heritage Board; the bullet extends it to 'many families'. Credit the community.",
+    "fix": "- In Singapore, most Chinese weddings still begin with guo da li, the betrothal gifts carried from the groom's family to the bride's home on an auspicious day.",
+    "old": "- Many families still begin with guo da li, the betrothal gifts carried from the groom's family to the bride's home on a day chosen as auspicious.",
+    "new": "- In Singapore, most Chinese weddings still begin with guo da li, the betrothal gifts carried from the groom's family to the bride's home on an auspicious day."
+   },
+   {
+    "location": "Key takeaways > bullet 3",
+    "issue": "Two tea sittings are Singapore practice (fact_07, fact_08, fact_21); 'often' is a stacked hedge on an unscoped claim.",
+    "fix": "- In Singapore, the tea ceremony is held at the groom's home and again at the bride's, with elders served in order of seniority.",
+    "old": "- The tea ceremony is often held twice on the wedding day, once at the groom's home and once for the bride's family, with elders served in order of seniority.",
+    "new": "- In Singapore, the tea ceremony is held at the groom's home and again at the bride's, with elders served in order of seniority."
+   },
+   {
+    "location": "Framing section > para 3",
+    "issue": "Hub /expert-advice/wedding-traditions is a draft in the link map, not live (02-seo internal_links). Link rules: don't link non-live pages. Re-add once the hub is live.",
+    "fix": "(delete)",
+    "old": " For how these rites compare with other cultures, see our [wedding traditions worth keeping](/expert-advice/wedding-traditions).",
+    "new": ""
+   },
+   {
+    "location": "H2 'Before a traditional Chinese wedding...'",
+    "issue": "Keyword pasted into heading; outline H2 is 'Before the wedding: betrothal gifts and a lucky date'.",
+    "fix": "## Before the wedding: betrothal gifts and a lucky date",
+    "old": "## Before a traditional Chinese wedding: betrothal gifts and a lucky date",
+    "new": "## Before the wedding: betrothal gifts and a lucky date"
+   },
+   {
+    "location": "H2 'After the wedding' (whole section)",
+    "issue": "Out of outline and wedding order: return visit sits before symbols, dress and banquet. Move it after red envelopes, before the CTA, as item 12 (see following edits).",
+    "fix": "(delete)",
+    "old": "## After the wedding: the bride's return visit\n\n### 7. The return visit (hui men)\n\nTraditionally the bride went home again a few days after the wedding. The community summary says that historically, about three days after the wedding, the couple visited the bride's family home, where she was received as a guest. <!-- fact_32 --> The National Museum of Singapore describes san zhao hui men as a traditional element of a Chinese wedding in which the bride returns home with the groom on the third day; the garment it holds for the visit dates from 1952. <!-- fact_26 -->\n\nIn Singapore, the National Library Board says the bride now returns home on the wedding day, and the tea ceremony is performed for her parents and relatives then. <!-- fact_22 --> Historically, the groom presented a whole roast pig to his in-laws; the meat was shared among the bride's relatives, and the head and tail were returned to the groom for \"a good beginning and end\". <!-- fact_23 -->\n\n",
+    "new": ""
+   },
+   {
+    "location": "H3 8. Red and the double happiness character",
+    "issue": "Renumber after moving the return visit to item 12.",
+    "fix": "### 7. Red and the double happiness character",
+    "old": "### 8. Red and the double happiness character",
+    "new": "### 7. Red and the double happiness character"
+   },
+   {
+    "location": "H3 9. The dragon and the phoenix",
+    "issue": "Renumber after moving the return visit to item 12.",
+    "fix": "### 8. The dragon and the phoenix",
+    "old": "### 9. The dragon and the phoenix",
+    "new": "### 8. The dragon and the phoenix"
+   },
+   {
+    "location": "H3 10. Qun kwa, qipao and outfit changes",
+    "issue": "Renumber after moving the return visit to item 12.",
+    "fix": "### 9. Qun kwa, qipao and outfit changes",
+    "old": "### 10. Qun kwa, qipao and outfit changes",
+    "new": "### 9. Qun kwa, qipao and outfit changes"
+   },
+   {
+    "location": "H3 11. The wedding banquet",
+    "issue": "Renumber after moving the return visit to item 12.",
+    "fix": "### 10. The wedding banquet",
+    "old": "### 11. The wedding banquet",
+    "new": "### 10. The wedding banquet"
+   },
+   {
+    "location": "H3 12. Red envelopes (hong bao, lai see)",
+    "issue": "Renumber after moving the return visit to item 12.",
+    "fix": "### 11. Red envelopes (hong bao, lai see)",
+    "old": "### 12. Red envelopes (hong bao, lai see)",
+    "new": "### 11. Red envelopes (hong bao, lai see)"
+   },
+   {
+    "location": "End of 'The wedding banquet and red envelopes'",
+    "issue": "Insert the moved return-visit section here, before the CTA, numbered 12.",
+    "fix": "We leave the sums to them.\n\n## After the wedding: the bride's return visit\n\n### 12. The return visit (hui men)\n\nTraditionally the bride went home again a few days after the wedding. The community summary says that historically, about three days after the wedding, the couple visited the bride's family home, where she was received as a guest. <!-- fact_32 --> The National Museum of Singapore describes san zhao hui men as a traditional element of a Chinese wedding in which the bride returns home with the groom on the third day; the garment it holds for the visit dates from 1952. <!-- fact_26 -->\n\nIn Singapore, the National Library Board says the bride now returns home on the wedding day, and the tea ceremony is performed for her parents and relatives then. <!-- fact_22 --> Historically, the groom presented a whole roast pig to his in-laws; the meat was shared among the bride's relatives, and the head and tail were returned to the groom for \"a good beginning and end\". <!-- fact_23 -->\n\n<!-- CTA: primary -->",
+    "old": "We leave the sums to them.\n\n<!-- CTA: primary -->",
+    "new": "We leave the sums to them.\n\n## After the wedding: the bride's return visit\n\n### 12. The return visit (hui men)\n\nTraditionally the bride went home again a few days after the wedding. The community summary says that historically, about three days after the wedding, the couple visited the bride's family home, where she was received as a guest. <!-- fact_32 --> The National Museum of Singapore describes san zhao hui men as a traditional element of a Chinese wedding in which the bride returns home with the groom on the third day; the garment it holds for the visit dates from 1952. <!-- fact_26 -->\n\nIn Singapore, the National Library Board says the bride now returns home on the wedding day, and the tea ceremony is performed for her parents and relatives then. <!-- fact_22 --> Historically, the groom presented a whole roast pig to his in-laws; the meat was shared among the bride's relatives, and the head and tail were returned to the groom for \"a good beginning and end\". <!-- fact_23 -->\n\n<!-- CTA: primary -->"
+   },
+   {
+    "location": "Symbols > 8 > para 2",
+    "issue": "'many families simply put them up because their parents did' is an unsourced claim about families (verify_items: door use unsourced).",
+    "fix": "are often told, so ask your family how they use it.",
+    "old": "are often told, and many families simply put them up because their parents did.",
+    "new": "are often told, so ask your family how they use it."
+   },
+   {
+    "location": "Safety level and entry > para 1",
+    "issue": "'calmer places' is our own risk judgement, not Smartraveller's wording; the overall high-caution level applies to Suzhou and Hangzhou too. Keep risk neutral.",
+    "fix": "The overall level applies elsewhere in China, including eastern cities such as Suzhou and Hangzhou, so check the advice for your exact location before you book.",
+    "old": "For a wedding, look at calmer places well away from those areas, such as the garden and lake cities of the east around Suzhou and Hangzhou.",
+    "new": "The overall level applies elsewhere in China, including eastern cities such as Suzhou and Hangzhou, so check the advice for your exact location before you book."
+   },
+   {
+    "location": "Paperwork > para 2",
+    "issue": "Sentence implies the posts issue CNIs (unread, fact_111 home page only) and links consulate URLs not re-read this run (verify_items). Keep it an instruction to ask; narrow the VERIFY.",
+    "fix": "In China, ask the [Australian Embassy in Beijing](https://china.embassy.gov.au/) <!-- fact_111 --> or the Consulates-General in Shanghai, Guangzhou and Chengdu whether you need a CNI for a marriage there and how to get one. [[VERIFY: Embassy and Consulates-General notarial/CNI pages not read; confirm CNI service for a marriage in China and re-read consulate URLs before linking them]]",
+    "old": "In China, that means the [Australian Embassy in Beijing](https://china.embassy.gov.au/) <!-- fact_111 --> or the Consulates-General in [Shanghai](https://shanghai.china.embassy.gov.au/), [Guangzhou](https://guangzhou.china.embassy.gov.au/) and [Chengdu](https://chengdu.china.embassy.gov.au/). Ask whether they issue a CNI for a marriage in China. [[VERIFY: Australian Embassy Beijing and Consulates-General notarial/CNI pages not read; confirm they issue CNIs for a marriage in China]]",
+    "new": "In China, ask the [Australian Embassy in Beijing](https://china.embassy.gov.au/) <!-- fact_111 --> or the Consulates-General in Shanghai, Guangzhou and Chengdu whether you need a CNI for a marriage there and how to get one. [[VERIFY: Embassy and Consulates-General notarial/CNI pages not read; confirm CNI service for a marriage in China and re-read consulate URLs before linking them]]"
+   },
+   {
+    "location": "Paperwork > para 3",
+    "issue": "Repeated hedge: the section already opens 'All of this is as at November 2026.'",
+    "fix": "check with the registry and the embassy, including any fees.\n\n### Back",
+    "old": "check with the registry and the embassy, including any fees, as at November 2026.\n\n### Back",
+    "new": "check with the registry and the embassy, including any fees.\n\n### Back"
+   },
+   {
+    "location": "Bringing Chinese customs home > para 1",
+    "issue": "'Many Chinese-Australian couples marry in Australia' is unsourced.",
+    "fix": "Couples marrying in Australia can carry the rites into the day.",
+    "old": "Many Chinese-Australian couples marry in Australia and carry the rites into the day.",
+    "new": "Couples marrying in Australia can carry the rites into the day."
+   },
+   {
+    "location": "FAQ > main traditions",
+    "issue": "'widely kept' generalises Singapore heritage facts to all Chinese families.",
+    "fix": "In Singapore's Chinese communities, heritage bodies describe betrothal gifts (guo da li), hair-combing, door games and the tea ceremony, and practice varies by dialect group.",
+    "old": "Betrothal gifts (guo da li), hair-combing, door games and the tea ceremony are widely kept, though practice varies by dialect group.",
+    "new": "In Singapore's Chinese communities, heritage bodies describe betrothal gifts (guo da li), hair-combing, door games and the tea ceremony, and practice varies by dialect group."
+   }
+  ],
+  "fact_check_log": [
+   {
+    "claim": "Singapore's National Heritage Board inventory says most Chinese wedding practices today begin with a betrothal ceremony called guo da li, held two to four weeks",
+    "fact_id": "fact_01",
+    "status": "confirmed"
+   },
+   {
+    "claim": "The bride's family returns some of the gifts (hui li) to show acceptance of the marriage, presents the groom's family another set of gifts, and the bride receiv",
+    "fact_id": "fact_02",
+    "status": "confirmed"
+   },
+   {
+    "claim": "Betrothal gifts are chosen for their symbolism; the source's examples are mandarin oranges for good luck and charcoal for a good life after marriage.",
+    "fact_id": "fact_03",
+    "status": "confirmed"
+   },
+   {
+    "claim": "The night before the wedding, a hair-combing ritual (shang tou) marks the couple's transition into adulthood; it takes place in both homes, each facing a pair o",
+    "fact_id": "fact_04",
+    "status": "confirmed"
+   },
+   {
+    "claim": "On the wedding day the groom goes to fetch the bride, but first the bridesmaids set the groom and groomsmen a series of playful tasks ('gatecrashing') before he",
+    "fact_id": "fact_05",
+    "status": "confirmed"
+   },
+   {
+    "claim": "A Singapore wedding planner quoted in the inventory says Teochew families believe the bride should leave home before sunrise, so they hold the gatecrash very ea",
+    "fact_id": "fact_06",
+    "status": "confirmed"
+   },
+   {
+    "claim": "The first tea ceremony is at the groom's home: where deities and ancestors are worshipped at home, the couple pray at the family altar, then serve tea to the fa",
+    "fact_id": "fact_07",
+    "status": "confirmed"
+   },
+   {
+    "claim": "The couple then hold a separate tea ceremony for the bride's family at her house, after the bride changes into a kua, a red wedding dress embroidered with auspi",
+    "fact_id": "fact_08",
+    "status": "confirmed"
+   },
+   {
+    "claim": "Each dialect group has its own distinct wedding practices, and many couples have simplified some rituals because of modernisation, busy schedules and budgets.",
+    "fact_id": "fact_09",
+    "status": "confirmed"
+   },
+   {
+    "claim": "The matrimonial bed is prepared (an chuang) three days to one week before the wedding with new red-tray items for prosperity; on the day a young boy is asked to",
+    "fact_id": "fact_10",
+    "status": "confirmed"
+   },
+   {
+    "claim": "Singapore's National Library Board says Chinese wedding customs vary by dialect group and that, despite simplification, a wedding is often not considered comple",
+    "fact_id": "fact_11",
+    "status": "confirmed"
+   },
+   {
+    "claim": "Matching the couple's horoscopes and using professional matchmakers are rarely practised today, but presenting betrothal gifts (guo da li) is still observed.",
+    "fact_id": "fact_12",
+    "status": "confirmed"
+   },
+   {
+    "claim": "By custom, betrothal gifts are presented on an auspicious day, usually chosen from the tongshu (Chinese almanac); the groom's family brings food items and gifts",
+    "fact_id": "fact_13",
+    "status": "confirmed"
+   },
+   {
+    "claim": "Gifts differ by dialect group: Teochew gifts typically include peanut-sesame candy wrapped in red paper; Cantonese families may send seafood such as sea cucumbe",
+    "fact_id": "fact_14",
+    "status": "confirmed"
+   },
+   {
+    "claim": "Common across dialect groups are two pairs of red dragon and phoenix candles; the groom's parents may give the bride dragon and phoenix bangles (Cantonese) or f",
+    "fact_id": "fact_15",
+    "status": "confirmed"
+   },
+   {
+    "claim": "The hair-combing ritual is held at an auspicious hour in each home, with blessings spoken at each stroke; traditionally Cantonese, it is also practised by other",
+    "fact_id": "fact_16",
+    "status": "confirmed"
+   },
+   {
+    "claim": "After the hair-combing, the bride and groom eat a bowl of glutinous rice balls.",
+    "fact_id": "fact_17",
+    "status": "confirmed"
+   },
+   {
+    "claim": "At the bride's door, her female friends and relatives (jie mei, 'sisters') will not let the groom and his entourage in until he meets their demands, including a",
+    "fact_id": "fact_18",
+    "status": "confirmed"
+   },
+   {
+    "claim": "At the groom's home the tea ceremony officially recognises the couple as husband and wife after the 'three bows': to heaven and earth, to parents, and to each o",
+    "fact_id": "fact_19",
+    "status": "confirmed"
+   },
+   {
+    "claim": "The tea is usually brewed with lotus seeds, two red dates and two longans.",
+    "fact_id": "fact_20",
+    "status": "confirmed"
+   },
+   {
+    "claim": "Order of serving: tea is offered first to the gods, then the groom's ancestors, then the groom's parents, then senior family members and other relatives; those ",
+    "fact_id": "fact_21",
+    "status": "confirmed"
+   },
+   {
+    "claim": "In the old days the return visit to the bride's family was made after three days; today the bride returns home on the wedding day itself and the tea ceremony is",
+    "fact_id": "fact_22",
+    "status": "confirmed"
+   },
+   {
+    "claim": "Historically the groom presented a whole roast pig to his in-laws on the return visit; the meat was shared among the bride's relatives and the head and tail ret",
+    "fact_id": "fact_23",
+    "status": "confirmed"
+   },
+   {
+    "claim": "Hotel function rooms tend to be fully booked on dates seen as auspicious (the source cites 8 August 2008, 9 September 2009 and 10 October 2010).",
+    "fact_id": "fact_24",
+    "status": "confirmed"
+   },
+   {
+    "claim": "The bride's father traditionally places the bridal veil on his daughter's head to mark her coming of age, before the groom collects her.",
+    "fact_id": "fact_25",
+    "status": "confirmed"
+   },
+   {
+    "claim": "The National Museum of Singapore describes san zhao hui men as a traditional element of a Chinese wedding in which the bride returns to her home with the groom ",
+    "fact_id": "fact_26",
+    "status": "confirmed"
+   },
+   {
+    "claim": "A community heritage summary says the Book of Rites, the Book of Etiquette and Ceremonial and the Baihu Tong outline the 'Three Covenants and the Six Rites', an",
+    "fact_id": "fact_27",
+    "status": "confirmed"
+   },
+   {
+    "claim": "The same summary says customs varied across China from region to region and even village to village.",
+    "fact_id": "fact_28",
+    "status": "confirmed"
+   },
+   {
+    "claim": "Historically, betrothal gifts included tea, dragon and phoenix bridal cakes, paired poultry, sweetmeats and wine; in some areas the gifts were collectively call",
+    "fact_id": "fact_29",
+    "status": "confirmed"
+   },
+   {
+    "claim": "The bride's family traditionally shared the bridal cakes with friends and relatives as an announcement of and invitation to the wedding feast.",
+    "fact_id": "fact_30",
+    "status": "confirmed"
+   },
+   {
+    "claim": "Auspicious wedding days are interpreted by fortune tellers from the couple's birth date and hour after consulting the Chinese almanac, and self-analysis from th",
+    "fact_id": "fact_31",
+    "status": "confirmed"
+   },
+   {
+    "claim": "Historically, about three days after the wedding the couple visited the bride's family home, where she was received as a guest.",
+    "fact_id": "fact_32",
+    "status": "confirmed"
+   },
+   {
+    "claim": "Historically, the bride's friends would not 'surrender' the bride until satisfied with red packets (ang pau) from the groom's representative, with good-natured ",
+    "fact_id": "fact_33",
+    "status": "confirmed"
+   },
+   {
+    "claim": "UNESCO element 'Traditional tea processing techniques and associated social practices in China' is live; inscribed in 2022 (17.COM) on the Representative List o",
+    "fact_id": "fact_100",
+    "status": "confirmed"
+   },
+   {
+    "claim": "The UNESCO tea element's text mentions weddings once: tea is part of socialisation and of ceremonies such as weddings. It does not describe a wedding tea ceremo",
+    "fact_id": "fact_101",
+    "status": "confirmed"
+   },
+   {
+    "claim": "The UNESCO tea element says greeting guests and building relationships within families through tea is common to multiple ethnic groups.",
+    "fact_id": "fact_102",
+    "status": "confirmed"
+   },
+   {
+    "claim": "UNESCO element 'Chinese paper-cut' is live; inscribed in 2009 (4.COM) on the Representative List; its text lists weddings among festivities paper-cuts are made ",
+    "fact_id": "fact_103",
+    "status": "confirmed"
+   },
+   {
+    "claim": "Smartraveller China: overall level is 'Exercise a high degree of caution', updated 28 September 2026, still current at 6 November 2026.",
+    "fact_id": "fact_104",
+    "status": "confirmed"
+   },
+   {
+    "claim": "Smartraveller China: reconsider your need to travel to Gyirong County in Tibet (flooding and landslides); high degree of caution in Tibet and Xinjiang.",
+    "fact_id": "fact_105",
+    "status": "confirmed"
+   },
+   {
+    "claim": "Smartraveller China: Australia is in China's visa waiver program until 31 December 2026; ordinary passport holders may be able to enter visa-free for no more th",
+    "fact_id": "fact_106",
+    "status": "confirmed"
+   },
+   {
+    "claim": "Smartraveller China: China does not recognise dual nationality; dual nationals who don't enter on their Australian passport may be unable to access Australian c",
+    "fact_id": "fact_107",
+    "status": "confirmed"
+   },
+   {
+    "claim": "Smartraveller 'Getting married overseas' (last updated 18/08/2026): you can't register an overseas marriage in Australia, but in most cases it is legally recogn",
+    "fact_id": "fact_108",
+    "status": "confirmed"
+   },
+   {
+    "claim": "Smartraveller 'Getting married overseas': some countries ask for proof you are free to marry (commonly a CNI or registry certificates); contact the destination'",
+    "fact_id": "fact_109",
+    "status": "confirmed"
+   },
+   {
+    "claim": "Smartraveller CNI page (last updated 01/10/2026): DFAT issues CNIs through Australian Passport Offices, Australian embassies/consulates overseas, or by mail; fe",
+    "fact_id": "fact_110",
+    "status": "confirmed"
+   },
+   {
+    "claim": "Australian Embassy in China website is live at china.embassy.gov.au (address 21 Dongzhimenwai Street, Chaoyang District, Beijing). The home page read does not d",
+    "fact_id": "fact_111",
+    "status": "confirmed"
+   },
+   {
+    "claim": "V&A: red is the primary colour for traditional Chinese wedding ceremonies.",
+    "fact_id": "fact_112",
+    "status": "confirmed"
+   },
+   {
+    "claim": "V&A: the bride's matching red jacket and skirt is known as hong gua ('red gown'), sometimes 'qun kwa', and its design is still predominated by the dragon and ph",
+    "fact_id": "fact_113",
+    "status": "confirmed"
+   },
+   {
+    "claim": "V&A record: the dragon was said to represent the male and the phoenix the female; side by side they symbolise the balance of yin and yang of bride and groom (st",
+    "fact_id": "fact_114",
+    "status": "confirmed"
+   },
+   {
+    "claim": "V&A: today white wedding dresses are popular, but traditional bridal ensembles are still worn for rituals in front of parents and ancestors and during the weddi",
+    "fact_id": "fact_115",
+    "status": "confirmed"
+   },
+   {
+    "claim": "V&A (citing Valery Garrett, Chinese Clothing: An Illustrated Guide, 1994): over time ready-made wedding clothing was usually sent to the bride from the groom's ",
+    "fact_id": "fact_116",
+    "status": "confirmed"
+   },
+   {
+    "claim": "British Museum: lucky red envelopes are called 'hong bao' in Mandarin and 'lai see' in Cantonese; this pack was designed for making gifts of money at weddings.",
+    "fact_id": "fact_117",
+    "status": "confirmed"
+   },
+   {
+    "claim": "British Museum: the wedding envelopes carry the 'double happiness' character (shuang xi), used at weddings.",
+    "fact_id": "fact_118",
+    "status": "confirmed"
+   },
+   {
+    "claim": "Australian Embassy Beijing and Consulates-General issue CNIs for a marriage in China",
+    "fact_id": "fact_111",
+    "status": "verify"
+   },
+   {
+    "claim": "'Many families simply put them up because their parents did' (double happiness)",
+    "status": "removed"
+   },
+   {
+    "claim": "'Many Chinese-Australian couples marry in Australia'",
+    "status": "removed"
+   }
+  ],
+  "compliance": {
+   "pass": true,
+   "issues": [
+    "Embassy/consulate CNI service remains [[VERIFY]] (human check before publish)",
+    "Hub link /expert-advice/wedding-traditions removed until live; /why-chinese-brides-wear-red-dresses and other 'pending' links to be confirmed live at upload",
+    "Fallback AI images (tea-ceremony, red-double-happiness) need Nic's approval; licensed photos preferred"
+   ]
+  },
+  "originality": {
+   "pass": true,
+   "matches": [
+    "Smartraveller overlap is consulate URLs and quoted advice levels (official wording, required); no competitor overlap"
+   ]
+  },
+  "banned_phrases_found": [],
+  "needs_signoff": []
+ },
+ "assumptions": [
+  "Wedding-order move of the return visit (after the banquet) follows the 02-seo outline order",
+  "Links marked 'pending' in 02-seo are confirmed live at upload"
+ ],
+ "open_questions": [
+  {
+   "to": "Nic",
+   "question": "Confirm whether the Australian Embassy Beijing and Consulates-General issue CNIs for a marriage in China (VERIFY in Paperwork) before publish.",
+   "blocking": false
+  }
+ ]
+}
