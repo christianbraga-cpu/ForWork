@@ -10,3 +10,4 @@
 03:40 07 icp-reader funding_parent, planner_couple complete; no must-fix (too many 'X describes' attributions; UNESCO repeats; guest logistics thin); waiting on editor
 03:42 06 editor pass_with_edits 4.14; 21 edits applied -> 05-draft-r2.md (9 source credits removed; fact stretches fixed; H2s reverted to outline); panel chair launched
 03:44 07b icp-panel-chair revise; enquire 2.6; 3 must_fix (guest questions, Advisor line, fold UNESCO into fine mats); final pass launched
+03:45 08 luxury-writer complete ~2,670 words; 0 VERIFY; scan clean; 8b+CRO+distribution launched
