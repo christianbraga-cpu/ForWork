@@ -2,14 +2,74 @@
  "agent": "wedding-planner-sme",
  "task_id": "mexican-wedding-traditions",
  "stage": "03",
- "status": "in_progress",
+ "status": "complete",
  "round": 1,
- "inputs_used": [],
+ "inputs_used": [
+  "CLAUDE.md",
+  "content/posts/mexican-wedding-traditions/00-input.json",
+  "content/posts/mexican-wedding-traditions/01-brief.json",
+  "content/posts/mexican-wedding-traditions/02-research/pages/smartraveller.md",
+  "content-system/schemas/03-source-pack.schema.json",
+  "content/posts/samoan-wedding-traditions/03-source-pack-part-1.json",
+  "https://ich.unesco.org/en/RL/mariachi-string-music-song-and-trumpet-00575",
+  "https://ich.unesco.org/en/RL/traditional-mexican-cuisine-ancestral-ongoing-community-culture-the-michoacan-paradigm-00400",
+  "https://dle.rae.es/tornaboda",
+  "https://www.smartraveller.gov.au/destinations/americas/mexico",
+  "https://www.smartraveller.gov.au/planning-trip/advice-your-planned-activities/getting-married-overseas",
+  "https://www.smartraveller.gov.au/our-role/notarial-services/how-get-certificate-no-impediment-marriage",
+  "https://mexico.embassy.gov.au/",
+  "https://mexico.embassy.gov.au/mcty/Notarials.html",
+  "https://www.zacatecas.gob.mx/recibio-zacatecas-a-cerca-de-2-mil-personas-que-participaron-en-11-bodas-destino/",
+  "https://playadelcarmen.gob.mx/mpdc-sg-rc-meo-010",
+  "https://cid-albertobeltran.cultura.gob.mx/catalogo-en-linea-fonoteca/a-la-vibora-de-la-mar-interprete-banda-de-musica-de-atlixco-grabador-thomas-stanford-03-06-1979-grabacion-sonora/",
+  "https://www.britannica.com/art/mariachi",
+  "https://www.guanajuatocapital.gob.mx/noticias/viven-200-personas-la-callejoneada-incluyente-en-guanajuato-capital/"
+ ],
  "self_qa": {
-  "checks": [],
-  "confidence": 0.5
+  "checks": [
+   {
+    "check": "Every fact has a source and date",
+    "pass": true
+   },
+   {
+    "check": "No price without a source; all prices in needs_signoff",
+    "pass": true,
+    "note": "No prices or amounts recorded"
+   },
+   {
+    "check": "Batch B must-includes covered or marked",
+    "pass": true,
+    "note": "Money dance, cookies/cake, hora loca, serenata are [[VERIFY]]"
+   },
+   {
+    "check": "No invented quotes, statistics or real weddings",
+    "pass": true
+   }
+  ],
+  "confidence": 0.72
  },
- "verify_items": [],
+ "open_questions": [
+  {
+   "to": "luxury-writer",
+   "question": "Hora loca has no Mexico-specific source: keep it to one hedged line or cut it?",
+   "blocking": false
+  }
+ ],
+ "assumptions": [
+  "Legal facts are as at November 2026; the Wedded Advisor confirms current requirements with the registry and the embassy.",
+  "Embassy notarial and Playa del Carmen registry fee amounts were seen but deliberately not recorded (no prices or amounts in this batch); any fee mention needs Nic's sign-off.",
+  "Zacatecas and Guanajuato are named only as places the custom is rooted, never as suggested destinations.",
+  "BUAP thesis on wedding ritual in the Región de los Volcanes (Puebla) timed out; not used."
+ ],
+ "verify_items": [
+  "[[VERIFY: hora loca at Mexican weddings: no official, academic or editorial source found; search results attribute it to Venezuela/other Latin countries. Mention only as 'many couples borrow', or cut.]]",
+  "[[VERIFY: serenata to the bride before the wedding: UNESCO lists 'serenades' in the mariachi repertoire (fact_101) but no source read links serenata to weddings.]]",
+  "[[VERIFY: money dance (baile del billete): no official or academic source read; describe only as a reception custom some families keep, no amounts, no 'funds the honeymoon'.]]",
+  "[[VERIFY: Mexican wedding cookies (polvorones) and the cake: no official, Britannica or academic source read linking polvorones to weddings.]]",
+  "[[VERIFY: la víbora de la mar mechanics (couple standing on chairs, guests in a line passing under linked arms): official catalogue (fact_113) gives meaning only; mechanics only in a non-official PDF.]]",
+  "[[VERIFY: tornaboda as Mexican practice: RAE (fact_104) defines the day after the wedding and the party on it, but no Mexico-specific source read.]]",
+  "[[VERIFY: Registro Civil requirements for foreigners outside Playa del Carmen: check with the registry and the embassy, including any fees, as at November 2026.]]"
+ ],
  "next_agent": [
   "luxury-writer"
  ],
@@ -80,15 +140,264 @@
     "is_price": false,
     "region": "Mexico",
     "conflicts": "'Latest update' paragraph names only six states; the advice-levels list names eleven areas. Use the full list."
+   },
+   {
+    "fact_id": "fact_106",
+    "claim": "Smartraveller Mexico: the hurricane and rainy season is June to November; tropical storms and hurricanes can happen in other months.",
+    "quote": "The hurricane and rainy season is from June to November. Landslides, mudslides, and flooding can happen. ... Tropical storms and hurricanes can happen in other months. Hurricanes can change direction and strength suddenly.",
+    "source": "https://www.smartraveller.gov.au/destinations/americas/mexico",
+    "source_type": "government",
+    "checked": "2026-11-06",
+    "is_price": false,
+    "region": "Mexico"
+   },
+   {
+    "fact_id": "fact_107",
+    "claim": "Smartraveller Mexico: same-sex relationships are legal and same-sex marriages are recognised; the country is conservative.",
+    "quote": "Same-sex relationships are legal, but the country is conservative. Same-sex marriages are recognised.",
+    "source": "https://www.smartraveller.gov.au/destinations/americas/mexico",
+    "source_type": "government",
+    "checked": "2026-11-06",
+    "is_price": false,
+    "region": "Mexico"
+   },
+   {
+    "fact_id": "fact_108",
+    "claim": "Smartraveller Mexico entry: Australians with a chipped ordinary passport visiting for tourism can use e-gates at a number of major airports and receive a printed QR code showing the days authorised; those without a chipped passport visiting for 180 days or less as tourists get a visa on arrival. Entry and exit conditions can change at short notice.",
+    "quote": "If you have an ordinary passport with a chip, and you're visiting for tourism, you can use the e-gates available at a number of major airports. You'll receive a printed QR code where you can check the number of days you're authorised to stay in Mexico. If you don't have an ordinary passport with a chip, and you're visiting for 180 days or less as a tourist, you'll receive a visa on arrival ... Entry and exit conditions can change at short notice. Contact the nearest embassy or consulate of Mexico for the latest details.",
+    "source": "https://www.smartraveller.gov.au/destinations/americas/mexico",
+    "source_type": "government",
+    "checked": "2026-11-06",
+    "is_price": false,
+    "region": "Mexico",
+    "conflicts": "Brief said 'e-gates ... up to 180 days'. Live page ties '180 days or less' to the visa-on-arrival line (no chipped passport); e-gate users check authorised days on the QR code. Write: 'stay length is shown on the QR code you receive; check current entry rules, as at November 2026'."
+   },
+   {
+    "fact_id": "fact_109",
+    "claim": "Smartraveller 'Getting married overseas' (last updated 18 August 2026): you can't register an overseas marriage in Australia, but in most cases it is legally recognised if valid where it happened and valid under Australian law had it occurred in Australia; talk to a lawyer to confirm.",
+    "quote": "You can't register an overseas marriage in Australia. But in most cases, your marriage is legally recognised here. To be recognised, when you got married it must have been: valid under the law of the country where it happened; valid under Australian law if it had occurred in Australia. ... Talk to a lawyer to confirm your overseas marriage certificate is valid in Australia.",
+    "source": "https://www.smartraveller.gov.au/planning-trip/advice-your-planned-activities/getting-married-overseas",
+    "source_type": "government",
+    "checked": "2026-11-06",
+    "is_price": false,
+    "region": "Australia"
+   },
+   {
+    "fact_id": "fact_110",
+    "claim": "Smartraveller CNI page (last updated 1 October 2026): a CNI is a DFAT document issued in support of an intended marriage overseas; DFAT can't advise on another country's legal processes; some authorities only accept a CNI issued in their country, in which case the Australian embassy there can issue it; ask whether an apostille is needed. DFAT charges fees.",
+    "quote": "A CNI is a document from the Department of Foreign Affairs and Trade (DFAT) issued in support of your intended marriage overseas. ... DFAT can't advise you on the legal processes in another country. ... Some authorities only accept a CNI issued in their country. If that's the case, the Australian embassy, high commission or consulate in that country can issue it for you. ... Ask whether you need an apostille or an authentication certificate for your CNI.",
+    "source": "https://www.smartraveller.gov.au/our-role/notarial-services/how-get-certificate-no-impediment-marriage",
+    "source_type": "government",
+    "checked": "2026-11-06",
+    "is_price": false,
+    "region": "Australia / overseas"
+   },
+   {
+    "fact_id": "fact_111",
+    "claim": "Australian Embassy Mexico (live, HTTP 200): CNI applications are downloaded from Smartraveller and presented in person at the Embassy in Mexico City; honorary consulates do not provide notarial services, only the Embassy in Mexico does; payment by card only. The Embassy page lists a Cancún honorary consulate. (Fee amounts are published on the page but deliberately not recorded here.)",
+    "quote": "Be aware that consulates operated by an Honorary Consul don't provide notarial services. Only the Australian Embassy in Mexico can offer these services. ... CNI: Please download the application from the smartravelller website and present it in person at the Embassy in Mexico City.",
+    "source": "https://mexico.embassy.gov.au/mcty/Notarials.html",
+    "source_type": "government",
+    "checked": "2026-11-06",
+    "is_price": false,
+    "region": "Mexico City; Cancún (honorary consulate)"
+   },
+   {
+    "fact_id": "fact_112",
+    "claim": "Zacatecas State Government (bulletin, 23 July 2023): the state tourism ministry (Secturz) supported 11 destination weddings with a callejoneada as an icebreaker before the ceremony, with guests touring the historic centre.",
+    "quote": "la Secretaría de Turismo (Secturz) apoyó a 11 bodas destinos con una callejoneada, como rompe hielo, previo a la ceremonia matrimonial ... Durante el recorrido que se tiene programado para las callejoneadas, las y los asistentes tienen la oportunidad de disfrutar de la belleza y majestuosidad de los edificios del centro histórico.",
+    "source": "https://www.zacatecas.gob.mx/recibio-zacatecas-a-cerca-de-2-mil-personas-que-participaron-en-11-bodas-destino/",
+    "source_type": "government",
+    "checked": "2026-11-06",
+    "is_price": false,
+    "region": "Zacatecas (Smartraveller 'Reconsider your need to travel'; describe as custom only, never suggest travel)",
+    "conflicts": "Source is 2023 and states counts; do not repeat counts. Use only 'a callejoneada as an icebreaker before the ceremony'."
+   },
+   {
+    "fact_id": "fact_113",
+    "claim": "Mexico's Secretaría de Cultura catalogue (CID Alberto Beltrán, Fonoteca) holds a 1979 field recording of 'A la víbora de la mar' by the Banda de Música de Atlixco (Puebla), with notes that playing la víbora de la mar at weddings has become popular in Mexico, and that with the couple the 'víbora' stands for the problems they will face, and they must stay together without letting go.",
+    "quote": "EN MÉXICO SE HA VUELTO POPULAR JUGAR A LA VÍBORA DE LA MAR EN LAS BODAS. ... HACER ESTE JUEGO CON LOS NOVIOS SIGNIFICA QUE LA VÍBORA SON LOS PROBLEMAS QUE ENFRENTARAN Y QUE SIN IMPORTAR LOS OBSTÁCULOS ELLOS DEBEN PERMANECER JUNTOS Y SIN SOLTARSE. Temas: Fiestas populares - Festejos - Bodas || México - Central - Puebla - ATLIXCO",
+    "source": "https://cid-albertobeltran.cultura.gob.mx/catalogo-en-linea-fonoteca/a-la-vibora-de-la-mar-interprete-banda-de-musica-de-atlixco-grabador-thomas-stanford-03-06-1979-grabacion-sonora/",
+    "source_type": "government",
+    "checked": "2026-11-06",
+    "is_price": false,
+    "region": "Atlixco, Puebla (recording); Mexico (practice)",
+    "conflicts": "Catalogue omits part of the note ('...'). It gives the meaning but not the mechanics (chairs, line). The accent is 'VÍBORA'. Mechanics of standing on chairs only from a non-official PDF; see often_told."
+   },
+   {
+    "fact_id": "fact_114",
+    "claim": "Playa del Carmen municipal Registro Civil (Quintana Roo) publishes a 'Matrimonio Extranjero en oficina' procedure (updated 29/01/2026): book the date in advance; passports with certified Spanish translation if needed; proof of legal stay; apostilled and translated birth certificate where parents' names are to appear; ID for four witnesses (two per party); prenuptial medical certificate with lab results (valid 15 calendar days); application and declaration letters; municipal fee payment; certificate of not being a registered defaulting maintenance debtor. In person; resolution 20 business days. (Fee amount on the page deliberately not recorded.)",
+    "quote": "1. Reservar la fecha de la boda con anticipación. 2. Copia del pasaporte vigente ... traducido al español ... 3. Copia de la legal estancia. 4. Original del acta de nacimiento debidamente apostillada o legalizada y traducida ... 5. Copia de la Identificación Oficial con fotografía de cuatro testigos, dos por cada pretenso ... 6. Certificado médico prenupcial ... (vigencia 15días naturales ...) ... 8. Pago de derechos municipales. ... Tiempo de resolución del servicio: 20 días hábiles",
+    "source": "https://playadelcarmen.gob.mx/mpdc-sg-rc-meo-010",
+    "source_type": "government",
+    "checked": "2026-11-06",
+    "is_price": false,
+    "region": "Playa del Carmen, Quintana Roo only",
+    "conflicts": "Municipal page; requirements differ by state and municipality. Use only as an example ('in Playa del Carmen, for example, the registry lists...') and still say 'check with the registry and the embassy, including any fees'."
+   },
+   {
+    "fact_id": "fact_115",
+    "claim": "Britannica (last updated 10 October 2026): mariachi is a small Mexican ensemble of mostly stringed instruments; it emerged in the late 1700s or early 1800s in west-central Mexico; the word's etymology and early history are unknown.",
+    "quote": "mariachi, small Mexican musical ensemble composed of a variety of mostly stringed instruments. ... The mariachi orchestra emerged in the late 1700s or early 1800s in west-central Mexico. The word mariachi may have come from the now-extinct language of the Coca Indians, but both the word's etymology and the early history of the form and its followers are unknown.",
+    "source": "https://www.britannica.com/art/mariachi",
+    "source_type": "editorial",
+    "checked": "2026-11-06",
+    "is_price": false,
+    "region": "west-central Mexico"
+   },
+   {
+    "fact_id": "fact_116",
+    "claim": "Britannica: typical contemporary mariachi instruments are vihuela, guitarrón, six-string guitar, violins and trumpets (trumpets added in the early 20th century); since the early 20th century male bands typically wear traje de charro, the attire of the cowboys of Jalisco; women have played an increasing role since the 1940s, with all-female groups by the early 21st century.",
+    "quote": "since the early 20th century male mariachi bands typically have worn traje de charro, the attire of the cowboys of Jalisco ... since the 1940s women have played an increasing role in mariachi performance, and by the early 21st century there were a number of all-female mariachi groups.",
+    "source": "https://www.britannica.com/art/mariachi",
+    "source_type": "editorial",
+    "checked": "2026-11-06",
+    "is_price": false,
+    "region": "Jalisco (charro attire)",
+    "conflicts": "Britannica does not mention weddings or serenatas."
+   },
+   {
+    "fact_id": "fact_117",
+    "claim": "Guanajuato Capital municipal government (24 March 2023) calls the callejoneada one of the most deep-rooted traditions of the city of Guanajuato: a walk through the historic centre's main streets accompanied by the Estudiantina Guanajuato, singing songs.",
+    "quote": "La callejoneada inició en la Plaza Allende para recorrer las principales calles del centro histórico de la Capital del Estado acompañados por la Estudiantina Guanajuato y concluyó en la Plaza de la Paz. ... vivieron una de las tradiciones más arraigadas de la ciudad de Guanajuato. En el recorrido las letras de las canciones fueron traducidas al lenguaje de señas mexicano.",
+    "source": "https://www.guanajuatocapital.gob.mx/noticias/viven-200-personas-la-callejoneada-incluyente-en-guanajuato-capital/",
+    "source_type": "government",
+    "checked": "2026-11-06",
+    "is_price": false,
+    "region": "Guanajuato city (Guanajuato State: Smartraveller 'Reconsider your need to travel' except listed areas; describe as custom, never suggest travel)",
+    "conflicts": "Event was not a wedding; use only for what a callejoneada is and its Guanajuato roots. The wedding link comes from fact_112 (Zacatecas)."
    }
   ],
-  "insider_details": [],
+  "insider_details": [
+   {
+    "detail": "A callejoneada can be planned as a welcome-night icebreaker before the ceremony, the way Zacatecas tourism framed it; outside Guanajuato and Zacatecas, couples recreate it with a walking band through a safe, pre-checked route chosen with the venue.",
+    "fact_ids": [
+     "fact_112",
+     "fact_117",
+     "fact_105"
+    ]
+   },
+   {
+    "detail": "Book the date before anything else if you want a civil wedding in Mexico: in Playa del Carmen, for example, the registry lists reserving the date in advance as step one, wants four witnesses with photo ID, and a prenuptial medical certificate valid only 15 days, so blood tests are timed for the week of the wedding.",
+    "fact_ids": [
+     "fact_114"
+    ]
+   },
+   {
+    "detail": "Only the Australian Embassy in Mexico City does notarial work, including the CNI, in person; the Cancún honorary consulate does not, so a Riviera Maya couple needing a Mexico-issued CNI should budget a Mexico City day or get the CNI in Australia first if the registry accepts it.",
+    "fact_ids": [
+     "fact_110",
+     "fact_111"
+    ]
+   },
+   {
+    "detail": "June to November is hurricane and rainy season on Smartraveller's wording, so coastal weddings in those months need an indoor or covered plan B and flexible flights.",
+    "fact_ids": [
+     "fact_106"
+    ]
+   },
+   {
+    "detail": "If a mariachi is booked, ask how many musicians and whether trumpets are included: UNESCO and Britannica describe traditional groups of two or more and modern ensembles of four or more with trumpets, violins, vihuela and guitarrón.",
+    "fact_ids": [
+     "fact_102",
+     "fact_116"
+    ]
+   }
+  ],
   "quotes": [],
   "real_weddings": [],
-  "verify_items": [],
+  "verify_items": [
+   "[[VERIFY: hora loca at Mexican weddings: no official, academic or editorial source found; search results attribute it to Venezuela/other Latin countries. Mention only as 'many couples borrow', or cut.]]",
+   "[[VERIFY: serenata to the bride before the wedding: UNESCO lists 'serenades' in the mariachi repertoire (fact_101) but no source read links serenata to weddings.]]",
+   "[[VERIFY: money dance (baile del billete): no official or academic source read; describe only as a reception custom some families keep, no amounts, no 'funds the honeymoon'.]]",
+   "[[VERIFY: Mexican wedding cookies (polvorones) and the cake: no official, Britannica or academic source read linking polvorones to weddings.]]",
+   "[[VERIFY: la víbora de la mar mechanics (couple standing on chairs, guests in a line passing under linked arms): official catalogue (fact_113) gives meaning only; mechanics only in a non-official PDF.]]",
+   "[[VERIFY: tornaboda as Mexican practice: RAE (fact_104) defines the day after the wedding and the party on it, but no Mexico-specific source read.]]",
+   "[[VERIFY: Registro Civil requirements for foreigners outside Playa del Carmen: check with the registry and the embassy, including any fees, as at November 2026.]]"
+  ],
   "needs_signoff": [],
-  "must_include_coverage": [],
-  "often_told": [],
-  "assumptions": []
+  "must_include_coverage": [
+   {
+    "item": "Callejoneada (street procession), regions only as sourced",
+    "covered_by": [
+     "fact_112",
+     "fact_117"
+    ]
+   },
+   {
+    "item": "Mariachi (and serenata only as sourced)",
+    "covered_by": [
+     "fact_101",
+     "fact_102",
+     "fact_115",
+     "fact_116"
+    ]
+   },
+   {
+    "item": "Money dance described with no amounts",
+    "covered_by": [
+     "[[VERIFY: money dance (baile del billete): no official or academic source read; describe only as a reception custom some families keep, no amounts, no 'funds the honeymoon'.]]"
+    ]
+   },
+   {
+    "item": "La víbora de la mar, accent as sources give it",
+    "covered_by": [
+     "fact_113"
+    ]
+   },
+   {
+    "item": "Cookies and cake",
+    "covered_by": [
+     "[[VERIFY: Mexican wedding cookies (polvorones) and the cake: no official, Britannica or academic source read linking polvorones to weddings.]]"
+    ]
+   },
+   {
+    "item": "Tornaboda",
+    "covered_by": [
+     "fact_104"
+    ]
+   },
+   {
+    "item": "UNESCO 'Mariachi, string music, song and trumpet' (2011) quoted only as far as its own text links to weddings",
+    "covered_by": [
+     "fact_100",
+     "fact_101",
+     "fact_103"
+    ]
+   },
+   {
+    "item": "Section for Australians: Smartraveller level, higher-level states, update date, hurricane season, same-sex recognition, entry line",
+    "covered_by": [
+     "fact_105",
+     "fact_106",
+     "fact_107",
+     "fact_108"
+    ]
+   },
+   {
+    "item": "Australian Embassy Mexico City for CNI and notarial; 'Getting married overseas'; 'check with the registry and the embassy, including any fees'",
+    "covered_by": [
+     "fact_109",
+     "fact_110",
+     "fact_111",
+     "fact_114"
+    ]
+   }
+  ],
+  "often_told": [
+   "hora loca as a Mexican wedding tradition (sources online say Venezuelan or general Latin origin)",
+   "serenata by the groom with mariachi the night before the wedding",
+   "guests pinning notes on the couple's clothes during the baile del billete, and that it pays for the honeymoon",
+   "Mexican wedding cookies (polvorones) named because they were served at weddings",
+   "la víbora de la mar: the couple stand on chairs and guests run under their linked hands; the bride's veil used as the bridge",
+   "tornaboda held the day after or late the same night",
+   "mole as 'the' Mexican wedding dish"
+  ],
+  "assumptions": [
+   "Legal facts are as at November 2026; the Wedded Advisor confirms current requirements with the registry and the embassy.",
+   "Embassy notarial and Playa del Carmen registry fee amounts were seen but deliberately not recorded (no prices or amounts in this batch); any fee mention needs Nic's sign-off.",
+   "Zacatecas and Guanajuato are named only as places the custom is rooted, never as suggested destinations.",
+   "BUAP thesis on wedding ritual in the Región de los Volcanes (Puebla) timed out; not used."
+  ]
  }
 }
