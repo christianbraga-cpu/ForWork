@@ -1,0 +1,448 @@
+{
+ "agent": "wedding-planner-sme",
+ "task_id": "samoan-wedding-traditions",
+ "stage": "03",
+ "status": "complete",
+ "round": 1,
+ "inputs_used": [
+  "CLAUDE.md",
+  "content/posts/samoan-wedding-traditions/00-input.json",
+  "content/posts/samoan-wedding-traditions/01-brief.json",
+  "content/posts/samoan-wedding-traditions/02-research/pages/smartraveller.md",
+  "content-system/schemas/03-source-pack.schema.json",
+  "content/posts/chinese-wedding-traditions/03-source-pack-part-1.json",
+  "https://ich.unesco.org/en/state/samoa-WS",
+  "https://ich.unesco.org/en/RL/ie-samoa-fine-mat-and-its-cultural-value-01499",
+  "https://www.smartraveller.gov.au/destinations/pacific/samoa",
+  "https://www.smartraveller.gov.au/planning-trip/advice-your-planned-activities/getting-married-overseas",
+  "https://www.smartraveller.gov.au/our-role/notarial-services/how-get-certificate-no-impediment-marriage",
+  "https://samoa.highcommission.gov.au/",
+  "https://www.mjca.gov.ws/",
+  "https://blog.tepapa.govt.nz/2012/03/09/taualuga-the-last-dance/",
+  "https://www.samoa.travel/discover/our-culture/",
+  "https://www.samoa.travel/discover/our-culture/dance/"
+ ],
+ "self_qa": {
+  "checks": [
+   {
+    "check": "Every fact has a source and date",
+    "pass": true
+   },
+   {
+    "check": "No price without a source; all prices in needs_signoff",
+    "pass": true,
+    "note": "No prices or fee amounts recorded"
+   },
+   {
+    "check": "Batch B must-includes covered or marked",
+    "pass": true,
+    "note": "ie faitaga, taualuga at weddings, umu dishes, wedding dress unsourced: VERIFY"
+   },
+   {
+    "check": "No invented quotes, statistics or real weddings",
+    "pass": true
+   },
+   {
+    "check": "Legal from official sources only, 'as at November 2026'",
+    "pass": true
+   },
+   {
+    "check": "UNESCO URL and title confirmed live",
+    "pass": true,
+    "note": "Correct ID is 01499; seed 01491 is wrong"
+   },
+   {
+    "check": "Stopped at 15-minute limit",
+    "pass": false,
+    "note": "Tool latency pushed the last fetch past the limit (ended about 03:36 against a 03:20 deadline); stopped immediately after. One web search declined, not retried. Auckland Museum, Australian Museum, Britannica, MESC, High Commission notarial page not read."
+   }
+  ],
+  "confidence": 0.65
+ },
+ "open_questions": [
+  {
+   "to": "orchestrator",
+   "blocking": false,
+   "question": "Can a follow-up read the High Commission Apia notarial/CNI page and a museum or academic source for the taualuga at weddings and umu dishes?"
+  }
+ ],
+ "assumptions": [
+  "UNESCO cited only for its wedding sentence (fact_115); the Tatau Samoa link on the state page is an assistance project, not an inscribed element, and was not read.",
+  "Legal and visa lines are 'as at November 2026'; the Wedded Advisor confirms current requirements.",
+  "Upolu and Savai'i named only as places couples choose; no venue claims.",
+  "No fee amounts recorded (CNI fees exist per fact_111)."
+ ],
+ "verify_items": [
+  "[[VERIFY: ie faitaga (men's formal wrap) not found in any source read; samoa.travel names lavalava only (fact_118). Use 'lavalava' or source ie faitaga]]",
+  "[[VERIFY: no source read on wedding dress specifically: puletasi as bridal or guest wear, white gowns, floral ula/sei. Write as living practice only]]",
+  "[[VERIFY: taualuga as the closing dance at weddings and who performs it (taupou, matai's son or daughter) not sourced; Te Papa (fact_113) gives only 'a dance of negotiation and celebration'. Guests' role during the taualuga unsourced]]",
+  "[[VERIFY: umu dishes (pork, taro, palusami) not sourced; samoa.travel (fact_121) gives umu as underground oven cooking and to'anai as family feast only. Food shared among families after a wedding unsourced]]",
+  "[[VERIFY: Australian High Commission Apia CNI/notarial page not read (home page only, fact_108)]]",
+  "[[VERIFY: Samoa BDM registry (MJCA) no official page readable (fact_112). Article wording: 'check with the registry and the high commission, including any fees', as at November 2026]]",
+  "[[VERIFY: UNESCO seed URL -01491 is Ethiopian epiphany; link only -01499 (fact_101, fact_114)]]"
+ ],
+ "next_agent": [
+  "luxury-writer"
+ ],
+ "payload": {
+  "batch": "B",
+  "fact_id_range": "fact_100 to fact_199",
+  "facts": [
+   {
+    "fact_id": "fact_100",
+    "claim": "UNESCO's Samoa state page lists one element inscribed: 'Ie Samoa, fine mat and its cultural value, 2019, Representative List (RL).",
+    "quote": "1 elements inscribed ... 2019: 'Ie Samoa, fine mat and its cultural value (RL)",
+    "source": "https://ich.unesco.org/en/state/samoa-WS",
+    "source_type": "other",
+    "checked": "2026-11-06",
+    "is_price": false,
+    "region": "Samoa"
+   },
+   {
+    "fact_id": "fact_101",
+    "claim": "The seed URL https://ich.unesco.org/en/RL/ie-samoa-fine-mat-and-its-cultural-value-01491 is wrong: it returns HTTP 200 but serves the 'Ethiopian epiphany' element (canonical ethiopian-epiphany-01491). Do not link it.",
+    "quote": "canonicalUrl: https://ich.unesco.org/en/RL/ethiopian-epiphany-01491; title: Ethiopian epiphany - UNESCO Intangible Cultural Heritage",
+    "source": "https://ich.unesco.org/en/RL/ie-samoa-fine-mat-and-its-cultural-value-01491",
+    "source_type": "other",
+    "checked": "2026-11-06",
+    "is_price": false,
+    "conflicts": "Brief seed URL ID 01491 belongs to Ethiopian epiphany, not 'Ie Samoa."
+   },
+   {
+    "fact_id": "fact_102",
+    "claim": "Smartraveller Samoa: overall level 'Exercise normal safety precautions'; updated 05 August 2026, still current at 06 November 2026; ongoing dengue outbreak since 2025.",
+    "quote": "Overall: Exercise normal safety precautions ... Still current at:06 November 2026Updated:05 August 2026 ... There's an ongoing dengue outbreak in Samoa since 2025.",
+    "source": "https://www.smartraveller.gov.au/destinations/pacific/samoa",
+    "source_type": "government",
+    "checked": "2026-11-06",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_103",
+    "claim": "Smartraveller: cyclone season is November to April, but storms can occur year-round; earthquakes and tsunamis can occur.",
+    "quote": "Cyclone season is November to April, but storms occur year-round.",
+    "source": "https://www.smartraveller.gov.au/destinations/pacific/samoa",
+    "source_type": "government",
+    "checked": "2026-11-06",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_104",
+    "claim": "Smartraveller: Sunday activities are extremely limited and alcohol can't be sold; hotels and resorts operate normally; be respectful passing through villages on a Sunday.",
+    "quote": "Sunday activities are extremely limited and alcohol can't be sold. Most businesses are closed except for few shops and restaurants are open while hotels and resorts operate normally.",
+    "source": "https://www.smartraveller.gov.au/destinations/pacific/samoa",
+    "source_type": "government",
+    "checked": "2026-11-06",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_105",
+    "claim": "Smartraveller: outside tourist areas the dress code is conservative; dress respectfully in villages.",
+    "quote": "Outside of tourist areas, the dress code in Samoa is conservative. Dress respectfully when visiting village areas.",
+    "source": "https://www.smartraveller.gov.au/destinations/pacific/samoa",
+    "source_type": "government",
+    "checked": "2026-11-06",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_106",
+    "claim": "Smartraveller: same-sex relationships are not recognised in Samoa (state neutrally, once).",
+    "quote": "Same-sex relationships aren't recognised in Samoa and consensual sex between men is illegal.",
+    "source": "https://www.smartraveller.gov.au/destinations/pacific/samoa",
+    "source_type": "government",
+    "checked": "2026-11-06",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_107",
+    "claim": "Smartraveller: Australians can apply for a 90 day Visitor Permit on arrival using the passenger arrival card (tourism, confirmed onward ticket, enough funds, passport valid 6 months beyond stay); conditions can change at short notice. As at November 2026.",
+    "quote": "You can apply for a 90 day Visitor Permit on arrival using the passenger arrival card if you: stay less than 90 days; visit for tourism; have confirmed return or onward ticket; have enough funds to support yourself; have a passport that's valid for at least 6 months beyond your intended stay",
+    "source": "https://www.smartraveller.gov.au/destinations/pacific/samoa",
+    "source_type": "government",
+    "checked": "2026-11-06",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_108",
+    "claim": "Smartraveller lists the Australian High Commission, Apia at 47 Beach Road, Apia, phone +685 23 411, website samoa.highcommission.gov.au. The High Commission home page (live) offers consular assistance 9am to 4.30pm Apia time Monday to Friday; no CNI or notarial page was read.",
+    "quote": "Australian High Commission, Apia 47 Beach Road Apia, Samoa Phone: +685 23 411 / For consular assistance 9am to 4.30pm Apia time, Monday to Friday, please contact +685 23411 or visit the Australian High Commission, Beach Rd, Apia.",
+    "source": "https://www.smartraveller.gov.au/destinations/pacific/samoa ; https://samoa.highcommission.gov.au/",
+    "source_type": "government",
+    "checked": "2026-11-06",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_109",
+    "claim": "Smartraveller 'Getting married overseas' (last updated 18/08/2026): some countries ask you to prove you are free to marry; common documents are a CNI or certificates from a births, deaths and marriages registry; contact the destination's embassy or consulate for specifics.",
+    "quote": "Some countries will ask you to prove you aren't already married before you can get married there. Each country decides what proof it will accept.",
+    "source": "https://www.smartraveller.gov.au/planning-trip/advice-your-planned-activities/getting-married-overseas",
+    "source_type": "government",
+    "checked": "2026-11-06",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_110",
+    "claim": "Smartraveller: you can't register an overseas marriage in Australia, but in most cases it is legally recognised if valid where it happened and valid under Australian law had it occurred in Australia; talk to a lawyer to confirm.",
+    "quote": "You can't register an overseas marriage in Australia. But in most cases, your marriage is legally recognised here.",
+    "source": "https://www.smartraveller.gov.au/planning-trip/advice-your-planned-activities/getting-married-overseas",
+    "source_type": "government",
+    "checked": "2026-11-06",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_111",
+    "claim": "Smartraveller CNI page (last updated 01/10/2026): DFAT issues CNIs through Australian Passport Offices, embassies, high commissions and consulates overseas, and by mail; fees apply (no amounts recorded); some authorities only accept a CNI issued in their country; ask whether an apostille or authentication is needed.",
+    "quote": "DFAT issues CNIs: through Australian Passport Offices across Australia; through Australian embassies, high commissions, and consulates overseas; by mail. ... Note that we charge fees for our service.",
+    "source": "https://www.smartraveller.gov.au/our-role/notarial-services/how-get-certificate-no-impediment-marriage",
+    "source_type": "government",
+    "checked": "2026-11-06",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_112",
+    "claim": "The Samoa Ministry of Justice and Courts Administration URL www.mjca.gov.ws returned 'Site Not Found' (HTTP 404) on 2026-11-06; no official BDM page read. Article wording: 'check with the registry and the high commission, including any fees', as at November 2026.",
+    "quote": "Site Not Found",
+    "source": "https://www.mjca.gov.ws/",
+    "source_type": "government",
+    "checked": "2026-11-06",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_113",
+    "claim": "Te Papa describes taualuga as 'the classical Samoan dance of Taualuga - a dance of negotiation and celebration' (context: an artwork by Shigeyuki Kihara). It does not mention weddings or who performs it.",
+    "quote": "Using the principles of the classical Samoan dance of Taualuga – a dance of negotiation and celebration – as a form of storytelling",
+    "source": "https://blog.tepapa.govt.nz/2012/03/09/taualuga-the-last-dance/",
+    "source_type": "editorial",
+    "checked": "2026-11-06",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_114",
+    "claim": "Correct live UNESCO URL for ''Ie Samoa, fine mat and its cultural value'; inscribed in 2019 (14.COM) on the Representative List of the Intangible Cultural Heritage of Humanity.",
+    "quote": "Inscribed in 2019 (14.COM) on the Representative List of the Intangible Cultural Heritage of Humanity",
+    "source": "https://ich.unesco.org/en/RL/ie-samoa-fine-mat-and-its-cultural-value-01499",
+    "source_type": "other",
+    "checked": "2026-11-06",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_115",
+    "claim": "UNESCO's 'Ie Samoa text links the mat to weddings: it is displayed and exchanged at festive celebrations or important gatherings such as weddings and funerals, and its exchange helps maintain the social structure. Its value lies in exchange in ceremonies that reaffirm kinship ties.",
+    "quote": "The 'Ie Samoa is displayed and exchanged at festive celebrations or on important gatherings such as weddings and funerals, and its exchange contributes profoundly to the maintenance of the social structure.",
+    "source": "https://ich.unesco.org/en/RL/ie-samoa-fine-mat-and-its-cultural-value-01499",
+    "source_type": "other",
+    "checked": "2026-11-06",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_116",
+    "claim": "UNESCO: the 'Ie Samoa is a finely hand-woven pandanus mat with two rows of green and red feathers at the hem; a single mat can take up to several months and even years to make.",
+    "quote": "Producing a single 'Ie Samoa can therefore take up to several months and even years.",
+    "source": "https://ich.unesco.org/en/RL/ie-samoa-fine-mat-and-its-cultural-value-01499",
+    "source_type": "other",
+    "checked": "2026-11-06",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_117",
+    "claim": "Samoa Tourism Authority: the siva is a slow, fluid, graceful storytelling dance traditionally performed by a young woman.",
+    "quote": "Slow and fluid, the siva is a graceful storytelling dance that is traditionally performed by a young woman.",
+    "source": "https://www.samoa.travel/discover/our-culture/dance/",
+    "source_type": "tourism_board",
+    "checked": "2026-11-06",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_118",
+    "claim": "Samoa Tourism Authority: in the fa'ataupati, men wear traditional lavalava and women wear puletasi, 'a two-piece garment'. Spelling as given: puletasi, lavalava.",
+    "quote": "the fa'ataupati is performed by men wearing traditional lavalava and women wearing puletasi, a two-piece garment.",
+    "source": "https://www.samoa.travel/discover/our-culture/dance/",
+    "source_type": "tourism_board",
+    "checked": "2026-11-06",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_119",
+    "claim": "Samoa Tourism Authority: Fa'a Samoa (the Samoan way) is a way of life stretching back more than 3000 years; life is about being part of a community that looks after each other.",
+    "quote": "People still live with a strong focus on Fa'a Samoa (the Samoan way) - a way of life that stretches back more than 3000 years",
+    "source": "https://www.samoa.travel/discover/our-culture/",
+    "source_type": "tourism_board",
+    "checked": "2026-11-06",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_120",
+    "claim": "Samoa Tourism Authority: the church is central to the Samoan way of life; Sundays are a National Day of Rest; for church, women wear a dress or blouse and skirt and men trousers and shirt; some villages observe an evening prayer curfew (Sa).",
+    "quote": "The church is central to the Samoan way of life. ... If you are attending church on Sunday, women are asked to wear a dress or blouse and skirt and men, trousers and shirt.",
+    "source": "https://www.samoa.travel/discover/our-culture/",
+    "source_type": "tourism_board",
+    "checked": "2026-11-06",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_121",
+    "claim": "Samoa Tourism Authority: special occasions bring a big 'to'anai' (feast) for the whole family; Teuila Festival includes Umu demonstrations described as 'underground Samoan oven cooking'; fiafia nights include dinner cooked in the traditional way.",
+    "quote": "As with any other special occasions, there is always a big \"to'anai\" (feast) prepared for the whole family. ... Umu demonstrations (underground Samoan oven cooking)",
+    "source": "https://www.samoa.travel/discover/our-culture/",
+    "source_type": "tourism_board",
+    "checked": "2026-11-06",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_122",
+    "claim": "Samoa Tourism Authority: guests visiting villages are asked to wear a lavalava (sarong), pants or shorts and t-shirt; remove shoes entering a fale; do not stand when elders are seated.",
+    "quote": "Guests are asked to wear a lavalava (sarong) pants or shorts and t-shirt.",
+    "source": "https://www.samoa.travel/discover/our-culture/",
+    "source_type": "tourism_board",
+    "checked": "2026-11-06",
+    "is_price": false
+   }
+  ],
+  "insider_details": [
+   {
+    "detail": "Cyclone season runs November to April, so couples planning a wet-season date should build weather flexibility into outdoor ceremony and feast plans, as at November 2026.",
+    "fact_ids": [
+     "fact_103"
+    ]
+   },
+   {
+    "detail": "Sunday is a day of rest in Samoa: most businesses close and alcohol can't be sold, though hotels and resorts run normally, so avoid a Sunday wedding day outside a resort and plan guest transfers through villages quietly.",
+    "fact_ids": [
+     "fact_104",
+     "fact_120"
+    ]
+   },
+   {
+    "detail": "Guests visiting villages or attending church should dress modestly (dresses or skirts for women, trousers and shirt for men), so include a short dress note in the guest pack.",
+    "fact_ids": [
+     "fact_105",
+     "fact_120",
+     "fact_122"
+    ]
+   },
+   {
+    "detail": "Australians generally arrive on a 90 day Visitor Permit, and a passport valid six months beyond the stay is required, so check every guest's passport expiry when invitations go out.",
+    "fact_ids": [
+     "fact_107"
+    ]
+   },
+   {
+    "detail": "Proof of freedom to marry may be a CNI or a registry certificate, and some authorities only accept a CNI issued locally, so confirm with the registry and the High Commission in Apia before booking, including any fees.",
+    "fact_ids": [
+     "fact_109",
+     "fact_111",
+     "fact_108",
+     "fact_112"
+    ]
+   }
+  ],
+  "quotes": [],
+  "real_weddings": [],
+  "verify_items": [
+   "[[VERIFY: ie faitaga (men's formal wrap) not found in any source read; samoa.travel names lavalava only (fact_118). Use 'lavalava' or source ie faitaga]]",
+   "[[VERIFY: no source read on wedding dress specifically: puletasi as bridal or guest wear, white gowns, floral ula/sei. Write as living practice only]]",
+   "[[VERIFY: taualuga as the closing dance at weddings and who performs it (taupou, matai's son or daughter) not sourced; Te Papa (fact_113) gives only 'a dance of negotiation and celebration'. Guests' role during the taualuga unsourced]]",
+   "[[VERIFY: umu dishes (pork, taro, palusami) not sourced; samoa.travel (fact_121) gives umu as underground oven cooking and to'anai as family feast only. Food shared among families after a wedding unsourced]]",
+   "[[VERIFY: Australian High Commission Apia CNI/notarial page not read (home page only, fact_108)]]",
+   "[[VERIFY: Samoa BDM registry (MJCA) no official page readable (fact_112). Article wording: 'check with the registry and the high commission, including any fees', as at November 2026]]",
+   "[[VERIFY: UNESCO seed URL -01491 is Ethiopian epiphany; link only -01499 (fact_101, fact_114)]]"
+  ],
+  "needs_signoff": [],
+  "must_include_coverage": [
+   {
+    "item": "Exactly 4 one-sentence Key takeaways",
+    "covered_by": [
+     "fact_115",
+     "fact_117",
+     "fact_102",
+     "fact_110"
+    ]
+   },
+   {
+    "item": "One early framing line: practice varies by family, village and diaspora community",
+    "covered_by": [
+     "fact_119"
+    ]
+   },
+   {
+    "item": "About 10 numbered sections in wedding order (batch B: dress, siva and taualuga, feast and umu, UNESCO, for Australians)",
+    "covered_by": [
+     "fact_118",
+     "fact_117",
+     "fact_113",
+     "fact_121",
+     "fact_114",
+     "fact_115",
+     "fact_107"
+    ]
+   },
+   {
+    "item": "Samoan terms with diacritics exactly as sources give them; glossary",
+    "covered_by": [
+     "fact_118",
+     "fact_119",
+     "fact_121",
+     "fact_114",
+     "[[VERIFY: ie faitaga (men's formal wrap) not found in any source read; samoa.travel names lavalava only (fact_118). Use 'lavalava' or source ie faitaga]]"
+    ]
+   },
+   {
+    "item": "Fine mats and gifts described with no amounts or counts",
+    "covered_by": [
+     "fact_115",
+     "fact_116"
+    ]
+   },
+   {
+    "item": "UNESCO 'ie Samoa element quoted only as far as its own text links to weddings, if confirmed live",
+    "covered_by": [
+     "fact_100",
+     "fact_114",
+     "fact_115"
+    ]
+   },
+   {
+    "item": "Section for Australians",
+    "covered_by": [
+     "fact_102",
+     "fact_103",
+     "fact_104",
+     "fact_105",
+     "fact_106",
+     "fact_107",
+     "fact_108",
+     "fact_109",
+     "fact_110",
+     "fact_111",
+     "fact_112",
+     "[[VERIFY: Australian High Commission Apia CNI/notarial page not read (home page only, fact_108)]]",
+     "[[VERIFY: Samoa BDM registry (MJCA) no official page readable (fact_112). Article wording: 'check with the registry and the high commission, including any fees', as at November 2026]]"
+    ]
+   },
+   {
+    "item": "FAQ of 5 to 7 questions with no amounts",
+    "covered_by": [
+     "fact_107",
+     "fact_110",
+     "fact_115",
+     "fact_117",
+     "fact_104"
+    ]
+   },
+   {
+    "item": "Internal links: /destinations/oceania hub and a Fiji page",
+    "covered_by": [
+     "[[VERIFY: link map, not in batch B scope]]"
+    ]
+   }
+  ],
+  "often_told": [
+   "taualuga as the closing dance of a wedding reception, often performed by the bride or a taupou",
+   "guests showing appreciation during the taualuga",
+   "ie faitaga as men's formal wrap",
+   "pork, taro and palusami from the umu at wedding feasts",
+   "floral ula/sei worn by the couple",
+   "white gowns alongside puletasi for brides"
+  ]
+ }
+}
