@@ -5,3 +5,5 @@
 03:36 03 planner-sme batch A complete 27 facts (samoa.travel, Britannica, Te Ara, Te Papa; 'ie toga incl. bride's family presenting mats); ran ~30 min (slow fetch, over 15-min limit); waiting on batch B
 03:37 03 planner-sme batch B complete 23 facts (UNESCO 'ie Samoa 01499, 2019, names weddings; brief/SEO URL corrected from 01491; Smartraveller marriage + CNI; High Commission home only; registry 404 -> 'check with'); ran ~30 min; merged; writer launched
 03:39 05 luxury-writer complete ~2,670 words; 0 VERIFY; 0 research talk, 0 'often told'; first draft sent; editor + 5 readers launched
+03:40 07 icp-reader search_visitor complete; no must-fix (dance answer low, UNESCO repetition)
+03:40 07 icp-reader sceptic, uhnw complete; no must-fix (business details deferred); waiting on planner_couple, funding_parent, editor
