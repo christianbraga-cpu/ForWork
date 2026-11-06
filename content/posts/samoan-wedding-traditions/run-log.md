@@ -13,3 +13,4 @@
 03:45 08 luxury-writer complete ~2,670 words; 0 VERIFY; scan clean; 8b+CRO+distribution launched
 03:46 09 cro-specialist complete; /magazine primary; 1 copy change; applying after 8b
 03:46 10 distribution complete 3 pins, 8-slide carousel, newsletter
+03:46 08b editor pass_with_edits; 5 blocking fixes (takeaway and taualuga claims beyond facts, recognition condition, FAQ 'Yes') + 1 CRO change applied; cms-publisher launched

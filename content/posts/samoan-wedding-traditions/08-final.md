@@ -14,9 +14,9 @@ Samoan wedding traditions follow that order, and this guide walks through them a
 ## Key takeaways
 
 - A Samoan wedding is led by the aiga, the extended family, and its matai, so the families' wishes shape the day as much as the couple's.
-- Fine mats ('ie toga) are the most honoured gift at a Samoan wedding, and in marriage ceremonies the bride's family presents them to the groom's family.
-- The church service sits at the heart of the day for many Samoan families, followed by speeches, the siva, the taualuga (the bride's closing dance) and a shared feast.
-- As at November 2026, Smartraveller advises Australians to "Exercise normal safety precautions" in Samoa, and an overseas marriage can't be registered in Australia, though in most cases it is legally recognised if it was valid where it took place.
+- Fine mats ('ie toga) are the highest-ranking item in the Samoan exchange system, and in marriage ceremonies the bride's family presents them to the groom's family.
+- The church service sits at the heart of the day for many Samoan families, followed by speeches, the siva, the taualuga (the classical Samoan dance) and a shared feast.
+- As at November 2026, Smartraveller advises Australians to "Exercise normal safety precautions" in Samoa, and an overseas marriage can't be registered in Australia, though in most cases it is legally recognised if it was valid where it took place and would have been valid under Australian law.
 
 ## Samoan wedding traditions start with family
 
@@ -106,7 +106,7 @@ Dance is where a Samoan wedding opens up. The siva is a slow, fluid, graceful st
 
 <!-- IMAGE SLOT taualuga: Licensed photo from a consented Samoan or Samoan-Australian reception: the bride or taupou dancing the taualuga, oiled arms and graceful hand movement, family nearby, warm evening light; no money visible on the dancer or floor. Respectful framing. Consent from the dancer and identifiable guests. Never AI. -->
 
-The taualuga is the high point, the classical Samoan dance, "a dance of negotiation and celebration". <!-- fact_113 --> At many Samoan weddings, the bride dances the taualuga to close the evening's formal dancing, while family members dance around her in support.
+The taualuga is the classical Samoan dance, "a dance of negotiation and celebration". <!-- fact_113 --> At many Samoan weddings, the bride dances the taualuga to close the evening's formal dancing, while family members dance around her in support.
 
 Couples planning the reception should give the taualuga its own moment in the running order, with the floor cleared and the music agreed with the family. For a real celebration from our pages, see [Mercy and Chanel's traditional Samoan wedding](/a-traditional-samoan-wedding-celebration).
 
@@ -121,6 +121,10 @@ At many weddings, the umu is lit early by the men of the family, and the table f
 For a destination wedding, ask early whether your venue allows an umu on the grounds, or whether the family will cook off site and bring the food in.
 
 <!-- CTA: primary -->
+**Read the free magazine**
+Free to read, whenever you are ready.
+[Read the free magazine](/magazine?utm_source=blog&utm_medium=content&utm_campaign=samoan-wedding-traditions&utm_content=primary)
+<!-- /CTA: primary -->
 
 ## 9. Weddings in Samoa: getting married there as an Australian
 
@@ -191,7 +195,7 @@ Dress as for church: a dress or blouse and skirt for women, trousers and a shirt
 
 ### Can Australians get married in Samoa?
 
-Yes. An overseas marriage can't be registered in Australia, but in most cases it is legally recognised if it was valid where it took place and would have been valid under Australian law; a lawyer can confirm your situation. <!-- fact_110 --> Check the documents and fees with Samoa's registry and the Australian High Commission in Apia.
+An overseas marriage made in Samoa can't be registered in Australia, but in most cases it is legally recognised if it was valid where it took place and would have been valid under Australian law; a lawyer can confirm your situation. <!-- fact_110 --> Check the documents and fees with Samoa's registry and the Australian High Commission in Apia.
 
 ## Planning a Samoan wedding with us
 
