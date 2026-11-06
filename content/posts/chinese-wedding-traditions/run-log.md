@@ -14,3 +14,4 @@
 00:41 08 luxury-writer complete 2,985 words; 1 VERIFY; scan clean; 8b+CRO+distribution launched
 00:42 09 cro-specialist complete; /magazine primary; 2 copy changes; applying after 8b
 00:42 10 distribution complete 3 pins, 8-slide carousel, newsletter
+00:43 08b editor pass_with_edits; 11 blocking fixes (unsourced customs, recognition and visa-waiver lines, Suzhou/Hangzhou safety inference, FAQ, overstated sources) + 2 CRO changes applied; UTM medium set to content; cms-publisher launched

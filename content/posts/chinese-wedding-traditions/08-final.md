@@ -15,8 +15,8 @@ This guide walks that sequence in wedding order, then covers what Australians ne
 
 - Chinese wedding customs differ by dialect group, region and family, so ask both families which rites they expect before you set the day's order.
 - In Singapore, most Chinese weddings still begin with guo da li, the betrothal gifts carried from the groom's family to the bride's home on an auspicious day.
-- In Singapore, the tea ceremony is held at the groom's home and again at the bride's, with elders served in order of seniority.
-- As at November 2026, Smartraveller advises Australians to "Exercise a high degree of caution" in China overall, and a marriage made there can't be registered in Australia, though it is usually recognised.
+- In Singapore, the tea ceremony is held at the groom's home and again at the bride's, with tea offered first to the gods and the groom's ancestors, then to his parents and other relatives.
+- As at November 2026, Smartraveller advises Australians to "Exercise a high degree of caution" in China overall, and a marriage made there can't be registered in Australia, though in most cases it is legally recognised if it was valid there and would have been valid under Australian law.
 
 ## Chinese wedding customs differ by family and region
 
@@ -40,7 +40,7 @@ Singapore's National Heritage Board says most Chinese wedding practices there to
 
 The gifts are chosen for their symbolism, for example mandarin oranges for good luck and charcoal for a good life after marriage. <!-- fact_03 --> They also differ by community. In Singapore, Teochew gifts typically include peanut-sesame candy wrapped in red paper, while Cantonese families may send seafood such as sea cucumber, abalone, scallop, dried shrimp, oyster, mushroom and fish maw. <!-- fact_14 -->
 
-Some items cross dialect lines. Two pairs of red dragon and phoenix candles are common to all, and the groom's parents may give the bride dragon and phoenix bangles (Cantonese) or si dian jin, four items of gold jewellery (Teochew). <!-- fact_15 -->
+Some items cross dialect lines. Two pairs of red dragon and phoenix candles are common across dialect groups, and the groom's parents may give the bride dragon and phoenix bangles (Cantonese) or si dian jin, four items of gold jewellery (Teochew). <!-- fact_15 -->
 
 The exchange runs both ways. The bride's family returns some of the gifts (hui li) to show they accept the marriage, presents another set to the groom's family, and the bride receives her trousseau (jia zhuang). <!-- fact_02 -->
 
@@ -98,7 +98,7 @@ That means two ceremonies on one day, with travel between homes. Agree the list 
 
 ### What UNESCO says about tea and social practice
 
-In 2022, UNESCO inscribed [traditional tea processing techniques and associated social practices in China](https://ich.unesco.org/en/RL/traditional-tea-processing-techniques-and-associated-social-practices-in-china-01884) on its Representative List of the Intangible Cultural Heritage of Humanity, and its text calls tea an important part of ceremonies such as weddings. <!-- fact_100 --> <!-- fact_101 --> It does not describe the wedding tea ceremony itself. <!-- fact_101 -->
+In 2022, UNESCO inscribed [traditional tea processing techniques and associated social practices in China](https://ich.unesco.org/en/RL/traditional-tea-processing-techniques-and-associated-social-practices-in-china-01884) on its Representative List of the Intangible Cultural Heritage of Humanity, and its text says tea is part of ceremonies such as weddings. <!-- fact_100 --> <!-- fact_101 --> It does not describe the wedding tea ceremony itself. <!-- fact_101 -->
 
 ## Chinese wedding symbols: red, double happiness, dragon and phoenix
 
@@ -106,7 +106,7 @@ In 2022, UNESCO inscribed [traditional tea processing techniques and associated 
 
 The V&A says red is the primary colour for traditional Chinese wedding ceremonies. <!-- fact_112 --> The double happiness character (shuang xi) is used at weddings, and the British Museum holds a pack of red wedding envelopes printed with it. <!-- fact_118 -->
 
-Paper-cuts carry the same motifs. UNESCO's listing for [Chinese paper-cut](https://ich.unesco.org/en/RL/chinese-paper-cut-00219), inscribed in 2009, names weddings among the festivities paper-cuts are made for. <!-- fact_103 --> Many families paste a red double happiness on the doors and windows of the couple's homes, and the story of how the character came to be is often told, so ask your family how they use it.
+Paper-cuts carry the same motifs. UNESCO's listing for [Chinese paper-cut](https://ich.unesco.org/en/RL/chinese-paper-cut-00219), inscribed in 2009, names weddings among the festivities paper-cuts are made for. <!-- fact_103 --> A red double happiness pasted on the doors and windows of the couple's homes is often told of, as is the story of how the character came to be, so ask your family how they use it.
 
 <!-- IMAGE SLOT red-double-happiness: Preferred: licensed detail photo of a red paper-cut double happiness character on a door or window at a consented wedding, or on wedding stationery, even daylight, no people. Fallback only if Nic approves: AI neutral still life of red envelopes on plain linen, no people, dress or place, no legible amounts, captioned 'Illustrative image'. No flags, emblems or political symbols. -->
 
@@ -122,7 +122,7 @@ The V&A describes the bride's matching red jacket and skirt as what is popularly
 
 The V&A notes that white wedding dresses are popular today, but traditional bridal ensembles are still worn for rituals in front of parents and ancestors and during the wedding banquet. <!-- fact_115 -->
 
-Some brides also choose a qipao (cheongsam), and in many families the bride changes outfits during the banquet. For your day: if you plan more than one outfit, build the changes into the run sheet. For more on the colour itself, read [why Chinese brides wear red](/why-chinese-brides-wear-red-dresses).
+A qipao (cheongsam), and outfit changes during the banquet, are often told of too. For your day: if you plan more than one outfit, build the changes into the run sheet. For more on the colour itself, read [why Chinese brides wear red](/why-chinese-brides-wear-red-dresses).
 
 ## The wedding banquet and red envelopes
 
@@ -138,7 +138,7 @@ The dishes, the number of courses, what each is meant to bring and the rounds of
 
 The British Museum notes that lucky red envelopes are called hong bao in Mandarin and lai see in Cantonese, and that its pack was designed for making gifts of money at weddings. <!-- fact_117 --> The envelopes carry the double happiness character. <!-- fact_118 -->
 
-They change hands at the bride's door and at the tea ceremony. <!-- fact_18 --> <!-- fact_21 --> Guests usually give one at the banquet too, and families have their own sense of a fitting, lucky amount, so ask the couple's family if you are unsure.
+They change hands at the bride's door and at the tea ceremony. <!-- fact_18 --> <!-- fact_21 --> Guests giving one at the banquet is often told of too, and customs differ by family, so ask the couple's family if you are unsure.
 
 ## After the wedding: the bride's return visit
 
@@ -149,6 +149,10 @@ A community heritage summary says that historically, about three days after the 
 In Singapore today, the National Library Board says, the bride returns home on the wedding day, and the tea ceremony is performed for her parents and relatives then. <!-- fact_22 --> Historically, the groom presented a whole roast pig to his in-laws; the meat was shared among the bride's relatives, and the head and tail were returned to the groom for "a good beginning and end". <!-- fact_23 -->
 
 <!-- CTA: primary -->
+**Read the free magazine**
+Free to read, whenever you are ready.
+[Read the free magazine](/magazine?utm_source=blog&utm_medium=content&utm_campaign=chinese-wedding-traditions&utm_content=primary)
+<!-- /CTA: primary -->
 
 ## Chinese weddings for Australians: marrying in China or bringing the customs home
 
@@ -158,11 +162,11 @@ All of this is as at November 2026.
 
 ### Safety level and entry
 
-When we checked on 6 November 2026, [Smartraveller advice for China](https://www.smartraveller.gov.au/destinations/asia/china) was "Exercise a high degree of caution" overall, updated 28 September 2026, with higher levels in some areas. <!-- fact_104 --> It says "Reconsider your need to travel" to Gyirong County in Tibet because of the risk of severe flooding and landslides, and "Exercise a high degree of caution" in Tibet and Xinjiang because of the security situation. <!-- fact_105 --> The overall level applies elsewhere in China, including eastern cities such as Suzhou and Hangzhou, so check the advice for your exact location before you book.
+When we checked on 6 November 2026, [Smartraveller advice for China](https://www.smartraveller.gov.au/destinations/asia/china) was "Exercise a high degree of caution" overall, updated 28 September 2026, with higher levels in some areas. <!-- fact_104 --> It says "Reconsider your need to travel" to Gyirong County in Tibet because of the risk of severe flooding and landslides, and "Exercise a high degree of caution" in Tibet and Xinjiang because of the security situation. <!-- fact_105 --> Check the advice for your exact location before you book.
 
 Smartraveller also says Australians may be at risk of arbitrary detention, exit bans or harsh enforcement of local laws, including broadly defined National Security Laws. <!-- fact_107 --> China does not recognise dual nationality, and dual nationals who don't enter on their Australian passport may be unable to get Australian consular help. <!-- fact_107 -->
 
-Australia is in China's visa waiver program until 31 December 2026, and ordinary passport holders may be able to enter visa-free for up to 30 days for tourism or visiting family, among other purposes; an electronic arrival card is required. <!-- fact_106 --> If your wedding is in 2027, check the entry rules again closer to the date.
+Australia is in China's visa waiver program until 31 December 2026, and ordinary passport holders may be able to enter visa-free for no more than 30 days for business, tourism, visiting family and friends or transit; an electronic arrival card is required. <!-- fact_106 --> If your wedding is in 2027, check the entry rules again closer to the date.
 
 ### Paperwork and which office to ask
 
@@ -191,7 +195,7 @@ Couples marrying in Australia can carry the rites into the day. Two tea sittings
 
 Before you set the order of the day, ask how long each family expects its tea sitting to take, who drives elders between the two homes, and where they can rest. If you are marrying in China, ask early about flights and airport transfers for older guests, step-free access, and travel insurance and medical cover that suit their age and health.
 
-If you are planning a wedding in China, or a Chinese-Australian celebration at home, you can [speak with a Wedded Advisor](/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=chinese-wedding-traditions&utm_content=bridge). One Wedded Advisor is your single point of contact from start to finish, working in your time zone and quoting in AUD, and someone on the ground looks after the days that matter. The fee is agreed in writing before any work begins, and your Wedded Advisor confirms the inclusions in writing before you commit. The registry and the embassy decide the legal steps.
+If you are planning a wedding in China, or a Chinese-Australian celebration at home, you can [speak with a Wedded Advisor](/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=chinese-wedding-traditions&utm_content=secondary). One Wedded Advisor is your single point of contact from start to finish, working in your time zone and quoting in AUD, and someone on the ground looks after the days that matter. The fee is agreed in writing before any work begins, and your Wedded Advisor confirms the inclusions in writing before you commit. The registry and the embassy decide the legal steps.
 
 ## Chinese wedding traditions FAQ
 
@@ -201,7 +205,7 @@ In Singapore's Chinese communities, heritage bodies describe betrothal gifts (gu
 
 ### What happens at a Chinese wedding tea ceremony?
 
-The couple kneel or bow and offer tea to their elders with both hands, in order of seniority. <!-- fact_21 -->
+The couple kneel or bow and offer tea to their elders with both hands, in a set order: the gods, the groom's ancestors, his parents, then senior family members and other relatives. <!-- fact_21 -->
 
 ### Who attends the tea ceremony?
 
@@ -221,7 +225,7 @@ Red envelopes (hong bao, lai see) are made for gifts of money at weddings; guest
 
 ### Can Australians get married in China?
 
-Yes. As at November 2026, ask the embassy whether you need a CNI, and ask the registry and the embassy which documents, translations and fees apply. <!-- fact_109 --> <!-- fact_110 -->
+Check first: as at November 2026, ask the embassy whether you need a CNI, and ask the registry and the embassy which documents, translations and fees apply. <!-- fact_109 --> <!-- fact_110 -->
 
 ## Start with your family's customs
 
