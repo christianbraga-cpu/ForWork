@@ -11,3 +11,4 @@
 06:05 06 editor revise 3.86 (voice 3: ~20 source-credit lines); 33 edits applied -> 05-draft-r2.md; callejoneada no longer places weddings in Zacatecas; unverified /best-mexico-wedding-locations link removed; uhnw.json 'why' added; panel chair launched
 06:08 07b icp-panel-chair revise; enquire 2.6; must_fix: Advisor/CTA, guest questions, callejoneada -> Smartraveller pointer, Almoloya del Río once; real-wedding proof deferred (no VERIFY); final pass launched
 06:09 08 luxury-writer complete 2,981 words; 0 VERIFY; scan clean; 8b+CRO+distribution launched
+06:10 09 cro-specialist complete; /magazine primary; 2 copy changes; applying after 8b

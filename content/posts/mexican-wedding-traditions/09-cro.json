@@ -1,0 +1,104 @@
+{
+  "agent": "cro",
+  "task_id": "mexican-wedding-traditions",
+  "stage": "09",
+  "status": "complete",
+  "round": 1,
+  "inputs_used": [
+    "content-system/brand/services.md",
+    "content-system/brand/brand-facts.md",
+    "content/posts/mexican-wedding-traditions/01-brief.json",
+    "content/posts/mexican-wedding-traditions/07-panel.json",
+    "content/posts/mexican-wedding-traditions/08-final.md",
+    "content-system/seo/link-map.csv",
+    "content-system/schemas/09-cro.schema.json",
+    "content/posts/samoan-wedding-traditions/09-cro.json (format model)"
+  ],
+  "self_qa": {
+    "confidence": 0.85,
+    "checks": [
+      {
+        "check": "/magazine and /wonderland-concierge exist in link-map.csv",
+        "pass": true
+      },
+      {
+        "check": "Each copy_changes old string occurs exactly once in 08-final.md",
+        "pass": true
+      },
+      {
+        "check": "UTMs follow services.md (utm_source=blog, utm_medium=content, utm_campaign=mexican-wedding-traditions, utm_content primary or secondary)",
+        "pass": true
+      },
+      {
+        "check": "Primary text 6 words or fewer, no exclamation mark, no 'click here'",
+        "pass": true
+      },
+      {
+        "check": "Advisor wording from brand-facts.md only; no prices, paperwork help, 'last dance' or em dashes added",
+        "pass": true
+      },
+      {
+        "check": "At most 2 copy changes (2 used)",
+        "pass": true
+      }
+    ]
+  },
+  "assumptions": [
+    "CTA block markup follows the Samoan run; the CMS publisher adapts it to the field map's CTA component if different.",
+    "The magazine is both primary CTA and lead magnet, so no separate utm_content=magnet link is placed.",
+    "The existing inline Advisor link in 'Bringing Mexican traditions home' already carries utm_content=secondary and the panel must_fix wording is already applied in 08-final.md, so it is unchanged. The closing 'a Wedded Advisor will start from there' line stays unlinked to avoid a duplicate ask."
+  ],
+  "open_questions": [
+    {
+      "to": "orchestrator",
+      "question": "Apply copy_changes 1 and 2 to 08-final.md before distribution and CMS upload?",
+      "blocking": false
+    },
+    {
+      "to": "Nic",
+      "question": "Is a Mexico or Latin America magazine edition planned? None is in the link map, so the general /magazine page is used.",
+      "blocking": false
+    }
+  ],
+  "payload": {
+    "journey_stage": "dreaming",
+    "primary_cta": {
+      "text": "Read the free magazine",
+      "subtext": "Free to read, whenever you are ready.",
+      "link": "/magazine?utm_source=blog&utm_medium=content&utm_campaign=mexican-wedding-traditions&utm_content=primary",
+      "placement": "Fill the existing <!-- CTA: primary --> marker after section 12 (la tornaboda), before '13. Planning a Mexican wedding as Australians'. The closing-section magazine link is removed (copy_changes 2) so this is the only /magazine link."
+    },
+    "secondary_cta": {
+      "text": "Speak with a Wedded Advisor",
+      "subtext": "The fee is agreed in writing before any work begins.",
+      "link": "/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=mexican-wedding-traditions&utm_content=secondary",
+      "placement": "Existing inline 'speak with a Wedded Advisor' link closing 'Bringing Mexican traditions home', after the guest logistics, legal boundary and brand-facts Advisor wording, where the panel's accountability questions peak. Wording unchanged."
+    },
+    "lead_magnet": {
+      "name": "Wedded Wonderland digital magazine",
+      "link": "/magazine?utm_source=blog&utm_medium=content&utm_campaign=mexican-wedding-traditions&utm_content=primary",
+      "placement": "Same as primary CTA; no separate magnet placement.",
+      "exists": true
+    },
+    "tracking": [
+      "utm_content=primary on the /magazine CTA block",
+      "utm_content=secondary on the /wonderland-concierge inline link"
+    ],
+    "rationale": "Dreaming-stage reader (brief journey_stage) gets the low-commitment magazine first, per the services.md early-stage rule. The Advisor follows as the in-context secondary after the guest questions and the 'registry, Embassy and parish' boundary, which answer the panel must_fix on accountability before the ask. Weighted enquiry likelihood is 2.6, so no extra asks are added. Ideal magnet not on the site: a Mexican wedding family and sponsor planner (padrinos roles and cues, Mass and civil ceremony order, reception running order) for both families (suggestion only, exists false, not placed).",
+    "copy_changes": [
+      {
+        "old": "<!-- CTA: primary -->",
+        "new": "<!-- CTA: primary -->\n**Read the free magazine**\nFree to read, whenever you are ready.\n[Read the free magazine](/magazine?utm_source=blog&utm_medium=content&utm_campaign=mexican-wedding-traditions&utm_content=primary)\n<!-- /CTA: primary -->",
+        "why": "Fill the primary marker after the tornaboda, once the reader has the full run of customs and before the Australian planning section."
+      },
+      {
+        "old": "room for the band. For more ideas, [read the free Wedded Wonderland digital magazine](/magazine?utm_source=blog&utm_medium=content&utm_campaign=mexican-wedding-traditions&utm_content=primary).",
+        "new": "room for the band.",
+        "why": "Remove the duplicate utm_content=primary magazine link in the closing section so the primary CTA is tracked in one place; the closing Advisor line stays."
+      }
+    ]
+  },
+  "next_agent": [
+    "distribution"
+  ]
+}
