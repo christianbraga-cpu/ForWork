@@ -14,3 +14,5 @@
 03:46 09 cro-specialist complete; /magazine primary; 1 copy change; applying after 8b
 03:46 10 distribution complete 3 pins, 8-slide carousel, newsletter
 03:46 08b editor pass_with_edits; 5 blocking fixes (takeaway and taualuga claims beyond facts, recognition condition, FAQ 'Yes') + 1 CRO change applied; cms-publisher launched
+03:48 11 cms-publisher package complete (not uploaded, no Chrome); validate all valid
+03:48 finish: docx, run report, backlinks, link map, calendar 30; FINISHED (~47 min)
