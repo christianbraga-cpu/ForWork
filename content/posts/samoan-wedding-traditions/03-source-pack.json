@@ -1,483 +1,844 @@
 {
- "agent": "wedding-planner-sme",
- "task_id": "samoan-wedding-traditions",
- "stage": "03",
- "status": "complete",
- "round": 1,
- "next_agent": [
-  "luxury-writer"
- ],
- "inputs_used": [
-  "CLAUDE.md",
-  "content/posts/samoan-wedding-traditions/00-input.json",
-  "content/posts/samoan-wedding-traditions/01-brief.json (tradition_plan.batch_A)",
-  "content-system/schemas/03-source-pack.schema.json",
-  "content/posts/chinese-wedding-traditions/03-source-pack.json (format model)",
-  "https://blog.tepapa.govt.nz/2022/05/30/o-le-tulafale-the-orator-language-wayfinder-of-samoa/ (Apify web-fetch 2026-11-06, HTTP 200)",
-  "https://collections.tepapa.govt.nz/object/567243 (Apify web-fetch 2026-11-06, HTTP 200)",
-  "https://collections.tepapa.govt.nz/topic/1522 (Apify web-fetch 2026-11-06, HTTP 200)",
-  "https://teara.govt.nz/en/samoans/page-4 (Apify web-fetch 2026-11-06, HTTP 200)",
-  "https://www.britannica.com/place/Samoa-island-nation-Pacific-Ocean/Cultural-life (Apify web-fetch 2026-11-06, HTTP 200)",
-  "https://www.britannica.com/place/Samoa-island-nation-Pacific-Ocean/Government-and-society (Apify web-fetch 2026-11-06, HTTP 200)",
-  "https://www.britannica.com/place/Samoa-island-nation-Pacific-Ocean/People (Apify web-fetch 2026-11-06, HTTP 200)",
-  "https://www.samoa.travel/discover/our-people/ (Apify web-fetch 2026-11-06, HTTP 200)"
- ],
- "assumptions": [
-  "No amounts or counts: Britannica religion fractions are in the quote of fact_11 only; the claim and copy must not state percentages (no census page read).",
-  "Spelling varies by source: Te Papa topic page uses 'ie toga and Sāmoa, the object page uses 'ie tōga; samoa.travel uses fa'a Samoa and Matai; Te Ara uses fa'asamoa; Te Papa blog uses tulāfale and lāuga. Writer should pick one form per term and keep it consistent, matching a cited source.",
-  "fact_17 (Tongan chiefs' weddings) is about Tonga, not Samoan weddings; use only as context.",
-  "fact_18 'dowry' wording is Te Papa's; writer should paraphrase as the bride's family presenting fine mats to the groom's family, not as a transaction.",
-  "fact_21 and the quote come from a 2002 state reconciliation ceremony using marriage language, not a wedding; use only as an illustration of how fine mats seal relationships.",
-  "Britannica Samoa page is editorial; Te Papa pages (collections and curator blog) are typed 'other' (national museum).",
-  "The 15-minute window ran over while one fetch was in flight (Te Papa blog, read 03:35); no further sourcing rounds were started.",
-  "Legal, visa and UNESCO lines are batch B."
- ],
- "open_questions": [
-  {
-   "to": "orchestrator",
-   "blocking": false,
-   "question": "Can batch B or a follow-up read a source on the pre-wedding family meeting and on the groom's family's reciprocal gifts, or should both stay living practice?"
+  "agent": "wedding-planner-sme",
+  "task_id": "samoan-wedding-traditions",
+  "stage": "03",
+  "status": "complete",
+  "round": 1,
+  "next_agent": [
+    "luxury-writer"
+  ],
+  "inputs_used": [
+    "CLAUDE.md",
+    "content/posts/samoan-wedding-traditions/00-input.json",
+    "content/posts/samoan-wedding-traditions/01-brief.json (tradition_plan.batch_A)",
+    "content-system/schemas/03-source-pack.schema.json",
+    "content/posts/chinese-wedding-traditions/03-source-pack.json (format model)",
+    "https://blog.tepapa.govt.nz/2022/05/30/o-le-tulafale-the-orator-language-wayfinder-of-samoa/ (Apify web-fetch 2026-11-06, HTTP 200)",
+    "https://collections.tepapa.govt.nz/object/567243 (Apify web-fetch 2026-11-06, HTTP 200)",
+    "https://collections.tepapa.govt.nz/topic/1522 (Apify web-fetch 2026-11-06, HTTP 200)",
+    "https://teara.govt.nz/en/samoans/page-4 (Apify web-fetch 2026-11-06, HTTP 200)",
+    "https://www.britannica.com/place/Samoa-island-nation-Pacific-Ocean/Cultural-life (Apify web-fetch 2026-11-06, HTTP 200)",
+    "https://www.britannica.com/place/Samoa-island-nation-Pacific-Ocean/Government-and-society (Apify web-fetch 2026-11-06, HTTP 200)",
+    "https://www.britannica.com/place/Samoa-island-nation-Pacific-Ocean/People (Apify web-fetch 2026-11-06, HTTP 200)",
+    "https://www.samoa.travel/discover/our-people/ (Apify web-fetch 2026-11-06, HTTP 200)",
+    "content/posts/samoan-wedding-traditions/01-brief.json",
+    "content/posts/samoan-wedding-traditions/02-research/pages/smartraveller.md",
+    "content/posts/chinese-wedding-traditions/03-source-pack-part-1.json",
+    "https://ich.unesco.org/en/state/samoa-WS",
+    "https://ich.unesco.org/en/RL/ie-samoa-fine-mat-and-its-cultural-value-01499",
+    "https://www.smartraveller.gov.au/destinations/pacific/samoa",
+    "https://www.smartraveller.gov.au/planning-trip/advice-your-planned-activities/getting-married-overseas",
+    "https://www.smartraveller.gov.au/our-role/notarial-services/how-get-certificate-no-impediment-marriage",
+    "https://samoa.highcommission.gov.au/",
+    "https://www.mjca.gov.ws/",
+    "https://blog.tepapa.govt.nz/2012/03/09/taualuga-the-last-dance/",
+    "https://www.samoa.travel/discover/our-culture/",
+    "https://www.samoa.travel/discover/our-culture/dance/"
+  ],
+  "assumptions": [
+    "No amounts or counts: Britannica religion fractions are in the quote of fact_11 only; the claim and copy must not state percentages (no census page read).",
+    "Spelling varies by source: Te Papa topic page uses 'ie toga and Sāmoa, the object page uses 'ie tōga; samoa.travel uses fa'a Samoa and Matai; Te Ara uses fa'asamoa; Te Papa blog uses tulāfale and lāuga. Writer should pick one form per term and keep it consistent, matching a cited source.",
+    "fact_17 (Tongan chiefs' weddings) is about Tonga, not Samoan weddings; use only as context.",
+    "fact_18 'dowry' wording is Te Papa's; writer should paraphrase as the bride's family presenting fine mats to the groom's family, not as a transaction.",
+    "fact_21 and the quote come from a 2002 state reconciliation ceremony using marriage language, not a wedding; use only as an illustration of how fine mats seal relationships.",
+    "Britannica Samoa page is editorial; Te Papa pages (collections and curator blog) are typed 'other' (national museum).",
+    "The 15-minute window ran over while one fetch was in flight (Te Papa blog, read 03:35); no further sourcing rounds were started.",
+    "Legal, visa and UNESCO lines are batch B.",
+    "UNESCO cited only for its wedding sentence (fact_115); the Tatau Samoa link on the state page is an assistance project, not an inscribed element, and was not read.",
+    "Legal and visa lines are 'as at November 2026'; the Wedded Advisor confirms current requirements.",
+    "Upolu and Savai'i named only as places couples choose; no venue claims.",
+    "No fee amounts recorded (CNI fees exist per fact_111)."
+  ],
+  "open_questions": [
+    {
+      "to": "orchestrator",
+      "blocking": false,
+      "question": "Can batch B or a follow-up read a source on the pre-wedding family meeting and on the groom's family's reciprocal gifts, or should both stay living practice?"
+    },
+    {
+      "to": "orchestrator",
+      "blocking": false,
+      "question": "Can a follow-up read the High Commission Apia notarial/CNI page and a museum or academic source for the taualuga at weddings and umu dishes?"
+    }
+  ],
+  "tools_used": [
+    "mcp__Apify__apify--web-fetch",
+    "mcp__Apify__apify--web-search"
+  ],
+  "self_qa": {
+    "checks": [
+      {
+        "check": "Every fact has a source URL, exact quote, region and date read",
+        "pass": true,
+        "note": "27 facts, read live 2026-11-06."
+      },
+      {
+        "check": "No prices or amounts",
+        "pass": true,
+        "note": "No values, counts or money framing for fine mats."
+      },
+      {
+        "check": "Every batch A custom covered or listed as often told",
+        "pass": true,
+        "note": "Pre-wedding meeting, reciprocal gifts, minister's role and on-the-day village roles are often told."
+      },
+      {
+        "check": "No invented quotes, statistics or real weddings",
+        "pass": true,
+        "note": "One published orator quote from Te Papa; no real weddings."
+      }
+    ],
+    "confidence": 0.65,
+    "note": "Batch A only (fact_01 to fact_27). Batch B merges dress, siva and taualuga, feast, UNESCO and legal."
+  },
+  "verify_items": [
+    "[[VERIFY: ie faitaga (men's formal wrap) not found in any source read; samoa.travel names lavalava only (fact_118). Use 'lavalava' or source ie faitaga]]",
+    "[[VERIFY: no source read on wedding dress specifically: puletasi as bridal or guest wear, white gowns, floral ula/sei. Write as living practice only]]",
+    "[[VERIFY: taualuga as the closing dance at weddings and who performs it (taupou, matai's son or daughter) not sourced; Te Papa (fact_113) gives only 'a dance of negotiation and celebration'. Guests' role during the taualuga unsourced]]",
+    "[[VERIFY: umu dishes (pork, taro, palusami) not sourced; samoa.travel (fact_121) gives umu as underground oven cooking and to'anai as family feast only. Food shared among families after a wedding unsourced]]",
+    "[[VERIFY: Australian High Commission Apia CNI/notarial page not read (home page only, fact_108)]]",
+    "[[VERIFY: Samoa BDM registry (MJCA) no official page readable (fact_112). Article wording: 'check with the registry and the high commission, including any fees', as at November 2026]]",
+    "[[VERIFY: UNESCO seed URL -01491 is Ethiopian epiphany; link only -01499 (fact_101, fact_114)]]"
+  ],
+  "payload": {
+    "facts": [
+      {
+        "fact_id": "fact_01",
+        "region": "Samoa and diaspora",
+        "claim": "Samoa's tourism authority describes Samoan culture as based on fa'a Samoa, translated as 'The Samoan Way', which is holistic and, for many, closely associated with honouring one's family.",
+        "quote": "Samoan culture is of Polynesian heritage and is proudly based on fa'a Samoa which translates as 'The Samoan Way'. ... Fa'a Samoa is holistic, meaning that it is understood as encompassing all facets of the Samoan way of life. For many, adhering to fa'a Samoa is closely associated with honouring one's family.",
+        "source": "https://www.samoa.travel/discover/our-people/",
+        "source_type": "tourism_board",
+        "checked": "2026-11-06",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_02",
+        "region": "Samoa",
+        "claim": "Samoan society is organised by extended families (aiga), each with its own Matai ('chief' or 'leader') titles connected to districts, villages and family land, a system the tourism authority calls 'fa'a Matai'.",
+        "quote": "Samoan society is based on a collectivist system known as 'fa'a Matai'. In this system, society is organised by extended families (aiga), with each family having its own 'Matai' ('chief' or 'leader') titles that are connected to certain districts, villages, and plots of family land.",
+        "source": "https://www.samoa.travel/discover/our-people/",
+        "source_type": "tourism_board",
+        "checked": "2026-11-06",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_03",
+        "region": "Samoa",
+        "claim": "Matai are responsible for administrative duties and for maintaining the traditions and customs of the village, and their status is highly respected.",
+        "quote": "Matai are responsible for administrative duties and maintaining the traditions and customs of the village. Matai are also seen as spiritual caretakers of all those who fall under their authority. The status of Matai is highly respected among the community.",
+        "source": "https://www.samoa.travel/discover/our-people/",
+        "source_type": "tourism_board",
+        "checked": "2026-11-06",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_04",
+        "region": "Samoa",
+        "claim": "Members of the aiga are expected to be generous and to put the interests of the group or community ahead of their own.",
+        "quote": "Individuals in the aiga are expected to be generous with their possessions and prioritise the interests of the group or community over their own.",
+        "source": "https://www.samoa.travel/discover/our-people/",
+        "source_type": "tourism_board",
+        "checked": "2026-11-06",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_05",
+        "region": "Samoa",
+        "claim": "In village areas local law prevails and can vary from village to village.",
+        "quote": "In the village area, local law prevails, which can vary from village to village.",
+        "source": "https://www.samoa.travel/discover/our-people/",
+        "source_type": "tourism_board",
+        "checked": "2026-11-06",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_06",
+        "region": "Samoa",
+        "claim": "Britannica says Samoans have strived to preserve the fa'a Samoa ('Samoan way of life'), so many traditions of rural life remain virtually unchanged, though some customs have changed markedly, particularly in Apia.",
+        "quote": "Although some Samoan values and customs have changed markedly since European contact, particularly in Apia, Samoans have strived to preserve the fa'a Samoa (“Samoan way of life”); thus, many traditions and outward features of rural life have remained virtually unchanged.",
+        "source": "https://www.britannica.com/place/Samoa-island-nation-Pacific-Ocean/Cultural-life",
+        "source_type": "editorial",
+        "checked": "2026-11-06",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_07",
+        "region": "Samoa",
+        "claim": "Most Samoan villages have a church and a meetinghouse, which doubles as a cultural centre.",
+        "quote": "Most Samoan villages have a church and a meetinghouse, which doubles as a cultural centre.",
+        "source": "https://www.britannica.com/place/Samoa-island-nation-Pacific-Ocean/Cultural-life",
+        "source_type": "editorial",
+        "checked": "2026-11-06",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_08",
+        "region": "Samoa",
+        "claim": "Matai are still expected to deliver rhythmic and poetical orations at council meetings and other major events.",
+        "quote": "Genealogies, legends, chants, and spells have all been passed down and elaborated through the generations, and matai are still expected to deliver rhythmic and poetical orations at council meetings and other major events.",
+        "source": "https://www.britannica.com/place/Samoa-island-nation-Pacific-Ocean/Cultural-life",
+        "source_type": "editorial",
+        "checked": "2026-11-06",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_09",
+        "region": "Samoa",
+        "claim": "Samoans often entertain one another at weddings and other family gatherings with ula, in which two groups alternate between singing and dancing.",
+        "quote": "Samoans often entertain one another at weddings and other family gatherings with ula, in which two groups alternate between singing and dancing.",
+        "source": "https://www.britannica.com/place/Samoa-island-nation-Pacific-Ocean/Cultural-life",
+        "source_type": "editorial",
+        "checked": "2026-11-06",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_10",
+        "region": "Samoa",
+        "claim": "Kava, a traditional nonalcoholic drink from a tropical pepper plant, is consumed at social events, mainly by matai.",
+        "quote": "Kava, a traditional nonalcoholic, euphoria-producing drink, is prepared from a tropical pepper plant and consumed at social events, mainly by matai, who customarily pour a small amount on the ground before and after drinking.",
+        "source": "https://www.britannica.com/place/Samoa-island-nation-Pacific-Ocean/Cultural-life",
+        "source_type": "editorial",
+        "checked": "2026-11-06",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_11",
+        "region": "Samoa",
+        "claim": "Samoans readily adopted Christianity after European contact and even remote villages built churches, often of grand proportions; the Congregational Christian Church of Samoa is the dominant church, with Roman Catholic, Latter-day Saint and Methodist communities also significant.",
+        "quote": "They readily adopted Christian teachings following European contact, and even the more remote villages built churches, often of grand proportions. The Congregational Christian Church of Samoa (Ekalesia Faapotopotoga Kerisiano Samoa [EKFS]; formerly the London Missionary Society) is the dominant religion ... Approximately one-fifth of Samoans are Roman Catholics, and Latter-day Saints constitute about one-sixth of the population. Methodists make up one-eighth.",
+        "source": "https://www.britannica.com/place/Samoa-island-nation-Pacific-Ocean/People",
+        "source_type": "editorial",
+        "checked": "2026-11-06",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_12",
+        "region": "Samoa and diaspora",
+        "claim": "Tens of thousands of Samoans have emigrated to New Zealand, the United States, Australia and elsewhere.",
+        "quote": "tens of thousands of Samoans had emigrated to New Zealand, the United States, Australia, and elsewhere.",
+        "source": "https://www.britannica.com/place/Samoa-island-nation-Pacific-Ocean/People",
+        "source_type": "editorial",
+        "checked": "2026-11-06",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_13",
+        "region": "Samoa",
+        "claim": "Te Papa describes 'ie toga (fine mat) as presented as a valuable in ceremonies that cement relationships between people, and as worn as a garment on important occasions by high-ranking matai and taupou (daughters of chiefs).",
+        "quote": "On important occasions, high ranking matai (chiefs) and taupou (daughters of chiefs) may have worn it as a garment, but it has also been presented as a valuable in ceremonies that cement relationships between people.",
+        "source": "https://collections.tepapa.govt.nz/topic/1522",
+        "source_type": "other",
+        "checked": "2026-11-06",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_14",
+        "region": "Samoa",
+        "claim": "'Ie toga are the highest-ranking item in the Samoan exchange system; they seal relationships between groups of people and feature at special events and ceremonies.",
+        "quote": "‘Ie toga are the highest ranking item in the exchange system within Sāmoan society. They seal relationships between groups of people and feature at special events and ceremonies.",
+        "source": "https://collections.tepapa.govt.nz/topic/1522",
+        "source_type": "other",
+        "checked": "2026-11-06",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_15",
+        "region": "Samoa",
+        "claim": "An 'ie toga is hand woven with fibres so fine that it could take months or years to complete; in the past they were made by young women, who also completed mats left unfinished by older female relatives.",
+        "quote": "A ‘ie toga was hand woven with great skill, with fibres so fine that it could take months or years to complete. In the past, ‘ie toga were made by young women, who would commence their own mats, or complete mats left unfinished by older female family members.",
+        "source": "https://collections.tepapa.govt.nz/topic/1522",
+        "source_type": "other",
+        "checked": "2026-11-06",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_16",
+        "region": "Samoa",
+        "claim": "'Ie toga are preserved with great care, some pass through several generations gaining sentimental or historical value, and they may be given names.",
+        "quote": "They are preserved and guarded with great care. Some pass through several generations, and as more people or events become associated with them, they often gain immense sentimental or historical value. ‘Ie toga might be given a name, and the most important might have several names.",
+        "source": "https://collections.tepapa.govt.nz/topic/1522",
+        "source_type": "other",
+        "checked": "2026-11-06",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_17",
+        "region": "Samoa and Tonga",
+        "claim": "The presence of an 'ie toga brings great dignity to an event, and since the early 1800s Samoan 'ie toga have been exchanged at weddings of high-ranking Tongan chiefs.",
+        "quote": "The presence of an ‘ie toga brings great dignity to an event. Since the early 1800s, Sāmoan ‘ie toga have been exchanged at weddings of high-ranking Tongan chiefs.",
+        "source": "https://collections.tepapa.govt.nz/topic/1522",
+        "source_type": "other",
+        "checked": "2026-11-06",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_18",
+        "region": "Samoa",
+        "claim": "Te Papa says that in Samoan marriage ceremonies 'ie tōga are presented to the husband's family by the bride's family.",
+        "quote": "For example, in Samoan marriage ceremonies, 'ie tōga are presented to the husband's family by the bride's family, and are viewed in much the same way as dowry property.",
+        "source": "https://collections.tepapa.govt.nz/object/567243",
+        "source_type": "other",
+        "checked": "2026-11-06",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_19",
+        "region": "Samoa",
+        "claim": "Te Papa records an 1800s 'ie tōga woven from pandanus (Pandanus tectorius) with red feathers.",
+        "quote": "Materials Summarypandanus, Pandanus tectorius; red feathers of the Samoan sega or parrot, Phigys solitarius.",
+        "source": "https://collections.tepapa.govt.nz/object/567243",
+        "source_type": "other",
+        "checked": "2026-11-06",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_20",
+        "region": "Samoa",
+        "claim": "'Ie tōga are exchanged frequently and can pass through generations, and a particularly old and fine one brings great dignity to a ceremony.",
+        "quote": "Many 'ie tōga are exchanged frequently and pass through several generations, gaining value as their age and associations accumulate. ... The presence or use of a particularly old and fine 'ie tōga brings great dignity to a ceremony or an event.",
+        "source": "https://collections.tepapa.govt.nz/object/567243",
+        "source_type": "other",
+        "checked": "2026-11-06",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_21",
+        "region": "Samoa",
+        "claim": "At a 2002 presentation of the 'ie tōga Le Ageagea o Tumua, a Samoan orator's published speech referred to villages 'chanting the marriage chants' and presented the fine mat 'to seal our marriage' between two nations.",
+        "quote": "\"Today, Prime Minister Helen Clark, you hear Lufilufi, Falefa, and Salani chanting the marriage chants. ... [We] present this fine mat to seal our marriage. The name of the fine mat is Le Ageagea o Tumua.\"",
+        "source": "https://collections.tepapa.govt.nz/object/567243",
+        "source_type": "other",
+        "checked": "2026-11-06",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_22",
+        "region": "Samoa",
+        "claim": "Each of Samoa's several thousand aiga (extended families) designates at least one matai to lead and represent it, and the matai form village councils to administer local affairs.",
+        "quote": "Each of Samoa’s several thousand aiga (extended families) designates at least one matai to lead and represent it; the matai, in turn, form village councils to administer local affairs.",
+        "source": "https://www.britannica.com/place/Samoa-island-nation-Pacific-Ocean/Government-and-society",
+        "source_type": "editorial",
+        "checked": "2026-11-06",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_23",
+        "region": "Samoan diaspora (New Zealand)",
+        "claim": "Te Ara, the New Zealand government encyclopedia, says the bedrock of fa‘asamoa (Samoan culture) is aiga (family), which remains a permanent fixture.",
+        "quote": "In the end, the bedrock of fa‘asamoa (Samoan culture) is aiga (family); friends and acquaintances come and go, but the aiga remains as a permanent fixture.",
+        "source": "https://teara.govt.nz/en/samoans/page-4",
+        "source_type": "government",
+        "checked": "2026-11-06",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_24",
+        "region": "Samoan diaspora (New Zealand)",
+        "claim": "Te Ara notes that for New Zealand-born Samoans the church often provides the anchor, and Samoans tend to return to their ethnic identity when they mature and have children.",
+        "quote": "For those ready to return to some form of stability, the church often provides the anchor. ... When they mature and have their own children, Samoans tend to return to their ethnic identity.",
+        "source": "https://teara.govt.nz/en/samoans/page-4",
+        "source_type": "government",
+        "checked": "2026-11-06",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_25",
+        "region": "Samoa",
+        "claim": "Te Papa's Pacific curator writes that the tulāfale (orator), through lāuga (oratory), represents the interests of ali‘i at formal occasions and is the mouthpiece of families, villages and districts, influential in directing ceremonies, presentations and cultural protocols.",
+        "quote": "In Sāmoan society, the tulāfale or orator has a wayfinding role. Through their lāuga (oratory) they represent the interests of ali‘i in any formal occasions or events. They are the mouthpiece of families, villages and districts and are influential in directing ceremonies, presentations and cultural protocols.",
+        "source": "https://blog.tepapa.govt.nz/2022/05/30/o-le-tulafale-the-orator-language-wayfinder-of-samoa/",
+        "source_type": "other",
+        "checked": "2026-11-06",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_26",
+        "region": "Samoa",
+        "claim": "Tulāfale are keepers of cultural knowledge such as history and genealogies, and negotiate the relationships between different parties.",
+        "quote": "Tulāfale are keepers and transmitters of cultural knowledge such as history and genealogies, but they are also wayfinders who negotiate the relationships between different parties.",
+        "source": "https://blog.tepapa.govt.nz/2022/05/30/o-le-tulafale-the-orator-language-wayfinder-of-samoa/",
+        "source_type": "other",
+        "checked": "2026-11-06",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_27",
+        "region": "Samoa",
+        "claim": "Tulāfale usually present lāuga indoors in a fale or outdoors on the malae (village green), and carry the fue (fly whisk), to‘oto‘o (staff) and wear the ‘ulafala (pandanus key necklace) as symbols of their office.",
+        "quote": "In Sāmoa, tulāfale usually present their lāuga (ceremonial speeches) in two main settings: either indoors within a fale (house) or outdoors on the malae (village green). ... Tulāfale also carry to‘oto‘o (long wooden staffs). Along with the fue and the ‘ulafala, they are symbols of their office.",
+        "source": "https://blog.tepapa.govt.nz/2022/05/30/o-le-tulafale-the-orator-language-wayfinder-of-samoa/",
+        "source_type": "other",
+        "checked": "2026-11-06",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_100",
+        "claim": "UNESCO's Samoa state page lists one element inscribed: 'Ie Samoa, fine mat and its cultural value, 2019, Representative List (RL).",
+        "quote": "1 elements inscribed ... 2019: 'Ie Samoa, fine mat and its cultural value (RL)",
+        "source": "https://ich.unesco.org/en/state/samoa-WS",
+        "source_type": "other",
+        "checked": "2026-11-06",
+        "is_price": false,
+        "region": "Samoa"
+      },
+      {
+        "fact_id": "fact_101",
+        "claim": "The seed URL https://ich.unesco.org/en/RL/ie-samoa-fine-mat-and-its-cultural-value-01491 is wrong: it returns HTTP 200 but serves the 'Ethiopian epiphany' element (canonical ethiopian-epiphany-01491). Do not link it.",
+        "quote": "canonicalUrl: https://ich.unesco.org/en/RL/ethiopian-epiphany-01491; title: Ethiopian epiphany - UNESCO Intangible Cultural Heritage",
+        "source": "https://ich.unesco.org/en/RL/ie-samoa-fine-mat-and-its-cultural-value-01491",
+        "source_type": "other",
+        "checked": "2026-11-06",
+        "is_price": false,
+        "conflicts": "Brief seed URL ID 01491 belongs to Ethiopian epiphany, not 'Ie Samoa."
+      },
+      {
+        "fact_id": "fact_102",
+        "claim": "Smartraveller Samoa: overall level 'Exercise normal safety precautions'; updated 05 August 2026, still current at 06 November 2026; ongoing dengue outbreak since 2025.",
+        "quote": "Overall: Exercise normal safety precautions ... Still current at:06 November 2026Updated:05 August 2026 ... There's an ongoing dengue outbreak in Samoa since 2025.",
+        "source": "https://www.smartraveller.gov.au/destinations/pacific/samoa",
+        "source_type": "government",
+        "checked": "2026-11-06",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_103",
+        "claim": "Smartraveller: cyclone season is November to April, but storms can occur year-round; earthquakes and tsunamis can occur.",
+        "quote": "Cyclone season is November to April, but storms occur year-round.",
+        "source": "https://www.smartraveller.gov.au/destinations/pacific/samoa",
+        "source_type": "government",
+        "checked": "2026-11-06",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_104",
+        "claim": "Smartraveller: Sunday activities are extremely limited and alcohol can't be sold; hotels and resorts operate normally; be respectful passing through villages on a Sunday.",
+        "quote": "Sunday activities are extremely limited and alcohol can't be sold. Most businesses are closed except for few shops and restaurants are open while hotels and resorts operate normally.",
+        "source": "https://www.smartraveller.gov.au/destinations/pacific/samoa",
+        "source_type": "government",
+        "checked": "2026-11-06",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_105",
+        "claim": "Smartraveller: outside tourist areas the dress code is conservative; dress respectfully in villages.",
+        "quote": "Outside of tourist areas, the dress code in Samoa is conservative. Dress respectfully when visiting village areas.",
+        "source": "https://www.smartraveller.gov.au/destinations/pacific/samoa",
+        "source_type": "government",
+        "checked": "2026-11-06",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_106",
+        "claim": "Smartraveller: same-sex relationships are not recognised in Samoa (state neutrally, once).",
+        "quote": "Same-sex relationships aren't recognised in Samoa and consensual sex between men is illegal.",
+        "source": "https://www.smartraveller.gov.au/destinations/pacific/samoa",
+        "source_type": "government",
+        "checked": "2026-11-06",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_107",
+        "claim": "Smartraveller: Australians can apply for a 90 day Visitor Permit on arrival using the passenger arrival card (tourism, confirmed onward ticket, enough funds, passport valid 6 months beyond stay); conditions can change at short notice. As at November 2026.",
+        "quote": "You can apply for a 90 day Visitor Permit on arrival using the passenger arrival card if you: stay less than 90 days; visit for tourism; have confirmed return or onward ticket; have enough funds to support yourself; have a passport that's valid for at least 6 months beyond your intended stay",
+        "source": "https://www.smartraveller.gov.au/destinations/pacific/samoa",
+        "source_type": "government",
+        "checked": "2026-11-06",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_108",
+        "claim": "Smartraveller lists the Australian High Commission, Apia at 47 Beach Road, Apia, phone +685 23 411, website samoa.highcommission.gov.au. The High Commission home page (live) offers consular assistance 9am to 4.30pm Apia time Monday to Friday; no CNI or notarial page was read.",
+        "quote": "Australian High Commission, Apia 47 Beach Road Apia, Samoa Phone: +685 23 411 / For consular assistance 9am to 4.30pm Apia time, Monday to Friday, please contact +685 23411 or visit the Australian High Commission, Beach Rd, Apia.",
+        "source": "https://www.smartraveller.gov.au/destinations/pacific/samoa ; https://samoa.highcommission.gov.au/",
+        "source_type": "government",
+        "checked": "2026-11-06",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_109",
+        "claim": "Smartraveller 'Getting married overseas' (last updated 18/08/2026): some countries ask you to prove you are free to marry; common documents are a CNI or certificates from a births, deaths and marriages registry; contact the destination's embassy or consulate for specifics.",
+        "quote": "Some countries will ask you to prove you aren't already married before you can get married there. Each country decides what proof it will accept.",
+        "source": "https://www.smartraveller.gov.au/planning-trip/advice-your-planned-activities/getting-married-overseas",
+        "source_type": "government",
+        "checked": "2026-11-06",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_110",
+        "claim": "Smartraveller: you can't register an overseas marriage in Australia, but in most cases it is legally recognised if valid where it happened and valid under Australian law had it occurred in Australia; talk to a lawyer to confirm.",
+        "quote": "You can't register an overseas marriage in Australia. But in most cases, your marriage is legally recognised here.",
+        "source": "https://www.smartraveller.gov.au/planning-trip/advice-your-planned-activities/getting-married-overseas",
+        "source_type": "government",
+        "checked": "2026-11-06",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_111",
+        "claim": "Smartraveller CNI page (last updated 01/10/2026): DFAT issues CNIs through Australian Passport Offices, embassies, high commissions and consulates overseas, and by mail; fees apply (no amounts recorded); some authorities only accept a CNI issued in their country; ask whether an apostille or authentication is needed.",
+        "quote": "DFAT issues CNIs: through Australian Passport Offices across Australia; through Australian embassies, high commissions, and consulates overseas; by mail. ... Note that we charge fees for our service.",
+        "source": "https://www.smartraveller.gov.au/our-role/notarial-services/how-get-certificate-no-impediment-marriage",
+        "source_type": "government",
+        "checked": "2026-11-06",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_112",
+        "claim": "The Samoa Ministry of Justice and Courts Administration URL www.mjca.gov.ws returned 'Site Not Found' (HTTP 404) on 2026-11-06; no official BDM page read. Article wording: 'check with the registry and the high commission, including any fees', as at November 2026.",
+        "quote": "Site Not Found",
+        "source": "https://www.mjca.gov.ws/",
+        "source_type": "government",
+        "checked": "2026-11-06",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_113",
+        "claim": "Te Papa describes taualuga as 'the classical Samoan dance of Taualuga - a dance of negotiation and celebration' (context: an artwork by Shigeyuki Kihara). It does not mention weddings or who performs it.",
+        "quote": "Using the principles of the classical Samoan dance of Taualuga – a dance of negotiation and celebration – as a form of storytelling",
+        "source": "https://blog.tepapa.govt.nz/2012/03/09/taualuga-the-last-dance/",
+        "source_type": "editorial",
+        "checked": "2026-11-06",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_114",
+        "claim": "Correct live UNESCO URL for ''Ie Samoa, fine mat and its cultural value'; inscribed in 2019 (14.COM) on the Representative List of the Intangible Cultural Heritage of Humanity.",
+        "quote": "Inscribed in 2019 (14.COM) on the Representative List of the Intangible Cultural Heritage of Humanity",
+        "source": "https://ich.unesco.org/en/RL/ie-samoa-fine-mat-and-its-cultural-value-01499",
+        "source_type": "other",
+        "checked": "2026-11-06",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_115",
+        "claim": "UNESCO's 'Ie Samoa text links the mat to weddings: it is displayed and exchanged at festive celebrations or important gatherings such as weddings and funerals, and its exchange helps maintain the social structure. Its value lies in exchange in ceremonies that reaffirm kinship ties.",
+        "quote": "The 'Ie Samoa is displayed and exchanged at festive celebrations or on important gatherings such as weddings and funerals, and its exchange contributes profoundly to the maintenance of the social structure.",
+        "source": "https://ich.unesco.org/en/RL/ie-samoa-fine-mat-and-its-cultural-value-01499",
+        "source_type": "other",
+        "checked": "2026-11-06",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_116",
+        "claim": "UNESCO: the 'Ie Samoa is a finely hand-woven pandanus mat with two rows of green and red feathers at the hem; a single mat can take up to several months and even years to make.",
+        "quote": "Producing a single 'Ie Samoa can therefore take up to several months and even years.",
+        "source": "https://ich.unesco.org/en/RL/ie-samoa-fine-mat-and-its-cultural-value-01499",
+        "source_type": "other",
+        "checked": "2026-11-06",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_117",
+        "claim": "Samoa Tourism Authority: the siva is a slow, fluid, graceful storytelling dance traditionally performed by a young woman.",
+        "quote": "Slow and fluid, the siva is a graceful storytelling dance that is traditionally performed by a young woman.",
+        "source": "https://www.samoa.travel/discover/our-culture/dance/",
+        "source_type": "tourism_board",
+        "checked": "2026-11-06",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_118",
+        "claim": "Samoa Tourism Authority: in the fa'ataupati, men wear traditional lavalava and women wear puletasi, 'a two-piece garment'. Spelling as given: puletasi, lavalava.",
+        "quote": "the fa'ataupati is performed by men wearing traditional lavalava and women wearing puletasi, a two-piece garment.",
+        "source": "https://www.samoa.travel/discover/our-culture/dance/",
+        "source_type": "tourism_board",
+        "checked": "2026-11-06",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_119",
+        "claim": "Samoa Tourism Authority: Fa'a Samoa (the Samoan way) is a way of life stretching back more than 3000 years; life is about being part of a community that looks after each other.",
+        "quote": "People still live with a strong focus on Fa'a Samoa (the Samoan way) - a way of life that stretches back more than 3000 years",
+        "source": "https://www.samoa.travel/discover/our-culture/",
+        "source_type": "tourism_board",
+        "checked": "2026-11-06",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_120",
+        "claim": "Samoa Tourism Authority: the church is central to the Samoan way of life; Sundays are a National Day of Rest; for church, women wear a dress or blouse and skirt and men trousers and shirt; some villages observe an evening prayer curfew (Sa).",
+        "quote": "The church is central to the Samoan way of life. ... If you are attending church on Sunday, women are asked to wear a dress or blouse and skirt and men, trousers and shirt.",
+        "source": "https://www.samoa.travel/discover/our-culture/",
+        "source_type": "tourism_board",
+        "checked": "2026-11-06",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_121",
+        "claim": "Samoa Tourism Authority: special occasions bring a big 'to'anai' (feast) for the whole family; Teuila Festival includes Umu demonstrations described as 'underground Samoan oven cooking'; fiafia nights include dinner cooked in the traditional way.",
+        "quote": "As with any other special occasions, there is always a big \"to'anai\" (feast) prepared for the whole family. ... Umu demonstrations (underground Samoan oven cooking)",
+        "source": "https://www.samoa.travel/discover/our-culture/",
+        "source_type": "tourism_board",
+        "checked": "2026-11-06",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_122",
+        "claim": "Samoa Tourism Authority: guests visiting villages are asked to wear a lavalava (sarong), pants or shorts and t-shirt; remove shoes entering a fale; do not stand when elders are seated.",
+        "quote": "Guests are asked to wear a lavalava (sarong) pants or shorts and t-shirt.",
+        "source": "https://www.samoa.travel/discover/our-culture/",
+        "source_type": "tourism_board",
+        "checked": "2026-11-06",
+        "is_price": false
+      }
+    ],
+    "insider_details": [
+      {
+        "detail": "Ask each family early who will speak for them: the tulāfale directs ceremonies, presentations and protocol, so the run sheet should be built around the speeches and presentations rather than the other way round.",
+        "fact_ids": [
+          "fact_25",
+          "fact_26",
+          "fact_08"
+        ]
+      },
+      {
+        "detail": "Leave unhurried time and a dignified, sheltered space for the presentation of 'ie toga; they are the highest-ranking item in the exchange system and their presentation seals the relationship between the families.",
+        "fact_ids": [
+          "fact_13",
+          "fact_14",
+          "fact_18",
+          "fact_20"
+        ]
+      },
+      {
+        "detail": "Treat heirloom fine mats as irreplaceable: some are named and pass through generations, so agree handling, display and transport with the family rather than with suppliers.",
+        "fact_ids": [
+          "fact_16",
+          "fact_20"
+        ]
+      },
+      {
+        "detail": "For a wedding in a village, the matai and village council administer local affairs and local law can vary by village, so the family's matai is the right first conversation about what is appropriate.",
+        "fact_ids": [
+          "fact_03",
+          "fact_05",
+          "fact_22"
+        ]
+      },
+      {
+        "detail": "Diaspora couples in Australia often plan with relatives across New Zealand, Australia and Samoa; the aiga leads, so keep the families' timelines central from the first planning conversation.",
+        "fact_ids": [
+          "fact_12",
+          "fact_23",
+          "fact_04"
+        ]
+      },
+      {
+        "detail": "Cyclone season runs November to April, so couples planning a wet-season date should build weather flexibility into outdoor ceremony and feast plans, as at November 2026.",
+        "fact_ids": [
+          "fact_103"
+        ]
+      },
+      {
+        "detail": "Sunday is a day of rest in Samoa: most businesses close and alcohol can't be sold, though hotels and resorts run normally, so avoid a Sunday wedding day outside a resort and plan guest transfers through villages quietly.",
+        "fact_ids": [
+          "fact_104",
+          "fact_120"
+        ]
+      },
+      {
+        "detail": "Guests visiting villages or attending church should dress modestly (dresses or skirts for women, trousers and shirt for men), so include a short dress note in the guest pack.",
+        "fact_ids": [
+          "fact_105",
+          "fact_120",
+          "fact_122"
+        ]
+      },
+      {
+        "detail": "Australians generally arrive on a 90 day Visitor Permit, and a passport valid six months beyond the stay is required, so check every guest's passport expiry when invitations go out.",
+        "fact_ids": [
+          "fact_107"
+        ]
+      },
+      {
+        "detail": "Proof of freedom to marry may be a CNI or a registry certificate, and some authorities only accept a CNI issued locally, so confirm with the registry and the High Commission in Apia before booking, including any fees.",
+        "fact_ids": [
+          "fact_109",
+          "fact_111",
+          "fact_108",
+          "fact_112"
+        ]
+      }
+    ],
+    "quotes": [
+      {
+        "speaker": "Faamatuainu Tala Mailei, at the 2002 presentation of the 'ie tōga Le Ageagea o Tumua, as published by Te Papa",
+        "text": "[We] present this fine mat to seal our marriage. The name of the fine mat is Le Ageagea o Tumua.",
+        "source": "https://collections.tepapa.govt.nz/object/567243"
+      }
+    ],
+    "real_weddings": [],
+    "verify_items": [
+      "[[VERIFY: ie faitaga (men's formal wrap) not found in any source read; samoa.travel names lavalava only (fact_118). Use 'lavalava' or source ie faitaga]]",
+      "[[VERIFY: no source read on wedding dress specifically: puletasi as bridal or guest wear, white gowns, floral ula/sei. Write as living practice only]]",
+      "[[VERIFY: taualuga as the closing dance at weddings and who performs it (taupou, matai's son or daughter) not sourced; Te Papa (fact_113) gives only 'a dance of negotiation and celebration'. Guests' role during the taualuga unsourced]]",
+      "[[VERIFY: umu dishes (pork, taro, palusami) not sourced; samoa.travel (fact_121) gives umu as underground oven cooking and to'anai as family feast only. Food shared among families after a wedding unsourced]]",
+      "[[VERIFY: Australian High Commission Apia CNI/notarial page not read (home page only, fact_108)]]",
+      "[[VERIFY: Samoa BDM registry (MJCA) no official page readable (fact_112). Article wording: 'check with the registry and the high commission, including any fees', as at November 2026]]",
+      "[[VERIFY: UNESCO seed URL -01491 is Ethiopian epiphany; link only -01499 (fact_101, fact_114)]]"
+    ],
+    "needs_signoff": [],
+    "must_include_coverage": [
+      {
+        "item": "One early framing line: practice varies by family, village and diaspora community; written as living practice",
+        "covered_by": [
+          "fact_05",
+          "fact_06",
+          "fact_23",
+          "fact_24"
+        ]
+      },
+      {
+        "item": "1 Fa'a Samoa, matai and aiga",
+        "covered_by": [
+          "fact_01",
+          "fact_02",
+          "fact_03",
+          "fact_04",
+          "fact_22",
+          "fact_23"
+        ]
+      },
+      {
+        "item": "2 Families' formal meeting and tulafale speeches",
+        "covered_by": [
+          "fact_08",
+          "fact_25",
+          "fact_26",
+          "fact_27"
+        ]
+      },
+      {
+        "item": "3 'Ie toga fine mats and gifts, no amounts or counts",
+        "covered_by": [
+          "fact_13",
+          "fact_14",
+          "fact_15",
+          "fact_16",
+          "fact_17",
+          "fact_18",
+          "fact_19",
+          "fact_20",
+          "fact_21"
+        ]
+      },
+      {
+        "item": "4 The church wedding",
+        "covered_by": [
+          "fact_07",
+          "fact_11",
+          "fact_24"
+        ]
+      },
+      {
+        "item": "5 Extended family and village roles",
+        "covered_by": [
+          "fact_03",
+          "fact_04",
+          "fact_05",
+          "fact_09",
+          "fact_10",
+          "fact_22"
+        ]
+      },
+      {
+        "item": "Samoan terms with diacritics exactly as sources give them",
+        "covered_by": [
+          "fact_01",
+          "fact_02",
+          "fact_13",
+          "fact_18",
+          "fact_23",
+          "fact_25",
+          "fact_27"
+        ]
+      },
+      {
+        "item": "Exactly 4 one-sentence Key takeaways",
+        "covered_by": [
+          "fact_115",
+          "fact_117",
+          "fact_102",
+          "fact_110"
+        ]
+      },
+      {
+        "item": "One early framing line: practice varies by family, village and diaspora community",
+        "covered_by": [
+          "fact_119"
+        ]
+      },
+      {
+        "item": "About 10 numbered sections in wedding order (batch B: dress, siva and taualuga, feast and umu, UNESCO, for Australians)",
+        "covered_by": [
+          "fact_118",
+          "fact_117",
+          "fact_113",
+          "fact_121",
+          "fact_114",
+          "fact_115",
+          "fact_107"
+        ]
+      },
+      {
+        "item": "Samoan terms with diacritics exactly as sources give them; glossary",
+        "covered_by": [
+          "fact_118",
+          "fact_119",
+          "fact_121",
+          "fact_114",
+          "[[VERIFY: ie faitaga (men's formal wrap) not found in any source read; samoa.travel names lavalava only (fact_118). Use 'lavalava' or source ie faitaga]]"
+        ]
+      },
+      {
+        "item": "Fine mats and gifts described with no amounts or counts",
+        "covered_by": [
+          "fact_115",
+          "fact_116"
+        ]
+      },
+      {
+        "item": "UNESCO 'ie Samoa element quoted only as far as its own text links to weddings, if confirmed live",
+        "covered_by": [
+          "fact_100",
+          "fact_114",
+          "fact_115"
+        ]
+      },
+      {
+        "item": "Section for Australians",
+        "covered_by": [
+          "fact_102",
+          "fact_103",
+          "fact_104",
+          "fact_105",
+          "fact_106",
+          "fact_107",
+          "fact_108",
+          "fact_109",
+          "fact_110",
+          "fact_111",
+          "fact_112",
+          "[[VERIFY: Australian High Commission Apia CNI/notarial page not read (home page only, fact_108)]]",
+          "[[VERIFY: Samoa BDM registry (MJCA) no official page readable (fact_112). Article wording: 'check with the registry and the high commission, including any fees', as at November 2026]]"
+        ]
+      },
+      {
+        "item": "FAQ of 5 to 7 questions with no amounts",
+        "covered_by": [
+          "fact_107",
+          "fact_110",
+          "fact_115",
+          "fact_117",
+          "fact_104"
+        ]
+      },
+      {
+        "item": "Internal links: /destinations/oceania hub and a Fiji page",
+        "covered_by": [
+          "[[VERIFY: link map, not in batch B scope]]"
+        ]
+      }
+    ]
   }
- ],
- "tools_used": [
-  "mcp__Apify__apify--web-fetch",
-  "mcp__Apify__apify--web-search"
- ],
- "self_qa": {
-  "checks": [
-   {
-    "check": "Every fact has a source URL, exact quote, region and date read",
-    "pass": true,
-    "note": "27 facts, read live 2026-11-06."
-   },
-   {
-    "check": "No prices or amounts",
-    "pass": true,
-    "note": "No values, counts or money framing for fine mats."
-   },
-   {
-    "check": "Every batch A custom covered or listed as often told",
-    "pass": true,
-    "note": "Pre-wedding meeting, reciprocal gifts, minister's role and on-the-day village roles are often told."
-   },
-   {
-    "check": "No invented quotes, statistics or real weddings",
-    "pass": true,
-    "note": "One published orator quote from Te Papa; no real weddings."
-   }
-  ],
-  "confidence": 0.7,
-  "note": "Batch A only (fact_01 to fact_27). Batch B merges dress, siva and taualuga, feast, UNESCO and legal."
- },
- "verify_items": [],
- "payload": {
-  "facts": [
-   {
-    "fact_id": "fact_01",
-    "region": "Samoa and diaspora",
-    "claim": "Samoa's tourism authority describes Samoan culture as based on fa'a Samoa, translated as 'The Samoan Way', which is holistic and, for many, closely associated with honouring one's family.",
-    "quote": "Samoan culture is of Polynesian heritage and is proudly based on fa'a Samoa which translates as 'The Samoan Way'. ... Fa'a Samoa is holistic, meaning that it is understood as encompassing all facets of the Samoan way of life. For many, adhering to fa'a Samoa is closely associated with honouring one's family.",
-    "source": "https://www.samoa.travel/discover/our-people/",
-    "source_type": "tourism_board",
-    "checked": "2026-11-06",
-    "is_price": false
-   },
-   {
-    "fact_id": "fact_02",
-    "region": "Samoa",
-    "claim": "Samoan society is organised by extended families (aiga), each with its own Matai ('chief' or 'leader') titles connected to districts, villages and family land, a system the tourism authority calls 'fa'a Matai'.",
-    "quote": "Samoan society is based on a collectivist system known as 'fa'a Matai'. In this system, society is organised by extended families (aiga), with each family having its own 'Matai' ('chief' or 'leader') titles that are connected to certain districts, villages, and plots of family land.",
-    "source": "https://www.samoa.travel/discover/our-people/",
-    "source_type": "tourism_board",
-    "checked": "2026-11-06",
-    "is_price": false
-   },
-   {
-    "fact_id": "fact_03",
-    "region": "Samoa",
-    "claim": "Matai are responsible for administrative duties and for maintaining the traditions and customs of the village, and their status is highly respected.",
-    "quote": "Matai are responsible for administrative duties and maintaining the traditions and customs of the village. Matai are also seen as spiritual caretakers of all those who fall under their authority. The status of Matai is highly respected among the community.",
-    "source": "https://www.samoa.travel/discover/our-people/",
-    "source_type": "tourism_board",
-    "checked": "2026-11-06",
-    "is_price": false
-   },
-   {
-    "fact_id": "fact_04",
-    "region": "Samoa",
-    "claim": "Members of the aiga are expected to be generous and to put the interests of the group or community ahead of their own.",
-    "quote": "Individuals in the aiga are expected to be generous with their possessions and prioritise the interests of the group or community over their own.",
-    "source": "https://www.samoa.travel/discover/our-people/",
-    "source_type": "tourism_board",
-    "checked": "2026-11-06",
-    "is_price": false
-   },
-   {
-    "fact_id": "fact_05",
-    "region": "Samoa",
-    "claim": "In village areas local law prevails and can vary from village to village.",
-    "quote": "In the village area, local law prevails, which can vary from village to village.",
-    "source": "https://www.samoa.travel/discover/our-people/",
-    "source_type": "tourism_board",
-    "checked": "2026-11-06",
-    "is_price": false
-   },
-   {
-    "fact_id": "fact_06",
-    "region": "Samoa",
-    "claim": "Britannica says Samoans have strived to preserve the fa'a Samoa ('Samoan way of life'), so many traditions of rural life remain virtually unchanged, though some customs have changed markedly, particularly in Apia.",
-    "quote": "Although some Samoan values and customs have changed markedly since European contact, particularly in Apia, Samoans have strived to preserve the fa'a Samoa (“Samoan way of life”); thus, many traditions and outward features of rural life have remained virtually unchanged.",
-    "source": "https://www.britannica.com/place/Samoa-island-nation-Pacific-Ocean/Cultural-life",
-    "source_type": "editorial",
-    "checked": "2026-11-06",
-    "is_price": false
-   },
-   {
-    "fact_id": "fact_07",
-    "region": "Samoa",
-    "claim": "Most Samoan villages have a church and a meetinghouse, which doubles as a cultural centre.",
-    "quote": "Most Samoan villages have a church and a meetinghouse, which doubles as a cultural centre.",
-    "source": "https://www.britannica.com/place/Samoa-island-nation-Pacific-Ocean/Cultural-life",
-    "source_type": "editorial",
-    "checked": "2026-11-06",
-    "is_price": false
-   },
-   {
-    "fact_id": "fact_08",
-    "region": "Samoa",
-    "claim": "Matai are still expected to deliver rhythmic and poetical orations at council meetings and other major events.",
-    "quote": "Genealogies, legends, chants, and spells have all been passed down and elaborated through the generations, and matai are still expected to deliver rhythmic and poetical orations at council meetings and other major events.",
-    "source": "https://www.britannica.com/place/Samoa-island-nation-Pacific-Ocean/Cultural-life",
-    "source_type": "editorial",
-    "checked": "2026-11-06",
-    "is_price": false
-   },
-   {
-    "fact_id": "fact_09",
-    "region": "Samoa",
-    "claim": "Samoans often entertain one another at weddings and other family gatherings with ula, in which two groups alternate between singing and dancing.",
-    "quote": "Samoans often entertain one another at weddings and other family gatherings with ula, in which two groups alternate between singing and dancing.",
-    "source": "https://www.britannica.com/place/Samoa-island-nation-Pacific-Ocean/Cultural-life",
-    "source_type": "editorial",
-    "checked": "2026-11-06",
-    "is_price": false
-   },
-   {
-    "fact_id": "fact_10",
-    "region": "Samoa",
-    "claim": "Kava, a traditional nonalcoholic drink from a tropical pepper plant, is consumed at social events, mainly by matai.",
-    "quote": "Kava, a traditional nonalcoholic, euphoria-producing drink, is prepared from a tropical pepper plant and consumed at social events, mainly by matai, who customarily pour a small amount on the ground before and after drinking.",
-    "source": "https://www.britannica.com/place/Samoa-island-nation-Pacific-Ocean/Cultural-life",
-    "source_type": "editorial",
-    "checked": "2026-11-06",
-    "is_price": false
-   },
-   {
-    "fact_id": "fact_11",
-    "region": "Samoa",
-    "claim": "Samoans readily adopted Christianity after European contact and even remote villages built churches, often of grand proportions; the Congregational Christian Church of Samoa is the dominant church, with Roman Catholic, Latter-day Saint and Methodist communities also significant.",
-    "quote": "They readily adopted Christian teachings following European contact, and even the more remote villages built churches, often of grand proportions. The Congregational Christian Church of Samoa (Ekalesia Faapotopotoga Kerisiano Samoa [EKFS]; formerly the London Missionary Society) is the dominant religion ... Approximately one-fifth of Samoans are Roman Catholics, and Latter-day Saints constitute about one-sixth of the population. Methodists make up one-eighth.",
-    "source": "https://www.britannica.com/place/Samoa-island-nation-Pacific-Ocean/People",
-    "source_type": "editorial",
-    "checked": "2026-11-06",
-    "is_price": false
-   },
-   {
-    "fact_id": "fact_12",
-    "region": "Samoa and diaspora",
-    "claim": "Tens of thousands of Samoans have emigrated to New Zealand, the United States, Australia and elsewhere.",
-    "quote": "tens of thousands of Samoans had emigrated to New Zealand, the United States, Australia, and elsewhere.",
-    "source": "https://www.britannica.com/place/Samoa-island-nation-Pacific-Ocean/People",
-    "source_type": "editorial",
-    "checked": "2026-11-06",
-    "is_price": false
-   },
-   {
-    "fact_id": "fact_13",
-    "region": "Samoa",
-    "claim": "Te Papa describes 'ie toga (fine mat) as presented as a valuable in ceremonies that cement relationships between people, and as worn as a garment on important occasions by high-ranking matai and taupou (daughters of chiefs).",
-    "quote": "On important occasions, high ranking matai (chiefs) and taupou (daughters of chiefs) may have worn it as a garment, but it has also been presented as a valuable in ceremonies that cement relationships between people.",
-    "source": "https://collections.tepapa.govt.nz/topic/1522",
-    "source_type": "other",
-    "checked": "2026-11-06",
-    "is_price": false
-   },
-   {
-    "fact_id": "fact_14",
-    "region": "Samoa",
-    "claim": "'Ie toga are the highest-ranking item in the Samoan exchange system; they seal relationships between groups of people and feature at special events and ceremonies.",
-    "quote": "‘Ie toga are the highest ranking item in the exchange system within Sāmoan society. They seal relationships between groups of people and feature at special events and ceremonies.",
-    "source": "https://collections.tepapa.govt.nz/topic/1522",
-    "source_type": "other",
-    "checked": "2026-11-06",
-    "is_price": false
-   },
-   {
-    "fact_id": "fact_15",
-    "region": "Samoa",
-    "claim": "An 'ie toga is hand woven with fibres so fine that it could take months or years to complete; in the past they were made by young women, who also completed mats left unfinished by older female relatives.",
-    "quote": "A ‘ie toga was hand woven with great skill, with fibres so fine that it could take months or years to complete. In the past, ‘ie toga were made by young women, who would commence their own mats, or complete mats left unfinished by older female family members.",
-    "source": "https://collections.tepapa.govt.nz/topic/1522",
-    "source_type": "other",
-    "checked": "2026-11-06",
-    "is_price": false
-   },
-   {
-    "fact_id": "fact_16",
-    "region": "Samoa",
-    "claim": "'Ie toga are preserved with great care, some pass through several generations gaining sentimental or historical value, and they may be given names.",
-    "quote": "They are preserved and guarded with great care. Some pass through several generations, and as more people or events become associated with them, they often gain immense sentimental or historical value. ‘Ie toga might be given a name, and the most important might have several names.",
-    "source": "https://collections.tepapa.govt.nz/topic/1522",
-    "source_type": "other",
-    "checked": "2026-11-06",
-    "is_price": false
-   },
-   {
-    "fact_id": "fact_17",
-    "region": "Samoa and Tonga",
-    "claim": "The presence of an 'ie toga brings great dignity to an event, and since the early 1800s Samoan 'ie toga have been exchanged at weddings of high-ranking Tongan chiefs.",
-    "quote": "The presence of an ‘ie toga brings great dignity to an event. Since the early 1800s, Sāmoan ‘ie toga have been exchanged at weddings of high-ranking Tongan chiefs.",
-    "source": "https://collections.tepapa.govt.nz/topic/1522",
-    "source_type": "other",
-    "checked": "2026-11-06",
-    "is_price": false
-   },
-   {
-    "fact_id": "fact_18",
-    "region": "Samoa",
-    "claim": "Te Papa says that in Samoan marriage ceremonies 'ie tōga are presented to the husband's family by the bride's family.",
-    "quote": "For example, in Samoan marriage ceremonies, 'ie tōga are presented to the husband's family by the bride's family, and are viewed in much the same way as dowry property.",
-    "source": "https://collections.tepapa.govt.nz/object/567243",
-    "source_type": "other",
-    "checked": "2026-11-06",
-    "is_price": false
-   },
-   {
-    "fact_id": "fact_19",
-    "region": "Samoa",
-    "claim": "Te Papa records an 1800s 'ie tōga woven from pandanus (Pandanus tectorius) with red feathers.",
-    "quote": "Materials Summarypandanus, Pandanus tectorius; red feathers of the Samoan sega or parrot, Phigys solitarius.",
-    "source": "https://collections.tepapa.govt.nz/object/567243",
-    "source_type": "other",
-    "checked": "2026-11-06",
-    "is_price": false
-   },
-   {
-    "fact_id": "fact_20",
-    "region": "Samoa",
-    "claim": "'Ie tōga are exchanged frequently and can pass through generations, and a particularly old and fine one brings great dignity to a ceremony.",
-    "quote": "Many 'ie tōga are exchanged frequently and pass through several generations, gaining value as their age and associations accumulate. ... The presence or use of a particularly old and fine 'ie tōga brings great dignity to a ceremony or an event.",
-    "source": "https://collections.tepapa.govt.nz/object/567243",
-    "source_type": "other",
-    "checked": "2026-11-06",
-    "is_price": false
-   },
-   {
-    "fact_id": "fact_21",
-    "region": "Samoa",
-    "claim": "At a 2002 presentation of the 'ie tōga Le Ageagea o Tumua, a Samoan orator's published speech referred to villages 'chanting the marriage chants' and presented the fine mat 'to seal our marriage' between two nations.",
-    "quote": "\"Today, Prime Minister Helen Clark, you hear Lufilufi, Falefa, and Salani chanting the marriage chants. ... [We] present this fine mat to seal our marriage. The name of the fine mat is Le Ageagea o Tumua.\"",
-    "source": "https://collections.tepapa.govt.nz/object/567243",
-    "source_type": "other",
-    "checked": "2026-11-06",
-    "is_price": false
-   },
-   {
-    "fact_id": "fact_22",
-    "region": "Samoa",
-    "claim": "Each of Samoa's several thousand aiga (extended families) designates at least one matai to lead and represent it, and the matai form village councils to administer local affairs.",
-    "quote": "Each of Samoa’s several thousand aiga (extended families) designates at least one matai to lead and represent it; the matai, in turn, form village councils to administer local affairs.",
-    "source": "https://www.britannica.com/place/Samoa-island-nation-Pacific-Ocean/Government-and-society",
-    "source_type": "editorial",
-    "checked": "2026-11-06",
-    "is_price": false
-   },
-   {
-    "fact_id": "fact_23",
-    "region": "Samoan diaspora (New Zealand)",
-    "claim": "Te Ara, the New Zealand government encyclopedia, says the bedrock of fa‘asamoa (Samoan culture) is aiga (family), which remains a permanent fixture.",
-    "quote": "In the end, the bedrock of fa‘asamoa (Samoan culture) is aiga (family); friends and acquaintances come and go, but the aiga remains as a permanent fixture.",
-    "source": "https://teara.govt.nz/en/samoans/page-4",
-    "source_type": "government",
-    "checked": "2026-11-06",
-    "is_price": false
-   },
-   {
-    "fact_id": "fact_24",
-    "region": "Samoan diaspora (New Zealand)",
-    "claim": "Te Ara notes that for New Zealand-born Samoans the church often provides the anchor, and Samoans tend to return to their ethnic identity when they mature and have children.",
-    "quote": "For those ready to return to some form of stability, the church often provides the anchor. ... When they mature and have their own children, Samoans tend to return to their ethnic identity.",
-    "source": "https://teara.govt.nz/en/samoans/page-4",
-    "source_type": "government",
-    "checked": "2026-11-06",
-    "is_price": false
-   },
-   {
-    "fact_id": "fact_25",
-    "region": "Samoa",
-    "claim": "Te Papa's Pacific curator writes that the tulāfale (orator), through lāuga (oratory), represents the interests of ali‘i at formal occasions and is the mouthpiece of families, villages and districts, influential in directing ceremonies, presentations and cultural protocols.",
-    "quote": "In Sāmoan society, the tulāfale or orator has a wayfinding role. Through their lāuga (oratory) they represent the interests of ali‘i in any formal occasions or events. They are the mouthpiece of families, villages and districts and are influential in directing ceremonies, presentations and cultural protocols.",
-    "source": "https://blog.tepapa.govt.nz/2022/05/30/o-le-tulafale-the-orator-language-wayfinder-of-samoa/",
-    "source_type": "other",
-    "checked": "2026-11-06",
-    "is_price": false
-   },
-   {
-    "fact_id": "fact_26",
-    "region": "Samoa",
-    "claim": "Tulāfale are keepers of cultural knowledge such as history and genealogies, and negotiate the relationships between different parties.",
-    "quote": "Tulāfale are keepers and transmitters of cultural knowledge such as history and genealogies, but they are also wayfinders who negotiate the relationships between different parties.",
-    "source": "https://blog.tepapa.govt.nz/2022/05/30/o-le-tulafale-the-orator-language-wayfinder-of-samoa/",
-    "source_type": "other",
-    "checked": "2026-11-06",
-    "is_price": false
-   },
-   {
-    "fact_id": "fact_27",
-    "region": "Samoa",
-    "claim": "Tulāfale usually present lāuga indoors in a fale or outdoors on the malae (village green), and carry the fue (fly whisk), to‘oto‘o (staff) and wear the ‘ulafala (pandanus key necklace) as symbols of their office.",
-    "quote": "In Sāmoa, tulāfale usually present their lāuga (ceremonial speeches) in two main settings: either indoors within a fale (house) or outdoors on the malae (village green). ... Tulāfale also carry to‘oto‘o (long wooden staffs). Along with the fue and the ‘ulafala, they are symbols of their office.",
-    "source": "https://blog.tepapa.govt.nz/2022/05/30/o-le-tulafale-the-orator-language-wayfinder-of-samoa/",
-    "source_type": "other",
-    "checked": "2026-11-06",
-    "is_price": false
-   }
-  ],
-  "insider_details": [
-   {
-    "detail": "Ask each family early who will speak for them: the tulāfale directs ceremonies, presentations and protocol, so the run sheet should be built around the speeches and presentations rather than the other way round.",
-    "fact_ids": [
-     "fact_25",
-     "fact_26",
-     "fact_08"
-    ]
-   },
-   {
-    "detail": "Leave unhurried time and a dignified, sheltered space for the presentation of 'ie toga; they are the highest-ranking item in the exchange system and their presentation seals the relationship between the families.",
-    "fact_ids": [
-     "fact_13",
-     "fact_14",
-     "fact_18",
-     "fact_20"
-    ]
-   },
-   {
-    "detail": "Treat heirloom fine mats as irreplaceable: some are named and pass through generations, so agree handling, display and transport with the family rather than with suppliers.",
-    "fact_ids": [
-     "fact_16",
-     "fact_20"
-    ]
-   },
-   {
-    "detail": "For a wedding in a village, the matai and village council administer local affairs and local law can vary by village, so the family's matai is the right first conversation about what is appropriate.",
-    "fact_ids": [
-     "fact_03",
-     "fact_05",
-     "fact_22"
-    ]
-   },
-   {
-    "detail": "Diaspora couples in Australia often plan with relatives across New Zealand, Australia and Samoa; the aiga leads, so keep the families' timelines central from the first planning conversation.",
-    "fact_ids": [
-     "fact_12",
-     "fact_23",
-     "fact_04"
-    ]
-   }
-  ],
-  "quotes": [
-   {
-    "speaker": "Faamatuainu Tala Mailei, at the 2002 presentation of the 'ie tōga Le Ageagea o Tumua, as published by Te Papa",
-    "text": "[We] present this fine mat to seal our marriage. The name of the fine mat is Le Ageagea o Tumua.",
-    "source": "https://collections.tepapa.govt.nz/object/567243"
-   }
-  ],
-  "real_weddings": [],
-  "verify_items": [],
-  "needs_signoff": [],
-  "must_include_coverage": [
-   {
-    "item": "One early framing line: practice varies by family, village and diaspora community; written as living practice",
-    "covered_by": [
-     "fact_05",
-     "fact_06",
-     "fact_23",
-     "fact_24"
-    ]
-   },
-   {
-    "item": "1 Fa'a Samoa, matai and aiga",
-    "covered_by": [
-     "fact_01",
-     "fact_02",
-     "fact_03",
-     "fact_04",
-     "fact_22",
-     "fact_23"
-    ]
-   },
-   {
-    "item": "2 Families' formal meeting and tulafale speeches",
-    "covered_by": [
-     "fact_08",
-     "fact_25",
-     "fact_26",
-     "fact_27"
-    ]
-   },
-   {
-    "item": "3 'Ie toga fine mats and gifts, no amounts or counts",
-    "covered_by": [
-     "fact_13",
-     "fact_14",
-     "fact_15",
-     "fact_16",
-     "fact_17",
-     "fact_18",
-     "fact_19",
-     "fact_20",
-     "fact_21"
-    ]
-   },
-   {
-    "item": "4 The church wedding",
-    "covered_by": [
-     "fact_07",
-     "fact_11",
-     "fact_24"
-    ]
-   },
-   {
-    "item": "5 Extended family and village roles",
-    "covered_by": [
-     "fact_03",
-     "fact_04",
-     "fact_05",
-     "fact_09",
-     "fact_10",
-     "fact_22"
-    ]
-   },
-   {
-    "item": "Samoan terms with diacritics exactly as sources give them",
-    "covered_by": [
-     "fact_01",
-     "fact_02",
-     "fact_13",
-     "fact_18",
-     "fact_23",
-     "fact_25",
-     "fact_27"
-    ]
-   }
-  ],
-  "often_told": [
-   "Families meeting formally before the wedding (a separate pre-wedding meeting or proposal visit): no source read describes it; write as living practice only.",
-   "Lāuga at the wedding reception or feast specifically: sources tie tulāfale to formal occasions and ceremonies generally, not weddings by name.",
-   "Reciprocal exchange in which the groom's family gives food, siapo or other gifts to the bride's family: not sourced in batch A.",
-   "Minister's role and blessing at the church wedding: not sourced.",
-   "Specific aiga and village roles on the day (cooking the umu, hosting, serving): not sourced as wedding roles.",
-   "Fa'alavelave (family obligations and contributions to life events): not read from a preferred source; no meaning as fact."
-  ]
- }
 }
