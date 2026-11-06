@@ -7,3 +7,4 @@
 00:35 05 luxury-writer complete ~2,965 words; 1 VERIFY (embassy CNI); first draft sent; editor + 5 readers launched
 00:35 07 icp-reader search_visitor complete; no must-fix
 00:36 07 icp-reader uhnw complete; enquire 2 (packages link); no must-fix
+00:36 07 icp-reader planner_couple, sceptic complete; no must-fix (unsourced 'calmer places', thin at-home logistics, hedges); waiting on funding_parent, editor
