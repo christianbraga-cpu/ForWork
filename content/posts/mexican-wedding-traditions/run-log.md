@@ -1,2 +1,3 @@
 05:43 00 orchestrator complete input written; FAST MODE start; refresh of /10-of-the-most-fascinating-wedding-traditions-in-mexico (in-place slug change + 301)
 05:46 01 content-strategist complete; old page read (10 traditions + extras, unsourced; wrong brand term); Smartraveller high degree of caution (15 Oct 2026), 11 states reconsider; Embassy Mexico City + consulate Cancún; batches A (5) / B (6 + UNESCO + legal); old-page items pedida, madrina de ramo, hora loca, serenata, cojín added to batches; 02+03(A,B)+04 launched
+05:47 04 visual-curator complete 8 placeholders (destination Oaxaca city)

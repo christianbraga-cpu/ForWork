@@ -1,0 +1,264 @@
+{
+  "agent": "visual-curator",
+  "task_id": "mexican-wedding-traditions",
+  "stage": "04",
+  "status": "needs_input",
+  "round": 1,
+  "inputs_used": [
+    "CLAUDE.md",
+    "content/posts/mexican-wedding-traditions/00-input.json",
+    "content/posts/mexican-wedding-traditions/01-brief.json (tradition_plan, angle)",
+    "content/posts/mexican-wedding-traditions/02-research/pages/old-mexican.md (featured image from a third-party wedding site, no credit or licence: excluded)",
+    "content/posts/mexican-wedding-traditions/02-research/pages/smartraveller.md (updated 15 October 2026; higher-level states)",
+    "content-system/images/library-index.csv (no Mexican rows)",
+    "content-system/schemas/04-images.schema.json",
+    "content/posts/samoan-wedding-traditions/04-images.json (format)"
+  ],
+  "self_qa": {
+    "checks": [
+      {
+        "check": "Zero reference-only or competitor images in slots",
+        "pass": true
+      },
+      {
+        "check": "Every approved image has verified location, licence, alt, caption, fit_reason",
+        "pass": true,
+        "note": "No approved images; all 8 slots needed."
+      },
+      {
+        "check": "No AI image of people, cultural dress, ceremonies or places",
+        "pass": true,
+        "note": "AI offered only as a fallback still life (arras coins or a lazo), not generated, pending Nic's approval."
+      },
+      {
+        "check": "Old-page images not reused",
+        "pass": true,
+        "note": "Old page featured image appears to come from a third-party wedding site with no credit or licence; excluded, not downloaded."
+      },
+      {
+        "check": "Destination outside Smartraveller higher-level states, no people, no venue",
+        "pass": true,
+        "note": "Oaxaca city (alternatives Mexico City, Mérida); Oaxaca, CDMX and Yucatán are not on the higher-level list."
+      },
+      {
+        "check": "Featured image exists (approved or needed with brief)",
+        "pass": true,
+        "note": "Needed with brief."
+      },
+      {
+        "check": "Placements match final H2 numbering",
+        "pass": false,
+        "note": "02-seo.json outline not available; after_h2 follows tradition_plan order (1 padrinos, 2 lazo, 3 arras, 4 Mass, 5 civil, 6 callejoneada, 7 mariachi, 8 money dance, 9 víbora, 10 cookies and cake, 11 tornaboda, 12 UNESCO, 13 for Australians)."
+      }
+    ],
+    "confidence": 0.6
+  },
+  "open_questions": [
+    {
+      "to": "Nic",
+      "question": "Source licensed photos for 8 slots (Mexican-Australian client weddings with signed consent, partner photographers, licensed stock with model and property releases)? Library returned nothing; Google Drive disconnected.",
+      "blocking": true
+    },
+    {
+      "to": "Nic",
+      "question": "Approve or decline an AI illustrative still life (thirteen plain coins in an open box, or a cord lazo on linen; no people, dress, ceremony or place), captioned 'Illustrative image', for the arras slot if no licensed photo is found?",
+      "blocking": false
+    },
+    {
+      "to": "seo-researcher",
+      "question": "Confirm H2 numbering once the outline exists and remap after_h2 placements.",
+      "blocking": false
+    }
+  ],
+  "assumptions": [
+    "Old-page featured image excluded (third-party origin, no licence); not downloaded to reference-only.",
+    "No venue in scope, so no press-kit permission emails drafted.",
+    "Google Drive disconnected; own site, Canva and Google Lens not run in fast mode (no candidates).",
+    "Ceremonies, cultural dress (traje de charro), the lazo being placed, processions and dances must show real, consenting people in real, licensed photos; never AI.",
+    "Destination limited to places outside Smartraveller higher-level states as at 15 October 2026; recheck before publishing."
+  ],
+  "verify_items": [
+    "[[IMAGE NEEDED]] featured: couple joined by the lazo, consented couple",
+    "[[IMAGE NEEDED]] padrinos-lazo: sponsors placing the lazo over the couple",
+    "[[IMAGE NEEDED]] arras: thirteen coins in hands or box (or approved illustrative still life)",
+    "[[IMAGE NEEDED]] church-mass: couple at the altar during Mass",
+    "[[IMAGE NEEDED]] callejoneada: wedding street procession with musicians",
+    "[[IMAGE NEEDED]] mariachi: mariachi serenading at a wedding",
+    "[[IMAGE NEEDED]] vibora-dance: la víbora de la mar on the dance floor",
+    "[[IMAGE NEEDED]] destination: Oaxaca city (or Mexico City or Mérida) street, no people, no venue",
+    "[[VERIFY licence]] every sourced photo: credit, scope, model and property releases",
+    "[[VERIFY: destination photo location outside Smartraveller higher-level states at publish date]]",
+    "[[VERIFY: any AI illustrative still life approved by Nic before generation]]"
+  ],
+  "next_agent": [
+    "luxury-writer"
+  ],
+  "payload": {
+    "slots": [
+      {
+        "slot_id": "featured",
+        "placement": "featured",
+        "purpose": "Hero: a warm, real and licensed sense of a Mexican wedding as a family and faith occasion, without depending on one couple's identity.",
+        "shot_brief": "Licensed photo from a consented Mexican or Mexican-Australian wedding: the couple seated or kneeling with the lazo resting across their shoulders, warm natural light, faces out of frame or consented. Wide 3:2 hero with headroom for a title crop. No church, venue or town named unless licensed and cleared. Never AI.",
+        "status": "needed",
+        "file": "content/posts/mexican-wedding-traditions/images/mexican-wedding-traditions-couple-lazo-hero.webp",
+        "source": {
+          "type": "library",
+          "origin": "[[IMAGE NEEDED]] library-index.csv has no Mexican rows; Google Drive disconnected",
+          "credit": "[[VERIFY licence]]"
+        },
+        "consent": {
+          "couple": "required"
+        },
+        "alt": "Bride and groom joined by a wedding lazo cord draped across their shoulders",
+        "caption": "<Place>, <town>. Photo: [[VERIFY credit]]",
+        "lens_check": "Not run: no candidate image."
+      },
+      {
+        "slot_id": "padrinos-lazo",
+        "placement": "after_h2:2",
+        "purpose": "Show padrinos and madrinas at work: the sponsors placing the lazo around the couple.",
+        "shot_brief": "Licensed photo from a consented Catholic Mexican or Mexican-Australian wedding: a padrino and madrina placing a rosary or cord lazo in a figure-of-eight over the kneeling couple, soft window light. Respectful framing, no staged shot. Consent from couple and sponsors; church permission if the interior is identifiable. Never AI.",
+        "status": "needed",
+        "file": "content/posts/mexican-wedding-traditions/images/mexican-wedding-traditions-padrinos-placing-lazo.webp",
+        "source": {
+          "type": "library",
+          "origin": "[[IMAGE NEEDED]] library-index.csv has no Mexican rows; Google Drive disconnected",
+          "credit": "[[VERIFY licence]]"
+        },
+        "consent": {
+          "couple": "required",
+          "sponsors": "required",
+          "church": "required if interior identifiable"
+        },
+        "alt": "Wedding sponsors placing a lazo cord over a kneeling bride and groom",
+        "caption": "<Place>, <town>. Photo: [[VERIFY credit]]",
+        "lens_check": "Not run: no candidate image."
+      },
+      {
+        "slot_id": "arras",
+        "placement": "after_h2:3",
+        "purpose": "Illustrate las arras: the coins exchanged in the ceremony, with no amounts or values.",
+        "shot_brief": "Preferred: licensed detail photo of the arras coins passing between the couple's hands or resting in a small box or tray at a consented wedding, even light, hands only. No visible values or currency counts. Fallback only if Nic approves: AI neutral still life of thirteen plain gold-toned coins in an open ornate box on linen, no people, dress, ceremony or place, captioned 'Illustrative image'.",
+        "status": "needed",
+        "file": "content/posts/mexican-wedding-traditions/images/mexican-wedding-traditions-las-arras-coins.webp",
+        "source": {
+          "type": "library",
+          "origin": "[[IMAGE NEEDED]] library-index.csv has no Mexican rows; Google Drive disconnected; ai_illustrative still life fallback pending Nic approval",
+          "credit": "[[VERIFY licence]]"
+        },
+        "consent": {
+          "couple": "required if identifiable"
+        },
+        "alt": "Thirteen gold wedding coins resting in an open ornate box",
+        "caption": "<Place>, <town>. Photo: [[VERIFY credit]] (or 'Illustrative image' if the approved AI fallback is used)",
+        "lens_check": "Not run: no candidate image."
+      },
+      {
+        "slot_id": "church-mass",
+        "placement": "after_h2:4",
+        "purpose": "Show the Catholic Mass as the religious heart of the day for many families.",
+        "shot_brief": "Licensed photo from a consented Mexican or Mexican-Australian church wedding: the couple at the altar during Mass, family in the pews, soft window light. Church named only if the church and photographer license and clear it (no venue names in copy). Consent from couple and identifiable guests. Never AI.",
+        "status": "needed",
+        "file": "content/posts/mexican-wedding-traditions/images/mexican-wedding-traditions-catholic-mass-altar.webp",
+        "source": {
+          "type": "library",
+          "origin": "[[IMAGE NEEDED]] library-index.csv has no Mexican rows; Google Drive disconnected",
+          "credit": "[[VERIFY licence]]"
+        },
+        "consent": {
+          "couple": "required",
+          "guests": "required if identifiable",
+          "church": "required if interior identifiable"
+        },
+        "alt": "Bride and groom at a church altar during a wedding Mass with family in the pews",
+        "caption": "<Place>, <town>. Photo: [[VERIFY credit]]",
+        "lens_check": "Not run: no candidate image."
+      },
+      {
+        "slot_id": "callejoneada",
+        "placement": "after_h2:6",
+        "purpose": "Capture the callejoneada: the wedding party walking through the streets with music.",
+        "shot_brief": "Licensed photo from a consented wedding callejoneada: couple and guests walking a cobbled street behind musicians, papel picado or a tall mojiganga figure only if present, golden-hour light. Town not named unless licensed, cleared and outside every Smartraveller higher-level area. Consent from couple, musicians and identifiable guests. Never AI.",
+        "status": "needed",
+        "file": "content/posts/mexican-wedding-traditions/images/mexican-wedding-traditions-callejoneada-street-procession.webp",
+        "source": {
+          "type": "library",
+          "origin": "[[IMAGE NEEDED]] library-index.csv has no Mexican rows; Google Drive disconnected",
+          "credit": "[[VERIFY licence]]"
+        },
+        "consent": {
+          "couple": "required",
+          "musicians": "required if identifiable",
+          "guests": "required if identifiable"
+        },
+        "alt": "Wedding guests walking a cobbled street behind musicians at dusk",
+        "caption": "<Place>, <town>. Photo: [[VERIFY credit]]",
+        "lens_check": "Not run: no candidate image."
+      },
+      {
+        "slot_id": "mariachi",
+        "placement": "after_h2:7",
+        "purpose": "Show mariachi playing at a wedding.",
+        "shot_brief": "Licensed photo from a consented wedding: a mariachi group in traje de charro with violins, trumpets and guitarrón serenading the couple or guests, warm evening light. Consent from musicians and identifiable guests. Never AI.",
+        "status": "needed",
+        "file": "content/posts/mexican-wedding-traditions/images/mexican-wedding-traditions-mariachi-wedding-serenade.webp",
+        "source": {
+          "type": "library",
+          "origin": "[[IMAGE NEEDED]] library-index.csv has no Mexican rows; Google Drive disconnected",
+          "credit": "[[VERIFY licence]]"
+        },
+        "consent": {
+          "musicians": "required",
+          "guests": "required if identifiable"
+        },
+        "alt": "Mariachi band with violins and trumpets serenading guests at a wedding reception",
+        "caption": "<Place>, <town>. Photo: [[VERIFY credit]]",
+        "lens_check": "Not run: no candidate image."
+      },
+      {
+        "slot_id": "vibora-dance",
+        "placement": "after_h2:9",
+        "purpose": "Capture the joy of la víbora de la mar on the dance floor.",
+        "shot_brief": "Licensed photo from a consented reception: guests in a linked line running under the arms of the couple standing on chairs, or the couple balancing on chairs above the crowd, motion and laughter, evening light. No money visible (money dance not shown). Consent from couple and identifiable guests. Never AI.",
+        "status": "needed",
+        "file": "content/posts/mexican-wedding-traditions/images/mexican-wedding-traditions-vibora-de-la-mar-dance.webp",
+        "source": {
+          "type": "library",
+          "origin": "[[IMAGE NEEDED]] library-index.csv has no Mexican rows; Google Drive disconnected",
+          "credit": "[[VERIFY licence]]"
+        },
+        "consent": {
+          "couple": "required",
+          "guests": "required if identifiable"
+        },
+        "alt": "Wedding guests in a linked line racing beneath a bride and groom on chairs",
+        "caption": "<Place>, <town>. Photo: [[VERIFY credit]]",
+        "lens_check": "Not run: no candidate image."
+      },
+      {
+        "slot_id": "destination",
+        "placement": "after_h2:13",
+        "purpose": "Ground the 'for Australians' section in a calm Mexican place outside every Smartraveller higher-level area.",
+        "shot_brief": "Licensed photo of Oaxaca city (Oaxaca state, outside every Smartraveller 'reconsider your need to travel' state as at 15 October 2026): a colourful colonial street or church facade in soft morning light, no people, no venue, hotel or signage identifiable. Alternatives: Mexico City historic centre or Mérida, Yucatán, same rules. Recheck Smartraveller before publishing. Location confirmed by EXIF GPS or source page. Never AI.",
+        "status": "needed",
+        "file": "content/posts/mexican-wedding-traditions/images/mexican-wedding-traditions-oaxaca-city-street-destination.webp",
+        "source": {
+          "type": "library",
+          "origin": "[[IMAGE NEEDED]] library-index.csv has no Mexican rows; Google Drive disconnected",
+          "credit": "[[VERIFY licence]]"
+        },
+        "location": {
+          "venue": "Street or landmark, no venue (to confirm)",
+          "town": "Oaxaca city (or Mexico City or Mérida; to confirm)",
+          "verified_by": "[[VERIFY: EXIF GPS or source page]]"
+        },
+        "alt": "Colourful colonial street with a stone church facade in soft morning light",
+        "caption": "<Street or landmark>, Oaxaca. Photo: [[VERIFY credit]]",
+        "lens_check": "Not run: no candidate image."
+      }
+    ],
+    "reference_only": [],
+    "permission_requests": []
+  }
+}
