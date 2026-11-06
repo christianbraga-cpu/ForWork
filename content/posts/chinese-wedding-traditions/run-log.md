@@ -15,3 +15,5 @@
 00:42 09 cro-specialist complete; /magazine primary; 2 copy changes; applying after 8b
 00:42 10 distribution complete 3 pins, 8-slide carousel, newsletter
 00:43 08b editor pass_with_edits; 11 blocking fixes (unsourced customs, recognition and visa-waiver lines, Suzhou/Hangzhou safety inference, FAQ, overstated sources) + 2 CRO changes applied; UTM medium set to content; cms-publisher launched
+00:45 11 cms-publisher package complete (not uploaded, no Chrome); validate all valid
+00:45 finish: docx, run report, backlinks, link map, calendar 29; FINISHED (~36 min)
