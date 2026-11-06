@@ -13,3 +13,4 @@
 06:09 08 luxury-writer complete 2,981 words; 0 VERIFY; scan clean; 8b+CRO+distribution launched
 06:10 09 cro-specialist complete; /magazine primary; 2 copy changes; applying after 8b
 06:10 10 distribution complete 3 pins, 8-slide carousel, newsletter
+06:11 08b editor pass_with_edits; 4 blocking fixes (Totonac region, callejoneada detail, mariachi in churches, 'stay set at entry') + 2 CRO changes applied; cms-publisher launched

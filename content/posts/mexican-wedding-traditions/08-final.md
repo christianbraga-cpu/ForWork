@@ -28,7 +28,7 @@ There is no single script. Daily life in Mexico varies widely by region, ethnici
 
 La pedida de mano, the asking for the bride's hand, is where many Mexican weddings really begin. In Nahua communities of the Sierra Norte de Puebla, the young man's grandparents go with him to ask for the bride's hand, or, in their absence, his parents, baptism godparents, uncles or another trusted person. <!-- fact_04 -->
 
-The bride's parents always answer that the proposal needs thought, which leads to at least three more visits, and the decision is collective, taken with the bride's parents, padrinos, uncles and grandparents. <!-- fact_05 --> In Totonac communities of the same region, the man now consults the woman first, then goes with his parents and baptism godparents to the petición de mano. <!-- fact_06 -->
+The bride's parents always answer that the proposal needs thought, which leads to at least three more visits, and the decision is collective, taken with the bride's parents, padrinos, uncles and grandparents. <!-- fact_05 --> In Totonac communities today, the man consults the woman first, then goes with his parents and baptism godparents to the petición de mano. <!-- fact_06 -->
 
 Elsewhere the steps have their own names. In Almoloya del Río, in the State of Mexico, the pedimento de mano has three moments, the aviso, the acuerdo and the contento, which have changed in their details but not in essence for at least two centuries. <!-- fact_16 --> After a public conversation between the parents, the date is set, generally with an engagement of more than six months. <!-- fact_17 -->
 
@@ -106,7 +106,7 @@ As at November 2026, both are states where Smartraveller advises Australians to 
 
 <!-- IMAGE SLOT callejoneada: Licensed photo from a consented wedding callejoneada: couple and guests walking a cobbled street behind musicians, papel picado or a tall mojiganga figure only if present, golden-hour light. Town not named unless licensed, cleared and outside every Smartraveller higher-level area. Consent from couple, musicians and identifiable guests. Never AI. -->
 
-At a wedding, a callejoneada works as an icebreaker before the ceremony, with guests walking the old streets behind the musicians. <!-- fact_112 -->
+At a wedding, a callejoneada works as an icebreaker before the ceremony, with guests touring the streets together. <!-- fact_112 -->
 
 Away from those streets, a walking band can lead guests from church to reception.
 
@@ -120,7 +120,7 @@ Mariachi is a fundamental element of Mexican culture, passed down through perfor
 
 Since the early 20th century, male bands have typically worn the traje de charro, the attire of Jalisco's cowboys, and there are now a number of all-female groups. <!-- fact_116 -->
 
-At many weddings the mariachi plays at more than one point: in some churches during the Mass, singing religious songs as the lazo is placed, <!-- fact_22 --> and again at the reception. When you book, ask how many musicians will come and whether trumpets are included.
+At many weddings the mariachi plays at the reception, and at some it also sings religious songs during the Mass as the lazo is placed. <!-- fact_22 --> When you book, ask how many musicians will come and whether trumpets are included.
 
 ## 9. The Mexican wedding money dance
 
@@ -151,6 +151,10 @@ The tornaboda is the day after the wedding, and also the party held on that day.
 In many Mexican families, the tornaboda is relaxed: close family and friends return the next day to share the remaining food, open gifts and talk over the night before.
 
 <!-- CTA: primary -->
+**Read the free magazine**
+Free to read, whenever you are ready.
+[Read the free magazine](/magazine?utm_source=blog&utm_medium=content&utm_campaign=mexican-wedding-traditions&utm_content=primary)
+<!-- /CTA: primary -->
 
 ## 13. Planning a Mexican wedding as Australians
 
@@ -162,7 +166,7 @@ As at November 2026, [Smartraveller advice for Mexico](https://www.smartraveller
 
 The hurricane and rainy season runs from June to November, and tropical storms and hurricanes can happen in other months. <!-- fact_106 --> Coastal weddings then need a covered plan B.
 
-Australian tourists travelling on a chipped ordinary passport can use e-gates at a number of major airports and are given a printed QR code with the days they may stay; without a chipped passport, tourists visiting for 180 days or less receive a visa on arrival. The stay is set at entry, and entry and exit conditions can change at short notice. <!-- fact_108 --> Same-sex relationships are legal and same-sex marriages are recognised, though the country is conservative. <!-- fact_107 -->
+Australian tourists travelling on a chipped ordinary passport can use e-gates at a number of major airports and are given a printed QR code with the days they may stay; without a chipped passport, tourists visiting for 180 days or less receive a visa on arrival. Entry and exit conditions can change at short notice. <!-- fact_108 --> Same-sex relationships are legal and same-sex marriages are recognised, though the country is conservative. <!-- fact_107 -->
 
 Couples who marry in Mexico tend to choose places outside the higher-level states: Mexico City, Oaxaca, the Yucatán, Quintana Roo, Baja California Sur, Jalisco and Nayarit among them. Our [tips for planning a destination wedding in Mexico](/10-tips-for-planning-a-destination-wedding-in-mexico) goes further.
 
@@ -219,6 +223,6 @@ Yes, through a civil ceremony at the Registro Civil, since a church wedding does
 
 ## Planning your Mexican wedding with us
 
-A Mexican wedding asks for a full cast: sponsors who know their cues, two ceremonies in the right order and room for the band. For more ideas, [read the free Wedded Wonderland digital magazine](/magazine?utm_source=blog&utm_medium=content&utm_campaign=mexican-wedding-traditions&utm_content=primary).
+A Mexican wedding asks for a full cast: sponsors who know their cues, two ceremonies in the right order and room for the band.
 
 When you are ready to talk through dates, regions or a wedding at home, tell us your date, your guest list and the feeling you want, and a Wedded Advisor will start from there. Nothing is too early or too vague.
