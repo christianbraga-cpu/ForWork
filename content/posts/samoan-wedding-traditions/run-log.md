@@ -7,3 +7,4 @@
 03:39 05 luxury-writer complete ~2,670 words; 0 VERIFY; 0 research talk, 0 'often told'; first draft sent; editor + 5 readers launched
 03:40 07 icp-reader search_visitor complete; no must-fix (dance answer low, UNESCO repetition)
 03:40 07 icp-reader sceptic, uhnw complete; no must-fix (business details deferred); waiting on planner_couple, funding_parent, editor
+03:40 07 icp-reader funding_parent, planner_couple complete; no must-fix (too many 'X describes' attributions; UNESCO repeats; guest logistics thin); waiting on editor
