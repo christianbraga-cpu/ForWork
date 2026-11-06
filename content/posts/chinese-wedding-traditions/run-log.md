@@ -12,3 +12,5 @@
 00:37 06 editor pass_with_edits 4.14; 17 edits applied -> 05-draft-r2.md; panel chair launched
 00:39 07b icp-panel-chair revise; enquire 2.6; 4 must_fix (Advisor bridge, hedges, guest logistics questions, UNESCO aside), 3 should_fix; final pass launched
 00:41 08 luxury-writer complete 2,985 words; 1 VERIFY; scan clean; 8b+CRO+distribution launched
+00:42 09 cro-specialist complete; /magazine primary; 2 copy changes; applying after 8b
+00:42 10 distribution complete 3 pins, 8-slide carousel, newsletter
