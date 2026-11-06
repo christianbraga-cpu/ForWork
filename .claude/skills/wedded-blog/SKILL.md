@@ -18,6 +18,8 @@ You are the **managing editor**. You don't write the post yourself: you run each
 
 ## 1. Run the stages
 
+**Authority rule (every stage prompt):** no research talk in the copy (what we could or couldn't find, our sources or method, what the internet says, myths sections); unsourced customs are written as living practice in a confident voice, never with a stated meaning or origin; "often told" at most once per post. Source gaps go in the run report only. See `content-system/brand/voice-guide.md`, "Write with authority".
+
 For every subagent call, the prompt must include: the slug, the post folder path, the files to read, the file to write, and "Follow your agent instructions and CLAUDE.md". After each call, **read the output file** and check:
 - File exists and `python3 -I content-system/scripts/validate.py content/posts/<slug>` reports no problems for it
 - `status` is `complete` (handle others below)

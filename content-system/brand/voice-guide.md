@@ -15,6 +15,22 @@ A well-travelled friend who has planned hundreds of weddings abroad, speaking ca
 | **The couple's point of view.** "You", "your guests" | "We are passionate about…" |
 | **Short paragraphs** (2 to 4 lines), clear H2s that answer real questions | Walls of text |
 
+## Write with authority
+We are the experts in the room. Readers should never see our research process.
+- **No research talk.** Never mention our sources, research or method, what we could or couldn't find, trace or confirm, what other sites or "the internet" say, or what "you will often read". Those notes go in the run report for the team, never in the article.
+- **Leave out, don't announce.** If a claim can't be supported, cut it. No "myths" sections, no "the old version got wrong", no lists of claims we couldn't trace.
+- **Living practice, confident voice.** A custom without a strong source is written as what families do: "In many Latvian families, friends spirit the bride away during the reception." Never state what it "means" or where it "comes from" unless a source says so. "Often told" at most once per post, never "It is often told that".
+- **No hedge stacking.** State the fact plainly. Cite a source once, by link, where it adds weight; don't credit a source on every line. Date legal and travel facts once per section ("As at November 2026").
+- Unchanged: no invented facts, `[[VERIFY]]` only for claims the article must make, no prices.
+
+| Don't write | Write |
+|---|---|
+| Some details repeat across the internet that we could not trace to any reliable source. | (cut the line and the claims) |
+| Where a custom is passed on by word of mouth rather than documented, we say it is "often told". | (cut) |
+| It is often told that guests give money to the couple during the dancing. | At many receptions, guests give money to the couple during the dancing. |
+| Often told, though we found no cultural or academic source for it, is the story that… | (cut, or: Some families keep a playful custom where…) |
+| Rice is often explained as a wish for fertility, but we could not find that documented. | Guests shower the couple with rice or petals as they leave. |
+
 ## Tone dial
 - **Warm, not gushing.** One emotional line per section at most.
 - **Confident, not salesy.** One clear invitation to speak with a Wedded Advisor, placed where a question has just been raised.

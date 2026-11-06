@@ -34,7 +34,7 @@ Body structure:
 9. `## Frequently asked questions` if the brief says `faq: true` (questions from `02-seo.json`).
 10. A short close inviting a conversation with a Wedded Advisor.
 
-Rules: Australian English, **no em dashes**, no banned phrases, short paragraphs (≤ 4 lines), word count within the brief range.
+Rules: **write with authority** (`content-system/brand/voice-guide.md`, "Write with authority"): no research talk in the copy (never what we could or couldn't find, trace or confirm, our sources or method, what the internet says, myths sections); a custom without a strong source is written as living practice in a confident voice, with no meaning or origin stated as fact; "often told" at most once per post. Australian English, **no em dashes**, no banned phrases, short paragraphs (≤ 4 lines), word count within the brief range.
 
 ## Files
 - First draft: `content/posts/<slug>/05-draft.md`
