@@ -1,0 +1,246 @@
+{
+  "agent": "visual-curator",
+  "task_id": "chinese-wedding-traditions",
+  "stage": "04",
+  "status": "needs_input",
+  "round": 1,
+  "inputs_used": [
+    "CLAUDE.md",
+    "content/posts/chinese-wedding-traditions/00-input.json",
+    "content/posts/chinese-wedding-traditions/01-brief.json (tradition_plan, angle)",
+    "content/posts/chinese-wedding-traditions/02-research/pages/smartraveller.md (Gyirong County reconsider; Tibet and Xinjiang high caution)",
+    "content-system/images/library-index.csv (header only, no Chinese rows)",
+    "content-system/schemas/04-images.schema.json",
+    "content/posts/baltic-wedding-traditions/04-images.json (format)"
+  ],
+  "self_qa": {
+    "checks": [
+      {
+        "check": "Zero reference-only or competitor images in slots",
+        "pass": true
+      },
+      {
+        "check": "Every approved image has verified location, licence, alt, caption, fit_reason",
+        "pass": true,
+        "note": "No approved images; all 7 slots needed."
+      },
+      {
+        "check": "No AI image of people, cultural dress, ceremonies or places",
+        "pass": true,
+        "note": "AI offered only as a fallback neutral still life (tea set, red envelopes), not generated, pending Nic's approval."
+      },
+      {
+        "check": "Old-page images not reused",
+        "pass": true,
+        "note": "Old page not read (fetch declined); its images excluded until licence and consent are confirmed."
+      },
+      {
+        "check": "No political symbols; destination outside higher-level areas",
+        "pass": true,
+        "note": "Destination limited to a Suzhou or Hangzhou garden or lake; nothing in Tibet, Xinjiang or Gyirong County; no flags, emblems or political monuments."
+      },
+      {
+        "check": "No region tied to a custom unless the source names it",
+        "pass": true
+      },
+      {
+        "check": "Featured image exists (approved or needed with brief)",
+        "pass": true,
+        "note": "Needed with brief."
+      },
+      {
+        "check": "Placements match final H2 numbering",
+        "pass": false,
+        "note": "02-seo.json outline not available; after_h2 numbers follow tradition_plan order (1 Three Letters and Six Rites, 2 betrothal gifts, 3 auspicious date, 4 hair combing, 5 door games, 6 tea ceremony, 7 return visit, 8 red and double happiness, 9 dragon and phoenix, 10 bridal dress, 11 banquet, 12 red envelopes, 13 for Australians)."
+      }
+    ],
+    "confidence": 0.6
+  },
+  "open_questions": [
+    {
+      "to": "Nic",
+      "question": "The old page could not be read, so its images are excluded. Confirm their licence scope and couple consent before any reuse? Default: not reused.",
+      "blocking": false
+    },
+    {
+      "to": "Nic",
+      "question": "Source licensed photos for 7 slots (Chinese-Australian client weddings with signed consent, partner photographers, licensed stock with model and property releases)? Library returned nothing; Google Drive disconnected.",
+      "blocking": true
+    },
+    {
+      "to": "Nic",
+      "question": "Approve or decline an AI illustrative still life (a porcelain tea set on red cloth, or red envelopes on linen; no people, dress or place), captioned 'Illustrative image', for the tea ceremony or red and double happiness slot if no licensed photo is found?",
+      "blocking": false
+    },
+    {
+      "to": "seo-researcher",
+      "question": "Confirm H2 numbering once the outline exists and remap after_h2 placements.",
+      "blocking": false
+    }
+  ],
+  "assumptions": [
+    "Old weddedwonderland.com page not read (fetch declined); its images excluded until licence is confirmed.",
+    "No venue in scope, so no press-kit permission emails drafted.",
+    "Google Drive disconnected; own site, Canva and Google Lens not run in fast mode (no candidates).",
+    "Cultural dress (qun kwa, qipao) and ceremonies must show real, consenting people in real, licensed photos; never AI.",
+    "Venue interiors need the venue's permission as well as guest consent."
+  ],
+  "verify_items": [
+    "[[IMAGE NEEDED]] featured: tea cups over red tablecloth, consented couple",
+    "[[IMAGE NEEDED]] hair-combing: hair-combing ceremony at home",
+    "[[IMAGE NEEDED]] door-games: door games at the bride's home",
+    "[[IMAGE NEEDED]] tea-ceremony: couple serving tea to parents (or approved illustrative still life)",
+    "[[IMAGE NEEDED]] red-double-happiness: red paper-cut double happiness (or approved illustrative still life)",
+    "[[IMAGE NEEDED]] banquet: round banquet tables in red and gold",
+    "[[IMAGE NEEDED]] destination: Suzhou or Hangzhou garden or lake",
+    "[[VERIFY licence]] old-page images: licence scope and couple consent (page not read)",
+    "[[VERIFY licence]] every sourced photo: credit, scope, model and property releases",
+    "[[VERIFY: destination photo location is outside Smartraveller's higher-level and high-caution areas (Gyirong County, Tibet, Xinjiang)]]",
+    "[[VERIFY: any AI illustrative still life approved by Nic before generation]]"
+  ],
+  "next_agent": [
+    "luxury-writer"
+  ],
+  "payload": {
+    "slots": [
+      {
+        "slot_id": "featured",
+        "placement": "featured",
+        "purpose": "Hero: an elegant, real and licensed sense of a Chinese wedding without depending on one couple's identity.",
+        "shot_brief": "Licensed photo from a consented Chinese-Australian wedding: close detail of the couple's hands holding porcelain tea cups over a red tablecloth with a double happiness motif softly out of focus, warm indoor daylight; faces out of frame or consented. Wide 3:2 hero with headroom for a title crop. No flags, emblems or political symbols. Never AI.",
+        "status": "needed",
+        "file": "content/posts/chinese-wedding-traditions/images/chinese-wedding-traditions-tea-cups-hero.webp",
+        "source": {
+          "type": "library",
+          "origin": "[[IMAGE NEEDED]] library-index.csv has no Chinese rows; Google Drive disconnected",
+          "credit": "[[VERIFY licence]]"
+        },
+        "consent": {
+          "couple": "required"
+        },
+        "alt": "Newlyweds' hands holding porcelain tea cups over a red tablecloth",
+        "caption": "<Place>, <town>. Photo: [[VERIFY credit]]",
+        "lens_check": "Not run: no candidate image."
+      },
+      {
+        "slot_id": "hair-combing",
+        "placement": "after_h2:4",
+        "purpose": "Show the hair-combing ceremony the night before the wedding, linked to Cantonese communities only where the source does.",
+        "shot_brief": "Licensed photo from a consented Chinese-Australian family: an older relative combing the bride's hair with a wooden comb at home, soft lamplight in the evening, red details nearby; faces consented or shown from behind. No region named in caption unless the source names it. Never AI.",
+        "status": "needed",
+        "file": "content/posts/chinese-wedding-traditions/images/chinese-wedding-traditions-hair-combing-ceremony.webp",
+        "source": {
+          "type": "library",
+          "origin": "[[IMAGE NEEDED]] library-index.csv has no Chinese rows; Google Drive disconnected",
+          "credit": "[[VERIFY licence]]"
+        },
+        "consent": {
+          "couple": "required",
+          "family": "required if identifiable"
+        },
+        "alt": "Older relative combing a bride's hair with a wooden comb by lamplight",
+        "caption": "<Place>, <town>. Photo: [[VERIFY credit]]",
+        "lens_check": "Not run: no candidate image."
+      },
+      {
+        "slot_id": "door-games",
+        "placement": "after_h2:5",
+        "purpose": "Capture the fun of the door games at the bride's home without making anyone the joke.",
+        "shot_brief": "Licensed photo from a consented Chinese-Australian wedding morning: the groom and groomsmen laughing at the bride's front door as bridesmaids hold up a challenge, bright morning daylight, red ribbons on the door. Respectful, joyful tone. Consent from all identifiable people. Never AI.",
+        "status": "needed",
+        "file": "content/posts/chinese-wedding-traditions/images/chinese-wedding-traditions-door-games-bride-home.webp",
+        "source": {
+          "type": "library",
+          "origin": "[[IMAGE NEEDED]] library-index.csv has no Chinese rows; Google Drive disconnected",
+          "credit": "[[VERIFY licence]]"
+        },
+        "consent": {
+          "couple": "required",
+          "guests": "required if identifiable"
+        },
+        "alt": "Groom and groomsmen laughing at a red-ribboned front door on the wedding morning",
+        "caption": "<Place>, <town>. Photo: [[VERIFY credit]]",
+        "lens_check": "Not run: no candidate image."
+      },
+      {
+        "slot_id": "tea-ceremony",
+        "placement": "after_h2:6",
+        "purpose": "Show the tea ceremony, the custom most couples keep, as a respectful family moment.",
+        "shot_brief": "Preferred: licensed photo from a consented Chinese-Australian wedding: the couple kneeling or bowing as they offer tea to seated parents, red cushions and a porcelain tea set, warm indoor light; consent from all family shown. Fallback only if Nic approves: AI neutral still life of a porcelain tea set on a plain red cloth, no people, dress, setting or place, captioned 'Illustrative image'.",
+        "status": "needed",
+        "file": "content/posts/chinese-wedding-traditions/images/chinese-wedding-traditions-tea-ceremony-parents.webp",
+        "source": {
+          "type": "library",
+          "origin": "[[IMAGE NEEDED]] library-index.csv has no Chinese rows; Google Drive disconnected; ai_illustrative still life fallback pending Nic approval",
+          "credit": "[[VERIFY licence]]"
+        },
+        "consent": {
+          "couple": "required",
+          "family": "required"
+        },
+        "alt": "Couple offering cups of tea to seated parents during a tea ceremony",
+        "caption": "<Place>, <town>. Photo: [[VERIFY credit]] (or 'Illustrative image' if the approved AI fallback is used)",
+        "lens_check": "Not run: no candidate image."
+      },
+      {
+        "slot_id": "red-double-happiness",
+        "placement": "after_h2:8",
+        "purpose": "Illustrate red and the double happiness character as decoration and symbol.",
+        "shot_brief": "Preferred: licensed detail photo of a red paper-cut double happiness character on a door or window at a consented wedding, or on wedding stationery, even daylight, no people. Fallback only if Nic approves: AI neutral still life of red envelopes on plain linen, no people, dress or place, no legible amounts, captioned 'Illustrative image'. No flags, emblems or political symbols.",
+        "status": "needed",
+        "file": "content/posts/chinese-wedding-traditions/images/chinese-wedding-traditions-red-double-happiness-papercut.webp",
+        "source": {
+          "type": "library",
+          "origin": "[[IMAGE NEEDED]] library-index.csv has no Chinese rows; Google Drive disconnected; ai_illustrative still life fallback pending Nic approval",
+          "credit": "[[VERIFY licence]]"
+        },
+        "alt": "Red paper-cut double happiness character on a white window",
+        "caption": "<Place>, <town>. Photo: [[VERIFY credit]] (or 'Illustrative image' if the approved AI fallback is used)",
+        "lens_check": "Not run: no candidate image."
+      },
+      {
+        "slot_id": "banquet",
+        "placement": "after_h2:11",
+        "purpose": "Show the scale and warmth of the wedding banquet.",
+        "shot_brief": "Licensed photo of round banquet tables dressed in red and gold, set for many courses, in a consented Chinese-Australian wedding reception, warm evening light; guests absent or consented. No venue named unless the venue licenses and is cleared (no vendor or venue names in copy). Never AI.",
+        "status": "needed",
+        "file": "content/posts/chinese-wedding-traditions/images/chinese-wedding-traditions-banquet-round-tables.webp",
+        "source": {
+          "type": "library",
+          "origin": "[[IMAGE NEEDED]] library-index.csv has no Chinese rows; Google Drive disconnected",
+          "credit": "[[VERIFY licence]]"
+        },
+        "consent": {
+          "venue": "required if interior identifiable",
+          "guests": "required if identifiable"
+        },
+        "alt": "Round banquet tables dressed in red and gold for a wedding dinner",
+        "caption": "<Place>, <town>. Photo: [[VERIFY credit]]",
+        "lens_check": "Not run: no candidate image."
+      },
+      {
+        "slot_id": "destination",
+        "placement": "after_h2:13",
+        "purpose": "Ground the 'for Australians' section in a calm, non-political destination setting.",
+        "shot_brief": "Licensed landscape of a calm classical garden or water town in eastern China (for example a Suzhou garden or Hangzhou's West Lake) in soft spring light, no identifiable people. Well outside Smartraveller's higher-level and high-caution areas (Gyirong County, Tibet, Xinjiang). No flags, emblems, political monuments or government buildings. Never AI.",
+        "status": "needed",
+        "file": "content/posts/chinese-wedding-traditions/images/chinese-wedding-traditions-classical-garden-destination.webp",
+        "source": {
+          "type": "library",
+          "origin": "[[IMAGE NEEDED]] library-index.csv has no Chinese rows; Google Drive disconnected",
+          "credit": "[[VERIFY licence]]"
+        },
+        "location": {
+          "venue": "Classical garden or lakeside, eastern China (to confirm)",
+          "town": "Suzhou or Hangzhou (to confirm)",
+          "verified_by": "[[VERIFY: EXIF GPS or source page]]"
+        },
+        "alt": "Classical Chinese garden with a pavilion reflected in still water in spring",
+        "caption": "<Garden>, <city>. Photo: [[VERIFY credit]]",
+        "lens_check": "Not run: no candidate image."
+      }
+    ],
+    "reference_only": [],
+    "permission_requests": []
+  }
+}
