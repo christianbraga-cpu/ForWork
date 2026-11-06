@@ -1,597 +1,918 @@
 {
- "agent": "wedding-planner-sme",
- "task_id": "mexican-wedding-traditions",
- "stage": "03",
- "status": "complete",
- "round": 1,
- "inputs_used": [
-  "CLAUDE.md",
-  "content/posts/mexican-wedding-traditions/00-input.json",
-  "content/posts/mexican-wedding-traditions/01-brief.json (tradition_plan.batch_A)",
-  "content-system/schemas/03-source-pack.schema.json",
-  "content/posts/samoan-wedding-traditions/03-source-pack.json (format model)",
-  "https://consulmex.sre.gob.mx/montreal/index.php/es/enterate/7-servicios-consulares/servicios-a-extranjeros/50-matrimonio (Apify web-fetch 2026-11-06)",
-  "https://desdelafe.mx/noticias/sabias-que/cuales-son-los-signos-del-sacramento-del-matrimonio/ (Apify web-fetch 2026-11-06)",
-  "https://dle.rae.es/arras (Apify web-fetch 2026-11-06)",
-  "https://dle.rae.es/padrino (Apify web-fetch 2026-11-06)",
-  "https://mexico.embassy.gov.au/mcty/Notarials.html (Apify web-fetch 2026-11-06)",
-  "https://www.britannica.com/place/Mexico/Daily-life-and-social-customs (Apify web-fetch 2026-11-06)",
-  "https://www.gob.mx/cms/uploads/attachment/file/390414/cdi-atrevete-a-contar-un-cuento-nahuatl.pdf (Apify web-fetch 2026-11-06)",
-  "https://www.gob.mx/inpi/articulos/te-compartimos-el-ritual-de-bodas-en-la-sierra-norte-de-puebla (Apify web-fetch 2026-11-06)",
-  "https://www.redalyc.org/journal/7238/723878164010/html/ (Apify web-fetch 2026-11-06)",
-  "https://www.smartraveller.gov.au/planning-trip/advice-your-planned-activities/getting-married-overseas (Apify web-fetch 2026-11-06)"
- ],
- "tools_used": [
-  "mcp__Apify__apify--web-fetch",
-  "mcp__Apify__apify--web-search",
-  "Bash"
- ],
- "assumptions": [
-  "Batch A only (fact_01 to fact_31): padrinos and madrinas incl. madrina de ramo, pedida de mano, lazo, arras, Catholic Mass incl. cojín and bendición, civil ceremony. Batch B covers procession, music, dances, food, UNESCO and the Smartraveller Mexico advisory.",
-  "Regional scope: fact_04 to fact_08 describe Nahua and Totonac communities of the Sierra Norte de Puebla (INPI); fact_16 to fact_24 describe Almoloya del Río, Estado de México (one ethnographic study). Tie a custom to these places only as sourced; elsewhere write as living practice ('in many Mexican families').",
-  "Thirteen coins: sourced only as what was observed in one ceremony (fact_21: 'trece monedas doradas'). No meaning attached to the number; no amounts or coin values.",
-  "Desde la Fe (fact_27 to fact_31) is the official publication of the Archdiocese of Mexico, not the Conferencia del Episcopado Mexicano; cem.org.mx was not read. Its origin story for the lazo is an attributed claim, not a fact for the copy.",
-  "Fees: the Australian Embassy page lists notarial fees in AUD; deliberately not recorded (no prices or amounts rule). Copy says 'check with the registry and the embassy, including any fees'.",
-  "Redalyc quotes (fact_16 to fact_24): fetched text showed encoding errors in accented characters; accents restored to standard Spanish spelling in the quotes.",
-  "Smartraveller 'Getting married overseas' live URL is /planning-trip/advice-your-planned-activities/getting-married-overseas (the /before-you-go/activities/ URL in the brief returns 404); last updated 18/08/2026.",
-  "Unsourced customs are in payload.often_told (internal only, no VERIFY markers, no meanings as fact)."
- ],
- "open_questions": [
-  {
-   "to": "luxury-writer",
-   "question": "Use the Smartraveller URL in fact_10 (the brief's seed URL is 404).",
-   "blocking": false
-  }
- ],
- "verify_items": [
-  "[[VERIFY: Registro Civil steps, documents, notice periods and any fees for the state and municipality where the civil ceremony will be held; no official Registro Civil page for a specific state was read. Write as questions to ask the registry and the Australian Embassy, as at November 2026.]]"
- ],
- "self_qa": {
-  "checks": [
-   {
-    "check": "Every fact has a source URL, exact quote, region and date read",
-    "pass": true,
-    "note": "31 facts, read live 2026-11-06."
-   },
-   {
-    "check": "No prices or amounts",
-    "pass": true,
-    "note": "Embassy fees and Consulate ages omitted; 13 coins only as observed count."
-   },
-   {
-    "check": "Every batch A custom covered or listed as often told",
-    "pass": true,
-    "note": "All six customs covered; state-level Registro Civil steps are one VERIFY item."
-   },
-   {
-    "check": "Legal info from government sources only, dated",
-    "pass": true,
-    "note": "Smartraveller, Australian Embassy Mexico, SRE consulate; as at November 2026."
-   },
-   {
-    "check": "No invented quotes, statistics or real weddings",
-    "pass": true,
-    "note": "No quotes or real weddings used."
-   },
-   {
-    "check": "No competitor, vendor or Wikipedia sources",
-    "pass": true
-   }
+  "agent": "wedding-planner-sme",
+  "task_id": "mexican-wedding-traditions",
+  "stage": "03",
+  "status": "complete",
+  "round": 1,
+  "inputs_used": [
+    "CLAUDE.md",
+    "content/posts/mexican-wedding-traditions/00-input.json",
+    "content/posts/mexican-wedding-traditions/01-brief.json (tradition_plan.batch_A)",
+    "content-system/schemas/03-source-pack.schema.json",
+    "content/posts/samoan-wedding-traditions/03-source-pack.json (format model)",
+    "https://consulmex.sre.gob.mx/montreal/index.php/es/enterate/7-servicios-consulares/servicios-a-extranjeros/50-matrimonio (Apify web-fetch 2026-11-06)",
+    "https://desdelafe.mx/noticias/sabias-que/cuales-son-los-signos-del-sacramento-del-matrimonio/ (Apify web-fetch 2026-11-06)",
+    "https://dle.rae.es/arras (Apify web-fetch 2026-11-06)",
+    "https://dle.rae.es/padrino (Apify web-fetch 2026-11-06)",
+    "https://mexico.embassy.gov.au/mcty/Notarials.html (Apify web-fetch 2026-11-06)",
+    "https://www.britannica.com/place/Mexico/Daily-life-and-social-customs (Apify web-fetch 2026-11-06)",
+    "https://www.gob.mx/cms/uploads/attachment/file/390414/cdi-atrevete-a-contar-un-cuento-nahuatl.pdf (Apify web-fetch 2026-11-06)",
+    "https://www.gob.mx/inpi/articulos/te-compartimos-el-ritual-de-bodas-en-la-sierra-norte-de-puebla (Apify web-fetch 2026-11-06)",
+    "https://www.redalyc.org/journal/7238/723878164010/html/ (Apify web-fetch 2026-11-06)",
+    "https://www.smartraveller.gov.au/planning-trip/advice-your-planned-activities/getting-married-overseas (Apify web-fetch 2026-11-06)",
+    "content/posts/mexican-wedding-traditions/01-brief.json",
+    "content/posts/mexican-wedding-traditions/02-research/pages/smartraveller.md",
+    "content/posts/samoan-wedding-traditions/03-source-pack-part-1.json",
+    "https://ich.unesco.org/en/RL/mariachi-string-music-song-and-trumpet-00575",
+    "https://ich.unesco.org/en/RL/traditional-mexican-cuisine-ancestral-ongoing-community-culture-the-michoacan-paradigm-00400",
+    "https://dle.rae.es/tornaboda",
+    "https://www.smartraveller.gov.au/destinations/americas/mexico",
+    "https://www.smartraveller.gov.au/planning-trip/advice-your-planned-activities/getting-married-overseas",
+    "https://www.smartraveller.gov.au/our-role/notarial-services/how-get-certificate-no-impediment-marriage",
+    "https://mexico.embassy.gov.au/",
+    "https://mexico.embassy.gov.au/mcty/Notarials.html",
+    "https://www.zacatecas.gob.mx/recibio-zacatecas-a-cerca-de-2-mil-personas-que-participaron-en-11-bodas-destino/",
+    "https://playadelcarmen.gob.mx/mpdc-sg-rc-meo-010",
+    "https://cid-albertobeltran.cultura.gob.mx/catalogo-en-linea-fonoteca/a-la-vibora-de-la-mar-interprete-banda-de-musica-de-atlixco-grabador-thomas-stanford-03-06-1979-grabacion-sonora/",
+    "https://www.britannica.com/art/mariachi",
+    "https://www.guanajuatocapital.gob.mx/noticias/viven-200-personas-la-callejoneada-incluyente-en-guanajuato-capital/"
   ],
-  "confidence": 0.72
- },
- "next_agent": [
-  "luxury-writer"
- ],
- "payload": {
-  "facts": [
-   {
-    "fact_id": "fact_01",
-    "region": "Spanish-speaking world (RAE dictionary)",
-    "topic": "arras",
-    "claim": "The Real Academia Española dictionary defines arras, in some marriage rites, as coins the couple give each other as a symbol of their union.",
-    "quote": "1. f. pl. En algunos ritos matrimoniales, monedas que los desposados se entregan como símbolo de su unión.",
-    "source": "https://dle.rae.es/arras",
-    "source_type": "editorial",
-    "checked": "2026-11-06",
-    "is_price": false
-   },
-   {
-    "fact_id": "fact_02",
-    "region": "Spanish-speaking world (RAE dictionary)",
-    "topic": "padrinos",
-    "claim": "The RAE dictionary defines padrino as a man who accompanies someone receiving a Christian sacrament, with the example 'Seré el padrino de la boda'.",
-    "quote": "1.b. m. Hombre que acompaña a quien recibe algún sacramento cristiano. Seré el padrino de la boda.",
-    "source": "https://dle.rae.es/padrino",
-    "source_type": "editorial",
-    "checked": "2026-11-06",
-    "is_price": false
-   },
-   {
-    "fact_id": "fact_03",
-    "region": "Spanish-speaking world (RAE dictionary)",
-    "topic": "padrinos",
-    "claim": "In the plural, padrinos means the padrino and the madrina together.",
-    "quote": "1.c. m. pl. El padrino (➝ 1a y 1b) y la madrina.",
-    "source": "https://dle.rae.es/padrino",
-    "source_type": "editorial",
-    "checked": "2026-11-06",
-    "is_price": false
-   },
-   {
-    "fact_id": "fact_04",
-    "region": "Sierra Norte de Puebla (Nahua communities)",
-    "topic": "pedida de mano",
-    "claim": "Mexico's national Indigenous peoples institute (INPI) describes how, in Nahua communities of the Sierra Norte de Puebla, a young man's grandparents accompany him to ask for the bride's hand; in their absence parents, baptism godparents, uncles or another trusted person may go.",
-    "quote": "Cuando un muchacho en edad de casarse quiere contraer matrimonio, sus abuelos son los inmediatos responsables de acompañarlo a pedir la mano de la muchacha; en ausencia de ellos, pueden ser sus padres, padrinos de bautizo, tíos o alguna otra persona de confianza.",
-    "source": "https://www.gob.mx/inpi/articulos/te-compartimos-el-ritual-de-bodas-en-la-sierra-norte-de-puebla",
-    "source_type": "government",
-    "checked": "2026-11-06",
-    "is_price": false
-   },
-   {
-    "fact_id": "fact_05",
-    "region": "Sierra Norte de Puebla (Nahua communities)",
-    "topic": "pedida de mano",
-    "claim": "INPI says that in these Nahua communities the bride's parents always answer that the proposal must be thought over, leading to at least three more visits, and that the decision is collective, involving the bride's parents, padrinos, uncles and grandparents.",
-    "quote": "Los padres de la muchacha siempre responden que la propuesta debe ser pensada, lo que ocasiona que se sucedan por lo menos tres visitas más espaciadas entre 8 y 15 días cada una, a las cuales se les conoce como \"nesiuajtanilis\". ... La decisión es colectiva e involucra a padres, padrinos, tíos y abuelos de la pretendida.",
-    "source": "https://www.gob.mx/inpi/articulos/te-compartimos-el-ritual-de-bodas-en-la-sierra-norte-de-puebla",
-    "source_type": "government",
-    "checked": "2026-11-06",
-    "is_price": false
-   },
-   {
-    "fact_id": "fact_06",
-    "region": "Sierra Norte de Puebla (Totonac communities)",
-    "topic": "pedida de mano",
-    "claim": "INPI says that among Totonac communities today the man decides whom to marry and consults the woman first, then goes with his parents and baptism godparents to the petición de mano.",
-    "quote": "Hoy en día, el hombre es quien decide con quién casarse y consultan previamente a la mujer, para posteriormente ser acompañado por sus padres y padrinos de bautizo a la petición de mano.",
-    "source": "https://www.gob.mx/inpi/articulos/te-compartimos-el-ritual-de-bodas-en-la-sierra-norte-de-puebla",
-    "source_type": "government",
-    "checked": "2026-11-06",
-    "is_price": false
-   },
-   {
-    "fact_id": "fact_07",
-    "region": "Sierra Norte de Puebla (Nahua communities)",
-    "topic": "civil ceremony",
-    "claim": "INPI states that, in the Nahua weddings it describes, the civil wedding must take place before the religious wedding.",
-    "quote": "Antes de la boda religiosa debe efectuarse la boda civil.",
-    "source": "https://www.gob.mx/inpi/articulos/te-compartimos-el-ritual-de-bodas-en-la-sierra-norte-de-puebla",
-    "source_type": "government",
-    "checked": "2026-11-06",
-    "is_price": false
-   },
-   {
-    "fact_id": "fact_08",
-    "region": "Sierra Norte de Puebla (Nahua communities)",
-    "topic": "padrinos",
-    "claim": "INPI says that after the wedding both parents and padrinos remain responsible for watching over the new couple, and that before the party ends padrinos and parents give the couple advice.",
-    "quote": "Tanto los padres de ambos, como los padrinos, quedan como responsables de la vigilancia de la nueva pareja. ... Antes de que la fiesta termine, padrinos y padres ofrecen consejos al nuevo matrimonio",
-    "source": "https://www.gob.mx/inpi/articulos/te-compartimos-el-ritual-de-bodas-en-la-sierra-norte-de-puebla",
-    "source_type": "government",
-    "checked": "2026-11-06",
-    "is_price": false
-   },
-   {
-    "fact_id": "fact_09",
-    "region": "Nahua community (story published by Mexico's former CDI on gob.mx)",
-    "topic": "padrinos, arras, lazo",
-    "claim": "A Nahuatl-Spanish story collection published on gob.mx describes a couple entering the church behind the priest, supported by padrinos of rings, arras and lazo, after being married by civil law the day before at the bride's home by the town authorities.",
-    "quote": "El día anterior a la boda religiosa, Julio y Rocío fueron casaron por el civil, en casa de la novia, por las autoridades del pueblo. ... Llegando a la iglesia Julio y Rocío entraron detrás del padre, apoyados de padrinos de anillos, arras y lazo.",
-    "source": "https://www.gob.mx/cms/uploads/attachment/file/390414/cdi-atrevete-a-contar-un-cuento-nahuatl.pdf",
-    "source_type": "government",
-    "checked": "2026-11-06",
-    "is_price": false,
-    "conflicts": "Source is a published story (narrative), not an ethnographic report; use as illustration of practice, not as a rule."
-   },
-   {
-    "fact_id": "fact_10",
-    "region": "Australia (Smartraveller, last updated 18/08/2026)",
-    "topic": "civil ceremony / legal",
-    "claim": "Smartraveller says you can't register an overseas marriage in Australia but in most cases it is legally recognised, provided it was valid under the law of the country where it happened and would have been valid under Australian law.",
-    "quote": "You can't register an overseas marriage in Australia. But in most cases, your marriage is legally recognised here. To be recognised, when you got married it must have been: valid under the law of the country where it happened; valid under Australian law if it had occurred in Australia.",
-    "source": "https://www.smartraveller.gov.au/planning-trip/advice-your-planned-activities/getting-married-overseas",
-    "source_type": "government",
-    "checked": "2026-11-06",
-    "is_price": false
-   },
-   {
-    "fact_id": "fact_11",
-    "region": "Australia (Smartraveller)",
-    "topic": "civil ceremony / legal",
-    "claim": "Smartraveller says some countries ask you to prove you are not already married, the most common documents being a Certificate of No Impediment to Marriage (CNI) or registry certificates, and advises contacting the destination's embassy or consulate for specifics.",
-    "quote": "Some countries will ask you to prove you aren't already married before you can get married there. ... The most common documents you need are: a Certificate of No Impediment to Marriage (CNI); certificates from a registry of births, deaths and marriage. ... Contact your destination's embassy or consulate for specific details.",
-    "source": "https://www.smartraveller.gov.au/planning-trip/advice-your-planned-activities/getting-married-overseas",
-    "source_type": "government",
-    "checked": "2026-11-06",
-    "is_price": false
-   },
-   {
-    "fact_id": "fact_12",
-    "region": "Mexico (Australian Embassy Mexico City)",
-    "topic": "civil ceremony / legal",
-    "claim": "The Australian Embassy in Mexico says CNI applications are downloaded from Smartraveller and presented in person at the Embassy in Mexico City, that honorary consulates do not provide notarial services, and that the Embassy charges a fee (amount not stated here, see the Embassy page).",
-    "quote": "Please download the application from the smartravelller website and present it in person at the Embassy in Mexico City. ... Be aware that consulates operated by an Honorary Consul don’t provide notarial services. Only the Australian Embassy in Mexico can offer these services.",
-    "source": "https://mexico.embassy.gov.au/mcty/Notarials.html",
-    "source_type": "government",
-    "checked": "2026-11-06",
-    "is_price": false
-   },
-   {
-    "fact_id": "fact_13",
-    "region": "Mexico (Consulate General of Mexico in Montreal, SRE)",
-    "topic": "civil ceremony",
-    "claim": "A Mexican foreign ministry consulate page states that in Mexico a religious marriage does not replace the civil marriage, so a religious ceremony, if held, can be organised after the civil ceremony.",
-    "quote": "El matrimonio religioso en México no reemplaza al matrimonio civil. Por lo tanto la ceremonia religiosa (de llevarse a cabo) puede organizarse posteriormente a la ceremonia civil.",
-    "source": "https://consulmex.sre.gob.mx/montreal/index.php/es/enterate/7-servicios-consulares/servicios-a-extranjeros/50-matrimonio",
-    "source_type": "government",
-    "checked": "2026-11-06",
-    "is_price": false,
-    "conflicts": "Page is undated and parts look out of date (it lists minimum ages for minors that do not reflect current federal law). Use only the civil-versus-religious line; do not use its document list or ages as current requirements."
-   },
-   {
-    "fact_id": "fact_14",
-    "region": "Mexico (Consulate General of Mexico in Montreal, SRE)",
-    "topic": "civil ceremony",
-    "claim": "The same consulate page says marriage in Mexico is regulated locally by the states and that it is the couple's responsibility to check with the Registro Civil office nearest the ceremony location.",
-    "quote": "El matrimonio en Mexico está regulado localmente por los Estados. ... IMPORTANTE: Es responsabilidad de los interesados informarse en cualquiera de las oficina del Registro Civil más cercanas al lugar donde llevará a cabo la ceremonia.",
-    "source": "https://consulmex.sre.gob.mx/montreal/index.php/es/enterate/7-servicios-consulares/servicios-a-extranjeros/50-matrimonio",
-    "source_type": "government",
-    "checked": "2026-11-06",
-    "is_price": false
-   },
-   {
-    "fact_id": "fact_15",
-    "region": "Mexico (Consulate General of Mexico in Montreal, SRE)",
-    "topic": "civil ceremony",
-    "claim": "The consulate page says that after the civil ceremony the Registro Civil gives the couple an Acta de Matrimonio, which can be legalised and certified for use abroad.",
-    "quote": "Posterior a la ceremonia civil una constancia o Acta de Matrimonio deberá ser entregada a los contrayentes por parte de la oficina del Registro Civil. Si se desea se puede legalizar y certificar el documento para que tenga validez en el exterior.",
-    "source": "https://consulmex.sre.gob.mx/montreal/index.php/es/enterate/7-servicios-consulares/servicios-a-extranjeros/50-matrimonio",
-    "source_type": "government",
-    "checked": "2026-11-06",
-    "is_price": false
-   },
-   {
-    "fact_id": "fact_16",
-    "region": "Almoloya del Río, Estado de México (ethnographic study)",
-    "topic": "pedida de mano",
-    "claim": "An ethnographic study of weddings in Almoloya del Río (Estado de México) says the three moments of the pedimento de mano, the aviso, the acuerdo and the contento, have changed in their symbols but stayed unchanged in essence for at least the last two centuries.",
-    "quote": "Los tres momentos que constituyen el pedimento de mano han evolucionado al perder y/o agregar algunos símbolos, pero han permanecido inamovibles en su esencia –por lo menos en los últimos dos siglos– el aviso, el acuerdo y el contento.",
-    "source": "https://www.redalyc.org/journal/7238/723878164010/html/",
-    "source_type": "editorial",
-    "checked": "2026-11-06",
-    "is_price": false,
-    "source_note": "Castañeda Castañeda, V. (2021), Antrópica revista de ciencias sociales y humanidades, vol. 7, núm. 13, pp. 203-228. Quote accents restored: the fetched text showed encoding errors in accented characters."
-   },
-   {
-    "fact_id": "fact_17",
-    "region": "Almoloya del Río, Estado de México (ethnographic study)",
-    "topic": "pedida de mano",
-    "claim": "In the same study, after a public dialogue between the parents the wedding date is set, generally with an engagement period of more than six months.",
-    "quote": "Tras un diálogo público entre los padres de los prometidos se concreta la fecha de la boda, dándose un plazo para el compromiso, que generalmente es mayor a 6 meses",
-    "source": "https://www.redalyc.org/journal/7238/723878164010/html/",
-    "source_type": "editorial",
-    "checked": "2026-11-06",
-    "is_price": false,
-    "source_note": "Castañeda Castañeda, V. (2021), Antrópica revista de ciencias sociales y humanidades, vol. 7, núm. 13, pp. 203-228. Quote accents restored: the fetched text showed encoding errors in accented characters."
-   },
-   {
-    "fact_id": "fact_18",
-    "region": "Almoloya del Río, Estado de México (ethnographic study)",
-    "topic": "cojín / Mass",
-    "claim": "In the church wedding the study observed, the madrina de cojines hurried to place the cushions on the couple's kneelers before the other padrinos and guests entered, as the Ave María was sung.",
-    "quote": "La madrina de cojines se apresuró a colocarlos en los reclinatorios de los contrayentes y enseguida ingresaron el resto de los padrinos e invitados, momento en el que se escuchó cantar el Ave María.",
-    "source": "https://www.redalyc.org/journal/7238/723878164010/html/",
-    "source_type": "editorial",
-    "checked": "2026-11-06",
-    "is_price": false,
-    "source_note": "Castañeda Castañeda, V. (2021), Antrópica revista de ciencias sociales y humanidades, vol. 7, núm. 13, pp. 203-228. Quote accents restored: the fetched text showed encoding errors in accented characters."
-   },
-   {
-    "fact_id": "fact_19",
-    "region": "Almoloya del Río, Estado de México (ethnographic study)",
-    "topic": "bendición / padrinos",
-    "claim": "The study records the couple's parents giving them their blessing at the altar, the padrinos de velación at the kneelers, and the other padrinos (of rings, arras, lazo, medals, bible and bouquet) taking places near the altar.",
-    "quote": "La comitiva tomó asiento, al tiempo en que los padres de los novios les dieron la bendición en el altar. Los padrinos de velación ocuparon su sitio en los reclinatorios, junto a ellos el resto de los padrinos (de anillos, arras, lazo, medallas, biblia y ramo) tomaron un lugar cerca del altar.",
-    "source": "https://www.redalyc.org/journal/7238/723878164010/html/",
-    "source_type": "editorial",
-    "checked": "2026-11-06",
-    "is_price": false,
-    "source_note": "Castañeda Castañeda, V. (2021), Antrópica revista de ciencias sociales y humanidades, vol. 7, núm. 13, pp. 203-228. Quote accents restored: the fetched text showed encoding errors in accented characters."
-   },
-   {
-    "fact_id": "fact_20",
-    "region": "Almoloya del Río, Estado de México (ethnographic study)",
-    "topic": "padrinos / bendición",
-    "claim": "The padrinos of rings, arras, medals and lazo came forward for the priest to bless these symbols.",
-    "quote": "Los padrinos de anillos, arras, medallas y lazo se acercaron para que el cura bendijera estos símbolos",
-    "source": "https://www.redalyc.org/journal/7238/723878164010/html/",
-    "source_type": "editorial",
-    "checked": "2026-11-06",
-    "is_price": false,
-    "source_note": "Castañeda Castañeda, V. (2021), Antrópica revista de ciencias sociales y humanidades, vol. 7, núm. 13, pp. 203-228. Quote accents restored: the fetched text showed encoding errors in accented characters."
-   },
-   {
-    "fact_id": "fact_21",
-    "region": "Almoloya del Río, Estado de México (ethnographic study)",
-    "topic": "arras",
-    "claim": "In the observed ceremony the groom received thirteen gold-coloured coins from the priest and placed them in the bride's hands, each speaking words about caring for the home.",
-    "quote": "El novio recibió trece monedas doradas de manos del sacerdote y las entregó en manos de la novia diciendo: -Elena, recibe estas arras como prenda del cuidado que tendré de que no falte lo necesario en nuestro hogar ... Yo las recibo como muestra del cuidado que tendré de que todo se aproveche en nuestro hogar",
-    "source": "https://www.redalyc.org/journal/7238/723878164010/html/",
-    "source_type": "editorial",
-    "checked": "2026-11-06",
-    "is_price": false,
-    "source_note": "Castañeda Castañeda, V. (2021), Antrópica revista de ciencias sociales y humanidades, vol. 7, núm. 13, pp. 203-228. Quote accents restored: the fetched text showed encoding errors in accented characters."
-   },
-   {
-    "fact_id": "fact_22",
-    "region": "Almoloya del Río, Estado de México (ethnographic study)",
-    "topic": "lazo",
-    "claim": "In the observed ceremony the padrinos de lazo covered the groom's back with the veil and placed the lazo over it, while the mariachi sang religious songs; at the end the lazo was removed.",
-    "quote": "al tiempo que los padrinos de lazo cubrieron con el velo la espalda del novio y sobre él, el lazo. ... Al finalizar la ceremonia, el sacerdote pidió a los asistentes que otorgaran un aplauso al nuevo matrimonio y luego les retiraron el lazo.",
-    "source": "https://www.redalyc.org/journal/7238/723878164010/html/",
-    "source_type": "editorial",
-    "checked": "2026-11-06",
-    "is_price": false,
-    "source_note": "Castañeda Castañeda, V. (2021), Antrópica revista de ciencias sociales y humanidades, vol. 7, núm. 13, pp. 203-228. Quote accents restored: the fetched text showed encoding errors in accented characters."
-   },
-   {
-    "fact_id": "fact_23",
-    "region": "Almoloya del Río, Estado de México (ethnographic study)",
-    "topic": "lazo / padrinos",
-    "claim": "The study says parents and/or the couple choose the padrinos de lazo carefully: they must be a stable couple married in the church, as an example to their godchildren.",
-    "quote": "los padres y/o contrayentes hacen una selección rigurosa de la pareja que fungirá como padrinos de lazo, forzosamente deberá ser un matrimonio estable y casado por la iglesia para que sea ejemplo de sus ahijados",
-    "source": "https://www.redalyc.org/journal/7238/723878164010/html/",
-    "source_type": "editorial",
-    "checked": "2026-11-06",
-    "is_price": false,
-    "source_note": "Castañeda Castañeda, V. (2021), Antrópica revista de ciencias sociales y humanidades, vol. 7, núm. 13, pp. 203-228. Quote accents restored: the fetched text showed encoding errors in accented characters."
-   },
-   {
-    "fact_id": "fact_24",
-    "region": "Almoloya del Río, Estado de México (ethnographic study)",
-    "topic": "madrina de ramo / Virgin",
-    "claim": "After the ceremony the couple went to the altar of the Virgin Mary, where the bride left at her feet the bouquet she carried in the Mass as an offering.",
-    "quote": "Los novios se pusieron de pie y se dirigieron al altar donde se encuentra la Virgen María; la novia depositó a sus pies el ramo que portó en la misa como ofrenda para que protegiera a la nueva familia bajo su manto.",
-    "source": "https://www.redalyc.org/journal/7238/723878164010/html/",
-    "source_type": "editorial",
-    "checked": "2026-11-06",
-    "is_price": false,
-    "source_note": "Castañeda Castañeda, V. (2021), Antrópica revista de ciencias sociales y humanidades, vol. 7, núm. 13, pp. 203-228. Quote accents restored: the fetched text showed encoding errors in accented characters."
-   },
-   {
-    "fact_id": "fact_25",
-    "region": "Mexico (national overview)",
-    "topic": "framing / padrinos",
-    "claim": "Britannica says family remains the most important element of Mexican society, that Mexicans generally keep strong links with extended family, including in-laws and 'adoptive' relatives, and that weddings are among the more lavish family-oriented events in Mexico.",
-    "quote": "Family remains the most-important element of Mexican society, both in private and in public life. ... Mexicans generally maintain strong links with members of their extended families, including in-laws and “adoptive” relatives ... As in other countries, weddings are some of the more-lavish family-oriented events in Mexico",
-    "source": "https://www.britannica.com/place/Mexico/Daily-life-and-social-customs",
-    "source_type": "editorial",
-    "checked": "2026-11-06",
-    "is_price": false
-   },
-   {
-    "fact_id": "fact_26",
-    "region": "Mexico (national overview)",
-    "topic": "framing",
-    "claim": "Britannica says daily life in Mexico varies dramatically by socioeconomic level, ethnicity, region, rural versus urban setting and other factors.",
-    "quote": "Daily life in Mexico varies dramatically according to socioeconomic level, gender, ethnicity and racial perceptions, regional characteristics, rural-versus-urban differences, and other social and cultural factors.",
-    "source": "https://www.britannica.com/place/Mexico/Daily-life-and-social-customs",
-    "source_type": "editorial",
-    "checked": "2026-11-06",
-    "is_price": false
-   },
-   {
-    "fact_id": "fact_27",
-    "region": "Mexico (Archdiocese of Mexico publication Desde la Fe, 30 May 2025)",
-    "topic": "arras",
-    "claim": "Desde la Fe, the Archdiocese of Mexico's publication, lists the arras among the signs that are part of tradition, calling them a sign proper to Christian marriages in Spanish-speaking America.",
-    "quote": "Los signos parte de la tradición: Arras: son un signo propio de los Matrimonios cristianos de hispanoamérica.",
-    "source": "https://desdelafe.mx/noticias/sabias-que/cuales-son-los-signos-del-sacramento-del-matrimonio/",
-    "source_type": "other",
-    "checked": "2026-11-06",
-    "is_price": false
-   },
-   {
-    "fact_id": "fact_28",
-    "region": "Mexico (Archdiocese of Mexico publication Desde la Fe, 30 May 2025)",
-    "topic": "lazo",
-    "claim": "Desde la Fe says the typical lazo consists of two rosaries joined to form one.",
-    "quote": "El lazo típico consiste en dos rosarios que se unen y forman uno solo.",
-    "source": "https://desdelafe.mx/noticias/sabias-que/cuales-son-los-signos-del-sacramento-del-matrimonio/",
-    "source_type": "other",
-    "checked": "2026-11-06",
-    "is_price": false,
-    "conflicts": "Desde la Fe also says the lazo 'sólo se usa en México' and gives a pre-Hispanic origin; the Filipino draft describes a cord in Philippine weddings, so do not repeat 'only in Mexico' and do not state the origin as fact (attribute it if used)."
-   },
-   {
-    "fact_id": "fact_29",
-    "region": "Mexico (Archdiocese of Mexico publication Desde la Fe, 30 May 2025)",
-    "topic": "bendición",
-    "claim": "Desde la Fe says the nuptial blessing (bendición nupcial) comes after the Our Father, when the lazo is placed, and God's blessing is solemnly invoked.",
-    "quote": "Bendición nupcial: Sucede después del Padre Nuestro, cuando se coloca el lazo, de un modo solemne se invoca la bendición de Dios.",
-    "source": "https://desdelafe.mx/noticias/sabias-que/cuales-son-los-signos-del-sacramento-del-matrimonio/",
-    "source_type": "other",
-    "checked": "2026-11-06",
-    "is_price": false
-   },
-   {
-    "fact_id": "fact_30",
-    "region": "Mexico (Archdiocese of Mexico publication Desde la Fe, 30 May 2025)",
-    "topic": "padrinos de velación",
-    "claim": "Desde la Fe says candles are given by the padrinos de velación, those who watch over and care for the couple, ideally the baptism godparents.",
-    "quote": "Velas: Son entregadas por los “padrinos de velación”, es decir, que velan y cuidan. Idealmente serían los padrinos de velación aquellos padrinos del Bautismo.",
-    "source": "https://desdelafe.mx/noticias/sabias-que/cuales-son-los-signos-del-sacramento-del-matrimonio/",
-    "source_type": "other",
-    "checked": "2026-11-06",
-    "is_price": false
-   },
-   {
-    "fact_id": "fact_31",
-    "region": "Mexico (Archdiocese of Mexico publication Desde la Fe, 30 May 2025)",
-    "topic": "Mass",
-    "claim": "Desde la Fe says the principal sign of the sacrament of Matrimony in the Catholic Church is the spouses' explicit consent, expressed through the words and vows of marriage, and distinguishes the important signs (holding hands, rings) from those that are more custom.",
-    "quote": "El sacramento del Matrimonio en la Iglesia Católica tiene como signo principal el consentimiento explícito de los cónyuges. ... Es importante señalar que no todos son iguales, están los que son verdaderamente importantes, y otros que simplemente son más una costumbre.",
-    "source": "https://desdelafe.mx/noticias/sabias-que/cuales-son-los-signos-del-sacramento-del-matrimonio/",
-    "source_type": "other",
-    "checked": "2026-11-06",
-    "is_price": false
-   }
+  "tools_used": [
+    "mcp__Apify__apify--web-fetch",
+    "mcp__Apify__apify--web-search",
+    "Bash"
   ],
-  "insider_details": [
-   {
-    "detail": "Plan two ceremonies, not one: in Mexico the legal marriage is the civil one before the Registro Civil, and a church wedding does not replace it, so couples who want a Mass usually hold the civil ceremony first (in some communities the day before, at home). Build both into the run sheet and ask the local registry what it needs, as at November 2026.",
-    "fact_ids": [
-     "fact_07",
-     "fact_09",
-     "fact_13",
-     "fact_14"
-    ]
-   },
-   {
-    "detail": "Book the Australian Embassy in Mexico City early if the registry asks for a CNI: the application is downloaded from Smartraveller and presented in person in Mexico City, and honorary consulates in resort areas cannot do notarial work. The Wedded Advisor confirms current requirements with the couple, but the couple deal with the Embassy and registry directly.",
-    "fact_ids": [
-     "fact_11",
-     "fact_12"
-    ]
-   },
-   {
-    "detail": "Sponsors are a cast list to settle months ahead: one documented church wedding had padrinos of velación, rings, arras, lazo, medals, bible and bouquet plus a madrina de cojines, each with a moment in the Mass. Give each padrino and madrina their cue and seat near the altar in the ceremony brief.",
-    "fact_ids": [
-     "fact_18",
-     "fact_19",
-     "fact_20",
-     "fact_30"
-    ]
-   },
-   {
-    "detail": "Choose the padrinos de lazo with care; in the families one study describes, they are expected to be a stable couple married in the church. Brief the photographer on the moment the lazo goes on, which Desde la Fe places with the nuptial blessing after the Our Father.",
-    "fact_ids": [
-     "fact_23",
-     "fact_29"
-    ]
-   },
-   {
-    "detail": "Allow time for the pedida de mano and engagement visits if the families keep them: documented customs range from several family visits in Nahua communities of Puebla to an engagement of more than six months in Almoloya del Río. Australian couples planning an overseas date should ask the family about this first.",
-    "fact_ids": [
-     "fact_04",
-     "fact_05",
-     "fact_16",
-     "fact_17"
-    ]
-   }
+  "assumptions": [
+    "Batch A only (fact_01 to fact_31): padrinos and madrinas incl. madrina de ramo, pedida de mano, lazo, arras, Catholic Mass incl. cojín and bendición, civil ceremony. Batch B covers procession, music, dances, food, UNESCO and the Smartraveller Mexico advisory.",
+    "Regional scope: fact_04 to fact_08 describe Nahua and Totonac communities of the Sierra Norte de Puebla (INPI); fact_16 to fact_24 describe Almoloya del Río, Estado de México (one ethnographic study). Tie a custom to these places only as sourced; elsewhere write as living practice ('in many Mexican families').",
+    "Thirteen coins: sourced only as what was observed in one ceremony (fact_21: 'trece monedas doradas'). No meaning attached to the number; no amounts or coin values.",
+    "Desde la Fe (fact_27 to fact_31) is the official publication of the Archdiocese of Mexico, not the Conferencia del Episcopado Mexicano; cem.org.mx was not read. Its origin story for the lazo is an attributed claim, not a fact for the copy.",
+    "Fees: the Australian Embassy page lists notarial fees in AUD; deliberately not recorded (no prices or amounts rule). Copy says 'check with the registry and the embassy, including any fees'.",
+    "Redalyc quotes (fact_16 to fact_24): fetched text showed encoding errors in accented characters; accents restored to standard Spanish spelling in the quotes.",
+    "Smartraveller 'Getting married overseas' live URL is /planning-trip/advice-your-planned-activities/getting-married-overseas (the /before-you-go/activities/ URL in the brief returns 404); last updated 18/08/2026.",
+    "Unsourced customs are in payload.often_told (internal only, no VERIFY markers, no meanings as fact).",
+    "Legal facts are as at November 2026; the Wedded Advisor confirms current requirements with the registry and the embassy.",
+    "Embassy notarial and Playa del Carmen registry fee amounts were seen but deliberately not recorded (no prices or amounts in this batch); any fee mention needs Nic's sign-off.",
+    "Zacatecas and Guanajuato are named only as places the custom is rooted, never as suggested destinations.",
+    "BUAP thesis on wedding ritual in the Región de los Volcanes (Puebla) timed out; not used."
   ],
-  "quotes": [],
-  "real_weddings": [],
+  "open_questions": [
+    {
+      "to": "luxury-writer",
+      "question": "Use the Smartraveller URL in fact_10 (the brief's seed URL is 404).",
+      "blocking": false
+    },
+    {
+      "to": "luxury-writer",
+      "question": "Hora loca has no Mexico-specific source: keep it to one hedged line or cut it?",
+      "blocking": false
+    }
+  ],
   "verify_items": [
-   "[[VERIFY: Registro Civil steps, documents, notice periods and any fees for the state and municipality where the civil ceremony will be held; no official Registro Civil page for a specific state was read. Write as questions to ask the registry and the Australian Embassy, as at November 2026.]]"
+    "[[VERIFY: Registro Civil steps, documents, notice periods and any fees for the state and municipality where the civil ceremony will be held; no official Registro Civil page for a specific state was read. Write as questions to ask the registry and the Australian Embassy, as at November 2026.]]",
+    "[[VERIFY: hora loca at Mexican weddings: no official, academic or editorial source found; search results attribute it to Venezuela/other Latin countries. Mention only as 'many couples borrow', or cut.]]",
+    "[[VERIFY: serenata to the bride before the wedding: UNESCO lists 'serenades' in the mariachi repertoire (fact_101) but no source read links serenata to weddings.]]",
+    "[[VERIFY: money dance (baile del billete): no official or academic source read; describe only as a reception custom some families keep, no amounts, no 'funds the honeymoon'.]]",
+    "[[VERIFY: Mexican wedding cookies (polvorones) and the cake: no official, Britannica or academic source read linking polvorones to weddings.]]",
+    "[[VERIFY: la víbora de la mar mechanics (couple standing on chairs, guests in a line passing under linked arms): official catalogue (fact_113) gives meaning only; mechanics only in a non-official PDF.]]",
+    "[[VERIFY: tornaboda as Mexican practice: RAE (fact_104) defines the day after the wedding and the party on it, but no Mexico-specific source read.]]",
+    "[[VERIFY: Registro Civil requirements for foreigners outside Playa del Carmen: check with the registry and the embassy, including any fees, as at November 2026.]]"
   ],
-  "needs_signoff": [],
-  "must_include_coverage": [
-   {
-    "item": "Padrinos and madrinas (sponsors and their roles)",
-    "covered_by": [
-     "fact_02",
-     "fact_03",
-     "fact_08",
-     "fact_09",
-     "fact_19",
-     "fact_20",
-     "fact_23",
-     "fact_30"
-    ]
-   },
-   {
-    "item": "Madrina de ramo (bouquet sponsor) and the bouquet offering to the Virgin",
-    "covered_by": [
-     "fact_19",
-     "fact_24"
-    ]
-   },
-   {
-    "item": "The pedida de mano",
-    "covered_by": [
-     "fact_04",
-     "fact_05",
-     "fact_06",
-     "fact_16",
-     "fact_17"
-    ]
-   },
-   {
-    "item": "El lazo",
-    "covered_by": [
-     "fact_09",
-     "fact_22",
-     "fact_23",
-     "fact_28",
-     "fact_29"
-    ]
-   },
-   {
-    "item": "Las arras (13 coins as sourced, no amounts)",
-    "covered_by": [
-     "fact_01",
-     "fact_21",
-     "fact_27"
-    ]
-   },
-   {
-    "item": "The Catholic Mass incl. the cojín and bendición",
-    "covered_by": [
-     "fact_18",
-     "fact_19",
-     "fact_20",
-     "fact_24",
-     "fact_29",
-     "fact_31"
-    ]
-   },
-   {
-    "item": "The civil ceremony (the legal one)",
-    "covered_by": [
-     "fact_07",
-     "fact_09",
-     "fact_13",
-     "fact_14",
-     "fact_15",
-     "fact_10",
-     "fact_11",
-     "fact_12"
-    ]
-   },
-   {
-    "item": "Framing line: customs vary by region and family; some Indigenous communities keep their own",
-    "covered_by": [
-     "fact_04",
-     "fact_06",
-     "fact_26"
-    ]
-   },
-   {
-    "item": "Spanish terms with accents as sources give them (bendición, madrina de cojines, padrinos de velación)",
-    "covered_by": [
-     "fact_18",
-     "fact_19",
-     "fact_29",
-     "fact_30"
-    ]
-   },
-   {
-    "item": "Registro Civil steps for a specific state",
-    "covered_by": [
-     "[[VERIFY: Registro Civil steps, documents, notice periods and any fees for the state and municipality where the civil ceremony will be held; no official Registro Civil page for a specific state was read. Write as questions to ask the registry and the Australian Embassy, as at November 2026.]]"
-    ]
-   }
+  "self_qa": {
+    "checks": [
+      {
+        "check": "Every fact has a source URL, exact quote, region and date read",
+        "pass": true,
+        "note": "31 facts, read live 2026-11-06."
+      },
+      {
+        "check": "No prices or amounts",
+        "pass": true,
+        "note": "Embassy fees and Consulate ages omitted; 13 coins only as observed count."
+      },
+      {
+        "check": "Every batch A custom covered or listed as often told",
+        "pass": true,
+        "note": "All six customs covered; state-level Registro Civil steps are one VERIFY item."
+      },
+      {
+        "check": "Legal info from government sources only, dated",
+        "pass": true,
+        "note": "Smartraveller, Australian Embassy Mexico, SRE consulate; as at November 2026."
+      },
+      {
+        "check": "No invented quotes, statistics or real weddings",
+        "pass": true,
+        "note": "No quotes or real weddings used."
+      },
+      {
+        "check": "No competitor, vendor or Wikipedia sources",
+        "pass": true
+      }
+    ],
+    "confidence": 0.72
+  },
+  "next_agent": [
+    "luxury-writer"
   ],
-  "often_told": [
-   "Arras: thirteen coins linked to Christ and the twelve apostles, or to months of the year (no source read; do not state a meaning).",
-   "Madrina de ramo presenting a bouquet or flowers to the Virgin of Guadalupe specifically (fact_24 documents an offering to the Virgin Mary in one town only).",
-   "Lazo shaped as a figure of eight or infinity sign; made of flowers or silk cord (Desde la Fe documents two joined rosaries only).",
-   "Padrinos paying for items such as the cake, music or the lazo (no 'who pays' framing; unsourced).",
-   "Cojín: kneeling cushions carried by a dedicated sponsor at every church wedding (fact_18 documents one community only).",
-   "The pedida de mano as a dinner where the groom's family formally asks the bride's parents in urban families (only Indigenous and Almoloya del Río forms are sourced)."
-  ]
- }
+  "payload": {
+    "facts": [
+      {
+        "fact_id": "fact_01",
+        "region": "Spanish-speaking world (RAE dictionary)",
+        "topic": "arras",
+        "claim": "The Real Academia Española dictionary defines arras, in some marriage rites, as coins the couple give each other as a symbol of their union.",
+        "quote": "1. f. pl. En algunos ritos matrimoniales, monedas que los desposados se entregan como símbolo de su unión.",
+        "source": "https://dle.rae.es/arras",
+        "source_type": "editorial",
+        "checked": "2026-11-06",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_02",
+        "region": "Spanish-speaking world (RAE dictionary)",
+        "topic": "padrinos",
+        "claim": "The RAE dictionary defines padrino as a man who accompanies someone receiving a Christian sacrament, with the example 'Seré el padrino de la boda'.",
+        "quote": "1.b. m. Hombre que acompaña a quien recibe algún sacramento cristiano. Seré el padrino de la boda.",
+        "source": "https://dle.rae.es/padrino",
+        "source_type": "editorial",
+        "checked": "2026-11-06",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_03",
+        "region": "Spanish-speaking world (RAE dictionary)",
+        "topic": "padrinos",
+        "claim": "In the plural, padrinos means the padrino and the madrina together.",
+        "quote": "1.c. m. pl. El padrino (➝ 1a y 1b) y la madrina.",
+        "source": "https://dle.rae.es/padrino",
+        "source_type": "editorial",
+        "checked": "2026-11-06",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_04",
+        "region": "Sierra Norte de Puebla (Nahua communities)",
+        "topic": "pedida de mano",
+        "claim": "Mexico's national Indigenous peoples institute (INPI) describes how, in Nahua communities of the Sierra Norte de Puebla, a young man's grandparents accompany him to ask for the bride's hand; in their absence parents, baptism godparents, uncles or another trusted person may go.",
+        "quote": "Cuando un muchacho en edad de casarse quiere contraer matrimonio, sus abuelos son los inmediatos responsables de acompañarlo a pedir la mano de la muchacha; en ausencia de ellos, pueden ser sus padres, padrinos de bautizo, tíos o alguna otra persona de confianza.",
+        "source": "https://www.gob.mx/inpi/articulos/te-compartimos-el-ritual-de-bodas-en-la-sierra-norte-de-puebla",
+        "source_type": "government",
+        "checked": "2026-11-06",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_05",
+        "region": "Sierra Norte de Puebla (Nahua communities)",
+        "topic": "pedida de mano",
+        "claim": "INPI says that in these Nahua communities the bride's parents always answer that the proposal must be thought over, leading to at least three more visits, and that the decision is collective, involving the bride's parents, padrinos, uncles and grandparents.",
+        "quote": "Los padres de la muchacha siempre responden que la propuesta debe ser pensada, lo que ocasiona que se sucedan por lo menos tres visitas más espaciadas entre 8 y 15 días cada una, a las cuales se les conoce como \"nesiuajtanilis\". ... La decisión es colectiva e involucra a padres, padrinos, tíos y abuelos de la pretendida.",
+        "source": "https://www.gob.mx/inpi/articulos/te-compartimos-el-ritual-de-bodas-en-la-sierra-norte-de-puebla",
+        "source_type": "government",
+        "checked": "2026-11-06",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_06",
+        "region": "Sierra Norte de Puebla (Totonac communities)",
+        "topic": "pedida de mano",
+        "claim": "INPI says that among Totonac communities today the man decides whom to marry and consults the woman first, then goes with his parents and baptism godparents to the petición de mano.",
+        "quote": "Hoy en día, el hombre es quien decide con quién casarse y consultan previamente a la mujer, para posteriormente ser acompañado por sus padres y padrinos de bautizo a la petición de mano.",
+        "source": "https://www.gob.mx/inpi/articulos/te-compartimos-el-ritual-de-bodas-en-la-sierra-norte-de-puebla",
+        "source_type": "government",
+        "checked": "2026-11-06",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_07",
+        "region": "Sierra Norte de Puebla (Nahua communities)",
+        "topic": "civil ceremony",
+        "claim": "INPI states that, in the Nahua weddings it describes, the civil wedding must take place before the religious wedding.",
+        "quote": "Antes de la boda religiosa debe efectuarse la boda civil.",
+        "source": "https://www.gob.mx/inpi/articulos/te-compartimos-el-ritual-de-bodas-en-la-sierra-norte-de-puebla",
+        "source_type": "government",
+        "checked": "2026-11-06",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_08",
+        "region": "Sierra Norte de Puebla (Nahua communities)",
+        "topic": "padrinos",
+        "claim": "INPI says that after the wedding both parents and padrinos remain responsible for watching over the new couple, and that before the party ends padrinos and parents give the couple advice.",
+        "quote": "Tanto los padres de ambos, como los padrinos, quedan como responsables de la vigilancia de la nueva pareja. ... Antes de que la fiesta termine, padrinos y padres ofrecen consejos al nuevo matrimonio",
+        "source": "https://www.gob.mx/inpi/articulos/te-compartimos-el-ritual-de-bodas-en-la-sierra-norte-de-puebla",
+        "source_type": "government",
+        "checked": "2026-11-06",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_09",
+        "region": "Nahua community (story published by Mexico's former CDI on gob.mx)",
+        "topic": "padrinos, arras, lazo",
+        "claim": "A Nahuatl-Spanish story collection published on gob.mx describes a couple entering the church behind the priest, supported by padrinos of rings, arras and lazo, after being married by civil law the day before at the bride's home by the town authorities.",
+        "quote": "El día anterior a la boda religiosa, Julio y Rocío fueron casaron por el civil, en casa de la novia, por las autoridades del pueblo. ... Llegando a la iglesia Julio y Rocío entraron detrás del padre, apoyados de padrinos de anillos, arras y lazo.",
+        "source": "https://www.gob.mx/cms/uploads/attachment/file/390414/cdi-atrevete-a-contar-un-cuento-nahuatl.pdf",
+        "source_type": "government",
+        "checked": "2026-11-06",
+        "is_price": false,
+        "conflicts": "Source is a published story (narrative), not an ethnographic report; use as illustration of practice, not as a rule."
+      },
+      {
+        "fact_id": "fact_10",
+        "region": "Australia (Smartraveller, last updated 18/08/2026)",
+        "topic": "civil ceremony / legal",
+        "claim": "Smartraveller says you can't register an overseas marriage in Australia but in most cases it is legally recognised, provided it was valid under the law of the country where it happened and would have been valid under Australian law.",
+        "quote": "You can't register an overseas marriage in Australia. But in most cases, your marriage is legally recognised here. To be recognised, when you got married it must have been: valid under the law of the country where it happened; valid under Australian law if it had occurred in Australia.",
+        "source": "https://www.smartraveller.gov.au/planning-trip/advice-your-planned-activities/getting-married-overseas",
+        "source_type": "government",
+        "checked": "2026-11-06",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_11",
+        "region": "Australia (Smartraveller)",
+        "topic": "civil ceremony / legal",
+        "claim": "Smartraveller says some countries ask you to prove you are not already married, the most common documents being a Certificate of No Impediment to Marriage (CNI) or registry certificates, and advises contacting the destination's embassy or consulate for specifics.",
+        "quote": "Some countries will ask you to prove you aren't already married before you can get married there. ... The most common documents you need are: a Certificate of No Impediment to Marriage (CNI); certificates from a registry of births, deaths and marriage. ... Contact your destination's embassy or consulate for specific details.",
+        "source": "https://www.smartraveller.gov.au/planning-trip/advice-your-planned-activities/getting-married-overseas",
+        "source_type": "government",
+        "checked": "2026-11-06",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_12",
+        "region": "Mexico (Australian Embassy Mexico City)",
+        "topic": "civil ceremony / legal",
+        "claim": "The Australian Embassy in Mexico says CNI applications are downloaded from Smartraveller and presented in person at the Embassy in Mexico City, that honorary consulates do not provide notarial services, and that the Embassy charges a fee (amount not stated here, see the Embassy page).",
+        "quote": "Please download the application from the smartravelller website and present it in person at the Embassy in Mexico City. ... Be aware that consulates operated by an Honorary Consul don’t provide notarial services. Only the Australian Embassy in Mexico can offer these services.",
+        "source": "https://mexico.embassy.gov.au/mcty/Notarials.html",
+        "source_type": "government",
+        "checked": "2026-11-06",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_13",
+        "region": "Mexico (Consulate General of Mexico in Montreal, SRE)",
+        "topic": "civil ceremony",
+        "claim": "A Mexican foreign ministry consulate page states that in Mexico a religious marriage does not replace the civil marriage, so a religious ceremony, if held, can be organised after the civil ceremony.",
+        "quote": "El matrimonio religioso en México no reemplaza al matrimonio civil. Por lo tanto la ceremonia religiosa (de llevarse a cabo) puede organizarse posteriormente a la ceremonia civil.",
+        "source": "https://consulmex.sre.gob.mx/montreal/index.php/es/enterate/7-servicios-consulares/servicios-a-extranjeros/50-matrimonio",
+        "source_type": "government",
+        "checked": "2026-11-06",
+        "is_price": false,
+        "conflicts": "Page is undated and parts look out of date (it lists minimum ages for minors that do not reflect current federal law). Use only the civil-versus-religious line; do not use its document list or ages as current requirements."
+      },
+      {
+        "fact_id": "fact_14",
+        "region": "Mexico (Consulate General of Mexico in Montreal, SRE)",
+        "topic": "civil ceremony",
+        "claim": "The same consulate page says marriage in Mexico is regulated locally by the states and that it is the couple's responsibility to check with the Registro Civil office nearest the ceremony location.",
+        "quote": "El matrimonio en Mexico está regulado localmente por los Estados. ... IMPORTANTE: Es responsabilidad de los interesados informarse en cualquiera de las oficina del Registro Civil más cercanas al lugar donde llevará a cabo la ceremonia.",
+        "source": "https://consulmex.sre.gob.mx/montreal/index.php/es/enterate/7-servicios-consulares/servicios-a-extranjeros/50-matrimonio",
+        "source_type": "government",
+        "checked": "2026-11-06",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_15",
+        "region": "Mexico (Consulate General of Mexico in Montreal, SRE)",
+        "topic": "civil ceremony",
+        "claim": "The consulate page says that after the civil ceremony the Registro Civil gives the couple an Acta de Matrimonio, which can be legalised and certified for use abroad.",
+        "quote": "Posterior a la ceremonia civil una constancia o Acta de Matrimonio deberá ser entregada a los contrayentes por parte de la oficina del Registro Civil. Si se desea se puede legalizar y certificar el documento para que tenga validez en el exterior.",
+        "source": "https://consulmex.sre.gob.mx/montreal/index.php/es/enterate/7-servicios-consulares/servicios-a-extranjeros/50-matrimonio",
+        "source_type": "government",
+        "checked": "2026-11-06",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_16",
+        "region": "Almoloya del Río, Estado de México (ethnographic study)",
+        "topic": "pedida de mano",
+        "claim": "An ethnographic study of weddings in Almoloya del Río (Estado de México) says the three moments of the pedimento de mano, the aviso, the acuerdo and the contento, have changed in their symbols but stayed unchanged in essence for at least the last two centuries.",
+        "quote": "Los tres momentos que constituyen el pedimento de mano han evolucionado al perder y/o agregar algunos símbolos, pero han permanecido inamovibles en su esencia –por lo menos en los últimos dos siglos– el aviso, el acuerdo y el contento.",
+        "source": "https://www.redalyc.org/journal/7238/723878164010/html/",
+        "source_type": "editorial",
+        "checked": "2026-11-06",
+        "is_price": false,
+        "source_note": "Castañeda Castañeda, V. (2021), Antrópica revista de ciencias sociales y humanidades, vol. 7, núm. 13, pp. 203-228. Quote accents restored: the fetched text showed encoding errors in accented characters."
+      },
+      {
+        "fact_id": "fact_17",
+        "region": "Almoloya del Río, Estado de México (ethnographic study)",
+        "topic": "pedida de mano",
+        "claim": "In the same study, after a public dialogue between the parents the wedding date is set, generally with an engagement period of more than six months.",
+        "quote": "Tras un diálogo público entre los padres de los prometidos se concreta la fecha de la boda, dándose un plazo para el compromiso, que generalmente es mayor a 6 meses",
+        "source": "https://www.redalyc.org/journal/7238/723878164010/html/",
+        "source_type": "editorial",
+        "checked": "2026-11-06",
+        "is_price": false,
+        "source_note": "Castañeda Castañeda, V. (2021), Antrópica revista de ciencias sociales y humanidades, vol. 7, núm. 13, pp. 203-228. Quote accents restored: the fetched text showed encoding errors in accented characters."
+      },
+      {
+        "fact_id": "fact_18",
+        "region": "Almoloya del Río, Estado de México (ethnographic study)",
+        "topic": "cojín / Mass",
+        "claim": "In the church wedding the study observed, the madrina de cojines hurried to place the cushions on the couple's kneelers before the other padrinos and guests entered, as the Ave María was sung.",
+        "quote": "La madrina de cojines se apresuró a colocarlos en los reclinatorios de los contrayentes y enseguida ingresaron el resto de los padrinos e invitados, momento en el que se escuchó cantar el Ave María.",
+        "source": "https://www.redalyc.org/journal/7238/723878164010/html/",
+        "source_type": "editorial",
+        "checked": "2026-11-06",
+        "is_price": false,
+        "source_note": "Castañeda Castañeda, V. (2021), Antrópica revista de ciencias sociales y humanidades, vol. 7, núm. 13, pp. 203-228. Quote accents restored: the fetched text showed encoding errors in accented characters."
+      },
+      {
+        "fact_id": "fact_19",
+        "region": "Almoloya del Río, Estado de México (ethnographic study)",
+        "topic": "bendición / padrinos",
+        "claim": "The study records the couple's parents giving them their blessing at the altar, the padrinos de velación at the kneelers, and the other padrinos (of rings, arras, lazo, medals, bible and bouquet) taking places near the altar.",
+        "quote": "La comitiva tomó asiento, al tiempo en que los padres de los novios les dieron la bendición en el altar. Los padrinos de velación ocuparon su sitio en los reclinatorios, junto a ellos el resto de los padrinos (de anillos, arras, lazo, medallas, biblia y ramo) tomaron un lugar cerca del altar.",
+        "source": "https://www.redalyc.org/journal/7238/723878164010/html/",
+        "source_type": "editorial",
+        "checked": "2026-11-06",
+        "is_price": false,
+        "source_note": "Castañeda Castañeda, V. (2021), Antrópica revista de ciencias sociales y humanidades, vol. 7, núm. 13, pp. 203-228. Quote accents restored: the fetched text showed encoding errors in accented characters."
+      },
+      {
+        "fact_id": "fact_20",
+        "region": "Almoloya del Río, Estado de México (ethnographic study)",
+        "topic": "padrinos / bendición",
+        "claim": "The padrinos of rings, arras, medals and lazo came forward for the priest to bless these symbols.",
+        "quote": "Los padrinos de anillos, arras, medallas y lazo se acercaron para que el cura bendijera estos símbolos",
+        "source": "https://www.redalyc.org/journal/7238/723878164010/html/",
+        "source_type": "editorial",
+        "checked": "2026-11-06",
+        "is_price": false,
+        "source_note": "Castañeda Castañeda, V. (2021), Antrópica revista de ciencias sociales y humanidades, vol. 7, núm. 13, pp. 203-228. Quote accents restored: the fetched text showed encoding errors in accented characters."
+      },
+      {
+        "fact_id": "fact_21",
+        "region": "Almoloya del Río, Estado de México (ethnographic study)",
+        "topic": "arras",
+        "claim": "In the observed ceremony the groom received thirteen gold-coloured coins from the priest and placed them in the bride's hands, each speaking words about caring for the home.",
+        "quote": "El novio recibió trece monedas doradas de manos del sacerdote y las entregó en manos de la novia diciendo: -Elena, recibe estas arras como prenda del cuidado que tendré de que no falte lo necesario en nuestro hogar ... Yo las recibo como muestra del cuidado que tendré de que todo se aproveche en nuestro hogar",
+        "source": "https://www.redalyc.org/journal/7238/723878164010/html/",
+        "source_type": "editorial",
+        "checked": "2026-11-06",
+        "is_price": false,
+        "source_note": "Castañeda Castañeda, V. (2021), Antrópica revista de ciencias sociales y humanidades, vol. 7, núm. 13, pp. 203-228. Quote accents restored: the fetched text showed encoding errors in accented characters."
+      },
+      {
+        "fact_id": "fact_22",
+        "region": "Almoloya del Río, Estado de México (ethnographic study)",
+        "topic": "lazo",
+        "claim": "In the observed ceremony the padrinos de lazo covered the groom's back with the veil and placed the lazo over it, while the mariachi sang religious songs; at the end the lazo was removed.",
+        "quote": "al tiempo que los padrinos de lazo cubrieron con el velo la espalda del novio y sobre él, el lazo. ... Al finalizar la ceremonia, el sacerdote pidió a los asistentes que otorgaran un aplauso al nuevo matrimonio y luego les retiraron el lazo.",
+        "source": "https://www.redalyc.org/journal/7238/723878164010/html/",
+        "source_type": "editorial",
+        "checked": "2026-11-06",
+        "is_price": false,
+        "source_note": "Castañeda Castañeda, V. (2021), Antrópica revista de ciencias sociales y humanidades, vol. 7, núm. 13, pp. 203-228. Quote accents restored: the fetched text showed encoding errors in accented characters."
+      },
+      {
+        "fact_id": "fact_23",
+        "region": "Almoloya del Río, Estado de México (ethnographic study)",
+        "topic": "lazo / padrinos",
+        "claim": "The study says parents and/or the couple choose the padrinos de lazo carefully: they must be a stable couple married in the church, as an example to their godchildren.",
+        "quote": "los padres y/o contrayentes hacen una selección rigurosa de la pareja que fungirá como padrinos de lazo, forzosamente deberá ser un matrimonio estable y casado por la iglesia para que sea ejemplo de sus ahijados",
+        "source": "https://www.redalyc.org/journal/7238/723878164010/html/",
+        "source_type": "editorial",
+        "checked": "2026-11-06",
+        "is_price": false,
+        "source_note": "Castañeda Castañeda, V. (2021), Antrópica revista de ciencias sociales y humanidades, vol. 7, núm. 13, pp. 203-228. Quote accents restored: the fetched text showed encoding errors in accented characters."
+      },
+      {
+        "fact_id": "fact_24",
+        "region": "Almoloya del Río, Estado de México (ethnographic study)",
+        "topic": "madrina de ramo / Virgin",
+        "claim": "After the ceremony the couple went to the altar of the Virgin Mary, where the bride left at her feet the bouquet she carried in the Mass as an offering.",
+        "quote": "Los novios se pusieron de pie y se dirigieron al altar donde se encuentra la Virgen María; la novia depositó a sus pies el ramo que portó en la misa como ofrenda para que protegiera a la nueva familia bajo su manto.",
+        "source": "https://www.redalyc.org/journal/7238/723878164010/html/",
+        "source_type": "editorial",
+        "checked": "2026-11-06",
+        "is_price": false,
+        "source_note": "Castañeda Castañeda, V. (2021), Antrópica revista de ciencias sociales y humanidades, vol. 7, núm. 13, pp. 203-228. Quote accents restored: the fetched text showed encoding errors in accented characters."
+      },
+      {
+        "fact_id": "fact_25",
+        "region": "Mexico (national overview)",
+        "topic": "framing / padrinos",
+        "claim": "Britannica says family remains the most important element of Mexican society, that Mexicans generally keep strong links with extended family, including in-laws and 'adoptive' relatives, and that weddings are among the more lavish family-oriented events in Mexico.",
+        "quote": "Family remains the most-important element of Mexican society, both in private and in public life. ... Mexicans generally maintain strong links with members of their extended families, including in-laws and “adoptive” relatives ... As in other countries, weddings are some of the more-lavish family-oriented events in Mexico",
+        "source": "https://www.britannica.com/place/Mexico/Daily-life-and-social-customs",
+        "source_type": "editorial",
+        "checked": "2026-11-06",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_26",
+        "region": "Mexico (national overview)",
+        "topic": "framing",
+        "claim": "Britannica says daily life in Mexico varies dramatically by socioeconomic level, ethnicity, region, rural versus urban setting and other factors.",
+        "quote": "Daily life in Mexico varies dramatically according to socioeconomic level, gender, ethnicity and racial perceptions, regional characteristics, rural-versus-urban differences, and other social and cultural factors.",
+        "source": "https://www.britannica.com/place/Mexico/Daily-life-and-social-customs",
+        "source_type": "editorial",
+        "checked": "2026-11-06",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_27",
+        "region": "Mexico (Archdiocese of Mexico publication Desde la Fe, 30 May 2025)",
+        "topic": "arras",
+        "claim": "Desde la Fe, the Archdiocese of Mexico's publication, lists the arras among the signs that are part of tradition, calling them a sign proper to Christian marriages in Spanish-speaking America.",
+        "quote": "Los signos parte de la tradición: Arras: son un signo propio de los Matrimonios cristianos de hispanoamérica.",
+        "source": "https://desdelafe.mx/noticias/sabias-que/cuales-son-los-signos-del-sacramento-del-matrimonio/",
+        "source_type": "other",
+        "checked": "2026-11-06",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_28",
+        "region": "Mexico (Archdiocese of Mexico publication Desde la Fe, 30 May 2025)",
+        "topic": "lazo",
+        "claim": "Desde la Fe says the typical lazo consists of two rosaries joined to form one.",
+        "quote": "El lazo típico consiste en dos rosarios que se unen y forman uno solo.",
+        "source": "https://desdelafe.mx/noticias/sabias-que/cuales-son-los-signos-del-sacramento-del-matrimonio/",
+        "source_type": "other",
+        "checked": "2026-11-06",
+        "is_price": false,
+        "conflicts": "Desde la Fe also says the lazo 'sólo se usa en México' and gives a pre-Hispanic origin; the Filipino draft describes a cord in Philippine weddings, so do not repeat 'only in Mexico' and do not state the origin as fact (attribute it if used)."
+      },
+      {
+        "fact_id": "fact_29",
+        "region": "Mexico (Archdiocese of Mexico publication Desde la Fe, 30 May 2025)",
+        "topic": "bendición",
+        "claim": "Desde la Fe says the nuptial blessing (bendición nupcial) comes after the Our Father, when the lazo is placed, and God's blessing is solemnly invoked.",
+        "quote": "Bendición nupcial: Sucede después del Padre Nuestro, cuando se coloca el lazo, de un modo solemne se invoca la bendición de Dios.",
+        "source": "https://desdelafe.mx/noticias/sabias-que/cuales-son-los-signos-del-sacramento-del-matrimonio/",
+        "source_type": "other",
+        "checked": "2026-11-06",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_30",
+        "region": "Mexico (Archdiocese of Mexico publication Desde la Fe, 30 May 2025)",
+        "topic": "padrinos de velación",
+        "claim": "Desde la Fe says candles are given by the padrinos de velación, those who watch over and care for the couple, ideally the baptism godparents.",
+        "quote": "Velas: Son entregadas por los “padrinos de velación”, es decir, que velan y cuidan. Idealmente serían los padrinos de velación aquellos padrinos del Bautismo.",
+        "source": "https://desdelafe.mx/noticias/sabias-que/cuales-son-los-signos-del-sacramento-del-matrimonio/",
+        "source_type": "other",
+        "checked": "2026-11-06",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_31",
+        "region": "Mexico (Archdiocese of Mexico publication Desde la Fe, 30 May 2025)",
+        "topic": "Mass",
+        "claim": "Desde la Fe says the principal sign of the sacrament of Matrimony in the Catholic Church is the spouses' explicit consent, expressed through the words and vows of marriage, and distinguishes the important signs (holding hands, rings) from those that are more custom.",
+        "quote": "El sacramento del Matrimonio en la Iglesia Católica tiene como signo principal el consentimiento explícito de los cónyuges. ... Es importante señalar que no todos son iguales, están los que son verdaderamente importantes, y otros que simplemente son más una costumbre.",
+        "source": "https://desdelafe.mx/noticias/sabias-que/cuales-son-los-signos-del-sacramento-del-matrimonio/",
+        "source_type": "other",
+        "checked": "2026-11-06",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_100",
+        "claim": "UNESCO lists 'Mariachi, string music, song and trumpet' (Mexico), inscribed in 2011 (6.COM) on the Representative List of the Intangible Cultural Heritage of Humanity. Page live, HTTP 200.",
+        "quote": "Inscribed in 2011 (6.COM) on the Representative List of the Intangible Cultural Heritage of Humanity",
+        "source": "https://ich.unesco.org/en/RL/mariachi-string-music-song-and-trumpet-00575",
+        "source_type": "other",
+        "checked": "2026-11-06",
+        "is_price": false,
+        "region": "Mexico"
+      },
+      {
+        "fact_id": "fact_101",
+        "claim": "UNESCO describes mariachi as a traditional Mexican music and a fundamental element of Mexican culture; its repertoire includes serenades; the skill is passed down through performance at festive, religious and civil events. The element is tagged 'Wedding' in UNESCO's keyword list, but the description text itself does not mention weddings.",
+        "quote": "Mariachi is a traditional Mexican music and a fundamental element of Mexican culture. ... The wide repertoire includes songs from different regions, jarabes, minuets, polkas, valonas, schottisches, waltzes and serenades ... the skill is usually passed down from fathers to sons and through performance at festive, religious and civil events.",
+        "source": "https://ich.unesco.org/en/RL/mariachi-string-music-song-and-trumpet-00575",
+        "source_type": "other",
+        "checked": "2026-11-06",
+        "is_price": false,
+        "region": "Mexico; Western Mexico named for Indian languages",
+        "conflicts": "Description text does not say 'wedding'; only the page's keyword tag 'Wedding (130)' does. Write 'UNESCO tags the element with weddings among its themes', never 'UNESCO says mariachi plays at weddings'."
+      },
+      {
+        "fact_id": "fact_102",
+        "claim": "UNESCO describes traditional Mariachi groups (two or more members) wearing regional costumes adapted from the charro costume; modern Mariachi ensembles include trumpets, violins, the vihuela and guitarrón and may have four or more musicians.",
+        "quote": "Traditional Mariachi groups, made up of two or more members, wear regional costumes adapted from the charro costume ... Ensembles playing 'modern Mariachi' include trumpets, violins, the vihuela and guitarrón (bass guitar), and may have four or more musicians.",
+        "source": "https://ich.unesco.org/en/RL/mariachi-string-music-song-and-trumpet-00575",
+        "source_type": "other",
+        "checked": "2026-11-06",
+        "is_price": false,
+        "region": "Mexico"
+      },
+      {
+        "fact_id": "fact_103",
+        "claim": "UNESCO lists 'Traditional Mexican cuisine - ancestral, ongoing community culture, the Michoacán paradigm', inscribed in 2010 (5.COM) on the Representative List. Its description does not mention weddings (it names Day of the Dead offerings); no wedding keyword tag.",
+        "quote": "Inscribed in 2010 (5.COM) on the Representative List ... Mexican cuisine is elaborate and symbol-laden, with everyday tortillas and tamales, both made of corn, forming an integral part of Day of the Dead offerings.",
+        "source": "https://ich.unesco.org/en/RL/traditional-mexican-cuisine-ancestral-ongoing-community-culture-the-michoacan-paradigm-00400",
+        "source_type": "other",
+        "checked": "2026-11-06",
+        "is_price": false,
+        "region": "Michoacán and across Mexico",
+        "conflicts": "No wedding link: do not use this element to support wedding food claims (cookies, cake, mole)."
+      },
+      {
+        "fact_id": "fact_104",
+        "claim": "The RAE dictionary defines 'tornaboda' as the day after the wedding, and as the party held on that day.",
+        "quote": "1.a. f. Día siguiente al de la boda. 1.b. f. Fiesta celebrada en la tornaboda (➝ 1a).",
+        "source": "https://dle.rae.es/tornaboda",
+        "source_type": "editorial",
+        "checked": "2026-11-06",
+        "is_price": false,
+        "region": "Spanish language (general, not Mexico-specific)",
+        "conflicts": "Old page gave two timings; RAE gives the day after. RAE is a general Spanish dictionary, not a statement of Mexican practice."
+      },
+      {
+        "fact_id": "fact_105",
+        "claim": "Smartraveller Mexico (updated 15 October 2026; still current at 6 November 2026): overall 'Exercise a high degree of caution'; 'Reconsider your need to travel' to Chiapas, Chihuahua, Colima, Guanajuato, Guerrero, Michoacán, north-western Durango, Sinaloa, Sonora, Tamaulipas and Zacatecas, each with listed exceptions.",
+        "quote": "Still current at: 06 November 2026 Updated: 15 October 2026 ... Exercise a high degree of caution in Mexico overall due to the threat of violent crime. ... Reconsider your need to travel to: Chiapas State (except ...) | Chihuahua State (except ...) | Colima State (except Manzanillo if accessed by air) | Guanajuato State (except Federal Highway 45D, and areas of the State to the North-East of Federal Highway 45D) | Guerrero State (except Ixtapa/Zihuatanejo if accessed by air) | Michoacán (except ...) | North-western Durango, Sinaloa State (except ...) | Sonora State (except ...) | Tamaulipas State (except Tampico if accessed by air), and | Zacatecas. due to high levels of violent crime (including kidnapping and extortion) and their volatile security situation.",
+        "source": "https://www.smartraveller.gov.au/destinations/americas/mexico",
+        "source_type": "government",
+        "checked": "2026-11-06",
+        "is_price": false,
+        "region": "Mexico",
+        "conflicts": "'Latest update' paragraph names only six states; the advice-levels list names eleven areas. Use the full list."
+      },
+      {
+        "fact_id": "fact_106",
+        "claim": "Smartraveller Mexico: the hurricane and rainy season is June to November; tropical storms and hurricanes can happen in other months.",
+        "quote": "The hurricane and rainy season is from June to November. Landslides, mudslides, and flooding can happen. ... Tropical storms and hurricanes can happen in other months. Hurricanes can change direction and strength suddenly.",
+        "source": "https://www.smartraveller.gov.au/destinations/americas/mexico",
+        "source_type": "government",
+        "checked": "2026-11-06",
+        "is_price": false,
+        "region": "Mexico"
+      },
+      {
+        "fact_id": "fact_107",
+        "claim": "Smartraveller Mexico: same-sex relationships are legal and same-sex marriages are recognised; the country is conservative.",
+        "quote": "Same-sex relationships are legal, but the country is conservative. Same-sex marriages are recognised.",
+        "source": "https://www.smartraveller.gov.au/destinations/americas/mexico",
+        "source_type": "government",
+        "checked": "2026-11-06",
+        "is_price": false,
+        "region": "Mexico"
+      },
+      {
+        "fact_id": "fact_108",
+        "claim": "Smartraveller Mexico entry: Australians with a chipped ordinary passport visiting for tourism can use e-gates at a number of major airports and receive a printed QR code showing the days authorised; those without a chipped passport visiting for 180 days or less as tourists get a visa on arrival. Entry and exit conditions can change at short notice.",
+        "quote": "If you have an ordinary passport with a chip, and you're visiting for tourism, you can use the e-gates available at a number of major airports. You'll receive a printed QR code where you can check the number of days you're authorised to stay in Mexico. If you don't have an ordinary passport with a chip, and you're visiting for 180 days or less as a tourist, you'll receive a visa on arrival ... Entry and exit conditions can change at short notice. Contact the nearest embassy or consulate of Mexico for the latest details.",
+        "source": "https://www.smartraveller.gov.au/destinations/americas/mexico",
+        "source_type": "government",
+        "checked": "2026-11-06",
+        "is_price": false,
+        "region": "Mexico",
+        "conflicts": "Brief said 'e-gates ... up to 180 days'. Live page ties '180 days or less' to the visa-on-arrival line (no chipped passport); e-gate users check authorised days on the QR code. Write: 'stay length is shown on the QR code you receive; check current entry rules, as at November 2026'."
+      },
+      {
+        "fact_id": "fact_109",
+        "claim": "Smartraveller 'Getting married overseas' (last updated 18 August 2026): you can't register an overseas marriage in Australia, but in most cases it is legally recognised if valid where it happened and valid under Australian law had it occurred in Australia; talk to a lawyer to confirm.",
+        "quote": "You can't register an overseas marriage in Australia. But in most cases, your marriage is legally recognised here. To be recognised, when you got married it must have been: valid under the law of the country where it happened; valid under Australian law if it had occurred in Australia. ... Talk to a lawyer to confirm your overseas marriage certificate is valid in Australia.",
+        "source": "https://www.smartraveller.gov.au/planning-trip/advice-your-planned-activities/getting-married-overseas",
+        "source_type": "government",
+        "checked": "2026-11-06",
+        "is_price": false,
+        "region": "Australia"
+      },
+      {
+        "fact_id": "fact_110",
+        "claim": "Smartraveller CNI page (last updated 1 October 2026): a CNI is a DFAT document issued in support of an intended marriage overseas; DFAT can't advise on another country's legal processes; some authorities only accept a CNI issued in their country, in which case the Australian embassy there can issue it; ask whether an apostille is needed. DFAT charges fees.",
+        "quote": "A CNI is a document from the Department of Foreign Affairs and Trade (DFAT) issued in support of your intended marriage overseas. ... DFAT can't advise you on the legal processes in another country. ... Some authorities only accept a CNI issued in their country. If that's the case, the Australian embassy, high commission or consulate in that country can issue it for you. ... Ask whether you need an apostille or an authentication certificate for your CNI.",
+        "source": "https://www.smartraveller.gov.au/our-role/notarial-services/how-get-certificate-no-impediment-marriage",
+        "source_type": "government",
+        "checked": "2026-11-06",
+        "is_price": false,
+        "region": "Australia / overseas"
+      },
+      {
+        "fact_id": "fact_111",
+        "claim": "Australian Embassy Mexico (live, HTTP 200): CNI applications are downloaded from Smartraveller and presented in person at the Embassy in Mexico City; honorary consulates do not provide notarial services, only the Embassy in Mexico does; payment by card only. The Embassy page lists a Cancún honorary consulate. (Fee amounts are published on the page but deliberately not recorded here.)",
+        "quote": "Be aware that consulates operated by an Honorary Consul don't provide notarial services. Only the Australian Embassy in Mexico can offer these services. ... CNI: Please download the application from the smartravelller website and present it in person at the Embassy in Mexico City.",
+        "source": "https://mexico.embassy.gov.au/mcty/Notarials.html",
+        "source_type": "government",
+        "checked": "2026-11-06",
+        "is_price": false,
+        "region": "Mexico City; Cancún (honorary consulate)"
+      },
+      {
+        "fact_id": "fact_112",
+        "claim": "Zacatecas State Government (bulletin, 23 July 2023): the state tourism ministry (Secturz) supported 11 destination weddings with a callejoneada as an icebreaker before the ceremony, with guests touring the historic centre.",
+        "quote": "la Secretaría de Turismo (Secturz) apoyó a 11 bodas destinos con una callejoneada, como rompe hielo, previo a la ceremonia matrimonial ... Durante el recorrido que se tiene programado para las callejoneadas, las y los asistentes tienen la oportunidad de disfrutar de la belleza y majestuosidad de los edificios del centro histórico.",
+        "source": "https://www.zacatecas.gob.mx/recibio-zacatecas-a-cerca-de-2-mil-personas-que-participaron-en-11-bodas-destino/",
+        "source_type": "government",
+        "checked": "2026-11-06",
+        "is_price": false,
+        "region": "Zacatecas (Smartraveller 'Reconsider your need to travel'; describe as custom only, never suggest travel)",
+        "conflicts": "Source is 2023 and states counts; do not repeat counts. Use only 'a callejoneada as an icebreaker before the ceremony'."
+      },
+      {
+        "fact_id": "fact_113",
+        "claim": "Mexico's Secretaría de Cultura catalogue (CID Alberto Beltrán, Fonoteca) holds a 1979 field recording of 'A la víbora de la mar' by the Banda de Música de Atlixco (Puebla), with notes that playing la víbora de la mar at weddings has become popular in Mexico, and that with the couple the 'víbora' stands for the problems they will face, and they must stay together without letting go.",
+        "quote": "EN MÉXICO SE HA VUELTO POPULAR JUGAR A LA VÍBORA DE LA MAR EN LAS BODAS. ... HACER ESTE JUEGO CON LOS NOVIOS SIGNIFICA QUE LA VÍBORA SON LOS PROBLEMAS QUE ENFRENTARAN Y QUE SIN IMPORTAR LOS OBSTÁCULOS ELLOS DEBEN PERMANECER JUNTOS Y SIN SOLTARSE. Temas: Fiestas populares - Festejos - Bodas || México - Central - Puebla - ATLIXCO",
+        "source": "https://cid-albertobeltran.cultura.gob.mx/catalogo-en-linea-fonoteca/a-la-vibora-de-la-mar-interprete-banda-de-musica-de-atlixco-grabador-thomas-stanford-03-06-1979-grabacion-sonora/",
+        "source_type": "government",
+        "checked": "2026-11-06",
+        "is_price": false,
+        "region": "Atlixco, Puebla (recording); Mexico (practice)",
+        "conflicts": "Catalogue omits part of the note ('...'). It gives the meaning but not the mechanics (chairs, line). The accent is 'VÍBORA'. Mechanics of standing on chairs only from a non-official PDF; see often_told."
+      },
+      {
+        "fact_id": "fact_114",
+        "claim": "Playa del Carmen municipal Registro Civil (Quintana Roo) publishes a 'Matrimonio Extranjero en oficina' procedure (updated 29/01/2026): book the date in advance; passports with certified Spanish translation if needed; proof of legal stay; apostilled and translated birth certificate where parents' names are to appear; ID for four witnesses (two per party); prenuptial medical certificate with lab results (valid 15 calendar days); application and declaration letters; municipal fee payment; certificate of not being a registered defaulting maintenance debtor. In person; resolution 20 business days. (Fee amount on the page deliberately not recorded.)",
+        "quote": "1. Reservar la fecha de la boda con anticipación. 2. Copia del pasaporte vigente ... traducido al español ... 3. Copia de la legal estancia. 4. Original del acta de nacimiento debidamente apostillada o legalizada y traducida ... 5. Copia de la Identificación Oficial con fotografía de cuatro testigos, dos por cada pretenso ... 6. Certificado médico prenupcial ... (vigencia 15días naturales ...) ... 8. Pago de derechos municipales. ... Tiempo de resolución del servicio: 20 días hábiles",
+        "source": "https://playadelcarmen.gob.mx/mpdc-sg-rc-meo-010",
+        "source_type": "government",
+        "checked": "2026-11-06",
+        "is_price": false,
+        "region": "Playa del Carmen, Quintana Roo only",
+        "conflicts": "Municipal page; requirements differ by state and municipality. Use only as an example ('in Playa del Carmen, for example, the registry lists...') and still say 'check with the registry and the embassy, including any fees'."
+      },
+      {
+        "fact_id": "fact_115",
+        "claim": "Britannica (last updated 10 October 2026): mariachi is a small Mexican ensemble of mostly stringed instruments; it emerged in the late 1700s or early 1800s in west-central Mexico; the word's etymology and early history are unknown.",
+        "quote": "mariachi, small Mexican musical ensemble composed of a variety of mostly stringed instruments. ... The mariachi orchestra emerged in the late 1700s or early 1800s in west-central Mexico. The word mariachi may have come from the now-extinct language of the Coca Indians, but both the word's etymology and the early history of the form and its followers are unknown.",
+        "source": "https://www.britannica.com/art/mariachi",
+        "source_type": "editorial",
+        "checked": "2026-11-06",
+        "is_price": false,
+        "region": "west-central Mexico"
+      },
+      {
+        "fact_id": "fact_116",
+        "claim": "Britannica: typical contemporary mariachi instruments are vihuela, guitarrón, six-string guitar, violins and trumpets (trumpets added in the early 20th century); since the early 20th century male bands typically wear traje de charro, the attire of the cowboys of Jalisco; women have played an increasing role since the 1940s, with all-female groups by the early 21st century.",
+        "quote": "since the early 20th century male mariachi bands typically have worn traje de charro, the attire of the cowboys of Jalisco ... since the 1940s women have played an increasing role in mariachi performance, and by the early 21st century there were a number of all-female mariachi groups.",
+        "source": "https://www.britannica.com/art/mariachi",
+        "source_type": "editorial",
+        "checked": "2026-11-06",
+        "is_price": false,
+        "region": "Jalisco (charro attire)",
+        "conflicts": "Britannica does not mention weddings or serenatas."
+      },
+      {
+        "fact_id": "fact_117",
+        "claim": "Guanajuato Capital municipal government (24 March 2023) calls the callejoneada one of the most deep-rooted traditions of the city of Guanajuato: a walk through the historic centre's main streets accompanied by the Estudiantina Guanajuato, singing songs.",
+        "quote": "La callejoneada inició en la Plaza Allende para recorrer las principales calles del centro histórico de la Capital del Estado acompañados por la Estudiantina Guanajuato y concluyó en la Plaza de la Paz. ... vivieron una de las tradiciones más arraigadas de la ciudad de Guanajuato. En el recorrido las letras de las canciones fueron traducidas al lenguaje de señas mexicano.",
+        "source": "https://www.guanajuatocapital.gob.mx/noticias/viven-200-personas-la-callejoneada-incluyente-en-guanajuato-capital/",
+        "source_type": "government",
+        "checked": "2026-11-06",
+        "is_price": false,
+        "region": "Guanajuato city (Guanajuato State: Smartraveller 'Reconsider your need to travel' except listed areas; describe as custom, never suggest travel)",
+        "conflicts": "Event was not a wedding; use only for what a callejoneada is and its Guanajuato roots. The wedding link comes from fact_112 (Zacatecas)."
+      }
+    ],
+    "insider_details": [
+      {
+        "detail": "Plan two ceremonies, not one: in Mexico the legal marriage is the civil one before the Registro Civil, and a church wedding does not replace it, so couples who want a Mass usually hold the civil ceremony first (in some communities the day before, at home). Build both into the run sheet and ask the local registry what it needs, as at November 2026.",
+        "fact_ids": [
+          "fact_07",
+          "fact_09",
+          "fact_13",
+          "fact_14"
+        ]
+      },
+      {
+        "detail": "Book the Australian Embassy in Mexico City early if the registry asks for a CNI: the application is downloaded from Smartraveller and presented in person in Mexico City, and honorary consulates in resort areas cannot do notarial work. The Wedded Advisor confirms current requirements with the couple, but the couple deal with the Embassy and registry directly.",
+        "fact_ids": [
+          "fact_11",
+          "fact_12"
+        ]
+      },
+      {
+        "detail": "Sponsors are a cast list to settle months ahead: one documented church wedding had padrinos of velación, rings, arras, lazo, medals, bible and bouquet plus a madrina de cojines, each with a moment in the Mass. Give each padrino and madrina their cue and seat near the altar in the ceremony brief.",
+        "fact_ids": [
+          "fact_18",
+          "fact_19",
+          "fact_20",
+          "fact_30"
+        ]
+      },
+      {
+        "detail": "Choose the padrinos de lazo with care; in the families one study describes, they are expected to be a stable couple married in the church. Brief the photographer on the moment the lazo goes on, which Desde la Fe places with the nuptial blessing after the Our Father.",
+        "fact_ids": [
+          "fact_23",
+          "fact_29"
+        ]
+      },
+      {
+        "detail": "Allow time for the pedida de mano and engagement visits if the families keep them: documented customs range from several family visits in Nahua communities of Puebla to an engagement of more than six months in Almoloya del Río. Australian couples planning an overseas date should ask the family about this first.",
+        "fact_ids": [
+          "fact_04",
+          "fact_05",
+          "fact_16",
+          "fact_17"
+        ]
+      },
+      {
+        "detail": "A callejoneada can be planned as a welcome-night icebreaker before the ceremony, the way Zacatecas tourism framed it; outside Guanajuato and Zacatecas, couples recreate it with a walking band through a safe, pre-checked route chosen with the venue.",
+        "fact_ids": [
+          "fact_112",
+          "fact_117",
+          "fact_105"
+        ]
+      },
+      {
+        "detail": "Book the date before anything else if you want a civil wedding in Mexico: in Playa del Carmen, for example, the registry lists reserving the date in advance as step one, wants four witnesses with photo ID, and a prenuptial medical certificate valid only 15 days, so blood tests are timed for the week of the wedding.",
+        "fact_ids": [
+          "fact_114"
+        ]
+      },
+      {
+        "detail": "Only the Australian Embassy in Mexico City does notarial work, including the CNI, in person; the Cancún honorary consulate does not, so a Riviera Maya couple needing a Mexico-issued CNI should budget a Mexico City day or get the CNI in Australia first if the registry accepts it.",
+        "fact_ids": [
+          "fact_110",
+          "fact_111"
+        ]
+      },
+      {
+        "detail": "June to November is hurricane and rainy season on Smartraveller's wording, so coastal weddings in those months need an indoor or covered plan B and flexible flights.",
+        "fact_ids": [
+          "fact_106"
+        ]
+      },
+      {
+        "detail": "If a mariachi is booked, ask how many musicians and whether trumpets are included: UNESCO and Britannica describe traditional groups of two or more and modern ensembles of four or more with trumpets, violins, vihuela and guitarrón.",
+        "fact_ids": [
+          "fact_102",
+          "fact_116"
+        ]
+      }
+    ],
+    "quotes": [],
+    "real_weddings": [],
+    "verify_items": [
+      "[[VERIFY: Registro Civil steps, documents, notice periods and any fees for the state and municipality where the civil ceremony will be held; no official Registro Civil page for a specific state was read. Write as questions to ask the registry and the Australian Embassy, as at November 2026.]]",
+      "[[VERIFY: hora loca at Mexican weddings: no official, academic or editorial source found; search results attribute it to Venezuela/other Latin countries. Mention only as 'many couples borrow', or cut.]]",
+      "[[VERIFY: serenata to the bride before the wedding: UNESCO lists 'serenades' in the mariachi repertoire (fact_101) but no source read links serenata to weddings.]]",
+      "[[VERIFY: money dance (baile del billete): no official or academic source read; describe only as a reception custom some families keep, no amounts, no 'funds the honeymoon'.]]",
+      "[[VERIFY: Mexican wedding cookies (polvorones) and the cake: no official, Britannica or academic source read linking polvorones to weddings.]]",
+      "[[VERIFY: la víbora de la mar mechanics (couple standing on chairs, guests in a line passing under linked arms): official catalogue (fact_113) gives meaning only; mechanics only in a non-official PDF.]]",
+      "[[VERIFY: tornaboda as Mexican practice: RAE (fact_104) defines the day after the wedding and the party on it, but no Mexico-specific source read.]]",
+      "[[VERIFY: Registro Civil requirements for foreigners outside Playa del Carmen: check with the registry and the embassy, including any fees, as at November 2026.]]"
+    ],
+    "needs_signoff": [],
+    "must_include_coverage": [
+      {
+        "item": "Padrinos and madrinas (sponsors and their roles)",
+        "covered_by": [
+          "fact_02",
+          "fact_03",
+          "fact_08",
+          "fact_09",
+          "fact_19",
+          "fact_20",
+          "fact_23",
+          "fact_30"
+        ]
+      },
+      {
+        "item": "Madrina de ramo (bouquet sponsor) and the bouquet offering to the Virgin",
+        "covered_by": [
+          "fact_19",
+          "fact_24"
+        ]
+      },
+      {
+        "item": "The pedida de mano",
+        "covered_by": [
+          "fact_04",
+          "fact_05",
+          "fact_06",
+          "fact_16",
+          "fact_17"
+        ]
+      },
+      {
+        "item": "El lazo",
+        "covered_by": [
+          "fact_09",
+          "fact_22",
+          "fact_23",
+          "fact_28",
+          "fact_29"
+        ]
+      },
+      {
+        "item": "Las arras (13 coins as sourced, no amounts)",
+        "covered_by": [
+          "fact_01",
+          "fact_21",
+          "fact_27"
+        ]
+      },
+      {
+        "item": "The Catholic Mass incl. the cojín and bendición",
+        "covered_by": [
+          "fact_18",
+          "fact_19",
+          "fact_20",
+          "fact_24",
+          "fact_29",
+          "fact_31"
+        ]
+      },
+      {
+        "item": "The civil ceremony (the legal one)",
+        "covered_by": [
+          "fact_07",
+          "fact_09",
+          "fact_13",
+          "fact_14",
+          "fact_15",
+          "fact_10",
+          "fact_11",
+          "fact_12"
+        ]
+      },
+      {
+        "item": "Framing line: customs vary by region and family; some Indigenous communities keep their own",
+        "covered_by": [
+          "fact_04",
+          "fact_06",
+          "fact_26"
+        ]
+      },
+      {
+        "item": "Spanish terms with accents as sources give them (bendición, madrina de cojines, padrinos de velación)",
+        "covered_by": [
+          "fact_18",
+          "fact_19",
+          "fact_29",
+          "fact_30"
+        ]
+      },
+      {
+        "item": "Registro Civil steps for a specific state",
+        "covered_by": [
+          "[[VERIFY: Registro Civil steps, documents, notice periods and any fees for the state and municipality where the civil ceremony will be held; no official Registro Civil page for a specific state was read. Write as questions to ask the registry and the Australian Embassy, as at November 2026.]]"
+        ]
+      },
+      {
+        "item": "Callejoneada (street procession), regions only as sourced",
+        "covered_by": [
+          "fact_112",
+          "fact_117"
+        ]
+      },
+      {
+        "item": "Mariachi (and serenata only as sourced)",
+        "covered_by": [
+          "fact_101",
+          "fact_102",
+          "fact_115",
+          "fact_116"
+        ]
+      },
+      {
+        "item": "Money dance described with no amounts",
+        "covered_by": [
+          "[[VERIFY: money dance (baile del billete): no official or academic source read; describe only as a reception custom some families keep, no amounts, no 'funds the honeymoon'.]]"
+        ]
+      },
+      {
+        "item": "La víbora de la mar, accent as sources give it",
+        "covered_by": [
+          "fact_113"
+        ]
+      },
+      {
+        "item": "Cookies and cake",
+        "covered_by": [
+          "[[VERIFY: Mexican wedding cookies (polvorones) and the cake: no official, Britannica or academic source read linking polvorones to weddings.]]"
+        ]
+      },
+      {
+        "item": "Tornaboda",
+        "covered_by": [
+          "fact_104"
+        ]
+      },
+      {
+        "item": "UNESCO 'Mariachi, string music, song and trumpet' (2011) quoted only as far as its own text links to weddings",
+        "covered_by": [
+          "fact_100",
+          "fact_101",
+          "fact_103"
+        ]
+      },
+      {
+        "item": "Section for Australians: Smartraveller level, higher-level states, update date, hurricane season, same-sex recognition, entry line",
+        "covered_by": [
+          "fact_105",
+          "fact_106",
+          "fact_107",
+          "fact_108"
+        ]
+      },
+      {
+        "item": "Australian Embassy Mexico City for CNI and notarial; 'Getting married overseas'; 'check with the registry and the embassy, including any fees'",
+        "covered_by": [
+          "fact_109",
+          "fact_110",
+          "fact_111",
+          "fact_114"
+        ]
+      }
+    ]
+  }
 }

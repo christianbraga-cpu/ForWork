@@ -3,3 +3,4 @@
 05:47 04 visual-curator complete 8 placeholders (destination Oaxaca city)
 05:50 02 seo-researcher complete; old page US 67 kw (la pedida #1, tornaboda meaning #10, wedding customs in mexico #17 vol 2,900, mexican wedding traditions #28), AU 1; no duplicates; cross-link Mexico hub, 10-tips, /best-mexico-wedding-locations; schema valid
 05:57 03 planner-sme batch B complete 18 facts (UNESCO Mariachi text has no wedding mention; callejoneada tied to Zacatecas/Guanajuato (both reconsider states: custom only, never suggested as places); víbora from Secretaría de Cultura; tornaboda RAE; legal); waiting on batch A
+05:58 03 planner-sme batch A complete 31 facts (RAE, INPI gob.mx, Embassy Mexico, Britannica, Redalyc study, Archdiocese of Mexico Desde la Fe); merged; writer launched
