@@ -12,3 +12,4 @@
 06:08 07b icp-panel-chair revise; enquire 2.6; must_fix: Advisor/CTA, guest questions, callejoneada -> Smartraveller pointer, Almoloya del Río once; real-wedding proof deferred (no VERIFY); final pass launched
 06:09 08 luxury-writer complete 2,981 words; 0 VERIFY; scan clean; 8b+CRO+distribution launched
 06:10 09 cro-specialist complete; /magazine primary; 2 copy changes; applying after 8b
+06:10 10 distribution complete 3 pins, 8-slide carousel, newsletter
