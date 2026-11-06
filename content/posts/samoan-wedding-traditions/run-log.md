@@ -11,3 +11,4 @@
 03:42 06 editor pass_with_edits 4.14; 21 edits applied -> 05-draft-r2.md (9 source credits removed; fact stretches fixed; H2s reverted to outline); panel chair launched
 03:44 07b icp-panel-chair revise; enquire 2.6; 3 must_fix (guest questions, Advisor line, fold UNESCO into fine mats); final pass launched
 03:45 08 luxury-writer complete ~2,670 words; 0 VERIFY; scan clean; 8b+CRO+distribution launched
+03:46 09 cro-specialist complete; /magazine primary; 1 copy change; applying after 8b

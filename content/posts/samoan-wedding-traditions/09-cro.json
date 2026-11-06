@@ -1,0 +1,72 @@
+{
+  "agent": "cro",
+  "task_id": "samoan-wedding-traditions",
+  "stage": "09",
+  "status": "complete",
+  "round": 1,
+  "inputs_used": [
+    "content-system/brand/services.md",
+    "content-system/brand/brand-facts.md",
+    "content/posts/samoan-wedding-traditions/01-brief.json",
+    "content/posts/samoan-wedding-traditions/07-panel.json",
+    "content/posts/samoan-wedding-traditions/08-final.md",
+    "content-system/seo/link-map.csv",
+    "content-system/schemas/09-cro.schema.json",
+    "content/posts/chinese-wedding-traditions/09-cro.json (format model)"
+  ],
+  "self_qa": {
+    "confidence": 0.85,
+    "checks": [
+      {"check": "/magazine and /wonderland-concierge exist in link-map.csv", "pass": true},
+      {"check": "The single copy_changes old string occurs exactly once in 08-final.md", "pass": true},
+      {"check": "UTMs follow services.md: utm_source=blog, utm_medium=content, utm_campaign=samoan-wedding-traditions, utm_content primary or secondary", "pass": true},
+      {"check": "Primary text 6 words or fewer, no exclamation mark, no 'click here'", "pass": true},
+      {"check": "Advisor wording traced to brand-facts.md (single point of contact, time zone, AUD, fee agreed in writing, inclusions confirmed in writing); no prices, paperwork-help claims, 'last dance' or em dashes added", "pass": true},
+      {"check": "At most 2 copy changes (1 used)", "pass": true}
+    ]
+  },
+  "assumptions": [
+    "The CTA block markup follows the Chinese run; the CMS publisher adapts it to the field map's CTA component if different.",
+    "The magazine is both the primary CTA and the lead magnet, so no separate utm_content=magnet link is placed.",
+    "The existing primary marker after section 8 (the feast) is kept: it follows the full run of customs and sits before the Samoa travel and legal section, well ahead of the Advisor ask.",
+    "The existing Wedded Concierge link already carries utm_content=secondary, so it needs no change. The closing line ('a Wedded Advisor will start from there') stays unlinked to avoid a duplicate ask."
+  ],
+  "open_questions": [
+    {"to": "orchestrator", "question": "Apply copy_changes 1 to 08-final.md before distribution and CMS upload?", "blocking": false},
+    {"to": "Nic", "question": "Is a Pacific or Samoa magazine edition planned? /magazine/fiji/get-wedded-in-fiji exists but covers Fiji only, so the general /magazine page is used.", "blocking": false}
+  ],
+  "payload": {
+    "journey_stage": "dreaming",
+    "primary_cta": {
+      "text": "Read the free magazine",
+      "subtext": "Free to read, whenever you are ready.",
+      "link": "/magazine?utm_source=blog&utm_medium=content&utm_campaign=samoan-wedding-traditions&utm_content=primary",
+      "placement": "Fill the existing <!-- CTA: primary --> marker after section 8 (the wedding feast and the umu), once the reader has the full sequence of customs and before 'Weddings in Samoa'. No other /magazine link in the post."
+    },
+    "secondary_cta": {
+      "text": "Speak with a Wedded Advisor",
+      "subtext": "The fee is agreed in writing before any work begins.",
+      "link": "/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=samoan-wedding-traditions&utm_content=secondary",
+      "placement": "Existing inline 'Start with Wedded Concierge' link at the end of the 'Bringing Samoan traditions home' section, where the panel's guest logistics and accountability questions peak. Wording unchanged: brand-facts claims only, and legal steps stay with the registry and the High Commission."
+    },
+    "lead_magnet": {
+      "name": "Wedded Wonderland digital magazine",
+      "link": "/magazine?utm_source=blog&utm_medium=content&utm_campaign=samoan-wedding-traditions&utm_content=primary",
+      "placement": "Same as primary CTA; no separate magnet placement.",
+      "exists": true
+    },
+    "tracking": [
+      "utm_content=primary on /magazine CTA block",
+      "utm_content=secondary on /wonderland-concierge inline link"
+    ],
+    "rationale": "Dreaming-stage reader (brief journey_stage) gets the low-commitment magazine first, per the services.md early-stage rule and the brief goal. The Advisor follows as the in-context secondary after the guest logistics and 'bringing traditions home' copy, which now answers the panel's 'who runs the day' and guest-care questions before the ask. Weighted enquiry likelihood is 2.6, so no extra asks are added. Ideal magnet not on the site: a Samoan wedding family planning guide (speeches, 'ie toga presentation, taualuga and feast running order) for both families (suggestion only, exists false, not placed).",
+    "copy_changes": [
+      {
+        "old": "<!-- CTA: primary -->",
+        "new": "<!-- CTA: primary -->\n**Read the free magazine**\nFree to read, whenever you are ready.\n[Read the free magazine](/magazine?utm_source=blog&utm_medium=content&utm_campaign=samoan-wedding-traditions&utm_content=primary)\n<!-- /CTA: primary -->",
+        "why": "Fill the primary marker with the magazine CTA block (text, subtext, UTM-tagged link)."
+      }
+    ]
+  },
+  "next_agent": ["distribution"]
+}
