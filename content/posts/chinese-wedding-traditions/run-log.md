@@ -5,3 +5,5 @@
 00:29 03 planner-sme batch A complete 33 facts (mostly Singapore government heritage pages, Cantonese/Teochew tags where sourced; CHCP page self-described non-scholarly, flagged); waiting on batch B
 00:31 03 planner-sme batch B complete 19 facts (UNESCO tea 2022 and paper-cut 2009 mention weddings; V&A and British Museum on red, qun kwa, dragon and phoenix, hong bao, double happiness; Smartraveller marriage + CNI); merged; writer launched
 00:35 05 luxury-writer complete ~2,965 words; 1 VERIFY (embassy CNI); first draft sent; editor + 5 readers launched
+00:35 07 icp-reader search_visitor complete; no must-fix
+00:36 07 icp-reader uhnw complete; enquire 2 (packages link); no must-fix
