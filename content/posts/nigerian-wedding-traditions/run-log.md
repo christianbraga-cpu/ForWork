@@ -10,3 +10,4 @@
 23:46 07 icp-reader uhnw, funding_parent, planner_couple complete; no must-fix (too many source links in body; aso ebi logistics; closing link); waiting on editor
 23:47 06 editor revise 3.86 (accuracy 3: one community's Igbo stages generalised); 17 edits applied -> 05-draft-r2.md; Smartraveller exact wording; High Commission link corrected; panel chair launched
 23:50 07b icp-panel-chair revise; enquire 2.6; must_fix: guest questions, closing Advisor link; should_fix: spraying in takeaways/FAQ, cut source links, who-pays as questions, aso ebi collection; Wedded Privileges room-block claim excluded (deferred); final pass launched
+23:51 08 luxury-writer complete 2,993 words; 0 VERIFY; scan clean; 8b+CRO+distribution launched
