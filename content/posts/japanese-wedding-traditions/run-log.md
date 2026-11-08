@@ -14,3 +14,5 @@
 23:00 09 cro-specialist complete; /magazine primary; 2 copy changes; applying after 8b
 23:00 10 distribution complete 3 pins, 8-slide carousel, newsletter
 23:01 08b editor pass_with_edits 4.14; 8 blocking fixes (sake, cranes, Fukushima wording, two unsourced practice lines, Embassy role, registration question) + 2 CRO changes applied; cms-publisher launched
+23:03 11 cms-publisher package complete (not uploaded, no Chrome); validate all valid
+23:03 finish: docx, run report, backlinks, link map, calendar 32; FINISHED (~29 min)
