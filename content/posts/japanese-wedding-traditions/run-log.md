@@ -2,3 +2,4 @@
 22:39 01 content-strategist complete; old page read (5 headings, 2017); Smartraveller Japan normal precautions (25 Aug 2026), reconsider Fukushima Dai-ichi restricted areas; Embassy Tokyo + CG Osaka; batches A (5) / B (5 + UNESCO + legal); 02+03(A,B)+04 launched
 22:40 04 visual-curator complete 8 placeholders (first launch with Drive search blocked by safety check; relaunched without it)
 22:45 02 seo-researcher complete; old page US 24 kw (proposal traditions #8, japanese wedding traditions #53 vol 2,400, japanese wedding #51 vol 2,900), AU 7 (#53-#59; keyword fell 17 -> 57); no duplicates; schema valid
+22:49 03 planner-sme batch A complete 10 facts (Britannica; V&A shiromuku, uchikake, outfit change); yuinō, san-san-kudo, headwear unsourced -> living practice; waiting on batch B
