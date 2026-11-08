@@ -1,0 +1,318 @@
+{
+ "agent": "wedding-planner-sme",
+ "task_id": "nigerian-wedding-traditions",
+ "stage": "03",
+ "status": "complete",
+ "round": 1,
+ "inputs_used": [
+  "CLAUDE.md",
+  "content/posts/nigerian-wedding-traditions/00-input.json",
+  "content/posts/nigerian-wedding-traditions/01-brief.json (tradition_plan.batch_A)",
+  "content-system/schemas/03-source-pack.schema.json",
+  "content/posts/japanese-wedding-traditions/03-source-pack.json (format model)",
+  "https://www.britannica.com/topic/Yoruba (Apify web-fetch 2026-11-08)",
+  "https://www.britannica.com/topic/Hausa (Apify web-fetch 2026-11-08)",
+  "https://www.britannica.com/topic/Fulani (Apify web-fetch 2026-11-08)",
+  "https://api.vam.ac.uk/v2/objects/search?q=aso oke",
+  "https://api.vam.ac.uk/v2/museumobject/O263819",
+  "https://api.vam.ac.uk/v2/museumobject/O1681646",
+  "https://api.vam.ac.uk/v2/objects/search?q=gele",
+  "https://api.vam.ac.uk/v2/museumobject/O1616493",
+  "https://api.vam.ac.uk/v2/objects/search?q=fila Yoruba cap (0 results)"
+ ],
+ "tools_used": [
+  "mcp__Apify__apify--web-fetch",
+  "Bash"
+ ],
+ "assumptions": [
+  "Batch A only (fact_01 to fact_11). Batch B covers Igbo customs, aso ebi, spraying, white wedding, UNESCO, Smartraveller and diaspora.",
+  "V&A records are cited by their public collection page (collections.vam.ac.uk/item/<id>/); text read via the V&A API for the same object on 2026-11-08. Facts from V&A use source_type 'other' (museum); Britannica uses 'editorial'.",
+  "Tone-marked terms as V&A gives them: aṣọ-òkè, gèlè, bùbá, ìró, ìpèlé, àlàárì, sányán.",
+  "V&A gallery label says weaves, patterns and colours 'often have special meaning' but the example given is Ewe kente; no Yoruba colour meanings recorded or to be stated.",
+  "Britannica's Hausa page mentions divorce and cousin marriage; not used (contested and off-brief).",
+  "Unsourced customs are in payload.often_told (internal only, no VERIFY markers, no meanings as fact). Write as living practice per the authority rule. No prices or amounts recorded.",
+  "Hard 15-minute limit (start 23:30:23, last read started 23:40). NCAC, British Museum, Smithsonian and academic sources not reached in time; no source found for nikah, sadaki, kamu, idana or prostrating."
+ ],
+ "open_questions": [
+  {
+   "to": "luxury-writer",
+   "question": "Idana, prostrating and kneeling, fila, nikah, sadaki and kamu have no source in batch A: keep each to living-practice description with no meanings or origins, as in often_told.",
+   "blocking": false
+  }
+ ],
+ "verify_items": [
+  "[[VERIFY: gèlè and fila worn specifically at weddings: V&A names gèlè as part of a matching aṣọ-òkè ensemble and aṣọ-òkè as worn for special occasions, but no source read ties either to weddings; fila has no source read. Write wedding use as living practice only.]]",
+  "[[VERIFY: tone-marked spellings for idana, alaga, idobale, ikunle and fila: no source read gives them; use plain spellings or confirm with a Yoruba-language source.]]"
+ ],
+ "self_qa": {
+  "checks": [
+   {
+    "check": "Every fact has a source URL, exact quote and date read",
+    "pass": true,
+    "note": "11 facts read live 2026-11-08."
+   },
+   {
+    "check": "No prices or amounts",
+    "pass": true
+   },
+   {
+    "check": "Every batch A custom covered or listed as often told",
+    "pass": true
+   },
+   {
+    "check": "No invented quotes, statistics or real weddings",
+    "pass": true
+   },
+   {
+    "check": "No competitor, vendor or Wikipedia sources",
+    "pass": true
+   },
+   {
+    "check": "Nothing on harmful or contested practices",
+    "pass": true,
+    "note": "sharo excluded."
+   }
+  ],
+  "confidence": 0.55
+ },
+ "next_agent": [
+  "luxury-writer"
+ ],
+ "payload": {
+  "facts": [
+   {
+    "fact_id": "fact_01",
+    "topic": "framing / Yoruba",
+    "group": "Yoruba",
+    "claim": "The Yoruba are one of the three largest ethnic groups of Nigeria, concentrated in the southwest of the country.",
+    "quote": "Yoruba, one of the three largest ethnic groups of Nigeria, concentrated in the southwestern part of that country.",
+    "source": "https://www.britannica.com/topic/Yoruba",
+    "source_type": "editorial",
+    "checked": "2026-11-08",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_02",
+    "topic": "faith / Yoruba",
+    "group": "Yoruba",
+    "claim": "Many Yoruba are now Christians or Muslims, while aspects of traditional religion survive.",
+    "quote": "Many Yoruba are now Christians or Muslims, but aspects of their traditional religion survive.",
+    "source": "https://www.britannica.com/topic/Yoruba",
+    "source_type": "editorial",
+    "checked": "2026-11-08",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_03",
+    "topic": "aso oke / Yoruba weaving",
+    "group": "Yoruba",
+    "claim": "The Yoruba have long been skilled craftsmen whose trades include weaving; Yoruba women engage in cotton spinning and dyeing.",
+    "quote": "The Yoruba have traditionally been among the most skilled and productive craftsmen of Africa. They worked at such trades as blacksmithing, weaving, leatherworking ... Yoruba women engage in cotton spinning, basketry, and dyeing.",
+    "source": "https://www.britannica.com/topic/Yoruba",
+    "source_type": "editorial",
+    "checked": "2026-11-08",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_04",
+    "topic": "Hausa-Fulani / faith",
+    "group": "Hausa; Fulani",
+    "claim": "The Hausa live chiefly in northwestern Nigeria; Islamic influence spread from the 14th century and profoundly influenced Hausa belief and customs. Perhaps half of the Fulani in the area have adopted Hausa language and culture.",
+    "quote": "Hausa, people found chiefly in northwestern Nigeria and adjacent southern Niger. They constitute the largest ethnic group in the area, which also contains another large group, the Fulani, perhaps one-half of whom are settled among the Hausa as a ruling class, having adopted the Hausa language and culture. ... Islāmic influence, which spread during the latter part of the 14th century from the kingdom of Mali, profoundly influencing Hausa belief and customs.",
+    "source": "https://www.britannica.com/topic/Hausa",
+    "source_type": "editorial",
+    "checked": "2026-11-08",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_05",
+    "topic": "Hausa etiquette",
+    "group": "Hausa",
+    "claim": "Hausa social ranking is expressed in an elaborate etiquette.",
+    "quote": "Social structuring is markedly hierarchical; the ranking, both of offices and social classes, is expressed in an elaborate etiquette.",
+    "source": "https://www.britannica.com/topic/Hausa",
+    "source_type": "editorial",
+    "checked": "2026-11-08",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_06",
+    "topic": "Fulani / faith",
+    "group": "Fulani",
+    "claim": "The Fulani are a primarily Muslim people found across West Africa and concentrated principally in Nigeria, Mali, Guinea, Senegal and Niger.",
+    "quote": "Fulani, a primarily Muslim people scattered throughout many parts of Africa, mostly in West Africa from Lake Chad in the east to the Atlantic coast. They are concentrated principally in Nigeria, Mali, Guinea, Senegal, and Niger",
+    "source": "https://www.britannica.com/topic/Fulani",
+    "source_type": "editorial",
+    "checked": "2026-11-08",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_07",
+    "topic": "aso oke",
+    "group": "Yoruba",
+    "claim": "The V&A describes aṣọ-òkè as a handmade strip-woven cloth historically produced by the Yoruba in south-western Nigeria, woven by men on a single-heddle loom in strips around four inches wide that are stitched together.",
+    "quote": "Aṣọ-òkè is a handmade strip-woven cloth historically produced by the Yoruba in south-western Nigeria. ... Weaving is traditionally the domain of Yoruba men, who use a single-heddle loom to produce long strips around four inches wide. These are then cut and stitched together to create the prestigious aṣọ-òkè cloth.",
+    "source": "https://collections.vam.ac.uk/item/O263819/",
+    "source_type": "other",
+    "checked": "2026-11-08",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_08",
+    "topic": "aso oke",
+    "group": "Yoruba",
+    "claim": "Aṣọ-òkè is worn by both men and women, is typically striped, and certain pieces are reserved for special religious, communal or family occasions.",
+    "quote": "Garments and textiles created from aṣọ-òkè serve a variety of functions, with certain pieces reserved for special religious, communal or family occasions. Worn by both men and women, aṣọ-òkè is typically striped",
+    "source": "https://collections.vam.ac.uk/item/O263819/",
+    "source_type": "other",
+    "checked": "2026-11-08",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_09",
+    "topic": "aso oke",
+    "group": "Yoruba",
+    "claim": "The V&A calls aṣọ-òkè a very prestigious hand-woven cloth often worn for special occasions; a contemporary Lagos designer works with weavers in Ilorin, where weaving enough for a jacket takes around 24 hours over a week.",
+    "quote": "Made by the Yoruba, aṣọ-òkè is a hand-woven cloth ... it is a very prestigious cloth and often worn for special occasions. ... It takes around 24 hours over the course of a week to weave enough aṣọ-òkè for a jacket.",
+    "source": "https://collections.vam.ac.uk/item/O1681646/",
+    "source_type": "other",
+    "checked": "2026-11-08",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_10",
+    "topic": "gele",
+    "group": "Yoruba (named via aṣọ-òkè and Yoruba dress terms; record says Nigeria)",
+    "claim": "A V&A ensemble record names the women's set as a bùbá blouse, ìró wrapped skirt, ìpèlé shawl and gèlè headwrap of matching textile, made of aṣọ-òkè.",
+    "quote": "An ensemble consisting of a bùbá blouse ... The bùbá blouse is worn with an ìró skirt made from a large rectangle of cotton ... The ensemble is worn with an ìpèlé shawl and gèlè headwrap of matching textile.",
+    "source": "https://collections.vam.ac.uk/item/O1616493/",
+    "source_type": "other",
+    "checked": "2026-11-08",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_11",
+    "topic": "gele",
+    "group": "Nigeria (record)",
+    "claim": "Designer Shade Thomas-Fahm created a pre-tied gèlè (headwrap) to make getting dressed easier, re-imagining traditional Nigerian styles.",
+    "quote": "Thomas-Fahm often re-imagined traditional Nigerian styles for the modern woman. She created a pre-tied gèlè (headwrap) to make getting dressed easier",
+    "source": "https://collections.vam.ac.uk/item/O1616493/",
+    "source_type": "other",
+    "checked": "2026-11-08",
+    "is_price": false
+   }
+  ],
+  "insider_details": [
+   {
+    "detail": "Aṣọ-òkè is hand-woven in narrow strips (around 24 hours over a week for enough cloth for one jacket, per one Ilorin workshop), so diaspora couples should order family aṣọ-òkè well ahead of the wedding and confirm lead times with the weaver.",
+    "fact_ids": [
+     "fact_07",
+     "fact_09"
+    ]
+   },
+   {
+    "detail": "A women's aṣọ-òkè set can include a matching bùbá, ìró, ìpèlé and gèlè; pre-tied gèlè exist, which can ease dressing time on a tight run sheet. Build time for headwrap tying into the hair and make-up schedule either way.",
+    "fact_ids": [
+     "fact_10",
+     "fact_11"
+    ]
+   },
+   {
+    "detail": "Many Yoruba families are Christian or Muslim and Hausa custom is shaped by Islam, so ask each family early which faith ceremony sits alongside the traditional one before setting dates and venues.",
+    "fact_ids": [
+     "fact_02",
+     "fact_04",
+     "fact_06"
+    ]
+   }
+  ],
+  "quotes": [],
+  "real_weddings": [],
+  "verify_items": [
+   "[[VERIFY: gèlè and fila worn specifically at weddings: V&A names gèlè as part of a matching aṣọ-òkè ensemble and aṣọ-òkè as worn for special occasions, but no source read ties either to weddings; fila has no source read. Write wedding use as living practice only.]]",
+   "[[VERIFY: tone-marked spellings for idana, alaga, idobale, ikunle and fila: no source read gives them; use plain spellings or confirm with a Yoruba-language source.]]"
+  ],
+  "needs_signoff": [],
+  "must_include_coverage": [
+   {
+    "item": "One early framing line: Nigeria has more than 250 ethnic groups and customs differ between Yoruba, Igbo and Hausa-Fulani families and by faith",
+    "covered_by": [
+     "fact_01",
+     "fact_02",
+     "fact_04",
+     "fact_06",
+     "batch B: 250+ figure not sourced in batch A"
+    ]
+   },
+   {
+    "item": "Yoruba introduction and idana",
+    "covered_by": [
+     "fact_01",
+     "often_told: introduction and idana",
+     "often_told: alaga"
+    ]
+   },
+   {
+    "item": "Yoruba prostrating and kneeling greetings",
+    "covered_by": [
+     "often_told: idobale and ikunle"
+    ]
+   },
+   {
+    "item": "Gele, fila and aso oke",
+    "covered_by": [
+     "fact_03",
+     "fact_07",
+     "fact_08",
+     "fact_09",
+     "fact_10",
+     "fact_11",
+     "often_told: fila"
+    ]
+   },
+   {
+    "item": "Hausa-Fulani nikah and sadaki",
+    "covered_by": [
+     "fact_04",
+     "fact_06",
+     "often_told: nikah, waliyyi, sadaki"
+    ]
+   },
+   {
+    "item": "Kamu",
+    "covered_by": [
+     "fact_04",
+     "often_told: kamu",
+     "often_told: lalle"
+    ]
+   },
+   {
+    "item": "Each custom tied to its group only where a source does; faith only where sourced; terms with tone marks as sources give them; inline definitions",
+    "covered_by": [
+     "fact_02",
+     "fact_04",
+     "fact_06",
+     "fact_07",
+     "fact_10"
+    ]
+   },
+   {
+    "item": "Bride price, gift lists, sadaki and spraying with no amounts",
+    "covered_by": [
+     "often_told: bride price and gift list (no amounts)",
+     "often_told: sadaki (no amounts)"
+    ]
+   }
+  ],
+  "often_told": [
+   "Yoruba introduction meeting between families, then the engagement (idana) as the traditional wedding: no source read; living practice only, no meaning or origin as fact.",
+   "Alaga (ceremony hosts) for each family: living practice only.",
+   "Bride price and gift list in Yoruba engagements: items only, no amounts, no 'cannot marry' claims; no source read.",
+   "Prostrating (idobale) by the groom and his friends and kneeling (ikunle) by the bride before the families: no source read; describe as respect shown within the families, no meaning as fact. Britannica (fact_05 context is Hausa) notes elaborate etiquette for the Hausa only, not Yoruba.",
+   "Fila (cap) for grooms and male guests: no source read.",
+   "Hausa-Fulani nikah (often called fatiha), held at a mosque or family home, with guardian (waliyyi), witnesses and sadaki (mahr) to the bride: no source read; Britannica confirms only Islamic influence on Hausa custom (fact_04) and Fulani as primarily Muslim (fact_06). No amounts; no Sharia commentary.",
+   "Kamu, when the bride is collected and veiled by the groom's family: no source read; living practice only.",
+   "Henna (lalle) before Hausa weddings: no source ties it to weddings; living practice or cut. Do not mention sharo."
+  ]
+ }
+}
