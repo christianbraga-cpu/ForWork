@@ -7,3 +7,4 @@
 22:54 05 luxury-writer complete ~2,930 words; 0 VERIFY; 0 research talk; first draft sent; editor + 5 readers launched
 22:55 07 icp-reader sceptic complete; no must-fix
 22:55 07 icp-reader search_visitor, uhnw complete; no must-fix (drop Britannica/V&A naming; Smartraveller takeaway off-topic); waiting on planner_couple, funding_parent, editor
+22:55 07 icp-reader planner_couple, funding_parent complete; no must-fix (guest travel, older guests at shrines, run sheet owner); waiting on editor
