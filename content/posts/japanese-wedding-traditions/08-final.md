@@ -16,7 +16,7 @@ Japanese wedding traditions follow that arc, and this guide walks through them i
 - A traditional Japanese wedding often pairs a Shinto ceremony in kimono with a Christian-style ceremony in Western dress on the same day.
 - The bride's white shiromuku belongs to the ceremony, and a change into a coloured kimono, or a Western gown, marks her return for the reception.
 - Guests give goshūgi, a gift of money in a formal envelope, and leave with hikidemono, the gifts the couple give in return.
-- For Australians marrying in Japan, Smartraveller advises normal safety precautions, and the municipal office and the Australian Embassy set the legal steps.
+- For Australians marrying in Japan, Smartraveller advises normal safety precautions, and the legal steps are confirmed with the municipal office and the Australian Embassy.
 
 ## What a traditional Japanese wedding looks like today
 
@@ -60,7 +60,7 @@ Treat the shrine as a place of worship first. Ask the priest what guests may pho
 
 San-san-kudo is the moment most guests remember. The bride and groom drink sake in turn from a set of three flat cups, small, medium and large, served by a miko. At many weddings the parents also drink, and the cups pass between the two families.
 
-Sake has a long place in Shinto worship. It is common to have communion with the kami by drinking the offered sake after a festival. <!-- fact_09 -->
+Sake is part of Shinto worship. It is common to have communion with the kami by drinking the offered sake after a festival. <!-- fact_09 -->
 
 <!-- IMAGE SLOT san-san-kudo: Licensed photo from a consented Shinto wedding: the bride in shiromuku sipping from a flat red sakazuki cup offered by a miko attendant, the groom beside her, calm indoor light. Respectful framing, no flash, no staged shot. Consent from couple; shrine permission if the interior is identifiable; shrine named only as a place. Never AI. -->
 
@@ -82,7 +82,7 @@ Before joining family and friends for the reception, the bride exchanges the whi
 
 <!-- IMAGE SLOT bridal-dress: Licensed photo from a consented wedding or a museum with clear reuse rights: a bride in a richly embroidered iro-uchikake (cranes or pine motifs) in a garden or courtyard, soft light. Never AI. -->
 
-Motifs on these robes are chosen with care. Flying cranes, a favourite on red uchikake, are symbols of longevity. <!-- fact_04 --> You can see [wedding kimono in the V&A collection](https://collections.vam.ac.uk/item/O126698/) online.
+Motifs on these robes are chosen with care. On a red uchikake, flying cranes are symbols of longevity. <!-- fact_04 --> You can see [wedding kimono in the V&A collection](https://collections.vam.ac.uk/item/O126698/) online.
 
 When you hire an uchikake, ask the stylist to explain its motifs, so you can share them with guests in the order of service.
 
@@ -153,10 +153,14 @@ Some couples fold a thousand cranes in the months before the wedding, often with
 <!-- IMAGE SLOT cranes-gifts: Preferred: licensed photo from a consented wedding of senbazuru strings of folded paper cranes hanging as a display, soft light, no people. Fallback only if Nic approves: AI neutral still life, labelled illustrative. -->
 
 <!-- CTA: primary -->
+**Read the free magazine**
+Free to read, whenever you are ready.
+[Read the free magazine](/magazine?utm_source=blog&utm_medium=content&utm_campaign=japanese-wedding-traditions&utm_content=primary)
+<!-- /CTA: primary -->
 
 ## 11. Marrying in Japan as Australians, or bringing the customs home
 
-As at November 2026, [Smartraveller advice for Japan](https://www.smartraveller.gov.au/destinations/asia/japan) is "Exercise normal safety precautions" in Japan overall. Its one higher level, "Reconsider your need to travel", covers the Fukushima Dai-ichi nuclear power plant's restricted areas. <!-- fact_102 --> Check it again before you send invitations.
+As at November 2026, [Smartraveller advice for Japan](https://www.smartraveller.gov.au/destinations/asia/japan) is "Exercise normal safety precautions" in Japan overall. Its one higher level, "Reconsider your need to travel", covers the restricted areas near the Fukushima Dai-ichi nuclear power plant. <!-- fact_102 --> Check it again before you send invitations.
 
 <!-- IMAGE SLOT destination: Licensed photo of Kyoto (Arashiyama hills or a temple garden in autumn colour) or Hakone (Lake Ashi with Mount Fuji in clear morning light): landscape only, no people, no venue, hotel or signage identifiable. Never AI. -->
 
@@ -166,7 +170,7 @@ Severe heat waves can affect Japan between July and September, and the typhoon s
 
 Australians don't need a visa to visit Japan for up to 90 days, but entry and exit conditions can change at short notice, and you cannot change your entry status, for example to a spouse visa, without leaving and re-entering. <!-- fact_104 --> Couples planning to stay on after marrying should sort their visas before they fly.
 
-Couples who marry in Japan often choose Kyoto, Tokyo or Hakone, for the gardens, the city and the mountain views. Our pages on [destination weddings in Asia](/destinations/asia) and [the dos and don'ts of an Asian destination wedding](/the-dos-and-donts-of-asian-destination-weddings) go further, and many couples stay on for one of [the best honeymoon destinations in Asia](/expert-advice/best-asia-honeymoon-destinations-where-to-go-and-when-to-visit).
+For a wedding in Japan, Kyoto, Tokyo and Hakone offer gardens, city life and mountain views. Our pages on [destination weddings in Asia](/destinations/asia) and [the dos and don'ts of an Asian destination wedding](/the-dos-and-donts-of-asian-destination-weddings) go further, and many couples stay on for one of [the best honeymoon destinations in Asia](/expert-advice/best-asia-honeymoon-destinations-where-to-go-and-when-to-visit).
 
 Before you choose a city, work through the guest questions with your Wedded Advisor:
 
@@ -188,14 +192,14 @@ Before you book, put these questions to the municipal office (the kuyakusho or s
 
 - Which documents does the municipal office need from each of you, and does it accept a CNI issued in Australia or only one issued in Japan?
 - Do your documents need an apostille or a certified Japanese translation?
-- Does a shrine or chapel ceremony register the marriage, or must you also register it at the municipal office?
+- Does a shrine or chapel ceremony make the marriage legal, or is a separate registration needed?
 - What fees apply, at the municipal office and at the Embassy?
 
 ### Bringing Japanese traditions home
 
-Many Japanese-Australian couples marry in Australia, with san-san-kudo in the ceremony, a change into kimono for the reception, kagami biraki for the toast and the bride's letter before the last speech. Ask your celebrant how to fold these moments into an Australian legal ceremony, and give guests a short note on what each one is.
+A Japanese-Australian couple marrying in Australia can keep san-san-kudo in the ceremony, a change into kimono for the reception, kagami biraki for the toast and the bride's letter before the last speech. Ask your celebrant how to fold these moments into an Australian legal ceremony, and give guests a short note on what each one is.
 
-A Wedded Advisor plans the venue, travel, vendors and payments around the parts your families lead, as your single point of contact. They work in your time zone and quote in AUD, the fee is agreed in writing before any work begins, and your advisor confirms the inclusions in writing before you commit. The municipal office and the Embassy set the legal steps, and the shrine or chapel sets its own; those steps stay with you and your families. Your advisor stays with you to the end, and someone on the ground looks after the days that matter. When you are ready, [speak with a Wedded Advisor](/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=japanese-wedding-traditions&utm_content=secondary).
+A Wedded Advisor plans the venue, travel, vendors and payments around the parts your families lead, as your single point of contact. They work in your time zone and quote in AUD, the fee is agreed in writing before any work begins, and your advisor confirms the inclusions in writing before you commit. The legal steps, confirmed with the municipal office and the Embassy, and any rules the shrine or chapel sets stay with you and your families. Your advisor stays with you to the end, and someone on the ground looks after the days that matter. When you are ready, [speak with a Wedded Advisor](/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=japanese-wedding-traditions&utm_content=secondary).
 
 ## Japanese wedding traditions FAQ
 
@@ -233,4 +237,4 @@ A Japanese wedding asks for careful timing: two families, two ceremonies, severa
 
 When you are ready to talk through dates, places or a wedding at home, tell us your date, your guest list and the feeling you want. Nothing is too early or too vague.
 
-You will meet one Wedded Advisor, your single point of contact from the first call to the wedding day. The fee is agreed in writing before any work begins, and your advisor confirms the inclusions in writing before you commit. For more ideas first, [read the free Wedded Wonderland magazine](/magazine?utm_source=blog&utm_medium=content&utm_campaign=japanese-wedding-traditions&utm_content=primary).
+You will meet one Wedded Advisor, your single point of contact from the first call to the wedding day. The fee is agreed in writing before any work begins, and your advisor confirms the inclusions in writing before you commit.
