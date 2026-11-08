@@ -2,3 +2,4 @@
 23:30 01 content-strategist complete; old page read (10 headings, 2016; harmful 'lashes' claim and 'tribe' framing dropped); Smartraveller Nigeria reconsider overall incl. Abuja, do not travel 26 states + FCT outside Abuja (23 Oct 2026); High Commission Abuja; diaspora angle (no marrying in Nigeria); batches A (5) / B (4 + UNESCO + diaspora); 02+03(A,B)+04 launched
 23:31 04 visual-curator complete 7 placeholders (no destination landscape)
 23:41 02 seo-researcher complete; old page US (why do nigerians throw money at weddings #3, 1,300/mo cluster at #16-#25), AU (customs #7, customs and traditions #9, traditions #15); no duplicates; cross-link Muslim traditions pages; schema valid
+23:41 03 planner-sme batch A complete 11 facts (Britannica peoples and faith; V&A aṣọ-òkè and gèlè); idana, greetings, nikah, kamu unsourced -> living practice; '250+ groups' unsourced (cut); waiting on batch B
