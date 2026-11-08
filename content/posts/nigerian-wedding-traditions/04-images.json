@@ -1,0 +1,245 @@
+{
+  "agent": "visual-curator",
+  "task_id": "nigerian-wedding-traditions",
+  "stage": "04",
+  "status": "needs_input",
+  "round": 1,
+  "inputs_used": [
+    "CLAUDE.md",
+    "content/posts/nigerian-wedding-traditions/00-input.json",
+    "content/posts/nigerian-wedding-traditions/01-brief.json (tradition_plan order, angle)",
+    "content/posts/nigerian-wedding-traditions/02-research/pages/old-nigerian.md (four images credited to The Nigerian Wedding Blog, third-party, no licence: excluded)",
+    "content-system/images/library-index.csv (header only, no rows)",
+    "content-system/schemas/04-images.schema.json",
+    "content/posts/japanese-wedding-traditions/04-images.json (format)"
+  ],
+  "self_qa": {
+    "checks": [
+      {
+        "check": "Zero reference-only or competitor images in slots",
+        "pass": true
+      },
+      {
+        "check": "Every approved image has verified location, licence, alt, caption, fit_reason",
+        "pass": true,
+        "note": "No approved images; all 7 slots needed."
+      },
+      {
+        "check": "No AI image of people, cultural dress, ceremonies or places",
+        "pass": true,
+        "note": "AI offered only as a fallback still life (folded aso oke or kola nuts), not generated, pending Nic's approval."
+      },
+      {
+        "check": "Old-page images not reused",
+        "pass": true,
+        "note": "Four old-page images credited to a third-party blog with no licence; excluded, not downloaded."
+      },
+      {
+        "check": "No destination landscape slot",
+        "pass": true,
+        "note": "Article does not suggest marrying in Nigeria (Smartraveller: reconsider travel); reception slot is in Australia."
+      },
+      {
+        "check": "Featured image exists (approved or needed with brief)",
+        "pass": true,
+        "note": "Needed with brief."
+      },
+      {
+        "check": "Placements match final H2 numbering",
+        "pass": false,
+        "note": "02-seo.json outline not available; after_h2 follows tradition_plan order (1 Yoruba introduction, 2 prostrating, 3 gele/fila/aso oke, 4 nikah, 5 kamu, 6 iku aka, 7 bride price, 8 igba nkwu, 9 aso ebi, 10 spraying, 11 white wedding, 12 UNESCO, 13 for Australians)."
+      }
+    ],
+    "confidence": 0.6
+  },
+  "open_questions": [
+    {
+      "to": "Nic",
+      "question": "Source licensed photos for 7 slots (Nigerian-Australian client weddings with signed consent, partner photographers, licensed stock with model and property releases)? Library register has no rows.",
+      "blocking": true
+    },
+    {
+      "to": "Nic",
+      "question": "Approve or decline an AI illustrative still life (folded aso oke fabric or kola nuts on linen; no people, dress being worn, ceremony or place), captioned 'Illustrative image', for the gele-aso-oke slot if no licensed photo is found?",
+      "blocking": false
+    },
+    {
+      "to": "seo-researcher",
+      "question": "Confirm H2 numbering once the outline exists and remap after_h2 placements.",
+      "blocking": false
+    }
+  ],
+  "assumptions": [
+    "Old-page images excluded (third-party origin, no licence); not downloaded to reference-only.",
+    "No venue in scope, so no press-kit permission emails drafted.",
+    "Fast mode, library register only: Google Drive, own site, Canva and Google Lens not run.",
+    "Ceremonies, cultural dress (gele, aso oke, agbada, george wrapper), igba nkwu, kamu and spraying must show real, consenting people in real, licensed photos; never AI.",
+    "No destination landscape: Smartraveller advises Australians to reconsider travel to Nigeria; the reception slot is set in Australia."
+  ],
+  "verify_items": [
+    "[[IMAGE NEEDED]] featured: couple in aso oke, gele, agbada and fila, consented couple",
+    "[[IMAGE NEEDED]] yoruba-introduction: prostrating greeting at a Yoruba engagement, no amounts",
+    "[[IMAGE NEEDED]] gele-aso-oke: gele and aso oke detail (or approved illustrative still life)",
+    "[[IMAGE NEEDED]] hausa-fulani: henna hands or kamu, family consent",
+    "[[IMAGE NEEDED]] igba-nkwu: Igbo bride offering palm wine",
+    "[[IMAGE NEEDED]] aso-ebi: guests in matching fabric",
+    "[[IMAGE NEEDED]] spraying-reception: couple sprayed while dancing, reception in Australia",
+    "[[VERIFY licence]] every sourced photo: credit, scope, model and property releases",
+    "[[VERIFY: any AI illustrative still life approved by Nic before generation]]"
+  ],
+  "next_agent": [
+    "luxury-writer"
+  ],
+  "payload": {
+    "slots": [
+      {
+        "slot_id": "featured",
+        "placement": "featured",
+        "purpose": "Hero: a real, licensed sense of a Nigerian traditional wedding as a joyful family occasion, without relying on party cliches.",
+        "shot_brief": "Licensed photo from a consented Nigerian or Nigerian-Australian traditional wedding: the couple in coordinated aso oke, the bride in a sculpted gele, the groom in agbada and fila, standing together or dancing in, warm late-afternoon or soft reception light, family softly blurred behind. Wide 3:2 hero with headroom for a title crop. No venue named unless licensed and cleared. Never AI.",
+        "status": "needed",
+        "file": "content/posts/nigerian-wedding-traditions/images/nigerian-wedding-traditions-couple-aso-oke-gele-hero.webp",
+        "source": {
+          "type": "library",
+          "origin": "[[IMAGE NEEDED]] library-index.csv has no rows (header only); no external searches in fast mode",
+          "credit": "[[VERIFY licence]]"
+        },
+        "consent": {
+          "couple": "required",
+          "guests": "required if identifiable"
+        },
+        "alt": "Nigerian bride in a sculpted gele and groom in agbada and fila, both in matching aso oke",
+        "caption": "<Place>, <town>. Photo: [[VERIFY credit]]",
+        "lens_check": "Not run: no candidate image."
+      },
+      {
+        "slot_id": "yoruba-introduction",
+        "placement": "after_h2:1",
+        "purpose": "Show the Yoruba introduction and engagement as a meeting of two families, including the prostrating greeting (covers H2 1 and 2).",
+        "shot_brief": "Licensed photo from a consented Yoruba engagement: the groom and his friends prostrating before the bride's seated family, or the families facing each other with the alaga hosts, gift trays visible but no prices or amounts, natural indoor or marquee light. Never AI.",
+        "status": "needed",
+        "file": "content/posts/nigerian-wedding-traditions/images/nigerian-wedding-traditions-yoruba-engagement-prostrating-greeting.webp",
+        "source": {
+          "type": "library",
+          "origin": "[[IMAGE NEEDED]] library-index.csv has no rows (header only); no external searches in fast mode",
+          "credit": "[[VERIFY licence]]"
+        },
+        "consent": {
+          "couple": "required",
+          "families": "required",
+          "guests": "required if identifiable"
+        },
+        "alt": "Groom and his friends lying prostrate in greeting before the bride's family at a Yoruba engagement",
+        "caption": "<Place>, <town>. Photo: [[VERIFY credit]]",
+        "lens_check": "Not run: no candidate image."
+      },
+      {
+        "slot_id": "gele-aso-oke",
+        "placement": "after_h2:3",
+        "purpose": "Detail of gele, fila and hand-woven aso oke as worn at a wedding.",
+        "shot_brief": "Preferred: licensed close-up from a consented wedding of a bride's gele being tied or finished, or aso oke cloth and fila on the groom, texture of the weave visible, soft window light, face consented or out of frame. Fallback only if Nic approves: AI neutral still life of folded aso oke fabric (or kola nuts in a plain bowl) on plain linen, no people, dress being worn, ceremony or place, captioned 'Illustrative image'.",
+        "status": "needed",
+        "file": "content/posts/nigerian-wedding-traditions/images/nigerian-wedding-traditions-gele-fila-aso-oke-detail.webp",
+        "source": {
+          "type": "library",
+          "origin": "[[IMAGE NEEDED]] library-index.csv has no rows (header only); no external searches in fast mode; ai_illustrative still life fallback pending Nic approval",
+          "credit": "[[VERIFY licence]]"
+        },
+        "consent": {
+          "couple": "required if identifiable"
+        },
+        "alt": "Close-up of a bride's sculpted gele head tie and hand-woven aso oke cloth",
+        "caption": "<Place>, <town>. Photo: [[VERIFY credit]] (or 'Illustrative image' if the approved AI fallback is used)",
+        "lens_check": "Not run: no candidate image."
+      },
+      {
+        "slot_id": "hausa-fulani",
+        "placement": "after_h2:5",
+        "purpose": "Illustrate the Hausa-Fulani celebration around the nikah, such as the kamu or henna, with respect for a Muslim family's privacy (covers H2 4 and 5).",
+        "shot_brief": "Licensed photo from a consented Hausa-Fulani or Northern Nigerian wedding: the bride's hands with fresh dark henna (lalle) designs, or the bride veiled among women relatives at the kamu, warm indoor light. No imam, mosque interior or religious rite shown unless the family and place consent. Faces optional. Never AI.",
+        "status": "needed",
+        "file": "content/posts/nigerian-wedding-traditions/images/nigerian-wedding-traditions-hausa-fulani-kamu-henna-hands.webp",
+        "source": {
+          "type": "library",
+          "origin": "[[IMAGE NEEDED]] library-index.csv has no rows (header only); no external searches in fast mode",
+          "credit": "[[VERIFY licence]]"
+        },
+        "consent": {
+          "bride": "required",
+          "family": "required",
+          "place": "required if identifiable"
+        },
+        "alt": "Bride's hands with intricate dark henna designs at a Hausa-Fulani wedding celebration",
+        "caption": "<Place>, <town>. Photo: [[VERIFY credit]]",
+        "lens_check": "Not run: no candidate image."
+      },
+      {
+        "slot_id": "igba-nkwu",
+        "placement": "after_h2:8",
+        "purpose": "Show the Igbo igba nkwu, the bride carrying palm wine to find the groom.",
+        "shot_brief": "Licensed photo from a consented Igbo traditional wedding: the bride in george wrapper and coral beads carrying a cup of palm wine through the guests, or kneeling to offer it to the groom, daylight or warm reception light. Never AI.",
+        "status": "needed",
+        "file": "content/posts/nigerian-wedding-traditions/images/nigerian-wedding-traditions-igbo-igba-nkwu-palm-wine.webp",
+        "source": {
+          "type": "library",
+          "origin": "[[IMAGE NEEDED]] library-index.csv has no rows (header only); no external searches in fast mode",
+          "credit": "[[VERIFY licence]]"
+        },
+        "consent": {
+          "couple": "required",
+          "guests": "required if identifiable"
+        },
+        "alt": "Igbo bride in coral beads kneeling to offer a cup of palm wine to her groom",
+        "caption": "<Place>, <town>. Photo: [[VERIFY credit]]",
+        "lens_check": "Not run: no candidate image."
+      },
+      {
+        "slot_id": "aso-ebi",
+        "placement": "after_h2:9",
+        "purpose": "Show aso ebi: family and friends dressed in one chosen fabric.",
+        "shot_brief": "Licensed photo from a consented Nigerian wedding: a group of guests, women in matching gele and men in matching fila, all in the same aso ebi fabric and colour, posed or laughing together, even outdoor light. Consent from every identifiable guest. Never AI.",
+        "status": "needed",
+        "file": "content/posts/nigerian-wedding-traditions/images/nigerian-wedding-traditions-aso-ebi-guests-matching-fabric.webp",
+        "source": {
+          "type": "library",
+          "origin": "[[IMAGE NEEDED]] library-index.csv has no rows (header only); no external searches in fast mode",
+          "credit": "[[VERIFY licence]]"
+        },
+        "consent": {
+          "guests": "required for every identifiable person"
+        },
+        "alt": "Wedding guests in matching aso ebi fabric, women in gele and men in fila",
+        "caption": "<Place>, <town>. Photo: [[VERIFY credit]]",
+        "lens_check": "Not run: no candidate image."
+      },
+      {
+        "slot_id": "spraying-reception",
+        "placement": "after_h2:10",
+        "purpose": "Show spraying and dancing at a reception held in Australia, with joy rather than cliche.",
+        "shot_brief": "Licensed photo from a consented Nigerian-Australian wedding reception in Australia: the couple dancing while guests spray notes over them, notes in motion, warm evening reception light. Currency need not be legible; no amounts implied. Venue not named unless licensed and cleared. Never AI.",
+        "status": "needed",
+        "file": "content/posts/nigerian-wedding-traditions/images/nigerian-wedding-traditions-spraying-money-reception-dance.webp",
+        "source": {
+          "type": "library",
+          "origin": "[[IMAGE NEEDED]] library-index.csv has no rows (header only); no external searches in fast mode",
+          "credit": "[[VERIFY licence]]"
+        },
+        "consent": {
+          "couple": "required",
+          "guests": "required if identifiable",
+          "venue": "required if identifiable"
+        },
+        "alt": "Couple dancing at their reception as guests shower them with banknotes",
+        "caption": "<Place>, <town>. Photo: [[VERIFY credit]]",
+        "lens_check": "Not run: no candidate image.",
+        "location": {
+          "venue": "[[VERIFY: venue, if any]]",
+          "town": "Australia (to confirm)",
+          "verified_by": "[[VERIFY: EXIF GPS or source page]]"
+        }
+      }
+    ],
+    "reference_only": [],
+    "permission_requests": []
+  }
+}
