@@ -12,3 +12,4 @@
 23:50 07b icp-panel-chair revise; enquire 2.6; must_fix: guest questions, closing Advisor link; should_fix: spraying in takeaways/FAQ, cut source links, who-pays as questions, aso ebi collection; Wedded Privileges room-block claim excluded (deferred); final pass launched
 23:51 08 luxury-writer complete 2,993 words; 0 VERIFY; scan clean; 8b+CRO+distribution launched
 23:52 09 cro-specialist complete; /magazine primary, African website template lead magnet; 2 copy changes; applying after 8b
+23:53 10 distribution complete 3 pins, 8-slide carousel, newsletter
