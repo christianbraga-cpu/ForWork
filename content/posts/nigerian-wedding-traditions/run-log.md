@@ -1,1 +1,2 @@
 23:21 00 orchestrator complete input written; FAST MODE start; refresh of /10-nigerian-wedding-customs-that-prove-these-brides-know-how-to-party (in-place slug change + 301)
+23:30 01 content-strategist complete; old page read (10 headings, 2016; harmful 'lashes' claim and 'tribe' framing dropped); Smartraveller Nigeria reconsider overall incl. Abuja, do not travel 26 states + FCT outside Abuja (23 Oct 2026); High Commission Abuja; diaspora angle (no marrying in Nigeria); batches A (5) / B (4 + UNESCO + diaspora); 02+03(A,B)+04 launched
