@@ -5,3 +5,5 @@
 22:49 03 planner-sme batch A complete 10 facts (Britannica; V&A shiromuku, uchikake, outfit change); yuinō, san-san-kudo, headwear unsourced -> living practice; waiting on batch B
 22:51 03 planner-sme batch B complete 14 facts (UNESCO washoku links New Year only, not weddings; Smartraveller; embassy notarial rules; Britannica senbazuru and Shinto-plus-chapel); reception, gifts, kagami biraki, speeches unsourced -> living practice; merged; writer launched
 22:54 05 luxury-writer complete ~2,930 words; 0 VERIFY; 0 research talk; first draft sent; editor + 5 readers launched
+22:55 07 icp-reader sceptic complete; no must-fix
+22:55 07 icp-reader search_visitor, uhnw complete; no must-fix (drop Britannica/V&A naming; Smartraveller takeaway off-topic); waiting on planner_couple, funding_parent, editor
