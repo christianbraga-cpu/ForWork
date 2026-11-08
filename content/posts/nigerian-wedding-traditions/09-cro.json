@@ -1,0 +1,78 @@
+{
+  "agent": "cro",
+  "task_id": "nigerian-wedding-traditions",
+  "stage": "09",
+  "status": "complete",
+  "round": 1,
+  "inputs_used": [
+    "content-system/brand/services.md",
+    "content-system/brand/brand-facts.md",
+    "content/posts/nigerian-wedding-traditions/01-brief.json",
+    "content/posts/nigerian-wedding-traditions/07-panel.json",
+    "content/posts/nigerian-wedding-traditions/08-final.md",
+    "content-system/seo/link-map.csv",
+    "content-system/schemas/09-cro.schema.json",
+    "content/posts/japanese-wedding-traditions/09-cro.json (format model)"
+  ],
+  "self_qa": {
+    "confidence": 0.85,
+    "checks": [
+      {"check": "/magazine, /wonderland-concierge and /wonderland-studio/wedding-website-templates/african exist in link-map.csv", "pass": true},
+      {"check": "Each copy_changes old string occurs exactly once in 08-final.md", "pass": true},
+      {"check": "UTMs follow services.md (utm_source=blog, utm_medium=content, utm_campaign=nigerian-wedding-traditions, utm_content = position)", "pass": true},
+      {"check": "Primary text 6 words or fewer, no exclamation mark, no 'click here'", "pass": true},
+      {"check": "Advisor wording from brand-facts.md only; no prices, paperwork help, banned phrases or em dashes added", "pass": true},
+      {"check": "At most 2 copy changes (2 used)", "pass": true}
+    ]
+  },
+  "assumptions": [
+    "CTA block markup follows the Japanese run; the CMS publisher adapts it to the field map's CTA component if different.",
+    "Panel must_fix 1 (guest logistics questions) is already in 08-final.md. Panel must_fix 2 asked for a closing link and an on-the-day line: the closing link is already present (utm_content=closing, a valid position under services.md). The 'someone on the ground looks after the days that matter' line is not added because brand-facts.md lists an on-the-day contact as deferred.",
+    "The African wedding website template is a Wonderland Studio page in link-map.csv and fits a two-ceremony Nigerian wedding, so it is the lead magnet; its existing in-text link gains utm_content=magnet."
+  ],
+  "open_questions": [
+    {"to": "orchestrator", "question": "Apply copy_changes 1 and 2 to 08-final.md before distribution and CMS upload?", "blocking": false},
+    {"to": "Nic", "question": "Is an on-the-day contact ready to be stated? The panel asked for it, but brand-facts.md marks it deferred, so it is not in the copy.", "blocking": false}
+  ],
+  "payload": {
+    "journey_stage": "dreaming",
+    "primary_cta": {
+      "text": "Read the free magazine",
+      "subtext": "Free to read, whenever you are ready.",
+      "link": "/magazine?utm_source=blog&utm_medium=content&utm_campaign=nigerian-wedding-traditions&utm_content=primary",
+      "placement": "Fill the existing <!-- CTA: primary --> marker after section 11 (the white wedding), once the reader has all eleven customs and before 'Bringing Nigerian wedding traditions to a wedding in Australia or abroad'. This is the only /magazine link in the post."
+    },
+    "secondary_cta": {
+      "text": "Speak with a Wedded Advisor",
+      "subtext": "The fee is agreed in writing before any work begins.",
+      "link": "/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=nigerian-wedding-traditions&utm_content=secondary",
+      "placement": "Existing inline link closing the Advisor paragraph at the end of 'Music, the alaga or MC and room for spraying', after the guest logistics questions and the boundary that the nikah, church service, legal steps and family customs stay with the couple. The closing section keeps its own Advisor link (utm_content=closing) so readers at the end need not scroll back. Wording unchanged."
+    },
+    "lead_magnet": {
+      "name": "Wonderland Studio African wedding website template",
+      "link": "/wonderland-studio/wedding-website-templates/african?utm_source=blog&utm_medium=content&utm_campaign=nigerian-wedding-traditions&utm_content=magnet",
+      "placement": "Existing in-text link in the diaspora section ('Set up a wedding website for a traditional and a white wedding'), straight after the guest logistics questions, where both days, both dress codes and the aso ebi details need one home. UTM added by copy_changes 2.",
+      "exists": true
+    },
+    "tracking": [
+      "utm_content=primary on the /magazine CTA block",
+      "utm_content=magnet on the African wedding website template link",
+      "utm_content=secondary on the inline /wonderland-concierge link in the diaspora section",
+      "utm_content=closing on the /wonderland-concierge link in the closing section (already in 08-final.md)"
+    ],
+    "rationale": "The brief sets a dreaming-stage reader, so the free magazine leads, per the services.md early-stage rule, with the Advisor as the in-context secondary once the guest questions and the family, faith and legal boundary have been answered, which is where the panel's accountability questions peak. The African website template is a practical next step for families coordinating two ceremonies and overseas guests, and sits at the moment those questions are raised. Weighted enquiry likelihood is 2.6, so no further asks are added. Ideal magnet not on the site: a Nigerian family planning guide (introduction, list conversations, aso ebi ordering, two-ceremony run sheet) for both families (suggestion only, not placed).",
+    "copy_changes": [
+      {
+        "old": "<!-- CTA: primary -->",
+        "new": "<!-- CTA: primary -->\n**Read the free magazine**\nFree to read, whenever you are ready.\n[Read the free magazine](/magazine?utm_source=blog&utm_medium=content&utm_campaign=nigerian-wedding-traditions&utm_content=primary)\n<!-- /CTA: primary -->",
+        "why": "Fill the primary marker after the white wedding, once the reader has the full run of customs and before the planning section."
+      },
+      {
+        "old": "(/wonderland-studio/wedding-website-templates/african)",
+        "new": "(/wonderland-studio/wedding-website-templates/african?utm_source=blog&utm_medium=content&utm_campaign=nigerian-wedding-traditions&utm_content=magnet)",
+        "why": "Track the lead magnet link with the services.md UTM standard."
+      }
+    ]
+  },
+  "next_agent": ["distribution"]
+}
