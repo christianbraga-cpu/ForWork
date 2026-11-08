@@ -1,7 +1,7 @@
 # Run report: What Are the Japanese Wedding Traditions You Did Not Know?
 
 - **Slug:** japanese-wedding-traditions (CMS slug as given)  ·  **Run date:** 2026-11-08  ·  **Status:** Package ready (no Chrome)
-- **Mode:** fast mode, refresh. Started 22:34 UTC, first draft 22:56, package 23:03. About 29 minutes in total.
+- **Mode:** fast mode, refresh. Started 22:34 UTC, first draft 22:54, package 23:03. About 29 minutes in total.
 - **Draft:** not uploaded (no Chrome in the cloud session; CMS field map not yet confirmed)
 - **Word file:** `japanese-wedding-traditions-draft.docx`
 - **Authority rule:** 0 research-talk phrases, 0 "often told", 0 VERIFY, 0 per-line source credits in the final body (7 removed at the edit stage). The writer's instructions now ban per-line credits for future runs.
