@@ -1,0 +1,104 @@
+{
+  "agent": "cro",
+  "task_id": "japanese-wedding-traditions",
+  "stage": "09",
+  "status": "complete",
+  "round": 1,
+  "inputs_used": [
+    "content-system/brand/services.md",
+    "content-system/brand/brand-facts.md",
+    "content/posts/japanese-wedding-traditions/01-brief.json",
+    "content/posts/japanese-wedding-traditions/07-panel.json",
+    "content/posts/japanese-wedding-traditions/08-final.md",
+    "content-system/seo/link-map.csv",
+    "content-system/schemas/09-cro.schema.json",
+    "content/posts/mexican-wedding-traditions/09-cro.json (format model)"
+  ],
+  "self_qa": {
+    "confidence": 0.85,
+    "checks": [
+      {
+        "check": "/magazine and /wonderland-concierge exist in link-map.csv",
+        "pass": true
+      },
+      {
+        "check": "Each copy_changes old string occurs exactly once in 08-final.md",
+        "pass": true
+      },
+      {
+        "check": "UTMs follow services.md (utm_source=blog, utm_medium=content, utm_campaign=japanese-wedding-traditions, utm_content primary or secondary)",
+        "pass": true
+      },
+      {
+        "check": "Primary text 6 words or fewer, no exclamation mark, no 'click here'",
+        "pass": true
+      },
+      {
+        "check": "Advisor wording from brand-facts.md only; no prices, paperwork help, banned phrases or em dashes added",
+        "pass": true
+      },
+      {
+        "check": "At most 2 copy changes (2 used)",
+        "pass": true
+      }
+    ]
+  },
+  "assumptions": [
+    "CTA block markup follows the Mexican run; the CMS publisher adapts it to the field map's CTA component if different.",
+    "The magazine is both primary CTA and lead magnet, so no separate utm_content=magnet link is placed.",
+    "Both panel must_fix items (Advisor accountability paragraph and guest logistics paragraph) are already applied in 08-final.md. The panel's suggested closing wording used a brand-facts phrase that is off limits for this run; the closing in 08-final.md already avoids it and is left unchanged apart from removing the duplicate magazine link."
+  ],
+  "open_questions": [
+    {
+      "to": "orchestrator",
+      "question": "Apply copy_changes 1 and 2 to 08-final.md before distribution and CMS upload?",
+      "blocking": false
+    },
+    {
+      "to": "Nic",
+      "question": "Is a Japan or Asia magazine edition planned? None is in the link map, so the general /magazine page is used.",
+      "blocking": false
+    }
+  ],
+  "payload": {
+    "journey_stage": "dreaming",
+    "primary_cta": {
+      "text": "Read the free magazine",
+      "subtext": "Free to read, whenever you are ready.",
+      "link": "/magazine?utm_source=blog&utm_medium=content&utm_campaign=japanese-wedding-traditions&utm_content=primary",
+      "placement": "Fill the existing <!-- CTA: primary --> marker after section 10 (senbazuru), before '11. Marrying in Japan as Australians, or bringing the customs home'. The closing-section magazine link is removed (copy_changes 2) so this is the only /magazine link."
+    },
+    "secondary_cta": {
+      "text": "Speak with a Wedded Advisor",
+      "subtext": "The fee is agreed in writing before any work begins.",
+      "link": "/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=japanese-wedding-traditions&utm_content=secondary",
+      "placement": "Existing inline 'speak with a Wedded Advisor' link closing the Advisor paragraph in section 11, after the guest logistics questions, the legal boundary ('those steps stay with you and your families') and the brand-facts Advisor wording, where the panel's accountability questions peak. Wording unchanged."
+    },
+    "lead_magnet": {
+      "name": "Wedded Wonderland digital magazine",
+      "link": "/magazine?utm_source=blog&utm_medium=content&utm_campaign=japanese-wedding-traditions&utm_content=primary",
+      "placement": "Same as primary CTA; no separate magnet placement.",
+      "exists": true
+    },
+    "tracking": [
+      "utm_content=primary on the /magazine CTA block",
+      "utm_content=secondary on the /wonderland-concierge inline link"
+    ],
+    "rationale": "Dreaming-stage reader (brief journey_stage) gets the low-commitment magazine first, per the services.md early-stage rule. The Advisor follows as the in-context secondary in section 11, after the guest questions and the municipal office, Embassy and shrine boundary, which answer the panel must_fix on accountability before the ask. Weighted enquiry likelihood is 2.6, so no extra asks are added. Ideal magnet not on the site: a Japanese wedding family guide (yuinō and family meeting, ceremony order, hirōen running order, speeches and the bride's letter) for both families (suggestion only, exists false, not placed).",
+    "copy_changes": [
+      {
+        "old": "<!-- CTA: primary -->",
+        "new": "<!-- CTA: primary -->\n**Read the free magazine**\nFree to read, whenever you are ready.\n[Read the free magazine](/magazine?utm_source=blog&utm_medium=content&utm_campaign=japanese-wedding-traditions&utm_content=primary)\n<!-- /CTA: primary -->",
+        "why": "Fill the primary marker after senbazuru, once the reader has the full run of customs and before section 11 on marrying in Japan."
+      },
+      {
+        "old": " For more ideas first, [read the free Wedded Wonderland magazine](/magazine?utm_source=blog&utm_medium=content&utm_campaign=japanese-wedding-traditions&utm_content=primary).",
+        "new": "",
+        "why": "Remove the duplicate utm_content=primary magazine link in the closing section so the primary CTA is tracked in one place; the closing Advisor lines stay."
+      }
+    ]
+  },
+  "next_agent": [
+    "distribution"
+  ]
+}

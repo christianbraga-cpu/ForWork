@@ -11,3 +11,4 @@
 22:56 06 editor revise 3.86 (voice 3: 7 source credits); 17 edits applied -> 05-draft-r2.md (washoku cut, 2 san-san-kudo meanings cut, H2s reworded); uhnw.json schema fixed; panel chair launched
 22:58 07b icp-panel-chair revise; enquire 2.6; must_fix: Advisor/CTA next step, guest questions; should_fix: museum-catalogue detail, CTA wording; final pass launched
 22:59 08 luxury-writer complete 2,981 words; 0 VERIFY; scan clean; 8b+CRO+distribution launched
+23:00 09 cro-specialist complete; /magazine primary; 2 copy changes; applying after 8b
