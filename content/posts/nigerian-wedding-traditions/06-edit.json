@@ -1,0 +1,346 @@
+{
+ "agent": "editor",
+ "task_id": "nigerian-wedding-traditions",
+ "stage": "06",
+ "status": "complete",
+ "round": 1,
+ "inputs_used": [
+  "CLAUDE.md",
+  "content/posts/nigerian-wedding-traditions/00-input.json",
+  "01-brief.json",
+  "02-seo.json",
+  "03-source-pack.json",
+  "05-draft.md",
+  "content-system/brand/voice-guide.md",
+  "content-system/brand/brand-facts.md",
+  "content-system/rubrics/editor-rubric.md",
+  "content-system/seo/link-map.csv",
+  "content-system/schemas/06-edit.schema.json",
+  "content/posts/japanese-wedding-traditions/06-edit.json (format model)"
+ ],
+ "self_qa": {
+  "checks": [
+   {
+    "check": "scan_copy.py run and results reflected",
+    "pass": true,
+    "note": "0 banned, 0 flagged, 0 dashes, 0 overlaps"
+   },
+   {
+    "check": "Every fact marker logged against the source pack",
+    "pass": true,
+    "note": "23 fact ids, all present in 03-source-pack.json"
+   },
+   {
+    "check": "Every edit 'old' occurs exactly once (applied in order)",
+    "pass": true,
+    "note": "verified by script"
+   },
+   {
+    "check": "Authority rule: no research talk, per-line credits or hedge stacking; 0 'often told'",
+    "pass": true,
+    "note": "after edits (study credit line cut)"
+   },
+   {
+    "check": "Single-community Igbo practice (Ezinifite-Aguata) not generalised",
+    "pass": true,
+    "note": "after edits to takeaway 3 and items 6, 7, 8"
+   },
+   {
+    "check": "Smartraveller wording exact, dated, neutral; no suggestion of marrying in Nigeria",
+    "pass": true,
+    "note": "after takeaway 4 edit"
+   },
+   {
+    "check": "4 one-sentence takeaways; no prices, amounts, vendors, venues, 'last dance', Advisor paperwork claims, em dashes; Australian English",
+    "pass": true
+   },
+   {
+    "check": "Internal links in 02-seo.json or link-map.csv, none noindex; external links not competitors",
+    "pass": true,
+    "note": "HC URL corrected to 02-seo external link"
+   },
+   {
+    "check": "Decision consistent with scores",
+    "pass": true,
+    "note": "avg 3.86 < 4.0, accuracy 3, so revise"
+   }
+  ],
+  "confidence": 0.85
+ },
+ "next_agent": [
+  "luxury-writer"
+ ],
+ "payload": {
+  "draft_file": "content/posts/nigerian-wedding-traditions/05-draft.md",
+  "rubric": {
+   "voice": 4,
+   "expertise": 4,
+   "accuracy": 3,
+   "seo_fit": 4,
+   "commercial_link": 4,
+   "structure": 4,
+   "brief_fit": 4
+  },
+  "average": 3.86,
+  "blocking_issues": [],
+  "decision": "revise",
+  "edits": [
+   {
+    "location": "Key takeaways, bullet 3",
+    "issue": "MUST-FIX. Generalises one community's stages (Ezinifite-Aguata, fact_107/110) to all Igbo marriage. Write as living practice.",
+    "old": "- Igbo marriage moves through stages, from the first visit with palm wine to a public ceremony where the bride carries a cup of wine through the guests to find her groom.",
+    "new": "- In many Igbo families, the public ceremony ends with the bride carrying a cup of palm wine through the guests to find her groom.",
+    "fix": "Replace exactly: \"- Igbo marriage moves through stages, from the first visit with palm wine to a public ceremony where the bride carries a cup of wine through the guests to find her groom.\" with: \"- In many Igbo families, the public ceremony ends with the bride carrying a cup of palm wine through the guests to find her groom.\""
+   },
+   {
+    "location": "Key takeaways, bullet 4",
+    "issue": "MUST-FIX. Smartraveller wording must be exact and dated (fact_100); 'reconsider travel' is a paraphrase.",
+    "old": "- Smartraveller advises Australians to reconsider travel to Nigeria, so many diaspora couples bring these customs to a wedding in Australia or at another destination.",
+    "new": "- As at November 2026, Smartraveller advises Australians to \"Reconsider your need to travel\" to Nigeria, and many diaspora couples bring these customs to a wedding in Australia or at another destination.",
+    "fix": "Replace exactly: \"- Smartraveller advises Australians to reconsider travel to Nigeria, so many diaspora couples bring these customs to a wedding in Australia or at another destination.\" with: \"- As at November 2026, Smartraveller advises Australians to \"Reconsider your need to travel\" to Nigeria, and many diaspora couples bring these customs to a wedding in Australia or at another destination.\""
+   },
+   {
+    "location": "What a traditional Nigerian wedding looks like today, H3",
+    "issue": "MUST-FIX. Pasted keyword in heading ('Nigerian wedding ceremony traditions'); not in the 02-seo outline.",
+    "old": "### Nigerian wedding ceremony traditions, in two parts",
+    "new": "### One marriage, two ceremonies",
+    "fix": "Replace exactly: \"### Nigerian wedding ceremony traditions, in two parts\" with: \"### One marriage, two ceremonies\""
+   },
+   {
+    "location": "Hausa-Fulani intro, para 2",
+    "issue": "Inference attached to fact_05 ('where that etiquette is most on show') goes beyond the source. Keep it as living practice.",
+    "old": "and a wedding is where that etiquette is most on show: who is greeted first, who speaks for the family and who sits where.",
+    "new": "and in many families it shows at a wedding: who is greeted first, who speaks for the family and who sits where.",
+    "fix": "Replace exactly: \"and a wedding is where that etiquette is most on show: who is greeted first, who speaks for the family and who sits where.\" with: \"and in many families it shows at a wedding: who is greeted first, who speaks for the family and who sits where.\""
+   },
+   {
+    "location": "4. The nikah and the sadaki, para 2",
+    "issue": "Definition stated as fact without a marker ('belongs to the bride'). Keep it plain.",
+    "old": "The groom gives the sadaki, the marriage gift that belongs to the bride.",
+    "new": "The groom gives the sadaki, his marriage gift to the bride.",
+    "fix": "Replace exactly: \"The groom gives the sadaki, the marriage gift that belongs to the bride.\" with: \"The groom gives the sadaki, his marriage gift to the bride.\""
+   },
+   {
+    "location": "Igbo wedding traditions, para 2",
+    "issue": "MUST-FIX. Research talk and per-line source credit ('This study ... sets them out in full'). Fold the link into the sentence once.",
+    "old": "In Ezinifite-Aguata, in Anambra State, marriage moves through five stages:",
+    "new": "In Ezinifite-Aguata, in Anambra State, [marriage moves through five stages](https://www.ijsshr.com/journal/index.php/IJSSHR/article/download/1147/987/3953):",
+    "fix": "Replace exactly: \"In Ezinifite-Aguata, in Anambra State, marriage moves through five stages:\" with: \"In Ezinifite-Aguata, in Anambra State, [marriage moves through five stages](https://www.ijsshr.com/journal/index.php/IJSSHR/article/download/1147/987/3953):\""
+   },
+   {
+    "location": "Igbo wedding traditions, para 2 (end)",
+    "issue": "MUST-FIX. Cut the research-talk sentence (link now carried above).",
+    "old": " This [study of Igbo marriage stages](https://www.ijsshr.com/journal/index.php/IJSSHR/article/download/1147/987/3953) sets them out in full.",
+    "new": "",
+    "fix": "Replace exactly: \" This [study of Igbo marriage stages](https://www.ijsshr.com/journal/index.php/IJSSHR/article/download/1147/987/3953) sets them out in full.\" with: \"\""
+   },
+   {
+    "location": "6. Knocking on the door, para 3",
+    "issue": "MUST-FIX. fact_111 is from the Ezinifite-Aguata account; tie it to that community, not all Igbo families.",
+    "old": "At the later stages of presenting gifts and the outing, the bride-to-be",
+    "new": "In Ezinifite-Aguata, at the later stages of presenting gifts and the outing, the bride-to-be",
+    "fix": "Replace exactly: \"At the later stages of presenting gifts and the outing, the bride-to-be\" with: \"In Ezinifite-Aguata, at the later stages of presenting gifts and the outing, the bride-to-be\""
+   },
+   {
+    "location": "7. The bride price and the family list, para 1",
+    "issue": "MUST-FIX. fact_109 is one community's practice stated as general Igbo custom. Tie it.",
+    "old": "At the bride price stage, Ime ego, the groom's kinsmen go with him",
+    "new": "In Ezinifite-Aguata, at the bride price stage, Ime ego, the groom's kinsmen go with him",
+    "fix": "Replace exactly: \"At the bride price stage, Ime ego, the groom's kinsmen go with him\" with: \"In Ezinifite-Aguata, at the bride price stage, Ime ego, the groom's kinsmen go with him\""
+   },
+   {
+    "location": "7. The bride price and the family list, para 2",
+    "issue": "MUST-FIX. fact_112 same community; tie it.",
+    "old": "The bride's kin have their own requests too. At the public ceremony,",
+    "new": "The bride's kin have their own requests too. There, at the public ceremony,",
+    "fix": "Replace exactly: \"The bride's kin have their own requests too. At the public ceremony,\" with: \"The bride's kin have their own requests too. There, at the public ceremony,\""
+   },
+   {
+    "location": "8. Igba nkwu, para 1",
+    "issue": "MUST-FIX. fact_110 is the Ezinifite-Aguata account; tie it before stating the steps.",
+    "old": "The bride's father pours her a cup of palm wine and asks her",
+    "new": "In Ezinifite-Aguata, the bride's father pours her a cup of palm wine and asks her",
+    "fix": "Replace exactly: \"The bride's father pours her a cup of palm wine and asks her\" with: \"In Ezinifite-Aguata, the bride's father pours her a cup of palm wine and asks her\""
+   },
+   {
+    "location": "H2 'Nigerian wedding customs shared across families'",
+    "issue": "Heading reads keyword-led; use the 02-seo outline wording.",
+    "old": "## Nigerian wedding customs shared across families",
+    "new": "## Customs shared across Nigerian weddings",
+    "fix": "Replace exactly: \"## Nigerian wedding customs shared across families\" with: \"## Customs shared across Nigerian weddings\""
+   },
+   {
+    "location": "H3 10",
+    "issue": "MUST-FIX. Pasted keyword in heading ('why Nigerians throw money at weddings'); outline H3 is 'Spraying money on the couple'. The query stays answered in the body and FAQ.",
+    "old": "### 10. Spraying money: why Nigerians throw money at weddings",
+    "new": "### 10. Spraying money on the couple",
+    "fix": "Replace exactly: \"### 10. Spraying money: why Nigerians throw money at weddings\" with: \"### 10. Spraying money on the couple\""
+   },
+   {
+    "location": "Travel to Nigeria section, para 2",
+    "issue": "MUST-FIX. Australian High Commission link must be the 02-seo external URL.",
+    "old": "[Australian High Commission in Abuja](https://nigeria.embassy.gov.au/)",
+    "new": "[Australian High Commission in Abuja](https://nigeria.highcommission.gov.au/aaja/home.html)",
+    "fix": "Replace exactly: \"[Australian High Commission in Abuja](https://nigeria.embassy.gov.au/)\" with: \"[Australian High Commission in Abuja](https://nigeria.highcommission.gov.au/aaja/home.html)\""
+   },
+   {
+    "location": "Ordering aso ebi from abroad, para 1",
+    "issue": "fact_09 says weaving enough for a jacket takes around 24 hours over a week; 'one workshop in Ilorin' adds detail the claim does not carry.",
+    "old": "and one workshop in Ilorin takes around 24 hours over a week to weave enough for a single jacket.",
+    "new": "and weaving enough for a single jacket takes around 24 hours over a week.",
+    "fix": "Replace exactly: \"and one workshop in Ilorin takes around 24 hours over a week to weave enough for a single jacket.\" with: \"and weaving enough for a single jacket takes around 24 hours over a week.\""
+   },
+   {
+    "location": "Timing the traditional and white weddings, last para",
+    "issue": "Legal fact needs its date once in this section (fact_104).",
+    "old": "An overseas marriage cannot be registered in Australia, but",
+    "new": "As at November 2026, an overseas marriage cannot be registered in Australia, but",
+    "fix": "Replace exactly: \"An overseas marriage cannot be registered in Australia, but\" with: \"As at November 2026, an overseas marriage cannot be registered in Australia, but\""
+   },
+   {
+    "location": "FAQ 'How long does a Nigerian traditional wedding last?'",
+    "issue": "Unsourced duration ('spread over months'). State it as living practice without a time claim.",
+    "old": "For Igbo families the stages before it, from the first visit to the bride price, can be spread over months.",
+    "new": "In many Igbo families the stages before it, from the first visit to the bride price, take place over several visits.",
+    "fix": "Replace exactly: \"For Igbo families the stages before it, from the first visit to the bride price, can be spread over months.\" with: \"In many Igbo families the stages before it, from the first visit to the bride price, take place over several visits.\""
+   }
+  ],
+  "fact_check_log": [
+   {
+    "claim": "The Yoruba are one of the three largest ethnic groups of Nigeria, concentrated in the southwest of the country.",
+    "fact_id": "fact_01",
+    "status": "confirmed"
+   },
+   {
+    "claim": "Many Yoruba are now Christians or Muslims, while aspects of traditional religion survive.",
+    "fact_id": "fact_02",
+    "status": "confirmed"
+   },
+   {
+    "claim": "The Yoruba have long been skilled craftsmen whose trades include weaving; Yoruba women engage in cotton spinning and dyeing.",
+    "fact_id": "fact_03",
+    "status": "confirmed"
+   },
+   {
+    "claim": "The Hausa live chiefly in northwestern Nigeria; Islamic influence spread from the 14th century and profoundly influenced Hausa belief and customs. Perhaps half ",
+    "fact_id": "fact_04",
+    "status": "confirmed"
+   },
+   {
+    "claim": "Hausa social ranking is expressed in an elaborate etiquette.",
+    "fact_id": "fact_05",
+    "status": "confirmed"
+   },
+   {
+    "claim": "The Fulani are a primarily Muslim people found across West Africa and concentrated principally in Nigeria, Mali, Guinea, Senegal and Niger.",
+    "fact_id": "fact_06",
+    "status": "confirmed"
+   },
+   {
+    "claim": "The V&A describes aṣọ-òkè as a handmade strip-woven cloth historically produced by the Yoruba in south-western Nigeria, woven by men on a single-heddle loom in ",
+    "fact_id": "fact_07",
+    "status": "confirmed"
+   },
+   {
+    "claim": "Aṣọ-òkè is worn by both men and women, is typically striped, and certain pieces are reserved for special religious, communal or family occasions.",
+    "fact_id": "fact_08",
+    "status": "confirmed"
+   },
+   {
+    "claim": "The V&A calls aṣọ-òkè a very prestigious hand-woven cloth often worn for special occasions; a contemporary Lagos designer works with weavers in Ilorin, where we [draft wording narrowed by edit]",
+    "fact_id": "fact_09",
+    "status": "confirmed"
+   },
+   {
+    "claim": "A V&A ensemble record names the women's set as a bùbá blouse, ìró wrapped skirt, ìpèlé shawl and gèlè headwrap of matching textile, made of aṣọ-òkè.",
+    "fact_id": "fact_10",
+    "status": "confirmed"
+   },
+   {
+    "claim": "Designer Shade Thomas-Fahm created a pre-tied gèlè (headwrap) to make getting dressed easier, re-imagining traditional Nigerian styles.",
+    "fact_id": "fact_11",
+    "status": "confirmed"
+   },
+   {
+    "claim": "Smartraveller's overall advice for Nigeria is 'Reconsider your need to travel', including Abuja (as at November 2026; page updated 23 October 2026, still curren",
+    "fact_id": "fact_100",
+    "status": "confirmed"
+   },
+   {
+    "claim": "Smartraveller lists 26 states plus the Federal Capital Territory (excluding Abuja) at 'Do not travel', as published: Abia, Adamawa, Anambra, Akawa Ibom, Bauchi,",
+    "fact_id": "fact_101",
+    "status": "confirmed"
+   },
+   {
+    "claim": "Smartraveller: Nigeria has strict laws against same-sex relationships; the Australian High Commission in Abuja and the Honorary Consulate in Lagos provide limit",
+    "fact_id": "fact_102",
+    "status": "confirmed"
+   },
+   {
+    "claim": "Smartraveller 'Getting married overseas' (last updated 18 August 2026): an overseas marriage cannot be registered in Australia but in most cases is legally reco",
+    "fact_id": "fact_104",
+    "status": "confirmed"
+   },
+   {
+    "claim": "Britannica: the Igbo live chiefly in southeastern Nigeria, number more than 35 million (2020s estimate), are widely dispersed within Nigeria and across many cou",
+    "fact_id": "fact_106",
+    "status": "confirmed"
+   },
+   {
+    "claim": "An academic study of Igbo marriage in Ezinifite-Aguata (Anambra State) describes five stages: knocking at the door (Ịkụ aka n'ụzọ), presentation of gifts (Ịgban [single-community source: tied to Ezinifite-Aguata by edit]",
+    "fact_id": "fact_107",
+    "status": "confirmed"
+   },
+   {
+    "claim": "Knocking at the door is the first stage 'in Ezinifite-Aguata and most of the communities in Igboland': the suitor and his father visit the woman's family with p [single-community source: tied to Ezinifite-Aguata by edit]",
+    "fact_id": "fact_108",
+    "status": "confirmed"
+   },
+   {
+    "claim": "At the bride price stage (ime ego), the groom's kinsmen accompany him to the bride's family; after kola nut and palm wine, he offers the bride price to his fath [single-community source: tied to Ezinifite-Aguata by edit]",
+    "fact_id": "fact_109",
+    "status": "confirmed"
+   },
+   {
+    "claim": "At the public traditional marriage ceremony, the bride's father pours her a cup of palm wine and asks her to show the gathering her husband ('gosi anyị onye bụ  [single-community source: tied to Ezinifite-Aguata by edit]",
+    "fact_id": "fact_110",
+    "status": "confirmed"
+   },
+   {
+    "claim": "In the same study, at the gift-presentation and outing stages the bride-to-be hands the palm wine to her fiancé while kneeling on one knee as a sign of respect, [single-community source: tied to Ezinifite-Aguata by edit]",
+    "fact_id": "fact_111",
+    "status": "confirmed"
+   },
+   {
+    "claim": "At the public ceremony the groom's palm wine is examined by the bride's father and kinsmen, and the married daughters of the kindred (ụmụada) and young daughter [single-community source: tied to Ezinifite-Aguata by edit]",
+    "fact_id": "fact_112",
+    "status": "confirmed"
+   },
+   {
+    "claim": "The study describes palm wine as central to any Igbo traditional ceremony and the preferred drink at weddings, child naming ceremonies, funerals and memorials.",
+    "fact_id": "fact_113",
+    "status": "confirmed"
+   }
+  ],
+  "compliance": {
+   "pass": true,
+   "issues": [
+    "No prices or amounts; bride price, sadaki, list and spraying stated without figures",
+    "No stereotypes, 'tribe' or harmful practices",
+    "Advisor claims match brand-facts.md; no legal or church paperwork help implied",
+    "Smartraveller and High Commission lines match fact_100 to fact_102; no suggestion to marry in Nigeria"
+   ]
+  },
+  "originality": {
+   "pass": true,
+   "matches": []
+  },
+  "banned_phrases_found": [],
+  "needs_signoff": []
+ },
+ "assumptions": [
+  "Kneeling, bride price, kin entitlements and wine-carrying steps (fact_107 to fact_112) come from one Ezinifite-Aguata study, so edits tie them to that community",
+  "Spraying explained as living practice per the brief; no meaning or origin stated"
+ ],
+ "open_questions": []
+}
