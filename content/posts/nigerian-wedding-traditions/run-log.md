@@ -7,3 +7,4 @@
 23:45 05 luxury-writer complete 2,983 words; 0 VERIFY; 0 research talk; first draft sent; editor + 5 readers launched
 23:46 07 icp-reader sceptic complete; no must-fix
 23:46 07 icp-reader search_visitor complete; no must-fix (spraying not in intro/takeaways; Smartraveller is)
+23:46 07 icp-reader uhnw, funding_parent, planner_couple complete; no must-fix (too many source links in body; aso ebi logistics; closing link); waiting on editor
