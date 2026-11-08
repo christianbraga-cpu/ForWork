@@ -1,307 +1,548 @@
 {
- "agent": "wedding-planner-sme",
- "task_id": "japanese-wedding-traditions",
- "stage": "03",
- "status": "complete",
- "round": 1,
- "inputs_used": [
-  "CLAUDE.md",
-  "content/posts/japanese-wedding-traditions/00-input.json",
-  "content/posts/japanese-wedding-traditions/01-brief.json (tradition_plan.batch_A)",
-  "content-system/schemas/03-source-pack.schema.json",
-  "content/posts/mexican-wedding-traditions/03-source-pack.json (format model)",
-  "https://www.britannica.com/place/Japan/Daily-life-and-social-customs (Apify web-fetch 2026-11-08)",
-  "https://www.britannica.com/topic/Shinto/Ritual-practices-and-institutions (Apify web-fetch 2026-11-08)",
-  "https://api.vam.ac.uk/v2/museumobject/O126698 (Apify web-fetch 2026-11-08)",
-  "https://api.vam.ac.uk/v2/museumobject/O14574 (Apify web-fetch 2026-11-08)",
-  "https://api.vam.ac.uk/v2/objects/search?q=shiromuku (Apify web-fetch 2026-11-08)",
-  "https://www.jinjahoncho.or.jp/en/ (empty body, no usable text)",
-  "https://www.meijijingu.or.jp/en/wedding/ (404)",
-  "https://www.japan.travel/en/guide/japanese-wedding/ (404)",
-  "https://d-museum.kokugakuin.ac.jp/eos/search/ (search does not filter; no entry read)"
- ],
- "tools_used": [
-  "mcp__Apify__apify--web-fetch",
-  "mcp__Apify__apify--web-search",
-  "Bash"
- ],
- "assumptions": [
-  "Batch A only (fact_01 to fact_10): yuinō, Shinto ceremony, san-san-kudo, bridal dress, chapel weddings. Batch B covers reception, gifts, kagami biraki, speeches, cranes, UNESCO, Smartraveller and legal.",
-  "V&A collection records are cited by their public collection page (collections.vam.ac.uk/item/<id>/); text was read via the V&A API record for the same object on 2026-11-08.",
-  "Shinto ritual order in fact_08 is Britannica's order for a grand festival, not a wedding; the writer must not present it as a wedding order of service.",
-  "Unsourced customs are in payload.often_told (internal only, no VERIFY markers, no meanings as fact). Write them as living practice per the authority rule.",
-  "Shrines are cultural context only, never venue recommendations. No prices or amounts recorded.",
-  "Hard 15-minute limit (start 22:39:40); Jinja Honchō, JNTO and Kokugakuin pages gave no usable text in time; three domain-limited searches returned no results."
- ],
- "open_questions": [
-  {
-   "to": "luxury-writer",
-   "question": "Yuinō, san-san-kudo and headwear have no source in batch A: keep each to living-practice description with no meanings, as in often_told.",
-   "blocking": false
-  }
- ],
- "verify_items": [
-  "[[VERIFY: that a Shinto shrine or chapel ceremony does not itself register a marriage in Japan; no official source read in batch A. State only if batch B's municipal office or embassy source says so, as at November 2026.]]"
- ],
- "self_qa": {
-  "checks": [
-   {
-    "check": "Every fact has a source URL, exact quote and date read",
-    "pass": true,
-    "note": "10 facts read live 2026-11-08."
-   },
-   {
-    "check": "No prices or amounts",
-    "pass": true
-   },
-   {
-    "check": "Every batch A custom covered or listed as often told",
-    "pass": true,
-    "note": "Yuinō, san-san-kudo, headwear and groom's dress are often_told."
-   },
-   {
-    "check": "No invented quotes, statistics or real weddings",
-    "pass": true
-   },
-   {
-    "check": "No competitor, vendor or Wikipedia sources",
-    "pass": true
-   }
+  "agent": "wedding-planner-sme",
+  "task_id": "japanese-wedding-traditions",
+  "stage": "03",
+  "status": "complete",
+  "round": 1,
+  "inputs_used": [
+    "CLAUDE.md",
+    "content/posts/japanese-wedding-traditions/00-input.json",
+    "content/posts/japanese-wedding-traditions/01-brief.json (tradition_plan.batch_A)",
+    "content-system/schemas/03-source-pack.schema.json",
+    "content/posts/mexican-wedding-traditions/03-source-pack.json (format model)",
+    "https://www.britannica.com/place/Japan/Daily-life-and-social-customs (Apify web-fetch 2026-11-08)",
+    "https://www.britannica.com/topic/Shinto/Ritual-practices-and-institutions (Apify web-fetch 2026-11-08)",
+    "https://api.vam.ac.uk/v2/museumobject/O126698 (Apify web-fetch 2026-11-08)",
+    "https://api.vam.ac.uk/v2/museumobject/O14574 (Apify web-fetch 2026-11-08)",
+    "https://api.vam.ac.uk/v2/objects/search?q=shiromuku (Apify web-fetch 2026-11-08)",
+    "https://www.jinjahoncho.or.jp/en/ (empty body, no usable text)",
+    "https://www.meijijingu.or.jp/en/wedding/ (404)",
+    "https://www.japan.travel/en/guide/japanese-wedding/ (404)",
+    "https://d-museum.kokugakuin.ac.jp/eos/search/ (search does not filter; no entry read)",
+    "content/posts/japanese-wedding-traditions/01-brief.json",
+    "content/posts/japanese-wedding-traditions/02-research/pages/smartraveller.md",
+    "content/posts/mexican-wedding-traditions/03-source-pack-part-1.json",
+    "https://ich.unesco.org/en/RL/washoku-traditional-dietary-cultures-of-the-japanese-notably-for-the-celebration-of-new-year-00869",
+    "https://ich.unesco.org/en/state/japan-JP",
+    "https://japan.embassy.gov.au/tkyo/home.html",
+    "https://japan.embassy.gov.au/tkyo/notarial.html",
+    "https://www.britannica.com/art/origami",
+    "https://www.britannica.com/place/Japan/Daily-life-and-social-customs",
+    "https://www.smartraveller.gov.au/destinations/asia/japan",
+    "https://www.smartraveller.gov.au/our-role/notarial-services/how-get-certificate-no-impediment-marriage",
+    "https://www.smartraveller.gov.au/planning-trip/advice-your-planned-activities/getting-married-overseas"
   ],
-  "confidence": 0.6
- },
- "next_agent": [
-  "luxury-writer"
- ],
- "payload": {
-  "facts": [
-   {
-    "fact_id": "fact_01",
-    "topic": "chapel weddings / Shinto ceremony",
-    "region": "Japan",
-    "claim": "Britannica describes the Japanese wedding ceremony as often a blend of East and West: a traditional Shinto ceremony in which the bride and groom wear elaborate kimonos, typically followed by a Christian-style observance in formal Western attire.",
-    "quote": "The wedding ceremony itself often consists of a blend of East and West: a traditional Shintō ceremony, in which the bride and groom wear elaborate kimonos, typically is followed by a Christian-style observance, with the participants in formal Western attire.",
-    "source": "https://www.britannica.com/place/Japan/Daily-life-and-social-customs",
-    "source_type": "editorial",
-    "checked": "2026-11-08",
-    "is_price": false
-   },
-   {
-    "fact_id": "fact_02",
-    "topic": "go-between (context for yuinō)",
-    "region": "Japan",
-    "claim": "Britannica notes that arranged marriage (miai-kekkon) is being replaced by the love match, but it is still common for a family friend, relative or mentor to act as a go-between (nakodo).",
-    "quote": "the traditional arranged marriage (miai-kekkon) is being replaced by the love match. It is still common for a family friend, relative, or mentor to act as a go-between (nakodo), even if the marriage is a love match.",
-    "source": "https://www.britannica.com/place/Japan/Daily-life-and-social-customs",
-    "source_type": "editorial",
-    "checked": "2026-11-08",
-    "is_price": false
-   },
-   {
-    "fact_id": "fact_03",
-    "topic": "shiromuku",
-    "region": "Japan",
-    "claim": "The V&A describes the traditional Japanese wedding ceremony as taking place at a Shinto shrine, with the bride in a white under-kimono and a heavy white outer kimono known as a shiromuku.",
-    "quote": "The traditional Japanese wedding ceremony takes place in a Shinto shrine. The bride wears a white under-kimono and heavy white outer-kimono known as a shiromuku.",
-    "source": "https://collections.vam.ac.uk/item/O126698/",
-    "source_type": "editorial",
-    "checked": "2026-11-08",
-    "is_price": false
-   },
-   {
-    "fact_id": "fact_04",
-    "topic": "iro-uchikake",
-    "region": "Japan",
-    "claim": "The V&A says that before joining family and friends for the reception, the bride exchanges the white outer kimono for an elaborate, brightly coloured one; its example (made 1980 to 2000) is a red brocade uchikake with flying cranes, which it calls symbols of longevity.",
-    "quote": "Before joining her family and friends for the reception, the bride exchanges the white outer-kimono for an elaborate and brightly-coloured one. This example is decorated with a design of cranes, symbols of longevity, flying over a landscape of gold, blue and green flowers on a bright red ground.",
-    "source": "https://collections.vam.ac.uk/item/O126698/",
-    "source_type": "editorial",
-    "checked": "2026-11-08",
-    "is_price": false
-   },
-   {
-    "fact_id": "fact_05",
-    "topic": "iro-uchikake / oiro-naoshi",
-    "region": "Japan",
-    "claim": "The V&A gallery label (2020) says outer kimono (uchikake) are now worn only by brides, the tradition of changing outfits continues with red kimono worn after the ceremony, and the 'colour alteration' custom can include a Western-style wedding dress as a final reception outfit.",
-    "quote": "Outer-kimono (uchikake) are now only worn by brides. This elaborate example is decorated with cranes, an auspicious motif that symbolises longevity. The tradition of changing outfits during the wedding continues, with red kimono being worn after the ceremony. Today the 'colour alteration' custom can also include a western-style wedding dress, a popular choice with contemporary brides for their final reception outfit.",
-    "source": "https://collections.vam.ac.uk/item/O126698/",
-    "source_type": "editorial",
-    "checked": "2026-11-08",
-    "is_price": false
-   },
-   {
-    "fact_id": "fact_06",
-    "topic": "uchikake (historical)",
-    "region": "Japan (probably Kyoto, 1800-1850)",
-    "claim": "The V&A holds a black uchikake worn by a merchant-class woman at her wedding (probably Kyoto, 1800 to 1850); it notes that at the culminating banquet a bride would wear a sequence of kimono, often in white, red and black, and that its paper butterfly motifs symbolise harmony for the couple.",
-    "quote": "This sumptuous outer-kimono (uchikake) was worn by a merchant-class woman during her wedding. These elaborate events required the most extravagant of garments. At the culminating banquet, a bride would wear a sequence of kimono, often in in white, red, and black with matching designs. The folded paper male and female butterflies, executed in a tie-dye technique called shibori, symbolize harmony for the newly married couple.",
-    "source": "https://collections.vam.ac.uk/item/O14574/",
-    "source_type": "editorial",
-    "checked": "2026-11-08",
-    "is_price": false
-   },
-   {
-    "fact_id": "fact_07",
-    "topic": "Shinto ceremony",
-    "region": "Japan",
-    "claim": "Britannica (Naofusa Hirai, Kokugakuin University; last updated September 2026) says Japanese people usually hold their wedding ceremonies in Shinto style and pronounce their wedding vows to the kami.",
-    "quote": "The Japanese usually have their wedding ceremonies in Shintō style and pronounce their wedding vows to kami.",
-    "source": "https://www.britannica.com/topic/Shinto/Ritual-practices-and-institutions",
-    "source_type": "editorial",
-    "checked": "2026-11-08",
-    "is_price": false
-   },
-   {
-    "fact_id": "fact_08",
-    "topic": "Shinto ritual order (general, not wedding-specific)",
-    "region": "Japan",
-    "claim": "Britannica lists the usual order of a grand Shinto festival rite, including purification (harae), prayers (norito) recited by the chief priest, sacred music and dance, and symbolic offerings of evergreen sacred-tree branches tied with white paper; this is festival order, not a wedding order of service.",
-    "quote": "Purification rites (harae)... Prayer—the chief priest recites prayers (norito) modeled on ancient Shintō prayers... Sacred music and dance. General offering—participants in the festival make symbolic offerings using little branches of the evergreen sacred tree to which strips of white paper are tied.",
-    "source": "https://www.britannica.com/topic/Shinto/Ritual-practices-and-institutions",
-    "source_type": "editorial",
-    "checked": "2026-11-08",
-    "is_price": false
-   },
-   {
-    "fact_id": "fact_09",
-    "topic": "sake and communion with kami (general)",
-    "region": "Japan",
-    "claim": "Britannica says it is now more common to have communion with the kami by drinking the offered sake after a festival (naorai).",
-    "quote": "it is more common to have communion with kami by drinking the offered sake after the festival.",
-    "source": "https://www.britannica.com/topic/Shinto/Ritual-practices-and-institutions",
-    "source_type": "editorial",
-    "checked": "2026-11-08",
-    "is_price": false
-   },
-   {
-    "fact_id": "fact_10",
-    "topic": "oiro-naoshi (historical image)",
-    "region": "Japan",
-    "claim": "The V&A holds a woodblock print by Utagawa Kuniyoshi (1843 to 1847) titled 'The Wedding Colour Alteration Ceremony (Konrei ironaoshi no zu)', showing the custom has a long visual record. (Title and date from the V&A collections search record; collection page https://collections.vam.ac.uk/item/O424245/ not opened.)",
-    "quote": "The Wedding Colour Alteration Ceremony (Konrei ironaoshi no zu) ... Utagawa Kuniyoshi ... 1843-47",
-    "source": "https://api.vam.ac.uk/v2/objects/search?q=shiromuku&page_size=5&response_format=json",
-    "source_type": "editorial",
-    "checked": "2026-11-08",
-    "is_price": false
-   }
+  "tools_used": [
+    "mcp__Apify__apify--web-fetch",
+    "mcp__Apify__apify--web-search",
+    "Bash"
   ],
-  "often_told": [
-   {
-    "item": "Yuinō (betrothal gift exchange between families) and the simpler families' meal (ryōke kaoawase)",
-    "note": "No JNTO, Britannica, museum or academic page on yuinō was read in time. Write as living practice ('In many Japanese families...'), no items list as fact, no meanings, no amounts. Britannica fact_02 (nakodo go-between) is the nearest sourced context."
-   },
-   {
-    "item": "San-san-kudo (three cups, three sips; the 'nine')",
-    "note": "No source read describes san-san-kudo. Britannica fact_09 covers sake shared with the kami after rites generally. Describe as a sake exchange in many Shinto ceremonies; no per-sip or 'nine' symbolism as fact."
-   },
-   {
-    "item": "Shinto ceremony details: kannushi, miko, tamagushi offering, ring exchange as modern addition",
-    "note": "Only general festival order sourced (fact_08). Do not present it as a wedding order of service."
-   },
-   {
-    "item": "Wataboshi and tsunokakushi headwear",
-    "note": "No museum source read. Name them as the white hood and the headdress many brides wear with shiromuku; no meanings (e.g. 'hiding horns of jealousy') as fact."
-   },
-   {
-    "item": "Groom's montsuki haori hakama",
-    "note": "Not sourced. Describe plainly as the formal crested kimono, jacket and hakama many grooms wear."
-   },
-   {
-    "item": "Hotel chapels, Christian-style ceremonies regardless of faith",
-    "note": "Britannica (fact_01) gives a Christian-style observance in Western attire; no share figures, no 'regardless of faith' as fact."
-   }
+  "assumptions": [
+    "Batch A only (fact_01 to fact_10): yuinō, Shinto ceremony, san-san-kudo, bridal dress, chapel weddings. Batch B covers reception, gifts, kagami biraki, speeches, cranes, UNESCO, Smartraveller and legal.",
+    "V&A collection records are cited by their public collection page (collections.vam.ac.uk/item/<id>/); text was read via the V&A API record for the same object on 2026-11-08.",
+    "Shinto ritual order in fact_08 is Britannica's order for a grand festival, not a wedding; the writer must not present it as a wedding order of service.",
+    "Unsourced customs are in payload.often_told (internal only, no VERIFY markers, no meanings as fact). Write them as living practice per the authority rule.",
+    "Shrines are cultural context only, never venue recommendations. No prices or amounts recorded.",
+    "Hard 15-minute limit (start 22:39:40); Jinja Honchō, JNTO and Kokugakuin pages gave no usable text in time; three domain-limited searches returned no results.",
+    "Legal and travel facts are as at November 2026; the Wedded Advisor confirms current requirements with the municipal office and the Australian Embassy Tokyo.",
+    "Fees appear on the CNI and notarial pages but no amounts were recorded (no prices or amounts).",
+    "Kyoto, Tokyo and Hakone are named only as places couples choose; no venue claims.",
+    "Smartraveller 'Still current at: 09 November 2026' reflects the site's time zone; read 2026-11-08 AEST/UTC."
   ],
-  "insider_details": [
-   {
-    "detail": "Plan the dress changes into the run sheet: brides traditionally move from the white shiromuku for the shrine ceremony to a coloured uchikake for the reception, and today often to a Western gown as the final outfit, so book dressing time and a private changing room near the reception.",
-    "fact_ids": [
-     "fact_03",
-     "fact_04",
-     "fact_05"
-    ]
-   },
-   {
-    "detail": "Couples who want both a shrine ceremony and a white-dress moment are following a familiar pattern: Britannica describes a Shinto ceremony in kimono typically followed by a Christian-style observance in Western attire. Budget two ceremony slots and two looks on the same day.",
-    "fact_ids": [
-     "fact_01"
-    ]
-   },
-   {
-    "detail": "The vows in a Shinto-style wedding are spoken to the kami, so treat the shrine as a place of worship first: confirm with the shrine what guests may photograph and wear, and brief non-Japanese guests on quiet, respectful conduct.",
-    "fact_ids": [
-     "fact_07",
-     "fact_08"
-    ]
-   },
-   {
-    "detail": "Kimono motifs carry meaning that museums document, such as cranes for longevity and paired butterflies for harmony; when hiring an uchikake, ask the stylist to explain the motifs so the couple can share them in the ceremony notes.",
-    "fact_ids": [
-     "fact_04",
-     "fact_06"
-    ]
-   }
+  "open_questions": [
+    {
+      "to": "luxury-writer",
+      "question": "Yuinō, san-san-kudo and headwear have no source in batch A: keep each to living-practice description with no meanings, as in often_told.",
+      "blocking": false
+    },
+    {
+      "to": "luxury-writer",
+      "question": "Sections 6 to 9 have no strong source: write as living practice in a confident voice, no origins or meanings as fact.",
+      "blocking": false
+    }
   ],
-  "quotes": [],
-  "real_weddings": [],
   "verify_items": [
-   "[[VERIFY: that a Shinto shrine or chapel ceremony does not itself register a marriage in Japan; no official source read in batch A. State only if batch B's municipal office or embassy source says so, as at November 2026.]]"
+    "[[VERIFY: that a Shinto shrine or chapel ceremony does not itself register a marriage in Japan; no official source read in batch A. State only if batch B's municipal office or embassy source says so, as at November 2026.]]",
+    "[[VERIFY: hirōen structure and oiro-naoshi (bride's change of outfit): no official, museum or Britannica source read in time; write as living practice only ('In many Japanese families...'), no origin or meaning stated as fact.]]",
+    "[[VERIFY: goshūgi in shūgi-bukuro envelopes with mizuhiki cords, new notes, odd numbers; and hikidemono return gifts: no official source read; living practice only, no amounts, no 'display of wealth'.]]",
+    "[[VERIFY: kagami biraki (opening a sake cask with wooden mallets) and its use at weddings: Japan Sake and Shochu Makers Association home page read but no kagami biraki page found; living practice only.]]",
+    "[[VERIFY: speeches by guests of honour and the bride's letter to her parents: no source read; living practice only, no 'moralistic stories' claim.]]",
+    "[[VERIFY: senbazuru at weddings and the crane as a symbol of longevity: Britannica (fact_110) gives only the 1797 Sembazuru orikata and linked cranes; no source read for longevity or wedding use; living practice only.]]",
+    "[[VERIFY: municipal marriage registration (kuyakusho/shiyakusho) for foreigners: no official Japanese government or city English page read; write as questions to check with the municipal office and the Australian Embassy, including any fees, as at November 2026.]]",
+    "[[VERIFY: affidavit of competency to marry: embassy notarial page names only 'Certificate of No Impediment'; do not use 'affidavit' unless the embassy confirms.]]",
+    "[[VERIFY: that a shrine or chapel ceremony does not replace civil registration in Japan: no official source read; do not state it as fact.]]"
   ],
-  "needs_signoff": [],
-  "must_include_coverage": [
-   {
-    "item": "Yuinō (betrothal gift exchange)",
-    "covered_by": [
-     "fact_02",
-     "often_told: yuinō"
+  "self_qa": {
+    "checks": [
+      {
+        "check": "Every fact has a source URL, exact quote and date read",
+        "pass": true,
+        "note": "10 facts read live 2026-11-08."
+      },
+      {
+        "check": "No prices or amounts",
+        "pass": true
+      },
+      {
+        "check": "Every batch A custom covered or listed as often told",
+        "pass": true,
+        "note": "Yuinō, san-san-kudo, headwear and groom's dress are often_told."
+      },
+      {
+        "check": "No invented quotes, statistics or real weddings",
+        "pass": true
+      },
+      {
+        "check": "No competitor, vendor or Wikipedia sources",
+        "pass": true
+      }
+    ],
+    "confidence": 0.6
+  },
+  "next_agent": [
+    "luxury-writer"
+  ],
+  "payload": {
+    "facts": [
+      {
+        "fact_id": "fact_01",
+        "topic": "chapel weddings / Shinto ceremony",
+        "region": "Japan",
+        "claim": "Britannica describes the Japanese wedding ceremony as often a blend of East and West: a traditional Shinto ceremony in which the bride and groom wear elaborate kimonos, typically followed by a Christian-style observance in formal Western attire.",
+        "quote": "The wedding ceremony itself often consists of a blend of East and West: a traditional Shintō ceremony, in which the bride and groom wear elaborate kimonos, typically is followed by a Christian-style observance, with the participants in formal Western attire.",
+        "source": "https://www.britannica.com/place/Japan/Daily-life-and-social-customs",
+        "source_type": "editorial",
+        "checked": "2026-11-08",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_02",
+        "topic": "go-between (context for yuinō)",
+        "region": "Japan",
+        "claim": "Britannica notes that arranged marriage (miai-kekkon) is being replaced by the love match, but it is still common for a family friend, relative or mentor to act as a go-between (nakodo).",
+        "quote": "the traditional arranged marriage (miai-kekkon) is being replaced by the love match. It is still common for a family friend, relative, or mentor to act as a go-between (nakodo), even if the marriage is a love match.",
+        "source": "https://www.britannica.com/place/Japan/Daily-life-and-social-customs",
+        "source_type": "editorial",
+        "checked": "2026-11-08",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_03",
+        "topic": "shiromuku",
+        "region": "Japan",
+        "claim": "The V&A describes the traditional Japanese wedding ceremony as taking place at a Shinto shrine, with the bride in a white under-kimono and a heavy white outer kimono known as a shiromuku.",
+        "quote": "The traditional Japanese wedding ceremony takes place in a Shinto shrine. The bride wears a white under-kimono and heavy white outer-kimono known as a shiromuku.",
+        "source": "https://collections.vam.ac.uk/item/O126698/",
+        "source_type": "editorial",
+        "checked": "2026-11-08",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_04",
+        "topic": "iro-uchikake",
+        "region": "Japan",
+        "claim": "The V&A says that before joining family and friends for the reception, the bride exchanges the white outer kimono for an elaborate, brightly coloured one; its example (made 1980 to 2000) is a red brocade uchikake with flying cranes, which it calls symbols of longevity.",
+        "quote": "Before joining her family and friends for the reception, the bride exchanges the white outer-kimono for an elaborate and brightly-coloured one. This example is decorated with a design of cranes, symbols of longevity, flying over a landscape of gold, blue and green flowers on a bright red ground.",
+        "source": "https://collections.vam.ac.uk/item/O126698/",
+        "source_type": "editorial",
+        "checked": "2026-11-08",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_05",
+        "topic": "iro-uchikake / oiro-naoshi",
+        "region": "Japan",
+        "claim": "The V&A gallery label (2020) says outer kimono (uchikake) are now worn only by brides, the tradition of changing outfits continues with red kimono worn after the ceremony, and the 'colour alteration' custom can include a Western-style wedding dress as a final reception outfit.",
+        "quote": "Outer-kimono (uchikake) are now only worn by brides. This elaborate example is decorated with cranes, an auspicious motif that symbolises longevity. The tradition of changing outfits during the wedding continues, with red kimono being worn after the ceremony. Today the 'colour alteration' custom can also include a western-style wedding dress, a popular choice with contemporary brides for their final reception outfit.",
+        "source": "https://collections.vam.ac.uk/item/O126698/",
+        "source_type": "editorial",
+        "checked": "2026-11-08",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_06",
+        "topic": "uchikake (historical)",
+        "region": "Japan (probably Kyoto, 1800-1850)",
+        "claim": "The V&A holds a black uchikake worn by a merchant-class woman at her wedding (probably Kyoto, 1800 to 1850); it notes that at the culminating banquet a bride would wear a sequence of kimono, often in white, red and black, and that its paper butterfly motifs symbolise harmony for the couple.",
+        "quote": "This sumptuous outer-kimono (uchikake) was worn by a merchant-class woman during her wedding. These elaborate events required the most extravagant of garments. At the culminating banquet, a bride would wear a sequence of kimono, often in in white, red, and black with matching designs. The folded paper male and female butterflies, executed in a tie-dye technique called shibori, symbolize harmony for the newly married couple.",
+        "source": "https://collections.vam.ac.uk/item/O14574/",
+        "source_type": "editorial",
+        "checked": "2026-11-08",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_07",
+        "topic": "Shinto ceremony",
+        "region": "Japan",
+        "claim": "Britannica (Naofusa Hirai, Kokugakuin University; last updated September 2026) says Japanese people usually hold their wedding ceremonies in Shinto style and pronounce their wedding vows to the kami.",
+        "quote": "The Japanese usually have their wedding ceremonies in Shintō style and pronounce their wedding vows to kami.",
+        "source": "https://www.britannica.com/topic/Shinto/Ritual-practices-and-institutions",
+        "source_type": "editorial",
+        "checked": "2026-11-08",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_08",
+        "topic": "Shinto ritual order (general, not wedding-specific)",
+        "region": "Japan",
+        "claim": "Britannica lists the usual order of a grand Shinto festival rite, including purification (harae), prayers (norito) recited by the chief priest, sacred music and dance, and symbolic offerings of evergreen sacred-tree branches tied with white paper; this is festival order, not a wedding order of service.",
+        "quote": "Purification rites (harae)... Prayer—the chief priest recites prayers (norito) modeled on ancient Shintō prayers... Sacred music and dance. General offering—participants in the festival make symbolic offerings using little branches of the evergreen sacred tree to which strips of white paper are tied.",
+        "source": "https://www.britannica.com/topic/Shinto/Ritual-practices-and-institutions",
+        "source_type": "editorial",
+        "checked": "2026-11-08",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_09",
+        "topic": "sake and communion with kami (general)",
+        "region": "Japan",
+        "claim": "Britannica says it is now more common to have communion with the kami by drinking the offered sake after a festival (naorai).",
+        "quote": "it is more common to have communion with kami by drinking the offered sake after the festival.",
+        "source": "https://www.britannica.com/topic/Shinto/Ritual-practices-and-institutions",
+        "source_type": "editorial",
+        "checked": "2026-11-08",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_10",
+        "topic": "oiro-naoshi (historical image)",
+        "region": "Japan",
+        "claim": "The V&A holds a woodblock print by Utagawa Kuniyoshi (1843 to 1847) titled 'The Wedding Colour Alteration Ceremony (Konrei ironaoshi no zu)', showing the custom has a long visual record. (Title and date from the V&A collections search record; collection page https://collections.vam.ac.uk/item/O424245/ not opened.)",
+        "quote": "The Wedding Colour Alteration Ceremony (Konrei ironaoshi no zu) ... Utagawa Kuniyoshi ... 1843-47",
+        "source": "https://api.vam.ac.uk/v2/objects/search?q=shiromuku&page_size=5&response_format=json",
+        "source_type": "editorial",
+        "checked": "2026-11-08",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_100",
+        "claim": "UNESCO lists 'Washoku, traditional dietary cultures of the Japanese, notably for the celebration of New Year' (Japan), inscribed in 2013 (8.COM) on the Representative List. Page live, HTTP 200. Its description links washoku to New Year celebrations; it does not mention weddings.",
+        "quote": "Inscribed in 2013 (8.COM) on the Representative List of the Intangible Cultural Heritage of Humanity",
+        "source": "https://ich.unesco.org/en/RL/washoku-traditional-dietary-cultures-of-the-japanese-notably-for-the-celebration-of-new-year-00869",
+        "source_type": "other",
+        "checked": "2026-11-08",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_101",
+        "claim": "UNESCO describes washoku as a social practice tied to respect for nature, most typically seen at New Year, with special, decorated dishes shared by family or community. No wedding mention.",
+        "quote": "The basic knowledge and the social and cultural characteristics associated with Washoku are typically seen during New Year celebrations.",
+        "source": "https://ich.unesco.org/en/RL/washoku-traditional-dietary-cultures-of-the-japanese-notably-for-the-celebration-of-new-year-00869",
+        "source_type": "other",
+        "checked": "2026-11-08",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_102",
+        "claim": "Smartraveller Japan (read live 2026-11-08; 'Updated: 25 August 2026', 'Still current at: 09 November 2026'): overall level 'Exercise normal safety precautions'; higher level 'Reconsider your need to travel' to the restricted areas near the Fukushima Dai-ichi nuclear power plant.",
+        "quote": "Reconsider your need to travel to the restricted areas near the Fukushima Dai-ichi nuclear power plant.",
+        "source": "https://www.smartraveller.gov.au/destinations/asia/japan",
+        "source_type": "government",
+        "checked": "2026-11-08",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_103",
+        "claim": "Smartraveller: severe heat waves can affect Japan between July and September; typhoon season is May to November with most activity July to September.",
+        "quote": "The typhoon season is from May to November, with most activity between July and September.",
+        "source": "https://www.smartraveller.gov.au/destinations/asia/japan",
+        "source_type": "government",
+        "checked": "2026-11-08",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_104",
+        "claim": "Smartraveller: Australians can visit visa-free for up to 90 days under Japan's visa exemption scheme, but entry and exit conditions can change at short notice; entry status cannot be changed (e.g. to a spouse visa) without leaving and re-entering. As at November 2026.",
+        "quote": "You don't need a visa to travel to Japan for up to 90 days, but entry and exit conditions can change at short notice.",
+        "source": "https://www.smartraveller.gov.au/destinations/asia/japan",
+        "source_type": "government",
+        "checked": "2026-11-08",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_105",
+        "claim": "Smartraveller lists the Australian Embassy Tokyo at 2-1-14 Mita, Minato-ku, Tokyo 108-8361, phone +81 3 5232 4111, and the Australian Consulate-General Osaka (16th Floor, Twin 21 MID Tower, 2-1-61 Shiromi, Chuo-ku) for consular help.",
+        "quote": "For consular assistance, contact the Australian Embassy in Tokyo or Australian Consulate-General in Osaka.",
+        "source": "https://www.smartraveller.gov.au/destinations/asia/japan",
+        "source_type": "government",
+        "checked": "2026-11-08",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_106",
+        "claim": "Smartraveller 'Getting married overseas' (last updated 18/08/2026): an overseas marriage cannot be registered in Australia but in most cases is legally recognised if valid where it happened and valid under Australian law had it occurred in Australia; talk to a lawyer to confirm.",
+        "quote": "You can't register an overseas marriage in Australia. But in most cases, your marriage is legally recognised here.",
+        "source": "https://www.smartraveller.gov.au/planning-trip/advice-your-planned-activities/getting-married-overseas",
+        "source_type": "government",
+        "checked": "2026-11-08",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_107",
+        "claim": "Smartraveller: some countries ask for proof you are free to marry, commonly a Certificate of No Impediment to Marriage (CNI); some local authorities only accept CNIs issued in their country; ask the destination's embassy or consulate whether you need one, where to get it and whether it needs an apostille.",
+        "quote": "DFAT can issue a CNI in Australia. But some local authorities only accept CNIs issued in their country.",
+        "source": "https://www.smartraveller.gov.au/planning-trip/advice-your-planned-activities/getting-married-overseas",
+        "source_type": "government",
+        "checked": "2026-11-08",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_108",
+        "claim": "Smartraveller CNI page (last updated 01/10/2026): DFAT issues CNIs through Passport Offices, embassies and consulates overseas, and by mail; fees apply; at least one applicant must be an Australian citizen or permanent resident; if the authority requires a CNI issued in-country, the Australian embassy or consulate there can issue it.",
+        "quote": "If that's the case, the Australian embassy, high commission or consulate in that country can issue it for you.",
+        "source": "https://www.smartraveller.gov.au/our-role/notarial-services/how-get-certificate-no-impediment-marriage",
+        "source_type": "government",
+        "checked": "2026-11-08",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_109",
+        "claim": "Australian Embassy Tokyo notarial page (live): notarial services by appointment only at Tokyo and Consulate-General Osaka; mail service from within Japan only; Certificate of No Impediment applications can be submitted by mail only if witnessed by an Australian mission or a local notary public; fees apply.",
+        "quote": "Certificate of No Impediment applications appropriately witnessed (only those witnessed by an Australian mission or local notary public are acceptable).",
+        "source": "https://japan.embassy.gov.au/tkyo/notarial.html",
+        "source_type": "government",
+        "checked": "2026-11-08",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_110",
+        "claim": "Britannica: Akisato Rito's 'Sembazuru orikata' (1797) is one of the earliest known origami instruction books, showing how to fold linked cranes from a square sheet. (Britannica's page does not link cranes to weddings or state longevity symbolism.)",
+        "quote": "One of the earliest known instruction books on the topic was Akisato Rito's Sembazuru orikata (1797), which demonstrated how to fold linked cranes from a square sheet of paper.",
+        "source": "https://www.britannica.com/art/origami",
+        "source_type": "editorial",
+        "checked": "2026-11-08",
+        "is_price": false,
+        "conflicts": "Quote is from Britannica's AI-generated 'Top Questions' summary built from its articles; body text confirms the Rokoan style of connected cranes. Writer should cite Britannica lightly."
+      },
+      {
+        "fact_id": "fact_111",
+        "claim": "Britannica (Japan, Social customs, updated Nov. 8, 2026): it is still common for a family friend, relative or mentor to act as go-between (nakodo), even in a love match; the wedding often blends East and West, a Shinto ceremony in elaborate kimonos typically followed by a Christian-style observance in formal Western attire.",
+        "quote": "The wedding ceremony itself often consists of a blend of East and West: a traditional Shintō ceremony, in which the bride and groom wear elaborate kimonos, typically is followed by a Christian-style observance, with the participants in formal Western attire.",
+        "source": "https://www.britannica.com/place/Japan/Daily-life-and-social-customs",
+        "source_type": "editorial",
+        "checked": "2026-11-08",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_112",
+        "claim": "UNESCO Japan state page (live) lists 23 inscribed elements, including 'Washoku, traditional dietary cultures of the Japanese, notably for the celebration of New Year' (2013), 'Traditional knowledge and skills of sake-making with koji mold in Japan' (2024) and 'Washi, craftsmanship of traditional Japanese hand-made paper' (2025). Only the washoku element page was read; the sake and washi pages were not read, so no wedding link is claimed for them.",
+        "quote": "2024: Traditional knowledge and skills of sake-making with koji mold in Japan (RL)",
+        "source": "https://ich.unesco.org/en/state/japan-JP",
+        "source_type": "other",
+        "checked": "2026-11-08",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_113",
+        "claim": "Australian Embassy Tokyo website is live (home page read); its consular menu links Notarial Services, Passports and FAQs. No marriage-specific embassy page was found (japan.embassy.gov.au/tkyo/marriage.html returns 404), so CNI wording comes from the notarial page (fact_109) and Smartraveller (fact_107, fact_108).",
+        "quote": "Welcome to the Australian Embassy Tokyo",
+        "source": "https://japan.embassy.gov.au/tkyo/home.html",
+        "source_type": "government",
+        "checked": "2026-11-08",
+        "is_price": false
+      }
+    ],
+    "insider_details": [
+      {
+        "detail": "Plan the dress changes into the run sheet: brides traditionally move from the white shiromuku for the shrine ceremony to a coloured uchikake for the reception, and today often to a Western gown as the final outfit, so book dressing time and a private changing room near the reception.",
+        "fact_ids": [
+          "fact_03",
+          "fact_04",
+          "fact_05"
+        ]
+      },
+      {
+        "detail": "Couples who want both a shrine ceremony and a white-dress moment are following a familiar pattern: Britannica describes a Shinto ceremony in kimono typically followed by a Christian-style observance in Western attire. Budget two ceremony slots and two looks on the same day.",
+        "fact_ids": [
+          "fact_01"
+        ]
+      },
+      {
+        "detail": "The vows in a Shinto-style wedding are spoken to the kami, so treat the shrine as a place of worship first: confirm with the shrine what guests may photograph and wear, and brief non-Japanese guests on quiet, respectful conduct.",
+        "fact_ids": [
+          "fact_07",
+          "fact_08"
+        ]
+      },
+      {
+        "detail": "Kimono motifs carry meaning that museums document, such as cranes for longevity and paired butterflies for harmony; when hiring an uchikake, ask the stylist to explain the motifs so the couple can share them in the ceremony notes.",
+        "fact_ids": [
+          "fact_04",
+          "fact_06"
+        ]
+      },
+      {
+        "detail": "For a summer date, plan around Smartraveller's warnings: heat waves July to September and peak typhoon activity in the same months, so build an indoor plan and allow buffer days for guests' flights.",
+        "fact_ids": [
+          "fact_103"
+        ]
+      },
+      {
+        "detail": "If a CNI is needed for a Japanese registration, an in-country one may be required; the Australian Embassy Tokyo and Consulate-General Osaka work by appointment, and mailed CNI applications are only accepted if witnessed by an Australian mission or a local notary public, so book the appointment early.",
+        "fact_ids": [
+          "fact_107",
+          "fact_108",
+          "fact_109"
+        ]
+      },
+      {
+        "detail": "Australian guests can enter visa-free for short stays, but entry status cannot be switched (for example to a spouse visa) without leaving Japan, so couples planning to stay on after marrying should sort visas before they fly.",
+        "fact_ids": [
+          "fact_104"
+        ]
+      },
+      {
+        "detail": "A marriage made in Japan cannot be registered in Australia but is usually recognised if valid in both places; the foreign certificate may not work as proof of a name change, so check with your state registry and a lawyer before booking.",
+        "fact_ids": [
+          "fact_106"
+        ]
+      },
+      {
+        "detail": "Many Japanese couples pair a Shinto ceremony in kimono with a Christian-style observance in Western dress, which suits a two-outfit day for Japanese-Australian couples at home too; ask your celebrant how to fold either into an Australian legal ceremony.",
+        "fact_ids": [
+          "fact_111"
+        ]
+      }
+    ],
+    "quotes": [],
+    "real_weddings": [],
+    "verify_items": [
+      "[[VERIFY: that a Shinto shrine or chapel ceremony does not itself register a marriage in Japan; no official source read in batch A. State only if batch B's municipal office or embassy source says so, as at November 2026.]]",
+      "[[VERIFY: hirōen structure and oiro-naoshi (bride's change of outfit): no official, museum or Britannica source read in time; write as living practice only ('In many Japanese families...'), no origin or meaning stated as fact.]]",
+      "[[VERIFY: goshūgi in shūgi-bukuro envelopes with mizuhiki cords, new notes, odd numbers; and hikidemono return gifts: no official source read; living practice only, no amounts, no 'display of wealth'.]]",
+      "[[VERIFY: kagami biraki (opening a sake cask with wooden mallets) and its use at weddings: Japan Sake and Shochu Makers Association home page read but no kagami biraki page found; living practice only.]]",
+      "[[VERIFY: speeches by guests of honour and the bride's letter to her parents: no source read; living practice only, no 'moralistic stories' claim.]]",
+      "[[VERIFY: senbazuru at weddings and the crane as a symbol of longevity: Britannica (fact_110) gives only the 1797 Sembazuru orikata and linked cranes; no source read for longevity or wedding use; living practice only.]]",
+      "[[VERIFY: municipal marriage registration (kuyakusho/shiyakusho) for foreigners: no official Japanese government or city English page read; write as questions to check with the municipal office and the Australian Embassy, including any fees, as at November 2026.]]",
+      "[[VERIFY: affidavit of competency to marry: embassy notarial page names only 'Certificate of No Impediment'; do not use 'affidavit' unless the embassy confirms.]]",
+      "[[VERIFY: that a shrine or chapel ceremony does not replace civil registration in Japan: no official source read; do not state it as fact.]]"
+    ],
+    "needs_signoff": [],
+    "must_include_coverage": [
+      {
+        "item": "Yuinō (betrothal gift exchange)",
+        "covered_by": [
+          "fact_02",
+          "often_told: yuinō"
+        ]
+      },
+      {
+        "item": "The Shinto ceremony (shinzen shiki)",
+        "covered_by": [
+          "fact_01",
+          "fact_03",
+          "fact_07",
+          "fact_08"
+        ]
+      },
+      {
+        "item": "San-san-kudo (the sake exchange)",
+        "covered_by": [
+          "fact_09",
+          "often_told: san-san-kudo"
+        ]
+      },
+      {
+        "item": "Bridal dress: shiromuku, wataboshi or tsunokakushi, iro-uchikake",
+        "covered_by": [
+          "fact_03",
+          "fact_04",
+          "fact_05",
+          "fact_06",
+          "fact_10",
+          "often_told: wataboshi and tsunokakushi, groom's montsuki"
+        ]
+      },
+      {
+        "item": "Christian-style chapel weddings",
+        "covered_by": [
+          "fact_01",
+          "fact_05"
+        ]
+      },
+      {
+        "item": "Japanese terms with macrons as sources give them",
+        "covered_by": [
+          "fact_02",
+          "fact_07",
+          "fact_08"
+        ]
+      },
+      {
+        "item": "No prices or amounts (batch A)",
+        "covered_by": []
+      },
+      {
+        "item": "Hirōen and oiro-naoshi (section 6)",
+        "covered_by": [
+          "[[VERIFY: hirōen structure and oiro-naoshi (bride's change of outfit): no official, museum or Britannica source read in time; write as living practice only ('In many Japanese families...'), no origin or meaning stated as fact.]]"
+        ]
+      },
+      {
+        "item": "Goshūgi and hikidemono described with no amounts or price ranges",
+        "covered_by": [
+          "[[VERIFY: goshūgi in shūgi-bukuro envelopes with mizuhiki cords, new notes, odd numbers; and hikidemono return gifts: no official source read; living practice only, no amounts, no 'display of wealth'.]]"
+        ]
+      },
+      {
+        "item": "Kagami biraki (section 8)",
+        "covered_by": [
+          "[[VERIFY: kagami biraki (opening a sake cask with wooden mallets) and its use at weddings: Japan Sake and Shochu Makers Association home page read but no kagami biraki page found; living practice only.]]"
+        ]
+      },
+      {
+        "item": "Speeches and the bride's letter (section 9)",
+        "covered_by": [
+          "[[VERIFY: speeches by guests of honour and the bride's letter to her parents: no source read; living practice only, no 'moralistic stories' claim.]]"
+        ]
+      },
+      {
+        "item": "Senbazuru (section 10)",
+        "covered_by": [
+          "fact_110",
+          "[[VERIFY: senbazuru at weddings and the crane as a symbol of longevity: Britannica (fact_110) gives only the 1797 Sembazuru orikata and linked cranes; no source read for longevity or wedding use; living practice only.]]"
+        ]
+      },
+      {
+        "item": "UNESCO washoku (2013) quoted only as far as its own text links to celebrations or weddings, if confirmed live",
+        "covered_by": [
+          "fact_100",
+          "fact_101",
+          "fact_112"
+        ]
+      },
+      {
+        "item": "Section for Australians: Smartraveller level, Fukushima Dai-ichi areas, update date, heat and typhoon, entry line",
+        "covered_by": [
+          "fact_102",
+          "fact_103",
+          "fact_104"
+        ]
+      },
+      {
+        "item": "Section for Australians: Embassy Tokyo and Consulate-General Osaka for CNI and notarial; Getting married overseas",
+        "covered_by": [
+          "fact_105",
+          "fact_106",
+          "fact_107",
+          "fact_108",
+          "fact_109",
+          "fact_113"
+        ]
+      },
+      {
+        "item": "Section for Australians: municipal office registration or questions to ask including any fees",
+        "covered_by": [
+          "[[VERIFY: municipal marriage registration (kuyakusho/shiyakusho) for foreigners: no official Japanese government or city English page read; write as questions to check with the municipal office and the Australian Embassy, including any fees, as at November 2026.]]",
+          "[[VERIFY: that a shrine or chapel ceremony does not replace civil registration in Japan: no official source read; do not state it as fact.]]"
+        ]
+      },
+      {
+        "item": "Japanese-Australian weddings at home; Kyoto, Tokyo, Hakone as places couples choose",
+        "covered_by": [
+          "fact_111"
+        ]
+      }
     ]
-   },
-   {
-    "item": "The Shinto ceremony (shinzen shiki)",
-    "covered_by": [
-     "fact_01",
-     "fact_03",
-     "fact_07",
-     "fact_08"
-    ]
-   },
-   {
-    "item": "San-san-kudo (the sake exchange)",
-    "covered_by": [
-     "fact_09",
-     "often_told: san-san-kudo"
-    ]
-   },
-   {
-    "item": "Bridal dress: shiromuku, wataboshi or tsunokakushi, iro-uchikake",
-    "covered_by": [
-     "fact_03",
-     "fact_04",
-     "fact_05",
-     "fact_06",
-     "fact_10",
-     "often_told: wataboshi and tsunokakushi, groom's montsuki"
-    ]
-   },
-   {
-    "item": "Christian-style chapel weddings",
-    "covered_by": [
-     "fact_01",
-     "fact_05"
-    ]
-   },
-   {
-    "item": "Japanese terms with macrons as sources give them",
-    "covered_by": [
-     "fact_02",
-     "fact_07",
-     "fact_08"
-    ]
-   },
-   {
-    "item": "No prices or amounts (batch A)",
-    "covered_by": []
-   }
-  ]
- }
+  }
 }
