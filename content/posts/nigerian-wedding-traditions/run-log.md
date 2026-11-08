@@ -4,3 +4,4 @@
 23:41 02 seo-researcher complete; old page US (why do nigerians throw money at weddings #3, 1,300/mo cluster at #16-#25), AU (customs #7, customs and traditions #9, traditions #15); no duplicates; cross-link Muslim traditions pages; schema valid
 23:41 03 planner-sme batch A complete 11 facts (Britannica peoples and faith; V&A aṣọ-òkè and gèlè); idana, greetings, nikah, kamu unsourced -> living practice; '250+ groups' unsourced (cut); waiting on batch B
 23:42 03 planner-sme batch B complete 14 facts (Umezi 2026 journal paper on Igbo iku aka, ime ego, kin's requests, wine search; Smartraveller; High Commission); UNESCO: no Nigerian element names weddings (left out); aso ebi, spraying, white wedding unsourced -> living practice; merged; writer launched
+23:45 05 luxury-writer complete 2,983 words; 0 VERIFY; 0 research talk; first draft sent; editor + 5 readers launched
