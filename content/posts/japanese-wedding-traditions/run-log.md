@@ -8,3 +8,4 @@
 22:55 07 icp-reader sceptic complete; no must-fix
 22:55 07 icp-reader search_visitor, uhnw complete; no must-fix (drop Britannica/V&A naming; Smartraveller takeaway off-topic); waiting on planner_couple, funding_parent, editor
 22:55 07 icp-reader planner_couple, funding_parent complete; no must-fix (guest travel, older guests at shrines, run sheet owner); waiting on editor
+22:56 06 editor revise 3.86 (voice 3: 7 source credits); 17 edits applied -> 05-draft-r2.md (washoku cut, 2 san-san-kudo meanings cut, H2s reworded); uhnw.json schema fixed; panel chair launched

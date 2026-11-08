@@ -1,0 +1,336 @@
+{
+ "agent": "editor",
+ "task_id": "japanese-wedding-traditions",
+ "stage": "06",
+ "status": "complete",
+ "round": 1,
+ "inputs_used": [
+  "CLAUDE.md",
+  "content/posts/japanese-wedding-traditions/00-input.json",
+  "01-brief.json",
+  "02-seo.json",
+  "03-source-pack.json",
+  "05-draft.md",
+  "content-system/brand/voice-guide.md",
+  "content-system/brand/brand-facts.md",
+  "content-system/rubrics/editor-rubric.md",
+  "content-system/seo/link-map.csv",
+  "content-system/schemas/06-edit.schema.json",
+  "content/posts/mexican-wedding-traditions/06-edit.json (format model)"
+ ],
+ "self_qa": {
+  "checks": [
+   {
+    "check": "scan_copy.py run and results reflected",
+    "pass": true,
+    "note": "0 banned, 0 flagged, 0 dashes; 1 smartraveller overlap fixed by edit"
+   },
+   {
+    "check": "Every fact marker logged against the source pack",
+    "pass": true,
+    "note": "19 fact ids present in 03-source-pack.json"
+   },
+   {
+    "check": "Every edit 'old' occurs exactly once (applied in order)",
+    "pass": true,
+    "note": "verified by script"
+   },
+   {
+    "check": "Authority rule: no research talk, per-line credits, hedge stacking; 0 'often told'",
+    "pass": true,
+    "note": "after edits"
+   },
+   {
+    "check": "Washoku not presented as a wedding custom",
+    "pass": true,
+    "note": "after cut"
+   },
+   {
+    "check": "Legal lines match Smartraveller and Embassy facts",
+    "pass": true
+   },
+   {
+    "check": "4 one-sentence takeaways; no prices, amounts, vendors, venues, 'last dance', Advisor paperwork claims, em dashes; Australian English",
+    "pass": true
+   },
+   {
+    "check": "Decision consistent with scores",
+    "pass": true,
+    "note": "avg 3.86 < 4.0, voice 3, so revise"
+   }
+  ],
+  "confidence": 0.85
+ },
+ "next_agent": [
+  "luxury-writer"
+ ],
+ "payload": {
+  "draft_file": "content/posts/japanese-wedding-traditions/05-draft.md",
+  "rubric": {
+   "voice": 3,
+   "expertise": 4,
+   "accuracy": 4,
+   "seo_fit": 4,
+   "commercial_link": 4,
+   "structure": 4,
+   "brief_fit": 4
+  },
+  "average": 3.86,
+  "blocking_issues": [],
+  "decision": "revise",
+  "edits": [
+   {
+    "location": "What a traditional Japanese wedding looks like today, para 1",
+    "issue": "Authority rule: per-line source credit ('Britannica describes'). State the fact.",
+    "old": "The modern Japanese wedding is a blend of East and West. Britannica describes a traditional Shinto ceremony, in which the bride and groom wear elaborate kimonos, typically followed by a Christian-style observance in formal Western attire. <!-- fact_01 -->",
+    "new": "The modern Japanese wedding is a blend of East and West: a traditional Shinto ceremony, with the bride and groom in elaborate kimonos, is typically followed by a Christian-style observance in formal Western attire. <!-- fact_01 -->",
+    "fix": "Replace exactly: \"The modern Japanese wedding is a blend of East and West. Britannica describes a traditional Shinto ceremony, in which the bride and groom wear elaborate kimonos, typically followed by a Christian-style observance in formal Western attire. <!-- fact_01 -->\" with: \"The modern Japanese wedding is a blend of East and West: a traditional Shinto ceremony, with the bride and groom in elaborate kimonos, is typically followed by a Christian-style observance in formal Western attire. <!-- fact_01 -->\""
+   },
+   {
+    "location": "What a traditional Japanese wedding looks like today, H3 'Modern Japanese weddings'",
+    "issue": "Keyword-stuffed H3 over a one-line paragraph; the family/friends split is unsourced. Query 'modern japanese weddings' is already covered by para 1. Cut the H3, keep a living-practice line.",
+    "old": "### Modern Japanese weddings\n\nMany couples now hold a Shinto ceremony for family, a chapel ceremony for friends and a long reception for everyone.",
+    "new": "Many couples now hold two ceremonies on the same day, then a long reception for everyone.",
+    "fix": "Replace exactly: \"### Modern Japanese weddings\n\nMany couples now hold a Shinto ceremony for family, a chapel ceremony for friends and a long reception for everyone.\" with: \"Many couples now hold two ceremonies on the same day, then a long reception for everyone.\""
+   },
+   {
+    "location": "H2 1",
+    "issue": "Heading reads keyword-stuffed. Use the 02-seo outline wording; 'proposal' query stays covered in para 1.",
+    "old": "## 1. Yuinō: Japanese proposal traditions and the betrothal gift exchange",
+    "new": "## 1. Yuinō: the betrothal gift exchange between families",
+    "fix": "Replace exactly: \"## 1. Yuinō: Japanese proposal traditions and the betrothal gift exchange\" with: \"## 1. Yuinō: the betrothal gift exchange between families\""
+   },
+   {
+    "location": "Section 1, para 1",
+    "issue": "Definition stated as fact without a marker ('the engagement becomes official'). Write as living practice.",
+    "old": "Yuinō is the betrothal ceremony at which the families exchange gifts and the engagement becomes official.",
+    "new": "Yuinō is the betrothal ceremony at which the two families exchange gifts to mark the engagement.",
+    "fix": "Replace exactly: \"Yuinō is the betrothal ceremony at which the families exchange gifts and the engagement becomes official.\" with: \"Yuinō is the betrothal ceremony at which the two families exchange gifts to mark the engagement.\""
+   },
+   {
+    "location": "H2 2",
+    "issue": "Heading framed the shrine as the setting; use the outline wording.",
+    "old": "## 2. The Japanese wedding ceremony at a Shinto shrine",
+    "new": "## 2. The Shinto wedding ceremony before the kami",
+    "fix": "Replace exactly: \"## 2. The Japanese wedding ceremony at a Shinto shrine\" with: \"## 2. The Shinto wedding ceremony before the kami\""
+   },
+   {
+    "location": "Section 2, para 1",
+    "issue": "Authority rule: per-line source credit ('The V&A describes').",
+    "old": "The V&A describes the traditional ceremony as taking place in a Shinto shrine. <!-- fact_03 -->",
+    "new": "The traditional ceremony takes place at a Shinto shrine. <!-- fact_03 -->",
+    "fix": "Replace exactly: \"The V&A describes the traditional ceremony as taking place in a Shinto shrine. <!-- fact_03 -->\" with: \"The traditional ceremony takes place at a Shinto shrine. <!-- fact_03 -->\""
+   },
+   {
+    "location": "Section 3, para 1",
+    "issue": "Meaning stated as fact without a marker ('sealing the bond').",
+    "old": "At many weddings the parents also drink, sealing the bond between the two families.",
+    "new": "At many weddings the parents also drink, and the cups pass between the two families.",
+    "fix": "Replace exactly: \"At many weddings the parents also drink, sealing the bond between the two families.\" with: \"At many weddings the parents also drink, and the cups pass between the two families.\""
+   },
+   {
+    "location": "Section 3, para 2",
+    "issue": "Meaning stated as fact without a marker; fact_09 covers naorai only, not weddings. Cut.",
+    "old": " At a wedding, the shared cups carry that sense of a promise made together and before the kami.",
+    "new": "",
+    "fix": "Delete exactly: \" At a wedding, the shared cups carry that sense of a promise made together and before the kami.\""
+   },
+   {
+    "location": "Section 4, 'Changing into colour', para 3",
+    "issue": "Authority rule: per-line credits ('The V&A's', 'which it calls', 'in its collection'). Keep the single V&A link at the end.",
+    "old": "The V&A's red brocade uchikake, made between 1980 and 2000, is decorated with flying cranes, which it calls symbols of longevity. <!-- fact_04 --> An earlier black uchikake in its collection, worn by a merchant-class bride",
+    "new": "One red brocade uchikake, made between 1980 and 2000, is decorated with flying cranes, symbols of longevity. <!-- fact_04 --> An earlier black uchikake, worn by a merchant-class bride",
+    "fix": "Replace exactly: \"The V&A's red brocade uchikake, made between 1980 and 2000, is decorated with flying cranes, which it calls symbols of longevity. <!-- fact_04 --> An earlier black uchikake in its collection, worn by a merchant-class bride\" with: \"One red brocade uchikake, made between 1980 and 2000, is decorated with flying cranes, symbols of longevity. <!-- fact_04 --> An earlier black uchikake, worn by a merchant-class bride\""
+   },
+   {
+    "location": "Section 5, para 1",
+    "issue": "Authority rule: per-line source credit ('In Britannica's account').",
+    "old": "In Britannica's account, a Christian-style observance in formal Western attire typically follows the Shinto ceremony. <!-- fact_01 -->",
+    "new": "A Christian-style observance in formal Western attire typically follows the Shinto ceremony. <!-- fact_01 -->",
+    "fix": "Replace exactly: \"In Britannica's account, a Christian-style observance in formal Western attire typically follows the Shinto ceremony. <!-- fact_01 -->\" with: \"A Christian-style observance in formal Western attire typically follows the Shinto ceremony. <!-- fact_01 -->\""
+   },
+   {
+    "location": "H2 6",
+    "issue": "Heading reads keyword-stuffed. Use the outline wording; 'Japan's marriage traditions' stays covered in para 1.",
+    "old": "## 6. The hirōen: Japanese marriage traditions at the reception, and oiro-naoshi",
+    "new": "## 6. The hirōen reception and oiro-naoshi outfit changes",
+    "fix": "Replace exactly: \"## 6. The hirōen: Japanese marriage traditions at the reception, and oiro-naoshi\" with: \"## 6. The hirōen reception and oiro-naoshi outfit changes\""
+   },
+   {
+    "location": "Section 6, 'Oiro-naoshi', para 1",
+    "issue": "Authority rule: per-line source credit ('the V&A holds').",
+    "old": "and it has a long record: the V&A holds a woodblock print by Utagawa Kuniyoshi, made between 1843 and 1847, titled The Wedding Colour Alteration Ceremony. <!-- fact_10 -->",
+    "new": "and it has a long record: Utagawa Kuniyoshi's woodblock print The Wedding Colour Alteration Ceremony dates from between 1843 and 1847. <!-- fact_10 -->",
+    "fix": "Replace exactly: \"and it has a long record: the V&A holds a woodblock print by Utagawa Kuniyoshi, made between 1843 and 1847, titled The Wedding Colour Alteration Ceremony. <!-- fact_10 -->\" with: \"and it has a long record: Utagawa Kuniyoshi's woodblock print The Wedding Colour Alteration Ceremony dates from between 1843 and 1847. <!-- fact_10 -->\""
+   },
+   {
+    "location": "Section 6, menu paragraph",
+    "issue": "Must-fix: washoku placed in the reception menu paragraph reads as a wedding custom; UNESCO links it to New Year, not weddings (fact_101). Cut the sentence and link.",
+    "old": " Washoku, the traditional dietary culture of Japan, is inscribed on the [UNESCO list](https://ich.unesco.org/en/RL/washoku-traditional-dietary-cultures-of-the-japanese-notably-for-the-celebration-of-new-year-00869) for its place in New Year celebrations. <!-- fact_100 -->",
+    "new": "",
+    "fix": "Delete exactly: \" Washoku, the traditional dietary culture of Japan, is inscribed on the [UNESCO list](https://ich.unesco.org/en/RL/washoku-traditional-dietary-cultures-of-the-japanese-notably-for-the-celebration-of-new-year-00869) for its place in New Year celebrations. <!-- fact_100 -->\""
+   },
+   {
+    "location": "H2 7",
+    "issue": "Heading reads keyword-stuffed. Use the outline wording; 'Japanese weddings' gift query stays covered in the first line.",
+    "old": "## 7. Japanese wedding gift traditions: goshūgi and hikidemono",
+    "new": "## 7. Goshūgi and hikidemono: gifts given and gifts returned",
+    "fix": "Replace exactly: \"## 7. Japanese wedding gift traditions: goshūgi and hikidemono\" with: \"## 7. Goshūgi and hikidemono: gifts given and gifts returned\""
+   },
+   {
+    "location": "Section 11, para 1",
+    "issue": "Originality: 12-word overlap with smartraveller.md (government source). Rephrase.",
+    "old": "applies to the restricted areas near the Fukushima Dai-ichi nuclear power plant. <!-- fact_102 -->",
+    "new": "covers the Fukushima Dai-ichi nuclear power plant's restricted areas. <!-- fact_102 -->",
+    "fix": "Replace exactly: \"applies to the restricted areas near the Fukushima Dai-ichi nuclear power plant. <!-- fact_102 -->\" with: \"covers the Fukushima Dai-ichi nuclear power plant's restricted areas. <!-- fact_102 -->\""
+   },
+   {
+    "location": "Section 11, 'Legal steps', para 1",
+    "issue": "Authority rule: source credit as the sentence subject ('Smartraveller's guide ... says'). State the fact, keep the link once.",
+    "old": "Smartraveller's guide to [getting married overseas](https://www.smartraveller.gov.au/planning-trip/advice-your-planned-activities/getting-married-overseas) says you can't register an overseas marriage in Australia, but in most cases it is legally recognised",
+    "new": "You can't register an overseas marriage in Australia, but in most cases [a marriage overseas](https://www.smartraveller.gov.au/planning-trip/advice-your-planned-activities/getting-married-overseas) is legally recognised",
+    "fix": "Replace exactly: \"Smartraveller's guide to [getting married overseas](https://www.smartraveller.gov.au/planning-trip/advice-your-planned-activities/getting-married-overseas) says you can't register an overseas marriage in Australia, but in most cases it is legally recognised\" with: \"You can't register an overseas marriage in Australia, but in most cases [a marriage overseas](https://www.smartraveller.gov.au/planning-trip/advice-your-planned-activities/getting-married-overseas) is legally recognised\""
+   },
+   {
+    "location": "FAQ, 'Can Australians have a legal wedding in Japan?'",
+    "issue": "Authority rule: per-line source credit ('Smartraveller says'). Answer directly; keep 'in most cases'.",
+    "old": "Smartraveller says that in most cases an overseas marriage is legally recognised in Australia",
+    "new": "In most cases, yes: an overseas marriage is legally recognised in Australia",
+    "fix": "Replace exactly: \"Smartraveller says that in most cases an overseas marriage is legally recognised in Australia\" with: \"In most cases, yes: an overseas marriage is legally recognised in Australia\""
+   }
+  ],
+  "fact_check_log": [
+   {
+    "claim": "Shinto ceremony in kimono typically followed by a Christian-style observance in Western attire (intro, section 5, FAQ)",
+    "fact_id": "fact_01",
+    "status": "confirmed"
+   },
+   {
+    "claim": "Arranged marriage largely replaced by love match; nakodo go-between still common",
+    "fact_id": "fact_02",
+    "status": "confirmed"
+   },
+   {
+    "claim": "Traditional ceremony at a Shinto shrine; white under-kimono and shiromuku",
+    "fact_id": "fact_03",
+    "status": "confirmed"
+   },
+   {
+    "claim": "Bride changes into a brightly coloured kimono for the reception; red brocade uchikake with cranes, symbols of longevity",
+    "fact_id": "fact_04",
+    "status": "confirmed"
+   },
+   {
+    "claim": "Uchikake now worn only by brides; outfit changes continue; colour alteration can include a Western gown",
+    "fact_id": "fact_05",
+    "status": "confirmed"
+   },
+   {
+    "claim": "Merchant-class black uchikake, probably Kyoto, 1800 to 1850; banquet sequence of white, red and black; butterflies symbolise harmony",
+    "fact_id": "fact_06",
+    "status": "confirmed"
+   },
+   {
+    "claim": "Japanese usually hold Shinto-style ceremonies and pronounce vows to the kami",
+    "fact_id": "fact_07",
+    "status": "confirmed"
+   },
+   {
+    "claim": "Order of a grand Shinto rite: harae, norito, music and dance, evergreen branch offerings (general rite, framed as such)",
+    "fact_id": "fact_08",
+    "status": "confirmed"
+   },
+   {
+    "claim": "Communion with the kami by drinking offered sake after a festival",
+    "fact_id": "fact_09",
+    "status": "confirmed"
+   },
+   {
+    "claim": "Kuniyoshi print The Wedding Colour Alteration Ceremony, 1843 to 1847",
+    "fact_id": "fact_10",
+    "status": "confirmed"
+   },
+   {
+    "claim": "Smartraveller Japan: Exercise normal safety precautions; Reconsider your need to travel for Fukushima restricted areas",
+    "fact_id": "fact_102",
+    "status": "confirmed"
+   },
+   {
+    "claim": "Heat waves July to September; typhoon season May to November, peak July to September",
+    "fact_id": "fact_103",
+    "status": "confirmed"
+   },
+   {
+    "claim": "Visa-free up to 90 days; conditions can change; entry status cannot change without leaving",
+    "fact_id": "fact_104",
+    "status": "confirmed"
+   },
+   {
+    "claim": "Overseas marriage cannot be registered in Australia but in most cases is recognised",
+    "fact_id": "fact_106",
+    "status": "confirmed"
+   },
+   {
+    "claim": "CNI commonly required; some authorities accept only locally issued CNIs",
+    "fact_id": "fact_107",
+    "status": "confirmed"
+   },
+   {
+    "claim": "Embassies and consulates issue CNIs; fees apply",
+    "fact_id": "fact_108",
+    "status": "confirmed"
+   },
+   {
+    "claim": "Tokyo Embassy and Osaka Consulate-General notarial by appointment; mail from within Japan only; mailed CNI must be witnessed",
+    "fact_id": "fact_109",
+    "status": "confirmed"
+   },
+   {
+    "claim": "Sembazuru orikata (1797), one of the earliest origami instruction books, linked cranes",
+    "fact_id": "fact_110",
+    "status": "confirmed"
+   },
+   {
+    "claim": "Washoku inscribed by UNESCO for New Year celebrations (section 6)",
+    "fact_id": "fact_100",
+    "status": "removed"
+   },
+   {
+    "claim": "San-san-kudo shared cups carry a promise made before the kami (meaning as fact)",
+    "status": "removed"
+   },
+   {
+    "claim": "Parents' sake 'seals the bond' between families (meaning as fact)",
+    "status": "removed"
+   },
+   {
+    "claim": "Living-practice lines without markers (yuinō gifts and mizuhiki, sakaki offering, miko, vows from folded paper, hirōen running order, goshūgi envelope and reception desk, hikidemono, kagami biraki, speeches and the bride's letter, senbazuru folding, guest dress) written as what many families do; no meaning or origin stated",
+    "status": "confirmed"
+   }
+  ],
+  "compliance": {
+   "pass": false,
+   "issues": [
+    "Must-fix: authority rule, 7 per-line source credits (Britannica x2, V&A x3, Smartraveller x2); fixed by edits",
+    "Must-fix: washoku (UNESCO, New Year) sat in the reception menu paragraph and read as a wedding custom; cut",
+    "Must-fix: san-san-kudo meanings ('sealing the bond', 'promise made before the kami') stated as fact without a source; rewritten or cut",
+    "Must-fix: keyword-stuffed headings (H2 1, 2, 6, 7 and H3 'Modern Japanese weddings'); rewritten to the 02-seo outline, queries still covered in body copy",
+    "Legal lines match fact_106 to fact_109 ('in most cases' kept, Embassy notarial line exact); Smartraveller dated once per section",
+    "0 'often told'; no geisha framing; no prices or amounts; no vendor or venue names; shrines named only as places; no 'last dance'; Advisor lines match brand-facts.md; no em dashes; exactly 4 one-sentence takeaways",
+    "/expert-advice/wedding-traditions and /expert-advice/chinese-wedding-traditions are drafts in link-map.csv: link only once live"
+   ]
+  },
+  "originality": {
+   "pass": true,
+   "matches": [
+    "smartraveller.md (1 n-gram, Fukushima sentence; government source, rephrased by edit)"
+   ]
+  },
+  "banned_phrases_found": [],
+  "needs_signoff": []
+ },
+ "assumptions": [
+  "04-images.json not re-audited in fast mode; image slots are placeholders only"
+ ],
+ "open_questions": []
+}
