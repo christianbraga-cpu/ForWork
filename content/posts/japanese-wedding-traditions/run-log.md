@@ -12,3 +12,4 @@
 22:58 07b icp-panel-chair revise; enquire 2.6; must_fix: Advisor/CTA next step, guest questions; should_fix: museum-catalogue detail, CTA wording; final pass launched
 22:59 08 luxury-writer complete 2,981 words; 0 VERIFY; scan clean; 8b+CRO+distribution launched
 23:00 09 cro-specialist complete; /magazine primary; 2 copy changes; applying after 8b
+23:00 10 distribution complete 3 pins, 8-slide carousel, newsletter
