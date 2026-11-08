@@ -14,9 +14,9 @@ Nigerian wedding traditions are not one set of customs. This guide takes them fa
 ## Key takeaways
 
 - Yoruba, Igbo and Hausa-Fulani weddings follow different customs, and many couples pair a traditional wedding with a church wedding or nikah on another day.
-- In many Igbo families, the public ceremony ends with the bride carrying a cup of palm wine through the guests to find her groom.
+- In many Igbo families, the bride carries a cup of palm wine through the guests at the public ceremony to find her groom.
 - At many Nigerian receptions, guests dance up to the couple and spray notes on them, and parents and close family take their turn on the floor.
-- As at November 2026, Smartraveller advises Australians to "Reconsider your need to travel" to Nigeria, and many diaspora couples bring these customs to a wedding in Australia or at another destination.
+- As at November 2026, Smartraveller advises Australians to "Reconsider your need to travel" to Nigeria, and these customs travel well to a wedding in Australia or at another destination.
 
 ## What a traditional Nigerian wedding looks like today
 
@@ -26,7 +26,7 @@ Customs differ between Yoruba, Igbo and Hausa-Fulani families, and from one fami
 
 ### One marriage, two ceremonies
 
-Most couples marry twice in the eyes of their families. The traditional wedding belongs to the two families and their customs. The faith or civil ceremony, a church wedding, a nikah or a registry, often falls on another day.
+Many couples marry twice in the eyes of their families. The traditional wedding belongs to the two families and their customs. The faith or civil ceremony, a church wedding, a nikah or a registry, often falls on another day.
 
 ## Yoruba wedding traditions
 
@@ -90,9 +90,9 @@ In Ezinifite-Aguata, in Anambra State, marriage moves through five stages: knock
 
 ### 6. Ịkụ aka n'ụzọ, knocking on the door
 
-Knocking at the door is the first stage in most communities in Igboland. The suitor and his father visit the woman's family with palm wine to register his interest, and the hosts present kola nut as a sign of welcome. <!-- fact_108 -->
+Knocking at the door is the first stage in most communities in Igboland. In Ezinifite-Aguata, the suitor and his father visit the woman's family with palm wine to register his interest, and the hosts present kola nut as a sign of welcome. <!-- fact_108 -->
 
-The daughter is given a cup of palm wine. If she consents, she sips it and hands the rest to her suitor. <!-- fact_108 -->
+There, the daughter is given a cup of palm wine. If she consents, she sips it and hands the rest to her suitor. <!-- fact_108 -->
 
 In Ezinifite-Aguata, at the later stages of presenting gifts and the outing, the bride-to-be hands the palm wine to her fiancé while kneeling on one knee as a sign of respect, signalling her public acceptance. <!-- fact_111 -->
 
@@ -138,11 +138,15 @@ Friends of the couple often gather the notes from the floor as the dancing goes 
 
 ### 11. The white wedding alongside the traditional one
 
-Many Nigerian couples also hold a white wedding: a church ceremony with a white gown, a suit and a reception, held on a separate day from the traditional wedding. Muslim couples hold the nikah in its place.
+Many Nigerian couples also hold a white wedding: a church ceremony with a white gown, a suit and a reception, held on a separate day from the traditional wedding. Many Muslim couples hold the nikah in its place.
 
 The traditional wedding is in aṣọ-òkè, lace or the family's chosen fabric, with the families leading. The white wedding follows a church service, then a reception with speeches and dancing.
 
 <!-- CTA: primary -->
+**Read the free magazine**
+Free to read, whenever you are ready.
+[Read the free magazine](/magazine?utm_source=blog&utm_medium=content&utm_campaign=nigerian-wedding-traditions&utm_content=primary)
+<!-- /CTA: primary -->
 
 ## Bringing Nigerian wedding traditions to a wedding in Australia or abroad
 
@@ -150,13 +154,13 @@ For Nigerian-Australian and mixed-heritage couples, the question is how to hold 
 
 ### Travel to Nigeria for family: what Smartraveller says
 
-As at November 2026, Smartraveller advises Australians to "Reconsider your need to travel" to Nigeria overall, including Abuja <!-- fact_100 -->, and "Do not travel" to 26 states and the Federal Capital Territory outside Abuja. <!-- fact_101 --> Read the [Smartraveller advice for Nigeria](https://www.smartraveller.gov.au/destinations/africa/nigeria) before any family trip.
+As at November 2026, Smartraveller advises Australians to "Reconsider your need to travel" to Nigeria overall, including Abuja <!-- fact_100 -->, and "Do not travel" to 26 states and the Federal Capital Territory (excluding Abuja). <!-- fact_101 --> Read the [Smartraveller advice for Nigeria](https://www.smartraveller.gov.au/destinations/africa/nigeria) before any family trip.
 
-The [Australian High Commission in Abuja](https://nigeria.highcommission.gov.au/aaja/home.html) and the Honorary Consulate in Lagos provide limited consular and passport services. <!-- fact_102 --> Many families choose instead to hold every ceremony in Australia, or at a destination where relatives from Nigeria, the United Kingdom and North America can meet. Our guide to [weddings across Africa](/destinations/africa) covers other options on the continent.
+The [Australian High Commission in Abuja](https://nigeria.highcommission.gov.au/aaja/home.html) and the Honorary Consulate in Lagos provide limited consular and passport services. <!-- fact_102 --> Families can instead hold every ceremony in Australia, or at a destination where relatives from Nigeria, the United Kingdom and North America can meet. Our guide to [weddings across Africa](/destinations/africa) covers other options on the continent.
 
 ### Ordering aso ebi from abroad
 
-Aṣọ-òkè is hand-woven in narrow strips, and weaving enough for a single jacket takes around 24 hours over a week. <!-- fact_09 --> Order family cloth early and confirm lead times with the weaver before you set the date guests need it by.
+Aṣọ-òkè is hand-woven in narrow strips, and weaving enough for a single jacket can take around 24 hours over a week. <!-- fact_09 --> Order family cloth early and confirm lead times with the weaver before you set the date guests need it by.
 
 Questions to settle with both families:
 
@@ -168,13 +172,13 @@ Questions to settle with both families:
 
 ### Timing the traditional and white weddings
 
-Decide first whether the two ceremonies share a weekend or sit months apart. Many diaspora couples hold the traditional wedding and the white wedding or nikah on consecutive days, so relatives who travel need only make one trip.
+Decide first whether the two ceremonies share a weekend or sit months apart. Holding the traditional wedding and the white wedding or nikah on consecutive days means relatives who travel need only make one trip.
 
 Before you choose a place, settle the guest questions. Where will everyone stay? How will relatives flying in from Nigeria, the United Kingdom and North America reach the venue? How will older or less mobile guests manage the flights, the transfers and two long days? Which guests will need a visa, and what travel insurance and medical cover should each guest carry?
 
 Igbo families may hold the earlier stages as smaller gatherings, so brief your Wedded Advisor and venue on which stages need a space.
 
-Set up [a wedding website for a traditional and a white wedding](/wonderland-studio/wedding-website-templates/african), with both days, both dress codes and the aso ebi details in one place.
+Set up [a wedding website for a traditional and a white wedding](/wonderland-studio/wedding-website-templates/african?utm_source=blog&utm_medium=content&utm_campaign=nigerian-wedding-traditions&utm_content=magnet), with both days, both dress codes and the aso ebi details in one place.
 
 If any part of the marriage takes place overseas, ask a lawyer and your celebrant how it will be recognised. As at November 2026, an overseas marriage cannot be registered in Australia, but in most cases it is legally recognised if it was valid where it took place and would have been valid under Australian law. <!-- fact_104 -->
 
@@ -204,11 +208,11 @@ Many do: a traditional wedding led by the families, and a church wedding or nika
 
 ### What is the difference between bride price and dowry in a Nigerian wedding?
 
-Families usually speak of the bride price: what the groom and his family present to the bride's family, alongside the items on the family's list. Many people use "dowry" loosely for the same exchange. In some Igbo communities, the father-in-law takes part of the bride price and returns the rest, saying he is not selling his daughter. <!-- fact_109 -->
+Families usually speak of the bride price: what the groom and his family present to the bride's family, alongside the items on the family's list. Many people use "dowry" loosely for the same exchange. In Ezinifite-Aguata, an Igbo community in Anambra State, the father-in-law takes part of the bride price and returns the rest, saying he is not selling his daughter. <!-- fact_109 -->
 
 ### Who pays for a traditional Nigerian wedding?
 
-It depends on the family. The groom and his family bring the bride price and the list, and the costs of the celebration are shared in many different ways. Agree the arrangement between both families early, starting with a few questions: which ceremonies each family will host, who covers the venue and catering for each day, what the bride's family will provide alongside the list, and who will speak for each side when the list is settled.
+It depends on the family. In many families, the groom and his family bring the bride price and the list, and the costs of the celebration are shared in many different ways. Agree the arrangement between both families early, starting with a few questions: which ceremonies each family will host, who covers the venue and catering for each day, what the bride's family will provide alongside the list, and who will speak for each side when the list is settled.
 
 ### What is aso ebi and who wears it?
 

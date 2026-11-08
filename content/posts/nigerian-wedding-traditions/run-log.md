@@ -13,3 +13,4 @@
 23:51 08 luxury-writer complete 2,993 words; 0 VERIFY; scan clean; 8b+CRO+distribution launched
 23:52 09 cro-specialist complete; /magazine primary, African website template lead magnet; 2 copy changes; applying after 8b
 23:53 10 distribution complete 3 pins, 8-slide carousel, newsletter
+23:53 08b editor pass_with_edits; 12 blocking fixes (claims beyond facts, Igbo community scoping, unsourced diaspora claims, Smartraveller FCT wording) + 2 CRO changes applied; cms-publisher launched
