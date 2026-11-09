@@ -1,0 +1,355 @@
+{
+ "agent": "editor",
+ "task_id": "something-old-something-new",
+ "stage": "06",
+ "status": "complete",
+ "round": 1,
+ "inputs_used": [
+  "CLAUDE.md",
+  "content/posts/something-old-something-new/00-input.json",
+  "01-brief.json",
+  "02-seo.json",
+  "03-source-pack.json",
+  "05-draft.md",
+  "content-system/brand/voice-guide.md",
+  "content-system/brand/brand-facts.md",
+  "content-system/rubrics/editor-rubric.md",
+  "content-system/rubrics/qa-gates.md",
+  "content-system/seo/link-map.csv",
+  "content-system/schemas/06-edit.schema.json",
+  "content/posts/korean-traditional-wedding/06-edit.json (format model)"
+ ],
+ "self_qa": {
+  "checks": [
+   {
+    "check": "scan_copy.py run and results reflected",
+    "pass": true,
+    "note": "0 banned, 1 flagged ('luxury' in the section 8 H2, which is the 02-seo outline wording: kept), 0 dashes, 0 overlaps"
+   },
+   {
+    "check": "Every fact marker logged against the source pack",
+    "pass": true,
+    "note": "24 fact ids, all present in 03-source-pack.json"
+   },
+   {
+    "check": "Every edit 'old' occurs exactly once (applied in order)",
+    "pass": true,
+    "note": "verified by script"
+   },
+   {
+    "check": "Authority rule: no research talk, per-line credits, hedge stacking; 0 'often told'",
+    "pass": true,
+    "note": "after edits (Burne page-number credit, 'A record of folklore ... says', 'were described as', 'a printing gives', Smartraveller credit sentence, double V&A credit)"
+   },
+   {
+    "check": "Dates and meanings match facts: 1883, 1866 (borrowed), 1946 (sixpence); meanings only for borrowed and blue; no 1871; no royal claims",
+    "pass": true,
+    "note": "after 'Some of its parts' and Chaucer quote edits; something old/new written as practice only"
+   },
+   {
+    "check": "V&A 1841 dress as fact_108 to fact_110 give it",
+    "pass": true,
+    "note": "after 'for a later wearer' cut"
+   },
+   {
+    "check": "Travel lines match Smartraveller and Moneysmart facts",
+    "pass": true,
+    "note": "fact_100 to fact_107; police-report line tightened"
+   },
+   {
+    "check": "4 one-sentence takeaways; no prices, jeweller names, 'last dance', Wedded Privileges, em dashes; Australian English; Advisor claims within brand-facts.md",
+    "pass": true
+   },
+   {
+    "check": "Internal links in 02-seo.json or link-map.csv, none noindex; external links from source pack, not competitors",
+    "pass": true,
+    "note": "draft-status links (lab-grown, ring insurance) removed; pillar /expert-advice/wedding-traditions is also Draft in link-map: publish together or after"
+   },
+   {
+    "check": "Decision consistent with scores",
+    "pass": true,
+    "note": "avg 4.0, no criterion < 3, no blocking issues, exact edits"
+   }
+  ],
+  "confidence": 0.85
+ },
+ "next_agent": [
+  "luxury-writer"
+ ],
+ "payload": {
+  "draft_file": "content/posts/something-old-something-new/05-draft.md",
+  "rubric": {
+   "voice": 4,
+   "expertise": 4,
+   "accuracy": 4,
+   "seo_fit": 4,
+   "commercial_link": 4,
+   "structure": 4,
+   "brief_fit": 4
+  },
+  "average": 4.0,
+  "blocking_issues": [],
+  "decision": "pass_with_edits",
+  "edits": [
+   {
+    "location": "Section 1, sixpence line intro",
+    "issue": "Minor credit wording ('a printing gives'); state it plainly.",
+    "old": "A 1946 printing gives the longer version:",
+    "new": "By 1946 the rhyme was in print with it:",
+    "fix": "Replace exactly: \"A 1946 printing gives the longer version:\" with: \"By 1946 the rhyme was in print with it:\""
+   },
+   {
+    "location": "Section 1, Variants",
+    "issue": "Unsupported generalisation about all versions; replace with confident practice line.",
+    "old": "Most versions differ only in the coin.",
+    "new": "The wording shifts a little from one telling to the next.",
+    "fix": "Replace exactly: \"Most versions differ only in the coin.\" with: \"The wording shifts a little from one telling to the next.\""
+   },
+   {
+    "location": "Section 2, para 1",
+    "issue": "MUST-FIX authority rule: per-line source credit (book title and page number, 'the book is about Shropshire... given there'); also repeats section 1. Keep the one link, state the origin plainly.",
+    "old": "The rhyme was [first recorded](https://www.oxfordreference.com/display/10.1093/acref/9780192829160.001.0001/acref-9780192829160-e-165) in Charlotte Burne's *Shropshire Folk-Lore*, published in 1883, on page 290. <!-- fact_01 --> The book is about Shropshire, but the rhyme is given there as the saying of friends from Lancashire. <!-- fact_01 -->",
+    "new": "The rhyme was [first recorded](https://www.oxfordreference.com/display/10.1093/acref/9780192829160.001.0001/acref-9780192829160-e-165) in 1883, in a collection of Shropshire folklore, though the friends who knew it came from Lancashire. <!-- fact_01 -->",
+    "fix": "Replace exactly: \"The rhyme was [first recorded](https://www.oxfordreference.com/display/10.1093/acref/9780192829160.001.0001/acref-9780192829160-e-165) in Charlotte Burne's *Shropshire Folk-Lore*, published in 1883, on page 290. <!-- fact_01 --> The book is about Shropshire, but the rhyme is given there as the saying of friends from Lancashire. <!-- fact_01 -->\" with: \"The rhyme was [first recorded](https://www.oxfordreference.com/display/10.1093/acref/9780192829160.001.0001/acref-9780192829160-e-165) in 1883, in a collection of Shropshire folklore, though the friends who knew it came from Lancashire. <!-- fact_01 -->\""
+   },
+   {
+    "location": "Section 2, para 2",
+    "issue": "MUST-FIX authority rule: 'A record of folklore ... already says' is a per-line source credit; 'Some of its parts' overclaims (only borrowed is sourced as older, fact_05); 'were described as' is credit wording.",
+    "old": "Some of its parts are older than the rhyme itself. A record of folklore from England's northern counties, published in 1866, already says the bride should wear something borrowed. <!-- fact_05 --> The custom held well into the twentieth century: by 1957, the four items were described as \"almost always worn, even by the most sophisticated brides\". <!-- fact_04 -->",
+    "new": "Something borrowed is older than the rhyme itself: by 1866, a bride in England's northern counties was expected to wear something borrowed. <!-- fact_05 --> The custom held well into the twentieth century, and by 1957 the four items were \"almost always worn, even by the most sophisticated brides\". <!-- fact_04 -->",
+    "fix": "Replace exactly: \"Some of its parts are older than the rhyme itself. A record of folklore from England's northern counties, published in 1866, already says the bride should wear something borrowed. <!-- fact_05 --> The custom held well into the twentieth century: by 1957, the four items were described as \"almost always worn, even by the most sophisticated brides\". <!-- fact_04 -->\" with: \"Something borrowed is older than the rhyme itself: by 1866, a bride in England's northern counties was expected to wear something borrowed. <!-- fact_05 --> The custom held well into the twentieth century, and by 1957 the four items were \"almost always worn, even by the most sophisticated brides\". <!-- fact_04 -->\""
+   },
+   {
+    "location": "Section 2, meaning H3, blue paragraph",
+    "issue": "Accuracy: the quoted words \"signe of trouthe\" are not in fact_08, which gives only that Chaucer calls blue a sign of 'trouthe' (faithfulness).",
+    "old": "and Chaucer calls blue a \"signe of trouthe\", a sign of faithfulness. <!-- fact_08 -->",
+    "new": "and Chaucer links blue with \"trouthe\", or faithfulness. <!-- fact_08 -->",
+    "fix": "Replace exactly: \"and Chaucer calls blue a \"signe of trouthe\", a sign of faithfulness. <!-- fact_08 -->\" with: \"and Chaucer links blue with \"trouthe\", or faithfulness. <!-- fact_08 -->\""
+   },
+   {
+    "location": "Section 3, Wearing an heirloom, para 2",
+    "issue": "Unsupported history claim ('has a long history'); 'for a later wearer' is not in fact_109 (label says only 'later alterations'); two credits for one object (V&A named plus a closing 'in the museum's collection' line). Make the reworking line living practice, cite the V&A once by link.",
+    "old": "Clothes count too. Reworking a mother's dress or her lace into a new gown has a long history. Sarah Maria Wright married Daniel Neal on 27 July 1841 at St Nicholas' Church, Skirbeck, in Lincolnshire, in a block-printed cotton wedding dress that is now in the V&A in London. <!-- fact_108 --> Dresses like hers were worn as Sunday best long after the wedding, or handed down, and its bodice was carefully enlarged for a later wearer. <!-- fact_109 --> You can see the [1841 wedding dress](https://collections.vam.ac.uk/item/O125291/) in the museum's collection.",
+    "new": "Clothes count too, and many couples rework a mother's dress or her lace into something of their own. Sarah Maria Wright married Daniel Neal on 27 July 1841 at St Nicholas' Church, Skirbeck, in Lincolnshire, in a block-printed cotton [wedding dress](https://collections.vam.ac.uk/item/O125291/) now in the V&A in London. <!-- fact_108 --> Dresses like hers were worn as Sunday best long after the wedding, or handed down, and its bodice has been carefully enlarged. <!-- fact_109 -->",
+    "fix": "Replace exactly: \"Clothes count too. Reworking a mother's dress or her lace into a new gown has a long history. Sarah Maria Wright married Daniel Neal on 27 July 1841 at St Nicholas' Church, Skirbeck, in Lincolnshire, in a block-printed cotton wedding dress that is now in the V&A in London. <!-- fact_108 --> Dresses like hers were worn as Sunday best long after the wedding, or handed down, and its bodice was carefully enlarged for a later wearer. <!-- fact_109 --> You can see the [1841 wedding dress](https://collections.vam.ac.uk/item/O125291/) in the museum's collection.\" with: \"Clothes count too, and many couples rework a mother's dress or her lace into something of their own. Sarah Maria Wright married Daniel Neal on 27 July 1841 at St Nicholas' Church, Skirbeck, in Lincolnshire, in a block-printed cotton [wedding dress](https://collections.vam.ac.uk/item/O125291/) now in the V&A in London. <!-- fact_108 --> Dresses like hers were worn as Sunday best long after the wedding, or handed down, and its bodice has been carefully enlarged. <!-- fact_109 -->\""
+   },
+   {
+    "location": "Section 4, Commissioning, para 2",
+    "issue": "Link rule: /style-advice/lab-grown-diamonds is Draft in link-map.csv (2026-10-29) and on the source-pack verify list. Cut the sentence; re-add the link only once the article is live.",
+    "old": " If you are weighing up stones, our guide to [lab-grown diamonds](/style-advice/lab-grown-diamonds) sets out the choices.",
+    "new": "",
+    "fix": "Delete exactly: \" If you are weighing up stones, our guide to [lab-grown diamonds](/style-advice/lab-grown-diamonds) sets out the choices.\""
+   },
+   {
+    "location": "Section 5 H2",
+    "issue": "Pasted keyword in heading ('Something borrowed ideas:' reads as a stuffed query); use the 02-seo outline wording.",
+    "old": "## 5. Something borrowed ideas: who lends it and why it goes back",
+    "new": "## 5. Something borrowed: who lends it and why it goes back",
+    "fix": "Replace exactly: \"## 5. Something borrowed ideas: who lends it and why it goes back\" with: \"## 5. Something borrowed: who lends it and why it goes back\""
+   },
+   {
+    "location": "Section 7 H2",
+    "issue": "SEO: outline and protect keyword are 'sixpence in her shoe'.",
+    "old": "## 7. A sixpence in your shoe",
+    "new": "## 7. A sixpence in her shoe",
+    "fix": "Replace exactly: \"## 7. A sixpence in your shoe\" with: \"## 7. A sixpence in her shoe\""
+   },
+   {
+    "location": "Section 9, para 1",
+    "issue": "Authority: 'advice gives a clear basis for planning' credits the source as a sentence of its own; fold the one dated link into a plain line.",
+    "old": "As at November 2026, the Australian Government's [Smartraveller](https://www.smartraveller.gov.au/while-overseas/protecting-yourself-crime/theft-and-robbery) advice gives a clear basis for planning.",
+    "new": "These steps follow the Australian Government's [Smartraveller](https://www.smartraveller.gov.au/while-overseas/protecting-yourself-crime/theft-and-robbery) advice as at November 2026.",
+    "fix": "Replace exactly: \"As at November 2026, the Australian Government's [Smartraveller](https://www.smartraveller.gov.au/while-overseas/protecting-yourself-crime/theft-and-robbery) advice gives a clear basis for planning.\" with: \"These steps follow the Australian Government's [Smartraveller](https://www.smartraveller.gov.au/while-overseas/protecting-yourself-crime/theft-and-robbery) advice as at November 2026.\""
+   },
+   {
+    "location": "Section 9, At the destination",
+    "issue": "Accuracy: fact_104 is about claiming on (car or) travel insurance; say so.",
+    "old": "because you can't claim without a police report.",
+    "new": "because you can't claim on travel insurance without one.",
+    "fix": "Replace exactly: \"because you can't claim without a police report.\" with: \"because you can't claim on travel insurance without one.\""
+   },
+   {
+    "location": "Section 9, borrowed-piece paragraph",
+    "issue": "Link rule: /style-advice/engagement-ring-insurance is Draft in link-map.csv (2026-10-29) and on the verify list. Replace with practical advice; re-add the link once live.",
+    "old": "Our guide to [engagement ring insurance](/style-advice/engagement-ring-insurance) covers specified cover for rings and jewellery in more detail.",
+    "new": "For rings and other valuable jewellery, ask your insurer whether each piece should be listed separately on your policy before you fly.",
+    "fix": "Replace exactly: \"Our guide to [engagement ring insurance](/style-advice/engagement-ring-insurance) covers specified cover for rings and jewellery in more detail.\" with: \"For rings and other valuable jewellery, ask your insurer whether each piece should be listed separately on your policy before you fly.\""
+   },
+   {
+    "location": "FAQ, Can the groom carry...",
+    "issue": "SEO/brief note: the any-gender line is said once only (already in Variants). Remove the repeat.",
+    "old": "Yes. Partners of any gender can carry any of the items: heirloom cufflinks,",
+    "new": "Yes. Heirloom cufflinks,",
+    "fix": "Replace exactly: \"Yes. Partners of any gender can carry any of the items: heirloom cufflinks,\" with: \"Yes. Heirloom cufflinks,\""
+   }
+  ],
+  "fact_check_log": [
+   {
+    "claim": "Rhyme first recorded 1883 (Burne, Shropshire Folk-Lore) as the saying of 'some Lancashire friends'; earliest two-line form quoted exactly",
+    "fact_id": "fact_01",
+    "status": "confirmed"
+   },
+   {
+    "claim": "Best-known wedding rhyme today",
+    "fact_id": "fact_02",
+    "status": "confirmed"
+   },
+   {
+    "claim": "White gown: blue carried as blue garters (1883)",
+    "fact_id": "fact_03",
+    "status": "confirmed"
+   },
+   {
+    "claim": "By 1957 the four items 'almost always worn, even by the most sophisticated brides'",
+    "fact_id": "fact_04",
+    "status": "confirmed"
+   },
+   {
+    "claim": "By 1866 (northern counties) the bride should wear something borrowed; no meaning claimed",
+    "fact_id": "fact_05",
+    "status": "confirmed"
+   },
+   {
+    "claim": "Lucky to wear something already worn by a happy bride",
+    "fact_id": "fact_06",
+    "status": "confirmed"
+   },
+   {
+    "claim": "Borrowed piece from a previous happy marriage; veil often singled out as luckiest",
+    "fact_id": "fact_07",
+    "status": "confirmed"
+   },
+   {
+    "claim": "Blue = loyalty and true love, lucky for brides; blue/true rhyme from the Middle Ages; Chaucer 'trouthe' (after edit, no invented quote)",
+    "fact_id": "fact_08",
+    "status": "confirmed"
+   },
+   {
+    "claim": "Blue once recommended for the dress; 1988 'the blue garter of course'",
+    "fact_id": "fact_09",
+    "status": "confirmed"
+   },
+   {
+    "claim": "1946 printing with the sixpence line, quoted exactly",
+    "fact_id": "fact_10",
+    "status": "confirmed"
+   },
+   {
+    "claim": "Insurance can cover valuables; per-item limits; check extra cover",
+    "fact_id": "fact_100",
+    "status": "confirmed"
+   },
+   {
+    "claim": "Read the PDS; declare everything or may void",
+    "fact_id": "fact_101",
+    "status": "confirmed"
+   },
+   {
+    "claim": "Standard policies exclude unattended items, items not in an available hotel safe, items stolen from checked baggage",
+    "fact_id": "fact_102",
+    "status": "confirmed"
+   },
+   {
+    "claim": "Leave expensive items at home; bags close, valuables out of sight",
+    "fact_id": "fact_103",
+    "status": "confirmed"
+   },
+   {
+    "claim": "Report theft to local police; can't claim on travel insurance without a police report (after edit)",
+    "fact_id": "fact_104",
+    "status": "confirmed"
+   },
+   {
+    "claim": "Photos and serial numbers before leaving; valuations and proof of purchase for claims",
+    "fact_id": "fact_105",
+    "status": "confirmed"
+   },
+   {
+    "claim": "Check insurer's definition of 'unattended'",
+    "fact_id": "fact_106",
+    "status": "confirmed"
+   },
+   {
+    "claim": "Credit card travel insurance may cover only cardholder and the trip paid on the card",
+    "fact_id": "fact_107",
+    "status": "confirmed"
+   },
+   {
+    "claim": "V&A T.27-2006: Sarah Maria Wright, Daniel Neal, 27 July 1841, St Nicholas', Skirbeck; block-printed cotton dress",
+    "fact_id": "fact_108",
+    "status": "confirmed"
+   },
+   {
+    "claim": "Worn as Sunday best or handed down; bodice carefully enlarged ('for a later wearer' cut)",
+    "fact_id": "fact_109",
+    "status": "confirmed"
+   },
+   {
+    "claim": "Coin in the left shoe for luck",
+    "fact_id": "fact_11",
+    "status": "confirmed"
+   },
+   {
+    "claim": "White cotton printed with cream, pink, blue and purple ribbon-like motifs",
+    "fact_id": "fact_110",
+    "status": "confirmed"
+   },
+   {
+    "claim": "O'Casey, I Knock at the Door (Dublin) quote",
+    "fact_id": "fact_12",
+    "status": "confirmed"
+   },
+   {
+    "claim": "Silver sixpence a lucky charm, especially in a bride's shoe",
+    "fact_id": "fact_13",
+    "status": "confirmed"
+   },
+   {
+    "claim": "'Reworking a mother's dress or her lace has a long history' (no fact)",
+    "status": "removed"
+   },
+   {
+    "claim": "'Some of its parts are older than the rhyme' (only borrowed is sourced)",
+    "status": "removed"
+   },
+   {
+    "claim": "Chaucer quoted as 'signe of trouthe' (wording not in fact_08)",
+    "fact_id": "fact_08",
+    "status": "removed"
+   },
+   {
+    "claim": "St James's Magazine 1871 printing: not stated in draft",
+    "status": "verify"
+   },
+   {
+    "claim": "Royal brides' lent pieces: correctly omitted, no RCT source",
+    "status": "verify"
+   }
+  ],
+  "compliance": {
+   "pass": true,
+   "issues": [
+    "No prices or amounts; no jeweller or vendor names; Advisor lines match brand-facts.md (single point of contact; venue, travel, vendors and payments; fee agreed in writing; inclusions confirmed in writing).",
+    "Links to Draft pages removed: /style-advice/lab-grown-diamonds and /style-advice/engagement-ring-insurance (re-add when live).",
+    "Pillar link /expert-advice/wedding-traditions is Draft in link-map.csv: publish this post with or after the pillar, or drop the link."
+   ]
+  },
+  "originality": {
+   "pass": true,
+   "matches": []
+  },
+  "banned_phrases_found": [],
+  "needs_signoff": []
+ },
+ "assumptions": [
+  "Smartraveller and Moneysmart lines kept although 00-input said no Smartraveller needed: the facts are sourced and dated, and the destination section is in the brief.",
+  "Second 'speak with a Wedded Advisor' link in the closing block kept as the brief's closing CTA."
+ ],
+ "open_questions": [
+  {
+   "to": "Nic",
+   "question": "Is the wedding traditions pillar publishing before this post? If not, unlink it at the CMS stage.",
+   "blocking": false
+  }
+ ]
+}

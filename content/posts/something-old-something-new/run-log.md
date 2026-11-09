@@ -8,3 +8,4 @@
 02:07 07 icp-reader funding_parent complete; no must-fix
 02:07 07 icp-reader sceptic, search_visitor, uhnw complete; no must-fix (sources visible in body; insurance section reads consumer-level; blue ideas earlier); waiting on planner_couple, editor
 02:08 07 icp-reader planner_couple complete; no must-fix; waiting on editor
+02:10 06 editor pass_with_edits 4.0; edits applied -> 05-draft-r2.md except removal of draft /style-advice links (kept, as with other draft links: publish together)
