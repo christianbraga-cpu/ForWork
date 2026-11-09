@@ -1,0 +1,132 @@
+{
+  "agent": "visual-curator",
+  "task_id": "something-old-something-new",
+  "stage": "04",
+  "status": "needs_input",
+  "round": 1,
+  "inputs_used": [
+    "CLAUDE.md",
+    "content/posts/something-old-something-new/00-input.json",
+    "content/posts/something-old-something-new/01-brief.json (must_include section order)",
+    "content-system/images/library-index.csv (header only, no rows)",
+    "content-system/schemas/04-images.schema.json",
+    "content/posts/wedding-traditions/04-images.json (pillar 'something blue' overhead still life, to avoid duplicating)",
+    "content/posts/korean-traditional-wedding/04-images.json (format)"
+  ],
+  "self_qa": {
+    "checks": [
+      {"check": "Zero reference-only or competitor images in slots", "pass": true},
+      {"check": "Every approved image has verified location, licence, alt, caption, fit_reason", "pass": true, "note": "No approved images; all 6 slots needed."},
+      {"check": "No AI image of people, places, royal or museum pieces", "pass": true, "note": "AI offered only as a fallback object still life for 4 object-only slots, not generated, pending Nic's approval, captioned 'Illustrative image'."},
+      {"check": "No royal or museum images unless licensed", "pass": true, "note": "None planned; any museum or Royal Collection image needs a written reuse licence."},
+      {"check": "Not a duplicate of the pillar's something blue still life", "pass": true, "note": "Pillar uses one overhead flat lay of all four items on cream linen. Here each item gets its own close detail; the hero is a styled side-lit vignette, not an overhead flat lay; the blue slot is a sewn-in garment detail, not ribbon on linen."},
+      {"check": "Featured image exists (approved or needed with brief)", "pass": true, "note": "Needed with brief."},
+      {"check": "Placements match final H2 numbering", "pass": false, "note": "02-seo.json outline not available; after_h2 follows must_include order (1 rhyme, 2 earliest printings, 3 old, 4 new, 5 borrowed, 6 blue, 7 sixpence, 8 royal and notable, 9 modern and luxury, 10 destination)."}
+    ],
+    "confidence": 0.6
+  },
+  "open_questions": [
+    {"to": "Nic", "question": "Source licensed photos for 6 slots (client weddings with signed consent, partner photographers, or a styled shoot we own)? Library register has no rows.", "blocking": true},
+    {"to": "Nic", "question": "Approve or decline AI illustrative still lifes (heirloom brooch, blue ribbon, sixpence on linen; no people, place, brand, legible inscription or royal or museum piece), captioned 'Illustrative image', for the object-only slots if no licensed photo is found?", "blocking": false},
+    {"to": "seo-researcher", "question": "Confirm H2 numbering once the outline exists and remap after_h2 placements.", "blocking": false}
+  ],
+  "assumptions": [
+    "New article: no old-page images.",
+    "No venue in scope, so no press-kit permission emails drafted.",
+    "Fast mode, library register only: Google Drive, own site, Canva and Google Lens not run.",
+    "People shots (featured option with hands, borrowed handover) must be real, consenting people in licensed photos; never AI.",
+    "Captions state no meaning or origin for any item.",
+    "No jeweller, designer or brand visible in any image (person's standard: no vendor or jeweller names)."
+  ],
+  "verify_items": [
+    "[[IMAGE NEEDED]] featured: Antique brooch, folded lace handkerchief, pale blue ribbon and an old silver coin arranged on a dressing table",
+    "[[IMAGE NEEDED]] something-old: Close-up of an antique gold and pearl brooch pinned to an ivory silk bouquet wrap",
+    "[[IMAGE NEEDED]] something-new: Bride's new satin wedding shoes beside an open jewellery box on a linen-covered chair",
+    "[[IMAGE NEEDED]] something-borrowed: Older woman's hands fastening a borrowed pearl bracelet on a bride's wrist",
+    "[[IMAGE NEEDED]] something-blue: Small pale blue silk ribbon stitched inside the hem of an ivory wedding gown",
+    "[[IMAGE NEEDED]] sixpence: Old silver sixpence coin resting inside the heel of an ivory satin wedding shoe",
+    "[[VERIFY licence]] every sourced photo: credit, scope, model and property releases",
+    "[[VERIFY: any AI illustrative still life approved by Nic before generation]]"
+  ],
+  "next_agent": ["luxury-writer"],
+  "payload": {
+    "slots": [
+      {
+        "slot_id": "featured",
+        "placement": "featured",
+        "purpose": "Hero: the four items of the rhyme together as one quiet, personal getting-ready moment.",
+        "shot_brief": "Licensed styled photo, wide 3:2 with headroom for a title crop: a side-lit vignette on a dressing table or windowsill in soft morning light, an antique brooch, a folded lace handkerchief, a pale blue silk ribbon and an old silver coin, shallow depth of field. Not an overhead flat lay (the pillar already uses one). No people, or hands only with consent. No brand, jeweller or legible coin inscription. Not AI for the hero.",
+        "status": "needed",
+        "file": "content/posts/something-old-something-new/images/something-old-something-new-four-items-dressing-table-hero.webp",
+        "source": {"type": "library", "origin": "[[IMAGE NEEDED]] library-index.csv has no rows (header only); no external searches in fast mode", "credit": "[[VERIFY licence]]"},
+        "consent": {"hands": "required if shown"},
+        "alt": "Antique brooch, folded lace handkerchief, pale blue ribbon and an old silver coin arranged on a dressing table",
+        "caption": "Photo: [[VERIFY credit]]",
+        "lens_check": "Not run: no candidate image."
+      },
+      {
+        "slot_id": "something-old",
+        "placement": "after_h2:3",
+        "purpose": "Something old: an heirloom piece with real family weight, worn as is.",
+        "shot_brief": "Preferred: licensed close detail of an heirloom brooch, locket or ring pinned to a bouquet wrap or bodice, warm window light, ivory silk background, no faces, no brand. Fallback only if Nic approves: AI illustrative still life of an antique brooch on plain linen, no people or place, not a copy of any royal or museum piece, captioned 'Illustrative image'.",
+        "status": "needed",
+        "file": "content/posts/something-old-something-new/images/something-old-something-new-heirloom-brooch.webp",
+        "source": {"type": "library", "origin": "[[IMAGE NEEDED]] library-index.csv has no rows (header only); no external searches in fast mode; ai_illustrative still life fallback pending Nic approval", "credit": "[[VERIFY licence]]"},
+        "alt": "Close-up of an antique gold and pearl brooch pinned to an ivory silk bouquet wrap",
+        "caption": "Photo: [[VERIFY credit]] (or 'Illustrative image' if the approved AI fallback is used)",
+        "lens_check": "Not run: no candidate image."
+      },
+      {
+        "slot_id": "something-new",
+        "placement": "after_h2:4",
+        "purpose": "Something new: a piece chosen or commissioned for the day.",
+        "shot_brief": "Preferred: licensed detail of new bridal shoes or a new piece of jewellery in an open, unbranded box on a linen-covered chair or bed, soft daylight, no people, no visible label or jeweller. Fallback only if Nic approves: AI illustrative still life of an unbranded open jewellery box with new earrings on linen, no people or place, captioned 'Illustrative image'.",
+        "status": "needed",
+        "file": "content/posts/something-old-something-new/images/something-old-something-new-new-shoes-jewellery.webp",
+        "source": {"type": "library", "origin": "[[IMAGE NEEDED]] library-index.csv has no rows (header only); no external searches in fast mode; ai_illustrative still life fallback pending Nic approval", "credit": "[[VERIFY licence]]"},
+        "alt": "Bride's new satin wedding shoes beside an open jewellery box on a linen-covered chair",
+        "caption": "Photo: [[VERIFY credit]] (or 'Illustrative image' if the approved AI fallback is used)",
+        "lens_check": "Not run: no candidate image."
+      },
+      {
+        "slot_id": "something-borrowed",
+        "placement": "after_h2:5",
+        "purpose": "Something borrowed: the handover from a parent or grandparent, as a real family moment.",
+        "shot_brief": "Licensed photo from a consented wedding morning: an older relative's hands fastening a borrowed bracelet, veil or pin on the bride or partner, warm indoor light, hands and shoulders only or consented faces. Any gender of partner. No brand. Never AI (people).",
+        "status": "needed",
+        "file": "content/posts/something-old-something-new/images/something-old-something-new-borrowed-bracelet-handover.webp",
+        "source": {"type": "library", "origin": "[[IMAGE NEEDED]] library-index.csv has no rows (header only); no external searches in fast mode", "credit": "[[VERIFY licence]]"},
+        "consent": {"couple": "required", "family": "required if identifiable"},
+        "alt": "Older woman's hands fastening a borrowed pearl bracelet on a bride's wrist",
+        "caption": "Photo: [[VERIFY credit]]",
+        "lens_check": "Not run: no candidate image."
+      },
+      {
+        "slot_id": "something-blue",
+        "placement": "after_h2:6",
+        "purpose": "Something blue: a discreet blue detail that travels well, distinct from the pillar's overhead flat lay.",
+        "shot_brief": "Preferred: licensed macro of a small pale blue ribbon or embroidered initials sewn inside a gown hem, jacket lining or garter, natural light, no faces, no label. Not an overhead flat lay of all four items (pillar uses that). Fallback only if Nic approves: AI illustrative still life of a coiled pale blue silk ribbon on linen, no people or place, captioned 'Illustrative image'.",
+        "status": "needed",
+        "file": "content/posts/something-old-something-new/images/something-old-something-new-blue-ribbon-hem.webp",
+        "source": {"type": "library", "origin": "[[IMAGE NEEDED]] library-index.csv has no rows (header only); no external searches in fast mode; ai_illustrative still life fallback pending Nic approval", "credit": "[[VERIFY licence]]"},
+        "alt": "Small pale blue silk ribbon stitched inside the hem of an ivory wedding gown",
+        "caption": "Photo: [[VERIFY credit]] (or 'Illustrative image' if the approved AI fallback is used)",
+        "lens_check": "Not run: no candidate image."
+      },
+      {
+        "slot_id": "sixpence",
+        "placement": "after_h2:7",
+        "purpose": "The sixpence in a shoe: the final line of the rhyme as an object.",
+        "shot_brief": "Preferred: licensed detail of an old silver sixpence in or beside a wedding shoe, soft side light, no people. Coin image with no legible inscription or monarch's portrait in focus; no Royal Mint or museum photo unless licensed. Fallback only if Nic approves: AI illustrative still life of a generic old silver coin on linen beside a satin shoe, no people or place, no legible inscription, captioned 'Illustrative image'.",
+        "status": "needed",
+        "file": "content/posts/something-old-something-new/images/something-old-something-new-sixpence-shoe.webp",
+        "source": {"type": "library", "origin": "[[IMAGE NEEDED]] library-index.csv has no rows (header only); no external searches in fast mode; ai_illustrative still life fallback pending Nic approval", "credit": "[[VERIFY licence]]"},
+        "alt": "Old silver sixpence coin resting inside the heel of an ivory satin wedding shoe",
+        "caption": "Photo: [[VERIFY credit]] (or 'Illustrative image' if the approved AI fallback is used)",
+        "lens_check": "Not run: no candidate image."
+      }
+    ],
+    "reference_only": [],
+    "permission_requests": []
+  }
+}
