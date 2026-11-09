@@ -1,0 +1,206 @@
+{
+  "agent": "visual-curator",
+  "task_id": "why-do-brides-wear-veils",
+  "stage": "04",
+  "status": "needs_input",
+  "round": 1,
+  "inputs_used": [
+    "CLAUDE.md",
+    "content/posts/why-do-brides-wear-veils/00-input.json",
+    "content/posts/why-do-brides-wear-veils/01-brief.json (must_include section order)",
+    "content-system/images/library-index.csv (header only, no rows)",
+    "content-system/schemas/04-images.schema.json",
+    "content/posts/something-old-something-new/04-images.json (format)"
+  ],
+  "self_qa": {
+    "checks": [
+      {
+        "check": "Zero reference-only or competitor images in slots",
+        "pass": true
+      },
+      {
+        "check": "Every approved image has verified location, licence, alt, caption, fit_reason",
+        "pass": true,
+        "note": "No approved images; all 6 slots needed."
+      },
+      {
+        "check": "No AI image of people, places, royal or museum pieces",
+        "pass": true,
+        "note": "AI offered only as a fallback still life (folded lace veil on linen) for the lace slot, not generated, pending Nic's approval, captioned 'Illustrative image'."
+      },
+      {
+        "check": "No royal or museum images unless licensed",
+        "pass": true,
+        "note": "None planned; any V&A, Royal Collection or Met image needs a written reuse licence."
+      },
+      {
+        "check": "Featured image exists (approved or needed with brief)",
+        "pass": true,
+        "note": "Needed with brief."
+      },
+      {
+        "check": "Placements match final H2 numbering",
+        "pass": false,
+        "note": "02-seo.json outline not available; after_h2 follows must_include order (1 today, 2 Rome, 3 medieval and religious, 4 Victorian, 5 royal, 6 faith, 7 lifting, 8 blusher, back and heirloom, 9 destination, 10 no veil)."
+      }
+    ],
+    "confidence": 0.6
+  },
+  "open_questions": [
+    {
+      "to": "Nic",
+      "question": "Source licensed photos for 6 slots (client weddings with signed consent, partner photographers, or a styled shoot we own)? Library register has no rows.",
+      "blocking": true
+    },
+    {
+      "to": "Nic",
+      "question": "Approve or decline an AI illustrative still life (folded lace veil on linen; no people, place, brand, or royal or museum piece), captioned 'Illustrative image', for the lace slot if no licensed photo is found?",
+      "blocking": false
+    },
+    {
+      "to": "seo-researcher",
+      "question": "Confirm H2 numbering once the outline exists and remap after_h2 placements.",
+      "blocking": false
+    }
+  ],
+  "assumptions": [
+    "New article: no old-page images.",
+    "No venue in scope, so no press-kit permission emails drafted.",
+    "Fast mode, library register only: Google Drive, own site, Canva and Google Lens not run.",
+    "All people and place shots must be real, consenting people in licensed photos; never AI.",
+    "Captions state no meaning or origin for the veil.",
+    "No designer, label or vendor visible in any image (person's standard)."
+  ],
+  "verify_items": [
+    "[[IMAGE NEEDED]] featured: Bride seen from behind in a long sheer tulle veil, lit by soft golden afternoon light",
+    "[[IMAGE NEEDED]] heirloom-lace: Close-up of a folded ivory heirloom lace veil with a scalloped floral edge resting on linen",
+    "[[IMAGE NEEDED]] lifting-the-veil: Partner gently lifting a sheer blusher veil from a bride's face during an outdoor ceremony",
+    "[[IMAGE NEEDED]] blusher-worn-back: Bride with a two-tier veil worn back from a low chignon, the blusher folded over her crown",
+    "[[IMAGE NEEDED]] coastal-wind: Long sheer veil lifting in the sea breeze as a bride stands on a coastal clifftop",
+    "[[IMAGE NEEDED]] no-veil: Smiling bride without a veil, fresh flowers pinned into her loosely styled hair",
+    "[[VERIFY licence]] every sourced photo: credit, scope, model and property releases",
+    "[[VERIFY: coastal slot place and town before captioning]]",
+    "[[VERIFY: any AI illustrative still life approved by Nic before generation]]"
+  ],
+  "next_agent": [
+    "luxury-writer"
+  ],
+  "payload": {
+    "slots": [
+      {
+        "slot_id": "featured",
+        "placement": "featured",
+        "purpose": "Hero: the veil as a quiet, personal ceremony moment that frames the question of why brides wear one.",
+        "shot_brief": "Licensed photo from a consented destination wedding, wide 3:2 with headroom for a title crop: a bride seen from behind or in soft profile, a fine tulle veil falling over her shoulders, late afternoon golden light, ceremony setting softly out of focus. Face not required; consent if identifiable. No designer label, no venue signage. Never AI (person).",
+        "status": "needed",
+        "file": "content/posts/why-do-brides-wear-veils/images/why-do-brides-wear-veils-bride-tulle-veil-golden-light-hero.webp",
+        "source": {
+          "type": "library",
+          "origin": "[[IMAGE NEEDED]] library-index.csv has no rows (header only); no external searches in fast mode",
+          "credit": "[[VERIFY licence]]"
+        },
+        "consent": {
+          "couple": "required"
+        },
+        "alt": "Bride seen from behind in a long sheer tulle veil, lit by soft golden afternoon light",
+        "caption": "Photo: [[VERIFY credit]]",
+        "lens_check": "Not run: no candidate image."
+      },
+      {
+        "slot_id": "heirloom-lace",
+        "placement": "after_h2:4",
+        "purpose": "Victorian and heirloom lace: the detail of fine lace that carries the white veil story into family keeping.",
+        "shot_brief": "Preferred: licensed macro of an antique or heirloom lace veil edge, scalloped floral pattern, soft window light, ivory on ivory, no faces, no brand. No museum, Royal Collection or royal veil photo unless licensed in writing; not a replica of any named royal piece. Fallback only if Nic approves: AI illustrative still life of a folded lace veil on plain linen, no people or place, captioned 'Illustrative image'.",
+        "status": "needed",
+        "file": "content/posts/why-do-brides-wear-veils/images/why-do-brides-wear-veils-heirloom-lace-veil-detail.webp",
+        "source": {
+          "type": "library",
+          "origin": "[[IMAGE NEEDED]] library-index.csv has no rows (header only); no external searches in fast mode; ai_illustrative still life fallback pending Nic approval",
+          "credit": "[[VERIFY licence]]"
+        },
+        "alt": "Close-up of a folded ivory heirloom lace veil with a scalloped floral edge resting on linen",
+        "caption": "Photo: [[VERIFY credit]] (or 'Illustrative image' if the approved AI fallback is used)",
+        "lens_check": "Not run: no candidate image."
+      },
+      {
+        "slot_id": "lifting-the-veil",
+        "placement": "after_h2:7",
+        "purpose": "Lifting the veil: the moment a partner, parent or the bride herself reveals her face at the ceremony.",
+        "shot_brief": "Licensed photo from a consented ceremony: hands gently lifting a blusher veil back over the bride's head, the faces softly visible, natural outdoor or chapel light. Any gender of partner, or a parent. Consent from couple and anyone identifiable. No officiant branding. Never AI (people).",
+        "status": "needed",
+        "file": "content/posts/why-do-brides-wear-veils/images/why-do-brides-wear-veils-lifting-the-veil-ceremony.webp",
+        "source": {
+          "type": "library",
+          "origin": "[[IMAGE NEEDED]] library-index.csv has no rows (header only); no external searches in fast mode",
+          "credit": "[[VERIFY licence]]"
+        },
+        "consent": {
+          "couple": "required",
+          "family": "required if identifiable"
+        },
+        "alt": "Partner gently lifting a sheer blusher veil from a bride's face during an outdoor ceremony",
+        "caption": "Photo: [[VERIFY credit]]",
+        "lens_check": "Not run: no candidate image."
+      },
+      {
+        "slot_id": "blusher-worn-back",
+        "placement": "after_h2:8",
+        "purpose": "Blusher or worn back: how a veil sits when it is worn over the face versus set back from the hairline.",
+        "shot_brief": "Licensed photo, portrait 4:5: a bride with a two-tier veil, blusher folded back over the crown, comb set into a low chignon, soft indoor window light, shot from behind or three-quarter. Consent if face shown. No designer label or salon branding. Never AI (person).",
+        "status": "needed",
+        "file": "content/posts/why-do-brides-wear-veils/images/why-do-brides-wear-veils-blusher-veil-worn-back.webp",
+        "source": {
+          "type": "library",
+          "origin": "[[IMAGE NEEDED]] library-index.csv has no rows (header only); no external searches in fast mode",
+          "credit": "[[VERIFY licence]]"
+        },
+        "consent": {
+          "couple": "required"
+        },
+        "alt": "Bride with a two-tier veil worn back from a low chignon, the blusher folded over her crown",
+        "caption": "Photo: [[VERIFY credit]]",
+        "lens_check": "Not run: no candidate image."
+      },
+      {
+        "slot_id": "coastal-wind",
+        "placement": "after_h2:9",
+        "purpose": "A veil for a destination: the practical reality of wind and light on a coastal or clifftop ceremony.",
+        "shot_brief": "Licensed photo from a consented coastal destination wedding: a long cathedral veil lifting in the sea breeze on a clifftop or beach, sea and sky behind, late light. Location must be verified (register, EXIF or source) and named in the caption only once verified. Never AI (person and real place).",
+        "status": "needed",
+        "file": "content/posts/why-do-brides-wear-veils/images/why-do-brides-wear-veils-veil-wind-coastal-clifftop.webp",
+        "source": {
+          "type": "library",
+          "origin": "[[IMAGE NEEDED]] library-index.csv has no rows (header only); no external searches in fast mode",
+          "credit": "[[VERIFY licence]]"
+        },
+        "consent": {
+          "couple": "required"
+        },
+        "alt": "Long sheer veil lifting in the sea breeze as a bride stands on a coastal clifftop",
+        "caption": "[[VERIFY: place]], [[VERIFY: town]]. Photo: [[VERIFY credit]]",
+        "lens_check": "Not run: no candidate image."
+      },
+      {
+        "slot_id": "no-veil",
+        "placement": "after_h2:10",
+        "purpose": "Choosing not to wear one: a confident, styled bridal look without a veil.",
+        "shot_brief": "Licensed photo from a consented wedding: a bride without a veil, hair styled with fresh flowers or a simple pin, relaxed and confident, outdoor destination light. Consent if identifiable. No designer, florist or salon branding. Never AI (person).",
+        "status": "needed",
+        "file": "content/posts/why-do-brides-wear-veils/images/why-do-brides-wear-veils-bride-without-veil-flowers-hair.webp",
+        "source": {
+          "type": "library",
+          "origin": "[[IMAGE NEEDED]] library-index.csv has no rows (header only); no external searches in fast mode",
+          "credit": "[[VERIFY licence]]"
+        },
+        "consent": {
+          "couple": "required"
+        },
+        "alt": "Smiling bride without a veil, fresh flowers pinned into her loosely styled hair",
+        "caption": "Photo: [[VERIFY credit]]",
+        "lens_check": "Not run: no candidate image."
+      }
+    ],
+    "reference_only": [],
+    "permission_requests": []
+  }
+}
