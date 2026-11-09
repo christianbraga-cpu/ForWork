@@ -7,14 +7,14 @@ round: 3
 
 <!-- IMAGE SLOT featured: Licensed photo from a consented destination wedding, wide 3:2 with headroom for a title crop: a bride seen from behind or in soft profile, a fine tulle veil falling over her shoulders, late afternoon golden light, ceremony setting softly out of focus. Face not required; consent if identifiable. No designer label, no venue signage. Never AI (person). -->
 
-Why do brides wear veils? Brides wear veils for history, faith and family, and for the moment it is lifted. The veil has been part of bridal dress since Roman brides wore a great flame-coloured one, and it has changed shape and purpose many times since. <!-- fact_01 -->
+Why do brides wear veils? Brides wear veils for history, faith and family, and for the moment it is lifted. Roman brides wore a great flame-coloured veil, and the veil has stayed part of bridal dress since, changing in look and meaning along the way. <!-- fact_01 --> <!-- fact_03 -->
 
 This guide follows the history of the wedding veil from Rome to Queen Victoria's lace, through its place in faith traditions, and on to the choices that matter now: who lifts it, whether to wear a family veil, and how a veil behaves on a windy clifftop. For cuts and lengths, see our guide to [wedding veil styles and lengths](/style-advice/wedding-veil), and for the wider picture, our guide to [wedding traditions](/expert-advice/wedding-traditions).
 
 ## Key takeaways
 
 - Brides wear veils for history, faith and family, and for the moment it is lifted, a custom that reaches back to ancient Rome. <!-- fact_01 -->
-- Queen Victoria wore her Honiton lace veil in 1840 thrown back over a wreath of orange blossom, not over her face, and face-covering veils came later. <!-- fact_07 --> <!-- fact_106 -->
+- Queen Victoria wore her Honiton lace veil in 1840 thrown back over a wreath of orange blossom, not over her face, in the Victorian way of wearing lace at the back of the head. <!-- fact_07 --> <!-- fact_106 -->
 - At a Jewish wedding, the badeken is its own moment before the chupah, when the groom covers the bride's face with the veil. <!-- fact_100 -->
 - In English folklore, a veil borrowed from a happily married bride is counted lucky, which makes a family veil both something borrowed and an heirloom. <!-- fact_11 -->
 
@@ -30,7 +30,7 @@ That is why a veil sits so naturally within [something old, something new](/expe
 
 ## 2. The veil in ancient Rome
 
-A Roman bride's look was set by ritual: hair in six locks bound with woollen fillets, a straight white tunic tied at the waist with a "knot of Hercules", and over it all a great flame-coloured veil. <!-- fact_01 --> Her husband would untie the knot later. <!-- fact_02 --> The first bridal veil, in other words, was not white.
+A Roman bride's look was set by ritual: hair in six locks bound with woollen fillets, a straight white tunic tied at the waist with a "knot of Hercules", and over it all a great flame-coloured veil. <!-- fact_01 --> Her husband would untie the knot later. <!-- fact_02 --> The Roman bridal veil, in other words, was not white.
 
 ## 3. Medieval and religious veiling
 
@@ -38,13 +38,13 @@ The veil outlived Rome, changing in look and meaning along the way. <!-- fact_03
 
 ## 4. Queen Victoria and the white lace veil
 
-The bridal look most of us picture today owes much to one wedding. In 1840 Queen Victoria wore white satin trimmed with orange blossom, a wreath of the same flowers, and a veil of Honiton lace thrown over the wreath, not over her face. <!-- fact_07 --> Earlier royal brides had worn white, but often heavy with gold or silver embroidery; her simple ivory satin set the precedent. <!-- fact_08 --> By 1800 white or cream was already usual for a bride, a colour that implied purity, cleanliness and social refinement. <!-- fact_08 -->
+The bridal look most of us picture today owes much to one wedding. In 1840 Queen Victoria wore white satin trimmed with orange blossom, a wreath of the same flowers, and a veil of Honiton lace thrown over the wreath, not over her face. <!-- fact_07 --> Earlier royal brides had worn white, but often heavy with gold or silver embroidery; her simple ivory satin set a royal precedent. <!-- fact_08 --> By 1800 white or cream was already usual for a bride, a colour that implied purity, cleanliness and social refinement. <!-- fact_08 -->
 
 ### Lace, worn at the back
 
 Victoria chose English lace to promote British manufacture, and encouraged other brides to follow. <!-- fact_09 --> A Devon Honiton veil of about 1850 carries a pattern of pea-pods, symbols of fruitfulness and happiness, and its bride would have worn it at the back of her head; veils over the face came later. <!-- fact_09 --> <!-- fact_106 -->
 
-That is the Victorian veil in one line: long, lace, worn back from a crown of flowers.
+That is the Victorian veil in one line: lace, worn back from a crown of flowers.
 
 ### Veils kept in the family
 
@@ -73,6 +73,10 @@ If you are planning a Jewish ceremony overseas, give the badeken its own place i
 The bridal veil has been part of the Christian wedding since the early Christian centuries. <!-- fact_04 --> In many church weddings today, the bride walks in with her face veiled and the veil is lifted at the altar. In others, it is worn back throughout. Ask your priest or minister whether the church has a custom of its own, particularly for a Catholic or Orthodox ceremony abroad.
 
 <!-- CTA: primary -->
+**Read the free magazine**
+Free to read, whenever you are ready.
+[Read the free magazine](/magazine?utm_source=blog&utm_medium=content&utm_campaign=why-do-brides-wear-veils&utm_content=primary)
+<!-- /CTA: primary -->
 
 ## 6. Who lifts the veil, and when
 
@@ -95,9 +99,9 @@ The blusher is the short layer worn forward over the face, ready to be lifted du
 
 ### Forward or back
 
-Many brides walk in with the blusher down and lift it, or have it lifted, at the altar. Others fold it back over the crown from the start, so it adds volume behind the head without ever covering the face. Both are right. The Victorian veil was worn back, not over the face; face-covering veils came later. <!-- fact_106 -->
+Many brides walk in with the blusher down and lift it, or have it lifted, at the altar. Others fold it back over the crown from the start, so it adds volume behind the head without ever covering the face. Both are right. A Victorian Honiton veil of about 1850 was worn at the back of the head, not over the face. <!-- fact_106 -->
 
-If the veil will be folded forward, check which side the pattern sits on. Some period lace veils were designed so the pattern reads on the outside when folded over, and photographs catch both the back and the front. <!-- fact_105 -->
+If the veil will be folded forward, check which side the pattern sits on. A Honiton lace veil worn in 1865 was designed so its pattern reads on the outside when folded over, and photographs catch both the back and the front. <!-- fact_105 -->
 
 ### Wearing a family veil
 
@@ -128,7 +132,7 @@ A veil that floats softly down a chapel aisle behaves very differently on a clif
 
 ### Travelling with your veil
 
-Keep the veil with you in your hand luggage, folded in tissue. As at November 2026, standard travel insurance typically doesn't cover items left unattended or stolen from checked baggage. <!-- fact_110 --> Policies often limit each item's value, so insure an heirloom veil with the rest of your valuables and check the limit for it. <!-- fact_109 --> [Smartraveller](https://www.smartraveller.gov.au/travel-essentials/travel-insurance) has the current guidance.
+Keep the veil with you in your hand luggage, folded in tissue. As at August 2026, standard travel insurance typically doesn't cover items left unattended or stolen from checked baggage. <!-- fact_110 --> Policies often limit each item's value, so check the item limit and whether an heirloom veil needs extra cover for valuables. <!-- fact_109 --> [Smartraveller](https://www.smartraveller.gov.au/travel-essentials/travel-insurance) has the current guidance.
 
 If the veil belongs to someone else, ask whether their own insurance covers it overseas before it leaves home.
 
@@ -154,7 +158,7 @@ If you are torn, try one on at your fitting. Many brides know at once.
 
 ### Why does the veil cover the bride's face?
 
-It depends on the tradition. At a Jewish wedding, the groom covers the bride's face at the badeken, and it stays veiled through the chupah, giving her privacy at a holy time. <!-- fact_101 --> In many other weddings, a blusher is worn forward so it can be lifted during the ceremony. The Victorian veil was worn back, not over the face. <!-- fact_106 -->
+It depends on the tradition. At a Jewish wedding, the groom covers the bride's face at the badeken, and it stays veiled through the chupah, giving her privacy at a holy time. <!-- fact_101 --> In many other weddings, a blusher is worn forward so it can be lifted during the ceremony. A Victorian Honiton veil of about 1850 was worn at the back of the head instead. <!-- fact_106 -->
 
 ### Who takes the veil off the bride's face?
 
@@ -166,7 +170,7 @@ Yes, and a veil borrowed from a happily married bride has long been counted luck
 
 ### When do you take the veil off?
 
-Most brides wear it for the ceremony and portraits, then take it off for the reception.
+Many brides wear it for the ceremony and portraits, then take it off for the reception.
 
 ### Is a wedding veil religious?
 
@@ -178,6 +182,6 @@ In Jewish tradition, it shows that the groom values the bride's inner beauty, no
 
 ## Planning your wedding with us
 
-For dresses, veils and destinations worth the journey, the [Wedded Wonderland digital magazine](/magazine?utm_source=blog&utm_medium=content&utm_campaign=why-do-brides-wear-veils&utm_content=primary) is free to read. When you are ready to talk through where to marry, and how to bring a family veil with you, tell us your date, your guest list and the ceremony you have in mind.
+For dresses, veils and destinations worth the journey, the [Wedded Wonderland digital magazine](/magazine?utm_source=blog&utm_medium=content&utm_campaign=why-do-brides-wear-veils&utm_content=magnet) is free to read. When you are ready to talk through where to marry, and how to bring a family veil with you, tell us your date, your guest list and the ceremony you have in mind.
 
 You will work with one Wedded Advisor, your single point of contact from the first conversation to the wedding day. Your advisor works in your time zone and quotes in AUD. The fee is agreed in writing before any work begins, and your advisor confirms the inclusions in writing before you commit. [Speak with a Wedded Advisor](/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=why-do-brides-wear-veils&utm_content=closing).
