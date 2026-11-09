@@ -12,3 +12,4 @@
 02:12 07b icp-panel-chair revise; enquire 2.0; must_fix: wedding-morning checklist (questions); should_fix: wording, close, trim 1841 detail, Smartraveller credit, old/new in takeaways; final pass launched
 02:13 08 luxury-writer complete ~2,457 words; 0 VERIFY; scan clean; 8b+CRO+distribution launched
 02:14 10 distribution complete 3 pins, 8-slide carousel, newsletter
+02:14 08b editor pass_with_edits 4.14; 7 blocking fixes (claims widened beyond facts; 'oldest choice'; 'most couples') + 2 CRO changes applied; cms-publisher launched

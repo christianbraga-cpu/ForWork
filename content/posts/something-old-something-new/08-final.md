@@ -15,7 +15,7 @@ This guide gives the rhyme as it was first recorded, the sixpence line that join
 
 - The rhyme was first recorded in 1883, as the saying of "some Lancashire friends", and the sixpence line appears in print with it by 1946.
 - Something borrowed is lucky when a happily married bride has already worn it, and blue has long been linked with loyalty and true love.
-- Something old and something new are your own choice: most couples choose a family heirloom and a piece made or bought for the wedding.
+- Something old and something new are your own choice: many couples choose a family heirloom and a piece made or bought for the wedding.
 - Carry heirlooms, borrowed pieces and the sixpence in your hand luggage, photograph them before you fly, and check your travel insurance's per-item limits.
 
 ## 1. The full rhyme: something old, something new, something borrowed, something blue
@@ -25,7 +25,7 @@ The rhyme in its earliest recorded form has just two lines:
 > Something old, something new,
 > Something borrowed, and something blue.
 
-That is how it was written down in 1883, as the saying of "some Lancashire friends". <!-- fact_01 --> It is now the best-known wedding rhyme in English. <!-- fact_02 -->
+That is how it was written down in 1883, as the saying of "some Lancashire friends". <!-- fact_01 --> It is the best-known wedding rhyme today. <!-- fact_02 -->
 
 ### The sixpence line
 
@@ -46,7 +46,7 @@ Some couples say "her shoe", others "your shoe", and many now drop the pronoun a
 
 The rhyme was [first recorded](https://www.oxfordreference.com/display/10.1093/acref/9780192829160.001.0001/acref-9780192829160-e-165) in 1883, in a collection of Shropshire folklore, though the friends who knew it came from Lancashire. <!-- fact_01 -->
 
-Something borrowed is older than the rhyme itself: by 1866, a bride in England's northern counties was expected to wear something borrowed. <!-- fact_05 --> The custom held well into the twentieth century, and by 1957 the four items were "almost always worn, even by the most sophisticated brides". <!-- fact_04 -->
+Something borrowed appears in print even earlier: by 1866, a bride in England's northern counties was expected to wear something borrowed. <!-- fact_05 --> The custom held well into the twentieth century, and by 1957 the four items were "almost always worn, even by the most sophisticated brides". <!-- fact_04 -->
 
 ### The meaning of something old, something new, something borrowed and something blue
 
@@ -54,7 +54,7 @@ Something borrowed carries the clearest meaning. It has long been thought lucky 
 
 Blue is linked with loyalty and true love, and hence is lucky for brides. <!-- fact_08 --> The link rests on the rhyme of blue with true, noticed from the Middle Ages onwards, and Chaucer links blue with "trouthe", or faithfulness. <!-- fact_08 -->
 
-Something old and something new are where couples make the rhyme their own. Most choose something old that already belongs to the family, and something new made or bought for this wedding. The sections below show how couples choose each one well.
+Something old and something new are where couples make the rhyme their own. Many choose something old that already belongs to the family, and something new made or bought for this wedding. The sections below show how couples choose each one well.
 
 ## 3. Something old: heirlooms with a story
 
@@ -116,12 +116,16 @@ Something blue ideas for a wedding overseas:
 - **A sapphire**, as earrings, a pendant or a stone set into a band.
 - **A pale blue silk ribbon** wrapped around the bouquet stems.
 - **Blue soles or blue lining** in shoes.
-- **A blue garter**, the oldest choice of all.
+- **A blue garter**, the classic choice.
 - **A small blue flower**, such as cornflower or forget-me-not, tucked into the bouquet or a buttonhole.
 
 For a destination wedding, choose blue that survives a long-haul flight. Stitched initials and a sapphire need no care at all. A fresh flower depends on what grows where you are marrying, so ask your florist early.
 
 <!-- CTA: primary -->
+**Read the free magazine**
+Free to read, whenever you are ready.
+[Read the free magazine](/magazine?utm_source=blog&utm_medium=content&utm_campaign=something-old-something-new&utm_content=primary)
+<!-- /CTA: primary -->
 
 ## 7. A sixpence in your shoe
 
@@ -172,7 +176,7 @@ If you are still choosing where to marry, start with how to [plan your destinati
 
 ### What does something old, something new, something borrowed, something blue mean?
 
-Something borrowed is lucky when it has been worn by a happily married bride. <!-- fact_06 --> Blue stands for loyalty and true love. <!-- fact_08 --> Something old and something new are personal choices: most couples pick a family heirloom and a piece made or bought for the wedding.
+Something borrowed is lucky when it has been worn by a happily married bride. <!-- fact_06 --> Blue stands for loyalty and true love. <!-- fact_08 --> Something old and something new are personal choices: many couples pick a family heirloom and a piece made or bought for the wedding.
 
 ### Who gives the bride something old, something new, something borrowed and something blue?
 
@@ -192,10 +196,10 @@ Yes. Heirloom cufflinks, a borrowed tie pin, a new watch or blue initials stitch
 
 ### What counts as something blue?
 
-Anything blue you wear or carry. A blue garter is the oldest choice <!-- fact_03 -->, and a sapphire, blue stitching, a ribbon on the bouquet or blue shoe soles all work.
+Anything blue you wear or carry. A blue garter is the classic choice <!-- fact_03 -->, and a sapphire, blue stitching, a ribbon on the bouquet or blue shoe soles all work.
 
 ## Planning your wedding with us
 
-For more ideas on dresses, rings and destinations, read the [Wedded Wonderland digital magazine](/magazine?utm_source=blog&utm_medium=content&utm_campaign=something-old-something-new&utm_content=primary). When you are ready to talk through where to marry and how to bring your family pieces with you, tell us your date, your guest list and the family pieces you plan to bring.
+For dresses, rings and destinations worth the journey, the [Wedded Wonderland digital magazine](/magazine?utm_source=blog&utm_medium=content&utm_campaign=something-old-something-new&utm_content=magnet) is free to read. When you are ready to talk through where to marry and how to bring your family pieces with you, tell us your date, your guest list and the family pieces you plan to bring.
 
 You will work with one Wedded Advisor, your single point of contact from the first conversation to the wedding day. The fee is agreed in writing before any work begins, and your advisor confirms the inclusions in writing before you commit. [Speak with a Wedded Advisor](/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=something-old-something-new&utm_content=closing).
