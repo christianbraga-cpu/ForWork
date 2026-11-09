@@ -26,7 +26,7 @@ The editor searches for these (case-insensitive). **Banned** phrases must be rem
 - no reliable source, no reputable source, no source we, our research, in our research
 - across the internet, you will often read, you may have read, you will sometimes read, many lists
 - we say it is, we leave its meaning, we have been plain, says plainly, is careful about what is documented
-- britannica describes, in britannica's account, the v&a holds, which it calls, the study records, according to britannica
+- britannica describes, in britannica's account, the v&a holds, which it calls, the study records, according to britannica, has the fuller picture, the fuller picture
 - it is often told that, as it is often told, myths worth, the old version, earlier versions of this page, so we have not printed
 
 ## Flagged (needs a reason)
