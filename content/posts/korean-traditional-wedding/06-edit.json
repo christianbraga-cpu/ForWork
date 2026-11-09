@@ -1,0 +1,359 @@
+{
+ "agent": "editor",
+ "task_id": "korean-traditional-wedding",
+ "stage": "06",
+ "status": "complete",
+ "round": 1,
+ "inputs_used": [
+  "CLAUDE.md",
+  "content/posts/korean-traditional-wedding/00-input.json",
+  "01-brief.json",
+  "02-seo.json",
+  "03-source-pack.json",
+  "05-draft.md",
+  "content-system/brand/voice-guide.md",
+  "content-system/brand/brand-facts.md",
+  "content-system/rubrics/editor-rubric.md",
+  "content-system/rubrics/qa-gates.md",
+  "content-system/seo/link-map.csv",
+  "content-system/schemas/06-edit.schema.json",
+  "content/posts/nigerian-wedding-traditions/06-edit.json (format model)"
+ ],
+ "self_qa": {
+  "checks": [
+   {
+    "check": "scan_copy.py run and results reflected",
+    "pass": true,
+    "note": "0 banned, 0 flagged, 0 dashes; 10 overlaps with smartraveller.md (official source, legal wording kept close on purpose; dual-nationality line paraphrased)"
+   },
+   {
+    "check": "Every fact marker logged against the source pack",
+    "pass": true,
+    "note": "22 fact ids, all present in 03-source-pack.json"
+   },
+   {
+    "check": "Every edit 'old' occurs exactly once (applied in order)",
+    "pass": true,
+    "note": "verified by script"
+   },
+   {
+    "check": "Authority rule: no research talk, myths, per-line credits, hedge stacking; 0 'often told'",
+    "pass": true,
+    "note": "after edits (Smartraveller 'The advice notes' credit cut; 'At many' stacking trimmed)"
+   },
+   {
+    "check": "No meaning or origin as fact without a marker (jujubes, chestnuts, carrying the bride, ham, cup)",
+    "pass": true,
+    "note": "after 'seal the marriage' cut; geese meaning and origin carry fact_02/fact_03 with V&A link"
+   },
+   {
+    "check": "V&A robes not presented as bridal",
+    "pass": true,
+    "note": "after wonsam edit"
+   },
+   {
+    "check": "Legal lines match Smartraveller and Embassy facts; no UNESCO claims; no amounts",
+    "pass": true
+   },
+   {
+    "check": "4 one-sentence takeaways; no prices, vendors, venues (palaces as places only), 'last dance', Advisor paperwork claims, em dashes; Australian English",
+    "pass": true
+   },
+   {
+    "check": "Internal links in 02-seo.json or link-map.csv, none noindex; external links not competitors",
+    "pass": true,
+    "note": "Smartraveller and Embassy URLs follow the live source-pack URLs, not the shorter 02-seo ones"
+   },
+   {
+    "check": "Decision consistent with scores",
+    "pass": true,
+    "note": "avg 4.14, no criterion < 3, no blocking issues, small edits"
+   }
+  ],
+  "confidence": 0.85
+ },
+ "next_agent": [
+  "luxury-writer"
+ ],
+ "payload": {
+  "draft_file": "content/posts/korean-traditional-wedding/05-draft.md",
+  "rubric": {
+   "voice": 4,
+   "expertise": 4,
+   "accuracy": 4,
+   "seo_fit": 4,
+   "commercial_link": 4,
+   "structure": 4,
+   "brief_fit": 5
+  },
+  "average": 4.14,
+  "blocking_issues": [],
+  "decision": "pass_with_edits",
+  "edits": [
+   {
+    "location": "Intro, paragraph 2",
+    "issue": "SEO: carries the 'korean wedding traditions' query once the section 1 heading is de-stuffed.",
+    "old": "This guide walks through the customs in the order many families live them today,",
+    "new": "This guide walks through Korean wedding traditions in the order many families live them today,",
+    "fix": "Replace exactly: \"This guide walks through the customs in the order many families live them today,\" with: \"This guide walks through Korean wedding traditions in the order many families live them today,\""
+   },
+   {
+    "location": "Key takeaways, bullet 3",
+    "issue": "MUST-FIX (accuracy). Chukuigeum is given by guests, not settled between families; 'before any amounts are discussed' invites amounts talk.",
+    "old": "- Gifts such as the ham, yedan, yemul and chukuigeum are settled between families, so agree what you will keep before any amounts are discussed.",
+    "new": "- The ham, yedan and yemul are gifts between the two families, so agree early which exchanges you will keep and how simply.",
+    "fix": "Replace exactly: \"- Gifts such as the ham, yedan, yemul and chukuigeum are settled between families, so agree what you will keep before any amounts are discussed.\" with: \"- The ham, yedan and yemul are gifts between the two families, so agree early which exchanges you will keep and how simply.\""
+   },
+   {
+    "location": "Framing line after takeaways",
+    "issue": "Repeats takeaway 1 (brief: say the modern ceremony plus pyebaek once).",
+    "old": "Customs vary by family, region and faith, and no two Korean weddings run exactly alike. Many couples hold a modern ceremony and a pyebaek after it, and some families add or leave out the steps below.",
+    "new": "Customs vary by family, region and faith, and some families add or leave out the steps below.",
+    "fix": "Replace exactly: \"Customs vary by family, region and faith, and no two Korean weddings run exactly alike. Many couples hold a modern ceremony and a pyebaek after it, and some families add or leave out the steps below.\" with: \"Customs vary by family, region and faith, and some families add or leave out the steps below.\""
+   },
+   {
+    "location": "H2 section 1",
+    "issue": "MUST-FIX. Keyword-stuffed heading ('opens many Korean wedding traditions'). Use the 02-seo outline wording; query now covered in the intro.",
+    "old": "## 1. The ham: the gift box that opens many Korean wedding traditions",
+    "new": "## 1. The ham: the gift box carried to the bride's family",
+    "fix": "Replace exactly: \"## 1. The ham: the gift box that opens many Korean wedding traditions\" with: \"## 1. The ham: the gift box carried to the bride's family\""
+   },
+   {
+    "location": "Section 3, celebrity link",
+    "issue": "Awkward lead-in ('how public weddings look').",
+    "old": "For how public weddings look, see our round-up of",
+    "new": "For a glimpse of recent celebrity weddings, see our round-up of",
+    "fix": "Replace exactly: \"For how public weddings look, see our round-up of\" with: \"For a glimpse of recent celebrity weddings, see our round-up of\""
+   },
+   {
+    "location": "Section 4, intro to steps",
+    "issue": "Hedge stacking ('At many ... today' repeats through the piece).",
+    "old": "At many traditional ceremonies today, the order runs like this:",
+    "new": "A traditional ceremony usually runs in this order:",
+    "fix": "Replace exactly: \"At many traditional ceremonies today, the order runs like this:\" with: \"A traditional ceremony usually runs in this order:\""
+   },
+   {
+    "location": "Section 4, step 5",
+    "issue": "Function stated as fact without a marker ('to seal the marriage').",
+    "old": "then exchange cups and drink again to seal the marriage.",
+    "new": "then exchange cups and drink again.",
+    "fix": "Replace exactly: \"then exchange cups and drink again to seal the marriage.\" with: \"then exchange cups and drink again.\""
+   },
+   {
+    "location": "Section 5, V&A link",
+    "issue": "'Painted' is not in fact_01 to fact_03.",
+    "old": "A painted pair of [Korean wooden wedding geese]",
+    "new": "A carved pair of [Korean wooden wedding geese]",
+    "fix": "Replace exactly: \"A painted pair of [Korean wooden wedding geese]\" with: \"A carved pair of [Korean wooden wedding geese]\""
+   },
+   {
+    "location": "Section 6, bride H3 body (wonsam)",
+    "issue": "MUST-FIX. fact_06/fact_07 describe women's ceremonial robes, not bridal robes; under 'The bride' the V&A examples read as bridal. Make bridal use living practice and keep the examples as ceremonial robes.",
+    "old": "The wonsam (원삼) is a woman's ceremonial silk robe. One example,",
+    "new": "At many traditional ceremonies, the bride wears one of two women's ceremonial robes. The wonsam (원삼) is a silk robe; one example,",
+    "fix": "Replace exactly: \"The wonsam (원삼) is a woman's ceremonial silk robe. One example,\" with: \"At many traditional ceremonies, the bride wears one of two women's ceremonial robes. The wonsam (원삼) is a silk robe; one example,\""
+   },
+   {
+    "location": "Section 6, hwarot",
+    "issue": "'Grander' is an unsourced comparison; fact_07 says ceremonial robe ensemble.",
+    "old": "The hwarot (활옷) is the grander ensemble.",
+    "new": "The hwarot (활옷) is a fuller ceremonial ensemble.",
+    "fix": "Replace exactly: \"The hwarot (활옷) is the grander ensemble.\" with: \"The hwarot (활옷) is a fuller ceremonial ensemble.\""
+   },
+   {
+    "location": "Section 6, jokduri",
+    "issue": "Hedge stacking: third 'At many traditional ceremonies' in the section after the edit above.",
+    "old": "At many traditional ceremonies, the bride also wears a jokduri,",
+    "new": "With either robe, the bride often wears a jokduri,",
+    "fix": "Replace exactly: \"At many traditional ceremonies, the bride also wears a jokduri,\" with: \"With either robe, the bride often wears a jokduri,\""
+   },
+   {
+    "location": "Section 9, chukuigeum",
+    "issue": "Absolute claim ('never').",
+    "old": "amounts are never discussed openly.",
+    "new": "amounts are not discussed openly.",
+    "fix": "Replace exactly: \"amounts are never discussed openly.\" with: \"amounts are not discussed openly.\""
+   },
+   {
+    "location": "Section 10, Smartraveller",
+    "issue": "MUST-FIX (authority rule). Second per-line credit to the same source ('The advice notes that'); state plainly, source is already named and linked.",
+    "old": "The advice notes that the two Koreas remain technically at war, that low-level clashes occur across the DMZ and the Northern Limit Line, and that tensions can rise with little warning.",
+    "new": "The two Koreas remain technically at war, low-level clashes occur across the DMZ and the Northern Limit Line, and tensions can rise with little warning.",
+    "fix": "Replace exactly: \"The advice notes that the two Koreas remain technically at war, that low-level clashes occur across the DMZ and the Northern Limit Line, and that tensions can rise with little warning.\" with: \"The two Koreas remain technically at war, low-level clashes occur across the DMZ and the Northern Limit Line, and tensions can rise with little warning.\""
+   },
+   {
+    "location": "Section 10, dual nationality",
+    "issue": "Near-verbatim overlap with smartraveller.md (scan). Paraphrase.",
+    "old": "Dual nationality is recognised only in limited circumstances, and male Australian-Korean dual nationals of military age may need to complete military service.",
+    "new": "South Korea recognises dual nationality only in limited circumstances, and men of military age who hold Australian and Korean citizenship may be required to do military service.",
+    "fix": "Replace exactly: \"Dual nationality is recognised only in limited circumstances, and male Australian-Korean dual nationals of military age may need to complete military service.\" with: \"South Korea recognises dual nationality only in limited circumstances, and men of military age who hold Australian and Korean citizenship may be required to do military service.\""
+   },
+   {
+    "location": "Section 10, Advisor paragraph",
+    "issue": "Fee and inclusions sentence is repeated word for word in the closing section; keep it once (closing).",
+    "old": " They work in your time zone and quote in AUD, the fee is agreed in writing before any work begins, and your advisor confirms the inclusions in writing before you commit.",
+    "new": " They work in your time zone and quote in AUD.",
+    "fix": "Replace exactly: \" They work in your time zone and quote in AUD, the fee is agreed in writing before any work begins, and your advisor confirms the inclusions in writing before you commit.\" with: \" They work in your time zone and quote in AUD.\""
+   },
+   {
+    "location": "FAQ, bridesmaids",
+    "issue": "Duplicates the section 3 H3 word for word in substance; cut the FAQ copy.",
+    "old": "### Do Korean weddings have bridesmaids?\n\nNot usually. Friends help the bride and often sing or speak during the ceremony.\n\n",
+    "new": "",
+    "fix": "Delete exactly: \"### Do Korean weddings have bridesmaids?\n\nNot usually. Friends help the bride and often sing or speak during the ceremony.\n\n\""
+   }
+  ],
+  "fact_check_log": [
+   {
+    "claim": "In a traditional Korean wedding the groom brings wooden geese to the bride's house in a ritual called jeonallye; live geese were used at first, and wooden geese",
+    "fact_id": "fact_01",
+    "status": "confirmed"
+   },
+   {
+    "claim": "The V&A states that geese are a symbol of loyalty and fidelity and that wooden geese were used as a sign of the groom's everlasting love towards his bride.",
+    "fact_id": "fact_02",
+    "status": "confirmed"
+   },
+   {
+    "claim": "The V&A records the Korean wooden wedding duck or goose as 'kirogi' (older romanisation; gireogi in Revised Romanisation is not given by the source) and says pr",
+    "fact_id": "fact_03",
+    "status": "confirmed"
+   },
+   {
+    "claim": "Britannica says Western dress has supplanted hanbok almost everywhere, but even urban dwellers still commonly wear it on special occasions including weddings, a",
+    "fact_id": "fact_04",
+    "status": "confirmed"
+   },
+   {
+    "claim": "Britannica names marriage among the most important passages in a person's life in traditional Korean family life, alongside a baby's first 100 days and the 61st",
+    "fact_id": "fact_05",
+    "status": "confirmed"
+   },
+   {
+    "claim": "The V&A records a wonsam (원삼) as a woman's ceremonial silk robe from Korea, about 1850 to 1950, with a green body, red ribbons and multi-coloured sleeves in red",
+    "fact_id": "fact_06",
+    "status": "confirmed"
+   },
+   {
+    "claim": "The V&A records a woman's ceremonial robe ensemble titled Hwarot (활옷), made in Korea in the 1980s, comprising a red silk wonsam (robe) with flower-motif embroid",
+    "fact_id": "fact_07",
+    "status": "confirmed"
+   },
+   {
+    "claim": "Britannica describes women's formal hanbok as several layers of undergarments under a long, billowing skirt and short jacket closed with a long tie, and men's a",
+    "fact_id": "fact_08",
+    "status": "confirmed"
+   },
+   {
+    "claim": "Smartraveller 'Getting married overseas' (last updated 18/08/2026): you can't register an overseas marriage in Australia, but in most cases it is legally recogn",
+    "fact_id": "fact_103",
+    "status": "confirmed"
+   },
+   {
+    "claim": "Smartraveller 'Getting married overseas': some countries ask for proof you are free to marry, most commonly a CNI or registry certificates; ask the destination'",
+    "fact_id": "fact_104",
+    "status": "confirmed"
+   },
+   {
+    "claim": "Smartraveller CNI page (last updated 01/10/2026): DFAT issues CNIs through Australian Passport Offices, embassies and consulates overseas, and by mail; fees app",
+    "fact_id": "fact_105",
+    "status": "confirmed"
+   },
+   {
+    "claim": "Australian Embassy Seoul notarial page is live (title 'Notarial Services'). It issues a Certificate of No Impediment to Marriage (CNI), described as a general s",
+    "fact_id": "fact_106",
+    "status": "confirmed"
+   },
+   {
+    "claim": "Embassy Seoul CNI requirements: originals only; applicant brings the completed CNI form (unsigned, signed before the consular officer), Australian passport, and",
+    "fact_id": "fact_107",
+    "status": "confirmed"
+   },
+   {
+    "claim": "Embassy Seoul: notarial services by appointment or by mail; fees apply for all services (card only; no amounts recorded); the embassy cannot witness signatures ",
+    "fact_id": "fact_108",
+    "status": "confirmed"
+   },
+   {
+    "claim": "Smartraveller South Korea (updated 12 October 2026, still current at 09 November 2026): overall advice 'Exercise normal safety precautions in South Korea'; no h",
+    "fact_id": "fact_109",
+    "status": "confirmed"
+   },
+   {
+    "claim": "Smartraveller: the DMZ is mentioned under Regional threats (technically still at war; low-level clashes across the DMZ and Northern Limit Line; tensions can inc",
+    "fact_id": "fact_110",
+    "status": "confirmed"
+   },
+   {
+    "claim": "Smartraveller weather: rainy/monsoon season usually June to August; typhoon season usually August to September; heatwaves between June and September; yellow dus",
+    "fact_id": "fact_111",
+    "status": "confirmed"
+   },
+   {
+    "claim": "Smartraveller entry (as at November 2026): Australian passport holders can visit as tourists for up to 90 days without a K-ETA; exempt from K-ETA until 31 Decem",
+    "fact_id": "fact_112",
+    "status": "confirmed"
+   },
+   {
+    "claim": "Smartraveller: same-sex relationships are not criminalised but are not legally recognised in South Korea.",
+    "fact_id": "fact_113",
+    "status": "confirmed"
+   },
+   {
+    "claim": "Smartraveller: dual nationality recognised only in limited circumstances; male Australian-Korean dual nationals of military age may need to complete military se",
+    "fact_id": "fact_114",
+    "status": "confirmed"
+   },
+   {
+    "claim": "Smartraveller: public officials (including teachers, journalists and public servants) and their spouses cannot accept meals, gifts or other benefits above set l",
+    "fact_id": "fact_115",
+    "status": "confirmed"
+   },
+   {
+    "claim": "Smartraveller: avoid demonstrations and large public gatherings, common in Seoul especially on weekends and public holidays; illegal to photograph military zone",
+    "fact_id": "fact_116",
+    "status": "confirmed"
+   },
+   {
+    "claim": "Living-practice lines (ham delivery, yedan/yemul, wedding hall format, ceremony steps, jokduri, samogwandae, pyebaek, jujubes and chestnuts toss, carrying the bride, guest dress) written as practice, no meaning or origin stated",
+    "status": "confirmed"
+   },
+   {
+    "claim": "Wonsam/hwarot as bridal robes (under 'The bride')",
+    "fact_id": "fact_06",
+    "status": "unsupported"
+   },
+   {
+    "claim": "Chukuigeum 'settled between families' (takeaway 3)",
+    "status": "removed"
+   },
+   {
+    "claim": "Ceremony cup 'to seal the marriage'",
+    "status": "removed"
+   },
+   {
+    "claim": "Geese pair 'painted'",
+    "fact_id": "fact_01",
+    "status": "removed"
+   }
+  ],
+  "compliance": {
+   "pass": true,
+   "issues": [
+    "No prices or amounts; no vendor or venue names; palaces and hanok villages named only as places; Advisor claims within brand-facts.md; legal and registration left with the couple."
+   ]
+  },
+  "originality": {
+   "pass": true,
+   "matches": [
+    "smartraveller.md: 10 short overlaps on official travel and legal wording (acceptable, government source; one paraphrased)"
+   ]
+  },
+  "banned_phrases_found": [],
+  "needs_signoff": []
+ },
+ "assumptions": [
+  "/expert-advice/wedding-traditions is marked 'draft' in link-map.csv; publish order must put it live first or the link is cut at CMS stage."
+ ],
+ "open_questions": []
+}
