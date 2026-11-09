@@ -5,3 +5,5 @@
 03:20 03 planner-sme batch A complete 12 facts (Oxford Reference, Britannica, V&A: Roman flame-coloured veil, early Christian and nun's veiling, medieval wimple, Victoria's 1840 Honiton lace worn back; folklore: luck from borrowing a happy bride's veil); other royal veils unsourced (left out); waiting on batch B
 03:20 03 planner-sme batch B complete 12 facts (Chabad.org badeken; V&A veils 1850s-1902 worn back, kept in the family, orange blossom; Smartraveller travel reused); Hindu and Muslim veiling unsourced (left out); merged; writer launched
 03:22 05 luxury-writer complete ~2,730 words; 0 VERIFY; first draft sent; editor + 5 readers launched
+03:23 07 icp-reader funding_parent complete; no must-fix
+03:23 07 icp-reader search_visitor complete; no must-fix (first takeaway should answer why; shorter Rome/medieval)
