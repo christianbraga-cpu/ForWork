@@ -7,3 +7,4 @@
 02:06 05 luxury-writer complete ~2,430 words; 0 VERIFY; 0 research talk; first draft sent; editor + 5 readers launched
 02:07 07 icp-reader funding_parent complete; no must-fix
 02:07 07 icp-reader sceptic, search_visitor, uhnw complete; no must-fix (sources visible in body; insurance section reads consumer-level; blue ideas earlier); waiting on planner_couple, editor
+02:08 07 icp-reader planner_couple complete; no must-fix; waiting on editor
