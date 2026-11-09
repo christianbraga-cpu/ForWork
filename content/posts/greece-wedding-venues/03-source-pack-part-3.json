@@ -1,0 +1,428 @@
+{
+  "agent": "planner-sme",
+  "task_id": "greece-wedding-venues",
+  "stage": "03",
+  "status": "complete",
+  "round": 1,
+  "inputs_used": [
+    "CLAUDE.md",
+    "content/posts/greece-wedding-venues/01-brief.json",
+    "content/posts/greece-wedding-venues/03-source-pack.json",
+    "content/posts/greece-wedding-venues/03-source-pack-part-1.json (format model)",
+    "content/posts/greece-wedding-venues/03-source-pack-part-2.json",
+    "content-system/schemas/03-source-pack.schema.json",
+    "Apify web-fetch 2026-11-09 of official venue pages cited in each fact"
+  ],
+  "self_qa": {
+    "checks": [
+      {
+        "check": "Every fact has a source and date",
+        "pass": true,
+        "note": "13 facts, fact_300 to fact_312, official venue pages checked 2026-11-09."
+      },
+      {
+        "check": "No price without a source; all prices in needs_signoff",
+        "pass": true,
+        "note": "No prices recorded."
+      },
+      {
+        "check": "Every must-include covered or marked [[VERIFY]]",
+        "pass": true,
+        "note": "Batch D covers island venue entries only."
+      },
+      {
+        "check": "No invented quotes, statistics or real weddings",
+        "pass": true,
+        "note": "A couple testimonial on the Angsana page was not used."
+      },
+      {
+        "check": "Australian English, no em dashes",
+        "pass": true
+      }
+    ],
+    "confidence": 0.7
+  },
+  "open_questions": [
+    {
+      "to": "orchestrator",
+      "question": "Batch D confirmed 4 venues (Katikies, Mystique, Angsana Corfu, Atrium Prestige), bringing the total to 17 of 20. Vedema, Andronis and Abaton failed to load and Minos Beach's homepage fetch was declined; these could be retried with another fetcher. Mystique's page is thin (no capacity or ceremony type).",
+      "blocking": false
+    }
+  ],
+  "assumptions": [
+    "Inclusion rule: a venue is included only if its own official site says it hosts weddings.",
+    "BOOKING CHECKLIST: Katikies: legal ceremony type, room count, music curfew, minimum nights, rain plan, set-up times.",
+    "BOOKING CHECKLIST: Mystique: capacity, ceremony type, exclusive use, room count, music curfew, minimum nights, rain plan, set-up times.",
+    "BOOKING CHECKLIST: Angsana Corfu: ceremony type, per-venue capacity, exclusive use, music curfew, minimum nights, rain plan, set-up times.",
+    "BOOKING CHECKLIST: Atrium Prestige: capacity, exclusive use, room count, music curfew, minimum nights, rain plan, set-up times."
+  ],
+  "verify_items": [
+    "[[VERIFY: Katikies: whether 'Hotel Take over' means whole-hotel exclusive use, and which Katikies hotel; not stated beyond the enquiry form option]]",
+    "[[VERIFY: Atrium Prestige: whether the private Tsambika chapel can host a legal Greek Orthodox wedding, and per-venue guest capacities]]",
+    "[[VERIFY: Angsana Corfu: '200 meet and feed' is a resort-level figure; confirm which venue seats 200 for a wedding dinner]]"
+  ],
+  "tools_used": [
+    "mcp__Apify__apify--web-fetch",
+    "Bash"
+  ],
+  "next_agent": [
+    "luxury-writer"
+  ],
+  "payload": {
+    "facts": [
+      {
+        "fact_id": "fact_300",
+        "claim": "Katikies Hotels' events page says its hotels in Santorini and Mykonos host weddings, with an events and concierge team that plans and manages every detail, and lists micro weddings as a package idea. Its Santorini properties are Katikies Santorini (Oia), Katikies Chromata (Imerovigli) and Katikies Garden (Fira).",
+        "source": "https://www.katikies.com/events/",
+        "source_type": "official_venue",
+        "checked": "2026-11-09",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_301",
+        "claim": "Katikies publishes capacities for venues it marks as ideal for wedding ceremonies: Botrini's Restaurant at Katikies Santorini 60 seated / 100 standing; Selene Restaurant at Katikies Garden 55 seated outside / 150 standing; St. Joseph Wine Cave at Katikies Garden 36 seated / 50 standing; Garden Pool Bar 36 seated / 100 standing; Chromata Pool Bar area 40-50 seated / 50 standing; Koukoumavlos Restaurant Deck 20 seated / 50 standing; Katikies Lounge at Chromata 20 seated / 30 standing.",
+        "source": "https://www.katikies.com/events/",
+        "source_type": "official_venue",
+        "checked": "2026-11-09",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_302",
+        "claim": "Katikies' event enquiry form lists 'Hotel Take over' as an event type alongside weddings. At Katikies Mykonos (Agios Ioannis) the Upper deck seats 50 / 100 standing and is marked ideal for wedding ceremonies.",
+        "source": "https://www.katikies.com/events/",
+        "source_type": "official_venue",
+        "checked": "2026-11-09",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_303",
+        "claim": "Mystique, a Luxury Collection Hotel, is carved into the caldera cliffs at Oia, Santorini. Its weddings page says its wedding specialists organise the wedding, its venues serve as the ceremony backdrop and the team will find the setting to suit the couple; it offers getting-ready suites and Elios Spa treatments.",
+        "source": "https://mystique.gr/weddings/",
+        "source_type": "official_venue",
+        "checked": "2026-11-09",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_304",
+        "claim": "Mystique's homepage lists eight named suites and villas (including Holistic, Mystery and Secrecy villas) and describes the hotel as a favoured destination for honeymoons with an understated, exclusive feel.",
+        "source": "https://mystique.gr/",
+        "source_type": "official_venue",
+        "checked": "2026-11-09",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_305",
+        "claim": "Angsana Corfu Resort & Spa (11th km Kerkyra to Lefkimi road, Corfu) has a Weddings & Honeymoons page offering vows, anniversaries, proposals and honeymoons, a 2026 wedding brochure, a real weddings page and a wedding proposal request form.",
+        "source": "https://www.angsana.com/greece/corfu/weddings-honeymoons",
+        "source_type": "official_venue",
+        "checked": "2026-11-09",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_306",
+        "claim": "Angsana Corfu's wedding venues page lists 196 hotel accommodations, 345 sqm total event space and 'meet and feed' 200, with named venues Oribu Garden, Vertigo Sky Bar, Starboard Terrace, Emerald Beach, Amalia Hall, Foyer Amalia and three restaurants (Oribu, Sofrito, Ruen Romsai). Per-venue capacities are not shown.",
+        "source": "https://www.angsana.com/greece/corfu/wedding-venues",
+        "source_type": "official_venue",
+        "checked": "2026-11-09",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_307",
+        "claim": "Atrium Prestige (Atrium Hotels & Resorts, south Rhodes) has a weddings page offering ceremonies on a private beach, with named venues: the Amphitheater a few steps from the beach (described as ideal for larger events), the private Tsambika chapel reached across a bridge, Lachania Beach, the Golden Dome, the Panoramic Terrace, Thallassa restaurant for receptions and Kalithea main bar for the party.",
+        "source": "https://www.atriumhotels.gr/hotels/atrium-prestige/weddings/",
+        "source_type": "official_venue",
+        "checked": "2026-11-09",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_308",
+        "claim": "Atrium Prestige says its wedding specialist assists couples seeking a civil ceremony with the arrangements to obtain a marriage licence, and that symbolic ceremonies, elopements and vow renewals are offered. The private chapel is presented for 'a more traditional wedding ceremony'.",
+        "source": "https://www.atriumhotels.gr/hotels/atrium-prestige/weddings/",
+        "source_type": "official_venue",
+        "checked": "2026-11-09",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_309",
+        "claim": "Atrium Prestige's wedding services include a bridal villa with sea view and private pool for getting ready, local flowers, bridal make-up and hair, an on-site photographer, chef menu tasting, DJ or live music (violin, guitar or bouzouki) and a fireworks display over the sea. Per-venue capacities are not published.",
+        "source": "https://www.atriumhotels.gr/hotels/atrium-prestige/weddings/",
+        "source_type": "official_venue",
+        "checked": "2026-11-09",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_310",
+        "claim": "Lindos Blu's official page (now on blucollection.gr) lists about, accommodation, gastronomy, wellness, experience and location pages but no weddings or events page.",
+        "source": "https://www.blucollection.gr/hotels/lindos-blu",
+        "source_type": "official_venue",
+        "checked": "2026-11-09",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_311",
+        "claim": "Domes of Corfu (Glyfada, 233 rooms) and Domes of Elounda (Crete, 175 suites, residences and villas) official sites list events and happenings pages but no weddings page; both describe themselves as family-friendly resorts.",
+        "source": "https://domesresorts.com/domesofcorfu/ ; https://domesresorts.com/domesofelounda/",
+        "source_type": "official_venue",
+        "checked": "2026-11-09",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_312",
+        "claim": "The fetch of www.capsis.com (expected official domain of Out of the Blue Capsis Elite Resort) redirected to an unrelated gaming site, so the venue's official site could not be confirmed. Kontokali Bay's homepage (kontokalibay.gr) shows no weddings or events link; Minos Beach's /weddings URL returned a 404 page.",
+        "source": "https://www.capsis.com/ ; https://www.kontokalibay.com/ ; https://www.minosbeach.com/weddings",
+        "source_type": "official_venue",
+        "checked": "2026-11-09",
+        "is_price": false
+      }
+    ],
+    "venue_verdicts": [
+      {
+        "venue": "Katikies Hotels (Katikies Santorini, Chromata, Garden)",
+        "region": "Santorini (Oia, Imerovigli, Fira); also Katikies Mykonos",
+        "verdict": "include",
+        "official_url": "https://www.katikies.com/events/",
+        "fact_ids": [
+          "fact_300",
+          "fact_301",
+          "fact_302"
+        ],
+        "type": "resort or hotel",
+        "location_setting": "Caldera hotels in Oia and Imerovigli, garden hotel in Fira",
+        "ceremony_options": "Ceremony venues named per hotel; civil or religious not stated",
+        "capacity": "Largest ceremony-rated venue: Selene Restaurant, Katikies Garden, 55 seated outside / 150 standing; Botrini's at Katikies Santorini 60 seated / 100 standing",
+        "exclusive_use": "'Hotel Take over' listed as an event type on the enquiry form",
+        "rooms": "Not published",
+        "standout": "Ceremonies in the St. Joseph Wine Cave at Katikies Garden (36 seated)",
+        "not_published": [
+          "legal ceremony type on site",
+          "room count",
+          "music curfew",
+          "minimum nights",
+          "rain plan",
+          "set-up times"
+        ]
+      },
+      {
+        "venue": "Mystique, a Luxury Collection Hotel",
+        "region": "Oia, Santorini",
+        "verdict": "include",
+        "official_url": "https://mystique.gr/weddings/",
+        "fact_ids": [
+          "fact_303",
+          "fact_304"
+        ],
+        "type": "resort or hotel",
+        "location_setting": "Carved into the caldera cliffs at Oia",
+        "ceremony_options": "Venue chosen with the wedding specialists; ceremony type not stated",
+        "capacity": "Not published",
+        "exclusive_use": "Not published",
+        "rooms": "Eight named suites and villas listed; total not published",
+        "standout": "Getting ready in a caldera-view suite with Elios Spa treatments",
+        "not_published": [
+          "capacity",
+          "ceremony type",
+          "exclusive use",
+          "room count",
+          "music curfew",
+          "minimum nights",
+          "rain plan",
+          "set-up times"
+        ]
+      },
+      {
+        "venue": "Angsana Corfu Resort & Spa",
+        "region": "Corfu (Ionian)",
+        "verdict": "include",
+        "official_url": "https://www.angsana.com/greece/corfu/wedding-venues",
+        "fact_ids": [
+          "fact_305",
+          "fact_306"
+        ],
+        "type": "resort or hotel",
+        "location_setting": "Hillside resort above the Ionian Sea, 11th km Kerkyra to Lefkimi road",
+        "ceremony_options": "Ceremony type not stated; venues include Oribu Garden, Vertigo Sky Bar, Starboard Terrace, Emerald Beach",
+        "capacity": "200 ('meet and feed'); per-venue figures not published",
+        "exclusive_use": "Not published",
+        "rooms": "196",
+        "standout": "Ceremony option on Emerald Beach or the Vertigo Sky Bar",
+        "not_published": [
+          "ceremony type",
+          "per-venue capacity",
+          "exclusive use",
+          "music curfew",
+          "minimum nights",
+          "rain plan",
+          "set-up times"
+        ]
+      },
+      {
+        "venue": "Atrium Prestige (Atrium Hotels & Resorts)",
+        "region": "South Rhodes (Dodecanese)",
+        "verdict": "include",
+        "official_url": "https://www.atriumhotels.gr/hotels/atrium-prestige/weddings/",
+        "fact_ids": [
+          "fact_307",
+          "fact_308",
+          "fact_309"
+        ],
+        "type": "resort or hotel",
+        "location_setting": "Beachfront resort in south Rhodes with a private beach",
+        "ceremony_options": "Private Tsambika chapel; civil ceremony licence assistance; symbolic ceremonies, elopements, vow renewals",
+        "capacity": "Not published (Amphitheater described as ideal for larger events)",
+        "exclusive_use": "Not published",
+        "rooms": "Not published on the weddings page",
+        "standout": "Private chapel reached by a bridge over turquoise water",
+        "not_published": [
+          "capacity",
+          "exclusive use",
+          "room count",
+          "music curfew",
+          "minimum nights",
+          "rain plan",
+          "set-up times"
+        ]
+      },
+      {
+        "venue": "Lindos Blu",
+        "region": "Rhodes",
+        "verdict": "drop",
+        "reason": "Official site has no weddings page.",
+        "fact_ids": [
+          "fact_310"
+        ]
+      },
+      {
+        "venue": "Domes of Corfu",
+        "region": "Corfu",
+        "verdict": "drop",
+        "reason": "Official site has no weddings page.",
+        "fact_ids": [
+          "fact_311"
+        ]
+      },
+      {
+        "venue": "Domes of Elounda",
+        "region": "Crete",
+        "verdict": "drop",
+        "reason": "Official site has no weddings page.",
+        "fact_ids": [
+          "fact_311"
+        ]
+      },
+      {
+        "venue": "Out of the Blue Capsis Elite Resort",
+        "region": "Crete",
+        "verdict": "drop",
+        "reason": "Expected official domain redirected to an unrelated site; official weddings page not confirmed.",
+        "fact_ids": [
+          "fact_312"
+        ]
+      },
+      {
+        "venue": "Kontokali Bay Resort & Spa",
+        "region": "Corfu",
+        "verdict": "drop",
+        "reason": "Homepage shows no weddings link; /weddings returned 404.",
+        "fact_ids": [
+          "fact_312"
+        ]
+      },
+      {
+        "venue": "Minos Beach Art Hotel",
+        "region": "Crete",
+        "verdict": "drop",
+        "reason": "/weddings returned 404; homepage fetch declined, not retried.",
+        "fact_ids": [
+          "fact_312"
+        ]
+      },
+      {
+        "venue": "Vedema, Andronis, Abaton Island Resort",
+        "region": "Santorini / Crete",
+        "verdict": "drop",
+        "reason": "Official sites failed to load (TLS error or fetch failure); not verified within the time box.",
+        "fact_ids": []
+      }
+    ],
+    "insider_details": [
+      {
+        "detail": "On Santorini the Katikies group splits venues across three hotels in Oia, Imerovigli and Fira, so a ceremony at the Fira garden hotel and drinks at an Oia caldera venue means a cross-island transfer; keep ceremony and reception at one hotel where you can.",
+        "fact_ids": [
+          "fact_300",
+          "fact_301"
+        ]
+      },
+      {
+        "detail": "Caldera hotels publish small numbers: most Katikies ceremony spaces seat 20 to 60, so a Santorini cliff-edge wedding suits guest lists under about 60 seated, with larger groups needing the Fira garden venue (150 standing).",
+        "fact_ids": [
+          "fact_301"
+        ]
+      },
+      {
+        "detail": "Atrium Prestige on Rhodes is one of the few resorts in this list to say on its own site that it helps with the civil marriage licence, which matters for Australians wanting a legal ceremony rather than a symbolic one; still confirm the paperwork route with the Wedded Advisor.",
+        "fact_ids": [
+          "fact_308"
+        ]
+      },
+      {
+        "detail": "Angsana Corfu publishes a resort-level 200 figure and 196 rooms, so a guest block of most invitees on site is realistic, but ask which named venue holds the seated dinner before setting the guest list.",
+        "fact_ids": [
+          "fact_306"
+        ]
+      }
+    ],
+    "quotes": [],
+    "real_weddings": [],
+    "budget_range_aud": [],
+    "verify_items": [
+      "[[VERIFY: Katikies: whether 'Hotel Take over' means whole-hotel exclusive use, and which Katikies hotel; not stated beyond the enquiry form option]]",
+      "[[VERIFY: Atrium Prestige: whether the private Tsambika chapel can host a legal Greek Orthodox wedding, and per-venue guest capacities]]",
+      "[[VERIFY: Angsana Corfu: '200 meet and feed' is a resort-level figure; confirm which venue seats 200 for a wedding dinner]]"
+    ],
+    "needs_signoff": [],
+    "must_include_coverage": [
+      {
+        "item": "20 venues by region, Santorini",
+        "covered_by": [
+          "fact_300",
+          "fact_301",
+          "fact_302",
+          "fact_303",
+          "fact_304"
+        ]
+      },
+      {
+        "item": "20 venues by region, Rhodes and the Dodecanese",
+        "covered_by": [
+          "fact_307",
+          "fact_308",
+          "fact_309"
+        ]
+      },
+      {
+        "item": "20 venues by region, Corfu and the Ionian",
+        "covered_by": [
+          "fact_305",
+          "fact_306"
+        ]
+      },
+      {
+        "item": "Comparison table fields (ceremony type, capacity, rooms, exclusive use) for batch D venues",
+        "covered_by": [
+          "fact_301",
+          "fact_302",
+          "fact_306",
+          "fact_308"
+        ]
+      },
+      {
+        "item": "Swap unconfirmable candidates; do not pad",
+        "covered_by": [
+          "fact_310",
+          "fact_311",
+          "fact_312"
+        ]
+      }
+    ]
+  }
+}
