@@ -10,3 +10,4 @@
 03:23 07 icp-reader planner_couple complete; no must-fix
 03:24 07 icp-reader uhnw, sceptic complete; no must-fix (source links in body; budget-level travel tips); waiting on editor
 03:25 06 editor pass_with_edits 4.0; 27 edits applied -> 05-draft-r2.md (research-talk and credit lines cut; badeken tied to Jewish tradition; celebrity link cut; headings reworded); panel chair launched
+03:27 07b icp-panel-chair revise; enquire 2.0; must_fix: wedding-morning checklist, shorter history; should_fix: takeaway 1 answer, AUD line if brand facts allow, fewer source links; final pass launched
