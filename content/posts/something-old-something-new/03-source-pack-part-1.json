@@ -1,0 +1,265 @@
+{
+ "agent": "wedding-planner-sme",
+ "task_id": "something-old-something-new",
+ "stage": "03",
+ "status": "complete",
+ "round": 1,
+ "inputs_used": [
+  "CLAUDE.md",
+  "content/posts/something-old-something-new/00-input.json",
+  "content/posts/something-old-something-new/01-brief.json",
+  "content-system/schemas/03-source-pack.schema.json",
+  "content/posts/korean-traditional-wedding/03-source-pack-part-1.json (format)",
+  "content/posts/engagement-ring-insurance/03-source-pack.json (fact_13 to fact_16 re-checked live)",
+  "content-system/seo/link-map.csv",
+  "https://www.smartraveller.gov.au/travel-essentials/travel-insurance",
+  "https://www.smartraveller.gov.au/while-overseas/protecting-yourself-crime/theft-and-robbery",
+  "https://moneysmart.gov.au/other-types-of-insurance/travel-insurance",
+  "https://api.vam.ac.uk/v2/museumobject/O125291",
+  "https://api.vam.ac.uk/v2/objects/search?q=wedding%20dress"
+ ],
+ "self_qa": {
+  "checks": [
+   {
+    "check": "Every fact has a source and date",
+    "pass": true,
+    "note": "All checked 2026-11-09 with exact quote"
+   },
+   {
+    "check": "No price without a source; all prices in needs_signoff",
+    "pass": true,
+    "note": "No prices or amounts recorded; Smartraveller's dollar range deliberately omitted"
+   },
+   {
+    "check": "Batch B must-includes covered or marked",
+    "pass": true,
+    "note": "Royal examples marked [[VERIFY]]; no official RCT/royal.uk page found in time"
+   },
+   {
+    "check": "No invented quotes, statistics or real weddings",
+    "pass": true
+   }
+  ],
+  "confidence": 0.6
+ },
+ "open_questions": [
+  {
+   "to": "luxury-writer",
+   "blocking": false,
+   "question": "No Royal Collection Trust or royal.uk page was found in the time box (rct.uk guessed URL 404; site searches returned only social posts). Either cut royal examples or keep the section to the V&A 1841 dress and living practice. Do not name a royal bride's lent piece without a source."
+  }
+ ],
+ "assumptions": [
+  "Batch B time box 01:53:55 to 02:08:55; last read started 02:03.",
+  "No Australian Border Force or Understand Insurance page read (time); packing advice relies on Smartraveller and Moneysmart.",
+  "V&A record and API used as the museum's official catalogue; source_type 'editorial' because the schema has no museum type.",
+  "Travel-insurance facts are as at November 2026; the Wedded Advisor confirms current requirements.",
+  "Living practice for heirlooms reset, commissioned pieces and blue details needs no source (brief tradition_plan item 7)."
+ ],
+ "verify_items": [
+  "[[VERIFY: royal examples (e.g. a tiara or dress lent to a royal bride, object name and wedding year) need an official Royal Collection Trust or royal.uk page; none was found live in batch B's 15-minute window. Cut the royal examples or source them before drafting]]",
+  "[[VERIFY: link-map rows show /style-advice/engagement-ring-insurance and /style-advice/lab-grown-diamonds as Draft (2026-10-29); confirm both are live before linking, or link only once published]]"
+ ],
+ "next_agent": [
+  "luxury-writer"
+ ],
+ "payload": {
+  "facts": [
+   {
+    "fact_id": "fact_100",
+    "claim": "Smartraveller (updated 18 August 2026): travel insurance can cover replacing baggage and valuables if lost, damaged or stolen; policies often limit each item's value, so check individual item limits and whether extra cover for valuables is needed.",
+    "quote": "Travel insurance can cover replacing your baggage and valuables if they're lost, damaged or stolen. ... Policies vary when it comes to how they cover valuable items. They often limit each item's value.",
+    "source": "https://www.smartraveller.gov.au/travel-essentials/travel-insurance",
+    "source_type": "government",
+    "checked": "2026-11-09",
+    "is_price": false,
+    "conflicts": "Reuses engagement-ring-insurance fact_13, re-checked live 2026-11-09; page also mentions a dollar range for valuables cover, deliberately not recorded (no amounts)."
+   },
+   {
+    "fact_id": "fact_101",
+    "claim": "Smartraveller: always read the Product Disclosure Statement (PDS) before buying a policy, and declare everything upfront or you may void it; insurance will rarely cover theft of items left unattended.",
+    "quote": "Always read the Product Disclosure Statement (PDS) before you buy a policy. ... Always declare everything upfront when you buy your policy. If you don't, you may void it. ... Insurance will also rarely cover: the theft of items you left unattended",
+    "source": "https://www.smartraveller.gov.au/travel-essentials/travel-insurance",
+    "source_type": "government",
+    "checked": "2026-11-09",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_102",
+    "claim": "Smartraveller theft page (updated 18 August 2026): standard travel policies typically don't cover loss of items left unattended, items not stored in a hotel safe when one was available, items stolen from checked baggage on an airline, train or bus, or losses without a police report.",
+    "quote": "Standard travel insurance policies typically don't cover the loss of items if: they were left unattended; you did not store them in a hotel safe when one was available; ... you don't get a police report proving your loss; ... your items were stolen from a locked car or checked baggage on an airline, train or bus.",
+    "source": "https://www.smartraveller.gov.au/while-overseas/protecting-yourself-crime/theft-and-robbery",
+    "source_type": "government",
+    "checked": "2026-11-09",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_103",
+    "claim": "Smartraveller theft page: before you go, consider leaving expensive items at home; while away, think about leaving valuables in the hotel safe, keep belongings and bags close in transit, and keep valuables out of sight.",
+    "quote": "Consider leaving expensive items at home. ... Think about leaving valuables in the hotel safe rather than taking them out with you. Keep your belongings and bags close when exploring or in transit. Insurance usually won't cover unattended items. ... Keep money and valuables out of sight.",
+    "source": "https://www.smartraveller.gov.au/while-overseas/protecting-yourself-crime/theft-and-robbery",
+    "source_type": "government",
+    "checked": "2026-11-09",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_104",
+    "claim": "Smartraveller theft page: report a theft to local police; you can't claim on car or travel insurance without a police report.",
+    "quote": "You can't claim on car or travel insurance without a police report.",
+    "source": "https://www.smartraveller.gov.au/while-overseas/protecting-yourself-crime/theft-and-robbery",
+    "source_type": "government",
+    "checked": "2026-11-09",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_105",
+    "claim": "Moneysmart (ASIC), last updated 17 September 2026: when claiming on travel insurance you may be asked for valuations and proof of purchase; before you leave home, take photos and record serial numbers of any expensive items you're taking.",
+    "quote": "Valuations and proof of purchase [dash normalised]: to prove that you own the item that was lost or stolen, and confirm how much it cost. ... Before you leave home, take photos and record serial numbers of any expensive items you're taking with you.",
+    "source": "https://moneysmart.gov.au/other-types-of-insurance/travel-insurance",
+    "source_type": "government",
+    "checked": "2026-11-09",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_106",
+    "claim": "Moneysmart: travel insurance exclusions often apply to loss or theft of unattended luggage; check your insurer's definition of 'unattended'.",
+    "quote": "loss or theft of unattended luggage (check your insurer's definition of 'unattended')",
+    "source": "https://moneysmart.gov.au/other-types-of-insurance/travel-insurance",
+    "source_type": "government",
+    "checked": "2026-11-09",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_107",
+    "claim": "Moneysmart: credit card travel insurance may only cover the cardholder and generally only the trip paid for on the card; check the PDS.",
+    "quote": "Insurance through your credit card may only cover the cardholder (not your spouse, children, or additional cardholders). Generally, it will only cover you for the trip you have paid for on your credit card.",
+    "source": "https://moneysmart.gov.au/other-types-of-insurance/travel-insurance",
+    "source_type": "government",
+    "checked": "2026-11-09",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_108",
+    "claim": "V&A object T.27-2006: a block-printed cotton wedding dress worn by Sarah Maria Wright at her marriage to Daniel Neal on 27 July 1841 at St Nicholas' Church, Skirbeck, Lincolnshire; the V&A calls it a rare example of a dress chosen by a working-class bride.",
+    "quote": "Sarah Maria Wright (1817 – 1908) wore this dress for her marriage to Daniel Neal (1816 – 1907) on 27 July 1841 at St. Nicholas' Church in Skirbeck, Lincolnshire. ... Historical significance: This dress is a rare example of a dress chosen by a working-class bride for her wedding.",
+    "source": "https://collections.vam.ac.uk/item/O125291/ (record via https://api.vam.ac.uk/v2/museumobject/O125291)",
+    "source_type": "editorial",
+    "checked": "2026-11-09",
+    "is_price": false,
+    "conflicts": "Official museum catalogue record; source_type set to editorial as the schema has no museum type."
+   },
+   {
+    "fact_id": "fact_109",
+    "claim": "V&A T.27-2006: the V&A says dresses like this survive in smaller numbers than fashionable wedding dresses because they were worn as Sunday best long after the wedding, or handed down; the bodice has been carefully enlarged (gallery label: '1841, with later alterations').",
+    "quote": "Such objects tend to survive in much smaller quantities than fashionable wedding dress as they would have been worn for Sunday best long after the event, or handed down. ... The bodice has been carefully enlarged.",
+    "source": "https://collections.vam.ac.uk/item/O125291/ (record via https://api.vam.ac.uk/v2/museumobject/O125291)",
+    "source_type": "editorial",
+    "checked": "2026-11-09",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_110",
+    "claim": "V&A T.27-2006 gallery label: many women, particularly those with less money, wore coloured wedding dresses, which were more practical than white; this dress's white cotton is printed with ribbon-like motifs in cream, pink, blue and purple.",
+    "quote": "Many women, particularly those with less money, wore coloured wedding dresses, which were more practical than white. ... The white fabric is printed with an abstract design resembling ribbons and bubbles in cream, pink, blue and and purple ink.",
+    "source": "https://collections.vam.ac.uk/item/O125291/ (record via https://api.vam.ac.uk/v2/museumobject/O125291)",
+    "source_type": "editorial",
+    "checked": "2026-11-09",
+    "is_price": false
+   }
+  ],
+  "insider_details": [
+   {
+    "detail": "Carry heirlooms and jewellery on your person or in hand luggage, never in checked bags: Smartraveller lists items stolen from checked baggage among common travel-insurance exclusions, and most policies won't pay for items left unattended.",
+    "fact_ids": [
+     "fact_101",
+     "fact_102",
+     "fact_106"
+    ]
+   },
+   {
+    "detail": "Before flying, photograph every piece (the brooch, the borrowed earrings, the ring) and keep valuations or proof of ownership with your travel documents, because insurers may ask for them at claim time.",
+    "fact_ids": [
+     "fact_105",
+     "fact_103"
+    ]
+   },
+   {
+    "detail": "Read the travel policy's PDS for per-item limits and declare valuable pieces upfront; a borrowed family piece is still something you are carrying, so check whether it needs specified cover or sits under the owner's contents policy (see /style-advice/engagement-ring-insurance).",
+    "fact_ids": [
+     "fact_100",
+     "fact_101",
+     "fact_107"
+    ]
+   },
+   {
+    "detail": "At the venue, use the in-room or hotel safe between the ceremony and reception events; Smartraveller notes standard policies often exclude losses when a hotel safe was available and not used, and claims need a local police report.",
+    "fact_ids": [
+     "fact_102",
+     "fact_104"
+    ]
+   },
+   {
+    "detail": "A wedding dress that is altered, re-worn or handed down has a long museum pedigree: the V&A holds an 1841 cotton wedding dress with a carefully enlarged bodice, and notes such dresses were worn as Sunday best or handed down. That is a natural frame for re-cutting a mother's dress or lace as 'something old'.",
+    "fact_ids": [
+     "fact_108",
+     "fact_109"
+    ]
+   },
+   {
+    "detail": "Blue in a wedding outfit need not be a garter: the V&A's 1841 dress is white cotton printed with blue among its colours, and the V&A notes many brides wore practical coloured dresses. A blue thread or print in fabric reads as considered, not novelty.",
+    "fact_ids": [
+     "fact_110"
+    ]
+   }
+  ],
+  "quotes": [],
+  "real_weddings": [],
+  "needs_signoff": [],
+  "verify_items": [
+   "[[VERIFY: royal examples (e.g. a tiara or dress lent to a royal bride, object name and wedding year) need an official Royal Collection Trust or royal.uk page; none was found live in batch B's 15-minute window. Cut the royal examples or source them before drafting]]",
+   "[[VERIFY: link-map rows show /style-advice/engagement-ring-insurance and /style-advice/lab-grown-diamonds as Draft (2026-10-29); confirm both are live before linking, or link only once published]]"
+  ],
+  "often_told": [
+   "INTERNAL ONLY, unsourced: royal brides wearing lent tiaras (Queen Mary's Fringe Tiara at the 1947 wedding; a bandeau tiara 'lent by The Queen' in 2018; a vintage Hartnell dress lent to Princess Beatrice in 2020). Seen only on social posts and news aggregators, not on rct.uk or royal.uk pages read; posts even disagree whether the 1947 tiara was lent by the bride's mother or grandmother. Do not use without an official page.",
+   "INTERNAL ONLY: that any royal bride chose a piece because of the rhyme. No official page read says so."
+  ],
+  "must_include_coverage": [
+   {
+    "item": "Royal and museum examples only as Royal Collection Trust and V&A pages describe them, cited once by link",
+    "covered_by": [
+     "fact_108",
+     "fact_109",
+     "fact_110",
+     "[[VERIFY: royal examples (e.g. a tiara or dress lent to a royal bride, object name and wedding year) need an official Royal Collection Trust or royal.uk page; none was found live in batch B's 15-minute window. Cut the royal examples or source them before drafting]]"
+    ]
+   },
+   {
+    "item": "Destination section: heirlooms and jewellery in hand luggage, photograph and list pieces before travel, link to /style-advice/engagement-ring-insurance; no airline or insurance rules stated as fact",
+    "covered_by": [
+     "fact_100",
+     "fact_101",
+     "fact_102",
+     "fact_103",
+     "fact_104",
+     "fact_105",
+     "fact_106",
+     "fact_107"
+    ]
+   },
+   {
+    "item": "Modern and luxury ways to do each (living practice; no prices, vendor or jeweller names)",
+    "covered_by": [
+     "fact_109",
+     "fact_110"
+    ]
+   },
+   {
+    "item": "Internal links: /style-advice/engagement-ring-insurance; /style-advice/lab-grown-diamonds; /style-advice/engagement-ring-styles",
+    "covered_by": [
+     "content-system/seo/link-map.csv",
+     "[[VERIFY: link-map rows show /style-advice/engagement-ring-insurance and /style-advice/lab-grown-diamonds as Draft (2026-10-29); confirm both are live before linking, or link only once published]]"
+    ]
+   }
+  ]
+ }
+}

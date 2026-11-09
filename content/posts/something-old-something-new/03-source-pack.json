@@ -1,0 +1,365 @@
+{
+  "agent": "wedding-planner-sme",
+  "task_id": "something-old-something-new",
+  "stage": "03",
+  "status": "complete",
+  "round": 1,
+  "inputs_used": [
+    "CLAUDE.md",
+    "content/posts/something-old-something-new/00-input.json",
+    "content/posts/something-old-something-new/01-brief.json (batch A)",
+    "content-system/schemas/03-source-pack.schema.json",
+    "content/posts/wedding-traditions/03-source-pack.json (re-checked, not trusted)",
+    "content/posts/wedding-traditions/03-source-pack-part-3.json",
+    "content/posts/korean-traditional-wedding/03-source-pack.json (format model)",
+    "https://www.oxfordreference.com/display/10.1093/acref/9780192829160.001.0001/acref-9780192829160-e-165",
+    "https://www.oxfordreference.com/display/10.1093/acref/9780192829160.001.0001/acref-9780192829160-e-1276",
+    "https://www.oxfordreference.com/search?q=%22something+old%2C+something+new%22",
+    "https://www.oxfordreference.com/search?q=%22something+borrowed%22+bride&searchBtn=Search&isQuickSearch=true",
+    "https://www.oxfordreference.com/search?q=sixpence+shoe+bride&searchBtn=Search&isQuickSearch=true",
+    "https://archive.org/advancedsearch.php (St James's Magazine and Shropshire Folk-Lore items)",
+    "https://ia601605.us.archive.org/fulltext/inside.php (Burne 1883 item shropshirefolkl00burngoog: no match, likely a different part)",
+    "https://ia803106.us.archive.org/fulltext/inside.php (St James's Magazine v.7 1871: search error)",
+    "https://www.royalmintmuseum.org.uk/journal/history/sixpence/ (404)",
+    "https://www.royalmint.com/blogs/the-journal/the-sixpence-in-her-shoe-wedding-tradition (404)"
+  ],
+  "tools_used": [
+    "mcp__Apify__apify--web-fetch",
+    "mcp__Apify__apify--web-search",
+    "Bash"
+  ],
+  "assumptions": [
+    "Batch A only, fact_01 to fact_14 (range fact_01 to fact_099). 15-minute hard clock: started 01:53:54, last read 02:03, no reads after.",
+    "Oxford Reference entries are subscription-only; quotes are the publisher's own abstract/search excerpts, read live. Source_type 'editorial' (academic reference).",
+    "Earliest dated record to use: Burne, Shropshire Folk-Lore, 1883 (a book, not a periodical). 1871 St James's Magazine is not stated unless the VERIFY item is cleared.",
+    "No prices or amounts. Sixpence minting and legal tender dates are not stated (Royal Mint pages 404).",
+    "Meanings of 'something old' and 'something new' are not printed in any reference read: write as living practice ('Many couples...')."
+  ],
+  "open_questions": [
+    {
+      "to": "orchestrator",
+      "question": "Accept Burne 1883 as the earliest dated record, or fund a scan check of St James's Magazine 1871 (archive.org item stjamessmagazin7187unse_3 or v.8)? Default: use Burne 1883; do not state 1871."
+    }
+  ],
+  "verify_items": [
+    "[[VERIFY: St James's Magazine 1871 printing of the rhyme against an archive.org or HathiTrust scan; until verified, name Burne, Shropshire Folk-Lore (1883) as the earliest dated record and do not state 1871]]"
+  ],
+  "self_qa": {
+    "checks": [
+      {
+        "check": "Every fact has a source URL, exact quote and date read",
+        "pass": true,
+        "note": "14 facts read live 2026-11-09 from Oxford Reference excerpts."
+      },
+      {
+        "check": "No prices or amounts",
+        "pass": true
+      },
+      {
+        "check": "Every batch A item covered or listed as often told",
+        "pass": true,
+        "note": "Old/new meanings and sixpence giver are often_told."
+      },
+      {
+        "check": "No invented quotes, statistics or real weddings",
+        "pass": true
+      },
+      {
+        "check": "No competitor, vendor, phrases.org.uk or Wikipedia sources",
+        "pass": true
+      }
+    ],
+    "confidence": 0.7
+  },
+  "next_agent": [
+    "luxury-writer"
+  ],
+  "payload": {
+    "facts": [
+      {
+        "fact_id": "fact_01",
+        "topic": "rhyme, earliest dated printing",
+        "region": "England / Britain",
+        "claim": "Opie and Tatem's A Dictionary of Superstitions (Oxford University Press) gives the earliest dated citation for the rhyme as Charlotte Burne's Shropshire Folk-Lore (1883, page 290), which records it as the saying of 'some Lancashire friends': 'Something old, something new, Something borrowed, and something blue.'",
+        "quote": "1883 BURNE Shropshire 290. The dictum of some Lancashire friends … is, 'Something old, something new, Something borrowed, and something blue.'",
+        "source": "https://www.oxfordreference.com/display/10.1093/acref/9780192829160.001.0001/acref-9780192829160-e-165",
+        "source_type": "editorial",
+        "checked": "2026-11-09",
+        "is_price": false,
+        "conflicts": "Read via Oxford Reference publisher abstract/search excerpt (full entry behind subscription), Apify web-fetch 2026-11-09. | CONFLICT: the pillar pack (wedding-traditions fact_14) cites St James's Magazine 1871 via phrases.org.uk; not verified in any scan this run (archive.org 1871 volume search errored). Two Oxford references give 1883 as the first record. [[VERIFY: St James's Magazine 1871 printing against a scan before any 1871 date is stated]]"
+      },
+      {
+        "fact_id": "fact_02",
+        "topic": "rhyme, first recorded",
+        "region": "England / Britain",
+        "claim": "Simpson and Roud's A Dictionary of English Folklore (Oxford) calls 'Something old, something new, something borrowed, something blue' the widest-known wedding rhyme today and says it was first recorded in Shropshire only in 1883 (Burne, 1883: 290).",
+        "quote": "The widest-known rhyme today is 'Something old, something new, something borrowed, something blue', first recorded in Shropshire only in 1883 ( Burne , 1883 : 290).",
+        "source": "https://www.oxfordreference.com/display/10.1093/acref/9780198607663.001.0001/acref-9780198607663-e-1105",
+        "source_type": "editorial",
+        "checked": "2026-11-09",
+        "is_price": false,
+        "conflicts": "Read via Oxford Reference publisher abstract/search excerpt (full entry behind subscription), Apify web-fetch 2026-11-09."
+      },
+      {
+        "fact_id": "fact_03",
+        "topic": "something blue, garters",
+        "region": "England / Britain",
+        "claim": "Burne (1883), as quoted by Opie and Tatem, records that when the wedding gown was white, the 'blue' was carried by making the garters blue.",
+        "quote": "When the wedding gown is of the orthodox white, the obligation to wear 'blue' is carried out by making the garters of that colour.",
+        "source": "https://www.oxfordreference.com/display/10.1093/acref/9780192829160.001.0001/acref-9780192829160-e-165",
+        "source_type": "editorial",
+        "checked": "2026-11-09",
+        "is_price": false,
+        "conflicts": "Read via Oxford Reference publisher abstract/search excerpt (full entry behind subscription), Apify web-fetch 2026-11-09."
+      },
+      {
+        "fact_id": "fact_04",
+        "topic": "rhyme, 20th-century practice",
+        "region": "England / Britain",
+        "claim": "Opie and Tatem quote Folklore (1957, p. 416): the four items were 'almost always worn, even by the most sophisticated brides'.",
+        "quote": "1957 Folklore 416. 'Something old, something new, something borrowed and something blue' is almost always worn, even by the most sophisticated brides.",
+        "source": "https://www.oxfordreference.com/display/10.1093/acref/9780192829160.001.0001/acref-9780192829160-e-165",
+        "source_type": "editorial",
+        "checked": "2026-11-09",
+        "is_price": false,
+        "conflicts": "Read via Oxford Reference publisher abstract/search excerpt (full entry behind subscription), Apify web-fetch 2026-11-09."
+      },
+      {
+        "fact_id": "fact_05",
+        "topic": "something borrowed, early record",
+        "region": "England / Britain",
+        "claim": "Opie and Tatem's entry on 'something borrowed' cites Henderson's Northern Counties (1866, p. 35): the bride should wear something borrowed, with no reason given.",
+        "quote": "1866 HENDERSON Northern Counties 35. The bride … should wear something borrowed—for what reason I am not informed.",
+        "source": "https://www.oxfordreference.com/search?q=%22something+borrowed%22+bride&searchBtn=Search&isQuickSearch=true",
+        "source_type": "editorial",
+        "checked": "2026-11-09",
+        "is_price": false,
+        "conflicts": "Read via Oxford Reference publisher abstract/search excerpt (full entry behind subscription), Apify web-fetch 2026-11-09. | Entry 'BRIDE'S CLOTHES: something borrowed' read only in the Oxford Reference search excerpt; entry URL not captured."
+      },
+      {
+        "fact_id": "fact_06",
+        "topic": "something borrowed, meaning",
+        "region": "England / Britain",
+        "claim": "Burne (1883, p. 289), as quoted by Opie and Tatem, says it was widely thought lucky to wear something on the wedding day already worn by a happy bride.",
+        "quote": "it is widely accounted 'lucky' to wear something on the wedding day which has already been worn by a happy bride at her...",
+        "source": "https://www.oxfordreference.com/search?q=%22something+borrowed%22+bride&searchBtn=Search&isQuickSearch=true",
+        "source_type": "editorial",
+        "checked": "2026-11-09",
+        "is_price": false,
+        "conflicts": "Read via Oxford Reference publisher abstract/search excerpt (full entry behind subscription), Apify web-fetch 2026-11-09."
+      },
+      {
+        "fact_id": "fact_07",
+        "topic": "something borrowed, meaning",
+        "region": "England / Britain",
+        "claim": "Simpson and Roud say many hold that the borrowed item should be something worn at a previous wedding whose marriage turned out happily, and that the veil is often singled out as the luckiest.",
+        "quote": "Many say the item borrowed should be something worn at a previous wedding, provided the marriage turned out happily; the veil is often singled out as the luckiest.",
+        "source": "https://www.oxfordreference.com/display/10.1093/acref/9780198607663.001.0001/acref-9780198607663-e-1105",
+        "source_type": "editorial",
+        "checked": "2026-11-09",
+        "is_price": false,
+        "conflicts": "Read via Oxford Reference publisher abstract/search excerpt (full entry behind subscription), Apify web-fetch 2026-11-09."
+      },
+      {
+        "fact_id": "fact_08",
+        "topic": "something blue, meaning",
+        "region": "England / Britain",
+        "claim": "Simpson and Roud say blue is associated with loyalty and true love and hence lucky for brides; the saying 'Marry in blue, Your love will be true' comes from the blue/true rhyme, noticed from the Middle Ages, and Chaucer calls blue a sign of the 'trouthe' (faithfulness) seen in women.",
+        "quote": "a colour associated with loyalty and true love, and hence lucky for brides, who must wear: Something old, something new, Something borrowed, something blue. In the days when bridal dresses were not necessarily white, blue was a good colour to choose: Marry in blue, Your love will be true. This meaning is derived from the rhyme 'blue/true', which has been noticed from the Middle Ages onwards; Chaucer refers to blue drapery as a 'signe of trouthe that is in wommen sene'",
+        "source": "https://www.oxfordreference.com/display/10.1093/acref/9780198607663.001.0001/acref-9780198607663-e-88",
+        "source_type": "editorial",
+        "checked": "2026-11-09",
+        "is_price": false,
+        "conflicts": "Read via Oxford Reference publisher abstract/search excerpt (full entry behind subscription), Apify web-fetch 2026-11-09."
+      },
+      {
+        "fact_id": "fact_09",
+        "topic": "something blue, practice",
+        "region": "England / Britain",
+        "claim": "Opie and Tatem's entry 'something blue' records blue being recommended as the lucky colour for a wedding dress, and a 1988 mother of the bride (St Albans) mentioning 'the blue garter of course'.",
+        "quote": "Her seniors, all … recommended blue as the lucky colour [for her wedding dress]. 1988 [St Albans, Herts.] 'This is my daughter's wedding dress,' she said, and added with a little giggle, 'And the blue garter of course.'",
+        "source": "https://www.oxfordreference.com/display/10.1093/acref/9780192829160.001.0001/acref-9780192829160-e-162",
+        "source_type": "editorial",
+        "checked": "2026-11-09",
+        "is_price": false,
+        "conflicts": "Read via Oxford Reference publisher abstract/search excerpt (full entry behind subscription), Apify web-fetch 2026-11-09."
+      },
+      {
+        "fact_id": "fact_10",
+        "topic": "sixpence line, dated printing",
+        "region": "England / Britain",
+        "claim": "Opie and Tatem cite the Mirror (29 August 1946, p. 6) printing the rhyme with the sixpence line: 'Something old, Something new, Something borrowed, Something blue, And a silver sixpence In your shoe.'",
+        "quote": "1946 Mirror 29 Aug. 6 . 'Something old, Something new, Something borrowed, Something blue, And a silver sixpence In your shoe'",
+        "source": "https://www.oxfordreference.com/display/10.1093/acref/9780192829160.001.0001/acref-9780192829160-e-1276",
+        "source_type": "editorial",
+        "checked": "2026-11-09",
+        "is_price": false,
+        "conflicts": "Read via Oxford Reference publisher abstract/search excerpt (full entry behind subscription), Apify web-fetch 2026-11-09. | This is the earliest sixpence-line printing seen this run; Opie and Tatem may cite earlier ones in the full entry (not readable). Do not call it the first."
+      },
+      {
+        "fact_id": "fact_11",
+        "topic": "sixpence, which shoe",
+        "region": "England / Britain",
+        "claim": "Opie and Tatem record that the coin should be worn in the left shoe to bring luck.",
+        "quote": "The coin should be worn in the left shoe and will then bring luck.",
+        "source": "https://www.oxfordreference.com/display/10.1093/acref/9780192829160.001.0001/acref-9780192829160-e-1276",
+        "source_type": "editorial",
+        "checked": "2026-11-09",
+        "is_price": false,
+        "conflicts": "Read via Oxford Reference publisher abstract/search excerpt (full entry behind subscription), Apify web-fetch 2026-11-09."
+      },
+      {
+        "fact_id": "fact_12",
+        "topic": "sixpence, Irish variant",
+        "region": "England / Britain",
+        "claim": "Opie and Tatem quote Sean O'Casey's I Knock at the Door (set in Dublin): a bride 'having with her something old and something new, something borrowed and something blue, and a lucky sixpence in her shoe'.",
+        "quote": "S. O'CASEY I Knock at the Door 103 [Dublin] [On her wedding morning] she was ready for any emergency, so she was, having with her something old and something new, something borrowed and something blue, and a lucky sixpence in her shoe.",
+        "source": "https://www.oxfordreference.com/display/10.1093/acref/9780192829160.001.0001/acref-9780192829160-e-1276",
+        "source_type": "editorial",
+        "checked": "2026-11-09",
+        "is_price": false,
+        "conflicts": "Read via Oxford Reference publisher abstract/search excerpt (full entry behind subscription), Apify web-fetch 2026-11-09. | Publication year of O'Casey's book not shown in the excerpt; do not state a year."
+      },
+      {
+        "fact_id": "fact_13",
+        "topic": "sixpence, silver as charm",
+        "region": "England / Britain",
+        "claim": "Simpson and Roud note a silver sixpence is frequently mentioned as a lucky charm, especially in a bride's shoe.",
+        "quote": "A silver sixpence is frequently mentioned: as a gift to a new baby ; as a gift left by fairies for diligent servant girls, or for children shedding a tooth ; as a lucky charm , especially in a bride's shoe",
+        "source": "https://www.oxfordreference.com/search?q=sixpence+shoe+bride&searchBtn=Search&isQuickSearch=true",
+        "source_type": "editorial",
+        "checked": "2026-11-09",
+        "is_price": false,
+        "conflicts": "Read via Oxford Reference publisher abstract/search excerpt (full entry behind subscription), Apify web-fetch 2026-11-09. | Simpson and Roud entry 'silver' (A Dictionary of English Folklore) read in the search excerpt only."
+      },
+      {
+        "fact_id": "fact_14",
+        "topic": "reference details",
+        "region": "England / Britain",
+        "claim": "A Dictionary of Superstitions is by Iona Opie and Moira Tatem, published by Oxford University Press (print 1996; online 2003).",
+        "quote": "A Dictionary of Superstitions | Iona Opie and Moira Tatem | Publisher: Oxford University Press | Print Publication Date: 1996 | Published online: 2003",
+        "source": "https://www.oxfordreference.com/display/10.1093/acref/9780192829160.001.0001/acref-9780192829160-e-165",
+        "source_type": "editorial",
+        "checked": "2026-11-09",
+        "is_price": false,
+        "conflicts": "Read via Oxford Reference publisher abstract/search excerpt (full entry behind subscription), Apify web-fetch 2026-11-09."
+      }
+    ],
+    "insider_details": [
+      {
+        "detail": "Quote the rhyme in the Burne 1883 four-line form and present the sixpence line separately with its 1946 Mirror printing, so every dated version on the page traces to a citation.",
+        "fact_ids": [
+          "fact_01",
+          "fact_10"
+        ]
+      },
+      {
+        "detail": "For something borrowed, the documented custom is to borrow from a happily married bride, often her veil; an Advisor can suggest asking a married sister, friend or mother early so the piece can be cleaned and fitted.",
+        "fact_ids": [
+          "fact_06",
+          "fact_07"
+        ]
+      },
+      {
+        "detail": "Something blue has long been worn out of sight (the blue garter), which suits couples who want the tradition without changing the palette.",
+        "fact_ids": [
+          "fact_03",
+          "fact_09"
+        ]
+      },
+      {
+        "detail": "The sixpence goes in the left shoe; for a destination wedding it is a small coin worth packing in hand luggage with the other heirloom pieces.",
+        "fact_ids": [
+          "fact_11"
+        ]
+      }
+    ],
+    "quotes": [],
+    "real_weddings": [],
+    "verify_items": [
+      "[[VERIFY: St James's Magazine 1871 printing of the rhyme against an archive.org or HathiTrust scan; until verified, name Burne, Shropshire Folk-Lore (1883) as the earliest dated record and do not state 1871]]"
+    ],
+    "needs_signoff": [],
+    "must_include_coverage": [
+      {
+        "item": "The rhyme quoted exactly as a dated printing gives it, including the sixpence line; earliest printing named, never 'first ever'",
+        "covered_by": [
+          "fact_01",
+          "fact_02",
+          "fact_10",
+          "fact_12"
+        ]
+      },
+      {
+        "item": "Earliest printed versions",
+        "covered_by": [
+          "fact_01",
+          "fact_02",
+          "fact_05",
+          "fact_10",
+          "[[VERIFY: St James's Magazine 1871 printing]]"
+        ]
+      },
+      {
+        "item": "Meanings and origins stated as fact only where Opie and Tatem or a printed source gives them (borrowed, blue, sixpence)",
+        "covered_by": [
+          "fact_06",
+          "fact_07",
+          "fact_08",
+          "fact_11",
+          "fact_13"
+        ]
+      },
+      {
+        "item": "Something old and something new meanings",
+        "covered_by": [
+          "often_told (no reference prints a meaning; write as living practice)"
+        ]
+      },
+      {
+        "item": "Something blue",
+        "covered_by": [
+          "fact_03",
+          "fact_08",
+          "fact_09"
+        ]
+      },
+      {
+        "item": "Something borrowed",
+        "covered_by": [
+          "fact_05",
+          "fact_06",
+          "fact_07"
+        ]
+      },
+      {
+        "item": "The sixpence",
+        "covered_by": [
+          "fact_10",
+          "fact_11",
+          "fact_12",
+          "fact_13"
+        ]
+      },
+      {
+        "item": "Opie and Tatem Dictionary of Superstitions entry",
+        "covered_by": [
+          "fact_01",
+          "fact_04",
+          "fact_05",
+          "fact_09",
+          "fact_10",
+          "fact_14"
+        ]
+      }
+    ],
+    "often_told": [
+      "Something old stands for continuity with family; something new for optimism about the future (vendor blogs only; no reference prints these meanings).",
+      "Something borrowed 'borrows' happiness from a happily married friend (vendor blogs; Burne 1883 and Simpson and Roud give the happy-bride version, use that instead).",
+      "The bride's father places the sixpence in her shoe (Royal Mint blog per pillar pack; page now 404; not re-read).",
+      "The rhyme was first recorded in Lancashire in the late 19th century (Royal Mint blog per pillar pack; Burne 1883 does credit 'Lancashire friends', fact_01).",
+      "The sixpence line is a later Victorian addition / County Monaghan 1894 (phrases.org.uk and pillar notes; not verified).",
+      "Sixpence minting end and loss of legal tender status (Royal Mint Museum page 404; not read; do not state dates)."
+    ]
+  }
+}
