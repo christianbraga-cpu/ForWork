@@ -15,3 +15,5 @@
 03:29 10 distribution complete 3 pins, 8-slide carousel, newsletter
 03:29 09 cro-specialist complete; /magazine primary; 2 copy changes; applying after 8b
 03:30 08b editor pass_with_edits; 11 blocking fixes (Roman origin overclaims, face-covering generalisation, royal precedent, 'long'/'most', Smartraveller date and insurance wording) + 2 CRO changes applied; cms-publisher launched
+03:32 11 cms-publisher package complete (not uploaded, no Chrome); validate all valid
+03:32 finish: docx, run report, backlinks, link map, calendar 36; FINISHED (~33 min)
