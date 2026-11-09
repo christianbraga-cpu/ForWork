@@ -2,3 +2,4 @@
 22:50 01 content-strategist complete; hub targets 'greece wedding venues' (Santorini-only venues, US-framed legal); Smartraveller Greece normal precautions (30 Sep 2026), wildfire/heat/earthquake notes, no meltemi; 26 candidates A 11 / B 9 / C 6; 02+03(A,B,C)+04 launched
 22:52 04 visual-curator complete; featured + 6 region slots + per-venue pattern; 26 permission requests drafted (wording only, none sent)
 22:57 02 seo-researcher complete; hub ranks only #45-#69 (US greece wedding venues #45); /7-must-see-santorini-destination-wedding-venues #58-#82; recommendation: this guide takes 'greece wedding venues' + island/city variants, hub retargets 'greece weddings'/'destination wedding greece'; volumes greece wedding venues AU 210 / US 1,600, KD 0-2; schema valid
+23:00 03 planner-sme batch B complete: 3 included (Elounda Beach, Melenos Lindos, Corfu Imperial), 6 dropped (3 no weddings on own site, 3 unreadable)
