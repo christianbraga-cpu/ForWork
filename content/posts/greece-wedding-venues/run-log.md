@@ -5,3 +5,4 @@
 23:00 03 planner-sme batch B complete: 3 included (Elounda Beach, Melenos Lindos, Corfu Imperial), 6 dropped (3 no weddings on own site, 3 unreadable)
 23:03 03 planner-sme batch C complete: 6 included (Four Seasons Astir Palace, One&Only Aesthesis, Grand Resort Lagonissi, Kokotos Estate, Costa Navarino, Amanzoe), 0 dropped; practical: Athens airport, meltemi (no months), Smartraveller wildfire/heat/ferry delays, CNI and recognition; Embassy marriage page 404; waiting on batch A
 23:03 03 planner-sme batch A complete: 4 included (Grace Santorini, Canaves Oia, Santa Marina, Royal Myconian), 7 dropped (incl. Rocabella: domain for sale, do not link its venue page). Total 13 of 20; top-up batches D (islands) and E (mainland) launched, 15 min
+23:23 03 top-up E complete: 2 included (Sani Resort, Danai Beach Resort), 6 dropped (sites unreadable or no weddings); total 15; waiting on D
