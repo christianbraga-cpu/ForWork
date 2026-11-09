@@ -11,3 +11,5 @@
 23:30 03 top-up G complete: 5 included (Ikos Aria Kos, Miraggio, Nana Princess, Poseidonion Grand, Eagles Resort; last two thin); total 22; waiting on F, then pick the strongest 20
 23:52 03 top-up F complete: 0 included (sites unreadable or no weddings on venue's own pages). Parts 5 and 6 appended to merged pack (93 facts). Confirmed 24 (earlier count of 17 was a miscount; it was 19). Chosen 20: dropped Eagles Resort, Poseidonion Grand, Mystique (thin pages) and Danai Beach (Halkidiki already has two) as runners-up; writer relaunched
 23:56 05 luxury-writer complete ~5,000 words; 20 venues; 0 VERIFY; first draft sent; editor + 5 readers launched
+23:57 07 icp-reader sceptic complete; relevance 5, enquire 3; no must-fix
+23:57 07 icp-reader funding_parent complete; no must-fix (limited-mobility access; contracts and deposits line)
