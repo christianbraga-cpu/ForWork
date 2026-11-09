@@ -12,3 +12,4 @@
 00:40 06 editor pass_with_edits 4.14; 16 edits applied -> 05-draft-r2.md (heading, chukuigeum takeaway, robes framing, second Smartraveller credit); panel chair launched
 00:42 07b icp-panel-chair revise; enquire 2.6; must_fix: guest questions (Wedded Privileges room-block claim excluded, deferred); should_fix: drop /trending link, firmer close, cut museum detail; final pass launched
 00:43 08 luxury-writer complete 2,983 words; 0 VERIFY; scan clean; /trending link removed; 8b+CRO+distribution launched
+00:43 10 distribution complete 3 pins, 8-slide carousel, newsletter
