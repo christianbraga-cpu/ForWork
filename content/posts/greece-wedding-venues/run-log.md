@@ -7,3 +7,4 @@
 23:03 03 planner-sme batch A complete: 4 included (Grace Santorini, Canaves Oia, Santa Marina, Royal Myconian), 7 dropped (incl. Rocabella: domain for sale, do not link its venue page). Total 13 of 20; top-up batches D (islands) and E (mainland) launched, 15 min
 23:23 03 top-up E complete: 2 included (Sani Resort, Danai Beach Resort), 6 dropped (sites unreadable or no weddings); total 15; waiting on D
 23:24 03 top-up D complete: 4 included (Katikies, Mystique, Angsana Corfu, Atrium Prestige); total 17 confirmed (not padded to 20; title count set to 17 per plan); merged; writer launched
+23:25 person asked for 3 more venues: writer stopped; second top-up round F (retry failed sites with render wait) and G (new candidates) launched, 15 min
