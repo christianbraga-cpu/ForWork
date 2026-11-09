@@ -7,3 +7,4 @@
 00:37 05 luxury-writer complete ~2,980 words; 0 VERIFY; 0 research talk; first draft sent; editor + 5 readers launched
 00:38 07 icp-reader uhnw complete; enquire 2 (celebrity link undercuts discretion; museum links)
 00:38 07 icp-reader sceptic complete; no must-fix (celebrity link reads as filler; soft close)
+00:39 07 icp-reader funding_parent, search_visitor complete; no must-fix (ducks in takeaways; older guests at floor-level pyebaek); waiting on planner_couple, editor
