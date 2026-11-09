@@ -9,3 +9,4 @@
 02:07 07 icp-reader sceptic, search_visitor, uhnw complete; no must-fix (sources visible in body; insurance section reads consumer-level; blue ideas earlier); waiting on planner_couple, editor
 02:08 07 icp-reader planner_couple complete; no must-fix; waiting on editor
 02:10 06 editor pass_with_edits 4.0; edits applied -> 05-draft-r2.md except removal of draft /style-advice links (kept, as with other draft links: publish together)
+02:12 07b icp-panel-chair revise; enquire 2.0; must_fix: wedding-morning checklist (questions); should_fix: wording, close, trim 1841 detail, Smartraveller credit, old/new in takeaways; final pass launched
