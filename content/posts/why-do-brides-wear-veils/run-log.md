@@ -2,3 +2,4 @@
 03:02 01 content-strategist complete; 10 sections; batches A (history, royal, folklore) / B (faith, modern practice, destination); styles page read (no history or meaning content; blusher and 'do you need a veil' only overlaps); celebrity veils post found for one link; 02+03(A,B)+04 launched
 03:03 04 visual-curator complete 6 placeholders
 03:05 02 seo-researcher complete; why do brides wear veils AU 70 / US 720 KD ~5-7; meaning and history variants US 260 each; no cannibalisation (styles and celebrity pages rank for none); external URLs unverified (planner confirms); schema valid
+03:20 03 planner-sme batch A complete 12 facts (Oxford Reference, Britannica, V&A: Roman flame-coloured veil, early Christian and nun's veiling, medieval wimple, Victoria's 1840 Honiton lace worn back; folklore: luck from borrowing a happy bride's veil); other royal veils unsourced (left out); waiting on batch B

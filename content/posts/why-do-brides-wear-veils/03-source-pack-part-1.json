@@ -1,0 +1,298 @@
+{
+ "agent": "wedding-planner-sme",
+ "task_id": "why-do-brides-wear-veils",
+ "stage": "03",
+ "status": "complete",
+ "round": 1,
+ "inputs_used": [
+  "CLAUDE.md",
+  "content/posts/why-do-brides-wear-veils/00-input.json",
+  "content/posts/why-do-brides-wear-veils/01-brief.json (batch B)",
+  "content-system/schemas/03-source-pack.schema.json",
+  "content/posts/something-old-something-new/03-source-pack-part-1.json (format; fact_100, fact_102, fact_103 reused)",
+  "https://www.chabad.org/library/article_cdo/aid/477333/jewish/Badeken-Veiling.htm",
+  "https://www.myjewishlearning.com/article/bedeken-veiling-the-bride/ (404)",
+  "https://www.britannica.com/topic/veil (AI summary page only; not used)",
+  "https://api.vam.ac.uk/v2/objects/search?q=wedding%20veil",
+  "https://api.vam.ac.uk/v2/museumobject/O1223045",
+  "https://api.vam.ac.uk/v2/museumobject/O171447",
+  "https://api.vam.ac.uk/v2/museumobject/O1506969"
+ ],
+ "self_qa": {
+  "checks": [
+   {
+    "check": "Every fact has a source and date",
+    "pass": true,
+    "note": "All checked 2026-11-09 with exact quote and tradition"
+   },
+   {
+    "check": "No price without a source; all prices in needs_signoff",
+    "pass": true,
+    "note": "No prices or amounts"
+   },
+   {
+    "check": "Batch B must-includes covered or marked",
+    "pass": true,
+    "note": "Christian and Hindu/Muslim marked [[VERIFY]]; living-practice items need no source"
+   },
+   {
+    "check": "No invented quotes, statistics or real weddings",
+    "pass": true
+   }
+  ],
+  "confidence": 0.65
+ },
+ "open_questions": [
+  {
+   "to": "luxury-writer",
+   "blocking": false,
+   "question": "Faith section is sourced for the Jewish badeken only. Either keep other faiths out, or write Christian practice as living practice without stating a meaning."
+  }
+ ],
+ "assumptions": [
+  "Batch B time box 03:02:21 to 03:17:21; last reads started about 03:09 (responses returned 03:19); no reads started after the limit.",
+  "V&A catalogue records read via the official API; source_type 'editorial' (schema has no museum type); Chabad.org as 'other' (official faith institution).",
+  "Britannica /topic/veil returned only an AI-generated summary; not used as a fact source.",
+  "Travel facts fact_109 to fact_111 are as at November 2026; the Wedded Advisor confirms current requirements."
+ ],
+ "verify_items": [
+  "[[VERIFY: Christian ceremonies: no Church of England or Catholic official page on a bridal veil or head covering was read in the time box; write Christian practice as living practice only, or source before drafting]]",
+  "[[VERIFY: Hindu, Muslim or other faith bridal veiling (e.g. ghoonghat, chunni): no official or academic source read in time; omit per brief unless sourced]]"
+ ],
+ "next_agent": [
+  "luxury-writer"
+ ],
+ "payload": {
+  "facts": [
+   {
+    "fact_id": "fact_100",
+    "tradition": "Jewish (Chabad)",
+    "claim": "At a Jewish wedding the badeken (bedeken, veiling) follows the pre-chupah receptions: a procession led by the groom goes to the bride's reception room, where the groom covers the bride's face with a veil.",
+    "quote": "After the short pre-chupah receptions hosted by the bride and groom, the badeken ceremony commences. A procession headed by the groom goes to the bridal reception room, where the groom covers the bride's face with a veil.",
+    "source": "https://www.chabad.org/library/article_cdo/aid/477333/jewish/Badeken-Veiling.htm",
+    "source_type": "other",
+    "checked": "2026-11-09",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_101",
+    "tradition": "Jewish (Chabad)",
+    "claim": "After the groom veils the bride, the fathers and grandfathers of the bride and groom bless her; her face stays veiled for the whole chupah ceremony, giving her privacy at this holy time.",
+    "quote": "After the groom veils the bride, the fathers and grandfathers of the bride and groom approach the bride and bless her. ... The bride's face remains veiled for the duration of the chupah ceremony, affording her a bit of privacy at this holy time.",
+    "source": "https://www.chabad.org/library/article_cdo/aid/477333/jewish/Badeken-Veiling.htm",
+    "source_type": "other",
+    "checked": "2026-11-09",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_102",
+    "tradition": "Jewish (Chabad)",
+    "claim": "Chabad.org traces the custom of veiling the bride's face to the Matriarch Rebecca, who covered her face when meeting her groom, Isaac.",
+    "quote": "The custom of covering the bride's face with a veil originated with our Matriarch Rebecca, who covered her face with a handkerchief when meeting her groom, Isaac.",
+    "source": "https://www.chabad.org/library/article_cdo/aid/477333/jewish/Badeken-Veiling.htm",
+    "source_type": "other",
+    "checked": "2026-11-09",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_103",
+    "tradition": "Jewish (Chabad, Kabbalistic meaning)",
+    "claim": "Chabad.org gives the veil's meaning as the groom valuing the bride's inner beauty, which never fades, rather than only her external beauty.",
+    "quote": "The veil emphasizes that the groom is not solely interested in the bride's external beauty, which fades with time; but rather in her inner beauty which she will never lose.",
+    "source": "https://www.chabad.org/library/article_cdo/aid/477333/jewish/Badeken-Veiling.htm",
+    "source_type": "other",
+    "checked": "2026-11-09",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_104",
+    "tradition": "Jewish (Chassidic custom, per Chabad)",
+    "claim": "In Chassidic custom the badeken veil is dense enough to fully hide the bride's face and has no silver or gold threads, as bride and groom wear no jewellery to the chupah.",
+    "quote": "Chassidic custom is for the veil to be dense enough to completely obscure the bride's face. It also should not contain any silver or gold threads, as the bride and groom do not wear any jewelry to the chupah",
+    "source": "https://www.chabad.org/library/article_cdo/aid/477333/jewish/Badeken-Veiling.htm",
+    "source_type": "other",
+    "checked": "2026-11-09",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_105",
+    "tradition": "Victorian British bridal dress (V&A)",
+    "claim": "A Honiton lace veil worn in London in February 1865 was designed so its pattern shows on the outside when the veil is folded over.",
+    "quote": "The bride's veil has been skilfully designed so that the pattern is on the outside when the veil is folded over.",
+    "source": "https://collections.vam.ac.uk/item/O1223045/",
+    "source_type": "editorial",
+    "checked": "2026-11-09",
+    "is_price": false,
+    "conflicts": "Read via api.vam.ac.uk/v2/museumobject/O1223045 (V&A official catalogue)."
+   },
+   {
+    "fact_id": "fact_106",
+    "tradition": "Victorian British bridal dress (V&A)",
+    "claim": "The V&A's label for a Devon Honiton lace veil of about 1850 says the bride would have worn it attached to the back of her head, not over her face, a fashion which came later; its pea-pod pattern is a symbol of fruitfulness and happiness.",
+    "quote": "The pattern of this Honiton lace veil includes pea-pods, which are symbols of fruitfulness and happiness. The bride would have worn the veil attached to the back of her head, not over her face, a fashion which came later.",
+    "source": "https://collections.vam.ac.uk/item/O171447/",
+    "source_type": "editorial",
+    "checked": "2026-11-09",
+    "is_price": false,
+    "conflicts": "Read via api.vam.ac.uk/v2/museumobject/O171447. Overlaps batch A (Victorian section); batch A owns Queen Victoria facts."
+   },
+   {
+    "fact_id": "fact_107",
+    "tradition": "Victorian British bridal dress (V&A), heirloom",
+    "claim": "The 1865 veil, dress and boots were kept in the bride's family: the V&A records them as worn by the donor's mother and bequeathed by her daughter in 1947.",
+    "quote": "This dress, veil and a pair of boots ... were worn by Eliza Penelope Bright, nee Clay (the mother of the donor) for her marriage to Joseph Bright ... Bequeathed by Miss H. G. Bright",
+    "source": "https://collections.vam.ac.uk/item/O1223045/",
+    "source_type": "editorial",
+    "checked": "2026-11-09",
+    "is_price": false,
+    "conflicts": "The record shows the veil kept by the next generation, not re-worn by a later bride; do not claim reuse."
+   },
+   {
+    "fact_id": "fact_108",
+    "tradition": "Edwardian British bridal dress (V&A)",
+    "claim": "A 1902 veil in the V&A was worn with a wax orange blossom hair ornament and hair piece arranged on the head together with the veil.",
+    "quote": "the museum also holds the wax orange blossom hair ornament and hair piece worn by the bride ... which would have been arranged on the head in conjunction with the veil.",
+    "source": "https://collections.vam.ac.uk/item/O1506969/",
+    "source_type": "editorial",
+    "checked": "2026-11-09",
+    "is_price": false,
+    "conflicts": "Read via api.vam.ac.uk/v2/museumobject/O1506969."
+   },
+   {
+    "fact_id": "fact_109",
+    "claim": "Smartraveller (updated 18 August 2026): travel insurance can cover replacing baggage and valuables if lost, damaged or stolen; policies often limit each item's value, so check individual item limits and whether extra cover for valuables is needed.",
+    "quote": "Travel insurance can cover replacing your baggage and valuables if they're lost, damaged or stolen. ... Policies vary when it comes to how they cover valuable items. They often limit each item's value.",
+    "source": "https://www.smartraveller.gov.au/travel-essentials/travel-insurance",
+    "source_type": "government",
+    "checked": "2026-11-09",
+    "is_price": false,
+    "conflicts": "Reused from something-old-something-new fact_100 (checked live there 2026-11-09); not re-fetched in this batch (time). As at November 2026; the Wedded Advisor confirms current requirements. Brief: no travel or packing rules stated as fact; use only as optional context.",
+    "tradition": "Travel (Australian government guidance)"
+   },
+   {
+    "fact_id": "fact_110",
+    "claim": "Smartraveller theft page (updated 18 August 2026): standard travel policies typically don't cover loss of items left unattended, items not stored in a hotel safe when one was available, items stolen from checked baggage on an airline, train or bus, or losses without a police report.",
+    "quote": "Standard travel insurance policies typically don't cover the loss of items if: they were left unattended; you did not store them in a hotel safe when one was available; ... you don't get a police report proving your loss; ... your items were stolen from a locked car or checked baggage on an airline, train or bus.",
+    "source": "https://www.smartraveller.gov.au/while-overseas/protecting-yourself-crime/theft-and-robbery",
+    "source_type": "government",
+    "checked": "2026-11-09",
+    "is_price": false,
+    "tradition": "Travel (Australian government guidance)",
+    "conflicts": "Reused from something-old-something-new fact_102 (checked live there 2026-11-09); not re-fetched in this batch (time). As at November 2026; the Wedded Advisor confirms current requirements. Brief: no travel or packing rules stated as fact; use only as optional context."
+   },
+   {
+    "fact_id": "fact_111",
+    "claim": "Smartraveller theft page: before you go, consider leaving expensive items at home; while away, think about leaving valuables in the hotel safe, keep belongings and bags close in transit, and keep valuables out of sight.",
+    "quote": "Consider leaving expensive items at home. ... Think about leaving valuables in the hotel safe rather than taking them out with you. Keep your belongings and bags close when exploring or in transit. Insurance usually won't cover unattended items. ... Keep money and valuables out of sight.",
+    "source": "https://www.smartraveller.gov.au/while-overseas/protecting-yourself-crime/theft-and-robbery",
+    "source_type": "government",
+    "checked": "2026-11-09",
+    "is_price": false,
+    "tradition": "Travel (Australian government guidance)",
+    "conflicts": "Reused from something-old-something-new fact_103 (checked live there 2026-11-09); not re-fetched in this batch (time). As at November 2026; the Wedded Advisor confirms current requirements. Brief: no travel or packing rules stated as fact; use only as optional context."
+   }
+  ],
+  "insider_details": [
+   {
+    "detail": "If a Jewish ceremony is planned, build the badeken into the run sheet as its own moment before the chupah: the groom veils the bride in her reception room with family present, so allow a separate space and time near the ceremony site, and agree with the officiant how dense the veil should be.",
+    "fact_ids": [
+     "fact_100",
+     "fact_101",
+     "fact_104"
+    ]
+   },
+   {
+    "detail": "A veil that will be folded forward as a blusher should be checked for which side the pattern sits on when folded; period lace veils were designed for exactly this.",
+    "fact_ids": [
+     "fact_105"
+    ]
+   },
+   {
+    "detail": "An heirloom veil is often a family keepsake rather than something worn by every generation; ask early whether a family veil is wearable or only to be carried or displayed, so there is time to plan a headpiece around it.",
+    "fact_ids": [
+     "fact_107",
+     "fact_108"
+    ]
+   },
+   {
+    "detail": "Carry an heirloom veil in hand luggage rather than checked bags, and check how your travel policy treats items in checked baggage and unattended items.",
+    "fact_ids": [
+     "fact_109",
+     "fact_110",
+     "fact_111"
+    ]
+   },
+   {
+    "detail": "On a clifftop or beach, plan to wear the veil for the ceremony and photographs and take it off for the reception; secure it to the hair or headpiece, and have someone ready to lift and settle it in the wind. (Practical advice, not a sourced fact.)",
+    "fact_ids": []
+   }
+  ],
+  "quotes": [],
+  "real_weddings": [],
+  "needs_signoff": [],
+  "verify_items": [
+   "[[VERIFY: Christian ceremonies: no Church of England or Catholic official page on a bridal veil or head covering was read in the time box; write Christian practice as living practice only, or source before drafting]]",
+   "[[VERIFY: Hindu, Muslim or other faith bridal veiling (e.g. ghoonghat, chunni): no official or academic source read in time; omit per brief unless sourced]]"
+  ],
+  "often_told": [
+   "INTERNAL ONLY, unsourced: that veils protected brides from evil spirits, or hid the bride in arranged marriages. Not found in any official faith or museum source read in batch B.",
+   "INTERNAL ONLY, unsourced: that the blusher symbolises modesty or virginity in Christian weddings; no church source read.",
+   "INTERNAL ONLY: My Jewish Learning bedeken URL returned 404; only Chabad.org was read for the bedeken. Chabad's Rebecca origin (fact_102) and Kabbalistic meaning (fact_103) are Chabad's own teaching; attribute to Jewish tradition as Chabad describes it, not to all Jewish movements."
+  ],
+  "must_include_coverage": [
+   {
+    "item": "Faith customs (e.g. the Jewish bedeken) only where sourced and tied to their own tradition, written respectfully, no generalising across faiths",
+    "covered_by": [
+     "fact_100",
+     "fact_101",
+     "fact_102",
+     "fact_103",
+     "fact_104",
+     "[[VERIFY: Christian ceremonies: no Church of England or Catholic official page on a bridal veil or head covering was read in the time box; write Christian practice as living practice only, or source before drafting]]",
+     "[[VERIFY: Hindu, Muslim or other faith bridal veiling (e.g. ghoonghat, chunni): no official or academic source read in time; omit per brief unless sourced]]"
+    ]
+   },
+   {
+    "item": "Lifting the veil: who lifts it (partner, parent, the bride herself) as living practice; any partner of any gender, said once",
+    "covered_by": [
+     "fact_101",
+     "living practice (no source required per brief)"
+    ]
+   },
+   {
+    "item": "Blusher, wearing it back and heirloom veils (tradition_plan section 8)",
+    "covered_by": [
+     "fact_105",
+     "fact_106",
+     "fact_107",
+     "fact_108"
+    ]
+   },
+   {
+    "item": "Destination section as practical points: wind, heat, beach or clifftop, securing and timing; no travel or packing rules stated as fact",
+    "covered_by": [
+     "fact_109",
+     "fact_110",
+     "fact_111",
+     "practical advice (no source required per brief)"
+    ]
+   },
+   {
+    "item": "Choosing not to wear one (living practice)",
+    "covered_by": [
+     "fact_106",
+     "living practice (no source required per brief)"
+    ]
+   },
+   {
+    "item": "Royal and museum examples only as rct.uk, royal.uk, V&A or the Met describe them, cited once by link",
+    "covered_by": [
+     "fact_105",
+     "fact_106",
+     "fact_107",
+     "fact_108"
+    ]
+   }
+  ]
+ }
+}

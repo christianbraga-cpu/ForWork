@@ -1,0 +1,302 @@
+{
+  "agent": "wedding-planner-sme",
+  "task_id": "why-do-brides-wear-veils",
+  "stage": "03",
+  "status": "complete",
+  "round": 1,
+  "inputs_used": [
+    "CLAUDE.md",
+    "content/posts/why-do-brides-wear-veils/00-input.json",
+    "content/posts/why-do-brides-wear-veils/01-brief.json (batch A)",
+    "content-system/schemas/03-source-pack.schema.json",
+    "content/posts/something-old-something-new/03-source-pack.json (format model)",
+    "https://www.oxfordreference.com/search?q=bridal+veil&searchBtn=Search&isQuickSearch=true",
+    "https://www.oxfordreference.com/search?q=veil+wedding&searchBtn=Search&isQuickSearch=true&type_0=subjectreference&t0=ORO%3AAHU03410",
+    "https://www.britannica.com/topic/veil",
+    "https://www.britannica.com/topic/flammeum (404)",
+    "https://api.vam.ac.uk/v2/objects/search?q=wedding%20veil&page_size=15",
+    "https://api.vam.ac.uk/v2/museumobject/O1223045",
+    "https://api.vam.ac.uk/v2/museumobject/O171447",
+    "https://www.rct.uk/collection/search (client-side, no results readable)",
+    "https://www.royal.uk/the-wedding-dress (404)",
+    "https://www.royal.uk/search?search_api_fulltext=wedding%20veil (no veil page)",
+    "https://api.vam.ac.uk/v2/objects/search?q=Princess%20Helena%20wedding%20veil (no veil record)"
+  ],
+  "tools_used": [
+    "mcp__Apify__apify--web-fetch",
+    "mcp__Apify__apify--web-search",
+    "Bash"
+  ],
+  "assumptions": [
+    "Batch A only, fact_01 to fact_12 (range fact_01 to fact_099). 15-minute hard clock: started 03:02:21, last new read started about 03:08 (two slow responses returned 03:19, neither used for facts); no reads started after 03:17.",
+    "Oxford Reference entries are subscription-only; quotes are the publisher's own search excerpts read live 2026-11-09. Source_type 'editorial' (academic reference). V&A catalogue records read via the official V&A API; source_type 'editorial' because the schema has no museum type.",
+    "Folklore meaning: the only veil meaning printed in a reference read is luck, from wearing or borrowing a veil worn by a happily married bride (fact_11, fact_12). No protection-from-spirits, disguise or concealment meaning appears in any reference read: do not state one.",
+    "No Met Museum page read in the time box. No prices or amounts collected; no real weddings; no quotes beyond the 1840 Times line as the V&A prints it.",
+    "Timeline the writer can use without stretching: Roman bride's flame-coloured veil (fact_01, fact_02); early Christian adoption, adapted from the Roman model but different in look and meaning (fact_03, fact_04); 'taking the veil' for consecrated women (fact_03, fact_04); medieval wimple as everyday dress (fact_06); white usual by 1800, Victoria helped popularise it in 1840 (fact_08); veil worn back, face-covering came later (fact_09)."
+  ],
+  "payload": {
+    "facts": [
+      {
+        "fact_id": "fact_01",
+        "topic": "Rome, the bride's veil",
+        "claim": "The Oxford Dictionary of the Classical World describes the Roman bride's appearance as ritually prescribed: hair in six locks with woollen fillets, a straight white woven tunic fastened with a 'knot of Hercules', and a great flame-coloured veil.",
+        "quote": "Her dress and appearance were ritually prescribed: her hair was arranged in six locks, with woollen fillets, her dress was a straight white woven tunic fastened at the waist with a 'knot of Hercules', her veil was a great flame-coloured...",
+        "source": "https://www.oxfordreference.com/display/10.1093/acref/9780192801463.001.0001/acref-9780192801463-e-1365",
+        "source_type": "editorial",
+        "checked": "2026-11-09",
+        "is_price": false,
+        "conflicts": "Read as the Oxford Reference search excerpt (entry 'marriage ceremonies', search 'bridal veil'); excerpt truncates after 'flame-coloured'. The word 'flammeum' itself is not in the excerpt read; do not print 'flammeum' as a quoted term from this source."
+      },
+      {
+        "fact_id": "fact_02",
+        "topic": "Rome, wedding dress",
+        "claim": "The Oxford Companion to Classical Literature says the favourite month for a Roman marriage was June, the bride put away her toga praetexta the day before, her dress and appearance were prescribed by custom, and she wore a white woven tunic with a 'knot of Hercules' to be untied later by her husband, with a veil and shoes.",
+        "quote": "At Rome. The favourite month for marriage was June. On the previous day the bride put away her toga praetexta (if she wore it) because she had come of age. Her dress and appearance were prescribed by custom. ... Her dress was a white woven tunic, fastened at the waist with a 'knot of Hercules' to be untied later by her husband, and a veil and shoes...",
+        "source": "https://www.oxfordreference.com/display/10.1093/acref/9780199548545.001.0001/acref-9780199548545-e-1906",
+        "source_type": "editorial",
+        "checked": "2026-11-09",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_03",
+        "topic": "Late antiquity, veil continues; brides of Christ",
+        "claim": "The Oxford Dictionary of Late Antiquity (Maria Parani) says the veil continued to be part of bridal dress in late antiquity but differed from its Roman antecedent in appearance and symbolic function, and that this bridal association seems to have informed church fathers' view that women dedicated to monastic life should be veiled as 'brides of Christ'.",
+        "quote": "the veil apparently continued to be part of bridal dress, though it differed from its Roman antecedent in appearance and symbolic function. The association of the veil with bridal dress seems to have informed the views of church fathers that women who dedicated themselves to the monastic life should be veiled as befitted 'brides of Christ' (cf. Ambrose, De Virginibus, I, 12, 65).",
+        "source": "https://www.oxfordreference.com/display/10.1093/acref/9780198662778.001.0001/acref-9780198662778-e-4952",
+        "source_type": "editorial",
+        "checked": "2026-11-09",
+        "is_price": false,
+        "conflicts": "This source says the later veil DIFFERED from the Roman one: the article must not draw a straight line from the Roman veil to the modern white veil."
+      },
+      {
+        "fact_id": "fact_04",
+        "topic": "Christian ceremony and religious veiling",
+        "claim": "The Oxford Companion to the Body says that around this time (late antiquity) the bridal veil became incorporated into the Christian wedding ceremony, adapted from the Roman model, while women consecrated to the service of God 'took up the veil' as a symbol of their marriage to Christ and a sign of chastity.",
+        "quote": "At around this time, the bridal veil became incorporated into the Christian wedding ceremony, adapted from the Roman model, while women who became consecrated to the service of God 'took up the veil' as a symbol of their marriage to Christ, and a sign of their chastity.",
+        "source": "https://www.oxfordreference.com/display/10.1093/acref/9780198524038.001.0001/acref-9780198524038-e-990",
+        "source_type": "editorial",
+        "checked": "2026-11-09",
+        "is_price": false,
+        "conflicts": "Search excerpt only; 'this time' refers to a period named earlier in the entry (the excerpt mentions women of Carthage, i.e. the early Christian era). Write 'in the early Christian centuries' rather than a specific century. Fact_03 says the later veil differed from the Roman one in appearance and meaning; fact_04 says it was adapted from the Roman model. Both can stand: adapted from, but not the same as."
+      },
+      {
+        "fact_id": "fact_05",
+        "topic": "Jewish bridal veil, earliest evidence (hand to batch B)",
+        "claim": "The Oxford Companion to the Body says the earliest clear evidence for the bridal veil in Jewish custom dates from the early Middle Ages, although Jewish women had covered their hair in public as an act of modesty since biblical times.",
+        "quote": "The earliest clear evidence for the bridal veil in Jewish custom dates from the early Middle Ages as well, although Jewish women had covered their hair in public, as an act of modesty, since biblical times.",
+        "source": "https://www.oxfordreference.com/display/10.1093/acref/9780198524038.001.0001/acref-9780198524038-e-990",
+        "source_type": "editorial",
+        "checked": "2026-11-09",
+        "is_price": false,
+        "conflicts": "Faith section belongs to batch B; recorded here so the writer has one date source. Batch B's bedeken facts take priority for the ceremony itself."
+      },
+      {
+        "fact_id": "fact_06",
+        "topic": "Medieval head covering, the wimple",
+        "claim": "Britannica says the wimple was adopted as a chin veil by Western women after the crusaders brought back Near Eastern fashions; usually of fine white linen or silk, it framed the face and covered the neck and sometimes part of the bosom.",
+        "quote": "...was adopted as a chin veil by Western women after the crusaders brought back from the Near East such fashions as the veil of the Muslim woman. The wimple, usually made of fine white linen or silk, framed the face and covered the neck and sometimes part of the bosom.",
+        "source": "https://www.britannica.com/topic/veil",
+        "source_type": "editorial",
+        "checked": "2026-11-09",
+        "is_price": false,
+        "conflicts": "Quoted from Britannica's 'veil' topic page, which excerpts the 'wimple' article (https://www.britannica.com/topic/wimple). Britannica says it has no full 'veil' article. This is everyday medieval dress, not specifically bridal; do not call it a bridal veil."
+      },
+      {
+        "fact_id": "fact_07",
+        "topic": "Queen Victoria 1840, contemporary report",
+        "claim": "A V&A British Galleries label quotes The Times on Queen Victoria's 1840 wedding: a rich white satin dress trimmed with orange-flower blossoms, a wreath of the same blossoms on her head, over which, but not so as to conceal her face, a beautiful veil of Honiton lace was thrown.",
+        "quote": "When Queen Victoria married in 1840, 'The Times' reported: 'Her dress was a rich white satin, trimmed with orange-flower blossoms. On her head she wore a wreath of the same blossoms, over which, but not so as to conceal her face, a beautiful veil of Honiton lace was thrown.'",
+        "source": "https://collections.vam.ac.uk/item/O1223045/ (read via https://api.vam.ac.uk/v2/museumobject/O1223045)",
+        "source_type": "editorial",
+        "checked": "2026-11-09",
+        "is_price": false,
+        "conflicts": "No Royal Collection Trust page on the 1840 veil was found in the time box (rct.uk collection search renders client-side; site-restricted searches returned nothing). The V&A label is the source; do not cite rct.uk for this."
+      },
+      {
+        "fact_id": "fact_08",
+        "topic": "Queen Victoria popularised white",
+        "claim": "The V&A says Queen Victoria helped popularise the fashion for white when she married in 1840, setting a royal precedent with a simple ivory satin dress; earlier royal brides had worn white but often woven or heavily embroidered with gold or silver. By 1800 it had become usual for a bride to wear white or cream, a colour that implied purity, cleanliness and social refinement.",
+        "quote": "Queen Victoria helped popularise the fashion for white when she got married in 1840. She set a royal precedent by choosing a simple ivory satin dress which was very much in the fashions of the day. Earlier royal brides had worn white but their dresses were often woven or heavily embroidered with gold or silver. ... By 1800 it had become usual for her to wear white or cream. This was a popular colour as it implied purity, cleanliness and social refinement.",
+        "source": "https://collections.vam.ac.uk/item/O1223045/ (read via https://api.vam.ac.uk/v2/museumobject/O1223045)",
+        "source_type": "editorial",
+        "checked": "2026-11-09",
+        "is_price": false,
+        "conflicts": "The V&A says Victoria 'helped popularise' white and that white was already usual by 1800: never write that she 'started' the white wedding or white veil. Same V&A record says 'ivory satin' while The Times quote (fact_07) says 'white satin'; write 'white satin' only inside the Times quote."
+      },
+      {
+        "fact_id": "fact_09",
+        "topic": "Victorian veil, worn back not over the face; English lace",
+        "claim": "A V&A label for a Honiton lace veil (Devon, about 1850, V&A T.110-1968) says Queen Victoria wore English lace to promote British manufacture and encouraged other brides to do the same; the veil's pattern includes pea-pods, symbols of fruitfulness and happiness; and the bride would have worn it attached to the back of her head, not over her face, a fashion which came later.",
+        "quote": "When Queen Victoria wed, she wore English lace to promote British manufacture. She encouraged other brides to do the same. The pattern of this Honiton lace veil includes pea-pods, which are symbols of fruitfulness and happiness. The bride would have worn the veil attached to the back of her head, not over her face, a fashion which came later.",
+        "source": "https://collections.vam.ac.uk/item/O171447/ (read via https://api.vam.ac.uk/v2/museumobject/O171447)",
+        "source_type": "editorial",
+        "checked": "2026-11-09",
+        "is_price": false,
+        "conflicts": "Catalogue production date is 'mid 19th century' (1825 to 1875); the label says 'About 1850'. Write 'about 1850'. The pea-pod meaning is the V&A's reading of this one veil's pattern, not a general meaning of veils."
+      },
+      {
+        "fact_id": "fact_10",
+        "topic": "Victorian veil, an example worn 1865",
+        "claim": "The V&A holds a large Honiton lace wedding veil (T.43A-1947, made 1865, about 195 by 195 cm) worn by Eliza Penelope Clay at her marriage to Joseph Bright at St James's Church, Piccadilly, on 16 February 1865; its label says the veil was designed so the pattern is on the outside when folded over, and the matching dress was based on the Queen's.",
+        "quote": "Like many wealthy brides in the 1860s, Eliza Penelope Clay chose a white satin dress embellished with Honiton lace for her marriage to Joseph Bright at St James's Church, Piccadilly, in February 1865. The bride's veil has been skilfully designed so that the pattern is on the outside when the veil is folded over. | This wedding dress, made more than twenty years later, was based on the Queen's",
+        "source": "https://collections.vam.ac.uk/item/O1223045/ (read via https://api.vam.ac.uk/v2/museumobject/O1223045)",
+        "source_type": "editorial",
+        "checked": "2026-11-09",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_11",
+        "topic": "Folklore: the borrowed veil",
+        "claim": "A Dictionary of English Folklore (Simpson and Roud) says many say the borrowed item should be something worn at a previous wedding, provided the marriage turned out happily, and the veil is often singled out as the luckiest.",
+        "quote": "Many say the item borrowed should be something worn at a previous wedding, provided the marriage turned out happily; the veil is often singled out as the luckiest.",
+        "source": "https://www.oxfordreference.com/display/10.1093/acref/9780198607663.001.0001/acref-9780198607663-e-1105",
+        "source_type": "editorial",
+        "checked": "2026-11-09",
+        "is_price": false,
+        "conflicts": "Search excerpt only (entry 'weddings'). This is the ONLY folklore meaning for the veil found in a reference this run: luck when borrowed from a happily married bride. No protection-from-spirits or concealment meaning was found in Oxford Reference."
+      },
+      {
+        "fact_id": "fact_12",
+        "topic": "Folklore: lending wedding veils",
+        "claim": "A Dictionary of Superstitions (Opie and Tatem) quotes a source saying it is widely accounted lucky to wear something already worn by a happy bride at her wedding, and that ladies consider it a compliment to be asked to lend their wedding veils to friends for this purpose; a 1905 Folklore citation (Monmouthshire) adds that the bride should always borrow something, a veil or lace.",
+        "quote": "it is widely accounted 'lucky' to wear something on the wedding day which has already been worn by a happy bride at her wedding, and ladies consider it rather a compliment to be asked to lend their wedding-veils to their friends for this purpose. 1905 Folklore 66 [Mon.] The bride should always borrow something, a veil or lace, etc.,...",
+        "source": "https://www.oxfordreference.com/display/10.1093/acref/9780192829160.001.0001/acref-9780192829160-e-163",
+        "source_type": "editorial",
+        "checked": "2026-11-09",
+        "is_price": false,
+        "conflicts": "Search excerpt only; the date of the first quoted passage is cut off in the excerpt, so do not date it. 1905 applies to the Monmouthshire line only."
+      }
+    ],
+    "insider_details": [
+      {
+        "detail": "Queen Victoria's Honiton lace veil was worn over a wreath of orange blossom and not over her face, and the V&A notes face-covering veils came later: a bride who wants the most historically 'Victorian' look wears a long lace veil back from a floral crown rather than a blusher.",
+        "fact_ids": [
+          "fact_07",
+          "fact_09"
+        ]
+      },
+      {
+        "detail": "A V&A veil from 1865 was designed so its lace pattern shows on the outside when folded over: when choosing an heirloom or new lace veil, check how the pattern reads both down the back and folded forward, because photographs catch both.",
+        "fact_ids": [
+          "fact_10"
+        ]
+      },
+      {
+        "detail": "English folklore dictionaries record that borrowing a veil from a happily married bride is counted lucky: a mother's or friend's veil does double duty as 'something borrowed' and as a family piece.",
+        "fact_ids": [
+          "fact_11",
+          "fact_12"
+        ]
+      },
+      {
+        "detail": "The V&A says Victoria wore English lace to promote British manufacture: couples marrying abroad can echo the same idea by choosing lace or a maker from their own country or the destination, as a deliberate story rather than a trend.",
+        "fact_ids": [
+          "fact_09"
+        ]
+      }
+    ],
+    "often_told": [
+      "Veil hides the bride from evil spirits (no reference read prints this; internal only, do not state).",
+      "Veil hid the bride's face in arranged marriages until the vows (not in any reference read; internal only).",
+      "Roman flammeum as the direct ancestor of the modern white veil (contradicted in part by fact_03: later veil differed in appearance and meaning; do not state a direct line).",
+      "Queen Victoria 'started' the white wedding or white veil (V&A says she helped popularise white; white was usual by 1800: fact_08)."
+    ],
+    "quotes": [],
+    "real_weddings": [],
+    "verify_items": [
+      "[[VERIFY: royal veils section: no rct.uk or royal.uk page describing a royal bride's veil was read in batch A's 15-minute window (rct.uk search renders client-side; royal.uk/the-wedding-dress 404; royal.uk search returned no veil page). Only Queen Victoria 1840 is sourced (V&A, fact_07 to fact_09). Cut other royal veils or source them on rct.uk/royal.uk before drafting]]",
+      "[[VERIFY: the term 'flammeum' is not in any excerpt read; Oxford Reference gives 'a great flame-coloured' veil (fact_01). Use 'flame-coloured veil' and drop the Latin word unless an Oxford Reference or Britannica page printing 'flammeum' is read (britannica.com/topic/flammeum is 404)]]"
+    ],
+    "needs_signoff": [],
+    "must_include_coverage": [
+      {
+        "item": "Origins, dates and meanings stated as fact only where a museum, Royal Collection Trust, Britannica, Oxford Reference or official faith source gives them (batch A: folklore meanings)",
+        "covered_by": [
+          "fact_11",
+          "fact_12"
+        ]
+      },
+      {
+        "item": "Section: the veil in ancient Rome",
+        "covered_by": [
+          "fact_01",
+          "fact_02",
+          "fact_03"
+        ]
+      },
+      {
+        "item": "Section: medieval and religious veiling",
+        "covered_by": [
+          "fact_03",
+          "fact_04",
+          "fact_06"
+        ]
+      },
+      {
+        "item": "Section: the Victorian white veil",
+        "covered_by": [
+          "fact_07",
+          "fact_08",
+          "fact_09",
+          "fact_10"
+        ]
+      },
+      {
+        "item": "Section: royal veils, only as rct.uk, royal.uk, V&A or the Met describe them",
+        "covered_by": [
+          "fact_07",
+          "fact_08",
+          "[[VERIFY: royal veils section: no rct.uk or royal.uk page describing a royal bride's veil was read in batch A's 15-minute window (rct.uk search renders client-side; royal.uk/the-wedding-dress 404; royal.uk search returned no veil page). Only Queen Victoria 1840 is sourced (V&A, fact_07 to fact_09). Cut other royal veils or source them on rct.uk/royal.uk before drafting]]"
+        ]
+      },
+      {
+        "item": "Faith customs only where sourced (batch A hand-off: Jewish bridal veil date, Christian adoption)",
+        "covered_by": [
+          "fact_04",
+          "fact_05"
+        ]
+      }
+    ]
+  },
+  "verify_items": [
+    "[[VERIFY: royal veils section: no rct.uk or royal.uk page describing a royal bride's veil was read in batch A's 15-minute window (rct.uk search renders client-side; royal.uk/the-wedding-dress 404; royal.uk search returned no veil page). Only Queen Victoria 1840 is sourced (V&A, fact_07 to fact_09). Cut other royal veils or source them on rct.uk/royal.uk before drafting]]",
+    "[[VERIFY: the term 'flammeum' is not in any excerpt read; Oxford Reference gives 'a great flame-coloured' veil (fact_01). Use 'flame-coloured veil' and drop the Latin word unless an Oxford Reference or Britannica page printing 'flammeum' is read (britannica.com/topic/flammeum is 404)]]"
+  ],
+  "open_questions": [
+    {
+      "to": "luxury-writer",
+      "blocking": false,
+      "question": "Royal veils: only Queen Victoria 1840 is sourced (V&A). Either keep the royal section to Victoria and her lace, or the orchestrator funds an rct.uk/royal.uk read for later royal brides. Do not name other royal veils, lengths or lace without a source."
+    }
+  ],
+  "self_qa": {
+    "checks": [
+      {
+        "check": "Every fact has a source URL, exact quote and date read",
+        "pass": true,
+        "note": "12 facts read live 2026-11-09."
+      },
+      {
+        "check": "No prices or amounts",
+        "pass": true
+      },
+      {
+        "check": "Every batch A item covered, marked VERIFY or listed as often told",
+        "pass": true,
+        "note": "Royal veils beyond Victoria and the word 'flammeum' are VERIFY."
+      },
+      {
+        "check": "No invented quotes, statistics or real weddings",
+        "pass": true
+      },
+      {
+        "check": "No competitor, vendor, retailer or Wikipedia sources",
+        "pass": true
+      }
+    ],
+    "confidence": 0.65
+  },
+  "next_agent": [
+    "luxury-writer"
+  ]
+}
