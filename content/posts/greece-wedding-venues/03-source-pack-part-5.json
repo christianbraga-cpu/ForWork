@@ -1,0 +1,227 @@
+{
+  "agent": "planner-sme",
+  "task_id": "greece-wedding-venues",
+  "stage": "03",
+  "status": "complete",
+  "round": 2,
+  "inputs_used": [
+    "CLAUDE.md",
+    "content/posts/greece-wedding-venues/03-source-pack.json",
+    "content/posts/greece-wedding-venues/03-source-pack-part-3.json (format model)",
+    "content-system/schemas/03-source-pack.schema.json",
+    "Apify web-fetch 2026-11-09 of official venue and group pages cited in each fact"
+  ],
+  "self_qa": {
+    "checks": [
+      {
+        "check": "Every fact has a source and date",
+        "pass": true,
+        "note": "3 facts, fact_500 to fact_502, checked 2026-11-09."
+      },
+      {
+        "check": "No price without a source; all prices in needs_signoff",
+        "pass": true,
+        "note": "No prices recorded."
+      },
+      {
+        "check": "Every must-include covered or marked [[VERIFY]]",
+        "pass": true,
+        "note": "Batch F retry covers venue entries only; no venue confirmed."
+      },
+      {
+        "check": "No invented quotes, statistics or real weddings",
+        "pass": true
+      },
+      {
+        "check": "Australian English, no em dashes",
+        "pass": true
+      }
+    ],
+    "confidence": 0.6
+  },
+  "open_questions": [
+    {
+      "to": "orchestrator",
+      "question": "Batch F confirmed 0 of 11 venues; total stays at 17 of 20. Most fetches timed out (60s) or returned fetch errors, so the 15-minute limit was exceeded on in-flight calls. Domes Miramare and King George sites loaded but neither page says the venue hosts weddings. Next options: read King George's Marriott events page, or substitute venues with live wedding pages.",
+      "blocking": false
+    }
+  ],
+  "assumptions": [
+    "Inclusion rule: a venue is included only if its own official site (or owning group site) says it hosts weddings.",
+    "BOOKING CHECKLIST: Domes Miramare: whether weddings are hosted, ceremony type, capacity, exclusive use, music curfew, minimum nights, rain plan, set-up times.",
+    "BOOKING CHECKLIST: King George Athens: whether weddings are hosted, ceremony type, capacity, music curfew, minimum nights, set-up times."
+  ],
+  "verify_items": [
+    "[[VERIFY: Domes Miramare Corfu: whether the resort itself hosts weddings; the Domes group romance page mentions wedding planning and a 'Domes pier' ceremony but not at Miramare specifically]]",
+    "[[VERIFY: King George Athens: whether the hotel hosts weddings; read the Marriott events page for athgl-king-george]]"
+  ],
+  "tools_used": [
+    "mcp__Apify__apify--web-fetch",
+    "Bash"
+  ],
+  "next_agent": [
+    "luxury-writer"
+  ],
+  "payload": {
+    "facts": [
+      {
+        "fact_id": "fact_500",
+        "claim": "The Domes Resorts group's romance page says its professionals deliver fully personalised wedding planning on the Greek Islands or the Algarve, and offers exchanging vows 'with a ceremony on the Domes pier'. The page's Domes Miramare entry describes speedboat trips to Corfu Old Town, dining to an orchestral performance and spa rituals, but does not itself mention weddings.",
+        "source": "https://domesresorts.com/romantic-escape-in-greece-portugal-spain/",
+        "source_type": "official_venue",
+        "checked": "2026-11-09",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_501",
+        "claim": "Domes Miramare, a Luxury Collection Resort, Corfu is an adults-only (16+) beachfront resort in Moraitika, Corfu, set in a two-century-old olive grove with 650 metres of seafront, 182 rooms, suites and villas, 3 restaurants including a MICHELIN-starred venue, 4 bars, a private pier and speedboat. Built by the Onassis family in the late 1960s. Its homepage does not mention weddings.",
+        "source": "https://www.domesresorts.com/domesmiramare/",
+        "source_type": "official_venue",
+        "checked": "2026-11-09",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_502",
+        "claim": "King George, a Luxury Collection Hotel, Athens (kinggeorgeathens.com redirects to its Marriott page) dates from 1930, sits on Syntagma Square, has 102 rooms and suites including a Penthouse Suite with a private outdoor pool overlooking the Acropolis, and lists 'Meeting Space' and an events page. The overview page does not mention weddings; the events page was not read within the time limit.",
+        "source": "https://www.marriott.com/en-us/hotels/athgl-king-george-a-luxury-collection-hotel-athens/overview/",
+        "source_type": "official_venue",
+        "checked": "2026-11-09",
+        "is_price": false
+      }
+    ],
+    "insider_details": [],
+    "quotes": [],
+    "real_weddings": [],
+    "verify_items": [
+      "[[VERIFY: Domes Miramare Corfu: whether the resort itself hosts weddings; the Domes group romance page mentions wedding planning and a 'Domes pier' ceremony but not at Miramare specifically]]",
+      "[[VERIFY: King George Athens: whether the hotel hosts weddings; read the Marriott events page for athgl-king-george]]"
+    ],
+    "needs_signoff": [],
+    "must_include_coverage": [
+      {
+        "item": "20 venues by region (Batch F retry: no new venue confirmed)",
+        "covered_by": [
+          "fact_500",
+          "fact_501",
+          "fact_502"
+        ]
+      }
+    ],
+    "venue_verdicts": [
+      {
+        "venue": "Domes Miramare, a Luxury Collection Resort, Corfu",
+        "region": "Moraitika, Corfu",
+        "verdict": "drop",
+        "official_url": "https://www.domesresorts.com/domesmiramare/",
+        "fact_ids": [
+          "fact_500",
+          "fact_501"
+        ],
+        "type": "resort or hotel",
+        "location_setting": "Adults-only beachfront olive-grove resort, Moraitika",
+        "ceremony_options": "Not stated for Miramare",
+        "capacity": "Not published",
+        "exclusive_use": "Not published",
+        "rooms": "182 rooms, suites and villas",
+        "standout": "Onassis-built resort with private pier and speedboat",
+        "not_published": [
+          "music curfew",
+          "minimum nights",
+          "rain plan",
+          "set-up times",
+          "exclusive use",
+          "capacity"
+        ],
+        "drop_reason": "Group site mentions weddings generally; Miramare's own page does not say it hosts weddings. No dedicated wedding page found (/domesmiramare/weddings/ returns 404)."
+      },
+      {
+        "venue": "King George, a Luxury Collection Hotel, Athens",
+        "region": "Syntagma Square, Athens",
+        "verdict": "drop",
+        "official_url": "https://www.kinggeorgeathens.com/",
+        "fact_ids": [
+          "fact_502"
+        ],
+        "type": "city hotel",
+        "location_setting": "Syntagma Square, central Athens",
+        "ceremony_options": "Not stated",
+        "capacity": "Not published",
+        "exclusive_use": "Not published",
+        "rooms": "102 rooms and suites",
+        "standout": "Penthouse Suite with private pool and Acropolis view",
+        "not_published": [
+          "music curfew",
+          "minimum nights",
+          "rain plan",
+          "set-up times",
+          "exclusive use",
+          "capacity"
+        ],
+        "drop_reason": "Overview page does not mention weddings; events page not read before the 15-minute limit."
+      },
+      {
+        "venue": "Vedema (Santorini)",
+        "verdict": "drop",
+        "fact_ids": [],
+        "not_published": [],
+        "drop_reason": "Official site did not load: www.vedema.gr: TLS certificate could not be verified by the fetcher (502)."
+      },
+      {
+        "venue": "Andronis (Santorini)",
+        "verdict": "drop",
+        "fact_ids": [],
+        "not_published": [],
+        "drop_reason": "Official site did not load: andronisboutiquehotels.com: fetch timed out after 60s."
+      },
+      {
+        "venue": "Abaton Island Resort (Crete)",
+        "verdict": "drop",
+        "fact_ids": [],
+        "not_published": [],
+        "drop_reason": "Official site did not load: abatonislandresort.com: fetch timed out after 60s."
+      },
+      {
+        "venue": "Santo Maris (Santorini)",
+        "verdict": "drop",
+        "fact_ids": [],
+        "not_published": [],
+        "drop_reason": "Official site did not load: santomaris.gr/weddings: upstream fetch error (502)."
+      },
+      {
+        "venue": "Kinsterna Hotel (Monemvasia)",
+        "verdict": "drop",
+        "fact_ids": [],
+        "not_published": [],
+        "drop_reason": "Official site did not load: www. and bare kinsternahotel.gr: upstream fetch error (502), also timed out with render wait."
+      },
+      {
+        "venue": "Euphoria Retreat (Mystras)",
+        "verdict": "drop",
+        "fact_ids": [],
+        "not_published": [],
+        "drop_reason": "Official site did not load: euphoriaretreat.com: upstream fetch error (502)."
+      },
+      {
+        "venue": "Hotel Grande Bretagne (Athens)",
+        "verdict": "drop",
+        "fact_ids": [],
+        "not_published": [],
+        "drop_reason": "Official site did not load: grandebretagne.gr/weddings timed out (with and without render wait); Marriott /events/ URL for athgl-hotel-grande-bretagne returned 404."
+      },
+      {
+        "venue": "The Island Club (Varkiza)",
+        "verdict": "drop",
+        "fact_ids": [],
+        "not_published": [],
+        "drop_reason": "Official site did not load: theislandclub.gr fetch was declined at the permission prompt; not retried."
+      },
+      {
+        "venue": "Lindian Village (Rhodes)",
+        "verdict": "drop",
+        "fact_ids": [],
+        "not_published": [],
+        "drop_reason": "Official site did not load: www.lindianvillage.gr returned a placeholder 'Hello World!' text page."
+      }
+    ]
+  }
+}

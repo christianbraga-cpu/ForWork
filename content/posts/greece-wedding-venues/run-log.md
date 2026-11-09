@@ -9,3 +9,4 @@
 23:24 03 top-up D complete: 4 included (Katikies, Mystique, Angsana Corfu, Atrium Prestige); total 17 confirmed (not padded to 20; title count set to 17 per plan); merged; writer launched
 23:25 person asked for 3 more venues: writer stopped; second top-up round F (retry failed sites with render wait) and G (new candidates) launched, 15 min
 23:30 03 top-up G complete: 5 included (Ikos Aria Kos, Miraggio, Nana Princess, Poseidonion Grand, Eagles Resort; last two thin); total 22; waiting on F, then pick the strongest 20
+23:52 03 top-up F complete: 0 included (sites unreadable or no weddings on venue's own pages). Parts 5 and 6 appended to merged pack (93 facts). Confirmed 24 (earlier count of 17 was a miscount; it was 19). Chosen 20: dropped Eagles Resort, Poseidonion Grand, Mystique (thin pages) and Danai Beach (Halkidiki already has two) as runners-up; writer relaunched
