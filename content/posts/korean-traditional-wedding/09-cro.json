@@ -1,0 +1,79 @@
+{
+  "agent": "cro",
+  "task_id": "korean-traditional-wedding",
+  "stage": "09",
+  "status": "complete",
+  "round": 1,
+  "inputs_used": [
+    "content-system/brand/services.md",
+    "content-system/brand/brand-facts.md",
+    "content/posts/korean-traditional-wedding/01-brief.json",
+    "content/posts/korean-traditional-wedding/07-panel.json",
+    "content/posts/korean-traditional-wedding/08-final.md",
+    "content-system/seo/link-map.csv",
+    "content-system/schemas/09-cro.schema.json",
+    "content/posts/nigerian-wedding-traditions/09-cro.json (format model)"
+  ],
+  "self_qa": {
+    "confidence": 0.85,
+    "checks": [
+      {"check": "/magazine, /wonderland-concierge and /wonderland-studio/wedding-website-templates/east-asian exist in link-map.csv", "pass": true},
+      {"check": "Each copy_changes old string occurs exactly once in 08-final.md", "pass": true},
+      {"check": "UTMs follow services.md (utm_source=blog, utm_medium=content, utm_campaign=korean-traditional-wedding, utm_content = position)", "pass": true},
+      {"check": "Primary text 6 words or fewer, no exclamation mark, no 'click here'", "pass": true},
+      {"check": "Advisor wording from brand-facts.md only; no prices, paperwork help, 'last dance' or em dashes added", "pass": true},
+      {"check": "At most 2 copy changes (2 used); only one utm_content=primary link remains after they apply", "pass": true}
+    ]
+  },
+  "assumptions": [
+    "CTA block markup follows the Nigerian run; the CMS publisher adapts it to the field map's CTA component if different.",
+    "08-final.md already has a /magazine link tagged utm_content=primary in the closing section. Filling the empty <!-- CTA: primary --> marker would duplicate it, so copy_changes 2 turns that closing line into the lead magnet link, leaving one primary and one magnet.",
+    "The East Asian wedding website template is a Wonderland Studio page in link-map.csv (region asia) and suits a Korean wedding with a wedding hall ceremony, a pyebaek and guests travelling from Australia, so it is the lead magnet.",
+    "The closing invitation already reads 'which customs each family wants to keep' (panel should_fix applied), so no change is needed there."
+  ],
+  "open_questions": [
+    {"to": "orchestrator", "question": "Apply copy_changes 1 and 2 to 08-final.md before distribution and CMS upload?", "blocking": false},
+    {"to": "orchestrator", "question": "Panel must_fix 1 asked for the advisor sentence 'Your Wedded Advisor holds the guest room blocks, with Wedded Privileges on every room.' after the Seoul and Jeju guest questions. The questions are in 08-final.md but that sentence is not. Add it (brand-facts.md supports it) before CMS upload?", "blocking": false}
+  ],
+  "payload": {
+    "journey_stage": "dreaming",
+    "primary_cta": {
+      "text": "Read the free magazine",
+      "subtext": "Free to read, whenever you are ready.",
+      "link": "/magazine?utm_source=blog&utm_medium=content&utm_campaign=korean-traditional-wedding&utm_content=primary",
+      "placement": "Fill the existing <!-- CTA: primary --> marker after section 6 (hanbok), once the reader has the ham, the gifts, the wedding hall, the jeontong honrye, the geese and the robes, and before section 7 (the pyebaek). After copy_changes 2 this is the only /magazine link in the post."
+    },
+    "secondary_cta": {
+      "text": "Speak with a Wedded Advisor",
+      "subtext": "The fee is agreed in writing before any work begins.",
+      "link": "/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=korean-traditional-wedding&utm_content=secondary",
+      "placement": "Existing inline link closing the Advisor paragraph at the end of 'Holding a pyebaek at home in Australia', straight after the question list and the boundary that the legal marriage, registration and family customs stay with the couple. This is where the panel's 'where does the advisor fit' question peaks. The closing section keeps its own Advisor link (utm_content=closing). Wording unchanged."
+    },
+    "lead_magnet": {
+      "name": "Wonderland Studio East Asian wedding website template",
+      "link": "/wonderland-studio/wedding-website-templates/east-asian?utm_source=blog&utm_medium=content&utm_campaign=korean-traditional-wedding&utm_content=magnet",
+      "placement": "Closing section 'Planning your Korean wedding with us', first paragraph, replacing the duplicate magazine line (copy_changes 2), after the reader has the guest questions and the pyebaek-at-home checklist and needs one place to share the ceremony, the pyebaek and travel details with both families.",
+      "exists": true
+    },
+    "tracking": [
+      "utm_content=primary on the /magazine CTA block after section 6",
+      "utm_content=secondary on the inline /wonderland-concierge link in 'Holding a pyebaek at home in Australia' (already in 08-final.md)",
+      "utm_content=magnet on the East Asian wedding website template link in the closing section",
+      "utm_content=closing on the /wonderland-concierge link in the closing section (already in 08-final.md)"
+    ],
+    "rationale": "The brief sets a dreaming-stage reader, so the free magazine leads, per the services.md early-stage rule, placed mid-article where the reader has met the customs and the robes and is still exploring. The Advisor is the in-context secondary once the pyebaek-at-home questions and the family, faith and legal boundary are answered, which is where the panel (planner_couple, sceptic) asked where the advisor fits. The East Asian website template gives two families and travelling guests one home for the wedding hall ceremony, the pyebaek and travel details, and replaces a duplicate magazine link rather than adding another ask. Weighted enquiry likelihood is 2.6, so no further asks are added. Ideal magnet not on the site: a Korean-Australian pyebaek planning guide (table, order of bows, hanbok, chukuigeum desk) for both families (suggestion only, not placed).",
+    "copy_changes": [
+      {
+        "old": "<!-- CTA: primary -->",
+        "new": "<!-- CTA: primary -->\n**Read the free magazine**\nFree to read, whenever you are ready.\n[Read the free magazine](/magazine?utm_source=blog&utm_medium=content&utm_campaign=korean-traditional-wedding&utm_content=primary)\n<!-- /CTA: primary -->",
+        "why": "Fill the empty primary marker after the hanbok section, once the reader has the customs and robes and before the pyebaek."
+      },
+      {
+        "old": "For more ideas while you plan, read [our free digital magazine](/magazine?utm_source=blog&utm_medium=content&utm_campaign=korean-traditional-wedding&utm_content=primary).",
+        "new": "Give both families and every guest one place for the ceremony, the pyebaek and the travel details with our [East Asian wedding website template](/wonderland-studio/wedding-website-templates/east-asian?utm_source=blog&utm_medium=content&utm_campaign=korean-traditional-wedding&utm_content=magnet).",
+        "why": "Remove the duplicate utm_content=primary magazine link and place the lead magnet where the guest and family coordination questions have just been raised."
+      }
+    ]
+  },
+  "next_agent": ["distribution"]
+}
