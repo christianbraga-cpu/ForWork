@@ -1,0 +1,78 @@
+{
+  "agent": "cro",
+  "task_id": "something-old-something-new",
+  "stage": "09",
+  "status": "complete",
+  "round": 1,
+  "inputs_used": [
+    "content-system/brand/services.md",
+    "content-system/brand/brand-facts.md",
+    "content/posts/something-old-something-new/01-brief.json",
+    "content/posts/something-old-something-new/07-panel.json",
+    "content/posts/something-old-something-new/08-final.md",
+    "content-system/seo/link-map.csv",
+    "content-system/schemas/09-cro.schema.json",
+    "content/posts/korean-traditional-wedding/09-cro.json (format model)"
+  ],
+  "self_qa": {
+    "confidence": 0.85,
+    "checks": [
+      {"check": "/magazine and /wonderland-concierge exist in link-map.csv", "pass": true},
+      {"check": "Each copy_changes old string occurs exactly once in 08-final.md", "pass": true},
+      {"check": "UTMs follow services.md (utm_source=blog, utm_medium=content, utm_campaign=something-old-something-new, utm_content = position)", "pass": true},
+      {"check": "Primary text 6 words or fewer, no exclamation mark, no 'click here'", "pass": true},
+      {"check": "Advisor wording from brand-facts.md only; no Wedded Privileges, prices, 'last dance' or em dashes added", "pass": true},
+      {"check": "At most 2 copy changes (2 used); only one utm_content=primary link remains after they apply", "pass": true}
+    ]
+  },
+  "assumptions": [
+    "CTA block markup follows the Korean run; the CMS publisher adapts it to the field map's CTA component if different.",
+    "08-final.md already has a /magazine link tagged utm_content=primary in the closing section. Filling the empty <!-- CTA: primary --> marker would duplicate it, so copy_changes 2 retags that closing link as the lead magnet (utm_content=magnet), leaving one primary and one magnet.",
+    "No Wonderland Studio template fits: the post is about heirlooms, borrowed pieces and carrying them overseas, not a guest-facing wedding website. The western-classic template was considered and not placed.",
+    "Panel must_fix (wedding-morning questions), the section 8 'work beautifully' line and the closing 'family pieces you plan to bring' fix are already in 08-final.md, so no further change is needed there."
+  ],
+  "open_questions": [
+    {"to": "orchestrator", "question": "Apply copy_changes 1 and 2 to 08-final.md before distribution and CMS upload?", "blocking": false}
+  ],
+  "payload": {
+    "journey_stage": "dreaming",
+    "primary_cta": {
+      "text": "Read the free magazine",
+      "subtext": "Free to read, whenever you are ready.",
+      "link": "/magazine?utm_source=blog&utm_medium=content&utm_campaign=something-old-something-new&utm_content=primary",
+      "placement": "Fill the existing <!-- CTA: primary --> marker after section 6 (something blue ideas), once the reader has the rhyme, its meaning and ideas for all four items and is still gathering inspiration, before section 7 (the sixpence)."
+    },
+    "secondary_cta": {
+      "text": "Speak with a Wedded Advisor",
+      "subtext": "The fee is agreed in writing before any work begins.",
+      "link": "/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=something-old-something-new&utm_content=secondary",
+      "placement": "Existing inline link closing section 9 (Carrying heirlooms to a destination wedding), straight after the wedding-morning questions and insurance steps, where the panel's 'who keeps track of it, us?' question peaks. The closing section keeps its own Advisor link (utm_content=closing). Wording unchanged."
+    },
+    "lead_magnet": {
+      "name": "Wedded Wonderland digital magazine",
+      "link": "/magazine?utm_source=blog&utm_medium=content&utm_campaign=something-old-something-new&utm_content=magnet",
+      "placement": "Closing section 'Planning your wedding with us', first sentence, retagged from primary to magnet by copy_changes 2, for the reader who finishes the post still at the dreaming stage.",
+      "exists": true
+    },
+    "tracking": [
+      "utm_content=primary on the /magazine CTA block after section 6",
+      "utm_content=secondary on the inline /wonderland-concierge link at the end of section 9 (already in 08-final.md)",
+      "utm_content=magnet on the /magazine link in the closing section",
+      "utm_content=closing on the /wonderland-concierge link in the closing section (already in 08-final.md)"
+    ],
+    "rationale": "The brief sets a dreaming-stage reader, so the free magazine leads, per the services.md early-stage rule, placed mid-article once all four items have been covered and the reader is choosing pieces. The Advisor is the in-context secondary after section 9, where the panel (planner_couple, funding_parent, uhnw) asked who looks after the pieces on the day; the copy stays within brand-facts (single point of contact, venue, travel, vendors and payments, fee agreed in writing) and makes no on-the-day or security claim. Weighted enquiry likelihood is 2.0, so no further asks are added. Ideal magnet not on the site: a printable heirloom travel checklist (photos, valuations, hand luggage, who holds each piece on the morning, return of borrowed pieces) for couples and families (suggestion only, not placed).",
+    "copy_changes": [
+      {
+        "old": "<!-- CTA: primary -->",
+        "new": "<!-- CTA: primary -->\n**Read the free magazine**\nFree to read, whenever you are ready.\n[Read the free magazine](/magazine?utm_source=blog&utm_medium=content&utm_campaign=something-old-something-new&utm_content=primary)\n<!-- /CTA: primary -->",
+        "why": "Fill the empty primary marker after the something blue ideas, once the reader has all four items and before the sixpence."
+      },
+      {
+        "old": "For more ideas on dresses, rings and destinations, read the [Wedded Wonderland digital magazine](/magazine?utm_source=blog&utm_medium=content&utm_campaign=something-old-something-new&utm_content=primary).",
+        "new": "For dresses, rings and destinations worth the journey, the [Wedded Wonderland digital magazine](/magazine?utm_source=blog&utm_medium=content&utm_campaign=something-old-something-new&utm_content=magnet) is free to read.",
+        "why": "Remove the duplicate utm_content=primary magazine link and tag the closing magazine link as the lead magnet, in a confident voice."
+      }
+    ]
+  },
+  "next_agent": ["distribution"]
+}
