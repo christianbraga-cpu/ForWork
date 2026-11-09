@@ -5,3 +5,4 @@
 02:04 03 planner-sme batch B complete 11 facts (Smartraveller insurance and theft; Moneysmart; V&A 1841 dress handed down); no official royal page found (royal examples left out); waiting on batch A
 02:04 03 planner-sme batch A complete 14 facts (Oxford Reference: Opie and Tatem, Simpson and Roud; first record 1883 Burne, Shropshire Folk-Lore; sixpence line 1946, left shoe; meanings printed for borrowed and blue only); 1871 claim unverified (not used); merged; writer launched
 02:06 05 luxury-writer complete ~2,430 words; 0 VERIFY; 0 research talk; first draft sent; editor + 5 readers launched
+02:07 07 icp-reader funding_parent complete; no must-fix
