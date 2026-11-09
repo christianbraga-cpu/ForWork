@@ -8,3 +8,4 @@
 00:38 07 icp-reader uhnw complete; enquire 2 (celebrity link undercuts discretion; museum links)
 00:38 07 icp-reader sceptic complete; no must-fix (celebrity link reads as filler; soft close)
 00:39 07 icp-reader funding_parent, search_visitor complete; no must-fix (ducks in takeaways; older guests at floor-level pyebaek); waiting on planner_couple, editor
+00:39 07 icp-reader planner_couple complete; no must-fix (guest logistics; celebrity link reads tabloid, raised by 3 readers); waiting on editor
