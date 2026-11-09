@@ -85,9 +85,9 @@ Women's formal hanbok is built from several layers of undergarments beneath a lo
 
 ### The bride: wonsam or hwarot
 
-At many traditional ceremonies, the bride wears one of two women's ceremonial robes. The wonsam (원삼) is a ceremonial silk robe, classically with a green body, red ribbons and sleeves striped in red, yellow, blue, white and dark red. <!-- fact_06 -->
+At many traditional ceremonies, the bride wears one of two women's ceremonial robes. The wonsam (원삼) is a woman's ceremonial silk robe, and one classic style has a green body, red ribbons and sleeves in red, yellow, blue, white and dark red. <!-- fact_06 -->
 
-The hwarot (활옷) is a fuller ceremonial ensemble: a red silk robe embroidered with flowers, worn with a jeogori (jacket) and chima (skirts) finished with gold leaf. <!-- fact_07 -->
+The hwarot (활옷) is a fuller ceremonial ensemble, and one classic set pairs a red silk robe embroidered with flowers with a light green jeogori (jacket) and chima (skirts) finished with gold leaf. <!-- fact_07 -->
 
 With either robe, the bride often wears a jokduri, a small crown-like headpiece, and her hair is set low with a long ornamental pin.
 
@@ -102,6 +102,10 @@ The layers take time, so brief your photographer and venue on extra dressing tim
 <!-- IMAGE SLOT hanbok: Licensed photo from a consented wedding, or a museum garment display with clear reuse rights: the bride's embroidered hwarot or wonsam with jokduri headpiece, and the groom's samogwandae, even daylight. Consent from wearers. Never AI. -->
 
 <!-- CTA: primary -->
+**Read the free magazine**
+Free to read, whenever you are ready.
+[Read the free magazine](/magazine?utm_source=blog&utm_medium=content&utm_campaign=korean-traditional-wedding&utm_content=primary)
+<!-- /CTA: primary -->
 
 ## 7. The pyebaek, or paebaek: bows to the groom's family
 
@@ -151,7 +155,7 @@ The Australian Embassy in Seoul issues a Certificate of No Impediment to Marriag
 
 The [Australian Embassy in Seoul](https://southkorea.embassy.gov.au/seol/notarial.html) provides notarial services by appointment or by mail, and fees apply. Consular staff cannot advise on specific legal requirements. <!-- fact_108 --> Certificates of no impediment are also issued through Australian Passport Offices and by mail, and at least one applicant must be an Australian citizen or permanent resident. <!-- fact_105 -->
 
-Marriages in South Korea are registered at the local district office. As at November 2026, ask the district office and the Embassy:
+Before you book, ask the local district office and the Embassy:
 
 - Which documents does the district office need from each of you, and in what form?
 - Will it accept a certificate issued in Australia, or does it need one from the Embassy in Seoul?
@@ -209,11 +213,11 @@ Chukuigeum is congratulatory money given to the couple in a white envelope, hand
 
 ### Can we hold a traditional Korean wedding ceremony in Korea as Australians?
 
-Yes. The legal marriage is a separate step: the Australian Embassy in Seoul issues certificates of no impediment to marriage <!-- fact_106 -->, and registration takes place at the local district office. Confirm the documents and any fees with the district office and the Embassy before you book.
+Yes. The legal marriage is a separate step: the Australian Embassy in Seoul issues certificates of no impediment to marriage <!-- fact_106 -->, and the local district office can tell you how registration works. Confirm the documents and any fees with the district office and the Embassy before you book.
 
 ### What do the wooden ducks at a Korean wedding mean?
 
-They are wooden geese, often called Korean wedding ducks, which the groom brings to the bride's family in the jeonallye. <!-- fact_01 --> Geese are a symbol of loyalty and fidelity, and the pair is a sign of the groom's everlasting love for his bride. <!-- fact_02 -->
+They are wooden geese, often called Korean wedding ducks, which the groom brings to the bride's family in the jeonallye. <!-- fact_01 --> Geese are a symbol of loyalty and fidelity, and wooden geese were given as a sign of the groom's everlasting love for his bride. <!-- fact_02 -->
 
 ### Can we hold a pyebaek in Australia?
 
@@ -221,6 +225,6 @@ Yes. Many Korean-Australian couples hold one after a Western ceremony, at the ve
 
 ## Planning your Korean wedding with us
 
-For more ideas while you plan, read [our free digital magazine](/magazine?utm_source=blog&utm_medium=content&utm_campaign=korean-traditional-wedding&utm_content=primary). When you are ready to talk through dates, places or a pyebaek at home, tell us your date, your guest list and which customs each family wants to keep.
+Give both families and every guest one place for the ceremony, the pyebaek and the travel details with our [East Asian wedding website template](/wonderland-studio/wedding-website-templates/east-asian?utm_source=blog&utm_medium=content&utm_campaign=korean-traditional-wedding&utm_content=magnet). When you are ready to talk through dates, places or a pyebaek at home, tell us your date, your guest list and which customs each family wants to keep.
 
 You will work with one Wedded Advisor, your single point of contact from the first conversation to the wedding day. The fee is agreed in writing before any work begins, and your advisor confirms the inclusions in writing before you commit. [Speak with a Wedded Advisor](/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=korean-traditional-wedding&utm_content=closing).
