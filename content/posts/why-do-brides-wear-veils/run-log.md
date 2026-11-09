@@ -7,3 +7,4 @@
 03:22 05 luxury-writer complete ~2,730 words; 0 VERIFY; first draft sent; editor + 5 readers launched
 03:23 07 icp-reader funding_parent complete; no must-fix
 03:23 07 icp-reader search_visitor complete; no must-fix (first takeaway should answer why; shorter Rome/medieval)
+03:23 07 icp-reader planner_couple complete; no must-fix
