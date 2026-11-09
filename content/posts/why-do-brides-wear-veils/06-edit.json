@@ -1,0 +1,452 @@
+{
+ "agent": "editor",
+ "task_id": "why-do-brides-wear-veils",
+ "stage": "06",
+ "status": "complete",
+ "round": 1,
+ "inputs_used": [
+  "CLAUDE.md",
+  "00-input.json",
+  "01-brief.json",
+  "02-seo.json",
+  "03-source-pack.json",
+  "05-draft.md",
+  "content-system/brand/voice-guide.md",
+  "content-system/rubrics/editor-rubric.md",
+  "content-system/rubrics/qa-gates.md",
+  "content-system/seo/link-map.csv",
+  "content-system/schemas/06-edit.schema.json",
+  "content/posts/something-old-something-new/06-edit.json (format model)"
+ ],
+ "self_qa": {
+  "checks": [
+   {
+    "check": "scan_copy.py run and results reflected",
+    "pass": true,
+    "note": "Draft: 0 banned, flagged 'beautiful' (Times quote) and 'iconic' (celebrity URL), 0 dashes, 0 overlaps. After edits: 0 flagged."
+   },
+   {
+    "check": "Every fact marker logged against the source pack",
+    "pass": true,
+    "note": "24 fact ids, all present in 03-source-pack.json"
+   },
+   {
+    "check": "Every edit 'old' occurs exactly once (applied in order)",
+    "pass": true,
+    "note": "verified by script; applied copy rescanned clean"
+   },
+   {
+    "check": "Authority rule: no research talk, per-line credits, hedge stacking; 'often told' 0",
+    "pass": true,
+    "note": "after edits: Oxford 'fuller picture', 'sets out the custom', 'traces the shift', 'The Times reported', 'holds the record', 'explains the ceremony', 'has the detail'; links kept inline"
+   },
+   {
+    "check": "Meanings and origins only with markers; badeken tied to Jewish tradition; no flammeum; royal veils limited to Victoria; no Hindu or Muslim claims",
+    "pass": true,
+    "note": "after edits to Rebecca/inner-beauty lines, blusher 'meaning', Roman face-covering line"
+   },
+   {
+    "check": "Headings natural, queries covered",
+    "pass": true,
+    "note": "Rome and medieval H2s reworded; 'history of the wedding veil' moved to intro, 'bridal veil tradition' to section 3 opener; blusher H2 trimmed"
+   },
+   {
+    "check": "Styles page overlap link only; travel lines match Smartraveller",
+    "pass": true,
+    "note": "styles page linked twice per 02-seo placements, no length content; fact_109 to fact_111 match"
+   },
+   {
+    "check": "4 one-sentence takeaways; no prices, designer names, 'last dance', Wedded Privileges, em dashes; Australian English",
+    "pass": true
+   },
+   {
+    "check": "Internal links in 02-seo.json and link-map.csv, none noindex",
+    "pass": true,
+    "note": "celebrity veils link not in link-map: cut. Pillar and something-old-something-new are Draft in link-map: publish together or after"
+   },
+   {
+    "check": "Decision consistent with scores",
+    "pass": true,
+    "note": "avg 4.0, no criterion < 3, no blocking issues"
+   }
+  ],
+  "confidence": 0.85
+ },
+ "next_agent": [
+  "luxury-writer"
+ ],
+ "payload": {
+  "draft_file": "content/posts/why-do-brides-wear-veils/05-draft.md",
+  "rubric": {
+   "voice": 4,
+   "expertise": 4,
+   "accuracy": 4,
+   "seo_fit": 4,
+   "commercial_link": 4,
+   "structure": 4,
+   "brief_fit": 4
+  },
+  "average": 4.0,
+  "blocking_issues": [],
+  "decision": "pass_with_edits",
+  "edits": [
+   {
+    "location": "Intro, first paragraph",
+    "issue": "Must-fix: unsourced generalisation about 'most couples' and 'honest answer' framing.",
+    "old": "For most couples the honest answer is a mix of history, faith, family and the simple pleasure of the moment it is lifted.",
+    "new": "Brides wear veils for history, faith and family, and for the moment it is lifted.",
+    "fix": "Replace exactly: \"For most couples the honest answer is a mix of history, faith, family and the simple pleasure of the moment it is lifted.\" with: \"Brides wear veils for history, faith and family, and for the moment it is lifted.\""
+   },
+   {
+    "location": "Intro, second paragraph",
+    "issue": "SEO: carry 'history of the wedding veil' once the Rome H2 is reworded.",
+    "old": "This guide follows the veil from Rome to Queen Victoria's lace,",
+    "new": "This guide follows the history of the wedding veil from Rome to Queen Victoria's lace,",
+    "fix": "Replace exactly: \"This guide follows the veil from Rome to Queen Victoria's lace,\" with: \"This guide follows the history of the wedding veil from Rome to Queen Victoria's lace,\""
+   },
+   {
+    "location": "Key takeaways, bullet 2",
+    "issue": "Fact marker mismatch: 'face-covering veils came later' is fact_106, not fact_09.",
+    "old": "face-covering veils came later. <!-- fact_07 --> <!-- fact_09 -->",
+    "new": "face-covering veils came later. <!-- fact_07 --> <!-- fact_106 -->",
+    "fix": "Replace exactly: \"face-covering veils came later. <!-- fact_07 --> <!-- fact_09 -->\" with: \"face-covering veils came later. <!-- fact_07 --> <!-- fact_106 -->\""
+   },
+   {
+    "location": "Key takeaways, bullet 4",
+    "issue": "Tie the luck belief to English folklore (fact_11 is a folklore source), not stated as general fact.",
+    "old": "- A veil borrowed from a happily married bride has long been counted lucky,",
+    "new": "- In English folklore, a veil borrowed from a happily married bride is counted lucky,",
+    "fix": "Replace exactly: \"- A veil borrowed from a happily married bride has long been counted lucky,\" with: \"- In English folklore, a veil borrowed from a happily married bride is counted lucky,\""
+   },
+   {
+    "location": "Section 1, folklore H3 opener",
+    "issue": "Overclaim: 'one clear meaning'. State plainly.",
+    "old": "English folklore gives the veil one clear meaning, and it is about luck.",
+    "new": "In English folklore, the veil is about luck.",
+    "fix": "Replace exactly: \"English folklore gives the veil one clear meaning, and it is about luck.\" with: \"In English folklore, the veil is about luck.\""
+   },
+   {
+    "location": "Section 1, folklore paragraph",
+    "issue": "Authority rule: per-line source credit sentence. Keep the link inline, cut the credit.",
+    "old": "and the veil is often singled out as the luckiest. <!-- fact_11 --> [A Dictionary of English Folklore](https://www.oxfordreference.com/display/10.1093/acref/9780198607663.001.0001/acref-9780198607663-e-1105) sets out the custom.",
+    "new": "and the veil is [often singled out as the luckiest](https://www.oxfordreference.com/display/10.1093/acref/9780198607663.001.0001/acref-9780198607663-e-1105). <!-- fact_11 -->",
+    "fix": "Replace exactly: \"and the veil is often singled out as the luckiest. <!-- fact_11 --> [A Dictionary of English Folklore](https://www.oxfordreference.com/display/10.1093/acref/9780198607663.001.0001/acref-9780198607663-e-1105) sets out the custom.\" with: \"and the veil is [often singled out as the luckiest](https://www.oxfordreference.com/display/10.1093/acref/9780198607663.001.0001/acref-9780198607663-e-1105). <!-- fact_11 -->\""
+   },
+   {
+    "location": "Section 2 H2",
+    "issue": "Keyword-stuffed heading; use the 02-seo outline wording (query now covered in intro).",
+    "old": "## 2. History of the wedding veil in ancient Rome",
+    "new": "## 2. The veil in ancient Rome",
+    "fix": "Replace exactly: \"## 2. History of the wedding veil in ancient Rome\" with: \"## 2. The veil in ancient Rome\""
+   },
+   {
+    "location": "Section 2, second paragraph",
+    "issue": "Unsupported: 'of girlhood' and 'because she had come of age' are not in fact_02.",
+    "old": "The day before, a bride who wore the toga praetexta of girlhood put it away, because she had come of age. <!-- fact_02 -->",
+    "new": "The day before, the bride put away her toga praetexta. <!-- fact_02 -->",
+    "fix": "Replace exactly: \"The day before, a bride who wore the toga praetexta of girlhood put it away, because she had come of age. <!-- fact_02 -->\" with: \"The day before, the bride put away her toga praetexta. <!-- fact_02 -->\""
+   },
+   {
+    "location": "Section 2, closing paragraph",
+    "issue": "Must-fix: research talk and source credit ('has the fuller picture'); 'rather than a covering for the face' is unsourced.",
+    "old": "The [Oxford Dictionary of the Classical World](https://www.oxfordreference.com/display/10.1093/acref/9780192801463.001.0001/acref-9780192801463-e-1365) has the fuller picture. What matters for a bride today is that the veil was colour, not white, and part of a carefully staged look rather than a covering for the face.",
+    "new": "The Roman bridal veil was [flame-coloured, not white](https://www.oxfordreference.com/display/10.1093/acref/9780192801463.001.0001/acref-9780192801463-e-1365), and one part of a carefully staged look. <!-- fact_01 -->",
+    "fix": "Replace exactly: \"The [Oxford Dictionary of the Classical World](https://www.oxfordreference.com/display/10.1093/acref/9780192801463.001.0001/acref-9780192801463-e-1365) has the fuller picture. What matters for a bride today is that the veil was colour, not white, and part of a carefully staged look rather than a covering for the face.\" with: \"The Roman bridal veil was [flame-coloured, not white](https://www.oxfordreference.com/display/10.1093/acref/9780192801463.001.0001/acref-9780192801463-e-1365), and one part of a carefully staged look. <!-- fact_01 -->\""
+   },
+   {
+    "location": "Section 3 H2",
+    "issue": "Keyword-stuffed heading; use outline wording. 'bride veil tradition' moved into the first line.",
+    "old": "## 3. Medieval and religious veiling, and the bride's veil tradition",
+    "new": "## 3. Medieval and religious veiling",
+    "fix": "Replace exactly: \"## 3. Medieval and religious veiling, and the bride's veil tradition\" with: \"## 3. Medieval and religious veiling\""
+   },
+   {
+    "location": "Section 3, first line",
+    "issue": "Carry the 'bride veil tradition' query naturally.",
+    "old": "The veil stayed in bridal dress after Rome, but it changed.",
+    "new": "The bridal veil tradition outlived Rome, but it changed.",
+    "fix": "Replace exactly: \"The veil stayed in bridal dress after Rome, but it changed.\" with: \"The bridal veil tradition outlived Rome, but it changed.\""
+   },
+   {
+    "location": "Section 3, church fathers line",
+    "issue": "Accuracy: fact_03 says the bridal link 'seems to have informed' the view; stated as certain.",
+    "old": "The link between veil and bride shaped how church fathers",
+    "new": "The link between veil and bride likely shaped how church fathers",
+    "fix": "Replace exactly: \"The link between veil and bride shaped how church fathers\" with: \"The link between veil and bride likely shaped how church fathers\""
+   },
+   {
+    "location": "Section 3, second paragraph",
+    "issue": "Authority rule: per-line credit ('traces the shift'). Keep link inline.",
+    "old": "as a symbol of their marriage to Christ and a sign of chastity. <!-- fact_04 --> [Oxford Reference](https://www.oxfordreference.com/display/10.1093/acref/9780198524038.001.0001/acref-9780198524038-e-990) traces the shift.",
+    "new": "as a [symbol of their marriage to Christ](https://www.oxfordreference.com/display/10.1093/acref/9780198524038.001.0001/acref-9780198524038-e-990) and a sign of chastity. <!-- fact_04 -->",
+    "fix": "Replace exactly: \"as a symbol of their marriage to Christ and a sign of chastity. <!-- fact_04 --> [Oxford Reference](https://www.oxfordreference.com/display/10.1093/acref/9780198524038.001.0001/acref-9780198524038-e-990) traces the shift.\" with: \"as a [symbol of their marriage to Christ](https://www.oxfordreference.com/display/10.1093/acref/9780198524038.001.0001/acref-9780198524038-e-990) and a sign of chastity. <!-- fact_04 -->\""
+   },
+   {
+    "location": "Section 3, wimple close",
+    "issue": "Unsourced generalisation about what 'many couples have in mind'.",
+    "old": "Still, it is the look many couples have in mind when they choose a soft fabric that frames the face, and it shows how ordinary head covering once was.",
+    "new": "It shows how ordinary head covering once was.",
+    "fix": "Replace exactly: \"Still, it is the look many couples have in mind when they choose a soft fabric that frames the face, and it shows how ordinary head covering once was.\" with: \"It shows how ordinary head covering once was.\""
+   },
+   {
+    "location": "Section 4, first paragraph",
+    "issue": "Must-fix: per-line credit ('The Times reported') with a long quote. State the fact plainly (also removes flagged 'beautiful').",
+    "old": "When Queen Victoria married in 1840, The Times reported: \"Her dress was a rich white satin, trimmed with orange-flower blossoms. On her head she wore a wreath of the same blossoms, over which, but not so as to conceal her face, a beautiful veil of Honiton lace was thrown.\" <!-- fact_07 -->",
+    "new": "When Queen Victoria married in 1840, she wore rich white satin trimmed with orange-flower blossoms, a wreath of the same blossoms on her head, and a veil of Honiton lace thrown over the wreath, not so as to conceal her face. <!-- fact_07 -->",
+    "fix": "Replace exactly: \"When Queen Victoria married in 1840, The Times reported: \"Her dress was a rich white satin, trimmed with orange-flower blossoms. On her head she wore a wreath of the same blossoms, over which, but not so as to conceal her face, a beautiful veil of Honiton lace was thrown.\" <!-- fact_07 -->\" with: \"When Queen Victoria married in 1840, she wore rich white satin trimmed with orange-flower blossoms, a wreath of the same blossoms on her head, and a veil of Honiton lace thrown over the wreath, not so as to conceal her face. <!-- fact_07 -->\""
+   },
+   {
+    "location": "Section 4, second paragraph",
+    "issue": "Authority rule: 'the museum holds' credit. Keep link inline.",
+    "old": "a colour that implied purity, cleanliness and social refinement. <!-- fact_08 --> The [Victoria and Albert Museum](https://collections.vam.ac.uk/item/O1223045/) holds the record.",
+    "new": "a colour that implied [purity, cleanliness and social refinement](https://collections.vam.ac.uk/item/O1223045/). <!-- fact_08 -->",
+    "fix": "Replace exactly: \"a colour that implied purity, cleanliness and social refinement. <!-- fact_08 --> The [Victoria and Albert Museum](https://collections.vam.ac.uk/item/O1223045/) holds the record.\" with: \"a colour that implied [purity, cleanliness and social refinement](https://collections.vam.ac.uk/item/O1223045/). <!-- fact_08 -->\""
+   },
+   {
+    "location": "Section 4, Veils kept in the family",
+    "issue": "Ambiguous restatement of fact_107 ('worn by the mother'). State plainly.",
+    "old": "The veil, dress and a pair of boots stayed in the bride's family, worn by the mother and bequeathed by her daughter in 1947. <!-- fact_107 -->",
+    "new": "The veil, dress and a pair of boots stayed in the bride's family until her daughter bequeathed them in 1947. <!-- fact_107 -->",
+    "fix": "Replace exactly: \"The veil, dress and a pair of boots stayed in the bride's family, worn by the mother and bequeathed by her daughter in 1947. <!-- fact_107 -->\" with: \"The veil, dress and a pair of boots stayed in the bride's family until her daughter bequeathed them in 1947. <!-- fact_107 -->\""
+   },
+   {
+    "location": "Section 4, celebrity veils line",
+    "issue": "Link /style/iconic-celebrity-wedding-veils-modern-times is in 02-seo.json but not in link-map.csv: cut (re-add once confirmed live).",
+    "old": "For the veils of more recent public weddings, see our edit of [celebrity wedding veils](/style/iconic-celebrity-wedding-veils-modern-times).\n\n",
+    "new": "",
+    "fix": "Delete exactly: \"For the veils of more recent public weddings, see our edit of [celebrity wedding veils](/style/iconic-celebrity-wedding-veils-modern-times).\n\n\""
+   },
+   {
+    "location": "Section 5, badeken meaning",
+    "issue": "Must-fix: origin and meaning stated as fact; tie both to Jewish tradition's own explanation. Folds the Chabad credit sentence into an inline link.",
+    "old": "The custom goes back to the Matriarch Rebecca, who covered her face when she met her groom, Isaac. <!-- fact_102 --> Its meaning is that the groom values the bride's inner beauty, which never fades, and not only her outward beauty. <!-- fact_103 -->",
+    "new": "Jewish tradition traces the custom to the Matriarch Rebecca, who covered her face when she met her groom, Isaac. <!-- fact_102 --> In [Jewish teaching](https://www.chabad.org/library/article_cdo/aid/477333/jewish/Badeken-Veiling.htm), the veil shows that the groom values the bride's inner beauty, which never fades, and not only her outward beauty. <!-- fact_103 -->",
+    "fix": "Replace exactly: \"The custom goes back to the Matriarch Rebecca, who covered her face when she met her groom, Isaac. <!-- fact_102 --> Its meaning is that the groom values the bride's inner beauty, which never fades, and not only her outward beauty. <!-- fact_103 -->\" with: \"Jewish tradition traces the custom to the Matriarch Rebecca, who covered her face when she met her groom, Isaac. <!-- fact_102 --> In [Jewish teaching](https://www.chabad.org/library/article_cdo/aid/477333/jewish/Badeken-Veiling.htm), the veil shows that the groom values the bride's inner beauty, which never fades, and not only her outward beauty. <!-- fact_103 -->\""
+   },
+   {
+    "location": "Section 5, Chassidic line",
+    "issue": "Authority rule: per-line credit sentence (link now inline above).",
+    "old": " [Chabad.org](https://www.chabad.org/library/article_cdo/aid/477333/jewish/Badeken-Veiling.htm) explains the ceremony in full.",
+    "new": "",
+    "fix": "Delete exactly: \" [Chabad.org](https://www.chabad.org/library/article_cdo/aid/477333/jewish/Badeken-Veiling.htm) explains the ceremony in full.\""
+   },
+   {
+    "location": "Section 7 H2",
+    "issue": "Keyword-stuffed heading.",
+    "old": "## 7. The blusher veil meaning, wearing it back and heirloom veils",
+    "new": "## 7. The blusher, wearing it back and heirloom veils",
+    "fix": "Replace exactly: \"## 7. The blusher veil meaning, wearing it back and heirloom veils\" with: \"## 7. The blusher, wearing it back and heirloom veils\""
+   },
+   {
+    "location": "Section 7, opener",
+    "issue": "Unsourced meaning claim ('its meaning lies in the moment it is lifted').",
+    "old": "The blusher is the short layer worn forward over the face, and its meaning lies in the moment it is lifted.",
+    "new": "The blusher is the short layer worn forward over the face, ready to be lifted during the ceremony.",
+    "fix": "Replace exactly: \"The blusher is the short layer worn forward over the face, and its meaning lies in the moment it is lifted.\" with: \"The blusher is the short layer worn forward over the face, ready to be lifted during the ceremony.\""
+   },
+   {
+    "location": "Section 7, Forward or back",
+    "issue": "Overgeneralisation: fact_105 is one 1865 veil, not all 'period lace veils'.",
+    "old": "Period lace veils were designed so the pattern reads on the outside when folded over,",
+    "new": "Some period lace veils were designed so the pattern reads on the outside when folded over,",
+    "fix": "Replace exactly: \"Period lace veils were designed so the pattern reads on the outside when folded over,\" with: \"Some period lace veils were designed so the pattern reads on the outside when folded over,\""
+   },
+   {
+    "location": "Section 7, family veil",
+    "issue": "'in the old rhyme' not in fact_11; state as folklore practice.",
+    "old": "and it counts as something borrowed in the old rhyme. <!-- fact_11 -->",
+    "new": "and it can be your something borrowed. <!-- fact_11 -->",
+    "fix": "Replace exactly: \"and it counts as something borrowed in the old rhyme. <!-- fact_11 -->\" with: \"and it can be your something borrowed. <!-- fact_11 -->\""
+   },
+   {
+    "location": "Section 7, family veil second paragraph",
+    "issue": "Duplicates fact_107 from section 4 and overgeneralises ('for generations').",
+    "old": "Families have kept wedding veils for generations; one 1865 veil stayed with the bride's family until her daughter gave it away in 1947. <!-- fact_107 --> Agree",
+    "new": "Agree",
+    "fix": "Replace exactly: \"Families have kept wedding veils for generations; one 1865 veil stayed with the bride's family until her daughter gave it away in 1947. <!-- fact_107 --> Agree\" with: \"Agree\""
+   },
+   {
+    "location": "Section 8, travel",
+    "issue": "Authority rule: source credit ('has the detail'). Keep the link as an action.",
+    "old": "[Smartraveller](https://www.smartraveller.gov.au/travel-essentials/travel-insurance) has the detail; check the current guidance before you fly.",
+    "new": "Check the current [Smartraveller](https://www.smartraveller.gov.au/travel-essentials/travel-insurance) guidance before you fly.",
+    "fix": "Replace exactly: \"[Smartraveller](https://www.smartraveller.gov.au/travel-essentials/travel-insurance) has the detail; check the current guidance before you fly.\" with: \"Check the current [Smartraveller](https://www.smartraveller.gov.au/travel-essentials/travel-insurance) guidance before you fly.\""
+   },
+   {
+    "location": "Planning section, magazine link",
+    "issue": "UTM: 02-seo.json sets the magazine CTA as utm_content=primary.",
+    "old": "utm_content=magnet",
+    "new": "utm_content=primary",
+    "fix": "Replace exactly: \"utm_content=magnet\" with: \"utm_content=primary\""
+   }
+  ],
+  "fact_check_log": [
+   {
+    "claim": "Roman bride: six locks, woollen fillets, white tunic, knot of Hercules, flame-coloured veil",
+    "fact_id": "fact_01",
+    "status": "confirmed"
+   },
+   {
+    "claim": "June favourite month; toga praetexta put away the day before; knot untied by husband; dress prescribed",
+    "fact_id": "fact_02",
+    "status": "confirmed"
+   },
+   {
+    "claim": "'because she had come of age' / 'of girlhood'",
+    "fact_id": "fact_02",
+    "status": "removed"
+   },
+   {
+    "claim": "Veil continued in late antiquity, changed; bridal link informed 'brides of Christ' (source hedges: 'seems')",
+    "fact_id": "fact_03",
+    "status": "confirmed"
+   },
+   {
+    "claim": "Bridal veil adopted into Christian wedding; consecrated women 'took up the veil'",
+    "fact_id": "fact_04",
+    "status": "confirmed"
+   },
+   {
+    "claim": "Jewish hair covering since biblical times; earliest clear bridal-veil evidence early Middle Ages",
+    "fact_id": "fact_05",
+    "status": "confirmed"
+   },
+   {
+    "claim": "Wimple adopted after crusades; white linen or silk; framed face",
+    "fact_id": "fact_06",
+    "status": "confirmed"
+   },
+   {
+    "claim": "Victoria 1840: white satin, orange blossom wreath, Honiton veil not concealing face (quote restated plainly)",
+    "fact_id": "fact_07",
+    "status": "confirmed"
+   },
+   {
+    "claim": "Victoria popularised white; earlier royal whites embroidered; white or cream usual by 1800",
+    "fact_id": "fact_08",
+    "status": "confirmed"
+   },
+   {
+    "claim": "Victoria promoted English lace; c.1850 Honiton veil with pea-pods",
+    "fact_id": "fact_09",
+    "status": "confirmed"
+   },
+   {
+    "claim": "1865 St James's Piccadilly veil, pattern outside when folded; dress based on the Queen's",
+    "fact_id": "fact_10",
+    "status": "confirmed"
+   },
+   {
+    "claim": "Borrowed item from happy marriage; veil singled out as luckiest",
+    "fact_id": "fact_11",
+    "status": "confirmed"
+   },
+   {
+    "claim": "Widely lucky to wear what a happy bride wore; lending veils a compliment",
+    "fact_id": "fact_12",
+    "status": "confirmed"
+   },
+   {
+    "claim": "Badeken after pre-chupah receptions; groom covers bride's face",
+    "fact_id": "fact_100",
+    "status": "confirmed"
+   },
+   {
+    "claim": "Fathers and grandfathers bless; veiled through chupah for privacy",
+    "fact_id": "fact_101",
+    "status": "confirmed"
+   },
+   {
+    "claim": "Custom traced to Rebecca (now tied to Jewish tradition)",
+    "fact_id": "fact_102",
+    "status": "confirmed"
+   },
+   {
+    "claim": "Meaning: groom values inner beauty (now tied to Jewish teaching)",
+    "fact_id": "fact_103",
+    "status": "confirmed"
+   },
+   {
+    "claim": "Chassidic dense veil, no gold or silver thread",
+    "fact_id": "fact_104",
+    "status": "confirmed"
+   },
+   {
+    "claim": "Pattern on outside when folded (generalised to 'period lace veils'; narrowed to 'some')",
+    "fact_id": "fact_105",
+    "status": "confirmed"
+   },
+   {
+    "claim": "c.1850 veil worn at back of head; face-covering came later",
+    "fact_id": "fact_106",
+    "status": "confirmed"
+   },
+   {
+    "claim": "1865 veil kept in family, bequeathed 1947 (section 7 duplicate cut)",
+    "fact_id": "fact_107",
+    "status": "confirmed"
+   },
+   {
+    "claim": "1902 veil with wax orange blossom ornament",
+    "fact_id": "fact_108",
+    "status": "confirmed"
+   },
+   {
+    "claim": "Policies limit each item's value",
+    "fact_id": "fact_109",
+    "status": "confirmed"
+   },
+   {
+    "claim": "Not covered: checked baggage theft on airline, train or bus; unattended items",
+    "fact_id": "fact_110",
+    "status": "confirmed"
+   },
+   {
+    "claim": "Keep bags close in transit; hotel safe",
+    "fact_id": "fact_111",
+    "status": "confirmed"
+   },
+   {
+    "claim": "'Most couples... honest answer' generalisation",
+    "status": "removed"
+   },
+   {
+    "claim": "Roman veil 'rather than a covering for the face'",
+    "status": "removed"
+   },
+   {
+    "claim": "Blusher 'meaning lies in the moment it is lifted'",
+    "status": "removed"
+   },
+   {
+    "claim": "Families kept veils 'for generations'",
+    "status": "removed"
+   }
+  ],
+  "compliance": {
+   "pass": true,
+   "issues": [
+    "No prices or amounts; no designer or vendor names; Advisor lines match brand-facts.md.",
+    "Celebrity veils link removed (not in link-map.csv).",
+    "Pillar /expert-advice/wedding-traditions and /expert-advice/something-old-something-new are Draft in link-map.csv: publish with or after them, or drop the links.",
+    "Closing CTA uses utm_content=closing (outside primary|secondary): orchestrator to confirm."
+   ]
+  },
+  "originality": {
+   "pass": true,
+   "matches": []
+  },
+  "banned_phrases_found": [],
+  "needs_signoff": []
+ },
+ "assumptions": [
+  "Celebrity veils page treated as not live because it is absent from link-map.csv."
+ ],
+ "open_questions": [
+  {
+   "to": "orchestrator",
+   "question": "Keep utm_content=closing on the closing CTA, or switch to secondary?",
+   "blocking": false
+  }
+ ]
+}

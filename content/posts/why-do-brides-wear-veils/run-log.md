@@ -9,3 +9,4 @@
 03:23 07 icp-reader search_visitor complete; no must-fix (first takeaway should answer why; shorter Rome/medieval)
 03:23 07 icp-reader planner_couple complete; no must-fix
 03:24 07 icp-reader uhnw, sceptic complete; no must-fix (source links in body; budget-level travel tips); waiting on editor
+03:25 06 editor pass_with_edits 4.0; 27 edits applied -> 05-draft-r2.md (research-talk and credit lines cut; badeken tied to Jewish tradition; celebrity link cut; headings reworded); panel chair launched
