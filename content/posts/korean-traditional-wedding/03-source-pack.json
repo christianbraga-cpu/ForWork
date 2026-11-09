@@ -1,0 +1,285 @@
+{
+ "agent": "wedding-planner-sme",
+ "task_id": "korean-traditional-wedding",
+ "stage": "03",
+ "status": "complete",
+ "round": 1,
+ "inputs_used": [
+  "CLAUDE.md",
+  "content/posts/korean-traditional-wedding/00-input.json",
+  "content/posts/korean-traditional-wedding/01-brief.json (tradition_plan.batch_A)",
+  "content-system/schemas/03-source-pack.schema.json",
+  "content/posts/japanese-wedding-traditions/03-source-pack.json (format model)",
+  "https://api.vam.ac.uk/v2/museumobject/O22626 (Apify web-fetch 2026-11-09)",
+  "https://api.vam.ac.uk/v2/museumobject/O1724988 (Apify web-fetch 2026-11-09)",
+  "https://api.vam.ac.uk/v2/museumobject/O1724987 (Apify web-fetch 2026-11-09)",
+  "https://api.vam.ac.uk/v2/museumobject/O1724981 (read; modern designer wedding dress, not used)",
+  "https://api.vam.ac.uk/v2/objects/search?q=wedding%20goose%20korea",
+  "https://api.vam.ac.uk/v2/objects/search?q=korea%20wedding",
+  "https://api.vam.ac.uk/v2/objects/search?q=hwarot",
+  "https://api.vam.ac.uk/v2/objects/search?q=wonsam",
+  "https://www.britannica.com/place/South-Korea/Daily-life-and-social-customs (Apify web-fetch 2026-11-09)",
+  "https://www.britannica.com/topic/hanbok (AI summary only, not used)",
+  "https://folkency.nfm.go.kr/en/topic/detail/2905 (empty body, also with render wait)",
+  "https://english.visitkorea.or.kr/svc/contents/contentsView.do?vcontsId=86913 (redirected to unrelated restaurant page, not used)",
+  "https://www.korea.net/AboutKorea/Korean-Life/Wedding (redirected to home page, not used)"
+ ],
+ "tools_used": [
+  "mcp__Apify__apify--web-fetch",
+  "Bash"
+ ],
+ "assumptions": [
+  "Batch A only (fact_01 to fact_08): jeontong honrye, wooden wedding geese, hanbok, the ham. Batch B covers pyebaek, yedan and yemul, chukuigeum, modern wedding hall, UNESCO and legal.",
+  "V&A records are cited by their public collection page (collections.vam.ac.uk/item/<id>/); text was read via the V&A API record for the same object on 2026-11-09.",
+  "The V&A wooden goose record (O22626) is a 19th-century museum object; its description is historical. Present-day use is living practice.",
+  "The wonsam and hwarot V&A records do not say the garments are bridal; bridal use is in often_told.",
+  "Unsourced customs (ceremony steps, samogwandae, the ham) are in payload.often_told (internal only, no VERIFY markers, no meanings as fact), per the authority rule.",
+  "No prices or amounts recorded. No venue names; palaces and hanok villages are places only.",
+  "Hard 15-minute limit (start 00:06:56, last reads started about 00:19:40). National Folk Museum encyclopedia returned an empty JS shell; the visitkorea and korea.net URLs redirected to unrelated pages; Encyclopedia of Korean Culture was not reached in time."
+ ],
+ "open_questions": [
+  {
+   "to": "luxury-writer",
+   "question": "Jeontong honrye steps, samogwandae and the ham have no source in batch A: write as living practice in a confident voice, no order of service, no meanings, no contents or amounts.",
+   "blocking": false
+  },
+  {
+   "to": "luxury-writer",
+   "question": "Geese meaning: the V&A states loyalty and fidelity (fact_02). Use it once with the V&A link if wanted; otherwise describe the goose without a meaning.",
+   "blocking": false
+  }
+ ],
+ "verify_items": [],
+ "self_qa": {
+  "checks": [
+   {
+    "check": "Every fact has a source URL, exact quote and date read",
+    "pass": true,
+    "note": "8 facts read live 2026-11-09."
+   },
+   {
+    "check": "No prices or amounts",
+    "pass": true
+   },
+   {
+    "check": "Every batch A custom covered or listed as often told",
+    "pass": true,
+    "note": "Ceremony steps, samogwandae and the ham are often_told."
+   },
+   {
+    "check": "No invented quotes, statistics or real weddings",
+    "pass": true
+   },
+   {
+    "check": "No competitor, vendor or Wikipedia sources",
+    "pass": true
+   }
+  ],
+  "confidence": 0.55
+ },
+ "next_agent": [
+  "luxury-writer"
+ ],
+ "payload": {
+  "facts": [
+   {
+    "fact_id": "fact_01",
+    "topic": "wooden wedding geese",
+    "region": "Korea",
+    "claim": "In a traditional Korean wedding the groom brings wooden geese to the bride's house in a ritual called jeonallye; live geese were used at first, and wooden geese began to replace them in the late Joseon period.",
+    "quote": "The groom brings wooden geese to the bride’s house in a ritual conducted as part of a traditional wedding, called jeonallye. At first live geese were used, but wooden geese started to replace live ones in the late Joseon period.",
+    "source": "https://collections.vam.ac.uk/item/O22626/",
+    "source_type": "editorial",
+    "checked": "2026-11-09",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_02",
+    "topic": "wooden wedding geese (meaning, museum-sourced)",
+    "region": "Korea",
+    "claim": "The V&A states that geese are a symbol of loyalty and fidelity and that wooden geese were used as a sign of the groom's everlasting love towards his bride.",
+    "quote": "Since geese are a symbol of loyalty and fidelity, wooden geese were used as a sign of the groom’s everlasting love towards his bride.",
+    "source": "https://collections.vam.ac.uk/item/O22626/",
+    "source_type": "editorial",
+    "checked": "2026-11-09",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_03",
+    "topic": "wooden wedding geese (name, history)",
+    "region": "Korea",
+    "claim": "The V&A records the Korean wooden wedding duck or goose as 'kirogi' (older romanisation; gireogi in Revised Romanisation is not given by the source) and says presenting a live goose was borrowed from Chinese Confucian wedding ritual and survived in Korea long after it disappeared in China.",
+    "quote": "The presentation of a live goose was initially borrowed from Chinese Confucian wedding rituals and the custom survived in Korea long after it had disappeared in China. Over time real geese were substituted with wooden geese and ducks (in Korean, ‘kirogi’), supposedly because it was so difficult to obtain the former.",
+    "source": "https://collections.vam.ac.uk/item/O22626/",
+    "source_type": "editorial",
+    "checked": "2026-11-09",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_04",
+    "topic": "hanbok",
+    "region": "South Korea",
+    "claim": "Britannica says Western dress has supplanted hanbok almost everywhere, but even urban dwellers still commonly wear it on special occasions including weddings, and there are different hanbok for special occasions such as weddings.",
+    "quote": "Western dress has supplanted the hanbok almost everywhere, but even urban dwellers commonly still wear it on special occasions such as important family meetings, holidays, weddings, and funerals. ... There are different hanbok for special occasions, such as weddings, babies’ birthdays, and 61st-birthday celebrations.",
+    "source": "https://www.britannica.com/place/South-Korea/Daily-life-and-social-customs",
+    "source_type": "editorial",
+    "checked": "2026-11-09",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_05",
+    "topic": "traditional ceremony context",
+    "region": "South Korea",
+    "claim": "Britannica names marriage among the most important passages in a person's life in traditional Korean family life, alongside a baby's first 100 days and the 61st birthday.",
+    "quote": "The most important passages in a person’s life are the completion of a baby’s first 100 days, one’s marriage, and one’s 61st birthday.",
+    "source": "https://www.britannica.com/place/South-Korea/Daily-life-and-social-customs",
+    "source_type": "editorial",
+    "checked": "2026-11-09",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_06",
+    "topic": "hanbok (bride): wonsam",
+    "region": "Korea",
+    "claim": "The V&A records a wonsam (원삼) as a woman's ceremonial silk robe from Korea, about 1850 to 1950, with a green body, red ribbons and multi-coloured sleeves in red, yellow, blue, white and dark red.",
+    "quote": "Wonsam, Woman's ceremonial robe, made of silk in multi-coloured, Korea, ca.1850-1950 ... The woman's ceremonial robe, crafted from silk, a green body of the robe, adorned with red ribbons and showcasing multi-coloured sleeves in red, yellow, blue, white, and dark red.",
+    "source": "https://collections.vam.ac.uk/item/O1724988/",
+    "source_type": "editorial",
+    "checked": "2026-11-09",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_07",
+    "topic": "hanbok (bride): hwarot",
+    "region": "Korea",
+    "claim": "The V&A records a woman's ceremonial robe ensemble titled Hwarot (활옷), made in Korea in the 1980s, comprising a red silk wonsam (robe) with flower-motif embroidery, a jeogori (jacket) and chima (skirts) with gold-leaf detailing.",
+    "quote": "Woman's ceremonial robe ensemble, comprising of wonsam (robe), jeogori (jacket), chima (skirts) ... features a red silk wonsam (robe) adorned with flower-motif embroidery, a light green silk jeogori (jacket), and suranchima (skirts) in blue and red hues with gold leaf detailing at the bottom.",
+    "source": "https://collections.vam.ac.uk/item/O1724987/",
+    "source_type": "editorial",
+    "checked": "2026-11-09",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_08",
+    "topic": "hanbok (general)",
+    "region": "South Korea",
+    "claim": "Britannica describes women's formal hanbok as several layers of undergarments under a long, billowing skirt and short jacket closed with a long tie, and men's as full-legged pants and a long, wide-sleeved jacket.",
+    "quote": "Women’s and girls’ formal hanbok consists of several layers of undergarments under a colorful, long billowing skirt and short jacket held closed with a long tie. The men’s and boys’ version consists of full-legged pants and a long, wide-sleeved jacket.",
+    "source": "https://www.britannica.com/place/South-Korea/Daily-life-and-social-customs",
+    "source_type": "editorial",
+    "checked": "2026-11-09",
+    "is_price": false
+   }
+  ],
+  "insider_details": [
+   {
+    "detail": "If the couple include the wooden geese in a ceremony, the source-backed description is the groom bringing them to the bride's house in the jeonallye; the V&A gives loyalty and fidelity as the meaning, so the writer may state that meaning with a link, but not the 'mate for life' line as fact beyond the V&A wording.",
+    "fact_ids": [
+     "fact_01",
+     "fact_02"
+    ]
+   },
+   {
+    "detail": "Use 'jeonallye' (Revised Romanisation, as the V&A gives it) for the ritual; the V&A's 'kirogi' is an older romanisation, so 'gireogi' should be written as the Revised Romanisation without claiming a source spelled it that way.",
+    "fact_ids": [
+     "fact_01",
+     "fact_03"
+    ]
+   },
+   {
+    "detail": "Hanbok is still commonly worn for weddings even by city families, and there are dedicated wedding hanbok, so plan time in the schedule for a change of outfit between a Western-style ceremony and the traditional element.",
+    "fact_ids": [
+     "fact_04"
+    ]
+   },
+   {
+    "detail": "Wonsam and hwarot are layered silk robes worn over a jeogori and chima; brief the photographer and the venue on extra dressing time and a clean, private room for the change.",
+    "fact_ids": [
+     "fact_06",
+     "fact_07",
+     "fact_08"
+    ]
+   }
+  ],
+  "quotes": [],
+  "real_weddings": [],
+  "budget_range_aud": [],
+  "verify_items": [],
+  "needs_signoff": [],
+  "must_include_coverage": [
+   {
+    "item": "The traditional ceremony (jeontong honrye) and its steps",
+    "covered_by": [
+     "fact_05",
+     "fact_01",
+     "often_told: jeontong honrye steps"
+    ]
+   },
+   {
+    "item": "The wooden wedding geese (gireogi, jeonallye)",
+    "covered_by": [
+     "fact_01",
+     "fact_02",
+     "fact_03"
+    ]
+   },
+   {
+    "item": "Hanbok for bride and groom (wonsam or hwarot, samogwandae)",
+    "covered_by": [
+     "fact_04",
+     "fact_06",
+     "fact_07",
+     "fact_08",
+     "often_told: samogwandae"
+    ]
+   },
+   {
+    "item": "The ham (gift box) and its delivery",
+    "covered_by": [
+     "often_told: the ham"
+    ]
+   },
+   {
+    "item": "No meaning or origin stated as fact unless sourced (geese)",
+    "covered_by": [
+     "fact_02",
+     "fact_03"
+    ]
+   },
+   {
+    "item": "Korean terms in Revised Romanisation as sources give them, hangeul only where a source gives it",
+    "covered_by": [
+     "fact_01",
+     "fact_06",
+     "fact_07"
+    ]
+   }
+  ],
+  "often_told": [
+   {
+    "custom": "jeontong honrye steps (bows between bride and groom, a shared cup, the ceremonial table and its items)",
+    "note": "No museum, encyclopedia or KTO text read in time. Write as living practice only ('In a traditional ceremony, the couple...'), no order of service, no Korean step names, no symbolism."
+   },
+   {
+    "custom": "traditional ceremonies held today at folk villages, hanok villages or cultural venues, or as a short ceremony",
+    "note": "Unsourced. Living practice only; palaces and hanok villages as places, never venues."
+   },
+   {
+    "custom": "couples keeping the wooden geese at home after the wedding",
+    "note": "Unsourced. Living practice only, no meaning attached."
+   },
+   {
+    "custom": "the groom's samogwandae (official's robe, hat and belt)",
+    "note": "No source read. Name it as living practice only; no history or rank meaning as fact."
+   },
+   {
+    "custom": "hwarot or wonsam worn by the bride at the wedding",
+    "note": "V&A records the garments (fact_06, fact_07) as women's ceremonial robes but does not state they are bridal. Bridal use as living practice only."
+   },
+   {
+    "custom": "the ham (gift box) carried to the bride's family by the groom's friends, and its contents",
+    "note": "No source read. Living practice only; no contents listed as fact, no amounts, no meanings."
+   }
+  ]
+ }
+}
