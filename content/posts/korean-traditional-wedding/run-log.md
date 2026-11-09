@@ -5,3 +5,5 @@
 00:34 03 planner-sme batch B complete 18 facts (Smartraveller marriage + CNI; Embassy Seoul issues CNIs); UNESCO: Kimjang and Arirang do not mention weddings (section cut); pyebaek, gifts, chukuigeum, wedding hall unsourced -> living practice; one Korea.net read declined (not retried); waiting on batch A
 00:35 03 planner-sme batch A complete (V&A wooden geese incl. fidelity meaning; Britannica and V&A wonsam and hwarot); ceremony steps, ham, samogwandae unsourced -> living practice; merged; writer launched
 00:37 05 luxury-writer complete ~2,980 words; 0 VERIFY; 0 research talk; first draft sent; editor + 5 readers launched
+00:38 07 icp-reader uhnw complete; enquire 2 (celebrity link undercuts discretion; museum links)
+00:38 07 icp-reader sceptic complete; no must-fix (celebrity link reads as filler; soft close)
