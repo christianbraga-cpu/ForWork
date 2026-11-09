@@ -1,285 +1,548 @@
 {
- "agent": "wedding-planner-sme",
- "task_id": "korean-traditional-wedding",
- "stage": "03",
- "status": "complete",
- "round": 1,
- "inputs_used": [
-  "CLAUDE.md",
-  "content/posts/korean-traditional-wedding/00-input.json",
-  "content/posts/korean-traditional-wedding/01-brief.json (tradition_plan.batch_A)",
-  "content-system/schemas/03-source-pack.schema.json",
-  "content/posts/japanese-wedding-traditions/03-source-pack.json (format model)",
-  "https://api.vam.ac.uk/v2/museumobject/O22626 (Apify web-fetch 2026-11-09)",
-  "https://api.vam.ac.uk/v2/museumobject/O1724988 (Apify web-fetch 2026-11-09)",
-  "https://api.vam.ac.uk/v2/museumobject/O1724987 (Apify web-fetch 2026-11-09)",
-  "https://api.vam.ac.uk/v2/museumobject/O1724981 (read; modern designer wedding dress, not used)",
-  "https://api.vam.ac.uk/v2/objects/search?q=wedding%20goose%20korea",
-  "https://api.vam.ac.uk/v2/objects/search?q=korea%20wedding",
-  "https://api.vam.ac.uk/v2/objects/search?q=hwarot",
-  "https://api.vam.ac.uk/v2/objects/search?q=wonsam",
-  "https://www.britannica.com/place/South-Korea/Daily-life-and-social-customs (Apify web-fetch 2026-11-09)",
-  "https://www.britannica.com/topic/hanbok (AI summary only, not used)",
-  "https://folkency.nfm.go.kr/en/topic/detail/2905 (empty body, also with render wait)",
-  "https://english.visitkorea.or.kr/svc/contents/contentsView.do?vcontsId=86913 (redirected to unrelated restaurant page, not used)",
-  "https://www.korea.net/AboutKorea/Korean-Life/Wedding (redirected to home page, not used)"
- ],
- "tools_used": [
-  "mcp__Apify__apify--web-fetch",
-  "Bash"
- ],
- "assumptions": [
-  "Batch A only (fact_01 to fact_08): jeontong honrye, wooden wedding geese, hanbok, the ham. Batch B covers pyebaek, yedan and yemul, chukuigeum, modern wedding hall, UNESCO and legal.",
-  "V&A records are cited by their public collection page (collections.vam.ac.uk/item/<id>/); text was read via the V&A API record for the same object on 2026-11-09.",
-  "The V&A wooden goose record (O22626) is a 19th-century museum object; its description is historical. Present-day use is living practice.",
-  "The wonsam and hwarot V&A records do not say the garments are bridal; bridal use is in often_told.",
-  "Unsourced customs (ceremony steps, samogwandae, the ham) are in payload.often_told (internal only, no VERIFY markers, no meanings as fact), per the authority rule.",
-  "No prices or amounts recorded. No venue names; palaces and hanok villages are places only.",
-  "Hard 15-minute limit (start 00:06:56, last reads started about 00:19:40). National Folk Museum encyclopedia returned an empty JS shell; the visitkorea and korea.net URLs redirected to unrelated pages; Encyclopedia of Korean Culture was not reached in time."
- ],
- "open_questions": [
-  {
-   "to": "luxury-writer",
-   "question": "Jeontong honrye steps, samogwandae and the ham have no source in batch A: write as living practice in a confident voice, no order of service, no meanings, no contents or amounts.",
-   "blocking": false
+  "agent": "wedding-planner-sme",
+  "task_id": "korean-traditional-wedding",
+  "stage": "03",
+  "status": "complete",
+  "round": 1,
+  "inputs_used": [
+    "CLAUDE.md",
+    "content/posts/korean-traditional-wedding/00-input.json",
+    "content/posts/korean-traditional-wedding/01-brief.json (tradition_plan.batch_A)",
+    "content-system/schemas/03-source-pack.schema.json",
+    "content/posts/japanese-wedding-traditions/03-source-pack.json (format model)",
+    "https://api.vam.ac.uk/v2/museumobject/O22626 (Apify web-fetch 2026-11-09)",
+    "https://api.vam.ac.uk/v2/museumobject/O1724988 (Apify web-fetch 2026-11-09)",
+    "https://api.vam.ac.uk/v2/museumobject/O1724987 (Apify web-fetch 2026-11-09)",
+    "https://api.vam.ac.uk/v2/museumobject/O1724981 (read; modern designer wedding dress, not used)",
+    "https://api.vam.ac.uk/v2/objects/search?q=wedding%20goose%20korea",
+    "https://api.vam.ac.uk/v2/objects/search?q=korea%20wedding",
+    "https://api.vam.ac.uk/v2/objects/search?q=hwarot",
+    "https://api.vam.ac.uk/v2/objects/search?q=wonsam",
+    "https://www.britannica.com/place/South-Korea/Daily-life-and-social-customs (Apify web-fetch 2026-11-09)",
+    "https://www.britannica.com/topic/hanbok (AI summary only, not used)",
+    "https://folkency.nfm.go.kr/en/topic/detail/2905 (empty body, also with render wait)",
+    "https://english.visitkorea.or.kr/svc/contents/contentsView.do?vcontsId=86913 (redirected to unrelated restaurant page, not used)",
+    "https://www.korea.net/AboutKorea/Korean-Life/Wedding (redirected to home page, not used)",
+    "content/posts/korean-traditional-wedding/01-brief.json",
+    "content/posts/korean-traditional-wedding/02-research/pages/smartraveller.md",
+    "content/posts/japanese-wedding-traditions/03-source-pack-part-1.json",
+    "https://ich.unesco.org/en/RL/kimjang-making-and-sharing-kimchi-in-the-republic-of-korea-00881",
+    "https://ich.unesco.org/en/RL/arirang-lyrical-folk-song-in-the-republic-of-korea-00445",
+    "https://www.smartraveller.gov.au/planning-trip/advice-your-planned-activities/getting-married-overseas",
+    "https://www.smartraveller.gov.au/our-role/notarial-services/how-get-certificate-no-impediment-marriage",
+    "https://southkorea.embassy.gov.au/seol/notarial.html",
+    "https://www.britannica.com/place/South-Korea/Daily-life-and-social-customs"
+  ],
+  "tools_used": [
+    "mcp__Apify__apify--web-fetch",
+    "Bash"
+  ],
+  "assumptions": [
+    "Batch A only (fact_01 to fact_08): jeontong honrye, wooden wedding geese, hanbok, the ham. Batch B covers pyebaek, yedan and yemul, chukuigeum, modern wedding hall, UNESCO and legal.",
+    "V&A records are cited by their public collection page (collections.vam.ac.uk/item/<id>/); text was read via the V&A API record for the same object on 2026-11-09.",
+    "The V&A wooden goose record (O22626) is a 19th-century museum object; its description is historical. Present-day use is living practice.",
+    "The wonsam and hwarot V&A records do not say the garments are bridal; bridal use is in often_told.",
+    "Unsourced customs (ceremony steps, samogwandae, the ham) are in payload.often_told (internal only, no VERIFY markers, no meanings as fact), per the authority rule.",
+    "No prices or amounts recorded. No venue names; palaces and hanok villages are places only.",
+    "Hard 15-minute limit (start 00:06:56, last reads started about 00:19:40). National Folk Museum encyclopedia returned an empty JS shell; the visitkorea and korea.net URLs redirected to unrelated pages; Encyclopedia of Korean Culture was not reached in time.",
+    "Legal and travel facts are as at November 2026; the Wedded Advisor confirms current requirements with the district office in Korea and the Australian Embassy Seoul.",
+    "Smartraveller South Korea facts (fact_109 to fact_117) come from the repo page notes read live on 2026-11-09; not re-fetched in this batch.",
+    "Seoul and Jeju named only as places couples choose; palaces and hanok villages as places, never venues.",
+    "Korean-Australian weddings at home: a pyebaek can sit alongside an Australian legal ceremony; 'ask your celebrant' (advice, not fact)."
+  ],
+  "open_questions": [
+    {
+      "to": "luxury-writer",
+      "question": "Jeontong honrye steps, samogwandae and the ham have no source in batch A: write as living practice in a confident voice, no order of service, no meanings, no contents or amounts.",
+      "blocking": false
+    },
+    {
+      "to": "luxury-writer",
+      "question": "Geese meaning: the V&A states loyalty and fidelity (fact_02). Use it once with the V&A link if wanted; otherwise describe the goose without a meaning.",
+      "blocking": false
+    },
+    {
+      "to": "luxury-writer",
+      "question": "Customs sections (pyebaek, jujubes and chestnuts, carrying the bride, yedan and yemul, chukuigeum, wedding hall) have no strong source read: write as living practice, no meanings or origins as fact. UNESCO: neither Kimjang nor Arirang text links the element to weddings, so cut the UNESCO section or keep at most a passing cultural mention without a wedding link.",
+      "blocking": false
+    }
+  ],
+  "verify_items": [
+    "[[VERIFY: pyebaek (formal bows to the groom's family after the ceremony, often at the wedding hall) and keunjeol deep bows: no museum, encyclopedia or KTO page read in time (a Korea.net 'K-matrimony' article, 18 June 2026, was found by search but the read was declined). Write as living practice only.]]",
+    "[[VERIFY: jujubes and chestnuts tossed for the couple to catch, and the groom carrying the bride on his back: no source read; living practice only, no meaning or origin stated as fact.]]",
+    "[[VERIFY: yedan and yemul definitions: no Encyclopedia of Korean Culture or Britannica text read; describe as living practice in general terms, no amounts.]]",
+    "[[VERIFY: chukuigeum in white envelopes at a reception desk, guest book and meal tickets: no source read; living practice only, no amounts.]]",
+    "[[VERIFY: modern wedding hall format (Western-style ceremony in a hall or hotel, short pyebaek after, buffet, quick turnover, pre-wedding photo shoots): no official source or survey read; living practice only, no share figures.]]",
+    "[[VERIFY: Korean marriage registration for foreigners at the local district (gu) office: Supreme Court kfamily.scourt.go.kr 'Report of Marriage' English page found by search but fetch failed (502). Write as questions to ask the district office and the Australian Embassy Seoul, including any fees, as at November 2026.]]"
+  ],
+  "self_qa": {
+    "checks": [
+      {
+        "check": "Every fact has a source URL, exact quote and date read",
+        "pass": true,
+        "note": "8 facts read live 2026-11-09."
+      },
+      {
+        "check": "No prices or amounts",
+        "pass": true
+      },
+      {
+        "check": "Every batch A custom covered or listed as often told",
+        "pass": true,
+        "note": "Ceremony steps, samogwandae and the ham are often_told."
+      },
+      {
+        "check": "No invented quotes, statistics or real weddings",
+        "pass": true
+      },
+      {
+        "check": "No competitor, vendor or Wikipedia sources",
+        "pass": true
+      }
+    ],
+    "confidence": 0.55
   },
-  {
-   "to": "luxury-writer",
-   "question": "Geese meaning: the V&A states loyalty and fidelity (fact_02). Use it once with the V&A link if wanted; otherwise describe the goose without a meaning.",
-   "blocking": false
+  "next_agent": [
+    "luxury-writer"
+  ],
+  "payload": {
+    "facts": [
+      {
+        "fact_id": "fact_01",
+        "topic": "wooden wedding geese",
+        "region": "Korea",
+        "claim": "In a traditional Korean wedding the groom brings wooden geese to the bride's house in a ritual called jeonallye; live geese were used at first, and wooden geese began to replace them in the late Joseon period.",
+        "quote": "The groom brings wooden geese to the bride’s house in a ritual conducted as part of a traditional wedding, called jeonallye. At first live geese were used, but wooden geese started to replace live ones in the late Joseon period.",
+        "source": "https://collections.vam.ac.uk/item/O22626/",
+        "source_type": "editorial",
+        "checked": "2026-11-09",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_02",
+        "topic": "wooden wedding geese (meaning, museum-sourced)",
+        "region": "Korea",
+        "claim": "The V&A states that geese are a symbol of loyalty and fidelity and that wooden geese were used as a sign of the groom's everlasting love towards his bride.",
+        "quote": "Since geese are a symbol of loyalty and fidelity, wooden geese were used as a sign of the groom’s everlasting love towards his bride.",
+        "source": "https://collections.vam.ac.uk/item/O22626/",
+        "source_type": "editorial",
+        "checked": "2026-11-09",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_03",
+        "topic": "wooden wedding geese (name, history)",
+        "region": "Korea",
+        "claim": "The V&A records the Korean wooden wedding duck or goose as 'kirogi' (older romanisation; gireogi in Revised Romanisation is not given by the source) and says presenting a live goose was borrowed from Chinese Confucian wedding ritual and survived in Korea long after it disappeared in China.",
+        "quote": "The presentation of a live goose was initially borrowed from Chinese Confucian wedding rituals and the custom survived in Korea long after it had disappeared in China. Over time real geese were substituted with wooden geese and ducks (in Korean, ‘kirogi’), supposedly because it was so difficult to obtain the former.",
+        "source": "https://collections.vam.ac.uk/item/O22626/",
+        "source_type": "editorial",
+        "checked": "2026-11-09",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_04",
+        "topic": "hanbok",
+        "region": "South Korea",
+        "claim": "Britannica says Western dress has supplanted hanbok almost everywhere, but even urban dwellers still commonly wear it on special occasions including weddings, and there are different hanbok for special occasions such as weddings.",
+        "quote": "Western dress has supplanted the hanbok almost everywhere, but even urban dwellers commonly still wear it on special occasions such as important family meetings, holidays, weddings, and funerals. ... There are different hanbok for special occasions, such as weddings, babies’ birthdays, and 61st-birthday celebrations.",
+        "source": "https://www.britannica.com/place/South-Korea/Daily-life-and-social-customs",
+        "source_type": "editorial",
+        "checked": "2026-11-09",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_05",
+        "topic": "traditional ceremony context",
+        "region": "South Korea",
+        "claim": "Britannica names marriage among the most important passages in a person's life in traditional Korean family life, alongside a baby's first 100 days and the 61st birthday.",
+        "quote": "The most important passages in a person’s life are the completion of a baby’s first 100 days, one’s marriage, and one’s 61st birthday.",
+        "source": "https://www.britannica.com/place/South-Korea/Daily-life-and-social-customs",
+        "source_type": "editorial",
+        "checked": "2026-11-09",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_06",
+        "topic": "hanbok (bride): wonsam",
+        "region": "Korea",
+        "claim": "The V&A records a wonsam (원삼) as a woman's ceremonial silk robe from Korea, about 1850 to 1950, with a green body, red ribbons and multi-coloured sleeves in red, yellow, blue, white and dark red.",
+        "quote": "Wonsam, Woman's ceremonial robe, made of silk in multi-coloured, Korea, ca.1850-1950 ... The woman's ceremonial robe, crafted from silk, a green body of the robe, adorned with red ribbons and showcasing multi-coloured sleeves in red, yellow, blue, white, and dark red.",
+        "source": "https://collections.vam.ac.uk/item/O1724988/",
+        "source_type": "editorial",
+        "checked": "2026-11-09",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_07",
+        "topic": "hanbok (bride): hwarot",
+        "region": "Korea",
+        "claim": "The V&A records a woman's ceremonial robe ensemble titled Hwarot (활옷), made in Korea in the 1980s, comprising a red silk wonsam (robe) with flower-motif embroidery, a jeogori (jacket) and chima (skirts) with gold-leaf detailing.",
+        "quote": "Woman's ceremonial robe ensemble, comprising of wonsam (robe), jeogori (jacket), chima (skirts) ... features a red silk wonsam (robe) adorned with flower-motif embroidery, a light green silk jeogori (jacket), and suranchima (skirts) in blue and red hues with gold leaf detailing at the bottom.",
+        "source": "https://collections.vam.ac.uk/item/O1724987/",
+        "source_type": "editorial",
+        "checked": "2026-11-09",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_08",
+        "topic": "hanbok (general)",
+        "region": "South Korea",
+        "claim": "Britannica describes women's formal hanbok as several layers of undergarments under a long, billowing skirt and short jacket closed with a long tie, and men's as full-legged pants and a long, wide-sleeved jacket.",
+        "quote": "Women’s and girls’ formal hanbok consists of several layers of undergarments under a colorful, long billowing skirt and short jacket held closed with a long tie. The men’s and boys’ version consists of full-legged pants and a long, wide-sleeved jacket.",
+        "source": "https://www.britannica.com/place/South-Korea/Daily-life-and-social-customs",
+        "source_type": "editorial",
+        "checked": "2026-11-09",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_100",
+        "claim": "UNESCO element 'Kimjang, making and sharing kimchi in the Republic of Korea' is live and was inscribed in 2013 (8.COM) on the Representative List. Its text does not mention weddings; it mentions family methods 'typically transmitted from a mother-in-law to her newly married daughter-in-law'.",
+        "quote": "Inscribed in 2013 (8.COM) on the Representative List of the Intangible Cultural Heritage of Humanity ... typically transmitted from a mother-in-law to her newly married daughter-in-law.",
+        "source": "https://ich.unesco.org/en/RL/kimjang-making-and-sharing-kimchi-in-the-republic-of-korea-00881",
+        "source_type": "other",
+        "checked": "2026-11-09",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_101",
+        "claim": "UNESCO element 'Arirang, lyrical folk song in the Republic of Korea' is live and was inscribed in 2012 (7.COM). Its description text does not mention weddings; the page's keyword tags include 'Wedding' but the text never links Arirang to weddings, so it must not be presented as a wedding custom.",
+        "quote": "Inscribed in 2012 (7.COM) on the Representative List of the Intangible Cultural Heritage of Humanity ... Arirang is universally sung and enjoyed by the Korean nation.",
+        "source": "https://ich.unesco.org/en/RL/arirang-lyrical-folk-song-in-the-republic-of-korea-00445",
+        "source_type": "other",
+        "checked": "2026-11-09",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_102",
+        "claim": "Britannica: marriage is one of the most important passages in a Korean person's life, and hanbok is still commonly worn on special occasions including weddings, with different hanbok for weddings.",
+        "quote": "The most important passages in a person's life are the completion of a baby's first 100 days, one's marriage, and one's 61st birthday. ... even urban dwellers commonly still wear it on special occasions such as important family meetings, holidays, weddings, and funerals. ... There are different hanbok for special occasions, such as weddings",
+        "source": "https://www.britannica.com/place/South-Korea/Daily-life-and-social-customs",
+        "source_type": "editorial",
+        "checked": "2026-11-09",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_103",
+        "claim": "Smartraveller 'Getting married overseas' (last updated 18/08/2026): you can't register an overseas marriage in Australia, but in most cases it is legally recognised if valid under the law of the country where it happened and valid under Australian law had it occurred in Australia.",
+        "quote": "You can't register an overseas marriage in Australia. But in most cases, your marriage is legally recognised here. To be recognised, when you got married it must have been: valid under the law of the country where it happened; valid under Australian law if it had occurred in Australia.",
+        "source": "https://www.smartraveller.gov.au/planning-trip/advice-your-planned-activities/getting-married-overseas",
+        "source_type": "government",
+        "checked": "2026-11-09",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_104",
+        "claim": "Smartraveller 'Getting married overseas': some countries ask for proof you are free to marry, most commonly a CNI or registry certificates; ask the destination's embassy or consulate whether a CNI is needed, can be obtained in Australia, or needs an apostille; talk to a lawyer to confirm validity.",
+        "quote": "The most common documents you need are: a Certificate of No Impediment to Marriage (CNI); certificates from a registry of births, deaths and marriage. ... Contact your destination's embassy or consulate for specific details. ... Talk to a lawyer to confirm your overseas marriage certificate is valid in Australia.",
+        "source": "https://www.smartraveller.gov.au/planning-trip/advice-your-planned-activities/getting-married-overseas",
+        "source_type": "government",
+        "checked": "2026-11-09",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_105",
+        "claim": "Smartraveller CNI page (last updated 01/10/2026): DFAT issues CNIs through Australian Passport Offices, embassies and consulates overseas, and by mail; fees apply (no amounts recorded); at least one applicant must be an Australian citizen or permanent resident; ask whether the CNI must be issued in the country of marriage and whether it needs an apostille or authentication.",
+        "quote": "DFAT issues CNIs: through Australian Passport Offices across Australia; through Australian embassies, high commissions, and consulates overseas; by mail. ... Note that we charge fees for our service. ... At least one person applying for the CNI must be an Australian citizen or permanent resident.",
+        "source": "https://www.smartraveller.gov.au/our-role/notarial-services/how-get-certificate-no-impediment-marriage",
+        "source_type": "government",
+        "checked": "2026-11-09",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_106",
+        "claim": "Australian Embassy Seoul notarial page is live (title 'Notarial Services'). It issues a Certificate of No Impediment to Marriage (CNI), described as a general statement of Australian law; the CNI does not state the applicant is single (a Single Status Certificate comes from the Australian BDM registry).",
+        "quote": "A Certificate of No Impediement to Marriage (CNI) is a general statement of the law in Australia concerning the recognition of foreign marriages. ... The CNI does not states the applicant is currently single.",
+        "source": "https://southkorea.embassy.gov.au/seol/notarial.html",
+        "source_type": "government",
+        "checked": "2026-11-09",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_107",
+        "claim": "Embassy Seoul CNI requirements: originals only; applicant brings the completed CNI form (unsigned, signed before the consular officer), Australian passport, and divorce order or death certificate if applicable; partner brings foreign passport and the same if applicable; non-English documents need a professional translation.",
+        "quote": "Required documents for CNI (Original document only, copies not acceptable) ... Do not sign the last page as the consular officer will witness your signature on your appointment day.",
+        "source": "https://southkorea.embassy.gov.au/seol/notarial.html",
+        "source_type": "government",
+        "checked": "2026-11-09",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_108",
+        "claim": "Embassy Seoul: notarial services by appointment or by mail; fees apply for all services (card only; no amounts recorded); the embassy cannot witness signatures on documents for use in Korea, and consular staff cannot advise on specific legal requirements. No 'affidavit for marriage' service is listed; Australian affidavits are witnessed only for use in Australia.",
+        "quote": "Fees apply for all services. ... We are not able to witness signatures on documents that will be used in other countries. ... Consular staff cannot provide advice on specific legal requirements",
+        "source": "https://southkorea.embassy.gov.au/seol/notarial.html",
+        "source_type": "government",
+        "checked": "2026-11-09",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_109",
+        "claim": "Smartraveller South Korea (updated 12 October 2026, still current at 09 November 2026): overall advice 'Exercise normal safety precautions in South Korea'; no higher-level areas listed.",
+        "quote": "We advise: Exercise normal safety precautions in South Korea.",
+        "source": "https://www.smartraveller.gov.au/destinations/asia/south-korea-republic-korea",
+        "source_type": "government",
+        "checked": "2026-11-09",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_110",
+        "claim": "Smartraveller: the DMZ is mentioned under Regional threats (technically still at war; low-level clashes across the DMZ and Northern Limit Line; tensions can increase with little warning), with no separate advice level.",
+        "quote": "tensions can increase with little warning (as recorded in repo notes 02-research/pages/smartraveller.md)",
+        "source": "https://www.smartraveller.gov.au/destinations/asia/south-korea-republic-korea",
+        "source_type": "government",
+        "checked": "2026-11-09",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_111",
+        "claim": "Smartraveller weather: rainy/monsoon season usually June to August; typhoon season usually August to September; heatwaves between June and September; yellow dust and high pollution particularly March to May.",
+        "quote": "rainy/monsoon season 'usually from June to August'; typhoon season 'usually from August to September'; heatwaves 'between June and September'; yellow dust 'particularly from March to May'",
+        "source": "https://www.smartraveller.gov.au/destinations/asia/south-korea-republic-korea",
+        "source_type": "government",
+        "checked": "2026-11-09",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_112",
+        "claim": "Smartraveller entry (as at November 2026): Australian passport holders can visit as tourists for up to 90 days without a K-ETA; exempt from K-ETA until 31 December 2026; e-Arrival card within 3 days before arrival; conditions can change at short notice.",
+        "quote": "Australian passport holders can visit as tourists for stays of up to 90 days without applying for a K-ETA (or visa waiver). ... until 31 December 2026 ... Entry and exit conditions can change at short notice.",
+        "source": "https://www.smartraveller.gov.au/destinations/asia/south-korea-republic-korea",
+        "source_type": "government",
+        "checked": "2026-11-09",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_113",
+        "claim": "Smartraveller: same-sex relationships are not criminalised but are not legally recognised in South Korea.",
+        "quote": "Same-sex relationships and homosexuality are not criminalised, but same-sex relationships are not legally recognised.",
+        "source": "https://www.smartraveller.gov.au/destinations/asia/south-korea-republic-korea",
+        "source_type": "government",
+        "checked": "2026-11-09",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_114",
+        "claim": "Smartraveller: dual nationality recognised only in limited circumstances; male Australian-Korean dual nationals of military age may need to complete military service.",
+        "quote": "male Australian-Korean dual nationals of military age may need to complete military service (repo notes paraphrase of Smartraveller)",
+        "source": "https://www.smartraveller.gov.au/destinations/asia/south-korea-republic-korea",
+        "source_type": "government",
+        "checked": "2026-11-09",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_115",
+        "claim": "Smartraveller: public officials (including teachers, journalists and public servants) and their spouses cannot accept meals, gifts or other benefits above set limits (no amounts recorded). Relevant to chukuigeum only as a note for guests.",
+        "quote": "Public officials (including teachers, journalists, public servants) and spouses cannot accept meals, gifts or other benefits above set limits (repo notes)",
+        "source": "https://www.smartraveller.gov.au/destinations/asia/south-korea-republic-korea",
+        "source_type": "government",
+        "checked": "2026-11-09",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_116",
+        "claim": "Smartraveller: avoid demonstrations and large public gatherings, common in Seoul especially on weekends and public holidays; illegal to photograph military zones, assets, personnel and official buildings.",
+        "quote": "Avoid demonstrations and large public gatherings, common in Seoul, especially weekends and public holidays. ... illegal to photograph military zones, assets, personnel and official buildings (repo notes)",
+        "source": "https://www.smartraveller.gov.au/destinations/asia/south-korea-republic-korea",
+        "source_type": "government",
+        "checked": "2026-11-09",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_117",
+        "claim": "Australian Embassy Seoul contact: 19th Floor, Kyobo Building, 1 Jong-ro, Jongno-gu, Seoul 03154; phone +82 2 2003 0100; 24-hour Consular Emergency Centre +61 2 6261 3305 (overseas), 1300 555 135 (in Australia).",
+        "quote": "Australian Embassy, Seoul: 19th Floor, Kyobo Building, 1 Jong-ro, Jongno-gu, Seoul 03154 ... Phone: +82 2 2003 0100",
+        "source": "https://www.smartraveller.gov.au/destinations/asia/south-korea-republic-korea",
+        "source_type": "government",
+        "checked": "2026-11-09",
+        "is_price": false
+      }
+    ],
+    "insider_details": [
+      {
+        "detail": "If the couple include the wooden geese in a ceremony, the source-backed description is the groom bringing them to the bride's house in the jeonallye; the V&A gives loyalty and fidelity as the meaning, so the writer may state that meaning with a link, but not the 'mate for life' line as fact beyond the V&A wording.",
+        "fact_ids": [
+          "fact_01",
+          "fact_02"
+        ]
+      },
+      {
+        "detail": "Use 'jeonallye' (Revised Romanisation, as the V&A gives it) for the ritual; the V&A's 'kirogi' is an older romanisation, so 'gireogi' should be written as the Revised Romanisation without claiming a source spelled it that way.",
+        "fact_ids": [
+          "fact_01",
+          "fact_03"
+        ]
+      },
+      {
+        "detail": "Hanbok is still commonly worn for weddings even by city families, and there are dedicated wedding hanbok, so plan time in the schedule for a change of outfit between a Western-style ceremony and the traditional element.",
+        "fact_ids": [
+          "fact_04"
+        ]
+      },
+      {
+        "detail": "Wonsam and hwarot are layered silk robes worn over a jeogori and chima; brief the photographer and the venue on extra dressing time and a clean, private room for the change.",
+        "fact_ids": [
+          "fact_06",
+          "fact_07",
+          "fact_08"
+        ]
+      },
+      {
+        "detail": "Order a CNI early: ask the district office in Korea whether it accepts an Australian-issued CNI or wants one from the Embassy in Seoul, and whether it needs an apostille, because the Embassy is appointment or mail only and apostilles take a few working days to collect.",
+        "fact_ids": [
+          "fact_104",
+          "fact_105",
+          "fact_106",
+          "fact_107"
+        ]
+      },
+      {
+        "detail": "A CNI is not proof of single status; if the district office asks for that, order a Single Status Certificate from your Australian state or territory registry before you fly.",
+        "fact_ids": [
+          "fact_106",
+          "fact_104"
+        ]
+      },
+      {
+        "detail": "For autumn dates, plan around typhoon season (usually August to September) and avoid the June to August monsoon for outdoor photos; spring brings yellow dust, so keep a covered option for hanbok portraits.",
+        "fact_ids": [
+          "fact_111"
+        ]
+      },
+      {
+        "detail": "Australian guests can enter visa-free for up to 90 days and are K-ETA exempt only until 31 December 2026; for 2027 dates, recheck entry rules before invitations go out.",
+        "fact_ids": [
+          "fact_112"
+        ]
+      },
+      {
+        "detail": "Brief guests not to photograph military sites or official buildings and to steer clear of weekend demonstrations in central Seoul when planning group outings.",
+        "fact_ids": [
+          "fact_116",
+          "fact_110"
+        ]
+      }
+    ],
+    "quotes": [],
+    "real_weddings": [],
+    "verify_items": [
+      "[[VERIFY: pyebaek (formal bows to the groom's family after the ceremony, often at the wedding hall) and keunjeol deep bows: no museum, encyclopedia or KTO page read in time (a Korea.net 'K-matrimony' article, 18 June 2026, was found by search but the read was declined). Write as living practice only.]]",
+      "[[VERIFY: jujubes and chestnuts tossed for the couple to catch, and the groom carrying the bride on his back: no source read; living practice only, no meaning or origin stated as fact.]]",
+      "[[VERIFY: yedan and yemul definitions: no Encyclopedia of Korean Culture or Britannica text read; describe as living practice in general terms, no amounts.]]",
+      "[[VERIFY: chukuigeum in white envelopes at a reception desk, guest book and meal tickets: no source read; living practice only, no amounts.]]",
+      "[[VERIFY: modern wedding hall format (Western-style ceremony in a hall or hotel, short pyebaek after, buffet, quick turnover, pre-wedding photo shoots): no official source or survey read; living practice only, no share figures.]]",
+      "[[VERIFY: Korean marriage registration for foreigners at the local district (gu) office: Supreme Court kfamily.scourt.go.kr 'Report of Marriage' English page found by search but fetch failed (502). Write as questions to ask the district office and the Australian Embassy Seoul, including any fees, as at November 2026.]]"
+    ],
+    "needs_signoff": [],
+    "must_include_coverage": [
+      {
+        "item": "The traditional ceremony (jeontong honrye) and its steps",
+        "covered_by": [
+          "fact_05",
+          "fact_01",
+          "often_told: jeontong honrye steps"
+        ]
+      },
+      {
+        "item": "The wooden wedding geese (gireogi, jeonallye)",
+        "covered_by": [
+          "fact_01",
+          "fact_02",
+          "fact_03"
+        ]
+      },
+      {
+        "item": "Hanbok for bride and groom (wonsam or hwarot, samogwandae)",
+        "covered_by": [
+          "fact_04",
+          "fact_06",
+          "fact_07",
+          "fact_08",
+          "often_told: samogwandae"
+        ]
+      },
+      {
+        "item": "The ham (gift box) and its delivery",
+        "covered_by": [
+          "often_told: the ham"
+        ]
+      },
+      {
+        "item": "No meaning or origin stated as fact unless sourced (geese)",
+        "covered_by": [
+          "fact_02",
+          "fact_03"
+        ]
+      },
+      {
+        "item": "Korean terms in Revised Romanisation as sources give them, hangeul only where a source gives it",
+        "covered_by": [
+          "fact_01",
+          "fact_06",
+          "fact_07"
+        ]
+      },
+      {
+        "item": "Pyebaek with the groom's family (bows, keunjeol)",
+        "covered_by": [
+          "[[VERIFY: pyebaek (formal bows to the groom's family after the ceremony, often at the wedding hall) and keunjeol deep bows: no museum, encyclopedia or KTO page read in time (a Korea.net 'K-matrimony' article, 18 June 2026, was found by search but the read was declined). Write as living practice only.]]"
+        ]
+      },
+      {
+        "item": "Jujubes, chestnuts and carrying the bride",
+        "covered_by": [
+          "[[VERIFY: jujubes and chestnuts tossed for the couple to catch, and the groom carrying the bride on his back: no source read; living practice only, no meaning or origin stated as fact.]]"
+        ]
+      },
+      {
+        "item": "Yedan, yemul and chukuigeum described with no amounts",
+        "covered_by": [
+          "[[VERIFY: yedan and yemul definitions: no Encyclopedia of Korean Culture or Britannica text read; describe as living practice in general terms, no amounts.]]",
+          "[[VERIFY: chukuigeum in white envelopes at a reception desk, guest book and meal tickets: no source read; living practice only, no amounts.]]",
+          "fact_115"
+        ]
+      },
+      {
+        "item": "Modern wedding hall format; framing line said once",
+        "covered_by": [
+          "[[VERIFY: modern wedding hall format (Western-style ceremony in a hall or hotel, short pyebaek after, buffet, quick turnover, pre-wedding photo shoots): no official source or survey read; living practice only, no share figures.]]",
+          "fact_102"
+        ]
+      },
+      {
+        "item": "UNESCO (only if confirmed)",
+        "covered_by": [
+          "fact_100",
+          "fact_101"
+        ]
+      },
+      {
+        "item": "Section for Australians: Smartraveller level, DMZ, seasons, entry, embassy CNI/notarial, Getting married overseas, district office questions, same-sex line",
+        "covered_by": [
+          "fact_103",
+          "fact_104",
+          "fact_105",
+          "fact_106",
+          "fact_107",
+          "fact_108",
+          "fact_109",
+          "fact_110",
+          "fact_111",
+          "fact_112",
+          "fact_113",
+          "fact_114",
+          "fact_116",
+          "fact_117",
+          "[[VERIFY: Korean marriage registration for foreigners at the local district (gu) office: Supreme Court kfamily.scourt.go.kr 'Report of Marriage' English page found by search but fetch failed (502). Write as questions to ask the district office and the Australian Embassy Seoul, including any fees, as at November 2026.]]"
+        ]
+      },
+      {
+        "item": "FAQ: is a traditional ceremony legally binding; can we hold a pyebaek in Australia",
+        "covered_by": [
+          "fact_103",
+          "fact_104"
+        ]
+      }
+    ]
   }
- ],
- "verify_items": [],
- "self_qa": {
-  "checks": [
-   {
-    "check": "Every fact has a source URL, exact quote and date read",
-    "pass": true,
-    "note": "8 facts read live 2026-11-09."
-   },
-   {
-    "check": "No prices or amounts",
-    "pass": true
-   },
-   {
-    "check": "Every batch A custom covered or listed as often told",
-    "pass": true,
-    "note": "Ceremony steps, samogwandae and the ham are often_told."
-   },
-   {
-    "check": "No invented quotes, statistics or real weddings",
-    "pass": true
-   },
-   {
-    "check": "No competitor, vendor or Wikipedia sources",
-    "pass": true
-   }
-  ],
-  "confidence": 0.55
- },
- "next_agent": [
-  "luxury-writer"
- ],
- "payload": {
-  "facts": [
-   {
-    "fact_id": "fact_01",
-    "topic": "wooden wedding geese",
-    "region": "Korea",
-    "claim": "In a traditional Korean wedding the groom brings wooden geese to the bride's house in a ritual called jeonallye; live geese were used at first, and wooden geese began to replace them in the late Joseon period.",
-    "quote": "The groom brings wooden geese to the bride’s house in a ritual conducted as part of a traditional wedding, called jeonallye. At first live geese were used, but wooden geese started to replace live ones in the late Joseon period.",
-    "source": "https://collections.vam.ac.uk/item/O22626/",
-    "source_type": "editorial",
-    "checked": "2026-11-09",
-    "is_price": false
-   },
-   {
-    "fact_id": "fact_02",
-    "topic": "wooden wedding geese (meaning, museum-sourced)",
-    "region": "Korea",
-    "claim": "The V&A states that geese are a symbol of loyalty and fidelity and that wooden geese were used as a sign of the groom's everlasting love towards his bride.",
-    "quote": "Since geese are a symbol of loyalty and fidelity, wooden geese were used as a sign of the groom’s everlasting love towards his bride.",
-    "source": "https://collections.vam.ac.uk/item/O22626/",
-    "source_type": "editorial",
-    "checked": "2026-11-09",
-    "is_price": false
-   },
-   {
-    "fact_id": "fact_03",
-    "topic": "wooden wedding geese (name, history)",
-    "region": "Korea",
-    "claim": "The V&A records the Korean wooden wedding duck or goose as 'kirogi' (older romanisation; gireogi in Revised Romanisation is not given by the source) and says presenting a live goose was borrowed from Chinese Confucian wedding ritual and survived in Korea long after it disappeared in China.",
-    "quote": "The presentation of a live goose was initially borrowed from Chinese Confucian wedding rituals and the custom survived in Korea long after it had disappeared in China. Over time real geese were substituted with wooden geese and ducks (in Korean, ‘kirogi’), supposedly because it was so difficult to obtain the former.",
-    "source": "https://collections.vam.ac.uk/item/O22626/",
-    "source_type": "editorial",
-    "checked": "2026-11-09",
-    "is_price": false
-   },
-   {
-    "fact_id": "fact_04",
-    "topic": "hanbok",
-    "region": "South Korea",
-    "claim": "Britannica says Western dress has supplanted hanbok almost everywhere, but even urban dwellers still commonly wear it on special occasions including weddings, and there are different hanbok for special occasions such as weddings.",
-    "quote": "Western dress has supplanted the hanbok almost everywhere, but even urban dwellers commonly still wear it on special occasions such as important family meetings, holidays, weddings, and funerals. ... There are different hanbok for special occasions, such as weddings, babies’ birthdays, and 61st-birthday celebrations.",
-    "source": "https://www.britannica.com/place/South-Korea/Daily-life-and-social-customs",
-    "source_type": "editorial",
-    "checked": "2026-11-09",
-    "is_price": false
-   },
-   {
-    "fact_id": "fact_05",
-    "topic": "traditional ceremony context",
-    "region": "South Korea",
-    "claim": "Britannica names marriage among the most important passages in a person's life in traditional Korean family life, alongside a baby's first 100 days and the 61st birthday.",
-    "quote": "The most important passages in a person’s life are the completion of a baby’s first 100 days, one’s marriage, and one’s 61st birthday.",
-    "source": "https://www.britannica.com/place/South-Korea/Daily-life-and-social-customs",
-    "source_type": "editorial",
-    "checked": "2026-11-09",
-    "is_price": false
-   },
-   {
-    "fact_id": "fact_06",
-    "topic": "hanbok (bride): wonsam",
-    "region": "Korea",
-    "claim": "The V&A records a wonsam (원삼) as a woman's ceremonial silk robe from Korea, about 1850 to 1950, with a green body, red ribbons and multi-coloured sleeves in red, yellow, blue, white and dark red.",
-    "quote": "Wonsam, Woman's ceremonial robe, made of silk in multi-coloured, Korea, ca.1850-1950 ... The woman's ceremonial robe, crafted from silk, a green body of the robe, adorned with red ribbons and showcasing multi-coloured sleeves in red, yellow, blue, white, and dark red.",
-    "source": "https://collections.vam.ac.uk/item/O1724988/",
-    "source_type": "editorial",
-    "checked": "2026-11-09",
-    "is_price": false
-   },
-   {
-    "fact_id": "fact_07",
-    "topic": "hanbok (bride): hwarot",
-    "region": "Korea",
-    "claim": "The V&A records a woman's ceremonial robe ensemble titled Hwarot (활옷), made in Korea in the 1980s, comprising a red silk wonsam (robe) with flower-motif embroidery, a jeogori (jacket) and chima (skirts) with gold-leaf detailing.",
-    "quote": "Woman's ceremonial robe ensemble, comprising of wonsam (robe), jeogori (jacket), chima (skirts) ... features a red silk wonsam (robe) adorned with flower-motif embroidery, a light green silk jeogori (jacket), and suranchima (skirts) in blue and red hues with gold leaf detailing at the bottom.",
-    "source": "https://collections.vam.ac.uk/item/O1724987/",
-    "source_type": "editorial",
-    "checked": "2026-11-09",
-    "is_price": false
-   },
-   {
-    "fact_id": "fact_08",
-    "topic": "hanbok (general)",
-    "region": "South Korea",
-    "claim": "Britannica describes women's formal hanbok as several layers of undergarments under a long, billowing skirt and short jacket closed with a long tie, and men's as full-legged pants and a long, wide-sleeved jacket.",
-    "quote": "Women’s and girls’ formal hanbok consists of several layers of undergarments under a colorful, long billowing skirt and short jacket held closed with a long tie. The men’s and boys’ version consists of full-legged pants and a long, wide-sleeved jacket.",
-    "source": "https://www.britannica.com/place/South-Korea/Daily-life-and-social-customs",
-    "source_type": "editorial",
-    "checked": "2026-11-09",
-    "is_price": false
-   }
-  ],
-  "insider_details": [
-   {
-    "detail": "If the couple include the wooden geese in a ceremony, the source-backed description is the groom bringing them to the bride's house in the jeonallye; the V&A gives loyalty and fidelity as the meaning, so the writer may state that meaning with a link, but not the 'mate for life' line as fact beyond the V&A wording.",
-    "fact_ids": [
-     "fact_01",
-     "fact_02"
-    ]
-   },
-   {
-    "detail": "Use 'jeonallye' (Revised Romanisation, as the V&A gives it) for the ritual; the V&A's 'kirogi' is an older romanisation, so 'gireogi' should be written as the Revised Romanisation without claiming a source spelled it that way.",
-    "fact_ids": [
-     "fact_01",
-     "fact_03"
-    ]
-   },
-   {
-    "detail": "Hanbok is still commonly worn for weddings even by city families, and there are dedicated wedding hanbok, so plan time in the schedule for a change of outfit between a Western-style ceremony and the traditional element.",
-    "fact_ids": [
-     "fact_04"
-    ]
-   },
-   {
-    "detail": "Wonsam and hwarot are layered silk robes worn over a jeogori and chima; brief the photographer and the venue on extra dressing time and a clean, private room for the change.",
-    "fact_ids": [
-     "fact_06",
-     "fact_07",
-     "fact_08"
-    ]
-   }
-  ],
-  "quotes": [],
-  "real_weddings": [],
-  "budget_range_aud": [],
-  "verify_items": [],
-  "needs_signoff": [],
-  "must_include_coverage": [
-   {
-    "item": "The traditional ceremony (jeontong honrye) and its steps",
-    "covered_by": [
-     "fact_05",
-     "fact_01",
-     "often_told: jeontong honrye steps"
-    ]
-   },
-   {
-    "item": "The wooden wedding geese (gireogi, jeonallye)",
-    "covered_by": [
-     "fact_01",
-     "fact_02",
-     "fact_03"
-    ]
-   },
-   {
-    "item": "Hanbok for bride and groom (wonsam or hwarot, samogwandae)",
-    "covered_by": [
-     "fact_04",
-     "fact_06",
-     "fact_07",
-     "fact_08",
-     "often_told: samogwandae"
-    ]
-   },
-   {
-    "item": "The ham (gift box) and its delivery",
-    "covered_by": [
-     "often_told: the ham"
-    ]
-   },
-   {
-    "item": "No meaning or origin stated as fact unless sourced (geese)",
-    "covered_by": [
-     "fact_02",
-     "fact_03"
-    ]
-   },
-   {
-    "item": "Korean terms in Revised Romanisation as sources give them, hangeul only where a source gives it",
-    "covered_by": [
-     "fact_01",
-     "fact_06",
-     "fact_07"
-    ]
-   }
-  ],
-  "often_told": [
-   {
-    "custom": "jeontong honrye steps (bows between bride and groom, a shared cup, the ceremonial table and its items)",
-    "note": "No museum, encyclopedia or KTO text read in time. Write as living practice only ('In a traditional ceremony, the couple...'), no order of service, no Korean step names, no symbolism."
-   },
-   {
-    "custom": "traditional ceremonies held today at folk villages, hanok villages or cultural venues, or as a short ceremony",
-    "note": "Unsourced. Living practice only; palaces and hanok villages as places, never venues."
-   },
-   {
-    "custom": "couples keeping the wooden geese at home after the wedding",
-    "note": "Unsourced. Living practice only, no meaning attached."
-   },
-   {
-    "custom": "the groom's samogwandae (official's robe, hat and belt)",
-    "note": "No source read. Name it as living practice only; no history or rank meaning as fact."
-   },
-   {
-    "custom": "hwarot or wonsam worn by the bride at the wedding",
-    "note": "V&A records the garments (fact_06, fact_07) as women's ceremonial robes but does not state they are bridal. Bridal use as living practice only."
-   },
-   {
-    "custom": "the ham (gift box) carried to the bride's family by the groom's friends, and its contents",
-    "note": "No source read. Living practice only; no contents listed as fact, no amounts, no meanings."
-   }
-  ]
- }
 }
