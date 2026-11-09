@@ -1,0 +1,229 @@
+{
+  "agent": "visual-curator",
+  "task_id": "korean-traditional-wedding",
+  "stage": "04",
+  "status": "needs_input",
+  "round": 1,
+  "inputs_used": [
+    "CLAUDE.md",
+    "content/posts/korean-traditional-wedding/00-input.json",
+    "content/posts/korean-traditional-wedding/01-brief.json (must_include section order, avoid list, Smartraveller updated 12 October 2026)",
+    "content-system/images/library-index.csv (header only, no rows)",
+    "content-system/schemas/04-images.schema.json",
+    "content/posts/japanese-wedding-traditions/04-images.json (format)"
+  ],
+  "self_qa": {
+    "checks": [
+      {
+        "check": "Zero reference-only or competitor images in slots",
+        "pass": true
+      },
+      {
+        "check": "Every approved image has verified location, licence, alt, caption, fit_reason",
+        "pass": true,
+        "note": "No approved images; all 7 slots needed."
+      },
+      {
+        "check": "No AI image of people, cultural dress, ceremonies or places",
+        "pass": true,
+        "note": "AI offered only as a fallback still life (wooden wedding geese or jujubes and chestnuts), not generated, pending Nic's approval."
+      },
+      {
+        "check": "Destination shown as a place only, no people, no venue, away from the DMZ",
+        "pass": true,
+        "note": "Seoul palace courtyard or Jeju landscape."
+      },
+      {
+        "check": "Featured image exists (approved or needed with brief)",
+        "pass": true,
+        "note": "Needed with brief."
+      },
+      {
+        "check": "Placements match final H2 numbering",
+        "pass": false,
+        "note": "02-seo.json outline not available; after_h2 follows must_include order (1 ham, 2 yedan and yemul, 3 wedding hall, 4 jeontong honrye, 5 geese, 6 hanbok, 7 pyebaek, 8 jujubes, chestnuts and carrying the bride, 9 chukuigeum, 10 UNESCO, 11 for Australians)."
+      }
+    ],
+    "confidence": 0.6
+  },
+  "open_questions": [
+    {
+      "to": "Nic",
+      "question": "Source licensed photos for 7 slots (Korean-Australian client weddings with signed consent, partner photographers, licensed stock with model and property releases)? Library register has no rows.",
+      "blocking": true
+    },
+    {
+      "to": "Nic",
+      "question": "Approve or decline an AI illustrative still life (pair of wooden wedding geese, or jujubes and chestnuts in a bowl, on linen; no people, dress, ceremony or place), captioned 'Illustrative image', if no licensed photo is found?",
+      "blocking": false
+    },
+    {
+      "to": "seo-researcher",
+      "question": "Confirm H2 numbering once the outline exists and remap after_h2 placements.",
+      "blocking": false
+    }
+  ],
+  "assumptions": [
+    "New article: no old-page images.",
+    "No venue in scope, so no press-kit permission emails drafted; palaces and hanok villages named only as places.",
+    "Fast mode, library register only: Google Drive, own site, Canva and Google Lens not run.",
+    "Ceremonies, hanbok, pyebaek and the ham must show real, consenting people in real, licensed photos; never AI.",
+    "Captions state no meaning or origin for the geese, jujubes or chestnuts."
+  ],
+  "verify_items": [
+    "[[IMAGE NEEDED]] featured: Korean bride in a colourful ceremonial robe beside the groom in a traditional official's robe and hat",
+    "[[IMAGE NEEDED]] the-ham: Wrapped wooden gift box tied with silk cloth for a Korean wedding",
+    "[[IMAGE NEEDED]] traditional-ceremony: Bride and groom in hanbok bowing to each other across a traditional Korean ceremony table",
+    "[[IMAGE NEEDED]] wedding-geese: Pair of carved and painted wooden wedding geese on a plain linen surface",
+    "[[IMAGE NEEDED]] hanbok: Embroidered red Korean bridal robe with a beaded headpiece beside the groom's dark official's robe",
+    "[[IMAGE NEEDED]] pyebaek: Couple in hanbok catching jujubes and chestnuts in the bride's skirt during a pyebaek",
+    "[[IMAGE NEEDED]] destination: Empty palace courtyard with curved tiled roofs under a clear autumn sky in Seoul",
+    "[[VERIFY licence]] every sourced photo: credit, scope, model and property releases",
+    "[[VERIFY: destination photo location confirmed and Smartraveller level unchanged at publish date]]",
+    "[[VERIFY: any AI illustrative still life approved by Nic before generation]]"
+  ],
+  "next_agent": [
+    "luxury-writer"
+  ],
+  "payload": {
+    "slots": [
+      {
+        "slot_id": "featured",
+        "placement": "featured",
+        "purpose": "Hero: a real, licensed sense of a Korean wedding as a family occasion, without depending on one couple's identity.",
+        "shot_brief": "Licensed photo from a consented Korean or Korean-Australian wedding: the bride in wonsam or hwarot and the groom in samogwandae, standing together in soft natural light, faces consented or turned away. Wide 3:2 hero with headroom for a title crop. No venue, palace or hanok village named as a venue. Never AI.",
+        "status": "needed",
+        "file": "content/posts/korean-traditional-wedding/images/korean-traditional-wedding-couple-hanbok-hero.webp",
+        "source": {
+          "type": "library",
+          "origin": "[[IMAGE NEEDED]] library-index.csv has no rows (header only); no external searches in fast mode",
+          "credit": "[[VERIFY licence]]"
+        },
+        "consent": {
+          "couple": "required",
+          "location": "required if identifiable"
+        },
+        "alt": "Korean bride in a colourful ceremonial robe beside the groom in a traditional official's robe and hat",
+        "caption": "<Place>, <town>. Photo: [[VERIFY credit]]",
+        "lens_check": "Not run: no candidate image."
+      },
+      {
+        "slot_id": "the-ham",
+        "placement": "after_h2:1",
+        "purpose": "Illustrate the ham: the gift box delivered to the bride's family before the wedding, with no contents of value or amounts shown.",
+        "shot_brief": "Licensed detail photo from a consented family: a wrapped ham box tied with cloth, on a low table or carried by friends of the groom at the door, evening light, hands only or consented faces. No money, jewellery prices or amounts visible. Never AI.",
+        "status": "needed",
+        "file": "content/posts/korean-traditional-wedding/images/korean-traditional-wedding-ham-gift-box.webp",
+        "source": {
+          "type": "library",
+          "origin": "[[IMAGE NEEDED]] library-index.csv has no rows (header only); no external searches in fast mode",
+          "credit": "[[VERIFY licence]]"
+        },
+        "consent": {
+          "family": "required if identifiable"
+        },
+        "alt": "Wrapped wooden gift box tied with silk cloth for a Korean wedding",
+        "caption": "<Place>, <town>. Photo: [[VERIFY credit]]",
+        "lens_check": "Not run: no candidate image."
+      },
+      {
+        "slot_id": "traditional-ceremony",
+        "placement": "after_h2:4",
+        "purpose": "Show the jeontong honrye, the traditional ceremony, at a recognisable moment (bows or the shared cup) as sources describe it.",
+        "shot_brief": "Licensed photo from a consented traditional ceremony: bride and groom facing each other across a ceremony table set with offerings, bowing or sharing a cup, outdoor courtyard light. Respectful framing, no flash. Location named only as a place, never as a venue. Never AI.",
+        "status": "needed",
+        "file": "content/posts/korean-traditional-wedding/images/korean-traditional-wedding-jeontong-honrye-ceremony.webp",
+        "source": {
+          "type": "library",
+          "origin": "[[IMAGE NEEDED]] library-index.csv has no rows (header only); no external searches in fast mode",
+          "credit": "[[VERIFY licence]]"
+        },
+        "consent": {
+          "couple": "required",
+          "location": "required if identifiable"
+        },
+        "alt": "Bride and groom in hanbok bowing to each other across a traditional Korean ceremony table",
+        "caption": "<Place>, <town>. Photo: [[VERIFY credit]]",
+        "lens_check": "Not run: no candidate image."
+      },
+      {
+        "slot_id": "wedding-geese",
+        "placement": "after_h2:5",
+        "purpose": "Illustrate the wooden wedding geese (gireogi) as objects, with no meaning stated in the caption.",
+        "shot_brief": "Preferred: licensed photo of a pair of carved, painted wooden wedding geese, often wrapped in cloth, on a ceremony table or plain surface, soft side light, no people. Museum photo only with clear reuse rights. Fallback only if Nic approves: AI neutral still life of a pair of carved wooden wedding geese on plain linen, no people, dress, ceremony or place, captioned 'Illustrative image'.",
+        "status": "needed",
+        "file": "content/posts/korean-traditional-wedding/images/korean-traditional-wedding-wooden-wedding-geese.webp",
+        "source": {
+          "type": "library",
+          "origin": "[[IMAGE NEEDED]] library-index.csv has no rows (header only); no external searches in fast mode; ai_illustrative still life fallback pending Nic approval",
+          "credit": "[[VERIFY licence]]"
+        },
+        "alt": "Pair of carved and painted wooden wedding geese on a plain linen surface",
+        "caption": "<Place>, <town>. Photo: [[VERIFY credit]] (or 'Illustrative image' if the approved AI fallback is used)",
+        "lens_check": "Not run: no candidate image."
+      },
+      {
+        "slot_id": "hanbok",
+        "placement": "after_h2:6",
+        "purpose": "Show bridal and groom's hanbok: the wonsam or hwarot and the samogwandae.",
+        "shot_brief": "Licensed photo from a consented wedding, or a museum garment display with clear reuse rights: the bride's embroidered hwarot or wonsam with jokduri headpiece, and the groom's samogwandae, even daylight. Consent from wearers. Never AI.",
+        "status": "needed",
+        "file": "content/posts/korean-traditional-wedding/images/korean-traditional-wedding-hanbok-hwarot-samogwandae.webp",
+        "source": {
+          "type": "library",
+          "origin": "[[IMAGE NEEDED]] library-index.csv has no rows (header only); no external searches in fast mode",
+          "credit": "[[VERIFY licence]]"
+        },
+        "consent": {
+          "wearers": "required if worn"
+        },
+        "alt": "Embroidered red Korean bridal robe with a beaded headpiece beside the groom's dark official's robe",
+        "caption": "<Place>, <town>. Photo: [[VERIFY credit]]",
+        "lens_check": "Not run: no candidate image."
+      },
+      {
+        "slot_id": "pyebaek",
+        "placement": "after_h2:7",
+        "purpose": "Show the pyebaek: the couple with the groom's family, jujubes and chestnuts on the table, as living practice.",
+        "shot_brief": "Licensed photo from a consented pyebaek: the couple in hanbok bowing to or seated before the groom's parents, a low table with jujubes and chestnuts, a folding screen behind, warm indoor light; or the moment the family tosses jujubes and chestnuts for the couple to catch. Consent from couple and family. Never AI. Fallback for the jujubes detail only if Nic approves: AI still life of jujubes and chestnuts in a brass bowl on linen, no people or place, captioned 'Illustrative image'.",
+        "status": "needed",
+        "file": "content/posts/korean-traditional-wedding/images/korean-traditional-wedding-pyebaek-jujubes-chestnuts.webp",
+        "source": {
+          "type": "library",
+          "origin": "[[IMAGE NEEDED]] library-index.csv has no rows (header only); no external searches in fast mode; ai_illustrative still life (jujubes and chestnuts) fallback pending Nic approval",
+          "credit": "[[VERIFY licence]]"
+        },
+        "consent": {
+          "couple": "required",
+          "family": "required"
+        },
+        "alt": "Couple in hanbok catching jujubes and chestnuts in the bride's skirt during a pyebaek",
+        "caption": "<Place>, <town>. Photo: [[VERIFY credit]] (or 'Illustrative image' for an approved AI still life)",
+        "lens_check": "Not run: no candidate image."
+      },
+      {
+        "slot_id": "destination",
+        "placement": "after_h2:11",
+        "purpose": "Ground the 'for Australians' section in a calm Korean place couples choose, shown as a place and never as a venue.",
+        "shot_brief": "Licensed photo of a Seoul palace courtyard (eaves and courtyard stones in autumn or spring light) or a Jeju landscape (volcanic coast or green hills in clear morning light): no people, no signage, no event set-up; never captioned or implied as a venue. Smartraveller: exercise normal safety precautions (updated 12 October 2026); nothing near the DMZ; recheck before publishing. Location confirmed by EXIF GPS or source page. Never AI.",
+        "status": "needed",
+        "file": "content/posts/korean-traditional-wedding/images/korean-traditional-wedding-seoul-jeju-landscape-destination.webp",
+        "source": {
+          "type": "library",
+          "origin": "[[IMAGE NEEDED]] library-index.csv has no rows (header only); no external searches in fast mode",
+          "credit": "[[VERIFY licence]]"
+        },
+        "location": {
+          "venue": "Place only, no venue (to confirm)",
+          "town": "Seoul or Jeju (to confirm)",
+          "verified_by": "[[VERIFY: EXIF GPS or source page]]"
+        },
+        "alt": "Empty palace courtyard with curved tiled roofs under a clear autumn sky in Seoul",
+        "caption": "<Place>, Seoul (or Jeju). Photo: [[VERIFY credit]]",
+        "lens_check": "Not run: no candidate image."
+      }
+    ],
+    "reference_only": [],
+    "permission_requests": []
+  }
+}
