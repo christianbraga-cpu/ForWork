@@ -14,3 +14,4 @@
 23:57 07 icp-reader sceptic complete; relevance 5, enquire 3; no must-fix
 23:57 07 icp-reader funding_parent complete; no must-fix (limited-mobility access; contracts and deposits line)
 23:57 07 icp-reader planner_couple complete; no must-fix (Advisor line repeats; FAQ mixes Sani 30 event space with Ikos 30 rooms)
+23:57 07 icp-reader uhnw, search_visitor complete; no must-fix (packages wording, ferry/bus tips, Advisor line x7, region jump list); waiting on editor
