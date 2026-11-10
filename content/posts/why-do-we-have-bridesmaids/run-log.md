@@ -3,3 +3,4 @@
 - 00:15 04 images done: 6 placeholder slots, valid.
 - 00:20 02 SEO done: no cannibalisation; cross-link /how-many-is-too-many-9-weddings-with-the-most-bridesmaids and /5-types-of-bridesmaids-every-bride-needs. Authority URLs placeholders.
 - 00:20 03 batch B done: 12 facts (fact_100-111), definitions + Smartraveller; royal.uk 404.
+- 00:26 03 batch A done: 14 facts; merged packs (26 facts).

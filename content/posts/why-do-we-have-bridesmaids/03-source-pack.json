@@ -1,0 +1,577 @@
+{
+  "agent": "wedding-planner-sme",
+  "task_id": "why-do-we-have-bridesmaids",
+  "stage": "03",
+  "status": "complete",
+  "round": 1,
+  "inputs_used": [
+    "CLAUDE.md",
+    "content/posts/why-do-we-have-bridesmaids/00-input.json",
+    "content/posts/why-do-we-have-bridesmaids/01-brief.json (batch A)",
+    "content-system/schemas/03-source-pack.schema.json",
+    "content/posts/why-do-brides-wear-veils/03-source-pack.json (format model)",
+    "content/posts/wedding-traditions/03-source-pack.json and 03-source-pack-part-3.json (fact_301 re-checked live: confirmed)",
+    "https://www.britannica.com/today-in-history/February-10-The-Bride-Wore-White",
+    "https://www.oxfordreference.com/search?q=bridesmaid&searchBtn=Search&isQuickSearch=true",
+    "https://www.oxfordreference.com/search?q=bridesmaid&searchBtn=Search&isQuickSearch=true&type_0=englishdictionaries (titles only)",
+    "https://www.oxfordreference.com/search?q=matron+of+honour&searchBtn=Search&isQuickSearch=true",
+    "https://www.oxfordreference.com/search?q=pronuba&searchBtn=Search&isQuickSearch=true",
+    "https://www.oxfordreference.com/search?q=bridesmaids+evil+spirits&searchBtn=Search&isQuickSearch=true",
+    "https://www.oxfordreference.com/display/10.1093/acref/9780199571123.001.0001/m_en_gb0101610 (paywalled, no text)",
+    "https://www.oxfordreference.com/display/10.1093/acref/9780199571123.001.0001/m_en_gb0505150 (paywalled, no text)",
+    "https://api.vam.ac.uk/v2/objects/search?q=bridesmaid&page_size=15",
+    "https://api.vam.ac.uk/v2/museumobject/O1122370",
+    "https://api.vam.ac.uk/v2/museumobject/O251309 (not used: designer name excluded by brief)",
+    "https://www.vam.ac.uk/articles/brooches-for-bridesmaids",
+    "https://www.royal.uk/timeline-queen-victoria-and-prince-albert",
+    "https://www.rct.uk/collection/980021-o/design-for-queen-victorias-bridesmaids-dresses (body rendered client-side; text from search result)",
+    "apify web-search: 'Queen Victoria wedding 1840 bridesmaids twelve' limited to rct.uk, royal.uk, vam.ac.uk",
+    "content/posts/why-do-we-have-bridesmaids/01-brief.json (batch B)",
+    "content/posts/why-do-we-have-bridesmaids/02-research/pages/bridesmaids-wear-page.md (overlap only)",
+    "content/posts/why-do-brides-wear-veils/03-source-pack-part-1.json (format)",
+    "https://dictionary.cambridge.org/dictionary/english/maid-of-honour",
+    "https://dictionary.cambridge.org/dictionary/english/matron-of-honour",
+    "https://dictionary.cambridge.org/dictionary/english/groomsman",
+    "https://www.oxfordlearnersdictionaries.com/definition/english/bridesmaid",
+    "https://www.oxfordlearnersdictionaries.com/definition/english/maid-of-honour",
+    "https://www.smartraveller.gov.au/travel-essentials/travel-insurance",
+    "https://www.smartraveller.gov.au/travel-essentials/essentials-checklist",
+    "https://www.royal.uk/the-wedding-of-prince-william-and-catherine-middleton (404, not used)",
+    "https://www.smartraveller.gov.au/before-you-go/passports and /before-you-go/documents/passports (404, not used)"
+  ],
+  "tools_used": [
+    "mcp__Apify__apify--web-fetch",
+    "mcp__Apify__apify--web-search",
+    "Bash"
+  ],
+  "assumptions": [
+    "Batch A only, fact_01 to fact_14 (range fact_01 to fact_099). 15-minute hard clock: started 00:14:54, last new read started about 00:24:50, no reads started after 00:25:17 (limit 00:29:54). Saved after every 3 facts in the scratch folder.",
+    "Oxford Reference entries are subscription-only; quotes are the publisher's own search excerpts read live 2026-11-10. Source_type 'editorial' (academic reference). V&A articles and catalogue records as 'editorial' (schema has no museum type); royal.uk and rct.uk as 'other' (official royal household and Royal Collection).",
+    "Pillar re-check: wedding-traditions fact_301 (Britannica, Victoria's 12 bridesmaids in white) confirmed against the live page.",
+    "Timeline the writer can use without stretching: Roman wedding, the matron of honour (pronuba) linked the couple's right hands (fact_10, fact_11); classical Athens, bridesmaids danced at wedding feasts (fact_13); 1840, Victoria's twelve bridesmaids, eldest daughters of peers, in white dresses she designed herself, carrying her train, each given Albert's eagle brooch (fact_01, fact_04 to fact_06); nineteenth century, groups of eight or twelve bridesmaids, sisters, cousins and friends, who supplied their own dresses and received jewellery from the groom (fact_07, fact_08); 1884 bridesmaids dressed alike in canary yellow (fact_09); about 1903, younger bridesmaids in historic costume (fact_12).",
+    "No source read links ancient attendants to the modern bridesmaid; present them as separate moments, not a line of descent.",
+    "Matching dresses: sourced only as practice (Victoria's design for all twelve, 1884 canary yellow, matched gifts). No source gives a reason why bridesmaids dress alike.",
+    "Folklore meanings printed in a reference: only 'three times a bridesmaid, never a bride' (fact_02, fact_03), a superstition about the bridesmaid's own marriage prospects, with the 1920s mouthwash advertisements popularising 'often a bridesmaid'.",
+    "often_told (internal only, not for the article as fact, no VERIFY): (1) bridesmaids dressed like the bride to confuse or decoy evil spirits or jealous suitors: no reference states it (fact_14 search found none); (2) Roman law required ten witnesses who dressed alike: not in any excerpt read; (3) biblical Leah and Rachel or Jacob's wives' handmaids as the first bridesmaids: not read in any reference; (4) bridesmaids carried bouquets of herbs or garlic to ward off spirits: not read.",
+    "No prices or amounts collected; no real weddings; no quotes beyond source wording held in each fact's quote field. Designer named on the 1926 V&A dress not used (brief: no designer names).",
+    "Batch B time box 00:14:54 to 00:29:54; last read started about 00:19:30; no reads after the limit.",
+    "Dictionaries recorded as source_type 'editorial' (schema has no reference type).",
+    "Smartraveller facts fact_105 to fact_111 re-read live 2026-11-10; as at November 2026; the Wedded Advisor confirms current requirements. Brief says no travel or legal section: use only as light practical context in the destination section.",
+    "royal.uk recent royal wedding attendants not read (404 on the guessed URL); royal examples belong to batch A.",
+    "Facts carry an extra 'tradition' field as in the veils format model."
+  ],
+  "verify_items": [
+    "[[VERIFY: royal bridesmaids after 1840 (e.g. later royal weddings, pages and train-bearers with wedding year): no rct.uk or royal.uk wedding page for a later royal wedding was read in batch A's window. Keep the royal section to Queen Victoria 1840 (fact_01, fact_04 to fact_06) or source later weddings on royal.uk before drafting]]",
+    "[[VERIFY: dictionary definitions of 'bridesmaid', 'maid of honour' and 'matron of honour' and first-use dates: Oxford Dictionary of English entries are subscription-only (pages returned no definition text) and no OED entry was read. Do not print a definition or a first-recorded date from Oxford; define the maid versus matron of honour as living practice (batch B)]]"
+  ],
+  "payload": {
+    "facts": [
+      {
+        "fact_id": "fact_01",
+        "topic": "Victorian and royal bridesmaids",
+        "claim": "Queen Victoria married Prince Albert on 10 February 1840; Britannica lists 12 bridesmaids, who also wore white, and says her 18-foot train was carried by her bridesmaids, who struggled to shepherd it down the aisle.",
+        "quote": "Victoria wore a white satin gown that featured delicate British-made lace, a wreath of orange blossoms, and an 18-foot-long train (which her bridesmaids struggled to shepherd down the aisle). ... 12: Victoria's bridesmaids (who also wore white)",
+        "source": "https://www.britannica.com/today-in-history/February-10-The-Bride-Wore-White",
+        "source_type": "editorial",
+        "checked": "2026-11-10",
+        "is_price": false,
+        "conflicts": "Re-checked the pillar's fact_301: confirmed. The page also says royals had typically married in private ceremonies in state robes; it does not explain why bridesmaids matched."
+      },
+      {
+        "fact_id": "fact_02",
+        "topic": "Folklore: bridesmaid too often",
+        "claim": "A Dictionary of Superstitions (Opie and Tatem, Oxford Reference) records the belief that being a bridesmaid too many times is unlucky, citing 1834 (Dalyell, Scotland), 1898 ('Three times a bridesmaid, never a bride') and twentieth-century schoolgirl informants.",
+        "quote": "1834 DALYELL Darker Superstitions of Scotland 292. It is yet held ominous for any damsel to officiate frequently as bridesmaid ... Superstition assigns perpetual celibacy as her lot. 1898 Weekly Scotsman Christmas Number 7. Three times a bridesmaid, never a bride.",
+        "source": "https://www.oxfordreference.com/display/10.1093/acref/9780192829160.001.0001/acref-9780192829160-e-172",
+        "source_type": "editorial",
+        "checked": "2026-11-10",
+        "is_price": false,
+        "conflicts": "Read as the Oxford Reference search excerpt (entry 'BRIDESMAID too many times'); full entry is subscription-only."
+      },
+      {
+        "fact_id": "fact_03",
+        "topic": "Folklore: always a bridesmaid",
+        "claim": "The Oxford Dictionary of Proverbs dates 'Always a bridesmaid, never a bride' with quotations from 1882 ('Always a maiden [bridal attendant], never a wife'), 1903 and a 1917 song, and says the 'often a bridesmaid' version was popularised by mouthwash advertisements from the 1920s.",
+        "quote": "Used of someone who seems fated to be always the runner-up or second best. The version with often (quot. 1951) was popularized in a series of advertisements from the 1920s onwards for a brand of mouthwash ... 1882 e. m. ingraham Bond & Free i. Always a maiden [bridal attendant], never a wife. 1903 v. s. lean Collectanea II. 81 Three times bridesmaid, never a bride. 1917 leigh, collins, & morris 'Why am I always the Bridesmaid?' (song)",
+        "source": "https://www.oxfordreference.com/display/10.1093/acref/9780198734901.001.0001/acref-9780198734901-e-248",
+        "source_type": "editorial",
+        "checked": "2026-11-10",
+        "is_price": false,
+        "conflicts": "Search excerpt only. Oxford Reference overview 'bride' calls it a late 19th-century saying recording the belief that being a bridesmaid too often is unlucky for one's own chances of marriage."
+      },
+      {
+        "fact_id": "fact_04",
+        "topic": "Victorian and royal bridesmaids",
+        "claim": "royal.uk: Queen Victoria married at St James's Palace Chapel on 10 February 1840; she sketched the simple white dress, trimmed with sprays of roses, worn by her dozen bridesmaids, and gave the sketch to her Mistress of the Robes, the Duchess of Sutherland, who supervised the making of the dresses.",
+        "quote": "Married at St James' Palace Chapel ... Queen Victoria sketched this simple white dress design, trimmed with sprays of roses worn by her dozen bridesmaids. This sketch was given to her Mistress of the Robes, The Duchess of Sutherland, who supervised the making of the dresses.",
+        "source": "https://www.royal.uk/timeline-queen-victoria-and-prince-albert",
+        "source_type": "other",
+        "checked": "2026-11-10",
+        "is_price": false,
+        "conflicts": "Official royal household site. Note: a royal.uk 'Royal wedding traditions' search snippet gives '10 April 1840'; the timeline and Britannica give 10 February 1840. Use 10 February."
+      },
+      {
+        "fact_id": "fact_05",
+        "topic": "Victorian and royal bridesmaids",
+        "claim": "Royal Collection Trust: Queen Victoria herself designed the dresses worn by her twelve bridesmaids, who were all the eldest daughters of peers (collection item RCIN 980021, c. 1840).",
+        "quote": "Queen Victoria herself undertook the design for the dresses worn by her twelve bridesmaids, who were all the eldest daughters of peers. She outlined a simple ...",
+        "source": "https://www.rct.uk/collection/980021-o/design-for-queen-victorias-bridesmaids-dresses",
+        "source_type": "other",
+        "checked": "2026-11-10",
+        "is_price": false,
+        "conflicts": "Quote is the rct.uk text as shown in the search result for this page (apify web-search, 2026-11-10); the page body renders client-side and did not return in the fetch. Wording matches fact_04 (royal.uk)."
+      },
+      {
+        "fact_id": "fact_06",
+        "topic": "Victorian bridesmaids, gifts",
+        "claim": "V&A: Prince Albert designed an eagle-shaped turquoise brooch as a gift for Queen Victoria's twelve train bearers at their 1840 wedding, taken from the heraldic German eagle; the turquoise suggests forget-me-nots and the pearls represent true love.",
+        "quote": "Perhaps the most notable bridegroom of the 19th century, Prince Albert, designed an eagle shaped turquoise brooch as a gift to Queen Victoria's twelve train bearers at their wedding. The design is taken from the heraldic German eagle. Although the turquoise and pearls don't have an enormous financial value, the blue of the stones suggests forget-me-nots, whilst the pearls represent true love.",
+        "source": "https://www.vam.ac.uk/articles/brooches-for-bridesmaids",
+        "source_type": "editorial",
+        "checked": "2026-11-10",
+        "is_price": false,
+        "conflicts": "Museum article (schema has no museum type). The brooch pictured is in the British Museum, not the V&A."
+      },
+      {
+        "fact_id": "fact_07",
+        "topic": "Nineteenth-century bridesmaids",
+        "claim": "V&A: the nineteenth century, when notions of wedding customs began to solidify, often saw groups of eight or twelve girls or women accompanying and supporting the bride; bridesmaids were often young sisters and cousins of the bride and groom, as well as female friends.",
+        "quote": "The nineteenth century, where our notions of wedding customs began to solidify, often saw groups of eight or twelve girls or women accompanying and supporting the bride. Bridesmaids were often the young sisters and cousins of the bride and groom, as well as female friends.",
+        "source": "https://www.vam.ac.uk/articles/brooches-for-bridesmaids",
+        "source_type": "editorial",
+        "checked": "2026-11-10",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_08",
+        "topic": "Nineteenth-century bridesmaids, dresses and gifts",
+        "claim": "V&A: traditionally, bridesmaids supplied their own dresses but were given a piece of jewellery, such as a brooch or locket, as a gift or souvenir; in the UK the groom customarily gave the gifts, while Vogue noted that nineteenth-century American brides gave gifts to their own bridesmaids.",
+        "quote": "Traditionally, bridesmaids supplied their own dresses, but were offered a piece of jewellery as a gift or souvenir of the wedding. ... As the groom customarily gave gifts to the bridesmaids ... One point of etiquette, according to Vogue, was that 19th century American women would give gifts to their own bridesmaids, whereas this was the duty of the groom in the United Kingdom.",
+        "source": "https://www.vam.ac.uk/articles/brooches-for-bridesmaids",
+        "source_type": "editorial",
+        "checked": "2026-11-10",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_09",
+        "topic": "Matching dresses (history)",
+        "claim": "V&A: at the 1884 wedding of Val Prinsep and Florence Leyland the bridesmaids were dressed in canary yellow and wore brooches engraved 'Val and Flo', a gift of the groom; a V&A design sheet for the Gibson wedding specifies six matching bridesmaids' brooches in silver.",
+        "quote": "The bridesmaids were smartly dressed in canary yellow and wore brooches engraved 'Val and Flo', a gift of the groom. ... The first is annotated 'bridesmaids', with a design marked 'No. 1', specifying that six brooches were required in silver.",
+        "source": "https://www.vam.ac.uk/articles/brooches-for-bridesmaids",
+        "source_type": "editorial",
+        "checked": "2026-11-10",
+        "is_price": false,
+        "conflicts": "Shows coordinated dress and matching gifts in the 1880s and 1860s; the V&A does not give a reason for bridesmaids dressing alike."
+      },
+      {
+        "fact_id": "fact_10",
+        "topic": "Early history: Rome",
+        "claim": "The Oxford Classical Dictionary (4th ed.) describes the Roman wedding: friends and clients gathered in the bride's father's house, words of consent were spoken, and the matron of honour (pronuba) performed the ceremony of linking the bride's and bridegroom's right hands (dextrarum iunctio).",
+        "quote": "Friends and clients of both families gathered in the bride's father's house: the bridegroom arrived, words of consent were spoken, and the matron of honour ( pronuba ) performed the ceremony of linking bride's and bridegroom's right hands ( dextrarum iunctio ).",
+        "source": "https://www.oxfordreference.com/display/10.1093/acref/9780199545568.001.0001/acref-9780199545568-e-3980",
+        "source_type": "editorial",
+        "checked": "2026-11-10",
+        "is_price": false,
+        "conflicts": "Oxford Reference search excerpt (search 'matron of honour' and 'pronuba'), entry 'marriage ceremonies' by Sourvinou-Inwood and Williams. The Oxford Dictionary of the Classical World and Oxford Companion to Classical Literature excerpts say the same ('their hands were linked by the matron of honour'). No source read links the Roman pronuba directly to the modern bridesmaid or matron of honour: do not state a line of descent."
+      },
+      {
+        "fact_id": "fact_11",
+        "topic": "Early history: Rome",
+        "claim": "The Oxford Companion to Classical Literature adds that after the hand-linking the Roman bride was conducted to her husband's house by three boys (excerpt truncated after 'three').",
+        "quote": "Friends gathered in the bride's father's house, both bride and groom spoke words of consent and their hands were linked by the matron of honour. The bride was conducted to the husband's house by three...",
+        "source": "https://www.oxfordreference.com/display/10.1093/acref/9780199548545.001.0001/acref-9780199548545-e-1906",
+        "source_type": "editorial",
+        "checked": "2026-11-10",
+        "is_price": false,
+        "conflicts": "Excerpt is cut off after 'three'; do not name who the three were from this source. Claim to use: 'the matron of honour linked the couple's hands'."
+      },
+      {
+        "fact_id": "fact_12",
+        "topic": "Bridesmaid dress history",
+        "claim": "V&A object MISC.485:1 to 5-1986, a bridesmaid's outfit (ivory satin dress, cap, shoes and parasol), United Kingdom, about 1903; worn by Lady Marjorie Erskine at her uncle's wedding. The V&A notes that at the time it was fashionable for younger bridesmaids and pageboys to wear outfits based on historic or national costume; this one copies English styles of the 1630s and 1640s.",
+        "quote": "At the time, it was fashionable for younger bridesmaids and pageboys to wear outfits based on historic or national costume: this dress is copied from the English styles of the 1630s and 1640s.",
+        "source": "https://collections.vam.ac.uk/item/O1122370/ (read via https://api.vam.ac.uk/v2/museumobject/O1122370)",
+        "source_type": "editorial",
+        "checked": "2026-11-10",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_13",
+        "topic": "Early history: ancient Greece",
+        "claim": "The Oxford Encyclopedia of the Bible and Gender Studies notes that women in classical Athens attended wedding feasts where bridesmaids danced, citing Isaeus 8.18 and Aristophanes, Acharnians 1056.",
+        "quote": "attended wedding feasts where bridesmaids danced and male guests might talk with other female guests ( Isaeus 8.18 ; Aristophanes, Acharnians 1056).",
+        "source": "https://www.oxfordreference.com/display/10.1093/acref:obso/9780199836994.001.0001/acref-9780199836994-e-25",
+        "source_type": "editorial",
+        "checked": "2026-11-10",
+        "is_price": false,
+        "conflicts": "Search excerpt only (entry 'Masculinity and Femininity'). The word 'bridesmaids' is the encyclopedia's English rendering; do not build a line of descent to the modern bridesmaid on it."
+      },
+      {
+        "fact_id": "fact_14",
+        "topic": "Folklore check: evil spirits",
+        "claim": "An Oxford Reference search for 'bridesmaids evil spirits' (6 results) returned no entry tying bridesmaids or matching dresses to evil spirits; the only evil-spirits wedding custom in the excerpts is the Oxford Companion to Scottish History's note on carrying the bride over the threshold, where evil spirits were thought to lurk.",
+        "quote": "The custom dates to an era when the threshold was considered to be the place where evil spirits might lurk, though it was eventually adopted by wedding photographers as an attractive pose for a picture.",
+        "source": "https://www.oxfordreference.com/search?q=bridesmaids+evil+spirits&searchBtn=Search&isQuickSearch=true",
+        "source_type": "editorial",
+        "checked": "2026-11-10",
+        "is_price": false,
+        "conflicts": "Internal guard fact: it supports leaving the decoy or evil-spirits story out. Not for the article as a claim about bridesmaids."
+      },
+      {
+        "fact_id": "fact_100",
+        "tradition": "Wedding party roles (definition)",
+        "claim": "Cambridge Dictionary defines a maid of honour as the most important bridesmaid at a marriage ceremony (US spelling: maid of honor).",
+        "quote": "the most important bridesmaid at a marriage ceremony",
+        "source": "https://dictionary.cambridge.org/dictionary/english/maid-of-honour",
+        "source_type": "editorial",
+        "checked": "2026-11-10",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_101",
+        "tradition": "Wedding party roles (definition)",
+        "claim": "Cambridge Dictionary defines a matron of honour as, at a wedding, a married woman who helps the woman who is getting married; its usage example has the groom's speech thanking the bridesmaids and matron of honour.",
+        "quote": "at a wedding (= a ceremony at which two people get married), a married woman who helps the woman who is getting married : The groom ended his speech by thanking the bridesmaids and matron of honour.",
+        "source": "https://dictionary.cambridge.org/dictionary/english/matron-of-honour",
+        "source_type": "editorial",
+        "checked": "2026-11-10",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_102",
+        "tradition": "Wedding party roles (definition)",
+        "claim": "Oxford Advanced Learner's Dictionary defines a bridesmaid as a young woman or girl who helps a bride before and during the marriage ceremony; the word dates from the late 18th century as an alteration of the earlier 'bridemaid'.",
+        "quote": "a young woman or girl who helps a bride before and during the marriage ceremony ... Word Origin late 18th cent.: alteration of earlier bridemaid.",
+        "source": "https://www.oxfordlearnersdictionaries.com/definition/english/bridesmaid",
+        "source_type": "editorial",
+        "checked": "2026-11-10",
+        "is_price": false,
+        "conflicts": "Word-origin line may overlap batch A (history); batch B uses only the 'before and during' role definition."
+      },
+      {
+        "fact_id": "fact_103",
+        "tradition": "Wedding party roles (definition)",
+        "claim": "Oxford Advanced Learner's Dictionary defines maid of honour as (especially in the US) a young woman or girl who is the main bridesmaid at a wedding, and points readers to compare matron of honour.",
+        "quote": "(especially in the US) a young woman or girl who is the main bridesmaid at a wedding compare matron of honour",
+        "source": "https://www.oxfordlearnersdictionaries.com/definition/english/maid-of-honour",
+        "source_type": "editorial",
+        "checked": "2026-11-10",
+        "is_price": false,
+        "conflicts": "Consistent with Cambridge (fact_100): both describe the maid of honour as the chief or most important bridesmaid. Oxford adds 'especially in the US'."
+      },
+      {
+        "fact_id": "fact_104",
+        "tradition": "Wedding party roles (definition)",
+        "claim": "Cambridge Dictionary defines a groomsman (mainly US; UK usually 'usher') as a friend of a man who is getting married who has special duties at the wedding, including showing people to their seats.",
+        "quote": "a friend of a man who is getting married who has special duties at the wedding including showing people to their seats",
+        "source": "https://dictionary.cambridge.org/dictionary/english/groomsman",
+        "source_type": "editorial",
+        "checked": "2026-11-10",
+        "is_price": false,
+        "conflicts": "No Cambridge or Oxford Learner's entry for 'bridesman' was read; bridesman is written as living practice."
+      },
+      {
+        "fact_id": "fact_105",
+        "tradition": "Travel (Australian government guidance)",
+        "claim": "Smartraveller says the right insurance is as essential as a passport for overseas travel, and advises getting insurance regardless of who you are, where you are going and what you are doing.",
+        "quote": "The right insurance is as essential as a passport for travel overseas. ... Get insurance regardless of who you are, where you're going and what you're doing.",
+        "source": "https://www.smartraveller.gov.au/travel-essentials/travel-insurance",
+        "source_type": "government",
+        "checked": "2026-11-10",
+        "is_price": false,
+        "conflicts": "As at November 2026 (page last updated 18 August 2026); the Wedded Advisor confirms current requirements. Brief: no travel rules stated as fact; optional context for the destination section only."
+      },
+      {
+        "fact_id": "fact_106",
+        "tradition": "Travel (Australian government guidance)",
+        "claim": "Smartraveller advises choosing a policy that covers every country you are travelling to, including stopovers and transit points, and checking whether it covers cancellations if the advice level rises after booking.",
+        "quote": "Choose a policy that covers you for every country you're travelling to. Include stopovers and transit points. ... Check if your policy covers you for cancellations if the advice level goes up after you've booked.",
+        "source": "https://www.smartraveller.gov.au/travel-essentials/travel-insurance",
+        "source_type": "government",
+        "checked": "2026-11-10",
+        "is_price": false,
+        "conflicts": "As at November 2026 (page last updated 18 August 2026); the Wedded Advisor confirms current requirements. Brief: no travel rules stated as fact; optional context for the destination section only."
+      },
+      {
+        "fact_id": "fact_107",
+        "tradition": "Travel (Australian government guidance)",
+        "claim": "Smartraveller notes that travel insurance can cover cancellation costs if plans need to change, and to read the Product Disclosure Statement before buying.",
+        "quote": "Plans change. So do advice levels in our travel advisories. Travel insurance can cover cancellation costs if you need to change your plans. Find out what your policy covers. Read the PDS before you buy your policy.",
+        "source": "https://www.smartraveller.gov.au/travel-essentials/travel-insurance",
+        "source_type": "government",
+        "checked": "2026-11-10",
+        "is_price": false,
+        "conflicts": "As at November 2026 (page last updated 18 August 2026); the Wedded Advisor confirms current requirements. Brief: no travel rules stated as fact; optional context for the destination section only."
+      },
+      {
+        "fact_id": "fact_108",
+        "tradition": "Travel (Australian government guidance)",
+        "claim": "Smartraveller says you must tell your insurer about all pre-existing health conditions, and that medical assistance is usually the highest unexpected cost for Australians overseas.",
+        "quote": "Medical assistance is usually the highest unexpected cost for Australians overseas. ... You must tell your insurer about all pre-existing health conditions.",
+        "source": "https://www.smartraveller.gov.au/travel-essentials/travel-insurance",
+        "source_type": "government",
+        "checked": "2026-11-10",
+        "is_price": false,
+        "conflicts": "As at November 2026 (page last updated 18 August 2026); the Wedded Advisor confirms current requirements. Brief: no travel rules stated as fact; optional context for the destination section only."
+      },
+      {
+        "fact_id": "fact_109",
+        "tradition": "Travel (Australian government guidance)",
+        "claim": "Smartraveller's essentials checklist says to confirm your passport is valid for at least 6 months beyond the end of your trip.",
+        "quote": "Confirm your passport is valid for at least 6 months beyond the end of your trip.",
+        "source": "https://www.smartraveller.gov.au/travel-essentials/essentials-checklist",
+        "source_type": "government",
+        "checked": "2026-11-10",
+        "is_price": false,
+        "conflicts": "As at November 2026 (page last updated 18 August 2026); the Wedded Advisor confirms current requirements. Brief: no travel rules stated as fact; optional context for the destination section only."
+      },
+      {
+        "fact_id": "fact_110",
+        "tradition": "Travel (Australian government guidance)",
+        "claim": "Smartraveller says to get the right visa for countries you are visiting or transiting through, and that visa conditions often change, so check with the destination's embassy or consulate before every trip.",
+        "quote": "Get the right visa for countries you're visiting or transiting through. Visa conditions often change, so check with the embassy or consulate of your destinations before every trip.",
+        "source": "https://www.smartraveller.gov.au/travel-essentials/essentials-checklist",
+        "source_type": "government",
+        "checked": "2026-11-10",
+        "is_price": false,
+        "conflicts": "As at November 2026 (page last updated 18 August 2026); the Wedded Advisor confirms current requirements. Brief: no travel rules stated as fact; optional context for the destination section only. Brief excludes visa rules: if used, phrase only as 'each attendant checks their own passport and visa'."
+      },
+      {
+        "fact_id": "fact_111",
+        "tradition": "Travel (Australian government guidance)",
+        "claim": "Smartraveller suggests sharing your itinerary with friends or family, keeping hard copies of flight, accommodation and event bookings in case you lose your phone, and subscribing to travel advice for your destination.",
+        "quote": "Share your itinerary with friends or family members. ... Have hard copies of online flight, accommodation and event bookings, in case you lose your phone. ... Subscribe to our travel advice.",
+        "source": "https://www.smartraveller.gov.au/travel-essentials/essentials-checklist",
+        "source_type": "government",
+        "checked": "2026-11-10",
+        "is_price": false,
+        "conflicts": "As at November 2026 (page last updated 18 August 2026); the Wedded Advisor confirms current requirements. Brief: no travel rules stated as fact; optional context for the destination section only."
+      }
+    ],
+    "insider_details": [
+      {
+        "detail": "Victoria's twelve bridesmaids carried an 18-foot train and found it hard going down the aisle: a long train or cathedral veil today needs one or two named attendants briefed and rehearsed on the actual aisle, steps and turns of the ceremony venue.",
+        "fact_ids": [
+          "fact_01",
+          "fact_05"
+        ]
+      },
+      {
+        "detail": "Albert gave each of Victoria's twelve bridesmaids a matching eagle brooch he designed himself, and Victorian grooms commonly chose gifts reflecting the couple's initials or crest: a personalised keepsake for each attendant is a thank-you with real historical pedigree, and it travels easily to an overseas wedding.",
+        "fact_ids": [
+          "fact_06",
+          "fact_08",
+          "fact_09"
+        ]
+      },
+      {
+        "detail": "Victorian bridesmaids supplied their own dresses while the couple gave the gift: who pays for dresses and travel has always been a conversation, so raise it with your attendants early and in person, before anyone books.",
+        "fact_ids": [
+          "fact_08"
+        ]
+      },
+      {
+        "detail": "In 1840 the Queen sketched one dress for all twelve and her Mistress of the Robes oversaw the making: when attendants are scattered across cities, one trusted person coordinating fittings is a practice with a royal precedent.",
+        "fact_ids": [
+          "fact_04",
+          "fact_05"
+        ]
+      },
+      {
+        "detail": "Both Cambridge and Oxford treat the maid of honour as the chief bridesmaid and the matron of honour as the married equivalent, so the lead attendant's title can simply follow the couple's preference; the role itself is the same lead-helper job.",
+        "fact_ids": [
+          "fact_100",
+          "fact_101",
+          "fact_103"
+        ]
+      },
+      {
+        "detail": "The core definition of a bridesmaid is someone who helps the bride before and during the ceremony, which is the frame for the roles section: helping with plans in the months before, then getting ready, the bouquet and the processional on the day.",
+        "fact_ids": [
+          "fact_102"
+        ]
+      },
+      {
+        "detail": "Seating guests is a defined groomsman (UK: usher) duty; in a mixed party, bridesmen and groomswomen can share those on-the-day jobs, which is living practice rather than dictionary usage.",
+        "fact_ids": [
+          "fact_104"
+        ]
+      },
+      {
+        "detail": "When inviting attendants to travel, ask early enough for each person to check their passport has at least six months' validity beyond the trip and to arrange their own travel insurance that covers every country on the route, including stopovers, and cancellation if plans change.",
+        "fact_ids": [
+          "fact_105",
+          "fact_106",
+          "fact_107",
+          "fact_109"
+        ]
+      },
+      {
+        "detail": "Share one wedding-week itinerary with the whole party and suggest they keep hard copies of flights, accommodation and event bookings; attendants declare any health conditions to their own insurer.",
+        "fact_ids": [
+          "fact_108",
+          "fact_111"
+        ]
+      }
+    ],
+    "quotes": [],
+    "real_weddings": [],
+    "verify_items": [
+      "[[VERIFY: royal bridesmaids after 1840 (e.g. later royal weddings, pages and train-bearers with wedding year): no rct.uk or royal.uk wedding page for a later royal wedding was read in batch A's window. Keep the royal section to Queen Victoria 1840 (fact_01, fact_04 to fact_06) or source later weddings on royal.uk before drafting]]",
+      "[[VERIFY: dictionary definitions of 'bridesmaid', 'maid of honour' and 'matron of honour' and first-use dates: Oxford Dictionary of English entries are subscription-only (pages returned no definition text) and no OED entry was read. Do not print a definition or a first-recorded date from Oxford; define the maid versus matron of honour as living practice (batch B)]]"
+    ],
+    "needs_signoff": [],
+    "must_include_coverage": [
+      {
+        "item": "Origins, dates and meanings stated as fact only where Royal Collection Trust, royal.uk, V&A, Britannica or Oxford Reference give them; no 'evil spirits' or decoy story unless a reference states it (batch A: folklore meanings)",
+        "covered_by": [
+          "fact_02",
+          "fact_03",
+          "fact_14"
+        ]
+      },
+      {
+        "item": "Section: early history as sourced (Roman or classical references only as Oxford Reference gives them)",
+        "covered_by": [
+          "fact_10",
+          "fact_11",
+          "fact_13"
+        ]
+      },
+      {
+        "item": "Section: Victorian and royal bridesmaids; royal examples (Queen Victoria's 1840 bridesmaids) only as rct.uk, royal.uk or the V&A describe them",
+        "covered_by": [
+          "fact_01",
+          "fact_04",
+          "fact_05",
+          "fact_06",
+          "fact_07",
+          "[[VERIFY: royal bridesmaids after 1840 not sourced]]"
+        ]
+      },
+      {
+        "item": "Section: matching dresses (history only)",
+        "covered_by": [
+          "fact_04",
+          "fact_05",
+          "fact_08",
+          "fact_09",
+          "fact_12"
+        ]
+      },
+      {
+        "item": "Maid versus matron of honour defined by Britannica or Oxford Reference if they give it (batch A: word history)",
+        "covered_by": [
+          "fact_10",
+          "[[VERIFY: dictionary definitions and first-use dates not readable]]"
+        ]
+      },
+      {
+        "item": "Maid versus matron of honour defined by a reputable reference, otherwise living practice; any partner of any gender, said once",
+        "covered_by": [
+          "fact_100",
+          "fact_101",
+          "fact_103"
+        ]
+      },
+      {
+        "item": "How many bridesmaids (living practice only; no rule stated as fact)",
+        "covered_by": [
+          "often_told (living practice)"
+        ]
+      },
+      {
+        "item": "Roles before and on the day (living practice; no legal witness rule)",
+        "covered_by": [
+          "fact_102",
+          "often_told (living practice)"
+        ]
+      },
+      {
+        "item": "Mixed wedding parties and bridesmen (living practice; no attire)",
+        "covered_by": [
+          "fact_104",
+          "often_told (living practice)"
+        ]
+      },
+      {
+        "item": "Destination section as practical questions: asking early, who covers travel and accommodation as questions (no amounts), role on the ground, wellbeing; no packing, travel or legal rules",
+        "covered_by": [
+          "fact_105",
+          "fact_106",
+          "fact_107",
+          "fact_108",
+          "fact_109",
+          "fact_110",
+          "fact_111",
+          "often_told (living practice)"
+        ]
+      },
+      {
+        "item": "Thanking your bridesmaids (living practice; no prices, brands or vendors)",
+        "covered_by": [
+          "often_told (living practice)"
+        ]
+      },
+      {
+        "item": "FAQ: what is the difference between a maid and matron of honour; can a man be a bridesmaid; what does a bridesmaid do on the day; do bridesmaids have to travel for a destination wedding",
+        "covered_by": [
+          "fact_100",
+          "fact_101",
+          "fact_102",
+          "fact_103",
+          "fact_104",
+          "fact_105",
+          "fact_109"
+        ]
+      }
+    ]
+  },
+  "open_questions": [
+    {
+      "to": "luxury-writer",
+      "blocking": false,
+      "question": "Royal section: only Queen Victoria 1840 is sourced (Britannica, royal.uk, rct.uk, V&A). Keep it to Victoria or have the orchestrator fund a royal.uk read for a later royal wedding."
+    },
+    {
+      "to": "luxury-writer",
+      "blocking": false,
+      "question": "Roman 'matron of honour' (pronuba) is sourced as a role in the Roman ceremony; present it as an ancient parallel, not as the origin of today's matron of honour."
+    },
+    {
+      "to": "luxury-writer",
+      "blocking": false,
+      "question": "Cambridge defines matron of honour as a married woman and Oxford gives maid of honour 'especially in the US'; avoid stating which term Australians use as fact. Bridesman has no dictionary entry read: write as living practice."
+    }
+  ],
+  "self_qa": {
+    "checks": [
+      {
+        "check": "Every fact has a source URL, exact quote and date read",
+        "pass": true,
+        "note": "14 facts read live 2026-11-10."
+      },
+      {
+        "check": "No prices or amounts",
+        "pass": true
+      },
+      {
+        "check": "Every batch A item covered, marked VERIFY or listed as often told",
+        "pass": true,
+        "note": "Later royal weddings and dictionary definitions are VERIFY; decoy and spirits stories are often_told only."
+      },
+      {
+        "check": "No invented quotes, statistics or real weddings",
+        "pass": true
+      },
+      {
+        "check": "No competitor, vendor, retailer or Wikipedia sources",
+        "pass": true
+      }
+    ],
+    "confidence": 0.7
+  },
+  "next_agent": [
+    "luxury-writer"
+  ]
+}
