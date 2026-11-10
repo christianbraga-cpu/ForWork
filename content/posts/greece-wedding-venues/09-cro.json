@@ -1,0 +1,109 @@
+{
+  "agent": "cro-specialist",
+  "task_id": "greece-wedding-venues",
+  "stage": "09",
+  "status": "complete",
+  "round": 1,
+  "inputs_used": [
+    "CLAUDE.md",
+    "content-system/brand/services.md",
+    "content-system/brand/brand-facts.md",
+    "content-system/seo/link-map.csv",
+    "content-system/schemas/09-cro.schema.json",
+    "content/posts/greece-wedding-venues/01-brief.json",
+    "content/posts/greece-wedding-venues/07-panel.json",
+    "content/posts/greece-wedding-venues/07-icp/*.json",
+    "content/posts/greece-wedding-venues/08-final.md",
+    "content/posts/lake-como-villa-wedding-exclusive-use/09-cro.json (format model)"
+  ],
+  "payload": {
+    "journey_stage": "comparing",
+    "primary_cta": {
+      "text": "Check your Greek venue shortlist",
+      "subtext": "Your Wedded Advisor quotes in AUD for Australian couples, and the fee is agreed in writing before any work begins.",
+      "link": "/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=greece-wedding-venues&utm_content=primary",
+      "placement": "Existing <!-- CTA: primary --> marker (08-final.md line 85), directly after the comparison table and the inline line 'speak with a Wedded Advisor, who works in your time zone and quotes in AUD for Australian couples'. Kept here: the reader has just seen how many fields read 'Not published', so the question the CTA answers (who confirms the house rules for my shortlist, in writing?) peaks here."
+    },
+    "secondary_cta": {
+      "text": "Speak with a Wedded Advisor",
+      "link": "/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=greece-wedding-venues&utm_content=secondary",
+      "placement": "Closing section 'Shortlist your Greek venues with a Wedded Advisor' (08-final.md line 446), the existing inline link after 'Tell us your date, your guest count and the venues you have in mind'. That paragraph already names step-free access, AUD for Australian couples, 'anywhere in the world' and the fee in writing, so no extra subtext. Copy change 1 retags it from primary to secondary."
+    },
+    "lead_magnet": {
+      "name": "Wedded Wonderland digital magazine",
+      "link": "/magazine?utm_source=blog&utm_medium=content&utm_campaign=greece-wedding-venues&utm_content=magnet",
+      "placement": "Existing soft line at the very end of 08-final.md (line 448), after the secondary CTA, for readers still browsing (the search_visitor persona would bookmark rather than enquire). Not placed above the primary CTA. Copy change 2 adds the UTM.",
+      "exists": true
+    },
+    "tracking": [
+      "/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=greece-wedding-venues&utm_content=primary",
+      "/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=greece-wedding-venues&utm_content=secondary",
+      "/magazine?utm_source=blog&utm_medium=content&utm_campaign=greece-wedding-venues&utm_content=magnet"
+    ],
+    "copy_changes": [
+      {
+        "old": "the venues you have in mind, and [speak with a Wedded Advisor](https://weddedwonderland.com/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=greece-wedding-venues&utm_content=primary).",
+        "new": "the venues you have in mind, and [speak with a Wedded Advisor](https://weddedwonderland.com/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=greece-wedding-venues&utm_content=secondary).",
+        "reason": "Closing link duplicated the primary UTM; it is the secondary CTA position."
+      },
+      {
+        "old": "browse [our digital magazine](https://weddedwonderland.com/magazine).",
+        "new": "browse [our digital magazine](https://weddedwonderland.com/magazine?utm_source=blog&utm_medium=content&utm_campaign=greece-wedding-venues&utm_content=magnet).",
+        "reason": "Tag the lead magnet link per services.md UTM standard."
+      }
+    ],
+    "rationale": "Brief sets journey_stage 'comparing' (shortlisting venues), so per services.md the primary CTA is Wedded Concierge at /wonderland-concierge (live in link-map). Text is 5 words, no exclamation mark; subtext uses brand-facts claims only (AUD for Australian couples, fee agreed in writing). No prices, no Wedded Privileges, no named Advisor or call claim. No Greece packages page exists in link-map (only /packages/italy/...), so /magazine (live, lead magnet) is the magnet; a Greece magazine issue or packages page would be a better magnet and is suggested for the backlog. /destination-wedding-packages stays as an untracked editorial link. Panel cta_reactions: 4 of 5 'maybe'. The mobility question (planner_couple) is answered before the closing CTA ('step-free access'); the AUD exclusion concern is handled with 'for Australian couples' plus 'anywhere in the world'. Remaining blockers (real Greek wedding, commission/fee model, a person who calls first, large-event credentials) are deferred business answers, not copy fixes. Mid-article Concierge link at line 383 (transfers) also carries utm_content=secondary; left unchanged within the two-change limit."
+  },
+  "self_qa": {
+    "checks": [
+      {
+        "check": "Primary CTA 6 words or fewer, no 'click here', no exclamation mark",
+        "pass": true,
+        "note": "'Check your Greek venue shortlist' (5 words)."
+      },
+      {
+        "check": "Claims from brand-facts only; no prices, Privileges, 'last dance' or named Advisor",
+        "pass": true
+      },
+      {
+        "check": "All links exist in link-map",
+        "pass": true
+      },
+      {
+        "check": "UTM format matches services.md",
+        "pass": true
+      },
+      {
+        "check": "copy_changes: at most 2, each old occurs exactly once in 08-final.md",
+        "pass": true
+      },
+      {
+        "check": "Australian English, no em dashes",
+        "pass": true
+      }
+    ],
+    "confidence": 0.85
+  },
+  "open_questions": [
+    {
+      "to": "orchestrator",
+      "question": "Apply the two copy_changes to 08-final.md (UTM-only, no wording change). The line 383 Concierge link also uses utm_content=secondary; keep or retag?",
+      "blocking": false
+    },
+    {
+      "to": "orchestrator",
+      "question": "Deferred business answers behind the panel's 'maybe' (a real Greek wedding, fee model and commissions, a named Advisor who calls first, large-event credentials) remain open. Re-run cro-specialist once confirmed.",
+      "blocking": false
+    }
+  ],
+  "assumptions": [
+    "The CMS renders a CTA block (text, subtext, link) at the <!-- CTA: primary --> marker."
+  ],
+  "verify_items": [],
+  "tools_used": [
+    "Bash (cat, grep, python3 -I)"
+  ],
+  "next_agent": [
+    "distribution"
+  ]
+}
