@@ -1,0 +1,591 @@
+{
+ "agent": "visual-curator",
+ "task_id": "crete-wedding-venues",
+ "stage": "04",
+ "status": "needs_input",
+ "round": 1,
+ "inputs_used": [
+  "CLAUDE.md",
+  "content/posts/crete-wedding-venues/00-input.json",
+  "content/posts/crete-wedding-venues/01-brief.json",
+  "content-system/images/library-index.csv (header only, no rows)",
+  "content-system/images/sources-policy.md",
+  "content-system/schemas/04-images.schema.json",
+  "content/posts/greece-wedding-venues/04-images.json (format model)"
+ ],
+ "self_qa": {
+  "checks": [
+   {
+    "check": "Zero reference-only or competitor images in slots",
+    "pass": true,
+    "note": "reference_only is empty; no images downloaded."
+   },
+   {
+    "check": "Every approved image has location, licence, alt, caption, fit_reason",
+    "pass": true,
+    "note": "No approved images this run; alt and caption are written once a licensed file exists."
+   },
+   {
+    "check": "No AI image depicting a real place",
+    "pass": true,
+    "note": "No AI used; every slot is a real venue or area and excludes AI."
+   },
+   {
+    "check": "Featured image exists (approved or needed with brief)",
+    "pass": true,
+    "note": "Needed, with brief."
+   },
+   {
+    "check": "One slot per area section",
+    "pass": true,
+    "note": "Four area slots: Elounda and Agios Nikolaos, Hersonissos and the Heraklion coast, Rethymno, Chania and the west. South coast only if a venue qualifies."
+   },
+   {
+    "check": "One slot per venue entry",
+    "pass": true,
+    "note": "15 venue slots from the 01-brief candidate list; the writer drops or renames slots for venues swapped in stage 03."
+   }
+  ],
+  "confidence": 0.7
+ },
+ "open_questions": [
+  {
+   "to": "planner-sme",
+   "question": "Confirm the final 15 venues and their order (03-source-pack) so venue slots, filenames and permission requests can be trimmed or swapped for reserves.",
+   "blocking": false
+  },
+  {
+   "to": "orchestrator",
+   "question": "Should a human find each confirmed venue's press or media contact and create the Gmail drafts, or should the curator do it in a non-fast run with Firecrawl and Gmail draft approval?",
+   "blocking": false
+  },
+  {
+   "to": "orchestrator",
+   "question": "Is there budget for licensed premium stock (Stocksy, Getty, Offset) for the featured and area slots if press kits do not respond in time?",
+   "blocking": false
+  }
+ ],
+ "assumptions": [
+  "Area slot placement is by section name because 02-seo.json is not yet written; the writer maps it to after_h2/h3 positions.",
+  "The writer may use a subset of venue slots (for example 2 per area) if 15 inline images is too many for page weight; the featured and area slots are the priority.",
+  "Candidate official URLs come from 01-brief and are unverified; press and contact pages are left to be found on those sites."
+ ],
+ "verify_items": [
+  "[[IMAGE NEEDED]] featured: Elounda or Agios Nikolaos bay ceremony hero from a confirmed venue",
+  "[[IMAGE NEEDED]] area-elounda-agios-nikolaos: official venue image or licensed stock",
+  "[[IMAGE NEEDED]] area-heraklion-coast: official venue image or licensed stock",
+  "[[IMAGE NEEDED]] area-rethymno: official venue image or licensed stock",
+  "[[IMAGE NEEDED]] area-chania-west: official venue image or licensed stock",
+  "[[IMAGE NEEDED]] venue-01..venue-15: official image per confirmed venue (press kit with written permission or licensed stock)",
+  "[[VERIFY licence]] every venue press-kit image: written permission, credit line and expiry recorded in library-index.csv before use",
+  "[[VERIFY: official press or contact page for each confirmed venue, on its own site]]"
+ ],
+ "tools_used": [
+  "Bash (cat/python)"
+ ],
+ "next_agent": [
+  "luxury-writer"
+ ],
+ "payload": {
+  "slots": [
+   {
+    "slot_id": "featured",
+    "placement": "featured",
+    "purpose": "Hero and social share image: signals a luxury Crete wedding by the sea, with the island's mountains as the point of difference from the Cyclades.",
+    "shot_brief": "Official image from one venue confirmed in this guide, ideally Elounda or Agios Nikolaos (first area covered): ceremony set on a seaside lawn, terrace or private beach above Mirabello Bay, calm water with mountains behind, May to October, golden-hour light. No people, or only distant unidentifiable figures; no other hotels' signage. Landscape 3:2 with room for a title crop. Source: the venue's own media kit or press office with written permission (Gmail draft request, never sent by an agent), or licensed premium stock bought by a human and added to library-index.csv. Never AI, never a competitor, directory, planner, photographer-blog or search-result image. Location proven by the media kit, register row or EXIF, never by appearance.",
+    "status": "needed",
+    "file": "content/posts/crete-wedding-venues/images/crete-wedding-venues-elounda-bay-ceremony-hero.webp",
+    "source": {
+     "type": "venue_press",
+     "origin": "not yet sourced",
+     "credit": "[[VERIFY licence]]"
+    },
+    "licence_note": "[[IMAGE NEEDED]] Library register has no rows (header only). Move to pending_permission once the featured venue is chosen and its permission draft exists."
+   },
+   {
+    "slot_id": "area-elounda-agios-nikolaos",
+    "placement": "venues section: Elounda and Agios Nikolaos (area H3 opener)",
+    "purpose": "Shows the east of Crete: sheltered bay settings and resort-scale venues around Mirabello Bay.",
+    "shot_brief": "Official image from a venue confirmed in this area: Mirabello Bay in the east: sheltered bay water, the Spinalonga or Plaka coastline, mountains rising behind, a resort seafront lawn or terrace set for a ceremony. May to October, soft morning or golden-hour light. No identifiable guests. Landscape 3:2. Source: the venue's own media kit or press office with written permission (Gmail draft request, never sent by an agent), or licensed premium stock bought by a human and added to library-index.csv. Never AI, never a competitor, directory, planner, photographer-blog or search-result image. Location proven by the media kit, register row or EXIF, never by appearance.",
+    "status": "needed",
+    "file": "content/posts/crete-wedding-venues/images/crete-wedding-venues-elounda-agios-nikolaos-setting.webp",
+    "location": {
+     "venue": "one confirmed venue in Elounda and Agios Nikolaos",
+     "town": "Elounda",
+     "verified_by": "to be set from the media kit or register row"
+    },
+    "licence_note": "[[IMAGE NEEDED]] Must come from a venue featured in this area (never imply a venue not covered) or licensed stock of the real place; no AI."
+   },
+   {
+    "slot_id": "area-heraklion-coast",
+    "placement": "venues section: Hersonissos and the Heraklion coast (area H3 opener)",
+    "purpose": "Shows the central north coast, with beach and cove resort settings.",
+    "shot_brief": "Official image from a venue confirmed in this area: the north coast near Hersonissos, Gouves or Agia Pelagia: open Cretan Sea, a beachfront or clifftop resort terrace set for a ceremony. May to October, soft morning or golden-hour light. No identifiable guests. Landscape 3:2. Source: the venue's own media kit or press office with written permission (Gmail draft request, never sent by an agent), or licensed premium stock bought by a human and added to library-index.csv. Never AI, never a competitor, directory, planner, photographer-blog or search-result image. Location proven by the media kit, register row or EXIF, never by appearance.",
+    "status": "needed",
+    "file": "content/posts/crete-wedding-venues/images/crete-wedding-venues-heraklion-coast-setting.webp",
+    "location": {
+     "venue": "one confirmed venue in Hersonissos and the Heraklion coast",
+     "town": "Heraklion",
+     "verified_by": "to be set from the media kit or register row"
+    },
+    "licence_note": "[[IMAGE NEEDED]] Must come from a venue featured in this area (never imply a venue not covered) or licensed stock of the real place; no AI."
+   },
+   {
+    "slot_id": "area-rethymno",
+    "placement": "venues section: Rethymno (area H3 opener)",
+    "purpose": "Shows Rethymno as the middle ground: beach resorts on the coast and historic estates inland.",
+    "shot_brief": "Official image from a venue confirmed in this area: the Rethymno coast or its hinterland: sandy north-coast beach, or a restored stone village estate with olive groves and the White Mountains or Psiloritis in view. May to October, soft morning or golden-hour light. No identifiable guests. Landscape 3:2. Source: the venue's own media kit or press office with written permission (Gmail draft request, never sent by an agent), or licensed premium stock bought by a human and added to library-index.csv. Never AI, never a competitor, directory, planner, photographer-blog or search-result image. Location proven by the media kit, register row or EXIF, never by appearance.",
+    "status": "needed",
+    "file": "content/posts/crete-wedding-venues/images/crete-wedding-venues-rethymno-setting.webp",
+    "location": {
+     "venue": "one confirmed venue in Rethymno",
+     "town": "Rethymno",
+     "verified_by": "to be set from the media kit or register row"
+    },
+    "licence_note": "[[IMAGE NEEDED]] Must come from a venue featured in this area (never imply a venue not covered) or licensed stock of the real place; no AI."
+   },
+   {
+    "slot_id": "area-chania-west",
+    "placement": "venues section: Chania and the west (area H3 opener)",
+    "purpose": "Shows the west: villas, wineries and mountain views, reached via Chania airport.",
+    "shot_brief": "Official image from a venue confirmed in this area: west Crete near Chania: a villa terrace or vineyard with the White Mountains behind, or a beach resort on the coast west of Chania town. May to October, soft morning or golden-hour light. No identifiable guests. Landscape 3:2. Source: the venue's own media kit or press office with written permission (Gmail draft request, never sent by an agent), or licensed premium stock bought by a human and added to library-index.csv. Never AI, never a competitor, directory, planner, photographer-blog or search-result image. Location proven by the media kit, register row or EXIF, never by appearance.",
+    "status": "needed",
+    "file": "content/posts/crete-wedding-venues/images/crete-wedding-venues-chania-west-setting.webp",
+    "location": {
+     "venue": "one confirmed venue in Chania and the west",
+     "town": "Chania",
+     "verified_by": "to be set from the media kit or register row"
+    },
+    "licence_note": "[[IMAGE NEEDED]] Must come from a venue featured in this area (never imply a venue not covered) or licensed stock of the real place; no AI."
+   },
+   {
+    "slot_id": "venue-01",
+    "placement": "venues section: Elounda and Agios Nikolaos, entry: Elounda Beach Hotel & Villas",
+    "purpose": "Shows Elounda Beach Hotel & Villas itself so the reader can judge its setting against the same fields as the other entries.",
+    "shot_brief": "Official image of Elounda Beach Hotel & Villas (Elounda, Lasithi): ceremony setting by the sea, terrace, lawn or beach, set for a ceremony or reception. May to October, natural daylight or golden hour. No identifiable guests, children or couples unless the venue confirms their consent. Landscape 3:2. Source: the venue's own media kit or press office with written permission (Gmail draft request, never sent by an agent), or licensed premium stock bought by a human and added to library-index.csv. Never AI, never a competitor, directory, planner, photographer-blog or search-result image. Location proven by the media kit, register row or EXIF, never by appearance.",
+    "status": "needed",
+    "file": "content/posts/crete-wedding-venues/images/crete-wedding-venues-elounda-beach-ceremony-setting.webp",
+    "location": {
+     "venue": "Elounda Beach Hotel & Villas",
+     "town": "Elounda, Lasithi",
+     "verified_by": "pending: venue media kit"
+    },
+    "licence_note": "[[IMAGE NEEDED]] Venue still subject to stage 03 verification (status in brief: sourced in Greece pack, re-check live). If the venue is swapped for a reserve, rename this slot and file."
+   },
+   {
+    "slot_id": "venue-02",
+    "placement": "venues section: Elounda and Agios Nikolaos, entry: Daios Cove",
+    "purpose": "Shows Daios Cove itself so the reader can judge its setting against the same fields as the other entries.",
+    "shot_brief": "Official image of Daios Cove (Vathi bay, near Agios Nikolaos, Lasithi): ceremony setting by the sea, terrace, lawn or beach, set for a ceremony or reception. May to October, natural daylight or golden hour. No identifiable guests, children or couples unless the venue confirms their consent. Landscape 3:2. Source: the venue's own media kit or press office with written permission (Gmail draft request, never sent by an agent), or licensed premium stock bought by a human and added to library-index.csv. Never AI, never a competitor, directory, planner, photographer-blog or search-result image. Location proven by the media kit, register row or EXIF, never by appearance.",
+    "status": "needed",
+    "file": "content/posts/crete-wedding-venues/images/crete-wedding-venues-daios-cove-ceremony-setting.webp",
+    "location": {
+     "venue": "Daios Cove",
+     "town": "Vathi bay, near Agios Nikolaos, Lasithi",
+     "verified_by": "pending: venue media kit"
+    },
+    "licence_note": "[[IMAGE NEEDED]] Venue still subject to stage 03 verification (status in brief: candidate, unverified). If the venue is swapped for a reserve, rename this slot and file."
+   },
+   {
+    "slot_id": "venue-03",
+    "placement": "venues section: Elounda and Agios Nikolaos, entry: St. Nicolas Bay Resort Hotel & Villas",
+    "purpose": "Shows St. Nicolas Bay Resort Hotel & Villas itself so the reader can judge its setting against the same fields as the other entries.",
+    "shot_brief": "Official image of St. Nicolas Bay Resort Hotel & Villas (Agios Nikolaos, Lasithi): ceremony setting by the sea, terrace, lawn or beach, set for a ceremony or reception. May to October, natural daylight or golden hour. No identifiable guests, children or couples unless the venue confirms their consent. Landscape 3:2. Source: the venue's own media kit or press office with written permission (Gmail draft request, never sent by an agent), or licensed premium stock bought by a human and added to library-index.csv. Never AI, never a competitor, directory, planner, photographer-blog or search-result image. Location proven by the media kit, register row or EXIF, never by appearance.",
+    "status": "needed",
+    "file": "content/posts/crete-wedding-venues/images/crete-wedding-venues-st-nicolas-bay-ceremony-setting.webp",
+    "location": {
+     "venue": "St. Nicolas Bay Resort Hotel & Villas",
+     "town": "Agios Nikolaos, Lasithi",
+     "verified_by": "pending: venue media kit"
+    },
+    "licence_note": "[[IMAGE NEEDED]] Venue still subject to stage 03 verification (status in brief: candidate, unverified). If the venue is swapped for a reserve, rename this slot and file."
+   },
+   {
+    "slot_id": "venue-04",
+    "placement": "venues section: Elounda and Agios Nikolaos, entry: Minos Beach Art Hotel",
+    "purpose": "Shows Minos Beach Art Hotel itself so the reader can judge its setting against the same fields as the other entries.",
+    "shot_brief": "Official image of Minos Beach Art Hotel (Agios Nikolaos, Lasithi): ceremony setting by the sea, terrace, lawn or beach, set for a ceremony or reception. May to October, natural daylight or golden hour. No identifiable guests, children or couples unless the venue confirms their consent. Landscape 3:2. Source: the venue's own media kit or press office with written permission (Gmail draft request, never sent by an agent), or licensed premium stock bought by a human and added to library-index.csv. Never AI, never a competitor, directory, planner, photographer-blog or search-result image. Location proven by the media kit, register row or EXIF, never by appearance.",
+    "status": "needed",
+    "file": "content/posts/crete-wedding-venues/images/crete-wedding-venues-minos-beach-art-hotel-ceremony-setting.webp",
+    "location": {
+     "venue": "Minos Beach Art Hotel",
+     "town": "Agios Nikolaos, Lasithi",
+     "verified_by": "pending: venue media kit"
+    },
+    "licence_note": "[[IMAGE NEEDED]] Venue still subject to stage 03 verification (status in brief: candidate, unverified). If the venue is swapped for a reserve, rename this slot and file."
+   },
+   {
+    "slot_id": "venue-05",
+    "placement": "venues section: Elounda and Agios Nikolaos, entry: Elounda Peninsula All Suite Hotel",
+    "purpose": "Shows Elounda Peninsula All Suite Hotel itself so the reader can judge its setting against the same fields as the other entries.",
+    "shot_brief": "Official image of Elounda Peninsula All Suite Hotel (Elounda, Lasithi): ceremony setting by the sea, terrace, lawn or beach, set for a ceremony or reception. May to October, natural daylight or golden hour. No identifiable guests, children or couples unless the venue confirms their consent. Landscape 3:2. Source: the venue's own media kit or press office with written permission (Gmail draft request, never sent by an agent), or licensed premium stock bought by a human and added to library-index.csv. Never AI, never a competitor, directory, planner, photographer-blog or search-result image. Location proven by the media kit, register row or EXIF, never by appearance.",
+    "status": "needed",
+    "file": "content/posts/crete-wedding-venues/images/crete-wedding-venues-elounda-peninsula-ceremony-setting.webp",
+    "location": {
+     "venue": "Elounda Peninsula All Suite Hotel",
+     "town": "Elounda, Lasithi",
+     "verified_by": "pending: venue media kit"
+    },
+    "licence_note": "[[IMAGE NEEDED]] Venue still subject to stage 03 verification (status in brief: candidate, unverified). If the venue is swapped for a reserve, rename this slot and file."
+   },
+   {
+    "slot_id": "venue-06",
+    "placement": "venues section: Hersonissos and the Heraklion coast, entry: Nana Princess",
+    "purpose": "Shows Nana Princess itself so the reader can judge its setting against the same fields as the other entries.",
+    "shot_brief": "Official image of Nana Princess (Chersonissos (Hersonissos), Heraklion coast): ceremony setting by the sea, terrace, lawn or beach, set for a ceremony or reception. May to October, natural daylight or golden hour. No identifiable guests, children or couples unless the venue confirms their consent. Landscape 3:2. Source: the venue's own media kit or press office with written permission (Gmail draft request, never sent by an agent), or licensed premium stock bought by a human and added to library-index.csv. Never AI, never a competitor, directory, planner, photographer-blog or search-result image. Location proven by the media kit, register row or EXIF, never by appearance.",
+    "status": "needed",
+    "file": "content/posts/crete-wedding-venues/images/crete-wedding-venues-nana-princess-ceremony-setting.webp",
+    "location": {
+     "venue": "Nana Princess",
+     "town": "Chersonissos (Hersonissos), Heraklion coast",
+     "verified_by": "pending: venue media kit"
+    },
+    "licence_note": "[[IMAGE NEEDED]] Venue still subject to stage 03 verification (status in brief: sourced in Greece pack, re-check live). If the venue is swapped for a reserve, rename this slot and file."
+   },
+   {
+    "slot_id": "venue-07",
+    "placement": "venues section: Hersonissos and the Heraklion coast, entry: Amirandes, Grecotel Exclusive Resort",
+    "purpose": "Shows Amirandes, Grecotel Exclusive Resort itself so the reader can judge its setting against the same fields as the other entries.",
+    "shot_brief": "Official image of Amirandes, Grecotel Exclusive Resort (Gouves, Heraklion coast): ceremony setting by the sea, terrace, lawn or beach, set for a ceremony or reception. May to October, natural daylight or golden hour. No identifiable guests, children or couples unless the venue confirms their consent. Landscape 3:2. Source: the venue's own media kit or press office with written permission (Gmail draft request, never sent by an agent), or licensed premium stock bought by a human and added to library-index.csv. Never AI, never a competitor, directory, planner, photographer-blog or search-result image. Location proven by the media kit, register row or EXIF, never by appearance.",
+    "status": "needed",
+    "file": "content/posts/crete-wedding-venues/images/crete-wedding-venues-amirandes-ceremony-setting.webp",
+    "location": {
+     "venue": "Amirandes, Grecotel Exclusive Resort",
+     "town": "Gouves, Heraklion coast",
+     "verified_by": "pending: venue media kit"
+    },
+    "licence_note": "[[IMAGE NEEDED]] Venue still subject to stage 03 verification (status in brief: candidate, unverified). If the venue is swapped for a reserve, rename this slot and file."
+   },
+   {
+    "slot_id": "venue-08",
+    "placement": "venues section: Hersonissos and the Heraklion coast, entry: Out of the Blue Resort (Capsis Elite Resort)",
+    "purpose": "Shows Out of the Blue Resort (Capsis Elite Resort) itself so the reader can judge its setting against the same fields as the other entries.",
+    "shot_brief": "Official image of Out of the Blue Resort (Capsis Elite Resort) (Agia Pelagia, Heraklion coast): ceremony setting by the sea, terrace, lawn or beach, set for a ceremony or reception. May to October, natural daylight or golden hour. No identifiable guests, children or couples unless the venue confirms their consent. Landscape 3:2. Source: the venue's own media kit or press office with written permission (Gmail draft request, never sent by an agent), or licensed premium stock bought by a human and added to library-index.csv. Never AI, never a competitor, directory, planner, photographer-blog or search-result image. Location proven by the media kit, register row or EXIF, never by appearance.",
+    "status": "needed",
+    "file": "content/posts/crete-wedding-venues/images/crete-wedding-venues-out-of-the-blue-resort-ceremony-setting.webp",
+    "location": {
+     "venue": "Out of the Blue Resort (Capsis Elite Resort)",
+     "town": "Agia Pelagia, Heraklion coast",
+     "verified_by": "pending: venue media kit"
+    },
+    "licence_note": "[[IMAGE NEEDED]] Venue still subject to stage 03 verification (status in brief: candidate, unverified). If the venue is swapped for a reserve, rename this slot and file."
+   },
+   {
+    "slot_id": "venue-09",
+    "placement": "venues section: Hersonissos and the Heraklion coast, entry: Abaton Island Resort & Spa",
+    "purpose": "Shows Abaton Island Resort & Spa itself so the reader can judge its setting against the same fields as the other entries.",
+    "shot_brief": "Official image of Abaton Island Resort & Spa (Hersonissos, Heraklion coast): ceremony setting by the sea, terrace, lawn or beach, set for a ceremony or reception. May to October, natural daylight or golden hour. No identifiable guests, children or couples unless the venue confirms their consent. Landscape 3:2. Source: the venue's own media kit or press office with written permission (Gmail draft request, never sent by an agent), or licensed premium stock bought by a human and added to library-index.csv. Never AI, never a competitor, directory, planner, photographer-blog or search-result image. Location proven by the media kit, register row or EXIF, never by appearance.",
+    "status": "needed",
+    "file": "content/posts/crete-wedding-venues/images/crete-wedding-venues-abaton-ceremony-setting.webp",
+    "location": {
+     "venue": "Abaton Island Resort & Spa",
+     "town": "Hersonissos, Heraklion coast",
+     "verified_by": "pending: venue media kit"
+    },
+    "licence_note": "[[IMAGE NEEDED]] Venue still subject to stage 03 verification (status in brief: candidate, unverified). If the venue is swapped for a reserve, rename this slot and file."
+   },
+   {
+    "slot_id": "venue-10",
+    "placement": "venues section: Rethymno, entry: Caramel, Grecotel Boutique Resort",
+    "purpose": "Shows Caramel, Grecotel Boutique Resort itself so the reader can judge its setting against the same fields as the other entries.",
+    "shot_brief": "Official image of Caramel, Grecotel Boutique Resort (Adelianos Kampos, Rethymno): ceremony setting by the sea, terrace, lawn or beach, set for a ceremony or reception. May to October, natural daylight or golden hour. No identifiable guests, children or couples unless the venue confirms their consent. Landscape 3:2. Source: the venue's own media kit or press office with written permission (Gmail draft request, never sent by an agent), or licensed premium stock bought by a human and added to library-index.csv. Never AI, never a competitor, directory, planner, photographer-blog or search-result image. Location proven by the media kit, register row or EXIF, never by appearance.",
+    "status": "needed",
+    "file": "content/posts/crete-wedding-venues/images/crete-wedding-venues-caramel-ceremony-setting.webp",
+    "location": {
+     "venue": "Caramel, Grecotel Boutique Resort",
+     "town": "Adelianos Kampos, Rethymno",
+     "verified_by": "pending: venue media kit"
+    },
+    "licence_note": "[[IMAGE NEEDED]] Venue still subject to stage 03 verification (status in brief: candidate, unverified). If the venue is swapped for a reserve, rename this slot and file."
+   },
+   {
+    "slot_id": "venue-11",
+    "placement": "venues section: Rethymno, entry: Kapsaliana Village Hotel",
+    "purpose": "Shows Kapsaliana Village Hotel itself so the reader can judge its setting against the same fields as the other entries.",
+    "shot_brief": "Official image of Kapsaliana Village Hotel (Kapsaliana, Rethymno hinterland): stone courtyard, vineyard or estate grounds set for a ceremony or long-table reception. May to October, natural daylight or golden hour. No identifiable guests, children or couples unless the venue confirms their consent. Landscape 3:2. Source: the venue's own media kit or press office with written permission (Gmail draft request, never sent by an agent), or licensed premium stock bought by a human and added to library-index.csv. Never AI, never a competitor, directory, planner, photographer-blog or search-result image. Location proven by the media kit, register row or EXIF, never by appearance.",
+    "status": "needed",
+    "file": "content/posts/crete-wedding-venues/images/crete-wedding-venues-kapsaliana-village-hotel-estate.webp",
+    "location": {
+     "venue": "Kapsaliana Village Hotel",
+     "town": "Kapsaliana, Rethymno hinterland",
+     "verified_by": "pending: venue media kit"
+    },
+    "licence_note": "[[IMAGE NEEDED]] Venue still subject to stage 03 verification (status in brief: candidate, unverified). If the venue is swapped for a reserve, rename this slot and file."
+   },
+   {
+    "slot_id": "venue-12",
+    "placement": "venues section: Chania and the west, entry: Domes Zeen Chania",
+    "purpose": "Shows Domes Zeen Chania itself so the reader can judge its setting against the same fields as the other entries.",
+    "shot_brief": "Official image of Domes Zeen Chania (Chania coast): ceremony setting by the sea, terrace, lawn or beach, set for a ceremony or reception. May to October, natural daylight or golden hour. No identifiable guests, children or couples unless the venue confirms their consent. Landscape 3:2. Source: the venue's own media kit or press office with written permission (Gmail draft request, never sent by an agent), or licensed premium stock bought by a human and added to library-index.csv. Never AI, never a competitor, directory, planner, photographer-blog or search-result image. Location proven by the media kit, register row or EXIF, never by appearance.",
+    "status": "needed",
+    "file": "content/posts/crete-wedding-venues/images/crete-wedding-venues-domes-zeen-chania-ceremony-setting.webp",
+    "location": {
+     "venue": "Domes Zeen Chania",
+     "town": "Chania coast",
+     "verified_by": "pending: venue media kit"
+    },
+    "licence_note": "[[IMAGE NEEDED]] Venue still subject to stage 03 verification (status in brief: candidate, unverified). If the venue is swapped for a reserve, rename this slot and file."
+   },
+   {
+    "slot_id": "venue-13",
+    "placement": "venues section: Chania and the west, entry: Talos Luxury Villas",
+    "purpose": "Shows Talos Luxury Villas itself so the reader can judge its setting against the same fields as the other entries.",
+    "shot_brief": "Official image of Talos Luxury Villas (Chania area): villa terrace or pool deck set for an intimate ceremony or long-table dinner. May to October, natural daylight or golden hour. No identifiable guests, children or couples unless the venue confirms their consent. Landscape 3:2. Source: the venue's own media kit or press office with written permission (Gmail draft request, never sent by an agent), or licensed premium stock bought by a human and added to library-index.csv. Never AI, never a competitor, directory, planner, photographer-blog or search-result image. Location proven by the media kit, register row or EXIF, never by appearance.",
+    "status": "needed",
+    "file": "content/posts/crete-wedding-venues/images/crete-wedding-venues-talos-villas-ceremony-setting.webp",
+    "location": {
+     "venue": "Talos Luxury Villas",
+     "town": "Chania area",
+     "verified_by": "pending: venue media kit"
+    },
+    "licence_note": "[[IMAGE NEEDED]] Venue still subject to stage 03 verification (status in brief: candidate, unverified). If the venue is swapped for a reserve, rename this slot and file."
+   },
+   {
+    "slot_id": "venue-14",
+    "placement": "venues section: Chania and the west, entry: Sea View by En Kipo",
+    "purpose": "Shows Sea View by En Kipo itself so the reader can judge its setting against the same fields as the other entries.",
+    "shot_brief": "Official image of Sea View by En Kipo (Chania area (confirm exact location)): the venue's ceremony or reception space with its view. May to October, natural daylight or golden hour. No identifiable guests, children or couples unless the venue confirms their consent. Landscape 3:2. Source: the venue's own media kit or press office with written permission (Gmail draft request, never sent by an agent), or licensed premium stock bought by a human and added to library-index.csv. Never AI, never a competitor, directory, planner, photographer-blog or search-result image. Location proven by the media kit, register row or EXIF, never by appearance.",
+    "status": "needed",
+    "file": "content/posts/crete-wedding-venues/images/crete-wedding-venues-sea-view-by-en-kipo-ceremony-setting.webp",
+    "location": {
+     "venue": "Sea View by En Kipo",
+     "town": "Chania area (confirm exact location)",
+     "verified_by": "pending: venue media kit"
+    },
+    "licence_note": "[[IMAGE NEEDED]] Venue still subject to stage 03 verification (status in brief: candidate, unverified). If the venue is swapped for a reserve, rename this slot and file."
+   },
+   {
+    "slot_id": "venue-15",
+    "placement": "venues section: Chania and the west, entry: Manousakis Winery",
+    "purpose": "Shows Manousakis Winery itself so the reader can judge its setting against the same fields as the other entries.",
+    "shot_brief": "Official image of Manousakis Winery (Vatolakkos, Chania): stone courtyard, vineyard or estate grounds set for a ceremony or long-table reception. May to October, natural daylight or golden hour. No identifiable guests, children or couples unless the venue confirms their consent. Landscape 3:2. Source: the venue's own media kit or press office with written permission (Gmail draft request, never sent by an agent), or licensed premium stock bought by a human and added to library-index.csv. Never AI, never a competitor, directory, planner, photographer-blog or search-result image. Location proven by the media kit, register row or EXIF, never by appearance.",
+    "status": "needed",
+    "file": "content/posts/crete-wedding-venues/images/crete-wedding-venues-manousakis-winery-estate.webp",
+    "location": {
+     "venue": "Manousakis Winery",
+     "town": "Vatolakkos, Chania",
+     "verified_by": "pending: venue media kit"
+    },
+    "licence_note": "[[IMAGE NEEDED]] Venue still subject to stage 03 verification (status in brief: candidate, unverified). If the venue is swapped for a reserve, rename this slot and file."
+   }
+  ],
+  "reference_only": [],
+  "permission_requests": [
+   {
+    "venue": "Elounda Beach Hotel & Villas",
+    "region": "Elounda, Lasithi",
+    "gmail_draft_id": "",
+    "official_site": "https://www.eloundabeach.gr/meetings-events-crete-greece/weddings-and-occasions",
+    "press_or_contact_page": "not located: repo register only in this fast run; find the press, media or weddings contact on the venue's own site",
+    "images": [
+     "Official ceremony or reception setting (no identifiable guests)",
+     "Official exterior or view"
+    ],
+    "planned_file": "content/posts/crete-wedding-venues/images/crete-wedding-venues-elounda-beach-ceremony-setting.webp",
+    "status": "draft_wording_only: not created in Gmail, not sent; create only for venues confirmed in 03-source-pack",
+    "draft_subject": "Image permission request: Wedded Wonderland feature on Elounda Beach Hotel & Villas"
+   },
+   {
+    "venue": "Daios Cove",
+    "region": "Vathi bay, near Agios Nikolaos, Lasithi",
+    "gmail_draft_id": "",
+    "official_site": "https://www.daioscovecrete.com",
+    "press_or_contact_page": "not located: repo register only in this fast run; find the press, media or weddings contact on the venue's own site",
+    "images": [
+     "Official ceremony or reception setting (no identifiable guests)",
+     "Official exterior or view"
+    ],
+    "planned_file": "content/posts/crete-wedding-venues/images/crete-wedding-venues-daios-cove-ceremony-setting.webp",
+    "status": "draft_wording_only: not created in Gmail, not sent; create only for venues confirmed in 03-source-pack",
+    "draft_subject": "Image permission request: Wedded Wonderland feature on Daios Cove"
+   },
+   {
+    "venue": "St. Nicolas Bay Resort Hotel & Villas",
+    "region": "Agios Nikolaos, Lasithi",
+    "gmail_draft_id": "",
+    "official_site": "https://www.stnicolasbay.gr",
+    "press_or_contact_page": "not located: repo register only in this fast run; find the press, media or weddings contact on the venue's own site",
+    "images": [
+     "Official ceremony or reception setting (no identifiable guests)",
+     "Official exterior or view"
+    ],
+    "planned_file": "content/posts/crete-wedding-venues/images/crete-wedding-venues-st-nicolas-bay-ceremony-setting.webp",
+    "status": "draft_wording_only: not created in Gmail, not sent; create only for venues confirmed in 03-source-pack",
+    "draft_subject": "Image permission request: Wedded Wonderland feature on St. Nicolas Bay Resort Hotel & Villas"
+   },
+   {
+    "venue": "Minos Beach Art Hotel",
+    "region": "Agios Nikolaos, Lasithi",
+    "gmail_draft_id": "",
+    "official_site": "https://www.minosbeach.com",
+    "press_or_contact_page": "not located: repo register only in this fast run; find the press, media or weddings contact on the venue's own site",
+    "images": [
+     "Official ceremony or reception setting (no identifiable guests)",
+     "Official exterior or view"
+    ],
+    "planned_file": "content/posts/crete-wedding-venues/images/crete-wedding-venues-minos-beach-art-hotel-ceremony-setting.webp",
+    "status": "draft_wording_only: not created in Gmail, not sent; create only for venues confirmed in 03-source-pack",
+    "draft_subject": "Image permission request: Wedded Wonderland feature on Minos Beach Art Hotel"
+   },
+   {
+    "venue": "Elounda Peninsula All Suite Hotel",
+    "region": "Elounda, Lasithi",
+    "gmail_draft_id": "",
+    "official_site": "official site to confirm (domain not confirmed in quick search; never use directory listings)",
+    "press_or_contact_page": "not located: repo register only in this fast run; find the press, media or weddings contact on the venue's own site",
+    "images": [
+     "Official ceremony or reception setting (no identifiable guests)",
+     "Official exterior or view"
+    ],
+    "planned_file": "content/posts/crete-wedding-venues/images/crete-wedding-venues-elounda-peninsula-ceremony-setting.webp",
+    "status": "draft_wording_only: not created in Gmail, not sent; create only for venues confirmed in 03-source-pack",
+    "draft_subject": "Image permission request: Wedded Wonderland feature on Elounda Peninsula All Suite Hotel"
+   },
+   {
+    "venue": "Nana Princess",
+    "region": "Chersonissos (Hersonissos), Heraklion coast",
+    "gmail_draft_id": "",
+    "official_site": "https://www.nanaprincess.gr/pages/weddings",
+    "press_or_contact_page": "not located: repo register only in this fast run; find the press, media or weddings contact on the venue's own site",
+    "images": [
+     "Official ceremony or reception setting (no identifiable guests)",
+     "Official exterior or view"
+    ],
+    "planned_file": "content/posts/crete-wedding-venues/images/crete-wedding-venues-nana-princess-ceremony-setting.webp",
+    "status": "draft_wording_only: not created in Gmail, not sent; create only for venues confirmed in 03-source-pack",
+    "draft_subject": "Image permission request: Wedded Wonderland feature on Nana Princess"
+   },
+   {
+    "venue": "Amirandes, Grecotel Exclusive Resort",
+    "region": "Gouves, Heraklion coast",
+    "gmail_draft_id": "",
+    "official_site": "https://www.grecotel.com (Amirandes property and weddings pages)",
+    "press_or_contact_page": "not located: repo register only in this fast run; find the press, media or weddings contact on the venue's own site",
+    "images": [
+     "Official ceremony or reception setting (no identifiable guests)",
+     "Official exterior or view"
+    ],
+    "planned_file": "content/posts/crete-wedding-venues/images/crete-wedding-venues-amirandes-ceremony-setting.webp",
+    "status": "draft_wording_only: not created in Gmail, not sent; create only for venues confirmed in 03-source-pack",
+    "draft_subject": "Image permission request: Wedded Wonderland feature on Amirandes, Grecotel Exclusive Resort"
+   },
+   {
+    "venue": "Out of the Blue Resort (Capsis Elite Resort)",
+    "region": "Agia Pelagia, Heraklion coast",
+    "gmail_draft_id": "",
+    "official_site": "https://www.capsis.com (Out of the Blue property pages)",
+    "press_or_contact_page": "not located: repo register only in this fast run; find the press, media or weddings contact on the venue's own site",
+    "images": [
+     "Official ceremony or reception setting (no identifiable guests)",
+     "Official exterior or view"
+    ],
+    "planned_file": "content/posts/crete-wedding-venues/images/crete-wedding-venues-out-of-the-blue-resort-ceremony-setting.webp",
+    "status": "draft_wording_only: not created in Gmail, not sent; create only for venues confirmed in 03-source-pack",
+    "draft_subject": "Image permission request: Wedded Wonderland feature on Out of the Blue Resort (Capsis Elite Resort)"
+   },
+   {
+    "venue": "Abaton Island Resort & Spa",
+    "region": "Hersonissos, Heraklion coast",
+    "gmail_draft_id": "",
+    "official_site": "official site to confirm",
+    "press_or_contact_page": "not located: repo register only in this fast run; find the press, media or weddings contact on the venue's own site",
+    "images": [
+     "Official ceremony or reception setting (no identifiable guests)",
+     "Official exterior or view"
+    ],
+    "planned_file": "content/posts/crete-wedding-venues/images/crete-wedding-venues-abaton-ceremony-setting.webp",
+    "status": "draft_wording_only: not created in Gmail, not sent; create only for venues confirmed in 03-source-pack",
+    "draft_subject": "Image permission request: Wedded Wonderland feature on Abaton Island Resort & Spa"
+   },
+   {
+    "venue": "Caramel, Grecotel Boutique Resort",
+    "region": "Adelianos Kampos, Rethymno",
+    "gmail_draft_id": "",
+    "official_site": "https://www.grecotel.com (Caramel property and weddings pages)",
+    "press_or_contact_page": "not located: repo register only in this fast run; find the press, media or weddings contact on the venue's own site",
+    "images": [
+     "Official ceremony or reception setting (no identifiable guests)",
+     "Official exterior or view"
+    ],
+    "planned_file": "content/posts/crete-wedding-venues/images/crete-wedding-venues-caramel-ceremony-setting.webp",
+    "status": "draft_wording_only: not created in Gmail, not sent; create only for venues confirmed in 03-source-pack",
+    "draft_subject": "Image permission request: Wedded Wonderland feature on Caramel, Grecotel Boutique Resort"
+   },
+   {
+    "venue": "Kapsaliana Village Hotel",
+    "region": "Kapsaliana, Rethymno hinterland",
+    "gmail_draft_id": "",
+    "official_site": "https://www.kapsalianavillage.gr",
+    "press_or_contact_page": "not located: repo register only in this fast run; find the press, media or weddings contact on the venue's own site",
+    "images": [
+     "Official ceremony or reception setting (no identifiable guests)",
+     "Official exterior or view"
+    ],
+    "planned_file": "content/posts/crete-wedding-venues/images/crete-wedding-venues-kapsaliana-village-hotel-estate.webp",
+    "status": "draft_wording_only: not created in Gmail, not sent; create only for venues confirmed in 03-source-pack",
+    "draft_subject": "Image permission request: Wedded Wonderland feature on Kapsaliana Village Hotel"
+   },
+   {
+    "venue": "Domes Zeen Chania",
+    "region": "Chania coast",
+    "gmail_draft_id": "",
+    "official_site": "https://domesresorts.com/domeszeenchania",
+    "press_or_contact_page": "not located: repo register only in this fast run; find the press, media or weddings contact on the venue's own site",
+    "images": [
+     "Official ceremony or reception setting (no identifiable guests)",
+     "Official exterior or view"
+    ],
+    "planned_file": "content/posts/crete-wedding-venues/images/crete-wedding-venues-domes-zeen-chania-ceremony-setting.webp",
+    "status": "draft_wording_only: not created in Gmail, not sent; create only for venues confirmed in 03-source-pack",
+    "draft_subject": "Image permission request: Wedded Wonderland feature on Domes Zeen Chania"
+   },
+   {
+    "venue": "Talos Luxury Villas",
+    "region": "Chania area",
+    "gmail_draft_id": "",
+    "official_site": "https://www.talosluxuryvillas.com",
+    "press_or_contact_page": "not located: repo register only in this fast run; find the press, media or weddings contact on the venue's own site",
+    "images": [
+     "Official ceremony or reception setting (no identifiable guests)",
+     "Official exterior or view"
+    ],
+    "planned_file": "content/posts/crete-wedding-venues/images/crete-wedding-venues-talos-villas-ceremony-setting.webp",
+    "status": "draft_wording_only: not created in Gmail, not sent; create only for venues confirmed in 03-source-pack",
+    "draft_subject": "Image permission request: Wedded Wonderland feature on Talos Luxury Villas"
+   },
+   {
+    "venue": "Sea View by En Kipo",
+    "region": "Chania area (confirm exact location)",
+    "gmail_draft_id": "",
+    "official_site": "official site to confirm",
+    "press_or_contact_page": "not located: repo register only in this fast run; find the press, media or weddings contact on the venue's own site",
+    "images": [
+     "Official ceremony or reception setting (no identifiable guests)",
+     "Official exterior or view"
+    ],
+    "planned_file": "content/posts/crete-wedding-venues/images/crete-wedding-venues-sea-view-by-en-kipo-ceremony-setting.webp",
+    "status": "draft_wording_only: not created in Gmail, not sent; create only for venues confirmed in 03-source-pack",
+    "draft_subject": "Image permission request: Wedded Wonderland feature on Sea View by En Kipo"
+   },
+   {
+    "venue": "Manousakis Winery",
+    "region": "Vatolakkos, Chania",
+    "gmail_draft_id": "",
+    "official_site": "https://www.manousakiswinery.com",
+    "press_or_contact_page": "not located: repo register only in this fast run; find the press, media or weddings contact on the venue's own site",
+    "images": [
+     "Official ceremony or reception setting (no identifiable guests)",
+     "Official exterior or view"
+    ],
+    "planned_file": "content/posts/crete-wedding-venues/images/crete-wedding-venues-manousakis-winery-estate.webp",
+    "status": "draft_wording_only: not created in Gmail, not sent; create only for venues confirmed in 03-source-pack",
+    "draft_subject": "Image permission request: Wedded Wonderland feature on Manousakis Winery"
+   }
+  ],
+  "drive_findings": [
+   "Not searched: fast mode, repo library register only per orchestrator instruction. library-index.csv has a header and no rows."
+  ],
+  "south_coast_note": "No south coast slot: the brief covers the south coast as a section only if a venue qualifies in stage 03. If one does, add an area slot and a venue slot with the same brief pattern.",
+  "permission_email_bodies_note": "Draft wording per venue = content-system/images/permission-email-template.md with {{venue_name}} = venue, {{post_title}} = '15 Crete Wedding Venues From Elounda to Chania', images as listed. No Gmail drafts created and nothing sent; a human creates and sends them once the final venues are confirmed and the press or contact address is found on each official site."
+ }
+}
