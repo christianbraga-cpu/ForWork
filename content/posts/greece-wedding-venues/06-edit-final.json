@@ -1,0 +1,167 @@
+{
+  "agent": "editor",
+  "task_id": "greece-wedding-venues",
+  "stage": "06",
+  "status": "complete",
+  "round": 4,
+  "inputs_used": [
+    "CLAUDE.md",
+    "content/posts/greece-wedding-venues/00-input.json",
+    "content/posts/greece-wedding-venues/03-source-pack.json",
+    "content-system/brand/voice-guide.md",
+    "content-system/brand/brand-facts.md",
+    "content-system/rubrics/qa-gates.md",
+    "content-system/rubrics/compliance-checklist.md",
+    "content-system/schemas/06-edit.schema.json",
+    "content/posts/greece-wedding-venues/08-final.md"
+  ],
+  "self_qa": {
+    "checks": [
+      {
+        "check": "scan_copy.py on 08-final.md",
+        "pass": true,
+        "note": "banned [], dashes 0, overlaps [], flagged 'exclusive' x28 (all mean sole use of a space or property)."
+      },
+      {
+        "check": "20 venues, no excluded venues",
+        "pass": true,
+        "note": "20 entries and 20 table rows; no Rocabella, Eagles, Poseidonion, Mystique or Danai."
+      },
+      {
+        "check": "Fact markers traceable",
+        "pass": true,
+        "note": "All markers exist in 03-source-pack.json (93 facts); venue claims match; 6 blocking edits for unsupported generalisations, one rooms overstatement and one capacity mismatch."
+      },
+      {
+        "check": "Table vs entries",
+        "pass": true,
+        "note": "Rows match entries; One&Only Veranda 250 per fact_216 (fact_221 says 300; body hedges 'varies by set-up')."
+      },
+      {
+        "check": "Legal, travel, Advisor, prices",
+        "pass": true,
+        "note": "Legal and travel lines match fact_206/207/212/213/214/220; Advisor claims within brand-facts; venue legal help attributed to venues; no prices or fees; no other vendor names; one 'often' (not 'often told'); no 'last dance'; 4 one-sentence takeaways; no bracketed keywords in headings."
+      },
+      {
+        "check": "Decision consistent",
+        "pass": true,
+        "note": "Blocking edits only, all small -> pass_with_edits."
+      }
+    ],
+    "confidence": 0.85
+  },
+  "open_questions": [],
+  "assumptions": [
+    "FAST MODE blocking-issue check only; rubric carried, not rescored in depth."
+  ],
+  "verify_items": [
+    "One&Only Aesthesis Agora Veranda seated capacity: fact_216 says 250, fact_221 says 300; Advisor confirms in writing"
+  ],
+  "tools_used": [
+    "Bash (python3 -I, grep)",
+    "content-system/scripts/scan_copy.py"
+  ],
+  "next_agent": [
+    "luxury-writer"
+  ],
+  "payload": {
+    "draft_file": "content/posts/greece-wedding-venues/08-final.md",
+    "rubric": {
+      "voice": 4,
+      "expertise": 4,
+      "accuracy": 4,
+      "seo_fit": 4,
+      "commercial_link": 4,
+      "structure": 4,
+      "brief_fit": 4
+    },
+    "average": 4.0,
+    "blocking_issues": [],
+    "decision": "pass_with_edits",
+    "edits": [
+      {
+        "location": "Takeaway 2",
+        "issue": "Unsourced generalisation: 'usually means a chosen event space' is not supported; most venues do not publish exclusive-use terms.",
+        "fix": "Replace '- Exclusive use usually means a chosen event space, and only a few venues, such as Canaves, Katikies and Melenos, offer the whole hotel.' with '- Exclusive use can mean a chosen event space or the whole hotel, and only a few venues, such as Canaves, Katikies and Melenos, offer the whole hotel.'",
+        "old": "- Exclusive use usually means a chosen event space, and only a few venues, such as Canaves, Katikies and Melenos, offer the whole hotel.",
+        "new": "- Exclusive use can mean a chosen event space or the whole hotel, and only a few venues, such as Canaves, Katikies and Melenos, offer the whole hotel."
+      },
+      {
+        "location": "At a glance, regional overview",
+        "issue": "Unsourced generalisations: no fact supports 'olive groves' or 'calmer' for Corfu, or 'longer drives' for Halkidiki.",
+        "fix": "Replace '**Corfu and the Ionian** is greener, with olive groves and calmer, smaller settings.' with '**Corfu and the Ionian** is greener, with gardens, decks over the water and smaller settings.'",
+        "old": "**Corfu and the Ionian** is greener, with olive groves and calmer, smaller settings.",
+        "new": "**Corfu and the Ionian** is greener, with gardens, decks over the water and smaller settings."
+      },
+      {
+        "location": "At a glance, regional overview (Halkidiki)",
+        "issue": "Unsourced: no drive-time fact for Halkidiki.",
+        "fix": "Replace 'resort country on the mainland, with space, privacy and longer drives.' with 'resort country on the mainland, with space and privacy, and a drive or flight from Athens rather than a ferry.'",
+        "old": "resort country on the mainland, with space, privacy and longer drives.",
+        "new": "resort country on the mainland, with space and privacy, and a drive or flight from Athens rather than a ferry."
+      },
+      {
+        "location": "How to compare, first paragraph",
+        "issue": "Unsourced generalisation about all Greek venues, and fact_222 says no guest rooms are listed (it has a room for the couple), not 'no bedrooms at all'.",
+        "fix": "Replace 'Most Greek wedding venues are hotels or resorts that host weddings in named spaces. A few let you take the whole hotel. One on this list, Kokotos Estate outside Athens, has no bedrooms at all.' with 'Most venues on this list are hotels or resorts that host weddings in named spaces. A few let you take the whole hotel. One, Kokotos Estate outside Athens, lists no guest rooms.'",
+        "old": "Most Greek wedding venues are hotels or resorts that host weddings in named spaces. A few let you take the whole hotel. One on this list, Kokotos Estate outside Athens, has no bedrooms at all.",
+        "new": "Most venues on this list are hotels or resorts that host weddings in named spaces. A few let you take the whole hotel. One, Kokotos Estate outside Athens, lists no guest rooms."
+      },
+      {
+        "location": "Getting there, first paragraph",
+        "issue": "fact_219 does not say most Australian guests arrive through Athens; it covers airport links and domestic carriers.",
+        "fix": "Replace 'Most guests flying from Australia arrive through Athens International Airport, and domestic airlines fly on to the islands. <!-- fact_219 -->' with 'Athens International Airport links to central Athens and the port of Piraeus by express bus, metro and rail, and domestic airlines fly on across Greece. <!-- fact_219 -->'",
+        "old": "Most guests flying from Australia arrive through Athens International Airport, and domestic airlines fly on to the islands. <!-- fact_219 -->",
+        "new": "Athens International Airport links to central Athens and the port of Piraeus by express bus, metro and rail, and domestic airlines fly on across Greece. <!-- fact_219 -->"
+      },
+      {
+        "location": "FAQ, 100 guests",
+        "issue": "Contradicts fact_02 and the Cyclades intro (15 to 60): The Villa seats 15.",
+        "fix": "Replace 'most caldera terraces seat 20 to 60,' with 'most caldera terraces seat 15 to 60,'",
+        "old": "most caldera terraces seat 20 to 60,",
+        "new": "most caldera terraces seat 15 to 60,"
+      }
+    ],
+    "fact_check_log": [
+      {
+        "claim": "Kokotos Estate has no bedrooms at all",
+        "fact_id": "fact_222",
+        "status": "unsupported"
+      },
+      {
+        "claim": "Most guests flying from Australia arrive through Athens",
+        "fact_id": "fact_219",
+        "status": "unsupported"
+      },
+      {
+        "claim": "Santorini caldera terraces seat 20 to 60 (FAQ)",
+        "fact_id": "fact_02",
+        "status": "unsupported"
+      },
+      {
+        "claim": "Venue entries and table cells for all 20 venues",
+        "status": "confirmed"
+      },
+      {
+        "claim": "CNI, Embassy Athens, recognition of overseas marriage",
+        "fact_id": "fact_206",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Ferries, wind delays, wildfires June to September, EES waits",
+        "fact_id": "fact_214",
+        "status": "confirmed"
+      }
+    ],
+    "compliance": {
+      "pass": true,
+      "issues": []
+    },
+    "originality": {
+      "pass": true,
+      "matches": []
+    },
+    "banned_phrases_found": [],
+    "needs_signoff": []
+  }
+}

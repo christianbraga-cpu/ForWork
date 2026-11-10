@@ -20,3 +20,4 @@
 00:02 08 luxury-writer complete ~5,080 words; 0 VERIFY; scan clean; 8b+CRO+distribution launched
 00:04 09 cro-specialist complete; /wonderland-concierge primary ('Check your Greek venue shortlist'); /magazine lead magnet; 2 UTM copy changes; applying after 8b
 00:04 10 distribution complete 3 pins, 8-slide carousel, newsletter (blog UTMs as in prior runs)
+00:04 08b editor pass_with_edits; 6 blocking fixes (generalisations, Kokotos rooms wording, arrivals line, terrace range) + 2 CRO UTM changes applied; all 20 venues present, excluded venues absent; cms-publisher launched

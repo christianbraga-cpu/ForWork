@@ -14,7 +14,7 @@ This guide sets out 20 venues, each of which hosts weddings, with the same detai
 ## Key takeaways
 
 - Guest count decides the region: Santorini's caldera terraces seat 15 to 60, while venues on the Athens Riviera and in Crete publish space for several hundred.
-- Exclusive use usually means a chosen event space, and only a few venues, such as Canaves, Katikies and Melenos, offer the whole hotel.
+- Exclusive use can mean a chosen event space or the whole hotel, and only a few venues, such as Canaves, Katikies and Melenos, offer the whole hotel.
 - Curfews, minimum nights and rain plans are rarely published, so have them confirmed in writing before you pay a deposit.
 - A legal wedding means paperwork, which can include a Certificate of No Impediment, and a summer date means planning around heat, wildfire season and wind-delayed ferries.
 
@@ -32,13 +32,13 @@ This guide sets out 20 venues, each of which hosts weddings, with the same detai
 
 Greece is not one wedding destination but several, and each region asks something different of your guests.
 
-**Santorini and the Cyclades** give you the caldera and the whitewashed chapel, on small terraces. **Crete** and **Rhodes, Kos and the Dodecanese** pair chapels and beaches with venue teams that help with civil paperwork. **Corfu and the Ionian** is greener, with olive groves and calmer, smaller settings. **Athens and the Athens Riviera** suit the largest guest lists and the shortest transfers. **The Peloponnese** and **Halkidiki** are resort country on the mainland, with space, privacy and longer drives.
+**Santorini and the Cyclades** give you the caldera and the whitewashed chapel, on small terraces. **Crete** and **Rhodes, Kos and the Dodecanese** pair chapels and beaches with venue teams that help with civil paperwork. **Corfu and the Ionian** is greener, with gardens, decks over the water and smaller settings. **Athens and the Athens Riviera** suit the largest guest lists and the shortest transfers. **The Peloponnese** and **Halkidiki** are resort country on the mainland, with space and privacy, and a drive or flight from Athens rather than a ferry.
 
 The venues below run from the islands to the capital, then out to the mainland resorts. They are not ranked, and each entry uses the same fields in the same order.
 
 ## How to compare Greece wedding venues like for like
 
-Start with the type of venue. Most Greek wedding venues are hotels or resorts that host weddings in named spaces. A few let you take the whole hotel. One on this list, Kokotos Estate outside Athens, has no bedrooms at all. <!-- fact_222 -->
+Start with the type of venue. Most venues on this list are hotels or resorts that host weddings in named spaces. A few let you take the whole hotel. One, Kokotos Estate outside Athens, lists no guest rooms. <!-- fact_222 -->
 
 Then compare five things: ceremony type on site (chapel, beach, terrace, or a civil ceremony at the town hall), the largest published seated capacity, rooms on site, exclusive use, and how guests reach the venue.
 
@@ -368,7 +368,7 @@ Build transport to and from the Town Hall into the day's timeline before a beach
 
 ## Getting there from Australia: flights, ferries and transfers
 
-Most guests flying from Australia arrive through Athens International Airport, and domestic airlines fly on to the islands. <!-- fact_219 --> Plan the arrival as carefully as the wedding day: who meets each guest, how they reach the hotel, and where they rest before the first event.
+Athens International Airport links to central Athens and the port of Piraeus by express bus, metro and rail, and domestic airlines fly on across Greece. <!-- fact_219 --> Plan the arrival as carefully as the wedding day: who meets each guest, how they reach the hotel, and where they rest before the first event.
 
 Allow time at the airport. Since 30 March 2026 the EU Entry/Exit System has been fully deployed for non-EU travellers, passport control may involve long waits, and the airport advises arriving at least 2.5 hours before departure. <!-- fact_220 --> Do not schedule a welcome event too close to a long-haul landing.
 
@@ -415,7 +415,7 @@ Whether a chapel ceremony is legally binding for non-Orthodox couples is confirm
 
 ### Which Greek island is best for a wedding with 100 guests?
 
-On Santorini, most caldera terraces seat 20 to 60, so 100 guests needs a garden or pool space such as Canaves Epitome's. <!-- fact_301 --> <!-- fact_09 --> Mykonos has more room: the Myconian Collection's ballroom seats 270. <!-- fact_13 --> On Crete, Elounda Beach publishes banquet spaces for several hundred. <!-- fact_102 -->
+On Santorini, most caldera terraces seat 15 to 60, so 100 guests needs a garden or pool space such as Canaves Epitome's. <!-- fact_301 --> <!-- fact_09 --> Mykonos has more room: the Myconian Collection's ballroom seats 270. <!-- fact_13 --> On Crete, Elounda Beach publishes banquet spaces for several hundred. <!-- fact_102 -->
 
 For 60 to 100 guests with most of them staying on site, look at a Canaves Epitome buyout (53 rooms, up to 170 guests), Angsana Corfu (receptions for 200 and 196 rooms) or One&Only Aesthesis (the Agora Ballroom seats 140). <!-- fact_08 --> <!-- fact_306 --> <!-- fact_216 -->
 
@@ -443,6 +443,6 @@ May and October sit outside the June to September wildfire season and the hottes
 
 The numbers in this guide narrow the field. What decides it is what no one publishes: the curfew, the minimum stay, the rain plan, and whether the space is yours alone. A Wedded Advisor asks each venue on your shortlist, from curfew and minimum nights to step-free access, and puts the answers in writing.
 
-With Wedded Concierge, you work with one Wedded Advisor from start to finish, in your time zone, with quotes in AUD for Australian couples. Wedded Concierge plans venue, travel, vendors and payments, anywhere in the world. The fee is agreed in writing before any work begins. Tell us your date, your guest count and the venues you have in mind, and [speak with a Wedded Advisor](https://weddedwonderland.com/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=greece-wedding-venues&utm_content=primary).
+With Wedded Concierge, you work with one Wedded Advisor from start to finish, in your time zone, with quotes in AUD for Australian couples. Wedded Concierge plans venue, travel, vendors and payments, anywhere in the world. The fee is agreed in writing before any work begins. Tell us your date, your guest count and the venues you have in mind, and [speak with a Wedded Advisor](https://weddedwonderland.com/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=greece-wedding-venues&utm_content=secondary).
 
-For hand-picked venues, start with [our curated Greece wedding collection](https://weddedwonderland.com/destinations/europe/greece). If you would like a journey already shaped around the destination, see our [destination wedding packages](https://weddedwonderland.com/destination-wedding-packages), and for more ideas, browse [our digital magazine](https://weddedwonderland.com/magazine).
+For hand-picked venues, start with [our curated Greece wedding collection](https://weddedwonderland.com/destinations/europe/greece). If you would like a journey already shaped around the destination, see our [destination wedding packages](https://weddedwonderland.com/destination-wedding-packages), and for more ideas, browse [our digital magazine](https://weddedwonderland.com/magazine?utm_source=blog&utm_medium=content&utm_campaign=greece-wedding-venues&utm_content=magnet).
