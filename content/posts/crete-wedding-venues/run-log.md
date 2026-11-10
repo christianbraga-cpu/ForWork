@@ -10,3 +10,4 @@
 23:37 05 draft done: 4,972 words, 15 venues, scan clean.
 23:38 07 readers: funding_parent, search_visitor, planner_couple done (no must-fix).
 23:38 07 reader sceptic done: must-fix consistency (largest venues east vs west).
+23:39 07 reader uhnw done; 5/5 in, waiting on editor.
