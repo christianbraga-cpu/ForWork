@@ -1,0 +1,233 @@
+{
+  "agent": "planner-sme",
+  "task_id": "crete-wedding-venues",
+  "stage": "03",
+  "status": "complete",
+  "round": 1,
+  "inputs_used": [
+    "CLAUDE.md",
+    "content/posts/crete-wedding-venues/00-input.json",
+    "content/posts/crete-wedding-venues/01-brief.json",
+    "content-system/schemas/03-source-pack.schema.json",
+    "scratchpad/crv_a/03-source-pack.json (format model)",
+    "Apify web-search and web-fetch 2026-11-10 of official venue sites listed in each fact"
+  ],
+  "self_qa": {
+    "checks": [
+      {
+        "check": "Every fact has a source and date",
+        "pass": true
+      },
+      {
+        "check": "No price without a source; all prices in needs_signoff",
+        "pass": true,
+        "note": "No prices recorded."
+      },
+      {
+        "check": "Every must-include covered or marked [[VERIFY]]",
+        "pass": true,
+        "note": "Batch D covers venue replacements only; other items sit with batches A to C."
+      },
+      {
+        "check": "No invented quotes, statistics or real weddings",
+        "pass": true
+      }
+    ],
+    "confidence": 0.75
+  },
+  "open_questions": [
+    {
+      "to": "orchestrator",
+      "question": "Batch D qualifies 3: Porto Elounda Golf & Spa Resort, Elounda Mare Hotel (both on the shared Elounda Collection weddings page with Elounda Peninsula) and Minos Palace Resort (Agios Nikolaos, adults-only). Istron Bay fails (template text). Blue Palace not checked beyond search (no official weddings page surfaced). If the three Elounda Collection hotels should count as one entry, Minos Palace is the only clean independent replacement.",
+      "blocking": false
+    }
+  ],
+  "assumptions": [
+    "BOOKING CHECKLIST: Porto Elounda Golf & Spa Resort: ceremony locations, capacities, music curfew, minimum nights, rain plan, exclusive use, which works are complete for the 2026 season (veranda, lobby, reception).",
+    "BOOKING CHECKLIST: Elounda Mare Hotel: ceremony locations, capacities, music curfew, minimum nights, rain plan, exclusive use or buyout, room count.",
+    "BOOKING CHECKLIST: Minos Palace Resort: ceremony locations, capacity, music curfew, minimum nights, rain plan, exclusive use, adults-only policy for child guests at the wedding."
+  ],
+  "verify_items": [
+    "[[VERIFY: Porto Elounda and Elounda Mare: ceremony locations, guest capacities and venue names sit in the shared 'see details for all our venues' popup, which was not readable; only the shared weddings page was read]]",
+    "[[VERIFY: Porto Elounda and Elounda Mare: guest room counts not stated on the pages read]]",
+    "[[VERIFY: Minos Palace Resort: ceremony locations, capacities and room count not stated on its celebrations page]]",
+    "[[VERIFY: Istron Bay Hotel: weddings page carries template text about another hotel; excluded unless the venue confirms in writing or the page is fixed]]",
+    "[[VERIFY: Orchestrator: Porto Elounda, Elounda Mare and Elounda Peninsula share one weddings page and events team; decide whether all three count as separate entries in the 15 or are grouped]]"
+  ],
+  "tools_used": [
+    "mcp__Apify__apify--web-search",
+    "mcp__Apify__apify--web-fetch",
+    "Bash"
+  ],
+  "next_agent": [
+    "luxury-writer"
+  ],
+  "payload": {
+    "facts": [
+      {
+        "fact_id": "fact_300",
+        "claim": "Porto Elounda Golf & Spa Resort has its own weddings page ('A Celebration Beyond Imagination') offering venues for ceremonies and parties around its hotels, wedding planning, flower arrangements, custom menus, table decor and bespoke wedding cakes from its in-house Pastry Chef.",
+        "source": "https://portoelounda.com/en/weddings/",
+        "source_type": "official_venue",
+        "checked": "2026-11-10",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_301",
+        "claim": "Elounda Mare Hotel (a Relais & Chateaux member, per its own site) has its own weddings page with the same Elounda Collection wedding services: venues including secluded beaches and historic sites around the hotels with advance notice, planning, floristry, custom menus and bespoke cakes.",
+        "source": "https://www.eloundamare.com/en/weddings/",
+        "source_type": "official_venue",
+        "checked": "2026-11-10",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_302",
+        "claim": "The Porto Elounda and Elounda Mare weddings pages are shared Elounda Collection pages: both link venue and package details for Elounda Peninsula, Porto Elounda and Elounda Mare Hotel and give one events contact (events@elounda-sa.com, +30 28410 68011). Venue capacities are not stated on either page.",
+        "source": "https://www.eloundamare.com/en/weddings/ ; https://portoelounda.com/en/weddings/",
+        "source_type": "official_venue",
+        "checked": "2026-11-10",
+        "is_price": false,
+        "conflicts": "Porto Elounda and Elounda Mare have no wedding page of their own beyond the shared Elounda Collection page, which also covers Elounda Peninsula (batch A fact_13). Present them as sister venues under one events team, not as independent operators."
+      },
+      {
+        "fact_id": "fact_303",
+        "claim": "Elounda Mare Hotel sits on the shore of Elounda overlooking the bay, is a member of Relais & Chateaux, has a Six Senses spa, and offers main hotel sea view rooms and suites, bungalows with private pool, Minoan Royalty villas with private pool and a four-bedroom beachfront villa, the Minoan Palace, with private pool and direct beach access.",
+        "source": "https://www.eloundamare.com/en/",
+        "source_type": "official_venue",
+        "checked": "2026-11-10",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_304",
+        "claim": "Porto Elounda Golf & Spa Resort sits on the shore of Mirabello Bay, has a golf offering and Six Senses spa, added 74 new suites in 2025 with works on the main veranda, lobby and reception planned for 2026, and says it has the largest seafront pool on Crete. Its Elies restaurant sits beneath an ancient olive grove by the beach.",
+        "source": "https://portoelounda.com/en/",
+        "source_type": "official_venue",
+        "checked": "2026-11-10",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_305",
+        "claim": "Elounda Mare, Porto Elounda and Elounda Peninsula are all part of Elounda Collection Hotels & Resorts and share Blue Flag sandy private beaches and restaurants across the three properties (for example Old Mill and Yacht Club at Elounda Mare, Elies and Cosmos at Porto Elounda).",
+        "source": "https://portoelounda.com/en/ ; https://www.eloundamare.com/en/",
+        "source_type": "official_venue",
+        "checked": "2026-11-10",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_306",
+        "claim": "Minos Palace Resort's own Celebrations & Events page ('Luxury Weddings and Your Honeymoon Destination') says its team plans weddings, vow renewals and other celebrations at its seaside, adults-only resort.",
+        "source": "https://www.minospalace.com/celebrations-and-events/",
+        "source_type": "official_venue",
+        "checked": "2026-11-10",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_307",
+        "claim": "Minos Palace Resort describes itself as adults-only on a near-private peninsula with 360-degree views, a private sandy cove beach, an infinity pool with 180-degree sea views, gardens, and a Waterfall Suite with private pool.",
+        "source": "https://www.minospalace.com/celebrations-and-events/",
+        "source_type": "official_venue",
+        "checked": "2026-11-10",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_308",
+        "claim": "Minos Palace Resort is in Lasithi, eastern Crete, and states a 50-minute drive from Heraklion Airport (HER), 60 minutes from Heraklion Port and 180 minutes from Chania Airport (CHQ). It describes eastern Crete weather as pleasant from April to November, with early autumn around 20 to 27 C.",
+        "source": "https://www.minospalace.com/celebrations-and-events/",
+        "source_type": "official_venue",
+        "checked": "2026-11-10",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_309",
+        "claim": "Istron Bay Hotel (Agios Nikolaos) has a page titled 'Wedding' on its own site, but its body text is template copy describing Skiathos and 'Hotel Punta', with no statement about weddings at Istron Bay. It does not meet the inclusion rule on this read.",
+        "source": "https://www.istronbay.gr/wedding/",
+        "source_type": "official_venue",
+        "checked": "2026-11-10",
+        "is_price": false,
+        "conflicts": "Page title says Wedding but copy is a template about another hotel on Skiathos. Directories claim Istron Bay hosts weddings; those are not usable as sources."
+      }
+    ],
+    "insider_details": [
+      {
+        "detail": "Porto Elounda, Elounda Mare and Elounda Peninsula share one weddings page and one events contact, and their guests share beaches and restaurants across the three. A couple can hold the ceremony at one and house family at another, but should ask the single events team which venue suits each part of the day.",
+        "fact_ids": [
+          "fact_302",
+          "fact_305"
+        ]
+      },
+      {
+        "detail": "Minos Palace Resort is adults-only. For families bringing children, confirm in writing whether under-age wedding guests can attend or stay before shortlisting it.",
+        "fact_ids": [
+          "fact_306",
+          "fact_307"
+        ]
+      },
+      {
+        "detail": "Minos Palace publishes 50 minutes from Heraklion Airport and three hours from Chania Airport, the same pattern batch A found for Minos Beach. East Crete guests should fly into Heraklion.",
+        "fact_ids": [
+          "fact_308"
+        ]
+      },
+      {
+        "detail": "Porto Elounda has been mid-renovation (74 new suites in 2025, veranda, lobby and reception works planned for 2026). Ask for current photos of the spaces you will use and a written completion date before signing.",
+        "fact_ids": [
+          "fact_304"
+        ]
+      }
+    ],
+    "quotes": [],
+    "real_weddings": [],
+    "verify_items": [
+      "[[VERIFY: Porto Elounda and Elounda Mare: ceremony locations, guest capacities and venue names sit in the shared 'see details for all our venues' popup, which was not readable; only the shared weddings page was read]]",
+      "[[VERIFY: Porto Elounda and Elounda Mare: guest room counts not stated on the pages read]]",
+      "[[VERIFY: Minos Palace Resort: ceremony locations, capacities and room count not stated on its celebrations page]]",
+      "[[VERIFY: Istron Bay Hotel: weddings page carries template text about another hotel; excluded unless the venue confirms in writing or the page is fixed]]",
+      "[[VERIFY: Orchestrator: Porto Elounda, Elounda Mare and Elounda Peninsula share one weddings page and events team; decide whether all three count as separate entries in the 15 or are grouped]]"
+    ],
+    "needs_signoff": [
+      "No prices or fees recorded in batch D (prices excluded by instruction). Any price printed needs Nic's sign-off."
+    ],
+    "must_include_coverage": [
+      {
+        "item": "15 venues grouped by area, each verified on its own official site (batch D: east Crete replacements for Daios Cove and Cayo)",
+        "covered_by": [
+          "fact_300",
+          "fact_301",
+          "fact_302",
+          "fact_303",
+          "fact_304",
+          "fact_305",
+          "fact_306",
+          "fact_307",
+          "fact_308",
+          "[[VERIFY: Orchestrator: Porto Elounda, Elounda Mare and Elounda Peninsula share one weddings page and events team; decide whether all three count as separate entries in the 15 or are grouped]]"
+        ]
+      },
+      {
+        "item": "Getting there: Heraklion and Chania airports and transfers",
+        "covered_by": [
+          "fact_308"
+        ]
+      },
+      {
+        "item": "Choosing an area (east vs west Crete)",
+        "covered_by": [
+          "fact_308"
+        ]
+      },
+      {
+        "item": "Crete wedding venues at a glance comparison table",
+        "covered_by": [
+          "fact_300",
+          "fact_301",
+          "fact_303",
+          "fact_304",
+          "fact_306",
+          "fact_307",
+          "[[VERIFY: Porto Elounda and Elounda Mare: ceremony locations, guest capacities and venue names sit in the shared 'see details for all our venues' popup, which was not readable; only the shared weddings page was read]]",
+          "[[VERIFY: Minos Palace Resort: ceremony locations, capacities and room count not stated on its celebrations page]]"
+        ]
+      }
+    ]
+  }
+}
