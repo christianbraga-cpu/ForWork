@@ -8,3 +8,4 @@
 23:27 03 top-up D done: 10 facts; 3 qualify (Porto Elounda, Elounda Mare, Minos Palace); Istron Bay page is placeholder text. Elounda Collection hotels (Peninsula, Porto Elounda, Mare) counted as separate venues with a shared events team. Total 13; E running.
 23:32 03 top-up E done: 8 facts; 3 qualify (Avra Imperial, Minoa Palace, Euphoria). 16 qualify; Minoa Palace held as reserve (weddings page last updated 2019). Final 15. Packs merged.
 23:37 05 draft done: 4,972 words, 15 venues, scan clean.
+23:38 07 readers: funding_parent, search_visitor, planner_couple done (no must-fix).
