@@ -9,3 +9,4 @@
 - 00:29 07 readers: uhnw, planner_couple done (no must-fix). 5/5 in; waiting on editor.
 - 00:31 06 editor pass_with_edits (4.0): 17 of 19 edits applied to 05-draft-r2.md; kept 2 live listicle links (found ranking by SEO step; added to link map at finish).
 - 00:33 07b panel: revise (enquire 2.0, early-funnel topic), 2 must-fix + 5 should-fix; one final pass.
+- 00:34 08 final done: ~2,077 words, scan clean.
