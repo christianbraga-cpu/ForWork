@@ -17,3 +17,4 @@
 23:46 10 distribution done (utm_source=blog).
 23:46 09 CRO done: 4 copy changes.
 23:47 8b (6 edits) and CRO (4 changes) applied to 08-final.md.
+- 23:51 11-13 package, booking checklist, run report, backlinks, link map, calendar row 39, docx.
