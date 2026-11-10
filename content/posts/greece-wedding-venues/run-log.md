@@ -16,3 +16,4 @@
 23:57 07 icp-reader planner_couple complete; no must-fix (Advisor line repeats; FAQ mixes Sani 30 event space with Ikos 30 rooms)
 23:57 07 icp-reader uhnw, search_visitor complete; no must-fix (packages wording, ferry/bus tips, Advisor line x7, region jump list); waiting on editor
 23:59 06 editor pass_with_edits 4.14; 19 edits applied -> 05-draft-r2.md (credit line, unsourced generalisations, CNI overstated, best-month vs wildfire, Sani 30, FAQ heading); panel chair launched
+00:01 07b icp-panel-chair revise; enquire 2.6; must_fix: Advisor line x7 -> twice, trim Not published lines; should_fix: accessibility questions, jump list, framing; final pass launched
