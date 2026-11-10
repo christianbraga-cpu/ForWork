@@ -1,0 +1,223 @@
+{
+  "agent": "editor",
+  "task_id": "crete-wedding-venues",
+  "stage": "06",
+  "status": "complete",
+  "round": 4,
+  "inputs_used": [
+    "CLAUDE.md",
+    "content/posts/crete-wedding-venues/08-final.md",
+    "content/posts/crete-wedding-venues/03-source-pack.json",
+    "content/posts/crete-wedding-venues/07-panel.json",
+    "content/posts/crete-wedding-venues/06-edit.json",
+    "content/posts/crete-wedding-venues/04-images.json",
+    "content-system/brand/brand-facts.md",
+    "content/posts/greece-wedding-venues/06-edit-final.json"
+  ],
+  "self_qa": {
+    "checks": [
+      {
+        "check": "scan_copy.py on 08-final.md",
+        "pass": true,
+        "note": "banned [], dashes 0, overlaps [], flagged 'exclusive' x22 (all mean sole use of a space or venue)."
+      },
+      {
+        "check": "15 venues, table vs entries",
+        "pass": true,
+        "note": "15 entries and 15 table rows; every capacity, room count, area and ceremony cell matches its entry and fact marker."
+      },
+      {
+        "check": "Fact markers traceable",
+        "pass": true,
+        "note": "All markers exist in 03-source-pack.json; 2 small overstatements ('private chapels', 'plenty of rooms') edited."
+      },
+      {
+        "check": "Legal, travel, timing",
+        "pass": true,
+        "note": "Registration matches fact_16; CNI line tightened to fact_208; Embassy fact_207; recognition fact_209; timing table and FAQ months match fact_102/308; EES and wildfires fact_205/206."
+      },
+      {
+        "check": "Research talk, credits, prices, vendors, Advisor, Privileges",
+        "pass": true,
+        "note": "Two source-credit lines and one method phrase edited; no money amounts; no non-venue vendor names; Advisor claims within brand-facts, no legal/religious paperwork or transfer-booking claims; no Wedded Privileges; no 'last dance'; 0 'often'; panel must-fix (repeated Advisor closers) already applied."
+      },
+      {
+        "check": "Key takeaways",
+        "pass": true,
+        "note": "Exactly 4 bullets, each one sentence."
+      },
+      {
+        "check": "Edits apply cleanly",
+        "pass": true,
+        "note": "Each old occurs exactly once in 08-final.md and each new exactly once after applying all edits (scripted check)."
+      },
+      {
+        "check": "Decision consistent",
+        "pass": true,
+        "note": "Blocking edits only, all small -> pass_with_edits."
+      }
+    ],
+    "confidence": 0.85
+  },
+  "open_questions": [],
+  "assumptions": [
+    "FAST MODE blocking-issue check only; rubric carried, not rescored in depth.",
+    "Title set by the person; not reviewed.",
+    "Minos Beach Art Hotel location (Agios Nikolaos) taken from the approved image slot in 04-images.json and the source-pack insider detail grouping it with Elounda and Agios Nikolaos."
+  ],
+  "verify_items": [],
+  "tools_used": [
+    "Bash (python3 -I, grep)",
+    "content-system/scripts/scan_copy.py",
+    "content-system/scripts/validate.py"
+  ],
+  "next_agent": [
+    "luxury-writer"
+  ],
+  "payload": {
+    "draft_file": "content/posts/crete-wedding-venues/08-final.md",
+    "rubric": {
+      "voice": 4,
+      "expertise": 4,
+      "accuracy": 4,
+      "seo_fit": 4,
+      "commercial_link": 4,
+      "structure": 4,
+      "brief_fit": 4
+    },
+    "average": 4.0,
+    "blocking_issues": [],
+    "decision": "pass_with_edits",
+    "edits": [
+      {
+        "location": "At a glance, line under the intro to the table",
+        "issue": "Research talk: 'on its own official pages' describes our method. State the definition plainly.",
+        "fix": "Replace exactly:\n\"Not published\" means the venue does not state the detail on its own official pages.\nwith:\n\"Not published\" means the venue does not state the detail.",
+        "old": "\"Not published\" means the venue does not state the detail on its own official pages.",
+        "new": "\"Not published\" means the venue does not state the detail."
+      },
+      {
+        "location": "How to compare, Ceremony on site",
+        "issue": "Claim beyond the pack: 'private' is sourced for Elounda Beach, Nana Princess, Out of the Blue and Avra Imperial (fact_02/100/109/402) but not for St. Nicolas Bay (fact_05 'beachside chapel') or Amirandes (fact_104 'its chapel').",
+        "fix": "Replace exactly:\nCrete gives you real variety here: private chapels at Elounda Beach,\nwith:\nCrete gives you real variety here: chapels at Elounda Beach,",
+        "old": "Crete gives you real variety here: private chapels at Elounda Beach,",
+        "new": "Crete gives you real variety here: chapels at Elounda Beach,"
+      },
+      {
+        "location": "Choosing an area, The east (Lasithi)",
+        "issue": "Claim beyond the pack: 'plenty of rooms' (no east Crete venue publishes a room count; table and entries say room count not published). Replace with what the pack supports (fact_01, fact_07, fact_09, fact_303).",
+        "fix": "Replace exactly:\nThis is resort country, with private chapels, bay views and plenty of rooms.\nwith:\nThis is resort country, with chapels, bay views and villas with private pools.",
+        "old": "This is resort country, with private chapels, bay views and plenty of rooms.",
+        "new": "This is resort country, with chapels, bay views and villas with private pools."
+      },
+      {
+        "location": "Abaton entry, closing line",
+        "issue": "Per-line source credit / research talk ('These terms come from the 2025-2026 brochure'). Keep the practical advice, drop the source talk.",
+        "fix": "Replace exactly:\nThese terms come from the 2025-2026 brochure, so have them confirmed for a 2027 date.\nwith:\nAbaton sets these terms for 2025 and 2026, so have them confirmed for a 2027 date.",
+        "old": "These terms come from the 2025-2026 brochure, so have them confirmed for a 2027 date.",
+        "new": "Abaton sets these terms for 2025 and 2026, so have them confirmed for a 2027 date."
+      },
+      {
+        "location": "Getting to Crete, Chania airport",
+        "issue": "Per-line source credit ('Its official website lists'). State the facts (fact_211) and keep the external link as a pointer.",
+        "fix": "Replace exactly:\nChania Airport, Ioannis Daskalogiannis (CHQ), serves the west. Its [official website](https://www.chq-airport.gr/en/flights--more/airport-information) lists a direct public bus and taxis, with 24-hour parking on site.\nwith:\nChania Airport, Ioannis Daskalogiannis (CHQ), serves the west, with a direct public bus, taxis and 24-hour parking on site. See the [airport's travel information](https://www.chq-airport.gr/en/flights--more/airport-information).",
+        "old": "Chania Airport, Ioannis Daskalogiannis (CHQ), serves the west. Its [official website](https://www.chq-airport.gr/en/flights--more/airport-information) lists a direct public bus and taxis, with 24-hour parking on site.",
+        "new": "Chania Airport, Ioannis Daskalogiannis (CHQ), serves the west, with a direct public bus, taxis and 24-hour parking on site. See the [airport's travel information](https://www.chq-airport.gr/en/flights--more/airport-information)."
+      },
+      {
+        "location": "Getting married legally, Proving you are free to marry",
+        "issue": "CNI line drifts from fact_208: it omits who to ask (the destination's embassy or consulate), turns 'whether you can get it in Australia' into 'where to get it', and drops authentication.",
+        "fix": "Replace exactly:\nso ask three things: whether you need one, where to get it, and whether it needs an apostille.\nwith:\nso ask the Greek embassy or consulate three things: whether you need one, whether you can get it in Australia, and whether it needs an authentication or apostille.",
+        "old": "so ask three things: whether you need one, where to get it, and whether it needs an apostille.",
+        "new": "so ask the Greek embassy or consulate three things: whether you need one, whether you can get it in Australia, and whether it needs an authentication or apostille."
+      }
+    ],
+    "fact_check_log": [
+      {
+        "claim": "Table rows vs venue entries, all 15 venues (location, ceremony, capacity, rooms, exclusive use)",
+        "fact_id": "fact_01-fact_407",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Capacities: Elounda Beach 430/500, Nana Princess 120, Abaton 300 and per-space figures, Amirandes 300/80/20-160, Avra Imperial 680, Euphoria 10/20/30, Sea View 120",
+        "fact_id": "fact_03, fact_101, fact_112, fact_113, fact_105, fact_403, fact_401, fact_201",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Room counts: Abaton 152 (71 private pools), Amirandes 204 breakdown, Euphoria 344 (70-key Signature), Porto Elounda 74 new suites 2025, Sea View none",
+        "fact_id": "fact_113, fact_106, fact_407, fact_304, fact_203",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Distances: Minos Beach and Minos Palace about 50 min from HER and about 3 h from CHQ; Amirandes 18 km from HER; St. Nicolas Bay about a mile from Agios Nikolaos",
+        "fact_id": "fact_11, fact_308, fact_106, fact_19",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Ceremony types per venue (civil/Orthodox/symbolic, chapels, VIP Beach up to 80, Plateau Safran, Saint Paul chapel, informal at Caramel and Euphoria)",
+        "fact_id": "fact_02, fact_15, fact_100, fact_104, fact_105, fact_109, fact_111, fact_400, fact_402",
+        "status": "confirmed"
+      },
+      {
+        "claim": "'Private chapels' at St. Nicolas Bay and Amirandes",
+        "fact_id": "fact_05, fact_104",
+        "status": "unsupported"
+      },
+      {
+        "claim": "East Crete has 'plenty of rooms'",
+        "fact_id": "fact_210",
+        "status": "unsupported"
+      },
+      {
+        "claim": "Registration: documents emailed 4 weeks and couriered 3 weeks ahead; registered at Aghios Nikolaos Registry Office within 40 days; round trip to Registry Office",
+        "fact_id": "fact_16",
+        "status": "confirmed"
+      },
+      {
+        "claim": "CNI: DFAT can issue; some authorities accept only local CNIs; Embassy Athens witnesses and issues CNIs, by appointment, 2 working days",
+        "fact_id": "fact_208, fact_207",
+        "status": "confirmed"
+      },
+      {
+        "claim": "CNI 'ask three things ... where to get it ... apostille' (who to ask and authentication missing)",
+        "fact_id": "fact_208",
+        "status": "unsupported"
+      },
+      {
+        "claim": "Overseas marriage not registrable in Australia, usually recognised; name change check",
+        "fact_id": "fact_209",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Timing table and FAQ: 4-6pm April/May/October, 6-8pm June and September, 6.30-8pm July/August; April to November pleasant; 35C",
+        "fact_id": "fact_102, fact_308",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Wildfires June to September, heatwaves, seismic zone near Crete; EES; peak-season congestion, licensed taxis",
+        "fact_id": "fact_205, fact_206",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Chania Airport bus, taxi, 24-hour parking",
+        "fact_id": "fact_211",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Advisor lines: one person start to finish, time zone, AUD, fee agreed in writing, inclusions confirmed in writing, asks venues for house rules in writing",
+        "status": "confirmed",
+        "note": "Within brand-facts.md; no legal, religious paperwork or transfer-booking claims; matches Greece precedent"
+      }
+    ],
+    "compliance": {
+      "pass": true,
+      "issues": []
+    },
+    "originality": {
+      "pass": true,
+      "matches": []
+    },
+    "banned_phrases_found": [],
+    "needs_signoff": []
+  }
+}

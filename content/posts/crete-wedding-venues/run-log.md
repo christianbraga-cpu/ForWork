@@ -16,3 +16,4 @@
 23:45 08 final done: ~5,224 words, scan clean.
 23:46 10 distribution done (utm_source=blog).
 23:46 09 CRO done: 4 copy changes.
+23:47 8b (6 edits) and CRO (4 changes) applied to 08-final.md.

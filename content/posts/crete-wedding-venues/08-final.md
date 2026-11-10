@@ -18,8 +18,6 @@ This guide sets out 15 venues, east to west, each with the same details in the s
 - Exclusive use can mean a chosen space rather than the whole hotel, and curfews and minimum nights are rarely published, so get them in writing before you pay a deposit.
 - A legal wedding needs documents prepared weeks ahead, and a summer date means planning around heat and wildfire season.
 
-If you would like a second pair of eyes on the shortlist from the start, [book a Wedded Concierge consultation](https://weddedwonderland.com/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=crete-wedding-venues&utm_content=primary).
-
 **Jump to an area:**
 
 - [Elounda and Agios Nikolaos](#elounda-and-agios-nikolaos)
@@ -31,7 +29,7 @@ If you would like a second pair of eyes on the shortlist from the start, [book a
 
 The island divides neatly for planning. The east is resort country on Mirabello Bay. The central north coast puts large resorts close to Heraklion. Rethymno has a medieval town and its Fortezza. Chania, in the west, has its Venetian harbour and a more personal scale of venue. <!-- fact_210 -->
 
-The table runs east to west. It is not a ranking. "Not published" means the venue does not state the detail on its own official pages.
+The table runs east to west. It is not a ranking. "Not published" means the venue does not state the detail.
 
 | Venue | Area | Ceremony options | Largest published capacity | Rooms on site | Exclusive use |
 |---|---|---|---|---|---|
@@ -51,9 +49,10 @@ The table runs east to west. It is not a ranking. "Not published" means the venu
 | Euphoria Resort | Kolymvari <!-- fact_407 --> | Informal wedding or vow renewal <!-- fact_400 --> | Packages for up to 30 <!-- fact_401 --> | 344 rooms and suites <!-- fact_407 --> | Not published |
 | Sea View by En Kipo | Chania <!-- fact_200 --> | Garden ceremony and reception <!-- fact_200 --> | 120 <!-- fact_201 --> | No <!-- fact_203 --> | Yes, the whole venue <!-- fact_202 --> |
 
-A table narrows the field, but only the venue can tell you what is free on your date. To check availability, ceremony options and house rules for the venues you like, [talk to a Wedded Advisor about your shortlist](https://weddedwonderland.com/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=crete-wedding-venues&utm_content=secondary). Your advisor works in your time zone and quotes in AUD.
+A table narrows the field, but only the venue can tell you what is free on your date.
 
 <!-- CTA: primary -->
+When you are ready to shortlist venues on Crete, [speak with a Wedded Advisor](https://weddedwonderland.com/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=crete-wedding-venues&utm_content=primary). Your advisor works in your time zone and quotes in AUD.
 
 ## How to compare Crete venues like for like
 
@@ -69,7 +68,7 @@ Exclusive use needs a careful read. At Nana Princess it means the chosen room or
 
 ### Ceremony on site
 
-Crete gives you real variety here: private chapels at Elounda Beach, St. Nicolas Bay, Nana Princess, Amirandes, Out of the Blue and Avra Imperial, beach ceremonies at Nana Princess and Amirandes, and garden or lawn ceremonies at Out of the Blue and Sea View. <!-- fact_02 --> <!-- fact_05 --> <!-- fact_100 --> <!-- fact_104 --> <!-- fact_109 --> <!-- fact_402 -->
+Crete gives you real variety here: chapels at Elounda Beach, St. Nicolas Bay, Nana Princess, Amirandes, Out of the Blue and Avra Imperial, beach ceremonies at Nana Princess and Amirandes, and garden or lawn ceremonies at Out of the Blue and Sea View. <!-- fact_02 --> <!-- fact_05 --> <!-- fact_100 --> <!-- fact_104 --> <!-- fact_109 --> <!-- fact_402 -->
 
 What matters is which ceremony each space hosts. A chapel in the grounds does not by itself mean a Greek Orthodox wedding, and a beach does not by itself mean a legal one. Where a venue states its ceremony types, each entry below gives them in the venue's terms.
 
@@ -85,7 +84,7 @@ East Crete venues state their drives from Heraklion Airport. Minos Beach Art Hot
 
 For the west, Chania Airport is the natural arrival point. More on both airports below.
 
-Then settle the house rules, because few venues publish them. Your Wedded Advisor asks each venue on your shortlist and confirms these in writing for your date: the curfew, minimum nights, music rules, set-up and pack-down times, and the rain plan for every outdoor space.
+Then settle the house rules, because few venues publish them. [Your Wedded Advisor](https://weddedwonderland.com/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=crete-wedding-venues&utm_content=secondary) asks each venue on your shortlist and confirms these in writing for your date: the curfew, minimum nights, music rules, set-up and pack-down times, and the rain plan for every outdoor space.
 
 If an older guest or anyone with limited mobility is coming, ask each venue how many steps there are between guest rooms, the ceremony and the reception, and whether there is level access.
 
@@ -93,7 +92,7 @@ If an older guest or anyone with limited mobility is coming, ask each venue how 
 
 Crete is Greece's largest island, and it is usually spoken of in three parts: east, centre and west. <!-- fact_210 --> Each suits a different kind of wedding.
 
-**The east (Lasithi).** Agios Nikolaos sits on Mirabello Bay, and Elounda is the resort coast with views of the lagoon and Spinalonga. <!-- fact_210 --> This is resort country, with private chapels, bay views and plenty of rooms. Guests fly into Heraklion: Minos Beach and Minos Palace both state about 50 minutes by car. <!-- fact_11 --> <!-- fact_308 -->
+**The east (Lasithi).** Agios Nikolaos sits on Mirabello Bay, and Elounda is the resort coast with views of the lagoon and Spinalonga. <!-- fact_210 --> This is resort country, with chapels, bay views and villas with private pools. Guests fly into Heraklion: Minos Beach and Minos Palace both state about 50 minutes by car. <!-- fact_11 --> <!-- fact_308 -->
 
 **The centre (Heraklion).** Heraklion is the largest urban centre, the gateway to Knossos, with resorts along the northern coast. <!-- fact_210 --> Venues here are the quickest from the airport. Amirandes sits 18 km from it, a short drive from the Palace of Knossos. <!-- fact_106 -->
 
@@ -230,7 +229,7 @@ Three ceremony types on one property suit families who want a religious rite wit
 - **Standout:** The range. Nine named spaces means the welcome drinks, ceremony and dinner can each happen somewhere different without leaving the resort. <!-- fact_112 -->
 - **Not published:** ceremony types, exclusive use, curfew.
 
-These terms come from the 2025-2026 brochure, so have them confirmed for a 2027 date. <!-- fact_112 -->
+Abaton sets these terms for 2025 and 2026, so have them confirmed for a 2027 date. <!-- fact_112 -->
 
 ### 10. Amirandes, Grecotel, Heraklion coast
 
@@ -334,7 +333,7 @@ For the east and central venues, Heraklion is the arrival point. The venues stat
 
 ### Chania airport
 
-Chania Airport, Ioannis Daskalogiannis (CHQ), serves the west. Its [official website](https://www.chq-airport.gr/en/flights--more/airport-information) lists a direct public bus and taxis, with 24-hour parking on site. <!-- fact_211 --> Sea View by En Kipo lists Chania Airport, Heraklion Airport and Souda Port as ways to reach it. <!-- fact_203 -->
+Chania Airport, Ioannis Daskalogiannis (CHQ), serves the west, with a direct public bus, taxis and 24-hour parking on site. See the [airport's travel information](https://www.chq-airport.gr/en/flights--more/airport-information). <!-- fact_211 --> Sea View by En Kipo lists Chania Airport, Heraklion Airport and Souda Port as ways to reach it. <!-- fact_203 -->
 
 Booking guests into the wrong airport adds hours to their trip. Minos Beach and Minos Palace both put Chania Airport about three hours away. <!-- fact_11 --> <!-- fact_308 -->
 
@@ -368,7 +367,7 @@ Crete venues offer three kinds of ceremony: civil, Greek Orthodox and symbolic. 
 
 **Civil ceremony.** Expect paperwork on both sides of the date. Elounda Peninsula asks for documents by email at least four weeks before the wedding and by courier at least three weeks before. It states that the marriage must then be registered at the Registry Office in Aghios Nikolaos within 40 days, and its civil package includes a round trip to the Registry Office. <!-- fact_16 --> Ask your venue whether you need to be there in person, and keep a weekday free in the itinerary until you know.
 
-**Proving you are free to marry.** Some countries ask for a Certificate of No Impediment to Marriage (CNI) and certificates from a registry of births, deaths and marriages. The Department of Foreign Affairs and Trade (DFAT) can issue a CNI in Australia. Some local authorities only accept CNIs issued in their own country, so ask three things: whether you need one, where to get it, and whether it needs an apostille. <!-- fact_208 --> As at November 2026, the Australian Embassy in Athens witnesses CNI applications, issues CNIs and witnesses notices of intended marriage, by appointment, with CNIs ready for collection within two working days. <!-- fact_207 --> See the [Embassy's notarial services](https://greece.embassy.gov.au/athn/notarial.html).
+**Proving you are free to marry.** Some countries ask for a Certificate of No Impediment to Marriage (CNI) and certificates from a registry of births, deaths and marriages. The Department of Foreign Affairs and Trade (DFAT) can issue a CNI in Australia. Some local authorities only accept CNIs issued in their own country, so ask the Greek embassy or consulate three things: whether you need one, whether you can get it in Australia, and whether it needs an authentication or apostille. <!-- fact_208 --> As at November 2026, the Australian Embassy in Athens witnesses CNI applications, issues CNIs and witnesses notices of intended marriage, by appointment, with CNIs ready for collection within two working days. <!-- fact_207 --> See the [Embassy's notarial services](https://greece.embassy.gov.au/athn/notarial.html).
 
 **Back home.** An overseas marriage cannot be registered in Australia, but in most cases it is legally recognised if it was valid where it took place and would have been valid under Australian law. A foreign marriage certificate may not be accepted as proof of a name change, so check with your state registry. <!-- fact_209 --> Read [Smartraveller's guide to getting married overseas](https://www.smartraveller.gov.au/planning-trip/advice-your-planned-activities/getting-married-overseas).
 
@@ -406,6 +405,6 @@ Yes. Nana Princess holds civil weddings on its private beach, Amirandes holds ce
 
 The right Crete venue is the one that fits your guest list, your ceremony and the flights your family can face. A list gets you to five names. The next step is finding out which of them are free on your date, on your terms.
 
-Your Wedded Advisor is one person, start to finish, who works in your time zone and quotes in AUD. The fee is agreed in writing before any work begins, and every inclusion is confirmed in writing before you commit. When you are ready, [shortlist your Crete venues with a Wedded Advisor](https://weddedwonderland.com/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=crete-wedding-venues&utm_content=closing).
+Your Wedded Advisor is one person, start to finish, who works in your time zone and quotes in AUD for Australian couples. Wedded Concierge plans venue, travel, vendors and payments, anywhere in the world. The fee is agreed in writing before any work begins, and every inclusion is confirmed in writing before you commit. When you are ready, [shortlist your Crete venues with a Wedded Advisor](https://weddedwonderland.com/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=crete-wedding-venues&utm_content=closing).
 
 For more of Greece, browse [our curated Greece wedding collection](https://weddedwonderland.com/destinations/europe/greece), or find ideas for the days around the wedding in [the Wedded Wonderland magazine](https://weddedwonderland.com/magazine?utm_source=blog&utm_medium=content&utm_campaign=crete-wedding-venues&utm_content=magnet).
