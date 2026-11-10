@@ -19,3 +19,4 @@
 00:01 07b icp-panel-chair revise; enquire 2.6; must_fix: Advisor line x7 -> twice, trim Not published lines; should_fix: accessibility questions, jump list, framing; final pass launched
 00:02 08 luxury-writer complete ~5,080 words; 0 VERIFY; scan clean; 8b+CRO+distribution launched
 00:04 09 cro-specialist complete; /wonderland-concierge primary ('Check your Greek venue shortlist'); /magazine lead magnet; 2 UTM copy changes; applying after 8b
+00:04 10 distribution complete 3 pins, 8-slide carousel, newsletter (blog UTMs as in prior runs)
