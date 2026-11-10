@@ -1,0 +1,211 @@
+{
+  "agent": "visual-curator",
+  "task_id": "why-do-we-have-bridesmaids",
+  "stage": "04",
+  "status": "needs_input",
+  "round": 1,
+  "inputs_used": [
+    "CLAUDE.md",
+    "content/posts/why-do-we-have-bridesmaids/00-input.json",
+    "content/posts/why-do-we-have-bridesmaids/01-brief.json (must_include section order)",
+    "content-system/images/library-index.csv (header only, no rows)",
+    "content-system/schemas/04-images.schema.json",
+    "content/posts/why-do-brides-wear-veils/04-images.json (format)"
+  ],
+  "self_qa": {
+    "checks": [
+      {
+        "check": "Zero reference-only or competitor images in slots",
+        "pass": true
+      },
+      {
+        "check": "Every approved image has verified location, licence, alt, caption, fit_reason",
+        "pass": true,
+        "note": "No approved images; all 6 slots needed."
+      },
+      {
+        "check": "No AI image of people, places, royal or museum pieces",
+        "pass": true,
+        "note": "AI offered only as a fallback still life (thank-you gifts or bridesmaid bouquets on linen) for the object-only slot, not generated, pending Nic's approval, captioned 'Illustrative image'."
+      },
+      {
+        "check": "No royal or museum images unless licensed",
+        "pass": true,
+        "note": "None planned; any Royal Collection, royal.uk or V&A image (e.g. Queen Victoria's bridesmaids) needs a written reuse licence."
+      },
+      {
+        "check": "Featured image exists (approved or needed with brief)",
+        "pass": true,
+        "note": "Needed with brief."
+      },
+      {
+        "check": "Placements match final H2 numbering",
+        "pass": false,
+        "note": "02-seo.json outline not available; after_h2 follows must_include order (1 today, 2 early history, 3 Victorian and royal, 4 maid or matron, 5 matching dresses, 6 how many, 7 roles, 8 mixed parties, 9 destination, 10 thanking)."
+      }
+    ],
+    "confidence": 0.6
+  },
+  "open_questions": [
+    {
+      "to": "Nic",
+      "question": "Source licensed photos for 6 slots (client weddings with signed consent from couple and all identifiable attendants, partner photographers, or a styled shoot we own)? Library register has no rows.",
+      "blocking": true
+    },
+    {
+      "to": "Nic",
+      "question": "Approve or decline an AI illustrative still life (thank-you gifts or bridesmaid bouquets on linen; no people, place, brand or royal or museum piece), captioned 'Illustrative image', for the thank-you slot if no licensed photo is found?",
+      "blocking": false
+    },
+    {
+      "to": "seo-researcher",
+      "question": "Confirm H2 numbering once the outline exists and remap after_h2 placements.",
+      "blocking": false
+    }
+  ],
+  "assumptions": [
+    "New article: no old-page images.",
+    "No venue in scope, so no press-kit permission emails drafted.",
+    "Fast mode, library register only: Google Drive, own site, Canva and Google Lens not run.",
+    "All people and place shots must be real, consenting people in licensed photos; never AI.",
+    "No slot for sections 2, 3 and 5 (history): no licensed royal or museum image available; text only unless one is licensed.",
+    "Captions state no meaning or origin for the bridesmaid tradition.",
+    "No designer, label, vendor or price visible in any image (person's standard); attire shown only incidentally (owned by the wear page)."
+  ],
+  "verify_items": [
+    "[[IMAGE NEEDED]] featured: Bride and her wedding party laughing together outdoors in soft golden afternoon light",
+    "[[IMAGE NEEDED]] maid-of-honour-dress: Maid of honour fastening the buttons on the back of a bride's gown in soft window light",
+    "[[IMAGE NEEDED]] getting-ready: Bride and bridesmaids getting ready together in a bright suite, flowers on the table",
+    "[[IMAGE NEEDED]] bridesman-mixed-party: Bride standing with her mixed wedding party, a bridesman beside her bridesmaids",
+    "[[IMAGE NEEDED]] destination-wedding-party: Bride and bridesmaids together on a sunlit terrace overlooking the sea at a destination wedding",
+    "[[IMAGE NEEDED]] thank-you-gift: Wrapped thank-you gifts with handwritten cards and small bouquets resting on natural linen",
+    "[[VERIFY licence]] every sourced photo: credit, scope, model and property releases, consent from couple and identifiable attendants",
+    "[[VERIFY: destination slot place and town before captioning]]",
+    "[[VERIFY: any AI illustrative still life approved by Nic before generation]]"
+  ],
+  "next_agent": [
+    "luxury-writer"
+  ],
+  "payload": {
+    "slots": [
+      {
+        "slot_id": "featured",
+        "placement": "featured",
+        "purpose": "Hero: the wedding party together, framing why couples still ask friends to stand beside them.",
+        "shot_brief": "Licensed photo from a consented destination wedding, wide 3:2 with headroom for a title crop: the bride with her bridesmaids (ideally a mixed party) walking or standing together outdoors, relaxed and laughing, late afternoon golden light, venue softly out of focus. No designer label, no venue signage. Never AI (people).",
+        "status": "needed",
+        "file": "content/posts/why-do-we-have-bridesmaids/images/why-do-we-have-bridesmaids-wedding-party-golden-light-hero.webp",
+        "source": {
+          "type": "library",
+          "origin": "[[IMAGE NEEDED]] library-index.csv has no rows (header only); no external searches in fast mode",
+          "credit": "[[VERIFY licence]]"
+        },
+        "consent": {
+          "couple": "required",
+          "wedding_party": "required (all identifiable attendants)"
+        },
+        "alt": "Bride and her wedding party laughing together outdoors in soft golden afternoon light",
+        "caption": "Photo: [[VERIFY credit]]",
+        "lens_check": "Not run: no candidate image."
+      },
+      {
+        "slot_id": "maid-of-honour-dress",
+        "placement": "after_h2:4",
+        "purpose": "Maid or matron of honour: the lead attendant's hands-on support in the final moments before the ceremony.",
+        "shot_brief": "Licensed photo from a consented wedding, portrait 4:5: the maid or matron of honour fastening the bride's buttons or adjusting her train, soft window light, faces in profile or out of frame. No designer label or salon branding. Never AI (people).",
+        "status": "needed",
+        "file": "content/posts/why-do-we-have-bridesmaids/images/why-do-we-have-bridesmaids-maid-of-honour-fastening-dress.webp",
+        "source": {
+          "type": "library",
+          "origin": "[[IMAGE NEEDED]] library-index.csv has no rows (header only); no external searches in fast mode",
+          "credit": "[[VERIFY licence]]"
+        },
+        "consent": {
+          "couple": "required",
+          "wedding_party": "required (all identifiable attendants)"
+        },
+        "alt": "Maid of honour fastening the buttons on the back of a bride's gown in soft window light",
+        "caption": "Photo: [[VERIFY credit]]",
+        "lens_check": "Not run: no candidate image."
+      },
+      {
+        "slot_id": "getting-ready",
+        "placement": "after_h2:7",
+        "purpose": "Roles before and on the day: the shared morning that many couples remember most.",
+        "shot_brief": "Licensed photo from a consented wedding, 3:2: bridesmaids and the bride getting ready together in a light-filled suite, robes or casual clothes, flowers and a mirror in frame, candid not posed. No visible product brands or venue signage. Never AI (people).",
+        "status": "needed",
+        "file": "content/posts/why-do-we-have-bridesmaids/images/why-do-we-have-bridesmaids-getting-ready-together.webp",
+        "source": {
+          "type": "library",
+          "origin": "[[IMAGE NEEDED]] library-index.csv has no rows (header only); no external searches in fast mode",
+          "credit": "[[VERIFY licence]]"
+        },
+        "consent": {
+          "couple": "required",
+          "wedding_party": "required (all identifiable attendants)"
+        },
+        "alt": "Bride and bridesmaids getting ready together in a bright suite, flowers on the table",
+        "caption": "Photo: [[VERIFY credit]]",
+        "lens_check": "Not run: no candidate image."
+      },
+      {
+        "slot_id": "bridesman-mixed-party",
+        "placement": "after_h2:8",
+        "purpose": "Mixed wedding parties: a bridesman standing with the bride's side, shown as natural, not novelty.",
+        "shot_brief": "Licensed photo from a consented wedding, 3:2: the bride's side of the wedding party including at least one bridesman, standing together at the ceremony or in a relaxed group portrait, outdoor natural light. Attire in frame only incidentally (attire belongs to the wear page). No brand or venue signage. Never AI (people).",
+        "status": "needed",
+        "file": "content/posts/why-do-we-have-bridesmaids/images/why-do-we-have-bridesmaids-bridesman-mixed-wedding-party.webp",
+        "source": {
+          "type": "library",
+          "origin": "[[IMAGE NEEDED]] library-index.csv has no rows (header only); no external searches in fast mode",
+          "credit": "[[VERIFY licence]]"
+        },
+        "consent": {
+          "couple": "required",
+          "wedding_party": "required (all identifiable attendants)"
+        },
+        "alt": "Bride standing with her mixed wedding party, a bridesman beside her bridesmaids",
+        "caption": "Photo: [[VERIFY credit]]",
+        "lens_check": "Not run: no candidate image."
+      },
+      {
+        "slot_id": "destination-wedding-party",
+        "placement": "after_h2:9",
+        "purpose": "Bridesmaids at a destination wedding: friends who travelled to stand beside the couple, in the place itself.",
+        "shot_brief": "Licensed photo from a consented destination wedding (any real, named place, captioned with place and town): bridesmaids with the bride on a terrace, coastline or vineyard, warm evening light, people prominent and setting recognisable. Location must be verified (register, EXIF or source). No venue signage unless the venue has licensed the image. Never AI (people or place).",
+        "status": "needed",
+        "file": "content/posts/why-do-we-have-bridesmaids/images/why-do-we-have-bridesmaids-destination-wedding-party-terrace.webp",
+        "source": {
+          "type": "library",
+          "origin": "[[IMAGE NEEDED]] library-index.csv has no rows (header only); no external searches in fast mode",
+          "credit": "[[VERIFY licence]]"
+        },
+        "consent": {
+          "couple": "required",
+          "wedding_party": "required (all identifiable attendants)"
+        },
+        "alt": "Bride and bridesmaids together on a sunlit terrace overlooking the sea at a destination wedding",
+        "caption": "Photo: [[VERIFY credit]]",
+        "lens_check": "Not run: no candidate image."
+      },
+      {
+        "slot_id": "thank-you-gift",
+        "placement": "after_h2:10",
+        "purpose": "Thanking your bridesmaids: a small, personal gesture of thanks.",
+        "shot_brief": "Preferred: licensed still life from a consented wedding or own styled shoot: wrapped thank-you gifts with handwritten cards and small bridesmaid bouquets on natural linen, soft window light, no people, no place, no visible brand or vendor names, no prices. Fallback only if Nic approves: AI illustrative still life of the same (gifts or bouquets on linen, no people or place), captioned 'Illustrative image'.",
+        "status": "needed",
+        "file": "content/posts/why-do-we-have-bridesmaids/images/why-do-we-have-bridesmaids-thank-you-gifts-linen.webp",
+        "source": {
+          "type": "library",
+          "origin": "[[IMAGE NEEDED]] library-index.csv has no rows (header only); no external searches in fast mode; ai_illustrative still life fallback pending Nic approval",
+          "credit": "[[VERIFY licence]]"
+        },
+        "alt": "Wrapped thank-you gifts with handwritten cards and small bouquets resting on natural linen",
+        "caption": "Photo: [[VERIFY credit]] (or 'Illustrative image' if the approved AI fallback is used)",
+        "lens_check": "Not run: no candidate image."
+      }
+    ],
+    "reference_only": [],
+    "permission_requests": []
+  }
+}
