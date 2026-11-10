@@ -1,0 +1,594 @@
+{
+  "agent": "cms-publisher",
+  "task_id": "greece-wedding-venues",
+  "stage": "11",
+  "status": "complete",
+  "round": 1,
+  "inputs_used": [
+    "CLAUDE.md",
+    "content-system/cms/field-map.md",
+    "content-system/schemas/11-publish-package.schema.json",
+    "content-system/schemas/envelope.schema.json",
+    "content/posts/greece-wedding-venues/00-input.json",
+    "content/posts/greece-wedding-venues/01-brief.json",
+    "content/posts/greece-wedding-venues/02-seo.json",
+    "content/posts/greece-wedding-venues/03-source-pack.json",
+    "content/posts/greece-wedding-venues/04-images.json",
+    "content/posts/greece-wedding-venues/06-edit-final.json",
+    "content/posts/greece-wedding-venues/08-final.md",
+    "content/posts/greece-wedding-venues/09-cro.json",
+    "content/posts/lake-como-villa-wedding-exclusive-use/11-publish-package.json (format model)",
+    "content/posts/lake-como-villa-wedding-exclusive-use/11-body.md (format model)",
+    "content/posts/lake-como-villa-wedding-exclusive-use/booking-checklist.md (format model)"
+  ],
+  "self_qa": {
+    "checks": [
+      {
+        "check": "08-final.md already carries all 06-edit-final.json edits (6) and 09-cro.json copy_changes (2)",
+        "pass": true
+      },
+      {
+        "check": "primary_category equals categories[0] (Destination Weddings)",
+        "pass": true
+      },
+      {
+        "check": "All <!-- fact_xx --> markers removed; image-slot comments kept; no [[VERIFY]] markers in copy",
+        "pass": true,
+        "note": "28 image-slot comments in 11-body.md"
+      },
+      {
+        "check": "Primary CTA, secondary CTA and lead magnet placed per 09-cro.json with utm_medium=content; inline link retagged utm_content=inline (as the Lake Como model)",
+        "pass": true
+      },
+      {
+        "check": "key_takeaways exactly the 4 in the body; FAQ (6) extracted; FAQPage carries all; ItemList carries all 20 venues",
+        "pass": true
+      },
+      {
+        "check": "Status draft; nothing uploaded, published or scheduled",
+        "pass": true
+      },
+      {
+        "check": "Image alt and caption filled",
+        "pass": false,
+        "note": "No approved images and no alt/caption in 04-images.json; left empty rather than invented."
+      }
+    ],
+    "confidence": 0.85
+  },
+  "open_questions": [
+    {
+      "to": "orchestrator",
+      "question": "No author named in any input; package uses \"Wedded Wonderland\" (organisation). Confirm the byline.",
+      "blocking": false
+    },
+    {
+      "to": "orchestrator",
+      "question": "CMS upload not attempted: no browser in this session and content-system/cms/field-map.md is not CONFIRMED. Run /wedded-cms-discovery locally, then /wedded-blog resume=greece-wedding-venues.",
+      "blocking": true
+    },
+    {
+      "to": "orchestrator",
+      "question": "04-images.json has a venue-<nn> pattern, not 20 concrete slots, and no region-halkidiki slot; file names for venue-01, venue-02, venue-03, venue-04, venue-05, venue-06, venue-07, venue-08, venue-09, venue-10, venue-11, venue-12, venue-13, venue-14, venue-15, venue-16, venue-17, venue-18, region-halkidiki, venue-19, venue-20 were derived from the pattern and candidate_slug_map. Confirm or normalise in 04-images.json.",
+      "blocking": false
+    },
+    {
+      "to": "orchestrator",
+      "question": "One&Only Aesthesis Agora Veranda capacity: fact_216 says 250, fact_221 says 300 (06-edit-final.json). Body hedges; listed in booking-checklist.md, not as a VERIFY marker.",
+      "blocking": false
+    }
+  ],
+  "assumptions": [
+    "Breadcrumb level 2 URL is https://weddedwonderland.com/destination-weddings, from the fixed URL path in 00-input.json.",
+    "Excerpt is the first sentence of the opening paragraph (the full paragraph exceeds 300 characters).",
+    "11-body.md keeps the 08-final.md front matter; strip it if the CMS body field does not accept it.",
+    "ItemList url values are the venue official pages linked in each entry.",
+    "Transfers-section Concierge link keeps utm_content=secondary as in 08-final.md (09-cro.json left it unchanged)."
+  ],
+  "verify_items": [],
+  "tools_used": [
+    "Bash (python3 -I)"
+  ],
+  "next_agent": [
+    "orchestrator"
+  ],
+  "payload": {
+    "title": "20 Greece Wedding Venues From the Islands to Athens",
+    "slug": "greece-wedding-venues",
+    "url_path": "/destination-weddings/greece-wedding-venues",
+    "content_type": "Guide",
+    "cluster": "Getting Married in Greece",
+    "categories": [
+      "Destination Weddings",
+      "Greece",
+      "Venues"
+    ],
+    "primary_category": "Destination Weddings",
+    "tags": [
+      "Getting Married in Greece",
+      "Greece wedding venues",
+      "Santorini",
+      "Mykonos",
+      "Crete",
+      "Athens Riviera"
+    ],
+    "excerpt": "This guide groups Greece wedding venues into seven regions, and the right one depends less on the view than on three practical questions: how many guests you are inviting, which kind of ceremony you want, and how those guests will travel.",
+    "key_takeaways": [
+      "Guest count decides the region: Santorini's caldera terraces seat 15 to 60, while venues on the Athens Riviera and in Crete publish space for several hundred.",
+      "Exclusive use can mean a chosen event space or the whole hotel, and only a few venues, such as Canaves, Katikies and Melenos, offer the whole hotel.",
+      "Curfews, minimum nights and rain plans are rarely published, so have them confirmed in writing before you pay a deposit.",
+      "A legal wedding means paperwork, which can include a Certificate of No Impediment, and a summer date means planning around heat, wildfire season and wind-delayed ferries."
+    ],
+    "body_markdown_file": "content/posts/greece-wedding-venues/11-body.md",
+    "faq": [
+      {
+        "q": "Which Greek island is best for a wedding with 100 guests?",
+        "a": "On Santorini, most caldera terraces seat 15 to 60, so 100 guests needs a garden or pool space such as Canaves Epitome's. Mykonos has more room: the Myconian Collection's ballroom seats 270. On Crete, Elounda Beach publishes banquet spaces for several hundred. For 60 to 100 guests with most of them staying on site, look at a Canaves Epitome buyout (53 rooms, up to 170 guests), Angsana Corfu (receptions for 200 and 196 rooms) or One&Only Aesthesis (the Agora Ballroom seats 140)."
+      },
+      {
+        "q": "Can you get married at a private villa in Greece?",
+        "a": "Yes, within a resort. Grace Hotel's 400 sq m villa hosts weddings of up to 15 seated, and Corfu Imperial offers Villa Medusa, with six bedrooms, for intimate celebrations. For the whole property, Canaves and Melenos offer full-hotel bookings."
+      },
+      {
+        "q": "Which Greece wedding venues have rooms for guests on site?",
+        "a": "All but one on this list. Kokotos Estate lists no guest rooms. Angsana Corfu has 196, and Canaves Epitome's buyout covers 53. Ikos Aria arranges accommodation for up to 30 guests."
+      },
+      {
+        "q": "Is Santorini or Mykonos better for a wedding?",
+        "a": "Santorini, for the caldera and a smaller guest list. Mykonos, for a bigger party, more beach and more space: the Myconian Collection runs its own guest transfers. Daily ferries link the two."
+      },
+      {
+        "q": "Can Australians have a legal wedding in Greece, or should we marry at home first?",
+        "a": "Both work. A marriage valid in Greece is usually recognised in Australia, and you may need a Certificate of No Impediment. Some couples marry legally at home and hold a symbolic ceremony in Greece, which several venues here offer."
+      },
+      {
+        "q": "What is the best month for a wedding in Greece?",
+        "a": "May and October sit outside the June to September wildfire season and the hottest weeks, though some outdoor spaces, such as One&Only Aesthesis's chapel, open only from May to September. In summer, plan an evening ceremony."
+      }
+    ],
+    "images": [
+      {
+        "slot_id": "featured",
+        "file": "content/posts/greece-wedding-venues/images/greece-wedding-venues-cyclades-ceremony-terrace-hero.webp",
+        "role": "featured",
+        "status": "needed"
+      },
+      {
+        "slot_id": "region-cyclades",
+        "file": "content/posts/greece-wedding-venues/images/greece-wedding-venues-cyclades-terrace-sea-view.webp",
+        "role": "inline",
+        "status": "needed"
+      },
+      {
+        "slot_id": "venue-01",
+        "file": "content/posts/greece-wedding-venues/images/greece-wedding-venues-grace-hotel-santorini-exterior.webp",
+        "role": "inline",
+        "status": "needed"
+      },
+      {
+        "slot_id": "venue-02",
+        "file": "content/posts/greece-wedding-venues/images/greece-wedding-venues-canaves-oia-exterior.webp",
+        "role": "inline",
+        "status": "needed"
+      },
+      {
+        "slot_id": "venue-03",
+        "file": "content/posts/greece-wedding-venues/images/greece-wedding-venues-katikies-exterior.webp",
+        "role": "inline",
+        "status": "needed"
+      },
+      {
+        "slot_id": "venue-04",
+        "file": "content/posts/greece-wedding-venues/images/greece-wedding-venues-santa-marina-exterior.webp",
+        "role": "inline",
+        "status": "needed"
+      },
+      {
+        "slot_id": "venue-05",
+        "file": "content/posts/greece-wedding-venues/images/greece-wedding-venues-royal-myconian-myconian-collection-exterior.webp",
+        "role": "inline",
+        "status": "needed"
+      },
+      {
+        "slot_id": "region-crete",
+        "file": "content/posts/greece-wedding-venues/images/greece-wedding-venues-crete-bay-ceremony-setting.webp",
+        "role": "inline",
+        "status": "needed"
+      },
+      {
+        "slot_id": "venue-06",
+        "file": "content/posts/greece-wedding-venues/images/greece-wedding-venues-elounda-beach-hotel-villas-exterior.webp",
+        "role": "inline",
+        "status": "needed"
+      },
+      {
+        "slot_id": "venue-07",
+        "file": "content/posts/greece-wedding-venues/images/greece-wedding-venues-nana-princess-exterior.webp",
+        "role": "inline",
+        "status": "needed"
+      },
+      {
+        "slot_id": "region-dodecanese",
+        "file": "content/posts/greece-wedding-venues/images/greece-wedding-venues-rhodes-lindos-terrace.webp",
+        "role": "inline",
+        "status": "needed"
+      },
+      {
+        "slot_id": "venue-08",
+        "file": "content/posts/greece-wedding-venues/images/greece-wedding-venues-melenos-lindos-exterior.webp",
+        "role": "inline",
+        "status": "needed"
+      },
+      {
+        "slot_id": "venue-09",
+        "file": "content/posts/greece-wedding-venues/images/greece-wedding-venues-atrium-prestige-exterior.webp",
+        "role": "inline",
+        "status": "needed"
+      },
+      {
+        "slot_id": "venue-10",
+        "file": "content/posts/greece-wedding-venues/images/greece-wedding-venues-ikos-aria-exterior.webp",
+        "role": "inline",
+        "status": "needed"
+      },
+      {
+        "slot_id": "region-ionian",
+        "file": "content/posts/greece-wedding-venues/images/greece-wedding-venues-corfu-garden-sea-view.webp",
+        "role": "inline",
+        "status": "needed"
+      },
+      {
+        "slot_id": "venue-11",
+        "file": "content/posts/greece-wedding-venues/images/greece-wedding-venues-corfu-imperial-exterior.webp",
+        "role": "inline",
+        "status": "needed"
+      },
+      {
+        "slot_id": "venue-12",
+        "file": "content/posts/greece-wedding-venues/images/greece-wedding-venues-angsana-corfu-exterior.webp",
+        "role": "inline",
+        "status": "needed"
+      },
+      {
+        "slot_id": "region-athens-riviera",
+        "file": "content/posts/greece-wedding-venues/images/greece-wedding-venues-athens-riviera-seafront-terrace.webp",
+        "role": "inline",
+        "status": "needed"
+      },
+      {
+        "slot_id": "venue-13",
+        "file": "content/posts/greece-wedding-venues/images/greece-wedding-venues-four-seasons-astir-palace-hotel-athens-exterior.webp",
+        "role": "inline",
+        "status": "needed"
+      },
+      {
+        "slot_id": "venue-14",
+        "file": "content/posts/greece-wedding-venues/images/greece-wedding-venues-one-only-aesthesis-exterior.webp",
+        "role": "inline",
+        "status": "needed"
+      },
+      {
+        "slot_id": "venue-15",
+        "file": "content/posts/greece-wedding-venues/images/greece-wedding-venues-grand-resort-lagonissi-exterior.webp",
+        "role": "inline",
+        "status": "needed"
+      },
+      {
+        "slot_id": "venue-16",
+        "file": "content/posts/greece-wedding-venues/images/greece-wedding-venues-kokotos-estate-exterior.webp",
+        "role": "inline",
+        "status": "needed"
+      },
+      {
+        "slot_id": "region-peloponnese",
+        "file": "content/posts/greece-wedding-venues/images/greece-wedding-venues-peloponnese-olive-grove-sea-view.webp",
+        "role": "inline",
+        "status": "needed"
+      },
+      {
+        "slot_id": "venue-17",
+        "file": "content/posts/greece-wedding-venues/images/greece-wedding-venues-costa-navarino-exterior.webp",
+        "role": "inline",
+        "status": "needed"
+      },
+      {
+        "slot_id": "venue-18",
+        "file": "content/posts/greece-wedding-venues/images/greece-wedding-venues-amanzoe-exterior.webp",
+        "role": "inline",
+        "status": "needed"
+      },
+      {
+        "slot_id": "region-halkidiki",
+        "file": "content/posts/greece-wedding-venues/images/greece-wedding-venues-halkidiki-ceremony-setting.webp",
+        "role": "inline",
+        "status": "needed"
+      },
+      {
+        "slot_id": "venue-19",
+        "file": "content/posts/greece-wedding-venues/images/greece-wedding-venues-sani-resort-exterior.webp",
+        "role": "inline",
+        "status": "needed"
+      },
+      {
+        "slot_id": "venue-20",
+        "file": "content/posts/greece-wedding-venues/images/greece-wedding-venues-miraggio-thermal-spa-resort-exterior.webp",
+        "role": "inline",
+        "status": "needed"
+      }
+    ],
+    "cta": {
+      "text": "Check your Greek venue shortlist",
+      "subtext": "Your Wedded Advisor quotes in AUD for Australian couples, and the fee is agreed in writing before any work begins.",
+      "link": "/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=greece-wedding-venues&utm_content=primary",
+      "placement": "At the former <!-- CTA: primary --> marker, directly after the comparison table and the inline shortlist line (marked <!-- CTA BLOCK: primary --> in 11-body.md)."
+    },
+    "secondary_cta": {
+      "text": "Speak with a Wedded Advisor",
+      "link": "/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=greece-wedding-venues&utm_content=secondary",
+      "placement": "End of \"Shortlist your Greek venues with a Wedded Advisor\", after the paragraph carrying the secondary link (marked <!-- CTA BLOCK: secondary --> in 11-body.md)."
+    },
+    "lead_magnet": {
+      "name": "Wedded Wonderland digital magazine",
+      "link": "/magazine?utm_source=blog&utm_medium=content&utm_campaign=greece-wedding-venues&utm_content=magnet",
+      "placement": "Existing soft line at the very end of the post, the \"digital magazine\" link (marked <!-- LEAD MAGNET --> in 11-body.md)."
+    },
+    "tracking_links": [
+      "/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=greece-wedding-venues&utm_content=primary",
+      "/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=greece-wedding-venues&utm_content=secondary",
+      "/magazine?utm_source=blog&utm_medium=content&utm_campaign=greece-wedding-venues&utm_content=magnet",
+      "/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=greece-wedding-venues&utm_content=inline"
+    ],
+    "seo": {
+      "meta_title": "Greece Wedding Venues: 20 From the Islands to Athens",
+      "meta_description": "Compare Greece wedding venues in Santorini, Mykonos, Crete, Corfu, Rhodes and Athens on ceremony options, capacity, rooms and how guests get there.",
+      "focus_keyword": "greece wedding venues",
+      "canonical": "https://weddedwonderland.com/destination-weddings/greece-wedding-venues",
+      "og_image_slot": "featured"
+    },
+    "schema_jsonld": {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Article",
+          "@id": "https://weddedwonderland.com/destination-weddings/greece-wedding-venues#article",
+          "headline": "20 Greece Wedding Venues From the Islands to Athens",
+          "description": "Compare Greece wedding venues in Santorini, Mykonos, Crete, Corfu, Rhodes and Athens on ceremony options, capacity, rooms and how guests get there.",
+          "author": {
+            "@type": "Organization",
+            "name": "Wedded Wonderland",
+            "url": "https://weddedwonderland.com/"
+          },
+          "publisher": {
+            "@type": "Organization",
+            "name": "Wedded Wonderland",
+            "url": "https://weddedwonderland.com/"
+          },
+          "datePublished": "",
+          "mainEntityOfPage": "https://weddedwonderland.com/destination-weddings/greece-wedding-venues",
+          "inLanguage": "en-AU"
+        },
+        {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Home",
+              "item": "https://weddedwonderland.com/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Destination Weddings",
+              "item": "https://weddedwonderland.com/destination-weddings"
+            },
+            {
+              "@type": "ListItem",
+              "position": 3,
+              "name": "20 Greece Wedding Venues From the Islands to Athens",
+              "item": "https://weddedwonderland.com/destination-weddings/greece-wedding-venues"
+            }
+          ]
+        },
+        {
+          "@type": "ItemList",
+          "@id": "https://weddedwonderland.com/destination-weddings/greece-wedding-venues#venues",
+          "name": "20 Greece Wedding Venues From the Islands to Athens",
+          "numberOfItems": 20,
+          "itemListOrder": "https://schema.org/ItemListUnordered",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Grace Hotel, Imerovigli, Santorini",
+              "url": "https://auberge.com/grace-hotel/events/weddings/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Canaves Oia, Santorini",
+              "url": "https://canaves.com/weddings-oia-santorini-island/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 3,
+              "name": "Katikies, Oia, Imerovigli and Fira, Santorini",
+              "url": "https://www.katikies.com/events/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 4,
+              "name": "Santa Marina, Ornos, Mykonos",
+              "url": "https://www.santa-marina.gr/weddings-celebrations/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 5,
+              "name": "Royal Myconian, Elia, Mykonos",
+              "url": "https://www.royalmyconian.gr/services/weddings-and-events/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 6,
+              "name": "Elounda Beach Hotel & Villas, Elounda",
+              "url": "https://www.eloundabeach.gr/meetings-events-crete-greece/weddings-and-occasions"
+            },
+            {
+              "@type": "ListItem",
+              "position": 7,
+              "name": "Nana Princess, Chersonissos",
+              "url": "https://www.nanaprincess.gr/pages/weddings"
+            },
+            {
+              "@type": "ListItem",
+              "position": 8,
+              "name": "Melenos Lindos, Rhodes",
+              "url": "https://melenoslindos.com/lindos-weddings.php"
+            },
+            {
+              "@type": "ListItem",
+              "position": 9,
+              "name": "Atrium Prestige, south Rhodes",
+              "url": "https://www.atriumhotels.gr/hotels/atrium-prestige/weddings/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 10,
+              "name": "Ikos Aria, Kos",
+              "url": "https://ikosresorts.com/events-weddings/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 11,
+              "name": "Corfu Imperial, Kommeno Peninsula",
+              "url": "https://www.grecotel.com/corfuimperial/weddings-corfu/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 12,
+              "name": "Angsana Corfu, south of Corfu Town",
+              "url": "https://www.angsana.com/greece/corfu/weddings-honeymoons"
+            },
+            {
+              "@type": "ListItem",
+              "position": 13,
+              "name": "Four Seasons Astir Palace Hotel Athens",
+              "url": "https://www.fourseasons.com/athens/weddings/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 14,
+              "name": "One&Only Aesthesis, Glyfada",
+              "url": "https://www.oneandonlyresorts.com/aesthesis/events/weddings"
+            },
+            {
+              "@type": "ListItem",
+              "position": 15,
+              "name": "Grand Resort Lagonissi",
+              "url": "https://www.lagonissiresort.gr/athens-wedding-venues/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 16,
+              "name": "Kokotos Estate, Stamata",
+              "url": "https://kokotosestate.gr/en/receptions/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 17,
+              "name": "Costa Navarino, Messinia",
+              "url": "https://www.costanavarino.com/weddings-greece/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 18,
+              "name": "Amanzoe, Porto Heli",
+              "url": "https://www.aman.com/resorts/amanzoe/celebrations"
+            },
+            {
+              "@type": "ListItem",
+              "position": 19,
+              "name": "Sani Resort",
+              "url": "https://sani-resort.com/weddings"
+            },
+            {
+              "@type": "ListItem",
+              "position": 20,
+              "name": "Miraggio Thermal Spa Resort, Paliouri",
+              "url": "https://www.miraggio.gr/halkidiki-experiences/weddings"
+            }
+          ]
+        },
+        {
+          "@type": "FAQPage",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "Which Greek island is best for a wedding with 100 guests?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "On Santorini, most caldera terraces seat 15 to 60, so 100 guests needs a garden or pool space such as Canaves Epitome's. Mykonos has more room: the Myconian Collection's ballroom seats 270. On Crete, Elounda Beach publishes banquet spaces for several hundred. For 60 to 100 guests with most of them staying on site, look at a Canaves Epitome buyout (53 rooms, up to 170 guests), Angsana Corfu (receptions for 200 and 196 rooms) or One&Only Aesthesis (the Agora Ballroom seats 140)."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Can you get married at a private villa in Greece?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes, within a resort. Grace Hotel's 400 sq m villa hosts weddings of up to 15 seated, and Corfu Imperial offers Villa Medusa, with six bedrooms, for intimate celebrations. For the whole property, Canaves and Melenos offer full-hotel bookings."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Which Greece wedding venues have rooms for guests on site?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "All but one on this list. Kokotos Estate lists no guest rooms. Angsana Corfu has 196, and Canaves Epitome's buyout covers 53. Ikos Aria arranges accommodation for up to 30 guests."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Is Santorini or Mykonos better for a wedding?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Santorini, for the caldera and a smaller guest list. Mykonos, for a bigger party, more beach and more space: the Myconian Collection runs its own guest transfers. Daily ferries link the two."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Can Australians have a legal wedding in Greece, or should we marry at home first?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Both work. A marriage valid in Greece is usually recognised in Australia, and you may need a Certificate of No Impediment. Some couples marry legally at home and hold a symbolic ceremony in Greece, which several venues here offer."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "What is the best month for a wedding in Greece?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "May and October sit outside the June to September wildfire season and the hottest weeks, though some outdoor spaces, such as One&Only Aesthesis's chapel, open only from May to September. In summer, plan an evening ceremony."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    "author": "Wedded Wonderland",
+    "status": "draft",
+    "verify_items": [],
+    "needs_signoff": [],
+    "redirects_recommended": "none",
+    "hub_recommendation": "Recommendation only, nothing on the live site changes: retitle the hub /destinations/europe/greece to target \"greece weddings\" and \"destination wedding greece\" with a packages angle, leaving \"greece wedding venues\" to this guide; link this guide and the hub both ways (this guide already links the hub twice).",
+    "deferred_business_items": [
+      "Fee model and commissions",
+      "Deposits, refunds and contracts",
+      "\"From AUD\" price range",
+      "Wedded Privileges explanation",
+      "Named Wedded Advisor and phone line",
+      "Real wedding at a listed Greek venue",
+      "Large-event credentials"
+    ],
+    "draft_note": "DRAFT. Do not publish until checked:\n\n1. [[VERIFY]] items: none in the copy. House rules the venues do not publish are written as \"Not published\" and listed in booking-checklist.md.\n\n2. Nic sign-off on prices: none (no prices printed).\n\n3. Image slots needed (28, none approved yet; alt and caption to add when approved):\n   - featured (needed)\n   - region-cyclades (needed)\n   - venue-01 (needed)\n   - venue-02 (needed)\n   - venue-03 (needed)\n   - venue-04 (needed)\n   - venue-05 (needed)\n   - region-crete (needed)\n   - venue-06 (needed)\n   - venue-07 (needed)\n   - region-dodecanese (needed)\n   - venue-08 (needed)\n   - venue-09 (needed)\n   - venue-10 (needed)\n   - region-ionian (needed)\n   - venue-11 (needed)\n   - venue-12 (needed)\n   - region-athens-riviera (needed)\n   - venue-13 (needed)\n   - venue-14 (needed)\n   - venue-15 (needed)\n   - venue-16 (needed)\n   - region-peloponnese (needed)\n   - venue-17 (needed)\n   - venue-18 (needed)\n   - region-halkidiki (needed)\n   - venue-19 (needed)\n   - venue-20 (needed)\n\n4. Deferred business items (7, person's decision, not in this draft):\n   - Fee model and commissions\n   - Deposits, refunds and contracts\n   - \"From AUD\" price range\n   - Wedded Privileges explanation\n   - Named Wedded Advisor and phone line\n   - Real wedding at a listed Greek venue\n   - Large-event credentials\n\n5. Hub recommendation (not a blocker, nothing on the live site changes): retitle /destinations/europe/greece to target \"greece weddings\" and \"destination wedding greece\" with a packages angle, and link this guide and the hub both ways.\n\nBooking checklist (not publishing blockers): see booking-checklist.md"
+  }
+}

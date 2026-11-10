@@ -21,3 +21,5 @@
 00:04 09 cro-specialist complete; /wonderland-concierge primary ('Check your Greek venue shortlist'); /magazine lead magnet; 2 UTM copy changes; applying after 8b
 00:04 10 distribution complete 3 pins, 8-slide carousel, newsletter (blog UTMs as in prior runs)
 00:04 08b editor pass_with_edits; 6 blocking fixes (generalisations, Kokotos rooms wording, arrivals line, terrace range) + 2 CRO UTM changes applied; all 20 venues present, excluded venues absent; cms-publisher launched
+00:07 11 cms-publisher package complete (not uploaded, no Chrome); booking-checklist.md written; validate all valid
+00:07 finish: docx, run report, backlinks, link map (+hub and Rocabella notes), calendar 37; FINISHED (~79 min)
