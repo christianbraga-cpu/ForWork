@@ -1,0 +1,409 @@
+{
+  "agent": "planner-sme",
+  "task_id": "crete-wedding-venues",
+  "stage": "03",
+  "status": "complete",
+  "round": 1,
+  "inputs_used": [
+    "CLAUDE.md",
+    "content/posts/crete-wedding-venues/00-input.json",
+    "content/posts/crete-wedding-venues/01-brief.json",
+    "content-system/schemas/03-source-pack.schema.json",
+    "content/posts/greece-wedding-venues/03-source-pack.json (format model; fact_100-103 re-checked live)",
+    "Apify web-fetch and web-search 2026-11-10 of official venue sites listed in each fact"
+  ],
+  "self_qa": {
+    "checks": [
+      {
+        "check": "Every fact has a source and date",
+        "pass": true
+      },
+      {
+        "check": "No price without a source; all prices in needs_signoff",
+        "pass": true,
+        "note": "No prices recorded."
+      },
+      {
+        "check": "Every must-include covered or marked [[VERIFY]]",
+        "pass": true,
+        "note": "Non-venue items marked for batch C or writer stage."
+      },
+      {
+        "check": "No invented quotes, statistics or real weddings",
+        "pass": true
+      }
+    ],
+    "confidence": 0.8
+  },
+  "open_questions": [
+    {
+      "to": "orchestrator",
+      "question": "Batch A qualifies 4 of 6 candidates: Elounda Beach Hotel & Villas (with Elounda Bay Palace), St. Nicolas Bay, Minos Beach Art Hotel, Elounda Peninsula. Daios Cove (fact_14) and reserve Cayo (fact_18) have no weddings page on their own sites. Possible east Crete swaps to check: Porto Elounda and Elounda Mare (both listed on the Elounda Peninsula weddings page, fact_13) if each has its own weddings page.",
+      "blocking": false
+    },
+    {
+      "to": "orchestrator",
+      "question": "Minos Beach Art Hotel: own site says weddings; Marriott's events FAQ says no wedding services. Keep with an Advisor confirmation or swap?",
+      "blocking": false
+    }
+  ],
+  "assumptions": [
+    "BOOKING CHECKLIST: Elounda Beach Hotel & Villas / Elounda Bay Palace: music curfew, minimum nights, rain plan, exclusive use or buyout, guest room count, which venues are at which resort.",
+    "BOOKING CHECKLIST: St. Nicolas Bay: chapel deck capacity, reception capacity, music curfew, minimum nights, rain plan, exclusive use, legal ceremony types on site.",
+    "BOOKING CHECKLIST: Minos Beach Art Hotel: ceremony types and locations, capacity, music curfew, minimum nights, rain plan, exclusive use, room count.",
+    "BOOKING CHECKLIST: Elounda Peninsula: venue capacities, music curfew, guest minimum nights (couple's package needs three nights), rain plan, exclusive use, room count."
+  ],
+  "verify_items": [
+    "[[VERIFY: Batch A qualifies 4 venues (Elounda Beach with Elounda Bay Palace, St. Nicolas Bay, Minos Beach Art Hotel, Elounda Peninsula); Daios Cove and reserve Cayo have no weddings page, so batches B and C or new east Crete candidates must fill the count]]",
+    "[[VERIFY: Elounda Beach and Elounda Bay Palace: which banquet venues suit a wedding dinner and whether a ceremony can be held at Elounda Bay Palace; only the shared weddings page was read]]",
+    "[[VERIFY: Elounda Beach, St. Nicolas Bay and Elounda Peninsula: airport drive time from Heraklion not read on their own sites (only Minos Beach and Cayo publish one)]]",
+    "[[VERIFY: Elounda Peninsula: guest capacities per venue are not on its weddings page or package PDF; the separate venue details popup was not read]]",
+    "[[VERIFY: Embassy Athens and Smartraveller re-check in batch C]]",
+    "[[VERIFY: Minos Beach Art Hotel: its own site says it hosts weddings, but Marriott's events FAQ for the hotel says it does not provide wedding services; Advisor to confirm in writing before listing]]",
+    "[[VERIFY: Not in batch A scope (batch C or practical sections)]]",
+    "[[VERIFY: Not in batch A scope (brand-facts.md, writer stage)]]",
+    "[[VERIFY: Not in batch A scope (writer stage)]]",
+    "[[VERIFY: west Crete side in batch C]]"
+  ],
+  "tools_used": [
+    "mcp__Apify__apify--web-fetch",
+    "mcp__Apify__apify--web-search",
+    "Bash"
+  ],
+  "next_agent": [
+    "luxury-writer"
+  ],
+  "payload": {
+    "facts": [
+      {
+        "fact_id": "fact_01",
+        "claim": "Elounda Beach Hotel & Villas presents itself and its sister resort Elounda Bay Palace as a choice for weddings, christenings, vows exchange, gala dinners and private celebrations, with waterfront villas and suites that have their own private decks and pools.",
+        "source": "https://www.eloundabeach.gr/meetings-events-crete-greece/weddings-and-occasions",
+        "source_type": "official_venue",
+        "checked": "2026-11-10",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_02",
+        "claim": "Elounda Beach lists a private chapel for weddings and christenings. Its indicative wedding package lists a dedicated consultant, legal and licence paperwork, a civil or religious ceremony outside the hotel's church or at another place of the couple's choice (civil weddings), and an escorted transfer to the authorities to register the wedding.",
+        "source": "https://www.eloundabeach.gr/meetings-events-crete-greece/weddings-and-occasions",
+        "source_type": "official_venue",
+        "checked": "2026-11-10",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_03",
+        "claim": "Elounda Beach publishes banquet capacities (indoor / outdoor): Artemis 180 / 430, Dionysos 100 / 300, Blue Lagoon 70 / 120, Argonaut outdoor 180. At the adjacent Elounda Bay Palace: Aretoussa 300 / 500, Thalassa 100 / 200-400, Ariadne 80 / 150. Largest outdoor cocktail figure listed is Artemis at 650.",
+        "source": "https://www.eloundabeach.gr/meetings-events-crete-greece/weddings-and-occasions",
+        "source_type": "official_venue",
+        "checked": "2026-11-10",
+        "is_price": false,
+        "conflicts": "Re-check of greece-wedding-venues fact_102: figures unchanged on 2026-11-10; page now also lists Blue Lagoon, Thalassa, Ariadne and lounges."
+      },
+      {
+        "fact_id": "fact_04",
+        "claim": "Elounda Beach lists optional wedding services including traditional Cretan lyre music during the ceremony, a firework show, bridal hair and make-up and treatments at the Elounda Beach Spa, and limo transfer for guests.",
+        "source": "https://www.eloundabeach.gr/meetings-events-crete-greece/weddings-and-occasions",
+        "source_type": "official_venue",
+        "checked": "2026-11-10",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_05",
+        "claim": "St. Nicolas Bay Resort Hotel & Villas (Thessi Nissi, Agios Nikolaos, Crete; five-star) has a weddings page: couples celebrate their wedding on the deck of the resort's beachside chapel, with the Cretan Sea behind, on Mirabello Bay.",
+        "source": "https://www.stnicolasbay.gr/events/weddings/",
+        "source_type": "official_venue",
+        "checked": "2026-11-10",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_06",
+        "claim": "St. Nicolas Bay says celebrations are tailor-made, from a romantic wedding to a festive family celebration, held in one of the resort's restaurants and bars, with a guest service team for couples; a photographer, fireworks display, music, florist and table decoration can be arranged on request.",
+        "source": "https://www.stnicolasbay.gr/events/weddings/",
+        "source_type": "official_venue",
+        "checked": "2026-11-10",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_07",
+        "claim": "St. Nicolas Bay's wedding amenities include a guaranteed upgrade to the Honeymoon Private Pool Suite for the wedding night (subject to its terms), and its accommodation includes seafront suites and villas with private pools. The weddings page publishes no capacity or exclusive-use option.",
+        "source": "https://www.stnicolasbay.gr/events/weddings/",
+        "source_type": "official_venue",
+        "checked": "2026-11-10",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_08",
+        "claim": "Minos Beach Art Hotel has a Celebrations and Events page headed 'Your luxury wedding destination in Greece': its team plans weddings, vow renewals and other celebrations at the hotel's waterfront setting, with enquiries through its contact page.",
+        "source": "https://www.minosbeach.com/celebrations-and-events/",
+        "source_type": "official_venue",
+        "checked": "2026-11-10",
+        "is_price": false,
+        "conflicts": "Marriott's listing for Minos Beach Art Hotel (a Design Hotels member) answers 'does not provide wedding services' in its events FAQ (seen in a search snippet, not read). The hotel's own site states it hosts weddings; the Advisor should confirm in writing."
+      },
+      {
+        "fact_id": "fact_09",
+        "claim": "Minos Beach Art Hotel describes itself as Crete's original waterfront hideaway, a five-star resort of bungalows and villas with private pools on the water's edge, with two private sandy beaches and about 2 km of coastline, in operation for over 60 years.",
+        "source": "https://www.minosbeach.com/",
+        "source_type": "official_venue",
+        "checked": "2026-11-10",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_10",
+        "claim": "Minos Beach Art Hotel's standout is art: a Sculpture Garden and grounds holding over 55 works from the G. & A. Mamidakis Foundation collection. In summer it runs live Cretan nights at its Adeste Kafenio.",
+        "source": "https://www.minosbeach.com/",
+        "source_type": "official_venue",
+        "checked": "2026-11-10",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_11",
+        "claim": "Minos Beach Art Hotel states it is about a 50-minute drive from Heraklion Airport (HER), 60 minutes from Heraklion Port and 180 minutes from Chania Airport (CHQ), and can help arrange car transfers.",
+        "source": "https://www.minosbeach.com/",
+        "source_type": "official_venue",
+        "checked": "2026-11-10",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_12",
+        "claim": "Elounda Peninsula (All Suite Hotel) has a weddings page: its team offers wedding planning, flower coordination with preferred designers, custom menus from family brunch to a grand reception banquet, table styling and bespoke cakes from the in-house pastry chef, working with the couple or their bridal consultant.",
+        "source": "https://www.eloundapeninsula.com/en/weddings/",
+        "source_type": "official_venue",
+        "checked": "2026-11-10",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_13",
+        "claim": "Elounda Peninsula says it can arrange party and photo locations around its hotels, including secluded beaches and historic sites, with advance notice. Its weddings page lists venues across three sister hotels: Elounda Peninsula, Porto Elounda and Elounda Mare Hotel, with one events team for enquiries.",
+        "source": "https://www.eloundapeninsula.com/en/weddings/",
+        "source_type": "official_venue",
+        "checked": "2026-11-10",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_14",
+        "claim": "Daios Cove Luxury Resort & Villas (Vathi, Agios Nikolaos) has no weddings page on its own site: its menu lists honeymoon and conferences pages only. The conferences page lists two ballrooms, six meeting rooms and an outdoor events area overlooking the sea, and the honeymoon page mentions an on-site honeymoon planner. It does NOT meet the inclusion rule (run report only).",
+        "source": "https://www.daioscovecrete.com/meetings-conferences-crete/ ; https://www.daioscovecrete.com/your-stay/honeymoon/ ; https://www.daioscovecrete.com/ (site menu)",
+        "source_type": "official_venue",
+        "checked": "2026-11-10",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_15",
+        "claim": "Elounda Peninsula's wedding packages document (Elounda SA Hotels & Resorts, linked from its weddings page) has separate civil, Greek Orthodox and symbolic (vow renewal) packages. It states symbolic weddings and vow renewals are not legally recognised in Greece.",
+        "source": "https://www.eloundapeninsula.com/wp-content/uploads/2025/04/Elounda-Wedding-Packages-.pdf",
+        "source_type": "official_venue",
+        "checked": "2026-11-10",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_16",
+        "claim": "Elounda Peninsula's civil package covers date and venue reservation, licence paperwork with the local municipality office, two witnesses if needed, ceremony set-up, and a round-trip transfer to the Registry Office. It states the marriage must be registered at the Registry Office in Aghios Nikolaos within 40 days, and wedding documents must be emailed at least 4 weeks and couriered at least 3 weeks before the date.",
+        "source": "https://www.eloundapeninsula.com/wp-content/uploads/2025/04/Elounda-Wedding-Packages-.pdf",
+        "source_type": "official_venue",
+        "checked": "2026-11-10",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_17",
+        "claim": "Elounda Peninsula's packages are valid only when the couple stays a minimum of three nights in one of the group's hotels (published package condition, not a guest-wide rule).",
+        "source": "https://www.eloundapeninsula.com/wp-content/uploads/2025/04/Elounda-Wedding-Packages-.pdf",
+        "source_type": "official_venue",
+        "checked": "2026-11-10",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_18",
+        "claim": "Cayo Exclusive Resort & Spa (reserve): its official site (cayoresort.com now redirects to the Mar-Bella Collection page marbella.gr/hotels/cayo) has no weddings page in its menu, and its FAQ does not mention weddings. It sits on the hillside above Plaka near Elounda, about 65 km (about an hour) from Heraklion International Airport, with sea views to Spinalonga. It does NOT meet the inclusion rule (run report only).",
+        "source": "https://www.marbella.gr/hotels/cayo/faqs-for-cayo/ ; https://www.marbella.gr/hotels/cayo/ (site menu)",
+        "source_type": "official_venue",
+        "checked": "2026-11-10",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_19",
+        "claim": "St. Nicolas Bay describes a secluded beachfront location about one mile from the town centre of Aghios Nikolaos, and says guests can plan celebrations, private parties and dinners, banquets and romantic weddings at its beachside chapel.",
+        "source": "https://www.stnicolasbay.gr/location/",
+        "source_type": "official_venue",
+        "checked": "2026-11-10",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_20",
+        "claim": "Elounda Peninsula presents itself as a gateway to eastern Crete from the Elounda shore, near Plaka and boat trips to Spinalonga, with sailing and motor yachts available to guests and a Six Senses Spa on site.",
+        "source": "https://www.eloundapeninsula.com/en/crete/ ; https://www.eloundapeninsula.com/wp-content/uploads/2025/04/Elounda-Wedding-Packages-.pdf",
+        "source_type": "official_venue",
+        "checked": "2026-11-10",
+        "is_price": false
+      }
+    ],
+    "insider_details": [
+      {
+        "detail": "Elounda and Agios Nikolaos are a Heraklion Airport destination: Minos Beach Art Hotel puts its drive at about 50 minutes and Cayo near Plaka at about an hour (65 km), while Chania Airport is about three hours from Minos Beach. Book guests into Heraklion, not Chania, for an east Crete wedding.",
+        "fact_ids": [
+          "fact_11",
+          "fact_18"
+        ]
+      },
+      {
+        "detail": "For a legal civil wedding in the Elounda area, plan for paperwork after the party: Elounda Peninsula's package states the marriage must be registered at the Registry Office in Aghios Nikolaos within 40 days, and both Elounda Peninsula and Elounda Beach build an escorted trip to the authorities into their packages. Keep a weekday free in the itinerary.",
+        "fact_ids": [
+          "fact_02",
+          "fact_16"
+        ]
+      },
+      {
+        "detail": "Documents for a Greek civil ceremony take weeks, not days: Elounda Peninsula asks for copies by email at least 4 weeks out and originals by courier at least 3 weeks out, with each document carrying its own apostille and a Greek translation. Australians should start the Certificate of No Impediment and apostilles well before that.",
+        "fact_ids": [
+          "fact_16"
+        ]
+      },
+      {
+        "detail": "Elounda Beach is the east Crete option for a big guest list: its published banquet figures run to 430 outdoors at Artemis, and the adjacent Elounda Bay Palace's Aretoussa lists 500 outdoors. St. Nicolas Bay and Minos Beach publish no capacities, so ask for a written figure before shortlisting them for 100-plus guests.",
+        "fact_ids": [
+          "fact_03",
+          "fact_07",
+          "fact_08"
+        ]
+      },
+      {
+        "detail": "Package minimum stays apply to the couple, not necessarily the guests: Elounda Peninsula's packages need the couple to stay at least three nights in one of its hotels. Ask each venue separately about minimum nights for a room block or buyout.",
+        "fact_ids": [
+          "fact_17"
+        ]
+      },
+      {
+        "detail": "A symbolic ceremony at a resort is not a legal marriage in Greece (Elounda Peninsula says so in its own package notes). Couples who want the ceremony at the chapel or on the beach without Greek paperwork can marry legally in Australia first.",
+        "fact_ids": [
+          "fact_15"
+        ]
+      }
+    ],
+    "quotes": [],
+    "real_weddings": [],
+    "verify_items": [
+      "[[VERIFY: Batch A qualifies 4 venues (Elounda Beach with Elounda Bay Palace, St. Nicolas Bay, Minos Beach Art Hotel, Elounda Peninsula); Daios Cove and reserve Cayo have no weddings page, so batches B and C or new east Crete candidates must fill the count]]",
+      "[[VERIFY: Elounda Beach and Elounda Bay Palace: which banquet venues suit a wedding dinner and whether a ceremony can be held at Elounda Bay Palace; only the shared weddings page was read]]",
+      "[[VERIFY: Elounda Beach, St. Nicolas Bay and Elounda Peninsula: airport drive time from Heraklion not read on their own sites (only Minos Beach and Cayo publish one)]]",
+      "[[VERIFY: Elounda Peninsula: guest capacities per venue are not on its weddings page or package PDF; the separate venue details popup was not read]]",
+      "[[VERIFY: Embassy Athens and Smartraveller re-check in batch C]]",
+      "[[VERIFY: Minos Beach Art Hotel: its own site says it hosts weddings, but Marriott's events FAQ for the hotel says it does not provide wedding services; Advisor to confirm in writing before listing]]",
+      "[[VERIFY: Not in batch A scope (batch C or practical sections)]]",
+      "[[VERIFY: Not in batch A scope (brand-facts.md, writer stage)]]",
+      "[[VERIFY: Not in batch A scope (writer stage)]]",
+      "[[VERIFY: west Crete side in batch C]]"
+    ],
+    "needs_signoff": [
+      "No prices or fees recorded in batch A (prices excluded by instruction). Elounda Peninsula's package PDF and Elounda Beach's indicative package list euro package prices and municipal or Metropolis fees; none are in claims. Any price printed needs Nic's sign-off."
+    ],
+    "must_include_coverage": [
+      {
+        "item": "Direct answer in first 100 words (areas, guest count, ceremony type, airport)",
+        "covered_by": [
+          "fact_11",
+          "fact_18",
+          "[[VERIFY: Not in batch A scope (batch C or practical sections)]]"
+        ]
+      },
+      {
+        "item": "Exactly 4 one-sentence Key takeaways",
+        "covered_by": [
+          "[[VERIFY: Not in batch A scope (writer stage)]]"
+        ]
+      },
+      {
+        "item": "Crete wedding venues at a glance comparison table",
+        "covered_by": [
+          "fact_01",
+          "fact_02",
+          "fact_03",
+          "fact_05",
+          "fact_07",
+          "fact_08",
+          "fact_09",
+          "fact_12",
+          "fact_15"
+        ]
+      },
+      {
+        "item": "How to compare like for like (resort vs villa vs estate; ceremony type; seated capacity; rooms; airport)",
+        "covered_by": [
+          "fact_03",
+          "fact_07",
+          "fact_11",
+          "fact_15",
+          "fact_17"
+        ]
+      },
+      {
+        "item": "Choosing an area (east vs west Crete)",
+        "covered_by": [
+          "fact_11",
+          "fact_18",
+          "[[VERIFY: west Crete side in batch C]]"
+        ]
+      },
+      {
+        "item": "15 venues grouped by area, each verified on its own official site (batch A: Elounda, Agios Nikolaos, east Crete)",
+        "covered_by": [
+          "fact_01",
+          "fact_02",
+          "fact_03",
+          "fact_04",
+          "fact_05",
+          "fact_06",
+          "fact_07",
+          "fact_08",
+          "fact_09",
+          "fact_10",
+          "fact_12",
+          "fact_13",
+          "fact_15",
+          "fact_19",
+          "fact_20",
+          "[[VERIFY: Batch A qualifies 4 venues (Elounda Beach with Elounda Bay Palace, St. Nicolas Bay, Minos Beach Art Hotel, Elounda Peninsula); Daios Cove and reserve Cayo have no weddings page, so batches B and C or new east Crete candidates must fill the count]]"
+        ]
+      },
+      {
+        "item": "Getting there: Heraklion and Chania airports and transfers",
+        "covered_by": [
+          "fact_11",
+          "fact_18",
+          "[[VERIFY: Not in batch A scope (batch C or practical sections)]]"
+        ]
+      },
+      {
+        "item": "When to marry",
+        "covered_by": [
+          "[[VERIFY: Not in batch A scope (batch C or practical sections)]]"
+        ]
+      },
+      {
+        "item": "Legal in brief",
+        "covered_by": [
+          "fact_02",
+          "fact_15",
+          "fact_16",
+          "[[VERIFY: Embassy Athens and Smartraveller re-check in batch C]]"
+        ]
+      },
+      {
+        "item": "FAQ (4 to 6)",
+        "covered_by": [
+          "fact_03",
+          "fact_11",
+          "fact_15",
+          "fact_16",
+          "[[VERIFY: Not in batch A scope (batch C or practical sections)]]"
+        ]
+      },
+      {
+        "item": "Closing route to Wedded Concierge",
+        "covered_by": [
+          "[[VERIFY: Not in batch A scope (brand-facts.md, writer stage)]]"
+        ]
+      }
+    ]
+  }
+}
