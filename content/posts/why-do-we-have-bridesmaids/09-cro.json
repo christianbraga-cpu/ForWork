@@ -1,0 +1,116 @@
+{
+  "agent": "cro",
+  "task_id": "why-do-we-have-bridesmaids",
+  "stage": "09",
+  "status": "complete",
+  "round": 1,
+  "inputs_used": [
+    "content-system/brand/services.md",
+    "content-system/brand/brand-facts.md",
+    "content/posts/why-do-we-have-bridesmaids/01-brief.json",
+    "content/posts/why-do-we-have-bridesmaids/07-panel.json",
+    "content/posts/why-do-we-have-bridesmaids/08-final.md",
+    "content-system/seo/link-map.csv",
+    "content-system/schemas/09-cro.schema.json",
+    "content/posts/why-do-brides-wear-veils/09-cro.json (format model)"
+  ],
+  "self_qa": {
+    "confidence": 0.86,
+    "checks": [
+      {
+        "check": "/magazine and /wonderland-concierge exist in link-map.csv",
+        "pass": true
+      },
+      {
+        "check": "Each copy_changes old string occurs exactly once in 08-final.md",
+        "pass": true
+      },
+      {
+        "check": "After all copy changes apply, utm_content=primary, secondary, magnet and closing each occur exactly once",
+        "pass": true
+      },
+      {
+        "check": "UTMs follow services.md (utm_source=blog, utm_medium=content, utm_campaign=why-do-we-have-bridesmaids, utm_content = position)",
+        "pass": true
+      },
+      {
+        "check": "Primary text 6 words or fewer, no exclamation mark, no 'click here'",
+        "pass": true
+      },
+      {
+        "check": "Advisor wording from brand-facts.md only (single point of contact, time zone, inclusions in writing, AUD, fee in writing); no legal, church or paperwork help implied; no Wedded Privileges, prices, business details, 'last dance' or em dashes added",
+        "pass": true
+      },
+      {
+        "check": "Australian English in all new copy",
+        "pass": true
+      }
+    ]
+  },
+  "assumptions": [
+    "CTA block markup follows the why-do-brides-wear-veils run; the CMS publisher adapts it to the field map's CTA component if different.",
+    "08-final.md already tags the closing /magazine link utm_content=primary and both /wonderland-concierge links utm_content=secondary. copy_changes 3 and 4 retag the closing links as magnet and closing so every position is tracked once.",
+    "The panel recorded no per-persona cta_reaction asking to see something first; its CTA-related item was the sceptic's should_fix on the mid-article wording, applied in copy_changes 2. Reader questions the panel deferred (fee basis, on-the-day presence, attendants' travel) stay out of the copy, as the panel instructed.",
+    "No Wonderland Studio template is offered: the post is about the bridesmaid tradition, not seating or RSVPs."
+  ],
+  "open_questions": [
+    {
+      "to": "orchestrator",
+      "question": "Apply copy_changes 1 to 4 to 08-final.md before distribution and CMS upload?",
+      "blocking": false
+    }
+  ],
+  "payload": {
+    "journey_stage": "dreaming",
+    "primary_cta": {
+      "text": "Read the free magazine",
+      "subtext": "Free to read, whenever you are ready.",
+      "link": "/magazine?utm_source=blog&utm_medium=content&utm_campaign=why-do-we-have-bridesmaids&utm_content=primary",
+      "placement": "Fill the existing <!-- CTA: primary --> marker at the end of section 6 (How many bridesmaids should you have?), after the history and the first real decision, while the reader is still gathering inspiration and before section 7 (roles before and on the day)."
+    },
+    "secondary_cta": {
+      "text": "Speak with a Wedded Advisor",
+      "subtext": "The fee is agreed in writing before any work begins.",
+      "link": "/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=why-do-we-have-bridesmaids&utm_content=secondary",
+      "placement": "Existing inline link closing section 9 (Bridesmaids at a destination wedding), after the travel, insurance and on-the-ground advice, where asking friends to travel raises the question of who plans the trip. Wording made plainer by copy_changes 2; the following sentence (single point of contact, time zone, inclusions in writing) is kept."
+    },
+    "lead_magnet": {
+      "name": "Wedded Wonderland digital magazine",
+      "link": "/magazine?utm_source=blog&utm_medium=content&utm_campaign=why-do-we-have-bridesmaids&utm_content=magnet",
+      "placement": "Closing section 'Planning your wedding with us', first sentence, retagged from primary to magnet by copy_changes 3, for the reader who finishes still at the dreaming stage.",
+      "exists": true
+    },
+    "tracking": [
+      "utm_content=primary on the /magazine CTA block at the end of section 6",
+      "utm_content=secondary on the inline /wonderland-concierge link at the end of section 9",
+      "utm_content=magnet on the /magazine link in the closing section",
+      "utm_content=closing on the /wonderland-concierge link in the closing section"
+    ],
+    "rationale": "The brief sets a dreaming-stage reader and names the free magazine as the primary CTA, matching the services.md early-stage rule. It sits mid-article once the history and the 'how many' decision are done, so the invitation follows useful content rather than interrupting it. The Advisor is the in-context secondary after the destination section, where asking friends to travel makes planning abroad a live question; the panel's sceptic found the old line too emotional, so it now reads plainly. All Advisor copy stays within brand-facts.md: single point of contact, works in the couple's time zone, quotes in AUD, fee agreed in writing before any work begins, inclusions confirmed in writing. Nothing implies legal, church or paperwork help, and nothing says the Advisor is present on the day or arranges attendants' travel (deferred per the panel). Weighted enquiry likelihood is 2.0, expected for an informational tradition post, so no further asks are added. The panel's uhnw reader found 'free' mass-market but the panel kept it; the closing magazine sentence keeps 'free' to match the primary. Ideal magnet not on the site: a printable 'asking your bridesmaids to travel' conversation checklist (timing, who covers what, time off, insurance and passport checks) (suggestion only, not placed).",
+    "copy_changes": [
+      {
+        "old": "<!-- CTA: primary -->",
+        "new": "<!-- CTA: primary -->\n**Read the free magazine**\nFree to read, whenever you are ready.\n[Read the free magazine](/magazine?utm_source=blog&utm_medium=content&utm_campaign=why-do-we-have-bridesmaids&utm_content=primary)\n<!-- /CTA: primary -->",
+        "why": "Fill the empty primary marker at the end of section 6 (how many bridesmaids), once the reader has the history and the first decision, before the practical roles in section 7."
+      },
+      {
+        "old": "When you are ready to plan the trip around the people you love, [speak with a Wedded Advisor](/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=why-do-we-have-bridesmaids&utm_content=secondary).",
+        "new": "When you are ready to plan a wedding abroad, [speak with a Wedded Advisor](/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=why-do-we-have-bridesmaids&utm_content=secondary).",
+        "why": "Panel should_fix (sceptic): plainer mid-article CTA, less emotional on the sales line. The following brand-facts sentence (single point of contact, time zone, inclusions in writing) is kept, as the panel asked."
+      },
+      {
+        "old": "[read the free digital magazine](/magazine?utm_source=blog&utm_medium=content&utm_campaign=why-do-we-have-bridesmaids&utm_content=primary).",
+        "new": "[read the free digital magazine](/magazine?utm_source=blog&utm_medium=content&utm_campaign=why-do-we-have-bridesmaids&utm_content=magnet).",
+        "why": "Once the marker is filled, the closing magazine link would duplicate utm_content=primary; retag it as the lead magnet."
+      },
+      {
+        "old": "[Speak with a Wedded Advisor](/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=why-do-we-have-bridesmaids&utm_content=secondary).",
+        "new": "[Speak with a Wedded Advisor](/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=why-do-we-have-bridesmaids&utm_content=closing).",
+        "why": "Separate the closing Advisor link from the mid-article secondary in tracking (utm_content=closing)."
+      }
+    ]
+  },
+  "next_agent": [
+    "distribution"
+  ]
+}
