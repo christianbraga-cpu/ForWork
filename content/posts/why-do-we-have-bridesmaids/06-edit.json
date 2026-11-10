@@ -1,0 +1,419 @@
+{
+ "agent": "editor",
+ "task_id": "why-do-we-have-bridesmaids",
+ "stage": "06",
+ "status": "complete",
+ "round": 1,
+ "inputs_used": [
+  "CLAUDE.md",
+  "01-brief.json",
+  "02-seo.json",
+  "03-source-pack.json",
+  "04-images.json",
+  "05-draft.md",
+  "content-system/brand/brand-facts.md",
+  "content-system/rubrics/editor-rubric.md",
+  "content-system/seo/link-map.csv",
+  "content/posts/why-do-brides-wear-veils/06-edit.json (format model)"
+ ],
+ "self_qa": {
+  "checks": [
+   {
+    "check": "scan_copy.py run and results reflected",
+    "pass": true,
+    "note": "Draft: 0 banned, 0 flagged, 0 dashes, 0 overlaps. Applied copy rescanned: see note in report."
+   },
+   {
+    "check": "Every fact marker logged against the source pack",
+    "pass": true,
+    "note": "24 fact ids, all present in 03-source-pack.json (fact_14 and fact_107 unused)"
+   },
+   {
+    "check": "Every edit 'old' occurs exactly once (applied in order)",
+    "pass": true,
+    "note": "19 edits verified by script against 05-draft.md"
+   },
+   {
+    "check": "Authority rule: no research talk, per-line credits, hedge stacking; 'often told' 0",
+    "pass": true,
+    "note": "after edits: 'was recorded', 'traces the saying', 'sets out the ceremony', 'holds the design', 'gives both terms', 'shows several', 'defines the role' removed; links kept inline. 'often told' 0, no myths, no evil spirits."
+   },
+   {
+    "check": "Origins and meanings only with markers; unsupported 'always' claims removed",
+    "pass": true,
+    "note": "section 1 and section 9 'always' lines rewritten; section 10 'Some grooms' narrowed"
+   },
+   {
+    "check": "Wear-page overlap (matching advice, who pays for dresses, suits, packing)",
+    "pass": true,
+    "note": "section 5 is history plus link; takeaway 3 and section 9 dress-payment lines removed"
+   },
+   {
+    "check": "4 one-sentence takeaways; no prices, vendor names, 'last dance', Wedded Privileges, em dashes; Advisor lines match brand-facts.md; no legal or church paperwork help",
+    "pass": true,
+    "note": "FAQ witness-signing line removed"
+   },
+   {
+    "check": "Internal links in 02-seo.json and link-map.csv, none noindex",
+    "pass": true,
+    "note": "two links not in link map cut; pillar is Draft in link-map, veils, something-old and what-bridesmaids-wear kept as instructed (publish together)"
+   },
+   {
+    "check": "Decision consistent with scores",
+    "pass": true,
+    "note": "avg 4.0, no criterion < 3, no blocking issue left once edits apply"
+   }
+  ],
+  "confidence": 0.85
+ },
+ "next_agent": [
+  "luxury-writer"
+ ],
+ "payload": {
+  "draft_file": "content/posts/why-do-we-have-bridesmaids/05-draft.md",
+  "rubric": {
+   "voice": 4,
+   "expertise": 4,
+   "accuracy": 4,
+   "seo_fit": 4,
+   "commercial_link": 4,
+   "structure": 4,
+   "brief_fit": 4
+  },
+  "average": 4.0,
+  "blocking_issues": [],
+  "decision": "pass_with_edits",
+  "edits": [
+   {
+    "location": "Key takeaways, bullet 3",
+    "issue": "Must-fix: overlap with /expert-advice/what-do-bridesmaids-wear (who pays for dresses). Keep the thank-you history only, as fact_08 states it.",
+    "old": "- In the nineteenth century bridesmaids traditionally supplied their own dresses and received a piece of jewellery as a thank-you. <!-- fact_08 -->",
+    "new": "- Traditionally, bridesmaids received a piece of jewellery, such as a brooch or locket, as a gift or souvenir of the wedding. <!-- fact_08 -->",
+    "fix": "Replace exactly: \"- In the nineteenth century bridesmaids traditionally supplied their own dresses and received a piece of jewellery as a thank-you. <!-- fact_08 -->\" with: \"- Traditionally, bridesmaids received a piece of jewellery, such as a brooch or locket, as a gift or souvenir of the wedding. <!-- fact_08 -->\""
+   },
+   {
+    "location": "Section 1, paragraph 1",
+    "issue": "Must-fix: 'for the same reasons people always have' is an unsupported historical claim. Present-tense practice instead.",
+    "old": "Couples ask friends to stand beside them for the same reasons people always have: support, company and a witness to the moment.",
+    "new": "Couples ask friends to stand beside them for support, company and a witness to the moment.",
+    "fix": "Replace exactly: \"Couples ask friends to stand beside them for the same reasons people always have: support, company and a witness to the moment.\" with: \"Couples ask friends to stand beside them for support, company and a witness to the moment.\""
+   },
+   {
+    "location": "Section 1, paragraph 3",
+    "issue": "Must-fix: 'has always carried' is unsupported; 'was recorded' is research talk; 'goes back to the 1880s' loosens fact_03 (the 1882 quotation reads 'Always a maiden, never a wife'); standalone 'The Oxford Dictionary of Proverbs traces the saying' is a per-line source credit. Link moved inline.",
+    "old": "The role has always carried a little teasing too. \"Three times a bridesmaid, never a bride\" was in print by 1898, and the belief that serving as a bridesmaid too often is unlucky was recorded in Scotland in 1834. <!-- fact_02 --> \"Always a bridesmaid, never a bride\" goes back to the 1880s, and the \"often a bridesmaid\" version spread through mouthwash advertisements from the 1920s. <!-- fact_03 --> The [Oxford Dictionary of Proverbs](https://www.oxfordreference.com/display/10.1093/acref/9780198734901.001.0001/acref-9780198734901-e-248) traces the saying.",
+    "new": "The role carries a little teasing too. In Scotland in 1834, being a bridesmaid too many times was already thought unlucky, and \"Three times a bridesmaid, never a bride\" was in print by 1898. <!-- fact_02 --> An early form of [\"Always a bridesmaid, never a bride\"](https://www.oxfordreference.com/display/10.1093/acref/9780198734901.001.0001/acref-9780198734901-e-248) appeared in 1882, and the \"often a bridesmaid\" version was popularised by mouthwash advertisements from the 1920s. <!-- fact_03 -->",
+    "fix": "Replace exactly: \"The role has always carried a little teasing too. \"Three times a bridesmaid, never a bride\" was in print by 1898, and the belief that serving as a bridesmaid too often is unlucky was recorded in Scotland in 1834. <!-- fact_02 --> \"Always a bridesmaid, never a bride\" goes back to the 1880s, and the \"often a bridesmaid\" version spread through mouthwash advertisements from the 1920s. <!-- fact_03 --> The [Oxford Dictionary of Proverbs](https://www.oxfordreference.com/display/10.1093/acref/9780198734901.001.0001/acref-9780198734901-e-248) traces the saying.\" with: \"The role carries a little teasing too. In Scotland in 1834, being a bridesmaid too many times was already thought unlucky, and \"Three times a bridesmaid, never a bride\" was in print by 1898. <!-- fact_02 --> An early form of [\"Always a bridesmaid, never a bride\"](https://www.oxfordreference.com/display/10.1093/acref/9780198734901.001.0001/acref-9780198734901-e-248) appeared in 1882, and the \"often a bridesmaid\" version was popularised by mouthwash advertisements from the 1920s. <!-- fact_03 -->\""
+   },
+   {
+    "location": "Section 2, paragraph 2",
+    "issue": "Must-fix: 'of both families' is not in fact_10 (friends and clients gathered in the bride's father's house). 'The Oxford Classical Dictionary sets out the ceremony' is a per-line source credit; link moved inline.",
+    "old": "At a Roman wedding, friends and clients of both families gathered in the house of the bride's father. Words of consent were spoken, and the matron of honour, the pronuba, linked the right hands of the bride and groom. <!-- fact_10 --> The [Oxford Classical Dictionary](https://www.oxfordreference.com/display/10.1093/acref/9780199545568.001.0001/acref-9780199545568-e-3980) sets out the ceremony.",
+    "new": "At a [Roman wedding](https://www.oxfordreference.com/display/10.1093/acref/9780199545568.001.0001/acref-9780199545568-e-3980), friends and clients gathered in the house of the bride's father. Words of consent were spoken, and the matron of honour, the pronuba, linked the right hands of the bride and groom. <!-- fact_10 -->",
+    "fix": "Replace exactly: \"At a Roman wedding, friends and clients of both families gathered in the house of the bride's father. Words of consent were spoken, and the matron of honour, the pronuba, linked the right hands of the bride and groom. <!-- fact_10 --> The [Oxford Classical Dictionary](https://www.oxfordreference.com/display/10.1093/acref/9780199545568.001.0001/acref-9780199545568-e-3980) sets out the ceremony.\" with: \"At a [Roman wedding](https://www.oxfordreference.com/display/10.1093/acref/9780199545568.001.0001/acref-9780199545568-e-3980), friends and clients gathered in the house of the bride's father. Words of consent were spoken, and the matron of honour, the pronuba, linked the right hands of the bride and groom. <!-- fact_10 -->\""
+   },
+   {
+    "location": "Section 3, paragraph 1",
+    "issue": "Accuracy: royal.uk (fact_04) names 'St James's Palace Chapel'. Match the source wording.",
+    "old": "at the Chapel Royal, St James's Palace.",
+    "new": "in the chapel at St James's Palace.",
+    "fix": "Replace exactly: \"at the Chapel Royal, St James's Palace.\" with: \"in the chapel at St James's Palace.\""
+   },
+   {
+    "location": "Section 3, paragraph 2",
+    "issue": "Must-fix: 'The Royal Collection Trust holds the design' is a per-line source credit. Link moved inline; fact_05 marker kept.",
+    "old": "The Queen sketched their dress herself: a simple white design trimmed with sprays of roses. She gave the sketch to her Mistress of the Robes, the Duchess of Sutherland, who supervised the making. <!-- fact_04 --> The [Royal Collection Trust](https://www.rct.uk/collection/980021-o/design-for-queen-victorias-bridesmaids-dresses) holds the design. <!-- fact_05 -->",
+    "new": "The Queen [sketched their dress herself](https://www.rct.uk/collection/980021-o/design-for-queen-victorias-bridesmaids-dresses): a simple white design trimmed with sprays of roses. She gave the sketch to her Mistress of the Robes, the Duchess of Sutherland, who supervised the making. <!-- fact_04 --> <!-- fact_05 -->",
+    "fix": "Replace exactly: \"The Queen sketched their dress herself: a simple white design trimmed with sprays of roses. She gave the sketch to her Mistress of the Robes, the Duchess of Sutherland, who supervised the making. <!-- fact_04 --> The [Royal Collection Trust](https://www.rct.uk/collection/980021-o/design-for-queen-victorias-bridesmaids-dresses) holds the design. <!-- fact_05 -->\" with: \"The Queen [sketched their dress herself](https://www.rct.uk/collection/980021-o/design-for-queen-victorias-bridesmaids-dresses): a simple white design trimmed with sprays of roses. She gave the sketch to her Mistress of the Robes, the Duchess of Sutherland, who supervised the making. <!-- fact_04 --> <!-- fact_05 -->\""
+   },
+   {
+    "location": "Section 3, paragraph 4 (writer-flagged train line)",
+    "issue": "Reviewed: interpretive living-practice advice, no factual claim; acceptable. Light tightening so it reads as guidance, not a rule.",
+    "old": "A long train or cathedral veil needs one or two named attendants, briefed and rehearsed on the actual aisle, steps and turns of your ceremony venue.",
+    "new": "A long train or cathedral veil goes best with one or two named attendants who have rehearsed the actual aisle, steps and turns of your ceremony venue.",
+    "fix": "Replace exactly: \"A long train or cathedral veil needs one or two named attendants, briefed and rehearsed on the actual aisle, steps and turns of your ceremony venue.\" with: \"A long train or cathedral veil goes best with one or two named attendants who have rehearsed the actual aisle, steps and turns of your ceremony venue.\""
+   },
+   {
+    "location": "Section 4, paragraph 1",
+    "issue": "Must-fix: 'Cambridge Dictionary gives both terms' is a per-line source credit. Link moved inline.",
+    "old": "A matron of honour is a married woman who helps the bride. <!-- fact_101 --> [Cambridge Dictionary](https://dictionary.cambridge.org/dictionary/english/matron-of-honour) gives both terms.",
+    "new": "A [matron of honour](https://dictionary.cambridge.org/dictionary/english/matron-of-honour) is a married woman who helps the bride. <!-- fact_101 -->",
+    "fix": "Replace exactly: \"A matron of honour is a married woman who helps the bride. <!-- fact_101 --> [Cambridge Dictionary](https://dictionary.cambridge.org/dictionary/english/matron-of-honour) gives both terms.\" with: \"A [matron of honour](https://dictionary.cambridge.org/dictionary/english/matron-of-honour) is a married woman who helps the bride. <!-- fact_101 -->\""
+   },
+   {
+    "location": "Section 5, paragraph 2",
+    "issue": "Must-fix: 'coordinated parties became familiar' through the century is a generalisation beyond fact_09's two examples; 'of the period' is not in the pack (the sheet is for the Gibson wedding, undated); 'The V&A shows several' is a per-line source credit. Link moved inline.",
+    "old": "Through the nineteenth century, coordinated parties became familiar. At the 1884 wedding of Val Prinsep and Florence Leyland, the bridesmaids wore canary yellow, with brooches engraved \"Val and Flo\" from the groom. <!-- fact_09 --> A design sheet for another wedding of the period specifies six matching bridesmaids' brooches in silver. <!-- fact_09 --> The [V&A](https://www.vam.ac.uk/articles/brooches-for-bridesmaids) shows several.",
+    "new": "Later in the century, parties were coordinated too. At the 1884 wedding of Val Prinsep and Florence Leyland, the bridesmaids wore canary yellow, with [brooches engraved \"Val and Flo\"](https://www.vam.ac.uk/articles/brooches-for-bridesmaids) from the groom. <!-- fact_09 --> The design sheet for the Gibson wedding specifies six matching bridesmaids' brooches in silver. <!-- fact_09 -->",
+    "fix": "Replace exactly: \"Through the nineteenth century, coordinated parties became familiar. At the 1884 wedding of Val Prinsep and Florence Leyland, the bridesmaids wore canary yellow, with brooches engraved \"Val and Flo\" from the groom. <!-- fact_09 --> A design sheet for another wedding of the period specifies six matching bridesmaids' brooches in silver. <!-- fact_09 --> The [V&A](https://www.vam.ac.uk/articles/brooches-for-bridesmaids) shows several.\" with: \"Later in the century, parties were coordinated too. At the 1884 wedding of Val Prinsep and Florence Leyland, the bridesmaids wore canary yellow, with [brooches engraved \"Val and Flo\"](https://www.vam.ac.uk/articles/brooches-for-bridesmaids) from the groom. <!-- fact_09 --> The design sheet for the Gibson wedding specifies six matching bridesmaids' brooches in silver. <!-- fact_09 -->\""
+   },
+   {
+    "location": "Section 6, after the bullet list",
+    "issue": "Must-fix (link rules): /how-many-is-too-many-9-weddings-with-the-most-bridesmaids is not in 02-seo.json internal_links or link-map.csv. Cut.",
+    "old": "For a lighter look at big wedding parties, see [the weddings with the most bridesmaids](/how-many-is-too-many-9-weddings-with-the-most-bridesmaids).\n\n",
+    "new": "",
+    "fix": "Delete exactly: \"For a lighter look at big wedding parties, see [the weddings with the most bridesmaids](/how-many-is-too-many-9-weddings-with-the-most-bridesmaids).\n\n\""
+   },
+   {
+    "location": "Section 7, paragraph 1",
+    "issue": "Must-fix (link rules): /5-types-of-bridesmaids-every-bride-needs is not in 02-seo.json internal_links or link-map.csv. Cut.",
+    "old": " For the personalities that make a party work, read [the types of bridesmaids every bride needs](/5-types-of-bridesmaids-every-bride-needs).",
+    "new": "",
+    "fix": "Delete exactly: \" For the personalities that make a party work, read [the types of bridesmaids every bride needs](/5-types-of-bridesmaids-every-bride-needs).\""
+   },
+   {
+    "location": "Section 7, Before the wedding, 'Coordinate' bullet (writer-flagged)",
+    "issue": "Must-fix: the comparison overstates fact_04. The Duchess supervised the making of the dresses; she did not keep fittings and dates on track for attendants in different cities. Cut the comparison and its marker (fact_04 is already used in section 3).",
+    "old": " Victoria's Duchess of Sutherland did much the same. <!-- fact_04 -->",
+    "new": "",
+    "fix": "Delete exactly: \" Victoria's Duchess of Sutherland did much the same. <!-- fact_04 -->\""
+   },
+   {
+    "location": "Section 9, Questions to talk through, bullet 2",
+    "issue": "Must-fix: 'Who pays for outfits' overlaps /expert-advice/what-do-bridesmaids-wear (who pays for dresses). Keep to non-attire costs.",
+    "old": "- Who pays for outfits and hair, and does anyone need a different arrangement?",
+    "new": "- Who covers hair and make-up, and does anyone need a different arrangement?",
+    "fix": "Replace exactly: \"- Who pays for outfits and hair, and does anyone need a different arrangement?\" with: \"- Who covers hair and make-up, and does anyone need a different arrangement?\""
+   },
+   {
+    "location": "Section 9, paragraph after the questions (writer-flagged)",
+    "issue": "Must-fix: 'so this has always been a conversation' is an unsupported historical claim, and the dress clause overlaps the wear page. Rewrite as present-tense practice; drop the fact_08 marker here (used in section 10).",
+    "old": "Have the conversation before anyone books. Victorian bridesmaids supplied their own dresses while the couple gave the gift, so this has always been a conversation. <!-- fact_08 -->",
+    "new": "Have the conversation before anyone books, so every attendant knows what is covered and what is theirs to arrange.",
+    "fix": "Replace exactly: \"Have the conversation before anyone books. Victorian bridesmaids supplied their own dresses while the couple gave the gift, so this has always been a conversation. <!-- fact_08 -->\" with: \"Have the conversation before anyone books, so every attendant knows what is covered and what is theirs to arrange.\""
+   },
+   {
+    "location": "Section 9, Before anyone flies, paragraph 1",
+    "issue": "Grammar: 'treats the right policy as essential as a passport' does not parse. Match fact_105.",
+    "old": "and treats the right policy as essential as a passport.",
+    "new": "and says the right policy is as essential as a passport.",
+    "fix": "Replace exactly: \"and treats the right policy as essential as a passport.\" with: \"and says the right policy is as essential as a passport.\""
+   },
+   {
+    "location": "Section 10, paragraph 2",
+    "issue": "Must-fix: 'Some grooms' generalises from one example (fact_09). State the example.",
+    "old": "Some grooms had the couple's names engraved, like the \"Val and Flo\" brooches of 1884. <!-- fact_09 -->",
+    "new": "In 1884 Val Prinsep gave his bridesmaids brooches engraved \"Val and Flo\". <!-- fact_09 -->",
+    "fix": "Replace exactly: \"Some grooms had the couple's names engraved, like the \"Val and Flo\" brooches of 1884. <!-- fact_09 -->\" with: \"In 1884 Val Prinsep gave his bridesmaids brooches engraved \"Val and Flo\". <!-- fact_09 -->\""
+   },
+   {
+    "location": "Section 10, paragraph 4 (writer-flagged speech line)",
+    "issue": "Must-fix: fact_101 is a dictionary usage example, not evidence of a custom, so the marker cannot support it; the line is also groom-only. Fold into present-tense practice, no marker.",
+    "old": "The other thanks happen on the day: a mention in the speech, a quiet moment before the ceremony, and time with them after the photographs. A groom can end his speech by thanking the bridesmaids and matron of honour by name. <!-- fact_101 -->",
+    "new": "The other thanks happen on the day: each attendant thanked by name in the speeches, a quiet moment before the ceremony, and time with them after the photographs.",
+    "fix": "Replace exactly: \"The other thanks happen on the day: a mention in the speech, a quiet moment before the ceremony, and time with them after the photographs. A groom can end his speech by thanking the bridesmaids and matron of honour by name. <!-- fact_101 -->\" with: \"The other thanks happen on the day: each attendant thanked by name in the speeches, a quiet moment before the ceremony, and time with them after the photographs.\""
+   },
+   {
+    "location": "FAQ, 'Why do we have bridesmaids?'",
+    "issue": "'witnesses' reads as a legal role; keep the answer to support.",
+    "old": "and to stand with her as friends and witnesses.",
+    "new": "and to stand with her through the day.",
+    "fix": "Replace exactly: \"and to stand with her as friends and witnesses.\" with: \"and to stand with her through the day.\""
+   },
+   {
+    "location": "FAQ, 'Is it okay to have no bridesmaids?'",
+    "issue": "Must-fix: 'sign as a witness where the ceremony allows' is an unsourced legal statement and implies paperwork guidance.",
+    "old": "A sibling or friend can still hold the rings and sign as a witness where the ceremony allows.",
+    "new": "A sibling or friend can still hold the rings and stand beside you.",
+    "fix": "Replace exactly: \"A sibling or friend can still hold the rings and sign as a witness where the ceremony allows.\" with: \"A sibling or friend can still hold the rings and stand beside you.\""
+   }
+  ],
+  "fact_check_log": [
+   {
+    "claim": "Victoria married Albert 10 Feb 1840; bridesmaids in white; 18-foot train carried by bridesmaids who struggled down the aisle",
+    "fact_id": "fact_01",
+    "status": "confirmed",
+    "note": "confirmed (train line reviewed; follow-on rehearsal advice is living practice)"
+   },
+   {
+    "claim": "Bridesmaid-too-often unlucky belief: Scotland 1834; \"Three times a bridesmaid, never a bride\" 1898",
+    "fact_id": "fact_02",
+    "status": "confirmed",
+    "note": "confirmed after edit (removed \"was recorded\" and \"always\")"
+   },
+   {
+    "claim": "\"Always a bridesmaid\" early form 1882; \"often a bridesmaid\" popularised by 1920s mouthwash ads",
+    "fact_id": "fact_03",
+    "status": "confirmed",
+    "note": "confirmed after edit (1882 early form; \"popularised\")"
+   },
+   {
+    "claim": "Chapel at St James's Palace; Victoria sketched simple white dress with sprays of roses; Duchess of Sutherland supervised making",
+    "fact_id": "fact_04",
+    "status": "confirmed",
+    "note": "confirmed after edit (chapel wording); removed from section 7 Duchess comparison (overstated)"
+   },
+   {
+    "claim": "Twelve bridesmaids, eldest daughters of peers; Victoria designed the dresses (RCT)",
+    "fact_id": "fact_05",
+    "status": "confirmed",
+    "note": "confirmed"
+   },
+   {
+    "claim": "Albert designed eagle-shaped turquoise brooch for the twelve; forget-me-nots and pearls for true love",
+    "fact_id": "fact_06",
+    "status": "confirmed",
+    "note": "confirmed"
+   },
+   {
+    "claim": "Nineteenth century: groups of eight or twelve; often young sisters, cousins and friends",
+    "fact_id": "fact_07",
+    "status": "confirmed",
+    "note": "confirmed"
+   },
+   {
+    "claim": "Bridesmaids traditionally given jewellery (brooch or locket); UK groom gave gifts; 19th-c American brides gave gifts",
+    "fact_id": "fact_08",
+    "status": "confirmed",
+    "note": "confirmed in takeaway (after edit) and section 10; removed from section 9 \"always been a conversation\" (unsupported)"
+   },
+   {
+    "claim": "1884 Prinsep-Leyland wedding: canary yellow, \"Val and Flo\" brooches from the groom; Gibson design sheet six silver brooches",
+    "fact_id": "fact_09",
+    "status": "confirmed",
+    "note": "confirmed after edits (Gibson sheet undated; \"Some grooms\" narrowed to the 1884 example)"
+   },
+   {
+    "claim": "Roman wedding: friends and clients in bride's father's house; consent; pronuba linked right hands",
+    "fact_id": "fact_10",
+    "status": "confirmed",
+    "note": "confirmed after edit (removed \"of both families\")"
+   },
+   {
+    "claim": "Roman bride conducted to husband's house",
+    "fact_id": "fact_11",
+    "status": "confirmed",
+    "note": "confirmed"
+   },
+   {
+    "claim": "c.1903 fashion for historic/national costume for younger bridesmaids and pageboys; dress copies 1630s-40s styles",
+    "fact_id": "fact_12",
+    "status": "confirmed",
+    "note": "confirmed"
+   },
+   {
+    "claim": "Classical Athens: women attended wedding feasts where bridesmaids danced",
+    "fact_id": "fact_13",
+    "status": "confirmed",
+    "note": "confirmed"
+   },
+   {
+    "claim": "Maid of honour is the most important bridesmaid",
+    "fact_id": "fact_100",
+    "status": "confirmed",
+    "note": "confirmed"
+   },
+   {
+    "claim": "Matron of honour is a married woman who helps the bride",
+    "fact_id": "fact_101",
+    "status": "confirmed",
+    "note": "confirmed for the definition; removed from the groom-speech line (dictionary usage example, not a custom)"
+   },
+   {
+    "claim": "Bridesmaid helps bride before and during ceremony; word late 18th c., from \"bridemaid\"",
+    "fact_id": "fact_102",
+    "status": "confirmed",
+    "note": "confirmed"
+   },
+   {
+    "claim": "Maid of honour, especially US, the main bridesmaid",
+    "fact_id": "fact_103",
+    "status": "confirmed",
+    "note": "confirmed"
+   },
+   {
+    "claim": "Groomsman (UK usher): friend of groom with special duties incl. seating guests",
+    "fact_id": "fact_104",
+    "status": "confirmed",
+    "note": "confirmed"
+   },
+   {
+    "claim": "Smartraveller: insurance as essential as a passport; get it whoever/wherever",
+    "fact_id": "fact_105",
+    "status": "confirmed",
+    "note": "confirmed (grammar fixed)"
+   },
+   {
+    "claim": "Policy covers every country incl. stopovers",
+    "fact_id": "fact_106",
+    "status": "confirmed",
+    "note": "confirmed"
+   },
+   {
+    "claim": "Tell insurer about pre-existing conditions",
+    "fact_id": "fact_108",
+    "status": "confirmed",
+    "note": "confirmed"
+   },
+   {
+    "claim": "Passport valid 6+ months beyond end of trip",
+    "fact_id": "fact_109",
+    "status": "confirmed",
+    "note": "confirmed"
+   },
+   {
+    "claim": "Right visa for countries visited or transited",
+    "fact_id": "fact_110",
+    "status": "confirmed",
+    "note": "confirmed"
+   },
+   {
+    "claim": "Share itinerary; hard copies of bookings",
+    "fact_id": "fact_111",
+    "status": "confirmed",
+    "note": "confirmed"
+   },
+   {
+    "claim": "Section 1 'for the same reasons people always have'",
+    "fact_id": "none",
+    "status": "removed",
+    "note": "unsupported historical claim; cut"
+   },
+   {
+    "claim": "Section 9 'this has always been a conversation'",
+    "fact_id": "none",
+    "status": "removed",
+    "note": "unsupported historical claim; rewritten as present-tense practice"
+   },
+   {
+    "claim": "FAQ 'sign as a witness where the ceremony allows'",
+    "fact_id": "none",
+    "status": "removed",
+    "note": "unsourced legal statement; cut"
+   },
+   {
+    "claim": "Section 3 train rehearsal advice; section 4 'difference is marriage, not rank'; section 8 'few guests look twice'",
+    "fact_id": "none",
+    "status": "confirmed",
+    "note": "living practice, no fact claimed; kept"
+   }
+  ],
+  "compliance": {
+   "pass": true,
+   "issues": [
+    "No prices or amounts; no vendor, designer or venue names; mouthwash brand not named.",
+    "Advisor lines (single point of contact, time zone, AUD, fee and inclusions in writing) match brand-facts.md; no Wedded Privileges claim; no 'last dance'.",
+    "FAQ witness-signing line removed (unsourced legal statement).",
+    "Smartraveller lines dated 'As at November 2026' and match fact_105 to fact_111.",
+    "Six image slots carry [[VERIFY credit]] and status 'needed' in 04-images.json; no reference-only paths."
+   ]
+  },
+  "originality": {
+   "pass": true,
+   "matches": []
+  },
+  "banned_phrases_found": [],
+  "needs_signoff": []
+ },
+ "assumptions": [
+  "Pillar /expert-advice/wedding-traditions (Draft in link-map) and the veils, something-old and what-bridesmaids-wear links are kept because the posts publish together.",
+  "Title 'Bridesmaids Tradition and Where It Comes From' is the brief's set title, so the exact keyword in the title is not raised as a must-fix; meta title from 02-seo.json carries 'Why We Have Them'."
+ ],
+ "open_questions": [
+  {
+   "to": "orchestrator",
+   "question": "Confirm the four related internal links and the pillar go live with or before this post.",
+   "blocking": false
+  }
+ ]
+}
