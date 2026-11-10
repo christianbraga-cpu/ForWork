@@ -1,0 +1,184 @@
+{
+ "agent": "planner-sme",
+ "task_id": "crete-wedding-venues",
+ "stage": "03",
+ "status": "complete",
+ "round": 1,
+ "inputs_used": [
+  "CLAUDE.md",
+  "content/posts/crete-wedding-venues/00-input.json",
+  "content/posts/crete-wedding-venues/01-brief.json",
+  "scratchpad/crv_a/03-source-pack.json (format)"
+ ],
+ "self_qa": {
+  "checks": [
+   {
+    "check": "Every fact has a source and date",
+    "pass": true
+   },
+   {
+    "check": "No price without a source; all prices in needs_signoff",
+    "pass": true,
+    "note": "No prices recorded. Euphoria packages carry prices only on request; none taken."
+   },
+   {
+    "check": "Every must-include covered or marked [[VERIFY]]",
+    "pass": true,
+    "note": "Batch E covers west Crete venue profiles only."
+   },
+   {
+    "check": "No invented quotes, statistics or real weddings",
+    "pass": true
+   }
+  ],
+  "confidence": 0.75
+ },
+ "open_questions": [
+  {
+   "to": "orchestrator",
+   "question": "Batch E qualifies 3 west Crete venues: Avra Imperial (Kolymvari; private chapel of Saint Paul, Maistro hall up to 680), Minoa Palace (Platanias; indoor/outdoor ceremony and reception), Euphoria Resort (Kolymvari; informal wedding or vow renewal only, packages sized up to 30 guests). Kiani Beach Resort and Pilot Beach Resort: searches found no official weddings page (Pilot Beach site only shows a honeymoon package on its booking engine); not qualified. Grecotel Creta Palace and Chania old-town venues not reached in the 12-minute limit. Lead only, unchecked: Kalimera Kriti Hotel & Village Resort has its own weddings page (kalimerakriti.gr/weddings) but it is in east Crete (Sissi), not Chania.",
+   "blocking": false
+  },
+  {
+   "to": "orchestrator",
+   "question": "Euphoria Resort offers an informal (non-legal) ceremony per its own page. Include as a vow renewal or symbolic ceremony option, or drop?",
+   "blocking": false
+  }
+ ],
+ "assumptions": [
+  "BOOKING CHECKLIST: Euphoria Resort: legal ceremony possible or symbolic only, maximum guest numbers beyond the packages, reception venues and capacities, music curfew, minimum nights, rain plan, exclusive use, Ultra All Inclusive rules for non-staying wedding guests.",
+  "BOOKING CHECKLIST: Avra Imperial Hotel: Saint Paul chapel capacity, pool-terrace reception capacity, music curfew, minimum nights, rain plan, exclusive use or buyout, room block size.",
+  "BOOKING CHECKLIST: Minoa Palace Resort: ceremony and reception venue names and capacities, music curfew, minimum nights, rain plan, exclusive use, room count (not read on the official site)."
+ ],
+ "verify_items": [
+  "[[VERIFY: Euphoria Resort transfer time from Chania Airport, 30 or 40 minutes (fact_407)]]",
+  "[[VERIFY: Euphoria Resort ceremonies are described as informal weddings or vow renewals with a hotel certificate of informal marriage; the article must not present it as a legal wedding venue unless the Wedded Advisor confirms a legal civil or religious ceremony can be held there (fact_400)]]",
+  "[[VERIFY: Minoa Palace weddings page was last modified 2019 (page metadata); confirm weddings are still offered before publishing (fact_405)]]",
+  "[[VERIFY: Batch E qualifies 3 of 4 target west Crete venues (Euphoria Resort, Avra Imperial, Minoa Palace); Kiani Beach Resort and Pilot Beach Resort: no official weddings page found in the time limit; Grecotel Creta Palace and Chania old-town venues not checked]]"
+ ],
+ "tools_used": [
+  "mcp__Apify__apify--web-fetch",
+  "mcp__Apify__apify--web-search",
+  "Bash"
+ ],
+ "next_agent": [
+  "luxury-writer"
+ ],
+ "payload": {
+  "facts": [
+   {
+    "fact_id": "fact_400",
+    "claim": "Euphoria Resort has a weddings page offering a special ceremony for an informal wedding or renewal of vows, overlooking the Mediterranean Sea. Each package lists a choice of hotel venues including sun-kissed beaches and poolside settings, with two witnesses and the hotel's official representative, and a certificate of informal marriage from the hotel.",
+    "source": "https://www.euphoriaresort.gr/weddings/",
+    "source_type": "official_venue",
+    "checked": "2026-11-10",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_401",
+    "claim": "Euphoria Resort's wedding packages are sized for small groups: post-ceremony sparkling wine and cake are listed for up to 10, 20 or 30 guests depending on the package. Other services on request include buffet, seated and cocktail receptions, beverage packages, open bar, custom cakes and entertainment, plus menu tastings, bachelor and bachelorette parties and bridal treatments at the Harmonia Spa.",
+    "source": "https://www.euphoriaresort.gr/weddings/",
+    "source_type": "official_venue",
+    "checked": "2026-11-10",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_402",
+    "claim": "Avra Imperial Hotel (five-star per its own site description 'Luxury Hotel In Kolymbari Crete') sits next to Kolymvari beach with views of the Rodopou peninsula, and has the private chapel of Saint Paul within the hotel area for wedding ceremonies, plus banqueting rooms and a specialised wedding and group events team.",
+    "source": "https://www.avraimperialhotel.gr/meetings-events/weddings-in-crete-chania/",
+    "source_type": "official_venue",
+    "checked": "2026-11-10",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_403",
+    "claim": "Avra Imperial lists two reception venues: the central Maistro events hall for up to 680 people, and, for a small reception, a private space by its infinity-style glass pool of 1,500 square metres for alfresco dining. Menus are tailored with the Executive Chef and F&B Manager.",
+    "source": "https://www.avraimperialhotel.gr/meetings-events/weddings-in-crete-chania/",
+    "source_type": "official_venue",
+    "checked": "2026-11-10",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_404",
+    "claim": "Avra Imperial's weddings page says guests can stay in the hotel's rooms and use treatments at the KORRES Spa, in Kolymvari, Chania.",
+    "source": "https://www.avraimperialhotel.gr/meetings-events/weddings-in-crete-chania/",
+    "source_type": "official_venue",
+    "checked": "2026-11-10",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_405",
+    "claim": "Minoa Palace Resort (Platanias, Chania, Crete; describes itself as a five-star resort) has a weddings page. Its wedding package lists an ideal location for outdoor or indoor ceremony and reception, customised menus, signature drinks and cocktails, and table decoration consulting on request; extras listed are flower decoration, spa treatments, bridal hair, make-up and manicure, and music options including DJ or live band.",
+    "source": "https://www.minoapalace.gr/wedding-events",
+    "source_type": "official_venue",
+    "checked": "2026-11-10",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_406",
+    "claim": "Minoa Palace offers newlyweds a stay in one of its suites after the wedding with local wedding sweets, champagne and flowers, plus room service breakfast the next morning, and a specially decorated wedding cake, all stated as complimentary.",
+    "source": "https://www.minoapalace.gr/wedding-events",
+    "source_type": "official_venue",
+    "checked": "2026-11-10",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_407",
+    "claim": "Euphoria Resort is a five-star, Ultra All Inclusive family beach resort on the seashore of Kolymvari, about 14 miles west of Chania, with 344 rooms and suites (including a 70-key Signature Collection) on a 65,000 sq m sea-front property, a 3,500 sq m pool area and a 1,500 sq m spa. A member of EM Resorts (the same group as Minoa Palace).",
+    "source": "https://www.euphoriaresort.gr/",
+    "source_type": "official_venue",
+    "checked": "2026-11-10",
+    "is_price": false,
+    "conflicts": "Same homepage gives the drive from Chania International Airport (CHQ) as 30 minutes (meta description) and 40 minutes (body text). [[VERIFY: Euphoria Resort transfer time from Chania Airport, 30 or 40 minutes]]"
+   }
+  ],
+  "insider_details": [
+   {
+    "detail": "Kolymvari is the far west of the Chania coast: Euphoria Resort puts itself about 14 miles west of Chania town and 30 to 40 minutes from Chania Airport, and Avra Imperial sits on the same bay. Fly guests into Chania, not Heraklion, and plan one coach run for the whole group rather than staggered taxis.",
+    "fact_ids": [
+     "fact_407",
+     "fact_402"
+    ]
+   },
+   {
+    "detail": "Avra Imperial suits both ends of the guest list: a private chapel on site for the ceremony, then either the Maistro hall (up to 680) for a large Greek-style reception or the 1,500 sq m pool terrace for a small alfresco dinner. Ask early which one your number fits, since the page does not give the terrace capacity.",
+    "fact_ids": [
+     "fact_402",
+     "fact_403"
+    ]
+   },
+   {
+    "detail": "Euphoria Resort's own packages stop at 30 guests and describe the ceremony as an informal wedding or vow renewal, so treat it as a symbolic-ceremony option, with the legal paperwork done separately, unless the Wedded Advisor confirms otherwise.",
+    "fact_ids": [
+     "fact_400",
+     "fact_401"
+    ]
+   }
+  ],
+  "quotes": [],
+  "real_weddings": [],
+  "verify_items": [
+   "[[VERIFY: Euphoria Resort transfer time from Chania Airport, 30 or 40 minutes (fact_407)]]",
+   "[[VERIFY: Euphoria Resort ceremonies are described as informal weddings or vow renewals with a hotel certificate of informal marriage; the article must not present it as a legal wedding venue unless the Wedded Advisor confirms a legal civil or religious ceremony can be held there (fact_400)]]",
+   "[[VERIFY: Minoa Palace weddings page was last modified 2019 (page metadata); confirm weddings are still offered before publishing (fact_405)]]",
+   "[[VERIFY: Batch E qualifies 3 of 4 target west Crete venues (Euphoria Resort, Avra Imperial, Minoa Palace); Kiani Beach Resort and Pilot Beach Resort: no official weddings page found in the time limit; Grecotel Creta Palace and Chania old-town venues not checked]]"
+  ],
+  "needs_signoff": [],
+  "must_include_coverage": [
+   {
+    "item": "West Crete / Chania venue profiles (setting, ceremony options, capacity, rooms, exclusive use, standout)",
+    "covered_by": [
+     "fact_400",
+     "fact_401",
+     "fact_402",
+     "fact_403",
+     "fact_404",
+     "fact_405",
+     "fact_406",
+     "fact_407",
+     "[[VERIFY: exclusive use not published by any batch E venue; on booking checklist]]"
+    ]
+   }
+  ]
+ }
+}
