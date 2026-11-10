@@ -91,6 +91,10 @@ Many couples decide with a few questions:
 For a lighter look at big wedding parties, see [the weddings with the most bridesmaids](/how-many-is-too-many-9-weddings-with-the-most-bridesmaids).
 
 <!-- CTA: primary -->
+**Read the free magazine**
+Free to read, whenever you are ready.
+[Read the free magazine](/magazine?utm_source=blog&utm_medium=content&utm_campaign=why-do-we-have-bridesmaids&utm_content=primary)
+<!-- /CTA: primary -->
 
 ## 7. What bridesmaids and the maid of honour do, before and on the day
 
@@ -149,7 +153,7 @@ Have the conversation before anyone books, so every attendant knows what is cove
 
 As at November 2026, Smartraveller advises getting travel insurance whoever you are and wherever you are going, and says the right policy is as essential as a passport. <!-- fact_105 --> A policy should cover every country on the route, including stopovers. <!-- fact_106 --> Each attendant should tell their insurer about any pre-existing health conditions. <!-- fact_108 --> Read the [Smartraveller travel insurance guidance](https://www.smartraveller.gov.au/travel-essentials/travel-insurance) together.
 
-Each attendant checks their own passport is valid for at least six months beyond the end of the trip, and their own visa for every country they visit or transit through. <!-- fact_109 --> <!-- fact_110 --> Sharing the itinerary with family at home and carrying hard copies of flight, accommodation and event bookings are sensible habits for the whole party. <!-- fact_111 -->
+Each attendant checks their own passport and visa, including for every country they transit through. <!-- fact_109 --> <!-- fact_110 --> Sharing the itinerary with family at home and carrying hard copies of flight, accommodation and event bookings are sensible habits for the whole party. <!-- fact_111 -->
 
 ### On the ground
 
@@ -162,7 +166,7 @@ Each attendant checks their own passport is valid for at least six months beyond
 *Photo: [[VERIFY credit]]*
 <!-- IMAGE SLOT destination-wedding-party: Licensed photo from a consented destination wedding (any real, named place, captioned with place and town): bridesmaids with the bride on a terrace, coastline or vineyard, warm evening light, people prominent and setting recognisable. Location must be verified. No venue signage unless the venue has licensed the image. Never AI (people or place). -->
 
-When you are ready to plan the trip around the people you love, [speak with a Wedded Advisor](/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=why-do-we-have-bridesmaids&utm_content=secondary). One advisor is your single point of contact, works in your time zone and confirms inclusions in writing.
+When you are ready to plan a wedding abroad, [speak with a Wedded Advisor](/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=why-do-we-have-bridesmaids&utm_content=secondary). One advisor is your single point of contact, works in your time zone and confirms inclusions in writing.
 
 ## 10. How to thank your bridesmaids
 
@@ -202,6 +206,6 @@ No one has to. Ask early, talk openly about who covers travel and time off, and 
 
 ## Planning your wedding with us
 
-For the traditions, places and people that shape a wedding, [read the free digital magazine](/magazine?utm_source=blog&utm_medium=content&utm_campaign=why-do-we-have-bridesmaids&utm_content=primary). When you know who will stand beside you, tell us your date, your guest list and where you would like to marry.
+For the traditions, places and people that shape a wedding, [read the free digital magazine](/magazine?utm_source=blog&utm_medium=content&utm_campaign=why-do-we-have-bridesmaids&utm_content=magnet). When you know who will stand beside you, tell us your date, your guest list and where you would like to marry.
 
-You will work with one Wedded Advisor, your single point of contact from the first conversation to the wedding day. Your advisor works in your time zone and quotes in AUD. The fee is agreed in writing before any work begins, and your advisor confirms the inclusions in writing before you commit. [Speak with a Wedded Advisor](/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=why-do-we-have-bridesmaids&utm_content=secondary).
+You will work with one Wedded Advisor, your single point of contact from the first conversation to the wedding day. Your advisor works in your time zone and quotes in AUD. The fee is agreed in writing before any work begins, and your advisor confirms the inclusions in writing before you commit. [Speak with a Wedded Advisor](/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=why-do-we-have-bridesmaids&utm_content=closing).
