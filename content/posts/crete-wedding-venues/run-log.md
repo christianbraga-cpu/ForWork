@@ -13,3 +13,4 @@
 23:39 07 reader uhnw done; 5/5 in, waiting on editor.
 23:40 06 editor pass_with_edits (4.29): 13 edits applied to 05-draft-r2.md.
 23:43 07b panel: revise (enquire 2.6), 1 must-fix + 5 should-fix + 3 consider; one final pass.
+23:45 08 final done: ~5,224 words, scan clean.
