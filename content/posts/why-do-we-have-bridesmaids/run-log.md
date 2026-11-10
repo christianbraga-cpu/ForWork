@@ -12,3 +12,4 @@
 - 00:34 08 final done: ~2,077 words, scan clean.
 - 00:35 09 CRO done: 4 copy changes.
 - 00:36 10 distribution done; utm_source set to blog (series standard).
+- 00:39 11-13 package, run report, backlinks, link map, calendar row 38, docx.
