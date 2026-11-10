@@ -9,3 +9,4 @@
 23:32 03 top-up E done: 8 facts; 3 qualify (Avra Imperial, Minoa Palace, Euphoria). 16 qualify; Minoa Palace held as reserve (weddings page last updated 2019). Final 15. Packs merged.
 23:37 05 draft done: 4,972 words, 15 venues, scan clean.
 23:38 07 readers: funding_parent, search_visitor, planner_couple done (no must-fix).
+23:38 07 reader sceptic done: must-fix consistency (largest venues east vs west).
