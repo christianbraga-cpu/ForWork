@@ -5,3 +5,4 @@
 - 00:20 03 batch B done: 12 facts (fact_100-111), definitions + Smartraveller; royal.uk 404.
 - 00:26 03 batch A done: 14 facts; merged packs (26 facts).
 - 00:28 05 draft done: ~2,317 words, scan clean.
+- 00:29 07 readers: search_visitor, funding_parent, sceptic done (no must-fix).
