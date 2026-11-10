@@ -11,3 +11,4 @@
 - 00:33 07b panel: revise (enquire 2.0, early-funnel topic), 2 must-fix + 5 should-fix; one final pass.
 - 00:34 08 final done: ~2,077 words, scan clean.
 - 00:35 09 CRO done: 4 copy changes.
+- 00:36 10 distribution done; utm_source set to blog (series standard).
