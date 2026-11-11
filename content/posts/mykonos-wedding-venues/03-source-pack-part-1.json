@@ -1,0 +1,373 @@
+{
+  "agent": "planner-sme",
+  "task_id": "mykonos-wedding-venues",
+  "stage": "03",
+  "status": "complete",
+  "round": 1,
+  "inputs_used": [
+    "CLAUDE.md",
+    "content/posts/mykonos-wedding-venues/00-input.json",
+    "content/posts/mykonos-wedding-venues/01-brief.json",
+    "content/posts/corfu-wedding-venues/03-source-pack-part-1.json (format model)",
+    "content-system/schemas/03-source-pack.schema.json"
+  ],
+  "self_qa": {
+    "checks": [
+      {
+        "check": "Every fact has a source and date",
+        "pass": true,
+        "note": "14 facts, fact_100 to fact_113, all live reads of official venue or hotel-group pages, checked 2026-11-11."
+      },
+      {
+        "check": "No price without a source; all prices in needs_signoff",
+        "pass": true,
+        "note": "No prices recorded. Soho House membership fees on the page were deliberately left out."
+      },
+      {
+        "check": "Every must-include covered or marked [[VERIFY]]",
+        "pass": true,
+        "note": "Batch B covers Psarou, Platis Gialos and Paraga venue entries only."
+      },
+      {
+        "check": "No invented quotes, statistics or real weddings",
+        "pass": true,
+        "note": "Quotes in claims are venue page wording only; no planner quotes, no real weddings."
+      },
+      {
+        "check": "Inclusion rule: live read of the venue's own site",
+        "pass": true,
+        "note": "Kensho Psarou excluded: no official page readable (fact_112). Search snippets used as leads only."
+      }
+    ],
+    "confidence": 0.8
+  },
+  "open_questions": [
+    {
+      "to": "orchestrator",
+      "question": "Batch B qualified 4 of 5: Mykonos Blu (Psarou), Petasos Beach Resort (Platis Gialos), Myconian Ambassador (Platis Gialos) and Soho Roc House, formerly San Giorgio (Paraga). Kensho Psarou excluded (fact_112). Soho Roc House is a members' club closed until spring 2027: include it or hold it as a reserve?"
+    },
+    {
+      "to": "orchestrator",
+      "question": "Mykonos Blu and Soho Roc House are closed for the 2026 to 2027 winter; confirm 2027 opening dates before any date-led copy (verify_items)."
+    }
+  ],
+  "assumptions": [
+    "BOOKING CHECKLIST: Mykonos Blu: exclusive use, music curfew, minimum nights, rain plan for The Ocean Balcony, set-up and breakdown times not published.",
+    "BOOKING CHECKLIST: Petasos Beach Resort & Spa: ceremony location, exclusive use, music curfew, minimum nights, rain plan, set-up and breakdown times not published.",
+    "BOOKING CHECKLIST: Myconian Ambassador: exclusive use, music curfew, minimum nights, rain plan, set-up and breakdown times not published.",
+    "BOOKING CHECKLIST: Soho Roc House: membership requirement for weddings, exclusive use, music curfew, minimum nights, rain plan, set-up and breakdown times not published.",
+    "'Cycladic' is sourced for Mykonos Blu (fact_101, fact_106) and Petasos (fact_109) only; the Ambassador and Soho Roc House pages read do not describe themselves that way."
+  ],
+  "verify_items": [
+    "[[VERIFY: Mykonos Blu: confirm the 2027 season opening date with Grecotel, as a search listing for the official homepage shows 'Mykonos Blu will reopen on April 30, 2027' but the live page read did not show that line]]",
+    "[[VERIFY: Mykonos Blu: confirm which ceremony types (civil, Orthodox or symbolic) can be held on The Ocean Balcony, as the wedding page names the space but not the ceremony type]]",
+    "[[VERIFY: Petasos Beach Resort: confirm where ceremonies are held and which ceremony types it hosts, as its event page lists reception spaces and capacities but no ceremony venue]]",
+    "[[VERIFY: Myconian Ambassador: confirm whether the 'small chapel' named on its Weddings & Events page is on the hotel grounds or nearby, its capacity, and the largest reception the beach or entertainment deck can seat]]",
+    "[[VERIFY: Soho Roc House (formerly San Giorgio Mykonos): confirm whether non-members can book a wedding, the in-house chapel's capacity and reception options, and the spring 2027 reopening date]]"
+  ],
+  "tools_used": [
+    "mcp__Apify__apify--web-search",
+    "mcp__Apify__apify--web-fetch",
+    "Bash"
+  ],
+  "next_agent": [
+    "luxury-writer"
+  ],
+  "payload": {
+    "facts": [
+      {
+        "fact_id": "fact_100",
+        "claim": "Mykonos Blu (Grecotel) has a 'Weddings & Vow Renewals' page on its official site, with a 'Request for weddings' enquiry option, dedicated wedding specialists, customised menus and trusted vendors. Page modified 21 October 2026.",
+        "source": "https://www.grecotel.com/mykonosblu/weddings-mykonos/",
+        "source_type": "official_venue",
+        "checked": "2026-11-11",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_101",
+        "claim": "Mykonos Blu wedding page: 'Extraordinary wedding experiences on the most exclusive beach in Greece, Psarou, with the enchanting sunset as a backdrop'. Highlights listed include 'a Cycladic settlement on the waterfront' and 103 guest rooms.",
+        "source": "https://www.grecotel.com/mykonosblu/weddings-mykonos/",
+        "source_type": "official_venue",
+        "checked": "2026-11-11",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_102",
+        "claim": "Mykonos Blu ceremony venue: The Ocean Balcony, 'accommodating up to 60 guests, perched just above the pristine beach of Psarou' with an uninterrupted sea view. After the ceremony the hotel can arrange the wedding table and party for up to 120 guests in its L'Archipel restaurant and pool area. Ceremony type (civil, Orthodox or symbolic) is not stated.",
+        "source": "https://www.grecotel.com/mykonosblu/weddings-mykonos/",
+        "source_type": "official_venue",
+        "checked": "2026-11-11",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_103",
+        "claim": "Petasos Beach Resort's official 'Plan an event in Mykonos' page says the resort 'is set on a private peninsula' with a panoramic view of the Aegean, and that its indoor and outdoor venues can contribute to 'a meeting, conference, wedding celebration, or any other type of memorable special event'. Page meta description: 'Weddings, corporate gatherings and private functions handled with care and precision.'",
+        "source": "https://www.petasos.gr/plan-an-event-in-mykonos/",
+        "source_type": "official_venue",
+        "checked": "2026-11-11",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_104",
+        "claim": "Petasos Beach Resort event facilities table (banquet / reception / cocktail): V.I.P. Restaurant 180 / 220 / 300; Le Club Restaurant 70 / 90 / 110; Swimming Pool 280 / 350 / 500. The page also names The Amphitheatre (no capacity given).",
+        "source": "https://www.petasos.gr/plan-an-event-in-mykonos/",
+        "source_type": "official_venue",
+        "checked": "2026-11-11",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_105",
+        "claim": "Myconian Ambassador (Relais & Chateaux) has an official 'Weddings & Events' page: 'Exchanging vows in a small chapel, followed by a reception on the beach or our entertainment deck'. It adds that for grand wedding banquets it recommends 'the exceptional venues of our sister hotels in Elia'. Chapel location (on site or nearby), capacity and ceremony type are not stated.",
+        "source": "https://www.myconianambassador.gr/services/weddings-events/",
+        "source_type": "official_venue",
+        "checked": "2026-11-11",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_106",
+        "claim": "Mykonos Blu official homepage: 'Mykonos Blu, Psarou Beach. A Cycladic Icon on the most celebrated beach of the island', with Cycladic architecture, suites and villas with private pools on the Psarou waterfront, and 'The BLU emblematic cave pool'. Address in the page's structured data: Psarou Beach, Mykonos 846 00.",
+        "source": "https://www.grecotel.com/mykonosblu/",
+        "source_type": "official_venue",
+        "checked": "2026-11-11",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_107",
+        "claim": "The former San Giorgio Mykonos web address (sangiorgio-mykonos.com) now redirects to Soho House's official page for Soho Roc House, Paraga Beach, Mykonos 846 00. The page describes 'a members' club and beachside hotel in Mykonos with 44 bedrooms'.",
+        "source": "https://www.sohohouse.com/en-us/houses/soho-roc-house",
+        "source_type": "official_venue",
+        "checked": "2026-11-11",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_108",
+        "claim": "Soho Roc House official page: 'Open for six months of the year, the beachside outpost has 44 bedrooms, sea views and a path down to the shore, plus an outdoor gym ... and a small in-house chapel, which is available for wedding ceremonies'. Page states it 'is currently closed, reopening in spring 2027' and advises it 'is located among vibrant beach clubs, where the atmosphere is lively and the music can be energetic'. Chapel capacity, reception spaces and whether non-members can book a wedding are not stated.",
+        "source": "https://www.sohohouse.com/en-us/houses/soho-roc-house",
+        "source_type": "official_venue",
+        "checked": "2026-11-11",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_109",
+        "claim": "Petasos Beach Resort & Spa official homepage: 'Perched on a private peninsula between Platis Gialos and Psarou', with direct beach access, a private beach called 'La Petite Psarou', and 'timeless Cycladic design with whitewashed curves, handcrafted stonework, and elegant pergolas'. Structured-data address: Platis Yialos, Mykonos 84600. Room categories include rooms, suites and villas (rooms, suites and private-pool villas); a total room count is not stated on the pages read.",
+        "source": "https://www.petasos.gr/",
+        "source_type": "official_venue",
+        "checked": "2026-11-11",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_110",
+        "claim": "Petasos Beach Resort amenities listed on its official homepage include a two-level saltwater swimming pool with waterfall, the 500 sq m Aqua Marine Spa with thalassotherapy pool, and meeting and banquet rooms. Its event page does not name ceremony types or a ceremony venue.",
+        "source": "https://www.petasos.gr/",
+        "source_type": "official_venue",
+        "checked": "2026-11-11",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_111",
+        "claim": "Myconian Ambassador official homepage: 'Set above Platis Gialos beach ... just 5km away from the vibrant energy of Mykonos Town', with neighbouring Psarou within walking distance. It lists Weddings & events among its services ('As experts in romance and discretion...') and its fine-dining restaurant Efisia. Room count is not stated on the pages read. The hotel is part of the Myconian Collection.",
+        "source": "https://www.myconianambassador.gr/",
+        "source_type": "official_venue",
+        "checked": "2026-11-11",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_112",
+        "claim": "Kensho Psarou: no official wedding page could be read live. The likely official domain (kenshomykonos.com) returned a TLS certificate error on 2026-11-11, and the group site kenshohotels.com (read live) now presents only a Paros property, with no Mykonos hotel or wedding page. Search results for Kensho Psarou weddings were planner galleries and a 2019 press-release aggregator, which do not meet the inclusion rule. Verdict: exclude.",
+        "source": "https://www.kenshomykonos.com/",
+        "source_type": "official_venue",
+        "checked": "2026-11-11",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_113",
+        "claim": "Myconian Collection group weddings page: 'Exchange vows in a small whitewashed chapel, followed by a reception on the beach, or in one of our fine restaurants overlooking the Aegean and Mykonos town.' It says the group assists 'in officiating ceremonies across all denominations' and has certified halal and kosher kitchens. The Horizons Ballroom (270 guests at round tables, 380 to 400 banqueting, up to 550 for cocktails) is presented alongside 'Our hotels in Elia', not at the Ambassador.",
+        "source": "https://www.myconiancollection.gr/mykonos-events/weddings/",
+        "source_type": "official_venue",
+        "checked": "2026-11-11",
+        "is_price": false
+      }
+    ],
+    "venue_verdicts": [
+      {
+        "venue": "Mykonos Blu (Grecotel)",
+        "region": "Psarou",
+        "verdict": "include",
+        "fact_ids": [
+          "fact_100",
+          "fact_101",
+          "fact_102",
+          "fact_106"
+        ],
+        "not_published": [
+          "ceremony type (civil, Orthodox or symbolic)",
+          "exclusive use",
+          "music curfew",
+          "minimum nights",
+          "rain plan",
+          "set-up times"
+        ]
+      },
+      {
+        "venue": "Petasos Beach Resort & Spa",
+        "region": "Platis Gialos (private peninsula between Platis Gialos and Psarou)",
+        "verdict": "include",
+        "fact_ids": [
+          "fact_103",
+          "fact_104",
+          "fact_109",
+          "fact_110"
+        ],
+        "not_published": [
+          "ceremony venue and ceremony types",
+          "room count",
+          "exclusive use",
+          "Amphitheatre capacity",
+          "music curfew",
+          "minimum nights",
+          "rain plan",
+          "set-up times"
+        ]
+      },
+      {
+        "venue": "Myconian Ambassador (Relais & Chateaux)",
+        "region": "Platis Gialos",
+        "verdict": "include",
+        "fact_ids": [
+          "fact_105",
+          "fact_111",
+          "fact_113"
+        ],
+        "not_published": [
+          "chapel location and capacity",
+          "ceremony types at this hotel",
+          "reception capacity",
+          "room count",
+          "exclusive use",
+          "music curfew",
+          "minimum nights",
+          "rain plan",
+          "set-up times"
+        ],
+        "note": "Its own page steers grand banquets to sister hotels in Elia (batch C); best written as an intimate option."
+      },
+      {
+        "venue": "Soho Roc House (formerly San Giorgio Mykonos)",
+        "region": "Paraga",
+        "verdict": "include_with_caution",
+        "fact_ids": [
+          "fact_107",
+          "fact_108"
+        ],
+        "not_published": [
+          "whether non-members can book a wedding",
+          "chapel capacity",
+          "reception spaces and capacity",
+          "exclusive use",
+          "music curfew",
+          "minimum nights",
+          "rain plan",
+          "set-up times"
+        ],
+        "note": "Meets the inclusion rule (official Soho House page says the in-house chapel is available for wedding ceremonies), but it is a members' club, closed until spring 2027, and the page warns of loud neighbouring beach clubs. Orchestrator to decide; write under its current name, Soho Roc House."
+      },
+      {
+        "venue": "Kensho Psarou",
+        "region": "Psarou",
+        "verdict": "exclude",
+        "fact_ids": [
+          "fact_112"
+        ],
+        "not_published": []
+      }
+    ],
+    "insider_details": [
+      {
+        "detail": "At Mykonos Blu the ceremony space and the reception space are sized differently: The Ocean Balcony holds up to 60 for the ceremony, while L'Archipel restaurant and the pool area take up to 120 for dinner and dancing, so a guest list between 61 and 120 needs a conversation with the hotel about where the vows can happen.",
+        "fact_ids": [
+          "fact_102"
+        ]
+      },
+      {
+        "detail": "Petasos Beach Resort publishes the largest numbers in this batch: its pool area seats 280 at a banquet (500 for cocktails) and the V.I.P. Restaurant seats 180, which makes it the Platis Gialos option for a bigger guest list, but its event page names no ceremony spot, so ask the Wedded Advisor to confirm where the vows themselves would take place.",
+        "fact_ids": [
+          "fact_104",
+          "fact_110"
+        ]
+      },
+      {
+        "detail": "Myconian Ambassador is the intimate choice of the Myconian Collection: its own wedding page pairs a small chapel with a beach or deck reception and sends grand banquets to the group's Elia hotels, so couples planning a large celebration should compare it with the Elia properties rather than book it for scale.",
+        "fact_ids": [
+          "fact_105",
+          "fact_113"
+        ]
+      },
+      {
+        "detail": "Psarou and Platis Gialos sit side by side: Petasos describes itself as on a peninsula between the two beaches, and the Ambassador says Psarou is within walking distance, so a couple could base guests across these hotels without a long transfer between them.",
+        "fact_ids": [
+          "fact_109",
+          "fact_111"
+        ]
+      },
+      {
+        "detail": "Soho Roc House at Paraga says on its own page that it sits among lively beach clubs where music can be energetic, which matters for a sunset chapel ceremony; plan the ceremony time and sound expectations in writing with the Wedded Advisor before committing.",
+        "fact_ids": [
+          "fact_108"
+        ]
+      }
+    ],
+    "quotes": [],
+    "real_weddings": [],
+    "budget_range_aud": [],
+    "verify_items": [
+      "[[VERIFY: Mykonos Blu: confirm the 2027 season opening date with Grecotel, as a search listing for the official homepage shows 'Mykonos Blu will reopen on April 30, 2027' but the live page read did not show that line]]",
+      "[[VERIFY: Mykonos Blu: confirm which ceremony types (civil, Orthodox or symbolic) can be held on The Ocean Balcony, as the wedding page names the space but not the ceremony type]]",
+      "[[VERIFY: Petasos Beach Resort: confirm where ceremonies are held and which ceremony types it hosts, as its event page lists reception spaces and capacities but no ceremony venue]]",
+      "[[VERIFY: Myconian Ambassador: confirm whether the 'small chapel' named on its Weddings & Events page is on the hotel grounds or nearby, its capacity, and the largest reception the beach or entertainment deck can seat]]",
+      "[[VERIFY: Soho Roc House (formerly San Giorgio Mykonos): confirm whether non-members can book a wedding, the in-house chapel's capacity and reception options, and the spring 2027 reopening date]]"
+    ],
+    "needs_signoff": [],
+    "must_include_coverage": [
+      {
+        "item": "Venue entries, Psarou",
+        "covered_by": [
+          "fact_100",
+          "fact_101",
+          "fact_102",
+          "fact_106"
+        ]
+      },
+      {
+        "item": "Venue entries, Platis Gialos",
+        "covered_by": [
+          "fact_103",
+          "fact_104",
+          "fact_105",
+          "fact_109",
+          "fact_110",
+          "fact_111",
+          "fact_113"
+        ]
+      },
+      {
+        "item": "Venue entries, Paraga",
+        "covered_by": [
+          "fact_107",
+          "fact_108",
+          "[[VERIFY: Soho Roc House (formerly San Giorgio Mykonos): confirm whether non-members can book a wedding, the in-house chapel's capacity and reception options, and the spring 2027 reopening date]]"
+        ]
+      },
+      {
+        "item": "Ceremony options as stated (Psarou, Platis Gialos, Paraga)",
+        "covered_by": [
+          "fact_102",
+          "fact_105",
+          "fact_108",
+          "[[VERIFY: Mykonos Blu: confirm which ceremony types (civil, Orthodox or symbolic) can be held on The Ocean Balcony, as the wedding page names the space but not the ceremony type]]",
+          "[[VERIFY: Petasos Beach Resort: confirm where ceremonies are held and which ceremony types it hosts, as its event page lists reception spaces and capacities but no ceremony venue]]",
+          "[[VERIFY: Myconian Ambassador: confirm whether the 'small chapel' named on its Weddings & Events page is on the hotel grounds or nearby, its capacity, and the largest reception the beach or entertainment deck can seat]]"
+        ]
+      }
+    ]
+  }
+}
