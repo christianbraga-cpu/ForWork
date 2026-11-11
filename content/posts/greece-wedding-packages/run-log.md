@@ -10,3 +10,4 @@
 00:39 06 editor pass_with_edits (4.14): 23 edits applied to 05-draft-r2.md.
 00:41 07b panel: revise (enquire 2.6), 2 must-fix + 2 should-fix + consider; one final pass.
 00:43 08 final done: ~3,930 words, scan clean, no amounts.
+00:44 10 distribution done (utm_source=blog).
