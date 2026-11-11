@@ -8,3 +8,4 @@
 00:37 07 readers: search_visitor, planner_couple done (no must-fix).
 00:37 07 readers: sceptic, funding_parent, uhnw in (no must-fix); 5/5; waiting on editor.
 00:39 06 editor pass_with_edits (4.14): 23 edits applied to 05-draft-r2.md.
+00:41 07b panel: revise (enquire 2.6), 2 must-fix + 2 should-fix + consider; one final pass.
