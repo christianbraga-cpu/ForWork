@@ -13,7 +13,7 @@ This guide covers both halves of the question: where to marry, and how to get ma
 
 ## Key takeaways
 
-- Monastiri and The Secret View have no guest rooms, so guests stay elsewhere, and The Secret View says it is happy to organise shuttles from nearby hotels. <!-- fact_15 --> <!-- fact_407 -->
+- Monastiri and The Secret View have no guest rooms, so guests stay in nearby hotels, and The Secret View says it is happy to organise shuttles. <!-- fact_15 --> <!-- fact_407 -->
 - Only two of the eight venues here publish wedding capacities: Petra Farm (a chapel for 120 and an event space for 150) and The Secret View (110 for a terrace ceremony, 120 for dinner).
 - Six of the eight venues have a chapel on site, but only The Secret View names a ceremony type (symbolic), so ask the others which ceremonies their chapel takes before you plan around one.
 - The Municipality of Paros runs a civil marriages section, so check its steps, documents and any fees with the municipality and the Australian Embassy in Athens well before you book.
@@ -35,15 +35,15 @@ The list runs from the north coast around Naoussa, across to Parikia in the west
 | Anemoi Paros <!-- fact_16 --> | Near Naoussa, overlooking the bay | Small hotel of apartments and studios <!-- fact_16 --> | Chapel of St. John on the premises <!-- fact_19 --> |
 | Monastiri <!-- fact_14 --> | Paros Park, Agios Ioannis Detis | Beach bar and restaurant, no rooms <!-- fact_14 --> <!-- fact_15 --> | Vows on the sandy beach <!-- fact_14 --> |
 | Petra Farm <!-- fact_400 --> | Above Kolymbithres bay | Organic farm estate <!-- fact_400 --> | Chapel courtyard among olive trees; chapel 120, event space 150 <!-- fact_401 --> |
-| Pyrgaki Hotel <!-- fact_100 --> | Above the gulf of Parikia | Four-star boutique hotel <!-- fact_100 --> | St. George chapel at the hotel, or the One Hundred Doors church in Parikia <!-- fact_101 --> |
+| Pyrgaki Hotel <!-- fact_100 --> | Overlooking the gulf of Parikia | Four-star boutique hotel <!-- fact_100 --> | St. George chapel at the hotel, or the One Hundred Doors church in Parikia <!-- fact_101 --> |
 | Villa Mira Paros <!-- fact_410 --> | Above the Bay of Parikia | Four villas; the whole property can be booked <!-- fact_410 --> <!-- fact_411 --> | Not published |
 | Poseidon of Paros <!-- fact_200 --> | Golden Beach | Five-star beachfront hotel <!-- fact_200 --> | Chapel; receptions by the pool or on the beach <!-- fact_207 --> |
-| The Secret View at Fladakia Estate <!-- fact_405 --> | Hills above Golden Beach | Event venue, no rooms <!-- fact_405 --> <!-- fact_407 --> | Chapel backdrop; symbolic ceremony; up to 110 for a ceremony, 120 for dinner <!-- fact_406 --> <!-- fact_408 --> |
+| The Secret View at Fladakia Estate <!-- fact_405 --> | Hills above Golden Beach | Event venue, no rooms <!-- fact_405 --> <!-- fact_407 --> | Chapel backdrop; symbolic ceremony; Terrace 110 for a ceremony, 120 for dinner <!-- fact_406 --> <!-- fact_408 --> |
 
 A table narrows the field. Only the venue can tell you what is free on your date, and under which house rules.
 
 <!-- CTA: primary -->
-When you have a shortlist, [book a Wedded Concierge consultation](https://weddedwonderland.com/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=paros-wedding-venues&utm_content=primary) to test them against your dates and guest list.
+When you are ready to shortlist Paros venues, [speak with a Wedded Advisor](https://weddedwonderland.com/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=paros-wedding-venues&utm_content=primary).
 
 ## How to compare Paros venues like for like
 
@@ -51,7 +51,7 @@ Every venue on this list says on its own site that it hosts weddings. Three ques
 
 ### Hotel, estate, villa or event venue
 
-Four of the eight are hotels: Astir of Paros, Anemoi, Pyrgaki and Poseidon. <!-- fact_01 --> <!-- fact_16 --> <!-- fact_100 --> <!-- fact_200 --> They suit a guest list that wants to stay together and treat the wedding as a week away, with breakfast, the pool and the reception all in one place.
+Four of the eight are hotels: Astir of Paros, Anemoi, Pyrgaki and Poseidon. <!-- fact_01 --> <!-- fact_16 --> <!-- fact_100 --> <!-- fact_200 --> They suit a guest list that wants to stay together and treat the wedding as a week away, with rooms, the ceremony and the reception all in one place.
 
 The scale differs. Astir of Paros lists 46 suites and 11 double rooms, while Anemoi describes a small group of apartments and studios for 2 to 6 people each. <!-- fact_12 --> <!-- fact_16 --> Poseidon calls itself family friendly, which matters if your guest list includes young children. <!-- fact_200 -->
 
@@ -69,7 +69,7 @@ For a wedding on the sand, Monastiri offers vows on its beach, and Poseidon hold
 
 ### Capacity, rooms and exclusive use
 
-Only two venues publish wedding figures. Petra Farm's chapel holds 120 guests, dinner by its pool seats 80, and its event space fits 150 with a dance floor. <!-- fact_401 --> The Secret View sets each space out separately, from 30 for a ceremony under the Pergola to 110 on the Terrace. <!-- fact_408 --> The largest published figure on this list is 150, in Petra Farm's event space, so for a bigger guest list ask the venue about combining spaces, or start with [our guide to Greece wedding venues](https://weddedwonderland.com/destination-weddings/greece-wedding-venues). <!-- fact_401 -->
+Only two venues publish wedding figures. Petra Farm's chapel holds 120 guests, dinner by its pool seats 80, and its event space fits 150 with a dance floor. <!-- fact_401 --> The Secret View sets each space out separately, from 30 for a ceremony under the Pergola to 110 on the Terrace. <!-- fact_408 --> For a guest list larger than these figures, ask the venue about combining spaces, or start with [our guide to Greece wedding venues](https://weddedwonderland.com/destination-weddings/greece-wedding-venues).
 
 Rooms matter when most guests fly long-haul. Astir of Paros publishes the fullest room count, with 46 suites and 11 double rooms. <!-- fact_12 --> Elsewhere, ask how many rooms your guests can hold on your dates.
 
@@ -101,7 +101,7 @@ The north coast gathers four venues within reach of Naoussa: a five-star hotel, 
 
 ### Astir of Paros, Kolymbithres
 
-[Astir of Paros](https://www.astirofparos.gr/weddings/) is a five-star hotel at Kolymbithres, a short way from the village of Naoussa. <!-- fact_01 --> Its weddings page offers the setting for the ceremony and the reception, with the executive chef's cooking, decoration and personalised service. <!-- fact_02 --> Ask for current wedding terms, as that page dates from 2018. <!-- fact_02 -->
+[Astir of Paros](https://www.astirofparos.gr/weddings/) is a five-star hotel at Kolymbithres, a short way from the village of Naoussa. <!-- fact_01 --> Its weddings page offers the setting for the ceremony and the reception, with the executive chef's cooking, decoration and personalised service. <!-- fact_02 --> Ask the hotel for its current wedding terms.
 
 - **Setting:** Tropical gardens with hundreds of palms, beside Kolymbithres bay, with a small private sandy beach for guests. <!-- fact_404 -->
 - **Ceremony:** The St. Nicholas chapel sits at the edge of the golf course, right by the water, and the hotel names it as a wedding choice. <!-- fact_404 -->
@@ -138,7 +138,7 @@ For a smaller wedding that wants its own chapel and a pool, Anemoi keeps everyth
 - **Exclusive use:** Not published.
 - **Standout:** The Archilochos amphitheatre is built into the natural stone of the slope, and the venue also hosts pre- and post-wedding parties with a stage and the beach. <!-- fact_15 --> A wedding brochure is available to download. <!-- fact_14 -->
 
-Ask whether the wedding party can arrive by boat at the dock, with the road open for guests who would rather drive. <!-- fact_14 -->
+Ask whether the wedding party can arrive by boat at the dock on your date. <!-- fact_14 -->
 
 ### Petra Farm, Kolymbithres
 
@@ -159,9 +159,9 @@ Petra Farm works alongside your own wedding planners and gives you one point of 
 
 The west looks over the gulf of Parikia, the port town where guests travelling by ferry arrive. <!-- fact_312 --> One venue here is a boutique hotel with a chapel, the other a set of villas you can take as a whole.
 
-### Pyrgaki Hotel, above the gulf of Parikia
+### Pyrgaki Hotel, overlooking the gulf of Parikia
 
-[Pyrgaki Hotel](https://www.pyrgaki-hotel.com/weddings/) is a four-star boutique hotel with views across the gulf of Parikia. <!-- fact_100 --> Its wedding page offers two ceremony settings and a reception by the pool. <!-- fact_101 --> Ask for current terms, as the page dates from 2020. <!-- fact_102 -->
+[Pyrgaki Hotel](https://www.pyrgaki-hotel.com/weddings/) is a four-star boutique hotel with views across the gulf of Parikia. <!-- fact_100 --> Its wedding page offers two ceremony settings and a reception by the pool. <!-- fact_101 --> Ask the hotel for its current wedding terms and inclusions.
 
 - **Setting:** A hotel with views across the gulf of Parikia, and a pool for the reception. <!-- fact_100 --> <!-- fact_101 -->
 - **Ceremony:** The St. George chapel at the hotel, or the Byzantine One Hundred Doors church in Parikia. <!-- fact_101 -->
@@ -271,7 +271,7 @@ The full picture for marrying in Greece as Australians is in [our guide to Greec
 
 ## Getting to Paros
 
-Most guests will fly. Flights from Athens International Airport to Paros take about 45 minutes, and from Thessaloniki about 1 hour 15 minutes. <!-- fact_307 --> Paros Airport (PAS) is 9 km southwest of Parikia. <!-- fact_311 -->
+Guests can fly or take the ferry. Flights from Athens International Airport to Paros take about 45 minutes, and from Thessaloniki about 1 hour 15 minutes. <!-- fact_307 --> Paros Airport (PAS) is 9 km southwest of Parikia. <!-- fact_311 -->
 
 **By sea.** The island's main port is at Parikia, reached by ferry from Piraeus and Rafina all year round. <!-- fact_312 --> As at November 2026, [ferries and large catamarans](https://www.smartraveller.gov.au/destinations/europe/greece) carry most visitors to the Greek islands, and services can be delayed or cancelled in bad weather, mainly because of strong winds, so reconfirm departures. <!-- fact_310 --> Expect crowds and heat at the busy ports from May to October, and stairs to carry luggage up and down. <!-- fact_310 -->
 
@@ -279,11 +279,11 @@ Most guests will fly. Flights from Athens International Airport to Paros take ab
 
 **Entry.** Australians can visit the Schengen area visa-free for up to 90 days in any 180-day period, and must register biometrics under the Entry/Exit System on arrival. <!-- fact_310 --> Build that into the arrival day for older guests.
 
-The island also has marinas at Naoussa and Piso Livadi, listed on the [Municipality of Paros port and airport page](https://imagine.paros.gr/en/gettingtoparos/ports-aiport.html). <!-- fact_312 --> For more on the island itself, see [Visit Greece](https://www.visitgreece.gr/en/islands/cyclades/paros).
+The island also has [marinas at Naoussa and Piso Livadi](https://imagine.paros.gr/en/gettingtoparos/ports-aiport.html). <!-- fact_312 --> For more on the island itself, see [Visit Greece](https://www.visitgreece.gr/en/islands/cyclades/paros).
 
 ## When to marry on Paros
 
-The date shapes the ceremony time, the fabrics and the fallback plan. The nearest official weather station is on Naxos. <!-- fact_305 -->
+The date shapes the ceremony time, the fabrics and the fallback plan. The figures below come from the nearest official weather station, on Naxos, not from Paros itself. <!-- fact_305 -->
 
 **Temperature.** On [Naxos](http://oldportal.emy.gr/emy/en/climatology/climatology_city?perifereia=South%20Aegean&poli=Naxos), the mean monthly maximum is 22.1°C in May, 25.9°C in June, 27.1°C in July, 27.0°C in August, 25.1°C in September and 21.9°C in October. <!-- fact_305 -->
 
@@ -332,11 +332,11 @@ The Municipality of Paros has a Civil Marriages section within its Registry Offi
 
 ### How do guests get to Paros?
 
-Most fly from Athens, about 45 minutes, into Paros Airport, 9 km southwest of Parikia. <!-- fact_307 --> <!-- fact_311 --> Others take the ferry from Piraeus or Rafina to Parikia, which runs all year. <!-- fact_312 --> Ferries can be delayed by strong winds, so guests should reconfirm departures. <!-- fact_310 -->
+Guests can fly from Athens, about 45 minutes, into Paros Airport, 9 km southwest of Parikia. <!-- fact_307 --> <!-- fact_311 --> Others take the ferry from Piraeus or Rafina to Parikia, which runs all year. <!-- fact_312 --> Ferries can be delayed by strong winds, so guests should reconfirm departures. <!-- fact_310 -->
 
 ### When should we marry on Paros?
 
-July and August bring the warmest, driest days, and heatwaves are frequent then, so the months either side trade a little warmth for cooler days. <!-- fact_305 --> <!-- fact_306 --> <!-- fact_308 --> At the nearest official station, on Naxos, mean maximums run from about 22°C in May and October to 27.1°C in July, and rain days are fewest from June to August. <!-- fact_305 --> <!-- fact_306 --> Summer also brings frequent heatwaves and a wildfire season from June to September, so a summer date needs shade and a covered fallback. <!-- fact_308 -->
+At the nearest official weather station, on Naxos, July and August are the warmest and driest months: mean maximums run from about 22°C in May and October to 27.1°C in July, and rain days are fewest from June to August. <!-- fact_305 --> <!-- fact_306 --> As at November 2026, heatwaves are frequent in Greece over summer and wildfires occur from June to September, so a summer date needs shade and a covered fallback. <!-- fact_308 -->
 
 ## Shortlist your Paros venues with a Wedded Advisor
 
