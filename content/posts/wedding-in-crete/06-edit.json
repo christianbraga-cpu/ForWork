@@ -1,0 +1,567 @@
+{
+  "agent": "editor",
+  "task_id": "wedding-in-crete",
+  "stage": "06",
+  "status": "complete",
+  "round": 1,
+  "inputs_used": [
+    "CLAUDE.md",
+    "content/posts/wedding-in-crete/01-brief.json",
+    "content/posts/wedding-in-crete/02-seo.json",
+    "content/posts/wedding-in-crete/03-source-pack.json",
+    "content/posts/crete-wedding-venues/03-source-pack.json",
+    "content/posts/wedding-in-crete/04-images.json",
+    "content-system/brand/brand-facts.md",
+    "content-system/brand/voice-guide.md",
+    "content-system/rubrics/",
+    "content-system/schemas/06-edit.schema.json",
+    "content-system/seo/link-map.csv",
+    "content/posts/wedding-in-crete/05-draft.md"
+  ],
+  "next_agent": [
+    "icp-reader"
+  ],
+  "self_qa": {
+    "checks": [
+      {
+        "check": "scan_copy.py run and reflected",
+        "pass": true,
+        "note": "On 05-draft.md and on a scratch copy with all 20 edits applied: banned [], dashes 0, overlaps []; flagged 'exclusive' x6 (exclusive use, a field term). 02-research/pages does not exist (only report.md and SERP JSON), so the overlap check had no competitor pages to compare."
+      },
+      {
+        "check": "Every factual sentence logged",
+        "pass": true,
+        "note": "65 log entries; climate table checked cell by cell by script (60 of 60 match fact_01, fact_02, fact_03, fact_08, fact_10)."
+      },
+      {
+        "check": "Edit strings occur exactly once",
+        "pass": true,
+        "note": "Script-verified: each old string occurs once in 05-draft.md and once at its turn when applied in order; all 20 apply cleanly."
+      },
+      {
+        "check": "Decision consistent with scores",
+        "pass": true,
+        "note": "Average 4.14, no criterion below 3. Must-fixes are unsupported generalisations and credits, not unsourced prices, capacities or legal steps, so none is blocking: pass_with_edits."
+      }
+    ],
+    "confidence": 0.85
+  },
+  "open_questions": [
+    {
+      "to": "orchestrator",
+      "question": "Crete venues guide, Greece venues guide and Greek traditions links point to drafts (kept as instructed): publish together or hold those links until live.",
+      "blocking": false
+    },
+    {
+      "to": "orchestrator",
+      "question": "Primary keyword 'wedding in crete' is in the title and first 100 words; no H2 carries it exactly ('Plan your Crete wedding' and 'cost of a Crete wedding' carry the merged variant). Left as is to avoid a pasted heading.",
+      "blocking": false
+    },
+    {
+      "to": "orchestrator",
+      "question": "Draft is about 4,000 words of body copy, at the top of the 3,000 to 4,000 brief; edits trim about 30 words.",
+      "blocking": false
+    }
+  ],
+  "assumptions": [
+    "Fast mode: claims checked against source-pack claims, not re-fetched live.",
+    "Venue-page links in the six-venue list are official venue sites, not competitors, and are kept."
+  ],
+  "payload": {
+    "draft_file": "content/posts/wedding-in-crete/05-draft.md",
+    "rubric": {
+      "voice": 4,
+      "expertise": 5,
+      "accuracy": 3,
+      "seo_fit": 4,
+      "commercial_link": 4,
+      "structure": 5,
+      "brief_fit": 4
+    },
+    "average": 4.14,
+    "blocking_issues": [],
+    "decision": "pass_with_edits",
+    "edits": [
+      {
+        "location": "Opening, paragraph 1",
+        "issue": "Must-fix: a best season stated as fact. No source names the best months for a wedding in Crete (verify item); write it from the HNMS normals (fact_02, fact_03). Keeps the keyword in the first 100 words.",
+        "fix": "Replace exactly:\nA wedding in Crete suits late spring and early autumn, when the island is warm and dry without the full weight of July and August.\nwith:\nOn long-term averages, a wedding in Crete in late spring or early autumn is milder than one in July or August, with few rain days. <!-- fact_02 --> <!-- fact_03 -->",
+        "old": "A wedding in Crete suits late spring and early autumn, when the island is warm and dry without the full weight of July and August.",
+        "new": "On long-term averages, a wedding in Crete in late spring or early autumn is milder than one in July or August, with few rain days. <!-- fact_02 --> <!-- fact_03 -->"
+      },
+      {
+        "location": "Opening, paragraph 1",
+        "issue": "Must-fix: 'smaller, more personal venues' in the west is not in either pack and is contradicted by Avra Imperial's 680-person hall (crete-venues fact_403). fact_11 supports old towns only.",
+        "fix": "Replace exactly:\nRethymno and Chania in the west hold the harbour towns and smaller, more personal venues, with Heraklion in between.\nwith:\nRethymno and Chania in the west hold historic old towns, with Heraklion in between. <!-- fact_11 -->",
+        "old": "Rethymno and Chania in the west hold the harbour towns and smaller, more personal venues, with Heraklion in between.",
+        "new": "Rethymno and Chania in the west hold historic old towns, with Heraklion in between. <!-- fact_11 -->"
+      },
+      {
+        "location": "Key takeaways, item 2",
+        "issue": "Must-fix: same unsupported 'smaller venues' claim.",
+        "fix": "Replace exactly:\n- The east around Elounda and Agios Nikolaos suits resort weddings, while Rethymno and Chania in the west suit harbour towns and smaller venues.\nwith:\n- The east around Elounda and Agios Nikolaos is resort country, while the west centres on the old towns of Chania and Rethymno.",
+        "old": "- The east around Elounda and Agios Nikolaos suits resort weddings, while Rethymno and Chania in the west suit harbour towns and smaller venues.",
+        "new": "- The east around Elounda and Agios Nikolaos is resort country, while the west centres on the old towns of Chania and Rethymno."
+      },
+      {
+        "location": "Key takeaways, item 3",
+        "issue": "'More than the venue name does' is an unsupported comparison.",
+        "fix": "Replace exactly:\ndrive the cost more than the venue name does.\nwith:\nshape the cost of a Crete wedding.",
+        "old": "drive the cost more than the venue name does.",
+        "new": "shape the cost of a Crete wedding."
+      },
+      {
+        "location": "Key takeaways, item 4",
+        "issue": "Must-fix: the lead times are the Elounda Collection's venue-published steps (fact_102), not Greek law; 'Greek civil paperwork runs on fixed lead times' overstates a legal claim.",
+        "fix": "Replace exactly:\n- Greek civil paperwork runs on fixed lead times, so your documents set the shape of the whole planning timeline.\nwith:\n- For a legal wedding, the venue's document deadlines and municipal approval set the shape of the whole planning timeline.",
+        "old": "- Greek civil paperwork runs on fixed lead times, so your documents set the shape of the whole planning timeline.",
+        "new": "- For a legal wedding, the venue's document deadlines and municipal approval set the shape of the whole planning timeline."
+      },
+      {
+        "location": "Seasons, Month by month, paragraph 3",
+        "issue": "'Holds summer's dryness' overstates: September averages 2.8 rain days and 16.7 mm at Heraklion against 0.5 and 0.9 in August (fact_03).",
+        "fix": "Replace exactly:\nand September holds summer's dryness with highs a few degrees below August.\nwith:\nand September stays mostly dry, with under 3 rain days at Heraklion and highs a few degrees below August.",
+        "old": "and September holds summer's dryness with highs a few degrees below August.",
+        "new": "and September stays mostly dry, with under 3 rain days at Heraklion and highs a few degrees below August."
+      },
+      {
+        "location": "Venue season windows, paragraph 2",
+        "issue": "Must-fix: 'east of Heraklion' is not in either pack; the venues pack places Nana Princess at Chersonissos on the Aegean coast.",
+        "fix": "Replace exactly:\nNana Princess, at Chersonissos east of Heraklion, notes\nwith:\nNana Princess, at Chersonissos on the Aegean coast, notes",
+        "old": "Nana Princess, at Chersonissos east of Heraklion, notes",
+        "new": "Nana Princess, at Chersonissos on the Aegean coast, notes"
+      },
+      {
+        "location": "Choosing an area, East, centre or west, opening line",
+        "issue": "Must-fix: per-line source credit (Visit Greece is credited three times in the post). Keep the link, drop the credit.",
+        "fix": "Replace exactly:\n[Visit Greece](https://www.visitgreece.gr/en/islands/crete) groups the island in three. <!-- fact_11 -->\nwith:\nCrete falls into [three regions](https://www.visitgreece.gr/en/islands/crete). <!-- fact_11 -->",
+        "old": "[Visit Greece](https://www.visitgreece.gr/en/islands/crete) groups the island in three. <!-- fact_11 -->",
+        "new": "Crete falls into [three regions](https://www.visitgreece.gr/en/islands/crete). <!-- fact_11 -->"
+      },
+      {
+        "location": "Choosing an area, The east",
+        "issue": "'Described as' is a source credit; 'tend to look here first' is an unsupported behaviour claim.",
+        "fix": "Replace exactly:\nand Elounda, described as the resort with views of the lagoon and Spinalonga. <!-- fact_11 --> Couples who want every guest under one roof tend to look here first.\nwith:\nand Elounda, a resort with views of the lagoon and Spinalonga. <!-- fact_11 --> Its resorts suit couples who want the wedding party under one roof.",
+        "old": "and Elounda, described as the resort with views of the lagoon and Spinalonga. <!-- fact_11 --> Couples who want every guest under one roof tend to look here first.",
+        "new": "and Elounda, a resort with views of the lagoon and Spinalonga. <!-- fact_11 --> Its resorts suit couples who want the wedding party under one roof."
+      },
+      {
+        "location": "Choosing an area, The west",
+        "issue": "Must-fix: 'hotels on a gentler scale' is unsupported and contradicted by Avra Imperial (680-person hall) and Euphoria (344 rooms); 'guests often spread across villas' is not in the packs.",
+        "fix": "Replace exactly:\nHere the mood shifts towards harbour towns, garden venues and hotels on a gentler scale, with guests often spread across nearby villas and boutique stays.\nwith:\nVenues here range from beach resorts at Kolymvari to a hilltop garden in Chania. <!-- crete-venues fact_402 --> <!-- crete-venues fact_200 -->",
+        "old": "Here the mood shifts towards harbour towns, garden venues and hotels on a gentler scale, with guests often spread across nearby villas and boutique stays.",
+        "new": "Venues here range from beach resorts at Kolymvari to a hilltop garden in Chania. <!-- crete-venues fact_402 --> <!-- crete-venues fact_200 -->"
+      },
+      {
+        "location": "Types of venue, The resort",
+        "issue": "'Most' is an unsupported ranking.",
+        "fix": "Replace exactly:\nGuest rooms and minimum stays shape its cost most.\nwith:\nGuest rooms and minimum stays shape its cost.",
+        "old": "Guest rooms and minimum stays shape its cost most.",
+        "new": "Guest rooms and minimum stays shape its cost."
+      },
+      {
+        "location": "Six venues, after the 'Not published' line",
+        "issue": "Must-fix: brand-facts allows the Advisor to confirm inclusions in writing, not capacity or exclusive-use details. Move the ask to the venue; the primary CTA follows straight after.",
+        "fix": "Replace exactly:\nYour Wedded Advisor confirms details like these in writing before you commit.\nwith:\nAsk each venue to confirm details like these in writing before you commit.",
+        "old": "Your Wedded Advisor confirms details like these in writing before you commit.",
+        "new": "Ask each venue to confirm details like these in writing before you commit."
+      },
+      {
+        "location": "What drives the cost, opening paragraph",
+        "issue": "'Rarely because one venue is simply dearer' is an unsupported claim.",
+        "fix": "Replace exactly:\nTwo Crete quotes with the same guest list can land far apart, and rarely because one venue is simply dearer. The difference sits\nwith:\nTwo Crete quotes with the same guest list can land far apart. Much of the difference sits",
+        "old": "Two Crete quotes with the same guest list can land far apart, and rarely because one venue is simply dearer. The difference sits",
+        "new": "Two Crete quotes with the same guest list can land far apart. Much of the difference sits"
+      },
+      {
+        "location": "Getting there, Chania",
+        "issue": "Must-fix: fact_13 lists bus, taxi and driving by car (GPS directions) with parking; car hire is not in the pack.",
+        "fix": "Replace exactly:\nlists a direct public bus to and from the airport, taxis and car hire, with parking on site.\nwith:\nlists a direct public bus to and from the airport, taxis and driving directions, with parking on site.",
+        "old": "lists a direct public bus to and from the airport, taxis and car hire, with parking on site.",
+        "new": "lists a direct public bus to and from the airport, taxis and driving directions, with parking on site."
+      },
+      {
+        "location": "Getting there, last paragraph",
+        "issue": "'Most guests drive or take taxis' is unsupported; the question to the venue carries the point.",
+        "fix": "Replace exactly:\nOnce on the island, most guests drive or take taxis. Ask your venue how guests usually arrive\nwith:\nAsk your venue how guests usually arrive",
+        "old": "Once on the island, most guests drive or take taxis. Ask your venue how guests usually arrive",
+        "new": "Ask your venue how guests usually arrive"
+      },
+      {
+        "location": "Planning timeline, Shortlist venues",
+        "issue": "'Several venues' overstates; the packs show two dated documents (Elounda Collection 2025 PDF, Abaton 2025-2026 brochure).",
+        "fix": "Replace exactly:\nbecause several venues still publish documents dated for earlier seasons.\nwith:\nbecause some venues still publish terms dated for earlier seasons.",
+        "old": "because several venues still publish documents dated for earlier seasons.",
+        "new": "because some venues still publish terms dated for earlier seasons."
+      },
+      {
+        "location": "FAQ, When is the best time",
+        "issue": "Must-fix: second per-line Visit Greece credit (the touring paragraph in the seasons section keeps the one linked citation).",
+        "fix": "Replace exactly:\nVisit Greece names spring and autumn as the island's mild seasons, and Minos Palace gives\nwith:\nSpring and autumn are the island's mild seasons, and Minos Palace gives",
+        "old": "Visit Greece names spring and autumn as the island's mild seasons, and Minos Palace gives",
+        "new": "Spring and autumn are the island's mild seasons, and Minos Palace gives"
+      },
+      {
+        "location": "FAQ, Which part of Crete",
+        "issue": "Must-fix: unsupported 'smaller venues' claim again.",
+        "fix": "Replace exactly:\nChania and Rethymno in the west suit couples who want harbour towns and smaller venues. <!-- fact_11 -->\nwith:\nChania and Rethymno in the west centre on their old towns, with venues from beach resorts to a hilltop garden. <!-- fact_11 --> <!-- crete-venues fact_402 --> <!-- crete-venues fact_200 -->",
+        "old": "Chania and Rethymno in the west suit couples who want harbour towns and smaller venues. <!-- fact_11 -->",
+        "new": "Chania and Rethymno in the west centre on their old towns, with venues from beach resorts to a hilltop garden. <!-- fact_11 --> <!-- crete-venues fact_402 --> <!-- crete-venues fact_200 -->"
+      },
+      {
+        "location": "FAQ, What affects the cost",
+        "issue": "Must-fix: 'some venues' generalises fact_101, which is the Elounda Collection only.",
+        "fix": "Replace exactly:\nSome venues also charge official fees on top of the package rate. <!-- fact_101 -->\nwith:\nAt the Elounda Collection, official fees are also charged on top of the package rate. <!-- fact_101 -->",
+        "old": "Some venues also charge official fees on top of the package rate. <!-- fact_101 -->",
+        "new": "At the Elounda Collection, official fees are also charged on top of the package rate. <!-- fact_101 -->"
+      },
+      {
+        "location": "FAQ, Can Australians legally get married",
+        "issue": "Must-fix: states the Registry Office step as a general legal step; it is the Elounda Collection's venue-published step (fact_103, verify item).",
+        "fix": "Replace exactly:\nVenues such as the Elounda Collection offer civil packages, and the marriage is registered at the local Registry Office after the ceremony.\nwith:\nVenues such as the Elounda Collection offer civil packages, and there the couple registers the marriage at the Registry Office in Aghios Nikolaos after the ceremony.",
+        "old": "Venues such as the Elounda Collection offer civil packages, and the marriage is registered at the local Registry Office after the ceremony.",
+        "new": "Venues such as the Elounda Collection offer civil packages, and there the couple registers the marriage at the Registry Office in Aghios Nikolaos after the ceremony."
+      }
+    ],
+    "fact_check_log": [
+      {
+        "claim": "Crete largest Greek island, over 1,000 km coastline",
+        "fact_id": "fact_11",
+        "status": "confirmed"
+      },
+      {
+        "claim": "About 260 km long, mountainous, Lefka Ori, Psiloritis, Dikti west to east",
+        "fact_id": "fact_06",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Chania old town, Venetian harbour, Egyptian lighthouse; Rethymno Fortezza; Heraklion largest urban centre, Knossos gateway, northern-coast resorts; Lasithi, Agios Nikolaos, Mirabello Bay, Elounda lagoon and Spinalonga",
+        "fact_id": "fact_11",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Minoan Palatial Centres added to UNESCO list in 2025, six sites named",
+        "fact_id": "fact_12",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Elounda Beach: Cretan lyre music during the ceremony as an added service",
+        "fact_id": "fact_114",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Mild Mediterranean climate; east warmer than west, south than north, mountains cooler",
+        "fact_id": "fact_05",
+        "status": "confirmed"
+      },
+      {
+        "claim": "HNMS stations and periods: Heraklion 1955 to 2010, Souda 1958 to 2010",
+        "fact_id": "fact_01; fact_08",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Climate table: all 60 cells (Heraklion mean, mean max, rain days; Souda mean max, rain days) script-checked against the pack, all match",
+        "fact_id": "fact_01; fact_02; fact_03; fact_08; fact_10",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Heraklion under 1 mm in July (0.8)",
+        "fact_id": "fact_03",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Chania-area July and August highs above 30 (30.7, 30.4), above Heraklion's",
+        "fact_id": "fact_08; fact_02",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Chania area wetter; over 100 mm in January (129.5)",
+        "fact_id": "fact_10",
+        "status": "confirmed"
+      },
+      {
+        "claim": "May highs low to mid twenties (23.6, 24.5), handful of rain days (4.6, 4.2)",
+        "fact_id": "fact_02; fact_08; fact_03; fact_10",
+        "status": "confirmed"
+      },
+      {
+        "claim": "September 'holds summer's dryness'",
+        "fact_id": "fact_03",
+        "status": "unsupported"
+      },
+      {
+        "claim": "October rain days roughly treble September at Heraklion (7.5 vs 2.8)",
+        "fact_id": "fact_03",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Spring 16 to 24, summer 25 to 30, maximum 40, meltemi",
+        "fact_id": "fact_05",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Heraklion prevailing wind north-west June to September, south October to May",
+        "fact_id": "fact_04",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Visit Greece: spring and autumn ideal for touring; summer sights early morning",
+        "fact_id": "fact_15",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Minos Palace: eastern Crete pleasant April to November, spring 18 to 24, early autumn 20 to 27",
+        "fact_id": "fact_110",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Nana Princess: 35 degrees, high UV, evening ceremony times by month",
+        "fact_id": "fact_106",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Nana Princess 'east of Heraklion'",
+        "fact_id": "",
+        "status": "unsupported"
+      },
+      {
+        "claim": "Greek official holidays list",
+        "fact_id": "fact_07",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Smartraveller wildfires June to September, heatwaves, little shade, normal safety precautions (dated As at November 2026)",
+        "fact_id": "fact_117",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Smartraveller insurance, PDS, evacuation cover, active seismic zone near Crete",
+        "fact_id": "fact_118",
+        "status": "confirmed"
+      },
+      {
+        "claim": "West: 'smaller venues', 'hotels on a gentler scale', 'guests often spread across villas'",
+        "fact_id": "",
+        "status": "removed"
+      },
+      {
+        "claim": "East: 'couples tend to look here first'",
+        "fact_id": "",
+        "status": "unsupported"
+      },
+      {
+        "claim": "Elounda Beach one-liner: private chapel, civil or religious ceremonies, waterfront villas and suites with decks and pools",
+        "fact_id": "crete-venues fact_01; crete-venues fact_02",
+        "status": "confirmed"
+      },
+      {
+        "claim": "St. Nicolas Bay one-liner: beachside chapel deck on Mirabello Bay, seafront suites and private-pool villas",
+        "fact_id": "crete-venues fact_05; crete-venues fact_07",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Amirandes one-liner: VIP Beach or chapel, 18 km from airport, short drive to Knossos",
+        "fact_id": "crete-venues fact_104; crete-venues fact_106",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Caramel one-liner: informal weddings and vow exchanges, gardens above golden-sand beach, minutes from Rethymno",
+        "fact_id": "crete-venues fact_111; crete-venues fact_115",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Avra Imperial one-liner: chapel of Saint Paul, events hall for a very big wedding (680)",
+        "fact_id": "crete-venues fact_402; crete-venues fact_403",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Sea View by En Kipo one-liner: hilltop garden, sea and sunset views, exclusive for the day, no guest rooms",
+        "fact_id": "crete-venues fact_200; crete-venues fact_202; crete-venues fact_203",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Not published: St. Nicolas Bay capacity/exclusive use; Caramel capacity/legal option",
+        "fact_id": "crete-venues fact_07; crete-venues fact_111",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Elounda Collection three-night condition on civil, Orthodox and symbolic packages",
+        "fact_id": "fact_100",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Abaton minimum rooms, nights and reception size; accommodation excluded; complete packages",
+        "fact_id": "fact_115",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Nana Princess exclusive use for symbolic weddings and vow renewals",
+        "fact_id": "fact_105",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Sea View 10:00am to midnight, extend to 2:00am; rent equipment, own caterer, preferred vendors",
+        "fact_id": "fact_108",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Abaton venue fee per venue, set-up items as supplement, additional services",
+        "fact_id": "fact_116",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Euphoria complete non-interchangeable packages, amendments at extra cost; receptions, drinks, cakes, entertainment priced on request",
+        "fact_id": "fact_111; fact_112",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Elounda Beach additional services list",
+        "fact_id": "fact_114",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Elounda Collection Apostille per document, Greek translation, courier at couple's cost",
+        "fact_id": "fact_102",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Elounda Collection Municipal and Metropolis fees charged on top",
+        "fact_id": "fact_101",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Cost intro 'rarely because one venue is simply dearer'",
+        "fact_id": "",
+        "status": "removed"
+      },
+      {
+        "claim": "Heraklion airport name and centre/east role",
+        "fact_id": "fact_14",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Amirandes 18 km from Heraklion airport",
+        "fact_id": "fact_17",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Minos Palace and Minos Beach 50 minutes from Heraklion airport",
+        "fact_id": "fact_110; fact_16",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Chania airport bus, taxi, parking",
+        "fact_id": "fact_13",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Chania airport 'car hire'",
+        "fact_id": "",
+        "status": "unsupported"
+      },
+      {
+        "claim": "Sea View reachable via Chania Airport, Heraklion Airport, Souda Port",
+        "fact_id": "crete-venues fact_203",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Minos Beach 180 minutes from Chania Airport",
+        "fact_id": "fact_16",
+        "status": "confirmed"
+      },
+      {
+        "claim": "'Most guests drive or take taxis'",
+        "fact_id": "",
+        "status": "removed"
+      },
+      {
+        "claim": "Overseas marriage not registrable in Australia but usually recognised; certificate and name change (As at November 2026)",
+        "fact_id": "fact_120",
+        "status": "confirmed"
+      },
+      {
+        "claim": "CNI, DFAT issue, local acceptance, apostille question",
+        "fact_id": "fact_119",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Australian Embassy Athens notarial services, appointments Mon to Fri 9:00am to 12:30pm, post, two working days, no legal advice, fees apply",
+        "fact_id": "fact_121",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Non-Greek nationals contact local municipality for certificates",
+        "fact_id": "fact_07",
+        "status": "confirmed"
+      },
+      {
+        "claim": "40-day Registry Office quote matches the pack verbatim and is attributed to the venue page",
+        "fact_id": "fact_103",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Caramel informal weddings need no paperwork",
+        "fact_id": "crete-venues fact_111",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Euphoria informal wedding or vow renewal, hotel certificate",
+        "fact_id": "fact_111",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Document lead times: issued within 3 months, email 4 weeks, courier 3 weeks; [[VERIFY]] for 2027 dates kept",
+        "fact_id": "fact_102",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Registry Office within 40 days, Friday/weekend next Monday (timeline)",
+        "fact_id": "fact_103",
+        "status": "confirmed"
+      },
+      {
+        "claim": "FAQ legal: Registry Office step stated generally",
+        "fact_id": "fact_103",
+        "status": "unsupported"
+      },
+      {
+        "claim": "FAQ cost: 'some venues' charge official fees on top",
+        "fact_id": "fact_101",
+        "status": "unsupported"
+      },
+      {
+        "claim": "FAQ which part: 'smaller venues'",
+        "fact_id": "fact_11",
+        "status": "unsupported"
+      },
+      {
+        "claim": "Wedded Advisor and Concierge lines: one person start to finish, time zone, AUD quotes, fee agreed in writing, inclusions confirmed in writing",
+        "fact_id": "brand-facts.md",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Advisor 'confirms details like these' (capacity, exclusive use)",
+        "fact_id": "brand-facts.md",
+        "status": "unsupported"
+      }
+    ],
+    "compliance": {
+      "pass": true,
+      "issues": [
+        "No money amounts, percentages or 'from' prices; nothing for sign-off. 'Fee' and 'charged on top' appear only with fact_101, fact_116 and fact_121.",
+        "No em or en dashes (scan 0 before and after edits); no 'last dance'; no Wedded Privileges; 'often told' 0; Australian English throughout.",
+        "Advisor claims stay within brand-facts.md once the 'confirms details like these' line is moved to the venue; no Advisor help with legal, church or religious paperwork and no transfer arrangements implied. Business details deferred.",
+        "Best month: the opening line stated late spring and early autumn as what suits; rewritten from the HNMS normals. The FAQ answer already frames it as a choice.",
+        "Research talk and per-line credits: Visit Greece was credited three times; two credits removed, the seasons-section link kept as the one citation. Smartraveller dated 'As at November 2026' once per section; Embassy line sourced.",
+        "Key takeaways: exactly 4 one-sentence items. Headings carry no pasted keywords. Venue entries are one line each and point to the Crete venues guide, so they do not duplicate it.",
+        "No vendor names other than venues; no venue contact details; external links are official tourism, met service, airport, government and venue pages, no competitors."
+      ]
+    },
+    "originality": {
+      "pass": true,
+      "matches": []
+    },
+    "banned_phrases_found": [],
+    "needs_signoff": []
+  }
+}

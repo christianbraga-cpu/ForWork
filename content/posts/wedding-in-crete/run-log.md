@@ -6,3 +6,4 @@
 01:20 03 batch A done: 17 facts (HNMS monthly climate Heraklion and Chania, island facts, airports). Sea temperature not sourced (left out). Packs merged.
 01:24 05 draft done: ~3,830 words, scan clean, no amounts, 1 VERIFY (Elounda lead times).
 01:26 07 readers: search_visitor, uhnw, planner_couple, sceptic done (no must-fix).
+01:28 06 editor pass_with_edits (4.14): 20 edits applied to 05-draft-r2.md.
