@@ -1,0 +1,248 @@
+{
+ "agent": "visual-curator",
+ "task_id": "greece-wedding-packages",
+ "stage": "04",
+ "status": "needs_input",
+ "round": 1,
+ "inputs_used": [
+  "CLAUDE.md",
+  "content/posts/greece-wedding-packages/00-input.json",
+  "content/posts/greece-wedding-packages/01-brief.json",
+  "content/posts/crete-wedding-venues/04-images.json (format model)",
+  "content-system/images/library-index.csv (header only, no rows)",
+  "content-system/images/sources-policy.md",
+  "content-system/schemas/04-images.schema.json",
+  "content-system/schemas/envelope.schema.json"
+ ],
+ "self_qa": {
+  "checks": [
+   {
+    "check": "Zero reference-only or competitor images in slots",
+    "pass": true,
+    "note": "reference_only is empty; nothing downloaded."
+   },
+   {
+    "check": "Every approved image has location, licence, alt, caption, fit_reason",
+    "pass": true,
+    "note": "No approved images this run; alt and caption are written once a licensed file exists."
+   },
+   {
+    "check": "No AI image depicting a real place",
+    "pass": true,
+    "note": "AI is offered only for the two abstract still-life slots, with no place, venue or document shown, and only on the person's approval."
+   },
+   {
+    "check": "Featured image exists (approved or needed with brief)",
+    "pass": true,
+    "note": "Needed, with brief."
+   },
+   {
+    "check": "One slot per main section",
+    "pass": true,
+    "note": "Featured plus inclusions, ceremony, what's left out, comparing quotes, Australian angle."
+   },
+   {
+    "check": "No em dashes, no figures in briefs",
+    "pass": true
+   }
+  ],
+  "confidence": 0.75
+ },
+ "open_questions": [
+  {
+   "to": "person",
+   "question": "Do you approve an AI (Higgsfield) abstract still life for the 'compare quotes' slot (folded quotes and a pen on linen, nothing legible), captioned 'Illustrative image'? And as the fallback for the Australian-angle flat-lay if no library or stock image is found?",
+   "blocking": false
+  },
+  {
+   "to": "orchestrator",
+   "question": "Should a human find each venue's press contact and create the Gmail permission drafts, or should the curator do it in a non-fast run with Firecrawl and Gmail draft approval?",
+   "blocking": false
+  },
+  {
+   "to": "orchestrator",
+   "question": "Is there budget for licensed premium stock (Stocksy, Getty, Offset) for the featured and venue slots if press kits do not respond in time?",
+   "blocking": false
+  }
+ ],
+ "assumptions": [
+  "02-seo.json is not yet written, so placements use working section names from 01-brief; the writer maps them to after_h2:<n>.",
+  "Venue choices per slot follow the venues 01-brief names for each package type; the writer swaps a slot's venue if stage 03 drops it.",
+  "Drive, own site, Canva and press-kit searches were not run: repo register only, per instruction."
+ ],
+ "verify_items": [
+  "[[IMAGE NEEDED]] featured: venue ceremony terrace hero from a venue whose package is described",
+  "[[IMAGE NEEDED]] inclusions: venue ceremony styling detail",
+  "[[IMAGE NEEDED]] ceremony-types: venue ceremony spot (civil or symbolic)",
+  "[[IMAGE NEEDED]] left-out: exclusive-use terrace or guest suite",
+  "[[IMAGE NEEDED]] compare-quotes: abstract still life (AI only on approval, 'Illustrative image')",
+  "[[IMAGE NEEDED]] australian-angle: travel planning flat-lay (library or stock; AI fallback only on approval)",
+  "[[VERIFY licence]] every venue press-kit image: written permission, credit line and expiry recorded in library-index.csv before use"
+ ],
+ "tools_used": [
+  "Bash (cat/python)"
+ ],
+ "next_agent": [
+  "luxury-writer"
+ ],
+ "payload": {
+  "slots": [
+   {
+    "slot_id": "featured",
+    "placement": "featured",
+    "purpose": "Hero and social share image: a luxury Greek venue ceremony set up and ready, signalling what a package actually delivers on the day.",
+    "shot_brief": "Official image from one venue whose package the guide describes (Elounda Beach or Elounda Peninsula in Crete, or Grace Hotel in Santorini): a ceremony set-up on a sea-view terrace or lawn, chairs and floral arch in place, Aegean water behind, May to October, golden-hour light. No people, or only distant unidentifiable figures; no signage. Landscape 3:2 with room for a title crop. Source: the venue's own media kit or press office with written permission (Gmail draft request, created by a human or a non-fast run, never sent by an agent), or licensed premium stock bought by a human and added to library-index.csv. Never AI, never a competitor, directory, planner, photographer-blog or search-result image. Location proven by the media kit, register row or EXIF, never by appearance. Use only a venue whose own package is described in the article, so the image never implies a package or partnership we do not describe.",
+    "status": "needed",
+    "file": "content/posts/greece-wedding-packages/images/greece-wedding-packages-elounda-beach-ceremony-terrace-hero.webp",
+    "source": {
+     "type": "venue_press",
+     "origin": "not yet sourced",
+     "credit": "[[VERIFY licence]]"
+    },
+    "location": {
+     "venue": "one venue whose package is described in the article",
+     "town": "to be set from the media kit",
+     "verified_by": "to be set from the media kit or register row"
+    },
+    "licence_note": "[[IMAGE NEEDED]] Library register has no rows (header only). Move to pending_permission once the featured venue is chosen and its permission draft exists."
+   },
+   {
+    "slot_id": "inclusions",
+    "placement": "after_h2: What a Greek venue package usually includes",
+    "purpose": "Makes the inclusions concrete: the ceremony set-up and styling a venue package commonly bundles.",
+    "shot_brief": "Official close detail from a venue whose package inclusions are named in this section (for example Nana Princess or Elounda Beach): an aisle or ceremony table dressed for a wedding, linen, flowers, sea or garden softly out of focus behind. Daylight, season May to October. No people. Landscape 3:2 or 4:3. Source: the venue's own media kit or press office with written permission (Gmail draft request, created by a human or a non-fast run, never sent by an agent), or licensed premium stock bought by a human and added to library-index.csv. Never AI, never a competitor, directory, planner, photographer-blog or search-result image. Location proven by the media kit, register row or EXIF, never by appearance. Use only a venue whose own package is described in the article, so the image never implies a package or partnership we do not describe.",
+    "status": "needed",
+    "file": "content/posts/greece-wedding-packages/images/greece-wedding-packages-nana-princess-ceremony-styling.webp",
+    "source": {
+     "type": "venue_press",
+     "origin": "not yet sourced",
+     "credit": "[[VERIFY licence]]"
+    },
+    "location": {
+     "venue": "a venue named in the inclusions section",
+     "town": "to be set from the media kit",
+     "verified_by": "to be set from the media kit or register row"
+    },
+    "licence_note": "[[IMAGE NEEDED]] Swap the venue in the filename to whichever venue's permission comes through first."
+   },
+   {
+    "slot_id": "ceremony-types",
+    "placement": "after_h2: Civil, Greek Orthodox or symbolic: the ceremony inside the package",
+    "purpose": "Shows a ceremony space so the reader pictures where a civil or symbolic ceremony in a package takes place.",
+    "shot_brief": "Official image from Elounda Peninsula (which publishes separate civil, Greek Orthodox and symbolic packages) or another venue described in this section: the venue's own ceremony spot set for a symbolic or civil ceremony, open sky and sea. Do not show a church, priest, icon or religious rite unless the venue's own image and caption identify it and the article covers it; never imply a legal or church step the article does not state. No identifiable guests. Landscape 3:2. Source: the venue's own media kit or press office with written permission (Gmail draft request, created by a human or a non-fast run, never sent by an agent), or licensed premium stock bought by a human and added to library-index.csv. Never AI, never a competitor, directory, planner, photographer-blog or search-result image. Location proven by the media kit, register row or EXIF, never by appearance. Use only a venue whose own package is described in the article, so the image never implies a package or partnership we do not describe.",
+    "status": "needed",
+    "file": "content/posts/greece-wedding-packages/images/greece-wedding-packages-elounda-peninsula-ceremony-spot.webp",
+    "source": {
+     "type": "venue_press",
+     "origin": "not yet sourced",
+     "credit": "[[VERIFY licence]]"
+    },
+    "location": {
+     "venue": "Elounda Peninsula All Suite Hotel (or another venue described in this section)",
+     "town": "Elounda",
+     "verified_by": "to be set from the media kit or register row"
+    },
+    "licence_note": "[[IMAGE NEEDED]] Venue press image with written permission only."
+   },
+   {
+    "slot_id": "left-out",
+    "placement": "after_h2: What packages often leave out",
+    "purpose": "Illustrates the items that often sit outside a package: exclusive use of a space and guest rooms.",
+    "shot_brief": "Official image from a venue whose package conditions the section describes (Grace Hotel exclusive-use terrace, or guest suites at Abaton or Melenos): an empty terrace or a suite with a sea view, set but unpeopled, evening or soft morning light, May to October. No identifiable guests. Landscape 3:2. Source: the venue's own media kit or press office with written permission (Gmail draft request, created by a human or a non-fast run, never sent by an agent), or licensed premium stock bought by a human and added to library-index.csv. Never AI, never a competitor, directory, planner, photographer-blog or search-result image. Location proven by the media kit, register row or EXIF, never by appearance. Use only a venue whose own package is described in the article, so the image never implies a package or partnership we do not describe.",
+    "status": "needed",
+    "file": "content/posts/greece-wedding-packages/images/greece-wedding-packages-grace-hotel-exclusive-use-terrace.webp",
+    "source": {
+     "type": "venue_press",
+     "origin": "not yet sourced",
+     "credit": "[[VERIFY licence]]"
+    },
+    "location": {
+     "venue": "Grace Hotel (or Abaton or Melenos, per the final section)",
+     "town": "Imerovigli, Santorini (confirm from media kit)",
+     "verified_by": "to be set from the media kit or register row"
+    },
+    "licence_note": "[[IMAGE NEEDED]] Venue press image with written permission only; town confirmed from the media kit, not assumed."
+   },
+   {
+    "slot_id": "compare-quotes",
+    "placement": "after_h2: How to compare two quotes like for like",
+    "purpose": "A calm, abstract visual for the comparison checklist: two quotes side by side, read carefully.",
+    "shot_brief": "Abstract still life, top-down or low angle: two folded paper quotes side by side and a fountain pen on natural ivory linen, a sprig of olive and a glass of water, soft window daylight, neutral palette. Nothing legible on the paper (no figures, currency, logos or venue names). No people, no real place. Landscape 3:2. AI (Higgsfield) allowed for this slot ONLY after the person approves it, and the caption must read 'Illustrative image'. No real place, venue, logo, currency note, real document or legible prices or figures in frame; any paper is blank or carries illegible marks. Preferred alternative: a Canva brand-kit or licensed stock flat-lay.",
+    "status": "needed",
+    "file": "content/posts/greece-wedding-packages/images/greece-wedding-packages-illustrative-two-quotes-pen-linen.webp",
+    "source": {
+     "type": "ai_illustrative",
+     "origin": "not generated: awaiting the person's approval to use AI for this abstract slot",
+     "credit": "Illustrative image"
+    },
+    "caption_planned": "Illustrative image",
+    "licence_note": "[[IMAGE NEEDED]] AI only on the person's approval; caption 'Illustrative image'. Not generated this run."
+   },
+   {
+    "slot_id": "australian-angle",
+    "placement": "after_h2: For Australian couples: currency, deposits and insurance",
+    "purpose": "Grounds the Australian angle: planning from home, with travel and paperwork in hand.",
+    "shot_brief": "Preferred: a Wedded Wonderland library image (with couple consent recorded) or licensed stock of travel planning flat-lay: a linen travel folder, luggage tag and sunglasses on a timber table, soft daylight. No passport data pages, government emblems, airline logos, currency notes or legible figures. No real place. Fallback: AI abstract still life of the same scene, only on the person's approval and captioned 'Illustrative image'. Landscape 3:2.",
+    "status": "needed",
+    "file": "content/posts/greece-wedding-packages/images/greece-wedding-packages-illustrative-travel-folder-flatlay.webp",
+    "source": {
+     "type": "stock",
+     "origin": "not yet sourced (library or licensed stock preferred; AI fallback needs approval)",
+     "credit": "[[VERIFY licence]]"
+    },
+    "licence_note": "[[IMAGE NEEDED]] Library or stock first; AI only with approval and labelled 'Illustrative image'."
+   }
+  ],
+  "reference_only": [],
+  "permission_requests": [
+   {
+    "venue": "Elounda Beach Hotel & Villas",
+    "gmail_draft_id": "",
+    "images": [
+     "Official ceremony terrace or lawn set-up (no identifiable guests)"
+    ],
+    "planned_file": "content/posts/greece-wedding-packages/images/greece-wedding-packages-elounda-beach-ceremony-terrace-hero.webp",
+    "status": "draft_wording_only: not created in Gmail, not sent; create only for venues confirmed in 03-source-pack",
+    "press_or_contact_page": "not located: repo register only in this fast run; find it on the venue's own site",
+    "draft_subject": "Image permission request: Wedded Wonderland feature on Elounda Beach Hotel & Villas"
+   },
+   {
+    "venue": "Nana Princess",
+    "gmail_draft_id": "",
+    "images": [
+     "Official ceremony styling detail"
+    ],
+    "planned_file": "content/posts/greece-wedding-packages/images/greece-wedding-packages-nana-princess-ceremony-styling.webp",
+    "status": "draft_wording_only: not created in Gmail, not sent; create only for venues confirmed in 03-source-pack",
+    "press_or_contact_page": "not located: repo register only in this fast run; find it on the venue's own site",
+    "draft_subject": "Image permission request: Wedded Wonderland feature on Nana Princess"
+   },
+   {
+    "venue": "Elounda Peninsula All Suite Hotel",
+    "gmail_draft_id": "",
+    "images": [
+     "Official ceremony spot set for a civil or symbolic ceremony"
+    ],
+    "planned_file": "content/posts/greece-wedding-packages/images/greece-wedding-packages-elounda-peninsula-ceremony-spot.webp",
+    "status": "draft_wording_only: not created in Gmail, not sent; create only for venues confirmed in 03-source-pack",
+    "press_or_contact_page": "not located: repo register only in this fast run; find it on the venue's own site",
+    "draft_subject": "Image permission request: Wedded Wonderland feature on Elounda Peninsula All Suite Hotel"
+   },
+   {
+    "venue": "Grace Hotel",
+    "gmail_draft_id": "",
+    "images": [
+     "Official exclusive-use terrace, unpeopled"
+    ],
+    "planned_file": "content/posts/greece-wedding-packages/images/greece-wedding-packages-grace-hotel-exclusive-use-terrace.webp",
+    "status": "draft_wording_only: not created in Gmail, not sent; create only for venues confirmed in 03-source-pack",
+    "press_or_contact_page": "not located: repo register only in this fast run; find it on the venue's own site",
+    "draft_subject": "Image permission request: Wedded Wonderland feature on Grace Hotel"
+   }
+  ],
+  "drive_findings": [
+   "Not searched: repo library register only per orchestrator instruction. library-index.csv has a header and no rows."
+  ],
+  "permission_email_bodies_note": "Draft wording per venue = content-system/images/permission-email-template.md with {{venue_name}} = venue and {{post_title}} = 'Greece Wedding Packages and What They Include'. No Gmail drafts created and nothing sent."
+ }
+}
