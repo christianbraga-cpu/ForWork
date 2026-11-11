@@ -1,0 +1,127 @@
+{
+ "agent": "planner-sme",
+ "task_id": "corfu-wedding-venues",
+ "stage": "03",
+ "status": "complete",
+ "round": 1,
+ "inputs_used": [
+  "CLAUDE.md",
+  "content/posts/corfu-wedding-venues/00-input.json",
+  "content/posts/corfu-wedding-venues/03-source-pack-part-4.json (format)"
+ ],
+ "self_qa": {
+  "checks": [
+   {
+    "check": "Every fact has a source and date",
+    "pass": true
+   },
+   {
+    "check": "No price without a source; all prices in needs_signoff",
+    "pass": true,
+    "note": "No prices recorded."
+   },
+   {
+    "check": "Every must-include covered or marked [[VERIFY]]",
+    "pass": true,
+    "note": "Batch F qualifies 1 venue (Rodostamo Hotel & Spa, Kommeno). Pelekas Monastery and Pelecas Country Club not qualified; remaining candidates not reached within the 12-minute limit."
+   },
+   {
+    "check": "No invented quotes, statistics or real weddings",
+    "pass": true
+   }
+  ],
+  "confidence": 0.75
+ },
+ "open_questions": [
+  {
+   "to": "orchestrator",
+   "question": "Batch F qualifies 1 venue: Rodostamo Hotel & Spa (Kommeno Bay), sea view stated as 'overlooking the Ionian Sea' on its official Meetings & Events page (fact_600 to fact_602). Pelekas Monastery fetch timed out again (fact_603). Pelecas Country Club official site shows a weddings heading in a search snippet only; page and sea-view wording not read (fact_604). Kommeno Bay or other Kommeno/Dassia hotels, Corfu Town historic venues and north-east or south estates were not checked: the 12-minute limit was reached after the Pelekas timeout.",
+   "blocking": false
+  }
+ ],
+ "assumptions": [
+  "BOOKING CHECKLIST: Rodostamo Hotel & Spa: ceremony locations, wedding guest capacity, music curfew, minimum nights or room block, exclusive use, rain plan and set-up times are not published; ask the hotel's wedding coordinators."
+ ],
+ "verify_items": [
+  "[[VERIFY: Pelecas Country Club, official site country-club.gr: confirm the weddings offer on its own pages and whether the site states a sea view in words before it can be included (fact_604)]]"
+ ],
+ "tools_used": [
+  "mcp__Apify__apify--web-fetch",
+  "mcp__Apify__apify--web-search",
+  "Bash"
+ ],
+ "next_agent": [
+  "luxury-writer"
+ ],
+ "payload": {
+  "facts": [
+   {
+    "fact_id": "fact_600",
+    "claim": "Rodostamo Hotel & Spa (Kommeno Bay, Corfu) hosts weddings: its official Meetings & Events page has a 'Weddings & Social Events' section offering wedding specials and added values for the couple, with in-house wedding coordinators who help organise the wedding reception. Sea-view wording, verbatim: 'in a majestic scenery, overlooking the Ionian Sea and as background the beautiful Church of Ipapanti, by the Kommeno Bay.' Meets the inclusion rule.",
+    "source": "https://rodostamo.gr/meetings-and-events/",
+    "source_type": "official_venue",
+    "checked": "2026-11-11",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_601",
+    "claim": "Rodostamo Hotel & Spa: the official page states the hotel is 11 km from Corfu Airport and 10 km from Corfu Town, and has a 150 sqm multipurpose area (conference room max capacity 152 seats) on the ground floor of the main building. No wedding guest capacity, ceremony locations or exclusive-use terms are published on the page.",
+    "source": "https://rodostamo.gr/meetings-and-events/",
+    "source_type": "official_venue",
+    "checked": "2026-11-11",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_602",
+    "claim": "Rodostamo Hotel & Spa standout detail: the official weddings section names the Church of Ipapanti (Ypapanti chapel) on Kommeno Bay as the backdrop, and lists coordinator support covering hairdressing, spa treatments, florist, photographer, wedding car, bus transfer, decoration and hen and stag night planning.",
+    "source": "https://rodostamo.gr/meetings-and-events/",
+    "source_type": "official_venue",
+    "checked": "2026-11-11",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_603",
+    "claim": "Pelekas Monastery: the single permitted fetch of pelekasmonastery.com (rendered, wait 15000 ms) timed out after 60 seconds on 11 November 2026; no official weddings or sea-view wording read. Not qualified in batch F (second failed attempt across batches E and F).",
+    "source": "https://www.pelekasmonastery.com/",
+    "source_type": "official_venue",
+    "checked": "2026-11-11",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_604",
+    "claim": "Pelecas Country Club (Pelekas, west Corfu): a search result snippet for the official site's gallery page (country-club.gr/photos/) shows a 'Pelecas Country Club Weddings' heading, but the page itself was not read and no sea-view wording on the official site was read before the batch time limit. Not qualified in batch F; inclusion rule unconfirmed on both counts.",
+    "source": "https://www.country-club.gr/photos/",
+    "source_type": "official_venue",
+    "checked": "2026-11-11",
+    "is_price": false
+   }
+  ],
+  "insider_details": [
+   {
+    "detail": "Rodostamo sits on Kommeno Bay about 11 km from Corfu Airport and 10 km from Corfu Town, so guest transfers from either are short; its only published event room is a 150 sqm space seating up to 152, a natural indoor fallback to raise when planning an outdoor reception.",
+    "fact_ids": [
+     "fact_601"
+    ]
+   }
+  ],
+  "quotes": [],
+  "real_weddings": [],
+  "verify_items": [
+   "[[VERIFY: Pelecas Country Club, official site country-club.gr: confirm the weddings offer on its own pages and whether the site states a sea view in words before it can be included (fact_604)]]"
+  ],
+  "needs_signoff": [],
+  "must_include_coverage": [
+   {
+    "item": "Top-up Corfu venue profiles, batch F (setting, sea view in own words, ceremony options, capacity, rooms, exclusive use, standout)",
+    "covered_by": [
+     "fact_600",
+     "fact_601",
+     "fact_602",
+     "fact_603",
+     "fact_604",
+     "[[VERIFY: Pelecas Country Club, official site country-club.gr: confirm the weddings offer on its own pages and whether the site states a sea view in words before it can be included (fact_604)]]"
+    ]
+   }
+  ]
+ }
+}

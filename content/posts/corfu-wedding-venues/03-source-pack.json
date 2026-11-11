@@ -1,332 +1,1055 @@
 {
- "agent": "planner-sme",
- "task_id": "corfu-wedding-venues",
- "stage": "03",
- "status": "complete",
- "round": 1,
- "inputs_used": [
-  "CLAUDE.md",
-  "content/posts/corfu-wedding-venues/00-input.json",
-  "content/posts/corfu-wedding-venues/01-brief.json",
-  "content-system/schemas/03-source-pack.schema.json",
-  "content/posts/crete-wedding-venues/03-source-pack.json (format model)",
-  "content/posts/greece-wedding-venues/03-source-pack*.json fact_108-110 (re-checked live)",
-  "content/posts/greece-wedding-packages/03-source-pack-part-1.json fact_110 (re-checked live)",
-  "Apify web-fetch and web-search 2026-11-11: grecotel.com (Corfu Imperial weddings, home, accommodation; wedding-hotels), ikosresorts.com/events-weddings, corfupalace.com (2023 wedding PDF; site search), cavalieri-hotel.com, kontokalibay.com, corfuholidaypalace.gr (conferences-events; site search)"
- ],
- "self_qa": {
-  "checks": [
-   {
-    "check": "Every fact has a source and date",
-    "pass": true
-   },
-   {
-    "check": "No price without a source; all prices in needs_signoff",
-    "pass": true,
-    "note": "No prices recorded."
-   },
-   {
-    "check": "Every must-include covered or marked [[VERIFY]]",
-    "pass": true,
-    "note": "Non-venue items marked for batch C or writer stage."
-   },
-   {
-    "check": "No invented quotes, statistics or real weddings",
-    "pass": true
-   }
+  "agent": "planner-sme",
+  "task_id": "corfu-wedding-venues",
+  "stage": "03",
+  "status": "complete",
+  "round": 1,
+  "inputs_used": [
+    "CLAUDE.md",
+    "content/posts/corfu-wedding-venues/00-input.json",
+    "content/posts/corfu-wedding-venues/01-brief.json",
+    "content-system/schemas/03-source-pack.schema.json",
+    "content/posts/crete-wedding-venues/03-source-pack.json (format model)",
+    "content/posts/greece-wedding-venues/03-source-pack*.json fact_108-110 (re-checked live)",
+    "content/posts/greece-wedding-packages/03-source-pack-part-1.json fact_110 (re-checked live)",
+    "Apify web-fetch and web-search 2026-11-11: grecotel.com (Corfu Imperial weddings, home, accommodation; wedding-hotels), ikosresorts.com/events-weddings, corfupalace.com (2023 wedding PDF; site search), cavalieri-hotel.com, kontokalibay.com, corfuholidaypalace.gr (conferences-events; site search)",
+    "content/posts/corfu-wedding-venues/01-brief.json (batch B venues)",
+    "content/posts/crete-wedding-venues/03-source-pack-part-1.json (format model)",
+    "content/posts/greece-wedding-venues/03-source-pack.json and 03-source-pack-part-3.json (fact_305, fact_306, re-checked live)",
+    "content/posts/greece-wedding-packages/03-source-pack-part-1.json (fact_104 to fact_106, re-checked live)",
+    "Apify web-fetch and web-search 2026-11-11 of official venue pages cited in each fact",
+    "content/posts/crete-wedding-venues/03-source-pack-part-2.json (format)",
+    "content/posts/wedding-in-crete/03-source-pack.json (fact_119-121 re-checked)",
+    "content/posts/crete-wedding-venues/03-source-pack-part-3.json (format model)",
+    "Apify web-search and web-fetch 2026-11-11 of official venue sites listed in each fact",
+    "content/posts/crete-wedding-venues/03-source-pack-part-4.json (format)",
+    "content/posts/corfu-wedding-venues/03-source-pack-part-4.json (format)"
   ],
-  "confidence": 0.75
- },
- "open_questions": [
-  {
-   "to": "orchestrator",
-   "question": "Batch A yields 4 qualifying venues (one provisional); 3 candidates failed the weddings test. Top-up batch likely needed to reach 12.",
-   "blocking": false
+  "self_qa": {
+    "checks": [
+      {
+        "check": "Every fact has a source and date",
+        "pass": true
+      },
+      {
+        "check": "No price without a source; all prices in needs_signoff",
+        "pass": true,
+        "note": "No prices recorded."
+      },
+      {
+        "check": "Every must-include covered or marked [[VERIFY]]",
+        "pass": true,
+        "note": "Non-venue items marked for batch C or writer stage."
+      },
+      {
+        "check": "No invented quotes, statistics or real weddings",
+        "pass": true
+      }
+    ],
+    "confidence": 0.7
   },
-  {
-   "to": "orchestrator",
-   "question": "Corfu Palace Hotel home page timed out; its sea view wording rests on a search snippet.",
-   "blocking": false
-  }
- ],
- "assumptions": [
-  "Ceremony options: only Corfu Imperial names settings (Yali, Aristos, Nissaki); none of the venues states legal ceremony types, so the writer should say ceremony type is 'Not published' except as named.",
-  "BOOKING CHECKLIST: Grecotel Corfu Imperial: Yali capacity, music curfew, minimum nights, rain plan, ceremony types on site, exclusive use of Nissaki, set-up times.",
-  "BOOKING CHECKLIST: Villa Medusa (Grecotel): which unit is the wedding villa, event guest count, music curfew, minimum nights, rain plan, ceremony on site, exclusive use terms.",
-  "BOOKING CHECKLIST: Corfu Palace Hotel: current wedding offer (2023 terms only published), ceremony location, outdoor capacity, room count, exclusive use, minimum nights.",
-  "BOOKING CHECKLIST: Corfu Holiday Palace: outdoor wedding and ceremony spaces, music curfew, minimum nights, rain plan, room count, exclusive use, set-up times."
- ],
- "verify_items": [
-  "[[VERIFY: Batch A qualifies 4 venues: Grecotel Corfu Imperial (Kommeno), Villa Medusa (Grecotel, Kommeno), Corfu Palace Hotel (Corfu Town, provisional) and Corfu Holiday Palace (Kanoni, reserve). Ikos Dassia, Cavalieri Hotel and reserve Kontokali Bay Resort & Spa fail the weddings test on their own sites; batches B, C or D must fill the count]]",
-  "[[VERIFY: Villa Medusa naming: Grecotel's wedding page describes 'Villa Medusa' with the same text the Corfu Imperial accommodation page uses for the '6 Bedroom Beachfront Villa', while a separate hilltop 'Medusa Estate' is listed; confirm which unit is offered for weddings before writing its size or view]]",
-  "[[VERIFY: Corfu Palace Hotel sea view wording ('view to Garitsa Bay and the mainland') read only from a search snippet of the hotel's own PDF; re-read on a loaded official page before publishing, or drop the venue]]",
-  "[[VERIFY: Corfu Palace Hotel wedding terms come from a 2023 document valid 30 days from issue; confirm a current wedding offer exists before listing]]",
-  "[[VERIFY: Corfu Holiday Palace 'breathtaking views of the Ionian Sea', Mouse Island view rooms and funicular to the private beach read from search snippets of its own site; re-read live before quoting]]"
- ],
- "tools_used": [
-  "mcp__Apify__apify--web-fetch",
-  "mcp__Apify__apify--web-search",
-  "Bash"
- ],
- "next_agent": [
-  "luxury-writer"
- ],
- "payload": {
-  "facts": [
-   {
-    "fact_id": "fact_01",
-    "claim": "Grecotel Corfu Imperial's own wedding page offers weddings and vow renewals with dedicated wedding specialists, customised menus and trusted vendors, and calls the hotel 'Greece's most impressively located hotel'. Enquiries go through a request for proposal form. Re-check of Greece venues pack fact_108 and Greece packages pack fact_110: unchanged.",
-    "source": "https://www.grecotel.com/corfuimperial/weddings-corfu/",
-    "source_type": "official_venue",
-    "checked": "2026-11-11",
-    "is_price": false
-   },
-   {
-    "fact_id": "fact_02",
-    "claim": "Corfu Imperial names three wedding settings: Yali Waterfront Restaurant, 'perched on a deck above the crystal-clear azure waters'; Aristos Restaurant for up to 50 guests; and the private island 'Nissaki' for up to 50 guests. No capacity is published for Yali. Re-check of Greece venues pack fact_109: unchanged.",
-    "source": "https://www.grecotel.com/corfuimperial/weddings-corfu/",
-    "source_type": "official_venue",
-    "checked": "2026-11-11",
-    "is_price": false
-   },
-   {
-    "fact_id": "fact_03",
-    "claim": "SEA VIEW (venue's own words): Corfu Imperial sits 'at the end of panoramic Peninsula Kommeno', 'surrounded by emerald waters, fragrant gardens, and cinematic sunsets', 'offering uninterrupted views of the sea and the Old Town's Venetian silhouette'. The home page describes 'a world of seaside olive trees, marble & palms, beach coves' and 'fine dining in seafront restaurants'. Inclusion rule: PASSES (hosts weddings plus sea view in words).",
-    "source": "https://www.grecotel.com/corfuimperial/",
-    "source_type": "official_venue",
-    "checked": "2026-11-11",
-    "is_price": false
-   },
-   {
-    "fact_id": "fact_04",
-    "claim": "Corfu Imperial's accommodation offer includes rooms with panoramic views, bungalows, and villas 'on the waterfront', among them the new 'Medusa Estate' and the Villa Peninsula, Palazzo Imperiale. The home page states the resort is 'set on its own private Peninsula'.",
-    "source": "https://www.grecotel.com/corfuimperial/",
-    "source_type": "official_venue",
-    "checked": "2026-11-11",
-    "is_price": false
-   },
-   {
-    "fact_id": "fact_05",
-    "claim": "Grecotel's group wedding page lists Corfu Imperial ('at Kommeno Peninsula, Corfu') as a wedding destination, 'perched above the olive groves at the end of panoramic Peninsula Kommeno... a room with a view or a palazzo over the water', and lists Villa Medusa at Kommeno Peninsula as a luxury private villa: 'Your striking private traditional Corfiot Mansion in the Ionian countryside, featuring 6 bedrooms, 2 private swimming pools, shaded terraces with lounge and dining areas, sprawling gardens & a designated path to the beach, it's a picture-perfect spot for intimate sumptuous celebrations with curated menu and set up.' Re-check of Greece venues pack fact_110: unchanged.",
-    "source": "https://www.grecotel.com/wedding-hotels/",
-    "source_type": "official_venue",
-    "checked": "2026-11-11",
-    "is_price": false
-   },
-   {
-    "fact_id": "fact_06",
-    "claim": "Ikos Resorts' only weddings page describes weddings at Ikos Aria on Kos ('Ikos Aria in Kos island has the unique setting'); it names no wedding offer for Ikos Dassia. The page describes Ikos Dassia only as a resort ('Terrace restaurants, refined rooms and suites and the golden sands of the bay all make the most of the glittering sea vistas'). Inclusion rule: Ikos Dassia FAILS (sea view stated, but its own site does not say it hosts weddings). Excluded.",
-    "source": "https://ikosresorts.com/events-weddings/",
-    "source_type": "official_venue",
-    "checked": "2026-11-11",
-    "is_price": false
-   },
-   {
-    "fact_id": "fact_07",
-    "claim": "Corfu Imperial's accommodation page lists sea view rooms throughout: Imperial Building guestrooms with 'Sea View', 'Panoramic Sea View' and 'Lofty Sea View', suites with 'Panoramic Sea, Corfu Town & the Marina View', and a Waterfront Collection of villas and palazzos with 'Direct Sea View', several with private pools, private sea decks or a private beach. The Palazzo Imperiale (245 m2, 8 persons) 'occupies a small private peninsula within the hotel ideal for total exclusivity'. No total room count is published on this page.",
-    "source": "https://www.grecotel.com/corfuimperial/accommodation/",
-    "source_type": "official_venue",
-    "checked": "2026-11-11",
-    "is_price": false
-   },
-   {
-    "fact_id": "fact_08",
-    "claim": "SEA VIEW (venue's own words) for the Grecotel Kommeno villas: the Medusa Estate (411 m2, 12 persons) is 'your very own Corfiot palace, located on the most privileged spot of Kommeno Peninsula, on the top of a hill... offering mesmerising panoramic sea and island views' ('Panoramic View of the Sea and Corfu Island'); the 6 Bedroom Beachfront Villa (458 m2, 12 persons, 'Direct Sea View') is 'your own Corfiot Mansion in the Ionian countryside, featuring 6 bedrooms, 2 Private swimming pools, shaded terraces... private gardens & private steps to the beach'.",
-    "source": "https://www.grecotel.com/corfuimperial/accommodation/",
-    "source_type": "official_venue",
-    "checked": "2026-11-11",
-    "is_price": false
-   },
-   {
-    "fact_id": "fact_09",
-    "claim": "CONFLICT: Grecotel's wedding page calls the 6-bedroom, 2-pool Kommeno mansion 'Villa Medusa' (image file named 'medusa-estate') and offers it for 'intimate sumptuous celebrations with curated menu and set up', but the Corfu Imperial accommodation page uses that same description for the '6 Bedroom Beachfront Villa' and lists a separate hilltop 'Medusa Estate' (411 m2, 12 persons). Either way the villa sits within Corfu Imperial's Kommeno grounds, has a sea view stated in words and is offered for celebrations. Inclusion rule: Villa Medusa PASSES, subject to the naming check. Event guest count not published (the villa sleeps 12).",
-    "source": "https://www.grecotel.com/wedding-hotels/ ; https://www.grecotel.com/corfuimperial/accommodation/",
-    "source_type": "official_venue",
-    "checked": "2026-11-11",
-    "is_price": false
-   },
-   {
-    "fact_id": "fact_10",
-    "claim": "Corfu Palace Hotel's own 'Wedding Reception Proposals 2023' document (Conference & Banqueting Department) sets out wedding receptions with buffet and plated menus, round tables for 8 to 10 guests, and an outdoor reception at the pool area. The document is dated 2023 and states the offer is valid for 30 days from issue, so all current terms need re-confirming. It names no ceremony venue on site.",
-    "source": "https://corfupalace.com/wp-content/uploads/2023/07/Wedding-Proposals-2023-ENG.pdf",
-    "source_type": "official_venue",
-    "checked": "2026-11-11",
-    "is_price": false
-   },
-   {
-    "fact_id": "fact_11",
-    "claim": "Corfu Palace Hotel's 2023 wedding document publishes house rules: outdoor (pool area) receptions start from 20:30 and outdoor music must stop at 23:30 'according to the Greek legislation', after which the party may move indoors to the main restaurant until 04:00 at the latest; in bad weather the hotel provides a reception hall for 200 people, with the location decided by 11:00 on the day; fireworks are prohibited; menu terms are quoted for a minimum of 100 people; the hotel can hold up to 5% more than the guaranteed number. Euro prices and deposits in the document are not recorded here.",
-    "source": "https://corfupalace.com/wp-content/uploads/2023/07/Wedding-Proposals-2023-ENG.pdf",
-    "source_type": "official_venue",
-    "checked": "2026-11-11",
-    "is_price": false
-   },
-   {
-    "fact_id": "fact_12",
-    "claim": "Cavalieri Hotel's own site describes 'A Historic Hotel' in Corfu Town: a 17th-century noble mansion that opened as a hotel in the late 1960s, 'Magnificent views of the Ionian Sea', 'overlooking the Ionian Sea, the Old Fortress, and the lush greenery of the Esplanade', with a Roof Top Restaurant offering 'breath-taking panoramic views over the rooftops of the old town and over the sparkling sea to mainland Greece'. The site search snippet states 50 rooms. Its own site does not mention weddings or events (site search for weddings returned only the home page). Inclusion rule: Cavalieri FAILS (sea view stated, weddings not stated). Excluded.",
-    "source": "https://cavalieri-hotel.com/",
-    "source_type": "official_venue",
-    "checked": "2026-11-11",
-    "is_price": false
-   },
-   {
-    "fact_id": "fact_13",
-    "claim": "SEA VIEW (venue's own words), Corfu Palace Hotel: the hotel's own magazine PDF (as shown in its site-search snippet) says locals count the hotel 'as one of Corfu's landmarks, due to its strategic location and its view to Garitsa Bay and the mainland'; a second hotel document mentions 'daily outdoor activities along the Garitsa bay'. The full magazine PDF could not be read (file too large), and the hotel home page timed out, so the wording comes from the official site's search snippets only. Inclusion rule: Corfu Palace PASSES provisionally (weddings stated in fact_10; sea view wording to be re-read on a live page).",
-    "source": "https://corfupalace.com/wp-content/uploads/2020/05/Periodiko-Corfu_Palace.pdf ; https://corfupalace.com/wp-content/uploads/feel_like_home.pdf",
-    "source_type": "official_venue",
-    "checked": "2026-11-11",
-    "is_price": false,
-    "conflicts": "Sea view wording read from search snippets of the hotel's own PDFs, not from a loaded page."
-   },
-   {
-    "fact_id": "fact_14",
-    "claim": "Kontokali Bay Resort & Spa's own home page states a beach setting with sea view rooms ('Sea View' and 'Sea Front' rooms and bungalows; 'bathe in the sapphire waters of the Ionian sea'; Parea by the Sea restaurant 'caressed by the shimmering waters of the Ionian sea'), but the home page and a site search for weddings show no wedding or events offer. Inclusion rule: Kontokali Bay FAILS on the weddings test (sea view stated, weddings not stated). Excluded.",
-    "source": "https://www.kontokalibay.com/",
-    "source_type": "official_venue",
-    "checked": "2026-11-11",
-    "is_price": false
-   },
-   {
-    "fact_id": "fact_15",
-    "claim": "Corfu Holiday Palace (Kanoni, Corfu, Nausikas str. 2) offers 'Weddings & Social Events': 'From weddings, parties, and receptions to banquets, social galas, and anniversaries, the five-star Corfu Holiday Palace will make it a memorable event'. SEA VIEW (venue's own words): 'An ethereal setting between a verdant landscape and the Ionian Sea'. Inclusion rule: PASSES.",
-    "source": "https://corfuholidaypalace.gr/conferences-events/",
-    "source_type": "official_venue",
-    "checked": "2026-11-11",
-    "is_price": false
-   },
-   {
-    "fact_id": "fact_16",
-    "claim": "Corfu Holiday Palace publishes indoor event capacities: Kerkyra Ballroom (400 m2) 300 banquet and 400 cocktail; Nausica Ballroom (400 m2) 350 banquet and 500 cocktail; three smaller rooms (Lefkas/Zante, Paxi/Ithaka, Krokidis) at 60 banquet and 80 cocktail each. The fresco in the Nafsika Hall is by artist Eirini Daniolou Neophytou. No outdoor wedding space, ceremony location or room count is published on this page.",
-    "source": "https://corfuholidaypalace.gr/conferences-events/",
-    "source_type": "official_venue",
-    "checked": "2026-11-11",
-    "is_price": false
-   },
-   {
-    "fact_id": "fact_17",
-    "claim": "Corfu Holiday Palace's own site (search snippets) calls it a '5* historic hotel... blessed with the best breathtaking views of the Ionian Sea', lists room types including 'New Executive Sea / Mouse Island View' and 'Superior Bungalow with Private Pool Sea View', and says 'an inclined funicular... will take you to the hotel's private sandy beachfront, where lies the Brachera beach bar'.",
-    "source": "https://corfuholidaypalace.gr/ ; https://corfuholidaypalace.gr/gallery/ ; https://corfuholidaypalace.gr/brachera-beach-bar/",
-    "source_type": "official_venue",
-    "checked": "2026-11-11",
-    "is_price": false,
-    "conflicts": "Read from the official site's search snippets, not loaded pages."
-   }
+  "open_questions": [
+    {
+      "to": "orchestrator",
+      "question": "Batch A yields 4 qualifying venues (one provisional); 3 candidates failed the weddings test. Top-up batch likely needed to reach 12.",
+      "blocking": false
+    },
+    {
+      "to": "orchestrator",
+      "question": "Corfu Palace Hotel home page timed out; its sea view wording rests on a search snippet.",
+      "blocking": false
+    },
+    {
+      "to": "orchestrator",
+      "question": "Batch B qualified 2 of 6 candidates: Angsana Corfu (south-east, Benitses area) and San Antonio Corfu Resort (Kalami, north-east). Domes Miramare has no Miramare-specific weddings offer (fact_106, fact_107); The Rou Estate's own site does not mention weddings or a sea view (fact_105); reserves MarBella Corfu (fact_111, says it does not organise weddings) and Atlantica Nissaki Beach (fact_112, no weddings page) both fail. Four replacements are needed from a top-up batch. Lead noticed, not researched (west coast, batch C territory): Atlantica Grand Mediterraneo Resort has an official weddings page at atlanticahotels.com/atlantica-grand-mediterraneo-resort/weddings/.",
+      "blocking": false
+    },
+    {
+      "to": "orchestrator",
+      "question": "Batch C found no qualifying west-coast venue (Akrotiri has no weddings page; La Grotta Verde absent from the Mayor Hotels site; Pelekas Monastery and Golden Fox have no confirmed official site; Domes of Corfu not checked). A top-up batch (cfu_d) is needed for the west coast, and the title count may need to change.",
+      "blocking": false
+    },
+    {
+      "to": "orchestrator",
+      "question": "visitgreece.gr east vs west coast and the Corfu Airport bus/taxi detail pages were not read before the 15-minute limit; run them in the top-up batch.",
+      "blocking": false
+    },
+    {
+      "to": "orchestrator",
+      "question": "Batch D qualifies 2 firmly: Atlantica Grand Mediterraneo Resort (Ermones, west coast) and The Courti Estate (south-east coast, Corfu Riviera). Grecotel Eva Palace (Kommeno) qualifies provisionally on official grecotel.com search snippets only (weddings and Ionian Sea views), not a full page read. Ekaterini Estate fails (landscape views only). Villa Sylva (Kanoni) is borderline: own site says 'beachfront' and 'on the beach' but not 'sea view'. Rodostamo not reached within the time limit.",
+      "blocking": false
+    },
+    {
+      "to": "orchestrator",
+      "question": "Batch E qualifies 0 venues. Failed: Domes of Corfu (no Corfu weddings page, only group-level Domes 'Romance' page), Pelekas Monastery (single fetch timed out), Mayor Capo di Corfu (official pages 404, no weddings page found), Ikos Odisia (Ikos weddings page is Ikos Aria on Kos only), Grecotel Daphnila Bay (weddings mentioned only for Danilia Village, and it is Kommeno not west/south), Danilia Village (Grecotel lists it for weddings but states no sea view), Pelecas Country Club (official site not reached). visitgreece.gr east vs west coast not read (time). Suggest the article drops a west/south section or reframes areas around qualifying venues.",
+      "blocking": false
+    },
+    {
+      "to": "orchestrator",
+      "question": "Batch F qualifies 1 venue: Rodostamo Hotel & Spa (Kommeno Bay), sea view stated as 'overlooking the Ionian Sea' on its official Meetings & Events page (fact_600 to fact_602). Pelekas Monastery fetch timed out again (fact_603). Pelecas Country Club official site shows a weddings heading in a search snippet only; page and sea-view wording not read (fact_604). Kommeno Bay or other Kommeno/Dassia hotels, Corfu Town historic venues and north-east or south estates were not checked: the 12-minute limit was reached after the Pelekas timeout.",
+      "blocking": false
+    }
   ],
-  "insider_details": [
-   {
-    "detail": "Kommeno gives two very different scales on one estate: Corfu Imperial's named wedding spaces cap at about 50 guests (Aristos and the islet 'Nissaki'), while a villa such as Villa Medusa or the Palazzo Imperiale on its own small peninsula suits a smaller, private celebration with the wider resort for guest rooms. Shortlist by guest count first.",
-    "fact_ids": [
-     "fact_02",
-     "fact_05",
-     "fact_07",
-     "fact_09"
-    ]
-   },
-   {
-    "detail": "For more than 100 guests in the Corfu Town area, the hotels with published ballroom capacity are the ones to start with: Corfu Holiday Palace lists banquet seating for 300 and 350 in its two ballrooms, and Corfu Palace's 2023 terms name a 200-guest hall as the bad-weather backup for its poolside reception.",
-    "fact_ids": [
-     "fact_11",
-     "fact_16"
-    ]
-   },
-   {
-    "detail": "Plan the evening around the music cut-off: Corfu Palace's own wedding terms say outdoor music stops at 23:30 and the party can move indoors until 04:00. Couples who want to dance late should ask every venue where the after-party goes, and get it in writing.",
-    "fact_ids": [
-     "fact_11"
-    ]
-   },
-   {
-    "detail": "Corfu Imperial and Corfu Holiday Palace both put the Old Town or Mouse Island in the view, not just open water, which is worth saying in the brief to the photographer: Corfu Imperial names 'the Old Town's Venetian silhouette' and some suites face 'Corfu Town & the Marina'.",
-    "fact_ids": [
-     "fact_03",
-     "fact_07",
-     "fact_17"
-    ]
-   }
+  "assumptions": [
+    "Ceremony options: only Corfu Imperial names settings (Yali, Aristos, Nissaki); none of the venues states legal ceremony types, so the writer should say ceremony type is 'Not published' except as named.",
+    "BOOKING CHECKLIST: Grecotel Corfu Imperial: Yali capacity, music curfew, minimum nights, rain plan, ceremony types on site, exclusive use of Nissaki, set-up times.",
+    "BOOKING CHECKLIST: Villa Medusa (Grecotel): which unit is the wedding villa, event guest count, music curfew, minimum nights, rain plan, ceremony on site, exclusive use terms.",
+    "BOOKING CHECKLIST: Corfu Palace Hotel: current wedding offer (2023 terms only published), ceremony location, outdoor capacity, room count, exclusive use, minimum nights.",
+    "BOOKING CHECKLIST: Corfu Holiday Palace: outdoor wedding and ceremony spaces, music curfew, minimum nights, rain plan, room count, exclusive use, set-up times.",
+    "Angsana Corfu facts restate Greece pack fact_305, fact_306 and Greece packages pack fact_105 after a live re-check on 2026-11-11; content unchanged. The address (11th km Kerkyra to Lefkimi road) is carried from fact_305 and was not re-read on the live location page in the time box.",
+    "San Antonio Corfu Resort's official site is sanantoniocorfuresort.gr (linked from the resort's own Facebook page and carrying the resort's own contact numbers); the canonical tag points to a mail. subdomain of the same domain.",
+    "San Antonio's room count was not on the pages read; a third-party listing gives one but was not used.",
+    "BOOKING CHECKLIST: Angsana Corfu: whether a legal civil ceremony can be held on site (brochure lists symbolic ceremony venues only), capacity of Starboard Terrace, Emerald Beach and Amalia Hall, room block, exclusive use, music curfew, minimum nights, rain plan (Amalia Hall), set-up times.",
+    "BOOKING CHECKLIST: San Antonio Corfu Resort: ceremony types (legal or symbolic), which terraces and whether Callao On The Coast are used for ceremonies and receptions, capacity, room count and block, exclusive use, music curfew, minimum nights, rain plan, set-up times.",
+    "No batch C venue qualified, so no BOOKING CHECKLIST lines are added from this batch.",
+    "HNMS figures are long-term averages (1955 to 2010) for the Kerkyra station near Corfu Town; the west coast may differ and the article should say the figures are for Corfu Town.",
+    "Legal facts fact_203 to fact_205 were re-read live on 2026-11-11 and match wedding-in-crete fact_119 to fact_121.",
+    "BOOKING CHECKLIST: Atlantica Grand Mediterraneo Resort: music curfew, rain plan, maximum reception capacity, room block terms, set-up times, minimum nights beyond the published working-day stay rule.",
+    "BOOKING CHECKLIST: The Courti Estate: guest capacity for ceremony and reception, music curfew, minimum nights, rain plan, ceremony locations on the estate, set-up times.",
+    "BOOKING CHECKLIST: Grecotel Eva Palace: ceremony locations, capacities, music curfew, minimum nights, rain plan, exclusive use, sharing of wedding spaces with sister Kommeno resorts.",
+    "BOOKING CHECKLIST: Rodostamo Hotel & Spa: ceremony locations, wedding guest capacity, music curfew, minimum nights or room block, exclusive use, rain plan and set-up times are not published; ask the hotel's wedding coordinators."
   ],
-  "quotes": [],
-  "real_weddings": [],
   "verify_items": [
-   "[[VERIFY: Batch A qualifies 4 venues: Grecotel Corfu Imperial (Kommeno), Villa Medusa (Grecotel, Kommeno), Corfu Palace Hotel (Corfu Town, provisional) and Corfu Holiday Palace (Kanoni, reserve). Ikos Dassia, Cavalieri Hotel and reserve Kontokali Bay Resort & Spa fail the weddings test on their own sites; batches B, C or D must fill the count]]",
-   "[[VERIFY: Villa Medusa naming: Grecotel's wedding page describes 'Villa Medusa' with the same text the Corfu Imperial accommodation page uses for the '6 Bedroom Beachfront Villa', while a separate hilltop 'Medusa Estate' is listed; confirm which unit is offered for weddings before writing its size or view]]",
-   "[[VERIFY: Corfu Palace Hotel sea view wording ('view to Garitsa Bay and the mainland') read only from a search snippet of the hotel's own PDF; re-read on a loaded official page before publishing, or drop the venue]]",
-   "[[VERIFY: Corfu Palace Hotel wedding terms come from a 2023 document valid 30 days from issue; confirm a current wedding offer exists before listing]]",
-   "[[VERIFY: Corfu Holiday Palace 'breathtaking views of the Ionian Sea', Mouse Island view rooms and funicular to the private beach read from search snippets of its own site; re-read live before quoting]]"
+    "[[VERIFY: Batch A qualifies 4 venues: Grecotel Corfu Imperial (Kommeno), Villa Medusa (Grecotel, Kommeno), Corfu Palace Hotel (Corfu Town, provisional) and Corfu Holiday Palace (Kanoni, reserve). Ikos Dassia, Cavalieri Hotel and reserve Kontokali Bay Resort & Spa fail the weddings test on their own sites; batches B, C or D must fill the count]]",
+    "[[VERIFY: Villa Medusa naming: Grecotel's wedding page describes 'Villa Medusa' with the same text the Corfu Imperial accommodation page uses for the '6 Bedroom Beachfront Villa', while a separate hilltop 'Medusa Estate' is listed; confirm which unit is offered for weddings before writing its size or view]]",
+    "[[VERIFY: Corfu Palace Hotel sea view wording ('view to Garitsa Bay and the mainland') read only from a search snippet of the hotel's own PDF; re-read on a loaded official page before publishing, or drop the venue]]",
+    "[[VERIFY: Corfu Palace Hotel wedding terms come from a 2023 document valid 30 days from issue; confirm a current wedding offer exists before listing]]",
+    "[[VERIFY: Corfu Holiday Palace 'breathtaking views of the Ionian Sea', Mouse Island view rooms and funicular to the private beach read from search snippets of its own site; re-read live before quoting]]",
+    "[[VERIFY: San Antonio Corfu Resort: confirm with the resort which ceremony types it hosts and on which terraces, as its Events page names 'the ample sun-kissed terraces of the hotel' but no ceremony venues or capacities]]",
+    "[[VERIFY: Corfu Airport: bus route numbers, journey time to Corfu Town and the operator's formal name (Fraport Greece) need reading from the cfu-airport.gr detail pages before the article states them]]",
+    "[[VERIFY: Pelekas Monastery: official website, whether it hosts weddings and its sea-view wording; not confirmed in batch C]]",
+    "[[VERIFY: visitgreece.gr on Corfu's east versus west coast: not read in batch C; no coast comparison may be stated from this batch]]",
+    "[[VERIFY: Atlantica Grand Mediterraneo: total guest room count and maximum reception capacity not stated on the weddings page; packages and brochure PDFs not read]]",
+    "[[VERIFY: The Courti Estate: maximum wedding guest capacity and any separate weddings page not read; only the home page was checked]]",
+    "[[VERIFY: Orchestrator: Villa Sylva says 'beachfront' and 'on the beach' but not 'sea view'; decide whether beachfront wording meets the inclusion rule before listing it]]",
+    "[[VERIFY: Grecotel Eva Palace: qualification rests on official grecotel.com search snippets read at the time limit; fetch the resort and wedding pages to confirm wording, ceremony options and capacity before the writer uses it]]",
+    "[[VERIFY: Batch E qualifies 0 west-coast or south Corfu venues. Domes of Corfu, Pelekas Monastery, Mayor Capo di Corfu, Ikos Odisia, Pelecas Country Club, Grecotel Daphnila Bay and Danilia Village all failed or could not be checked against the inclusion rule (fact_400 to fact_406); the west coast and south still have no qualifying venue]]",
+    "[[VERIFY: Pelecas Country Club, official site country-club.gr: confirm the weddings offer on its own pages and whether the site states a sea view in words before it can be included (fact_604)]]"
   ],
-  "needs_signoff": [
-   "No prices or fees recorded in batch A (excluded by instruction). Corfu Palace Hotel's 2023 wedding document lists euro per-person menu, drinks, deposit and cancellation amounts; none are in claims. Any price printed needs Nic's sign-off."
+  "tools_used": [
+    "mcp__Apify__apify--web-fetch",
+    "mcp__Apify__apify--web-search",
+    "Bash"
   ],
-  "must_include_coverage": [
-   {
-    "item": "12 venues grouped by area, each passing the inclusion rule (hosts weddings AND states a sea view)",
-    "covered_by": [
-     "fact_01",
-     "fact_03",
-     "fact_05",
-     "fact_08",
-     "fact_09",
-     "fact_10",
-     "fact_13",
-     "fact_15",
-     "fact_06",
-     "fact_12",
-     "fact_14",
-     "[[VERIFY: Batch A qualifies 4 venues: Grecotel Corfu Imperial (Kommeno), Villa Medusa (Grecotel, Kommeno), Corfu Palace Hotel (Corfu Town, provisional) and Corfu Holiday Palace (Kanoni, reserve). Ikos Dassia, Cavalieri Hotel and reserve Kontokali Bay Resort & Spa fail the weddings test on their own sites; batches B, C or D must fill the count]]"
+  "next_agent": [
+    "luxury-writer"
+  ],
+  "payload": {
+    "facts": [
+      {
+        "fact_id": "fact_01",
+        "claim": "Grecotel Corfu Imperial's own wedding page offers weddings and vow renewals with dedicated wedding specialists, customised menus and trusted vendors, and calls the hotel 'Greece's most impressively located hotel'. Enquiries go through a request for proposal form. Re-check of Greece venues pack fact_108 and Greece packages pack fact_110: unchanged.",
+        "source": "https://www.grecotel.com/corfuimperial/weddings-corfu/",
+        "source_type": "official_venue",
+        "checked": "2026-11-11",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_02",
+        "claim": "Corfu Imperial names three wedding settings: Yali Waterfront Restaurant, 'perched on a deck above the crystal-clear azure waters'; Aristos Restaurant for up to 50 guests; and the private island 'Nissaki' for up to 50 guests. No capacity is published for Yali. Re-check of Greece venues pack fact_109: unchanged.",
+        "source": "https://www.grecotel.com/corfuimperial/weddings-corfu/",
+        "source_type": "official_venue",
+        "checked": "2026-11-11",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_03",
+        "claim": "SEA VIEW (venue's own words): Corfu Imperial sits 'at the end of panoramic Peninsula Kommeno', 'surrounded by emerald waters, fragrant gardens, and cinematic sunsets', 'offering uninterrupted views of the sea and the Old Town's Venetian silhouette'. The home page describes 'a world of seaside olive trees, marble & palms, beach coves' and 'fine dining in seafront restaurants'. Inclusion rule: PASSES (hosts weddings plus sea view in words).",
+        "source": "https://www.grecotel.com/corfuimperial/",
+        "source_type": "official_venue",
+        "checked": "2026-11-11",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_04",
+        "claim": "Corfu Imperial's accommodation offer includes rooms with panoramic views, bungalows, and villas 'on the waterfront', among them the new 'Medusa Estate' and the Villa Peninsula, Palazzo Imperiale. The home page states the resort is 'set on its own private Peninsula'.",
+        "source": "https://www.grecotel.com/corfuimperial/",
+        "source_type": "official_venue",
+        "checked": "2026-11-11",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_05",
+        "claim": "Grecotel's group wedding page lists Corfu Imperial ('at Kommeno Peninsula, Corfu') as a wedding destination, 'perched above the olive groves at the end of panoramic Peninsula Kommeno... a room with a view or a palazzo over the water', and lists Villa Medusa at Kommeno Peninsula as a luxury private villa: 'Your striking private traditional Corfiot Mansion in the Ionian countryside, featuring 6 bedrooms, 2 private swimming pools, shaded terraces with lounge and dining areas, sprawling gardens & a designated path to the beach, it's a picture-perfect spot for intimate sumptuous celebrations with curated menu and set up.' Re-check of Greece venues pack fact_110: unchanged.",
+        "source": "https://www.grecotel.com/wedding-hotels/",
+        "source_type": "official_venue",
+        "checked": "2026-11-11",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_06",
+        "claim": "Ikos Resorts' only weddings page describes weddings at Ikos Aria on Kos ('Ikos Aria in Kos island has the unique setting'); it names no wedding offer for Ikos Dassia. The page describes Ikos Dassia only as a resort ('Terrace restaurants, refined rooms and suites and the golden sands of the bay all make the most of the glittering sea vistas'). Inclusion rule: Ikos Dassia FAILS (sea view stated, but its own site does not say it hosts weddings). Excluded.",
+        "source": "https://ikosresorts.com/events-weddings/",
+        "source_type": "official_venue",
+        "checked": "2026-11-11",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_07",
+        "claim": "Corfu Imperial's accommodation page lists sea view rooms throughout: Imperial Building guestrooms with 'Sea View', 'Panoramic Sea View' and 'Lofty Sea View', suites with 'Panoramic Sea, Corfu Town & the Marina View', and a Waterfront Collection of villas and palazzos with 'Direct Sea View', several with private pools, private sea decks or a private beach. The Palazzo Imperiale (245 m2, 8 persons) 'occupies a small private peninsula within the hotel ideal for total exclusivity'. No total room count is published on this page.",
+        "source": "https://www.grecotel.com/corfuimperial/accommodation/",
+        "source_type": "official_venue",
+        "checked": "2026-11-11",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_08",
+        "claim": "SEA VIEW (venue's own words) for the Grecotel Kommeno villas: the Medusa Estate (411 m2, 12 persons) is 'your very own Corfiot palace, located on the most privileged spot of Kommeno Peninsula, on the top of a hill... offering mesmerising panoramic sea and island views' ('Panoramic View of the Sea and Corfu Island'); the 6 Bedroom Beachfront Villa (458 m2, 12 persons, 'Direct Sea View') is 'your own Corfiot Mansion in the Ionian countryside, featuring 6 bedrooms, 2 Private swimming pools, shaded terraces... private gardens & private steps to the beach'.",
+        "source": "https://www.grecotel.com/corfuimperial/accommodation/",
+        "source_type": "official_venue",
+        "checked": "2026-11-11",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_09",
+        "claim": "CONFLICT: Grecotel's wedding page calls the 6-bedroom, 2-pool Kommeno mansion 'Villa Medusa' (image file named 'medusa-estate') and offers it for 'intimate sumptuous celebrations with curated menu and set up', but the Corfu Imperial accommodation page uses that same description for the '6 Bedroom Beachfront Villa' and lists a separate hilltop 'Medusa Estate' (411 m2, 12 persons). Either way the villa sits within Corfu Imperial's Kommeno grounds, has a sea view stated in words and is offered for celebrations. Inclusion rule: Villa Medusa PASSES, subject to the naming check. Event guest count not published (the villa sleeps 12).",
+        "source": "https://www.grecotel.com/wedding-hotels/ ; https://www.grecotel.com/corfuimperial/accommodation/",
+        "source_type": "official_venue",
+        "checked": "2026-11-11",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_10",
+        "claim": "Corfu Palace Hotel's own 'Wedding Reception Proposals 2023' document (Conference & Banqueting Department) sets out wedding receptions with buffet and plated menus, round tables for 8 to 10 guests, and an outdoor reception at the pool area. The document is dated 2023 and states the offer is valid for 30 days from issue, so all current terms need re-confirming. It names no ceremony venue on site.",
+        "source": "https://corfupalace.com/wp-content/uploads/2023/07/Wedding-Proposals-2023-ENG.pdf",
+        "source_type": "official_venue",
+        "checked": "2026-11-11",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_11",
+        "claim": "Corfu Palace Hotel's 2023 wedding document publishes house rules: outdoor (pool area) receptions start from 20:30 and outdoor music must stop at 23:30 'according to the Greek legislation', after which the party may move indoors to the main restaurant until 04:00 at the latest; in bad weather the hotel provides a reception hall for 200 people, with the location decided by 11:00 on the day; fireworks are prohibited; menu terms are quoted for a minimum of 100 people; the hotel can hold up to 5% more than the guaranteed number. Euro prices and deposits in the document are not recorded here.",
+        "source": "https://corfupalace.com/wp-content/uploads/2023/07/Wedding-Proposals-2023-ENG.pdf",
+        "source_type": "official_venue",
+        "checked": "2026-11-11",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_12",
+        "claim": "Cavalieri Hotel's own site describes 'A Historic Hotel' in Corfu Town: a 17th-century noble mansion that opened as a hotel in the late 1960s, 'Magnificent views of the Ionian Sea', 'overlooking the Ionian Sea, the Old Fortress, and the lush greenery of the Esplanade', with a Roof Top Restaurant offering 'breath-taking panoramic views over the rooftops of the old town and over the sparkling sea to mainland Greece'. The site search snippet states 50 rooms. Its own site does not mention weddings or events (site search for weddings returned only the home page). Inclusion rule: Cavalieri FAILS (sea view stated, weddings not stated). Excluded.",
+        "source": "https://cavalieri-hotel.com/",
+        "source_type": "official_venue",
+        "checked": "2026-11-11",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_13",
+        "claim": "SEA VIEW (venue's own words), Corfu Palace Hotel: the hotel's own magazine PDF (as shown in its site-search snippet) says locals count the hotel 'as one of Corfu's landmarks, due to its strategic location and its view to Garitsa Bay and the mainland'; a second hotel document mentions 'daily outdoor activities along the Garitsa bay'. The full magazine PDF could not be read (file too large), and the hotel home page timed out, so the wording comes from the official site's search snippets only. Inclusion rule: Corfu Palace PASSES provisionally (weddings stated in fact_10; sea view wording to be re-read on a live page).",
+        "source": "https://corfupalace.com/wp-content/uploads/2020/05/Periodiko-Corfu_Palace.pdf ; https://corfupalace.com/wp-content/uploads/feel_like_home.pdf",
+        "source_type": "official_venue",
+        "checked": "2026-11-11",
+        "is_price": false,
+        "conflicts": "Sea view wording read from search snippets of the hotel's own PDFs, not from a loaded page."
+      },
+      {
+        "fact_id": "fact_14",
+        "claim": "Kontokali Bay Resort & Spa's own home page states a beach setting with sea view rooms ('Sea View' and 'Sea Front' rooms and bungalows; 'bathe in the sapphire waters of the Ionian sea'; Parea by the Sea restaurant 'caressed by the shimmering waters of the Ionian sea'), but the home page and a site search for weddings show no wedding or events offer. Inclusion rule: Kontokali Bay FAILS on the weddings test (sea view stated, weddings not stated). Excluded.",
+        "source": "https://www.kontokalibay.com/",
+        "source_type": "official_venue",
+        "checked": "2026-11-11",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_15",
+        "claim": "Corfu Holiday Palace (Kanoni, Corfu, Nausikas str. 2) offers 'Weddings & Social Events': 'From weddings, parties, and receptions to banquets, social galas, and anniversaries, the five-star Corfu Holiday Palace will make it a memorable event'. SEA VIEW (venue's own words): 'An ethereal setting between a verdant landscape and the Ionian Sea'. Inclusion rule: PASSES.",
+        "source": "https://corfuholidaypalace.gr/conferences-events/",
+        "source_type": "official_venue",
+        "checked": "2026-11-11",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_16",
+        "claim": "Corfu Holiday Palace publishes indoor event capacities: Kerkyra Ballroom (400 m2) 300 banquet and 400 cocktail; Nausica Ballroom (400 m2) 350 banquet and 500 cocktail; three smaller rooms (Lefkas/Zante, Paxi/Ithaka, Krokidis) at 60 banquet and 80 cocktail each. The fresco in the Nafsika Hall is by artist Eirini Daniolou Neophytou. No outdoor wedding space, ceremony location or room count is published on this page.",
+        "source": "https://corfuholidaypalace.gr/conferences-events/",
+        "source_type": "official_venue",
+        "checked": "2026-11-11",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_17",
+        "claim": "Corfu Holiday Palace's own site (search snippets) calls it a '5* historic hotel... blessed with the best breathtaking views of the Ionian Sea', lists room types including 'New Executive Sea / Mouse Island View' and 'Superior Bungalow with Private Pool Sea View', and says 'an inclined funicular... will take you to the hotel's private sandy beachfront, where lies the Brachera beach bar'.",
+        "source": "https://corfuholidaypalace.gr/ ; https://corfuholidaypalace.gr/gallery/ ; https://corfuholidaypalace.gr/brachera-beach-bar/",
+        "source_type": "official_venue",
+        "checked": "2026-11-11",
+        "is_price": false,
+        "conflicts": "Read from the official site's search snippets, not loaded pages."
+      },
+      {
+        "fact_id": "fact_100",
+        "claim": "Angsana Corfu Resort & Spa has a Weddings & Honeymoons page presenting the resort as a setting for vows, anniversaries, proposals and honeymoons, with a downloadable wedding brochure, a real weddings page, a venue finder and a request-a-proposal contact. Re-check of Greece venues pack fact_305 and Greece packages pack fact_104.",
+        "source": "https://www.angsana.com/greece/corfu/weddings-honeymoons",
+        "source_type": "official_venue",
+        "checked": "2026-11-11",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_101",
+        "claim": "Sea-view wording, Angsana Corfu Weddings & Honeymoons page: 'A wedding in Corfu begins beneath the Ionian sun, with sea breezes moving through the hills, and blue horizons stretching beyond the ceremony' and 'Experience your ceremony in the ultimate luxurious Mediterranean setting with endless sea views.' The page meta description also says 'panoramic sea views'.",
+        "source": "https://www.angsana.com/greece/corfu/weddings-honeymoons",
+        "source_type": "official_venue",
+        "checked": "2026-11-11",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_102",
+        "claim": "Angsana Corfu's Wedding Venues page lists 196 hotel accommodations, 345 sqm (3,713 sq ft) total event space and 'Meet and feed' 200, and names Oribu Garden, Vertigo Sky Bar, Starboard Terrace, Emerald Beach, Amalia Hall, Foyer Amalia, Oribu Restaurant, Sofrito Restaurant and Ruen Romsai Restaurant. Per-venue capacities are not shown on this page. Re-check of Greece venues pack fact_306; unchanged.",
+        "source": "https://www.angsana.com/greece/corfu/wedding-venues",
+        "source_type": "official_venue",
+        "checked": "2026-11-11",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_103",
+        "claim": "Angsana Corfu's 2026 wedding brochure lists ceremony venues under the heading 'Symbolic Wedding Ceremony Venues': Vertigo Sky Bar (outdoor, max capacity 250, available from mid-May until the end of September, weather permitted) and Oribu Garden (outdoor, max capacity 30, April until October, weather permitted). Reception venues: Vertigo Sky Bar (outdoor, max 250, end of May until end of September), Oribu Restaurant (outdoor/indoor, max 150, April, May, September and October) and Oribu Garden (outdoor, max 30, April until October). The brochure does not mention legal civil or Orthodox ceremonies. Re-check of Greece packages pack fact_105; unchanged. Offer and spend details deliberately omitted.",
+        "source": "https://www.angsana.com/assets/2026-01/Wedding%20Brochure%202026%20-%20Angsana%20Corfu.pdf",
+        "source_type": "official_venue",
+        "checked": "2026-11-11",
+        "is_price": false,
+        "conflicts": "Brochure gives Vertigo Sky Bar availability as 'mid-May' for ceremonies but 'the end of May' for receptions."
+      },
+      {
+        "fact_id": "fact_104",
+        "claim": "Angsana Corfu's 2026 wedding brochure opens: 'Celebrate the start of your wonderful journey in a place with breathtaking views, stunning venues and one-of-a-kind facilities.' The resort's address as previously recorded is the 11th km of the Kerkyra to Lefkimi road (south of Corfu Town, Benitses area).",
+        "source": "https://www.angsana.com/assets/2026-01/Wedding%20Brochure%202026%20-%20Angsana%20Corfu.pdf; address from content/posts/greece-wedding-venues/03-source-pack.json fact_305",
+        "source_type": "official_venue",
+        "checked": "2026-11-11",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_105",
+        "claim": "The Rou Estate's official homepage describes a restored 200-year-old hamlet in the north-east of Corfu with 14 private houses, each with a private plunge pool, plus a restaurant, health retreat complex and pool, and 'the most spectacular 270 degree views overlooking Albania'. The page lists corporate events, cooking courses, health retreats, painting courses and walking trips as activities it can host; it does not mention weddings, and its navigation (Houses, Philosophy, Lifestyle, Press, Contact) has no weddings page. Its view wording does not mention the sea. Inclusion rule fails on the venue's own site.",
+        "source": "https://rouestate.com/",
+        "source_type": "official_venue",
+        "checked": "2026-11-11",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_106",
+        "claim": "Domes Miramare, a Luxury Collection Resort, Corfu is described on its official site (structured data) as an adults-only (16+) beachfront resort in Moraitika, set in a two-century-old olive grove with 650 metres of seafront, 182 rooms, suites and villas, 3 restaurants including a MICHELIN-starred venue (Makris) and 4 bars. Its site navigation (offers, gallery, suites, dining, spa, experiences, arts and culture, happenings, highlights, FAQ, contact, get a quote) has no weddings page, and a site search returned only a Miramare honeymoon offer and group-level wedding pages for other Domes properties (Domes Cascade, Domes Lake Algarve).",
+        "source": "https://domesresorts.com/domesmiramare/",
+        "source_type": "official_venue",
+        "checked": "2026-11-11",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_107",
+        "claim": "The only Domes Resorts page found that names Domes Miramare in a wedding context is a group-level 'Domes Stories' article (published 28 September 2022, updated 8 October 2024) saying Domes Resorts host weddings across seven Greek properties, including Domes Miramare, with 'the sun setting over the Aegean or the Ionian Sea'. It is not a Miramare-specific weddings offer and gives no Miramare venues, ceremony types or capacities. Domes Miramare does not meet the inclusion rule (no Miramare-specific weddings offer on its own site).",
+        "source": "https://domesresorts.com/domesstories/your-perfect-wedding-with-style/",
+        "source_type": "official_venue",
+        "checked": "2026-11-11",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_108",
+        "claim": "San Antonio Corfu Resort (adults-only, Kalami, north-east Corfu) has an official Events page, 'Celebrations at San Antonio Corfu Resort': 'Say \"I do\" with the Ionian breeze in your hair ... or renew your vows in the presence of family & friends, against a sensational backdrop of Greek blue, rugged rocks, and sea foam.' It names 'the ample sun-kissed terraces of the hotel' and lists bachelor or bachelorette parties, weddings and receptions, calling the resort 'the ideal seaside destination'. No ceremony types, venues by name, capacities or packages are published.",
+        "source": "https://sanantoniocorfuresort.gr/events/",
+        "source_type": "official_venue",
+        "checked": "2026-11-11",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_109",
+        "claim": "Sea-view wording, San Antonio Corfu Resort homepage: under 'Spellbinding sea-views', 'San Antonio impresses with its spectacular views over the Ionian Sea and the small fishing village that was chosen by the Durrell Family as their place of residence when Gerald Durrell wrote his masterpieces.' The homepage also describes 'the most privileged seafront location in North-East Corfu', set amid ancient olive groves on Kalami Bay, and groups its accommodation as Sea View Rooms, Sea View Suites and a Hideaway Villa.",
+        "source": "https://sanantoniocorfuresort.gr/",
+        "source_type": "official_venue",
+        "checked": "2026-11-11",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_110",
+        "claim": "San Antonio Corfu Resort's homepage names Callao On The Coast as 'the resort's signature venue', a beach venue with premium beach facilities and al fresco dining, alongside Dyo Elies and a bar, Bliss. The homepage does not publish a room count.",
+        "source": "https://sanantoniocorfuresort.gr/",
+        "source_type": "official_venue",
+        "checked": "2026-11-11",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_111",
+        "claim": "MarBella Corfu's official FAQ page answers 'Does MarBella host weddings or wedding receptions?' with 'MarBella doesn't organize weddings or wedding receptions.' Reserve fails the inclusion rule.",
+        "source": "https://www.marbella.gr/hotels/marbella-corfu/faq-marbella/",
+        "source_type": "official_venue",
+        "checked": "2026-11-11",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_112",
+        "claim": "Atlantica Nissaki Beach (Gimari, north-east Corfu; the reserve listed as Nissaki Beach Hotel) describes itself as an adults-only 'serene escape by the sea' where guests 'wake to sea views', but its official page navigation (Overview, Gallery, Sleep, Eat & Drink, Hotel Deals, Leisure, Location) has no weddings page, /atlantica-nissaki-beach/weddings/ returns 404, and a site search of atlanticahotels.com found a weddings page only for Atlantica Grand Mediterraneo Resort. Reserve fails the inclusion rule (no weddings offer on its own pages).",
+        "source": "https://www.atlanticahotels.com/atlantica-nissaki-beach/",
+        "source_type": "official_venue",
+        "checked": "2026-11-11",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_200",
+        "claim": "As at November 2026, Smartraveller's overall advice level for Greece is 'Exercise normal safety precautions' (still current at 11 November 2026, updated 30 September 2026); its latest update warns to take care swimming because of boat traffic, coastal hazards, strong currents and marine life, and to swim at patrolled beaches where possible.",
+        "source": "https://www.smartraveller.gov.au/destinations/europe/greece",
+        "source_type": "government",
+        "checked": "2026-11-11",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_201",
+        "claim": "As at November 2026, Smartraveller says heatwaves are frequent in Greece over the summer months and can cause heat exhaustion, heat stroke and death; it advises drinking water, wearing a hat and light clothing and staying in air-conditioned buildings or shaded areas, and notes many major tourist sites have little shade.",
+        "source": "https://www.smartraveller.gov.au/destinations/europe/greece",
+        "source_type": "government",
+        "checked": "2026-11-11",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_202",
+        "claim": "As at November 2026, Smartraveller says wildfires occur in Greece during the extended summer period, from June to September, including near cities and tourist locations, prompting evacuations; fires can start with little warning and travel quickly, so avoid affected areas and follow local authorities' advice.",
+        "source": "https://www.smartraveller.gov.au/destinations/europe/greece",
+        "source_type": "government",
+        "checked": "2026-11-11",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_203",
+        "claim": "As at November 2026, Smartraveller's 'Getting married overseas' page (last updated 18/08/2026, re-checked 11 November 2026, unchanged from wedding-in-crete fact_119) says some countries ask you to prove you are free to marry, most commonly with a Certificate of No Impediment to Marriage (CNI) and registry certificates; DFAT can issue a CNI in Australia but some local authorities only accept ones issued in their country, so ask the destination's embassy or consulate whether you need one, where to get it, and whether it needs an authentication or apostille. The Wedded Advisor confirms current requirements.",
+        "source": "https://www.smartraveller.gov.au/planning-trip/advice-your-planned-activities/getting-married-overseas",
+        "source_type": "government",
+        "checked": "2026-11-11",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_204",
+        "claim": "As at November 2026, Smartraveller says (re-checked 11 November 2026, unchanged from wedding-in-crete fact_120) an overseas marriage cannot be registered in Australia but in most cases is legally recognised if valid where it took place and valid under Australian law had it occurred here; a foreign marriage certificate is usually accepted as proof of marriage but may not work as proof of a name change. The Wedded Advisor confirms current requirements.",
+        "source": "https://www.smartraveller.gov.au/planning-trip/advice-your-planned-activities/getting-married-overseas",
+        "source_type": "government",
+        "checked": "2026-11-11",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_205",
+        "claim": "As at November 2026, the Australian Embassy in Athens (re-checked 11 November 2026, unchanged from wedding-in-crete fact_121) lists among its notarial services witnessing application forms for, and issuing, Certificates of No Impediment (CNI), witnessing notices of intended marriage, and legalisation by authentication or apostille. All notarial services need an appointment (Monday to Friday, 9:00am to 12:30pm), though apostille and CNI documents can be submitted by post; legalised documents and CNIs are ready for collection within two working days unless same-day collection is arranged; the Embassy gives no legal advice, honorary consuls cannot provide notarial services, and fees apply. The Wedded Advisor confirms current requirements.",
+        "source": "https://greece.embassy.gov.au/athn/notarial.html",
+        "source_type": "government",
+        "checked": "2026-11-11",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_206",
+        "claim": "Akrotiri Beach Resort & Spa, Paleokastritsa, describes itself as a five-star adult-friendly resort and says guests can 'admire the breathtaking views from every corner of the resort', with Superior East Side rooms having 'an open sea view' and West Side rooms looking to 'the picturesque sunsets of Alipa harbor'. Its homepage and Experiences & Activities page do not mention weddings, and /weddings/ returns a 404 (checked 2026-11-11), so it fails the inclusion rule.",
+        "source": "https://www.akrotiri-beach.com/",
+        "source_type": "official_venue",
+        "checked": "2026-11-11",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_207",
+        "claim": "Hellenic National Meteorological Service climatic data for the Kerkyra (Corfu) station, data period 1955 to 2010: average maximum monthly temperature is 24.0°C in May, 28.2°C in June, 31.2°C in July, 31.5°C in August, 27.5°C in September and 23.2°C in October; average minimum is 13.3°C in May, 18.9°C in July, 19.3°C in August and 13.7°C in October.",
+        "source": "http://newportal.hnms.gr/emy/en/climatology/climatology_city?perifereia=Ionian%20Islands&poli=Kerkyra",
+        "source_type": "government",
+        "checked": "2026-11-11",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_208",
+        "claim": "Hellenic National Meteorological Service climatic data for Kerkyra (1955 to 2010): average monthly precipitation days are 7.7 in May, 4.8 in June, 3.3 in July, 3.3 in August, 7.4 in September and 11.4 in October (14.7 in November); average monthly rainfall is 36.5 mm in May, 15.5 mm in June, 8.7 mm in July, 21.7 mm in August, 87.8 mm in September and 140.4 mm in October.",
+        "source": "http://newportal.hnms.gr/emy/en/climatology/climatology_city?perifereia=Ionian%20Islands&poli=Kerkyra",
+        "source_type": "government",
+        "checked": "2026-11-11",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_209",
+        "claim": "Hellenic National Meteorological Service climatic data for Kerkyra (1955 to 2010): the prevailing wind is westerly in June, July and August and southerly in May, September and October; mean monthly relative humidity is about 62 percent in July and August, rising to 70.3 percent in September and 74.9 percent in October.",
+        "source": "http://newportal.hnms.gr/emy/en/climatology/climatology_city?perifereia=Ionian%20Islands&poli=Kerkyra",
+        "source_type": "government",
+        "checked": "2026-11-11",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_210",
+        "claim": "Corfu Airport (CFU) has an official website at cfu-airport.gr, which describes itself as 'The official website of Corfu Airport (CFU)' and links to 'The official Fraport Greece Magazine'; its To & From the Airport section lists getting there by GPS, by public bus ('Direct Bus Service To and From the airport') and by taxi. The site's detail pages on bus routes, journey times and the operator's formal name were not read in this batch.",
+        "source": "https://www.cfu-airport.gr/en",
+        "source_type": "other",
+        "checked": "2026-11-11",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_300",
+        "claim": "Atlantica Grand Mediterraneo Resort has its own weddings page offering weddings, renewal of vows or a symbolic ceremony; its enquiry form lists legal, symbolic, renewal of vows and same sex ceremony types.",
+        "source": "https://www.atlanticahotels.com/atlantica-grand-mediterraneo-resort/weddings/",
+        "source_type": "official_venue",
+        "checked": "2026-11-11",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_301",
+        "claim": "Atlantica Grand Mediterraneo Resort is at Ermones on the west coast of Corfu; its own page describes it as 'Overlooking Ermones Beach in western Corfu', set on 110 acres of cypress and pine woods, about 25 minutes from Corfu airport and town.",
+        "source": "https://www.atlanticahotels.com/atlantica-grand-mediterraneo-resort/weddings/",
+        "source_type": "official_venue",
+        "checked": "2026-11-11",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_302",
+        "claim": "Sea-view wording (Atlantica Grand Mediterraneo): the property has 'breathtaking cliffside views of the turquoise Ionian Sea'; the Secret Garden ceremony spot offers 'Sea and mountain views', and the Vertigo and Culinarium venues are described as 'both taking full advantage of the sea views'.",
+        "source": "https://www.atlanticahotels.com/atlantica-grand-mediterraneo-resort/weddings/",
+        "source_type": "official_venue",
+        "checked": "2026-11-11",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_303",
+        "claim": "Atlantica Grand Mediterraneo ceremony capacities as published: the Secret Garden hosts the couple and up to 8 guests; Vertigo and Culinarium each host up to 30 guests. Private evening reception venues are offered, with decorations and entertainment arranged through the wedding planner.",
+        "source": "https://www.atlanticahotels.com/atlantica-grand-mediterraneo-resort/weddings/",
+        "source_type": "official_venue",
+        "checked": "2026-11-11",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_304",
+        "claim": "Atlantica Grand Mediterraneo standout: the resort promises to host only one wedding on the day the couple chooses ('total exclusivity of our wedding services'), all wedding packages include a personal wedding planner, and it describes an adult friendly atmosphere. Rooms include doubles and deluxe rooms, some with private pools; total room count not stated on the weddings page.",
+        "source": "https://www.atlanticahotels.com/atlantica-grand-mediterraneo-resort/weddings/",
+        "source_type": "official_venue",
+        "checked": "2026-11-11",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_305",
+        "claim": "Atlantica Grand Mediterraneo stay requirement as published: for a wedding, the couple must be at the resort at least 3 working days before the date (excluding arrival day, bank holidays and weekends) and 2 working days after; for a symbolic or renewal of vows ceremony, at least 2 working days.",
+        "source": "https://www.atlanticahotels.com/atlantica-grand-mediterraneo-resort/weddings/",
+        "source_type": "official_venue",
+        "checked": "2026-11-11",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_306",
+        "claim": "The Courti Estate is a private luxury villa 'on the exclusive Corfu Riviera on the South-East coast', set in its own gated estate of 10 acres of ancient olive groves, and is 'available for private hire for holidays, weddings and corporate events'.",
+        "source": "https://www.thecourtiestate.com/",
+        "source_type": "official_venue",
+        "checked": "2026-11-11",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_307",
+        "claim": "Sea-view wording (The Courti Estate): from its hilltop position, Courti 'enjoys 360-degree views over the sparkling waters of the Ionian Sea to one side', looking inland to the mountain on the other.",
+        "source": "https://www.thecourtiestate.com/",
+        "source_type": "official_venue",
+        "checked": "2026-11-11",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_308",
+        "claim": "The Courti Estate standout and rooms: the restored building dates back to the early 1700s; the site title describes it as a 'Luxury Corfu Villa with 9 Bedrooms', with an infinity pool and sprawling grounds. Exclusive use is implied by private hire of the gated estate; guest capacity for events is not stated on the pages read.",
+        "source": "https://www.thecourtiestate.com/",
+        "source_type": "official_venue",
+        "checked": "2026-11-11",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_309",
+        "claim": "Ekaterini Estate's weddings page says it would be delighted to host weddings, with terraces and lawns for receptions, a 3 night minimum stay for weddings and a house that accommodates 16 guests; its setting is described as 'at the top of its hill with surrounding views of the beautiful Corfu landscape'. Neither the weddings page nor the home page states a sea view in words, so it fails the inclusion rule.",
+        "source": "https://ekateriniestatecorfu.com/weddings",
+        "source_type": "official_venue",
+        "checked": "2026-11-11",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_310",
+        "claim": "Ekaterini Estate home page describes 'A dramatically beautiful hilltop estate in Corfu, Greece' with no sea-view wording (only guest testimonials mentioning views and sunsets).",
+        "source": "https://ekateriniestatecorfu.com/",
+        "source_type": "official_venue",
+        "checked": "2026-11-11",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_311",
+        "claim": "Villa Sylva describes itself on its own site as 'a unique private luxury beachfront vacation rental villa and wedding venue in Corfu, Greece', and a post on its site places it 'on the beach in the area of Kanoni'. Its pages read do not state 'sea view' in words (beachfront only), so it is held as not qualifying under the strict wording test pending orchestrator decision.",
+        "source": "https://www.villasylva.com/event-venue ; https://www.villasylva.com/post/lightness-and-elegance-in-corfu",
+        "source_type": "official_venue",
+        "checked": "2026-11-11",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_312",
+        "claim": "Grecotel Eva Palace is listed on Grecotel's own Wedding Hotels page as 'Eva Palace, Kommeno Peninsula', and its resort page says it 'provides the perfect backdrop for your wedding, honeymoon' (official-site search snippets; pages not fully fetched).",
+        "source": "https://www.grecotel.com/wedding-hotels/ ; https://www.grecotel.com/eva-palace/corfu-resort/",
+        "source_type": "official_venue",
+        "checked": "2026-11-11",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_313",
+        "claim": "Sea-view wording (Grecotel Eva Palace, search snippets of its own pages): 'showcasing breathtaking views of the Ionian sea' and 'Wake up to panoramic sea views and garden landscapes'.",
+        "source": "https://www.grecotel.com/eva-palace/corfu-resort/ ; https://www.grecotel.com/eva-palace/",
+        "source_type": "official_venue",
+        "checked": "2026-11-11",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_314",
+        "claim": "Grecotel Eva Palace rooms and standout (search snippets of its own pages): 225 rooms, bungalows and villas plus the secluded Palazzina; complimentary sea transfers between the Kommeno resorts from mid-May to mid-October, weather permitting.",
+        "source": "https://www.grecotel.com/eva-palace/ ; https://www.grecotel.com/eva-palace/frequently-asked-questions/",
+        "source_type": "official_venue",
+        "checked": "2026-11-11",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_400",
+        "claim": "Ikos Resorts' only weddings page (ikosresorts.com/events-weddings/) offers weddings at Ikos Aria on Kos only; it does not offer weddings at Ikos Odisia (Corfu). The same page describes Ikos Odisia as set within 60 acres just across from Ikos Dassia, with restaurants, suites and sands that 'make the most of the glittering sea vistas'. Ikos Odisia does not meet the inclusion rule (no official Corfu weddings offer).",
+        "source": "https://ikosresorts.com/events-weddings/",
+        "source_type": "official_venue",
+        "checked": "2026-11-11",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_401",
+        "claim": "Domes of Corfu (Glyfada): a search for a weddings page returned only a group-level Domes Resorts 'Romance' page (domesresorts.com) and third-party travel and review sites; no Domes of Corfu weddings page was found. Not qualified.",
+        "source": "https://domesresorts.com/domesstories/category/experiences/romance-en/",
+        "source_type": "official_venue",
+        "checked": "2026-11-11",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_402",
+        "claim": "Pelekas Monastery: the single permitted fetch of pelekasmonastery.com timed out; no official weddings or sea-view wording read. Not qualified in this batch.",
+        "source": "https://www.pelekasmonastery.com/",
+        "source_type": "official_venue",
+        "checked": "2026-11-11",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_403",
+        "claim": "Mayor Capo di Corfu: mayorhotels.com/capo-di-corfu/weddings and mayorhotels.com/capo-di-corfu both returned HTTP 404 (empty page) on 11 November 2026, and a web search found no official weddings page for the hotel (only social media and planner results). Not qualified.",
+        "source": "https://www.mayorhotels.com/capo-di-corfu",
+        "source_type": "official_venue",
+        "checked": "2026-11-11",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_404",
+        "claim": "Grecotel Daphnila Bay (Kommeno area, about 12 km from Corfu Town and 14 km from Corfu airport per its own FAQ): its FAQ page mentions weddings only under the Danilia Village section ('We can arrange private functions, including weddings, baptisms, or other events'), not for the Daphnila Bay hotel itself; no Daphnila Bay weddings page was found. Daphnila Bay is also not west coast or south. Not qualified.",
+        "source": "https://www.grecotel.com/luxme-daphnilabay/frequently-asked-questions/",
+        "source_type": "official_venue",
+        "checked": "2026-11-11",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_405",
+        "claim": "Grecotel's group weddings page lists Danilia (a private traditional village in Corfu) as a wedding destination, described as 'Nestled in the verdant nature, with preserved architecture'; no sea view is stated in words. Danilia fails the sea-view half of the inclusion rule.",
+        "source": "https://www.grecotel.com/wedding-hotels/",
+        "source_type": "official_venue",
+        "checked": "2026-11-11",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_406",
+        "claim": "Pelecas Country Club (Pelekas, inland west-central Corfu): a search for its weddings offer returned only booking, travel, social media and wedding-blog results; the official site was not reached in the time limit, so no official weddings or sea-view wording was read. Not qualified.",
+        "source": "web search 2026-11-11: 'Pelecas Country Club Corfu weddings' (no official result)",
+        "source_type": "other",
+        "checked": "2026-11-11",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_500",
+        "claim": "Grecotel Eva Palace's own resort page, under 'Celebrations', says: 'Set against the stunning Kommeno Bay, Eva Palace provides the perfect backdrop for your wedding, honeymoon, and love story to unfold. Whether you envision an intimate beach ceremony or a grand celebration, we bring your dream day to life.'",
+        "source": "https://www.grecotel.com/eva-palace/corfu-resort/",
+        "source_type": "official_venue",
+        "checked": "2026-11-11",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_501",
+        "claim": "SEA VIEW (venue's own words), Grecotel Eva Palace: 'private balconies and terraces showcasing breathtaking views of the Ionian sea'; the resort 'sits on a private peninsula along Corfu's emerald coast, surrounded by the Ionian Sea'.",
+        "source": "https://www.grecotel.com/eva-palace/corfu-resort/",
+        "source_type": "official_venue",
+        "checked": "2026-11-11",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_502",
+        "claim": "Grecotel Eva Palace has 225 rooms, bungalows and villas with sea or garden views, a secluded bay with a sandy and pebble beach, and a 1,700 m2 seawater pool; the Palazzina villa has a private pool and views of the Ionian Sea.",
+        "source": "https://www.grecotel.com/eva-palace/corfu-resort/",
+        "source_type": "official_venue",
+        "checked": "2026-11-11",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_503",
+        "claim": "Grecotel's own Wedding Hotels page lists Corfu Imperial and Villa Medusa (both 'at Kommeno Peninsula, Corfu') and Danilia among its wedding destinations; Villa Medusa is described as a private traditional Corfiot mansion with 6 bedrooms, 2 private swimming pools and a path to the beach, 'a picture-perfect spot for intimate sumptuous celebrations'.",
+        "source": "https://www.grecotel.com/wedding-hotels/",
+        "source_type": "official_venue",
+        "checked": "2026-11-11",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_600",
+        "claim": "Rodostamo Hotel & Spa (Kommeno Bay, Corfu) hosts weddings: its official Meetings & Events page has a 'Weddings & Social Events' section offering wedding specials and added values for the couple, with in-house wedding coordinators who help organise the wedding reception. Sea-view wording, verbatim: 'in a majestic scenery, overlooking the Ionian Sea and as background the beautiful Church of Ipapanti, by the Kommeno Bay.' Meets the inclusion rule.",
+        "source": "https://rodostamo.gr/meetings-and-events/",
+        "source_type": "official_venue",
+        "checked": "2026-11-11",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_601",
+        "claim": "Rodostamo Hotel & Spa: the official page states the hotel is 11 km from Corfu Airport and 10 km from Corfu Town, and has a 150 sqm multipurpose area (conference room max capacity 152 seats) on the ground floor of the main building. No wedding guest capacity, ceremony locations or exclusive-use terms are published on the page.",
+        "source": "https://rodostamo.gr/meetings-and-events/",
+        "source_type": "official_venue",
+        "checked": "2026-11-11",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_602",
+        "claim": "Rodostamo Hotel & Spa standout detail: the official weddings section names the Church of Ipapanti (Ypapanti chapel) on Kommeno Bay as the backdrop, and lists coordinator support covering hairdressing, spa treatments, florist, photographer, wedding car, bus transfer, decoration and hen and stag night planning.",
+        "source": "https://rodostamo.gr/meetings-and-events/",
+        "source_type": "official_venue",
+        "checked": "2026-11-11",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_603",
+        "claim": "Pelekas Monastery: the single permitted fetch of pelekasmonastery.com (rendered, wait 15000 ms) timed out after 60 seconds on 11 November 2026; no official weddings or sea-view wording read. Not qualified in batch F (second failed attempt across batches E and F).",
+        "source": "https://www.pelekasmonastery.com/",
+        "source_type": "official_venue",
+        "checked": "2026-11-11",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_604",
+        "claim": "Pelecas Country Club (Pelekas, west Corfu): a search result snippet for the official site's gallery page (country-club.gr/photos/) shows a 'Pelecas Country Club Weddings' heading, but the page itself was not read and no sea-view wording on the official site was read before the batch time limit. Not qualified in batch F; inclusion rule unconfirmed on both counts.",
+        "source": "https://www.country-club.gr/photos/",
+        "source_type": "official_venue",
+        "checked": "2026-11-11",
+        "is_price": false
+      }
+    ],
+    "insider_details": [
+      {
+        "detail": "Kommeno gives two very different scales on one estate: Corfu Imperial's named wedding spaces cap at about 50 guests (Aristos and the islet 'Nissaki'), while a villa such as Villa Medusa or the Palazzo Imperiale on its own small peninsula suits a smaller, private celebration with the wider resort for guest rooms. Shortlist by guest count first.",
+        "fact_ids": [
+          "fact_02",
+          "fact_05",
+          "fact_07",
+          "fact_09"
+        ]
+      },
+      {
+        "detail": "For more than 100 guests in the Corfu Town area, the hotels with published ballroom capacity are the ones to start with: Corfu Holiday Palace lists banquet seating for 300 and 350 in its two ballrooms, and Corfu Palace's 2023 terms name a 200-guest hall as the bad-weather backup for its poolside reception.",
+        "fact_ids": [
+          "fact_11",
+          "fact_16"
+        ]
+      },
+      {
+        "detail": "Plan the evening around the music cut-off: Corfu Palace's own wedding terms say outdoor music stops at 23:30 and the party can move indoors until 04:00. Couples who want to dance late should ask every venue where the after-party goes, and get it in writing.",
+        "fact_ids": [
+          "fact_11"
+        ]
+      },
+      {
+        "detail": "Corfu Imperial and Corfu Holiday Palace both put the Old Town or Mouse Island in the view, not just open water, which is worth saying in the brief to the photographer: Corfu Imperial names 'the Old Town's Venetian silhouette' and some suites face 'Corfu Town & the Marina'.",
+        "fact_ids": [
+          "fact_03",
+          "fact_07",
+          "fact_17"
+        ]
+      },
+      {
+        "detail": "Angsana Corfu's large outdoor ceremony space, Vertigo Sky Bar, runs a shorter season than its garden: ceremonies there are listed from mid-May to the end of September, while Oribu Garden runs April to October but holds only 30, so a couple with a bigger guest list who want shoulder-season dates should plan around Oribu Restaurant (150, April, May, September and October) for the reception.",
+        "fact_ids": [
+          "fact_103"
+        ]
+      },
+      {
+        "detail": "Angsana's brochure lists its ceremony spaces as symbolic wedding venues, so couples who want a legally registered marriage should plan for the civil step to be handled separately and have the Wedded Advisor confirm in writing what the resort can host.",
+        "fact_ids": [
+          "fact_103"
+        ]
+      },
+      {
+        "detail": "San Antonio is an adults-only resort on Kalami Bay with a beach venue, Callao On The Coast, and hillside terraces; it suits an intimate wedding where guests stay on site, but nothing on capacity or ceremony type is published, so treat it as a shortlist candidate to be confirmed rather than a fixed option.",
+        "fact_ids": [
+          "fact_108",
+          "fact_109",
+          "fact_110"
+        ]
+      },
+      {
+        "detail": "Corfu's driest, hottest stretch is July and August, with only about 3 rain days a month but average highs above 31°C, and Smartraveller warns of frequent summer heatwaves and wildfires from June to September: plan shaded ceremony spots, a late-afternoon start and water stations, and keep an indoor or covered fallback.",
+        "fact_ids": [
+          "fact_201",
+          "fact_202",
+          "fact_207",
+          "fact_208"
+        ]
+      },
+      {
+        "detail": "For a cooler date with still-low rain, June (average high 28.2°C, 4.8 rain days) and September (27.5°C, 7.4 rain days) are the balance points; by October rain days climb to 11.4, so an outdoor-only plan needs a confirmed wet-weather space.",
+        "fact_ids": [
+          "fact_207",
+          "fact_208"
+        ]
+      },
+      {
+        "detail": "West-coast ceremonies in summer sit in Corfu's prevailing westerly wind (June to August), so ask the venue how exposed the ceremony and dinner spots are, and secure arbours, florals and candles accordingly.",
+        "fact_ids": [
+          "fact_209"
+        ]
+      },
+      {
+        "detail": "If guests plan a pre-wedding swim, Smartraveller's latest Greece update flags boat traffic, strong currents and coastal hazards and suggests patrolled beaches, which is worth a line in the welcome pack.",
+        "fact_ids": [
+          "fact_200"
+        ]
+      },
+      {
+        "detail": "Couples needing a CNI or apostille should book the Embassy in Athens early: appointments run Monday to Friday mornings only, documents take two working days, and there are no notarial services at honorary consulates, so build this into the paperwork timeline.",
+        "fact_ids": [
+          "fact_203",
+          "fact_205"
+        ]
+      },
+      {
+        "detail": "Atlantica Grand Mediterraneo's ceremony spaces are small (up to 8 guests in the Secret Garden, up to 30 at Vertigo or Culinarium), so it suits intimate weddings rather than large guest lists.",
+        "fact_ids": [
+          "fact_302",
+          "fact_303"
+        ]
+      },
+      {
+        "detail": "Atlantica's published stay rule (3 working days before a legal wedding and 2 after, weekends and bank holidays excluded) means a weekend arrival can push the wedding date later; plan flights around working days.",
+        "fact_ids": [
+          "fact_305"
+        ]
+      },
+      {
+        "detail": "The Courti Estate is a 9-bedroom villa on a gated 10-acre estate, so the wedding party can stay on site while other guests book nearby; ask the estate for event capacity before shaping the guest list.",
+        "fact_ids": [
+          "fact_306",
+          "fact_308"
+        ]
+      },
+      {
+        "detail": "Eva Palace sits on the Kommeno Peninsula alongside Grecotel's Corfu Imperial, and its own FAQ notes free sea transfers between the Kommeno resorts in season, which can help when guests are split across sister hotels.",
+        "fact_ids": [
+          "fact_312",
+          "fact_314"
+        ]
+      },
+      {
+        "detail": "Several Corfu resort brands run weddings at only some of their properties: Ikos offers weddings at Ikos Aria on Kos but not at its two Corfu resorts, and Grecotel's Corfu wedding offer sits with Corfu Imperial and Danilia rather than Daphnila Bay. Check that the specific hotel, not just the brand, hosts weddings before shortlisting.",
+        "fact_ids": [
+          "fact_400",
+          "fact_404",
+          "fact_405"
+        ]
+      },
+      {
+        "detail": "Rodostamo sits on Kommeno Bay about 11 km from Corfu Airport and 10 km from Corfu Town, so guest transfers from either are short; its only published event room is a 150 sqm space seating up to 152, a natural indoor fallback to raise when planning an outdoor reception.",
+        "fact_ids": [
+          "fact_601"
+        ]
+      }
+    ],
+    "quotes": [],
+    "real_weddings": [],
+    "verify_items": [
+      "[[VERIFY: Batch A qualifies 4 venues: Grecotel Corfu Imperial (Kommeno), Villa Medusa (Grecotel, Kommeno), Corfu Palace Hotel (Corfu Town, provisional) and Corfu Holiday Palace (Kanoni, reserve). Ikos Dassia, Cavalieri Hotel and reserve Kontokali Bay Resort & Spa fail the weddings test on their own sites; batches B, C or D must fill the count]]",
+      "[[VERIFY: Villa Medusa naming: Grecotel's wedding page describes 'Villa Medusa' with the same text the Corfu Imperial accommodation page uses for the '6 Bedroom Beachfront Villa', while a separate hilltop 'Medusa Estate' is listed; confirm which unit is offered for weddings before writing its size or view]]",
+      "[[VERIFY: Corfu Palace Hotel sea view wording ('view to Garitsa Bay and the mainland') read only from a search snippet of the hotel's own PDF; re-read on a loaded official page before publishing, or drop the venue]]",
+      "[[VERIFY: Corfu Palace Hotel wedding terms come from a 2023 document valid 30 days from issue; confirm a current wedding offer exists before listing]]",
+      "[[VERIFY: Corfu Holiday Palace 'breathtaking views of the Ionian Sea', Mouse Island view rooms and funicular to the private beach read from search snippets of its own site; re-read live before quoting]]",
+      "[[VERIFY: San Antonio Corfu Resort: confirm with the resort which ceremony types it hosts and on which terraces, as its Events page names 'the ample sun-kissed terraces of the hotel' but no ceremony venues or capacities]]",
+      "[[VERIFY: Corfu Airport: bus route numbers, journey time to Corfu Town and the operator's formal name (Fraport Greece) need reading from the cfu-airport.gr detail pages before the article states them]]",
+      "[[VERIFY: Pelekas Monastery: official website, whether it hosts weddings and its sea-view wording; not confirmed in batch C]]",
+      "[[VERIFY: visitgreece.gr on Corfu's east versus west coast: not read in batch C; no coast comparison may be stated from this batch]]",
+      "[[VERIFY: Atlantica Grand Mediterraneo: total guest room count and maximum reception capacity not stated on the weddings page; packages and brochure PDFs not read]]",
+      "[[VERIFY: The Courti Estate: maximum wedding guest capacity and any separate weddings page not read; only the home page was checked]]",
+      "[[VERIFY: Orchestrator: Villa Sylva says 'beachfront' and 'on the beach' but not 'sea view'; decide whether beachfront wording meets the inclusion rule before listing it]]",
+      "[[VERIFY: Grecotel Eva Palace: qualification rests on official grecotel.com search snippets read at the time limit; fetch the resort and wedding pages to confirm wording, ceremony options and capacity before the writer uses it]]",
+      "[[VERIFY: Batch E qualifies 0 west-coast or south Corfu venues. Domes of Corfu, Pelekas Monastery, Mayor Capo di Corfu, Ikos Odisia, Pelecas Country Club, Grecotel Daphnila Bay and Danilia Village all failed or could not be checked against the inclusion rule (fact_400 to fact_406); the west coast and south still have no qualifying venue]]",
+      "[[VERIFY: Pelecas Country Club, official site country-club.gr: confirm the weddings offer on its own pages and whether the site states a sea view in words before it can be included (fact_604)]]"
+    ],
+    "needs_signoff": [
+      "No prices or fees recorded in batch A (excluded by instruction). Corfu Palace Hotel's 2023 wedding document lists euro per-person menu, drinks, deposit and cancellation amounts; none are in claims. Any price printed needs Nic's sign-off.",
+      "No prices or fees recorded in batch D (prices excluded by instruction). Any price printed needs Nic's sign-off."
+    ],
+    "must_include_coverage": [
+      {
+        "item": "12 venues grouped by area, each passing the inclusion rule (hosts weddings AND states a sea view)",
+        "covered_by": [
+          "fact_01",
+          "fact_03",
+          "fact_05",
+          "fact_08",
+          "fact_09",
+          "fact_10",
+          "fact_13",
+          "fact_15",
+          "fact_06",
+          "fact_12",
+          "fact_14",
+          "[[VERIFY: Batch A qualifies 4 venues: Grecotel Corfu Imperial (Kommeno), Villa Medusa (Grecotel, Kommeno), Corfu Palace Hotel (Corfu Town, provisional) and Corfu Holiday Palace (Kanoni, reserve). Ikos Dassia, Cavalieri Hotel and reserve Kontokali Bay Resort & Spa fail the weddings test on their own sites; batches B, C or D must fill the count]]"
+        ]
+      },
+      {
+        "item": "Grecotel Corfu Imperial re-checked live with fresh wording",
+        "covered_by": [
+          "fact_01",
+          "fact_02",
+          "fact_03",
+          "fact_04",
+          "fact_07"
+        ]
+      },
+      {
+        "item": "Per venue: location and setting; sea view in own words; ceremony options as stated; capacity, rooms, exclusive use else 'Not published'; one standout detail",
+        "covered_by": [
+          "fact_02",
+          "fact_03",
+          "fact_04",
+          "fact_07",
+          "fact_08",
+          "fact_09",
+          "fact_10",
+          "fact_11",
+          "fact_13",
+          "fact_15",
+          "fact_16",
+          "fact_17",
+          "[[VERIFY: Villa Medusa naming: Grecotel's wedding page describes 'Villa Medusa' with the same text the Corfu Imperial accommodation page uses for the '6 Bedroom Beachfront Villa', while a separate hilltop 'Medusa Estate' is listed; confirm which unit is offered for weddings before writing its size or view]]",
+          "[[VERIFY: Corfu Palace Hotel sea view wording ('view to Garitsa Bay and the mainland') read only from a search snippet of the hotel's own PDF; re-read on a loaded official page before publishing, or drop the venue]]"
+        ]
+      },
+      {
+        "item": "At a glance comparison table",
+        "covered_by": [
+          "fact_02",
+          "fact_09",
+          "fact_11",
+          "fact_16"
+        ]
+      },
+      {
+        "item": "How to compare like for like (resort vs historic vs villa, ceremony, capacity, rooms)",
+        "covered_by": [
+          "fact_02",
+          "fact_09",
+          "fact_11",
+          "fact_16"
+        ]
+      },
+      {
+        "item": "Intro, Key takeaways, Choosing an area, Getting there, When to marry, Legal in brief",
+        "covered_by": [
+          "[[VERIFY: Not in batch A scope (batch C or writer stage)]]"
+        ]
+      },
+      {
+        "item": "Venue entries, south-east (Benitses and Moraitika)",
+        "covered_by": [
+          "fact_100",
+          "fact_101",
+          "fact_102",
+          "fact_103",
+          "fact_104",
+          "fact_106",
+          "fact_107",
+          "fact_111"
+        ]
+      },
+      {
+        "item": "Venue entries, north-east (Kassiopi, Agni, Kalami)",
+        "covered_by": [
+          "fact_105",
+          "fact_108",
+          "fact_109",
+          "fact_110",
+          "fact_112"
+        ]
+      },
+      {
+        "item": "When to marry: venue-stated seasons (Angsana ceremony venues' stated months)",
+        "covered_by": [
+          "fact_103"
+        ]
+      },
+      {
+        "item": "Venues grouped by area, west coast (batch C: Agios Gordios, Pelekas, Paleokastritsa)",
+        "covered_by": [
+          "fact_206",
+          "[[VERIFY: no batch C venue qualified; west-coast venues need a top-up batch]]"
+        ]
+      },
+      {
+        "item": "Choosing an area (east vs west coast)",
+        "covered_by": [
+          "fact_209",
+          "[[VERIFY: visitgreece.gr on Corfu's east versus west coast: not read in batch C; no coast comparison may be stated from this batch]]"
+        ]
+      },
+      {
+        "item": "Getting there (Corfu airport, official sources)",
+        "covered_by": [
+          "fact_210",
+          "[[VERIFY: Corfu Airport: bus route numbers, journey time to Corfu Town and the operator's formal name (Fraport Greece) need reading from the cfu-airport.gr detail pages before the article states them]]"
+        ]
+      },
+      {
+        "item": "Season (HNMS averages, Smartraveller heat and wildfire)",
+        "covered_by": [
+          "fact_200",
+          "fact_201",
+          "fact_202",
+          "fact_207",
+          "fact_208",
+          "fact_209"
+        ]
+      },
+      {
+        "item": "Legal in brief (Embassy Athens and Smartraveller, as at November 2026)",
+        "covered_by": [
+          "fact_203",
+          "fact_204",
+          "fact_205"
+        ]
+      },
+      {
+        "item": "Corfu venues with sea views, each verified on its own official site (batch D top-up replacements)",
+        "covered_by": [
+          "fact_300",
+          "fact_301",
+          "fact_302",
+          "fact_303",
+          "fact_304",
+          "fact_305",
+          "fact_306",
+          "fact_307",
+          "fact_308",
+          "[[VERIFY: Orchestrator: Villa Sylva says 'beachfront' and 'on the beach' but not 'sea view'; decide whether beachfront wording meets the inclusion rule before listing it]]",
+          "fact_312",
+          "fact_313",
+          "fact_314",
+          "[[VERIFY: Grecotel Eva Palace: qualification rests on official grecotel.com search snippets read at the time limit; fetch the resort and wedding pages to confirm wording, ceremony options and capacity before the writer uses it]]"
+        ]
+      },
+      {
+        "item": "West coast and south Corfu venue profiles (setting, sea view in own words, ceremony options, capacity, rooms, exclusive use, standout)",
+        "covered_by": [
+          "fact_400",
+          "fact_401",
+          "fact_402",
+          "fact_403",
+          "fact_404",
+          "fact_405",
+          "fact_406",
+          "[[VERIFY: Batch E qualifies 0 west-coast or south Corfu venues. Domes of Corfu, Pelekas Monastery, Mayor Capo di Corfu, Ikos Odisia, Pelecas Country Club, Grecotel Daphnila Bay and Danilia Village all failed or could not be checked against the inclusion rule (fact_400 to fact_406); the west coast and south still have no qualifying venue]]"
+        ]
+      },
+      {
+        "item": "Top-up Corfu venue profiles, batch F (setting, sea view in own words, ceremony options, capacity, rooms, exclusive use, standout)",
+        "covered_by": [
+          "fact_600",
+          "fact_601",
+          "fact_602",
+          "fact_603",
+          "fact_604",
+          "[[VERIFY: Pelecas Country Club, official site country-club.gr: confirm the weddings offer on its own pages and whether the site states a sea view in words before it can be included (fact_604)]]"
+        ]
+      }
     ]
-   },
-   {
-    "item": "Grecotel Corfu Imperial re-checked live with fresh wording",
-    "covered_by": [
-     "fact_01",
-     "fact_02",
-     "fact_03",
-     "fact_04",
-     "fact_07"
-    ]
-   },
-   {
-    "item": "Per venue: location and setting; sea view in own words; ceremony options as stated; capacity, rooms, exclusive use else 'Not published'; one standout detail",
-    "covered_by": [
-     "fact_02",
-     "fact_03",
-     "fact_04",
-     "fact_07",
-     "fact_08",
-     "fact_09",
-     "fact_10",
-     "fact_11",
-     "fact_13",
-     "fact_15",
-     "fact_16",
-     "fact_17",
-     "[[VERIFY: Villa Medusa naming: Grecotel's wedding page describes 'Villa Medusa' with the same text the Corfu Imperial accommodation page uses for the '6 Bedroom Beachfront Villa', while a separate hilltop 'Medusa Estate' is listed; confirm which unit is offered for weddings before writing its size or view]]",
-     "[[VERIFY: Corfu Palace Hotel sea view wording ('view to Garitsa Bay and the mainland') read only from a search snippet of the hotel's own PDF; re-read on a loaded official page before publishing, or drop the venue]]"
-    ]
-   },
-   {
-    "item": "At a glance comparison table",
-    "covered_by": [
-     "fact_02",
-     "fact_09",
-     "fact_11",
-     "fact_16"
-    ]
-   },
-   {
-    "item": "How to compare like for like (resort vs historic vs villa, ceremony, capacity, rooms)",
-    "covered_by": [
-     "fact_02",
-     "fact_09",
-     "fact_11",
-     "fact_16"
-    ]
-   },
-   {
-    "item": "Intro, Key takeaways, Choosing an area, Getting there, When to marry, Legal in brief",
-    "covered_by": [
-     "[[VERIFY: Not in batch A scope (batch C or writer stage)]]"
-    ]
-   }
-  ]
- }
+  }
 }
