@@ -1,0 +1,300 @@
+{
+ "agent": "visual-curator",
+ "task_id": "corfu-wedding-venues",
+ "stage": "04",
+ "status": "needs_input",
+ "round": 1,
+ "inputs_used": [
+  "CLAUDE.md",
+  "content/posts/corfu-wedding-venues/00-input.json",
+  "content/posts/corfu-wedding-venues/01-brief.json (not present at run time)",
+  "content/posts/crete-wedding-venues/04-images.json (format model)",
+  "content-system/images/library-index.csv (header only, no rows)",
+  "content-system/images/sources-policy.md",
+  "content-system/schemas/04-images.schema.json",
+  "content/posts/greece-wedding-venues/03-source-pack*.json (Corfu venue status only)"
+ ],
+ "self_qa": {
+  "checks": [
+   {
+    "check": "Zero reference-only or competitor images in slots",
+    "pass": true,
+    "note": "reference_only is empty; no images downloaded."
+   },
+   {
+    "check": "Every approved image has location, licence, alt, caption, fit_reason",
+    "pass": true,
+    "note": "No approved images this run; alt and caption are written once a licensed file exists."
+   },
+   {
+    "check": "No AI image depicting a real place",
+    "pass": true,
+    "note": "No AI used; every slot is a real venue or area and excludes AI."
+   },
+   {
+    "check": "Featured image exists (approved or needed with brief)",
+    "pass": true,
+    "note": "Needed, with brief: sea-view ceremony at Corfu Imperial (alternative Angsana Corfu)."
+   },
+   {
+    "check": "One slot per area section",
+    "pass": true,
+    "note": "Five area slots: Kommeno and Dassia, Corfu Town, the north-east, the south, the west coast."
+   },
+   {
+    "check": "About 6 venue slots, total around 12",
+    "pass": true,
+    "note": "6 venue slots, 12 slots in total. Two venues named (confirmed in earlier Greece packs); four are per-area placeholders until 03-source-pack confirms the list."
+   }
+  ],
+  "confidence": 0.7
+ },
+ "open_questions": [
+  {
+   "to": "planner-sme",
+   "question": "Confirm the final Corfu venues (03-source-pack) so venue-03 to venue-06 can be named and Corfu Imperial and Angsana Corfu re-confirmed.",
+   "blocking": false
+  },
+  {
+   "to": "orchestrator",
+   "question": "Should a human find each confirmed venue's press or media contact and create the Gmail drafts, or should the curator do it in a non-fast run with Firecrawl and Gmail draft approval?",
+   "blocking": false
+  },
+  {
+   "to": "orchestrator",
+   "question": "Is there budget for licensed premium stock (Stocksy, Getty, Offset) for the featured and area slots if press kits do not respond in time?",
+   "blocking": false
+  }
+ ],
+ "assumptions": [
+  "Placement is by section name because 02-seo.json is not yet written; the writer maps it to after_h2/h3 positions.",
+  "01-brief.json was not present; area names follow 00-input notes. Venue-03 to venue-06 are placeholders, one per area without a confirmed venue (Dassia, Corfu Town, north-east, west coast); no venue name was guessed.",
+  "Corfu Imperial and Angsana Corfu are treated as confirmed from earlier Greece source packs; Domes Miramare was dropped there (its site did not say it hosts weddings) and is not used.",
+  "The writer may use a subset of venue slots if 12 images is too heavy; the featured and area slots are the priority."
+ ],
+ "verify_items": [
+  "[[IMAGE NEEDED]] featured: sea-view ceremony hero from Corfu Imperial (or Angsana Corfu)",
+  "[[IMAGE NEEDED]] area-kommeno-dassia, area-corfu-town, area-north-east, area-south, area-west-coast: official venue image or licensed stock",
+  "[[IMAGE NEEDED]] venue-01..venue-06: official image per confirmed venue (press kit with written permission or licensed stock)",
+  "[[VERIFY licence]] every venue press-kit image: written permission, credit line and expiry recorded in library-index.csv before use",
+  "[[VERIFY: official press or contact page for each confirmed venue, on its own site]]"
+ ],
+ "tools_used": [
+  "Bash (cat/grep/python)"
+ ],
+ "next_agent": [
+  "luxury-writer"
+ ],
+ "payload": {
+  "slots": [
+   {
+    "slot_id": "featured",
+    "placement": "featured",
+    "purpose": "Hero and social share image: a sea-view ceremony at a venue confirmed in this guide, signalling a luxury Corfu wedding on the Ionian.",
+    "shot_brief": "Official image from Corfu Imperial, Grecotel (Kommeno peninsula, confirmed wedding venue in the Greece guides; re-checked in stage 03), or Angsana Corfu (Benitses) as the alternative: ceremony set on a seaside terrace, lawn or point with open Ionian Sea and the mainland mountains across the water, May to October, golden-hour light. No people, or only distant unidentifiable figures; no other hotels' signage. Landscape 3:2 with room for a title crop. Source: the venue's own media kit or press office with written permission (Gmail draft request, never sent by an agent), or licensed premium stock bought by a human and added to library-index.csv. Never AI, never a competitor, directory, planner, photographer-blog or search-result image. Location proven by the media kit, register row or EXIF, never by appearance.",
+    "status": "needed",
+    "file": "content/posts/corfu-wedding-venues/images/corfu-wedding-venues-corfu-imperial-sea-view-ceremony-hero.webp",
+    "source": {
+     "type": "venue_press",
+     "origin": "not yet sourced",
+     "credit": "[[VERIFY licence]]"
+    },
+    "location": {
+     "venue": "Corfu Imperial, Grecotel (alternative: Angsana Corfu)",
+     "town": "Kommeno, Corfu",
+     "verified_by": "pending: venue media kit"
+    },
+    "licence_note": "[[IMAGE NEEDED]] Library register has no rows (header only). Move to pending_permission once the permission draft exists. Only use a venue that stays confirmed in 03-source-pack."
+   },
+   {
+    "slot_id": "area-kommeno-dassia",
+    "placement": "venues section: Kommeno and Dassia (area H2/H3 opener)",
+    "purpose": "Shows the sheltered east coast just north of Corfu Town: resort peninsulas and calm bay water facing the mainland.",
+    "shot_brief": "Official image from a venue confirmed in this area: the Kommeno peninsula or Dassia bay: calm Ionian water, olive and cypress trees to the shoreline, the Albanian and Epirus mountains across the strait, a resort seafront lawn or jetty set for a ceremony. May to October unless stated. No identifiable guests. Landscape 3:2. Source: the venue's own media kit or press office with written permission (Gmail draft request, never sent by an agent), or licensed premium stock bought by a human and added to library-index.csv. Never AI, never a competitor, directory, planner, photographer-blog or search-result image. Location proven by the media kit, register row or EXIF, never by appearance.",
+    "status": "needed",
+    "file": "content/posts/corfu-wedding-venues/images/corfu-wedding-venues-kommeno-dassia-setting.webp",
+    "location": {
+     "venue": "one confirmed venue in Kommeno and Dassia",
+     "town": "Kommeno",
+     "verified_by": "to be set from the media kit or register row"
+    },
+    "licence_note": "[[IMAGE NEEDED]] Must come from a venue featured in this area (never imply a venue not covered) or licensed stock of the real place; no AI."
+   },
+   {
+    "slot_id": "area-corfu-town",
+    "placement": "venues section: Corfu Town (area H2/H3 opener)",
+    "purpose": "Shows the historic town as a wedding setting: Venetian and British-era architecture beside the sea.",
+    "shot_brief": "Official image from a venue confirmed in this area: Corfu Town: Old Fortress, Garitsa Bay or the Liston arcades seen from a venue terrace, sea in frame, early morning or blue-hour light, no crowds or shop signage. May to October unless stated. No identifiable guests. Landscape 3:2. Source: the venue's own media kit or press office with written permission (Gmail draft request, never sent by an agent), or licensed premium stock bought by a human and added to library-index.csv. Never AI, never a competitor, directory, planner, photographer-blog or search-result image. Location proven by the media kit, register row or EXIF, never by appearance.",
+    "status": "needed",
+    "file": "content/posts/corfu-wedding-venues/images/corfu-wedding-venues-corfu-town-setting.webp",
+    "location": {
+     "venue": "one confirmed venue in Corfu Town",
+     "town": "Corfu Town",
+     "verified_by": "to be set from the media kit or register row"
+    },
+    "licence_note": "[[IMAGE NEEDED]] Must come from a venue featured in this area (never imply a venue not covered) or licensed stock of the real place; no AI."
+   },
+   {
+    "slot_id": "area-north-east",
+    "placement": "venues section: The north-east (area H2/H3 opener)",
+    "purpose": "Shows the green north-east coast: small coves, pebble beaches and villas above the water.",
+    "shot_brief": "Official image from a venue confirmed in this area: the north-east coast near Kassiopi, Agni or Kalami: cypress-covered hillside dropping to a turquoise cove, a villa or resort terrace set for a ceremony, the mainland close across the strait. May to October unless stated. No identifiable guests. Landscape 3:2. Source: the venue's own media kit or press office with written permission (Gmail draft request, never sent by an agent), or licensed premium stock bought by a human and added to library-index.csv. Never AI, never a competitor, directory, planner, photographer-blog or search-result image. Location proven by the media kit, register row or EXIF, never by appearance.",
+    "status": "needed",
+    "file": "content/posts/corfu-wedding-venues/images/corfu-wedding-venues-north-east-setting.webp",
+    "location": {
+     "venue": "one confirmed venue in the north-east",
+     "town": "Kassiopi",
+     "verified_by": "to be set from the media kit or register row"
+    },
+    "licence_note": "[[IMAGE NEEDED]] Must come from a venue featured in this area (never imply a venue not covered) or licensed stock of the real place; no AI."
+   },
+   {
+    "slot_id": "area-south",
+    "placement": "venues section: The south (area H2/H3 opener)",
+    "purpose": "Shows the quieter south-east coast: resort gardens running down to the sea.",
+    "shot_brief": "Official image from a venue confirmed in this area: the south-east coast near Benitses or Moraitika: terraced gardens or a seafront deck, open water to the east, morning or golden-hour light. May to October unless stated. No identifiable guests. Landscape 3:2. Source: the venue's own media kit or press office with written permission (Gmail draft request, never sent by an agent), or licensed premium stock bought by a human and added to library-index.csv. Never AI, never a competitor, directory, planner, photographer-blog or search-result image. Location proven by the media kit, register row or EXIF, never by appearance.",
+    "status": "needed",
+    "file": "content/posts/corfu-wedding-venues/images/corfu-wedding-venues-south-setting.webp",
+    "location": {
+     "venue": "one confirmed venue in the south",
+     "town": "Benitses",
+     "verified_by": "to be set from the media kit or register row"
+    },
+    "licence_note": "[[IMAGE NEEDED]] Must come from a venue featured in this area (never imply a venue not covered) or licensed stock of the real place; no AI."
+   },
+   {
+    "slot_id": "area-west-coast",
+    "placement": "venues section: The west coast (area H2/H3 opener)",
+    "purpose": "Shows the dramatic west coast: cliffs, deep coves and sunset over the open Ionian.",
+    "shot_brief": "Official image from a venue confirmed in this area: the west coast at Paleokastritsa, Glyfada or Agios Gordios: cliffs and deep blue coves, a clifftop terrace or beach set for a ceremony, sunset light over the open sea. May to October unless stated. No identifiable guests. Landscape 3:2. Source: the venue's own media kit or press office with written permission (Gmail draft request, never sent by an agent), or licensed premium stock bought by a human and added to library-index.csv. Never AI, never a competitor, directory, planner, photographer-blog or search-result image. Location proven by the media kit, register row or EXIF, never by appearance.",
+    "status": "needed",
+    "file": "content/posts/corfu-wedding-venues/images/corfu-wedding-venues-west-coast-setting.webp",
+    "location": {
+     "venue": "one confirmed venue in the west coast",
+     "town": "Paleokastritsa",
+     "verified_by": "to be set from the media kit or register row"
+    },
+    "licence_note": "[[IMAGE NEEDED]] Must come from a venue featured in this area (never imply a venue not covered) or licensed stock of the real place; no AI."
+   },
+   {
+    "slot_id": "venue-01",
+    "placement": "venues section: Kommeno and Dassia, entry: Corfu Imperial, Grecotel",
+    "purpose": "Shows Corfu Imperial, Grecotel itself so the reader can judge its sea view and ceremony setting against the other entries.",
+    "shot_brief": "Official image of Corfu Imperial, Grecotel (Kommeno, Corfu): the sea-view ceremony or reception space the venue's own site describes, terrace, lawn, chapel or beach, set for a wedding. May to October, natural daylight or golden hour. No identifiable guests, children or couples unless the venue confirms consent. Landscape 3:2. Source: the venue's own media kit or press office with written permission (Gmail draft request, never sent by an agent), or licensed premium stock bought by a human and added to library-index.csv. Never AI, never a competitor, directory, planner, photographer-blog or search-result image. Location proven by the media kit, register row or EXIF, never by appearance.",
+    "status": "needed",
+    "file": "content/posts/corfu-wedding-venues/images/corfu-wedding-venues-corfu-imperial-ceremony-setting.webp",
+    "location": {
+     "venue": "Corfu Imperial, Grecotel",
+     "town": "Kommeno, Corfu",
+     "verified_by": "pending: venue media kit"
+    },
+    "licence_note": "[[IMAGE NEEDED]] Venue status: confirmed in the Greece venue and package source packs; re-check live in stage 03. If the venue is swapped, rename this slot and file."
+   },
+   {
+    "slot_id": "venue-02",
+    "placement": "venues section: The south, entry: Angsana Corfu",
+    "purpose": "Shows Angsana Corfu itself so the reader can judge its sea view and ceremony setting against the other entries.",
+    "shot_brief": "Official image of Angsana Corfu (Benitses, Corfu): the sea-view ceremony or reception space the venue's own site describes, terrace, lawn, chapel or beach, set for a wedding. May to October, natural daylight or golden hour. No identifiable guests, children or couples unless the venue confirms consent. Landscape 3:2. Source: the venue's own media kit or press office with written permission (Gmail draft request, never sent by an agent), or licensed premium stock bought by a human and added to library-index.csv. Never AI, never a competitor, directory, planner, photographer-blog or search-result image. Location proven by the media kit, register row or EXIF, never by appearance.",
+    "status": "needed",
+    "file": "content/posts/corfu-wedding-venues/images/corfu-wedding-venues-angsana-corfu-ceremony-setting.webp",
+    "location": {
+     "venue": "Angsana Corfu",
+     "town": "Benitses, Corfu",
+     "verified_by": "pending: venue media kit"
+    },
+    "licence_note": "[[IMAGE NEEDED]] Venue status: confirmed in the Greece venue source pack; re-check live in stage 03. If the venue is swapped, rename this slot and file."
+   },
+   {
+    "slot_id": "venue-03",
+    "placement": "venues section: Kommeno and Dassia, entry: first confirmed venue in Kommeno and Dassia (from 03-source-pack)",
+    "purpose": "Shows the venue itself so the reader can judge its sea view and ceremony setting against the other entries.",
+    "shot_brief": "Official image of first confirmed venue in Kommeno and Dassia (from 03-source-pack) (Dassia, Corfu): the sea-view ceremony or reception space the venue's own site describes, terrace, lawn, chapel or beach, set for a wedding. May to October, natural daylight or golden hour. No identifiable guests, children or couples unless the venue confirms consent. Landscape 3:2. Source: the venue's own media kit or press office with written permission (Gmail draft request, never sent by an agent), or licensed premium stock bought by a human and added to library-index.csv. Never AI, never a competitor, directory, planner, photographer-blog or search-result image. Location proven by the media kit, register row or EXIF, never by appearance.",
+    "status": "needed",
+    "file": "content/posts/corfu-wedding-venues/images/corfu-wedding-venues-dassia-venue-ceremony-setting.webp",
+    "location": {
+     "venue": "first confirmed venue in Kommeno and Dassia (from 03-source-pack)",
+     "town": "Dassia, Corfu",
+     "verified_by": "pending: venue media kit"
+    },
+    "licence_note": "[[IMAGE NEEDED]] Venue status: not yet chosen. If the venue is swapped, rename this slot and file."
+   },
+   {
+    "slot_id": "venue-04",
+    "placement": "venues section: Corfu Town, entry: first confirmed venue in Corfu Town (from 03-source-pack)",
+    "purpose": "Shows the venue itself so the reader can judge its sea view and ceremony setting against the other entries.",
+    "shot_brief": "Official image of first confirmed venue in Corfu Town (from 03-source-pack) (Corfu Town): the sea-view ceremony or reception space the venue's own site describes, terrace, lawn, chapel or beach, set for a wedding. May to October, natural daylight or golden hour. No identifiable guests, children or couples unless the venue confirms consent. Landscape 3:2. Source: the venue's own media kit or press office with written permission (Gmail draft request, never sent by an agent), or licensed premium stock bought by a human and added to library-index.csv. Never AI, never a competitor, directory, planner, photographer-blog or search-result image. Location proven by the media kit, register row or EXIF, never by appearance.",
+    "status": "needed",
+    "file": "content/posts/corfu-wedding-venues/images/corfu-wedding-venues-corfu-town-venue-ceremony-setting.webp",
+    "location": {
+     "venue": "first confirmed venue in Corfu Town (from 03-source-pack)",
+     "town": "Corfu Town",
+     "verified_by": "pending: venue media kit"
+    },
+    "licence_note": "[[IMAGE NEEDED]] Venue status: not yet chosen. If the venue is swapped, rename this slot and file."
+   },
+   {
+    "slot_id": "venue-05",
+    "placement": "venues section: The north-east, entry: first confirmed venue in the north-east (from 03-source-pack)",
+    "purpose": "Shows the venue itself so the reader can judge its sea view and ceremony setting against the other entries.",
+    "shot_brief": "Official image of first confirmed venue in the north-east (from 03-source-pack) (Kassiopi, Agni or Kalami): the sea-view ceremony or reception space the venue's own site describes, terrace, lawn, chapel or beach, set for a wedding. May to October, natural daylight or golden hour. No identifiable guests, children or couples unless the venue confirms consent. Landscape 3:2. Source: the venue's own media kit or press office with written permission (Gmail draft request, never sent by an agent), or licensed premium stock bought by a human and added to library-index.csv. Never AI, never a competitor, directory, planner, photographer-blog or search-result image. Location proven by the media kit, register row or EXIF, never by appearance.",
+    "status": "needed",
+    "file": "content/posts/corfu-wedding-venues/images/corfu-wedding-venues-north-east-venue-ceremony-setting.webp",
+    "location": {
+     "venue": "first confirmed venue in the north-east (from 03-source-pack)",
+     "town": "Kassiopi, Agni or Kalami",
+     "verified_by": "pending: venue media kit"
+    },
+    "licence_note": "[[IMAGE NEEDED]] Venue status: not yet chosen. If the venue is swapped, rename this slot and file."
+   },
+   {
+    "slot_id": "venue-06",
+    "placement": "venues section: The west coast, entry: first confirmed venue in the west coast (from 03-source-pack)",
+    "purpose": "Shows the venue itself so the reader can judge its sea view and ceremony setting against the other entries.",
+    "shot_brief": "Official image of first confirmed venue in the west coast (from 03-source-pack) (Paleokastritsa, Glyfada or Agios Gordios): the sea-view ceremony or reception space the venue's own site describes, terrace, lawn, chapel or beach, set for a wedding. May to October, natural daylight or golden hour. No identifiable guests, children or couples unless the venue confirms consent. Landscape 3:2. Source: the venue's own media kit or press office with written permission (Gmail draft request, never sent by an agent), or licensed premium stock bought by a human and added to library-index.csv. Never AI, never a competitor, directory, planner, photographer-blog or search-result image. Location proven by the media kit, register row or EXIF, never by appearance.",
+    "status": "needed",
+    "file": "content/posts/corfu-wedding-venues/images/corfu-wedding-venues-west-coast-venue-ceremony-setting.webp",
+    "location": {
+     "venue": "first confirmed venue in the west coast (from 03-source-pack)",
+     "town": "Paleokastritsa, Glyfada or Agios Gordios",
+     "verified_by": "pending: venue media kit"
+    },
+    "licence_note": "[[IMAGE NEEDED]] Venue status: not yet chosen. If the venue is swapped, rename this slot and file."
+   }
+  ],
+  "reference_only": [],
+  "permission_requests": [
+   {
+    "venue": "Corfu Imperial, Grecotel",
+    "region": "Kommeno, Corfu",
+    "gmail_draft_id": "",
+    "official_site": "https://www.grecotel.com/corfu/corfu-imperial",
+    "press_or_contact_page": "not located: repo register only in this fast run; find the press, media or weddings contact on the venue's own site",
+    "images": [
+     "Official sea-view ceremony or reception setting (no identifiable guests)",
+     "Official exterior or view"
+    ],
+    "planned_file": "content/posts/corfu-wedding-venues/images/corfu-wedding-venues-corfu-imperial-ceremony-setting.webp",
+    "status": "draft_wording_only: not created in Gmail, not sent; create once the venue stays confirmed in 03-source-pack",
+    "draft_subject": "Image permission request: Wedded Wonderland feature on Corfu Imperial, Grecotel"
+   },
+   {
+    "venue": "Angsana Corfu",
+    "region": "Benitses, Corfu",
+    "gmail_draft_id": "",
+    "official_site": "https://www.angsana.com/greece/corfu/wedding-venues",
+    "press_or_contact_page": "not located: repo register only in this fast run; find the press, media or weddings contact on the venue's own site",
+    "images": [
+     "Official sea-view ceremony or reception setting (no identifiable guests)",
+     "Official exterior or view"
+    ],
+    "planned_file": "content/posts/corfu-wedding-venues/images/corfu-wedding-venues-angsana-corfu-ceremony-setting.webp",
+    "status": "draft_wording_only: not created in Gmail, not sent; create once the venue stays confirmed in 03-source-pack",
+    "draft_subject": "Image permission request: Wedded Wonderland feature on Angsana Corfu"
+   }
+  ],
+  "drive_findings": [
+   "Not searched: fast mode, repo library register only per orchestrator instruction. library-index.csv has a header and no rows."
+  ],
+  "permission_email_bodies_note": "Draft wording per venue = content-system/images/permission-email-template.md with {{venue_name}} = venue, {{post_title}} = '12 Corfu Wedding Venues With Sea Views', images as listed. No Gmail drafts created and nothing sent."
+ }
+}
