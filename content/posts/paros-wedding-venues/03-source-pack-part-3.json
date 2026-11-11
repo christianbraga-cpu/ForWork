@@ -1,0 +1,285 @@
+{
+  "agent": "planner-sme",
+  "task_id": "paros-wedding-venues",
+  "stage": "03",
+  "status": "complete",
+  "round": 1,
+  "inputs_used": [
+    "CLAUDE.md",
+    "content/posts/paros-wedding-venues/00-input.json",
+    "content/posts/mykonos-wedding-venues/03-source-pack-part-3.json (format model; fact_309-311 re-checked live)",
+    "Apify web-search and web-fetch 2026-11-11 of official sources listed in each fact"
+  ],
+  "self_qa": {
+    "checks": [
+      {
+        "check": "Every fact has a source and date",
+        "pass": true
+      },
+      {
+        "check": "No price without a source; all prices in needs_signoff",
+        "pass": true,
+        "note": "No prices or fee amounts recorded."
+      },
+      {
+        "check": "Every must-include covered or marked [[VERIFY]]",
+        "pass": true,
+        "note": "Batch D covers legal, airport, ferries and weather only; venues sit with batches A to C."
+      },
+      {
+        "check": "No invented quotes, statistics or real weddings",
+        "pass": true
+      }
+    ],
+    "confidence": 0.7
+  },
+  "open_questions": [
+    {
+      "to": "orchestrator",
+      "question": "RUN REPORT ONLY: no official Municipality of Paros page on civil marriage for foreigners could be found or read (searches of paros.gr returned only a staff directory listing a Civil Marriages section and Registry Office, and a 2015 council decision on Chinese couples' weddings, not read). No gov.gr civil marriage page was found in search (news articles only, not used). Copy should therefore say: check with the Municipality of Paros and the Embassy, including any fees. Paros Airport has no operator website found; airport and port facts come from imagine.paros.gr, the municipality's own tourism site.",
+      "blocking": false
+    }
+  ],
+  "assumptions": [
+    "imagine.paros.gr is treated as an official Municipality of Paros source: its pages are titled 'Dimos Parou' and its metadata describes it as the municipality's tourist site.",
+    "Visit Greece flight times are scheduled durations from the tourism board, not airline timetables.",
+    "HNMS Naxos is the nearest clearly labelled official station to Paros; it is not Paros data."
+  ],
+  "verify_items": [
+    "[[VERIFY: Civil marriage at the Municipality of Paros: no official municipal page sets out steps, documents, ceremony location, lead times or fees for foreign couples (paros.gr lists only a Civil Marriages section and Registry Office in its directory, fact_301); copy should say 'check with the Municipality of Paros and the Embassy, including any fees']]",
+    "[[VERIFY: Greek Orthodox and symbolic ceremonies: no official source read states requirements for either on Paros; the municipal tourism page names churches and chapels only (fact_300). Do not state church paperwork or eligibility]]",
+    "[[VERIFY: Paros Airport operator and official website not found within the time limit; airport facts rest on the Municipality of Paros tourism site (fact_311). Do not name an operator]]",
+    "[[VERIFY: Ferry operators, crossing times from Piraeus and Rafina, and frequencies not sourced from a port authority or ministry; only the municipal tourism site (fact_312) and Smartraveller (fact_310) were read]]",
+    "[[VERIFY: HNMS has no Paros station; figures are for Naxos, the nearest official station (facts 305 and 306). If cited, label them as Naxos; the HNMS page does not state the data period]]"
+  ],
+  "tools_used": [
+    "mcp__Apify__apify--web-search",
+    "mcp__Apify__apify--web-fetch"
+  ],
+  "next_agent": [
+    "luxury-writer"
+  ],
+  "payload": {
+    "facts": [
+      {
+        "fact_id": "fact_300",
+        "claim": "The Municipality of Paros tourism site (imagine.paros.gr, which identifies itself as the Municipality of Paros (Dimos Parou) tourist site) has a Wedding and Honeymoon page saying ceremonies can be held at a country chapel or at Panagia Ekatontapiliani, with guests arriving at the church by boat, yacht, speed boat, horse-drawn carriage or on foot with musicians. It names favourite churches including Panagia Ekatontapiliani, Agia Anna in Pandroso, Agios Fokas at the entrance to the port of Parikia, Agios Ioannis in Kolybithres, Zoodochou Pigis in Lageri, Agios Nikolaos in Piso Livadi and Agios Nikolaos in Pyrgaki. The page gives no civil marriage steps, documents, lead times or fees.",
+        "source": "https://imagine.paros.gr/en/wedding-honeymoon/417-wedding-honeymoon.html?tmpl=component&print=1",
+        "source_type": "government",
+        "checked": "2026-11-11",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_301",
+        "claim": "The Municipality of Paros official site (paros.gr) staff directory lists, under its Department of Citizen Service, Civil and Municipal Status and Registry Office, a Civil Marriages section (Tomeas Politikon Gamon) and a Registry Office unit, both in the municipality's offices (phone prefix 22843601xx). No paros.gr page read on 11 November 2026 sets out civil marriage steps, documents, ceremony location, lead times or fees for foreigners, so the copy should say to check these with the Municipality of Paros and the Embassy, including any fees.",
+        "source": "https://www.paros.gr/ipiresies/tilefona-ipiresion-tmimaton-dimou-parou/%CF%84%CE%B7%CE%BB%CE%AD%CF%86%CF%89%CE%BD%CE%B1-%CF%85%CF%80%CE%B7%CF%81%CE%B5%CF%83%CE%B9%CF%8E%CE%BD-%CF%84%CE%BC%CE%B7%CE%BC%CE%AC%CF%84%CF%89%CE%BD-%CE%B4%CE%AE%CE%BC%CE%BF%CF%85-%CF%80%CE%AC_52843/",
+        "source_type": "government",
+        "checked": "2026-11-11",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_302",
+        "claim": "As at November 2026, Smartraveller's 'Getting married overseas' page (last updated 18/08/2026, read live 11 November 2026, unchanged from mykonos-wedding-venues fact_309) says some countries ask you to prove you are free to marry, most commonly with a Certificate of No Impediment to Marriage (CNI) and registry certificates; local authorities may also ask for divorce papers, a deceased spouse's death certificate, and your original birth certificate and passport. DFAT can issue a CNI in Australia but some local authorities only accept ones issued in their country, so ask the destination's embassy or consulate whether you need one, whether you can get it in Australia, and whether it needs an authentication or apostille. The Wedded Advisor confirms current requirements.",
+        "source": "https://www.smartraveller.gov.au/planning-trip/advice-your-planned-activities/getting-married-overseas",
+        "source_type": "government",
+        "checked": "2026-11-11",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_303",
+        "claim": "As at November 2026, Smartraveller says (read live 11 November 2026, unchanged from mykonos-wedding-venues fact_310) an overseas marriage cannot be registered in Australia but in most cases is legally recognised if it was valid under the law of the country where it happened and would have been valid under Australian law had it occurred here; a foreign marriage certificate is usually accepted as proof of marriage but may not work as proof of a name change, and it suggests talking to a lawyer to confirm the certificate is valid in Australia. The Wedded Advisor confirms current requirements.",
+        "source": "https://www.smartraveller.gov.au/planning-trip/advice-your-planned-activities/getting-married-overseas",
+        "source_type": "government",
+        "checked": "2026-11-11",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_304",
+        "claim": "As at November 2026, the Australian Embassy in Athens (read live 11 November 2026, unchanged from mykonos-wedding-venues fact_311) lists among its notarial services witnessing application forms for, and issuing, Certificates of No Impediment (CNI), witnessing notices of intended marriage, and legalisation by authentication or apostille. All notarial services need an appointment (Monday to Friday, 9:00am to 12:30pm), though apostille and CNI documents can be submitted by post; apostilled documents and CNIs are ready for collection within two working days unless same-day collection is arranged; the Embassy gives no legal advice, does not witness signatures on overseas documents, honorary consuls cannot provide notarial services, and fees apply (amounts not recorded). The Wedded Advisor confirms current requirements.",
+        "source": "https://greece.embassy.gov.au/athn/notarial.html",
+        "source_type": "government",
+        "checked": "2026-11-11",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_305",
+        "claim": "The Hellenic National Meteorological Service (HNMS/EMY) 'Climatic Data by City' page has no Paros station; for the South Aegean it lists Naxos and Rodos. The Naxos station (lat 37.081, lon 25.369, altitude 3 m; data period not stated on the page) shows mean monthly maximum temperatures of 22.1 C in May, 25.9 C in June, 27.1 C in July, 27.0 C in August, 25.1 C in September and 21.9 C in October.",
+        "source": "http://oldportal.emy.gr/emy/en/climatology/climatology_city?perifereia=South%20Aegean&poli=Naxos",
+        "source_type": "government",
+        "checked": "2026-11-11",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_306",
+        "claim": "HNMS Naxos station (nearest official station to Paros, labelled as Naxos) shows mean precipitation days of 3.6 in May, 1.1 in June, 0.4 in July, 0.3 in August, 1.9 in September and 5.5 in October (6.0 in April), and a prevailing wind direction of north in every month, with monthly mean wind power highest in winter and 13.3 to 13.9 in July to September (units as shown on the page, not labelled).",
+        "source": "http://oldportal.emy.gr/emy/en/climatology/climatology_city?perifereia=South%20Aegean&poli=Naxos",
+        "source_type": "government",
+        "checked": "2026-11-11",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_307",
+        "claim": "Visit Greece (the official Greek tourism site) says Paros lies at the centre of the Cyclades and lists flights from Athens International Airport (Eleftherios Venizelos) to Paros Airport of about 45 minutes and from Thessaloniki Airport (Macedonia) of about 1 hour 15 minutes. It also notes Parian marble was used for works including Praxiteles' Hermes and the Venus de Milo.",
+        "source": "https://www.visitgreece.gr/en/islands/cyclades/paros",
+        "source_type": "tourism_board",
+        "checked": "2026-11-11",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_308",
+        "claim": "As at November 2026, Smartraveller's Greece advice (updated 30 September 2026, still current at 11 November 2026) is 'Exercise normal safety precautions' (level green). It says heatwaves are frequent over the summer months and can cause heat exhaustion, heat stroke and death, and wildfires occur in the extended summer period from June to September, including near tourist locations on the mainland and the islands, prompting evacuations; local alerts come from 112 to mobile phones.",
+        "source": "https://www.smartraveller.gov.au/destinations/europe/greece",
+        "source_type": "government",
+        "checked": "2026-11-11",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_309",
+        "claim": "As at November 2026, Smartraveller says lifeguards operate at many Greek beaches from June to September, sea conditions can change quickly with strong currents and rips, and its latest update advises care when swimming (boat traffic, coastal hazards, currents, marine life) and swimming at patrolled beaches where possible.",
+        "source": "https://www.smartraveller.gov.au/destinations/europe/greece",
+        "source_type": "government",
+        "checked": "2026-11-11",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_310",
+        "claim": "As at November 2026, Smartraveller says ferries and large catamarans carry most visitors to the Greek islands; in the May to October tourist season expect high temperatures and large crowds at popular seaports; you will usually carry luggage up and down stairs; ferry services can be delayed or cancelled in bad weather, mainly due to strong winds, so reconfirm departures; and arrange a coach or taxi in advance. It also says Australians can visit the Schengen area visa-free for up to 90 days in any 180-day period and must register biometrics under the EES on arrival.",
+        "source": "https://www.smartraveller.gov.au/destinations/europe/greece",
+        "source_type": "government",
+        "checked": "2026-11-11",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_311",
+        "claim": "The Municipality of Paros tourism site (imagine.paros.gr) says flights to Paros depart from Eleftherios Venizelos Airport in Athens and take approximately 45 minutes, and that Paros Airport (code PAS) is 9 kilometres southwest of Parikia, at Voutakos, Agkairia. It lists Olympic Air and Sky Express contacts. No official airport-operator website for Paros Airport was found within the time limit.",
+        "source": "https://imagine.paros.gr/en/gettingtoparos/ports-aiport.html",
+        "source_type": "government",
+        "checked": "2026-11-11",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_312",
+        "claim": "The Municipality of Paros tourism site says the island's main port is at Parikia, reachable by sea 365 days a year from Piraeus and Rafina; only strong westerly winds create issues for the port. Naoussa has a harbour and an organised marina (vessels up to 3 m draft), with summer day cruises to Tinos, Mykonos and Delos and excursions to Naxos; Piso Livadi marina in the south is protected from the strong north winds and is the starting point for excursions to Amorgos, Koufonisia and Santorini; Pounta connects Paros and Antiparos all year, with ferries every 30 minutes and a crossing of about 10 minutes (last summer ferry from Antiparos to Pounta at 2.00am).",
+        "source": "https://imagine.paros.gr/en/gettingtoparos/ports-aiport.html",
+        "source_type": "government",
+        "checked": "2026-11-11",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_313",
+        "claim": "The Municipality of Paros tourism site says KTEL public buses link all villages with each other and with Parikia and Naoussa all year round, with summer routes (especially to Naoussa) running into the early morning; the Parikia KTEL station is next to the port. Main routes include Parikia to Naoussa, Parikia to Aliki, and loops via Lefkes, Marpissa, Piso Livadi, Logaras, Pounta, Chryssi Akti (Golden Beach) and Drios.",
+        "source": "https://imagine.paros.gr/en/gettingtoparos/transportations.html",
+        "source_type": "government",
+        "checked": "2026-11-11",
+        "is_price": false
+      }
+    ],
+    "insider_details": [
+      {
+        "detail": "Civil weddings on Paros run through the Municipality's Civil Marriages section within its Registry Office, but no official checklist is published online, so start the CNI and apostille steps with the Australian Embassy in Athens early and confirm documents, lead times and fees with the Municipality in writing before setting a date.",
+        "fact_ids": [
+          "fact_301",
+          "fact_302",
+          "fact_304"
+        ]
+      },
+      {
+        "detail": "Paros is a 45-minute flight from Athens, so a CNI or apostille appointment at the Embassy (weekdays, 9:00am to 12:30pm; documents ready within two working days) can be built into an Athens stopover before flying on.",
+        "fact_ids": [
+          "fact_304",
+          "fact_307",
+          "fact_311"
+        ]
+      },
+      {
+        "detail": "Paros Airport sits about 9 km southwest of Parikia, and the main ferry port is in Parikia itself, so a guest welcome hub in or near Parikia keeps arrival transfers short whether guests fly or sail.",
+        "fact_ids": [
+          "fact_311",
+          "fact_312"
+        ]
+      },
+      {
+        "detail": "Ferries can be delayed or cancelled by strong winds and the nearest official station (Naxos) records a prevailing northerly wind in every month, so build a buffer day before the wedding for guests arriving by sea, and favour sheltered settings or a wind plan for outdoor ceremonies.",
+        "fact_ids": [
+          "fact_306",
+          "fact_310"
+        ]
+      },
+      {
+        "detail": "At the nearest HNMS station (Naxos), June to September averages under two rain days a month with mean highs of about 25 to 27 C, while Smartraveller warns of summer heatwaves and June to September wildfires; late-afternoon ceremonies with shade and water suit a July or August date, while May (about 22 C, 3.6 rain days) and September (about 25 C, 1.9 rain days) are milder.",
+        "fact_ids": [
+          "fact_305",
+          "fact_306",
+          "fact_308"
+        ]
+      },
+      {
+        "detail": "Antiparos is about 10 minutes from Pounta by year-round car ferry every 30 minutes, which makes a pre-wedding or recovery day trip easy to schedule without private boats.",
+        "fact_ids": [
+          "fact_312"
+        ]
+      }
+    ],
+    "quotes": [],
+    "real_weddings": [],
+    "verify_items": [
+      "[[VERIFY: Civil marriage at the Municipality of Paros: no official municipal page sets out steps, documents, ceremony location, lead times or fees for foreign couples (paros.gr lists only a Civil Marriages section and Registry Office in its directory, fact_301); copy should say 'check with the Municipality of Paros and the Embassy, including any fees']]",
+      "[[VERIFY: Greek Orthodox and symbolic ceremonies: no official source read states requirements for either on Paros; the municipal tourism page names churches and chapels only (fact_300). Do not state church paperwork or eligibility]]",
+      "[[VERIFY: Paros Airport operator and official website not found within the time limit; airport facts rest on the Municipality of Paros tourism site (fact_311). Do not name an operator]]",
+      "[[VERIFY: Ferry operators, crossing times from Piraeus and Rafina, and frequencies not sourced from a port authority or ministry; only the municipal tourism site (fact_312) and Smartraveller (fact_310) were read]]",
+      "[[VERIFY: HNMS has no Paros station; figures are for Naxos, the nearest official station (facts 305 and 306). If cited, label them as Naxos; the HNMS page does not state the data period]]"
+    ],
+    "needs_signoff": [
+      "No prices or fees recorded in batch D (prices excluded by instruction; Embassy and municipal fees noted as applying, amounts not recorded). Any price printed needs Nic's sign-off."
+    ],
+    "must_include_coverage": [
+      {
+        "item": "How to get married on Paros: civil ceremony at the Municipality of Paros (steps, documents, location, lead times, fees)",
+        "covered_by": [
+          "fact_300",
+          "fact_301",
+          "[[VERIFY: Civil marriage at the Municipality of Paros: no official municipal page sets out steps, documents, ceremony location, lead times or fees for foreign couples (paros.gr lists only a Civil Marriages section and Registry Office in its directory, fact_301); copy should say 'check with the Municipality of Paros and the Embassy, including any fees']]"
+        ]
+      },
+      {
+        "item": "Civil, Greek Orthodox and symbolic ceremonies as official sources state them",
+        "covered_by": [
+          "fact_300",
+          "fact_301",
+          "[[VERIFY: Civil marriage at the Municipality of Paros: no official municipal page sets out steps, documents, ceremony location, lead times or fees for foreign couples (paros.gr lists only a Civil Marriages section and Registry Office in its directory, fact_301); copy should say 'check with the Municipality of Paros and the Embassy, including any fees']]",
+          "[[VERIFY: Greek Orthodox and symbolic ceremonies: no official source read states requirements for either on Paros; the municipal tourism page names churches and chapels only (fact_300). Do not state church paperwork or eligibility]]"
+        ]
+      },
+      {
+        "item": "Australian steps: CNI and notarial services at the Australian Embassy Athens; Smartraveller getting married overseas and recognition in Australia (as at November 2026)",
+        "covered_by": [
+          "fact_302",
+          "fact_303",
+          "fact_304"
+        ]
+      },
+      {
+        "item": "Getting there: Paros airport and ferries (official sources only)",
+        "covered_by": [
+          "fact_307",
+          "fact_310",
+          "fact_311",
+          "fact_312",
+          "fact_313",
+          "[[VERIFY: Paros Airport operator and official website not found within the time limit; airport facts rest on the Municipality of Paros tourism site (fact_311). Do not name an operator]]",
+          "[[VERIFY: Ferry operators, crossing times from Piraeus and Rafina, and frequencies not sourced from a port authority or ministry; only the municipal tourism site (fact_312) and Smartraveller (fact_310) were read]]"
+        ]
+      },
+      {
+        "item": "When to marry: HNMS data for Paros or nearest labelled station; Smartraveller heat, wildfire, swimming",
+        "covered_by": [
+          "fact_305",
+          "fact_306",
+          "fact_308",
+          "fact_309",
+          "[[VERIFY: HNMS has no Paros station; figures are for Naxos, the nearest official station (facts 305 and 306). If cited, label them as Naxos; the HNMS page does not state the data period]]"
+        ]
+      }
+    ]
+  }
+}
