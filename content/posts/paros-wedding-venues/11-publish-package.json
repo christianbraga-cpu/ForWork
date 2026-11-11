@@ -1,0 +1,434 @@
+{
+  "agent": "cms-publisher",
+  "task_id": "paros-wedding-venues",
+  "stage": "11",
+  "status": "complete",
+  "round": 1,
+  "inputs_used": [
+    "CLAUDE.md",
+    "content-system/cms/field-map.md",
+    "content-system/schemas/11-publish-package.schema.json",
+    "content/posts/paros-wedding-venues/00-input.json",
+    "content/posts/paros-wedding-venues/01-brief.json",
+    "content/posts/paros-wedding-venues/02-seo.json",
+    "content/posts/paros-wedding-venues/03-source-pack.json",
+    "content/posts/paros-wedding-venues/04-images.json",
+    "content/posts/paros-wedding-venues/08-final.md",
+    "content/posts/paros-wedding-venues/09-cro.json",
+    "content/posts/paros-wedding-venues/10-distribution.json",
+    "content/posts/mykonos-wedding-venues/11-publish-package.json (format model)",
+    "content/posts/mykonos-wedding-venues/11-body.md (format model)",
+    "content/posts/mykonos-wedding-venues/booking-checklist.md (format model)",
+    "content/posts/mykonos-wedding-venues/12-cms-report.md (format model)"
+  ],
+  "self_qa": {
+    "checks": [
+      {
+        "check": "08-final.md already carries the 09-cro.json copy change (primary marker filled after the table) and the 8b edits; secondary, closing and magnet links already present",
+        "pass": true
+      },
+      {
+        "check": "Front matter and all <!-- fact_xx --> markers removed; H1 is the title; 8 image-slot comments kept; no [[VERIFY]] markers in the copy",
+        "pass": true
+      },
+      {
+        "check": "Primary CTA block at the marker; inline fallback retagged utm_content=inline; secondary, closing and magnet marked; each utm_content appears exactly once",
+        "pass": true
+      },
+      {
+        "check": "Exactly 4 key takeaways copied verbatim; 6 FAQ pairs extracted; FAQPage carries all; ItemList carries all 8 venues with official URLs",
+        "pass": true
+      },
+      {
+        "check": "primary_category equals categories[0] (Destination Weddings); title, slug, URL, type and cluster as fixed",
+        "pass": true
+      },
+      {
+        "check": "Meta title and description from 02-seo.json; description kept because its areas (Naoussa, Parikia, Kolymbithres, Golden Beach) all have a qualifying venue",
+        "pass": true
+      },
+      {
+        "check": "No prices printed, needs_signoff empty; no em dashes",
+        "pass": true
+      },
+      {
+        "check": "Image alt and caption filled",
+        "pass": false,
+        "note": "None supplied in 04-images.json apart from the legal-still-life caption; left empty, not invented. All 8 body slots needed."
+      },
+      {
+        "check": "Status draft; nothing uploaded, published or scheduled",
+        "pass": true
+      }
+    ],
+    "confidence": 0.9
+  },
+  "open_questions": [
+    {
+      "to": "orchestrator",
+      "question": "CMS upload not attempted: no browser in this session and content-system/cms/field-map.md is not CONFIRMED. Run /wedded-cms-discovery locally, then /wedded-blog resume=paros-wedding-venues.",
+      "blocking": true
+    },
+    {
+      "to": "orchestrator",
+      "question": "No author named in any input; package uses \"Wedded Wonderland\" (organisation). Confirm the byline.",
+      "blocking": false
+    },
+    {
+      "to": "orchestrator",
+      "question": "04-images.json still uses generic file names and placeholder descriptions: featured (paros-wedding-venues-featured-venue-ceremony-hero.webp; body brief is Petra Farm or Astir of Paros), venue-01 (paros-wedding-venues-venue-01-naoussa-north-ceremony-setting.webp) is Monastiri, venue-02 (paros-wedding-venues-venue-02-west-or-inland-ceremony-setting.webp) is Villa Mira Paros, venue-03 (paros-wedding-venues-venue-03-east-south-ceremony-setting.webp) is The Secret View; area-inland-villages is planned but has no slot in the body. The package uses the 04-images.json file names as they stand. Normalise 04-images.json.",
+      "blocking": false
+    }
+  ],
+  "assumptions": [
+    "Title is \"Paros Wedding Venues and How to Get Married There\", matching the 08-final.md front matter and the H1 set by the orchestrator.",
+    "Excerpt is the first sentence of the opening paragraph.",
+    "Content type \"Guide\" as fixed by the orchestrator (the brief says \"comparison\").",
+    "Meta title and meta description kept from 02-seo.json; the description names Naoussa, Parikia, Kolymbithres and Golden Beach, all of which have a venue in the body.",
+    "Tags taken from the brief unchanged; \"Antiparos\" is mentioned in the body (ferry from Pounta) but has no venue.",
+    "Breadcrumb level 2 URL is https://weddedwonderland.com/destination-weddings, from the fixed URL path.",
+    "ItemList URLs are the official pages the body links for each venue.",
+    "Inline primary sentence retagged utm_content=inline so the CTA block alone carries utm_content=primary (as the Mykonos model).",
+    "verify_items limited to image credits and licences, as instructed; venue confirmations sit in booking-checklist.md and the jump-list check in the draft note.",
+    "closing_cta is an extra, schema-permitted field recording the closing link from 09-cro.json tracking."
+  ],
+  "verify_items": [
+    "Image credit and licence for slot featured (paros-wedding-venues-featured-venue-ceremony-hero.webp): not yet sourced; record the credit and licence (venue press kit with written permission, or licensed stock in library-index.csv; for legal-still-life, licensed stock or Canva brand asset, or AI only with the person's approval and labelled illustrative) before publishing",
+    "Image credit and licence for slot area-naoussa-north (paros-wedding-venues-naoussa-north-setting.webp): not yet sourced; record the credit and licence (venue press kit with written permission, or licensed stock in library-index.csv; for legal-still-life, licensed stock or Canva brand asset, or AI only with the person's approval and labelled illustrative) before publishing",
+    "Image credit and licence for slot venue-01 (paros-wedding-venues-venue-01-naoussa-north-ceremony-setting.webp): not yet sourced; record the credit and licence (venue press kit with written permission, or licensed stock in library-index.csv; for legal-still-life, licensed stock or Canva brand asset, or AI only with the person's approval and labelled illustrative) before publishing",
+    "Image credit and licence for slot area-parikia-west (paros-wedding-venues-parikia-west-setting.webp): not yet sourced; record the credit and licence (venue press kit with written permission, or licensed stock in library-index.csv; for legal-still-life, licensed stock or Canva brand asset, or AI only with the person's approval and labelled illustrative) before publishing",
+    "Image credit and licence for slot venue-02 (paros-wedding-venues-venue-02-west-or-inland-ceremony-setting.webp): not yet sourced; record the credit and licence (venue press kit with written permission, or licensed stock in library-index.csv; for legal-still-life, licensed stock or Canva brand asset, or AI only with the person's approval and labelled illustrative) before publishing",
+    "Image credit and licence for slot area-east-south-coast (paros-wedding-venues-east-south-coast-setting.webp): not yet sourced; record the credit and licence (venue press kit with written permission, or licensed stock in library-index.csv; for legal-still-life, licensed stock or Canva brand asset, or AI only with the person's approval and labelled illustrative) before publishing",
+    "Image credit and licence for slot venue-03 (paros-wedding-venues-venue-03-east-south-ceremony-setting.webp): not yet sourced; record the credit and licence (venue press kit with written permission, or licensed stock in library-index.csv; for legal-still-life, licensed stock or Canva brand asset, or AI only with the person's approval and labelled illustrative) before publishing",
+    "Image credit and licence for slot legal-still-life (paros-wedding-venues-legal-section-rings-still-life.webp): not yet sourced; record the credit and licence (venue press kit with written permission, or licensed stock in library-index.csv; for legal-still-life, licensed stock or Canva brand asset, or AI only with the person's approval and labelled illustrative) before publishing"
+  ],
+  "tools_used": [
+    "Bash (python3 -I)"
+  ],
+  "next_agent": [
+    "orchestrator"
+  ],
+  "payload": {
+    "title": "Paros Wedding Venues and How to Get Married There",
+    "slug": "paros-wedding-venues",
+    "url_path": "/destination-weddings/paros-wedding-venues",
+    "content_type": "Guide",
+    "cluster": "Getting Married in Greece",
+    "categories": [
+      "Destination Weddings",
+      "Greece",
+      "Venues"
+    ],
+    "primary_category": "Destination Weddings",
+    "tags": [
+      "Getting Married in Greece",
+      "Paros",
+      "Paros wedding venues",
+      "Cyclades",
+      "Naoussa",
+      "Parikia",
+      "Antiparos"
+    ],
+    "excerpt": "Paros wedding venues sit in three parts of the island: Naoussa and the bays of the north coast, Parikia and the hills above its gulf in the west, and Golden Beach on the east coast.",
+    "key_takeaways": [
+      "Monastiri and The Secret View have no guest rooms, so guests stay in nearby hotels, and The Secret View says it is happy to organise shuttles.",
+      "Only two of the eight venues here publish wedding capacities: Petra Farm (a chapel for 120 and an event space for 150) and The Secret View (110 for a terrace ceremony, 120 for dinner).",
+      "Six of the eight venues have a chapel on site, but only The Secret View names a ceremony type (symbolic), so ask the others which ceremonies their chapel takes before you plan around one.",
+      "The Municipality of Paros runs a civil marriages section, so check its steps, documents and any fees with the municipality and the Australian Embassy in Athens well before you book."
+    ],
+    "body_markdown_file": "content/posts/paros-wedding-venues/11-body.md",
+    "faq": [
+      {
+        "q": "Which part of Paros suits a wedding?",
+        "a": "It depends on your guest list and the setting you want. Naoussa and the north has the most venues here, including a five-star hotel and a farm estate above Kolymbithres bay. Parikia and the west looks over the port town and its gulf, and Golden Beach on the east coast offers a beachfront hotel and an estate in the hills."
+      },
+      {
+        "q": "Can we book a venue or villa on Paros for exclusive use?",
+        "a": "Yes, at some. Villa Mira Paros offers the whole property for your day, and The Secret View gives couples full access to every area for 24 hours. The other venues here do not publish exclusive use, so ask each one directly."
+      },
+      {
+        "q": "Can Australians legally marry on Paros?",
+        "a": "Plan the legal steps before the venue. As at November 2026, you may need a Certificate of No Impediment, so ask the Greek embassy or consulate whether you need one, whether you can get it in Australia and whether it needs an apostille, and a marriage valid in Greece that would also be valid under Australian law is in most cases recognised in Australia. Check the current requirements with the Municipality of Paros and the Australian Embassy in Athens."
+      },
+      {
+        "q": "Can we have a civil ceremony at the Paros town hall?",
+        "a": "The Municipality of Paros has a Civil Marriages section within its Registry Office. Ask the municipality for the steps that apply to foreign couples, and the Australian Embassy in Athens about your documents and any fees, before you set a date."
+      },
+      {
+        "q": "How do guests get to Paros?",
+        "a": "Guests can fly from Athens, about 45 minutes, into Paros Airport, 9 km southwest of Parikia. Others take the ferry from Piraeus or Rafina to Parikia, which runs all year. Ferries can be delayed by strong winds, so guests should reconfirm departures."
+      },
+      {
+        "q": "When should we marry on Paros?",
+        "a": "At the nearest official weather station, on Naxos, July and August are the warmest and driest months: mean maximums run from about 22°C in May and October to 27.1°C in July, and rain days are fewest from June to August. As at November 2026, heatwaves are frequent in Greece over summer and wildfires occur from June to September, so a summer date needs shade and a covered fallback."
+      }
+    ],
+    "images": [
+      {
+        "slot_id": "featured",
+        "file": "content/posts/paros-wedding-venues/images/paros-wedding-venues-featured-venue-ceremony-hero.webp",
+        "role": "featured",
+        "status": "needed"
+      },
+      {
+        "slot_id": "area-naoussa-north",
+        "file": "content/posts/paros-wedding-venues/images/paros-wedding-venues-naoussa-north-setting.webp",
+        "role": "inline",
+        "status": "needed"
+      },
+      {
+        "slot_id": "venue-01",
+        "file": "content/posts/paros-wedding-venues/images/paros-wedding-venues-venue-01-naoussa-north-ceremony-setting.webp",
+        "role": "inline",
+        "status": "needed"
+      },
+      {
+        "slot_id": "area-parikia-west",
+        "file": "content/posts/paros-wedding-venues/images/paros-wedding-venues-parikia-west-setting.webp",
+        "role": "inline",
+        "status": "needed"
+      },
+      {
+        "slot_id": "venue-02",
+        "file": "content/posts/paros-wedding-venues/images/paros-wedding-venues-venue-02-west-or-inland-ceremony-setting.webp",
+        "role": "inline",
+        "status": "needed"
+      },
+      {
+        "slot_id": "area-east-south-coast",
+        "file": "content/posts/paros-wedding-venues/images/paros-wedding-venues-east-south-coast-setting.webp",
+        "role": "inline",
+        "status": "needed"
+      },
+      {
+        "slot_id": "venue-03",
+        "file": "content/posts/paros-wedding-venues/images/paros-wedding-venues-venue-03-east-south-ceremony-setting.webp",
+        "role": "inline",
+        "status": "needed"
+      },
+      {
+        "slot_id": "legal-still-life",
+        "file": "content/posts/paros-wedding-venues/images/paros-wedding-venues-legal-section-rings-still-life.webp",
+        "role": "inline",
+        "status": "needed",
+        "caption": "Illustrative image"
+      }
+    ],
+    "cta": {
+      "text": "Speak with a Wedded Advisor",
+      "subtext": "The fee is agreed in writing before any work begins.",
+      "link": "/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=paros-wedding-venues&utm_content=primary",
+      "placement": "At the former <!-- CTA: primary --> marker, directly after the 'Paros wedding venues at a glance' table and its closing line (marked <!-- CTA BLOCK: primary --> in 11-body.md); the inline sentence after the block is the fallback and is tagged utm_content=inline."
+    },
+    "secondary_cta": {
+      "text": "Talk to a Wedded Advisor",
+      "link": "/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=paros-wedding-venues&utm_content=secondary",
+      "placement": "Inline link on the sentence closing 'Capacity, rooms and exclusive use' ('Anything this guide marks \"Not published\", from capacity to curfew, needs an answer in writing before you commit, so talk to a Wedded Advisor about your shortlist.') (marked <!-- CTA INLINE: secondary --> in 11-body.md)."
+    },
+    "closing_cta": {
+      "text": "shortlist your Paros venues with a Wedded Advisor",
+      "link": "/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=paros-wedding-venues&utm_content=closing",
+      "placement": "Inline link at the end of 'Shortlist your Paros venues with a Wedded Advisor' (marked <!-- CTA INLINE: closing --> in 11-body.md)."
+    },
+    "lead_magnet": {
+      "name": "Wedded Wonderland digital magazine",
+      "link": "/magazine?utm_source=blog&utm_medium=content&utm_campaign=paros-wedding-venues&utm_content=magnet",
+      "placement": "Existing soft line at the very end of the post, the 'Wedded Wonderland magazine' link (marked <!-- LEAD MAGNET --> in 11-body.md)."
+    },
+    "tracking_links": [
+      "/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=paros-wedding-venues&utm_content=primary",
+      "/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=paros-wedding-venues&utm_content=secondary",
+      "/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=paros-wedding-venues&utm_content=closing",
+      "/magazine?utm_source=blog&utm_medium=content&utm_campaign=paros-wedding-venues&utm_content=magnet",
+      "/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=paros-wedding-venues&utm_content=inline"
+    ],
+    "seo": {
+      "meta_title": "Paros Wedding Venues and How to Get Married There",
+      "meta_description": "Paros wedding venues by area, from Naoussa and Parikia to Kolymbithres and Golden Beach, plus how Australians marry on the island, as at November 2026.",
+      "focus_keyword": "paros wedding venues",
+      "canonical": "https://weddedwonderland.com/destination-weddings/paros-wedding-venues",
+      "og_image_slot": "featured"
+    },
+    "schema_jsonld": {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Article",
+          "@id": "https://weddedwonderland.com/destination-weddings/paros-wedding-venues#article",
+          "headline": "Paros Wedding Venues and How to Get Married There",
+          "description": "Paros wedding venues by area, from Naoussa and Parikia to Kolymbithres and Golden Beach, plus how Australians marry on the island, as at November 2026.",
+          "author": {
+            "@type": "Organization",
+            "name": "Wedded Wonderland",
+            "url": "https://weddedwonderland.com/"
+          },
+          "publisher": {
+            "@type": "Organization",
+            "name": "Wedded Wonderland",
+            "url": "https://weddedwonderland.com/"
+          },
+          "datePublished": "",
+          "mainEntityOfPage": "https://weddedwonderland.com/destination-weddings/paros-wedding-venues",
+          "inLanguage": "en-AU"
+        },
+        {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Home",
+              "item": "https://weddedwonderland.com/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Destination Weddings",
+              "item": "https://weddedwonderland.com/destination-weddings"
+            },
+            {
+              "@type": "ListItem",
+              "position": 3,
+              "name": "Paros Wedding Venues and How to Get Married There",
+              "item": "https://weddedwonderland.com/destination-weddings/paros-wedding-venues"
+            }
+          ]
+        },
+        {
+          "@type": "ItemList",
+          "@id": "https://weddedwonderland.com/destination-weddings/paros-wedding-venues#venues",
+          "name": "Paros wedding venues",
+          "numberOfItems": 8,
+          "itemListOrder": "https://schema.org/ItemListUnordered",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Astir of Paros, Kolymbithres",
+              "url": "https://www.astirofparos.gr/weddings/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Anemoi Paros, Naoussa",
+              "url": "https://www.parosresort.com/weddings-events-hotel-paros/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 3,
+              "name": "Monastiri, Agios Ioannis Detis",
+              "url": "https://www.monastiri-paros.gr/paros-events-planning/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 4,
+              "name": "Petra Farm, Kolymbithres",
+              "url": "https://www.petrafarm.gr/weddingsevents"
+            },
+            {
+              "@type": "ListItem",
+              "position": 5,
+              "name": "Pyrgaki Hotel, overlooking the gulf of Parikia",
+              "url": "https://www.pyrgaki-hotel.com/weddings/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 6,
+              "name": "Villa Mira Paros, above the Bay of Parikia",
+              "url": "https://villamiraparos.com/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 7,
+              "name": "Poseidon of Paros, Golden Beach",
+              "url": "https://www.poseidon-paros.gr/weddings-reception-organizing"
+            },
+            {
+              "@type": "ListItem",
+              "position": 8,
+              "name": "The Secret View at Fladakia Estate, above Golden Beach",
+              "url": "https://www.the-secret-view.com/pages/the-estate"
+            }
+          ]
+        },
+        {
+          "@type": "FAQPage",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "Which part of Paros suits a wedding?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "It depends on your guest list and the setting you want. Naoussa and the north has the most venues here, including a five-star hotel and a farm estate above Kolymbithres bay. Parikia and the west looks over the port town and its gulf, and Golden Beach on the east coast offers a beachfront hotel and an estate in the hills."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Can we book a venue or villa on Paros for exclusive use?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes, at some. Villa Mira Paros offers the whole property for your day, and The Secret View gives couples full access to every area for 24 hours. The other venues here do not publish exclusive use, so ask each one directly."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Can Australians legally marry on Paros?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Plan the legal steps before the venue. As at November 2026, you may need a Certificate of No Impediment, so ask the Greek embassy or consulate whether you need one, whether you can get it in Australia and whether it needs an apostille, and a marriage valid in Greece that would also be valid under Australian law is in most cases recognised in Australia. Check the current requirements with the Municipality of Paros and the Australian Embassy in Athens."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Can we have a civil ceremony at the Paros town hall?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "The Municipality of Paros has a Civil Marriages section within its Registry Office. Ask the municipality for the steps that apply to foreign couples, and the Australian Embassy in Athens about your documents and any fees, before you set a date."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "How do guests get to Paros?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Guests can fly from Athens, about 45 minutes, into Paros Airport, 9 km southwest of Parikia. Others take the ferry from Piraeus or Rafina to Parikia, which runs all year. Ferries can be delayed by strong winds, so guests should reconfirm departures."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "When should we marry on Paros?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "At the nearest official weather station, on Naxos, July and August are the warmest and driest months: mean maximums run from about 22°C in May and October to 27.1°C in July, and rain days are fewest from June to August. As at November 2026, heatwaves are frequent in Greece over summer and wildfires occur from June to September, so a summer date needs shade and a covered fallback."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    "author": "Wedded Wonderland",
+    "status": "draft",
+    "verify_items": [
+      "Image credit and licence for slot featured (paros-wedding-venues-featured-venue-ceremony-hero.webp): not yet sourced; record the credit and licence (venue press kit with written permission, or licensed stock in library-index.csv; for legal-still-life, licensed stock or Canva brand asset, or AI only with the person's approval and labelled illustrative) before publishing",
+      "Image credit and licence for slot area-naoussa-north (paros-wedding-venues-naoussa-north-setting.webp): not yet sourced; record the credit and licence (venue press kit with written permission, or licensed stock in library-index.csv; for legal-still-life, licensed stock or Canva brand asset, or AI only with the person's approval and labelled illustrative) before publishing",
+      "Image credit and licence for slot venue-01 (paros-wedding-venues-venue-01-naoussa-north-ceremony-setting.webp): not yet sourced; record the credit and licence (venue press kit with written permission, or licensed stock in library-index.csv; for legal-still-life, licensed stock or Canva brand asset, or AI only with the person's approval and labelled illustrative) before publishing",
+      "Image credit and licence for slot area-parikia-west (paros-wedding-venues-parikia-west-setting.webp): not yet sourced; record the credit and licence (venue press kit with written permission, or licensed stock in library-index.csv; for legal-still-life, licensed stock or Canva brand asset, or AI only with the person's approval and labelled illustrative) before publishing",
+      "Image credit and licence for slot venue-02 (paros-wedding-venues-venue-02-west-or-inland-ceremony-setting.webp): not yet sourced; record the credit and licence (venue press kit with written permission, or licensed stock in library-index.csv; for legal-still-life, licensed stock or Canva brand asset, or AI only with the person's approval and labelled illustrative) before publishing",
+      "Image credit and licence for slot area-east-south-coast (paros-wedding-venues-east-south-coast-setting.webp): not yet sourced; record the credit and licence (venue press kit with written permission, or licensed stock in library-index.csv; for legal-still-life, licensed stock or Canva brand asset, or AI only with the person's approval and labelled illustrative) before publishing",
+      "Image credit and licence for slot venue-03 (paros-wedding-venues-venue-03-east-south-ceremony-setting.webp): not yet sourced; record the credit and licence (venue press kit with written permission, or licensed stock in library-index.csv; for legal-still-life, licensed stock or Canva brand asset, or AI only with the person's approval and labelled illustrative) before publishing",
+      "Image credit and licence for slot legal-still-life (paros-wedding-venues-legal-section-rings-still-life.webp): not yet sourced; record the credit and licence (venue press kit with written permission, or licensed stock in library-index.csv; for legal-still-life, licensed stock or Canva brand asset, or AI only with the person's approval and labelled illustrative) before publishing"
+    ],
+    "needs_signoff": [],
+    "redirects_recommended": "none (new article)",
+    "hub_recommendation": "Recommendation only, nothing on the live site changes: the Greece venues guide draft (/destination-weddings/greece-wedding-venues), the Greece packages guide draft (/destination-weddings/greece-wedding-packages) and the Mykonos venues draft (/destination-weddings/mykonos-wedding-venues) each link down to this post where they mention Paros, so the drafts link both ways; this post already links the Greece venues guide three times, the packages guide once, the Mykonos guide once and the Greece hub /destinations/europe/greece twice.",
+    "deferred_business_items": [
+      "Real wedding at a Paros or Greece venue",
+      "Fee model and commissions (whether the business takes a cut from venues)",
+      "Wedded Advisor who calls first",
+      "Referral or assistant contact",
+      "Mobility and step-free access checks by venue",
+      "Proof of 200 to 400 guest scale"
+    ],
+    "draft_note": "DRAFT. Do not publish until checked:\n\n1. [[VERIFY]] items in the copy: none. The only open verify items are image credits and licences (below).\n\n2. Nic sign-off on prices: none (no prices printed).\n\n3. Image slots needed (8, none approved yet; credit, licence, alt and caption to add when approved; legal-still-life caption must read 'Illustrative image'):\n   - featured (needed)\n   - area-naoussa-north (needed)\n   - venue-01 (needed)\n   - area-parikia-west (needed)\n   - venue-02 (needed)\n   - area-east-south-coast (needed)\n   - venue-03 (needed)\n   - legal-still-life (needed)\n\n4. Linked drafts to publish together: the body links pages that are still drafts: /destination-weddings/greece-wedding-venues (three times, one with the #getting-legally-married-in-greece-as-australians-in-brief anchor), /destination-weddings/greece-wedding-packages (once), /destination-weddings/mykonos-wedding-venues (once) and /expert-advice/greek-wedding-traditions (once). Publish the Greece venues guide, the Greece packages guide, Mykonos wedding venues and Greek wedding traditions together with this post, or hold this post until they are live, so no link breaks.\n\n5. Mobile table: the 'Paros wedding venues at a glance' table has four columns with long cells and must scroll sideways on mobile (wrap it in the CMS's horizontal-scroll table container). Check in the mobile preview that it does not squash or overflow the page.\n\n6. Jump list: check the four 'Jump to an area' links land on their H2s in preview, and that the Greece venues guide anchor exists once that draft is live.\n\n7. Deferred business items (6, person's decision, not in this draft):\n   - Real wedding at a Paros or Greece venue\n   - Fee model and commissions (whether the business takes a cut from venues)\n   - Wedded Advisor who calls first\n   - Referral or assistant contact\n   - Mobility and step-free access checks by venue\n   - Proof of 200 to 400 guest scale\n\nBooking checklist (not publishing blockers): see booking-checklist.md"
+  }
+}
