@@ -1,0 +1,215 @@
+{
+  "agent": "planner-sme",
+  "task_id": "mykonos-wedding-venues",
+  "stage": "03",
+  "status": "complete",
+  "round": 1,
+  "inputs_used": [
+    "CLAUDE.md",
+    "content/posts/mykonos-wedding-venues/00-input.json",
+    "content/posts/corfu-wedding-venues/03-source-pack-part-4.json (format)"
+  ],
+  "self_qa": {
+    "checks": [
+      {
+        "check": "Every fact has a source and date",
+        "pass": true
+      },
+      {
+        "check": "No price without a source; all prices in needs_signoff",
+        "pass": true,
+        "note": "No prices recorded."
+      },
+      {
+        "check": "Every must-include covered or marked [[VERIFY]]",
+        "pass": true,
+        "note": "Batch E covers top-up Mykonos venue candidates only; 3 qualify (Saint John, ZeNIT, Semeli), gaps marked VERIFY."
+      },
+      {
+        "check": "No invented quotes, statistics or real weddings",
+        "pass": true
+      }
+    ],
+    "confidence": 0.75
+  },
+  "open_questions": [
+    {
+      "to": "orchestrator",
+      "question": "Batch E qualifies 3 venues: Saint John Hotel Villas & Spa (Agios Ioannis, fact_400 to fact_402), ZeNIT Events Center (Paradise beach, events-only venue with no rooms, fact_405 to fact_407) and Semeli Hotel Mykonos (Mykonos Town, weaker: 2020 blog post only, fact_403 and fact_404). Failed: Kouros Hotel & Suites (no weddings page), Cavo Tagoo (weddings named for Santorini only), Mykonos Theoxenia (privacy statement only), Lyo Mykonos (no official site result), Kalesma (search timed out, not retried).",
+      "blocking": false
+    }
+  ],
+  "assumptions": [
+    "BOOKING CHECKLIST: Saint John Hotel Villas & Spa: music curfew, minimum nights or room block, exclusive use, rain plan for outdoor ceremony spots (chapel, sunset balcony, deck), set-up times and in-house versus outside planner rules are not published; confirm with the venue.",
+    "BOOKING CHECKLIST: ZeNIT Events Center: music curfew, capacity per layout (seated, standing), set-up and breakdown times, minimum spend and guest accommodation are not published; rain plan is the central indoor hall (published).",
+    "BOOKING CHECKLIST: Semeli Hotel Mykonos: ceremony spaces, capacity, music curfew, exclusive use, minimum nights and rain plan are not published; confirm the hotel still hosts weddings."
+  ],
+  "verify_items": [
+    "[[VERIFY: Saint John Mykonos room count and exclusive-use terms were not read on its official site (fact_400 to fact_402); confirm before stating]]",
+    "[[VERIFY: Semeli Hotel Mykonos qualifies only via a 2020 official-site blog post (updated 2024) with no dedicated weddings page and no stated capacity or ceremony spaces (fact_403, fact_404); confirm it still hosts weddings before profiling]]",
+    "[[VERIFY: ZeNIT Events Center publishes no capacity figure and has no rooms (fact_405 to fact_407); confirm capacity per layout and guest accommodation plan]]",
+    "[[VERIFY: Saint John's '800 guests' maximum (fact_402) is the venue's own claim; confirm which spaces combine to reach it]]"
+  ],
+  "tools_used": [
+    "mcp__Apify__apify--web-fetch",
+    "mcp__Apify__apify--web-search",
+    "Bash"
+  ],
+  "next_agent": [
+    "luxury-writer"
+  ],
+  "payload": {
+    "facts": [
+      {
+        "fact_id": "fact_400",
+        "claim": "Saint John Hotel Villas & Spa (saintjohn.gr) has a dedicated weddings page stating it 'offers a variety of wedding venues and event spaces ideal for hosting the perfect Mykonos wedding' and is located in Agios Ioannis, which it calls 'one of Mykonos' most iconic sunset spots'. Meets the inclusion rule.",
+        "source": "https://www.saintjohn.gr/mykonos_weddings/",
+        "source_type": "official_venue",
+        "checked": "2026-11-11",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_401",
+        "claim": "Saint John ceremony and reception options as stated: couples 'can exchange vows at Agia Fotini Chapel, the sunset balcony, or the deck', with receptions at Theatraki, 1001 Nights, Ilios or Thalatta (Ilios and Thalatta described as 'ideal for indoor wedding venues'). The page states 'All of our venues offer breathtaking full sea views' and 'panoramic Aegean Sea views'. It does not describe the setting as Cycladic.",
+        "source": "https://www.saintjohn.gr/mykonos_weddings/",
+        "source_type": "official_venue",
+        "checked": "2026-11-11",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_402",
+        "claim": "Saint John capacity and services as stated: staff organise 'intimate gatherings or large weddings with up to 800 guests', 'from welcome cocktails to five-course gala dinners'; the property 'always collaborates with experienced wedding planners' for flowers, candles, DJs, photographers, videographers and fireworks, with additional charges. Room count and exclusive use were not read on the weddings page. The separate chapel page (saintjohn.gr/chapel_venue/) loaded only its heading 'Chapel' in this read.",
+        "source": "https://www.saintjohn.gr/mykonos_weddings/",
+        "source_type": "official_venue",
+        "checked": "2026-11-11",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_403",
+        "claim": "Semeli Hotel Mykonos (semelihotel.gr): an official-site news article 'A fairy tale destination wedding in Mykonos' (published 20 January 2020, modified 26 January 2024) says the hotel is 'known for having organised and hosted some of the most legendary weddings in Mykonos', from black-tie affairs 'around the hotel's stunning, starlit pool' or at Krama restaurant to parties at Semeli the Bar, Bao's cocktail bar and Toy Room, plus elopement-style weddings for two. It calls itself a '5 star luxury hotel in Mykonos Town'. Meets the inclusion rule, but via a dated blog post, not a dedicated weddings page.",
+        "source": "https://www.semelihotel.gr/news/destination-wedding-mykonos/",
+        "source_type": "official_venue",
+        "checked": "2026-11-11",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_404",
+        "claim": "Semeli Hotel article details as stated: it mentions a seated dinner 'for 50 -or 200-' only as an example of options, not as a stated venue capacity; the hotel says it will 'take care of the boring bits, like paperwork or permissions', offers treatments in its Aegeo Spa, and works with 'several handpicked Mykonos wedding planners' and its onsite chef. No ceremony location, capacity, room count or exclusive use is stated. A 2017 official-site post snippet mentions 'a capacity of 180 guests' (context not read live).",
+        "source": "https://www.semelihotel.gr/news/destination-wedding-mykonos/",
+        "source_type": "official_venue",
+        "checked": "2026-11-11",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_405",
+        "claim": "ZeNIT Events Center (zenitevents.com) has a dedicated weddings page ('Weddings in Mykonos | Hilltop Wedding Venue at Paradise Beach') and describes itself as 'a unique multifunctional events venue on top of a hill at Paradise beach, with panoramic views of the Aegean Sea and the historic island of Delos'. It is an events venue, not a hotel (no rooms). Meets the inclusion rule.",
+        "source": "https://zenitevents.com/weddings/",
+        "source_type": "official_venue",
+        "checked": "2026-11-11",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_406",
+        "claim": "ZeNIT ceremony and reception options as stated: 'The pool terrace, the two terraces and the central hall can host each moment of the day'. Features: a 20 m infinity pool facing the sea and Delos, two open-air terraces, a central indoor hall so 'your celebration can go ahead in all weather conditions', two cocktail bars and an open-view kitchen. The page offers 'a traditional-style ZεNIT wedding' to 'immerse yourself in the authentic Mykonian culture'. It does not use the word Cycladic for its setting (the address schema lists the region as Cyclades).",
+        "source": "https://zenitevents.com/weddings/",
+        "source_type": "official_venue",
+        "checked": "2026-11-11",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_407",
+        "claim": "ZeNIT capacity and logistics as stated on its homepage FAQ: no capacity figure is published ('Capacity depends on the layout you choose... Tell us your guest numbers and we will propose the right set-up'); it arranges transfers for up to 16 guests itself, larger groups through partners, and 'transfers by sea on the Phoebus boat'; on-site services include a physician and medical room during events, security with CCTV, and parking with a service road for suppliers. Standout: the weddings page says its music experience comes from 'managing the world-famous Cavo Paradiso club'.",
+        "source": "https://zenitevents.com/",
+        "source_type": "official_venue",
+        "checked": "2026-11-11",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_408",
+        "claim": "Kouros Hotel & Suites (kouroshotelmykonos.gr): the homepage navigation links (rooms, suites, The Sanctuary, gastronomy, facilities, gallery, spa, contact, sustainability) include no weddings page; the only wedding reference found is an image file named 'Wedding-at-Kouros-Hotel-Mykonos'. The hotel describes itself as a 'luxury boutique hotel and spa in Mykonos town... close to the Tagoo Beach'. Not qualified (no official wording that it hosts weddings was read).",
+        "source": "https://www.kouroshotelmykonos.gr/",
+        "source_type": "official_venue",
+        "checked": "2026-11-11",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_409",
+        "claim": "Cavo Tagoo Mykonos (cavotagoo.com): the Mykonos concierge page offers 'Special events & photoshooting' ('CAVOTAGOO Mykonos offers a stunning backdrop and exceptional service for your special occasions and photoshoots') and mentions proposals, but does not mention weddings; a site search for weddings found wedding wording only on the Santorini concierge page ('Imagine your dream wedding or event with the caldera as your backdrop'). No Mykonos weddings page found. Not qualified.",
+        "source": "https://www.cavotagoo.com/mykonos/concierge/",
+        "source_type": "official_venue",
+        "checked": "2026-11-11",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_410",
+        "claim": "Mykonos Theoxenia (mykonostheoxenia.com): a site search for weddings returned only the privacy statement, which mentions 'Hosting Events (meetings, weddings etc.)' in a data-protection context (search snippet only, not read live). No weddings page found. Not qualified.",
+        "source": "https://www.mykonostheoxenia.com/privacy-statement/",
+        "source_type": "official_venue",
+        "checked": "2026-11-11",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_411",
+        "claim": "Lyo Mykonos: a search for Lyo weddings returned no official Lyo site result (only Pinterest, planner, Facebook and review results), so no official weddings wording was read. Kalesma Mykonos was considered as an extra candidate but the site search timed out and was not retried. Neither qualified in this batch.",
+        "source": "apify web-search 'Lyo Mykonos weddings' (2026-11-11)",
+        "source_type": "other",
+        "checked": "2026-11-11",
+        "is_price": false
+      }
+    ],
+    "insider_details": [
+      {
+        "detail": "Saint John sits in Agios Ioannis, which the hotel calls one of Mykonos' most iconic sunset spots, and offers three ceremony spots (Agia Fotini Chapel, the sunset balcony, the deck). Time the ceremony to the sunset and keep the outdoor spots for the vows, with an indoor reception room (Ilios or Thalatta) as the weather backup.",
+        "fact_ids": [
+          "fact_400",
+          "fact_401"
+        ]
+      },
+      {
+        "detail": "ZeNIT is an events-only venue on a hill above Paradise beach with no guest rooms, so couples need a separate hotel block and a transfer plan. The venue itself only runs transfers for up to 16 guests, with larger groups through partners or by sea on the Phoebus boat; book coaches early for a full guest list.",
+        "fact_ids": [
+          "fact_405",
+          "fact_407"
+        ]
+      },
+      {
+        "detail": "ZeNIT's central indoor hall is its stated all-weather option, so plan it as the wet-weather or windy-day fallback and confirm how the hall and terraces are split between ceremony and dinner.",
+        "fact_ids": [
+          "fact_406",
+          "fact_407"
+        ]
+      }
+    ],
+    "quotes": [],
+    "real_weddings": [],
+    "verify_items": [
+      "[[VERIFY: Saint John Mykonos room count and exclusive-use terms were not read on its official site (fact_400 to fact_402); confirm before stating]]",
+      "[[VERIFY: Semeli Hotel Mykonos qualifies only via a 2020 official-site blog post (updated 2024) with no dedicated weddings page and no stated capacity or ceremony spaces (fact_403, fact_404); confirm it still hosts weddings before profiling]]",
+      "[[VERIFY: ZeNIT Events Center publishes no capacity figure and has no rooms (fact_405 to fact_407); confirm capacity per layout and guest accommodation plan]]",
+      "[[VERIFY: Saint John's '800 guests' maximum (fact_402) is the venue's own claim; confirm which spaces combine to reach it]]"
+    ],
+    "needs_signoff": [],
+    "must_include_coverage": [
+      {
+        "item": "Additional Mykonos venue profiles (area, setting in own words, ceremony options, capacity, rooms, exclusive use, standout)",
+        "covered_by": [
+          "fact_400",
+          "fact_401",
+          "fact_402",
+          "fact_403",
+          "fact_404",
+          "fact_405",
+          "fact_406",
+          "fact_407",
+          "fact_408",
+          "fact_409",
+          "fact_410",
+          "fact_411",
+          "[[VERIFY: Saint John Mykonos room count and exclusive-use terms were not read on its official site (fact_400 to fact_402); confirm before stating]]",
+          "[[VERIFY: Semeli Hotel Mykonos qualifies only via a 2020 official-site blog post (updated 2024) with no dedicated weddings page and no stated capacity or ceremony spaces (fact_403, fact_404); confirm it still hosts weddings before profiling]]",
+          "[[VERIFY: ZeNIT Events Center publishes no capacity figure and has no rooms (fact_405 to fact_407); confirm capacity per layout and guest accommodation plan]]"
+        ]
+      }
+    ]
+  }
+}
