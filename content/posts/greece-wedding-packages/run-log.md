@@ -3,3 +3,4 @@
 00:25 04 images done: 6 placeholder slots, valid.
 00:27 02 SEO done: AU 30 / US 210, KD 0; no site page ranks for Greece package queries; split recommended.
 00:31 03 batch B done: 27 facts; package detail from Four Seasons Astir, Melenos, Angsana, Atrium, Lagonissi (2022 PDF); legal and insurance re-read (insurance URL moved).
+00:31 03 batch A done: 28 facts; full package detail from Elounda Collection, Elounda Beach, Abaton, Euphoria, Grace; partial Nana Princess, Canaves. Elounda Beach lyre/fireworks now listed as additional services (affects Crete and Greece drafts; note in report). Packs merged.
