@@ -8,3 +8,4 @@
 22:44 03 top-up D done: Santo Wines (Pyrgos) and Venetsanos Winery qualify; Smartraveller legalisation page read. Packs merged (6 venues).
 22:49 05 draft done: ~4,175 words, 6 venue examples, scan clean, 0 VERIFY; first-draft docx built.
 22:51 07 readers done (enquire 3/3/2/3/1; UHNW: large lists need buyout route). 06 editor pass_with_edits (4.14): 9 edits applied to 05-draft-r2.md.
+22:53 07b panel: revise (enquire 2.6), 2 must-fix + 4 should-fix + 4 consider; business details deferred. One final pass.
