@@ -1,0 +1,681 @@
+{
+  "agent": "editor",
+  "task_id": "mykonos-wedding",
+  "stage": "06",
+  "status": "complete",
+  "round": 1,
+  "inputs_used": [
+    "CLAUDE.md",
+    "content/posts/mykonos-wedding/00-input.json",
+    "content/posts/mykonos-wedding/01-brief.json",
+    "content/posts/mykonos-wedding/02-seo.json",
+    "content/posts/mykonos-wedding/03-source-pack.json",
+    "content-system/brand/brand-facts.md",
+    "content-system/brand/voice-guide.md",
+    "content-system/brand/banned-phrases.md",
+    "content-system/rubrics/editor-rubric.md",
+    "content-system/schemas/06-edit.schema.json",
+    "content-system/seo/link-map.csv",
+    "content/posts/mykonos-wedding/05-draft.md"
+  ],
+  "next_agent": [
+    "luxury-writer"
+  ],
+  "self_qa": {
+    "checks": [
+      {
+        "check": "scan_copy.py run and reflected",
+        "pass": true,
+        "note": "On 05-draft.md and on a scratch copy with all 12 edits applied: banned [], dashes 0, overlaps []; flagged 'luxury' x1 (Visit Greece description, fact_119) and 'exclusive' x7 (exclusive use, a field term)."
+      },
+      {
+        "check": "Every factual sentence logged",
+        "pass": true,
+        "note": "All marker groups logged; Naxos table checked cell by cell against fact_201 and fact_202 (all match, labelled Naxos); wind against fact_203."
+      },
+      {
+        "check": "Edit strings occur exactly once",
+        "pass": true,
+        "note": "Script-verified: each old string occurs once in 05-draft.md and once at its turn when applied in order."
+      },
+      {
+        "check": "Decision consistent with scores",
+        "pass": true,
+        "note": "Average 4.14, no criterion below 3, no blocking issues; edits are small must-fixes, so pass_with_edits."
+      }
+    ],
+    "confidence": 0.85
+  },
+  "open_questions": [],
+  "assumptions": [
+    "'Naxos, the nearest official weather station' is kept: fact_117 shows HNMS lists only Naxos and Rhodes for the South Aegean, and Naxos is the nearer.",
+    "Internal links to draft pages (mykonos-wedding-venues, greece-wedding-venues, santorini-wedding, paros-wedding-venues, greece-wedding-packages, expert-advice/greek-wedding-traditions) are all in link-map.csv; left in place for the publish-order check."
+  ],
+  "payload": {
+    "draft_file": "content/posts/mykonos-wedding/05-draft.md",
+    "rubric": {
+      "voice": 4,
+      "expertise": 4,
+      "accuracy": 4,
+      "seo_fit": 5,
+      "commercial_link": 4,
+      "structure": 4,
+      "brief_fit": 4
+    },
+    "average": 4.14,
+    "blocking_issues": [],
+    "decision": "pass_with_edits",
+    "edits": [
+      {
+        "location": "Choosing where to marry, Resorts with chapels, intro line",
+        "issue": "Unsourced generalisation ('Most Mykonos weddings'); state it as confident description.",
+        "fix": "Replace exactly:\nMost Mykonos weddings fall into a few venue types, each with its own trade-offs.\nwith:\nMykonos wedding venues fall into a few types, each with its own trade-offs.",
+        "old": "Most Mykonos weddings fall into a few venue types, each with its own trade-offs.",
+        "new": "Mykonos wedding venues fall into a few types, each with its own trade-offs."
+      },
+      {
+        "location": "Five venues, Kivotos, sentence 3",
+        "issue": "Kivotos coordinators' paperwork help must read as the venue's own offer (fact_06 is the venue's claim). This is now its only mention.",
+        "fix": "Replace exactly:\nand its own wedding coordinators help with items including\nwith:\nand says its own wedding coordinators help with items including",
+        "old": "and its own wedding coordinators help with items including",
+        "new": "and says its own wedding coordinators help with items including"
+      },
+      {
+        "location": "Primary CTA, sentence 2",
+        "issue": "Must-fix: Advisor claim outside brand-facts.md ('confirms the unpublished details above'). Brand facts support single point of contact and confirming inclusions in writing only.",
+        "fix": "Replace exactly:\nYour Wedded Advisor is a single point of contact, start to finish, and confirms the unpublished details above and every inclusion in writing before you commit.\nwith:\nYour Wedded Advisor is a single point of contact, start to finish, and confirms every inclusion in writing before you commit.",
+        "old": "Your Wedded Advisor is a single point of contact, start to finish, and confirms the unpublished details above and every inclusion in writing before you commit.",
+        "new": "Your Wedded Advisor is a single point of contact, start to finish, and confirms every inclusion in writing before you commit."
+      },
+      {
+        "location": "When to get married, Weather at Naxos, paragraph 1",
+        "issue": "Must-fix: research talk (what the source tables do and do not hold) and a misapplied marker (fact_200 is the Santorini station note). Keep the HNMS link and the Naxos label.",
+        "fix": "Replace exactly:\nThe [Hellenic National Meteorological Service](http://oldportal.emy.gr/emy/en/climatology/climatology_city?perifereia=South%20Aegean&poli=Naxos) climate tables have no station on Mykonos; for the South Aegean they list Naxos and Rhodes. <!-- fact_117 --> The figures below are for Naxos, the nearest official weather station, so read them as a guide to the neighbouring Cyclades rather than a forecast for your venue. <!-- fact_117 --> <!-- fact_200 -->\nwith:\nThe figures below are from the [Hellenic National Meteorological Service](http://oldportal.emy.gr/emy/en/climatology/climatology_city?perifereia=South%20Aegean&poli=Naxos) station on Naxos, the nearest official weather station, so read them as a guide to the neighbouring Cyclades rather than a forecast for your venue. <!-- fact_117 -->",
+        "old": "The [Hellenic National Meteorological Service](http://oldportal.emy.gr/emy/en/climatology/climatology_city?perifereia=South%20Aegean&poli=Naxos) climate tables have no station on Mykonos; for the South Aegean they list Naxos and Rhodes. <!-- fact_117 --> The figures below are for Naxos, the nearest official weather station, so read them as a guide to the neighbouring Cyclades rather than a forecast for your venue. <!-- fact_117 --> <!-- fact_200 -->",
+        "new": "The figures below are from the [Hellenic National Meteorological Service](http://oldportal.emy.gr/emy/en/climatology/climatology_city?perifereia=South%20Aegean&poli=Naxos) station on Naxos, the nearest official weather station, so read them as a guide to the neighbouring Cyclades rather than a forecast for your venue. <!-- fact_117 -->"
+      },
+      {
+        "location": "Weather at Naxos, paragraph after table, sentence 2",
+        "issue": "Must-fix: weather figures not labelled as Naxos.",
+        "fix": "Replace exactly:\nOctober is different: rain rises\nwith:\nOctober is different at Naxos: rain rises",
+        "old": "October is different: rain rises",
+        "new": "October is different at Naxos: rain rises"
+      },
+      {
+        "location": "Weather at Naxos, paragraph after table, sentence 3",
+        "issue": "Must-fix: weather figures not labelled as Naxos.",
+        "fix": "Replace exactly:\nMay and September sit between, with mean maximums\nwith:\nAt Naxos, May and September sit between, with mean maximums",
+        "old": "May and September sit between, with mean maximums",
+        "new": "At Naxos, May and September sit between, with mean maximums"
+      },
+      {
+        "location": "Wind, heat and travel advice, Crowds",
+        "issue": "Unsupported inference that shoulder dates mean quieter arrivals (fact_113 says only that the season brings heat and crowds); edges towards a best-month claim. Cut.",
+        "fix": "Replace exactly:\n A date at either end of that window can mean a quieter arrival for guests.\nwith:\n(nothing: delete)",
+        "old": " A date at either end of that window can mean a quieter arrival for guests.",
+        "new": ""
+      },
+      {
+        "location": "Legal or symbolic ceremony, paragraph 2",
+        "issue": "Unsourced generalisation ('Many couples'); write as confident option.",
+        "fix": "Replace exactly:\nMany couples sign the legal paperwork quietly in Australia\nwith:\nYou can sign the legal paperwork quietly in Australia",
+        "old": "Many couples sign the legal paperwork quietly in Australia",
+        "new": "You can sign the legal paperwork quietly in Australia"
+      },
+      {
+        "location": "Steps for Australian couples, sentence 1",
+        "issue": "Accuracy: fact_100 says 'some countries', not 'many'.",
+        "fix": "Replace exactly:\nMany countries ask you to prove\nwith:\nSome countries ask you to prove",
+        "old": "Many countries ask you to prove",
+        "new": "Some countries ask you to prove"
+      },
+      {
+        "location": "Civil marriage with the Municipality of Mykonos, paragraph 2",
+        "issue": "Must-fix: second Kivotos coordinators mention; in the paperwork section it reads as a recommendation to hand paperwork to a venue. The venue offer stays once, in the Kivotos profile. Cut the paragraph.",
+        "fix": "Replace exactly:\nIf a venue offers help with municipal paperwork, as Kivotos does through its own wedding coordinators, ask exactly which steps that covers and which stay with you. <!-- fact_06 -->\nwith:\n(nothing: delete)",
+        "old": "\n\nIf a venue offers help with municipal paperwork, as Kivotos does through its own wedding coordinators, ask exactly which steps that covers and which stay with you. <!-- fact_06 -->",
+        "new": ""
+      },
+      {
+        "location": "FAQ, Can we have a symbolic ceremony, sentence 2",
+        "issue": "Unsourced generalisation ('Many couples').",
+        "fix": "Replace exactly:\nYes. Many couples complete the legal step in Australia\nwith:\nYes. You can complete the legal step in Australia",
+        "old": "Yes. Many couples complete the legal step in Australia",
+        "new": "Yes. You can complete the legal step in Australia"
+      },
+      {
+        "location": "FAQ, How do wedding guests get to Mykonos",
+        "issue": "Unsourced 'Most fly' / 'Others' split; fact_120 and fact_113 give routes, not shares.",
+        "fix": "Replace exactly:\nMost fly from Athens, about 45 minutes, or from Thessaloniki, about 1 hour 10 minutes. <!-- fact_120 --> Others arrive by ferry or catamaran\nwith:\nGuests can fly from Athens, about 45 minutes, or from Thessaloniki, about 1 hour 10 minutes. <!-- fact_120 --> They can also arrive by ferry or catamaran",
+        "old": "Most fly from Athens, about 45 minutes, or from Thessaloniki, about 1 hour 10 minutes. <!-- fact_120 --> Others arrive by ferry or catamaran",
+        "new": "Guests can fly from Athens, about 45 minutes, or from Thessaloniki, about 1 hour 10 minutes. <!-- fact_120 --> They can also arrive by ferry or catamaran"
+      }
+    ],
+    "fact_check_log": [
+      {
+        "claim": "Mykonos sits in the heart of the Cyclades and is known as the island of the winds.",
+        "fact_id": "fact_119",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Its name has long been shorthand for cosmopolitan, luxury holidays.",
+        "fact_id": "fact_119",
+        "status": "confirmed"
+      },
+      {
+        "claim": "The picture couples carry with them is a real one: paved lanes, white houses, small chapels, dry-stone walls and the windmills that serve as the island's trademark.",
+        "fact_id": "fact_119",
+        "status": "confirmed"
+      },
+      {
+        "claim": "In Hora, the main town, the Little Venice neighbourhood has houses built right against the sea.",
+        "fact_id": "fact_119",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Hora and Little Venice** suit couples who want guests close to the life of the town, with houses built against the sea and the windmills above.",
+        "fact_id": "fact_119",
+        "status": "confirmed"
+      },
+      {
+        "claim": "The beaches** suit couples who picture a ceremony with the sand below and dinner by a pool. Mykonos Blu offers wedding experiences on Psarou beach with the sunset as a backdrop.",
+        "fact_id": "fact_01",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Royal Myconian lists a private spot on Elia Beach among its event settings.",
+        "fact_id": "fact_12",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Ftelia Bay Hotel sits on Ftelia Beach.",
+        "fact_id": "fact_10",
+        "status": "confirmed"
+      },
+      {
+        "claim": "The sunset coast** suits couples who want the light to do the work. Saint John Hotel Villas & Spa is in Agios Ioannis, one of the island's celebrated sunset spots.",
+        "fact_id": "fact_07",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Hotels with a private chapel.** Kivotos and Ftelia Bay Hotel each have a private chapel on their grounds, and Saint John offers vows at Agia Fotini Chapel.",
+        "fact_id": "fact_04",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Hotels with a private chapel.** Kivotos and Ftelia Bay Hotel each have a private chapel on their grounds, and Saint John offers vows at Agia Fotini Chapel.",
+        "fact_id": "fact_10",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Hotels with a private chapel.** Kivotos and Ftelia Bay Hotel each have a private chapel on their grounds, and Saint John offers vows at Agia Fotini Chapel.",
+        "fact_id": "fact_08",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Beachfront resorts.** These give you the ceremony, the dinner and the guest rooms under one events team. Mykonos Blu describes itself as a Cycladic settlement on the waterfront, with 103 guest rooms.",
+        "fact_id": "fact_01",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Large resorts with several spaces.** For a long guest list, a resort with more than one terrace lets the welcome drinks, the ceremony and the dinner each have their own setting. Saint John lists several ceremony and reception spaces, all with sea views.",
+        "fact_id": "fact_08",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Mykonos Blu, Psarou.** A five-star beachfront hotel with dedicated wedding specialists, customised menus and vow renewals as well as weddings.",
+        "fact_id": "fact_01",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Mykonos Blu, Psarou.** A five-star beachfront hotel with dedicated wedding specialists, customised menus and vow renewals as well as weddings.",
+        "fact_id": "fact_03",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Ceremonies take place on The Ocean Balcony, just above Psarou beach, for up to 60 guests, and the wedding party can then move to the L'Archipel restaurant and pool area for up to 120.",
+        "fact_id": "fact_02",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Kivotos.** A beachfront boutique hotel with a private chapel on its grounds, suited to an intimate wedding.",
+        "fact_id": "fact_04",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Its most popular reception setting is the area around the main pool on the lower level, facing the Aegean.",
+        "fact_id": "fact_05",
+        "status": "confirmed"
+      },
+      {
+        "claim": "The hotel offers three named wedding packages, and its own wedding coordinators help with items including municipal paperwork and the marriage licence.",
+        "fact_id": "fact_06",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Saint John Hotel Villas & Spa, Agios Ioannis.** Vows can be held at Agia Fotini Chapel, on the sunset balcony or on the deck, with receptions in spaces including Theatraki, Ilios and Thalatta.",
+        "fact_id": "fact_08",
+        "status": "confirmed"
+      },
+      {
+        "claim": "The hotel describes its weddings as running from intimate gatherings to large weddings with up to 800 guests, from welcome cocktails to five-course gala dinners.",
+        "fact_id": "fact_09",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Ftelia Bay Hotel, Ftelia Beach.** A boutique hotel where the ceremony and pre-dinner cocktails can be held at its private chapel, with traditional architecture and sea views.",
+        "fact_id": "fact_10",
+        "status": "confirmed"
+      },
+      {
+        "claim": "The open-air pool area can host the celebration, and guests can stay in the hotel's rooms and suites.",
+        "fact_id": "fact_10",
+        "status": "confirmed"
+      },
+      {
+        "claim": "The open-air pool area can host the celebration, and guests can stay in the hotel's rooms and suites.",
+        "fact_id": "fact_11",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Royal Myconian, Elia Beach.** Part of the Myconian Collection, whose events team hosts weddings across its venues, with a pool terrace and a private spot on Elia Beach.",
+        "fact_id": "fact_12",
+        "status": "confirmed"
+      },
+      {
+        "claim": "The [Hellenic National Meteorological Service](http://oldportal.emy.gr/emy/en/climatology/climatology_city?perifereia=South%20Aegean&poli=Naxos) climate tables have no station on Mykonos; for the South Aegean they list Naxos and Rhodes.",
+        "fact_id": "fact_117",
+        "status": "removed"
+      },
+      {
+        "claim": "The figures below are for Naxos, the nearest official weather station, so read them as a guide to the neighbouring Cyclades rather than a forecast for your venue.",
+        "fact_id": "fact_117",
+        "status": "confirmed"
+      },
+      {
+        "claim": "The figures below are for Naxos, the nearest official weather station, so read them as a guide to the neighbouring Cyclades rather than a forecast for your venue.",
+        "fact_id": "fact_200",
+        "status": "unsupported"
+      },
+      {
+        "claim": "(table above)",
+        "fact_id": "fact_201",
+        "status": "confirmed"
+      },
+      {
+        "claim": "(table above)",
+        "fact_id": "fact_202",
+        "status": "confirmed"
+      },
+      {
+        "claim": "A few patterns matter for a wedding. From June to August, rain all but disappears at Naxos, with under one rain day a month in July and August.",
+        "fact_id": "fact_202",
+        "status": "confirmed"
+      },
+      {
+        "claim": "October is different: rain rises to 38.6 mm across 5.5 days, and April sees 6.0 rain days.",
+        "fact_id": "fact_202",
+        "status": "confirmed"
+      },
+      {
+        "claim": "May and September sit between, with mean maximums of 22.1°C and 25.1°C.",
+        "fact_id": "fact_201",
+        "status": "confirmed"
+      },
+      {
+        "claim": "The wind deserves as much attention as the temperature. At Naxos the prevailing wind blows from the north in every month, and the station's mean wind readings run higher from July to October than in May and June.",
+        "fact_id": "fact_203",
+        "status": "confirmed"
+      },
+      {
+        "claim": "On an island known as the island of the winds, ask every venue where the ceremony sits relative to that north wind, and what shelter it has.",
+        "fact_id": "fact_119",
+        "status": "confirmed"
+      },
+      {
+        "claim": "As at November 2026, [Smartraveller's advice for Greece](https://www.smartraveller.gov.au/destinations/europe/greece) is to exercise normal safety precautions.",
+        "fact_id": "fact_109",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Heat.** Heatwaves are frequent in Greece over the summer months and can cause heat exhaustion and heat stroke.",
+        "fact_id": "fact_110",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Plan water, hats, light fabrics, shade and air-conditioned rest for guests, and set a summer ceremony later in the day.",
+        "fact_id": "fact_110",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Wildfire.** Wildfires occur during the extended summer period, from June to September, including near tourist areas, and can start with little warning and travel quickly.",
+        "fact_id": "fact_111",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Wind and ferries.** Ferry services can be delayed or cancelled in bad weather, mainly because of strong winds.",
+        "fact_id": "fact_113",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Guests arriving by sea should check the forecast and reconfirm departures with their travel provider.",
+        "fact_id": "fact_113",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Swimming.** Boat traffic, coastal hazards, strong currents and marine life all call for care, and sea conditions can change quickly.",
+        "fact_id": "fact_112",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Most drownings happen on beaches without a lifeguard or outside lifeguard hours, so point guests to patrolled beaches.",
+        "fact_id": "fact_112",
+        "status": "confirmed"
+      },
+      {
+        "claim": "The ground itself.** Greece is in an active seismic zone and experiences earthquakes and volcanic activity.",
+        "fact_id": "fact_114",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Crowds.** The tourist season runs from May to October, with high temperatures and large crowds at popular seaports.",
+        "fact_id": "fact_113",
+        "status": "confirmed"
+      },
+      {
+        "claim": "The island's smaller settings suit it. Kivotos describes its private chapel as ideal for an intimate wedding, and the Ocean Balcony at Mykonos Blu holds up to 60, so a very small party fits easily.",
+        "fact_id": "fact_04",
+        "status": "confirmed"
+      },
+      {
+        "claim": "The island's smaller settings suit it. Kivotos describes its private chapel as ideal for an intimate wedding, and the Ocean Balcony at Mykonos Blu holds up to 60, so a very small party fits easily.",
+        "fact_id": "fact_02",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Kivotos also offers newlyweds their first days aboard the hotel's privately owned schooner.",
+        "fact_id": "fact_06",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Many countries ask you to prove you are not already married, and each decides what proof it accepts.",
+        "fact_id": "fact_100",
+        "status": "confirmed"
+      },
+      {
+        "claim": "The most common documents are a Certificate of No Impediment to Marriage (CNI) and certificates from a registry of births, deaths and marriages.",
+        "fact_id": "fact_100",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Those registry certificates can be a statement of no record of a previous marriage, a Single Status certificate or a No Record Result certificate.",
+        "fact_id": "fact_100",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Local authorities may also ask for divorce papers, a late spouse's death certificate, and your original birth certificate and passport.",
+        "fact_id": "fact_100",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Regional and national laws can differ, so contact the destination's embassy or consulate for the specifics.",
+        "fact_id": "fact_100",
+        "status": "confirmed"
+      },
+      {
+        "claim": "The Department of Foreign Affairs and Trade can issue a CNI in Australia, but some local authorities accept only CNIs issued in their own country.",
+        "fact_id": "fact_101",
+        "status": "confirmed"
+      },
+      {
+        "claim": "whether it also needs an authentication or apostille.",
+        "fact_id": "fact_101",
+        "status": "confirmed"
+      },
+      {
+        "claim": "At the embassy in Athens.** The [Australian Embassy in Athens](https://greece.embassy.gov.au/athn/notarial.html) witnesses CNI applications, issues CNIs and witnesses notices of intended marriage.",
+        "fact_id": "fact_104",
+        "status": "confirmed"
+      },
+      {
+        "claim": "All notarial services need an appointment, Monday to Friday, 9am to 12.30pm, though CNI and apostille documents can be sent by post.",
+        "fact_id": "fact_104",
+        "status": "confirmed"
+      },
+      {
+        "claim": "They are ready for collection within two working days unless same-day collection is arranged in advance, or can be returned by mail, and a fee applies.",
+        "fact_id": "fact_104",
+        "status": "confirmed"
+      },
+      {
+        "claim": "The embassy gives no legal advice, and you are responsible for knowing which service you need.",
+        "fact_id": "fact_105",
+        "status": "confirmed"
+      },
+      {
+        "claim": "It does not witness signatures on overseas documents, and honorary consuls are not authorised to provide notarial services.",
+        "fact_id": "fact_105",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Legalising your documents.** Ask the Greek authority which documents it needs and which must be legalised, and whether that means an apostille or an authentication certificate.",
+        "fact_id": "fact_106",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Documents that are not original Australian public documents must first be notarised by an Australian Notary Public.",
+        "fact_id": "fact_106",
+        "status": "confirmed"
+      },
+      {
+        "claim": "The apostille or authentication certificate is applied directly to the document.",
+        "fact_id": "fact_107",
+        "status": "confirmed"
+      },
+      {
+        "claim": "If you do not want your originals marked, have a notarised copy legalised instead, and check the Greek authority accepts it.",
+        "fact_id": "fact_107",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Requests go on the Document Legalisation Request Form, signed in front of an authorised witness, and can be lodged by appointment at an Australian Passport Office, at many Australian embassies and consulates overseas, or by registered mail to the Authentications Section in Melbourne or Sydney; a fee applies.",
+        "fact_id": "fact_107",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Processing times vary, with delays at the end of the school year, in peak holiday periods and for incomplete requests.",
+        "fact_id": "fact_108",
+        "status": "confirmed"
+      },
+      {
+        "claim": "An Australian-issued apostille can be verified online.",
+        "fact_id": "fact_108",
+        "status": "confirmed"
+      },
+      {
+        "claim": "If a venue offers help with municipal paperwork, as Kivotos does through its own wedding coordinators, ask exactly which steps that covers and which stay with you.",
+        "fact_id": "fact_06",
+        "status": "removed"
+      },
+      {
+        "claim": "You cannot register an overseas marriage in Australia, but in most cases it is legally recognised if it was valid under the law of the country where it took place and would have been valid under Australian law had it happened here.",
+        "fact_id": "fact_102",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Australia does not recognise an overseas marriage where either person is already married, is not old enough to marry, is too closely related to the other, or was forced to marry.",
+        "fact_id": "fact_103",
+        "status": "confirmed"
+      },
+      {
+        "claim": "A foreign marriage certificate is usually accepted as proof of the marriage, but it may not work as proof of a name change.",
+        "fact_id": "fact_102",
+        "status": "confirmed"
+      },
+      {
+        "claim": "If either of you plans to change your name, check with your state registry of births, deaths and marriages before you fly, and talk to a lawyer to confirm the certificate is valid in Australia.",
+        "fact_id": "fact_102",
+        "status": "confirmed"
+      },
+      {
+        "claim": "The flight from Athens International Airport to Mykonos takes about 45 minutes, and from Thessaloniki about 1 hour 10 minutes.",
+        "fact_id": "fact_120",
+        "status": "confirmed"
+      },
+      {
+        "claim": "[Mykonos Airport](https://www.jmk-airport.gr/en) lists a direct public bus service and taxis to and from the airport.",
+        "fact_id": "fact_118",
+        "status": "confirmed"
+      },
+      {
+        "claim": "It also has accessible travel information for passengers with reduced mobility, worth sending to any guest who needs help on arrival, and a Private Flights Lounge with VIP welcoming services.",
+        "fact_id": "fact_118",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Entry.** Greece is in the Schengen area, and Australians can make short trips without a visa for up to 90 days in any 180-day period.",
+        "fact_id": "fact_115",
+        "status": "confirmed"
+      },
+      {
+        "claim": "On arrival, Australian passport holders register fingerprints and a photo under the European Entry/Exit System, which is free and needs no action beforehand but may slow the border.",
+        "fact_id": "fact_115",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Ferries and large catamarans carry most visitors to the Greek islands.",
+        "fact_id": "fact_113",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Some services lack suitable access for people with disabilities, and in most cases passengers carry their own luggage up and down stairs.",
+        "fact_id": "fact_113",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Services can be delayed or cancelled when the wind is strong, so guests should check the forecast and reconfirm departures.",
+        "fact_id": "fact_113",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Weather plan.** What is the plan for a strong north wind, a rare shower or a heatwave, and which covered space is held for you?",
+        "fact_id": "fact_203",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Weather plan.** What is the plan for a strong north wind, a rare shower or a heatwave, and which covered space is held for you?",
+        "fact_id": "fact_110",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Suppliers.** May you bring your own photographer, florist and musicians, and what are the rules on access and loading? Saint John works with experienced wedding planners for flowers, DJs, photography and fireworks, with additional charges.",
+        "fact_id": "fact_09",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Season.** The May to October tourist season brings heat and crowds to the popular seaports.",
+        "fact_id": "fact_113",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Guest numbers.** Space changes shape as the list grows. At Mykonos Blu, the ceremony balcony holds up to 60 while the restaurant and pool area holds up to 120, so a larger party means a different ceremony plan.",
+        "fact_id": "fact_02",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Packages versus extras.** Some venues set out named wedding packages, while others add charges for planner-arranged services such as flowers, DJs, photography and fireworks.",
+        "fact_id": "fact_06",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Packages versus extras.** Some venues set out named wedding packages, while others add charges for planner-arranged services such as flowers, DJs, photography and fireworks.",
+        "fact_id": "fact_09",
+        "status": "confirmed"
+      },
+      {
+        "claim": "A legal ceremony is one of your two routes. For a civil marriage on the island, check the steps, documents and any fees with the Municipality of Mykonos and the Australian Embassy in Athens. In most cases an overseas marriage is recognised in Australia if it was valid where it took place and would have been valid under Australian law.",
+        "fact_id": "fact_102",
+        "status": "confirmed"
+      },
+      {
+        "claim": "The most common are a Certificate of No Impediment to Marriage and certificates from a registry of births, deaths and marriages, and local authorities may also ask for divorce papers, a late spouse's death certificate, and your original birth certificate and passport.",
+        "fact_id": "fact_100",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Ask the Greek authority which documents it needs and which must carry an apostille or authentication.",
+        "fact_id": "fact_106",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Yes. Many couples complete the legal step in Australia, then hold a symbolic ceremony on the island. An overseas marriage cannot be registered in Australia, so a legal step at home keeps the paperwork simple.",
+        "fact_id": "fact_102",
+        "status": "confirmed"
+      },
+      {
+        "claim": "It suits a small wedding well. Kivotos describes its private chapel as ideal for an intimate wedding, and newlyweds there may spend their first days aboard the hotel's privately owned schooner.",
+        "fact_id": "fact_04",
+        "status": "confirmed"
+      },
+      {
+        "claim": "It suits a small wedding well. Kivotos describes its private chapel as ideal for an intimate wedding, and newlyweds there may spend their first days aboard the hotel's privately owned schooner.",
+        "fact_id": "fact_06",
+        "status": "confirmed"
+      },
+      {
+        "claim": "The tourist season runs from May to October.",
+        "fact_id": "fact_113",
+        "status": "confirmed"
+      },
+      {
+        "claim": "At Naxos, the nearest official weather station, June to August are driest, while October brings the most rain of those months and the north wind runs stronger from July to October.",
+        "fact_id": "fact_202",
+        "status": "confirmed"
+      },
+      {
+        "claim": "At Naxos, the nearest official weather station, June to August are driest, while October brings the most rain of those months and the north wind runs stronger from July to October.",
+        "fact_id": "fact_203",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Most fly from Athens, about 45 minutes, or from Thessaloniki, about 1 hour 10 minutes.",
+        "fact_id": "fact_120",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Others arrive by ferry or catamaran, which can be delayed or cancelled in strong winds.",
+        "fact_id": "fact_113",
+        "status": "confirmed"
+      },
+      {
+        "claim": "A date at either end of that window can mean a quieter arrival for guests.",
+        "status": "removed"
+      },
+      {
+        "claim": "Most Mykonos weddings fall into a few venue types.",
+        "status": "removed"
+      },
+      {
+        "claim": "Many couples sign the legal paperwork quietly in Australia (body and FAQ).",
+        "status": "removed"
+      },
+      {
+        "claim": "Your Wedded Advisor confirms the unpublished details above.",
+        "status": "removed"
+      }
+    ],
+    "compliance": {
+      "pass": true,
+      "issues": [
+        "Fixed by edits: Advisor claim outside brand facts in primary CTA; second Kivotos paperwork mention in the legal section; research talk on HNMS station coverage; unlabelled Naxos figures.",
+        "Checked clean: no prices or amounts, no Wedded Privileges, no 'last dance', no 'best' or best month, no meltemi, no port claims, no same-sex legal position, no non-venue vendor names, no em dashes, Australian spelling, one Advisor line in the body plus the close, 4 one-sentence Key takeaways."
+      ]
+    },
+    "originality": {
+      "pass": true,
+      "matches": []
+    },
+    "banned_phrases_found": [],
+    "needs_signoff": []
+  }
+}
