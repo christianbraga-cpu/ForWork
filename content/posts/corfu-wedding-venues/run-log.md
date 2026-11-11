@@ -11,3 +11,4 @@
 03:15 05 draft done: ~4,700 words, 10 venues, scan clean, 1 VERIFY (Villa Medusa naming).
 03:16 07 readers: search_visitor, uhnw done (no must-fix).
 03:16 07 readers: planner_couple, sceptic done (sceptic must-fix: Courti view overstated in table).
+03:20 06 editor pass_with_edits (4.14): 31 edits applied to 05-draft-r2.md; 02-seo meta title updated to 10.
