@@ -8,3 +8,4 @@
 23:39 07 readers done (enquire 3/3/2/3/1; 3 flagged 'Wonderland Concierge' anchor). 06 editor pass_with_edits (4.14): 12 edits applied to 05-draft-r2.md, plus brand fix to 'Wedded Concierge'.
 23:42 07b panel: revise (enquire 2.6), 1 must-fix + 6 should-fix + 5 consider; business details deferred. One final pass.
 23:43 08 final done: ~3,710 words, scan clean, 0 VERIFY.
+23:44 8b pass_with_edits (2 edits) and CRO (1 change) applied; 4 UTMs once each.

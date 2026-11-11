@@ -13,7 +13,7 @@ Mykonos is on your shortlist, and before you ask a single venue for a quote you 
 
 - Decide early whether your ceremony will be legal or symbolic, because that choice sets the paperwork and the timeline.
 - Choose the area and the kind of venue first, then narrow to names using the full Mykonos venues guide.
-- June to August are the driest months at Naxos, the nearest official weather station, with May and September milder, so plan ceremony times around summer heat and the north wind.
+- June to August are the driest months at Naxos, the nearest official weather station, with May and September milder, so plan ceremony times around summer heat and the north wind. <!-- fact_201 --> <!-- fact_202 --> <!-- fact_203 -->
 - Ask every venue about deposits, cancellation, exclusive use and music times, and get the answers in writing before you commit.
 
 ## Why couples choose Mykonos for their wedding
@@ -87,7 +87,7 @@ The month you choose sets the ceremony time, the fabrics, the shade you need and
 
 The figures below are from the [Hellenic National Meteorological Service](http://oldportal.emy.gr/emy/en/climatology/climatology_city?perifereia=South%20Aegean&poli=Naxos) station on Naxos, the nearest official weather station, so read them as a guide to the neighbouring Cyclades rather than a forecast for your venue. <!-- fact_117 -->
 
-| Month (Naxos) | Max °C | Rain (mm) | Rain days |
+| Month (Naxos) | Mean max °C | Rain (mm) | Rain days |
 |---|---|---|---|
 | April | 18.7 | 17.6 | 6.0 |
 | May | 22.1 | 10.6 | 3.6 |
@@ -247,7 +247,7 @@ The cost of a Mykonos wedding moves with the decisions above, not with the islan
 
 **Exclusive use and the number of days.** Closing a space, a venue or a whole property to other guests, and for how long, shapes the overall cost as much as the guest count does.
 
-**Packages versus extras.** Some venues set out named wedding packages, while others add charges for planner-arranged services such as flowers, DJs, photography and fireworks. <!-- fact_06 --> <!-- fact_09 --> Compare inclusions line by line.
+**Packages versus extras.** Some venues set out named wedding packages, while others add charges for planner-arranged services such as flowers, DJs, photography and fireworks. <!-- fact_06 --> <!-- fact_09 --> Compare inclusions line by line. To weigh real venues and dates side by side, [see real options with Wedded Concierge](https://weddedwonderland.com/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=mykonos-wedding&utm_content=secondary).
 
 **Travel and rooms.** Flights into the island, a spare night for weather, and how many rooms you hold for guests all sit outside the ceremony itself.
 
