@@ -1,0 +1,249 @@
+{
+  "agent": "editor",
+  "task_id": "corfu-wedding-venues",
+  "stage": "06",
+  "status": "complete",
+  "round": 2,
+  "inputs_used": [
+    "CLAUDE.md",
+    "content/posts/corfu-wedding-venues/08-final.md",
+    "content/posts/corfu-wedding-venues/03-source-pack.json",
+    "content/posts/corfu-wedding-venues/07-panel.json",
+    "content/posts/corfu-wedding-venues/06-edit.json",
+    "content-system/brand/brand-facts.md",
+    "content/posts/crete-wedding-venues/06-edit-final.json"
+  ],
+  "self_qa": {
+    "checks": [
+      {
+        "check": "scan_copy.py on 08-final.md",
+        "pass": true,
+        "note": "banned [], dashes 0, overlaps []; flagged beautiful 1 (Rodostamo quote), luxury 1, luxurious 1 (Angsana quote), exclusive 15 (all sole use or quoted venue wording)."
+      },
+      {
+        "check": "10 venues, table vs entries",
+        "pass": true,
+        "note": "10 entries and 10 table rows; areas, capacities, room counts, ceremony and exclusive-use cells match entries and markers. Villa Medusa sea-view cell hedged with VERIFY per panel must-fix, entry keeps its VERIFY; Courti cell already fixed per panel."
+      },
+      {
+        "check": "Fact markers traceable",
+        "pass": true,
+        "note": "All 47 marker ids exist in 03-source-pack.json. Sea-view quotes checked verbatim against fact_03/101/109/302/307/501/600/15/13. Overstatements edited: Atlantica standout (fact_304), Holiday Palace 'indoor fallback' (fact_16)."
+      },
+      {
+        "check": "Legal, travel, timing",
+        "pass": true,
+        "note": "HNMS table matches fact_207/208 cell for cell; CNI list matches fact_203; Embassy fact_205; recognition fact_204; Smartraveller fact_200/201/202 dated 'As at November 2026'; airport line fact_210 and distances fact_601/301."
+      },
+      {
+        "check": "Research talk, credits, money, vendors, Advisor, Privileges",
+        "pass": true,
+        "note": "One method phrase, two research phrases and three per-line source credits edited; no money amounts or percentages; no non-venue vendor names; one Advisor claim (confirming venue house rules) moved to the venue; no legal/religious paperwork or transfer claims for the Advisor; no Wedded Privileges; no 'last dance'; 0 'often told'."
+      },
+      {
+        "check": "Key takeaways",
+        "pass": true,
+        "note": "Exactly 4 bullets, each one sentence."
+      },
+      {
+        "check": "Edits apply cleanly",
+        "pass": true,
+        "note": "Each old occurs exactly once in 08-final.md and each new exactly once after applying all edits (scripted check)."
+      },
+      {
+        "check": "Decision consistent",
+        "pass": true,
+        "note": "Blocking edits only, all small -> pass_with_edits."
+      }
+    ],
+    "confidence": 0.85
+  },
+  "open_questions": [],
+  "assumptions": [
+    "Stage 8b blocking-issue check only; rubric carried from 06-edit.json, not rescored in depth.",
+    "Title '10 Corfu Wedding Venues With Sea Views' set by the orchestrator; not reviewed.",
+    "Business details deferred per brand-facts.md.",
+    "The HNMS link line is kept as the data attribution for the climate table, not treated as research talk."
+  ],
+  "verify_items": [
+    "Villa Medusa: confirm with Grecotel which Kommeno villa is offered as Villa Medusa for weddings and that its listing states 'Direct Sea View' (table and entry).",
+    "Corfu Holiday Palace: confirm the Nafsika Hall with the fresco is the Nausica Ballroom."
+  ],
+  "tools_used": [
+    "Bash (python3 -I, grep)",
+    "content-system/scripts/scan_copy.py",
+    "content-system/scripts/validate.py"
+  ],
+  "next_agent": [
+    "luxury-writer"
+  ],
+  "payload": {
+    "draft_file": "content/posts/corfu-wedding-venues/08-final.md",
+    "rubric": {
+      "voice": 4,
+      "expertise": 5,
+      "accuracy": 4,
+      "seo_fit": 4,
+      "commercial_link": 4,
+      "structure": 4,
+      "brief_fit": 4
+    },
+    "average": 4.14,
+    "blocking_issues": [],
+    "decision": "pass_with_edits",
+    "edits": [
+      {
+        "location": "At a glance, intro line above the table",
+        "issue": "Research talk: 'on its own site' describes our method. State the definition plainly.",
+        "fix": "Replace exactly:\n\"Not published\" means the venue does not state the detail on its own site.\nwith:\n\"Not published\" means the venue does not state the detail.",
+        "old": "\"Not published\" means the venue does not state the detail on its own site.",
+        "new": "\"Not published\" means the venue does not state the detail."
+      },
+      {
+        "location": "Kommeno, closing line after Rodostamo",
+        "issue": "Advisor claim beyond brand-facts.md: confirming venue house rules (curfews, music rules, rain plan) in writing is not a listed Advisor claim (only inclusions are). Point the couple to the venue.",
+        "fix": "Replace exactly:\nYour Wedded Advisor confirms them in writing for your date.\nwith:\nAsk each venue to confirm them in writing for your date.",
+        "old": "Your Wedded Advisor confirms them in writing for your date.",
+        "new": "Ask each venue to confirm them in writing for your date."
+      },
+      {
+        "location": "Corfu Holiday Palace, closing line",
+        "issue": "Claim beyond the pack: 'indoor fallback already built in' implies an outdoor primary space; fact_16 publishes indoor ballrooms only and no outdoor wedding space.",
+        "fix": "Replace exactly:\nThis is the venue on the list for a guest count in the hundreds with an indoor fallback already built in. <!-- fact_16 -->\nwith:\nThis is the venue on the list for an indoor reception in the hundreds. <!-- fact_16 -->",
+        "old": "This is the venue on the list for a guest count in the hundreds with an indoor fallback already built in. <!-- fact_16 -->",
+        "new": "This is the venue on the list for an indoor reception in the hundreds. <!-- fact_16 -->"
+      },
+      {
+        "location": "Corfu Palace Hotel, opening paragraph",
+        "issue": "Source talk ('Its published terms are dated 2023'). Keep the practical advice.",
+        "fix": "Replace exactly:\nIts published terms are dated 2023, so ask for current terms.\nwith:\nIts wedding terms are dated 2023, so ask for current ones.",
+        "old": "Its published terms are dated 2023, so ask for current terms.",
+        "new": "Its wedding terms are dated 2023, so ask for current ones."
+      },
+      {
+        "location": "Angsana Corfu, Ceremony bullet",
+        "issue": "Per-line source credit ('The 2026 brochure lists'). State the facts (fact_103) and keep the link as a pointer.",
+        "fix": "Replace exactly:\n- **Ceremony:** The [2026 brochure](https://www.angsana.com/assets/2026-01/Wedding%20Brochure%202026%20-%20Angsana%20Corfu.pdf) lists two symbolic ceremony venues, both outdoors and weather permitting: Vertigo Sky Bar, for up to 250, from mid-May to the end of September, and Oribu Garden, for up to 30, from April to October. <!-- fact_103 -->\nwith:\n- **Ceremony:** Two symbolic ceremony venues for 2026, both outdoors and weather permitting: Vertigo Sky Bar, for up to 250, from mid-May to the end of September, and Oribu Garden, for up to 30, from April to October. See the [2026 wedding brochure](https://www.angsana.com/assets/2026-01/Wedding%20Brochure%202026%20-%20Angsana%20Corfu.pdf). <!-- fact_103 -->",
+        "old": "- **Ceremony:** The [2026 brochure](https://www.angsana.com/assets/2026-01/Wedding%20Brochure%202026%20-%20Angsana%20Corfu.pdf) lists two symbolic ceremony venues, both outdoors and weather permitting: Vertigo Sky Bar, for up to 250, from mid-May to the end of September, and Oribu Garden, for up to 30, from April to October. <!-- fact_103 -->",
+        "new": "- **Ceremony:** Two symbolic ceremony venues for 2026, both outdoors and weather permitting: Vertigo Sky Bar, for up to 250, from mid-May to the end of September, and Oribu Garden, for up to 30, from April to October. See the [2026 wedding brochure](https://www.angsana.com/assets/2026-01/Wedding%20Brochure%202026%20-%20Angsana%20Corfu.pdf). <!-- fact_103 -->"
+      },
+      {
+        "location": "Angsana Corfu, Not published bullet",
+        "issue": "Research talk ('on the venues page') and it contradicts the Ceremony and Receptions bullets, which give per-space capacities (fact_103).",
+        "fix": "Replace exactly:\n- **Not published:** exclusive use, curfew, per-space capacity on the venues page.\nwith:\n- **Not published:** exclusive use, curfew.",
+        "old": "- **Not published:** exclusive use, curfew, per-space capacity on the venues page.",
+        "new": "- **Not published:** exclusive use, curfew."
+      },
+      {
+        "location": "Atlantica Grand Mediterraneo, Standout bullet",
+        "issue": "Claim beyond the pack: fact_304 says all wedding packages include a personal wedding planner; 'each wedding' and 'from the resort' go further.",
+        "fix": "Replace exactly:\n- **Standout:** Each wedding has a personal wedding planner from the resort. <!-- fact_304 -->\nwith:\n- **Standout:** All wedding packages include a personal wedding planner. <!-- fact_304 -->",
+        "old": "- **Standout:** Each wedding has a personal wedding planner from the resort. <!-- fact_304 -->",
+        "new": "- **Standout:** All wedding packages include a personal wedding planner. <!-- fact_304 -->"
+      },
+      {
+        "location": "Getting to Corfu, airport line",
+        "issue": "Per-line source credit ('Its official website lists'). State the facts (fact_210) and keep the link as a pointer.",
+        "fix": "Replace exactly:\nGuests fly into Corfu Airport (CFU). Its [official website](https://www.cfu-airport.gr/en) lists three ways to and from the terminal: by car with GPS directions, by public bus on a direct service, and by taxi. <!-- fact_210 -->\nwith:\nGuests fly into Corfu Airport (CFU), which you can reach by car, by a direct public bus service or by taxi. See the [airport's travel information](https://www.cfu-airport.gr/en). <!-- fact_210 -->",
+        "old": "Guests fly into Corfu Airport (CFU). Its [official website](https://www.cfu-airport.gr/en) lists three ways to and from the terminal: by car with GPS directions, by public bus on a direct service, and by taxi. <!-- fact_210 -->",
+        "new": "Guests fly into Corfu Airport (CFU), which you can reach by car, by a direct public bus service or by taxi. See the [airport's travel information](https://www.cfu-airport.gr/en). <!-- fact_210 -->"
+      },
+      {
+        "location": "FAQ, Which airport",
+        "issue": "Per-line source credit ('Its official site lists').",
+        "fix": "Replace exactly:\nIts official site lists getting there by car, direct public bus or taxi. <!-- fact_210 -->\nwith:\nGuests can reach it by car, direct public bus or taxi. <!-- fact_210 -->",
+        "old": "Its official site lists getting there by car, direct public bus or taxi. <!-- fact_210 -->",
+        "new": "Guests can reach it by car, direct public bus or taxi. <!-- fact_210 -->"
+      }
+    ],
+    "fact_check_log": [
+      {
+        "claim": "Table rows vs venue entries, all 10 venues",
+        "fact_id": "fact_01-fact_602",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Sea-view quotes (Corfu Imperial, Angsana, San Antonio, Atlantica, Courti, Eva Palace, Rodostamo, Holiday Palace, Corfu Palace)",
+        "fact_id": "fact_03, fact_101, fact_109, fact_302, fact_307, fact_501, fact_600, fact_15, fact_13",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Villa Medusa 'Direct Sea View'",
+        "fact_id": "fact_08, fact_09",
+        "status": "verify"
+      },
+      {
+        "claim": "Capacities: Aristos/Nissaki 50, Holiday Palace 300/400 and 350/500 and 60/80, Corfu Palace 200 hall and minimum 100, Angsana 250/30/150, Atlantica 8/30, Rodostamo 152 conference",
+        "fact_id": "fact_02, fact_16, fact_11, fact_103, fact_303, fact_601",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Room counts: Eva Palace 225, Angsana 196, Courti 9, Villa Medusa 6, Palazzo Imperiale sleeps 8",
+        "fact_id": "fact_502, fact_102, fact_308, fact_05, fact_07",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Ceremony types: Atlantica legal/symbolic/renewal/same-sex; Angsana symbolic; others not published",
+        "fact_id": "fact_300, fact_103",
+        "status": "confirmed"
+      },
+      {
+        "claim": "San Antonio opening: adults-only, Kalami Bay, weddings, receptions and vow renewals",
+        "fact_id": "fact_108, fact_109",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Atlantica standout: personal wedding planner",
+        "fact_id": "fact_304",
+        "status": "unsupported"
+      },
+      {
+        "claim": "Holiday Palace 'indoor fallback already built in'",
+        "fact_id": "fact_16",
+        "status": "unsupported"
+      },
+      {
+        "claim": "Airport access by car, direct bus, taxi; Rodostamo 11 km / 10 km; Atlantica about 25 minutes",
+        "fact_id": "fact_210, fact_601, fact_301",
+        "status": "confirmed"
+      },
+      {
+        "claim": "HNMS table and month notes (highs, lows, rain days, rainfall, wind, humidity)",
+        "fact_id": "fact_207, fact_208, fact_209",
+        "status": "confirmed"
+      },
+      {
+        "claim": "CNI list, Embassy services, recognition in Australia",
+        "fact_id": "fact_203, fact_205, fact_204",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Smartraveller advice level, swimming, heat, wildfires",
+        "fact_id": "fact_200, fact_201, fact_202",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Corfu Palace 2023 house rules (20:30, 23:30, 04:00, 11:00, no fireworks)",
+        "fact_id": "fact_11",
+        "status": "confirmed"
+      }
+    ],
+    "compliance": {
+      "pass": true,
+      "issues": [
+        "No prices, fees or money amounts; 'fee' appears only in the brand-facts closing line. Nothing for sign-off.",
+        "No em or en dashes (scan: 0 before and after edits), no 'last dance', no Wedded Privileges, no 'often told', Australian English.",
+        "No vendor names other than venues (the fresco artist at Corfu Holiday Palace is a venue detail, not a vendor). Rodostamo wedding car and bus transfer correctly left out; coordinator help is the hotel's, not ours.",
+        "Legal facts attributed to Smartraveller and the Australian Embassy with 'As at November 2026'; FAQ legal answer gains its date via edit. No church or religious paperwork. No Advisor line in the legal section (brief bars implied legal help); the compliance item 'Advisor confirms current requirements' is left to the orchestrator, consistent with the Crete precedent.",
+        "Advisor lines reduced from five area repeats to one (Kommeno) plus the intro CTA, table CTA and closing; all within brand-facts and the brief's 'one per area' rule.",
+        "No competitor branding; no venue contact details; external links are official venue, government, HNMS and airport pages."
+      ]
+    },
+    "originality": {
+      "pass": true,
+      "matches": []
+    },
+    "banned_phrases_found": [],
+    "needs_signoff": []
+  }
+}

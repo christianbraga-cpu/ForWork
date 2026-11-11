@@ -18,8 +18,6 @@ Every venue here hosts weddings and has the Ionian Sea in view. For the wider pi
 - Exclusive use means different things here, from a privately hired estate such as The Courti Estate to Atlantica's promise of one wedding on your day, so ask each venue which one it is offering.
 - July and August have the fewest rain days and the highest average temperatures in Corfu, and wildfires occur from June to September, so plan shade, a later ceremony and a covered fallback for a summer date.
 
-When you have a first shortlist, [book a Wedded Concierge consultation](https://weddedwonderland.com/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=corfu-wedding-venues&utm_content=primary) and your Wedded Advisor will check those venues against your date and guest count.
-
 **Jump to an area:**
 
 - [Kommeno](#kommeno)
@@ -30,7 +28,7 @@ When you have a first shortlist, [book a Wedded Concierge consultation](https://
 
 ## Corfu wedding venues at a glance
 
-The list runs from the Kommeno peninsula south through Corfu Town to the south-east coast, then crosses to the west. It is not a ranking. "Not published" means the venue does not state the detail on its own site.
+The list runs from the Kommeno peninsula south through Corfu Town to the south-east coast, then crosses to the west. It is not a ranking. "Not published" means the venue does not state the detail.
 
 | Venue (area) | Sea view setting | Ceremony options | Largest published capacity | Rooms on site | Exclusive use |
 |---|---|---|---|---|---|
@@ -45,9 +43,10 @@ The list runs from the Kommeno peninsula south through Corfu Town to the south-e
 | The Courti Estate (south-east coast) <!-- fact_306 --> | Ionian Sea views to one side, mountain inland <!-- fact_307 --> | Weddings on private hire <!-- fact_306 --> | Not published | 9 bedrooms <!-- fact_308 --> | Private hire of the gated estate <!-- fact_306 --> |
 | Atlantica Grand Mediterraneo (Ermones, west coast) <!-- fact_301 --> | Cliffside views of the Ionian <!-- fact_302 --> | Legal, symbolic, vow renewal, same-sex <!-- fact_300 --> | 30 at Vertigo or Culinarium <!-- fact_303 --> | Yes <!-- fact_304 --> | One wedding per day <!-- fact_304 --> |
 
-A table narrows the field. Only the venue can tell you what is free on your date, and under which house rules. When you are ready, [talk to a Wedded Advisor about your shortlist](https://weddedwonderland.com/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=corfu-wedding-venues&utm_content=secondary).
+A table narrows the field. Only the venue can tell you what is free on your date, and under which house rules.
 
 <!-- CTA: primary -->
+When you are ready to shortlist Corfu venues, [speak with a Wedded Advisor](https://weddedwonderland.com/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=corfu-wedding-venues&utm_content=primary).
 
 ## How to compare Corfu venues like for like
 
@@ -157,7 +156,7 @@ With 225 rooms on site, Eva Palace is the Kommeno option for housing a large gue
 
 The church across the bay is the picture here. Brief your photographer on it early. <!-- fact_602 -->
 
-Curfews, minimum nights, music rules and the rain plan are not published for any Kommeno venue. Your Wedded Advisor confirms them in writing for your date.
+Curfews, minimum nights, music rules and the rain plan are not published for any Kommeno venue. Ask each venue to confirm them in writing for your date. [Your Wedded Advisor](https://weddedwonderland.com/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=corfu-wedding-venues&utm_content=secondary) confirms inclusions in writing before you commit.
 
 ## Corfu Town and Kanoni
 
@@ -177,11 +176,11 @@ Corfu Town is where the largest published capacities on this list sit. Both venu
 - **Standout:** The fresco in the Nausica room is by the artist Eirini Daniolou Neophytou. <!-- fact_16 --> [[VERIFY: confirm with Corfu Holiday Palace that the Nafsika Hall with the fresco is the Nausica Ballroom]]
 - **Not published:** outdoor ceremony space, exclusive use, curfew.
 
-This is the venue on the list for a guest count in the hundreds with an indoor fallback already built in. <!-- fact_16 -->
+This is the venue on the list for an indoor reception in the hundreds. <!-- fact_16 -->
 
 ### 6. Corfu Palace Hotel, Garitsa Bay
 
-[Corfu Palace Hotel](https://corfupalace.com/wp-content/uploads/2023/07/Wedding-Proposals-2023-ENG.pdf) publishes wedding reception proposals from its banqueting department, with buffet and plated menus, round tables for eight to ten guests and an outdoor reception at the pool. <!-- fact_10 --> Its published terms are dated 2023, so ask for current terms.
+[Corfu Palace Hotel](https://corfupalace.com/wp-content/uploads/2023/07/Wedding-Proposals-2023-ENG.pdf) publishes wedding reception proposals from its banqueting department, with buffet and plated menus, round tables for eight to ten guests and an outdoor reception at the pool. <!-- fact_10 --> Its wedding terms are dated 2023, so ask for current ones.
 
 - **Setting:** On Garitsa Bay in Corfu Town, with a "view to Garitsa Bay and the mainland". <!-- fact_13 -->
 - **Ceremony:** Not published. The proposals cover receptions only. <!-- fact_10 -->
@@ -230,11 +229,11 @@ South of Corfu Town, the coast gives you the clearest choice on the island: a re
 
 - **Setting:** South of Corfu Town, in the Benitses area. <!-- fact_104 -->
 - **Sea view:** "Blue horizons stretching beyond the ceremony", in "the ultimate luxurious Mediterranean setting with endless sea views". <!-- fact_101 -->
-- **Ceremony:** The [2026 brochure](https://www.angsana.com/assets/2026-01/Wedding%20Brochure%202026%20-%20Angsana%20Corfu.pdf) lists two symbolic ceremony venues, both outdoors and weather permitting: Vertigo Sky Bar, for up to 250, from mid-May to the end of September, and Oribu Garden, for up to 30, from April to October. <!-- fact_103 -->
+- **Ceremony:** Two symbolic ceremony venues for 2026, both outdoors and weather permitting: Vertigo Sky Bar, for up to 250, from mid-May to the end of September, and Oribu Garden, for up to 30, from April to October. See the [2026 wedding brochure](https://www.angsana.com/assets/2026-01/Wedding%20Brochure%202026%20-%20Angsana%20Corfu.pdf). <!-- fact_103 -->
 - **Receptions:** Vertigo Sky Bar for up to 250 from the end of May to the end of September; Oribu Restaurant, indoor and outdoor, for up to 150 in April, May, September and October; Oribu Garden for up to 30 from April to October. <!-- fact_103 -->
 - **Rooms:** 196 accommodations and 345 sqm of event space in total. <!-- fact_102 -->
 - **Standout:** Nine named spaces, from Starboard Terrace and Emerald Beach to Sofrito and Ruen Romsai restaurants. <!-- fact_102 -->
-- **Not published:** exclusive use, curfew, per-space capacity on the venues page.
+- **Not published:** exclusive use, curfew.
 
 The seasons matter here. Vertigo Sky Bar, the large space, runs a shorter season than the garden, so outside mid-May to September the largest listed ceremony space is Oribu Garden for 30, and a larger reception moves to Oribu Restaurant for up to 150. <!-- fact_103 --> Because the ceremony venues are listed as symbolic, ask Angsana how a legal marriage would fit around your day if that matters to you.
 
@@ -270,7 +269,7 @@ On the west coast, one resort sits above Ermones Beach among cypress and pine wo
 - **Ceremony:** The Secret Garden hosts the couple and up to eight guests. Vertigo and Culinarium each host up to 30. Private evening reception venues are offered. <!-- fact_303 -->
 - **Rooms:** Doubles and deluxe rooms, some with private pools, in an adult-friendly atmosphere. No total room count is published. <!-- fact_304 -->
 - **Exclusive use:** The resort hosts only one wedding on the day you choose. <!-- fact_304 -->
-- **Standout:** Each wedding has a personal wedding planner from the resort. <!-- fact_304 -->
+- **Standout:** All wedding packages include a personal wedding planner. <!-- fact_304 -->
 - **Stay rule:** For a wedding, the couple must be at the resort at least three working days before the date, not counting arrival day, public holidays and weekends, and two working days after. For a symbolic or vow renewal ceremony, it is at least two working days. <!-- fact_305 -->
 - **Not published:** reception capacity, room count, curfew.
 
@@ -278,7 +277,7 @@ The ceremony spaces suit a small wedding, with 30 the largest published figure. 
 
 ## Getting to Corfu for your wedding
 
-Guests fly into Corfu Airport (CFU). Its [official website](https://www.cfu-airport.gr/en) lists three ways to and from the terminal: by car with GPS directions, by public bus on a direct service, and by taxi. <!-- fact_210 -->
+Guests fly into Corfu Airport (CFU), which you can reach by car, by a direct public bus service or by taxi. See the [airport's travel information](https://www.cfu-airport.gr/en). <!-- fact_210 -->
 
 Rodostamo, on Kommeno Bay, is 11 km from the airport and 10 km from Corfu Town, and Atlantica Grand Mediterraneo on the west coast is about 25 minutes from the airport and town. <!-- fact_601 --> <!-- fact_301 --> San Antonio, Angsana Corfu and The Courti Estate do not publish a distance from the airport, so ask each for its transfer time before guests book.
 
@@ -345,7 +344,7 @@ Yes. The Courti Estate is available for private hire of its gated estate, with n
 
 ### Which airport do guests fly into for a Corfu wedding?
 
-Corfu Airport (CFU). Its official site lists getting there by car, direct public bus or taxi. <!-- fact_210 --> Atlantica Grand Mediterraneo on the west coast is about 25 minutes away. <!-- fact_301 -->
+Corfu Airport (CFU). Guests can reach it by car, direct public bus or taxi. <!-- fact_210 --> Atlantica Grand Mediterraneo on the west coast is about 25 minutes away. <!-- fact_301 -->
 
 ### When is the best time to get married in Corfu?
 
@@ -359,6 +358,6 @@ Yes. Some venues, such as Atlantica Grand Mediterraneo, list legal ceremonies. <
 
 The right Corfu venue is the one that fits your guest list, your ceremony and the view you want behind you. This list gets you to three or four names. The next step is finding out which of them are free on your date, on your terms.
 
-Your Wedded Advisor is one person, start to finish, who works in your time zone and quotes in AUD for Australian couples. The fee is agreed in writing before any work begins, and every inclusion is confirmed in writing before you commit. When you are ready, [shortlist your Corfu venues with a Wedded Advisor](https://weddedwonderland.com/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=corfu-wedding-venues&utm_content=closing).
+Your Wedded Advisor is one person, start to finish, who works in your time zone and quotes in AUD for Australian couples. Wedded Concierge plans venue, travel, vendors and payments, anywhere in the world. The fee is agreed in writing before any work begins, and every inclusion is confirmed in writing before you commit. When you are ready, [shortlist your Corfu venues with a Wedded Advisor](https://weddedwonderland.com/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=corfu-wedding-venues&utm_content=closing).
 
 For ideas for the days around the wedding, browse [the Wedded Wonderland magazine](https://weddedwonderland.com/magazine?utm_source=blog&utm_medium=content&utm_campaign=corfu-wedding-venues&utm_content=magnet).

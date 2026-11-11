@@ -16,3 +16,4 @@
 03:24 08 final done: ~4,560 words, scan clean, 3 VERIFY (Villa Medusa x2, Holiday Palace room).
 03:25 10 distribution done (utm_source=blog).
 03:25 09 CRO done: 4 copy changes.
+03:27 8b (9 edits) and CRO (3 of 4) applied; CRO secondary link re-placed as a brand-fact sentence after the 8b Kommeno line change.
