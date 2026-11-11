@@ -9,3 +9,4 @@
 06:53 03 top-up E done: Petra Farm, Villa Mira qualify (plus Astir, Secret View duplicates). Final 8: Astir, Anemoi, Monastiri, Petra Farm, Pyrgaki, Villa Mira, Poseidon, Secret View. Reserves: Akti, Golden Beach Hotel, Roses Beach, Golden Bay. Packs merged.
 06:58 05 draft done: ~4,390 words, 8 venues, scan clean, 0 VERIFY.
 06:59 07 readers: funding_parent, sceptic, search_visitor done (sceptic: Villa Mira 'only venue' contradiction).
+07:02 06 editor pass_with_edits (4.0): 19 edits applied to 05-draft-r2.md; meta description Lefkes swapped for Kolymbithres.
