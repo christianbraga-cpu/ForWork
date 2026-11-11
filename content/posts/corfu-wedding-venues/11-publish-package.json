@@ -1,0 +1,482 @@
+{
+  "agent": "cms-publisher",
+  "task_id": "corfu-wedding-venues",
+  "stage": "11",
+  "status": "complete",
+  "round": 1,
+  "inputs_used": [
+    "CLAUDE.md",
+    "content-system/cms/field-map.md",
+    "content-system/schemas/11-publish-package.schema.json",
+    "content/posts/corfu-wedding-venues/00-input.json",
+    "content/posts/corfu-wedding-venues/01-brief.json",
+    "content/posts/corfu-wedding-venues/02-seo.json",
+    "content/posts/corfu-wedding-venues/03-source-pack.json",
+    "content/posts/corfu-wedding-venues/04-images.json",
+    "content/posts/corfu-wedding-venues/08-final.md",
+    "content/posts/corfu-wedding-venues/09-cro.json",
+    "content/posts/corfu-wedding-venues/10-distribution.json",
+    "content/posts/crete-wedding-venues/11-publish-package.json (format model)",
+    "content/posts/crete-wedding-venues/11-body.md (format model)",
+    "content/posts/crete-wedding-venues/booking-checklist.md (format model)",
+    "content/posts/crete-wedding-venues/12-cms-report.md (format model)"
+  ],
+  "self_qa": {
+    "checks": [
+      {
+        "check": "08-final.md already carries the 09-cro.json copy_changes (primary marker filled after the table, secondary inline link closing Kommeno, closing brand-facts line)",
+        "pass": true
+      },
+      {
+        "check": "Front matter and all <!-- fact_xx --> markers removed; H1 is the title; 12 image-slot comments kept; 3 [[VERIFY]] markers kept",
+        "pass": true
+      },
+      {
+        "check": "Primary CTA block at the marker; inline fallback retagged utm_content=inline; secondary, closing and magnet marked; each utm_content appears exactly once",
+        "pass": true
+      },
+      {
+        "check": "Exactly 4 key takeaways copied verbatim; 6 FAQ pairs extracted; FAQPage carries all; ItemList carries all 10 venues with official URLs",
+        "pass": true
+      },
+      {
+        "check": "primary_category equals categories[0] (Destination Weddings); title, slug, URL, type and cluster as fixed",
+        "pass": true
+      },
+      {
+        "check": "Meta description no longer names Kassiopi or Paleokastritsa (no qualifying venue there)",
+        "pass": true
+      },
+      {
+        "check": "No prices printed, needs_signoff empty; no em dashes",
+        "pass": true
+      },
+      {
+        "check": "Image alt and caption filled",
+        "pass": false,
+        "note": "None supplied in 04-images.json; left empty, not invented. All 12 body slots needed."
+      },
+      {
+        "check": "Status draft; nothing uploaded, published or scheduled",
+        "pass": true
+      }
+    ],
+    "confidence": 0.9
+  },
+  "open_questions": [
+    {
+      "to": "orchestrator",
+      "question": "CMS upload not attempted: no browser in this session and content-system/cms/field-map.md is not CONFIRMED. Run /wedded-cms-discovery locally, then /wedded-blog resume=corfu-wedding-venues.",
+      "blocking": true
+    },
+    {
+      "to": "orchestrator",
+      "question": "No author named in any input; package uses \"Wedded Wonderland\" (organisation). Confirm the byline.",
+      "blocking": false
+    },
+    {
+      "to": "orchestrator",
+      "question": "04-images.json still describes venue-03 to venue-06 as unnamed placeholders (Dassia, Corfu Town, north-east, west coast) with generic file names, while the body slots are Rodostamo (venue-03), Corfu Holiday Palace (venue-04), San Antonio (venue-05) and Atlantica Grand Mediterraneo (venue-06); its area slots still mention Dassia, Kassiopi and Paleokastritsa. The package uses the 04-images.json file names as they stand. Normalise 04-images.json.",
+      "blocking": false
+    }
+  ],
+  "assumptions": [
+    "Title is the person's corrected title \"10 Corfu Wedding Venues With Sea Views\" (00-input.json says 12; only 10 venues qualify) and matches 08-final.md front matter.",
+    "Excerpt is the first sentence of the opening paragraph.",
+    "Meta description rewritten from 02-seo.json to name the areas actually covered (Kommeno, Corfu Town, Kalami, Benitses, Ermones) in place of Kassiopi and Paleokastritsa; meta title kept from 02-seo.json.",
+    "Tag 'Paleokastritsa' from the brief replaced with 'Ermones' (no venue in Paleokastritsa).",
+    "Breadcrumb level 2 URL is https://weddedwonderland.com/destination-weddings, from the fixed URL path.",
+    "Corfu Palace Hotel has no wedding web page; its ItemList URL is the official 2023 wedding proposals PDF linked in the body.",
+    "Inline primary sentence retagged utm_content=inline so the CTA block alone carries utm_content=primary (as the Crete model).",
+    "closing_cta is an extra, schema-permitted field recording the closing link from 09-cro.json tracking."
+  ],
+  "verify_items": [
+    "Villa Medusa, at-a-glance table (Sea view setting cell): confirm with Grecotel which Kommeno villa is offered as Villa Medusa for weddings and that its listing states \"Direct Sea View\"",
+    "Villa Medusa, venue entry (Sea view line): confirm with Grecotel which Kommeno villa is offered as Villa Medusa for weddings and that its listing states \"Direct Sea View\"",
+    "Corfu Holiday Palace, venue entry (Standout line): confirm with Corfu Holiday Palace that the Nafsika Hall with the fresco is the Nausica Ballroom",
+    "Image credit and licence for slot featured (corfu-wedding-venues-corfu-imperial-sea-view-ceremony-hero.webp): not yet sourced; record the credit and licence (venue press kit with written permission, or licensed stock in library-index.csv) before publishing",
+    "Image credit and licence for slot area-kommeno-dassia (corfu-wedding-venues-kommeno-dassia-setting.webp): not yet sourced; record the credit and licence (venue press kit with written permission, or licensed stock in library-index.csv) before publishing",
+    "Image credit and licence for slot venue-01 (corfu-wedding-venues-corfu-imperial-ceremony-setting.webp): not yet sourced; record the credit and licence (venue press kit with written permission, or licensed stock in library-index.csv) before publishing",
+    "Image credit and licence for slot venue-03 (corfu-wedding-venues-dassia-venue-ceremony-setting.webp): not yet sourced; record the credit and licence (venue press kit with written permission, or licensed stock in library-index.csv) before publishing",
+    "Image credit and licence for slot area-corfu-town (corfu-wedding-venues-corfu-town-setting.webp): not yet sourced; record the credit and licence (venue press kit with written permission, or licensed stock in library-index.csv) before publishing",
+    "Image credit and licence for slot venue-04 (corfu-wedding-venues-corfu-town-venue-ceremony-setting.webp): not yet sourced; record the credit and licence (venue press kit with written permission, or licensed stock in library-index.csv) before publishing",
+    "Image credit and licence for slot area-north-east (corfu-wedding-venues-north-east-setting.webp): not yet sourced; record the credit and licence (venue press kit with written permission, or licensed stock in library-index.csv) before publishing",
+    "Image credit and licence for slot venue-05 (corfu-wedding-venues-north-east-venue-ceremony-setting.webp): not yet sourced; record the credit and licence (venue press kit with written permission, or licensed stock in library-index.csv) before publishing",
+    "Image credit and licence for slot area-south (corfu-wedding-venues-south-setting.webp): not yet sourced; record the credit and licence (venue press kit with written permission, or licensed stock in library-index.csv) before publishing",
+    "Image credit and licence for slot venue-02 (corfu-wedding-venues-angsana-corfu-ceremony-setting.webp): not yet sourced; record the credit and licence (venue press kit with written permission, or licensed stock in library-index.csv) before publishing",
+    "Image credit and licence for slot area-west-coast (corfu-wedding-venues-west-coast-setting.webp): not yet sourced; record the credit and licence (venue press kit with written permission, or licensed stock in library-index.csv) before publishing",
+    "Image credit and licence for slot venue-06 (corfu-wedding-venues-west-coast-venue-ceremony-setting.webp): not yet sourced; record the credit and licence (venue press kit with written permission, or licensed stock in library-index.csv) before publishing",
+    "Jump list anchors: confirm the CMS generates #kommeno, #corfu-town-and-kanoni, #kalami-and-the-north-east, #benitses-and-the-south-east, #ermones-and-the-west-coast from the five area H2s, so the 'Jump to an area' links land; set the IDs by hand if it does not"
+  ],
+  "tools_used": [
+    "Bash (python3 -I)"
+  ],
+  "next_agent": [
+    "orchestrator"
+  ],
+  "payload": {
+    "title": "10 Corfu Wedding Venues With Sea Views",
+    "slug": "corfu-wedding-venues",
+    "url_path": "/destination-weddings/corfu-wedding-venues",
+    "content_type": "Guide",
+    "cluster": "Getting Married in Greece",
+    "categories": [
+      "Destination Weddings",
+      "Greece",
+      "Venues"
+    ],
+    "primary_category": "Destination Weddings",
+    "tags": [
+      "Getting Married in Greece",
+      "Corfu",
+      "Corfu wedding venues",
+      "Kommeno",
+      "Corfu Town",
+      "Ermones",
+      "Ionian Islands"
+    ],
+    "excerpt": "Corfu wedding venues with a sea view sit in five parts of the island: the Kommeno peninsula, Corfu Town and Kanoni, Kalami in the north-east, the south-east coast around Benitses, and Ermones on the west coast.",
+    "key_takeaways": [
+      "Nine of these ten venues sit on Corfu's east side, from Kalami in the north-east to the south-east coast, and one, Atlantica Grand Mediterraneo, overlooks Ermones Beach on the west.",
+      "Guest count narrows the list quickly, because published ceremony spaces run from the couple and eight guests at Atlantica's Secret Garden to 250 at Angsana Corfu's Vertigo Sky Bar.",
+      "Exclusive use means different things here, from a privately hired estate such as The Courti Estate to Atlantica's promise of one wedding on your day, so ask each venue which one it is offering.",
+      "July and August have the fewest rain days and the highest average temperatures in Corfu, and wildfires occur from June to September, so plan shade, a later ceremony and a covered fallback for a summer date."
+    ],
+    "body_markdown_file": "content/posts/corfu-wedding-venues/11-body.md",
+    "faq": [
+      {
+        "q": "Which part of Corfu is best for a wedding?",
+        "a": "It depends on your guest list and the setting you want. Kommeno and Corfu Town keep guests close to the Old Town and the airport, with Rodostamo 11 km from the airport. The south-east has Angsana Corfu's published spaces and seasons and a private estate. The west coast has cliffside views at Ermones."
+      },
+      {
+        "q": "Are there beach wedding venues in Corfu?",
+        "a": "Yes. Eva Palace offers \"an intimate beach ceremony\" on Kommeno Bay, and Angsana Corfu names Emerald Beach among its wedding venues. Ask each venue whether a ceremony on the sand is possible on your date."
+      },
+      {
+        "q": "Can we book a Corfu villa for exclusive use for our wedding?",
+        "a": "Yes. The Courti Estate is available for private hire of its gated estate, with nine bedrooms. Grecotel offers Villa Medusa, a six-bedroom private mansion on the Kommeno peninsula, for intimate celebrations. Neither publishes an event guest count, so ask before you plan the list."
+      },
+      {
+        "q": "Which airport do guests fly into for a Corfu wedding?",
+        "a": "Corfu Airport (CFU). Guests can reach it by car, direct public bus or taxi. Atlantica Grand Mediterraneo on the west coast is about 25 minutes away."
+      },
+      {
+        "q": "When is the best time to get married in Corfu?",
+        "a": "That depends on how you weigh heat against rain. July and August average about three rain days and highs above 31°C, while June averages 28.2°C with under five rain days. Wildfires occur from June to September. Check your venue's own season too: Angsana's largest ceremony space runs from mid-May to the end of September."
+      },
+      {
+        "q": "Can Australians legally get married in Corfu?",
+        "a": "Yes. Some venues, such as Atlantica Grand Mediterraneo, list legal ceremonies. As at November 2026, Smartraveller says you may need a Certificate of No Impediment, and a marriage valid in Greece that would also be valid under Australian law is in most cases recognised in Australia."
+      }
+    ],
+    "images": [
+      {
+        "slot_id": "featured",
+        "file": "content/posts/corfu-wedding-venues/images/corfu-wedding-venues-corfu-imperial-sea-view-ceremony-hero.webp",
+        "role": "featured",
+        "status": "needed"
+      },
+      {
+        "slot_id": "area-kommeno-dassia",
+        "file": "content/posts/corfu-wedding-venues/images/corfu-wedding-venues-kommeno-dassia-setting.webp",
+        "role": "inline",
+        "status": "needed"
+      },
+      {
+        "slot_id": "venue-01",
+        "file": "content/posts/corfu-wedding-venues/images/corfu-wedding-venues-corfu-imperial-ceremony-setting.webp",
+        "role": "inline",
+        "status": "needed"
+      },
+      {
+        "slot_id": "venue-03",
+        "file": "content/posts/corfu-wedding-venues/images/corfu-wedding-venues-dassia-venue-ceremony-setting.webp",
+        "role": "inline",
+        "status": "needed"
+      },
+      {
+        "slot_id": "area-corfu-town",
+        "file": "content/posts/corfu-wedding-venues/images/corfu-wedding-venues-corfu-town-setting.webp",
+        "role": "inline",
+        "status": "needed"
+      },
+      {
+        "slot_id": "venue-04",
+        "file": "content/posts/corfu-wedding-venues/images/corfu-wedding-venues-corfu-town-venue-ceremony-setting.webp",
+        "role": "inline",
+        "status": "needed"
+      },
+      {
+        "slot_id": "area-north-east",
+        "file": "content/posts/corfu-wedding-venues/images/corfu-wedding-venues-north-east-setting.webp",
+        "role": "inline",
+        "status": "needed"
+      },
+      {
+        "slot_id": "venue-05",
+        "file": "content/posts/corfu-wedding-venues/images/corfu-wedding-venues-north-east-venue-ceremony-setting.webp",
+        "role": "inline",
+        "status": "needed"
+      },
+      {
+        "slot_id": "area-south",
+        "file": "content/posts/corfu-wedding-venues/images/corfu-wedding-venues-south-setting.webp",
+        "role": "inline",
+        "status": "needed"
+      },
+      {
+        "slot_id": "venue-02",
+        "file": "content/posts/corfu-wedding-venues/images/corfu-wedding-venues-angsana-corfu-ceremony-setting.webp",
+        "role": "inline",
+        "status": "needed"
+      },
+      {
+        "slot_id": "area-west-coast",
+        "file": "content/posts/corfu-wedding-venues/images/corfu-wedding-venues-west-coast-setting.webp",
+        "role": "inline",
+        "status": "needed"
+      },
+      {
+        "slot_id": "venue-06",
+        "file": "content/posts/corfu-wedding-venues/images/corfu-wedding-venues-west-coast-venue-ceremony-setting.webp",
+        "role": "inline",
+        "status": "needed"
+      }
+    ],
+    "cta": {
+      "text": "Speak with a Wedded Advisor",
+      "subtext": "The fee is agreed in writing before any work begins.",
+      "link": "/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=corfu-wedding-venues&utm_content=primary",
+      "placement": "At the former <!-- CTA: primary --> marker, directly after the 'Corfu wedding venues at a glance' table and its closing line (marked <!-- CTA BLOCK: primary --> in 11-body.md); the inline sentence after the block is the fallback and is tagged utm_content=inline."
+    },
+    "secondary_cta": {
+      "text": "Your Wedded Advisor",
+      "link": "/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=corfu-wedding-venues&utm_content=secondary",
+      "placement": "Inline link on the sentence closing the Kommeno section ('Curfews, minimum nights, music rules and the rain plan are not published for any Kommeno venue.') (marked <!-- CTA INLINE: secondary --> in 11-body.md). No separate block, per 09-cro.json."
+    },
+    "closing_cta": {
+      "text": "shortlist your Corfu venues with a Wedded Advisor",
+      "link": "/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=corfu-wedding-venues&utm_content=closing",
+      "placement": "Inline link at the end of 'Shortlist your Corfu venues with a Wedded Advisor' (marked <!-- CTA INLINE: closing --> in 11-body.md)."
+    },
+    "lead_magnet": {
+      "name": "Wedded Wonderland digital magazine",
+      "link": "/magazine?utm_source=blog&utm_medium=content&utm_campaign=corfu-wedding-venues&utm_content=magnet",
+      "placement": "Existing soft line at the very end of the post, the 'Wedded Wonderland magazine' link (marked <!-- LEAD MAGNET --> in 11-body.md)."
+    },
+    "tracking_links": [
+      "/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=corfu-wedding-venues&utm_content=primary",
+      "/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=corfu-wedding-venues&utm_content=secondary",
+      "/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=corfu-wedding-venues&utm_content=closing",
+      "/magazine?utm_source=blog&utm_medium=content&utm_campaign=corfu-wedding-venues&utm_content=magnet",
+      "/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=corfu-wedding-venues&utm_content=inline"
+    ],
+    "seo": {
+      "meta_title": "Corfu Wedding Venues: 10 With Sea Views",
+      "meta_description": "Corfu wedding venues with sea views, from Kommeno and Corfu Town to Kalami, Benitses and Ermones, compared on ceremony options, capacity and exclusive use.",
+      "focus_keyword": "corfu wedding venues",
+      "canonical": "https://weddedwonderland.com/destination-weddings/corfu-wedding-venues",
+      "og_image_slot": "featured"
+    },
+    "schema_jsonld": {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Article",
+          "@id": "https://weddedwonderland.com/destination-weddings/corfu-wedding-venues#article",
+          "headline": "10 Corfu Wedding Venues With Sea Views",
+          "description": "Corfu wedding venues with sea views, from Kommeno and Corfu Town to Kalami, Benitses and Ermones, compared on ceremony options, capacity and exclusive use.",
+          "author": {
+            "@type": "Organization",
+            "name": "Wedded Wonderland",
+            "url": "https://weddedwonderland.com/"
+          },
+          "publisher": {
+            "@type": "Organization",
+            "name": "Wedded Wonderland",
+            "url": "https://weddedwonderland.com/"
+          },
+          "datePublished": "",
+          "mainEntityOfPage": "https://weddedwonderland.com/destination-weddings/corfu-wedding-venues",
+          "inLanguage": "en-AU"
+        },
+        {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Home",
+              "item": "https://weddedwonderland.com/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Destination Weddings",
+              "item": "https://weddedwonderland.com/destination-weddings"
+            },
+            {
+              "@type": "ListItem",
+              "position": 3,
+              "name": "10 Corfu Wedding Venues With Sea Views",
+              "item": "https://weddedwonderland.com/destination-weddings/corfu-wedding-venues"
+            }
+          ]
+        },
+        {
+          "@type": "ItemList",
+          "@id": "https://weddedwonderland.com/destination-weddings/corfu-wedding-venues#venues",
+          "name": "10 Corfu Wedding Venues With Sea Views",
+          "numberOfItems": 10,
+          "itemListOrder": "https://schema.org/ItemListUnordered",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Grecotel Corfu Imperial, Kommeno",
+              "url": "https://www.grecotel.com/corfuimperial/weddings-corfu/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Villa Medusa, Kommeno",
+              "url": "https://www.grecotel.com/wedding-hotels/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 3,
+              "name": "Grecotel Eva Palace, Kommeno Bay",
+              "url": "https://www.grecotel.com/eva-palace/corfu-resort/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 4,
+              "name": "Rodostamo Hotel & Spa, Kommeno Bay",
+              "url": "https://rodostamo.gr/meetings-and-events/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 5,
+              "name": "Corfu Holiday Palace, Kanoni",
+              "url": "https://corfuholidaypalace.gr/conferences-events/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 6,
+              "name": "Corfu Palace Hotel, Garitsa Bay",
+              "url": "https://corfupalace.com/wp-content/uploads/2023/07/Wedding-Proposals-2023-ENG.pdf"
+            },
+            {
+              "@type": "ListItem",
+              "position": 7,
+              "name": "San Antonio Corfu Resort, Kalami",
+              "url": "https://sanantoniocorfuresort.gr/events/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 8,
+              "name": "Angsana Corfu, Benitses",
+              "url": "https://www.angsana.com/greece/corfu/weddings-honeymoons"
+            },
+            {
+              "@type": "ListItem",
+              "position": 9,
+              "name": "The Courti Estate, south-east coast",
+              "url": "https://www.thecourtiestate.com/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 10,
+              "name": "Atlantica Grand Mediterraneo, Ermones",
+              "url": "https://www.atlanticahotels.com/atlantica-grand-mediterraneo-resort/weddings/"
+            }
+          ]
+        },
+        {
+          "@type": "FAQPage",
+          "@id": "https://weddedwonderland.com/destination-weddings/corfu-wedding-venues#faq",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "Which part of Corfu is best for a wedding?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "It depends on your guest list and the setting you want. Kommeno and Corfu Town keep guests close to the Old Town and the airport, with Rodostamo 11 km from the airport. The south-east has Angsana Corfu's published spaces and seasons and a private estate. The west coast has cliffside views at Ermones."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Are there beach wedding venues in Corfu?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes. Eva Palace offers \"an intimate beach ceremony\" on Kommeno Bay, and Angsana Corfu names Emerald Beach among its wedding venues. Ask each venue whether a ceremony on the sand is possible on your date."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Can we book a Corfu villa for exclusive use for our wedding?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes. The Courti Estate is available for private hire of its gated estate, with nine bedrooms. Grecotel offers Villa Medusa, a six-bedroom private mansion on the Kommeno peninsula, for intimate celebrations. Neither publishes an event guest count, so ask before you plan the list."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Which airport do guests fly into for a Corfu wedding?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Corfu Airport (CFU). Guests can reach it by car, direct public bus or taxi. Atlantica Grand Mediterraneo on the west coast is about 25 minutes away."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "When is the best time to get married in Corfu?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "That depends on how you weigh heat against rain. July and August average about three rain days and highs above 31°C, while June averages 28.2°C with under five rain days. Wildfires occur from June to September. Check your venue's own season too: Angsana's largest ceremony space runs from mid-May to the end of September."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Can Australians legally get married in Corfu?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes. Some venues, such as Atlantica Grand Mediterraneo, list legal ceremonies. As at November 2026, Smartraveller says you may need a Certificate of No Impediment, and a marriage valid in Greece that would also be valid under Australian law is in most cases recognised in Australia."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    "author": "Wedded Wonderland",
+    "status": "draft",
+    "verify_items": [
+      "Villa Medusa, at-a-glance table (Sea view setting cell): confirm with Grecotel which Kommeno villa is offered as Villa Medusa for weddings and that its listing states \"Direct Sea View\"",
+      "Villa Medusa, venue entry (Sea view line): confirm with Grecotel which Kommeno villa is offered as Villa Medusa for weddings and that its listing states \"Direct Sea View\"",
+      "Corfu Holiday Palace, venue entry (Standout line): confirm with Corfu Holiday Palace that the Nafsika Hall with the fresco is the Nausica Ballroom",
+      "Image credit and licence for slot featured (corfu-wedding-venues-corfu-imperial-sea-view-ceremony-hero.webp): not yet sourced; record the credit and licence (venue press kit with written permission, or licensed stock in library-index.csv) before publishing",
+      "Image credit and licence for slot area-kommeno-dassia (corfu-wedding-venues-kommeno-dassia-setting.webp): not yet sourced; record the credit and licence (venue press kit with written permission, or licensed stock in library-index.csv) before publishing",
+      "Image credit and licence for slot venue-01 (corfu-wedding-venues-corfu-imperial-ceremony-setting.webp): not yet sourced; record the credit and licence (venue press kit with written permission, or licensed stock in library-index.csv) before publishing",
+      "Image credit and licence for slot venue-03 (corfu-wedding-venues-dassia-venue-ceremony-setting.webp): not yet sourced; record the credit and licence (venue press kit with written permission, or licensed stock in library-index.csv) before publishing",
+      "Image credit and licence for slot area-corfu-town (corfu-wedding-venues-corfu-town-setting.webp): not yet sourced; record the credit and licence (venue press kit with written permission, or licensed stock in library-index.csv) before publishing",
+      "Image credit and licence for slot venue-04 (corfu-wedding-venues-corfu-town-venue-ceremony-setting.webp): not yet sourced; record the credit and licence (venue press kit with written permission, or licensed stock in library-index.csv) before publishing",
+      "Image credit and licence for slot area-north-east (corfu-wedding-venues-north-east-setting.webp): not yet sourced; record the credit and licence (venue press kit with written permission, or licensed stock in library-index.csv) before publishing",
+      "Image credit and licence for slot venue-05 (corfu-wedding-venues-north-east-venue-ceremony-setting.webp): not yet sourced; record the credit and licence (venue press kit with written permission, or licensed stock in library-index.csv) before publishing",
+      "Image credit and licence for slot area-south (corfu-wedding-venues-south-setting.webp): not yet sourced; record the credit and licence (venue press kit with written permission, or licensed stock in library-index.csv) before publishing",
+      "Image credit and licence for slot venue-02 (corfu-wedding-venues-angsana-corfu-ceremony-setting.webp): not yet sourced; record the credit and licence (venue press kit with written permission, or licensed stock in library-index.csv) before publishing",
+      "Image credit and licence for slot area-west-coast (corfu-wedding-venues-west-coast-setting.webp): not yet sourced; record the credit and licence (venue press kit with written permission, or licensed stock in library-index.csv) before publishing",
+      "Image credit and licence for slot venue-06 (corfu-wedding-venues-west-coast-venue-ceremony-setting.webp): not yet sourced; record the credit and licence (venue press kit with written permission, or licensed stock in library-index.csv) before publishing",
+      "Jump list anchors: confirm the CMS generates #kommeno, #corfu-town-and-kanoni, #kalami-and-the-north-east, #benitses-and-the-south-east, #ermones-and-the-west-coast from the five area H2s, so the 'Jump to an area' links land; set the IDs by hand if it does not"
+    ],
+    "needs_signoff": [],
+    "redirects_recommended": "none (new article)",
+    "hub_recommendation": "Recommendation only, nothing on the live site changes: the Greece venues guide draft (/destination-weddings/greece-wedding-venues) and the Greece packages guide draft (/destination-weddings/greece-wedding-packages) each link down to this post where they mention Corfu, so the drafts link both ways; this post already links the Greece venues guide twice, the packages guide once and the Greece hub /destinations/europe/greece once.",
+    "deferred_business_items": [
+      "Real wedding at a Corfu or Greece venue",
+      "Fee model and commissions (whether the business takes a cut from venues)",
+      "Wedded Advisor who calls first",
+      "Referral or assistant contact"
+    ],
+    "draft_note": "DRAFT. Do not publish until checked:\n\n1. [[VERIFY]] items (3, in the copy; remove each marker once confirmed, or rewrite the line):\n   - Villa Medusa, at-a-glance table (Sea view setting cell): confirm with Grecotel which Kommeno villa is offered as Villa Medusa for weddings and that its listing states \"Direct Sea View\"\n   - Villa Medusa, venue entry (Sea view line): confirm with Grecotel which Kommeno villa is offered as Villa Medusa for weddings and that its listing states \"Direct Sea View\"\n   - Corfu Holiday Palace, venue entry (Standout line): confirm with Corfu Holiday Palace that the Nafsika Hall with the fresco is the Nausica Ballroom\n\n2. Nic sign-off on prices: none (no prices printed).\n\n3. Image slots needed (12, none approved yet; credit, licence, alt and caption to add when approved):\n   - featured (needed)\n   - area-kommeno-dassia (needed)\n   - venue-01 (needed)\n   - venue-03 (needed)\n   - area-corfu-town (needed)\n   - venue-04 (needed)\n   - area-north-east (needed)\n   - venue-05 (needed)\n   - area-south (needed)\n   - venue-02 (needed)\n   - area-west-coast (needed)\n   - venue-06 (needed)\n\n4. Linked drafts to publish together: the body links three pages that are still drafts, /destination-weddings/greece-wedding-venues (twice), /destination-weddings/greece-wedding-packages (once) and /expert-advice/greek-wedding-traditions (once). Publish the Greece venues guide, the Greece packages guide and Greek wedding traditions together with this post, or hold this post until they are live, so no link breaks.\n\n5. Mobile table: the 'Corfu wedding venues at a glance' table has six columns and must scroll sideways on mobile (wrap it in the CMS's horizontal-scroll table container). Check in the mobile preview that it does not squash or overflow the page.\n\n6. Jump list: check the five 'Jump to an area' links land on their H2s in preview.\n\n7. Deferred business items (4, person's decision, not in this draft):\n   - Real wedding at a Corfu or Greece venue\n   - Fee model and commissions (whether the business takes a cut from venues)\n   - Wedded Advisor who calls first\n   - Referral or assistant contact\n\nBooking checklist (not publishing blockers): see booking-checklist.md"
+  }
+}
