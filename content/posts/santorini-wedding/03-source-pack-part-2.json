@@ -1,0 +1,273 @@
+{
+  "agent": "planner-sme",
+  "task_id": "santorini-wedding",
+  "stage": "03",
+  "status": "complete",
+  "round": 1,
+  "inputs_used": [
+    "CLAUDE.md",
+    "content/posts/santorini-wedding/00-input.json",
+    "content-system/schemas/03-source-pack.schema.json",
+    "content/posts/paros-wedding-venues/03-source-pack-part-3.json (format model and leads)",
+    "Apify web-fetch 2026-11-11 of the official sources listed in each fact"
+  ],
+  "self_qa": {
+    "checks": [
+      {
+        "check": "Every fact has a source and date",
+        "pass": true
+      },
+      {
+        "check": "No price without a source; all prices in needs_signoff",
+        "pass": true,
+        "note": "No prices recorded."
+      },
+      {
+        "check": "Every must-include covered or marked [[VERIFY]]",
+        "pass": true,
+        "note": "Batch C covers season and guest travel only."
+      },
+      {
+        "check": "No invented quotes, statistics or real weddings",
+        "pass": true
+      }
+    ],
+    "confidence": 0.7
+  },
+  "open_questions": [
+    {
+      "to": "orchestrator",
+      "question": "RUN REPORT ONLY: web-search was declined, so no Athinios port authority page, Municipality of Thira page or Visit Greece getting-there page could be found; only directly known URLs were fetched. The 15-minute limit was reached (tool calls ran slowly), so the airport's bus and taxi sub-pages and Visit Greece ferry information were not read. HNMS has no Thira station (Naxos used, labelled). Copy should treat ferry times, port details, airport-to-village distances and step-free access as questions, not claims.",
+      "blocking": false
+    }
+  ],
+  "assumptions": [
+    "jtr-airport.gr is treated as the official airport source: its metadata calls it 'The official website of Santorini Airport (JTR)' and it is served via Fraport Greece's airport systems (response headers); source_type recorded as official_venue as the schema has no airport type.",
+    "Visit Greece flight times are scheduled durations from the tourism board, not airline timetables.",
+    "HNMS Naxos is the nearest clearly labelled official station to Santorini; it is not Santorini data.",
+    "Smartraveller wording read 11 November 2026 UTC; page shows 'still current at 12 November 2026' (Australian date)."
+  ],
+  "verify_items": [
+    "[[VERIFY: HNMS has no Santorini (Thira) station; weather figures are for Naxos, the nearest listed official station (facts 204 to 207). Label as Naxos if cited; the page states 'Data Period: None']]",
+    "[[VERIFY: Ferry routes and crossing times from Piraeus to Santorini not sourced; the Visit Greece page as read lists flights only (fact_202). Do not state crossing times]]",
+    "[[VERIFY: Athinios port not described by any official source read (port authority, municipality or Visit Greece); do not state its location, road access or facilities]]",
+    "[[VERIFY: Santorini Airport distance from Fira or other villages not stated on the pages read; do not state a distance or drive time]]",
+    "[[VERIFY: Villages Oia, Fira, Imerovigli and Pyrgos not named on the Visit Greece page as read (fact_201); naming them needs another official source]]",
+    "[[VERIFY: No official page read on step-free access or cliffside paths in Santorini villages; treat accessibility as questions for venues only]]"
+  ],
+  "tools_used": [
+    "mcp__Apify__apify--web-fetch"
+  ],
+  "next_agent": [
+    "luxury-writer"
+  ],
+  "payload": {
+    "facts": [
+      {
+        "fact_id": "fact_200",
+        "claim": "Visit Greece (the official Greek tourism site) says Santorini, known in ancient times as Thera, is at the southernmost point of the Cyclades and comprises a complex of islands: Thera, Thirasia, Aspronisi, Palea Kameni and Nea Kameni. It says the island owes its fame to its active volcano, in whose caldera you can stay, and that hamlets spread across the rim of the caldera.",
+        "source": "https://www.visitgreece.gr/en/islands/cyclades/santorini",
+        "source_type": "tourism_board",
+        "checked": "2026-11-11",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_201",
+        "claim": "Visit Greece describes Santorini's beaches as black, red and white sand, multicoloured pebbles and steep cliffs, and says the island is arid with fertile soil, mainly growing vines, yellow split peas and tomatoes. The page names no individual villages (Oia, Fira, Imerovigli and Pyrgos are not named on the page as read).",
+        "source": "https://www.visitgreece.gr/en/islands/cyclades/santorini",
+        "source_type": "tourism_board",
+        "checked": "2026-11-11",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_202",
+        "claim": "Visit Greece lists flights from Athens International Airport (Eleftherios Venizelos) to Santorini Airport with a travel duration of 50 minutes, and from Thessaloniki Airport (Macedonia) to Santorini Airport of 1 hour and 30 minutes (scheduled durations stated by the tourism board). The page as read gives no ferry route or crossing time from Piraeus.",
+        "source": "https://www.visitgreece.gr/en/islands/cyclades/santorini",
+        "source_type": "tourism_board",
+        "checked": "2026-11-11",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_203",
+        "claim": "The official website of Santorini Airport (JTR), served through Fraport Greece's airport systems, lists airlines serving the airport including Aegean Airlines, Olympic Air and Sky Express alongside European and Gulf carriers such as British Airways, Lufthansa, Qatar Airways, Etihad Airways, Gulf Air and FlyDubai, and has Schengen and non-Schengen departure areas. It lists ways to and from the airport by public bus and by taxi, and has an Accessible Travel section for passengers with reduced mobility.",
+        "source": "https://www.jtr-airport.gr/en",
+        "source_type": "official_venue",
+        "checked": "2026-11-11",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_204",
+        "claim": "The Hellenic National Meteorological Service (HNMS/EMY) 'Climatic Data by City' page has no Santorini (Thira) station; for the South Aegean it lists only Naxos and Rodos. Naxos is the nearest listed station and any figures must be labelled as Naxos, not Santorini.",
+        "source": "http://oldportal.emy.gr/emy/en/climatology/climatology_city?perifereia=South%20Aegean&poli=Thira",
+        "source_type": "government",
+        "checked": "2026-11-11",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_205",
+        "claim": "HNMS Naxos station (lon 25.369, lat 37.081, altitude 3 m; the page states 'Data Period: None') shows monthly mean temperatures of 16.1 C in April, 19.6 C in May, 23.5 C in June, 25.1 C in July, 25.0 C in August, 23.0 C in September and 19.7 C in October. Mean maximum temperatures are 18.7, 22.1, 25.9, 27.1, 27.0, 25.1 and 21.9 C for the same months.",
+        "source": "http://oldportal.emy.gr/emy/en/climatology/climatology_city?perifereia=South%20Aegean&poli=Naxos",
+        "source_type": "government",
+        "checked": "2026-11-11",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_206",
+        "claim": "HNMS Naxos station shows monthly mean precipitation of 17.6 mm in April, 10.6 mm in May, 2.4 mm in June, 0.9 mm in July, 1.6 mm in August, 7.7 mm in September and 38.6 mm in October, with mean precipitation days of 6.0, 3.6, 1.1, 0.4, 0.3, 1.9 and 5.5 respectively.",
+        "source": "http://oldportal.emy.gr/emy/en/climatology/climatology_city?perifereia=South%20Aegean&poli=Naxos",
+        "source_type": "government",
+        "checked": "2026-11-11",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_207",
+        "claim": "HNMS Naxos station shows a prevailing wind direction of north in every month, with monthly mean wind power of 11.7 in April, 10.0 in May, 10.3 in June, 13.3 in July, 13.8 in August, 13.9 in September and 14.5 in October (units not stated on the page).",
+        "source": "http://oldportal.emy.gr/emy/en/climatology/climatology_city?perifereia=South%20Aegean&poli=Naxos",
+        "source_type": "government",
+        "checked": "2026-11-11",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_208",
+        "claim": "As at November 2026, Smartraveller's overall advice for Greece is 'Exercise normal safety precautions' (level green); the page was updated 30 September 2026 and shows 'still current at 12 November 2026' when read on 11 November 2026 (Australian date).",
+        "source": "https://www.smartraveller.gov.au/destinations/europe/greece",
+        "source_type": "government",
+        "checked": "2026-11-11",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_209",
+        "claim": "As at November 2026, Smartraveller says heatwaves are frequent over the summer months (drink plenty of water, wear light clothing, stay in air conditioning or shade, follow local authorities), and that wildfires occur during the extended summer period from June to September, including near cities and tourist locations, prompting evacuations; fires can start with little warning and travel quickly. Expect travel disruptions in areas that might be affected.",
+        "source": "https://www.smartraveller.gov.au/destinations/europe/greece",
+        "source_type": "government",
+        "checked": "2026-11-11",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_210",
+        "claim": "As at November 2026, Smartraveller's latest update says to be careful when swimming in Greece due to boat traffic, coastal hazards, strong currents and marine life, to check conditions and to swim at patrolled beaches where possible. It says lifeguards operate at many Greek beaches from June to September, sea conditions can change quickly, and to avoid swimming close to cliffs, rock faces or boats.",
+        "source": "https://www.smartraveller.gov.au/destinations/europe/greece",
+        "source_type": "government",
+        "checked": "2026-11-11",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_211",
+        "claim": "As at November 2026, Smartraveller says during the May to October tourist season to be prepared for high temperatures and large crowds at popular seaports; in most cases you will carry luggage up and down stairs on ferries; ferry services can be delayed or cancelled in bad weather, mainly due to strong winds, so check the forecast and reconfirm departures. It says on some Greek islands, such as Santorini, smaller boats or tenders carry cruise ship passengers to and from shore and passengers using tenders may have difficulty with stairs.",
+        "source": "https://www.smartraveller.gov.au/destinations/europe/greece",
+        "source_type": "government",
+        "checked": "2026-11-11",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_212",
+        "claim": "As at November 2026, Smartraveller says Greece is in an active seismic zone and experiences earthquakes and volcanic activity, and that Saharan dust storms occur, particularly in spring, reducing air quality and visibility.",
+        "source": "https://www.smartraveller.gov.au/destinations/europe/greece",
+        "source_type": "government",
+        "checked": "2026-11-11",
+        "is_price": false
+      }
+    ],
+    "insider_details": [
+      {
+        "detail": "Naxos, the nearest official HNMS station, averages under one rain day a month from June to August (0.4 in July, 0.3 in August) but 5.5 in October and 6.0 in April, so shoulder-season dates need a covered or indoor backup in writing.",
+        "fact_ids": [
+          "fact_204",
+          "fact_206"
+        ]
+      },
+      {
+        "detail": "Smartraveller flags frequent summer heatwaves and June to September wildfires; plan shade, water and a later ceremony time for peak-summer dates, and have a plan if roads or flights are disrupted.",
+        "fact_ids": [
+          "fact_209",
+          "fact_205"
+        ]
+      },
+      {
+        "detail": "Ferries can be delayed or cancelled mainly due to strong winds and guests usually carry luggage on stairs; guests coming by sea should arrive a day early, and the 50-minute flight from Athens is the simpler option for older guests.",
+        "fact_ids": [
+          "fact_211",
+          "fact_202",
+          "fact_207"
+        ]
+      },
+      {
+        "detail": "Santorini Airport has an Accessible Travel service for passengers with reduced mobility; ask guests with mobility needs to pre-book it with their airline, and ask each venue about steps between arrival point, ceremony and reception.",
+        "fact_ids": [
+          "fact_203"
+        ]
+      },
+      {
+        "detail": "Swimming close to cliffs, rocks or boats is advised against and lifeguards operate only June to September at many beaches; worth a line in the guest welcome pack for recovery-day beach plans.",
+        "fact_ids": [
+          "fact_210"
+        ]
+      }
+    ],
+    "quotes": [],
+    "real_weddings": [],
+    "verify_items": [
+      "[[VERIFY: HNMS has no Santorini (Thira) station; weather figures are for Naxos, the nearest listed official station (facts 204 to 207). Label as Naxos if cited; the page states 'Data Period: None']]",
+      "[[VERIFY: Ferry routes and crossing times from Piraeus to Santorini not sourced; the Visit Greece page as read lists flights only (fact_202). Do not state crossing times]]",
+      "[[VERIFY: Athinios port not described by any official source read (port authority, municipality or Visit Greece); do not state its location, road access or facilities]]",
+      "[[VERIFY: Santorini Airport distance from Fira or other villages not stated on the pages read; do not state a distance or drive time]]",
+      "[[VERIFY: Villages Oia, Fira, Imerovigli and Pyrgos not named on the Visit Greece page as read (fact_201); naming them needs another official source]]",
+      "[[VERIFY: No official page read on step-free access or cliffside paths in Santorini villages; treat accessibility as questions for venues only]]"
+    ],
+    "needs_signoff": [],
+    "must_include_coverage": [
+      {
+        "item": "Pick your season: official weather data labelled by station",
+        "covered_by": [
+          "fact_204",
+          "fact_205",
+          "fact_206",
+          "fact_207",
+          "[[VERIFY: HNMS has no Santorini (Thira) station; weather figures are for Naxos, the nearest listed official station (facts 204 to 207). Label as Naxos if cited; the page states 'Data Period: None']]"
+        ]
+      },
+      {
+        "item": "Pick your season: Smartraveller heat, wildfire, wind",
+        "covered_by": [
+          "fact_208",
+          "fact_209",
+          "fact_210",
+          "fact_211",
+          "fact_212"
+        ]
+      },
+      {
+        "item": "Plan guest travel: airport from official sources",
+        "covered_by": [
+          "fact_202",
+          "fact_203",
+          "[[VERIFY: Santorini Airport distance from Fira or other villages not stated on the pages read; do not state a distance or drive time]]"
+        ]
+      },
+      {
+        "item": "Plan guest travel: port from official sources",
+        "covered_by": [
+          "fact_211",
+          "[[VERIFY: Ferry routes and crossing times from Piraeus to Santorini not sourced; the Visit Greece page as read lists flights only (fact_202). Do not state crossing times]]",
+          "[[VERIFY: Athinios port not described by any official source read (port authority, municipality or Visit Greece); do not state its location, road access or facilities]]"
+        ]
+      },
+      {
+        "item": "Plan guest travel: step-free access and transfers as questions",
+        "covered_by": [
+          "fact_203",
+          "fact_211",
+          "[[VERIFY: No official page read on step-free access or cliffside paths in Santorini villages; treat accessibility as questions for venues only]]"
+        ]
+      },
+      {
+        "item": "Island setting: caldera and villages",
+        "covered_by": [
+          "fact_200",
+          "fact_201",
+          "[[VERIFY: Villages Oia, Fira, Imerovigli and Pyrgos not named on the Visit Greece page as read (fact_201); naming them needs another official source]]"
+        ]
+      }
+    ]
+  }
+}
