@@ -1,0 +1,710 @@
+{
+  "agent": "editor",
+  "task_id": "santorini-wedding",
+  "stage": "06",
+  "status": "complete",
+  "round": 1,
+  "inputs_used": [
+    "CLAUDE.md",
+    "content/posts/santorini-wedding/00-input.json",
+    "content/posts/santorini-wedding/01-brief.json",
+    "content/posts/santorini-wedding/02-seo.json",
+    "content/posts/santorini-wedding/03-source-pack.json",
+    "content-system/brand/brand-facts.md",
+    "content-system/brand/voice-guide.md",
+    "content-system/brand/banned-phrases.md",
+    "content-system/rubrics/editor-rubric.md",
+    "content-system/schemas/06-edit.schema.json",
+    "content/posts/santorini-wedding/05-draft.md"
+  ],
+  "next_agent": [
+    "icp-reader"
+  ],
+  "self_qa": {
+    "checks": [
+      {
+        "check": "scan_copy.py run and reflected",
+        "pass": true,
+        "note": "On 05-draft.md and on a scratch copy with all 9 edits applied: banned [], dashes 0, overlaps []; flagged 'exclusive' x13 (exclusive use, a field term)."
+      },
+      {
+        "check": "Every factual sentence logged",
+        "pass": true,
+        "note": "110 marker groups logged; Naxos climate table checked cell by cell against fact_205 and fact_206 (all match, labelled Naxos)."
+      },
+      {
+        "check": "Edit strings occur exactly once",
+        "pass": true,
+        "note": "Script-verified: each old string occurs once in 05-draft.md and once at its turn when applied in order."
+      },
+      {
+        "check": "Decision consistent with scores",
+        "pass": true,
+        "note": "Average 4.14, no criterion below 3; must-fixes are generalisations and one unsupported location, none blocking: pass_with_edits."
+      }
+    ],
+    "confidence": 0.85
+  },
+  "open_questions": [
+    {
+      "to": "orchestrator",
+      "question": "Greece venues, Greece packages, Mykonos, Paros and Greek traditions links point to drafts (kept as instructed): publish together or hold those links until live.",
+      "blocking": false
+    },
+    {
+      "to": "orchestrator",
+      "question": "Draft runs about 4,175 words; edits trim only lightly (one repeated takeover sentence, one repeated beach description).",
+      "blocking": false
+    }
+  ],
+  "assumptions": [
+    "Fast mode: claims checked against source-pack claims, not re-fetched live.",
+    "'Wine Tourism Center' kept as Santo Wines' proper name, not a spelling error.",
+    "'Not published:' lines are the sanctioned booking-checklist pattern, not research talk."
+  ],
+  "payload": {
+    "draft_file": "content/posts/santorini-wedding/05-draft.md",
+    "rubric": {
+      "voice": 4,
+      "expertise": 4,
+      "accuracy": 4,
+      "seo_fit": 4,
+      "commercial_link": 4,
+      "structure": 5,
+      "brief_fit": 4
+    },
+    "average": 4.14,
+    "blocking_issues": [],
+    "decision": "pass_with_edits",
+    "edits": [
+      {
+        "location": "Step 1, symbolic ceremony, paragraph 1",
+        "issue": "Must-fix: 'Plenty of couples' and 'one reason some couples prefer to sign at home' are unsourced generalisations and an invented motive; fact_101 supports only recognised-not-registered.",
+        "fix": "Replace exactly:\nPlenty of couples sign the legal paperwork in Australia, quietly, and then hold the ceremony everyone travels for in Santorini. An overseas marriage is recognised in Australia rather than registered here, which is one reason some couples prefer to sign at home. <!-- fact_101 -->\nwith:\nYou can sign the legal paperwork quietly in Australia, then hold the ceremony everyone travels for in Santorini. An overseas marriage cannot be registered in Australia, though in most cases it is recognised here. <!-- fact_101 -->",
+        "old": "Plenty of couples sign the legal paperwork in Australia, quietly, and then hold the ceremony everyone travels for in Santorini. An overseas marriage is recognised in Australia rather than registered here, which is one reason some couples prefer to sign at home. <!-- fact_101 -->",
+        "new": "You can sign the legal paperwork quietly in Australia, then hold the ceremony everyone travels for in Santorini. An overseas marriage cannot be registered in Australia, though in most cases it is recognised here. <!-- fact_101 -->"
+      },
+      {
+        "location": "Step 3, Caldera terraces, intro line",
+        "issue": "Unsourced generalisation ('most couples'); state it as confident description.",
+        "fix": "Replace exactly:\nThe Santorini most couples picture: a whitewashed terrace on the rim and the sun going down over the water.\nwith:\nThe classic Santorini picture: a whitewashed terrace on the rim and the sun going down over the water.",
+        "old": "The Santorini most couples picture: a whitewashed terrace on the rim and the sun going down over the water.",
+        "new": "The classic Santorini picture: a whitewashed terrace on the rim and the sun going down over the water."
+      },
+      {
+        "location": "Step 3, Beach venues, sentence 1",
+        "issue": "Must-fix: 'unlike anywhere else in Greece' is a comparison no fact supports (fact_201 describes Santorini only). Also trims a repeat of the intro sentence.",
+        "fix": "Replace exactly:\nSantorini's beaches are unlike anywhere else in Greece: black, red and white sand, multicoloured pebbles and steep cliffs. <!-- fact_201 -->\nwith:\nSantorini's beaches run to black, red and white sand, pebbles and steep cliffs. <!-- fact_201 -->",
+        "old": "Santorini's beaches are unlike anywhere else in Greece: black, red and white sand, multicoloured pebbles and steep cliffs. <!-- fact_201 -->",
+        "new": "Santorini's beaches run to black, red and white sand, pebbles and steep cliffs. <!-- fact_201 -->"
+      },
+      {
+        "location": "Step 3, Hotels, last sentence",
+        "issue": "Trim: repeated in Step 4 Guest rooms with the same fact; keep it there.",
+        "fix": "Replace exactly:\n Katikies lists a hotel takeover among its event types. <!-- fact_11 -->\n\n### Private villas\nwith:\n\n\n### Private villas",
+        "old": " Katikies lists a hotel takeover among its event types. <!-- fact_11 -->\n\n### Private villas",
+        "new": "\n\n### Private villas"
+      },
+      {
+        "location": "Step 3, Private villas, last sentence",
+        "issue": "Must-fix: fact_10 lists Canaves Ena, Oia Suites, Epitome and Sunday as properties but does not place all four in Oia.",
+        "fix": "Replace exactly:\nThe Canaves Collection also lists The Villas alongside its four Oia properties. <!-- fact_10 -->\nwith:\nThe Canaves Collection also lists The Villas alongside its four hotels. <!-- fact_10 -->",
+        "old": "The Canaves Collection also lists The Villas alongside its four Oia properties. <!-- fact_10 -->",
+        "new": "The Canaves Collection also lists The Villas alongside its four hotels. <!-- fact_10 -->"
+      },
+      {
+        "location": "Step 2, The ground itself, last sentence",
+        "issue": "Unsourced reassurance against a government advisory ('Neither is a reason to look elsewhere'); state the action with authority.",
+        "fix": "Replace exactly:\nNeither is a reason to look elsewhere, but both are reasons to keep travel insurance in place for everyone travelling.\nwith:\nKeep travel insurance in place for everyone travelling, and check the advice again before you fly.",
+        "old": "Neither is a reason to look elsewhere, but both are reasons to keep travel insurance in place for everyone travelling.",
+        "new": "Keep travel insurance in place for everyone travelling, and check the advice again before you fly."
+      },
+      {
+        "location": "Step 8, closing paragraph, sentence 1",
+        "issue": "Unsourced generalisation ('Many couples').",
+        "fix": "Replace exactly:\nMany couples weave Greek customs through the weekend, from the music to the dancing.\nwith:\nGreek customs can run through the whole weekend, from the music to the dancing.",
+        "old": "Many couples weave Greek customs through the weekend, from the music to the dancing.",
+        "new": "Greek customs can run through the whole weekend, from the music to the dancing."
+      },
+      {
+        "location": "FAQ, symbolic ceremony, last sentence",
+        "issue": "Unsourced generalisation ('Many couples marry legally in Australia first').",
+        "fix": "Replace exactly:\nMany couples marry legally in Australia first and hold the symbolic ceremony on the island.\nwith:\nYou can also marry legally in Australia first and hold the symbolic ceremony on the island.",
+        "old": "Many couples marry legally in Australia first and hold the symbolic ceremony on the island.",
+        "new": "You can also marry legally in Australia first and hold the symbolic ceremony on the island."
+      },
+      {
+        "location": "FAQ, small wedding, opening",
+        "issue": "'Very.' reads glib at this price point; 'Most' overstates against the table, which is the evidence.",
+        "fix": "Replace exactly:\nVery. Most caldera-edge spaces in Oia and Imerovigli seat between 15 and 60,\nwith:\nYes. The caldera-edge spaces in Oia and Imerovigli seat between 15 and 60,",
+        "old": "Very. Most caldera-edge spaces in Oia and Imerovigli seat between 15 and 60,",
+        "new": "Yes. The caldera-edge spaces in Oia and Imerovigli seat between 15 and 60,"
+      }
+    ],
+    "fact_check_log": [
+      {
+        "claim": "Santorini, known in ancient times as Thera, sits at the southernmost point of the Cyclades.",
+        "fact_id": "fact_200",
+        "status": "confirmed"
+      },
+      {
+        "claim": "It is not one island but a cluster: Thera, Thirasia, Aspronisi, Palea Kameni and Nea Kameni.",
+        "fact_id": "fact_200",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Its fame rests on an active volcano, and its villages spread along the rim of the caldera, where you can stay right on the edge.",
+        "fact_id": "fact_200",
+        "status": "confirmed"
+      },
+      {
+        "claim": "The beaches are black, red and white sand, multicoloured pebbles and steep cliffs.",
+        "fact_id": "fact_201",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Inland, the island is arid but fertile, growing mainly vines, yellow split peas and tomatoes.",
+        "fact_id": "fact_201",
+        "status": "confirmed"
+      },
+      {
+        "claim": "That is why a Santorini wedding can mean a cliff-edge terrace in Oia one evening and a winery in Pyrgos the next.",
+        "fact_id": "fact_08,fact_300",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Some venues are set up for both. Canaves Collection in Oia lists religious, civil, symbolic and vow renewal ceremonies on its wedding enquiry form.",
+        "fact_id": "fact_09",
+        "status": "confirmed"
+      },
+      {
+        "claim": "lia, but in most cases it is legally recognised if it was valid under the law of the country where it took place and would have been valid under Australian law.",
+        "fact_id": "fact_101",
+        "status": "confirmed"
+      },
+      {
+        "claim": "t recognise an overseas marriage where either person is already married, is not old enough to marry, is too closely related to the other, or is forced to marry.",
+        "fact_id": "fact_102",
+        "status": "confirmed"
+      },
+      {
+        "claim": "A foreign marriage certificate is usually accepted as proof of the marriage, but it may not work as proof of a name change.",
+        "fact_id": "fact_101",
+        "status": "confirmed"
+      },
+      {
+        "claim": " to change your name, check with your state registry of births, deaths and marriages before you fly. A lawyer can confirm the certificate is valid in Australia.",
+        "fact_id": "fact_101",
+        "status": "confirmed"
+      },
+      {
+        "claim": " travels for in Santorini. An overseas marriage is recognised in Australia rather than registered here, which is one reason some couples prefer to sign at home.",
+        "fact_id": "fact_101",
+        "status": "removed"
+      },
+      {
+        "claim": "e never would. Grace Hotel in Imerovigli offers a unity ceremony in which the two of you combine black and white volcanic sand collected from Santorini beaches.",
+        "fact_id": "fact_03",
+        "status": "confirmed"
+      },
+      {
+        "claim": " Hotels list micro weddings in Santorini as a package idea, describing small ceremonies with Aegean views, planned and managed by its events and concierge team.",
+        "fact_id": "fact_15",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Canaves Collection describes its weddings as running from traditional weddings to modern elopements.",
+        "fact_id": "fact_09",
+        "status": "confirmed"
+      },
+      {
+        "claim": "al Meteorological Service](http://oldportal.emy.gr/emy/en/climatology/climatology_city?perifereia=South%20Aegean&poli=Naxos) has no station on Santorini itself.",
+        "fact_id": "fact_204",
+        "status": "confirmed"
+      },
+      {
+        "claim": "The figures below are for Naxos, the nearest official station, so read them as a guide to the neighbourhood rather than a forecast for the caldera.",
+        "fact_id": "fact_204",
+        "status": "confirmed"
+      },
+      {
+        "claim": "| October | 21.9 | 19.7 | 38.6 | 5.5 |",
+        "fact_id": "fact_205,fact_206",
+        "status": "confirmed"
+      },
+      {
+        "claim": "A few patterns matter for a wedding. From June to August, rain all but disappears at Naxos, with under one rain day a month in July and August.",
+        "fact_id": "fact_206",
+        "status": "confirmed"
+      },
+      {
+        "claim": "October is a different month: rain rises to 38.6 mm across 5.5 days, and April sees 6.0 rain days.",
+        "fact_id": "fact_206",
+        "status": "confirmed"
+      },
+      {
+        "claim": "May and September sit between, with mean maximums of 22.1°C and 25.1°C.",
+        "fact_id": "fact_205",
+        "status": "confirmed"
+      },
+      {
+        "claim": "re. At Naxos the prevailing wind blows from the north in every month, and the station's mean wind readings run higher from July to October than in May and June.",
+        "fact_id": "fact_207",
+        "status": "confirmed"
+      },
+      {
+        "claim": "As at November 2026, [Smartraveller's advice for Greece](https://www.smartraveller.gov.au/destinations/europe/greece) is to exercise normal safety precautions.",
+        "fact_id": "fact_208",
+        "status": "confirmed"
+      },
+      {
+        "claim": "**Heat.** Heatwaves are frequent over the summer months.",
+        "fact_id": "fact_209",
+        "status": "confirmed"
+      },
+      {
+        "claim": "ire.** Wildfires occur in the extended summer period from June to September, including near tourist areas, and can start with little warning and travel quickly.",
+        "fact_id": "fact_209",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Expect some travel disruption in affected areas, and keep a covered or indoor fallback in your plan.",
+        "fact_id": "fact_209",
+        "status": "confirmed"
+      },
+      {
+        "claim": "**Wind and ferries.** Ferry services can be delayed or cancelled in bad weather, mainly because of strong winds.",
+        "fact_id": "fact_211",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Guests arriving by sea should check the forecast and reconfirm departures.",
+        "fact_id": "fact_211",
+        "status": "confirmed"
+      },
+      {
+        "claim": "**Swimming.** Lifeguards operate at many Greek beaches from June to September, and sea conditions can change quickly.",
+        "fact_id": "fact_210",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Point guests to patrolled beaches, and away from cliffs, rock faces and boats.",
+        "fact_id": "fact_210",
+        "status": "confirmed"
+      },
+      {
+        "claim": "**The ground itself.** Greece is in an active seismic zone, with earthquakes and volcanic activity, including near Santorini.",
+        "fact_id": "fact_104",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Saharan dust storms also occur, particularly in spring, and can reduce air quality and visibility.",
+        "fact_id": "fact_212",
+        "status": "confirmed"
+      },
+      {
+        "claim": "**Grace Hotel Santorini, Imerovigli.** A cliff-top suite hotel whose ceremonies take place 363 metres above sea level, facing the caldera sunsets.",
+        "fact_id": "fact_01",
+        "status": "confirmed"
+      },
+      {
+        "claim": "The 363 Lounge, an open-air champagne terrace, seats 40 or holds 60 standing.",
+        "fact_id": "fact_02",
+        "status": "confirmed"
+      },
+      {
+        "claim": "A flat venue fee includes exclusive use of the chosen event spaces, furniture, set-up, breakdown and staffing.",
+        "fact_id": "fact_04",
+        "status": "confirmed"
+      },
+      {
+        "claim": "s for up to 30 guests, the rooftop Veranda at Canaves Sunday for up to 40 with 180-degree caldera views, and the Sunset Terrace at Canaves Epitome for up to 25.",
+        "fact_id": "fact_08",
+        "status": "confirmed"
+      },
+      {
+        "claim": "A wedding brochure sets out its package options.",
+        "fact_id": "fact_09",
+        "status": "confirmed"
+      },
+      {
+        "claim": "**Mystique, Oia.** A caldera hotel whose wedding specialists organise the day.",
+        "fact_id": "fact_16",
+        "status": "confirmed"
+      },
+      {
+        "claim": "You can get ready with the wedding party in a sea-view suite, and Elios Spa offers treatments before the ceremony.",
+        "fact_id": "fact_16",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Santorini's beaches are unlike anywhere else in Greece: black, red and white sand, multicoloured pebbles and steep cliffs.",
+        "fact_id": "fact_201",
+        "status": "unsupported"
+      },
+      {
+        "claim": "Ask any beach venue how it manages the north wind, shade at your ceremony time and the plan if the sea is up, since conditions can change quickly.",
+        "fact_id": "fact_207,fact_210",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Wines, Pyrgos.** The winery of the Union of Santorini Cooperatives, with a Wine Tourism Center beside the winery, a view of the volcano and doors open all year.",
+        "fact_id": "fact_300",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Its terraces look out over the caldera, a setting made for vows at sunset.",
+        "fact_id": "fact_301,fact_302",
+        "status": "confirmed"
+      },
+      {
+        "claim": "An Event Manager handles each wedding.",
+        "fact_id": "fact_303",
+        "status": "confirmed"
+      },
+      {
+        "claim": "**Venetsanos Winery, Santorini.** The first industrial winery on the island, now set up for events and weddings.",
+        "fact_id": "fact_310",
+        "status": "confirmed"
+      },
+      {
+        "claim": "lt on four levels, and the Upper Terrace on the second is an open-air space of 250 square metres overlooking the caldera, for the ceremony, reception or dinner.",
+        "fact_id": "fact_311",
+        "status": "confirmed"
+      },
+      {
+        "claim": "The terrace seats about 100 at round tables, holds 160 for a standing reception or 100 theatre style.",
+        "fact_id": "fact_312",
+        "status": "confirmed"
+      },
+      {
+        "claim": "tions under one events team. **Katikies** has three Santorini addresses: Katikies Santorini in Oia, Katikies Chromata in Imerovigli and Katikies Garden in Fira.",
+        "fact_id": "fact_11",
+        "status": "confirmed"
+      },
+      {
+        "claim": "In Oia, Botrini's Restaurant seats 60 or holds 100 standing and is set up for ceremonies, lunches, dinners and cocktail receptions.",
+        "fact_id": "fact_12",
+        "status": "confirmed"
+      },
+      {
+        "claim": "In Fira, the St. Joseph Wine Cave seats 36 for a ceremony, and the Selene Restaurant holds 150 standing.",
+        "fact_id": "fact_13",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Katikies lists a hotel takeover among its event types.",
+        "fact_id": "fact_11",
+        "status": "confirmed"
+      },
+      {
+        "claim": "a is a 400 square metre villa with a private pool, gazebo and outdoor fireplace, and couples can exchange vows on its terrace; it seats 15 or holds 60 standing.",
+        "fact_id": "fact_02",
+        "status": "confirmed"
+      },
+      {
+        "claim": "The Canaves Collection also lists The Villas alongside its four Oia properties.",
+        "fact_id": "fact_10",
+        "status": "unsupported"
+      },
+      {
+        "claim": "| Venetsanos Winery, Upper Terrace | Santorini | about 100 | 160 |",
+        "fact_id": "fact_02,fact_08,fact_12,fact_13,fact_14,fact_312",
+        "status": "confirmed"
+      },
+      {
+        "claim": "The caldera-edge spaces in Oia and Imerovigli seat between 15 and 60.",
+        "fact_id": "fact_02,fact_08,fact_12,fact_14",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Above that, you are choosing between a standing reception, splitting the events across more than one space, or a larger terrace such as the one at Venetsanos.",
+        "fact_id": "fact_312",
+        "status": "confirmed"
+      },
+      {
+        "claim": "ce Hotel sets its packages differently for 50 guests or fewer and for more than 50, a useful sign of where a guest list starts to change the shape of a wedding.",
+        "fact_id": "fact_04",
+        "status": "confirmed"
+      },
+      {
+        "claim": "At Grace Hotel, guests can book individually, and room blocks or a full buyout are quoted on request, with no minimum number of rooms.",
+        "fact_id": "fact_06",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Katikies lists a hotel takeover among its event types, and the Canaves Collection lists exclusives and buyouts among its events and weddings options.",
+        "fact_id": "fact_11,fact_10",
+        "status": "confirmed"
+      },
+      {
+        "claim": "The flight from Athens International Airport to Santorini takes about 50 minutes, and from Thessaloniki about 1 hour 30 minutes.",
+        "fact_id": "fact_202",
+        "status": "confirmed"
+      },
+      {
+        "claim": "r-airport.gr/en) is served by Greek domestic airlines as well as several European and Gulf carriers, and has separate Schengen and non-Schengen departure areas.",
+        "fact_id": "fact_203",
+        "status": "confirmed"
+      },
+      {
+        "claim": "From the airport, guests can travel on by public bus or taxi.",
+        "fact_id": "fact_203",
+        "status": "confirmed"
+      },
+      {
+        "claim": "The airport also has an Accessible Travel section for passengers with reduced mobility, which is worth sending to any guest who needs help on arrival.",
+        "fact_id": "fact_203",
+        "status": "confirmed"
+      },
+      {
+        "claim": "ome guests will want the sea crossing. As at November 2026, expect high temperatures and large crowds at busy seaports during the May to October tourist season.",
+        "fact_id": "fact_211",
+        "status": "confirmed"
+      },
+      {
+        "claim": "In most cases you carry your own luggage up and down stairs on ferries.",
+        "fact_id": "fact_211",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Services can be delayed or cancelled when the wind is strong, so guests should reconfirm departures.",
+        "fact_id": "fact_211",
+        "status": "confirmed"
+      },
+      {
+        "claim": "On Santorini, smaller boats or tenders carry cruise ship passengers to and from shore, and passengers using tenders may have difficulty with stairs.",
+        "fact_id": "fact_211",
+        "status": "confirmed"
+      },
+      {
+        "claim": "**Entry.** Greece is in the Schengen area, and Australians can make short trips without a visa for up to 90 days in any 180-day period.",
+        "fact_id": "fact_106",
+        "status": "confirmed"
+      },
+      {
+        "claim": "On arrival, Australian passport holders register fingerprints and a photo under the European Entry/Exit System, which is free but may slow the border.",
+        "fact_id": "fact_106",
+        "status": "confirmed"
+      },
+      {
+        "claim": "ove you are free to marry, most commonly with a Certificate of No Impediment to Marriage (CNI) and certificates from a registry of births, deaths and marriages.",
+        "fact_id": "fact_100",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Those registry certificates can be a statement of no record of a previous marriage, a Single Status certificate or a No Record Result certificate.",
+        "fact_id": "fact_100",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Local authorities may also ask for divorce papers, a late spouse's death certificate, and your original birth certificate and passport.",
+        "fact_id": "fact_100",
+        "status": "confirmed"
+      },
+      {
+        "claim": "The Department of Foreign Affairs and Trade can issue a CNI in Australia, but some local authorities accept only CNIs issued in their own country.",
+        "fact_id": "fact_100",
+        "status": "confirmed"
+      },
+      {
+        "claim": "- whether it also needs an authentication or apostille.",
+        "fact_id": "fact_100",
+        "status": "confirmed"
+      },
+      {
+        "claim": "In Greece, the Australian Embassy in Athens witnesses CNI applications, issues CNIs and witnesses notices of intended marriage.",
+        "fact_id": "fact_103",
+        "status": "confirmed"
+      },
+      {
+        "claim": "All notarial services need an appointment, Monday to Friday, 9am to 12.30pm, though CNI and apostille documents can be sent by post.",
+        "fact_id": "fact_103",
+        "status": "confirmed"
+      },
+      {
+        "claim": "They are ready for collection within two working days unless same-day collection is arranged in advance, or can be returned by mail.",
+        "fact_id": "fact_103",
+        "status": "confirmed"
+      },
+      {
+        "claim": "The Embassy gives no legal advice, honorary consuls cannot provide notarial services, and a fee applies.",
+        "fact_id": "fact_103",
+        "status": "confirmed"
+      },
+      {
+        "claim": "An apostille or authentication legalises a signature or seal on a document so it can be used overseas.",
+        "fact_id": "fact_103",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Ask the Greek authority which of your documents it needs and which must be legalised, and whether that means an apostille or an authentication certificate.",
+        "fact_id": "fact_320",
+        "status": "confirmed"
+      },
+      {
+        "claim": "The apostille or authentication certificate is applied directly to the document.",
+        "fact_id": "fact_321",
+        "status": "confirmed"
+      },
+      {
+        "claim": "If you do not want your originals marked, have a notarised copy legalised instead, and check the Greek authority accepts it.",
+        "fact_id": "fact_321",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Documents that are not original Australian public documents must first be notarised by an Australian Notary Public.",
+        "fact_id": "fact_321",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Requests go on the Document Legalisation Request Form, signed in front of an authorised witness.",
+        "fact_id": "fact_322",
+        "status": "confirmed"
+      },
+      {
+        "claim": " in person at many Australian embassies and consulates overseas, or by registered mail to the Authentications Section in Melbourne or Sydney, and a fee applies.",
+        "fact_id": "fact_322",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Processing times vary, with delays at the end of the school year and in peak holiday periods, and for incomplete requests.",
+        "fact_id": "fact_323",
+        "status": "confirmed"
+      },
+      {
+        "claim": "An Australian-issued apostille can be verified online.",
+        "fact_id": "fact_323",
+        "status": "confirmed"
+      },
+      {
+        "claim": "ace Hotel requires a wedding planner for every wedding, involved for at least 3 months beforehand, and gives you a dedicated event manager for the venue itself.",
+        "fact_id": "fact_05",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Santo Wines assigns an Event Manager to each wedding.",
+        "fact_id": "fact_303",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Where does the wedding party get ready, and from what time? At Grace Hotel, a private lounge with a full-length mirror is available from 8am on the wedding day.",
+        "fact_id": "fact_07",
+        "status": "confirmed"
+      },
+      {
+        "claim": "**Music.** Can a DJ or live band play, and at what time must amplified music stop? Grace Hotel allows a DJ or live band at the reception.",
+        "fact_id": "fact_07",
+        "status": "confirmed"
+      },
+      {
+        "claim": "**Weather.** What is the plan for a strong north wind, a rare shower or a heatwave, and which covered space is held for you?",
+        "fact_id": "fact_207,fact_209",
+        "status": "confirmed"
+      },
+      {
+        "claim": "ake this easy: Grace Hotel and Katikies each have more than one event space, so the welcome drinks, the ceremony and the dinner can each have their own setting.",
+        "fact_id": "fact_02,fact_12,fact_13,fact_14",
+        "status": "confirmed"
+      },
+      {
+        "claim": "ery afternoon.** Santo Wines runs wine tastings and a restaurant at its Wine Tourism Center, and Venetsanos Winery offers tours and tastings with a light lunch.",
+        "fact_id": "fact_304,fact_313",
+        "status": "confirmed"
+      },
+      {
+        "claim": "ave the wedding party time and quiet. A spa morning, such as treatments at Elios Spa for couples marrying at Mystique, keeps the hours before the ceremony calm.",
+        "fact_id": "fact_16",
+        "status": "confirmed"
+      },
+      {
+        "claim": "*A recovery lunch.** The day after, a long lunch by the sea, at a beach or a taverna, with nothing to organise. Choose a patrolled beach if guests plan to swim.",
+        "fact_id": "fact_210",
+        "status": "confirmed"
+      },
+      {
+        "claim": "**Season.** The May to October tourist season brings heat and crowds to the busy seaports.",
+        "fact_id": "fact_211",
+        "status": "confirmed"
+      },
+      {
+        "claim": "**Guest numbers and rooms.** Grace Hotel sets its packages differently for 50 guests or fewer and for more than 50.",
+        "fact_id": "fact_04",
+        "status": "confirmed"
+      },
+      {
+        "claim": "The number of rooms you hold, and whether you take a block, a buyout or a hotel takeover, matters as much as the head count.",
+        "fact_id": "fact_06,fact_11",
+        "status": "confirmed"
+      },
+      {
+        "claim": "**Exclusive use versus spaces.** Grace Hotel's venue fee includes exclusive use of the event spaces you choose, rather than the hotel.",
+        "fact_id": "fact_04",
+        "status": "confirmed"
+      },
+      {
+        "claim": "* Some venues charge a flat venue fee covering spaces, furniture, set-up, breakdown and staffing, while others work from wedding packages set out in a brochure.",
+        "fact_id": "fact_04,fact_09",
+        "status": "confirmed"
+      },
+      {
+        "claim": "where the venue requires one.** At venues such as Grace Hotel, a wedding planner is required for every wedding, so their fee belongs in the plan from the start.",
+        "fact_id": "fact_05",
+        "status": "confirmed"
+      },
+      {
+        "claim": "he venue. As at November 2026, a marriage valid in Greece that would also have been valid under Australian law is in most cases legally recognised in Australia.",
+        "fact_id": "fact_101",
+        "status": "confirmed"
+      },
+      {
+        "claim": "gistry certificates, and local authorities may also ask for divorce papers, a late spouse's death certificate, and your original birth certificate and passport.",
+        "fact_id": "fact_100",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Ask the Greek embassy or consulate whether you need a CNI, whether you can get it in Australia, and whether it needs an authentication or apostille.",
+        "fact_id": "fact_100",
+        "status": "confirmed"
+      },
+      {
+        "claim": "The tourist season runs from May to October, and lifeguards work at many Greek beaches from June to September.",
+        "fact_id": "fact_211,fact_210",
+        "status": "confirmed"
+      },
+      {
+        "claim": ", the nearest official weather station, June to August are the driest months, while heatwaves are frequent in summer and wildfires occur from June to September.",
+        "fact_id": "fact_206,fact_209",
+        "status": "confirmed"
+      },
+      {
+        "claim": "ction lists symbolic ceremonies alongside civil, religious and vow renewal options, and Grace Hotel offers a unity ceremony using black and white volcanic sand.",
+        "fact_id": "fact_09,fact_03",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Very. Most caldera-edge spaces in Oia and Imerovigli seat between 15 and 60, and Grace Hotel's villa terrace seats 15.",
+        "fact_id": "fact_02,fact_08,fact_12,fact_14",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Katikies lists micro weddings as a package idea, and Canaves caters for modern elopements.",
+        "fact_id": "fact_15,fact_09",
+        "status": "confirmed"
+      }
+    ],
+    "compliance": {
+      "pass": true,
+      "issues": [
+        "No prices or amounts; no Wedded Privileges; no 'last dance'; no Athinios claim; no same-sex marriage position; Advisor lines: one in body (primary CTA) plus close, both within brand-facts.md; no legal, church or transfer handling implied.",
+        "Generalisations ('Plenty of', 'Many couples', 'most couples') fixed by edits."
+      ]
+    },
+    "originality": {
+      "pass": true,
+      "matches": []
+    },
+    "banned_phrases_found": [],
+    "needs_signoff": []
+  }
+}

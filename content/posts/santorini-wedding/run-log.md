@@ -7,3 +7,4 @@
 22:43 03 batch C done: Visit Greece, Fraport JTR airport, HNMS Naxos (no Thira station; labelled), Smartraveller heat, wildfire, swimming, ferries, earthquakes. Web search declined in batch C (not retried); no port facts.
 22:44 03 top-up D done: Santo Wines (Pyrgos) and Venetsanos Winery qualify; Smartraveller legalisation page read. Packs merged (6 venues).
 22:49 05 draft done: ~4,175 words, 6 venue examples, scan clean, 0 VERIFY; first-draft docx built.
+22:51 07 readers done (enquire 3/3/2/3/1; UHNW: large lists need buyout route). 06 editor pass_with_edits (4.14): 9 edits applied to 05-draft-r2.md.
