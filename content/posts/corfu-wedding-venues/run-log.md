@@ -12,3 +12,4 @@
 03:16 07 readers: search_visitor, uhnw done (no must-fix).
 03:16 07 readers: planner_couple, sceptic done (sceptic must-fix: Courti view overstated in table).
 03:20 06 editor pass_with_edits (4.14): 31 edits applied to 05-draft-r2.md; 02-seo meta title updated to 10.
+03:23 07b panel: revise (enquire 2.6), 3 must-fix + should-fix + consider; one final pass.
