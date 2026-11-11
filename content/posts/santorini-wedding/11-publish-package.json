@@ -1,0 +1,331 @@
+{
+  "agent": "cms-publisher",
+  "task_id": "santorini-wedding",
+  "stage": "11",
+  "status": "complete",
+  "round": 1,
+  "inputs_used": [
+    "CLAUDE.md",
+    "content-system/cms/field-map.md",
+    "content-system/schemas/11-publish-package.schema.json",
+    "content/posts/santorini-wedding/00-input.json",
+    "content/posts/santorini-wedding/01-brief.json",
+    "content/posts/santorini-wedding/02-seo.json",
+    "content/posts/santorini-wedding/03-source-pack.json",
+    "content/posts/santorini-wedding/04-images.json",
+    "content/posts/santorini-wedding/08-final.md",
+    "content/posts/santorini-wedding/09-cro.json",
+    "content/posts/santorini-wedding/10-distribution.json",
+    "content/posts/wedding-in-crete/11-body.md (format model)",
+    "content/posts/wedding-in-crete/11-publish-package.json (format model)",
+    "content/posts/wedding-in-crete/12-cms-report.md (format model)",
+    "content/posts/paros-wedding-venues/booking-checklist.md (format model)"
+  ],
+  "self_qa": {
+    "checks": [
+      {
+        "check": "08-final.md already carries the 09-cro.json secondary link (cost section)",
+        "pass": true
+      },
+      {
+        "check": "Front matter and all <!-- fact_xx --> markers removed; 8 image-slot comments kept; no [[VERIFY]] markers in the copy",
+        "pass": true
+      },
+      {
+        "check": "Primary CTA block at the marker; inline fallback retagged utm_content=inline; secondary, magnet and closing marked with comments; primary, secondary, magnet and closing each appear once as a link",
+        "pass": true
+      },
+      {
+        "check": "Exactly 4 key takeaways copied verbatim; 5 FAQ pairs extracted; FAQPage carries all 5",
+        "pass": true
+      },
+      {
+        "check": "primary_category equals categories[0] (Destination Weddings); slug and URL from 02-seo.json",
+        "pass": true
+      },
+      {
+        "check": "No prices printed, needs_signoff empty; no em dashes",
+        "pass": true
+      },
+      {
+        "check": "Image alt and caption filled",
+        "pass": false,
+        "note": "None supplied in 04-images.json; left empty, not invented. All 8 slots needed."
+      },
+      {
+        "check": "Status draft; nothing uploaded, published or scheduled",
+        "pass": true
+      }
+    ],
+    "confidence": 0.9
+  },
+  "open_questions": [
+    {
+      "to": "orchestrator",
+      "question": "CMS upload not attempted: no browser in this session (fast mode, package only) and content-system/cms/field-map.md is NOT YET MAPPED. Run /wedded-cms-discovery locally, then /wedded-blog resume=santorini-wedding.",
+      "blocking": true
+    },
+    {
+      "to": "orchestrator",
+      "question": "No author named in the inputs; package uses 'Wedded Wonderland'. Confirm.",
+      "blocking": false
+    }
+  ],
+  "assumptions": [
+    "Title is the person's title from 00-input.json and the 08-final.md front matter.",
+    "Excerpt is the meta description from 02-seo.json: the opening paragraph's first two sentences do not carry the focus keyword, and the first three run past 300 characters.",
+    "content_type 'Guide' and cluster 'Getting Married in Greece' follow the Crete model; the brief gives 'planning_guide'.",
+    "Breadcrumb level 2 URL is https://weddedwonderland.com/destination-weddings, as in the Crete model."
+  ],
+  "verify_items": [],
+  "tools_used": [
+    "Bash (python3 -I)"
+  ],
+  "next_agent": [
+    "orchestrator"
+  ],
+  "payload": {
+    "title": "How to Plan a Santorini Wedding Step by Step",
+    "slug": "santorini-wedding",
+    "url_path": "/destination-weddings/santorini-wedding",
+    "content_type": "Guide",
+    "cluster": "Getting Married in Greece",
+    "categories": [
+      "Destination Weddings",
+      "Greece",
+      "Santorini",
+      "Planning Guides"
+    ],
+    "primary_category": "Destination Weddings",
+    "tags": [
+      "Getting Married in Greece",
+      "Santorini",
+      "Oia",
+      "Imerovigli",
+      "Wedding planning",
+      "Wedding seasons",
+      "Legal requirements"
+    ],
+    "excerpt": "Plan a Santorini wedding in nine steps: legal or symbolic, season, caldera or beach venue, guest travel, documents and questions to ask before you book.",
+    "key_takeaways": [
+      "Decide first whether your Santorini ceremony will be legal or symbolic, because that choice sets your documents, your timeline and the venues that suit you.",
+      "Choose your season from the figures for Naxos, the nearest official weather station, where summer is driest and October wetter, then set the ceremony time around the heat and the north wind.",
+      "Match the setting to your guest list, because caldera terraces, hotels, wineries and private villas differ widely in capacity and guest rooms.",
+      "Put every house rule in writing before you sign, including music times, exclusive use, ceremony times and the plan if the weather turns."
+    ],
+    "body_markdown_file": "content/posts/santorini-wedding/11-body.md",
+    "faq": [
+      {
+        "q": "Can you legally get married in Santorini?",
+        "a": "Yes, but plan the legal side before the venue. As at November 2026, a marriage valid in Greece that would also have been valid under Australian law is in most cases legally recognised in Australia. For a civil marriage on the island, check the steps with the Municipality of Thira and the Australian Embassy in Athens, including any fees."
+      },
+      {
+        "q": "What documents do Australians need to get married in Santorini?",
+        "a": "You may need to prove you are free to marry, most commonly with a Certificate of No Impediment and registry certificates, and local authorities may also ask for divorce papers, a late spouse's death certificate, and your original birth certificate and passport. Ask the Greek embassy or consulate whether you need a CNI, whether you can get it in Australia, and whether it needs an authentication or apostille."
+      },
+      {
+        "q": "When is the wedding season in Santorini?",
+        "a": "At Naxos, the nearest official weather station, May and September have mean maximums of 22.1°C and 25.1°C against about 27°C in July and August, and October brings 38.6 mm of rain over 5.5 days. There, June to August are the driest months, while heatwaves are frequent in summer and wildfires occur from June to September. The May to October tourist season also brings crowds to the busy seaports."
+      },
+      {
+        "q": "Can we have a symbolic ceremony in Santorini?",
+        "a": "Yes. Canaves Collection lists symbolic ceremonies alongside civil, religious and vow renewal options, and Grace Hotel offers a unity ceremony using black and white volcanic sand. You can also marry legally in Australia first and hold the symbolic ceremony on the island."
+      },
+      {
+        "q": "Is Santorini good for a small wedding or elopement?",
+        "a": "Yes. The caldera-edge spaces in Oia and Imerovigli seat between 15 and 60, and Grace Hotel's villa terrace seats 15. Katikies lists micro weddings as a package idea, and Canaves caters for modern elopements."
+      }
+    ],
+    "images": [
+      {
+        "slot_id": "featured",
+        "file": "content/posts/santorini-wedding/images/santorini-wedding-canaves-oia-caldera-ceremony-hero.webp",
+        "role": "featured",
+        "status": "needed"
+      },
+      {
+        "slot_id": "legal-or-symbolic",
+        "file": "content/posts/santorini-wedding/images/santorini-wedding-grace-hotel-ceremony-aisle.webp",
+        "role": "inline",
+        "status": "needed"
+      },
+      {
+        "slot_id": "season",
+        "file": "content/posts/santorini-wedding/images/santorini-wedding-oia-caldera-spring-light.webp",
+        "role": "inline",
+        "status": "needed"
+      },
+      {
+        "slot_id": "setting-venue-type",
+        "file": "content/posts/santorini-wedding/images/santorini-wedding-mystique-oia-cliffside-terrace.webp",
+        "role": "inline",
+        "status": "needed"
+      },
+      {
+        "slot_id": "guest-list",
+        "file": "content/posts/santorini-wedding/images/santorini-wedding-katikies-oia-long-table-dinner.webp",
+        "role": "inline",
+        "status": "needed"
+      },
+      {
+        "slot_id": "guest-travel",
+        "file": "content/posts/santorini-wedding/images/santorini-wedding-fira-old-port-morning.webp",
+        "role": "inline",
+        "status": "needed"
+      },
+      {
+        "slot_id": "weekend",
+        "file": "content/posts/santorini-wedding/images/santorini-wedding-caldera-sunset-welcome-drinks.webp",
+        "role": "inline",
+        "status": "needed"
+      },
+      {
+        "slot_id": "checklist",
+        "file": "content/posts/santorini-wedding/images/santorini-wedding-illustrative-linen-planner.webp",
+        "role": "inline",
+        "status": "needed"
+      }
+    ],
+    "cta": {
+      "text": "Speak with a Wedded Advisor",
+      "subtext": "The fee is agreed in writing before any work begins.",
+      "link": "/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=santorini-wedding&utm_content=primary",
+      "placement": "At the former <!-- CTA: primary --> marker after Step 3 (choose your setting and venue type), after the Mykonos and Paros comparison line (marked <!-- CTA BLOCK: primary --> in 11-body.md); the inline sentence after the block is the fallback and is tagged utm_content=inline."
+    },
+    "secondary_cta": {
+      "text": "See real options with Wedded Concierge",
+      "subtext": "Venues, dates and costs actually free when you want them.",
+      "link": "/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=santorini-wedding&utm_content=secondary",
+      "placement": "Inline link at the end of the 'Venue fee versus package' paragraph in 'What shapes the cost of a Santorini wedding' (marked <!-- CTA INLINE: secondary --> in 11-body.md). No separate block, per 09-cro.json."
+    },
+    "closing_cta": {
+      "text": "Plan your Santorini wedding with a Wedded Advisor",
+      "link": "/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=santorini-wedding&utm_content=closing",
+      "placement": "Inline link at the end of 'Plan your Santorini wedding with a Wedded Advisor' (marked <!-- CTA INLINE: closing --> in 11-body.md)."
+    },
+    "lead_magnet": {
+      "name": "Get Wedded digital magazine",
+      "link": "/magazine?utm_source=blog&utm_medium=content&utm_campaign=santorini-wedding&utm_content=magnet",
+      "placement": "Existing line at the end of Step 8, before the Step 9 booking checklist (marked <!-- LEAD MAGNET --> in 11-body.md)."
+    },
+    "tracking_links": [
+      "/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=santorini-wedding&utm_content=primary",
+      "/magazine?utm_source=blog&utm_medium=content&utm_campaign=santorini-wedding&utm_content=magnet",
+      "/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=santorini-wedding&utm_content=secondary",
+      "/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=santorini-wedding&utm_content=closing",
+      "/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=santorini-wedding&utm_content=inline"
+    ],
+    "seo": {
+      "meta_title": "How to Plan a Santorini Wedding Step by Step",
+      "meta_description": "Plan a Santorini wedding in nine steps: legal or symbolic, season, caldera or beach venue, guest travel, documents and questions to ask before you book.",
+      "focus_keyword": "santorini wedding",
+      "canonical": "https://weddedwonderland.com/destination-weddings/santorini-wedding",
+      "og_image_slot": "featured"
+    },
+    "schema_jsonld": {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Article",
+          "@id": "https://weddedwonderland.com/destination-weddings/santorini-wedding#article",
+          "headline": "How to Plan a Santorini Wedding Step by Step",
+          "description": "Plan a Santorini wedding in nine steps: legal or symbolic, season, caldera or beach venue, guest travel, documents and questions to ask before you book.",
+          "author": {
+            "@type": "Organization",
+            "name": "Wedded Wonderland",
+            "url": "https://weddedwonderland.com/"
+          },
+          "publisher": {
+            "@type": "Organization",
+            "name": "Wedded Wonderland",
+            "url": "https://weddedwonderland.com/"
+          },
+          "datePublished": "",
+          "mainEntityOfPage": "https://weddedwonderland.com/destination-weddings/santorini-wedding",
+          "inLanguage": "en-AU"
+        },
+        {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Home",
+              "item": "https://weddedwonderland.com/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Destination Weddings",
+              "item": "https://weddedwonderland.com/destination-weddings"
+            },
+            {
+              "@type": "ListItem",
+              "position": 3,
+              "name": "How to Plan a Santorini Wedding Step by Step",
+              "item": "https://weddedwonderland.com/destination-weddings/santorini-wedding"
+            }
+          ]
+        },
+        {
+          "@type": "FAQPage",
+          "@id": "https://weddedwonderland.com/destination-weddings/santorini-wedding#faq",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "Can you legally get married in Santorini?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes, but plan the legal side before the venue. As at November 2026, a marriage valid in Greece that would also have been valid under Australian law is in most cases legally recognised in Australia. For a civil marriage on the island, check the steps with the Municipality of Thira and the Australian Embassy in Athens, including any fees."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "What documents do Australians need to get married in Santorini?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "You may need to prove you are free to marry, most commonly with a Certificate of No Impediment and registry certificates, and local authorities may also ask for divorce papers, a late spouse's death certificate, and your original birth certificate and passport. Ask the Greek embassy or consulate whether you need a CNI, whether you can get it in Australia, and whether it needs an authentication or apostille."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "When is the wedding season in Santorini?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "At Naxos, the nearest official weather station, May and September have mean maximums of 22.1°C and 25.1°C against about 27°C in July and August, and October brings 38.6 mm of rain over 5.5 days. There, June to August are the driest months, while heatwaves are frequent in summer and wildfires occur from June to September. The May to October tourist season also brings crowds to the busy seaports."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Can we have a symbolic ceremony in Santorini?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes. Canaves Collection lists symbolic ceremonies alongside civil, religious and vow renewal options, and Grace Hotel offers a unity ceremony using black and white volcanic sand. You can also marry legally in Australia first and hold the symbolic ceremony on the island."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Is Santorini good for a small wedding or elopement?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes. The caldera-edge spaces in Oia and Imerovigli seat between 15 and 60, and Grace Hotel's villa terrace seats 15. Katikies lists micro weddings as a package idea, and Canaves caters for modern elopements."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    "author": "Wedded Wonderland",
+    "status": "draft",
+    "verify_items": [],
+    "needs_signoff": [],
+    "redirects_recommended": "none (new article)",
+    "deferred_business_items": [
+      "Fee model and commissions",
+      "Deposits",
+      "A named Wedded Advisor or first call",
+      "Real Santorini weddings to show"
+    ],
+    "draft_note": "DRAFT ONLY. A human clicks Publish. Do not publish until checked:\n\n1. [[VERIFY]] items: none in the copy. Details the venues do not publish are written as \"Not published\" and listed in booking-checklist.md (not publishing blockers).\n\n2. Nic sign-off on prices: none (no prices printed).\n\n3. Image slots needed (8, none approved yet; credit, licence, alt and caption to add when approved):\n   - featured (needed)\n   - legal-or-symbolic (needed)\n   - season (needed)\n   - setting-venue-type (needed)\n   - guest-list (needed)\n   - guest-travel (needed)\n   - weekend (needed)\n   - checklist (needed)\n   checklist: library, Canva or licensed stock preferred; AI only on the person's approval, captioned 'Illustrative image'. season, guest-travel and weekend: library or licensed stock (or a named venue's press image with written permission for weekend), never AI. featured, legal-or-symbolic, setting-venue-type and guest-list: venue press image with written permission or licensed stock, never AI.\n\n4. Linked pages to check live before publishing: /destination-weddings/greece-wedding-venues (three links, one with the #getting-legally-married-in-greece-as-australians-in-brief anchor), /destination-weddings/mykonos-wedding-venues, /destination-weddings/paros-wedding-venues, /destination-weddings/greece-wedding-packages, /expert-advice/greek-wedding-traditions, /destinations/europe/greece and /7-must-see-santorini-destination-wedding-venues. Publish any still in draft together with this post, or hold this post until they are live. Check the Step 7 jump link and the Greece guide anchor land in preview.\n\n5. Mobile tables: the Naxos climate table (4 columns) and the capacity table (4 columns) must scroll sideways on mobile rather than squash.\n\n6. Deferred business items (person's decision, not in this draft): fee model and commissions, deposits, a named Wedded Advisor or first call, real Santorini weddings to show.\n\nBooking checklist (not publishing blockers): see booking-checklist.md"
+  }
+}
