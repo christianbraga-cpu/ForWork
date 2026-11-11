@@ -15,3 +15,4 @@
 03:23 07b panel: revise (enquire 2.6), 3 must-fix + should-fix + consider; one final pass.
 03:24 08 final done: ~4,560 words, scan clean, 3 VERIFY (Villa Medusa x2, Holiday Palace room).
 03:25 10 distribution done (utm_source=blog).
+03:25 09 CRO done: 4 copy changes.
