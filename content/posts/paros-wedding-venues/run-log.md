@@ -10,3 +10,4 @@
 06:58 05 draft done: ~4,390 words, 8 venues, scan clean, 0 VERIFY.
 06:59 07 readers: funding_parent, sceptic, search_visitor done (sceptic: Villa Mira 'only venue' contradiction).
 07:02 06 editor pass_with_edits (4.0): 19 edits applied to 05-draft-r2.md; meta description Lefkes swapped for Kolymbithres.
+07:04 07b panel: revise (enquire 2.6), 1 must-fix + 3 should-fix + 9 consider; CNI 'no official source' clause rejected (research talk). One final pass.
