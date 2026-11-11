@@ -3,3 +3,4 @@
 02:10 01 content-strategist complete; 12 candidates + reserves in 3 batches; 03(A,B,C) launched
 02:10 02 SEO done: AU 50 / US 90, KD 0; no site page ranks for corfu. Map-pack venues (Courti Estate, Ekaterini Estate, Villa Sylva) noted as top-up candidates.
 02:19 03 batch B done: 13 facts; 2 qualify (Angsana, San Antonio); Domes Miramare, Rou Estate, MarBella, Nissaki Beach fail. Top-up D launched.
+02:20 03 batch C done: 11 facts; 0 venues qualify (Akrotiri no weddings, Mayor La Grotta Verde not on Mayor site, Pelekas Monastery and Golden Fox no official site); weather, airport, legal facts saved. Top-up E launched.
