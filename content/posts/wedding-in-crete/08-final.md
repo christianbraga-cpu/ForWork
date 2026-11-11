@@ -13,7 +13,7 @@ Cost follows season, guest rooms, exclusive use and whatever sits outside a pack
 
 ## Key takeaways
 
-- On long-term averages, May and September bring highs of about 24 to 27 degrees with few rain days, while most of Crete's rain falls between October and April.
+- On long-term averages at Heraklion and near Chania, May and September bring highs of about 24 to 27 degrees with few rain days, while most rain falls between October and April. <!-- fact_02 --> <!-- fact_03 --> <!-- fact_08 --> <!-- fact_10 -->
 - The east around Elounda and Agios Nikolaos is resort country, while the west centres on the old towns of Chania and Rethymno.
 - Season, guest rooms, minimum stays, exclusive use and what sits outside a package shape the cost of a Crete wedding.
 - For a legal wedding, the venue's document deadlines and municipal approval set the shape of the whole planning timeline.
@@ -63,13 +63,13 @@ Spring on Crete runs at roughly 16 to 24 degrees, and summer averages about 25 t
 
 These are long-term averages, not a forecast; any single week can run hotter, cooler or wetter.
 
-[Visit Greece](https://www.visitgreece.gr/en/routes/in-the-footsteps-of-the-gods-a-mythical-road-trip-in-crete) names spring and autumn as the ideal seasons for touring Crete, when the weather is mild, and suggests that summer visitors see the sights early in the morning, when temperatures are more pleasant. <!-- fact_15 -->
+Spring and autumn are the [ideal seasons for touring Crete](https://www.visitgreece.gr/en/routes/in-the-footsteps-of-the-gods-a-mythical-road-trip-in-crete), when the weather is mild; in summer, see the sights early in the morning, when temperatures are more pleasant. <!-- fact_15 -->
 
 ### Venue season windows and ceremony times
 
-Venues set their own season. Minos Palace, on the Lasithi coast, says eastern Crete enjoys pleasant weather from April to November, with spring at around 18 to 24 degrees, summer the warmest season, and early autumn at around 20 to 27 degrees. <!-- fact_110 -->
+Venues set their own season. Minos Palace, in Lasithi, says eastern Crete enjoys pleasant weather from April to November, with spring at around 18 to 24 degrees, summer the warmest season, and early autumn at around 20 to 27 degrees. <!-- fact_110 -->
 
-Ceremony times move with the months. Nana Princess, at Chersonissos on the Aegean coast, notes that high-summer temperatures in Greece can reach 35 degrees, with strong sun and high UV, and recommends evening ceremonies. <!-- fact_106 --> Its suggested times are:
+Ceremony times move with the months. Nana Princess, at Chersonissos, notes that high-summer temperatures in Greece can reach 35 degrees, with strong sun and high UV, and recommends evening ceremonies. <!-- fact_106 --> Its suggested times are:
 
 - April, May and October: 16:00 to 18:00. <!-- fact_106 -->
 - June to September: 18:00 to 20:00. <!-- fact_106 -->
@@ -99,7 +99,7 @@ Crete falls into [three regions](https://www.visitgreece.gr/en/islands/crete). <
 
 **The east.** Lasithi holds Agios Nikolaos and Mirabello Bay, and Elounda, a resort with views of the lagoon and Spinalonga. <!-- fact_11 --> Its resorts suit couples who want the wedding party under one roof.
 
-**The centre.** Heraklion is the largest urban centre and the gateway to Knossos, with resorts along the northern coast. <!-- fact_11 --> A venue here keeps the drive from the main airport short and puts the island's best-known archaeology close at hand.
+**The centre.** Heraklion is the largest urban centre and the gateway to Knossos, with resorts along the northern coast. <!-- fact_11 --> A venue here keeps the drive from Heraklion airport short and puts the island's best-known archaeology close at hand.
 
 **The west.** Chania, with its old town and Venetian harbour, and Rethymno, with its medieval centre and Fortezza, make up western Crete. <!-- fact_11 --> Venues here range from beach resorts at Kolymvari to a hilltop garden in Chania. <!-- crete-venues fact_402 --> <!-- crete-venues fact_200 -->
 
@@ -137,7 +137,7 @@ Once you know which end of the island suits your guests, [talk to Wedded Concier
 
 Two Crete quotes with the same guest list can land far apart. Much of the difference sits in a handful of terms: when you marry, how many rooms you commit to, whether the space is yours alone, what the package leaves out and who pays for the paperwork.
 
-**Season and date.** Venues set their own season windows and ceremony times, as Minos Palace on the Lasithi coast and Nana Princess at Chersonissos do. <!-- fact_110 --> <!-- fact_106 --> Ask how the rate changes across those months, and between a weekday and a weekend.
+**Season and date.** Venues set their own season windows and ceremony times, as Minos Palace in Lasithi and Nana Princess at Chersonissos do. <!-- fact_110 --> <!-- fact_106 --> Ask how the rate changes across those months, and between a weekday and a weekend.
 
 **Guest numbers, room blocks and minimum stays.** At some resorts the wedding is tied to accommodation. The Elounda Collection, which covers Elounda Peninsula, Porto Elounda and Elounda Mare, makes its civil, Orthodox and symbolic packages valid only when the couple stays at least three nights in one of its hotels. <!-- fact_100 --> Abaton Island Resort & Spa, also at Chersonissos, ties every package to a minimum room booking for a minimum number of nights and a minimum reception size, and its packages do not include accommodation. <!-- fact_115 --> <!-- crete-venues fact_110 --> Guest numbers decide which spaces you can use and how many rooms you are asked to hold.
 
@@ -178,9 +178,9 @@ If you would like more planning ideas to read at your own pace, [our free digita
 
 <!-- IMAGE SLOT getting-there: Destination image, no venue implied: a coastal road winding above the sea in Crete, or the Venetian harbour at Chania or Heraklion in morning light. Real, named location recorded. No airline or car-hire logos, no number plates, no identifiable people. Landscape 3:2. Nothing that suggests transfer arrangements the article does not offer. Source: Wedded Wonderland library (register row with licence) or licensed premium stock bought by a human and added to library-index.csv; a venue press image with written permission is an acceptable alternative. Never AI, never a competitor, directory, planner or search-result image. Location proven by register row, EXIF or the stock record, never by appearance. -->
 
-Crete has two main airports, and the one your guests use should follow the venue, not the other way round.
+Crete has airports at Heraklion and Chania, and the one your guests use should follow the venue, not the other way round.
 
-**Heraklion.** The State Airport of Heraklion "Nikos Kazantzakis" serves the centre and, by road, the east. <!-- fact_14 --> Amirandes sits 18 kilometres from it. <!-- fact_17 --> On the Lasithi coast, Minos Palace states a 50-minute drive from Heraklion Airport, and Minos Beach Art Hotel in Agios Nikolaos gives the same 50 minutes. <!-- fact_110 --> <!-- fact_16 -->
+**Heraklion.** The State Airport of Heraklion "Nikos Kazantzakis" serves the centre and, by road, the east. <!-- fact_14 --> Amirandes sits 18 kilometres from it. <!-- fact_17 --> In Lasithi, Minos Palace states a 50-minute drive from Heraklion Airport, and Minos Beach Art Hotel in Agios Nikolaos gives the same 50 minutes. <!-- fact_110 --> <!-- fact_16 -->
 
 **Chania.** Chania Airport "Ioannis Daskalogiannis" serves the west. <!-- fact_13 --> Its own [airport information page](https://www.chq-airport.gr/en/flights--more/airport-information) lists a direct public bus to and from the airport, taxis and driving directions, with parking on site. <!-- fact_13 --> Sea View by En Kipo lists Chania Airport, Heraklion Airport and Souda Port as ways to reach it. <!-- crete-venues fact_203 -->
 
@@ -224,7 +224,7 @@ A Crete timeline is built backwards from two fixed points: the venue's season an
 
 Other venues set their own steps, so ask each one for its document timetable in writing before you book.
 
-When you are ready to set dates against those steps, [plan your timeline with Wedded Concierge](https://weddedwonderland.com/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=wedding-in-crete&utm_content=secondary). One Wedded Advisor stays with you as a single point of contact from start to finish.
+When you are ready to settle the season, the venue and the guest rooms, [plan your timeline with Wedded Concierge](https://weddedwonderland.com/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=wedding-in-crete&utm_content=secondary). One Wedded Advisor stays with you as a single point of contact from start to finish.
 
 ## Frequently asked questions
 
@@ -234,11 +234,11 @@ On long-term averages, May and September are milder than high summer with few ra
 
 ### Is Crete good for a destination wedding?
 
-For many Australian couples, yes. It is the largest island in Greece, with more than 1,000 kilometres of coastline, two main airports and a range of venues from resort chapels to hilltop gardens. <!-- fact_11 --> <!-- fact_13 --> <!-- fact_14 --> <!-- crete-venues fact_02 --> <!-- crete-venues fact_200 --> The trade-offs are summer heat, with July and August highs above 30 degrees in the Chania area, wildfire season from June to September, and a drive of about three hours from Agios Nikolaos to Chania Airport. <!-- fact_08 --> <!-- fact_117 --> <!-- fact_16 -->
+For many Australian couples, yes. It is the largest island in Greece, with more than 1,000 kilometres of coastline, airports at Heraklion and Chania and a range of venues from resort chapels to hilltop gardens. <!-- fact_11 --> <!-- fact_13 --> <!-- fact_14 --> <!-- crete-venues fact_02 --> <!-- crete-venues fact_200 --> The trade-offs are summer heat, with July and August highs above 30 degrees in the Chania area, wildfire season from June to September, and a drive of about three hours from Agios Nikolaos to Chania Airport. <!-- fact_08 --> <!-- fact_117 --> <!-- fact_16 -->
 
 ### Which part of Crete is best for a wedding?
 
-It comes down to the wedding you want. The east, around Elounda and Agios Nikolaos, is resort country, and Heraklion in the centre keeps the main airport close. <!-- fact_11 --> Chania and Rethymno in the west centre on their old towns, with venues from beach resorts to a hilltop garden. <!-- fact_11 --> <!-- crete-venues fact_402 --> <!-- crete-venues fact_200 --> Choose the end of the island by where your guests will land.
+It comes down to the wedding you want. The east, around Elounda and Agios Nikolaos, is resort country, and Heraklion in the centre keeps its airport close. <!-- fact_11 --> Chania and Rethymno in the west centre on their old towns, with venues from beach resorts to a hilltop garden. <!-- fact_11 --> <!-- crete-venues fact_402 --> <!-- crete-venues fact_200 --> Choose the end of the island by where your guests will land.
 
 ### What affects the cost of a wedding in Crete?
 

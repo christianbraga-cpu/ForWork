@@ -1,0 +1,384 @@
+{
+  "agent": "editor",
+  "task_id": "wedding-in-crete",
+  "stage": "06",
+  "status": "complete",
+  "round": 2,
+  "inputs_used": [
+    "CLAUDE.md",
+    "content/posts/wedding-in-crete/08-final.md",
+    "content/posts/wedding-in-crete/03-source-pack.json",
+    "content/posts/crete-wedding-venues/03-source-pack.json",
+    "content/posts/wedding-in-crete/07-panel.json",
+    "content/posts/wedding-in-crete/06-edit.json",
+    "content-system/brand/brand-facts.md",
+    "content/posts/greece-wedding-packages/06-edit-final.json"
+  ],
+  "self_qa": {
+    "checks": [
+      {
+        "check": "scan_copy.py on 08-final.md",
+        "pass": true,
+        "note": "banned [], dashes 0, overlaps [], flagged 'exclusive' x6 (sole use of a space, Nana Princess and Sea View terms)."
+      },
+      {
+        "check": "Fact markers traceable",
+        "pass": true,
+        "note": "Every <!-- fact_xx --> id exists in 03-source-pack.json and every <!-- crete-venues fact_xx --> id in crete-wedding-venues/03-source-pack.json; Key takeaway 1 lacked markers, added by edit."
+      },
+      {
+        "check": "Capacities, climate table, best-time FAQ, Is Crete good trade-offs, timeline labels",
+        "pass": true,
+        "note": "Capacities (430, 300, 680, 120) match crete-venues fact_03/105/403/201; all 48 table values match fact_02/03/08/10; FAQ and trade-offs trace to fact_02/03/08/10/15/16/110/117; timeline labels match fact_102/103. 'About 24 to 27 degrees' rounds correctly from 23.6 and 27.4 but generalised to all of Crete; stations named."
+      },
+      {
+        "check": "Venue locations",
+        "pass": true,
+        "note": "'Lasithi coast' (Minos Palace, 3 places) and 'Aegean coast' (Nana Princess) are not in the packs; edited to Lasithi and Chersonissos. Abaton 'also at Chersonissos' matches crete-venues fact_110 (Hersonissos)."
+      },
+      {
+        "check": "Prices, fees, research talk, credits, vendors, Advisor, Privileges, last dance",
+        "pass": true,
+        "note": "No amounts, percentages or 'from' prices; 'charged on top' only with fact_101; no research talk ('Not published' lines are allowed); one per-line Visit Greece credit made confident with the link kept; no non-venue vendors; Advisor claims within brand-facts, no legal, church or transfer help implied; no Wedded Privileges; no 'last dance'."
+      },
+      {
+        "check": "Key takeaways",
+        "pass": true,
+        "note": "Exactly 4 bullets, each one sentence, before and after edits."
+      },
+      {
+        "check": "Panel must-fix applied",
+        "pass": true,
+        "note": "'alongside nine more', guests who won't drive question, and deposit/refunds question 9 all present."
+      },
+      {
+        "check": "Edits apply cleanly",
+        "pass": true,
+        "note": "Each old occurs exactly once in 08-final.md and each new exactly once after applying all edits (scripted); no em or en dashes after edits."
+      },
+      {
+        "check": "Decision consistent",
+        "pass": true,
+        "note": "Small blocking edits only, avg 4.29, no criterion below 3 -> pass_with_edits."
+      }
+    ],
+    "confidence": 0.85
+  },
+  "open_questions": [],
+  "assumptions": [
+    "Stage 8b blocking-issue check only; rubric carried from round 1 with accuracy raised to 4 now the round-1 fixes are in, not rescored in depth.",
+    "Business details (fees, deposits, Privileges) deferred per brand-facts, not treated as must-fix.",
+    "The HNMS table credit (line 39) is kept as the data citation the table needs, not treated as a per-line credit; Smartraveller and Embassy attributions are government advice and stay.",
+    "'Beach resorts at Kolymvari' and 'Artemis seats up to 430 guests outdoors' read as fair summaries of crete-venues fact_402/fact_03 and are left."
+  ],
+  "verify_items": [
+    "Elounda Collection document lead times (email 4 weeks, courier 3 weeks, documents issued within 3 months) come from the 2025 packages PDF; confirm they still apply for 2027 dates (existing [[VERIFY]] in the timeline section)."
+  ],
+  "tools_used": [
+    "Bash (python3 -I, grep)",
+    "content-system/scripts/scan_copy.py",
+    "content-system/scripts/validate.py",
+    "jsonschema"
+  ],
+  "next_agent": [
+    "luxury-writer"
+  ],
+  "payload": {
+    "draft_file": "content/posts/wedding-in-crete/08-final.md",
+    "rubric": {
+      "voice": 4,
+      "expertise": 5,
+      "accuracy": 4,
+      "seo_fit": 4,
+      "commercial_link": 4,
+      "structure": 5,
+      "brief_fit": 4
+    },
+    "average": 4.29,
+    "blocking_issues": [],
+    "decision": "pass_with_edits",
+    "edits": [
+      {
+        "location": "Key takeaways, bullet 1",
+        "issue": "Takeaway 1 generalises two north-coast stations to all of Crete ('Crete's rain') and carries no fact markers, so 'about 24 to 27 degrees' is untraced in the scannable summary. The range itself rounds correctly from fact_02/fact_08 (Heraklion May 23.6, Chania area September 27.4) and the October to April share from fact_03/fact_10; name the stations and add the markers.",
+        "fix": "Replace exactly:\n- On long-term averages, May and September bring highs of about 24 to 27 degrees with few rain days, while most of Crete's rain falls between October and April.\nwith:\n- On long-term averages at Heraklion and near Chania, May and September bring highs of about 24 to 27 degrees with few rain days, while most rain falls between October and April. <!-- fact_02 --> <!-- fact_03 --> <!-- fact_08 --> <!-- fact_10 -->",
+        "old": "- On long-term averages, May and September bring highs of about 24 to 27 degrees with few rain days, while most of Crete's rain falls between October and April.",
+        "new": "- On long-term averages at Heraklion and near Chania, May and September bring highs of about 24 to 27 degrees with few rain days, while most rain falls between October and April. <!-- fact_02 --> <!-- fact_03 --> <!-- fact_08 --> <!-- fact_10 -->"
+      },
+      {
+        "location": "'Month by month', paragraph after 'These are long-term averages, not a forecast'",
+        "issue": "Per-line source credit: the sentence is built around what Visit Greece 'names' and 'suggests' rather than stating the practice. Keep the link as the citation, state it with authority.",
+        "fix": "Replace exactly:\n[Visit Greece](https://www.visitgreece.gr/en/routes/in-the-footsteps-of-the-gods-a-mythical-road-trip-in-crete) names spring and autumn as the ideal seasons for touring Crete, when the weather is mild, and suggests that summer visitors see the sights early in the morning, when temperatures are more pleasant. <!-- fact_15 -->\nwith:\nSpring and autumn are the [ideal seasons for touring Crete](https://www.visitgreece.gr/en/routes/in-the-footsteps-of-the-gods-a-mythical-road-trip-in-crete), when the weather is mild; in summer, see the sights early in the morning, when temperatures are more pleasant. <!-- fact_15 -->",
+        "old": "[Visit Greece](https://www.visitgreece.gr/en/routes/in-the-footsteps-of-the-gods-a-mythical-road-trip-in-crete) names spring and autumn as the ideal seasons for touring Crete, when the weather is mild, and suggests that summer visitors see the sights early in the morning, when temperatures are more pleasant. <!-- fact_15 -->",
+        "new": "Spring and autumn are the [ideal seasons for touring Crete](https://www.visitgreece.gr/en/routes/in-the-footsteps-of-the-gods-a-mythical-road-trip-in-crete), when the weather is mild; in summer, see the sights early in the morning, when temperatures are more pleasant. <!-- fact_15 -->"
+      },
+      {
+        "location": "'Venue season windows and ceremony times', paragraph 1",
+        "issue": "Location beyond the pack: fact_110 places Minos Palace in Lasithi, eastern Crete; 'on the Lasithi coast' is not in either pack.",
+        "fix": "Replace exactly:\nMinos Palace, on the Lasithi coast, says\nwith:\nMinos Palace, in Lasithi, says",
+        "old": "Minos Palace, on the Lasithi coast, says",
+        "new": "Minos Palace, in Lasithi, says"
+      },
+      {
+        "location": "'Venue season windows and ceremony times', paragraph 2",
+        "issue": "Location beyond the pack: fact_105 gives Chersonissos only; 'on the Aegean coast' is not in either pack.",
+        "fix": "Replace exactly:\nNana Princess, at Chersonissos on the Aegean coast, notes\nwith:\nNana Princess, at Chersonissos, notes",
+        "old": "Nana Princess, at Chersonissos on the Aegean coast, notes",
+        "new": "Nana Princess, at Chersonissos, notes"
+      },
+      {
+        "location": "'What drives the cost', Season and date",
+        "issue": "Location beyond the pack: 'on the Lasithi coast' for Minos Palace (fact_110 says Lasithi, eastern Crete).",
+        "fix": "Replace exactly:\nas Minos Palace on the Lasithi coast and Nana Princess\nwith:\nas Minos Palace in Lasithi and Nana Princess",
+        "old": "as Minos Palace on the Lasithi coast and Nana Princess",
+        "new": "as Minos Palace in Lasithi and Nana Princess"
+      },
+      {
+        "location": "'Getting there', Heraklion paragraph",
+        "issue": "Location beyond the pack: 'On the Lasithi coast' for Minos Palace (fact_110 says Lasithi, eastern Crete).",
+        "fix": "Replace exactly:\nOn the Lasithi coast, Minos Palace states\nwith:\nIn Lasithi, Minos Palace states",
+        "old": "On the Lasithi coast, Minos Palace states",
+        "new": "In Lasithi, Minos Palace states"
+      },
+      {
+        "location": "'Getting there', opening line",
+        "issue": "Claim beyond the packs: 'two main airports' is not stated in fact_13 or fact_14, which only name and describe the Chania and Heraklion airports.",
+        "fix": "Replace exactly:\nCrete has two main airports, and the one\nwith:\nCrete has airports at Heraklion and Chania, and the one",
+        "old": "Crete has two main airports, and the one",
+        "new": "Crete has airports at Heraklion and Chania, and the one"
+      },
+      {
+        "location": "FAQ 'Is Crete good for a destination wedding?'",
+        "issue": "Claim beyond the packs: 'two main airports' (fact_13 and fact_14 name the two airports but not that they are the main ones). The trade-offs themselves check out: Chania-area July and August highs above 30 (fact_08), wildfires June to September (fact_117), 180-minute drive Agios Nikolaos to Chania Airport (fact_16).",
+        "fix": "Replace exactly:\ncoastline, two main airports and a range\nwith:\ncoastline, airports at Heraklion and Chania and a range",
+        "old": "coastline, two main airports and a range",
+        "new": "coastline, airports at Heraklion and Chania and a range"
+      },
+      {
+        "location": "'East, centre or west', The centre",
+        "issue": "Claim beyond the packs: 'the main airport' for Heraklion is not in fact_14 or fact_17.",
+        "fix": "Replace exactly:\nkeeps the drive from the main airport short\nwith:\nkeeps the drive from Heraklion airport short",
+        "old": "keeps the drive from the main airport short",
+        "new": "keeps the drive from Heraklion airport short"
+      },
+      {
+        "location": "FAQ 'Which part of Crete is best for a wedding?'",
+        "issue": "Claim beyond the packs: 'the main airport' for Heraklion is not in fact_14 or fact_17.",
+        "fix": "Replace exactly:\nHeraklion in the centre keeps the main airport close.\nwith:\nHeraklion in the centre keeps its airport close.",
+        "old": "Heraklion in the centre keeps the main airport close.",
+        "new": "Heraklion in the centre keeps its airport close."
+      }
+    ],
+    "fact_check_log": [
+      {
+        "claim": "Opening paragraph: late spring and early autumn milder than July/August, few rain days; east resort country, west old towns",
+        "fact_id": "fact_02, fact_03, fact_11",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Key takeaway 1: May and September highs about 24 to 27 degrees, few rain days, most rain October to April",
+        "fact_id": "fact_02, fact_03, fact_08, fact_10",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Key takeaways 2 to 4 (regions, cost drivers, legal timeline shape)",
+        "fact_id": "fact_11, fact_100, fact_102, fact_115",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Crete largest island, 1,000 km coastline, 260 km long, three ranges",
+        "fact_id": "fact_06, fact_11",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Regions: Chania, Rethymno, Heraklion, Lasithi descriptions",
+        "fact_id": "fact_11",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Minoan Palatial Centres on UNESCO list in 2025",
+        "fact_id": "fact_12",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Elounda Beach Cretan lyre music as an added service",
+        "fact_id": "fact_114",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Climate description: mild Mediterranean; east warmer than west, south than north",
+        "fact_id": "fact_05",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Month-by-month table: Heraklion and Chania-area highs and rain days, all 48 values",
+        "fact_id": "fact_02, fact_03, fact_08, fact_10",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Table periods: Heraklion 1955 to 2010, Souda 1958 to 2010",
+        "fact_id": "fact_01, fact_08",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Under a millimetre in July at Heraklion; Chania area above 30 in July/August; over 100 mm January",
+        "fact_id": "fact_03, fact_08, fact_10",
+        "status": "confirmed"
+      },
+      {
+        "claim": "May low to mid twenties; September under 3 rain days; October rain days roughly treble",
+        "fact_id": "fact_02, fact_03, fact_08",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Spring 16 to 24, summer 25 to 30, maximums to 40, meltemi; prevailing winds",
+        "fact_id": "fact_04, fact_05",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Visit Greece spring and autumn ideal for touring; summer early mornings",
+        "fact_id": "fact_15",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Minos Palace April to November window, 18 to 24 and 20 to 27 degrees, 50 minutes from Heraklion Airport (location 'Lasithi coast' edited to Lasithi)",
+        "fact_id": "fact_110",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Nana Princess 35 degrees, UV, evening ceremony times (location 'Aegean coast' removed)",
+        "fact_id": "fact_106",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Greek official holidays",
+        "fact_id": "fact_07",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Smartraveller wildfires, heatwaves, normal precautions, insurance, seismic zone",
+        "fact_id": "fact_117, fact_118",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Six venues: Elounda Beach chapel, villas, Artemis 430 outdoor",
+        "fact_id": "crete-venues fact_01, fact_02, fact_03",
+        "status": "confirmed"
+      },
+      {
+        "claim": "St. Nicolas Bay beachside chapel deck, seafront suites; capacity not published",
+        "fact_id": "crete-venues fact_05, fact_07",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Amirandes VIP Beach or chapel, 18 km from airport, up to 300 guests",
+        "fact_id": "crete-venues fact_104, fact_105, fact_106, fact_17",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Caramel informal weddings, gardens above beach near Rethymno; no legal option or capacity published",
+        "fact_id": "crete-venues fact_111, fact_115",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Avra Imperial chapel of Saint Paul, Maistro up to 680",
+        "fact_id": "crete-venues fact_402, fact_403",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Sea View by En Kipo hilltop garden, exclusive 10:00am to midnight, extend to 2:00am, 120 guests, no guest rooms, own caterer",
+        "fact_id": "crete-venues fact_200, fact_201, fact_202, fact_203, fact_108",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Elounda Collection three-night condition across its hotels",
+        "fact_id": "fact_100",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Abaton minimum rooms, nights and reception, no accommodation, complete packages, venue fees, supplements, extras",
+        "fact_id": "fact_115, fact_116, crete-venues fact_110",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Nana Princess exclusive use for symbolic weddings and vow renewals",
+        "fact_id": "fact_105",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Euphoria complete packages, no refund for unused items, extras on request, informal marriage certificate",
+        "fact_id": "fact_111, fact_112",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Elounda Collection Apostille, translation, courier at couple's cost; Municipal and Metropolis fees charged on top",
+        "fact_id": "fact_101, fact_102",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Airports: Heraklion 'Nikos Kazantzakis', Chania 'Ioannis Daskalogiannis', bus, taxi, parking ('two main airports' and 'the main airport' edited)",
+        "fact_id": "fact_13, fact_14",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Minos Beach Art Hotel 50 minutes Heraklion, 180 minutes Chania Airport",
+        "fact_id": "fact_16",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Sea View lists Chania Airport, Heraklion Airport and Souda Port",
+        "fact_id": "crete-venues fact_203",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Overseas marriage recognition, CNI, DFAT, Embassy notarial services and hours",
+        "fact_id": "fact_119, fact_120, fact_121",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Contact the local municipality for required certificates",
+        "fact_id": "fact_07",
+        "status": "confirmed"
+      },
+      {
+        "claim": "40-day registration quote at Aghios Nikolaos",
+        "fact_id": "fact_103",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Timeline: documents within 3 months, copies 4 weeks, originals 3 weeks, at the Elounda Collection",
+        "fact_id": "fact_102",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Elounda Collection lead times still apply to 2027 dates",
+        "fact_id": "fact_102",
+        "status": "verify"
+      },
+      {
+        "claim": "FAQ best time, Is Crete good trade-offs, which part, cost, legal, how far ahead",
+        "fact_id": "fact_02, fact_03, fact_08, fact_10, fact_11, fact_13, fact_14, fact_15, fact_16, fact_100, fact_101, fact_102, fact_103, fact_110, fact_117, fact_120",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Wedded Advisor: one person start to finish, time zone, AUD, fee agreed in writing, inclusions confirmed in writing",
+        "fact_id": "brand-facts.md",
+        "status": "confirmed"
+      }
+    ],
+    "compliance": {
+      "pass": true,
+      "issues": [
+        "No money amounts, percentages or 'from' prices; nothing for sign-off.",
+        "No em or en dashes; Australian English; no 'last dance'; no Wedded Privileges.",
+        "Advisor claims within brand-facts.md; no legal, church, religious paperwork or transfer help implied."
+      ]
+    },
+    "originality": {
+      "pass": true,
+      "matches": []
+    },
+    "banned_phrases_found": [],
+    "needs_signoff": []
+  }
+}

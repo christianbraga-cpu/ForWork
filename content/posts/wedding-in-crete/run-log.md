@@ -11,3 +11,4 @@
 01:33 08 final done: ~3,218 words, scan clean, no amounts.
 01:34 10 distribution done (utm_source=blog).
 01:34 09 CRO done: 1 copy change (secondary lead-in away from paperwork).
+01:36 8b (10 edits) and CRO (1 change) applied to 08-final.md.
