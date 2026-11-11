@@ -9,3 +9,4 @@
 02:54 03 top-up E done: 0 qualify. Eva Palace confirmed by live read (part-5, fact_500-503). Confirmed 8 + Corfu Palace provisional. Final top-up F launched.
 03:10 03 top-up F done: Rodostamo qualifies; Pelekas Monastery timed out again; Pelecas Country Club unconfirmed. Final count 10 (9 confirmed + Corfu Palace provisional). Title becomes '10 Corfu Wedding Venues With Sea Views'. Packs merged.
 03:15 05 draft done: ~4,700 words, 10 venues, scan clean, 1 VERIFY (Villa Medusa naming).
+03:16 07 readers: search_visitor, uhnw done (no must-fix).
