@@ -6,3 +6,4 @@
 06:02 03 batch D done: Myconian Villa Collection qualifies; Villa Joy no weddings; airport, Smartraveller, legal facts saved; no HNMS Mykonos station. Firm total 6; top-up E launched.
 06:03 03 batch A done: Santa Marina, Katikies, Mykonos Grand, Kivotos, Bill&Coo qualify; Belvedere no weddings; Rocabella timed out. Firm total 11; waiting on top-up E to choose the strongest 10.
 06:07 03 top-up E done: Saint John and ZeNIT qualify, Semeli weak (blog only). Final 10 chosen; reserves Kivotos (2022 page), Myconian Villa Collection (overlap), Bill&Coo, Semeli, Soho Roc House, Ftelia Bay. Packs merged.
+06:12 05 draft done: ~4,774 words, 10 venues, scan clean, 0 VERIFY.
