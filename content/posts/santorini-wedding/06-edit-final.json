@@ -1,0 +1,195 @@
+{
+  "agent": "editor",
+  "task_id": "santorini-wedding",
+  "stage": "06",
+  "status": "complete",
+  "round": 3,
+  "inputs_used": [
+    "CLAUDE.md",
+    "content/posts/santorini-wedding/00-input.json",
+    "content/posts/santorini-wedding/08-final.md",
+    "content/posts/santorini-wedding/05-draft-r2.md",
+    "content/posts/santorini-wedding/03-source-pack.json",
+    "content/posts/santorini-wedding/07-panel.json",
+    "content-system/brand/brand-facts.md",
+    "content-system/brand/voice-guide.md",
+    "content-system/brand/banned-phrases.md",
+    "content-system/schemas/06-edit.schema.json",
+    "content/posts/wedding-in-crete/06-edit-final.json"
+  ],
+  "self_qa": {
+    "checks": [
+      {
+        "check": "scan_copy.py on 08-final.md",
+        "pass": true,
+        "note": "banned [], dashes 0, overlaps [], flagged 'exclusive' x13 (exclusive-use questions and venue terms, all legitimate)."
+      },
+      {
+        "check": "Changed lines since 05-draft-r2.md fact-checked",
+        "pass": true,
+        "note": "All 14 changed or new lines traced: takeaway 2, Naxos table, venue intro, Santo Wines, primary CTA, Step 4 capacity lines and table, Step 6 skip line, Step 7 exclusive use and deposits, Step 9 exclusive use and deposits, cost Season, season FAQ. Every marker exists in 03-source-pack.json and matches."
+      },
+      {
+        "check": "Blocking list",
+        "pass": true,
+        "note": "No research talk, hedge stacking, 'best' or best month, prices or amounts, non-venue vendors, Wedded Privileges, 'last dance', Athinios port claim or same-sex legal position. Advisor claims (single point of contact, start to finish, time zone, AUD, anywhere in the world, fee and inclusions in writing) all in brand-facts.md; one Advisor line in the body (primary CTA) plus the close. No legal, church or transfer implication in the new lines. Naxos data labelled in table, intro, takeaway and FAQ. Australian spelling ('Wine Tourism Center' is the venue's proper name)."
+      },
+      {
+        "check": "Key takeaways",
+        "pass": true,
+        "note": "Exactly 4 bullets, each one sentence, before and after edits; takeaway 2 shortened, still labels Naxos and names no best month."
+      },
+      {
+        "check": "Panel must-fix applied",
+        "pass": true,
+        "note": "Deposits and cancellation in Step 7 and Step 9; Step 6 skip line present; Santo Wines mood line removed."
+      },
+      {
+        "check": "Edits apply cleanly",
+        "pass": true,
+        "note": "Each old occurs exactly once in 08-final.md and each new exactly once after applying in order (scripted); no em or en dashes; primary, closing and magnet links intact."
+      },
+      {
+        "check": "Decision consistent",
+        "pass": true,
+        "note": "Two small edits, no blocking issues, avg 4.29, no criterion below 3 -> pass_with_edits."
+      }
+    ],
+    "confidence": 0.85
+  },
+  "open_questions": [],
+  "assumptions": [
+    "Stage 8b blocking-issue check only; rubric carried forward, not rescored in depth.",
+    "Business details (fees, deposits, Privileges) deferred per brand-facts and not treated as must-fix."
+  ],
+  "verify_items": [],
+  "tools_used": [
+    "Bash (python3 -I, grep, diff)",
+    "content-system/scripts/scan_copy.py",
+    "content-system/scripts/validate.py"
+  ],
+  "next_agent": [
+    "luxury-writer"
+  ],
+  "payload": {
+    "draft_file": "content/posts/santorini-wedding/08-final.md",
+    "rubric": {
+      "voice": 4,
+      "expertise": 5,
+      "accuracy": 4,
+      "seo_fit": 4,
+      "commercial_link": 4,
+      "structure": 5,
+      "brief_fit": 4
+    },
+    "average": 4.29,
+    "blocking_issues": [],
+    "decision": "pass_with_edits",
+    "edits": [
+      {
+        "location": "Key takeaways, bullet 2",
+        "issue": "Takeaway 2 reads as a long list of month figures. Shorten to one crisp sentence that keeps Naxos labelled as the nearest official station, names no best month, and carries its markers.",
+        "old": "- Choose your season from official data: at Naxos, the nearest official station, June to August are the driest months, May and September run cooler than July and August, and October is wetter, so set the ceremony time around the summer heat and the north wind.",
+        "new": "- Choose your season from the figures for Naxos, the nearest official weather station, where summer is driest and October wetter, then set the ceremony time around the heat and the north wind. <!-- fact_204 --> <!-- fact_206 --> <!-- fact_207 -->",
+        "fix": "Replace exactly:\n- Choose your season from official data: at Naxos, the nearest official station, June to August are the driest months, May and September run cooler than July and August, and October is wetter, so set the ceremony time around the summer heat and the north wind.\nwith:\n- Choose your season from the figures for Naxos, the nearest official weather station, where summer is driest and October wetter, then set the ceremony time around the heat and the north wind. <!-- fact_204 --> <!-- fact_206 --> <!-- fact_207 -->"
+      },
+      {
+        "location": "Step 4, paragraph after the capacity table",
+        "issue": "New sentence repeats the Venetsanos Upper Terrace capacity (about 100 seated, 160 standing) already given in the sentence before and in the table; trim the repetition so the routes list reads cleanly.",
+        "old": ", while the Upper Terrace at Venetsanos Winery seats about 100 and holds 160 standing. <!-- fact_06 --> <!-- fact_11 --> <!-- fact_10 --> <!-- fact_312 -->",
+        "new": ". <!-- fact_06 --> <!-- fact_11 --> <!-- fact_10 -->",
+        "fix": "Replace exactly:\n, while the Upper Terrace at Venetsanos Winery seats about 100 and holds 160 standing. <!-- fact_06 --> <!-- fact_11 --> <!-- fact_10 --> <!-- fact_312 -->\nwith:\n. <!-- fact_06 --> <!-- fact_11 --> <!-- fact_10 -->"
+      }
+    ],
+    "fact_check_log": [
+      {
+        "claim": "Key takeaway 2 (as edited): Naxos is the nearest official station; summer driest, October wetter; north wind",
+        "fact_id": "fact_204, fact_206, fact_207",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Naxos table: mean maximum, rain mm and rain days April to October (mean temperature column removed)",
+        "fact_id": "fact_205, fact_206",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Santo Wines terraces look out over the caldera (mood line removed)",
+        "fact_id": "fact_301, fact_302",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Caldera-edge spaces in Oia and Imerovigli seat between 15 and 60",
+        "fact_id": "fact_02, fact_08, fact_12, fact_14",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Canaves capacities up to 30, 40 and 25 (table relabelled)",
+        "fact_id": "fact_08",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Above 60 seated: standing reception, split spaces or a larger terrace such as Venetsanos",
+        "fact_id": "fact_312",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Larger guest list routes: Grace Hotel buyout quoted on request, Katikies hotel takeover, Canaves exclusives and buyouts",
+        "fact_id": "fact_06, fact_11, fact_10",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Grace Hotel packages differ for 50 guests or fewer and over 50",
+        "fact_id": "fact_04",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Step 6 skip line for couples marrying legally in Australia (navigation only, no new legal claim)",
+        "status": "confirmed",
+        "fact_id": "fact_101"
+      },
+      {
+        "claim": "Step 7 and Step 9 deposits and cancellation questions (questions only, no amounts or terms)",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Exclusive use 'for how many days' question added to Step 7 and Step 9 (question only)",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Season cost: May to October tourist season brings heat and crowds to busy seaports",
+        "fact_id": "fact_211",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Season FAQ: Naxos May 22.1 and September 25.1 mean maximums vs about 27 in July and August; October 38.6 mm over 5.5 days",
+        "fact_id": "fact_205, fact_206",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Season FAQ: June to August driest at Naxos; summer heatwaves; wildfires June to September",
+        "fact_id": "fact_206, fact_209",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Season FAQ: May to October tourist season brings crowds to busy seaports",
+        "fact_id": "fact_211",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Primary CTA: Wedded Advisor is a single point of contact, start to finish",
+        "status": "confirmed",
+        "fact_id": "brand-facts.md"
+      }
+    ],
+    "compliance": {
+      "pass": true,
+      "issues": []
+    },
+    "originality": {
+      "pass": true,
+      "matches": []
+    },
+    "banned_phrases_found": [],
+    "needs_signoff": []
+  }
+}

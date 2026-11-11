@@ -14,7 +14,7 @@ This guide walks through all nine steps, with a booking checklist at the end. Fo
 ## Key takeaways
 
 - Decide first whether your Santorini ceremony will be legal or symbolic, because that choice sets your documents, your timeline and the venues that suit you.
-- Choose your season from official data: at Naxos, the nearest official station, June to August are the driest months, May and September run cooler than July and August, and October is wetter, so set the ceremony time around the summer heat and the north wind.
+- Choose your season from the figures for Naxos, the nearest official weather station, where summer is driest and October wetter, then set the ceremony time around the heat and the north wind. <!-- fact_204 --> <!-- fact_206 --> <!-- fact_207 -->
 - Match the setting to your guest list, because caldera terraces, hotels, wineries and private villas differ widely in capacity and guest rooms.
 - Put every house rule in writing before you sign, including music times, exclusive use, ceremony times and the plan if the weather turns.
 
@@ -163,7 +163,7 @@ On the caldera, space is scarce. Check your guest list against the seated number
 
 <!-- fact_02 --> <!-- fact_08 --> <!-- fact_12 --> <!-- fact_13 --> <!-- fact_14 --> <!-- fact_312 -->
 
-Above 60 seated, you are choosing between a standing reception, splitting the events across more than one space, or a larger terrace such as the one at Venetsanos. <!-- fact_312 --> For a larger guest list, the routes the venues list are a full buyout of Grace Hotel, quoted on request, a hotel takeover at Katikies, and exclusives and buyouts across the Canaves Collection, while the Upper Terrace at Venetsanos Winery seats about 100 and holds 160 standing. <!-- fact_06 --> <!-- fact_11 --> <!-- fact_10 --> <!-- fact_312 --> Grace Hotel sets its packages differently for 50 guests or fewer and for more than 50, a useful sign of where a guest list starts to change the shape of a wedding. <!-- fact_04 -->
+Above 60 seated, you are choosing between a standing reception, splitting the events across more than one space, or a larger terrace such as the one at Venetsanos. <!-- fact_312 --> For a larger guest list, the routes the venues list are a full buyout of Grace Hotel, quoted on request, a hotel takeover at Katikies, and exclusives and buyouts across the Canaves Collection. <!-- fact_06 --> <!-- fact_11 --> <!-- fact_10 --> Grace Hotel sets its packages differently for 50 guests or fewer and for more than 50, a useful sign of where a guest list starts to change the shape of a wedding. <!-- fact_04 -->
 
 ### Guest rooms
 
@@ -300,7 +300,7 @@ The cost of a Santorini wedding moves with decisions you make in the steps above
 
 **Exclusive use versus spaces.** Grace Hotel's venue fee includes exclusive use of the event spaces you choose, rather than the hotel. <!-- fact_04 -->
 
-**Venue fee versus package.** Some venues charge a flat venue fee covering spaces, furniture, set-up, breakdown and staffing, while others work from wedding packages set out in a brochure. <!-- fact_04 --> <!-- fact_09 --> Compare inclusions line by line.
+**Venue fee versus package.** Some venues charge a flat venue fee covering spaces, furniture, set-up, breakdown and staffing, while others work from wedding packages set out in a brochure. <!-- fact_04 --> <!-- fact_09 --> Compare inclusions line by line. To see which venues, dates and costs are actually free when you want them, [see real options with Wedded Concierge](https://weddedwonderland.com/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=santorini-wedding&utm_content=secondary).
 
 **A planner where the venue requires one.** At venues such as Grace Hotel, a wedding planner is required for every wedding, so their fee belongs in the plan from the start. <!-- fact_05 -->
 

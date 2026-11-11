@@ -10,3 +10,4 @@
 22:51 07 readers done (enquire 3/3/2/3/1; UHNW: large lists need buyout route). 06 editor pass_with_edits (4.14): 9 edits applied to 05-draft-r2.md.
 22:53 07b panel: revise (enquire 2.6), 2 must-fix + 4 should-fix + 4 consider; business details deferred. One final pass.
 22:54 08 final done: ~4,560 words, scan clean, 0 VERIFY.
+22:56 8b pass_with_edits (2 edits) and CRO (1 change) applied; 4 UTMs once each.
