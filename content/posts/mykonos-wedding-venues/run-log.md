@@ -4,3 +4,4 @@
 05:59 03 batch C done: Myconian Collection (one entry) and Mykonos Lolita qualify; Ftelia Bay conditional reserve; Pietra e Mare excluded.
 06:01 03 batch B done: Mykonos Blu, Petasos, Myconian Ambassador qualify; Soho Roc House (ex San Giorgio) held as reserve (members' club, closed until 2027); Kensho Psarou out. Firm total 5 so far.
 06:02 03 batch D done: Myconian Villa Collection qualifies; Villa Joy no weddings; airport, Smartraveller, legal facts saved; no HNMS Mykonos station. Firm total 6; top-up E launched.
+06:03 03 batch A done: Santa Marina, Katikies, Mykonos Grand, Kivotos, Bill&Coo qualify; Belvedere no weddings; Rocabella timed out. Firm total 11; waiting on top-up E to choose the strongest 10.
