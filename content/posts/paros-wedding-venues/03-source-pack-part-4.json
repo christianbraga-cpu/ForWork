@@ -1,0 +1,231 @@
+{
+  "agent": "planner-sme",
+  "task_id": "paros-wedding-venues",
+  "stage": "03",
+  "status": "complete",
+  "round": 1,
+  "inputs_used": [
+    "CLAUDE.md",
+    "content/posts/paros-wedding-venues/00-input.json",
+    "content/posts/mykonos-wedding-venues/03-source-pack-part-4.json (format)"
+  ],
+  "self_qa": {
+    "checks": [
+      {
+        "check": "Every fact has a source and date",
+        "pass": true
+      },
+      {
+        "check": "No price without a source; all prices in needs_signoff",
+        "pass": true,
+        "note": "No prices recorded."
+      },
+      {
+        "check": "Every must-include covered or marked [[VERIFY]]",
+        "pass": true,
+        "note": "Batch E covers top-up Paros venue candidates only; 4 qualify (Petra Farm, Astir of Paros, The Secret View, Villa Mira Paros), gaps marked VERIFY."
+      },
+      {
+        "check": "No invented quotes, statistics or real weddings",
+        "pass": true
+      }
+    ],
+    "confidence": 0.75
+  },
+  "open_questions": [
+    {
+      "to": "orchestrator",
+      "question": "Batch E qualifies 4 venues by live official-site reads: Petra Farm (Kolymbithres, Naoussa and the north; fact_400 to fact_402), Astir of Paros (Kolymbithres, Naoussa and the north; fact_403, fact_404), The Secret View at Fladakia Estate (hills above Golden Beach, east and south coast; fact_405 to fact_409) and Villa Mira Paros (above Parikia bay, Parikia and the west; fact_410, fact_411). Not qualified in time (no official site located in search, or not reached before the 12-minute limit): Blue Mare Villas, Villa Aethra (only VRBO and editorial results), Parilio (no official result), Anthemion Villas & Suites (no official result), Cove Paros (only Instagram and planner results), Costa Pounda (no official result), Monastiri, Orbis, Palmtree Events Paros (only TikTok and Instagram results; the palmtreeweddingevents.com site is a Brentwood, California venue, not Paros). Note Petra Farm and Astir sit at Kolymbithres, which batch A (Naoussa) may also cover: dedupe.",
+      "blocking": false
+    }
+  ],
+  "assumptions": [
+    "BOOKING CHECKLIST: Petra Farm: music curfew, exclusive use terms, guest accommodation, rain plan for the chapel courtyard and poolside dinner, and set-up and breakdown times are not published; confirm with the venue.",
+    "BOOKING CHECKLIST: Astir of Paros: wedding capacity, reception spaces, music curfew, exclusive use, minimum nights or room block, rain plan and outside planner rules are not published; confirm with the hotel.",
+    "BOOKING CHECKLIST: The Secret View: minimum spend, rain plan beyond the covered pergola and canopy salon, and set-up beyond the published 24-hour access are not published; curfew (loud music stops at 2am) and outside vendors allowed are published.",
+    "BOOKING CHECKLIST: Villa Mira Paros: wedding capacity, music curfew, minimum nights, rain plan, set-up times and outside vendor rules are not published; confirm with the property."
+  ],
+  "verify_items": [
+    "[[VERIFY: The Secret View Terrace capacity conflicts on its own Estate page: dinner layout 120 versus 'up to 250 guests in a seated layout' (fact_408, fact_409); confirm the seated maximum before stating]]",
+    "[[VERIFY: Astir of Paros publishes no wedding capacity, reception spaces or room count on the pages read (fact_403, fact_404); confirm capacity, rooms and whether St. Nicholas chapel ceremonies are still offered]]",
+    "[[VERIFY: Petra Farm guest accommodation (bridal suite only stated) and its overall seated maximum (chapel 120, pool dinner 80, event space 150) (fact_401, fact_402); confirm before stating]]",
+    "[[VERIFY: Villa Mira Paros publishes no wedding guest capacity on its official homepage and its events page was not read (fact_410, fact_411); confirm capacity and ceremony spots]]"
+  ],
+  "tools_used": [
+    "mcp__Apify__apify--web-fetch",
+    "mcp__Apify__apify--web-search",
+    "Bash"
+  ],
+  "next_agent": [
+    "luxury-writer"
+  ],
+  "payload": {
+    "facts": [
+      {
+        "fact_id": "fact_400",
+        "claim": "Petra Farm (petrafarm.gr) has a Weddings & Events page inviting couples to 'experience your magic day on our organic farm'. Petra Estate, built in the 1980s, is set high above the bay of Kolymbithres with views across to Naousa, among olive groves and a productive vineyard; address given as Kolimbithres, Paros 84401 (Naoussa and the north).",
+        "source": "https://www.petrafarm.gr/weddingsevents",
+        "source_type": "official_venue",
+        "checked": "2026-11-11",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_401",
+        "claim": "Petra Farm ceremony and celebration spaces as stated: a bridal suite in the rustic farmhouse for getting ready; ceremonies in the chapel's courtyard among olive trees, with the chapel (interior painted by two acclaimed Greek iconographers) accommodating 120 guests; a poolside cocktail area; dinner by the pool seating 80 guests; and an event space that 'comfortably fits 150 people and a dance floor'.",
+        "source": "https://www.petrafarm.gr/weddingsevents",
+        "source_type": "official_venue",
+        "checked": "2026-11-11",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_402",
+        "claim": "Petra Farm states it limits weddings to 10 per year, offers one point of contact for wedding enquiries, and is on site to oversee all vendor activities during the entire rental period, working with the couple's wedding planners. Guest accommodation room count is not published on the weddings page.",
+        "source": "https://www.petrafarm.gr/weddingsevents",
+        "source_type": "official_venue",
+        "checked": "2026-11-11",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_403",
+        "claim": "Astir of Paros (astirofparos.gr) describes itself as a 5 star hotel near the village of Naoussa; its schema address is Kolymbithres, Naoussa, Paros. It has a dedicated weddings page ('Dream Wedding in Paros') offering the setting 'for a cherished wedding ceremony and a memorable reception', with the executive chef's cuisine and personalised services.",
+        "source": "https://www.astirofparos.gr/weddings/",
+        "source_type": "official_venue",
+        "checked": "2026-11-11",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_404",
+        "claim": "Astir of Paros homepage: the St. Nicholas chapel, at the edge of the golf course right by the water, is 'an ideal choice for your wedding'; the grounds also hold the 12th-century Byzantine chapel of Panagia Angelochairetisti, carved in white Parian marble. The resort has tropical gardens with hundreds of palms, a small private sandy beach for guests next to Kolymbithres bay, two gourmet restaurants and two bars, and was fully renovated in 2018. No wedding capacity or room count is published on the pages read.",
+        "source": "https://www.astirofparos.gr/",
+        "source_type": "official_venue",
+        "checked": "2026-11-11",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_405",
+        "claim": "The Secret View at Fladakia Estate (the-secret-view.com, logo 'Fladakia Estate') is an event venue on Paros 'on the hills above Golden Beach' with a view of the Aegean, a 40-acre family estate hosting weddings, baptisms, corporate and private events (east and south coast).",
+        "source": "https://www.the-secret-view.com/",
+        "source_type": "official_venue",
+        "checked": "2026-11-11",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_406",
+        "claim": "The Secret View wedding spaces as stated: a traditional Greek chapel as the backdrop for the ceremony or couple's shoot, a spacious lower terrace for the reception, an upper-level pergola for cocktail hour, and a stone outdoor salon with a beige waterproof canopy for more intimate settings. It promotes a 'romantic symbolic ceremony with a view'.",
+        "source": "https://www.the-secret-view.com/",
+        "source_type": "official_venue",
+        "checked": "2026-11-11",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_407",
+        "claim": "The Secret View FAQ: guests stay in nearby hotels and the venue is 'happy to organize shuttles' (no on-site guest rooms stated); loud music stops at 2am out of respect for local villages, with an after-party (for example an acoustic band) possible; couples may bring their own vendors, with a catering site inspection suggested; prices include full access to the venue for 24 hours to use all areas. No guest capacity is published on the homepage.",
+        "source": "https://www.the-secret-view.com/",
+        "source_type": "official_venue",
+        "checked": "2026-11-11",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_408",
+        "claim": "The Secret View 'The Estate' page gives per-space layouts: Pergola (bamboo roof, covered, for drizzle or heat) ceremony 30 / dinner 35; Outdoor Salon (stone, beige canopy) ceremony 60 / dinner 70; Chapel (Greek chapel as ceremony backdrop, chairs facing church or view) ceremony 85 / dinner 90; Terrace (stone deck, 180 degree view, Aegean behind) ceremony 110 / dinner 120.",
+        "source": "https://www.the-secret-view.com/pages/the-estate",
+        "source_type": "official_venue",
+        "checked": "2026-11-11",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_409",
+        "claim": "The same Secret View page also says the Terrace 'can fit up to 250 guests in a seated layout, with a dancefloor, a stage for your favourite live-band and a lounge area by the bar', which conflicts with the 120 dinner layout stated for the same space.",
+        "source": "https://www.the-secret-view.com/pages/the-estate",
+        "source_type": "official_venue",
+        "checked": "2026-11-11",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_410",
+        "claim": "Mira Luxury Villas / Villa Mira Paros (villamiraparos.com) homepage: 'Say I Do Amidst Breathtaking Views... a premier wedding venue in Paros' with 'the exclusive option to book the entire property for your special day'; the property is 'perfect for gatherings, weddings, and parties' as you can rent the entire property with shared BBQ and pool area.",
+        "source": "https://villamiraparos.com/",
+        "source_type": "official_venue",
+        "checked": "2026-11-11",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_411",
+        "claim": "Villa Mira Paros has a central swimming pool with Aegean views and 4 villas with kitchens and dining areas, on a 7,500 square metre lot with panoramic views of the Aegean and the Bay of Paroikia, described as perched atop a mountain; contact page address given as Parikoia, Paros (Parikia and the west). No wedding guest capacity is published on the page read.",
+        "source": "https://villamiraparos.com/",
+        "source_type": "official_venue",
+        "checked": "2026-11-11",
+        "is_price": false
+      }
+    ],
+    "insider_details": [
+      {
+        "detail": "Petra Farm limits itself to 10 weddings a year and has a chapel courtyard for 120, poolside dinner for 80 and an event space for 150, so the guest count decides the reception space: under 80 stays by the pool, larger groups move a few steps to the event space.",
+        "fact_ids": [
+          "fact_401",
+          "fact_402"
+        ]
+      },
+      {
+        "detail": "The Secret View has no on-site guest rooms and offers shuttles from nearby hotels, so book a room block near Golden Beach and plan the return runs around its 2am loud-music stop.",
+        "fact_ids": [
+          "fact_405",
+          "fact_407"
+        ]
+      },
+      {
+        "detail": "At The Secret View, the bamboo-roofed pergola and the canopied stone salon are the covered spaces for heat or drizzle, but they seat only 35 and 70 for dinner, so a larger wedding has no fully covered dinner space published; agree a heat and wind plan for the terrace.",
+        "fact_ids": [
+          "fact_406",
+          "fact_408"
+        ]
+      },
+      {
+        "detail": "Villa Mira Paros can be booked whole, with four villas and a shared pool above the Bay of Paroikia, which suits a wedding party staying together close to the port town.",
+        "fact_ids": [
+          "fact_410",
+          "fact_411"
+        ]
+      },
+      {
+        "detail": "Astir of Paros and Petra Farm both sit at Kolymbithres on the bay facing Naoussa, so couples can pair a hotel stay with a nearby estate ceremony without a long island transfer.",
+        "fact_ids": [
+          "fact_400",
+          "fact_403"
+        ]
+      }
+    ],
+    "quotes": [],
+    "real_weddings": [],
+    "verify_items": [
+      "[[VERIFY: The Secret View Terrace capacity conflicts on its own Estate page: dinner layout 120 versus 'up to 250 guests in a seated layout' (fact_408, fact_409); confirm the seated maximum before stating]]",
+      "[[VERIFY: Astir of Paros publishes no wedding capacity, reception spaces or room count on the pages read (fact_403, fact_404); confirm capacity, rooms and whether St. Nicholas chapel ceremonies are still offered]]",
+      "[[VERIFY: Petra Farm guest accommodation (bridal suite only stated) and its overall seated maximum (chapel 120, pool dinner 80, event space 150) (fact_401, fact_402); confirm before stating]]",
+      "[[VERIFY: Villa Mira Paros publishes no wedding guest capacity on its official homepage and its events page was not read (fact_410, fact_411); confirm capacity and ceremony spots]]"
+    ],
+    "needs_signoff": [],
+    "must_include_coverage": [
+      {
+        "item": "Additional Paros venue profiles (area, setting in own words, ceremony options, capacity, rooms, exclusive use, standout)",
+        "covered_by": [
+          "fact_400",
+          "fact_401",
+          "fact_402",
+          "fact_403",
+          "fact_404",
+          "fact_405",
+          "fact_406",
+          "fact_407",
+          "fact_408",
+          "fact_409",
+          "fact_410",
+          "fact_411",
+          "[[VERIFY: The Secret View Terrace capacity conflicts on its own Estate page: dinner layout 120 versus 'up to 250 guests in a seated layout' (fact_408, fact_409); confirm the seated maximum before stating]]",
+          "[[VERIFY: Astir of Paros publishes no wedding capacity, reception spaces or room count on the pages read (fact_403, fact_404); confirm capacity, rooms and whether St. Nicholas chapel ceremonies are still offered]]",
+          "[[VERIFY: Petra Farm guest accommodation (bridal suite only stated) and its overall seated maximum (chapel 120, pool dinner 80, event space 150) (fact_401, fact_402); confirm before stating]]",
+          "[[VERIFY: Villa Mira Paros publishes no wedding guest capacity on its official homepage and its events page was not read (fact_410, fact_411); confirm capacity and ceremony spots]]"
+        ]
+      }
+    ]
+  }
+}

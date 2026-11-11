@@ -6,3 +6,4 @@
 06:41 03 batch C done: Poseidon of Paros and Golden Beach Hotel qualify; Golden Bay conditional; Soros Beach (Antiparos) note; Akti Resort and Palmtree passed on. Top-up E launched with SEO leads.
 06:41 03 batch B done: Pyrgaki (2020 page) and Roses Beach (self-described cheap hotel; held as reserve) qualify; The Secret View qualifies (Golden Beach hills); Lefkes Village, Yria timed out; Villa Aethra no official site.
 06:43 03 batch A done: Astir of Paros, Anemoi, Monastiri qualify; Akti held as reserve (family-run, receptions only); Parilio, Porto Paros, Cosme timed out; Lilly Residence no weddings. Current list 6; waiting on top-up E.
+06:53 03 top-up E done: Petra Farm, Villa Mira qualify (plus Astir, Secret View duplicates). Final 8: Astir, Anemoi, Monastiri, Petra Farm, Pyrgaki, Villa Mira, Poseidon, Secret View. Reserves: Akti, Golden Beach Hotel, Roses Beach, Golden Bay. Packs merged.
