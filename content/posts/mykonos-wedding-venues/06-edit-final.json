@@ -1,0 +1,195 @@
+{
+  "agent": "editor",
+  "task_id": "mykonos-wedding-venues",
+  "stage": "06",
+  "status": "complete",
+  "round": 3,
+  "inputs_used": [
+    "CLAUDE.md",
+    "content/posts/mykonos-wedding-venues/08-final.md",
+    "content/posts/mykonos-wedding-venues/03-source-pack.json",
+    "content/posts/mykonos-wedding-venues/07-panel.json",
+    "content/posts/mykonos-wedding-venues/06-edit.json",
+    "content-system/brand/brand-facts.md",
+    "content/posts/corfu-wedding-venues/06-edit-final.json"
+  ],
+  "self_qa": {
+    "checks": [
+      {
+        "check": "scan_copy.py on 08-final.md",
+        "pass": true,
+        "note": "banned [], dashes 0, overlaps []; flagged luxury 1 (venue name 'a Luxury Collection Resort'), exclusive 14 (13 'Exclusive use' labels or sole-use questions plus the fact_09 wording)."
+      },
+      {
+        "check": "10 venues, table vs entries",
+        "pass": true,
+        "note": "10 entries and 10 table rows; 5 columns after panel must-fix; area, type, ceremony and capacity cells match entries and markers (Petasos ceremony and ZeNIT capacity consistent with entries)."
+      },
+      {
+        "check": "Fact markers traceable",
+        "pass": true,
+        "note": "All cited marker ids exist in 03-source-pack.json and sentences match the claims; one overstatement edited (Katikies micro weddings, fact_09)."
+      },
+      {
+        "check": "Legal, travel, timing",
+        "pass": true,
+        "note": "CNI list matches fact_309; Embassy fact_311; recognition fact_310; Smartraveller fact_305/306 dated 'As at November 2026'; airport fact_312/308; distances fact_11/111."
+      },
+      {
+        "check": "Research talk, credits, money, vendors, ranking, Advisor, Privileges",
+        "pass": true,
+        "note": "No research or method talk, no per-line source credits beyond dated government attributions and venue self-descriptions; no money amounts or percentages; no non-venue vendor names (Buddha-Bar, Cavo Paradiso, transfer fleet left out); no 'best'; 'largest published' figures are factual; Advisor lines all within brand-facts, no legal, church, religious paperwork or transfer claims for the Advisor; no Wedded Privileges; no 'last dance'; 0 'often told'."
+      },
+      {
+        "check": "Key takeaways",
+        "pass": true,
+        "note": "Exactly 4 bullets, each one sentence."
+      },
+      {
+        "check": "Panel must-fixes",
+        "pass": true,
+        "note": "Both applied in 08-final.md: FAQ legal answer opens on Smartraveller; Exclusive use column removed."
+      },
+      {
+        "check": "Edits apply cleanly",
+        "pass": true,
+        "note": "Each old occurs exactly once in 08-final.md and each new exactly once after applying all edits (scripted check)."
+      },
+      {
+        "check": "Decision consistent",
+        "pass": true,
+        "note": "One small blocking edit, average 4.14, no criterion below 3 -> pass_with_edits."
+      }
+    ],
+    "confidence": 0.85
+  },
+  "open_questions": [],
+  "assumptions": [
+    "Stage 8b blocking-issue check only; rubric carried from 06-edit.json with accuracy raised to 4 after r2/r3 fixes, not rescored in depth.",
+    "Business details deferred per brand-facts.md.",
+    "Venue self-descriptions ('the hotel calls', 'which the hotel describes as') are quoted venue wording, not per-line source credits.",
+    "'Largest published' comparisons (Saint John 800, Horizons Ballroom) are factual comparisons from the pack, not rankings."
+  ],
+  "verify_items": [],
+  "tools_used": [
+    "Bash (python3 -I, grep)",
+    "content-system/scripts/scan_copy.py",
+    "content-system/scripts/validate.py"
+  ],
+  "next_agent": [
+    "luxury-writer"
+  ],
+  "payload": {
+    "draft_file": "content/posts/mykonos-wedding-venues/08-final.md",
+    "rubric": {
+      "voice": 4,
+      "expertise": 4,
+      "accuracy": 4,
+      "seo_fit": 4,
+      "commercial_link": 4,
+      "structure": 5,
+      "brief_fit": 4
+    },
+    "average": 4.14,
+    "blocking_issues": [],
+    "decision": "pass_with_edits",
+    "edits": [
+      {
+        "location": "Venue 2, Katikies Mykonos, opening paragraph",
+        "issue": "Claim beyond the pack: fact_09 offers micro weddings 'at Katikies Hotels in Santorini or Mykonos' (group level), not specifically at Katikies Mykonos. Keep it at group level, matching how the exclusive-use bullet treats the group take-over.",
+        "fix": "Replace exactly:\nThe Katikies group offers micro weddings at its Mykonos hotel, small ceremonies \"featuring classic Cycladic architecture\". <!-- fact_09 -->\nwith:\nThe Katikies group offers micro weddings in Mykonos, small ceremonies \"featuring classic Cycladic architecture\". <!-- fact_09 -->",
+        "old": "The Katikies group offers micro weddings at its Mykonos hotel, small ceremonies \"featuring classic Cycladic architecture\". <!-- fact_09 -->",
+        "new": "The Katikies group offers micro weddings in Mykonos, small ceremonies \"featuring classic Cycladic architecture\". <!-- fact_09 -->"
+      }
+    ],
+    "fact_check_log": [
+      {
+        "claim": "Key takeaway 1 area rule: west near town, south beach receptions, north privacy and a chapel",
+        "fact_id": "fact_21, fact_11, fact_102, fact_105, fact_200, fact_204, fact_205",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Key takeaway 2 capacity range: 25 in the Mykonos Grand chapel to 800 at Saint John",
+        "fact_id": "fact_05, fact_402",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Large-capacity line: Saint John 800, Petasos 500 cocktail, Horizons Ballroom 550 cocktail; ceremony range 25/60/100",
+        "fact_id": "fact_402, fact_104, fact_201, fact_05, fact_102",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Mykonos Blu opening: Grecotel beachfront resort on Psarou waterfront, weddings and vow renewals, wedding specialists, customised menus; 103 rooms; cave pool",
+        "fact_id": "fact_100, fact_101, fact_106, fact_102",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Katikies opening: five-star hotel above Agios Ioannis beach",
+        "fact_id": "fact_11",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Katikies micro weddings 'at its Mykonos hotel'",
+        "fact_id": "fact_09",
+        "status": "unsupported"
+      },
+      {
+        "claim": "Table rows vs venue entries, all 10 venues (area, type, ceremony, capacity)",
+        "fact_id": "fact_01-fact_407",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Chapels: six venues, only Mykonos Grand publishes a chapel count; Lolita only venue naming civil weddings",
+        "fact_id": "fact_01, fact_05, fact_401, fact_105, fact_200, fact_204, fact_205",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Room counts: only Mykonos Blu publishes one (103)",
+        "fact_id": "fact_101, fact_206, fact_207, fact_109",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Airport: JMK, 45 min from Athens, 1 h 10 from Thessaloniki; bus and taxi at Arrivals",
+        "fact_id": "fact_312, fact_308",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Smartraveller heat, wildfire, swimming, dated 'As at November 2026'",
+        "fact_id": "fact_305, fact_306",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Legal: CNI list, Embassy in Athens services, recognition in Australia; FAQ legal answer no longer leads with Lolita (panel must-fix applied)",
+        "fact_id": "fact_309, fact_311, fact_310",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Indoor or covered fallback: Saint John, Myconian Collection, ZeNIT",
+        "fact_id": "fact_401, fact_201, fact_406",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Closing Advisor paragraph and CTAs",
+        "fact_id": "content-system/brand/brand-facts.md",
+        "status": "confirmed"
+      }
+    ],
+    "compliance": {
+      "pass": true,
+      "issues": [
+        "No prices, fees or money amounts; 'fee' appears only in the brand-facts closing line; nothing for sign-off.",
+        "No em or en dashes (scan: 0), no 'last dance', no Wedded Privileges, no 'often told', Australian English.",
+        "No vendor names other than venues and venue groups; venue spaces (L'Archipel, Efisia, Aqua Marine Spa, Veranda) are venue details.",
+        "Legal facts attributed to Smartraveller and the Australian Embassy with 'As at November 2026'; no church or religious paperwork help; no Advisor line in the legal section.",
+        "Advisor and Concierge claims (one person, time zone, AUD, fee agreed in writing, inclusions confirmed in writing, plans venue, travel, vendors and payments, availability on your dates) all in brand-facts.md.",
+        "No competitor branding; no venue contact details; external links are official venue, government, Visit Greece and airport pages."
+      ]
+    },
+    "originality": {
+      "pass": true,
+      "matches": []
+    },
+    "banned_phrases_found": [],
+    "needs_signoff": []
+  }
+}

@@ -46,7 +46,7 @@ The list runs from the west coast near Mykonos Town, along the south coast to El
 A table narrows the field. Only the venue can tell you what is free on your date, and under which house rules.
 
 <!-- CTA: primary -->
-When you have three or four names, [book a Wedded Concierge consultation](https://weddedwonderland.com/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=mykonos-wedding-venues&utm_content=primary) to see which are free on your dates.
+When you are ready to shortlist Mykonos venues, [speak with a Wedded Advisor](https://weddedwonderland.com/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=mykonos-wedding-venues&utm_content=primary).
 
 ## How to compare Mykonos venues like for like
 
@@ -135,7 +135,7 @@ A chapel, a private beach and a planning team on one peninsula make Santa Marina
 
 ### 2. Katikies Mykonos, Agios Ioannis
 
-[Katikies Mykonos](https://www.katikies.com/events/) is a five-star hotel above Agios Ioannis beach. <!-- fact_11 --> The Katikies group offers micro weddings at its Mykonos hotel, small ceremonies "featuring classic Cycladic architecture". <!-- fact_09 -->
+[Katikies Mykonos](https://www.katikies.com/events/) is a five-star hotel above Agios Ioannis beach. <!-- fact_11 --> The Katikies group offers micro weddings in Mykonos, small ceremonies "featuring classic Cycladic architecture". <!-- fact_09 -->
 
 - **Setting:** About 4 km from Mykonos Town, roughly a 10-minute drive. Every room and suite looks to Agios Ioannis beach, and most have sea views to Delos. <!-- fact_11 -->
 - **Ceremony:** The Upper deck is the space marked for wedding ceremonies, as well as private dinners and cocktail receptions. <!-- fact_10 --> Ceremony types are not published.
