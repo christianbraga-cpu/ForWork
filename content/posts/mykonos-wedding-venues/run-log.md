@@ -10,3 +10,4 @@
 06:14 07 readers: all 5 in; sceptic must-fix (Lolita civil wording implies legal registration).
 06:16 06 editor pass_with_edits (4.0): 20 edits applied to 05-draft-r2.md.
 06:19 07b panel: revise (enquire 2.6), 2 must-fix + should-fix + consider; one final pass.
+06:21 08 final done: ~4,840 words, scan clean, 0 VERIFY.
