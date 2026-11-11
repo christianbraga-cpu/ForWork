@@ -1,0 +1,358 @@
+{
+  "agent": "cms-publisher",
+  "task_id": "wedding-in-crete",
+  "stage": "11",
+  "status": "complete",
+  "round": 1,
+  "inputs_used": [
+    "CLAUDE.md",
+    "content-system/cms/field-map.md",
+    "content-system/schemas/11-publish-package.schema.json",
+    "content/posts/wedding-in-crete/00-input.json",
+    "content/posts/wedding-in-crete/01-brief.json",
+    "content/posts/wedding-in-crete/02-seo.json",
+    "content/posts/wedding-in-crete/03-source-pack.json",
+    "content/posts/wedding-in-crete/04-images.json",
+    "content/posts/wedding-in-crete/08-final.md",
+    "content/posts/wedding-in-crete/09-cro.json",
+    "content/posts/wedding-in-crete/10-distribution.json",
+    "content/posts/greece-wedding-packages/11-publish-package.json (format model)",
+    "content/posts/greece-wedding-packages/11-body.md (format model)",
+    "content/posts/greece-wedding-packages/booking-checklist.md (format model)",
+    "content/posts/greece-wedding-packages/12-cms-report.md (format model)",
+    "content/posts/crete-wedding-venues/booking-checklist.md (venue items)"
+  ],
+  "self_qa": {
+    "checks": [
+      {
+        "check": "08-final.md already carries the 09-cro.json copy_change (secondary lead-in 'When you are ready to settle the season, the venue and the guest rooms')",
+        "pass": true
+      },
+      {
+        "check": "Front matter and all <!-- fact_xx --> and <!-- crete-venues fact_xx --> markers removed; 6 image-slot comments kept; the one [[VERIFY]] marker kept",
+        "pass": true
+      },
+      {
+        "check": "Primary CTA block at the marker; inline fallback retagged utm_content=inline; secondary, magnet and closing marked with comments; each utm_content link appears exactly once",
+        "pass": true
+      },
+      {
+        "check": "Exactly 4 key takeaways copied verbatim; 6 FAQ pairs extracted; FAQPage carries all 6",
+        "pass": true
+      },
+      {
+        "check": "primary_category equals categories[0] (Destination Weddings); title, slug, URL, type and cluster as fixed in 00-input.json",
+        "pass": true
+      },
+      {
+        "check": "No prices printed, needs_signoff empty; no em dashes",
+        "pass": true
+      },
+      {
+        "check": "Image alt and caption filled",
+        "pass": false,
+        "note": "None supplied in 04-images.json; left empty, not invented. All 6 slots needed."
+      },
+      {
+        "check": "Status draft; nothing uploaded, published or scheduled",
+        "pass": true
+      }
+    ],
+    "confidence": 0.9
+  },
+  "open_questions": [
+    {
+      "to": "orchestrator",
+      "question": "CMS upload not attempted: no browser in this session and content-system/cms/field-map.md is not CONFIRMED (NOT YET MAPPED). Run /wedded-cms-discovery locally, then /wedded-blog resume=wedding-in-crete.",
+      "blocking": true
+    },
+    {
+      "to": "orchestrator",
+      "question": "No author named in any input; package uses \"Wedded Wonderland\" (organisation). Confirm the byline.",
+      "blocking": false
+    },
+    {
+      "to": "orchestrator",
+      "question": "02-seo.json says this guide keeps 'venue' out of its title and H1, but the person's fixed title 'Wedding in Crete Guide to Seasons, Venues and Costs' contains 'Venues'. Title kept as given; meta title is 02-seo.json's. Confirm.",
+      "blocking": false
+    }
+  ],
+  "assumptions": [
+    "Title is the person's title from 00-input.json and the 08-final.md front matter.",
+    "Excerpt is the first two sentences of the opening paragraph, verbatim; the first sentence alone does not carry the focus keyword.",
+    "Breadcrumb level 2 URL is https://weddedwonderland.com/destination-weddings, from the fixed URL path.",
+    "Inline primary sentence retagged utm_content=inline so the CTA block alone carries utm_content=primary (as the Greece packages model).",
+    "CTA block text and subtext from 09-cro.json primary_cta; closing_cta and lead_magnet are extra, schema-permitted fields recording the closing and magnet links.",
+    "FAQ answers are the body answers with fact markers removed; no FAQ answer carries a link.",
+    "Categories and tags taken from 01-brief.json as written."
+  ],
+  "verify_items": [
+    "Elounda Collection document lead times (email 4 weeks, courier 3 weeks, documents issued within 3 months) come from the 2025 packages PDF; confirm they still apply for 2027 dates ([[VERIFY]] in 'A planning timeline')",
+    "Image credit and licence for slot featured (wedding-in-crete-elounda-beach-ceremony-terrace-hero.webp): not yet sourced; record the credit and licence (venue press kit with written permission, or licensed stock in library-index.csv) before publishing",
+    "Image credit and licence for slot seasons (wedding-in-crete-mirabello-bay-coast-spring.webp): not yet sourced; record the credit and licence (Wedded Wonderland library register row, or licensed stock in library-index.csv; a venue press image with written permission is acceptable; never AI for a destination) before publishing",
+    "Image credit and licence for slot choosing-area (wedding-in-crete-avra-imperial-ceremony-terrace.webp): not yet sourced; record the credit and licence (west Crete venue press kit with written permission, or licensed stock in library-index.csv) before publishing; rename the file to whichever venue's permission comes through",
+    "Image credit and licence for slot costs (wedding-in-crete-illustrative-linen-pen-olive.webp): not yet sourced; Canva brand-kit or licensed stock preferred; AI (Higgsfield) allowed only after the person approves it, captioned 'Illustrative image'; record the source and licence before publishing",
+    "Image credit and licence for slot getting-there (wedding-in-crete-chania-harbour-morning.webp): not yet sourced; record the credit and licence (Wedded Wonderland library register row, or licensed stock in library-index.csv; never AI for a destination) before publishing",
+    "Image credit and licence for slot timeline (wedding-in-crete-illustrative-linen-planner.webp): not yet sourced; record the credit and licence (Wedded Wonderland library or licensed stock in library-index.csv; AI fallback only on the person's approval, captioned 'Illustrative image') before publishing"
+  ],
+  "tools_used": [
+    "Bash (python3 -I)"
+  ],
+  "next_agent": [
+    "orchestrator"
+  ],
+  "payload": {
+    "title": "Wedding in Crete Guide to Seasons, Venues and Costs",
+    "slug": "wedding-in-crete",
+    "url_path": "/destination-weddings/wedding-in-crete",
+    "content_type": "Guide",
+    "cluster": "Getting Married in Greece",
+    "categories": [
+      "Destination Weddings",
+      "Greece",
+      "Crete",
+      "Planning Guides"
+    ],
+    "primary_category": "Destination Weddings",
+    "tags": [
+      "Getting Married in Greece",
+      "Crete",
+      "Elounda",
+      "Chania",
+      "Heraklion",
+      "Rethymno",
+      "Wedding seasons",
+      "Wedding costs"
+    ],
+    "excerpt": "Crete is on your shortlist, and the questions now are practical ones: which month, which end of the island, and what moves the cost. On long-term averages, a wedding in Crete in late spring or early autumn is milder than one in July or August, with few rain days.",
+    "key_takeaways": [
+      "On long-term averages at Heraklion and near Chania, May and September bring highs of about 24 to 27 degrees with few rain days, while most rain falls between October and April.",
+      "The east around Elounda and Agios Nikolaos is resort country, while the west centres on the old towns of Chania and Rethymno.",
+      "Season, guest rooms, minimum stays, exclusive use and what sits outside a package shape the cost of a Crete wedding.",
+      "For a legal wedding, the venue's document deadlines and municipal approval set the shape of the whole planning timeline."
+    ],
+    "body_markdown_file": "content/posts/wedding-in-crete/11-body.md",
+    "faq": [
+      {
+        "q": "When is the best time to get married in Crete?",
+        "a": "On long-term averages, May and September are milder than high summer with few rain days, and Minos Palace gives April to November as eastern Crete's pleasant window. Beyond that, it depends on the heat and rain you are comfortable with. Long-term averages show almost no rain from June to August, with average highs near or above 30 degrees in the Chania area in July and August. Spring and autumn are the island's mild seasons for touring."
+      },
+      {
+        "q": "Is Crete good for a destination wedding?",
+        "a": "For many Australian couples, yes. It is the largest island in Greece, with more than 1,000 kilometres of coastline, airports at Heraklion and Chania and a range of venues from resort chapels to hilltop gardens. The trade-offs are summer heat, with July and August highs above 30 degrees in the Chania area, wildfire season from June to September, and a drive of about three hours from Agios Nikolaos to Chania Airport."
+      },
+      {
+        "q": "Which part of Crete is best for a wedding?",
+        "a": "It comes down to the wedding you want. The east, around Elounda and Agios Nikolaos, is resort country, and Heraklion in the centre keeps its airport close. Chania and Rethymno in the west centre on their old towns, with venues from beach resorts to a hilltop garden. Choose the end of the island by where your guests will land."
+      },
+      {
+        "q": "What affects the cost of a wedding in Crete?",
+        "a": "Season and date, the rooms and nights a venue asks you to hold, exclusive use, whether you pay a venue fee or a package, extras priced separately and the cost of documents. At the Elounda Collection, official fees are also charged on top of the package rate."
+      },
+      {
+        "q": "Can Australians legally get married in Crete?",
+        "a": "Yes. Venues such as the Elounda Collection offer civil packages, and there the couple registers the marriage at the Registry Office in Aghios Nikolaos after the ceremony. As at November 2026, a marriage made overseas is usually recognised in Australia if it was valid where it took place and would have been valid under Australian law. Contact the local municipality where you plan to marry for the certificates it requires."
+      },
+      {
+        "q": "How far ahead should we plan a wedding in Crete?",
+        "a": "Start with the venue's season and work back. Documents for a legal wedding at the Elounda Collection must be issued within 3 months of the date, with copies sent at least 4 weeks and originals at least 3 weeks before. Settle the venue and guest rooms well before that, so the paperwork is the last step rather than the first worry. Ask each venue how far ahead dates in your month are usually taken."
+      }
+    ],
+    "images": [
+      {
+        "slot_id": "featured",
+        "file": "content/posts/wedding-in-crete/images/wedding-in-crete-elounda-beach-ceremony-terrace-hero.webp",
+        "role": "featured",
+        "status": "needed"
+      },
+      {
+        "slot_id": "seasons",
+        "file": "content/posts/wedding-in-crete/images/wedding-in-crete-mirabello-bay-coast-spring.webp",
+        "role": "inline",
+        "status": "needed"
+      },
+      {
+        "slot_id": "choosing-area",
+        "file": "content/posts/wedding-in-crete/images/wedding-in-crete-avra-imperial-ceremony-terrace.webp",
+        "role": "inline",
+        "status": "needed"
+      },
+      {
+        "slot_id": "costs",
+        "file": "content/posts/wedding-in-crete/images/wedding-in-crete-illustrative-linen-pen-olive.webp",
+        "role": "inline",
+        "status": "needed"
+      },
+      {
+        "slot_id": "getting-there",
+        "file": "content/posts/wedding-in-crete/images/wedding-in-crete-chania-harbour-morning.webp",
+        "role": "inline",
+        "status": "needed"
+      },
+      {
+        "slot_id": "timeline",
+        "file": "content/posts/wedding-in-crete/images/wedding-in-crete-illustrative-linen-planner.webp",
+        "role": "inline",
+        "status": "needed"
+      }
+    ],
+    "cta": {
+      "text": "Speak with a Wedded Advisor",
+      "subtext": "The fee is agreed in writing before any work begins.",
+      "link": "/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=wedding-in-crete&utm_content=primary",
+      "placement": "At the former <!-- CTA: primary --> marker, at the end of 'Choosing an area and a venue', after 'Six venues from east to west' and the Greece venues guide link (marked <!-- CTA BLOCK: primary --> in 11-body.md); the inline sentence after the block is the fallback and is tagged utm_content=inline."
+    },
+    "secondary_cta": {
+      "text": "Plan your timeline with Wedded Concierge",
+      "link": "/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=wedding-in-crete&utm_content=secondary",
+      "placement": "Inline link at the end of 'A planning timeline' (marked <!-- CTA INLINE: secondary --> in 11-body.md). No separate block, per 09-cro.json."
+    },
+    "closing_cta": {
+      "text": "start planning with Wedded Concierge",
+      "link": "/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=wedding-in-crete&utm_content=closing",
+      "placement": "Inline link at the end of 'Plan your Crete wedding with a Wedded Advisor' (marked <!-- CTA INLINE: closing --> in 11-body.md)."
+    },
+    "lead_magnet": {
+      "name": "Wedded Wonderland digital magazine",
+      "link": "/magazine?utm_source=blog&utm_medium=content&utm_campaign=wedding-in-crete&utm_content=magnet",
+      "placement": "Existing line at the end of 'What drives the cost of a Crete wedding', after the ten venue questions (marked <!-- LEAD MAGNET --> in 11-body.md)."
+    },
+    "tracking_links": [
+      "/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=wedding-in-crete&utm_content=primary",
+      "/magazine?utm_source=blog&utm_medium=content&utm_campaign=wedding-in-crete&utm_content=magnet",
+      "/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=wedding-in-crete&utm_content=secondary",
+      "/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=wedding-in-crete&utm_content=closing",
+      "/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=wedding-in-crete&utm_content=inline"
+    ],
+    "seo": {
+      "meta_title": "Wedding in Crete: Seasons, Venues and Cost Drivers",
+      "meta_description": "Plan a wedding in Crete: the best months to marry, east or west of the island, what drives the cost, getting there and a planning timeline.",
+      "focus_keyword": "wedding in crete",
+      "canonical": "https://weddedwonderland.com/destination-weddings/wedding-in-crete",
+      "og_image_slot": "featured"
+    },
+    "schema_jsonld": {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Article",
+          "@id": "https://weddedwonderland.com/destination-weddings/wedding-in-crete#article",
+          "headline": "Wedding in Crete Guide to Seasons, Venues and Costs",
+          "description": "Plan a wedding in Crete: the best months to marry, east or west of the island, what drives the cost, getting there and a planning timeline.",
+          "author": {
+            "@type": "Organization",
+            "name": "Wedded Wonderland",
+            "url": "https://weddedwonderland.com/"
+          },
+          "publisher": {
+            "@type": "Organization",
+            "name": "Wedded Wonderland",
+            "url": "https://weddedwonderland.com/"
+          },
+          "datePublished": "",
+          "mainEntityOfPage": "https://weddedwonderland.com/destination-weddings/wedding-in-crete",
+          "inLanguage": "en-AU"
+        },
+        {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Home",
+              "item": "https://weddedwonderland.com/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Destination Weddings",
+              "item": "https://weddedwonderland.com/destination-weddings"
+            },
+            {
+              "@type": "ListItem",
+              "position": 3,
+              "name": "Wedding in Crete Guide to Seasons, Venues and Costs",
+              "item": "https://weddedwonderland.com/destination-weddings/wedding-in-crete"
+            }
+          ]
+        },
+        {
+          "@type": "FAQPage",
+          "@id": "https://weddedwonderland.com/destination-weddings/wedding-in-crete#faq",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "When is the best time to get married in Crete?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "On long-term averages, May and September are milder than high summer with few rain days, and Minos Palace gives April to November as eastern Crete's pleasant window. Beyond that, it depends on the heat and rain you are comfortable with. Long-term averages show almost no rain from June to August, with average highs near or above 30 degrees in the Chania area in July and August. Spring and autumn are the island's mild seasons for touring."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Is Crete good for a destination wedding?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "For many Australian couples, yes. It is the largest island in Greece, with more than 1,000 kilometres of coastline, airports at Heraklion and Chania and a range of venues from resort chapels to hilltop gardens. The trade-offs are summer heat, with July and August highs above 30 degrees in the Chania area, wildfire season from June to September, and a drive of about three hours from Agios Nikolaos to Chania Airport."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Which part of Crete is best for a wedding?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "It comes down to the wedding you want. The east, around Elounda and Agios Nikolaos, is resort country, and Heraklion in the centre keeps its airport close. Chania and Rethymno in the west centre on their old towns, with venues from beach resorts to a hilltop garden. Choose the end of the island by where your guests will land."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "What affects the cost of a wedding in Crete?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Season and date, the rooms and nights a venue asks you to hold, exclusive use, whether you pay a venue fee or a package, extras priced separately and the cost of documents. At the Elounda Collection, official fees are also charged on top of the package rate."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Can Australians legally get married in Crete?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes. Venues such as the Elounda Collection offer civil packages, and there the couple registers the marriage at the Registry Office in Aghios Nikolaos after the ceremony. As at November 2026, a marriage made overseas is usually recognised in Australia if it was valid where it took place and would have been valid under Australian law. Contact the local municipality where you plan to marry for the certificates it requires."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "How far ahead should we plan a wedding in Crete?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Start with the venue's season and work back. Documents for a legal wedding at the Elounda Collection must be issued within 3 months of the date, with copies sent at least 4 weeks and originals at least 3 weeks before. Settle the venue and guest rooms well before that, so the paperwork is the last step rather than the first worry. Ask each venue how far ahead dates in your month are usually taken."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    "author": "Wedded Wonderland",
+    "status": "draft",
+    "verify_items": [
+      "Elounda Collection document lead times (email 4 weeks, courier 3 weeks, documents issued within 3 months) come from the 2025 packages PDF; confirm they still apply for 2027 dates ([[VERIFY]] in 'A planning timeline')",
+      "Image credit and licence for slot featured (wedding-in-crete-elounda-beach-ceremony-terrace-hero.webp): not yet sourced; record the credit and licence (venue press kit with written permission, or licensed stock in library-index.csv) before publishing",
+      "Image credit and licence for slot seasons (wedding-in-crete-mirabello-bay-coast-spring.webp): not yet sourced; record the credit and licence (Wedded Wonderland library register row, or licensed stock in library-index.csv; a venue press image with written permission is acceptable; never AI for a destination) before publishing",
+      "Image credit and licence for slot choosing-area (wedding-in-crete-avra-imperial-ceremony-terrace.webp): not yet sourced; record the credit and licence (west Crete venue press kit with written permission, or licensed stock in library-index.csv) before publishing; rename the file to whichever venue's permission comes through",
+      "Image credit and licence for slot costs (wedding-in-crete-illustrative-linen-pen-olive.webp): not yet sourced; Canva brand-kit or licensed stock preferred; AI (Higgsfield) allowed only after the person approves it, captioned 'Illustrative image'; record the source and licence before publishing",
+      "Image credit and licence for slot getting-there (wedding-in-crete-chania-harbour-morning.webp): not yet sourced; record the credit and licence (Wedded Wonderland library register row, or licensed stock in library-index.csv; never AI for a destination) before publishing",
+      "Image credit and licence for slot timeline (wedding-in-crete-illustrative-linen-planner.webp): not yet sourced; record the credit and licence (Wedded Wonderland library or licensed stock in library-index.csv; AI fallback only on the person's approval, captioned 'Illustrative image') before publishing"
+    ],
+    "needs_signoff": [],
+    "redirects_recommended": "none (new article)",
+    "keyword_split_recommendation": "Keyword split (recommendation, no live changes): this guide owns 'wedding in crete', 'crete wedding', 'getting married in crete', 'destination wedding crete', 'best time to get married in crete', 'crete wedding season', 'crete wedding cost' and 'wedding crete greece'; /destination-weddings/crete-wedding-venues owns 'crete wedding venues', 'best wedding venues in crete', 'luxury/beach wedding venues crete' and venue-name queries, and should not use 'wedding in crete' in its title, H1 or meta, while this guide keeps 'venue' out of its title and H1 (the person's fixed title includes 'Venues'; the H1 is that title, so confirm) and keeps its venue section to six one-line examples; /destination-weddings/greece-wedding-packages owns 'crete wedding packages' / 'wedding in crete packages'; /destination-weddings/greece-wedding-venues owns Greece-wide venue and legal queries; the hub /destinations/europe/greece keeps Greece-wide terms. No weddedwonderland.com page currently ranks for any Crete query.",
+    "deferred_business_items": [
+      "Fee model and commissions (whether the business takes a cut from venues)",
+      "Whether the first step is a free call with a real person",
+      "Whether the Advisor works with couples outside Australia",
+      "A real Crete wedding to show",
+      "Named Wedded Advisor or phone line"
+    ],
+    "draft_note": "DRAFT. Do not publish until checked:\n\n1. [[VERIFY]] items (1):\n   - Elounda Collection document lead times (email 4 weeks, courier 3 weeks, documents issued within 3 months) come from the 2025 packages PDF; confirm they still apply for 2027 dates ('A planning timeline'). Remove the marker once confirmed.\n   Details the venues do not publish are written as \"Not published\" and listed in booking-checklist.md.\n\n2. Nic sign-off on prices: none (no prices printed).\n\n3. Image slots needed (6, none approved yet; credit, licence, alt and caption to add when approved):\n   - featured (needed)\n   - seasons (needed)\n   - choosing-area (needed)\n   - costs (needed)\n   - getting-there (needed)\n   - timeline (needed)\n   costs and timeline: library, Canva or licensed stock preferred; AI only on the person's approval, captioned 'Illustrative image'. seasons and getting-there: library or licensed stock only, never AI. featured and choosing-area: venue press image with written permission or licensed stock.\n\n4. Linked drafts to publish together: the body links four pages that are still drafts: /destination-weddings/crete-wedding-venues (twice), /destination-weddings/greece-wedding-packages (once), /destination-weddings/greece-wedding-venues (twice, once with the #getting-legally-married-in-greece-as-australians-in-brief anchor) and /expert-advice/greek-wedding-traditions (once). Publish them together with this post, or hold this post until they are live, so no link breaks. Check the Greece guide anchor lands in preview.\n\n5. Keyword split (recommendation, no live changes): this guide owns 'wedding in crete', 'crete wedding', 'getting married in crete', 'destination wedding crete', 'best time to get married in crete', 'crete wedding season', 'crete wedding cost' and 'wedding crete greece'; /destination-weddings/crete-wedding-venues owns 'crete wedding venues', 'best wedding venues in crete', 'luxury/beach wedding venues crete' and venue-name queries, and should not use 'wedding in crete' in its title, H1 or meta, while this guide keeps 'venue' out of its title and H1 (the person's fixed title includes 'Venues'; the H1 is that title, so confirm) and keeps its venue section to six one-line examples; /destination-weddings/greece-wedding-packages owns 'crete wedding packages' / 'wedding in crete packages'; /destination-weddings/greece-wedding-venues owns Greece-wide venue and legal queries; the hub /destinations/europe/greece keeps Greece-wide terms. No weddedwonderland.com page currently ranks for any Crete query.\n\n6. Mobile table: the month-by-month climate table has five columns (Month, Heraklion high, Heraklion rain days, Chania area high, Chania area rain days). Make sure it scrolls horizontally on mobile (no squashed or clipped columns) and check it in the mobile preview.\n\n7. Deferred business items (person's decision, not in this draft): fee model and commissions; whether the first step is a free call with a real person; whether the Advisor works with couples outside Australia; a real Crete wedding to show; a named Wedded Advisor or phone line.\n\nBooking checklist (not publishing blockers): see booking-checklist.md"
+  }
+}
