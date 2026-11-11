@@ -1,0 +1,275 @@
+{
+ "agent": "visual-curator",
+ "task_id": "paros-wedding-venues",
+ "stage": "04",
+ "status": "needs_input",
+ "round": 1,
+ "inputs_used": [
+  "CLAUDE.md",
+  "content/posts/paros-wedding-venues/00-input.json",
+  "content/posts/paros-wedding-venues/01-brief.json, 02-seo.json, 03-source-pack.json (not present at run time)",
+  "content/posts/mykonos-wedding-venues/04-images.json (format model)",
+  "content-system/images/library-index.csv (header only, no rows)",
+  "content-system/images/sources-policy.md",
+  "content-system/schemas/04-images.schema.json"
+ ],
+ "self_qa": {
+  "checks": [
+   {
+    "check": "Zero reference-only or competitor images in slots",
+    "pass": true,
+    "note": "reference_only is empty; no images downloaded."
+   },
+   {
+    "check": "Every approved image has location, licence, alt, caption, fit_reason",
+    "pass": true,
+    "note": "No approved images this run; alt and caption are written once a licensed file exists."
+   },
+   {
+    "check": "No AI image depicting a real place",
+    "pass": true,
+    "note": "No AI used. Every venue and area slot excludes AI; only the legal still life may use AI, with the person's approval, showing no real place."
+   },
+   {
+    "check": "Featured image exists (approved or needed with brief)",
+    "pass": true,
+    "note": "Needed, with brief: ceremony set-up at a confirmed Paros venue."
+   },
+   {
+    "check": "One slot per area section",
+    "pass": true,
+    "note": "Four area slots: Naoussa and north, Parikia and west, inland villages, east and south coast. Antiparos not given a slot (short note only if venues qualify)."
+   },
+   {
+    "check": "About 9 slots",
+    "pass": true,
+    "note": "9 slots: featured, 4 area, 1 legal still life, 3 generic venue slots."
+   },
+   {
+    "check": "No em dashes",
+    "pass": true,
+    "note": "Checked by script before writing."
+   }
+  ],
+  "confidence": 0.7
+ },
+ "open_questions": [
+  {
+   "to": "planner-sme",
+   "question": "Confirm the final Paros venues (03-source-pack) so venue-01..03 and the featured slot can be named, with town and official wedding page.",
+   "blocking": false
+  },
+  {
+   "to": "person",
+   "question": "May the legal-section still life be AI-generated (Higgsfield), captioned 'Illustrative image', if no licensed stock or Canva asset fits? Nothing legible, no documents or emblems.",
+   "blocking": false
+  },
+  {
+   "to": "orchestrator",
+   "question": "Should a human find each confirmed venue's press or media contact and create the Gmail drafts, or should the curator do it in a non-fast run with Firecrawl and Gmail draft approval?",
+   "blocking": false
+  },
+  {
+   "to": "orchestrator",
+   "question": "Is there budget for licensed premium stock (Stocksy, Getty, Offset) for the featured and area slots if press kits do not respond in time?",
+   "blocking": false
+  }
+ ],
+ "assumptions": [
+  "Placement is by section name because 02-seo.json is not yet written; the writer maps it to after_h2/h3 positions.",
+  "01-brief.json and 03-source-pack.json were not present; area names follow the 00-input venue areas note. No venue name was guessed.",
+  "Repo register only (fast mode): Google Drive, own site, Canva and press kits were not searched.",
+  "The writer may drop venue slots if 9 images is too heavy; featured and area slots are the priority."
+ ],
+ "verify_items": [
+  "[[IMAGE NEEDED]] featured: ceremony set-up at a confirmed Paros venue",
+  "[[IMAGE NEEDED]] area-naoussa-north, area-parikia-west, area-inland-villages, area-east-south-coast: official venue image or licensed stock",
+  "[[IMAGE NEEDED]] legal-still-life: licensed stock or Canva asset; AI only with the person's approval, captioned 'Illustrative image'",
+  "[[IMAGE NEEDED]] venue-01..venue-03: official image per confirmed venue (press kit with written permission or licensed stock)",
+  "[[VERIFY licence]] every venue press-kit image: written permission, credit line and expiry recorded in library-index.csv before use",
+  "[[VERIFY: official press or contact page for each confirmed venue, on its own site]]"
+ ],
+ "tools_used": [
+  "Bash (cat/python)"
+ ],
+ "next_agent": [
+  "luxury-writer"
+ ],
+ "payload": {
+  "slots": [
+   {
+    "slot_id": "featured",
+    "placement": "featured",
+    "purpose": "Hero and social share image: a ceremony at a confirmed Paros venue, signalling a luxury Cycladic wedding.",
+    "shot_brief": "Official image from a Paros venue confirmed in 03-source-pack (preference: a Naoussa or north-coast venue, the guide's lead area): the ceremony set-up on a sea-view terrace, garden or beside a whitewashed chapel, Aegean blue in frame, white or natural florals, May to October, golden-hour light. No people, or only distant unidentifiable figures; no other businesses' signage. Landscape 3:2 with room for a title crop. Source: the venue's own media kit or press office with written permission (Gmail draft request, never sent by an agent), or licensed premium stock bought by a human and added to library-index.csv. Never AI, never a competitor, directory, planner, photographer-blog or search-result image. Location proven by the media kit, register row or EXIF, never by appearance.",
+    "status": "needed",
+    "file": "content/posts/paros-wedding-venues/images/paros-wedding-venues-featured-venue-ceremony-hero.webp",
+    "source": {
+     "type": "venue_press",
+     "origin": "not yet sourced",
+     "credit": "[[VERIFY licence]]"
+    },
+    "location": {
+     "venue": "confirmed Paros venue (from 03-source-pack)",
+     "town": "Paros",
+     "verified_by": "pending: venue media kit"
+    },
+    "licence_note": "[[IMAGE NEEDED]] Library register has no rows (header only). Rename the file with the venue name once chosen; move to pending_permission once the permission draft exists."
+   },
+   {
+    "slot_id": "area-naoussa-north",
+    "placement": "venues section: Naoussa and the north (area H2/H3 opener)",
+    "purpose": "Shows the north coast around Naoussa: the harbour, sheltered bays and granite-and-sand beaches.",
+    "shot_brief": "Official image from a venue confirmed in this area (from 03-source-pack): Naoussa bay or a north-coast beach seen from a venue terrace or garden, whitewashed buildings and blue water, golden-hour or blue-hour light. May to October unless stated. No identifiable guests, no crowds, no signage of businesses not featured. Landscape 3:2. Source: the venue's own media kit or press office with written permission (Gmail draft request, never sent by an agent), or licensed premium stock bought by a human and added to library-index.csv. Never AI, never a competitor, directory, planner, photographer-blog or search-result image. Location proven by the media kit, register row or EXIF, never by appearance.",
+    "status": "needed",
+    "file": "content/posts/paros-wedding-venues/images/paros-wedding-venues-naoussa-north-setting.webp",
+    "source": {
+     "type": "venue_press",
+     "origin": "not yet sourced",
+     "credit": "[[VERIFY licence]]"
+    },
+    "location": {
+     "venue": "one confirmed venue in Naoussa and the north",
+     "town": "Naoussa",
+     "verified_by": "to be set from the media kit or register row"
+    },
+    "licence_note": "[[IMAGE NEEDED]] Must come from a venue featured in this area (never imply a venue not covered) or licensed stock of the real place; no AI."
+   },
+   {
+    "slot_id": "area-parikia-west",
+    "placement": "venues section: Parikia and the west (area H2/H3 opener)",
+    "purpose": "Shows the west coast around Parikia: the port town and sunset over the bay.",
+    "shot_brief": "Official image from a venue confirmed in this area (from 03-source-pack): Parikia bay or the west coast from a venue terrace or poolside, sunset light over the water, no ferries or port traffic dominating the frame. May to October unless stated. No identifiable guests, no crowds, no signage of businesses not featured. Landscape 3:2. Source: the venue's own media kit or press office with written permission (Gmail draft request, never sent by an agent), or licensed premium stock bought by a human and added to library-index.csv. Never AI, never a competitor, directory, planner, photographer-blog or search-result image. Location proven by the media kit, register row or EXIF, never by appearance.",
+    "status": "needed",
+    "file": "content/posts/paros-wedding-venues/images/paros-wedding-venues-parikia-west-setting.webp",
+    "source": {
+     "type": "venue_press",
+     "origin": "not yet sourced",
+     "credit": "[[VERIFY licence]]"
+    },
+    "location": {
+     "venue": "one confirmed venue in Parikia and the west",
+     "town": "Parikia",
+     "verified_by": "to be set from the media kit or register row"
+    },
+    "licence_note": "[[IMAGE NEEDED]] Must come from a venue featured in this area (never imply a venue not covered) or licensed stock of the real place; no AI."
+   },
+   {
+    "slot_id": "area-inland-villages",
+    "placement": "venues section: Inland villages (Lefkes, Marpissa) (area H2/H3 opener)",
+    "purpose": "Shows the inland, hillside character of Lefkes and Marpissa: marble lanes, olive groves and views down to the sea.",
+    "shot_brief": "Official image from a venue confirmed in this area (from 03-source-pack): A courtyard, garden or terrace at a venue in or near Lefkes or Marpissa with hillside, olive trees or stone walls and a distant sea view, soft late-afternoon light. May to October unless stated. No identifiable guests, no crowds, no signage of businesses not featured. Landscape 3:2. Source: the venue's own media kit or press office with written permission (Gmail draft request, never sent by an agent), or licensed premium stock bought by a human and added to library-index.csv. Never AI, never a competitor, directory, planner, photographer-blog or search-result image. Location proven by the media kit, register row or EXIF, never by appearance.",
+    "status": "needed",
+    "file": "content/posts/paros-wedding-venues/images/paros-wedding-venues-inland-villages-setting.webp",
+    "source": {
+     "type": "venue_press",
+     "origin": "not yet sourced",
+     "credit": "[[VERIFY licence]]"
+    },
+    "location": {
+     "venue": "one confirmed venue in Inland villages (Lefkes, Marpissa)",
+     "town": "Lefkes",
+     "verified_by": "to be set from the media kit or register row"
+    },
+    "licence_note": "[[IMAGE NEEDED]] Must come from a venue featured in this area (never imply a venue not covered) or licensed stock of the real place; no AI."
+   },
+   {
+    "slot_id": "area-east-south-coast",
+    "placement": "venues section: East and south coast (Golden Beach, Drios) (area H2/H3 opener)",
+    "purpose": "Shows the long sandy beaches and open water of the east and south coast.",
+    "shot_brief": "Official image from a venue confirmed in this area (from 03-source-pack): Golden Beach or the Drios coastline from a venue terrace or beachfront lawn set for a ceremony or dinner, turquoise water, morning or golden-hour light, no beach crowds or watersports gear. May to October unless stated. No identifiable guests, no crowds, no signage of businesses not featured. Landscape 3:2. Source: the venue's own media kit or press office with written permission (Gmail draft request, never sent by an agent), or licensed premium stock bought by a human and added to library-index.csv. Never AI, never a competitor, directory, planner, photographer-blog or search-result image. Location proven by the media kit, register row or EXIF, never by appearance.",
+    "status": "needed",
+    "file": "content/posts/paros-wedding-venues/images/paros-wedding-venues-east-south-coast-setting.webp",
+    "source": {
+     "type": "venue_press",
+     "origin": "not yet sourced",
+     "credit": "[[VERIFY licence]]"
+    },
+    "location": {
+     "venue": "one confirmed venue in East and south coast (Golden Beach, Drios)",
+     "town": "Drios",
+     "verified_by": "to be set from the media kit or register row"
+    },
+    "licence_note": "[[IMAGE NEEDED]] Must come from a venue featured in this area (never imply a venue not covered) or licensed stock of the real place; no AI."
+   },
+   {
+    "slot_id": "legal-still-life",
+    "placement": "How to get married in Paros section (opener, after the section's intro paragraph)",
+    "purpose": "Neutral visual break for the legal section; illustrative only, not a depiction of any real place, office, document or ceremony.",
+    "shot_brief": "Neutral still life: two wedding rings on linen beside a fountain pen and a small sprig of olive or a white bloom, soft natural window light, warm neutral palette. Nothing legible: no paper, documents, certificates, forms, passports, stamps, seals, flags, crests, emblems, logos or writing of any kind. No people, no hands, no real place. Landscape 3:2. Source order: licensed stock or Canva brand asset first; AI (Higgsfield) only if the person approves it, and then labelled as illustrative. Caption must read 'Illustrative image'.",
+    "status": "needed",
+    "file": "content/posts/paros-wedding-venues/images/paros-wedding-venues-legal-section-rings-still-life.webp",
+    "caption": "Illustrative image",
+    "location": {
+     "venue": "none (illustrative still life)",
+     "town": "none",
+     "verified_by": "not applicable: no real place depicted"
+    },
+    "licence_note": "[[IMAGE NEEDED]] AI generation needs the person's approval first (not requested in this fast run). If AI is used, source.type = ai_illustrative and caption stays 'Illustrative image'. Must not show any document, emblem or legible text, so nothing reads as official guidance."
+   },
+   {
+    "slot_id": "venue-01",
+    "placement": "venues section: Naoussa and the north, entry: confirmed venue in Naoussa and the north (name from 03-source-pack)",
+    "purpose": "Shows the venue itself so the reader can judge its Cycladic setting and ceremony space against the other entries.",
+    "shot_brief": "Official image of the confirmed venue in Naoussa and the north (name from 03-source-pack), Paros: the ceremony terrace, garden, chapel or courtyard the venue's own site describes, set for a ceremony or dinner. May to October, natural daylight or golden hour. No identifiable guests, children or couples unless the venue confirms consent. Landscape 3:2. Source: the venue's own media kit or press office with written permission (Gmail draft request, never sent by an agent), or licensed premium stock bought by a human and added to library-index.csv. Never AI, never a competitor, directory, planner, photographer-blog or search-result image. Location proven by the media kit, register row or EXIF, never by appearance.",
+    "status": "needed",
+    "file": "content/posts/paros-wedding-venues/images/paros-wedding-venues-venue-01-naoussa-north-ceremony-setting.webp",
+    "source": {
+     "type": "venue_press",
+     "origin": "not yet sourced",
+     "credit": "[[VERIFY licence]]"
+    },
+    "location": {
+     "venue": "confirmed venue in Naoussa and the north (name from 03-source-pack)",
+     "town": "Naoussa",
+     "verified_by": "pending: venue media kit"
+    },
+    "licence_note": "[[IMAGE NEEDED]] Venue not yet confirmed. Once stage 03 names it, rename slot_id, file and location, then create the permission draft. Prefer an area not already shown by the area slot."
+   },
+   {
+    "slot_id": "venue-02",
+    "placement": "venues section: Parikia and the west, or Inland villages, entry: confirmed venue in Parikia and the west, or Inland villages (name from 03-source-pack)",
+    "purpose": "Shows the venue itself so the reader can judge its Cycladic setting and ceremony space against the other entries.",
+    "shot_brief": "Official image of the confirmed venue in Parikia and the west, or Inland villages (name from 03-source-pack), Paros: the ceremony terrace, garden, chapel or courtyard the venue's own site describes, set for a ceremony or dinner. May to October, natural daylight or golden hour. No identifiable guests, children or couples unless the venue confirms consent. Landscape 3:2. Source: the venue's own media kit or press office with written permission (Gmail draft request, never sent by an agent), or licensed premium stock bought by a human and added to library-index.csv. Never AI, never a competitor, directory, planner, photographer-blog or search-result image. Location proven by the media kit, register row or EXIF, never by appearance.",
+    "status": "needed",
+    "file": "content/posts/paros-wedding-venues/images/paros-wedding-venues-venue-02-west-or-inland-ceremony-setting.webp",
+    "source": {
+     "type": "venue_press",
+     "origin": "not yet sourced",
+     "credit": "[[VERIFY licence]]"
+    },
+    "location": {
+     "venue": "confirmed venue in Parikia and the west, or Inland villages (name from 03-source-pack)",
+     "town": "Paros",
+     "verified_by": "pending: venue media kit"
+    },
+    "licence_note": "[[IMAGE NEEDED]] Venue not yet confirmed. Once stage 03 names it, rename slot_id, file and location, then create the permission draft. Prefer an area not already shown by the area slot."
+   },
+   {
+    "slot_id": "venue-03",
+    "placement": "venues section: East and south coast, entry: confirmed venue in East and south coast (name from 03-source-pack)",
+    "purpose": "Shows the venue itself so the reader can judge its Cycladic setting and ceremony space against the other entries.",
+    "shot_brief": "Official image of the confirmed venue in East and south coast (name from 03-source-pack), Paros: the ceremony terrace, garden, chapel or courtyard the venue's own site describes, set for a ceremony or dinner. May to October, natural daylight or golden hour. No identifiable guests, children or couples unless the venue confirms consent. Landscape 3:2. Source: the venue's own media kit or press office with written permission (Gmail draft request, never sent by an agent), or licensed premium stock bought by a human and added to library-index.csv. Never AI, never a competitor, directory, planner, photographer-blog or search-result image. Location proven by the media kit, register row or EXIF, never by appearance.",
+    "status": "needed",
+    "file": "content/posts/paros-wedding-venues/images/paros-wedding-venues-venue-03-east-south-ceremony-setting.webp",
+    "source": {
+     "type": "venue_press",
+     "origin": "not yet sourced",
+     "credit": "[[VERIFY licence]]"
+    },
+    "location": {
+     "venue": "confirmed venue in East and south coast (name from 03-source-pack)",
+     "town": "Paros",
+     "verified_by": "pending: venue media kit"
+    },
+    "licence_note": "[[IMAGE NEEDED]] Venue not yet confirmed. Once stage 03 names it, rename slot_id, file and location, then create the permission draft. Prefer an area not already shown by the area slot."
+   }
+  ],
+  "reference_only": [],
+  "permission_requests": [],
+  "drive_findings": [
+   "Not searched: fast mode, repo library register only per orchestrator instruction. library-index.csv has a header and no rows."
+  ],
+  "permission_email_bodies_note": "No venues confirmed yet, so no permission requests listed. Once 03-source-pack confirms venues, draft wording per venue = content-system/images/permission-email-template.md with {{venue_name}} = venue, {{post_title}} = 'Paros Wedding Venues and How to Get Married There'. No Gmail drafts created and nothing sent."
+ }
+}
