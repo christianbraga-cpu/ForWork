@@ -1,0 +1,117 @@
+{
+  "agent": "cro-specialist",
+  "task_id": "santorini-wedding",
+  "stage": "09",
+  "status": "complete",
+  "round": 1,
+  "inputs_used": [
+    "CLAUDE.md",
+    "content-system/brand/brand-facts.md",
+    "content-system/schemas/09-cro.schema.json",
+    "content-system/seo/link-map.csv",
+    "content/posts/santorini-wedding/01-brief.json",
+    "content/posts/santorini-wedding/07-panel.json",
+    "content/posts/santorini-wedding/08-final.md",
+    "content/posts/wedding-in-crete/09-cro.json (format model)"
+  ],
+  "self_qa": {
+    "checks": [
+      {
+        "check": "Primary CTA 6 words or fewer, no 'click here', no exclamation mark",
+        "pass": true,
+        "note": "'Speak with a Wedded Advisor' (5 words)."
+      },
+      {
+        "check": "copy_change old occurs exactly once in 08-final.md and new exactly once in the result",
+        "pass": true,
+        "note": "Checked by script."
+      },
+      {
+        "check": "UTMs primary, secondary, magnet, closing each appear exactly once after copy_changes; one <!-- CTA: primary --> marker",
+        "pass": true,
+        "note": "Checked by script."
+      },
+      {
+        "check": "Body keeps exactly one Advisor line plus the close; no new 'quotes in AUD'",
+        "pass": true,
+        "note": "Secondary sentence names Wedded Concierge only; Advisor and AUD counts unchanged."
+      },
+      {
+        "check": "Claims from brand-facts only; no prices, Privileges, 'last dance', legal, church, religious paperwork or transfer help, no business details",
+        "pass": true,
+        "note": "Secondary wording is brand-facts step 3 ('See real options... Venues, dates and costs that are actually free when you want them')."
+      },
+      {
+        "check": "All links exist in link-map (/wonderland-concierge, /magazine)",
+        "pass": true
+      },
+      {
+        "check": "Australian English, no em dashes",
+        "pass": true
+      }
+    ],
+    "confidence": 0.85
+  },
+  "open_questions": [
+    {
+      "to": "orchestrator",
+      "question": "Apply the one copy_change to 08-final.md. 08-final.md was not edited by this stage.",
+      "blocking": false
+    },
+    {
+      "to": "orchestrator",
+      "question": "Deferred business answers readers wanted before enquiring (fee model and commissions, deposits, a named Advisor or first call, real Santorini weddings to view) remain deferred per brand-facts. Re-run cro-specialist once confirmed.",
+      "blocking": false
+    }
+  ],
+  "assumptions": [
+    "The CMS renders a CTA block (text, subtext, link) at the <!-- CTA: primary --> marker; the inline sentence after the marker is the fallback if it does not."
+  ],
+  "verify_items": [],
+  "tools_used": [
+    "Bash (grep, sed, python3 -I)"
+  ],
+  "payload": {
+    "journey_stage": "planning",
+    "primary_cta": {
+      "text": "Speak with a Wedded Advisor",
+      "subtext": "The fee is agreed in writing before any work begins.",
+      "link": "/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=santorini-wedding&utm_content=primary",
+      "placement": "Existing <!-- CTA: primary --> marker after Step 3, filled by the existing sentence 'Once you have a setting in mind, talk to Wedded Concierge. Your Wedded Advisor is a single point of contact, start to finish.' Unchanged. This is where the 'which setting, which venue' question peaks, after the venue evidence."
+    },
+    "secondary_cta": {
+      "text": "See real options with Wedded Concierge",
+      "subtext": "Venues, dates and costs actually free when you want them.",
+      "link": "/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=santorini-wedding&utm_content=secondary",
+      "placement": "In 'What shapes the cost of a Santorini wedding', appended to the existing 'Venue fee versus package' paragraph after 'Compare inclusions line by line.' (copy change 1), where the reader is comparing venue fees and packages. Wording from brand-facts step 3; no Advisor claim, no AUD, no price."
+    },
+    "lead_magnet": {
+      "name": "Get Wedded digital magazine",
+      "link": "/magazine?utm_source=blog&utm_medium=content&utm_campaign=santorini-wedding&utm_content=magnet",
+      "placement": "Existing line at the end of Step 8 (Greek wedding traditions), before the Step 9 booking checklist, for readers still browsing. Already tagged; unchanged.",
+      "exists": true
+    },
+    "closing_cta": {
+      "text": "Plan your Santorini wedding with a Wedded Advisor",
+      "link": "/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=santorini-wedding&utm_content=closing",
+      "placement": "Existing final paragraph under '## Plan your Santorini wedding with a Wedded Advisor'. Unchanged; every claim in it is in brand-facts."
+    },
+    "tracking": [
+      "/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=santorini-wedding&utm_content=primary",
+      "/magazine?utm_source=blog&utm_medium=content&utm_campaign=santorini-wedding&utm_content=magnet",
+      "/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=santorini-wedding&utm_content=secondary",
+      "/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=santorini-wedding&utm_content=closing"
+    ],
+    "copy_changes": [
+      {
+        "old": "Compare inclusions line by line.",
+        "new": "Compare inclusions line by line. To see which venues, dates and costs are actually free when you want them, [see real options with Wedded Concierge](https://weddedwonderland.com/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=santorini-wedding&utm_content=secondary).",
+        "reason": "Adds the only missing tracked link (secondary) on an existing sentence in the cost section, where couples compare venue fees against packages. The lead-in is brand-facts step 3 wording and names Wedded Concierge, not the Advisor, so the body keeps one Advisor line plus the close. No prices, Privileges, legal, church, religious paperwork or transfer content."
+      }
+    ],
+    "rationale": "Brief journey_stage is 'planning', so the primary is the Wedded Concierge consultation (/wonderland-concierge, live in link-map) with the default 'Speak with a Wedded Advisor' block text and a brand-facts subtext answering the fee worry raised by the funding parent and sceptic. Primary, magnet and closing links were already in place with correct UTMs; only the secondary was missing, so one copy change adds it in the cost section, between the magnet (Step 8) and the close. Reading order: primary, magnet, secondary, closing. A Greece or Santorini magazine issue, or a printable version of the Step 9 checklist, would be a better-matched magnet; neither exists in link-map, so both are backlog suggestions only (not placed)."
+  },
+  "next_agent": [
+    "distribution"
+  ]
+}
