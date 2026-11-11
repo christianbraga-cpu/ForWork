@@ -1,0 +1,179 @@
+{
+  "agent": "editor",
+  "task_id": "mykonos-wedding",
+  "stage": "06",
+  "status": "complete",
+  "round": 3,
+  "inputs_used": [
+    "CLAUDE.md",
+    "content/posts/mykonos-wedding/00-input.json",
+    "content/posts/mykonos-wedding/08-final.md",
+    "content/posts/mykonos-wedding/05-draft-r2.md",
+    "content/posts/mykonos-wedding/03-source-pack.json",
+    "content/posts/mykonos-wedding/03-source-pack-part-1.json",
+    "content/posts/mykonos-wedding/03-source-pack-part-2.json",
+    "content/posts/mykonos-wedding/07-panel.json",
+    "content-system/brand/brand-facts.md",
+    "content-system/brand/voice-guide.md",
+    "content-system/brand/banned-phrases.md",
+    "content-system/schemas/06-edit.schema.json",
+    "content/posts/santorini-wedding/06-edit-final.json"
+  ],
+  "self_qa": {
+    "checks": [
+      {
+        "check": "scan_copy.py on 08-final.md",
+        "pass": true,
+        "note": "banned [], dashes 0, overlaps [], flagged 'luxury' x1, 'exclusive' x7 (exclusive-use questions, legitimate)."
+      },
+      {
+        "check": "Changed lines since 05-draft-r2.md fact-checked",
+        "pass": true,
+        "note": "Intro order, takeaway 3, Hora line, sunset coast line, Saint John 800 guests, primary CTA, Naxos table, swimming, Step 6 skip line, legalisation list, airport, ferries, legal FAQ and symbolic FAQ all traced to fact_07, 08, 09, 102, 107, 112, 113, 118, 119, 120, 201, 202."
+      },
+      {
+        "check": "Blocking list",
+        "pass": true,
+        "note": "No research talk, hedge stacking, 'best' or best month, prices or amounts, non-venue vendors, Wedded Privileges, 'last dance', meltemi, port claim beyond Smartraveller, same-sex position or 'Wonderland Concierge'. Advisor promise now appears only in the close (primary CTA sentence removed). Weather labelled Naxos throughout. Australian spelling."
+      },
+      {
+        "check": "Key takeaways",
+        "pass": true,
+        "note": "Exactly 4 one-sentence bullets; none reads as a long list."
+      },
+      {
+        "check": "Panel must-fix applied",
+        "pass": true,
+        "note": "Symbolic FAQ now states recognition in most cases per fact_102; should-fixes (intro order, CTA de-duplication, skip line) applied."
+      },
+      {
+        "check": "Edits apply cleanly",
+        "pass": true,
+        "note": "Each old occurs exactly once in 08-final.md and each new once after applying in order (scripted); primary, closing and magnet links untouched."
+      },
+      {
+        "check": "Decision consistent",
+        "pass": true,
+        "note": "Two small edits, no blocking issues -> pass_with_edits."
+      }
+    ],
+    "confidence": 0.85
+  },
+  "open_questions": [],
+  "assumptions": [
+    "Stage 8b blocking-issue check only; rubric carried forward, not rescored in depth.",
+    "Unchanged lines (including the closing Advisor paragraph) were cleared in earlier rounds."
+  ],
+  "verify_items": [],
+  "tools_used": [
+    "Bash (python3 -I, grep, diff)",
+    "content-system/scripts/scan_copy.py",
+    "content-system/scripts/validate.py"
+  ],
+  "next_agent": [
+    "luxury-writer"
+  ],
+  "payload": {
+    "draft_file": "content/posts/mykonos-wedding/08-final.md",
+    "rubric": {
+      "voice": 4,
+      "expertise": 5,
+      "accuracy": 4,
+      "seo_fit": 4,
+      "commercial_link": 4,
+      "structure": 5,
+      "brief_fit": 4
+    },
+    "average": 4.29,
+    "blocking_issues": [],
+    "decision": "pass_with_edits",
+    "edits": [
+      {
+        "location": "Key takeaways, bullet 3",
+        "issue": "Changed takeaway states Naxos climate facts without markers. Keep the sentence, add its source markers.",
+        "old": "so plan ceremony times around summer heat and the north wind.\n",
+        "new": "so plan ceremony times around summer heat and the north wind. <!-- fact_201 --> <!-- fact_202 --> <!-- fact_203 -->\n",
+        "fix": "Replace exactly:\nso plan ceremony times around summer heat and the north wind.\nwith:\nso plan ceremony times around summer heat and the north wind. <!-- fact_201 --> <!-- fact_202 --> <!-- fact_203 -->"
+      },
+      {
+        "location": "Weather table header, Naxos",
+        "issue": "Column relabelled 'Max °C' but the figures are HNMS mean maximums (fact_201); 'Max' reads as a record high. Restore the accurate label.",
+        "old": "| Month (Naxos) | Max °C | Rain (mm) | Rain days |",
+        "new": "| Month (Naxos) | Mean max °C | Rain (mm) | Rain days |",
+        "fix": "Replace exactly:\n| Month (Naxos) | Max °C | Rain (mm) | Rain days |\nwith:\n| Month (Naxos) | Mean max °C | Rain (mm) | Rain days |"
+      }
+    ],
+    "fact_check_log": [
+      {
+        "claim": "Takeaway 3: June to August driest at Naxos, nearest official station; May and September milder; north wind",
+        "fact_id": "fact_201, fact_202, fact_203",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Hora and Little Venice; venue near town keeps evenings simple (guidance)",
+        "fact_id": "fact_119",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Saint John in Agios Ioannis, a sunset spot",
+        "fact_id": "fact_07",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Saint John several ceremony and reception spaces with sea views; weddings up to 800 guests",
+        "fact_id": "fact_08, fact_09",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Naxos table mean maximum, rain mm, rain days April to October (mean column removed; header fixed by edit)",
+        "fact_id": "fact_201, fact_202",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Swimming hazards; point guests to patrolled beaches",
+        "fact_id": "fact_112",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Step 6 skip line for couples marrying legally in Australia (navigation only)",
+        "fact_id": "fact_102",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Legalisation request steps as a list: form, authorised witness, lodgement options, fee applies",
+        "fact_id": "fact_107",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Mykonos Airport: Private Flights Lounge, accessible travel info, taxis, direct public bus; flight times from Athens and Thessaloniki",
+        "fact_id": "fact_118, fact_120",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Ferries: some services lack disability access; wind delays (luggage line removed)",
+        "fact_id": "fact_113",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Legal FAQ: two routes; overseas marriage recognised in most cases if valid where held and under Australian law",
+        "fact_id": "fact_102",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Symbolic FAQ: Greek marriage in most cases recognised, cannot be registered in Australia",
+        "fact_id": "fact_102",
+        "status": "confirmed"
+      }
+    ],
+    "compliance": {
+      "pass": true,
+      "issues": []
+    },
+    "originality": {
+      "pass": true,
+      "matches": []
+    },
+    "banned_phrases_found": [],
+    "needs_signoff": []
+  }
+}
