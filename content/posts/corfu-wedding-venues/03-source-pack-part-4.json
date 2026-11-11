@@ -1,0 +1,145 @@
+{
+ "agent": "planner-sme",
+ "task_id": "corfu-wedding-venues",
+ "stage": "03",
+ "status": "complete",
+ "round": 1,
+ "inputs_used": [
+  "CLAUDE.md",
+  "content/posts/corfu-wedding-venues/00-input.json",
+  "content/posts/crete-wedding-venues/03-source-pack-part-4.json (format)"
+ ],
+ "self_qa": {
+  "checks": [
+   {
+    "check": "Every fact has a source and date",
+    "pass": true
+   },
+   {
+    "check": "No price without a source; all prices in needs_signoff",
+    "pass": true,
+    "note": "No prices recorded."
+   },
+   {
+    "check": "Every must-include covered or marked [[VERIFY]]",
+    "pass": true,
+    "note": "Batch E covers west-coast and south venue candidates only; none qualified, marked VERIFY."
+   },
+   {
+    "check": "No invented quotes, statistics or real weddings",
+    "pass": true
+   }
+  ],
+  "confidence": 0.7
+ },
+ "open_questions": [
+  {
+   "to": "orchestrator",
+   "question": "Batch E qualifies 0 venues. Failed: Domes of Corfu (no Corfu weddings page, only group-level Domes 'Romance' page), Pelekas Monastery (single fetch timed out), Mayor Capo di Corfu (official pages 404, no weddings page found), Ikos Odisia (Ikos weddings page is Ikos Aria on Kos only), Grecotel Daphnila Bay (weddings mentioned only for Danilia Village, and it is Kommeno not west/south), Danilia Village (Grecotel lists it for weddings but states no sea view), Pelecas Country Club (official site not reached). visitgreece.gr east vs west coast not read (time). Suggest the article drops a west/south section or reframes areas around qualifying venues.",
+   "blocking": false
+  }
+ ],
+ "assumptions": [],
+ "verify_items": [
+  "[[VERIFY: Batch E qualifies 0 west-coast or south Corfu venues. Domes of Corfu, Pelekas Monastery, Mayor Capo di Corfu, Ikos Odisia, Pelecas Country Club, Grecotel Daphnila Bay and Danilia Village all failed or could not be checked against the inclusion rule (fact_400 to fact_406); the west coast and south still have no qualifying venue]]"
+ ],
+ "tools_used": [
+  "mcp__Apify__apify--web-fetch",
+  "mcp__Apify__apify--web-search",
+  "Bash"
+ ],
+ "next_agent": [
+  "luxury-writer"
+ ],
+ "payload": {
+  "facts": [
+   {
+    "fact_id": "fact_400",
+    "claim": "Ikos Resorts' only weddings page (ikosresorts.com/events-weddings/) offers weddings at Ikos Aria on Kos only; it does not offer weddings at Ikos Odisia (Corfu). The same page describes Ikos Odisia as set within 60 acres just across from Ikos Dassia, with restaurants, suites and sands that 'make the most of the glittering sea vistas'. Ikos Odisia does not meet the inclusion rule (no official Corfu weddings offer).",
+    "source": "https://ikosresorts.com/events-weddings/",
+    "source_type": "official_venue",
+    "checked": "2026-11-11",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_401",
+    "claim": "Domes of Corfu (Glyfada): a search for a weddings page returned only a group-level Domes Resorts 'Romance' page (domesresorts.com) and third-party travel and review sites; no Domes of Corfu weddings page was found. Not qualified.",
+    "source": "https://domesresorts.com/domesstories/category/experiences/romance-en/",
+    "source_type": "official_venue",
+    "checked": "2026-11-11",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_402",
+    "claim": "Pelekas Monastery: the single permitted fetch of pelekasmonastery.com timed out; no official weddings or sea-view wording read. Not qualified in this batch.",
+    "source": "https://www.pelekasmonastery.com/",
+    "source_type": "official_venue",
+    "checked": "2026-11-11",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_403",
+    "claim": "Mayor Capo di Corfu: mayorhotels.com/capo-di-corfu/weddings and mayorhotels.com/capo-di-corfu both returned HTTP 404 (empty page) on 11 November 2026, and a web search found no official weddings page for the hotel (only social media and planner results). Not qualified.",
+    "source": "https://www.mayorhotels.com/capo-di-corfu",
+    "source_type": "official_venue",
+    "checked": "2026-11-11",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_404",
+    "claim": "Grecotel Daphnila Bay (Kommeno area, about 12 km from Corfu Town and 14 km from Corfu airport per its own FAQ): its FAQ page mentions weddings only under the Danilia Village section ('We can arrange private functions, including weddings, baptisms, or other events'), not for the Daphnila Bay hotel itself; no Daphnila Bay weddings page was found. Daphnila Bay is also not west coast or south. Not qualified.",
+    "source": "https://www.grecotel.com/luxme-daphnilabay/frequently-asked-questions/",
+    "source_type": "official_venue",
+    "checked": "2026-11-11",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_405",
+    "claim": "Grecotel's group weddings page lists Danilia (a private traditional village in Corfu) as a wedding destination, described as 'Nestled in the verdant nature, with preserved architecture'; no sea view is stated in words. Danilia fails the sea-view half of the inclusion rule.",
+    "source": "https://www.grecotel.com/wedding-hotels/",
+    "source_type": "official_venue",
+    "checked": "2026-11-11",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_406",
+    "claim": "Pelecas Country Club (Pelekas, inland west-central Corfu): a search for its weddings offer returned only booking, travel, social media and wedding-blog results; the official site was not reached in the time limit, so no official weddings or sea-view wording was read. Not qualified.",
+    "source": "web search 2026-11-11: 'Pelecas Country Club Corfu weddings' (no official result)",
+    "source_type": "other",
+    "checked": "2026-11-11",
+    "is_price": false
+   }
+  ],
+  "insider_details": [
+   {
+    "detail": "Several Corfu resort brands run weddings at only some of their properties: Ikos offers weddings at Ikos Aria on Kos but not at its two Corfu resorts, and Grecotel's Corfu wedding offer sits with Corfu Imperial and Danilia rather than Daphnila Bay. Check that the specific hotel, not just the brand, hosts weddings before shortlisting.",
+    "fact_ids": [
+     "fact_400",
+     "fact_404",
+     "fact_405"
+    ]
+   }
+  ],
+  "quotes": [],
+  "real_weddings": [],
+  "verify_items": [
+   "[[VERIFY: Batch E qualifies 0 west-coast or south Corfu venues. Domes of Corfu, Pelekas Monastery, Mayor Capo di Corfu, Ikos Odisia, Pelecas Country Club, Grecotel Daphnila Bay and Danilia Village all failed or could not be checked against the inclusion rule (fact_400 to fact_406); the west coast and south still have no qualifying venue]]"
+  ],
+  "needs_signoff": [],
+  "must_include_coverage": [
+   {
+    "item": "West coast and south Corfu venue profiles (setting, sea view in own words, ceremony options, capacity, rooms, exclusive use, standout)",
+    "covered_by": [
+     "fact_400",
+     "fact_401",
+     "fact_402",
+     "fact_403",
+     "fact_404",
+     "fact_405",
+     "fact_406",
+     "[[VERIFY: Batch E qualifies 0 west-coast or south Corfu venues. Domes of Corfu, Pelekas Monastery, Mayor Capo di Corfu, Ikos Odisia, Pelecas Country Club, Grecotel Daphnila Bay and Danilia Village all failed or could not be checked against the inclusion rule (fact_400 to fact_406); the west coast and south still have no qualifying venue]]"
+    ]
+   }
+  ]
+ }
+}

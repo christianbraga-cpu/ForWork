@@ -6,3 +6,4 @@
 02:20 03 batch C done: 11 facts; 0 venues qualify (Akrotiri no weddings, Mayor La Grotta Verde not on Mayor site, Pelekas Monastery and Golden Fox no official site); weather, airport, legal facts saved. Top-up E launched.
 02:20 03 batch A done: 17 facts; 4 qualify (Corfu Imperial, Villa Medusa, Corfu Palace provisional, Corfu Holiday Palace); Ikos Dassia, Cavalieri, Kontokali Bay fail. Total 6; top-ups D and E running.
 02:31 03 top-up D done: Atlantica Grand Mediterraneo and Courti Estate qualify; Eva Palace provisional (snippets); Ekaterini no sea view; Villa Sylva beachfront only (held out). Firm total 8 + provisional.
+02:54 03 top-up E done: 0 qualify. Eva Palace confirmed by live read (part-5, fact_500-503). Confirmed 8 + Corfu Palace provisional. Final top-up F launched.

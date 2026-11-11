@@ -1,0 +1,108 @@
+{
+  "agent": "planner-sme",
+  "task_id": "corfu-wedding-venues",
+  "stage": "03",
+  "status": "complete",
+  "round": 1,
+  "inputs_used": [
+    "CLAUDE.md",
+    "content/posts/corfu-wedding-venues/00-input.json",
+    "content/posts/crete-wedding-venues/03-source-pack-part-4.json (format)"
+  ],
+  "self_qa": {
+    "checks": [
+      {
+        "check": "Every fact has a source and date",
+        "pass": true
+      },
+      {
+        "check": "No price without a source; all prices in needs_signoff",
+        "pass": true,
+        "note": "No prices recorded."
+      },
+      {
+        "check": "Every must-include covered or marked [[VERIFY]]",
+        "pass": true,
+        "note": "Batch E covers west-coast and south venue candidates only; none qualified, marked VERIFY."
+      },
+      {
+        "check": "No invented quotes, statistics or real weddings",
+        "pass": true
+      }
+    ],
+    "confidence": 0.7
+  },
+  "open_questions": [
+    {
+      "to": "orchestrator",
+      "question": "Batch E qualifies 0 venues. Failed: Domes of Corfu (no Corfu weddings page, only group-level Domes 'Romance' page), Pelekas Monastery (single fetch timed out), Mayor Capo di Corfu (official pages 404, no weddings page found), Ikos Odisia (Ikos weddings page is Ikos Aria on Kos only), Grecotel Daphnila Bay (weddings mentioned only for Danilia Village, and it is Kommeno not west/south), Danilia Village (Grecotel lists it for weddings but states no sea view), Pelecas Country Club (official site not reached). visitgreece.gr east vs west coast not read (time). Suggest the article drops a west/south section or reframes areas around qualifying venues.",
+      "blocking": false
+    }
+  ],
+  "assumptions": [],
+  "verify_items": [],
+  "tools_used": [
+    "mcp__Apify__apify--web-fetch",
+    "mcp__Apify__apify--web-search",
+    "Bash"
+  ],
+  "next_agent": [
+    "luxury-writer"
+  ],
+  "payload": {
+    "facts": [
+      {
+        "fact_id": "fact_500",
+        "claim": "Grecotel Eva Palace's own resort page, under 'Celebrations', says: 'Set against the stunning Kommeno Bay, Eva Palace provides the perfect backdrop for your wedding, honeymoon, and love story to unfold. Whether you envision an intimate beach ceremony or a grand celebration, we bring your dream day to life.'",
+        "source": "https://www.grecotel.com/eva-palace/corfu-resort/",
+        "source_type": "official_venue",
+        "checked": "2026-11-11",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_501",
+        "claim": "SEA VIEW (venue's own words), Grecotel Eva Palace: 'private balconies and terraces showcasing breathtaking views of the Ionian sea'; the resort 'sits on a private peninsula along Corfu's emerald coast, surrounded by the Ionian Sea'.",
+        "source": "https://www.grecotel.com/eva-palace/corfu-resort/",
+        "source_type": "official_venue",
+        "checked": "2026-11-11",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_502",
+        "claim": "Grecotel Eva Palace has 225 rooms, bungalows and villas with sea or garden views, a secluded bay with a sandy and pebble beach, and a 1,700 m2 seawater pool; the Palazzina villa has a private pool and views of the Ionian Sea.",
+        "source": "https://www.grecotel.com/eva-palace/corfu-resort/",
+        "source_type": "official_venue",
+        "checked": "2026-11-11",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_503",
+        "claim": "Grecotel's own Wedding Hotels page lists Corfu Imperial and Villa Medusa (both 'at Kommeno Peninsula, Corfu') and Danilia among its wedding destinations; Villa Medusa is described as a private traditional Corfiot mansion with 6 bedrooms, 2 private swimming pools and a path to the beach, 'a picture-perfect spot for intimate sumptuous celebrations'.",
+        "source": "https://www.grecotel.com/wedding-hotels/",
+        "source_type": "official_venue",
+        "checked": "2026-11-11",
+        "is_price": false
+      }
+    ],
+    "insider_details": [],
+    "quotes": [],
+    "real_weddings": [],
+    "verify_items": [],
+    "needs_signoff": [],
+    "must_include_coverage": [
+      {
+        "item": "West coast and south Corfu venue profiles (setting, sea view in own words, ceremony options, capacity, rooms, exclusive use, standout)",
+        "covered_by": [
+          "fact_400",
+          "fact_401",
+          "fact_402",
+          "fact_403",
+          "fact_404",
+          "fact_405",
+          "fact_406",
+          "[[VERIFY: Batch E qualifies 0 west-coast or south Corfu venues. Domes of Corfu, Pelekas Monastery, Mayor Capo di Corfu, Ikos Odisia, Pelecas Country Club, Grecotel Daphnila Bay and Danilia Village all failed or could not be checked against the inclusion rule (fact_400 to fact_406); the west coast and south still have no qualifying venue]]"
+        ]
+      }
+    ]
+  }
+}
