@@ -6,3 +6,4 @@
 00:31 03 batch A done: 28 facts; full package detail from Elounda Collection, Elounda Beach, Abaton, Euphoria, Grace; partial Nana Princess, Canaves. Elounda Beach lyre/fireworks now listed as additional services (affects Crete and Greece drafts; note in report). Packs merged.
 00:35 05 draft done: ~3,830 words, scan clean, no amounts.
 00:37 07 readers: search_visitor, planner_couple done (no must-fix).
+00:37 07 readers: sceptic, funding_parent, uhnw in (no must-fix); 5/5; waiting on editor.
