@@ -1,0 +1,468 @@
+{
+  "agent": "cms-publisher",
+  "task_id": "mykonos-wedding-venues",
+  "stage": "11",
+  "status": "complete",
+  "round": 1,
+  "inputs_used": [
+    "CLAUDE.md",
+    "content-system/cms/field-map.md",
+    "content-system/schemas/11-publish-package.schema.json",
+    "content/posts/mykonos-wedding-venues/00-input.json",
+    "content/posts/mykonos-wedding-venues/01-brief.json",
+    "content/posts/mykonos-wedding-venues/02-seo.json",
+    "content/posts/mykonos-wedding-venues/03-source-pack.json",
+    "content/posts/mykonos-wedding-venues/04-images.json",
+    "content/posts/mykonos-wedding-venues/08-final.md",
+    "content/posts/mykonos-wedding-venues/09-cro.json",
+    "content/posts/mykonos-wedding-venues/10-distribution.json",
+    "content/posts/corfu-wedding-venues/11-publish-package.json (format model)",
+    "content/posts/corfu-wedding-venues/11-body.md (format model)",
+    "content/posts/corfu-wedding-venues/booking-checklist.md (format model)",
+    "content/posts/corfu-wedding-venues/12-cms-report.md (format model)"
+  ],
+  "self_qa": {
+    "checks": [
+      {
+        "check": "08-final.md already carries the 09-cro.json copy change (primary marker filled after the table) and the 8b edits; secondary, closing and magnet links already present",
+        "pass": true
+      },
+      {
+        "check": "Front matter and all <!-- fact_xx --> markers removed; H1 is the title; 11 image-slot comments kept; no [[VERIFY]] markers in the copy",
+        "pass": true
+      },
+      {
+        "check": "Primary CTA block at the marker; inline fallback retagged utm_content=inline; secondary, closing and magnet marked; each utm_content appears exactly once",
+        "pass": true
+      },
+      {
+        "check": "Exactly 4 key takeaways copied verbatim; 6 FAQ pairs extracted; FAQPage carries all; ItemList carries all 10 venues with official URLs",
+        "pass": true
+      },
+      {
+        "check": "primary_category equals categories[0] (Destination Weddings); title, slug, URL, type and cluster as fixed",
+        "pass": true
+      },
+      {
+        "check": "Meta title from 02-seo.json; meta description kept because its areas (Ornos, Psarou, Elia, Agios Sostis) all have a qualifying venue",
+        "pass": true
+      },
+      {
+        "check": "No prices printed, needs_signoff empty; no em dashes",
+        "pass": true
+      },
+      {
+        "check": "Image alt and caption filled",
+        "pass": false,
+        "note": "None supplied in 04-images.json; left empty, not invented. All 11 body slots needed."
+      },
+      {
+        "check": "Status draft; nothing uploaded, published or scheduled",
+        "pass": true
+      }
+    ],
+    "confidence": 0.9
+  },
+  "open_questions": [
+    {
+      "to": "orchestrator",
+      "question": "CMS upload not attempted: no browser in this session and content-system/cms/field-map.md is not CONFIRMED. Run /wedded-cms-discovery locally, then /wedded-blog resume=mykonos-wedding-venues.",
+      "blocking": true
+    },
+    {
+      "to": "orchestrator",
+      "question": "No author named in any input; package uses \"Wedded Wonderland\" (organisation). Confirm the byline.",
+      "blocking": false
+    },
+    {
+      "to": "orchestrator",
+      "question": "04-images.json still uses generic file names and placeholder descriptions for two slots: venue-04 (mykonos-wedding-venues-south-coast-venue-ceremony-setting.webp) is Mykonos Blu in the body, and venue-05 (mykonos-wedding-venues-villa-venue-ceremony-setting.webp) and area-villas-events (mykonos-wedding-venues-villas-events-setting.webp) are ZeNIT Events Center, not a villa. The package uses the 04-images.json file names as they stand. Normalise 04-images.json.",
+      "blocking": false
+    }
+  ],
+  "assumptions": [
+    "Title is \"10 Mykonos Wedding Venues for a Cycladic Celebration\", matching 00-input.json and the 08-final.md front matter.",
+    "Excerpt is the first sentence of the opening paragraph.",
+    "Meta title and meta description kept from 02-seo.json; the description names Ornos, Psarou, Elia and Agios Sostis, all of which have a venue in the body.",
+    "Tags taken from the brief unchanged (each area tag has a venue).",
+    "Breadcrumb level 2 URL is https://weddedwonderland.com/destination-weddings, from the fixed URL path.",
+    "Royal Myconian and Myconian Imperial share one entry and one ItemList item (the Myconian Collection weddings page), as in the body.",
+    "Inline primary sentence retagged utm_content=inline so the CTA block alone carries utm_content=primary (as the Corfu model).",
+    "verify_items limited to image credits and licences, as instructed; the jump-list anchor check sits in the draft note instead.",
+    "closing_cta is an extra, schema-permitted field recording the closing link from 09-cro.json tracking."
+  ],
+  "verify_items": [
+    "Image credit and licence for slot featured (mykonos-wedding-venues-santa-marina-whitewashed-chapel-hero.webp): not yet sourced; record the credit and licence (venue press kit with written permission, or licensed stock in library-index.csv) before publishing",
+    "Image credit and licence for slot area-ornos-town (mykonos-wedding-venues-ornos-town-setting.webp): not yet sourced; record the credit and licence (venue press kit with written permission, or licensed stock in library-index.csv) before publishing",
+    "Image credit and licence for slot venue-01 (mykonos-wedding-venues-santa-marina-ceremony-setting.webp): not yet sourced; record the credit and licence (venue press kit with written permission, or licensed stock in library-index.csv) before publishing",
+    "Image credit and licence for slot area-south-coast (mykonos-wedding-venues-south-coast-setting.webp): not yet sourced; record the credit and licence (venue press kit with written permission, or licensed stock in library-index.csv) before publishing",
+    "Image credit and licence for slot venue-04 (mykonos-wedding-venues-south-coast-venue-ceremony-setting.webp): not yet sourced; record the credit and licence (venue press kit with written permission, or licensed stock in library-index.csv) before publishing",
+    "Image credit and licence for slot area-elia-kalo-livadi (mykonos-wedding-venues-elia-kalo-livadi-setting.webp): not yet sourced; record the credit and licence (venue press kit with written permission, or licensed stock in library-index.csv) before publishing",
+    "Image credit and licence for slot venue-02 (mykonos-wedding-venues-myconian-collection-ceremony-setting.webp): not yet sourced; record the credit and licence (venue press kit with written permission, or licensed stock in library-index.csv) before publishing",
+    "Image credit and licence for slot area-north (mykonos-wedding-venues-north-setting.webp): not yet sourced; record the credit and licence (venue press kit with written permission, or licensed stock in library-index.csv) before publishing",
+    "Image credit and licence for slot venue-03 (mykonos-wedding-venues-mykonos-lolita-ceremony-setting.webp): not yet sourced; record the credit and licence (venue press kit with written permission, or licensed stock in library-index.csv) before publishing",
+    "Image credit and licence for slot area-villas-events (mykonos-wedding-venues-villas-events-setting.webp): not yet sourced; record the credit and licence (venue press kit with written permission, or licensed stock in library-index.csv) before publishing",
+    "Image credit and licence for slot venue-05 (mykonos-wedding-venues-villa-venue-ceremony-setting.webp): not yet sourced; record the credit and licence (venue press kit with written permission, or licensed stock in library-index.csv) before publishing"
+  ],
+  "tools_used": [
+    "Bash (python3 -I)"
+  ],
+  "next_agent": [
+    "orchestrator"
+  ],
+  "payload": {
+    "title": "10 Mykonos Wedding Venues for a Cycladic Celebration",
+    "slug": "mykonos-wedding-venues",
+    "url_path": "/destination-weddings/mykonos-wedding-venues",
+    "content_type": "Guide",
+    "cluster": "Getting Married in Greece",
+    "categories": [
+      "Destination Weddings",
+      "Greece",
+      "Venues"
+    ],
+    "primary_category": "Destination Weddings",
+    "tags": [
+      "Getting Married in Greece",
+      "Mykonos",
+      "Mykonos wedding venues",
+      "Cyclades",
+      "Ornos",
+      "Agios Ioannis",
+      "Elia"
+    ],
+    "excerpt": "Mykonos wedding venues fall into five parts of the island: the west-coast bays of Agios Ioannis and Ornos, near Mykonos Town; the south-coast beaches at Psarou and Platis Gialos; Elia further east; the north coast at Agios Sostis; and a hilltop above Paradise beach.",
+    "key_takeaways": [
+      "Start on the west coast if guests want to be near Mykonos Town, look south for beach receptions, and look north for privacy and a chapel.",
+      "Guest count narrows the list quickly, because published capacity ranges from a chapel for 25 guests at Mykonos Grand to weddings of up to 800 at Saint John.",
+      "Several venues have a chapel of their own, but the rules differ, from religious, civil and symbolic weddings at Grecotel Mykonos Lolita to religious weddings at Mykonos Grand only when both partners are Christian Orthodox.",
+      "Greek summers bring frequent heatwaves and a wildfire season from June to September, so plan shade, a later ceremony and a covered fallback for a summer date."
+    ],
+    "body_markdown_file": "content/posts/mykonos-wedding-venues/11-body.md",
+    "faq": [
+      {
+        "q": "Which part of Mykonos suits a wedding?",
+        "a": "It depends on your guest list and the setting you want. The west coast at Agios Ioannis and Ornos keeps guests close to Mykonos Town, with Katikies Mykonos about 4 km away. The south coast at Psarou and Platis Gialos puts the beach at the centre, Elia has the largest published ballroom, and Agios Sostis on the north coast is the secluded choice."
+      },
+      {
+        "q": "Are there wedding chapels at Mykonos venues?",
+        "a": "Yes. Santa Marina, Mykonos Grand, Saint John, the Myconian Ambassador, the Myconian Collection's Elia hotels and Grecotel Mykonos Lolita all describe a chapel. Mykonos Grand's holds 25 guests inside, and a religious wedding there requires both partners to be Christian Orthodox."
+      },
+      {
+        "q": "Can we book a Mykonos venue for exclusive use?",
+        "a": "Ask directly, because few venues publish it. Katikies Hotels lists a hotel take-over among its event enquiry types. For the others, exclusive use is not published, so confirm with each venue whether the wedding spaces or the whole property can be reserved for you."
+      },
+      {
+        "q": "Can we have a beach wedding in Mykonos?",
+        "a": "Several venues hold the ceremony or reception right by the sand. Mykonos Blu's Ocean Balcony sits just above Psarou beach, and the Myconian Collection and Myconian Ambassador both offer receptions on the beach. Ask each venue whether a ceremony on the sand itself is possible on your date."
+      },
+      {
+        "q": "How do guests get to Mykonos?",
+        "a": "They fly into Mykonos Airport (JMK), about 45 minutes from Athens and 1 hour 10 minutes from Thessaloniki. From the airport, a bus runs to Mykonos Town and a taxi stand sits outside Arrivals."
+      },
+      {
+        "q": "Can Australians legally get married in Mykonos?",
+        "a": "Plan the legal steps first. As at November 2026, Smartraveller says you may need a Certificate of No Impediment, and a marriage valid in Greece that would also be valid under Australian law is in most cases recognised in Australia."
+      }
+    ],
+    "images": [
+      {
+        "slot_id": "featured",
+        "file": "content/posts/mykonos-wedding-venues/images/mykonos-wedding-venues-santa-marina-whitewashed-chapel-hero.webp",
+        "role": "featured",
+        "status": "needed"
+      },
+      {
+        "slot_id": "area-ornos-town",
+        "file": "content/posts/mykonos-wedding-venues/images/mykonos-wedding-venues-ornos-town-setting.webp",
+        "role": "inline",
+        "status": "needed"
+      },
+      {
+        "slot_id": "venue-01",
+        "file": "content/posts/mykonos-wedding-venues/images/mykonos-wedding-venues-santa-marina-ceremony-setting.webp",
+        "role": "inline",
+        "status": "needed"
+      },
+      {
+        "slot_id": "area-south-coast",
+        "file": "content/posts/mykonos-wedding-venues/images/mykonos-wedding-venues-south-coast-setting.webp",
+        "role": "inline",
+        "status": "needed"
+      },
+      {
+        "slot_id": "venue-04",
+        "file": "content/posts/mykonos-wedding-venues/images/mykonos-wedding-venues-south-coast-venue-ceremony-setting.webp",
+        "role": "inline",
+        "status": "needed"
+      },
+      {
+        "slot_id": "area-elia-kalo-livadi",
+        "file": "content/posts/mykonos-wedding-venues/images/mykonos-wedding-venues-elia-kalo-livadi-setting.webp",
+        "role": "inline",
+        "status": "needed"
+      },
+      {
+        "slot_id": "venue-02",
+        "file": "content/posts/mykonos-wedding-venues/images/mykonos-wedding-venues-myconian-collection-ceremony-setting.webp",
+        "role": "inline",
+        "status": "needed"
+      },
+      {
+        "slot_id": "area-north",
+        "file": "content/posts/mykonos-wedding-venues/images/mykonos-wedding-venues-north-setting.webp",
+        "role": "inline",
+        "status": "needed"
+      },
+      {
+        "slot_id": "venue-03",
+        "file": "content/posts/mykonos-wedding-venues/images/mykonos-wedding-venues-mykonos-lolita-ceremony-setting.webp",
+        "role": "inline",
+        "status": "needed"
+      },
+      {
+        "slot_id": "area-villas-events",
+        "file": "content/posts/mykonos-wedding-venues/images/mykonos-wedding-venues-villas-events-setting.webp",
+        "role": "inline",
+        "status": "needed"
+      },
+      {
+        "slot_id": "venue-05",
+        "file": "content/posts/mykonos-wedding-venues/images/mykonos-wedding-venues-villa-venue-ceremony-setting.webp",
+        "role": "inline",
+        "status": "needed"
+      }
+    ],
+    "cta": {
+      "text": "Speak with a Wedded Advisor",
+      "subtext": "The fee is agreed in writing before any work begins.",
+      "link": "/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=mykonos-wedding-venues&utm_content=primary",
+      "placement": "At the former <!-- CTA: primary --> marker, directly after the 'Mykonos wedding venues at a glance' table and its closing line (marked <!-- CTA BLOCK: primary --> in 11-body.md); the inline sentence after the block is the fallback and is tagged utm_content=inline."
+    },
+    "secondary_cta": {
+      "text": "Talk to a Wedded Advisor",
+      "link": "/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=mykonos-wedding-venues&utm_content=secondary",
+      "placement": "Inline link on the sentence closing 'Capacity, rooms and exclusive use' ('Anything this guide marks \"Not published\", from curfew to minimum nights, needs an answer in writing before you commit, so talk to a Wedded Advisor about your shortlist.') (marked <!-- CTA INLINE: secondary --> in 11-body.md). No separate block, per 09-cro.json."
+    },
+    "closing_cta": {
+      "text": "shortlist your Mykonos venues with a Wedded Advisor",
+      "link": "/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=mykonos-wedding-venues&utm_content=closing",
+      "placement": "Inline link at the end of 'Shortlist your Mykonos venues with a Wedded Advisor' (marked <!-- CTA INLINE: closing --> in 11-body.md)."
+    },
+    "lead_magnet": {
+      "name": "Wedded Wonderland digital magazine",
+      "link": "/magazine?utm_source=blog&utm_medium=content&utm_campaign=mykonos-wedding-venues&utm_content=magnet",
+      "placement": "Existing soft line at the very end of the post, the 'Wedded Wonderland magazine' link (marked <!-- LEAD MAGNET --> in 11-body.md)."
+    },
+    "tracking_links": [
+      "/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=mykonos-wedding-venues&utm_content=primary",
+      "/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=mykonos-wedding-venues&utm_content=secondary",
+      "/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=mykonos-wedding-venues&utm_content=closing",
+      "/magazine?utm_source=blog&utm_medium=content&utm_campaign=mykonos-wedding-venues&utm_content=magnet",
+      "/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=mykonos-wedding-venues&utm_content=inline"
+    ],
+    "seo": {
+      "meta_title": "Mykonos Wedding Venues: 10 for a Cycladic Celebration",
+      "meta_description": "Mykonos wedding venues by area, from Ornos and Psarou to Elia and Agios Sostis, compared on ceremony setting, capacity, rooms and exclusive use.",
+      "focus_keyword": "mykonos wedding venues",
+      "canonical": "https://weddedwonderland.com/destination-weddings/mykonos-wedding-venues",
+      "og_image_slot": "featured"
+    },
+    "schema_jsonld": {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Article",
+          "@id": "https://weddedwonderland.com/destination-weddings/mykonos-wedding-venues#article",
+          "headline": "10 Mykonos Wedding Venues for a Cycladic Celebration",
+          "description": "Mykonos wedding venues by area, from Ornos and Psarou to Elia and Agios Sostis, compared on ceremony setting, capacity, rooms and exclusive use.",
+          "author": {
+            "@type": "Organization",
+            "name": "Wedded Wonderland",
+            "url": "https://weddedwonderland.com/"
+          },
+          "publisher": {
+            "@type": "Organization",
+            "name": "Wedded Wonderland",
+            "url": "https://weddedwonderland.com/"
+          },
+          "datePublished": "",
+          "mainEntityOfPage": "https://weddedwonderland.com/destination-weddings/mykonos-wedding-venues",
+          "inLanguage": "en-AU"
+        },
+        {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Home",
+              "item": "https://weddedwonderland.com/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Destination Weddings",
+              "item": "https://weddedwonderland.com/destination-weddings"
+            },
+            {
+              "@type": "ListItem",
+              "position": 3,
+              "name": "10 Mykonos Wedding Venues for a Cycladic Celebration",
+              "item": "https://weddedwonderland.com/destination-weddings/mykonos-wedding-venues"
+            }
+          ]
+        },
+        {
+          "@type": "ItemList",
+          "@id": "https://weddedwonderland.com/destination-weddings/mykonos-wedding-venues#venues",
+          "name": "10 Mykonos Wedding Venues for a Cycladic Celebration",
+          "numberOfItems": 10,
+          "itemListOrder": "https://schema.org/ItemListUnordered",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Santa Marina, Ornos",
+              "url": "https://www.santa-marina.gr/weddings-celebrations/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Katikies Mykonos, Agios Ioannis",
+              "url": "https://www.katikies.com/events/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 3,
+              "name": "Mykonos Grand Hotel & Resort, Agios Ioannis",
+              "url": "https://www.mykonosgrand.gr/romance/weddings/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 4,
+              "name": "Saint John Hotel Villas & Spa, Agios Ioannis",
+              "url": "https://www.saintjohn.gr/mykonos_weddings/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 5,
+              "name": "Mykonos Blu, Grecotel, Psarou",
+              "url": "https://www.grecotel.com/mykonosblu/weddings-mykonos/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 6,
+              "name": "Petasos Beach Resort & Spa, Platis Gialos",
+              "url": "https://www.petasos.gr/plan-an-event-in-mykonos/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 7,
+              "name": "Myconian Ambassador, Platis Gialos",
+              "url": "https://www.myconianambassador.gr/services/weddings-events/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 8,
+              "name": "Royal Myconian and Myconian Imperial, Elia",
+              "url": "https://www.myconiancollection.gr/mykonos-events/weddings/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 9,
+              "name": "Grecotel Mykonos Lolita, Agios Sostis",
+              "url": "https://www.grecotel.com/mykonos-lolita/weddings-mykonos/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 10,
+              "name": "ZeNIT Events Center, above Paradise beach",
+              "url": "https://zenitevents.com/weddings/"
+            }
+          ]
+        },
+        {
+          "@type": "FAQPage",
+          "@id": "https://weddedwonderland.com/destination-weddings/mykonos-wedding-venues#faq",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "Which part of Mykonos suits a wedding?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "It depends on your guest list and the setting you want. The west coast at Agios Ioannis and Ornos keeps guests close to Mykonos Town, with Katikies Mykonos about 4 km away. The south coast at Psarou and Platis Gialos puts the beach at the centre, Elia has the largest published ballroom, and Agios Sostis on the north coast is the secluded choice."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Are there wedding chapels at Mykonos venues?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes. Santa Marina, Mykonos Grand, Saint John, the Myconian Ambassador, the Myconian Collection's Elia hotels and Grecotel Mykonos Lolita all describe a chapel. Mykonos Grand's holds 25 guests inside, and a religious wedding there requires both partners to be Christian Orthodox."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Can we book a Mykonos venue for exclusive use?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Ask directly, because few venues publish it. Katikies Hotels lists a hotel take-over among its event enquiry types. For the others, exclusive use is not published, so confirm with each venue whether the wedding spaces or the whole property can be reserved for you."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Can we have a beach wedding in Mykonos?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Several venues hold the ceremony or reception right by the sand. Mykonos Blu's Ocean Balcony sits just above Psarou beach, and the Myconian Collection and Myconian Ambassador both offer receptions on the beach. Ask each venue whether a ceremony on the sand itself is possible on your date."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "How do guests get to Mykonos?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "They fly into Mykonos Airport (JMK), about 45 minutes from Athens and 1 hour 10 minutes from Thessaloniki. From the airport, a bus runs to Mykonos Town and a taxi stand sits outside Arrivals."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Can Australians legally get married in Mykonos?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Plan the legal steps first. As at November 2026, Smartraveller says you may need a Certificate of No Impediment, and a marriage valid in Greece that would also be valid under Australian law is in most cases recognised in Australia."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    "author": "Wedded Wonderland",
+    "status": "draft",
+    "verify_items": [
+      "Image credit and licence for slot featured (mykonos-wedding-venues-santa-marina-whitewashed-chapel-hero.webp): not yet sourced; record the credit and licence (venue press kit with written permission, or licensed stock in library-index.csv) before publishing",
+      "Image credit and licence for slot area-ornos-town (mykonos-wedding-venues-ornos-town-setting.webp): not yet sourced; record the credit and licence (venue press kit with written permission, or licensed stock in library-index.csv) before publishing",
+      "Image credit and licence for slot venue-01 (mykonos-wedding-venues-santa-marina-ceremony-setting.webp): not yet sourced; record the credit and licence (venue press kit with written permission, or licensed stock in library-index.csv) before publishing",
+      "Image credit and licence for slot area-south-coast (mykonos-wedding-venues-south-coast-setting.webp): not yet sourced; record the credit and licence (venue press kit with written permission, or licensed stock in library-index.csv) before publishing",
+      "Image credit and licence for slot venue-04 (mykonos-wedding-venues-south-coast-venue-ceremony-setting.webp): not yet sourced; record the credit and licence (venue press kit with written permission, or licensed stock in library-index.csv) before publishing",
+      "Image credit and licence for slot area-elia-kalo-livadi (mykonos-wedding-venues-elia-kalo-livadi-setting.webp): not yet sourced; record the credit and licence (venue press kit with written permission, or licensed stock in library-index.csv) before publishing",
+      "Image credit and licence for slot venue-02 (mykonos-wedding-venues-myconian-collection-ceremony-setting.webp): not yet sourced; record the credit and licence (venue press kit with written permission, or licensed stock in library-index.csv) before publishing",
+      "Image credit and licence for slot area-north (mykonos-wedding-venues-north-setting.webp): not yet sourced; record the credit and licence (venue press kit with written permission, or licensed stock in library-index.csv) before publishing",
+      "Image credit and licence for slot venue-03 (mykonos-wedding-venues-mykonos-lolita-ceremony-setting.webp): not yet sourced; record the credit and licence (venue press kit with written permission, or licensed stock in library-index.csv) before publishing",
+      "Image credit and licence for slot area-villas-events (mykonos-wedding-venues-villas-events-setting.webp): not yet sourced; record the credit and licence (venue press kit with written permission, or licensed stock in library-index.csv) before publishing",
+      "Image credit and licence for slot venue-05 (mykonos-wedding-venues-villa-venue-ceremony-setting.webp): not yet sourced; record the credit and licence (venue press kit with written permission, or licensed stock in library-index.csv) before publishing"
+    ],
+    "needs_signoff": [],
+    "redirects_recommended": "none (new article)",
+    "hub_recommendation": "Recommendation only, nothing on the live site changes: the Greece venues guide draft (/destination-weddings/greece-wedding-venues) and the Greece packages guide draft (/destination-weddings/greece-wedding-packages) each link down to this post where they mention Mykonos, so the drafts link both ways; this post already links the Greece venues guide twice, the packages guide once and the Greece hub /destinations/europe/greece twice.",
+    "deferred_business_items": [
+      "Real wedding at a Mykonos or Greece venue",
+      "Fee model and commissions (whether the business takes a cut from venues)",
+      "Wedded Advisor who calls first",
+      "Referral or assistant contact",
+      "Mobility and step-free access checks by venue"
+    ],
+    "draft_note": "DRAFT. Do not publish until checked:\n\n1. [[VERIFY]] items in the copy: none. The only open verify items are image credits and licences (below).\n\n2. Nic sign-off on prices: none (no prices printed).\n\n3. Image slots needed (11, none approved yet; credit, licence, alt and caption to add when approved):\n   - featured (needed)\n   - area-ornos-town (needed)\n   - venue-01 (needed)\n   - area-south-coast (needed)\n   - venue-04 (needed)\n   - area-elia-kalo-livadi (needed)\n   - venue-02 (needed)\n   - area-north (needed)\n   - venue-03 (needed)\n   - area-villas-events (needed)\n   - venue-05 (needed)\n\n4. Linked drafts to publish together: the body links three pages that are still drafts, /destination-weddings/greece-wedding-venues (twice), /destination-weddings/greece-wedding-packages (once) and /expert-advice/greek-wedding-traditions (once). Publish the Greece venues guide, the Greece packages guide and Greek wedding traditions together with this post, or hold this post until they are live, so no link breaks.\n\n5. Mobile table: the 'Mykonos wedding venues at a glance' table has five columns and must scroll sideways on mobile (wrap it in the CMS's horizontal-scroll table container). Check in the mobile preview that it does not squash or overflow the page.\n\n6. Jump list: check the five 'Jump to an area' links and the 'Where the chapels are' link land on their H2s in preview.\n\n7. Deferred business items (5, person's decision, not in this draft):\n   - Real wedding at a Mykonos or Greece venue\n   - Fee model and commissions (whether the business takes a cut from venues)\n   - Wedded Advisor who calls first\n   - Referral or assistant contact\n   - Mobility and step-free access checks by venue\n\nBooking checklist (not publishing blockers): see booking-checklist.md"
+  }
+}
