@@ -6,3 +6,4 @@
 23:34 02 SEO done: AU 20 / US 110 (KD 0); no site ranking for mykonos; venues guide draft lists head-term secondaries (split recommended: this guide owns head term); meta 54/152.
 23:37 05 draft done: ~3,760 words, 5 venue examples, scan clean, 0 VERIFY; first-draft docx built.
 23:39 07 readers done (enquire 3/3/2/3/1; 3 flagged 'Wonderland Concierge' anchor). 06 editor pass_with_edits (4.14): 12 edits applied to 05-draft-r2.md, plus brand fix to 'Wedded Concierge'.
+23:42 07b panel: revise (enquire 2.6), 1 must-fix + 6 should-fix + 5 consider; business details deferred. One final pass.
