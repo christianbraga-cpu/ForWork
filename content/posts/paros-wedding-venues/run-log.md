@@ -12,3 +12,4 @@
 07:02 06 editor pass_with_edits (4.0): 19 edits applied to 05-draft-r2.md; meta description Lefkes swapped for Kolymbithres.
 07:04 07b panel: revise (enquire 2.6), 1 must-fix + 3 should-fix + 9 consider; CNI 'no official source' clause rejected (research talk). One final pass.
 07:06 08 final done: ~4,500 words, scan clean, 0 VERIFY.
+07:07 09 CRO done: 1 copy change.
