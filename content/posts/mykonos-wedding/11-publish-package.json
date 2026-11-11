@@ -1,0 +1,337 @@
+{
+  "agent": "cms-publisher",
+  "task_id": "mykonos-wedding",
+  "stage": "11",
+  "status": "complete",
+  "round": 1,
+  "inputs_used": [
+    "CLAUDE.md",
+    "content-system/cms/field-map.md",
+    "content-system/schemas/11-publish-package.schema.json",
+    "content/posts/mykonos-wedding/00-input.json",
+    "content/posts/mykonos-wedding/01-brief.json",
+    "content/posts/mykonos-wedding/02-seo.json",
+    "content/posts/mykonos-wedding/03-source-pack.json",
+    "content/posts/mykonos-wedding/04-images.json",
+    "content/posts/mykonos-wedding/08-final.md",
+    "content/posts/mykonos-wedding/09-cro.json",
+    "content/posts/mykonos-wedding/10-distribution.json",
+    "content/posts/santorini-wedding/11-body.md (format model)",
+    "content/posts/santorini-wedding/11-publish-package.json (format model)",
+    "content/posts/santorini-wedding/12-cms-report.md (format model)",
+    "content/posts/santorini-wedding/booking-checklist.md (format model)"
+  ],
+  "self_qa": {
+    "checks": [
+      {
+        "check": "08-final.md already carries the 09-cro.json secondary link (cost section)",
+        "pass": true
+      },
+      {
+        "check": "Front matter and all <!-- fact_xx --> markers removed; 7 image-slot comments kept; no [[VERIFY]] markers in the copy",
+        "pass": true
+      },
+      {
+        "check": "Primary CTA block at the marker; inline fallback retagged utm_content=inline; secondary, magnet and closing marked with comments; primary, secondary, magnet and closing each appear once as a link",
+        "pass": true
+      },
+      {
+        "check": "Exactly 4 key takeaways copied verbatim from the body; 6 FAQ pairs extracted; FAQPage carries all 6",
+        "pass": true
+      },
+      {
+        "check": "primary_category equals categories[0] (Destination Weddings); slug and URL from 00-input.json and 02-seo.json",
+        "pass": true
+      },
+      {
+        "check": "No prices printed, needs_signoff empty; no em dashes; no 'Wonderland Concierge' in visible text",
+        "pass": true
+      },
+      {
+        "check": "Image alt and caption filled",
+        "pass": false,
+        "note": "None supplied in 04-images.json; left empty, not invented. All 7 slots needed."
+      },
+      {
+        "check": "Status draft; nothing uploaded, published or scheduled",
+        "pass": true
+      }
+    ],
+    "confidence": 0.9
+  },
+  "open_questions": [
+    {
+      "to": "orchestrator",
+      "question": "CMS upload not attempted: no browser in this session (fast mode, package only) and content-system/cms/field-map.md is NOT YET MAPPED. Run /wedded-cms-discovery locally, then /wedded-blog resume=mykonos-wedding.",
+      "blocking": true
+    },
+    {
+      "to": "orchestrator",
+      "question": "No author named in the inputs; package uses 'Wedded Wonderland'. Confirm.",
+      "blocking": false
+    }
+  ],
+  "assumptions": [
+    "Title is the person's title from 00-input.json and the 08-final.md front matter.",
+    "Excerpt is the meta description from 02-seo.json (under 300 characters, carries the focus keyword).",
+    "Key takeaway 3 follows the body (Naxos, the nearest official station), not the brief's plan; the body is final.",
+    "content_type 'Guide' and cluster 'Getting Married in Greece' from 00-input.json.",
+    "Breadcrumb level 2 URL is https://weddedwonderland.com/destination-weddings, as in the Santorini model."
+  ],
+  "verify_items": [],
+  "tools_used": [
+    "Bash (python3 -I)"
+  ],
+  "next_agent": [
+    "orchestrator"
+  ],
+  "payload": {
+    "title": "Mykonos Wedding Guide to Venues, Seasons and Paperwork",
+    "slug": "mykonos-wedding",
+    "url_path": "/destination-weddings/mykonos-wedding",
+    "content_type": "Guide",
+    "cluster": "Getting Married in Greece",
+    "categories": [
+      "Destination Weddings",
+      "Greece",
+      "Mykonos",
+      "Planning Guides"
+    ],
+    "primary_category": "Destination Weddings",
+    "tags": [
+      "Getting Married in Greece",
+      "Mykonos",
+      "Cyclades",
+      "Wedding seasons",
+      "Wedding paperwork",
+      "Getting married overseas"
+    ],
+    "excerpt": "Plan a Mykonos wedding: choose an area and venue style, weigh the seasons, sort legal or symbolic paperwork and get your guests to the island with ease.",
+    "key_takeaways": [
+      "Decide early whether your ceremony will be legal or symbolic, because that choice sets the paperwork and the timeline.",
+      "Choose the area and the kind of venue first, then narrow to names using the full Mykonos venues guide.",
+      "June to August are the driest months at Naxos, the nearest official weather station, with May and September milder, so plan ceremony times around summer heat and the north wind.",
+      "Ask every venue about deposits, cancellation, exclusive use and music times, and get the answers in writing before you commit."
+    ],
+    "body_markdown_file": "content/posts/mykonos-wedding/11-body.md",
+    "faq": [
+      {
+        "q": "Can you legally get married in Mykonos?",
+        "a": "There are two routes: a civil marriage on the island, or a legal step in Australia followed by a symbolic ceremony on Mykonos. For a civil marriage, check the steps, documents and any fees with the Municipality of Mykonos and the Australian Embassy in Athens. In most cases an overseas marriage is recognised in Australia if it was valid where it took place and would have been valid under Australian law."
+      },
+      {
+        "q": "What documents do Australians need to get married in Greece?",
+        "a": "The most common are a Certificate of No Impediment to Marriage and certificates from a registry of births, deaths and marriages, and local authorities may also ask for divorce papers, a late spouse's death certificate, and your original birth certificate and passport. Ask the Greek authority which documents it needs and which must carry an apostille or authentication."
+      },
+      {
+        "q": "Can we have a symbolic ceremony in Mykonos?",
+        "a": "Yes. You can complete the legal step in Australia, then hold a symbolic ceremony on the island. A legal marriage in Greece is in most cases recognised in Australia, though it cannot be registered here; a legal step at home simply keeps the paperwork in Australia."
+      },
+      {
+        "q": "Is Mykonos a good place to elope?",
+        "a": "It suits a small wedding well. Kivotos describes its private chapel as ideal for an intimate wedding, and newlyweds there may spend their first days aboard the hotel's privately owned schooner."
+      },
+      {
+        "q": "When is the wedding season in Mykonos?",
+        "a": "The tourist season runs from May to October. At Naxos, the nearest official weather station, June to August are driest, while October brings the most rain of those months and the north wind runs stronger from July to October."
+      },
+      {
+        "q": "How do wedding guests get to Mykonos?",
+        "a": "Guests can fly from Athens, about 45 minutes, or from Thessaloniki, about 1 hour 10 minutes. They can also arrive by ferry or catamaran, which can be delayed or cancelled in strong winds."
+      }
+    ],
+    "images": [
+      {
+        "slot_id": "featured",
+        "file": "content/posts/mykonos-wedding/images/mykonos-wedding-venue-terrace-ceremony-hero.webp",
+        "role": "featured",
+        "status": "needed"
+      },
+      {
+        "slot_id": "why-mykonos",
+        "file": "content/posts/mykonos-wedding/images/mykonos-wedding-chora-little-venice-golden-hour.webp",
+        "role": "inline",
+        "status": "needed"
+      },
+      {
+        "slot_id": "venues-area-type",
+        "file": "content/posts/mykonos-wedding/images/mykonos-wedding-example-venue-setting.webp",
+        "role": "inline",
+        "status": "needed"
+      },
+      {
+        "slot_id": "seasons",
+        "file": "content/posts/mykonos-wedding/images/mykonos-wedding-coastline-shoulder-season.webp",
+        "role": "inline",
+        "status": "needed"
+      },
+      {
+        "slot_id": "paperwork",
+        "file": "content/posts/mykonos-wedding/images/mykonos-wedding-ceremony-aisle-sea-view.webp",
+        "role": "inline",
+        "status": "needed"
+      },
+      {
+        "slot_id": "getting-there",
+        "file": "content/posts/mykonos-wedding/images/mykonos-wedding-old-port-morning.webp",
+        "role": "inline",
+        "status": "needed"
+      },
+      {
+        "slot_id": "house-rules-booking",
+        "file": "content/posts/mykonos-wedding/images/mykonos-wedding-terrace-long-table-dusk.webp",
+        "role": "inline",
+        "status": "needed"
+      }
+    ],
+    "cta": {
+      "text": "Speak with a Wedded Advisor",
+      "subtext": "The fee is agreed in writing before any work begins.",
+      "link": "/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=mykonos-wedding&utm_content=primary",
+      "placement": "At the former <!-- CTA: primary --> marker after 'Five venues to start your shortlist' and the island comparison line (marked <!-- CTA BLOCK: primary --> in 11-body.md); the inline sentence after the block is the fallback and is tagged utm_content=inline."
+    },
+    "secondary_cta": {
+      "text": "See real options with Wedded Concierge",
+      "subtext": "Real venues and dates, compared side by side.",
+      "link": "/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=mykonos-wedding&utm_content=secondary",
+      "placement": "Inline link at the end of the 'Packages versus extras' paragraph in 'What shapes the cost of a Mykonos wedding' (marked <!-- CTA INLINE: secondary --> in 11-body.md). No separate block, per 09-cro.json."
+    },
+    "closing_cta": {
+      "text": "Plan your Mykonos wedding with a Wedded Advisor",
+      "link": "/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=mykonos-wedding&utm_content=closing",
+      "placement": "Inline link at the end of 'Start planning your Mykonos wedding' (marked <!-- CTA INLINE: closing --> in 11-body.md)."
+    },
+    "lead_magnet": {
+      "name": "Get Wedded digital magazine",
+      "link": "/magazine?utm_source=blog&utm_medium=content&utm_campaign=mykonos-wedding&utm_content=magnet",
+      "placement": "Existing line at the end of 'Getting your guests to Mykonos', before the house rules section (marked <!-- LEAD MAGNET --> in 11-body.md)."
+    },
+    "tracking_links": [
+      "/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=mykonos-wedding&utm_content=primary",
+      "/magazine?utm_source=blog&utm_medium=content&utm_campaign=mykonos-wedding&utm_content=magnet",
+      "/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=mykonos-wedding&utm_content=secondary",
+      "/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=mykonos-wedding&utm_content=closing",
+      "/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=mykonos-wedding&utm_content=inline"
+    ],
+    "seo": {
+      "meta_title": "Mykonos Wedding Guide to Venues, Seasons and Paperwork",
+      "meta_description": "Plan a Mykonos wedding: choose an area and venue style, weigh the seasons, sort legal or symbolic paperwork and get your guests to the island with ease.",
+      "focus_keyword": "mykonos wedding",
+      "canonical": "https://weddedwonderland.com/destination-weddings/mykonos-wedding",
+      "og_image_slot": "featured"
+    },
+    "schema_jsonld": {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Article",
+          "@id": "https://weddedwonderland.com/destination-weddings/mykonos-wedding#article",
+          "headline": "Mykonos Wedding Guide to Venues, Seasons and Paperwork",
+          "description": "Plan a Mykonos wedding: choose an area and venue style, weigh the seasons, sort legal or symbolic paperwork and get your guests to the island with ease.",
+          "author": {
+            "@type": "Organization",
+            "name": "Wedded Wonderland",
+            "url": "https://weddedwonderland.com/"
+          },
+          "publisher": {
+            "@type": "Organization",
+            "name": "Wedded Wonderland",
+            "url": "https://weddedwonderland.com/"
+          },
+          "datePublished": "",
+          "mainEntityOfPage": "https://weddedwonderland.com/destination-weddings/mykonos-wedding",
+          "inLanguage": "en-AU"
+        },
+        {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Home",
+              "item": "https://weddedwonderland.com/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Destination Weddings",
+              "item": "https://weddedwonderland.com/destination-weddings"
+            },
+            {
+              "@type": "ListItem",
+              "position": 3,
+              "name": "Mykonos Wedding Guide to Venues, Seasons and Paperwork",
+              "item": "https://weddedwonderland.com/destination-weddings/mykonos-wedding"
+            }
+          ]
+        },
+        {
+          "@type": "FAQPage",
+          "@id": "https://weddedwonderland.com/destination-weddings/mykonos-wedding#faq",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "Can you legally get married in Mykonos?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "There are two routes: a civil marriage on the island, or a legal step in Australia followed by a symbolic ceremony on Mykonos. For a civil marriage, check the steps, documents and any fees with the Municipality of Mykonos and the Australian Embassy in Athens. In most cases an overseas marriage is recognised in Australia if it was valid where it took place and would have been valid under Australian law."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "What documents do Australians need to get married in Greece?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "The most common are a Certificate of No Impediment to Marriage and certificates from a registry of births, deaths and marriages, and local authorities may also ask for divorce papers, a late spouse's death certificate, and your original birth certificate and passport. Ask the Greek authority which documents it needs and which must carry an apostille or authentication."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Can we have a symbolic ceremony in Mykonos?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes. You can complete the legal step in Australia, then hold a symbolic ceremony on the island. A legal marriage in Greece is in most cases recognised in Australia, though it cannot be registered here; a legal step at home simply keeps the paperwork in Australia."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Is Mykonos a good place to elope?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "It suits a small wedding well. Kivotos describes its private chapel as ideal for an intimate wedding, and newlyweds there may spend their first days aboard the hotel's privately owned schooner."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "When is the wedding season in Mykonos?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "The tourist season runs from May to October. At Naxos, the nearest official weather station, June to August are driest, while October brings the most rain of those months and the north wind runs stronger from July to October."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "How do wedding guests get to Mykonos?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Guests can fly from Athens, about 45 minutes, or from Thessaloniki, about 1 hour 10 minutes. They can also arrive by ferry or catamaran, which can be delayed or cancelled in strong winds."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    "author": "Wedded Wonderland",
+    "status": "draft",
+    "verify_items": [],
+    "needs_signoff": [],
+    "redirects_recommended": "none (new article)",
+    "deferred_business_items": [
+      "Fee model and commissions",
+      "Deposits",
+      "A named Wedded Advisor or first call",
+      "Real Mykonos weddings to show"
+    ],
+    "draft_note": "DRAFT ONLY. A human clicks Publish. Do not publish until checked:\n\n1. [[VERIFY]] items: none in the copy. Details the venues do not publish are written as \"Not published\" and listed in booking-checklist.md (not publishing blockers).\n\n2. Nic sign-off on prices: none (no prices printed).\n\n3. Image slots needed (7, none approved yet; credit, licence, alt and caption to add when approved):\n   - featured (needed)\n   - why-mykonos (needed)\n   - venues-area-type (needed)\n   - seasons (needed)\n   - paperwork (needed)\n   - getting-there (needed)\n   - house-rules-booking (needed)\n   why-mykonos, seasons and getting-there: Wedded Wonderland library or licensed stock, never AI. featured, venues-area-type, paperwork and house-rules-booking: a named venue's media kit with written permission or licensed stock, never AI.\n\n4. Linked pages to check live before publishing: /destination-weddings/mykonos-wedding-venues, /destination-weddings/santorini-wedding, /destination-weddings/paros-wedding-venues, /destination-weddings/greece-wedding-venues, /destination-weddings/greece-wedding-packages, /expert-advice/greek-wedding-traditions and /destinations/europe/greece. Publish any still in draft together with this post, or hold this post until they are live. Check the jump link to 'Getting your guests to Mykonos' lands in preview.\n\n5. Mobile table: the Naxos climate table (4 columns) must scroll sideways on mobile rather than squash.\n\n6. Deferred business items (person's decision, not in this draft): fee model and commissions, deposits, a named Wedded Advisor or first call, real Mykonos weddings to show.\n\nBooking checklist (not publishing blockers): see booking-checklist.md"
+  }
+}
