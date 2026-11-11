@@ -11,3 +11,4 @@
 00:41 07b panel: revise (enquire 2.6), 2 must-fix + 2 should-fix + consider; one final pass.
 00:43 08 final done: ~3,930 words, scan clean, no amounts.
 00:44 10 distribution done (utm_source=blog).
+00:44 09 CRO done: 3 copy changes.
