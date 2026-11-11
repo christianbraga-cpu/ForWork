@@ -1,0 +1,293 @@
+{
+  "agent": "editor",
+  "task_id": "greece-wedding-packages",
+  "stage": "06",
+  "status": "complete",
+  "round": 2,
+  "inputs_used": [
+    "CLAUDE.md",
+    "content/posts/greece-wedding-packages/08-final.md",
+    "content/posts/greece-wedding-packages/03-source-pack.json",
+    "content/posts/greece-wedding-packages/07-panel.json",
+    "content/posts/greece-wedding-packages/06-edit.json",
+    "content-system/brand/brand-facts.md",
+    "content/posts/crete-wedding-venues/06-edit-final.json"
+  ],
+  "self_qa": {
+    "checks": [
+      {
+        "check": "scan_copy.py on 08-final.md",
+        "pass": true,
+        "note": "banned [], dashes 0, overlaps [], flagged 'exclusive' x8 (sole use of a space) and 'bespoke' x1 (Nana Princess's own option name)."
+      },
+      {
+        "check": "Fact markers traceable",
+        "pass": true,
+        "note": "All 52 unique marker ids exist in 03-source-pack.json; inclusions bullet list had none, markers added by edit."
+      },
+      {
+        "check": "Venue inclusions, conditions, extras",
+        "pass": true,
+        "note": "Checked against fact_01-28 and fact_100-125; one overstatement (Elounda Collection 'own documents and conditions') removed."
+      },
+      {
+        "check": "Legal, CNI, Embassy, Smartraveller",
+        "pass": true,
+        "note": "Document steps and 40-day quote match fact_10/11 verbatim; Embassy line matches fact_113; CNI 'town hall' replaced with fact_114 wording; Smartraveller lines match fact_116-119."
+      },
+      {
+        "check": "Prices, fees, research talk, credits, vendors, Advisor, Privileges",
+        "pass": true,
+        "note": "No amounts, percentages or 'from' prices; 'a fee is charged on top' backed by fact_10 and Embassy fees by fact_113; no research talk or per-line credits; no non-venue vendor names; one Advisor claim beyond brand-facts edited; no Wedded Privileges; no 'last dance'."
+      },
+      {
+        "check": "Key takeaways",
+        "pass": true,
+        "note": "Exactly 4 bullets, each one sentence."
+      },
+      {
+        "check": "Panel must-fix applied",
+        "pass": true,
+        "note": "'Quotes in AUD' now only in currency section and close; island-by-island gap clauses moved to the single closing line."
+      },
+      {
+        "check": "Edits apply cleanly",
+        "pass": true,
+        "note": "Each old occurs exactly once in 08-final.md and each new exactly once after applying all edits (scripted); no em or en dashes after edits."
+      },
+      {
+        "check": "Decision consistent",
+        "pass": true,
+        "note": "Small blocking edits only, avg 4.14, no criterion below 3 -> pass_with_edits."
+      }
+    ],
+    "confidence": 0.85
+  },
+  "open_questions": [],
+  "assumptions": [
+    "Stage 8b blocking-issue check only; rubric carried, not rescored in depth.",
+    "Business details (fees, deposits, Privileges) deferred per brand-facts, not treated as must-fix.",
+    "Line 123's description of the venues guide ('questions to put to the town hall and the embassy') describes our own linked guide and is left as is."
+  ],
+  "verify_items": [],
+  "tools_used": [
+    "Bash (python3 -I, grep)",
+    "content-system/scripts/scan_copy.py",
+    "content-system/scripts/validate.py",
+    "jsonschema"
+  ],
+  "next_agent": [
+    "luxury-writer"
+  ],
+  "payload": {
+    "draft_file": "content/posts/greece-wedding-packages/08-final.md",
+    "rubric": {
+      "voice": 4,
+      "expertise": 5,
+      "accuracy": 4,
+      "seo_fit": 4,
+      "commercial_link": 4,
+      "structure": 4,
+      "brief_fit": 4
+    },
+    "average": 4.14,
+    "blocking_issues": [],
+    "decision": "pass_with_edits",
+    "edits": [
+      {
+        "location": "'What a Greek venue package usually includes', inclusions bullet list, bullet 1",
+        "issue": "Untraced claim: the new inclusions bullet carries no fact marker; every factual line must trace to the source pack.",
+        "fix": "Replace exactly:\n- A ceremony set-up, at Elounda Beach, the Elounda Collection, Euphoria and Abaton.\nwith:\n- A ceremony set-up, at Elounda Beach, the Elounda Collection, Euphoria and Abaton. <!-- fact_01 --> <!-- fact_09 --> <!-- fact_16 --> <!-- fact_23 -->",
+        "old": "- A ceremony set-up, at Elounda Beach, the Elounda Collection, Euphoria and Abaton.",
+        "new": "- A ceremony set-up, at Elounda Beach, the Elounda Collection, Euphoria and Abaton. <!-- fact_01 --> <!-- fact_09 --> <!-- fact_16 --> <!-- fact_23 -->"
+      },
+      {
+        "location": "'What a Greek venue package usually includes', inclusions bullet list, bullet 2",
+        "issue": "Untraced claim: the new inclusions bullet carries no fact marker; every factual line must trace to the source pack.",
+        "fix": "Replace exactly:\n- A coordinator or wedding specialist, at Elounda Beach, Nana Princess and Four Seasons Astir Palace.\nwith:\n- A coordinator or wedding specialist, at Elounda Beach, Nana Princess and Four Seasons Astir Palace. <!-- fact_01 --> <!-- fact_06 --> <!-- fact_122 -->",
+        "old": "- A coordinator or wedding specialist, at Elounda Beach, Nana Princess and Four Seasons Astir Palace.",
+        "new": "- A coordinator or wedding specialist, at Elounda Beach, Nana Princess and Four Seasons Astir Palace. <!-- fact_01 --> <!-- fact_06 --> <!-- fact_122 -->"
+      },
+      {
+        "location": "'What a Greek venue package usually includes', inclusions bullet list, bullet 3",
+        "issue": "Untraced claim: the new inclusions bullet carries no fact marker; every factual line must trace to the source pack.",
+        "fix": "Replace exactly:\n- Flowers and decoration, at Elounda Beach, the Elounda Collection and Euphoria.\nwith:\n- Flowers and decoration, at Elounda Beach, the Elounda Collection and Euphoria. <!-- fact_02 --> <!-- fact_09 --> <!-- fact_16 -->",
+        "old": "- Flowers and decoration, at Elounda Beach, the Elounda Collection and Euphoria.",
+        "new": "- Flowers and decoration, at Elounda Beach, the Elounda Collection and Euphoria. <!-- fact_02 --> <!-- fact_09 --> <!-- fact_16 -->"
+      },
+      {
+        "location": "'What a Greek venue package usually includes', inclusions bullet list, bullet 4",
+        "issue": "Untraced claim: the new inclusions bullet carries no fact marker; every factual line must trace to the source pack.",
+        "fix": "Replace exactly:\n- Sparkling wine and cake after the ceremony, at Elounda Beach and Euphoria.\nwith:\n- Sparkling wine and cake after the ceremony, at Elounda Beach and Euphoria. <!-- fact_02 --> <!-- fact_16 -->",
+        "old": "- Sparkling wine and cake after the ceremony, at Elounda Beach and Euphoria.",
+        "new": "- Sparkling wine and cake after the ceremony, at Elounda Beach and Euphoria. <!-- fact_02 --> <!-- fact_16 -->"
+      },
+      {
+        "location": "'What a Greek venue package usually includes', inclusions bullet list, bullet 5",
+        "issue": "Untraced claim: the new inclusions bullet carries no fact marker; every factual line must trace to the source pack.",
+        "fix": "Replace exactly:\n- Help with the paperwork, at Elounda Beach, the Elounda Collection, Nana Princess and Melenos.\nwith:\n- Help with the paperwork, at Elounda Beach, the Elounda Collection, Nana Princess and Melenos. <!-- fact_01 --> <!-- fact_09 --> <!-- fact_06 --> <!-- fact_101 -->",
+        "old": "- Help with the paperwork, at Elounda Beach, the Elounda Collection, Nana Princess and Melenos.",
+        "new": "- Help with the paperwork, at Elounda Beach, the Elounda Collection, Nana Princess and Melenos. <!-- fact_01 --> <!-- fact_09 --> <!-- fact_06 --> <!-- fact_101 -->"
+      },
+      {
+        "location": "'What a Greek venue package usually includes', inclusions bullet list, bullet 6",
+        "issue": "Untraced claim: the new inclusions bullet carries no fact marker; every factual line must trace to the source pack.",
+        "fix": "Replace exactly:\n- A gesture for the couple, such as a massage or breakfast in bed at Elounda Beach, or the wedding night at Four Seasons.\nwith:\n- A gesture for the couple, such as a massage or breakfast in bed at Elounda Beach, or the wedding night at Four Seasons. <!-- fact_02 --> <!-- fact_122 -->",
+        "old": "- A gesture for the couple, such as a massage or breakfast in bed at Elounda Beach, or the wedding night at Four Seasons.",
+        "new": "- A gesture for the couple, such as a massage or breakfast in bed at Elounda Beach, or the wedding night at Four Seasons. <!-- fact_02 --> <!-- fact_122 -->"
+      },
+      {
+        "location": "'Civil, Greek Orthodox or symbolic', first paragraph",
+        "issue": "Claim beyond the pack: fact_08 says the packages are separate; it does not say each has its own conditions (the three-night minimum in fact_10/fact_13 is shared).",
+        "fix": "Replace exactly:\nThe Elounda Collection publishes separate civil, Orthodox and symbolic packages, each with its own documents and conditions. <!-- fact_08 -->\nwith:\nThe Elounda Collection publishes separate civil, Orthodox and symbolic packages. <!-- fact_08 -->",
+        "old": "The Elounda Collection publishes separate civil, Orthodox and symbolic packages, each with its own documents and conditions. <!-- fact_08 -->",
+        "new": "The Elounda Collection publishes separate civil, Orthodox and symbolic packages. <!-- fact_08 -->"
+      },
+      {
+        "location": "'Civil, Greek Orthodox or symbolic', CNI paragraph",
+        "issue": "Claim beyond the pack: fact_114 says to ask the destination's embassy or consulate (whether you need a CNI, whether you can get it in Australia, whether it needs an apostille), not the town hall.",
+        "fix": "Replace exactly:\nso ask the town hall in Greece whether it accepts a CNI issued in Australia or needs one from the Australian Embassy in Athens. <!-- fact_114 -->\nwith:\nso ask the Greek embassy or consulate whether you need one, whether you can get it in Australia and whether it needs an apostille. <!-- fact_114 -->",
+        "old": "so ask the town hall in Greece whether it accepts a CNI issued in Australia or needs one from the Australian Embassy in Athens. <!-- fact_114 -->",
+        "new": "so ask the Greek embassy or consulate whether you need one, whether you can get it in Australia and whether it needs an apostille. <!-- fact_114 -->"
+      },
+      {
+        "location": "'Extra hours', line after 'Not published'",
+        "issue": "Advisor claim beyond brand-facts: brand-facts allows the advisor confirming inclusions in writing, not confirming venue finishing times, curfews, overtime or set-up windows.",
+        "fix": "Replace exactly:\nYour Wedded Advisor confirms these in writing for your date before you commit.\nwith:\nAsk each venue to confirm these in writing for your date before you commit.",
+        "old": "Your Wedded Advisor confirms these in writing for your date before you commit.",
+        "new": "Ask each venue to confirm these in writing for your date before you commit."
+      }
+    ],
+    "fact_check_log": [
+      {
+        "claim": "Inclusions bullet list (ceremony set-up, coordinator, flowers, sparkling wine and cake, paperwork, couple gesture), venue by venue",
+        "fact_id": "fact_01, fact_02, fact_06, fact_09, fact_16, fact_23, fact_101, fact_122",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Elounda Beach package and additional services",
+        "fact_id": "fact_01, fact_02, fact_03",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Elounda Collection civil/Orthodox/symbolic inclusions, conditions, fees and Orthodox church requirements",
+        "fact_id": "fact_08, fact_09, fact_10, fact_12, fact_13",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Elounda Collection packages 'each with its own documents and conditions'",
+        "fact_id": "fact_08",
+        "status": "removed"
+      },
+      {
+        "claim": "Document steps list (Apostille, Greek translation, 4 weeks email, 3 weeks courier, issued within 3 months, register within 40 days)",
+        "fact_id": "fact_10, fact_11",
+        "status": "confirmed"
+      },
+      {
+        "claim": "40-day registration quote and Friday/weekend rule",
+        "fact_id": "fact_11",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Euphoria options, informal certificate, coordinator in Pathos/Eros, not interchangeable, subject to availability",
+        "fact_id": "fact_16, fact_17",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Nana Princess named tiers, ceremonies, registry guidance, exclusive use in symbolic schemes",
+        "fact_id": "fact_04, fact_05, fact_06",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Abaton basics, customisable elements, venue fees, terms (no accommodation, 10 rooms 2 nights, 20 guests, not interchangeable), 2025-2026 brochure",
+        "fact_id": "fact_07, fact_23, fact_24",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Grace Hotel venue fee inclusions above and below 50 guests, planner rule, DJ/band, lounge from 8am, no room minimum",
+        "fact_id": "fact_14, fact_15",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Four Seasons Astir Palace inclusions, florist/consultant, transport on request, restaurants exclusive use",
+        "fact_id": "fact_120, fact_122, fact_123",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Melenos costing sheet, paperwork and fees, three-night suggestion, additional services, Jordan almonds",
+        "fact_id": "fact_100, fact_101, fact_102, fact_103",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Atrium Prestige licence help, Tsambika chapel, services not grouped",
+        "fact_id": "fact_111, fact_112",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Angsana Corfu symbolic venues, seasons, F&B-spend offer",
+        "fact_id": "fact_105, fact_106",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Lagonissi packages, planner, 2022 brochure, services list",
+        "fact_id": "fact_107, fact_108, fact_125",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Canaves (capacities, documents option, buyouts), Mystique, Amirandes, Myconian island entries",
+        "fact_id": "fact_19, fact_20, fact_22, fact_25, fact_26, fact_28",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Amanzoe / Costa Navarino / Katikies line and 'no package inclusions' list incl. Santa Marina, Corfu Imperial",
+        "fact_id": "fact_18, fact_21, fact_109, fact_110, fact_121",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Room upgrades subject to availability",
+        "fact_id": "fact_27",
+        "status": "confirmed"
+      },
+      {
+        "claim": "CNI line: DFAT can issue, some authorities accept only local CNI; who to ask",
+        "fact_id": "fact_114",
+        "status": "confirmed"
+      },
+      {
+        "claim": "CNI line 'ask the town hall in Greece'",
+        "fact_id": "fact_114",
+        "status": "removed"
+      },
+      {
+        "claim": "Embassy in Athens: CNIs and notices by appointment, post accepted, no legal advice, notarial and postage fees",
+        "fact_id": "fact_113",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Overseas marriage recognition, cannot be registered in Australia, lawyer",
+        "fact_id": "fact_115",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Smartraveller: wildfires June-September, heatwaves; traffic and licensed taxis; insurance, no healthcare agreement, stopovers; PDS, cancellation, credit card and medical-only policies",
+        "fact_id": "fact_116, fact_117, fact_118, fact_119",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Advisor confirms finishing times/curfews/overtime in writing",
+        "status": "removed"
+      }
+    ],
+    "compliance": {
+      "pass": true,
+      "issues": []
+    },
+    "originality": {
+      "pass": true,
+      "matches": []
+    },
+    "banned_phrases_found": [],
+    "needs_signoff": []
+  }
+}

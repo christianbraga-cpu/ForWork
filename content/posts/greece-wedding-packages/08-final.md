@@ -18,20 +18,18 @@ This guide sets out what each kind of package covers, venue by venue, and how to
 - Exclusive use, guest rooms, transfers and outside suppliers are where packages differ most, so ask about each in writing.
 - Compare quotes on the same guest count, spaces, hours, nights and currency before paying any deposit.
 
-If you already hold two quotes and want them read side by side, [book a Wedded Concierge consultation](https://weddedwonderland.com/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=greece-wedding-packages&utm_content=primary).
-
 ## What a Greek venue package usually includes
 
 <!-- IMAGE SLOT inclusions: Official close detail from a venue whose package inclusions are named in this section (for example Nana Princess or Elounda Beach): an aisle or ceremony table dressed for a wedding, linen, flowers, sea or garden softly out of focus behind. Daylight, season May to October. No people. Landscape 3:2 or 4:3. Source: the venue's own media kit or press office with written permission (Gmail draft request, created by a human or a non-fast run, never sent by an agent), or licensed premium stock bought by a human and added to library-index.csv. Never AI, never a competitor, directory, planner, photographer-blog or search-result image. Location proven by the media kit, register row or EXIF, never by appearance. Use only a venue whose own package is described in the article, so the image never implies a package or partnership we do not describe. -->
 
 The Greek venues that publish their inclusions tend to cover the same core:
 
-- A ceremony set-up, at Elounda Beach, the Elounda Collection, Euphoria and Abaton.
-- A coordinator or wedding specialist, at Elounda Beach, Nana Princess and Four Seasons Astir Palace.
-- Flowers and decoration, at Elounda Beach, the Elounda Collection and Euphoria.
-- Sparkling wine and cake after the ceremony, at Elounda Beach and Euphoria.
-- Help with the paperwork, at Elounda Beach, the Elounda Collection, Nana Princess and Melenos.
-- A gesture for the couple, such as a massage or breakfast in bed at Elounda Beach, or the wedding night at Four Seasons.
+- A ceremony set-up, at Elounda Beach, the Elounda Collection, Euphoria and Abaton. <!-- fact_01 --> <!-- fact_09 --> <!-- fact_16 --> <!-- fact_23 -->
+- A coordinator or wedding specialist, at Elounda Beach, Nana Princess and Four Seasons Astir Palace. <!-- fact_01 --> <!-- fact_06 --> <!-- fact_122 -->
+- Flowers and decoration, at Elounda Beach, the Elounda Collection and Euphoria. <!-- fact_02 --> <!-- fact_09 --> <!-- fact_16 -->
+- Sparkling wine and cake after the ceremony, at Elounda Beach and Euphoria. <!-- fact_02 --> <!-- fact_16 -->
+- Help with the paperwork, at Elounda Beach, the Elounda Collection, Nana Princess and Melenos. <!-- fact_01 --> <!-- fact_09 --> <!-- fact_06 --> <!-- fact_101 -->
+- A gesture for the couple, such as a massage or breakfast in bed at Elounda Beach, or the wedding night at Four Seasons. <!-- fact_02 --> <!-- fact_122 -->
 
 Below that line, the venues differ in what they bundle and what they price separately.
 
@@ -89,11 +87,14 @@ Amanzoe hosts weddings of all sizes and writes a full proposal, Costa Navarino n
 
 If you would rather start from a curated set than a stack of brochures, see our curated [destination wedding packages](https://weddedwonderland.com/destination-wedding-packages).
 
+<!-- CTA: primary -->
+When you are ready to compare two Greek quotes side by side, [speak with a Wedded Advisor](https://weddedwonderland.com/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=greece-wedding-packages&utm_content=primary).
+
 ## Civil, Greek Orthodox or symbolic: the ceremony inside the package
 
 <!-- IMAGE SLOT ceremony-types: Official image from Elounda Peninsula (which publishes separate civil, Greek Orthodox and symbolic packages) or another venue described in this section: the venue's own ceremony spot set for a symbolic or civil ceremony, open sky and sea. Do not show a church, priest, icon or religious rite unless the venue's own image and caption identify it and the article covers it; never imply a legal or church step the article does not state. No identifiable guests. Landscape 3:2. Source: the venue's own media kit or press office with written permission (Gmail draft request, created by a human or a non-fast run, never sent by an agent), or licensed premium stock bought by a human and added to library-index.csv. Never AI, never a competitor, directory, planner, photographer-blog or search-result image. Location proven by the media kit, register row or EXIF, never by appearance. Use only a venue whose own package is described in the article, so the image never implies a package or partnership we do not describe. -->
 
-The first question for any Greek package is which ceremony it is built for. The Elounda Collection publishes separate civil, Orthodox and symbolic packages, each with its own documents and conditions. <!-- fact_08 -->
+The first question for any Greek package is which ceremony it is built for. The Elounda Collection publishes separate civil, Orthodox and symbolic packages. <!-- fact_08 -->
 
 Nana Princess holds civil weddings on its private beach, Greek Orthodox weddings in the Chapel of St. George in its grounds, and symbolic weddings led by its event coordinator. <!-- fact_04 --> Melenos coordinators arrange civil, symbolic or traditional Orthodox ceremonies, and Atrium Prestige offers its private Tsambika chapel, across a bridge, for a more traditional ceremony. <!-- fact_100 --> <!-- fact_111 -->
 
@@ -105,7 +106,7 @@ The Elounda Collection's symbolic and vow renewal package includes a bouquet and
 
 Euphoria's three options are written for an informal wedding or a renewal of vows, and each includes a certificate of informal marriage from the hotel. <!-- fact_16 --> Angsana Corfu's 2026 brochure lists its ceremony spaces under "Symbolic Wedding Ceremony Venues": Vertigo Sky Bar for up to 250 and Oribu Garden for up to 30. <!-- fact_105 --> If you plan to marry legally at home and celebrate in Greece, these packages are written for informal or symbolic ceremonies.
 
-On the legal side, as at November 2026, some countries ask you to prove you are not already married, most often with a [Certificate of No Impediment to Marriage](https://www.smartraveller.gov.au/planning-trip/advice-your-planned-activities/getting-married-overseas) (CNI). <!-- fact_114 --> DFAT can issue a CNI in Australia, but some local authorities accept only one issued in their own country, so ask the town hall in Greece whether it accepts a CNI issued in Australia or needs one from the Australian Embassy in Athens. <!-- fact_114 -->
+On the legal side, as at November 2026, some countries ask you to prove you are not already married, most often with a [Certificate of No Impediment to Marriage](https://www.smartraveller.gov.au/planning-trip/advice-your-planned-activities/getting-married-overseas) (CNI). <!-- fact_114 --> DFAT can issue a CNI in Australia, but some local authorities accept only one issued in their own country, so ask the Greek embassy or consulate whether you need one, whether you can get it in Australia and whether it needs an apostille. <!-- fact_114 -->
 
 The [Australian Embassy in Athens](https://greece.embassy.gov.au/athn/Notarial.html) issues CNIs and witnesses notices of intended marriage by appointment, with CNI documents also accepted by post, and it does not give legal advice. <!-- fact_113 --> A marriage made overseas cannot be registered in Australia, but it is usually recognised if it was valid where it took place and would have been valid under Australian law. <!-- fact_115 -->
 
@@ -160,7 +161,7 @@ How long is the space yours? Grace Hotel opens a private lounge for the wedding 
 
 Not published: finishing times, curfews, overtime terms or set-up and pack-down windows for any of these packages.
 
-Your Wedded Advisor confirms these in writing for your date before you commit.
+Ask each venue to confirm these in writing for your date before you commit.
 
 ### Outside suppliers
 
@@ -211,7 +212,6 @@ Two Greek quotes rarely line up on the page. Put them on the same footing first,
 
 If one quote answers a point and the other is silent, the silent one is not cheaper. It is unfinished.
 
-<!-- CTA: primary -->
 When both quotes are on the table, [compare your quotes with a Wedded Advisor](https://weddedwonderland.com/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=greece-wedding-packages&utm_content=secondary). Your advisor confirms the inclusions in writing.
 
 ## For Australian couples: currency, deposits and insurance
