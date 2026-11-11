@@ -5,3 +5,4 @@
 02:19 03 batch B done: 13 facts; 2 qualify (Angsana, San Antonio); Domes Miramare, Rou Estate, MarBella, Nissaki Beach fail. Top-up D launched.
 02:20 03 batch C done: 11 facts; 0 venues qualify (Akrotiri no weddings, Mayor La Grotta Verde not on Mayor site, Pelekas Monastery and Golden Fox no official site); weather, airport, legal facts saved. Top-up E launched.
 02:20 03 batch A done: 17 facts; 4 qualify (Corfu Imperial, Villa Medusa, Corfu Palace provisional, Corfu Holiday Palace); Ikos Dassia, Cavalieri, Kontokali Bay fail. Total 6; top-ups D and E running.
+02:31 03 top-up D done: Atlantica Grand Mediterraneo and Courti Estate qualify; Eva Palace provisional (snippets); Ekaterini no sea view; Villa Sylva beachfront only (held out). Firm total 8 + provisional.

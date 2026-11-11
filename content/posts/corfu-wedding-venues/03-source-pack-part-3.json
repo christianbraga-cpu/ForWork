@@ -1,0 +1,247 @@
+{
+  "agent": "planner-sme",
+  "task_id": "corfu-wedding-venues",
+  "stage": "03",
+  "status": "complete",
+  "round": 1,
+  "inputs_used": [
+    "CLAUDE.md",
+    "content/posts/corfu-wedding-venues/00-input.json",
+    "content/posts/crete-wedding-venues/03-source-pack-part-3.json (format model)",
+    "Apify web-search and web-fetch 2026-11-11 of official venue sites listed in each fact"
+  ],
+  "self_qa": {
+    "checks": [
+      {
+        "check": "Every fact has a source and date",
+        "pass": true
+      },
+      {
+        "check": "No price without a source; all prices in needs_signoff",
+        "pass": true,
+        "note": "No prices recorded."
+      },
+      {
+        "check": "Every must-include covered or marked [[VERIFY]]",
+        "pass": true,
+        "note": "Batch D covers venue replacements only; other items sit with batches A to C."
+      },
+      {
+        "check": "No invented quotes, statistics or real weddings",
+        "pass": true
+      }
+    ],
+    "confidence": 0.75
+  },
+  "open_questions": [
+    {
+      "to": "orchestrator",
+      "question": "Batch D qualifies 2 firmly: Atlantica Grand Mediterraneo Resort (Ermones, west coast) and The Courti Estate (south-east coast, Corfu Riviera). Grecotel Eva Palace (Kommeno) qualifies provisionally on official grecotel.com search snippets only (weddings and Ionian Sea views), not a full page read. Ekaterini Estate fails (landscape views only). Villa Sylva (Kanoni) is borderline: own site says 'beachfront' and 'on the beach' but not 'sea view'. Rodostamo not reached within the time limit.",
+      "blocking": false
+    }
+  ],
+  "assumptions": [
+    "BOOKING CHECKLIST: Atlantica Grand Mediterraneo Resort: music curfew, rain plan, maximum reception capacity, room block terms, set-up times, minimum nights beyond the published working-day stay rule.",
+    "BOOKING CHECKLIST: The Courti Estate: guest capacity for ceremony and reception, music curfew, minimum nights, rain plan, ceremony locations on the estate, set-up times.",
+    "BOOKING CHECKLIST: Grecotel Eva Palace: ceremony locations, capacities, music curfew, minimum nights, rain plan, exclusive use, sharing of wedding spaces with sister Kommeno resorts."
+  ],
+  "verify_items": [
+    "[[VERIFY: Atlantica Grand Mediterraneo: total guest room count and maximum reception capacity not stated on the weddings page; packages and brochure PDFs not read]]",
+    "[[VERIFY: The Courti Estate: maximum wedding guest capacity and any separate weddings page not read; only the home page was checked]]",
+    "[[VERIFY: Orchestrator: Villa Sylva says 'beachfront' and 'on the beach' but not 'sea view'; decide whether beachfront wording meets the inclusion rule before listing it]]",
+    "[[VERIFY: Grecotel Eva Palace: qualification rests on official grecotel.com search snippets read at the time limit; fetch the resort and wedding pages to confirm wording, ceremony options and capacity before the writer uses it]]"
+  ],
+  "tools_used": [
+    "mcp__Apify__apify--web-search",
+    "mcp__Apify__apify--web-fetch",
+    "Bash"
+  ],
+  "next_agent": [
+    "luxury-writer"
+  ],
+  "payload": {
+    "facts": [
+      {
+        "fact_id": "fact_300",
+        "claim": "Atlantica Grand Mediterraneo Resort has its own weddings page offering weddings, renewal of vows or a symbolic ceremony; its enquiry form lists legal, symbolic, renewal of vows and same sex ceremony types.",
+        "source": "https://www.atlanticahotels.com/atlantica-grand-mediterraneo-resort/weddings/",
+        "source_type": "official_venue",
+        "checked": "2026-11-11",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_301",
+        "claim": "Atlantica Grand Mediterraneo Resort is at Ermones on the west coast of Corfu; its own page describes it as 'Overlooking Ermones Beach in western Corfu', set on 110 acres of cypress and pine woods, about 25 minutes from Corfu airport and town.",
+        "source": "https://www.atlanticahotels.com/atlantica-grand-mediterraneo-resort/weddings/",
+        "source_type": "official_venue",
+        "checked": "2026-11-11",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_302",
+        "claim": "Sea-view wording (Atlantica Grand Mediterraneo): the property has 'breathtaking cliffside views of the turquoise Ionian Sea'; the Secret Garden ceremony spot offers 'Sea and mountain views', and the Vertigo and Culinarium venues are described as 'both taking full advantage of the sea views'.",
+        "source": "https://www.atlanticahotels.com/atlantica-grand-mediterraneo-resort/weddings/",
+        "source_type": "official_venue",
+        "checked": "2026-11-11",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_303",
+        "claim": "Atlantica Grand Mediterraneo ceremony capacities as published: the Secret Garden hosts the couple and up to 8 guests; Vertigo and Culinarium each host up to 30 guests. Private evening reception venues are offered, with decorations and entertainment arranged through the wedding planner.",
+        "source": "https://www.atlanticahotels.com/atlantica-grand-mediterraneo-resort/weddings/",
+        "source_type": "official_venue",
+        "checked": "2026-11-11",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_304",
+        "claim": "Atlantica Grand Mediterraneo standout: the resort promises to host only one wedding on the day the couple chooses ('total exclusivity of our wedding services'), all wedding packages include a personal wedding planner, and it describes an adult friendly atmosphere. Rooms include doubles and deluxe rooms, some with private pools; total room count not stated on the weddings page.",
+        "source": "https://www.atlanticahotels.com/atlantica-grand-mediterraneo-resort/weddings/",
+        "source_type": "official_venue",
+        "checked": "2026-11-11",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_305",
+        "claim": "Atlantica Grand Mediterraneo stay requirement as published: for a wedding, the couple must be at the resort at least 3 working days before the date (excluding arrival day, bank holidays and weekends) and 2 working days after; for a symbolic or renewal of vows ceremony, at least 2 working days.",
+        "source": "https://www.atlanticahotels.com/atlantica-grand-mediterraneo-resort/weddings/",
+        "source_type": "official_venue",
+        "checked": "2026-11-11",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_306",
+        "claim": "The Courti Estate is a private luxury villa 'on the exclusive Corfu Riviera on the South-East coast', set in its own gated estate of 10 acres of ancient olive groves, and is 'available for private hire for holidays, weddings and corporate events'.",
+        "source": "https://www.thecourtiestate.com/",
+        "source_type": "official_venue",
+        "checked": "2026-11-11",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_307",
+        "claim": "Sea-view wording (The Courti Estate): from its hilltop position, Courti 'enjoys 360-degree views over the sparkling waters of the Ionian Sea to one side', looking inland to the mountain on the other.",
+        "source": "https://www.thecourtiestate.com/",
+        "source_type": "official_venue",
+        "checked": "2026-11-11",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_308",
+        "claim": "The Courti Estate standout and rooms: the restored building dates back to the early 1700s; the site title describes it as a 'Luxury Corfu Villa with 9 Bedrooms', with an infinity pool and sprawling grounds. Exclusive use is implied by private hire of the gated estate; guest capacity for events is not stated on the pages read.",
+        "source": "https://www.thecourtiestate.com/",
+        "source_type": "official_venue",
+        "checked": "2026-11-11",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_309",
+        "claim": "Ekaterini Estate's weddings page says it would be delighted to host weddings, with terraces and lawns for receptions, a 3 night minimum stay for weddings and a house that accommodates 16 guests; its setting is described as 'at the top of its hill with surrounding views of the beautiful Corfu landscape'. Neither the weddings page nor the home page states a sea view in words, so it fails the inclusion rule.",
+        "source": "https://ekateriniestatecorfu.com/weddings",
+        "source_type": "official_venue",
+        "checked": "2026-11-11",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_310",
+        "claim": "Ekaterini Estate home page describes 'A dramatically beautiful hilltop estate in Corfu, Greece' with no sea-view wording (only guest testimonials mentioning views and sunsets).",
+        "source": "https://ekateriniestatecorfu.com/",
+        "source_type": "official_venue",
+        "checked": "2026-11-11",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_311",
+        "claim": "Villa Sylva describes itself on its own site as 'a unique private luxury beachfront vacation rental villa and wedding venue in Corfu, Greece', and a post on its site places it 'on the beach in the area of Kanoni'. Its pages read do not state 'sea view' in words (beachfront only), so it is held as not qualifying under the strict wording test pending orchestrator decision.",
+        "source": "https://www.villasylva.com/event-venue ; https://www.villasylva.com/post/lightness-and-elegance-in-corfu",
+        "source_type": "official_venue",
+        "checked": "2026-11-11",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_312",
+        "claim": "Grecotel Eva Palace is listed on Grecotel's own Wedding Hotels page as 'Eva Palace, Kommeno Peninsula', and its resort page says it 'provides the perfect backdrop for your wedding, honeymoon' (official-site search snippets; pages not fully fetched).",
+        "source": "https://www.grecotel.com/wedding-hotels/ ; https://www.grecotel.com/eva-palace/corfu-resort/",
+        "source_type": "official_venue",
+        "checked": "2026-11-11",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_313",
+        "claim": "Sea-view wording (Grecotel Eva Palace, search snippets of its own pages): 'showcasing breathtaking views of the Ionian sea' and 'Wake up to panoramic sea views and garden landscapes'.",
+        "source": "https://www.grecotel.com/eva-palace/corfu-resort/ ; https://www.grecotel.com/eva-palace/",
+        "source_type": "official_venue",
+        "checked": "2026-11-11",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_314",
+        "claim": "Grecotel Eva Palace rooms and standout (search snippets of its own pages): 225 rooms, bungalows and villas plus the secluded Palazzina; complimentary sea transfers between the Kommeno resorts from mid-May to mid-October, weather permitting.",
+        "source": "https://www.grecotel.com/eva-palace/ ; https://www.grecotel.com/eva-palace/frequently-asked-questions/",
+        "source_type": "official_venue",
+        "checked": "2026-11-11",
+        "is_price": false
+      }
+    ],
+    "insider_details": [
+      {
+        "detail": "Atlantica Grand Mediterraneo's ceremony spaces are small (up to 8 guests in the Secret Garden, up to 30 at Vertigo or Culinarium), so it suits intimate weddings rather than large guest lists.",
+        "fact_ids": [
+          "fact_302",
+          "fact_303"
+        ]
+      },
+      {
+        "detail": "Atlantica's published stay rule (3 working days before a legal wedding and 2 after, weekends and bank holidays excluded) means a weekend arrival can push the wedding date later; plan flights around working days.",
+        "fact_ids": [
+          "fact_305"
+        ]
+      },
+      {
+        "detail": "The Courti Estate is a 9-bedroom villa on a gated 10-acre estate, so the wedding party can stay on site while other guests book nearby; ask the estate for event capacity before shaping the guest list.",
+        "fact_ids": [
+          "fact_306",
+          "fact_308"
+        ]
+      },
+      {
+        "detail": "Eva Palace sits on the Kommeno Peninsula alongside Grecotel's Corfu Imperial, and its own FAQ notes free sea transfers between the Kommeno resorts in season, which can help when guests are split across sister hotels.",
+        "fact_ids": [
+          "fact_312",
+          "fact_314"
+        ]
+      }
+    ],
+    "quotes": [],
+    "real_weddings": [],
+    "verify_items": [
+      "[[VERIFY: Atlantica Grand Mediterraneo: total guest room count and maximum reception capacity not stated on the weddings page; packages and brochure PDFs not read]]",
+      "[[VERIFY: The Courti Estate: maximum wedding guest capacity and any separate weddings page not read; only the home page was checked]]",
+      "[[VERIFY: Orchestrator: Villa Sylva says 'beachfront' and 'on the beach' but not 'sea view'; decide whether beachfront wording meets the inclusion rule before listing it]]",
+      "[[VERIFY: Grecotel Eva Palace: qualification rests on official grecotel.com search snippets read at the time limit; fetch the resort and wedding pages to confirm wording, ceremony options and capacity before the writer uses it]]"
+    ],
+    "needs_signoff": [
+      "No prices or fees recorded in batch D (prices excluded by instruction). Any price printed needs Nic's sign-off."
+    ],
+    "must_include_coverage": [
+      {
+        "item": "Corfu venues with sea views, each verified on its own official site (batch D top-up replacements)",
+        "covered_by": [
+          "fact_300",
+          "fact_301",
+          "fact_302",
+          "fact_303",
+          "fact_304",
+          "fact_305",
+          "fact_306",
+          "fact_307",
+          "fact_308",
+          "[[VERIFY: Orchestrator: Villa Sylva says 'beachfront' and 'on the beach' but not 'sea view'; decide whether beachfront wording meets the inclusion rule before listing it]]",
+          "fact_312",
+          "fact_313",
+          "fact_314",
+          "[[VERIFY: Grecotel Eva Palace: qualification rests on official grecotel.com search snippets read at the time limit; fetch the resort and wedding pages to confirm wording, ceremony options and capacity before the writer uses it]]"
+        ]
+      }
+    ]
+  }
+}
