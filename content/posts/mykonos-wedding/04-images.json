@@ -1,0 +1,221 @@
+{
+ "agent": "visual-curator",
+ "task_id": "mykonos-wedding",
+ "stage": "04",
+ "status": "needs_input",
+ "round": 1,
+ "inputs_used": [
+  "CLAUDE.md",
+  "content/posts/mykonos-wedding/00-input.json",
+  "content/posts/santorini-wedding/04-images.json (format model)",
+  "content-system/images/library-index.csv (header only, no rows)",
+  "content-system/schemas/04-images.schema.json"
+ ],
+ "self_qa": {
+  "checks": [
+   {
+    "check": "Zero reference-only or competitor images in slots",
+    "pass": true
+   },
+   {
+    "check": "Every approved image has location, licence, alt, caption, fit_reason",
+    "pass": true,
+    "note": "No approved images; alt and caption written once a licensed file exists."
+   },
+   {
+    "check": "No AI image depicting a real place",
+    "pass": true,
+    "note": "No AI slots planned."
+   },
+   {
+    "check": "Featured image exists (approved or needed with brief)",
+    "pass": true,
+    "note": "Needed, with brief."
+   },
+   {
+    "check": "Seven slots: hero plus one per main section (FAQ has none)",
+    "pass": true
+   },
+   {
+    "check": "No em dashes, no prices, nothing on legal or religious paperwork in briefs",
+    "pass": true
+   }
+  ],
+  "confidence": 0.75
+ },
+ "open_questions": [
+  {
+   "to": "orchestrator",
+   "question": "Once 03-source-pack confirms the example venues, should a human or a non-fast curator run create the Gmail permission drafts for venue press images?",
+   "blocking": false
+  },
+  {
+   "to": "orchestrator",
+   "question": "Is there budget for licensed stock for the four destination slots (why Mykonos, seasons, getting there, and paperwork fallback)?",
+   "blocking": false
+  }
+ ],
+ "assumptions": [
+  "01-brief.json and 02-seo.json are not yet written, so after_h2:<n> follows the section order given (1 why Mykonos, 2 venues, 3 seasons, 4 paperwork, 5 getting there, 6 house rules and booking questions, 7 FAQ); the writer remaps if headings change.",
+  "Venue slots name no venue until 03-source-pack confirms the examples.",
+  "Drive, own site, Canva, web image and press-kit searches were not run: repo register only, per instruction."
+ ],
+ "verify_items": [
+  "[[IMAGE NEEDED]] featured: Hero and social share image",
+  "[[IMAGE NEEDED]] why-mykonos: Sets the destination mood for why couples choose Mykonos.",
+  "[[IMAGE NEEDED]] venues-area-type: Shows the choice of area and venue type, pointing readers on to the Mykonos venues guide.",
+  "[[IMAGE NEEDED]] seasons: Gives a sense of season and light for the timing decision, without implying a best month.",
+  "[[IMAGE NEEDED]] paperwork: A quiet ceremony moment for the legal or symbolic paperwork section, showing no documents.",
+  "[[IMAGE NEEDED]] getting-there: Grounds the travel section",
+  "[[IMAGE NEEDED]] house-rules-booking: Calm visual for the house rules and booking questions",
+  "[[VERIFY licence]] every venue press-kit and stock image: written permission or purchase, credit line and expiry recorded in library-index.csv before use"
+ ],
+ "tools_used": [
+  "Bash (cat/python)"
+ ],
+ "next_agent": [
+  "luxury-writer"
+ ],
+ "payload": {
+  "slots": [
+   {
+    "slot_id": "featured",
+    "placement": "featured",
+    "purpose": "Hero and social share image: a Mykonos ceremony set above the Aegean, signalling a calm, well-planned destination wedding.",
+    "shot_brief": "Official image from a venue the guide names as an example: a ceremony set-up on a whitewashed terrace or clifftop with the Aegean behind, chairs and florals in place, late spring or early autumn, golden-hour light. No people, or only distant unidentifiable figures; no signage. Room for a title crop. Source: the venue's own media kit or press office with written permission (Gmail draft request created by a human or a non-fast run, never sent by an agent), or licensed stock bought by a human and added to library-index.csv. Landscape 3:2. Never AI, never a competitor, directory, planner, photographer-blog or search-result image. Location proven by the media kit, register row, EXIF or stock record, never by appearance.",
+    "status": "needed",
+    "file": "content/posts/mykonos-wedding/images/mykonos-wedding-venue-terrace-ceremony-hero.webp",
+    "source": {
+     "type": "venue_press",
+     "origin": "not yet sourced",
+     "credit": "[[VERIFY licence]]"
+    },
+    "location": {
+     "venue": "a venue named in the venues section (set once 03-source-pack confirms)",
+     "town": "Mykonos (town as recorded)",
+     "verified_by": "to be set from the media kit, register row, EXIF or stock record"
+    },
+    "licence_note": "[[IMAGE NEEDED]] Library register has no rows. Venue press image with written permission or licensed stock only; rename the file with the venue once confirmed."
+   },
+   {
+    "slot_id": "why-mykonos",
+    "placement": "after_h2:1",
+    "purpose": "Sets the destination mood for why couples choose Mykonos.",
+    "shot_brief": "Destination landscape, no venue implied: Little Venice waterfront or the Kato Mili windmills above Mykonos Town (Chora) in late spring or early autumn, low warm light, calm sea. No identifiable people, no business signage. Source: Wedded Wonderland library (register row with licence) or licensed stock bought by a human and added to library-index.csv. Landscape 3:2. Never AI, never a competitor, directory, planner, photographer-blog or search-result image. Location proven by the media kit, register row, EXIF or stock record, never by appearance.",
+    "status": "needed",
+    "file": "content/posts/mykonos-wedding/images/mykonos-wedding-chora-little-venice-golden-hour.webp",
+    "source": {
+     "type": "stock",
+     "origin": "not yet sourced",
+     "credit": "[[VERIFY licence]]"
+    },
+    "location": {
+     "venue": "none (destination landscape)",
+     "town": "Mykonos Town (Chora)",
+     "verified_by": "to be set from the media kit, register row, EXIF or stock record"
+    },
+    "licence_note": "[[IMAGE NEEDED]] Library or licensed stock only; never AI for a destination."
+   },
+   {
+    "slot_id": "venues-area-type",
+    "placement": "after_h2:2",
+    "purpose": "Shows the choice of area and venue type, pointing readers on to the Mykonos venues guide.",
+    "shot_brief": "Official image from one of the 5 to 6 example venues the section names: a beachfront or hillside villa set-up for a ceremony or dinner, daylight or sunset, May to October. No identifiable guests, no signage. Use only a venue the section names, so the image never implies a partnership the article does not describe; do not duplicate an image used in the Mykonos venues guide. Source: the venue's own media kit or press office with written permission (Gmail draft request created by a human or a non-fast run, never sent by an agent), or licensed stock bought by a human and added to library-index.csv. Landscape 3:2. Never AI, never a competitor, directory, planner, photographer-blog or search-result image. Location proven by the media kit, register row, EXIF or stock record, never by appearance.",
+    "status": "needed",
+    "file": "content/posts/mykonos-wedding/images/mykonos-wedding-example-venue-setting.webp",
+    "source": {
+     "type": "venue_press",
+     "origin": "not yet sourced",
+     "credit": "[[VERIFY licence]]"
+    },
+    "location": {
+     "venue": "a venue named in the venues section",
+     "town": "as recorded",
+     "verified_by": "to be set from the media kit, register row, EXIF or stock record"
+    },
+    "licence_note": "[[IMAGE NEEDED]] Venue press image with permission only; swap venue in the filename to whichever permission arrives first."
+   },
+   {
+    "slot_id": "seasons",
+    "placement": "after_h2:3",
+    "purpose": "Gives a sense of season and light for the timing decision, without implying a best month.",
+    "shot_brief": "Destination landscape: a Mykonos beach or coastline in shoulder-season light (May, June, September or October), with the month recorded in the register. Calm or lightly wind-rippled water is fine; no weather claims in the caption beyond the recorded date. No identifiable people. Source: Wedded Wonderland library (register row with licence) or licensed stock bought by a human and added to library-index.csv. Landscape 3:2. Never AI, never a competitor, directory, planner, photographer-blog or search-result image. Location proven by the media kit, register row, EXIF or stock record, never by appearance.",
+    "status": "needed",
+    "file": "content/posts/mykonos-wedding/images/mykonos-wedding-coastline-shoulder-season.webp",
+    "source": {
+     "type": "stock",
+     "origin": "not yet sourced",
+     "credit": "[[VERIFY licence]]"
+    },
+    "location": {
+     "venue": "none (destination landscape)",
+     "town": "as recorded",
+     "verified_by": "to be set from the media kit, register row, EXIF or stock record"
+    },
+    "licence_note": "[[IMAGE NEEDED]] Library or licensed stock only; caption season must match the recorded date."
+   },
+   {
+    "slot_id": "paperwork",
+    "placement": "after_h2:4",
+    "purpose": "A quiet ceremony moment for the legal or symbolic paperwork section, showing no documents.",
+    "shot_brief": "Ceremony detail at a named Mykonos venue or a neutral destination detail: an empty aisle and floral arch on a terrace facing the sea, soft morning light. No documents, certificates, passports, government or embassy emblems, church or religious items, or identifiable people. Source: the venue's own media kit or press office with written permission (Gmail draft request created by a human or a non-fast run, never sent by an agent), or licensed stock bought by a human and added to library-index.csv. Landscape 3:2. Never AI, never a competitor, directory, planner, photographer-blog or search-result image. Location proven by the media kit, register row, EXIF or stock record, never by appearance.",
+    "status": "needed",
+    "file": "content/posts/mykonos-wedding/images/mykonos-wedding-ceremony-aisle-sea-view.webp",
+    "source": {
+     "type": "venue_press",
+     "origin": "not yet sourced",
+     "credit": "[[VERIFY licence]]"
+    },
+    "location": {
+     "venue": "a venue named in the guide, or none",
+     "town": "as recorded",
+     "verified_by": "to be set from the media kit, register row, EXIF or stock record"
+    },
+    "licence_note": "[[IMAGE NEEDED]] Venue press with permission, library or licensed stock; nothing showing legal, church or religious paperwork."
+   },
+   {
+    "slot_id": "getting-there",
+    "placement": "after_h2:5",
+    "purpose": "Grounds the travel section: arriving on the island by sea.",
+    "shot_brief": "Destination image, no venue implied: the Old Port of Mykonos Town or the island seen from the water in morning light. Real, named location recorded. No ferry, airline or car-hire logos, no number plates, no identifiable people, nothing suggesting transfer arrangements the article does not offer. Source: Wedded Wonderland library (register row with licence) or licensed stock bought by a human and added to library-index.csv. Landscape 3:2. Never AI, never a competitor, directory, planner, photographer-blog or search-result image. Location proven by the media kit, register row, EXIF or stock record, never by appearance.",
+    "status": "needed",
+    "file": "content/posts/mykonos-wedding/images/mykonos-wedding-old-port-morning.webp",
+    "source": {
+     "type": "stock",
+     "origin": "not yet sourced",
+     "credit": "[[VERIFY licence]]"
+    },
+    "location": {
+     "venue": "none (destination)",
+     "town": "Mykonos Town (Chora)",
+     "verified_by": "to be set from the media kit, register row, EXIF or stock record"
+    },
+    "licence_note": "[[IMAGE NEEDED]] Library or licensed stock only; never AI for a destination."
+   },
+   {
+    "slot_id": "house-rules-booking",
+    "placement": "after_h2:6",
+    "purpose": "Calm visual for the house rules and booking questions: an evening reception set before guests arrive.",
+    "shot_brief": "Official image from a named Mykonos venue: a long dinner table set on a terrace at dusk, candles and linen, sea behind. No people, no legible menus, place cards, prices or contracts. Source: the venue's own media kit or press office with written permission (Gmail draft request created by a human or a non-fast run, never sent by an agent), or licensed stock bought by a human and added to library-index.csv. Landscape 3:2. Never AI, never a competitor, directory, planner, photographer-blog or search-result image. Location proven by the media kit, register row, EXIF or stock record, never by appearance.",
+    "status": "needed",
+    "file": "content/posts/mykonos-wedding/images/mykonos-wedding-terrace-long-table-dusk.webp",
+    "source": {
+     "type": "venue_press",
+     "origin": "not yet sourced",
+     "credit": "[[VERIFY licence]]"
+    },
+    "location": {
+     "venue": "a venue named in the guide",
+     "town": "as recorded",
+     "verified_by": "to be set from the media kit, register row, EXIF or stock record"
+    },
+    "licence_note": "[[IMAGE NEEDED]] Venue press image with permission or licensed stock; must show a venue the article names."
+   }
+  ],
+  "reference_only": [],
+  "permission_requests": [],
+  "drive_findings": [
+   "Not searched: repo library register only per orchestrator instruction. library-index.csv has a header and no rows."
+  ]
+ }
+}
