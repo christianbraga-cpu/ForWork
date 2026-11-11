@@ -14,3 +14,4 @@
 03:20 06 editor pass_with_edits (4.14): 31 edits applied to 05-draft-r2.md; 02-seo meta title updated to 10.
 03:23 07b panel: revise (enquire 2.6), 3 must-fix + should-fix + consider; one final pass.
 03:24 08 final done: ~4,560 words, scan clean, 3 VERIFY (Villa Medusa x2, Holiday Palace room).
+03:25 10 distribution done (utm_source=blog).
