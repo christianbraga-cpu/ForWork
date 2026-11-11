@@ -8,3 +8,4 @@
 06:07 03 top-up E done: Saint John and ZeNIT qualify, Semeli weak (blog only). Final 10 chosen; reserves Kivotos (2022 page), Myconian Villa Collection (overlap), Bill&Coo, Semeli, Soho Roc House, Ftelia Bay. Packs merged.
 06:12 05 draft done: ~4,774 words, 10 venues, scan clean, 0 VERIFY.
 06:14 07 readers: all 5 in; sceptic must-fix (Lolita civil wording implies legal registration).
+06:16 06 editor pass_with_edits (4.0): 20 edits applied to 05-draft-r2.md.
