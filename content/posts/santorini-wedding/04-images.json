@@ -1,0 +1,280 @@
+{
+ "agent": "visual-curator",
+ "task_id": "santorini-wedding",
+ "stage": "04",
+ "status": "needs_input",
+ "round": 1,
+ "inputs_used": [
+  "CLAUDE.md",
+  "content/posts/santorini-wedding/00-input.json",
+  "content/posts/wedding-in-crete/04-images.json (format model)",
+  "content-system/images/library-index.csv (header only, no rows)",
+  "content-system/images/sources-policy.md",
+  "content-system/schemas/04-images.schema.json"
+ ],
+ "self_qa": {
+  "checks": [
+   {
+    "check": "Zero reference-only or competitor images in slots",
+    "pass": true
+   },
+   {
+    "check": "Every approved image has location, licence, alt, caption, fit_reason",
+    "pass": true,
+    "note": "No approved images this run; alt and caption are written once a licensed file exists."
+   },
+   {
+    "check": "No AI image depicting a real place",
+    "pass": true,
+    "note": "AI offered only as an approval-gated fallback for the checklist still life."
+   },
+   {
+    "check": "Featured image exists (approved or needed with brief)",
+    "pass": true,
+    "note": "Needed, with brief."
+   },
+   {
+    "check": "Eight slots: hero plus main steps",
+    "pass": true
+   },
+   {
+    "check": "No em dashes, no prices, nothing on legal or religious paperwork in briefs",
+    "pass": true
+   }
+  ],
+  "confidence": 0.75
+ },
+ "open_questions": [
+  {
+   "to": "orchestrator",
+   "question": "Should a human find press contacts for Canaves Oia, Grace Hotel, Katikies and Mystique and create the Gmail permission drafts, or should a non-fast curator run do it once 03-source-pack confirms the venues?",
+   "blocking": false
+  },
+  {
+   "to": "orchestrator",
+   "question": "Is there budget for licensed premium stock for the three destination slots (season, guest travel, weekend)?",
+   "blocking": false
+  },
+  {
+   "to": "person",
+   "question": "Do you approve an AI abstract still life (no place, venue or person, captioned 'Illustrative image') as the fallback for the checklist slot?",
+   "blocking": false
+  }
+ ],
+ "assumptions": [
+  "01-brief.json and 02-seo.json are not yet written, so after_h2:<n> follows the step order in 00-input (1 legal, 2 season, 3 setting, 4 guests, 5 travel, 8 weekend, 9 checklist); the writer remaps if headings change.",
+  "Venue examples follow the orchestrator's list; the writer swaps a slot's venue if the final venue list differs.",
+  "Drive, own site, Canva, web image and press-kit searches were not run: repo register only, per instruction."
+ ],
+ "verify_items": [
+  "[[IMAGE NEEDED]] featured: caldera ceremony terrace hero (Canaves Oia, Grace Hotel or Katikies; press kit with permission)",
+  "[[IMAGE NEEDED]] legal-or-symbolic: ceremony aisle detail at a named venue (press kit with permission)",
+  "[[IMAGE NEEDED]] season: Oia or Fira caldera in shoulder-season light (library or licensed stock)",
+  "[[IMAGE NEEDED]] setting-venue-type: Mystique or another named venue (press kit with permission)",
+  "[[IMAGE NEEDED]] guest-list: long-table dinner at a named venue (press kit with permission)",
+  "[[IMAGE NEEDED]] guest-travel: Fira old port or caldera from the water (library or licensed stock)",
+  "[[IMAGE NEEDED]] weekend: caldera sunset welcome drinks or beach morning (library, stock or venue press)",
+  "[[IMAGE NEEDED]] checklist: linen planner still life (Canva, library or stock; AI only on approval)",
+  "[[VERIFY licence]] every venue press-kit and stock image: written permission or purchase, credit line and expiry recorded in library-index.csv before use"
+ ],
+ "tools_used": [
+  "Bash (cat/python)"
+ ],
+ "next_agent": [
+  "luxury-writer"
+ ],
+ "payload": {
+  "slots": [
+   {
+    "slot_id": "featured",
+    "placement": "featured",
+    "purpose": "Hero and social share image: a caldera-edge ceremony set and ready above the Aegean, signalling the guide's promise of a clear plan.",
+    "shot_brief": "Official image from a caldera venue the guide names (preferred Canaves Oia, Oia; alternatives Grace Hotel, Imerovigli or Katikies, Oia): a ceremony set-up on a whitewashed terrace with the caldera and sea behind, chairs and florals in place, late spring or early autumn, golden-hour light. No people, or only distant unidentifiable figures; no signage. Landscape 3:2 with room for a title crop. Source: the venue's own media kit or press office with written permission (Gmail draft request, created by a human or a non-fast run, never sent by an agent), or licensed premium stock bought by a human and added to library-index.csv. Never AI, never a competitor, directory, planner, photographer-blog or search-result image. Location proven by the media kit, register row, EXIF or stock record, never by appearance.",
+    "status": "needed",
+    "file": "content/posts/santorini-wedding/images/santorini-wedding-canaves-oia-caldera-ceremony-hero.webp",
+    "source": {
+     "type": "venue_press",
+     "origin": "not yet sourced",
+     "credit": "[[VERIFY licence]]"
+    },
+    "location": {
+     "venue": "Canaves Oia (or Grace Hotel or Katikies)",
+     "town": "Oia",
+     "verified_by": "to be set from the media kit, register row, EXIF or stock record"
+    },
+    "licence_note": "[[IMAGE NEEDED]] Library register has no rows. Venue press image with written permission or licensed stock only; move to pending_permission once a permission draft exists."
+   },
+   {
+    "slot_id": "legal-or-symbolic",
+    "placement": "after_h2:1",
+    "purpose": "Quiet visual for the legal or symbolic decision, showing the ceremony moment without any paperwork.",
+    "shot_brief": "Ceremony detail at a named Santorini venue: an empty aisle and floral arch on a terrace facing the caldera, soft morning light. No documents, certificates, government emblems, religious items or identifiable people. Landscape 3:2. Source: the venue's own media kit or press office with written permission (Gmail draft request, created by a human or a non-fast run, never sent by an agent), or licensed premium stock bought by a human and added to library-index.csv. Never AI, never a competitor, directory, planner, photographer-blog or search-result image. Location proven by the media kit, register row, EXIF or stock record, never by appearance.",
+    "status": "needed",
+    "file": "content/posts/santorini-wedding/images/santorini-wedding-grace-hotel-ceremony-aisle.webp",
+    "source": {
+     "type": "venue_press",
+     "origin": "not yet sourced",
+     "credit": "[[VERIFY licence]]"
+    },
+    "location": {
+     "venue": "Grace Hotel (or another venue named in the guide)",
+     "town": "Imerovigli",
+     "verified_by": "to be set from the media kit, register row, EXIF or stock record"
+    },
+    "licence_note": "[[IMAGE NEEDED]] Venue press image with permission or licensed stock; nothing showing legal or religious paperwork."
+   },
+   {
+    "slot_id": "season",
+    "placement": "after_h2:2",
+    "purpose": "Sets the seasonal mood for choosing a month: the island in shoulder-season light.",
+    "shot_brief": "Destination landscape, no venue implied: the Oia or Fira caldera edge with whitewashed houses above the sea in late spring or early autumn, calm water, low warm sun. Real, named location and month recorded in the register. No people or only unidentifiable figures. Landscape 3:2. Source: Wedded Wonderland library (register row with licence) or licensed premium stock bought by a human and added to library-index.csv. Never AI, never a competitor, directory, planner, photographer-blog or search-result image. Location proven by the media kit, register row, EXIF or stock record, never by appearance.",
+    "status": "needed",
+    "file": "content/posts/santorini-wedding/images/santorini-wedding-oia-caldera-spring-light.webp",
+    "source": {
+     "type": "stock",
+     "origin": "not yet sourced",
+     "credit": "[[VERIFY licence]]"
+    },
+    "location": {
+     "venue": "none (destination landscape)",
+     "town": "Oia (or as recorded)",
+     "verified_by": "to be set from the media kit, register row, EXIF or stock record"
+    },
+    "licence_note": "[[IMAGE NEEDED]] Library or licensed stock only; never AI for a destination. Season in the caption must match the recorded date."
+   },
+   {
+    "slot_id": "setting-venue-type",
+    "placement": "after_h2:3",
+    "purpose": "Shows the venue-type choice beyond the caldera, balancing the caldera hero with a beach or estate setting.",
+    "shot_brief": "Official image from a venue named in the venue-type section (preferred Mystique, Oia, for a cliffside setting, or a named beach, winery or estate venue if the guide lists one): the ceremony or dinner spot, daylight or sunset, May to October. No identifiable guests, no signage. Use only a venue the section names as an example, so the image never implies a partnership the article does not describe. Landscape 3:2. Source: the venue's own media kit or press office with written permission (Gmail draft request, created by a human or a non-fast run, never sent by an agent), or licensed premium stock bought by a human and added to library-index.csv. Never AI, never a competitor, directory, planner, photographer-blog or search-result image. Location proven by the media kit, register row, EXIF or stock record, never by appearance.",
+    "status": "needed",
+    "file": "content/posts/santorini-wedding/images/santorini-wedding-mystique-oia-cliffside-terrace.webp",
+    "source": {
+     "type": "venue_press",
+     "origin": "not yet sourced",
+     "credit": "[[VERIFY licence]]"
+    },
+    "location": {
+     "venue": "Mystique (or another venue named in the section)",
+     "town": "Oia",
+     "verified_by": "to be set from the media kit, register row, EXIF or stock record"
+    },
+    "licence_note": "[[IMAGE NEEDED]] Venue press image with permission only. Swap the venue in the filename to whichever named venue's permission comes through first."
+   },
+   {
+    "slot_id": "guest-list",
+    "placement": "after_h2:4",
+    "purpose": "Gives scale to the guest-list step: an intimate long-table set-up sized for a small group.",
+    "shot_brief": "Official image from a named Santorini venue: a long dinner table set for a small group on a terrace at dusk, candles and linen, caldera or sea behind. No people, no legible menus or place cards. Landscape 3:2. Source: the venue's own media kit or press office with written permission (Gmail draft request, created by a human or a non-fast run, never sent by an agent), or licensed premium stock bought by a human and added to library-index.csv. Never AI, never a competitor, directory, planner, photographer-blog or search-result image. Location proven by the media kit, register row, EXIF or stock record, never by appearance.",
+    "status": "needed",
+    "file": "content/posts/santorini-wedding/images/santorini-wedding-katikies-oia-long-table-dinner.webp",
+    "source": {
+     "type": "venue_press",
+     "origin": "not yet sourced",
+     "credit": "[[VERIFY licence]]"
+    },
+    "location": {
+     "venue": "Katikies (or another venue named in the guide)",
+     "town": "Oia",
+     "verified_by": "to be set from the media kit, register row, EXIF or stock record"
+    },
+    "licence_note": "[[IMAGE NEEDED]] Venue press image with permission or licensed stock; must show a venue the article names."
+   },
+   {
+    "slot_id": "guest-travel",
+    "placement": "after_h2:5",
+    "purpose": "Grounds the travel step: arriving on the island by sea.",
+    "shot_brief": "Destination image, no venue implied: the old port below Fira or the caldera seen from the water in morning light. Real, named location recorded. No ferry, airline or car-hire logos, no number plates, no identifiable people, nothing suggesting transfer arrangements the article does not offer. Landscape 3:2. Source: Wedded Wonderland library (register row with licence) or licensed premium stock bought by a human and added to library-index.csv. Never AI, never a competitor, directory, planner, photographer-blog or search-result image. Location proven by the media kit, register row, EXIF or stock record, never by appearance.",
+    "status": "needed",
+    "file": "content/posts/santorini-wedding/images/santorini-wedding-fira-old-port-morning.webp",
+    "source": {
+     "type": "stock",
+     "origin": "not yet sourced",
+     "credit": "[[VERIFY licence]]"
+    },
+    "location": {
+     "venue": "none (destination)",
+     "town": "Fira (or as recorded)",
+     "verified_by": "to be set from the media kit, register row, EXIF or stock record"
+    },
+    "licence_note": "[[IMAGE NEEDED]] Library or licensed stock only; never AI for a destination."
+   },
+   {
+    "slot_id": "weekend",
+    "placement": "after_h2:8",
+    "purpose": "Brings the wedding weekend to life: a welcome or recovery event idea in a real Santorini setting.",
+    "shot_brief": "Destination or venue image: a sunset over the caldera from a terrace set for welcome drinks, or a calm beach morning at Perissa or Kamari for a recovery lunch. No identifiable people, no supplier branding. Landscape 3:2. Source: Wedded Wonderland library (register row with licence) or licensed premium stock bought by a human and added to library-index.csv. Never AI, never a competitor, directory, planner, photographer-blog or search-result image. Location proven by the media kit, register row, EXIF or stock record, never by appearance. A named venue's press image with written permission is an acceptable alternative.",
+    "status": "needed",
+    "file": "content/posts/santorini-wedding/images/santorini-wedding-caldera-sunset-welcome-drinks.webp",
+    "source": {
+     "type": "stock",
+     "origin": "not yet sourced",
+     "credit": "[[VERIFY licence]]"
+    },
+    "location": {
+     "venue": "none (destination) or a venue named in the guide",
+     "town": "to be set from the record",
+     "verified_by": "to be set from the media kit, register row, EXIF or stock record"
+    },
+    "licence_note": "[[IMAGE NEEDED]] Library, licensed stock or venue press with permission; never AI."
+   },
+   {
+    "slot_id": "checklist",
+    "placement": "after_h2:9",
+    "purpose": "A calm still life for the booking checklist, with no paperwork shown.",
+    "shot_brief": "Still life: a linen-bound planner closed on a timber table with a ribbon, a sprig of olive and soft daylight. No documents, passports, certificates, emblems, legible dates, figures or text, no real place. Landscape 3:2. Source: Canva brand kit, library or licensed stock. AI (Higgsfield) only if the person approves, with no place, venue, wedding or person, captioned 'Illustrative image'.",
+    "status": "needed",
+    "file": "content/posts/santorini-wedding/images/santorini-wedding-illustrative-linen-planner.webp",
+    "source": {
+     "type": "stock",
+     "origin": "not yet sourced",
+     "credit": "[[VERIFY licence]]"
+    },
+    "location": {
+     "venue": "none (still life, no real place)",
+     "town": "none",
+     "verified_by": "not applicable: no real place shown"
+    },
+    "licence_note": "[[IMAGE NEEDED]] Canva, library or stock first; AI only with the person's approval and labelled 'Illustrative image'."
+   }
+  ],
+  "reference_only": [],
+  "permission_requests": [
+   {
+    "venue": "Canaves Oia",
+    "gmail_draft_id": "",
+    "images": [
+     "Official unpeopled ceremony or terrace image"
+    ],
+    "status": "draft_wording_only: not created in Gmail, not sent; create only for venues confirmed in 03-source-pack"
+   },
+   {
+    "venue": "Grace Hotel Santorini",
+    "gmail_draft_id": "",
+    "images": [
+     "Official unpeopled ceremony or terrace image"
+    ],
+    "status": "draft_wording_only: not created in Gmail, not sent; create only for venues confirmed in 03-source-pack"
+   },
+   {
+    "venue": "Katikies",
+    "gmail_draft_id": "",
+    "images": [
+     "Official unpeopled ceremony or terrace image"
+    ],
+    "status": "draft_wording_only: not created in Gmail, not sent; create only for venues confirmed in 03-source-pack"
+   },
+   {
+    "venue": "Mystique",
+    "gmail_draft_id": "",
+    "images": [
+     "Official unpeopled ceremony or terrace image"
+    ],
+    "status": "draft_wording_only: not created in Gmail, not sent; create only for venues confirmed in 03-source-pack"
+   }
+  ],
+  "drive_findings": [
+   "Not searched: repo library register only per orchestrator instruction. library-index.csv has a header and no rows."
+  ]
+ }
+}
