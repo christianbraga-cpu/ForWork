@@ -300,7 +300,7 @@ The cost of a Santorini wedding moves with decisions you make in the steps above
 
 **Exclusive use versus spaces.** Grace Hotel's venue fee includes exclusive use of the event spaces you choose, rather than the hotel. <!-- fact_04 -->
 
-**Venue fee versus package.** Some venues charge a flat venue fee covering spaces, furniture, set-up, breakdown and staffing, while others work from wedding packages set out in a brochure. <!-- fact_04 --> <!-- fact_09 --> Compare inclusions line by line. To see which venues, dates and costs are actually free when you want them, [see real options with Wedded Concierge](https://weddedwonderland.com/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=santorini-wedding&utm_content=secondary).
+**Venue fee versus package.** Some venues charge a flat venue fee covering spaces, furniture, set-up, breakdown and staffing, while others work from wedding packages set out in a brochure. <!-- fact_04 --> <!-- fact_09 --> Compare inclusions line by line. To check which venues and dates are open for your wedding, [see real options with Wedded Concierge](https://weddedwonderland.com/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=santorini-wedding&utm_content=secondary).
 
 **A planner where the venue requires one.** At venues such as Grace Hotel, a wedding planner is required for every wedding, so their fee belongs in the plan from the start. <!-- fact_05 -->
 
