@@ -1,0 +1,224 @@
+{
+ "agent": "visual-curator",
+ "task_id": "wedding-in-crete",
+ "stage": "04",
+ "status": "needs_input",
+ "round": 1,
+ "inputs_used": [
+  "CLAUDE.md",
+  "content/posts/wedding-in-crete/00-input.json",
+  "content/posts/greece-wedding-packages/04-images.json (format model)",
+  "content/posts/crete-wedding-venues/08-final.md (venue names and areas only)",
+  "content-system/images/library-index.csv (header only, no rows)",
+  "content-system/images/sources-policy.md",
+  "content-system/schemas/04-images.schema.json",
+  "content-system/schemas/envelope.schema.json"
+ ],
+ "self_qa": {
+  "checks": [
+   {
+    "check": "Zero reference-only or competitor images in slots",
+    "pass": true
+   },
+   {
+    "check": "Every approved image has location, licence, alt, caption, fit_reason",
+    "note": "No approved images this run; alt and caption are written once a licensed file exists.",
+    "pass": true
+   },
+   {
+    "check": "No AI image depicting a real place",
+    "note": "AI offered only for the costs still life and as the timeline fallback, no place, venue, wedding or document shown, and only on the person's approval with 'Illustrative image'.",
+    "pass": true
+   },
+   {
+    "check": "Featured image exists (approved or needed with brief)",
+    "note": "Needed, with brief.",
+    "pass": true
+   },
+   {
+    "check": "Six slots covering featured, seasons, area, costs, getting there, timeline",
+    "pass": true
+   },
+   {
+    "check": "No em dashes, no figures or prices in briefs, nothing on legal or religious paperwork",
+    "pass": true
+   }
+  ],
+  "confidence": 0.75
+ },
+ "open_questions": [
+  {
+   "to": "person",
+   "question": "Do you approve an AI (Higgsfield) abstract still life for the 'What drives the cost' slot (blank card, pen, olive sprig on linen, nothing legible), captioned 'Illustrative image'? And as the fallback for the timeline still life if no library or stock image is found?",
+   "blocking": false
+  },
+  {
+   "to": "orchestrator",
+   "question": "Should a human find the press contacts for Elounda Beach and Avra Imperial and create the Gmail permission drafts, or should the curator do it in a non-fast run with Firecrawl and Gmail draft approval?",
+   "blocking": false
+  },
+  {
+   "to": "orchestrator",
+   "question": "Is there budget for licensed premium stock (Stocksy, Getty, Offset) for the two destination slots (seasons, getting there) and as a fallback for the venue slots?",
+   "blocking": false
+  }
+ ],
+ "assumptions": [
+  "01-brief.json and 02-seo.json are not yet written, so placements use working section names from 00-input; the writer maps them to after_h2:<n>.",
+  "Venue examples come from the Crete venues guide draft; the writer swaps a slot's venue if this guide's short venue list differs.",
+  "Drive, own site, Canva and press-kit searches were not run: repo register only, per instruction."
+ ],
+ "verify_items": [
+  "[[IMAGE NEEDED]] featured: Crete venue ceremony terrace hero (Elounda Beach or another named venue, press kit with permission)",
+  "[[IMAGE NEEDED]] seasons: Cretan coast in spring or early autumn (library or licensed stock)",
+  "[[IMAGE NEEDED]] choosing-area: west Crete venue ceremony spot (Avra Imperial or alternative, press kit with permission)",
+  "[[IMAGE NEEDED]] costs: abstract still life (AI only on approval, 'Illustrative image')",
+  "[[IMAGE NEEDED]] getting-there: Chania harbour or coastal road (library or licensed stock)",
+  "[[IMAGE NEEDED]] timeline: linen planner still life (library or stock; AI fallback only on approval)",
+  "[[VERIFY licence]] every venue press-kit and stock image: written permission or purchase, credit line and expiry recorded in library-index.csv before use"
+ ],
+ "tools_used": [
+  "Bash (cat/grep/python)"
+ ],
+ "next_agent": [
+  "luxury-writer"
+ ],
+ "payload": {
+  "slots": [
+   {
+    "slot_id": "featured",
+    "placement": "featured",
+    "purpose": "Hero and social share image: a Crete venue ceremony set and ready by the sea, signalling the guide's promise of season, venue and planning clarity.",
+    "shot_brief": "Official image from a Crete venue the guide names (preferred Elounda Beach Hotel & Villas or Elounda Peninsula All Suite Hotel, Elounda; alternatives St. Nicolas Bay or Minos Beach Art Hotel, Agios Nikolaos): a ceremony set-up on a sea-view terrace, lawn or jetty, chairs and floral arch in place, Mirabello Bay water behind, late spring or early autumn, golden-hour light. No people, or only distant unidentifiable figures; no signage. Landscape 3:2 with room for a title crop. Source: the venue's own media kit or press office with written permission (Gmail draft request, created by a human or a non-fast run, never sent by an agent), or licensed premium stock bought by a human and added to library-index.csv. Never AI, never a competitor, directory, planner, photographer-blog or search-result image. Location proven by the media kit, register row or EXIF, never by appearance.",
+    "status": "needed",
+    "file": "content/posts/wedding-in-crete/images/wedding-in-crete-elounda-beach-ceremony-terrace-hero.webp",
+    "source": {
+     "type": "venue_press",
+     "origin": "not yet sourced",
+     "credit": "[[VERIFY licence]]"
+    },
+    "location": {
+     "venue": "Elounda Beach Hotel & Villas (or another Crete venue named in the guide)",
+     "town": "Elounda",
+     "verified_by": "to be set from the media kit or register row"
+    },
+    "licence_note": "[[IMAGE NEEDED]] Library register has no rows (header only). Move to pending_permission once the venue's permission draft exists."
+   },
+   {
+    "slot_id": "seasons",
+    "placement": "after_h2: When to marry in Crete",
+    "purpose": "Sets the seasonal mood for the month-by-month section: the Cretan coast in the soft light of the shoulder season.",
+    "shot_brief": "Destination landscape, no venue implied: a Cretan coastline or hillside village above the sea in late spring (wildflowers, green hills) or early autumn (warm low sun, calm water). Real, named location recorded (for example the Mirabello Bay coast near Elounda or the Chania coast), season and month in the register. No people or only unidentifiable figures. Landscape 3:2. Source: Wedded Wonderland library (register row with licence) or licensed premium stock bought by a human and added to library-index.csv; a venue press image with written permission is an acceptable alternative. Never AI, never a competitor, directory, planner or search-result image. Location proven by register row, EXIF or the stock record, never by appearance.",
+    "status": "needed",
+    "file": "content/posts/wedding-in-crete/images/wedding-in-crete-mirabello-bay-coast-spring.webp",
+    "source": {
+     "type": "stock",
+     "origin": "not yet sourced (library or licensed stock)",
+     "credit": "[[VERIFY licence]]"
+    },
+    "location": {
+     "venue": "none (destination landscape)",
+     "town": "to be set from the register or stock record",
+     "verified_by": "to be set from the register row, EXIF or stock record"
+    },
+    "licence_note": "[[IMAGE NEEDED]] Library or licensed stock only; never AI for a destination. Season in the caption must match the image's recorded date."
+   },
+   {
+    "slot_id": "choosing-area",
+    "placement": "after_h2: Choosing an area and a venue",
+    "purpose": "Shows the west of the island so the east versus west choice is visual, balancing the east-coast hero.",
+    "shot_brief": "Official image from a west Crete venue named in this section (preferred Avra Imperial or Euphoria Resort, Kolymvari; alternative Sea View by En Kipo, Chania): the venue's sea-view ceremony spot or terrace with the Gulf of Chania behind, daylight or sunset, May to October. No identifiable guests, no signage. Landscape 3:2. Use only a venue the section names as an example, so the image never implies a partnership the article does not describe. Source: the venue's own media kit or press office with written permission (Gmail draft request, created by a human or a non-fast run, never sent by an agent), or licensed premium stock bought by a human and added to library-index.csv. Never AI, never a competitor, directory, planner, photographer-blog or search-result image. Location proven by the media kit, register row or EXIF, never by appearance.",
+    "status": "needed",
+    "file": "content/posts/wedding-in-crete/images/wedding-in-crete-avra-imperial-ceremony-terrace.webp",
+    "source": {
+     "type": "venue_press",
+     "origin": "not yet sourced",
+     "credit": "[[VERIFY licence]]"
+    },
+    "location": {
+     "venue": "Avra Imperial (or Euphoria Resort, or Sea View by En Kipo)",
+     "town": "Kolymvari (confirm from media kit)",
+     "verified_by": "to be set from the media kit or register row"
+    },
+    "licence_note": "[[IMAGE NEEDED]] Venue press image with written permission only. Swap the venue in the filename to whichever west Crete venue's permission comes through first."
+   },
+   {
+    "slot_id": "costs",
+    "placement": "after_h2: What drives the cost",
+    "purpose": "A calm, abstract visual for the cost-driver checklist, without any figures.",
+    "shot_brief": "Abstract still life, top-down: a blank folded card and a fountain pen on natural ivory linen, a sprig of olive and a small ceramic dish, soft window daylight, neutral palette. Nothing legible (no figures, currency, logos or venue names). No people, no real place. Landscape 3:2. AI (Higgsfield) allowed for this slot ONLY after the person approves it, and the caption must read 'Illustrative image'. No real place, venue, logo, currency, document or legible text or figures in frame. Preferred alternative: a Canva brand-kit or licensed stock still life.",
+    "status": "needed",
+    "file": "content/posts/wedding-in-crete/images/wedding-in-crete-illustrative-linen-pen-olive.webp",
+    "source": {
+     "type": "ai_illustrative",
+     "origin": "not generated: awaiting the person's approval to use AI for this abstract slot",
+     "credit": "Illustrative image"
+    },
+    "caption_planned": "Illustrative image",
+    "licence_note": "[[IMAGE NEEDED]] Canva or stock first; AI only on the person's approval; caption 'Illustrative image'."
+   },
+   {
+    "slot_id": "getting-there",
+    "placement": "after_h2: Getting there and getting around",
+    "purpose": "Grounds the travel section: arriving on the island and moving between coast and venue.",
+    "shot_brief": "Destination image, no venue implied: a coastal road winding above the sea in Crete, or the Venetian harbour at Chania or Heraklion in morning light. Real, named location recorded. No airline or car-hire logos, no number plates, no identifiable people. Landscape 3:2. Nothing that suggests transfer arrangements the article does not offer. Source: Wedded Wonderland library (register row with licence) or licensed premium stock bought by a human and added to library-index.csv; a venue press image with written permission is an acceptable alternative. Never AI, never a competitor, directory, planner or search-result image. Location proven by register row, EXIF or the stock record, never by appearance.",
+    "status": "needed",
+    "file": "content/posts/wedding-in-crete/images/wedding-in-crete-chania-harbour-morning.webp",
+    "source": {
+     "type": "stock",
+     "origin": "not yet sourced (library or licensed stock)",
+     "credit": "[[VERIFY licence]]"
+    },
+    "location": {
+     "venue": "none (destination)",
+     "town": "Chania (or as recorded in the register or stock record)",
+     "verified_by": "to be set from the register row, EXIF or stock record"
+    },
+    "licence_note": "[[IMAGE NEEDED]] Library or licensed stock only; never AI for a destination."
+   },
+   {
+    "slot_id": "timeline",
+    "placement": "after_h2: A planning timeline",
+    "purpose": "A quiet visual for the planning timeline: time and preparation, with no paperwork shown.",
+    "shot_brief": "Preferred: a Wedded Wonderland library or licensed stock still life: a linen-bound planner closed on a timber table, a ribbon, dried flowers and soft daylight. No documents, passports, certificates, government emblems, calendars with legible dates or any religious item. No real place. Landscape 3:2. Fallback: AI (Higgsfield) allowed for this slot ONLY after the person approves it, and the caption must read 'Illustrative image'. No real place, venue, logo, currency, document or legible text or figures in frame. Preferred alternative: a Canva brand-kit or licensed stock still life.",
+    "status": "needed",
+    "file": "content/posts/wedding-in-crete/images/wedding-in-crete-illustrative-linen-planner.webp",
+    "source": {
+     "type": "stock",
+     "origin": "not yet sourced (library or licensed stock preferred; AI fallback needs approval)",
+     "credit": "[[VERIFY licence]]"
+    },
+    "licence_note": "[[IMAGE NEEDED]] Library or stock first; AI only with approval and labelled 'Illustrative image'."
+   }
+  ],
+  "reference_only": [],
+  "permission_requests": [
+   {
+    "venue": "Elounda Beach Hotel & Villas",
+    "gmail_draft_id": "",
+    "images": [
+     "Official ceremony terrace or lawn set-up (no identifiable guests)"
+    ],
+    "planned_file": "content/posts/wedding-in-crete/images/wedding-in-crete-elounda-beach-ceremony-terrace-hero.webp",
+    "status": "draft_wording_only: not created in Gmail, not sent; create only for venues confirmed in 03-source-pack",
+    "press_or_contact_page": "not located: repo register only in this fast run; find it on the venue's own site",
+    "draft_subject": "Image permission request: Wedded Wonderland feature on Elounda Beach Hotel & Villas"
+   },
+   {
+    "venue": "Avra Imperial",
+    "gmail_draft_id": "",
+    "images": [
+     "Official sea-view ceremony spot or terrace, unpeopled"
+    ],
+    "planned_file": "content/posts/wedding-in-crete/images/wedding-in-crete-avra-imperial-ceremony-terrace.webp",
+    "status": "draft_wording_only: not created in Gmail, not sent; create only for venues confirmed in 03-source-pack",
+    "press_or_contact_page": "not located: repo register only in this fast run; find it on the venue's own site",
+    "draft_subject": "Image permission request: Wedded Wonderland feature on Avra Imperial"
+   }
+  ],
+  "drive_findings": [
+   "Not searched: repo library register only per orchestrator instruction. library-index.csv has a header and no rows."
+  ],
+  "permission_email_bodies_note": "Draft wording per venue = content-system/images/permission-email-template.md with {{venue_name}} = venue and {{post_title}} = 'Wedding in Crete Guide to Seasons, Venues and Costs'. No Gmail drafts created and nothing sent."
+ }
+}
