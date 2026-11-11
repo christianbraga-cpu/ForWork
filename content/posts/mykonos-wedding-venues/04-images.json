@@ -1,0 +1,301 @@
+{
+ "agent": "visual-curator",
+ "task_id": "mykonos-wedding-venues",
+ "stage": "04",
+ "status": "needs_input",
+ "round": 1,
+ "inputs_used": [
+  "CLAUDE.md",
+  "content/posts/mykonos-wedding-venues/00-input.json",
+  "content/posts/mykonos-wedding-venues/01-brief.json (not present at run time)",
+  "content/posts/corfu-wedding-venues/04-images.json (format model)",
+  "content-system/images/library-index.csv (header only, no rows)",
+  "content-system/images/sources-policy.md",
+  "content-system/schemas/04-images.schema.json",
+  "content/posts/greece-wedding-venues/03-source-pack*.json and greece-wedding-packages/03-source-pack*.json (Santa Marina and Myconian Collection status only)"
+ ],
+ "self_qa": {
+  "checks": [
+   {
+    "check": "Zero reference-only or competitor images in slots",
+    "pass": true,
+    "note": "reference_only is empty; no images downloaded."
+   },
+   {
+    "check": "Every approved image has location, licence, alt, caption, fit_reason",
+    "pass": true,
+    "note": "No approved images this run; alt and caption are written once a licensed file exists."
+   },
+   {
+    "check": "No AI image depicting a real place",
+    "pass": true,
+    "note": "No AI used; every slot is a real venue or area and excludes AI."
+   },
+   {
+    "check": "Featured image exists (approved or needed with brief)",
+    "pass": true,
+    "note": "Needed, with brief: whitewashed chapel ceremony at Santa Marina (alternative Myconian Collection)."
+   },
+   {
+    "check": "One slot per area section",
+    "pass": true,
+    "note": "Five area slots: Ornos and Town, south coast, Elia and Kalo Livadi, north, villas and event venues."
+   },
+   {
+    "check": "About 5 venue slots, named only for sourced venues",
+    "pass": true,
+    "note": "5 venue slots, 11 slots in total. Three named (Santa Marina, Myconian Collection, Grecotel Mykonos Lolita); two are per-area placeholders until 03-source-pack confirms the list."
+   }
+  ],
+  "confidence": 0.7
+ },
+ "open_questions": [
+  {
+   "to": "planner-sme",
+   "question": "Confirm the final Mykonos venues (03-source-pack) so venue-04 and venue-05 can be named, Santa Marina and Myconian Collection re-confirmed, and Grecotel Mykonos Lolita's town and area set.",
+   "blocking": false
+  },
+  {
+   "to": "orchestrator",
+   "question": "Should a human find each confirmed venue's press or media contact and create the Gmail drafts, or should the curator do it in a non-fast run with Firecrawl and Gmail draft approval?",
+   "blocking": false
+  },
+  {
+   "to": "orchestrator",
+   "question": "Is there budget for licensed premium stock (Stocksy, Getty, Offset) for the featured and area slots if press kits do not respond in time?",
+   "blocking": false
+  }
+ ],
+ "assumptions": [
+  "Placement is by section name because 02-seo.json is not yet written; the writer maps it to after_h2/h3 positions.",
+  "01-brief.json was not present; area names follow the 00-input venue selection note. Venue-04 and venue-05 are placeholders; no venue name was guessed.",
+  "Santa Marina and Myconian Collection are treated as confirmed from earlier Greece source packs. Grecotel Mykonos Lolita is named from 00-input only and is placed in the north area provisionally (00-input batch C groups it with the north); its town is a VERIFY item.",
+  "The writer may use a subset of venue slots if 11 images is too heavy; the featured and area slots are the priority."
+ ],
+ "verify_items": [
+  "[[IMAGE NEEDED]] featured: whitewashed chapel ceremony hero from Santa Marina (or Myconian Collection)",
+  "[[IMAGE NEEDED]] area-ornos-town, area-south-coast, area-elia-kalo-livadi, area-north, area-villas-events: official venue image or licensed stock",
+  "[[IMAGE NEEDED]] venue-01..venue-05: official image per confirmed venue (press kit with written permission or licensed stock)",
+  "[[VERIFY licence]] every venue press-kit image: written permission, credit line and expiry recorded in library-index.csv before use",
+  "[[VERIFY: Grecotel Mykonos Lolita town, area and official wedding page URL]]",
+  "[[VERIFY: official press or contact page for each confirmed venue, on its own site]]"
+ ],
+ "tools_used": [
+  "Bash (cat/grep/python)"
+ ],
+ "next_agent": [
+  "luxury-writer"
+ ],
+ "payload": {
+  "slots": [
+   {
+    "slot_id": "featured",
+    "placement": "featured",
+    "purpose": "Hero and social share image: a Cycladic chapel ceremony at a confirmed Mykonos venue, signalling a luxury Aegean wedding.",
+    "shot_brief": "Official image from Santa Marina, a Luxury Collection Resort (Ornos, Mykonos; its Weddings & Celebrations page describes a traditional whitewashed stone chapel and sea-view venues): the whitewashed chapel set for a ceremony, or the chapel with the sea-view terrace beyond, Aegean blue in frame, May to October, golden-hour light. Alternative: the small whitewashed chapel the Myconian Collection (Elia) describes. No people, or only distant unidentifiable figures; no other hotels' signage. Landscape 3:2 with room for a title crop. Source: the venue's own media kit or press office with written permission (Gmail draft request, never sent by an agent), or licensed premium stock bought by a human and added to library-index.csv. Never AI, never a competitor, directory, planner, photographer-blog or search-result image. Location proven by the media kit, register row or EXIF, never by appearance.",
+    "status": "needed",
+    "file": "content/posts/mykonos-wedding-venues/images/mykonos-wedding-venues-santa-marina-whitewashed-chapel-hero.webp",
+    "source": {
+     "type": "venue_press",
+     "origin": "not yet sourced",
+     "credit": "[[VERIFY licence]]"
+    },
+    "location": {
+     "venue": "Santa Marina, a Luxury Collection Resort (alternative: Myconian Collection)",
+     "town": "Ornos, Mykonos",
+     "verified_by": "pending: venue media kit"
+    },
+    "licence_note": "[[IMAGE NEEDED]] Library register has no rows (header only). Move to pending_permission once the permission draft exists. Only use a venue that stays confirmed in 03-source-pack."
+   },
+   {
+    "slot_id": "area-ornos-town",
+    "placement": "venues section: Agios Ioannis, Ornos, Agios Stefanos and Mykonos Town (area H2/H3 opener)",
+    "purpose": "Shows the west coast close to Mykonos Town: sheltered bays, whitewashed lanes and sunset over the Aegean.",
+    "shot_brief": "Official image from a venue confirmed in this area: Ornos Bay or Agios Ioannis from a venue terrace, or Mykonos Town's whitewashed houses and windmills seen from a venue, sunset or blue-hour light, no crowds, cruise ships or shop signage. May to October unless stated. No identifiable guests. Landscape 3:2. Source: the venue's own media kit or press office with written permission (Gmail draft request, never sent by an agent), or licensed premium stock bought by a human and added to library-index.csv. Never AI, never a competitor, directory, planner, photographer-blog or search-result image. Location proven by the media kit, register row or EXIF, never by appearance.",
+    "status": "needed",
+    "file": "content/posts/mykonos-wedding-venues/images/mykonos-wedding-venues-ornos-town-setting.webp",
+    "location": {
+     "venue": "one confirmed venue in Agios Ioannis, Ornos, Agios Stefanos and Mykonos Town",
+     "town": "Ornos",
+     "verified_by": "to be set from the media kit or register row"
+    },
+    "licence_note": "[[IMAGE NEEDED]] Must come from a venue featured in this area (never imply a venue not covered) or licensed stock of the real place; no AI."
+   },
+   {
+    "slot_id": "area-south-coast",
+    "placement": "venues section: Psarou, Platis Gialos and Paraga (area H2/H3 opener)",
+    "purpose": "Shows the south coast's sheltered sandy bays and beach-club setting.",
+    "shot_brief": "Official image from a venue confirmed in this area: a south-coast bay at Psarou, Platis Gialos or Paraga from a venue terrace or beach deck set for a ceremony, turquoise water, dry stone walls and whitewashed buildings on the slope, morning or golden-hour light, no beach crowds. May to October unless stated. No identifiable guests. Landscape 3:2. Source: the venue's own media kit or press office with written permission (Gmail draft request, never sent by an agent), or licensed premium stock bought by a human and added to library-index.csv. Never AI, never a competitor, directory, planner, photographer-blog or search-result image. Location proven by the media kit, register row or EXIF, never by appearance.",
+    "status": "needed",
+    "file": "content/posts/mykonos-wedding-venues/images/mykonos-wedding-venues-south-coast-setting.webp",
+    "location": {
+     "venue": "one confirmed venue in Psarou, Platis Gialos and Paraga",
+     "town": "Psarou",
+     "verified_by": "to be set from the media kit or register row"
+    },
+    "licence_note": "[[IMAGE NEEDED]] Must come from a venue featured in this area (never imply a venue not covered) or licensed stock of the real place; no AI."
+   },
+   {
+    "slot_id": "area-elia-kalo-livadi",
+    "placement": "venues section: Elia and Kalo Livadi (area H2/H3 opener)",
+    "purpose": "Shows the quieter south-east beaches: long sandy bays below terraced hillsides.",
+    "shot_brief": "Official image from a venue confirmed in this area: Elia or Kalo Livadi bay from a venue terrace, pool deck or private beach spot, wide sand and open Aegean, golden-hour light, no crowds. May to October unless stated. No identifiable guests. Landscape 3:2. Source: the venue's own media kit or press office with written permission (Gmail draft request, never sent by an agent), or licensed premium stock bought by a human and added to library-index.csv. Never AI, never a competitor, directory, planner, photographer-blog or search-result image. Location proven by the media kit, register row or EXIF, never by appearance.",
+    "status": "needed",
+    "file": "content/posts/mykonos-wedding-venues/images/mykonos-wedding-venues-elia-kalo-livadi-setting.webp",
+    "location": {
+     "venue": "one confirmed venue in Elia and Kalo Livadi",
+     "town": "Elia",
+     "verified_by": "to be set from the media kit or register row"
+    },
+    "licence_note": "[[IMAGE NEEDED]] Must come from a venue featured in this area (never imply a venue not covered) or licensed stock of the real place; no AI."
+   },
+   {
+    "slot_id": "area-north",
+    "placement": "venues section: Agios Sostis, Ftelia and Houlakia (area H2/H3 opener)",
+    "purpose": "Shows the wilder north coast: undeveloped coves, rocky headlands and open sea.",
+    "shot_brief": "Official image from a venue confirmed in this area: a north-coast cove at Agios Sostis, Ftelia or Houlakia seen from a venue terrace or chapel, rugged headland, deep blue water, low Cycladic buildings, late-afternoon light. May to October unless stated. No identifiable guests. Landscape 3:2. Source: the venue's own media kit or press office with written permission (Gmail draft request, never sent by an agent), or licensed premium stock bought by a human and added to library-index.csv. Never AI, never a competitor, directory, planner, photographer-blog or search-result image. Location proven by the media kit, register row or EXIF, never by appearance.",
+    "status": "needed",
+    "file": "content/posts/mykonos-wedding-venues/images/mykonos-wedding-venues-north-setting.webp",
+    "location": {
+     "venue": "one confirmed venue in Agios Sostis, Ftelia and Houlakia",
+     "town": "Agios Sostis",
+     "verified_by": "to be set from the media kit or register row"
+    },
+    "licence_note": "[[IMAGE NEEDED]] Must come from a venue featured in this area (never imply a venue not covered) or licensed stock of the real place; no AI."
+   },
+   {
+    "slot_id": "area-villas-events",
+    "placement": "venues section: Private villas and event venues (area H2/H3 opener)",
+    "purpose": "Shows the private villa option: a whitewashed hillside villa terrace with an infinity pool and sea view.",
+    "shot_brief": "Official image from a venue confirmed in this area: a confirmed private villa or event venue: whitewashed terrace and infinity pool above the Aegean set for a ceremony or long-table dinner, sunset light. May to October unless stated. No identifiable guests. Landscape 3:2. Source: the venue's own media kit or press office with written permission (Gmail draft request, never sent by an agent), or licensed premium stock bought by a human and added to library-index.csv. Never AI, never a competitor, directory, planner, photographer-blog or search-result image. Location proven by the media kit, register row or EXIF, never by appearance.",
+    "status": "needed",
+    "file": "content/posts/mykonos-wedding-venues/images/mykonos-wedding-venues-villas-events-setting.webp",
+    "location": {
+     "venue": "one confirmed venue in Private villas and event venues",
+     "town": "Mykonos",
+     "verified_by": "to be set from the media kit or register row"
+    },
+    "licence_note": "[[IMAGE NEEDED]] Must come from a venue featured in this area (never imply a venue not covered) or licensed stock of the real place; no AI."
+   },
+   {
+    "slot_id": "venue-01",
+    "placement": "venues section: Agios Ioannis, Ornos, Agios Stefanos and Mykonos Town, entry: Santa Marina, a Luxury Collection Resort",
+    "purpose": "Shows Santa Marina, a Luxury Collection Resort itself so the reader can judge its Cycladic setting and ceremony space against the other entries.",
+    "shot_brief": "Official image of Santa Marina, a Luxury Collection Resort (Ornos, Mykonos): the sea-view venues or private sandy beach on its peninsula at the southern tip of Ornos Bay, set for a wedding. May to October, natural daylight or golden hour. No identifiable guests, children or couples unless the venue confirms consent. Landscape 3:2. Source: the venue's own media kit or press office with written permission (Gmail draft request, never sent by an agent), or licensed premium stock bought by a human and added to library-index.csv. Never AI, never a competitor, directory, planner, photographer-blog or search-result image. Location proven by the media kit, register row or EXIF, never by appearance.",
+    "status": "needed",
+    "file": "content/posts/mykonos-wedding-venues/images/mykonos-wedding-venues-santa-marina-ceremony-setting.webp",
+    "location": {
+     "venue": "Santa Marina, a Luxury Collection Resort",
+     "town": "Ornos, Mykonos",
+     "verified_by": "pending: venue media kit"
+    },
+    "licence_note": "[[IMAGE NEEDED]] Venue status: confirmed in the Greece venue and package source packs (Weddings & Celebrations page: whitewashed stone chapel, sea-view venues); re-check live in stage 03. If the venue is swapped, rename this slot and file."
+   },
+   {
+    "slot_id": "venue-02",
+    "placement": "venues section: Elia and Kalo Livadi, entry: Myconian Collection",
+    "purpose": "Shows Myconian Collection itself so the reader can judge its Cycladic setting and ceremony space against the other entries.",
+    "shot_brief": "Official image of Myconian Collection (Elia, Mykonos): the small whitewashed chapel, a beach reception on Elia Beach or the Horizons Ballroom set for a wedding. May to October, natural daylight or golden hour. No identifiable guests, children or couples unless the venue confirms consent. Landscape 3:2. Source: the venue's own media kit or press office with written permission (Gmail draft request, never sent by an agent), or licensed premium stock bought by a human and added to library-index.csv. Never AI, never a competitor, directory, planner, photographer-blog or search-result image. Location proven by the media kit, register row or EXIF, never by appearance.",
+    "status": "needed",
+    "file": "content/posts/mykonos-wedding-venues/images/mykonos-wedding-venues-myconian-collection-ceremony-setting.webp",
+    "location": {
+     "venue": "Myconian Collection",
+     "town": "Elia, Mykonos",
+     "verified_by": "pending: venue media kit"
+    },
+    "licence_note": "[[IMAGE NEEDED]] Venue status: confirmed in the Greece venue and package source packs (weddings page: whitewashed chapel, beach or restaurant reception, Horizons Ballroom); re-check live in stage 03. If the venue is swapped, rename this slot and file."
+   },
+   {
+    "slot_id": "venue-03",
+    "placement": "venues section: Agios Sostis, Ftelia and Houlakia, entry: Grecotel Mykonos Lolita",
+    "purpose": "Shows Grecotel Mykonos Lolita itself so the reader can judge its Cycladic setting and ceremony space against the other entries.",
+    "shot_brief": "Official image of Grecotel Mykonos Lolita ([[VERIFY: town]], Mykonos): the private chapel the Grecotel wedding page describes 'with infinite views to the Aegean sea', set for a ceremony. May to October, natural daylight or golden hour. No identifiable guests, children or couples unless the venue confirms consent. Landscape 3:2. Source: the venue's own media kit or press office with written permission (Gmail draft request, never sent by an agent), or licensed premium stock bought by a human and added to library-index.csv. Never AI, never a competitor, directory, planner, photographer-blog or search-result image. Location proven by the media kit, register row or EXIF, never by appearance.",
+    "status": "needed",
+    "file": "content/posts/mykonos-wedding-venues/images/mykonos-wedding-venues-mykonos-lolita-ceremony-setting.webp",
+    "location": {
+     "venue": "Grecotel Mykonos Lolita",
+     "town": "[[VERIFY: town]], Mykonos",
+     "verified_by": "pending: venue media kit"
+    },
+    "licence_note": "[[IMAGE NEEDED]] Venue status: named in 00-input from the Grecotel wedding page; not yet in a source pack; confirm live and confirm its area in stage 03, then move this slot to the right area. If the venue is swapped, rename this slot and file."
+   },
+   {
+    "slot_id": "venue-04",
+    "placement": "venues section: Psarou, Platis Gialos and Paraga, entry: first confirmed venue in Psarou, Platis Gialos or Paraga (from 03-source-pack)",
+    "purpose": "Shows the venue itself so the reader can judge its Cycladic setting and ceremony space against the other entries.",
+    "shot_brief": "Official image of first confirmed venue in Psarou, Platis Gialos or Paraga (from 03-source-pack) (Psarou, Platis Gialos or Paraga): the sea-view ceremony or reception space the venue's own site describes, terrace, beach or chapel, set for a wedding. May to October, natural daylight or golden hour. No identifiable guests, children or couples unless the venue confirms consent. Landscape 3:2. Source: the venue's own media kit or press office with written permission (Gmail draft request, never sent by an agent), or licensed premium stock bought by a human and added to library-index.csv. Never AI, never a competitor, directory, planner, photographer-blog or search-result image. Location proven by the media kit, register row or EXIF, never by appearance.",
+    "status": "needed",
+    "file": "content/posts/mykonos-wedding-venues/images/mykonos-wedding-venues-south-coast-venue-ceremony-setting.webp",
+    "location": {
+     "venue": "first confirmed venue in Psarou, Platis Gialos or Paraga (from 03-source-pack)",
+     "town": "Psarou, Platis Gialos or Paraga",
+     "verified_by": "pending: venue media kit"
+    },
+    "licence_note": "[[IMAGE NEEDED]] Venue status: not yet chosen. If the venue is swapped, rename this slot and file."
+   },
+   {
+    "slot_id": "venue-05",
+    "placement": "venues section: Private villas and event venues, entry: first confirmed private villa or event venue (from 03-source-pack)",
+    "purpose": "Shows the venue itself so the reader can judge its Cycladic setting and ceremony space against the other entries.",
+    "shot_brief": "Official image of first confirmed private villa or event venue (from 03-source-pack) (Mykonos): the terrace, pool deck or garden the venue's own site describes, set for a ceremony or dinner. May to October, natural daylight or golden hour. No identifiable guests, children or couples unless the venue confirms consent. Landscape 3:2. Source: the venue's own media kit or press office with written permission (Gmail draft request, never sent by an agent), or licensed premium stock bought by a human and added to library-index.csv. Never AI, never a competitor, directory, planner, photographer-blog or search-result image. Location proven by the media kit, register row or EXIF, never by appearance.",
+    "status": "needed",
+    "file": "content/posts/mykonos-wedding-venues/images/mykonos-wedding-venues-villa-venue-ceremony-setting.webp",
+    "location": {
+     "venue": "first confirmed private villa or event venue (from 03-source-pack)",
+     "town": "Mykonos",
+     "verified_by": "pending: venue media kit"
+    },
+    "licence_note": "[[IMAGE NEEDED]] Venue status: not yet chosen. If the venue is swapped, rename this slot and file."
+   }
+  ],
+  "reference_only": [],
+  "permission_requests": [
+   {
+    "venue": "Santa Marina, a Luxury Collection Resort",
+    "region": "Ornos, Mykonos",
+    "gmail_draft_id": "",
+    "official_site": "https://www.santa-marina.gr/weddings-celebrations/",
+    "press_or_contact_page": "not located: repo register only in this fast run; find the press, media or weddings contact on the venue's own site",
+    "images": [
+     "Official chapel or sea-view ceremony setting (no identifiable guests)",
+     "Official exterior or view"
+    ],
+    "planned_file": "content/posts/mykonos-wedding-venues/images/mykonos-wedding-venues-santa-marina-ceremony-setting.webp",
+    "status": "draft_wording_only: not created in Gmail, not sent; create once the venue stays confirmed in 03-source-pack",
+    "draft_subject": "Image permission request: Wedded Wonderland feature on Santa Marina, a Luxury Collection Resort"
+   },
+   {
+    "venue": "Myconian Collection",
+    "region": "Elia, Mykonos",
+    "gmail_draft_id": "",
+    "official_site": "https://www.myconiancollection.gr/mykonos-events/weddings/",
+    "press_or_contact_page": "not located: repo register only in this fast run; find the press, media or weddings contact on the venue's own site",
+    "images": [
+     "Official chapel or sea-view ceremony setting (no identifiable guests)",
+     "Official exterior or view"
+    ],
+    "planned_file": "content/posts/mykonos-wedding-venues/images/mykonos-wedding-venues-myconian-collection-ceremony-setting.webp",
+    "status": "draft_wording_only: not created in Gmail, not sent; create once the venue stays confirmed in 03-source-pack",
+    "draft_subject": "Image permission request: Wedded Wonderland feature on Myconian Collection"
+   },
+   {
+    "venue": "Grecotel Mykonos Lolita",
+    "region": "Mykonos",
+    "gmail_draft_id": "",
+    "official_site": "[[VERIFY: Grecotel Mykonos Lolita wedding page URL]]",
+    "press_or_contact_page": "not located: repo register only in this fast run; find the press, media or weddings contact on the venue's own site",
+    "images": [
+     "Official chapel or sea-view ceremony setting (no identifiable guests)",
+     "Official exterior or view"
+    ],
+    "planned_file": "content/posts/mykonos-wedding-venues/images/mykonos-wedding-venues-mykonos-lolita-ceremony-setting.webp",
+    "status": "draft_wording_only: not created in Gmail, not sent; create once the venue stays confirmed in 03-source-pack",
+    "draft_subject": "Image permission request: Wedded Wonderland feature on Grecotel Mykonos Lolita"
+   }
+  ],
+  "drive_findings": [
+   "Not searched: fast mode, repo library register only per orchestrator instruction. library-index.csv has a header and no rows."
+  ],
+  "permission_email_bodies_note": "Draft wording per venue = content-system/images/permission-email-template.md with {{venue_name}} = venue, {{post_title}} = '10 Mykonos Wedding Venues for a Cycladic Celebration', images as listed. No Gmail drafts created and nothing sent."
+ }
+}
