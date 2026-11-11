@@ -1,0 +1,231 @@
+{
+  "agent": "icp-panel-chair",
+  "task_id": "mykonos-wedding-venues",
+  "stage": "07b",
+  "status": "revision",
+  "round": 1,
+  "inputs_used": [
+    "content/posts/mykonos-wedding-venues/07-icp/planner_couple.json",
+    "content/posts/mykonos-wedding-venues/07-icp/funding_parent.json",
+    "content/posts/mykonos-wedding-venues/07-icp/uhnw.json",
+    "content/posts/mykonos-wedding-venues/07-icp/sceptic.json",
+    "content/posts/mykonos-wedding-venues/07-icp/search_visitor.json",
+    "content-system/personas/*.yaml",
+    "content/posts/mykonos-wedding-venues/01-brief.json",
+    "content/posts/mykonos-wedding-venues/06-edit.json",
+    "content/posts/mykonos-wedding-venues/05-draft-r2.md",
+    "content-system/rubrics/qa-gates.md",
+    "content-system/schemas/07-panel.schema.json",
+    "content/posts/corfu-wedding-venues/07-panel.json"
+  ],
+  "payload": {
+    "personas_run": [
+      "planner_couple",
+      "funding_parent",
+      "uhnw",
+      "sceptic",
+      "search_visitor"
+    ],
+    "weighted_scores": {
+      "relevance_to_me": 4.3,
+      "trust": 3.4,
+      "clarity": 4.0,
+      "brand_feels_premium": 3.8,
+      "likelihood_to_enquire": 2.6
+    },
+    "weighted_enquiry_likelihood": 2.6,
+    "must_fix": [
+      {
+        "issue": "Legal FAQ still opens on a hotel's wording. The sceptic lost trust (medium) because 'Can Australians legally get married in Mykonos?' was answered with Grecotel Mykonos Lolita listing civil weddings, which does not show a legally registered Greek marriage; the planner couple (primary) was confused on the same point. r2 fixed the Lolita entry ('so ask the hotel how a civil ceremony there works for an Australian couple') but the FAQ answer still puts the Lolita sentence second, ahead of the Smartraveller facts. A trust loss about legality, so must-fix.",
+        "flagged_by": [
+          "sceptic",
+          "planner_couple"
+        ],
+        "owner": "luxury-writer",
+        "fix": "In the FAQ 'Can Australians legally get married in Mykonos?', replace 'Plan the legal steps first. Grecotel Mykonos Lolita lists civil weddings at its chapel. <!-- fact_204 --> As at November 2026,' with 'Plan the legal steps first. As at November 2026,'. Leave the rest of the answer (fact_309, fact_310) unchanged. Leave the legal section sentence 'Some venues say which they host: Grecotel Mykonos Lolita lists religious, civil and symbolic weddings at its chapel. <!-- fact_204 -->' and the Lolita entry close 'This is the only venue on the list that names civil weddings at its chapel, so ask the hotel how a civil ceremony there works for an Australian couple. <!-- fact_204 -->' as they are. Add no legal claim, and nothing implying Wedded Wonderland or the Wedded Advisor handles legal, church or religious paperwork."
+      },
+      {
+        "issue": "The at-a-glance table's Exclusive use column is 'Not published' in nine of ten rows, and the six columns need a sideways swipe on a phone. Raised by three personas: search_visitor (wasted swipe), funding_parent (confused by the boxes on an iPad) and planner_couple (primary: the column is blank nine times out of ten). Exclusive use is still compared, venue by venue, in each entry's 'Exclusive use' bullet, in 'Capacity, rooms and exclusive use' and in the FAQ, so dropping the column loses no fact.",
+        "flagged_by": [
+          "search_visitor",
+          "funding_parent",
+          "planner_couple"
+        ],
+        "owner": "luxury-writer",
+        "fix": "Replace the header '| Venue | Area | Type | Ceremony options | Largest published capacity | Exclusive use |\n|---|---|---|---|---|---|' with '| Venue | Area | Type | Ceremony options | Largest published capacity |\\n|---|---|---|---|---|' and delete the last cell from every row (nine rows end ' Not published |'; the Katikies row ends ' Not published for this hotel; Katikies Hotels lists a hotel take-over group-wide <!-- fact_09 --> |'). Keep every other cell and every fact comment exactly as written. Do not swap in a Rooms column: only Mykonos Blu publishes a room count, so it would be another column of blanks. Note for cms-publisher: the table must still scroll horizontally on mobile."
+      }
+    ],
+    "should_fix": [
+      {
+        "issue": "Each venue closes with a 'Not published:' line that mostly repeats the bullets directly above it (search_visitor: 'same gap said twice per venue'; funding_parent: 'by the fifth or sixth venue the Not published lines all blur together'). Curfew, the only item not in the bullets, is already covered once for the whole guide by 'from curfew to minimum nights' in 'Capacity, rooms and exclusive use', and chapel capacity by 'No chapel publishes a guest count except Mykonos Grand's.'",
+        "flagged_by": [
+          "search_visitor",
+          "funding_parent"
+        ],
+        "owner": "luxury-writer",
+        "fix": "Delete these closing lines: '- **Not published:** capacity, room count, exclusive use, curfew.'; '- **Not published:** room count, ceremony types, curfew.'; '- **Not published:** room count, exclusive use, curfew, the chapel's capacity.'; '- **Not published:** ceremony types, exclusive use, curfew.'; '- **Not published:** ceremony venue and types, room count, exclusive use, curfew.'; '- **Not published:** capacity, chapel location, room count, exclusive use.'; '- **Not published:** room count, exclusive use, curfew, chapel capacity.'; '- **Not published:** capacity, exclusive use, curfew, ceremony types.' (the first appears twice, Santa Marina and Grecotel Mykonos Lolita; delete both). For Mykonos Grand, replace '- **Not published:** room count, exclusive use, curfew, reception capacity.' with '- **Not published:** reception capacity.' because that one gap appears nowhere else in the entry. Keep every 'Capacity', 'Rooms' and 'Exclusive use' bullet exactly as written."
+      },
+      {
+        "issue": "Questions readers could not answer that belong on the couple's venue list. Step-free access is already asked (r2) and whole-property closure is already asked, but transfers for guests who would rather not drive are not. Raised by funding_parent, planner_couple and uhnw; they also asked whether Wedded Wonderland arranges transfers, which is a deferred business detail, so this is should-fix copy only, framed as a question to the venue.",
+        "flagged_by": [
+          "funding_parent",
+          "planner_couple",
+          "uhnw"
+        ],
+        "owner": "luxury-writer",
+        "fix": "Replace 'Add three questions to every list: is there a step-free route between rooms, ceremony and reception; what is the plan on a windy afternoon; and what time must the music stop?' with 'Add four questions to every list: is there a step-free route between rooms, ceremony and reception; can the venue organise transfers for guests who would rather not drive; what is the plan on a windy afternoon; and what time must the music stop?' Keep 'For every other venue here, ask whether the wedding spaces, or the whole property, can be closed to other guests.' unchanged (it already asks the closure question). Make no access, transfer or closure claim about any venue and do not say Wedded Wonderland or the Wedded Advisor arranges transfers."
+      },
+      {
+        "issue": "The arrival section ends on 'ask each for its transfer time' with nothing for older guests. funding_parent will not put an 88-year-old on the bus; planner_couple (primary) asked what to plan for older or long-haul guests. No venue in the pack publishes an airport transfer time, so the fix is a question, not a figure.",
+        "flagged_by": [
+          "funding_parent",
+          "planner_couple"
+        ],
+        "owner": "luxury-writer",
+        "fix": "Replace 'Most venues do not publish a distance from the airport, so ask each for its transfer time before guests book.' with 'Most venues do not publish a distance from the airport, so ask each for its transfer time before guests book, and how long the trip takes for older guests.' No estimated drive times, no private-transfer claims, nothing saying who arranges transfers."
+      },
+      {
+        "issue": "ZeNIT's standout says the indoor hall means 'the celebration can go ahead in any weather', but the entry also says capacity is not published, so the page cannot show the hall holds the whole guest list. The sceptic listed it as an unsupported claim; under the no-invented-facts rule the page's own inference goes.",
+        "flagged_by": [
+          "sceptic"
+        ],
+        "owner": "luxury-writer",
+        "fix": "Replace '- **Standout:** A 20 m infinity pool facing the sea and Delos, two cocktail bars, an open-view kitchen and a central indoor hall, so the celebration can go ahead in any weather. <!-- fact_406 -->' with '- **Standout:** A 20 m infinity pool facing the sea and Delos, two cocktail bars, an open-view kitchen and a central indoor hall. <!-- fact_406 --> Ask whether the hall holds your full guest list if the weather turns.'"
+      }
+    ],
+    "consider": [
+      {
+        "issue": "The first key takeaway repeats the intro word for word in substance; takeaways are the one part search_visitor always reads.",
+        "flagged_by": [
+          "search_visitor"
+        ],
+        "owner": "luxury-writer",
+        "fix": "Replace '- Four of these ten venues sit on the west coast at Agios Ioannis and Ornos, near Mykonos Town, while the rest spread along the south coast, Elia, the north coast and a hilltop above Paradise beach.' with '- Start on the west coast if guests want to be near Mykonos Town, look south for beach receptions, and look north for privacy and a chapel.' Keep exactly four one-sentence takeaways; leave the other three unchanged. Keep 'A simple rule: if guests want to be near town, start on the west coast. If you want the beach in every photograph, look south. If you want privacy and a chapel, look north.' in 'Choosing an area of the island'."
+      },
+      {
+        "issue": "The same six chapel venues are listed in the compare section, in 'Where the chapels are' and in the FAQ. Keep the full picture in 'Where the chapels are' plus one other mention (the FAQ, which answers a search question).",
+        "flagged_by": [
+          "search_visitor"
+        ],
+        "owner": "luxury-writer",
+        "fix": "Replace 'Several venues pair a chapel ceremony with a beach or sea-view reception at the same property. Santa Marina, Mykonos Grand, Saint John, the Myconian Collection, the Myconian Ambassador and Grecotel Mykonos Lolita all describe a chapel. <!-- fact_01 --> <!-- fact_05 --> <!-- fact_401 --> <!-- fact_200 --> <!-- fact_105 --> <!-- fact_204 -->' with 'Several venues pair a chapel ceremony with a beach or sea-view reception at the same property; [Where the chapels are](#where-the-chapels-are) sets out all six.' Leave the FAQ answer beginning 'Yes. Santa Marina, Mykonos Grand, Saint John, the Myconian Ambassador, the Myconian Collection's Elia hotels and Grecotel Mykonos Lolita all describe a chapel.' and the takeaway on chapel rules unchanged."
+      },
+      {
+        "issue": "Mykonos Blu and Katikies open on the hotels' brochure lines ('enchanting sunset', 'sun kissed beach'), the phrasing the primary couple skims past and fears makes Mykonos read as tacky. Low severity, primary persona.",
+        "flagged_by": [
+          "planner_couple"
+        ],
+        "owner": "luxury-writer",
+        "fix": "Replace '[Mykonos Blu](https://www.grecotel.com/mykonosblu/weddings-mykonos/) hosts weddings and vow renewals on Psarou beach, \"with the enchanting sunset as a backdrop\", with dedicated wedding specialists and customised menus. <!-- fact_100 --> <!-- fact_101 -->' with '[Mykonos Blu](https://www.grecotel.com/mykonosblu/weddings-mykonos/) is a Grecotel beachfront resort on the Psarou waterfront that hosts weddings and vow renewals, with dedicated wedding specialists and customised menus. <!-- fact_100 --> <!-- fact_101 --> <!-- fact_106 -->'. Replace '[Katikies Mykonos](https://www.katikies.com/events/) is a five-star hotel set \"above the sun kissed beach of Agios Ioannis\". <!-- fact_11 -->' with '[Katikies Mykonos](https://www.katikies.com/events/) is a five-star hotel above Agios Ioannis beach. <!-- fact_11 -->'. Leave the bullets below both unchanged."
+      },
+      {
+        "issue": "The packages link reads as if a resort package is the default way to compare, which uhnw read as being filed as a standard client. The link itself is a required both-ways internal link in the brief, so the wording changes and the link stays.",
+        "flagged_by": [
+          "uhnw"
+        ],
+        "owner": "luxury-writer",
+        "fix": "Replace 'If you are weighing a resort package against a venue on its own terms, our guide to [Greece wedding packages](https://weddedwonderland.com/destination-weddings/greece-wedding-packages) sets out how they compare.' with 'If a venue offers its own wedding package, our guide to [Greece wedding packages](https://weddedwonderland.com/destination-weddings/greece-wedding-packages) sets out how to compare it with booking the venue on its own terms.' Keep the URL exactly."
+      },
+      {
+        "issue": "'Complimentary' frames the Mykonos Grand shuttle as an inclusion (uhnw: value talk). The primary couple valued the shuttle itself ('I'm not organising taxis for 80 people'), so the shuttle stays and only the word goes.",
+        "flagged_by": [
+          "uhnw"
+        ],
+        "owner": "luxury-writer",
+        "fix": "Replace '- **Standout:** An open-air amphitheatre, and a complimentary evening shuttle to Mykonos Town for guests who want a night in town. <!-- fact_06 -->' with '- **Standout:** An open-air amphitheatre, and an evening shuttle to Mykonos Town for guests who want a night in town. <!-- fact_06 -->'"
+      },
+      {
+        "issue": "A large family has to read all ten entries to find its path. uhnw asked for one line grouping the large-wedding options already on the page.",
+        "flagged_by": [
+          "uhnw"
+        ],
+        "owner": "luxury-writer",
+        "fix": "After 'Petasos lists banquet seating for 280 at its pool, the Myconian Collection's Horizons Ballroom seats 270 at round tables, and Saint John organises weddings of up to 800 guests. <!-- fact_104 --> <!-- fact_201 --> <!-- fact_402 -->' add: 'For a guest list in the hundreds, the published options are Saint John (up to 800), Petasos (up to 500 for cocktails at its pool) and the Horizons Ballroom in Elia (up to 550 for cocktails). <!-- fact_402 --> <!-- fact_104 --> <!-- fact_201 -->' No other venue may be added to this line, and no exclusive-use, rooms or security claim."
+      },
+      {
+        "issue": "First Concierge link sits straight after the table, before any venue is described (sceptic, low). The wording is conditional ('When you have three or four names') and the primary couple did not object.",
+        "flagged_by": [
+          "sceptic"
+        ],
+        "owner": "cro-specialist",
+        "fix": "No copy change in this revision. cro-specialist may review placement of 'When you have three or four names, [book a Wedded Concierge consultation]' at the next CTA pass."
+      }
+    ],
+    "keep": [
+      "Intro: five areas, then 'The right one depends on how many guests you are inviting, the ceremony you want and how your guests will move around the island.' (all five personas kept reading; calm, criteria first)",
+      "Key takeaway on capacity range, 25 in the Mykonos Grand chapel to 800 at Saint John (search_visitor's screenshot line; kept uhnw reading)",
+      "The Christian Orthodox rule at Mykonos Grand, in the takeaway, table, entry and FAQ (planner_couple, funding_parent, sceptic, search_visitor)",
+      "Table framing: 'It is not a ranking. \"Not published\" means the venue does not state the detail.' and honest 'Not published' cells (planner_couple, sceptic)",
+      "The step-free / windy afternoon / music curfew question list in 'Capacity, rooms and exclusive use' (funding_parent, planner_couple)",
+      "'Anything this guide marks \"Not published\", from curfew to minimum nights, needs an answer in writing before you commit' and its secondary CTA (funding_parent, planner_couple)",
+      "The closure question 'For every other venue here, ask whether the wedding spaces, or the whole property, can be closed to other guests.' (uhnw)",
+      "'A simple rule: if guests want to be near town, start on the west coast...' (planner_couple screenshot, search_visitor)",
+      "Petasos per-space, per-layout capacities (sceptic, uhnw)",
+      "Mykonos Blu ceremony 60 / reception 120 split (planner_couple, search_visitor)",
+      "Saint John 'at additional charge' and the two indoor reception spaces for windy evenings (sceptic, funding_parent)",
+      "Myconian Collection: certified halal and kosher kitchens, South Asian chef, Horizons Ballroom semi-open and divisible, multi-day / multicultural line (uhnw, sceptic, search_visitor)",
+      "Myconian Ambassador 'experts in romance and discretion' (uhnw)",
+      "Katikies children-above-13 policy (search_visitor, sceptic)",
+      "ZeNIT 'On the day' bullet: physician and medical room, security with CCTV, transfers ZeNIT runs for up to 16 guests (funding_parent, planner_couple, sceptic, search_visitor, uhnw)",
+      "Dated Smartraveller heat and wildfire advice, 'As at November 2026' (funding_parent, search_visitor)",
+      "Closing section: one Wedded Advisor in your time zone, AUD, fee agreed in writing, quiet CTA (funding_parent, planner_couple, uhnw)"
+    ],
+    "conflicts_resolved": [
+      "Months to marry: search_visitor, sceptic and planner_couple asked which months are best and when the wind peaks. There is no official Mykonos weather station source in the pack, so no month is named as best; 'When to marry in Mykonos' stays on Smartraveller heat and wildfire. Not a fix item.",
+      "Airport section: uhnw wanted private cars, meet-and-greet and private aviation instead of the bus; funding_parent wanted organised transfers. The primary couple's guests include younger long-haul guests for whom the sourced bus and taxi facts are useful, and private logistics and transfer arrangements are deferred business details. Ruling: keep the bus and taxi lines, add the older-guest transfer-time question only (should_fix), make no transfer-arrangement claim.",
+      "Mykonos Grand shuttle: uhnw called it value talk; planner_couple (primary) praised it as a practical detail. Ruling for the primary persona: keep the shuttle, drop only 'complimentary'.",
+      "Exclusive use column: brief lists exclusive use as a comparison term, but three personas found the column empty. Ruling: drop the column from the table; exclusive use stays in every entry, the capacity section and the FAQ, so the primary couple still compares on it.",
+      "Deferred business details, never must-fix and not added to copy: commission and fee model and free first consultation (sceptic), real Mykonos wedding or case study and scale proof (planner_couple, sceptic, uhnw), who is on the ground on the day and the 2am contact (planner_couple, funding_parent), first call before booking (funding_parent), security integration and press control (uhnw), private aviation and meet-and-greet (uhnw), contract and deposit protection (funding_parent).",
+      "Who handles legal paperwork (funding_parent) and travel and medical insurance (funding_parent): no Advisor claim beyond brand-facts.md and nothing implying legal, church or religious paperwork help; insurance is not in the source pack, so no line is added.",
+      "Mykonos Town nightlife in peak season (planner_couple): no source in the pack, so the page does not characterise it.",
+      "Prices (search_visitor): no prices on this page; out of scope.",
+      "Non-Australian couples (search_visitor): 'quotes in AUD for Australian couples' is a brand fact and stays as written; the brief's reader is Australian."
+    ],
+    "gate": "revise"
+  },
+  "self_qa": {
+    "checks": [
+      {
+        "check": "Weighted scores computed as sum(score x weight)/sum(weights)",
+        "pass": true,
+        "note": "Weights planner_couple 0.40, funding_parent 0.20, uhnw 0.20, sceptic 0.10, search_visitor 0.10 (sum 1.0). Enquire 3x.4+3x.2+2x.2+3x.1+1x.1=2.6. Relevance 4.3, trust 3.4, clarity 4.0, premium 3.8."
+      },
+      {
+        "check": "Must-fix rule applied",
+        "pass": true,
+        "note": "Legal FAQ residual is a legality trust loss (sceptic medium); table column raised by 3 personas. Transfers raised by 3 but deferred as private logistics, so should_fix copy question only. Already fixed in r2 and not re-raised: Lolita civil-wedding close, Advisor overclaim, ZeNIT partner transfers, 'closest/quieter', Katikies brand names, 'many couples'."
+      },
+      {
+        "check": "Every quoted old string exists verbatim in 05-draft-r2.md",
+        "pass": true,
+        "note": "Checked by script; the two identical Santa Marina/Lolita 'Not published' lines occur twice and the fix says delete both."
+      },
+      {
+        "check": "No invented facts, prices, months, Advisor claims or Wedded Privileges in fixes",
+        "pass": true,
+        "note": "New sentences reuse fact_402, fact_104, fact_201, fact_406, fact_06, fact_100, fact_101, fact_106, fact_11 only; transfers and access are questions to the venue."
+      },
+      {
+        "check": "Gate per qa-gates G6",
+        "pass": true,
+        "note": "2.6 < 3.8 and must_fix present: revise. Writer revises once; editor re-checks blocking issues only."
+      }
+    ],
+    "confidence": 0.85
+  },
+  "open_questions": [
+    {
+      "to": "orchestrator",
+      "question": "Deferred business details readers raised: commission or mark-up and fee basis, whether the first step is a free call, contracts and deposits, who is on the ground and reachable on the day, private transfers and security, and a real Mykonos or Greece wedding (scale proof). Not must-fix and not added to copy, but weighted enquiry likelihood (2.6) is unlikely to reach 3.8 until some are confirmed in brand-facts.md.",
+      "blocking": false
+    }
+  ],
+  "assumptions": [
+    "Persona weights are provisional; no persona scored above 3 on likelihood to enquire, so no reweighting reaches 3.8.",
+    "G6 cannot be met by copy fixes alone this round; the writer applies must_fix, should_fix and the approved consider items once, and the editor re-checks blocking issues only.",
+    "Consider items are approved for this revision; the CTA-placement item is a no-change note for cro-specialist."
+  ],
+  "next_agent": [
+    "luxury-writer"
+  ]
+}
