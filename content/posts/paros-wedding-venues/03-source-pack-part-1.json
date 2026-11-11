@@ -1,0 +1,327 @@
+{
+  "agent": "planner-sme",
+  "task_id": "paros-wedding-venues",
+  "stage": "03",
+  "status": "complete",
+  "round": 1,
+  "inputs_used": [
+    "CLAUDE.md",
+    "content/posts/paros-wedding-venues/00-input.json",
+    "content/posts/mykonos-wedding-venues/03-source-pack-part-1.json (format model)"
+  ],
+  "self_qa": {
+    "checks": [
+      {
+        "check": "Every fact has a source and date",
+        "pass": true,
+        "note": "14 facts, fact_100 to fact_113, checked 2026-11-11. Venue facts are live reads of official venue sites; fact_109, fact_111 to fact_113 record failures or out-of-area leads."
+      },
+      {
+        "check": "No price without a source; all prices in needs_signoff",
+        "pass": true,
+        "note": "No prices recorded. Booking-site rate snippets ignored."
+      },
+      {
+        "check": "Every must-include covered or marked [[VERIFY]]",
+        "pass": true,
+        "note": "Batch B covers Parikia, west coast and inland venue entries only. No inland village or winery venue qualified."
+      },
+      {
+        "check": "No invented quotes, statistics or real weddings",
+        "pass": true,
+        "note": "Claims quote venue page wording only. Testimonials on The Secret View page not used. No real weddings."
+      },
+      {
+        "check": "Inclusion rule: live read of the venue's own site",
+        "pass": true,
+        "note": "Lefkes Village, Yria and Villa Aethra excluded (no official page read). 15-minute limit reached at 06:41 UTC (start 06:31)."
+      }
+    ],
+    "confidence": 0.6
+  },
+  "open_questions": [
+    {
+      "to": "orchestrator",
+      "question": "Batch B qualified 2 venues in its area: Pyrgaki Hotel (Parikia gulf) and Roses Beach (above Livadia Beach, Parikia). Roses Beach calls itself a 'cheap hotel' with 14 double rooms: include for a AUD 150k+ audience, or hold as a reserve? Neither publishes capacity."
+    },
+    {
+      "to": "orchestrator",
+      "question": "The Secret View (fact_103 to fact_105) qualified on a live read but sits above Golden Beach (east coast): hand to Batch C to avoid duplication. Petra Farm (Kolymbithres) is a lead for Batch A."
+    },
+    {
+      "to": "orchestrator",
+      "question": "No inland (Lefkes, Marpissa, Prodromos) or winery venue qualified within the time limit; a top-up batch could retry Lefkes Village via a different fetch route, as both official-domain fetches timed out (not declined)."
+    }
+  ],
+  "assumptions": [
+    "BOOKING CHECKLIST: Pyrgaki Hotel: guest capacity, room count, exclusive use, music curfew, minimum nights, rain plan for the poolside reception, set-up and breakdown times not published.",
+    "BOOKING CHECKLIST: Roses Beach: guest capacity, exclusive use of the hotel (only the poolside bar area is stated as available for private hire), music curfew, minimum nights, rain plan, set-up and breakdown times not published.",
+    "BOOKING CHECKLIST: The Secret View: guest capacity, rain plan beyond the canopied stone salon, minimum booking terms not published (music curfew 2am and 24-hour venue access are published).",
+    "Church use: Pyrgaki and Roses Beach name churches (St. George chapel, the Hundred Doors church, Agios Fokas) as ceremony options; church permissions are a matter for the church and couple, and copy must not imply the Advisor handles church or religious paperwork."
+  ],
+  "verify_items": [
+    "[[VERIFY: Pyrgaki Hotel: confirm guest capacity, room count and that weddings are still offered, as the wedding page was last modified in September 2020]]",
+    "[[VERIFY: Pyrgaki Hotel: confirm that ceremonies in the Hundred Doors church (Panagia Ekatontapyliani) in Parikia can currently be arranged, as only the hotel page states it]]",
+    "[[VERIFY: Roses Beach: confirm guest capacity for the poolside reception area and walking distance to Agios Fokas church ('a short distance' is the only wording)]]",
+    "[[VERIFY: Roses Beach: the hotel's statement that civil weddings can be held 'on the beach' must be checked against the Municipality of Paros before any copy repeats it]]"
+  ],
+  "tools_used": [
+    "mcp__Apify__apify--web-search",
+    "mcp__Apify__apify--web-fetch",
+    "Bash"
+  ],
+  "next_agent": [
+    "luxury-writer"
+  ],
+  "payload": {
+    "facts": [
+      {
+        "fact_id": "fact_100",
+        "claim": "Pyrgaki Hotel describes itself as a '4* Boutique Hotel in Paros' and says it is 'situated in a truly enchanting location with stunning views to the gulf of Parikia'; it offers weddings ('There is no better way to celebrate the most romantic day of your life, than a romantic wedding in Paros').",
+        "source": "https://www.pyrgaki-hotel.com/weddings/",
+        "source_type": "official_venue",
+        "checked": "2026-11-11",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_101",
+        "claim": "Pyrgaki Hotel wedding page, ceremony options as stated: 'Whether you choose to get married in St. George chapel in Pyrgaki hotel or in One Hundred Doors historical and popular byzantine church in Parikia, your wedding reception by the privileged pool will exceed your expectations.'",
+        "source": "https://www.pyrgaki-hotel.com/weddings/",
+        "source_type": "official_venue",
+        "checked": "2026-11-11",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_102",
+        "claim": "Pyrgaki Hotel lists services it can offer: 'Fireworks, live orchestra, dj, superb cuisine, a romantic horse-drawn carriage for the bride and a luxurious white car for the groom, a beautiful honeymoon suite'. The wedding page publishes no guest capacity, room count or exclusive-use terms (page last modified 2020-09-11 per its metadata).",
+        "source": "https://www.pyrgaki-hotel.com/weddings/",
+        "source_type": "official_venue",
+        "checked": "2026-11-11",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_103",
+        "claim": "The Secret View describes itself as 'an event venue, located on the island of Paros in Greece, on the hills above Golden Beach' on a '40-acre estate' hosting weddings. Its map link points to Tzanes (844 00). This places it on the east coast, outside Batch B's area (Parikia, west and inland); passed to Batch C.",
+        "source": "https://www.the-secret-view.com/",
+        "source_type": "official_venue",
+        "checked": "2026-11-11",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_104",
+        "claim": "The Secret View, as stated: a 'traditional greek chapel as the backdrop of your ceremony or your couple's shoot', a 'spacious lower level terrace' for the reception, an 'upper level pergola' for cocktail hour and a 'stone outdoor salon with beige waterproof canopy'; 'romantic symbolic ceremony'; guests stay 'in the hotels nearby' (no rooms on site stated).",
+        "source": "https://www.the-secret-view.com/",
+        "source_type": "official_venue",
+        "checked": "2026-11-11",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_105",
+        "claim": "The Secret View FAQ: 'we ask our couples to stop the loud music at 2am' and couples have 'full access to our venue for 24h'. No guest capacity on the homepage read.",
+        "source": "https://www.the-secret-view.com/",
+        "source_type": "official_venue",
+        "checked": "2026-11-11",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_106",
+        "claim": "Roses Beach (site header 'Roses Paros Hotel') says it 'is the perfect venue for weddings in Paros, Greece'; 'The large reception area around the floodlit pool has spellbinding views across the tranquil bay of Parikia', with bougainvillea and palm trees.",
+        "source": "http://www.rosesbeach.com/wedding-venues-paros.html",
+        "source_type": "official_venue",
+        "checked": "2026-11-11",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_107",
+        "claim": "Roses Beach, ceremony options as stated: 'Wedding ceremonies can be arranged to take place in the idyllic church of Agios Fokas, a short distance from the hotel, only metres away from the sea'; alternatively the hotel 'can help you find another church or wedding location'. It also says 'Civil weddings on Paros, either in the municipal offices or even on the beach have increased in popularity in recent years and we can help in all your arrangements.'",
+        "source": "http://www.rosesbeach.com/wedding-venues-paros.html",
+        "source_type": "official_venue",
+        "checked": "2026-11-11",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_108",
+        "claim": "Roses Beach wedding page publishes no guest capacity, room count or exclusive-use terms; the reception is poolside in the hotel grounds. The page names a preferred photographer (a vendor name, not for use in copy).",
+        "source": "http://www.rosesbeach.com/wedding-venues-paros.html",
+        "source_type": "official_venue",
+        "checked": "2026-11-11",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_109",
+        "claim": "Lefkes Village hotel (inland, Lefkes): live read of the presumed official site https://www.lefkesvillage.gr/ timed out after 60 seconds on 2026-11-11; no official page confirming weddings was read, so it is excluded (search results found only booking and review sites).",
+        "source": "https://www.lefkesvillage.gr/ (fetch timed out)",
+        "source_type": "official_venue",
+        "checked": "2026-11-11",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_110",
+        "claim": "Roses Beach homepage: 'a small family run hotel with 14 double rooms, most with either sea or pool views', 'located just above Livadia Beach, a short walk from Paros Island's main town'; upper-floor rooms have 'unparalleled views over the entire bay and town of Parikia'. The poolside bar area is 'available for private hire' and 'a perfect setting for weddings'. The page describes itself as a 'cheap hotel with swimming pool', a positioning mismatch for a luxury-audience guide.",
+        "source": "http://www.rosesbeach.com/index.html",
+        "source_type": "official_venue",
+        "checked": "2026-11-11",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_111",
+        "claim": "Yria Island Boutique Hotel & Spa (Parasporos, west coast): no official site page stating it hosts weddings was read; search returned only booking and reseller listings, and a live read of the presumed official domain https://www.yriaparos.gr/ timed out after 60 seconds on 2026-11-11. Excluded.",
+        "source": "https://www.yriaparos.gr/ (fetch timed out)",
+        "source_type": "official_venue",
+        "checked": "2026-11-11",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_112",
+        "claim": "Villa Aethra (Butterfly Valley, inland west of Parikia, per third-party listings): no official website found in searches; only rental, booking and planner pages. Excluded under the live-official-read rule.",
+        "source": "apify web-search 2026-11-11 (leads only: vrbo.com, booking.com listings)",
+        "source_type": "other",
+        "checked": "2026-11-11",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_113",
+        "claim": "Petra Farm appears in planner pages with an address at Kolymbithres (north coast), outside Batch B's area; not researched here, passed to Batch A as a lead.",
+        "source": "apify web-search 2026-11-11 (leads only: planner wedding-site pages)",
+        "source_type": "other",
+        "checked": "2026-11-11",
+        "is_price": false
+      }
+    ],
+    "venue_verdicts": [
+      {
+        "venue": "Pyrgaki Hotel",
+        "region": "Parikia",
+        "verdict": "include",
+        "fact_ids": [
+          "fact_100",
+          "fact_101",
+          "fact_102"
+        ],
+        "not_published": [
+          "guest capacity",
+          "room count",
+          "exclusive use",
+          "music curfew",
+          "minimum nights",
+          "rain plan",
+          "set-up times"
+        ]
+      },
+      {
+        "venue": "Roses Beach",
+        "region": "Parikia (above Livadia Beach)",
+        "verdict": "include",
+        "fact_ids": [
+          "fact_106",
+          "fact_107",
+          "fact_108",
+          "fact_110"
+        ],
+        "not_published": [
+          "guest capacity",
+          "exclusive use of the hotel",
+          "music curfew",
+          "minimum nights",
+          "rain plan",
+          "set-up times"
+        ]
+      },
+      {
+        "venue": "The Secret View",
+        "region": "East coast, hills above Golden Beach (Batch C area)",
+        "verdict": "hand_to_batch_c",
+        "fact_ids": [
+          "fact_103",
+          "fact_104",
+          "fact_105"
+        ],
+        "not_published": [
+          "guest capacity",
+          "rain plan beyond canopy",
+          "minimum booking terms"
+        ]
+      },
+      {
+        "venue": "Lefkes Village hotel",
+        "region": "Lefkes (inland)",
+        "verdict": "exclude",
+        "fact_ids": [
+          "fact_109"
+        ],
+        "not_published": []
+      },
+      {
+        "venue": "Yria Island Boutique Hotel & Spa",
+        "region": "Parasporos (west coast)",
+        "verdict": "exclude",
+        "fact_ids": [
+          "fact_111"
+        ],
+        "not_published": []
+      },
+      {
+        "venue": "Villa Aethra",
+        "region": "Butterfly Valley (inland west)",
+        "verdict": "exclude",
+        "fact_ids": [
+          "fact_112"
+        ],
+        "not_published": []
+      }
+    ],
+    "insider_details": [
+      {
+        "detail": "Two of the west-side options frame the same view from different heights: Pyrgaki looks over the gulf of Parikia and Roses Beach sits just above Livadia Beach with views across the bay, so a sunset reception on this side of the island faces west over the water.",
+        "fact_ids": [
+          "fact_100",
+          "fact_106",
+          "fact_110"
+        ]
+      },
+      {
+        "detail": "Roses Beach has only 14 double rooms, so a wedding there means booking most guests into other Parikia hotels; it suits couples who want a short walk from the main town rather than a self-contained resort stay.",
+        "fact_ids": [
+          "fact_110"
+        ]
+      },
+      {
+        "detail": "Both Parikia hotels separate ceremony and reception: vows in a nearby church (Agios Fokas, St. George chapel or the Hundred Doors church in Parikia) and the reception back at the hotel pool, so plan the short transfer between the two and the timing around sunset.",
+        "fact_ids": [
+          "fact_101",
+          "fact_107"
+        ]
+      }
+    ],
+    "quotes": [],
+    "real_weddings": [],
+    "budget_range_aud": [],
+    "verify_items": [
+      "[[VERIFY: Pyrgaki Hotel: confirm guest capacity, room count and that weddings are still offered, as the wedding page was last modified in September 2020]]",
+      "[[VERIFY: Pyrgaki Hotel: confirm that ceremonies in the Hundred Doors church (Panagia Ekatontapyliani) in Parikia can currently be arranged, as only the hotel page states it]]",
+      "[[VERIFY: Roses Beach: confirm guest capacity for the poolside reception area and walking distance to Agios Fokas church ('a short distance' is the only wording)]]",
+      "[[VERIFY: Roses Beach: the hotel's statement that civil weddings can be held 'on the beach' must be checked against the Municipality of Paros before any copy repeats it]]"
+    ],
+    "needs_signoff": [],
+    "must_include_coverage": [
+      {
+        "item": "Venue entries, Parikia and the west",
+        "covered_by": [
+          "fact_100",
+          "fact_101",
+          "fact_102",
+          "fact_106",
+          "fact_107",
+          "fact_108",
+          "fact_110"
+        ]
+      },
+      {
+        "item": "Venue entries, inland villages (Lefkes, Marpissa) and wineries",
+        "covered_by": [
+          "[[VERIFY: no inland or winery venue qualified in Batch B; see fact_109, fact_112]]"
+        ]
+      }
+    ]
+  }
+}
