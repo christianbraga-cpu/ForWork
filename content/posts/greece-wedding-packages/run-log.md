@@ -2,3 +2,4 @@
 00:24 01 content-strategist complete; batch A 10 venues + 2 reserves, batch B 4 venues + 4 reserves + legal/insurance; 02+03(A,B)+04 launched
 00:25 04 images done: 6 placeholder slots, valid.
 00:27 02 SEO done: AU 30 / US 210, KD 0; no site page ranks for Greece package queries; split recommended.
+00:31 03 batch B done: 27 facts; package detail from Four Seasons Astir, Melenos, Angsana, Atrium, Lagonissi (2022 PDF); legal and insurance re-read (insurance URL moved).
