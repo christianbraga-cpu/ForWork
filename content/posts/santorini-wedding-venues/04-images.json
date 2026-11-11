@@ -1,0 +1,242 @@
+{
+ "agent": "visual-curator",
+ "task_id": "santorini-wedding-venues",
+ "stage": "04",
+ "status": "needs_input",
+ "round": 1,
+ "inputs_used": [
+  "CLAUDE.md",
+  "content/posts/santorini-wedding-venues/00-input.json",
+  "01-brief.json, 02-seo.json, 03-source-pack.json (not present at run time)",
+  "content/posts/mykonos-wedding-venues/04-images.json (format model)",
+  "content-system/images/library-index.csv (header only, no rows)",
+  "content-system/images/sources-policy.md",
+  "content-system/schemas/04-images.schema.json"
+ ],
+ "self_qa": {
+  "checks": [
+   {
+    "check": "Zero reference-only or competitor images in slots",
+    "pass": true,
+    "note": "reference_only is empty; no images downloaded."
+   },
+   {
+    "check": "Every approved image has location, licence, alt, caption, fit_reason",
+    "pass": true,
+    "note": "No approved images this run; alt and caption are written once a licensed file exists."
+   },
+   {
+    "check": "No AI image depicting a real place",
+    "pass": true,
+    "note": "No AI used; no slot allows AI for a venue, destination, wedding or person."
+   },
+   {
+    "check": "Featured image exists (approved or needed with brief)",
+    "pass": true,
+    "note": "Needed, with brief: caldera-edge ceremony terrace at a qualifying Oia or Imerovigli venue."
+   },
+   {
+    "check": "One slot per area plus practical",
+    "pass": true,
+    "note": "8 slots: featured, 5 areas (Oia; Imerovigli and Firostefani; Fira; Pyrgos, Megalochori and inland villages; Akrotiri and the south caldera), how to compare, when to marry."
+   }
+  ],
+  "confidence": 0.7
+ },
+ "open_questions": [
+  {
+   "to": "planner-sme",
+   "question": "Confirm the qualifying Santorini venues (03-source-pack) so each area slot and the hero can be tied to a named venue.",
+   "blocking": false
+  },
+  {
+   "to": "orchestrator",
+   "question": "Should a human find each confirmed venue's press or media contact and create the Gmail drafts, or should the curator do it in a non-fast run with Firecrawl and Gmail draft approval?",
+   "blocking": false
+  },
+  {
+   "to": "orchestrator",
+   "question": "Is there budget for licensed premium stock (Stocksy, Getty, Offset) if press kits do not respond in time?",
+   "blocking": false
+  }
+ ],
+ "assumptions": [
+  "Placement is by section name because 02-seo.json is not yet written; the writer maps it to after_h2/h3 positions.",
+  "No venue is named because 03-source-pack does not exist yet; no venue name was guessed.",
+  "Getting there and legal in brief get no image (no suitable non-generic visual; keeps the page light)."
+ ],
+ "verify_items": [
+  "[[IMAGE NEEDED]] featured: caldera-edge ceremony terrace hero from a qualifying Oia or Imerovigli venue",
+  "[[IMAGE NEEDED]] area-oia, area-imerovigli-firostefani, area-fira, area-inland-villages, area-akrotiri-south: official venue image or licensed stock",
+  "[[IMAGE NEEDED]] practical-compare, practical-when-to-marry: official venue image or licensed stock (compare may use a brand graphic with no place)",
+  "[[VERIFY licence]] every venue press-kit image: written permission, credit line and expiry recorded in library-index.csv before use",
+  "[[VERIFY: official press or contact page for each confirmed venue, on its own site]]"
+ ],
+ "tools_used": [
+  "Bash (cat/python)"
+ ],
+ "next_agent": [
+  "luxury-writer"
+ ],
+ "payload": {
+  "slots": [
+   {
+    "slot_id": "featured",
+    "placement": "featured",
+    "purpose": "Hero and social share image: a caldera-edge ceremony setting at a qualifying Santorini venue, signalling a luxury Aegean wedding with the caldera view the title promises.",
+    "shot_brief": "Official image from a venue that qualifies in 03-source-pack (preferably Oia or Imerovigli): a ceremony terrace set for a wedding on the caldera edge, the caldera and volcanic islands of Nea Kameni behind, May to October, golden-hour or sunset light. No people, or only distant unidentifiable figures; no other hotels' signage. Landscape 3:2 with room for a title crop. Source: the venue's own media kit or press office with written permission (Gmail draft request, never sent by an agent), or licensed premium stock bought by a human and added to library-index.csv. Never AI, never a competitor, directory, planner, photographer-blog or search-result image. Location proven by the media kit, register row or EXIF, never by appearance.",
+    "status": "needed",
+    "file": "content/posts/santorini-wedding-venues/images/santorini-wedding-venues-caldera-ceremony-terrace-hero.webp",
+    "source": {
+     "type": "venue_press",
+     "origin": "not yet sourced",
+     "credit": "[[VERIFY licence]]"
+    },
+    "location": {
+     "venue": "one qualifying caldera-edge venue (to be named from 03-source-pack)",
+     "town": "Oia or Imerovigli, Santorini",
+     "verified_by": "pending: venue media kit, register row or EXIF"
+    },
+    "licence_note": "[[IMAGE NEEDED]] Library register has no rows (header only). Move to pending_permission once a permission draft exists. Name the venue only once it qualifies in 03-source-pack."
+   },
+   {
+    "slot_id": "area-oia",
+    "placement": "venues section: Oia (area H2/H3 opener)",
+    "purpose": "Shows Oia's setting: whitewashed and pastel cave houses stepping down the caldera cliff at the island's northern tip.",
+    "shot_brief": "Official image from a venue confirmed in Oia: a venue terrace or infinity pool looking over the caldera, Oia's cliffside houses and blue domes in frame, sunset light, no crowds or sunset-viewing throngs, no identifiable guests. May to October. Source: the venue's own media kit or press office with written permission (Gmail draft request, never sent by an agent), or licensed premium stock bought by a human and added to library-index.csv. Never AI, never a competitor, directory, planner, photographer-blog or search-result image. Location proven by the media kit, register row or EXIF, never by appearance.",
+    "status": "needed",
+    "file": "content/posts/santorini-wedding-venues/images/santorini-wedding-venues-oia-caldera-terrace.webp",
+    "source": {
+     "type": "venue_press",
+     "origin": "not yet sourced",
+     "credit": "[[VERIFY licence]]"
+    },
+    "location": {
+     "venue": "one confirmed venue in Oia",
+     "town": "Oia, Santorini",
+     "verified_by": "pending: venue media kit, register row or EXIF"
+    },
+    "licence_note": "[[IMAGE NEEDED]] Library register has no rows (header only). Move to pending_permission once a permission draft exists. Name the venue only once it qualifies in 03-source-pack. Must come from a venue featured in this area (never imply a venue not covered)."
+   },
+   {
+    "slot_id": "area-imerovigli-firostefani",
+    "placement": "venues section: Imerovigli and Firostefani (area H2/H3 opener)",
+    "purpose": "Shows the highest stretch of the caldera rim: wide, quieter views across the caldera and towards Skaros Rock.",
+    "shot_brief": "Official image from a venue confirmed in Imerovigli or Firostefani: a cliff-top terrace or suite balcony set for a small ceremony or dinner, the caldera and Skaros Rock or the volcanic islands behind, late-afternoon light, no identifiable guests. Landscape 3:2. Source: the venue's own media kit or press office with written permission (Gmail draft request, never sent by an agent), or licensed premium stock bought by a human and added to library-index.csv. Never AI, never a competitor, directory, planner, photographer-blog or search-result image. Location proven by the media kit, register row or EXIF, never by appearance.",
+    "status": "needed",
+    "file": "content/posts/santorini-wedding-venues/images/santorini-wedding-venues-imerovigli-skaros-view.webp",
+    "source": {
+     "type": "venue_press",
+     "origin": "not yet sourced",
+     "credit": "[[VERIFY licence]]"
+    },
+    "location": {
+     "venue": "one confirmed venue in Imerovigli or Firostefani",
+     "town": "Imerovigli, Santorini",
+     "verified_by": "pending: venue media kit, register row or EXIF"
+    },
+    "licence_note": "[[IMAGE NEEDED]] Library register has no rows (header only). Move to pending_permission once a permission draft exists. Name the venue only once it qualifies in 03-source-pack."
+   },
+   {
+    "slot_id": "area-fira",
+    "placement": "venues section: Fira (area H2/H3 opener)",
+    "purpose": "Shows Fira as the lively caldera-rim capital: venues within walking distance of restaurants and evening atmosphere.",
+    "shot_brief": "Official image from a venue confirmed in Fira: an evening reception terrace on the caldera edge with candles or festoon lighting, the caldera at blue hour behind, no cruise ships prominent, no crowds, no identifiable guests. Landscape 3:2. Source: the venue's own media kit or press office with written permission (Gmail draft request, never sent by an agent), or licensed premium stock bought by a human and added to library-index.csv. Never AI, never a competitor, directory, planner, photographer-blog or search-result image. Location proven by the media kit, register row or EXIF, never by appearance.",
+    "status": "needed",
+    "file": "content/posts/santorini-wedding-venues/images/santorini-wedding-venues-fira-reception-terrace.webp",
+    "source": {
+     "type": "venue_press",
+     "origin": "not yet sourced",
+     "credit": "[[VERIFY licence]]"
+    },
+    "location": {
+     "venue": "one confirmed venue in Fira",
+     "town": "Fira, Santorini",
+     "verified_by": "pending: venue media kit, register row or EXIF"
+    },
+    "licence_note": "[[IMAGE NEEDED]] Library register has no rows (header only). Move to pending_permission once a permission draft exists. Name the venue only once it qualifies in 03-source-pack."
+   },
+   {
+    "slot_id": "area-inland-villages",
+    "placement": "venues section: Pyrgos, Megalochori and the inland villages (area H2/H3 opener)",
+    "purpose": "Shows the quieter inland side: hilltop and traditional villages, winery or estate settings with caldera views as stated by the venue.",
+    "shot_brief": "Official image from a venue confirmed in Pyrgos, Megalochori or another inland village: a winery terrace, estate courtyard or village rooftop set for a long-table dinner, vineyards or village rooftops with the caldera view the venue states, golden-hour light, no identifiable guests. Landscape 3:2. Source: the venue's own media kit or press office with written permission (Gmail draft request, never sent by an agent), or licensed premium stock bought by a human and added to library-index.csv. Never AI, never a competitor, directory, planner, photographer-blog or search-result image. Location proven by the media kit, register row or EXIF, never by appearance.",
+    "status": "needed",
+    "file": "content/posts/santorini-wedding-venues/images/santorini-wedding-venues-megalochori-estate-dinner.webp",
+    "source": {
+     "type": "venue_press",
+     "origin": "not yet sourced",
+     "credit": "[[VERIFY licence]]"
+    },
+    "location": {
+     "venue": "one confirmed venue in Pyrgos, Megalochori or the inland villages",
+     "town": "Megalochori or Pyrgos, Santorini",
+     "verified_by": "pending: venue media kit, register row or EXIF"
+    },
+    "licence_note": "[[IMAGE NEEDED]] Library register has no rows (header only). Move to pending_permission once a permission draft exists. Name the venue only once it qualifies in 03-source-pack. Only show a caldera view if the venue's own site states one."
+   },
+   {
+    "slot_id": "area-akrotiri-south",
+    "placement": "venues section: Akrotiri and the south caldera (area H2/H3 opener)",
+    "purpose": "Shows the secluded southern caldera: open views back along the caldera towards Fira and Oia, away from the busier rim villages.",
+    "shot_brief": "Official image from a venue confirmed in Akrotiri or the south caldera: a cliff-top ceremony or reception space looking north along the caldera, sunset light, no lighthouse crowds, no identifiable guests. Landscape 3:2. Source: the venue's own media kit or press office with written permission (Gmail draft request, never sent by an agent), or licensed premium stock bought by a human and added to library-index.csv. Never AI, never a competitor, directory, planner, photographer-blog or search-result image. Location proven by the media kit, register row or EXIF, never by appearance.",
+    "status": "needed",
+    "file": "content/posts/santorini-wedding-venues/images/santorini-wedding-venues-akrotiri-south-caldera-view.webp",
+    "source": {
+     "type": "venue_press",
+     "origin": "not yet sourced",
+     "credit": "[[VERIFY licence]]"
+    },
+    "location": {
+     "venue": "one confirmed venue in Akrotiri or the south caldera",
+     "town": "Akrotiri, Santorini",
+     "verified_by": "pending: venue media kit, register row or EXIF"
+    },
+    "licence_note": "[[IMAGE NEEDED]] Library register has no rows (header only). Move to pending_permission once a permission draft exists. Name the venue only once it qualifies in 03-source-pack."
+   },
+   {
+    "slot_id": "practical-compare",
+    "placement": "how to compare like for like (section opener)",
+    "purpose": "Gives the comparison section a visual anchor: the detail couples weigh when comparing venues (ceremony space, capacity, exclusive use).",
+    "shot_brief": "Official image from a featured venue: a close or mid shot of a styled ceremony set-up (chairs, aisle, floral arch) on a caldera terrace showing the scale of the space, daylight, no people. Landscape 3:2 or 4:3. Alternative: a Wedded Wonderland brand graphic (Canva brand assets) with no place depicted. Source: the venue's own media kit or press office with written permission (Gmail draft request, never sent by an agent), or licensed premium stock bought by a human and added to library-index.csv. Never AI, never a competitor, directory, planner, photographer-blog or search-result image. Location proven by the media kit, register row or EXIF, never by appearance.",
+    "status": "needed",
+    "file": "content/posts/santorini-wedding-venues/images/santorini-wedding-venues-ceremony-setup-detail.webp",
+    "source": {
+     "type": "venue_press",
+     "origin": "not yet sourced",
+     "credit": "[[VERIFY licence]]"
+    },
+    "location": {
+     "venue": "one featured venue (to be named from 03-source-pack)",
+     "town": "Santorini",
+     "verified_by": "pending: venue media kit, register row or EXIF"
+    },
+    "licence_note": "[[IMAGE NEEDED]] Library register has no rows (header only). Move to pending_permission once a permission draft exists. Name the venue only once it qualifies in 03-source-pack. A brand graphic is allowed here only if it depicts no real place, venue or person."
+   },
+   {
+    "slot_id": "practical-when-to-marry",
+    "placement": "when to marry (section opener)",
+    "purpose": "Sets the season and light for the timing section: what a Santorini wedding evening looks like in the warmer months.",
+    "shot_brief": "Official image from a featured venue: the caldera at sunset seen from a venue terrace, empty table set for dinner in the foreground, warm season light (May to October, season recorded from EXIF or the media kit). No people. Landscape 3:2. Source: the venue's own media kit or press office with written permission (Gmail draft request, never sent by an agent), or licensed premium stock bought by a human and added to library-index.csv. Never AI, never a competitor, directory, planner, photographer-blog or search-result image. Location proven by the media kit, register row or EXIF, never by appearance.",
+    "status": "needed",
+    "file": "content/posts/santorini-wedding-venues/images/santorini-wedding-venues-caldera-sunset-table.webp",
+    "source": {
+     "type": "venue_press",
+     "origin": "not yet sourced",
+     "credit": "[[VERIFY licence]]"
+    },
+    "location": {
+     "venue": "one featured venue (to be named from 03-source-pack)",
+     "town": "Santorini",
+     "verified_by": "pending: venue media kit, register row or EXIF"
+    },
+    "licence_note": "[[IMAGE NEEDED]] Library register has no rows (header only). Move to pending_permission once a permission draft exists. Name the venue only once it qualifies in 03-source-pack. Record the month the image was taken; do not imply a 'best month'."
+   }
+  ],
+  "reference_only": [],
+  "permission_requests": [],
+  "drive_findings": [
+   "Not searched: fast mode, repo library register only per orchestrator instruction. library-index.csv has a header and no rows."
+  ]
+ }
+}
