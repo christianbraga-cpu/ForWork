@@ -1,0 +1,366 @@
+{
+ "agent": "seo-researcher",
+ "task_id": "mykonos-wedding",
+ "stage": "02",
+ "status": "complete",
+ "round": 1,
+ "inputs_used": [
+  "CLAUDE.md",
+  "content/posts/mykonos-wedding/00-input.json (notes binding)",
+  "content-system/schemas/02-seo.schema.json",
+  "content-system/seo/link-map.csv (grep mykonos, greece, santorini, paros, greek, concierge, magazine)",
+  "content-system/seo/priority-link-targets.md",
+  "content-system/rubrics/link-rules.md",
+  "content/posts/santorini-wedding/02-seo.json (format model)",
+  "content/posts/mykonos-wedding-venues/02-seo.json (overlap check)"
+ ],
+ "tools_used": [
+  "DataForSEO serp_organic_live_advanced x5 'mykonos wedding' (Sydney, Melbourne, New York, Dubai, Singapore; en; depth 10; 2026-11-11)",
+  "DataForSEO kw_data_google_ads_search_volume (Australia, United States; 10 keywords)",
+  "DataForSEO dataforseo_labs_bulk_keyword_difficulty (United States; 10 keywords)",
+  "DataForSEO dataforseo_labs_google_ranked_keywords (weddedwonderland.com, Australia, keyword like %mykonos%; 0 results)",
+  "GSC: not read (fast mode, DataForSEO only by instruction)",
+  "Page reads: skipped by instruction",
+  "Link checks: not run; verified_live fields state status"
+ ],
+ "next_agent": [
+  "planner-sme",
+  "visual-curator"
+ ],
+ "self_qa": {
+  "checks": [
+   {
+    "check": ">= 7 of 10 locations returned results",
+    "pass": false,
+    "note": "5/5 requested cities returned results; fast mode limited to 5 cities by instruction. Arabic and secondary SERPs not run."
+   },
+   {
+    "check": "Every outline H2 maps to a real query or must-include",
+    "pass": true,
+    "note": "Each H2 'answers' field names the query, related search, AI overview block or 00-input must-include."
+   },
+   {
+    "check": "Every internal and external link verified live today",
+    "pass": false,
+    "note": "No fetches in fast mode. Six internal targets are drafts; external URLs are official domains for planner-sme to confirm."
+   },
+   {
+    "check": "No competitor links; no noindex targets",
+    "pass": true,
+    "note": "External links are government, tourism, meteorological and airport only. No noindex rows used."
+   },
+   {
+    "check": "Meta lengths within limits",
+    "pass": true,
+    "note": "Title 54 chars, description 152 chars, no prices."
+   },
+   {
+    "check": "No bracketed keywords in headings, no em dashes",
+    "pass": true,
+    "note": "Checked by script."
+   }
+  ],
+  "confidence": 0.75
+ },
+ "open_questions": [
+  {
+   "to": "planner-sme",
+   "question": "Confirm official pages for the Municipality of Mykonos, Mykonos airport, Mykonos port, visitgreece.gr Mykonos page, HNMS Mykonos station (fact_307), Smartraveller and Embassy Athens.",
+   "blocking": false
+  },
+  {
+   "to": "person",
+   "question": "Approve the keyword split: remove 'mykonos wedding', 'wedding in mykonos' and 'getting married in mykonos' from the Mykonos venues guide's secondary keywords so this guide owns them.",
+   "blocking": false
+  },
+  {
+   "to": "person",
+   "question": "Six internal targets are drafts (Mykonos venues, Greece venues, Greece packages, Santorini, Paros, Greek traditions). Publish first or hold those links?",
+   "blocking": false
+  }
+ ],
+ "assumptions": [
+  "No People Also Ask box returned in any city; FAQ questions come from must-includes, AI overview blocks, related searches and forum results.",
+  "'wedding in mykonos' returns the same Ads figures as the head term because Google Ads groups close variants.",
+  "'best time to get married in mykonos' and 'legal wedding mykonos' returned no volume or KD; kept because the title promises seasons and paperwork.",
+  "Volumes as returned by DataForSEO on 2026-11-11 (AU volumes are at the 10 to 20 floor)."
+ ],
+ "payload": {
+  "primary_keyword": "mykonos wedding",
+  "secondary_keywords": [
+   "wedding in mykonos",
+   "getting married in mykonos",
+   "best time to get married in mykonos",
+   "legal wedding mykonos",
+   "mykonos elopement",
+   "mykonos wedding cost"
+  ],
+  "secondary_keyword_notes": {
+   "owned_by_this_guide": "mykonos wedding (AU 20, US 110, KD 0); wedding in mykonos (Google Ads groups it with the head term: same AU 20, US 110, KD 0); getting married in mykonos (AU 10, US 10, KD not returned); best time to get married in mykonos and legal wedding mykonos (no volume or KD returned; kept because the title promises seasons and paperwork); mykonos elopement (AU 10, US 20, KD 0; covered inside the legal or symbolic section, not its own H2); mykonos wedding cost (AU 10, US 10, KD 39; cost-drivers paragraph only, no figures).",
+   "left_to_other_pages": "mykonos wedding venues (AU 10, US 110, KD 0), plus villa, chapel and 'best venues' variants: /destination-weddings/mykonos-wedding-venues. mykonos wedding packages (AU 10, US 20, KD 0) and 'all inclusive' / 'package price' related searches: /destination-weddings/greece-wedding-packages. mykonos wedding planner (AU 10, US 10, KD 0): commercial, served by the Wonderland Concierge CTA, not a heading.",
+   "cost_intent": "Present. 'Mykonos wedding cost' or 'price' or 'package price' appear in related searches in all 5 cities, and the New York AI overview has a 'Planning & Budget Realities' block. Per 00-input, include a short 'what shapes the cost' section with no figures, linking /destination-weddings/greece-wedding-packages."
+  },
+  "intent": "informational",
+  "slug": "mykonos-wedding",
+  "url_path": "/destination-weddings/mykonos-wedding",
+  "meta_title": "Mykonos Wedding Guide to Venues, Seasons and Paperwork",
+  "meta_description": "Plan a Mykonos wedding: choose an area and venue style, weigh the seasons, sort legal or symbolic paperwork and get your guests to the island with ease.",
+  "outline": [
+   {
+    "h2": "Why couples choose Mykonos for their wedding",
+    "answers": "mykonos wedding / wedding in mykonos (head term; NY AI overview opens on Aegean views, whitewashed architecture and hospitality)",
+    "notes": "Intro under 100 words, then exactly 4 one-sentence Key takeaways above this H2. Official tourism source only (visitgreece.gr). Link the Greece hub once."
+   },
+   {
+    "h2": "Choosing where to marry on Mykonos",
+    "answers": "venue intent that dominates every SERP (Tripadvisor, venue lists, resort pages), handled briefly so the venues guide keeps 'mykonos wedding venues'",
+    "h3": [
+     "Areas of the island and what each suits",
+     "Resorts with chapels, beach clubs, private villas and restaurants",
+     "Six venues to start your shortlist"
+    ],
+    "notes": "5 to 6 one-line examples re-checked on each venue's official site, no capacities unless sourced. Prominent link to /destination-weddings/mykonos-wedding-venues straight after the examples. No repeated venue entries. Link Greece venues guide once; Santorini and Paros as alternative islands."
+   },
+   {
+    "h2": "When to get married in Mykonos",
+    "answers": "best time to get married in mykonos; season questions",
+    "h3": [
+     "Weather by month at the Mykonos station",
+     "Wind, heat and travel advice"
+    ],
+    "notes": "HNMS climatology labelled as the Mykonos station. Meltemi only as an official source states it. Smartraveller heat, wildfire, swimming, ferry wind and earthquake advice. No best month stated as fact."
+   },
+   {
+    "h2": "Getting married legally in Mykonos",
+    "answers": "legal wedding mykonos; getting married in mykonos; NY AI overview says planners 'handle legal paperwork'",
+    "h3": [
+     "Legal or symbolic ceremony",
+     "Where an elopement fits",
+     "Steps for Australian couples",
+     "Civil marriage with the Municipality of Mykonos",
+     "Recognition back in Australia"
+    ],
+    "notes": "Main section. Official sources only; date once 'as at November 2026'. Certificate of no impediment and notarial services at the Australian Embassy Athens; Smartraveller getting married overseas, recognition, legalisation and apostilles. Municipality steps only if an official page is read live, else 'check with the Municipality of Mykonos and the embassy, including any fees'. No statement on Greek apostille or translation needs or the same-sex civil marriage position without an official source. Nothing implying the Advisor handles legal, church or religious paperwork."
+   },
+   {
+    "h2": "Getting your guests to Mykonos",
+    "answers": "guest travel (Facebook threads in New York and Melbourne SERPs ask about visiting for a wedding)",
+    "h3": [
+     "Flying into Mykonos",
+     "Arriving by ferry",
+     "Transfers and access to ask about"
+    ],
+    "notes": "Airport and port from official sources only. Transfers and step-free access framed as questions, no claims, no transfer arrangements."
+   },
+   {
+    "h2": "House rules to agree before you book",
+    "answers": "booking questions couples raise in the SERP forum threads; 00-input house rules",
+    "notes": "Questions only: deposits, cancellation terms, exclusive use and for how many days, music cut-off times, set-up and pack-down, weather backup, outside suppliers. Items venues don't publish go on the booking checklist."
+   },
+   {
+    "h2": "What shapes the cost of a Mykonos wedding",
+    "answers": "mykonos wedding cost / price / package price (related searches in all 5 cities; NY AI overview budget block)",
+    "notes": "One short paragraph, no figures or currencies: season, guest count, exclusive use, number of days, travel. Link /destination-weddings/greece-wedding-packages."
+   },
+   {
+    "h2": "Mykonos wedding FAQs",
+    "answers": "FAQ block; questions below",
+    "notes": "FAQPage schema. One Advisor line in the body plus the close, claims only from brand-facts.md."
+   },
+   {
+    "h2": "Start planning your Mykonos wedding",
+    "answers": "commercial next step (mykonos wedding planner intent served by the CTA)",
+    "notes": "Close with Wonderland Concierge (utm_content=closing). Never 'from first idea to the last dance' or 'last dance'. No Wedded Privileges."
+   }
+  ],
+  "faq_questions": [
+   "Can you legally get married in Mykonos?",
+   "What documents do Australians need to get married in Greece?",
+   "Can we have a symbolic ceremony in Mykonos?",
+   "Is Mykonos a good place to elope?",
+   "When is the wedding season in Mykonos?",
+   "How do wedding guests get to Mykonos?",
+   "Do Mykonos venues have music curfews?",
+   "What affects the cost of a wedding in Mykonos?"
+  ],
+  "faq_demand_notes": "No People Also Ask box was returned in any city. Demand signals: legal and symbolic (legal wedding mykonos must-include; NY AI overview legal paperwork line), elopement (AU 10, US 20), season (title pillar; no volume returned), guest travel (Facebook threads in NY and Melbourne SERPs), curfews (house rules; AI overview 'late-night parties' venue notes), cost (related searches in all 5 cities; AU 10, US 10).",
+  "internal_links": [
+   {
+    "anchor": "our guide to Mykonos wedding venues",
+    "target": "https://weddedwonderland.com/destination-weddings/mykonos-wedding-venues",
+    "type": "related",
+    "placement": "Choosing where to marry, straight after the venue examples (prominent, styled as a callout)",
+    "verified_live": "draft: not live yet; publish first or hold the link"
+   },
+   {
+    "anchor": "getting married in Greece",
+    "target": "https://weddedwonderland.com/destinations/europe/greece",
+    "type": "hub",
+    "placement": "Intro or Why couples choose Mykonos",
+    "verified_live": "in link map (hub, last_seen 2026-10-20); not fetched today (DataForSEO only)"
+   },
+   {
+    "anchor": "Greece wedding venues",
+    "target": "https://weddedwonderland.com/destination-weddings/greece-wedding-venues",
+    "type": "related",
+    "placement": "Choosing where to marry, once",
+    "verified_live": "draft: not live yet; publish first or hold the link"
+   },
+   {
+    "anchor": "a Santorini wedding",
+    "target": "https://weddedwonderland.com/destination-weddings/santorini-wedding",
+    "type": "related",
+    "placement": "Choosing where to marry, as an alternative island",
+    "verified_live": "draft: not live yet; publish first or hold the link"
+   },
+   {
+    "anchor": "Paros wedding venues",
+    "target": "https://weddedwonderland.com/destination-weddings/paros-wedding-venues",
+    "type": "related",
+    "placement": "Choosing where to marry, as an alternative island",
+    "verified_live": "draft: not live yet; publish first or hold the link"
+   },
+   {
+    "anchor": "Greece wedding packages",
+    "target": "https://weddedwonderland.com/destination-weddings/greece-wedding-packages",
+    "type": "related",
+    "placement": "What shapes the cost",
+    "verified_live": "draft: not live yet; publish first or hold the link"
+   },
+   {
+    "anchor": "Greek wedding traditions",
+    "target": "https://weddedwonderland.com/expert-advice/greek-wedding-traditions",
+    "type": "related",
+    "placement": "Legal or symbolic ceremony, once",
+    "verified_live": "draft: not live yet; publish first or hold the link"
+   },
+   {
+    "anchor": "Wonderland Concierge",
+    "target": "https://weddedwonderland.com/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=mykonos-wedding&utm_content=primary",
+    "type": "commercial",
+    "placement": "After the venue section (primary); closing uses utm_content=closing; a secondary mention after paperwork uses utm_content=secondary",
+    "verified_live": "in link map and priority list; not fetched today"
+   },
+   {
+    "anchor": "Get Wedded magazine",
+    "target": "https://weddedwonderland.com/magazine?utm_source=blog&utm_medium=content&utm_campaign=mykonos-wedding&utm_content=magnet",
+    "type": "commercial",
+    "placement": "Mid-article magnet",
+    "verified_live": "in link map; not fetched today"
+   }
+  ],
+  "external_links": [
+   {
+    "anchor": "Smartraveller advice for Greece",
+    "url": "https://www.smartraveller.gov.au/destinations/europe/greece",
+    "type": "authority",
+    "rel": "noopener",
+    "verified_live": "not fetched today: planner-sme to confirm live"
+   },
+   {
+    "anchor": "getting married overseas",
+    "url": "https://www.smartraveller.gov.au/before-you-go/activities/getting-married-overseas",
+    "type": "authority",
+    "rel": "noopener",
+    "verified_live": "not fetched today: planner-sme to confirm exact path"
+   },
+   {
+    "anchor": "Australian Embassy in Athens",
+    "url": "https://greece.embassy.gov.au/",
+    "type": "authority",
+    "rel": "noopener",
+    "verified_live": "not fetched today: planner-sme to pick the notarial and marriage page"
+   },
+   {
+    "anchor": "Municipality of Mykonos",
+    "url": "https://www.mykonos.gr/",
+    "type": "authority",
+    "rel": "noopener",
+    "verified_live": "not fetched today: planner-sme to confirm the official domain; link only if read live"
+   },
+   {
+    "anchor": "Visit Greece",
+    "url": "https://www.visitgreece.gr/",
+    "type": "authority",
+    "rel": "noopener",
+    "verified_live": "not fetched today: planner-sme to capture the Mykonos page URL"
+   },
+   {
+    "anchor": "Hellenic National Meteorological Service",
+    "url": "http://oldportal.emy.gr/",
+    "type": "authority",
+    "rel": "noopener",
+    "verified_live": "not fetched today: Mykonos station page is fact_307 in the venues source pack; planner-sme to reuse that exact URL"
+   },
+   {
+    "anchor": "Mykonos airport",
+    "url": "https://www.mykonos-airport.com/",
+    "type": "authority",
+    "rel": "noopener",
+    "verified_live": "not fetched today: planner-sme to confirm the airport operator's official domain"
+   }
+  ],
+  "backlinks_to_add": [
+   {
+    "from": "/destination-weddings/mykonos-wedding-venues",
+    "anchor": "planning a Mykonos wedding",
+    "sentence": "[[draft: add in the intro, pointing readers to seasons and paperwork before the venue list]]"
+   },
+   {
+    "from": "/destinations/europe/greece",
+    "anchor": "our Mykonos wedding guide",
+    "sentence": "[[after publish: add near the Mykonos or Cyclades mention; page not scraped (DataForSEO only)]]"
+   },
+   {
+    "from": "/destination-weddings/paros-wedding-venues",
+    "anchor": "getting married in Mykonos",
+    "sentence": "[[draft: add where Paros links the Mykonos venues guide]]"
+   },
+   {
+    "from": "/destination-weddings/santorini-wedding",
+    "anchor": "a Mykonos wedding",
+    "sentence": "[[draft: add as the alternative-island mention in step 3]]"
+   }
+  ],
+  "serp_source": "dataforseo",
+  "serp_summary": {
+   "locations_checked": [
+    "sydney",
+    "melbourne",
+    "new_york",
+    "dubai",
+    "singapore"
+   ],
+   "locations_failed": [],
+   "common_angles": [
+    "Venue intent dominates the head term: Tripadvisor 'wedding hotels' in 4 of 5 cities, venue lists (mykonos-weddings.com, wedinspire.com, weddingingreece.com), and resort wedding pages (Four Seasons, Saint John, Semeli, Grecotel)",
+    "UK tour operator package pages (theweddingtravelcompany.com) in 3 cities; Viator packages in New York",
+    "Social and forum results (Instagram planners, Facebook groups asking for venues) in every city",
+    "Real-wedding features (Wedding Chicks, photographers) in 3 cities",
+    "New York AI overview: venues with capacities, budget realities and 'planners handle legal paperwork'; elsewhere the AI overview loaded asynchronously and returned no text"
+   ],
+   "gaps": [
+    "No result explains legal versus symbolic or an Australian document path (certificate of no impediment, Embassy Athens, Smartraveller)",
+    "No result gives official climate data or travel advice for picking a season",
+    "No result covers guest travel (airport, ferry, access) as part of planning",
+    "House rules (exclusive use, music times, cancellation) never framed as written questions",
+    "No official tourism or government page ranks in any city"
+   ],
+   "regional_differences": [
+    "Sydney: paid ads from local planners and a venue; real-wedding photographer result",
+    "Melbourne: Four Seasons official page ranks #1",
+    "New York: full AI overview with budget block; Viator packages; Facebook threads about attending weddings",
+    "Dubai: directories and a booking site; related searches add planner, all inclusive and Santorini wedding",
+    "Singapore: close to Melbourne; related searches add all inclusive"
+   ],
+   "recommended_scope": "global"
+  },
+  "cannibalisation": [
+   "weddedwonderland.com ranks for no query containing 'mykonos' (DataForSEO ranked_keywords, AU, keyword like %mykonos%: 0 results, 2026-11-11) and is absent from the top 10 in all 5 cities. No live conflict today.",
+   "Planned conflict: content/posts/mykonos-wedding-venues/02-seo.json lists 'mykonos wedding', 'wedding in mykonos' and 'getting married in mykonos' as its secondary keywords. With the head-term SERP this venue-heavy, Google could pick the venues guide for 'mykonos wedding' and split signals.",
+   "Split recommendation: this guide owns 'mykonos wedding', 'wedding in mykonos', 'getting married in mykonos', season, legal and elopement terms, and cost drivers (no figures). The venues guide owns 'mykonos wedding venues', villa, chapel and 'best venues' variants; remove the three head-term variants from its secondary list and keep its title and H1 led by 'Mykonos Wedding Venues'. 'mykonos wedding packages' and all-inclusive terms stay with /destination-weddings/greece-wedding-packages. 'mykonos wedding planner' is served by the Concierge CTA.",
+   "Linking: this guide links down to the venues guide prominently (anchor about venues); the venues guide links up with 'planning a Mykonos wedding'. Neither uses the other's primary keyword as an exact-match anchor more than once.",
+   "Link map: only the drafts /destination-weddings/mykonos-wedding-venues and /destination-weddings/paros-wedding-venues mention Mykonos; /destinations/europe/greece and /destination-weddings/greece-wedding-venues mention Mykonos briefly and should link down. GSC export not read (fast mode, DataForSEO only)."
+  ]
+ }
+}
