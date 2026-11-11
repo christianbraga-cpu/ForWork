@@ -1,0 +1,327 @@
+{
+ "agent": "planner-sme",
+ "task_id": "corfu-wedding-venues",
+ "stage": "03",
+ "status": "complete",
+ "round": 1,
+ "inputs_used": [
+  "CLAUDE.md",
+  "content/posts/corfu-wedding-venues/00-input.json",
+  "content/posts/corfu-wedding-venues/01-brief.json (batch B venues)",
+  "content/posts/crete-wedding-venues/03-source-pack-part-1.json (format model)",
+  "content/posts/greece-wedding-venues/03-source-pack.json and 03-source-pack-part-3.json (fact_305, fact_306, re-checked live)",
+  "content/posts/greece-wedding-packages/03-source-pack-part-1.json (fact_104 to fact_106, re-checked live)",
+  "Apify web-fetch and web-search 2026-11-11 of official venue pages cited in each fact"
+ ],
+ "self_qa": {
+  "checks": [
+   {
+    "check": "Every fact has a source and date",
+    "pass": true,
+    "note": "13 facts, fact_100 to fact_112, all official venue pages or a venue-published brochure, checked 2026-11-11."
+   },
+   {
+    "check": "No price without a source; all prices in needs_signoff",
+    "pass": true,
+    "note": "No prices, fees, credits or spend thresholds recorded. The Angsana brochure offer and minimum spend were deliberately left out."
+   },
+   {
+    "check": "Every must-include covered or marked [[VERIFY]]",
+    "pass": true,
+    "note": "Batch B covers north-east and south venue entries only; practical sections are batch C."
+   },
+   {
+    "check": "No invented quotes, statistics or real weddings",
+    "pass": true,
+    "note": "The couple testimonial on the Angsana weddings page was not recorded as a quote for use."
+   },
+   {
+    "check": "Australian English, no em dashes",
+    "pass": true
+   }
+  ],
+  "confidence": 0.8
+ },
+ "open_questions": [
+  {
+   "to": "orchestrator",
+   "question": "Batch B qualified 2 of 6 candidates: Angsana Corfu (south-east, Benitses area) and San Antonio Corfu Resort (Kalami, north-east). Domes Miramare has no Miramare-specific weddings offer (fact_106, fact_107); The Rou Estate's own site does not mention weddings or a sea view (fact_105); reserves MarBella Corfu (fact_111, says it does not organise weddings) and Atlantica Nissaki Beach (fact_112, no weddings page) both fail. Four replacements are needed from a top-up batch. Lead noticed, not researched (west coast, batch C territory): Atlantica Grand Mediterraneo Resort has an official weddings page at atlanticahotels.com/atlantica-grand-mediterraneo-resort/weddings/.",
+   "blocking": false
+  }
+ ],
+ "assumptions": [
+  "Angsana Corfu facts restate Greece pack fact_305, fact_306 and Greece packages pack fact_105 after a live re-check on 2026-11-11; content unchanged. The address (11th km Kerkyra to Lefkimi road) is carried from fact_305 and was not re-read on the live location page in the time box.",
+  "San Antonio Corfu Resort's official site is sanantoniocorfuresort.gr (linked from the resort's own Facebook page and carrying the resort's own contact numbers); the canonical tag points to a mail. subdomain of the same domain.",
+  "San Antonio's room count was not on the pages read; a third-party listing gives one but was not used.",
+  "BOOKING CHECKLIST: Angsana Corfu: whether a legal civil ceremony can be held on site (brochure lists symbolic ceremony venues only), capacity of Starboard Terrace, Emerald Beach and Amalia Hall, room block, exclusive use, music curfew, minimum nights, rain plan (Amalia Hall), set-up times.",
+  "BOOKING CHECKLIST: San Antonio Corfu Resort: ceremony types (legal or symbolic), which terraces and whether Callao On The Coast are used for ceremonies and receptions, capacity, room count and block, exclusive use, music curfew, minimum nights, rain plan, set-up times."
+ ],
+ "verify_items": [
+  "[[VERIFY: San Antonio Corfu Resort: confirm with the resort which ceremony types it hosts and on which terraces, as its Events page names 'the ample sun-kissed terraces of the hotel' but no ceremony venues or capacities]]"
+ ],
+ "tools_used": [
+  "mcp__Apify__apify--web-fetch",
+  "mcp__Apify__apify--web-search",
+  "Bash"
+ ],
+ "next_agent": [
+  "luxury-writer"
+ ],
+ "payload": {
+  "facts": [
+   {
+    "fact_id": "fact_100",
+    "claim": "Angsana Corfu Resort & Spa has a Weddings & Honeymoons page presenting the resort as a setting for vows, anniversaries, proposals and honeymoons, with a downloadable wedding brochure, a real weddings page, a venue finder and a request-a-proposal contact. Re-check of Greece venues pack fact_305 and Greece packages pack fact_104.",
+    "source": "https://www.angsana.com/greece/corfu/weddings-honeymoons",
+    "source_type": "official_venue",
+    "checked": "2026-11-11",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_101",
+    "claim": "Sea-view wording, Angsana Corfu Weddings & Honeymoons page: 'A wedding in Corfu begins beneath the Ionian sun, with sea breezes moving through the hills, and blue horizons stretching beyond the ceremony' and 'Experience your ceremony in the ultimate luxurious Mediterranean setting with endless sea views.' The page meta description also says 'panoramic sea views'.",
+    "source": "https://www.angsana.com/greece/corfu/weddings-honeymoons",
+    "source_type": "official_venue",
+    "checked": "2026-11-11",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_102",
+    "claim": "Angsana Corfu's Wedding Venues page lists 196 hotel accommodations, 345 sqm (3,713 sq ft) total event space and 'Meet and feed' 200, and names Oribu Garden, Vertigo Sky Bar, Starboard Terrace, Emerald Beach, Amalia Hall, Foyer Amalia, Oribu Restaurant, Sofrito Restaurant and Ruen Romsai Restaurant. Per-venue capacities are not shown on this page. Re-check of Greece venues pack fact_306; unchanged.",
+    "source": "https://www.angsana.com/greece/corfu/wedding-venues",
+    "source_type": "official_venue",
+    "checked": "2026-11-11",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_103",
+    "claim": "Angsana Corfu's 2026 wedding brochure lists ceremony venues under the heading 'Symbolic Wedding Ceremony Venues': Vertigo Sky Bar (outdoor, max capacity 250, available from mid-May until the end of September, weather permitted) and Oribu Garden (outdoor, max capacity 30, April until October, weather permitted). Reception venues: Vertigo Sky Bar (outdoor, max 250, end of May until end of September), Oribu Restaurant (outdoor/indoor, max 150, April, May, September and October) and Oribu Garden (outdoor, max 30, April until October). The brochure does not mention legal civil or Orthodox ceremonies. Re-check of Greece packages pack fact_105; unchanged. Offer and spend details deliberately omitted.",
+    "source": "https://www.angsana.com/assets/2026-01/Wedding%20Brochure%202026%20-%20Angsana%20Corfu.pdf",
+    "source_type": "official_venue",
+    "checked": "2026-11-11",
+    "is_price": false,
+    "conflicts": "Brochure gives Vertigo Sky Bar availability as 'mid-May' for ceremonies but 'the end of May' for receptions."
+   },
+   {
+    "fact_id": "fact_104",
+    "claim": "Angsana Corfu's 2026 wedding brochure opens: 'Celebrate the start of your wonderful journey in a place with breathtaking views, stunning venues and one-of-a-kind facilities.' The resort's address as previously recorded is the 11th km of the Kerkyra to Lefkimi road (south of Corfu Town, Benitses area).",
+    "source": "https://www.angsana.com/assets/2026-01/Wedding%20Brochure%202026%20-%20Angsana%20Corfu.pdf; address from content/posts/greece-wedding-venues/03-source-pack.json fact_305",
+    "source_type": "official_venue",
+    "checked": "2026-11-11",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_105",
+    "claim": "The Rou Estate's official homepage describes a restored 200-year-old hamlet in the north-east of Corfu with 14 private houses, each with a private plunge pool, plus a restaurant, health retreat complex and pool, and 'the most spectacular 270 degree views overlooking Albania'. The page lists corporate events, cooking courses, health retreats, painting courses and walking trips as activities it can host; it does not mention weddings, and its navigation (Houses, Philosophy, Lifestyle, Press, Contact) has no weddings page. Its view wording does not mention the sea. Inclusion rule fails on the venue's own site.",
+    "source": "https://rouestate.com/",
+    "source_type": "official_venue",
+    "checked": "2026-11-11",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_106",
+    "claim": "Domes Miramare, a Luxury Collection Resort, Corfu is described on its official site (structured data) as an adults-only (16+) beachfront resort in Moraitika, set in a two-century-old olive grove with 650 metres of seafront, 182 rooms, suites and villas, 3 restaurants including a MICHELIN-starred venue (Makris) and 4 bars. Its site navigation (offers, gallery, suites, dining, spa, experiences, arts and culture, happenings, highlights, FAQ, contact, get a quote) has no weddings page, and a site search returned only a Miramare honeymoon offer and group-level wedding pages for other Domes properties (Domes Cascade, Domes Lake Algarve).",
+    "source": "https://domesresorts.com/domesmiramare/",
+    "source_type": "official_venue",
+    "checked": "2026-11-11",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_107",
+    "claim": "The only Domes Resorts page found that names Domes Miramare in a wedding context is a group-level 'Domes Stories' article (published 28 September 2022, updated 8 October 2024) saying Domes Resorts host weddings across seven Greek properties, including Domes Miramare, with 'the sun setting over the Aegean or the Ionian Sea'. It is not a Miramare-specific weddings offer and gives no Miramare venues, ceremony types or capacities. Domes Miramare does not meet the inclusion rule (no Miramare-specific weddings offer on its own site).",
+    "source": "https://domesresorts.com/domesstories/your-perfect-wedding-with-style/",
+    "source_type": "official_venue",
+    "checked": "2026-11-11",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_108",
+    "claim": "San Antonio Corfu Resort (adults-only, Kalami, north-east Corfu) has an official Events page, 'Celebrations at San Antonio Corfu Resort': 'Say \"I do\" with the Ionian breeze in your hair ... or renew your vows in the presence of family & friends, against a sensational backdrop of Greek blue, rugged rocks, and sea foam.' It names 'the ample sun-kissed terraces of the hotel' and lists bachelor or bachelorette parties, weddings and receptions, calling the resort 'the ideal seaside destination'. No ceremony types, venues by name, capacities or packages are published.",
+    "source": "https://sanantoniocorfuresort.gr/events/",
+    "source_type": "official_venue",
+    "checked": "2026-11-11",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_109",
+    "claim": "Sea-view wording, San Antonio Corfu Resort homepage: under 'Spellbinding sea-views', 'San Antonio impresses with its spectacular views over the Ionian Sea and the small fishing village that was chosen by the Durrell Family as their place of residence when Gerald Durrell wrote his masterpieces.' The homepage also describes 'the most privileged seafront location in North-East Corfu', set amid ancient olive groves on Kalami Bay, and groups its accommodation as Sea View Rooms, Sea View Suites and a Hideaway Villa.",
+    "source": "https://sanantoniocorfuresort.gr/",
+    "source_type": "official_venue",
+    "checked": "2026-11-11",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_110",
+    "claim": "San Antonio Corfu Resort's homepage names Callao On The Coast as 'the resort's signature venue', a beach venue with premium beach facilities and al fresco dining, alongside Dyo Elies and a bar, Bliss. The homepage does not publish a room count.",
+    "source": "https://sanantoniocorfuresort.gr/",
+    "source_type": "official_venue",
+    "checked": "2026-11-11",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_111",
+    "claim": "MarBella Corfu's official FAQ page answers 'Does MarBella host weddings or wedding receptions?' with 'MarBella doesn't organize weddings or wedding receptions.' Reserve fails the inclusion rule.",
+    "source": "https://www.marbella.gr/hotels/marbella-corfu/faq-marbella/",
+    "source_type": "official_venue",
+    "checked": "2026-11-11",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_112",
+    "claim": "Atlantica Nissaki Beach (Gimari, north-east Corfu; the reserve listed as Nissaki Beach Hotel) describes itself as an adults-only 'serene escape by the sea' where guests 'wake to sea views', but its official page navigation (Overview, Gallery, Sleep, Eat & Drink, Hotel Deals, Leisure, Location) has no weddings page, /atlantica-nissaki-beach/weddings/ returns 404, and a site search of atlanticahotels.com found a weddings page only for Atlantica Grand Mediterraneo Resort. Reserve fails the inclusion rule (no weddings offer on its own pages).",
+    "source": "https://www.atlanticahotels.com/atlantica-nissaki-beach/",
+    "source_type": "official_venue",
+    "checked": "2026-11-11",
+    "is_price": false
+   }
+  ],
+  "venue_verdicts": [
+   {
+    "venue": "Angsana Corfu Resort & Spa",
+    "region": "South-east (Benitses area, Kerkyra to Lefkimi road)",
+    "verdict": "include",
+    "fact_ids": [
+     "fact_100",
+     "fact_101",
+     "fact_102",
+     "fact_103",
+     "fact_104"
+    ],
+    "not_published": [
+     "legal (civil) ceremony on site",
+     "capacity of Starboard Terrace, Emerald Beach and Amalia Hall",
+     "exclusive use",
+     "music curfew",
+     "minimum nights",
+     "rain plan",
+     "set-up times"
+    ]
+   },
+   {
+    "venue": "San Antonio Corfu Resort",
+    "region": "North-east (Kalami)",
+    "verdict": "include",
+    "fact_ids": [
+     "fact_108",
+     "fact_109",
+     "fact_110"
+    ],
+    "not_published": [
+     "ceremony types",
+     "named ceremony venues",
+     "capacity",
+     "room count",
+     "exclusive use",
+     "music curfew",
+     "minimum nights",
+     "rain plan",
+     "set-up times"
+    ]
+   },
+   {
+    "venue": "Domes Miramare, a Luxury Collection Resort",
+    "region": "South (Moraitika)",
+    "verdict": "exclude",
+    "fact_ids": [
+     "fact_106",
+     "fact_107"
+    ],
+    "not_published": [
+     "Miramare-specific weddings offer"
+    ]
+   },
+   {
+    "venue": "The Rou Estate",
+    "region": "North-east (Rou, foothills of Mount Pantokrator)",
+    "verdict": "exclude",
+    "fact_ids": [
+     "fact_105"
+    ],
+    "not_published": [
+     "weddings offer",
+     "sea-view wording"
+    ]
+   },
+   {
+    "venue": "MarBella Corfu (reserve)",
+    "region": "South-east (Agios Ioannis Peristeron)",
+    "verdict": "exclude",
+    "fact_ids": [
+     "fact_111"
+    ],
+    "not_published": []
+   },
+   {
+    "venue": "Atlantica Nissaki Beach (reserve)",
+    "region": "North-east (Nissaki, Gimari)",
+    "verdict": "exclude",
+    "fact_ids": [
+     "fact_112"
+    ],
+    "not_published": [
+     "weddings offer"
+    ]
+   }
+  ],
+  "insider_details": [
+   {
+    "detail": "Angsana Corfu's large outdoor ceremony space, Vertigo Sky Bar, runs a shorter season than its garden: ceremonies there are listed from mid-May to the end of September, while Oribu Garden runs April to October but holds only 30, so a couple with a bigger guest list who want shoulder-season dates should plan around Oribu Restaurant (150, April, May, September and October) for the reception.",
+    "fact_ids": [
+     "fact_103"
+    ]
+   },
+   {
+    "detail": "Angsana's brochure lists its ceremony spaces as symbolic wedding venues, so couples who want a legally registered marriage should plan for the civil step to be handled separately and have the Wedded Advisor confirm in writing what the resort can host.",
+    "fact_ids": [
+     "fact_103"
+    ]
+   },
+   {
+    "detail": "San Antonio is an adults-only resort on Kalami Bay with a beach venue, Callao On The Coast, and hillside terraces; it suits an intimate wedding where guests stay on site, but nothing on capacity or ceremony type is published, so treat it as a shortlist candidate to be confirmed rather than a fixed option.",
+    "fact_ids": [
+     "fact_108",
+     "fact_109",
+     "fact_110"
+    ]
+   }
+  ],
+  "quotes": [],
+  "real_weddings": [],
+  "budget_range_aud": [],
+  "verify_items": [
+   "[[VERIFY: San Antonio Corfu Resort: confirm with the resort which ceremony types it hosts and on which terraces, as its Events page names 'the ample sun-kissed terraces of the hotel' but no ceremony venues or capacities]]"
+  ],
+  "needs_signoff": [],
+  "must_include_coverage": [
+   {
+    "item": "Venue entries, south-east (Benitses and Moraitika)",
+    "covered_by": [
+     "fact_100",
+     "fact_101",
+     "fact_102",
+     "fact_103",
+     "fact_104",
+     "fact_106",
+     "fact_107",
+     "fact_111"
+    ]
+   },
+   {
+    "item": "Venue entries, north-east (Kassiopi, Agni, Kalami)",
+    "covered_by": [
+     "fact_105",
+     "fact_108",
+     "fact_109",
+     "fact_110",
+     "fact_112"
+    ]
+   },
+   {
+    "item": "When to marry: venue-stated seasons (Angsana ceremony venues' stated months)",
+    "covered_by": [
+     "fact_103"
+    ]
+   }
+  ]
+ }
+}
