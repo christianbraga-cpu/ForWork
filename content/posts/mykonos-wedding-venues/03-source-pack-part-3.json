@@ -1,0 +1,250 @@
+{
+  "agent": "planner-sme",
+  "task_id": "mykonos-wedding-venues",
+  "stage": "03",
+  "status": "complete",
+  "round": 1,
+  "inputs_used": [
+    "CLAUDE.md",
+    "content/posts/mykonos-wedding-venues/00-input.json",
+    "content/posts/mykonos-wedding-venues/01-brief.json",
+    "content/posts/corfu-wedding-venues/03-source-pack-part-3.json (format model)",
+    "content/posts/corfu-wedding-venues/03-source-pack-part-2.json (fact_203-205 re-checked)",
+    "Apify web-search and web-fetch 2026-11-11 of official sources listed in each fact"
+  ],
+  "self_qa": {
+    "checks": [
+      {
+        "check": "Every fact has a source and date",
+        "pass": true
+      },
+      {
+        "check": "No price without a source; all prices in needs_signoff",
+        "pass": true,
+        "note": "No prices recorded."
+      },
+      {
+        "check": "Every must-include covered or marked [[VERIFY]]",
+        "pass": true,
+        "note": "Batch D covers villas/event venues and practical facts only; other items sit with batches A to C."
+      },
+      {
+        "check": "No invented quotes, statistics or real weddings",
+        "pass": true
+      }
+    ],
+    "confidence": 0.7
+  },
+  "open_questions": [
+    {
+      "to": "orchestrator",
+      "question": "Batch D qualifies 1 venue: Myconian Villa Collection (Elia Beach, south coast), whose official site has a Weddings and Events page. Villa Joy Mykonos (villajoymykonos.com, Ano Mera) does NOT qualify: its official pages offer retreats and 'Events & Shootings' but never say weddings (a second domain, mykonosexclusivevilla.com, failed TLS). No other villa estate or event venue with its own official weddings page was found: search returned directories, rental agents and social posts only (Villa Almi, Mykonos Rocks, Alia leads have no official site read). Saint John Mykonos (saintjohn.gr) has a weddings blog mentioning a private whitewashed chapel; it is a hotel, not in this batch's scope, and was not read.",
+      "blocking": false
+    }
+  ],
+  "assumptions": [
+    "BOOKING CHECKLIST: Myconian Villa Collection: ceremony types offered on site, seated and standing capacity, exclusive-use terms, music curfew, minimum nights, rain or wind plan and set-up times not published; confirm in writing.",
+    "Visit Greece flight times are scheduled durations from the tourism board, not airline timetables."
+  ],
+  "verify_items": [
+    "[[VERIFY: Myconian Villa Collection: ceremony types, seated capacity, total room count and exclusive-use terms are not stated on its official home or Weddings and Events pages; the Wedded Advisor to confirm before the article states them]]",
+    "[[VERIFY: HNMS climatic data by city has no Mykonos station (South Aegean lists Naxos and Rodos only); orchestrator to decide whether to cite HNMS Naxos as the nearest official station, labelled as such, or leave monthly averages out]]",
+    "[[VERIFY: Mykonos port details (New Port at Tourlos, Old Port) not found on an official port or government source within the time limit; do not state port distances or which vessels use which port until sourced]]",
+    "[[VERIFY: Meltemi: no official source read names the meltemi or its season for Mykonos; Visit Greece says only 'the island of the winds' (fact_312)]]"
+  ],
+  "tools_used": [
+    "mcp__Apify__apify--web-search",
+    "mcp__Apify__apify--web-fetch"
+  ],
+  "next_agent": [
+    "luxury-writer"
+  ],
+  "payload": {
+    "facts": [
+      {
+        "fact_id": "fact_300",
+        "claim": "Myconian Villa Collection describes itself on its official site as a 5-star Mykonos resort at Elia Beach, with deluxe rooms, suites and villas with private pools or outdoor hot tubs and sweeping sea views; Elia Beach is described as a short drive from Mykonos Town.",
+        "source": "https://www.myconianvillas.gr/",
+        "source_type": "official_venue",
+        "checked": "2026-11-11",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_301",
+        "claim": "Myconian Villa Collection's official home page has a Weddings and Events section offering 'glamorous receptions and exclusive events to intimate ceremonies, fairytale destination weddings', with a dedicated team; its Weddings and Events page says the Myconian Collection's events team plans 'fairytale Mykonos weddings' using its venues, restaurants and accommodation. No ceremony types, capacity, room count or exclusive-use terms are stated on either page.",
+        "source": "https://www.myconianvillas.gr/services/weddings-events/",
+        "source_type": "official_venue",
+        "checked": "2026-11-11",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_302",
+        "claim": "Myconian Villa Collection's official site lists a private spot on Elia Beach, an infinity pool, in-house boutiques, a spa, and dining including Cabbanes restaurant.",
+        "source": "https://www.myconianvillas.gr/",
+        "source_type": "official_venue",
+        "checked": "2026-11-11",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_303",
+        "claim": "Villa Joy Mykonos's official site (villajoymykonos.com) describes a Main Villa with 7 bedrooms (4 large suites, 2 deluxe bedrooms, 1 small bedroom) and 3 lounge areas around the pool, plus 2 to 3 separate suites with their own private pool, and offers retreats and 'Events & Shootings'. Its Events and Shootings page mentions 'unforgettable events', DJ set and loudspeaker hire and external catering, but neither page read says the villa hosts weddings. The site's footer and TripAdvisor link place it at Ano Mera.",
+        "source": "https://villajoymykonos.com/events-and-shootings/",
+        "source_type": "official_venue",
+        "checked": "2026-11-11",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_304",
+        "claim": "Mykonos Airport's official website (jmk-airport.gr, 'The official website of Mykonos Airport (JMK)') is run within the Fraport Greece network: it links to 'Fraport Greece's plans for the new airport' and the official Fraport Greece magazine. Its 'To and From the Airport' section lists GPS directions, a direct public bus service to and from the airport, and taxis; it also lists a Private Flights Lounge with VIP welcoming services.",
+        "source": "https://www.jmk-airport.gr/en",
+        "source_type": "other",
+        "checked": "2026-11-11",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_305",
+        "claim": "As at November 2026, Smartraveller's Greece advice (updated 30 September 2026, still current at 11 November 2026) is 'Exercise normal safety precautions' (level green). It says heatwaves are frequent over the summer months and can cause heat exhaustion, heat stroke and death, and that many major tourist sites have little shade.",
+        "source": "https://www.smartraveller.gov.au/destinations/europe/greece",
+        "source_type": "government",
+        "checked": "2026-11-11",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_306",
+        "claim": "As at November 2026, Smartraveller says wildfires occur in Greece during the extended summer period, from June to September, including near cities and tourist locations, prompting evacuations; fires can start with little warning and travel quickly. It also notes extreme weather throughout the year, including heavy snowfall and flooding in winter, and its latest update advises care when swimming (boat traffic, coastal hazards, strong currents, marine life) and swimming at patrolled beaches where possible.",
+        "source": "https://www.smartraveller.gov.au/destinations/europe/greece",
+        "source_type": "government",
+        "checked": "2026-11-11",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_307",
+        "claim": "The Hellenic National Meteorological Service (HNMS/EMY) 'Climatic Data by City' page for the South Aegean lists only Naxos and Rodos as stations; there is no Mykonos station in that table. The hnms.gr address failed a TLS check on 11 November 2026; the page was read at oldportal.emy.gr (HNMS).",
+        "source": "http://oldportal.emy.gr/emy/en/climatology/climatology_city?perifereia=South%20Aegean&poli=Mykonos",
+        "source_type": "government",
+        "checked": "2026-11-11",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_308",
+        "claim": "Mykonos Airport's official site says a bus service runs between the airport and the city of Mykonos (Chora) and other destinations, from a stop in front of the terminal building (Arrivals area), with tickets bought from the driver (more information at mykonosbus.com); a taxi stand is outside the Arrivals terminal building.",
+        "source": "https://www.jmk-airport.gr/en/category-detailed/ctg_id-397/nd_id-1281",
+        "source_type": "other",
+        "checked": "2026-11-11",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_309",
+        "claim": "As at November 2026, Smartraveller's 'Getting married overseas' page (last updated 18/08/2026, re-checked 11 November 2026, unchanged from corfu-wedding-venues fact_203) says some countries ask you to prove you are free to marry, most commonly with a Certificate of No Impediment to Marriage (CNI) and registry certificates; DFAT can issue a CNI in Australia but some local authorities only accept ones issued in their country, so ask the destination's embassy or consulate whether you need one, whether you can get it in Australia, and whether it needs an authentication or apostille. The Wedded Advisor confirms current requirements.",
+        "source": "https://www.smartraveller.gov.au/planning-trip/advice-your-planned-activities/getting-married-overseas",
+        "source_type": "government",
+        "checked": "2026-11-11",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_310",
+        "claim": "As at November 2026, Smartraveller says (re-checked 11 November 2026, unchanged from corfu-wedding-venues fact_204) an overseas marriage cannot be registered in Australia but in most cases is legally recognised if it was valid under the law of the country where it happened and would have been valid under Australian law had it occurred here; a foreign marriage certificate is usually accepted as proof of marriage but may not work as proof of a name change. The Wedded Advisor confirms current requirements.",
+        "source": "https://www.smartraveller.gov.au/planning-trip/advice-your-planned-activities/getting-married-overseas",
+        "source_type": "government",
+        "checked": "2026-11-11",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_311",
+        "claim": "As at November 2026, the Australian Embassy in Athens (re-checked 11 November 2026, unchanged from corfu-wedding-venues fact_205) lists among its notarial services witnessing application forms for, and issuing, Certificates of No Impediment (CNI), witnessing notices of intended marriage, and legalisation by authentication or apostille. All notarial services need an appointment (Monday to Friday, 9:00am to 12:30pm), though apostille and CNI documents can be submitted by post; legalised documents and CNIs are ready for collection within two working days unless same-day collection is arranged; the Embassy gives no legal advice, honorary consuls cannot provide notarial services, and fees apply. The Wedded Advisor confirms current requirements.",
+        "source": "https://greece.embassy.gov.au/athn/notarial.html",
+        "source_type": "government",
+        "checked": "2026-11-11",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_312",
+        "claim": "Visit Greece (the official Greek tourism site) calls Mykonos 'the island of the winds', in the heart of the Cyclades, and lists flights from Athens International Airport (Eleftherios Venizelos) to Mykonos Airport of about 45 minutes and from Thessaloniki Airport of about 1 hour 10 minutes. The page does not name the meltemi or give seasonal wind data.",
+        "source": "https://www.visitgreece.gr/en/islands/cyclades/mykonos",
+        "source_type": "tourism_board",
+        "checked": "2026-11-11",
+        "is_price": false
+      }
+    ],
+    "insider_details": [
+      {
+        "detail": "Myconian Villa Collection's weddings offer sits with the wider Myconian Collection events team, so ask early which of the group's venues and restaurants would host the ceremony and the reception, and get capacity and room numbers in writing, as none are published on the Villa Collection pages.",
+        "fact_ids": [
+          "fact_300",
+          "fact_301"
+        ]
+      },
+      {
+        "detail": "Mykonos Airport's official site lists only a public bus from in front of Arrivals and a taxi stand outside the terminal, so for a wedding group plan pre-booked private coach or car transfers rather than relying on the rank.",
+        "fact_ids": [
+          "fact_304",
+          "fact_308"
+        ]
+      },
+      {
+        "detail": "Smartraveller warns of frequent summer heatwaves and of wildfires from June to September; for a July or August wedding, schedule the ceremony late in the day, plan shade and water for guests, and keep the guest list contactable in case of local fire advice.",
+        "fact_ids": [
+          "fact_305",
+          "fact_306"
+        ]
+      },
+      {
+        "detail": "Mykonos is a short domestic hop from Athens (about 45 minutes, per Visit Greece), so couples needing a CNI or apostille from the Australian Embassy in Athens can fit an appointment (weekdays, 9:00am to 12:30pm) around a stopover; CNIs and apostilles are ready within two working days unless same-day collection is arranged.",
+        "fact_ids": [
+          "fact_311",
+          "fact_312"
+        ]
+      }
+    ],
+    "quotes": [],
+    "real_weddings": [],
+    "verify_items": [
+      "[[VERIFY: Myconian Villa Collection: ceremony types, seated capacity, total room count and exclusive-use terms are not stated on its official home or Weddings and Events pages; the Wedded Advisor to confirm before the article states them]]",
+      "[[VERIFY: HNMS climatic data by city has no Mykonos station (South Aegean lists Naxos and Rodos only); orchestrator to decide whether to cite HNMS Naxos as the nearest official station, labelled as such, or leave monthly averages out]]",
+      "[[VERIFY: Mykonos port details (New Port at Tourlos, Old Port) not found on an official port or government source within the time limit; do not state port distances or which vessels use which port until sourced]]",
+      "[[VERIFY: Meltemi: no official source read names the meltemi or its season for Mykonos; Visit Greece says only 'the island of the winds' (fact_312)]]"
+    ],
+    "needs_signoff": [
+      "No prices or fees recorded in batch D (prices excluded by instruction). Any price printed needs Nic's sign-off."
+    ],
+    "must_include_coverage": [
+      {
+        "item": "Private villas and dedicated event venues on Mykonos whose own official site says they host weddings (batch D)",
+        "covered_by": [
+          "fact_300",
+          "fact_301",
+          "fact_302",
+          "[[VERIFY: Myconian Villa Collection: ceremony types, seated capacity, total room count and exclusive-use terms are not stated on its official home or Weddings and Events pages; the Wedded Advisor to confirm before the article states them]]"
+        ]
+      },
+      {
+        "item": "Getting there: Mykonos airport (official site) and port",
+        "covered_by": [
+          "fact_304",
+          "fact_308",
+          "fact_312",
+          "[[VERIFY: Mykonos port details (New Port at Tourlos, Old Port) not found on an official port or government source within the time limit; do not state port distances or which vessels use which port until sourced]]"
+        ]
+      },
+      {
+        "item": "When to marry: HNMS monthly averages, heat, wildfire, wind",
+        "covered_by": [
+          "fact_305",
+          "fact_306",
+          "fact_307",
+          "fact_312",
+          "[[VERIFY: HNMS climatic data by city has no Mykonos station (South Aegean lists Naxos and Rodos only); orchestrator to decide whether to cite HNMS Naxos as the nearest official station, labelled as such, or leave monthly averages out]]",
+          "[[VERIFY: Meltemi: no official source read names the meltemi or its season for Mykonos; Visit Greece says only 'the island of the winds' (fact_312)]]"
+        ]
+      },
+      {
+        "item": "Legal steps in brief (Smartraveller and Australian Embassy Athens, as at November 2026)",
+        "covered_by": [
+          "fact_309",
+          "fact_310",
+          "fact_311"
+        ]
+      }
+    ]
+  }
+}

@@ -3,3 +3,4 @@
 05:56 02 SEO done: AU 10 / US 110; no cannibalisation. Ranking venue pages (Saint John, ZeNIT Events Center, Semeli, Mykonos Grand, Mykonos Blu) noted as top-up candidates.
 05:59 03 batch C done: Myconian Collection (one entry) and Mykonos Lolita qualify; Ftelia Bay conditional reserve; Pietra e Mare excluded.
 06:01 03 batch B done: Mykonos Blu, Petasos, Myconian Ambassador qualify; Soho Roc House (ex San Giorgio) held as reserve (members' club, closed until 2027); Kensho Psarou out. Firm total 5 so far.
+06:02 03 batch D done: Myconian Villa Collection qualifies; Villa Joy no weddings; airport, Smartraveller, legal facts saved; no HNMS Mykonos station. Firm total 6; top-up E launched.
