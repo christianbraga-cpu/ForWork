@@ -1,0 +1,617 @@
+{
+  "agent": "planner-sme",
+  "task_id": "wedding-in-crete",
+  "stage": "03",
+  "status": "complete",
+  "round": 1,
+  "inputs_used": [
+    "content/posts/wedding-in-crete/00-input.json",
+    "content-system/schemas/03-source-pack.schema.json",
+    "content/posts/crete-wedding-venues/03-source-pack.json (format model; fact_11, fact_106, fact_210, fact_211 re-checked live)",
+    "Apify web-search and web-fetch 2026-11-11: newportal.hnms.gr (Heraklion, Chania Souda climate normals), incrediblecrete.gr/en/information, visitgreece.gr (Crete; Crete route page), chq-airport.gr, fraport-greece.com, hcaa.gov.gr, minosbeach.com, grecotel.com/amirandes",
+    "CLAUDE.md",
+    "content/posts/crete-wedding-venues/03-source-pack-part-1.json (format model)",
+    "content/posts/crete-wedding-venues/03-source-pack.json (facts re-checked live)",
+    "content/posts/greece-wedding-packages/03-source-pack.json (facts re-checked live)",
+    "Apify web-fetch 2026-11-11 of each official page cited"
+  ],
+  "self_qa": {
+    "checks": [
+      {
+        "check": "Every fact has a source and date",
+        "pass": true
+      },
+      {
+        "check": "No price without a source; all prices in needs_signoff",
+        "pass": true,
+        "note": "No prices recorded."
+      },
+      {
+        "check": "Every must-include covered or marked [[VERIFY]]",
+        "pass": true,
+        "note": "Batch A scope only; cost, legal and venue season windows are batch B."
+      },
+      {
+        "check": "No invented quotes, statistics or real weddings",
+        "pass": true
+      }
+    ],
+    "confidence": 0.8
+  },
+  "open_questions": [
+    {
+      "to": "orchestrator",
+      "question": "meteo.gr and sea temperature not read within the 12-minute limit; HNMS gives no sea temperature. Omit sea temperature or run a short follow-up?",
+      "blocking": false
+    },
+    {
+      "to": "orchestrator",
+      "question": "Amirandes resort page now gives VIP Beach up to 80 guests and Events Patio 20 to 160 guests (fact_17); the venues guide may want to add this.",
+      "blocking": false
+    },
+    {
+      "to": "orchestrator",
+      "question": "The 40-day registration step is venue-published only; no Greek government page was read in batch B. Write it as the venue's stated step, or link the Greece guide legal section.",
+      "blocking": false
+    }
+  ],
+  "assumptions": [
+    "HNMS figures are long-term climate normals (Heraklion 1955 to 2010, Chania Souda 1958 to 2010), not forecasts; the article should call them long-term averages.",
+    "Chania Souda station sits at 148 m altitude near Souda Bay, not in Chania town; describe as the Chania area.",
+    "All facts restate facts in crete-wedding-venues and greece-wedding-packages 03 packs after a live re-check on 2026-11-11; page content matched, with fresh wording.",
+    "Minos Palace (April to November) is the only venue season window found in the re-checked pages; other venues publish no season window.",
+    "BOOKING CHECKLIST: Elounda Collection: current Municipal or Metropolis fee, three-night minimum, and 2027 document deadlines.",
+    "BOOKING CHECKLIST: Abaton: 2026-2027 brochure terms, beach setup fee, venue fee per venue.",
+    "BOOKING CHECKLIST: Sea View by En Kipo: extension to 2:00am terms, music and noise rules, rain plan.",
+    "BOOKING CHECKLIST: Nana Princess: package inclusions behind the Explore links, Conference Hall capacity.",
+    "BOOKING CHECKLIST: Euphoria Resort: confirm informal ceremonies only (no legal civil wedding on site)."
+  ],
+  "verify_items": [
+    "[[VERIFY: do not state the Incredible Crete autumn average of 12 to 13 C; it conflicts with HNMS normals (fact_05 vs fact_01)]]",
+    "[[VERIFY: sea temperature by month: no official source (HNMS, meteo.gr, Visit Greece, Incredible Crete) giving Crete sea temperatures was read within the time limit; omit sea temperature or source it before stating]]",
+    "[[VERIFY: Heraklion Airport transfer options (bus, taxi): the operator HASP's own airport page was not read; only the HCAA operator and name are sourced (fact_14)]]",
+    "[[VERIFY: no official source states the best months for a wedding in Crete; month guidance must be written from HNMS normals (fact_01 to fact_10) and venue-stated windows (batch B), not as a stated official recommendation]]",
+    "[[VERIFY: Elounda Collection 40-day registration at the Registry Office in Aghios Nikolaos is a venue-published step (2025 PDF); confirm with the venue or a Greek government source before stating it as a legal requirement]]",
+    "[[VERIFY: Elounda Collection document lead times (email 4 weeks, courier 3 weeks, documents issued within 3 months) come from the 2025 packages PDF; confirm they still apply for 2027 dates]]",
+    "[[VERIFY: Abaton terms (minimum 20 guests, minimum 10 rooms for 2 nights, maximum 300) are from the 2025-2026 brochure, the only one linked; confirm for 2027 dates]]"
+  ],
+  "tools_used": [
+    "mcp__Apify__apify--web-fetch",
+    "mcp__Apify__apify--web-search",
+    "Bash"
+  ],
+  "next_agent": [
+    "luxury-writer"
+  ],
+  "payload": {
+    "facts": [
+      {
+        "fact_id": "fact_01",
+        "claim": "HNMS climate normals for Heraklion (Iraklio station, altitude 39 m, data period 1955 to 2010), monthly mean temperature in C: Jan 12.1, Feb 12.2, Mar 13.6, Apr 16.6, May 20.4, Jun 24.5, Jul 26.4, Aug 26.3, Sep 23.7, Oct 20.3, Nov 16.8, Dec 13.8.",
+        "source": "http://newportal.hnms.gr/emy/en/climatology/climatology_city?perifereia=Crete&poli=Heraklion",
+        "source_type": "government",
+        "checked": "2026-11-11",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_02",
+        "claim": "HNMS climate normals for Heraklion (1955 to 2010), mean monthly minimum and maximum temperature in C: Jan 9.1/15.3, Feb 8.9/15.5, Mar 9.8/17.0, Apr 12.0/20.1, May 15.1/23.6, Jun 19.2/27.3, Jul 21.9/28.9, Aug 22.0/28.8, Sep 19.5/26.6, Oct 16.7/23.6, Nov 13.5/20.2, Dec 10.9/17.1.",
+        "source": "http://newportal.hnms.gr/emy/en/climatology/climatology_city?perifereia=Crete&poli=Heraklion",
+        "source_type": "government",
+        "checked": "2026-11-11",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_03",
+        "claim": "HNMS climate normals for Heraklion (1955 to 2010), monthly mean precipitation in mm and mean precipitation days: Jan 91.0/16.0, Feb 69.0/13.6, Mar 53.4/11.4, Apr 28.2/7.6, May 13.4/4.6, Jun 2.9/1.3, Jul 0.8/0.3, Aug 0.9/0.5, Sep 16.7/2.8, Oct 59.4/7.5, Nov 59.6/10.6, Dec 85.6/15.2.",
+        "source": "http://newportal.hnms.gr/emy/en/climatology/climatology_city?perifereia=Crete&poli=Heraklion",
+        "source_type": "government",
+        "checked": "2026-11-11",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_04",
+        "claim": "HNMS climate normals for Heraklion (1955 to 2010): prevailing wind is south from October to May and north-west from June to September; monthly mean relative humidity runs from about 57 percent (June and July) to about 68 percent (December and January). HNMS does not give sea temperature on this page.",
+        "source": "http://newportal.hnms.gr/emy/en/climatology/climatology_city?perifereia=Crete&poli=Heraklion",
+        "source_type": "government",
+        "checked": "2026-11-11",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_05",
+        "claim": "Incredible Crete (official tourism website of the Region of Crete) describes the climate as mild Mediterranean, dry and warm with high sunshine all year; spring temperatures about 16 to 24 C; summer averages about 25 to 30 C with maximums reaching even 40 C, eased by the meltemi winds; eastern Crete warmer than western Crete, the south warmer than the north, and the mountains cooler.",
+        "source": "https://www.incrediblecrete.gr/en/information/",
+        "source_type": "tourism_board",
+        "checked": "2026-11-11",
+        "is_price": false,
+        "conflicts": "Incredible Crete says autumn is the mildest season with average temperatures about 12 to 13 C; HNMS Heraklion normals give monthly means of 23.7 C (September), 20.3 C (October) and 16.8 C (November). Use the HNMS figures; do not quote the tourism-site autumn figure. [[VERIFY: do not state the Incredible Crete autumn average of 12 to 13 C; it conflicts with HNMS normals]]"
+      },
+      {
+        "fact_id": "fact_06",
+        "claim": "Incredible Crete states Crete is the largest island of Greece, covers almost 8,000 square kilometres, is about 260 km long, has more than 1,000 km of coastline, and is intensely mountainous, with the Lefka Ori (2,452 m), Psiloritis (2,456 m) and Mount Dikti (2,148 m) crossing it west to east.",
+        "source": "https://www.incrediblecrete.gr/en/information/",
+        "source_type": "tourism_board",
+        "checked": "2026-11-11",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_07",
+        "claim": "Incredible Crete's useful information page says people of non-Greek nationality who wish to marry in Crete should contact the local municipality where the wedding will take place for the certificates required; it also lists Greek official holidays including March 25, May 1, Easter Monday (movable), August 15, October 28 and December 25 and 26.",
+        "source": "https://www.incrediblecrete.gr/en/information/",
+        "source_type": "tourism_board",
+        "checked": "2026-11-11",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_08",
+        "claim": "HNMS climate normals for Chania Souda station (altitude 148 m, data period 1958 to 2010), monthly mean temperature in C: Jan 11.0, Feb 11.0, Mar 12.7, Apr 15.9, May 20.2, Jun 24.7, Jul 26.7, Aug 26.3, Sep 23.2, Oct 19.4, Nov 15.8, Dec 12.7; mean monthly maximum: Jan 14.4, Feb 14.7, Mar 16.6, Apr 20.0, May 24.5, Jun 28.9, Jul 30.7, Aug 30.4, Sep 27.4, Oct 23.5, Nov 19.6, Dec 16.2.",
+        "source": "http://newportal.hnms.gr/emy/en/climatology/climatology_city?perifereia=Crete&poli=Chania_Souda",
+        "source_type": "government",
+        "checked": "2026-11-11",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_09",
+        "claim": "HNMS climate normals for Chania Souda (1958 to 2010), mean monthly minimum temperature in C: Jan 7.9, Feb 7.8, Mar 9.0, Apr 11.4, May 15.0, Jun 19.0, Jul 21.2, Aug 21.2, Sep 18.7, Oct 15.7, Nov 12.4, Dec 9.7.",
+        "source": "http://newportal.hnms.gr/emy/en/climatology/climatology_city?perifereia=Crete&poli=Chania_Souda",
+        "source_type": "government",
+        "checked": "2026-11-11",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_10",
+        "claim": "HNMS climate normals for Chania Souda (1958 to 2010), monthly mean precipitation in mm and mean precipitation days: Jan 129.5/16.3, Feb 104.0/14.5, Mar 76.0/11.5, Apr 31.5/7.7, May 13.5/4.2, Jun 3.4/1.2, Jul 1.0/0.4, Aug 1.4/0.6, Sep 15.4/3.2, Oct 67.7/9.3, Nov 77.0/11.2, Dec 101.9/16.1.",
+        "source": "http://newportal.hnms.gr/emy/en/climatology/climatology_city?perifereia=Crete&poli=Chania_Souda",
+        "source_type": "government",
+        "checked": "2026-11-11",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_11",
+        "claim": "Visit Greece (official tourism site) re-checked: Crete is the largest island in Greece with over 1,000 km of coastline; western Crete is Chania (old town, Venetian harbour with the Egyptian lighthouse) and Rethymno (medieval town, Fortezza); central Crete is Heraklion, the largest urban centre and gateway to Knossos, with cosmopolitan resorts on the northern coast; eastern Crete is Lasithi, with Agios Nikolaos and Mirabello Bay and Elounda, described as the luxury resort with views of the lagoon and Spinalonga. Restates venues pack fact_210.",
+        "source": "https://www.visitgreece.gr/en/islands/crete",
+        "source_type": "tourism_board",
+        "checked": "2026-11-11",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_12",
+        "claim": "Visit Greece states that in 2025 the Minoan Palatial Centres (Knossos, Phaistos, Malia, Zakros, Zominthos, Kydonia) were included on the UNESCO World Heritage List, and calls Ierapetra in the south the sunniest city in Greece.",
+        "source": "https://www.visitgreece.gr/en/islands/crete",
+        "source_type": "tourism_board",
+        "checked": "2026-11-11",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_13",
+        "claim": "Chania Airport 'Ioannis Daskalogiannis' (CHQ), re-checked: its official website (operated by Fraport Greece) lists getting to and from the airport by public bus (direct bus service to and from the airport), by taxi and by car (GPS directions), with parking at the airport. Fraport Greece's airport profile names the airport Chania Airport 'Ioannis Daskalogiannis' and says Fraport Greece took over management and operation of 14 regional airports including Chania. Restates venues pack fact_211.",
+        "source": "https://www.chq-airport.gr/en/flights--more/airport-information ; https://www.fraport-greece.com/en/airport-profiles/chania.html",
+        "source_type": "official_venue",
+        "checked": "2026-11-11",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_14",
+        "claim": "The Hellenic Civil Aviation Authority (press release, 25 January 2025) states that the Hellenic Aviation Service Provider (HASP) is the certified aerodrome operator of the State Airport of Heraklion 'Nikos Kazantzakis', one of ten airports that remain under State control, separate from the fourteen regional airports managed by Fraport Greece. This closes the venues pack open question on an official source for the airport name and operator; HASP transfer options were not read.",
+        "source": "https://hcaa.gov.gr/en/newsroom/press-releases/pistopoiisi-kata-easa-tis-ypiresias-politikis-aeroporias-kai-ton-kratikon",
+        "source_type": "government",
+        "checked": "2026-11-11",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_15",
+        "claim": "Visit Greece's Crete road-trip route page says the ideal seasons for touring are spring and autumn, when the weather is mild, and that in summer, because of the intense heat, visitors should visit points of interest early in the morning when temperatures are more pleasant.",
+        "source": "https://www.visitgreece.gr/en/routes/in-the-footsteps-of-the-gods-a-mythical-road-trip-in-crete",
+        "source_type": "tourism_board",
+        "checked": "2026-11-11",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_16",
+        "claim": "Minos Beach Art Hotel (Agios Nikolaos, eastern Crete), re-checked live: its homepage states a 50-minute drive from Heraklion Airport (HER), 60 minutes from Heraklion Port and 180 minutes from Chania Airport (CHQ), and offers help arranging car transfers or renting a vehicle. Restates venues pack fact_11.",
+        "source": "https://www.minosbeach.com/",
+        "source_type": "official_venue",
+        "checked": "2026-11-11",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_17",
+        "claim": "Amirandes, Grecotel (north coast near Heraklion), re-checked live: 18 km from Heraklion International Airport and 23 km from Heraklion town and port; 204 accommodations. Its resort page now says the VIP Beach takes a seaside vow for up to 80 guests and the Events Patio a private gathering for 20 to 160 guests. Restates venues pack fact_106.",
+        "source": "https://www.grecotel.com/amirandes/crete-resort/",
+        "source_type": "official_venue",
+        "checked": "2026-11-11",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_100",
+        "claim": "Elounda Collection's civil and Orthodox wedding packages (Elounda SA Hotels & Resorts, covering Elounda Peninsula, Porto Elounda and Elounda Mare) are each valid only when the couple stays at least three nights in one of the group's hotels; the symbolic and vow renewal package carries the same three-night condition. Re-checked live; restates crete-wedding-venues fact_17 and greece-wedding-packages fact_10.",
+        "source": "https://www.eloundapeninsula.com/wp-content/uploads/2025/04/Elounda-Wedding-Packages-.pdf",
+        "source_type": "official_venue",
+        "checked": "2026-11-11",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_101",
+        "claim": "Elounda Collection states that its civil package rate does not include the Municipal fees and its Orthodox package rate does not include the Metropolis fee, so a separate fee is charged on top of the package (amounts stripped; the PDF marks the fees as subject to change).",
+        "source": "https://www.eloundapeninsula.com/wp-content/uploads/2025/04/Elounda-Wedding-Packages-.pdf",
+        "source_type": "official_venue",
+        "checked": "2026-11-11",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_102",
+        "claim": "Elounda Collection's document steps for a civil wedding: every document except passports needs its own separate Apostille stamp (one Apostille for all documents is not accepted); the Apostilled documents then need translating into Greek (via the Greek Embassy, a Greek lawyer or the Greek Ministry of Foreign Affairs translation service); copies are emailed for approval at least 4 weeks before the date; after Municipality approval the originals are couriered to the hotel at the couple's own cost at least 3 weeks before; and all documents must be issued within 3 months of the wedding date. The Orthodox page repeats these steps with approval by the Metropolis.",
+        "source": "https://www.eloundapeninsula.com/wp-content/uploads/2025/04/Elounda-Wedding-Packages-.pdf",
+        "source_type": "official_venue",
+        "checked": "2026-11-11",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_103",
+        "claim": "Exact wording on Elounda Collection's civil documentation page: \"The marriage has to be registered by the couple at the Registry Office in Aghios Nikolaos within 40 days after the ceremony. If the wedding takes place on a Friday (or weekends), the registration of the wedding takes place the following Monday.\" (Venue-published step; the Orthodox page has the same sentence with \"(or weekend) the registration\".)",
+        "source": "https://www.eloundapeninsula.com/wp-content/uploads/2025/04/Elounda-Wedding-Packages-.pdf",
+        "source_type": "official_venue",
+        "checked": "2026-11-11",
+        "is_price": false,
+        "conflicts": "Venue-published registration step only; no Greek government source was read in this batch. Present as the venue's stated step, not as Greek law."
+      },
+      {
+        "fact_id": "fact_104",
+        "claim": "Elounda Collection's civil package includes documentation assistance and settling the wedding licence with the couple and the local Municipality Office, two witnesses if needed, ceremony set-up with seasonal flowers, pre-recorded ceremony music, a short fireworks display, a menu tasting for two (beverages excluded) and a round-trip transfer to the Registry Office with the hotel's executive; its separate wedding services section covers ceremony locations, venues, reception, dinner menus, beverages, entertainment, boat transfer and additional services.",
+        "source": "https://www.eloundapeninsula.com/wp-content/uploads/2025/04/Elounda-Wedding-Packages-.pdf",
+        "source_type": "official_venue",
+        "checked": "2026-11-11",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_105",
+        "claim": "Nana Princess (Chersonissos) offers exclusive use of the couple's chosen room or venue for symbolic weddings and for vow renewals, and describes itself as suited to small to medium sized events. Re-checked live; restates crete-wedding-venues fact_101.",
+        "source": "https://www.nanaprincess.gr/pages/weddings",
+        "source_type": "official_venue",
+        "checked": "2026-11-11",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_106",
+        "claim": "Nana Princess notes high-summer temperatures in Greece can reach 35 degrees C with strong sun and high UV, and recommends evening ceremonies: 16:00 to 18:00 in April, May and October; 18:00 to 20:00 in June to September; 18:30 to 20:00 in July and August. Re-checked live; restates crete-wedding-venues fact_102.",
+        "source": "https://www.nanaprincess.gr/pages/weddings",
+        "source_type": "official_venue",
+        "checked": "2026-11-11",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_107",
+        "claim": "Nana Princess's poolside Meat-In-Point restaurant seats up to 120 guests for receptions, the Eternal Blue terrace overlooks the bay of Stalis, and the Conference Hall is offered for larger receptions that need a fully covered space. Its vow renewal ceremony price includes a dinner with beverages not included (amount stripped).",
+        "source": "https://www.nanaprincess.gr/pages/weddings",
+        "source_type": "official_venue",
+        "checked": "2026-11-11",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_108",
+        "claim": "Sea View by En Kipo (Chania) says the venue is the couple's exclusively from 10:00am to 12:00am, with the possibility to extend to 2:00am, and that couples rent the equipment, furniture and decor they want and handpick their own caterer; ceremonies are personalised by choosing preferred vendors. Maximum 120 guests for ceremonies and 120 for receptions. Re-checked live; restates crete-wedding-venues fact_201 and fact_202.",
+        "source": "https://enkipo-seaview.com/services/",
+        "source_type": "official_venue",
+        "checked": "2026-11-11",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_109",
+        "claim": "Sea View by En Kipo offers decoration on request, works with wedding planners, and provides accommodation support for couples and guests through its team Celmare by EnKipo and partner hotels, villas and boutique stays in Chania and across Crete, which it says comes at no additional cost.",
+        "source": "https://enkipo-seaview.com/services/",
+        "source_type": "official_venue",
+        "checked": "2026-11-11",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_110",
+        "claim": "Minos Palace Resort (Lasithi, eastern Crete) says eastern Crete enjoys pleasant weather from April to November, with spring around 18 to 24 degrees C, summer the warmest season, and early autumn around 20 to 27 degrees C. It states a 50-minute drive from Heraklion Airport. Re-checked live; restates crete-wedding-venues fact_308.",
+        "source": "https://www.minospalace.com/celebrations-and-events/",
+        "source_type": "official_venue",
+        "checked": "2026-11-11",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_111",
+        "claim": "Euphoria Resort (Kolymvari, Chania) says its three wedding options (Elxi, Pathos, Eros) are for an informal wedding or renewal of vows, with a certificate of informal marriage from the hotel, and are complete packages whose items are not interchangeable: if a service is not used no refund or alternative is given; packages can be amended or custom made at extra cost.",
+        "source": "https://www.euphoriaresort.gr/weddings/",
+        "source_type": "official_venue",
+        "checked": "2026-11-11",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_112",
+        "claim": "Euphoria Resort's packages cover post-ceremony sparkling wine and cake for up to 10, 20 or 30 guests by option; buffet, seated and cocktail receptions, beverage packages, open bar, custom cakes and entertainment are other services priced on request.",
+        "source": "https://www.euphoriaresort.gr/weddings/",
+        "source_type": "official_venue",
+        "checked": "2026-11-11",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_113",
+        "claim": "Elounda Beach Hotel & Villas publishes an 'Indicative Wedding Package' (dedicated consultant; legal and licence paperwork requirements; civil or religious ceremony outside the hotel's church or at another place of the couple's choice for civil weddings; bouquet and boutonniere; taped ceremony music; a groom's preparation room; wedding cake; and an escorted transfer to the authorities to register the wedding). Re-checked live; restates greece-wedding-packages fact_01 and crete-wedding-venues fact_02.",
+        "source": "https://www.eloundabeach.gr/meetings-events-crete-greece/weddings-and-occasions",
+        "source_type": "official_venue",
+        "checked": "2026-11-11",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_114",
+        "claim": "Elounda Beach lists separately, as 'Additional Available Services' outside the indicative package: bridal hair and make-up, spa nail care, flowers for the wedding location, traditional Cretan lyre music during the ceremony, video, photographer, pre or post ceremony cocktails, reception menus, entertainment, a firework show and guest gifts.",
+        "source": "https://www.eloundabeach.gr/meetings-events-crete-greece/weddings-and-occasions",
+        "source_type": "official_venue",
+        "checked": "2026-11-11",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_115",
+        "claim": "Abaton Island Resort & Spa's 2025-2026 wedding brochure terms say all packages are valid with a minimum accommodation booking of 10 rooms for at least 2 nights (depending on guest numbers) and a minimum 20-guest wedding reception booking (maximum capacity 300 guests); packages do not include accommodation, are subject to availability, and are complete with items not interchangeable. Re-checked live; restates crete-wedding-venues fact_113.",
+        "source": "https://abatonimages-bcb3.kxcdn.com/wedding_brochure_-2025-2026.pdf",
+        "source_type": "official_venue",
+        "checked": "2026-11-11",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_116",
+        "claim": "Abaton's brochure lists a venue fee for each of its wedding venues (Elemes, Bony Fish, F-Zin, WOW, Ladies & Gentlemen, Buddha Bar, Open Air Theatre, Ballroom, Beach), with the beach setup fee to be confirmed and set-up items (stage, arch, flowers) charged with supplement; gala dinner buffets carry a minimum guest number, and hair, make-up, DJ, fireworks, photographer and video are listed as additional services at indicative costs (all amounts stripped).",
+        "source": "https://abatonimages-bcb3.kxcdn.com/wedding_brochure_-2025-2026.pdf",
+        "source_type": "official_venue",
+        "checked": "2026-11-11",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_117",
+        "claim": "As at November 2026, Smartraveller says wildfires occur in Greece during the extended summer period from June to September, including near cities and tourist locations, prompting evacuations, and can start with little warning; heatwaves are frequent over the summer months, can cause heat exhaustion and heat stroke, and many major tourist sites have little shade. Its overall advice for Greece is 'Exercise normal safety precautions' (updated 30 September 2026, still current at 11 November 2026).",
+        "source": "https://www.smartraveller.gov.au/destinations/europe/greece",
+        "source_type": "government",
+        "checked": "2026-11-11",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_118",
+        "claim": "As at November 2026, Smartraveller advises getting comprehensive travel insurance before leaving and reading the Product Disclosure Statement, and says it must cover all medical costs overseas including evacuation. It also notes Greece is in an active seismic zone, with earthquakes including near Crete.",
+        "source": "https://www.smartraveller.gov.au/destinations/europe/greece",
+        "source_type": "government",
+        "checked": "2026-11-11",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_119",
+        "claim": "As at November 2026, Smartraveller's 'Getting married overseas' page (last updated 18/08/2026) says some countries ask you to prove you are free to marry, most commonly with a Certificate of No Impediment to Marriage (CNI) and registry certificates; DFAT can issue a CNI in Australia but some local authorities only accept ones issued in their country, so ask the destination's embassy or consulate whether you need one, where to get it, and whether it needs an authentication or apostille. The Wedded Advisor confirms current requirements.",
+        "source": "https://www.smartraveller.gov.au/planning-trip/advice-your-planned-activities/getting-married-overseas",
+        "source_type": "government",
+        "checked": "2026-11-11",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_120",
+        "claim": "As at November 2026, Smartraveller says an overseas marriage cannot be registered in Australia but in most cases is legally recognised if valid where it took place and valid under Australian law had it occurred here; a foreign marriage certificate is usually accepted as proof of marriage but may not work as proof of a name change. The Wedded Advisor confirms current requirements.",
+        "source": "https://www.smartraveller.gov.au/planning-trip/advice-your-planned-activities/getting-married-overseas",
+        "source_type": "government",
+        "checked": "2026-11-11",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_121",
+        "claim": "As at November 2026, the Australian Embassy in Athens lists among its notarial services witnessing application forms for, and issuing, Certificates of No Impediment (CNI), witnessing notices of intended marriage, and legalisation by authentication or apostille. All notarial services need an appointment (Monday to Friday, 9:00am to 12:30pm), though apostille and CNI documents can be submitted by post; legalised documents and CNIs are ready for collection within two working days; the Embassy gives no legal advice, honorary consuls cannot provide notarial services, and fees apply. The Wedded Advisor confirms current requirements.",
+        "source": "https://greece.embassy.gov.au/athn/notarial.html",
+        "source_type": "government",
+        "checked": "2026-11-11",
+        "is_price": false
+      }
+    ],
+    "insider_details": [
+      {
+        "detail": "July and August are close to rain-free on the north coast (under 2 mm a month on average at both Heraklion and Chania), but mean daily highs sit near 29 C at Heraklion and above 30 C at Chania, so outdoor ceremonies work best late in the day.",
+        "fact_ids": [
+          "fact_02",
+          "fact_03",
+          "fact_08",
+          "fact_10",
+          "fact_15"
+        ]
+      },
+      {
+        "detail": "May and late September to early October are the sweet spot: Heraklion mean highs of about 24 to 27 C with only about 3 to 5 rain days a month on average. October rainfall jumps sharply (about 59 mm at Heraklion, 68 mm at Chania), so build a covered plan B for mid to late October dates.",
+        "fact_ids": [
+          "fact_02",
+          "fact_03",
+          "fact_10"
+        ]
+      },
+      {
+        "detail": "West Crete is wetter in the cooler months than central Crete: Chania averages about 130 mm in January against about 91 mm at Heraklion, which matters for anyone considering a winter or early spring date in the west.",
+        "fact_ids": [
+          "fact_03",
+          "fact_10",
+          "fact_05"
+        ]
+      },
+      {
+        "detail": "Pick the airport by region. Chania (CHQ) serves the west; Heraklion 'Nikos Kazantzakis' serves central and eastern Crete, and east-coast resorts such as Minos Beach state about 50 minutes from Heraklion but about three hours from Chania, so guests flying into the wrong airport face a long transfer.",
+        "fact_ids": [
+          "fact_13",
+          "fact_14",
+          "fact_16",
+          "fact_11"
+        ]
+      },
+      {
+        "detail": "Check dates against Greek public holidays (for example 15 August and 28 October, and Easter Monday, which moves each year), as public offices close and these dates are busy across the island.",
+        "fact_ids": [
+          "fact_07"
+        ]
+      },
+      {
+        "detail": "Before comparing package headlines, ask each venue what sits outside the package: Elounda Collection charges the Municipal or Metropolis fee on top, Elounda Beach lists lyre music, flowers, photographer and fireworks as additional services, and Euphoria prices receptions and bars on request.",
+        "fact_ids": [
+          "fact_101",
+          "fact_114",
+          "fact_112"
+        ]
+      },
+      {
+        "detail": "Room and stay minimums drive cost as much as the menu: Abaton packages need at least 10 rooms for 2 nights and a 20-guest reception, while Elounda Collection packages need the couple to stay at least three nights.",
+        "fact_ids": [
+          "fact_115",
+          "fact_100"
+        ]
+      },
+      {
+        "detail": "Fixed packages reward couples who want most of what is in them: Euphoria and Abaton both say package items are not interchangeable, and Euphoria gives no refund for unused items.",
+        "fact_ids": [
+          "fact_111",
+          "fact_115"
+        ]
+      },
+      {
+        "detail": "A venue-only hire like Sea View by En Kipo shifts the budget to suppliers: couples bring their own caterer, rentals and vendors, but get the garden exclusively from 10:00am to midnight, with a 2:00am extension possible.",
+        "fact_ids": [
+          "fact_108",
+          "fact_109"
+        ]
+      },
+      {
+        "detail": "Plan summer ceremonies for early evening: Nana Princess recommends 18:30 to 20:00 in July and August and 16:00 to 18:00 in April, May and October, and Smartraveller flags frequent summer heatwaves and June to September wildfires.",
+        "fact_ids": [
+          "fact_106",
+          "fact_117"
+        ]
+      },
+      {
+        "detail": "Document preparation is the long lead item for a civil wedding at Elounda Collection: each document needs its own Apostille and a Greek translation, copies go for approval 4 weeks out and originals are couriered 3 weeks out, so start ordering certificates early but no more than 3 months before the date.",
+        "fact_ids": [
+          "fact_102",
+          "fact_119",
+          "fact_121"
+        ]
+      }
+    ],
+    "quotes": [],
+    "real_weddings": [],
+    "verify_items": [
+      "[[VERIFY: do not state the Incredible Crete autumn average of 12 to 13 C; it conflicts with HNMS normals (fact_05 vs fact_01)]]",
+      "[[VERIFY: sea temperature by month: no official source (HNMS, meteo.gr, Visit Greece, Incredible Crete) giving Crete sea temperatures was read within the time limit; omit sea temperature or source it before stating]]",
+      "[[VERIFY: Heraklion Airport transfer options (bus, taxi): the operator HASP's own airport page was not read; only the HCAA operator and name are sourced (fact_14)]]",
+      "[[VERIFY: no official source states the best months for a wedding in Crete; month guidance must be written from HNMS normals (fact_01 to fact_10) and venue-stated windows (batch B), not as a stated official recommendation]]",
+      "[[VERIFY: Elounda Collection 40-day registration at the Registry Office in Aghios Nikolaos is a venue-published step (2025 PDF); confirm with the venue or a Greek government source before stating it as a legal requirement]]",
+      "[[VERIFY: Elounda Collection document lead times (email 4 weeks, courier 3 weeks, documents issued within 3 months) come from the 2025 packages PDF; confirm they still apply for 2027 dates]]",
+      "[[VERIFY: Abaton terms (minimum 20 guests, minimum 10 rooms for 2 nights, maximum 300) are from the 2025-2026 brochure, the only one linked; confirm for 2027 dates]]"
+    ],
+    "needs_signoff": [],
+    "must_include_coverage": [
+      {
+        "item": "When to marry: seasons month by month from official sources",
+        "covered_by": [
+          "fact_01",
+          "fact_02",
+          "fact_03",
+          "fact_04",
+          "fact_05",
+          "fact_08",
+          "fact_09",
+          "fact_10",
+          "fact_15",
+          "[[VERIFY: sea temperature by month: no official source (HNMS, meteo.gr, Visit Greece, Incredible Crete) giving Crete sea temperatures was read within the time limit; omit sea temperature or source it before stating]]",
+          "[[VERIFY: no official source states the best months for a wedding in Crete; month guidance must be written from HNMS normals (fact_01 to fact_10) and venue-stated windows (batch B), not as a stated official recommendation]]"
+        ]
+      },
+      {
+        "item": "Why Crete: short island facts",
+        "covered_by": [
+          "fact_06",
+          "fact_11",
+          "fact_12"
+        ]
+      },
+      {
+        "item": "Choosing an area: west, central, east",
+        "covered_by": [
+          "fact_11",
+          "fact_05"
+        ]
+      },
+      {
+        "item": "Getting there and getting around: airports",
+        "covered_by": [
+          "fact_13",
+          "fact_14",
+          "fact_16",
+          "fact_17",
+          "[[VERIFY: Heraklion Airport transfer options (bus, taxi): the operator HASP's own airport page was not read; only the HCAA operator and name are sourced (fact_14)]]"
+        ]
+      },
+      {
+        "item": "Planning timeline: public holidays and local municipality contact",
+        "covered_by": [
+          "fact_07"
+        ]
+      },
+      {
+        "item": "What drives the cost: guest minimums, rooms and stay conditions",
+        "covered_by": [
+          "fact_100",
+          "fact_115"
+        ]
+      },
+      {
+        "item": "What drives the cost: venue fee vs package, extras and fees charged on top",
+        "covered_by": [
+          "fact_101",
+          "fact_104",
+          "fact_113",
+          "fact_114",
+          "fact_116",
+          "fact_112"
+        ]
+      },
+      {
+        "item": "What drives the cost: exclusive use and bring-your-own suppliers",
+        "covered_by": [
+          "fact_105",
+          "fact_108",
+          "fact_109"
+        ]
+      },
+      {
+        "item": "What drives the cost: fixed packages not interchangeable",
+        "covered_by": [
+          "fact_111",
+          "fact_115"
+        ]
+      },
+      {
+        "item": "Venue-stated season windows and ceremony times",
+        "covered_by": [
+          "fact_106",
+          "fact_110",
+          "fact_107"
+        ]
+      },
+      {
+        "item": "Legal in brief (as at November 2026)",
+        "covered_by": [
+          "fact_119",
+          "fact_120",
+          "fact_121",
+          "fact_103",
+          "[[VERIFY: Elounda Collection 40-day registration at the Registry Office in Aghios Nikolaos is a venue-published step (2025 PDF); confirm with the venue or a Greek government source before stating it as a legal requirement]]"
+        ]
+      },
+      {
+        "item": "Planning timeline: document lead times as sourced",
+        "covered_by": [
+          "fact_102",
+          "[[VERIFY: Elounda Collection document lead times (email 4 weeks, courier 3 weeks, documents issued within 3 months) come from the 2025 packages PDF; confirm they still apply for 2027 dates]]"
+        ]
+      },
+      {
+        "item": "Travel safety: heat, wildfires, insurance",
+        "covered_by": [
+          "fact_117",
+          "fact_118"
+        ]
+      }
+    ]
+  }
+}
