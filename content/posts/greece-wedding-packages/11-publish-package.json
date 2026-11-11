@@ -1,0 +1,341 @@
+{
+  "agent": "cms-publisher",
+  "task_id": "greece-wedding-packages",
+  "stage": "11",
+  "status": "complete",
+  "round": 1,
+  "inputs_used": [
+    "CLAUDE.md",
+    "content-system/cms/field-map.md",
+    "content-system/schemas/11-publish-package.schema.json",
+    "content/posts/greece-wedding-packages/00-input.json",
+    "content/posts/greece-wedding-packages/01-brief.json",
+    "content/posts/greece-wedding-packages/02-seo.json",
+    "content/posts/greece-wedding-packages/03-source-pack.json",
+    "content/posts/greece-wedding-packages/04-images.json",
+    "content/posts/greece-wedding-packages/08-final.md",
+    "content/posts/greece-wedding-packages/09-cro.json",
+    "content/posts/greece-wedding-packages/10-distribution.json",
+    "content/posts/crete-wedding-venues/11-publish-package.json (format model)",
+    "content/posts/crete-wedding-venues/11-body.md (format model)",
+    "content/posts/crete-wedding-venues/booking-checklist.md (format model)",
+    "content/posts/crete-wedding-venues/12-cms-report.md (format model)"
+  ],
+  "self_qa": {
+    "checks": [
+      {
+        "check": "08-final.md already carries the 09-cro.json copy_changes (primary marker at end of the inclusions section, old marker above the secondary removed, early Concierge link removed)",
+        "pass": true
+      },
+      {
+        "check": "Front matter and all <!-- fact_xx --> markers removed; 6 image-slot comments kept; no [[VERIFY]] markers in copy",
+        "pass": true
+      },
+      {
+        "check": "Primary CTA block at the marker; inline fallback retagged utm_content=inline; secondary, magnet and closing marked with comments; each utm_content link appears exactly once",
+        "pass": true
+      },
+      {
+        "check": "Exactly 4 key takeaways copied verbatim; 5 FAQ pairs extracted; FAQPage carries all 5",
+        "pass": true
+      },
+      {
+        "check": "primary_category equals categories[0] (Destination Weddings); title, slug, URL, type and cluster as fixed in 00-input.json",
+        "pass": true
+      },
+      {
+        "check": "No prices printed, needs_signoff empty; no em dashes; no \"all-inclusive\" in copy fields",
+        "pass": true,
+        "note": "The FAQ question \"Are Greek wedding packages all inclusive?\" (unhyphenated) is kept verbatim from 08-final.md and 02-seo.json faq_questions; flagged in the report for the person."
+      },
+      {
+        "check": "Image alt and caption filled",
+        "pass": false,
+        "note": "None supplied in 04-images.json; left empty, not invented. All 6 slots needed."
+      },
+      {
+        "check": "Status draft; nothing uploaded, published or scheduled",
+        "pass": true
+      }
+    ],
+    "confidence": 0.9
+  },
+  "open_questions": [
+    {
+      "to": "orchestrator",
+      "question": "CMS upload not attempted: no browser in this session and content-system/cms/field-map.md is not CONFIRMED (NOT YET MAPPED). Run /wedded-cms-discovery locally, then /wedded-blog resume=greece-wedding-packages.",
+      "blocking": true
+    },
+    {
+      "to": "orchestrator",
+      "question": "No author named in any input; package uses \"Wedded Wonderland\" (organisation). Confirm the byline.",
+      "blocking": false
+    },
+    {
+      "to": "orchestrator",
+      "question": "FAQ question \"Are Greek wedding packages all inclusive?\" is the SEO target question and is kept verbatim (unhyphenated). Confirm the person is happy with this wording in the FAQ schema.",
+      "blocking": false
+    }
+  ],
+  "assumptions": [
+    "Title is the person's title from 00-input.json and the 08-final.md front matter.",
+    "Excerpt is the first two sentences of the opening paragraph, verbatim; the first sentence alone does not carry the focus keyword.",
+    "Breadcrumb level 2 URL is https://weddedwonderland.com/destination-weddings, from the fixed URL path.",
+    "Inline primary sentence retagged utm_content=inline so the CTA block alone carries utm_content=primary (as the Crete model).",
+    "closing_cta and lead_magnet are extra, schema-permitted fields recording the closing and magnet links from 09-cro.json tracking.",
+    "FAQ answers are the body answers with link markup removed; no FAQ answer in this post carries a link.",
+    "Categories and tags taken from 01-brief.json as written."
+  ],
+  "verify_items": [
+    "Image credit and licence for slot featured (greece-wedding-packages-elounda-beach-ceremony-terrace-hero.webp): not yet sourced; record the credit and licence (venue press kit with written permission, or licensed stock in library-index.csv) before publishing",
+    "Image credit and licence for slot inclusions (greece-wedding-packages-nana-princess-ceremony-styling.webp): not yet sourced; record the credit and licence (venue press kit with written permission, or licensed stock in library-index.csv) before publishing",
+    "Image credit and licence for slot ceremony-types (greece-wedding-packages-elounda-peninsula-ceremony-spot.webp): not yet sourced; record the credit and licence (venue press kit with written permission, or licensed stock in library-index.csv) before publishing",
+    "Image credit and licence for slot left-out (greece-wedding-packages-grace-hotel-exclusive-use-terrace.webp): not yet sourced; record the credit and licence (venue press kit with written permission, or licensed stock in library-index.csv) before publishing",
+    "Image credit and licence for slot compare-quotes (greece-wedding-packages-illustrative-two-quotes-pen-linen.webp): not yet sourced; AI (Higgsfield) allowed only after the person approves it, captioned 'Illustrative image', and preferred alternative is a Canva brand-kit or licensed stock flat-lay; record the source and licence before publishing",
+    "Image credit and licence for slot australian-angle (greece-wedding-packages-illustrative-travel-folder-flatlay.webp): not yet sourced; record the credit and licence (Wedded Wonderland library image with couple consent recorded, or licensed stock in library-index.csv; AI fallback only on the person's approval, captioned 'Illustrative image') before publishing"
+  ],
+  "tools_used": [
+    "Bash (python3 -I)"
+  ],
+  "next_agent": [
+    "orchestrator"
+  ],
+  "payload": {
+    "title": "Greece Wedding Packages and What They Include",
+    "slug": "greece-wedding-packages",
+    "url_path": "/destination-weddings/greece-wedding-packages",
+    "content_type": "Guide",
+    "cluster": "Getting Married in Greece",
+    "categories": [
+      "Destination Weddings",
+      "Greece",
+      "Planning Guides"
+    ],
+    "primary_category": "Destination Weddings",
+    "tags": [
+      "Getting Married in Greece",
+      "Greece wedding packages",
+      "Santorini",
+      "Mykonos",
+      "Crete",
+      "Rhodes",
+      "Corfu",
+      "Athens Riviera",
+      "Peloponnese"
+    ],
+    "excerpt": "Two package documents from two Greek resorts can share a title and describe quite different weddings. Greece wedding packages usually bundle the ceremony, its set-up, a coordinator and some help with the paperwork.",
+    "key_takeaways": [
+      "A Greek venue package usually covers the ceremony, its set-up and a coordinator, and the rest depends on the venue.",
+      "Civil, Greek Orthodox and symbolic ceremonies can be packaged separately, so check which one a package is built for.",
+      "Exclusive use, guest rooms, transfers and outside suppliers are where packages differ most, so ask about each in writing.",
+      "Compare quotes on the same guest count, spaces, hours, nights and currency before paying any deposit."
+    ],
+    "body_markdown_file": "content/posts/greece-wedding-packages/11-body.md",
+    "faq": [
+      {
+        "q": "Are Greek wedding packages all inclusive?",
+        "a": "Rarely in the sense most couples mean. Abaton's packages do not include accommodation, the Elounda Collection's exclude municipal or Metropolis fees, and Elounda Beach lists flowers for the location, photography and entertainment as additional services. Treat a package as the core of the day and ask for every extra in writing."
+      },
+      {
+        "q": "Does a venue package include the legal paperwork?",
+        "a": "Some include help with it. Elounda Beach lists legal and licence paperwork requirements, and the Elounda Collection lists documentation assistance and settlement of the licence with the Municipality Office. The Elounda Collection states that symbolic weddings and vow renewals are not legally recognised under the Greek constitution. At the Elounda Collection, certifying, translating and couriering your documents still falls to you."
+      },
+      {
+        "q": "Can we bring our own planner or suppliers?",
+        "a": "It depends on the venue. Grace Hotel requires a planner for every wedding, and Four Seasons Astir Palace works with your florist or consultant. Euphoria and Abaton sell complete packages whose items are not interchangeable. Neither publishes whether you may bring your own photographer or florist, so ask before you book."
+      },
+      {
+        "q": "Do we have to book guest rooms to get a package?",
+        "a": "At some venues, yes. The Elounda Collection asks for a minimum three-night stay, and Abaton's terms set a minimum of 10 rooms for two nights. Grace Hotel sets no minimum number of rooms."
+      },
+      {
+        "q": "Can Australians legally marry in Greece?",
+        "a": "Yes. Venues such as the Elounda Collection offer civil and Orthodox packages, and the marriage is then registered at the local Registry Office. A marriage made overseas is usually recognised in Australia if it was valid where it took place and would have been valid under Australian law, and a lawyer can confirm validity. Prepare documents well ahead. The Australian Embassy in Athens issues Certificates of No Impediment by appointment."
+      }
+    ],
+    "images": [
+      {
+        "slot_id": "featured",
+        "file": "content/posts/greece-wedding-packages/images/greece-wedding-packages-elounda-beach-ceremony-terrace-hero.webp",
+        "role": "featured",
+        "status": "needed"
+      },
+      {
+        "slot_id": "inclusions",
+        "file": "content/posts/greece-wedding-packages/images/greece-wedding-packages-nana-princess-ceremony-styling.webp",
+        "role": "inline",
+        "status": "needed"
+      },
+      {
+        "slot_id": "ceremony-types",
+        "file": "content/posts/greece-wedding-packages/images/greece-wedding-packages-elounda-peninsula-ceremony-spot.webp",
+        "role": "inline",
+        "status": "needed"
+      },
+      {
+        "slot_id": "left-out",
+        "file": "content/posts/greece-wedding-packages/images/greece-wedding-packages-grace-hotel-exclusive-use-terrace.webp",
+        "role": "inline",
+        "status": "needed"
+      },
+      {
+        "slot_id": "compare-quotes",
+        "file": "content/posts/greece-wedding-packages/images/greece-wedding-packages-illustrative-two-quotes-pen-linen.webp",
+        "role": "inline",
+        "status": "needed"
+      },
+      {
+        "slot_id": "australian-angle",
+        "file": "content/posts/greece-wedding-packages/images/greece-wedding-packages-illustrative-travel-folder-flatlay.webp",
+        "role": "inline",
+        "status": "needed"
+      }
+    ],
+    "cta": {
+      "text": "Speak with a Wedded Advisor",
+      "subtext": "The fee is agreed in writing before any work begins.",
+      "link": "/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=greece-wedding-packages&utm_content=primary",
+      "placement": "At the former <!-- CTA: primary --> marker, at the end of 'What a Greek venue package usually includes', after the Island by island evidence and the curated packages line (marked <!-- CTA BLOCK: primary --> in 11-body.md); the inline sentence after the block is the fallback and is tagged utm_content=inline."
+    },
+    "secondary_cta": {
+      "text": "Compare your quotes with a Wedded Advisor",
+      "link": "/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=greece-wedding-packages&utm_content=secondary",
+      "placement": "Inline link in the sentence directly after the ten-point checklist in 'How to compare two quotes like for like' (marked <!-- CTA INLINE: secondary --> in 11-body.md). No separate block, per 09-cro.json."
+    },
+    "closing_cta": {
+      "text": "compare your shortlist with a Wedded Advisor",
+      "link": "/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=greece-wedding-packages&utm_content=closing",
+      "placement": "Inline link at the end of 'Compare your shortlist with a Wedded Advisor' (marked <!-- CTA INLINE: closing --> in 11-body.md)."
+    },
+    "lead_magnet": {
+      "name": "Wedded Wonderland digital magazine",
+      "link": "/magazine?utm_source=blog&utm_medium=content&utm_campaign=greece-wedding-packages&utm_content=magnet",
+      "placement": "Existing line at the end of 'For Australian couples: currency, deposits and insurance' (marked <!-- LEAD MAGNET --> in 11-body.md)."
+    },
+    "tracking_links": [
+      "/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=greece-wedding-packages&utm_content=primary",
+      "/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=greece-wedding-packages&utm_content=secondary",
+      "/magazine?utm_source=blog&utm_medium=content&utm_campaign=greece-wedding-packages&utm_content=magnet",
+      "/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=greece-wedding-packages&utm_content=closing",
+      "/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=greece-wedding-packages&utm_content=inline"
+    ],
+    "seo": {
+      "meta_title": "Greece Wedding Packages: What They Include and Leave Out",
+      "meta_description": "Greek venue wedding packages explained: what they usually include, what they leave out and how Australian couples can compare two quotes like for like.",
+      "focus_keyword": "greece wedding packages",
+      "canonical": "https://weddedwonderland.com/destination-weddings/greece-wedding-packages",
+      "og_image_slot": "featured"
+    },
+    "schema_jsonld": {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Article",
+          "@id": "https://weddedwonderland.com/destination-weddings/greece-wedding-packages#article",
+          "headline": "Greece Wedding Packages and What They Include",
+          "description": "Greek venue wedding packages explained: what they usually include, what they leave out and how Australian couples can compare two quotes like for like.",
+          "author": {
+            "@type": "Organization",
+            "name": "Wedded Wonderland",
+            "url": "https://weddedwonderland.com/"
+          },
+          "publisher": {
+            "@type": "Organization",
+            "name": "Wedded Wonderland",
+            "url": "https://weddedwonderland.com/"
+          },
+          "datePublished": "",
+          "mainEntityOfPage": "https://weddedwonderland.com/destination-weddings/greece-wedding-packages",
+          "inLanguage": "en-AU"
+        },
+        {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Home",
+              "item": "https://weddedwonderland.com/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Destination Weddings",
+              "item": "https://weddedwonderland.com/destination-weddings"
+            },
+            {
+              "@type": "ListItem",
+              "position": 3,
+              "name": "Greece Wedding Packages and What They Include",
+              "item": "https://weddedwonderland.com/destination-weddings/greece-wedding-packages"
+            }
+          ]
+        },
+        {
+          "@type": "FAQPage",
+          "@id": "https://weddedwonderland.com/destination-weddings/greece-wedding-packages#faq",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "Are Greek wedding packages all inclusive?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Rarely in the sense most couples mean. Abaton's packages do not include accommodation, the Elounda Collection's exclude municipal or Metropolis fees, and Elounda Beach lists flowers for the location, photography and entertainment as additional services. Treat a package as the core of the day and ask for every extra in writing."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Does a venue package include the legal paperwork?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Some include help with it. Elounda Beach lists legal and licence paperwork requirements, and the Elounda Collection lists documentation assistance and settlement of the licence with the Municipality Office. The Elounda Collection states that symbolic weddings and vow renewals are not legally recognised under the Greek constitution. At the Elounda Collection, certifying, translating and couriering your documents still falls to you."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Can we bring our own planner or suppliers?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "It depends on the venue. Grace Hotel requires a planner for every wedding, and Four Seasons Astir Palace works with your florist or consultant. Euphoria and Abaton sell complete packages whose items are not interchangeable. Neither publishes whether you may bring your own photographer or florist, so ask before you book."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Do we have to book guest rooms to get a package?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "At some venues, yes. The Elounda Collection asks for a minimum three-night stay, and Abaton's terms set a minimum of 10 rooms for two nights. Grace Hotel sets no minimum number of rooms."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Can Australians legally marry in Greece?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes. Venues such as the Elounda Collection offer civil and Orthodox packages, and the marriage is then registered at the local Registry Office. A marriage made overseas is usually recognised in Australia if it was valid where it took place and would have been valid under Australian law, and a lawyer can confirm validity. Prepare documents well ahead. The Australian Embassy in Athens issues Certificates of No Impediment by appointment."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    "author": "Wedded Wonderland",
+    "status": "draft",
+    "verify_items": [
+      "Image credit and licence for slot featured (greece-wedding-packages-elounda-beach-ceremony-terrace-hero.webp): not yet sourced; record the credit and licence (venue press kit with written permission, or licensed stock in library-index.csv) before publishing",
+      "Image credit and licence for slot inclusions (greece-wedding-packages-nana-princess-ceremony-styling.webp): not yet sourced; record the credit and licence (venue press kit with written permission, or licensed stock in library-index.csv) before publishing",
+      "Image credit and licence for slot ceremony-types (greece-wedding-packages-elounda-peninsula-ceremony-spot.webp): not yet sourced; record the credit and licence (venue press kit with written permission, or licensed stock in library-index.csv) before publishing",
+      "Image credit and licence for slot left-out (greece-wedding-packages-grace-hotel-exclusive-use-terrace.webp): not yet sourced; record the credit and licence (venue press kit with written permission, or licensed stock in library-index.csv) before publishing",
+      "Image credit and licence for slot compare-quotes (greece-wedding-packages-illustrative-two-quotes-pen-linen.webp): not yet sourced; AI (Higgsfield) allowed only after the person approves it, captioned 'Illustrative image', and preferred alternative is a Canva brand-kit or licensed stock flat-lay; record the source and licence before publishing",
+      "Image credit and licence for slot australian-angle (greece-wedding-packages-illustrative-travel-folder-flatlay.webp): not yet sourced; record the credit and licence (Wedded Wonderland library image with couple consent recorded, or licensed stock in library-index.csv; AI fallback only on the person's approval, captioned 'Illustrative image') before publishing"
+    ],
+    "needs_signoff": [],
+    "redirects_recommended": "none (new article)",
+    "keyword_split_recommendation": "Keyword split (recommendation, no live changes): this guide owns 'greece wedding packages' / 'greek wedding packages' and the question 'are Greek wedding packages all inclusive'; /destination-wedding-packages keeps the generic destination wedding packages queries it already ranks for and is the commercial next step linked prominently from this guide; /destination-packages keeps 'wedding packages abroad / overseas'; the hub keeps 'greece wedding' and 'weddings in greece'; 'santorini wedding packages' (US 140) is a later opportunity for a Santorini section on /destination-wedding-packages, not this guide's target.",
+    "deferred_business_items": [
+      "Fee model and commissions (whether the business takes a cut from venues)",
+      "Named Wedded Advisor or phone line"
+    ],
+    "draft_note": "DRAFT. Do not publish until checked:\n\n1. [[VERIFY]] items: none in the copy. Details the venues do not publish are written as \"Not published\" and listed in booking-checklist.md.\n\n2. Nic sign-off on prices: none (no prices printed).\n\n3. Image slots needed (6, none approved yet; credit, licence, alt and caption to add when approved):\n   - featured (needed)\n   - inclusions (needed)\n   - ceremony-types (needed)\n   - left-out (needed)\n   - compare-quotes (needed)\n   - australian-angle (needed)\n   compare-quotes: AI only on the person's approval, captioned 'Illustrative image'; australian-angle: library or licensed stock preferred, AI fallback only on approval, captioned 'Illustrative image'.\n\n4. Linked drafts to publish together: the body links three pages that are still drafts, /destination-weddings/greece-wedding-venues (twice, once with the #getting-legally-married-in-greece-as-australians-in-brief anchor), /destination-weddings/crete-wedding-venues (once) and /expert-advice/greek-wedding-traditions (once). Publish them together with this post, or hold this post until they are live, so no link breaks. Check the Greece guide anchor lands in preview.\n\n5. Keyword split (recommendation only, nothing on the live site changes): this guide owns 'greece wedding packages' / 'greek wedding packages' and the question 'are Greek wedding packages all inclusive'; /destination-wedding-packages keeps the generic destination wedding packages queries it already ranks for and is the commercial next step linked prominently from this guide; /destination-packages keeps 'wedding packages abroad / overseas'; the hub keeps 'greece wedding' and 'weddings in greece'; 'santorini wedding packages' (US 140) is a later opportunity for a Santorini section on /destination-wedding-packages, not this guide's target.\n\n6. Deferred business items (2, person's decision, not in this draft):\n   - Fee model and commissions (whether the business takes a cut from venues)\n   - Named Wedded Advisor or phone line\n\nBooking checklist (not publishing blockers): see booking-checklist.md"
+  }
+}
