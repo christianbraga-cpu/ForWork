@@ -1,31 +1,31 @@
-# Run report: 13 Best Santorini Wedding Venues With Caldera Views
+# Run report: 15 Best Santorini Wedding Venues With Caldera Views
 
 - **Slug:** santorini-wedding-venues (CMS slug as given)  ·  **Run date:** 2026-11-11 to 2026-11-12  ·  **Status:** Package ready (no Chrome)
 - **Mode:** fast mode, new venue guide. Started 23:52 UTC, first draft 00:39, package 00:50. About 58 minutes in total, including a worker restart.
-- **Title changed:** you asked for 15; only 13 venues meet the rule, so the title is "13 Best Santorini Wedding Venues With Caldera Views". No padding. Meta title (no "Best"): "13 Santorini Wedding Venues With Caldera Views".
+- **Title:** the first pass found 13 venues that meet the rule, and you asked for 2 more. Two further top-up batches found Ambassador Aegean and Santorini Gem, so the title is back to "15 Best Santorini Wedding Venues With Caldera Views". No padding: both meet the same two-part rule. Meta title (no "Best"): "15 Santorini Wedding Venues With Caldera Views".
 - **Draft:** not uploaded (no Chrome in the cloud session; CMS field map not yet confirmed)
 - **Word file:** `santorini-wedding-venues-draft.docx`
 - **Booking checklist:** `booking-checklist.md`
 - **Authority rule:** final body has 0 research-talk phrases, 0 "often told", 0 VERIFY markers, no per-line source credits, no amounts of money, and no "best" or ranking outside the title.
 
 ## Inputs
-- Title given: 15 Best Santorini Wedding Venues With Caldera Views (count changed to 13)
+- Title given: 15 Best Santorini Wedding Venues With Caldera Views (kept)
 - Keyword: santorini wedding venues
 - Audience: couples in their 30s interested in destination weddings and luxury experiences, AUD 150k+
 - URL: /destination-weddings/santorini-wedding-venues · Type: Guide · Cluster: Getting Married in Greece · Primary category: Destination Weddings
 
 ## Venue selection
 - **The rule (two parts):** each venue's own official site, read live, says it hosts weddings AND states a caldera view in words.
-- **About 45 candidates checked in 7 rounds (4 area batches, 2 top-ups, a final set of direct reads). The 13 that qualify:**
+- **About 70 candidates checked in 9 rounds (4 area batches, 4 top-ups, a set of direct reads). The 15 that qualify:**
   - **Oia:** Canaves (Oia Suites, Sunday, Epitome; published buyouts up to 170), Mystique, Katikies Santorini, Andronis
   - **Imerovigli:** Grace Hotel, Astra Suites, Tholos Resort, Kapari Natural Resort (up to approx. 30), Katikies Chromata
   - **The wineries:** Santo Wines (Pyrgos), Venetsanos Winery (village not published)
-  - **Akrotiri:** Grand Ambassador (up to 250 outdoors)
-  - **Elsewhere on the caldera:** Le Ciel (village not published)
-- **Qualified but held back:** Aroma Suites, Fira (rooftop ceremonies for 15 to 20 guests; a small boutique hotel, not a luxury fit). Adding it would make the title 14.
-- **Caldera view but no wedding offer on their own sites:** Perivolas, Esperas, Iconic Santorini, Cavo Tagoo, Secret Hotels, Aenaon Villas, Volcano View, Aigialos (honeymoons only), Erosantorini (events heading, no weddings in words).
-- **Weddings but no caldera wording:** Katikies Garden (Fira), Pyrgos Restaurant.
-- **Not checked:** Sun Rocks and Santorini Princess (reads declined, not retried); Vedema (site certificate error); Cosmopolitan Suites, Dana Villas, Mill Houses (no usable official site); Majestic, Aria Suites, Atlantis, Ira, Nobu, Altana (no official page found in time).
+  - **Akrotiri:** Grand Ambassador (up to 250 outdoors), Ambassador Aegean (a separate hotel; weddings on its home page)
+  - **Elsewhere on the caldera:** Le Ciel and Santorini Gem (villages not published)
+- **Qualified but held back:** Aroma Suites, Fira (rooftop ceremonies for 15 to 20 guests; a small boutique hotel, not a luxury fit). Not needed once 15 qualified.
+- **Caldera view but no wedding offer on their own sites:** Perivolas, Esperas, Iconic Santorini, Cavo Tagoo, Secret Hotels, Aenaon Villas, Aigialos (honeymoons only), Erosantorini (events heading, no weddings in words), Kivotos Santorini, Celestia Grand.
+- **Weddings but no caldera view in words:** Katikies Garden (Fira; town only), Pyrgos Restaurant, Vedema (Megalochori; "hidden away in the Megalochori Caldera" for one villa only).
+- **Not checked:** Sun Rocks and Santorini Princess (reads declined, not retried); Vedema (site certificate error); Cosmopolitan Suites, Dana Villas, Mill Houses (no usable official site); Volcano View, Majestic, Athina, Atlantis, Ira, Nobu, Altana, Art Maisons, Oia Mare, Andronis Arcadia, Chic (timed out, errors or no official page found); Aria Suites (4-star; wedding planning only in a services list).
 - No venue publishes a Fira or Firostefani address, so those villages appear in "choosing an area" without venues.
 - Grand Ambassador's private transfer offer is not used (no transfer claims).
 
@@ -55,13 +55,18 @@
 |---|---|---|---|
 | G1 Brief | Pass | 1 | Two-part rule; grouped by area; no ranking |
 | G2 Research | Pass | 1 | Old page competes; 301 recommended |
-| G3 Sources | Pass, count short | 1 + 2 top-ups | 83 facts; 13 venues qualify (title 15 to 13) |
+| G3 Sources | Pass | 1 + 4 top-ups | 98 facts; 15 venues qualify (13 first, 2 more on your request) |
 | G4 Images | Needs input | 1 | 7 slots in the body, all placeholders |
 | G5 Edit (avg score) | Pass with edits (4.14) | 1 | 13 edits: Fira line, "all small", largest-space superlative, trims |
 | G6 Reader panel (weighted) | Revise (enquire 2.6) | 1 | Held down by deferred business details; one final pass applied all fixes |
 | G6b Final blocking check | 4 fixes, then 0 blocking | 1 | Canaves table row, "up to" capacities, a repeated Naxos figure |
 | G7 Package | Pass | 1 | validate.py: all valid |
 | G8 CMS | Not run | | No browser connection |
+
+## Added after delivery (your request for 15)
+- Two top-up batches (Fira, inland and Akrotiri; Oia and Imerovigli) found Ambassador Aegean and Santorini Gem. Both entries, table rows and counts were added to the final copy, checked against their facts, and the package, booking checklist and Word doc rebuilt.
+- Ambassador Aegean's own weddings page returned an error on 12 November; weddings appear on its home page and menu. The booking checklist asks to confirm weddings are still offered.
+- The package's lead magnet field was corrected to /magazine (it matched the body already).
 
 ## Before you publish: human checks
 ### [[VERIFY]] items
@@ -70,8 +75,9 @@
 ### Confirm before quoting (full list in booking-checklist.md)
 - **Canaves:** conflicting figures on its own site (Epitome Sunset Terrace 25 on the weddings page, 100 in the buyout table; Sunday buyout 22 against the Veranda's 40). The copy uses the weddings-page figures only.
 - **Andronis:** which property hosts weddings, and capacity.
-- **Le Ciel and Venetsanos:** their villages.
-- **Mystique, Astra, Tholos, Santo Wines, Le Ciel:** capacity and ceremony spaces.
+- **Le Ciel, Venetsanos and Santorini Gem:** their villages.
+- **Ambassador Aegean:** that weddings are still offered, ceremony spaces and capacity.
+- **Mystique, Astra, Tholos, Santo Wines, Le Ciel, Santorini Gem:** capacity and ceremony spaces.
 - **Katikies:** whether Botrini's sits at Pelagos House or Gea House.
 - **Legal:** civil marriage steps and fees with the Municipality of Thira; whether Greece needs an apostille or translation; the same-sex civil marriage position.
 - **For each venue:** exclusive use and for how many days, deposits, cancellation, music times, step-free access, and what travel insurance covers.

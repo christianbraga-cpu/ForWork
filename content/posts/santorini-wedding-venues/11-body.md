@@ -1,10 +1,10 @@
-# 13 Best Santorini Wedding Venues With Caldera Views
+# 15 Best Santorini Wedding Venues With Caldera Views
 
 <!-- IMAGE SLOT featured: Official image from a venue that qualifies in 03-source-pack (preferably Oia or Imerovigli): a ceremony terrace set for a wedding on the caldera edge, the caldera and volcanic islands of Nea Kameni behind, May to October, golden-hour or sunset light. No people, or only distant unidentifiable figures; no other hotels' signage. Landscape 3:2 with room for a title crop. Source: the venue's own media kit or press office with written permission (Gmail draft request, never sent by an agent), or licensed premium stock bought by a human and added to library-index.csv. Never AI, never a competitor, directory, planner, photographer-blog or search-result image. Location proven by the media kit, register row or EXIF, never by appearance. -->
 
 Santorini wedding venues with a caldera view sit in four parts of the island: Oia, Imerovigli, Pyrgos and the inland villages, and Akrotiri. The right one depends on how many guests you are inviting, the ceremony you want and the view you want behind you as you say your vows.
 
-Every venue in this guide hosts weddings and describes its caldera outlook in words, and each is set out on the same terms so you can compare them fairly. For the planning itself, from paperwork to season, read [how to plan a Santorini wedding step by step](https://weddedwonderland.com/destination-weddings/santorini-wedding). For the wider country, browse [our curated Greece wedding collection](https://weddedwonderland.com/destinations/europe/greece).
+All 15 venues in this guide host weddings and describe their caldera outlook in words, and each is set out on the same terms so you can compare them fairly. For the planning itself, from paperwork to season, read [how to plan a Santorini wedding step by step](https://weddedwonderland.com/destination-weddings/santorini-wedding). For the wider country, browse [our curated Greece wedding collection](https://weddedwonderland.com/destinations/europe/greece).
 
 ## Key takeaways
 
@@ -23,7 +23,7 @@ Every venue in this guide hosts weddings and describes its caldera outlook in wo
 
 ## Santorini wedding venues at a glance
 
-The list runs area by area, from Oia to Imerovigli, the wineries and Akrotiri, and ends with a dedicated event venue. It is not a ranking. "Not published" means the venue does not state the detail.
+The list runs area by area, from Oia to Imerovigli, the wineries and Akrotiri, and ends with two dedicated wedding venues. It is not a ranking. "Not published" means the venue does not state the detail.
 
 | Venue | Area | Caldera view | Ceremony | Capacity |
 |---|---|---|---|---|
@@ -39,7 +39,9 @@ The list runs area by area, from Oia to Imerovigli, the wineries and Akrotiri, a
 | Santo Wines | Pyrgos | Terraces over the caldera | Not published | Not published |
 | Venetsanos Winery | Not published | Upper Terrace overlooking caldera | On the Upper Terrace | 100 seated, 160 standing |
 | Grand Ambassador | Akrotiri | Caldera and volcano views | Not published | Up to 250 outdoors |
+| Ambassador Aegean | Akrotiri | Cliff edge over caldera | Not published | Not published |
 | Le Ciel | Not published | Aegean and caldera cliffs | Terraces, gardens, indoor areas | Not published |
+| Santorini Gem | Not published | Pool over the caldera | Facing the volcano, at sunset | Not published |
 
 ## How to compare Santorini venues like for like
 
@@ -53,7 +55,7 @@ Most venues here are cliff-top hotels that host weddings in named spaces: a balc
 
 Scale varies. Kapari Natural Resort has 17 rooms and suites, Andronis's Oia hotel has 39 suites and villas, and Canaves Epitome has 53 rooms. Katikies Santorini and Katikies Chromata welcome children above 13, which matters if your guest list includes young families.
 
-Two venues are wineries. Santo Wines and Venetsanos Winery both host weddings on terraces facing the caldera, so the ceremony and a wine-led dinner can sit in one place. Le Ciel is a dedicated wedding and events venue with a restaurant and bar rather than a hotel, so guests stay elsewhere and gather for the day.
+Two venues are wineries. Santo Wines and Venetsanos Winery both host weddings on terraces facing the caldera, so the ceremony and a wine-led dinner can sit in one place. Le Ciel is a dedicated wedding and events venue with a restaurant and bar rather than a hotel, so guests stay elsewhere and gather for the day. Santorini Gem pairs a wedding venue with a five-bedroom villa for up to eight guests, so your closest circle can stay on the estate.
 
 ### Ceremony and reception in one place
 
@@ -89,7 +91,7 @@ Each area on this list answers a different question about your wedding.
 
 **Pyrgos and the inland villages.** Santo Wines sits in Pyrgos village, and its Wine Tourism Center looks out over the volcano. Choose a winery when wine and a long dinner matter as much as the cliff edge.
 
-**Akrotiri.** Grand Ambassador sits on the cliffs of Akrotiri, with the caldera and the volcano as its backdrop. Choose Akrotiri when the guest list runs into the hundreds and you still want the caldera behind you.
+**Akrotiri.** Grand Ambassador sits on the cliffs of Akrotiri, with the caldera and the volcano as its backdrop. Ambassador Aegean, a separate hotel, sits on the cliff edge here too, overlooking the caldera and the volcano. Choose Akrotiri when the guest list runs into the hundreds and you still want the caldera behind you.
 
 For the rest of the country, read [our guide to Greece wedding venues](https://weddedwonderland.com/destination-weddings/greece-wedding-venues).
 
@@ -243,7 +245,7 @@ Not published: ceremony types, rooms, exclusive use.
 
 <!-- IMAGE SLOT area-akrotiri-south: Official image from a venue confirmed in Akrotiri or the south caldera: a cliff-top ceremony or reception space looking north along the caldera, sunset light, no lighthouse crowds, no identifiable guests. Landscape 3:2. Source: the venue's own media kit or press office with written permission (Gmail draft request, never sent by an agent), or licensed premium stock bought by a human and added to library-index.csv. Never AI, never a competitor, directory, planner, photographer-blog or search-result image. Location proven by the media kit, register row or EXIF, never by appearance. -->
 
-In the south of the island, one cliff-top hotel publishes outdoor space for up to 250 guests.
+Two cliff-top hotels in the south of the island host weddings, and despite the similar names they are separate properties. Grand Ambassador publishes outdoor space for up to 250 guests.
 
 ### Grand Ambassador Santorini
 
@@ -257,9 +259,20 @@ In the south of the island, one cliff-top hotel publishes outdoor space for up t
 
 Not published: ceremony types, total room count, exclusive use.
 
+### Ambassador Aegean Luxury Hotel & Suites
+
+[Ambassador Aegean Luxury Hotel & Suites](https://www.ambassadorhotelsantorini.com/) is a different hotel from Grand Ambassador, also in Akrotiri, perched on the edge of the cliff. It hosts weddings and honeymoons.
+
+- **Setting:** 40 suites, villas and rooms, a few minutes from the ancient settlement of Akrotiri.
+- **Caldera view:** The hotel overlooks the caldera and the volcano of Santorini.
+- **Rooms:** 40 suites, villas and rooms, each with a private pool.
+- **Standout:** Every guest who stays has a private pool, which makes it a natural base for a wedding party.
+
+Not published: ceremony options, capacity, exclusive use.
+
 ## Elsewhere on the caldera
 
-One dedicated wedding venue rounds out the list.
+Two dedicated wedding venues round out the list.
 
 ### Le Ciel Santorini
 
@@ -271,6 +284,18 @@ One dedicated wedding venue rounds out the list.
 - **Standout:** Easy access from the road, very few steps and wheelchair ramps, and a team of more than 30, including a DJ and security.
 
 For guests with limited mobility, Le Ciel is the one venue here that publishes step-free access. Not published: village, capacity, ceremony types, rooms, exclusive use.
+
+### Santorini Gem
+
+[Santorini Gem](https://santorinigem.com/) is a wedding venue and villa on a private estate, with green spaces for the celebration and the caldera as the backdrop. It offers wedding planning services.
+
+- **Setting:** A ceremony venue facing the volcano, a dining area, a cosy bar and a large pool with poolside areas, across indoor and outdoor spaces.
+- **Caldera view:** Caldera views behind the ceremony, and a pool overlooking the caldera.
+- **Ceremony:** Vows exchanged at sunset, followed by a dinner party.
+- **Rooms:** Gem Villa, on the caldera cliffs, has five bedrooms for up to eight guests, four bathrooms and a private pool.
+- **Standout:** The estate hosts large or smaller-scale events, with ceremony, dinner and villa in one place.
+
+Not published: village, capacity, ceremony types, exclusive use.
 
 ## Getting to Santorini for your wedding
 
@@ -339,7 +364,7 @@ It depends on your guest list and the setting you want. Oia's published ceremony
 
 ### Which Santorini venues have a caldera view?
 
-All 13 venues in this guide describe a caldera view. In Oia, Katikies Santorini's Gea House looks over the caldera and the volcano; in Imerovigli, every room at Kapari faces the caldera; and Venetsanos Winery's Upper Terrace overlooks it.
+All 15 venues in this guide describe a caldera view. In Oia, Katikies Santorini's Gea House looks over the caldera and the volcano; in Imerovigli, every room at Kapari faces the caldera; and Venetsanos Winery's Upper Terrace overlooks it.
 
 ### Are there small wedding venues in Santorini for intimate groups?
 
@@ -379,4 +404,4 @@ Your Wedded Advisor is one person, start to finish, who works in your time zone 
 
 Still weighing the Cyclades? Compare [Mykonos wedding venues](https://weddedwonderland.com/destination-weddings/mykonos-wedding-venues) and [Paros wedding venues](https://weddedwonderland.com/destination-weddings/paros-wedding-venues), or browse [our curated Greece wedding collection](https://weddedwonderland.com/destinations/europe/greece) and [Greece wedding packages](https://weddedwonderland.com/destination-weddings/greece-wedding-packages). For ideas for the days around the wedding, read [the Wedded Wonderland magazine](https://weddedwonderland.com/magazine?utm_source=blog&utm_medium=content&utm_campaign=santorini-wedding-venues&utm_content=magnet).
 
-<!-- LEAD MAGNET: the "Wedded Wonderland magazine" link in the paragraph above (/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=santorini-wedding-venues&utm_content=magnet) -->
+<!-- LEAD MAGNET: the "Wedded Wonderland magazine" link in the paragraph above (/magazine?utm_source=blog&utm_medium=content&utm_campaign=santorini-wedding-venues&utm_content=magnet) -->

@@ -3,7 +3,7 @@
 **Draft URL / ID:** Not uploaded. FAST MODE, package only: no browser connection in this session and `content-system/cms/field-map.md` is not confirmed ("NOT YET MAPPED"). Stopped at the package. Nothing was saved, scheduled or published in the CMS.
 
 - Date: 2026-11-12
-- Title: 13 Best Santorini Wedding Venues With Caldera Views (13 venues qualified; changed from 15)
+- Title: 15 Best Santorini Wedding Venues With Caldera Views (15 venues; Ambassador Aegean and Santorini Gem added)
 - Package: `content/posts/santorini-wedding-venues/11-publish-package.json` (status `draft`, validates clean)
 - Body: `content/posts/santorini-wedding-venues/11-body.md`
 - Booking checklist: `content/posts/santorini-wedding-venues/booking-checklist.md`
@@ -15,17 +15,18 @@
 
 - [x] Body built from `08-final.md`: front matter removed, H1 set to the title, all `<!-- fact_xx -->` markers removed, 7 image-slot comments kept, no `[[VERIFY]]` markers in the copy
 - [x] Primary CTA block (Speak with a Wedded Advisor, subtext "The fee is agreed in writing before any work begins.") at the `<!-- CTA: primary -->` marker; the inline Wedded Concierge sentence after it retagged `utm_content=inline`, as in the Mykonos model
+- [x] Lead magnet link in the package corrected to /magazine (matches the body and 09-cro.json)
 - [x] Secondary, closing and magnet links unchanged and marked with `<!-- CTA INLINE -->` / `<!-- LEAD MAGNET -->` comments; utm_content primary, inline, secondary, closing and magnet each appear exactly once in visible links
 - [x] No em dashes; no "Wonderland Concierge" in visible text (anchors name Wedded Concierge)
 - [x] Key takeaways: exactly the 4 in the body, verbatim; FAQ (9) extracted verbatim
 - [x] Categories from the brief; primary_category = Destination Weddings; tags from the brief minus Fira (no Fira venue)
-- [x] Meta title "13 Santorini Wedding Venues With Caldera Views" (no "Best"); meta description from `02-seo.json` with Fira dropped, 145 characters, no prices
-- [x] schema_jsonld: Article (datePublished empty) + BreadcrumbList (Home > Destination Weddings > post) + ItemList (13 venues, official URLs) + FAQPage (9)
+- [x] Meta title "15 Santorini Wedding Venues With Caldera Views" (no "Best"); meta description from `02-seo.json` with Fira dropped, 145 characters, no prices
+- [x] schema_jsonld: Article (datePublished empty) + BreadcrumbList (Home > Destination Weddings > post) + ItemList (15 venues, official URLs) + FAQPage (9)
 - [x] Images: 7 slots in the body (featured, practical-compare, 4 areas, practical-when-to-marry), all `needed`. `04-images.json` slot area-fira is not in the body and was left out of the package
 - [x] verify_items and needs_signoff empty (no prices in the copy)
 - [x] draft_note: "DRAFT ONLY. A human clicks Publish", plus image slots, byline and the redirect decision
 - [x] `python3 -I content-system/scripts/validate.py content/posts/santorini-wedding-venues`: All valid
-- [x] `python3 -I content-system/scripts/scan_copy.py content/posts/santorini-wedding-venues/11-body.md`: no banned words, 0 dashes, no overlaps; flagged "exclusive" 21 and "luxury" 2 (expected in a venue guide comparing exclusive use; "luxury" is in venue names and descriptions)
+- [x] `python3 -I content-system/scripts/scan_copy.py content/posts/santorini-wedding-venues/11-body.md`: no banned words, 0 dashes, no overlaps; flagged "exclusive" 23 and "luxury" 4 (expected in a venue guide comparing exclusive use; "luxury" is in venue names and descriptions)
 
 ## CMS checklist (Part 2: not run)
 

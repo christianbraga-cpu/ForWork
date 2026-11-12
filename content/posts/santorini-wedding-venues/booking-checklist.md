@@ -98,9 +98,21 @@ No official Municipality of Thira civil marriage page could be read, so the arti
 - Total room count, guest rooms for the wedding party, exclusive use
 - Music times
 
+## Ambassador Aegean Luxury Hotel & Suites, Akrotiri
+
+- Confirm weddings are still offered (its weddings page returned an error when checked)
+- Ceremony spaces, capacity, exclusive use
+- Note: a separate hotel from Grand Ambassador Santorini; do not mix up quotes or contacts
+
 ## Le Ciel Santorini (village not published)
 
 - Village and address (see above)
 - Seated and standing capacity, ceremony types, exclusive use
 - Curfew, rain plan, and whether any accommodation is offered
 - Confirm the published step-free access (very few steps, wheelchair ramps) covers every space used
+
+## Santorini Gem (village not published)
+
+- Village and address
+- Capacity, ceremony types, exclusive use
+- What the Gem Villa booking includes (five bedrooms, up to eight guests) and whether it is tied to the wedding booking
