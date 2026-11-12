@@ -9,7 +9,7 @@ round: 3
 
 Search for Greece wedding packages all inclusive and you will meet a dozen resorts using the same words for very different things. A Greek venue package usually bundles the ceremony set-up, a coordinator and a set list of touches for the day. Food and drink for the reception, exclusive use, guest rooms, extra hours and outside suppliers are where packages part ways, and most venues quote them separately.
 
-This guide puts ten Greek venue packages side by side by what each one includes. For the wider picture, read [what Greece wedding packages include](https://weddedwonderland.com/destination-weddings/greece-wedding-packages) and our guide to [all inclusive destination wedding packages](https://weddedwonderland.com/destination-wedding-packages?utm_source=blog&utm_medium=content&utm_campaign=greece-wedding-packages-all-inclusive&utm_content=secondary).
+This guide puts ten Greek venue packages side by side by what each one includes. For the wider picture, read [what Greece wedding packages include](https://weddedwonderland.com/destination-weddings/greece-wedding-packages) and our guide to [all inclusive destination wedding packages](https://weddedwonderland.com/destination-wedding-packages).
 
 ## Key takeaways
 
@@ -46,7 +46,7 @@ Guest rooms are the second. Abaton's packages do not include accommodation, and 
 
 Fees set by others sit outside too. Elounda SA states that the Municipal fee for a civil wedding and the Metropolis fee for an Orthodox wedding are not in the package rate and are charged on top. <!-- fact_05 -->
 
-If you want a planner to assemble the whole wedding around a single quote, our guide to [all inclusive destination wedding packages](https://weddedwonderland.com/destination-wedding-packages?utm_source=blog&utm_medium=content&utm_campaign=greece-wedding-packages-all-inclusive&utm_content=secondary) explains how that differs from a venue's own bundle.
+If you want a planner to assemble the whole wedding around a single quote, our guide to [all inclusive destination wedding packages](https://weddedwonderland.com/destination-wedding-packages) explains how that differs from a venue's own bundle.
 
 ## All-inclusive Greece wedding packages compared
 
@@ -58,16 +58,16 @@ Most of these packages are built around the ceremony and smaller groups. For a l
 
 | Venue and region | Package | Ceremony types | Main inclusions (short) | Charged on top or separate | Requirements or minimums |
 |---|---|---|---|---|---|
-| Elounda SA Hotels & Resorts, Elounda, Crete | Lavish; Symbolic / Renewal of Vows | Civil, Orthodox, symbolic, vow renewal | Date, set-up and flowers, bouquet, tasting, spa | Municipal or Metropolis fee; reception separate | Couple stays three nights |
+| Elounda SA Hotels & Resorts, Elounda, Crete | Lavish; Symbolic / Renewal of Vows | Civil, Orthodox, symbolic, vow renewal | Date, set-up and flowers, bouquet, tasting, spa | Municipal or Metropolis fee; reception separate | Couple stays at least three nights |
 | Nana Princess, Chersonissos, Crete | Deluxe Dream, Ultimate Passion, Essential Elegance, or bespoke | Civil on the beach, Orthodox in the hotel chapel, symbolic, vow renewal | Event coordinator, welcome drinks, suite touches, pre-wedding dinner or brunch by package | Drinks not included in the vow renewal dinner | Not published |
-| Abaton Island Resort & Spa, Crete | The Basics | Not published | Ceremony, coordination, photo and video, decor, arch | Rooms; food and drink; venue fee per space | 10 rooms, 2 nights; reception 20 to 300 |
-| Euphoria Resort, Kolymvari, Crete | Elxi, Pathos, Eros | Informal ceremony or vow renewal | Set-up, bouquet, cake and wine for 10 to 30, photos | Receptions and drinks; customising | Items not interchangeable |
+| Abaton Island Resort & Spa, Crete | The Basics | Not published | Ceremony, coordination, photo and video, decor, arch | Rooms; food and drink; venue fee per space | At least 10 rooms for 2 nights; reception 20 to 300 |
+| Euphoria Resort, Kolymvari, Crete | Elxi, Pathos, Eros | Informal ceremony or vow renewal | Set-up, bouquet, cake and wine for up to 10, 20 or 30, photos | Receptions and drinks; customising at extra cost | Items not interchangeable |
 | Ikos Aria, Kos | Special Wedding package | Civil; vows in designated resort wedding spots | Date and time, planning and coordination, cake for 10, rose petals | Not published | Not published |
-| Canaves Collection, Oia, Santorini | Packages by space, plus elopement | Religious, civil, symbolic, vow renewal | Private use for set hours, planning, music, toast, cake | Food and drink menus | Room bookings, mostly three nights, rising with guests |
+| Canaves Collection, Oia, Santorini | Packages by space, plus elopement | Religious, civil, symbolic, vow renewal | Private use for set hours, planning, music, toast, cake | Food and drink menus | Room bookings with three-night minimums, rising with guests |
 | Santorini Gem, Santorini | Terrace hire; three evening packages | Civil or symbolic | Exclusive hire, ceremony and table set-up, bridal room | Gazebo, earlier start, extra guests | Planner required; menu guest minimums |
 | Andronis, Oia, Santorini | Andronis Wedding Package | Civil, with the Mayor | Flowers, bouquet, two-tier cake, sparkling wine, cliffside ceremony area | Officiant, florals, photography sessions and fireworks at an additional charge | Two witnesses required |
 | Myconian Collection, Elia, Mykonos | Complete event solution, or stage for your own team | Chapel ceremonies; officiating support across denominations | Invitations, menus, cakes, wines, flowers, favours, lighting, sound and music | Not published | Not published |
-| Four Seasons Astir Palace Hotel Athens | Wedding Inclusions | Not published | Wedding night, tasting for four, specialist, tableware | Not published | Not published |
+| Four Seasons Astir Palace Hotel Athens | Wedding Inclusions | Not published | Wedding night, tasting for up to four, specialist, tableware | Not published | Not published |
 
 Where a cell reads "Not published", the venue does not set that detail out for weddings. Ask for it in the written quote.
 
@@ -201,7 +201,7 @@ Clifftop and terraced venues can mean steps between ceremony, dinner and rooms. 
 
 ### Quote currency
 
-Santorini Gem, for one, publishes its rental fees in euros. <!-- fact_515 --> Ask which currency and language the contract is written in, which currency each payment is taken in, whether card or bank fees apply, and who carries any change in the exchange rate between the deposit and the balance. Put both quotes in the same currency before you compare them.
+Santorini Gem, for one, publishes its rental fees in euros. <!-- fact_515 --> Ask which currency and language the contract is written in, which currency each payment is taken in, whether card or bank fees apply, and who carries any change in the exchange rate between the deposit and the balance. Put both quotes in the same currency before you compare them. To set yours side by side, [talk to Wedded Concierge](https://weddedwonderland.com/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=greece-wedding-packages-all-inclusive&utm_content=secondary).
 
 ## When all inclusive suits you and when to build your own
 
