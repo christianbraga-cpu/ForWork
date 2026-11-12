@@ -1,0 +1,212 @@
+{
+  "agent": "planner-sme",
+  "task_id": "greek-orthodox-wedding",
+  "stage": "03",
+  "status": "complete",
+  "round": 1,
+  "inputs_used": [
+    "content/posts/greek-orthodox-wedding/00-input.json (no 01-brief.json or 02-seo.json in folder at run time)",
+    "content/posts/greek-wedding-traditions/03-source-pack.json (OCA facts fact_01 to fact_05 copied unchanged)",
+    "apify--web-search 2026-11-12 (one query): returned only Facebook, Reddit and vendor results; no goarch.org URL; snippets not used as facts",
+    "apify--web-fetch 2026-11-12, one parallel round, no retries: https://www.goarch.org/ourfaith/ourfaith7068 (timed out 60s), https://www.goarch.org/-/guidelines-for-the-sacrament-of-marriage (timed out), https://www.goarch.org/-/interfaith-marriage (timed out), https://www.goarch.org/-/the-service-of-marriage (timed out), https://www.ecclesia.gr/English/holysynod/holysynod.html (redirected to ecclesiagreece.gr, HTTP 404)",
+    "Greek Orthodox Archdiocese of Australia site deliberately not read (per orchestrator)"
+  ],
+  "self_qa": {
+    "checks": [
+      {
+        "check": "Every fact has a source and date",
+        "pass": true
+      },
+      {
+        "check": "No prices; needs_signoff empty",
+        "pass": true
+      },
+      {
+        "check": "Every must-include covered or [[VERIFY]]",
+        "pass": true
+      },
+      {
+        "check": "No invented quotes, statistics or real weddings",
+        "pass": true
+      },
+      {
+        "check": "Jurisdiction named in each claim",
+        "pass": true,
+        "note": "All facts are Orthodox Church in America; none are Greek Orthodox Archdiocese or Church of Greece."
+      },
+      {
+        "check": "goarch.org / ecclesia.gr conditions sourced",
+        "pass": false,
+        "note": "All four goarch.org reads timed out; ecclesia.gr URL 404. No retries per fast-mode rule."
+      }
+    ],
+    "confidence": 0.35
+  },
+  "open_questions": [
+    {
+      "to": "orchestrator",
+      "question": "goarch.org timed out on every read (here and in greek-wedding-traditions). Try a rendered fetch (wait) or firecrawl of a goarch.org URL found from the site's own menu, or a cached/PDF copy of the GOA marriage guidelines, before drafting church conditions?",
+      "blocking": false
+    },
+    {
+      "to": "luxury-writer",
+      "question": "Only OCA statements are sourced. Attribute them to the Orthodox Church in America, describe the service in general terms, and keep sponsor rules, closed days, interfaith and second-marriage conditions behind the [[VERIFY]] items or as 'confirm with your parish priest'.",
+      "blocking": false
+    }
+  ],
+  "assumptions": [
+    "OCA is an official Orthodox church site describing the shared Orthodox rite; it is not the Greek Orthodox Archdiocese or the Church of Greece.",
+    "Search snippets (Facebook, Reddit, vendor) are not used as facts.",
+    "BOOKING CHECKLIST: Greek Orthodox parish (Greece or Australia): notice period, closed dates, sponsor eligibility, baptism and mixed-marriage certificates, bishop's permission where needed, photography rules in church, whether the church supplies stefana and the common cup."
+  ],
+  "verify_items": [
+    "[[VERIFY: order of the Greek Orthodox wedding service (betrothal with rings, candles, crowning with stefana exchanged by the koumbaros or koumbara, Epistle and Gospel, common cup, Dance of Isaiah, removal of crowns): no goarch.org or Church of Greece page read; goarch.org reads timed out 2026-11-12]]",
+    "[[VERIFY: koumbaros or koumbara (sponsor) eligibility, e.g. must be an Orthodox Christian in good standing: no goarch.org or Church of Greece page read]]",
+    "[[VERIFY: days and periods when Greek Orthodox weddings are not held (e.g. fasting periods, Lent and Holy Week, 1 to 15 August, certain feast days): only seen in a vendor search snippet, not a church source]]",
+    "[[VERIFY: Greek Orthodox Church rule on marrying a non-Christian (unbaptised) partner in church, beyond the OCA statement that the sacrament is for baptised members: no goarch.org page read]]",
+    "[[VERIFY: Greek Orthodox Church conditions for second and third marriages (ecclesiastical divorce, permission of the bishop, penitential character of the service, limit of three): no goarch.org or Church of Greece page read]]",
+    "[[VERIFY: whether the Greek Orthodox Church requires baptised non-Orthodox Christian partners to have been baptised in the name of the Holy Trinity, and what certificates the parish asks for: no goarch.org page read]]"
+  ],
+  "tools_used": [
+    "mcp__Apify__apify--web-search",
+    "mcp__Apify__apify--web-fetch"
+  ],
+  "next_agent": [
+    "luxury-writer"
+  ],
+  "payload": {
+    "facts": [
+      {
+        "fact_id": "fact_01",
+        "claim": "The Orthodox Church in America describes the Orthodox sacrament of marriage as containing no vows or oaths and as not a juridical contract.",
+        "source": "https://www.oca.org/orthodoxy/the-orthodox-faith/worship/the-sacraments/marriage",
+        "source_type": "other",
+        "checked": "2026-11-04",
+        "is_price": false,
+        "conflicts": "Orthodox Church in America (official church site), read live via Apify web-fetch 2026-11-04, HTTP 200. Not the Greek Orthodox Archdiocese; describes the shared Orthodox rite. Jurisdiction: Orthodox Church in America.",
+        "origin": "Copied unchanged from content/posts/greek-wedding-traditions/03-source-pack.json (fact_01); not re-read in this run."
+      },
+      {
+        "fact_id": "fact_02",
+        "claim": "In the Orthodox marriage rite the couple is led into the church in procession, prayed over and blessed, hears the Word of God (readings), and is crowned.",
+        "source": "https://www.oca.org/orthodoxy/the-orthodox-faith/worship/the-sacraments/marriage",
+        "source_type": "other",
+        "checked": "2026-11-04",
+        "is_price": false,
+        "conflicts": "Orthodox Church in America (official church site), read live via Apify web-fetch 2026-11-04, HTTP 200. Not the Greek Orthodox Archdiocese; describes the shared Orthodox rite. Jurisdiction: Orthodox Church in America.",
+        "origin": "Copied unchanged from content/posts/greek-wedding-traditions/03-source-pack.json (fact_02); not re-read in this run."
+      },
+      {
+        "fact_id": "fact_03",
+        "claim": "The Church explains the crowns as crowns of God's glory, crowning the couple to be His children and witnesses (martyrs) in this world and heirs of His Kingdom.",
+        "source": "https://www.oca.org/orthodoxy/the-orthodox-faith/worship/the-sacraments/marriage",
+        "source_type": "other",
+        "checked": "2026-11-04",
+        "is_price": false,
+        "conflicts": "Orthodox Church in America (official church site), read live via Apify web-fetch 2026-11-04, HTTP 200. Not the Greek Orthodox Archdiocese; describes the shared Orthodox rite. Jurisdiction: Orthodox Church in America.",
+        "origin": "Copied unchanged from content/posts/greek-wedding-traditions/03-source-pack.json (fact_03); not re-read in this run."
+      },
+      {
+        "fact_id": "fact_04",
+        "claim": "The Orthodox Church in America states the sacrament is for baptised members of the Church; an Orthodox Christian may marry a baptised non-Orthodox Christian in the Church.",
+        "source": "https://www.oca.org/orthodoxy/the-orthodox-faith/worship/the-sacraments/marriage",
+        "source_type": "other",
+        "checked": "2026-11-04",
+        "is_price": false,
+        "conflicts": "Orthodox Church in America (official church site), read live via Apify web-fetch 2026-11-04, HTTP 200. Not the Greek Orthodox Archdiocese; describes the shared Orthodox rite. Jurisdiction: Orthodox Church in America.",
+        "origin": "Copied unchanged from content/posts/greek-wedding-traditions/03-source-pack.json (fact_04); not re-read in this run."
+      },
+      {
+        "fact_id": "fact_05",
+        "claim": "The OCA notes the Orthodox marriage ritual was patterned on baptism-chrismation, and that for centuries there was no separate marriage ritual.",
+        "source": "https://www.oca.org/orthodoxy/the-orthodox-faith/worship/the-sacraments/marriage",
+        "source_type": "other",
+        "checked": "2026-11-04",
+        "is_price": false,
+        "conflicts": "Orthodox Church in America (official church site), read live via Apify web-fetch 2026-11-04, HTTP 200. Not the Greek Orthodox Archdiocese; describes the shared Orthodox rite. Jurisdiction: Orthodox Church in America.",
+        "origin": "Copied unchanged from content/posts/greek-wedding-traditions/03-source-pack.json (fact_05); not re-read in this run."
+      }
+    ],
+    "insider_details": [
+      {
+        "detail": "Couples who expect a vows moment should know the Orthodox rite has none (per the Orthodox Church in America): build personal words into the reception speeches rather than asking the priest to add them.",
+        "fact_ids": [
+          "fact_01"
+        ]
+      },
+      {
+        "detail": "If one partner is not Orthodox, raise it with the parish priest before choosing a church or date: the Orthodox Church in America says the sacrament is for baptised members and allows marriage to a baptised non-Orthodox Christian, so baptism paperwork shapes the timeline.",
+        "fact_ids": [
+          "fact_04"
+        ]
+      },
+      {
+        "detail": "Brief the photographer and guests that the crowning is the centre of the rite (per the Orthodox Church in America), so the key shots happen at the crowning, not at a ring or vows moment.",
+        "fact_ids": [
+          "fact_02",
+          "fact_03"
+        ]
+      }
+    ],
+    "quotes": [],
+    "real_weddings": [],
+    "verify_items": [
+      "[[VERIFY: order of the Greek Orthodox wedding service (betrothal with rings, candles, crowning with stefana exchanged by the koumbaros or koumbara, Epistle and Gospel, common cup, Dance of Isaiah, removal of crowns): no goarch.org or Church of Greece page read; goarch.org reads timed out 2026-11-12]]",
+      "[[VERIFY: koumbaros or koumbara (sponsor) eligibility, e.g. must be an Orthodox Christian in good standing: no goarch.org or Church of Greece page read]]",
+      "[[VERIFY: days and periods when Greek Orthodox weddings are not held (e.g. fasting periods, Lent and Holy Week, 1 to 15 August, certain feast days): only seen in a vendor search snippet, not a church source]]",
+      "[[VERIFY: Greek Orthodox Church rule on marrying a non-Christian (unbaptised) partner in church, beyond the OCA statement that the sacrament is for baptised members: no goarch.org page read]]",
+      "[[VERIFY: Greek Orthodox Church conditions for second and third marriages (ecclesiastical divorce, permission of the bishop, penitential character of the service, limit of three): no goarch.org or Church of Greece page read]]",
+      "[[VERIFY: whether the Greek Orthodox Church requires baptised non-Orthodox Christian partners to have been baptised in the name of the Holy Trinity, and what certificates the parish asks for: no goarch.org page read]]"
+    ],
+    "needs_signoff": [],
+    "must_include_coverage": [
+      {
+        "item": "What the Orthodox wedding service is (no vows, crowning at its centre)",
+        "covered_by": [
+          "fact_01",
+          "fact_02",
+          "fact_03",
+          "fact_05"
+        ]
+      },
+      {
+        "item": "Who can marry in the Orthodox Church (baptism, inter-Christian marriage)",
+        "covered_by": [
+          "fact_04",
+          "[[VERIFY: whether the Greek Orthodox Church requires baptised non-Orthodox Christian partners to have been baptised in the name of the Holy Trinity, and what certificates the parish asks for: no goarch.org page read]]"
+        ]
+      },
+      {
+        "item": "Interfaith marriage (non-Christian partner)",
+        "covered_by": [
+          "[[VERIFY: Greek Orthodox Church rule on marrying a non-Christian (unbaptised) partner in church, beyond the OCA statement that the sacrament is for baptised members: no goarch.org page read]]"
+        ]
+      },
+      {
+        "item": "Sponsor (koumbaros or koumbara) conditions",
+        "covered_by": [
+          "[[VERIFY: koumbaros or koumbara (sponsor) eligibility, e.g. must be an Orthodox Christian in good standing: no goarch.org or Church of Greece page read]]"
+        ]
+      },
+      {
+        "item": "Days weddings are not held",
+        "covered_by": [
+          "[[VERIFY: days and periods when Greek Orthodox weddings are not held (e.g. fasting periods, Lent and Holy Week, 1 to 15 August, certain feast days): only seen in a vendor search snippet, not a church source]]"
+        ]
+      },
+      {
+        "item": "Second marriages",
+        "covered_by": [
+          "[[VERIFY: Greek Orthodox Church conditions for second and third marriages (ecclesiastical divorce, permission of the bishop, penitential character of the service, limit of three): no goarch.org or Church of Greece page read]]"
+        ]
+      },
+      {
+        "item": "Order of the service step by step",
+        "covered_by": [
+          "fact_02",
+          "[[VERIFY: order of the Greek Orthodox wedding service (betrothal with rings, candles, crowning with stefana exchanged by the koumbaros or koumbara, Epistle and Gospel, common cup, Dance of Isaiah, removal of crowns): no goarch.org or Church of Greece page read; goarch.org reads timed out 2026-11-12]]"
+        ]
+      }
+    ]
+  }
+}
