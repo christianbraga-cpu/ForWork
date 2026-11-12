@@ -1,0 +1,209 @@
+{
+ "agent": "visual-curator",
+ "task_id": "best-time-to-get-married-in-greece",
+ "stage": "04",
+ "status": "needs_input",
+ "round": 1,
+ "inputs_used": [
+  "CLAUDE.md",
+  "content/posts/best-time-to-get-married-in-greece/00-input.json",
+  "01-brief.json, 02-seo.json, 02-research/report.md, 03-source-pack.json (not present at run time)",
+  "content/posts/same-sex-marriage-greece/04-images.json (format model)",
+  "content-system/images/library-index.csv (header only, no rows)",
+  "content-system/schemas/04-images.schema.json"
+ ],
+ "self_qa": {
+  "checks": [
+   {
+    "check": "Zero reference-only or competitor images in slots",
+    "pass": true,
+    "note": "reference_only is empty; no images downloaded."
+   },
+   {
+    "check": "Every approved image has location, licence, alt, caption, fit_reason",
+    "pass": true,
+    "note": "No approved images this run."
+   },
+   {
+    "check": "No AI image depicting a real place, wedding, ceremony or person",
+    "pass": true,
+    "note": "No AI generated. Only the planning still life may become ai_illustrative, with user approval and an 'Illustrative image' label."
+   },
+   {
+    "check": "Featured image exists (approved or needed with brief)",
+    "pass": true,
+    "note": "Needed, with brief: island ceremony in late light at a named venue."
+   },
+   {
+    "check": "Seasonal captions accurate",
+    "pass": true,
+    "note": "Every place brief requires the month taken from register or EXIF so captions never imply a season the photo does not show."
+   },
+   {
+    "check": "About 6 slots",
+    "pass": true,
+    "note": "6 slots."
+   }
+  ],
+  "confidence": 0.7
+ },
+ "open_questions": [
+  {
+   "to": "user",
+   "question": "Do you approve an AI planning still life labelled 'Illustrative image' if no Canva or licensed asset is found?",
+   "blocking": false
+  },
+  {
+   "to": "user",
+   "question": "Do you hold licensed Greek wedding photos (with month taken and couple consent) for the featured, spring, summer, autumn or Corfu/Crete slots?",
+   "blocking": false
+  },
+  {
+   "to": "planner-sme",
+   "question": "Confirm featured venues (03-source-pack) so each seasonal slot can be tied to a named place and press contact.",
+   "blocking": false
+  }
+ ],
+ "assumptions": [
+  "Placement is by section name because 02-seo.json is not yet written; the writer maps it to after_h2 positions.",
+  "No venue is named because 03-source-pack does not exist; nothing was guessed.",
+  "Fast mode: repo register only, no Drive, own-site, Canva, Gmail or Lens checks run."
+ ],
+ "verify_items": [
+  "[[IMAGE NEEDED]] featured: island ceremony in late light at a named Greek island venue, licensed",
+  "[[IMAGE NEEDED]] spring-setting, high-summer-setting, autumn-setting: official venue image or licensed stock with month taken recorded",
+  "[[IMAGE NEEDED]] green-season-ionian-crete: named Corfu or Crete venue, licensed, month recorded",
+  "[[IMAGE NEEDED]] planning-still-life: Canva brand asset or licensed stock; AI only with user approval, labelled 'Illustrative image'",
+  "[[VERIFY licence]] every venue or own-site image: written permission, credit line and expiry recorded in library-index.csv before use",
+  "[[VERIFY: couple consent for any real-wedding photo, and guest consent if identifiable]]"
+ ],
+ "tools_used": [
+  "Bash (cat/python)"
+ ],
+ "next_agent": [
+  "luxury-writer"
+ ],
+ "payload": {
+  "slots": [
+   {
+    "slot_id": "featured",
+    "placement": "featured",
+    "purpose": "Hero and social share image: a Greek island ceremony in late light, setting the seasonal, golden-hour mood of a guide about timing.",
+    "shot_brief": "Landscape 3:2, room for a title. Ceremony set-up or real ceremony on a sea-view terrace or clifftop at a real, named Greek island venue (Cycladic or Ionian), late afternoon to sunset light, warm low sun, calm sea, white florals and olive branches, no signage. Couple optional and small in frame; the light and setting carry the story. Season stated in the register row (ideally late May to early October) so the caption can name the month. People only from a licensed real wedding with written couple consent (and guest consent if identifiable) recorded in library-index.csv; never AI people, never stock models presented as a real couple. Source: the venue's own media kit with written permission (Gmail draft request, never sent by an agent), or licensed premium stock bought by a human and added to library-index.csv. Never AI, never a competitor, directory, planner, photographer-blog or search-result image. Location proven by the media kit, register row or EXIF, never by appearance.",
+    "status": "needed",
+    "file": "content/posts/best-time-to-get-married-in-greece/images/best-time-to-get-married-in-greece-island-venue-sunset-ceremony-hero.webp",
+    "source": {
+     "type": "venue_press",
+     "origin": "not yet sourced",
+     "credit": "[[VERIFY licence]]"
+    },
+    "location": {
+     "venue": "a named Greek island venue (to be confirmed from 03-source-pack)",
+     "town": "Greek island (to be confirmed)",
+     "verified_by": "pending: media kit, register row or EXIF"
+    },
+    "licence_note": "[[IMAGE NEEDED]] Library register has no rows (header only). Move to pending_permission once a permission draft exists."
+   },
+   {
+    "slot_id": "spring-setting",
+    "placement": "section: spring months (April to June) (H2 opener; writer maps to after_h2:<n>)",
+    "purpose": "Show what a spring wedding looks and feels like: fresh greenery, wildflowers, softer light.",
+    "shot_brief": "Landscape 3:2. Ceremony or reception setting at a real, named Greek venue in April to early June, wildflowers or green hillsides, bougainvillea starting, soft clear morning or late-afternoon light, no crowds, no people or consented couple only. Month taken must be recorded (register or EXIF date) so the caption is accurate. People only from a licensed real wedding with written couple consent (and guest consent if identifiable) recorded in library-index.csv; never AI people, never stock models presented as a real couple. Source: the venue's own media kit with written permission (Gmail draft request, never sent by an agent), or licensed premium stock bought by a human and added to library-index.csv. Never AI, never a competitor, directory, planner, photographer-blog or search-result image. Location proven by the media kit, register row or EXIF, never by appearance.",
+    "status": "needed",
+    "file": "content/posts/best-time-to-get-married-in-greece/images/best-time-to-get-married-in-greece-venue-spring-garden-ceremony.webp",
+    "source": {
+     "type": "venue_press",
+     "origin": "not yet sourced",
+     "credit": "[[VERIFY licence]]"
+    },
+    "location": {
+     "venue": "a named Greek venue (to be confirmed)",
+     "town": "Greece (to be confirmed)",
+     "verified_by": "pending: media kit, register row or EXIF"
+    },
+    "licence_note": "[[IMAGE NEEDED]] Library register has no rows (header only). Move to pending_permission once a permission draft exists."
+   },
+   {
+    "slot_id": "high-summer-setting",
+    "placement": "section: high summer (July and August) (H2 opener; writer maps to after_h2:<n>)",
+    "purpose": "Illustrate peak-season conditions honestly: bright light, whitewash, sea, and the need for shade and evening timing.",
+    "shot_brief": "Landscape 3:2. A real, named Cycladic venue in July or August: shaded evening reception or terrace with pergola, white linen, sea beyond, strong blue hour or post-sunset light (signalling the evening-ceremony advice). No people or consented guests only; avoid harsh midday glare and crowded town shots. Month taken recorded via register or EXIF. People only from a licensed real wedding with written couple consent (and guest consent if identifiable) recorded in library-index.csv; never AI people, never stock models presented as a real couple. Source: the venue's own media kit with written permission (Gmail draft request, never sent by an agent), or licensed premium stock bought by a human and added to library-index.csv. Never AI, never a competitor, directory, planner, photographer-blog or search-result image. Location proven by the media kit, register row or EXIF, never by appearance.",
+    "status": "needed",
+    "file": "content/posts/best-time-to-get-married-in-greece/images/best-time-to-get-married-in-greece-cycladic-venue-summer-evening-reception.webp",
+    "source": {
+     "type": "venue_press",
+     "origin": "not yet sourced",
+     "credit": "[[VERIFY licence]]"
+    },
+    "location": {
+     "venue": "a named Cycladic venue (to be confirmed)",
+     "town": "Cyclades (to be confirmed)",
+     "verified_by": "pending: media kit, register row or EXIF"
+    },
+    "licence_note": "[[IMAGE NEEDED]] Library register has no rows (header only). Move to pending_permission once a permission draft exists."
+   },
+   {
+    "slot_id": "autumn-setting",
+    "placement": "section: autumn months (September and October) (H2 opener; writer maps to after_h2:<n>)",
+    "purpose": "Show the shoulder-season appeal: warm sea, golden light, quieter venues, harvest tones.",
+    "shot_brief": "Landscape 3:2. Reception table or ceremony set-up at a real, named Greek venue in September or October: amber late light, olive groves or vineyard, harvest or earthy florals, calm sea, uncrowded. No people or consented couple only. Month taken recorded via register or EXIF. People only from a licensed real wedding with written couple consent (and guest consent if identifiable) recorded in library-index.csv; never AI people, never stock models presented as a real couple. Source: the venue's own media kit with written permission (Gmail draft request, never sent by an agent), or licensed premium stock bought by a human and added to library-index.csv. Never AI, never a competitor, directory, planner, photographer-blog or search-result image. Location proven by the media kit, register row or EXIF, never by appearance.",
+    "status": "needed",
+    "file": "content/posts/best-time-to-get-married-in-greece/images/best-time-to-get-married-in-greece-venue-autumn-olive-grove-reception.webp",
+    "source": {
+     "type": "venue_press",
+     "origin": "not yet sourced",
+     "credit": "[[VERIFY licence]]"
+    },
+    "location": {
+     "venue": "a named Greek venue (to be confirmed)",
+     "town": "Greece (to be confirmed)",
+     "verified_by": "pending: media kit, register row or EXIF"
+    },
+    "licence_note": "[[IMAGE NEEDED]] Library register has no rows (header only). Move to pending_permission once a permission draft exists."
+   },
+   {
+    "slot_id": "planning-still-life",
+    "placement": "section: weather, booking windows and planning by month (H2 opener; writer maps to after_h2:<n>)",
+    "purpose": "Break up the month-by-month detail with a calm planning visual: calendar, notes and travel items.",
+    "shot_brief": "Landscape 3:2 or 4:5. Still life, no people, no identifiable place: linen planner or calendar open to a month, handwritten notes, a sun hat, sunglasses, a fan, a pressed olive sprig, soft natural light on a white or stone surface, Wedded Wonderland palette. No logos, no real venue names, no weather data shown as fact. Source order: Canva brand asset, then licensed stock bought by a human. AI still life only if the user approves, labelled 'Illustrative image' in the caption, and never depicting a real place, wedding or person.",
+    "status": "needed",
+    "file": "content/posts/best-time-to-get-married-in-greece/images/best-time-to-get-married-in-greece-planning-still-life-calendar.webp",
+    "source": {
+     "type": "canva",
+     "origin": "not yet sourced",
+     "credit": "[[VERIFY licence]]"
+    },
+    "location": {
+     "venue": "none (still life, no place depicted)",
+     "town": "n/a",
+     "verified_by": "pending: media kit, register row or EXIF"
+    },
+    "licence_note": "[[IMAGE NEEDED]] Canva brand asset or licensed stock; AI still life only with user approval, labelled 'Illustrative image'."
+   },
+   {
+    "slot_id": "green-season-ionian-crete",
+    "placement": "section: shoulder and off-season, Corfu or Crete (H2 opener; writer maps to after_h2:<n>)",
+    "purpose": "Show that greener islands suit the edges of the season: lush Corfu or Crete setting in spring or autumn.",
+    "shot_brief": "Landscape 3:2. A real, named venue on Corfu (cypress and olive hills, Venetian villa or garden terrace) or Crete (estate with olive groves and mountains), green-season light in April to May or October, no crowds, no people or consented couple only. Island and month proven by register row, media kit or EXIF, never by appearance. People only from a licensed real wedding with written couple consent (and guest consent if identifiable) recorded in library-index.csv; never AI people, never stock models presented as a real couple. Source: the venue's own media kit with written permission (Gmail draft request, never sent by an agent), or licensed premium stock bought by a human and added to library-index.csv. Never AI, never a competitor, directory, planner, photographer-blog or search-result image. Location proven by the media kit, register row or EXIF, never by appearance.",
+    "status": "needed",
+    "file": "content/posts/best-time-to-get-married-in-greece/images/best-time-to-get-married-in-greece-corfu-or-crete-venue-green-season.webp",
+    "source": {
+     "type": "venue_press",
+     "origin": "not yet sourced",
+     "credit": "[[VERIFY licence]]"
+    },
+    "location": {
+     "venue": "a named venue on Corfu or Crete (to be confirmed)",
+     "town": "Corfu or Crete (to be confirmed)",
+     "verified_by": "pending: media kit, register row or EXIF"
+    },
+    "licence_note": "[[IMAGE NEEDED]] Library register has no rows (header only). Move to pending_permission once a permission draft exists."
+   }
+  ],
+  "reference_only": [],
+  "permission_requests": [],
+  "drive_findings": [
+   "Not searched: fast mode, repo library register only per orchestrator instruction. library-index.csv has a header and no rows."
+  ]
+ }
+}
