@@ -1,0 +1,384 @@
+{
+ "agent": "planner-sme",
+ "task_id": "rhodes-wedding-venues",
+ "stage": "03",
+ "status": "complete",
+ "round": 1,
+ "inputs_used": [
+  "CLAUDE.md",
+  "content/posts/rhodes-wedding-venues/00-input.json",
+  "content-system/schemas/03-source-pack.schema.json",
+  "content/posts/mykonos-wedding/03-source-pack-part-1.json (format model)",
+  "Apify web-fetch 2026-11-12 (one parallel round): oldportal.emy.gr Rodos climatology; rho-airport.gr/en; visitgreece.gr Rhodes; rhodes.gr home; smartraveller.gov.au Greece; greece.embassy.gov.au notarial"
+ ],
+ "self_qa": {
+  "checks": [
+   {
+    "check": "Every fact has a source and date",
+    "pass": true
+   },
+   {
+    "check": "No price without a source; all prices in needs_signoff",
+    "pass": true,
+    "note": "No prices or fee amounts; 'a fee applies' only."
+   },
+   {
+    "check": "Every must-include covered or marked [[VERIFY]]",
+    "pass": true,
+    "note": "Batch D covers practical and legal sections only."
+   },
+   {
+    "check": "No invented quotes, statistics or real weddings",
+    "pass": true
+   }
+  ],
+  "confidence": 0.8
+ },
+ "open_questions": [
+  {
+   "to": "orchestrator",
+   "question": "RUN REPORT ONLY: (1) rhodes.gr home page read; it links a civil marriage documents page that was not fetched (one-round rule), so no municipal steps are stated. (2) Rhodes Airport home page gives no operator statement in text beyond the Fraport Greece magazine and network, no distance to town, no routes; it lists bus and taxi info pages, not read, and no transfer claims are made. (3) No official Rhodes port page read. (4) Apostille/translation and same-sex marriage: no official Greek source read. (5) Visit Greece does not name the meltemi; HNMS gives prevailing W wind only.",
+   "blocking": false
+  }
+ ],
+ "assumptions": [
+  "Legal and travel facts dated 'as at November 2026'; the Wedded Advisor confirms current requirements. Nothing implies a planner handles legal, church or religious paperwork.",
+  "HNMS figures are labelled as the Rodos station, 1955-2010 averages; no 'best month' is stated.",
+  "Clock: started 05:18 UTC; one parallel read round only."
+ ],
+ "verify_items": [
+  "[[VERIFY: Municipality of Rhodes civil marriage steps, documents, lead times and ceremony locations for foreign couples. The municipal site lists a civil marriage documents page (fact_314) but it was not read, so copy will read: check with the Municipality of Rhodes and the embassy, including any fees.]]",
+  "[[VERIFY: whether Greece requires Australian documents (CNI, birth certificate) to carry an apostille and an official Greek translation. No official Greek source read; copy may only say the Embassy in Athens issues CNIs and apostilles (fact_324).]]",
+  "[[VERIFY: same-sex civil marriage position in Greece for foreign couples. Smartraveller (fact_323) does not address it; copy makes no claim.]]",
+  "[[VERIFY: Rhodes ferry port details. No official port page read; copy uses Smartraveller ferry advice only (fact_320).]]",
+  "[[VERIFY: direct international routes into Rhodes Airport and seasonality. The airport home page lists airlines but not routes or seasons (fact_308); copy should give only the Visit Greece Athens and Thessaloniki flight times (fact_312).]]"
+ ],
+ "next_agent": [
+  "luxury-writer"
+ ],
+ "payload": {
+  "facts": [
+   {
+    "fact_id": "fact_300",
+    "claim": "HNMS (Hellenic National Meteorological Service) climatic data for the Rodos station (South Aegean; lat 36.4, lon 28.09, altitude 7 m), data period 1955-2010, read live 12 November 2026.",
+    "source": "http://oldportal.emy.gr/emy/en/climatology/climatology_city?perifereia=South%20Aegean&poli=Rodos",
+    "source_type": "government",
+    "checked": "2026-11-12",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_301",
+    "claim": "HNMS Rodos station, maximum monthly temperature (deg C, 1955-2010): Jan 15.1, Feb 15.2, Mar 17.0, Apr 20.0, May 24.1, Jun 28.3, Jul 30.4, Aug 30.7, Sep 28.1, Oct 24.5, Nov 20.2, Dec 16.7.",
+    "source": "http://oldportal.emy.gr/emy/en/climatology/climatology_city?perifereia=South%20Aegean&poli=Rodos",
+    "source_type": "government",
+    "checked": "2026-11-12",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_302",
+    "claim": "HNMS Rodos station, monthly mean temperature (deg C, 1955-2010): Jan 12.2, Feb 12.3, Mar 13.9, Apr 16.8, May 20.7, Jun 24.9, Jul 27.0, Aug 27.3, Sep 24.8, Oct 21.0, Nov 16.8, Dec 13.7.",
+    "source": "http://oldportal.emy.gr/emy/en/climatology/climatology_city?perifereia=South%20Aegean&poli=Rodos",
+    "source_type": "government",
+    "checked": "2026-11-12",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_303",
+    "claim": "HNMS Rodos station, monthly mean precipitation (mm, 1955-2010): Jan 151.8, Feb 101.7, Mar 68.9, Apr 29.4, May 16.4, Jun 1.8, Jul 0.3, Aug 0.2, Sep 6.3, Oct 56.9, Nov 89.6, Dec 152.8.",
+    "source": "http://oldportal.emy.gr/emy/en/climatology/climatology_city?perifereia=South%20Aegean&poli=Rodos",
+    "source_type": "government",
+    "checked": "2026-11-12",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_304",
+    "claim": "HNMS Rodos station, monthly mean precipitation days (1955-2010): Jan 15.2, Feb 12.7, Mar 9.9, Apr 7.4, May 4.4, Jun 1.1, Jul 0.2, Aug 0.1, Sep 1.7, Oct 6.5, Nov 9.4, Dec 15.1.",
+    "source": "http://oldportal.emy.gr/emy/en/climatology/climatology_city?perifereia=South%20Aegean&poli=Rodos",
+    "source_type": "government",
+    "checked": "2026-11-12",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_305",
+    "claim": "HNMS Rodos station, prevailing wind direction is W (west) from January to November and NW in December; monthly mean wind power is highest in July (11.5) and August (11.2) and lowest in November (6.0) (HNMS units as published, 1955-2010).",
+    "source": "http://oldportal.emy.gr/emy/en/climatology/climatology_city?perifereia=South%20Aegean&poli=Rodos",
+    "source_type": "government",
+    "checked": "2026-11-12",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_306",
+    "claim": "HNMS Rodos station, monthly mean relative humidity (%, 1955-2010) ranges from 58.9 in July to 72.4 in December.",
+    "source": "http://oldportal.emy.gr/emy/en/climatology/climatology_city?perifereia=South%20Aegean&poli=Rodos",
+    "source_type": "government",
+    "checked": "2026-11-12",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_307",
+    "claim": "Rhodes Airport (RHO) official website (rho-airport.gr), part of the Fraport Greece network (site carries 'Incredible Greece, the official Fraport Greece Magazine'), publishes live arrivals and departures, with all times in Greek local time.",
+    "source": "https://www.rho-airport.gr/en",
+    "source_type": "official_venue",
+    "checked": "2026-11-12",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_308",
+    "claim": "Rhodes Airport's official airline list (read 12 November 2026) includes Aegean Airlines, Olympic Air and Sky Express among the carriers serving RHO; the site tells passengers to contact their airline or travel agent for schedule changes.",
+    "source": "https://www.rho-airport.gr/en",
+    "source_type": "official_venue",
+    "checked": "2026-11-12",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_309",
+    "claim": "Visit Greece (official tourism site) describes Rhodes as the capital of the Dodecanese and the fourth largest Greek island, known as the 'Emerald Island'.",
+    "source": "https://www.visitgreece.gr/en/islands/dodecanese/rhodes",
+    "source_type": "tourism_board",
+    "checked": "2026-11-12",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_310",
+    "claim": "Visit Greece states the Medieval Town of Rhodes is a UNESCO World Heritage Site.",
+    "source": "https://www.visitgreece.gr/en/islands/dodecanese/rhodes",
+    "source_type": "tourism_board",
+    "checked": "2026-11-12",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_311",
+    "claim": "Visit Greece describes Lindos as picturesque, with its imposing acropolis.",
+    "source": "https://www.visitgreece.gr/en/islands/dodecanese/rhodes",
+    "source_type": "tourism_board",
+    "checked": "2026-11-12",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_312",
+    "claim": "Visit Greece lists flights from Athens International Airport (Eleftherios Venizelos) to Rhodes Airport at a travel duration of 1 hour, and from Thessaloniki Airport (Macedonia) at 1 hour 20 minutes.",
+    "source": "https://www.visitgreece.gr/en/islands/dodecanese/rhodes",
+    "source_type": "tourism_board",
+    "checked": "2026-11-12",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_313",
+    "claim": "Visit Greece notes Byzantines, Knights of St John, Ottomans and Italians passed through Rhodes, and that the island's highest mountain is Attavyros.",
+    "source": "https://www.visitgreece.gr/en/islands/dodecanese/rhodes",
+    "source_type": "tourism_board",
+    "checked": "2026-11-12",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_314",
+    "claim": "The Municipality of Rhodes official site (rhodes.gr, read 12 November 2026) lists, under 'For the citizen > Supporting documents', a page titled (in Greek) 'Supporting documents for issuing a licence / performing a civil marriage'. The page itself was not read in this round, so no steps are stated.",
+    "source": "https://www.rhodes.gr",
+    "source_type": "government",
+    "checked": "2026-11-12",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_315",
+    "claim": "The Municipality of Rhodes official site also lists a page on supporting documents for an entry permit to the Medieval Town (Greek: 'Adeia Eisodou sti Mesaioniki Poli'). Contents not read; copy makes no claim about vehicle or event access.",
+    "source": "https://www.rhodes.gr",
+    "source_type": "government",
+    "checked": "2026-11-12",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_316",
+    "claim": "As at November 2026, Smartraveller's overall advice for Greece is 'Exercise normal safety precautions' (level 1). Page still current at 12 November 2026, updated 30 September 2026.",
+    "source": "https://www.smartraveller.gov.au/destinations/europe/greece",
+    "source_type": "government",
+    "checked": "2026-11-12",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_317",
+    "claim": "Smartraveller: heatwaves are frequent over the summer months and can cause heat exhaustion, heat stroke and death; drink water, wear a hat and light clothing and stay in air-conditioned or shaded areas. Many major tourist sites have little shade.",
+    "source": "https://www.smartraveller.gov.au/destinations/europe/greece",
+    "source_type": "government",
+    "checked": "2026-11-12",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_318",
+    "claim": "Smartraveller: wildfires occur during the extended summer period, from June to September, including near cities and tourist locations on the mainland and the islands, prompting evacuations; fires can start with little warning and travel quickly. Follow local authorities' advice.",
+    "source": "https://www.smartraveller.gov.au/destinations/europe/greece",
+    "source_type": "government",
+    "checked": "2026-11-12",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_319",
+    "claim": "Smartraveller: be careful swimming near coastal rock formations or where boats operate; lifeguards operate at many Greek beaches from June to September; sea conditions can change quickly, including strong currents and rips; most drownings occur on beaches without a lifeguard or outside lifeguard hours.",
+    "source": "https://www.smartraveller.gov.au/destinations/europe/greece",
+    "source_type": "government",
+    "checked": "2026-11-12",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_320",
+    "claim": "Smartraveller: ferries and large catamarans carry most visitors to the Greek islands; ferry services can be delayed or cancelled in bad weather, mainly due to strong winds, so check the forecast and reconfirm departures. From May to October expect high temperatures and large crowds at popular seaports.",
+    "source": "https://www.smartraveller.gov.au/destinations/europe/greece",
+    "source_type": "government",
+    "checked": "2026-11-12",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_321",
+    "claim": "Smartraveller (as at November 2026): Australians can travel to the Schengen area, which includes Greece, for short trips without a visa for up to 90 days in any 180-day period; the EES registers fingerprints and a photo on arrival, at no cost, and may cause border delays. Entry conditions can change at short notice; contact the nearest Greek embassy or consulate. The Wedded Advisor confirms current requirements.",
+    "source": "https://www.smartraveller.gov.au/destinations/europe/greece",
+    "source_type": "government",
+    "checked": "2026-11-12",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_322",
+    "claim": "Smartraveller: storms of dust from the Sahara are increasing in frequency across Greece, particularly in spring, reducing air quality and visibility.",
+    "source": "https://www.smartraveller.gov.au/destinations/europe/greece",
+    "source_type": "government",
+    "checked": "2026-11-12",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_323",
+    "claim": "Smartraveller: same-sex relationships are legal in Greece, though attitudes vary; the page does not address marriage of foreign same-sex couples.",
+    "source": "https://www.smartraveller.gov.au/destinations/europe/greece",
+    "source_type": "government",
+    "checked": "2026-11-12",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_324",
+    "claim": "As at November 2026, the Australian Embassy in Athens lists among its notarial services: witnessing application forms for, and issuing of, Certificates of No Impediment (CNI); witnessing notices of intended marriage; and legalisation of signatures and/or seals by authentication or apostille (original Australian public documents only). The Wedded Advisor confirms current requirements.",
+    "source": "https://greece.embassy.gov.au/athn/notarial.html",
+    "source_type": "government",
+    "checked": "2026-11-12",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_325",
+    "claim": "Australian Embassy Athens: an appointment is required for all notarial services (Monday to Friday, 9:00 am to 12:30 pm), though Apostille and CNI documents may be submitted by post; legalised documents and CNIs are available for collection within two working days unless otherwise arranged. A fee applies.",
+    "source": "https://greece.embassy.gov.au/athn/notarial.html",
+    "source_type": "government",
+    "checked": "2026-11-12",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_326",
+    "claim": "Australian Embassy Athens: it does not provide legal advice, the onus is on the client to present documents in the correct form, it does not witness signatures on overseas documents, and Honorary Consuls cannot provide notarial services.",
+    "source": "https://greece.embassy.gov.au/athn/notarial.html",
+    "source_type": "government",
+    "checked": "2026-11-12",
+    "is_price": false
+   }
+  ],
+  "insider_details": [
+   {
+    "detail": "At the HNMS Rodos station, average maximums sit around 30 to 31 deg C in July and August with almost no rain, while Smartraveller warns of frequent summer heatwaves and little shade at major sites, so plan ceremonies for late afternoon and build in shade and water.",
+    "fact_ids": [
+     "fact_301",
+     "fact_303",
+     "fact_304",
+     "fact_317"
+    ]
+   },
+   {
+    "detail": "Smartraveller places wildfire season from June to September; for summer dates, agree with the venue how guests would be informed and moved if local authorities issue advice.",
+    "fact_ids": [
+     "fact_318"
+    ]
+   },
+   {
+    "detail": "The Rodos station records a prevailing westerly wind most of the year, strongest on average in July and August, and Smartraveller notes ferries are delayed or cancelled mainly by strong winds, so do not rely on a same-day ferry for guests arriving for the wedding.",
+    "fact_ids": [
+     "fact_305",
+     "fact_320"
+    ]
+   },
+   {
+    "detail": "Rain is a winter story at the Rodos station: December and January each average about 15 rain days, against under two from June to September, so shoulder and winter dates need an indoor or covered plan.",
+    "fact_ids": [
+     "fact_303",
+     "fact_304"
+    ]
+   },
+   {
+    "detail": "Most guests from Australia will connect through Athens, which Visit Greece puts at about a 1 hour flight to Rhodes; Schengen 90/180-day rules and EES registration on arrival apply.",
+    "fact_ids": [
+     "fact_312",
+     "fact_321"
+    ]
+   },
+   {
+    "detail": "The Australian Embassy in Athens issues CNIs and apostilles by appointment or by post, with collection usually within two working days and a fee applying; the Municipality of Rhodes publishes a civil marriage documents page, so confirm current steps with both.",
+    "fact_ids": [
+     "fact_314",
+     "fact_324",
+     "fact_325"
+    ]
+   }
+  ],
+  "quotes": [],
+  "real_weddings": [],
+  "verify_items": [
+   "[[VERIFY: Municipality of Rhodes civil marriage steps, documents, lead times and ceremony locations for foreign couples. The municipal site lists a civil marriage documents page (fact_314) but it was not read, so copy will read: check with the Municipality of Rhodes and the embassy, including any fees.]]",
+   "[[VERIFY: whether Greece requires Australian documents (CNI, birth certificate) to carry an apostille and an official Greek translation. No official Greek source read; copy may only say the Embassy in Athens issues CNIs and apostilles (fact_324).]]",
+   "[[VERIFY: same-sex civil marriage position in Greece for foreign couples. Smartraveller (fact_323) does not address it; copy makes no claim.]]",
+   "[[VERIFY: Rhodes ferry port details. No official port page read; copy uses Smartraveller ferry advice only (fact_320).]]",
+   "[[VERIFY: direct international routes into Rhodes Airport and seasonality. The airport home page lists airlines but not routes or seasons (fact_308); copy should give only the Visit Greece Athens and Thessaloniki flight times (fact_312).]]"
+  ],
+  "needs_signoff": [],
+  "must_include_coverage": [
+   {
+    "item": "Getting there (Rhodes airport and port, official sources; Smartraveller ferry advice only)",
+    "covered_by": [
+     "fact_307",
+     "fact_308",
+     "fact_312",
+     "fact_320",
+     "[[VERIFY: Rhodes ferry port details]]"
+    ]
+   },
+   {
+    "item": "When to marry (HNMS Rodos station, labelled; Smartraveller heat, wildfire, swimming; no best month)",
+    "covered_by": [
+     "fact_300",
+     "fact_301",
+     "fact_302",
+     "fact_303",
+     "fact_304",
+     "fact_305",
+     "fact_306",
+     "fact_317",
+     "fact_318",
+     "fact_319",
+     "fact_322"
+    ]
+   },
+   {
+    "item": "Legal in brief (as at November 2026; Embassy Athens and Smartraveller; Municipality of Rhodes)",
+    "covered_by": [
+     "fact_314",
+     "fact_316",
+     "fact_321",
+     "fact_324",
+     "fact_325",
+     "fact_326",
+     "[[VERIFY: Municipality of Rhodes civil marriage steps]]"
+    ]
+   },
+   {
+    "item": "Island context: Old Town UNESCO, Lindos",
+    "covered_by": [
+     "fact_309",
+     "fact_310",
+     "fact_311",
+     "fact_313"
+    ]
+   }
+  ]
+ }
+}
