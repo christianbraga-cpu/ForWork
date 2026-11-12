@@ -27,3 +27,14 @@ A first attempt (12 Nov 2026) was cancelled by the user before stage 0 ran, beca
 - **Stage 2 fast (writer, 4 min):** DONE. 03-draft-v1.md. --check: 2,441 reader words (41 over the 2,400 cap; trim in revision), 0 dashes, 0 placeholders, 12 external domains, none blocked. 59 claims, 25 links. Orthodox FAQ swapped for a same-sex FAQ (check sourcing). **Decision (default, change if you want):** Greek government and municipality domains approved in domains.md as official sources.
 - **Stage 3 fast (3 parallel reviews, about 2 min):** accuracy FAIL 3.6 (blocker: Heraklion does not require the partner to be named; majors: 'apply' the 2019 circular is inference, C-04 rests on medium-confidence F-028, 'every Australian document' overstated). SEO FAIL 4.2 (keyword in no H2; 41 words over). reader:couple 3/3/3/3 ("ask your town hall" fatigue, vague money line, jargon, CONCIERGE-PAY). **Decision (default, change if you want):** C-04 softened to "indicates"; a Greek reader must confirm the circular before publish (N-11).
 - **Stage 4 fast (one loop, 5 min):** DONE. 03-draft-v2.md applies all 20 merged items. --check: 2,378 reader words, 0 dashes, 0 placeholders, 11 domains, none blocked. YAML valid; 60 claims, 24 links. "Questions to send your town hall" checklist added. No re-review (fast mode); copy editor checks voice.
+- **Stage 6 fast (copy editor, 4 min):** DONE. final.md, publish-package.json (image plan included), chrome-upload-prompt.md, article.docx. --check: 2,342 reader words, 0 dashes, 0 placeholders, 11 domains, none blocked. YAML and JSON validated by the orchestrator. Link map: added as DRAFT. Fast-mode run time from restart to package: about 35 minutes.
+
+## Must fix before publish
+1. **N-11:** a Greek reader confirms the 4 Jan 2019 Interior Ministry circular (the abroad shortcut; article currently says "indicates").
+2. **N-01:** whether the DFAT CNI names the partner (ask DFAT); decides whether the Chania route works for Australians.
+3. **CONCIERGE-PAY (user):** concierge price, partner payments, named contact. Caps the reader's trust and would_enquire.
+4. **Nic sign-off (N-10):** EUR 18 licence fee, RBA rate 1 AUD = 0.6175 EUR, CNI AUD 181, apostille AUD 105, Heraklion EUR 100 and EUR 150.
+5. **Links:** click through all 16 external links once.
+6. **Images:** pick files; credit, licence and consent for all 6 slots; update alt text to the chosen files.
+7. **CMS:** author, CMS admin URL; secondary category "Planning Advice" kept from the brief but categories.md says it is for pieces not tied to one country; drop it or use Greece Weddings if that category exists.
+8. Not confirmed: Santorini (Thira) and Mykonos practice, Orthodox church conditions, CNI and apostille processing times.
