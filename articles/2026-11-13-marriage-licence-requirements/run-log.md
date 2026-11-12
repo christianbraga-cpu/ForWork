@@ -19,3 +19,4 @@
 - Expert Advice added to categories.md as confirmed.
 
 ## Stages
+- **Stage 0 fast (strategist):** DONE. AU volumes: notice of intended marriage 1,900; noim 1,300; noim form 590; marriage licence 480; how to get married in australia 260; marriage licence australia 70 (all low competition). NOIM must appear in the first 60 words, an H2 and the FAQ. Gap: no single page covers every state with sourced NOIM timing and the link to marrying overseas. Cannibalisation: none found (site: search unreliable); partial with overseas-marriage-certificate and the Greece draft (linked only if live). Brief: 8 H2s, 2,400 to 3,200 words, 7 FAQs, discovery_call.
