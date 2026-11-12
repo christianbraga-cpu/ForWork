@@ -49,6 +49,12 @@ The article states these from the Municipality of Rhodes and the Australian Emba
 - Guest capacity, room count, exclusive use and named packages (not published)
 - Minimum nights, curfew, music times, step-free access (bridge to Tsambika chapel, Amphitheatre, beach), rain plan
 
+## Lindos Royal Resort, southern Rhodes
+
+- Ceremony locations, named reception spaces, guest capacity, room count and exclusive use (not published)
+- What its wedding packages include (on request from its sales department)
+- Minimum nights, curfew, music times, step-free access, rain plan
+
 ## Grande Albergo delle Rose, Rhodes city
 
 - Total room count and exclusive use (not published); 450 seated is the published reception figure

@@ -1,4 +1,4 @@
-# Run report: 9 Rhodes Wedding Venues From Lindos to Rhodes Town
+# Run report: 10 Rhodes Wedding Venues From Lindos to Rhodes Town
 
 - **Slug:** rhodes-wedding-venues (CMS slug as given)  ·  **Run date:** 2026-11-12  ·  **Status:** Package ready (no Chrome)
 - **Mode:** fast mode, new venue guide. Started 05:17 UTC, first draft about 05:28, package 05:42. About 25 minutes in total.
@@ -8,8 +8,9 @@
 - **Authority rule:** final body has 0 research-talk phrases, 0 "often told", 0 VERIFY markers, no per-line source credits, no ranking, no best month and no amounts of money.
 
 ## Title change (please note)
-- You asked for **"10 Rhodes Wedding Venues From Lindos to the Old Town"**. Only **9** venues qualified under the rule (the venue's own site, read live, says in words that it hosts weddings), and **no venue inside the Old Town walls** qualified. Old Town candidates either had no wedding page (Kókkini Porta Rossa, Spirit of the Knights, Allegory, Marco Polo Mansion) or showed wedding photos only (Avalon). No padding was added.
-- New title: **"9 Rhodes Wedding Venues From Lindos to Rhodes Town"**; the meta title matches and the meta description says "Rhodes Town". The Medieval Town appears as a portrait backdrop (UNESCO, per Visit Greece), and the Old Town FAQ answers plainly that none of the nine sits inside the walls.
+- You asked for **"10 Rhodes Wedding Venues From Lindos to the Old Town"**. The first pass found **9** venues that qualify under the rule (the venue's own site, read live, says in words that it hosts weddings), and **no venue inside the Old Town walls** qualified. Old Town candidates either had no wedding page (Kókkini Porta Rossa, Spirit of the Knights, Allegory, Marco Polo Mansion) or showed wedding photos only (Avalon).
+- **Revision (your request for 10):** Lindos Royal Resort, which qualified under the same rule but was held as a reserve on luxury fit, is now the 10th venue (its weddings page and home page, read live 12 November 2026: fact_700, 701, 800, 801). Its ceremony locations, capacity and exclusive use are not published and are on the booking checklist.
+- Title: **"10 Rhodes Wedding Venues From Lindos to Rhodes Town"**; the meta title matches. The Old Town still has no venue; the Medieval Town appears as a portrait backdrop and the Old Town FAQ says plainly that none of the venues sits inside the walls.
 
 ## Inputs
 - Keyword: rhodes wedding venues
@@ -19,8 +20,8 @@
 
 ## What the article covers
 - About 5,100 words in the body: intro and 4 one-sentence takeaways; an at-a-glance table; how to compare like for like (the one Advisor line: house rules go on your list of questions, inclusions confirmed in writing); choosing an area; the nine venues by area; getting there (airport and port, official sources, no transfers); when to marry (HNMS Rodos station 1955 to 2010, labelled, plus Smartraveller heat and wildfire; no best month); legal in brief; 6 FAQs; close.
-- **The nine venues** (each from its own site): Lindos and the south-east: Melenos Lindos, Atrium Prestige (south Rhodes); east coast: Aquagrand (Navarone Bay), Atrium Palace (Kalathos), Kallithea Springs, Elysium; Rhodes Town: Grande Albergo delle Rose, Atrium Platinum (ceremonies at Kallithea Springs or Filerimos); west coast: Rodos Palace (Ixia).
-- **Reserves held** (qualify but not a luxury fit): Lindos Royal. **Out:** Lindos Blu (no wedding offer), Casa Cook (no wedding offer), the Old Town boutique hotels above, Avalon (photos only).
+- **The ten venues** (each from its own site): Lindos and the south-east: Melenos Lindos, Atrium Prestige (south Rhodes), Lindos Royal Resort (southern Rhodes); east coast: Aquagrand (Navarone Bay), Atrium Palace (Kalathos), Kallithea Springs, Elysium; Rhodes Town: Grande Albergo delle Rose, Atrium Platinum (ceremonies at Kallithea Springs or Filerimos); west coast: Rodos Palace (Ixia).
+- **Reserves held:** none (Lindos Royal promoted). **Out:** Lindos Blu (no wedding offer), Casa Cook (no wedding offer), the Old Town boutique hotels above, Avalon (photos only).
 - **Legal section** uses the Municipality of Rhodes' own pages, read live: ceremony venues (Lindos Town Hall and St Paul's chapel, Filerimos, Kallithea Springs, Rhodes City sites; originals two days before; two witnesses) and civil marriage documents for foreign nationals (joint application; CNI valid six months; official Greek translation; Apostille for documents from outside the EU; a municipal fee applies, no amount). Plus the Australian Embassy in Athens and Smartraveller, as at November 2026. Venue document help (Melenos, Atrium) appears only as the venue's own offer; nothing implies the Wedded Advisor handles legal, church or religious paperwork.
 
 ## Search demand and overlap
@@ -44,7 +45,7 @@
 |---|---|---|---|
 | G1 Brief | Pass | 1 | Areas from Lindos to Rhodes Town and the west coast |
 | G2 Research | Pass | 1 | No existing ranking page; low overlap with the Greece venues draft |
-| G3 Sources | Pass | 1 | 83 facts; 9 venues qualify; title count changed from 10 to 9 |
+| G3 Sources | Pass | 1 | 85 facts; 10 venues (Lindos Royal promoted from reserve in revision) |
 | G4 Images | Needs input | 1 | 7 slots, all placeholders |
 | G5 Edit (avg score) | Pass with edits (4.14) | 1 | 10 edits: the Advisor line now promises inclusions in writing only (house rules go on your list of questions); "whitewashed" removed (not sourced); weather markers corrected; a ranking phrase cut |
 | G6 Reader panel (weighted) | Revise (enquire 2.6) | 1 | Held down by deferred business details; one final pass applied all fixes |

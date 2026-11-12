@@ -1,4 +1,4 @@
-# 9 Rhodes Wedding Venues From Lindos to Rhodes Town
+# 10 Rhodes Wedding Venues From Lindos to Rhodes Town
 
 <!-- IMAGE SLOT featured: Official image from a venue that qualifies in 03-source-pack in Lindos or the south-east: a ceremony terrace set for a wedding looking over the bay, with the Lindos headland or the venue's stated sea view behind, May to October, golden-hour light. No people, or only distant unidentifiable figures; no other hotels' signage. Landscape 3:2 with room for a title crop. Source: the venue's own media kit or press office with written permission (Gmail draft request, never sent by an agent), or licensed premium stock bought by a human and added to library-index.csv. Never AI, never a competitor, directory, planner, photographer-blog or search-result image. Location proven by the media kit, register row or EXIF, never by appearance. -->
 
@@ -30,6 +30,7 @@ The list follows the island from Lindos in the south, up to Rhodes Town, then al
 | Aquagrand | Navarone Bay, Lindos | Adults-only beachfront resort | Beach, gazebo, pier, gardens or St Paul's Chapel | Not published |
 | Atrium Palace | Kalathos | Beach resort | Gardens, private beach or St Paul's Chapel | Not published |
 | Atrium Prestige | South Rhodes | Resort on a private beach | Tsambika chapel, beach or Panoramic Terrace | Not published |
+| Lindos Royal Resort | Southern Rhodes, Lindos | Beachfront resort | Not published | Not published |
 | Grande Albergo delle Rose | Rhodes city | Historic hotel, 1927 | Poolside, Amphitheatre or Rodon Place | 450 seated |
 | Atrium Platinum | Rhodes City | Resort, top-floor reception | Kallithea Springs or Filerimos | Not published |
 | Kallithea Springs | Kallithea | Restored seaside monument | Gardens and domed hall | Not published |
@@ -85,7 +86,7 @@ Rhodes is the capital of the Dodecanese and the fourth largest Greek island. Byz
 
 <!-- IMAGE SLOT area-lindos-south-east: Official image from a venue confirmed in Lindos, St Paul's Bay, Vlicha or Pefkos: a cliff-top or bay-side terrace set for a small ceremony or dinner, turquoise bay below, late-afternoon light, no beach crowds, no identifiable guests. Landscape 3:2. Source: the venue's own media kit or press office with written permission (Gmail draft request, never sent by an agent), or licensed premium stock bought by a human and added to library-index.csv. Never AI, never a competitor, directory, planner, photographer-blog or search-result image. Location proven by the media kit, register row or EXIF, never by appearance. -->
 
-The south holds four venues: a boutique hotel in Lindos village, an adults-only resort on Navarone Bay, a resort on Kalathos beach and a resort on a private beach in south Rhodes. Three of them can take you to St Paul's Chapel or a chapel of their own.
+The south holds five venues: a boutique hotel in Lindos village, an adults-only resort on Navarone Bay, a resort on Kalathos beach, a resort on a private beach in south Rhodes and a beachfront resort near Lindos. Three of them can take you to St Paul's Chapel or a chapel of their own.
 
 ### Melenos, Lindos village
 
@@ -136,6 +137,18 @@ Not published: guest capacity, room count and exclusive use.
 Not published: guest capacity, room count, exclusive use and named packages.
 
 **Standout.** A chapel of its own, set in turquoise water. Receptions move to Thallassa, the seaside gourmet restaurant, and the party to the Kalithea main bar. For a civil ceremony, the wedding specialist assists with the arrangements to obtain the marriage licence. [See the Atrium Prestige weddings page](https://www.atriumhotels.gr/hotels/atrium-prestige/weddings/).
+
+### Lindos Royal Resort, southern Rhodes
+
+**Setting.** Lindos Royal Resort is a beachfront resort in southern Rhodes, part of Lindos Hotels Group. Its weddings page describes Mediterranean architecture and a setting along the beach. Rooms and suites sit within a Mediterranean garden with views to the blue horizon.
+
+**Ceremony options.** The resort's wedding planner helps organise the ceremony and looks after the details to the couple's own taste, whether the day is glamorous, intimate or cosy.
+
+**Reception spaces and rooms.** The resort has multiple pools and a diverse selection of restaurants.
+
+Not published: ceremony locations, named reception spaces, guest capacity, room count and exclusive use.
+
+**Standout.** A laid-back base for Lindos. The resort describes itself as suited to families and couples who want to enjoy Lindos in a relaxed, welcoming setting. Wedding packages are available on request from its sales department. [See the Lindos Royal Resort weddings page](https://lindosroyal.gr/weddings-honeymoon/).
 
 ## Rhodes Town
 

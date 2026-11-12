@@ -3,7 +3,7 @@
 **Draft URL / ID:** Package ready, not uploaded: no browser in this session; a human saves as Draft and clicks Publish. `content-system/cms/field-map.md` is also not confirmed ("NOT YET MAPPED"). Nothing was saved, scheduled or published in the CMS.
 
 - Date: 2026-11-12
-- Title: 9 Rhodes Wedding Venues From Lindos to Rhodes Town
+- Title: 10 Rhodes Wedding Venues From Lindos to Rhodes Town
 - Package: `content/posts/rhodes-wedding-venues/11-publish-package.json` (status `draft`, validates clean)
 - Body: `content/posts/rhodes-wedding-venues/11-body.md`
 - Booking checklist: `content/posts/rhodes-wedding-venues/booking-checklist.md`
@@ -19,7 +19,7 @@
 - [x] No em dashes; Australian English
 - [x] Key takeaways: exactly the 4 in the body, verbatim; FAQ (6) extracted from the body only
 - [x] Categories from the brief; primary_category = Destination Weddings; tag "Rhodes Old Town" changed to "Rhodes Town" (no Old Town venue)
-- [x] Meta title "9 Rhodes Wedding Venues From Lindos to Rhodes Town" (50 characters); meta description from `02-seo.json` with "the medieval Old Town" replaced by "Rhodes Town", 143 characters, no prices
+- [x] Meta title "10 Rhodes Wedding Venues From Lindos to Rhodes Town" (50 characters); meta description from `02-seo.json` with "the medieval Old Town" replaced by "Rhodes Town", 143 characters, no prices
 - [x] schema_jsonld: Article (datePublished empty) + BreadcrumbList (Home > Destination Weddings > post) + FAQPage (6)
 - [x] Images: 7 slots (featured, practical-compare, area-lindos-south-east, area-old-town, area-east-coast, area-west-coast, practical-when-to-marry), all `needed`
 - [x] verify_items and needs_signoff empty: no prices, nothing for Nic to sign off

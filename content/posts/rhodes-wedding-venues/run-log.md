@@ -12,3 +12,4 @@
 05:32 05 draft done: ~4,360 words, 9 venues, 0 VERIFY, scan clean except the all-inclusive URL slug; first-draft docx built.
 05:42 13 orchestrator finished: package, docx, run report; title 9 venues
 06:18 revision: user asked for 10 venues; Lindos Royal promoted from reserve; live read of its home page saved as part-8 (fact_800-801).
+06:20 revision done: 10 venues; body, package, distribution, checklist, run report, link map, calendar updated; docx rebuilt.
