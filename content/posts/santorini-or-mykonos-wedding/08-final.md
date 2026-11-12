@@ -41,7 +41,7 @@ The same seven questions, answered for each island. This is a comparison, not a 
 | Ceremony types venues state | Caldera terraces and balconies; religious, civil, symbolic and vow renewal at Canaves <!-- fact_09 --> <!-- fact_10 --> | Whitewashed chapels, sea-view balconies and decks <!-- fact_23 --> <!-- fact_29 --> <!-- fact_31 --> |
 | Guest experience and pace | Caldera villages, volcanic beaches, vineyards and wine <!-- fact_01 --> <!-- fact_02 --> <!-- fact_13 --> | Mykonos Town's lanes, Little Venice and the beaches <!-- fact_05 --> |
 | Getting there | Santorini Airport (JTR), with flights from Athens and Thessaloniki <!-- fact_03 --> <!-- fact_04 --> | Mykonos Airport (JMK), with flights from Athens and Thessaloniki <!-- fact_06 --> <!-- fact_07 --> |
-| Season and legal steps | Same for both islands: neither has its own weather station, so one regional guide covers both (see When to marry), and the Australian documents are the same <!-- fact_38 --> <!-- fact_39 --> <!-- fact_40 --> <!-- fact_51 --> | Same for both islands |
+| Season and legal steps | Same for both islands: HNMS lists no climate station for either, so the Naxos figures cover both (see When to marry), and the Australian documents are the same <!-- fact_38 --> <!-- fact_39 --> <!-- fact_40 --> <!-- fact_51 --> | Same for both islands |
 
 If you already know your dates, guest count and ceremony type, [book a Wedded Concierge consultation](https://weddedwonderland.com/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=santorini-or-mykonos-wedding&utm_content=primary) and test both islands against them.
 
@@ -55,9 +55,9 @@ If you already know your dates, guest count and ceremony type, [book a Wedded Co
 
 Santorini, known in ancient times as Thera, sits at the southernmost point of the Cyclades. <!-- fact_01 --> It is not one island but a complex of five: Thera, Thirasia, Aspronisi, Palea Kameni and Nea Kameni. <!-- fact_01 --> The ring they form is the caldera of an active volcano, and you can stay right on its edge. <!-- fact_01 -->
 
-That geography shapes every wedding here. Hamlets spread across the rim of the caldera, so many ceremony spaces look down, over water, to the volcanic islands. <!-- fact_01 --> Below the cliffs, the beaches are black, red and white sand, multicoloured pebbles and steep rock. <!-- fact_02 -->
+That geography shapes every wedding here. Hamlets spread across the rim of the caldera, so many ceremony spaces look down, over water, to the volcanic islands. <!-- fact_01 --> Below the cliffs, the beaches are black, red and white sand, multicoloured pebbles and steep cliffs. <!-- fact_02 -->
 
-Inland, the island is arid but fertile, growing mainly vines, yellow split peas and tomatoes. <!-- fact_02 --> That matters more than it sounds: it is why a winery is one of Santorini's wedding venues. Read more on the [Visit Greece Santorini page](https://www.visitgreece.gr/en/islands/cyclades/santorini).
+Inland, the island is arid but fertile, growing mainly vines, yellow split peas and tomatoes. <!-- fact_02 --> A winery is among Santorini's wedding venues. Read more on the [Visit Greece Santorini page](https://www.visitgreece.gr/en/islands/cyclades/santorini).
 
 <!-- IMAGE SLOT mykonos-setting: Official image from a featured Mykonos venue (beach club, villa or hotel): a beachfront or sea-view terrace set for a ceremony or long-table dinner, turquoise water or Chora rooftops and windmills behind as the venue's own view, late-afternoon or sunset light, May to October, no sunbeds or crowds, no identifiable guests. Landscape 3:2. Source: the venue's own media kit or press office with written permission (Gmail draft request, never sent by an agent), or licensed premium stock bought by a human and added to library-index.csv. Never AI, never a competitor, directory, planner, photographer-blog or search-result image. Location proven by the media kit, register row or EXIF, never by appearance. -->
 
@@ -67,7 +67,7 @@ Mykonos sits in the heart of the Cyclades. <!-- fact_05 --> Its look is paved st
 
 Where Santorini's venues sit high above the water, Mykonos venues sit on it. Santa Marina is a beachfront retreat on a private peninsula at the southern tip of Ornos Bay. <!-- fact_22 --> Mykonos Grand is on Agios Ioannis beach, opposite the island of Delos. <!-- fact_25 --> Mykonos Blu holds weddings on Psarou beach. <!-- fact_28 --> The Myconian Collection's wedding hotels are in Elia. <!-- fact_34 -->
 
-Mykonos is its Hora, chapels, windmills and Little Venice, and the wedding hotels sit on their own bays, at Ornos, Psarou, Agios Ioannis and Elia. <!-- fact_05 --> <!-- fact_22 --> <!-- fact_28 --> <!-- fact_25 --> <!-- fact_34 --> Read more on the [Visit Greece Mykonos page](https://www.visitgreece.gr/en/islands/cyclades/mykonos).
+Mykonos is its Hora, chapels, windmills and Little Venice, and the wedding hotels sit on bays and beaches at Ornos, Psarou, Agios Ioannis and Elia. <!-- fact_05 --> <!-- fact_22 --> <!-- fact_28 --> <!-- fact_25 --> <!-- fact_34 --> Read more on the [Visit Greece Mykonos page](https://www.visitgreece.gr/en/islands/cyclades/mykonos).
 
 ## Venue types on each island
 
@@ -95,7 +95,7 @@ For the full list, with ceremony spaces and what each venue publishes, read our 
 
 For the full list, read our guide to [Mykonos wedding venues for a Cycladic celebration](https://weddedwonderland.com/destination-weddings/mykonos-wedding-venues).
 
-Capacities, house rules and availability vary from venue to venue, and the view rarely tells you which spaces will hold your guest list. Your Wedded Advisor is your single point of contact, one person start to finish, and confirms each venue's inclusions in writing before you commit, so [ask a Wedded Advisor to test your island](https://weddedwonderland.com/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=santorini-or-mykonos-wedding&utm_content=secondary) against your guest list.
+Capacities, house rules and availability vary from venue to venue, and the view rarely tells you which spaces will hold your guest list. Your Wedded Advisor is your single point of contact, one person start to finish, and confirms each venue's inclusions in writing before you commit, so [book a Wedded Concierge consultation](https://weddedwonderland.com/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=santorini-or-mykonos-wedding&utm_content=secondary) against your guest list.
 
 ## Ceremony types each island offers
 
@@ -113,7 +113,7 @@ Several Mykonos venues have a chapel of their own. Santa Marina has a traditiona
 
 There are open-air options too. Mykonos Blu's Ocean Balcony sits just above Psarou beach with an uninterrupted sea view. <!-- fact_29 --> At Katikies Mykonos, the Upper deck is the space marked for wedding ceremonies. <!-- fact_33 --> The Myconian Collection assists in officiating ceremonies across all denominations. <!-- fact_35 -->
 
-One house rule shows why the ceremony comes first. Mykonos Grand states that both partners must be Christian Orthodox for a religious wedding on the hotel premises. <!-- fact_27 --> Decide whether you want a religious, civil or symbolic ceremony before you fall for a chapel. Canaves lists civil ceremonies among its ceremony types. <!-- fact_10 --> Whether a civil ceremony can be held at your venue or must be held at the town hall is a question to ask the municipality and the venue.
+One house rule shows why the ceremony comes first. Mykonos Grand states that both partners must be Christian Orthodox for a religious wedding on the hotel premises. <!-- fact_27 --> Decide whether you want a religious, civil or symbolic ceremony before you fall for a chapel. Canaves lists civil ceremonies among its ceremony types. <!-- fact_10 --> Where a civil ceremony can be held is a question to ask your venue and the authority that will marry you.
 
 ## Guest experience and pace
 
@@ -129,7 +129,7 @@ Guests who want to walk, look and eat well find plenty to fill the days. The pac
 
 ### Mykonos: town, beaches and bays
 
-Mykonos days move between the town and the coast. Mykonos Town, the Hora, is paved streets, white houses and chapels, with the windmills above and Little Venice at the water's edge. <!-- fact_05 --> The beaches, among the Aegean's finest, are the other half of the week. <!-- fact_05 -->
+Mykonos days move between the town and the coast. Mykonos Town, the Hora, is paved streets, white houses and chapels, with the windmills above and Little Venice at the water's edge. <!-- fact_05 --> The beaches, among the most beautiful in the Aegean, are the other half of the week. <!-- fact_05 -->
 
 The Myconian Collection has certified halal and kosher kitchens and a South Asian chef for traditional Indian cuisine. <!-- fact_35 --> Mykonos Grand and Katikies Mykonos both look across the water to Delos. <!-- fact_25 --> <!-- fact_32 -->
 
@@ -163,7 +163,7 @@ Greece is in the Schengen area, so Australians can make short trips without a vi
 
 <!-- IMAGE SLOT season: Official image from a featured venue on either island showing an outdoor table or terrace in soft shoulder-season light (May, June, September or early October), sea in frame, no people. The month must be recorded from EXIF or the media kit. Landscape 3:2. Source: the venue's own media kit or press office with written permission (Gmail draft request, never sent by an agent), or licensed premium stock bought by a human and added to library-index.csv. Never AI, never a competitor, directory, planner, photographer-blog or search-result image. Location proven by the media kit, register row or EXIF, never by appearance. -->
 
-Season is the one row where the two islands share an answer. The [Hellenic National Meteorological Service](https://www.hnms.gr/) has no climate station on Santorini or Mykonos; for the South Aegean it lists only Naxos and Rodos. <!-- fact_38 --> <!-- fact_39 --> Naxos is the nearest listed station to both, so the figures below apply to either island and are labelled as Naxos. <!-- fact_38 -->
+Season is the one row where the two islands share an answer. The [Hellenic National Meteorological Service](https://www.hnms.gr/) lists no climate station for Santorini or Mykonos; for the South Aegean it lists only Naxos and Rodos. <!-- fact_38 --> <!-- fact_39 --> Naxos is the nearest listed station to both, so the figures below apply to either island and are labelled as Naxos. <!-- fact_38 -->
 
 ### Naxos station averages (nearest listed HNMS station to both islands)
 
@@ -183,7 +183,7 @@ At Naxos, mean rainfall drops below 1 mm in July and rises to 38.6 mm in October
 
 ### Heat, wildfire and wind
 
-As at November 2026, Smartraveller says heatwaves are frequent over the summer months, and advises water, light clothing and shade or air conditioning. <!-- fact_44 --> Wildfires occur during the extended summer period from June to September, including near tourist locations, and can start with little warning. <!-- fact_45 --> Ferry services can be delayed or cancelled in strong winds on either island. <!-- fact_46 -->
+As at November 2026, Smartraveller says heatwaves are frequent over the summer months, and advises water, light clothing and shade or air conditioning. <!-- fact_44 --> Wildfires occur during the extended summer period from June to September, including near tourist locations, and can start with little warning. <!-- fact_45 --> Ferry services can be delayed or cancelled in bad weather, mainly because of strong winds. <!-- fact_46 -->
 
 Smartraveller also notes that Greece sits in an active seismic zone, with earthquakes and volcanic activity near major destinations including Santorini, and advises following local authorities. <!-- fact_48 --> Extreme weather can affect Greece throughout the year. <!-- fact_45 --> Choose your month by the ceremony time, the shade at your venue and how much buffer your guests have for travel, not by a single number in a table.
 
@@ -205,7 +205,7 @@ No verdict, only fits. Find the scenario closest to yours.
 
 **You want the ceremony on a cliff, facing the view.** Santorini. Its venues are built along the caldera rim, and ceremonies at places like Grace Hotel and Canaves face the caldera and the sunset. <!-- fact_01 --> <!-- fact_09 --> <!-- fact_11 -->
 
-**You want a chapel above a beach.** Mykonos. Santa Marina, Mykonos Grand, Saint John and the Myconian Collection all list a chapel among their ceremony settings. <!-- fact_23 --> <!-- fact_26 --> <!-- fact_31 --> <!-- fact_34 -->
+**You want a chapel ceremony.** Mykonos. Santa Marina, Mykonos Grand, Saint John and the Myconian Collection each have a chapel, and Mykonos Grand's stands on a hill above Agios Ioannis beach. <!-- fact_23 --> <!-- fact_26 --> <!-- fact_31 --> <!-- fact_34 -->
 
 **You want a beach-side weekend.** Mykonos. Its wedding hotels sit on Ornos, Psarou, Agios Ioannis and Elia, so the beach is part of the venue rather than a day trip. <!-- fact_22 --> <!-- fact_28 --> <!-- fact_25 --> <!-- fact_34 -->
 
@@ -237,7 +237,7 @@ Neither island has its own HNMS station, so the same Naxos figures guide both. <
 
 ### Is a wedding on Santorini or Mykonos more expensive?
 
-Cost turns on your guest count, your venue and its spaces, whether you take over a whole hotel, and when you travel. <!-- fact_15 --> Several venues publish wedding brochures, including Canaves, Santa Marina and Grand Ambassador, and your inclusions should be set out in writing before you commit. <!-- fact_10 --> <!-- fact_21 --> <!-- fact_24 -->
+Cost turns on your guest count, your venue and its spaces, whether you take over a whole hotel, and when you travel. <!-- fact_15 --> Several venues publish wedding brochures, including Canaves, Santa Marina and Andronis, and your inclusions should be set out in writing before you commit. <!-- fact_10 --> <!-- fact_24 --> <!-- fact_17 -->
 
 ## Choose your island with a Wedded Advisor
 

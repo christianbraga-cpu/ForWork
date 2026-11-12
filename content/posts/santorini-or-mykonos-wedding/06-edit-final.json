@@ -1,0 +1,980 @@
+{
+  "agent": "editor",
+  "task_id": "santorini-or-mykonos-wedding",
+  "stage": "06",
+  "status": "complete",
+  "round": 3,
+  "inputs_used": [
+    "CLAUDE.md",
+    "content/posts/santorini-or-mykonos-wedding/08-final.md",
+    "content/posts/santorini-or-mykonos-wedding/03-source-pack.json",
+    "content-system/brand/brand-facts.md",
+    "content-system/brand/banned-phrases.md",
+    "content-system/brand/voice-guide.md",
+    "content-system/schemas/06-edit.schema.json",
+    "content/posts/rhodes-wedding-venues/06-edit-final.json"
+  ],
+  "self_qa": {
+    "checks": [
+      {
+        "check": "scan_copy.py on 08-final.md",
+        "pass": true,
+        "note": "banned []; dashes 0; overlaps []; flagged 'beautiful' x1 (source wording), 'luxury' x2, 'exclusive' x1 (exclusive use)."
+      },
+      {
+        "check": "Fact markers vs sentences, table cells included",
+        "pass": true,
+        "note": "Ten drifts found (HNMS station wording x2, steep cliffs, winery causal line, bays vs beaches, town hall, 'finest', ferry 'on either island', chapel-above-beach scenario, Grand Ambassador brochure); fixed by edits. Naxos table figures match fact_40/fact_41 exactly."
+      },
+      {
+        "check": "Blocking list",
+        "pass": true,
+        "note": "No winner/ranking/'best', best month, prices, research talk, hedge stacking, transfers/drive times/bus/taxi/airline names, Wedded Privileges, 'free', 'last dance', 'Wonderland Concierge' text, em dashes, US spelling (Wine Tourism Center is a proper name), same-sex position or party stereotypes. One body Advisor line plus the close, within brand facts, no legal paperwork help. UTMs only on /wonderland-concierge and /magazine. Weather labelled Naxos."
+      },
+      {
+        "check": "Key takeaways",
+        "pass": true,
+        "note": "Exactly 4 one-sentence bullets."
+      },
+      {
+        "check": "Edits apply cleanly",
+        "pass": true,
+        "note": "Each old occurs exactly once in 08-final.md, in document order, and each new once after applying (scripted)."
+      },
+      {
+        "check": "Decision consistent",
+        "pass": true,
+        "note": "Ten small edits, no blocking issues -> pass_with_edits."
+      }
+    ],
+    "confidence": 0.85
+  },
+  "open_questions": [],
+  "assumptions": [
+    "Stage 8b blocking-issue check in fast mode; rubric carried from round 2 with accuracy restored after edits.",
+    "Business details deferred, not must-fix.",
+    "Naxos as nearest listed station to Mykonos treated as supported (only Naxos and Rodos listed for the South Aegean)."
+  ],
+  "verify_items": [],
+  "tools_used": [
+    "Bash (python3 -I, grep)",
+    "content-system/scripts/scan_copy.py"
+  ],
+  "next_agent": [
+    "luxury-writer"
+  ],
+  "payload": {
+    "draft_file": "content/posts/santorini-or-mykonos-wedding/08-final.md",
+    "rubric": {
+      "voice": 4,
+      "expertise": 4,
+      "accuracy": 4,
+      "seo_fit": 4,
+      "commercial_link": 4,
+      "structure": 4,
+      "brief_fit": 4
+    },
+    "average": 4.0,
+    "blocking_issues": [],
+    "decision": "pass_with_edits",
+    "edits": [
+      {
+        "location": "Table, 'Season and legal steps' row",
+        "issue": "fact_38/fact_39 say the HNMS page lists no station for either island, not that neither island has a weather station; 'regional guide' is vague.",
+        "fix": "Replace exactly:\nneither has its own weather station, so one regional guide covers both\nwith:\nHNMS lists no climate station for either, so the Naxos figures cover both",
+        "old": "neither has its own weather station, so one regional guide covers both",
+        "new": "HNMS lists no climate station for either, so the Naxos figures cover both"
+      },
+      {
+        "location": "Setting and feel > Santorini, para 2",
+        "issue": "fact_02 says 'steep cliffs', not 'steep rock'.",
+        "fix": "Replace exactly:\nmulticoloured pebbles and steep rock.\nwith:\nmulticoloured pebbles and steep cliffs.",
+        "old": "multicoloured pebbles and steep rock.",
+        "new": "multicoloured pebbles and steep cliffs."
+      },
+      {
+        "location": "Setting and feel > Santorini, para 3",
+        "issue": "Causal claim (vines are why a winery is a venue) is not in fact_02 or fact_13.",
+        "fix": "Replace exactly:\nThat matters more than it sounds: it is why a winery is one of Santorini's wedding venues.\nwith:\nA winery is among Santorini's wedding venues.",
+        "old": "That matters more than it sounds: it is why a winery is one of Santorini's wedding venues.",
+        "new": "A winery is among Santorini's wedding venues."
+      },
+      {
+        "location": "Setting and feel > Mykonos, closing para",
+        "issue": "'their own bays' drifts: Psarou, Agios Ioannis and Elia are beaches (fact_25, fact_28, fact_34).",
+        "fix": "Replace exactly:\nthe wedding hotels sit on their own bays, at Ornos\nwith:\nthe wedding hotels sit on bays and beaches at Ornos",
+        "old": "the wedding hotels sit on their own bays, at Ornos",
+        "new": "the wedding hotels sit on bays and beaches at Ornos"
+      },
+      {
+        "location": "Ceremony types > On Mykonos, last para",
+        "issue": "Town hall and municipality are an unsourced legal implication; keep the question without new legal detail.",
+        "fix": "Replace exactly:\nWhether a civil ceremony can be held at your venue or must be held at the town hall is a question to ask the municipality and the venue.\nwith:\nWhere a civil ceremony can be held is a question to ask your venue and the authority that will marry you.",
+        "old": "Whether a civil ceremony can be held at your venue or must be held at the town hall is a question to ask the municipality and the venue.",
+        "new": "Where a civil ceremony can be held is a question to ask your venue and the authority that will marry you."
+      },
+      {
+        "location": "Guest experience > Mykonos, para 1",
+        "issue": "'among the Aegean's finest' is a ranking drift; fact_05 says 'among the most beautiful in the Aegean' (allowed source wording).",
+        "fix": "Replace exactly:\nThe beaches, among the Aegean's finest, are\nwith:\nThe beaches, among the most beautiful in the Aegean, are",
+        "old": "The beaches, among the Aegean's finest, are",
+        "new": "The beaches, among the most beautiful in the Aegean, are"
+      },
+      {
+        "location": "When to marry, para 1",
+        "issue": "fact_38/fact_39 support that the HNMS page lists no station, not that none exists on the islands.",
+        "fix": "Replace exactly:\nhas no climate station on Santorini or Mykonos;\nwith:\nlists no climate station for Santorini or Mykonos;",
+        "old": "has no climate station on Santorini or Mykonos;",
+        "new": "lists no climate station for Santorini or Mykonos;"
+      },
+      {
+        "location": "Heat, wildfire and wind, para 1",
+        "issue": "'on either island' is not in fact_46, which is general Greek ferry advice citing bad weather, mainly strong winds.",
+        "fix": "Replace exactly:\nFerry services can be delayed or cancelled in strong winds on either island.\nwith:\nFerry services can be delayed or cancelled in bad weather, mainly because of strong winds.",
+        "old": "Ferry services can be delayed or cancelled in strong winds on either island.",
+        "new": "Ferry services can be delayed or cancelled in bad weather, mainly because of strong winds."
+      },
+      {
+        "location": "Which island suits you, chapel scenario",
+        "issue": "Only Mykonos Grand's chapel is sourced as above a beach (fact_26); Santa Marina, Saint John and Myconian chapel locations are not stated.",
+        "fix": "Replace exactly:\n**You want a chapel above a beach.** Mykonos. Santa Marina, Mykonos Grand, Saint John and the Myconian Collection all list a chapel among their ceremony settings.\nwith:\n**You want a chapel ceremony.** Mykonos. Santa Marina, Mykonos Grand, Saint John and the Myconian Collection each have a chapel, and Mykonos Grand's stands on a hill above Agios Ioannis beach.",
+        "old": "**You want a chapel above a beach.** Mykonos. Santa Marina, Mykonos Grand, Saint John and the Myconian Collection all list a chapel among their ceremony settings.",
+        "new": "**You want a chapel ceremony.** Mykonos. Santa Marina, Mykonos Grand, Saint John and the Myconian Collection each have a chapel, and Mykonos Grand's stands on a hill above Agios Ioannis beach."
+      },
+      {
+        "location": "FAQ, cost answer",
+        "issue": "fact_21 says Grand Ambassador offers packages, not a brochure; Andronis links a wedding brochure (fact_17).",
+        "fix": "Replace exactly:\nincluding Canaves, Santa Marina and Grand Ambassador, and your inclusions should be set out in writing before you commit. <!-- fact_10 --> <!-- fact_21 --> <!-- fact_24 -->\nwith:\nincluding Canaves, Santa Marina and Andronis, and your inclusions should be set out in writing before you commit. <!-- fact_10 --> <!-- fact_24 --> <!-- fact_17 -->",
+        "old": "including Canaves, Santa Marina and Grand Ambassador, and your inclusions should be set out in writing before you commit. <!-- fact_10 --> <!-- fact_21 --> <!-- fact_24 -->",
+        "new": "including Canaves, Santa Marina and Andronis, and your inclusions should be set out in writing before you commit. <!-- fact_10 --> <!-- fact_24 --> <!-- fact_17 -->"
+      }
+    ],
+    "fact_check_log": [
+      {
+        "claim": "Choosing between a Santorini or Mykonos wedding is a choice between two settings, not two standards. Both islands suit a luxury wedding. San",
+        "fact_id": "fact_01",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Choosing between a Santorini or Mykonos wedding is a choice between two settings, not two standards. Both islands suit a luxury wedding. San",
+        "fact_id": "fact_11",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Choosing between a Santorini or Mykonos wedding is a choice between two settings, not two standards. Both islands suit a luxury wedding. San",
+        "fact_id": "fact_05",
+        "status": "confirmed"
+      },
+      {
+        "claim": "- Santorini weddings face the caldera from cliff-top terraces, while Mykonos weddings sit on beaches and bays such as Ornos, Psarou and Agio",
+        "fact_id": "fact_01",
+        "status": "confirmed"
+      },
+      {
+        "claim": "- Santorini weddings face the caldera from cliff-top terraces, while Mykonos weddings sit on beaches and bays such as Ornos, Psarou and Agio",
+        "fact_id": "fact_11",
+        "status": "confirmed"
+      },
+      {
+        "claim": "- Santorini weddings face the caldera from cliff-top terraces, while Mykonos weddings sit on beaches and bays such as Ornos, Psarou and Agio",
+        "fact_id": "fact_22",
+        "status": "confirmed"
+      },
+      {
+        "claim": "- Santorini weddings face the caldera from cliff-top terraces, while Mykonos weddings sit on beaches and bays such as Ornos, Psarou and Agio",
+        "fact_id": "fact_28",
+        "status": "confirmed"
+      },
+      {
+        "claim": "- Santorini weddings face the caldera from cliff-top terraces, while Mykonos weddings sit on beaches and bays such as Ornos, Psarou and Agio",
+        "fact_id": "fact_25",
+        "status": "confirmed"
+      },
+      {
+        "claim": "- Ceremony type narrows the shortlist on both islands, because each venue states its own options, from terraces and a winery on Santorini to",
+        "fact_id": "fact_10",
+        "status": "confirmed"
+      },
+      {
+        "claim": "- Ceremony type narrows the shortlist on both islands, because each venue states its own options, from terraces and a winery on Santorini to",
+        "fact_id": "fact_14",
+        "status": "confirmed"
+      },
+      {
+        "claim": "- Ceremony type narrows the shortlist on both islands, because each venue states its own options, from terraces and a winery on Santorini to",
+        "fact_id": "fact_23",
+        "status": "confirmed"
+      },
+      {
+        "claim": "- Ceremony type narrows the shortlist on both islands, because each venue states its own options, from terraces and a winery on Santorini to",
+        "fact_id": "fact_31",
+        "status": "confirmed"
+      },
+      {
+        "claim": "- Both islands have their own airport, and Smartraveller warns that ferries can be delayed or cancelled in strong winds, so guests should pl",
+        "fact_id": "fact_04",
+        "status": "confirmed"
+      },
+      {
+        "claim": "- Both islands have their own airport, and Smartraveller warns that ferries can be delayed or cancelled in strong winds, so guests should pl",
+        "fact_id": "fact_07",
+        "status": "confirmed"
+      },
+      {
+        "claim": "- Both islands have their own airport, and Smartraveller warns that ferries can be delayed or cancelled in strong winds, so guests should pl",
+        "fact_id": "fact_46",
+        "status": "confirmed"
+      },
+      {
+        "claim": "- The Australian paperwork is the same whichever island you choose, starting with proof that neither of you is already married, such as a Ce",
+        "fact_id": "fact_51",
+        "status": "confirmed"
+      },
+      {
+        "claim": "- The Australian paperwork is the same whichever island you choose, starting with proof that neither of you is already married, such as a Ce",
+        "fact_id": "fact_52",
+        "status": "confirmed"
+      },
+      {
+        "claim": "If the picture in your head is a terrace on the edge of a cliff, with the volcano across the water and the light going gold, that is Santori",
+        "fact_id": "fact_01",
+        "status": "confirmed"
+      },
+      {
+        "claim": "If the picture in your head is a terrace on the edge of a cliff, with the volcano across the water and the light going gold, that is Santori",
+        "fact_id": "fact_11",
+        "status": "confirmed"
+      },
+      {
+        "claim": "If the picture is bare feet near the sea, a chapel above a beach and a town to wander into after dinner, that is Mykonos. Mykonos is its Hor",
+        "fact_id": "fact_05",
+        "status": "confirmed"
+      },
+      {
+        "claim": "| Setting and feel | Volcanic caldera, with hamlets along the cliff rim  | Hora, Little Venice, windmills and beaches  |",
+        "fact_id": "fact_01",
+        "status": "confirmed"
+      },
+      {
+        "claim": "| Setting and feel | Volcanic caldera, with hamlets along the cliff rim  | Hora, Little Venice, windmills and beaches  |",
+        "fact_id": "fact_05",
+        "status": "confirmed"
+      },
+      {
+        "claim": "| Venue types | Cliff-top suite hotels, caldera-view resorts and a winery    | Beachfront resorts and hotels on bays and beaches    |",
+        "fact_id": "fact_11",
+        "status": "confirmed"
+      },
+      {
+        "claim": "| Venue types | Cliff-top suite hotels, caldera-view resorts and a winery    | Beachfront resorts and hotels on bays and beaches    |",
+        "fact_id": "fact_19",
+        "status": "confirmed"
+      },
+      {
+        "claim": "| Venue types | Cliff-top suite hotels, caldera-view resorts and a winery    | Beachfront resorts and hotels on bays and beaches    |",
+        "fact_id": "fact_13",
+        "status": "confirmed"
+      },
+      {
+        "claim": "| Venue types | Cliff-top suite hotels, caldera-view resorts and a winery    | Beachfront resorts and hotels on bays and beaches    |",
+        "fact_id": "fact_22",
+        "status": "confirmed"
+      },
+      {
+        "claim": "| Venue types | Cliff-top suite hotels, caldera-view resorts and a winery    | Beachfront resorts and hotels on bays and beaches    |",
+        "fact_id": "fact_25",
+        "status": "confirmed"
+      },
+      {
+        "claim": "| Venue types | Cliff-top suite hotels, caldera-view resorts and a winery    | Beachfront resorts and hotels on bays and beaches    |",
+        "fact_id": "fact_28",
+        "status": "confirmed"
+      },
+      {
+        "claim": "| Ceremony types venues state | Caldera terraces and balconies; religious, civil, symbolic and vow renewal at Canaves   | Whitewashed chapel",
+        "fact_id": "fact_09",
+        "status": "confirmed"
+      },
+      {
+        "claim": "| Ceremony types venues state | Caldera terraces and balconies; religious, civil, symbolic and vow renewal at Canaves   | Whitewashed chapel",
+        "fact_id": "fact_10",
+        "status": "confirmed"
+      },
+      {
+        "claim": "| Ceremony types venues state | Caldera terraces and balconies; religious, civil, symbolic and vow renewal at Canaves   | Whitewashed chapel",
+        "fact_id": "fact_23",
+        "status": "confirmed"
+      },
+      {
+        "claim": "| Ceremony types venues state | Caldera terraces and balconies; religious, civil, symbolic and vow renewal at Canaves   | Whitewashed chapel",
+        "fact_id": "fact_29",
+        "status": "confirmed"
+      },
+      {
+        "claim": "| Ceremony types venues state | Caldera terraces and balconies; religious, civil, symbolic and vow renewal at Canaves   | Whitewashed chapel",
+        "fact_id": "fact_31",
+        "status": "confirmed"
+      },
+      {
+        "claim": "| Guest experience and pace | Caldera villages, volcanic beaches, vineyards and wine    | Mykonos Town's lanes, Little Venice and the beache",
+        "fact_id": "fact_01",
+        "status": "confirmed"
+      },
+      {
+        "claim": "| Guest experience and pace | Caldera villages, volcanic beaches, vineyards and wine    | Mykonos Town's lanes, Little Venice and the beache",
+        "fact_id": "fact_02",
+        "status": "confirmed"
+      },
+      {
+        "claim": "| Guest experience and pace | Caldera villages, volcanic beaches, vineyards and wine    | Mykonos Town's lanes, Little Venice and the beache",
+        "fact_id": "fact_13",
+        "status": "confirmed"
+      },
+      {
+        "claim": "| Guest experience and pace | Caldera villages, volcanic beaches, vineyards and wine    | Mykonos Town's lanes, Little Venice and the beache",
+        "fact_id": "fact_05",
+        "status": "confirmed"
+      },
+      {
+        "claim": "| Getting there | Santorini Airport (JTR), with flights from Athens and Thessaloniki   | Mykonos Airport (JMK), with flights from Athens and",
+        "fact_id": "fact_03",
+        "status": "confirmed"
+      },
+      {
+        "claim": "| Getting there | Santorini Airport (JTR), with flights from Athens and Thessaloniki   | Mykonos Airport (JMK), with flights from Athens and",
+        "fact_id": "fact_04",
+        "status": "confirmed"
+      },
+      {
+        "claim": "| Getting there | Santorini Airport (JTR), with flights from Athens and Thessaloniki   | Mykonos Airport (JMK), with flights from Athens and",
+        "fact_id": "fact_06",
+        "status": "confirmed"
+      },
+      {
+        "claim": "| Getting there | Santorini Airport (JTR), with flights from Athens and Thessaloniki   | Mykonos Airport (JMK), with flights from Athens and",
+        "fact_id": "fact_07",
+        "status": "confirmed"
+      },
+      {
+        "claim": "| Season and legal steps | Same for both islands: neither has its own weather station, so one regional guide covers both (see When to marry)",
+        "fact_id": "fact_38",
+        "status": "confirmed"
+      },
+      {
+        "claim": "| Season and legal steps | Same for both islands: neither has its own weather station, so one regional guide covers both (see When to marry)",
+        "fact_id": "fact_39",
+        "status": "confirmed"
+      },
+      {
+        "claim": "| Season and legal steps | Same for both islands: neither has its own weather station, so one regional guide covers both (see When to marry)",
+        "fact_id": "fact_40",
+        "status": "confirmed"
+      },
+      {
+        "claim": "| Season and legal steps | Same for both islands: neither has its own weather station, so one regional guide covers both (see When to marry)",
+        "fact_id": "fact_51",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Santorini, known in ancient times as Thera, sits at the southernmost point of the Cyclades.  It is not one island but a complex of five: The",
+        "fact_id": "fact_01",
+        "status": "confirmed"
+      },
+      {
+        "claim": "That geography shapes every wedding here. Hamlets spread across the rim of the caldera, so many ceremony spaces look down, over water, to th",
+        "fact_id": "fact_01",
+        "status": "confirmed"
+      },
+      {
+        "claim": "That geography shapes every wedding here. Hamlets spread across the rim of the caldera, so many ceremony spaces look down, over water, to th",
+        "fact_id": "fact_02",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Inland, the island is arid but fertile, growing mainly vines, yellow split peas and tomatoes.  That matters more than it sounds: it is why a",
+        "fact_id": "fact_02",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Mykonos sits in the heart of the Cyclades.  Its look is paved streets, white houses, chapels, dry-stone walls and windmills, and the windmil",
+        "fact_id": "fact_05",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Where Santorini's venues sit high above the water, Mykonos venues sit on it. Santa Marina is a beachfront retreat on a private peninsula at ",
+        "fact_id": "fact_22",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Where Santorini's venues sit high above the water, Mykonos venues sit on it. Santa Marina is a beachfront retreat on a private peninsula at ",
+        "fact_id": "fact_25",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Where Santorini's venues sit high above the water, Mykonos venues sit on it. Santa Marina is a beachfront retreat on a private peninsula at ",
+        "fact_id": "fact_28",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Where Santorini's venues sit high above the water, Mykonos venues sit on it. Santa Marina is a beachfront retreat on a private peninsula at ",
+        "fact_id": "fact_34",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Mykonos is its Hora, chapels, windmills and Little Venice, and the wedding hotels sit on their own bays, at Ornos, Psarou, Agios Ioannis and",
+        "fact_id": "fact_05",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Mykonos is its Hora, chapels, windmills and Little Venice, and the wedding hotels sit on their own bays, at Ornos, Psarou, Agios Ioannis and",
+        "fact_id": "fact_22",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Mykonos is its Hora, chapels, windmills and Little Venice, and the wedding hotels sit on their own bays, at Ornos, Psarou, Agios Ioannis and",
+        "fact_id": "fact_28",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Mykonos is its Hora, chapels, windmills and Little Venice, and the wedding hotels sit on their own bays, at Ornos, Psarou, Agios Ioannis and",
+        "fact_id": "fact_25",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Mykonos is its Hora, chapels, windmills and Little Venice, and the wedding hotels sit on their own bays, at Ornos, Psarou, Agios Ioannis and",
+        "fact_id": "fact_34",
+        "status": "confirmed"
+      },
+      {
+        "claim": "- **Canaves Oia.** The Panorama Balcony at Canaves Oia Suites sets the ceremony against the caldera and the Aegean.",
+        "fact_id": "fact_09",
+        "status": "confirmed"
+      },
+      {
+        "claim": "- **Grace Hotel, Imerovigli.** A cliff-top suite hotel of intimate scale, with ceremonies high above the sea facing caldera sunsets.",
+        "fact_id": "fact_11",
+        "status": "confirmed"
+      },
+      {
+        "claim": "- **Santo Wines, Pyrgos.** The winery of the Union of Santorini Cooperatives, with a Wine Tourism Center beside the winery looking to the vo",
+        "fact_id": "fact_13",
+        "status": "confirmed"
+      },
+      {
+        "claim": "- **Santo Wines, Pyrgos.** The winery of the Union of Santorini Cooperatives, with a Wine Tourism Center beside the winery looking to the vo",
+        "fact_id": "fact_14",
+        "status": "confirmed"
+      },
+      {
+        "claim": "- **Katikies.** Katikies has Santorini properties in Oia, Imerovigli and Fira, and lists weddings and hotel takeovers among its event types.",
+        "fact_id": "fact_15",
+        "status": "confirmed"
+      },
+      {
+        "claim": "- **Andronis.** Andronis Luxury Suites in Oia has suites and villas perched on the cliffs, looking across the Aegean to the volcanic caldera",
+        "fact_id": "fact_18",
+        "status": "confirmed"
+      },
+      {
+        "claim": "- **Grand Ambassador Santorini.** A cliff-top hotel at Akrotiri with caldera views, private pools and suites named for the view, hosting pro",
+        "fact_id": "fact_19",
+        "status": "confirmed"
+      },
+      {
+        "claim": "- **Grand Ambassador Santorini.** A cliff-top hotel at Akrotiri with caldera views, private pools and suites named for the view, hosting pro",
+        "fact_id": "fact_20",
+        "status": "confirmed"
+      },
+      {
+        "claim": "- **Santa Marina, Ornos.** A beachfront resort with a private sandy beach, Aegean views from its venues and a traditional whitewashed stone ",
+        "fact_id": "fact_22",
+        "status": "confirmed"
+      },
+      {
+        "claim": "- **Santa Marina, Ornos.** A beachfront resort with a private sandy beach, Aegean views from its venues and a traditional whitewashed stone ",
+        "fact_id": "fact_23",
+        "status": "confirmed"
+      },
+      {
+        "claim": "- **Mykonos Grand, Agios Ioannis.** A beachfront hotel opposite Delos, with a whitewashed chapel to the Virgin Mary on a hill above the beac",
+        "fact_id": "fact_25",
+        "status": "confirmed"
+      },
+      {
+        "claim": "- **Mykonos Grand, Agios Ioannis.** A beachfront hotel opposite Delos, with a whitewashed chapel to the Virgin Mary on a hill above the beac",
+        "fact_id": "fact_26",
+        "status": "confirmed"
+      },
+      {
+        "claim": "- **Mykonos Blu, Psarou.** A beachfront hotel laid out as a Cycladic settlement on the waterfront, holding weddings on Psarou beach with the",
+        "fact_id": "fact_28",
+        "status": "confirmed"
+      },
+      {
+        "claim": "- **Saint John, Agios Ioannis.** A hotel, villas and spa resort with several wedding venues, all with full sea views.",
+        "fact_id": "fact_30",
+        "status": "confirmed"
+      },
+      {
+        "claim": "- **Saint John, Agios Ioannis.** A hotel, villas and spa resort with several wedding venues, all with full sea views.",
+        "fact_id": "fact_31",
+        "status": "confirmed"
+      },
+      {
+        "claim": "- **Katikies Mykonos, Agios Ioannis.** A hotel above Agios Ioannis beach, where all rooms and suites look to the beach and most have sea vie",
+        "fact_id": "fact_32",
+        "status": "confirmed"
+      },
+      {
+        "claim": "- **Myconian Collection, Elia.** Wedding hotels in Elia, with a small whitewashed chapel and receptions on the beach or in restaurants overl",
+        "fact_id": "fact_34",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Santorini ceremonies are mostly terrace and balcony ceremonies, facing the caldera. Canaves lists religious, civil, symbolic and vow-renewal",
+        "fact_id": "fact_10",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Santorini ceremonies are mostly terrace and balcony ceremonies, facing the caldera. Canaves lists religious, civil, symbolic and vow-renewal",
+        "fact_id": "fact_16",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Some venues add a ceremony of their own. Grace Hotel offers a unity ceremony in which the two of you combine black and white volcanic sand c",
+        "fact_id": "fact_12",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Some venues add a ceremony of their own. Grace Hotel offers a unity ceremony in which the two of you combine black and white volcanic sand c",
+        "fact_id": "fact_14",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Several Mykonos venues have a chapel of their own. Santa Marina has a traditional whitewashed stone chapel.  Mykonos Grand's chapel to the V",
+        "fact_id": "fact_23",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Several Mykonos venues have a chapel of their own. Santa Marina has a traditional whitewashed stone chapel.  Mykonos Grand's chapel to the V",
+        "fact_id": "fact_26",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Several Mykonos venues have a chapel of their own. Santa Marina has a traditional whitewashed stone chapel.  Mykonos Grand's chapel to the V",
+        "fact_id": "fact_31",
+        "status": "confirmed"
+      },
+      {
+        "claim": "There are open-air options too. Mykonos Blu's Ocean Balcony sits just above Psarou beach with an uninterrupted sea view.  At Katikies Mykono",
+        "fact_id": "fact_29",
+        "status": "confirmed"
+      },
+      {
+        "claim": "There are open-air options too. Mykonos Blu's Ocean Balcony sits just above Psarou beach with an uninterrupted sea view.  At Katikies Mykono",
+        "fact_id": "fact_33",
+        "status": "confirmed"
+      },
+      {
+        "claim": "There are open-air options too. Mykonos Blu's Ocean Balcony sits just above Psarou beach with an uninterrupted sea view.  At Katikies Mykono",
+        "fact_id": "fact_35",
+        "status": "confirmed"
+      },
+      {
+        "claim": "One house rule shows why the ceremony comes first. Mykonos Grand states that both partners must be Christian Orthodox for a religious weddin",
+        "fact_id": "fact_27",
+        "status": "confirmed"
+      },
+      {
+        "claim": "One house rule shows why the ceremony comes first. Mykonos Grand states that both partners must be Christian Orthodox for a religious weddin",
+        "fact_id": "fact_10",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Santorini's days are built around the caldera. Guests stay in the hamlets along the rim, and the volcano is the view across the water.",
+        "fact_id": "fact_01",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Wine is the island's other thread. The vines grow in arid but fertile soil, and Santo Wines runs a Wine Tourism Center beside its winery tha",
+        "fact_id": "fact_02",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Wine is the island's other thread. The vines grow in arid but fertile soil, and Santo Wines runs a Wine Tourism Center beside its winery tha",
+        "fact_id": "fact_13",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Wine is the island's other thread. The vines grow in arid but fertile soil, and Santo Wines runs a Wine Tourism Center beside its winery tha",
+        "fact_id": "fact_18",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Mykonos days move between the town and the coast. Mykonos Town, the Hora, is paved streets, white houses and chapels, with the windmills abo",
+        "fact_id": "fact_05",
+        "status": "confirmed"
+      },
+      {
+        "claim": "The Myconian Collection has certified halal and kosher kitchens and a South Asian chef for traditional Indian cuisine.  Mykonos Grand and Ka",
+        "fact_id": "fact_35",
+        "status": "confirmed"
+      },
+      {
+        "claim": "The Myconian Collection has certified halal and kosher kitchens and a South Asian chef for traditional Indian cuisine.  Mykonos Grand and Ka",
+        "fact_id": "fact_25",
+        "status": "confirmed"
+      },
+      {
+        "claim": "The Myconian Collection has certified halal and kosher kitchens and a South Asian chef for traditional Indian cuisine.  Mykonos Grand and Ka",
+        "fact_id": "fact_32",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Both islands have their own airport, each with flights from Athens International Airport and from Thessaloniki.",
+        "fact_id": "fact_04",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Both islands have their own airport, each with flights from Athens International Airport and from Thessaloniki.",
+        "fact_id": "fact_07",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Both islands have their own airport, each with flights from Athens International Airport and from Thessaloniki.",
+        "fact_id": "fact_03",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Both islands have their own airport, each with flights from Athens International Airport and from Thessaloniki.",
+        "fact_id": "fact_06",
+        "status": "confirmed"
+      },
+      {
+        "claim": "The airport has Schengen and non-Schengen departure areas and an Accessible Travel section for passengers with reduced mobility.  Details ar",
+        "fact_id": "fact_04",
+        "status": "confirmed"
+      },
+      {
+        "claim": "The airport lists accessible travel information, parking and a Private Flights Lounge with VIP welcoming services.  Details are on the [Myko",
+        "fact_id": "fact_07",
+        "status": "confirmed"
+      },
+      {
+        "claim": "As at November 2026, Smartraveller says ferries and large catamarans carry most visitors to the Greek islands.  In most cases passengers car",
+        "fact_id": "fact_47",
+        "status": "confirmed"
+      },
+      {
+        "claim": "As at November 2026, Smartraveller says ferries and large catamarans carry most visitors to the Greek islands.  In most cases passengers car",
+        "fact_id": "fact_46",
+        "status": "confirmed"
+      },
+      {
+        "claim": "From May to October, expect high temperatures and large crowds at popular seaports.  On Santorini, smaller boats or tenders carry cruise pas",
+        "fact_id": "fact_47",
+        "status": "confirmed"
+      },
+      {
+        "claim": "From May to October, expect high temperatures and large crowds at popular seaports.  On Santorini, smaller boats or tenders carry cruise pas",
+        "fact_id": "fact_46",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Greece is in the Schengen area, so Australians can make short trips without a visa for up to 90 days in any 180-day period.  On arrival, Aus",
+        "fact_id": "fact_49",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Season is the one row where the two islands share an answer. The [Hellenic National Meteorological Service](https://www.hnms.gr/) has no cli",
+        "fact_id": "fact_38",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Season is the one row where the two islands share an answer. The [Hellenic National Meteorological Service](https://www.hnms.gr/) has no cli",
+        "fact_id": "fact_39",
+        "status": "confirmed"
+      },
+      {
+        "claim": "",
+        "fact_id": "fact_40",
+        "status": "confirmed"
+      },
+      {
+        "claim": "",
+        "fact_id": "fact_41",
+        "status": "confirmed"
+      },
+      {
+        "claim": "At Naxos, mean rainfall drops below 1 mm in July and rises to 38.6 mm in October.  The prevailing wind at Naxos is from the north in every m",
+        "fact_id": "fact_41",
+        "status": "confirmed"
+      },
+      {
+        "claim": "At Naxos, mean rainfall drops below 1 mm in July and rises to 38.6 mm in October.  The prevailing wind at Naxos is from the north in every m",
+        "fact_id": "fact_42",
+        "status": "confirmed"
+      },
+      {
+        "claim": "As at November 2026, Smartraveller says heatwaves are frequent over the summer months, and advises water, light clothing and shade or air co",
+        "fact_id": "fact_44",
+        "status": "confirmed"
+      },
+      {
+        "claim": "As at November 2026, Smartraveller says heatwaves are frequent over the summer months, and advises water, light clothing and shade or air co",
+        "fact_id": "fact_45",
+        "status": "confirmed"
+      },
+      {
+        "claim": "As at November 2026, Smartraveller says heatwaves are frequent over the summer months, and advises water, light clothing and shade or air co",
+        "fact_id": "fact_46",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Smartraveller also notes that Greece sits in an active seismic zone, with earthquakes and volcanic activity near major destinations includin",
+        "fact_id": "fact_48",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Smartraveller also notes that Greece sits in an active seismic zone, with earthquakes and volcanic activity near major destinations includin",
+        "fact_id": "fact_45",
+        "status": "confirmed"
+      },
+      {
+        "claim": "The Australian side of the paperwork does not change with the island. As at November 2026, Smartraveller says some countries ask you to prov",
+        "fact_id": "fact_51",
+        "status": "confirmed"
+      },
+      {
+        "claim": "DFAT can issue a CNI in Australia, but some local authorities only accept CNIs issued in their own country.  Ask whether you need one, where",
+        "fact_id": "fact_52",
+        "status": "confirmed"
+      },
+      {
+        "claim": "DFAT can issue a CNI in Australia, but some local authorities only accept CNIs issued in their own country.  Ask whether you need one, where",
+        "fact_id": "fact_57",
+        "status": "confirmed"
+      },
+      {
+        "claim": "DFAT can issue a CNI in Australia, but some local authorities only accept CNIs issued in their own country.  Ask whether you need one, where",
+        "fact_id": "fact_58",
+        "status": "confirmed"
+      },
+      {
+        "claim": "The [Australian Embassy in Athens](https://greece.embassy.gov.au/athn/notarial.html) issues CNIs, witnesses notices of intended marriage and",
+        "fact_id": "fact_55",
+        "status": "confirmed"
+      },
+      {
+        "claim": "The [Australian Embassy in Athens](https://greece.embassy.gov.au/athn/notarial.html) issues CNIs, witnesses notices of intended marriage and",
+        "fact_id": "fact_56",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Back home, you cannot register an overseas marriage in Australia, but in most cases it is legally recognised if it was valid where it took p",
+        "fact_id": "fact_53",
+        "status": "confirmed"
+      },
+      {
+        "claim": "**You want the ceremony on a cliff, facing the view.** Santorini. Its venues are built along the caldera rim, and ceremonies at places like ",
+        "fact_id": "fact_01",
+        "status": "confirmed"
+      },
+      {
+        "claim": "**You want the ceremony on a cliff, facing the view.** Santorini. Its venues are built along the caldera rim, and ceremonies at places like ",
+        "fact_id": "fact_09",
+        "status": "confirmed"
+      },
+      {
+        "claim": "**You want the ceremony on a cliff, facing the view.** Santorini. Its venues are built along the caldera rim, and ceremonies at places like ",
+        "fact_id": "fact_11",
+        "status": "confirmed"
+      },
+      {
+        "claim": "**You want a chapel above a beach.** Mykonos. Santa Marina, Mykonos Grand, Saint John and the Myconian Collection all list a chapel among th",
+        "fact_id": "fact_23",
+        "status": "confirmed"
+      },
+      {
+        "claim": "**You want a chapel above a beach.** Mykonos. Santa Marina, Mykonos Grand, Saint John and the Myconian Collection all list a chapel among th",
+        "fact_id": "fact_26",
+        "status": "confirmed"
+      },
+      {
+        "claim": "**You want a chapel above a beach.** Mykonos. Santa Marina, Mykonos Grand, Saint John and the Myconian Collection all list a chapel among th",
+        "fact_id": "fact_31",
+        "status": "confirmed"
+      },
+      {
+        "claim": "**You want a chapel above a beach.** Mykonos. Santa Marina, Mykonos Grand, Saint John and the Myconian Collection all list a chapel among th",
+        "fact_id": "fact_34",
+        "status": "confirmed"
+      },
+      {
+        "claim": "**You want a beach-side weekend.** Mykonos. Its wedding hotels sit on Ornos, Psarou, Agios Ioannis and Elia, so the beach is part of the ven",
+        "fact_id": "fact_22",
+        "status": "confirmed"
+      },
+      {
+        "claim": "**You want a beach-side weekend.** Mykonos. Its wedding hotels sit on Ornos, Psarou, Agios Ioannis and Elia, so the beach is part of the ven",
+        "fact_id": "fact_28",
+        "status": "confirmed"
+      },
+      {
+        "claim": "**You want a beach-side weekend.** Mykonos. Its wedding hotels sit on Ornos, Psarou, Agios Ioannis and Elia, so the beach is part of the ven",
+        "fact_id": "fact_25",
+        "status": "confirmed"
+      },
+      {
+        "claim": "**You want a beach-side weekend.** Mykonos. Its wedding hotels sit on Ornos, Psarou, Agios Ioannis and Elia, so the beach is part of the ven",
+        "fact_id": "fact_34",
+        "status": "confirmed"
+      },
+      {
+        "claim": "**Your guests want villages, walking and wine.** Santorini. The hamlets on the caldera rim, the volcanic beaches and a winery open all year ",
+        "fact_id": "fact_01",
+        "status": "confirmed"
+      },
+      {
+        "claim": "**Your guests want villages, walking and wine.** Santorini. The hamlets on the caldera rim, the volcanic beaches and a winery open all year ",
+        "fact_id": "fact_02",
+        "status": "confirmed"
+      },
+      {
+        "claim": "**Your guests want villages, walking and wine.** Santorini. The hamlets on the caldera rim, the volcanic beaches and a winery open all year ",
+        "fact_id": "fact_13",
+        "status": "confirmed"
+      },
+      {
+        "claim": "**You want the week centred on a town.** Mykonos. The Hora, Little Venice and the windmills are the island's heart, and venues such as the M",
+        "fact_id": "fact_05",
+        "status": "confirmed"
+      },
+      {
+        "claim": "**You want the week centred on a town.** Mykonos. The Hora, Little Venice and the windmills are the island's heart, and venues such as the M",
+        "fact_id": "fact_34",
+        "status": "confirmed"
+      },
+      {
+        "claim": "**You are planning a small wedding or an elopement.** Either island. Grace Hotel works at an intimate scale on Santorini, Canaves caters for",
+        "fact_id": "fact_10",
+        "status": "confirmed"
+      },
+      {
+        "claim": "**You are planning a small wedding or an elopement.** Either island. Grace Hotel works at an intimate scale on Santorini, Canaves caters for",
+        "fact_id": "fact_11",
+        "status": "confirmed"
+      },
+      {
+        "claim": "**You are planning a small wedding or an elopement.** Either island. Grace Hotel works at an intimate scale on Santorini, Canaves caters for",
+        "fact_id": "fact_24",
+        "status": "confirmed"
+      },
+      {
+        "claim": "**You want the whole property for your family.** Either island, venue by venue. Katikies lists hotel takeovers among its event types on Sant",
+        "fact_id": "fact_15",
+        "status": "confirmed"
+      },
+      {
+        "claim": "**You want the whole property for your family.** Either island, venue by venue. Katikies lists hotel takeovers among its event types on Sant",
+        "fact_id": "fact_24",
+        "status": "confirmed"
+      },
+      {
+        "claim": "It depends on the setting, the ceremony and the week you want for your guests. Santorini suits a cliff-top ceremony facing the caldera; Myko",
+        "fact_id": "fact_01",
+        "status": "confirmed"
+      },
+      {
+        "claim": "It depends on the setting, the ceremony and the week you want for your guests. Santorini suits a cliff-top ceremony facing the caldera; Myko",
+        "fact_id": "fact_05",
+        "status": "confirmed"
+      },
+      {
+        "claim": "The Australian documents are the same for both, starting with proof that neither of you is already married, such as a CNI.   Ask the authori",
+        "fact_id": "fact_51",
+        "status": "confirmed"
+      },
+      {
+        "claim": "The Australian documents are the same for both, starting with proof that neither of you is already married, such as a CNI.   Ask the authori",
+        "fact_id": "fact_52",
+        "status": "confirmed"
+      },
+      {
+        "claim": "The Australian documents are the same for both, starting with proof that neither of you is already married, such as a CNI.   Ask the authori",
+        "fact_id": "fact_57",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Each island has its own airport, with flights from Athens and Thessaloniki.   Ferries and large catamarans carry most visitors to the Greek ",
+        "fact_id": "fact_03",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Each island has its own airport, with flights from Athens and Thessaloniki.   Ferries and large catamarans carry most visitors to the Greek ",
+        "fact_id": "fact_06",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Each island has its own airport, with flights from Athens and Thessaloniki.   Ferries and large catamarans carry most visitors to the Greek ",
+        "fact_id": "fact_47",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Each island has its own airport, with flights from Athens and Thessaloniki.   Ferries and large catamarans carry most visitors to the Greek ",
+        "fact_id": "fact_46",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Neither island has its own HNMS station, so the same Naxos figures guide both.   At Naxos, July and August average under one rain day a mont",
+        "fact_id": "fact_38",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Neither island has its own HNMS station, so the same Naxos figures guide both.   At Naxos, July and August average under one rain day a mont",
+        "fact_id": "fact_39",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Neither island has its own HNMS station, so the same Naxos figures guide both.   At Naxos, July and August average under one rain day a mont",
+        "fact_id": "fact_41",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Neither island has its own HNMS station, so the same Naxos figures guide both.   At Naxos, July and August average under one rain day a mont",
+        "fact_id": "fact_44",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Cost turns on your guest count, your venue and its spaces, whether you take over a whole hotel, and when you travel.  Several venues publish",
+        "fact_id": "fact_15",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Cost turns on your guest count, your venue and its spaces, whether you take over a whole hotel, and when you travel.  Several venues publish",
+        "fact_id": "fact_10",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Cost turns on your guest count, your venue and its spaces, whether you take over a whole hotel, and when you travel.  Several venues publish",
+        "fact_id": "fact_21",
+        "status": "unsupported"
+      },
+      {
+        "claim": "Cost turns on your guest count, your venue and its spaces, whether you take over a whole hotel, and when you travel.  Several venues publish",
+        "fact_id": "fact_24",
+        "status": "confirmed"
+      }
+    ],
+    "compliance": {
+      "pass": true,
+      "issues": []
+    },
+    "originality": {
+      "pass": true,
+      "matches": []
+    },
+    "banned_phrases_found": [],
+    "needs_signoff": []
+  }
+}

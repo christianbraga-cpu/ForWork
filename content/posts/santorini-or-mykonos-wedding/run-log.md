@@ -7,3 +7,4 @@
 06:00 06 editor pass_with_edits 4.14, 12 edits applied (05-draft-r2.md); 07 readers done.
 06:02 07b panel revise (enquire 2.6); 4 must-fix.
 06:03 08 writer final round 3 done: about 3,396 words.
+06:05 8b final check pass_with_edits, 10 edits applied; CRO no changes; secondary anchor changed to Wedded Concierge wording; 10 distribution done.
