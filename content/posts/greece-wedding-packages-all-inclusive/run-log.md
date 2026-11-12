@@ -1,0 +1,1 @@
+01:59 00 orchestrator complete input written; FAST MODE start; NEW all-inclusive comparison (no prices). Part-5: Santorini package facts (Grace, Canaves, Santorini Gem, Andronis, Vedema) reused from today's pack.
