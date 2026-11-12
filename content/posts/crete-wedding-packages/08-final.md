@@ -29,7 +29,7 @@ Most Crete resort packages take one of four forms:
 - **A core package with a menu of extras and a fee for each venue**, as at Abaton Island Resort & Spa. <!-- fact_518 --> <!-- fact_519 -->
 - **A list of wedding services quoted on request**, with no named package, as at St. Nicolas Bay Resort Hotel & Villas in Agios Nikolaos. <!-- fact_103 -->
 
-The guest count shapes all of it. Abaton's packages run from a minimum reception of 20 guests to a maximum of 300, Grecotel Amirandes near Heraklion hosts weddings for up to 300 guests, and Avra Imperial in Kolymvari has an events hall it says holds up to 680 people. <!-- fact_520 --> <!-- fact_528 --> <!-- fact_117 --> At the other end, Euphoria's first tier is built around up to 10 guests. <!-- fact_523 --> For a larger celebration, Avra Imperial pairs its chapel of Saint Paul with that hall, and Nana Princess gives symbolic weddings sole use of the chosen room or venue. <!-- fact_116 --> <!-- fact_117 --> <!-- fact_513 -->
+The guest count shapes all of it. Abaton's packages run from a minimum reception of 20 guests to a maximum of 300, Grecotel Amirandes near Heraklion hosts weddings for up to 300 guests, and Avra Imperial in Kolymvari has an events hall it says holds up to 680 people. <!-- fact_520 --> <!-- fact_528 --> <!-- fact_117 --> At the other end, Euphoria's first tier is built around up to 10 guests. <!-- fact_523 --> For a larger celebration, Avra Imperial offers both its chapel of Saint Paul and that hall, and Nana Princess gives symbolic weddings sole use of the chosen room or venue. <!-- fact_116 --> <!-- fact_117 --> <!-- fact_513 -->
 
 ## Types of Crete wedding package
 
@@ -67,16 +67,16 @@ The detail is where Crete packages separate, and the same word is used very diff
 
 | Venue | Ceremonies | Guests | Stay | Coordinator |
 |---|---|---|---|---|
-| Elounda SA, Elounda | Civil, Orthodox, symbolic | Not published | Couple stays 3 nights | Planning help |
-| Nana Princess, Chersonissos | Civil, Orthodox, symbolic | Reception up to 120 | Not published | Yes, once booked |
-| Abaton | Package or build your own | 20 to 300 | 10 rooms, 2 nights | Yes |
-| Euphoria, Kolymvari | Informal or vow renewal | 10, 20 or 30 by tier | Stay for honeymoon package | Pathos and Eros |
+| Elounda SA, Elounda | Civil, Orthodox, symbolic | Not published | Couple stays at least 3 nights | Not published |
+| Nana Princess, Chersonissos | Civil, Orthodox, symbolic | Poolside restaurant up to 120 | Not published | Yes, once booked |
+| Abaton | Package or build your own | 20 to 300 | At least 10 rooms, 2 nights | Yes |
+| Euphoria, Kolymvari | Informal or vow renewal | Up to 10, 20 or 30 by tier | Not published | Pathos and Eros |
 | Out of the Blue, Aghia Pelaghia | Civil, Orthodox, symbolic | Not published | Not published | Not published |
 | Avra Imperial, Kolymvari | Chapel of Saint Paul | Hall up to 680 | Not published | Not published |
 | St. Nicolas Bay | Quoted on request | Not published | Not published | Guest service team |
-| Grecotel Amirandes | No named package | Up to 300 | Not published | Wedding specialists |
+| Grecotel Amirandes | Beach or chapel | Up to 300 | Not published | Wedding specialists |
 
-<!-- fact_500 --> <!-- fact_505 --> <!-- fact_118 --> <!-- fact_509 --> <!-- fact_514 --> <!-- fact_515 --> <!-- fact_517 --> <!-- fact_520 --> <!-- fact_518 --> <!-- fact_522 --> <!-- fact_523 --> <!-- fact_524 --> <!-- fact_525 --> <!-- fact_527 --> <!-- fact_104 --> <!-- fact_116 --> <!-- fact_117 --> <!-- fact_103 --> <!-- fact_100 --> <!-- fact_528 -->
+<!-- fact_500 --> <!-- fact_505 --> <!-- fact_509 --> <!-- fact_514 --> <!-- fact_515 --> <!-- fact_517 --> <!-- fact_520 --> <!-- fact_518 --> <!-- fact_522 --> <!-- fact_523 --> <!-- fact_524 --> <!-- fact_525 --> <!-- fact_527 --> <!-- fact_104 --> <!-- fact_116 --> <!-- fact_117 --> <!-- fact_103 --> <!-- fact_100 --> <!-- fact_528 -->
 
 ### Elounda SA Hotels & Resorts, Elounda
 
@@ -150,7 +150,7 @@ A package list is only half of the picture. The other half is what the venue lea
 
 ### Legal and church fees
 
-Does the package price include the official fees, or are they extra? At Elounda SA, the package rate does not include the Municipal fee, the civil wedding fee, or the Metropolis fee, the church fee for an Orthodox wedding; both are charged on top and are subject to change. <!-- fact_504 -->
+Does the package price include the official fees, or are they extra? At Elounda SA, the package rate does not include the Municipal fee for a civil wedding or the Metropolis fee, the church fee for an Orthodox wedding; both are charged on top and are subject to change. <!-- fact_504 -->
 
 Out of the Blue settles registry office fees inside its Civil and Orthodox packages, so the same question has two different answers on one island. <!-- fact_106 --> <!-- fact_108 -->
 
@@ -216,7 +216,7 @@ In the west, Euphoria and Avra Imperial both stand at Kolymvari, west of Chania,
 
 Between them, around Heraklion, sit Out of the Blue at Aghia Pelaghia, Nana Princess at Chersonissos and Grecotel Amirandes. <!-- fact_104 --> <!-- fact_509 --> <!-- fact_528 -->
 
-Think about where your guests will fly in, how long they will stay and whether one resort can hold everyone, then compare the packages within that corner. For getting there and around, read [planning a wedding in Crete](https://weddedwonderland.com/destination-weddings/wedding-in-crete).
+Think about where your guests will fly in, how long they will stay and whether one resort can hold everyone, then compare the packages within that corner.
 
 ## How to compare two Crete quotes like for like
 
@@ -237,7 +237,7 @@ Use this checklist for every quote:
 - **Level access.** Can older guests reach the ceremony and reception without steps or sand, and is there an accessible bathroom nearby?
 - **Supplier rules.** Which outside suppliers are allowed, and from what time can they set up?
 - **Quote currency.** What currency is the quote in, and will the deposit and the balance be invoiced in the same one?
-- **Contract language.** Is the contract in English, and which version applies if there is a Greek one too?
+- **Contract language.** Is the contract in English, and which version applies if there is a Greek one too? If you would like help setting two Crete quotes side by side, [talk to Wedded Concierge](https://weddedwonderland.com/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=crete-wedding-packages&utm_content=secondary).
 
 ## The legal side in brief
 
@@ -287,7 +287,7 @@ Yes, at several resorts. Elounda SA's symbolic package is built for the couple, 
 
 ### Does a venue package include the legal paperwork?
 
-Some include the official fees and some do not. At Elounda SA, the Municipal and Metropolis fees are charged on top of the package rate. <!-- fact_504 --> As the resort's own offer, Out of the Blue's Civil package includes documentation assistance, the marriage licence and registry office fees. <!-- fact_106 --> Ask each venue what is covered and which fees sit outside its price.
+Some include the official fees and some do not. At Elounda SA, the Municipal and Metropolis fees are charged on top of the package rate. <!-- fact_504 --> Ask each venue what is covered and which fees sit outside its price.
 
 ### Is a symbolic ceremony in Crete legally recognised?
 

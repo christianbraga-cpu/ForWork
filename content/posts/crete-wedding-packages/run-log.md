@@ -7,3 +7,4 @@
 04:59 07 readers done (enquire 3/3/2/3/1). 06 editor pass_with_edits (4.14): 8 edits applied to 05-draft-r2.md; VERIFY resolved (Lasithi per Visit Greece fact_601); two lines reworded to avoid matching the all-inclusive guide.
 05:02 07b panel: revise (enquire 2.6), 4 must-fix + 2 should-fix + 9 consider; business details deferred. One final pass.
 05:04 08 final done: ~4,280 words, 0 VERIFY, at-a-glance table added, scan clean except the all-inclusive URL slug, no amounts.
+05:06 8b pass_with_edits (10 edits: table cells, fee wording, extra links cut) and CRO (1 change, softened lead-in) applied; 4 UTMs once each.

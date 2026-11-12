@@ -1,0 +1,349 @@
+{
+  "agent": "editor",
+  "task_id": "crete-wedding-packages",
+  "stage": "06",
+  "status": "complete",
+  "round": 3,
+  "inputs_used": [
+    "content/posts/crete-wedding-packages/00-input.json",
+    "content/posts/crete-wedding-packages/03-source-pack.json",
+    "content/posts/crete-wedding-packages/03-source-pack-part-5.json",
+    "content/posts/crete-wedding-packages/05-draft-r2.md",
+    "content/posts/crete-wedding-packages/08-final.md",
+    "content/posts/crete-wedding-packages/07-panel.json",
+    "content-system/brand/brand-facts.md",
+    "content-system/brand/voice-guide.md",
+    "content-system/brand/banned-phrases.md",
+    "content-system/schemas/06-edit.schema.json",
+    "content/posts/santorini-wedding-packages/06-edit-final.json"
+  ],
+  "self_qa": {
+    "checks": [
+      {
+        "check": "scan_copy.py on 08-final.md",
+        "pass": true,
+        "note": "dashes 0, overlaps []; banned 'all-inclusive' only inside the allowed all-inclusive guide URL slug; 'exclusive' x1."
+      },
+      {
+        "check": "Changed lines since 05-draft-r2.md fact-checked",
+        "pass": true,
+        "note": "Every table cell, the large-celebration line, fee glosses and trimmed lists checked; 10 edits fix 'at least'/'up to' wording, a cross-venue fact (fact_118), a restaurant-only capacity, a repeated paperwork offer and a travel-implying link."
+      },
+      {
+        "check": "Blocking list",
+        "pass": true,
+        "note": "No prices, amounts, percentages, per-person figures or deposit sizes; no research talk, hedge stacking, 'best', non-venue vendor names, Wedded Privileges, 'last dance', 'Wonderland Concierge' text, 'free', em dashes, US spelling or [[VERIFY]]. One body Advisor line (AUD quotes, inclusions in writing) plus the close. Drive time removed in r3; edit 9 removes the 'getting there and around' link."
+      },
+      {
+        "check": "Key takeaways",
+        "pass": true,
+        "note": "Exactly 4 one-sentence bullets."
+      },
+      {
+        "check": "Links",
+        "pass": true,
+        "note": "Concierge primary and closing links and /magazine magnet untouched; only a duplicate /wedding-in-crete link removed."
+      },
+      {
+        "check": "Edits apply",
+        "pass": true,
+        "note": "Each old string occurs exactly once in 08-final.md, in file order; applied in sequence in a scratch copy with no em dashes."
+      }
+    ],
+    "confidence": 0.85
+  },
+  "open_questions": [],
+  "assumptions": [
+    "Stage 8b blocking check only; rubric carried forward, not rescored in depth.",
+    "Unchanged lines were cleared in earlier rounds.",
+    "'The church fee' gloss for the Metropolis fee is a plain-English explanation, kept."
+  ],
+  "verify_items": [],
+  "tools_used": [
+    "Bash (python3 -I, grep, diff)",
+    "content-system/scripts/scan_copy.py",
+    "content-system/scripts/validate.py"
+  ],
+  "next_agent": [
+    "icp-reader"
+  ],
+  "payload": {
+    "draft_file": "content/posts/crete-wedding-packages/08-final.md",
+    "rubric": {
+      "voice": 4,
+      "expertise": 5,
+      "accuracy": 4,
+      "seo_fit": 4,
+      "commercial_link": 4,
+      "structure": 5,
+      "brief_fit": 4
+    },
+    "average": 4.29,
+    "blocking_issues": [],
+    "decision": "pass_with_edits",
+    "edits": [
+      {
+        "location": "Body, guest count paragraph (large-celebration line)",
+        "issue": "'Pairs' implies a combined chapel-and-hall offer; fact_116 and fact_117 list them separately.",
+        "fix": "Replace exactly once: old -> new",
+        "old": "Avra Imperial pairs its chapel of Saint Paul with that hall,",
+        "new": "Avra Imperial offers both its chapel of Saint Paul and that hall,"
+      },
+      {
+        "location": "At-a-glance table, Elounda SA row",
+        "issue": "fact_505 is a minimum stay ('at least'); 'Planning help' comes from fact_118, which is Porto Elounda, not Elounda SA.",
+        "fix": "Replace exactly once: old -> new",
+        "old": "| Couple stays 3 nights | Planning help |",
+        "new": "| Couple stays at least 3 nights | Not published |"
+      },
+      {
+        "location": "At-a-glance table, Nana Princess row",
+        "issue": "fact_514: 120 is the poolside Meat-In-Point restaurant only, not a reception cap (the Conference Hall has no published limit).",
+        "fix": "Replace exactly once: old -> new",
+        "old": "| Reception up to 120 |",
+        "new": "| Poolside restaurant up to 120 |"
+      },
+      {
+        "location": "At-a-glance table, Abaton row",
+        "issue": "fact_520 is a minimum booking, and packages exclude accommodation.",
+        "fix": "Replace exactly once: old -> new",
+        "old": "| 10 rooms, 2 nights |",
+        "new": "| At least 10 rooms, 2 nights |"
+      },
+      {
+        "location": "At-a-glance table, Euphoria row",
+        "issue": "fact_523 to fact_525 say 'up to'; fact_527 is a complimentary honeymoon extra, not a stay term, and reads as a 'free' offer.",
+        "fix": "Replace exactly once: old -> new",
+        "old": "| 10, 20 or 30 by tier | Stay for honeymoon package |",
+        "new": "| Up to 10, 20 or 30 by tier | Not published |"
+      },
+      {
+        "location": "At-a-glance table, Grecotel Amirandes row",
+        "issue": "Ceremonies column should name the ceremony settings (fact_528: VIP Beach or chapel).",
+        "fix": "Replace exactly once: old -> new",
+        "old": "| No named package |",
+        "new": "| Beach or chapel |"
+      },
+      {
+        "location": "Table marker line",
+        "issue": "fact_118 (Porto Elounda) supports no table cell.",
+        "fix": "Replace exactly once: old -> new",
+        "old": "<!-- fact_505 --> <!-- fact_118 --> <!-- fact_509 -->",
+        "new": "<!-- fact_505 --> <!-- fact_509 -->"
+      },
+      {
+        "location": "What's left out, official fees question",
+        "issue": "The gloss reads as three fees followed by 'both'; fact_504 names two.",
+        "fix": "Replace exactly once: old -> new",
+        "old": "does not include the Municipal fee, the civil wedding fee, or the Metropolis fee, the church fee for an Orthodox wedding; both",
+        "new": "does not include the Municipal fee for a civil wedding or the Metropolis fee, the church fee for an Orthodox wedding; both"
+      },
+      {
+        "location": "East vs west Crete, closing paragraph",
+        "issue": "Third link to /wedding-in-crete (already in intro and legal section); 'getting there and around' implies transfers and travel, which the brief keeps out of copy.",
+        "fix": "Replace exactly once: old -> new",
+        "old": "compare the packages within that corner. For getting there and around, read [planning a wedding in Crete](https://weddedwonderland.com/destination-weddings/wedding-in-crete).",
+        "new": "compare the packages within that corner."
+      },
+      {
+        "location": "FAQ, official fees answer",
+        "issue": "Out of the Blue's paperwork offer is already stated once (body, fact_106); venue paperwork offers appear once each.",
+        "fix": "Replace exactly once: old -> new",
+        "old": " As the resort's own offer, Out of the Blue's Civil package includes documentation assistance, the marriage licence and registry office fees. <!-- fact_106 -->",
+        "new": ""
+      }
+    ],
+    "fact_check_log": [
+      {
+        "claim": "Intro: most bundle a ceremony set-up in a chosen space; several add a coordinator",
+        "fact_id": "fact_502",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Takeaway 1: ceremony set-up in a chosen space, sometimes with a coordinator",
+        "fact_id": "fact_518",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Large celebration: Avra Imperial chapel of Saint Paul and Maistro hall (after edit)",
+        "fact_id": "fact_116",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Large celebration: Maistro hall up to 680",
+        "fact_id": "fact_117",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Large celebration: Nana Princess symbolic weddings sole use of chosen room or venue",
+        "fact_id": "fact_513",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Elxi built for up to 10 guests, beach or poolside",
+        "fact_id": "fact_523",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Table: Elounda SA civil, Orthodox, symbolic",
+        "fact_id": "fact_500",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Table: Elounda SA stay at least 3 nights (after edit)",
+        "fact_id": "fact_505",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Table: Nana Princess civil, Orthodox, symbolic",
+        "fact_id": "fact_509",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Table: Nana Princess poolside restaurant up to 120 (after edit)",
+        "fact_id": "fact_514",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Table: Nana Princess coordinator once booked",
+        "fact_id": "fact_515",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Table: Abaton package or build your own",
+        "fact_id": "fact_517",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Table: Abaton 20 to 300; at least 10 rooms, 2 nights (after edit)",
+        "fact_id": "fact_520",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Table: Abaton coordinator",
+        "fact_id": "fact_518",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Table: Euphoria informal wedding or vow renewal",
+        "fact_id": "fact_522",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Table: Euphoria up to 10, 20 or 30 by tier (after edit)",
+        "fact_id": "fact_525",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Table: Euphoria coordinator in Pathos and Eros",
+        "fact_id": "fact_524",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Table: Out of the Blue civil, Orthodox, symbolic",
+        "fact_id": "fact_104",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Table: Avra Imperial chapel of Saint Paul; hall up to 680",
+        "fact_id": "fact_117",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Table: St. Nicolas Bay quoted on request",
+        "fact_id": "fact_103",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Table: St. Nicolas Bay guest service team",
+        "fact_id": "fact_100",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Table: Grecotel beach or chapel, up to 300, wedding specialists (after edit)",
+        "fact_id": "fact_528",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Elounda SA on the day: two witnesses, set-up with seasonal flowers, pre-recorded playlist",
+        "fact_id": "fact_502",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Nana Princess Deluxe Dream coordinator throughout the stay",
+        "fact_id": "fact_511",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Nana Princess symbolic: sole use, fresh flowers",
+        "fact_id": "fact_513",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Euphoria Elxi beach or poolside set-up up to 10 guests",
+        "fact_id": "fact_523",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Pathos to 20 guests plus own coordinator",
+        "fact_id": "fact_524",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Eros to 30 guests, jazz musician, beach dinner with live music",
+        "fact_id": "fact_525",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Out of the Blue Civil: couple's flowers, cake, koufeta",
+        "fact_id": "fact_105",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Minoa Palace package: ceremony and reception indoors or out, menus, flowers, hair and make-up, DJ or band",
+        "fact_id": "fact_114",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Minoa Palace decorated cake and Newlyweds Retreat included",
+        "fact_id": "fact_115",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Elounda SA Municipal (civil) and Metropolis (Orthodox) fees charged on top, subject to change",
+        "fact_id": "fact_504",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Orthodox section: Metropolis fee outside Elounda SA package rate",
+        "fact_id": "fact_504",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Heraklion cluster: Out of the Blue, Nana Princess, Grecotel (drive time removed)",
+        "fact_id": "fact_528",
+        "status": "confirmed"
+      },
+      {
+        "claim": "FAQ: Out of the Blue Civil paperwork offer repeated (removed by edit; stays once in body)",
+        "fact_id": "fact_106",
+        "status": "removed"
+      },
+      {
+        "claim": "Table: 'Planning help' for Elounda SA sourced from Porto Elounda (replaced with Not published)",
+        "fact_id": "fact_118",
+        "status": "removed"
+      }
+    ],
+    "compliance": {
+      "pass": true,
+      "issues": []
+    },
+    "originality": {
+      "pass": true,
+      "matches": []
+    },
+    "banned_phrases_found": [],
+    "needs_signoff": []
+  }
+}
