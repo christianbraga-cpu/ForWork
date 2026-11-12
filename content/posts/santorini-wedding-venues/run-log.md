@@ -11,3 +11,4 @@
 00:34 03 orchestrator reads (part-6): Grand Ambassador qualifies (Akrotiri, up to 250 guests); Kapari up to approx. 30; Aigialos honeymoons only (out). Final count 13; title becomes 13. Packs merged. Aroma Suites held back (small boutique).
 00:39 05 draft done: ~4,960 words, 13 venues, scan clean, 0 VERIFY; first-draft docx built.
 00:41 07 readers done (enquire 3/3/2/3/1). 06 editor pass_with_edits (4.14): 13 edits applied to 05-draft-r2.md (Fira line, Imerovigli 'all small', largest-space superlative, trims).
+00:44 07b panel: revise (enquire 2.6), 1 must-fix (Venetsanos heading: 'The wineries') + 4 should-fix + 3 consider; business details deferred. One final pass.
