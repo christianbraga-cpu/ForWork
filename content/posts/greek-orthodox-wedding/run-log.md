@@ -3,3 +3,4 @@
 22:35 01 brief done: requirements, calendar, documents, service order; rules credited to the stating jurisdiction.
 22:37 03 batch A: 5 OCA facts copied; goarch reads timed out, ecclesia.gr 404; 6 verify items; top-up launched (firecrawl).
 22:38 03 batch B: 32 reused facts (Embassy, Smartraveller, Rhodes civil, venues); gov.gr 404, imthira.gr timeout; 5 verify items.
+22:38 02 SEO done: 5 cities; greek orthodox wedding AU 140 US 880; stefana AU 210; high overlap with Greek traditions draft; 301 candidate /8-symbolic-eastern-orthodox-wedding-traditions-you-might-not-know-about.
