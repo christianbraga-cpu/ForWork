@@ -2,3 +2,4 @@
 01:22 04 images done: 7 placeholder slots (2 still lifes AI only with approval, labelled).
 01:22 01 brief done: inside vs on top, fee vs package vs planner, quote checklist; venues and planning guides linked prominently.
 01:25 02 SEO done: AU 20 / US 140 (KD 0); no site ranking; Greece packages draft lists the term as secondary (split: this guide owns it); meta 59/147.
+01:28 03 batch A done: 31 facts; package inclusions published by Grace (fee), Canaves (brochure packages), Santorini Gem (packages and policy), Andronis (package incl. venue's own licence help), Grand Ambassador; no inclusions published by Katikies, Kapari, Santo Wines, Venetsanos, Mystique. No figures recorded.
