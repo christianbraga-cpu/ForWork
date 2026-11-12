@@ -1,0 +1,329 @@
+{
+  "agent": "cms-publisher",
+  "task_id": "rhodes-wedding-venues",
+  "stage": "11",
+  "status": "complete",
+  "round": 1,
+  "inputs_used": [
+    "CLAUDE.md",
+    "content-system/cms/field-map.md",
+    "content-system/schemas/11-publish-package.schema.json",
+    "content/posts/rhodes-wedding-venues/01-brief.json",
+    "content/posts/rhodes-wedding-venues/02-seo.json",
+    "content/posts/rhodes-wedding-venues/03-source-pack.json",
+    "content/posts/rhodes-wedding-venues/04-images.json",
+    "content/posts/rhodes-wedding-venues/08-final.md",
+    "content/posts/rhodes-wedding-venues/09-cro.json",
+    "content/posts/rhodes-wedding-venues/10-distribution.json",
+    "content/posts/santorini-wedding-venues/11-body.md, 11-publish-package.json, 12-cms-report.md, booking-checklist.md (format model)"
+  ],
+  "self_qa": {
+    "checks": [
+      {
+        "check": "Front matter and all <!-- fact_xx --> markers removed; H1 is the title; 7 image-slot comments kept; no [[VERIFY]] markers in the copy",
+        "pass": true
+      },
+      {
+        "check": "Primary CTA at the marker uses the existing sentence and link unchanged (09-cro.json); secondary, closing and magnet marked; links and UTMs unchanged, each utm_content appears exactly once in visible links",
+        "pass": true
+      },
+      {
+        "check": "Exactly 4 key takeaways and 6 FAQ pairs taken verbatim from the body (FAQ link markup flattened to text)",
+        "pass": true
+      },
+      {
+        "check": "9 venues in body and table; title and meta title say 9",
+        "pass": true
+      },
+      {
+        "check": "Meta description replaces \"the medieval Old Town\" with \"Rhodes Town\" (no Old Town venue), under 155 characters, no prices",
+        "pass": true,
+        "note": "143 characters"
+      },
+      {
+        "check": "primary_category equals categories[0] (Destination Weddings)",
+        "pass": true
+      },
+      {
+        "check": "No em dashes; Australian English",
+        "pass": true
+      },
+      {
+        "check": "status draft; nothing uploaded, saved or published",
+        "pass": true
+      }
+    ],
+    "confidence": 0.9
+  },
+  "open_questions": [
+    {
+      "to": "orchestrator",
+      "question": "CMS upload not attempted: FAST MODE package only, no browser in this session, and content-system/cms/field-map.md is not CONFIRMED. A human saves as Draft and clicks Publish, or run /wedded-cms-discovery locally, then /wedded-blog resume=rhodes-wedding-venues.",
+      "blocking": true
+    },
+    {
+      "to": "orchestrator",
+      "question": "No author named in any input; package uses \"Wedded Wonderland\" (organisation). Confirm the byline.",
+      "blocking": false
+    }
+  ],
+  "assumptions": [
+    "Title and meta title \"9 Rhodes Wedding Venues From Lindos to Rhodes Town\" (9 venues qualified; 02-seo.json said 10 and Old Town).",
+    "Meta description from 02-seo.json with \"the medieval Old Town\" replaced by \"Rhodes Town\" (no venue inside the Old Town walls).",
+    "Tag \"Rhodes Old Town\" from 01-brief.json replaced by \"Rhodes Town\" for the same reason.",
+    "Excerpt is the first sentence of the opening paragraph.",
+    "content_type \"Guide\" and cluster \"Getting Married in Greece\" as instructed (brief says \"comparison\").",
+    "Primary CTA: 09-cro.json fills the marker with the existing sentence, unchanged, so no new block or link was inserted; the marker became a <!-- CTA BLOCK: primary --> comment.",
+    "JSON-LD is Article + BreadcrumbList + FAQPage only, as instructed (no ItemList).",
+    "verify_items and needs_signoff empty: no [[VERIFY]] markers and no prices in the copy."
+  ],
+  "verify_items": [],
+  "tools_used": [
+    "Bash (python3 -I)"
+  ],
+  "next_agent": [
+    "orchestrator"
+  ],
+  "payload": {
+    "title": "9 Rhodes Wedding Venues From Lindos to Rhodes Town",
+    "slug": "rhodes-wedding-venues",
+    "url_path": "/destination-weddings/rhodes-wedding-venues",
+    "content_type": "Guide",
+    "cluster": "Getting Married in Greece",
+    "categories": [
+      "Destination Weddings",
+      "Greece",
+      "Venues"
+    ],
+    "primary_category": "Destination Weddings",
+    "tags": [
+      "Getting Married in Greece",
+      "Rhodes",
+      "Rhodes wedding venues",
+      "Lindos",
+      "Rhodes Town",
+      "Dodecanese"
+    ],
+    "excerpt": "Rhodes wedding venues sit in four parts of the island: Lindos and the south, Rhodes Town in the north, the east coast around Kallithea, and the west coast at Ixia.",
+    "key_takeaways": [
+      "Choose an area before a venue, because a village wedding, a large town reception and a resort week each point to a different part of the island.",
+      "Grande Albergo delle Rose in Rhodes Town is the only venue here that publishes a reception figure, with seating for 450 guests.",
+      "A civil marriage of foreign nationals on Rhodes needs a certificate of no impediment valid for six months, officially translated into Greek and carrying an Apostille for non-EU countries.",
+      "Greek summers bring frequent heatwaves and a wildfire season from June to September, so plan shade, a later ceremony and a covered fallback for a summer date."
+    ],
+    "body_markdown_file": "content/posts/rhodes-wedding-venues/11-body.md",
+    "faq": [
+      {
+        "q": "Which Rhodes wedding venues are on the beach?",
+        "a": "Aquagrand on Navarone Bay, Atrium Palace on Kalathos beach and Atrium Prestige on Lachania private beach all offer beach ceremonies. Grande Albergo delle Rose has an adjoining beach, and Elysium offers a reception setting by the beach on Kallithea bay."
+      },
+      {
+        "q": "Can we have a wedding ceremony at St Paul's Bay?",
+        "a": "Yes. St Paul's chapel, below the Acropolis of Lindos, is on the municipality's list of civil ceremony locations. Aquagrand and Atrium Palace both offer it as a ceremony option, and Atrium Palace advises booking it as early as possible."
+      },
+      {
+        "q": "Can we get married in Rhodes Old Town?",
+        "a": "None of the venues on this list is inside the Old Town walls, so plan the Medieval Town as your portrait backdrop. The Medieval Town is a UNESCO World Heritage Site. Civil ceremony locations in Rhodes City are set by the municipality and include Rodini park, Monte Smith and the Town Hall staircase. Grande Albergo delle Rose sits within reach of the Medieval Town."
+      },
+      {
+        "q": "Can we book a Rhodes venue for exclusive use?",
+        "a": "Melenos in Lindos suggests reserving the entire hotel for a minimum of three nights. The other venues here do not publish exclusive use, so ask each one whether the wedding spaces or the whole property can be reserved for you."
+      },
+      {
+        "q": "Do Rhodes venues offer wedding packages?",
+        "a": "Some do. Rodos Palace offers set packages or a tailor-made one, and Aquagrand publishes its Aqua Pearl and Aqua Marine packages. To see how inclusions compare across the country, read how Greece wedding package inclusions compare."
+      },
+      {
+        "q": "Can Australians legally get married in Rhodes?",
+        "a": "Yes, with the right documents. As at November 2026, a civil marriage of foreign nationals needs a certificate of no impediment valid for six months, officially translated into Greek, with an Apostille for documents from outside the European Union. The Australian Embassy in Athens issues CNIs and apostilles, by appointment or by post."
+      }
+    ],
+    "images": [
+      {
+        "slot_id": "featured",
+        "file": "content/posts/rhodes-wedding-venues/images/rhodes-wedding-venues-lindos-ceremony-terrace-hero.webp",
+        "role": "featured",
+        "status": "needed"
+      },
+      {
+        "slot_id": "area-lindos-south-east",
+        "file": "content/posts/rhodes-wedding-venues/images/rhodes-wedding-venues-lindos-bay-view-terrace.webp",
+        "role": "inline",
+        "status": "needed"
+      },
+      {
+        "slot_id": "area-old-town",
+        "file": "content/posts/rhodes-wedding-venues/images/rhodes-wedding-venues-old-town-courtyard-dinner.webp",
+        "role": "inline",
+        "status": "needed"
+      },
+      {
+        "slot_id": "area-east-coast",
+        "file": "content/posts/rhodes-wedding-venues/images/rhodes-wedding-venues-east-coast-beachfront-ceremony.webp",
+        "role": "inline",
+        "status": "needed"
+      },
+      {
+        "slot_id": "area-west-coast",
+        "file": "content/posts/rhodes-wedding-venues/images/rhodes-wedding-venues-west-coast-sunset-reception.webp",
+        "role": "inline",
+        "status": "needed"
+      },
+      {
+        "slot_id": "practical-compare",
+        "file": "content/posts/rhodes-wedding-venues/images/rhodes-wedding-venues-ceremony-setup-detail.webp",
+        "role": "inline",
+        "status": "needed"
+      },
+      {
+        "slot_id": "practical-when-to-marry",
+        "file": "content/posts/rhodes-wedding-venues/images/rhodes-wedding-venues-sunset-table-terrace.webp",
+        "role": "inline",
+        "status": "needed"
+      }
+    ],
+    "cta": {
+      "text": "Book a Wedded Concierge consultation",
+      "subtext": "The fee is agreed in writing before any work begins.",
+      "link": "/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=rhodes-wedding-venues&utm_content=primary",
+      "placement": "At the former <!-- CTA: primary --> marker, at the end of 'How to compare Rhodes venues like for like' (marked <!-- CTA BLOCK: primary --> in 11-body.md). The existing sentence's 'book a Wedded Concierge consultation' link is the primary CTA, unchanged per 09-cro.json."
+    },
+    "secondary_cta": {
+      "text": "Talk to Wedded Concierge",
+      "subtext": "One Wedded Advisor, start to finish.",
+      "link": "/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=rhodes-wedding-venues&utm_content=secondary",
+      "placement": "Inline link at the end of the west coast paragraph in 'Choosing an area of the island' (marked <!-- CTA INLINE: secondary --> in 11-body.md)."
+    },
+    "closing_cta": {
+      "text": "start your shortlist with Wedded Concierge",
+      "link": "/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=rhodes-wedding-venues&utm_content=closing",
+      "placement": "Inline link at the end of 'Shortlist your Rhodes venues with a Wedded Advisor' (marked <!-- CTA INLINE: closing --> in 11-body.md)."
+    },
+    "lead_magnet": {
+      "name": "Wedded Wonderland digital magazine",
+      "link": "/magazine?utm_source=blog&utm_medium=content&utm_campaign=rhodes-wedding-venues&utm_content=magnet",
+      "placement": "Final line under 'Shortlist your Rhodes venues with a Wedded Advisor' (marked <!-- LEAD MAGNET --> in 11-body.md)."
+    },
+    "tracking_links": [
+      "/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=rhodes-wedding-venues&utm_content=primary",
+      "/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=rhodes-wedding-venues&utm_content=secondary",
+      "/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=rhodes-wedding-venues&utm_content=closing",
+      "/magazine?utm_source=blog&utm_medium=content&utm_campaign=rhodes-wedding-venues&utm_content=magnet"
+    ],
+    "seo": {
+      "meta_title": "9 Rhodes Wedding Venues From Lindos to Rhodes Town",
+      "meta_description": "Rhodes wedding venues compared area by area, from Lindos and St Paul's Bay to Rhodes Town and both coasts, with capacity and ceremony settings.",
+      "focus_keyword": "rhodes wedding venues",
+      "canonical": "https://weddedwonderland.com/destination-weddings/rhodes-wedding-venues",
+      "og_image_slot": "featured"
+    },
+    "schema_jsonld": {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Article",
+          "@id": "https://weddedwonderland.com/destination-weddings/rhodes-wedding-venues#article",
+          "headline": "9 Rhodes Wedding Venues From Lindos to Rhodes Town",
+          "description": "Rhodes wedding venues compared area by area, from Lindos and St Paul's Bay to Rhodes Town and both coasts, with capacity and ceremony settings.",
+          "author": {
+            "@type": "Organization",
+            "name": "Wedded Wonderland",
+            "url": "https://weddedwonderland.com/"
+          },
+          "publisher": {
+            "@type": "Organization",
+            "name": "Wedded Wonderland",
+            "url": "https://weddedwonderland.com/"
+          },
+          "datePublished": "",
+          "mainEntityOfPage": "https://weddedwonderland.com/destination-weddings/rhodes-wedding-venues",
+          "inLanguage": "en-AU"
+        },
+        {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Home",
+              "item": "https://weddedwonderland.com/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Destination Weddings",
+              "item": "https://weddedwonderland.com/destination-weddings"
+            },
+            {
+              "@type": "ListItem",
+              "position": 3,
+              "name": "9 Rhodes Wedding Venues From Lindos to Rhodes Town",
+              "item": "https://weddedwonderland.com/destination-weddings/rhodes-wedding-venues"
+            }
+          ]
+        },
+        {
+          "@type": "FAQPage",
+          "@id": "https://weddedwonderland.com/destination-weddings/rhodes-wedding-venues#faq",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "Which Rhodes wedding venues are on the beach?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Aquagrand on Navarone Bay, Atrium Palace on Kalathos beach and Atrium Prestige on Lachania private beach all offer beach ceremonies. Grande Albergo delle Rose has an adjoining beach, and Elysium offers a reception setting by the beach on Kallithea bay."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Can we have a wedding ceremony at St Paul's Bay?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes. St Paul's chapel, below the Acropolis of Lindos, is on the municipality's list of civil ceremony locations. Aquagrand and Atrium Palace both offer it as a ceremony option, and Atrium Palace advises booking it as early as possible."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Can we get married in Rhodes Old Town?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "None of the venues on this list is inside the Old Town walls, so plan the Medieval Town as your portrait backdrop. The Medieval Town is a UNESCO World Heritage Site. Civil ceremony locations in Rhodes City are set by the municipality and include Rodini park, Monte Smith and the Town Hall staircase. Grande Albergo delle Rose sits within reach of the Medieval Town."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Can we book a Rhodes venue for exclusive use?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Melenos in Lindos suggests reserving the entire hotel for a minimum of three nights. The other venues here do not publish exclusive use, so ask each one whether the wedding spaces or the whole property can be reserved for you."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Do Rhodes venues offer wedding packages?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Some do. Rodos Palace offers set packages or a tailor-made one, and Aquagrand publishes its Aqua Pearl and Aqua Marine packages. To see how inclusions compare across the country, read how Greece wedding package inclusions compare."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Can Australians legally get married in Rhodes?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes, with the right documents. As at November 2026, a civil marriage of foreign nationals needs a certificate of no impediment valid for six months, officially translated into Greek, with an Apostille for documents from outside the European Union. The Australian Embassy in Athens issues CNIs and apostilles, by appointment or by post."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    "author": "Wedded Wonderland",
+    "status": "draft",
+    "verify_items": [],
+    "needs_signoff": [],
+    "redirects_recommended": "None: new article, no redirect.",
+    "deferred_business_items": [],
+    "draft_note": "DRAFT ONLY. A human clicks Publish; no agent publishes or schedules this post.\n\n1. [[VERIFY]] items in the copy: none.\n\n2. Nic sign-off prices: none (no prices, nothing for Nic to sign off).\n\n3. Image slots needed (7): featured, area-lindos-south-east, area-old-town, area-east-coast, area-west-coast, practical-compare, practical-when-to-marry. No licensed or permissioned image yet; never AI, competitor or search-result images.\n\n4. Before publishing: confirm the byline. New article, no redirect. See booking-checklist.md for venue house rules and legal documents to confirm in writing."
+  }
+}

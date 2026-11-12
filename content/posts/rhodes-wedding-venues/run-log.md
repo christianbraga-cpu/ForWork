@@ -10,3 +10,4 @@
 05:27 03 top-up E done: no Old Town venue states weddings on its own site (Avalon inside the walls shows wedding photos only; held as reserve); Visit Greece UNESCO setting fact recorded.
 05:28 03 top-up F done: Kallithea Springs and Elysium qualify; municipal ceremony venues page read (no Old Town site listed; Lindos St Paul's chapel, Filerimos, Kallithea Springs, Rhodes City sites). Final count 9 (Melenos, Aquagrand, Atrium Palace, Atrium Prestige, Grande Albergo delle Rose, Atrium Platinum, Rodos Palace, Kallithea Springs, Elysium); reserves Lindos Royal (luxury fit unconfirmed), Avalon (Old Town, wedding photos only). No Old Town venue qualifies: title becomes '9 Rhodes Wedding Venues From Lindos to Rhodes Town'. Packs merged.
 05:32 05 draft done: ~4,360 words, 9 venues, 0 VERIFY, scan clean except the all-inclusive URL slug; first-draft docx built.
+05:42 13 orchestrator finished: package, docx, run report; title 9 venues
