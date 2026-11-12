@@ -8,3 +8,4 @@
 22:49 03 user approved read: Greek Orthodox Archdiocese of Australia marriage page read live; 23 facts (fact_300-322) saved as part-3; church conditions, calendar, documents and service resolved. Fee amount not recorded.
 22:52 05 writer done: about 3,380 words, 0 VERIFY.
 22:54 06 editor pass_with_edits 4.29, 10 edits applied (05-draft-r2.md); 07 readers done.
+22:55 07b panel revise (enquire 2.6); 2 must-fix.
