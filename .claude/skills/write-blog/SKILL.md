@@ -130,6 +130,48 @@ article folder and push.
 - Keep subagent prompts short: give paths, not file contents.
 - If a connector fails, use the fallback the agent describes and record it in the run log.
 
+## Fast mode (when the user says "fast mode")
+
+"Fast mode" changes the work, not just the model. Target: final package in
+about 30 to 40 minutes.
+
+- Stage 0: SERP in 3 markets (Sydney, Melbourne, plus the audience's main
+  overseas market); search snippets only, no full reads of top pages;
+  volumes for 3 to 4 keywords. Reuse any existing brief or SERP file.
+- Stage 1: split research into 2 or 3 parallel researcher batches by topic,
+  each with its own fact-ID range (F-001, F-100, F-200), one round, no
+  retries, about 8 minutes each. Reuse facts from earlier research packs in
+  `articles/` where they are still current, and say so.
+- Stage 2: writer with an 8 to 10 minute budget.
+- Stage 3: fact-checker, seo-reviewer and the primary icp-reader only, in
+  parallel. Voice is checked by the copy editor.
+- Stage 4: one revision loop maximum; remaining items go to the must-fix list.
+- Stage 5: no separate photo-curator; the copy editor writes short image slot
+  briefs into the publish package.
+- Stage 6: copy editor as normal.
+
+## Decisions and blockers
+
+- Never stop the pipeline for a decision that has a safe default. Pick the
+  default, record it in the run log as "Decision (default, change if you
+  want)", tell the user in one line at the top of the next message, and keep
+  going. Reverse later if the user says so.
+- Only stop for a decision with no safe default (e.g. a legal claim the title
+  depends on, or publishing). Then put it at the top of the message in plain
+  text with numbered options, so the user can reply with a number, and keep
+  every stage that does not depend on it running.
+- Never end a turn with a background agent silently lost: if an agent's
+  output file is missing when you expect it, relaunch it at once (it resumes
+  from its partial file) and say so in one line.
+
+## Recovery after restarts
+
+- After launching any background stage, schedule a check-in with
+  `send_later` (about 15 minutes) if the tool is available. When it fires,
+  check that the stage's output file grew; if not, relaunch the stage.
+- Each stage's output file is the checkpoint: a relaunch reads it and
+  continues.
+
 ## Running without permission prompts
 
 The project allow rules in `.claude/settings.json` only match simple, single
