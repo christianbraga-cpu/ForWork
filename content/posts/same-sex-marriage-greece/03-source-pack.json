@@ -1,0 +1,696 @@
+{
+  "agent": "planner-sme",
+  "task_id": "same-sex-marriage-greece",
+  "stage": "03",
+  "status": "complete",
+  "round": 1,
+  "inputs_used": [
+    "mcp__Apify__apify--web-search x2 (2026-11-12): English query returned only editorial/social results; Greek query restricted to Greek government domains returned official URLs",
+    "mcp__Apify__apify--web-fetch https://www.e-efka.gov.gr/sites/default/files/2024-05/5089-24.pdf (HTTP 200, full FEK A' 27/16.02.2024 text of Law 5089/2024, hosted by e-EFKA)",
+    "mcp__Apify__apify--web-fetch https://www.ypes.gr/wp-content/uploads/2024/03/eggr20931-egk240-20240304.pdf (HTTP 200, Ministry of Interior Circular 240, 4 March 2024)",
+    "mcp__Apify__apify--web-fetch https://www.hellenicparliament.gr/Nomothetiko-Ergo/Anazitisi-Nomothetikou-Ergou?law_id=ebe2964c-c991-4ac0-9c09-b109017cdcad (HTTP 200, Hellenic Parliament legislative record)",
+    "content/posts/rhodes-wedding-venues/03-source-pack-part-6.json (fact_600 to fact_602 copied as fact_16 to fact_18)",
+    "content/posts/rhodes-wedding-venues/03-source-pack-part-5.json (fact_500 to fact_505 copied as fact_19 to fact_24; fact_506 to fact_509 are private venue facts, not copied)",
+    "No 01-brief.json or 02-seo.json in the post folder; must_include derived from the orchestrator's task",
+    "Live round 2026-11-12 (apify web-search x2, web-fetch x4, one round, no retries): Smartraveller Greece (200), Smartraveller getting married overseas (200), AGD Marriage equality in Australia (200), Smartraveller LGBTI travellers guessed URL (404, not used).",
+    "Venue search (one apify web-search): no official venue page in results; results were planners, a photographer and social media posts, none used. No venue pages fetched.",
+    "Copied (same source, date and wording; origin noted in each claim): content/posts/greek-orthodox-wedding/03-source-pack-part-1.json facts 103, 104, 105, 106, 108, 110; content/posts/greek-orthodox-wedding/03-source-pack-part-3.json facts 310, 304.",
+    "content/posts/same-sex-marriage-greece/01-brief.json, 00-input.json"
+  ],
+  "self_qa": {
+    "checks": [
+      {
+        "check": "Every fact has a source and date",
+        "pass": true
+      },
+      {
+        "check": "No price without a source; all prices in needs_signoff",
+        "pass": true,
+        "note": "No prices recorded; Rhodes fee mentioned without amount."
+      },
+      {
+        "check": "Every must-include covered or [[VERIFY]]",
+        "pass": true
+      },
+      {
+        "check": "No invented quotes, statistics or real weddings",
+        "pass": true
+      },
+      {
+        "check": "Legal info from government sources only, dated",
+        "pass": true,
+        "note": "All law facts from the Greek Government Gazette text, Ministry of Interior and Hellenic Parliament, read 2026-11-12. Translations from Greek are the agent's own."
+      },
+      {
+        "check": "Australian/embassy source for CNI and recognition",
+        "pass": false,
+        "note": "Not read in fast mode; left as verify_items."
+      }
+    ],
+    "confidence": 0.75
+  },
+  "open_questions": [
+    {
+      "to": "luxury-writer",
+      "question": "State legal position 'as at November 2026' and add that the Wedded Advisor confirms current requirements with the municipality. Translations of the Civil Code wording are ours from the Greek; present them as paraphrase or 'translated from Greek'. Do not state that foreigners face no extra requirement: the sources are silent, not explicit.",
+      "blocking": false
+    },
+    {
+      "to": "orchestrator",
+      "question": "No Greek Embassy Canberra, DFAT, Thira or Mykonos page was read. A batch B could cover the Australian certificate of no impediment for same-sex couples and Santorini/Mykonos municipal pages.",
+      "blocking": false
+    },
+    {
+      "to": "orchestrator",
+      "question": "No archived Archdiocese fact says in words that the Church's sacramental union is of a man and a woman; should a later round read greekorthodox.org.au for that line, or should the article say only that the Orthodox Church does not perform same-sex weddings once sourced?",
+      "blocking": false
+    },
+    {
+      "to": "orchestrator",
+      "question": "No Greek venue was found whose own site says it hosts same-sex or LGBTQ+ weddings; the venue section should carry questions to ask, not named venues, unless a later round confirms one.",
+      "blocking": false
+    },
+    {
+      "to": "orchestrator",
+      "question": "Smartraveller's LGBTQIA+ advice page URL is unconfirmed (guessed URL 404); find it from the Greece page link before linking.",
+      "blocking": false
+    }
+  ],
+  "assumptions": [
+    "Law 5089/2024 text read from the e-EFKA (government agency) copy of FEK A' 27/16.02.2024; matches the FEK number and date on the Hellenic Parliament record.",
+    "Article 13's one-year transitional window ran from 16 February 2024 and has passed as at November 2026; recorded for completeness only.",
+    "BOOKING CHECKLIST: Rhodes municipality: confirm current document list for non-EU couples, registrar availability for the chosen region, fee amount, witness details and the next-day signing appointment.",
+    "Smartraveller's two wordings differ in tone (fact_100 'attitudes vary' vs fact_101 'isn't widely accepted'); quote each as worded, do not merge.",
+    "fact_115 and fact_116 are copied Smartraveller facts (read 11 November 2026) and are confirmed by the 12 November live read; fact_106 to fact_108 are the fresh live versions.",
+    "BOOKING CHECKLIST: any shortlisted venue: written confirmation that it hosts same-sex weddings, whether the civil ceremony and celebration can be on the same day, the officiant for the symbolic ceremony, privacy arrangements and guest room block."
+  ],
+  "verify_items": [
+    "[[VERIFY: Whether an Australian same-sex couple (no Greek citizen, no Greek residence) faces any extra requirement to marry at a Greek municipality. Neither Law 5089/2024 nor Circular 240 states one, and neither addresses foreign nationals; confirm with the chosen municipality's registry office (e.g. Rhodes, Thira, Mykonos) and the Greek Embassy in Canberra, as at November 2026.]]",
+    "[[VERIFY: How an Australian obtains the certificate of no impediment to marriage the Rhodes documents page requires (fact_16), and that it is issued for a same-sex couple. No Australian government (DFAT) or Greek Embassy Canberra page was read in this batch.]]",
+    "[[VERIFY: Rhodes municipal pages conflict: the English Ceremony Venues page lists a residence permit for non-EU countries and a full birth certificate (fact_23); the Greek documents page does not (fact_16). Confirm the current list with the Rhodes registry.]]",
+    "[[VERIFY: That the Rhodes civil marriage process and ceremony venue list apply equally to same-sex couples. The Rhodes pages read do not mention same-sex couples either way; Circular 240 (fact_06) told all municipalities to update their forms so spouses can be recorded without distinction of sex.]]",
+    "[[VERIFY: Whether a marriage of two Australian (non-Greek) same-sex partners in Greece needs any step for recognition in Australia. Not covered by any source read; needs an Australian government source.]]",
+    "[[VERIFY: Thira (Santorini) and Mykonos municipal civil marriage procedure for foreign nationals. No municipal page for either was read in this batch.]]",
+    "[[VERIFY: that the Greek Orthodox Church's sacramental marriage is only between a man and a woman, in the Church's own words; the copied Archdiocese facts (fact_118 laws and regulations set by the Holy Canons; fact_119 crowns as the bond between bride and groom) do not state it outright, so the writer must not state it as a sourced fact until a line from greekorthodox.org.au or another official church page is quoted]]",
+    "[[VERIFY: no Greek venue's own official page was found saying in words that it hosts same-sex or LGBTQ+ weddings (one search on 12 November 2026 returned only planners, photographers and social posts); name no venue until one is confirmed]]",
+    "[[VERIFY: the current URL of Smartraveller's 'Advice for LGBTQIA+ people' page (linked from the Greece page); the guessed URL /before-you-go/travellers-with-specific-needs/lgbti-travellers returned 404 on 12 November 2026]]"
+  ],
+  "tools_used": [
+    "mcp__Apify__apify--web-search",
+    "mcp__Apify__apify--web-fetch"
+  ],
+  "next_agent": [
+    "luxury-writer"
+  ],
+  "payload": {
+    "facts": [
+      {
+        "fact_id": "fact_01",
+        "claim": "Greek Law 5089/2024 is titled 'Equality in civil marriage, amendment of the Civil Code and other provisions' (in Greek: 'Isotita ston politiko gamo'). It was published in the Government Gazette (FEK) A' 27 on 16 February 2024 (text as reproduced by e-EFKA, a Greek government agency; original Greek, translated here).",
+        "source": "https://www.e-efka.gov.gr/sites/default/files/2024-05/5089-24.pdf",
+        "source_type": "government",
+        "checked": "2026-11-12",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_02",
+        "claim": "Article 15 of Law 5089/2024 states that the law comes into force from its publication in the Government Gazette (16 February 2024), unless otherwise provided in individual provisions.",
+        "source": "https://www.e-efka.gov.gr/sites/default/files/2024-05/5089-24.pdf",
+        "source_type": "government",
+        "checked": "2026-11-12",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_03",
+        "claim": "The Hellenic Parliament's legislative record for Law 5089 shows the bill was tabled on 01/02/2024 by the Ministry of State, voted on 15/02/2024, and published as FEK 27 A'/16.2.2024.",
+        "source": "https://www.hellenicparliament.gr/Nomothetiko-Ergo/Anazitisi-Nomothetikou-Ergou?law_id=ebe2964c-c991-4ac0-9c09-b109017cdcad",
+        "source_type": "government",
+        "checked": "2026-11-12",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_04",
+        "claim": "Article 1 of Law 5089/2024 states its purpose is to secure the principle of equality by extending the possibility of marriage to persons of the same sex, and to strengthen protection from discrimination, towards implementing the National Strategy for LGBTQI Equality.",
+        "source": "https://www.e-efka.gov.gr/sites/default/files/2024-05/5089-24.pdf",
+        "source_type": "government",
+        "checked": "2026-11-12",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_05",
+        "claim": "Article 3 of Law 5089/2024 amends article 1350(1) of the Greek Civil Code to read: 'Marriage is contracted between two persons of different or the same sex. Marriage requires the agreement of the intending spouses. The relevant declarations are made in person and without condition or time limit.' (translated from Greek)",
+        "source": "https://www.e-efka.gov.gr/sites/default/files/2024-05/5089-24.pdf",
+        "source_type": "government",
+        "checked": "2026-11-12",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_06",
+        "claim": "Ministry of Interior Circular 240 (4 March 2024), sent to all municipalities, registry offices and Greek consular authorities, states that following Law 5089/2024 a marriage between two persons of the same sex is considered valid in the Greek legal order, is registered in the civil registry books and recorded in the Citizens' Register (Mitroo Politon). It also notes that new templates for the declaration of a civil marriage were posted on the Ministry of Interior website.",
+        "source": "https://www.ypes.gr/wp-content/uploads/2024/03/eggr20931-egk240-20240304.pdf",
+        "source_type": "government",
+        "checked": "2026-11-12",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_07",
+        "claim": "Circular 240 states that, per the law's explanatory report, the law does not interfere with the constitutionally protected freedom of the Eastern Orthodox Church or other religions known in Greece (article 1367 Civil Code) to set the conditions of a religious ceremony. In other words, the reform is to civil marriage; it does not oblige any church to perform a same-sex religious wedding.",
+        "source": "https://www.ypes.gr/wp-content/uploads/2024/03/eggr20931-egk240-20240304.pdf",
+        "source_type": "government",
+        "checked": "2026-11-12",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_08",
+        "claim": "Circular 240 states that the law does not amend the Civil Code provisions on medically assisted reproduction (articles 1455 to 1460), which remain as they are.",
+        "source": "https://www.ypes.gr/wp-content/uploads/2024/03/eggr20931-egk240-20240304.pdf",
+        "source_type": "government",
+        "checked": "2026-11-12",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_09",
+        "claim": "Circular 240 states the law does not amend the adoption articles (1542 onwards) but that extending marriage to same-sex couples means the adoption provisions apply to them, including adoption of a minor by a same-sex couple and adoption of one spouse's child by the other; a child gains a legal family tie to the parent's same-sex spouse only if adopted by them.",
+        "source": "https://www.ypes.gr/wp-content/uploads/2024/03/eggr20931-egk240-20240304.pdf",
+        "source_type": "government",
+        "checked": "2026-11-12",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_10",
+        "claim": "Article 10 of Law 5089/2024 recognises as valid, from the date they took place, same-sex marriages of Greek citizens performed abroad before the law came into force under the law of the place of celebration, unless one spouse has since entered a new valid marriage, the marriage's non-existence was already recognised by an irrevocable Greek court decision, or the marriage was dissolved or annulled. Circular 240 notes this concerns marriages where at least one spouse is a Greek citizen.",
+        "source": "https://www.e-efka.gov.gr/sites/default/files/2024-05/5089-24.pdf ; https://www.ypes.gr/wp-content/uploads/2024/03/eggr20931-egk240-20240304.pdf",
+        "source_type": "government",
+        "checked": "2026-11-12",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_11",
+        "claim": "Article 11 of Law 5089/2024 provides that a parent-child relationship recorded in public documents or a court decision of a third country is recognised in Greece regardless of the sex of one or both parents.",
+        "source": "https://www.e-efka.gov.gr/sites/default/files/2024-05/5089-24.pdf",
+        "source_type": "government",
+        "checked": "2026-11-12",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_12",
+        "claim": "Article 13 of Law 5089/2024 allowed same-sex couples in a Greek cohabitation agreement (Law 4356/2015) to marry within one year of the law coming into force and declare that the marriage applies retrospectively from the date of the cohabitation agreement. This was a one-year transitional window from 16 February 2024.",
+        "source": "https://www.e-efka.gov.gr/sites/default/files/2024-05/5089-24.pdf",
+        "source_type": "government",
+        "checked": "2026-11-12",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_13",
+        "claim": "Article 4 of Law 5089/2024 amends article 1505 Civil Code: if parents do not declare their children's surname, children take a compound surname of both parents' surnames, the alphabetically first placed first; the surname declaration is made before the marriage, to a notary or to the officiant, who must request it. This applies to marriages performed after the law came into force.",
+        "source": "https://www.e-efka.gov.gr/sites/default/files/2024-05/5089-24.pdf",
+        "source_type": "government",
+        "checked": "2026-11-12",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_14",
+        "claim": "Law 5089/2024 (articles 6 to 8) extends parental leave, maternity-related benefits and other spousal and parental entitlements under Greek employment and social security law to same-sex spouses and parents.",
+        "source": "https://www.e-efka.gov.gr/sites/default/files/2024-05/5089-24.pdf",
+        "source_type": "government",
+        "checked": "2026-11-12",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_15",
+        "claim": "Neither the text of Law 5089/2024 nor Ministry of Interior Circular 240 (as read) states any Greek residency or Greek nationality requirement for a same-sex couple to marry in Greece. Article 3 simply amends the Civil Code marriage condition. Neither document addresses how foreign nationals' capacity to marry is assessed; the law's foreign-element chapter (articles 10 and 11) deals only with marriages and parentage created abroad.",
+        "source": "https://www.e-efka.gov.gr/sites/default/files/2024-05/5089-24.pdf ; https://www.ypes.gr/wp-content/uploads/2024/03/eggr20931-egk240-20240304.pdf",
+        "source_type": "government",
+        "checked": "2026-11-12",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_16",
+        "claim": "[Copied from rhodes-wedding-venues fact_600] The Municipality of Rhodes (rhodes.gr) publishes a page, in Greek, listing the supporting documents for performing a civil marriage of foreign nationals (under article 5(1) of Presidential Decree 391/1982): a joint application by the couple; a marriage licence or a certificate of no impediment to marriage from the person's consular or other public authority, naming the person they will marry, valid for six months; a copy of each passport; a municipal fee (a fee applies); and a form with the newlyweds' details.",
+        "source": "https://www.rhodes.gr/dikaiologitika-gia-ekdosi-adeias-telesi-gamou/",
+        "source_type": "government",
+        "checked": "2026-11-12",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_17",
+        "claim": "[Copied from rhodes-wedding-venues fact_601] The Municipality of Rhodes page states that documents issued by foreign authorities must be originals of recent issue and officially translated into Greek, by a Greek lawyer, by the Greek Embassy abroad or by the Greek Ministry of Foreign Affairs, and that for countries outside the European Union they require certification with the Apostille stamp.",
+        "source": "https://www.rhodes.gr/dikaiologitika-gia-ekdosi-adeias-telesi-gamou/",
+        "source_type": "government",
+        "checked": "2026-11-12",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_18",
+        "claim": "[Copied from rhodes-wedding-venues fact_602] The Municipality of Rhodes page states that details not shown on the documents provided can be recorded after the couple files a solemn declaration under Law 1599/1986, using the municipality's template.",
+        "source": "https://www.rhodes.gr/dikaiologitika-gia-ekdosi-adeias-telesi-gamou/",
+        "source_type": "government",
+        "checked": "2026-11-12",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_19",
+        "claim": "[Copied from rhodes-wedding-venues fact_500] The Municipality of Rhodes 'Ceremony Venues' page (rhodes.gr, page last modified January 2024) lists civil ceremony locations for Rhodes City: Square of Antinavarchou P. Ioannidi; Acropoleos Street on St Stefanos hill (Monte Smith); Rodini park including courtyard; the Rodian Mansion including courtyard (marked 'temporarily unavailable due to renovation'); the Aquarium courtyard; and the Town Hall's central entrance staircase. A Rhodes City registrar is named at Rhodes Town Hall.",
+        "source": "https://www.rhodes.gr/tourist-guide/ceremony-venues/",
+        "source_type": "government",
+        "checked": "2026-11-12",
+        "is_price": false,
+        "conflicts": "The page does not list any site inside the medieval Old Town walls as a civil ceremony location. The Rodian Mansion is flagged as temporarily unavailable on a page last modified January 2024, so its current status needs checking."
+      },
+      {
+        "fact_id": "fact_20",
+        "claim": "[Copied from rhodes-wedding-venues fact_501] The same municipal page lists Filerimos as the civil ceremony location for Ialysos, and Kallithea Springs & Spa, Faliraki Beach and Koskinou Beach for Kallithea, each region with its own named registrar.",
+        "source": "https://www.rhodes.gr/tourist-guide/ceremony-venues/",
+        "source_type": "government",
+        "checked": "2026-11-12",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_21",
+        "claim": "[Copied from rhodes-wedding-venues fact_502] For Lindos the municipal page lists Lindos Town Hall; St Paul's chapel / platform, described as 'perhaps the most picturesque setting of all', a tiny chapel perched below a cliff in the shadow of the Acropolis of Lindos next to the turquoise waters of St Paul's Bay; and Vliha Beach, on the seaside in front of a named hotel. Lindos has its own registrar at Lindos Town Hall.",
+        "source": "https://www.rhodes.gr/tourist-guide/ceremony-venues/",
+        "source_type": "government",
+        "checked": "2026-11-12",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_22",
+        "claim": "[Copied from rhodes-wedding-venues fact_503] The municipal page also lists civil ceremony locations in the Afandou region (including Afandou beach and Kolimbia beach), Archangelos region (Stegna beach, Petronas area at Stegna, Agia Agathi beach at Malona, Haraki beach), Attaviros region (Old Town Hall of Embonas and municipal communities of Agios Isidoros, Kritinia, Monolithos and Sianna), Kameiros region (neoclassical Municipal Library of Soroni), Petaloudes region (including the Valley of Butterflies and the old windmill of Maritsa), South Rhodes (including Prasonisi, Plimmiri and the coastline of Asklipio at Kiotari) and the Elafos hotel area on Prophet Ilias, Salakos.",
+        "source": "https://www.rhodes.gr/tourist-guide/ceremony-venues/",
+        "source_type": "government",
+        "checked": "2026-11-12",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_23",
+        "claim": "[Copied from rhodes-wedding-venues fact_504] Municipal conditions stated (Registry Office, Municipality of Rhodes): required documents include a full birth certificate translated into Greek, valid marriage licences or certificates of no impediment naming both partners and the wedding place, divorce or death certificates where relevant, a residence permit for non-EU countries, and passport copies; documents need an Apostille where applicable, also translated into Greek. Originals must be presented to the registrar two days before the wedding. A fee applies, payable at the registry office.",
+        "source": "https://www.rhodes.gr/tourist-guide/ceremony-venues/",
+        "source_type": "government",
+        "checked": "2026-11-12",
+        "is_price": false,
+        "conflicts": "This page lists 'a residence permit for non-EU countries' and a full birth certificate, which the Greek-language documents page (fact_16) does not list. Ask the Rhodes registry which list is current for non-EU (e.g. Australian) couples."
+      },
+      {
+        "fact_id": "fact_24",
+        "claim": "[Copied from rhodes-wedding-venues fact_505] The municipal page says the Town Hall of Rhodes ceremony takes place every Wednesday and Friday, with the couple returning to the registry office the next working day to sign and have the marriage certificate drawn up, and that two adult witnesses over 18 must be present.",
+        "source": "https://www.rhodes.gr/tourist-guide/ceremony-venues/",
+        "source_type": "government",
+        "checked": "2026-11-12",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_100",
+        "claim": "As at November 2026, Smartraveller's Greece advice (read live 12 November 2026; 'Still current at 13 November 2026', updated 30 September 2026), Local laws summary: 'Same-sex relationships are legal, though attitudes vary throughout the country. Avoid public displays of affection, especially in rural areas. Attitudes are generally more accepting on Greek islands such as Mykonos, Santorini and Ios.'",
+        "source": "https://www.smartraveller.gov.au/destinations/europe/greece",
+        "source_type": "government",
+        "checked": "2026-11-12",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_101",
+        "claim": "As at November 2026, Smartraveller's Greece advice, Local customs section (read live 12 November 2026): 'Avoid public displays of affection, especially in rural areas. Same-sex relationships are legal but isn't widely accepted.' The section links to Smartraveller's 'Advice for LGBTQIA+ people'.",
+        "source": "https://www.smartraveller.gov.au/destinations/europe/greece",
+        "source_type": "government",
+        "checked": "2026-11-12",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_102",
+        "claim": "As at November 2026, Smartraveller's Greece advice, Safety section (read live 12 November 2026): 'Racially motivated and homophobic attacks have occurred.' It also says serious physical and sexual assaults have occurred in Athens and on islands including Mykonos, Santorini, Zakynthos and Ios, and there is a risk of drink spiking.",
+        "source": "https://www.smartraveller.gov.au/destinations/europe/greece",
+        "source_type": "government",
+        "checked": "2026-11-12",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_103",
+        "claim": "As at November 2026, Smartraveller's Greece advice (read live 12 November 2026): if your Australian passport has an 'X' in the sex field, the Australian Government can't guarantee entry or transit to other countries; ask the embassy or consulate of your destinations whether they will accept it, and check all transit destinations too.",
+        "source": "https://www.smartraveller.gov.au/destinations/europe/greece",
+        "source_type": "government",
+        "checked": "2026-11-12",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_104",
+        "claim": "As at November 2026, Smartraveller's Greece advice (read live 12 November 2026) has no section on getting married; marriage steps must come from the Australian Embassy in Athens, Smartraveller's 'Getting married overseas' page and Greek official sources.",
+        "source": "https://www.smartraveller.gov.au/destinations/europe/greece",
+        "source_type": "government",
+        "checked": "2026-11-12",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_105",
+        "claim": "As at November 2026, Smartraveller's Greece advice (read live 12 November 2026): Greece is in the Schengen area; Australians can travel to the Schengen area for short trips without a visa for up to 90 days in any 180-day period; on arrival for a short stay on an Australian passport you register fingerprints and a photo under the European Entry/Exit System (EES), which is free and needs no action before arrival, and there may be delays at border crossings.",
+        "source": "https://www.smartraveller.gov.au/destinations/europe/greece",
+        "source_type": "government",
+        "checked": "2026-11-12",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_106",
+        "claim": "As at November 2026, Smartraveller 'Getting married overseas' (last updated 18/08/2026, read live 12 November 2026): some countries ask you to prove you aren't already married; the most common documents are a Certificate of No Impediment to Marriage (CNI) and certificates from a registry of births, deaths and marriages; the country may have more rules (for example a residence period); 'We can't tell you what you will need'; contact your destination's embassy or consulate. The Wedded Advisor confirms current requirements.",
+        "source": "https://www.smartraveller.gov.au/planning-trip/advice-your-planned-activities/getting-married-overseas",
+        "source_type": "government",
+        "checked": "2026-11-12",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_107",
+        "claim": "As at November 2026, Smartraveller 'Getting married overseas' (read live 12 November 2026): your registry of births, deaths and marriages can give a statement that there's no record you have been married before, a Single Status certificate or a No Record Result certificate; local authorities may also ask for divorce papers, the death certificate of a deceased spouse, and your original birth certificate and passport.",
+        "source": "https://www.smartraveller.gov.au/planning-trip/advice-your-planned-activities/getting-married-overseas",
+        "source_type": "government",
+        "checked": "2026-11-12",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_108",
+        "claim": "As at November 2026, Smartraveller 'Getting married overseas' (read live 12 November 2026): Australia doesn't recognise overseas marriages where one or both people are already married to someone else, not old enough to get married, too closely related, or forced to get married.",
+        "source": "https://www.smartraveller.gov.au/planning-trip/advice-your-planned-activities/getting-married-overseas",
+        "source_type": "government",
+        "checked": "2026-11-12",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_109",
+        "claim": "As at November 2026, the Attorney-General's Department 'Marriage equality in Australia' page (read live 12 November 2026; page metadata updated 3 December 2025): since 9 December 2017 the Marriage Act 1961 defines marriage as 'the union of 2 people to the exclusion of all others, voluntarily entered into for life', and 'same-sex marriages that took place overseas are generally recognised in Australia.' The Wedded Advisor confirms current requirements.",
+        "source": "https://www.ag.gov.au/families-and-marriage/marriage/marriage-equality-australia",
+        "source_type": "government",
+        "checked": "2026-11-12",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_110",
+        "claim": "As at November 2026, the Attorney-General's Department (read live 12 November 2026): if Australia recognises your overseas marriage, you can't get married again in Australia, but you may choose to hold another type of ceremony, such as a confirmation of vows or a recommitment ceremony.",
+        "source": "https://www.ag.gov.au/families-and-marriage/marriage/marriage-equality-australia",
+        "source_type": "government",
+        "checked": "2026-11-12",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_111",
+        "claim": "As at November 2026, the Attorney-General's Department (read live 12 November 2026): from 9 December 2017 same-sex married couples are treated the same as other married couples in Australia, whether the marriage happened before or after that date, or overseas (if Australia would recognise it as a valid overseas marriage). Contact: Marriage Law and Celebrants Section, 1800 550 343, outside Australia +61 2 6141 3111.",
+        "source": "https://www.ag.gov.au/families-and-marriage/marriage/marriage-equality-australia",
+        "source_type": "government",
+        "checked": "2026-11-12",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_112",
+        "claim": "As at November 2026, the Australian Embassy in Athens notarial services page (read live 11 November 2026) lists witnessing application forms for, and issuing, Certificates of No Impediment (CNI), witnessing notices of intended marriage, and legalisation of signatures and/or seals by authentication or apostille. An appointment is needed for all notarial services (Monday to Friday, 9:00am to 12:30pm), though apostille and CNI documents can be submitted by post; legalised (apostilled) documents and CNIs are available for collection within two working days unless same-day collection is arranged in advance, or can be returned by mail. A fee applies. The Wedded Advisor confirms current requirements. [Copied from mykonos-wedding part-1 fact_104.] [Copied from greek-orthodox-wedding part-1 fact_103.]",
+        "source": "https://greece.embassy.gov.au/athn/notarial.html",
+        "source_type": "government",
+        "checked": "2026-11-11",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_113",
+        "claim": "As at November 2026, the Australian Embassy in Athens (read live 11 November 2026) says it does not provide legal advice, the client is responsible for knowing which service they need, it does not witness signatures on overseas documents (ask local authorities who can witness, or get legal advice), and honorary consuls are not authorised to provide notarial services. [Copied from mykonos-wedding part-1 fact_105.] [Copied from greek-orthodox-wedding part-1 fact_104.]",
+        "source": "https://greece.embassy.gov.au/athn/notarial.html",
+        "source_type": "government",
+        "checked": "2026-11-11",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_114",
+        "claim": "Australian Embassy, Athens: 5 Hatziyianni Mexi Street, Athens 115 28; phone +30 210 870 4000; greece.embassy.gov.au. [Copied from greek-wedding-traditions part-1 fact_102.] [Copied from greek-orthodox-wedding part-1 fact_105.]",
+        "source": "https://www.smartraveller.gov.au/destinations/europe/greece",
+        "source_type": "government",
+        "checked": "2026-11-04",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_115",
+        "claim": "As at November 2026, Smartraveller (read live 11 November 2026) says DFAT can issue a CNI in Australia, but some local authorities only accept CNIs issued in their country, so ask the destination's embassy or consulate whether you need a CNI, whether you can get it in Australia, and whether it also needs an authentication or apostille. The Wedded Advisor confirms current requirements. [Copied from mykonos-wedding part-1 fact_101.] [Copied from greek-orthodox-wedding part-1 fact_106.]",
+        "source": "https://www.smartraveller.gov.au/planning-trip/advice-your-planned-activities/getting-married-overseas",
+        "source_type": "government",
+        "checked": "2026-11-11",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_116",
+        "claim": "As at November 2026, Smartraveller (read live 11 November 2026) says you cannot register an overseas marriage in Australia, but in most cases it is legally recognised if, when it took place, it was valid under the law of the country where it happened and would have been valid under Australian law had it occurred in Australia. A foreign marriage certificate is usually accepted as proof of the marriage but may not work as proof of a name change (check with your local registry of births, deaths and marriages), and Smartraveller suggests talking to a lawyer to confirm the certificate is valid in Australia. The Wedded Advisor confirms current requirements. [Copied from mykonos-wedding part-1 fact_102.] [Copied from greek-orthodox-wedding part-1 fact_108.]",
+        "source": "https://www.smartraveller.gov.au/planning-trip/advice-your-planned-activities/getting-married-overseas",
+        "source_type": "government",
+        "checked": "2026-11-11",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_117",
+        "claim": "Smartraveller advises dressing modestly in churches and religious buildings in Greece. [Copied from greek-wedding-traditions part-1 fact_103.] [Copied from greek-orthodox-wedding part-1 fact_110.]",
+        "source": "https://www.smartraveller.gov.au/destinations/europe/greece",
+        "source_type": "government",
+        "checked": "2026-11-04",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_118",
+        "claim": "Greek Orthodox Archdiocese of Australia: weddings are performed by a Priest recognised as canonical by the Archdiocese; the laws and regulations for weddings are set by the Holy Canons of the Orthodox Church and implemented by the Archdiocese, and apply to every Greek Orthodox Priest across Australia. [Copied from greek-orthodox-wedding part-3 fact_310.]",
+        "source": "https://greekorthodox.org.au/services-and-sacraments/marriage/",
+        "source_type": "other",
+        "checked": "2026-11-12",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_119",
+        "claim": "Greek Orthodox Archdiocese of Australia: the crowning is the climax of the Marriage Service; the crowns are a sign of the bond between bride and groom and represent the glory and honour God bestows on the couple. Crowns were usually plaited of lemon blossoms or flowers; today they are often silver or gold. The Best Man exchanges the crowns three times while the Priest and Chanter sing 'Lord our God, crown them in glory and honour.' [Copied from greek-orthodox-wedding part-3 fact_304.]",
+        "source": "https://greekorthodox.org.au/services-and-sacraments/marriage/",
+        "source_type": "other",
+        "checked": "2026-11-12",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_120",
+        "claim": "The Greek Orthodox Archdiocese of Australia's marriage page (Laws & Regulations) states: 'The sacramental union of a man and a woman is performed in an Orthodox Church according to the liturgical tradition, and blessed by a Priest who is recognised as canonical (authentic) by the Greek Orthodox Archdiocese of Australia.' Its Ceremony of Marriage section says marriage is a Sacrament 'through which the union of man and woman is sanctified by God.'",
+        "source": "https://greekorthodox.org.au/services-and-sacraments/marriage/",
+        "source_type": "other",
+        "checked": "2026-11-12",
+        "is_price": false,
+        "notes": "Orchestrator's live read of 12 November 2026 (approved by the user in the Greek Orthodox run); wording quoted from the page."
+      }
+    ],
+    "insider_details": [
+      {
+        "detail": "Greece's same-sex marriage law is a civil marriage reform. Plan the legal ceremony with the municipality's registrar (dimarchos or registrar), and treat any religious element as symbolic, because the law expressly leaves churches free to set their own rules.",
+        "fact_ids": [
+          "fact_05",
+          "fact_07"
+        ]
+      },
+      {
+        "detail": "Legal paperwork, not the venue, sets the timeline. On Rhodes the certificate of no impediment must name your partner and is valid for six months, foreign documents need an Apostille and a Greek translation, and the originals go to the registrar two days before the ceremony. Build at least a week on the island before the wedding date so nothing is rushed.",
+        "fact_ids": [
+          "fact_16",
+          "fact_17",
+          "fact_23"
+        ]
+      },
+      {
+        "detail": "On Rhodes the municipal civil ceremony can be held well beyond the Town Hall: Lindos' St Paul's chapel platform, Kallithea Springs, Filerimos and a list of beaches are all named municipal ceremony locations, each served by a local registrar. Choose the registrar region first, then the venue.",
+        "fact_ids": [
+          "fact_19",
+          "fact_20",
+          "fact_21",
+          "fact_22"
+        ]
+      },
+      {
+        "detail": "Rhodes Town Hall ceremonies run on Wednesdays and Fridays, and the couple goes back to the registry the next working day to sign and have the marriage certificate drawn up. Avoid booking a departure flight for the morning after.",
+        "fact_ids": [
+          "fact_24"
+        ]
+      },
+      {
+        "detail": "If either partner has a child, the law's surname rule applies: the surname declaration for future children is made before the wedding to a notary or the officiant. Raise this with your Wedded Advisor early if it matters to you.",
+        "fact_ids": [
+          "fact_13"
+        ]
+      },
+      {
+        "detail": "Order the paperwork from both ends early: Smartraveller says DFAT can issue a CNI in Australia but some authorities only accept ones issued locally, and the Embassy in Athens needs an appointment (weekday mornings) for notarial work, though CNI paperwork can go by post. Ask the municipality which version it accepts before booking flights.",
+        "fact_ids": [
+          "fact_106",
+          "fact_112",
+          "fact_115"
+        ]
+      },
+      {
+        "detail": "Once married in Greece, you can't marry each other again in Australia if the marriage is recognised, so a home celebration should be framed as a recommitment or confirmation of vows, not a second wedding.",
+        "fact_ids": [
+          "fact_109",
+          "fact_110"
+        ]
+      },
+      {
+        "detail": "Plan guest comfort around the island: Smartraveller says attitudes are generally more accepting on Mykonos, Santorini and Ios and advises avoiding public displays of affection in rural areas, so keep mainland or village excursions in mind when planning the welcome and farewell events.",
+        "fact_ids": [
+          "fact_100",
+          "fact_101"
+        ]
+      },
+      {
+        "detail": "Brief the wedding party on safety without alarm: Smartraveller notes homophobic attacks and drink spiking have occurred, including on the main islands, so organise transfers back to the hotel after the reception rather than leaving guests to find late-night taxis.",
+        "fact_ids": [
+          "fact_102"
+        ]
+      },
+      {
+        "detail": "Check passports for every guest: Smartraveller warns that an 'X' sex marker can't be guaranteed for entry or transit, and the EES border registration can cause queues, so guests should check transit countries and allow extra time on arrival.",
+        "fact_ids": [
+          "fact_103",
+          "fact_105"
+        ]
+      }
+    ],
+    "quotes": [],
+    "real_weddings": [],
+    "verify_items": [
+      "[[VERIFY: Whether an Australian same-sex couple (no Greek citizen, no Greek residence) faces any extra requirement to marry at a Greek municipality. Neither Law 5089/2024 nor Circular 240 states one, and neither addresses foreign nationals; confirm with the chosen municipality's registry office (e.g. Rhodes, Thira, Mykonos) and the Greek Embassy in Canberra, as at November 2026.]]",
+      "[[VERIFY: How an Australian obtains the certificate of no impediment to marriage the Rhodes documents page requires (fact_16), and that it is issued for a same-sex couple. No Australian government (DFAT) or Greek Embassy Canberra page was read in this batch.]]",
+      "[[VERIFY: Rhodes municipal pages conflict: the English Ceremony Venues page lists a residence permit for non-EU countries and a full birth certificate (fact_23); the Greek documents page does not (fact_16). Confirm the current list with the Rhodes registry.]]",
+      "[[VERIFY: That the Rhodes civil marriage process and ceremony venue list apply equally to same-sex couples. The Rhodes pages read do not mention same-sex couples either way; Circular 240 (fact_06) told all municipalities to update their forms so spouses can be recorded without distinction of sex.]]",
+      "[[VERIFY: Whether a marriage of two Australian (non-Greek) same-sex partners in Greece needs any step for recognition in Australia. Not covered by any source read; needs an Australian government source.]]",
+      "[[VERIFY: Thira (Santorini) and Mykonos municipal civil marriage procedure for foreign nationals. No municipal page for either was read in this batch.]]",
+      "[[VERIFY: no Greek venue's own official page was found saying in words that it hosts same-sex or LGBTQ+ weddings (one search on 12 November 2026 returned only planners, photographers and social posts); name no venue until one is confirmed]]",
+      "[[VERIFY: the current URL of Smartraveller's 'Advice for LGBTQIA+ people' page (linked from the Greece page); the guessed URL /before-you-go/travellers-with-specific-needs/lgbti-travellers returned 404 on 12 November 2026]]"
+    ],
+    "needs_signoff": [],
+    "must_include_coverage": [
+      {
+        "item": "Law name, number and date in force",
+        "covered_by": [
+          "fact_01",
+          "fact_02",
+          "fact_03"
+        ]
+      },
+      {
+        "item": "Opens civil marriage to same-sex couples",
+        "covered_by": [
+          "fact_04",
+          "fact_05",
+          "fact_06"
+        ]
+      },
+      {
+        "item": "Residency or nationality condition",
+        "covered_by": [
+          "fact_15",
+          "[[VERIFY: Whether an Australian same-sex couple (no Greek citizen, no Greek residence) faces any extra requirement to marry at a Greek municipality. Neither Law 5089/2024 nor Circular 240 states one, and neither addresses foreign nationals; confirm with the chosen municipality's registry office (e.g. Rhodes, Thira, Mykonos) and the Greek Embassy in Canberra, as at November 2026.]]"
+        ]
+      },
+      {
+        "item": "Documents for foreign nationals at a municipality",
+        "covered_by": [
+          "fact_16",
+          "fact_17",
+          "fact_18",
+          "fact_23",
+          "[[VERIFY: How an Australian obtains the certificate of no impediment to marriage the Rhodes documents page requires (fact_16), and that it is issued for a same-sex couple. No Australian government (DFAT) or Greek Embassy Canberra page was read in this batch.]]",
+          "[[VERIFY: Rhodes municipal pages conflict: the English Ceremony Venues page lists a residence permit for non-EU countries and a full birth certificate (fact_23); the Greek documents page does not (fact_16). Confirm the current list with the Rhodes registry.]]"
+        ]
+      },
+      {
+        "item": "What the law does not cover (church weddings, assisted reproduction)",
+        "covered_by": [
+          "fact_07",
+          "fact_08",
+          "fact_09"
+        ]
+      },
+      {
+        "item": "Marriages and parentage created abroad",
+        "covered_by": [
+          "fact_10",
+          "fact_11",
+          "fact_12"
+        ]
+      },
+      {
+        "item": "Municipal ceremony locations and process (Rhodes)",
+        "covered_by": [
+          "fact_19",
+          "fact_20",
+          "fact_21",
+          "fact_22",
+          "fact_24",
+          "[[VERIFY: That the Rhodes civil marriage process and ceremony venue list apply equally to same-sex couples. The Rhodes pages read do not mention same-sex couples either way; Circular 240 (fact_06) told all municipalities to update their forms so spouses can be recorded without distinction of sex.]]"
+        ]
+      },
+      {
+        "item": "Recognition back in Australia",
+        "covered_by": [
+          "[[VERIFY: Whether a marriage of two Australian (non-Greek) same-sex partners in Greece needs any step for recognition in Australia. Not covered by any source read; needs an Australian government source.]]"
+        ]
+      },
+      {
+        "item": "Santorini and Mykonos municipal procedure",
+        "covered_by": [
+          "[[VERIFY: Thira (Santorini) and Mykonos municipal civil marriage procedure for foreign nationals. No municipal page for either was read in this batch.]]"
+        ]
+      },
+      {
+        "item": "Documents for Australians: CNI, translation, Apostille, Australian Embassy Athens",
+        "covered_by": [
+          "fact_106",
+          "fact_107",
+          "fact_112",
+          "fact_113",
+          "fact_114",
+          "fact_115"
+        ]
+      },
+      {
+        "item": "Recognition back home",
+        "covered_by": [
+          "fact_109",
+          "fact_110",
+          "fact_111",
+          "fact_116",
+          "fact_108"
+        ]
+      },
+      {
+        "item": "Civil, symbolic or religious: Orthodox Church marries a man and a woman",
+        "covered_by": [
+          "fact_118",
+          "fact_119",
+          "[[VERIFY: that the Greek Orthodox Church's sacramental marriage is only between a man and a woman, in the Church's own words; the copied Archdiocese facts (fact_118 laws and regulations set by the Holy Canons; fact_119 crowns as the bond between bride and groom) do not state it outright, so the writer must not state it as a sourced fact until a line from greekorthodox.org.au or another official church page is quoted]]"
+        ]
+      },
+      {
+        "item": "Choosing an island and venue: venues only where their own site welcomes same-sex or LGBTQ+ weddings",
+        "covered_by": [
+          "fact_100",
+          "[[VERIFY: no Greek venue's own official page was found saying in words that it hosts same-sex or LGBTQ+ weddings (one search on 12 November 2026 returned only planners, photographers and social posts); name no venue until one is confirmed]]"
+        ]
+      },
+      {
+        "item": "Travel advice: Smartraveller's LGBTI guidance for Greece as worded",
+        "covered_by": [
+          "fact_100",
+          "fact_101",
+          "fact_102",
+          "fact_103",
+          "fact_105",
+          "[[VERIFY: the current URL of Smartraveller's 'Advice for LGBTQIA+ people' page (linked from the Greece page); the guessed URL /before-you-go/travellers-with-specific-needs/lgbti-travellers returned 404 on 12 November 2026]]"
+        ]
+      },
+      {
+        "item": "Is same-sex marriage legal in Greece / can visitors marry (Greek law and municipality steps)",
+        "covered_by": [
+          "fact_104",
+          "Not in this batch (batch A covers Greek official sources)"
+        ]
+      },
+      {
+        "item": "FAQ: Is a Greek same-sex marriage recognised in Australia? What documents do Australians need?",
+        "covered_by": [
+          "fact_109",
+          "fact_116",
+          "fact_106",
+          "fact_112"
+        ]
+      }
+    ]
+  }
+}
