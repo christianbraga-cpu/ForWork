@@ -1,0 +1,310 @@
+{
+  "agent": "cms-publisher",
+  "task_id": "santorini-or-mykonos-wedding",
+  "stage": "11",
+  "status": "complete",
+  "round": 1,
+  "inputs_used": [
+    "CLAUDE.md",
+    "content-system/cms/field-map.md",
+    "content-system/schemas/11-publish-package.schema.json",
+    "content/posts/santorini-or-mykonos-wedding/01-brief.json",
+    "content/posts/santorini-or-mykonos-wedding/02-seo.json",
+    "content/posts/santorini-or-mykonos-wedding/03-source-pack.json",
+    "content/posts/santorini-or-mykonos-wedding/04-images.json",
+    "content/posts/santorini-or-mykonos-wedding/08-final.md",
+    "content/posts/santorini-or-mykonos-wedding/09-cro.json",
+    "content/posts/santorini-or-mykonos-wedding/10-distribution.json",
+    "content/posts/rhodes-wedding-venues/11-body.md, 11-publish-package.json, 12-cms-report.md, booking-checklist.md (format model)"
+  ],
+  "self_qa": {
+    "checks": [
+      {
+        "check": "Front matter and all <!-- fact_xx --> markers removed; H1 is the title; 6 image-slot comments kept; no [[VERIFY]] markers in the copy",
+        "pass": true
+      },
+      {
+        "check": "Primary CTA at the marker uses the existing sentence and link unchanged (09-cro.json); secondary, closing and magnet marked; links and UTMs unchanged, each utm_content appears exactly once in visible links",
+        "pass": true
+      },
+      {
+        "check": "Exactly 4 key takeaways and 5 FAQ pairs taken verbatim from the body",
+        "pass": true
+      },
+      {
+        "check": "Meta title and description from 02-seo.json, no \"best\", no prices, no em dashes",
+        "pass": true,
+        "note": "title 53, description 149 characters"
+      },
+      {
+        "check": "primary_category equals categories[0] (Destination Weddings)",
+        "pass": true
+      },
+      {
+        "check": "No em dashes; Australian English",
+        "pass": true
+      },
+      {
+        "check": "status draft; nothing uploaded, saved or published",
+        "pass": true
+      }
+    ],
+    "confidence": 0.9
+  },
+  "open_questions": [
+    {
+      "to": "orchestrator",
+      "question": "CMS upload not attempted: FAST MODE package only, no browser in this session, and content-system/cms/field-map.md is not CONFIRMED. A human saves as Draft and clicks Publish, or run /wedded-cms-discovery locally, then /wedded-blog resume=santorini-or-mykonos-wedding.",
+      "blocking": true
+    },
+    {
+      "to": "orchestrator",
+      "question": "No author named in any input; package uses \"Wedded Wonderland\" (organisation). Confirm the byline.",
+      "blocking": false
+    },
+    {
+      "to": "orchestrator",
+      "question": "09-cro.json describes the secondary anchor as 'ask a Wedded Advisor to test your island', but 08-final.md reads 'book a Wedded Concierge consultation' (same text as the primary anchor). Copy left unchanged; an editor may want distinct anchor text.",
+      "blocking": false
+    }
+  ],
+  "assumptions": [
+    "Title \"Santorini vs Mykonos for Your Wedding\" (H1, as instructed); meta title \"Santorini or Mykonos Wedding: How the Islands Compare\" and meta description from 02-seo.json unchanged.",
+    "Excerpt is the first sentence of the opening paragraph.",
+    "content_type \"Guide\" and cluster \"Getting Married in Greece\" as instructed (brief says \"comparison\").",
+    "Categories and tags from 01-brief.json; primary category Destination Weddings.",
+    "Primary CTA: 09-cro.json fills the marker with the existing sentence, unchanged, so no new block or link was inserted; the marker became a <!-- CTA BLOCK: primary --> comment.",
+    "JSON-LD is Article + BreadcrumbList + FAQPage only, as instructed.",
+    "verify_items and needs_signoff empty: no [[VERIFY]] markers and no prices in the copy."
+  ],
+  "verify_items": [],
+  "tools_used": [
+    "Bash (python3 -I)"
+  ],
+  "next_agent": [
+    "orchestrator"
+  ],
+  "payload": {
+    "title": "Santorini vs Mykonos for Your Wedding",
+    "slug": "santorini-or-mykonos-wedding",
+    "url_path": "/destination-weddings/santorini-or-mykonos-wedding",
+    "content_type": "Guide",
+    "cluster": "Getting Married in Greece",
+    "categories": [
+      "Destination Weddings",
+      "Greece",
+      "Planning Guides"
+    ],
+    "primary_category": "Destination Weddings",
+    "tags": [
+      "Getting Married in Greece",
+      "Santorini",
+      "Mykonos",
+      "Santorini vs Mykonos",
+      "Cyclades"
+    ],
+    "excerpt": "Choosing between a Santorini or Mykonos wedding is a choice between two settings, not two standards.",
+    "key_takeaways": [
+      "Santorini weddings face the caldera from cliff-top terraces, while Mykonos weddings sit on beaches and bays such as Ornos, Psarou and Agios Ioannis.",
+      "Ceremony type narrows the shortlist on both islands, because each venue states its own options, from terraces and a winery on Santorini to whitewashed chapels on Mykonos.",
+      "Both islands have their own airport, and Smartraveller warns that ferries can be delayed or cancelled in strong winds, so guests should plan their arrival with time to spare.",
+      "The Australian paperwork is the same whichever island you choose, starting with proof that neither of you is already married, such as a Certificate of No Impediment."
+    ],
+    "body_markdown_file": "content/posts/santorini-or-mykonos-wedding/11-body.md",
+    "faq": [
+      {
+        "q": "Is Santorini or Mykonos better for a wedding?",
+        "a": "It depends on the setting, the ceremony and the week you want for your guests. Santorini suits a cliff-top ceremony facing the caldera; Mykonos suits a beach, a chapel by the sea and a town close by. Both have hotel venues that host weddings."
+      },
+      {
+        "q": "Can we marry legally on either island?",
+        "a": "The Australian documents are the same for both, starting with proof that neither of you is already married, such as a CNI. Ask the authority that will marry you which documents it needs and which must be legalised."
+      },
+      {
+        "q": "How do guests get to Santorini and Mykonos?",
+        "a": "Each island has its own airport, with flights from Athens and Thessaloniki. Ferries and large catamarans carry most visitors to the Greek islands, but services can be delayed or cancelled in strong winds."
+      },
+      {
+        "q": "When can we marry on each island?",
+        "a": "Neither island has its own HNMS station, so the same Naxos figures guide both. At Naxos, July and August average under one rain day a month, and Smartraveller warns of frequent summer heatwaves and wildfires from June to September."
+      },
+      {
+        "q": "Is a wedding on Santorini or Mykonos more expensive?",
+        "a": "Cost turns on your guest count, your venue and its spaces, whether you take over a whole hotel, and when you travel. Several venues publish wedding brochures, including Canaves, Santa Marina and Andronis, and your inclusions should be set out in writing before you commit."
+      }
+    ],
+    "images": [
+      {
+        "slot_id": "featured",
+        "file": "content/posts/santorini-or-mykonos-wedding/images/santorini-or-mykonos-wedding-santorini-caldera-mykonos-beach-split-hero.webp",
+        "role": "featured",
+        "status": "needed"
+      },
+      {
+        "slot_id": "santorini-caldera",
+        "file": "content/posts/santorini-or-mykonos-wedding/images/santorini-or-mykonos-wedding-santorini-caldera-ceremony-terrace.webp",
+        "role": "inline",
+        "status": "needed"
+      },
+      {
+        "slot_id": "mykonos-setting",
+        "file": "content/posts/santorini-or-mykonos-wedding/images/santorini-or-mykonos-wedding-mykonos-beachfront-reception.webp",
+        "role": "inline",
+        "status": "needed"
+      },
+      {
+        "slot_id": "venue-comparison",
+        "file": "content/posts/santorini-or-mykonos-wedding/images/santorini-or-mykonos-wedding-venue-reception-setup-comparison.webp",
+        "role": "inline",
+        "status": "needed"
+      },
+      {
+        "slot_id": "season",
+        "file": "content/posts/santorini-or-mykonos-wedding/images/santorini-or-mykonos-wedding-shoulder-season-terrace-light.webp",
+        "role": "inline",
+        "status": "needed"
+      },
+      {
+        "slot_id": "practical",
+        "file": "content/posts/santorini-or-mykonos-wedding/images/santorini-or-mykonos-wedding-planning-details-flatlay.webp",
+        "role": "inline",
+        "status": "needed"
+      }
+    ],
+    "cta": {
+      "text": "Book a Wedded Concierge consultation",
+      "subtext": "The fee is agreed in writing before any work begins.",
+      "link": "https://weddedwonderland.com/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=santorini-or-mykonos-wedding&utm_content=primary",
+      "placement": "At the former <!-- CTA: primary --> marker, directly after the At a glance table (marked <!-- CTA BLOCK: primary --> in 11-body.md). The existing sentence's 'book a Wedded Concierge consultation' link is the primary CTA, unchanged per 09-cro.json."
+    },
+    "secondary_cta": {
+      "text": "Talk to Wedded Concierge",
+      "subtext": "One Wedded Advisor, start to finish.",
+      "link": "https://weddedwonderland.com/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=santorini-or-mykonos-wedding&utm_content=secondary",
+      "placement": "Existing link at the end of 'Venue types on each island' (marked <!-- CTA INLINE: secondary --> in 11-body.md); its anchor reads 'book a Wedded Concierge consultation'. Unchanged."
+    },
+    "closing_cta": {
+      "text": "Start planning with Wedded Concierge",
+      "link": "https://weddedwonderland.com/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=santorini-or-mykonos-wedding&utm_content=closing",
+      "placement": "Inline link at the end of 'Choose your island with a Wedded Advisor' (marked <!-- CTA INLINE: closing --> in 11-body.md)."
+    },
+    "lead_magnet": {
+      "name": "Wedded Wonderland digital magazine",
+      "link": "https://weddedwonderland.com/magazine?utm_source=blog&utm_medium=content&utm_campaign=santorini-or-mykonos-wedding&utm_content=magnet",
+      "placement": "Final line of the post (marked <!-- LEAD MAGNET --> in 11-body.md)."
+    },
+    "tracking_links": [
+      "https://weddedwonderland.com/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=santorini-or-mykonos-wedding&utm_content=primary",
+      "https://weddedwonderland.com/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=santorini-or-mykonos-wedding&utm_content=secondary",
+      "https://weddedwonderland.com/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=santorini-or-mykonos-wedding&utm_content=closing",
+      "https://weddedwonderland.com/magazine?utm_source=blog&utm_medium=content&utm_campaign=santorini-or-mykonos-wedding&utm_content=magnet"
+    ],
+    "seo": {
+      "meta_title": "Santorini or Mykonos Wedding: How the Islands Compare",
+      "meta_description": "Santorini or Mykonos wedding? Compare caldera cliff tops with beaches and Mykonos Town on venues, ceremonies, guests, travel, season and legal steps.",
+      "focus_keyword": "santorini or mykonos wedding",
+      "canonical": "https://weddedwonderland.com/destination-weddings/santorini-or-mykonos-wedding",
+      "og_image_slot": "featured"
+    },
+    "schema_jsonld": {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Article",
+          "@id": "https://weddedwonderland.com/destination-weddings/santorini-or-mykonos-wedding#article",
+          "headline": "Santorini vs Mykonos for Your Wedding",
+          "description": "Santorini or Mykonos wedding? Compare caldera cliff tops with beaches and Mykonos Town on venues, ceremonies, guests, travel, season and legal steps.",
+          "author": {
+            "@type": "Organization",
+            "name": "Wedded Wonderland",
+            "url": "https://weddedwonderland.com/"
+          },
+          "publisher": {
+            "@type": "Organization",
+            "name": "Wedded Wonderland",
+            "url": "https://weddedwonderland.com/"
+          },
+          "datePublished": "",
+          "mainEntityOfPage": "https://weddedwonderland.com/destination-weddings/santorini-or-mykonos-wedding",
+          "inLanguage": "en-AU"
+        },
+        {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Home",
+              "item": "https://weddedwonderland.com/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Destination Weddings",
+              "item": "https://weddedwonderland.com/destination-weddings"
+            },
+            {
+              "@type": "ListItem",
+              "position": 3,
+              "name": "Santorini vs Mykonos for Your Wedding",
+              "item": "https://weddedwonderland.com/destination-weddings/santorini-or-mykonos-wedding"
+            }
+          ]
+        },
+        {
+          "@type": "FAQPage",
+          "@id": "https://weddedwonderland.com/destination-weddings/santorini-or-mykonos-wedding#faq",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "Is Santorini or Mykonos better for a wedding?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "It depends on the setting, the ceremony and the week you want for your guests. Santorini suits a cliff-top ceremony facing the caldera; Mykonos suits a beach, a chapel by the sea and a town close by. Both have hotel venues that host weddings."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Can we marry legally on either island?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "The Australian documents are the same for both, starting with proof that neither of you is already married, such as a CNI. Ask the authority that will marry you which documents it needs and which must be legalised."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "How do guests get to Santorini and Mykonos?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Each island has its own airport, with flights from Athens and Thessaloniki. Ferries and large catamarans carry most visitors to the Greek islands, but services can be delayed or cancelled in strong winds."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "When can we marry on each island?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Neither island has its own HNMS station, so the same Naxos figures guide both. At Naxos, July and August average under one rain day a month, and Smartraveller warns of frequent summer heatwaves and wildfires from June to September."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Is a wedding on Santorini or Mykonos more expensive?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Cost turns on your guest count, your venue and its spaces, whether you take over a whole hotel, and when you travel. Several venues publish wedding brochures, including Canaves, Santa Marina and Andronis, and your inclusions should be set out in writing before you commit."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    "author": "Wedded Wonderland",
+    "status": "draft",
+    "verify_items": [],
+    "needs_signoff": [],
+    "redirects_recommended": "None: new article, no redirect.",
+    "deferred_business_items": [],
+    "draft_note": "DRAFT ONLY. A human clicks Publish; no agent publishes or schedules this post.\n\n1. [[VERIFY]] items in the copy: none.\n\n2. Nic sign-off prices: none (no prices, nothing for Nic to sign off).\n\n3. Image slots needed (6): featured, santorini-caldera, mykonos-setting, venue-comparison, season, practical. No licensed or permissioned image yet; never AI, competitor or search-result images. The featured split hero needs two licences and credits.\n\n4. Before publishing: confirm the byline. New article, no redirect. See booking-checklist.md for venue house rules and legal documents to confirm in writing."
+  }
+}

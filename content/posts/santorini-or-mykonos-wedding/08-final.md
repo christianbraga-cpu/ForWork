@@ -95,7 +95,7 @@ For the full list, with ceremony spaces and what each venue publishes, read our 
 
 For the full list, read our guide to [Mykonos wedding venues for a Cycladic celebration](https://weddedwonderland.com/destination-weddings/mykonos-wedding-venues).
 
-Capacities, house rules and availability vary from venue to venue, and the view rarely tells you which spaces will hold your guest list. Your Wedded Advisor is your single point of contact, one person start to finish, and confirms each venue's inclusions in writing before you commit, so [book a Wedded Concierge consultation](https://weddedwonderland.com/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=santorini-or-mykonos-wedding&utm_content=secondary) against your guest list.
+Capacities, house rules and availability vary from venue to venue, and the view rarely tells you which spaces will hold your guest list. Your Wedded Advisor is your single point of contact, one person start to finish, and confirms each venue's inclusions in writing before you commit, so [talk to Wedded Concierge](https://weddedwonderland.com/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=santorini-or-mykonos-wedding&utm_content=secondary) against your guest list.
 
 ## Ceremony types each island offers
 
