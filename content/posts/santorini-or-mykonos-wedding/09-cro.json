@@ -1,0 +1,71 @@
+{
+  "agent": "cro-specialist",
+  "task_id": "santorini-or-mykonos-wedding",
+  "stage": "09",
+  "status": "complete",
+  "round": 1,
+  "inputs_used": [
+    "CLAUDE.md",
+    "content-system/brand/brand-facts.md",
+    "content-system/schemas/09-cro.schema.json",
+    "content/posts/santorini-or-mykonos-wedding/01-brief.json",
+    "content/posts/santorini-or-mykonos-wedding/08-final.md",
+    "content/posts/rhodes-wedding-venues/09-cro.json (format model)"
+  ],
+  "self_qa": {
+    "checks": [
+      {"check": "Primary CTA 6 words or fewer, no 'click here', no exclamation mark", "pass": true, "note": "'Book a Wedded Concierge consultation' (5 words)."},
+      {"check": "utm_content primary, secondary, closing, magnet each appear exactly once; one <!-- CTA: primary --> marker", "pass": true, "note": "Checked by grep: 1 each, so no copy change made."},
+      {"check": "UTMs only on /wonderland-concierge (3) and /magazine (1)", "pass": true},
+      {"check": "No 'Wonderland Concierge' anchor text; no new Advisor line", "pass": true, "note": "Secondary anchor reads 'ask a Wedded Advisor to test your island' (names the Advisor, not Wedded Concierge). Left unchanged per the all-four-exist rule; flagged below."},
+      {"check": "No prices, 'free', Wedded Privileges, transfers or 'last dance'; no comparison or shortlisting service claimed beyond brand-facts", "pass": true},
+      {"check": "Australian English, no em dashes", "pass": true}
+    ],
+    "confidence": 0.85
+  },
+  "open_questions": [
+    {"to": "orchestrator", "question": "Secondary link anchor at line 98 ('ask a Wedded Advisor to test your island') does not name Wedded Concierge. No copy change made because all four tracked links already exist. If the anchor rule should apply, an editor could change it to 'talk to Wedded Concierge' and keep the rest of the sentence.", "blocking": false},
+    {"to": "orchestrator", "question": "Deferred business answers (fee model, named Advisor, real weddings) remain deferred per brand-facts. Re-run cro-specialist once confirmed.", "blocking": false}
+  ],
+  "assumptions": [
+    "The CMS renders a CTA block (text, subtext, link) at the <!-- CTA: primary --> marker; the inline sentence before the marker is the fallback if it does not.",
+    "FAST MODE: 07-panel.json cta_reactions not re-read; placements follow the brief and the rhodes-wedding-venues model."
+  ],
+  "verify_items": [],
+  "tools_used": ["Bash (grep, sed, python3 -I)"],
+  "payload": {
+    "journey_stage": "comparing",
+    "primary_cta": {
+      "text": "Book a Wedded Concierge consultation",
+      "subtext": "The fee is agreed in writing before any work begins.",
+      "link": "https://weddedwonderland.com/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=santorini-or-mykonos-wedding&utm_content=primary",
+      "placement": "Existing <!-- CTA: primary --> marker directly after the At a glance table, filled by the existing sentence for couples who already know their dates, guest count and ceremony type. Unchanged."
+    },
+    "secondary_cta": {
+      "text": "Talk to Wedded Concierge",
+      "subtext": "One Wedded Advisor, start to finish.",
+      "link": "https://weddedwonderland.com/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=santorini-or-mykonos-wedding&utm_content=secondary",
+      "placement": "Existing sentence at the end of the venue types section, the body's only Advisor line per the brief, where the 'which venues will hold our guest list' question peaks. Unchanged."
+    },
+    "lead_magnet": {
+      "name": "Wedded Wonderland digital magazine",
+      "link": "https://weddedwonderland.com/magazine?utm_source=blog&utm_medium=content&utm_campaign=santorini-or-mykonos-wedding&utm_content=magnet",
+      "placement": "Existing final line of the post, for readers still browsing. Already tagged; unchanged.",
+      "exists": true
+    },
+    "closing_cta": {
+      "text": "Start planning with Wedded Concierge",
+      "link": "https://weddedwonderland.com/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=santorini-or-mykonos-wedding&utm_content=closing",
+      "placement": "Existing closing paragraph. Unchanged; every claim in it is in brand-facts."
+    },
+    "tracking": [
+      "https://weddedwonderland.com/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=santorini-or-mykonos-wedding&utm_content=primary",
+      "https://weddedwonderland.com/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=santorini-or-mykonos-wedding&utm_content=secondary",
+      "https://weddedwonderland.com/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=santorini-or-mykonos-wedding&utm_content=closing",
+      "https://weddedwonderland.com/magazine?utm_source=blog&utm_medium=content&utm_campaign=santorini-or-mykonos-wedding&utm_content=magnet"
+    ],
+    "copy_changes": [],
+    "rationale": "Brief journey_stage is 'comparing', so the primary is the Wedded Concierge consultation at /wonderland-concierge with a brand-facts subtext that answers the fee worry. All four tracked links (primary, secondary, closing, magnet) already appear once each with correct UTMs, so no copy change is made. Reading order: primary after the comparison table, secondary in venue types, closing, then magnet. Other internal links stay untagged. A Greece islands magazine issue or a printable island comparison checklist would be a better-matched magnet; neither is known to exist, so both are backlog suggestions only (not placed)."
+  },
+  "next_agent": ["distribution"]
+}
