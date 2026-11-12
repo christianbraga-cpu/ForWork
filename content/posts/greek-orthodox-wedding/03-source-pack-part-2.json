@@ -1,0 +1,301 @@
+{
+  "agent": "planner-sme",
+  "task_id": "greek-orthodox-wedding",
+  "stage": "03",
+  "status": "complete",
+  "round": 1,
+  "inputs_used": [
+    "content/posts/greek-orthodox-wedding/03-source-pack.json (batch A, fact_01 to fact_05, verify_items)",
+    "content/posts/greek-wedding-traditions/03-source-pack*.json: only OCA facts are fact_01 to fact_05, already copied in batch A; nothing further to copy",
+    "mcp__Lead_MCP__firecrawl_map https://www.goarch.org search=marriage: HTTP 402, out of credits (2026-11-12); firecrawl_scrape of OCA PDF also 402",
+    "mcp__Apify__apify--web-fetch wait=15000, one call each, no retries: https://www.goarch.org/-/the-sacrament-of-marriage, https://www.goarch.org/-/guidelines-for-the-sacrament-of-marriage, https://www.goarch.org/-/the-service-of-marriage (all timed out 60s). URLs were guessed because the map call failed.",
+    "mcp__Apify__apify--web-fetch https://www.oca.org/files/PDF/Music/Marriage/marriage-service.pdf (HTTP 200, 30 pages, OCA 2022)",
+    "Greek Orthodox Archdiocese of Australia site deliberately not read (per orchestrator)"
+  ],
+  "self_qa": {
+    "checks": [
+      {
+        "check": "Every fact has a source and date",
+        "pass": true
+      },
+      {
+        "check": "No prices; needs_signoff empty",
+        "pass": true
+      },
+      {
+        "check": "Every must-include covered or [[VERIFY]]",
+        "pass": true
+      },
+      {
+        "check": "No invented quotes, statistics or real weddings",
+        "pass": true
+      },
+      {
+        "check": "Jurisdiction named in each claim",
+        "pass": true,
+        "note": "All facts are Orthodox Church in America service text."
+      },
+      {
+        "check": "goarch.org conditions sourced",
+        "pass": false,
+        "note": "firecrawl out of credits; three goarch.org Apify rendered fetches timed out. No retries."
+      }
+    ],
+    "confidence": 0.55
+  },
+  "open_questions": [
+    {
+      "to": "orchestrator",
+      "question": "goarch.org remains unreadable from this environment (firecrawl 402, Apify timeouts on 7 URLs across runs). Sponsor eligibility, closed days, interfaith, second-marriage and baptism rules stay [[VERIFY]] unless another route works, e.g. a human copies the GOA guidelines page, or the writer frames them as 'confirm with your parish priest'.",
+      "blocking": false
+    },
+    {
+      "to": "luxury-writer",
+      "question": "Service order is now sourced to the OCA text (fact_200 to fact_209). Attribute to the Orthodox Church in America or describe as the Orthodox rite generally; do not present candles or koumbaros crown exchange as sourced, and note the free-will questions are a Slavonic usage (fact_203), not Greek.",
+      "blocking": false
+    }
+  ],
+  "assumptions": [
+    "The OCA service text represents the shared Byzantine-rite structure; Greek parishes may differ in detail (e.g. koumbaros exchanges the stefana, candles, the free-will questions).",
+    "Meanings recorded only where the OCA text states them (crowns, fact_205). No other symbolic meanings are sourced.",
+    "BOOKING CHECKLIST: Greek Orthodox parish: whether candles and stefana are supplied, who exchanges the crowns, which readings and language(s) are used, length of service, photography rules."
+  ],
+  "resolved_from_batch_a": [
+    {
+      "verify_item": "[[VERIFY: order of the Greek Orthodox wedding service (betrothal with rings, candles, crowning with stefana exchanged by the koumbaros or koumbara, Epistle and Gospel, common cup, Dance of Isaiah, removal of crowns): no goarch.org or Church of Greece page read; goarch.org reads timed out 2026-11-12]]",
+      "status": "partly resolved",
+      "by": [
+        "fact_200",
+        "fact_201",
+        "fact_202",
+        "fact_204",
+        "fact_206",
+        "fact_207",
+        "fact_208",
+        "fact_209"
+      ],
+      "note": "Order of service (betrothal and rings, procession, crowning, Epistle and Gospel, common cup, procession around the table, removal of crowns) now sourced to the Orthodox Church in America text. Candles and the koumbaros exchanging the stefana are NOT in that source and are carried forward as new verify items."
+    }
+  ],
+  "not_resolved_from_batch_a": [
+    "[[VERIFY: koumbaros or koumbara (sponsor) eligibility, e.g. must be an Orthodox Christian in good standing: no goarch.org or Church of Greece page read]]",
+    "[[VERIFY: days and periods when Greek Orthodox weddings are not held (e.g. fasting periods, Lent and Holy Week, 1 to 15 August, certain feast days): only seen in a vendor search snippet, not a church source]]",
+    "[[VERIFY: Greek Orthodox Church rule on marrying a non-Christian (unbaptised) partner in church, beyond the OCA statement that the sacrament is for baptised members: no goarch.org page read]]",
+    "[[VERIFY: Greek Orthodox Church conditions for second and third marriages (ecclesiastical divorce, permission of the bishop, penitential character of the service, limit of three): no goarch.org or Church of Greece page read]]",
+    "[[VERIFY: whether the Greek Orthodox Church requires baptised non-Orthodox Christian partners to have been baptised in the name of the Holy Trinity, and what certificates the parish asks for: no goarch.org page read]]"
+  ],
+  "verify_items": [
+    "[[VERIFY: koumbaros or koumbara (sponsor) eligibility, e.g. must be an Orthodox Christian in good standing: no goarch.org or Church of Greece page read]]",
+    "[[VERIFY: days and periods when Greek Orthodox weddings are not held (e.g. fasting periods, Lent and Holy Week, 1 to 15 August, certain feast days): only seen in a vendor search snippet, not a church source]]",
+    "[[VERIFY: Greek Orthodox Church rule on marrying a non-Christian (unbaptised) partner in church, beyond the OCA statement that the sacrament is for baptised members: no goarch.org page read]]",
+    "[[VERIFY: Greek Orthodox Church conditions for second and third marriages (ecclesiastical divorce, permission of the bishop, penitential character of the service, limit of three): no goarch.org or Church of Greece page read]]",
+    "[[VERIFY: whether the Greek Orthodox Church requires baptised non-Orthodox Christian partners to have been baptised in the name of the Holy Trinity, and what certificates the parish asks for: no goarch.org page read]]",
+    "[[VERIFY: candles held by the couple during the Greek Orthodox service: not in the OCA 2022 service text; no goarch.org page read]]",
+    "[[VERIFY: koumbaros or koumbara exchanging the stefana three times (Greek practice): the OCA text has the priest crown the couple and groomsmen hold the crowns during the procession; no Greek Orthodox source read]]"
+  ],
+  "tools_used": [
+    "mcp__Lead_MCP__firecrawl_map",
+    "mcp__Lead_MCP__firecrawl_scrape",
+    "mcp__Apify__apify--web-fetch"
+  ],
+  "next_agent": [
+    "luxury-writer"
+  ],
+  "payload": {
+    "facts": [
+      {
+        "fact_id": "fact_200",
+        "claim": "Orthodox Church in America service text: the Service of Betrothal is celebrated in the narthex, or in the back part of the church.",
+        "source": "https://www.oca.org/files/PDF/Music/Marriage/marriage-service.pdf",
+        "source_type": "other",
+        "checked": "2026-11-12",
+        "is_price": false,
+        "conflicts": "Orthodox Church in America, 'Holy Matrimony' service text (2022 PDF, last-modified 4 Mar 2022), read live via Apify web-fetch 2026-11-12, HTTP 200. Jurisdiction: Orthodox Church in America; not the Greek Orthodox Archdiocese or Church of Greece. Greek practice may differ in detail."
+      },
+      {
+        "fact_id": "fact_201",
+        "claim": "Orthodox Church in America service text: the priest blesses the couple with the rings, saying to each that they are betrothed 'in the name of the Father, and of the Son, and of the Holy Spirit', three times each, then places the rings on their right hands; then the bridal pair exchanges the rings.",
+        "source": "https://www.oca.org/files/PDF/Music/Marriage/marriage-service.pdf",
+        "source_type": "other",
+        "checked": "2026-11-12",
+        "is_price": false,
+        "conflicts": "Orthodox Church in America, 'Holy Matrimony' service text (2022 PDF, last-modified 4 Mar 2022), read live via Apify web-fetch 2026-11-12, HTTP 200. Jurisdiction: Orthodox Church in America; not the Greek Orthodox Archdiocese or Church of Greece. Greek practice may differ in detail."
+      },
+      {
+        "fact_id": "fact_202",
+        "claim": "Orthodox Church in America service text: for the Service of Crowning the couple, preceded by the priest, moves in procession to the centre of the church, with Psalm verses and the refrain 'Glory to Thee, our God; glory to Thee!'",
+        "source": "https://www.oca.org/files/PDF/Music/Marriage/marriage-service.pdf",
+        "source_type": "other",
+        "checked": "2026-11-12",
+        "is_price": false,
+        "conflicts": "Orthodox Church in America, 'Holy Matrimony' service text (2022 PDF, last-modified 4 Mar 2022), read live via Apify web-fetch 2026-11-12, HTTP 200. Jurisdiction: Orthodox Church in America; not the Greek Orthodox Archdiocese or Church of Greece. Greek practice may differ in detail."
+      },
+      {
+        "fact_id": "fact_203",
+        "claim": "Orthodox Church in America service text: 'according to Slavonic editions of the marriage service' the priest asks the bridegroom and bride whether each has a 'good, free and unconstrained will' to marry and has not promised themselves to anyone else. The text marks this as a Slavonic usage.",
+        "source": "https://www.oca.org/files/PDF/Music/Marriage/marriage-service.pdf",
+        "source_type": "other",
+        "checked": "2026-11-12",
+        "is_price": false,
+        "conflicts": "Orthodox Church in America, 'Holy Matrimony' service text (2022 PDF, last-modified 4 Mar 2022), read live via Apify web-fetch 2026-11-12, HTTP 200. Jurisdiction: Orthodox Church in America; not the Greek Orthodox Archdiocese or Church of Greece. Greek practice may differ in detail."
+      },
+      {
+        "fact_id": "fact_204",
+        "claim": "Orthodox Church in America service text: the priest crowns the bridegroom first, then the bride ('is crowned unto ... in the name of the Father, and of the Son, and of the Holy Spirit'), then blesses them three times saying 'O Lord our God, crown them with glory and honor.'",
+        "source": "https://www.oca.org/files/PDF/Music/Marriage/marriage-service.pdf",
+        "source_type": "other",
+        "checked": "2026-11-12",
+        "is_price": false,
+        "conflicts": "Orthodox Church in America, 'Holy Matrimony' service text (2022 PDF, last-modified 4 Mar 2022), read live via Apify web-fetch 2026-11-12, HTTP 200. Jurisdiction: Orthodox Church in America; not the Greek Orthodox Archdiocese or Church of Greece. Greek practice may differ in detail."
+      },
+      {
+        "fact_id": "fact_205",
+        "claim": "Orthodox Church in America service text: the rubric says the crowns 'recall those with which the martyrs, or witnesses of Christ, are crowned in heaven'.",
+        "source": "https://www.oca.org/files/PDF/Music/Marriage/marriage-service.pdf",
+        "source_type": "other",
+        "checked": "2026-11-12",
+        "is_price": false,
+        "conflicts": "Orthodox Church in America, 'Holy Matrimony' service text (2022 PDF, last-modified 4 Mar 2022), read live via Apify web-fetch 2026-11-12, HTTP 200. Jurisdiction: Orthodox Church in America; not the Greek Orthodox Archdiocese or Church of Greece. Greek practice may differ in detail."
+      },
+      {
+        "fact_id": "fact_206",
+        "claim": "Orthodox Church in America service text: the readings are the Epistle of Paul to the Ephesians 5:20-33 and the Gospel of John 2:1-12 (the wedding at Cana).",
+        "source": "https://www.oca.org/files/PDF/Music/Marriage/marriage-service.pdf",
+        "source_type": "other",
+        "checked": "2026-11-12",
+        "is_price": false,
+        "conflicts": "Orthodox Church in America, 'Holy Matrimony' service text (2022 PDF, last-modified 4 Mar 2022), read live via Apify web-fetch 2026-11-12, HTTP 200. Jurisdiction: Orthodox Church in America; not the Greek Orthodox Archdiocese or Church of Greece. Greek practice may differ in detail."
+      },
+      {
+        "fact_id": "fact_207",
+        "claim": "Orthodox Church in America service text: after the Lord's Prayer the common cup is brought and blessed, and the priest gives it to the couple three times, first to the bridegroom and then to the bride.",
+        "source": "https://www.oca.org/files/PDF/Music/Marriage/marriage-service.pdf",
+        "source_type": "other",
+        "checked": "2026-11-12",
+        "is_price": false,
+        "conflicts": "Orthodox Church in America, 'Holy Matrimony' service text (2022 PDF, last-modified 4 Mar 2022), read live via Apify web-fetch 2026-11-12, HTTP 200. Jurisdiction: Orthodox Church in America; not the Greek Orthodox Archdiocese or Church of Greece. Greek practice may differ in detail."
+      },
+      {
+        "fact_id": "fact_208",
+        "claim": "Orthodox Church in America service text: the priest then leads the couple in a circle three times around the lectern, the groomsmen behind them holding their crowns, while 'Rejoice, O Isaiah!', 'O Holy Martyrs' and 'Glory to Thee, O Christ-God' are sung (the music is headed 'Dance of Isaiah').",
+        "source": "https://www.oca.org/files/PDF/Music/Marriage/marriage-service.pdf",
+        "source_type": "other",
+        "checked": "2026-11-12",
+        "is_price": false,
+        "conflicts": "Orthodox Church in America, 'Holy Matrimony' service text (2022 PDF, last-modified 4 Mar 2022), read live via Apify web-fetch 2026-11-12, HTTP 200. Jurisdiction: Orthodox Church in America; not the Greek Orthodox Archdiocese or Church of Greece. Greek practice may differ in detail."
+      },
+      {
+        "fact_id": "fact_209",
+        "claim": "Orthodox Church in America service text: the priest removes the bridegroom's crown ('Be exalted like Abraham, O Bridegroom...') and then the bride's ('And you, O Bride, be exalted like Sarah...'), prays that God 'receive their crowns into Thy Kingdom', and the service ends with the Dismissal and 'God grant them many years!' (3x).",
+        "source": "https://www.oca.org/files/PDF/Music/Marriage/marriage-service.pdf",
+        "source_type": "other",
+        "checked": "2026-11-12",
+        "is_price": false,
+        "conflicts": "Orthodox Church in America, 'Holy Matrimony' service text (2022 PDF, last-modified 4 Mar 2022), read live via Apify web-fetch 2026-11-12, HTTP 200. Jurisdiction: Orthodox Church in America; not the Greek Orthodox Archdiocese or Church of Greece. Greek practice may differ in detail."
+      },
+      {
+        "fact_id": "fact_210",
+        "claim": "Orthodox Church in America service text: a prayer in the crowning service remembers 'the groomsman and the bridesmaid of the bridal pair'. The text does not state any eligibility rule for sponsors.",
+        "source": "https://www.oca.org/files/PDF/Music/Marriage/marriage-service.pdf",
+        "source_type": "other",
+        "checked": "2026-11-12",
+        "is_price": false,
+        "conflicts": "Orthodox Church in America, 'Holy Matrimony' service text (2022 PDF, last-modified 4 Mar 2022), read live via Apify web-fetch 2026-11-12, HTTP 200. Jurisdiction: Orthodox Church in America; not the Greek Orthodox Archdiocese or Church of Greece. Greek practice may differ in detail."
+      },
+      {
+        "fact_id": "fact_211",
+        "claim": "Orthodox Church in America service text: the 2022 OCA service text contains no rubric about candles; it is silent on candles.",
+        "source": "https://www.oca.org/files/PDF/Music/Marriage/marriage-service.pdf",
+        "source_type": "other",
+        "checked": "2026-11-12",
+        "is_price": false,
+        "conflicts": "Orthodox Church in America, 'Holy Matrimony' service text (2022 PDF, last-modified 4 Mar 2022), read live via Apify web-fetch 2026-11-12, HTTP 200. Jurisdiction: Orthodox Church in America; not the Greek Orthodox Archdiocese or Church of Greece. Greek practice may differ in detail."
+      }
+    ],
+    "insider_details": [
+      {
+        "detail": "Plan the ceremony as two moves: the betrothal at the back of the church (narthex) and then a procession to the centre for the crowning, per the Orthodox Church in America service text. Brief the photographer and videographer to cover both positions.",
+        "fact_ids": [
+          "fact_200",
+          "fact_202"
+        ]
+      },
+      {
+        "detail": "Wedding bands go on the right hand in the Orthodox rite (OCA service text). Tell the jeweller and the couple so rings are sized for the right hand.",
+        "fact_ids": [
+          "fact_201"
+        ]
+      },
+      {
+        "detail": "The procession three times around the table (to 'Rejoice, O Isaiah!') has the groomsmen following and holding the crowns (OCA text). Rehearse it with the sponsors so they know their place and the photographer gets clear sightlines.",
+        "fact_ids": [
+          "fact_208",
+          "fact_210"
+        ]
+      },
+      {
+        "detail": "Ask the parish which readings are used. The OCA text sets Ephesians 5:20-33 and John 2:1-12; couples who want a bilingual booklet for Australian guests can print these.",
+        "fact_ids": [
+          "fact_206"
+        ]
+      }
+    ],
+    "quotes": [],
+    "real_weddings": [],
+    "verify_items": [
+      "[[VERIFY: koumbaros or koumbara (sponsor) eligibility, e.g. must be an Orthodox Christian in good standing: no goarch.org or Church of Greece page read]]",
+      "[[VERIFY: days and periods when Greek Orthodox weddings are not held (e.g. fasting periods, Lent and Holy Week, 1 to 15 August, certain feast days): only seen in a vendor search snippet, not a church source]]",
+      "[[VERIFY: Greek Orthodox Church rule on marrying a non-Christian (unbaptised) partner in church, beyond the OCA statement that the sacrament is for baptised members: no goarch.org page read]]",
+      "[[VERIFY: Greek Orthodox Church conditions for second and third marriages (ecclesiastical divorce, permission of the bishop, penitential character of the service, limit of three): no goarch.org or Church of Greece page read]]",
+      "[[VERIFY: whether the Greek Orthodox Church requires baptised non-Orthodox Christian partners to have been baptised in the name of the Holy Trinity, and what certificates the parish asks for: no goarch.org page read]]",
+      "[[VERIFY: candles held by the couple during the Greek Orthodox service: not in the OCA 2022 service text; no goarch.org page read]]",
+      "[[VERIFY: koumbaros or koumbara exchanging the stefana three times (Greek practice): the OCA text has the priest crown the couple and groomsmen hold the crowns during the procession; no Greek Orthodox source read]]"
+    ],
+    "needs_signoff": [],
+    "must_include_coverage": [
+      {
+        "item": "Order of the Greek Orthodox wedding service",
+        "covered_by": [
+          "fact_200",
+          "fact_201",
+          "fact_202",
+          "fact_204",
+          "fact_206",
+          "fact_207",
+          "fact_208",
+          "fact_209",
+          "[[VERIFY: candles held by the couple during the Greek Orthodox service: not in the OCA 2022 service text; no goarch.org page read]]",
+          "[[VERIFY: koumbaros or koumbara exchanging the stefana three times (Greek practice): the OCA text has the priest crown the couple and groomsmen hold the crowns during the procession; no Greek Orthodox source read]]"
+        ]
+      },
+      {
+        "item": "Meaning of the crowns",
+        "covered_by": [
+          "fact_205"
+        ]
+      },
+      {
+        "item": "Sponsor (koumbaros) role and eligibility",
+        "covered_by": [
+          "fact_208",
+          "fact_210",
+          "[[VERIFY: koumbaros or koumbara (sponsor) eligibility, e.g. must be an Orthodox Christian in good standing: no goarch.org or Church of Greece page read]]"
+        ]
+      },
+      {
+        "item": "Days weddings are not held",
+        "covered_by": [
+          "[[VERIFY: days and periods when Greek Orthodox weddings are not held (e.g. fasting periods, Lent and Holy Week, 1 to 15 August, certain feast days): only seen in a vendor search snippet, not a church source]]"
+        ]
+      },
+      {
+        "item": "Interfaith, second marriages and baptism conditions",
+        "covered_by": [
+          "[[VERIFY: Greek Orthodox Church rule on marrying a non-Christian (unbaptised) partner in church, beyond the OCA statement that the sacrament is for baptised members: no goarch.org page read]]",
+          "[[VERIFY: Greek Orthodox Church conditions for second and third marriages (ecclesiastical divorce, permission of the bishop, penitential character of the service, limit of three): no goarch.org or Church of Greece page read]]",
+          "[[VERIFY: whether the Greek Orthodox Church requires baptised non-Orthodox Christian partners to have been baptised in the name of the Holy Trinity, and what certificates the parish asks for: no goarch.org page read]]"
+        ]
+      }
+    ]
+  }
+}

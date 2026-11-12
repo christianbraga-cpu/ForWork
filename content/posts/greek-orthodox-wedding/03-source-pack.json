@@ -9,7 +9,14 @@
     "content/posts/greek-wedding-traditions/03-source-pack.json (OCA facts fact_01 to fact_05 copied unchanged)",
     "apify--web-search 2026-11-12 (one query): returned only Facebook, Reddit and vendor results; no goarch.org URL; snippets not used as facts",
     "apify--web-fetch 2026-11-12, one parallel round, no retries: https://www.goarch.org/ourfaith/ourfaith7068 (timed out 60s), https://www.goarch.org/-/guidelines-for-the-sacrament-of-marriage (timed out), https://www.goarch.org/-/interfaith-marriage (timed out), https://www.goarch.org/-/the-service-of-marriage (timed out), https://www.ecclesia.gr/English/holysynod/holysynod.html (redirected to ecclesiagreece.gr, HTTP 404)",
-    "Greek Orthodox Archdiocese of Australia site deliberately not read (per orchestrator)"
+    "Greek Orthodox Archdiocese of Australia site deliberately not read (per orchestrator)",
+    "Copied facts (same source, date and wording; origin noted in each claim) from content/posts/{mykonos-wedding,greek-wedding-traditions,rhodes-wedding-venues,mykonos-wedding-venues,crete-wedding-packages,wedding-in-crete,greece-wedding-packages-all-inclusive,greece-wedding-venues,paros-wedding-venues,corfu-wedding-venues}/03-source-pack*.json",
+    "Live round 2026-11-12 (apify web-search + web-fetch, one round): gov.gr marriage page guess returned 404; imthira.gr (Metropolis of Thira) timed out; mfa.gr Jerusalem consulate 'Dilosi Gamou' page fetched but covers Greek citizens declaring a marriage held abroad, so not used. No new facts from live reads.",
+    "content/posts/greek-orthodox-wedding/03-source-pack.json (batch A, fact_01 to fact_05, verify_items)",
+    "content/posts/greek-wedding-traditions/03-source-pack*.json: only OCA facts are fact_01 to fact_05, already copied in batch A; nothing further to copy",
+    "mcp__Lead_MCP__firecrawl_map https://www.goarch.org search=marriage: HTTP 402, out of credits (2026-11-12); firecrawl_scrape of OCA PDF also 402",
+    "mcp__Apify__apify--web-fetch wait=15000, one call each, no retries: https://www.goarch.org/-/the-sacrament-of-marriage, https://www.goarch.org/-/guidelines-for-the-sacrament-of-marriage, https://www.goarch.org/-/the-service-of-marriage (all timed out 60s). URLs were guessed because the map call failed.",
+    "mcp__Apify__apify--web-fetch https://www.oca.org/files/PDF/Music/Marriage/marriage-service.pdf (HTTP 200, 30 pages, OCA 2022)"
   ],
   "self_qa": {
     "checks": [
@@ -52,12 +59,30 @@
       "to": "luxury-writer",
       "question": "Only OCA statements are sourced. Attribute them to the Orthodox Church in America, describe the service in general terms, and keep sponsor rules, closed days, interfaith and second-marriage conditions behind the [[VERIFY]] items or as 'confirm with your parish priest'.",
       "blocking": false
+    },
+    "No Greek government or Metropolis source was read live; a later round should try an English or Greek gov.gr page on religious marriage and a Metropolis adeia gamou page.",
+    {
+      "to": "orchestrator",
+      "question": "goarch.org remains unreadable from this environment (firecrawl 402, Apify timeouts on 7 URLs across runs). Sponsor eligibility, closed days, interfaith, second-marriage and baptism rules stay [[VERIFY]] unless another route works, e.g. a human copies the GOA guidelines page, or the writer frames them as 'confirm with your parish priest'.",
+      "blocking": false
+    },
+    {
+      "to": "luxury-writer",
+      "question": "Service order is now sourced to the OCA text (fact_200 to fact_209). Attribute to the Orthodox Church in America or describe as the Orthodox rite generally; do not present candles or koumbaros crown exchange as sourced, and note the free-will questions are a Slavonic usage (fact_203), not Greek.",
+      "blocking": false
     }
   ],
   "assumptions": [
     "OCA is an official Orthodox church site describing the shared Orthodox rite; it is not the Greek Orthodox Archdiocese or the Church of Greece.",
     "Search snippets (Facebook, Reddit, vendor) are not used as facts.",
-    "BOOKING CHECKLIST: Greek Orthodox parish (Greece or Australia): notice period, closed dates, sponsor eligibility, baptism and mixed-marriage certificates, bishop's permission where needed, photography rules in church, whether the church supplies stefana and the common cup."
+    "BOOKING CHECKLIST: Greek Orthodox parish (Greece or Australia): notice period, closed dates, sponsor eligibility, baptism and mixed-marriage certificates, bishop's permission where needed, photography rules in church, whether the church supplies stefana and the common cup.",
+    "fact_100 to fact_102, fact_111 and fact_112 are civil marriage context from the Municipality of Rhodes, not the Orthodox route; the article must not present them as Orthodox requirements.",
+    "BOOKING CHECKLIST: Elounda SA: Metropolis fee amount and whether it covers the priest and chapel; three-night minimum stay applies (fact_117).",
+    "BOOKING CHECKLIST: Mykonos Grand: proof of Orthodox faith needed for both partners and which church or Metropolis issues the licence.",
+    "BOOKING CHECKLIST: hotel chapels (Nana Princess, Grecotel Mykonos Lolita, Costa Navarino, Sani Resort, The Secret View): whether the chapel is consecrated for Orthodox sacraments, which parish priest officiates, and any faith requirements.",
+    "The OCA service text represents the shared Byzantine-rite structure; Greek parishes may differ in detail (e.g. koumbaros exchanges the stefana, candles, the free-will questions).",
+    "Meanings recorded only where the OCA text states them (crowns, fact_205). No other symbolic meanings are sourced.",
+    "BOOKING CHECKLIST: Greek Orthodox parish: whether candles and stefana are supplied, who exchanges the crowns, which readings and language(s) are used, length of service, photography rules."
   ],
   "verify_items": [
     "[[VERIFY: order of the Greek Orthodox wedding service (betrothal with rings, candles, crowning with stefana exchanged by the koumbaros or koumbara, Epistle and Gospel, common cup, Dance of Isaiah, removal of crowns): no goarch.org or Church of Greece page read; goarch.org reads timed out 2026-11-12]]",
@@ -65,11 +90,20 @@
     "[[VERIFY: days and periods when Greek Orthodox weddings are not held (e.g. fasting periods, Lent and Holy Week, 1 to 15 August, certain feast days): only seen in a vendor search snippet, not a church source]]",
     "[[VERIFY: Greek Orthodox Church rule on marrying a non-Christian (unbaptised) partner in church, beyond the OCA statement that the sacrament is for baptised members: no goarch.org page read]]",
     "[[VERIFY: Greek Orthodox Church conditions for second and third marriages (ecclesiastical divorce, permission of the bishop, penitential character of the service, limit of three): no goarch.org or Church of Greece page read]]",
-    "[[VERIFY: whether the Greek Orthodox Church requires baptised non-Orthodox Christian partners to have been baptised in the name of the Holy Trinity, and what certificates the parish asks for: no goarch.org page read]]"
+    "[[VERIFY: whether the Greek Orthodox Church requires baptised non-Orthodox Christian partners to have been baptised in the name of the Holy Trinity, and what certificates the parish asks for: no goarch.org page read]]",
+    "[[VERIFY: legal validity in Greece of a Greek Orthodox church wedding (that it has the same legal effect as a civil marriage), from a Greek government source; not sourced in this batch]]",
+    "[[VERIFY: who issues the Orthodox wedding licence (adeia gamou) for a destination wedding (local Metropolis or parish priest) and the documents it requires for Australians, such as baptism certificates and a CNI; only venue sources (Elounda SA, fact_118) support Metropolis approval]]",
+    "[[VERIFY: the general deadline and process for registering an Orthodox marriage with the Greek civil registry (lixiarcheio) after the ceremony; the 40-day Aghios Nikolaos wording (fact_119) is a single venue's statement]]",
+    "[[VERIFY: whether a couple where one partner is not Orthodox can have an Orthodox church wedding in Greece (and on what conditions); Mykonos Grand (fact_113) states its own on-site rule only]]",
+    "[[VERIFY: any requirement that the koumbaros or koumbara (sponsor) be Orthodox, if the article states it; no official source read]]",
+    "[[VERIFY: candles held by the couple during the Greek Orthodox service: not in the OCA 2022 service text; no goarch.org page read]]",
+    "[[VERIFY: koumbaros or koumbara exchanging the stefana three times (Greek practice): the OCA text has the priest crown the couple and groomsmen hold the crowns during the procession; no Greek Orthodox source read]]"
   ],
   "tools_used": [
     "mcp__Apify__apify--web-search",
-    "mcp__Apify__apify--web-fetch"
+    "mcp__Apify__apify--web-fetch",
+    "mcp__Lead_MCP__firecrawl_map",
+    "mcp__Lead_MCP__firecrawl_scrape"
   ],
   "next_agent": [
     "luxury-writer"
@@ -125,6 +159,370 @@
         "is_price": false,
         "conflicts": "Orthodox Church in America (official church site), read live via Apify web-fetch 2026-11-04, HTTP 200. Not the Greek Orthodox Archdiocese; describes the shared Orthodox rite. Jurisdiction: Orthodox Church in America.",
         "origin": "Copied unchanged from content/posts/greek-wedding-traditions/03-source-pack.json (fact_05); not re-read in this run."
+      },
+      {
+        "fact_id": "fact_100",
+        "claim": "Civil marriage context only (not the Orthodox route): The Municipality of Rhodes (rhodes.gr) publishes a page, in Greek, listing the supporting documents for performing a civil marriage of foreign nationals (under article 5(1) of Presidential Decree 391/1982): a joint application by the couple; a marriage licence or a certificate of no impediment to marriage from the person's consular or other public authority, naming the person they will marry, valid for six months; a copy of each passport; a municipal fee (a fee applies); and a form with the newlyweds' details. [Copied from rhodes-wedding-venues part-6 fact_600.]",
+        "source": "https://www.rhodes.gr/dikaiologitika-gia-ekdosi-adeias-telesi-gamou/",
+        "source_type": "government",
+        "checked": "2026-11-12",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_101",
+        "claim": "Civil marriage context only (not the Orthodox route): The Municipality of Rhodes page states that documents issued by foreign authorities must be originals of recent issue and officially translated into Greek, by a Greek lawyer, by the Greek Embassy abroad or by the Greek Ministry of Foreign Affairs, and that for countries outside the European Union they require certification with the Apostille stamp. [Copied from rhodes-wedding-venues part-6 fact_601.]",
+        "source": "https://www.rhodes.gr/dikaiologitika-gia-ekdosi-adeias-telesi-gamou/",
+        "source_type": "government",
+        "checked": "2026-11-12",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_102",
+        "claim": "Civil marriage context only (not the Orthodox route): The Municipality of Rhodes page states that details not shown on the documents provided can be recorded after the couple files a solemn declaration under Law 1599/1986, using the municipality's template. [Copied from rhodes-wedding-venues part-6 fact_602.]",
+        "source": "https://www.rhodes.gr/dikaiologitika-gia-ekdosi-adeias-telesi-gamou/",
+        "source_type": "government",
+        "checked": "2026-11-12",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_103",
+        "claim": "As at November 2026, the Australian Embassy in Athens notarial services page (read live 11 November 2026) lists witnessing application forms for, and issuing, Certificates of No Impediment (CNI), witnessing notices of intended marriage, and legalisation of signatures and/or seals by authentication or apostille. An appointment is needed for all notarial services (Monday to Friday, 9:00am to 12:30pm), though apostille and CNI documents can be submitted by post; legalised (apostilled) documents and CNIs are available for collection within two working days unless same-day collection is arranged in advance, or can be returned by mail. A fee applies. The Wedded Advisor confirms current requirements. [Copied from mykonos-wedding part-1 fact_104.]",
+        "source": "https://greece.embassy.gov.au/athn/notarial.html",
+        "source_type": "government",
+        "checked": "2026-11-11",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_104",
+        "claim": "As at November 2026, the Australian Embassy in Athens (read live 11 November 2026) says it does not provide legal advice, the client is responsible for knowing which service they need, it does not witness signatures on overseas documents (ask local authorities who can witness, or get legal advice), and honorary consuls are not authorised to provide notarial services. [Copied from mykonos-wedding part-1 fact_105.]",
+        "source": "https://greece.embassy.gov.au/athn/notarial.html",
+        "source_type": "government",
+        "checked": "2026-11-11",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_105",
+        "claim": "Australian Embassy, Athens: 5 Hatziyianni Mexi Street, Athens 115 28; phone +30 210 870 4000; greece.embassy.gov.au. [Copied from greek-wedding-traditions part-1 fact_102.]",
+        "source": "https://www.smartraveller.gov.au/destinations/europe/greece",
+        "source_type": "government",
+        "checked": "2026-11-04",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_106",
+        "claim": "As at November 2026, Smartraveller (read live 11 November 2026) says DFAT can issue a CNI in Australia, but some local authorities only accept CNIs issued in their country, so ask the destination's embassy or consulate whether you need a CNI, whether you can get it in Australia, and whether it also needs an authentication or apostille. The Wedded Advisor confirms current requirements. [Copied from mykonos-wedding part-1 fact_101.]",
+        "source": "https://www.smartraveller.gov.au/planning-trip/advice-your-planned-activities/getting-married-overseas",
+        "source_type": "government",
+        "checked": "2026-11-11",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_107",
+        "claim": "Smartraveller (updated 18/08/2026): some countries require proof you are free to marry; the most common documents are a CNI and certificates from a registry of births, deaths and marriages; contact the destination's embassy for specific requirements. [Copied from greek-wedding-traditions part-1 fact_112.]",
+        "source": "https://www.smartraveller.gov.au/planning-trip/advice-your-planned-activities/getting-married-overseas",
+        "source_type": "government",
+        "checked": "2026-11-04",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_108",
+        "claim": "As at November 2026, Smartraveller (read live 11 November 2026) says you cannot register an overseas marriage in Australia, but in most cases it is legally recognised if, when it took place, it was valid under the law of the country where it happened and would have been valid under Australian law had it occurred in Australia. A foreign marriage certificate is usually accepted as proof of the marriage but may not work as proof of a name change (check with your local registry of births, deaths and marriages), and Smartraveller suggests talking to a lawyer to confirm the certificate is valid in Australia. The Wedded Advisor confirms current requirements. [Copied from mykonos-wedding part-1 fact_102.]",
+        "source": "https://www.smartraveller.gov.au/planning-trip/advice-your-planned-activities/getting-married-overseas",
+        "source_type": "government",
+        "checked": "2026-11-11",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_109",
+        "claim": "The Smartraveller Greece page has no marriage-specific section; legal steps must come from the Australian Embassy Athens and Greek official sources. [Copied from greek-wedding-traditions part-1 fact_101.]",
+        "source": "https://www.smartraveller.gov.au/destinations/europe/greece",
+        "source_type": "government",
+        "checked": "2026-11-04",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_110",
+        "claim": "Smartraveller advises dressing modestly in churches and religious buildings in Greece. [Copied from greek-wedding-traditions part-1 fact_103.]",
+        "source": "https://www.smartraveller.gov.au/destinations/europe/greece",
+        "source_type": "government",
+        "checked": "2026-11-04",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_111",
+        "claim": "Civil marriage context only (not the Orthodox route): Municipal conditions stated (Registry Office, Municipality of Rhodes): required documents include a full birth certificate translated into Greek, valid marriage licences or certificates of no impediment naming both partners and the wedding place, divorce or death certificates where relevant, a residence permit for non-EU countries, and passport copies; documents need an Apostille where applicable, also translated into Greek. Originals must be presented to the registrar two days before the wedding. A fee applies, payable at the registry office. [Copied from rhodes-wedding-venues part-5 fact_504.]",
+        "source": "https://www.rhodes.gr/tourist-guide/ceremony-venues/",
+        "source_type": "government",
+        "checked": "2026-11-12",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_112",
+        "claim": "Civil marriage context only (not the Orthodox route): The municipal page says the Town Hall of Rhodes ceremony takes place every Wednesday and Friday, with the couple returning to the registry office the next working day to sign and have the marriage certificate drawn up, and that two adult witnesses over 18 must be present. [Copied from rhodes-wedding-venues part-5 fact_505.]",
+        "source": "https://www.rhodes.gr/tourist-guide/ceremony-venues/",
+        "source_type": "government",
+        "checked": "2026-11-12",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_113",
+        "claim": "Mykonos Grand states that both bride and groom must be Christian Orthodox to perform a (religious) wedding within the hotel premises. Its amenity list also names an open-air amphitheatre and a complimentary evening shuttle to Mykonos Town. Accommodation includes rooms, suites with private pools and the Mykonos Grand Villa; total room count and exclusive use are not stated on the pages read. [Copied from mykonos-wedding-venues fact_06.]",
+        "source": "https://www.mykonosgrand.gr/romance/weddings/ ; https://www.mykonosgrand.gr/",
+        "source_type": "official_venue",
+        "checked": "2026-11-11",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_114",
+        "claim": "Elounda SA Hotels & Resorts (Elounda, Crete) publishes a wedding packages PDF covering civil, Greek Orthodox and symbolic ceremonies. The civil and Orthodox package is called the Lavish Wedding Package; the symbolic option is the Symbolic Ceremony / Renewal of Vows Wedding Package. [Copied from crete-wedding-packages part-5 fact_500.]",
+        "source": "https://www.eloundapeninsula.com/wp-content/uploads/2025/04/Elounda-Wedding-Packages-.pdf",
+        "source_type": "official_venue",
+        "checked": "2026-11-12",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_115",
+        "claim": "Elounda SA Lavish Wedding Package (civil and Orthodox) includes reservation of the wedding date and time, choice of ceremony venue, documentation assistance and settlement of the wedding licence in coordination with the couple and the local Municipality Office, a complimentary room upgrade and early check-in on arrival (subject to availability), complimentary use of the Six Senses Spa thalassotherapy pool and thermal suite for the couple, and a tasting of the chosen wedding menu for up to two people (beverages excluded). [Copied from crete-wedding-packages part-5 fact_501.]",
+        "source": "https://www.eloundapeninsula.com/wp-content/uploads/2025/04/Elounda-Wedding-Packages-.pdf",
+        "source_type": "official_venue",
+        "checked": "2026-11-12",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_116",
+        "claim": "Elounda SA states the package rate does not include the Municipal fee (civil) or the Metropolis fee (Orthodox); these are charged on top and are subject to change. Package prices are published in the PDF. [Copied from crete-wedding-packages part-5 fact_504.]",
+        "source": "https://www.eloundapeninsula.com/wp-content/uploads/2025/04/Elounda-Wedding-Packages-.pdf",
+        "source_type": "official_venue",
+        "checked": "2026-11-12",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_117",
+        "claim": "Elounda Collection's civil and Orthodox wedding packages (Elounda SA Hotels & Resorts, covering Elounda Peninsula, Porto Elounda and Elounda Mare) are each valid only when the couple stays at least three nights in one of the group's hotels; the symbolic and vow renewal package carries the same three-night condition. Re-checked live; restates crete-wedding-venues fact_17 and greece-wedding-packages fact_10. [Copied from wedding-in-crete part-1 fact_100.]",
+        "source": "https://www.eloundapeninsula.com/wp-content/uploads/2025/04/Elounda-Wedding-Packages-.pdf",
+        "source_type": "official_venue",
+        "checked": "2026-11-11",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_118",
+        "claim": "Elounda Collection's document steps for a civil wedding: every document except passports needs its own separate Apostille stamp (one Apostille for all documents is not accepted); the Apostilled documents then need translating into Greek (via the Greek Embassy, a Greek lawyer or the Greek Ministry of Foreign Affairs translation service); copies are emailed for approval at least 4 weeks before the date; after Municipality approval the originals are couriered to the hotel at the couple's own cost at least 3 weeks before; and all documents must be issued within 3 months of the wedding date. The Orthodox page repeats these steps with approval by the Metropolis. [Copied from wedding-in-crete part-1 fact_102.]",
+        "source": "https://www.eloundapeninsula.com/wp-content/uploads/2025/04/Elounda-Wedding-Packages-.pdf",
+        "source_type": "official_venue",
+        "checked": "2026-11-11",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_119",
+        "claim": "Exact wording on Elounda Collection's civil documentation page: \"The marriage has to be registered by the couple at the Registry Office in Aghios Nikolaos within 40 days after the ceremony. If the wedding takes place on a Friday (or weekends), the registration of the wedding takes place the following Monday.\" (Venue-published step; the Orthodox page has the same sentence with \"(or weekend) the registration\".) [Copied from wedding-in-crete part-1 fact_103.]",
+        "source": "https://www.eloundapeninsula.com/wp-content/uploads/2025/04/Elounda-Wedding-Packages-.pdf",
+        "source_type": "official_venue",
+        "checked": "2026-11-11",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_120",
+        "claim": "Elounda Beach Hotel & Villas publishes an 'Indicative Wedding Package' (dedicated consultant; legal and licence paperwork requirements; civil or religious ceremony outside the hotel's church or at another place of the couple's choice for civil weddings; bouquet and boutonniere; taped ceremony music; a groom's preparation room; wedding cake; and an escorted transfer to the authorities to register the wedding). Re-checked live; restates greece-wedding-packages fact_01 and crete-wedding-venues fact_02. [Copied from wedding-in-crete part-1 fact_113.]",
+        "source": "https://www.eloundabeach.gr/meetings-events-crete-greece/weddings-and-occasions",
+        "source_type": "official_venue",
+        "checked": "2026-11-11",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_121",
+        "claim": "Nana Princess (Chersonissos, Crete) offers civil weddings on its private sandy beach, Greek Orthodox weddings in the private Chapel of St George on the hotel grounds, symbolic weddings officiated by a Nana Princess event coordinator, and vow renewals. [Copied from crete-wedding-packages part-5 fact_509.]",
+        "source": "https://www.nanaprincess.gr/pages/weddings",
+        "source_type": "official_venue",
+        "checked": "2026-11-12",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_122",
+        "claim": "Melenos Art Boutique Hotel (Lindos, Rhodes) hosts civil, symbolic and traditional Orthodox weddings and publishes no named package; its coordinators provide a schedule and costing sheet, organise tasks, outline a budget and build the itinerary. [Copied from crete-wedding-packages part-5 fact_529.]",
+        "source": "https://melenoslindos.com/lindos-weddings.php",
+        "source_type": "official_venue",
+        "checked": "2026-11-12",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_123",
+        "claim": "Grecotel Mykonos Lolita's own weddings page (grecotel.com/mykonos-lolita/weddings-mykonos/, modified 22 July 2026) offers 'Religious, civil & symbolic weddings at the hotel's chapel overlooking the deep blue and crystal-clear waters', describes the setting as off the beaten path and close to the island of Delos, and takes enquiries through a request-for-proposal form and the hotel's events email. [Copied from mykonos-wedding-venues part-2 fact_204.]",
+        "source": "https://www.grecotel.com/mykonos-lolita/weddings-mykonos/",
+        "source_type": "official_venue",
+        "checked": "2026-11-11",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_124",
+        "claim": "Costa Navarino (Messinia, Peloponnese): the official weddings page (modified 22 May 2026) says religious weddings can be held at the chapel of St Samson within Navarino Dunes or St Eleni at Navarino Agora, and civil ceremonies can be arranged on request indoors in town halls or outdoors on a beach, a boat, a hilltop or beside a stream. Weddings are handled by The Romanos, W Costa Navarino and Mandarin Oriental, Costa Navarino (eight spaces from 62 to 868 sqm). The page names no package and does not use 'all inclusive'. [Copied from greece-wedding-packages-all-inclusive part-1 fact_108.]",
+        "source": "https://www.costanavarino.com/weddings-greece/",
+        "source_type": "official_venue",
+        "checked": "2026-11-12",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_125",
+        "claim": "Canaves Collection (Oia) weddings page offers 'Wedding Package Options' via a downloadable wedding brochure; its enquiry form lists ceremony types Religious, Civil, Symbolic and Vow Renewal, and optional extras such as flower arch, gazebo, bouquets, wedding crowns, bombonieres, photographer, videographer, wedding cake, fireworks, 'Preparation of Wedding Documents', DJ, live bands, harpist and lighting (enquiry options, not stated package inclusions). [Copied from greece-wedding-packages-all-inclusive part-5 fact_506.]",
+        "source": "https://canaves.com/weddings-oia-santorini-island/",
+        "source_type": "official_venue",
+        "checked": "2026-11-12",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_126",
+        "claim": "Sani Resort lists two ceremony settings: the courtyard of Sani Church, a stone-built Greek church in the resort grounds near Sani Marina, and Ammos Beach facing the Aegean Sea near Sani Hill; indoor and outdoor reception venues include restaurants and bars, many overlooking the Aegean, subject to request and availability. [Copied from greece-wedding-venues part-4 fact_402.]",
+        "source": "https://sani-resort.com/weddings",
+        "source_type": "official_venue",
+        "checked": "2026-11-09",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_127",
+        "claim": "The Municipality of Paros tourism site (imagine.paros.gr, which identifies itself as the Municipality of Paros (Dimos Parou) tourist site) has a Wedding and Honeymoon page saying ceremonies can be held at a country chapel or at Panagia Ekatontapiliani, with guests arriving at the church by boat, yacht, speed boat, horse-drawn carriage or on foot with musicians. It names favourite churches including Panagia Ekatontapiliani, Agia Anna in Pandroso, Agios Fokas at the entrance to the port of Parikia, Agios Ioannis in Kolybithres, Zoodochou Pigis in Lageri, Agios Nikolaos in Piso Livadi and Agios Nikolaos in Pyrgaki. The page gives no civil marriage steps, documents, lead times or fees. [Copied from paros-wedding-venues part-3 fact_300.]",
+        "source": "https://imagine.paros.gr/en/wedding-honeymoon/417-wedding-honeymoon.html?tmpl=component&print=1",
+        "source_type": "government",
+        "checked": "2026-11-11",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_128",
+        "claim": "Roses Beach, ceremony options as stated: 'Wedding ceremonies can be arranged to take place in the idyllic church of Agios Fokas, a short distance from the hotel, only metres away from the sea'; alternatively the hotel 'can help you find another church or wedding location'. It also says 'Civil weddings on Paros, either in the municipal offices or even on the beach have increased in popularity in recent years and we can help in all your arrangements.' [Copied from paros-wedding-venues part-1 fact_107.]",
+        "source": "http://www.rosesbeach.com/wedding-venues-paros.html",
+        "source_type": "official_venue",
+        "checked": "2026-11-11",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_129",
+        "claim": "The Secret View 'The Estate' page gives per-space layouts: Pergola (bamboo roof, covered, for drizzle or heat) ceremony 30 / dinner 35; Outdoor Salon (stone, beige canopy) ceremony 60 / dinner 70; Chapel (Greek chapel as ceremony backdrop, chairs facing church or view) ceremony 85 / dinner 90; Terrace (stone deck, 180 degree view, Aegean behind) ceremony 110 / dinner 120. [Copied from paros-wedding-venues part-4 fact_408.]",
+        "source": "https://www.the-secret-view.com/pages/the-estate",
+        "source_type": "official_venue",
+        "checked": "2026-11-11",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_130",
+        "claim": "Rodostamo Hotel & Spa (Kommeno Bay, Corfu) hosts weddings: its official Meetings & Events page has a 'Weddings & Social Events' section offering wedding specials and added values for the couple, with in-house wedding coordinators who help organise the wedding reception. Sea-view wording, verbatim: 'in a majestic scenery, overlooking the Ionian Sea and as background the beautiful Church of Ipapanti, by the Kommeno Bay.' Meets the inclusion rule. [Copied from corfu-wedding-venues part-6 fact_600.]",
+        "source": "https://rodostamo.gr/meetings-and-events/",
+        "source_type": "official_venue",
+        "checked": "2026-11-11",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_131",
+        "claim": "Wedding legal options in brief, combined from venue and government sources: Costa Navarino states traditional religious (Orthodox chapel) marriages and civil ceremonies (town halls or outdoors, on request); One&Only Aesthesis and Kokotos Estate have chapels on site. Whether a chapel ceremony is legally binding for non-Orthodox couples, and the documents Greece requires (CNI from the Australian Embassy Athens, apostilles, translations), are confirmed per couple. As at November 2026; the Wedded Advisor confirms current requirements. [Copied from greece-wedding-venues part-2 fact_224.]",
+        "source": "https://www.costanavarino.com/weddings-greece/; https://greece.embassy.gov.au/athn/Notarial.html; https://www.smartraveller.gov.au/planning-trip/advice-your-planned-activities/getting-married-overseas",
+        "source_type": "government",
+        "checked": "2026-11-09",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_200",
+        "claim": "Orthodox Church in America service text: the Service of Betrothal is celebrated in the narthex, or in the back part of the church.",
+        "source": "https://www.oca.org/files/PDF/Music/Marriage/marriage-service.pdf",
+        "source_type": "other",
+        "checked": "2026-11-12",
+        "is_price": false,
+        "conflicts": "Orthodox Church in America, 'Holy Matrimony' service text (2022 PDF, last-modified 4 Mar 2022), read live via Apify web-fetch 2026-11-12, HTTP 200. Jurisdiction: Orthodox Church in America; not the Greek Orthodox Archdiocese or Church of Greece. Greek practice may differ in detail."
+      },
+      {
+        "fact_id": "fact_201",
+        "claim": "Orthodox Church in America service text: the priest blesses the couple with the rings, saying to each that they are betrothed 'in the name of the Father, and of the Son, and of the Holy Spirit', three times each, then places the rings on their right hands; then the bridal pair exchanges the rings.",
+        "source": "https://www.oca.org/files/PDF/Music/Marriage/marriage-service.pdf",
+        "source_type": "other",
+        "checked": "2026-11-12",
+        "is_price": false,
+        "conflicts": "Orthodox Church in America, 'Holy Matrimony' service text (2022 PDF, last-modified 4 Mar 2022), read live via Apify web-fetch 2026-11-12, HTTP 200. Jurisdiction: Orthodox Church in America; not the Greek Orthodox Archdiocese or Church of Greece. Greek practice may differ in detail."
+      },
+      {
+        "fact_id": "fact_202",
+        "claim": "Orthodox Church in America service text: for the Service of Crowning the couple, preceded by the priest, moves in procession to the centre of the church, with Psalm verses and the refrain 'Glory to Thee, our God; glory to Thee!'",
+        "source": "https://www.oca.org/files/PDF/Music/Marriage/marriage-service.pdf",
+        "source_type": "other",
+        "checked": "2026-11-12",
+        "is_price": false,
+        "conflicts": "Orthodox Church in America, 'Holy Matrimony' service text (2022 PDF, last-modified 4 Mar 2022), read live via Apify web-fetch 2026-11-12, HTTP 200. Jurisdiction: Orthodox Church in America; not the Greek Orthodox Archdiocese or Church of Greece. Greek practice may differ in detail."
+      },
+      {
+        "fact_id": "fact_203",
+        "claim": "Orthodox Church in America service text: 'according to Slavonic editions of the marriage service' the priest asks the bridegroom and bride whether each has a 'good, free and unconstrained will' to marry and has not promised themselves to anyone else. The text marks this as a Slavonic usage.",
+        "source": "https://www.oca.org/files/PDF/Music/Marriage/marriage-service.pdf",
+        "source_type": "other",
+        "checked": "2026-11-12",
+        "is_price": false,
+        "conflicts": "Orthodox Church in America, 'Holy Matrimony' service text (2022 PDF, last-modified 4 Mar 2022), read live via Apify web-fetch 2026-11-12, HTTP 200. Jurisdiction: Orthodox Church in America; not the Greek Orthodox Archdiocese or Church of Greece. Greek practice may differ in detail."
+      },
+      {
+        "fact_id": "fact_204",
+        "claim": "Orthodox Church in America service text: the priest crowns the bridegroom first, then the bride ('is crowned unto ... in the name of the Father, and of the Son, and of the Holy Spirit'), then blesses them three times saying 'O Lord our God, crown them with glory and honor.'",
+        "source": "https://www.oca.org/files/PDF/Music/Marriage/marriage-service.pdf",
+        "source_type": "other",
+        "checked": "2026-11-12",
+        "is_price": false,
+        "conflicts": "Orthodox Church in America, 'Holy Matrimony' service text (2022 PDF, last-modified 4 Mar 2022), read live via Apify web-fetch 2026-11-12, HTTP 200. Jurisdiction: Orthodox Church in America; not the Greek Orthodox Archdiocese or Church of Greece. Greek practice may differ in detail."
+      },
+      {
+        "fact_id": "fact_205",
+        "claim": "Orthodox Church in America service text: the rubric says the crowns 'recall those with which the martyrs, or witnesses of Christ, are crowned in heaven'.",
+        "source": "https://www.oca.org/files/PDF/Music/Marriage/marriage-service.pdf",
+        "source_type": "other",
+        "checked": "2026-11-12",
+        "is_price": false,
+        "conflicts": "Orthodox Church in America, 'Holy Matrimony' service text (2022 PDF, last-modified 4 Mar 2022), read live via Apify web-fetch 2026-11-12, HTTP 200. Jurisdiction: Orthodox Church in America; not the Greek Orthodox Archdiocese or Church of Greece. Greek practice may differ in detail."
+      },
+      {
+        "fact_id": "fact_206",
+        "claim": "Orthodox Church in America service text: the readings are the Epistle of Paul to the Ephesians 5:20-33 and the Gospel of John 2:1-12 (the wedding at Cana).",
+        "source": "https://www.oca.org/files/PDF/Music/Marriage/marriage-service.pdf",
+        "source_type": "other",
+        "checked": "2026-11-12",
+        "is_price": false,
+        "conflicts": "Orthodox Church in America, 'Holy Matrimony' service text (2022 PDF, last-modified 4 Mar 2022), read live via Apify web-fetch 2026-11-12, HTTP 200. Jurisdiction: Orthodox Church in America; not the Greek Orthodox Archdiocese or Church of Greece. Greek practice may differ in detail."
+      },
+      {
+        "fact_id": "fact_207",
+        "claim": "Orthodox Church in America service text: after the Lord's Prayer the common cup is brought and blessed, and the priest gives it to the couple three times, first to the bridegroom and then to the bride.",
+        "source": "https://www.oca.org/files/PDF/Music/Marriage/marriage-service.pdf",
+        "source_type": "other",
+        "checked": "2026-11-12",
+        "is_price": false,
+        "conflicts": "Orthodox Church in America, 'Holy Matrimony' service text (2022 PDF, last-modified 4 Mar 2022), read live via Apify web-fetch 2026-11-12, HTTP 200. Jurisdiction: Orthodox Church in America; not the Greek Orthodox Archdiocese or Church of Greece. Greek practice may differ in detail."
+      },
+      {
+        "fact_id": "fact_208",
+        "claim": "Orthodox Church in America service text: the priest then leads the couple in a circle three times around the lectern, the groomsmen behind them holding their crowns, while 'Rejoice, O Isaiah!', 'O Holy Martyrs' and 'Glory to Thee, O Christ-God' are sung (the music is headed 'Dance of Isaiah').",
+        "source": "https://www.oca.org/files/PDF/Music/Marriage/marriage-service.pdf",
+        "source_type": "other",
+        "checked": "2026-11-12",
+        "is_price": false,
+        "conflicts": "Orthodox Church in America, 'Holy Matrimony' service text (2022 PDF, last-modified 4 Mar 2022), read live via Apify web-fetch 2026-11-12, HTTP 200. Jurisdiction: Orthodox Church in America; not the Greek Orthodox Archdiocese or Church of Greece. Greek practice may differ in detail."
+      },
+      {
+        "fact_id": "fact_209",
+        "claim": "Orthodox Church in America service text: the priest removes the bridegroom's crown ('Be exalted like Abraham, O Bridegroom...') and then the bride's ('And you, O Bride, be exalted like Sarah...'), prays that God 'receive their crowns into Thy Kingdom', and the service ends with the Dismissal and 'God grant them many years!' (3x).",
+        "source": "https://www.oca.org/files/PDF/Music/Marriage/marriage-service.pdf",
+        "source_type": "other",
+        "checked": "2026-11-12",
+        "is_price": false,
+        "conflicts": "Orthodox Church in America, 'Holy Matrimony' service text (2022 PDF, last-modified 4 Mar 2022), read live via Apify web-fetch 2026-11-12, HTTP 200. Jurisdiction: Orthodox Church in America; not the Greek Orthodox Archdiocese or Church of Greece. Greek practice may differ in detail."
+      },
+      {
+        "fact_id": "fact_210",
+        "claim": "Orthodox Church in America service text: a prayer in the crowning service remembers 'the groomsman and the bridesmaid of the bridal pair'. The text does not state any eligibility rule for sponsors.",
+        "source": "https://www.oca.org/files/PDF/Music/Marriage/marriage-service.pdf",
+        "source_type": "other",
+        "checked": "2026-11-12",
+        "is_price": false,
+        "conflicts": "Orthodox Church in America, 'Holy Matrimony' service text (2022 PDF, last-modified 4 Mar 2022), read live via Apify web-fetch 2026-11-12, HTTP 200. Jurisdiction: Orthodox Church in America; not the Greek Orthodox Archdiocese or Church of Greece. Greek practice may differ in detail."
+      },
+      {
+        "fact_id": "fact_211",
+        "claim": "Orthodox Church in America service text: the 2022 OCA service text contains no rubric about candles; it is silent on candles.",
+        "source": "https://www.oca.org/files/PDF/Music/Marriage/marriage-service.pdf",
+        "source_type": "other",
+        "checked": "2026-11-12",
+        "is_price": false,
+        "conflicts": "Orthodox Church in America, 'Holy Matrimony' service text (2022 PDF, last-modified 4 Mar 2022), read live via Apify web-fetch 2026-11-12, HTTP 200. Jurisdiction: Orthodox Church in America; not the Greek Orthodox Archdiocese or Church of Greece. Greek practice may differ in detail."
       }
     ],
     "insider_details": [
@@ -146,6 +544,76 @@
           "fact_02",
           "fact_03"
         ]
+      },
+      {
+        "detail": "Book the Australian Embassy Athens notarial appointment early: all notarial services need an appointment (weekday mornings only), though CNI paperwork can go by post and CNIs are usually ready within two working days. Honorary consuls cannot do it, so build the Athens step into the itinerary or postal timeline.",
+        "fact_ids": [
+          "fact_103",
+          "fact_104"
+        ]
+      },
+      {
+        "detail": "Treat the Metropolis fee as a separate line from the venue package. Elounda SA charges it on top of its Orthodox package and says it is subject to change, so ask every venue whether church or Metropolis fees are inside or outside the quote.",
+        "fact_ids": [
+          "fact_114",
+          "fact_116"
+        ]
+      },
+      {
+        "detail": "Run Orthodox paperwork on the venue's document clock, not your own: Elounda SA asks for separately apostilled, Greek-translated documents issued within 3 months of the date, copies emailed 4 weeks out for Metropolis approval and originals couriered 3 weeks out at the couple's cost.",
+        "fact_ids": [
+          "fact_118",
+          "fact_101"
+        ]
+      },
+      {
+        "detail": "Plan a registry step after the church. Venues describe registering the marriage with the local registry office after the ceremony (Elounda SA: within 40 days, Monday after a Friday or weekend wedding; Elounda Beach includes an escorted transfer to register), so keep a weekday free before flying home.",
+        "fact_ids": [
+          "fact_119",
+          "fact_120"
+        ]
+      },
+      {
+        "detail": "Check the religion rule before falling for a hotel chapel. Mykonos Grand only hosts a religious wedding on site when both partners are Christian Orthodox, while venues such as Nana Princess, Grecotel Mykonos Lolita, Costa Navarino and Sani Resort have their own chapel or church settings, each with its own conditions.",
+        "fact_ids": [
+          "fact_113",
+          "fact_121",
+          "fact_123",
+          "fact_124",
+          "fact_126"
+        ]
+      },
+      {
+        "detail": "Guests should dress modestly for the church ceremony; Smartraveller advises modest dress in Greek churches and religious buildings, which is worth putting on the invitation or wedding website.",
+        "fact_ids": [
+          "fact_110"
+        ]
+      },
+      {
+        "detail": "Plan the ceremony as two moves: the betrothal at the back of the church (narthex) and then a procession to the centre for the crowning, per the Orthodox Church in America service text. Brief the photographer and videographer to cover both positions.",
+        "fact_ids": [
+          "fact_200",
+          "fact_202"
+        ]
+      },
+      {
+        "detail": "Wedding bands go on the right hand in the Orthodox rite (OCA service text). Tell the jeweller and the couple so rings are sized for the right hand.",
+        "fact_ids": [
+          "fact_201"
+        ]
+      },
+      {
+        "detail": "The procession three times around the table (to 'Rejoice, O Isaiah!') has the groomsmen following and holding the crowns (OCA text). Rehearse it with the sponsors so they know their place and the photographer gets clear sightlines.",
+        "fact_ids": [
+          "fact_208",
+          "fact_210"
+        ]
+      },
+      {
+        "detail": "Ask the parish which readings are used. The OCA text sets Ephesians 5:20-33 and John 2:1-12; couples who want a bilingual booklet for Australian guests can print these.",
+        "fact_ids": [
+          "fact_206"
+        ]
       }
     ],
     "quotes": [],
@@ -156,7 +624,14 @@
       "[[VERIFY: days and periods when Greek Orthodox weddings are not held (e.g. fasting periods, Lent and Holy Week, 1 to 15 August, certain feast days): only seen in a vendor search snippet, not a church source]]",
       "[[VERIFY: Greek Orthodox Church rule on marrying a non-Christian (unbaptised) partner in church, beyond the OCA statement that the sacrament is for baptised members: no goarch.org page read]]",
       "[[VERIFY: Greek Orthodox Church conditions for second and third marriages (ecclesiastical divorce, permission of the bishop, penitential character of the service, limit of three): no goarch.org or Church of Greece page read]]",
-      "[[VERIFY: whether the Greek Orthodox Church requires baptised non-Orthodox Christian partners to have been baptised in the name of the Holy Trinity, and what certificates the parish asks for: no goarch.org page read]]"
+      "[[VERIFY: whether the Greek Orthodox Church requires baptised non-Orthodox Christian partners to have been baptised in the name of the Holy Trinity, and what certificates the parish asks for: no goarch.org page read]]",
+      "[[VERIFY: legal validity in Greece of a Greek Orthodox church wedding (that it has the same legal effect as a civil marriage), from a Greek government source; not sourced in this batch]]",
+      "[[VERIFY: who issues the Orthodox wedding licence (adeia gamou) for a destination wedding (local Metropolis or parish priest) and the documents it requires for Australians, such as baptism certificates and a CNI; only venue sources (Elounda SA, fact_118) support Metropolis approval]]",
+      "[[VERIFY: the general deadline and process for registering an Orthodox marriage with the Greek civil registry (lixiarcheio) after the ceremony; the 40-day Aghios Nikolaos wording (fact_119) is a single venue's statement]]",
+      "[[VERIFY: whether a couple where one partner is not Orthodox can have an Orthodox church wedding in Greece (and on what conditions); Mykonos Grand (fact_113) states its own on-site rule only]]",
+      "[[VERIFY: any requirement that the koumbaros or koumbara (sponsor) be Orthodox, if the article states it; no official source read]]",
+      "[[VERIFY: candles held by the couple during the Greek Orthodox service: not in the OCA 2022 service text; no goarch.org page read]]",
+      "[[VERIFY: koumbaros or koumbara exchanging the stefana three times (Greek practice): the OCA text has the priest crown the couple and groomsmen hold the crowns during the procession; no Greek Orthodox source read]]"
     ],
     "needs_signoff": [],
     "must_include_coverage": [
@@ -205,6 +680,111 @@
         "covered_by": [
           "fact_02",
           "[[VERIFY: order of the Greek Orthodox wedding service (betrothal with rings, candles, crowning with stefana exchanged by the koumbaros or koumbara, Epistle and Gospel, common cup, Dance of Isaiah, removal of crowns): no goarch.org or Church of Greece page read; goarch.org reads timed out 2026-11-12]]"
+        ]
+      },
+      {
+        "item": "Australian documents: CNI, apostille, translation",
+        "covered_by": [
+          "fact_103",
+          "fact_104",
+          "fact_106",
+          "fact_107",
+          "fact_101",
+          "fact_118"
+        ]
+      },
+      {
+        "item": "Orthodox wedding licence and Metropolis approval",
+        "covered_by": [
+          "fact_118",
+          "fact_116",
+          "[[VERIFY: who issues the Orthodox wedding licence (adeia gamou) for a destination wedding (local Metropolis or parish priest) and the documents it requires for Australians, such as baptism certificates and a CNI; only venue sources (Elounda SA, fact_118) support Metropolis approval]]"
+        ]
+      },
+      {
+        "item": "Legal validity and registration with the civil registry",
+        "covered_by": [
+          "fact_119",
+          "fact_120",
+          "[[VERIFY: legal validity in Greece of a Greek Orthodox church wedding (that it has the same legal effect as a civil marriage), from a Greek government source; not sourced in this batch]]",
+          "[[VERIFY: the general deadline and process for registering an Orthodox marriage with the Greek civil registry (lixiarcheio) after the ceremony; the 40-day Aghios Nikolaos wording (fact_119) is a single venue's statement]]"
+        ]
+      },
+      {
+        "item": "Recognition in Australia and name change",
+        "covered_by": [
+          "fact_108"
+        ]
+      },
+      {
+        "item": "Mixed-faith couples",
+        "covered_by": [
+          "fact_113",
+          "[[VERIFY: whether a couple where one partner is not Orthodox can have an Orthodox church wedding in Greece (and on what conditions); Mykonos Grand (fact_113) states its own on-site rule only]]"
+        ]
+      },
+      {
+        "item": "Venues offering Orthodox ceremonies or chapels",
+        "covered_by": [
+          "fact_113",
+          "fact_114",
+          "fact_121",
+          "fact_122",
+          "fact_123",
+          "fact_124",
+          "fact_125",
+          "fact_126",
+          "fact_127",
+          "fact_128",
+          "fact_129",
+          "fact_130"
+        ]
+      },
+      {
+        "item": "Civil marriage alternative (context)",
+        "covered_by": [
+          "fact_100",
+          "fact_101",
+          "fact_102",
+          "fact_111",
+          "fact_112"
+        ]
+      },
+      {
+        "item": "Order of the Greek Orthodox wedding service",
+        "covered_by": [
+          "fact_200",
+          "fact_201",
+          "fact_202",
+          "fact_204",
+          "fact_206",
+          "fact_207",
+          "fact_208",
+          "fact_209",
+          "[[VERIFY: candles held by the couple during the Greek Orthodox service: not in the OCA 2022 service text; no goarch.org page read]]",
+          "[[VERIFY: koumbaros or koumbara exchanging the stefana three times (Greek practice): the OCA text has the priest crown the couple and groomsmen hold the crowns during the procession; no Greek Orthodox source read]]"
+        ]
+      },
+      {
+        "item": "Meaning of the crowns",
+        "covered_by": [
+          "fact_205"
+        ]
+      },
+      {
+        "item": "Sponsor (koumbaros) role and eligibility",
+        "covered_by": [
+          "fact_208",
+          "fact_210",
+          "[[VERIFY: koumbaros or koumbara (sponsor) eligibility, e.g. must be an Orthodox Christian in good standing: no goarch.org or Church of Greece page read]]"
+        ]
+      },
+      {
+        "item": "Interfaith, second marriages and baptism conditions",
+        "covered_by": [
+          "[[VERIFY: Greek Orthodox Church rule on marrying a non-Christian (unbaptised) partner in church, beyond the OCA statement that the sacrament is for baptised members: no goarch.org page read]]",
+          "[[VERIFY: Greek Orthodox Church conditions for second and third marriages (ecclesiastical divorce, permission of the bishop, penitential character of the service, limit of three): no goarch.org or Church of Greece page read]]",
+          "[[VERIFY: whether the Greek Orthodox Church requires baptised non-Orthodox Christian partners to have been baptised in the name of the Holy Trinity, and what certificates the parish asks for: no goarch.org page read]]"
         ]
       }
     ]

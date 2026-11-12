@@ -4,3 +4,4 @@
 22:37 03 batch A: 5 OCA facts copied; goarch reads timed out, ecclesia.gr 404; 6 verify items; top-up launched (firecrawl).
 22:38 03 batch B: 32 reused facts (Embassy, Smartraveller, Rhodes civil, venues); gov.gr 404, imthira.gr timeout; 5 verify items.
 22:38 02 SEO done: 5 cities; greek orthodox wedding AU 140 US 880; stefana AU 210; high overlap with Greek traditions draft; 301 candidate /8-symbolic-eastern-orthodox-wedding-traditions-you-might-not-know-about.
+22:41 03 top-up C: 12 OCA service facts; goarch still unreadable (timeouts; Firecrawl 402). STOP at G3 after two attempts; run report written.
