@@ -17,3 +17,4 @@
 - 00:50 11-13 package, booking checklist, run report, backlinks, link map, calendar row 47, docx.
 00:58 03 top-up H (person asked for 15): Santorini Gem qualifies (village not published); Kivotos, Cavo Tagoo, Perivolas, Esperas, Celestia, Erosantorini caldera but no wedding wording.
 00:59 03 top-up G: Ambassador Aegean (Akrotiri) qualifies on its home page (weddings page 404; booking checklist); Vedema weddings but no caldera view in words; Katikies Garden town-only caldera wording. Count 15 (Aroma Suites not needed). Parts 7 and 8 appended to the merged pack; final copy being revised to 15.
+01:00 08 final revised to 15 venues (Ambassador Aegean, Santorini Gem added); claims checked against fact_700-702 and fact_800-803; scan clean.
