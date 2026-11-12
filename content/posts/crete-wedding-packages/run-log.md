@@ -2,3 +2,4 @@
 04:49 04 images done: 6 placeholder slots (2 still lifes AI only with approval).
 04:49 01 brief done: packages look alike but differ on paper; fee vs package vs planner; quote checklist.
 04:51 03 batch done: 24 facts; Out of the Blue (Civil, Orthodox, Symbolic packages; extras on top), Minoa Palace (wedding package), St Nicolas Bay (complimentary amenities; ceremony on request), Avra Imperial (chapel; hall up to 680), Porto Elounda and Elounda Mare (services), Minos Beach, Minos Palace, Kapsaliana (no package); Istron Bay and Lyrarakis pages unusable. Packs merged.
+04:52 02 SEO done: AU 10 / US 20 (KD 0); no site ranking; Greece packages draft lists the term as secondary (split: this guide owns it); meta 55/143. report.md saved by orchestrator.
