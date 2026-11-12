@@ -4,3 +4,4 @@
 05:50 03 planner done: 58 facts reused from 4 sister packs; 6 venues per island; 4 verify items (civil steps, ports, ferry link, weather comparison) to be avoided in copy.
 05:54 02 SEO done: 2 of 5 cities (3 DataForSEO errors, accepted); comparison wording has no measured volume; santorini vs mykonos AU 210 US 2,400; no cannibalisation.
 05:57 05 writer done: first draft about 3,370 words, 0 VERIFY.
+06:00 06 editor pass_with_edits 4.14, 12 edits applied (05-draft-r2.md); 07 readers done.
