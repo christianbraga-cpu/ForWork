@@ -7,7 +7,7 @@ round: 3
 
 <!-- IMAGE SLOT featured: Landscape 3:2. Preferred: two partners of the same gender (any gender expression) at the ceremony moment, sharing vows or a quiet embrace, natural and joyful rather than posed or stereotyped, on a sea-view terrace or aisle at a real, named Greek island venue, golden hour, May to October, room for a title. Fallback with no people: the same venue's ceremony set-up (two chairs or an open aisle, white florals, olive branches, sea beyond), no signage. People only from a licensed real wedding with written couple consent (and guest consent if identifiable) recorded in library-index.csv; never staged with AI, never stock models presented as a real couple. Source: the venue's own media kit with written permission, or licensed premium stock bought by a human and added to library-index.csv. Never AI, never a competitor, directory, planner, photographer-blog or search-result image. Location proven by the media kit, register row or EXIF, never by appearance. -->
 
-Yes. As at November 2026, same-sex marriage in Greece is legal: Greek law allows a civil marriage between two persons of different or the same sex, and the change has been in force since 16 February 2024. <!-- fact_05 --> <!-- fact_02 --> It is a civil marriage, performed by a municipal registrar.
+Yes. As at November 2026, same-sex marriage in Greece is legal: Greek law allows a civil marriage between two persons of different or the same sex, and the change has been in force since 16 February 2024. <!-- fact_05 --> <!-- fact_02 --> It is a civil marriage, not a religious one.
 
 For an Australian couple, the questions are practical. Which documents you need, where the ceremony can take place, and whether the marriage counts when you fly home. Before you book a venue, check the steps with the municipality where you will marry and with the Australian Embassy in Athens.
 
@@ -16,7 +16,7 @@ If you are still weighing up countries, start with our guide to [where same-sex 
 ## Key takeaways
 
 - Since 16 February 2024, Greek law has allowed civil marriage between two persons of the same sex, and the reform covers civil marriage, not religious ceremonies. <!-- fact_02 --> <!-- fact_05 --> <!-- fact_07 -->
-- The municipality where you marry sets the paperwork, and Rhodes, for example, asks for a certificate of no impediment naming your partner. <!-- fact_15 --> <!-- fact_16 -->
+- Ask the municipality where you marry for its document list, and Rhodes, for example, asks for a certificate of no impediment naming your partner. <!-- fact_15 --> <!-- fact_16 -->
 - The Australian Embassy in Athens issues Certificates of No Impediment, and same-sex marriages that took place overseas are generally recognised in Australia. <!-- fact_112 --> <!-- fact_109 -->
 - Choose a venue that tells you plainly it hosts same-sex weddings, and ask how the civil ceremony and the celebration fit together on the day.
 
@@ -28,19 +28,19 @@ Yes, as at November 2026. The law is Law 5089/2024, titled "Equality in civil ma
 
 The heart of it is one sentence in the Greek Civil Code. Article 1350(1) now begins: "Marriage is contracted between two persons of different or the same sex. Marriage requires the agreement of the intending spouses." <!-- fact_05 --> You can read the [official text of Law 5089/2024](https://www.e-efka.gov.gr/sites/default/files/2024-05/5089-24.pdf) in Greek.
 
-A few weeks later, the Ministry of Interior wrote to every municipality, registry office and Greek consulate. Its circular confirms that a marriage between two persons of the same sex is valid in the Greek legal order and is entered in the civil registry like any other marriage. <!-- fact_06 -->
+A few weeks later, the Ministry of Interior wrote to every municipality, registry office and Greek consulate. Its circular confirms that a marriage between two persons of the same sex is valid in the Greek legal order and is entered in the civil registry and recorded in the Citizens' Register. <!-- fact_06 -->
 
-What matters for your plans is the word civil. The marriage is made before a registrar under the Civil Code. Any church or religious element sits outside it. <!-- fact_07 -->
+What matters for your plans is the word civil. The marriage is made under the Civil Code. Any church or religious element sits outside it. <!-- fact_07 -->
 
 ## Can foreigners have a same-sex wedding in Greece?
 
 <!-- IMAGE SLOT documents: Flat lay on linen: two closed passport-style booklets with no readable details, an envelope, a fountain pen, two matching rings and a sprig of olive, soft daylight, no readable personal data, no real official forms or emblems, no people or place. Source: Wedded Wonderland Canva brand assets or licensed stock added to library-index.csv. An AI still life is allowed only if the user approves it, it shows no real place, wedding, ceremony or person, and it is captioned 'Illustrative image' (source type ai_illustrative). -->
 
-The short answer is that the civil route is the one open to you, and it runs through the municipality where you marry. The detail is set by the municipality and its registry office, so confirm each step locally.
+The short answer is that the civil route is the one open to you, and it runs through the municipality where you marry. Confirm each step with the municipality and its registry office.
 
 ### Residency rules for overseas couples
 
-Law 5089/2024 states no residency or nationality condition of its own, and neither the law nor the Ministry of Interior circular sets out how a foreign national's freedom to marry is assessed. <!-- fact_15 --> That part is handled by the municipality and its registry office, which may set its own requirements.
+Law 5089/2024 states no residency or nationality condition of its own, and neither the law nor the Ministry of Interior circular sets out how a foreign national's freedom to marry is assessed. <!-- fact_15 --> Ask the municipality and its registry office what they require.
 
 So the question to put to the municipality is direct: what do two Australian citizens, neither of them resident in Greece, need to give you, and by when? Ask the same of the Australian Embassy in Athens, including any fees.
 
@@ -48,7 +48,7 @@ For the trip itself, Greece is in the Schengen area. Australians can visit for s
 
 ### Civil ceremony at the town hall
 
-A civil ceremony is led by a municipal registrar. On Rhodes, the Town Hall ceremony takes place every Wednesday and Friday, two adult witnesses over 18 must be present, and the couple returns to the registry office the next working day to sign and have the marriage certificate drawn up. <!-- fact_24 -->
+On Rhodes, the Town Hall ceremony takes place every Wednesday and Friday, two adult witnesses over 18 must be present, and the couple returns to the registry office the next working day to sign and have the marriage certificate drawn up. <!-- fact_24 -->
 
 The town hall is not the only setting. The Municipality of Rhodes, for one, names outdoor ceremony locations served by its registrars, from beaches to chapels and parks. <!-- fact_19 --> <!-- fact_20 --> More on that below.
 
@@ -56,7 +56,7 @@ Build your timeline around the registry, not the venue. Hold the next working da
 
 ### Documents you will usually need
 
-Requirements are set locally. The Municipality of Rhodes, for example, lists the following for a civil marriage of foreign nationals: <!-- fact_16 -->
+Ask your municipality for its list. The Municipality of Rhodes, for example, lists the following for a civil marriage of foreign nationals: <!-- fact_16 -->
 
 - a joint application from the couple
 - a marriage licence or certificate of no impediment to marriage for each of you, issued by your consular or other public authority, naming the person you will marry and valid for six months
@@ -162,7 +162,6 @@ Ask early, and ask in writing, whether the venue hosts same-sex weddings.
 
 Your Wedded Advisor is a single point of contact who plans the venue, travel, vendors and payments around your civil ceremony, works in your time zone and quotes in AUD, with the fee agreed in writing before any work begins; [talk to Wedded Concierge about your Greece wedding](https://weddedwonderland.com/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=same-sex-marriage-greece&utm_content=secondary).
 
-<!-- CTA: primary -->
 
 ## Legal ceremony, symbolic celebration or both
 
@@ -182,11 +181,11 @@ Whichever you choose, remember the rule on recognition. If your Greek marriage i
 
 ### Is same-sex marriage legal in Greece?
 
-Yes. As at November 2026, Law 5089/2024 allows civil marriage between two persons of different or the same sex, in force since 16 February 2024. <!-- fact_05 --> <!-- fact_02 --> It is a civil marriage before a registrar.
+Yes. As at November 2026, Law 5089/2024 allows civil marriage between two persons of different or the same sex, in force since 16 February 2024. <!-- fact_05 --> <!-- fact_02 --> It is a civil marriage, not a religious one.
 
 ### Can foreigners get married in Greece as a same-sex couple?
 
-The law does not set out how a foreign national's freedom to marry is assessed; the municipality where you marry sets the documents. <!-- fact_15 --> The Municipality of Rhodes, for example, asks for a certificate of no impediment naming your partner, passports, a joint application and a fee. <!-- fact_16 --> Confirm with your municipality and the Australian Embassy in Athens, including any fees.
+The law does not set out how a foreign national's freedom to marry is assessed, so ask the municipality where you marry which documents it needs. <!-- fact_15 --> The Municipality of Rhodes, for example, asks for a certificate of no impediment naming your partner, passports, a joint application and a fee. <!-- fact_16 --> Confirm with your municipality and the Australian Embassy in Athens, including any fees.
 
 ### Do we need to live in Greece to marry there?
 
