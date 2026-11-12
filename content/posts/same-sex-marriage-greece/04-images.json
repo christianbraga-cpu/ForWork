@@ -1,0 +1,208 @@
+{
+ "agent": "visual-curator",
+ "task_id": "same-sex-marriage-greece",
+ "stage": "04",
+ "status": "needs_input",
+ "round": 1,
+ "inputs_used": [
+  "CLAUDE.md",
+  "content/posts/same-sex-marriage-greece/00-input.json",
+  "01-brief.json, 02-seo.json, 02-research/report.md, 03-source-pack.json (not present at run time)",
+  "content/posts/greek-orthodox-wedding/04-images.json (format model)",
+  "content-system/images/library-index.csv (header only, no rows)",
+  "content-system/schemas/04-images.schema.json"
+ ],
+ "self_qa": {
+  "checks": [
+   {
+    "check": "Zero reference-only or competitor images in slots",
+    "pass": true,
+    "note": "reference_only is empty; no images downloaded."
+   },
+   {
+    "check": "Every approved image has location, licence, alt, caption, fit_reason",
+    "pass": true,
+    "note": "No approved images this run."
+   },
+   {
+    "check": "No AI image depicting a real place, wedding, ceremony or person",
+    "pass": true,
+    "note": "No AI generated. Only documents and travel-planning still lifes may become ai_illustrative, with user approval and an 'Illustrative image' label."
+   },
+   {
+    "check": "Featured image exists (approved or needed with brief)",
+    "pass": true,
+    "note": "Needed, with brief: same-sex couple or ceremony set-up at a named Greek island venue."
+   },
+   {
+    "check": "People only from licensed, consented real weddings; inclusive, respectful briefs",
+    "pass": true,
+    "note": "Featured and reception briefs require recorded couple consent; no stereotyped or AI people."
+   },
+   {
+    "check": "About 6 slots",
+    "pass": true,
+    "note": "6 slots."
+   }
+  ],
+  "confidence": 0.7
+ },
+ "open_questions": [
+  {
+   "to": "user",
+   "question": "Do you approve AI still lifes (documents, travel planning) labelled 'Illustrative image' if no licensed or Canva asset is found?",
+   "blocking": false
+  },
+  {
+   "to": "user",
+   "question": "Do you hold any real same-sex wedding photos in Greece with written couple consent that could fill the featured or reception slots?",
+   "blocking": false
+  },
+  {
+   "to": "planner-sme",
+   "question": "Confirm featured venues (03-source-pack) so featured, venue-terrace and reception-table slots can be tied to named places and press contacts.",
+   "blocking": false
+  }
+ ],
+ "assumptions": [
+  "Placement is by section name because 02-seo.json is not yet written; the writer maps it to after_h2 positions.",
+  "No venue is named because 03-source-pack does not exist; nothing was guessed.",
+  "Fast mode: repo register only, no Drive, own-site, Canva, Gmail or Lens checks run."
+ ],
+ "verify_items": [
+  "[[IMAGE NEEDED]] featured: same-sex couple ceremony (consented) or ceremony set-up at a named Greek island venue, licensed",
+  "[[IMAGE NEEDED]] island-setting, venue-terrace, reception-table: official venue image or licensed stock",
+  "[[IMAGE NEEDED]] documents, travel-planning: Canva brand asset or licensed stock; AI still life only with user approval, labelled 'Illustrative image'",
+  "[[VERIFY licence]] every venue or own-site image: written permission, credit line and expiry recorded in library-index.csv before use",
+  "[[VERIFY: couple consent for any real-wedding photo, and guest consent if identifiable]]"
+ ],
+ "tools_used": [
+  "Bash (cat/python)"
+ ],
+ "next_agent": [
+  "luxury-writer"
+ ],
+ "payload": {
+  "slots": [
+   {
+    "slot_id": "featured",
+    "placement": "featured",
+    "purpose": "Hero and social share image: a same-sex couple's ceremony, or the ceremony set-up awaiting them, at a Greek island venue, signalling warmth, equality and luxury from the first glance.",
+    "shot_brief": "Landscape 3:2. Preferred: two partners of the same gender (any gender expression) at the ceremony moment, sharing vows or a quiet embrace, natural and joyful rather than posed or stereotyped, on a sea-view terrace or aisle at a real, named Greek island venue, golden hour, May to October, room for a title. Fallback with no people: the same venue's ceremony set-up (two chairs or an open aisle, white florals, olive branches, sea beyond), no signage. People only from a licensed real wedding with written couple consent (and guest consent if identifiable) recorded in library-index.csv; never staged with AI, never stock models presented as a real couple. Source: the venue's own media kit with written permission (Gmail draft request, never sent by an agent), or licensed premium stock bought by a human and added to library-index.csv. Never AI, never a competitor, directory, planner, photographer-blog or search-result image. Location proven by the media kit, register row or EXIF, never by appearance.",
+    "status": "needed",
+    "file": "content/posts/same-sex-marriage-greece/images/same-sex-marriage-greece-island-venue-ceremony-hero.webp",
+    "source": {
+     "type": "venue_press",
+     "origin": "not yet sourced",
+     "credit": "[[VERIFY licence]]"
+    },
+    "location": {
+     "venue": "a named Greek island venue (to be confirmed from 03-source-pack)",
+     "town": "Greek island (to be confirmed)",
+     "verified_by": "pending: media kit, register row or EXIF"
+    },
+    "licence_note": "[[IMAGE NEEDED]] Library register has no rows (header only). Couple consent required if people appear. Move to pending_permission once a permission draft exists."
+   },
+   {
+    "slot_id": "documents",
+    "placement": "section: the legal position and documents couples need (H2 opener)",
+    "purpose": "Lighten the legal and documents section with a calm planning still life.",
+    "shot_brief": "Flat lay on linen: two closed passport-style booklets with no readable details, an envelope, a fountain pen, two matching rings and a sprig of olive, soft daylight, no readable personal data, no real official forms or emblems, no people or place. Source: Wedded Wonderland Canva brand assets or licensed stock added to library-index.csv. An AI still life is allowed only if the user approves it, it shows no real place, wedding, ceremony or person, and it is captioned 'Illustrative image' (source type ai_illustrative).",
+    "status": "needed",
+    "file": "content/posts/same-sex-marriage-greece/images/same-sex-marriage-greece-documents-still-life.webp",
+    "source": {
+     "type": "canva",
+     "origin": "not yet sourced",
+     "credit": "[[VERIFY licence]]"
+    },
+    "location": {
+     "venue": "none (non-place still life)",
+     "town": "n/a",
+     "verified_by": "not applicable: non-place visual"
+    },
+    "licence_note": "[[IMAGE NEEDED]] Library register has no rows (header only). AI only with user approval, labelled 'Illustrative image'. Must not show a real official document."
+   },
+   {
+    "slot_id": "island-setting",
+    "placement": "section: where to marry in Greece, choosing an island (H2 opener)",
+    "purpose": "Give the destination context: an island setting couples can picture for their ceremony.",
+    "shot_brief": "Wide view of a named Greek island village or coastline (whitewashed houses, caldera or sea), golden hour, no people or only distant unidentifiable figures, no hotel or business signage. Name the island and town in the caption only if proven. Source: the venue's own media kit with written permission (Gmail draft request, never sent by an agent), or licensed premium stock bought by a human and added to library-index.csv. Never AI, never a competitor, directory, planner, photographer-blog or search-result image. Location proven by the media kit, register row or EXIF, never by appearance.",
+    "status": "needed",
+    "file": "content/posts/same-sex-marriage-greece/images/same-sex-marriage-greece-island-setting.webp",
+    "source": {
+     "type": "stock",
+     "origin": "not yet sourced",
+     "credit": "[[VERIFY licence]]"
+    },
+    "location": {
+     "venue": "none, or named viewpoint if proven",
+     "town": "Greek island (to be confirmed)",
+     "verified_by": "pending: register row, media kit or EXIF"
+    },
+    "licence_note": "[[IMAGE NEEDED]] Library register has no rows (header only). Move to pending_permission once a permission draft exists."
+   },
+   {
+    "slot_id": "venue-terrace",
+    "placement": "section: choosing a welcoming venue (H2 opener)",
+    "purpose": "Show a real featured venue terrace suited to a ceremony or welcome drinks, linking the guide to bookable packages.",
+    "shot_brief": "A featured Wedded Wonderland venue's sea-view terrace set for a ceremony or aperitivo, wide view, golden hour, no people. Venue confirmed by the planner SME; image from its media kit or own-site page with licence confirmed. Source: the venue's own media kit with written permission (Gmail draft request, never sent by an agent), or licensed premium stock bought by a human and added to library-index.csv. Never AI, never a competitor, directory, planner, photographer-blog or search-result image. Location proven by the media kit, register row or EXIF, never by appearance.",
+    "status": "needed",
+    "file": "content/posts/same-sex-marriage-greece/images/same-sex-marriage-greece-venue-terrace.webp",
+    "source": {
+     "type": "own_site",
+     "origin": "not yet sourced",
+     "credit": "[[VERIFY licence]]"
+    },
+    "location": {
+     "venue": "a featured venue (to be named from 03-source-pack)",
+     "town": "Greece (to be confirmed)",
+     "verified_by": "pending: own-site page, media kit or EXIF"
+    },
+    "licence_note": "[[IMAGE NEEDED]] Library register has no rows (header only). Own-site images stay [[VERIFY licence]] until the register confirms them. Move to pending_permission once a permission draft exists."
+   },
+   {
+    "slot_id": "travel-planning",
+    "placement": "section: timeline and travel planning from Australia (H2 opener)",
+    "purpose": "Support the planning and travel section with a calm, aspirational still life.",
+    "shot_brief": "Flat lay or tabletop: a linen notebook with a handwritten (illegible) checklist, two coffee cups, sunglasses, a generic paper map with no readable place names, a pen and a small olive sprig, morning light, no people, no airline or brand logos, no real place. Source: Wedded Wonderland Canva brand assets or licensed stock added to library-index.csv. An AI still life is allowed only if the user approves it, it shows no real place, wedding, ceremony or person, and it is captioned 'Illustrative image' (source type ai_illustrative).",
+    "status": "needed",
+    "file": "content/posts/same-sex-marriage-greece/images/same-sex-marriage-greece-travel-planning-still-life.webp",
+    "source": {
+     "type": "canva",
+     "origin": "not yet sourced",
+     "credit": "[[VERIFY licence]]"
+    },
+    "location": {
+     "venue": "none (non-place still life)",
+     "town": "n/a",
+     "verified_by": "not applicable: non-place visual"
+    },
+    "licence_note": "[[IMAGE NEEDED]] Library register has no rows (header only). AI only with user approval, labelled 'Illustrative image'."
+   },
+   {
+    "slot_id": "reception-table",
+    "placement": "section: celebrating, reception and guest experience (H2 opener)",
+    "purpose": "Close the guide on the celebration: a styled reception table at a real Greek venue.",
+    "shot_brief": "Long reception table at a real, named Greek venue at dusk, white linen, candles, olive and white florals, sea or village lights beyond, no people, or a licensed real same-sex wedding reception with couple and guest consent. No rainbow cliches unless from a real couple's own styling. Source: the venue's own media kit with written permission (Gmail draft request, never sent by an agent), or licensed premium stock bought by a human and added to library-index.csv. Never AI, never a competitor, directory, planner, photographer-blog or search-result image. Location proven by the media kit, register row or EXIF, never by appearance. People only from a licensed real wedding with written couple consent (and guest consent if identifiable) recorded in library-index.csv; never staged with AI, never stock models presented as a real couple.",
+    "status": "needed",
+    "file": "content/posts/same-sex-marriage-greece/images/same-sex-marriage-greece-reception-table.webp",
+    "source": {
+     "type": "venue_press",
+     "origin": "not yet sourced",
+     "credit": "[[VERIFY licence]]"
+    },
+    "location": {
+     "venue": "a named Greek venue (to be confirmed from 03-source-pack)",
+     "town": "Greece (to be confirmed)",
+     "verified_by": "pending: media kit, register row or EXIF"
+    },
+    "licence_note": "[[IMAGE NEEDED]] Library register has no rows (header only). Consent required if people appear. Move to pending_permission once a permission draft exists."
+   }
+  ],
+  "reference_only": [],
+  "permission_requests": [],
+  "drive_findings": [
+   "Not searched: fast mode, repo library register only per orchestrator instruction. library-index.csv has a header and no rows."
+  ]
+ }
+}
