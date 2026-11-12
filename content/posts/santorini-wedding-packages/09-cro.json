@@ -1,0 +1,78 @@
+{
+  "agent": "cro-specialist",
+  "task_id": "santorini-wedding-packages",
+  "stage": "09",
+  "status": "complete",
+  "round": 1,
+  "inputs_used": [
+    "CLAUDE.md",
+    "content-system/brand/brand-facts.md",
+    "content-system/schemas/09-cro.schema.json",
+    "content/posts/santorini-wedding-packages/01-brief.json",
+    "content/posts/santorini-wedding-packages/08-final.md",
+    "content/posts/santorini-wedding-venues/09-cro.json (format model)"
+  ],
+  "self_qa": {
+    "checks": [
+      {"check": "Primary CTA 6 words or fewer, no 'click here', no exclamation mark", "pass": true, "note": "'Speak with a Wedded Advisor' (5 words)."},
+      {"check": "copy_change old occurs exactly once in 08-final.md", "pass": true, "note": "'Once both quotes answer the same questions, the real difference between them is usually obvious.' checked by grep (1 match), the closing line of the 'How to compare two Santorini quotes like for like' checklist."},
+      {"check": "UTMs primary, secondary, magnet, closing each appear exactly once after the copy_change; one <!-- CTA: primary --> marker", "pass": true},
+      {"check": "No new Advisor claim; anchor names Wedded Concierge, not Wonderland Concierge", "pass": true, "note": "The new sentence names Wedded Concierge only; the body keeps its single Advisor line at the primary marker."},
+      {"check": "No 'free', costs, prices, Privileges, business details, legal, church, religious paperwork, transfers or 'last dance'", "pass": true},
+      {"check": "All links exist (/wonderland-concierge, /magazine), already live in 08-final.md and brand-facts", "pass": true},
+      {"check": "Australian English, no em dashes", "pass": true}
+    ],
+    "confidence": 0.85
+  },
+  "open_questions": [
+    {"to": "orchestrator", "question": "Apply the one copy_change to 08-final.md. 08-final.md was not edited by this stage.", "blocking": false},
+    {"to": "orchestrator", "question": "Deferred business answers (fee model, named Advisor, real Santorini weddings) remain deferred per brand-facts. Re-run cro-specialist once confirmed.", "blocking": false}
+  ],
+  "assumptions": [
+    "The CMS renders a CTA block (text, subtext, link) at the <!-- CTA: primary --> marker; the inline sentence after the marker is the fallback if it does not.",
+    "FAST MODE: 07-panel.json cta_reactions and link-map.csv not re-read; placements follow the brief and the santorini-wedding-venues model, and both target pages are already linked in 08-final.md."
+  ],
+  "verify_items": [],
+  "tools_used": ["Bash (grep, sed, python3 -I)"],
+  "payload": {
+    "journey_stage": "comparing",
+    "primary_cta": {
+      "text": "Speak with a Wedded Advisor",
+      "subtext": "Quotes in AUD, inclusions confirmed in writing before you commit.",
+      "link": "/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=santorini-wedding-packages&utm_content=primary",
+      "placement": "Existing <!-- CTA: primary --> marker after 'For Australian couples: currency, deposits and insurance', filled by the existing Advisor sentence. Unchanged. This is the body's only Advisor line, placed where the currency and deposit questions peak."
+    },
+    "secondary_cta": {
+      "text": "Compare your quotes with Wedded Concierge",
+      "subtext": "Both quotes, the same questions, answered in writing.",
+      "link": "/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=santorini-wedding-packages&utm_content=secondary",
+      "placement": "End of 'How to compare two Santorini quotes like for like', appended after 'Once both quotes answer the same questions, the real difference between them is usually obvious.' (copy change 1), where the comparing reader has just finished the checklist. No Advisor claim."
+    },
+    "lead_magnet": {
+      "name": "Wedded Wonderland digital magazine",
+      "link": "/magazine?utm_source=blog&utm_medium=content&utm_campaign=santorini-wedding-packages&utm_content=magnet",
+      "placement": "Existing line straight after the primary CTA, for readers still browsing. Already tagged; unchanged.",
+      "exists": true
+    },
+    "closing_cta": {
+      "text": "Plan your Santorini wedding with Wedded Concierge",
+      "link": "/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=santorini-wedding-packages&utm_content=closing",
+      "placement": "Existing paragraph under '## Compare your shortlist with a Wedded Advisor'. Unchanged."
+    },
+    "tracking": [
+      "/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=santorini-wedding-packages&utm_content=primary",
+      "/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=santorini-wedding-packages&utm_content=secondary",
+      "/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=santorini-wedding-packages&utm_content=closing",
+      "/magazine?utm_source=blog&utm_medium=content&utm_campaign=santorini-wedding-packages&utm_content=magnet"
+    ],
+    "copy_changes": [
+      {
+        "old": "Once both quotes answer the same questions, the real difference between them is usually obvious.",
+        "new": "Once both quotes answer the same questions, the real difference between them is usually obvious. To set yours side by side, [compare your quotes with Wedded Concierge](https://weddedwonderland.com/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=santorini-wedding-packages&utm_content=secondary).",
+        "reason": "Adds the only missing tracked link (secondary) at the end of the quote checklist, keeping the original sentence. Names Wedded Concierge, not the Advisor, so the body still has one Advisor line. No prices, costs, Privileges, legal, church, religious paperwork or transfer content."
+      }
+    ],
+    "rationale": "Brief journey_stage is 'comparing', so the primary is the Wedded Concierge consultation (/wonderland-concierge) with a brand-facts subtext (AUD quotes, inclusions in writing) answering the main worry. Primary, magnet and closing links were already in place with correct UTMs; only the secondary was missing, so one copy change adds it where the checklist resolves the 'how do we compare these' question. Reading order: secondary, primary, magnet, closing. A printable Santorini quote checklist would be a better-matched magnet; it does not exist on the site, so it is a backlog suggestion only (not placed)."
+  },
+  "next_agent": ["distribution"]
+}
