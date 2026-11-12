@@ -6,3 +6,4 @@
 23:57 03 batch B done: Grace, Astra Suites, Le Ciel qualify (Imerovigli); Chromata caldera wording snippet only; Cosmopolitan, Dana, Aenaon, Santorini Princess fail.
 23:59 03 batch D done: Tholos Resort qualifies; Iconic, Cavo Tagoo, Secret Hotels caldera but no wedding offer found. Top-up E launched early.
 23:59 03 batch A done: Canaves Oia (with published buyouts), Mystique, Katikies Oia, Andronis qualify; Perivolas, Esperas caldera but no weddings; Kirini no own site. Correction noted: Katikies Lounge Lower Deck is receptions only (Santorini planning guide fact_12).
+00:00 03 batch C done: Santo Wines, Venetsanos qualify; Aroma Suites qualifies (small boutique; reserve unless needed); Katikies Garden, Pyrgos Restaurant no caldera wording; Vedema TLS error; Akrotiri none. Count 10 (+Aroma). Top-up F launched.
