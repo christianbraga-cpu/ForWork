@@ -1,0 +1,256 @@
+{
+  "agent": "editor",
+  "task_id": "rhodes-wedding-venues",
+  "stage": "06",
+  "status": "complete",
+  "round": 3,
+  "inputs_used": [
+    "CLAUDE.md",
+    "content/posts/rhodes-wedding-venues/08-final.md",
+    "content/posts/rhodes-wedding-venues/03-source-pack.json",
+    "content-system/brand/brand-facts.md",
+    "content-system/brand/banned-phrases.md",
+    "content-system/brand/voice-guide.md",
+    "content-system/schemas/06-edit.schema.json",
+    "content/posts/santorini-wedding-venues/06-edit-final.json"
+  ],
+  "self_qa": {
+    "checks": [
+      {
+        "check": "scan_copy.py on 08-final.md",
+        "pass": true,
+        "note": "banned ['all-inclusive'] is the allowed URL slug only; dashes 0; overlaps []; flagged 'magical' x2 (Magical Garden venue name), 'exclusive' x16 (exclusive use, allowed)."
+      },
+      {
+        "check": "Fact markers vs sentences, table cells included",
+        "pass": true,
+        "note": "Six drifts found (Atrium Prestige ceremony cell and location, Atrium Platinum 'rooftop' x2, St Paul's marker, embassy 'by appointment'); fixed by edits."
+      },
+      {
+        "check": "Blocking list",
+        "pass": true,
+        "note": "No prices, best month, 'best'/ranking, research talk, hedge stacking, transfer or drive-time claims, Wedded Privileges, 'free', 'last dance', 'Wonderland Concierge' text, em dashes, US spelling (Conference Center is a proper name) or same-sex position. One body Advisor line (inclusions in writing) plus the close, all within brand facts; legal document help stated only as the venues' own."
+      },
+      {
+        "check": "Key takeaways",
+        "pass": true,
+        "note": "Exactly 4 one-sentence bullets."
+      },
+      {
+        "check": "Title count",
+        "pass": true,
+        "note": "Title says 9; 9 venue profiles and 9 table rows."
+      },
+      {
+        "check": "Edits apply cleanly",
+        "pass": true,
+        "note": "Each old occurs exactly once in 08-final.md, in document order, and each new once after applying (scripted)."
+      },
+      {
+        "check": "Decision consistent",
+        "pass": true,
+        "note": "Six small edits, no blocking issues -> pass_with_edits."
+      }
+    ],
+    "confidence": 0.85
+  },
+  "open_questions": [],
+  "assumptions": [
+    "Stage 8b blocking-issue check in fast mode; rubric carried forward from round 2 with accuracy restored after edits.",
+    "Business details deferred, not must-fix."
+  ],
+  "verify_items": [],
+  "tools_used": [
+    "Bash (python3 -I, grep)",
+    "content-system/scripts/scan_copy.py"
+  ],
+  "next_agent": [
+    "luxury-writer"
+  ],
+  "payload": {
+    "draft_file": "content/posts/rhodes-wedding-venues/08-final.md",
+    "rubric": {
+      "voice": 4,
+      "expertise": 5,
+      "accuracy": 4,
+      "seo_fit": 4,
+      "commercial_link": 4,
+      "structure": 4,
+      "brief_fit": 4
+    },
+    "average": 4.14,
+    "blocking_issues": [],
+    "decision": "pass_with_edits",
+    "edits": [
+      {
+        "location": "Table, Atrium Prestige row, ceremony cell",
+        "issue": "fact_201 lists seven wedding venues, two of which are the reception restaurant and party bar; 'Seven spaces' as ceremony options drifts.",
+        "fix": "Replace exactly:\n| Seven spaces incl. Tsambika chapel <!-- fact_201 --> |\nwith:\n| Tsambika chapel, beach or Panoramic Terrace <!-- fact_201 --> |",
+        "old": "| Seven spaces incl. Tsambika chapel <!-- fact_201 --> |",
+        "new": "| Tsambika chapel, beach or Panoramic Terrace <!-- fact_201 --> |"
+      },
+      {
+        "location": "Table, Atrium Platinum row, setting cell",
+        "issue": "fact_205 says top-floor restaurant and bar, not rooftop.",
+        "fix": "Replace exactly:\n| Resort, rooftop reception <!-- fact_205 --> |\nwith:\n| Resort, top-floor reception <!-- fact_205 --> |",
+        "old": "| Resort, rooftop reception <!-- fact_205 --> |",
+        "new": "| Resort, top-floor reception <!-- fact_205 --> |"
+      },
+      {
+        "location": "How to compare, chapel paragraph, St Paul's sentence",
+        "issue": "'below the Acropolis of Lindos' is supported by fact_502, not fact_10/fact_13; add the marker.",
+        "fix": "Replace exactly:\nbelow the Acropolis of Lindos, appears as a ceremony option at both Aquagrand and Atrium Palace. <!-- fact_10 --> <!-- fact_13 -->\nwith:\nbelow the Acropolis of Lindos, appears as a ceremony option at both Aquagrand and Atrium Palace. <!-- fact_502 --> <!-- fact_10 --> <!-- fact_13 -->",
+        "old": "below the Acropolis of Lindos, appears as a ceremony option at both Aquagrand and Atrium Palace. <!-- fact_10 --> <!-- fact_13 -->",
+        "new": "below the Acropolis of Lindos, appears as a ceremony option at both Aquagrand and Atrium Palace. <!-- fact_502 --> <!-- fact_10 --> <!-- fact_13 -->"
+      },
+      {
+        "location": "Lindos and the south, intro paragraph",
+        "issue": "Venue location drift: fact_200 places Atrium Prestige on a private beach in south Rhodes; Lachania is only named as one of its ceremony beaches.",
+        "fix": "Replace exactly:\nand a resort further south at Lachania\nwith:\nand a resort on a private beach in south Rhodes",
+        "old": "and a resort further south at Lachania",
+        "new": "and a resort on a private beach in south Rhodes"
+      },
+      {
+        "location": "Atrium Platinum, Standout",
+        "issue": "fact_205: Porfyra and Chromata are top-floor, not rooftop.",
+        "fix": "Replace exactly:\nwith a rooftop reception to come back to\nwith:\nwith a top-floor reception to come back to",
+        "old": "with a rooftop reception to come back to",
+        "new": "with a top-floor reception to come back to"
+      },
+      {
+        "location": "FAQ, Can Australians legally get married, last sentence",
+        "issue": "fact_325: appointment required, but Apostille and CNI documents may be submitted by post; 'by appointment' alone drifts.",
+        "fix": "Replace exactly:\nissues CNIs and apostilles by appointment.\nwith:\nissues CNIs and apostilles, by appointment or by post.",
+        "old": "issues CNIs and apostilles by appointment.",
+        "new": "issues CNIs and apostilles, by appointment or by post."
+      }
+    ],
+    "fact_check_log": [
+      {
+        "claim": "Takeaway: Grande Albergo delle Rose only venue publishing a reception figure, 450 seated",
+        "fact_id": "fact_101",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Takeaway: CNI valid six months, translated into Greek, Apostille for non-EU",
+        "fact_id": "fact_600",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Takeaway: heatwaves and June to September wildfires",
+        "fact_id": "fact_318",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Table: Atrium Prestige 'Seven spaces' as ceremony options",
+        "fact_id": "fact_201",
+        "status": "removed"
+      },
+      {
+        "claim": "Table and Standout: Atrium Platinum 'rooftop' reception",
+        "fact_id": "fact_205",
+        "status": "removed"
+      },
+      {
+        "claim": "Table: Grande Albergo delle Rose 450 seated; body 'up to 450'",
+        "fact_id": "fact_101",
+        "status": "confirmed"
+      },
+      {
+        "claim": "St Paul's Chapel below the Acropolis of Lindos",
+        "fact_id": "fact_502",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Atrium Prestige located at Lachania",
+        "fact_id": "fact_200",
+        "status": "removed"
+      },
+      {
+        "claim": "Melenos adjacent to acropolis, Blue Balcony and Magical Garden, entire hotel minimum three nights",
+        "fact_id": "fact_03",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Aquagrand adults-only five-star on Navarone Bay; four Aqua Pearl ceremony settings",
+        "fact_id": "fact_10",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Atrium Palace St Paul's Chapel 6.7 km, book far in advance",
+        "fact_id": "fact_15",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Grande Albergo opened 24 May 1927, adjoining beach, within reach of Medieval Town",
+        "fact_id": "fact_100",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Kallithea Springs 9 km from city, reopened 1 July 2007, no rooms",
+        "fact_id": "fact_506",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Atrium Platinum: Kallithea Springs about 9 km, Filerimos about 9.2 km",
+        "fact_id": "fact_204",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Elysium: receptions and vow renewals, no ceremony location; three reception venues",
+        "fact_id": "fact_509",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Rodos Palace Ixia, 3,000+ events over 45 years; packages or tailor-made",
+        "fact_id": "fact_207",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Flights Athens 1 hour, Thessaloniki 1 hour 20 minutes",
+        "fact_id": "fact_312",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Schengen 90 in 180 days, EES",
+        "fact_id": "fact_321",
+        "status": "confirmed"
+      },
+      {
+        "claim": "HNMS Rodos table: max temps, rainfall, rain days for April to October",
+        "fact_id": "fact_301",
+        "status": "confirmed"
+      },
+      {
+        "claim": "December and January each above 150 mm; June to September fewer than two rain days",
+        "fact_id": "fact_303",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Municipal documents, translation, Apostille, two days before, witnesses, Wed/Fri Town Hall",
+        "fact_id": "fact_601",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Embassy issues CNIs and apostilles 'by appointment'",
+        "fact_id": "fact_325",
+        "status": "removed"
+      },
+      {
+        "claim": "Close: single point of contact, time zone, AUD, fee in writing, inclusions in writing, venue/travel/vendors/payments",
+        "fact_id": "brand-facts",
+        "status": "confirmed"
+      }
+    ],
+    "compliance": {
+      "pass": true,
+      "issues": []
+    },
+    "originality": {
+      "pass": true,
+      "matches": []
+    },
+    "banned_phrases_found": [],
+    "needs_signoff": []
+  }
+}

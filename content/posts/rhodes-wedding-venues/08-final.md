@@ -34,9 +34,9 @@ The list follows the island from Lindos in the south, up to Rhodes Town, then al
 | Melenos <!-- fact_01 --> | Lindos village | Boutique hotel below the acropolis <!-- fact_01 --> | Blue Balcony or Magical Garden <!-- fact_04 --> | Not published |
 | Aquagrand <!-- fact_07 --> | Navarone Bay, Lindos | Adults-only beachfront resort <!-- fact_07 --> | Beach, gazebo, pier, gardens or St Paul's Chapel <!-- fact_08 --> <!-- fact_10 --> | Not published |
 | Atrium Palace <!-- fact_13 --> | Kalathos | Beach resort <!-- fact_13 --> | Gardens, private beach or St Paul's Chapel <!-- fact_13 --> <!-- fact_14 --> | Not published |
-| Atrium Prestige <!-- fact_200 --> | South Rhodes | Resort on a private beach <!-- fact_200 --> | Seven spaces incl. Tsambika chapel <!-- fact_201 --> | Not published |
+| Atrium Prestige <!-- fact_200 --> | South Rhodes | Resort on a private beach <!-- fact_200 --> | Tsambika chapel, beach or Panoramic Terrace <!-- fact_201 --> | Not published |
 | Grande Albergo delle Rose <!-- fact_100 --> | Rhodes city | Historic hotel, 1927 <!-- fact_100 --> | Poolside, Amphitheatre or Rodon Place <!-- fact_101 --> | 450 seated <!-- fact_101 --> |
-| Atrium Platinum <!-- fact_203 --> | Rhodes City | Resort, rooftop reception <!-- fact_205 --> | Kallithea Springs or Filerimos <!-- fact_203 --> | Not published |
+| Atrium Platinum <!-- fact_203 --> | Rhodes City | Resort, top-floor reception <!-- fact_205 --> | Kallithea Springs or Filerimos <!-- fact_203 --> | Not published |
 | Kallithea Springs <!-- fact_506 --> | Kallithea | Restored seaside monument <!-- fact_506 --> | Gardens and domed hall <!-- fact_507 --> | Not published |
 | Elysium Resort & Spa <!-- fact_508 --> | Kallithea bay | Beachfront resort <!-- fact_508 --> | Vow renewals; wedding receptions <!-- fact_508 --> | Not published |
 | Rodos Palace <!-- fact_206 --> | Ixia | Resort and conference centre <!-- fact_206 --> | Not published | Not published |
@@ -53,7 +53,7 @@ Every venue on this list hosts weddings. Three questions then separate them: wha
 
 Atrium Prestige has a private chapel named Tsambika, reached across a bridge and surrounded by turquoise water. <!-- fact_201 --> Aquagrand offers its private beachfront, a Wedding Gazebo or landscaped grounds framed by the Aegean. <!-- fact_08 -->
 
-Some venues take the ceremony off site. Atrium Platinum proposes Kallithea Springs or the top of Filerimos Hill, then brings everyone back to the resort for the reception and party. <!-- fact_203 --> St Paul's Chapel, below the Acropolis of Lindos, appears as a ceremony option at both Aquagrand and Atrium Palace. <!-- fact_10 --> <!-- fact_13 -->
+Some venues take the ceremony off site. Atrium Platinum proposes Kallithea Springs or the top of Filerimos Hill, then brings everyone back to the resort for the reception and party. <!-- fact_203 --> St Paul's Chapel, below the Acropolis of Lindos, appears as a ceremony option at both Aquagrand and Atrium Palace. <!-- fact_502 --> <!-- fact_10 --> <!-- fact_13 -->
 
 If you want sea views without sand underfoot, look at garden and terrace settings. Atrium Palace's Asterias Gardens give sea views "without having to step foot in the sand". <!-- fact_14 -->
 
@@ -82,13 +82,13 @@ Rhodes is the capital of the Dodecanese and the fourth largest Greek island. <!-
 
 **The east coast.** Kallithea, 9 km from the city of Rhodes, is home to the restored springs and a beachfront resort on Kallithea bay. <!-- fact_506 --> <!-- fact_508 --> Choose it for a ceremony at the springs, which Atrium Platinum describes with white columns, mosaics and sea views. <!-- fact_204 -->
 
-**The west coast.** Ixia is home to Rodos Palace, which combines a deluxe resort and a purpose-built conference centre. <!-- fact_206 --> It lists a large wedding ceremony and reception among its options, though it does not publish a capacity. <!-- fact_207 -->
+**The west coast.** Ixia is home to Rodos Palace, which combines a deluxe resort and a purpose-built conference centre. <!-- fact_206 --> It lists a large wedding ceremony and reception among its options, though it does not publish a capacity. <!-- fact_207 --> If you would like help setting venues from different areas side by side, [talk to Wedded Concierge](https://weddedwonderland.com/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=rhodes-wedding-venues&utm_content=secondary).
 
 ## Lindos and the south
 
 <!-- IMAGE SLOT area-lindos-south-east: Official image from a venue confirmed in Lindos, St Paul's Bay, Vlicha or Pefkos: a cliff-top or bay-side terrace set for a small ceremony or dinner, turquoise bay below, late-afternoon light, no beach crowds, no identifiable guests. Landscape 3:2. Source: the venue's own media kit or press office with written permission (Gmail draft request, never sent by an agent), or licensed premium stock bought by a human and added to library-index.csv. Never AI, never a competitor, directory, planner, photographer-blog or search-result image. Location proven by the media kit, register row or EXIF, never by appearance. -->
 
-The south holds four venues: a boutique hotel in Lindos village, an adults-only resort on Navarone Bay, a resort on Kalathos beach and a resort further south at Lachania. Three of them can take you to St Paul's Chapel or a chapel of their own. <!-- fact_10 --> <!-- fact_13 --> <!-- fact_201 -->
+The south holds four venues: a boutique hotel in Lindos village, an adults-only resort on Navarone Bay, a resort on Kalathos beach and a resort on a private beach in south Rhodes. Three of them can take you to St Paul's Chapel or a chapel of their own. <!-- fact_10 --> <!-- fact_13 --> <!-- fact_201 -->
 
 ### Melenos, Lindos village
 
@@ -174,7 +174,7 @@ Not published: total room count and exclusive use.
 
 Not published: guest capacity, room count and exclusive use.
 
-**Standout.** A choice between a restored spring and a hilltop monastery, with a rooftop reception to come back to. <!-- fact_203 --> <!-- fact_205 --> A wedding specialist helps with the arrangements for a civil marriage licence. <!-- fact_205 --> [See the Atrium Platinum weddings page](https://www.atriumhotels.gr/hotels/atrium-platinum/weddings/).
+**Standout.** A choice between a restored spring and a hilltop monastery, with a top-floor reception to come back to. <!-- fact_203 --> <!-- fact_205 --> A wedding specialist helps with the arrangements for a civil marriage licence. <!-- fact_205 --> [See the Atrium Platinum weddings page](https://www.atriumhotels.gr/hotels/atrium-platinum/weddings/).
 
 ## The east coast
 
@@ -304,7 +304,7 @@ Some do. Rodos Palace offers set packages or a tailor-made one, and Aquagrand pu
 
 ### Can Australians legally get married in Rhodes?
 
-Yes, with the right documents. As at November 2026, a civil marriage of foreign nationals needs a certificate of no impediment valid for six months, officially translated into Greek, with an Apostille for documents from outside the European Union. <!-- fact_600 --> <!-- fact_601 --> The Australian Embassy in Athens issues CNIs and apostilles by appointment. <!-- fact_324 --> <!-- fact_325 -->
+Yes, with the right documents. As at November 2026, a civil marriage of foreign nationals needs a certificate of no impediment valid for six months, officially translated into Greek, with an Apostille for documents from outside the European Union. <!-- fact_600 --> <!-- fact_601 --> The Australian Embassy in Athens issues CNIs and apostilles, by appointment or by post. <!-- fact_324 --> <!-- fact_325 -->
 
 ## Shortlist your Rhodes venues with a Wedded Advisor
 
