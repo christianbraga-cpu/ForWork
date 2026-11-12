@@ -7,3 +7,4 @@
 02:27 05 draft done: ~4,670 words, 10 venues compared, 2 VERIFY (Euphoria region; three ceremony routes); scan flags 'all-inclusive' (title term, kept). Part-7 added: Euphoria Kolymvari and 'Ultra All Inclusive' facts, Smartraveller and Embassy legal facts (reused, same sources), so the editor can resolve both VERIFYs.
 02:30 07 readers done (enquire 3/3/2/3/1). 06 editor pass_with_edits (4.14): 38 edits applied to 05-draft-r2.md; both VERIFYs resolved (Euphoria Kolymvari; ceremony routes on venue and legal facts); vendor names cut; paperwork offers once each.
 02:33 07b panel: revise (enquire 2.6), 3 must-fix + 3 should-fix + 3 consider; business details deferred. One final pass.
+02:35 08 final done: ~4,390 words, 0 VERIFY, scan clean except the topic term 'all-inclusive', no amounts.
