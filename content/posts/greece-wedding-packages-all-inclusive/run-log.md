@@ -9,3 +9,4 @@
 02:33 07b panel: revise (enquire 2.6), 3 must-fix + 3 should-fix + 3 consider; business details deferred. One final pass.
 02:35 08 final done: ~4,390 words, 0 VERIFY, scan clean except the topic term 'all-inclusive', no amounts.
 02:36 8b pass_with_edits (6 table-cell edits) and CRO (1 change) applied; UTMs removed from the two /destination-wedding-packages links (they had reused this post's secondary tag); 4 UTMs once each.
+- 02:39 11-13 package, booking checklist, run report, backlinks, link map, calendar row 49, docx.

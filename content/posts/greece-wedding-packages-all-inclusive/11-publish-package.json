@@ -1,0 +1,316 @@
+{
+  "agent": "cms-publisher",
+  "task_id": "greece-wedding-packages-all-inclusive",
+  "stage": "11",
+  "status": "complete",
+  "round": 1,
+  "inputs_used": [
+    "CLAUDE.md",
+    "content-system/cms/field-map.md",
+    "content-system/schemas/11-publish-package.schema.json",
+    "content/posts/greece-wedding-packages-all-inclusive/00-input.json",
+    "content/posts/greece-wedding-packages-all-inclusive/01-brief.json",
+    "content/posts/greece-wedding-packages-all-inclusive/02-seo.json",
+    "content/posts/greece-wedding-packages-all-inclusive/03-source-pack.json",
+    "content/posts/greece-wedding-packages-all-inclusive/04-images.json",
+    "content/posts/greece-wedding-packages-all-inclusive/08-final.md",
+    "content/posts/greece-wedding-packages-all-inclusive/09-cro.json",
+    "content/posts/greece-wedding-packages-all-inclusive/10-distribution.json",
+    "content/posts/santorini-wedding-packages/11-body.md, 11-publish-package.json, 12-cms-report.md, booking-checklist.md (format model)"
+  ],
+  "self_qa": {
+    "checks": [
+      {
+        "check": "Front matter, all <!-- fact_xx --> markers and the CTA marker removed; H1 is the title; 6 image-slot comments kept; no [[VERIFY]] markers",
+        "pass": true
+      },
+      {
+        "check": "Primary CTA block at the marker; fallback consultation sentence retagged utm_content=inline; primary, inline, secondary, closing and magnet each appear exactly once in visible links; /destination-wedding-packages links carry no UTMs",
+        "pass": true
+      },
+      {
+        "check": "Exactly 4 key takeaways and 6 FAQ pairs verbatim from the body",
+        "pass": true
+      },
+      {
+        "check": "Meta title and description from 02-seo.json, no prices",
+        "pass": true,
+        "note": "145 characters"
+      },
+      {
+        "check": "primary_category equals categories[0] (Destination Weddings)",
+        "pass": true
+      },
+      {
+        "check": "No em or en dashes; no 'Wonderland Concierge' in visible text; no amounts of money",
+        "pass": true
+      },
+      {
+        "check": "status draft; nothing uploaded, saved or published",
+        "pass": true
+      }
+    ],
+    "confidence": 0.9
+  },
+  "open_questions": [
+    {
+      "to": "orchestrator",
+      "question": "CMS upload not attempted: FAST MODE package only, no browser in this session, and content-system/cms/field-map.md is not CONFIRMED. Run /wedded-cms-discovery locally, then /wedded-blog resume=greece-wedding-packages-all-inclusive.",
+      "blocking": true
+    },
+    {
+      "to": "orchestrator",
+      "question": "No author named in any input; package uses \"Wedded Wonderland\" (organisation). Confirm the byline.",
+      "blocking": false
+    }
+  ],
+  "assumptions": [
+    "Excerpt is the first sentence of the opening paragraph.",
+    "content_type 'Comparison' from the brief; cluster 'Getting Married in Greece' as in the santorini-wedding-packages model.",
+    "Secondary CTA already present in 08-final.md ('talk to Wedded Concierge'); the 09-cro.json copy change was not added again, to keep utm_content=secondary once.",
+    "Image alt, caption, credit and licence left empty: none in 04-images.json, not invented.",
+    "Several venues publish package prices; none are printed, so needs_signoff is empty."
+  ],
+  "verify_items": [],
+  "tools_used": [
+    "Bash (python3 -I)"
+  ],
+  "next_agent": [
+    "orchestrator"
+  ],
+  "payload": {
+    "title": "All-Inclusive Greece Wedding Packages Compared",
+    "slug": "greece-wedding-packages-all-inclusive",
+    "url_path": "/destination-weddings/greece-wedding-packages-all-inclusive",
+    "content_type": "Comparison",
+    "cluster": "Getting Married in Greece",
+    "categories": [
+      "Destination Weddings",
+      "Greece",
+      "Planning Guides"
+    ],
+    "primary_category": "Destination Weddings",
+    "tags": [
+      "Getting Married in Greece",
+      "Greece wedding packages",
+      "All-inclusive wedding packages",
+      "Santorini",
+      "Crete",
+      "Corfu",
+      "Mykonos"
+    ],
+    "excerpt": "Search for Greece wedding packages all inclusive and you will meet a dozen resorts using the same words for very different things.",
+    "key_takeaways": [
+      "A Greek venue wedding package usually covers the ceremony set-up, a coordinator and a short list of touches, with the reception menu and drinks quoted separately.",
+      "Where a Greek resort calls itself all inclusive, the phrase almost always describes the holiday stay rather than the wedding package.",
+      "Guest room minimums, exclusive use, music finish times and outside suppliers are where Greek packages differ most, so ask for each in writing.",
+      "Compare two quotes only on the same guest count, spaces, hours, nights and currency, with every inclusion listed."
+    ],
+    "body_markdown_file": "content/posts/greece-wedding-packages-all-inclusive/11-body.md",
+    "faq": [
+      {
+        "q": "What is included in an all-inclusive wedding package in Greece?",
+        "a": "It depends on the venue. Most packages cover the date and ceremony set-up, a coordinator, flowers for the couple, a cake and a toast. The reception menu and drinks are usually quoted separately."
+      },
+      {
+        "q": "Are there all-inclusive wedding resorts in Greece?",
+        "a": "Yes, as holidays. Ikos Aria on Kos belongs to a resort brand where everything is included in the stay, and Grecotel Amirandes on Crete offers an all inclusive meal plan. The wedding package at each is a separate, named list."
+      },
+      {
+        "q": "Do all-inclusive Greece wedding packages have a minimum guest number?",
+        "a": "Some do. Abaton requires a reception of at least 20 guests, and Santorini Gem's set menus start at 20 adults. Canaves sells a package for the couple alone."
+      },
+      {
+        "q": "Do all-inclusive packages in Greece include flights or guest rooms?",
+        "a": "Not flights. Guest rooms are more often a requirement than an inclusion: Elounda SA asks the couple to stay three nights, and Abaton asks for at least 10 rooms for at least 2 nights. Four Seasons Astir Palace includes the couple's wedding night."
+      },
+      {
+        "q": "Are there all-inclusive elopement packages in Greece?",
+        "a": "There are elopement packages, though none are sold as all inclusive. Canaves has a Panorama Balcony elopement for the couple alone, with private use for up to 5 hours and a two-tier cake. Euphoria Resort's Elxi option scales from the couple up to 10 guests."
+      },
+      {
+        "q": "Is the legal ceremony part of an all-inclusive package?",
+        "a": "Sometimes help with the documents is, as each venue entry above sets out, while fees set by the municipality or church can sit outside. Check the requirements with the municipality and the Australian Embassy in Athens."
+      }
+    ],
+    "images": [
+      {
+        "slot_id": "featured",
+        "file": "content/posts/greece-wedding-packages-all-inclusive/images/greece-wedding-packages-all-inclusive-venue-ceremony-terrace-hero.webp",
+        "role": "featured",
+        "status": "needed"
+      },
+      {
+        "slot_id": "what-all-inclusive-means",
+        "file": "content/posts/greece-wedding-packages-all-inclusive/images/greece-wedding-packages-all-inclusive-venue-reception-table-styling.webp",
+        "role": "inline",
+        "status": "needed"
+      },
+      {
+        "slot_id": "comparison-crete-rhodes",
+        "file": "content/posts/greece-wedding-packages-all-inclusive/images/greece-wedding-packages-all-inclusive-venue-crete-seafront-ceremony.webp",
+        "role": "inline",
+        "status": "needed"
+      },
+      {
+        "slot_id": "comparison-corfu-mainland",
+        "file": "content/posts/greece-wedding-packages-all-inclusive/images/greece-wedding-packages-all-inclusive-venue-corfu-garden-ceremony.webp",
+        "role": "inline",
+        "status": "needed"
+      },
+      {
+        "slot_id": "compare-quotes",
+        "file": "content/posts/greece-wedding-packages-all-inclusive/images/greece-wedding-packages-all-inclusive-illustrative-two-quotes-pen-linen.webp",
+        "role": "inline",
+        "status": "needed"
+      },
+      {
+        "slot_id": "australian-angle",
+        "file": "content/posts/greece-wedding-packages-all-inclusive/images/greece-wedding-packages-all-inclusive-illustrative-travel-folder-flatlay.webp",
+        "role": "inline",
+        "status": "needed"
+      }
+    ],
+    "cta": {
+      "text": "Speak with a Wedded Advisor",
+      "subtext": "Quotes in AUD, inclusions confirmed in writing before you commit.",
+      "link": "/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=greece-wedding-packages-all-inclusive&utm_content=primary",
+      "placement": "At the former <!-- CTA: primary --> marker at the end of 'Planning from Australia' (marked <!-- CTA BLOCK: primary --> in 11-body.md); the existing Wedded Concierge consultation sentence after it is the fallback, retagged utm_content=inline."
+    },
+    "secondary_cta": {
+      "text": "talk to Wedded Concierge",
+      "link": "/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=greece-wedding-packages-all-inclusive&utm_content=secondary",
+      "placement": "Inline link at the end of 'How to compare two all-inclusive quotes like for like' (Quote currency; marked <!-- CTA INLINE: secondary --> in 11-body.md). Already in 08-final.md, so the 09-cro.json copy change was not applied a second time."
+    },
+    "closing_cta": {
+      "text": "Plan your Greece wedding with the Wedded Concierge",
+      "link": "/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=greece-wedding-packages-all-inclusive&utm_content=closing",
+      "placement": "Inline link under 'Start your Greece shortlist' (marked <!-- CTA INLINE: closing --> in 11-body.md)."
+    },
+    "lead_magnet": {
+      "name": "Wedded Wonderland digital magazine",
+      "link": "/magazine?utm_source=blog&utm_medium=content&utm_campaign=greece-wedding-packages-all-inclusive&utm_content=magnet",
+      "placement": "Closing paragraph under 'Start your Greece shortlist' (marked <!-- LEAD MAGNET --> in 11-body.md)."
+    },
+    "tracking_links": [
+      "/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=greece-wedding-packages-all-inclusive&utm_content=primary",
+      "/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=greece-wedding-packages-all-inclusive&utm_content=inline",
+      "/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=greece-wedding-packages-all-inclusive&utm_content=secondary",
+      "/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=greece-wedding-packages-all-inclusive&utm_content=closing",
+      "/magazine?utm_source=blog&utm_medium=content&utm_campaign=greece-wedding-packages-all-inclusive&utm_content=magnet"
+    ],
+    "seo": {
+      "meta_title": "All-Inclusive Greece Wedding Packages Compared",
+      "meta_description": "Compare all-inclusive wedding packages at Greek island and mainland venues: what each includes, what is charged on top and how to compare quotes.",
+      "focus_keyword": "greece wedding packages all inclusive",
+      "canonical": "https://weddedwonderland.com/destination-weddings/greece-wedding-packages-all-inclusive",
+      "og_image_slot": "featured"
+    },
+    "schema_jsonld": {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Article",
+          "@id": "https://weddedwonderland.com/destination-weddings/greece-wedding-packages-all-inclusive#article",
+          "headline": "All-Inclusive Greece Wedding Packages Compared",
+          "description": "Compare all-inclusive wedding packages at Greek island and mainland venues: what each includes, what is charged on top and how to compare quotes.",
+          "author": {
+            "@type": "Organization",
+            "name": "Wedded Wonderland",
+            "url": "https://weddedwonderland.com/"
+          },
+          "publisher": {
+            "@type": "Organization",
+            "name": "Wedded Wonderland",
+            "url": "https://weddedwonderland.com/"
+          },
+          "datePublished": "",
+          "mainEntityOfPage": "https://weddedwonderland.com/destination-weddings/greece-wedding-packages-all-inclusive",
+          "inLanguage": "en-AU"
+        },
+        {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Home",
+              "item": "https://weddedwonderland.com/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Destination Weddings",
+              "item": "https://weddedwonderland.com/destination-weddings"
+            },
+            {
+              "@type": "ListItem",
+              "position": 3,
+              "name": "All-Inclusive Greece Wedding Packages Compared",
+              "item": "https://weddedwonderland.com/destination-weddings/greece-wedding-packages-all-inclusive"
+            }
+          ]
+        },
+        {
+          "@type": "FAQPage",
+          "@id": "https://weddedwonderland.com/destination-weddings/greece-wedding-packages-all-inclusive#faq",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "What is included in an all-inclusive wedding package in Greece?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "It depends on the venue. Most packages cover the date and ceremony set-up, a coordinator, flowers for the couple, a cake and a toast. The reception menu and drinks are usually quoted separately."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Are there all-inclusive wedding resorts in Greece?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes, as holidays. Ikos Aria on Kos belongs to a resort brand where everything is included in the stay, and Grecotel Amirandes on Crete offers an all inclusive meal plan. The wedding package at each is a separate, named list."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Do all-inclusive Greece wedding packages have a minimum guest number?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Some do. Abaton requires a reception of at least 20 guests, and Santorini Gem's set menus start at 20 adults. Canaves sells a package for the couple alone."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Do all-inclusive packages in Greece include flights or guest rooms?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Not flights. Guest rooms are more often a requirement than an inclusion: Elounda SA asks the couple to stay three nights, and Abaton asks for at least 10 rooms for at least 2 nights. Four Seasons Astir Palace includes the couple's wedding night."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Are there all-inclusive elopement packages in Greece?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "There are elopement packages, though none are sold as all inclusive. Canaves has a Panorama Balcony elopement for the couple alone, with private use for up to 5 hours and a two-tier cake. Euphoria Resort's Elxi option scales from the couple up to 10 guests."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Is the legal ceremony part of an all-inclusive package?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Sometimes help with the documents is, as each venue entry above sets out, while fees set by the municipality or church can sit outside. Check the requirements with the municipality and the Australian Embassy in Athens."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    "author": "Wedded Wonderland",
+    "status": "draft",
+    "verify_items": [],
+    "needs_signoff": [],
+    "draft_note": "DRAFT ONLY. A human clicks Publish; no agent publishes or schedules this post.\n\n1. [[VERIFY]] items in the copy: none.\n\n2. Nic sign-off prices: none. The post prints no prices or amounts. Several venues publish prices or money terms (for example Santorini Gem rental fees in euros, Canaves deposit terms, Abaton and Elounda SA brochures), but none were used; any price added later needs Nic's sign-off and is shown From AUD.\n\n3. Image slots needed (6): featured, what-all-inclusive-means, comparison-crete-rhodes, comparison-corfu-mainland, compare-quotes, australian-angle. No licensed or permissioned image yet. Venue slots: the venue's own media kit with written permission or licensed stock; never AI, competitor or search-result images. compare-quotes and australian-angle may use an AI still life only with the person's approval, captioned 'Illustrative image'.\n\n4. Before publishing: confirm the byline, and check that every internal link is live, and publish any linked post still in draft (greece-wedding-packages, crete-wedding-venues, santorini-wedding-packages, santorini-wedding-venues, mykonos-wedding-venues, corfu-wedding-venues, greece-wedding-venues) first or together. The comparison table should stack as cards on mobile if the CMS allows. See booking-checklist.md for package details to confirm in writing with each venue."
+  }
+}
