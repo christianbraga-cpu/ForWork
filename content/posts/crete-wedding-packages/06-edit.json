@@ -1,0 +1,441 @@
+{
+ "agent": "editor",
+ "task_id": "crete-wedding-packages",
+ "stage": "06",
+ "status": "complete",
+ "round": 1,
+ "inputs_used": [
+  "CLAUDE.md",
+  "content/posts/crete-wedding-packages/00-input.json",
+  "01-brief.json",
+  "02-seo.json",
+  "03-source-pack.json",
+  "content-system/rubrics/editor-rubric.md",
+  "content-system/brand/brand-facts.md",
+  "content-system/brand/voice-guide.md",
+  "content-system/brand/banned-phrases.md",
+  "content-system/schemas/06-edit.schema.json",
+  "content-system/seo/link-map.csv",
+  "content/posts/greece-wedding-packages-all-inclusive/08-final.md",
+  "content/posts/crete-wedding-packages/05-draft.md"
+ ],
+ "next_agent": [
+  "icp-reader"
+ ],
+ "self_qa": {
+  "checks": [
+   {
+    "check": "scan_copy.py run and reflected",
+    "pass": true,
+    "note": "05-draft.md: banned ['all-inclusive'] is the allowed comparison-guide URL slug only; flagged 'exclusive' x1 ('Exclusive use', field term); dashes 0; overlaps []. Scratch copy with all 8 edits applied scanned the same."
+   },
+   {
+    "check": "Every factual sentence logged",
+    "pass": true,
+    "note": "57 log entries; every cited fact id checked against its source-pack claim; 1 paperwork repeat removed; VERIFY resolved on fact_600/601."
+   },
+   {
+    "check": "Edit strings occur exactly once",
+    "pass": true,
+    "note": "Script-verified: each old occurs once in 05-draft.md, in document order, and once at its turn when applied."
+   },
+   {
+    "check": "Decision consistent with scores",
+    "pass": true,
+    "note": "Average 4.14, no criterion below 3, no blocking issues: pass_with_edits."
+   }
+  ],
+  "confidence": 0.85
+ },
+ "open_questions": [
+  {
+   "to": "orchestrator",
+   "question": "Crete venues guide (link-map status draft) and other draft-status internal links kept as instructed: publish together or hold until live.",
+   "blocking": false
+  }
+ ],
+ "assumptions": [
+  "Fast mode: claims checked against source-pack claims, not re-fetched live.",
+  "Grecotel Amirandes' 15 minutes from Heraklion airport is a location detail, not a transfer mention."
+ ],
+ "payload": {
+  "draft_file": "content/posts/crete-wedding-packages/05-draft.md",
+  "rubric": {
+   "voice": 4,
+   "expertise": 5,
+   "accuracy": 4,
+   "seo_fit": 4,
+   "commercial_link": 4,
+   "structure": 4,
+   "brief_fit": 4
+  },
+  "average": 4.14,
+  "blocking_issues": [],
+  "decision": "pass_with_edits",
+  "edits": [
+   {
+    "location": "Symbolic and vow renewal packages, last line",
+    "issue": "Light trim toward 4,000 words: signpost sentence adds nothing.",
+    "fix": "Delete exactly:\nThe ceremony section below covers what each type means for the paperwork.\n\n",
+    "old": "The ceremony section below covers what each type means for the paperwork.\n\n",
+    "new": ""
+   },
+   {
+    "location": "Abaton Island Resort & Spa, last paragraph",
+    "issue": "Light trim: the complete, non-interchangeable point is made for Euphoria in 'Hair, make-up and extras'; one mention is enough.",
+    "fix": "Delete exactly:\nAbaton's packages are complete, and their items are not interchangeable. <!-- fact_520 -->\n\n",
+    "old": "Abaton's packages are complete, and their items are not interchangeable. <!-- fact_520 -->\n\n",
+    "new": ""
+   },
+   {
+    "location": "Euphoria Resort, last paragraph",
+    "issue": "Light trim: repeats the informal-certificate point already made under 'Symbolic and vow renewal packages' and again in 'Ceremony type'.",
+    "fix": "Delete exactly:\nThe certificate Euphoria issues is a certificate of informal marriage from the hotel. <!-- fact_522 --> It records an informal ceremony, not a legal marriage.\n\n",
+    "old": "The certificate Euphoria issues is a certificate of informal marriage from the hotel. <!-- fact_522 --> It records an informal ceremony, not a legal marriage.\n\n",
+    "new": ""
+   },
+   {
+    "location": "Ceremony type, Civil paragraph",
+    "issue": "Must-fix: Out of the Blue's legal paperwork offer (Mayor, fact_106) already appears once as the venue's own offer under 'Out of the Blue'. Cut the repeat.",
+    "fix": "Delete exactly:\n At Out of the Blue, the Civil package includes the Heraklion Mayor or Vice-Mayor. <!-- fact_106 -->",
+    "old": " At Out of the Blue, the Civil package includes the Heraklion Mayor or Vice-Mayor. <!-- fact_106 -->",
+    "new": ""
+   },
+   {
+    "location": "Ceremony type, Symbolic paragraph",
+    "issue": "Originality: sentence matches the Greece all-inclusive guide word for word; reword (same fact).",
+    "fix": "Replace exactly:\nThe Elounda SA brochure states that symbolic weddings and vow renewals are not legally recognised in Greece. <!-- fact_506 --> Euphoria's\nwith:\nIn Greece, a symbolic wedding or vow renewal has no legal standing, as the Elounda SA brochure makes clear. <!-- fact_506 --> Euphoria's",
+    "old": "The Elounda SA brochure states that symbolic weddings and vow renewals are not legally recognised in Greece. <!-- fact_506 --> Euphoria's",
+    "new": "In Greece, a symbolic wedding or vow renewal has no legal standing, as the Elounda SA brochure makes clear. <!-- fact_506 --> Euphoria's"
+   },
+   {
+    "location": "East or west Crete, east paragraph",
+    "issue": "Resolve the draft's only [[VERIFY]]: fact_601 (Visit Greece) places Agios Nikolaos and Elounda in eastern Crete (Lasithi); fact_600 has Elounda Peninsula as a gateway to eastern Crete.",
+    "fix": "Replace exactly:\n[[VERIFY: Elounda and Agios Nikolaos are in eastern Crete (Lasithi)]]\nwith:\nBoth sit in Lasithi, in eastern Crete, and Elounda Peninsula calls itself a gateway to the east of the island. <!-- fact_601 --> <!-- fact_600 -->",
+    "old": "[[VERIFY: Elounda and Agios Nikolaos are in eastern Crete (Lasithi)]]",
+    "new": "Both sit in Lasithi, in eastern Crete, and Elounda Peninsula calls itself a gateway to the east of the island. <!-- fact_601 --> <!-- fact_600 -->"
+   },
+   {
+    "location": "For Australian couples, primary CTA",
+    "issue": "Must-fix (originality): CTA is near-identical to the Greece all-inclusive guide's CTA. Reword; Advisor claims stay within brand-facts.md (quotes in AUD, confirms inclusions in writing).",
+    "fix": "Replace exactly:\nYour Wedded Advisor quotes in AUD for Australian couples and confirms every inclusion in writing before you commit, so you can [book a Wedded Concierge consultation](https://weddedwonderland.com/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=crete-wedding-packages&utm_content=primary) whether you already hold quotes or are still shaping your shortlist.\nwith:\nBring your Crete quotes, or a shortlist still taking shape, to a [Wedded Concierge consultation](https://weddedwonderland.com/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=crete-wedding-packages&utm_content=primary): your Wedded Advisor quotes in AUD for Australian couples and confirms each inclusion in writing before you commit.",
+    "old": "Your Wedded Advisor quotes in AUD for Australian couples and confirms every inclusion in writing before you commit, so you can [book a Wedded Concierge consultation](https://weddedwonderland.com/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=crete-wedding-packages&utm_content=primary) whether you already hold quotes or are still shaping your shortlist.",
+    "new": "Bring your Crete quotes, or a shortlist still taking shape, to a [Wedded Concierge consultation](https://weddedwonderland.com/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=crete-wedding-packages&utm_content=primary): your Wedded Advisor quotes in AUD for Australian couples and confirms each inclusion in writing before you commit."
+   },
+   {
+    "location": "FAQ, 'Is a symbolic ceremony in Crete legally recognised?'",
+    "issue": "Originality: second verbatim use of the Greece guide's sentence; reword.",
+    "fix": "Replace exactly:\nNo. The Elounda SA brochure states that symbolic weddings and vow renewals are not legally recognised in Greece. <!-- fact_506 -->\nwith:\nNo. Elounda SA's brochure is clear that a symbolic wedding or vow renewal is not a legal marriage in Greece. <!-- fact_506 -->",
+    "old": "No. The Elounda SA brochure states that symbolic weddings and vow renewals are not legally recognised in Greece. <!-- fact_506 -->",
+    "new": "No. Elounda SA's brochure is clear that a symbolic wedding or vow renewal is not a legal marriage in Greece. <!-- fact_506 -->"
+   }
+  ],
+  "fact_check_log": [
+   {
+    "claim": "St. Nicolas Bay Resort Hotel & Villas (Agios Nikolaos, Crete) offers wedding ceremonies on the deck of its beachside chapel; celebrations are described as tailo",
+    "fact_id": "fact_100",
+    "status": "confirmed"
+   },
+   {
+    "claim": "St. Nicolas Bay lists complimentary wedding amenities: a massage and aromatherapy for two at the Poseidon Spa Couples Suite, honeymoon room service breakfast an",
+    "fact_id": "fact_102",
+    "status": "confirmed"
+   },
+   {
+    "claim": "St. Nicolas Bay says celebrations can be held in the resort's restaurants and bars, with culinary options, music, a professional photographer or fireworks arran",
+    "fact_id": "fact_103",
+    "status": "confirmed"
+   },
+   {
+    "claim": "Out of the Blue Resort & Spa (Aghia Pelaghia, Heraklion, Crete) publishes a Wedding Packages brochure (2024 edition) with three packages: Civil Wedding Package,",
+    "fact_id": "fact_104",
+    "status": "confirmed"
+   },
+   {
+    "claim": "Out of the Blue Civil Wedding Package includes a welcome drink and sparkling wine, flowers and Greek desserts in the room on arrival, bride's bouquet and groom'",
+    "fact_id": "fact_105",
+    "status": "confirmed"
+   },
+   {
+    "claim": "Out of the Blue Civil Wedding Package also includes, as the resort's offer, documentation assistance and settlement of legal costs and associated fees, newspape",
+    "fact_id": "fact_106",
+    "status": "confirmed"
+   },
+   {
+    "claim": "Out of the Blue Orthodox Wedding Package includes booking of the resort's private chapel of St. Athanasios, floral decoration of the chapel entrance and two flo",
+    "fact_id": "fact_107",
+    "status": "confirmed"
+   },
+   {
+    "claim": "Out of the Blue Orthodox Wedding Package also includes, as the resort's offer, documentation assistance and settlement of legal costs and fees, newspaper announ",
+    "fact_id": "fact_108",
+    "status": "confirmed"
+   },
+   {
+    "claim": "Out of the Blue notes for its civil and Orthodox packages that, depending on venue selection, a set-up or private hire fee may apply; all three packages state t",
+    "fact_id": "fact_110",
+    "status": "confirmed"
+   },
+   {
+    "claim": "Out of the Blue lists optional services at extra charge with all three packages: special rates for bachelor and hen parties before the wedding day and special r",
+    "fact_id": "fact_111",
+    "status": "confirmed"
+   },
+   {
+    "claim": "Minoa Palace Resort (Platanias, Chania, Crete) lists a 'Wedding package' that includes: a location for an outdoor or indoor ceremony and reception, customised m",
+    "fact_id": "fact_114",
+    "status": "confirmed"
+   },
+   {
+    "claim": "Minoa Palace says it offers newlyweds a specially decorated wedding cake free of charge, and a Newlyweds Retreat: after the wedding, local wedding sweets and ch",
+    "fact_id": "fact_115",
+    "status": "confirmed"
+   },
+   {
+    "claim": "Avra Imperial Hotel (Kolymvari, Chania, Crete) offers ceremonies in its private chapel of Saint Paul within the hotel grounds, with flower and candle decoration",
+    "fact_id": "fact_116",
+    "status": "confirmed"
+   },
+   {
+    "claim": "Avra Imperial offers two reception settings: the Maistro events hall, which it says accommodates up to 680 people, and, for a small reception, a private space b",
+    "fact_id": "fact_117",
+    "status": "confirmed"
+   },
+   {
+    "claim": "Porto Elounda Golf & Spa Resort (Elounda, Crete) wedding services cover venues around the resorts including secluded beaches and historic sites (with advance no",
+    "fact_id": "fact_118",
+    "status": "confirmed"
+   },
+   {
+    "claim": "Porto Elounda's and Elounda Mare's weddings pages both link package details for the Elounda collection (Elounda Peninsula, Porto Elounda, Elounda Mare) and give",
+    "fact_id": "fact_119",
+    "status": "confirmed"
+   },
+   {
+    "claim": "Elounda Mare Hotel (Relais & Chateaux, Elounda, Crete) weddings page lists the same services as Porto Elounda: venues including secluded beaches and historic si",
+    "fact_id": "fact_120",
+    "status": "confirmed"
+   },
+   {
+    "claim": "Elounda SA Hotels & Resorts (Elounda, Crete) publishes a wedding packages PDF covering civil, Greek Orthodox and symbolic ceremonies. The civil and Orthodox pac",
+    "fact_id": "fact_500",
+    "status": "confirmed"
+   },
+   {
+    "claim": "Elounda SA Lavish Wedding Package (civil and Orthodox) includes reservation of the wedding date and time, choice of ceremony venue, documentation assistance and",
+    "fact_id": "fact_501",
+    "status": "confirmed"
+   },
+   {
+    "claim": "Elounda SA Lavish Wedding Package, on the day: two witnesses if needed, ceremony set-up with a table and seasonal flower display, bride's bouquet and groom's bo",
+    "fact_id": "fact_502",
+    "status": "confirmed"
+   },
+   {
+    "claim": "Elounda SA Lavish Wedding Package, after the day: champagne breakfast in bed, a round-trip transfer to the Registry Office for the registration and certificate ",
+    "fact_id": "fact_503",
+    "status": "confirmed"
+   },
+   {
+    "claim": "Elounda SA states the package rate does not include the Municipal fee (civil) or the Metropolis fee (Orthodox); these are charged on top and are subject to chan",
+    "fact_id": "fact_504",
+    "status": "confirmed"
+   },
+   {
+    "claim": "Elounda SA requirement: every package is valid only if the couple stays a minimum of three nights in one of the group's hotels.",
+    "fact_id": "fact_505",
+    "status": "confirmed"
+   },
+   {
+    "claim": "Elounda SA Symbolic Ceremony / Renewal of Vows package includes reservation of the date and time, bridal bouquet and boutonniere, two witnesses if needed and th",
+    "fact_id": "fact_506",
+    "status": "confirmed"
+   },
+   {
+    "claim": "Elounda SA's PDF lists the civil wedding documents it asks couples to supply (passports, birth certificates, certificate of no impediment, divorce or death cert",
+    "fact_id": "fact_507",
+    "status": "confirmed"
+   },
+   {
+    "claim": "Elounda SA lists reception food, beverage packages, open bars, dinner menus, entertainment and boat transfer as separate sections outside the ceremony packages ",
+    "fact_id": "fact_508",
+    "status": "confirmed"
+   },
+   {
+    "claim": "Nana Princess (Chersonissos, Crete) offers civil weddings on its private sandy beach, Greek Orthodox weddings in the private Chapel of St George on the hotel gr",
+    "fact_id": "fact_509",
+    "status": "confirmed"
+   },
+   {
+    "claim": "Nana Princess presents three wedding packages, Deluxe Dream, Ultimate Passion and Essential Elegance, and offers a bespoke package designed to the couple's requ",
+    "fact_id": "fact_510",
+    "status": "confirmed"
+   },
+   {
+    "claim": "Nana Princess Deluxe Dream highlights: welcome drinks (homemade lemonade and berry water), champagne and chocolate strawberries in the honeymoon suite, and an e",
+    "fact_id": "fact_511",
+    "status": "confirmed"
+   },
+   {
+    "claim": "Nana Princess Ultimate Passion highlights: a pre-wedding dinner tasting dishes from the wedding menu, a 30-minute massage the day before, and the bride escorted",
+    "fact_id": "fact_512",
+    "status": "confirmed"
+   },
+   {
+    "claim": "Nana Princess symbolic weddings include a choice of decoration schemes with fresh flower arrangements, exclusive use of the chosen room or venue, the flower-dec",
+    "fact_id": "fact_513",
+    "status": "confirmed"
+   },
+   {
+    "claim": "Nana Princess reception options: the Eternal Blue restaurant terrace, the poolside Meat-In-Point restaurant seating up to 120 guests, or the Conference Hall for",
+    "fact_id": "fact_514",
+    "status": "confirmed"
+   },
+   {
+    "claim": "Nana Princess says a dedicated event coordinator guides couples through local registry office requirements and other formalities after the date is booked. The p",
+    "fact_id": "fact_515",
+    "status": "confirmed"
+   },
+   {
+    "claim": "Nana Princess recommends evening ceremonies because high-summer temperatures can reach 35 degrees C: 16:00 to 18:00 in April, May and October; 18:00 to 20:00 in",
+    "fact_id": "fact_516",
+    "status": "confirmed"
+   },
+   {
+    "claim": "Abaton Island Resort & Spa (Crete) invites couples to choose from its wedding packages or create their own, and lists customisable elements: ceremony, music and",
+    "fact_id": "fact_517",
+    "status": "confirmed"
+   },
+   {
+    "claim": "Abaton 2025-2026 wedding brochure 'The Basics' lists ceremony, coordination services, photography, videography, Chiavari chairs, chair covers, table set-up deco",
+    "fact_id": "fact_518",
+    "status": "confirmed"
+   },
+   {
+    "claim": "Abaton brochure lists additional services with indicative costs published (hair, make-up, spa, buttonholes, wedding cake, DJ, fireworks, centrepieces, rose peta",
+    "fact_id": "fact_519",
+    "status": "confirmed"
+   },
+   {
+    "claim": "Abaton brochure terms: packages are subject to availability and do not include accommodation; packages are valid with a minimum accommodation booking of 10 room",
+    "fact_id": "fact_520",
+    "status": "confirmed"
+   },
+   {
+    "claim": "Abaton brochure publishes gala dinner buffet and set menus, cocktail reception menus, beverage packages and open bars, priced per person with minimum numbers fo",
+    "fact_id": "fact_521",
+    "status": "confirmed"
+   },
+   {
+    "claim": "Euphoria Resort offers three wedding options, Elxi, Pathos and Eros, for an informal wedding or renewal of vows, with a certificate of informal marriage from th",
+    "fact_id": "fact_522",
+    "status": "confirmed"
+   },
+   {
+    "claim": "Euphoria Elxi includes choice of hotel venue (beach or poolside), decoration with lanterns, petals, covered chairs and a table floral display, bouquet and butto",
+    "fact_id": "fact_523",
+    "status": "confirmed"
+   },
+   {
+    "claim": "Euphoria Pathos adds sparkling wine and cake for up to 20 guests, a manicure and pedicure for the bride, a stocked minibar, a candlelit dinner for the couple wi",
+    "fact_id": "fact_524",
+    "status": "confirmed"
+   },
+   {
+    "claim": "Euphoria Eros adds canapes and a two-tier cake for up to 30 guests, a jazz musician at the ceremony, 20 photographs, a couple's massage, a four-course beach din",
+    "fact_id": "fact_525",
+    "status": "confirmed"
+   },
+   {
+    "claim": "Euphoria states its wedding options are complete packages whose items are not interchangeable, with no refund or alternative for unused services; packages can b",
+    "fact_id": "fact_526",
+    "status": "confirmed"
+   },
+   {
+    "claim": "Euphoria offers its honeymoon package free to couples who book any wedding package and stay at the hotel (welcome drink, sparkling wine and fruit, bed decoratio",
+    "fact_id": "fact_527",
+    "status": "confirmed"
+   },
+   {
+    "claim": "Grecotel Amirandes (near Heraklion, Crete) hosts weddings for up to 300 guests, with vows at its VIP Beach or chapel, a choice of dining venues and dedicated we",
+    "fact_id": "fact_528",
+    "status": "confirmed"
+   },
+   {
+    "claim": "Euphoria Resort is a five-star, Ultra All Inclusive family beach resort on the seashore of Kolymvari, about 14 miles west of Chania, with 344 rooms and suites (",
+    "fact_id": "fact_536",
+    "status": "confirmed"
+   },
+   {
+    "claim": "Euphoria Resort (Kolymvari, Chania, Crete) offers three wedding options (Elxi, Pathos, Eros) for 'an informal wedding or renewal of vows'; each includes a choic",
+    "fact_id": "fact_537",
+    "status": "confirmed"
+   },
+   {
+    "claim": "As at November 2026, Smartraveller's 'Getting married overseas' page (last updated 18/08/2026, read live 11 November 2026, unchanged from paros-wedding-venues f",
+    "fact_id": "fact_538",
+    "status": "confirmed"
+   },
+   {
+    "claim": "As at November 2026, Smartraveller (read live 11 November 2026, unchanged from paros-wedding-venues fact_303) says you cannot register an overseas marriage in A",
+    "fact_id": "fact_539",
+    "status": "confirmed"
+   },
+   {
+    "claim": "As at November 2026, the Australian Embassy in Athens (read live 11 November 2026, unchanged from paros-wedding-venues fact_304) lists among its notarial servic",
+    "fact_id": "fact_541",
+    "status": "confirmed"
+   },
+   {
+    "claim": "As at November 2026, Smartraveller's overall advice level for Greece is 'Exercise normal safety precautions' (page updated 30 September 2026, shown as still cur",
+    "fact_id": "fact_542",
+    "status": "confirmed"
+   },
+   {
+    "claim": "As at November 2026, Smartraveller's Greece advice says Greece is in the Schengen area; Australians can make short trips without a visa for up to 90 days in any",
+    "fact_id": "fact_543",
+    "status": "confirmed"
+   },
+   {
+    "claim": "Out of the Blue Civil package includes the Heraklion Mayor (repeat in 'Ceremony type')",
+    "fact_id": "fact_106",
+    "status": "removed"
+   },
+   {
+    "claim": "Elounda and Agios Nikolaos are in eastern Crete (Lasithi); was [[VERIFY]], now resolved",
+    "fact_id": "fact_601",
+    "status": "confirmed"
+   },
+   {
+    "claim": "Elounda Peninsula as a gateway to eastern Crete",
+    "fact_id": "fact_600",
+    "status": "confirmed"
+   },
+   {
+    "claim": "Couples wanting a legal marriage can marry at home first (FAQ): general practice guidance, consistent with fact_539 on recognition; no figure or step asserted",
+    "fact_id": "fact_539",
+    "status": "confirmed"
+   }
+  ],
+  "compliance": {
+   "pass": true,
+   "issues": [
+    "No prices, amounts, percentages, per-person figures or deposit sizes (counts, guest capacities, 35 degrees C, 40 days and 90/180 days are non-price facts). Nothing for sign-off.",
+    "No em dashes, no US spelling, no 'best' or ranking, no 'free', no transfers (fact_502/503/508 transfer items omitted), no Wedded Privileges, no 'last dance', no 'Wonderland Concierge' in copy (URL only), no Rhodes venues, no non-venue vendor names.",
+    "Venue paperwork help appears once each as the venue's own offer (Elounda SA, Out of the Blue, Nana Princess) after edit 4; the Advisor is never tied to legal, church or transfer work.",
+    "One Advisor line in the body (primary CTA) plus the close; Advisor claims match brand-facts.md.",
+    "Key takeaways: exactly 4, one sentence each. Keyword in title, first 100 words and H2s.",
+    "No research talk; no myths section; no 'often told'."
+   ]
+  },
+  "originality": {
+   "pass": true,
+   "matches": [
+    "Primary CTA near-identical to greece-wedding-packages-all-inclusive 08-final.md CTA: reworded (edit 7).",
+    "Elounda SA symbolic-not-legal sentence shared verbatim with the same guide: reworded twice (edits 5, 8). No paragraph otherwise copied; competitor overlaps []."
+   ]
+  },
+  "banned_phrases_found": [],
+  "needs_signoff": []
+ }
+}
