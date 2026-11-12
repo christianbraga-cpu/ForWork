@@ -17,8 +17,8 @@ For the customs that surround the service, from the krevati to the koufeta, read
 
 - Who can marry in the Church depends on its rules where you marry, so confirm eligibility with your parish priest before you book anything. <!-- fact_310 --> <!-- fact_313 -->
 - In Australia, the Archdiocese closes some dates and seasons to weddings, including the weeks before Christmas, Great Lent until Easter Sunday and the first half of August. <!-- fact_317 -->
-- Church paperwork and civil paperwork are two separate tracks, and a wedding in Greece adds the local Metropolis, the municipality and the Australian Embassy in Athens. <!-- fact_320 --> <!-- fact_118 --> <!-- fact_103 -->
-- The crowning with the stefana is the climax of the service, and without the rings and the crowns the wedding cannot begin. <!-- fact_304 --> <!-- fact_318 -->
+- Church paperwork and civil paperwork are two separate tracks, and a wedding in Greece means checking with the local Metropolis, the municipality and the Australian Embassy in Athens. <!-- fact_320 --> <!-- fact_118 --> <!-- fact_103 -->
+- The Archdiocese describes the crowning with the stefana as the climax of the service, and without the rings and the crowns the wedding cannot begin. <!-- fact_304 --> <!-- fact_318 -->
 
 When your priest has confirmed the Church side, [book a Wedded Concierge consultation](https://weddedwonderland.com/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=greek-orthodox-wedding&utm_content=primary) and plan the celebration around it.
 
@@ -30,13 +30,13 @@ In the Orthodox Church, marriage is one of the sacraments. It is not a juridical
 
 The service has two parts. The Betrothal Service blesses the rings. The Marriage Service crowns the bride and groom. <!-- fact_301 --> In Greek the Marriage Service is called *stepsis*, which means crowning. <!-- fact_303 -->
 
-A priest leads the rite before a covered ceremonial table in the middle of the Soleas, the raised area in front of the Holy Altar. On the table rest the Holy Gospel, a cup of wine, the betrothal rings and the wedding crowns. The groom stands on the right and the bride on the left. <!-- fact_300 -->
+As the Archdiocese of Australia describes it, a priest leads the rite before a covered ceremonial table in the middle of the Soleas, the raised area in front of the Holy Altar. On the table rest the Holy Gospel, a cup of wine, the betrothal rings and the wedding crowns. The groom stands on the right and the bride on the left. <!-- fact_300 -->
 
 The words are sung and prayed by the priest and the chanter. The couple's part is to be present, to receive the blessings, and to share the cup. The koumbaros or koumbara, your sponsor, has the most active role of anyone else in the church, exchanging the rings and the crowns. <!-- fact_302 --> <!-- fact_304 -->
 
 ## Who can marry in the Greek Orthodox Church?
 
-[The Greek Orthodox Archdiocese of Australia's regulations](https://greekorthodox.org.au/services-and-sacraments/marriage/) say its weddings are performed by a priest it recognises as canonical. The laws for weddings come from the Holy Canons of the Orthodox Church, and the Archdiocese applies them to every Greek Orthodox priest in Australia. <!-- fact_310 --> The rules shown here are the Greek Orthodox Archdiocese of Australia's. If you are marrying elsewhere, ask your own parish priest which rules apply. For a wedding in Greece, the local Metropolis sets the requirements, so confirm them with your parish priest and the Metropolis.
+[The Greek Orthodox Archdiocese of Australia's regulations](https://greekorthodox.org.au/services-and-sacraments/marriage/) say its weddings are performed by a priest it recognises as canonical. The laws for weddings come from the Holy Canons of the Orthodox Church, and the Archdiocese applies them to every Greek Orthodox priest in Australia. <!-- fact_310 --> The rules shown here are the Greek Orthodox Archdiocese of Australia's. If you are marrying elsewhere, ask your own parish priest which rules apply. For a wedding in Greece, confirm the requirements with your parish priest and the local Metropolis.
 
 When both partners are Greek Orthodox, both must have been baptised in a canonical Orthodox Church. If either of you was baptised in a non-canonical church, speak to a canonical priest first. <!-- fact_316 --> Marriages with members of the Oriental Orthodox Churches, such as the Coptic, Syrian, Armenian and Indian Orthodox Churches, are permitted. <!-- fact_316 -->
 
@@ -62,7 +62,7 @@ A divorced partner needs a civil divorce certificate and then an ecclesiastical 
 
 <!-- IMAGE SLOT documents: Flat lay of generic planning items on linen: a closed passport-style booklet with no readable details, an envelope, a fountain pen, wedding rings and a sprig of olive, soft daylight, no readable personal data, no real official forms, no people or place. Source: Wedded Wonderland Canva brand assets or licensed stock added to library-index.csv. An AI still life is allowed only if the user approves it, it shows no real place, wedding, ceremony or person, and it is captioned 'Illustrative image' (source type ai_illustrative). -->
 
-Once the priest has confirmed that the Church can marry you, the requirements come down to papers, timing, a sponsor and a date the Church allows. The parish priest gives directions on documents and on Archdiocese and local church fees, which vary with each couple's circumstances. <!-- fact_320 -->
+Once the priest has confirmed that the Church can marry you, the Archdiocese's requirements come down to papers, timing, a sponsor and a date the Church allows. The parish priest gives directions on documents and on Archdiocese and local church fees, which vary with each couple's circumstances. <!-- fact_320 -->
 
 ### Documents the parish usually asks for
 
@@ -82,19 +82,19 @@ In Australia, one service covers both the Church and the State. Every Greek Orth
 
 Two forms start the process: the Notice of Intended Marriage, for the Registry of Births, Deaths and Marriages, and the Application to the Archdiocese. Both are completed in the presence of the priest at least one calendar month before the wedding, and preferably three. <!-- fact_320 --> Build that window into your planning, particularly if you live interstate or overseas.
 
-A wedding in Greece follows its own steps, set by the local Metropolis and confirmed with your venue. That track is covered in the Greece section below.
+A wedding in Greece follows its own steps, which you confirm with the local Metropolis and your venue. That track is covered in the Greece section below.
 
 ### Choosing your koumbaros or koumbara
 
 The koumbaros or koumbara, the sponsor who stands beside you, is usually Orthodox. A non-Orthodox Christian of an acceptable denomination may stand as sponsor at the wedding, but may not become godparent at the christenings of the couple's children. <!-- fact_312 -->
 
-That second point matters more than it first appears. In many Greek families the wedding sponsor is often asked to baptise the first child, so choose with both roles in mind.
+That second point matters if you hope your sponsor will also baptise your children, so choose with both roles in mind.
 
 The sponsor's practical job on the day is to exchange the rings and the crowns. <!-- fact_302 --> <!-- fact_304 -->
 
 ### Dates when weddings are not held
 
-In Australia, marriages are not permitted: <!-- fact_317 -->
+Under the Archdiocese of Australia's rules, marriages are not permitted: <!-- fact_317 -->
 
 - From 13 December until Christmas Day.
 - On 5 January, the eve of Epiphany.
@@ -121,7 +121,7 @@ There is no moment when you slip a ring onto each other's hand. Tell your photog
 
 <!-- IMAGE SLOT ceremony-detail: Detail shot of tall decorated lambades wedding candles or the common cup with wine on a ceremony table, warm candlelight, no faces, no identifiable guests. If taken at a real wedding it must be a licensed photo with couple consent recorded; a still life with no place, wedding or person may follow the still-life rules. Source: Wedded Wonderland Canva brand assets or licensed stock added to library-index.csv. An AI still life is allowed only if the user approves it, it shows no real place, wedding, ceremony or person, and it is captioned 'Illustrative image' (source type ai_illustrative). -->
 
-Two candles are lit as a reminder that Christ is "the Light of the world". <!-- fact_300 --> Many couples hold them through the service, often as tall *lambades* dressed with ribbon and flowers; ask your priest how your parish does it.
+Two candles are lit as a reminder that Christ is "the Light of the world". <!-- fact_300 --> Ask your priest who holds them and how your parish dresses them.
 
 The Marriage Service then begins. The priest joins your right hands, and they stay joined for the rest of the service, a sign of the couple's "oneness". <!-- fact_303 -->
 
@@ -139,7 +139,7 @@ In remembrance of Christ's first miracle at Cana, you share a cup of wine as a s
 
 ### The Dance of Isaiah
 
-The priest, holding the Holy Gospel, leads you in a procession in a circle, a symbolic dance for the joy of God's presence, while the priest and chanter sing "Rejoice, Isaiah". <!-- fact_307 --> Often the koumbaros follows close behind, keeping the crowns in place.
+The priest, holding the Holy Gospel, leads you in a procession in a circle, a symbolic dance for the joy of God's presence, while the priest and chanter sing "Rejoice, Isaiah". <!-- fact_307 -->
 
 These are your first steps as a married couple. Keep the train and the veil manageable for the slow procession.
 
@@ -153,9 +153,9 @@ Then the line forms. Guests come forward to congratulate you, and the celebratio
 
 Stefana are the wedding crowns. They are a sign of the bond between bride and groom, and represent the glory and honour God bestows on the couple. <!-- fact_304 --> Crowns were once usually plaited from lemon blossoms or flowers; today they are often silver or gold. <!-- fact_304 -->
 
-The crowns are not optional. Without the rings and the crowns, the wedding cannot commence. <!-- fact_318 -->
+The crowns are not optional. Under the Archdiocese's rules, without the rings and the crowns, the wedding cannot commence. <!-- fact_318 -->
 
-Who buys the stefana is a family conversation. Many couples ask the koumbaros to bring them, along with the candles. Agree it early, so no one arrives with a second pair.
+Who buys the stefana is a family conversation. Agree it early, so no one arrives with a second pair.
 
 ## Are there vows in a Greek Orthodox wedding?
 
@@ -169,7 +169,7 @@ There is no fixed length, so ask your priest for your church's running time. The
 
 If older guests will be in the church, ask whether there is seating for them.
 
-Two timings are fixed. The groom and groomsmen should arrive at least 15 minutes before the service, and the bride's party at least five minutes before. The custom of the bride arriving late has no basis in religious tradition. <!-- fact_318 -->
+The Archdiocese fixes two timings. The groom and groomsmen should arrive at least 15 minutes before the service, and the bride's party at least five minutes before. The custom of the bride arriving late has no basis in religious tradition. <!-- fact_318 -->
 
 ## What to wear to a Greek Orthodox wedding
 
@@ -187,7 +187,7 @@ Some couples hope to marry on the island where a grandparent was baptised. It is
 
 ### The church and the paperwork
 
-In Greece the local Metropolis, the diocese, sets the Church's requirements. Start with your parish priest in Australia, then confirm every step with the Metropolis where you will marry.
+For a wedding in Greece, start with your parish priest in Australia, then confirm every step with the Metropolis where you will marry.
 
 Venues describe the process in their own terms. Elounda SA Hotels & Resorts in Crete offers Greek Orthodox ceremonies alongside civil and symbolic ones. <!-- fact_114 --> Elounda SA lists these steps for its Orthodox weddings: <!-- fact_118 -->
 
@@ -233,15 +233,15 @@ Your Wedded Advisor is a single point of contact who plans the venue, travel, ve
 
 ### Can a non-Orthodox partner marry in a Greek Orthodox church?
 
-Yes, if they are a baptised Christian of a denomination the Church accepts, such as Roman Catholic, Anglican, Uniting, Lutheran or Presbyterian. A non-Christian partner can marry in the Church only after baptism in an accepted denomination. <!-- fact_313 --> <!-- fact_315 --> Raise your partner's denomination at your first meeting with the priest.
+Under the Archdiocese of Australia's rules, yes, if they are a baptised Christian of a denomination the Church accepts, such as Roman Catholic, Anglican, Uniting, Lutheran or Presbyterian. A non-Christian partner can marry in the Church only after baptism in an accepted denomination. <!-- fact_313 --> <!-- fact_315 --> Raise your partner's denomination at your first meeting with the priest.
 
 ### What documents do we need for a Greek Orthodox wedding?
 
-In Australia, a birth certificate or passport and a baptismal certificate for each of you, plus a Certificate of Celibacy for an Orthodox partner never married before. <!-- fact_321 --> Divorced or widowed partners need extra papers. The Notice of Intended Marriage and the Application to the Archdiocese are completed with the priest at least a month ahead. <!-- fact_320 -->
+In Australia, the Archdiocese asks for a birth certificate or passport and a baptismal certificate for each of you, plus a Certificate of Celibacy for an Orthodox partner never married before. <!-- fact_321 --> Divorced or widowed partners need extra papers. The Notice of Intended Marriage and the Application to the Archdiocese are completed with the priest at least a month ahead. <!-- fact_320 -->
 
 ### Who can be a koumbaros or koumbara?
 
-Usually an Orthodox Christian. A non-Orthodox Christian of an acceptable denomination may stand as sponsor at the wedding, but cannot become godparent to your children. <!-- fact_312 -->
+Usually an Orthodox Christian. Under the Archdiocese's rules, a non-Orthodox Christian of an acceptable denomination may stand as sponsor at the wedding, but cannot become godparent to your children. <!-- fact_312 -->
 
 ### Are there vows in a Greek Orthodox wedding?
 
@@ -249,7 +249,7 @@ No. The Orthodox sacrament contains no vows or oaths. <!-- fact_01 --> The bless
 
 ### How long is a Greek Orthodox wedding?
 
-There is no fixed length, so ask your priest for your church's running time. Plan for the groom to arrive at least 15 minutes early and the bride's party at least five minutes early. <!-- fact_318 -->
+There is no fixed length, so ask your priest for your church's running time. The Archdiocese asks the groom to arrive at least 15 minutes early and the bride's party at least five minutes early. <!-- fact_318 -->
 
 ### Can a Greek Orthodox wedding be held outside a church?
 
