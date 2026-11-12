@@ -5,3 +5,4 @@
 04:52 02 SEO done: AU 10 / US 20 (KD 0); no site ranking; Greece packages draft lists the term as secondary (split: this guide owns it); meta 55/143. report.md saved by orchestrator.
 04:56 05 draft done: ~4,330 words, 1 VERIFY (Elounda in eastern Crete), scan flags only the all-inclusive guide's URL slug. Part-6 added: Elounda Peninsula 'gateway to eastern Crete' and Visit Greece east/west facts (reused) so the editor can resolve it.
 04:59 07 readers done (enquire 3/3/2/3/1). 06 editor pass_with_edits (4.14): 8 edits applied to 05-draft-r2.md; VERIFY resolved (Lasithi per Visit Greece fact_601); two lines reworded to avoid matching the all-inclusive guide.
+05:02 07b panel: revise (enquire 2.6), 4 must-fix + 2 should-fix + 9 consider; business details deferred. One final pass.
