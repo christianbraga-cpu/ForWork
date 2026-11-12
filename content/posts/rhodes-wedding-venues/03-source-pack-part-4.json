@@ -1,0 +1,82 @@
+{
+ "agent": "planner-sme",
+ "task_id": "rhodes-wedding-venues",
+ "stage": "03",
+ "status": "complete",
+ "round": 1,
+ "inputs_used": [
+  "content/posts/rhodes-wedding-venues/00-input.json",
+  "content-system/schemas/03-source-pack.schema.json",
+  "content/posts/rhodes-wedding-venues/03-source-pack-part-1.json (format model)",
+  "Live reads 2026-11-12 via mcp__Apify__apify--web-fetch (batch E top-up: Old Town focus)"
+ ],
+ "payload": {
+  "facts": [
+   {
+    "fact_id": "fact_400",
+    "claim": "Visit Greece (the official Greek tourism site) says the Medieval Town of Rhodes is a UNESCO World Heritage Site, and describes Rhodes as an open-air museum where Byzantines, Knights of St John, Ottomans and Italians each left their mark. Setting fact only; the page makes no wedding claim.",
+    "source": "https://www.visitgreece.gr/en/islands/dodecanese/rhodes",
+    "source_type": "tourism_board",
+    "checked": "2026-11-12",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_401",
+    "claim": "Avalon Boutique Suites Hotel (9 Haritos Street) describes itself as 'an intimate medieval retreat within the walls of the imposing Medieval City of Rhodes', a 14th-century mansion a few steps from the Palace of the Grand Master and the Street of the Knights, with ten individually designed suites and a private Avalon Residence, a courtyard, dome and terrace dining and a Dome Conference Hall.",
+    "source": "https://avalonrhodes.gr/",
+    "source_type": "official_venue",
+    "checked": "2026-11-12",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_402",
+    "claim": "Avalon's home, About and Facilities pages show photos captioned as wedding couples in its courtyard, but no text on the pages read says it hosts weddings, ceremonies or receptions, and /weddings/ returns 'page can't be found'. It does NOT meet the inclusion rule (photos are not a stated offer).",
+    "source": "https://avalonrhodes.gr/about-us/",
+    "source_type": "official_venue",
+    "checked": "2026-11-12",
+    "is_price": false
+   }
+  ],
+  "insider_details": [
+   {
+    "detail": "Inside the medieval walls, the boutique hotels read so far are suite-only properties without a stated wedding offer, so for an Old Town wedding treat them as places for the couple and family to stay and confirm in writing before assuming any courtyard can be booked for an event.",
+    "fact_ids": ["fact_401", "fact_402"]
+   }
+  ],
+  "quotes": [],
+  "real_weddings": [],
+  "verify_items": [],
+  "needs_signoff": [],
+  "must_include_coverage": [
+   {
+    "item": "At least one Old Town (medieval town) venue",
+    "covered_by": ["None qualified in batch E: Avalon read live (fact_401, fact_402) with wedding photos but no stated wedding offer; In Camera and Nikolis reads timed out"]
+   },
+   {
+    "item": "Public monument / Medieval Town setting from an official source",
+    "covered_by": ["fact_400 (Visit Greece: Medieval Town is a UNESCO World Heritage Site). Palace of the Grand Master not described: Ministry of Culture page returned 'history is not available'."]
+   }
+  ]
+ },
+ "verify_items": [],
+ "assumptions": [
+  "Avalon Boutique Suites Hotel is a reserve only: if the orchestrator wants an Old Town entry, the hotel would need to confirm in writing that it hosts weddings; until then it is not counted.",
+  "fact_400 is a setting line only; it does not support any claim that weddings are held at the Palace of the Grand Master or in the Medieval Town's public spaces."
+ ],
+ "open_questions": [
+  {"to": "orchestrator", "question": "RUN REPORT ONLY: No venue inside the medieval walls qualified in batch E. Avalon Boutique Suites Hotel (inside the walls, per its own site) shows wedding photos but states no wedding offer and has no weddings page. The title promise 'to the Old Town' likely needs rewording, or the Old Town can appear as a setting (fact_400) and for portraits only.", "blocking": false},
+  {"to": "orchestrator", "question": "RUN REPORT ONLY: In Camera Art Boutique Hotel (incamerahotel.com guessed) and Nikolis Hotel (nikolishotel.com guessed) reads timed out after 60s; not retried under the time limit. Official URLs unconfirmed.", "blocking": false},
+  {"to": "orchestrator", "question": "RUN REPORT ONLY: Mitsis Grand Hotel weddings URL on mitsis.com (/en/hotels/rhodes/mitsis-grand-hotel/weddings) returned 404 again; the site lists a Weddings & Events contact but the hotel page was not found.", "blocking": false},
+  {"to": "orchestrator", "question": "RUN REPORT ONLY: odysseus.culture.gr obj_id=2416 returned 'The history is not available'; no Ministry of Culture description of the Palace of the Grand Master recorded. Hotel Andreas and Old Town restaurants not reached; the Old Town search returned only directories, forums and planner sites.", "blocking": false}
+ ],
+ "next_agent": ["luxury-writer"],
+ "self_qa": {
+  "checks": [
+   {"check": "Every fact has a source and date", "pass": true},
+   {"check": "No price without a source; all prices in needs_signoff", "pass": true, "note": "No prices recorded."},
+   {"check": "Every must-include covered or marked [[VERIFY]]", "pass": true, "note": "Batch E items only; gaps reported as RUN REPORT ONLY."},
+   {"check": "No invented quotes, statistics or real weddings", "pass": true, "note": "Avalon wedding photos not recorded as a real wedding."}
+  ],
+  "confidence": 0.65
+ }
+}
