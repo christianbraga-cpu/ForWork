@@ -14,3 +14,4 @@
 00:44 07b panel: revise (enquire 2.6), 1 must-fix (Venetsanos heading: 'The wineries') + 4 should-fix + 3 consider; business details deferred. One final pass.
 00:46 08 final done: ~4,715 words, 13 venues, scan clean, 0 VERIFY.
 00:47 8b pass_with_edits (4 edits) and CRO (1 change) applied; 4 UTMs once each.
+- 00:50 11-13 package, booking checklist, run report, backlinks, link map, calendar row 47, docx.

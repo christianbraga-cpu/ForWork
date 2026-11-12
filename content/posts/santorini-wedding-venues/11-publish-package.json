@@ -1,0 +1,464 @@
+{
+  "agent": "cms-publisher",
+  "task_id": "santorini-wedding-venues",
+  "stage": "11",
+  "status": "complete",
+  "round": 1,
+  "inputs_used": [
+    "CLAUDE.md",
+    "content-system/cms/field-map.md",
+    "content-system/schemas/11-publish-package.schema.json",
+    "content/posts/santorini-wedding-venues/00-input.json",
+    "content/posts/santorini-wedding-venues/01-brief.json",
+    "content/posts/santorini-wedding-venues/02-seo.json",
+    "content/posts/santorini-wedding-venues/03-source-pack.json",
+    "content/posts/santorini-wedding-venues/04-images.json",
+    "content/posts/santorini-wedding-venues/08-final.md",
+    "content/posts/santorini-wedding-venues/09-cro.json",
+    "content/posts/santorini-wedding-venues/10-distribution.json",
+    "content/posts/mykonos-wedding-venues/11-body.md, 11-publish-package.json, 12-cms-report.md, booking-checklist.md (format model)"
+  ],
+  "self_qa": {
+    "checks": [
+      {
+        "check": "Front matter and all <!-- fact_xx --> markers removed; H1 is the title; 7 image-slot comments kept; no [[VERIFY]] markers in the copy",
+        "pass": true
+      },
+      {
+        "check": "Primary CTA block at the marker; inline fallback retagged utm_content=inline; secondary, closing and magnet marked; each utm_content appears exactly once in visible links",
+        "pass": true
+      },
+      {
+        "check": "Exactly 4 key takeaways and 9 FAQ pairs taken verbatim from the body",
+        "pass": true
+      },
+      {
+        "check": "13 venues in body, table and ItemList; title and meta say 13",
+        "pass": true
+      },
+      {
+        "check": "Meta description drops Fira, under 155 characters, no prices",
+        "pass": true,
+        "note": "145 characters"
+      },
+      {
+        "check": "primary_category equals categories[0] (Destination Weddings)",
+        "pass": true
+      },
+      {
+        "check": "No em dashes; no \"Wonderland Concierge\" in visible text; Australian English",
+        "pass": true
+      },
+      {
+        "check": "status draft; nothing uploaded, saved or published",
+        "pass": true
+      }
+    ],
+    "confidence": 0.9
+  },
+  "open_questions": [
+    {
+      "to": "orchestrator",
+      "question": "CMS upload not attempted: FAST MODE package only, no browser in this session, and content-system/cms/field-map.md is not CONFIRMED. Run /wedded-cms-discovery locally, then /wedded-blog resume=santorini-wedding-venues.",
+      "blocking": true
+    },
+    {
+      "to": "orchestrator",
+      "question": "No author named in any input; package uses \"Wedded Wonderland\" (organisation). Confirm the byline.",
+      "blocking": false
+    },
+    {
+      "to": "orchestrator",
+      "question": "301 from /7-must-see-santorini-destination-wedding-venues to /destination-weddings/santorini-wedding-venues is recommended at publish; the person decides.",
+      "blocking": false
+    }
+  ],
+  "assumptions": [
+    "Title is \"13 Best Santorini Wedding Venues With Caldera Views\" (13 venues qualified; changed from 15). The H1 keeps \"Best\" as the person gave it; the copy makes no ranking claim.",
+    "Meta title drops \"Best\": \"13 Santorini Wedding Venues With Caldera Views\".",
+    "Meta description from 02-seo.json with Fira removed (no Fira venue in the list).",
+    "Excerpt is the first sentence of the opening paragraph.",
+    "Tags from 01-brief.json with Fira removed.",
+    "verify_items and needs_signoff left empty per the orchestrator; image slots are listed in the draft note and images[].",
+    "04-images.json slot area-fira dropped from the package: no Fira venue qualified and 08-final.md has no area-fira slot.",
+    "ItemList names carry the area only where the body names it; Venetsanos Winery and Le Ciel have no village (not published)."
+  ],
+  "verify_items": [],
+  "tools_used": [
+    "Bash (python3 -I)"
+  ],
+  "next_agent": [
+    "orchestrator"
+  ],
+  "payload": {
+    "title": "13 Best Santorini Wedding Venues With Caldera Views",
+    "slug": "santorini-wedding-venues",
+    "url_path": "/destination-weddings/santorini-wedding-venues",
+    "content_type": "Guide",
+    "cluster": "Getting Married in Greece",
+    "categories": [
+      "Destination Weddings",
+      "Greece",
+      "Venues"
+    ],
+    "primary_category": "Destination Weddings",
+    "tags": [
+      "Getting Married in Greece",
+      "Santorini",
+      "Santorini wedding venues",
+      "Oia",
+      "Imerovigli",
+      "Caldera",
+      "Cyclades"
+    ],
+    "excerpt": "Santorini wedding venues with a caldera view sit in four parts of the island: Oia, Imerovigli, Pyrgos and the inland villages, and Akrotiri.",
+    "key_takeaways": [
+      "Choose Oia or Imerovigli for a small terrace ceremony, and a winery when a long dinner matters as much as the cliff edge.",
+      "Most cliff-top ceremony spaces hold between 15 and 60 guests, so a larger guest list points to a full-property buyout, a winery terrace or the open-air space at Grand Ambassador in Akrotiri.",
+      "Several venues publish full-property buyouts or a hotel take-over, while others publish no capacity at all, so ask every venue the same questions in writing.",
+      "Greek summers bring frequent heatwaves and a wildfire season from June to September, and Santorini sits in an active seismic zone, so plan shade, timing and a fallback for your date."
+    ],
+    "body_markdown_file": "content/posts/santorini-wedding-venues/11-body.md",
+    "faq": [
+      {
+        "q": "Which part of Santorini suits a wedding?",
+        "a": "It depends on your guest list and the setting you want. Oia's published ceremony spaces run from 25 guests on the Epitome Sunset Terrace to 60 seated at Botrini's, while Imerovigli, the \"Balcony on the Aegean\", has Katikies Chromata on its highest point. The wineries suit a ceremony and dinner in one place, and Grand Ambassador in Akrotiri publishes outdoor space for up to 250 guests."
+      },
+      {
+        "q": "Which Santorini venues have a caldera view?",
+        "a": "All 13 venues in this guide describe a caldera view. In Oia, Katikies Santorini's Gea House looks over the caldera and the volcano; in Imerovigli, every room at Kapari faces the caldera; and Venetsanos Winery's Upper Terrace overlooks it."
+      },
+      {
+        "q": "Are there small wedding venues in Santorini for intimate groups?",
+        "a": "Yes. Canaves lists 25 guests on the Epitome Sunset Terrace and 30 on the Oia Suites Panorama Balcony, Kapari takes events for up to approximately 30, and Grace's Villa seats 15. Katikies offers micro weddings for small groups."
+      },
+      {
+        "q": "Which Santorini venues can host 100 guests?",
+        "a": "Grand Ambassador has outdoor space for up to 250 guests, a Canaves Epitome buyout takes up to 170 and a Canaves Oia Suites buyout up to 120. Venetsanos Winery seats about 100 on its Upper Terrace, and Botrini's Restaurant at Katikies Santorini holds 100 standing."
+      },
+      {
+        "q": "Can we get married at a winery in Santorini?",
+        "a": "Yes. Santo Wines in Pyrgos hosts weddings with the caldera as the backdrop, and Venetsanos Winery's Upper Terrace hosts the ceremony and the reception."
+      },
+      {
+        "q": "Can we book a Santorini venue for exclusive use?",
+        "a": "Some venues publish it. Canaves lists full buyouts of three Oia hotels, Katikies lists a hotel take-over among its event enquiries, and Grace Hotel's venue fee includes exclusive use of the selected event spaces. For the others, confirm in writing."
+      },
+      {
+        "q": "How do guests get to Santorini?",
+        "a": "Most fly. Visit Greece lists a 50-minute flight from Athens and 1 hour and 30 minutes from Thessaloniki. Guests arriving by ferry should expect stairs with luggage and possible delays in strong winds."
+      },
+      {
+        "q": "When should we get married in Santorini?",
+        "a": "Each period brings something different. At Naxos, the nearest official station, June to August are the driest months and July and August the hottest, and summer heatwaves are frequent. May and October fall outside the June to September wildfire season, with mean maximums of 22.1°C and 21.9°C at Naxos, though October is wetter."
+      },
+      {
+        "q": "Can Australians legally get married in Santorini?",
+        "a": "Plan the legal steps first. As at November 2026, Smartraveller says you may need a Certificate of No Impediment, and a marriage valid in Greece that would also be valid under Australian law is in most cases recognised in Australia."
+      }
+    ],
+    "images": [
+      {
+        "slot_id": "featured",
+        "file": "content/posts/santorini-wedding-venues/images/santorini-wedding-venues-caldera-ceremony-terrace-hero.webp",
+        "role": "featured",
+        "status": "needed"
+      },
+      {
+        "slot_id": "area-oia",
+        "file": "content/posts/santorini-wedding-venues/images/santorini-wedding-venues-oia-caldera-terrace.webp",
+        "role": "inline",
+        "status": "needed"
+      },
+      {
+        "slot_id": "area-imerovigli-firostefani",
+        "file": "content/posts/santorini-wedding-venues/images/santorini-wedding-venues-imerovigli-skaros-view.webp",
+        "role": "inline",
+        "status": "needed"
+      },
+      {
+        "slot_id": "area-inland-villages",
+        "file": "content/posts/santorini-wedding-venues/images/santorini-wedding-venues-megalochori-estate-dinner.webp",
+        "role": "inline",
+        "status": "needed"
+      },
+      {
+        "slot_id": "area-akrotiri-south",
+        "file": "content/posts/santorini-wedding-venues/images/santorini-wedding-venues-akrotiri-south-caldera-view.webp",
+        "role": "inline",
+        "status": "needed"
+      },
+      {
+        "slot_id": "practical-compare",
+        "file": "content/posts/santorini-wedding-venues/images/santorini-wedding-venues-ceremony-setup-detail.webp",
+        "role": "inline",
+        "status": "needed"
+      },
+      {
+        "slot_id": "practical-when-to-marry",
+        "file": "content/posts/santorini-wedding-venues/images/santorini-wedding-venues-caldera-sunset-table.webp",
+        "role": "inline",
+        "status": "needed"
+      }
+    ],
+    "cta": {
+      "text": "Speak with a Wedded Advisor",
+      "subtext": "The fee is agreed in writing before any work begins.",
+      "link": "/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=santorini-wedding-venues&utm_content=primary",
+      "placement": "At the former <!-- CTA: primary --> marker, at the end of 'How to compare Santorini venues like for like' (marked <!-- CTA BLOCK: primary --> in 11-body.md); the inline Wedded Concierge sentence after it is the fallback, retagged utm_content=inline."
+    },
+    "secondary_cta": {
+      "text": "See real options with Wedded Concierge",
+      "link": "/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=santorini-wedding-venues&utm_content=secondary",
+      "placement": "Inline link in the opening line of 'Your booking checklist' (marked <!-- CTA INLINE: secondary --> in 11-body.md)."
+    },
+    "closing_cta": {
+      "text": "shortlist your Santorini venues through Wedded Concierge",
+      "link": "/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=santorini-wedding-venues&utm_content=closing",
+      "placement": "Inline link at the end of 'Shortlist your Santorini venues with a Wedded Advisor' (marked <!-- CTA INLINE: closing --> in 11-body.md)."
+    },
+    "lead_magnet": {
+      "name": "Wedded Wonderland digital magazine",
+      "link": "/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=santorini-wedding-venues&utm_content=magnet",
+      "placement": "Existing line in the final 'Still weighing the Cyclades?' paragraph (marked <!-- LEAD MAGNET --> in 11-body.md)."
+    },
+    "tracking_links": [
+      "/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=santorini-wedding-venues&utm_content=primary",
+      "/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=santorini-wedding-venues&utm_content=inline",
+      "/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=santorini-wedding-venues&utm_content=secondary",
+      "/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=santorini-wedding-venues&utm_content=closing",
+      "/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=santorini-wedding-venues&utm_content=magnet"
+    ],
+    "seo": {
+      "meta_title": "13 Santorini Wedding Venues With Caldera Views",
+      "meta_description": "Santorini wedding venues by area, from Oia and Imerovigli to Pyrgos and Akrotiri, compared on caldera view, ceremony setting, capacity and rooms.",
+      "focus_keyword": "santorini wedding venues",
+      "canonical": "https://weddedwonderland.com/destination-weddings/santorini-wedding-venues",
+      "og_image_slot": "featured"
+    },
+    "schema_jsonld": {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Article",
+          "@id": "https://weddedwonderland.com/destination-weddings/santorini-wedding-venues#article",
+          "headline": "13 Best Santorini Wedding Venues With Caldera Views",
+          "description": "Santorini wedding venues by area, from Oia and Imerovigli to Pyrgos and Akrotiri, compared on caldera view, ceremony setting, capacity and rooms.",
+          "author": {
+            "@type": "Organization",
+            "name": "Wedded Wonderland",
+            "url": "https://weddedwonderland.com/"
+          },
+          "publisher": {
+            "@type": "Organization",
+            "name": "Wedded Wonderland",
+            "url": "https://weddedwonderland.com/"
+          },
+          "datePublished": "",
+          "mainEntityOfPage": "https://weddedwonderland.com/destination-weddings/santorini-wedding-venues",
+          "inLanguage": "en-AU"
+        },
+        {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Home",
+              "item": "https://weddedwonderland.com/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Destination Weddings",
+              "item": "https://weddedwonderland.com/destination-weddings"
+            },
+            {
+              "@type": "ListItem",
+              "position": 3,
+              "name": "13 Best Santorini Wedding Venues With Caldera Views",
+              "item": "https://weddedwonderland.com/destination-weddings/santorini-wedding-venues"
+            }
+          ]
+        },
+        {
+          "@type": "ItemList",
+          "@id": "https://weddedwonderland.com/destination-weddings/santorini-wedding-venues#venues",
+          "name": "13 Best Santorini Wedding Venues With Caldera Views",
+          "numberOfItems": 13,
+          "itemListOrder": "https://schema.org/ItemListUnordered",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Canaves Oia (Oia Suites, Sunday and Epitome), Oia",
+              "url": "https://canaves.com/weddings-oia-santorini-island/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Mystique, Oia",
+              "url": "https://mystique.gr/weddings/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 3,
+              "name": "Katikies Santorini, Oia",
+              "url": "https://www.katikies.com/katikieshotelsantorini/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 4,
+              "name": "Andronis Luxury Suites, Oia",
+              "url": "https://www.andronis.com/explore/weddingsandcelebrations"
+            },
+            {
+              "@type": "ListItem",
+              "position": 5,
+              "name": "Grace Hotel, Imerovigli",
+              "url": "https://auberge.com/grace-hotel/events/weddings/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 6,
+              "name": "Astra Suites, Imerovigli",
+              "url": "https://www.astrasuites.com/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 7,
+              "name": "Tholos Resort, Imerovigli",
+              "url": "https://www.tholosresort.gr/weddings/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 8,
+              "name": "Kapari Natural Resort, Imerovigli",
+              "url": "https://kaparisantorini.gr/weddingsceremonies/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 9,
+              "name": "Katikies Chromata, Imerovigli",
+              "url": "https://www.katikies.com/chromatasantorini/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 10,
+              "name": "Santo Wines, Pyrgos",
+              "url": "https://santowines.gr/host-your-event/weddings"
+            },
+            {
+              "@type": "ListItem",
+              "position": 11,
+              "name": "Venetsanos Winery",
+              "url": "https://venetsanoswinery.com/wedding-events/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 12,
+              "name": "Grand Ambassador Santorini, Akrotiri",
+              "url": "https://www.grandambassadorsantorini.gr/venues"
+            },
+            {
+              "@type": "ListItem",
+              "position": 13,
+              "name": "Le Ciel Santorini",
+              "url": "https://leciel-santorini.com/venue/"
+            }
+          ]
+        },
+        {
+          "@type": "FAQPage",
+          "@id": "https://weddedwonderland.com/destination-weddings/santorini-wedding-venues#faq",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "Which part of Santorini suits a wedding?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "It depends on your guest list and the setting you want. Oia's published ceremony spaces run from 25 guests on the Epitome Sunset Terrace to 60 seated at Botrini's, while Imerovigli, the \"Balcony on the Aegean\", has Katikies Chromata on its highest point. The wineries suit a ceremony and dinner in one place, and Grand Ambassador in Akrotiri publishes outdoor space for up to 250 guests."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Which Santorini venues have a caldera view?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "All 13 venues in this guide describe a caldera view. In Oia, Katikies Santorini's Gea House looks over the caldera and the volcano; in Imerovigli, every room at Kapari faces the caldera; and Venetsanos Winery's Upper Terrace overlooks it."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Are there small wedding venues in Santorini for intimate groups?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes. Canaves lists 25 guests on the Epitome Sunset Terrace and 30 on the Oia Suites Panorama Balcony, Kapari takes events for up to approximately 30, and Grace's Villa seats 15. Katikies offers micro weddings for small groups."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Which Santorini venues can host 100 guests?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Grand Ambassador has outdoor space for up to 250 guests, a Canaves Epitome buyout takes up to 170 and a Canaves Oia Suites buyout up to 120. Venetsanos Winery seats about 100 on its Upper Terrace, and Botrini's Restaurant at Katikies Santorini holds 100 standing."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Can we get married at a winery in Santorini?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes. Santo Wines in Pyrgos hosts weddings with the caldera as the backdrop, and Venetsanos Winery's Upper Terrace hosts the ceremony and the reception."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Can we book a Santorini venue for exclusive use?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Some venues publish it. Canaves lists full buyouts of three Oia hotels, Katikies lists a hotel take-over among its event enquiries, and Grace Hotel's venue fee includes exclusive use of the selected event spaces. For the others, confirm in writing."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "How do guests get to Santorini?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Most fly. Visit Greece lists a 50-minute flight from Athens and 1 hour and 30 minutes from Thessaloniki. Guests arriving by ferry should expect stairs with luggage and possible delays in strong winds."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "When should we get married in Santorini?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Each period brings something different. At Naxos, the nearest official station, June to August are the driest months and July and August the hottest, and summer heatwaves are frequent. May and October fall outside the June to September wildfire season, with mean maximums of 22.1°C and 21.9°C at Naxos, though October is wetter."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Can Australians legally get married in Santorini?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Plan the legal steps first. As at November 2026, Smartraveller says you may need a Certificate of No Impediment, and a marriage valid in Greece that would also be valid under Australian law is in most cases recognised in Australia."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    "author": "Wedded Wonderland",
+    "status": "draft",
+    "verify_items": [],
+    "needs_signoff": [],
+    "redirects_recommended": "Recommended, the person's call: 301 from /7-must-see-santorini-destination-wedding-venues to /destination-weddings/santorini-wedding-venues at publish (same keyword; the old page ranks about #90 to #97 AU and is falling).",
+    "hub_recommendation": "Recommendation only, nothing on the live site changes: the Santorini planning guide draft (/destination-weddings/santorini-wedding) links the old page once in Step 3; point that link here instead.",
+    "deferred_business_items": [
+      "Real wedding at a Santorini or Greece venue",
+      "Fee model and commissions (whether the business takes a cut from venues)",
+      "Deposits and named Wedded Advisor who calls first"
+    ],
+    "draft_note": "DRAFT ONLY. A human clicks Publish; no agent publishes or schedules this post.\n\n1. [[VERIFY]] items in the copy: none.\n\n2. Nic sign-off prices: none (the post states no prices or amounts).\n\n3. Image slots needed (7): featured, area-oia, area-imerovigli-firostefani, area-inland-villages, area-akrotiri-south, practical-compare, practical-when-to-marry. No licensed or permissioned image yet; never AI, competitor or search-result images.\n\n4. Before publishing: confirm the byline, and decide on the recommended 301 from /7-must-see-santorini-destination-wedding-venues to this URL (the person's call). See booking-checklist.md for venue details to confirm in writing."
+  }
+}
