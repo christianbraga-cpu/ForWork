@@ -7,3 +7,4 @@
 23:19 05 writer done: about 2,660 words, 0 VERIFY, no venues named.
 23:21 06 editor pass_with_edits 4.29, 13 edits applied (05-draft-r2.md); 07 readers done.
 23:22 07b panel revise (enquire 2.6); 2 must-fix.
+23:23 08 writer final round 3 done: about 2,750 words.
