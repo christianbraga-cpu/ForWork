@@ -1,0 +1,223 @@
+{
+ "agent": "visual-curator",
+ "task_id": "rhodes-wedding-venues",
+ "stage": "04",
+ "status": "needs_input",
+ "round": 1,
+ "inputs_used": [
+  "CLAUDE.md",
+  "content/posts/rhodes-wedding-venues/00-input.json",
+  "01-brief.json, 02-seo.json, 03-source-pack.json (not present at run time)",
+  "content/posts/santorini-wedding-venues/04-images.json (format model)",
+  "content-system/images/library-index.csv (header only, no rows)",
+  "content-system/images/sources-policy.md",
+  "content-system/schemas/04-images.schema.json"
+ ],
+ "self_qa": {
+  "checks": [
+   {
+    "check": "Zero reference-only or competitor images in slots",
+    "pass": true,
+    "note": "reference_only is empty; no images downloaded."
+   },
+   {
+    "check": "Every approved image has location, licence, alt, caption, fit_reason",
+    "pass": true,
+    "note": "No approved images this run; alt and caption are written once a licensed file exists."
+   },
+   {
+    "check": "No AI image depicting a real place",
+    "pass": true,
+    "note": "No AI used; no slot allows AI for a venue, destination, wedding or person."
+   },
+   {
+    "check": "Featured image exists (approved or needed with brief)",
+    "pass": true,
+    "note": "Needed, with brief: Lindos ceremony terrace at a qualifying venue."
+   },
+   {
+    "check": "One slot per area plus practical",
+    "pass": true,
+    "note": "7 slots: featured, 4 areas (Lindos and the south-east; the Old Town and Rhodes city; the east coast; the west coast), how to compare, when to marry."
+   }
+  ],
+  "confidence": 0.7
+ },
+ "open_questions": [
+  {
+   "to": "planner-sme",
+   "question": "Confirm the qualifying Rhodes venues (03-source-pack) so the hero and each area slot can be tied to a named venue.",
+   "blocking": false
+  },
+  {
+   "to": "orchestrator",
+   "question": "Should a human find each confirmed venue's press or media contact and create the Gmail drafts, or should the curator do it in a non-fast run?",
+   "blocking": false
+  },
+  {
+   "to": "orchestrator",
+   "question": "Is there budget for licensed premium stock (Stocksy, Getty, Offset) if press kits do not respond in time?",
+   "blocking": false
+  }
+ ],
+ "assumptions": [
+  "Placement is by section name because 02-seo.json is not yet written; the writer maps it to after_h2 positions.",
+  "No venue is named because 03-source-pack does not exist yet; no venue name was guessed.",
+  "Getting there and legal in brief get no image (no suitable non-generic visual; keeps the page light)."
+ ],
+ "verify_items": [
+  "[[IMAGE NEEDED]] featured: Lindos ceremony terrace hero from a qualifying Lindos or south-east venue",
+  "[[IMAGE NEEDED]] area-lindos-south-east, area-old-town, area-east-coast, area-west-coast: official venue image or licensed stock",
+  "[[IMAGE NEEDED]] practical-compare, practical-when-to-marry: official venue image or licensed stock (compare may use a brand graphic with no place)",
+  "[[VERIFY licence]] every venue press-kit image: written permission, credit line and expiry recorded in library-index.csv before use",
+  "[[VERIFY: official press or contact page for each confirmed venue, on its own site]]"
+ ],
+ "tools_used": [
+  "Bash (cat/python)"
+ ],
+ "next_agent": [
+  "luxury-writer"
+ ],
+ "payload": {
+  "slots": [
+   {
+    "slot_id": "featured",
+    "placement": "featured",
+    "purpose": "Hero and social share image: a Lindos ceremony setting at a qualifying venue, signalling a luxury Aegean wedding and the Lindos end of the title promise.",
+    "shot_brief": "Official image from a venue that qualifies in 03-source-pack in Lindos or the south-east: a ceremony terrace set for a wedding looking over the bay, with the Lindos headland or the venue's stated sea view behind, May to October, golden-hour light. No people, or only distant unidentifiable figures; no other hotels' signage. Landscape 3:2 with room for a title crop. Source: the venue's own media kit or press office with written permission (Gmail draft request, never sent by an agent), or licensed premium stock bought by a human and added to library-index.csv. Never AI, never a competitor, directory, planner, photographer-blog or search-result image. Location proven by the media kit, register row or EXIF, never by appearance.",
+    "status": "needed",
+    "file": "content/posts/rhodes-wedding-venues/images/rhodes-wedding-venues-lindos-ceremony-terrace-hero.webp",
+    "source": {
+     "type": "venue_press",
+     "origin": "not yet sourced",
+     "credit": "[[VERIFY licence]]"
+    },
+    "location": {
+     "venue": "one qualifying Lindos or south-east venue (to be named from 03-source-pack)",
+     "town": "Lindos, Rhodes",
+     "verified_by": "pending: venue media kit, register row or EXIF"
+    },
+    "licence_note": "[[IMAGE NEEDED]] Library register has no rows (header only). Move to pending_permission once a permission draft exists. Name the venue only once it qualifies in 03-source-pack. Show the Acropolis of Lindos only if it appears in the venue's own licensed image; never a standalone monument shot."
+   },
+   {
+    "slot_id": "area-lindos-south-east",
+    "placement": "venues section: Lindos and the south-east (area H2 opener)",
+    "purpose": "Shows the south-east setting: whitewashed village, sheltered bays such as St Paul's Bay and Vlicha, and sea-view terraces.",
+    "shot_brief": "Official image from a venue confirmed in Lindos, St Paul's Bay, Vlicha or Pefkos: a cliff-top or bay-side terrace set for a small ceremony or dinner, turquoise bay below, late-afternoon light, no beach crowds, no identifiable guests. Landscape 3:2. Source: the venue's own media kit or press office with written permission (Gmail draft request, never sent by an agent), or licensed premium stock bought by a human and added to library-index.csv. Never AI, never a competitor, directory, planner, photographer-blog or search-result image. Location proven by the media kit, register row or EXIF, never by appearance.",
+    "status": "needed",
+    "file": "content/posts/rhodes-wedding-venues/images/rhodes-wedding-venues-lindos-bay-view-terrace.webp",
+    "source": {
+     "type": "venue_press",
+     "origin": "not yet sourced",
+     "credit": "[[VERIFY licence]]"
+    },
+    "location": {
+     "venue": "one confirmed venue in Lindos and the south-east",
+     "town": "Lindos, St Paul's Bay, Vlicha or Pefkos, Rhodes",
+     "verified_by": "pending: venue media kit, register row or EXIF"
+    },
+    "licence_note": "[[IMAGE NEEDED]] Library register has no rows (header only). Move to pending_permission once a permission draft exists. Name the venue only once it qualifies in 03-source-pack. Must come from a venue featured in this area (never imply a venue not covered)."
+   },
+   {
+    "slot_id": "area-old-town",
+    "placement": "venues section: the Old Town and Rhodes city (area H2 opener)",
+    "purpose": "Shows the medieval Old Town character: stone courtyards, arches and cobbled lanes for an intimate city wedding.",
+    "shot_brief": "Official image from a venue confirmed in the Old Town or Rhodes city: a stone courtyard, garden or rooftop set for an evening dinner with candles or festoon lighting, medieval walls or arches in frame, blue-hour light, no tourist crowds, no identifiable guests. Landscape 3:2. Source: the venue's own media kit or press office with written permission (Gmail draft request, never sent by an agent), or licensed premium stock bought by a human and added to library-index.csv. Never AI, never a competitor, directory, planner, photographer-blog or search-result image. Location proven by the media kit, register row or EXIF, never by appearance.",
+    "status": "needed",
+    "file": "content/posts/rhodes-wedding-venues/images/rhodes-wedding-venues-old-town-courtyard-dinner.webp",
+    "source": {
+     "type": "venue_press",
+     "origin": "not yet sourced",
+     "credit": "[[VERIFY licence]]"
+    },
+    "location": {
+     "venue": "one confirmed venue in the Old Town or Rhodes city",
+     "town": "Rhodes Old Town, Rhodes",
+     "verified_by": "pending: venue media kit, register row or EXIF"
+    },
+    "licence_note": "[[IMAGE NEEDED]] Library register has no rows (header only). Move to pending_permission once a permission draft exists. Name the venue only once it qualifies in 03-source-pack. Public monuments (e.g. the Palace of the Grand Master) appear only as a venue's own licensed backdrop, never as a standalone shot implying a venue."
+   },
+   {
+    "slot_id": "area-east-coast",
+    "placement": "venues section: the east coast (area H2 opener)",
+    "purpose": "Shows east coast resort settings: beachfront and garden ceremony spaces facing the sunrise side of the island.",
+    "shot_brief": "Official image from a venue confirmed in Kallithea, Faliraki, Kolymbia or Tsambika: a beachfront or garden ceremony set-up with chairs and an arch facing the sea, morning or late-afternoon light, May to October, no sunbeds or crowds, no identifiable guests. Landscape 3:2. Source: the venue's own media kit or press office with written permission (Gmail draft request, never sent by an agent), or licensed premium stock bought by a human and added to library-index.csv. Never AI, never a competitor, directory, planner, photographer-blog or search-result image. Location proven by the media kit, register row or EXIF, never by appearance.",
+    "status": "needed",
+    "file": "content/posts/rhodes-wedding-venues/images/rhodes-wedding-venues-east-coast-beachfront-ceremony.webp",
+    "source": {
+     "type": "venue_press",
+     "origin": "not yet sourced",
+     "credit": "[[VERIFY licence]]"
+    },
+    "location": {
+     "venue": "one confirmed venue on the east coast",
+     "town": "Kallithea, Faliraki, Kolymbia or Tsambika, Rhodes",
+     "verified_by": "pending: venue media kit, register row or EXIF"
+    },
+    "licence_note": "[[IMAGE NEEDED]] Library register has no rows (header only). Move to pending_permission once a permission draft exists. Name the venue only once it qualifies in 03-source-pack."
+   },
+   {
+    "slot_id": "area-west-coast",
+    "placement": "venues section: the west coast (area H2 opener)",
+    "purpose": "Shows the west coast: sunset-facing resort terraces at Ixia, Ialysos and Kalavarda.",
+    "shot_brief": "Official image from a venue confirmed in Ixia, Ialysos or Kalavarda: a sea-view terrace or lawn set for a sunset reception, the sun low over the Aegean, no people or only distant unidentifiable figures. Landscape 3:2. Source: the venue's own media kit or press office with written permission (Gmail draft request, never sent by an agent), or licensed premium stock bought by a human and added to library-index.csv. Never AI, never a competitor, directory, planner, photographer-blog or search-result image. Location proven by the media kit, register row or EXIF, never by appearance.",
+    "status": "needed",
+    "file": "content/posts/rhodes-wedding-venues/images/rhodes-wedding-venues-west-coast-sunset-reception.webp",
+    "source": {
+     "type": "venue_press",
+     "origin": "not yet sourced",
+     "credit": "[[VERIFY licence]]"
+    },
+    "location": {
+     "venue": "one confirmed venue on the west coast",
+     "town": "Ixia, Ialysos or Kalavarda, Rhodes",
+     "verified_by": "pending: venue media kit, register row or EXIF"
+    },
+    "licence_note": "[[IMAGE NEEDED]] Library register has no rows (header only). Move to pending_permission once a permission draft exists. Name the venue only once it qualifies in 03-source-pack."
+   },
+   {
+    "slot_id": "practical-compare",
+    "placement": "how to compare like for like (section opener)",
+    "purpose": "Gives the comparison section a visual anchor: the detail couples weigh when comparing venues (ceremony space, capacity, exclusive use).",
+    "shot_brief": "Official image from a featured venue: a close or mid shot of a styled ceremony or long-table set-up showing the scale of the space, daylight, no people. Landscape 3:2 or 4:3. Alternative: a Wedded Wonderland brand graphic (Canva brand assets) with no place depicted. Source: the venue's own media kit or press office with written permission (Gmail draft request, never sent by an agent), or licensed premium stock bought by a human and added to library-index.csv. Never AI, never a competitor, directory, planner, photographer-blog or search-result image. Location proven by the media kit, register row or EXIF, never by appearance.",
+    "status": "needed",
+    "file": "content/posts/rhodes-wedding-venues/images/rhodes-wedding-venues-ceremony-setup-detail.webp",
+    "source": {
+     "type": "venue_press",
+     "origin": "not yet sourced",
+     "credit": "[[VERIFY licence]]"
+    },
+    "location": {
+     "venue": "one featured venue (to be named from 03-source-pack)",
+     "town": "Rhodes",
+     "verified_by": "pending: venue media kit, register row or EXIF"
+    },
+    "licence_note": "[[IMAGE NEEDED]] Library register has no rows (header only). Move to pending_permission once a permission draft exists. Name the venue only once it qualifies in 03-source-pack. A brand graphic is allowed here only if it depicts no real place, venue or person."
+   },
+   {
+    "slot_id": "practical-when-to-marry",
+    "placement": "when to marry (section opener)",
+    "purpose": "Sets the season and light for the timing section: what a Rhodes wedding evening looks like in the warmer months.",
+    "shot_brief": "Official image from a featured venue: the sea at sunset seen from a venue terrace, empty table set for dinner in the foreground, warm season light (month recorded from EXIF or the media kit). No people. Landscape 3:2. Source: the venue's own media kit or press office with written permission (Gmail draft request, never sent by an agent), or licensed premium stock bought by a human and added to library-index.csv. Never AI, never a competitor, directory, planner, photographer-blog or search-result image. Location proven by the media kit, register row or EXIF, never by appearance.",
+    "status": "needed",
+    "file": "content/posts/rhodes-wedding-venues/images/rhodes-wedding-venues-sunset-table-terrace.webp",
+    "source": {
+     "type": "venue_press",
+     "origin": "not yet sourced",
+     "credit": "[[VERIFY licence]]"
+    },
+    "location": {
+     "venue": "one featured venue (to be named from 03-source-pack)",
+     "town": "Rhodes",
+     "verified_by": "pending: venue media kit, register row or EXIF"
+    },
+    "licence_note": "[[IMAGE NEEDED]] Library register has no rows (header only). Move to pending_permission once a permission draft exists. Name the venue only once it qualifies in 03-source-pack. Record the month the image was taken; do not imply a 'best month'."
+   }
+  ],
+  "reference_only": [],
+  "permission_requests": [],
+  "drive_findings": [
+   "Not searched: fast mode, repo library register only per orchestrator instruction. library-index.csv has a header and no rows."
+  ]
+ }
+}
