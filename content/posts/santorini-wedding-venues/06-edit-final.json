@@ -1,0 +1,237 @@
+{
+  "agent": "editor",
+  "task_id": "santorini-wedding-venues",
+  "stage": "06",
+  "status": "complete",
+  "round": 3,
+  "inputs_used": [
+    "CLAUDE.md",
+    "content/posts/santorini-wedding-venues/00-input.json",
+    "content/posts/santorini-wedding-venues/03-source-pack.json",
+    "content/posts/santorini-wedding-venues/03-source-pack-part-1.json..part-6.json",
+    "content/posts/santorini-wedding-venues/05-draft-r2.md",
+    "content/posts/santorini-wedding-venues/08-final.md",
+    "content/posts/santorini-wedding-venues/07-panel.json",
+    "content-system/brand/brand-facts.md",
+    "content-system/brand/voice-guide.md",
+    "content-system/brand/banned-phrases.md",
+    "content-system/schemas/06-edit.schema.json",
+    "content/posts/mykonos-wedding/06-edit-final.json"
+  ],
+  "self_qa": {
+    "checks": [
+      {
+        "check": "scan_copy.py on 08-final.md",
+        "pass": true,
+        "note": "banned [], dashes 0, overlaps [], flagged 'luxury' x2, 'exclusive' x21 (exclusive-use questions, legitimate)."
+      },
+      {
+        "check": "Changed lines since 05-draft-r2.md fact-checked",
+        "pass": true,
+        "note": "Takeaway 1, 13 table rows, wineries heading and TOC, Canaves Epitome line, Santo Wines line, Grand Ambassador lines, airport, ferries, Naxos weather sentence, insurance question, checklist items 3 and 9, season FAQ, close links traced to markers. Three table cells drifted from their facts; fixed by edits."
+      },
+      {
+        "check": "Naxos figures",
+        "pass": true,
+        "note": "22.1°C (May) and 21.9°C (October) match fact_509 exactly and are labelled mean maximums at Naxos in both places."
+      },
+      {
+        "check": "Blocking list",
+        "pass": true,
+        "note": "No research talk, hedge stacking, 'best' in body or best month, prices, non-venue vendors, Wedded Privileges, 'last dance', 'Wonderland Concierge' text, em dashes, US spelling, port claims or same-sex position. One body Advisor line (inclusions in writing, brand-facts line 28) plus the close; no legal/church/transfer implication. Insurance only as a question to the insurer. Title unchanged with 13 venues."
+      },
+      {
+        "check": "Key takeaways",
+        "pass": true,
+        "note": "Exactly 4 one-sentence bullets."
+      },
+      {
+        "check": "Panel must-fix applied",
+        "pass": true,
+        "note": "Heading and jump link now 'The wineries'; Venetsanos area stays 'Not published'."
+      },
+      {
+        "check": "Edits apply cleanly",
+        "pass": true,
+        "note": "Each old occurs exactly once in 08-final.md and each new once after applying in order (scripted). Concierge primary/closing and magnet links untouched."
+      },
+      {
+        "check": "Decision consistent",
+        "pass": true,
+        "note": "Four small edits, no blocking issues -> pass_with_edits."
+      }
+    ],
+    "confidence": 0.85
+  },
+  "open_questions": [],
+  "assumptions": [
+    "Stage 8b blocking-issue check only; rubric carried forward, not rescored in depth.",
+    "Unchanged lines were cleared in earlier rounds."
+  ],
+  "verify_items": [],
+  "tools_used": [
+    "Bash (python3 -I, grep, diff)",
+    "content-system/scripts/scan_copy.py",
+    "content-system/scripts/validate.py"
+  ],
+  "next_agent": [
+    "luxury-writer"
+  ],
+  "payload": {
+    "draft_file": "content/posts/santorini-wedding-venues/08-final.md",
+    "rubric": {
+      "voice": 4,
+      "expertise": 5,
+      "accuracy": 5,
+      "seo_fit": 4,
+      "commercial_link": 4,
+      "structure": 5,
+      "brief_fit": 5
+    },
+    "average": 4.57,
+    "blocking_issues": [],
+    "decision": "pass_with_edits",
+    "edits": [
+      {
+        "location": "Table, Canaves Oia row, caldera view cell",
+        "issue": "Shortened cell names the Veranda and Sunset Terrace as if at Canaves Oia; fact_02 places the Veranda at Canaves Sunday and fact_03 the Sunset Terrace at Canaves Epitome.",
+        "fix": "Replace exactly:\n| Balcony, Veranda, Sunset Terrace <!-- fact_01 -->\nwith:\n| Panorama Balcony, plus two Canaves terraces <!-- fact_01 -->",
+        "old": "| Balcony, Veranda, Sunset Terrace <!-- fact_01 -->",
+        "new": "| Panorama Balcony, plus two Canaves terraces <!-- fact_01 -->"
+      },
+      {
+        "location": "Table, Canaves Oia row, capacity cell",
+        "issue": "fact_05 gives 170 as a maximum; restore 'Up to'.",
+        "fix": "Replace exactly:\n| 170 with Epitome buyout <!-- fact_05 --> |\nwith:\n| Up to 170 with Epitome buyout <!-- fact_05 --> |",
+        "old": "| 170 with Epitome buyout <!-- fact_05 --> |",
+        "new": "| Up to 170 with Epitome buyout <!-- fact_05 --> |"
+      },
+      {
+        "location": "Table, Grand Ambassador row, capacity cell",
+        "issue": "fact_601 says 'accommodating up to 250 guests'; restore 'Up to' so the figure reads as a maximum.",
+        "fix": "Replace exactly:\n| 250 guests outdoors <!-- fact_601 --> |\nwith:\n| Up to 250 outdoors <!-- fact_601 --> |",
+        "old": "| 250 guests outdoors <!-- fact_601 --> |",
+        "new": "| Up to 250 outdoors <!-- fact_601 --> |"
+      },
+      {
+        "location": "Weather, Temperature and rain paragraph, last sentence",
+        "issue": "Repeats the 22.1°C and 21.9°C Naxos mean maximums already given in the sentence before; figures are correct (fact_509), so trim the repeat.",
+        "fix": "Replace exactly:\nMay and October fall outside the June to September wildfire season, and at Naxos they bring mean maximums of 22.1°C and 21.9°C, with October the wetter of the two.\nwith:\nMay and October fall outside the June to September wildfire season, with October the wetter of the two.",
+        "old": "May and October fall outside the June to September wildfire season, and at Naxos they bring mean maximums of 22.1°C and 21.9°C, with October the wetter of the two.",
+        "new": "May and October fall outside the June to September wildfire season, with October the wetter of the two."
+      }
+    ],
+    "fact_check_log": [
+      {
+        "claim": "Canaves Oia table cell 'Balcony, Veranda, Sunset Terrace' (Veranda at Sunday, Terrace at Epitome)",
+        "fact_id": "fact_02",
+        "status": "removed"
+      },
+      {
+        "claim": "Takeaway 1: Oia or Imerovigli for small terrace ceremonies, a winery for a long dinner",
+        "fact_id": "fact_102",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Table cells shortened (Mystique, Katikies Santorini, Andronis, Grace, Astra, Tholos, Kapari, Chromata, Santo, Venetsanos, Le Ciel) match their markers",
+        "fact_id": "fact_07",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Kapari approx. 30",
+        "fact_id": "fact_603",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Katikies Chromata 40 to 50 seated, 50 standing; deck, lounge, pool bar",
+        "fact_id": "fact_112",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Venetsanos 100 seated, 160 standing, Upper Terrace overlooking caldera",
+        "fact_id": "fact_205",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Heading 'The wineries' (panel must-fix applied; no village stated for Venetsanos)",
+        "fact_id": "fact_204",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Canaves Epitome Sunset Terrace looks over the Aegean and the caldera",
+        "fact_id": "fact_03",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Santo Wines terraces look over the caldera; ceremonies at sunset",
+        "fact_id": "fact_201",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Grand Ambassador hosts weddings, honeymoons and anniversaries",
+        "fact_id": "fact_601",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Grand Ambassador: own planner or concierge team; wedding packages",
+        "fact_id": "fact_602",
+        "status": "confirmed"
+      },
+      {
+        "claim": "JTR airport: Schengen and non-Schengen areas, accessible travel service",
+        "fact_id": "fact_507",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Ferries delayed or cancelled in strong winds; reconfirm",
+        "fact_id": "fact_515",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Naxos mean maximums 22.1°C May and 21.9°C October, labelled Naxos",
+        "fact_id": "fact_509",
+        "status": "confirmed"
+      },
+      {
+        "claim": "October wetter (38.6 mm); June to August driest",
+        "fact_id": "fact_510",
+        "status": "confirmed"
+      },
+      {
+        "claim": "May and October outside June to September wildfire season; summer heatwaves frequent",
+        "fact_id": "fact_513",
+        "status": "confirmed"
+      },
+      {
+        "claim": "FAQ: July and August hottest at Naxos (27.1, 27.0 vs 25.9 June)",
+        "fact_id": "fact_509",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Seismic zone near Santorini",
+        "fact_id": "fact_504",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Grand Ambassador capacity '250 guests outdoors' (source says up to 250)",
+        "fact_id": "fact_601",
+        "status": "removed"
+      },
+      {
+        "claim": "Canaves '170 with Epitome buyout' (source max 170)",
+        "fact_id": "fact_05",
+        "status": "removed"
+      }
+    ],
+    "compliance": {
+      "pass": true,
+      "issues": []
+    },
+    "originality": {
+      "pass": true,
+      "matches": []
+    },
+    "banned_phrases_found": [],
+    "needs_signoff": []
+  }
+}

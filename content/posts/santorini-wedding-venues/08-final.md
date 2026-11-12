@@ -32,7 +32,7 @@ The list runs area by area, from Oia to Imerovigli, the wineries and Akrotiri, a
 
 | Venue | Area | Caldera view | Ceremony | Capacity |
 |---|---|---|---|---|
-| Canaves Oia <!-- fact_01 --> | Oia | Balcony, Veranda, Sunset Terrace <!-- fact_01 --> <!-- fact_02 --> <!-- fact_03 --> | Religious, civil, symbolic <!-- fact_04 --> | 170 with Epitome buyout <!-- fact_05 --> |
+| Canaves Oia <!-- fact_01 --> | Oia | Panorama Balcony, plus two Canaves terraces <!-- fact_01 --> <!-- fact_02 --> <!-- fact_03 --> | Religious, civil, symbolic <!-- fact_04 --> | Up to 170 with Epitome buyout <!-- fact_05 --> |
 | Mystique <!-- fact_07 --> | Oia | Carved into caldera cliffs <!-- fact_07 --> | Chosen with wedding team <!-- fact_08 --> | Not published |
 | Katikies Santorini <!-- fact_09 --> | Oia | Over caldera and volcano <!-- fact_09 --> | Botrini's Restaurant <!-- fact_10 --> | 60 seated, 100 standing <!-- fact_10 --> |
 | Andronis <!-- fact_13 --> | Oia | Vows against the caldera <!-- fact_13 --> | Not published | Not published |
@@ -43,7 +43,7 @@ The list runs area by area, from Oia to Imerovigli, the wineries and Akrotiri, a
 | Katikies Chromata <!-- fact_400 --> | Imerovigli | Caldera views <!-- fact_400 --> | Deck, lounge, pool bar <!-- fact_112 --> | 40 to 50 seated, 50 standing <!-- fact_112 --> |
 | Santo Wines <!-- fact_200 --> | Pyrgos | Terraces over the caldera <!-- fact_201 --> | Not published | Not published |
 | Venetsanos Winery <!-- fact_203 --> | Not published | Upper Terrace overlooking caldera <!-- fact_204 --> | On the Upper Terrace <!-- fact_204 --> | 100 seated, 160 standing <!-- fact_205 --> |
-| Grand Ambassador <!-- fact_600 --> | Akrotiri | Caldera and volcano views <!-- fact_600 --> | Not published | 250 guests outdoors <!-- fact_601 --> |
+| Grand Ambassador <!-- fact_600 --> | Akrotiri | Caldera and volcano views <!-- fact_600 --> | Not published | Up to 250 outdoors <!-- fact_601 --> |
 | Le Ciel <!-- fact_109 --> | Not published | Aegean and caldera cliffs <!-- fact_110 --> | Terraces, gardens, indoor areas <!-- fact_110 --> | Not published |
 
 ## How to compare Santorini venues like for like
@@ -288,7 +288,7 @@ Guests can fly in. [Visit Greece](https://www.visitgreece.gr/en/islands/cyclades
 
 Ask every venue which of its spaces are open on your date before you settle on one.
 
-**Temperature and rain.** The [Hellenic National Meteorological Service](http://oldportal.emy.gr/emy/en/climatology/climatology_city?perifereia=South%20Aegean&poli=Naxos) has no station on Santorini; Naxos is the nearest official station, so read its figures as a guide to the neighbourhood. <!-- fact_508 --> At Naxos, mean maximums run from 18.7°C in April to 22.1°C in May, about 27°C in July and August, 25.1°C in September and 21.9°C in October. <!-- fact_509 --> Rain all but disappears from June to August, while October brings 38.6 mm over 5.5 days. <!-- fact_510 --> May and October fall outside the June to September wildfire season, and at Naxos they bring mean maximums of 22.1°C and 21.9°C, with October the wetter of the two. <!-- fact_509 --> <!-- fact_510 --> <!-- fact_513 -->
+**Temperature and rain.** The [Hellenic National Meteorological Service](http://oldportal.emy.gr/emy/en/climatology/climatology_city?perifereia=South%20Aegean&poli=Naxos) has no station on Santorini; Naxos is the nearest official station, so read its figures as a guide to the neighbourhood. <!-- fact_508 --> At Naxos, mean maximums run from 18.7°C in April to 22.1°C in May, about 27°C in July and August, 25.1°C in September and 21.9°C in October. <!-- fact_509 --> Rain all but disappears from June to August, while October brings 38.6 mm over 5.5 days. <!-- fact_510 --> May and October fall outside the June to September wildfire season, with October the wetter of the two. <!-- fact_509 --> <!-- fact_510 --> <!-- fact_513 -->
 
 **Wind.** At Naxos the prevailing wind blows from the north in every month, and mean wind readings run higher from July to October than in May and June. <!-- fact_511 --> On an open caldera terrace, ask how each venue handles a breezy afternoon.
 
@@ -314,7 +314,7 @@ Requirements change, so check with the Municipality of Thira and the Australian 
 
 ## Your booking checklist
 
-Send every venue on your shortlist the same questions, and ask for the answers in writing.
+Send every venue on your shortlist the same questions, and ask for the answers in writing. To weigh real venues and dates side by side, [see real options with Wedded Concierge](https://weddedwonderland.com/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=santorini-wedding-venues&utm_content=secondary).
 
 1. **Ceremony type.** Which ceremonies does the venue hold: civil, religious, symbolic or a vow renewal?
 2. **Ceremony space.** Which space is the ceremony in, and does it face the caldera at the time of day you want?
