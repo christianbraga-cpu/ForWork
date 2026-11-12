@@ -1,0 +1,203 @@
+{
+ "agent": "visual-curator",
+ "task_id": "santorini-or-mykonos-wedding",
+ "stage": "04",
+ "status": "needs_input",
+ "round": 1,
+ "inputs_used": [
+  "CLAUDE.md",
+  "content/posts/santorini-or-mykonos-wedding/00-input.json",
+  "01-brief.json, 02-seo.json, 02-research/report.md, 03-source-pack.json (not present at run time)",
+  "content/posts/rhodes-wedding-venues/04-images.json (format model)",
+  "content-system/images/library-index.csv (header only, no rows)",
+  "content-system/schemas/04-images.schema.json"
+ ],
+ "self_qa": {
+  "checks": [
+   {
+    "check": "Zero reference-only or competitor images in slots",
+    "pass": true,
+    "note": "reference_only is empty; no images downloaded."
+   },
+   {
+    "check": "Every approved image has location, licence, alt, caption, fit_reason",
+    "pass": true,
+    "note": "No approved images this run; alt and caption are written once a licensed file exists."
+   },
+   {
+    "check": "No AI image depicting a real place",
+    "pass": true,
+    "note": "No AI used; only the practical slot may use an ai_illustrative still life with no place, wedding or person."
+   },
+   {
+    "check": "Featured image exists (approved or needed with brief)",
+    "pass": true,
+    "note": "Needed, with brief: split hero from two licensed venue images (Santorini caldera, Mykonos beach)."
+   },
+   {
+    "check": "About 6 slots covering featured, Santorini, Mykonos, venue comparison, season, practical",
+    "pass": true,
+    "note": "6 slots."
+   }
+  ],
+  "confidence": 0.7
+ },
+ "open_questions": [
+  {
+   "to": "planner-sme",
+   "question": "Confirm the qualifying Santorini and Mykonos venues (03-source-pack) so each slot can be tied to a named venue and a press contact.",
+   "blocking": false
+  },
+  {
+   "to": "orchestrator",
+   "question": "Should a human find each confirmed venue's press contact and create the Gmail permission drafts, or should the curator do it in a non-fast run?",
+   "blocking": false
+  },
+  {
+   "to": "orchestrator",
+   "question": "Is there budget for licensed premium stock if press kits do not respond in time?",
+   "blocking": false
+  }
+ ],
+ "assumptions": [
+  "Placement is by section name because 02-seo.json is not yet written; the writer maps it to after_h2 positions.",
+  "No venue is named because 03-source-pack does not exist yet; no venue name was guessed.",
+  "Fast mode: repo register only, no Drive, own-site, Canva or Lens checks run."
+ ],
+ "verify_items": [
+  "[[IMAGE NEEDED]] featured: split hero from two licensed venue images (one Santorini caldera, one Mykonos beach or town)",
+  "[[IMAGE NEEDED]] santorini-caldera, mykonos-setting, venue-comparison, season: official venue image or licensed stock",
+  "[[IMAGE NEEDED]] practical: Canva brand asset or licensed stock of planning details, no place",
+  "[[VERIFY licence]] every venue press-kit image: written permission, credit line and expiry recorded in library-index.csv before use",
+  "[[VERIFY: official press or contact page for each confirmed venue, on its own site]]"
+ ],
+ "tools_used": [
+  "Bash (cat/python)"
+ ],
+ "next_agent": [
+  "luxury-writer"
+ ],
+ "payload": {
+  "slots": [
+   {
+    "slot_id": "featured",
+    "placement": "featured",
+    "purpose": "Hero and social share image that sets up the comparison: Santorini's caldera drama beside Mykonos's whitewashed seaside glamour, read as a paired view.",
+    "shot_brief": "Two licensed landscape images used side by side in a split hero (left: a Santorini venue terrace over the caldera at golden hour; right: a Mykonos venue terrace or beach setting at sunset), each from a featured venue, May to October, no people or only distant unidentifiable figures, no other hotels' signage. Final crop 3:2 with room for a title. The split is assembled from two licensed photos only (a plain brand-graphic divider is fine); never AI or a composite that invents a view. Source: the venue's own media kit or press office with written permission (Gmail draft request, never sent by an agent), or licensed premium stock bought by a human and added to library-index.csv. Never AI, never a competitor, directory, planner, photographer-blog or search-result image. Location proven by the media kit, register row or EXIF, never by appearance.",
+    "status": "needed",
+    "file": "content/posts/santorini-or-mykonos-wedding/images/santorini-or-mykonos-wedding-santorini-caldera-mykonos-beach-split-hero.webp",
+    "source": {
+     "type": "venue_press",
+     "origin": "not yet sourced",
+     "credit": "[[VERIFY licence]]"
+    },
+    "location": {
+     "venue": "one featured Santorini venue and one featured Mykonos venue (to be named from 03-source-pack)",
+     "town": "Oia or Imerovigli, Santorini; Mykonos",
+     "verified_by": "pending: venue media kit, register row or EXIF"
+    },
+    "licence_note": "[[IMAGE NEEDED]] Library register has no rows (header only). Move to pending_permission once a permission draft exists. Both halves need their own licence and credit; caption credits both photographers or venues."
+   },
+   {
+    "slot_id": "santorini-caldera",
+    "placement": "section: Santorini, the caldera wedding (H2 opener)",
+    "purpose": "Shows what a Santorini wedding looks like: cliff-edge ceremony over the caldera, white and blue architecture, sunset.",
+    "shot_brief": "Official image from a featured Santorini venue in Oia, Imerovigli, Firostefani or Fira: a cliff-top ceremony terrace set with chairs and florals, the caldera and volcano islands behind, golden-hour light, May to October, no identifiable guests, no crowds. Landscape 3:2. Source: the venue's own media kit or press office with written permission (Gmail draft request, never sent by an agent), or licensed premium stock bought by a human and added to library-index.csv. Never AI, never a competitor, directory, planner, photographer-blog or search-result image. Location proven by the media kit, register row or EXIF, never by appearance.",
+    "status": "needed",
+    "file": "content/posts/santorini-or-mykonos-wedding/images/santorini-or-mykonos-wedding-santorini-caldera-ceremony-terrace.webp",
+    "source": {
+     "type": "venue_press",
+     "origin": "not yet sourced",
+     "credit": "[[VERIFY licence]]"
+    },
+    "location": {
+     "venue": "one featured Santorini caldera venue",
+     "town": "Oia, Imerovigli, Firostefani or Fira, Santorini",
+     "verified_by": "pending: venue media kit, register row or EXIF"
+    },
+    "licence_note": "[[IMAGE NEEDED]] Library register has no rows (header only). Move to pending_permission once a permission draft exists. Never a generic Oia sunset or church-dome shot implying a venue; the image must be the venue's own."
+   },
+   {
+    "slot_id": "mykonos-setting",
+    "placement": "section: Mykonos, the beach and town wedding (H2 opener)",
+    "purpose": "Shows the Mykonos alternative: beachfront or bay-view celebration and the whitewashed Chora atmosphere.",
+    "shot_brief": "Official image from a featured Mykonos venue (beach club, villa or hotel): a beachfront or sea-view terrace set for a ceremony or long-table dinner, turquoise water or Chora rooftops and windmills behind as the venue's own view, late-afternoon or sunset light, May to October, no sunbeds or crowds, no identifiable guests. Landscape 3:2. Source: the venue's own media kit or press office with written permission (Gmail draft request, never sent by an agent), or licensed premium stock bought by a human and added to library-index.csv. Never AI, never a competitor, directory, planner, photographer-blog or search-result image. Location proven by the media kit, register row or EXIF, never by appearance.",
+    "status": "needed",
+    "file": "content/posts/santorini-or-mykonos-wedding/images/santorini-or-mykonos-wedding-mykonos-beachfront-reception.webp",
+    "source": {
+     "type": "venue_press",
+     "origin": "not yet sourced",
+     "credit": "[[VERIFY licence]]"
+    },
+    "location": {
+     "venue": "one featured Mykonos venue",
+     "town": "Mykonos (Chora, Agios Ioannis, Ornos or Psarou)",
+     "verified_by": "pending: venue media kit, register row or EXIF"
+    },
+    "licence_note": "[[IMAGE NEEDED]] Library register has no rows (header only). Move to pending_permission once a permission draft exists. Little Venice or the windmills appear only as part of a venue's own licensed view, never as a standalone tourism shot."
+   },
+   {
+    "slot_id": "venue-comparison",
+    "placement": "section: comparing venues and guest experience (H2 opener)",
+    "purpose": "Supports the side-by-side venue comparison: intimate cliff-top terrace versus larger villa or beach-club space, signalling guest numbers and style.",
+    "shot_brief": "Official image from a featured venue on either island showing a reception set-up at full scale (long tables or round tables, lighting, florals) so readers can read the space and capacity feel, dusk or blue-hour light, no identifiable guests. Landscape 3:2. If the writer uses a comparison table here, a brand-styled table graphic with no place depicted is an acceptable alternative (Canva brand assets, no AI scenery). Source: the venue's own media kit or press office with written permission (Gmail draft request, never sent by an agent), or licensed premium stock bought by a human and added to library-index.csv. Never AI, never a competitor, directory, planner, photographer-blog or search-result image. Location proven by the media kit, register row or EXIF, never by appearance.",
+    "status": "needed",
+    "file": "content/posts/santorini-or-mykonos-wedding/images/santorini-or-mykonos-wedding-venue-reception-setup-comparison.webp",
+    "source": {
+     "type": "venue_press",
+     "origin": "not yet sourced",
+     "credit": "[[VERIFY licence]]"
+    },
+    "location": {
+     "venue": "one featured venue on Santorini or Mykonos",
+     "town": "Santorini or Mykonos",
+     "verified_by": "pending: venue media kit, register row or EXIF"
+    },
+    "licence_note": "[[IMAGE NEEDED]] Library register has no rows (header only). Move to pending_permission once a permission draft exists. Capacity is never implied by the image; numbers come from 03-source-pack only."
+   },
+   {
+    "slot_id": "season",
+    "placement": "section: best time of year and weather (H2 opener)",
+    "purpose": "Illustrates season and light: shoulder-season calm and golden light that couples weigh against summer crowds and wind.",
+    "shot_brief": "Official image from a featured venue on either island showing an outdoor table or terrace in soft shoulder-season light (May, June, September or early October), sea in frame, no people. The month must be recorded from EXIF or the media kit. Landscape 3:2. Source: the venue's own media kit or press office with written permission (Gmail draft request, never sent by an agent), or licensed premium stock bought by a human and added to library-index.csv. Never AI, never a competitor, directory, planner, photographer-blog or search-result image. Location proven by the media kit, register row or EXIF, never by appearance.",
+    "status": "needed",
+    "file": "content/posts/santorini-or-mykonos-wedding/images/santorini-or-mykonos-wedding-shoulder-season-terrace-light.webp",
+    "source": {
+     "type": "venue_press",
+     "origin": "not yet sourced",
+     "credit": "[[VERIFY licence]]"
+    },
+    "location": {
+     "venue": "one featured venue on Santorini or Mykonos",
+     "town": "Santorini or Mykonos",
+     "verified_by": "pending: venue media kit, register row or EXIF"
+    },
+    "licence_note": "[[IMAGE NEEDED]] Library register has no rows (header only). Move to pending_permission once a permission draft exists. Record the month the image was taken; the caption must not imply a 'best month' the article does not source."
+   },
+   {
+    "slot_id": "practical",
+    "placement": "section: getting there, logistics and planning with Wedded Concierge (H2 opener)",
+    "purpose": "Practical, non-place visual for the planning section: stationery, welcome bags or planning details, keeping the page light.",
+    "shot_brief": "Licensed lifestyle or brand image of planning details (wedding stationery, guest welcome bags, itinerary card or florals on a table) with no recognisable destination, venue or person. Preferred sources: Wedded Wonderland Canva brand assets or licensed stock added to library-index.csv. An AI illustrative still life is allowed only if it shows no real place, wedding or person and is labelled ai_illustrative. Source: the venue's own media kit or press office with written permission (Gmail draft request, never sent by an agent), or licensed premium stock bought by a human and added to library-index.csv. Never AI, never a competitor, directory, planner, photographer-blog or search-result image. Location proven by the media kit, register row or EXIF, never by appearance.",
+    "status": "needed",
+    "file": "content/posts/santorini-or-mykonos-wedding/images/santorini-or-mykonos-wedding-planning-details-flatlay.webp",
+    "source": {
+     "type": "canva",
+     "origin": "not yet sourced",
+     "credit": "[[VERIFY licence]]"
+    },
+    "location": {
+     "venue": "none (non-place visual)",
+     "town": "n/a",
+     "verified_by": "not applicable: non-place visual"
+    },
+    "licence_note": "[[IMAGE NEEDED]] Library register has no rows (header only). Move to pending_permission once a permission draft exists. No place depicted, so no location verification needed; licence still required."
+   }
+  ],
+  "reference_only": [],
+  "permission_requests": [],
+  "drive_findings": [
+   "Not searched: fast mode, repo library register only per orchestrator instruction. library-index.csv has a header and no rows."
+  ]
+ }
+}
