@@ -1,0 +1,332 @@
+{
+  "agent": "cms-publisher",
+  "task_id": "greek-orthodox-wedding",
+  "stage": "11",
+  "status": "complete",
+  "round": 1,
+  "inputs_used": [
+    "CLAUDE.md",
+    "content-system/schemas/11-publish-package.schema.json",
+    "content/posts/greek-orthodox-wedding/01-brief.json",
+    "content/posts/greek-orthodox-wedding/02-seo.json",
+    "content/posts/greek-orthodox-wedding/03-source-pack.json",
+    "content/posts/greek-orthodox-wedding/04-images.json",
+    "content/posts/greek-orthodox-wedding/08-final.md",
+    "content/posts/greek-orthodox-wedding/09-cro.json",
+    "content/posts/greek-orthodox-wedding/10-distribution.json",
+    "content/posts/santorini-or-mykonos-wedding/11-body.md, 11-publish-package.json, 12-cms-report.md, booking-checklist.md (format model)"
+  ],
+  "self_qa": {
+    "checks": [
+      {
+        "check": "Front matter and all <!-- fact_xx --> markers removed; H1 is the title; 6 image-slot comments kept; links and UTMs unchanged; no [[VERIFY]] markers in the copy",
+        "pass": true
+      },
+      {
+        "check": "Primary CTA at the marker uses the existing sentence and link unchanged (09-cro.json); secondary, closing and magnet marked; each utm_content appears exactly once in visible links",
+        "pass": true
+      },
+      {
+        "check": "Exactly 4 key takeaways and 7 FAQ pairs taken verbatim from the body",
+        "pass": true
+      },
+      {
+        "check": "Meta title and description from 02-seo.json, no \"best\", no prices, no em dashes",
+        "pass": true,
+        "note": "title 58, description 146 characters"
+      },
+      {
+        "check": "primary_category equals categories[0] (Destination Weddings)",
+        "pass": true
+      },
+      {
+        "check": "No em dashes; Australian English",
+        "pass": true
+      },
+      {
+        "check": "status draft; nothing uploaded, saved or published",
+        "pass": true
+      }
+    ],
+    "confidence": 0.9
+  },
+  "open_questions": [
+    {
+      "to": "orchestrator",
+      "question": "CMS upload not attempted: FAST MODE package only, no browser in this session. A human saves as Draft and clicks Publish, or run /wedded-blog resume=greek-orthodox-wedding once the field map is confirmed.",
+      "blocking": true
+    },
+    {
+      "to": "orchestrator",
+      "question": "No author named in any input; package uses \"Wedded Wonderland\" (organisation). Confirm the byline.",
+      "blocking": false
+    },
+    {
+      "to": "orchestrator",
+      "question": "Redirect recommendation only: consider a 301 from /8-symbolic-eastern-orthodox-wedding-traditions-you-might-not-know-about after this post and the traditions guide publish. Human decision.",
+      "blocking": false
+    }
+  ],
+  "assumptions": [
+    "Title and meta title \"Greek Orthodox Wedding Requirements and Ceremony Explained\" (02-seo.json); meta description from 02-seo.json unchanged.",
+    "Excerpt is the first sentence of the opening paragraph.",
+    "Requested type \"Legal\" has no matching value; the 11 schema has no content_type enum, so the nearest brief enum value \"planning_guide\" (as in 01-brief.json) is used. Cluster \"Getting Married in Greece\".",
+    "Categories and tags from 01-brief.json; primary category Destination Weddings.",
+    "JSON-LD is Article + BreadcrumbList + FAQPage; links stripped from FAQ answer text in JSON-LD only.",
+    "verify_items and needs_signoff empty: no [[VERIFY]] markers and no prices in the copy."
+  ],
+  "verify_items": [],
+  "tools_used": [
+    "Bash (python3 -I)"
+  ],
+  "next_agent": [
+    "orchestrator"
+  ],
+  "payload": {
+    "title": "Greek Orthodox Wedding Requirements and Ceremony Explained",
+    "slug": "greek-orthodox-wedding",
+    "url_path": "/destination-weddings/greek-orthodox-wedding",
+    "content_type": "planning_guide",
+    "cluster": "Getting Married in Greece",
+    "categories": [
+      "Destination Weddings",
+      "Greece",
+      "Planning Guides"
+    ],
+    "primary_category": "Destination Weddings",
+    "tags": [
+      "Getting Married in Greece",
+      "Greek Orthodox Wedding",
+      "Religious Ceremonies",
+      "Legal Requirements",
+      "Greek Wedding Traditions"
+    ],
+    "excerpt": "A Greek Orthodox wedding is a sacrament, not a ceremony you write yourselves.",
+    "key_takeaways": [
+      "Who can marry in the Church depends on its rules where you marry, so confirm eligibility with your parish priest before you book anything.",
+      "In Australia, the Archdiocese closes some dates and seasons to weddings, including the weeks before Christmas, Great Lent until Easter Sunday and the first half of August.",
+      "Church paperwork and civil paperwork are two separate tracks, and a wedding in Greece means checking with the local Metropolis, the municipality and the Australian Embassy in Athens.",
+      "The Archdiocese describes the crowning with the stefana as the climax of the service, and without the rings and the crowns the wedding cannot begin."
+    ],
+    "body_markdown_file": "content/posts/greek-orthodox-wedding/11-body.md",
+    "faq": [
+      {
+        "q": "Can a non-Orthodox partner marry in a Greek Orthodox church?",
+        "a": "Under the Archdiocese of Australia's rules, yes, if they are a baptised Christian of a denomination the Church accepts, such as Roman Catholic, Anglican, Uniting, Lutheran or Presbyterian. A non-Christian partner can marry in the Church only after baptism in an accepted denomination. Raise your partner's denomination at your first meeting with the priest."
+      },
+      {
+        "q": "What documents do we need for a Greek Orthodox wedding?",
+        "a": "In Australia, the Archdiocese asks for a birth certificate or passport and a baptismal certificate for each of you, plus a Certificate of Celibacy for an Orthodox partner never married before. Divorced or widowed partners need extra papers. The Notice of Intended Marriage and the Application to the Archdiocese are completed with the priest at least a month ahead."
+      },
+      {
+        "q": "Who can be a koumbaros or koumbara?",
+        "a": "Usually an Orthodox Christian. Under the Archdiocese's rules, a non-Orthodox Christian of an acceptable denomination may stand as sponsor at the wedding, but cannot become godparent to your children."
+      },
+      {
+        "q": "Are there vows in a Greek Orthodox wedding?",
+        "a": "No. The Orthodox sacrament contains no vows or oaths. The blessing of the rings, the crowning and the common cup carry the meaning."
+      },
+      {
+        "q": "How long is a Greek Orthodox wedding?",
+        "a": "There is no fixed length, so ask your priest for your church's running time. The Archdiocese asks the groom to arrive at least 15 minutes early and the bride's party at least five minutes early."
+      },
+      {
+        "q": "Can a Greek Orthodox wedding be held outside a church?",
+        "a": "Plan on a church or chapel. The Archdiocese of Australia describes the rite taking place in church, before the Holy Altar. If you have a beach or garden in mind, raise it with your priest first. In Greece, several resorts have their own Orthodox chapel on the grounds, such as Nana Princess in Crete. Confirm any chapel with your priest and the Metropolis."
+      },
+      {
+        "q": "Can we have a Greek Orthodox wedding in Greece if we live in Australia?",
+        "a": "Yes. Start with your parish priest, then confirm the Church's requirements with the local Metropolis. For the civil side, check with the municipality and the Australian Embassy in Athens, including any fees."
+      }
+    ],
+    "images": [
+      {
+        "slot_id": "featured",
+        "file": "content/posts/greek-orthodox-wedding/images/greek-orthodox-wedding-chapel-wedding-setting-hero.webp",
+        "role": "featured",
+        "status": "needed"
+      },
+      {
+        "slot_id": "documents",
+        "file": "content/posts/greek-orthodox-wedding/images/greek-orthodox-wedding-documents-planning-still-life.webp",
+        "role": "inline",
+        "status": "needed"
+      },
+      {
+        "slot_id": "stefana",
+        "file": "content/posts/greek-orthodox-wedding/images/greek-orthodox-wedding-stefana-crowns-still-life.webp",
+        "role": "inline",
+        "status": "needed"
+      },
+      {
+        "slot_id": "ceremony-detail",
+        "file": "content/posts/greek-orthodox-wedding/images/greek-orthodox-wedding-lambades-candles-common-cup.webp",
+        "role": "inline",
+        "status": "needed"
+      },
+      {
+        "slot_id": "island-chapel",
+        "file": "content/posts/greek-orthodox-wedding/images/greek-orthodox-wedding-island-chapel-exterior.webp",
+        "role": "inline",
+        "status": "needed"
+      },
+      {
+        "slot_id": "venue-chapel",
+        "file": "content/posts/greek-orthodox-wedding/images/greek-orthodox-wedding-venue-chapel.webp",
+        "role": "inline",
+        "status": "needed"
+      }
+    ],
+    "cta": {
+      "text": "Book a Wedded Concierge consultation",
+      "subtext": "The fee is agreed in writing before any work begins.",
+      "link": "https://weddedwonderland.com/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=greek-orthodox-wedding&utm_content=primary",
+      "placement": "At the former <!-- CTA: primary --> marker, directly after the Key takeaways (marked <!-- CTA BLOCK: primary --> in 11-body.md). The existing sentence's 'book a Wedded Concierge consultation' link is the primary CTA, unchanged per 09-cro.json."
+    },
+    "secondary_cta": {
+      "text": "Talk to Wedded Concierge",
+      "subtext": "One Wedded Advisor plans the celebration around the service your priest confirms.",
+      "link": "https://weddedwonderland.com/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=greek-orthodox-wedding&utm_content=secondary",
+      "placement": "Existing link at the end of 'Questions to ask the priest and the venue' (marked <!-- CTA INLINE: secondary --> in 11-body.md); its anchor reads 'talk to Wedded Concierge about marrying in Greece'. Unchanged."
+    },
+    "closing_cta": {
+      "text": "Start planning with Wedded Concierge",
+      "link": "https://weddedwonderland.com/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=greek-orthodox-wedding&utm_content=closing",
+      "placement": "Inline link at the end of 'Plan your Greek Orthodox wedding with Wedded Concierge' (marked <!-- CTA INLINE: closing --> in 11-body.md)."
+    },
+    "lead_magnet": {
+      "name": "Wedded Wonderland digital magazine",
+      "link": "https://weddedwonderland.com/magazine?utm_source=blog&utm_medium=content&utm_campaign=greek-orthodox-wedding&utm_content=magnet",
+      "placement": "Final line of the post (marked <!-- LEAD MAGNET --> in 11-body.md)."
+    },
+    "tracking_links": [
+      "https://weddedwonderland.com/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=greek-orthodox-wedding&utm_content=primary",
+      "https://weddedwonderland.com/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=greek-orthodox-wedding&utm_content=secondary",
+      "https://weddedwonderland.com/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=greek-orthodox-wedding&utm_content=closing",
+      "https://weddedwonderland.com/magazine?utm_source=blog&utm_medium=content&utm_campaign=greek-orthodox-wedding&utm_content=magnet"
+    ],
+    "seo": {
+      "meta_title": "Greek Orthodox Wedding Requirements and Ceremony Explained",
+      "meta_description": "Planning a Greek Orthodox wedding? Who can marry in the Church, what your priest will ask for, and each step of the ceremony from rings to crowns.",
+      "focus_keyword": "greek orthodox wedding",
+      "canonical": "https://weddedwonderland.com/destination-weddings/greek-orthodox-wedding",
+      "og_image_slot": "featured"
+    },
+    "schema_jsonld": {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Article",
+          "@id": "https://weddedwonderland.com/destination-weddings/greek-orthodox-wedding#article",
+          "headline": "Greek Orthodox Wedding Requirements and Ceremony Explained",
+          "description": "Planning a Greek Orthodox wedding? Who can marry in the Church, what your priest will ask for, and each step of the ceremony from rings to crowns.",
+          "author": {
+            "@type": "Organization",
+            "name": "Wedded Wonderland",
+            "url": "https://weddedwonderland.com/"
+          },
+          "publisher": {
+            "@type": "Organization",
+            "name": "Wedded Wonderland",
+            "url": "https://weddedwonderland.com/"
+          },
+          "datePublished": "",
+          "mainEntityOfPage": "https://weddedwonderland.com/destination-weddings/greek-orthodox-wedding",
+          "inLanguage": "en-AU"
+        },
+        {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Home",
+              "item": "https://weddedwonderland.com/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Destination Weddings",
+              "item": "https://weddedwonderland.com/destination-weddings"
+            },
+            {
+              "@type": "ListItem",
+              "position": 3,
+              "name": "Greek Orthodox Wedding Requirements and Ceremony Explained",
+              "item": "https://weddedwonderland.com/destination-weddings/greek-orthodox-wedding"
+            }
+          ]
+        },
+        {
+          "@type": "FAQPage",
+          "@id": "https://weddedwonderland.com/destination-weddings/greek-orthodox-wedding#faq",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "Can a non-Orthodox partner marry in a Greek Orthodox church?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Under the Archdiocese of Australia's rules, yes, if they are a baptised Christian of a denomination the Church accepts, such as Roman Catholic, Anglican, Uniting, Lutheran or Presbyterian. A non-Christian partner can marry in the Church only after baptism in an accepted denomination. Raise your partner's denomination at your first meeting with the priest."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "What documents do we need for a Greek Orthodox wedding?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "In Australia, the Archdiocese asks for a birth certificate or passport and a baptismal certificate for each of you, plus a Certificate of Celibacy for an Orthodox partner never married before. Divorced or widowed partners need extra papers. The Notice of Intended Marriage and the Application to the Archdiocese are completed with the priest at least a month ahead."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Who can be a koumbaros or koumbara?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Usually an Orthodox Christian. Under the Archdiocese's rules, a non-Orthodox Christian of an acceptable denomination may stand as sponsor at the wedding, but cannot become godparent to your children."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Are there vows in a Greek Orthodox wedding?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "No. The Orthodox sacrament contains no vows or oaths. The blessing of the rings, the crowning and the common cup carry the meaning."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "How long is a Greek Orthodox wedding?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "There is no fixed length, so ask your priest for your church's running time. The Archdiocese asks the groom to arrive at least 15 minutes early and the bride's party at least five minutes early."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Can a Greek Orthodox wedding be held outside a church?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Plan on a church or chapel. The Archdiocese of Australia describes the rite taking place in church, before the Holy Altar. If you have a beach or garden in mind, raise it with your priest first. In Greece, several resorts have their own Orthodox chapel on the grounds, such as Nana Princess in Crete. Confirm any chapel with your priest and the Metropolis."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Can we have a Greek Orthodox wedding in Greece if we live in Australia?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes. Start with your parish priest, then confirm the Church's requirements with the local Metropolis. For the civil side, check with the municipality and the Australian Embassy in Athens, including any fees."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    "author": "Wedded Wonderland",
+    "status": "draft",
+    "verify_items": [],
+    "needs_signoff": [],
+    "redirects_recommended": "New article, no redirect required. Recommendation only (from 02-seo.json): consider a 301 from /8-symbolic-eastern-orthodox-wedding-traditions-you-might-not-know-about to this post or to the traditions guide after both publish, and add it to the link map. A human decides; not set by any agent.",
+    "deferred_business_items": [],
+    "draft_note": "DRAFT ONLY. A human clicks Publish; no agent publishes or schedules this post.\n\n1. [[VERIFY]] items in the copy: none.\n\n2. Nic sign-off prices: none (no prices, nothing for Nic to sign off).\n\n3. Image slots needed (6): featured, documents, stefana, ceremony-detail, island-chapel, venue-chapel. No licensed or permissioned image yet; never AI, competitor or search-result images. featured, island-chapel and venue-chapel must be real, named chapels from a media kit with written permission or licensed stock; documents, stefana and ceremony-detail may be an AI still life only with user approval, captioned 'Illustrative image'.\n\n4. Before publishing: confirm the byline. New article. SEO recommends considering a 301 from /8-symbolic-eastern-orthodox-wedding-traditions-you-might-not-know-about to this post or the traditions guide after both publish (recommendation only, not set). Publish /expert-advice/greek-wedding-traditions first or together. See booking-checklist.md for church and Greece-side items to confirm in writing."
+  }
+}
