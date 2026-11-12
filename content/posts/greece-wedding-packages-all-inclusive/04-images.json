@@ -1,0 +1,201 @@
+{
+ "agent": "visual-curator",
+ "task_id": "greece-wedding-packages-all-inclusive",
+ "stage": "04",
+ "status": "needs_input",
+ "round": 1,
+ "inputs_used": [
+  "CLAUDE.md",
+  "content/posts/greece-wedding-packages-all-inclusive/00-input.json",
+  "content/posts/santorini-wedding-packages/04-images.json (format model)",
+  "content-system/images/library-index.csv (header only, no rows)",
+  "content-system/images/sources-policy.md",
+  "content-system/schemas/04-images.schema.json"
+ ],
+ "self_qa": {
+  "checks": [
+   {
+    "check": "Zero reference-only or competitor images in slots",
+    "pass": true,
+    "note": "reference_only is empty; nothing downloaded."
+   },
+   {
+    "check": "Every approved image has location, licence, alt, caption, fit_reason",
+    "pass": true,
+    "note": "No approved images this run; alt and caption are written once a licensed file exists."
+   },
+   {
+    "check": "No AI image depicting a real place",
+    "pass": true,
+    "note": "AI offered only for two abstract still-life slots, on the person's approval, labelled 'Illustrative image'. Never for a venue, destination, wedding or person."
+   },
+   {
+    "check": "Featured image exists (approved or needed with brief)",
+    "pass": true,
+    "note": "Needed, with brief."
+   },
+   {
+    "check": "About 6 slots across main sections",
+    "pass": true,
+    "note": "Featured plus what all inclusive means, two comparison venue entries (Crete or Rhodes; Corfu or mainland), comparing quotes, Australian angle. FAQ, legal and build-your-own sections carry no image."
+   },
+   {
+    "check": "No em dashes, no figures or prices in briefs",
+    "pass": true
+   }
+  ],
+  "confidence": 0.75
+ },
+ "open_questions": [
+  {
+   "to": "person",
+   "question": "Do you approve an AI (Higgsfield) abstract still life for the 'compare quotes' slot (folded quotes and a pen on linen, nothing legible), captioned 'Illustrative image', and as the fallback for the Australian-angle flat-lay if no library or stock image is found?",
+   "blocking": false
+  },
+  {
+   "to": "orchestrator",
+   "question": "Which compared venues from 03-source-pack should get press-kit permission drafts? Should a human create them, or a non-fast curator run with Firecrawl and Gmail draft approval?",
+   "blocking": false
+  },
+  {
+   "to": "orchestrator",
+   "question": "Is there budget for licensed premium stock (Stocksy, Getty, Offset) for the featured and venue slots if press kits do not respond in time?",
+   "blocking": false
+  }
+ ],
+ "assumptions": [
+  "01-brief.json, 02-seo.json and the full 03-source-pack.json are not yet written, so placements use working section names from the orchestrator's outline; the writer maps them to after_h2:<n>.",
+  "No venue is named per slot yet: venues are chosen from 03-source-pack, and only a venue whose package the article describes may be pictured.",
+  "Drive, own site, Canva and press-kit searches were not run: repo register only, per instruction."
+ ],
+ "verify_items": [
+  "[[IMAGE NEEDED]] featured: Greek venue ceremony terrace hero from a venue whose package is compared",
+  "[[IMAGE NEEDED]] what-all-inclusive-means: venue reception table styling detail",
+  "[[IMAGE NEEDED]] comparison-crete-rhodes: Crete or Rhodes venue seafront ceremony space",
+  "[[IMAGE NEEDED]] comparison-corfu-mainland: Corfu or mainland venue garden ceremony or terrace",
+  "[[IMAGE NEEDED]] compare-quotes: abstract still life (AI only on approval, 'Illustrative image')",
+  "[[IMAGE NEEDED]] australian-angle: travel planning flat-lay (library or stock; AI fallback only on approval)",
+  "[[VERIFY licence]] every venue press-kit image: written permission, credit line and expiry recorded in library-index.csv before use"
+ ],
+ "tools_used": [
+  "Bash (cat/python)"
+ ],
+ "next_agent": [
+  "luxury-writer"
+ ],
+ "payload": {
+  "slots": [
+   {
+    "slot_id": "featured",
+    "placement": "featured",
+    "purpose": "Hero and social share image: a Greek venue ceremony set up and ready, signalling what an all-inclusive package delivers on the day.",
+    "shot_brief": "Official image from one Greek venue whose all-inclusive package the guide compares: a ceremony set-up on a seafront terrace or garden, chairs and floral arch in place, Aegean or Ionian sea behind, May to October, golden-hour light. No people, or only distant unidentifiable figures; no signage. Landscape 3:2 with room for a title crop. Source: the venue's own media kit or press office with written permission (Gmail draft request, created by a human or a non-fast run, never sent by an agent), or licensed premium stock bought by a human and added to library-index.csv. Never AI, never a competitor, directory, planner, photographer-blog or search-result image. Location proven by the media kit, register row or EXIF, never by appearance. Use only a venue whose own package is described in the article, so the image never implies a package or partnership we do not describe.",
+    "status": "needed",
+    "file": "content/posts/greece-wedding-packages-all-inclusive/images/greece-wedding-packages-all-inclusive-venue-ceremony-terrace-hero.webp",
+    "source": {
+     "type": "venue_press",
+     "origin": "not yet sourced",
+     "credit": "[[VERIFY licence]]"
+    },
+    "location": {
+     "venue": "a venue whose package is described in this section (set from 03-source-pack)",
+     "town": "to be set from the media kit",
+     "verified_by": "to be set from the media kit or register row"
+    },
+    "licence_note": "[[IMAGE NEEDED]] Library register has no rows (header only). Rename the venue segment and move to pending_permission once the featured venue is chosen from 03-source-pack and its permission draft exists."
+   },
+   {
+    "slot_id": "what-all-inclusive-means",
+    "placement": "after_h2: What 'all inclusive' means at a Greek venue",
+    "purpose": "Makes the bundled inclusions concrete: ceremony styling and the reception table a package commonly covers.",
+    "shot_brief": "Official close detail from a venue whose package inclusions are named in this section: a reception table dressed with linen, florals and glassware on a terrace, sea softly out of focus, evening light, May to October. No people. Landscape 3:2 or 4:3. Source: the venue's own media kit or press office with written permission (Gmail draft request, created by a human or a non-fast run, never sent by an agent), or licensed premium stock bought by a human and added to library-index.csv. Never AI, never a competitor, directory, planner, photographer-blog or search-result image. Location proven by the media kit, register row or EXIF, never by appearance. Use only a venue whose own package is described in the article, so the image never implies a package or partnership we do not describe.",
+    "status": "needed",
+    "file": "content/posts/greece-wedding-packages-all-inclusive/images/greece-wedding-packages-all-inclusive-venue-reception-table-styling.webp",
+    "source": {
+     "type": "venue_press",
+     "origin": "not yet sourced",
+     "credit": "[[VERIFY licence]]"
+    },
+    "location": {
+     "venue": "a venue whose package is described in this section (set from 03-source-pack)",
+     "town": "to be set from the media kit",
+     "verified_by": "to be set from the media kit or register row"
+    },
+    "licence_note": "[[IMAGE NEEDED]] Venue press image with written permission only; venue named in the filename once chosen."
+   },
+   {
+    "slot_id": "comparison-crete-rhodes",
+    "placement": "after_h2: The comparison table and venue entries (Crete or Rhodes entry)",
+    "purpose": "Gives the venue entries a sense of place for a large resort-style island venue.",
+    "shot_brief": "Official image from a Crete or Rhodes resort venue described in its entry: lawn or beachfront ceremony space with reception set beyond, sea view, late-afternoon light, May to October. No identifiable guests. Landscape 3:2. Caption names the venue and town from the media kit. Source: the venue's own media kit or press office with written permission (Gmail draft request, created by a human or a non-fast run, never sent by an agent), or licensed premium stock bought by a human and added to library-index.csv. Never AI, never a competitor, directory, planner, photographer-blog or search-result image. Location proven by the media kit, register row or EXIF, never by appearance. Use only a venue whose own package is described in the article, so the image never implies a package or partnership we do not describe.",
+    "status": "needed",
+    "file": "content/posts/greece-wedding-packages-all-inclusive/images/greece-wedding-packages-all-inclusive-venue-crete-seafront-ceremony.webp",
+    "source": {
+     "type": "venue_press",
+     "origin": "not yet sourced",
+     "credit": "[[VERIFY licence]]"
+    },
+    "location": {
+     "venue": "a venue whose package is described in this section (set from 03-source-pack)",
+     "town": "to be set from the media kit",
+     "verified_by": "to be set from the media kit or register row"
+    },
+    "licence_note": "[[IMAGE NEEDED]] Swap island and venue into the filename to whichever venue's permission comes through first (Crete or Rhodes)."
+   },
+   {
+    "slot_id": "comparison-corfu-mainland",
+    "placement": "after_h2: The comparison table and venue entries (Corfu or mainland entry)",
+    "purpose": "Shows the contrast with a greener Ionian or mainland setting, so the comparison is not all whitewash and caldera.",
+    "shot_brief": "Official image from a Corfu or mainland (for example Athens Riviera or Peloponnese) venue described in its entry: garden or olive-grove ceremony spot or terrace set for dinner, cypress or olive trees, sea glimpse, soft evening light. No identifiable guests. Landscape 3:2. Source: the venue's own media kit or press office with written permission (Gmail draft request, created by a human or a non-fast run, never sent by an agent), or licensed premium stock bought by a human and added to library-index.csv. Never AI, never a competitor, directory, planner, photographer-blog or search-result image. Location proven by the media kit, register row or EXIF, never by appearance. Use only a venue whose own package is described in the article, so the image never implies a package or partnership we do not describe.",
+    "status": "needed",
+    "file": "content/posts/greece-wedding-packages-all-inclusive/images/greece-wedding-packages-all-inclusive-venue-corfu-garden-ceremony.webp",
+    "source": {
+     "type": "venue_press",
+     "origin": "not yet sourced",
+     "credit": "[[VERIFY licence]]"
+    },
+    "location": {
+     "venue": "a venue whose package is described in this section (set from 03-source-pack)",
+     "town": "to be set from the media kit",
+     "verified_by": "to be set from the media kit or register row"
+    },
+    "licence_note": "[[IMAGE NEEDED]] Venue press image with written permission only; town confirmed from the media kit, not assumed."
+   },
+   {
+    "slot_id": "compare-quotes",
+    "placement": "after_h2: How to compare two all-inclusive quotes like for like",
+    "purpose": "A calm, abstract visual for the comparison checklist: two quotes side by side, read carefully.",
+    "shot_brief": "Abstract still life, top-down or low angle: two folded paper quotes side by side and a fountain pen on natural ivory linen, a sprig of olive and a glass of water, soft window daylight, neutral palette. No people, no real place. Landscape 3:2. AI (Higgsfield) allowed for this slot ONLY after the person approves it, and the caption must read 'Illustrative image'. No venue, logo, currency note, real document or legible prices or figures in frame; any paper is blank or carries illegible marks. Preferred alternative: a Canva brand-kit or licensed stock flat-lay.",
+    "status": "needed",
+    "file": "content/posts/greece-wedding-packages-all-inclusive/images/greece-wedding-packages-all-inclusive-illustrative-two-quotes-pen-linen.webp",
+    "source": {
+     "type": "ai_illustrative",
+     "origin": "not generated: awaiting the person's approval to use AI for this abstract slot",
+     "credit": "Illustrative image"
+    },
+    "caption_planned": "Illustrative image",
+    "licence_note": "[[IMAGE NEEDED]] AI only on the person's approval; caption 'Illustrative image'. Not generated this run."
+   },
+   {
+    "slot_id": "australian-angle",
+    "placement": "after_h2: For Australian couples",
+    "purpose": "Grounds the Australian angle: planning from home, with quotes and travel in hand.",
+    "shot_brief": "Preferred: a Wedded Wonderland library image or licensed stock travel-planning flat-lay: a linen travel folder, luggage tag and sunglasses on a timber table, soft daylight. No passport data pages, government emblems, airline logos, currency notes or legible figures. No real place, no people. Landscape 3:2. Fallback: AI still life of the same scene, only on the person's approval and captioned 'Illustrative image'.",
+    "status": "needed",
+    "file": "content/posts/greece-wedding-packages-all-inclusive/images/greece-wedding-packages-all-inclusive-illustrative-travel-folder-flatlay.webp",
+    "source": {
+     "type": "stock",
+     "origin": "not yet sourced (library or licensed stock preferred; AI fallback needs approval)",
+     "credit": "[[VERIFY licence]]"
+    },
+    "licence_note": "[[IMAGE NEEDED]] Library or stock first; AI only with approval and labelled 'Illustrative image'."
+   }
+  ],
+  "reference_only": [],
+  "permission_requests": [],
+  "drive_findings": [
+   "Not searched: repo library register only per orchestrator instruction. library-index.csv has a header and no rows."
+  ],
+  "permission_email_bodies_note": "No Gmail drafts created and nothing sent. Once venues are confirmed in 03-source-pack, draft wording = content-system/images/permission-email-template.md with {{post_title}} = 'All-Inclusive Greece Wedding Packages Compared'."
+ }
+}
