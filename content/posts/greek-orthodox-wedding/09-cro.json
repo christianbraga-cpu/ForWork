@@ -1,0 +1,69 @@
+{
+  "agent": "cro-specialist",
+  "task_id": "greek-orthodox-wedding",
+  "stage": "09",
+  "status": "complete",
+  "round": 1,
+  "inputs_used": [
+    "CLAUDE.md",
+    "content-system/schemas/09-cro.schema.json",
+    "content/posts/greek-orthodox-wedding/01-brief.json",
+    "content/posts/greek-orthodox-wedding/08-final.md",
+    "content/posts/santorini-or-mykonos-wedding/09-cro.json (format model)"
+  ],
+  "self_qa": {
+    "checks": [
+      {"check": "Primary CTA 6 words or fewer, no 'click here', no exclamation mark", "pass": true, "note": "'Book a Wedded Concierge consultation' (5 words)."},
+      {"check": "utm_content primary, secondary, closing, magnet each appear exactly once; one <!-- CTA: primary --> marker", "pass": true, "note": "Checked by grep: 1 each, so no copy change made."},
+      {"check": "UTMs only on /wonderland-concierge (3) and /magazine (1)", "pass": true},
+      {"check": "Every /wonderland-concierge anchor names Wedded Concierge; no 'Wonderland Concierge' anchor; no new Advisor line", "pass": true, "note": "Anchors: 'book a Wedded Concierge consultation', 'talk to Wedded Concierge about marrying in Greece', 'Start planning with Wedded Concierge'."},
+      {"check": "No CTA implies help with church, legal or religious paperwork", "pass": true, "note": "Primary follows 'When your priest has confirmed the Church side'; secondary frames the Advisor around venue, travel, vendors and payments 'around the service your priest confirms'."},
+      {"check": "No prices, 'free', Wedded Privileges, transfers or 'last dance'; Australian English, no em dashes", "pass": true}
+    ],
+    "confidence": 0.85
+  },
+  "open_questions": [
+    {"to": "orchestrator", "question": "Deferred business answers (fee model, named Advisor, real weddings) remain deferred per brand-facts. Re-run cro-specialist once confirmed.", "blocking": false}
+  ],
+  "assumptions": [
+    "The CMS renders a CTA block (text, subtext, link) at the <!-- CTA: primary --> marker; the inline sentence before the marker is the fallback if it does not.",
+    "FAST MODE: 07-panel.json cta_reactions not re-read; placements follow the brief and the santorini-or-mykonos-wedding model."
+  ],
+  "verify_items": [],
+  "tools_used": ["Bash (grep, sed, python3 -I)"],
+  "payload": {
+    "journey_stage": "planning",
+    "primary_cta": {
+      "text": "Book a Wedded Concierge consultation",
+      "subtext": "The fee is agreed in writing before any work begins.",
+      "link": "https://weddedwonderland.com/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=greek-orthodox-wedding&utm_content=primary",
+      "placement": "Existing <!-- CTA: primary --> marker directly after the Key takeaways, filled by the existing sentence that invites the couple to book once their priest has confirmed the Church side. Unchanged."
+    },
+    "secondary_cta": {
+      "text": "Talk to Wedded Concierge",
+      "subtext": "One Wedded Advisor plans the celebration around the service your priest confirms.",
+      "link": "https://weddedwonderland.com/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=greek-orthodox-wedding&utm_content=secondary",
+      "placement": "Existing sentence in 'Planning one in Greece', the body's only Advisor line per the brief, where the 'which venue and how do we plan around the church' question peaks. Unchanged."
+    },
+    "lead_magnet": {
+      "name": "Wedded Wonderland digital magazine",
+      "link": "https://weddedwonderland.com/magazine?utm_source=blog&utm_medium=content&utm_campaign=greek-orthodox-wedding&utm_content=magnet",
+      "placement": "Existing final line of the post, for readers still early in planning. Already tagged; unchanged.",
+      "exists": true
+    },
+    "closing_cta": {
+      "text": "Start planning with Wedded Concierge",
+      "link": "https://weddedwonderland.com/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=greek-orthodox-wedding&utm_content=closing",
+      "placement": "Existing closing paragraph under 'Plan your Greek Orthodox wedding with Wedded Concierge'. Unchanged."
+    },
+    "tracking": [
+      "https://weddedwonderland.com/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=greek-orthodox-wedding&utm_content=primary",
+      "https://weddedwonderland.com/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=greek-orthodox-wedding&utm_content=secondary",
+      "https://weddedwonderland.com/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=greek-orthodox-wedding&utm_content=closing",
+      "https://weddedwonderland.com/magazine?utm_source=blog&utm_medium=content&utm_campaign=greek-orthodox-wedding&utm_content=magnet"
+    ],
+    "copy_changes": [],
+    "rationale": "Brief journey_stage is 'planning', so the primary is the Wedded Concierge consultation at /wonderland-concierge, placed after the priest has confirmed the Church side so it never implies help with church, legal or religious paperwork; the subtext answers the fee worry from brand-facts. All four tracked links (primary, secondary, closing, magnet) already appear once each with correct UTMs and every concierge anchor names Wedded Concierge, so no copy change is made. Reading order: primary after Key takeaways, secondary in the Greece planning section, closing, then magnet. Other internal links stay untagged. A Greece or Orthodox ceremony planning checklist (questions for the priest and venue) would be a better-matched magnet; none is known to exist, so it is a backlog suggestion only (not placed)."
+  },
+  "next_agent": ["distribution"]
+}
