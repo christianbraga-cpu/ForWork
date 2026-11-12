@@ -6,3 +6,4 @@
 23:16 02 SEO done: 5 cities; AU 40 US 260 KD 9; gap: foreigners and Australian recognition.
 23:19 05 writer done: about 2,660 words, 0 VERIFY, no venues named.
 23:21 06 editor pass_with_edits 4.29, 13 edits applied (05-draft-r2.md); 07 readers done.
+23:22 07b panel revise (enquire 2.6); 2 must-fix.
