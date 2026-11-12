@@ -1,3 +1,4 @@
 01:59 00 orchestrator complete input written; FAST MODE start; NEW all-inclusive comparison (no prices). Part-5: Santorini package facts (Grace, Canaves, Santorini Gem, Andronis, Vedema) reused from today's pack.
 02:00 04 images done: 6 placeholder slots.
 02:00 01 brief done: 8 to 10 packages compared by inclusions, no ranking; three packages pages linked prominently.
+02:19 03 batch A done: 36 facts; Elounda SA (Lavish package; municipal and Metropolis fees on top), Nana Princess (3 packages), Abaton (The Basics; minimum rooms), Euphoria (3 informal options), Melenos and Atrium (services, no named package), Amirandes (no package). Elounda Beach read declined (not retried). No Crete or Rhodes venue calls a wedding package all inclusive.
