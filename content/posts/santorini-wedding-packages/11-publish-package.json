@@ -1,0 +1,319 @@
+{
+  "agent": "cms-publisher",
+  "task_id": "santorini-wedding-packages",
+  "stage": "11",
+  "status": "complete",
+  "round": 1,
+  "inputs_used": [
+    "CLAUDE.md",
+    "content-system/cms/field-map.md",
+    "content-system/schemas/11-publish-package.schema.json",
+    "content/posts/santorini-wedding-packages/00-input.json",
+    "content/posts/santorini-wedding-packages/01-brief.json",
+    "content/posts/santorini-wedding-packages/02-seo.json",
+    "content/posts/santorini-wedding-packages/03-source-pack.json",
+    "content/posts/santorini-wedding-packages/04-images.json",
+    "content/posts/santorini-wedding-packages/08-final.md",
+    "content/posts/santorini-wedding-packages/09-cro.json",
+    "content/posts/santorini-wedding-packages/10-distribution.json",
+    "content/posts/santorini-wedding-venues/11-body.md, 11-publish-package.json, 12-cms-report.md, booking-checklist.md (format model)"
+  ],
+  "self_qa": {
+    "checks": [
+      {
+        "check": "Front matter, all <!-- fact_xx --> markers and the CTA marker removed; H1 is the title; 7 image-slot comments kept; no [[VERIFY]] markers",
+        "pass": true
+      },
+      {
+        "check": "Primary CTA block at the marker; fallback consultation sentence retagged utm_content=inline; primary, inline, secondary, closing and magnet each appear exactly once in visible links",
+        "pass": true
+      },
+      {
+        "check": "Exactly 4 key takeaways and 6 FAQ pairs verbatim from the body",
+        "pass": true
+      },
+      {
+        "check": "Meta title and description from 02-seo.json, no prices; description under 155 characters",
+        "pass": true,
+        "note": "147 characters"
+      },
+      {
+        "check": "primary_category equals categories[0] (Destination Weddings)",
+        "pass": true
+      },
+      {
+        "check": "No em or en dashes; no 'Wonderland Concierge' in visible text; no amounts of money",
+        "pass": true
+      },
+      {
+        "check": "status draft; nothing uploaded, saved or published",
+        "pass": true
+      }
+    ],
+    "confidence": 0.9
+  },
+  "open_questions": [
+    {
+      "to": "orchestrator",
+      "question": "CMS upload not attempted: FAST MODE package only, no browser in this session, and content-system/cms/field-map.md is not CONFIRMED. Run /wedded-cms-discovery locally, then /wedded-blog resume=santorini-wedding-packages.",
+      "blocking": true
+    },
+    {
+      "to": "orchestrator",
+      "question": "No author named in any input; package uses \"Wedded Wonderland\" (organisation). Confirm the byline.",
+      "blocking": false
+    }
+  ],
+  "assumptions": [
+    "Excerpt is the first sentence of the opening paragraph.",
+    "content_type 'Guide' and cluster as in the santorini-wedding-venues model (brief says planning_guide).",
+    "Secondary CTA already present in 08-final.md ('talk to Wedded Concierge'); the 09-cro.json copy change was not added again, to keep utm_content=secondary once.",
+    "Image alt, caption, credit and licence left empty: none in 04-images.json, not invented.",
+    "Some venues publish package prices; none are printed, so needs_signoff is empty."
+  ],
+  "verify_items": [],
+  "tools_used": [
+    "Bash (python3 -I)"
+  ],
+  "next_agent": [
+    "orchestrator"
+  ],
+  "payload": {
+    "title": "Santorini Wedding Packages and What They Include",
+    "slug": "santorini-wedding-packages",
+    "url_path": "/destination-weddings/santorini-wedding-packages",
+    "content_type": "Guide",
+    "cluster": "Getting Married in Greece",
+    "categories": [
+      "Destination Weddings",
+      "Greece",
+      "Planning Guides"
+    ],
+    "primary_category": "Destination Weddings",
+    "tags": [
+      "Getting Married in Greece",
+      "Santorini",
+      "Santorini wedding packages",
+      "Greece wedding packages"
+    ],
+    "excerpt": "Santorini wedding packages share a name and very little else.",
+    "key_takeaways": [
+      "A Santorini venue package usually covers the ceremony space, its set-up, a coordinator and fixed hours, and everything else depends on the venue.",
+      "Food and drink, guest rooms and room-night minimums are often priced or required outside the package itself, so ask for each in writing.",
+      "Some Santorini venues require a wedding planner on top of the venue fee, which changes what a package is really worth to you.",
+      "Compare quotes on the same guest count, spaces, hours, nights, music times and currency before paying a deposit that may not be refundable."
+    ],
+    "body_markdown_file": "content/posts/santorini-wedding-packages/11-body.md",
+    "faq": [
+      {
+        "q": "Are Santorini wedding packages all inclusive?",
+        "a": "Rarely. A package covers what its list names. Canaves keeps food and drink separate, and Andronis arranges extras such as an officiant and florals at an additional charge. Treat any package as the core of the day and ask for every extra in writing."
+      },
+      {
+        "q": "What is included in a Santorini wedding package for two?",
+        "a": "It depends on the venue. The Canaves elopement package for a couple includes up to 5 hours of private use, event planning services, recorded music, a sparkling wine toast, a basic set-up and a two-tier cake. The Andronis package adds a private cliffside ceremony area, flowers, cake, sparkling wine and a turndown."
+      },
+      {
+        "q": "Do Santorini wedding packages include accommodation?",
+        "a": "Some do, and some require it. Santorini Gem's overnight package includes its villa for the couple and villa guests. Canaves packages often require a set number of rooms for at least three nights. Grace Hotel sets no minimum number of rooms."
+      },
+      {
+        "q": "Can a Santorini package work for around 50 guests?",
+        "a": "Yes, at several venues. Grace Hotel sets its venue fee inclusions either side of 50 guests, and Canaves Epitome has a package for 26 to 45 guests on the Sunset Terrace and Elements Restaurant, and a larger one with the pool area added for 45 to 100. The rooms you must book there rise with each guest band, so ask which band your number falls in."
+      },
+      {
+        "q": "Does a venue package include the legal paperwork?",
+        "a": "Some venues include it in their package. At others, such as Canaves, preparation of the wedding documents is an option to request, so ask each venue what is covered and which fees sit outside its price."
+      },
+      {
+        "q": "Can Australians legally marry in Santorini?",
+        "a": "Yes. Canaves lists civil and religious ceremonies among its ceremony types, and a marriage valid where it took place, and valid under Australian law, is in most cases recognised in Australia. You may need a Certificate of No Impediment, so prepare documents well ahead."
+      }
+    ],
+    "images": [
+      {
+        "slot_id": "featured",
+        "file": "content/posts/santorini-wedding-packages/images/santorini-wedding-packages-venue-ceremony-terrace-hero.webp",
+        "role": "featured",
+        "status": "needed"
+      },
+      {
+        "slot_id": "inclusions",
+        "file": "content/posts/santorini-wedding-packages/images/santorini-wedding-packages-venue-reception-table-styling.webp",
+        "role": "inline",
+        "status": "needed"
+      },
+      {
+        "slot_id": "ceremony-types",
+        "file": "content/posts/santorini-wedding-packages/images/santorini-wedding-packages-venue-symbolic-ceremony-spot.webp",
+        "role": "inline",
+        "status": "needed"
+      },
+      {
+        "slot_id": "package-types",
+        "file": "content/posts/santorini-wedding-packages/images/santorini-wedding-packages-venue-ceremony-for-two.webp",
+        "role": "inline",
+        "status": "needed"
+      },
+      {
+        "slot_id": "left-out",
+        "file": "content/posts/santorini-wedding-packages/images/santorini-wedding-packages-venue-exclusive-use-terrace.webp",
+        "role": "inline",
+        "status": "needed"
+      },
+      {
+        "slot_id": "compare-quotes",
+        "file": "content/posts/santorini-wedding-packages/images/santorini-wedding-packages-illustrative-two-quotes-pen-linen.webp",
+        "role": "inline",
+        "status": "needed"
+      },
+      {
+        "slot_id": "australian-angle",
+        "file": "content/posts/santorini-wedding-packages/images/santorini-wedding-packages-illustrative-travel-folder-flatlay.webp",
+        "role": "inline",
+        "status": "needed"
+      }
+    ],
+    "cta": {
+      "text": "Speak with a Wedded Advisor",
+      "subtext": "Quotes in AUD, inclusions confirmed in writing before you commit.",
+      "link": "/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=santorini-wedding-packages&utm_content=primary",
+      "placement": "At the former <!-- CTA: primary --> marker after 'For Australian couples: currency, deposits and insurance' (marked <!-- CTA BLOCK: primary --> in 11-body.md); the existing Wedded Concierge consultation sentence after it is the fallback, retagged utm_content=inline."
+    },
+    "secondary_cta": {
+      "text": "talk to Wedded Concierge",
+      "link": "/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=santorini-wedding-packages&utm_content=secondary",
+      "placement": "Inline link at the end of 'How to compare two Santorini quotes like for like' (marked <!-- CTA INLINE: secondary --> in 11-body.md). Already in 08-final.md, so the 09-cro.json copy change was not applied a second time."
+    },
+    "closing_cta": {
+      "text": "plan your Santorini wedding with the Wedded Concierge",
+      "link": "/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=santorini-wedding-packages&utm_content=closing",
+      "placement": "Inline link under 'Compare your shortlist with a Wedded Advisor' (marked <!-- CTA INLINE: closing --> in 11-body.md)."
+    },
+    "lead_magnet": {
+      "name": "Wedded Wonderland digital magazine",
+      "link": "/magazine?utm_source=blog&utm_medium=content&utm_campaign=santorini-wedding-packages&utm_content=magnet",
+      "placement": "Existing line straight after the primary CTA (marked <!-- LEAD MAGNET --> in 11-body.md)."
+    },
+    "tracking_links": [
+      "/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=santorini-wedding-packages&utm_content=primary",
+      "/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=santorini-wedding-packages&utm_content=inline",
+      "/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=santorini-wedding-packages&utm_content=secondary",
+      "/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=santorini-wedding-packages&utm_content=closing",
+      "/magazine?utm_source=blog&utm_medium=content&utm_campaign=santorini-wedding-packages&utm_content=magnet"
+    ],
+    "seo": {
+      "meta_title": "Santorini Wedding Packages: What They Include and Leave Out",
+      "meta_description": "What Santorini venue wedding packages include, what sits outside them and how Australian couples can compare quotes like for like before they book.",
+      "focus_keyword": "santorini wedding packages",
+      "canonical": "https://weddedwonderland.com/destination-weddings/santorini-wedding-packages",
+      "og_image_slot": "featured"
+    },
+    "schema_jsonld": {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Article",
+          "@id": "https://weddedwonderland.com/destination-weddings/santorini-wedding-packages#article",
+          "headline": "Santorini Wedding Packages and What They Include",
+          "description": "What Santorini venue wedding packages include, what sits outside them and how Australian couples can compare quotes like for like before they book.",
+          "author": {
+            "@type": "Organization",
+            "name": "Wedded Wonderland",
+            "url": "https://weddedwonderland.com/"
+          },
+          "publisher": {
+            "@type": "Organization",
+            "name": "Wedded Wonderland",
+            "url": "https://weddedwonderland.com/"
+          },
+          "datePublished": "",
+          "mainEntityOfPage": "https://weddedwonderland.com/destination-weddings/santorini-wedding-packages",
+          "inLanguage": "en-AU"
+        },
+        {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Home",
+              "item": "https://weddedwonderland.com/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Destination Weddings",
+              "item": "https://weddedwonderland.com/destination-weddings"
+            },
+            {
+              "@type": "ListItem",
+              "position": 3,
+              "name": "Santorini Wedding Packages and What They Include",
+              "item": "https://weddedwonderland.com/destination-weddings/santorini-wedding-packages"
+            }
+          ]
+        },
+        {
+          "@type": "FAQPage",
+          "@id": "https://weddedwonderland.com/destination-weddings/santorini-wedding-packages#faq",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "Are Santorini wedding packages all inclusive?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Rarely. A package covers what its list names. Canaves keeps food and drink separate, and Andronis arranges extras such as an officiant and florals at an additional charge. Treat any package as the core of the day and ask for every extra in writing."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "What is included in a Santorini wedding package for two?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "It depends on the venue. The Canaves elopement package for a couple includes up to 5 hours of private use, event planning services, recorded music, a sparkling wine toast, a basic set-up and a two-tier cake. The Andronis package adds a private cliffside ceremony area, flowers, cake, sparkling wine and a turndown."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Do Santorini wedding packages include accommodation?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Some do, and some require it. Santorini Gem's overnight package includes its villa for the couple and villa guests. Canaves packages often require a set number of rooms for at least three nights. Grace Hotel sets no minimum number of rooms."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Can a Santorini package work for around 50 guests?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes, at several venues. Grace Hotel sets its venue fee inclusions either side of 50 guests, and Canaves Epitome has a package for 26 to 45 guests on the Sunset Terrace and Elements Restaurant, and a larger one with the pool area added for 45 to 100. The rooms you must book there rise with each guest band, so ask which band your number falls in."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Does a venue package include the legal paperwork?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Some venues include it in their package. At others, such as Canaves, preparation of the wedding documents is an option to request, so ask each venue what is covered and which fees sit outside its price."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Can Australians legally marry in Santorini?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes. Canaves lists civil and religious ceremonies among its ceremony types, and a marriage valid where it took place, and valid under Australian law, is in most cases recognised in Australia. You may need a Certificate of No Impediment, so prepare documents well ahead."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    "author": "Wedded Wonderland",
+    "status": "draft",
+    "verify_items": [],
+    "needs_signoff": [],
+    "draft_note": "DRAFT ONLY. A human clicks Publish; no agent publishes or schedules this post.\n\n1. [[VERIFY]] items in the copy: none.\n\n2. Nic sign-off prices: none. The post prints no prices or amounts. Some venues publish package prices (for example Canaves and Santorini Gem), but none were used; any price added later needs Nic's sign-off and is shown From AUD.\n\n3. Image slots needed (7): featured, inclusions, ceremony-types, package-types, left-out, compare-quotes, australian-angle. No licensed or permissioned image yet. Venue slots: the venue's own media kit with written permission or licensed stock; never AI, competitor or search-result images. compare-quotes and australian-angle may use an AI still life only with the person's approval, captioned 'Illustrative image'.\n\n4. Before publishing: confirm the byline, and publish the linked drafts (santorini-wedding-venues, santorini-wedding, greece-wedding-packages, greek-wedding-traditions) first or together. See booking-checklist.md for package details to confirm in writing with each venue."
+  }
+}

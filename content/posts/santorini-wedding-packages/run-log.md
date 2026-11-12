@@ -9,3 +9,4 @@
 01:37 07b panel: revise (enquire 2.6), 3 must-fix + 5 should-fix + 4 consider; business details deferred. One final pass.
 01:38 08 final done: ~4,080 words, scan clean, 0 VERIFY, no amounts.
 01:39 8b pass (0 edits); CRO secondary link applied with softened anchor ('talk to Wedded Concierge'); '60 to 100' opener reworded to 'Planning a larger wedding?' (Canaves band starts at 45). 4 UTMs once each.
+- 01:42 11-13 package, booking checklist, run report, backlinks, link map, calendar row 48, docx.
