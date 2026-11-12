@@ -7,3 +7,4 @@
 01:32 05 draft done: ~4,120 words, scan clean, 0 VERIFY, no amounts; first-draft docx built.
 01:34 07 readers done (enquire 3/3/2/3/1). 06 editor pass_with_edits (4.14): 10 edits applied to 05-draft-r2.md (venue paperwork once each, 'some' venues require a planner).
 01:37 07b panel: revise (enquire 2.6), 3 must-fix + 5 should-fix + 4 consider; business details deferred. One final pass.
+01:38 08 final done: ~4,080 words, scan clean, 0 VERIFY, no amounts.
