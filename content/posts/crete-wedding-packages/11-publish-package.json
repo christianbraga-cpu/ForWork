@@ -1,0 +1,313 @@
+{
+  "agent": "cms-publisher",
+  "task_id": "crete-wedding-packages",
+  "stage": "11",
+  "status": "complete",
+  "round": 1,
+  "inputs_used": [
+    "CLAUDE.md",
+    "content-system/cms/field-map.md",
+    "content-system/schemas/11-publish-package.schema.json",
+    "content/posts/crete-wedding-packages/00-input.json",
+    "content/posts/crete-wedding-packages/01-brief.json",
+    "content/posts/crete-wedding-packages/02-seo.json",
+    "content/posts/crete-wedding-packages/03-source-pack.json",
+    "content/posts/crete-wedding-packages/04-images.json",
+    "content/posts/crete-wedding-packages/08-final.md",
+    "content/posts/crete-wedding-packages/09-cro.json",
+    "content/posts/crete-wedding-packages/10-distribution.json",
+    "content/posts/greece-wedding-packages-all-inclusive/11-publish-package.json (format model)"
+  ],
+  "self_qa": {
+    "checks": [
+      {
+        "check": "Front matter, all <!-- fact_xx --> markers and the CTA marker removed; H1 is the title; 6 image-slot comments kept; no [[VERIFY]] markers",
+        "pass": true
+      },
+      {
+        "check": "Primary CTA block at the marker; fallback consultation sentence retagged utm_content=inline; primary, inline, secondary, closing and magnet each appear exactly once in visible links; /destination-wedding-packages carries no UTMs",
+        "pass": true
+      },
+      {
+        "check": "Exactly 4 key takeaways and 6 FAQ pairs verbatim from the body",
+        "pass": true
+      },
+      {
+        "check": "Meta title and description from 02-seo.json, no prices",
+        "pass": true,
+        "note": "55 and 143 characters"
+      },
+      {
+        "check": "primary_category equals categories[0] (Destination Weddings)",
+        "pass": true
+      },
+      {
+        "check": "No em or en dashes; no 'Wonderland Concierge' in visible text; no amounts of money",
+        "pass": true
+      },
+      {
+        "check": "status draft; nothing uploaded, saved or published",
+        "pass": true
+      }
+    ],
+    "confidence": 0.9
+  },
+  "open_questions": [
+    {
+      "to": "orchestrator",
+      "question": "CMS upload not attempted: FAST MODE package only, no browser in this session, and content-system/cms/field-map.md is not CONFIRMED. Run /wedded-cms-discovery locally, then /wedded-blog resume=crete-wedding-packages.",
+      "blocking": true
+    },
+    {
+      "to": "orchestrator",
+      "question": "No author named in any input; package uses \"Wedded Wonderland\" (organisation). Confirm the byline.",
+      "blocking": false
+    }
+  ],
+  "assumptions": [
+    "Excerpt is the first sentence of the opening paragraph.",
+    "content_type 'Guide' and cluster 'Getting Married in Greece' from 00-input.json fixed_by_person.",
+    "Secondary CTA already present in 08-final.md; the 09-cro.json copy change was not added again, to keep utm_content=secondary once.",
+    "Image alt, caption, credit and licence left empty: none in 04-images.json, not invented.",
+    "No prices printed, so needs_signoff is empty."
+  ],
+  "verify_items": [],
+  "tools_used": [
+    "Bash (python3 -I)"
+  ],
+  "next_agent": [
+    "orchestrator"
+  ],
+  "payload": {
+    "title": "Crete Wedding Packages and What They Include",
+    "slug": "crete-wedding-packages",
+    "url_path": "/destination-weddings/crete-wedding-packages",
+    "content_type": "Guide",
+    "cluster": "Getting Married in Greece",
+    "categories": [
+      "Destination Weddings",
+      "Greece",
+      "Planning Guides"
+    ],
+    "primary_category": "Destination Weddings",
+    "tags": [
+      "Getting Married in Greece",
+      "Crete",
+      "Crete wedding packages",
+      "Greece wedding packages"
+    ],
+    "excerpt": "Two Crete wedding packages can carry the same name and share almost nothing on paper.",
+    "key_takeaways": [
+      "A Crete venue package usually covers the ceremony set-up in a chosen space, sometimes with a coordinator, and everything else depends on the venue.",
+      "Guest rooms, minimum stays, the reception and outside suppliers are where Crete packages differ most, so ask about each one in writing.",
+      "A venue package, a venue fee and a planner each cover different ground, so check who is responsible for every part of the day.",
+      "Compare quotes on the same guest count, spaces, hours, nights and currency before you pay any deposit."
+    ],
+    "body_markdown_file": "content/posts/crete-wedding-packages/11-body.md",
+    "faq": [
+      {
+        "q": "Are Crete wedding packages all inclusive?",
+        "a": "Rarely. A package covers what its list names. Euphoria quotes its receptions, beverage packages and open bars separately, and Elounda SA lists reception food, drinks and entertainment outside its ceremony packages. Treat a package as the core of the day and ask for every extra in writing."
+      },
+      {
+        "q": "What is included in a Crete wedding package?",
+        "a": "It depends on the venue. Abaton's The Basics covers the ceremony, coordination, photography, videography, bridal party flowers and a wedding arch, while Elounda SA's Lavish package includes a ceremony set-up, flowers and a menu tasting."
+      },
+      {
+        "q": "Do Crete wedding packages include accommodation?",
+        "a": "Usually not, and some require it. Abaton's packages exclude accommodation and need a minimum room booking, and Elounda SA's packages need a stay of at least three nights. At Euphoria, a honeymoon package is included for couples who book a wedding package and stay at the hotel."
+      },
+      {
+        "q": "Is there a Crete elopement package for just the two of us?",
+        "a": "Yes, at several resorts. Elounda SA's symbolic package is built for the couple, with witnesses if needed, sparkling wine, a single-tier cake and breakfast in bed the next day. Euphoria's Elxi option suits a couple with a handful of guests, up to 10."
+      },
+      {
+        "q": "Does a venue package include the legal paperwork?",
+        "a": "Some include the official fees and some do not. At Elounda SA, the Municipal and Metropolis fees are charged on top of the package rate. Ask each venue what is covered and which fees sit outside its price."
+      },
+      {
+        "q": "Is a symbolic ceremony in Crete legally recognised?",
+        "a": "No. Elounda SA's brochure is clear that a symbolic wedding or vow renewal is not a legal marriage in Greece. Couples who want a legal marriage can marry at home first and hold the symbolic ceremony in Crete."
+      }
+    ],
+    "images": [
+      {
+        "slot_id": "featured",
+        "file": "content/posts/crete-wedding-packages/images/crete-wedding-packages-venue-seaside-ceremony-hero.webp",
+        "role": "featured",
+        "status": "needed"
+      },
+      {
+        "slot_id": "package-types",
+        "file": "content/posts/crete-wedding-packages/images/crete-wedding-packages-venue-beach-ceremony-for-two.webp",
+        "role": "inline",
+        "status": "needed"
+      },
+      {
+        "slot_id": "inclusions",
+        "file": "content/posts/crete-wedding-packages/images/crete-wedding-packages-venue-reception-table-styling.webp",
+        "role": "inline",
+        "status": "needed"
+      },
+      {
+        "slot_id": "ceremony-types",
+        "file": "content/posts/crete-wedding-packages/images/crete-wedding-packages-venue-symbolic-ceremony-spot.webp",
+        "role": "inline",
+        "status": "needed"
+      },
+      {
+        "slot_id": "compare-quotes",
+        "file": "content/posts/crete-wedding-packages/images/crete-wedding-packages-illustrative-two-quotes-pen-linen.webp",
+        "role": "inline",
+        "status": "needed"
+      },
+      {
+        "slot_id": "australian-angle",
+        "file": "content/posts/crete-wedding-packages/images/crete-wedding-packages-illustrative-travel-folder-flatlay.webp",
+        "role": "inline",
+        "status": "needed"
+      }
+    ],
+    "cta": {
+      "text": "Speak with a Wedded Advisor",
+      "subtext": "Quotes in AUD, inclusions confirmed in writing before you commit.",
+      "link": "/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=crete-wedding-packages&utm_content=primary",
+      "placement": "At the former <!-- CTA: primary --> marker at the end of 'For Australian couples' (marked <!-- CTA BLOCK: primary --> in 11-body.md); the existing Wedded Concierge consultation sentence after it is the fallback, retagged utm_content=inline."
+    },
+    "secondary_cta": {
+      "text": "talk to Wedded Concierge",
+      "link": "/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=crete-wedding-packages&utm_content=secondary",
+      "placement": "Inline link at the end of the Contract language item in 'How to compare two Crete quotes like for like' (marked <!-- CTA INLINE: secondary --> in 11-body.md). Already in 08-final.md, so the 09-cro.json copy change was not applied a second time."
+    },
+    "closing_cta": {
+      "text": "plan your Crete wedding with the Wedded Concierge",
+      "link": "/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=crete-wedding-packages&utm_content=closing",
+      "placement": "Inline link under 'Compare your Crete shortlist with a Wedded Advisor' (marked <!-- CTA INLINE: closing --> in 11-body.md)."
+    },
+    "lead_magnet": {
+      "name": "Wedded Wonderland digital magazine",
+      "link": "/magazine?utm_source=blog&utm_medium=content&utm_campaign=crete-wedding-packages&utm_content=magnet",
+      "placement": "Line straight after the primary CTA, before the FAQ (marked <!-- LEAD MAGNET --> in 11-body.md)."
+    },
+    "tracking_links": [
+      "/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=crete-wedding-packages&utm_content=primary",
+      "/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=crete-wedding-packages&utm_content=inline",
+      "/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=crete-wedding-packages&utm_content=secondary",
+      "/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=crete-wedding-packages&utm_content=closing",
+      "/magazine?utm_source=blog&utm_medium=content&utm_campaign=crete-wedding-packages&utm_content=magnet"
+    ],
+    "seo": {
+      "meta_title": "Crete Wedding Packages: What They Include and Leave Out",
+      "meta_description": "What Crete venue wedding packages include, what sits outside them and how Australian couples can compare quotes like for like before they book.",
+      "focus_keyword": "crete wedding packages",
+      "canonical": "https://weddedwonderland.com/destination-weddings/crete-wedding-packages",
+      "og_image_slot": "featured"
+    },
+    "schema_jsonld": {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Article",
+          "@id": "https://weddedwonderland.com/destination-weddings/crete-wedding-packages#article",
+          "headline": "Crete Wedding Packages and What They Include",
+          "description": "What Crete venue wedding packages include, what sits outside them and how Australian couples can compare quotes like for like before they book.",
+          "author": {
+            "@type": "Organization",
+            "name": "Wedded Wonderland",
+            "url": "https://weddedwonderland.com/"
+          },
+          "publisher": {
+            "@type": "Organization",
+            "name": "Wedded Wonderland",
+            "url": "https://weddedwonderland.com/"
+          },
+          "datePublished": "",
+          "mainEntityOfPage": "https://weddedwonderland.com/destination-weddings/crete-wedding-packages",
+          "inLanguage": "en-AU"
+        },
+        {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Home",
+              "item": "https://weddedwonderland.com/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Destination Weddings",
+              "item": "https://weddedwonderland.com/destination-weddings"
+            },
+            {
+              "@type": "ListItem",
+              "position": 3,
+              "name": "Crete Wedding Packages and What They Include",
+              "item": "https://weddedwonderland.com/destination-weddings/crete-wedding-packages"
+            }
+          ]
+        },
+        {
+          "@type": "FAQPage",
+          "@id": "https://weddedwonderland.com/destination-weddings/crete-wedding-packages#faq",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "Are Crete wedding packages all inclusive?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Rarely. A package covers what its list names. Euphoria quotes its receptions, beverage packages and open bars separately, and Elounda SA lists reception food, drinks and entertainment outside its ceremony packages. Treat a package as the core of the day and ask for every extra in writing."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "What is included in a Crete wedding package?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "It depends on the venue. Abaton's The Basics covers the ceremony, coordination, photography, videography, bridal party flowers and a wedding arch, while Elounda SA's Lavish package includes a ceremony set-up, flowers and a menu tasting."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Do Crete wedding packages include accommodation?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Usually not, and some require it. Abaton's packages exclude accommodation and need a minimum room booking, and Elounda SA's packages need a stay of at least three nights. At Euphoria, a honeymoon package is included for couples who book a wedding package and stay at the hotel."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Is there a Crete elopement package for just the two of us?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes, at several resorts. Elounda SA's symbolic package is built for the couple, with witnesses if needed, sparkling wine, a single-tier cake and breakfast in bed the next day. Euphoria's Elxi option suits a couple with a handful of guests, up to 10."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Does a venue package include the legal paperwork?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Some include the official fees and some do not. At Elounda SA, the Municipal and Metropolis fees are charged on top of the package rate. Ask each venue what is covered and which fees sit outside its price."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Is a symbolic ceremony in Crete legally recognised?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "No. Elounda SA's brochure is clear that a symbolic wedding or vow renewal is not a legal marriage in Greece. Couples who want a legal marriage can marry at home first and hold the symbolic ceremony in Crete."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    "author": "Wedded Wonderland",
+    "status": "draft",
+    "verify_items": [],
+    "needs_signoff": [],
+    "draft_note": "DRAFT ONLY. A human clicks Publish; no agent publishes or schedules this post.\n\n1. [[VERIFY]] items in the copy: none.\n\n2. Nic sign-off prices: none. The post prints no prices or amounts. Some venues publish prices or money terms in their brochures (for example Abaton and Elounda SA), but none were used; any price added later needs Nic's sign-off and is shown From AUD.\n\n3. Image slots needed (6): featured, package-types, inclusions, ceremony-types, compare-quotes, australian-angle. No licensed or permissioned image yet. Venue slots: the venue's own media kit with written permission or licensed stock, and only a venue whose own package the article describes; never AI, competitor or search-result images. compare-quotes and australian-angle may use an AI still life only with the person's approval, captioned 'Illustrative image'.\n\n4. Before publishing: confirm the byline, check that every internal link is live, and publish any linked post still in draft (crete-wedding-venues, wedding-in-crete, greece-wedding-packages, greece-wedding-packages-all-inclusive, greek-wedding-traditions) first or together. The at-a-glance table should stack as cards on mobile if the CMS allows. See booking-checklist.md for package details to confirm in writing with each venue (Out of the Blue brochure is the 2024 edition; Minoa Palace page dates from 2019)."
+  }
+}

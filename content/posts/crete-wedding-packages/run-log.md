@@ -8,3 +8,4 @@
 05:02 07b panel: revise (enquire 2.6), 4 must-fix + 2 should-fix + 9 consider; business details deferred. One final pass.
 05:04 08 final done: ~4,280 words, 0 VERIFY, at-a-glance table added, scan clean except the all-inclusive URL slug, no amounts.
 05:06 8b pass_with_edits (10 edits: table cells, fee wording, extra links cut) and CRO (1 change, softened lead-in) applied; 4 UTMs once each.
+- 05:08 11-13 package, booking checklist, run report, backlinks, link map, calendar row 50, docx.
