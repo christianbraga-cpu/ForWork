@@ -1,0 +1,102 @@
+{
+  "agent": "planner-sme",
+  "task_id": "rhodes-wedding-venues",
+  "stage": "03",
+  "status": "complete",
+  "round": 1,
+  "inputs_used": [
+    "Apify web-fetch 2026-11-12 (live): https://www.lindosroyal.gr/weddings/ (redirected to https://lindosroyal.gr/weddings-honeymoon/)",
+    "Apify web-search 2026-11-12 (one search, used only to locate official sites; no facts taken from results)"
+  ],
+  "payload": {
+    "facts": [
+      {
+        "fact_id": "fact_800",
+        "claim": "Lindos Royal Resort's own home page describes a 'Beautiful Beachfront Location Perfectly Positioned for Exploring the Island', says the resort suits 'families and couples who wish to enjoy Lindos in a laid-back and welcoming environment', and introduces its area as 'The Captivating Charm of Southern Rhodes'.",
+        "source": "https://lindosroyal.gr/",
+        "source_type": "official_venue",
+        "checked": "2026-11-12",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_801",
+        "claim": "Lindos Royal Resort's home page describes rooms and suites 'within a Mediterranean garden paradise with endless views to the blue horizon', and lists an all-inclusive concept among its reasons to stay. It publishes no wedding capacity, ceremony locations or exclusive-use terms on that page.",
+        "source": "https://lindosroyal.gr/",
+        "source_type": "official_venue",
+        "checked": "2026-11-12",
+        "is_price": false
+      }
+    ],
+    "insider_details": [
+      {
+        "detail": "Lindos Royal publishes no ceremony spaces or capacities, so ask its sales team for named ceremony and reception spaces, seated and standing numbers and the room count before shortlisting it against venues that publish these.",
+        "fact_ids": [
+          "fact_701"
+        ]
+      }
+    ],
+    "quotes": [],
+    "real_weddings": [],
+    "verify_items": [
+      "[[VERIFY: Lindos Royal Resort luxury fit (star rating and location within the Lindos area) is not stated on its weddings page; hold as a reserve unless an official page confirms a luxury fit]]"
+    ],
+    "needs_signoff": [],
+    "must_include_coverage": [
+      {
+        "item": "Lindos and the south-east venues (batch G top-up)",
+        "covered_by": [
+          "fact_700",
+          "fact_701"
+        ]
+      }
+    ]
+  },
+  "verify_items": [
+    "[[VERIFY: Lindos Royal Resort luxury fit (star rating and location within the Lindos area) is not stated on its weddings page; hold as a reserve unless an official page confirms a luxury fit]]"
+  ],
+  "next_agent": [
+    "luxury-writer"
+  ],
+  "assumptions": [
+    "BOOKING CHECKLIST: Lindos Royal Resort - ceremony locations, seated and standing capacity, room count, exclusive use, music curfew, rain plan and minimum nights are not published.",
+    "RUN REPORT ONLY: Lindos Grand Resort weddings page (https://www.lindosgrand.gr/weddings/) returned an upstream fetch error (502); not qualified.",
+    "RUN REPORT ONLY: Lindos Imperial weddings page (https://www.lindosimperial.gr/weddings/) timed out; not qualified.",
+    "RUN REPORT ONLY: Mitsis Lindos Memories, https://www.mitsis.com/en/weddings/ returned 'Page not found' (Mitsis lists a Weddings & Events contact but no weddings page was read); not qualified.",
+    "RUN REPORT ONLY: Lindian Village, https://www.lindianvillage.gr/weddings/ returned only a placeholder ('Hello World!'); the search suggests it now trades as Aulus Lindos Rhodes, Curio Collection by Hilton in Kiotari, but only non-official sites surfaced; not qualified.",
+    "RUN REPORT ONLY: Rodos Princess (Kiotari) weddings page (https://www.rodosprincess.gr/weddings/) timed out; Princess Andriana and Boutique 5 were not read within the time limit; not qualified.",
+    "RUN REPORT ONLY: the single search returned no official south-east venue site to read (results were Tripadvisor, Facebook, travel and directory sites, which are not allowed sources)."
+  ],
+  "open_questions": [
+    {
+      "to": "orchestrator",
+      "question": "RUN REPORT ONLY: Lindos Grand Resort weddings page (https://www.lindosgrand.gr/weddings/) returned an upstream fetch error (502); not qualified. Lindos Imperial weddings page (https://www.lindosimperial.gr/weddings/) timed out; not qualified. Mitsis Lindos Memories, https://www.mitsis.com/en/weddings/ returned 'Page not found' (Mitsis lists a Weddings & Events contact but no weddings page was read); not qualified. Lindian Village, https://www.lindianvillage.gr/weddings/ returned only a placeholder ('Hello World!'); the search suggests it now trades as Aulus Lindos Rhodes, Curio Collection by Hilton in Kiotari, but only non-official sites surfaced; not qualified. Rodos Princess (Kiotari) weddings page (https://www.rodosprincess.gr/weddings/) timed out; Princess Andriana and Boutique 5 were not read within the time limit; not qualified. the single search returned no official south-east venue site to read (results were Tripadvisor, Facebook, travel and directory sites, which are not allowed sources). Lindos Royal qualifies on its own weddings page but its luxury fit is unconfirmed, so hold it as a reserve.",
+      "blocking": false
+    }
+  ],
+  "self_qa": {
+    "checks": [
+      {
+        "check": "Every fact has a source and date",
+        "pass": true
+      },
+      {
+        "check": "No price without a source; all prices in needs_signoff",
+        "pass": true,
+        "note": "No prices recorded."
+      },
+      {
+        "check": "Every must-include covered or marked [[VERIFY]]",
+        "pass": true
+      },
+      {
+        "check": "No invented quotes, statistics or real weddings",
+        "pass": true
+      }
+    ],
+    "confidence": 0.5
+  },
+  "tools_used": [
+    "mcp__Apify__apify--web-fetch",
+    "mcp__Apify__apify--web-search"
+  ]
+}
