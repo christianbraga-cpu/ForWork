@@ -1,0 +1,705 @@
+{
+  "agent": "planner-sme",
+  "task_id": "crete-wedding-packages",
+  "stage": "03",
+  "status": "complete",
+  "round": 1,
+  "inputs_used": [
+    "CLAUDE.md",
+    "content/posts/crete-wedding-packages/00-input.json",
+    "content-system/schemas/03-source-pack.schema.json",
+    "content/posts/greece-wedding-packages-all-inclusive/03-source-pack.json",
+    "content/posts/greece-wedding-packages-all-inclusive/03-source-pack.json (same sources and read dates). Mapping: fact_01->fact_500, fact_02->fact_501, fact_03->fact_502, fact_04->fact_503, fact_05->fact_504, fact_06->fact_505, fact_07->fact_506, fact_08->fact_507, fact_09->fact_508, fact_10->fact_509, fact_11->fact_510, fact_12->fact_511, fact_13->fact_512, fact_14->fact_513, fact_15->fact_514, fact_16->fact_515, fact_17->fact_516, fact_18->fact_517, fact_19->fact_518, fact_20->fact_519, fact_21->fact_520, fact_22->fact_521, fact_23->fact_522, fact_24->fact_523, fact_25->fact_524, fact_26->fact_525, fact_27->fact_526, fact_28->fact_527, fact_29->fact_528, fact_30->fact_529, fact_31->fact_530, fact_32->fact_531, fact_33->fact_532, fact_34->fact_533, fact_35->fact_534, fact_36->fact_535, fact_700->fact_536, fact_701->fact_537, fact_702->fact_538, fact_703->fact_539, fact_704->fact_540, fact_705->fact_541, fact_706->fact_542, fact_707->fact_543"
+  ],
+  "self_qa": {
+    "checks": [
+      {
+        "check": "Every fact has a source and date",
+        "pass": true
+      },
+      {
+        "check": "No price figures recorded; money terms flagged in needs_signoff",
+        "pass": true
+      },
+      {
+        "check": "Every must-include for this batch covered",
+        "pass": true
+      },
+      {
+        "check": "No invented quotes, statistics or real weddings",
+        "pass": true
+      }
+    ],
+    "confidence": 0.6
+  },
+  "open_questions": [
+    {
+      "to": "orchestrator",
+      "blocking": false,
+      "question": "RUN REPORT ONLY: no wedding facts from Daios Cove (URL is a conferences page; only 'flowers, fireworks on request'), Istron Bay (/wedding/ page is placeholder text about Skiathos and Hotel Punta, not usable), Lyrarakis venue (domain is parked on Hostinger) or Kapsaliana (events page is corporate only; fact_123 records that). Minoa Palace, Elounda Mare and Porto Elounda link brochures that were not read (one-round limit). Out of the Blue transfer inclusions omitted per brief."
+    },
+    {
+      "to": "orchestrator",
+      "blocking": false,
+      "question": "RUN REPORT ONLY: Out of the Blue brochure document requirements (fact_112) are the venue's statement only; legal copy must come from government sources. Avra Imperial 680 capacity (fact_117) is a hall capacity, not a wedding minimum."
+    }
+  ],
+  "assumptions": [
+    "BOOKING CHECKLIST: St. Nicolas Bay: ceremony fee, guest minimums, curfew and rain plan not published.",
+    "BOOKING CHECKLIST: Out of the Blue: reception minimums, music curfew and weather plan not published.",
+    "BOOKING CHECKLIST: Minoa Palace: minimum nights, guest minimums and curfew not published.",
+    "BOOKING CHECKLIST: Avra Imperial: package contents, minimums and curfew not published.",
+    "BOOKING CHECKLIST: Porto Elounda / Elounda Mare: package contents sit in the shared Elounda brochure; curfew and minimums not published on the pages.",
+    "BOOKING CHECKLIST: Minos Beach Art Hotel / Minos Palace: no wedding inclusions published; all terms on request.",
+    "BOOKING CHECKLIST: Ikos Aria: which wedding costs sit inside the all-inclusive stay and which are charged on top; ceremony spots; guest numbers beyond the 30 accommodated; reception options."
+  ],
+  "verify_items": [
+    "[[VERIFY: Out of the Blue packages brochure is the 2024 edition; confirm the same Civil, Orthodox and Symbolic inclusions apply for 2027 dates]]",
+    "[[VERIFY: Minoa Palace weddings page was last modified 2019; confirm the listed package inclusions and complimentary cake are current]]"
+  ],
+  "next_agent": [
+    "luxury-writer"
+  ],
+  "tools_used": [
+    "mcp__Apify__apify--web-fetch"
+  ],
+  "payload": {
+    "facts": [
+      {
+        "fact_id": "fact_100",
+        "claim": "St. Nicolas Bay Resort Hotel & Villas (Agios Nikolaos, Crete) offers wedding ceremonies on the deck of its beachside chapel; celebrations are described as tailor-made, with a guest service team for couples' requests.",
+        "source": "https://www.stnicolasbay.gr/events/weddings/",
+        "source_type": "official_venue",
+        "checked": "2026-11-12",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_101",
+        "claim": "St. Nicolas Bay lists complimentary honeymoon amenities: unlimited use of sauna, steam bath and spa heated pool during the stay, upgraded accommodation subject to availability, and a guaranteed upgrade to the Honeymoon Private Pool Suite for the wedding night with floral decoration and a Champagne bar.",
+        "source": "https://www.stnicolasbay.gr/events/weddings/",
+        "source_type": "official_venue",
+        "checked": "2026-11-12",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_102",
+        "claim": "St. Nicolas Bay lists complimentary wedding amenities: a massage and aromatherapy for two at the Poseidon Spa Couples Suite, honeymoon room service breakfast and Champagne throughout the stay, and a four-course candlelit dinner at Minotaure Restaurant (beverages excluded).",
+        "source": "https://www.stnicolasbay.gr/events/weddings/",
+        "source_type": "official_venue",
+        "checked": "2026-11-12",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_103",
+        "claim": "St. Nicolas Bay says celebrations can be held in the resort's restaurants and bars, with culinary options, music, a professional photographer or fireworks arranged on request, and flowers and table decorations by the resort's florist; it publishes no named package and asks couples to request a detailed quotation for the ceremony and optional amenities.",
+        "source": "https://www.stnicolasbay.gr/events/weddings/",
+        "source_type": "official_venue",
+        "checked": "2026-11-12",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_104",
+        "claim": "Out of the Blue Resort & Spa (Aghia Pelaghia, Heraklion, Crete) publishes a Wedding Packages brochure (2024 edition) with three packages: Civil Wedding Package, Orthodox Wedding Package and Symbolic Wedding Package. Its weddings page links this brochure as 'detailed packages'.",
+        "source": "https://www.outoftheblueresort.com/wp-content/uploads/2024/05/Wedding_Packages_2024-Out-Of-The-Blue-Resort-Spa-new.pdf",
+        "source_type": "official_venue",
+        "checked": "2026-11-12",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_105",
+        "claim": "Out of the Blue Civil Wedding Package includes a welcome drink and sparkling wine, flowers and Greek desserts in the room on arrival, bride's bouquet and groom's boutonniere (olive branches and seasonal white flowers), two witnesses (optional), rice and petal baskets, a wedding cake, traditional koufeta (sugared almonds), sparkling wine on the wedding night and a sparkling wine breakfast in the room the morning after.",
+        "source": "https://www.outoftheblueresort.com/wp-content/uploads/2024/05/Wedding_Packages_2024-Out-Of-The-Blue-Resort-Spa-new.pdf",
+        "source_type": "official_venue",
+        "checked": "2026-11-12",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_106",
+        "claim": "Out of the Blue Civil Wedding Package also includes, as the resort's offer, documentation assistance and settlement of legal costs and associated fees, newspaper announcement, marriage licence, supervision and coordination fees, the Heraklion Mayor or Vice-Mayor, preparation of local documents and registry office fees.",
+        "source": "https://www.outoftheblueresort.com/wp-content/uploads/2024/05/Wedding_Packages_2024-Out-Of-The-Blue-Resort-Spa-new.pdf",
+        "source_type": "official_venue",
+        "checked": "2026-11-12",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_107",
+        "claim": "Out of the Blue Orthodox Wedding Package includes booking of the resort's private chapel of St. Athanasios, floral decoration of the chapel entrance and two floral and candle arrangements on pedestals, a ceremony table for the priest's items with an olive-branch wedding wreath, two Greek Orthodox witnesses (optional), Mavrodafni red wine during the ceremony, koufeta, a wedding cake, rice and petal baskets, a petal-decorated bed and sparkling wine on the wedding night, and a sparkling wine breakfast the next morning.",
+        "source": "https://www.outoftheblueresort.com/wp-content/uploads/2024/05/Wedding_Packages_2024-Out-Of-The-Blue-Resort-Spa-new.pdf",
+        "source_type": "official_venue",
+        "checked": "2026-11-12",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_108",
+        "claim": "Out of the Blue Orthodox Wedding Package also includes, as the resort's offer, documentation assistance and settlement of legal costs and fees, newspaper announcement, marriage licence, supervision and coordination fees, the Orthodox priest and assistant, local document preparation and registry office fees.",
+        "source": "https://www.outoftheblueresort.com/wp-content/uploads/2024/05/Wedding_Packages_2024-Out-Of-The-Blue-Resort-Spa-new.pdf",
+        "source_type": "official_venue",
+        "checked": "2026-11-12",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_109",
+        "claim": "Out of the Blue Symbolic Wedding Package includes a ceremony venue (private hire, set up and dismantling), a ceremony table and chairs for guests, bride's bouquet and groom's boutonniere, koufeta, a wedding cake, rice and petal baskets, a welcome drink and in-room sparkling wine, flowers and desserts on arrival, and a bottle of champagne on the wedding night.",
+        "source": "https://www.outoftheblueresort.com/wp-content/uploads/2024/05/Wedding_Packages_2024-Out-Of-The-Blue-Resort-Spa-new.pdf",
+        "source_type": "official_venue",
+        "checked": "2026-11-12",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_110",
+        "claim": "Out of the Blue notes for its civil and Orthodox packages that, depending on venue selection, a set-up or private hire fee may apply; all three packages state that arch or gazebo construction is not included.",
+        "source": "https://www.outoftheblueresort.com/wp-content/uploads/2024/05/Wedding_Packages_2024-Out-Of-The-Blue-Resort-Spa-new.pdf",
+        "source_type": "official_venue",
+        "checked": "2026-11-12",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_111",
+        "claim": "Out of the Blue lists optional services at extra charge with all three packages: special rates for bachelor and hen parties before the wedding day and special rates for a wedding cocktail or reception, so the reception is quoted separately from the ceremony package.",
+        "source": "https://www.outoftheblueresort.com/wp-content/uploads/2024/05/Wedding_Packages_2024-Out-Of-The-Blue-Resort-Spa-new.pdf",
+        "source_type": "official_venue",
+        "checked": "2026-11-12",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_112",
+        "claim": "Out of the Blue's brochure says civil and Orthodox couples must supply birth certificates translated into English and Greek, a certificate of no impediment (freedom to marry, plus divorce certificates where relevant) and passport copies, translated into Greek, received at least one month before the wedding. This is the venue's own statement, not a government source.",
+        "source": "https://www.outoftheblueresort.com/wp-content/uploads/2024/05/Wedding_Packages_2024-Out-Of-The-Blue-Resort-Spa-new.pdf",
+        "source_type": "official_venue",
+        "checked": "2026-11-12",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_113",
+        "claim": "Out of the Blue's weddings page lists ceremony and event settings: the Aghios Athanasios chapel with a garden, Emelia's Secret Garden (Souda Garden) and Plateau Safran outdoor lawns, plus restaurants with indoor and outdoor areas for ceremonies and receptions; prices are not shown on the weddings page or in the packages brochure.",
+        "source": "https://www.outoftheblueresort.com/wedding/",
+        "source_type": "official_venue",
+        "checked": "2026-11-12",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_114",
+        "claim": "Minoa Palace Resort (Platanias, Chania, Crete) lists a 'Wedding package' that includes: a location for an outdoor or indoor ceremony and reception, customised menus, signature drinks and cocktails, table decoration consulting (on request), flower decoration, spa treatments, bridal hair, make-up and manicure services, and music options including a DJ or live band. A weddings brochure is linked for download.",
+        "source": "https://www.minoapalace.gr/wedding-events",
+        "source_type": "official_venue",
+        "checked": "2026-11-12",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_115",
+        "claim": "Minoa Palace says it offers newlyweds a specially decorated wedding cake free of charge, and a Newlyweds Retreat: after the wedding, local wedding sweets and champagne in a flower-adorned suite with its compliments, room service breakfast the next morning, and special room rates for the stay.",
+        "source": "https://www.minoapalace.gr/wedding-events",
+        "source_type": "official_venue",
+        "checked": "2026-11-12",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_116",
+        "claim": "Avra Imperial Hotel (Kolymvari, Chania, Crete) offers ceremonies in its private chapel of Saint Paul within the hotel grounds, with flower and candle decoration by its team, custom-made to the couple's preferences; it says it has a specialised team for organising weddings and group events. No named package is published.",
+        "source": "https://www.avraimperialhotel.gr/meetings-events/weddings-in-crete-chania/",
+        "source_type": "official_venue",
+        "checked": "2026-11-12",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_117",
+        "claim": "Avra Imperial offers two reception settings: the Maistro events hall, which it says accommodates up to 680 people, and, for a small reception, a private space by its infinity-style glass pool; menus are tailored with the Executive Chef and F&B Manager.",
+        "source": "https://www.avraimperialhotel.gr/meetings-events/weddings-in-crete-chania/",
+        "source_type": "official_venue",
+        "checked": "2026-11-12",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_118",
+        "claim": "Porto Elounda Golf & Spa Resort (Elounda, Crete) wedding services cover venues around the resorts including secluded beaches and historic sites (with advance notice), wedding planning help, flowers coordinated with preferred designers, custom menus and beverages, table styling with linens, cutlery and glassware, and wedding cakes by the in-house Pastry Chef. It says its team will assist the couple 'or your bridal consultant'.",
+        "source": "https://portoelounda.com/en/weddings/",
+        "source_type": "official_venue",
+        "checked": "2026-11-12",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_119",
+        "claim": "Porto Elounda's and Elounda Mare's weddings pages both link package details for the Elounda collection (Elounda Peninsula, Porto Elounda, Elounda Mare) and give the same events contact, so their packages sit with the shared Elounda SA brochure rather than separate named packages on each page.",
+        "source": "https://portoelounda.com/en/weddings/",
+        "source_type": "official_venue",
+        "checked": "2026-11-12",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_120",
+        "claim": "Elounda Mare Hotel (Relais & Chateaux, Elounda, Crete) weddings page lists the same services as Porto Elounda: venues including secluded beaches and historic sites, planning help, flowers with preferred designers, custom menus and beverages, table decor, and bespoke cakes by the in-house Pastry Chef. No separate package contents are given on the page.",
+        "source": "https://www.eloundamare.com/en/weddings/",
+        "source_type": "official_venue",
+        "checked": "2026-11-12",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_121",
+        "claim": "Minos Beach Art Hotel (Agios Nikolaos, Crete) says its team will craft the setting for a wedding or vow renewal at its waterfront hotel; the celebrations page publishes no package or inclusions and directs couples to contact the hotel.",
+        "source": "https://www.minosbeach.com/celebrations-and-events/",
+        "source_type": "official_venue",
+        "checked": "2026-11-12",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_122",
+        "claim": "Minos Palace Resort (Lasithi, eastern Crete) is adults-only and says its team will craft weddings and vow renewals; the celebrations page publishes no wedding package or inclusions (its 'Lovers Package' is a honeymoon offer) and states the resort is about a 50-minute drive from Heraklion Airport.",
+        "source": "https://www.minospalace.com/celebrations-and-events/",
+        "source_type": "official_venue",
+        "checked": "2026-11-12",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_123",
+        "claim": "Kapsaliana Village Hotel (Rethymno, Crete) events page covers corporate events and retreats, not weddings: the hotel accommodates up to 50 people and catering serves 70 seated or 120 finger food depending on weather and numbers. No wedding package is published.",
+        "source": "https://www.kapsalianavillage.gr/events/",
+        "source_type": "official_venue",
+        "checked": "2026-11-12",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_500",
+        "claim": "Elounda SA Hotels & Resorts (Elounda, Crete) publishes a wedding packages PDF covering civil, Greek Orthodox and symbolic ceremonies. The civil and Orthodox package is called the Lavish Wedding Package; the symbolic option is the Symbolic Ceremony / Renewal of Vows Wedding Package.",
+        "source": "https://www.eloundapeninsula.com/wp-content/uploads/2025/04/Elounda-Wedding-Packages-.pdf",
+        "source_type": "official_venue",
+        "checked": "2026-11-12",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_501",
+        "claim": "Elounda SA Lavish Wedding Package (civil and Orthodox) includes reservation of the wedding date and time, choice of ceremony venue, documentation assistance and settlement of the wedding licence in coordination with the couple and the local Municipality Office, a complimentary room upgrade and early check-in on arrival (subject to availability), complimentary use of the Six Senses Spa thalassotherapy pool and thermal suite for the couple, and a tasting of the chosen wedding menu for up to two people (beverages excluded).",
+        "source": "https://www.eloundapeninsula.com/wp-content/uploads/2025/04/Elounda-Wedding-Packages-.pdf",
+        "source_type": "official_venue",
+        "checked": "2026-11-12",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_502",
+        "claim": "Elounda SA Lavish Wedding Package, on the day: two witnesses if needed, ceremony set-up with a table and seasonal flower display, bride's bouquet and groom's boutonniere, rose petals, a separate room for the groom to change, a pre-recorded ceremony playlist, champagne in the bride's room and a bottle in the groom's room while getting ready, transfer of the couple to the ceremony spot within the hotel grounds, a short fireworks display and room decoration with flowers and petals after the ceremony.",
+        "source": "https://www.eloundapeninsula.com/wp-content/uploads/2025/04/Elounda-Wedding-Packages-.pdf",
+        "source_type": "official_venue",
+        "checked": "2026-11-12",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_503",
+        "claim": "Elounda SA Lavish Wedding Package, after the day: champagne breakfast in bed, a round-trip transfer to the Registry Office for the registration and certificate with the help of a hotel executive, and late check-out on departure subject to availability.",
+        "source": "https://www.eloundapeninsula.com/wp-content/uploads/2025/04/Elounda-Wedding-Packages-.pdf",
+        "source_type": "official_venue",
+        "checked": "2026-11-12",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_504",
+        "claim": "Elounda SA states the package rate does not include the Municipal fee (civil) or the Metropolis fee (Orthodox); these are charged on top and are subject to change. Package prices are published in the PDF.",
+        "source": "https://www.eloundapeninsula.com/wp-content/uploads/2025/04/Elounda-Wedding-Packages-.pdf",
+        "source_type": "official_venue",
+        "checked": "2026-11-12",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_505",
+        "claim": "Elounda SA requirement: every package is valid only if the couple stays a minimum of three nights in one of the group's hotels.",
+        "source": "https://www.eloundapeninsula.com/wp-content/uploads/2025/04/Elounda-Wedding-Packages-.pdf",
+        "source_type": "official_venue",
+        "checked": "2026-11-12",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_506",
+        "claim": "Elounda SA Symbolic Ceremony / Renewal of Vows package includes reservation of the date and time, bridal bouquet and boutonniere, two witnesses if needed and the hotel's official representative at the ceremony, a bottle of sparkling wine and a single-tier wedding cake for the couple, room decoration with flowers and petals, spa thermal suite use for the couple and breakfast in bed the next day. The PDF states symbolic weddings and vow renewals are not legally recognised in Greece.",
+        "source": "https://www.eloundapeninsula.com/wp-content/uploads/2025/04/Elounda-Wedding-Packages-.pdf",
+        "source_type": "official_venue",
+        "checked": "2026-11-12",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_507",
+        "claim": "Elounda SA's PDF lists the civil wedding documents it asks couples to supply (passports, birth certificates, certificate of no impediment, divorce or death certificates where relevant, two witnesses), each with an apostille and Greek translation, sent for approval at least four weeks before the wedding, and says the marriage must be registered at the Registry Office in Aghios Nikolaos within 40 days. This is the venue's own guidance, not a government source.",
+        "source": "https://www.eloundapeninsula.com/wp-content/uploads/2025/04/Elounda-Wedding-Packages-.pdf",
+        "source_type": "official_venue",
+        "checked": "2026-11-12",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_508",
+        "claim": "Elounda SA lists reception food, beverage packages, open bars, dinner menus, entertainment and boat transfer as separate sections outside the ceremony packages (wedding reception, wedding dinner, beverages and additional services pages).",
+        "source": "https://www.eloundapeninsula.com/wp-content/uploads/2025/04/Elounda-Wedding-Packages-.pdf",
+        "source_type": "official_venue",
+        "checked": "2026-11-12",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_509",
+        "claim": "Nana Princess (Chersonissos, Crete) offers civil weddings on its private sandy beach, Greek Orthodox weddings in the private Chapel of St George on the hotel grounds, symbolic weddings officiated by a Nana Princess event coordinator, and vow renewals.",
+        "source": "https://www.nanaprincess.gr/pages/weddings",
+        "source_type": "official_venue",
+        "checked": "2026-11-12",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_510",
+        "claim": "Nana Princess presents three wedding packages, Deluxe Dream, Ultimate Passion and Essential Elegance, and offers a bespoke package designed to the couple's requirements.",
+        "source": "https://www.nanaprincess.gr/pages/weddings",
+        "source_type": "official_venue",
+        "checked": "2026-11-12",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_511",
+        "claim": "Nana Princess Deluxe Dream highlights: welcome drinks (homemade lemonade and berry water), champagne and chocolate strawberries in the honeymoon suite, and an event coordinator present throughout the stay.",
+        "source": "https://www.nanaprincess.gr/pages/weddings",
+        "source_type": "official_venue",
+        "checked": "2026-11-12",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_512",
+        "claim": "Nana Princess Ultimate Passion highlights: a pre-wedding dinner tasting dishes from the wedding menu, a 30-minute massage the day before, and the bride escorted to the venue in a flower-decorated club car. Essential Elegance highlights: a private brunch at Eternal Blue for the couple and guests, an hour in the Royal Wellness Club private suite, and a farewell dinner for the couple.",
+        "source": "https://www.nanaprincess.gr/pages/weddings",
+        "source_type": "official_venue",
+        "checked": "2026-11-12",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_513",
+        "claim": "Nana Princess symbolic weddings include a choice of decoration schemes with fresh flower arrangements, exclusive use of the chosen room or venue, the flower-decorated club car for the bride, and rose petals and rice for guests.",
+        "source": "https://www.nanaprincess.gr/pages/weddings",
+        "source_type": "official_venue",
+        "checked": "2026-11-12",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_514",
+        "claim": "Nana Princess reception options: the Eternal Blue restaurant terrace, the poolside Meat-In-Point restaurant seating up to 120 guests, or the Conference Hall for a fully covered reception; served dinner or buffet.",
+        "source": "https://www.nanaprincess.gr/pages/weddings",
+        "source_type": "official_venue",
+        "checked": "2026-11-12",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_515",
+        "claim": "Nana Princess says a dedicated event coordinator guides couples through local registry office requirements and other formalities after the date is booked. The page publishes a price for the vow renewal; drinks are not included in that renewal dinner.",
+        "source": "https://www.nanaprincess.gr/pages/weddings",
+        "source_type": "official_venue",
+        "checked": "2026-11-12",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_516",
+        "claim": "Nana Princess recommends evening ceremonies because high-summer temperatures can reach 35 degrees C: 16:00 to 18:00 in April, May and October; 18:00 to 20:00 in June and September; 18:30 to 20:00 in July and August.",
+        "source": "https://www.nanaprincess.gr/pages/weddings",
+        "source_type": "official_venue",
+        "checked": "2026-11-12",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_517",
+        "claim": "Abaton Island Resort & Spa (Crete) invites couples to choose from its wedding packages or create their own, and lists customisable elements: ceremony, music and entertainment, flowers, additional decor, beauty services, cocktail bar, wedding gala dinner, additional services and planning, photography and video.",
+        "source": "https://www.abaton.gr/meet/weddings",
+        "source_type": "official_venue",
+        "checked": "2026-11-12",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_518",
+        "claim": "Abaton 2025-2026 wedding brochure 'The Basics' lists ceremony, coordination services, photography, videography, Chiavari chairs, chair covers, table set-up decoration, bridal party flowers and a wedding arch, with a wedding coordinator preparing the details.",
+        "source": "https://abatonimages-bcb3.kxcdn.com/wedding_brochure_-2025-2026.pdf",
+        "source_type": "official_venue",
+        "checked": "2026-11-12",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_519",
+        "claim": "Abaton brochure lists additional services with indicative costs published (hair, make-up, spa, buttonholes, wedding cake, DJ, fireworks, centrepieces, rose petals, photographer, video), and publishes a venue fee for each venue (Elemes, Bony Fish, WOW, F-Zin, Ladies & Gentlemen, Buddha Bar, Open Air Theatre, Ballroom, Beach); the beach set-up fee is to be confirmed.",
+        "source": "https://abatonimages-bcb3.kxcdn.com/wedding_brochure_-2025-2026.pdf",
+        "source_type": "official_venue",
+        "checked": "2026-11-12",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_520",
+        "claim": "Abaton brochure terms: packages are subject to availability and do not include accommodation; packages are valid with a minimum accommodation booking of 10 rooms for a minimum of 2 nights (depending on guest numbers) and a minimum wedding reception of 20 guests, maximum capacity 300 guests; packages are complete and items are not interchangeable.",
+        "source": "https://abatonimages-bcb3.kxcdn.com/wedding_brochure_-2025-2026.pdf",
+        "source_type": "official_venue",
+        "checked": "2026-11-12",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_521",
+        "claim": "Abaton brochure publishes gala dinner buffet and set menus, cocktail reception menus, beverage packages and open bars, priced per person with minimum numbers for some; food and drink are booked separately from the ceremony basics.",
+        "source": "https://abatonimages-bcb3.kxcdn.com/wedding_brochure_-2025-2026.pdf",
+        "source_type": "official_venue",
+        "checked": "2026-11-12",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_522",
+        "claim": "Euphoria Resort offers three wedding options, Elxi, Pathos and Eros, for an informal wedding or renewal of vows, with a certificate of informal marriage from the hotel. The ceremony has two witnesses and the hotel's official representative.",
+        "source": "https://www.euphoriaresort.gr/weddings/",
+        "source_type": "official_venue",
+        "checked": "2026-11-12",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_523",
+        "claim": "Euphoria Elxi includes choice of hotel venue (beach or poolside), decoration with lanterns, petals, covered chairs and a table floral display, bouquet and buttonhole, petals and rice, sparkling wine and a single-tier cake with sugared almonds for up to 10 guests, pre-recorded ceremony music, 10 printed photographs from the hotel photographer and a wedding gift.",
+        "source": "https://www.euphoriaresort.gr/weddings/",
+        "source_type": "official_venue",
+        "checked": "2026-11-12",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_524",
+        "claim": "Euphoria Pathos adds sparkling wine and cake for up to 20 guests, a manicure and pedicure for the bride, a stocked minibar, a candlelit dinner for the couple with beverages, an anniversary dinner on return stays and the couple's own event coordinator.",
+        "source": "https://www.euphoriaresort.gr/weddings/",
+        "source_type": "official_venue",
+        "checked": "2026-11-12",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_525",
+        "claim": "Euphoria Eros adds canapes and a two-tier cake for up to 30 guests, a jazz musician at the ceremony, 20 photographs, a couple's massage, a four-course beach dinner with live music, champagne breakfast in bed, private check-in with welcome drinks for up to 30 guests, late check-out and the couple's own event coordinator.",
+        "source": "https://www.euphoriaresort.gr/weddings/",
+        "source_type": "official_venue",
+        "checked": "2026-11-12",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_526",
+        "claim": "Euphoria states its wedding options are complete packages whose items are not interchangeable, with no refund or alternative for unused services; packages can be customised at extra cost. Prices are published. Buffet, seated and cocktail receptions, beverage packages, open bars, custom cakes and entertainment are quoted separately on request.",
+        "source": "https://www.euphoriaresort.gr/weddings/",
+        "source_type": "official_venue",
+        "checked": "2026-11-12",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_527",
+        "claim": "Euphoria offers its honeymoon package free to couples who book any wedding package and stay at the hotel (welcome drink, sparkling wine and fruit, bed decoration, in-room breakfast, room upgrade on availability).",
+        "source": "https://www.euphoriaresort.gr/weddings/",
+        "source_type": "official_venue",
+        "checked": "2026-11-12",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_528",
+        "claim": "Grecotel Amirandes (near Heraklion, Crete) hosts weddings for up to 300 guests, with vows at its VIP Beach or chapel, a choice of dining venues and dedicated wedding specialists; it is 15 minutes from Heraklion International Airport. Its event page publishes no named wedding package; 'All-Inclusive' appears only as a hotel meal plan option.",
+        "source": "https://www.grecotel.com/amirandes/events-meetings-crete/",
+        "source_type": "official_venue",
+        "checked": "2026-11-12",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_529",
+        "claim": "Melenos Art Boutique Hotel (Lindos, Rhodes) hosts civil, symbolic and traditional Orthodox weddings and publishes no named package; its coordinators provide a schedule and costing sheet, organise tasks, outline a budget and build the itinerary.",
+        "source": "https://melenoslindos.com/lindos-weddings.php",
+        "source_type": "official_venue",
+        "checked": "2026-11-12",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_530",
+        "claim": "Melenos says its wedding planner takes care of the legal documentation, including filing documents, marriage licence registration, and government and administrative fees, and official witnesses can be provided on request.",
+        "source": "https://melenoslindos.com/lindos-weddings.php",
+        "source_type": "official_venue",
+        "checked": "2026-11-12",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_531",
+        "claim": "Melenos suggests reserving the entire hotel for a minimum of three nights; extra guests can stay at Melenos Apartments and Studios, about a 10-minute walk away in the village.",
+        "source": "https://melenoslindos.com/lindos-weddings.php",
+        "source_type": "official_venue",
+        "checked": "2026-11-12",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_532",
+        "claim": "Melenos coordinators help with decor (garden flowers or a local florist; bouquets, corsages, centrepieces) and the reception menu; rehearsal dinner, welcome cocktail party, photographer and videographer, hair and make-up, private boat trip, live music and a candlelit dinner can be organised as additional services.",
+        "source": "https://melenoslindos.com/lindos-weddings.php",
+        "source_type": "official_venue",
+        "checked": "2026-11-12",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_533",
+        "claim": "Atrium Prestige (south Rhodes) lists wedding venues including an amphitheatre near the beach, the Tsambika private chapel, Lachania private beach, Golden Dome, Panoramic Terrace, Thallassa restaurant and Kalithea main bar; it publishes no named wedding package.",
+        "source": "https://www.atriumhotels.gr/hotels/atrium-prestige/weddings/",
+        "source_type": "official_venue",
+        "checked": "2026-11-12",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_534",
+        "claim": "Atrium Prestige's wedding specialist assists civil-ceremony couples with all arrangements to obtain the marriage licence. Listed services include a bridal villa suite, decoration and flowers, bridal make-up and hair, photography, bouquet, wedding cake, reception with menu tasting, DJ or live music and fireworks; symbolic ceremonies, elopements and vow renewals are offered.",
+        "source": "https://www.atriumhotels.gr/hotels/atrium-prestige/weddings/",
+        "source_type": "official_venue",
+        "checked": "2026-11-12",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_535",
+        "claim": "Atrium Prestige gives a complimentary in-room welcome (fruit or sweets and sparkling wine) and a complimentary spa hydrobath for stays of 5 nights or more. Its 'Premium All-Inclusive' is a holiday offer, not a wedding package.",
+        "source": "https://www.atriumhotels.gr/hotels/atrium-prestige/weddings/",
+        "source_type": "official_venue",
+        "checked": "2026-11-12",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_536",
+        "claim": "Euphoria Resort is a five-star, Ultra All Inclusive family beach resort on the seashore of Kolymvari, about 14 miles west of Chania, with 344 rooms and suites (including a 70-key Signature Collection) on a 65,000 sq m sea-front property, a 3,500 sq m pool area and a 1,500 sq m spa. A member of EM Resorts (the same group as Minoa Palace).",
+        "source": "https://www.euphoriaresort.gr/",
+        "source_type": "official_venue",
+        "checked": "2026-11-10",
+        "is_price": false,
+        "conflicts": "Same homepage gives the drive from Chania International Airport (CHQ) as 30 minutes (meta description) and 40 minutes (body text). [[VERIFY: Euphoria Resort transfer time from Chania Airport, 30 or 40 minutes]]"
+      },
+      {
+        "fact_id": "fact_537",
+        "claim": "Euphoria Resort (Kolymvari, Chania, Crete) offers three wedding options (Elxi, Pathos, Eros) for 'an informal wedding or renewal of vows'; each includes a choice of hotel venues (beaches and poolside), venue decoration (lanterns, petals, covered chairs, floral table display), bouquet and buttonhole, two witnesses and the hotel's official representative, 'a certificate of informal marriage from the hotel', petals and rice, sparkling wine and a wedding cake after the ceremony (for up to 10, 20 or 30 guests by option), ceremony music (pre-recorded, or a jazz musician in Eros), photographs from the hotel photographer and a gift. Pathos and Eros add spa treatments, dinners and 'your own event coordinator'. Re-checked live; restates crete fact_400/401.",
+        "source": "https://www.euphoriaresort.gr/weddings/",
+        "source_type": "official_venue",
+        "checked": "2026-11-11",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_538",
+        "claim": "As at November 2026, Smartraveller's 'Getting married overseas' page (last updated 18/08/2026, read live 11 November 2026, unchanged from paros-wedding-venues fact_302) says some countries ask you to prove you are free to marry, most commonly with a Certificate of No Impediment to Marriage (CNI) and certificates from a registry of births, deaths and marriages (a statement of no record of a previous marriage, a Single Status certificate or a No Record Result certificate); local authorities may also ask for divorce papers, a deceased spouse's death certificate, and your original birth certificate and passport. DFAT can issue a CNI in Australia, but some local authorities only accept CNIs issued in their country, so ask the destination's embassy or consulate whether you need a CNI, whether you can get it in Australia, and whether it also needs an authentication or apostille. It says each country decides what proof it accepts and there may be different regional and national laws. The Wedded Advisor confirms current requirements.",
+        "source": "https://www.smartraveller.gov.au/planning-trip/advice-your-planned-activities/getting-married-overseas",
+        "source_type": "government",
+        "checked": "2026-11-11",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_539",
+        "claim": "As at November 2026, Smartraveller (read live 11 November 2026, unchanged from paros-wedding-venues fact_303) says you cannot register an overseas marriage in Australia, but in most cases it is legally recognised if, when it took place, it was valid under the law of the country where it happened and would have been valid under Australian law had it occurred in Australia. A foreign marriage certificate is usually accepted as proof of the marriage but may not work as proof of a name change (check with your local registry of births, deaths and marriages), and Smartraveller suggests talking to a lawyer to confirm the certificate is valid in Australia. The Wedded Advisor confirms current requirements.",
+        "source": "https://www.smartraveller.gov.au/planning-trip/advice-your-planned-activities/getting-married-overseas",
+        "source_type": "government",
+        "checked": "2026-11-11",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_540",
+        "claim": "As at November 2026, Smartraveller (read live 11 November 2026) says Australia does not recognise overseas marriages where one or both people are already married to someone else, not old enough to marry, too closely related, or forced to marry.",
+        "source": "https://www.smartraveller.gov.au/planning-trip/advice-your-planned-activities/getting-married-overseas",
+        "source_type": "government",
+        "checked": "2026-11-11",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_541",
+        "claim": "As at November 2026, the Australian Embassy in Athens (read live 11 November 2026, unchanged from paros-wedding-venues fact_304) lists among its notarial services witnessing application forms for, and issuing, Certificates of No Impediment (CNI), witnessing notices of intended marriage, and legalisation of signatures and/or seals by authentication or apostille. An appointment is needed for all notarial services (Monday to Friday, 9:00am to 12:30pm), though apostille and CNI documents can be submitted by post; apostilled documents and CNIs are available for collection within two working days unless same-day collection is arranged in advance, or can be returned by mail. The Embassy gives no legal advice, does not witness signatures on overseas documents, honorary consuls cannot provide notarial services, and a fee applies (amounts not recorded). The Wedded Advisor confirms current requirements.",
+        "source": "https://greece.embassy.gov.au/athn/notarial.html",
+        "source_type": "government",
+        "checked": "2026-11-11",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_542",
+        "claim": "As at November 2026, Smartraveller's overall advice level for Greece is 'Exercise normal safety precautions' (page updated 30 September 2026, shown as still current when read live 11 November 2026 UTC). It notes Greece is in an active seismic zone with earthquakes and volcanic activity, including near Santorini, and that wildfires occur in the extended summer period, June to September.",
+        "source": "https://www.smartraveller.gov.au/destinations/europe/greece",
+        "source_type": "government",
+        "checked": "2026-11-11",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_543",
+        "claim": "As at November 2026, Smartraveller's Greece advice says Greece is in the Schengen area; Australians can make short trips without a visa for up to 90 days in any 180-day period, and on arrival for a short stay on an Australian passport you register fingerprints and a photo under the European Entry/Exit System (EES), which is free and needs no action before arrival, though it may cause delays at borders. Depending on why you are travelling and how long you stay you may need a visa, and entry conditions can change at short notice, so contact the nearest Greek embassy or consulate. The Wedded Advisor confirms current requirements.",
+        "source": "https://www.smartraveller.gov.au/destinations/europe/greece",
+        "source_type": "government",
+        "checked": "2026-11-11",
+        "is_price": false
+      }
+    ],
+    "insider_details": [
+      {
+        "detail": "Out of the Blue sells the ceremony and the reception separately: its civil, Orthodox and symbolic packages cover the ceremony, cake and in-room touches, while the cocktail or reception is quoted at 'special rates' on top, so ask for both quotes together.",
+        "fact_ids": [
+          "fact_105",
+          "fact_110",
+          "fact_111"
+        ]
+      },
+      {
+        "detail": "Check the structure line by line: Out of the Blue says arch or gazebo construction is not in any package and a private hire fee may apply depending on the setting you choose.",
+        "fact_ids": [
+          "fact_110"
+        ]
+      },
+      {
+        "detail": "Several Crete resorts publish services rather than packages (St. Nicolas Bay, Avra Imperial, Minos Beach, Minos Palace, Porto Elounda, Elounda Mare), so the 'package' is whatever goes into the written quote; list the inclusions you expect before you ask.",
+        "fact_ids": [
+          "fact_103",
+          "fact_116",
+          "fact_121",
+          "fact_122",
+          "fact_118",
+          "fact_120"
+        ]
+      },
+      {
+        "detail": "Honeymoon perks are often the 'included' part: St. Nicolas Bay and Minoa Palace both list suite upgrades, in-room champagne and breakfasts as complimentary, which is separate from what the ceremony and dinner cost.",
+        "fact_ids": [
+          "fact_101",
+          "fact_102",
+          "fact_115"
+        ]
+      }
+    ],
+    "quotes": [],
+    "real_weddings": [],
+    "verify_items": [
+      "[[VERIFY: Out of the Blue packages brochure is the 2024 edition; confirm the same Civil, Orthodox and Symbolic inclusions apply for 2027 dates]]",
+      "[[VERIFY: Minoa Palace weddings page was last modified 2019; confirm the listed package inclusions and complimentary cake are current]]"
+    ],
+    "needs_signoff": [
+      "No prices recorded from this batch. None of the pages read showed prices; Out of the Blue's brochure lists items 'upon extra charge' without figures. Any figure would need Nic's sign-off."
+    ],
+    "must_include_coverage": [
+      {
+        "item": "What Crete packages include (by venue), batch cp_a",
+        "covered_by": [
+          "fact_101",
+          "fact_102",
+          "fact_105",
+          "fact_106",
+          "fact_107",
+          "fact_108",
+          "fact_109",
+          "fact_114",
+          "fact_115"
+        ]
+      },
+      {
+        "item": "What's left out or charged on top, batch cp_a",
+        "covered_by": [
+          "fact_102",
+          "fact_110",
+          "fact_111"
+        ]
+      },
+      {
+        "item": "Ceremony type inside a package, batch cp_a",
+        "covered_by": [
+          "fact_104",
+          "fact_105",
+          "fact_107",
+          "fact_109",
+          "fact_100",
+          "fact_116"
+        ]
+      },
+      {
+        "item": "Venue package vs services quoted to order, batch cp_a",
+        "covered_by": [
+          "fact_103",
+          "fact_116",
+          "fact_118",
+          "fact_119",
+          "fact_121",
+          "fact_122"
+        ]
+      }
+    ]
+  }
+}
