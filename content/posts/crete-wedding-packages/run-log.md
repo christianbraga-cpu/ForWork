@@ -3,3 +3,4 @@
 04:49 01 brief done: packages look alike but differ on paper; fee vs package vs planner; quote checklist.
 04:51 03 batch done: 24 facts; Out of the Blue (Civil, Orthodox, Symbolic packages; extras on top), Minoa Palace (wedding package), St Nicolas Bay (complimentary amenities; ceremony on request), Avra Imperial (chapel; hall up to 680), Porto Elounda and Elounda Mare (services), Minos Beach, Minos Palace, Kapsaliana (no package); Istron Bay and Lyrarakis pages unusable. Packs merged.
 04:52 02 SEO done: AU 10 / US 20 (KD 0); no site ranking; Greece packages draft lists the term as secondary (split: this guide owns it); meta 55/143. report.md saved by orchestrator.
+04:56 05 draft done: ~4,330 words, 1 VERIFY (Elounda in eastern Crete), scan flags only the all-inclusive guide's URL slug. Part-6 added: Elounda Peninsula 'gateway to eastern Crete' and Visit Greece east/west facts (reused) so the editor can resolve it.
