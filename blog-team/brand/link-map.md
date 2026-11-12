@@ -192,6 +192,13 @@ Note (27 Oct 2026): Firecrawl map shows the 45 proposal ideas article at
 `/45-proposal-ideas-for-every-kind-of-couple` (no `/expert-advice/`). Use that
 URL until a human confirms the other resolves.
 
+## Greece articles (WebSearch site: check, 12 Nov 2026)
+
+| URL | Title | Owns |
+|---|---|---|
+| `/a-two-day-wedding-celebration-in-greece` | A Two-Day Wedding Celebration in Greece | two day wedding greece |
+| `/13-reasons-we-all-want-to-get-married-in-santorini` | 13 Reasons We All Want to Get Married in Santorini | married in santorini |
+
 ## 9. Rings and Jewellery cluster (Firecrawl map, 27 Oct 2026)
 
 Hub: `/style-advice/celebrity-engagement-rings` (in production). Spokes:
