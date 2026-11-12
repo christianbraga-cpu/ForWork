@@ -1,3 +1,4 @@
 23:53 00 orchestrator complete input written; FAST MODE start; NEW guide (timing by month)
 23:54 04 images done: 6 placeholder slots.
 23:55 01 brief done: month-by-month April to October, station-labelled, no winning month.
+23:56 03 planner done: 37 facts; Naxos, Rodos, Heraklion, Chania full year; Kerkyra May-Oct; Smartraveller heat, wildfire June-September, ferries, dust; venue windows; Archdiocese closed dates. Gaps (omitted from copy): Athens (HNMS 503), public holidays, Easter dates, sea temperature.

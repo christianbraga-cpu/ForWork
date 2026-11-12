@@ -1,0 +1,624 @@
+{
+  "agent": "planner-sme",
+  "task_id": "best-time-to-get-married-in-greece",
+  "stage": "03",
+  "status": "complete",
+  "round": 1,
+  "inputs_used": [
+    "content/posts/best-time-to-get-married-in-greece/00-input.json (no 01-brief.json or 02-seo.json in folder; must_include derived from the title and orchestrator task)",
+    "Copied facts (origin noted in each claim) from: corfu-wedding-venues part-2, mykonos-wedding parts 1-2, paros-wedding-venues part-3, rhodes-wedding-venues part-3, wedding-in-crete (main and part-1), crete-wedding-packages part-5, greece-wedding-packages-all-inclusive part-1, santorini-or-mykonos-wedding, greek-orthodox-wedding part-3",
+    "Live round 2026-11-12 (apify web-fetch x3, one parallel round, no retries): HNMS Naxos (200, full year, used); HNMS Attica Elliniko (HTTP 503 error page, not used); gov.gr public holidays (200 but empty text, not used). Visit Greece not fetched (fast mode)."
+  ],
+  "self_qa": {
+    "checks": [
+      {
+        "check": "Every fact has a source and date",
+        "pass": true
+      },
+      {
+        "check": "No price without a source; all prices in needs_signoff",
+        "pass": true,
+        "note": "No prices recorded."
+      },
+      {
+        "check": "Every must-include covered or [[VERIFY]]",
+        "pass": true
+      },
+      {
+        "check": "No invented quotes, statistics or real weddings",
+        "pass": true
+      },
+      {
+        "check": "Every climate fact labelled with its HNMS station",
+        "pass": true
+      }
+    ],
+    "confidence": 0.75
+  },
+  "open_questions": [
+    {
+      "to": "orchestrator",
+      "question": "Athens (Elliniko) HNMS page returned 503; re-try in a later run or drop Athens figures from the article?",
+      "blocking": false
+    },
+    {
+      "to": "orchestrator",
+      "question": "Greek public holiday dates and 2027/2028 Orthodox Easter need an official Greek source (gov.gr page returned empty). Re-fetch with JS rendering in a later run?",
+      "blocking": false
+    }
+  ],
+  "assumptions": [
+    "Climate figures are long-term HNMS station averages, not forecasts; Naxos page states 'Data Period: None'.",
+    "BOOKING CHECKLIST: Angsana Corfu - confirm 2027 season dates for Vertigo Sky Bar and Oribu venues, rain plan and music curfew.",
+    "BOOKING CHECKLIST: Minos Palace - confirm wedding season dates, ceremony times and rain plan.",
+    "BOOKING CHECKLIST: Nana Princess - confirm ceremony time slots for the chosen month and rain plan.",
+    "BOOKING CHECKLIST: Santo Wines - confirm winter event availability and indoor capacity."
+  ],
+  "verify_items": [
+    "[[VERIFY: Athens climate. HNMS station page for Attica (Elliniko) returned HTTP 503 'unable to present the information' on 12 November 2026; no Athens monthly figures in this pack. Do not state Athens temperatures or rain days.]]",
+    "[[VERIFY: Greek public holidays list (fixed dates and Orthodox Easter/Whit Monday dates for 2027 and 2028). gov.gr public-holidays page returned an empty body on 12 November 2026; source from an official Greek government page before the article names holiday dates.]]",
+    "[[VERIFY: Kerkyra (Corfu) HNMS figures for November to April. Copied facts cover May to October only (rain days also give November 14.7).]]",
+    "[[VERIFY: Sea temperature by month. No HNMS station page in this pack gives sea temperature; do not state sea temperatures.]]",
+    "[[VERIFY: Nana Princess June to September ceremony time wording (see fact conflict) before quoting exact times.]]",
+    "[[VERIFY: Orthodox Easter dates for 2027 and 2028 (sets the Great Lent closed period); not sourced in this pack.]]"
+  ],
+  "tools_used": [
+    "Bash",
+    "mcp__Apify__apify--web-fetch"
+  ],
+  "next_agent": [
+    "luxury-writer"
+  ],
+  "payload": {
+    "facts": [
+      {
+        "fact_id": "fact_01",
+        "claim": "Hellenic National Meteorological Service climatic data for the Kerkyra (Corfu) station, data period 1955 to 2010: average maximum monthly temperature is 24.0°C in May, 28.2°C in June, 31.2°C in July, 31.5°C in August, 27.5°C in September and 23.2°C in October; average minimum is 13.3°C in May, 18.9°C in July, 19.3°C in August and 13.7°C in October. [Copied from content/posts/corfu-wedding-venues/03-source-pack-part-2.json#fact_207.]",
+        "source": "http://newportal.hnms.gr/emy/en/climatology/climatology_city?perifereia=Ionian%20Islands&poli=Kerkyra",
+        "source_type": "government",
+        "checked": "2026-11-11",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_02",
+        "claim": "Hellenic National Meteorological Service climatic data for Kerkyra (1955 to 2010): average monthly precipitation days are 7.7 in May, 4.8 in June, 3.3 in July, 3.3 in August, 7.4 in September and 11.4 in October (14.7 in November); average monthly rainfall is 36.5 mm in May, 15.5 mm in June, 8.7 mm in July, 21.7 mm in August, 87.8 mm in September and 140.4 mm in October. [Copied from content/posts/corfu-wedding-venues/03-source-pack-part-2.json#fact_208.]",
+        "source": "http://newportal.hnms.gr/emy/en/climatology/climatology_city?perifereia=Ionian%20Islands&poli=Kerkyra",
+        "source_type": "government",
+        "checked": "2026-11-11",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_03",
+        "claim": "Hellenic National Meteorological Service climatic data for Kerkyra (1955 to 2010): the prevailing wind is westerly in June, July and August and southerly in May, September and October; mean monthly relative humidity is about 62 percent in July and August, rising to 70.3 percent in September and 74.9 percent in October. [Copied from content/posts/corfu-wedding-venues/03-source-pack-part-2.json#fact_209.]",
+        "source": "http://newportal.hnms.gr/emy/en/climatology/climatology_city?perifereia=Ionian%20Islands&poli=Kerkyra",
+        "source_type": "government",
+        "checked": "2026-11-11",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_04",
+        "claim": "The Hellenic National Meteorological Service (HNMS/EMY) 'Climatic Data for selected stations in Greece' page, requested for Mykonos in the South Aegean and read live 11 November 2026, lists only Naxos and Rodos as stations for the South Aegean and returns no Mykonos table, so no monthly temperature, rainfall, rain-day or wind data for a Mykonos station was available from this page. [Copied from content/posts/mykonos-wedding/03-source-pack-part-1.json#fact_117.]",
+        "source": "http://oldportal.emy.gr/emy/en/climatology/climatology_city?perifereia=South%20Aegean&poli=Mykonos",
+        "source_type": "government",
+        "checked": "2026-11-11",
+        "is_price": false,
+        "conflicts": "Conflicts with the brief note that a Mykonos station exists on this page; the venues pack fact_307 recorded the same absence."
+      },
+      {
+        "fact_id": "fact_05",
+        "claim": "The Hellenic National Meteorological Service (HNMS/EMY) 'Climatic Data by City' page has no Santorini (Thira) station; for the South Aegean it lists only Naxos and Rodos. Naxos is the nearest listed station and any figures must be labelled as Naxos, not Santorini. [Copied from content/posts/mykonos-wedding/03-source-pack-part-2.json#fact_200.]",
+        "source": "http://oldportal.emy.gr/emy/en/climatology/climatology_city?perifereia=South%20Aegean&poli=Thira",
+        "source_type": "government",
+        "checked": "2026-11-11",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_06",
+        "claim": "The Hellenic National Meteorological Service (HNMS/EMY) 'Climatic Data by City' page has no Paros station; for the South Aegean it lists Naxos and Rodos. The Naxos station (lat 37.081, lon 25.369, altitude 3 m; data period not stated on the page) shows mean monthly maximum temperatures of 22.1 C in May, 25.9 C in June, 27.1 C in July, 27.0 C in August, 25.1 C in September and 21.9 C in October. [Copied from content/posts/paros-wedding-venues/03-source-pack-part-3.json#fact_305.]",
+        "source": "http://oldportal.emy.gr/emy/en/climatology/climatology_city?perifereia=South%20Aegean&poli=Naxos",
+        "source_type": "government",
+        "checked": "2026-11-11",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_07",
+        "claim": "HNMS Naxos station (lon 25.369, lat 37.081, altitude 3 m; the page states 'Data Period: None') shows monthly mean temperatures of 16.1 C in April, 19.6 C in May, 23.5 C in June, 25.1 C in July, 25.0 C in August, 23.0 C in September and 19.7 C in October. Mean maximum temperatures are 18.7, 22.1, 25.9, 27.1, 27.0, 25.1 and 21.9 C for the same months. [Copied from content/posts/mykonos-wedding/03-source-pack-part-2.json#fact_201.]",
+        "source": "http://oldportal.emy.gr/emy/en/climatology/climatology_city?perifereia=South%20Aegean&poli=Naxos",
+        "source_type": "government",
+        "checked": "2026-11-11",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_08",
+        "claim": "HNMS Naxos station shows monthly mean precipitation of 17.6 mm in April, 10.6 mm in May, 2.4 mm in June, 0.9 mm in July, 1.6 mm in August, 7.7 mm in September and 38.6 mm in October, with mean precipitation days of 6.0, 3.6, 1.1, 0.4, 0.3, 1.9 and 5.5 respectively. [Copied from content/posts/mykonos-wedding/03-source-pack-part-2.json#fact_202.]",
+        "source": "http://oldportal.emy.gr/emy/en/climatology/climatology_city?perifereia=South%20Aegean&poli=Naxos",
+        "source_type": "government",
+        "checked": "2026-11-11",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_09",
+        "claim": "HNMS Naxos station shows a prevailing wind direction of north in every month, with monthly mean wind power of 11.7 in April, 10.0 in May, 10.3 in June, 13.3 in July, 13.8 in August, 13.9 in September and 14.5 in October (units not stated on the page). [Copied from content/posts/mykonos-wedding/03-source-pack-part-2.json#fact_203.]",
+        "source": "http://oldportal.emy.gr/emy/en/climatology/climatology_city?perifereia=South%20Aegean&poli=Naxos",
+        "source_type": "government",
+        "checked": "2026-11-11",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_10",
+        "claim": "HNMS Naxos station (lat 37.081, lon 25.369, altitude 3 m; the page states 'Data Period: None'), read live 12 November 2026, full year Jan to Dec. Monthly mean temperature (C): 12.2, 12.3, 13.4, 16.1, 19.6, 23.5, 25.1, 25.0, 23.0, 19.7, 16.4, 13.7. Maximum monthly temperature (C): 14.4, 14.6, 15.8, 18.7, 22.1, 25.9, 27.1, 27.0, 25.1, 21.9, 18.8, 15.9. Minimum monthly temperature (C): 9.6, 9.4, 10.4, 12.5, 15.7, 19.6, 22.0, 22.2, 20.1, 17.0, 13.7, 11.1. Mean precipitation (mm): 67.9, 56.3, 45.7, 17.6, 10.6, 2.4, 0.9, 1.6, 7.7, 38.6, 52.3, 69.0. Mean precipitation days: 12.7, 11.0, 9.5, 6.0, 3.6, 1.1, 0.4, 0.3, 1.9, 5.5, 8.8, 12.6. Prevailing wind N in every month; monthly mean wind power (units not stated): 15.5, 15.9, 14.7, 11.7, 10.0, 10.3, 13.3, 13.8, 13.9, 14.5, 13.2, 14.9. Mean relative humidity (%): 67.9 (June) to 74.1 (November). Station label: Naxos only; not Santorini, Mykonos or Paros.",
+        "source": "http://oldportal.emy.gr/emy/en/climatology/climatology_city?perifereia=South%20Aegean&poli=Naxos",
+        "source_type": "government",
+        "checked": "2026-11-12",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_11",
+        "claim": "HNMS (Hellenic National Meteorological Service) climatic data for the Rodos station (South Aegean; lat 36.4, lon 28.09, altitude 7 m), data period 1955-2010, read live 12 November 2026. [Copied from content/posts/rhodes-wedding-venues/03-source-pack-part-3.json#fact_300.]",
+        "source": "http://oldportal.emy.gr/emy/en/climatology/climatology_city?perifereia=South%20Aegean&poli=Rodos",
+        "source_type": "government",
+        "checked": "2026-11-12",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_12",
+        "claim": "HNMS Rodos station, maximum monthly temperature (deg C, 1955-2010): Jan 15.1, Feb 15.2, Mar 17.0, Apr 20.0, May 24.1, Jun 28.3, Jul 30.4, Aug 30.7, Sep 28.1, Oct 24.5, Nov 20.2, Dec 16.7. [Copied from content/posts/rhodes-wedding-venues/03-source-pack-part-3.json#fact_301.]",
+        "source": "http://oldportal.emy.gr/emy/en/climatology/climatology_city?perifereia=South%20Aegean&poli=Rodos",
+        "source_type": "government",
+        "checked": "2026-11-12",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_13",
+        "claim": "HNMS Rodos station, monthly mean temperature (deg C, 1955-2010): Jan 12.2, Feb 12.3, Mar 13.9, Apr 16.8, May 20.7, Jun 24.9, Jul 27.0, Aug 27.3, Sep 24.8, Oct 21.0, Nov 16.8, Dec 13.7. [Copied from content/posts/rhodes-wedding-venues/03-source-pack-part-3.json#fact_302.]",
+        "source": "http://oldportal.emy.gr/emy/en/climatology/climatology_city?perifereia=South%20Aegean&poli=Rodos",
+        "source_type": "government",
+        "checked": "2026-11-12",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_14",
+        "claim": "HNMS Rodos station, monthly mean precipitation (mm, 1955-2010): Jan 151.8, Feb 101.7, Mar 68.9, Apr 29.4, May 16.4, Jun 1.8, Jul 0.3, Aug 0.2, Sep 6.3, Oct 56.9, Nov 89.6, Dec 152.8. [Copied from content/posts/rhodes-wedding-venues/03-source-pack-part-3.json#fact_303.]",
+        "source": "http://oldportal.emy.gr/emy/en/climatology/climatology_city?perifereia=South%20Aegean&poli=Rodos",
+        "source_type": "government",
+        "checked": "2026-11-12",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_15",
+        "claim": "HNMS Rodos station, monthly mean precipitation days (1955-2010): Jan 15.2, Feb 12.7, Mar 9.9, Apr 7.4, May 4.4, Jun 1.1, Jul 0.2, Aug 0.1, Sep 1.7, Oct 6.5, Nov 9.4, Dec 15.1. [Copied from content/posts/rhodes-wedding-venues/03-source-pack-part-3.json#fact_304.]",
+        "source": "http://oldportal.emy.gr/emy/en/climatology/climatology_city?perifereia=South%20Aegean&poli=Rodos",
+        "source_type": "government",
+        "checked": "2026-11-12",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_16",
+        "claim": "HNMS Rodos station, prevailing wind direction is W (west) from January to November and NW in December; monthly mean wind power is highest in July (11.5) and August (11.2) and lowest in November (6.0) (HNMS units as published, 1955-2010). [Copied from content/posts/rhodes-wedding-venues/03-source-pack-part-3.json#fact_305.]",
+        "source": "http://oldportal.emy.gr/emy/en/climatology/climatology_city?perifereia=South%20Aegean&poli=Rodos",
+        "source_type": "government",
+        "checked": "2026-11-12",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_17",
+        "claim": "HNMS Rodos station, monthly mean relative humidity (%, 1955-2010) ranges from 58.9 in July to 72.4 in December. [Copied from content/posts/rhodes-wedding-venues/03-source-pack-part-3.json#fact_306.]",
+        "source": "http://oldportal.emy.gr/emy/en/climatology/climatology_city?perifereia=South%20Aegean&poli=Rodos",
+        "source_type": "government",
+        "checked": "2026-11-12",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_18",
+        "claim": "HNMS climate normals for Heraklion (Iraklio station, altitude 39 m, data period 1955 to 2010), monthly mean temperature in C: Jan 12.1, Feb 12.2, Mar 13.6, Apr 16.6, May 20.4, Jun 24.5, Jul 26.4, Aug 26.3, Sep 23.7, Oct 20.3, Nov 16.8, Dec 13.8. [Copied from content/posts/wedding-in-crete/03-source-pack.json#fact_01.]",
+        "source": "http://newportal.hnms.gr/emy/en/climatology/climatology_city?perifereia=Crete&poli=Heraklion",
+        "source_type": "government",
+        "checked": "2026-11-11",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_19",
+        "claim": "HNMS climate normals for Heraklion (1955 to 2010), mean monthly minimum and maximum temperature in C: Jan 9.1/15.3, Feb 8.9/15.5, Mar 9.8/17.0, Apr 12.0/20.1, May 15.1/23.6, Jun 19.2/27.3, Jul 21.9/28.9, Aug 22.0/28.8, Sep 19.5/26.6, Oct 16.7/23.6, Nov 13.5/20.2, Dec 10.9/17.1. [Copied from content/posts/wedding-in-crete/03-source-pack.json#fact_02.]",
+        "source": "http://newportal.hnms.gr/emy/en/climatology/climatology_city?perifereia=Crete&poli=Heraklion",
+        "source_type": "government",
+        "checked": "2026-11-11",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_20",
+        "claim": "HNMS climate normals for Heraklion (1955 to 2010), monthly mean precipitation in mm and mean precipitation days: Jan 91.0/16.0, Feb 69.0/13.6, Mar 53.4/11.4, Apr 28.2/7.6, May 13.4/4.6, Jun 2.9/1.3, Jul 0.8/0.3, Aug 0.9/0.5, Sep 16.7/2.8, Oct 59.4/7.5, Nov 59.6/10.6, Dec 85.6/15.2. [Copied from content/posts/wedding-in-crete/03-source-pack.json#fact_03.]",
+        "source": "http://newportal.hnms.gr/emy/en/climatology/climatology_city?perifereia=Crete&poli=Heraklion",
+        "source_type": "government",
+        "checked": "2026-11-11",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_21",
+        "claim": "HNMS climate normals for Heraklion (1955 to 2010): prevailing wind is south from October to May and north-west from June to September; monthly mean relative humidity runs from about 57 percent (June and July) to about 68 percent (December and January). HNMS does not give sea temperature on this page. [Copied from content/posts/wedding-in-crete/03-source-pack.json#fact_04.]",
+        "source": "http://newportal.hnms.gr/emy/en/climatology/climatology_city?perifereia=Crete&poli=Heraklion",
+        "source_type": "government",
+        "checked": "2026-11-11",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_22",
+        "claim": "HNMS climate normals for Chania Souda station (altitude 148 m, data period 1958 to 2010), monthly mean temperature in C: Jan 11.0, Feb 11.0, Mar 12.7, Apr 15.9, May 20.2, Jun 24.7, Jul 26.7, Aug 26.3, Sep 23.2, Oct 19.4, Nov 15.8, Dec 12.7; mean monthly maximum: Jan 14.4, Feb 14.7, Mar 16.6, Apr 20.0, May 24.5, Jun 28.9, Jul 30.7, Aug 30.4, Sep 27.4, Oct 23.5, Nov 19.6, Dec 16.2. [Copied from content/posts/wedding-in-crete/03-source-pack.json#fact_08.]",
+        "source": "http://newportal.hnms.gr/emy/en/climatology/climatology_city?perifereia=Crete&poli=Chania_Souda",
+        "source_type": "government",
+        "checked": "2026-11-11",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_23",
+        "claim": "HNMS climate normals for Chania Souda (1958 to 2010), mean monthly minimum temperature in C: Jan 7.9, Feb 7.8, Mar 9.0, Apr 11.4, May 15.0, Jun 19.0, Jul 21.2, Aug 21.2, Sep 18.7, Oct 15.7, Nov 12.4, Dec 9.7. [Copied from content/posts/wedding-in-crete/03-source-pack.json#fact_09.]",
+        "source": "http://newportal.hnms.gr/emy/en/climatology/climatology_city?perifereia=Crete&poli=Chania_Souda",
+        "source_type": "government",
+        "checked": "2026-11-11",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_24",
+        "claim": "HNMS climate normals for Chania Souda (1958 to 2010), monthly mean precipitation in mm and mean precipitation days: Jan 129.5/16.3, Feb 104.0/14.5, Mar 76.0/11.5, Apr 31.5/7.7, May 13.5/4.2, Jun 3.4/1.2, Jul 1.0/0.4, Aug 1.4/0.6, Sep 15.4/3.2, Oct 67.7/9.3, Nov 77.0/11.2, Dec 101.9/16.1. [Copied from content/posts/wedding-in-crete/03-source-pack.json#fact_10.]",
+        "source": "http://newportal.hnms.gr/emy/en/climatology/climatology_city?perifereia=Crete&poli=Chania_Souda",
+        "source_type": "government",
+        "checked": "2026-11-11",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_25",
+        "claim": "As at November 2026, Smartraveller says heatwaves are frequent in Greece over the summer months and can cause heat exhaustion, heat stroke and death; it advises drinking water, wearing a hat and light clothing and staying in air-conditioned buildings or shaded areas, and notes many major tourist sites have little shade. [Copied from content/posts/corfu-wedding-venues/03-source-pack-part-2.json#fact_201.]",
+        "source": "https://www.smartraveller.gov.au/destinations/europe/greece",
+        "source_type": "government",
+        "checked": "2026-11-11",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_26",
+        "claim": "As at November 2026, Smartraveller says wildfires occur in Greece during the extended summer period, from June to September, including near cities and tourist locations, prompting evacuations; fires can start with little warning and travel quickly, so avoid affected areas and follow local authorities' advice. [Copied from content/posts/corfu-wedding-venues/03-source-pack-part-2.json#fact_202.]",
+        "source": "https://www.smartraveller.gov.au/destinations/europe/greece",
+        "source_type": "government",
+        "checked": "2026-11-11",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_27",
+        "claim": "As at November 2026, Smartraveller's overall advice level for Greece is 'Exercise normal safety precautions' (page updated 30 September 2026, shown as still current when read live 11 November 2026 UTC). It notes Greece is in an active seismic zone with earthquakes and volcanic activity, including near Santorini, and that wildfires occur in the extended summer period, June to September. [Copied from content/posts/crete-wedding-packages/03-source-pack-part-5.json#fact_542.]",
+        "source": "https://www.smartraveller.gov.au/destinations/europe/greece",
+        "source_type": "government",
+        "checked": "2026-11-11",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_28",
+        "claim": "Smartraveller: ferries and large catamarans carry most visitors to the Greek islands; ferry services can be delayed or cancelled in bad weather, mainly due to strong winds, so check the forecast and reconfirm departures. From May to October expect high temperatures and large crowds at popular seaports. [Copied from content/posts/rhodes-wedding-venues/03-source-pack-part-3.json#fact_320.]",
+        "source": "https://www.smartraveller.gov.au/destinations/europe/greece",
+        "source_type": "government",
+        "checked": "2026-11-12",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_29",
+        "claim": "As at November 2026, Smartraveller says ferries and large catamarans carry most visitors to the Greek islands; in the May to October tourist season expect high temperatures and large crowds at popular seaports; you will usually carry luggage up and down stairs; ferry services can be delayed or cancelled in bad weather, mainly due to strong winds, so reconfirm departures; and arrange a coach or taxi in advance. It also says Australians can visit the Schengen area visa-free for up to 90 days in any 180-day period and must register biometrics under the EES on arrival. [Copied from content/posts/paros-wedding-venues/03-source-pack-part-3.json#fact_310.]",
+        "source": "https://www.smartraveller.gov.au/destinations/europe/greece",
+        "source_type": "government",
+        "checked": "2026-11-11",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_30",
+        "claim": "Smartraveller: storms of dust from the Sahara are increasing in frequency across Greece, particularly in spring, reducing air quality and visibility. [Copied from content/posts/rhodes-wedding-venues/03-source-pack-part-3.json#fact_322.]",
+        "source": "https://www.smartraveller.gov.au/destinations/europe/greece",
+        "source_type": "government",
+        "checked": "2026-11-12",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_31",
+        "claim": "Angsana Corfu 2026 wedding brochure: symbolic ceremony venues are Vertigo Sky Bar (outdoor, up to 250 guests, mid-May to end of September, weather permitting) and Oribu Garden (outdoor, up to 30 guests, April to October, weather permitting). [Copied from content/posts/greece-wedding-packages-all-inclusive/03-source-pack-part-1.json#fact_101.]",
+        "source": "https://www.angsana.com/assets/2026-01/Wedding%20Brochure%202026%20-%20Angsana%20Corfu.pdf",
+        "source_type": "official_venue",
+        "checked": "2026-11-12",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_32",
+        "claim": "Angsana Corfu 2026 wedding brochure: reception venues are Vertigo Sky Bar (outdoor, up to 250, end of May to end of September), Oribu Restaurant (indoor/outdoor, up to 150, April, May, September and October) and Oribu Garden (outdoor, up to 30, April to October). [Copied from content/posts/greece-wedding-packages-all-inclusive/03-source-pack-part-1.json#fact_102.]",
+        "source": "https://www.angsana.com/assets/2026-01/Wedding%20Brochure%202026%20-%20Angsana%20Corfu.pdf",
+        "source_type": "official_venue",
+        "checked": "2026-11-12",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_33",
+        "claim": "Minos Palace Resort (Lasithi, eastern Crete) says eastern Crete enjoys pleasant weather from April to November, with spring around 18 to 24 degrees C, summer the warmest season, and early autumn around 20 to 27 degrees C. It states a 50-minute drive from Heraklion Airport. Re-checked live; restates crete-wedding-venues fact_308. [Copied from content/posts/wedding-in-crete/03-source-pack-part-1.json#fact_110.]",
+        "source": "https://www.minospalace.com/celebrations-and-events/",
+        "source_type": "official_venue",
+        "checked": "2026-11-11",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_34",
+        "claim": "Santo Wines (the winery of the Union of Santorini Cooperatives) is in Pyrgos, Santorini; its Wine Tourism Center sits next to the winery with a volcano view and is open all year round. Venue type: winery. [Copied from content/posts/santorini-or-mykonos-wedding/03-source-pack.json#fact_13.]",
+        "source": "https://santowines.gr/",
+        "source_type": "official_venue",
+        "checked": "2026-11-11",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_35",
+        "claim": "Nana Princess recommends evening ceremonies because high-summer temperatures can reach 35 degrees C: 16:00 to 18:00 in April, May and October; 18:00 to 20:00 in June and September; 18:30 to 20:00 in July and August. [Copied from content/posts/crete-wedding-packages/03-source-pack-part-5.json#fact_516.]",
+        "source": "https://www.nanaprincess.gr/pages/weddings",
+        "source_type": "official_venue",
+        "checked": "2026-11-12",
+        "is_price": false,
+        "conflicts": "Same Nana Princess page recorded twice: crete-wedding-packages fact_516 says 18:00 to 20:00 in 'June and September' (18:30 to 20:00 in July and August); wedding-in-crete fact_106 and crete-wedding-venues fact_102 say 'June to September', which overlaps the July/August slot. The writer should use the June and September / July and August split or re-check the page."
+      },
+      {
+        "fact_id": "fact_36",
+        "claim": "Nana Princess notes high-summer temperatures in Greece can reach 35 degrees C with strong sun and high UV, and recommends evening ceremonies: 16:00 to 18:00 in April, May and October; 18:00 to 20:00 in June to September; 18:30 to 20:00 in July and August. Re-checked live; restates crete-wedding-venues fact_102. [Copied from content/posts/wedding-in-crete/03-source-pack-part-1.json#fact_106.]",
+        "source": "https://www.nanaprincess.gr/pages/weddings",
+        "source_type": "official_venue",
+        "checked": "2026-11-11",
+        "is_price": false,
+        "conflicts": "Same Nana Princess page recorded twice: crete-wedding-packages fact_516 says 18:00 to 20:00 in 'June and September' (18:30 to 20:00 in July and August); wedding-in-crete fact_106 and crete-wedding-venues fact_102 say 'June to September', which overlaps the July/August slot. The writer should use the June and September / July and August split or re-check the page."
+      },
+      {
+        "fact_id": "fact_37",
+        "claim": "Greek Orthodox Archdiocese of Australia: marriages are not permitted from 13 December until Christmas Day; on 5 January (eve of Epiphany); from Great Lent until Easter Sunday (dates vary each year); from 1 to 15 August (Dormition of the Theotokos); on 29 August; and on 14 September. [Copied from content/posts/greek-orthodox-wedding/03-source-pack-part-3.json#fact_317.]",
+        "source": "https://greekorthodox.org.au/services-and-sacraments/marriage/",
+        "source_type": "other",
+        "checked": "2026-11-12",
+        "is_price": false
+      }
+    ],
+    "insider_details": [
+      {
+        "detail": "Across all five HNMS stations, June, July and August average under about 1.5 rain days a month, while October brings rain back (5.5 days at Naxos, 6.5 at Rodos, 7.5 at Heraklion, 9.3 at Chania Souda, 11.4 at Kerkyra). Corfu turns wet earliest: Kerkyra averages 87.8 mm in September and 140.4 mm in October, so an October Corfu date needs a covered plan B.",
+        "fact_ids": [
+          "fact_10",
+          "fact_15",
+          "fact_20",
+          "fact_24",
+          "fact_02"
+        ]
+      },
+      {
+        "detail": "Heat, not rain, is the peak-season constraint: Kerkyra averages a 31.5 C maximum in August and Chania Souda 30.7 C in July, and Smartraveller warns that heatwaves are frequent and wildfires run June to September. Hold ceremonies in the evening (Nana Princess suggests 18:30 to 20:00 in July and August) and keep guest excursions short and shaded.",
+        "fact_ids": [
+          "fact_01",
+          "fact_22",
+          "fact_25",
+          "fact_26",
+          "fact_35"
+        ]
+      },
+      {
+        "detail": "The Cyclades are windy all year at the Naxos station (prevailing north wind every month, wind power rising to 13.3 to 13.9 from July to September), and Smartraveller says ferries can be delayed or cancelled in strong winds. Build a buffer day between island hops and the wedding, and plan exposed clifftop or beach set-ups with wind in mind. Naxos is the nearest official station, so label figures as Naxos, not Santorini, Mykonos or Paros.",
+        "fact_ids": [
+          "fact_09",
+          "fact_10",
+          "fact_28",
+          "fact_05",
+          "fact_04",
+          "fact_06"
+        ]
+      },
+      {
+        "detail": "Venue seasons are shorter than the weather window: Angsana Corfu's Vertigo Sky Bar runs only mid-May (ceremonies) or end of May (receptions) to end of September, while its Oribu Garden runs April to October. Minos Palace says eastern Crete is pleasant from April to November. Check each venue's own dates before choosing a shoulder-season month.",
+        "fact_ids": [
+          "fact_31",
+          "fact_32",
+          "fact_33"
+        ]
+      },
+      {
+        "detail": "For a Greek Orthodox ceremony, the Archdiocese of Australia's closed dates rule out 1 to 15 August, 29 August, 14 September, 13 to 25 December, 5 January and Great Lent to Easter Sunday, which moves every year. Lock the church date before the venue.",
+        "fact_ids": [
+          "fact_37"
+        ]
+      },
+      {
+        "detail": "Spring brings Saharan dust storms that reduce air quality and visibility, per Smartraveller, and April still averages 6.0 to 7.7 rain days at the HNMS stations. A late-April or early-May date suits couples who prefer milder temperatures (Rodos mean 16.8 C in April, 20.7 C in May) but should carry an indoor option.",
+        "fact_ids": [
+          "fact_30",
+          "fact_10",
+          "fact_15",
+          "fact_20",
+          "fact_24",
+          "fact_13"
+        ]
+      }
+    ],
+    "quotes": [],
+    "real_weddings": [],
+    "verify_items": [
+      "[[VERIFY: Athens climate. HNMS station page for Attica (Elliniko) returned HTTP 503 'unable to present the information' on 12 November 2026; no Athens monthly figures in this pack. Do not state Athens temperatures or rain days.]]",
+      "[[VERIFY: Greek public holidays list (fixed dates and Orthodox Easter/Whit Monday dates for 2027 and 2028). gov.gr public-holidays page returned an empty body on 12 November 2026; source from an official Greek government page before the article names holiday dates.]]",
+      "[[VERIFY: Kerkyra (Corfu) HNMS figures for November to April. Copied facts cover May to October only (rain days also give November 14.7).]]",
+      "[[VERIFY: Sea temperature by month. No HNMS station page in this pack gives sea temperature; do not state sea temperatures.]]",
+      "[[VERIFY: Nana Princess June to September ceremony time wording (see fact conflict) before quoting exact times.]]",
+      "[[VERIFY: Orthodox Easter dates for 2027 and 2028 (sets the Great Lent closed period); not sourced in this pack.]]"
+    ],
+    "needs_signoff": [],
+    "must_include_coverage": [
+      {
+        "item": "Intro with a direct answer in the first 100 words: there is no single right month; the wedding season most venues state runs within roughly April to October [[VERIFY: venue-stated windows]]; the right month depends on island, heat tolerance, ceremony type and guests. Then exactly 4 one-sentence Key takeaways, none naming a best month (weather differs by island and station; heat and wildfire advice for high summer as Smartraveller words it; venues state their own season windows; Orthodox closed periods and public holidays shape the calendar).",
+        "covered_by": [
+          "fact_31",
+          "fact_32",
+          "fact_33",
+          "fact_34",
+          "fact_25",
+          "fact_26",
+          "fact_37"
+        ]
+      },
+      {
+        "item": "How to read the figures: one short section explaining the figures are HNMS long-term station averages (name the period if the source states it), each labelled with its station, averages not forecasts; no research talk.",
+        "covered_by": [
+          "fact_07",
+          "fact_10",
+          "fact_11",
+          "fact_18",
+          "fact_22",
+          "fact_01",
+          "fact_04",
+          "fact_05",
+          "fact_06"
+        ]
+      },
+      {
+        "item": "Month-by-month table, April to October: columns for month, station, average maximum temperature, rainfall or rain days and sea temperature only where HNMS or another official source publishes it, and a short planning note. Every figure labelled with its station; any unsourced cell left blank or marked [[VERIFY]].",
+        "covered_by": [
+          "fact_01",
+          "fact_02",
+          "fact_03",
+          "fact_04",
+          "fact_05",
+          "fact_06",
+          "fact_07",
+          "fact_08",
+          "fact_09",
+          "fact_10",
+          "fact_11",
+          "fact_12",
+          "fact_13",
+          "fact_14",
+          "fact_15",
+          "fact_16",
+          "fact_17",
+          "fact_18",
+          "fact_19",
+          "fact_20",
+          "fact_21",
+          "fact_22",
+          "fact_23",
+          "fact_24",
+          "[[VERIFY: Sea temperature by month. No HNMS station page in this pack gives sea temperature; do not state sea temperatures.]]",
+          "[[VERIFY: Kerkyra (Corfu) HNMS figures for November to April. Copied facts cover May to October only (rain days also give November 14.7).]]"
+        ]
+      },
+      {
+        "item": "Month by month: a short subsection for each month April to October, using the table figures, Smartraveller heat and wildfire advice where relevant (as worded), and venue season windows as venues state them. No crowd claims unless officially sourced. No prices.",
+        "covered_by": [
+          "fact_01",
+          "fact_02",
+          "fact_03",
+          "fact_04",
+          "fact_05",
+          "fact_06",
+          "fact_07",
+          "fact_08",
+          "fact_09",
+          "fact_10",
+          "fact_11",
+          "fact_12",
+          "fact_13",
+          "fact_14",
+          "fact_15",
+          "fact_16",
+          "fact_17",
+          "fact_18",
+          "fact_19",
+          "fact_20",
+          "fact_21",
+          "fact_22",
+          "fact_23",
+          "fact_24",
+          "fact_25",
+          "fact_26",
+          "fact_27",
+          "fact_28",
+          "fact_29",
+          "fact_30",
+          "fact_31",
+          "fact_32",
+          "fact_33",
+          "fact_35",
+          "fact_36",
+          "[[VERIFY: Nana Princess June to September ceremony time wording (see fact conflict) before quoting exact times.]]"
+        ]
+      },
+      {
+        "item": "By island: Cyclades (Naxos station; link /destination-weddings/santorini-wedding, /destination-weddings/mykonos-wedding, /destination-weddings/santorini-wedding-venues, /destination-weddings/mykonos-wedding-venues, /destination-weddings/paros-wedding-venues), Crete (Heraklion and Chania; link /destination-weddings/wedding-in-crete and /destination-weddings/crete-wedding-venues), Rhodes (Rodos; link /destination-weddings/rhodes-wedding-venues), Corfu (Kerkyra; link /destination-weddings/corfu-wedding-venues), Athens if sourced. Link /destination-weddings/greece-wedding-venues once. Island guides keep their own season detail; this section summarises and links.",
+        "covered_by": [
+          "fact_01",
+          "fact_02",
+          "fact_03",
+          "fact_04",
+          "fact_05",
+          "fact_06",
+          "fact_07",
+          "fact_08",
+          "fact_09",
+          "fact_10",
+          "fact_11",
+          "fact_12",
+          "fact_13",
+          "fact_14",
+          "fact_15",
+          "fact_16",
+          "fact_17",
+          "fact_18",
+          "fact_19",
+          "fact_20",
+          "fact_21",
+          "fact_22",
+          "fact_23",
+          "fact_24",
+          "fact_31",
+          "fact_32",
+          "fact_33",
+          "fact_34",
+          "[[VERIFY: Athens climate. HNMS station page for Attica (Elliniko) returned HTTP 503 'unable to present the information' on 12 November 2026; no Athens monthly figures in this pack. Do not state Athens temperatures or rain days.]]"
+        ]
+      },
+      {
+        "item": "Dates to plan around: Orthodox closed periods (for example Lent and the Dormition fast) credited to the Greek Orthodox Archdiocese of Australia, with 'ask your priest for Greece', and Orthodox Easter dates from an official source; link /destination-weddings/greek-orthodox-wedding. Greek public holidays only if from an official Greek government source.",
+        "covered_by": [
+          "fact_37",
+          "[[VERIFY: Orthodox Easter dates for 2027 and 2028 (sets the Great Lent closed period); not sourced in this pack.]]",
+          "[[VERIFY: Greek public holidays list (fixed dates and Orthodox Easter/Whit Monday dates for 2027 and 2028). gov.gr public-holidays page returned an empty body on 12 November 2026; source from an official Greek government page before the article names holiday dates.]]"
+        ]
+      },
+      {
+        "item": "Which months suit you: 4 to 6 scenarios (for example a church ceremony, older or young guests sensitive to heat, a sunset ceremony on the Cyclades, a longer guest stay, swimming as part of the weekend), each pointing to months and islands from the figures, no single answer. This section carries the ONLY Advisor line in the body (brand-facts claims only, framed around matching months to venue availability, travel and guest stays), with a link to /wonderland-concierge.",
+        "covered_by": [
+          "fact_37",
+          "fact_25",
+          "fact_26",
+          "fact_35",
+          "fact_09",
+          "fact_10",
+          "fact_28",
+          "fact_29",
+          "fact_31",
+          "fact_32",
+          "fact_33"
+        ]
+      },
+      {
+        "item": "FAQ (4 to 6): What month do most Greek venues open for weddings? How hot is Greece in July and August? Can we marry in a Greek Orthodox church at any time of year? Is October too late for a Greek island wedding? When does the sea warm up for guests? Answers from the same sources as the body, never naming a best month.",
+        "covered_by": [
+          "fact_31",
+          "fact_32",
+          "fact_33",
+          "fact_25",
+          "fact_10",
+          "fact_14",
+          "fact_15",
+          "fact_20",
+          "fact_24",
+          "fact_02",
+          "[[VERIFY: Sea temperature by month. No HNMS station page in this pack gives sea temperature; do not state sea temperatures.]]"
+        ]
+      },
+      {
+        "item": "Close: the one Advisor line from brand-facts.md (never the definition line or its closing phrase). Links: /wonderland-concierge (anchor names 'Wedded Concierge'), /magazine as the magnet. UTMs utm_source=blog&utm_medium=content&utm_campaign=best-time-to-get-married-in-greece&utm_content=primary|secondary|magnet|closing on /wonderland-concierge and /magazine only.",
+        "covered_by": [
+          "content-system/brand/brand-facts.md (Advisor line; no fact needed)"
+        ]
+      }
+    ]
+  }
+}
