@@ -1,0 +1,203 @@
+{
+ "agent": "visual-curator",
+ "task_id": "greek-orthodox-wedding",
+ "stage": "04",
+ "status": "needs_input",
+ "round": 1,
+ "inputs_used": [
+  "CLAUDE.md",
+  "content/posts/greek-orthodox-wedding/00-input.json",
+  "01-brief.json, 02-seo.json, 02-research/report.md, 03-source-pack.json (not present at run time)",
+  "content/posts/santorini-or-mykonos-wedding/04-images.json (format model)",
+  "content-system/images/library-index.csv (header only, no rows)",
+  "content-system/schemas/04-images.schema.json"
+ ],
+ "self_qa": {
+  "checks": [
+   {
+    "check": "Zero reference-only or competitor images in slots",
+    "pass": true,
+    "note": "reference_only is empty; no images downloaded."
+   },
+   {
+    "check": "Every approved image has location, licence, alt, caption, fit_reason",
+    "pass": true,
+    "note": "No approved images this run."
+   },
+   {
+    "check": "No AI image depicting a real place, wedding, ceremony or person",
+    "pass": true,
+    "note": "No AI generated. Only stefana, ceremony-detail (still life only) and documents may become ai_illustrative still lifes, with user approval and an 'Illustrative image' label."
+   },
+   {
+    "check": "Featured image exists (approved or needed with brief)",
+    "pass": true,
+    "note": "Needed, with brief: real named chapel dressed for a wedding."
+   },
+   {
+    "check": "About 6 slots covering featured chapel, stefana, ceremony detail, island chapel, documents, venue chapel",
+    "pass": true,
+    "note": "6 slots."
+   }
+  ],
+  "confidence": 0.7
+ },
+ "open_questions": [
+  {
+   "to": "user",
+   "question": "Do you approve AI still lifes (stefana, candles, rings on linen) labelled 'Illustrative image' if no licensed or Canva asset is found?",
+   "blocking": false
+  },
+  {
+   "to": "planner-sme",
+   "question": "Confirm featured venues with an on-site Orthodox chapel (03-source-pack) so the featured, island-chapel and venue-chapel slots can be tied to named places and press contacts.",
+   "blocking": false
+  },
+  {
+   "to": "orchestrator",
+   "question": "Should the curator create Gmail permission drafts in a non-fast run once venues are confirmed?",
+   "blocking": false
+  }
+ ],
+ "assumptions": [
+  "Placement is by section name because 02-seo.json is not yet written; the writer maps it to after_h2 positions.",
+  "No venue or chapel is named because 03-source-pack does not exist; nothing was guessed.",
+  "Fast mode: repo register only, no Drive, own-site, Canva or Lens checks run."
+ ],
+ "verify_items": [
+  "[[IMAGE NEEDED]] featured: real named Greek Orthodox chapel dressed for a wedding, licensed",
+  "[[IMAGE NEEDED]] island-chapel, venue-chapel: official venue or church image or licensed stock",
+  "[[IMAGE NEEDED]] stefana, ceremony-detail, documents: Canva brand asset or licensed stock; AI still life only with user approval, labelled 'Illustrative image'",
+  "[[VERIFY licence]] every venue or own-site image: written permission, credit line and expiry recorded in library-index.csv before use",
+  "[[VERIFY: couple consent for any real-ceremony photo]]"
+ ],
+ "tools_used": [
+  "Bash (cat/python)"
+ ],
+ "next_agent": [
+  "luxury-writer"
+ ],
+ "payload": {
+  "slots": [
+   {
+    "slot_id": "featured",
+    "placement": "featured",
+    "purpose": "Hero and social share image: a Greek Orthodox chapel prepared for a wedding, setting up the guide's calm, authoritative tone.",
+    "shot_brief": "Landscape 3:2, a whitewashed or stone Greek Orthodox chapel interior or doorway dressed for a wedding (white florals, candles, icons softly visible), soft natural light, late afternoon, May to October, no people or only distant unidentifiable figures, room for a title. Must be a real, named chapel at or near a featured venue. Source: the venue's or church's own media kit with written permission (Gmail draft request, never sent by an agent), or licensed premium stock bought by a human and added to library-index.csv. Never AI, never a competitor, directory, planner, photographer-blog or search-result image. Location proven by the media kit, register row or EXIF, never by appearance.",
+    "status": "needed",
+    "file": "content/posts/greek-orthodox-wedding/images/greek-orthodox-wedding-chapel-wedding-setting-hero.webp",
+    "source": {
+     "type": "venue_press",
+     "origin": "not yet sourced",
+     "credit": "[[VERIFY licence]]"
+    },
+    "location": {
+     "venue": "a named chapel linked to a featured venue (to be confirmed from 03-source-pack)",
+     "town": "Greece (to be confirmed)",
+     "verified_by": "pending: media kit, register row or EXIF"
+    },
+    "licence_note": "[[IMAGE NEEDED]] Library register has no rows (header only). Move to pending_permission once a permission draft exists."
+   },
+   {
+    "slot_id": "stefana",
+    "placement": "section: what happens in a Greek Orthodox wedding ceremony (H2 opener)",
+    "purpose": "Explain the stefana (wedding crowns) visually, the most recognisable symbol of the ceremony.",
+    "shot_brief": "Close still life of a pair of stefana joined by a silk ribbon resting on white linen or a silver tray, natural window light, shallow depth of field, no people, no recognisable place or church interior. Source: Wedded Wonderland Canva brand assets or licensed stock added to library-index.csv. An AI still life is allowed only if the user approves it, it shows no real place, wedding, ceremony or person, and it is captioned 'Illustrative image' (source type ai_illustrative).",
+    "status": "needed",
+    "file": "content/posts/greek-orthodox-wedding/images/greek-orthodox-wedding-stefana-crowns-still-life.webp",
+    "source": {
+     "type": "canva",
+     "origin": "not yet sourced",
+     "credit": "[[VERIFY licence]]"
+    },
+    "location": {
+     "venue": "none (non-place still life)",
+     "town": "n/a",
+     "verified_by": "not applicable: non-place visual"
+    },
+    "licence_note": "[[IMAGE NEEDED]] Library register has no rows (header only). Move to pending_permission once a permission draft exists. AI only with user approval, labelled 'Illustrative image'."
+   },
+   {
+    "slot_id": "ceremony-detail",
+    "placement": "section: the rituals explained, candles, common cup and Dance of Isaiah (H2 opener)",
+    "purpose": "Show a ritual detail (lambades candles or the common cup) so readers can picture each step.",
+    "shot_brief": "Detail shot of tall decorated lambades wedding candles or the common cup with wine on a ceremony table, warm candlelight, no faces, no identifiable guests. If taken at a real wedding it must be a licensed photo with couple consent recorded; a still life with no place, wedding or person may follow the still-life rules. Source: Wedded Wonderland Canva brand assets or licensed stock added to library-index.csv. An AI still life is allowed only if the user approves it, it shows no real place, wedding, ceremony or person, and it is captioned 'Illustrative image' (source type ai_illustrative).",
+    "status": "needed",
+    "file": "content/posts/greek-orthodox-wedding/images/greek-orthodox-wedding-lambades-candles-common-cup.webp",
+    "source": {
+     "type": "stock",
+     "origin": "not yet sourced",
+     "credit": "[[VERIFY licence]]"
+    },
+    "location": {
+     "venue": "none, or named church if a real ceremony photo",
+     "town": "n/a unless a real ceremony photo",
+     "verified_by": "pending"
+    },
+    "licence_note": "[[IMAGE NEEDED]] Library register has no rows (header only). Move to pending_permission once a permission draft exists. Real-ceremony images need couple consent in the register."
+   },
+   {
+    "slot_id": "island-chapel",
+    "placement": "section: getting married in a Greek Orthodox church in Greece (H2 opener)",
+    "purpose": "Give the destination context: a Greek island chapel as a ceremony setting.",
+    "shot_brief": "Exterior of a named whitewashed, blue-domed or stone island chapel against the sea or village, golden hour, no people, no hotel signage. Name the chapel and island in the caption only if proven. Source: the venue's or church's own media kit with written permission (Gmail draft request, never sent by an agent), or licensed premium stock bought by a human and added to library-index.csv. Never AI, never a competitor, directory, planner, photographer-blog or search-result image. Location proven by the media kit, register row or EXIF, never by appearance.",
+    "status": "needed",
+    "file": "content/posts/greek-orthodox-wedding/images/greek-orthodox-wedding-island-chapel-exterior.webp",
+    "source": {
+     "type": "venue_press",
+     "origin": "not yet sourced",
+     "credit": "[[VERIFY licence]]"
+    },
+    "location": {
+     "venue": "a named island chapel (to be confirmed)",
+     "town": "Greek island (to be confirmed)",
+     "verified_by": "pending: media kit, register row or EXIF"
+    },
+    "licence_note": "[[IMAGE NEEDED]] Library register has no rows (header only). Move to pending_permission once a permission draft exists."
+   },
+   {
+    "slot_id": "documents",
+    "placement": "section: Greek Orthodox wedding requirements and documents (H2 opener)",
+    "purpose": "Lighten the legal and documents section with a calm planning still life.",
+    "shot_brief": "Flat lay of generic planning items on linen: a closed passport-style booklet with no readable details, an envelope, a fountain pen, wedding rings and a sprig of olive, soft daylight, no readable personal data, no real official forms, no people or place. Source: Wedded Wonderland Canva brand assets or licensed stock added to library-index.csv. An AI still life is allowed only if the user approves it, it shows no real place, wedding, ceremony or person, and it is captioned 'Illustrative image' (source type ai_illustrative).",
+    "status": "needed",
+    "file": "content/posts/greek-orthodox-wedding/images/greek-orthodox-wedding-documents-planning-still-life.webp",
+    "source": {
+     "type": "canva",
+     "origin": "not yet sourced",
+     "credit": "[[VERIFY licence]]"
+    },
+    "location": {
+     "venue": "none (non-place still life)",
+     "town": "n/a",
+     "verified_by": "not applicable: non-place visual"
+    },
+    "licence_note": "[[IMAGE NEEDED]] Library register has no rows (header only). Move to pending_permission once a permission draft exists. AI only with user approval, labelled 'Illustrative image'. Must not show a real official document."
+   },
+   {
+    "slot_id": "venue-chapel",
+    "placement": "section: choosing a venue with its own chapel, and how Wedded Concierge helps (H2 opener)",
+    "purpose": "Show a real featured venue whose grounds include an Orthodox chapel, linking the guide to bookable packages.",
+    "shot_brief": "A featured Wedded Wonderland venue's own chapel set for a ceremony, wide view with venue grounds or sea, golden hour, no people. Venue must be confirmed by the planner SME and the image from its media kit or own-site page with licence confirmed. Source: the venue's or church's own media kit with written permission (Gmail draft request, never sent by an agent), or licensed premium stock bought by a human and added to library-index.csv. Never AI, never a competitor, directory, planner, photographer-blog or search-result image. Location proven by the media kit, register row or EXIF, never by appearance.",
+    "status": "needed",
+    "file": "content/posts/greek-orthodox-wedding/images/greek-orthodox-wedding-venue-chapel.webp",
+    "source": {
+     "type": "own_site",
+     "origin": "not yet sourced",
+     "credit": "[[VERIFY licence]]"
+    },
+    "location": {
+     "venue": "a featured venue with an on-site chapel (to be named from 03-source-pack)",
+     "town": "Greece (to be confirmed)",
+     "verified_by": "pending: own-site page, media kit or EXIF"
+    },
+    "licence_note": "[[IMAGE NEEDED]] Library register has no rows (header only). Move to pending_permission once a permission draft exists. Own-site images stay [[VERIFY licence]] until the register confirms them."
+   }
+  ],
+  "reference_only": [],
+  "permission_requests": [],
+  "drive_findings": [
+   "Not searched: fast mode, repo library register only per orchestrator instruction. library-index.csv has a header and no rows."
+  ]
+ }
+}
