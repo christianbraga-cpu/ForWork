@@ -4,3 +4,4 @@
 01:25 02 SEO done: AU 20 / US 140 (KD 0); no site ranking; Greece packages draft lists the term as secondary (split: this guide owns it); meta 59/147.
 01:28 03 batch A done: 31 facts; package inclusions published by Grace (fee), Canaves (brochure packages), Santorini Gem (packages and policy), Andronis (package incl. venue's own licence help), Grand Ambassador; no inclusions published by Katikies, Kapari, Santo Wines, Venetsanos, Mystique. No figures recorded.
 01:29 03 batch B done: Vedema (Celebration Consultant; venue says it handles legal documents), Kivotos (three named packages, inclusions not published), Aroma Suites (elopement package; held out as non-luxury fit). Packs merged.
+01:32 05 draft done: ~4,120 words, scan clean, 0 VERIFY, no amounts; first-draft docx built.
