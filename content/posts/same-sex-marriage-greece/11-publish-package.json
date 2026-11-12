@@ -1,0 +1,330 @@
+{
+  "agent": "cms-publisher",
+  "task_id": "same-sex-marriage-greece",
+  "stage": "11",
+  "status": "complete",
+  "round": 1,
+  "inputs_used": [
+    "CLAUDE.md",
+    "content-system/schemas/11-publish-package.schema.json",
+    "content/posts/same-sex-marriage-greece/01-brief.json",
+    "content/posts/same-sex-marriage-greece/02-seo.json",
+    "content/posts/same-sex-marriage-greece/03-source-pack.json",
+    "content/posts/same-sex-marriage-greece/04-images.json",
+    "content/posts/same-sex-marriage-greece/08-final.md",
+    "content/posts/same-sex-marriage-greece/09-cro.json",
+    "content/posts/same-sex-marriage-greece/10-distribution.json",
+    "content/posts/greek-orthodox-wedding/11-body.md, 11-publish-package.json, 12-cms-report.md, booking-checklist.md (format model)"
+  ],
+  "self_qa": {
+    "checks": [
+      {
+        "check": "Front matter and all <!-- fact_xx --> markers removed; H1 is the title; 6 image-slot comments kept; links and UTMs unchanged; no [[VERIFY]] markers in the copy",
+        "pass": true
+      },
+      {
+        "check": "Primary CTA uses the existing sentence and link unchanged (09-cro.json); secondary, closing and magnet marked; each utm_content appears exactly once in visible links",
+        "pass": true
+      },
+      {
+        "check": "Exactly 4 key takeaways and 7 FAQ pairs taken verbatim from the body",
+        "pass": true
+      },
+      {
+        "check": "Meta title and description from 02-seo.json, no \"best\", no prices, no em dashes",
+        "pass": true,
+        "note": "title 49, description 151 characters"
+      },
+      {
+        "check": "primary_category equals categories[0] (Destination Weddings)",
+        "pass": true
+      },
+      {
+        "check": "No em dashes; Australian English",
+        "pass": true
+      },
+      {
+        "check": "status draft; nothing uploaded, saved or published",
+        "pass": true
+      }
+    ],
+    "confidence": 0.9
+  },
+  "open_questions": [
+    {
+      "to": "orchestrator",
+      "question": "CMS upload not attempted: FAST MODE package only, no browser in this session. A human saves as Draft and clicks Publish, or run /wedded-blog resume=same-sex-marriage-greece once the field map is confirmed.",
+      "blocking": true
+    },
+    {
+      "to": "orchestrator",
+      "question": "No author named in any input; package uses \"Wedded Wonderland\" (organisation). Confirm the byline.",
+      "blocking": false
+    },
+    {
+      "to": "orchestrator",
+      "question": "09-cro.json mentions a <!-- CTA: primary --> marker after the venue questions, but 08-final.md has none; the CTA block is placed after the Key takeaways with the existing primary link. Confirm placement in the CMS template.",
+      "blocking": false
+    }
+  ],
+  "assumptions": [
+    "Title and meta title \"Same-Sex Marriage in Greece and What Couples Need\" (02-seo.json); meta description from 02-seo.json unchanged.",
+    "Excerpt is the first sentence of the opening paragraph, without the leading \"Yes.\"",
+    "Requested type \"Legal\" has no matching value; nearest brief enum value \"planning_guide\" (as in 01-brief.json) used. Cluster \"Getting Married in Greece\".",
+    "Categories and tags from 01-brief.json; primary category Destination Weddings. New article, no redirect.",
+    "JSON-LD is Article + BreadcrumbList + FAQPage; links stripped from FAQ answer text in JSON-LD only.",
+    "verify_items and needs_signoff empty: no [[VERIFY]] markers and no prices in the copy."
+  ],
+  "verify_items": [],
+  "tools_used": [
+    "Bash (python3 -I)"
+  ],
+  "next_agent": [
+    "orchestrator"
+  ],
+  "payload": {
+    "title": "Same-Sex Marriage in Greece and What Couples Need",
+    "slug": "same-sex-marriage-greece",
+    "url_path": "/destination-weddings/same-sex-marriage-greece",
+    "content_type": "planning_guide",
+    "cluster": "Getting Married in Greece",
+    "categories": [
+      "Destination Weddings",
+      "Greece",
+      "Planning Guides"
+    ],
+    "primary_category": "Destination Weddings",
+    "tags": [
+      "Getting Married in Greece",
+      "Same-Sex Weddings",
+      "LGBTQ+ Weddings",
+      "Legal Requirements"
+    ],
+    "excerpt": "As at November 2026, same-sex marriage in Greece is legal: Greek law allows a civil marriage between two persons of different or the same sex, and the change has been in force since 16 February 2024.",
+    "key_takeaways": [
+      "Since 16 February 2024, Greek law has allowed civil marriage between two persons of the same sex, and the reform covers civil marriage, not religious ceremonies.",
+      "Ask the municipality where you marry for its document list, and Rhodes, for example, asks for a certificate of no impediment naming your partner.",
+      "The Australian Embassy in Athens issues Certificates of No Impediment, and same-sex marriages that took place overseas are generally recognised in Australia.",
+      "Choose a venue that tells you plainly it hosts same-sex weddings, and ask how the civil ceremony and the celebration fit together on the day."
+    ],
+    "body_markdown_file": "content/posts/same-sex-marriage-greece/11-body.md",
+    "faq": [
+      {
+        "q": "Is same-sex marriage legal in Greece?",
+        "a": "Yes. As at November 2026, Law 5089/2024 allows civil marriage between two persons of different or the same sex, in force since 16 February 2024. It is a civil marriage, not a religious one."
+      },
+      {
+        "q": "Can foreigners get married in Greece as a same-sex couple?",
+        "a": "The law does not set out how a foreign national's freedom to marry is assessed, so ask the municipality where you marry which documents it needs. The Municipality of Rhodes, for example, asks for a certificate of no impediment naming your partner, passports, a joint application and a fee. Confirm with your municipality and the Australian Embassy in Athens, including any fees."
+      },
+      {
+        "q": "Do we need to live in Greece to marry there?",
+        "a": "The law itself states no residency condition. Ask the municipality where you will marry what it requires of two non-resident Australians, and check with the Australian Embassy in Athens."
+      },
+      {
+        "q": "Is a same-sex marriage in Greece recognised in Australia?",
+        "a": "Same-sex marriages that took place overseas are generally recognised in Australia. It is generally recognised if it was valid under Greek law when it took place and would have been valid under Australian law had it taken place here. Check with the authorities if you have any doubt."
+      },
+      {
+        "q": "Can same-sex couples marry in a Greek Orthodox church?",
+        "a": "The law leaves churches free to set their own conditions for religious ceremonies. The Greek Orthodox Archdiocese of Australia describes its sacrament of marriage as the union of a man and a woman."
+      },
+      {
+        "q": "Is Greece LGBT friendly?",
+        "a": "Smartraveller says same-sex relationships are legal in Greece, though attitudes vary throughout the country, and are generally more accepting on islands such as Mykonos, Santorini and Ios. Homophobic attacks have occurred."
+      },
+      {
+        "q": "Can we have a symbolic same-sex wedding in Santorini or Mykonos?",
+        "a": "Yes, a symbolic ceremony carries no legal paperwork, so it is a matter between you and your venue. Ask the venue in writing whether it hosts same-sex weddings and who can lead the ceremony."
+      }
+    ],
+    "images": [
+      {
+        "slot_id": "featured",
+        "file": "content/posts/same-sex-marriage-greece/images/same-sex-marriage-greece-island-venue-ceremony-hero.webp",
+        "role": "featured",
+        "status": "needed"
+      },
+      {
+        "slot_id": "documents",
+        "file": "content/posts/same-sex-marriage-greece/images/same-sex-marriage-greece-documents-still-life.webp",
+        "role": "inline",
+        "status": "needed"
+      },
+      {
+        "slot_id": "island-setting",
+        "file": "content/posts/same-sex-marriage-greece/images/same-sex-marriage-greece-island-setting.webp",
+        "role": "inline",
+        "status": "needed"
+      },
+      {
+        "slot_id": "venue-terrace",
+        "file": "content/posts/same-sex-marriage-greece/images/same-sex-marriage-greece-venue-terrace.webp",
+        "role": "inline",
+        "status": "needed"
+      },
+      {
+        "slot_id": "travel-planning",
+        "file": "content/posts/same-sex-marriage-greece/images/same-sex-marriage-greece-travel-planning-still-life.webp",
+        "role": "inline",
+        "status": "needed"
+      },
+      {
+        "slot_id": "reception-table",
+        "file": "content/posts/same-sex-marriage-greece/images/same-sex-marriage-greece-reception-table.webp",
+        "role": "inline",
+        "status": "needed"
+      }
+    ],
+    "cta": {
+      "text": "Book a Wedded Concierge consultation",
+      "subtext": "The fee is agreed in writing before any work begins.",
+      "link": "https://weddedwonderland.com/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=same-sex-marriage-greece&utm_content=primary",
+      "placement": "Directly after the Key takeaways: the existing sentence's 'book a Wedded Concierge consultation' link is the primary CTA, unchanged per 09-cro.json (marked <!-- CTA BLOCK: primary --> in 11-body.md). 08-final.md had no <!-- CTA: primary --> marker, so nothing was replaced."
+    },
+    "secondary_cta": {
+      "text": "Talk to Wedded Concierge",
+      "subtext": "One Wedded Advisor plans the celebration around your civil ceremony.",
+      "link": "https://weddedwonderland.com/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=same-sex-marriage-greece&utm_content=secondary",
+      "placement": "Existing link at the end of 'Questions to ask a venue' (marked <!-- CTA INLINE: secondary --> in 11-body.md); anchor 'talk to Wedded Concierge about your Greece wedding'. Unchanged."
+    },
+    "closing_cta": {
+      "text": "Start planning with Wedded Concierge",
+      "link": "https://weddedwonderland.com/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=same-sex-marriage-greece&utm_content=closing",
+      "placement": "Inline link at the end of 'Plan your Greece wedding with Wedded Concierge' (marked <!-- CTA INLINE: closing -->)."
+    },
+    "lead_magnet": {
+      "name": "Wedded Wonderland digital magazine",
+      "link": "https://weddedwonderland.com/magazine?utm_source=blog&utm_medium=content&utm_campaign=same-sex-marriage-greece&utm_content=magnet",
+      "placement": "Final line of the post (marked <!-- LEAD MAGNET -->)."
+    },
+    "tracking_links": [
+      "https://weddedwonderland.com/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=same-sex-marriage-greece&utm_content=primary",
+      "https://weddedwonderland.com/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=same-sex-marriage-greece&utm_content=secondary",
+      "https://weddedwonderland.com/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=same-sex-marriage-greece&utm_content=closing",
+      "https://weddedwonderland.com/magazine?utm_source=blog&utm_medium=content&utm_campaign=same-sex-marriage-greece&utm_content=magnet"
+    ],
+    "seo": {
+      "meta_title": "Same-Sex Marriage in Greece and What Couples Need",
+      "meta_description": "Same-sex marriage is legal in Greece. What overseas couples need to marry there, from documents and residency to island venues and recognition at home.",
+      "focus_keyword": "same sex marriage greece",
+      "canonical": "https://weddedwonderland.com/destination-weddings/same-sex-marriage-greece",
+      "og_image_slot": "featured"
+    },
+    "schema_jsonld": {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Article",
+          "@id": "https://weddedwonderland.com/destination-weddings/same-sex-marriage-greece#article",
+          "headline": "Same-Sex Marriage in Greece and What Couples Need",
+          "description": "Same-sex marriage is legal in Greece. What overseas couples need to marry there, from documents and residency to island venues and recognition at home.",
+          "author": {
+            "@type": "Organization",
+            "name": "Wedded Wonderland",
+            "url": "https://weddedwonderland.com/"
+          },
+          "publisher": {
+            "@type": "Organization",
+            "name": "Wedded Wonderland",
+            "url": "https://weddedwonderland.com/"
+          },
+          "datePublished": "",
+          "mainEntityOfPage": "https://weddedwonderland.com/destination-weddings/same-sex-marriage-greece",
+          "inLanguage": "en-AU"
+        },
+        {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Home",
+              "item": "https://weddedwonderland.com/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Destination Weddings",
+              "item": "https://weddedwonderland.com/destination-weddings"
+            },
+            {
+              "@type": "ListItem",
+              "position": 3,
+              "name": "Same-Sex Marriage in Greece and What Couples Need",
+              "item": "https://weddedwonderland.com/destination-weddings/same-sex-marriage-greece"
+            }
+          ]
+        },
+        {
+          "@type": "FAQPage",
+          "@id": "https://weddedwonderland.com/destination-weddings/same-sex-marriage-greece#faq",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "Is same-sex marriage legal in Greece?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes. As at November 2026, Law 5089/2024 allows civil marriage between two persons of different or the same sex, in force since 16 February 2024. It is a civil marriage, not a religious one."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Can foreigners get married in Greece as a same-sex couple?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "The law does not set out how a foreign national's freedom to marry is assessed, so ask the municipality where you marry which documents it needs. The Municipality of Rhodes, for example, asks for a certificate of no impediment naming your partner, passports, a joint application and a fee. Confirm with your municipality and the Australian Embassy in Athens, including any fees."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Do we need to live in Greece to marry there?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "The law itself states no residency condition. Ask the municipality where you will marry what it requires of two non-resident Australians, and check with the Australian Embassy in Athens."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Is a same-sex marriage in Greece recognised in Australia?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Same-sex marriages that took place overseas are generally recognised in Australia. It is generally recognised if it was valid under Greek law when it took place and would have been valid under Australian law had it taken place here. Check with the authorities if you have any doubt."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Can same-sex couples marry in a Greek Orthodox church?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "The law leaves churches free to set their own conditions for religious ceremonies. The Greek Orthodox Archdiocese of Australia describes its sacrament of marriage as the union of a man and a woman."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Is Greece LGBT friendly?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Smartraveller says same-sex relationships are legal in Greece, though attitudes vary throughout the country, and are generally more accepting on islands such as Mykonos, Santorini and Ios. Homophobic attacks have occurred."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Can we have a symbolic same-sex wedding in Santorini or Mykonos?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes, a symbolic ceremony carries no legal paperwork, so it is a matter between you and your venue. Ask the venue in writing whether it hosts same-sex weddings and who can lead the ceremony."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    "author": "Wedded Wonderland",
+    "status": "draft",
+    "verify_items": [],
+    "needs_signoff": [],
+    "redirect": null,
+    "draft_note": "DRAFT. Do not publish until checked: no [[VERIFY]] items in the copy; no prices, nothing for Nic to sign off. Image slots needed (6 of 6, none approved): featured, documents, island-setting, venue-terrace, travel-planning, reception-table. featured, island-setting, venue-terrace and reception-table must be real, named places (media kit with written permission or licensed stock, never AI; people only with written couple and guest consent); documents and travel-planning may be an AI still life only with user approval, captioned 'Illustrative image'. Per 02-seo.json, planner SME to reconfirm the legal status live from an official source before publish. Byline to confirm (package uses Wedded Wonderland). DRAFT ONLY. A human clicks Publish."
+  }
+}
