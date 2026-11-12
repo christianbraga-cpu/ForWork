@@ -1,0 +1,79 @@
+{
+  "agent": "cro-specialist",
+  "task_id": "santorini-wedding-venues",
+  "stage": "09",
+  "status": "complete",
+  "round": 1,
+  "inputs_used": [
+    "CLAUDE.md",
+    "content-system/brand/brand-facts.md",
+    "content-system/schemas/09-cro.schema.json",
+    "content-system/seo/link-map.csv",
+    "content/posts/santorini-wedding-venues/01-brief.json",
+    "content/posts/santorini-wedding-venues/08-final.md",
+    "content/posts/mykonos-wedding/09-cro.json (format model)"
+  ],
+  "self_qa": {
+    "checks": [
+      {"check": "Primary CTA 6 words or fewer, no 'click here', no exclamation mark", "pass": true, "note": "'Speak with a Wedded Advisor' (5 words)."},
+      {"check": "copy_change old occurs exactly once in 08-final.md", "pass": true, "note": "'Send every venue on your shortlist the same questions, and ask for the answers in writing.' checked by grep (1 match)."},
+      {"check": "UTMs primary, secondary, magnet, closing each appear exactly once after the copy_change; one <!-- CTA: primary --> marker", "pass": true},
+      {"check": "No new Advisor claim; anchor names Wedded Concierge, not Wonderland Concierge", "pass": true, "note": "The body keeps its single Advisor line (primary, in 'How to compare'); the new sentence names Wedded Concierge only."},
+      {"check": "No 'free', costs, prices, Privileges, business details, legal, church, religious paperwork, transfers or 'last dance'", "pass": true},
+      {"check": "All links exist in link-map (/wonderland-concierge, /magazine)", "pass": true},
+      {"check": "Australian English, no em dashes", "pass": true}
+    ],
+    "confidence": 0.85
+  },
+  "open_questions": [
+    {"to": "orchestrator", "question": "Apply the one copy_change to 08-final.md. 08-final.md was not edited by this stage.", "blocking": false},
+    {"to": "orchestrator", "question": "Deferred business answers (fee model, deposits, named Advisor, real Santorini weddings) remain deferred per brand-facts. Re-run cro-specialist once confirmed.", "blocking": false}
+  ],
+  "assumptions": [
+    "The CMS renders a CTA block (text, subtext, link) at the <!-- CTA: primary --> marker; the inline sentence after the marker is the fallback if it does not.",
+    "FAST MODE: 07-panel.json cta_reactions not re-read; placements follow the brief and the mykonos-wedding model."
+  ],
+  "verify_items": [],
+  "tools_used": ["Bash (grep, sed, python3 -I)"],
+  "payload": {
+    "journey_stage": "comparing",
+    "primary_cta": {
+      "text": "Speak with a Wedded Advisor",
+      "subtext": "The fee is agreed in writing before any work begins.",
+      "link": "/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=santorini-wedding-venues&utm_content=primary",
+      "placement": "Existing <!-- CTA: primary --> marker at the end of 'How to compare Santorini venues like for like', filled by the existing sentence on 'Not published' answers confirmed in writing. Unchanged. This is the body's only Advisor line, per the brief, and where the 'how do we compare these' question peaks."
+    },
+    "secondary_cta": {
+      "text": "See real options with Wedded Concierge",
+      "subtext": "Real venues and dates, compared side by side.",
+      "link": "/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=santorini-wedding-venues&utm_content=secondary",
+      "placement": "Opening line of 'Your booking checklist', appended after 'Send every venue on your shortlist the same questions, and ask for the answers in writing.' (copy change 1), where the comparing reader is about to contact venues. Wording from brand-facts step 3; no Advisor claim."
+    },
+    "lead_magnet": {
+      "name": "Wedded Wonderland digital magazine",
+      "link": "/magazine?utm_source=blog&utm_medium=content&utm_campaign=santorini-wedding-venues&utm_content=magnet",
+      "placement": "Existing line in the final 'Still weighing the Cyclades?' paragraph, for readers still browsing. Already tagged; unchanged.",
+      "exists": true
+    },
+    "closing_cta": {
+      "text": "Shortlist your Santorini venues with Wedded Concierge",
+      "link": "/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=santorini-wedding-venues&utm_content=closing",
+      "placement": "Existing paragraph under '## Shortlist your Santorini venues with a Wedded Advisor'. Unchanged; every claim in it is in brand-facts."
+    },
+    "tracking": [
+      "/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=santorini-wedding-venues&utm_content=primary",
+      "/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=santorini-wedding-venues&utm_content=secondary",
+      "/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=santorini-wedding-venues&utm_content=closing",
+      "/magazine?utm_source=blog&utm_medium=content&utm_campaign=santorini-wedding-venues&utm_content=magnet"
+    ],
+    "copy_changes": [
+      {
+        "old": "Send every venue on your shortlist the same questions, and ask for the answers in writing.",
+        "new": "Send every venue on your shortlist the same questions, and ask for the answers in writing. To weigh real venues and dates side by side, [see real options with Wedded Concierge](https://weddedwonderland.com/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=santorini-wedding-venues&utm_content=secondary).",
+        "reason": "Adds the only missing tracked link (secondary) on an existing line in the booking checklist, keeping the original sentence. Names Wedded Concierge, not the Advisor, so the body still has one Advisor line. No prices, costs, Privileges, legal, church, religious paperwork or transfer content."
+      }
+    ],
+    "rationale": "Brief journey_stage is 'comparing', so the primary is the Wedded Concierge consultation (/wonderland-concierge, live in link-map) with a brand-facts subtext answering the fee worry. Primary, magnet and closing links were already in place with correct UTMs; only the secondary was missing, so one copy change adds it at the top of the booking checklist, between the venue entries and the close. Reading order: primary, secondary, closing, magnet. A Greece or Santorini magazine issue, or a printable venue question list, would be a better-matched magnet; neither exists in link-map, so both are backlog suggestions only (not placed)."
+  },
+  "next_agent": ["distribution"]
+}
