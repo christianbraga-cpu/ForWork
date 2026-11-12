@@ -32,7 +32,7 @@ There are three shapes you will meet most often:
 
 Each shape suits a different kind of wedding, and each leaves a different list of questions to ask.
 
-Planning for 60 to 100 guests or more? Canaves Epitome has a package across its Sunset Terrace, pool area and Elements Restaurant for 45 to 100 guests, Grand Ambassador Santorini lists outdoor space for up to 250 guests, Vedema's wine cellar holds up to 150 for a reception, and Canaves quotes full buyouts by proposal, up to 170 guests at Canaves Epitome. <!-- fact_11 --> <!-- fact_16 --> <!-- fact_109 --> <!-- fact_13 -->
+Planning a larger wedding? Canaves Epitome has a package across its Sunset Terrace, pool area and Elements Restaurant for 45 to 100 guests, Grand Ambassador Santorini lists outdoor space for up to 250 guests, Vedema's wine cellar holds up to 150 for a reception, and Canaves quotes full buyouts by proposal, up to 170 guests at Canaves Epitome. <!-- fact_11 --> <!-- fact_16 --> <!-- fact_109 --> <!-- fact_13 -->
 
 ## What Santorini venue packages usually include
 
@@ -196,7 +196,7 @@ Use this checklist for every quote:
 - **Documents.** Does the venue prepare the paperwork, help with it or leave it to you?
 - **Currency.** What currency is the quote in, and will the deposit and balance be invoiced in the same one?
 
-Once both quotes answer the same questions, the real difference between them is usually obvious.
+Once both quotes answer the same questions, the real difference between them is usually obvious. If you would like help setting yours side by side, [talk to Wedded Concierge](https://weddedwonderland.com/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=santorini-wedding-packages&utm_content=secondary).
 
 ## The legal side in brief
 
