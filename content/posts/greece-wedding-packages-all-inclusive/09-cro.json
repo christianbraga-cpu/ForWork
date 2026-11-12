@@ -1,0 +1,110 @@
+{
+  "agent": "cro-specialist",
+  "task_id": "greece-wedding-packages-all-inclusive",
+  "stage": "09",
+  "status": "complete",
+  "round": 1,
+  "inputs_used": [
+    "CLAUDE.md",
+    "content-system/brand/brand-facts.md",
+    "content-system/schemas/09-cro.schema.json",
+    "content/posts/greece-wedding-packages-all-inclusive/01-brief.json",
+    "content/posts/greece-wedding-packages-all-inclusive/08-final.md",
+    "content/posts/santorini-wedding-packages/09-cro.json (format model)"
+  ],
+  "self_qa": {
+    "checks": [
+      {
+        "check": "Primary CTA 6 words or fewer, no 'click here', no exclamation mark",
+        "pass": true,
+        "note": "'Speak with a Wedded Advisor' (5 words)."
+      },
+      {
+        "check": "copy_change old occurs exactly once in 08-final.md",
+        "pass": true,
+        "note": "'Put both quotes in the same currency before you compare them.' checked by grep (1 match), the closing line of 'How to compare two all-inclusive quotes like for like' (Quote currency subsection)."
+      },
+      {
+        "check": "New sentence anchor is exactly 'talk to Wedded Concierge'; no new Advisor or service claim",
+        "pass": true,
+        "note": "Body keeps its single Advisor line at the primary marker."
+      },
+      {
+        "check": "/wonderland-concierge primary, secondary, closing and /magazine magnet each appear once after the copy_change; one <!-- CTA: primary --> marker",
+        "pass": true
+      },
+      {
+        "check": "No 'free', costs, prices, Privileges, business details, legal, church, religious paperwork, transfers or 'last dance'",
+        "pass": true
+      },
+      {
+        "check": "Australian English, no em dashes",
+        "pass": true
+      }
+    ],
+    "confidence": 0.85
+  },
+  "open_questions": [
+    {
+      "to": "orchestrator",
+      "question": "Apply the one copy_change to 08-final.md. 08-final.md was not edited by this stage.",
+      "blocking": false
+    },
+    {
+      "to": "orchestrator",
+      "question": "08-final.md lines 12 and 49 link /destination-wedding-packages twice, both tagged utm_content=secondary with this post's campaign. That double-counts the secondary slot and breaks 'each source linked once'. Recommend removing the UTM query from both and keeping only one of the two links (the intro one, per brief).",
+      "blocking": false
+    }
+  ],
+  "assumptions": [
+    "The CMS renders a CTA block (text, subtext, link) at the <!-- CTA: primary --> marker; the inline sentence after the marker is the fallback.",
+    "FAST MODE: 07-panel.json cta_reactions and link-map.csv not re-read; /wonderland-concierge and /magazine are already linked in 08-final.md and brand-facts."
+  ],
+  "verify_items": [],
+  "tools_used": [
+    "Bash (grep, sed, python3 -I)"
+  ],
+  "payload": {
+    "journey_stage": "comparing",
+    "primary_cta": {
+      "text": "Speak with a Wedded Advisor",
+      "subtext": "Quotes in AUD, inclusions confirmed in writing before you commit.",
+      "link": "/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=greece-wedding-packages-all-inclusive&utm_content=primary",
+      "placement": "Existing <!-- CTA: primary --> marker at the end of 'Planning from Australia', filled by the existing Advisor sentence. Unchanged. The body's only Advisor line, where currency, deposit and insurance questions peak."
+    },
+    "secondary_cta": {
+      "text": "Talk to Wedded Concierge",
+      "subtext": "Both quotes, the same questions, answered in writing.",
+      "link": "/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=greece-wedding-packages-all-inclusive&utm_content=secondary",
+      "placement": "End of 'How to compare two all-inclusive quotes like for like', appended after 'Put both quotes in the same currency before you compare them.' (copy change 1), where the comparing reader has just finished the checklist. No Advisor claim."
+    },
+    "lead_magnet": {
+      "name": "Wedded Wonderland digital magazine",
+      "link": "/magazine?utm_source=blog&utm_medium=content&utm_campaign=greece-wedding-packages-all-inclusive&utm_content=magnet",
+      "placement": "Existing link in the closing paragraph under '## Start your Greece shortlist', for readers still browsing. Already tagged; unchanged.",
+      "exists": true
+    },
+    "closing_cta": {
+      "text": "Plan your Greece wedding with Wedded Concierge",
+      "link": "/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=greece-wedding-packages-all-inclusive&utm_content=closing",
+      "placement": "Existing paragraph under '## Start your Greece shortlist'. Unchanged."
+    },
+    "tracking": [
+      "/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=greece-wedding-packages-all-inclusive&utm_content=primary",
+      "/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=greece-wedding-packages-all-inclusive&utm_content=secondary",
+      "/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=greece-wedding-packages-all-inclusive&utm_content=closing",
+      "/magazine?utm_source=blog&utm_medium=content&utm_campaign=greece-wedding-packages-all-inclusive&utm_content=magnet"
+    ],
+    "copy_changes": [
+      {
+        "old": "Put both quotes in the same currency before you compare them.",
+        "new": "Put both quotes in the same currency before you compare them. To set yours side by side, [talk to Wedded Concierge](https://weddedwonderland.com/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=greece-wedding-packages-all-inclusive&utm_content=secondary).",
+        "reason": "Adds the missing tracked secondary link at the end of the quote checklist, keeping the original sentence. Anchor names Wedded Concierge, not the Advisor, so the body still has one Advisor line. No prices, costs, Privileges, legal, church, religious paperwork or transfer content."
+      }
+    ],
+    "rationale": "Brief journey_stage is 'comparing', so the primary is the Wedded Concierge consultation with a brand-facts subtext (AUD quotes, inclusions in writing) answering the main worry. Primary, magnet and closing links were already in place with correct UTMs; the secondary was missing on /wonderland-concierge, so one copy change adds it where the checklist resolves the 'how do we compare these' question. Reading order: secondary, primary, closing, magnet. A printable like-for-like quote checklist would be a better-matched magnet; it does not exist on the site, so it is a backlog suggestion only (not placed)."
+  },
+  "next_agent": [
+    "distribution"
+  ]
+}
