@@ -4,3 +4,4 @@
 23:15 03 batch B: 20 facts (Smartraveller Greece, getting married overseas, AGD recognition since 9 Dec 2017; Embassy reused); Archdiocese man-and-woman fact added by orchestrator from the approved read (fact_120); no venue states same-sex weddings in words.
 23:16 03 batch A: 24 facts; Law 5089/2024 (FEK A 27/16.02.2024), Ministry of Interior Circular 240, Hellenic Parliament; Rhodes foreign-national documents reused; merged.
 23:16 02 SEO done: 5 cities; AU 40 US 260 KD 9; gap: foreigners and Australian recognition.
+23:19 05 writer done: about 2,660 words, 0 VERIFY, no venues named.
