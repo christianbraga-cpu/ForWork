@@ -6,3 +6,4 @@
 05:57 05 writer done: first draft about 3,370 words, 0 VERIFY.
 06:00 06 editor pass_with_edits 4.14, 12 edits applied (05-draft-r2.md); 07 readers done.
 06:02 07b panel revise (enquire 2.6); 4 must-fix.
+06:03 08 writer final round 3 done: about 3,396 words.
