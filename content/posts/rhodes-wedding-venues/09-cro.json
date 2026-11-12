@@ -1,0 +1,79 @@
+{
+  "agent": "cro-specialist",
+  "task_id": "rhodes-wedding-venues",
+  "stage": "09",
+  "status": "complete",
+  "round": 1,
+  "inputs_used": [
+    "CLAUDE.md",
+    "content-system/brand/brand-facts.md",
+    "content-system/schemas/09-cro.schema.json",
+    "content-system/seo/link-map.csv",
+    "content/posts/rhodes-wedding-venues/01-brief.json",
+    "content/posts/rhodes-wedding-venues/08-final.md",
+    "content/posts/santorini-wedding-venues/09-cro.json (format model)"
+  ],
+  "self_qa": {
+    "checks": [
+      {"check": "Primary CTA 6 words or fewer, no 'click here', no exclamation mark", "pass": true, "note": "'Book a Wedded Concierge consultation' (5 words)."},
+      {"check": "copy_change old occurs exactly once in 08-final.md", "pass": true, "note": "Rodos Palace capacity sentence in 'Choosing an area of the island' checked by grep (1 match)."},
+      {"check": "utm_content primary, secondary, magnet, closing each appear exactly once after the copy_change; one <!-- CTA: primary --> marker", "pass": true},
+      {"check": "UTMs only on /wonderland-concierge and /magazine; none on package or other pages", "pass": true},
+      {"check": "No new Advisor line; anchor names Wedded Concierge, not Wonderland Concierge; lead-in uses 'If you would like help setting ... side by side'", "pass": true, "note": "Body keeps its single Advisor line (primary) plus the close."},
+      {"check": "No prices, 'free', Wedded Privileges, transfers or 'last dance'; no comparison or shortlisting service claimed beyond brand-facts", "pass": true},
+      {"check": "Australian English, no em dashes", "pass": true}
+    ],
+    "confidence": 0.85
+  },
+  "open_questions": [
+    {"to": "orchestrator", "question": "Apply the one copy_change to 08-final.md. 08-final.md was not edited by this stage.", "blocking": false},
+    {"to": "orchestrator", "question": "Deferred business answers (fee model, named Advisor, real Rhodes weddings) remain deferred per brand-facts. Re-run cro-specialist once confirmed.", "blocking": false}
+  ],
+  "assumptions": [
+    "The CMS renders a CTA block (text, subtext, link) at the <!-- CTA: primary --> marker; the inline sentence after the marker is the fallback if it does not.",
+    "FAST MODE: 07-panel.json cta_reactions not re-read; placements follow the brief and the santorini-wedding-venues model."
+  ],
+  "verify_items": [],
+  "tools_used": ["Bash (grep, sed, python3 -I)"],
+  "payload": {
+    "journey_stage": "comparing",
+    "primary_cta": {
+      "text": "Book a Wedded Concierge consultation",
+      "subtext": "The fee is agreed in writing before any work begins.",
+      "link": "https://weddedwonderland.com/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=rhodes-wedding-venues&utm_content=primary",
+      "placement": "Existing <!-- CTA: primary --> marker at the end of 'How to compare Rhodes venues like for like', filled by the existing sentence on unpublished house rules confirmed in writing. Unchanged. This is the body's only Advisor line, per the brief, where the 'how do we compare these' question peaks."
+    },
+    "secondary_cta": {
+      "text": "Talk to Wedded Concierge",
+      "subtext": "One Wedded Advisor, start to finish.",
+      "link": "https://weddedwonderland.com/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=rhodes-wedding-venues&utm_content=secondary",
+      "placement": "End of the west coast paragraph in 'Choosing an area of the island' (copy change 1), after the reader has seen all four areas and before the venue entries, for a couple still choosing an area. No Advisor line added to the body."
+    },
+    "lead_magnet": {
+      "name": "Wedded Wonderland digital magazine",
+      "link": "https://weddedwonderland.com/magazine?utm_source=blog&utm_medium=content&utm_campaign=rhodes-wedding-venues&utm_content=magnet",
+      "placement": "Existing final line under 'Shortlist your Rhodes venues with a Wedded Advisor', for readers still browsing. Already tagged; unchanged.",
+      "exists": true
+    },
+    "closing_cta": {
+      "text": "Start your shortlist with Wedded Concierge",
+      "link": "https://weddedwonderland.com/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=rhodes-wedding-venues&utm_content=closing",
+      "placement": "Existing paragraph under '## Shortlist your Rhodes venues with a Wedded Advisor'. Unchanged; every claim in it is in brand-facts."
+    },
+    "tracking": [
+      "https://weddedwonderland.com/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=rhodes-wedding-venues&utm_content=primary",
+      "https://weddedwonderland.com/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=rhodes-wedding-venues&utm_content=secondary",
+      "https://weddedwonderland.com/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=rhodes-wedding-venues&utm_content=closing",
+      "https://weddedwonderland.com/magazine?utm_source=blog&utm_medium=content&utm_campaign=rhodes-wedding-venues&utm_content=magnet"
+    ],
+    "copy_changes": [
+      {
+        "old": "It lists a large wedding ceremony and reception among its options, though it does not publish a capacity. <!-- fact_207 -->",
+        "new": "It lists a large wedding ceremony and reception among its options, though it does not publish a capacity. <!-- fact_207 --> If you would like help setting venues from different areas side by side, [talk to Wedded Concierge](https://weddedwonderland.com/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=rhodes-wedding-venues&utm_content=secondary).",
+        "reason": "Adds the only missing tracked link (secondary) at the end of the area overview, keeping the original sentence and fact marker. Names Wedded Concierge, not the Advisor, so the body still has one Advisor line. No prices, 'free', Privileges, transfers or comparison service claims."
+      }
+    ],
+    "rationale": "Brief journey_stage is 'comparing', so the primary is the Wedded Concierge consultation (/wonderland-concierge, live in link-map) with a brand-facts subtext answering the fee worry. Primary, magnet and closing links were already in place with correct UTMs; only the secondary was missing, so one copy change adds it where an earlier-stage reader is still choosing an area. Reading order: primary, secondary, closing, magnet. Package and venues-guide links stay untagged. A Greece or Rhodes magazine issue, or a printable venue question list, would be a better-matched magnet; neither exists in link-map, so both are backlog suggestions only (not placed)."
+  },
+  "next_agent": ["distribution"]
+}
