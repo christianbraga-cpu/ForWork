@@ -54,7 +54,7 @@ If there is less than one month until your wedding, talk to your authorised cele
 
 ## How to fill out the NOIM form step by step
 
-The form itself is short. What matters is the order: form, witness, celebrant, documents, in four steps. For a fuller picture of the celebrant's role, read [what a celebrant does, at home and abroad](https://weddedwonderland.com/expert-advice/what-does-a-celebrant-do-and-do-you-need-one-abroad).
+The form itself is short. It comes down to four steps: form, witness, celebrant, documents. For a fuller picture of the celebrant's role, read [what a celebrant does, at home and abroad](https://weddedwonderland.com/expert-advice/what-does-a-celebrant-do-and-do-you-need-one-abroad).
 
 ### Step 1: Get the official form and complete your details
 
@@ -70,7 +70,7 @@ The completed, witnessed NOIM goes to the authorised celebrant who will marry yo
 
 ### Step 4: Provide your documents
 
-Your celebrant will then ask for evidence of birth, identity and, where it applies, the end of an earlier marriage. The list is set out under "What documents do you need?" below. <!-- fact_06 -->
+Your celebrant will also need evidence of birth, identity and, where it applies, the end of an earlier marriage. The list is set out under "What documents do you need?" below. <!-- fact_06 -->
 
 ## Who can witness a Notice of Intended Marriage?
 
@@ -115,7 +115,7 @@ Supporting documents issued overseas raise their own questions. Our guide on [wh
 
 ## Can the one-month notice be shortened?
 
-Sometimes. If there is less than one month until your wedding, you may still marry if a prescribed authority approves it. <!-- fact_05 --> As at November 2026, the grounds the Attorney-General's Department lists are: <!-- fact_05 -->
+If there is less than one month until your wedding, you may still marry if a prescribed authority approves it. <!-- fact_05 --> As at November 2026, the grounds the Attorney-General's Department lists are: <!-- fact_05 -->
 
 - employment-related or travel commitments
 - wedding or celebration arrangements
@@ -143,9 +143,9 @@ For a destination wedding, the NOIM question comes down to where the legal marri
 
 You hold a small legal ceremony in Australia with an authorised celebrant, and the NOIM applies exactly as above. <!-- fact_02 --> On the day, you, your celebrant and two witnesses over 18 sign three marriage certificates, and the celebrant gives you a ceremonial certificate. <!-- fact_11 --> Ask your celebrant where the legal ceremony can take place. Your celebrant then lodges the paperwork with the registry within 14 days. <!-- fact_11 --> Apply to the registry for your official marriage certificate, which you need to change your name or prove you are married; your celebrant can do this for you, generally at a cost. <!-- fact_12 -->
 
-The celebration abroad can then be whatever you want it to be. Once your marriage is recognised, you cannot marry again, but you can hold another kind of ceremony, such as a confirmation of vows or a recommitment ceremony. <!-- fact_22 -->
+The celebration abroad can then be whatever you want it to be. Once your marriage is recognised, you cannot marry again in Australia, but you can hold another kind of ceremony, such as a confirmation of vows or a recommitment ceremony. <!-- fact_22 -->
 
-You might choose a religious celebrant for the legal ceremony at home. In the Greek Orthodox Archdiocese of Australia, for example, every priest is also a registered civil celebrant who performs the civil marriage together with the religious service on the same day, and the NOIM is completed in the priest's presence at least one calendar month before the wedding. <!-- fact_24 --> <!-- fact_25 -->
+You might choose a religious celebrant for the legal ceremony at home. In the Greek Orthodox Archdiocese of Australia, for example, every priest is also a registered civil celebrant who may perform the civil marriage only together with the religious service on the same day, and the NOIM is completed in the priest's presence at least one calendar month before the wedding. <!-- fact_24 --> <!-- fact_25 -->
 
 ### Option B: marry legally abroad
 
@@ -171,7 +171,6 @@ Either way, the NOIM, the legal date and any local paperwork stay with you and y
 
 Once your legal route is settled, your Wedded Advisor is a single point of contact who plans the venue, travel, vendors and payments for the celebration abroad, works in your time zone and quotes in AUD, with the fee agreed in writing before any work begins; [talk to Wedded Concierge](https://weddedwonderland.com/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=notice-of-intended-marriage&utm_content=secondary) about your plans.
 
-<!-- CTA: primary -->
 
 ## Frequently asked questions
 
@@ -189,7 +188,7 @@ Yes, if you plan to marry in Australia, with an in-person witness who is also ov
 
 ### Can we get married with less than one month's notice?
 
-Possibly. Talk to your celebrant: you may be able to marry if a prescribed authority approves it, on grounds such as employment or travel commitments, celebration arrangements, medical reasons, legal proceedings or an error in giving notice. <!-- fact_05 -->
+Talk to your celebrant: you may be able to marry if a prescribed authority approves it, on grounds such as employment or travel commitments, celebration arrangements, medical reasons, legal proceedings or an error in giving notice. <!-- fact_05 -->
 
 ### Do we need a NOIM if we are getting married overseas?
 
