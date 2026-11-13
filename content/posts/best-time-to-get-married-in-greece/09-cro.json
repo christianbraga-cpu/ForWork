@@ -1,0 +1,69 @@
+{
+  "agent": "cro-specialist",
+  "task_id": "best-time-to-get-married-in-greece",
+  "stage": "09",
+  "status": "complete",
+  "round": 1,
+  "inputs_used": [
+    "CLAUDE.md",
+    "content-system/schemas/09-cro.schema.json",
+    "content-system/brand/brand-facts.md",
+    "content/posts/best-time-to-get-married-in-greece/01-brief.json",
+    "content/posts/best-time-to-get-married-in-greece/08-final.md",
+    "content/posts/same-sex-marriage-greece/09-cro.json (format model)"
+  ],
+  "self_qa": {
+    "checks": [
+      {"check": "Primary CTA 6 words or fewer, no 'click here', no exclamation mark", "pass": true, "note": "'Book a Wedded Concierge consultation' (5 words)."},
+      {"check": "utm_content primary, secondary, closing, magnet each appear exactly once", "pass": true, "note": "Checked by grep: 1 each (4 UTM links in total), so no copy change made."},
+      {"check": "UTMs only on /wonderland-concierge (3) and /magazine (1)", "pass": true},
+      {"check": "Every /wonderland-concierge anchor names Wedded Concierge; no new Advisor line", "pass": true, "note": "Anchors: 'Wedded Concierge consultation', 'Talk to Wedded Concierge about your dates', 'Start planning with Wedded Concierge'. No anchor flagged."},
+      {"check": "No prices, 'free', Wedded Privileges, transfers, 'last dance' or 'best' in CTA text; Australian English, no em dashes", "pass": true}
+    ],
+    "confidence": 0.85
+  },
+  "open_questions": [
+    {"to": "orchestrator", "question": "The <!-- CTA: primary --> marker sits after the month-by-scenario section, directly above the secondary link, while the inline primary link is after Key takeaways. If the CMS renders a CTA block at the marker it will sit next to the secondary link; confirm that is wanted. No copy change made.", "blocking": false},
+    {"to": "orchestrator", "question": "Deferred business answers (fee model detail, named Advisor, real weddings) remain deferred per brand-facts. Re-run cro-specialist once confirmed.", "blocking": false}
+  ],
+  "assumptions": [
+    "FAST MODE: 07-panel.json cta_reactions not re-read; placements follow the brief and the same-sex-marriage-greece model."
+  ],
+  "verify_items": [],
+  "tools_used": ["Bash (grep, sed, python3 -I)"],
+  "payload": {
+    "journey_stage": "planning",
+    "primary_cta": {
+      "text": "Book a Wedded Concierge consultation",
+      "subtext": "The fee is agreed in writing before any work begins.",
+      "link": "https://weddedwonderland.com/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=best-time-to-get-married-in-greece&utm_content=primary",
+      "placement": "Existing inline sentence directly after Key takeaways ('Once you have two or three months in mind, a Wedded Concierge consultation turns them into dates a venue can actually hold.'); CTA block at the existing <!-- CTA: primary --> marker after the month scenarios. Unchanged."
+    },
+    "secondary_cta": {
+      "text": "Talk to Wedded Concierge",
+      "subtext": "One Wedded Advisor, in your time zone, quoting in AUD.",
+      "link": "https://weddedwonderland.com/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=best-time-to-get-married-in-greece&utm_content=secondary",
+      "placement": "Existing sentence after the month scenarios, just before the FAQ, where the 'which month suits us' question peaks. Unchanged."
+    },
+    "lead_magnet": {
+      "name": "Wedded Wonderland digital magazine",
+      "link": "https://weddedwonderland.com/magazine?utm_source=blog&utm_medium=content&utm_campaign=best-time-to-get-married-in-greece&utm_content=magnet",
+      "placement": "Existing final line of the post, for readers still early in planning. Already tagged; unchanged.",
+      "exists": true
+    },
+    "closing_cta": {
+      "text": "Start planning with Wedded Concierge",
+      "link": "https://weddedwonderland.com/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=best-time-to-get-married-in-greece&utm_content=closing",
+      "placement": "Existing closing paragraph under 'Plan your month with a Wedded Advisor'. Unchanged."
+    },
+    "tracking": [
+      "https://weddedwonderland.com/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=best-time-to-get-married-in-greece&utm_content=primary",
+      "https://weddedwonderland.com/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=best-time-to-get-married-in-greece&utm_content=secondary",
+      "https://weddedwonderland.com/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=best-time-to-get-married-in-greece&utm_content=closing",
+      "https://weddedwonderland.com/magazine?utm_source=blog&utm_medium=content&utm_campaign=best-time-to-get-married-in-greece&utm_content=magnet"
+    ],
+    "copy_changes": [],
+    "rationale": "Brief journey_stage is 'planning', so the primary is the Wedded Concierge consultation at /wonderland-concierge, placed once the reader has two or three months in mind; the subtext answers the fee worry from brand-facts. All four tracked links (primary, secondary, closing, magnet) already appear once each with correct UTMs and every concierge anchor names Wedded Concierge, so no copy change is made. Other internal links stay untagged. A Greece wedding month-planner (weather, venue season and religious dates on one page) would be a better-matched magnet; none is known to exist, so it is a backlog suggestion only (not placed)."
+  },
+  "next_agent": ["distribution"]
+}
