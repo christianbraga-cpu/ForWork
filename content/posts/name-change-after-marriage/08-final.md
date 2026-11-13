@@ -46,7 +46,7 @@ Anything beyond that needs paperwork. In NSW, for any other change of name, you 
 
 ### Changing a first or middle name
 
-A first or middle name change is not covered by your marriage certificate. In NSW it goes through a formal application, as does moving your surname into your middle names. <!-- fact_23 -->
+In NSW, a first or middle name change is not one of the surname options your marriage certificate covers, so it goes through a formal application. <!-- fact_23 -->
 
 ### When a partner takes your surname
 
@@ -177,7 +177,7 @@ It depends on your certificate and how many organisations you tell, so ask the r
 
 ### How much does it cost to change your name after marriage?
 
-If you married in Australia, NSW says you don't need to pay the fee for an official change of name. <!-- fact_18 --> Your celebrant can order the official marriage certificate for you, generally at a cost. <!-- fact_12 --> A formal change of name, which an overseas marriage usually needs in NSW, carries a registry fee. <!-- fact_18 --> <!-- fact_22 -->
+If you married in Australia, NSW says you don't need to pay the fee for an official change of name. <!-- fact_18 --> Your celebrant can order the official marriage certificate for you, generally at a cost. <!-- fact_12 --> A formal change of name, which an overseas marriage needs in NSW, carries a registry fee. <!-- fact_18 --> <!-- fact_22 -->
 
 ### Can I travel on my honeymoon with my old passport?
 
