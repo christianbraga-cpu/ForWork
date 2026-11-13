@@ -6,3 +6,4 @@
 03:28 05 writer done: about 2,590 words, 0 VERIFY.
 03:30 06 editor pass_with_edits 4.43, 5 edits applied (05-draft-r2.md); 07 readers done; orchestrator search for Qld/Vic licence pages found nothing official.
 03:32 07b panel revise (enquire 2.0); 2 must-fix.
+03:33 08 writer final round 3 done: about 1,910 words.
