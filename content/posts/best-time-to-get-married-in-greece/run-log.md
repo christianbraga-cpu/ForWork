@@ -5,3 +5,4 @@
 00:07 02 SEO done (re-run after restart): 5 cities; AU 10 US 30; KD 31; hub page /destinations/europe/greece has a best-time H2 (link here).
 00:10 05 writer done: about 2,830 words, 2 VERIFY (Easter dates, public holidays).
 00:13 06 editor pass_with_edits 4.29, 25 edits applied (05-draft-r2.md): both VERIFY lines reworded; July-driest and other table mismatches fixed; 07 readers done.
+00:16 07b panel revise (enquire 2.2); 2 must-fix.
