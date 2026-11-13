@@ -7,3 +7,4 @@
 00:13 06 editor pass_with_edits 4.29, 25 edits applied (05-draft-r2.md): both VERIFY lines reworded; July-driest and other table mismatches fixed; 07 readers done.
 00:16 07b panel revise (enquire 2.2); 2 must-fix.
 00:17 08 writer final round 3 done: about 2,720 words.
+00:19 8b final check pass_with_edits, 5 edits applied (venue windows credited to Angsana Corfu); stray CTA marker removed; CRO no changes; 10 distribution done.

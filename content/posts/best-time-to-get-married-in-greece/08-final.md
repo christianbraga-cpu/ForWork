@@ -62,7 +62,7 @@ Evenings are cool. Naxos averages a minimum of 12.5°C and Chania Souda 11.4°C,
 
 Smartraveller notes that dust storms from the Sahara are increasing in frequency across Greece, particularly in spring, reducing air quality and visibility. <!-- fact_30 --> For an April date, give the photographer a covered or indoor fallback as well as a rain plan.
 
-Venue windows are the other check. Some venues open their outdoor spaces in stages, so one space may take April weddings while another waits until May. <!-- fact_31 --> <!-- fact_32 --> Minos Palace describes eastern Crete as pleasant from April to November, with spring at around 18 to 24°C. <!-- fact_33 -->
+Venue windows are the other check. At Angsana Corfu, outdoor spaces open in stages: Oribu Garden takes ceremonies from April, while Vertigo Sky Bar waits until mid-May. <!-- fact_31 --> <!-- fact_32 --> Minos Palace describes eastern Crete as pleasant from April to November, with spring at around 18 to 24°C. <!-- fact_33 -->
 
 For an Orthodox ceremony, check any spring date against Great Lent, which runs until Easter Sunday and is closed to weddings, with dates that vary each year. <!-- fact_37 -->
 
@@ -116,7 +116,7 @@ Two cautions apply. Smartraveller's wildfire period runs to the end of September
 
 Corfu turns earlier than the other islands. Kerkyra averages 7.4 rain days and 87.8 mm of rain in September, compared with 21.7 mm in August. <!-- fact_02 -->
 
-On the church calendar, the Archdiocese lists 14 September as a closed date. <!-- fact_37 --> Some outdoor venue spaces close at the end of the month, so check yours. <!-- fact_31 --> <!-- fact_32 -->
+On the church calendar, the Archdiocese lists 14 September as a closed date. <!-- fact_37 --> At Angsana Corfu, Vertigo Sky Bar takes weddings until the end of September, so check your venue's window. <!-- fact_31 --> <!-- fact_32 -->
 
 ### October
 
@@ -126,7 +126,7 @@ Rain returns. Naxos averages 5.5 rain days, Heraklion 7.5, Chania Souda 9.3 and 
 
 The north wind at Naxos is still in its stronger season. <!-- fact_09 --> A clifftop ceremony in the Cyclades needs a sheltered alternative, and guests travelling by ferry need a buffer day.
 
-Some venues keep going, with garden and restaurant spaces still taking weddings, and Minos Palace describes early autumn in eastern Crete at around 20 to 27°C. <!-- fact_31 --> <!-- fact_32 --> <!-- fact_33 -->
+At Angsana Corfu, Oribu Garden and Oribu Restaurant still take weddings in October, and Minos Palace describes early autumn in eastern Crete at around 20 to 27°C. <!-- fact_31 --> <!-- fact_32 --> <!-- fact_33 -->
 
 ## How the season differs by island
 
@@ -199,7 +199,6 @@ There is no month that suits every wedding. These scenarios match common priorit
 
 **Long, warm evenings outdoors.** July and August are the hottest and driest months at every station, with the trade-off of Smartraveller's heat and wildfire advice. <!-- fact_12 --> <!-- fact_22 --> <!-- fact_25 --> <!-- fact_26 -->
 
-<!-- CTA: primary -->
 
 Your Wedded Advisor is your single point of contact, working in your time zone and quoting in AUD, with the fee agreed in writing before any work begins. [Talk to Wedded Concierge about your dates](https://weddedwonderland.com/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=best-time-to-get-married-in-greece&utm_content=secondary).
 
@@ -207,7 +206,7 @@ Your Wedded Advisor is your single point of contact, working in your time zone a
 
 ### When do Greek venues open for weddings?
 
-Each venue sets its own season, and some open individual spaces at different times, from April for some gardens to mid-May for other spaces. <!-- fact_31 --> <!-- fact_32 --> Minos Palace describes eastern Crete as pleasant from April to November. <!-- fact_33 -->
+Each venue sets its own season. At Angsana Corfu, for example, Oribu Garden opens in April and Vertigo Sky Bar from mid-May. <!-- fact_31 --> <!-- fact_32 --> Minos Palace describes eastern Crete as pleasant from April to November. <!-- fact_33 -->
 
 ### How hot is Greece in July and August?
 
@@ -219,7 +218,7 @@ No. The Greek Orthodox Archdiocese of Australia lists closed dates including Gre
 
 ### Is October too late for a Greek island wedding?
 
-Not necessarily, but plan for rain. October maximums average 21.9°C at Naxos and 24.5°C at Rodos, with rain days rising to 5.5 and 6.5, and to 11.4 at Kerkyra. <!-- fact_10 --> <!-- fact_12 --> <!-- fact_15 --> <!-- fact_02 --> Some venues still take weddings in October, so ask about covered spaces. <!-- fact_31 --> <!-- fact_32 -->
+Not necessarily, but plan for rain. October maximums average 21.9°C at Naxos and 24.5°C at Rodos, with rain days rising to 5.5 and 6.5, and to 11.4 at Kerkyra. <!-- fact_10 --> <!-- fact_12 --> <!-- fact_15 --> <!-- fact_02 --> At Angsana Corfu, Oribu Garden and Oribu Restaurant still take October weddings, so ask your venue about covered spaces. <!-- fact_31 --> <!-- fact_32 -->
 
 ## Plan your month with a Wedded Advisor
 
