@@ -5,3 +5,4 @@
 00:37 02 SEO done: AU 1,900 (KD 27), noim 1,300, noim form 590; gap: overseas and destination couples; cannibalisation low.
 00:39 05 writer done: about 2,446 words, 0 VERIFY.
 00:41 06 editor pass_with_edits 4.29, 6 edits applied (05-draft-r2.md); 07 readers done.
+00:43 07b panel revise (enquire 2.1); 2 must-fix.
