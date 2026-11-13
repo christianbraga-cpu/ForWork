@@ -19,6 +19,7 @@ flags any domain that is in neither list for a human decision.
 | Greek government and municipalities (added 12 Nov 2026) | gov.gr, en.mitos.gov.gr, ypes.gr, mfa.gr, metafraseis.services.gov.gr, cityofathens.gr, chania.gr, heraklion.gr and other official Greek municipality sites |
 | Fiji government and missions (added 13 Nov 2026) | foreignaffairs.gov.fj (Fiji Ministry of Foreign Affairs), fijiembassy.jp (Embassy of Fiji in Japan; older page, cross-check) |
 | Indonesia and France, Australian missions (added 13 Nov 2026) | indonesia.embassy.gov.au, france.embassy.gov.au, consadelaide.esteri.it (Italian Consulate in Adelaide) |
+| French and Indonesian government (added 13 Nov 2026) | service-public.gouv.fr (French government official information service, DILA), peraturan.bpk.go.id (Indonesian Audit Board legal database, official texts of Indonesian law) |
 | Major publications, for reported facts (added 27 Oct 2026) | vogue.com, vogue.com.au, people.com, harpersbazaar.com, townandcountrymag.com, bbc.com, apnews.com, reuters.com. Cite as "reported by"; prefer two independent sources for any carat or value |
 | Weather and climate | Official meteorological services (e.g. bom.gov.au for comparisons, meteoam.it) |
 
