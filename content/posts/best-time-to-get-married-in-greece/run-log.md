@@ -6,3 +6,4 @@
 00:10 05 writer done: about 2,830 words, 2 VERIFY (Easter dates, public holidays).
 00:13 06 editor pass_with_edits 4.29, 25 edits applied (05-draft-r2.md): both VERIFY lines reworded; July-driest and other table mismatches fixed; 07 readers done.
 00:16 07b panel revise (enquire 2.2); 2 must-fix.
+00:17 08 writer final round 3 done: about 2,720 words.
