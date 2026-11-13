@@ -1,0 +1,264 @@
+{
+  "agent": "planner-sme",
+  "task_id": "notice-of-intended-marriage",
+  "stage": "03",
+  "status": "complete",
+  "round": 1,
+  "inputs_used": [
+    "mcp__Apify__apify--web-fetch one parallel round, 13 November 2026, no retries: https://www.ag.gov.au/families-and-marriage/marriage/get-married (HTTP 200, read in full); https://www.ag.gov.au/families-and-marriage/publications/notice-intended-marriage (HTTP 500, not read); https://www.ag.gov.au/families-and-marriage/marriage/shortening-time (404, page not found); https://www.legislation.gov.au/C1961A00012/latest/text (200, table of contents only, no section text); https://www.nsw.gov.au/family-and-relationships/marriage/register (404)",
+    "content/posts/is-marriage-in-italy-recognised-in-australia/03-source-pack.json (fact_35, fact_01, fact_25, fact_39, fact_37 copied as fact_16, fact_20, fact_21, fact_22, fact_23)",
+    "content/posts/same-sex-marriage-greece/03-source-pack.json (fact_106, fact_107, fact_115 copied as fact_17, fact_18, fact_19)",
+    "content/posts/greek-orthodox-wedding/03-source-pack.json (fact_319, fact_320, fact_321 copied as fact_24, fact_25, fact_26)",
+    "No 01-brief.json or 02-seo.json in the post folder; must_include derived from the orchestrator's task"
+  ],
+  "self_qa": {
+    "checks": [
+      {
+        "check": "Every fact has a source and date",
+        "pass": true
+      },
+      {
+        "check": "No price without a source; all prices in needs_signoff",
+        "pass": true,
+        "note": "No prices recorded; fee references carry no amounts."
+      },
+      {
+        "check": "Every must-include covered or [[VERIFY]]",
+        "pass": true
+      },
+      {
+        "check": "No invented quotes, statistics or real weddings",
+        "pass": true
+      }
+    ],
+    "confidence": 0.7
+  },
+  "open_questions": [
+    {
+      "to": "luxury-writer",
+      "question": "State NOIM rules 'as at November 2026' with the line that the Wedded Advisor confirms current requirements. Do not list NOIM witness categories, translation rules or a NOIM fee until the verify items are cleared.",
+      "blocking": false
+    },
+    {
+      "to": "orchestrator",
+      "question": "The AGD NOIM form page (HTTP 500) and prescribed-authority page were not read; a second fetch of https://www.ag.gov.au/node/3015 and https://marriage.ag.gov.au/stateofficers/authorities would clear most verify items.",
+      "blocking": false
+    }
+  ],
+  "assumptions": [
+    "The Greek Orthodox Archdiocese is a religious body, not government; its facts are typed 'other' and used only as an example of a religious celebrant's practice.",
+    "fact_16 duplicates fact_02/fact_03 from an earlier read (27 October 2026); the live read on 13 November 2026 matches it."
+  ],
+  "verify_items": [
+    "[[VERIFY: Who may witness a NOIM signed in Australia (the categories listed on the current form or Marriage Act s 42) and who may witness it overseas (e.g. Australian diplomatic or consular officer, notary public). The AGD NOIM form page returned HTTP 500 and the Marriage Act section text was not returned on 13 November 2026; check the current NOIM form (https://www.ag.gov.au/node/3015) or s 42 before the article lists witnesses.]]",
+    "[[VERIFY: Translation rules for foreign-language birth, divorce or death documents given to the celebrant (whether an accredited translator or a translation with a declaration is required). Not on the AGD 'Get married' page; check the NOIM form notes or Marriage Regulations 2017.]]",
+    "[[VERIFY: Whether any government fee applies to lodging a NOIM itself. The AGD 'Get married' page states none; it says only that a celebrant can order the official marriage certificate from the registry 'generally at a cost'. Celebrant fees and registry certificate fees are set by the celebrant and each state or territory; do not state amounts.]]",
+    "[[VERIFY: Who the prescribed authorities are for shortening of time and how to apply. AGD links to https://marriage.ag.gov.au/stateofficers/authorities, not read in this fast round; the AGD 'shortening-time' URL tried returned 404. Also confirm whether shortening is granted only on the five listed grounds or those are examples.]]",
+    "[[VERIFY: The new order of acceptable evidence of date and place of birth after the 12 June 2024 amendments (AGD says it was 're-ordered' but the page lists only 'birth certificate or passport'). Check Marriage Act s 42 or the current form before ranking documents.]]",
+    "[[VERIFY: State registry process after the ceremony (e.g. NSW or Victoria BDM: how couples order the official certificate). The NSW page tried returned 404; only the AGD statement (celebrant lodges within 14 days) is sourced.]]"
+  ],
+  "tools_used": [
+    "mcp__Apify__apify--web-fetch"
+  ],
+  "next_agent": [
+    "luxury-writer"
+  ],
+  "payload": {
+    "facts": [
+      {
+        "fact_id": "fact_100",
+        "claim": "The Attorney-General's Department's Notice of Intended Marriage publication page (last updated 22 December 2022) says section 42 of the Marriage Act 1961 requires that a marriage shall not be solemnised unless a notice in writing of the intended marriage (this form) is given to the authorised celebrant solemnising the marriage. The form is downloadable as PDF and DOCX.",
+        "source": "https://www.ag.gov.au/families-and-marriage/publications/notice-intended-marriage",
+        "source_type": "government",
+        "checked": "2026-11-13",
+        "is_price": false,
+        "notes": "Orchestrator's live read, 13 November 2026 (early top-up)."
+      },
+      {
+        "fact_id": "fact_101",
+        "claim": "AGD: from 12 June 2024 the Notice of Intended Marriage may be witnessed remotely; the Marriage Act was amended to permanently give couples the option of having the NOIM witnessed in person or remotely by a facility that enables audio and visual communication between people in different places.",
+        "source": "https://www.ag.gov.au/families-and-marriage/publications/notice-intended-marriage",
+        "source_type": "government",
+        "checked": "2026-11-13",
+        "is_price": false,
+        "notes": "Orchestrator's live read, 13 November 2026 (early top-up)."
+      },
+      {
+        "fact_id": "fact_102",
+        "claim": "AGD: the requirements for authorised witnesses remain unchanged and location-dependent. If the couple is in Australia, the person remotely witnessing the NOIM (which can include an authorised celebrant) must also be in Australia. If the couple is outside Australia, the authorised witness (which cannot be a celebrant) must also be outside Australia. A NOIM for a person or couple outside Australia cannot be witnessed online.",
+        "source": "https://www.ag.gov.au/families-and-marriage/publications/notice-intended-marriage",
+        "source_type": "government",
+        "checked": "2026-11-13",
+        "is_price": false,
+        "notes": "Orchestrator's live read, 13 November 2026 (early top-up)."
+      },
+      {
+        "fact_id": "fact_103",
+        "claim": "AGD: authorised witnesses are listed in the 'Signatures of parties and witnesses' section of the Notice of Intended Marriage form.",
+        "source": "https://www.ag.gov.au/families-and-marriage/publications/notice-intended-marriage",
+        "source_type": "government",
+        "checked": "2026-11-13",
+        "is_price": false,
+        "notes": "Orchestrator's live read, 13 November 2026 (early top-up)."
+      },
+      {
+        "fact_id": "fact_104",
+        "claim": "The Attorney-General's Department's list of prescribed authorities says a prescribed authority is an officer or employee of the Commonwealth, a State or Territory appointed by the Attorney-General, and is authorised, among other things, to authorise a marriage celebrant to proceed with a marriage ceremony where the minimum one-month notice has not been provided (shortening of time). The list is searchable by state and territory and includes registrars and deputy registrars of local courts and state registries of births, deaths and marriages.",
+        "source": "https://marriage.ag.gov.au/stateofficers/authorities",
+        "source_type": "government",
+        "checked": "2026-11-13",
+        "is_price": false,
+        "notes": "Orchestrator's live read, 13 November 2026 (early top-up)."
+      }
+    ],
+    "insider_details": [
+      {
+        "detail": "For an Australian ceremony the NOIM window is at least 1 month and no more than 18 months before the date, so couples planning a long engagement should lodge once the date and celebrant are locked, not before the 18-month mark.",
+        "fact_ids": [
+          "fact_02",
+          "fact_03"
+        ]
+      },
+      {
+        "detail": "Couples living overseas can still complete the NOIM before flying home to marry in Australia, and since 12 June 2024 it can be witnessed by audio-visual link as well as in person, but the celebrant must still meet each partner separately and in person before the wedding, so build that meeting into the arrival schedule.",
+        "fact_ids": [
+          "fact_04",
+          "fact_07",
+          "fact_06"
+        ]
+      },
+      {
+        "detail": "A NOIM is only needed for a marriage solemnised in Australia. A destination wedding abroad cannot be performed by an Australian celebrant or registered here; the paperwork instead runs through the destination's own requirements, often a CNI, which DFAT can issue but some countries only accept if issued locally.",
+        "fact_ids": [
+          "fact_13",
+          "fact_17",
+          "fact_19"
+        ]
+      },
+      {
+        "detail": "Couples who legally marry abroad cannot then lodge a NOIM and marry again in Australia if the overseas marriage is recognised; a home celebration becomes a vow renewal or recommitment ceremony instead.",
+        "fact_ids": [
+          "fact_13",
+          "fact_22",
+          "fact_23"
+        ]
+      },
+      {
+        "detail": "For a Greek Orthodox wedding in Australia the priest is also the civil celebrant, so the NOIM is signed with the priest; the Archdiocese asks for at least one calendar month and preferably three.",
+        "fact_ids": [
+          "fact_24",
+          "fact_25"
+        ]
+      },
+      {
+        "detail": "Order documents early: the celebrant needs evidence of date and place of birth, identity and proof any earlier marriage has ended. Divorce or death certificates for a previous spouse are the slowest to locate, especially from overseas registries.",
+        "fact_ids": [
+          "fact_06",
+          "fact_18"
+        ]
+      }
+    ],
+    "quotes": [],
+    "real_weddings": [],
+    "verify_items": [],
+    "needs_signoff": [],
+    "must_include_coverage": [
+      {
+        "item": "What the NOIM is and the law behind it",
+        "covered_by": [
+          "fact_01",
+          "fact_02",
+          "fact_08",
+          "fact_15"
+        ]
+      },
+      {
+        "item": "Who gives it to whom",
+        "covered_by": [
+          "fact_02",
+          "fact_03",
+          "fact_07"
+        ]
+      },
+      {
+        "item": "Minimum notice (1 month) and maximum window (18 months)",
+        "covered_by": [
+          "fact_02",
+          "fact_03",
+          "fact_16"
+        ]
+      },
+      {
+        "item": "Completing it from overseas and remote witnessing",
+        "covered_by": [
+          "fact_04",
+          "fact_07"
+        ]
+      },
+      {
+        "item": "Who can witness it in Australia and overseas",
+        "covered_by": [
+          "fact_07",
+          "[[VERIFY: Who may witness a NOIM signed in Australia (the categories listed on the current form or Marriage Act s 42) and who may witness it overseas (e.g. Australian diplomatic or consular officer, notary public). The AGD NOIM form page returned HTTP 500 and the Marriage Act section text was not returned on 13 November 2026; check the current NOIM form (https://www.ag.gov.au/node/3015) or s 42 before the article lists witnesses.]]"
+        ]
+      },
+      {
+        "item": "Evidence of date and place of birth, identity, end of prior marriage",
+        "covered_by": [
+          "fact_06",
+          "fact_07",
+          "[[VERIFY: The new order of acceptable evidence of date and place of birth after the 12 June 2024 amendments (AGD says it was 're-ordered' but the page lists only 'birth certificate or passport'). Check Marriage Act s 42 or the current form before ranking documents.]]"
+        ]
+      },
+      {
+        "item": "Translations",
+        "covered_by": [
+          "[[VERIFY: Translation rules for foreign-language birth, divorce or death documents given to the celebrant (whether an accredited translator or a translation with a declaration is required). Not on the AGD 'Get married' page; check the NOIM form notes or Marriage Regulations 2017.]]"
+        ]
+      },
+      {
+        "item": "Shortening of time: who grants it and on what grounds",
+        "covered_by": [
+          "fact_05",
+          "[[VERIFY: Who the prescribed authorities are for shortening of time and how to apply. AGD links to https://marriage.ag.gov.au/stateofficers/authorities, not read in this fast round; the AGD 'shortening-time' URL tried returned 404. Also confirm whether shortening is granted only on the five listed grounds or those are examples.]]"
+        ]
+      },
+      {
+        "item": "Fees (no amounts)",
+        "covered_by": [
+          "fact_12",
+          "[[VERIFY: Whether any government fee applies to lodging a NOIM itself. The AGD 'Get married' page states none; it says only that a celebrant can order the official marriage certificate from the registry 'generally at a cost'. Celebrant fees and registry certificate fees are set by the celebrant and each state or territory; do not state amounts.]]"
+        ]
+      },
+      {
+        "item": "After the ceremony: certificates, 14-day lodgement, official certificate",
+        "covered_by": [
+          "fact_11",
+          "fact_12",
+          "[[VERIFY: State registry process after the ceremony (e.g. NSW or Victoria BDM: how couples order the official certificate). The NSW page tried returned 404; only the AGD statement (celebrant lodges within 14 days) is sourced.]]"
+        ]
+      },
+      {
+        "item": "NOIM vs marrying overseas (CNI, recognition)",
+        "covered_by": [
+          "fact_13",
+          "fact_17",
+          "fact_18",
+          "fact_19",
+          "fact_20",
+          "fact_21",
+          "fact_22",
+          "fact_23"
+        ]
+      },
+      {
+        "item": "Religious celebrants (Greek Orthodox example)",
+        "covered_by": [
+          "fact_24",
+          "fact_25",
+          "fact_26"
+        ]
+      }
+    ]
+  }
+}
