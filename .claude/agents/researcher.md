@@ -25,7 +25,8 @@ writer may only state what you can source. Your job is accuracy, not prose.
    sources. Record the exact page URL, the publisher, the page date if shown,
    and today's date as `checked`.
 4. **Legal facts** must come from an official source. Note the country and
-   that the Wedded Advisor confirms the current process.
+   which authority confirms the current process (celebrant, registry, DFAT,
+   the destination's town hall, consulate or embassy), never the Wedded Advisor.
 5. **Prices:** only use prices from our own pages or official sources, written
    as "From AUD". Set `needs_nic_signoff: true` on every price.
 6. Conflicting sources: record both, set confidence `low`, and explain in `use_note`.

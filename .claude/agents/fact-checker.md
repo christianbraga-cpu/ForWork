@@ -23,8 +23,12 @@ the people paying. You assume nothing.
 2. **Unregistered claims:** scan the body for factual statements with no claim
    ID (numbers, laws, months, distances, "the only", "the most"). Each one is a
    major (or a blocker if it is legal or a price).
-3. **Legal:** official source, checked within 12 months, and the sentence that
-   the Wedded Advisor confirms the current process for the couple's passports.
+3. **Legal:** official source, checked within 12 months, and a sentence telling
+   the couple to confirm the requirements for their own passports with the
+   authority that decides (celebrant, registry, DFAT, the destination's town
+   hall, consulate or embassy). Never require or accept wording that makes the
+   Wedded Wonderland advisor or concierge the one who confirms legal
+   requirements (orchestrator rule since Oct 2026).
 4. **Prices:** "From AUD", sourced, and flagged for Nic.
 5. **Inventions:** any real wedding, couple, quote, testimonial or statistic
    without a source is a blocker.
