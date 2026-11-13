@@ -1,0 +1,155 @@
+{
+  "agent": "icp-panel-chair",
+  "task_id": "name-change-after-marriage",
+  "stage": "07b",
+  "status": "revision",
+  "round": 1,
+  "inputs_used": [
+    "content/posts/name-change-after-marriage/07-icp/planner_couple.json",
+    "content/posts/name-change-after-marriage/07-icp/funding_parent.json",
+    "content/posts/name-change-after-marriage/07-icp/uhnw.json",
+    "content/posts/name-change-after-marriage/07-icp/sceptic.json",
+    "content/posts/name-change-after-marriage/07-icp/search_visitor.json",
+    "content-system/personas/*.yaml",
+    "content/posts/name-change-after-marriage/01-brief.json",
+    "content/posts/name-change-after-marriage/05-draft-r2.md",
+    "content/posts/name-change-after-marriage/03-source-pack.json",
+    "content-system/brand/brand-facts.md",
+    "content-system/schemas/07-panel.schema.json",
+    "content/posts/who-can-perform-a-marriage/07-panel.json"
+  ],
+  "payload": {
+    "personas_run": ["planner_couple", "funding_parent", "uhnw", "sceptic", "search_visitor"],
+    "weighted_scores": {
+      "relevance_to_me": 2.8,
+      "trust": 4.1,
+      "clarity": 4.0,
+      "brand_feels_premium": 3.4,
+      "likelihood_to_enquire": 2.0
+    },
+    "weighted_enquiry_likelihood": 2.0,
+    "must_fix": [
+      {
+        "issue": "State-by-state section repeats the intro and takeaways. Line 110 'As at November 2026, the registries agree on the broad shape but word the details differently.' then lines 114 (NSW), 118 (Victoria), 122 (Queensland), 126 (WA) restate the married-in-Australia rule already given in lines 10, 16 and 23-27. Raised by 4 (planner_couple, funding_parent, search_visitor, uhnw, all low 'bored'); primary persona read NSW and skipped the rest.",
+        "flagged_by": ["planner_couple", "funding_parent", "search_visitor", "uhnw"],
+        "owner": "luxury-writer",
+        "fix": "Cut each state paragraph to what differs by state only (overseas marriage, born overseas, fee). Drop the NSW sentence that restates take/keep/hyphenate (already in lines 23-45). Optionally open each state with one plain lead line, e.g. 'Married in Australia: certificate is enough. Married overseas: formal change of name.' using only the existing fact markers for that state. Keep the agency links, the 'As at November 2026' stamp and every fact marker that survives. No new facts."
+      },
+      {
+        "issue": "Accountability gap on the legal side. Line 142: 'the name change and every certificate stay with you and the official agencies.' The primary persona (medium) cannot tell whether 'every certificate' includes the destination's own marriage paperwork; funding_parent asks the same (unanswered question on collecting the local certificate). Trust loss about accountability.",
+        "flagged_by": ["planner_couple", "funding_parent"],
+        "owner": "luxury-writer",
+        "fix": "Keep this as the one body Advisor line, wording from brand-facts.md only, URL and utm_content=secondary unchanged. Replace the clause with: 'the legal side stays with you and the official agencies: the marriage paperwork and certificate at the destination, and the name change at home.' Do not add any claim about the destination's legal requirements (no source in 03-source-pack.json) and never imply the Advisor handles, files or collects paperwork."
+      }
+    ],
+    "should_fix": [
+      {
+        "issue": "No plain passport sequence for couples who marry abroad then honeymoon. Primary persona (medium, confused) on line 104 'If you were born in Australia and married overseas, it will always need a name change certificate.': 'I'm left piecing the timing together myself.' Sceptic and search_visitor also share the passport section for a booked honeymoon.",
+        "flagged_by": ["planner_couple"],
+        "owner": "luxury-writer",
+        "fix": "After line 102, add a 3-item list headed 'Marrying abroad with a honeymoon straight after', built only from the Passport Office facts already cited (fact_01, fact_02): 1) Book flights in the name in your current passport; the Passport Office lets you keep using it after a marriage-related change of family name. 2) Travel on that passport. 3) If you later want the new name on your passport and married overseas, the Passport Office will need a name change certificate (born in Australia), so the formal change of name comes first. No processing times, no claim about when to apply, no new sequence claims."
+      },
+      {
+        "issue": "Early sales link. Line 12: 'When the paperwork has a plan, [Wedded Concierge](...utm_content=primary) can take on the celebration itself.' Sceptic (turn-off: 'a sales link before the sources') and search_visitor ('it's early').",
+        "flagged_by": ["sceptic", "search_visitor"],
+        "owner": "cro-specialist",
+        "fix": "Move the sentence out of the intro to the end of the 'Key takeaways' list or the end of the Step 3/passport section, wording, URL and anchor text unchanged (utm_content=primary). Lines 142 and 180 stay as they are placed."
+      },
+      {
+        "issue": "Heading does not match its answer. Line 47 '### Changing a first or middle name' then line 49 'NSW lists three surname options that work with a marriage certificate; every other change, including moving your surname into your middle names, goes through a formal application.' Sceptic and search_visitor both had to reread.",
+        "flagged_by": ["sceptic", "search_visitor"],
+        "owner": "luxury-writer",
+        "fix": "Open with the answer: 'A first or middle name change is not covered by your marriage certificate. In NSW it goes through a formal application, as does moving your surname into your middle names.' Keep the NSW attribution and fact marker on line 49."
+      },
+      {
+        "issue": "Unsourced reassurance. Line 92: 'The tail of the list is long but quick.' Sceptic turn-off ('Quick according to whom?'). Same class of unsourced line the editor already cut in r2.",
+        "flagged_by": ["sceptic"],
+        "owner": "luxury-writer",
+        "fix": "Delete the sentence. Start line 92 with 'NSW includes mobile phone and internet providers and utility providers.'"
+      },
+      {
+        "issue": "Licence step covers NSW only. Line 71: 'In other states, check with your state's transport agency for its process and documents.' Sceptic (Queensland, medium) and funding_parent (Victoria, low).",
+        "flagged_by": ["sceptic", "funding_parent"],
+        "owner": "planner-sme",
+        "fix": "No change to the facts: licence steps outside NSW are not in 03-source-pack.json and an extra search found no official page. Keep NSW as the credited example and keep 'check with your state's transport agency'. Writer may tighten the sentence only. Deferred: source VicRoads/TMR licence pages for a later refresh."
+      }
+    ],
+    "consider": [
+      {
+        "issue": "Multi-state overseas sentence. Line 138: 'Victoria says the same application is needed, while Queensland and Western Australia say some organisations may need a formal change of name, as set out state by state above.' funding_parent turn-off: 'Is it needed or may need?'",
+        "flagged_by": ["funding_parent"],
+        "owner": "luxury-writer",
+        "fix": "Turn into a short per-state list with the same fact markers: NSW: apply for an official change of name. Victoria: apply to change your name. Queensland and WA: some organisations may need a formal change of name. Pairs with the must-fix trim of the state section."
+      },
+      {
+        "issue": "Overseas links read as homework. Line 140: certificate, translation and apostille back to back. funding_parent: 'a reading list'.",
+        "flagged_by": ["funding_parent"],
+        "owner": "luxury-writer",
+        "fix": "Recast line 140 as a 3-item 'Before you fly home' checklist: the certificate issued where you married (overseas-marriage-certificate link), a full translation if not in English, legalisation (apostille link). URLs and anchors unchanged, existing fact markers only."
+      },
+      {
+        "issue": "Step 6 granular NSW list. Line 92: 'the NSW Land Registry if you own a home, the Rental Bond Board if you rent, and the NSW Pet Registry if you have a pet.' Sourced (fact_21) but uhnw turn-off: 'pitched at a standard client'.",
+        "flagged_by": ["uhnw"],
+        "owner": "luxury-writer",
+        "fix": "Condense to 'NSW also lists state registries such as the Land Registry for homeowners.' with fact_21, or cut the sentence. Do not add items."
+      },
+      {
+        "issue": "Close leads with the fee. Line 180: 'One Wedded Advisor plans the venue, travel, vendors and payments with you, anywhere in the world, with the fee agreed in writing before any work begins.' uhnw (low) reads it as budget reassurance.",
+        "flagged_by": ["uhnw"],
+        "owner": "luxury-writer",
+        "fix": "Reorder only, keep the brand-facts wording: 'Anywhere in the world, one Wedded Advisor plans the venue, travel, vendors and payments with you. The fee is agreed in writing before any work begins.' Do not remove the fee line."
+      },
+      {
+        "issue": "Options section reads like the registry site (planner_couple, low, line 29 onwards).",
+        "flagged_by": ["planner_couple"],
+        "owner": "luxury-writer",
+        "fix": "Optional light trim of duplicated attributions in lines 35 and 43; keep all sourced rules."
+      },
+      {
+        "issue": "Step 5 relies on NSW's word (sceptic, low, line 88 'NSW says your marriage certificate, new driver licence and new Medicare card will provide the proof in most cases').",
+        "flagged_by": ["sceptic"],
+        "owner": "luxury-writer",
+        "fix": "No change: attribution is correct and other states are not sourced."
+      }
+    ],
+    "keep": [
+      "Line 10 direct answer with the 'As at November 2026' stamp (all five gained trust)",
+      "Line 12 'Marry overseas and the picture shifts.' (all five)",
+      "Line 65 'The handsome certificate you sign at the ceremony is a keepsake.' and the three-agency ceremonial certificate warning (planner_couple, funding_parent, sceptic, uhnw)",
+      "Line 59 'Order is everything here...' and 'Each new card becomes proof for the next organisation.' (planner_couple, sceptic, search_visitor)",
+      "Line 100 'It recommends booking travel in the name that's in your passport.' (funding_parent, sceptic, uhnw, search_visitor)",
+      "Line 104 born-in-Australia, married-overseas name change certificate rule (search_visitor, planner_couple)",
+      "Line 136 overseas recognition plus Smartraveller caveat (funding_parent, uhnw)",
+      "Line 140 apostille and overseas certificate links (planner_couple, uhnw, search_visitor)",
+      "Line 142 honesty that the Advisor does not do the paperwork (all five)",
+      "Line 180 'with the fee agreed in writing before any work begins' (planner_couple, funding_parent, sceptic, search_visitor)",
+      "Line 160 FAQ refusal to invent a timeframe (sceptic) and line 164 fee FAQ",
+      "Line 39 'Keeping your name asks nothing of you.' (uhnw)"
+    ],
+    "conflicts_resolved": [
+      "Close fee line (line 180): uhnw wants it out of the lead; planner_couple, funding_parent, sceptic and search_visitor praise it. Primary persona's hidden-costs worry wins: keep the brand-facts fee wording, reorder only so 'anywhere in the world' leads.",
+      "Licence step for VIC/QLD (sceptic, funding_parent) vs standing rule: no sourced official page, so NSW stays the credited example with 'check with your state's transport agency'. Deferred.",
+      "'The rest is the part your guests remember' (line 180): sceptic calls it sales copy; uhnw and planner_couple found the close calm. Keep, primary persona positive.",
+      "How-long FAQ (search_visitor wants a rough time) vs no unsourced timing: keep line 160 as is; sceptic praised it. Deferred.",
+      "Early Concierge link: primary persona neutral ('isn't pushy'); sceptic and search_visitor object. Moving it lower costs the primary nothing and lifts trust for the sceptic, so move with URL and anchor unchanged."
+    ],
+    "gate": "revise"
+  },
+  "self_qa": {
+    "checks": [
+      {"check": "Weighted scores", "pass": true, "note": "Weights planner_couple 0.40, funding_parent 0.20, uhnw 0.20, sceptic 0.10, search_visitor 0.10. Enquire all 2 = 2.0. Relevance 3x.4+2x.2+2x.2+3x.1+5x.1=2.8. Trust 4x.4+4x.2+4x.2+4x.1+5x.1=4.1. Clarity all 4=4.0. Premium 3x.4+4x.2+3x.2+4x.1+4x.1=3.4."},
+      {"check": "Must-fix rule", "pass": true, "note": "State section raised by 4; line 142 is an accountability trust gap raised by the primary at medium plus funding_parent."},
+      {"check": "Gate", "pass": true, "note": "2.0 < 3.8 with two must-fix: revise. Not stop: all five kept reading, trust 4.1, brief met; low enquiry reflects an admin explainer."},
+      {"check": "Standing rules", "pass": true, "note": "No facts beyond 03-source-pack.json and brand-facts.md; no non-NSW licence steps; no registry timing; passport list limited to fact_01/fact_02; scale, discretion and fees deferred; close keeps brand-facts claims; Advisor one body line (142) plus close, never paperwork help; Australian English, no em dashes. Line numbers refer to 05-draft-r2.md."}
+    ],
+    "confidence": 0.8
+  },
+  "open_questions": [
+    {"to": "orchestrator", "question": "Deferred (not actioned): VIC/QLD licence steps (sceptic, funding_parent; no official source found); registry or overseas-route timing (search_visitor, planner_couple); scale 200-400 guests, team behind the Advisor, discretion, document privacy, referral route (uhnw); cultural line on keeping one's name (uhnw, unsourced); vendor commission (sceptic); first-step phone call (funding_parent); couples living abroad, e.g. Singapore, and which registry applies (search_visitor); real overseas-marriage wedding to link (planner_couple)."}
+  ],
+  "assumptions": [
+    "Persona weights are the uncalibrated estimates in content-system/personas/*.yaml.",
+    "Readers read 05-draft.md; fixes cite 05-draft-r2.md line numbers, where all quoted lines still appear."
+  ],
+  "next_agent": ["luxury-writer"]
+}
