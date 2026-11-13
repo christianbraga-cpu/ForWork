@@ -1,0 +1,65 @@
+{
+  "agent": "cro-specialist",
+  "task_id": "name-change-after-marriage",
+  "stage": "09",
+  "status": "complete",
+  "round": 1,
+  "inputs_used": [
+    "CLAUDE.md",
+    "content-system/schemas/09-cro.schema.json",
+    "content-system/brand/brand-facts.md",
+    "content/posts/name-change-after-marriage/01-brief.json",
+    "content/posts/name-change-after-marriage/08-final.md",
+    "content/posts/who-can-perform-a-marriage/09-cro.json (format model)"
+  ],
+  "self_qa": {
+    "checks": [
+      {"check": "Primary CTA 6 words or fewer, no 'click here', no exclamation mark", "pass": true, "note": "'Book a Wedded Concierge consultation' (5 words)."},
+      {"check": "utm_content primary, secondary, closing, magnet each appear exactly once", "pass": true, "note": "Checked by grep: 1 each, 4 UTM links in total, so no copy change made."},
+      {"check": "UTMs only on /wonderland-concierge (3) and /magazine (1)", "pass": true},
+      {"check": "Every /wonderland-concierge anchor names Wedded Concierge; no new Advisor line", "pass": true, "note": "All three concierge anchors read 'Wedded Concierge'. Existing Advisor lines (overseas section and closing) unchanged; none added."},
+      {"check": "No CTA implies name change or marriage paperwork help", "pass": true, "note": "Primary follows 'When the paperwork has a plan'; secondary states 'The legal side stays with you and the official agencies'; closing covers venue, travel, vendors and payments only."},
+      {"check": "No prices, 'free', Wedded Privileges, transfers, 'last dance', 'best' or em dashes in CRO copy; Australian English; no CTA marker added", "pass": true, "note": "The final has no <!-- CTA: ... --> markers and none were added."}
+    ],
+    "confidence": 0.85
+  },
+  "open_questions": [
+    {"to": "orchestrator", "question": "08-final.md contains no <!-- CTA: primary --> marker, so any CMS CTA block has no anchor point; placements below rely on the existing inline links. Add a marker at CMS stage only if the template needs one. No copy change made.", "blocking": false},
+    {"to": "orchestrator", "question": "Deferred business answers (fee model, named Advisor, real weddings) remain deferred per brand-facts. Re-run cro-specialist once confirmed.", "blocking": false}
+  ],
+  "assumptions": [
+    "FAST MODE: 07-panel.json cta_reactions not re-read; placements follow the brief and the who-can-perform-a-marriage model."
+  ],
+  "verify_items": [],
+  "tools_used": ["Bash (grep, python3 -I)"],
+  "payload": {
+    "journey_stage": "planning",
+    "primary_cta": {
+      "text": "Book a Wedded Concierge consultation",
+      "subtext": "The fee is agreed in writing before any work begins.",
+      "link": "https://weddedwonderland.com/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=name-change-after-marriage&utm_content=primary",
+      "placement": "Existing inline sentence at the end of 'Changing your name on your passport after marriage' ('When the paperwork has a plan, Wedded Concierge can take on the celebration itself.'), where the travel and passport worry peaks. Unchanged."
+    },
+    "secondary_cta": {
+      "text": "Begin with Wedded Concierge",
+      "subtext": "One Wedded Advisor plans the celebration abroad; the legal side stays with you and the official agencies.",
+      "link": "https://weddedwonderland.com/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=name-change-after-marriage&utm_content=secondary",
+      "placement": "Existing final sentence of 'Name change after an overseas or destination wedding', for destination couples. Unchanged."
+    },
+    "lead_magnet": {
+      "name": "Get Wedded magazines",
+      "link": "https://weddedwonderland.com/magazine?utm_source=blog&utm_medium=content&utm_campaign=name-change-after-marriage&utm_content=magnet",
+      "placement": "Existing final line of the post, for readers still early in planning. Already tagged; unchanged.",
+      "exists": true
+    },
+    "closing_cta": {
+      "text": "Start the conversation with Wedded Concierge",
+      "link": "https://weddedwonderland.com/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=name-change-after-marriage&utm_content=closing",
+      "placement": "Existing closing paragraph under 'Planning the celebration'. Unchanged."
+    },
+    "tracking": ["https://weddedwonderland.com/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=name-change-after-marriage&utm_content=primary", "https://weddedwonderland.com/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=name-change-after-marriage&utm_content=secondary", "https://weddedwonderland.com/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=name-change-after-marriage&utm_content=closing", "https://weddedwonderland.com/magazine?utm_source=blog&utm_medium=content&utm_campaign=name-change-after-marriage&utm_content=magnet"],
+    "copy_changes": [],
+    "rationale": "Brief journey_stage is 'planning' and the goal is a Wedded Concierge consultation at /wonderland-concierge, while the name change and marriage paperwork stay with the couple and the official agencies. Every CTA sits after the legal side is framed as the couple's, so none implies paperwork help; the primary subtext answers the fee worry from brand-facts. All four tracked links (primary, secondary, closing, magnet) already appear once each with correct UTMs and every concierge anchor names Wedded Concierge, so no copy change is made. Other internal links stay untagged. A name change checklist would be a better-matched magnet; none is known to exist, so it is a backlog suggestion only (exists: false, not placed)."
+  },
+  "next_agent": ["distribution"]
+}
