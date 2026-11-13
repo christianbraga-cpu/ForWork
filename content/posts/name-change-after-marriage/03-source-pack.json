@@ -1,0 +1,585 @@
+{
+  "agent": "planner-sme",
+  "task_id": "name-change-after-marriage",
+  "stage": "03",
+  "status": "complete",
+  "round": 1,
+  "inputs_used": [
+    "content/posts/is-marriage-in-italy-recognised-in-australia/03-source-pack.json (fact_20, 21, 22, 23, 09, 11, 28, 27, 34, 32, 29, 31, 33, 30, 25 copied)",
+    "content/posts/getting-married-in-italy/03-source-pack.json (fact_41 copied)",
+    "content/posts/notice-of-intended-marriage/03-source-pack.json (fact_12 AGD official certificate copied)",
+    "content/posts/name-change-after-marriage/01-brief.json (must_include mapped)",
+    "mcp__Apify__apify--web-fetch one parallel round, 13 November 2026, no retries: NSW BDM change-your-surname-after-marriage (200); BDM Victoria changing-your-name-after-marriage-separation-divorce (200); qld.gov.au marriage-or-separation (200); Services Australia Centrelink name update (200); ATO update-your-tfn-details (200 but service-outage page, no content); AEC enrol (200, no name-change detail)",
+    "No 01-brief.json or 02-seo.json in the post folder; must_include derived from the orchestrator's task and 00-input.json",
+    "Australian Passport Office page not re-read (same URL as copied facts)"
+  ],
+  "self_qa": {
+    "checks": [
+      {
+        "check": "Every fact has a source and date",
+        "pass": true
+      },
+      {
+        "check": "No price without a source; all prices in needs_signoff",
+        "pass": true,
+        "note": "No prices or fee amounts recorded; fees phrased as a fee applies."
+      },
+      {
+        "check": "Every must-include covered or [[VERIFY]]",
+        "pass": true
+      },
+      {
+        "check": "No invented quotes, statistics or real weddings",
+        "pass": true
+      }
+    ],
+    "confidence": 0.75
+  },
+  "open_questions": [
+    {
+      "to": "luxury-writer",
+      "question": "State all legal rules 'as at November 2026', credit each rule to its state (NSW, Victoria, Queensland, SA, Tasmania, ACT, NT, WA), and add the line that the Wedded Advisor confirms current requirements. Fees: say 'a fee applies' only.",
+      "blocking": false
+    },
+    {
+      "to": "luxury-writer",
+      "question": "Queensland says overseas-married people 'may not be able to' take the name automatically; NSW and Victoria say a change of name is required. Do not flatten these into one national rule.",
+      "blocking": false
+    },
+    {
+      "to": "orchestrator",
+      "question": "ATO site was down on 13 November 2026 and the AEC page read has no name-change detail; a second fetch of the ATO update-details page and an AEC update-details page would clear two verify items.",
+      "blocking": false
+    }
+  ],
+  "assumptions": [
+    "Copied facts keep their original read dates (27 October 2026 for most; 13 November 2026 for AGD fact_12).",
+    "Snippet-only facts (Qld fee, NSW/Vic once-a-year limit) are flagged in their claims and in verify_items.",
+    "Insider details are planning advice built on cited facts; the passport/honeymoon booking tip is advice, not a stated agency rule."
+  ],
+  "verify_items": [
+    "[[VERIFY: ATO process and documents for updating your name. The ATO website returned a service-outage page on 13 November 2026 (https://www.ato.gov.au/individuals-and-families/tax-file-number/update-your-tfn-details); nothing about the ATO is sourced beyond NSW BDM listing it as a place to update. Re-read before the article describes the ATO step.]]",
+    "[[VERIFY: AEC process for updating a name on the electoral roll. The AEC 'Enrol to vote' page (fact read 13 November 2026) says you can 'update your details' online but does not describe name changes after marriage or the documents needed. Check https://www.aec.gov.au/enrol/ subpages or AEC FAQs before giving steps.]]",
+    "[[VERIFY: Driver licence name update outside NSW (VicRoads, Queensland TMR and others). Only the NSW process (Service NSW, official marriage certificate plus current licence, new licence within 1-2 weeks) is sourced; VicRoads is named by BDM Victoria only as an organisation to contact.]]",
+    "[[VERIFY: The 'once in a 12-month period and 3 times in your lifetime' limit on registered changes of name (NSW and Victoria) comes from search snippets only; open the NSW 'Change of name' and BDM Victoria 'Change a name' pages before stating it, and confirm whether it applies to marriage-based changes.]]",
+    "[[VERIFY: Change of name fees by state. Queensland's page snippet says to 'pay a fee' and NSW says marriage-based surname changes avoid 'the fee for an official change of name'; no amounts recorded. Article should say 'a fee applies' only.]]",
+    "[[VERIFY: NT and Tasmania wording copied from earlier packs (read 27 October 2026); NT page dated 31 August 2022. Re-read before quoting if the article cites them by name.]]",
+    "[[VERIFY: Apostille or other legalisation for using a foreign marriage certificate in Australia for a name change. None of the Australian sources read in this round mention an Apostille for name-change purposes; only the translation rule (Passport Office) is sourced. Link to the Apostille article rather than state a rule.]]",
+    "[[VERIFY: Whether the Passport Office lets you travel on a passport in your previous name after marrying, and the exact name-matching rule for airline tickets. Only the Passport Office's 'you can choose to get a new passport' wording is sourced; airline name-matching is not.]]"
+  ],
+  "tools_used": [
+    "mcp__Apify__apify--web-search",
+    "mcp__Apify__apify--web-fetch"
+  ],
+  "next_agent": [
+    "luxury-writer"
+  ],
+  "payload": {
+    "facts": [
+      {
+        "claim": "[Copied from is-marriage-in-italy-recognised-in-australia 03-source-pack fact_20, same source and date.] Australian Passport Office, 'Change of name or gender': 'If you change your family name because of a change in your marital status, you can choose to get a new passport or keep using your current one. We recommend booking travel in the name that's in your passport.' 'There are certain circumstances where we'll always need a name change certificate. This applies to any of the following: ... you were born in Australia and married or entered into a registered relationship overseas.'",
+        "source": "https://www.passports.gov.au/change-name-or-gender",
+        "source_type": "government",
+        "checked": "2026-10-27",
+        "is_price": false,
+        "fact_id": "fact_01"
+      },
+      {
+        "claim": "[Copied from is-marriage-in-italy-recognised-in-australia 03-source-pack fact_21, same source and date.] Australian Passport Office: 'We'll accept foreign certificates only if you can't get an Australian equivalent because you were: born overseas; live overseas; married or entered into the relationship overseas. You must have become an Australian citizen before you entered the marriage or relationship. Foreign certificates must also be legalised. Any documents not in English need to be translated in full by an approved translation service.' Mandatory linking documents for a married name are an Australian birth or citizenship certificate plus a marriage certificate issued by an Australian RBDM, a registered relationship certificate, or an RBDM name change certificate.",
+        "source": "https://www.passports.gov.au/change-name-or-gender",
+        "source_type": "government",
+        "checked": "2026-10-27",
+        "is_price": false,
+        "fact_id": "fact_02"
+      },
+      {
+        "claim": "[Copied from is-marriage-in-italy-recognised-in-australia 03-source-pack fact_22, same source and date.] Australian Passport Office, 'Interpreting and translation': 'If your documents aren't in English, you'll need to get them translated in full and stamped by an accredited translator before you show them to us.' In Australia, NAATI can help you find a translator; overseas, the nearest Australian embassy or consulate gives a list of approved translation services.",
+        "source": "https://www.passports.gov.au/help/interpreting-and-translation",
+        "source_type": "government",
+        "checked": "2026-10-27",
+        "is_price": false,
+        "fact_id": "fact_03"
+      },
+      {
+        "claim": "[Copied from is-marriage-in-italy-recognised-in-australia 03-source-pack fact_23, same source and date.] Services Australia, 'How to update your name with Centrelink' (page last updated 18 August 2026): for a marriage surname change it accepts 'an Australian marriage certificate for surname changes only' issued by Births, Deaths and Marriages; 'If you changed your name overseas, you'll need to provide us with original evidence from the Department of Home Affairs'; 'We don't accept ceremonial marriage certificates as a supporting document for a legal name change.'",
+        "source": "https://www.servicesaustralia.gov.au/how-to-update-your-name-with-centrelink?context=64107",
+        "source_type": "government",
+        "checked": "2026-10-27",
+        "is_price": false,
+        "conflicts": "Read via structured extraction. The page does not say whether an apostilled Italian certificate is accepted for an Australian-born citizen's surname change; the Home Affairs line appears aimed at people whose name changed before migrating. Medicare's requirements were not checked.",
+        "fact_id": "fact_04"
+      },
+      {
+        "claim": "[Copied from is-marriage-in-italy-recognised-in-australia 03-source-pack fact_09, same source and date.] BDM Victoria (updated 16 October 2024): an overseas marriage 'will generally be recognised if: It's recognised under the law of the country where the marriage took place; Both parties are at least 18 years of age; Neither party is married to another person at the time of marriage.'",
+        "source": "https://www.bdm.vic.gov.au/overseas-marriages",
+        "source_type": "government",
+        "checked": "2026-10-27",
+        "is_price": false,
+        "conflicts": "BDM Victoria's 'at least 18' is a plain-English simplification. s 88D(2)(b) applies the marriageable-age rule only where a party was domiciled in Australia, and s 88D(3) uses 16 where neither was. For Australian-domiciled couples the effect is the same; the article should cite the Act's wording, not the 18 shorthand, for non-domiciled partners.",
+        "fact_id": "fact_05"
+      },
+      {
+        "claim": "[Copied from is-marriage-in-italy-recognised-in-australia 03-source-pack fact_11, same source and date.] BDM Victoria: if you married overseas you need to 'Make sure your marriage is registered in that country' and 'Have evidence of the marriage, including official, commemorative or keepsake documents you got at the time of the ceremony.'",
+        "source": "https://www.bdm.vic.gov.au/overseas-marriages",
+        "source_type": "government",
+        "checked": "2026-10-27",
+        "is_price": false,
+        "fact_id": "fact_06"
+      },
+      {
+        "claim": "[Copied from is-marriage-in-italy-recognised-in-australia 03-source-pack fact_28, same source and date.] BDM Victoria (updated 16 October 2024), 'Changing your family name': 'If you were born or married overseas, you can't take your spouse's family name automatically. You need to apply to change your name.'",
+        "source": "https://www.bdm.vic.gov.au/overseas-marriages",
+        "source_type": "government",
+        "checked": "2026-10-27",
+        "is_price": false,
+        "fact_id": "fact_07"
+      },
+      {
+        "claim": "[Copied from is-marriage-in-italy-recognised-in-australia 03-source-pack fact_27, same source and date.] NSW Government (NSW Registry of BDM, modified 2026-10-21): 'If you were married overseas, your overseas marriage certificate cannot be used to change your surname after marriage. Note, even though your overseas marriage certificate cannot be used to change your name, this does not mean that your marriage is not recognised in Australia. Instead, you'll need to apply for an official change of name.'",
+        "source": "https://www.nsw.gov.au/family-and-relationships/marriages/if-youre-not-getting-married-nsw",
+        "source_type": "government",
+        "checked": "2026-10-27",
+        "is_price": false,
+        "fact_id": "fact_08"
+      },
+      {
+        "claim": "[Copied from getting-married-in-italy 03-source-pack fact_41, same source and date.] NSW Registry of Births, Deaths and Marriages (page modified 21/10/2026): overseas marriages cannot be registered in Australia and you cannot be issued an Australian marriage certificate, but the marriage will usually be recognised if legal where it took place and it would be legal in Australia. You need to have registered the marriage in the country where it took place and have evidence such as the marriage certificate. In NSW an overseas marriage certificate cannot be used to change your surname; apply for an official change of name instead (this does not mean the marriage is not recognised).",
+        "source": "https://www.nsw.gov.au/family-and-relationships/marriages/if-youre-not-getting-married-nsw",
+        "source_type": "government",
+        "checked": "2026-10-27",
+        "is_price": false,
+        "fact_id": "fact_09"
+      },
+      {
+        "claim": "[Copied from is-marriage-in-italy-recognised-in-australia 03-source-pack fact_34, same source and date.] Northern Territory, NT.GOV.AU 'Legally change your name' (dated 31 August 2022): the page lists a marriage certificate as a supporting document when changing a name after marriage, but publishes no rule on using an overseas marriage certificate to take a spouse's surname. NT rule: not published.",
+        "source": "https://nt.gov.au/law/bdm/legal-change-of-name/legally-change-your-name",
+        "source_type": "government",
+        "checked": "2026-10-27",
+        "is_price": false,
+        "fact_id": "fact_10"
+      },
+      {
+        "claim": "[Copied from is-marriage-in-italy-recognised-in-australia 03-source-pack fact_32, same source and date.] Tasmania, Births, Deaths and Marriages 'Register a change of name' (updated 12 November 2025): you do not need to register a new name if you marry in Australia and take your partner's surname; 'If you were married overseas and want to take on your partner's surname, you should contact the relevant authority or business, such as your bank or the Australian Passport Office to see what evidence you need to give them.'",
+        "source": "https://www.justice.tas.gov.au/bdm/register-a-change-of-name",
+        "source_type": "government",
+        "checked": "2026-10-27",
+        "is_price": false,
+        "fact_id": "fact_11"
+      },
+      {
+        "claim": "[Copied from notice-of-intended-marriage 03-source-pack fact_12, same source and date.] As at November 2026, the Attorney-General's Department 'Get married' page (read live 13 November 2026; page metadata updated 13 June 2024): 'You should apply for a copy of your official marriage certificate from the registry. Your celebrant can do this on your behalf, generally at a cost. You will need this if you want to change your name or prove that you are married.' (No amount stated.)",
+        "source": "https://www.ag.gov.au/families-and-marriage/marriage/get-married",
+        "source_type": "government",
+        "checked": "2026-11-13",
+        "is_price": false,
+        "fact_id": "fact_12"
+      },
+      {
+        "claim": "[Copied from is-marriage-in-italy-recognised-in-australia 03-source-pack fact_29, same source and date.] Queensland Government (qld.gov.au, managed by BDM, modified 7 October 2026): 'If you married overseas, you may not be able to take your partner's family name automatically. This is because some organisations don't accept overseas documents as proof of identity. Some organisations may need an official change of name document.' You need to change your name at the Registry if you married overseas and previously changed your name with the Registry to your partner's name.",
+        "source": "https://www.qld.gov.au/family/name-changes/marriage-or-separation",
+        "source_type": "government",
+        "checked": "2026-10-27",
+        "is_price": false,
+        "fact_id": "fact_13"
+      },
+      {
+        "claim": "[Copied from is-marriage-in-italy-recognised-in-australia 03-source-pack fact_31, same source and date.] South Australia (SA.GOV.AU 'Register a change of name', modified 10 September 2026): no registration is needed to take a partner's surname after marrying in Australia; 'If you were married overseas and want to take on your partner's surname, you should contact the relevant authority or business, such as your bank or the Australian Passport Office to see what evidence you need to give them.'",
+        "source": "https://www.sa.gov.au/topics/family-and-community/births-deaths-and-marriages/changing-your-name",
+        "source_type": "government",
+        "checked": "2026-10-27",
+        "is_price": false,
+        "fact_id": "fact_14"
+      },
+      {
+        "claim": "[Copied from is-marriage-in-italy-recognised-in-australia 03-source-pack fact_33, same source and date.] ACT, Access Canberra 'Change your name as an adult' (modified 20 April 2026), 'Marriage overseas': 'If you want to change your name after marriage overseas, you may experience difficulties in using your foreign marriage certificate to support the change. You may be asked to register a change of name.' Separate processes apply if you were born in the ACT or outside it.",
+        "source": "https://www.accesscanberra.act.gov.au/births-relationships-and-deaths/name-changes/change-your-name-as-an-adult",
+        "source_type": "government",
+        "checked": "2026-10-27",
+        "is_price": false,
+        "fact_id": "fact_15"
+      },
+      {
+        "claim": "[Copied from is-marriage-in-italy-recognised-in-australia 03-source-pack fact_30, same source and date.] Western Australian Government, Registry of BDM 'Marriages' page (last modified 18 September 2026): 'If you were married overseas, you may be required to register a formal change of name with the Registry before your married surname is accepted by some organisations.' 'It is recommended that you check with the relevant authority to determine their specific requirements.'",
+        "source": "https://www.wa.gov.au/service/justice/civil-law/marriages",
+        "source_type": "government",
+        "checked": "2026-10-27",
+        "is_price": false,
+        "fact_id": "fact_16"
+      },
+      {
+        "claim": "[Copied from is-marriage-in-italy-recognised-in-australia 03-source-pack fact_25, same source and date.] Smartraveller: 'A foreign marriage certificate is usually accepted as proof of the marriage. But you may be unable to use it as proof of a name change. Find out from your local registry of births, deaths and marriages.'",
+        "source": "https://www.smartraveller.gov.au/planning-trip/advice-your-planned-activities/getting-married-overseas",
+        "source_type": "government",
+        "checked": "2026-10-27",
+        "is_price": false,
+        "fact_id": "fact_17"
+      },
+      {
+        "claim": "NSW Registry of Births, Deaths and Marriages, 'Change your surname after marriage' (read live 13 November 2026; page shows 'Last updated 05 September 2024', metadata modified 4 November 2026): 'If you are changing your surname after marriage in Australia, it's not necessary to pay the fee for an official change of name. Most government departments accept your official marriage certificate as proof of your name.' Page summary: 'You can take your spouse's surname or add it to your own, without paying the fee for registering an official name change.' (No fee amount recorded.)",
+        "source": "https://www.nsw.gov.au/family-and-relationships/name-changes-and-corrections/change-your-surname-after-marriage",
+        "source_type": "government",
+        "checked": "2026-11-13",
+        "is_price": false,
+        "fact_id": "fact_18"
+      },
+      {
+        "claim": "NSW BDM: 'To update your married surname, you need to prove your marriage with an official marriage certificate from the registry in the state or territory where you were married. Ceremonial or commemorative certificates are not accepted.'",
+        "source": "https://www.nsw.gov.au/family-and-relationships/name-changes-and-corrections/change-your-surname-after-marriage",
+        "source_type": "government",
+        "checked": "2026-11-13",
+        "is_price": false,
+        "fact_id": "fact_19"
+      },
+      {
+        "claim": "NSW BDM: 'All you need to do is obtain your official marriage certificate, then update your NSW Driver Licence and your Medicare card. Then you can change your name everywhere else.' Driver licence: take your official marriage certificate and current driver licence to a Service NSW centre; 'Once approved, a new driver licence will be sent to you within 1-2 weeks.' Medicare: use your official marriage certificate to update your name at a Services Australia centre or over the phone. 'Your marriage certificate, your new driver licence and your new Medicare Card will provide the proof you need in most cases to update to your married name.'",
+        "source": "https://www.nsw.gov.au/family-and-relationships/name-changes-and-corrections/change-your-surname-after-marriage",
+        "source_type": "government",
+        "checked": "2026-11-13",
+        "is_price": false,
+        "fact_id": "fact_20"
+      },
+      {
+        "claim": "NSW BDM list of 'other places to update your surname': State government (NSW Land Registry for homeowners, NSW Rental Bond Board for renters, NSW Pet Registry for pet owners); Federal government (Australian Electoral Commission, Australian Passport Office, Australian Taxation Office, Centrelink, Medicare Safety Nets); Other businesses (banks and building societies, insurance and superannuation providers, mobile phone and internet providers, utility providers).",
+        "source": "https://www.nsw.gov.au/family-and-relationships/name-changes-and-corrections/change-your-surname-after-marriage",
+        "source_type": "government",
+        "checked": "2026-11-13",
+        "is_price": false,
+        "fact_id": "fact_21"
+      },
+      {
+        "claim": "NSW BDM, 'How do I change my surname if I was married overseas': 'If you were married overseas, you will have to apply for an official change of name.'",
+        "source": "https://www.nsw.gov.au/family-and-relationships/name-changes-and-corrections/change-your-surname-after-marriage",
+        "source_type": "government",
+        "checked": "2026-11-13",
+        "is_price": false,
+        "fact_id": "fact_22"
+      },
+      {
+        "claim": "NSW BDM, 'What are the surname options': 'you can take your partner's surname; your partner can take your surname; you can combine your name and your partner's name with a hyphen.' 'For any other change of name, you need to apply to change your name.'",
+        "source": "https://www.nsw.gov.au/family-and-relationships/name-changes-and-corrections/change-your-surname-after-marriage",
+        "source_type": "government",
+        "checked": "2026-11-13",
+        "is_price": false,
+        "fact_id": "fact_23"
+      },
+      {
+        "claim": "NSW BDM: 'A person's name must be recorded as it was at the time of marriage. However, a notation can be included in the endorsement section of a certificate with the new name.' You can apply to correct the record to include the notation, and a new certificate will need to be purchased.",
+        "source": "https://www.nsw.gov.au/family-and-relationships/name-changes-and-corrections/change-your-surname-after-marriage",
+        "source_type": "government",
+        "checked": "2026-11-13",
+        "is_price": false,
+        "fact_id": "fact_24"
+      },
+      {
+        "claim": "NSW BDM: if you previously changed your surname using your Australian marriage certificate, 'you can usually use a proof of divorce to change other identification back to your pre-marriage name'; check with the agency, as they may accept proof of divorce. If you changed your name with a legal Change of Name application and wish to revert, 'you may need to apply to the Registry for another legal change of name.'",
+        "source": "https://www.nsw.gov.au/family-and-relationships/name-changes-and-corrections/change-your-surname-after-marriage",
+        "source_type": "government",
+        "checked": "2026-11-13",
+        "is_price": false,
+        "fact_id": "fact_25"
+      },
+      {
+        "claim": "Births, Deaths and Marriages Victoria, 'Changing your name after marriage, separation or divorce' (read live 13 November 2026; 'Updated 11 October 2024'): if you married in Australia 'You can take your spouse's family name' and 'Both partners can hyphenate their family names.' 'You don't need to apply for a change of name. Just give the relevant organisations a copy of your Australian marriage certificate.'",
+        "source": "https://www.bdm.vic.gov.au/changing-your-name-after-marriage-separation-divorce",
+        "source_type": "government",
+        "checked": "2026-11-13",
+        "is_price": false,
+        "fact_id": "fact_26"
+      },
+      {
+        "claim": "BDM Victoria: 'The commemorative certificate you got on your wedding day isn't the 'official' (legal) marriage certificate. Most organisations will only accept the BDM-issued legal certificate as evidence.'",
+        "source": "https://www.bdm.vic.gov.au/changing-your-name-after-marriage-separation-divorce",
+        "source_type": "government",
+        "checked": "2026-11-13",
+        "is_price": false,
+        "fact_id": "fact_27"
+      },
+      {
+        "claim": "BDM Victoria: 'To update your family name on documents such as your driver licence, passport and bank accounts, contact those organisations. For example, this might include VicRoads, the Australian Passport Office or your bank.' You'll need to give them either a marriage certificate or a change of name certificate, depending on whether you married in Australia or overseas.",
+        "source": "https://www.bdm.vic.gov.au/changing-your-name-after-marriage-separation-divorce",
+        "source_type": "government",
+        "checked": "2026-11-13",
+        "is_price": false,
+        "fact_id": "fact_28"
+      },
+      {
+        "claim": "BDM Victoria: if you were born overseas and married in Australia, most organisations will accept a copy of your primary identity document (foreign passport or Australian citizenship certificate) plus your Australian marriage certificate. 'Some organisations may need you to change your name with BDM to use your spouse's family name.'",
+        "source": "https://www.bdm.vic.gov.au/changing-your-name-after-marriage-separation-divorce",
+        "source_type": "government",
+        "checked": "2026-11-13",
+        "is_price": false,
+        "fact_id": "fact_29"
+      },
+      {
+        "claim": "BDM Victoria, 'Married overseas': 'If you married overseas, you can't take your spouse's family name automatically. You need to apply to change your name.' 'You can't register an overseas marriage in Australia.' To go back to your previous name after an overseas marriage, 'you need to change your name with BDM.'",
+        "source": "https://www.bdm.vic.gov.au/changing-your-name-after-marriage-separation-divorce",
+        "source_type": "government",
+        "checked": "2026-11-13",
+        "is_price": false,
+        "fact_id": "fact_30"
+      },
+      {
+        "claim": "BDM Victoria: if you married in Australia and took your spouse's name, you can go back to your previous family name ('You don't need to have separated or divorced') and 'You don't need to apply for a change of name with BDM.' In most cases organisations need your Australian marriage certificate, your birth certificate and your divorce certificate (if applicable); most need a standard birth certificate, not a birth extract.",
+        "source": "https://www.bdm.vic.gov.au/changing-your-name-after-marriage-separation-divorce",
+        "source_type": "government",
+        "checked": "2026-11-13",
+        "is_price": false,
+        "fact_id": "fact_31"
+      },
+      {
+        "claim": "Queensland Government (qld.gov.au, managed by the Registry of Births, Deaths and Marriages; read live 13 November 2026; 'Last updated 7 October 2026'): 'You need to contact each organisation to change your name.' If you married in Australia you can take your partner's family name or both partners can hyphenate; 'You don't need to apply to the Registry of Births, Deaths and Marriages to change your name. You can use your marriage certificate to change your name with organisations.'",
+        "source": "https://www.qld.gov.au/family/name-changes/marriage-or-separation",
+        "source_type": "government",
+        "checked": "2026-11-13",
+        "is_price": false,
+        "fact_id": "fact_32"
+      },
+      {
+        "claim": "Queensland Government: if you were born overseas and married in Australia, organisations may accept a copy of an identity document (passport or Australian citizenship certificate) and your official marriage certificate. 'Some organisations may need an official change of name document.'",
+        "source": "https://www.qld.gov.au/family/name-changes/marriage-or-separation",
+        "source_type": "government",
+        "checked": "2026-11-13",
+        "is_price": false,
+        "fact_id": "fact_33"
+      },
+      {
+        "claim": "Queensland Government, 'Married overseas': 'If you married overseas, you may not be able to take your partner's family name automatically. This is because some organisations don't accept overseas documents as proof of identity. Some organisations may need an official change of name document.' Going back after an overseas marriage where you changed your name with the Registry requires changing your name at the Registry again.",
+        "source": "https://www.qld.gov.au/family/name-changes/marriage-or-separation",
+        "source_type": "government",
+        "checked": "2026-11-13",
+        "is_price": false,
+        "fact_id": "fact_34"
+      },
+      {
+        "claim": "Queensland Government 'Change your name' (search result snippet, 13 November 2026): 'You can legally change your name in Queensland. Apply to the Registry of Births, Deaths and Marriage and pay a fee.' (Snippet only; page not opened. No amount recorded.)",
+        "source": "https://www.qld.gov.au/family/name-changes/your-name",
+        "source_type": "government",
+        "checked": "2026-11-13",
+        "is_price": false,
+        "fact_id": "fact_35"
+      },
+      {
+        "claim": "NSW Government 'Change of name' (search result snippet, 13 November 2026; page dated 1 June 2026): 'The quickest way to apply for an official change of name is online. You can change your name only once in a 12-month period and 3 times in your ...' (Snippet only; page not opened.)",
+        "source": "https://www.nsw.gov.au/family-and-relationships/name-changes-and-corrections/change-of-name",
+        "source_type": "government",
+        "checked": "2026-11-13",
+        "is_price": false,
+        "fact_id": "fact_36"
+      },
+      {
+        "claim": "BDM Victoria 'Change a name' (search result snippet, 13 November 2026): 'You can change your name only once in a 12-month period and 3 times in your lifetime. Changing your name after marriage, separation or divorce.' (Snippet only; page not opened.)",
+        "source": "https://www.bdm.vic.gov.au/change-name",
+        "source_type": "government",
+        "checked": "2026-11-13",
+        "is_price": false,
+        "fact_id": "fact_37"
+      },
+      {
+        "claim": "Services Australia, 'How to update your name with Centrelink' (re-read live 13 November 2026; 'Page last updated: 18 August 2026'): 'To update your legal name you'll need to bring your supporting documents to a service centre.' Accepted Births, Deaths and Marriages documents include 'an Australian marriage certificate for surname changes only' and 'a Certificate of name change'. 'We don't accept ceremonial marriage certificates as a supporting document for a legal name change.' 'If you changed your name overseas, you'll need to provide us with original evidence from the Department of Home Affairs.'",
+        "source": "https://www.servicesaustralia.gov.au/how-to-update-your-name-with-centrelink?context=64107",
+        "source_type": "government",
+        "checked": "2026-11-13",
+        "is_price": false,
+        "fact_id": "fact_38"
+      },
+      {
+        "claim": "Services Australia (Centrelink): you can in some circumstances call your regular payment line to update your legal name, including when 'changing your legal married name back to your former birth or maiden name that you've provided to us before'. A preferred name or title can be updated without supporting documents (online via myGov or by phone/visit).",
+        "source": "https://www.servicesaustralia.gov.au/how-to-update-your-name-with-centrelink?context=64107",
+        "source_type": "government",
+        "checked": "2026-11-13",
+        "is_price": false,
+        "fact_id": "fact_39"
+      },
+      {
+        "claim": "Australian Electoral Commission, 'Enrol to vote' (read live 13 November 2026; 'Updated 7 April 2026'): you can 'enrol or update your details' online; the enrolment form needs one of: Australian driver licence number, Australian passport number, Medicare card details, Australian citizenship number, or someone currently enrolled to confirm your identity. The form covers federal elections and any relevant state, territory or local government elections. The page does not specifically describe a name change after marriage.",
+        "source": "https://www.aec.gov.au/enrol/",
+        "source_type": "government",
+        "checked": "2026-11-13",
+        "is_price": false,
+        "fact_id": "fact_40"
+      }
+    ],
+    "insider_details": [
+      {
+        "detail": "Order matters. NSW BDM's own sequence is official marriage certificate first, then driver licence (Service NSW) and Medicare, then everything else, because the new licence and Medicare card become your proof for banks, insurers and utilities. Build the same order into your post-wedding to-do list in any state, checking your own state's licensing agency.",
+        "fact_ids": [
+          "fact_20",
+          "fact_21"
+        ]
+      },
+      {
+        "detail": "The pretty certificate signed on the day is not the one agencies want. NSW, Victoria and Services Australia all say ceremonial or commemorative certificates are not accepted; order the official registry certificate (your celebrant can usually apply for you, generally at a cost) before you start updating anything.",
+        "fact_ids": [
+          "fact_19",
+          "fact_27",
+          "fact_38",
+          "fact_12"
+        ]
+      },
+      {
+        "detail": "For couples marrying overseas, the overseas certificate generally proves the marriage but not the name change. NSW and Victoria say you must apply for a change of name with the registry, Queensland says some organisations may need one, and the Passport Office accepts foreign certificates only in limited cases. If you plan to take your spouse's name after an Italy or Greece wedding, budget time for a registry change of name application (a fee applies) on your return, or consider a short legal ceremony in Australia.",
+        "fact_ids": [
+          "fact_22",
+          "fact_30",
+          "fact_34",
+          "fact_02",
+          "fact_17"
+        ]
+      },
+      {
+        "detail": "Translations: if your overseas documents aren't in English, the Passport Office needs them translated in full and stamped by an accredited translator. Order translations early so they don't hold up a passport application before your honeymoon.",
+        "fact_ids": [
+          "fact_03"
+        ]
+      },
+      {
+        "detail": "Keeping your name needs no paperwork at all; the rules only apply if you choose to change. In Australia-married cases, going back to a previous name later generally does not need a registry change of name in Victoria (marriage, birth and, if relevant, divorce certificates), but a registry change of name used after an overseas marriage has to be reversed through the registry.",
+        "fact_ids": [
+          "fact_31",
+          "fact_30",
+          "fact_25"
+        ]
+      },
+      {
+        "detail": "Travel timing: the Passport Office lets you choose whether to get a new passport after a married-name change. Book honeymoon flights in the name on the passport you will actually travel on, and don't update your passport between booking and flying unless the airline ticket matches.",
+        "fact_ids": [
+          "fact_01"
+        ]
+      }
+    ],
+    "quotes": [],
+    "real_weddings": [],
+    "verify_items": [
+      "[[VERIFY: ATO process and documents for updating your name. The ATO website returned a service-outage page on 13 November 2026 (https://www.ato.gov.au/individuals-and-families/tax-file-number/update-your-tfn-details); nothing about the ATO is sourced beyond NSW BDM listing it as a place to update. Re-read before the article describes the ATO step.]]",
+      "[[VERIFY: AEC process for updating a name on the electoral roll. The AEC 'Enrol to vote' page (fact read 13 November 2026) says you can 'update your details' online but does not describe name changes after marriage or the documents needed. Check https://www.aec.gov.au/enrol/ subpages or AEC FAQs before giving steps.]]",
+      "[[VERIFY: Driver licence name update outside NSW (VicRoads, Queensland TMR and others). Only the NSW process (Service NSW, official marriage certificate plus current licence, new licence within 1-2 weeks) is sourced; VicRoads is named by BDM Victoria only as an organisation to contact.]]",
+      "[[VERIFY: The 'once in a 12-month period and 3 times in your lifetime' limit on registered changes of name (NSW and Victoria) comes from search snippets only; open the NSW 'Change of name' and BDM Victoria 'Change a name' pages before stating it, and confirm whether it applies to marriage-based changes.]]",
+      "[[VERIFY: Change of name fees by state. Queensland's page snippet says to 'pay a fee' and NSW says marriage-based surname changes avoid 'the fee for an official change of name'; no amounts recorded. Article should say 'a fee applies' only.]]",
+      "[[VERIFY: NT and Tasmania wording copied from earlier packs (read 27 October 2026); NT page dated 31 August 2022. Re-read before quoting if the article cites them by name.]]",
+      "[[VERIFY: Apostille or other legalisation for using a foreign marriage certificate in Australia for a name change. None of the Australian sources read in this round mention an Apostille for name-change purposes; only the translation rule (Passport Office) is sourced. Link to the Apostille article rather than state a rule.]]",
+      "[[VERIFY: Whether the Passport Office lets you travel on a passport in your previous name after marrying, and the exact name-matching rule for airline tickets. Only the Passport Office's 'you can choose to get a new passport' wording is sourced; airline name-matching is not.]]"
+    ],
+    "needs_signoff": [],
+    "must_include_coverage": [
+      {
+        "item": "Intro with a direct answer in the first 100 words: in Australia you generally update records using your official marriage certificate, and whether a formal change of name is needed depends on your state or territory and your situation, as each BDM states it, dated 'as at November 2026' [[VERIFY]]. Then exactly 4 one-sentence Key takeaways (certificate versus formal change by state; use the official registry certificate, not the ceremonial one; update the passport and government records in order; an overseas certificate may need translation or an Apostille, as sourced).",
+        "covered_by": [
+          "fact_18",
+          "fact_26",
+          "fact_32",
+          "fact_14",
+          "fact_11",
+          "fact_04",
+          "fact_19",
+          "fact_27",
+          "fact_38",
+          "fact_12",
+          "fact_01",
+          "fact_03",
+          "[[VERIFY: Apostille or other legalisation for using a foreign marriage certificate in Australia for a name change. None of the Australian sources read in this round mention an Apostille for name-change purposes; only the translation rule (Passport Office) is sourced. Link to the Apostille article rather than state a rule.]]"
+        ]
+      },
+      {
+        "item": "Do you need to legally change your name: marriage certificate route versus a formal change of name registration, credited to each state or territory BDM as sourced (a table by state is welcome if every cell is sourced), with [[VERIFY]] markers until sourced. 'A fee may apply' only where a source says so; no amounts.",
+        "covered_by": [
+          "fact_18",
+          "fact_26",
+          "fact_32",
+          "fact_14",
+          "fact_11",
+          "fact_04",
+          "fact_22",
+          "fact_23",
+          "fact_30",
+          "fact_29",
+          "fact_34",
+          "fact_33",
+          "fact_08",
+          "fact_07",
+          "fact_13",
+          "fact_15",
+          "fact_10",
+          "fact_18",
+          "fact_35",
+          "[[VERIFY: Change of name fees by state. Queensland's page snippet says to 'pay a fee' and NSW says marriage-based surname changes avoid 'the fee for an official change of name'; no amounts recorded. Article should say 'a fee applies' only.]]"
+        ]
+      },
+      {
+        "item": "Get the right certificate: the official certificate issued by the state or territory registry versus the ceremonial certificate signed on the day, how to order it only as each BDM states, linking /expert-advice/notice-of-intended-marriage and /expert-advice/who-can-perform-a-marriage (drafts; link only if live at publish).",
+        "covered_by": [
+          "fact_19",
+          "fact_27",
+          "fact_38",
+          "fact_12"
+        ]
+      },
+      {
+        "item": "Step by step updating your records, in order, written as numbered steps: Australian Passport Office, Services Australia (Medicare and Centrelink as it states), the ATO, the AEC, one state transport agency as an example for the driver licence; then 'ask them' for banks, employers, insurers, utilities and other private bodies, with no names. Each step only as the agency states, with [[VERIFY]] until sourced.",
+        "covered_by": [
+          "fact_01",
+          "fact_02",
+          "fact_38",
+          "fact_20",
+          "fact_21",
+          "fact_28",
+          "fact_40",
+          "[[VERIFY: ATO process and documents for updating your name. The ATO website returned a service-outage page on 13 November 2026 (https://www.ato.gov.au/individuals-and-families/tax-file-number/update-your-tfn-details); nothing about the ATO is sourced beyond NSW BDM listing it as a place to update. Re-read before the article describes the ATO step.]]",
+          "[[VERIFY: AEC process for updating a name on the electoral roll. The AEC 'Enrol to vote' page (fact read 13 November 2026) says you can 'update your details' online but does not describe name changes after marriage or the documents needed. Check https://www.aec.gov.au/enrol/ subpages or AEC FAQs before giving steps.]]",
+          "[[VERIFY: Driver licence name update outside NSW (VicRoads, Queensland TMR and others). Only the NSW process (Service NSW, official marriage certificate plus current licence, new licence within 1-2 weeks) is sourced; VicRoads is named by BDM Victoria only as an organisation to contact.]]"
+        ]
+      },
+      {
+        "item": "Keeping your name, or both partners changing (including a double-barrelled or new surname, and a partner taking the other's name), only as official sources state; framed as a choice, not advice.",
+        "covered_by": [
+          "fact_31",
+          "fact_25",
+          "fact_39",
+          "fact_32",
+          "fact_23",
+          "fact_26"
+        ]
+      },
+      {
+        "item": "If you married overseas (the differentiator): using a foreign marriage certificate in Australia, translation requirements, the Apostille or other legalisation, and how each state or territory BDM treats an overseas marriage for a name change, all as sourced. Link /expert-advice/overseas-marriage-certificate, /expert-advice/do-you-have-to-register-an-overseas-marriage-at-home, /expert-advice/what-is-an-apostille-and-does-my-paperwork-need-one and /destination-weddings/is-marriage-in-italy-recognised-in-australia (draft; link only if live at publish), rather than restating them.",
+        "covered_by": [
+          "fact_05",
+          "fact_06",
+          "fact_17",
+          "fact_02",
+          "fact_03",
+          "fact_09",
+          "fact_16",
+          "fact_22",
+          "fact_30",
+          "fact_34",
+          "[[VERIFY: Apostille or other legalisation for using a foreign marriage certificate in Australia for a name change. None of the Australian sources read in this round mention an Apostille for name-change purposes; only the translation rule (Passport Office) is sourced. Link to the Apostille article rather than state a rule.]]"
+        ]
+      },
+      {
+        "item": "Travel timing: booking flights in the name on the current passport and when to update the passport around wedding and honeymoon travel, only as the Australian Passport Office or Smartraveller states. This section or the overseas section carries the ONLY Advisor line in the body, from brand-facts.md ('One Wedded Advisor, start to finish, as a single point of contact.' or equivalent brand-facts wording), tied to the celebration abroad, never paperwork, plus the /wonderland-concierge link (anchor 'Wedded Concierge').",
+        "covered_by": [
+          "fact_01",
+          "[[VERIFY: Whether the Passport Office lets you travel on a passport in your previous name after marrying, and the exact name-matching rule for airline tickets. Only the Passport Office's 'you can choose to get a new passport' wording is sourced; airline name-matching is not.]]"
+        ]
+      },
+      {
+        "item": "FAQ (4 to 6): Do I have to change my name after marriage in Australia? Is my marriage certificate enough to change my name? Which certificate do I need? What order should I update my documents in? Can I change my name with an overseas marriage certificate? Should I travel on my old or new passport after the wedding? Each answer from the same sources as the body.",
+        "covered_by": [
+          "fact_18",
+          "fact_26",
+          "fact_19",
+          "fact_20",
+          "fact_22",
+          "fact_01",
+          "[[VERIFY: Whether the Passport Office lets you travel on a passport in your previous name after marrying, and the exact name-matching rule for airline tickets. Only the Passport Office's 'you can choose to get a new passport' wording is sourced; airline name-matching is not.]]"
+        ]
+      },
+      {
+        "item": "Close: the one Advisor line from brand-facts.md (never the Wedded Advisor definition line or its closing phrase). Links /wonderland-concierge (Wedded Concierge) and /magazine as the magnet. UTMs utm_source=blog&utm_medium=content&utm_campaign=name-change-after-marriage&utm_content=primary|secondary|magnet|closing on /wonderland-concierge and /magazine only.",
+        "covered_by": [
+          "Not a fact item: brand line from content-system/brand/brand-facts.md, handled by the writer"
+        ]
+      }
+    ]
+  }
+}
