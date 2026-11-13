@@ -54,7 +54,7 @@ These celebrants are also regulated by AGD, but they do not have to perform cere
 
 These ministers are nominated by their recognised denomination and registered with the state or territory registry of births, deaths and marriages. <!-- fact_20 --> They are managed by that registry and by their religious organisation, and the minister must be part of a recognised religion in Australia. <!-- fact_18 -->
 
-For a religious ceremony, ask your minister which category they are in and whether they appear on the register. AGD keeps the list of recognised denominations on its [Find a marriage celebrant page](https://www.ag.gov.au/families-and-marriage/marriage/find-marriage-celebrant).
+For a religious ceremony, ask your minister which category they are in and whether they appear on the register. AGD links to the list of recognised denominations from its [Find a marriage celebrant page](https://www.ag.gov.au/families-and-marriage/marriage/find-marriage-celebrant).
 
 ### State and territory officers
 
@@ -149,7 +149,7 @@ If you marry abroad, check:
 - **Back home:** [registering an overseas marriage at home](https://weddedwonderland.com/expert-advice/do-you-have-to-register-an-overseas-marriage-at-home).
 - **The ceremony itself:** [what a celebrant does at a wedding abroad](https://weddedwonderland.com/expert-advice/what-does-a-celebrant-do-and-do-you-need-one-abroad).
 
-Either way, the legal side stays with you. Marry at home and it sits with your authorised celebrant; marry abroad and the destination's own rules apply, so check with its embassy or consulate. <!-- fact_04 --> <!-- fact_10 --> The celebration is where we come in. Through [Wedded Concierge](https://weddedwonderland.com/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=who-can-perform-a-marriage&utm_content=secondary), your Wedded Advisor, the one person who plans with you start to finish, takes on the venue, travel, vendors and payments for the celebration abroad, in your time zone and quoting in AUD. Tell your Advisor your legal ceremony date, so the celebration is planned around it.
+Either way, the legal side stays with you. Marry at home and it sits with your authorised celebrant; marry abroad and the destination's own rules apply, so check with its embassy or consulate. <!-- fact_04 --> <!-- fact_10 --> The celebration is where we come in. Through [Wedded Concierge](https://weddedwonderland.com/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=who-can-perform-a-marriage&utm_content=secondary), your Wedded Advisor, the one person who plans with you start to finish, takes on the venue, travel, vendors and payments for the celebration abroad, in your time zone and quoting in AUD.
 
 ## Frequently asked questions
 
