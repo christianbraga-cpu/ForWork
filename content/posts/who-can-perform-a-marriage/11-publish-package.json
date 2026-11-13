@@ -1,0 +1,325 @@
+{
+  "agent": "cms-publisher",
+  "task_id": "who-can-perform-a-marriage",
+  "stage": "11",
+  "status": "complete",
+  "round": 1,
+  "inputs_used": [
+    "CLAUDE.md",
+    "content-system/schemas/11-publish-package.schema.json",
+    "content/posts/who-can-perform-a-marriage/01-brief.json",
+    "content/posts/who-can-perform-a-marriage/02-seo.json",
+    "content/posts/who-can-perform-a-marriage/03-source-pack.json",
+    "content/posts/who-can-perform-a-marriage/04-images.json",
+    "content/posts/who-can-perform-a-marriage/08-final.md",
+    "content/posts/who-can-perform-a-marriage/09-cro.json",
+    "content/posts/who-can-perform-a-marriage/10-distribution.json",
+    "content/posts/notice-of-intended-marriage/11-body.md, 11-publish-package.json, 12-cms-report.md, booking-checklist.md (format model)"
+  ],
+  "self_qa": {
+    "checks": [
+      {
+        "check": "Front matter and all <!-- fact_xx --> markers removed; H1 is the title; 5 image-slot comments kept; links and UTMs unchanged; no [[VERIFY]] markers in the copy",
+        "pass": true
+      },
+      {
+        "check": "Primary CTA uses the existing sentence and link unchanged (09-cro.json); secondary, closing and magnet marked; each utm_content appears exactly once in visible links",
+        "pass": true
+      },
+      {
+        "check": "Exactly 4 key takeaways and 7 FAQ pairs taken verbatim from the body",
+        "pass": true
+      },
+      {
+        "check": "Meta title and description from 02-seo.json, no \"best\", no prices, no em dashes",
+        "pass": true,
+        "note": "title 57, description 153 characters"
+      },
+      {
+        "check": "primary_category equals categories[0] (Expert Advice)",
+        "pass": true
+      },
+      {
+        "check": "No em dashes; Australian English",
+        "pass": true
+      },
+      {
+        "check": "status draft; nothing uploaded, saved or published",
+        "pass": true
+      }
+    ],
+    "confidence": 0.9
+  },
+  "open_questions": [
+    {
+      "to": "orchestrator",
+      "question": "CMS upload not attempted: FAST MODE package only, no browser in this session. A human saves as Draft and clicks Publish, or run /wedded-blog resume=who-can-perform-a-marriage once the field map is confirmed.",
+      "blocking": true
+    },
+    {
+      "to": "orchestrator",
+      "question": "No author named in any input; package uses \"Wedded Wonderland\" (organisation). Confirm the byline.",
+      "blocking": false
+    },
+    {
+      "to": "orchestrator",
+      "question": "The body mentions \"Our separate guide to the Notice of Intended Marriage\" without a link; consider linking /expert-advice/notice-of-intended-marriage in the CMS once live (copy left unchanged).",
+      "blocking": false
+    }
+  ],
+  "assumptions": [
+    "H1 and Article headline \"Authorised Marriage Celebrants and Who Can Legally Marry You\"; meta title \"Who Can Perform a Marriage in Australia? Celebrants Guide\" and meta description from 02-seo.json unchanged.",
+    "Excerpt is the first sentence of the opening paragraph.",
+    "Requested type \"Legal\" has no matching value; nearest brief enum value \"planning_guide\" (as in 01-brief.json) used. Cluster \"Wedding Paperwork\" (also the first tag).",
+    "Categories and tags from 01-brief.json; primary category Expert Advice. URL /expert-advice/who-can-perform-a-marriage. New article, no redirect.",
+    "JSON-LD is Article + BreadcrumbList + FAQPage; links stripped from FAQ answer text in JSON-LD only.",
+    "verify_items and needs_signoff empty: no [[VERIFY]] markers and no prices in the copy."
+  ],
+  "verify_items": [],
+  "tools_used": [
+    "Bash (python3 -I)"
+  ],
+  "next_agent": [
+    "orchestrator"
+  ],
+  "payload": {
+    "title": "Authorised Marriage Celebrants and Who Can Legally Marry You",
+    "slug": "who-can-perform-a-marriage",
+    "url_path": "/expert-advice/who-can-perform-a-marriage",
+    "content_type": "planning_guide",
+    "cluster": "Wedding Paperwork",
+    "categories": [
+      "Expert Advice",
+      "Destination Weddings",
+      "Planning Guides"
+    ],
+    "primary_category": "Expert Advice",
+    "tags": [
+      "Wedding Paperwork",
+      "Marriage Celebrants",
+      "Legal Requirements",
+      "Getting Married in Australia",
+      "Marrying Overseas"
+    ],
+    "excerpt": "Who can perform a marriage in Australia is a short list, and it is fixed by law.",
+    "key_takeaways": [
+      "Only an authorised marriage celebrant can legally marry you in Australia, and there are four types.",
+      "You can check any Commonwealth-registered celebrant on the official register, which shows their status and whether they are civil or religious.",
+      "A friend or family member can only legally marry you once registered as a celebrant, and assessment can take up to 6 months.",
+      "An Australian-authorised celebrant cannot perform a marriage overseas, so you either marry legally at home first or follow the destination's own rules."
+    ],
+    "body_markdown_file": "content/posts/who-can-perform-a-marriage/11-body.md",
+    "faq": [
+      {
+        "q": "Can a friend legally marry us in Australia?",
+        "a": "Only once they are registered as an authorised marriage celebrant. Until then they cannot accept a NOIM or solemnise a marriage, and AGD has up to 6 months to assess an application. Ask your celebrant how a friend or family member can take part in the ceremony."
+      },
+      {
+        "q": "What is a marriage celebrant in Australia?",
+        "a": "An authorised marriage celebrant is a person with legal authority to marry you in Australia. They fall into four types: Commonwealth-registered marriage celebrants, Commonwealth-registered religious marriage celebrants, ministers of religion from a recognised denomination, and state and territory officers."
+      },
+      {
+        "q": "Do you have to be ordained to marry someone in Australia?",
+        "a": "No. Commonwealth-registered civil celebrants qualify through the Certificate IV in Celebrancy, an approved university qualification or celebrancy skills. To identify as a religious marriage celebrant, however, a person must be a minister of religion."
+      },
+      {
+        "q": "Can a Justice of the Peace marry you in Australia?",
+        "a": "Only if they are also an authorised marriage celebrant. Being a Justice of the Peace is not one of the four types of authorised celebrant. Check their name on the official register."
+      },
+      {
+        "q": "How long does it take to get legally married in Australia?",
+        "a": "Your NOIM must reach your celebrant at least 1 month and no more than 18 months before the wedding. In some circumstances a prescribed authority can authorise a shorter notice period."
+      },
+      {
+        "q": "Can our Australian celebrant marry us overseas?",
+        "a": "No. An Australian-authorised marriage celebrant cannot perform a marriage overseas. Your celebrant can marry you legally in Australia before you leave, or you can marry under the destination's own rules."
+      },
+      {
+        "q": "How do I check if a celebrant is authorised?",
+        "a": "Search AGD's register at marriage.ag.gov.au by name or state. Each Commonwealth-registered celebrant's entry shows their registration status and whether they perform civil ceremonies or are a religious marriage celebrant."
+      }
+    ],
+    "images": [
+      {
+        "slot_id": "featured",
+        "file": "content/posts/who-can-perform-a-marriage/images/who-can-perform-a-marriage-celebrant-ceremony-hero.webp",
+        "role": "featured",
+        "status": "needed"
+      },
+      {
+        "slot_id": "religious-ceremony",
+        "file": "content/posts/who-can-perform-a-marriage/images/who-can-perform-a-marriage-religious-ceremony-chapel.webp",
+        "role": "inline",
+        "status": "needed"
+      },
+      {
+        "slot_id": "family-reading",
+        "file": "content/posts/who-can-perform-a-marriage/images/who-can-perform-a-marriage-family-member-reading.webp",
+        "role": "inline",
+        "status": "needed"
+      },
+      {
+        "slot_id": "signing-table",
+        "file": "content/posts/who-can-perform-a-marriage/images/who-can-perform-a-marriage-signing-table-still-life.webp",
+        "role": "inline",
+        "status": "needed"
+      },
+      {
+        "slot_id": "destination-celebration",
+        "file": "content/posts/who-can-perform-a-marriage/images/who-can-perform-a-marriage-destination-celebration.webp",
+        "role": "inline",
+        "status": "needed"
+      }
+    ],
+    "cta": {
+      "text": "Book a Wedded Concierge consultation",
+      "subtext": "The fee is agreed in writing before any work begins.",
+      "link": "https://weddedwonderland.com/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=who-can-perform-a-marriage&utm_content=primary",
+      "placement": "End of 'Types of authorised marriage celebrants': the existing sentence's 'Wedded Concierge' link is the primary CTA, unchanged per 09-cro.json (marked <!-- CTA BLOCK: primary --> in 11-body.md). 08-final.md had no <!-- CTA: primary --> marker, so nothing was replaced."
+    },
+    "secondary_cta": {
+      "text": "Talk to Wedded Concierge",
+      "subtext": "One Wedded Advisor plans the celebration abroad around your legal ceremony date.",
+      "link": "https://weddedwonderland.com/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=who-can-perform-a-marriage&utm_content=secondary",
+      "placement": "Existing link at the end of 'Who can marry you if your wedding is overseas?' (marked <!-- CTA INLINE: secondary --> in 11-body.md). Unchanged."
+    },
+    "closing_cta": {
+      "text": "Start the conversation with Wedded Concierge",
+      "link": "https://weddedwonderland.com/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=who-can-perform-a-marriage&utm_content=closing",
+      "placement": "Inline link at the end of 'Planning the celebration' (marked <!-- CTA INLINE: closing -->)."
+    },
+    "lead_magnet": {
+      "name": "Get Wedded magazines",
+      "link": "https://weddedwonderland.com/magazine?utm_source=blog&utm_medium=content&utm_campaign=who-can-perform-a-marriage&utm_content=magnet",
+      "placement": "Final line of the post (marked <!-- LEAD MAGNET -->)."
+    },
+    "tracking_links": [
+      "https://weddedwonderland.com/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=who-can-perform-a-marriage&utm_content=primary",
+      "https://weddedwonderland.com/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=who-can-perform-a-marriage&utm_content=secondary",
+      "https://weddedwonderland.com/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=who-can-perform-a-marriage&utm_content=closing",
+      "https://weddedwonderland.com/magazine?utm_source=blog&utm_medium=content&utm_campaign=who-can-perform-a-marriage&utm_content=magnet"
+    ],
+    "seo": {
+      "meta_title": "Who Can Perform a Marriage in Australia? Celebrants Guide",
+      "meta_description": "Who can legally marry you in Australia: authorised civil celebrants, ministers of religion and registry staff, plus how to check and what changes abroad.",
+      "focus_keyword": "who can perform a marriage",
+      "canonical": "https://weddedwonderland.com/expert-advice/who-can-perform-a-marriage",
+      "og_image_slot": "featured"
+    },
+    "schema_jsonld": {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Article",
+          "@id": "https://weddedwonderland.com/expert-advice/who-can-perform-a-marriage#article",
+          "headline": "Authorised Marriage Celebrants and Who Can Legally Marry You",
+          "description": "Who can legally marry you in Australia: authorised civil celebrants, ministers of religion and registry staff, plus how to check and what changes abroad.",
+          "author": {
+            "@type": "Organization",
+            "name": "Wedded Wonderland",
+            "url": "https://weddedwonderland.com/"
+          },
+          "publisher": {
+            "@type": "Organization",
+            "name": "Wedded Wonderland",
+            "url": "https://weddedwonderland.com/"
+          },
+          "datePublished": "",
+          "mainEntityOfPage": "https://weddedwonderland.com/expert-advice/who-can-perform-a-marriage",
+          "inLanguage": "en-AU"
+        },
+        {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Home",
+              "item": "https://weddedwonderland.com/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Expert Advice",
+              "item": "https://weddedwonderland.com/expert-advice"
+            },
+            {
+              "@type": "ListItem",
+              "position": 3,
+              "name": "Authorised Marriage Celebrants and Who Can Legally Marry You",
+              "item": "https://weddedwonderland.com/expert-advice/who-can-perform-a-marriage"
+            }
+          ]
+        },
+        {
+          "@type": "FAQPage",
+          "@id": "https://weddedwonderland.com/expert-advice/who-can-perform-a-marriage#faq",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "Can a friend legally marry us in Australia?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Only once they are registered as an authorised marriage celebrant. Until then they cannot accept a NOIM or solemnise a marriage, and AGD has up to 6 months to assess an application. Ask your celebrant how a friend or family member can take part in the ceremony."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "What is a marriage celebrant in Australia?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "An authorised marriage celebrant is a person with legal authority to marry you in Australia. They fall into four types: Commonwealth-registered marriage celebrants, Commonwealth-registered religious marriage celebrants, ministers of religion from a recognised denomination, and state and territory officers."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Do you have to be ordained to marry someone in Australia?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "No. Commonwealth-registered civil celebrants qualify through the Certificate IV in Celebrancy, an approved university qualification or celebrancy skills. To identify as a religious marriage celebrant, however, a person must be a minister of religion."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Can a Justice of the Peace marry you in Australia?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Only if they are also an authorised marriage celebrant. Being a Justice of the Peace is not one of the four types of authorised celebrant. Check their name on the official register."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "How long does it take to get legally married in Australia?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Your NOIM must reach your celebrant at least 1 month and no more than 18 months before the wedding. In some circumstances a prescribed authority can authorise a shorter notice period."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Can our Australian celebrant marry us overseas?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "No. An Australian-authorised marriage celebrant cannot perform a marriage overseas. Your celebrant can marry you legally in Australia before you leave, or you can marry under the destination's own rules."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "How do I check if a celebrant is authorised?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Search AGD's register at marriage.ag.gov.au by name or state. Each Commonwealth-registered celebrant's entry shows their registration status and whether they perform civil ceremonies or are a religious marriage celebrant."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    "author": "Wedded Wonderland",
+    "status": "draft",
+    "verify_items": [],
+    "needs_signoff": [],
+    "redirect": null,
+    "draft_note": "DRAFT. Do not publish until checked: no [[VERIFY]] items in the copy; no prices, nothing for Nic to sign off. Image slots needed (5 of 5, none approved): featured, religious-ceremony, family-reading, signing-table, destination-celebration. featured, religious-ceremony, family-reading and destination-celebration must be real (licensed real wedding or named real venue with written couple, celebrant, officiant, reader and identifiable guest consent as applicable; venue proven by register row, media kit or EXIF; never AI); signing-table is a still life (Canva, licensed stock or a real detail shot; AI only with user approval, captioned 'Illustrative image'); no legible certificate, register, names, signatures or government crest in any image. Planner SME to reconfirm the celebrant rules live on the Attorney-General's Department pages and register before publish. Byline to confirm (package uses Wedded Wonderland). Linked guides to publish first or together: how-to-choose-a-wedding-celebrant, what-is-a-certificate-of-no-impediment-and-who-issues-it, what-is-an-apostille-and-does-my-paperwork-need-one, do-you-have-to-register-an-overseas-marriage-at-home, what-does-a-celebrant-do-and-do-you-need-one-abroad. DRAFT ONLY. A human clicks Publish."
+  }
+}
