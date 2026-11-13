@@ -6,3 +6,4 @@
 02:13 05 writer done: about 2,400 words, 0 VERIFY.
 02:15 06 editor pass_with_edits 4.29, 7 edits applied (05-draft-r2.md); 07 readers done.
 02:17 07b panel revise (enquire 2.1); 3 must-fix.
+02:18 08 writer final round 3 done: 2,365 words; orchestrator cut an availability promise from the Advisor line (brand facts cover inclusions only).
