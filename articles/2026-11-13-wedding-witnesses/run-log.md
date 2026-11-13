@@ -22,3 +22,14 @@
 - **Stage 2 fast (writer, 2.5 min):** DONE. 03-draft-v1.md. --check: 1,946 reader words (cap 2,000), 0 dashes, 0 placeholders, 10 official domains, none blocked. YAML valid; 27 claims, 23 links (pillar, validity spoke and Greece conditional).
 - **Stage 3 fast (3 parallel reviews):** accuracy FAIL 3.8 (blockers: unsourced "eight-day wait" anchor; "without two witnesses there is no marriage" beyond s 44); SEO PASS 4.7; reader:couple 3/3/4/3 (Atto Notorio four witnesses raised but unexplained; Italy only US-sourced; FAQ said two for Italy).
 - **Stage 4 fast (one loop, 3.5 min):** DONE. 03-draft-v2.md applies all 16 items; Atto Notorio facts imported from the validity pack (F-150, F-151, Adelaide 2022 guide). --check: 1,975 reader words (cap 2,000), 0 dashes, 0 placeholders, 11 official domains, none blocked. YAML valid; 28 claims, 24 links.
+- **Stage 6 fast (copy editor):** DONE. final.md, publish-package.json (image plan included), chrome-upload-prompt.md, article.docx. --check: 1,978 reader words, 0 dashes, 0 placeholders, 11 official domains, none blocked. YAML and JSON validated by the orchestrator. Link map: added as DRAFT. Run time: about 30 minutes.
+
+## Must fix before publish
+1. **Publish order:** the requirements pillar first (PILLAR-LINK); validity and Greece links use their fallbacks if not live.
+2. **N-002-GUIDELINES:** check AGD Guidelines Parts 5.8, 5.9, 6.8 and 11.6 against the current (Sept 2021) edition (children as witnesses, interpreters, no witnesses for commitment ceremonies).
+3. **ITALY-SOURCE:** confirm the Atto Notorio (four unrelated witnesses, six months) with the Sydney or Melbourne Italian consulate; Italian ceremony number is from the US Embassy page.
+4. **CONCIERGE-PAY (user):** concierge price, partner payments, named contact.
+5. **Links:** click through the 11 external links once.
+6. **Images:** pick files; credit, licence and consent for 5 slots.
+7. **CMS:** author, CMS admin URL.
+8. Not sourced, so no rule stated: celebrant as witness, witness ID in Australia, Greek interpreter-as-witness, Bali witness age/ID/relatives, Fiji minimum age.
