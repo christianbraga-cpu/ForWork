@@ -3,3 +3,4 @@
 23:55 01 brief done: month-by-month April to October, station-labelled, no winning month.
 23:56 03 planner done: 37 facts; Naxos, Rodos, Heraklion, Chania full year; Kerkyra May-Oct; Smartraveller heat, wildfire June-September, ferries, dust; venue windows; Archdiocese closed dates. Gaps (omitted from copy): Athens (HNMS 503), public holidays, Easter dates, sea temperature.
 00:07 02 SEO done (re-run after restart): 5 cities; AU 10 US 30; KD 31; hub page /destinations/europe/greece has a best-time H2 (link here).
+00:10 05 writer done: about 2,830 words, 2 VERIFY (Easter dates, public holidays).
