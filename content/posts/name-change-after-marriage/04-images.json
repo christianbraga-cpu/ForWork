@@ -1,0 +1,198 @@
+{
+ "agent": "visual-curator",
+ "task_id": "name-change-after-marriage",
+ "stage": "04",
+ "status": "needs_input",
+ "round": 1,
+ "inputs_used": [
+  "CLAUDE.md",
+  "content/posts/name-change-after-marriage/00-input.json",
+  "01-brief.json, 02-seo.json, 02-research/report.md, 03-source-pack.json (not present at run time)",
+  "content/posts/who-can-perform-a-marriage/04-images.json (format model)",
+  "content-system/images/library-index.csv (header only, no rows)",
+  "content-system/schemas/04-images.schema.json"
+ ],
+ "self_qa": {
+  "checks": [
+   {
+    "check": "Zero reference-only or competitor images in slots",
+    "pass": true,
+    "note": "reference_only empty; no images downloaded."
+   },
+   {
+    "check": "Every approved image has location, licence, alt, caption, fit_reason",
+    "pass": true,
+    "note": "No approved images this run."
+   },
+   {
+    "check": "No AI image depicting a real place, wedding or person",
+    "pass": true,
+    "note": "No AI generated. Only the three still lifes may become ai_illustrative, with user approval and an 'Illustrative image' label."
+   },
+   {
+    "check": "No readable certificates, passports or personal details",
+    "pass": true,
+    "note": "Every brief forbids readable documents, names, signatures and numbers."
+   },
+   {
+    "check": "Featured image exists (approved or needed with brief)",
+    "pass": true,
+    "note": "Needed, with brief: rings, closed passport and envelope still life."
+   },
+   {
+    "check": "About 5 slots",
+    "pass": true,
+    "note": "5 slots."
+   }
+  ],
+  "confidence": 0.7
+ },
+ "open_questions": [
+  {
+   "to": "user",
+   "question": "Do you approve AI still lifes (featured rings/passport/envelope, checklist flat lay, luggage tags) labelled 'Illustrative image' if no library, Canva or licensed asset is found?",
+   "blocking": false
+  },
+  {
+   "to": "user",
+   "question": "Do you hold a signing-moment photo from a real wedding with written couple consent and a licence for web use?",
+   "blocking": false
+  },
+  {
+   "to": "planner-sme",
+   "question": "Which destination venue should the closing slot feature, so it can be tied to a named place and press contact?",
+   "blocking": false
+  }
+ ],
+ "assumptions": [
+  "Placement is by section name because 02-seo.json is not yet written; the writer maps it to after_h2 positions.",
+  "No venue is named because 03-source-pack does not exist; nothing was guessed.",
+  "Fast mode: repo register only, no Drive, own-site, Canva, Gmail or Lens checks run."
+ ],
+ "verify_items": [
+  "[[IMAGE NEEDED]] featured: rings, closed passport and envelope still life; library, Canva or stock; AI only with user approval, labelled 'Illustrative image'",
+  "[[IMAGE NEEDED]] signing-moment: real wedding, written couple consent, never AI",
+  "[[IMAGE NEEDED]] checklist-still-life: Canva or licensed stock; AI only with user approval, labelled 'Illustrative image'",
+  "[[IMAGE NEEDED]] travel-still-life: luggage tags with no readable names; AI only with user approval, labelled 'Illustrative image'",
+  "[[IMAGE NEEDED]] destination-celebration: licensed image at a named destination venue, never AI",
+  "[[VERIFY licence]] every library, stock, Canva, own-site or venue image: licence, credit line and expiry recorded in library-index.csv before use",
+  "[[VERIFY: written consent from couple and any identifiable celebrant or witness for the signing photo]]",
+  "[[VERIFY: no legible certificate, passport data page, names, signatures or document numbers in any image]]"
+ ],
+ "tools_used": [
+  "Bash (cat/python)"
+ ],
+ "next_agent": [
+  "luxury-writer"
+ ],
+ "payload": {
+  "slots": [
+   {
+    "slot_id": "featured",
+    "placement": "featured",
+    "purpose": "Hero and social share image: the calm, organised start of life under a new (or kept) name after a luxury destination wedding.",
+    "shot_brief": "Landscape 3:2 with negative space for a title. Still life on linen or marble: two wedding rings resting on a closed passport (cover only, no data page) beside a cream envelope with wax seal, soft natural window light, warm neutral palette, no people. No readable names, signatures, document numbers, certificate text, passport data page or any personal details; documents closed, blurred or turned away. Source: library register, Canva brand asset or licensed stock. AI only with user approval and labelled 'Illustrative image'. Never competitor images.",
+    "status": "needed",
+    "file": "content/posts/name-change-after-marriage/images/name-change-after-marriage-rings-passport-envelope-hero.webp",
+    "source": {
+     "type": "library",
+     "origin": "not yet sourced",
+     "credit": "[[VERIFY licence]]"
+    },
+    "location": {
+     "venue": "none (studio still life)",
+     "town": "not applicable",
+     "verified_by": "not applicable: no real place depicted"
+    },
+    "licence_note": "[[IMAGE NEEDED]] Library register has no rows. Still life may be AI only with user approval, labelled 'Illustrative image'."
+   },
+   {
+    "slot_id": "signing-moment",
+    "placement": "section: step 1, sign the marriage register and get your certificate (writer maps to after_h2)",
+    "purpose": "Show where the name change paperwork begins: signing on the day.",
+    "shot_brief": "Landscape 3:2. A real Wedded Wonderland couple signing at their ceremony table, hands and pen in focus, faces optional, soft daylight, florals in background. Only from a real wedding with written couple consent (and celebrant/witness consent if identifiable), licensed for web and social. No readable names, signatures, document numbers, certificate text, passport data page or any personal details; documents closed, blurred or turned away. Location proven by register row or EXIF. Never AI, never competitor or registry images.",
+    "status": "needed",
+    "file": "content/posts/name-change-after-marriage/images/name-change-after-marriage-ceremony-signing-hands.webp",
+    "source": {
+     "type": "library",
+     "origin": "not yet sourced",
+     "credit": "[[VERIFY licence]]"
+    },
+    "location": {
+     "venue": "a named real wedding venue (to be confirmed)",
+     "town": "to be confirmed",
+     "verified_by": "pending: register row, media kit or EXIF"
+    },
+    "licence_note": "[[IMAGE NEEDED]] Couple consent and licence required. Never AI.",
+    "consent": {
+     "couple": "required, written",
+     "celebrant": "required if identifiable",
+     "witnesses": "required if identifiable",
+     "status": "not yet obtained"
+    }
+   },
+   {
+    "slot_id": "checklist-still-life",
+    "placement": "section: the step by step checklist (who to notify) (writer maps to after_h2)",
+    "purpose": "Make the multi-step admin feel organised and manageable.",
+    "shot_brief": "Landscape 3:2 or 4:5. Overhead flat lay: a blank or generic printed checklist (no names), fountain pen, closed leather planner, coffee cup, a sprig of greenery, morning light, brand neutrals. No readable names, signatures, document numbers, certificate text, passport data page or any personal details; documents closed, blurred or turned away. Source: Canva brand asset, library or licensed stock. AI only with user approval and labelled 'Illustrative image'.",
+    "status": "needed",
+    "file": "content/posts/name-change-after-marriage/images/name-change-after-marriage-checklist-planner-flatlay.webp",
+    "source": {
+     "type": "canva",
+     "origin": "not yet sourced",
+     "credit": "[[VERIFY licence]]"
+    },
+    "location": {
+     "venue": "none (studio still life)",
+     "town": "not applicable",
+     "verified_by": "not applicable: no real place depicted"
+    },
+    "licence_note": "[[IMAGE NEEDED]] Still life may be AI only with user approval, labelled 'Illustrative image'."
+   },
+   {
+    "slot_id": "travel-still-life",
+    "placement": "section: travelling for your honeymoon or destination wedding (passport name timing) (writer maps to after_h2)",
+    "purpose": "Flag the key travel risk: ticket name must match passport.",
+    "shot_brief": "Landscape 3:2. Leather luggage with blank or generic luggage tags (no readable names), closed passport cover, sunglasses, linen, warm afternoon light, no people, no identifiable airline or airport branding. No readable names, signatures, document numbers, certificate text, passport data page or any personal details; documents closed, blurred or turned away. Source: library, Canva or licensed stock. AI only with user approval and labelled 'Illustrative image'.",
+    "status": "needed",
+    "file": "content/posts/name-change-after-marriage/images/name-change-after-marriage-luggage-tags-passport-travel.webp",
+    "source": {
+     "type": "stock",
+     "origin": "not yet sourced",
+     "credit": "[[VERIFY licence]]"
+    },
+    "location": {
+     "venue": "none (studio still life)",
+     "town": "not applicable",
+     "verified_by": "not applicable: no real place depicted"
+    },
+    "licence_note": "[[IMAGE NEEDED]] Still life may be AI only with user approval, labelled 'Illustrative image'. No airline branding."
+   },
+   {
+    "slot_id": "destination-celebration",
+    "placement": "section: closing section or Wedded Concierge CTA (writer maps to after_h2)",
+    "purpose": "Close on the payoff: the destination celebration, paperwork sorted.",
+    "shot_brief": "Landscape 3:2. A real couple's celebration or reception set-up at a real, named Wedded Wonderland destination venue (sea-view terrace, villa garden or vineyard) at golden hour; no people, or a licensed real wedding with written couple consent. Location proven by register row, media kit or EXIF, never by appearance. Source: library, own-site image with licence verified, or venue press kit with written permission. Never AI.",
+    "status": "needed",
+    "file": "content/posts/name-change-after-marriage/images/name-change-after-marriage-destination-celebration.webp",
+    "source": {
+     "type": "venue_press",
+     "origin": "not yet sourced",
+     "credit": "[[VERIFY licence]]"
+    },
+    "location": {
+     "venue": "a named destination venue (to be confirmed)",
+     "town": "to be confirmed",
+     "verified_by": "pending: register row, media kit or EXIF"
+    },
+    "licence_note": "[[IMAGE NEEDED]] Move to pending_permission once a permission draft exists. Never AI."
+   }
+  ],
+  "reference_only": [],
+  "permission_requests": [],
+  "drive_findings": [
+   "Not searched: fast mode, repo library register only per orchestrator instruction. library-index.csv has a header and no rows."
+  ]
+ }
+}
