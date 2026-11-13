@@ -245,3 +245,4 @@ Hub: `/style-advice/celebrity-engagement-rings` (in production). Spokes:
 | `/destination-weddings/married-in-italy` | How to Get Married in Italy From the USA | married in italy | DRAFT (final.md 27 Oct 2026; not yet published) |
 | `/destination-weddings/greece-marriage-licence` | Greece Marriage Licence and the Eight-Day Wait Explained | greece marriage licence | DRAFT (final.md 12 Nov 2026; not yet published) |
 | `/expert-advice/marriage-licence-requirements` | Marriage Licence Requirements in Australia | marriage licence, notice of intended marriage, noim | DRAFT (final.md 13 Nov 2026; not yet published) |
+| `/expert-advice/marriage-licence-validity` | Marriage Licence Validity and How Long It Lasts | marriage licence validity | DRAFT (final.md 13 Nov 2026; publish after the requirements pillar) |
