@@ -1,0 +1,519 @@
+{
+  "agent": "planner-sme",
+  "task_id": "who-can-perform-a-marriage",
+  "stage": "03",
+  "status": "complete",
+  "round": 1,
+  "inputs_used": [
+    "content/posts/notice-of-intended-marriage/03-source-pack.json (fact_02, fact_11, fact_12, fact_13, fact_07, fact_10, fact_104, fact_101, fact_102, fact_17, fact_20, fact_24, fact_15, fact_14 copied as fact_01 to fact_14)",
+    "mcp__Apify__apify--web-search (one search, ag.gov.au and marriage.ag.gov.au) for exact URLs",
+    "mcp__Apify__apify--web-fetch one parallel round, 13 November 2026, no retries: https://www.ag.gov.au/families-and-marriage/marriage/find-marriage-celebrant (200); https://www.ag.gov.au/families-and-marriage/marriage/become-marriage-celebrant (200); https://www.ag.gov.au/families-and-marriage/marriage/become-marriage-celebrant/apply-be-marriage-celebrant (200); https://marriage.ag.gov.au/ (200, resolved to commonwealthcelebrants/all); https://www.ag.gov.au/families-and-marriage/marriage/resources-marriage-celebrants/your-responsibilities-marriage-celebrant (200); https://www.austlii.edu.au/cgi-bin/viewdoc/au/legis/cth/consol_act/ma196185/s45.html (timed out, not read)",
+    "No 01-brief.json or 02-seo.json in the post folder; must_include derived from the orchestrator's task and 00-input.json"
+  ],
+  "self_qa": {
+    "checks": [
+      {
+        "check": "Every fact has a source and date",
+        "pass": true
+      },
+      {
+        "check": "No price without a source; all prices in needs_signoff",
+        "pass": true,
+        "note": "No prices recorded. The AGD apply page states celebrant application and exemption fee amounts; deliberately left out (not relevant to couples and the task said no prices)."
+      },
+      {
+        "check": "Every must-include covered or [[VERIFY]]",
+        "pass": true
+      },
+      {
+        "check": "No invented quotes, statistics or real weddings",
+        "pass": true,
+        "note": "Only count used is AGD's own 'over 10,000 Commonwealth-registered marriage celebrants' (fact_21). No celebrant names recorded."
+      }
+    ],
+    "confidence": 0.75
+  },
+  "open_questions": [
+    {
+      "to": "luxury-writer",
+      "question": "State celebrant rules 'as at November 2026' with the line that the Wedded Advisor confirms current requirements. Do not quote the ceremony wording (monitum or vows) until the s 45/46 verify item is cleared; say only that specific legal words must be used.",
+      "blocking": false
+    },
+    {
+      "to": "luxury-writer",
+      "question": "Find page says four types and Become page says three; they are the same groups (Become counts civil and religious Commonwealth celebrants as one). Use the four-type framing from the Find page.",
+      "blocking": false
+    },
+    {
+      "to": "orchestrator",
+      "question": "A second fetch of the Marriage Act ss 45 and 46 and of https://www.ag.gov.au/node/1394 (recognised denominations) would clear the main verify items.",
+      "blocking": false
+    }
+  ],
+  "assumptions": [
+    "The Greek Orthodox Archdiocese is a religious body, not government; fact_12 is typed 'other' and used only as an example of a minister of religion who is also authorised for the civil marriage.",
+    "fact_10 and fact_11 carry their original read dates (12 November and 27 October 2026); no new Smartraveller read this round.",
+    "The marriage.ag.gov.au register lists real celebrants' names and contact details; none are recorded and the article must not name or screenshot individuals.",
+    "Insider details are planning advice built on the cited facts; the 'legal at home, celebration overseas' pattern is phrased as an option, not a legal requirement."
+  ],
+  "verify_items": [
+    "[[VERIFY: The exact words a celebrant must say (the s 46 monitum, 'I am duly authorised by law to solemnise marriages according to law...') and the vows each party must say under s 45 of the Marriage Act 1961. AGD 'Get married' says only that couples must 'use specific words during the ceremony'; the s 45 text fetch timed out on 13 November 2026. Check https://www.legislation.gov.au/C1961A00012/latest/text (ss 45 and 46) before quoting any wording.]]",
+    "[[VERIFY: Whether any one-off, temporary or event-specific authority exists for a friend or family member to solemnise a single marriage. The AGD pages read on 13 November 2026 describe only registration as a Commonwealth-registered celebrant (fact_24 to fact_27) and say that until registered a person cannot accept a NOIM or solemnise a marriage; none offers a one-off route. The article may say AGD describes no one-off route, not that one is legally impossible, unless confirmed.]]",
+    "[[VERIFY: Whether a friend may lead a ceremony while an authorised celebrant is present and performs the legal parts (monitum, vows, signing). Not stated on any AGD page read; check the AGD Guidelines on the Marriage Act 1961 for authorised celebrants (September 2021, https://www.ag.gov.au/node/3026) before advising this.]]",
+    "[[VERIFY: The list of recognised denominations (https://www.ag.gov.au/node/1394) and the Marriage Act section defining ministers of religion of a recognised denomination. Linked from the AGD Find page but not read in this fast round; do not name denominations from memory.]]",
+    "[[VERIFY: Whether the ministers of religion and state officer lists on marriage.ag.gov.au (statecelebrants/other, stateofficers/officers) show the same status details as the Commonwealth register. Only the Commonwealth list (commonwealthcelebrants/all) was read.]]"
+  ],
+  "tools_used": [
+    "mcp__Apify__apify--web-search",
+    "mcp__Apify__apify--web-fetch"
+  ],
+  "next_agent": [
+    "luxury-writer"
+  ],
+  "payload": {
+    "facts": [
+      {
+        "fact_id": "fact_01",
+        "claim": "As at November 2026, the Attorney-General's Department 'Get married' page (read live 13 November 2026; page metadata updated 13 June 2024): to get married in Australia you must, among other things, 'give a notice of intended marriage form to an authorised marriage celebrant at least 1 month and no more than 18 months before your wedding' and 'be married by an authorised marriage celebrant'. The Wedded Advisor confirms current requirements.",
+        "source": "https://www.ag.gov.au/families-and-marriage/marriage/get-married",
+        "source_type": "government",
+        "checked": "2026-11-13",
+        "is_price": false,
+        "notes": "Copied from notice-of-intended-marriage 03-source-pack fact_02 (same source, date and wording)."
+      },
+      {
+        "fact_id": "fact_02",
+        "claim": "As at November 2026, the Attorney-General's Department 'Get married' page (read live 13 November 2026; page metadata updated 13 June 2024): on the wedding day 3 marriage certificates must be signed by the couple, the authorised celebrant and 2 witnesses over 18. The celebrant gives the couple a ceremonial certificate of marriage on the day, then must, within 14 days of the marriage, submit the marriage paperwork to the registry of births, deaths and marriages in the state or territory where the marriage took place.",
+        "source": "https://www.ag.gov.au/families-and-marriage/marriage/get-married",
+        "source_type": "government",
+        "checked": "2026-11-13",
+        "is_price": false,
+        "notes": "Copied from notice-of-intended-marriage 03-source-pack fact_11 (same source, date and wording)."
+      },
+      {
+        "fact_id": "fact_03",
+        "claim": "As at November 2026, the Attorney-General's Department 'Get married' page (read live 13 November 2026; page metadata updated 13 June 2024): 'You should apply for a copy of your official marriage certificate from the registry. Your celebrant can do this on your behalf, generally at a cost. You will need this if you want to change your name or prove that you are married.' (No amount stated.)",
+        "source": "https://www.ag.gov.au/families-and-marriage/marriage/get-married",
+        "source_type": "government",
+        "checked": "2026-11-13",
+        "is_price": false,
+        "notes": "Copied from notice-of-intended-marriage 03-source-pack fact_12 (same source, date and wording)."
+      },
+      {
+        "fact_id": "fact_04",
+        "claim": "As at November 2026, the Attorney-General's Department 'Get married' page (read live 13 November 2026; page metadata updated 13 June 2024): overseas marriages cannot be performed by an Australian-authorised marriage celebrant and cannot be registered in Australia. An overseas marriage is generally recognised in Australia if it was a valid marriage in the overseas country and would have been a valid marriage here. Smartraveller has information on getting married overseas. The Wedded Advisor confirms current requirements.",
+        "source": "https://www.ag.gov.au/families-and-marriage/marriage/get-married",
+        "source_type": "government",
+        "checked": "2026-11-13",
+        "is_price": false,
+        "notes": "Copied from notice-of-intended-marriage 03-source-pack fact_13 (same source, date and wording)."
+      },
+      {
+        "fact_id": "fact_05",
+        "claim": "As at November 2026, the Attorney-General's Department 'Get married' page (read live 13 November 2026; page metadata updated 13 June 2024): changes to the Marriage Act that became law on 12 June 2024: the option to have the NOIM witnessed remotely, via audio-visual link, as well as in person; an authorised celebrant must meet separately and in person with each party before the marriage is solemnised; re-ordering of the acceptable evidence of date and place of birth; clarifying that a NOIM can be transferred to another authorised celebrant, including at the request of the couple; clarifying that a celebrant must be physically present to solemnise a marriage, with the parties and 2 witnesses.",
+        "source": "https://www.ag.gov.au/families-and-marriage/marriage/get-married",
+        "source_type": "government",
+        "checked": "2026-11-13",
+        "is_price": false,
+        "notes": "Copied from notice-of-intended-marriage 03-source-pack fact_07 (same source, date and wording)."
+      },
+      {
+        "fact_id": "fact_06",
+        "claim": "As at November 2026, the Attorney-General's Department 'Get married' page (read live 13 November 2026; page metadata updated 13 June 2024): to marry in Australia you must not be married; not be marrying a parent, grandparent, child, grandchild, brother or sister; be at least 18 (unless a court has approved a marriage where 1 person is 16 to 18); understand what marriage means and freely agree to marry; use specific words during the ceremony. 'The right to marry in Australia is no longer determined by sex or gender.'",
+        "source": "https://www.ag.gov.au/families-and-marriage/marriage/get-married",
+        "source_type": "government",
+        "checked": "2026-11-13",
+        "is_price": false,
+        "notes": "Copied from notice-of-intended-marriage 03-source-pack fact_10 (same source, date and wording)."
+      },
+      {
+        "fact_id": "fact_07",
+        "claim": "The Attorney-General's Department's list of prescribed authorities says a prescribed authority is an officer or employee of the Commonwealth, a State or Territory appointed by the Attorney-General, and is authorised, among other things, to authorise a marriage celebrant to proceed with a marriage ceremony where the minimum one-month notice has not been provided (shortening of time). The list is searchable by state and territory and includes registrars and deputy registrars of local courts and state registries of births, deaths and marriages.",
+        "source": "https://marriage.ag.gov.au/stateofficers/authorities",
+        "source_type": "government",
+        "checked": "2026-11-13",
+        "is_price": false,
+        "notes": "Copied from notice-of-intended-marriage 03-source-pack fact_104 (same source, date and wording)."
+      },
+      {
+        "fact_id": "fact_08",
+        "claim": "AGD: from 12 June 2024 the Notice of Intended Marriage may be witnessed remotely; the Marriage Act was amended to permanently give couples the option of having the NOIM witnessed in person or remotely by a facility that enables audio and visual communication between people in different places.",
+        "source": "https://www.ag.gov.au/families-and-marriage/publications/notice-intended-marriage",
+        "source_type": "government",
+        "checked": "2026-11-13",
+        "is_price": false,
+        "notes": "Copied from notice-of-intended-marriage 03-source-pack fact_101 (same source, date and wording)."
+      },
+      {
+        "fact_id": "fact_09",
+        "claim": "AGD: the requirements for authorised witnesses remain unchanged and location-dependent. If the couple is in Australia, the person remotely witnessing the NOIM (which can include an authorised celebrant) must also be in Australia. If the couple is outside Australia, the authorised witness (which cannot be a celebrant) must also be outside Australia. A NOIM for a person or couple outside Australia cannot be witnessed online.",
+        "source": "https://www.ag.gov.au/families-and-marriage/publications/notice-intended-marriage",
+        "source_type": "government",
+        "checked": "2026-11-13",
+        "is_price": false,
+        "notes": "Copied from notice-of-intended-marriage 03-source-pack fact_102 (same source, date and wording)."
+      },
+      {
+        "fact_id": "fact_10",
+        "claim": "[Copied from same-sex-marriage-greece 03-source-pack fact_106, same source and date.] As at November 2026, Smartraveller 'Getting married overseas' (last updated 18/08/2026, read live 12 November 2026): some countries ask you to prove you aren't already married; the most common documents are a Certificate of No Impediment to Marriage (CNI) and certificates from a registry of births, deaths and marriages; the country may have more rules (for example a residence period); 'We can't tell you what you will need'; contact your destination's embassy or consulate. The Wedded Advisor confirms current requirements.",
+        "source": "https://www.smartraveller.gov.au/planning-trip/advice-your-planned-activities/getting-married-overseas",
+        "source_type": "government",
+        "checked": "2026-11-12",
+        "is_price": false,
+        "notes": "Copied from notice-of-intended-marriage 03-source-pack fact_17 (same source, date and wording)."
+      },
+      {
+        "fact_id": "fact_11",
+        "claim": "[Copied from is-marriage-in-italy-recognised-in-australia 03-source-pack fact_01, same source and date.] Smartraveller (last updated Tuesday 18/08/2026): 'You can't register an overseas marriage in Australia. But in most cases, your marriage is legally recognised here. To be recognised, when you got married it must have been: valid under the law of the country where it happened; valid under Australian law if it had occurred in Australia.'",
+        "source": "https://www.smartraveller.gov.au/planning-trip/advice-your-planned-activities/getting-married-overseas",
+        "source_type": "government",
+        "checked": "2026-10-27",
+        "is_price": false,
+        "notes": "Copied from notice-of-intended-marriage 03-source-pack fact_20 (same source, date and wording)."
+      },
+      {
+        "fact_id": "fact_12",
+        "claim": "[Copied from greek-orthodox-wedding 03-source-pack fact_319, same source and date.] Greek Orthodox Archdiocese of Australia: every Greek Orthodox Priest in Australia is also a registered civil celebrant, authorised to conduct the marriage under both State and Ecclesiastical law, but may perform the civil marriage only together with the religious service on the same day.",
+        "source": "https://greekorthodox.org.au/services-and-sacraments/marriage/",
+        "source_type": "other",
+        "checked": "2026-11-12",
+        "is_price": false,
+        "notes": "Copied from notice-of-intended-marriage 03-source-pack fact_24 (same source, date and wording)."
+      },
+      {
+        "fact_id": "fact_13",
+        "claim": "Marriage Act 1961 (Federal Register of Legislation, latest compilation dated 28 March 2026, read live 13 November 2026; table of contents only, section text not returned): Part IV Division 2 includes s 41 'Marriages to be solemnised by authorised celebrant', s 42 'Notice to be given and declaration made', s 42A 'Commissioner of Australian Federal Police or approved authority may issue special notice', s 42B 'Authorised celebrant must physically meet each party to intended marriage separately', s 44 'Witnesses', and s 104 'Giving defective notice etc.' (offence). The Act is administered by the Attorney-General's Department.",
+        "source": "https://www.legislation.gov.au/C1961A00012/latest/text",
+        "source_type": "government",
+        "checked": "2026-11-13",
+        "is_price": false,
+        "notes": "Copied from notice-of-intended-marriage 03-source-pack fact_15 (same source, date and wording)."
+      },
+      {
+        "fact_id": "fact_14",
+        "claim": "As at November 2026, the Attorney-General's Department 'Get married' page (read live 13 November 2026; page metadata updated 13 June 2024): contact: Marriage Law and Celebrants Section, 1800 550 343; outside Australia +61 2 6141 3111; marriagecelebrantssection@ag.gov.au.",
+        "source": "https://www.ag.gov.au/families-and-marriage/marriage/get-married",
+        "source_type": "government",
+        "checked": "2026-11-13",
+        "is_price": false,
+        "notes": "Copied from notice-of-intended-marriage 03-source-pack fact_14 (same source, date and wording)."
+      },
+      {
+        "fact_id": "fact_15",
+        "claim": "As at November 2026, the Attorney-General's Department 'Find a marriage celebrant' page (read live 13 November 2026; page metadata updated 8 November 2023): 'You must be married by an authorised marriage celebrant to be legally married in Australia. There are four types of authorised marriage celebrants: Commonwealth-registered marriage celebrants; Commonwealth-registered religious marriage celebrants; Ministers of religion who are from a recognised denomination; State and territory officers.' AGD manages a database of all authorised marriage celebrants (https://marriage.ag.gov.au/). The Wedded Advisor confirms current requirements.",
+        "source": "https://www.ag.gov.au/families-and-marriage/marriage/find-marriage-celebrant",
+        "source_type": "government",
+        "checked": "2026-11-13",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_16",
+        "claim": "As at November 2026, the Attorney-General's Department 'Find a marriage celebrant' page (read live 13 November 2026; page metadata updated 8 November 2023): Commonwealth-registered marriage celebrants are regulated by AGD and 'generally perform civil ceremonies, which is a non-religious marriage ceremony'. Search: https://marriage.ag.gov.au/commonwealthcelebrants/all.",
+        "source": "https://www.ag.gov.au/families-and-marriage/marriage/find-marriage-celebrant",
+        "source_type": "government",
+        "checked": "2026-11-13",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_17",
+        "claim": "As at November 2026, the Attorney-General's Department 'Find a marriage celebrant' page (read live 13 November 2026; page metadata updated 8 November 2023): Commonwealth-registered religious marriage celebrants are regulated by AGD; they 'don't have to perform ceremonies that do not align with their religious beliefs. But they must say they are a religious marriage celebrant when they advertise their services.' Search: https://marriage.ag.gov.au/commonwealthcelebrants/religious.",
+        "source": "https://www.ag.gov.au/families-and-marriage/marriage/find-marriage-celebrant",
+        "source_type": "government",
+        "checked": "2026-11-13",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_18",
+        "claim": "As at November 2026, the Attorney-General's Department 'Find a marriage celebrant' page (read live 13 November 2026; page metadata updated 8 November 2023): Ministers of religion of a recognised religious denomination are managed by the registry of births, deaths and marriages in their state or territory and by their religious organisation; 'The minister must be part of a recognised religion in Australia' (list at https://www.ag.gov.au/node/1394, not read). Search: https://marriage.ag.gov.au/statecelebrants/other.",
+        "source": "https://www.ag.gov.au/families-and-marriage/marriage/find-marriage-celebrant",
+        "source_type": "government",
+        "checked": "2026-11-13",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_19",
+        "claim": "As at November 2026, the Attorney-General's Department 'Find a marriage celebrant' page (read live 13 November 2026; page metadata updated 8 November 2023): State and territory officers are regulated by the registry of births, deaths and marriages in their state or territory and 'perform non-religious marriage ceremonies (civil ceremonies)'. Search: https://marriage.ag.gov.au/stateofficers/officers. The page also links to a way to complain about a marriage celebrant (https://www.ag.gov.au/node/1383).",
+        "source": "https://www.ag.gov.au/families-and-marriage/marriage/find-marriage-celebrant",
+        "source_type": "government",
+        "checked": "2026-11-13",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_20",
+        "claim": "As at November 2026, the Attorney-General's Department 'Become a marriage celebrant' page (read live 13 November 2026; page metadata updated 3 February 2026): 'To legally marry people in Australia, you must be an authorised marriage celebrant.' It groups them as 3 types: ministers of religion of a recognised denomination (RD), 'nominated by their RD and registered with the state and territory registries of births, deaths and marriages'; state and territory officers 'from a registry of births, death and marriages or a court'; and Commonwealth-registered (civil and religious) marriage celebrants. 'You cannot apply to be registered or authorised as more than one type of celebrant at the same time.'",
+        "source": "https://www.ag.gov.au/families-and-marriage/marriage/become-marriage-celebrant",
+        "source_type": "government",
+        "checked": "2026-11-13",
+        "is_price": false,
+        "notes": "Same categories as the Find page (which counts civil and religious Commonwealth celebrants separately, giving four)."
+      },
+      {
+        "fact_id": "fact_21",
+        "claim": "As at November 2026, the Attorney-General's Department 'Become a marriage celebrant' page (read live 13 November 2026; page metadata updated 3 February 2026): 'There are over 10,000 Commonwealth-registered marriage celebrants in Australia. Some perform many marriages each year, while others only perform a few or none.' AGD regulates them, monitors performance and compliance, and the Registrar of Marriage Celebrants considers disciplinary action where legal requirements are not met; 'In the most serious cases, a celebrant may also face criminal charges.'",
+        "source": "https://www.ag.gov.au/families-and-marriage/marriage/become-marriage-celebrant",
+        "source_type": "government",
+        "checked": "2026-11-13",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_22",
+        "claim": "As at November 2026, the Attorney-General's Department 'Become a marriage celebrant' page (read live 13 November 2026; page metadata updated 3 February 2026): Celebrants cannot discriminate against marrying couples based on race, religion, sex or gender. 'Only religious marriage celebrants can choose to perform marriages in line with their religious beliefs.' To identify as a religious marriage celebrant 'you must be a minister of religion'.",
+        "source": "https://www.ag.gov.au/families-and-marriage/marriage/become-marriage-celebrant",
+        "source_type": "government",
+        "checked": "2026-11-13",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_23",
+        "claim": "As at November 2026, the Attorney-General's Department 'Become a marriage celebrant' page (read live 13 November 2026; page metadata updated 3 February 2026): Under section 39C of the Marriage Act 1961, a person is only entitled to be a Commonwealth-registered marriage celebrant if the Registrar of Marriage Celebrants is satisfied they are aged 18 or over, hold the relevant qualifications and/or skills, and are a 'fit and proper person'; a national police history check is required for all applicants.",
+        "source": "https://www.ag.gov.au/families-and-marriage/marriage/become-marriage-celebrant",
+        "source_type": "government",
+        "checked": "2026-11-13",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_24",
+        "claim": "As at November 2026, the Attorney-General's Department 'Become a marriage celebrant' page (read live 13 November 2026; page metadata updated 3 February 2026): Qualification routes: the Certificate IV in Celebrancy (with mandatory marriage celebrancy units) through a registered training organisation; a celebrancy qualification from an approved university; or 'celebrancy skills', including fluency in an Indigenous language (Marriage Regulations 2017 s 39).",
+        "source": "https://www.ag.gov.au/families-and-marriage/marriage/become-marriage-celebrant",
+        "source_type": "government",
+        "checked": "2026-11-13",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_25",
+        "claim": "As at November 2026, the Attorney-General's Department 'Apply to be a marriage celebrant' page (read live 13 November 2026; page metadata updated 17 April 2026): 'Registration is not automatic or guaranteed.' 'Until you are a Commonwealth-registered marriage celebrant, you cannot: accept a notice of intended marriage; solemnise marriage ceremonies; advertise your services as an authorised marriage celebrant.' 'You do not need to be an Australian citizen to apply.'",
+        "source": "https://www.ag.gov.au/families-and-marriage/marriage/become-marriage-celebrant/apply-be-marriage-celebrant",
+        "source_type": "government",
+        "checked": "2026-11-13",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_26",
+        "claim": "As at November 2026, the Attorney-General's Department 'Apply to be a marriage celebrant' page (read live 13 November 2026; page metadata updated 17 April 2026): Applications are assessed in the order received ('We cannot fast-track any particular application'); AGD has 'up to 6 months to assess your application from when we receive a completed application with payment'. An online application must be submitted within 90 days of creating the account. Applicants attach a police check consent form, identity documents, a CV and 2 referee reports. A one-off non-refundable application fee applies, plus an annual registration charge if accepted (amounts not recorded here).",
+        "source": "https://www.ag.gov.au/families-and-marriage/marriage/become-marriage-celebrant/apply-be-marriage-celebrant",
+        "source_type": "government",
+        "checked": "2026-11-13",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_27",
+        "claim": "As at November 2026, the Attorney-General's Department 'Apply to be a marriage celebrant' page (read live 13 November 2026; page metadata updated 17 April 2026): 'fit and proper person' factors include sufficient knowledge of marriage law, commitment to advising couples about relationship support services, good standing in the community, criminal convictions punishable by 1 year or more, and whether registration may result in a conflict of interest or benefit to another business.",
+        "source": "https://www.ag.gov.au/families-and-marriage/marriage/become-marriage-celebrant/apply-be-marriage-celebrant",
+        "source_type": "government",
+        "checked": "2026-11-13",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_28",
+        "claim": "As at November 2026, the AGD Register of Marriage Celebrants (marriage.ag.gov.au, read live 13 November 2026; https://marriage.ag.gov.au/ resolves to the 'List of Commonwealth Registered Celebrants'): 'This list includes all marriage celebrants who are registered on the Register of marriage celebrants maintained under Subdivision C of Division 1 of Part IV of the Marriage Act 1961' and those who identify as a religious marriage celebrant under Subdivision D. Each entry shows registration status (e.g. 'Registered', 'Active'), the registration date, and 'Civil Ceremonies' or a religious marriage celebrant label; it can be filtered by state and searched by name ('Advanced search' for first name and surname).",
+        "source": "https://marriage.ag.gov.au/commonwealthcelebrants/all",
+        "source_type": "government",
+        "checked": "2026-11-13",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_29",
+        "claim": "As at November 2026, the Attorney-General's Department 'Your responsibilities as a marriage celebrant' page (read live 13 November 2026; page metadata updated 25 June 2026): Commonwealth-registered celebrants 'must follow all the rules in the Marriage Act 1961 [and] Marriage Regulations 2017 (including the code of practice for marriage celebrants)'. AGD publishes 'Guidelines on the Marriage Act 1961 for authorised celebrants – September 2021' and states 'We cannot provide legal advice.'",
+        "source": "https://www.ag.gov.au/families-and-marriage/marriage/resources-marriage-celebrants/your-responsibilities-marriage-celebrant",
+        "source_type": "government",
+        "checked": "2026-11-13",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_30",
+        "claim": "As at November 2026, the Attorney-General's Department 'Your responsibilities as a marriage celebrant' page (read live 13 November 2026; page metadata updated 25 June 2026): The paperwork named: the Notice of Intended Marriage; the Official Certificate of Marriage (celebrant copy); the Official Certificate of Marriage on the back of the Declaration of No Legal Impediment to Marriage (BDM copy, forwarded to the registry); and the Form 15 Certificate of Marriage, which 'must be handed to the couple immediately after the ceremony'. The celebrant must keep the celebrant copy for six years from the date of the marriage.",
+        "source": "https://www.ag.gov.au/families-and-marriage/marriage/resources-marriage-celebrants/your-responsibilities-marriage-celebrant",
+        "source_type": "government",
+        "checked": "2026-11-13",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_31",
+        "claim": "As at November 2026, the Attorney-General's Department 'Your responsibilities as a marriage celebrant' page (read live 13 November 2026; page metadata updated 25 June 2026): If errors on marriage certificates are found after the ceremony, corrections may be made only if the parties and witnesses are still present; once the marriage has been registered, corrections can only be made by the authorised officer of the relevant registry of births, deaths and marriages (s 51 of the Act). 'Under no circumstances can the Form 15 Certificate of Marriage be intentionally destroyed or reissued after it has been provided to the couple.'",
+        "source": "https://www.ag.gov.au/families-and-marriage/marriage/resources-marriage-celebrants/your-responsibilities-marriage-celebrant",
+        "source_type": "government",
+        "checked": "2026-11-13",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_32",
+        "claim": "As at November 2026, the Attorney-General's Department 'Your responsibilities as a marriage celebrant' page (read live 13 November 2026; page metadata updated 25 June 2026): Since 9 December 2017, celebrants must state in advertising, websites, social media and business cards whether they are a 'religious marriage celebrant' or a 'marriage celebrant' ('civil marriage celebrant' also meets paragraph 39G(1)(d) of the Marriage Act).",
+        "source": "https://www.ag.gov.au/families-and-marriage/marriage/resources-marriage-celebrants/your-responsibilities-marriage-celebrant",
+        "source_type": "government",
+        "checked": "2026-11-13",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_33",
+        "claim": "As at November 2026, the Attorney-General's Department 'Your responsibilities as a marriage celebrant' page (read live 13 November 2026; page metadata updated 25 June 2026): Celebrants should not give advice on migration matters such as prospective marriage or spouse visas (s 280 Migration Act 1958); they can refer couples to the Home Affairs website or a registered migration agent. Celebrants must tell AGD about conflicts of interest, e.g. if they operate a wedding venue.",
+        "source": "https://www.ag.gov.au/families-and-marriage/marriage/resources-marriage-celebrants/your-responsibilities-marriage-celebrant",
+        "source_type": "government",
+        "checked": "2026-11-13",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_34",
+        "claim": "As at November 2026, the Attorney-General's Department 'Your responsibilities as a marriage celebrant' page (read live 13 November 2026; page metadata updated 25 June 2026): Registered celebrants must complete compulsory professional development by 31 December every year, pay an annual registration charge (or be deregistered unless exempt), and tell AGD within 30 days about changes to contact details.",
+        "source": "https://www.ag.gov.au/families-and-marriage/marriage/resources-marriage-celebrants/your-responsibilities-marriage-celebrant",
+        "source_type": "government",
+        "checked": "2026-11-13",
+        "is_price": false
+      }
+    ],
+    "insider_details": [
+      {
+        "detail": "Before paying a deposit, look the celebrant up on the AGD register at marriage.ag.gov.au: a Commonwealth-registered celebrant should appear with status 'Registered' and 'Active', and their advertising must say whether they are a 'marriage celebrant' (civil) or a 'religious marriage celebrant'.",
+        "fact_ids": [
+          "fact_15",
+          "fact_16",
+          "fact_28",
+          "fact_32"
+        ]
+      },
+      {
+        "detail": "If a friend wants to marry you, the only route the AGD pages describe is full registration (Certificate IV in Celebrancy or an approved qualification, police check, referees, fee), and AGD allows itself up to 6 months to assess. Raise it at least a year out, or pair a registered celebrant for the legal parts with the friend for the personal parts once that format is confirmed.",
+        "fact_ids": [
+          "fact_23",
+          "fact_24",
+          "fact_25",
+          "fact_26"
+        ]
+      },
+      {
+        "detail": "For a destination wedding, the legal marriage cannot be performed overseas by an Australian-authorised celebrant. Couples who want an Australian celebrant often do the legal ceremony at home (NOIM at least 1 month ahead) and a celebration overseas; otherwise the overseas marriage follows local law and the destination's own paperwork (for example a CNI).",
+        "fact_ids": [
+          "fact_01",
+          "fact_04",
+          "fact_10",
+          "fact_11"
+        ]
+      },
+      {
+        "detail": "Plan the signing into the run sheet: the celebrant, the couple and 2 witnesses over 18 sign 3 certificates, the celebrant must be physically present, and the Form 15 certificate is handed over immediately after the ceremony. Errors are easiest to fix while everyone is still there; afterwards only the registry can correct them.",
+        "fact_ids": [
+          "fact_02",
+          "fact_05",
+          "fact_30",
+          "fact_31"
+        ]
+      },
+      {
+        "detail": "For a religious ceremony, check which category your officiant is in: a minister of a recognised denomination is managed by the state registry and their church (for example every Greek Orthodox priest in Australia is also a registered civil celebrant), while a Commonwealth-registered religious celebrant may decline ceremonies that do not align with their beliefs.",
+        "fact_ids": [
+          "fact_12",
+          "fact_17",
+          "fact_18",
+          "fact_22"
+        ]
+      },
+      {
+        "detail": "Celebrants are not allowed to give visa advice, so couples where one partner is not an Australian citizen should take visa questions to Home Affairs or a registered migration agent, not the celebrant.",
+        "fact_ids": [
+          "fact_33"
+        ]
+      }
+    ],
+    "quotes": [],
+    "real_weddings": [],
+    "verify_items": [
+      "[[VERIFY: The exact words a celebrant must say (the s 46 monitum, 'I am duly authorised by law to solemnise marriages according to law...') and the vows each party must say under s 45 of the Marriage Act 1961. AGD 'Get married' says only that couples must 'use specific words during the ceremony'; the s 45 text fetch timed out on 13 November 2026. Check https://www.legislation.gov.au/C1961A00012/latest/text (ss 45 and 46) before quoting any wording.]]",
+      "[[VERIFY: Whether any one-off, temporary or event-specific authority exists for a friend or family member to solemnise a single marriage. The AGD pages read on 13 November 2026 describe only registration as a Commonwealth-registered celebrant (fact_24 to fact_27) and say that until registered a person cannot accept a NOIM or solemnise a marriage; none offers a one-off route. The article may say AGD describes no one-off route, not that one is legally impossible, unless confirmed.]]",
+      "[[VERIFY: Whether a friend may lead a ceremony while an authorised celebrant is present and performs the legal parts (monitum, vows, signing). Not stated on any AGD page read; check the AGD Guidelines on the Marriage Act 1961 for authorised celebrants (September 2021, https://www.ag.gov.au/node/3026) before advising this.]]",
+      "[[VERIFY: The list of recognised denominations (https://www.ag.gov.au/node/1394) and the Marriage Act section defining ministers of religion of a recognised denomination. Linked from the AGD Find page but not read in this fast round; do not name denominations from memory.]]",
+      "[[VERIFY: Whether the ministers of religion and state officer lists on marriage.ag.gov.au (statecelebrants/other, stateofficers/officers) show the same status details as the Commonwealth register. Only the Commonwealth list (commonwealthcelebrants/all) was read.]]"
+    ],
+    "needs_signoff": [],
+    "must_include_coverage": [
+      {
+        "item": "Who can legally marry you in Australia: the categories of authorised celebrants",
+        "covered_by": [
+          "fact_01",
+          "fact_15",
+          "fact_16",
+          "fact_17",
+          "fact_18",
+          "fact_19",
+          "fact_20",
+          "fact_13"
+        ]
+      },
+      {
+        "item": "How to check a celebrant is authorised",
+        "covered_by": [
+          "fact_15",
+          "fact_16",
+          "fact_17",
+          "fact_18",
+          "fact_19",
+          "fact_28",
+          "fact_32"
+        ]
+      },
+      {
+        "item": "What the celebrant must do (NOIM, words, declarations, certificates, lodgement)",
+        "covered_by": [
+          "fact_01",
+          "fact_02",
+          "fact_03",
+          "fact_05",
+          "fact_06",
+          "fact_08",
+          "fact_09",
+          "fact_29",
+          "fact_30",
+          "fact_31",
+          "[[VERIFY: The exact words a celebrant must say (the s 46 monitum, 'I am duly authorised by law to solemnise marriages according to law...') and the vows each party must say under s 45 of the Marriage Act 1961. AGD 'Get married' says only that couples must 'use specific words during the ceremony'; the s 45 text fetch timed out on 13 November 2026. Check https://www.legislation.gov.au/C1961A00012/latest/text (ss 45 and 46) before quoting any wording.]]"
+        ]
+      },
+      {
+        "item": "Shortening of time (less than 1 month)",
+        "covered_by": [
+          "fact_07"
+        ]
+      },
+      {
+        "item": "Can a friend or family member marry us",
+        "covered_by": [
+          "fact_20",
+          "fact_23",
+          "fact_24",
+          "fact_25",
+          "fact_26",
+          "fact_27",
+          "[[VERIFY: Whether any one-off, temporary or event-specific authority exists for a friend or family member to solemnise a single marriage. The AGD pages read on 13 November 2026 describe only registration as a Commonwealth-registered celebrant (fact_24 to fact_27) and say that until registered a person cannot accept a NOIM or solemnise a marriage; none offers a one-off route. The article may say AGD describes no one-off route, not that one is legally impossible, unless confirmed.]]",
+          "[[VERIFY: Whether a friend may lead a ceremony while an authorised celebrant is present and performs the legal parts (monitum, vows, signing). Not stated on any AGD page read; check the AGD Guidelines on the Marriage Act 1961 for authorised celebrants (September 2021, https://www.ag.gov.au/node/3026) before advising this.]]"
+        ]
+      },
+      {
+        "item": "Religious celebrants and ministers of religion",
+        "covered_by": [
+          "fact_12",
+          "fact_17",
+          "fact_18",
+          "fact_22",
+          "[[VERIFY: The list of recognised denominations (https://www.ag.gov.au/node/1394) and the Marriage Act section defining ministers of religion of a recognised denomination. Linked from the AGD Find page but not read in this fast round; do not name denominations from memory.]]"
+        ]
+      },
+      {
+        "item": "Celebrants and marriages overseas",
+        "covered_by": [
+          "fact_04",
+          "fact_10",
+          "fact_11"
+        ]
+      },
+      {
+        "item": "Celebrant obligations couples should know (advertising, no visa advice, regulation, complaints)",
+        "covered_by": [
+          "fact_19",
+          "fact_21",
+          "fact_29",
+          "fact_32",
+          "fact_33",
+          "fact_34",
+          "fact_14"
+        ]
+      }
+    ]
+  }
+}
