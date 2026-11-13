@@ -17,6 +17,8 @@ flags any domain that is in neither list for a human decision.
 | Royal and Australian government (added 27 Oct 2026) | royal.uk, abf.gov.au |
 | Australian government, marriage and documents (added 12 Nov 2026) | greece.embassy.gov.au and other embassy.gov.au missions, ag.gov.au, passports.gov.au, legislation.gov.au, nsw.gov.au (Registry of Births, Deaths and Marriages pages) and other state or territory BDM registry sites: bdm.vic.gov.au, qld.gov.au, wa.gov.au, sa.gov.au, justice.tas.gov.au, accesscanberra.act.gov.au, nt.gov.au (added 13 Nov 2026) |
 | Greek government and municipalities (added 12 Nov 2026) | gov.gr, en.mitos.gov.gr, ypes.gr, mfa.gr, metafraseis.services.gov.gr, cityofathens.gr, chania.gr, heraklion.gr and other official Greek municipality sites |
+| Fiji government and missions (added 13 Nov 2026) | foreignaffairs.gov.fj (Fiji Ministry of Foreign Affairs), fijiembassy.jp (Embassy of Fiji in Japan; older page, cross-check) |
+| Indonesia and France, Australian missions (added 13 Nov 2026) | indonesia.embassy.gov.au, france.embassy.gov.au, consadelaide.esteri.it (Italian Consulate in Adelaide) |
 | Major publications, for reported facts (added 27 Oct 2026) | vogue.com, vogue.com.au, people.com, harpersbazaar.com, townandcountrymag.com, bbc.com, apnews.com, reuters.com. Cite as "reported by"; prefer two independent sources for any carat or value |
 | Weather and climate | Official meteorological services (e.g. bom.gov.au for comparisons, meteoam.it) |
 
