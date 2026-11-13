@@ -1,0 +1,191 @@
+{
+ "agent": "visual-curator",
+ "task_id": "notice-of-intended-marriage",
+ "stage": "04",
+ "status": "needs_input",
+ "round": 1,
+ "inputs_used": [
+  "CLAUDE.md",
+  "content/posts/notice-of-intended-marriage/00-input.json",
+  "01-brief.json, 02-seo.json, 02-research/report.md, 03-source-pack.json (not present at run time)",
+  "content/posts/same-sex-marriage-greece/04-images.json (format model)",
+  "content-system/images/library-index.csv (header only, no rows)",
+  "content-system/schemas/04-images.schema.json"
+ ],
+ "self_qa": {
+  "checks": [
+   {
+    "check": "Zero reference-only or competitor images in slots",
+    "pass": true,
+    "note": "reference_only is empty; no images downloaded."
+   },
+   {
+    "check": "Every approved image has location, licence, alt, caption, fit_reason",
+    "pass": true,
+    "note": "No approved images this run."
+   },
+   {
+    "check": "No AI image depicting a real place, wedding, ceremony or person",
+    "pass": true,
+    "note": "No AI generated. Only the three still lifes (featured, timing-calendar, documents-passport) may become ai_illustrative, with user approval and an 'Illustrative image' label."
+   },
+   {
+    "check": "Featured image exists (approved or needed with brief)",
+    "pass": true,
+    "note": "Needed, with brief: rings, pen and blank paperwork still life."
+   },
+   {
+    "check": "No real, readable government form or personal documents",
+    "pass": true,
+    "note": "Every paperwork brief requires blank, blurred or illegible papers and closed passports."
+   },
+   {
+    "check": "About 5 slots",
+    "pass": true,
+    "note": "5 slots."
+   }
+  ],
+  "confidence": 0.7
+ },
+ "open_questions": [
+  {
+   "to": "user",
+   "question": "Do you approve AI still lifes (rings and pen, calendar, passports) labelled 'Illustrative image' if no Canva or licensed asset is found?",
+   "blocking": false
+  },
+  {
+   "to": "user",
+   "question": "Do you hold a real couple-signing photo with a celebrant, with written couple and celebrant consent, for the signing slot?",
+   "blocking": false
+  },
+  {
+   "to": "planner-sme",
+   "question": "Which destination venue should the closing celebration slot feature, so it can be tied to a named place and press contact?",
+   "blocking": false
+  }
+ ],
+ "assumptions": [
+  "Placement is by section name because 02-seo.json is not yet written; the writer maps it to after_h2 positions.",
+  "No venue is named because 03-source-pack does not exist; nothing was guessed.",
+  "Fast mode: repo register only, no Drive, own-site, Canva, Gmail or Lens checks run."
+ ],
+ "verify_items": [
+  "[[IMAGE NEEDED]] featured: rings, pen and blank paperwork still life (Canva or licensed stock; AI only with user approval, labelled 'Illustrative image')",
+  "[[IMAGE NEEDED]] couple-signing-celebrant: real couple with celebrant, written consent required, never AI",
+  "[[IMAGE NEEDED]] timing-calendar, documents-passport: Canva or licensed stock; AI still life only with user approval, labelled 'Illustrative image'",
+  "[[IMAGE NEEDED]] destination-celebration: licensed image at a named destination venue, never AI",
+  "[[VERIFY licence]] every venue, stock or own-site image: licence, credit line and expiry recorded in library-index.csv before use",
+  "[[VERIFY: couple and celebrant consent for any real-wedding or signing photo, and guest consent if identifiable]]",
+  "[[VERIFY: no legible NOIM form, passport data page or personal details in any final image]]"
+ ],
+ "tools_used": [
+  "Bash (cat/python)"
+ ],
+ "next_agent": [
+  "luxury-writer"
+ ],
+ "payload": {
+  "slots": [
+   {
+    "slot_id": "featured",
+    "placement": "featured",
+    "purpose": "Hero and social share image: elegant, calm wedding paperwork moment that signals 'this is simple and handled' for a luxury reader.",
+    "shot_brief": "Landscape 3:2, room for a title on one side. Overhead or 45 degree still life on cream linen or a marble desk: a pair of wedding rings, a fine fountain pen, a blank or softly blurred sheet of ivory paper, a few loose white florals or an olive sprig, soft natural window light, warm neutral palette, no people, no hands. No real, readable government form (no legible NOIM text, fields or crest) and no real personal documents: any paperwork must be blank, out of focus or turned so nothing is legible, with no names, numbers, signatures or photos. Source order: Canva brand asset, or licensed premium stock bought by a human and added to library-index.csv. Never a competitor, directory, celebrant-blog or search-result image. An AI still life is allowed only if the user approves, and must be labelled 'Illustrative image' in the caption.",
+    "status": "needed",
+    "file": "content/posts/notice-of-intended-marriage/images/notice-of-intended-marriage-rings-pen-paperwork-hero.webp",
+    "source": {
+     "type": "canva",
+     "origin": "not yet sourced",
+     "credit": "[[VERIFY licence]]"
+    },
+    "location": {
+     "venue": "not applicable (studio still life, no real place)",
+     "town": "not applicable",
+     "verified_by": "not applicable: no place depicted"
+    },
+    "licence_note": "[[IMAGE NEEDED]] Library register has no rows (header only). Canva or licensed stock preferred; AI still life only with user approval, labelled 'Illustrative image'."
+   },
+   {
+    "slot_id": "couple-signing-celebrant",
+    "placement": "section: what the Notice of Intended Marriage is / who you lodge it with (H2 opener)",
+    "purpose": "Show the human side of the process: a couple completing paperwork with their authorised celebrant.",
+    "shot_brief": "Landscape 3:2. A real couple signing at a table with their celebrant beside them, hands and pen in focus, faces partly visible or turned, relaxed and warm, natural light, at a real, named venue or the celebrant's office. People only from a licensed real wedding or consented session with written couple consent (and celebrant consent) recorded in library-index.csv; never AI, never stock models presented as a real couple. No real, readable government form (no legible NOIM text, fields or crest) and no real personal documents: any paperwork must be blank, out of focus or turned so nothing is legible, with no names, numbers, signatures or photos. Location proven by register row, EXIF or the photographer's records, never by appearance. Source order: Canva brand asset, or licensed premium stock bought by a human and added to library-index.csv. Never a competitor, directory, celebrant-blog or search-result image.",
+    "status": "needed",
+    "file": "content/posts/notice-of-intended-marriage/images/notice-of-intended-marriage-couple-signing-celebrant.webp",
+    "source": {
+     "type": "library",
+     "origin": "not yet sourced",
+     "credit": "[[VERIFY licence]]"
+    },
+    "location": {
+     "venue": "a named venue or celebrant office (to be confirmed)",
+     "town": "to be confirmed",
+     "verified_by": "pending: register row, EXIF or photographer records"
+    },
+    "licence_note": "[[IMAGE NEEDED]] Library register has no rows. Requires written couple consent and celebrant consent. Never AI."
+   },
+   {
+    "slot_id": "timing-calendar",
+    "placement": "section: when to lodge, the one month to 18 month window (H2 opener)",
+    "purpose": "Make the timing window visual and memorable for planners working 12 to 18 months out.",
+    "shot_brief": "Landscape 3:2 or 4:3. Still life of a linen-bound paper calendar or planner opened to a month view, a few dates lightly circled in ink or marked with small dried florals, a fountain pen and a cup of coffee, soft morning light, no people, no printed real dates that imply a legal deadline, no brand logos. Source order: Canva brand asset, or licensed premium stock bought by a human and added to library-index.csv. Never a competitor, directory, celebrant-blog or search-result image. An AI still life is allowed only if the user approves, and must be labelled 'Illustrative image' in the caption.",
+    "status": "needed",
+    "file": "content/posts/notice-of-intended-marriage/images/notice-of-intended-marriage-calendar-timing.webp",
+    "source": {
+     "type": "canva",
+     "origin": "not yet sourced",
+     "credit": "[[VERIFY licence]]"
+    },
+    "location": {
+     "venue": "not applicable (studio still life, no real place)",
+     "town": "not applicable",
+     "verified_by": "not applicable: no place depicted"
+    },
+    "licence_note": "[[IMAGE NEEDED]] Library register has no rows. Canva or licensed stock preferred; AI still life only with user approval, labelled 'Illustrative image'."
+   },
+   {
+    "slot_id": "documents-passport",
+    "placement": "section: documents and ID you need (H2 opener)",
+    "purpose": "Signal the evidence step (identity, birth and travel documents) without exposing any real personal data.",
+    "shot_brief": "Landscape 3:2. Still life of closed passports (covers only, generic or country-neutral, no data page open), a plain envelope, a blank folder and a pen on a neutral desk, soft side light, no people. No real, readable government form (no legible NOIM text, fields or crest) and no real personal documents: any paperwork must be blank, out of focus or turned so nothing is legible, with no names, numbers, signatures or photos. No passport data page, no visible numbers, names, photos or barcodes. Source order: Canva brand asset, or licensed premium stock bought by a human and added to library-index.csv. Never a competitor, directory, celebrant-blog or search-result image. An AI still life is allowed only if the user approves, and must be labelled 'Illustrative image' in the caption.",
+    "status": "needed",
+    "file": "content/posts/notice-of-intended-marriage/images/notice-of-intended-marriage-passport-documents.webp",
+    "source": {
+     "type": "canva",
+     "origin": "not yet sourced",
+     "credit": "[[VERIFY licence]]"
+    },
+    "location": {
+     "venue": "not applicable (studio still life, no real place)",
+     "town": "not applicable",
+     "verified_by": "not applicable: no place depicted"
+    },
+    "licence_note": "[[IMAGE NEEDED]] Library register has no rows. Canva or licensed stock preferred; AI still life only with user approval, labelled 'Illustrative image'. Check no real document details are legible."
+   },
+   {
+    "slot_id": "destination-celebration",
+    "placement": "section: destination weddings and next steps (H2 opener or closing section)",
+    "purpose": "Close the guide on the payoff: the celebration that the paperwork makes possible, tied to a real Wedded Wonderland destination.",
+    "shot_brief": "Landscape 3:2. A real couple's celebration or ceremony moment at a real, named destination venue (for example a sea-view terrace or vineyard at golden hour), joyful and natural, or the same venue's ceremony set-up with no people. People only from a licensed real wedding with written couple consent (and guest consent if identifiable). Source: library register, own-site image with licence verified, or the venue's own media kit with written permission (Gmail draft request, never sent by an agent). Never AI. Location proven by register row, media kit or EXIF, never by appearance.",
+    "status": "needed",
+    "file": "content/posts/notice-of-intended-marriage/images/notice-of-intended-marriage-destination-celebration.webp",
+    "source": {
+     "type": "venue_press",
+     "origin": "not yet sourced",
+     "credit": "[[VERIFY licence]]"
+    },
+    "location": {
+     "venue": "a named destination venue (to be confirmed)",
+     "town": "to be confirmed",
+     "verified_by": "pending: register row, media kit or EXIF"
+    },
+    "licence_note": "[[IMAGE NEEDED]] Library register has no rows. Couple and guest consent required if people appear. Move to pending_permission once a permission draft exists. Never AI."
+   }
+  ],
+  "reference_only": [],
+  "permission_requests": [],
+  "drive_findings": [
+   "Not searched: fast mode, repo library register only per orchestrator instruction. library-index.csv has a header and no rows."
+  ]
+ }
+}
