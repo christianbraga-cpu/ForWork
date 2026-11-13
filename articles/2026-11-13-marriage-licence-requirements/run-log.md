@@ -24,3 +24,15 @@
 - **Stage 2 fast (writer, 6 min):** DONE. 03-draft-v1.md. --check: 3,486 reader words (286 over the 3,200 cap; cut in revision), 0 dashes, 0 placeholders, 12 domains, none blocked. YAML valid; 60 claims, 27 links. s 45(1) left out; Greece link conditional (GREECE-LINK); "not published" cells for ACT fee and some processing times.
 - **Stage 3 fast (3 parallel reviews, 2 to 3 min):** accuracy FAIL 3.6 (5 majors: 2027 fee inference, fee range label, unsourced apostille definition, "no foreign paperwork", 'has planned'); SEO FAIL 4.1 (meta 165 chars, 7 FAQs, 286 words over); reader:couple 3/3/4/2 (Italy-leaning persona; concierge payment, past-event plug, jargon). **Decision (default):** no "advisor confirms the process" line; legal confirmation stays with the deciding authority.
 - **Stage 4 fast (one loop, 3 min):** DONE. 03-draft-v2.md. --check: 3,191 reader words (cap 3,200), 0 dashes, 0 placeholders, 12 domains, none blocked. YAML valid; 56 claims, 27 links. New open items ROUTE1-DATE (no source that the registry certificate date is the legal date) and N-002 (prescribed authority not named in research).
+- **Stage 6 fast (copy editor, about 5 min):** DONE. final.md, publish-package.json (image plan included), chrome-upload-prompt.md, article.docx. --check: 3,155 reader words, 0 dashes, 0 placeholders, 12 official domains, none blocked. YAML and JSON validated by the orchestrator. Link map: added as DRAFT. Run time from request to package: about 30 minutes.
+
+## Must fix before publish
+1. **N-001:** confirm on legislation.gov.au that the 9 July 2024 Marriage Act compilation is current (ss 44 to 46).
+2. **F-005-WORDING:** read AGD's "Remote witnessing arrangements" to confirm whether a NOIM for a couple outside Australia can be witnessed online by a witness also abroad (article gives the safe in-person route).
+3. **CONCIERGE-PAY (user):** concierge price, partner payments, named contact.
+4. **Nic sign-off:** state certificate fees (QLD 58.10 to NT 74, ACT not published), DFAT CNI AUD 181 and apostille AUD 105 (2026, rise each 1 Jan).
+5. **GREECE-LINK:** publish the Greece article first, or use the fallback sentence in open_items.
+6. **Links:** click through all external links once.
+7. **Images:** pick files; credit, licence and consent for all 6 slots.
+8. **CMS:** author, CMS admin URL.
+9. Not sourced and left out: ROUTE1-DATE (registry certificate date as the legal date), N-002 (name of the prescribed authority), ACT certificate fee, name-change rules outside VIC and QLD.
