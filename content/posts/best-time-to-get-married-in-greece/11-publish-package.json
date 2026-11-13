@@ -1,0 +1,295 @@
+{
+  "agent": "cms-publisher",
+  "task_id": "best-time-to-get-married-in-greece",
+  "stage": "11",
+  "status": "complete",
+  "round": 1,
+  "inputs_used": [
+    "CLAUDE.md",
+    "content-system/schemas/11-publish-package.schema.json",
+    "content/posts/best-time-to-get-married-in-greece/01-brief.json",
+    "content/posts/best-time-to-get-married-in-greece/02-seo.json",
+    "content/posts/best-time-to-get-married-in-greece/03-source-pack.json",
+    "content/posts/best-time-to-get-married-in-greece/04-images.json",
+    "content/posts/best-time-to-get-married-in-greece/08-final.md",
+    "content/posts/best-time-to-get-married-in-greece/09-cro.json",
+    "content/posts/best-time-to-get-married-in-greece/10-distribution.json",
+    "content/posts/same-sex-marriage-greece/11-body.md, 11-publish-package.json, 12-cms-report.md, booking-checklist.md (format model)"
+  ],
+  "self_qa": {
+    "checks": [
+      {
+        "check": "Front matter and all <!-- fact_xx --> markers removed; H1 is the title; 6 image-slot comments kept; links and UTMs unchanged; no [[VERIFY]] markers in the copy",
+        "pass": true
+      },
+      {
+        "check": "Primary, secondary, closing and magnet links unchanged per 09-cro.json and each utm_content appears exactly once in visible links; CTA block marked after the month scenarios",
+        "pass": true
+      },
+      {
+        "check": "Exactly 4 key takeaways and 4 FAQ pairs taken verbatim from the body",
+        "pass": true
+      },
+      {
+        "check": "Meta title and description from 02-seo.json; no prices, no em dashes",
+        "pass": true,
+        "note": "title 43, description 147 characters"
+      },
+      {
+        "check": "primary_category equals categories[0] (Destination Weddings)",
+        "pass": true
+      },
+      {
+        "check": "No em dashes; Australian English",
+        "pass": true
+      },
+      {
+        "check": "status draft; nothing uploaded, saved or published",
+        "pass": true
+      }
+    ],
+    "confidence": 0.9
+  },
+  "open_questions": [
+    {
+      "to": "orchestrator",
+      "question": "CMS upload not attempted: FAST MODE package only, no browser in this session. A human saves as Draft and clicks Publish, or run /wedded-blog resume=best-time-to-get-married-in-greece once the field map is confirmed.",
+      "blocking": true
+    },
+    {
+      "to": "orchestrator",
+      "question": "No author named in any input; package uses \"Wedded Wonderland\" (organisation). Confirm the byline.",
+      "blocking": false
+    },
+    {
+      "to": "orchestrator",
+      "question": "09-cro.json places the CTA block at a <!-- CTA: primary --> marker after the month scenarios, but 08-final.md has none; the block is marked at that position in 11-body.md. Confirm placement in the CMS template.",
+      "blocking": false
+    }
+  ],
+  "assumptions": [
+    "Title and meta title \"Best Time to Get Married in Greece by Month\" (02-seo.json); meta description from 02-seo.json unchanged.",
+    "Excerpt is the first two sentences of the opening paragraph.",
+    "Requested type \"Guide\" mapped to the brief enum value \"planning_guide\" (as in 01-brief.json). Cluster \"Getting Married in Greece\".",
+    "Categories and tags from 01-brief.json; primary category Destination Weddings. New article, no redirect.",
+    "JSON-LD is Article + BreadcrumbList + FAQPage; FAQ answers carry no links.",
+    "verify_items and needs_signoff empty: no [[VERIFY]] markers and no prices in the copy.",
+    "Image alt text and captions left empty: none in 04-images.json, not invented."
+  ],
+  "verify_items": [],
+  "tools_used": [
+    "Bash (python3 -I)"
+  ],
+  "next_agent": [
+    "orchestrator"
+  ],
+  "payload": {
+    "title": "Best Time to Get Married in Greece by Month",
+    "slug": "best-time-to-get-married-in-greece",
+    "url_path": "/destination-weddings/best-time-to-get-married-in-greece",
+    "content_type": "planning_guide",
+    "cluster": "Getting Married in Greece",
+    "categories": [
+      "Destination Weddings",
+      "Greece",
+      "Planning Guides"
+    ],
+    "primary_category": "Destination Weddings",
+    "tags": [
+      "Getting Married in Greece",
+      "Wedding Seasons",
+      "Greek Islands",
+      "Planning Timeline"
+    ],
+    "excerpt": "No single month suits every Greek wedding. The months that work for you depend on four things: the island, how well your guests cope with heat, whether you want a church ceremony, and how long everyone will stay.",
+    "key_takeaways": [
+      "June to August is the hot, dry core at the Naxos, Heraklion, Chania Souda and Rodos stations, with Kerkyra the wetter exception, while May and October are milder with more rain and September keeps summer warmth with fewer rain days than October.",
+      "Smartraveller warns that summer heatwaves are frequent in Greece and that wildfires occur from June to September, so high-summer weddings need shade, water and evening timing.",
+      "Venues set their own season windows, and some spaces open for less of the year than the weather allows.",
+      "The Greek Orthodox Archdiocese of Australia lists dates when marriages are not permitted, including Great Lent to Easter Sunday and 1 to 15 August."
+    ],
+    "body_markdown_file": "content/posts/best-time-to-get-married-in-greece/11-body.md",
+    "faq": [
+      {
+        "q": "When do Greek venues open for weddings?",
+        "a": "Each venue sets its own season. At Angsana Corfu, for example, Oribu Garden opens in April and Vertigo Sky Bar from mid-May. Minos Palace describes eastern Crete as pleasant from April to November."
+      },
+      {
+        "q": "How hot is Greece in July and August?",
+        "a": "It depends on the island. Average maximums run from about 27°C at Naxos to 31.5°C at Kerkyra in August. As at November 2026, Smartraveller says heatwaves are frequent over the summer months and advises water, a hat, light clothing and shade or air-conditioning."
+      },
+      {
+        "q": "Can we marry in a Greek Orthodox church at any time of year?",
+        "a": "No. The Greek Orthodox Archdiocese of Australia lists closed dates including Great Lent to Easter Sunday, 1 to 15 August, 29 August and 14 September. For a church wedding in Greece, ask your priest and the local Metropolis."
+      },
+      {
+        "q": "Is October too late for a Greek island wedding?",
+        "a": "Not necessarily, but plan for rain. October maximums average 21.9°C at Naxos and 24.5°C at Rodos, with rain days rising to 5.5 and 6.5, and to 11.4 at Kerkyra. At Angsana Corfu, Oribu Garden and Oribu Restaurant still take October weddings, so ask your venue about covered spaces."
+      }
+    ],
+    "images": [
+      {
+        "slot_id": "featured",
+        "file": "content/posts/best-time-to-get-married-in-greece/images/best-time-to-get-married-in-greece-island-venue-sunset-ceremony-hero.webp",
+        "role": "featured",
+        "status": "needed"
+      },
+      {
+        "slot_id": "spring-setting",
+        "file": "content/posts/best-time-to-get-married-in-greece/images/best-time-to-get-married-in-greece-venue-spring-garden-ceremony.webp",
+        "role": "inline",
+        "status": "needed"
+      },
+      {
+        "slot_id": "high-summer-setting",
+        "file": "content/posts/best-time-to-get-married-in-greece/images/best-time-to-get-married-in-greece-cycladic-venue-summer-evening-reception.webp",
+        "role": "inline",
+        "status": "needed"
+      },
+      {
+        "slot_id": "autumn-setting",
+        "file": "content/posts/best-time-to-get-married-in-greece/images/best-time-to-get-married-in-greece-venue-autumn-olive-grove-reception.webp",
+        "role": "inline",
+        "status": "needed"
+      },
+      {
+        "slot_id": "planning-still-life",
+        "file": "content/posts/best-time-to-get-married-in-greece/images/best-time-to-get-married-in-greece-planning-still-life-calendar.webp",
+        "role": "inline",
+        "status": "needed"
+      },
+      {
+        "slot_id": "green-season-ionian-crete",
+        "file": "content/posts/best-time-to-get-married-in-greece/images/best-time-to-get-married-in-greece-corfu-or-crete-venue-green-season.webp",
+        "role": "inline",
+        "status": "needed"
+      }
+    ],
+    "cta": {
+      "text": "Book a Wedded Concierge consultation",
+      "subtext": "The fee is agreed in writing before any work begins.",
+      "link": "https://weddedwonderland.com/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=best-time-to-get-married-in-greece&utm_content=primary",
+      "placement": "Inline: the existing sentence directly after the Key takeaways ('Once you have two or three months in mind, a Wedded Concierge consultation ...'), marked <!-- CTA INLINE: primary -->, unchanged. CTA block: after the 'Which months suit your wedding' scenarios, marked <!-- CTA BLOCK: primary --> in 11-body.md, per 09-cro.json. 08-final.md had no <!-- CTA: primary --> marker, so nothing was replaced."
+    },
+    "secondary_cta": {
+      "text": "Talk to Wedded Concierge",
+      "subtext": "One Wedded Advisor, in your time zone, quoting in AUD.",
+      "link": "https://weddedwonderland.com/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=best-time-to-get-married-in-greece&utm_content=secondary",
+      "placement": "Existing sentence after the month scenarios, before the FAQ (marked <!-- CTA INLINE: secondary -->); anchor 'Talk to Wedded Concierge about your dates'. Unchanged."
+    },
+    "closing_cta": {
+      "text": "Start planning with Wedded Concierge",
+      "link": "https://weddedwonderland.com/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=best-time-to-get-married-in-greece&utm_content=closing",
+      "placement": "Existing link in 'Plan your month with a Wedded Advisor' (marked <!-- CTA INLINE: closing -->). Unchanged."
+    },
+    "lead_magnet": {
+      "name": "Wedded Wonderland digital magazine",
+      "link": "https://weddedwonderland.com/magazine?utm_source=blog&utm_medium=content&utm_campaign=best-time-to-get-married-in-greece&utm_content=magnet",
+      "placement": "Final line of the post (marked <!-- LEAD MAGNET -->). Unchanged."
+    },
+    "tracking_links": [
+      "https://weddedwonderland.com/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=best-time-to-get-married-in-greece&utm_content=primary",
+      "https://weddedwonderland.com/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=best-time-to-get-married-in-greece&utm_content=secondary",
+      "https://weddedwonderland.com/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=best-time-to-get-married-in-greece&utm_content=closing",
+      "https://weddedwonderland.com/magazine?utm_source=blog&utm_medium=content&utm_campaign=best-time-to-get-married-in-greece&utm_content=magnet"
+    ],
+    "seo": {
+      "meta_title": "Best Time to Get Married in Greece by Month",
+      "meta_description": "Greek island weather from April to October by official station, heat advice, venue season windows and Orthodox dates to help you choose your month.",
+      "focus_keyword": "best time to get married in greece",
+      "canonical": "https://weddedwonderland.com/destination-weddings/best-time-to-get-married-in-greece",
+      "og_image_slot": "featured"
+    },
+    "schema_jsonld": {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Article",
+          "@id": "https://weddedwonderland.com/destination-weddings/best-time-to-get-married-in-greece#article",
+          "headline": "Best Time to Get Married in Greece by Month",
+          "description": "Greek island weather from April to October by official station, heat advice, venue season windows and Orthodox dates to help you choose your month.",
+          "author": {
+            "@type": "Organization",
+            "name": "Wedded Wonderland",
+            "url": "https://weddedwonderland.com/"
+          },
+          "publisher": {
+            "@type": "Organization",
+            "name": "Wedded Wonderland",
+            "url": "https://weddedwonderland.com/"
+          },
+          "datePublished": "",
+          "mainEntityOfPage": "https://weddedwonderland.com/destination-weddings/best-time-to-get-married-in-greece",
+          "inLanguage": "en-AU"
+        },
+        {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Home",
+              "item": "https://weddedwonderland.com/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Destination Weddings",
+              "item": "https://weddedwonderland.com/destination-weddings"
+            },
+            {
+              "@type": "ListItem",
+              "position": 3,
+              "name": "Best Time to Get Married in Greece by Month",
+              "item": "https://weddedwonderland.com/destination-weddings/best-time-to-get-married-in-greece"
+            }
+          ]
+        },
+        {
+          "@type": "FAQPage",
+          "@id": "https://weddedwonderland.com/destination-weddings/best-time-to-get-married-in-greece#faq",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "When do Greek venues open for weddings?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Each venue sets its own season. At Angsana Corfu, for example, Oribu Garden opens in April and Vertigo Sky Bar from mid-May. Minos Palace describes eastern Crete as pleasant from April to November."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "How hot is Greece in July and August?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "It depends on the island. Average maximums run from about 27°C at Naxos to 31.5°C at Kerkyra in August. As at November 2026, Smartraveller says heatwaves are frequent over the summer months and advises water, a hat, light clothing and shade or air-conditioning."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Can we marry in a Greek Orthodox church at any time of year?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "No. The Greek Orthodox Archdiocese of Australia lists closed dates including Great Lent to Easter Sunday, 1 to 15 August, 29 August and 14 September. For a church wedding in Greece, ask your priest and the local Metropolis."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Is October too late for a Greek island wedding?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Not necessarily, but plan for rain. October maximums average 21.9°C at Naxos and 24.5°C at Rodos, with rain days rising to 5.5 and 6.5, and to 11.4 at Kerkyra. At Angsana Corfu, Oribu Garden and Oribu Restaurant still take October weddings, so ask your venue about covered spaces."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    "author": "Wedded Wonderland",
+    "status": "draft",
+    "verify_items": [],
+    "needs_signoff": [],
+    "redirect": null,
+    "draft_note": "DRAFT. Do not publish until checked: no [[VERIFY]] items in the copy; no prices, nothing for Nic to sign off. Image slots needed (6 of 6, none approved): featured, spring-setting, high-summer-setting, autumn-setting, planning-still-life, green-season-ionian-crete. featured, spring-setting, high-summer-setting, autumn-setting and green-season-ionian-crete must be real, named venues with the month proven by register row, media kit or EXIF (media kit with written permission or licensed stock, never AI; people only with written couple and guest consent); planning-still-life may be an AI still life only with user approval, captioned 'Illustrative image'. The month table needs horizontal scroll on mobile; check it in preview. Byline to confirm (package uses Wedded Wonderland). Venue, Orthodox and public holiday checks for a couple's date are in booking-checklist.md. DRAFT ONLY. A human clicks Publish."
+  }
+}
