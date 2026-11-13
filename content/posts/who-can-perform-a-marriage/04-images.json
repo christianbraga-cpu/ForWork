@@ -1,0 +1,210 @@
+{
+ "agent": "visual-curator",
+ "task_id": "who-can-perform-a-marriage",
+ "stage": "04",
+ "status": "needs_input",
+ "round": 1,
+ "inputs_used": [
+  "CLAUDE.md",
+  "content/posts/who-can-perform-a-marriage/00-input.json",
+  "01-brief.json, 02-seo.json, 02-research/report.md, 03-source-pack.json (not present at run time)",
+  "content/posts/notice-of-intended-marriage/04-images.json (format model)",
+  "content-system/images/library-index.csv (header only, no rows)",
+  "content-system/schemas/04-images.schema.json"
+ ],
+ "self_qa": {
+  "checks": [
+   {
+    "check": "Zero reference-only or competitor images in slots",
+    "pass": true,
+    "note": "reference_only is empty; no images downloaded."
+   },
+   {
+    "check": "Every approved image has location, licence, alt, caption, fit_reason",
+    "pass": true,
+    "note": "No approved images this run."
+   },
+   {
+    "check": "No AI image depicting a real place, wedding, ceremony or person",
+    "pass": true,
+    "note": "No AI generated. Only the signing table still life may become ai_illustrative, with user approval and an 'Illustrative image' label."
+   },
+   {
+    "check": "No identifiable celebrant, reader or guest without consent",
+    "pass": true,
+    "note": "Every people slot requires written consent and a licence before approval."
+   },
+   {
+    "check": "Featured image exists (approved or needed with brief)",
+    "pass": true,
+    "note": "Needed, with brief: real ceremony with celebrant, consented."
+   },
+   {
+    "check": "About 5 slots",
+    "pass": true,
+    "note": "5 slots."
+   }
+  ],
+  "confidence": 0.7
+ },
+ "open_questions": [
+  {
+   "to": "user",
+   "question": "Do you hold a real ceremony photo with a celebrant, and one of a family member reading, with written couple, celebrant and reader consent?",
+   "blocking": false
+  },
+  {
+   "to": "user",
+   "question": "Do you approve an AI signing table still life labelled 'Illustrative image' if no Canva or licensed asset is found?",
+   "blocking": false
+  },
+  {
+   "to": "planner-sme",
+   "question": "Which chapel and which destination venue should the religious and destination slots feature, so each can be tied to a named place and press contact?",
+   "blocking": false
+  }
+ ],
+ "assumptions": [
+  "Placement is by section name because 02-seo.json is not yet written; the writer maps it to after_h2 positions.",
+  "No venue is named because 03-source-pack does not exist; nothing was guessed.",
+  "Fast mode: repo register only, no Drive, own-site, Canva, Gmail or Lens checks run."
+ ],
+ "verify_items": [
+  "[[IMAGE NEEDED]] featured: real ceremony with authorised celebrant, couple and celebrant consent required, never AI",
+  "[[IMAGE NEEDED]] signing-table: still life, Canva or licensed stock; AI only with user approval, labelled 'Illustrative image'",
+  "[[IMAGE NEEDED]] religious-ceremony: named chapel or church, venue permission, never AI",
+  "[[IMAGE NEEDED]] family-reading: real wedding, reader, couple and guest consent, never AI",
+  "[[IMAGE NEEDED]] destination-celebration: licensed image at a named destination venue, never AI",
+  "[[VERIFY licence]] every venue, stock or own-site image: licence, credit line and expiry recorded in library-index.csv before use",
+  "[[VERIFY: written consent from couple, celebrant, reader and identifiable guests for any real-wedding photo]]",
+  "[[VERIFY: no legible marriage certificate, register entry, names or signatures in the signing image]]"
+ ],
+ "tools_used": [
+  "Bash (cat/python)"
+ ],
+ "next_agent": [
+  "luxury-writer"
+ ],
+ "payload": {
+  "slots": [
+   {
+    "slot_id": "featured",
+    "placement": "featured",
+    "purpose": "Hero and social share image: the ceremony moment a celebrant makes legal, warm and assured for a luxury destination couple.",
+    "shot_brief": "Landscape 3:2, room for a title on one side. A real couple standing before their authorised celebrant at an outdoor ceremony (garden, terrace or sea view), soft golden-hour light, celebrant seen from behind or side-on so the couple is the focus. Only from a real Wedded Wonderland wedding with written couple consent and written celebrant consent, licensed for web and social. No identifiable celebrant unless consented and licensed. Source: library register, own-site gallery with licence verified, or photographer with permission. Never AI, never competitor, directory or celebrant-association images.",
+    "status": "needed",
+    "file": "content/posts/who-can-perform-a-marriage/images/who-can-perform-a-marriage-celebrant-ceremony-hero.webp",
+    "source": {
+     "type": "library",
+     "origin": "not yet sourced",
+     "credit": "[[VERIFY licence]]"
+    },
+    "location": {
+     "venue": "a named real wedding venue (to be confirmed)",
+     "town": "to be confirmed",
+     "verified_by": "pending: register row, media kit or EXIF"
+    },
+    "licence_note": "[[IMAGE NEEDED]] Library register has no rows. Couple and celebrant consent required. Never AI.",
+    "consent": {
+     "couple": "required, written",
+     "celebrant": "required, written",
+     "guests": "required if identifiable",
+     "status": "not yet obtained"
+    }
+   },
+   {
+    "slot_id": "signing-table",
+    "placement": "section: what the celebrant does on the day (signing and certificates)",
+    "purpose": "Show the legal moment without exposing anyone's details: the signing table that makes the marriage official.",
+    "shot_brief": "Landscape 3:2. Still life of a styled signing table: linen cloth, fine pen, a blank or softly blurred certificate sheet, rings and a few white florals, natural daylight, no people or only anonymous hands. No legible certificate, register, names, numbers, signatures or government crest. Source: Canva brand asset, licensed stock, or a real wedding detail shot from the register. AI still life only if the user approves, and labelled 'Illustrative image' in the caption.",
+    "status": "needed",
+    "file": "content/posts/who-can-perform-a-marriage/images/who-can-perform-a-marriage-signing-table-still-life.webp",
+    "source": {
+     "type": "canva",
+     "origin": "not yet sourced",
+     "credit": "[[VERIFY licence]]"
+    },
+    "location": {
+     "venue": "not applicable (still life, no real place)",
+     "town": "not applicable",
+     "verified_by": "pending: register row, media kit or EXIF"
+    },
+    "licence_note": "[[IMAGE NEEDED]] Canva or licensed stock preferred; AI only with user approval, labelled 'Illustrative image'."
+   },
+   {
+    "slot_id": "religious-ceremony",
+    "placement": "section: ministers of religion and religious celebrants",
+    "purpose": "Illustrate that recognised ministers of religion can legally marry couples, in a calm, respectful setting.",
+    "shot_brief": "Landscape 3:2. Interior of a real church, chapel or place of worship dressed for a wedding (aisle florals, candles, soft window light), no people, or a ceremony moment from a real wedding with written couple and officiant consent. Location must be a named, real venue proven by register row, media kit or EXIF. Respectful framing, no identifiable officiant without consent. Source: library register or venue press kit with written permission (Gmail draft, never sent by an agent). Never AI.",
+    "status": "needed",
+    "file": "content/posts/who-can-perform-a-marriage/images/who-can-perform-a-marriage-religious-ceremony-chapel.webp",
+    "source": {
+     "type": "venue_press",
+     "origin": "not yet sourced",
+     "credit": "[[VERIFY licence]]"
+    },
+    "location": {
+     "venue": "a named chapel or church (to be confirmed)",
+     "town": "to be confirmed",
+     "verified_by": "pending: register row, media kit or EXIF"
+    },
+    "licence_note": "[[IMAGE NEEDED]] Library register has no rows. Venue permission required; consent if people appear. Never AI.",
+    "consent": {
+     "couple": "required if people appear",
+     "officiant": "required if identifiable",
+     "status": "not yet obtained"
+    }
+   },
+   {
+    "slot_id": "family-reading",
+    "placement": "section: can a friend or family member marry you",
+    "purpose": "Show the meaningful role a family member or friend can play (a reading) while the authorised celebrant handles the legal part.",
+    "shot_brief": "Landscape 3:2 or portrait 4:5. A family member or friend giving a reading at a real ceremony, guests softly out of focus, natural light, emotional but unposed. Only from a real wedding with written consent from the reader, the couple and any identifiable guests, licensed for web. No children identifiable without guardian consent. Source: library register or own-site gallery with licence verified. Never AI.",
+    "status": "needed",
+    "file": "content/posts/who-can-perform-a-marriage/images/who-can-perform-a-marriage-family-member-reading.webp",
+    "source": {
+     "type": "library",
+     "origin": "not yet sourced",
+     "credit": "[[VERIFY licence]]"
+    },
+    "location": {
+     "venue": "a named real wedding venue (to be confirmed)",
+     "town": "to be confirmed",
+     "verified_by": "pending: register row, media kit or EXIF"
+    },
+    "licence_note": "[[IMAGE NEEDED]] Reader, couple and guest consent required. Never AI.",
+    "consent": {
+     "couple": "required, written",
+     "reader": "required, written",
+     "guests": "required if identifiable",
+     "children": "guardian consent if present",
+     "status": "not yet obtained"
+    }
+   },
+   {
+    "slot_id": "destination-celebration",
+    "placement": "section: getting married overseas (who can marry you abroad) or closing section",
+    "purpose": "Close on the payoff: a destination celebration, with the legal paperwork sorted at home or abroad.",
+    "shot_brief": "Landscape 3:2. A real couple's celebration or ceremony set-up at a real, named Wedded Wonderland destination venue (sea-view terrace, villa garden or vineyard at golden hour), with no people or a licensed real wedding with written couple consent. Location proven by register row, media kit or EXIF, never by appearance. Source: library register, own-site image with licence verified, or venue press kit with written permission. Never AI.",
+    "status": "needed",
+    "file": "content/posts/who-can-perform-a-marriage/images/who-can-perform-a-marriage-destination-celebration.webp",
+    "source": {
+     "type": "venue_press",
+     "origin": "not yet sourced",
+     "credit": "[[VERIFY licence]]"
+    },
+    "location": {
+     "venue": "a named destination venue (to be confirmed)",
+     "town": "to be confirmed",
+     "verified_by": "pending: register row, media kit or EXIF"
+    },
+    "licence_note": "[[IMAGE NEEDED]] Library register has no rows. Move to pending_permission once a permission draft exists. Never AI."
+   }
+  ],
+  "reference_only": [],
+  "permission_requests": [],
+  "drive_findings": [
+   "Not searched: fast mode, repo library register only per orchestrator instruction. library-index.csv has a header and no rows."
+  ]
+ }
+}
