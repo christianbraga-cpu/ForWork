@@ -1,0 +1,407 @@
+{
+  "agent": "planner-sme",
+  "task_id": "prenup",
+  "stage": "03",
+  "status": "complete",
+  "round": 1,
+  "inputs_used": [
+    "content/posts/prenup/00-input.json (no 01-brief.json or 02-seo.json; must_include derived from orchestrator task)",
+    "apify--web-search once (site-restricted) then one parallel apify--web-fetch round, 15 November 2026, no retries: FCFCOA financial-agreements (200), FCFCOA ss-agreed (200), Legal Aid NSW binding-financial-agreements (200), Victoria Legal Aid agreement-about-dividing-property (200), Moneysmart relationships-and-money (200), legislation.gov.au Family Law Act latest text (200 but only table of contents returned; ss 90G and 90K text not readable)",
+    "AGD property guide not fetched (search showed it is about separation, not prenups)"
+  ],
+  "self_qa": {
+    "checks": [
+      {
+        "check": "Every fact has a source and date",
+        "pass": true
+      },
+      {
+        "check": "No price without a source; all prices in needs_signoff",
+        "pass": true,
+        "note": "No prices recorded."
+      },
+      {
+        "check": "Every must-include covered or [[VERIFY]]",
+        "pass": true
+      },
+      {
+        "check": "No invented quotes, statistics or real weddings",
+        "pass": true
+      }
+    ],
+    "confidence": 0.75
+  },
+  "open_questions": [
+    {
+      "to": "luxury-writer",
+      "question": "State legal rules 'as at November 2026', credit each to its source (FCFCOA, Legal Aid NSW, Victoria Legal Aid, Moneysmart), and add the line that the Wedded Advisor confirms current requirements and that couples should get independent legal advice. Wedded Wonderland does not give legal advice.",
+      "blocking": false
+    },
+    {
+      "to": "luxury-writer",
+      "question": "Independent legal advice is mandatory ('must', FCFCOA); financial advice is recommended only (Moneysmart wording conflicts). Do not present the Legal Aid set-aside lists as the Act's wording.",
+      "blocking": false
+    },
+    {
+      "to": "orchestrator",
+      "question": "The Family Law Act fetch returned only the table of contents. A fetch of s 90G and s 90K text (e.g. the legislation.gov.au section view or AustLII consol_act/fla1975114/s90g.html) would clear two verify items.",
+      "blocking": false
+    }
+  ],
+  "assumptions": [
+    "Legal Aid NSW and Victoria Legal Aid are state government legal aid commissions, recorded as source_type government.",
+    "Insider details are planning advice built on cited facts; 'book lawyers early' is advice, not a stated rule."
+  ],
+  "verify_items": [
+    "[[VERIFY: Whether s 90G requires each party to receive a signed copy of the lawyer's statement of advice (and the original agreement to be given to one party and a copy to the other). The Act section text could not be read on 15 November 2026; only Victoria Legal Aid's 'signed statement' wording is sourced.]]",
+    "[[VERIFY: Exact s 90K grounds for setting aside. Only Legal Aid NSW and Victoria Legal Aid paraphrases were read, and they differ in wording; read s 90K on legislation.gov.au before listing grounds as the Act's.]]",
+    "[[VERIFY: Any official statement on agreements for Australian couples who marry overseas (for example whether a BFA signed in Australia before an overseas wedding is affected by the place of marriage). Only the Legal Aid NSW statement on agreements made overseas was found.]]",
+    "[[VERIFY: Whether a BFA can deal with child maintenance. Only Legal Aid NSW says so; FCFCOA mentions spousal or de facto maintenance only.]]",
+    "[[VERIFY: Any recommended lead time for signing a prenup before the wedding. No official source read states one; do not give a number of weeks or months.]]"
+  ],
+  "tools_used": [
+    "mcp__Apify__apify--web-search",
+    "mcp__Apify__apify--web-fetch"
+  ],
+  "next_agent": [
+    "luxury-writer"
+  ],
+  "payload": {
+    "facts": [
+      {
+        "fact_id": "fact_01",
+        "claim": "FCFCOA: a Financial Agreement is a contract between two or more parties made under Part VIIIA (for marriages) or Division 4 of Part VIIIAB (for de facto relationships) of the Family Law Act 1975.",
+        "source": "https://www.fcfcoa.gov.au/fl/fp/financial-agreements",
+        "source_type": "government",
+        "checked": "2026-11-15",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_02",
+        "claim": "FCFCOA: a Financial Agreement, if binding, ousts the Court's jurisdiction in relation to financial or property proceedings between the parties generally, or in relation to specific issues; if prepared and entered into properly it can be a way to 'contract out' of court proceedings.",
+        "source": "https://www.fcfcoa.gov.au/fl/fp/financial-agreements",
+        "source_type": "government",
+        "checked": "2026-11-15",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_03",
+        "claim": "FCFCOA: a Financial Agreement can 'cover the field' (all aspects of the financial relationship) or deal with only some issues, such as spousal or de facto maintenance.",
+        "source": "https://www.fcfcoa.gov.au/fl/fp/financial-agreements",
+        "source_type": "government",
+        "checked": "2026-11-15",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_04",
+        "claim": "FCFCOA: for a marriage, a Financial Agreement can be made before the marriage (s 90B), during the marriage (s 90C) or after the marriage (s 90D).",
+        "source": "https://www.fcfcoa.gov.au/fl/fp/financial-agreements",
+        "source_type": "government",
+        "checked": "2026-11-15",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_05",
+        "claim": "FCFCOA: for a de facto relationship, a Financial Agreement can be made before (s 90UB), during (s 90UC) or after (s 90UD) the relationship.",
+        "source": "https://www.fcfcoa.gov.au/fl/fp/financial-agreements",
+        "source_type": "government",
+        "checked": "2026-11-15",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_06",
+        "claim": "FCFCOA: to be binding, a Financial Agreement must meet technical requirements set out in s 90G (marriages) and s 90UJ (de facto relationships) of the Family Law Act 1975. The page does not list those requirements itself.",
+        "source": "https://www.fcfcoa.gov.au/fl/fp/financial-agreements",
+        "source_type": "government",
+        "checked": "2026-11-15",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_07",
+        "claim": "FCFCOA: each party to a Financial Agreement must be provided with independent legal advice about prescribed matters by an Australian legal practitioner before entering into the agreement; it is mandatory.",
+        "source": "https://www.fcfcoa.gov.au/fl/fp/financial-agreements",
+        "source_type": "government",
+        "checked": "2026-11-15",
+        "is_price": false,
+        "conflicts": "Victoria Legal Aid (fact_17) says each person 'should' get independent legal advice; FCFCOA says 'must'. Use 'must' (court source)."
+      },
+      {
+        "fact_id": "fact_08",
+        "claim": "FCFCOA: the Court has power to set aside Financial Agreements in some circumstances, set out in s 90K (marriages) and s 90UM (de facto relationships). The page does not list the grounds.",
+        "source": "https://www.fcfcoa.gov.au/fl/fp/financial-agreements",
+        "source_type": "government",
+        "checked": "2026-11-15",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_09",
+        "claim": "FCFCOA: the law about Financial Agreements is very complex; parties should seek legal help or legal advice.",
+        "source": "https://www.fcfcoa.gov.au/fl/fp/financial-agreements",
+        "source_type": "government",
+        "checked": "2026-11-15",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_10",
+        "claim": "FCFCOA 'Separate smarter': parties cannot enter into a financial agreement without each first getting independent legal advice from an Australian lawyer.",
+        "source": "https://www.fcfcoa.gov.au/fl/ss-agreed",
+        "source_type": "government",
+        "checked": "2026-11-15",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_11",
+        "claim": "Legal Aid NSW: a binding financial agreement is a contract between two people who are, or were, married or in a de facto relationship; it sets out how money and assets will be divided if they separate, and can also deal with spousal or de facto maintenance and child maintenance. Last updated September 2026.",
+        "source": "https://www.legalaid.nsw.gov.au/my-problem-is-about/my-family-or-relationship/finance-and-property/property-settlement-agreements/binding-financial-agreements",
+        "source_type": "government",
+        "checked": "2026-11-15",
+        "is_price": false,
+        "conflicts": "FCFCOA (fact_03) names spousal or de facto maintenance only; child maintenance appears only in Legal Aid NSW. Attribute to Legal Aid NSW or omit."
+      },
+      {
+        "fact_id": "fact_12",
+        "claim": "Legal Aid NSW: three types of BFA: before a marriage or de facto relationship begins, during it, or after separation or divorce. You don't go to court to make one, but once made it is legally enforceable.",
+        "source": "https://www.legalaid.nsw.gov.au/my-problem-is-about/my-family-or-relationship/finance-and-property/property-settlement-agreements/binding-financial-agreements",
+        "source_type": "government",
+        "checked": "2026-11-15",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_13",
+        "claim": "Legal Aid NSW formal requirements for a BFA to be legally valid: be in writing; say which part of the Family Law Act it is made under; deal with property, financial resources, spousal maintenance or related matters; not deal with issues covered by an earlier agreement still in force; be signed by all parties; be made after both parties have received independent legal advice; include a separation declaration if necessary; not have been terminated or set aside by a court.",
+        "source": "https://www.legalaid.nsw.gov.au/my-problem-is-about/my-family-or-relationship/finance-and-property/property-settlement-agreements/binding-financial-agreements",
+        "source_type": "government",
+        "checked": "2026-11-15",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_14",
+        "claim": "Legal Aid NSW: before making a BFA, understand that you usually cannot go to court later to divide property; a BFA is generally more expensive than applying for court orders; it stays in force even if one party dies unless it specifically says otherwise; a court can set it aside only in limited circumstances.",
+        "source": "https://www.legalaid.nsw.gov.au/my-problem-is-about/my-family-or-relationship/finance-and-property/property-settlement-agreements/binding-financial-agreements",
+        "source_type": "government",
+        "checked": "2026-11-15",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_15",
+        "claim": "Legal Aid NSW: grounds on which a court can set aside a BFA include fraud (such as hiding important financial information); made to defeat a creditor; made to cheat a de facto partner of one of the parties; agreement void or unenforceable; no longer practical to carry out all or part of it; material change of circumstances affecting a child causing hardship; unconscionable conduct; a payment flag on a party's superannuation; dealing with a superannuation interest that cannot be split under the law.",
+        "source": "https://www.legalaid.nsw.gov.au/my-problem-is-about/my-family-or-relationship/finance-and-property/property-settlement-agreements/binding-financial-agreements",
+        "source_type": "government",
+        "checked": "2026-11-15",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_16",
+        "claim": "Legal Aid NSW: a financial agreement made overseas won't be automatically recognised in Australia, even if the agreement says otherwise; it must meet the formal requirements to be legally valid in Australia; if not valid it cannot be enforced in Australia, but you may be able to apply for property settlement orders.",
+        "source": "https://www.legalaid.nsw.gov.au/my-problem-is-about/my-family-or-relationship/finance-and-property/property-settlement-agreements/binding-financial-agreements",
+        "source_type": "government",
+        "checked": "2026-11-15",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_17",
+        "claim": "Victoria Legal Aid: a financial agreement is a written document; can be made before, during or after a relationship; does not need court approval; both parties must have their own lawyers; to be binding both must sign it and each should get independent legal advice before signing; the lawyer must give a signed statement confirming the advice was provided. Updated 17 September 2026.",
+        "source": "https://www.legalaid.vic.gov.au/agreement-about-dividing-property",
+        "source_type": "government",
+        "checked": "2026-11-15",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_18",
+        "claim": "Victoria Legal Aid: financial agreements can cover how property is divided and ongoing financial (spousal) maintenance.",
+        "source": "https://www.legalaid.vic.gov.au/agreement-about-dividing-property",
+        "source_type": "government",
+        "checked": "2026-11-15",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_19",
+        "claim": "Victoria Legal Aid: financial agreements are legally binding unless it can be proved that: there was fraud; the agreement is not practical; it did not follow the formal requirements under the Family Law Act; there has been a major and unexpected change affecting a child; one person acted in an unfair way; one person did not follow the agreement; property covered was taken by the government because of criminal activity.",
+        "source": "https://www.legalaid.vic.gov.au/agreement-about-dividing-property",
+        "source_type": "government",
+        "checked": "2026-11-15",
+        "is_price": false,
+        "conflicts": "Wording differs from Legal Aid NSW list (fact_15); neither is the Act text. s 90K itself not read."
+      },
+      {
+        "fact_id": "fact_20",
+        "claim": "Victoria Legal Aid: to change or end a financial agreement both parties must get legal advice again and sign a new written agreement (a termination agreement). Legal Aid NSW: an agreement can be changed or ended by a new agreement with a terminating clause, a termination agreement, or abandonment.",
+        "source": "https://www.legalaid.vic.gov.au/agreement-about-dividing-property ; https://www.legalaid.nsw.gov.au/my-problem-is-about/my-family-or-relationship/finance-and-property/property-settlement-agreements/binding-financial-agreements",
+        "source_type": "government",
+        "checked": "2026-11-15",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_21",
+        "claim": "Legal Aid NSW: a BFA can protect an inheritance a partner may receive in future, protect property for children from a previous relationship, reduce the risk of future disputes, and deal with property and maintenance in one agreement.",
+        "source": "https://www.legalaid.nsw.gov.au/my-problem-is-about/my-family-or-relationship/finance-and-property/property-settlement-agreements/binding-financial-agreements",
+        "source_type": "government",
+        "checked": "2026-11-15",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_22",
+        "claim": "Moneysmart (ASIC): if you have assets to protect, such as property or super, you can ask your partner to sign a binding financial agreement, also known as a prenup; it sets out how assets and money are divided if the relationship breaks down and what financial support each gets. Last updated 31 August 2026.",
+        "source": "https://moneysmart.gov.au/family-and-relationships/relationships-and-money",
+        "source_type": "government",
+        "checked": "2026-11-15",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_23",
+        "claim": "Moneysmart: for the agreement to be binding, you both have to sign it and have sought legal and financial advice before signing.",
+        "source": "https://moneysmart.gov.au/family-and-relationships/relationships-and-money",
+        "source_type": "government",
+        "checked": "2026-11-15",
+        "is_price": false,
+        "conflicts": "FCFCOA and Legal Aid pages require independent legal advice only; no court or legal aid source requires financial advice. Present financial advice as recommended, not a legal requirement."
+      },
+      {
+        "fact_id": "fact_24",
+        "claim": "Family Law Act 1975 table of contents (legislation.gov.au, latest compilation) lists s 90G 'When financial agreements are binding', s 90H 'Effect of death of party to financial agreement', s 90J 'Termination of financial agreement' and s 90K 'Circumstances in which court may set aside a financial agreement or termination agreement'. Section text itself was not returned by the fetch.",
+        "source": "https://www.legislation.gov.au/C2004A00275/latest/text",
+        "source_type": "government",
+        "checked": "2026-11-15",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_25",
+        "claim": "Legal Aid NSW: a BFA won't stop a court making property settlement orders in a case involving a bankruptcy trustee; a BFA cannot be used to hide or protect property from bankruptcy.",
+        "source": "https://www.legalaid.nsw.gov.au/my-problem-is-about/my-family-or-relationship/finance-and-property/property-settlement-agreements/binding-financial-agreements",
+        "source_type": "government",
+        "checked": "2026-11-15",
+        "is_price": false
+      }
+    ],
+    "insider_details": [
+      {
+        "detail": "Start the agreement well before the wedding admin peaks: it can be signed before, during or after the marriage, but each of you needs your own Australian lawyer to advise before signing, so book two separate legal appointments early in planning rather than in the final weeks.",
+        "fact_ids": [
+          "fact_04",
+          "fact_07",
+          "fact_17"
+        ]
+      },
+      {
+        "detail": "If you are marrying overseas, do the agreement in Australia under the Family Law Act. A financial agreement made overseas is not automatically recognised here and must meet the Australian formal requirements to be enforceable.",
+        "fact_ids": [
+          "fact_16",
+          "fact_13"
+        ]
+      },
+      {
+        "detail": "Treat the formal requirements as a checklist for your lawyers, not a DIY template: in writing, names the Part of the Act, signed by both, independent legal advice for each before signing, with a signed advice statement. Courts can set aside agreements that miss them.",
+        "fact_ids": [
+          "fact_13",
+          "fact_17",
+          "fact_19",
+          "fact_06"
+        ]
+      },
+      {
+        "detail": "Full financial honesty matters: hiding important financial information is fraud and is a ground on which a court can set the agreement aside.",
+        "fact_ids": [
+          "fact_15",
+          "fact_19"
+        ]
+      },
+      {
+        "detail": "A prenup is not set and forget: it stays in force even if one of you dies unless it says otherwise, and changing it means fresh legal advice and a new written termination agreement.",
+        "fact_ids": [
+          "fact_14",
+          "fact_20",
+          "fact_24"
+        ]
+      }
+    ],
+    "quotes": [],
+    "real_weddings": [],
+    "verify_items": [
+      "[[VERIFY: Whether s 90G requires each party to receive a signed copy of the lawyer's statement of advice (and the original agreement to be given to one party and a copy to the other). The Act section text could not be read on 15 November 2026; only Victoria Legal Aid's 'signed statement' wording is sourced.]]",
+      "[[VERIFY: Exact s 90K grounds for setting aside. Only Legal Aid NSW and Victoria Legal Aid paraphrases were read, and they differ in wording; read s 90K on legislation.gov.au before listing grounds as the Act's.]]",
+      "[[VERIFY: Any official statement on agreements for Australian couples who marry overseas (for example whether a BFA signed in Australia before an overseas wedding is affected by the place of marriage). Only the Legal Aid NSW statement on agreements made overseas was found.]]",
+      "[[VERIFY: Whether a BFA can deal with child maintenance. Only Legal Aid NSW says so; FCFCOA mentions spousal or de facto maintenance only.]]",
+      "[[VERIFY: Any recommended lead time for signing a prenup before the wedding. No official source read states one; do not give a number of weeks or months.]]"
+    ],
+    "needs_signoff": [],
+    "must_include_coverage": [
+      {
+        "item": "What a binding financial agreement (prenup) is",
+        "covered_by": [
+          "fact_01",
+          "fact_02",
+          "fact_11",
+          "fact_22"
+        ]
+      },
+      {
+        "item": "When it can be made (before, during, after marriage; de facto)",
+        "covered_by": [
+          "fact_04",
+          "fact_05",
+          "fact_12",
+          "fact_17"
+        ]
+      },
+      {
+        "item": "Requirements to be binding (writing, signatures, independent legal advice, lawyer's signed statement, copies)",
+        "covered_by": [
+          "fact_06",
+          "fact_07",
+          "fact_10",
+          "fact_13",
+          "fact_17",
+          "fact_24",
+          "[[VERIFY: Whether s 90G requires each party to receive a signed copy of the lawyer's statement of advice (and the original agreement to be given to one party and a copy to the other). The Act section text could not be read on 15 November 2026; only Victoria Legal Aid's 'signed statement' wording is sourced.]]"
+        ]
+      },
+      {
+        "item": "What it can cover (property, financial resources, spousal maintenance)",
+        "covered_by": [
+          "fact_03",
+          "fact_13",
+          "fact_18",
+          "fact_11",
+          "[[VERIFY: Whether a BFA can deal with child maintenance. Only Legal Aid NSW says so; FCFCOA mentions spousal or de facto maintenance only.]]"
+        ]
+      },
+      {
+        "item": "Grounds for setting aside",
+        "covered_by": [
+          "fact_08",
+          "fact_15",
+          "fact_19",
+          "[[VERIFY: Exact s 90K grounds for setting aside. Only Legal Aid NSW and Victoria Legal Aid paraphrases were read, and they differ in wording; read s 90K on legislation.gov.au before listing grounds as the Act's.]]"
+        ]
+      },
+      {
+        "item": "Agreements made overseas / couples marrying overseas",
+        "covered_by": [
+          "fact_16",
+          "[[VERIFY: Any official statement on agreements for Australian couples who marry overseas (for example whether a BFA signed in Australia before an overseas wedding is affected by the place of marriage). Only the Legal Aid NSW statement on agreements made overseas was found.]]"
+        ]
+      },
+      {
+        "item": "Who needs one",
+        "covered_by": [
+          "fact_21",
+          "fact_22",
+          "fact_14"
+        ]
+      },
+      {
+        "item": "Changing or ending the agreement",
+        "covered_by": [
+          "fact_20",
+          "fact_24"
+        ]
+      },
+      {
+        "item": "Prices or lawyer costs",
+        "covered_by": [
+          "Not covered by policy: no prices or firm names. Legal Aid NSW says a BFA is generally more expensive than court orders (fact_14); state no figures."
+        ]
+      }
+    ]
+  }
+}
