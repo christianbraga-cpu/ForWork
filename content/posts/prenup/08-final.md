@@ -149,7 +149,7 @@ The agreement must say which part of the Family Law Act it is made under and dea
 
 ### Step 5: Sign and receive your lawyer's signed statement
 
-You both sign the agreement, and each lawyer gives a signed statement confirming the advice was provided. <!-- fact_17 --> From there it is legally enforceable without any court step. <!-- fact_12 -->
+You both sign the agreement, and each lawyer gives a signed statement confirming the advice was provided. <!-- fact_17 --> Legal Aid NSW notes you don't go to court to make one, but once made it is legally enforceable. <!-- fact_12 -->
 
 ## Prenups for destination weddings and international couples
 
