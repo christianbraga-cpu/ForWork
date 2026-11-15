@@ -1,0 +1,71 @@
+{
+  "agent": "cro-specialist",
+  "task_id": "prenup",
+  "stage": "09",
+  "status": "complete",
+  "round": 1,
+  "inputs_used": [
+    "CLAUDE.md",
+    "content-system/schemas/09-cro.schema.json",
+    "content-system/brand/brand-facts.md",
+    "content/posts/prenup/01-brief.json",
+    "content/posts/prenup/08-final.md",
+    "content/posts/name-change-after-marriage/09-cro.json (format model)"
+  ],
+  "self_qa": {
+    "checks": [
+      {"check": "Primary CTA 6 words or fewer, no 'click here', no exclamation mark", "pass": true, "note": "'Book a Wedded Concierge consultation' (5 words)."},
+      {"check": "utm_content primary, secondary, closing, magnet each appear exactly once", "pass": true, "note": "Checked by grep: 1 each, 4 UTM links in total, so no copy change made."},
+      {"check": "UTMs only on /wonderland-concierge (3) and /magazine (1)", "pass": true},
+      {"check": "Every /wonderland-concierge anchor names Wedded Concierge; no new Advisor line", "pass": true, "note": "All three concierge anchors read 'Wedded Concierge'. Existing Advisor lines (destination section and closing) unchanged; none added."},
+      {"check": "No CTA implies legal or financial help", "pass": true, "note": "Secondary follows 'The agreement stays with your lawyers'; primary follows the advice to raise changes with your lawyers and points to 'The celebration itself'; closing opens 'Once your lawyers have the agreement in hand' and covers venue, travel and vendors only."},
+      {"check": "No prices, 'free', Wedded Privileges, transfers, 'last dance', 'best' or em dashes in CRO copy; Australian English; no CTA marker added", "pass": true, "note": "The final has no <!-- CTA: ... --> markers and none were added."}
+    ],
+    "confidence": 0.85
+  },
+  "open_questions": [
+    {"to": "orchestrator", "question": "08-final.md contains no <!-- CTA: primary --> marker, so any CMS CTA block has no anchor point; placements below rely on the existing inline links. Add a marker at CMS stage only if the template needs one. No copy change made.", "blocking": false},
+    {"to": "orchestrator", "question": "The secondary link (destination section, line 168) sits above the primary link (end of 'Prenup after marriage', line 176) in reading order. Labels kept as written to avoid copy changes; swap utm_content values later only if analytics needs strict order.", "blocking": false},
+    {"to": "orchestrator", "question": "Deferred business answers (fee model, named Advisor, real weddings) remain deferred per brand-facts. Re-run cro-specialist once confirmed.", "blocking": false}
+  ],
+  "assumptions": [
+    "FAST MODE: 07-panel.json cta_reactions not re-read; placements follow the brief and the name-change-after-marriage model."
+  ],
+  "verify_items": [],
+  "tools_used": ["Bash (grep, python3 -I)"],
+  "payload": {
+    "journey_stage": "planning",
+    "primary_cta": {
+      "text": "Book a Wedded Concierge consultation",
+      "subtext": "The fee is agreed in writing before any work begins.",
+      "link": "https://weddedwonderland.com/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=prenup&utm_content=primary",
+      "placement": "Existing inline sentence at the end of 'Prenup after marriage: is it too late?' ('The celebration itself is where Wedded Concierge comes in.'), after the legal answer is settled and before the FAQ. Unchanged."
+    },
+    "secondary_cta": {
+      "text": "Begin with Wedded Concierge",
+      "subtext": "One Wedded Advisor plans the celebration abroad; the agreement stays with your lawyers.",
+      "link": "https://weddedwonderland.com/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=prenup&utm_content=secondary",
+      "placement": "Existing final sentence of 'Prenups for destination weddings and international couples', for destination couples. Unchanged."
+    },
+    "lead_magnet": {
+      "name": "Wedded Wonderland magazines and planning guides",
+      "link": "https://weddedwonderland.com/magazine?utm_source=blog&utm_medium=content&utm_campaign=prenup&utm_content=magnet",
+      "placement": "Existing final line of the post, for readers still early in planning. Already tagged; unchanged.",
+      "exists": true
+    },
+    "closing_cta": {
+      "text": "Start the conversation with Wedded Concierge",
+      "link": "https://weddedwonderland.com/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=prenup&utm_content=closing",
+      "placement": "Existing closing paragraph under 'Planning the celebration'. Unchanged."
+    },
+    "tracking": [
+      "https://weddedwonderland.com/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=prenup&utm_content=primary",
+      "https://weddedwonderland.com/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=prenup&utm_content=secondary",
+      "https://weddedwonderland.com/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=prenup&utm_content=closing",
+      "https://weddedwonderland.com/magazine?utm_source=blog&utm_medium=content&utm_campaign=prenup&utm_content=magnet"
+    ],
+    "copy_changes": [],
+    "rationale": "Brief journey_stage is 'planning' and the goal is a Wedded Concierge consultation at /wonderland-concierge, while the agreement and all legal and financial advice stay with each partner's own lawyer. Every CTA sits after the agreement is framed as the lawyers' work, so none implies legal or financial help; the primary subtext answers the fee worry from brand-facts. All four tracked links (primary, secondary, closing, magnet) already appear once each with correct UTMs and every concierge anchor names Wedded Concierge, so no copy change is made. Other internal links stay untagged. A destination wedding planning checklist would be a better-matched magnet; none is known to exist, so it is a backlog suggestion only and not placed."
+  },
+  "next_agent": ["distribution"]
+}
