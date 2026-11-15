@@ -1,0 +1,316 @@
+{
+ "agent": "cms-publisher",
+ "task_id": "prenup",
+ "stage": "11",
+ "status": "complete",
+ "round": 1,
+ "inputs_used": [
+  "CLAUDE.md",
+  "content-system/schemas/11-publish-package.schema.json",
+  "content/posts/prenup/01-brief.json",
+  "content/posts/prenup/02-seo.json",
+  "content/posts/prenup/03-source-pack.json",
+  "content/posts/prenup/04-images.json",
+  "content/posts/prenup/08-final.md",
+  "content/posts/prenup/09-cro.json",
+  "content/posts/prenup/10-distribution.json",
+  "content/posts/name-change-after-marriage/11-body.md, 11-publish-package.json, 12-cms-report.md, booking-checklist.md (format model)"
+ ],
+ "self_qa": {
+  "checks": [
+   {
+    "check": "Front matter and all <!-- fact_xx --> markers removed; H1 is the title; 5 image-slot comments kept; links and UTMs unchanged; no [[VERIFY]] markers in the copy",
+    "pass": true
+   },
+   {
+    "check": "Primary CTA uses the existing sentence and link unchanged (09-cro.json); secondary, closing and magnet marked; each utm_content appears exactly once in visible links",
+    "pass": true
+   },
+   {
+    "check": "Exactly 4 key takeaways and 6 FAQ pairs taken verbatim from the body",
+    "pass": true
+   },
+   {
+    "check": "Meta title and description from 02-seo.json, no \"best\", no prices, no em dashes",
+    "pass": true,
+    "note": "title 51, description 135 characters"
+   },
+   {
+    "check": "primary_category equals categories[0] (Expert Advice)",
+    "pass": true
+   },
+   {
+    "check": "No em dashes; Australian English",
+    "pass": true
+   },
+   {
+    "check": "status draft; nothing uploaded, saved or published",
+    "pass": true
+   }
+  ],
+  "confidence": 0.9
+ },
+ "open_questions": [
+  {
+   "to": "orchestrator",
+   "question": "CMS upload not attempted: FAST MODE package only, no browser in this session. A human saves as Draft and clicks Publish, or run /wedded-blog resume=prenup once the field map is confirmed.",
+   "blocking": true
+  },
+  {
+   "to": "orchestrator",
+   "question": "Legal topic: recommend a family lawyer reviews the draft before publishing.",
+   "blocking": false
+  },
+  {
+   "to": "orchestrator",
+   "question": "No author named in any input; package uses \"Wedded Wonderland\" (organisation). Confirm the byline.",
+   "blocking": false
+  }
+ ],
+ "assumptions": [
+  "Slug 'prenup' (user gave 'name-prenup'); 'prenup' used to match the URL /expert-advice/prenup in 02-seo.json.",
+  "H1 and Article headline \"Prenup Requirements in Australia and Who Needs One\"; meta title \"Prenup in Australia: Requirements and Who Needs One\" and meta description from 02-seo.json unchanged.",
+  "Excerpt is the first sentence of the opening paragraph.",
+  "Requested type \"Legal\" has no matching value; nearest brief enum value \"planning_guide\" (as in 01-brief.json) used. Cluster \"Wedding Paperwork\" (also the first tag).",
+  "Categories and tags from 01-brief.json; primary category Expert Advice. New article, no redirect.",
+  "JSON-LD is Article + BreadcrumbList + FAQPage; links stripped from FAQ answer text in JSON-LD only.",
+  "verify_items and needs_signoff empty: no [[VERIFY]] markers and no prices in the copy."
+ ],
+ "verify_items": [],
+ "tools_used": [
+  "Bash (python3 -I)"
+ ],
+ "next_agent": [
+  "orchestrator"
+ ],
+ "payload": {
+  "title": "Prenup Requirements in Australia and Who Needs One",
+  "slug": "prenup",
+  "url_path": "/expert-advice/prenup",
+  "content_type": "planning_guide",
+  "cluster": "Wedding Paperwork",
+  "categories": [
+   "Expert Advice",
+   "Destination Weddings",
+   "Planning Guides"
+  ],
+  "primary_category": "Expert Advice",
+  "tags": [
+   "Wedding Paperwork",
+   "Prenup",
+   "Binding Financial Agreement",
+   "Legal Requirements",
+   "Getting Married in Australia",
+   "Marrying Overseas"
+  ],
+  "excerpt": "In Australia, a prenup is a binding financial agreement, a contract made under Part VIIIA of the Family Law Act 1975 for married couples.",
+  "key_takeaways": [
+   "Legal Aid NSW says an agreement can protect an inheritance a partner may receive in future, or property for children from a previous relationship.",
+   "Legal Aid NSW says an agreement made overseas is not automatically recognised in Australia and must meet the formal requirements to be valid here.",
+   "The Federal Circuit and Family Court of Australia says the agreement binds only if it meets the Act's technical requirements, including independent legal advice for each partner before signing.",
+   "A court can set an agreement aside in some circumstances, and Legal Aid NSW lists fraud among its grounds."
+  ],
+  "body_markdown_file": "content/posts/prenup/11-body.md",
+  "faq": [
+   {
+    "q": "Are prenups legally binding in Australia?",
+    "a": "Yes, if the agreement meets the technical requirements of section 90G of the Family Law Act, according to the Federal Circuit and Family Court of Australia. Once made it is legally enforceable, and Legal Aid NSW says a court can set it aside only in limited circumstances."
+   },
+   {
+    "q": "What is a prenup called in Australia?",
+    "a": "A binding financial agreement, or financial agreement, made under Part VIIIA of the Family Law Act 1975 for married couples."
+   },
+   {
+    "q": "How long does a prenup last in Australia?",
+    "a": "Until it is ended or set aside. Victoria Legal Aid says that to change or end an agreement, both parties must get legal advice again and sign a new written agreement, called a termination agreement. Legal Aid NSW says it can be changed or ended by a new agreement with a terminating clause, a termination agreement, or abandonment."
+   },
+   {
+    "q": "Can you do your own prenup without a lawyer?",
+    "a": "No. The Federal Circuit and Family Court of Australia says you cannot enter into a financial agreement without each first getting independent legal advice from an Australian lawyer."
+   },
+   {
+    "q": "What happens to a prenup if one partner dies?",
+    "a": "Legal Aid NSW says the agreement stays in force even if one party dies, unless it specifically says otherwise."
+   },
+   {
+    "q": "Can we sign a prenup after the wedding?",
+    "a": "Yes. An agreement can be made during the marriage or after it."
+   }
+  ],
+  "images": [
+   {
+    "slot_id": "featured",
+    "file": "content/posts/prenup/images/prenup-pens-rings-closed-folder-hero.webp",
+    "role": "featured",
+    "status": "needed"
+   },
+   {
+    "slot_id": "couple-conversation",
+    "file": "content/posts/prenup/images/prenup-couple-conversation-terrace.webp",
+    "role": "inline",
+    "status": "needed"
+   },
+   {
+    "slot_id": "documents-still-life",
+    "file": "content/posts/prenup/images/prenup-planning-documents-flatlay.webp",
+    "role": "inline",
+    "status": "needed"
+   },
+   {
+    "slot_id": "home-office-still-life",
+    "file": "content/posts/prenup/images/prenup-calm-home-office-desk.webp",
+    "role": "inline",
+    "status": "needed"
+   },
+   {
+    "slot_id": "destination-celebration",
+    "file": "content/posts/prenup/images/prenup-destination-celebration.webp",
+    "role": "inline",
+    "status": "needed"
+   }
+  ],
+  "cta": {
+   "text": "Book a Wedded Concierge consultation",
+   "subtext": "The fee is agreed in writing before any work begins.",
+   "link": "https://weddedwonderland.com/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=prenup&utm_content=primary",
+   "placement": "End of 'Prenup after marriage: is it too late?': the existing sentence's 'Wedded Concierge' link is the primary CTA, unchanged per 09-cro.json (marked <!-- CTA BLOCK: primary --> in 11-body.md). 08-final.md had no <!-- CTA: primary --> marker, so nothing was replaced."
+  },
+  "secondary_cta": {
+   "text": "Begin with Wedded Concierge",
+   "subtext": "One Wedded Advisor plans the celebration abroad; the agreement stays with your lawyers.",
+   "link": "https://weddedwonderland.com/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=prenup&utm_content=secondary",
+   "placement": "Existing link at the end of 'Prenups for destination weddings and international couples' (marked <!-- CTA INLINE: secondary --> in 11-body.md). Unchanged."
+  },
+  "closing_cta": {
+   "text": "Start the conversation with Wedded Concierge",
+   "link": "https://weddedwonderland.com/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=prenup&utm_content=closing",
+   "placement": "Inline link in 'Planning the celebration' (marked <!-- CTA INLINE: closing -->). Unchanged."
+  },
+  "lead_magnet": {
+   "name": "Wedded Wonderland magazines and planning guides",
+   "link": "https://weddedwonderland.com/magazine?utm_source=blog&utm_medium=content&utm_campaign=prenup&utm_content=magnet",
+   "placement": "Final line of the post (marked <!-- LEAD MAGNET -->). Unchanged."
+  },
+  "tracking_links": [
+   "https://weddedwonderland.com/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=prenup&utm_content=primary",
+   "https://weddedwonderland.com/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=prenup&utm_content=secondary",
+   "https://weddedwonderland.com/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=prenup&utm_content=closing",
+   "https://weddedwonderland.com/magazine?utm_source=blog&utm_medium=content&utm_campaign=prenup&utm_content=magnet"
+  ],
+  "seo": {
+   "meta_title": "Prenup in Australia: Requirements and Who Needs One",
+   "meta_description": "What a prenup (binding financial agreement) is in Australia, what makes it binding, who needs one and when to sign before your wedding.",
+   "focus_keyword": "prenup",
+   "canonical": "https://weddedwonderland.com/expert-advice/prenup",
+   "og_image_slot": "featured"
+  },
+  "schema_jsonld": {
+   "@context": "https://schema.org",
+   "@graph": [
+    {
+     "@type": "Article",
+     "@id": "https://weddedwonderland.com/expert-advice/prenup#article",
+     "headline": "Prenup Requirements in Australia and Who Needs One",
+     "description": "What a prenup (binding financial agreement) is in Australia, what makes it binding, who needs one and when to sign before your wedding.",
+     "author": {
+      "@type": "Organization",
+      "name": "Wedded Wonderland",
+      "url": "https://weddedwonderland.com/"
+     },
+     "publisher": {
+      "@type": "Organization",
+      "name": "Wedded Wonderland",
+      "url": "https://weddedwonderland.com/"
+     },
+     "datePublished": "",
+     "mainEntityOfPage": "https://weddedwonderland.com/expert-advice/prenup",
+     "inLanguage": "en-AU"
+    },
+    {
+     "@type": "BreadcrumbList",
+     "itemListElement": [
+      {
+       "@type": "ListItem",
+       "position": 1,
+       "name": "Home",
+       "item": "https://weddedwonderland.com/"
+      },
+      {
+       "@type": "ListItem",
+       "position": 2,
+       "name": "Expert Advice",
+       "item": "https://weddedwonderland.com/expert-advice"
+      },
+      {
+       "@type": "ListItem",
+       "position": 3,
+       "name": "Prenup Requirements in Australia and Who Needs One",
+       "item": "https://weddedwonderland.com/expert-advice/prenup"
+      }
+     ]
+    },
+    {
+     "@type": "FAQPage",
+     "@id": "https://weddedwonderland.com/expert-advice/prenup#faq",
+     "mainEntity": [
+      {
+       "@type": "Question",
+       "name": "Are prenups legally binding in Australia?",
+       "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, if the agreement meets the technical requirements of section 90G of the Family Law Act, according to the Federal Circuit and Family Court of Australia. Once made it is legally enforceable, and Legal Aid NSW says a court can set it aside only in limited circumstances."
+       }
+      },
+      {
+       "@type": "Question",
+       "name": "What is a prenup called in Australia?",
+       "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A binding financial agreement, or financial agreement, made under Part VIIIA of the Family Law Act 1975 for married couples."
+       }
+      },
+      {
+       "@type": "Question",
+       "name": "How long does a prenup last in Australia?",
+       "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Until it is ended or set aside. Victoria Legal Aid says that to change or end an agreement, both parties must get legal advice again and sign a new written agreement, called a termination agreement. Legal Aid NSW says it can be changed or ended by a new agreement with a terminating clause, a termination agreement, or abandonment."
+       }
+      },
+      {
+       "@type": "Question",
+       "name": "Can you do your own prenup without a lawyer?",
+       "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. The Federal Circuit and Family Court of Australia says you cannot enter into a financial agreement without each first getting independent legal advice from an Australian lawyer."
+       }
+      },
+      {
+       "@type": "Question",
+       "name": "What happens to a prenup if one partner dies?",
+       "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Legal Aid NSW says the agreement stays in force even if one party dies, unless it specifically says otherwise."
+       }
+      },
+      {
+       "@type": "Question",
+       "name": "Can we sign a prenup after the wedding?",
+       "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. An agreement can be made during the marriage or after it."
+       }
+      }
+     ]
+    }
+   ]
+  },
+  "author": "Wedded Wonderland",
+  "status": "draft",
+  "verify_items": [],
+  "needs_signoff": [],
+  "redirect": null,
+  "redirects_recommended": [],
+  "draft_note": "DRAFT. Do not publish until checked: no [[VERIFY]] items in the copy; no prices, nothing for Nic to sign off. Image slots needed (5 of 5, none approved): featured, couple-conversation, documents-still-life, home-office-still-life, destination-celebration. couple-conversation and destination-celebration must be real (consented real Wedded Wonderland shoot with written consent covering use beside prenup and financial content; named real venue proven by register row, media kit or EXIF; never AI); featured, documents-still-life and home-office-still-life are still lifes (library, Canva or licensed stock; AI only with user approval, captioned 'Illustrative image'); no readable names, signatures, clause text or document numbers in any image. Legal content: a family lawyer should review the draft before publishing, and the Planner SME should reconfirm the Family Law Act, FCFCOA, Legal Aid NSW, Victoria Legal Aid and Moneysmart pages live (copy is 'as at November 2026'). New article, no redirect. Byline to confirm (package uses Wedded Wonderland). Linked guides to publish first or together if not live: do-you-have-to-register-an-overseas-marriage-at-home and overseas-marriage-certificate. DRAFT ONLY. A human clicks Publish."
+ }
+}
