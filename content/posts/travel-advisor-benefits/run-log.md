@@ -2,3 +2,4 @@
 23:42 04 images done: 5 placeholder slots.
 23:42 01 brief done: harder-or-slower framing, 5 brand-facts benefits quoted, official consumer sources only; room-block brand line excluded (mentions Privileges).
 23:49 03 planner done: 26 facts (ACCC x2, Smartraveller x2, Moneysmart, brand facts x5). ATAS timed out; orchestrator top-up of atas.com.au also timed out (not retried). Copy will not mention ATAS.
+23:55 02 SEO done: exact keyword no volume (career SERP); traveller demand in why use a travel agent (US 320) and benefits of using a travel agent (US 210); no cannibalisation; /travel H1 overlap noted; title kept as given.
