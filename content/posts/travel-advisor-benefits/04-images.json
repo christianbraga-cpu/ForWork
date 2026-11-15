@@ -1,0 +1,201 @@
+{
+ "agent": "visual-curator",
+ "task_id": "travel-advisor-benefits",
+ "stage": "04",
+ "status": "needs_input",
+ "round": 1,
+ "inputs_used": [
+  "CLAUDE.md",
+  "content/posts/travel-advisor-benefits/00-input.json",
+  "01-brief.json, 02-seo.json, 02-research/report.md, 03-source-pack.json (not present at run time)",
+  "content/posts/prenup/04-images.json (format model)",
+  "content-system/images/library-index.csv (header only, no rows)",
+  "content-system/schemas/04-images.schema.json"
+ ],
+ "self_qa": {
+  "checks": [
+   {
+    "check": "Zero reference-only or competitor images in slots",
+    "pass": true,
+    "note": "reference_only empty; no images downloaded."
+   },
+   {
+    "check": "Every approved image has location, licence, alt, caption, fit_reason",
+    "pass": true,
+    "note": "No approved images this run."
+   },
+   {
+    "check": "No AI image depicting a real place, wedding or person",
+    "pass": true,
+    "note": "No AI generated. Only the three still lifes (featured, benefits, questions) may become ai_illustrative, with Wedded Wonderland approval and an 'Illustrative image' label."
+   },
+   {
+    "check": "No airline or hotel branding in shot briefs",
+    "pass": true,
+    "note": "Every brief forbids airline, hotel, cruise, card and travel brand logos and readable personal details."
+   },
+   {
+    "check": "Featured image exists (approved or needed with brief)",
+    "pass": true,
+    "note": "Needed, with brief: passports, itinerary notebook and luggage tags on linen."
+   },
+   {
+    "check": "5 slots",
+    "pass": true,
+    "note": "Hero plus one per main section."
+   }
+  ],
+  "confidence": 0.7
+ },
+ "open_questions": [
+  {
+   "to": "user",
+   "question": "Does Wedded Wonderland approve AI still lifes (featured passports/notebook/tags, packed weekender, questions notebook) labelled 'Illustrative image' if no library, Canva or licensed asset is found?",
+   "blocking": false
+  },
+  {
+   "to": "user",
+   "question": "Do you hold a consented real-shoot photo of an advisor with a couple (hands or faces) licensed for web and social?",
+   "blocking": false
+  },
+  {
+   "to": "planner-sme",
+   "question": "Which destination or partner venue should the honeymoon slot feature, so it can be tied to a named place and a press contact?",
+   "blocking": false
+  }
+ ],
+ "assumptions": [
+  "Placement uses the four main sections in the order given by the orchestrator (what an advisor does, the benefits, questions to ask, honeymoons and destination weddings); 02-seo.json is not yet written, so the writer confirms after_h2 positions.",
+  "No venue is named because 03-source-pack does not exist; nothing was guessed.",
+  "Fast mode: repo register only, no Drive, own-site, Canva, Gmail or Lens checks run.",
+  "Alt text is drafted for planned images and must be rechecked against the final image."
+ ],
+ "verify_items": [
+  "[[IMAGE NEEDED]] featured: passports, itinerary notebook and luggage tags on linen still life; library, Canva or stock; AI only with Wedded Wonderland approval, labelled 'Illustrative image'",
+  "[[IMAGE NEEDED]] advisor-planning: consented real shoot or released stock, never AI",
+  "[[IMAGE NEEDED]] benefits-still-life: AI only with Wedded Wonderland approval, labelled 'Illustrative image'",
+  "[[IMAGE NEEDED]] questions-notebook: AI only with Wedded Wonderland approval, labelled 'Illustrative image'",
+  "[[IMAGE NEEDED]] honeymoon-destination: licensed image at a named destination venue, never AI",
+  "[[VERIFY licence]] every library, stock, Canva, own-site or venue image: licence, credit line and expiry recorded in library-index.csv before use",
+  "[[VERIFY: no airline, hotel or travel brand logos and no readable passport, booking or personal details in any final image]]"
+ ],
+ "tools_used": [
+  "Bash (cat/python)"
+ ],
+ "next_agent": [
+  "luxury-writer"
+ ],
+ "payload": {
+  "slots": [
+   {
+    "slot_id": "featured",
+    "placement": "featured",
+    "purpose": "Hero and social share image: the calm, organised feeling of a trip handled by an expert before it begins.",
+    "shot_brief": "Landscape 3:2 with negative space on one side for a title. Overhead or 45 degree still life on natural linen: two passports (covers plain or turned face down), a closed leather itinerary notebook, a fountain pen, two blank kraft or leather luggage tags with plain string, a sprig of olive or soft florals. Soft morning window light, warm neutral palette, no people. No airline, hotel, cruise, card or travel brand logos or branding visible anywhere (luggage, tags, documents, screens, linen). No readable names, passport numbers, booking references, barcodes or personal details. Source: library register, Canva brand asset or licensed stock. AI only if Wedded Wonderland approves, and then labelled 'Illustrative image'. Never competitor images.",
+    "status": "needed",
+    "file": "content/posts/travel-advisor-benefits/images/travel-advisor-benefits-passports-itinerary-linen-hero.webp",
+    "source": {
+     "type": "library",
+     "origin": "not yet sourced",
+     "credit": "[[VERIFY licence]]"
+    },
+    "location": {
+     "venue": "none (studio still life)",
+     "town": "not applicable",
+     "verified_by": "not applicable: no real place depicted"
+    },
+    "licence_note": "[[IMAGE NEEDED]] Library register has no rows. Still life may be AI only with Wedded Wonderland approval, labelled 'Illustrative image'.",
+    "alt": "Two passports, a leather itinerary notebook and blank luggage tags arranged on soft linen in morning light"
+   },
+   {
+    "slot_id": "advisor-planning",
+    "placement": "after_h2:1 (what a travel advisor does; writer confirms position)",
+    "purpose": "Show the advisor's role: listening, shaping and organising the trip with the couple.",
+    "shot_brief": "Landscape 3:2. Close crop of hands at a timber table: an advisor's hand pointing to a printed, unbranded itinerary or a blank paper map while a couple's hands rest nearby (rings visible is fine), coffee cups, diffused daylight, faces optional or out of frame. Only from a consented real Wedded Wonderland shoot or licensed stock with model releases. No readable text, screens or logos. No airline, hotel, cruise, card or travel brand logos or branding visible anywhere (luggage, tags, documents, screens, linen). No readable names, passport numbers, booking references, barcodes or personal details. Never AI (real people, places or weddings). Never competitor or search-result images.",
+    "status": "needed",
+    "file": "content/posts/travel-advisor-benefits/images/travel-advisor-benefits-advisor-couple-itinerary-hands.webp",
+    "source": {
+     "type": "library",
+     "origin": "not yet sourced",
+     "credit": "[[VERIFY licence]]"
+    },
+    "location": {
+     "venue": "a real shoot location or stock (to be confirmed)",
+     "town": "to be confirmed",
+     "verified_by": "pending: register row or stock licence"
+    },
+    "licence_note": "[[IMAGE NEEDED]] Model releases or written couple consent and licence required. Never AI.",
+    "alt": "A travel advisor's hand pointing to a printed itinerary as a couple looks on across a timber table",
+    "consent": {
+     "people": "required: model releases or written consent covering web and social use",
+     "status": "not yet obtained"
+    }
+   },
+   {
+    "slot_id": "benefits-still-life",
+    "placement": "after_h2:2 (the benefits; writer confirms position)",
+    "purpose": "Signal the value of having one person who handles the detail: order, care and peace of mind.",
+    "shot_brief": "Landscape 3:2 or 4:5. Still life on a cream or stone surface: a neatly packed open leather weekender with folded linen clothing, a closed travel wallet, a plain brass key, a small envelope sealed with wax, sunglasses, soft late-afternoon light, no people. No airline, hotel, cruise, card or travel brand logos or branding visible anywhere (luggage, tags, documents, screens, linen). No readable names, passport numbers, booking references, barcodes or personal details. Source: library register, Canva brand asset or licensed stock. AI only if Wedded Wonderland approves, and then labelled 'Illustrative image'. Never competitor images.",
+    "status": "needed",
+    "file": "content/posts/travel-advisor-benefits/images/travel-advisor-benefits-packed-weekender-travel-wallet.webp",
+    "source": {
+     "type": "canva",
+     "origin": "not yet sourced",
+     "credit": "[[VERIFY licence]]"
+    },
+    "location": {
+     "venue": "none (studio still life)",
+     "town": "not applicable",
+     "verified_by": "not applicable: no real place depicted"
+    },
+    "licence_note": "[[IMAGE NEEDED]] Still life may be AI only with Wedded Wonderland approval, labelled 'Illustrative image'.",
+    "alt": "An open leather weekender with folded linen, a travel wallet and sunglasses on a cream stone surface"
+   },
+   {
+    "slot_id": "questions-notebook",
+    "placement": "after_h2:3 (questions to ask a travel advisor; writer confirms position)",
+    "purpose": "Visual cue for the checklist section: preparing your questions before the first call.",
+    "shot_brief": "Landscape 3:2. Close up of an open linen-bound notebook with handwritten lines that are soft-focus and unreadable, a pen resting across it, a ceramic cup of tea and a closed laptop edge (no screen content), diffused daylight on a timber desk, no people or hands only. No airline, hotel, cruise, card or travel brand logos or branding visible anywhere (luggage, tags, documents, screens, linen). No readable names, passport numbers, booking references, barcodes or personal details. Source: library register, Canva brand asset or licensed stock. AI only if Wedded Wonderland approves, and then labelled 'Illustrative image'. Never competitor images.",
+    "status": "needed",
+    "file": "content/posts/travel-advisor-benefits/images/travel-advisor-benefits-questions-notebook-desk.webp",
+    "source": {
+     "type": "stock",
+     "origin": "not yet sourced",
+     "credit": "[[VERIFY licence]]"
+    },
+    "location": {
+     "venue": "none (studio still life)",
+     "town": "not applicable",
+     "verified_by": "not applicable: no real place depicted"
+    },
+    "licence_note": "[[IMAGE NEEDED]] Still life may be AI only with Wedded Wonderland approval, labelled 'Illustrative image'.",
+    "alt": "An open notebook with a pen and a cup of tea on a timber desk, ready for planning questions"
+   },
+   {
+    "slot_id": "honeymoon-destination",
+    "placement": "after_h2:4 (honeymoons and destination weddings; writer confirms position)",
+    "purpose": "Close on the payoff: the honeymoon or destination wedding the advisor made effortless.",
+    "shot_brief": "Landscape 3:2. A real, named Wedded Wonderland destination or partner venue: a sea-view terrace, villa garden or private pool deck set for two at golden hour; no people, or a licensed real couple with written consent. No hotel or resort logos, signage or branded items visible. Location proven by register row, media kit or EXIF, never by appearance. Source: library, own-site image with licence verified, or venue press kit with written permission. Never AI (real people, places or weddings). Never competitor or search-result images.",
+    "status": "needed",
+    "file": "content/posts/travel-advisor-benefits/images/travel-advisor-benefits-honeymoon-terrace-golden-hour.webp",
+    "source": {
+     "type": "venue_press",
+     "origin": "not yet sourced",
+     "credit": "[[VERIFY licence]]"
+    },
+    "location": {
+     "venue": "a named destination venue (to be confirmed)",
+     "town": "to be confirmed",
+     "verified_by": "pending: register row, media kit or EXIF"
+    },
+    "licence_note": "[[IMAGE NEEDED]] Move to pending_permission once a permission draft exists. Never AI.",
+    "alt": "A sea-view terrace set for two at golden hour at a destination wedding venue"
+   }
+  ],
+  "reference_only": [],
+  "permission_requests": [],
+  "drive_findings": [
+   "Not searched: fast mode, repo library register only per orchestrator instruction. library-index.csv has a header and no rows."
+  ]
+ }
+}
