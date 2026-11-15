@@ -1,0 +1,404 @@
+{
+  "agent": "planner-sme",
+  "task_id": "travel-advisor-benefits",
+  "stage": "03",
+  "status": "complete",
+  "round": 1,
+  "inputs_used": [
+    "content/posts/travel-advisor-benefits/00-input.json (no 01-brief.json or 02-seo.json; must_include derived from orchestrator task)",
+    "content-system/brand/brand-facts.md",
+    "content/posts/prenup/03-source-pack.json (format template)",
+    "apify--web-search, one parallel round, 15 November 2026: accc.gov.au (200), smartraveller.gov.au (200), moneysmart.gov.au (200), atas.com.au (504 timeout, not retried)",
+    "apify--web-fetch, one parallel round, 15 November 2026, no retries: ACCC travel-delays-and-cancellations (200), Smartraveller travel-insurance (200, served at /travel-essentials/travel-insurance), Smartraveller buying guide 'What are you covered for?' (200), Moneysmart sending-money-overseas (200), atas.com.au homepage (timed out after 60s)"
+  ],
+  "self_qa": {
+    "checks": [
+      {
+        "check": "Every fact has a source and date",
+        "pass": true
+      },
+      {
+        "check": "No price without a source; all prices in needs_signoff",
+        "pass": true,
+        "note": "No prices or amounts recorded."
+      },
+      {
+        "check": "Every must-include covered or [[VERIFY]]",
+        "pass": true,
+        "note": "ATAS and Moneysmart card fees are [[VERIFY]]."
+      },
+      {
+        "check": "No invented quotes, statistics or real weddings",
+        "pass": true
+      }
+    ],
+    "confidence": 0.7
+  },
+  "open_questions": [
+    {
+      "to": "luxury-writer",
+      "question": "Consumer law points are general information 'as at November 2026', credited to the ACCC, Smartraveller and Moneysmart, with the line that the Wedded Advisor confirms current requirements and that this is not legal or financial advice. Do not imply consumer guarantees are stronger when booking through an advisor: the ACCC says the rights apply however you book, and that agents may only need to pass on the primary provider's remedy (fact_02, fact_05).",
+      "blocking": false
+    },
+    {
+      "to": "luxury-writer",
+      "question": "Brand benefits (fact_22 to fact_26) are the only advisor benefits the article may state as fact. No perks, upgrades, better prices, Wedded Privileges content or 'no marked-up price' claim (brand-facts step 4 exists but the orchestrator excluded price claims). No ATAS claims until a source is read.",
+      "blocking": false
+    },
+    {
+      "to": "orchestrator",
+      "question": "ATAS (atas.com.au) could not be read: search 504 and homepage fetch timeout on 15 November 2026. A later fetch of the ATAS 'about' or 'criteria' page and its accredited-business search would clear the ATAS verify item. Also confirm with the business whether Wedded Wonderland holds ATAS accreditation before the article mentions it.",
+      "blocking": false
+    },
+    {
+      "to": "orchestrator",
+      "question": "Moneysmart travel money or card fees overseas page was not found in search (only 'Sending money overseas' was read). Fetch the Moneysmart travel money page if the article needs card-fee guidance.",
+      "blocking": false
+    },
+    {
+      "to": "Nic",
+      "question": "Brand-facts lists 'Suppliers are paid at standardised industry rates, so you are never quoted a marked-up price' (how-it-works step 4). It was left out per the no-better-prices rule; confirm whether it may be used.",
+      "blocking": false
+    }
+  ],
+  "assumptions": [
+    "The Smartraveller travel insurance buying guide pages are hosted on smartraveller.gov.au (DFAT) and are recorded as source_type government; the guide is produced in partnership with a consumer organisation, so the writer should credit it as 'Smartraveller's travel insurance buying guide'.",
+    "Insider details are planning advice built on cited facts, not stated rules.",
+    "Brand facts are recorded as repo_notes with exact wording from content-system/brand/brand-facts.md 'Claims we can make'."
+  ],
+  "verify_items": [
+    "[[VERIFY: ATAS accreditation (what it is, criteria such as complaints handling, financial or insurance requirements and code of conduct, and how to check a business is accredited). atas.com.au search timed out and the homepage fetch timed out on 15 November 2026; nothing about ATAS is sourced. Do not state any ATAS criterion, and do not claim Wedded Wonderland is ATAS accredited.]]",
+    "[[VERIFY: Moneysmart general guidance on card fees and paying in foreign currency while overseas (travel money page). Only the 'Sending money overseas' page was read; do not state card-fee guidance as Moneysmart's.]]",
+    "[[VERIFY: Any official statement that booking through a travel advisor gives perks, upgrades, better prices or extra protection compared with booking alone. None found in sources read; leave out.]]"
+  ],
+  "tools_used": [
+    "mcp__Apify__apify--web-search",
+    "mcp__Apify__apify--web-fetch"
+  ],
+  "next_agent": [
+    "luxury-writer"
+  ],
+  "payload": {
+    "facts": [
+      {
+        "fact_id": "fact_01",
+        "claim": "ACCC: consumer guarantees give consumer rights if a travel service is delayed or cancelled. They apply to travel services within Australia, travel services provided by international businesses that depart Australia, and travel services to Australia from another country booked through a travel provider's Australian website.",
+        "source": "https://www.accc.gov.au/consumers/specific-products-and-activities/travel-delays-and-cancellations",
+        "source_type": "government",
+        "checked": "2026-11-15",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_02",
+        "claim": "ACCC: these rights apply regardless of whether the consumer books directly with a primary travel service provider (such as an airline, cruise line or tour operator), through a travel agent, or through a third party or intermediary such as a booking platform or travel package provider.",
+        "source": "https://www.accc.gov.au/consumers/specific-products-and-activities/travel-delays-and-cancellations",
+        "source_type": "government",
+        "checked": "2026-11-15",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_03",
+        "claim": "ACCC: if a replacement travel service is not within a reasonable time, the travel service provider must give the consumer their choice of a different replacement service or a refund. There is no one set definition of 'a reasonable time'; the ACCC does not decide what is reasonable, which is the role of a court or tribunal.",
+        "source": "https://www.accc.gov.au/consumers/specific-products-and-activities/travel-delays-and-cancellations",
+        "source_type": "government",
+        "checked": "2026-11-15",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_04",
+        "claim": "ACCC: travel service providers do not have to give replacement services or refunds under the consumer guarantees if the consumer changes their mind or misses the service for reasons unrelated to it, or if the actions of a third party prevent the provider from supplying the service. In these situations the right to a refund or replacement generally depends on the booking's terms and conditions.",
+        "source": "https://www.accc.gov.au/consumers/specific-products-and-activities/travel-delays-and-cancellations",
+        "source_type": "government",
+        "checked": "2026-11-15",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_05",
+        "claim": "ACCC: if a consumer books through a travel agent or another intermediary, they should check the terms and conditions of the intermediary and of any primary travel service provider; both businesses' terms and conditions apply. Agents and intermediaries are usually bound by the primary provider's terms and, legally, may only need to pass on the remedy the primary provider offers.",
+        "source": "https://www.accc.gov.au/consumers/specific-products-and-activities/travel-delays-and-cancellations",
+        "source_type": "government",
+        "checked": "2026-11-15",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_06",
+        "claim": "ACCC tips when booking travel: check the terms and conditions of the travel service, and of your agent or intermediary if booking through one, before booking. Understand what you are entitled to if the provider delays or cancels, if you cancel or miss the service, and if the booking cannot proceed for reasons outside both parties' control ('force majeure'). If terms are unclear or cannot be found, contact the provider and ask them to confirm in writing; different terms may apply to different travel periods.",
+        "source": "https://www.accc.gov.au/consumers/specific-products-and-activities/travel-delays-and-cancellations",
+        "source_type": "government",
+        "checked": "2026-11-15",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_07",
+        "claim": "ACCC: if arriving on time is critical, consider a fare class with better options if there is a delay or cancellation, and allow extra time to reach the airport and between flight connections.",
+        "source": "https://www.accc.gov.au/consumers/specific-products-and-activities/travel-delays-and-cancellations",
+        "source_type": "government",
+        "checked": "2026-11-15",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_08",
+        "claim": "ACCC: the ACCC does not provide legal advice and does not resolve individual complaints about delayed or cancelled travel services. If a provider does not resolve a problem, the first step is to contact the provider to explain it, then take it further.",
+        "source": "https://www.accc.gov.au/consumers/specific-products-and-activities/travel-delays-and-cancellations",
+        "source_type": "government",
+        "checked": "2026-11-15",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_09",
+        "claim": "Smartraveller (page last updated 18/08/2026): the right travel insurance is as essential as a passport for travel overseas; get insurance regardless of who you are, where you are going and what you are doing. The Australian Government cannot pay your bills and expects all Australians travelling overseas to take out appropriate insurance.",
+        "source": "https://www.smartraveller.gov.au/travel-essentials/travel-insurance",
+        "source_type": "government",
+        "checked": "2026-11-15",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_10",
+        "claim": "Smartraveller: always read the Product Disclosure Statement (PDS) before buying a policy. It sets out what you are covered for (inclusions), what you are not covered for (exclusions), word definitions, how the claims process works and what emergency support is provided.",
+        "source": "https://www.smartraveller.gov.au/travel-essentials/travel-insurance",
+        "source_type": "government",
+        "checked": "2026-11-15",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_11",
+        "claim": "Smartraveller: choose a policy that covers every country you are travelling to, including stopovers and transit points, and check whether the policy covers cancellations if a destination's advice level goes up after you have booked.",
+        "source": "https://www.smartraveller.gov.au/travel-essentials/travel-insurance",
+        "source_type": "government",
+        "checked": "2026-11-15",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_12",
+        "claim": "Smartraveller: always declare everything upfront when you buy a policy, or you may void it; you must tell your insurer about all pre-existing health conditions.",
+        "source": "https://www.smartraveller.gov.au/travel-essentials/travel-insurance",
+        "source_type": "government",
+        "checked": "2026-11-15",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_13",
+        "claim": "Smartraveller: free credit card travel insurance often covers fewer situations with lower item limits than comprehensive policies; understand what it covers, how much and how to activate it, and do not assume it is activated.",
+        "source": "https://www.smartraveller.gov.au/travel-essentials/travel-insurance",
+        "source_type": "government",
+        "checked": "2026-11-15",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_14",
+        "claim": "Smartraveller travel insurance buying guide: if a circumstance, risk or event is known before you buy the policy, you will not be covered if it directly affects your travel. The earlier you buy travel insurance, the more likely you are to be covered if something unexpected happens at your destination before your trip.",
+        "source": "https://www.smartraveller.gov.au/choice-travel-insurance-buying-guide/what-are-you-covered",
+        "source_type": "government",
+        "checked": "2026-11-15",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_15",
+        "claim": "Smartraveller travel insurance buying guide: travel agents and third-party booking sites have their own terms and conditions, which are the first port of call to determine eligibility for a refund or credit, but the fine print is still subject to Australian Consumer Law.",
+        "source": "https://www.smartraveller.gov.au/choice-travel-insurance-buying-guide/what-are-you-covered",
+        "source_type": "government",
+        "checked": "2026-11-15",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_16",
+        "claim": "Smartraveller travel insurance buying guide: whether you can get money back from an airline, travel agent or booking site for changed or cancelled plans usually comes down to who makes the change. You are more likely (but not always) eligible for a refund or credit if the provider cancels; if you cancel or change plans it may be deemed 'change of mind'.",
+        "source": "https://www.smartraveller.gov.au/choice-travel-insurance-buying-guide/what-are-you-covered",
+        "source_type": "government",
+        "checked": "2026-11-15",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_17",
+        "claim": "Smartraveller travel insurance buying guide: travel provider or agent insolvency is commonly excluded from cancellation cover, and only a few insurers cover the insolvency of a travel provider. Check with your travel agent whether they have insolvency insurance; it is not compulsory, so only some agents have it.",
+        "source": "https://www.smartraveller.gov.au/choice-travel-insurance-buying-guide/what-are-you-covered",
+        "source_type": "government",
+        "checked": "2026-11-15",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_18",
+        "claim": "Smartraveller travel insurance buying guide: paying by credit card may help, as some banks allow a 'chargeback' (asking the bank to reverse a disputed transaction) if you do not receive what you paid for; do not accept contract terms that require you to give up chargeback rights.",
+        "source": "https://www.smartraveller.gov.au/choice-travel-insurance-buying-guide/what-are-you-covered",
+        "source_type": "government",
+        "checked": "2026-11-15",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_19",
+        "claim": "Moneysmart (last updated 17 September 2026): when sending money overseas, providers choose the exchange rate they use and charge fees; costs depend on how much you send, where you send it and how you send it.",
+        "source": "https://moneysmart.gov.au/banking/sending-money-overseas",
+        "source_type": "government",
+        "checked": "2026-11-15",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_20",
+        "claim": "Moneysmart: compare the exchange rate (and whether the advertised rate is the rate you get), whether the rate is guaranteed, transfer fees and commission including any 'margin' to convert currency, whether the receiver pays fees, payment method and transfer time.",
+        "source": "https://moneysmart.gov.au/banking/sending-money-overseas",
+        "source_type": "government",
+        "checked": "2026-11-15",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_21",
+        "claim": "Moneysmart: in Australia, money transfer services must be registered with AUSTRAC; check a money transfer business is registered before using it. If a transfer goes wrong, contact the bank or business first, then complain to AFCA if they are a member. Money sent to a scammer is almost impossible to get back.",
+        "source": "https://moneysmart.gov.au/banking/sending-money-overseas",
+        "source_type": "government",
+        "checked": "2026-11-15",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_22",
+        "claim": "Brand fact (exact wording): 'One Wedded Advisor, start to finish, as a single point of contact.'",
+        "source": "content-system/brand/brand-facts.md",
+        "source_type": "repo_notes",
+        "checked": "2026-11-15",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_23",
+        "claim": "Brand fact (exact wording): 'The fee is agreed in writing before any work begins.'",
+        "source": "content-system/brand/brand-facts.md",
+        "source_type": "repo_notes",
+        "checked": "2026-11-15",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_24",
+        "claim": "Brand fact (exact wording): 'The advisor confirms inclusions in writing before the couple commits.'",
+        "source": "content-system/brand/brand-facts.md",
+        "source_type": "repo_notes",
+        "checked": "2026-11-15",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_25",
+        "claim": "Brand fact (exact wording): 'Advisor works in the couple's time zone and quotes in AUD for Australian couples.'",
+        "source": "content-system/brand/brand-facts.md",
+        "source_type": "repo_notes",
+        "checked": "2026-11-15",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_26",
+        "claim": "Brand fact (exact wording): 'Plans venue, travel, vendors and payments, anywhere in the world (from /wonderland-concierge).'",
+        "source": "content-system/brand/brand-facts.md",
+        "source_type": "repo_notes",
+        "checked": "2026-11-15",
+        "is_price": false
+      }
+    ],
+    "insider_details": [
+      {
+        "detail": "Read two sets of terms, not one. When a wedding trip or honeymoon is booked through an advisor, both the advisor's and each hotel's or airline's terms apply, so ask for the cancellation and change terms of every component in writing before you pay.",
+        "fact_ids": [
+          "fact_05",
+          "fact_06",
+          "fact_24"
+        ]
+      },
+      {
+        "detail": "Buy travel insurance as soon as the trip is booked, not the week you fly. Cover depends on what was known when you bought the policy, and insolvency of a travel provider or agent is commonly excluded, so check the PDS for both.",
+        "fact_ids": [
+          "fact_14",
+          "fact_17",
+          "fact_10"
+        ]
+      },
+      {
+        "detail": "For guests and the couple alike, the policy has to name every country on the route, stopovers and transit included; a European wedding with an Asian stopover needs both covered.",
+        "fact_ids": [
+          "fact_11"
+        ]
+      },
+      {
+        "detail": "Pay deposits by credit card where the supplier allows it, and never sign terms that waive chargeback rights. Ask your advisor whether they carry insolvency insurance, because not all agents do.",
+        "fact_ids": [
+          "fact_17",
+          "fact_18"
+        ]
+      },
+      {
+        "detail": "Overseas supplier payments cost more than the exchange rate you see. Compare the rate actually applied, any margin and the fees on both ends before paying a venue balance offshore, and allow time for the transfer to land.",
+        "fact_ids": [
+          "fact_19",
+          "fact_20"
+        ]
+      },
+      {
+        "detail": "A single advisor who agrees the fee and confirms inclusions in writing, in your time zone and in AUD, is the practical way to get the written confirmations the ACCC recommends asking for.",
+        "fact_ids": [
+          "fact_06",
+          "fact_22",
+          "fact_23",
+          "fact_24",
+          "fact_25"
+        ]
+      }
+    ],
+    "quotes": [],
+    "real_weddings": [],
+    "verify_items": [
+      "[[VERIFY: ATAS accreditation (what it is, criteria such as complaints handling, financial or insurance requirements and code of conduct, and how to check a business is accredited). atas.com.au search timed out and the homepage fetch timed out on 15 November 2026; nothing about ATAS is sourced. Do not state any ATAS criterion, and do not claim Wedded Wonderland is ATAS accredited.]]",
+      "[[VERIFY: Moneysmart general guidance on card fees and paying in foreign currency while overseas (travel money page). Only the 'Sending money overseas' page was read; do not state card-fee guidance as Moneysmart's.]]",
+      "[[VERIFY: Any official statement that booking through a travel advisor gives perks, upgrades, better prices or extra protection compared with booking alone. None found in sources read; leave out.]]"
+    ],
+    "needs_signoff": [],
+    "must_include_coverage": [
+      {
+        "item": "ACCC consumer guarantees for travel services, refunds and cancellations (agent vs direct)",
+        "covered_by": [
+          "fact_01",
+          "fact_02",
+          "fact_03",
+          "fact_04",
+          "fact_05",
+          "fact_06",
+          "fact_07",
+          "fact_08"
+        ]
+      },
+      {
+        "item": "ATAS accreditation: what it is, criteria, how to check",
+        "covered_by": [
+          "[[VERIFY: ATAS accreditation (what it is, criteria such as complaints handling, financial or insurance requirements and code of conduct, and how to check a business is accredited). atas.com.au search timed out and the homepage fetch timed out on 15 November 2026; nothing about ATAS is sourced. Do not state any ATAS criterion, and do not claim Wedded Wonderland is ATAS accredited.]]"
+        ]
+      },
+      {
+        "item": "Smartraveller travel insurance: get it when you book, what to check",
+        "covered_by": [
+          "fact_09",
+          "fact_10",
+          "fact_11",
+          "fact_12",
+          "fact_13",
+          "fact_14",
+          "fact_15",
+          "fact_16",
+          "fact_17",
+          "fact_18"
+        ]
+      },
+      {
+        "item": "Moneysmart travel money / paying in foreign currency / card fees",
+        "covered_by": [
+          "fact_19",
+          "fact_20",
+          "fact_21",
+          "[[VERIFY: Moneysmart general guidance on card fees and paying in foreign currency while overseas (travel money page). Only the 'Sending money overseas' page was read; do not state card-fee guidance as Moneysmart's.]]"
+        ]
+      },
+      {
+        "item": "Brand benefits: single point of contact, written fee, written inclusions, time zone and AUD, plans anywhere",
+        "covered_by": [
+          "fact_22",
+          "fact_23",
+          "fact_24",
+          "fact_25",
+          "fact_26"
+        ]
+      }
+    ]
+  }
+}
