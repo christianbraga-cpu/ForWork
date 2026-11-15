@@ -249,3 +249,4 @@ Hub: `/style-advice/celebrity-engagement-rings` (in production). Spokes:
 | `/expert-advice/marriage-licence-requirements` | Marriage Licence Requirements in Australia | marriage licence, notice of intended marriage, noim | DRAFT (final.md 13 Nov 2026; not yet published) |
 | `/expert-advice/marriage-licence-validity` | Marriage Licence Validity and How Long It Lasts | marriage licence validity | DRAFT (final.md 13 Nov 2026; publish after the requirements pillar) |
 | `/expert-advice/wedding-witnesses` | Wedding Witnesses and How Many You Need | wedding witnesses, marriage witness | DRAFT (final.md 13 Nov 2026; publish after the requirements pillar) |
+| `/travel-guides/travel-advisor-wedding` | Wedding Travel Advisor and Why It Pays to Use One | travel advisor wedding, destination wedding travel agent, why use a travel advisor | DRAFT (final.md 15 Nov 2026) |
