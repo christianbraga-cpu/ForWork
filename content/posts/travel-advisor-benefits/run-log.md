@@ -4,3 +4,4 @@
 23:49 03 planner done: 26 facts (ACCC x2, Smartraveller x2, Moneysmart, brand facts x5). ATAS timed out; orchestrator top-up of atas.com.au also timed out (not retried). Copy will not mention ATAS.
 23:55 02 SEO done: exact keyword no volume (career SERP); traveller demand in why use a travel agent (US 320) and benefits of using a travel agent (US 210); no cannibalisation; /travel H1 overlap noted; title kept as given.
 23:57 05 first draft done: about 2,090 words, scan clean, 0 VERIFY; first-draft docx sent.
+23:59 06 edit 4.43 pass_with_edits, 9 edits applied (unsupported advisor capabilities cut); 07 readers: enquire 1 to 3, title vs body clash flagged by 4.
