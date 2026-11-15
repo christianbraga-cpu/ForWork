@@ -20,6 +20,8 @@ flags any domain that is in neither list for a human decision.
 | Fiji government and missions (added 13 Nov 2026) | foreignaffairs.gov.fj (Fiji Ministry of Foreign Affairs), fijiembassy.jp (Embassy of Fiji in Japan; older page, cross-check) |
 | Indonesia and France, Australian missions (added 13 Nov 2026) | indonesia.embassy.gov.au, france.embassy.gov.au, consadelaide.esteri.it (Italian Consulate in Adelaide) |
 | French and Indonesian government (added 13 Nov 2026) | service-public.gouv.fr (French government official information service, DILA), peraturan.bpk.go.id (Indonesian Audit Board legal database, official texts of Indonesian law) |
+| Australian consumer regulators and travel industry body (added 15 Nov 2026) | accc.gov.au (Australian Competition and Consumer Commission), asic.gov.au, fairtrading.nsw.gov.au, consumer.vic.gov.au, qld.gov.au (Office of Fair Trading), consumeraffairs.nt.gov.au and other state or territory consumer affairs sites; atia.travel and traveltick.com.au (Australian Travel Industry Association and its accredited-business directory; industry body, not government) |
+| Hotel group official terms (added 15 Nov 2026) | Official group or property terms documents on marriott.com, ihg.com / digital.ihg.com, hilton.com, hyatt.com, accor.com, only to explain room block terms; never booking or offer pages |
 | Major publications, for reported facts (added 27 Oct 2026) | vogue.com, vogue.com.au, people.com, harpersbazaar.com, townandcountrymag.com, bbc.com, apnews.com, reuters.com. Cite as "reported by"; prefer two independent sources for any carat or value |
 | Weather and climate | Official meteorological services (e.g. bom.gov.au for comparisons, meteoam.it) |
 
