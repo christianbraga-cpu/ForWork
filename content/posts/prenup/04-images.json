@@ -1,0 +1,196 @@
+{
+ "agent": "visual-curator",
+ "task_id": "prenup",
+ "stage": "04",
+ "status": "needs_input",
+ "round": 1,
+ "inputs_used": [
+  "CLAUDE.md",
+  "content/posts/prenup/00-input.json",
+  "01-brief.json, 02-seo.json, 02-research/report.md, 03-source-pack.json (not present at run time)",
+  "content/posts/name-change-after-marriage/04-images.json (format model)",
+  "content-system/images/library-index.csv (header only, no rows)",
+  "content-system/schemas/04-images.schema.json"
+ ],
+ "self_qa": {
+  "checks": [
+   {
+    "check": "Zero reference-only or competitor images in slots",
+    "pass": true,
+    "note": "reference_only empty; no images downloaded."
+   },
+   {
+    "check": "Every approved image has location, licence, alt, caption, fit_reason",
+    "pass": true,
+    "note": "No approved images this run."
+   },
+   {
+    "check": "No AI image depicting a real place, wedding or person",
+    "pass": true,
+    "note": "No AI generated. Only the three still lifes may become ai_illustrative, with user approval and an 'Illustrative image' label."
+   },
+   {
+    "check": "No readable real legal documents or personal details",
+    "pass": true,
+    "note": "Every brief forbids readable names, signatures, clause text and document numbers."
+   },
+   {
+    "check": "Featured image exists (approved or needed with brief)",
+    "pass": true,
+    "note": "Needed, with brief: two pens and rings on a closed folder."
+   },
+   {
+    "check": "About 5 slots",
+    "pass": true,
+    "note": "5 slots."
+   }
+  ],
+  "confidence": 0.7
+ },
+ "open_questions": [
+  {
+   "to": "user",
+   "question": "Do you approve AI still lifes (featured pens/rings/folder, documents flat lay, home-office desk) labelled 'Illustrative image' if no library, Canva or licensed asset is found?",
+   "blocking": false
+  },
+  {
+   "to": "user",
+   "question": "Do you hold a couple-in-conversation photo from a real shoot with written consent that covers use beside prenup and financial content?",
+   "blocking": false
+  },
+  {
+   "to": "planner-sme",
+   "question": "Which destination venue should the closing slot feature, so it can be tied to a named place and press contact?",
+   "blocking": false
+  }
+ ],
+ "assumptions": [
+  "Placement is by section name because 02-seo.json is not yet written; the writer maps it to after_h2 positions.",
+  "No venue is named because 03-source-pack does not exist; nothing was guessed.",
+  "Fast mode: repo register only, no Drive, own-site, Canva, Gmail or Lens checks run."
+ ],
+ "verify_items": [
+  "[[IMAGE NEEDED]] featured: two pens and rings on a closed folder still life; library, Canva or stock; AI only with user approval, labelled 'Illustrative image'",
+  "[[IMAGE NEEDED]] couple-conversation: consented real shoot, never AI",
+  "[[IMAGE NEEDED]] documents-still-life: no readable text; AI only with user approval, labelled 'Illustrative image'",
+  "[[IMAGE NEEDED]] home-office-still-life: AI only with user approval, labelled 'Illustrative image'",
+  "[[IMAGE NEEDED]] destination-celebration: licensed image at a named destination venue, never AI",
+  "[[VERIFY licence]] every library, stock, Canva, own-site or venue image: licence, credit line and expiry recorded in library-index.csv before use",
+  "[[VERIFY: written couple consent covering use with legal and financial content for the conversation photo]]",
+  "[[VERIFY: no legible legal document, clause text, names, signatures or document numbers in any image]]"
+ ],
+ "tools_used": [
+  "Bash (cat/python)"
+ ],
+ "next_agent": [
+  "luxury-writer"
+ ],
+ "payload": {
+  "slots": [
+   {
+    "slot_id": "featured",
+    "placement": "featured",
+    "purpose": "Hero and social share image: a considered, calm decision about a binding financial agreement before a luxury wedding.",
+    "shot_brief": "Landscape 3:2 with negative space for a title. Still life on linen or marble: two fountain pens and two wedding rings resting on a closed leather or cream folder, soft natural window light, warm neutral palette, no people. No readable names, signatures, clause text, document numbers, letterheads or any personal details; documents closed, blurred or turned away. Source: library register, Canva brand asset or licensed stock. AI only with user approval and labelled 'Illustrative image'. Never competitor images.",
+    "status": "needed",
+    "file": "content/posts/prenup/images/prenup-pens-rings-closed-folder-hero.webp",
+    "source": {
+     "type": "library",
+     "origin": "not yet sourced",
+     "credit": "[[VERIFY licence]]"
+    },
+    "location": {
+     "venue": "none (studio still life)",
+     "town": "not applicable",
+     "verified_by": "not applicable: no real place depicted"
+    },
+    "licence_note": "[[IMAGE NEEDED]] Library register has no rows. Still life may be AI only with user approval, labelled 'Illustrative image'."
+   },
+   {
+    "slot_id": "couple-conversation",
+    "placement": "section: who needs a prenup / talking about it as a couple (writer maps to after_h2)",
+    "purpose": "Normalise the conversation: a prenup as a shared, respectful planning step.",
+    "shot_brief": "Landscape 3:2. A real couple in relaxed conversation at a table or on a terrace, warm afternoon light, candid and unposed, faces optional. Only from a consented real Wedded Wonderland shoot with written consent covering use beside legal or financial content, licensed for web and social. No paperwork visible. Location proven by register row or EXIF. Never AI, never competitor or stock-of-real-wedding images without licence.",
+    "status": "needed",
+    "file": "content/posts/prenup/images/prenup-couple-conversation-terrace.webp",
+    "source": {
+     "type": "library",
+     "origin": "not yet sourced",
+     "credit": "[[VERIFY licence]]"
+    },
+    "location": {
+     "venue": "a named real shoot location (to be confirmed)",
+     "town": "to be confirmed",
+     "verified_by": "pending: register row or EXIF"
+    },
+    "licence_note": "[[IMAGE NEEDED]] Couple consent (including legal-topic context) and licence required. Never AI.",
+    "consent": {
+     "couple": "required, written, covering use with prenup and financial content",
+     "status": "not yet obtained"
+    }
+   },
+   {
+    "slot_id": "documents-still-life",
+    "placement": "section: legal requirements for a binding financial agreement (writer maps to after_h2)",
+    "purpose": "Make the formal requirements (independent advice, signatures) feel orderly, without showing a real document.",
+    "shot_brief": "Landscape 3:2 or 4:5. Overhead flat lay: two closed folders or blank cream paper, a pen, paper clips, reading glasses, a sprig of greenery, soft morning light, brand neutrals. No readable names, signatures, clause text, document numbers, letterheads or any personal details; documents closed, blurred or turned away. No real legal forms or law firm branding. Source: library register, Canva brand asset or licensed stock. AI only with user approval and labelled 'Illustrative image'. Never competitor images.",
+    "status": "needed",
+    "file": "content/posts/prenup/images/prenup-planning-documents-flatlay.webp",
+    "source": {
+     "type": "canva",
+     "origin": "not yet sourced",
+     "credit": "[[VERIFY licence]]"
+    },
+    "location": {
+     "venue": "none (studio still life)",
+     "town": "not applicable",
+     "verified_by": "not applicable: no real place depicted"
+    },
+    "licence_note": "[[IMAGE NEEDED]] Still life may be AI only with user approval, labelled 'Illustrative image'."
+   },
+   {
+    "slot_id": "home-office-still-life",
+    "placement": "section: cost, timing and when to start (writer maps to after_h2)",
+    "purpose": "Signal unhurried planning: start early, months before the wedding.",
+    "shot_brief": "Landscape 3:2. Calm home-office corner: timber desk, closed laptop, ceramic cup, linen notebook (closed), vase of soft florals, diffused daylight, no people, no screens showing content, no brand logos. No readable names, signatures, clause text, document numbers, letterheads or any personal details; documents closed, blurred or turned away. Source: library register, Canva brand asset or licensed stock. AI only with user approval and labelled 'Illustrative image'. Never competitor images.",
+    "status": "needed",
+    "file": "content/posts/prenup/images/prenup-calm-home-office-desk.webp",
+    "source": {
+     "type": "stock",
+     "origin": "not yet sourced",
+     "credit": "[[VERIFY licence]]"
+    },
+    "location": {
+     "venue": "none (studio still life)",
+     "town": "not applicable",
+     "verified_by": "not applicable: no real place depicted"
+    },
+    "licence_note": "[[IMAGE NEEDED]] Still life may be AI only with user approval, labelled 'Illustrative image'."
+   },
+   {
+    "slot_id": "destination-celebration",
+    "placement": "section: closing section or Wedded Concierge CTA (writer maps to after_h2)",
+    "purpose": "Close on the payoff: the destination celebration, the planning done.",
+    "shot_brief": "Landscape 3:2. Celebration or reception set-up at a real, named Wedded Wonderland destination venue (sea-view terrace, villa garden or vineyard) at golden hour; no people, or a licensed real wedding with written couple consent. Location proven by register row, media kit or EXIF, never by appearance. Source: library, own-site image with licence verified, or venue press kit with written permission. Never AI.",
+    "status": "needed",
+    "file": "content/posts/prenup/images/prenup-destination-celebration.webp",
+    "source": {
+     "type": "venue_press",
+     "origin": "not yet sourced",
+     "credit": "[[VERIFY licence]]"
+    },
+    "location": {
+     "venue": "a named destination venue (to be confirmed)",
+     "town": "to be confirmed",
+     "verified_by": "pending: register row, media kit or EXIF"
+    },
+    "licence_note": "[[IMAGE NEEDED]] Move to pending_permission once a permission draft exists. Never AI."
+   }
+  ],
+  "reference_only": [],
+  "permission_requests": [],
+  "drive_findings": [
+   "Not searched: fast mode, repo library register only per orchestrator instruction. library-index.csv has a header and no rows."
+  ]
+ }
+}
