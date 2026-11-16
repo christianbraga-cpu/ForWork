@@ -8,3 +8,4 @@
 00:01 07b panel: revise, weighted enquire 2.0; 4 must-fix (framing, rights repeats, guest scenario as questions, two money questions).
 00:02 08 final copy done: about 2,116 words, scan clean.
 00:03 09 CRO and 10 distribution done.
+00:03 08b final check: 4 blocking fixes applied (guest accommodation/transport capability cut, 'walks you through' to a question, Moneysmart line matched); secondary anchor now 'talk to Wedded Concierge'; scan clean.

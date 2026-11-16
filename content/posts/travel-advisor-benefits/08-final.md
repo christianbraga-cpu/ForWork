@@ -20,7 +20,7 @@ This guide covers what an advisor does, the six things they make easier, what yo
 
 ## What does a travel advisor actually do?
 
-A travel advisor plans and books travel on your behalf. For a honeymoon, that might mean flights, two or three stays and a few private experiences stitched into one itinerary. For a destination wedding, the list grows: the venue's dates, accommodation for you and your guests, transport between them and the suppliers who make the day work.
+A travel advisor plans and books travel on your behalf. For a honeymoon, that might mean flights, two or three stays and a few private experiences stitched into one itinerary. For a destination wedding, the list grows: the venue's dates, travel for you and your guests, and the suppliers who make the day work.
 
 The value is in coordination. Each booking has its own deposit, its own deadline and its own terms. An advisor holds those threads as your single point of contact, so they line up.
 
@@ -42,7 +42,7 @@ If the ceremony moves by a day, you tell one person, not six. The person plannin
 
 ### Quotes in Australian dollars
 
-Overseas suppliers quote in their own currency, and the number you see is rarely the number that leaves your account. Providers choose the exchange rate they use and charge fees, and the cost depends on how much you send, where and how. <!-- fact_19 -->
+Overseas suppliers quote in their own currency, and the number you see may not be the number that leaves your account. Providers choose the exchange rate they use and charge fees, and the cost depends on how much you send, where and how. <!-- fact_19 -->
 
 Ask a good advisor to quote in AUD, so you can compare the venue, the villa and the flights side by side on one plan. It turns a spreadsheet of euros, dollars and rupiah into one figure you can actually plan around.
 
@@ -68,7 +68,7 @@ Planned separately, a deposit can fall due before the dates are firm, or a suppl
 
 ### Both sets of terms, read before you pay
 
-When you book through an agent, both the agent's terms and each provider's terms apply. Agents are usually bound by the provider's terms, so legally they may only need to pass on the remedy the provider offers. <!-- fact_05 --> A good advisor walks you through both sets before you book, and confirms anything unclear in writing. <!-- fact_06 -->
+When you book through an agent, both the agent's terms and each provider's terms apply. Agents are usually bound by the provider's terms, so legally they may only need to pass on the remedy the provider offers. <!-- fact_05 --> Ask any advisor to show you both sets before you book, and to confirm anything unclear in writing. <!-- fact_06 -->
 
 Booking through an advisor does not give you stronger rights, and it does not take any away. The consumer guarantees are the same whether you book direct, through an agent or through a booking platform. <!-- fact_02 --> As at November 2026, the ACCC says those guarantees give you rights if a travel service is delayed or cancelled. <!-- fact_01 --> They cover travel within Australia, travel departing Australia with international businesses, and travel to Australia booked through a provider's Australian website. <!-- fact_01 --> The [ACCC's guidance on travel delays and cancellations](https://www.accc.gov.au/consumers/specific-products-and-activities/travel-delays-and-cancellations) sets this out in full.
 
@@ -107,7 +107,7 @@ These apply to any advisor, whoever you speak with. Ask them early, and ask for 
 8. **Do you belong to an industry accreditation scheme, and what does it require?** Which scheme is it, what does membership ask of them, and who would you go to with a complaint?
 9. **When should we buy travel insurance?** The earlier you buy it, the more likely you are to be covered if something unexpected happens before the trip, and anything known before you buy will not be covered if it directly affects your travel. <!-- fact_14 --> The right policy is as essential as a passport, and the Australian Government cannot pay your bills overseas. <!-- fact_09 --> Read the Product Disclosure Statement, choose a policy that covers every country on the route including stopovers, and declare all pre-existing conditions upfront. <!-- fact_10 --> <!-- fact_11 --> <!-- fact_12 --> If you rely on credit card insurance, confirm what it covers and how to activate it, and do not assume it is already active. <!-- fact_13 --> The [Smartraveller travel insurance guide](https://www.smartraveller.gov.au/travel-essentials/travel-insurance) covers the rest.
 
-If you would like to put these questions to someone who plans weddings abroad, [start a conversation with an advisor](https://weddedwonderland.com/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=travel-advisor-benefits&utm_content=secondary).
+If you would like to put these questions to someone who plans weddings abroad, [talk to Wedded Concierge](https://weddedwonderland.com/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=travel-advisor-benefits&utm_content=secondary).
 
 <!-- IMAGE SLOT questions-notebook: Landscape 3:2. Close up of an open linen-bound notebook with handwritten lines that are soft-focus and unreadable, a pen resting across it, a ceramic cup of tea on a timber desk, soft daylight. No readable text, logos or personal details. Source: library register, Canva brand asset or licensed stock. Never competitor images. -->
 
@@ -127,7 +127,7 @@ With [Wedded Concierge](https://weddedwonderland.com/wonderland-concierge?utm_so
 
 ### What does a travel advisor do?
 
-A travel advisor plans and books travel on your behalf, and coordinates the separate bookings so dates, deposits and terms line up. For a destination wedding, that can extend to the venue, guest accommodation and suppliers.
+A travel advisor plans and books travel on your behalf, and coordinates the separate bookings so dates, deposits and terms line up. For a destination wedding, that can extend to the venue, travel and suppliers.
 
 ### Is a travel advisor worth it for a destination wedding?
 
