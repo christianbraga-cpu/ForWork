@@ -23,3 +23,13 @@
 - **Stage 2 fast (writer, 4 min):** DONE. 03-draft-v1.md. --check: 2,383 reader words (183 over the 2,200 cap; writer estimated 2,000 to 2,100), 0 dashes, 0 placeholders, 2 domains. YAML valid; 23 claims, 16 links (two travel guides conditional).
 - **Stage 3 fast (3 parallel reviews):** accuracy FAIL 3.6 (blocker: no confirm-for-your-own-passport line; major: support "while you are away" implied); SEO changes requested (DRAFT sibling links; 183 over); reader:couple 3/3/3/2 (blocker R-01: steering and pay model unanswered, a user input; fee line x4; brochure steps; four contact routes). User asked 16 Nov for CONCIERGE-PAY, SHORTLIST-SCOPE, MID-TRIP-SUPPORT.
 - **Stage 4 fast (one loop, 3 min):** DONE. 03-draft-v2.md. --check: 1,957 reader words (range 1,600 to 2,200), 0 dashes, 0 placeholders, 2 domains. YAML valid; 23 claims, 16 links. FAQs 6 to 4 (removed repeats).
+- **Stage 6 fast (copy editor):** DONE. final.md, publish-package.json (image plan included), chrome-upload-prompt.md, article.docx. --check: 1,957 reader words, 0 dashes, 0 placeholders, 2 domains, none blocked. YAML and JSON validated by the orchestrator. Link map: added as DRAFT. Run time: about 35 minutes.
+
+## Must fix before publish
+1. **User facts (asked 16 Nov):** CONCIERGE-PAY (how we are paid on honeymoon bookings, any fee), SHORTLIST-SCOPE (partner properties only or any hotel), MID-TRIP-SUPPORT (support during the trip or "enquiry to arrival" only). The reader rated would_enquire 2 and flagged steering as a blocker without them.
+2. **Publish order (SIBLING-LINKS):** publish both /travel-guides articles first, or delete each sentence that links to a sibling that is not live.
+3. **N-008:** whether Wonderland Benefits apply to honeymoon resorts (the travel_benefits CTA is scoped to /travel partner properties).
+4. **Website fixes (marketing):** honeymoon page proof points (10,000+/75+/1,200+) conflict with 800+/54; USD price range; testimonials to verify; "has stayed at these properties" to confirm.
+5. **Links:** click through the 3 external links once.
+6. **Images:** pick files; credit, licence and consent for 6 slots.
+7. **CMS:** author, CMS admin URL, tag check.
