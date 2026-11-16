@@ -8,3 +8,4 @@
 23:12 05 first draft done: about 2,530 words, 0 VERIFY, scan clean; first-draft docx sent.
 23:14 06 edit 4.29 pass_with_edits, 6 edits applied (CNI wording, island-comparison claim cut, unsourced 'couples usually' lines cut); 07 readers enquire 1 to 2.
 23:16 07b panel: revise, weighted enquire 1.7; must-fix: licence steps before ESTA, guest ESTA line, proof-of-age wording, guest questions.
+23:18 08 final copy done: 2,982 words, 0 VERIFY, scan clean.
