@@ -5,3 +5,4 @@
 23:55 02 SEO done: exact keyword no volume (career SERP); traveller demand in why use a travel agent (US 320) and benefits of using a travel agent (US 210); no cannibalisation; /travel H1 overlap noted; title kept as given.
 23:57 05 first draft done: about 2,090 words, scan clean, 0 VERIFY; first-draft docx sent.
 23:59 06 edit 4.43 pass_with_edits, 9 edits applied (unsupported advisor capabilities cut); 07 readers: enquire 1 to 3, title vs body clash flagged by 4.
+00:01 07b panel: revise, weighted enquire 2.0; 4 must-fix (framing, rights repeats, guest scenario as questions, two money questions).
