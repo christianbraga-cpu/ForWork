@@ -9,3 +9,4 @@
 05:02 08 final copy done: about 2,090 words, no figures, scan clean.
 05:03 09 CRO and 10 distribution done.
 05:03 08b final check: 5 blocking fixes applied (intro research talk, planner capabilities as fact, a nights figure, 'often begin'); scan clean except URL-slug and exclusive-use hits.
+05:05 11 package, checklist, docx, link map, calendar row 62, run report done.

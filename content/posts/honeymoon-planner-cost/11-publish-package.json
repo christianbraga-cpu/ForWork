@@ -1,0 +1,306 @@
+{
+ "agent": "cms-publisher",
+ "task_id": "honeymoon-planner-cost",
+ "stage": "11",
+ "status": "complete",
+ "round": 1,
+ "inputs_used": [
+  "CLAUDE.md",
+  "content-system/schemas/11-publish-package.schema.json",
+  "content/posts/honeymoon-planner-cost/01-brief.json",
+  "content/posts/honeymoon-planner-cost/02-seo.json",
+  "content/posts/honeymoon-planner-cost/04-images.json",
+  "content/posts/honeymoon-planner-cost/08-final.md",
+  "content/posts/honeymoon-planner-cost/09-cro.json",
+  "content/posts/honeymoon-planner-cost/10-distribution.json",
+  "content/posts/honeymoon-planning-service/11-body.md, 11-publish-package.json, 12-cms-report.md, booking-checklist.md (format model)"
+ ],
+ "self_qa": {
+  "checks": [
+   {
+    "check": "Front matter and all <!-- fact_xx --> markers removed; H1 is the title; 5 image-slot comments kept; links and the 4 UTM links unchanged; no CTA marker comments; no [[VERIFY]] markers in the copy",
+    "pass": true
+   },
+   {
+    "check": "Each utm_content (primary, secondary, closing, magnet) appears exactly once in 11-body.md",
+    "pass": true
+   },
+   {
+    "check": "Exactly 4 key takeaways and 5 FAQ pairs taken verbatim from the body",
+    "pass": true
+   },
+   {
+    "check": "Meta title and description from 02-seo.json, no prices, no em dashes",
+    "pass": true,
+    "note": "title 43, description 151 characters"
+   },
+   {
+    "check": "primary_category equals categories[0] (Honeymoon Ideas)",
+    "pass": true
+   },
+   {
+    "check": "No em dashes; Australian English",
+    "pass": true
+   },
+   {
+    "check": "status draft; nothing uploaded, saved or published",
+    "pass": true
+   }
+  ],
+  "confidence": 0.9
+ },
+ "open_questions": [
+  {
+   "to": "orchestrator",
+   "question": "CMS upload not attempted: FAST MODE package only, no browser (no Chrome) in this session and the field map is not confirmed. A human saves as Draft and clicks Publish, or run /wedded-blog resume=honeymoon-planner-cost once the field map is confirmed.",
+   "blocking": true
+  },
+  {
+   "to": "orchestrator",
+   "question": "The /honeymoon-ideas folder and the Honeymoon Ideas category must exist in the CMS before the draft is saved.",
+   "blocking": true
+  },
+  {
+   "to": "orchestrator",
+   "question": "Body links to /honeymoon-ideas/honeymoon-planning-service and /travel-guides/travel-advisor-benefits, which are drafts: publish them together with this post or remove those links before publishing.",
+   "blocking": true
+  }
+ ],
+ "assumptions": [
+  "H1 and Article headline \"Honeymoon Planner Cost and What the Fee Covers\"; meta title and description from 02-seo.json unchanged.",
+  "Excerpt is the first two sentences of the opening paragraph (the third sentence reads as a continuation).",
+  "Categories and tags from 01-brief.json; primary category Honeymoon Ideas. New article, no redirect.",
+  "JSON-LD is Article + BreadcrumbList (Home > Honeymoon Ideas > post) + FAQPage (5 pairs from the body FAQ).",
+  "Byline Wedded Wonderland (organisation), as instructed.",
+  "verify_items and needs_signoff empty: no [[VERIFY]] markers and no prices in the copy."
+ ],
+ "verify_items": [],
+ "tools_used": [
+  "Bash (python3 -I)"
+ ],
+ "next_agent": [
+  "orchestrator"
+ ],
+ "payload": {
+  "title": "Honeymoon Planner Cost and What the Fee Covers",
+  "slug": "honeymoon-planner-cost",
+  "url_path": "/honeymoon-ideas/honeymoon-planner-cost",
+  "content_type": "cost_guide",
+  "categories": [
+   "Honeymoon Ideas",
+   "Destination Weddings",
+   "Planning Guides"
+  ],
+  "primary_category": "Honeymoon Ideas",
+  "tags": [
+   "Honeymoon Planning Service",
+   "Honeymoon Planner Cost",
+   "Honeymoon Budget",
+   "Wedded Concierge",
+   "Wedded Advisor"
+  ],
+  "excerpt": "The honeymoon planner cost you pay depends on two things: how that planner charges, and the trip you ask them to build. Each planner sets their own fee, and the figure that matters is the one they put in writing.",
+  "key_takeaways": [
+   "The planner's fee and the cost of the trip itself are two separate things, so ask about each on its own terms.",
+   "Ask any planner whether they charge a flat fee, a percentage of the trip, supplier commissions or a mix, and get the answer in writing.",
+   "Season, length, distance, style of stay, exclusive use, privacy, private or shared experiences and the number of stops shape what the trip costs.",
+   "Before you pay anything, have the scope, inclusions, payment dates and cancellation terms set out in writing."
+  ],
+  "body_markdown_file": "content/posts/honeymoon-planner-cost/11-body.md",
+  "faq": [
+   {
+    "q": "How much does a honeymoon planner cost?",
+    "a": "There is no single price, because planners charge in different ways and the trip shapes the work. Compare what each fee covers. Ask each planner whether it is a flat fee, a percentage of the trip, supplier commissions or a mix, and when it is payable, and get all of it in writing before any work begins."
+   },
+   {
+    "q": "Do travel agents charge fees?",
+    "a": "Ask the agent directly. Ask whether there is a planning or booking fee, whether they receive commissions from suppliers, whether any fee is refundable and what happens to it if your plans change. Then ask for the answers in writing."
+   },
+   {
+    "q": "Is the planner's fee part of the honeymoon cost?",
+    "a": "It is part of what you spend on the honeymoon, but it is a separate cost from the trip. Ask for the planner's fee and the cost of flights, stays and experiences to be shown separately, so you can see each one clearly."
+   },
+   {
+    "q": "What should a planner's fee include?",
+    "a": "The scope of the planning, what will be booked for you, the inclusions in each booking, payment dates, change and cancellation terms, and who to contact while you travel. If any of these is missing from what the planner sends you, ask for it in writing."
+   },
+   {
+    "q": "Will the quote be in Australian dollars?",
+    "a": "Ask before you compare. A quote in Australian dollars is simpler to set beside another. If a supplier is paid in another currency, ask what exchange rate applies, whether it is guaranteed and what fees or margins sit on top."
+   }
+  ],
+  "images": [
+   {
+    "slot_id": "featured",
+    "file": "content/posts/honeymoon-planner-cost/images/honeymoon-planner-cost-passports-itinerary-notebook-linen-hero.webp",
+    "role": "featured",
+    "alt": "Two passports and a leather notebook with a handwritten itinerary on soft linen in morning light",
+    "status": "needed"
+   },
+   {
+    "slot_id": "what-you-pay-for",
+    "file": "content/posts/honeymoon-planner-cost/images/honeymoon-planner-cost-advisor-couple-itinerary-hands.webp",
+    "role": "inline",
+    "alt": "An advisor's hand rests on a printed honeymoon itinerary as a couple looks on across a timber table",
+    "status": "needed"
+   },
+   {
+    "slot_id": "what-shapes-cost",
+    "file": "content/posts/honeymoon-planner-cost/images/honeymoon-planner-cost-multi-stop-journey-map-postcards-desk.webp",
+    "role": "inline",
+    "alt": "Blank postcards linked by linen thread across an unmarked paper map, suggesting a honeymoon with several stops",
+    "status": "needed"
+   },
+   {
+    "slot_id": "fee-should-cover",
+    "file": "content/posts/honeymoon-planner-cost/images/honeymoon-planner-cost-written-agreement-pen-desk.webp",
+    "role": "inline",
+    "alt": "A cream letter page with a fountain pen resting beside it on a timber desk, ready to be signed",
+    "status": "needed"
+   },
+   {
+    "slot_id": "protecting-what-you-pay",
+    "file": "content/posts/honeymoon-planner-cost/images/honeymoon-planner-cost-travel-document-wallet-envelopes-linen.webp",
+    "role": "inline",
+    "alt": "A leather travel wallet holding two passports beside ribbon-tied envelopes on linen in soft light",
+    "status": "needed"
+   }
+  ],
+  "cta": {
+   "text": "Request a Wedded Concierge consultation",
+   "subtext": "The fee is agreed in writing before any work begins.",
+   "link": "https://weddedwonderland.com/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=honeymoon-planner-cost&utm_content=primary",
+   "placement": "Existing inline link in the opening sentence of 'How the fee is agreed with Wedded Wonderland' (line 126, anchor 'Wedded Concierge'), where the post states honeymoon planning follows the same Wedded Advisor process. Unchanged; position flagged."
+  },
+  "secondary_cta": {
+   "text": "Enquire about Wedded Concierge",
+   "subtext": "Your Wedded Advisor confirms the inclusions in writing before you commit.",
+   "link": "https://weddedwonderland.com/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=honeymoon-planner-cost&utm_content=secondary",
+   "placement": "Existing final sentence of 'How the fee is agreed with Wedded Wonderland' (line 139), right after the fee and inclusions are confirmed as settled in writing. Unchanged."
+  },
+  "closing_cta": {
+   "text": "Begin with Wedded Concierge",
+   "subtext": "One named Wedded Advisor plans the honeymoon with you.",
+   "link": "https://weddedwonderland.com/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=honeymoon-planner-cost&utm_content=closing",
+   "placement": "Existing closing paragraph under 'Start with a conversation' (line 165), after the fee-in-writing and inclusions-on-paper line. Unchanged."
+  },
+  "lead_magnet": {
+   "name": "Wedded Wonderland digital magazines",
+   "link": "https://weddedwonderland.com/magazine?utm_source=blog&utm_medium=content&utm_campaign=honeymoon-planner-cost&utm_content=magnet",
+   "placement": "Existing final line of 'Start with a conversation' (line 165), for readers still comparing or yet to choose a destination. Unchanged."
+  },
+  "tracking_links": [
+   "https://weddedwonderland.com/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=honeymoon-planner-cost&utm_content=primary",
+   "https://weddedwonderland.com/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=honeymoon-planner-cost&utm_content=secondary",
+   "https://weddedwonderland.com/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=honeymoon-planner-cost&utm_content=closing",
+   "https://weddedwonderland.com/magazine?utm_source=blog&utm_medium=content&utm_campaign=honeymoon-planner-cost&utm_content=magnet"
+  ],
+  "seo": {
+   "meta_title": "Honeymoon Planner Cost: What the Fee Covers",
+   "meta_description": "What shapes a honeymoon planner's fee, what it should cover, how it differs from the trip itself and the questions to ask before you agree to anything.",
+   "focus_keyword": "honeymoon planner cost",
+   "canonical": "https://weddedwonderland.com/honeymoon-ideas/honeymoon-planner-cost",
+   "og_image_slot": "featured"
+  },
+  "schema_jsonld": {
+   "@context": "https://schema.org",
+   "@graph": [
+    {
+     "@type": "Article",
+     "@id": "https://weddedwonderland.com/honeymoon-ideas/honeymoon-planner-cost#article",
+     "headline": "Honeymoon Planner Cost and What the Fee Covers",
+     "description": "What shapes a honeymoon planner's fee, what it should cover, how it differs from the trip itself and the questions to ask before you agree to anything.",
+     "author": {
+      "@type": "Organization",
+      "name": "Wedded Wonderland",
+      "url": "https://weddedwonderland.com/"
+     },
+     "publisher": {
+      "@type": "Organization",
+      "name": "Wedded Wonderland",
+      "url": "https://weddedwonderland.com/"
+     },
+     "datePublished": "",
+     "mainEntityOfPage": "https://weddedwonderland.com/honeymoon-ideas/honeymoon-planner-cost",
+     "inLanguage": "en-AU"
+    },
+    {
+     "@type": "BreadcrumbList",
+     "itemListElement": [
+      {
+       "@type": "ListItem",
+       "position": 1,
+       "name": "Home",
+       "item": "https://weddedwonderland.com/"
+      },
+      {
+       "@type": "ListItem",
+       "position": 2,
+       "name": "Honeymoon Ideas",
+       "item": "https://weddedwonderland.com/honeymoon-ideas"
+      },
+      {
+       "@type": "ListItem",
+       "position": 3,
+       "name": "Honeymoon Planner Cost and What the Fee Covers",
+       "item": "https://weddedwonderland.com/honeymoon-ideas/honeymoon-planner-cost"
+      }
+     ]
+    },
+    {
+     "@type": "FAQPage",
+     "@id": "https://weddedwonderland.com/honeymoon-ideas/honeymoon-planner-cost#faq",
+     "mainEntity": [
+      {
+       "@type": "Question",
+       "name": "How much does a honeymoon planner cost?",
+       "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "There is no single price, because planners charge in different ways and the trip shapes the work. Compare what each fee covers. Ask each planner whether it is a flat fee, a percentage of the trip, supplier commissions or a mix, and when it is payable, and get all of it in writing before any work begins."
+       }
+      },
+      {
+       "@type": "Question",
+       "name": "Do travel agents charge fees?",
+       "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ask the agent directly. Ask whether there is a planning or booking fee, whether they receive commissions from suppliers, whether any fee is refundable and what happens to it if your plans change. Then ask for the answers in writing."
+       }
+      },
+      {
+       "@type": "Question",
+       "name": "Is the planner's fee part of the honeymoon cost?",
+       "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "It is part of what you spend on the honeymoon, but it is a separate cost from the trip. Ask for the planner's fee and the cost of flights, stays and experiences to be shown separately, so you can see each one clearly."
+       }
+      },
+      {
+       "@type": "Question",
+       "name": "What should a planner's fee include?",
+       "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The scope of the planning, what will be booked for you, the inclusions in each booking, payment dates, change and cancellation terms, and who to contact while you travel. If any of these is missing from what the planner sends you, ask for it in writing."
+       }
+      },
+      {
+       "@type": "Question",
+       "name": "Will the quote be in Australian dollars?",
+       "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ask before you compare. A quote in Australian dollars is simpler to set beside another. If a supplier is paid in another currency, ask what exchange rate applies, whether it is guaranteed and what fees or margins sit on top."
+       }
+      }
+     ]
+    }
+   ]
+  },
+  "author": "Wedded Wonderland",
+  "status": "draft",
+  "verify_items": [],
+  "needs_signoff": [],
+  "redirect": null,
+  "redirects_recommended": [],
+  "draft_note": "DRAFT. Do not publish until checked: no [[VERIFY]] items in the copy; no prices, nothing for Nic to sign off. Image slots needed (5 of 5, none approved): featured, what-you-pay-for, what-shapes-cost, fee-should-cover, protecting-what-you-pay. what-you-pay-for must come from a consented real Wedded Wonderland shoot or licensed stock with model releases, never AI; featured, what-shapes-cost, fee-should-cover and protecting-what-you-pay are still lifes (library, Canva or licensed stock; AI only with Wedded Wonderland approval, labelled 'Illustrative image'); no airline, hotel, resort, cruise, card, bank, insurance or travel brand logos, no money or visible figures, and no readable names, passport numbers, booking references or personal details in any image. CMS setup: the /honeymoon-ideas folder and the Honeymoon Ideas category must exist before the draft is saved. Internal links to /honeymoon-ideas/honeymoon-planning-service and /travel-guides/travel-advisor-benefits point to drafts: publish together or remove those links. Planner SME to reconfirm the ACCC, Smartraveller and Moneysmart sources live (copy is 'as at November 2026'). New article, no redirect. Byline Wedded Wonderland. DRAFT ONLY. A human clicks Publish."
+ }
+}
