@@ -6,7 +6,8 @@
   "round": 1,
   "inputs_used": [
     "content/posts/travel-advisor-benefits/03-source-pack.json (fact_01 to fact_21 copied unchanged, same sources and checked dates)",
-    "content-system/brand/brand-facts.md"
+    "content-system/brand/brand-facts.md",
+    "apify--web-fetch, one parallel round, 16 November 2026, no retries: weddedwonderland.com/destination-honeymoon-packages (200; response cut at 262 KB, only the page metadata and structured data were readable), smartraveller.gov.au/before-you-go/passports-and-visas (404 page not found), passports.gov.au change-of-name page (404 page not found)"
   ],
   "self_qa": {
     "checks": [
@@ -30,13 +31,38 @@
     ],
     "confidence": 0.7
   },
-  "open_questions": [],
+  "open_questions": [
+    {
+      "to": "luxury-writer",
+      "question": "The honeymoon page says 'resorts our team has visited and vetted'. This is an unverified claim: do not use it, and do not name resorts or destinations from that page.",
+      "blocking": false
+    },
+    {
+      "to": "Nic",
+      "question": "Confirm whether 'resorts our team has visited and vetted' (live honeymoon page description) can be substantiated; until then it stays out of the article.",
+      "blocking": false
+    },
+    {
+      "to": "orchestrator",
+      "question": "Both passport pages returned 404 (Smartraveller /before-you-go/passports-and-visas and passports.gov.au change-name path). A later fetch of the current Smartraveller passports page and the Passport Office name-change page would clear the two passport verify items.",
+      "blocking": false
+    },
+    {
+      "to": "luxury-writer",
+      "question": "How it works: use only brand steps 1 and 2 (fact_27, fact_28) plus the standing claims (fact_22 to fact_26) and the honeymoon-only confirmation (fact_29). No steps 3 to 5, Wedded Privileges, room blocks, perks, prices or better-price claims. Consumer, insurance and money points are general information 'as at November 2026' with the line that the Wedded Advisor confirms current requirements.",
+      "blocking": false
+    }
+  ],
   "assumptions": [
     "Brand facts recorded as source_type brand_page with exact wording from content-system/brand/brand-facts.md, per orchestrator instruction.",
     "Consumer, insurance and money facts copied from the travel-advisor-benefits source pack were checked on 2026-11-15 and are general information; the writer credits them 'as at November 2026' with the line that the Wedded Advisor confirms current requirements.",
-    "Insider details are planning advice built on cited facts, not stated rules."
+    "Insider details are planning advice built on cited facts, not stated rules.",
+    "Facts from the live honeymoon page come from its page metadata and structured data, as the fetched text was cut off; no resort names, destinations or prices are recorded."
   ],
-  "verify_items": [],
+  "verify_items": [
+    "[[VERIFY: Passport validity rules for overseas travel (for example how long a passport must remain valid beyond travel dates). Smartraveller passports-and-visas URL returned 404 on 16 November 2026; nothing sourced. Do not state a validity period; say requirements vary by destination and the Wedded Advisor confirms current requirements.]]",
+    "[[VERIFY: Travelling after marriage: whether the name on tickets must match the passport, and how to update a passport after a name change. Passport Office change-of-name URL returned 404 on 16 November 2026; nothing sourced. Do not state any rule; advise booking in the name on the passport you will travel on and checking with the Australian Passport Office.]]"
+  ],
   "tools_used": [
     "mcp__Apify__apify--web-fetch"
   ],
@@ -276,13 +302,153 @@
         "source_type": "brand_page",
         "checked": "2026-11-16",
         "is_price": false
+      },
+      {
+        "fact_id": "fact_30",
+        "claim": "Live Wedded Wonderland honeymoon page: the page's service description names it 'Wedded Wonderland Destination Honeymoon Packages', service type 'Destination honeymoon planning and travel concierge service', provided by Wedded Wonderland.",
+        "source": "https://weddedwonderland.com/destination-honeymoon-packages",
+        "source_type": "brand_page",
+        "checked": "2026-11-16",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_31",
+        "claim": "Live Wedded Wonderland honeymoon page (page description): 'Enquire for a tailored itinerary.'",
+        "source": "https://weddedwonderland.com/destination-honeymoon-packages",
+        "source_type": "brand_page",
+        "checked": "2026-11-16",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_32",
+        "claim": "Live Wedded Wonderland site organisation description (on the honeymoon page) lists 'destination travel and honeymoon advisory' among what Wedded Wonderland offers.",
+        "source": "https://weddedwonderland.com/destination-honeymoon-packages",
+        "source_type": "brand_page",
+        "checked": "2026-11-16",
+        "is_price": false
+      },
+      {
+        "claim": "[Copied from name-change-after-marriage 03-source-pack, same source and date.] Australian Passport Office, 'Change of name or gender': 'If you change your family name because of a change in your marital status, you can choose to get a new passport or keep using your current one. We recommend booking travel in the name that's in your passport.' 'There are certain circumstances where we'll always need a name change certificate. This applies to any of the following: ... you were born in Australia and married or entered into a registered relationship overseas.'",
+        "source": "https://www.passports.gov.au/change-name-or-gender",
+        "source_type": "government",
+        "checked": "2026-10-27",
+        "is_price": false,
+        "fact_id": "fact_33"
+      },
+      {
+        "claim": "[Copied from name-change-after-marriage 03-source-pack, same source and date.] Smartraveller: 'A foreign marriage certificate is usually accepted as proof of the marriage. But you may be unable to use it as proof of a name change. Find out from your local registry of births, deaths and marriages.'",
+        "source": "https://www.smartraveller.gov.au/planning-trip/advice-your-planned-activities/getting-married-overseas",
+        "source_type": "government",
+        "checked": "2026-10-27",
+        "is_price": false,
+        "fact_id": "fact_34"
       }
     ],
-    "insider_details": [],
+    "insider_details": [
+      {
+        "detail": "Buy travel insurance as soon as the honeymoon is booked, not the week you fly: cover depends on what was known when the policy was bought, and the policy must name every country on the route, stopovers included.",
+        "fact_ids": [
+          "fact_11",
+          "fact_14"
+        ]
+      },
+      {
+        "detail": "Ask for the cancellation and change terms of every booked component in writing before paying; when booking through an advisor, both the advisor's and each provider's terms apply.",
+        "fact_ids": [
+          "fact_05",
+          "fact_06",
+          "fact_24"
+        ]
+      },
+      {
+        "detail": "Pay deposits by credit card where the supplier allows it, never sign terms that waive chargeback rights, and ask whether your advisor holds insolvency insurance.",
+        "fact_ids": [
+          "fact_17",
+          "fact_18"
+        ]
+      },
+      {
+        "detail": "A single Wedded Advisor who agrees the fee and confirms inclusions in writing, in your time zone and in AUD, is a practical way to get the written confirmations the ACCC recommends, for a honeymoon on its own or alongside a destination wedding.",
+        "fact_ids": [
+          "fact_06",
+          "fact_22",
+          "fact_23",
+          "fact_24",
+          "fact_25",
+          "fact_29"
+        ]
+      }
+    ],
     "quotes": [],
     "real_weddings": [],
     "verify_items": [],
     "needs_signoff": [],
-    "must_include_coverage": []
+    "must_include_coverage": [
+      {
+        "item": "What a honeymoon planning service is (Wedded Wonderland's service)",
+        "covered_by": [
+          "fact_29",
+          "fact_30",
+          "fact_31",
+          "fact_32",
+          "fact_26"
+        ]
+      },
+      {
+        "item": "How it works (steps 1 and 2 and standing claims)",
+        "covered_by": [
+          "fact_27",
+          "fact_28",
+          "fact_22",
+          "fact_23",
+          "fact_24",
+          "fact_25"
+        ]
+      },
+      {
+        "item": "Consumer rights when booking travel (ACCC)",
+        "covered_by": [
+          "fact_01",
+          "fact_02",
+          "fact_03",
+          "fact_04",
+          "fact_05",
+          "fact_06",
+          "fact_07",
+          "fact_08"
+        ]
+      },
+      {
+        "item": "Travel insurance (Smartraveller)",
+        "covered_by": [
+          "fact_09",
+          "fact_10",
+          "fact_11",
+          "fact_12",
+          "fact_13",
+          "fact_14",
+          "fact_15",
+          "fact_16",
+          "fact_17",
+          "fact_18"
+        ]
+      },
+      {
+        "item": "Paying overseas suppliers (Moneysmart)",
+        "covered_by": [
+          "fact_19",
+          "fact_20",
+          "fact_21"
+        ]
+      },
+      {
+        "item": "Passport validity and travelling after marriage (name on tickets)",
+        "covered_by": [
+          "fact_33",
+          "fact_34",
+          "Passport validity periods: not sourced, left out of the copy (no rule stated)."
+        ]
+      }
+    ]
   }
 }
