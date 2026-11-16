@@ -7,3 +7,4 @@
 05:37 06 edit 4.29 pass_with_edits, 8 edits applied (VERIFY reworded out; no legal-definition claim); 07 readers enquire 1 to 2; identical table columns flagged by 4.
 05:39 07b panel: revise, weighted enquire 1.7; 3 must-fix (merge table columns, commission question to the Advisor, trim drift).
 05:40 08 final copy done: 1,835 words, scan clean, 0 VERIFY.
+05:40 09 CRO and 10 distribution done.
