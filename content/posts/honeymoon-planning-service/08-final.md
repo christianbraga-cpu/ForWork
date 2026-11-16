@@ -22,11 +22,11 @@ For a couple already planning a wedding, that matters. The honeymoon tends to ar
 
 A honeymoon planner takes the trip off your hands. You describe the shape of it: how long you have, the kind of places you both want, the one thing you will not go without. The planner turns that into an itinerary and books it on your behalf.
 
-For a two-week honeymoon, that might be a long-haul flight, two or three stays, a private dinner, a boat for a day and the connections between them. Each piece comes with its own deposit, its own deadline and its own terms. The work is in keeping those pieces in step, so the deadlines and terms line up.
+For a two-week honeymoon, that might be a long-haul flight, two or three stays, a private dinner, a boat for a day and the connections between them. Each piece comes with its own deposit, its own deadline and its own terms. Keeping those pieces in step is where most of the effort goes.
 
 What a planner does not change is your footing as a consumer. Where Australian consumer guarantees cover a booking, they apply whether you book directly with an airline or tour operator, through a travel agent, or through a booking platform or package provider. <!-- fact_02 --> You give up none of your rights by handing the trip to someone else.
 
-Where a planner earns their place is time. Comparing options, reading terms, matching flight times to check-in times and confirming the small things (a dietary note, a table on the last night) are hours of work. A planner does them so you don't have to. If your trip is a single stay, in one currency, with flexible dates, you may be happy booking it yourselves.
+Where a planner earns their place is time. Comparing options, reading terms and matching flight times to check-in times are hours of work on top of the wedding. With a planner, you have one person to talk to instead of many. If your trip is a single stay, in one currency, with flexible dates, you may be happy booking it yourselves.
 
 For the broader case, read [why couples use a travel advisor](https://weddedwonderland.com/travel-guides/travel-advisor-benefits), and for destination ideas, browse our [wedding and honeymoon travel](https://weddedwonderland.com/travel) pages.
 
