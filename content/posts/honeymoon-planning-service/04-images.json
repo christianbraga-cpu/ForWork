@@ -1,0 +1,206 @@
+{
+ "agent": "visual-curator",
+ "task_id": "honeymoon-planning-service",
+ "stage": "04",
+ "status": "needs_input",
+ "round": 1,
+ "inputs_used": [
+  "CLAUDE.md",
+  "content/posts/honeymoon-planning-service/00-input.json",
+  "01-brief.json, 02-seo.json, 02-research/report.md, 03-source-pack.json (not present at run time)",
+  "content/posts/travel-advisor-benefits/04-images.json (format model)",
+  "content-system/images/library-index.csv (header only, no rows)"
+ ],
+ "self_qa": {
+  "checks": [
+   {
+    "check": "Zero reference-only or competitor images in slots",
+    "pass": true,
+    "note": "reference_only empty; nothing downloaded."
+   },
+   {
+    "check": "Every approved image has location, licence, alt, caption, fit_reason",
+    "pass": true,
+    "note": "No approved images this run."
+   },
+   {
+    "check": "No AI image depicting a real place, resort, wedding or person",
+    "pass": true,
+    "note": "No AI generated. Only the three still lifes (featured, how-it-works, questions) may become AI, with Wedded Wonderland approval and an 'Illustrative image' label."
+   },
+   {
+    "check": "No hotel, airline or resort branding in shot briefs",
+    "pass": true,
+    "note": "Every brief forbids brand logos and readable personal details."
+   },
+   {
+    "check": "Featured image exists (approved or needed with brief)",
+    "pass": true,
+    "note": "Needed, with brief: passports and itinerary notebook on linen."
+   },
+   {
+    "check": "5 slots",
+    "pass": true,
+    "note": "Hero plus one per requested section."
+   },
+   {
+    "check": "Alt text Australian English, no em dashes, 125 chars or fewer",
+    "pass": true,
+    "note": "Checked by script."
+   }
+  ],
+  "confidence": 0.7
+ },
+ "open_questions": [
+  {
+   "to": "user",
+   "question": "Does Wedded Wonderland approve AI still lifes (featured passports/notebook, how-it-works notebook, questions notebook) labelled 'Illustrative image' if no library, Canva or licensed asset is found?",
+   "blocking": false
+  },
+  {
+   "to": "user",
+   "question": "Do the supplier licences for images on the weddedwonderland.com honeymoon package pages cover blog use? If so, which property should the alongside-the-wedding slot feature?",
+   "blocking": false
+  },
+  {
+   "to": "user",
+   "question": "Is there a consented real-shoot photo of a Wedded Advisor with a couple licensed for web and social?",
+   "blocking": false
+  }
+ ],
+ "assumptions": [
+  "Placement follows the four sections in the order given by the orchestrator (what it does, how it works, alongside the wedding, questions to ask); 02-seo.json is not yet written, so the writer confirms after_h2 positions.",
+  "No property is named because 03-source-pack does not exist and own-site pages were not scraped; nothing was guessed.",
+  "Fast mode: repo register only, no Drive, own-site scrape, Canva, Gmail or Lens checks run.",
+  "Alt text is drafted for planned images and must be rechecked against the final image."
+ ],
+ "verify_items": [
+  "[[IMAGE NEEDED]] featured: passports and itinerary notebook on linen still life; library, Canva or stock; AI only with Wedded Wonderland approval, labelled 'Illustrative image'",
+  "[[IMAGE NEEDED]] what-it-does: consented real shoot or released stock, never AI",
+  "[[IMAGE NEEDED]] how-it-works: AI only with Wedded Wonderland approval, labelled 'Illustrative image'",
+  "[[IMAGE NEEDED]] alongside-wedding: own-site honeymoon package image or licensed named property, never AI",
+  "[[VERIFY licence]] alongside-wedding: weddedwonderland.com honeymoon package images only if the supply licence covers blog use",
+  "[[IMAGE NEEDED]] questions-notebook: AI only with Wedded Wonderland approval, labelled 'Illustrative image'",
+  "[[VERIFY licence]] every library, stock, Canva, own-site or venue image: licence, credit line and expiry recorded in library-index.csv before use",
+  "[[VERIFY: no airline, hotel or resort logos and no readable passport, booking or personal details in any final image]]"
+ ],
+ "tools_used": [
+  "Bash (cat/python)"
+ ],
+ "next_agent": [
+  "luxury-writer"
+ ],
+ "payload": {
+  "slots": [
+   {
+    "slot_id": "featured",
+    "placement": "featured",
+    "purpose": "Hero and social share image: a honeymoon already taken care of, calm and personal, before the couple has packed a thing.",
+    "shot_brief": "Landscape 3:2 with negative space on one side for a title. Overhead or 45 degree still life on natural linen: two passports (plain covers or face down), a closed leather itinerary notebook tied with silk ribbon, two blank leather luggage tags, a pair of sunglasses and a sprig of frangipani or olive. Soft morning window light, warm neutral palette, no people. No airline, hotel, resort, cruise, card or travel brand logos or branding visible anywhere (luggage, tags, documents, screens, linen). No readable names, passport numbers, booking references, barcodes or personal details. Source: library register, Canva brand asset or licensed stock. AI only if Wedded Wonderland approves, and then labelled 'Illustrative image'. Never competitor images.",
+    "status": "needed",
+    "file": "content/posts/honeymoon-planning-service/images/honeymoon-planning-service-passports-itinerary-linen-hero.webp",
+    "source": {
+     "type": "library",
+     "origin": "not yet sourced",
+     "credit": "[[VERIFY licence]]"
+    },
+    "location": {
+     "venue": "none (studio still life)",
+     "town": "not applicable",
+     "verified_by": "not applicable: no real place depicted"
+    },
+    "licence_note": "[[IMAGE NEEDED]] Library register has no rows. Still life may be AI only with Wedded Wonderland approval, labelled 'Illustrative image'.",
+    "alt": "Two passports, a ribbon-tied itinerary notebook and blank luggage tags on soft linen in morning light"
+   },
+   {
+    "slot_id": "what-it-does",
+    "placement": "after_h2:1 (what a honeymoon planning service does; writer confirms position)",
+    "purpose": "Show the service in action: a Wedded Advisor listening to the couple and shaping their honeymoon.",
+    "shot_brief": "Landscape 3:2. Close crop of hands at a timber table: an advisor's hand pointing to a printed, unbranded itinerary or blank paper map while a couple's hands rest nearby (engagement ring visible is fine), coffee cups, diffused daylight, faces optional or out of frame. Only from a consented real Wedded Wonderland shoot or licensed stock with model releases. No readable text or screens. No airline, hotel, resort, cruise, card or travel brand logos or branding visible anywhere (luggage, tags, documents, screens, linen). No readable names, passport numbers, booking references, barcodes or personal details. Never AI (real people, places, resorts or weddings). Never competitor or search-result images.",
+    "status": "needed",
+    "file": "content/posts/honeymoon-planning-service/images/honeymoon-planning-service-advisor-couple-itinerary-hands.webp",
+    "source": {
+     "type": "library",
+     "origin": "not yet sourced",
+     "credit": "[[VERIFY licence]]"
+    },
+    "location": {
+     "venue": "a real shoot location or stock (to be confirmed)",
+     "town": "to be confirmed",
+     "verified_by": "pending: register row or stock licence"
+    },
+    "licence_note": "[[IMAGE NEEDED]] Model releases or written couple consent and licence required. Never AI.",
+    "alt": "A Wedded Advisor points to a printed honeymoon itinerary as a couple looks on across a timber table",
+    "consent": {
+     "people": "required: model releases or written consent covering web and social use",
+     "status": "not yet obtained"
+    }
+   },
+   {
+    "slot_id": "how-it-works",
+    "placement": "after_h2:2 (how it works; writer confirms position)",
+    "purpose": "Visual cue for the step-by-step section: ideas turning into a shaped, organised trip.",
+    "shot_brief": "Landscape 3:2. Still life on a stone or timber desk: an open linen notebook with soft-focus, unreadable handwritten notes, a few blank postcards or swatch cards in sea and sand tones, a fountain pen, a ceramic cup, diffused daylight, no people (hands only at most). No airline, hotel, resort, cruise, card or travel brand logos or branding visible anywhere (luggage, tags, documents, screens, linen). No readable names, passport numbers, booking references, barcodes or personal details. Source: library register, Canva brand asset or licensed stock. AI only if Wedded Wonderland approves, and then labelled 'Illustrative image'. Never competitor images.",
+    "status": "needed",
+    "file": "content/posts/honeymoon-planning-service/images/honeymoon-planning-service-planning-notebook-swatches-desk.webp",
+    "source": {
+     "type": "canva",
+     "origin": "not yet sourced",
+     "credit": "[[VERIFY licence]]"
+    },
+    "location": {
+     "venue": "none (studio still life)",
+     "town": "not applicable",
+     "verified_by": "not applicable: no real place depicted"
+    },
+    "licence_note": "[[IMAGE NEEDED]] Library register has no rows. Still life may be AI only with Wedded Wonderland approval, labelled 'Illustrative image'.",
+    "alt": "An open notebook, blank postcards in sea tones and a fountain pen on a stone desk in soft daylight"
+   },
+   {
+    "slot_id": "alongside-wedding",
+    "placement": "after_h2:3 (planning the honeymoon alongside the wedding; writer confirms position)",
+    "purpose": "Show the honeymoon as the natural next chapter after the wedding: the place the couple goes once the celebration ends.",
+    "shot_brief": "Landscape 3:2. A real honeymoon setting already used on a weddedwonderland.com honeymoon package page (for example a villa terrace, private pool deck or beach set for two at golden hour), no people, or a licensed real couple with written consent. Use only if the supply licence covers blog use; otherwise replace with a licensed image at a named partner property or a venue press kit image with written permission. Location proven by register row, supplier licence or EXIF, never by appearance. No hotel, resort or airline logos, signage or branded items visible. Never AI (real people, places, resorts or weddings). Never competitor or search-result images.",
+    "status": "needed",
+    "file": "content/posts/honeymoon-planning-service/images/honeymoon-planning-service-honeymoon-terrace-golden-hour.webp",
+    "source": {
+     "type": "own_site",
+     "origin": "weddedwonderland.com honeymoon package page (not scraped in fast mode)",
+     "credit": "[[VERIFY licence]]"
+    },
+    "location": {
+     "venue": "a named honeymoon property on a weddedwonderland.com package page (to be confirmed)",
+     "town": "to be confirmed",
+     "verified_by": "pending: register row, supplier licence or EXIF"
+    },
+    "licence_note": "[[IMAGE NEEDED]] [[VERIFY licence]] Own-site honeymoon package images may be used only if the supply licence covers blog use; record scope, credit and expiry in library-index.csv first. Never AI.",
+    "alt": "A private terrace set for two overlooking the sea at golden hour on a honeymoon"
+   },
+   {
+    "slot_id": "questions-notebook",
+    "placement": "after_h2:4 (questions to ask a honeymoon planning service; writer confirms position)",
+    "purpose": "Visual cue for the checklist: preparing your questions before the first conversation.",
+    "shot_brief": "Landscape 3:2. Close up of an open linen-bound notebook with soft-focus, unreadable handwritten lines, a pen resting across it, a cup of tea and the closed edge of a laptop (no screen content), diffused daylight on a timber desk, no people. No airline, hotel, resort, cruise, card or travel brand logos or branding visible anywhere (luggage, tags, documents, screens, linen). No readable names, passport numbers, booking references, barcodes or personal details. Source: library register, Canva brand asset or licensed stock. AI only if Wedded Wonderland approves, and then labelled 'Illustrative image'. Never competitor images.",
+    "status": "needed",
+    "file": "content/posts/honeymoon-planning-service/images/honeymoon-planning-service-questions-notebook-desk.webp",
+    "source": {
+     "type": "stock",
+     "origin": "not yet sourced",
+     "credit": "[[VERIFY licence]]"
+    },
+    "location": {
+     "venue": "none (studio still life)",
+     "town": "not applicable",
+     "verified_by": "not applicable: no real place depicted"
+    },
+    "licence_note": "[[IMAGE NEEDED]] Library register has no rows. Still life may be AI only with Wedded Wonderland approval, labelled 'Illustrative image'.",
+    "alt": "An open notebook with a pen and a cup of tea on a timber desk, ready for honeymoon planning questions"
+   }
+  ],
+  "reference_only": [],
+  "permission_requests": [],
+  "drive_findings": [
+   "Not searched: fast mode, repo library register only per orchestrator instruction. library-index.csv has a header and no rows."
+  ]
+ }
+}
