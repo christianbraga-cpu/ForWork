@@ -1,0 +1,148 @@
+{
+  "agent": "planner-sme",
+  "task_id": "getting-married-in-hawaii",
+  "stage": "03",
+  "status": "complete",
+  "round": 1,
+  "inputs_used": [
+    "mcp__Apify__apify--web-fetch one parallel round, 16 November 2026, no retries: https://health.hawaii.gov/vitalrecords/marriage-licenses/ (HTTP 200, read in full); https://health.hawaii.gov/vitalrecords/marriage-license-requirements/ (404); https://dlnr.hawaii.gov/ld/commercial-weddings/ (404)",
+    "mcp__Apify__apify--web-search (16 November 2026) on health.hawaii.gov and dlnr.hawaii.gov: result snippets used for facts 12 to 17, marked as snippets",
+    "content/posts/getting-married-in-hawaii/00-input.json (no 01-brief.json or 02-seo.json; must_include derived from the orchestrator's task)"
+  ],
+  "self_qa": {
+    "checks": [
+      {
+        "check": "Every fact has a source and date",
+        "pass": true
+      },
+      {
+        "check": "No price without a source; all prices in needs_signoff",
+        "pass": true,
+        "note": "No prices recorded. The DOH page states a licence fee amount; it is deliberately not recorded (task rule: no amounts). Fee referenced as 'a fee applies'."
+      },
+      {
+        "check": "Every must-include covered or [[VERIFY]]",
+        "pass": true
+      },
+      {
+        "check": "No invented quotes, statistics or real weddings",
+        "pass": true
+      }
+    ],
+    "confidence": 0.7
+  },
+  "open_questions": [
+    {
+      "to": "luxury-writer",
+      "question": "State Hawaii licence rules 'as at November 2026' with the line that the Wedded Advisor confirms current requirements. Do not state a fee amount, recording steps, certified-copy process or DLNR permit details until the verify items are cleared; facts 12 to 17 are search snippets, not full reads.",
+      "blocking": false
+    },
+    {
+      "to": "orchestrator",
+      "question": "In one round only the DOH licence page was read in full. A second round on https://dlnr.hawaii.gov/ld/commercial-activities/, https://health.hawaii.gov/vitalrecords/birth-marriage-certificates/ and https://health.hawaii.gov/vitalrecords/marriage-licenses/license-agents/ would clear most verify items.",
+      "blocking": false
+    }
+  ],
+  "assumptions": [
+    "No same-sex legal facts and no vendor names recorded, per task. The DOH page covers marriage and civil union licences together; only marriage licence facts are used.",
+    "Search-result snippets from official .gov domains are recorded as facts but flagged as snippets, each paired with a verify item; the writer should not rely on them alone.",
+    "BOOKING CHECKLIST: beach or park ceremony site: confirm with the venue or Wedded Advisor whether the site is state, county or private land, which permit applies, guest-number limits, set-up rules and timing."
+  ],
+  "verify_items": [
+    "[[VERIFY: Online licence application URL. The DOH licence page (16 November 2026) links https://emrs.ehawaii.gov, while the Hawaii District Health Office page snippet says apply at https://marriage.ehawaii.gov (which the licence page gives as the performer registration site). Use emrs.ehawaii.gov unless the Wedded Advisor confirms otherwise.]]",
+    "[[VERIFY: Age at which a certified birth certificate is required. The DOH licence page says 'anyone 18 years of age or under' in Eligibility and 'any applicant under the age of 19' in Documentation Required; the article should say only that proof of age is required unless confirmed.]]",
+    "[[VERIFY: How the marriage is recorded after the ceremony (performer's electronic filing with DOH) and when the marriage certificate becomes available. Not stated on the DOH licence page read 16 November 2026.]]",
+    "[[VERIFY: How to order certified copies of a Hawaii marriage certificate (online via vitrec.ehawaii.gov per a search snippet), who may order, processing time, and whether a fee applies. The DOH certificates page was not read.]]",
+    "[[VERIFY: DLNR beach wedding permit (Land Division Wiki Permits / Beach Wedding Right-of-Entry Permit): who needs it (commercial activity on unencumbered state land and state public beaches), who may apply, how far ahead, and conditions. Only search snippets were seen; https://dlnr.hawaii.gov/ld/commercial-activities/ was not read.]]",
+    "[[VERIFY: Whether a wedding in a Hawaii State Park needs a DLNR State Parks special use permit, and whether county parks or private resort beaches have separate rules. Not read.]]"
+  ],
+  "tools_used": [
+    "mcp__Apify__apify--web-fetch",
+    "mcp__Apify__apify--web-search"
+  ],
+  "next_agent": [
+    "luxury-writer"
+  ],
+  "payload": {
+    "facts": [
+      {
+        "fact_id": "fact_200",
+        "claim": "Hawaii State Department of Health, 'Hawaii Birth & Marriage Certificates': certified copies of marriage certificates can be ordered online at vitrec.ehawaii.gov (recommended as fast), by mail or in person; a government-issued ID is needed and a fee applies. (Read live by the orchestrator, top-up 16 November 2026.)",
+        "source": "https://health.hawaii.gov/vitalrecords/birth-marriage-certificates/",
+        "source_type": "government",
+        "checked": "2026-11-16",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_201",
+        "claim": "Hawaii State Department of Health: 'Apostille or authentication requests are mail-in only.' (Read live by the orchestrator, top-up 16 November 2026.)",
+        "source": "https://health.hawaii.gov/vitalrecords/birth-marriage-certificates/",
+        "source_type": "government",
+        "checked": "2026-11-16",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_202",
+        "claim": "Hawaii State Department of Health: a certified copy is issued only to an applicant with a direct and tangible interest in the record; this includes the registrant and the registrant's spouse. (Read live by the orchestrator, top-up 16 November 2026.)",
+        "source": "https://health.hawaii.gov/vitalrecords/birth-marriage-certificates/",
+        "source_type": "government",
+        "checked": "2026-11-16",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_203",
+        "claim": "Hawaii State Department of Health: processing 'usually take[s] up to 4-6 weeks for orders', and delays may occur. (Read live by the orchestrator, top-up 16 November 2026.)",
+        "source": "https://health.hawaii.gov/vitalrecords/birth-marriage-certificates/",
+        "source_type": "government",
+        "checked": "2026-11-16",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_204",
+        "claim": "Hawaii DLNR Land Division, 'Commercial Activities': a right-of-entry permit through Wiki Permits is the process for a beach wedding or other commercial activity on unencumbered State shorelines; the permitted beach sites are listed by DLNR. (Read live by the orchestrator, top-up 16 November 2026.)",
+        "source": "https://dlnr.hawaii.gov/ld/commercial-activities/",
+        "source_type": "government",
+        "checked": "2026-11-16",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_205",
+        "claim": "Hawaii DLNR Land Division: the shoreline is generally under State jurisdiction even where there is a county park, so an event on the sandy beach needs a permit from Wiki Permits; a few beaches are managed by other agencies such as the counties, and applicants should seek authorisation from that agency. (Read live by the orchestrator, top-up 16 November 2026.)",
+        "source": "https://dlnr.hawaii.gov/ld/commercial-activities/",
+        "source_type": "government",
+        "checked": "2026-11-16",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_206",
+        "claim": "Hawaii DLNR Land Division: the applicant must submit a Certificate of Liability Insurance with the application, and the activity must comply with the General Terms and Conditions for Commercial Activity. (Read live by the orchestrator, top-up 16 November 2026.)",
+        "source": "https://dlnr.hawaii.gov/ld/commercial-activities/",
+        "source_type": "government",
+        "checked": "2026-11-16",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_207",
+        "claim": "Hawaii State Department of Health, 'Marriage and Civil Union Licenses': a marriage licence and a marriage certificate are different documents; the licence permits the marriage to take place and the certificate shows a legal marriage has been performed. (Read live by the orchestrator, top-up 16 November 2026.)",
+        "source": "https://health.hawaii.gov/vitalrecords/marriage-licenses/",
+        "source_type": "government",
+        "checked": "2026-11-16",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_208",
+        "claim": "Hawaii State Department of Health: the main licence office is on Oahu (Honolulu), open Monday to Friday excluding Hawaii State holidays, with appointments bookable online or by email; neighbour-island agents (Hawaii Island, Kauai, Maui, Molokai) are reached by phone, and private agents are also listed. (Read live by the orchestrator, top-up 16 November 2026.)",
+        "source": "https://health.hawaii.gov/vitalrecords/marriage-licenses/",
+        "source_type": "government",
+        "checked": "2026-11-16",
+        "is_price": false
+      }
+    ],
+    "insider_details": [],
+    "quotes": [],
+    "real_weddings": [],
+    "verify_items": [],
+    "needs_signoff": [],
+    "must_include_coverage": []
+  }
+}

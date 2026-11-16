@@ -1,0 +1,371 @@
+{
+ "agent": "planner-sme",
+ "task_id": "getting-married-in-hawaii",
+ "stage": "03",
+ "status": "complete",
+ "round": 1,
+ "inputs_used": [
+  "content/posts/getting-married-in-greece/03-source-pack.json (fact_11 to fact_20 copied as fact_100 to fact_109)",
+  "mcp__Apify__apify--web-fetch one parallel round, 16 November 2026, no retries: https://www.smartraveller.gov.au/destinations/americas/united-states-america (200); https://www.cbp.gov/travel/international-visitors/esta (200); https://ltgov.hawaii.gov/the-office/apostilles-certifications/ (404, not read); https://www.weather.gov/hfo/climate_summary (200, statewide summary only); https://www.nhc.noaa.gov/climo/ (200, no Central Pacific season dates); https://www.gohawaii.com/islands/oahu, maui, kauai, hawaii-big-island (all 200)",
+  "content/posts/getting-married-in-hawaii/00-input.json (no 01-brief.json or 02-seo.json yet; batch B scope from orchestrator)"
+ ],
+ "self_qa": {
+  "checks": [
+   {
+    "check": "Every fact has a source and date",
+    "pass": true
+   },
+   {
+    "check": "No price without a source; all prices in needs_signoff",
+    "pass": true,
+    "note": "No prices or fee amounts recorded."
+   },
+   {
+    "check": "Every must-include covered or [[VERIFY]]",
+    "pass": true,
+    "note": "Batch B scope only."
+   },
+   {
+    "check": "No invented quotes, statistics or real weddings",
+    "pass": true
+   }
+  ],
+  "confidence": 0.7
+ },
+ "open_questions": [
+  {
+   "to": "orchestrator",
+   "question": "Part 1 (batch B) holds fact_100 to fact_124. Apostille page (404), station climate normals and Central Pacific season dates were not obtained; a targeted fetch of weather.gov/cphc and a search of ltgov.hawaii.gov would clear three verify items.",
+   "blocking": false
+  },
+  {
+   "to": "luxury-writer",
+   "question": "State entry and legal points 'as at November 2026' with the line that the Wedded Advisor confirms current requirements. No same-sex legal position, no fees, no vendor names. Climate facts are statewide, not station figures.",
+   "blocking": false
+  }
+ ],
+ "assumptions": [
+  "Copied Greece facts are general Australian-government guidance (Smartraveller, AGD, DFAT legalisation) and apply unchanged to a Hawaii wedding.",
+  "Go Hawaii (Hawaiʻi Tourism Authority) island pages are typed tourism_board; only general island facts are taken, no businesses.",
+  "NWS climate summary temperatures are in °F as published; convert only with care in the article."
+ ],
+ "verify_items": [
+  "[[VERIFY: Official Central Pacific hurricane season dates (commonly given as 1 June to 30 November). The NHC climatology page read 16 November 2026 gives eastern Pacific dates only; check the NWS Central Pacific Hurricane Center (weather.gov/cphc) before the article states them.]]",
+  "[[VERIFY: Station-labelled climate normals (e.g. Honolulu and Līhuʻe or Kahului monthly average temperature and rainfall). Only the statewide NWS 'Climate of Hawaiʻi' summary was read; check NOAA NOWData or NWS Honolulu climate normals before quoting any station figure.]]",
+  "[[VERIFY: Hawaii Lieutenant Governor's office apostille / authentication of Hawaii documents (e.g. a Hawaii marriage certificate for use in Australia). https://ltgov.hawaii.gov/the-office/apostilles-certifications/ returned 404 on 16 November 2026; find the current ltgov.hawaii.gov page before the article describes the process.]]",
+  "[[VERIFY: Whether Hurricane Lowell disruption on Kauaʻi and Hawaiʻi Island is still affecting services at publication; recheck Smartraveller and gohawaii.com Kauaʻi page.]]"
+ ],
+ "tools_used": [
+  "mcp__Apify__apify--web-fetch",
+  "Bash"
+ ],
+ "next_agent": [
+  "luxury-writer"
+ ],
+ "payload": {
+  "facts": [
+   {
+    "fact_id": "fact_100",
+    "claim": "[Copied from getting-married-in-greece 03-source-pack, same source and date.] [Copied from same-sex-marriage-greece 03-source-pack, same source and date.] As at November 2026, Smartraveller (read live 11 November 2026) says DFAT can issue a CNI in Australia, but some local authorities only accept CNIs issued in their country, so ask the destination's embassy or consulate whether you need a CNI, whether you can get it in Australia, and whether it also needs an authentication or apostille. The Wedded Advisor confirms current requirements. [Copied from mykonos-wedding part-1 fact_101.] [Copied from greek-orthodox-wedding part-1 fact_106.]",
+    "source": "https://www.smartraveller.gov.au/planning-trip/advice-your-planned-activities/getting-married-overseas",
+    "source_type": "government",
+    "checked": "2026-11-11",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_101",
+    "claim": "[Copied from getting-married-in-greece 03-source-pack, same source and date.] [Copied from same-sex-marriage-greece 03-source-pack, same source and date.] As at November 2026, Smartraveller 'Getting married overseas' (last updated 18/08/2026, read live 12 November 2026): some countries ask you to prove you aren't already married; the most common documents are a Certificate of No Impediment to Marriage (CNI) and certificates from a registry of births, deaths and marriages; the country may have more rules (for example a residence period); 'We can't tell you what you will need'; contact your destination's embassy or consulate. The Wedded Advisor confirms current requirements.",
+    "source": "https://www.smartraveller.gov.au/planning-trip/advice-your-planned-activities/getting-married-overseas",
+    "source_type": "government",
+    "checked": "2026-11-12",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_102",
+    "claim": "[Copied from getting-married-in-greece 03-source-pack, same source and date.] [Copied from same-sex-marriage-greece 03-source-pack, same source and date.] As at November 2026, Smartraveller 'Getting married overseas' (read live 12 November 2026): your registry of births, deaths and marriages can give a statement that there's no record you have been married before, a Single Status certificate or a No Record Result certificate; local authorities may also ask for divorce papers, the death certificate of a deceased spouse, and your original birth certificate and passport.",
+    "source": "https://www.smartraveller.gov.au/planning-trip/advice-your-planned-activities/getting-married-overseas",
+    "source_type": "government",
+    "checked": "2026-11-12",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_103",
+    "claim": "[Copied from getting-married-in-greece 03-source-pack, same source and date.] [Copied from same-sex-marriage-greece 03-source-pack, same source and date.] As at November 2026, Smartraveller 'Getting married overseas' (read live 12 November 2026): Australia doesn't recognise overseas marriages where one or both people are already married to someone else, not old enough to get married, too closely related, or forced to get married.",
+    "source": "https://www.smartraveller.gov.au/planning-trip/advice-your-planned-activities/getting-married-overseas",
+    "source_type": "government",
+    "checked": "2026-11-12",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_104",
+    "claim": "[Copied from getting-married-in-greece 03-source-pack, same source and date.] [Copied from same-sex-marriage-greece 03-source-pack, same source and date.] As at November 2026, Smartraveller (read live 11 November 2026) says you cannot register an overseas marriage in Australia, but in most cases it is legally recognised if, when it took place, it was valid under the law of the country where it happened and would have been valid under Australian law had it occurred in Australia. A foreign marriage certificate is usually accepted as proof of the marriage but may not work as proof of a name change (check with your local registry of births, deaths and marriages), and Smartraveller suggests talking to a lawyer to confirm the certificate is valid in Australia. The Wedded Advisor confirms current requirements. [Copied from mykonos-wedding part-1 fact_102.] [Copied from greek-orthodox-wedding part-1 fact_108.]",
+    "source": "https://www.smartraveller.gov.au/planning-trip/advice-your-planned-activities/getting-married-overseas",
+    "source_type": "government",
+    "checked": "2026-11-11",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_105",
+    "claim": "[Copied from getting-married-in-greece 03-source-pack, same source and date.] [Copied from same-sex-marriage-greece 03-source-pack, same source and date.] As at November 2026, the Attorney-General's Department (read live 12 November 2026): if Australia recognises your overseas marriage, you can't get married again in Australia, but you may choose to hold another type of ceremony, such as a confirmation of vows or a recommitment ceremony.",
+    "source": "https://www.ag.gov.au/families-and-marriage/marriage/marriage-equality-australia",
+    "source_type": "government",
+    "checked": "2026-11-12",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_106",
+    "claim": "[Copied from getting-married-in-greece 03-source-pack, same source and date.] [Copied from santorini-wedding 03-source-pack, same source and date.] Smartraveller (DFAT), 'How to get your documents legalised' (last updated 30/09/2026): ask the overseas authority which documents they need and which must be legalised; DFAT 'can't tell you what they may want'. Find out from the intended authority or legal representative whether you need an apostille or an authentication certificate.",
+    "source": "https://www.smartraveller.gov.au/our-role/notarial-services/how-get-your-documents-legalised",
+    "source_type": "government",
+    "checked": "2026-11-11",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_107",
+    "claim": "[Copied from getting-married-in-greece 03-source-pack, same source and date.] [Copied from santorini-wedding 03-source-pack, same source and date.] Smartraveller: documents that are not original Australian public documents must first be notarised by an Australian Notary Public; the apostille or authentication certificate is applied directly to the document, so if you don't want originals marked, get a notarised copy legalised (and check the overseas authority accepts it).",
+    "source": "https://www.smartraveller.gov.au/our-role/notarial-services/how-get-your-documents-legalised",
+    "source_type": "government",
+    "checked": "2026-11-11",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_108",
+    "claim": "[Copied from getting-married-in-greece 03-source-pack, same source and date.] [Copied from santorini-wedding 03-source-pack, same source and date.] Smartraveller: requests use the Document Legalisation Request Form, signed in front of an authorised witness, and can be lodged by appointment at an Australian Passport Office, in person at many Australian embassies, high commissions and consulates overseas (not Honorary Consul consulates), or by registered mail to the Authentications Section in Melbourne or Sydney. A fee applies (amount not recorded).",
+    "source": "https://www.smartraveller.gov.au/our-role/notarial-services/how-get-your-documents-legalised",
+    "source_type": "government",
+    "checked": "2026-11-11",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_109",
+    "claim": "[Copied from getting-married-in-greece 03-source-pack, same source and date.] [Copied from santorini-wedding 03-source-pack, same source and date.] Smartraveller: processing times vary, with delays at the end of the school year and in peak holiday periods, for incomplete requests or unpaid fees, or when the issuing authority must be contacted. An Australian-issued apostille can be verified online via DFAT.",
+    "source": "https://www.smartraveller.gov.au/our-role/notarial-services/how-get-your-documents-legalised",
+    "source_type": "government",
+    "checked": "2026-11-11",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_110",
+    "claim": "As at November 2026, Smartraveller's United States of America page (read live 16 November 2026; 'Still current at' 17 November 2026, 'Updated' 14 November 2026) gives the overall advice level 'Exercise normal safety precautions'. Its latest update says the nationwide ground stop for US airports issued on 13 November has been lifted, but flight delays and cancellations continue; check with your airline. The Wedded Advisor confirms current requirements.",
+    "source": "https://www.smartraveller.gov.au/destinations/americas/united-states-america",
+    "source_type": "government",
+    "checked": "2026-11-16",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_111",
+    "claim": "As at November 2026, Smartraveller (read live 16 November 2026): entry requirements for the US are strict and US authorities have broad powers to decide whether you are eligible to enter. If you are visiting for less than 90 days you may be eligible to apply for an Electronic System for Travel Authorization (ESTA) and enter under the Visa Waiver Program (VWP); if not, you need a visa before you travel. Understand all relevant terms and conditions before attempting to enter. The Wedded Advisor confirms current requirements.",
+    "source": "https://www.smartraveller.gov.au/destinations/americas/united-states-america",
+    "source_type": "government",
+    "checked": "2026-11-16",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_112",
+    "claim": "As at November 2026, Smartraveller (read live 16 November 2026): an approved ESTA or valid visa doesn't guarantee entry to the United States; US Customs and Border Protection (CBP) officials at the port of entry decide eligibility. If entry is denied you may be held at the port of entry or, in some locations including Hawaii, a nearby detention facility while your return is arranged.",
+    "source": "https://www.smartraveller.gov.au/destinations/americas/united-states-america",
+    "source_type": "government",
+    "checked": "2026-11-16",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_113",
+    "claim": "As at November 2026, Smartraveller (read live 16 November 2026): following the impacts of recent hurricanes, if you plan to visit Hawaiʻi, including Kauaʻi or Hawaiʻi Island ('Big Island'), the Hawaiʻi Tourism Authority encourages you to monitor the forecast and check directly with your airline, accommodation and activity providers for updates that may affect your plans.",
+    "source": "https://www.smartraveller.gov.au/destinations/americas/united-states-america",
+    "source_type": "government",
+    "checked": "2026-11-16",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_114",
+    "claim": "Smartraveller (read live 16 November 2026) lists an Australian Consulate-General in Honolulu among the US posts (with the Embassy in Washington DC and Consulates-General in Chicago, Houston, Los Angeles, New York and San Francisco) for consular assistance.",
+    "source": "https://www.smartraveller.gov.au/destinations/americas/united-states-america",
+    "source_type": "government",
+    "checked": "2026-11-16",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_115",
+    "claim": "US Customs and Border Protection ESTA page (read live 16 November 2026; page last modified 10 July 2025): ESTA is an automated system that determines eligibility to travel to the US under the Visa Waiver Program; authorisation via ESTA does not determine admissibility, which CBP officers decide on arrival. Applications may be submitted any time before travel, but CBP recommends applying as soon as you begin preparing travel plans or before buying airline tickets.",
+    "source": "https://www.cbp.gov/travel/international-visitors/esta",
+    "source_type": "government",
+    "checked": "2026-11-16",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_116",
+    "claim": "US Customs and Border Protection ESTA page (read live 16 November 2026): you must have an e-Passport (a passport with an embedded electronic chip, identified by the international symbol on the cover) to use the Visa Waiver Program.",
+    "source": "https://www.cbp.gov/travel/international-visitors/esta",
+    "source_type": "government",
+    "checked": "2026-11-16",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_117",
+    "claim": "National Weather Service Honolulu, 'Climate of Hawaiʻi' (statewide summary, not station normals; read live 16 November 2026): Hawaii's climate features mild temperatures throughout the year, moderate humidity, persistent northeasterly trade winds, big differences in rainfall over short distances and infrequent severe storms. For most of Hawaii there are only two seasons: 'summer' between May and October and 'winter' between October and April.",
+    "source": "https://www.weather.gov/hfo/climate_summary",
+    "source_type": "government",
+    "checked": "2026-11-16",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_118",
+    "claim": "National Weather Service Honolulu, 'Climate of Hawaiʻi' (statewide, read live 16 November 2026): Hawaii's warmest months are August and September and its coolest are February and March. Winter is the season of more frequent clouds and rainstorms, and the heaviest rains come from winter storms between October and April. Windward coasts and slopes get much more cloud and rain, while leeward areas tend to be sunny and dry, with summers usually dry.",
+    "source": "https://www.weather.gov/hfo/climate_summary",
+    "source_type": "government",
+    "checked": "2026-11-16",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_119",
+    "claim": "National Weather Service Honolulu, 'Climate of Hawaiʻi' (statewide, read live 16 November 2026): sea surface temperatures near Hawaii range only about 6°F over the year, from a low of 73 to 74°F between late February and March to a high near 80°F in late September or early October. Day length runs from about 11 hours (shortest) to about 13.5 hours (longest).",
+    "source": "https://www.weather.gov/hfo/climate_summary",
+    "source_type": "government",
+    "checked": "2026-11-16",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_120",
+    "claim": "NOAA National Hurricane Center, 'Tropical Cyclone Climatology' (read live 16 November 2026): the eastern Pacific hurricane season runs from 15 May to 30 November. The Central Pacific Hurricane Center (Honolulu) covers the area between 140°W and the International Date Line north of the equator; moderate to strong El Niño years are correlated with increased Central Pacific tropical cyclone activity and late-season storms, and storms that do not make landfall in Hawaii can still cause considerable damage, mostly from winds and surf. The page does not state official Central Pacific season dates.",
+    "source": "https://www.nhc.noaa.gov/climo/",
+    "source_type": "government",
+    "checked": "2026-11-16",
+    "is_price": false,
+    "conflicts": "NWS 'Climate of Hawaiʻi' (a condensed 1983 atlas chapter) says Hawaii 'usually does not have hurricanes', while Smartraveller and Go Hawaii (November 2026) refer to recent hurricane impacts, including Hurricane Lowell on Kauaʻi. Use the current advisories for any 2026 to 2027 statement."
+   },
+   {
+    "fact_id": "fact_121",
+    "claim": "Hawaiʻi Tourism Authority, Go Hawaii Oʻahu page (read live 16 November 2026): most travellers reach Oʻahu through Daniel K. Inouye International Airport (HNL) in Honolulu, the main gateway to Hawaiʻi. Oʻahu is a year-round destination; winter brings big waves to the North Shore, while waters are warmest in summer. Resort areas named include Waikīkī, Kāhala, the North Shore and Ko ʻOlina on the Leeward Coast.",
+    "source": "https://www.gohawaii.com/islands/oahu",
+    "source_type": "tourism_board",
+    "checked": "2026-11-16",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_122",
+    "claim": "Hawaiʻi Tourism Authority, Go Hawaii Maui page (read live 16 November 2026): most visitors fly into Kahului Airport (OGG). The page names April, May, September and October as the best time to visit, and points to South Maui (Wailea, Kīhei) for oceanside hotels and West Maui's Kāʻanapali Beach for resorts and sunsets.",
+    "source": "https://www.gohawaii.com/islands/maui",
+    "source_type": "tourism_board",
+    "checked": "2026-11-16",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_123",
+    "claim": "Hawaiʻi Tourism Authority, Go Hawaii Kauaʻi page (read live 16 November 2026): Kauaʻi, the 'Garden Island', is known for the Nāpali Coast and Waimea Canyon; the main airport is Līhuʻe (LIH), with most travellers connecting through Honolulu. The page says Kauaʻi is welcoming visitors with most businesses operating as usual following Hurricane Lowell, but some may still have limited staffing or services. It suggests summer for calmer ocean conditions and winter for bigger waves.",
+    "source": "https://www.gohawaii.com/islands/kauai",
+    "source_type": "tourism_board",
+    "checked": "2026-11-16",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_124",
+    "claim": "Hawaiʻi Tourism Authority, Go Hawaii Island of Hawaiʻi page (read live 16 November 2026): the largest Hawaiian island, set apart by its size and diversity of climates and home to Hawaiʻi Volcanoes National Park. Travellers typically fly into Ellison Onizuka Kona International Airport (KOA) or Hilo International Airport (ITO); luxury resorts are named along the Kona-Kohala Coast. The page suggests January to May or September to November for ideal weather and fewer crowds.",
+    "source": "https://www.gohawaii.com/islands/hawaii-big-island",
+    "source_type": "tourism_board",
+    "checked": "2026-11-16",
+    "is_price": false
+   }
+  ],
+  "insider_details": [
+   {
+    "detail": "Apply for the ESTA as soon as the trip is being planned and before guests buy flights, and check every guest holds an e-Passport; an approved ESTA still does not guarantee entry, so build a buffer day before the ceremony.",
+    "fact_ids": [
+     "fact_111",
+     "fact_115",
+     "fact_116",
+     "fact_112"
+    ]
+   },
+   {
+    "detail": "For outdoor ceremonies, leeward resort coasts tend to be sunnier and drier than windward ones, and the October to April 'winter' brings more rain, so a covered back-up space matters most in those months.",
+    "fact_ids": [
+     "fact_118",
+     "fact_117"
+    ]
+   },
+   {
+    "detail": "Late-year dates sit inside the Pacific storm season and recent hurricanes have disrupted Kauaʻi and Hawaiʻi Island, so plan wedding travel insurance and supplier contingency terms before deposits.",
+    "fact_ids": [
+     "fact_120",
+     "fact_113",
+     "fact_123"
+    ]
+   },
+   {
+    "detail": "Neighbour-island weddings usually mean a connection through Honolulu (HNL) for Australian guests, so allow for an inter-island leg in the guest travel plan.",
+    "fact_ids": [
+     "fact_121",
+     "fact_123",
+     "fact_124"
+    ]
+   }
+  ],
+  "quotes": [],
+  "real_weddings": [],
+  "verify_items": [
+   "[[VERIFY: Official Central Pacific hurricane season dates (commonly given as 1 June to 30 November). The NHC climatology page read 16 November 2026 gives eastern Pacific dates only; check the NWS Central Pacific Hurricane Center (weather.gov/cphc) before the article states them.]]",
+   "[[VERIFY: Station-labelled climate normals (e.g. Honolulu and Līhuʻe or Kahului monthly average temperature and rainfall). Only the statewide NWS 'Climate of Hawaiʻi' summary was read; check NOAA NOWData or NWS Honolulu climate normals before quoting any station figure.]]",
+   "[[VERIFY: Hawaii Lieutenant Governor's office apostille / authentication of Hawaii documents (e.g. a Hawaii marriage certificate for use in Australia). https://ltgov.hawaii.gov/the-office/apostilles-certifications/ returned 404 on 16 November 2026; find the current ltgov.hawaii.gov page before the article describes the process.]]",
+   "[[VERIFY: Whether Hurricane Lowell disruption on Kauaʻi and Hawaiʻi Island is still affecting services at publication; recheck Smartraveller and gohawaii.com Kauaʻi page.]]"
+  ],
+  "needs_signoff": [],
+  "must_include_coverage": [
+   {
+    "item": "Will Australia recognise a Hawaii marriage",
+    "covered_by": [
+     "fact_104",
+     "fact_103",
+     "fact_105"
+    ]
+   },
+   {
+    "item": "Documents and legalisation from Australia",
+    "covered_by": [
+     "fact_100",
+     "fact_101",
+     "fact_102",
+     "fact_106",
+     "fact_107",
+     "fact_108",
+     "fact_109"
+    ]
+   },
+   {
+    "item": "Entry for Australians (ESTA/VWP)",
+    "covered_by": [
+     "fact_110",
+     "fact_111",
+     "fact_112",
+     "fact_115",
+     "fact_116"
+    ]
+   },
+   {
+    "item": "Weather, seasons and hurricane season",
+    "covered_by": [
+     "fact_117",
+     "fact_118",
+     "fact_119",
+     "fact_120",
+     "[[VERIFY: Official Central Pacific hurricane season dates (commonly given as 1 June to 30 November). The NHC climatology page read 16 November 2026 gives eastern Pacific dates only; check the NWS Central Pacific Hurricane Center (weather.gov/cphc) before the article states them.]]",
+     "[[VERIFY: Station-labelled climate normals (e.g. Honolulu and Līhuʻe or Kahului monthly average temperature and rainfall). Only the statewide NWS 'Climate of Hawaiʻi' summary was read; check NOAA NOWData or NWS Honolulu climate normals before quoting any station figure.]]"
+    ]
+   },
+   {
+    "item": "Choosing an island",
+    "covered_by": [
+     "fact_121",
+     "fact_122",
+     "fact_123",
+     "fact_124"
+    ]
+   },
+   {
+    "item": "Apostille of the Hawaii marriage certificate",
+    "covered_by": [
+     "[[VERIFY: Hawaii Lieutenant Governor's office apostille / authentication of Hawaii documents (e.g. a Hawaii marriage certificate for use in Australia). https://ltgov.hawaii.gov/the-office/apostilles-certifications/ returned 404 on 16 November 2026; find the current ltgov.hawaii.gov page before the article describes the process.]]"
+    ]
+   }
+  ]
+ }
+}
