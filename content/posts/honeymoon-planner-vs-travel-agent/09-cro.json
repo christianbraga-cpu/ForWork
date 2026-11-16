@@ -1,0 +1,72 @@
+{
+  "agent": "cro-specialist",
+  "task_id": "honeymoon-planner-vs-travel-agent",
+  "stage": "09",
+  "status": "complete",
+  "round": 1,
+  "inputs_used": [
+    "CLAUDE.md",
+    "content/posts/honeymoon-planner-vs-travel-agent/01-brief.json",
+    "content/posts/honeymoon-planner-vs-travel-agent/07-panel.json",
+    "content/posts/honeymoon-planner-vs-travel-agent/07-icp/*.json (cta_reaction)",
+    "content/posts/honeymoon-planner-vs-travel-agent/08-final.md",
+    "content/posts/honeymoon-planner-cost/09-cro.json (format model)"
+  ],
+  "self_qa": {
+    "checks": [
+      {"check": "Primary CTA 6 words or fewer, no 'click here', no exclamation mark", "pass": true, "note": "'Request a Wedded Concierge consultation' (5 words)."},
+      {"check": "utm_content primary, secondary, closing, magnet each appear exactly once", "pass": true, "note": "Checked by grep on 08-final.md: 1 each, 4 UTM links in total."},
+      {"check": "UTMs only on /wonderland-concierge (3) and /magazine (1)", "pass": true},
+      {"check": "Primary /wonderland-concierge anchor names Wedded Concierge", "pass": true, "note": "Line 142 anchor 'Wedded Concierge'; secondary (line 152) 'meet your Wedded Advisor through Wedded Concierge'; closing (line 174) 'Begin with Wedded Concierge'."},
+      {"check": "CTA copy has no figures; only fee claim is 'agreed in writing before any work begins'", "pass": true, "note": "Other subtexts use inclusions-in-writing and one-Wedded-Advisor wording already in 08-final.md (fact_22, fact_24)."},
+      {"check": "No 'free' or no-cost wording, perks, Wedded Privileges, availability promises, call-first, superiority over travel agents, prices or em dashes; Australian English; 08-final.md not edited", "pass": true, "note": "08-final.md has no <!-- CTA: ... --> markers and none were added."}
+    ],
+    "confidence": 0.85
+  },
+  "open_questions": [
+    {"to": "orchestrator", "question": "Panel cta_reactions: planner_couple, funding_parent and sceptic 'maybe'; search_visitor and uhnw 'no'. Readers who said maybe wanted the commission and mark-up answers first; the post (line 150) already invites them to ask their Wedded Advisor in writing, which is the most brand facts allow. uhnw wants a private or referral route and search_visitor wants brand proof; neither is in brand facts, so nothing was added. Re-run cro-specialist if either is confirmed.", "blocking": false},
+    {"to": "orchestrator", "question": "Lines 138 to 140 ('Our view is that for a destination wedding you need both, working as one', fact_36 to fact_38) sit just before the primary link. Not a superiority claim and left unchanged, but the brief avoided verdicts; editor may want to confirm it stays neutral. Not blocking; 08-final.md not edited.", "blocking": false},
+    {"to": "orchestrator", "question": "08-final.md contains no <!-- CTA: primary --> marker; placements rely on the existing inline links.", "blocking": false}
+  ],
+  "assumptions": [
+    "FAST MODE: persona cta_reactions read in summary only; placements follow the existing inline links and the honeymoon-planner-cost model."
+  ],
+  "verify_items": [],
+  "tools_used": ["Bash (grep, python3 -I)"],
+  "payload": {
+    "journey_stage": "comparing",
+    "primary_cta": {
+      "text": "Request a Wedded Concierge consultation",
+      "subtext": "The fee is agreed in writing before any work begins.",
+      "link": "https://weddedwonderland.com/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=honeymoon-planner-vs-travel-agent&utm_content=primary",
+      "placement": "Existing inline link introducing the bullet list in 'Where Wedded Wonderland fits' (line 142, anchor 'Wedded Concierge'), where the brand claims first appear after the reader has worked through the neutral questions. Unchanged."
+    },
+    "secondary_cta": {
+      "text": "Meet your Wedded Advisor",
+      "subtext": "Your Wedded Advisor confirms the inclusions in writing before you commit.",
+      "link": "https://weddedwonderland.com/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=honeymoon-planner-vs-travel-agent&utm_content=secondary",
+      "placement": "Existing final sentence of 'Where Wedded Wonderland fits' (line 152), straight after the invitation to put commission and mark-up questions to the Wedded Advisor in writing. Unchanged."
+    },
+    "lead_magnet": {
+      "name": "Wedded Wonderland magazine",
+      "link": "https://weddedwonderland.com/magazine?utm_source=blog&utm_medium=content&utm_campaign=honeymoon-planner-vs-travel-agent&utm_content=magnet",
+      "placement": "Existing final line of 'Start with a conversation' (line 174), for readers still comparing or yet to choose a destination. Unchanged.",
+      "exists": true
+    },
+    "closing_cta": {
+      "text": "Begin with Wedded Concierge",
+      "subtext": "One Wedded Advisor plans with you from start to finish.",
+      "link": "https://weddedwonderland.com/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=honeymoon-planner-vs-travel-agent&utm_content=closing",
+      "placement": "Existing closing paragraph under 'Start with a conversation' (line 174), after the fee-in-writing and inclusions-on-paper line. Unchanged."
+    },
+    "tracking": [
+      "https://weddedwonderland.com/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=honeymoon-planner-vs-travel-agent&utm_content=primary",
+      "https://weddedwonderland.com/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=honeymoon-planner-vs-travel-agent&utm_content=secondary",
+      "https://weddedwonderland.com/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=honeymoon-planner-vs-travel-agent&utm_content=closing",
+      "https://weddedwonderland.com/magazine?utm_source=blog&utm_medium=content&utm_campaign=honeymoon-planner-vs-travel-agent&utm_content=magnet"
+    ],
+    "copy_changes": [],
+    "rationale": "Brief journey_stage is 'comparing': the couple wants a way to judge any planner or agent before choosing who to speak with, so the invitation is a Wedded Concierge consultation at /wonderland-concierge, placed only where the post moves from neutral questions to Wedded Wonderland. CTA copy makes no comparison with travel agents and gives no figures; each subtext carries one brand-facts reassurance once: fee in writing (primary), inclusions in writing (secondary), one Wedded Advisor start to finish (closing). These match the questions the post tells readers to ask, so the CTA answers the page's own test without new claims. No 'free', perks, Privileges, availability or call-first wording. All four tracked links already appear once each with correct UTMs, so no copy change is made. A printable side-by-side question sheet for comparing two businesses would be a better-matched magnet; none is known to exist, so it is a backlog suggestion only and not placed."
+  },
+  "next_agent": ["distribution"]
+}
