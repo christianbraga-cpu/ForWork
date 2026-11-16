@@ -1,0 +1,71 @@
+{
+  "agent": "cro-specialist",
+  "task_id": "travel-advisor-benefits",
+  "stage": "09",
+  "status": "complete",
+  "round": 1,
+  "inputs_used": [
+    "CLAUDE.md",
+    "content-system/schemas/09-cro.schema.json",
+    "content/posts/travel-advisor-benefits/01-brief.json",
+    "content/posts/travel-advisor-benefits/08-final.md",
+    "content/posts/prenup/09-cro.json (format model)"
+  ],
+  "self_qa": {
+    "checks": [
+      {"check": "Primary CTA 6 words or fewer, no 'click here', no exclamation mark", "pass": true, "note": "'Request a Wedded Concierge consultation' (5 words)."},
+      {"check": "utm_content primary, secondary, closing, magnet each appear exactly once", "pass": true, "note": "Checked by grep on 08-final.md: 1 each, 4 UTM links in total."},
+      {"check": "UTMs only on /wonderland-concierge (3) and /magazine (1)", "pass": true},
+      {"check": "Primary /wonderland-concierge anchor names Wedded Concierge", "pass": true, "note": "Line 122 anchor is 'Wedded Concierge'; closing anchor (line 150) is 'speak with Wedded Concierge'. Secondary anchor (line 110) reads 'start a conversation with an advisor'; flagged to the orchestrator, 08-final.md not edited."},
+      {"check": "CTA copy claims only from brand-facts wording", "pass": true, "note": "Subtexts use 'The fee is agreed in writing before any work begins.', 'The advisor confirms inclusions in writing before the couple commits.' and the time zone and AUD line."},
+      {"check": "No 'free', perks, Wedded Privileges, availability promises, call-first, prices, 'best' or em dashes; Australian English; no CTA marker added", "pass": true, "note": "08-final.md has no <!-- CTA: ... --> markers and none were added."}
+    ],
+    "confidence": 0.85
+  },
+  "open_questions": [
+    {"to": "orchestrator", "question": "Secondary link anchor at line 110 ('start a conversation with an advisor') does not name Wedded Concierge. Optional small copy change: 'start a conversation with Wedded Concierge'. Not blocking; 08-final.md left unchanged as instructed.", "blocking": false},
+    {"to": "orchestrator", "question": "08-final.md contains no <!-- CTA: primary --> marker, so any CMS CTA block has no anchor point; placements rely on the existing inline links. The secondary link (line 110) sits above the primary (line 122) in reading order; labels kept as written.", "blocking": false},
+    {"to": "orchestrator", "question": "Deferred business answers (fee basis, named Advisor, real weddings) remain deferred per brand-facts. Re-run cro-specialist once confirmed.", "blocking": false}
+  ],
+  "assumptions": [
+    "FAST MODE: 07-panel.json cta_reactions not reviewed in depth (no CTA keys found at payload top level); placements follow the brief and the prenup model."
+  ],
+  "verify_items": [],
+  "tools_used": ["Bash (grep, python3 -I)"],
+  "payload": {
+    "journey_stage": "comparing",
+    "primary_cta": {
+      "text": "Request a Wedded Concierge consultation",
+      "subtext": "The fee is agreed in writing before any work begins.",
+      "link": "https://weddedwonderland.com/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=travel-advisor-benefits&utm_content=primary",
+      "placement": "Existing inline link in 'When the trip is a wedding and a honeymoon' (line 122, anchor 'Wedded Concierge'), after the benefits and the questions checklist have answered what an advisor does and what to ask. Unchanged."
+    },
+    "secondary_cta": {
+      "text": "Put these questions to Wedded Concierge",
+      "subtext": "The advisor confirms inclusions in writing before you commit.",
+      "link": "https://weddedwonderland.com/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=travel-advisor-benefits&utm_content=secondary",
+      "placement": "Existing final sentence of 'Questions to ask before you hire an advisor' (line 110), for readers who have just finished the checklist. Unchanged; anchor wording flagged."
+    },
+    "lead_magnet": {
+      "name": "Wedded Wonderland magazines and planning guides",
+      "link": "https://weddedwonderland.com/magazine?utm_source=blog&utm_medium=content&utm_campaign=travel-advisor-benefits&utm_content=magnet",
+      "placement": "Existing final line of 'Ready when you are' (line 150), for readers still comparing. Already tagged; unchanged.",
+      "exists": true
+    },
+    "closing_cta": {
+      "text": "Speak with Wedded Concierge",
+      "subtext": "Working in your time zone and quoting in AUD.",
+      "link": "https://weddedwonderland.com/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=travel-advisor-benefits&utm_content=closing",
+      "placement": "Existing closing paragraph under 'Ready when you are' (line 150), after the fee and inclusions lines. Unchanged."
+    },
+    "tracking": [
+      "https://weddedwonderland.com/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=travel-advisor-benefits&utm_content=primary",
+      "https://weddedwonderland.com/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=travel-advisor-benefits&utm_content=secondary",
+      "https://weddedwonderland.com/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=travel-advisor-benefits&utm_content=closing",
+      "https://weddedwonderland.com/magazine?utm_source=blog&utm_medium=content&utm_campaign=travel-advisor-benefits&utm_content=magnet"
+    ],
+    "copy_changes": [],
+    "rationale": "Brief journey_stage is 'comparing': the reader is weighing an advisor against booking alone, so the invitation comes only after the post has shown what an advisor does, what the reader can do themselves and what to ask any advisor. The goal is a Wedded Concierge consultation at /wonderland-concierge. The main worry for a comparing reader is cost and commitment, so the primary subtext uses the brand-facts fee line, the secondary uses the inclusions-in-writing line and the closing uses the time zone and AUD line; no perks, Privileges, availability, prices or call-first wording. All four tracked links already appear once each with correct UTMs, so no copy change is made; the only suggestion is naming Wedded Concierge in the secondary anchor. A 'questions to ask a travel advisor' printable checklist would be a better-matched magnet; none is known to exist, so it is a backlog suggestion only and not placed."
+  },
+  "next_agent": ["distribution"]
+}
