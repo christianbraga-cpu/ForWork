@@ -7,7 +7,7 @@ round: 2
 
 <!-- IMAGE SLOT featured: Landscape 3:2 with negative space on one side for a title. Overhead or 45 degree still life on natural linen: two passports (plain covers or face down), a closed leather notebook with a written itinerary page just visible but unreadable, a fountain pen, a pair of sunglasses and a sprig of olive or frangipani. Soft morning window light, warm neutral palette, no people. No airline, hotel, resort, cruise, card or travel brand logos or branding visible anywhere. No money, price tags, currency notes, cards, invoices with figures, calculators showing numbers or any visible figures. No readable names, passport numbers, booking references, barcodes or personal details. Source: library register, Canva brand asset or licensed stock. AI only if Wedded Wonderland approves, and then labelled 'Illustrative image'. Never competitor or search-result images. Alt: Two passports and a leather notebook with a handwritten itinerary on soft linen in morning light -->
 
-The honeymoon planner cost you pay depends on two things: how that planner charges, and the trip you ask them to build. Each planner sets their own fee, so this guide does not quote a figure. It shows you how to get a fee in writing that you can compare: ask whether it is a flat fee, a percentage of the trip, supplier commissions or a mix, and what it covers.
+The honeymoon planner cost you pay depends on two things: how that planner charges, and the trip you ask them to build. Each planner sets their own fee, and the figure that matters is the one they put in writing. It shows you how to get a fee in writing that you can compare: ask whether it is a flat fee, a percentage of the trip, supplier commissions or a mix, and what it covers.
 
 Below: what a planner's fee pays for, what shapes it, why the fee and the trip are separate costs, and the questions to put to any planner. It closes with how the fee is agreed when you plan with Wedded Wonderland. For the wider picture, start with our guides to [wedding and honeymoon travel](https://weddedwonderland.com/travel).
 
@@ -22,9 +22,9 @@ Below: what a planner's fee pays for, what shapes it, why the fee and the trip a
 
 A planner's fee pays for their time and judgement. The trip itself (flights, stays, dinners, a boat for a day) is the cost of what the suppliers provide. Keep the two apart in your head from the first conversation and every quote becomes easier to read.
 
-The time is real. Someone has to compare options, read each supplier's terms and line up flight arrivals with check-in times. On a honeymoon with several stops, each booking brings its own deposit, its own deadline and its own fine print.
+The time is real. A honeymoon means comparing options, reading each supplier's terms and lining up flight arrivals with check-in times. On a honeymoon with several stops, each booking brings its own deposit, its own deadline and its own fine print.
 
-Judgement is the other half. A planner who knows a region can tell you which island suits a slow week, which city works for three nights rather than five and where a long transfer will eat into your time. That advice shapes the trip long before anything is booked.
+Judgement is the other half. Ask a planner how well they know the region you have in mind: which island suits a slow week, which city suits a short stay and where a long journey between stops would eat into your time.
 
 What the fee does not buy is a different set of consumer rights. Australian consumer guarantees for travel services apply whether you book directly with an airline or tour operator, through a travel agent, or through a booking platform or package provider. <!-- fact_02 -->
 
@@ -42,7 +42,7 @@ A single stay with flights either side asks less of a planner than a journey acr
 
 ### How much is booked and managed for you
 
-Some couples want ideas and a shortlist, then book themselves. Others want every flight, stay, transfer and dinner booked and held in one itinerary. Ask the planner where their work starts and stops, whether changes after booking are part of the fee and whether anything is charged separately.
+Some couples want ideas and a shortlist, then book themselves. Others want every flight, stay, transfer and dinner booked and set out in one itinerary. Ask the planner where their work starts and stops, whether changes after booking are part of the fee and whether anything is charged separately.
 
 ### Timing and how far ahead you start
 
@@ -67,7 +67,7 @@ These are the levers a planner will ask about first. Knowing your answers before
 - **Private or shared.** A private boat, guide or dinner is a different booking from a shared tour or a set menu.
 - **Number of stops.** Each extra stop adds a check-in and often a flight.
 
-None of these is right or wrong. They are simply where your choices show up on the quote. If it helps to see where couples often begin, browse our [honeymoon packages](https://weddedwonderland.com/destination-honeymoon-packages).
+None of these is right or wrong. They are simply where your choices show up on the quote. For ideas, browse our [honeymoon packages](https://weddedwonderland.com/destination-honeymoon-packages).
 
 <!-- IMAGE SLOT what-shapes-cost: Landscape 3:2. Still life on a stone or timber desk: an unbranded paper map with no readable place names, a few blank postcards or swatch cards in sea, sand and olive tones laid out in sequence, a length of linen thread linking them, a small brass compass, diffused daylight, no people (hands only at most). The map must not identify a real destination. No airline, hotel, resort, cruise, card or travel brand logos or branding visible anywhere. No money, price tags, currency notes, cards, invoices with figures, calculators showing numbers or any visible figures. No readable names, passport numbers, booking references, barcodes or personal details. Source: library register, Canva brand asset or licensed stock. AI only if Wedded Wonderland approves, and then labelled 'Illustrative image'. Never competitor or search-result images. Alt: Blank postcards linked by linen thread across an unmarked paper map, suggesting a honeymoon with several stops -->
 

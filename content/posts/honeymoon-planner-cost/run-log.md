@@ -8,3 +8,4 @@
 05:01 07b panel: revise, weighted enquire 1.7; 3 must-fix (intro framing, fee-agreed wording, tighten currency and protection).
 05:02 08 final copy done: about 2,090 words, no figures, scan clean.
 05:03 09 CRO and 10 distribution done.
+05:03 08b final check: 5 blocking fixes applied (intro research talk, planner capabilities as fact, a nights figure, 'often begin'); scan clean except URL-slug and exclusive-use hits.
