@@ -7,13 +7,13 @@ round: 2
 
 <!-- IMAGE SLOT featured: Landscape 3:2 with negative space on one side for the title. Overhead still life on warm linen: two closed notebooks side by side (one leather, one cloth), a fountain pen across the gap between them, two passports with plain covers and a sprig of olive or dried flowers, soft morning window light, warm neutral palette, no people. No travel agency shopfronts, signage, logos or branding, and no airline, hotel, resort, cruise or card brand material visible anywhere. No money, price tags, currency notes, cards, invoices, calculators or any visible figures. No readable names, passport numbers, booking references, barcodes or personal details. Source: library register, Canva brand asset or licensed stock. AI only if Wedded Wonderland approves, and then labelled 'Illustrative image'. Never competitor or search-result images. Alt: Two closed notebooks side by side on linen with a pen, two passports and a sprig of dried flowers -->
 
-Honeymoon planner vs travel agent sounds like a choice between two kinds of business. The short answer: the two titles overlap, because both are labels rather than job titles. The useful comparison is the service a particular business will actually provide, and this guide gives you the questions that show it.
+Honeymoon planner vs travel agent sounds like a choice between two kinds of business. The short answer: compare the service, not the title. The useful comparison is the service a particular business will actually provide, and this guide gives you the questions that show it.
 
 Put the same questions to anyone you are considering, ask for the answers in writing and set them side by side. The questions below cover what they will do, how they are paid and what happens when plans change.
 
 ## Key takeaways
 
-- "Honeymoon planner" and "travel agent" are labels rather than job titles, so compare what each business will actually do.
+- Whichever title a business uses, compare what it will actually do.
 - Ask every planner or agent the same questions, and get the answers in writing.
 - Australian consumer guarantees, supplier terms, insurance timing and insolvency risk apply whichever label you choose.
 - If the honeymoon follows a destination wedding, ask whether the same business can plan the wedding travel and the honeymoon as one plan.
@@ -70,7 +70,7 @@ Ask whether they can book any hotel or experience you find, or work with particu
 | Who do we contact while we are travelling, and in which time zone? | You know where help sits if something changes on the road. |
 | Can you plan the honeymoon together with our wedding travel? | You learn whether you will be managing one plan or two. |
 
-For the full list of questions to put to a planner, read [how a honeymoon planning service works](https://weddedwonderland.com/honeymoon-ideas/honeymoon-planning-service). If a third label, advisor, is on your list too, see [why couples use a travel advisor](https://weddedwonderland.com/travel-guides/travel-advisor-benefits). For how the two trips fit together, our [wedding and honeymoon travel](https://weddedwonderland.com/travel) page is the place to start. If you would rather begin from a shape and tailor it, our [honeymoon packages](https://weddedwonderland.com/destination-honeymoon-packages) start with an enquiry for a tailored itinerary. <!-- fact_31 -->
+For the full list of questions to put to a planner, read [how a honeymoon planning service works](https://weddedwonderland.com/honeymoon-ideas/honeymoon-planning-service). If a third label, advisor, is on your list too, see [why couples use a travel advisor](https://weddedwonderland.com/travel-guides/travel-advisor-benefits). For how the two trips fit together, our [wedding and honeymoon travel](https://weddedwonderland.com/travel) page is the place to start. If you would rather begin from a shape and tailor it, see our [honeymoon packages](https://weddedwonderland.com/destination-honeymoon-packages).
 
 ## Questions about how they are paid
 
@@ -93,7 +93,7 @@ If any payment goes overseas, compare whether the advertised rate is the rate yo
 
 As at November 2026, Australian consumer guarantees give you rights if a travel service is delayed or cancelled. <!-- fact_01 --> They apply whether you book directly with an airline, cruise line or tour operator, through a travel agent, or through a booking platform or package provider. <!-- fact_02 -->
 
-If you book through an intermediary, both its terms and the provider's apply. An agent or intermediary is usually bound by the provider's terms and, legally, may only need to pass on the remedy that provider offers. <!-- fact_05 -->
+If you book through an intermediary, both its terms and the provider's apply, so read both sets before you pay. <!-- fact_05 -->
 
 The guarantees do not require a refund or replacement if you change your mind or miss a service for reasons unrelated to it. In those cases, the booking's terms decide what you get back. <!-- fact_04 --> The [ACCC's guide to travel delays and cancellations](https://www.accc.gov.au/consumers/specific-products-and-activities/travel-delays-and-cancellations) sets out the detail.
 
@@ -115,7 +115,7 @@ If timing matters, allow extra time between connections. <!-- fact_07 -->
 
 Anything known before you buy the policy is not covered if it directly affects your travel, and the earlier you buy, the more likely you are to be covered if something unexpected happens before you leave. <!-- fact_14 -->
 
-Ask about insolvency too. Cover for a travel provider or agent going out of business is commonly excluded, and only a few insurers offer it. <!-- fact_17 --> Insolvency insurance is not compulsory for agents, so ask whoever you book through whether they hold it. <!-- fact_17 -->
+Ask about insolvency too. Cover for a travel provider or agent going out of business is commonly excluded, and only a few insurers offer it. <!-- fact_17 --> Ask whoever you book through whether they hold insolvency insurance. <!-- fact_17 -->
 
 For cover, stopovers and what to declare, see [Smartraveller's travel insurance guide](https://www.smartraveller.gov.au/travel-essentials/travel-insurance).
 
@@ -163,7 +163,7 @@ Ask directly: whether the same person plans both, and how dates and flights are 
 
 ### Are our rights different if we book through an agent?
 
-Consumer guarantees still apply whether you book with the provider, an agent or a booking platform. <!-- fact_02 --> What changes is the paperwork: the agent's terms and the provider's terms both apply, and the agent may only need to pass on the remedy the provider offers. <!-- fact_05 -->
+Consumer guarantees still apply whether you book with the provider, an agent or a booking platform. <!-- fact_02 --> What changes is the paperwork: the agent's terms and the provider's terms both apply. <!-- fact_05 -->
 
 ### What should we ask first?
 

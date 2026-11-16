@@ -8,3 +8,4 @@
 05:39 07b panel: revise, weighted enquire 1.7; 3 must-fix (merge table columns, commission question to the Advisor, trim drift).
 05:40 08 final copy done: 1,835 words, scan clean, 0 VERIFY.
 05:40 09 CRO and 10 distribution done.
+05:41 08b final check: 6 blocking fixes applied (labels claim, a brand line outside its section, three statements about what agents usually do); scan clean.
