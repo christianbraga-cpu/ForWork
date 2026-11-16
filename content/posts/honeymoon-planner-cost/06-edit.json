@@ -1,0 +1,241 @@
+{
+  "agent": "editor",
+  "task_id": "honeymoon-planner-cost",
+  "stage": "06",
+  "status": "complete",
+  "round": 1,
+  "inputs_used": [
+    "content/posts/honeymoon-planner-cost/05-draft.md",
+    "content/posts/honeymoon-planner-cost/01-brief.json",
+    "content/posts/honeymoon-planner-cost/02-seo.json",
+    "content/posts/honeymoon-planner-cost/03-source-pack.json",
+    "content-system/rubrics/editor-rubric.md",
+    "content-system/brand/brand-facts.md",
+    "content-system/brand/voice-guide.md",
+    "content-system/brand/banned-phrases.md",
+    "content-system/seo/link-map.csv"
+  ],
+  "next_agent": [
+    "icp-reader"
+  ],
+  "self_qa": {
+    "checks": [
+      {
+        "check": "Every factual sentence logged (18 fact markers)",
+        "pass": true
+      },
+      {
+        "check": "Scan run: 1 banned ('budget') and 1 flagged ('luxury'), both from the /expert-advice/luxury-honeymoon-budget-which-destination-suits-yours URL slug only; 0 dashes, 0 overlaps",
+        "pass": true
+      },
+      {
+        "check": "Decision consistent with scores and blocking issues (avg 4.29, none below 4)",
+        "pass": true
+      },
+      {
+        "check": "Every edit old occurs exactly once in document order; no UTM links touched; sister-draft links kept; no CTA marker added",
+        "pass": true
+      }
+    ],
+    "confidence": 0.8
+  },
+  "open_questions": [
+    {
+      "to": "orchestrator",
+      "question": "Sister-draft links (/honeymoon-ideas/honeymoon-planning-service, /travel-guides/travel-advisor-benefits) return 404 today; confirm all three posts publish together.",
+      "blocking": false
+    }
+  ],
+  "assumptions": [
+    "Fast mode: 04-images slots left as drafted (all with licensing, no-figures and no-branding constraints).",
+    "Primary keyword is in title and first 100 words but no H2; H2 wording follows the locked 02-seo outline, so not edited.",
+    "No prices, amounts, percentages or ranges appear in copy; needs_signoff empty."
+  ],
+  "payload": {
+    "draft_file": "content/posts/honeymoon-planner-cost/05-draft.md",
+    "rubric": {
+      "voice": 4,
+      "expertise": 4,
+      "accuracy": 4,
+      "seo_fit": 4,
+      "commercial_link": 5,
+      "structure": 5,
+      "brief_fit": 4
+    },
+    "average": 4.29,
+    "blocking_issues": [],
+    "decision": "pass_with_edits",
+    "edits": [
+      {
+        "location": "Intro, paragraph 2",
+        "issue": "Hub link to /travel required by 02-seo internal_links (Intro or first H2) is missing.",
+        "fix": "Replace exactly:\nIt closes with how the fee is set when you plan with Wedded Wonderland.\nwith:\nIt closes with how the fee is set when you plan with Wedded Wonderland. For the wider picture, start with our guides to [wedding and honeymoon travel](https://weddedwonderland.com/travel).",
+        "old": "It closes with how the fee is set when you plan with Wedded Wonderland.",
+        "new": "It closes with how the fee is set when you plan with Wedded Wonderland. For the wider picture, start with our guides to [wedding and honeymoon travel](https://weddedwonderland.com/travel)."
+      },
+      {
+        "location": "What you are paying a planner for, paragraph 1",
+        "issue": "States as fact that the trip is paid to suppliers directly; payment flow varies by planner and is unsourced.",
+        "fix": "Replace exactly:\nThe trip itself (flights, stays, dinners, a boat for a day) is paid to the suppliers who provide it.\nwith:\nThe trip itself (flights, stays, dinners, a boat for a day) is the cost of what the suppliers provide.",
+        "old": "The trip itself (flights, stays, dinners, a boat for a day) is paid to the suppliers who provide it.",
+        "new": "The trip itself (flights, stays, dinners, a boat for a day) is the cost of what the suppliers provide."
+      },
+      {
+        "location": "What you are paying a planner for, paragraph 2",
+        "issue": "Implies planner capabilities beyond brand facts (holding availability, securing perks such as late check-out and preferred tables).",
+        "fix": "Replace exactly:\nSomeone has to compare options, read each supplier's terms, line up flight arrivals with check-in times, hold dates while you decide and confirm the small requests that make a stay feel considered: the late check-out, the dietary note, the quiet table on the last night.\nwith:\nSomeone has to compare options, read each supplier's terms and line up flight arrivals with check-in times.",
+        "old": "Someone has to compare options, read each supplier's terms, line up flight arrivals with check-in times, hold dates while you decide and confirm the small requests that make a stay feel considered: the late check-out, the dietary note, the quiet table on the last night.",
+        "new": "Someone has to compare options, read each supplier's terms and line up flight arrivals with check-in times."
+      },
+      {
+        "location": "What you are paying a planner for, paragraph 3",
+        "issue": "Figure-style phrasing ('half a day') and transfer framing; keep the judgement point general.",
+        "fix": "Replace exactly:\nwhere a transfer will eat half a day\nwith:\nwhere a long transfer will eat into your time",
+        "old": "where a transfer will eat half a day",
+        "new": "where a long transfer will eat into your time"
+      },
+      {
+        "location": "What you are paying a planner for, paragraph 4",
+        "issue": "Overstates fact_01/fact_02: guarantees cover travel services within, departing or coming to Australia, and fact_05 says agents may only pass on the provider's remedy, so 'You give nothing up' is unsupported.",
+        "fix": "Replace exactly:\nAustralian consumer guarantees apply whether you book directly with an airline or tour operator, through a travel agent, or through a booking platform or package provider. <!-- fact_02 --> You give nothing up by handing the trip to someone else.\nwith:\nAustralian consumer guarantees for travel services apply whether you book directly with an airline or tour operator, through a travel agent, or through a booking platform or package provider. <!-- fact_02 -->",
+        "old": "Australian consumer guarantees apply whether you book directly with an airline or tour operator, through a travel agent, or through a booking platform or package provider. <!-- fact_02 --> You give nothing up by handing the trip to someone else.",
+        "new": "Australian consumer guarantees for travel services apply whether you book directly with an airline or tour operator, through a travel agent, or through a booking platform or package provider. <!-- fact_02 -->"
+      },
+      {
+        "location": "What shapes the fee, Timing H3",
+        "issue": "Implies planners hold availability; capability beyond brand facts.",
+        "fix": "Replace exactly:\nStarting early gives a planner room to compare, hold and adjust. Starting late can narrow the choices and compress the work into a few weeks.\nwith:\nStarting early gives you and a planner room to compare and adjust. Starting late can narrow the choices.",
+        "old": "Starting early gives a planner room to compare, hold and adjust. Starting late can narrow the choices and compress the work into a few weeks.",
+        "new": "Starting early gives you and a planner room to compare and adjust. Starting late can narrow the choices."
+      },
+      {
+        "location": "How the fee works with Wedded Wonderland, step 1",
+        "issue": "Adds 'the places you keep coming back to' beyond the fact_27 wording.",
+        "fix": "Replace exactly:\nYour dates, the feeling you want, the places you keep coming back to.\nwith:\nYour dates and the feeling you want.",
+        "old": "Your dates, the feeling you want, the places you keep coming back to.",
+        "new": "Your dates and the feeling you want."
+      },
+      {
+        "location": "How the fee works with Wedded Wonderland, bullet 3",
+        "issue": "fact_25 limits AUD quoting to Australian couples.",
+        "fix": "Replace exactly:\nYour Wedded Advisor works in your time zone and quotes in Australian dollars. <!-- fact_25 -->\nwith:\nYour Wedded Advisor works in your time zone and quotes in Australian dollars for Australian couples. <!-- fact_25 -->",
+        "old": "Your Wedded Advisor works in your time zone and quotes in Australian dollars. <!-- fact_25 -->",
+        "new": "Your Wedded Advisor works in your time zone and quotes in Australian dollars for Australian couples. <!-- fact_25 -->"
+      },
+      {
+        "location": "How the fee works with Wedded Wonderland, final paragraph",
+        "issue": "'What it covers' and 'all on paper' stretch fact_23/fact_24; restate exactly.",
+        "fix": "Replace exactly:\nSo the questions above already have answers before you pay: what the fee is, what it covers and what each booking includes, all on paper.\nwith:\nSo two of the questions above are answered from the start: the fee is agreed in writing before any work begins, and your Wedded Advisor confirms the inclusions in writing before you commit.",
+        "old": "So the questions above already have answers before you pay: what the fee is, what it covers and what each booking includes, all on paper.",
+        "new": "So two of the questions above are answered from the start: the fee is agreed in writing before any work begins, and your Wedded Advisor confirms the inclusions in writing before you commit."
+      }
+    ],
+    "fact_check_log": [
+      {
+        "claim": "Consumer guarantees apply however booked",
+        "fact_id": "fact_02",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Both intermediary and provider terms apply; agents usually bound by provider terms",
+        "fact_id": "fact_05",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Ask for unclear terms in writing; terms may differ by travel period",
+        "fact_id": "fact_06",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Read the PDS before buying",
+        "fact_id": "fact_10",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Known circumstances not covered; buy early",
+        "fact_id": "fact_14",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Insolvency commonly excluded; only some agents insured",
+        "fact_id": "fact_17",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Chargeback via some banks; do not waive chargeback rights",
+        "fact_id": "fact_18",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Providers choose exchange rate and fees; cost depends on amount, where, how",
+        "fact_id": "fact_19",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Compare rate, guarantee, fees, margin, receiver fees",
+        "fact_id": "fact_20",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Money transfer services registered with AUSTRAC",
+        "fact_id": "fact_21",
+        "status": "confirmed"
+      },
+      {
+        "claim": "One Wedded Advisor, single point of contact",
+        "fact_id": "fact_22",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Fee agreed in writing before any work begins",
+        "fact_id": "fact_23",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Inclusions confirmed in writing before commit",
+        "fact_id": "fact_24",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Time zone and AUD quotes for Australian couples",
+        "fact_id": "fact_25",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Plans travel anywhere in the world",
+        "fact_id": "fact_26",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Tell us anything; nothing too early or vague",
+        "fact_id": "fact_27",
+        "status": "confirmed"
+      },
+      {
+        "claim": "One person stays to the end; fee agreed in writing",
+        "fact_id": "fact_28",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Honeymoon-only follows same Wedded Advisor process",
+        "fact_id": "fact_29",
+        "status": "confirmed"
+      }
+    ],
+    "compliance": {
+      "pass": true,
+      "issues": [
+        "Must-fixes resolved by edits: planner capability implications (holding dates, perks, availability), unsourced claim that the trip is paid to suppliers, overstated consumer guarantee scope ('You give nothing up'), fact_25 and fact_27 wording stretches, and fact_23/fact_24 stretch in the Wedded Wonderland wrap-up.",
+        "No figures, no fee-structure statements (all framed as questions), no card-surcharge or passport-validity claims, no company names besides official bodies, no research talk, no em dashes, exactly 4 one-sentence takeaways.",
+        "Brand claims sit only in the Wedded Wonderland section and the close and match brand facts.",
+        "Missing /travel hub link added per 02-seo."
+      ]
+    },
+    "originality": {
+      "pass": true,
+      "matches": []
+    },
+    "banned_phrases_found": [],
+    "needs_signoff": []
+  }
+}
