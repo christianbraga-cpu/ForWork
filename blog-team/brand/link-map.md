@@ -237,6 +237,7 @@ Hub: `/style-advice/celebrity-engagement-rings` (in production). Spokes:
 - Style Advice category: `/style-advice/<slug>` (confirmed by the user, 27 Oct 2026).
 - Expert Advice category: `/expert-advice/<slug>` (confirmed by the user, 13 Nov 2026).
 - Travel Guides category: `/travel-guides/<slug>` (confirmed by the user, 15 Nov 2026).
+- Honeymoon Ideas category: `/honeymoon-ideas/<slug>` (confirmed by the user, 16 Nov 2026).
 - Other categories: TO CONFIRM.
 
 ## Blog articles written by this team

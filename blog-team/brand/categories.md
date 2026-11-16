@@ -19,6 +19,7 @@ upload prompt sets it explicitly and checks the breadcrumb.
 | **Style Advice** (CONFIRMED by the user 27 Oct 2026, URL base `/style-advice/`) | Rings, jewellery, fashion and celebrity style pieces (cluster: Rings and Jewellery) |
 | **Expert Advice** (CONFIRMED by the user 13 Nov 2026, URL base `/expert-advice/`) | Evergreen how-to and paperwork guides (cluster: Wedding Paperwork) |
 | **Travel Guides** (CONFIRMED by the user 15 Nov 2026, URL base `/travel-guides/`) | Travel planning, travel advisors, honeymoon and guest travel guides (cluster: Travel Advisor) |
+| **Honeymoon Ideas** (CONFIRMED by the user 16 Nov 2026, URL base `/honeymoon-ideas/`) | Honeymoon planning, honeymoon services and destination ideas (cluster: Honeymoon Planning Service) |
 | Guest Experience | Travel, accommodation, transfers and guest care |
 | Real Weddings | Case studies (only with client consent) |
 | Venues | Venue round-ups and comparisons |
