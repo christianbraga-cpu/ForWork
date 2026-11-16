@@ -24,3 +24,13 @@
 - **Stage 2 fast (writer, 6 min):** DONE. 03-draft-v1.md. --check: 2,744 reader words (244 over the 2,500 cap; writer estimated 2,250), 0 dashes, 0 placeholders, 6 official domains, none blocked. YAML valid; 42 claims, 18 links. 13 open items (mairie fee, apostille order, sworn translation done in Australia, religious-after-civil for couples already married, French term for sworn translator, hearing exceptions, 2013 year).
 - **Stage 3 fast (3 parallel reviews):** accuracy PASS 4.4 (major: "mainland" qualifier too narrow); SEO FAIL 3.6 (meta 156, keyword in no H2, 244 over, DRAFT pillar link); reader:couple 3/3/3/3 (Australian route hidden under the religious H2; "ask your mairie" fatigue; church question; no France track record). Root-cause fix: qa-rubrics.md legal_current no longer asks for an Advisor caveat.
 - **Stage 4 fast (one loop, 4 min):** DONE. 03-draft-v2.md. --check: 2,416 reader words (cap 2,500), 0 dashes, 0 placeholders, 6 official domains. New H2 for the Australian route. Orchestrator error caught by the writer: the "sworn translator = a translator accredited by a French court" definition I asked for is unsourced; copy editor replaces it with "ask your mairie which translators it accepts".
+- **Stage 6 fast (copy editor):** DONE. final.md, publish-package.json (image plan included), chrome-upload-prompt.md, article.docx. --check: 2,416 reader words, 0 dashes, 0 placeholders, 6 official domains, none blocked. YAML and JSON validated by the orchestrator. Link map: added as DRAFT. Template saved: blog-team/templates/country-legal-guide.md. Run time: about 40 minutes.
+
+## Must fix before publish
+1. **Publish order (PILLAR-LINK):** publish /expert-advice/marriage-licence-requirements first, or delete the sentence that links it.
+2. **CONCIERGE-PAY (user):** concierge pay model, partnered planners, named people and France track record; caps reader trust.
+3. **Nic:** CNI AUD 181 and apostille AUD 105 (2026 fees; re-check after 1 Jan 2027).
+4. **Research gaps (not stated in the article):** mairie fees, apostille order, whether the mairie accepts sworn translations done in Australia, religious ceremony after an Australian legal wedding, the French term for sworn translator, hearing exceptions, the year same-sex marriage became legal.
+5. **Categories:** confirm "France Weddings" and "Planning Advice" exist in the CMS, or drop them.
+6. **Older page:** "How to Plan a Destination Wedding in France if You're Overseas" appears in sidebar text; find its URL and decide whether to redirect it here.
+7. **Links, images, CMS:** click through the 11 external links; pick 6 images with credit, licence and consent; add author and CMS admin URL.
