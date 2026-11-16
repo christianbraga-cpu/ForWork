@@ -9,3 +9,4 @@
 05:40 08 final copy done: 1,835 words, scan clean, 0 VERIFY.
 05:40 09 CRO and 10 distribution done.
 05:41 08b final check: 6 blocking fixes applied (labels claim, a brand line outside its section, three statements about what agents usually do); scan clean.
+05:43 11 package, checklist, docx, link map, calendar row 63, run report done.

@@ -1,0 +1,300 @@
+{
+ "agent": "cms-publisher",
+ "task_id": "honeymoon-planner-vs-travel-agent",
+ "stage": "11",
+ "status": "complete",
+ "round": 1,
+ "inputs_used": [
+  "CLAUDE.md",
+  "content-system/schemas/11-publish-package.schema.json",
+  "content/posts/honeymoon-planner-vs-travel-agent/01-brief.json",
+  "content/posts/honeymoon-planner-vs-travel-agent/02-seo.json",
+  "content/posts/honeymoon-planner-vs-travel-agent/04-images.json",
+  "content/posts/honeymoon-planner-vs-travel-agent/08-final.md",
+  "content/posts/honeymoon-planner-vs-travel-agent/09-cro.json",
+  "content/posts/honeymoon-planner-vs-travel-agent/10-distribution.json",
+  "content/posts/honeymoon-planner-cost/11-body.md, 11-publish-package.json, 12-cms-report.md, booking-checklist.md (format model)"
+ ],
+ "self_qa": {
+  "checks": [
+   {
+    "check": "Front matter and all <!-- fact_xx --> markers removed; H1 is the title; 5 image-slot comments kept; all 12 links and the 4 UTM links unchanged; no CTA marker comments; no [[VERIFY]] markers in the copy",
+    "pass": true
+   },
+   {
+    "check": "Each utm_content (primary, secondary, closing, magnet) appears exactly once in 11-body.md",
+    "pass": true
+   },
+   {
+    "check": "Exactly 4 key takeaways and 4 FAQ pairs taken verbatim from the body",
+    "pass": true
+   },
+   {
+    "check": "Meta title and description from 02-seo.json, no prices, no em dashes",
+    "pass": true,
+    "note": "title 51, description 149 characters"
+   },
+   {
+    "check": "primary_category equals categories[0] (Honeymoon Ideas)",
+    "pass": true
+   },
+   {
+    "check": "No em dashes; Australian English",
+    "pass": true
+   },
+   {
+    "check": "status draft; nothing uploaded, saved or published",
+    "pass": true
+   }
+  ],
+  "confidence": 0.9
+ },
+ "open_questions": [
+  {
+   "to": "orchestrator",
+   "question": "CMS upload not attempted: FAST MODE package only, no browser (no Chrome) in this session and the field map is not confirmed. A human saves as Draft and clicks Publish, or run /wedded-blog resume=honeymoon-planner-vs-travel-agent once the field map is confirmed.",
+   "blocking": true
+  },
+  {
+   "to": "orchestrator",
+   "question": "The /honeymoon-ideas folder and the Honeymoon Ideas category must exist in the CMS before the draft is saved.",
+   "blocking": true
+  },
+  {
+   "to": "orchestrator",
+   "question": "Body links to /honeymoon-ideas/honeymoon-planning-service, /travel-guides/travel-advisor-benefits and /honeymoon-ideas/honeymoon-planner-cost, which are drafts: publish all three together with this post or remove those links before publishing.",
+   "blocking": true
+  },
+  {
+   "to": "orchestrator",
+   "question": "Stage 03 flag for Nic still open: the live Concierge FAQ describes honeymoon help as introductions to travel specialists and partners possibly paying a booking fee, which conflicts with the 16 Nov brand-facts line behind 'A honeymoon on its own is planned the same way, with one Wedded Advisor.' Carried into the draft note.",
+   "blocking": false
+  }
+ ],
+ "assumptions": [
+  "H1 and Article headline \"Honeymoon Planner vs Travel Agent Compared\"; meta title and description from 02-seo.json unchanged.",
+  "Excerpt is the first two sentences of the opening paragraph.",
+  "Categories and tags from 01-brief.json; primary category Honeymoon Ideas. New article, no redirect.",
+  "JSON-LD is Article + BreadcrumbList (Home > Honeymoon Ideas > post) + FAQPage (4 pairs from the body FAQ).",
+  "Image order follows the slot order in the body; 04-images.json placements differ from where the final copy places them, the body is followed.",
+  "Byline Wedded Wonderland (organisation), as instructed.",
+  "verify_items and needs_signoff empty: no [[VERIFY]] markers and no prices in the copy."
+ ],
+ "verify_items": [],
+ "tools_used": [
+  "Bash (python3 -I)"
+ ],
+ "next_agent": [
+  "orchestrator"
+ ],
+ "payload": {
+  "title": "Honeymoon Planner vs Travel Agent Compared",
+  "slug": "honeymoon-planner-vs-travel-agent",
+  "url_path": "/honeymoon-ideas/honeymoon-planner-vs-travel-agent",
+  "content_type": "comparison",
+  "categories": [
+   "Honeymoon Ideas",
+   "Destination Weddings",
+   "Planning Guides"
+  ],
+  "primary_category": "Honeymoon Ideas",
+  "tags": [
+   "Honeymoon Planning Service",
+   "Honeymoon Planner",
+   "Travel Agent",
+   "Wedded Concierge",
+   "Wedded Advisor"
+  ],
+  "excerpt": "Honeymoon planner vs travel agent sounds like a choice between two kinds of business. The short answer: compare the service, not the title.",
+  "key_takeaways": [
+   "Whichever title a business uses, compare what it will actually do.",
+   "Ask every planner or agent the same questions, and get the answers in writing.",
+   "Australian consumer guarantees, supplier terms, insurance timing and insolvency risk apply whichever label you choose.",
+   "If the honeymoon follows a destination wedding, ask whether the same business can plan the wedding travel and the honeymoon as one plan."
+  ],
+  "body_markdown_file": "content/posts/honeymoon-planner-vs-travel-agent/11-body.md",
+  "faq": [
+   {
+    "q": "Do we need a travel agent for our honeymoon?",
+    "a": "That is your choice. Consumer guarantees apply whether you book directly or through an agent or intermediary. The choice rests on how much planning you want to hand over and how many moving parts the trip has."
+   },
+   {
+    "q": "Can one business plan both our wedding travel and our honeymoon?",
+    "a": "Ask directly: whether the same person plans both, and how dates and flights are checked between the two. Get the answer in writing, alongside the fee."
+   },
+   {
+    "q": "Are our rights different if we book through an agent?",
+    "a": "Consumer guarantees still apply whether you book with the provider, an agent or a booking platform. What changes is the paperwork: the agent's terms and the provider's terms both apply."
+   },
+   {
+    "q": "What should we ask first?",
+    "a": "Start with two questions: who will we deal with from first call to return, and what will you confirm in writing before we commit?"
+   }
+  ],
+  "images": [
+   {
+    "slot_id": "featured",
+    "file": "content/posts/honeymoon-planner-vs-travel-agent/images/honeymoon-planner-vs-travel-agent-two-notebooks-passports-linen.webp",
+    "role": "featured",
+    "alt": "Two closed notebooks side by side on linen with a pen, two passports and a sprig of dried flowers",
+    "status": "needed"
+   },
+   {
+    "slot_id": "doing-it-yourself",
+    "file": "content/posts/honeymoon-planner-vs-travel-agent/images/honeymoon-planner-vs-travel-agent-passports-itinerary-desk.webp",
+    "role": "inline",
+    "alt": "Two passports and a printed itinerary on linen beside a closed laptop, a pen and blank sticky notes",
+    "status": "needed"
+   },
+   {
+    "slot_id": "side-by-side-questions",
+    "file": "content/posts/honeymoon-planner-vs-travel-agent/images/honeymoon-planner-vs-travel-agent-couple-planning-at-table.webp",
+    "role": "inline",
+    "alt": "A couple sitting together at a sunlit table talking through their plans with a notebook",
+    "status": "needed"
+   },
+   {
+    "slot_id": "why-labels-blur",
+    "file": "content/posts/honeymoon-planner-vs-travel-agent/images/honeymoon-planner-vs-travel-agent-open-notebook-folded-map-coffee.webp",
+    "role": "inline",
+    "alt": "An open notebook, a folded paper map, reading glasses and a cup of coffee overlapping on linen",
+    "status": "needed"
+   },
+   {
+    "slot_id": "after-destination-wedding",
+    "file": "content/posts/honeymoon-planner-vs-travel-agent/images/honeymoon-planner-vs-travel-agent-veil-bouquet-passports-linen.webp",
+    "role": "inline",
+    "alt": "A folded veil and a bouquet of soft neutral flowers beside two passports and an envelope on linen",
+    "status": "needed"
+   }
+  ],
+  "cta": {
+   "text": "Request a Wedded Concierge consultation",
+   "subtext": "The fee is agreed in writing before any work begins.",
+   "link": "https://weddedwonderland.com/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=honeymoon-planner-vs-travel-agent&utm_content=primary",
+   "placement": "Existing inline link introducing the bullet list in 'Where Wedded Wonderland fits' (line 142, anchor 'Wedded Concierge'), where the brand claims first appear after the reader has worked through the neutral questions. Unchanged."
+  },
+  "secondary_cta": {
+   "text": "Meet your Wedded Advisor",
+   "subtext": "Your Wedded Advisor confirms the inclusions in writing before you commit.",
+   "link": "https://weddedwonderland.com/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=honeymoon-planner-vs-travel-agent&utm_content=secondary",
+   "placement": "Existing final sentence of 'Where Wedded Wonderland fits' (line 152), straight after the invitation to put commission and mark-up questions to the Wedded Advisor in writing. Unchanged."
+  },
+  "closing_cta": {
+   "text": "Begin with Wedded Concierge",
+   "subtext": "One Wedded Advisor plans with you from start to finish.",
+   "link": "https://weddedwonderland.com/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=honeymoon-planner-vs-travel-agent&utm_content=closing",
+   "placement": "Existing closing paragraph under 'Start with a conversation' (line 174), after the fee-in-writing and inclusions-on-paper line. Unchanged."
+  },
+  "lead_magnet": {
+   "name": "Wedded Wonderland magazine",
+   "link": "https://weddedwonderland.com/magazine?utm_source=blog&utm_medium=content&utm_campaign=honeymoon-planner-vs-travel-agent&utm_content=magnet",
+   "placement": "Existing final line of 'Start with a conversation' (line 174), for readers still comparing or yet to choose a destination. Unchanged."
+  },
+  "tracking_links": [
+   "https://weddedwonderland.com/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=honeymoon-planner-vs-travel-agent&utm_content=primary",
+   "https://weddedwonderland.com/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=honeymoon-planner-vs-travel-agent&utm_content=secondary",
+   "https://weddedwonderland.com/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=honeymoon-planner-vs-travel-agent&utm_content=closing",
+   "https://weddedwonderland.com/magazine?utm_source=blog&utm_medium=content&utm_campaign=honeymoon-planner-vs-travel-agent&utm_content=magnet"
+  ],
+  "seo": {
+   "meta_title": "Honeymoon Planner vs Travel Agent: Questions to Ask",
+   "meta_description": "Weighing a honeymoon planner against a travel agent? The questions to ask about what each will do, how they are paid and who helps when plans change.",
+   "focus_keyword": "honeymoon planner vs travel agent",
+   "canonical": "https://weddedwonderland.com/honeymoon-ideas/honeymoon-planner-vs-travel-agent",
+   "og_image_slot": "featured"
+  },
+  "schema_jsonld": {
+   "@context": "https://schema.org",
+   "@graph": [
+    {
+     "@type": "Article",
+     "@id": "https://weddedwonderland.com/honeymoon-ideas/honeymoon-planner-vs-travel-agent#article",
+     "headline": "Honeymoon Planner vs Travel Agent Compared",
+     "description": "Weighing a honeymoon planner against a travel agent? The questions to ask about what each will do, how they are paid and who helps when plans change.",
+     "author": {
+      "@type": "Organization",
+      "name": "Wedded Wonderland",
+      "url": "https://weddedwonderland.com/"
+     },
+     "publisher": {
+      "@type": "Organization",
+      "name": "Wedded Wonderland",
+      "url": "https://weddedwonderland.com/"
+     },
+     "datePublished": "",
+     "mainEntityOfPage": "https://weddedwonderland.com/honeymoon-ideas/honeymoon-planner-vs-travel-agent",
+     "inLanguage": "en-AU"
+    },
+    {
+     "@type": "BreadcrumbList",
+     "itemListElement": [
+      {
+       "@type": "ListItem",
+       "position": 1,
+       "name": "Home",
+       "item": "https://weddedwonderland.com/"
+      },
+      {
+       "@type": "ListItem",
+       "position": 2,
+       "name": "Honeymoon Ideas",
+       "item": "https://weddedwonderland.com/honeymoon-ideas"
+      },
+      {
+       "@type": "ListItem",
+       "position": 3,
+       "name": "Honeymoon Planner vs Travel Agent Compared",
+       "item": "https://weddedwonderland.com/honeymoon-ideas/honeymoon-planner-vs-travel-agent"
+      }
+     ]
+    },
+    {
+     "@type": "FAQPage",
+     "@id": "https://weddedwonderland.com/honeymoon-ideas/honeymoon-planner-vs-travel-agent#faq",
+     "mainEntity": [
+      {
+       "@type": "Question",
+       "name": "Do we need a travel agent for our honeymoon?",
+       "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "That is your choice. Consumer guarantees apply whether you book directly or through an agent or intermediary. The choice rests on how much planning you want to hand over and how many moving parts the trip has."
+       }
+      },
+      {
+       "@type": "Question",
+       "name": "Can one business plan both our wedding travel and our honeymoon?",
+       "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ask directly: whether the same person plans both, and how dates and flights are checked between the two. Get the answer in writing, alongside the fee."
+       }
+      },
+      {
+       "@type": "Question",
+       "name": "Are our rights different if we book through an agent?",
+       "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Consumer guarantees still apply whether you book with the provider, an agent or a booking platform. What changes is the paperwork: the agent's terms and the provider's terms both apply."
+       }
+      },
+      {
+       "@type": "Question",
+       "name": "What should we ask first?",
+       "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Start with two questions: who will we deal with from first call to return, and what will you confirm in writing before we commit?"
+       }
+      }
+     ]
+    }
+   ]
+  },
+  "author": "Wedded Wonderland",
+  "status": "draft",
+  "verify_items": [],
+  "needs_signoff": [],
+  "redirect": null,
+  "redirects_recommended": [],
+  "draft_note": "DRAFT. Do not publish until checked: no [[VERIFY]] items in the copy; no prices, nothing for Nic to sign off. Image slots needed (5 of 5, none approved): featured, doing-it-yourself, side-by-side-questions, why-labels-blur, after-destination-wedding. side-by-side-questions must come from a consented real Wedded Wonderland shoot or model-released licensed stock, never AI; featured, doing-it-yourself, why-labels-blur and after-destination-wedding are still lifes (library, Canva or licensed stock; AI only with Wedded Wonderland approval, labelled 'Illustrative image'); no travel agency shopfronts, signage or logos, no airline, hotel, resort, cruise or card brand material, no money or visible figures, and no readable names, passport numbers, booking references or personal details in any image. CMS setup: the /honeymoon-ideas folder and the Honeymoon Ideas category must exist before the draft is saved. Internal links to /honeymoon-ideas/honeymoon-planning-service, /travel-guides/travel-advisor-benefits and /honeymoon-ideas/honeymoon-planner-cost point to drafts: publish all three together with this post or remove those links. Planner SME to reconfirm the ACCC, Smartraveller and Moneysmart sources live (copy is 'as at November 2026'). Open for Nic (from stage 03): the live Concierge FAQ describes honeymoon help as introductions to travel specialists and partners who may charge a booking fee, which conflicts with the 16 Nov brand-facts line used in 'Where Wedded Wonderland fits'. New article, no redirect. Byline Wedded Wonderland. DRAFT ONLY. A human clicks Publish."
+ }
+}
