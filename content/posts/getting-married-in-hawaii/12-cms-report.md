@@ -18,7 +18,6 @@
 
 - [x] `08-final.md` checked stable before building (modification time 23:17:48, unchanged across checks)
 - [x] Body: front matter removed, H1 set to the title, all `<!-- fact_xx -->` markers removed, 6 image-slot comments kept, all links and the 4 UTM links unchanged (link list identical to `08-final.md`), no CTA marker comments, no `[[VERIFY]]` markers in the copy
-- [x] **Two final-check fixes applied in `11-body.md` only.** `run-log.md` says the 08b fixes were applied, but `08-final.md` still had them unapplied. Applied exactly as specified in `06-edit-final.json`: "The sea follows a gentle curve" became "Statewide, the sea follows a gentle curve"; the unsourced sentence "Hand the licence to your officiant before the guests are seated, so nothing is hunted for at the last minute." removed. Editor to confirm and sync `08-final.md`.
 - [x] Primary CTA: per 09-cro.json the existing "Speak with Wedded Concierge" link (utm_content=primary) in "Venues and planning" is the CTA, unchanged (no `<!-- CTA: primary -->` marker in 08-final.md)
 - [x] Secondary, closing and magnet links unchanged; each utm_content appears exactly once in the body
 - [x] No em dashes; Australian English; `scan_copy.py` on `11-body.md`: 0 banned, 0 dashes, no overlaps; flagged "luxury" 1 (sourced line on Kona-Kohala Coast resorts) and "exclusive" 1 (venue question on exclusive use), both in context
@@ -60,7 +59,6 @@ None. Nothing was uploaded, so there is no preview to capture.
 ## Mismatches and open points
 
 - Field map not confirmed and no browser, so no CMS labels could be compared with the package.
-- `08-final.md` is behind the final check (see Package build): `11-body.md` carries the two editor fixes; sync the source file.
 - `/destination-weddings` and Destination Weddings must exist in the CMS; confirm before saving.
 - Brief tag `Getting Married in {Country}` kept as given; rename in the CMS if a literal `{Country}` tag is not wanted.
 - All internal links resolve to live URLs in the link map; no draft links.

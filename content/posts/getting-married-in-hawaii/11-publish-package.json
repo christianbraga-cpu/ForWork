@@ -1,350 +1,345 @@
 {
- "agent": "cms-publisher",
- "task_id": "getting-married-in-hawaii",
- "stage": "11",
- "status": "complete",
- "round": 1,
- "inputs_used": [
-  "CLAUDE.md",
-  "content-system/schemas/11-publish-package.schema.json",
-  "content/posts/getting-married-in-hawaii/01-brief.json",
-  "content/posts/getting-married-in-hawaii/02-seo.json",
-  "content/posts/getting-married-in-hawaii/04-images.json",
-  "content/posts/getting-married-in-hawaii/06-edit-final.json",
-  "content/posts/getting-married-in-hawaii/08-final.md",
-  "content/posts/getting-married-in-hawaii/09-cro.json",
-  "content/posts/getting-married-in-hawaii/10-distribution.json",
-  "content/posts/honeymoon-planner-vs-travel-agent/11-body.md, 11-publish-package.json, 12-cms-report.md, booking-checklist.md (format model)"
- ],
- "self_qa": {
-  "checks": [
-   {
-    "check": "Front matter and all <!-- fact_xx --> markers removed; H1 is the title; 6 image-slot comments kept; all links and the 4 UTM links unchanged; no CTA marker comments; no [[VERIFY]] markers in the copy",
-    "pass": true
-   },
-   {
-    "check": "Each utm_content (primary, secondary, closing, magnet) appears exactly once in 11-body.md",
-    "pass": true
-   },
-   {
-    "check": "Exactly 4 key takeaways and 6 FAQ pairs taken verbatim from the body",
-    "pass": true
-   },
-   {
-    "check": "Meta title and description from 02-seo.json, no prices, no em dashes",
-    "pass": true,
-    "note": "title 41, description 143 characters"
-   },
-   {
-    "check": "primary_category equals categories[0] (Destination Weddings)",
-    "pass": true
-   },
-   {
-    "check": "The two 06-edit-final.json fixes applied in 11-body.md (missing from 08-final.md)",
-    "pass": true
-   },
-   {
-    "check": "No em dashes; Australian English",
-    "pass": true
-   },
-   {
-    "check": "status draft; nothing uploaded, saved or published",
-    "pass": true
-   }
+  "agent": "cms-publisher",
+  "task_id": "getting-married-in-hawaii",
+  "stage": "11",
+  "status": "complete",
+  "round": 1,
+  "inputs_used": [
+    "CLAUDE.md",
+    "content-system/schemas/11-publish-package.schema.json",
+    "content/posts/getting-married-in-hawaii/01-brief.json",
+    "content/posts/getting-married-in-hawaii/02-seo.json",
+    "content/posts/getting-married-in-hawaii/04-images.json",
+    "content/posts/getting-married-in-hawaii/06-edit-final.json",
+    "content/posts/getting-married-in-hawaii/08-final.md",
+    "content/posts/getting-married-in-hawaii/09-cro.json",
+    "content/posts/getting-married-in-hawaii/10-distribution.json",
+    "content/posts/honeymoon-planner-vs-travel-agent/11-body.md, 11-publish-package.json, 12-cms-report.md, booking-checklist.md (format model)"
   ],
-  "confidence": 0.9
- },
- "open_questions": [
-  {
-   "to": "orchestrator",
-   "question": "CMS upload not attempted: FAST MODE package only, no browser in this session and the field map is not confirmed. A human saves as Draft and clicks Publish, or run /wedded-blog resume=getting-married-in-hawaii once the field map is confirmed.",
-   "blocking": true
+  "self_qa": {
+    "checks": [
+      {
+        "check": "Front matter and all <!-- fact_xx --> markers removed; H1 is the title; 6 image-slot comments kept; all links and the 4 UTM links unchanged; no CTA marker comments; no [[VERIFY]] markers in the copy",
+        "pass": true
+      },
+      {
+        "check": "Each utm_content (primary, secondary, closing, magnet) appears exactly once in 11-body.md",
+        "pass": true
+      },
+      {
+        "check": "Exactly 4 key takeaways and 6 FAQ pairs taken verbatim from the body",
+        "pass": true
+      },
+      {
+        "check": "Meta title and description from 02-seo.json, no prices, no em dashes",
+        "pass": true,
+        "note": "title 41, description 143 characters"
+      },
+      {
+        "check": "primary_category equals categories[0] (Destination Weddings)",
+        "pass": true
+      },
+      {
+        "check": "The two 06-edit-final.json fixes applied in 11-body.md (missing from 08-final.md)",
+        "pass": true
+      },
+      {
+        "check": "No em dashes; Australian English",
+        "pass": true
+      },
+      {
+        "check": "status draft; nothing uploaded, saved or published",
+        "pass": true
+      }
+    ],
+    "confidence": 0.9
   },
-  {
-   "to": "orchestrator",
-   "question": "The /destination-weddings folder and the Destination Weddings category must exist in the CMS before the draft is saved.",
-   "blocking": true
-  },
-  {
-   "to": "editor",
-   "question": "run-log.md says the 08b final-check fixes were applied, but 08-final.md (unchanged since 23:17:48) still has the unlabelled sea line and the licence hand-over sentence. Both fixes from 06-edit-final.json were applied in 11-body.md only; please sync 08-final.md or confirm.",
-   "blocking": false
-  }
- ],
- "assumptions": [
-  "H1 and Article headline \"How to Get Married in Hawaii Step by Step\"; meta title and description from 02-seo.json unchanged.",
-  "Excerpt is the first two sentences of the opening paragraph.",
-  "Categories and tags from 01-brief.json; primary category Destination Weddings. Tag 'United States / Hawaii' added as a single string (tags are flat strings in the schema). Brief tag 'Getting Married in {Country}' kept as given.",
-  "JSON-LD is Article + BreadcrumbList (Home > Destination Weddings > post) + FAQPage (6 pairs from the body FAQ); links in FAQ answers reduced to their anchor text.",
-  "Image order follows the slot order in the body; alt and caption from 04-images.json.",
-  "Byline Wedded Wonderland (organisation), as instructed.",
-  "verify_items and needs_signoff empty: no [[VERIFY]] markers and no price or fee amounts in the copy."
- ],
- "verify_items": [],
- "tools_used": [
-  "Bash (python3 -I)"
- ],
- "next_agent": [
-  "orchestrator"
- ],
- "payload": {
-  "title": "How to Get Married in Hawaii Step by Step",
-  "slug": "getting-married-in-hawaii",
-  "url_path": "/destination-weddings/getting-married-in-hawaii",
-  "content_type": "planning_guide",
-  "categories": [
-   "Destination Weddings",
-   "Hawaii",
-   "United States",
-   "Planning Guides"
-  ],
-  "primary_category": "Destination Weddings",
-  "tags": [
-   "Getting Married in Hawaii",
-   "Getting Married in {Country}",
-   "Hawaii",
-   "Oahu",
-   "Maui",
-   "Kauai",
-   "Hawaii Island",
-   "Legal requirements",
-   "Marriage licence",
-   "Apostille",
-   "Wedding planning",
-   "United States / Hawaii"
-  ],
-  "excerpt": "Hawaii is on your list, and before you fall for a lawn above the Pacific you want to know two things: will the marriage be legal, and what do you do first? Getting married in Hawaii as an Australian couple is straightforward.",
-  "key_takeaways": [
-   "Australians can marry legally in Hawaii by following the Hawaii State Department of Health marriage licence process, with no residency requirement.",
-   "You both meet a licence agent in person no sooner than 30 days before the ceremony, and the wedding must take place within 30 days of picking up the licence.",
-   "Your officiant must hold a State of Hawaii performer licence, whoever they are and wherever they come from.",
-   "Order certified copies of your marriage certificate early, because a certified copy is usually accepted as proof of the marriage back in Australia."
-  ],
-  "body_markdown_file": "content/posts/getting-married-in-hawaii/11-body.md",
-  "faq": [
-   {
-    "q": "Who needs to be at the ceremony?",
-    "a": "The licence steps centre on the two of you, your licence agent and a state-licensed officiant. Ask your officiant what the ceremony itself requires on the day, including witnesses, and how the marriage is registered afterwards."
-   },
-   {
-    "q": "Can a friend from Australia officiate our wedding in Hawaii?",
-    "a": "Yes, if they hold a State of Hawaii performer licence. Every officiant must be licensed by the State of Hawaii Department of Health before performing a marriage, and performers register online at marriage.ehawaii.gov."
-   },
-   {
-    "q": "How far ahead can we get our Hawaii marriage licence?",
-    "a": "You can complete the online application before you travel, but you meet the agent no sooner than 30 days before the ceremony. The ceremony must then take place within 30 days of pick-up, or the licence is void."
-   },
-   {
-    "q": "Is a Hawaii marriage recognised in Australia?",
-    "a": "In most cases, yes. An overseas marriage is legally recognised in Australia if it was valid where it took place and would have been valid under Australian law. You cannot register it in Australia, and your Hawaii certificate is usually accepted as proof of the marriage."
-   },
-   {
-    "q": "Do we need a permit to marry on a Hawaii beach?",
-    "a": "On unencumbered State shoreline, yes: a right-of-entry permit through DLNR's Wiki Permits system, with a Certificate of Liability Insurance. A few beaches are managed by other agencies, such as the counties, and they authorise those instead."
-   },
-   {
-    "q": "Can we have a symbolic ceremony in Hawaii and marry legally at home?",
-    "a": "Yes. A symbolic ceremony is not a legal marriage, so the Hawaii licence applies only if you want the ceremony to be legally binding. If you marry legally in Hawaii instead, you cannot marry again in Australia, though you can hold a recommitment ceremony."
-   }
-  ],
-  "images": [
-   {
-    "slot_id": "featured",
-    "file": "content/posts/getting-married-in-hawaii/images/getting-married-in-hawaii-oceanfront-ceremony-coastline.webp",
-    "role": "featured",
-    "alt": "Wedding ceremony set-up on an oceanfront lawn above a volcanic coastline at golden hour",
-    "caption": "<Venue>, <town>, <island>. Photo: <credit> (fill once sourced).",
-    "status": "needed"
-   },
-   {
-    "slot_id": "documents-licence",
-    "file": "content/posts/getting-married-in-hawaii/images/getting-married-in-hawaii-documents-still-life-linen.webp",
-    "role": "inline",
-    "alt": "Two closed passports and a linen folder of papers beside a frangipani on natural linen",
-    "caption": "Illustrative image (only if AI is approved; otherwise credit the stock or Canva source).",
-    "status": "needed"
-   },
-   {
-    "slot_id": "ceremony",
-    "file": "content/posts/getting-married-in-hawaii/images/getting-married-in-hawaii-ceremony-officiant-oceanfront.webp",
-    "role": "inline",
-    "alt": "Couple exchanging vows with an officiant on a garden lawn facing the Pacific Ocean",
-    "caption": "<Venue>, <town>, <island>. Photo: <credit> (fill once sourced).",
-    "status": "needed"
-   },
-   {
-    "slot_id": "certificate-australia",
-    "file": "content/posts/getting-married-in-hawaii/images/getting-married-in-hawaii-certificate-folder-rings-still-life.webp",
-    "role": "inline",
-    "alt": "Wedding rings resting on a closed cream document folder tied with ribbon, beside two passports",
-    "caption": "Illustrative image (only if AI is approved; otherwise credit the stock or Canva source).",
-    "status": "needed"
-   },
-   {
-    "slot_id": "when-to-marry",
-    "file": "content/posts/getting-married-in-hawaii/images/getting-married-in-hawaii-sunset-reception-terrace.webp",
-    "role": "inline",
-    "alt": "Reception tables set on an oceanfront terrace in warm sunset light",
-    "caption": "<Venue>, <town>, <island>. Photo: <credit> (fill once sourced).",
-    "status": "needed"
-   },
-   {
-    "slot_id": "choose-your-island",
-    "file": "content/posts/getting-married-in-hawaii/images/getting-married-in-hawaii-island-venue-wide-view.webp",
-    "role": "inline",
-    "alt": "Wide view of green sea cliffs and a resort lawn on a Hawaiian island coastline",
-    "caption": "<Venue>, <town>, <island>. Photo: <credit> (fill once sourced).",
-    "status": "needed"
-   }
-  ],
-  "cta": {
-   "text": "Speak with Wedded Concierge",
-   "subtext": "One Wedded Advisor confirms the inclusions in writing before you commit.",
-   "link": "https://weddedwonderland.com/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=getting-married-in-hawaii&utm_content=primary",
-   "placement": "Existing inline link at the end of 'Venues and planning' (line 191, anchor 'Speak with Wedded Concierge'), after the legal steps are done and the post turns to planning decisions. Unchanged."
-  },
-  "secondary_cta": {
-   "text": "Talk your islands through",
-   "subtext": "Your Wedded Advisor is your single point of contact from start to finish.",
-   "link": "https://weddedwonderland.com/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=getting-married-in-hawaii&utm_content=secondary",
-   "placement": "Existing final line of 'Choose your island' (line 183, anchor 'Wedded Concierge'), where the reader is weighing islands against a guest list. Unchanged."
-  },
-  "closing_cta": {
-   "text": "Start a conversation with Wedded Concierge",
-   "subtext": "Quotes in AUD, in your time zone, with the fee agreed in writing before any work begins.",
-   "link": "https://weddedwonderland.com/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=getting-married-in-hawaii&utm_content=closing",
-   "placement": "Existing closing paragraph under 'Plan your Hawaii wedding with a Wedded Advisor' (line 225). Unchanged."
-  },
-  "lead_magnet": {
-   "name": "Wedded Wonderland magazine",
-   "link": "https://weddedwonderland.com/magazine?utm_source=blog&utm_medium=content&utm_campaign=getting-married-in-hawaii&utm_content=magnet",
-   "placement": "Existing final line of 'Venues and planning' (line 193), for readers gathering ideas before they enquire. Unchanged."
-  },
-  "tracking_links": [
-   "https://weddedwonderland.com/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=getting-married-in-hawaii&utm_content=primary",
-   "https://weddedwonderland.com/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=getting-married-in-hawaii&utm_content=secondary",
-   "https://weddedwonderland.com/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=getting-married-in-hawaii&utm_content=closing",
-   "https://weddedwonderland.com/magazine?utm_source=blog&utm_medium=content&utm_campaign=getting-married-in-hawaii&utm_content=magnet"
-  ],
-  "seo": {
-   "meta_title": "How to Get Married in Hawaii Step by Step",
-   "meta_description": "The legal steps to marry in Hawaii from Australia: your licence, a state-licensed officiant, beach permits and the paperwork once you are home.",
-   "focus_keyword": "getting married in hawaii",
-   "canonical": "https://weddedwonderland.com/destination-weddings/getting-married-in-hawaii",
-   "og_image_slot": "featured"
-  },
-  "schema_jsonld": {
-   "@context": "https://schema.org",
-   "@graph": [
+  "open_questions": [
     {
-     "@type": "Article",
-     "@id": "https://weddedwonderland.com/destination-weddings/getting-married-in-hawaii#article",
-     "headline": "How to Get Married in Hawaii Step by Step",
-     "description": "The legal steps to marry in Hawaii from Australia: your licence, a state-licensed officiant, beach permits and the paperwork once you are home.",
-     "author": {
-      "@type": "Organization",
-      "name": "Wedded Wonderland",
-      "url": "https://weddedwonderland.com/"
-     },
-     "publisher": {
-      "@type": "Organization",
-      "name": "Wedded Wonderland",
-      "url": "https://weddedwonderland.com/"
-     },
-     "datePublished": "",
-     "mainEntityOfPage": "https://weddedwonderland.com/destination-weddings/getting-married-in-hawaii",
-     "inLanguage": "en-AU"
+      "to": "orchestrator",
+      "question": "CMS upload not attempted: FAST MODE package only, no browser in this session and the field map is not confirmed. A human saves as Draft and clicks Publish, or run /wedded-blog resume=getting-married-in-hawaii once the field map is confirmed.",
+      "blocking": true
     },
     {
-     "@type": "BreadcrumbList",
-     "itemListElement": [
-      {
-       "@type": "ListItem",
-       "position": 1,
-       "name": "Home",
-       "item": "https://weddedwonderland.com/"
-      },
-      {
-       "@type": "ListItem",
-       "position": 2,
-       "name": "Destination Weddings",
-       "item": "https://weddedwonderland.com/destination-weddings"
-      },
-      {
-       "@type": "ListItem",
-       "position": 3,
-       "name": "How to Get Married in Hawaii Step by Step",
-       "item": "https://weddedwonderland.com/destination-weddings/getting-married-in-hawaii"
-      }
-     ]
-    },
-    {
-     "@type": "FAQPage",
-     "@id": "https://weddedwonderland.com/destination-weddings/getting-married-in-hawaii#faq",
-     "mainEntity": [
-      {
-       "@type": "Question",
-       "name": "Who needs to be at the ceremony?",
-       "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "The licence steps centre on the two of you, your licence agent and a state-licensed officiant. Ask your officiant what the ceremony itself requires on the day, including witnesses, and how the marriage is registered afterwards."
-       }
-      },
-      {
-       "@type": "Question",
-       "name": "Can a friend from Australia officiate our wedding in Hawaii?",
-       "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Yes, if they hold a State of Hawaii performer licence. Every officiant must be licensed by the State of Hawaii Department of Health before performing a marriage, and performers register online at marriage.ehawaii.gov."
-       }
-      },
-      {
-       "@type": "Question",
-       "name": "How far ahead can we get our Hawaii marriage licence?",
-       "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "You can complete the online application before you travel, but you meet the agent no sooner than 30 days before the ceremony. The ceremony must then take place within 30 days of pick-up, or the licence is void."
-       }
-      },
-      {
-       "@type": "Question",
-       "name": "Is a Hawaii marriage recognised in Australia?",
-       "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "In most cases, yes. An overseas marriage is legally recognised in Australia if it was valid where it took place and would have been valid under Australian law. You cannot register it in Australia, and your Hawaii certificate is usually accepted as proof of the marriage."
-       }
-      },
-      {
-       "@type": "Question",
-       "name": "Do we need a permit to marry on a Hawaii beach?",
-       "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "On unencumbered State shoreline, yes: a right-of-entry permit through DLNR's Wiki Permits system, with a Certificate of Liability Insurance. A few beaches are managed by other agencies, such as the counties, and they authorise those instead."
-       }
-      },
-      {
-       "@type": "Question",
-       "name": "Can we have a symbolic ceremony in Hawaii and marry legally at home?",
-       "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Yes. A symbolic ceremony is not a legal marriage, so the Hawaii licence applies only if you want the ceremony to be legally binding. If you marry legally in Hawaii instead, you cannot marry again in Australia, though you can hold a recommitment ceremony."
-       }
-      }
-     ]
+      "to": "orchestrator",
+      "question": "The /destination-weddings folder and the Destination Weddings category must exist in the CMS before the draft is saved.",
+      "blocking": true
     }
-   ]
-  },
-  "author": "Wedded Wonderland",
-  "status": "draft",
+  ],
+  "assumptions": [
+    "H1 and Article headline \"How to Get Married in Hawaii Step by Step\"; meta title and description from 02-seo.json unchanged.",
+    "Excerpt is the first two sentences of the opening paragraph.",
+    "Categories and tags from 01-brief.json; primary category Destination Weddings. Tag 'United States / Hawaii' added as a single string (tags are flat strings in the schema). Brief tag 'Getting Married in {Country}' kept as given.",
+    "JSON-LD is Article + BreadcrumbList (Home > Destination Weddings > post) + FAQPage (6 pairs from the body FAQ); links in FAQ answers reduced to their anchor text.",
+    "Image order follows the slot order in the body; alt and caption from 04-images.json.",
+    "Byline Wedded Wonderland (organisation), as instructed.",
+    "verify_items and needs_signoff empty: no [[VERIFY]] markers and no price or fee amounts in the copy."
+  ],
   "verify_items": [],
-  "needs_signoff": [],
-  "redirect": null,
-  "redirects_recommended": [],
-  "series": {
-   "name": "Getting Married in {Country}",
-   "position": 1,
-   "template": "content-system/templates/getting-married-in-country.md"
-  },
-  "draft_note": "DRAFT. Do not publish until checked: no [[VERIFY]] items in the copy; no prices or fee amounts (fees are described as applying, with links to the Department of Health pages), nothing for Nic to sign off. Image slots needed (6 of 6, none approved): featured, documents-licence, ceremony, certificate-australia, when-to-marry, choose-your-island. featured and ceremony show real weddings: licensed real wedding with written consent only, never AI, no sacred sites and no Native Hawaiian cultural practice as decoration; when-to-marry and choose-your-island must be real, named venues proven by media kit, register or EXIF, never AI; documents-licence and certificate-australia are still lifes (Canva or licensed stock; AI only with Wedded Wonderland approval, captioned 'Illustrative image'), with no readable names, numbers, seals, crests or forms. Hawaii Tourism Authority media library only if its licence covers third-party commercial blog use. Captions with venue and credit to fill once sourced. CMS setup: the /destination-weddings folder and the Destination Weddings category must exist before the draft is saved; add the tag 'United States / Hawaii' (or set it as a nested tag if the CMS supports it). Final-check fixes from 06-edit-final.json (statewide label on the sea temperature line; unsourced licence hand-over sentence removed) are applied in 11-body.md but were missing from 08-final.md: editor to confirm. Planner SME to reconfirm the Hawaii DOH, DLNR, CBP and Smartraveller sources live before publishing (copy is 'as at November 2026'). Backlink to add after publishing: the legal section of /how-to-plan-a-destination-wedding-in-the-usa-if-youre-overseas should link here. First post in the 'Getting Married in {Country}' series (template content-system/templates/getting-married-in-country.md). New article, no redirect. Byline Wedded Wonderland. DRAFT ONLY. A human clicks Publish."
- }
+  "tools_used": [
+    "Bash (python3 -I)"
+  ],
+  "next_agent": [
+    "orchestrator"
+  ],
+  "payload": {
+    "title": "How to Get Married in Hawaii Step by Step",
+    "slug": "getting-married-in-hawaii",
+    "url_path": "/destination-weddings/getting-married-in-hawaii",
+    "content_type": "planning_guide",
+    "categories": [
+      "Destination Weddings",
+      "Hawaii",
+      "United States",
+      "Planning Guides"
+    ],
+    "primary_category": "Destination Weddings",
+    "tags": [
+      "Getting Married in Hawaii",
+      "Getting Married in {Country}",
+      "Hawaii",
+      "Oahu",
+      "Maui",
+      "Kauai",
+      "Hawaii Island",
+      "Legal requirements",
+      "Marriage licence",
+      "Apostille",
+      "Wedding planning",
+      "United States / Hawaii"
+    ],
+    "excerpt": "Hawaii is on your list, and before you fall for a lawn above the Pacific you want to know two things: will the marriage be legal, and what do you do first? Getting married in Hawaii as an Australian couple is straightforward.",
+    "key_takeaways": [
+      "Australians can marry legally in Hawaii by following the Hawaii State Department of Health marriage licence process, with no residency requirement.",
+      "You both meet a licence agent in person no sooner than 30 days before the ceremony, and the wedding must take place within 30 days of picking up the licence.",
+      "Your officiant must hold a State of Hawaii performer licence, whoever they are and wherever they come from.",
+      "Order certified copies of your marriage certificate early, because a certified copy is usually accepted as proof of the marriage back in Australia."
+    ],
+    "body_markdown_file": "content/posts/getting-married-in-hawaii/11-body.md",
+    "faq": [
+      {
+        "q": "Who needs to be at the ceremony?",
+        "a": "The licence steps centre on the two of you, your licence agent and a state-licensed officiant. Ask your officiant what the ceremony itself requires on the day, including witnesses, and how the marriage is registered afterwards."
+      },
+      {
+        "q": "Can a friend from Australia officiate our wedding in Hawaii?",
+        "a": "Yes, if they hold a State of Hawaii performer licence. Every officiant must be licensed by the State of Hawaii Department of Health before performing a marriage, and performers register online at marriage.ehawaii.gov."
+      },
+      {
+        "q": "How far ahead can we get our Hawaii marriage licence?",
+        "a": "You can complete the online application before you travel, but you meet the agent no sooner than 30 days before the ceremony. The ceremony must then take place within 30 days of pick-up, or the licence is void."
+      },
+      {
+        "q": "Is a Hawaii marriage recognised in Australia?",
+        "a": "In most cases, yes. An overseas marriage is legally recognised in Australia if it was valid where it took place and would have been valid under Australian law. You cannot register it in Australia, and your Hawaii certificate is usually accepted as proof of the marriage."
+      },
+      {
+        "q": "Do we need a permit to marry on a Hawaii beach?",
+        "a": "On unencumbered State shoreline, yes: a right-of-entry permit through DLNR's Wiki Permits system, with a Certificate of Liability Insurance. A few beaches are managed by other agencies, such as the counties, and they authorise those instead."
+      },
+      {
+        "q": "Can we have a symbolic ceremony in Hawaii and marry legally at home?",
+        "a": "Yes. A symbolic ceremony is not a legal marriage, so the Hawaii licence applies only if you want the ceremony to be legally binding. If you marry legally in Hawaii instead, you cannot marry again in Australia, though you can hold a recommitment ceremony."
+      }
+    ],
+    "images": [
+      {
+        "slot_id": "featured",
+        "file": "content/posts/getting-married-in-hawaii/images/getting-married-in-hawaii-oceanfront-ceremony-coastline.webp",
+        "role": "featured",
+        "alt": "Wedding ceremony set-up on an oceanfront lawn above a volcanic coastline at golden hour",
+        "caption": "<Venue>, <town>, <island>. Photo: <credit> (fill once sourced).",
+        "status": "needed"
+      },
+      {
+        "slot_id": "documents-licence",
+        "file": "content/posts/getting-married-in-hawaii/images/getting-married-in-hawaii-documents-still-life-linen.webp",
+        "role": "inline",
+        "alt": "Two closed passports and a linen folder of papers beside a frangipani on natural linen",
+        "caption": "Illustrative image (only if AI is approved; otherwise credit the stock or Canva source).",
+        "status": "needed"
+      },
+      {
+        "slot_id": "ceremony",
+        "file": "content/posts/getting-married-in-hawaii/images/getting-married-in-hawaii-ceremony-officiant-oceanfront.webp",
+        "role": "inline",
+        "alt": "Couple exchanging vows with an officiant on a garden lawn facing the Pacific Ocean",
+        "caption": "<Venue>, <town>, <island>. Photo: <credit> (fill once sourced).",
+        "status": "needed"
+      },
+      {
+        "slot_id": "certificate-australia",
+        "file": "content/posts/getting-married-in-hawaii/images/getting-married-in-hawaii-certificate-folder-rings-still-life.webp",
+        "role": "inline",
+        "alt": "Wedding rings resting on a closed cream document folder tied with ribbon, beside two passports",
+        "caption": "Illustrative image (only if AI is approved; otherwise credit the stock or Canva source).",
+        "status": "needed"
+      },
+      {
+        "slot_id": "when-to-marry",
+        "file": "content/posts/getting-married-in-hawaii/images/getting-married-in-hawaii-sunset-reception-terrace.webp",
+        "role": "inline",
+        "alt": "Reception tables set on an oceanfront terrace in warm sunset light",
+        "caption": "<Venue>, <town>, <island>. Photo: <credit> (fill once sourced).",
+        "status": "needed"
+      },
+      {
+        "slot_id": "choose-your-island",
+        "file": "content/posts/getting-married-in-hawaii/images/getting-married-in-hawaii-island-venue-wide-view.webp",
+        "role": "inline",
+        "alt": "Wide view of green sea cliffs and a resort lawn on a Hawaiian island coastline",
+        "caption": "<Venue>, <town>, <island>. Photo: <credit> (fill once sourced).",
+        "status": "needed"
+      }
+    ],
+    "cta": {
+      "text": "Speak with Wedded Concierge",
+      "subtext": "One Wedded Advisor confirms the inclusions in writing before you commit.",
+      "link": "https://weddedwonderland.com/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=getting-married-in-hawaii&utm_content=primary",
+      "placement": "Existing inline link at the end of 'Venues and planning' (line 191, anchor 'Speak with Wedded Concierge'), after the legal steps are done and the post turns to planning decisions. Unchanged."
+    },
+    "secondary_cta": {
+      "text": "Talk your islands through",
+      "subtext": "Your Wedded Advisor is your single point of contact from start to finish.",
+      "link": "https://weddedwonderland.com/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=getting-married-in-hawaii&utm_content=secondary",
+      "placement": "Existing final line of 'Choose your island' (line 183, anchor 'Wedded Concierge'), where the reader is weighing islands against a guest list. Unchanged."
+    },
+    "closing_cta": {
+      "text": "Start a conversation with Wedded Concierge",
+      "subtext": "Quotes in AUD, in your time zone, with the fee agreed in writing before any work begins.",
+      "link": "https://weddedwonderland.com/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=getting-married-in-hawaii&utm_content=closing",
+      "placement": "Existing closing paragraph under 'Plan your Hawaii wedding with a Wedded Advisor' (line 225). Unchanged."
+    },
+    "lead_magnet": {
+      "name": "Wedded Wonderland magazine",
+      "link": "https://weddedwonderland.com/magazine?utm_source=blog&utm_medium=content&utm_campaign=getting-married-in-hawaii&utm_content=magnet",
+      "placement": "Existing final line of 'Venues and planning' (line 193), for readers gathering ideas before they enquire. Unchanged."
+    },
+    "tracking_links": [
+      "https://weddedwonderland.com/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=getting-married-in-hawaii&utm_content=primary",
+      "https://weddedwonderland.com/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=getting-married-in-hawaii&utm_content=secondary",
+      "https://weddedwonderland.com/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=getting-married-in-hawaii&utm_content=closing",
+      "https://weddedwonderland.com/magazine?utm_source=blog&utm_medium=content&utm_campaign=getting-married-in-hawaii&utm_content=magnet"
+    ],
+    "seo": {
+      "meta_title": "How to Get Married in Hawaii Step by Step",
+      "meta_description": "The legal steps to marry in Hawaii from Australia: your licence, a state-licensed officiant, beach permits and the paperwork once you are home.",
+      "focus_keyword": "getting married in hawaii",
+      "canonical": "https://weddedwonderland.com/destination-weddings/getting-married-in-hawaii",
+      "og_image_slot": "featured"
+    },
+    "schema_jsonld": {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Article",
+          "@id": "https://weddedwonderland.com/destination-weddings/getting-married-in-hawaii#article",
+          "headline": "How to Get Married in Hawaii Step by Step",
+          "description": "The legal steps to marry in Hawaii from Australia: your licence, a state-licensed officiant, beach permits and the paperwork once you are home.",
+          "author": {
+            "@type": "Organization",
+            "name": "Wedded Wonderland",
+            "url": "https://weddedwonderland.com/"
+          },
+          "publisher": {
+            "@type": "Organization",
+            "name": "Wedded Wonderland",
+            "url": "https://weddedwonderland.com/"
+          },
+          "datePublished": "",
+          "mainEntityOfPage": "https://weddedwonderland.com/destination-weddings/getting-married-in-hawaii",
+          "inLanguage": "en-AU"
+        },
+        {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Home",
+              "item": "https://weddedwonderland.com/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Destination Weddings",
+              "item": "https://weddedwonderland.com/destination-weddings"
+            },
+            {
+              "@type": "ListItem",
+              "position": 3,
+              "name": "How to Get Married in Hawaii Step by Step",
+              "item": "https://weddedwonderland.com/destination-weddings/getting-married-in-hawaii"
+            }
+          ]
+        },
+        {
+          "@type": "FAQPage",
+          "@id": "https://weddedwonderland.com/destination-weddings/getting-married-in-hawaii#faq",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "Who needs to be at the ceremony?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "The licence steps centre on the two of you, your licence agent and a state-licensed officiant. Ask your officiant what the ceremony itself requires on the day, including witnesses, and how the marriage is registered afterwards."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Can a friend from Australia officiate our wedding in Hawaii?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes, if they hold a State of Hawaii performer licence. Every officiant must be licensed by the State of Hawaii Department of Health before performing a marriage, and performers register online at marriage.ehawaii.gov."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "How far ahead can we get our Hawaii marriage licence?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "You can complete the online application before you travel, but you meet the agent no sooner than 30 days before the ceremony. The ceremony must then take place within 30 days of pick-up, or the licence is void."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Is a Hawaii marriage recognised in Australia?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "In most cases, yes. An overseas marriage is legally recognised in Australia if it was valid where it took place and would have been valid under Australian law. You cannot register it in Australia, and your Hawaii certificate is usually accepted as proof of the marriage."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Do we need a permit to marry on a Hawaii beach?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "On unencumbered State shoreline, yes: a right-of-entry permit through DLNR's Wiki Permits system, with a Certificate of Liability Insurance. A few beaches are managed by other agencies, such as the counties, and they authorise those instead."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Can we have a symbolic ceremony in Hawaii and marry legally at home?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes. A symbolic ceremony is not a legal marriage, so the Hawaii licence applies only if you want the ceremony to be legally binding. If you marry legally in Hawaii instead, you cannot marry again in Australia, though you can hold a recommitment ceremony."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    "author": "Wedded Wonderland",
+    "status": "draft",
+    "verify_items": [],
+    "needs_signoff": [],
+    "redirect": null,
+    "redirects_recommended": [],
+    "series": {
+      "name": "Getting Married in {Country}",
+      "position": 1,
+      "template": "content-system/templates/getting-married-in-country.md"
+    },
+    "draft_note": "DRAFT. Do not publish until checked: no [[VERIFY]] items in the copy; no prices or fee amounts (fees are described as applying, with links to the Department of Health pages), nothing for Nic to sign off. Image slots needed (6 of 6, none approved): featured, documents-licence, ceremony, certificate-australia, when-to-marry, choose-your-island. featured and ceremony show real weddings: licensed real wedding with written consent only, never AI, no sacred sites and no Native Hawaiian cultural practice as decoration; when-to-marry and choose-your-island must be real, named venues proven by media kit, register or EXIF, never AI; documents-licence and certificate-australia are still lifes (Canva or licensed stock; AI only with Wedded Wonderland approval, captioned 'Illustrative image'), with no readable names, numbers, seals, crests or forms. Hawaii Tourism Authority media library only if its licence covers third-party commercial blog use. Captions with venue and credit to fill once sourced. CMS setup: the /destination-weddings folder and the Destination Weddings category must exist before the draft is saved; add the tag 'United States / Hawaii' (or set it as a nested tag if the CMS supports it). Final-check fixes from 06-edit-final.json (statewide label on the sea temperature line; unsourced licence hand-over sentence removed) are applied in 11-body.md but were missing from 08-final.md: editor to confirm. Planner SME to reconfirm the Hawaii DOH, DLNR, CBP and Smartraveller sources live before publishing (copy is 'as at November 2026'). Backlink to add after publishing: the legal section of /how-to-plan-a-destination-wedding-in-the-usa-if-youre-overseas should link here. First post in the 'Getting Married in {Country}' series (template content-system/templates/getting-married-in-country.md). New article, no redirect. Byline Wedded Wonderland. DRAFT ONLY. A human clicks Publish."
+  }
 }
