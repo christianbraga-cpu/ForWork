@@ -1,0 +1,299 @@
+{
+ "agent": "cms-publisher",
+ "task_id": "travel-advisor-benefits",
+ "stage": "11",
+ "status": "complete",
+ "round": 1,
+ "inputs_used": [
+  "CLAUDE.md",
+  "content-system/schemas/11-publish-package.schema.json",
+  "content/posts/travel-advisor-benefits/01-brief.json",
+  "content/posts/travel-advisor-benefits/02-seo.json",
+  "content/posts/travel-advisor-benefits/04-images.json",
+  "content/posts/travel-advisor-benefits/08-final.md",
+  "content/posts/travel-advisor-benefits/09-cro.json",
+  "content/posts/travel-advisor-benefits/10-distribution.json",
+  "content/posts/prenup/11-body.md, 11-publish-package.json, 12-cms-report.md, booking-checklist.md (format model)"
+ ],
+ "self_qa": {
+  "checks": [
+   {
+    "check": "Front matter and all <!-- fact_xx --> markers removed; H1 is the title; 5 image-slot comments kept; links and the 4 UTM links unchanged; no CTA marker comments; no [[VERIFY]] markers in the copy",
+    "pass": true
+   },
+   {
+    "check": "Each utm_content (primary, secondary, closing, magnet) appears exactly once in 11-body.md",
+    "pass": true
+   },
+   {
+    "check": "Exactly 4 key takeaways and 5 FAQ pairs taken verbatim from the body",
+    "pass": true
+   },
+   {
+    "check": "Meta title and description from 02-seo.json, no prices, no em dashes",
+    "pass": true,
+    "note": "title 52, description 151 characters"
+   },
+   {
+    "check": "primary_category equals categories[0] (Travel Guides)",
+    "pass": true
+   },
+   {
+    "check": "No em dashes; Australian English",
+    "pass": true
+   },
+   {
+    "check": "status draft; nothing uploaded, saved or published",
+    "pass": true
+   }
+  ],
+  "confidence": 0.9
+ },
+ "open_questions": [
+  {
+   "to": "orchestrator",
+   "question": "CMS upload not attempted: FAST MODE package only, no browser (no Chrome) in this session and the field map is not confirmed. A human saves as Draft and clicks Publish, or run /wedded-blog resume=travel-advisor-benefits once the field map is confirmed.",
+   "blocking": true
+  },
+  {
+   "to": "orchestrator",
+   "question": "/travel-guides is a new folder: the folder and the Travel Guides category must exist in the CMS before the draft is saved.",
+   "blocking": true
+  },
+  {
+   "to": "orchestrator",
+   "question": "No author named in any input; package uses \"Wedded Wonderland\" (organisation). Confirm the byline.",
+   "blocking": false
+  }
+ ],
+ "assumptions": [
+  "H1 and Article headline \"Travel Advisor Benefits You Cannot Get Booking Alone\"; meta title and description from 02-seo.json unchanged.",
+  "Excerpt is the first two sentences of the opening paragraph.",
+  "Categories and tags from 01-brief.json; primary category Travel Guides. New article, no redirect.",
+  "JSON-LD is Article + BreadcrumbList (Home > Travel Guides > post) + FAQPage; links stripped from FAQ answer text in JSON-LD only.",
+  "verify_items and needs_signoff empty: no [[VERIFY]] markers and no prices in the copy."
+ ],
+ "verify_items": [],
+ "tools_used": [
+  "Bash (python3 -I)"
+ ],
+ "next_agent": [
+  "orchestrator"
+ ],
+ "payload": {
+  "title": "Travel Advisor Benefits You Cannot Get Booking Alone",
+  "slug": "travel-advisor-benefits",
+  "url_path": "/travel-guides/travel-advisor-benefits",
+  "content_type": "planning_guide",
+  "categories": [
+   "Travel Guides",
+   "Destination Weddings",
+   "Planning Guides"
+  ],
+  "primary_category": "Travel Guides",
+  "tags": [
+   "Travel Advisor",
+   "Wedded Concierge",
+   "Destination Wedding Planning",
+   "Honeymoon Planning",
+   "Travel Accreditation"
+  ],
+  "excerpt": "You can book a flight in minutes. A destination wedding is something else: flights, villas, a venue, a photographer, guests arriving from three cities and deposits due in two currencies.",
+  "key_takeaways": [
+   "A good travel advisor gives you one point of contact across flights, stays and the wedding itself.",
+   "Ask for quotes in Australian dollars and for every inclusion in writing before you commit.",
+   "Plenty of couples book their own flights and stays, but the harder parts are guests, many suppliers and payments in several currencies.",
+   "Before you agree, ask any advisor about their fee in writing, inclusions, cancellation terms, insolvency cover and travel insurance."
+  ],
+  "body_markdown_file": "content/posts/travel-advisor-benefits/11-body.md",
+  "faq": [
+   {
+    "q": "What does a travel advisor do?",
+    "a": "A travel advisor plans and books travel on your behalf, and coordinates the separate bookings so dates, deposits and terms line up. For a destination wedding, that can extend to the venue, travel and suppliers."
+   },
+   {
+    "q": "Is a travel advisor worth it for a destination wedding?",
+    "a": "It depends on how much there is to hold together. If you have guests, several suppliers and payments in more than one currency, an advisor saves you the coordination. If it is a simple trip for two, you may manage comfortably yourself. Your consumer guarantees are the same either way."
+   },
+   {
+    "q": "Can I book some things myself and use an advisor for the rest?",
+    "a": "Yes. Many couples book their own flights or honeymoon stays and hand over the wedding pieces. Tell your advisor what you have booked, so dates and deposits can be planned around it."
+   },
+   {
+    "q": "Do travel advisors quote in Australian dollars?",
+    "a": "Ask before you start. Overseas suppliers charge in their own currency, and the exchange rate and fees vary between providers. A quote in AUD, with the inclusions in writing, lets you compare options on the same footing."
+   },
+   {
+    "q": "What should I ask before hiring a travel advisor?",
+    "a": "Ask how the fee is charged and whether it is in writing, what each quote includes, what the cancellation and change terms are for the advisor and each provider, whether they hold insolvency insurance, and how overseas payments are made. Then arrange travel insurance early."
+   }
+  ],
+  "images": [
+   {
+    "slot_id": "featured",
+    "file": "content/posts/travel-advisor-benefits/images/travel-advisor-benefits-passports-itinerary-linen-hero.webp",
+    "role": "featured",
+    "status": "needed"
+   },
+   {
+    "slot_id": "advisor-planning",
+    "file": "content/posts/travel-advisor-benefits/images/travel-advisor-benefits-advisor-couple-itinerary-hands.webp",
+    "role": "inline",
+    "status": "needed"
+   },
+   {
+    "slot_id": "benefits-still-life",
+    "file": "content/posts/travel-advisor-benefits/images/travel-advisor-benefits-packed-weekender-travel-wallet.webp",
+    "role": "inline",
+    "status": "needed"
+   },
+   {
+    "slot_id": "questions-notebook",
+    "file": "content/posts/travel-advisor-benefits/images/travel-advisor-benefits-questions-notebook-desk.webp",
+    "role": "inline",
+    "status": "needed"
+   },
+   {
+    "slot_id": "honeymoon-destination",
+    "file": "content/posts/travel-advisor-benefits/images/travel-advisor-benefits-honeymoon-terrace-golden-hour.webp",
+    "role": "inline",
+    "status": "needed"
+   }
+  ],
+  "cta": {
+   "text": "Request a Wedded Concierge consultation",
+   "subtext": "The fee is agreed in writing before any work begins.",
+   "link": "https://weddedwonderland.com/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=travel-advisor-benefits&utm_content=primary",
+   "placement": "Existing inline 'Wedded Concierge' link in 'When the trip is a wedding and a honeymoon', unchanged per 09-cro.json. No CTA marker comments in 11-body.md; 08-final.md had no <!-- CTA: primary --> marker, so nothing was replaced."
+  },
+  "secondary_cta": {
+   "text": "Put these questions to Wedded Concierge",
+   "subtext": "The advisor confirms inclusions in writing before you commit.",
+   "link": "https://weddedwonderland.com/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=travel-advisor-benefits&utm_content=secondary",
+   "placement": "Existing final sentence of 'Questions to ask before you hire an advisor' (anchor 'talk to Wedded Concierge'). Unchanged."
+  },
+  "closing_cta": {
+   "text": "Speak with Wedded Concierge",
+   "link": "https://weddedwonderland.com/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=travel-advisor-benefits&utm_content=closing",
+   "placement": "Existing closing paragraph under 'Ready when you are' (anchor 'speak with Wedded Concierge'). Unchanged."
+  },
+  "lead_magnet": {
+   "name": "Wedded Wonderland magazines and planning guides",
+   "link": "https://weddedwonderland.com/magazine?utm_source=blog&utm_medium=content&utm_campaign=travel-advisor-benefits&utm_content=magnet",
+   "placement": "Existing final line of 'Ready when you are'. Unchanged."
+  },
+  "tracking_links": [
+   "https://weddedwonderland.com/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=travel-advisor-benefits&utm_content=primary",
+   "https://weddedwonderland.com/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=travel-advisor-benefits&utm_content=secondary",
+   "https://weddedwonderland.com/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=travel-advisor-benefits&utm_content=closing",
+   "https://weddedwonderland.com/magazine?utm_source=blog&utm_medium=content&utm_campaign=travel-advisor-benefits&utm_content=magnet"
+  ],
+  "seo": {
+   "meta_title": "Travel Advisor Benefits for Your Destination Wedding",
+   "meta_description": "What a travel advisor does for a destination wedding and honeymoon: one point of contact, AUD quotes, inclusions in writing and questions to ask first.",
+   "focus_keyword": "travel advisor benefits",
+   "canonical": "https://weddedwonderland.com/travel-guides/travel-advisor-benefits",
+   "og_image_slot": "featured"
+  },
+  "schema_jsonld": {
+   "@context": "https://schema.org",
+   "@graph": [
+    {
+     "@type": "Article",
+     "@id": "https://weddedwonderland.com/travel-guides/travel-advisor-benefits#article",
+     "headline": "Travel Advisor Benefits You Cannot Get Booking Alone",
+     "description": "What a travel advisor does for a destination wedding and honeymoon: one point of contact, AUD quotes, inclusions in writing and questions to ask first.",
+     "author": {
+      "@type": "Organization",
+      "name": "Wedded Wonderland",
+      "url": "https://weddedwonderland.com/"
+     },
+     "publisher": {
+      "@type": "Organization",
+      "name": "Wedded Wonderland",
+      "url": "https://weddedwonderland.com/"
+     },
+     "datePublished": "",
+     "mainEntityOfPage": "https://weddedwonderland.com/travel-guides/travel-advisor-benefits",
+     "inLanguage": "en-AU"
+    },
+    {
+     "@type": "BreadcrumbList",
+     "itemListElement": [
+      {
+       "@type": "ListItem",
+       "position": 1,
+       "name": "Home",
+       "item": "https://weddedwonderland.com/"
+      },
+      {
+       "@type": "ListItem",
+       "position": 2,
+       "name": "Travel Guides",
+       "item": "https://weddedwonderland.com/travel-guides"
+      },
+      {
+       "@type": "ListItem",
+       "position": 3,
+       "name": "Travel Advisor Benefits You Cannot Get Booking Alone",
+       "item": "https://weddedwonderland.com/travel-guides/travel-advisor-benefits"
+      }
+     ]
+    },
+    {
+     "@type": "FAQPage",
+     "@id": "https://weddedwonderland.com/travel-guides/travel-advisor-benefits#faq",
+     "mainEntity": [
+      {
+       "@type": "Question",
+       "name": "What does a travel advisor do?",
+       "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A travel advisor plans and books travel on your behalf, and coordinates the separate bookings so dates, deposits and terms line up. For a destination wedding, that can extend to the venue, travel and suppliers."
+       }
+      },
+      {
+       "@type": "Question",
+       "name": "Is a travel advisor worth it for a destination wedding?",
+       "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "It depends on how much there is to hold together. If you have guests, several suppliers and payments in more than one currency, an advisor saves you the coordination. If it is a simple trip for two, you may manage comfortably yourself. Your consumer guarantees are the same either way."
+       }
+      },
+      {
+       "@type": "Question",
+       "name": "Can I book some things myself and use an advisor for the rest?",
+       "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Many couples book their own flights or honeymoon stays and hand over the wedding pieces. Tell your advisor what you have booked, so dates and deposits can be planned around it."
+       }
+      },
+      {
+       "@type": "Question",
+       "name": "Do travel advisors quote in Australian dollars?",
+       "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ask before you start. Overseas suppliers charge in their own currency, and the exchange rate and fees vary between providers. A quote in AUD, with the inclusions in writing, lets you compare options on the same footing."
+       }
+      },
+      {
+       "@type": "Question",
+       "name": "What should I ask before hiring a travel advisor?",
+       "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ask how the fee is charged and whether it is in writing, what each quote includes, what the cancellation and change terms are for the advisor and each provider, whether they hold insolvency insurance, and how overseas payments are made. Then arrange travel insurance early."
+       }
+      }
+     ]
+    }
+   ]
+  },
+  "author": "Wedded Wonderland",
+  "status": "draft",
+  "verify_items": [],
+  "needs_signoff": [],
+  "redirect": null,
+  "redirects_recommended": [],
+  "draft_note": "DRAFT. Do not publish until checked: no [[VERIFY]] items in the copy; no prices, nothing for Nic to sign off. Image slots needed (5 of 5, none approved): featured, advisor-planning, benefits-still-life, questions-notebook, honeymoon-destination. advisor-planning must come from a consented real Wedded Wonderland shoot or licensed stock with model releases, never AI; honeymoon-destination must be a real, named Wedded Wonderland destination or partner venue from a consented, licensed source with the location verified, never AI; featured, benefits-still-life and questions-notebook are still lifes (library, Canva or licensed stock; AI only with Wedded Wonderland approval, labelled 'Illustrative image'); no airline, hotel, cruise, card or travel brand logos and no readable names, passport numbers, booking references or personal details in any image. CMS setup: the /travel-guides folder and the Travel Guides category must exist before the draft is saved (new folder). Planner SME to reconfirm the ACCC, Smartraveller and Moneysmart pages live (copy is 'as at November 2026'). New article, no redirect. Byline to confirm (package uses Wedded Wonderland). DRAFT ONLY. A human clicks Publish."
+ }
+}
