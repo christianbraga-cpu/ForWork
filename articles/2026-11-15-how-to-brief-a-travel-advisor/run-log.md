@@ -22,3 +22,13 @@
 - **Stage 2 fast (writer, 3 min):** DONE. 03-draft-v1.md. --check: 1,973 reader words (cap 2,000), 0 dashes, 0 placeholders, 2 domains (passports.gov.au, smartraveller.gov.au). YAML valid; 24 claims, 16 links (parent links L-02, L-11 conditional).
 - **Stage 3 fast (3 parallel reviews):** accuracy FAIL 3.6 (six-month rule wording; no confirm-for-your-own-passport line; unsourced "most" claims; "saves you weeks"); SEO FAIL 3.4 (title 63 chars with "Free"; meta 157 chars; keyword in no H2); reader:couple 3/3/4/3 (tropical-only examples; CTA asked only for dates and destination; fee hedge; would use the template).
 - **Stage 4 fast (one loop, 2 min):** DONE. 03-draft-v2.md. --check: 1,972 reader words (cap 2,000), 0 dashes, 0 placeholders, 2 domains. YAML valid; 25 claims, 15 links.
+- **Stage 6 fast (copy editor):** DONE. final.md, publish-package.json (image plan included), chrome-upload-prompt.md, article.docx. --check: 1,972 reader words, 0 dashes, 0 placeholders, 2 domains, none blocked. YAML and JSON validated by the orchestrator. Link map: added as DRAFT. Run time: about 35 minutes.
+
+## Must fix before publish
+1. **Publish order (PILLAR-LINK):** publish /travel-guides/travel-advisor-wedding first; otherwise remove both parent links and keep their sentences.
+2. **CONCIERGE-PAY (user):** planning fee and how Wedded Wonderland is paid; caps reader trust.
+3. **NEVER-DISCOUNT (user):** approve or reject quoting "we never discount our properties" (not used).
+4. **Website fixes (marketing):** live-page conflicts on perks and late checkout (see travel-advisor-wedding run log).
+5. **Links:** click through the 3 external links once.
+6. **Images:** pick files; credit, licence and consent for 5 slots.
+7. **CMS:** author, CMS admin URL; keep the brief template as copyable text, not an image.

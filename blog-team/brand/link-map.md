@@ -250,3 +250,4 @@ Hub: `/style-advice/celebrity-engagement-rings` (in production). Spokes:
 | `/expert-advice/marriage-licence-validity` | Marriage Licence Validity and How Long It Lasts | marriage licence validity | DRAFT (final.md 13 Nov 2026; publish after the requirements pillar) |
 | `/expert-advice/wedding-witnesses` | Wedding Witnesses and How Many You Need | wedding witnesses, marriage witness | DRAFT (final.md 13 Nov 2026; publish after the requirements pillar) |
 | `/travel-guides/travel-advisor-wedding` | Wedding Travel Advisor and Why It Pays to Use One | travel advisor wedding, destination wedding travel agent, why use a travel advisor | DRAFT (final.md 15 Nov 2026) |
+| `/travel-guides/how-to-brief-a-travel-advisor` | How to Brief a Travel Advisor for Your Honeymoon | how to brief a travel advisor, questions to ask a travel agent, honeymoon brief template | DRAFT (final.md 16 Nov 2026; publish after the travel advisor article) |
