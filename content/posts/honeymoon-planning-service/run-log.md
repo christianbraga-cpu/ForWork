@@ -9,3 +9,4 @@
 02:47 08 final copy done: about 1,842 words, scan clean.
 02:47 09 CRO and 10 distribution done.
 02:48 08b final check: 2 blocking fixes applied (planner overclaims in 'What a planner does'); scan clean.
+02:50 11 package, checklist, docx, link map, calendar row 61, run report done.
