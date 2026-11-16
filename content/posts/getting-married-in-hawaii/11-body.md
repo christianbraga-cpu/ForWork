@@ -1,0 +1,220 @@
+# How to Get Married in Hawaii Step by Step
+
+<!-- IMAGE SLOT featured: Landscape 3:2 with room for a title overlay. Ceremony set-up on an oceanfront lawn or terrace at a real, named Hawaiian resort or estate, volcanic coastline or palms in frame, golden-hour light, calm sea, white and tropical florals, no signage. People only from a licensed real wedding with written consent. No sacred sites and no Native Hawaiian cultural practice as decoration. Never AI. -->
+
+Hawaii is on your list, and before you fall for a lawn above the Pacific you want to know two things: will the marriage be legal, and what do you do first? Getting married in Hawaii as an Australian couple is straightforward. You apply online for a marriage licence, meet a licence agent together in person, and marry with a state-licensed officiant within the licence's 30 days. There is no residency requirement, no US citizenship requirement and no blood test.
+
+## Key takeaways
+
+- Australians can marry legally in Hawaii by following the Hawaii State Department of Health marriage licence process, with no residency requirement.
+- You both meet a licence agent in person no sooner than 30 days before the ceremony, and the wedding must take place within 30 days of picking up the licence.
+- Your officiant must hold a State of Hawaii performer licence, whoever they are and wherever they come from.
+- Order certified copies of your marriage certificate early, because a certified copy is usually accepted as proof of the marriage back in Australia.
+
+## Can Australians marry legally in Hawaii?
+
+Yes. As at November 2026, to marry lawfully in Hawaii you need a marriage licence issued by an authorised agent of the Hawaii State Department of Health. There are no state residence or US citizenship requirements, and blood tests are not required. Proof of age is required; the agent may ask for a certified birth certificate, so check with them.
+
+Two documents matter, and they are easy to confuse. The marriage licence is what permits the marriage to take place. The marriage certificate shows that a legal marriage has been performed. You collect the first before the wedding and order copies of the second afterwards.
+
+The full requirements sit on the Department's [marriage licences page](https://health.hawaii.gov/vitalrecords/marriage-licenses/), which is worth reading once before you book flights.
+
+Australia, for its part, does not recognise an overseas marriage where either person is already married, is not old enough to marry, is too closely related to the other, or is forced to marry. Outside those cases, a marriage that was valid where it took place, and would have been valid under Australian law, is in most cases legally recognised at home.
+
+### Legal, symbolic or religious ceremony
+
+A **legal ceremony** in Hawaii follows the licence process below and is performed by a state-licensed officiant. This is the route for couples who want the date on the beach to be the date on the certificate.
+
+A **symbolic ceremony** carries no legal weight, so it needs no Hawaii licence. Couples who choose it marry legally at home and travel for the celebration. Our guide to [marrying legally abroad or holding a symbolic ceremony](https://weddedwonderland.com/expert-advice/should-you-marry-legally-abroad-or-have-a-symbolic-ceremony) sets the two side by side.
+
+A **religious ceremony** can also be the legal one. The test is the same: the person officiating must be licensed by the State of Hawaii Department of Health before performing a marriage.
+
+## Apply for your marriage licence
+
+<!-- IMAGE SLOT documents-licence: Landscape 3:2 or 4:3. Overhead still life: two closed passports, a linen-bound folder of papers, a fountain pen, a single frangipani, on natural linen in soft daylight. No readable names, numbers, seals, crests, forms or screens; no hands or faces. AI only with Wedded Wonderland approval, captioned "Illustrative image". -->
+
+### Step 1: Complete the online application
+
+The first step happens at home. Complete the online marriage licence application at emrs.ehawaii.gov and pay the fee. A fee applies, and the Department of Health lists the current amount on its [marriage licences page](https://health.hawaii.gov/vitalrecords/marriage-licenses/). When you finish, write down or print your Authorization Code, also called the Locator ID. The agent uses it to find your application at the appointment.
+
+Fill it in together, with your passports open beside you, so names and dates match your ID exactly.
+
+### Step 2: Book your appointment with an agent
+
+The main licensing office is on Oahu, in Honolulu. It is open Monday to Friday, excluding Hawaii State holidays, and appointments can be booked online or by email. Agents on Hawaii Island, Kauai, Maui and Molokai are reached by phone, and private agents in the community are also listed by the Department.
+
+If you are marrying on a neighbour island, book an agent there. It saves an inter-island flight in the busiest week of your trip.
+
+## Pick up your licence together, in person
+
+This is the step that shapes your itinerary. You meet the agent no sooner than 30 days before the ceremony date. The agent reviews your application, verifies your photo IDs and any documents needed, and issues the licence.
+
+You must appear together, in person. Proxies are not allowed.
+
+### What to bring
+
+- **Photo ID for both of you.** A valid government-issued photo ID, such as a passport, for each applicant.
+- **Proof of age.** Proof of age is required; the agent may ask for a certified birth certificate, so check with them.
+- **Divorce decree or death certificate, if recent.** If either of you was married before, bring a certified divorce decree or death certificate when the divorce was finalised, or the death occurred, less than 30 days before you pick up the licence.
+- **Certified translations.** Any document not in English must come with a certified translation.
+- **Name change papers, if relevant.** A certified copy of a legal name change is required where it applies.
+
+Agents may ask for more documentation depending on your circumstances, at their discretion.
+
+Hawaii's licence documents are your photo ID, proof of age and, where they apply, divorce, death and name-change papers; a [Certificate of No Impediment](https://weddedwonderland.com/expert-advice/what-is-a-certificate-of-no-impediment-and-who-issues-it) is not among them. If an agent asks for more, your registry of births, deaths and marriages can give a statement that there is no record of an earlier marriage.
+
+### Timing the appointment around your arrival
+
+Two 30-day rules work together. The agent cannot issue the licence more than 30 days before the ceremony, and the ceremony must take place within 30 days of picking it up. There is no waiting period once it is issued, so you can marry the next day if you choose.
+
+In practice, see the agent in Hawaii, in the first days after you land. Leave a buffer before the rehearsal and the welcome dinner, and keep the appointment away from any day with an early inter-island flight.
+
+Two more rules are firm. The licence is valid only in the State of Hawaii, so it cannot travel with you to a ceremony elsewhere in the United States. If the ceremony does not take place within the 30 days, the licence is null and void.
+
+## Before you go: entry and documents
+
+Australians visiting the United States for less than 90 days may be eligible to apply for an Electronic System for Travel Authorization (ESTA) and enter under the Visa Waiver Program. If you are not eligible, you need a visa before you travel. You also need an e-Passport to use the Visa Waiver Program.
+
+Apply as soon as you begin preparing your travel plans, or before you buy airline tickets. The [ESTA page from US Customs and Border Protection](https://www.cbp.gov/travel/international-visitors/esta) sets out the process.
+
+An approved ESTA or valid visa does not guarantee entry. CBP officers at the port of entry decide whether you are admitted. Entry requirements are strict, so read the terms and conditions before you travel.
+
+The overall advice level for the United States is "Exercise normal safety precautions", and there is an Australian Consulate-General in Honolulu for consular assistance. Subscribe to [Smartraveller's United States updates](https://www.smartraveller.gov.au/destinations/americas/united-states-america) for your travel dates.
+
+Your passport also does the most work at the licence appointment, where it counts as your government-issued photo ID. Keep both passports with you, not in the luggage you send ahead to the villa.
+
+### Questions for your guests
+
+Every guest travelling under the Visa Waiver Program applies for their own ESTA, so send the reminder with your save-the-dates.
+
+For older relatives, plan around the long flight from Australia. Before you book, ask each venue how guests reach the ceremony spot, whether there is step-free access, and where someone can sit out of the sun.
+
+## Choose a state-licensed officiant
+
+Every person who performs a marriage in Hawaii must be licensed by the State of Hawaii Department of Health before performing it. That includes a celebrant you love at home, a family friend and a minister from your own parish.
+
+If you want someone from Australia to marry you, they apply for a Hawaii performer licence. Performers register online at marriage.ehawaii.gov. Start early, and do not print their name on the order of service until the licence is confirmed.
+
+If you book a local officiant, ask to see their current State of Hawaii performer licence before you pay a deposit.
+
+## Your ceremony, recording and certified copies
+
+<!-- IMAGE SLOT ceremony: Landscape 3:2. A real ceremony in progress or set-up at a named venue (garden, clifftop or beachfront lawn), officiant and couple from behind or at a distance, soft afternoon light. Officiant identifiable only with written consent. Licensed real wedding with written couple consent only. Never AI. -->
+
+On the day, your licence is the document in play. It permits the marriage, and the ceremony with your licensed officiant performs it.
+
+Ask your officiant how and when the marriage is registered with the State, so you know when to place your order for copies.
+
+### Order certified copies
+
+The marriage certificate is the document that shows a legal marriage has been performed. Certified copies can be ordered online, by mail or in person, and online ordering is the fast route. You need a government-issued ID, and a fee applies. The Department's [birth and marriage certificates page](https://health.hawaii.gov/vitalrecords/birth-marriage-certificates/) has the order form and the current fee.
+
+Certified copies are issued only to someone with a direct and tangible interest in the record, which includes the registrant and the registrant's spouse. Either of you can order.
+
+Processing usually takes up to four to six weeks, and delays can occur. Order more than one copy. Name changes, banks and passports all ask for proof, and a spare saves a second wait.
+
+## Getting your certificate ready for Australia
+
+<!-- IMAGE SLOT certificate-australia: Landscape 3:2. Still life: a closed cream document folder tied with ribbon, wedding rings resting on it, two closed passports, soft window light on linen. No certificate face, seal, crest, wording or form. -->
+
+You cannot register an overseas marriage in Australia. In most cases it is legally recognised anyway, provided it was valid under the law where it took place and would have been valid under Australian law had it happened here. Our guide on [registering an overseas marriage at home](https://weddedwonderland.com/expert-advice/do-you-have-to-register-an-overseas-marriage-at-home) explains why there is nothing to lodge.
+
+A foreign marriage certificate is usually accepted as proof of the marriage. It may not work as proof of a name change, so check with your state or territory registry of births, deaths and marriages first. For peace of mind, a lawyer can confirm the certificate is valid in Australia. [Smartraveller's guide to getting married overseas](https://www.smartraveller.gov.au/planning-trip/advice-your-planned-activities/getting-married-overseas) covers the Australian side in full, and our page on [your overseas marriage certificate](https://weddedwonderland.com/expert-advice/overseas-marriage-certificate) covers how to use it.
+
+### Apostille
+
+An Apostille certifies a public document for use in another country. Whether you need one depends on who will receive the certificate, so ask that authority before you order. Our explainer, [what is an Apostille and does my paperwork need one](https://weddedwonderland.com/expert-advice/what-is-an-apostille-and-does-my-paperwork-need-one), walks through the decision.
+
+If you do need one on your Hawaii certificate, apostille or authentication requests to the Department are mail-in only. Build that postage into your timeline, alongside the usual processing time for copies.
+
+### Celebrating again at home
+
+Once Australia recognises your Hawaii marriage, you cannot marry again in Australia. You may hold another type of ceremony, such as a confirmation of vows or a recommitment ceremony.
+
+## Permits for beach and outdoor ceremonies
+
+Sand is public in a way a lawn is not. On a public State beach you need a right-of-entry permit from the Department of Land and Natural Resources (DLNR), applied for through its Wiki Permits system. DLNR lists the beach sites it permits.
+
+The shoreline is generally under State jurisdiction, even with a county park behind it. A few beaches are managed by other agencies, such as the counties, and you ask that agency instead.
+
+With the application, you submit a Certificate of Liability Insurance. On the day, the ceremony follows DLNR's General Terms and Conditions for Commercial Activity. The [DLNR commercial activities page](https://dlnr.hawaii.gov/ld/commercial-activities/) sets out the process and the site list.
+
+Ceremonies on resort or private grounds are a different matter. Ask the venue directly whether its lawn or terrace needs any permit, and who holds it. While you have them, ask whether the ceremony space can be closed to the public or booked for exclusive use, and how the venue's security works alongside a private team of your own.
+
+## When to marry in Hawaii
+
+<!-- IMAGE SLOT when-to-marry: Landscape 3:2. A named venue's ceremony or reception space photographed in a recorded month, late afternoon or sunset light, sea and sky visible. No people needed. Month taken recorded in the register or EXIF. -->
+
+Hawaii's statewide climate is mild all year, with moderate humidity, persistent north-easterly trade winds, big differences in rainfall over short distances and infrequent severe storms. For most of the islands there are only two seasons: summer from May to October and winter from October to April.
+
+Statewide, August and September are the warmest months and February and March the coolest. Winter brings more frequent cloud and rainstorms, with the heaviest rain from winter storms between October and April. Statewide, the sea follows a gentle curve, coolest in late February and March and warmest in late September or early October.
+
+Where you stand matters as much as when. Windward coasts and slopes get far more cloud and rain, while leeward areas tend to be sunny and dry. For a ceremony timed to sunset, a leeward lawn is the more settled bet.
+
+If you are planning a Hawaii trip, monitor the forecast and check directly with your airline, accommodation and activity providers for updates that may affect your plans.
+
+## Choose your island
+
+<!-- IMAGE SLOT choose-your-island: Landscape 16:9 or 3:2. Wide view from or of a real, named venue that shows its island's character (Maui coastline, Kauai's green cliffs, Oahu shoreline or the lava coast of Hawaii Island), daylight, no people needed. Island and venue proven by media kit, register or EXIF. -->
+
+Each island suits a different kind of wedding. The licence process is the same on all of them, but the agent you meet and the flights you book are not.
+
+### Oahu
+
+Most travellers reach Oahu through Daniel K. Inouye International Airport in Honolulu, the main gateway to Hawaii. It is a year-round destination, with big winter waves on the North Shore and the warmest water in summer. Its resort areas include Waikiki, Kahala, the North Shore and Ko Olina on the Leeward Coast. It is also home to the main licensing office. It suits a guest list that wants the simplest arrival, straight into Honolulu with no connecting flight.
+
+### Maui
+
+Most visitors fly into Kahului Airport. South Maui, around Wailea and Kihei, holds the oceanside hotels, and West Maui's Kaanapali Beach is known for its resorts and sunsets. It suits a wedding weekend built around one resort and a long evening on the terrace.
+
+### Kauai
+
+Kauai, the Garden Island, is known for the Napali Coast and Waimea Canyon. Its main airport is Lihue, with most travellers connecting through Honolulu. Summer brings calmer ocean conditions and winter bigger waves, which matters for anything planned near the water. It suits a smaller, quieter wedding framed by green cliffs and gardens, with guests happy to connect through Honolulu.
+
+### Hawaii Island
+
+The largest of the islands, Hawaii Island is set apart by its size, its range of climates and Hawaii Volcanoes National Park. Travellers fly into Kona or Hilo, and the luxury resorts sit along the Kona-Kohala Coast. It suits a resort wedding on that coast, with volcanic landscapes for the days either side.
+
+If you are weighing two islands against your guest list, [Wedded Concierge](https://weddedwonderland.com/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=getting-married-in-hawaii&utm_content=secondary) is the place to talk them through.
+
+## Venues and planning
+
+The legal steps are fixed. Everything else is a planning decision, and it is where a Hawaii wedding becomes yours.
+
+For a sense of what booking a resort involves, our guide to [booking Four Seasons Resort Hualalai for your destination wedding](https://weddedwonderland.com/everything-you-need-to-know-when-booking-four-seasons-resort-hualalai-in-hawaii-for-your-destination-wedding) walks through one Kona-Kohala Coast example in detail. For the wider American picture, read our guide to [planning a destination wedding in the USA from overseas](https://weddedwonderland.com/how-to-plan-a-destination-wedding-in-the-usa-if-youre-overseas).
+
+A Wedded Advisor is your single point of contact from start to finish, and confirms inclusions in writing before you commit. [Speak with Wedded Concierge](https://weddedwonderland.com/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=getting-married-in-hawaii&utm_content=primary) to start shaping yours.
+
+For ideas while you plan, browse the [Wedded Wonderland magazine](https://weddedwonderland.com/magazine?utm_source=blog&utm_medium=content&utm_campaign=getting-married-in-hawaii&utm_content=magnet).
+
+## Frequently asked questions
+
+### Who needs to be at the ceremony?
+
+The licence steps centre on the two of you, your licence agent and a state-licensed officiant. Ask your officiant what the ceremony itself requires on the day, including witnesses, and how the marriage is registered afterwards.
+
+### Can a friend from Australia officiate our wedding in Hawaii?
+
+Yes, if they hold a State of Hawaii performer licence. Every officiant must be licensed by the State of Hawaii Department of Health before performing a marriage, and performers register online at marriage.ehawaii.gov.
+
+### How far ahead can we get our Hawaii marriage licence?
+
+You can complete the online application before you travel, but you meet the agent no sooner than 30 days before the ceremony. The ceremony must then take place within 30 days of pick-up, or the licence is void.
+
+### Is a Hawaii marriage recognised in Australia?
+
+In most cases, yes. An overseas marriage is legally recognised in Australia if it was valid where it took place and would have been valid under Australian law. You cannot register it in Australia, and your Hawaii certificate is usually accepted as proof of the marriage.
+
+### Do we need a permit to marry on a Hawaii beach?
+
+On unencumbered State shoreline, yes: a right-of-entry permit through DLNR's Wiki Permits system, with a Certificate of Liability Insurance. A few beaches are managed by other agencies, such as the counties, and they authorise those instead.
+
+### Can we have a symbolic ceremony in Hawaii and marry legally at home?
+
+Yes. A symbolic ceremony is not a legal marriage, so the Hawaii licence applies only if you want the ceremony to be legally binding. If you marry legally in Hawaii instead, you cannot marry again in Australia, though you can hold a recommitment ceremony.
+
+## Plan your Hawaii wedding with a Wedded Advisor
+
+The licence is yours to collect, and the steps above are short. The rest is the wedding itself: the island, the lawn, the guest list and the week around it.
+
+Your Wedded Advisor works in your time zone, quotes in AUD, and agrees the fee in writing before any work begins. When you are ready, [start a conversation with Wedded Concierge](https://weddedwonderland.com/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=getting-married-in-hawaii&utm_content=closing).

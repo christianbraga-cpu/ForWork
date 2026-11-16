@@ -106,7 +106,7 @@ If you book a local officiant, ask to see their current State of Hawaii performe
 
 <!-- IMAGE SLOT ceremony: Landscape 3:2. A real ceremony in progress or set-up at a named venue (garden, clifftop or beachfront lawn), officiant and couple from behind or at a distance, soft afternoon light. Officiant identifiable only with written consent. Licensed real wedding with written couple consent only. Never AI. -->
 
-On the day, your licence is the document in play. It permits the marriage, and the ceremony with your licensed officiant performs it. <!-- fact_207 --> <!-- fact_11 --> Hand the licence to your officiant before the guests are seated, so nothing is hunted for at the last minute.
+On the day, your licence is the document in play. It permits the marriage, and the ceremony with your licensed officiant performs it. <!-- fact_207 --> <!-- fact_11 -->
 
 Ask your officiant how and when the marriage is registered with the State, so you know when to place your order for copies.
 
@@ -152,7 +152,7 @@ Ceremonies on resort or private grounds are a different matter. Ask the venue di
 
 Hawaii's statewide climate is mild all year, with moderate humidity, persistent north-easterly trade winds, big differences in rainfall over short distances and infrequent severe storms. <!-- fact_117 --> For most of the islands there are only two seasons: summer from May to October and winter from October to April. <!-- fact_117 -->
 
-Statewide, August and September are the warmest months and February and March the coolest. <!-- fact_118 --> Winter brings more frequent cloud and rainstorms, with the heaviest rain from winter storms between October and April. <!-- fact_118 --> The sea follows a gentle curve, coolest in late February and March and warmest in late September or early October. <!-- fact_119 -->
+Statewide, August and September are the warmest months and February and March the coolest. <!-- fact_118 --> Winter brings more frequent cloud and rainstorms, with the heaviest rain from winter storms between October and April. <!-- fact_118 --> Statewide, the sea follows a gentle curve, coolest in late February and March and warmest in late September or early October. <!-- fact_119 -->
 
 Where you stand matters as much as when. Windward coasts and slopes get far more cloud and rain, while leeward areas tend to be sunny and dry. <!-- fact_118 --> For a ceremony timed to sunset, a leeward lawn is the more settled bet.
 
