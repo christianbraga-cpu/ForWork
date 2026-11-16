@@ -3,3 +3,4 @@
 04:51 03 planner done: 34 reused facts; ACCC surcharges page 404 (not retried); card surcharges and passport validity left out of the copy.
 04:51 01 brief done: no-figures angle; fee vs trip; charging methods as questions only.
 04:55 02 seo done: 5/5 cities; primary no volume; travel agent fees AU 110/US 590; overlap managed with luxury-honeymoon-budget guide; validate ok.
+04:57 02 SEO done (fee demand in travel agent fees, AU 110 / US 590); 05 first draft done: 1,983 words, no figures, 0 VERIFY; first-draft docx sent.
