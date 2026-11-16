@@ -1,0 +1,112 @@
+{
+  "agent": "cro-specialist",
+  "task_id": "honeymoon-planning-service",
+  "stage": "09",
+  "status": "complete",
+  "round": 1,
+  "inputs_used": [
+    "CLAUDE.md",
+    "content-system/brand/brand-facts.md (Claims we can make; Confirmed business answers: honeymoon-only planning, 2026-11-16)",
+    "content/posts/honeymoon-planning-service/01-brief.json",
+    "content/posts/honeymoon-planning-service/07-panel.json",
+    "content/posts/honeymoon-planning-service/07-icp/*.json (cta_reaction)",
+    "content/posts/honeymoon-planning-service/08-final.md",
+    "content/posts/travel-advisor-benefits/09-cro.json (format model)"
+  ],
+  "self_qa": {
+    "checks": [
+      {
+        "check": "Primary CTA 6 words or fewer, no 'click here', no exclamation mark",
+        "pass": true,
+        "note": "'Request a Wedded Concierge consultation' (5 words)."
+      },
+      {
+        "check": "utm_content primary, secondary, closing, magnet each appear exactly once",
+        "pass": true,
+        "note": "Checked by grep on 08-final.md: 1 each, 4 UTM links in total."
+      },
+      {
+        "check": "UTMs only on /wonderland-concierge (3) and /magazine (1)",
+        "pass": true
+      },
+      {
+        "check": "Primary /wonderland-concierge anchor names Wedded Concierge",
+        "pass": true,
+        "note": "Line 37 anchor is 'Wedded Concierge'; secondary (line 107) 'Wedded Concierge'; closing (line 133) 'speak with Wedded Concierge'."
+      },
+      {
+        "check": "CTA copy claims only from brand-facts wording, including honeymoon-only following the same Wedded Advisor process",
+        "pass": true,
+        "note": "Subtexts use the fee-in-writing, inclusions-in-writing and time zone and AUD claims; primary rationale relies on the confirmed honeymoon-only answer (2026-11-16)."
+      },
+      {
+        "check": "No 'free', perks, Wedded Privileges, availability promises, call-first, prices, 'best' or em dashes; Australian English; 08-final.md not edited",
+        "pass": true,
+        "note": "08-final.md has no <!-- CTA: ... --> markers and none were added."
+      }
+    ],
+    "confidence": 0.85
+  },
+  "open_questions": [
+    {
+      "to": "orchestrator",
+      "question": "The primary link (line 37) sits at the top of 'How it works with Wedded Wonderland', before Steps 1 and 2 explain the advisor and the fee. Panel readers rated the CTA 'maybe' and wanted the process and fee basis first. Optional: leave as is (it is a soft inline mention) or treat the closing link as the main conversion point in the CMS CTA block. Not blocking; 08-final.md left unchanged.",
+      "blocking": false
+    },
+    {
+      "to": "orchestrator",
+      "question": "Panel asked for proof (real honeymoons or weddings) and, for the uhnw persona, privacy and discretion before enquiring. Neither is in brand facts (real weddings deferred), so nothing was added. Re-run cro-specialist once confirmed.",
+      "blocking": false
+    },
+    {
+      "to": "orchestrator",
+      "question": "08-final.md contains no <!-- CTA: primary --> marker; placements rely on the existing inline links.",
+      "blocking": false
+    }
+  ],
+  "assumptions": [
+    "FAST MODE: persona cta_reactions read in summary only (all 'maybe' except uhnw 'no'); placements follow the existing inline links and the travel-advisor-benefits model."
+  ],
+  "verify_items": [],
+  "tools_used": [
+    "Bash (grep, python3 -I)"
+  ],
+  "payload": {
+    "journey_stage": "comparing",
+    "primary_cta": {
+      "text": "Request a Wedded Concierge consultation",
+      "subtext": "The fee is agreed in writing before any work begins.",
+      "link": "https://weddedwonderland.com/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=honeymoon-planning-service&utm_content=primary",
+      "placement": "Existing inline link in the opening sentence of 'How it works with Wedded Wonderland' (line 37, anchor 'Wedded Concierge'), where the post states honeymoon-only planning follows the same Wedded Advisor process. Unchanged; position flagged."
+    },
+    "secondary_cta": {
+      "text": "Put these questions to Wedded Concierge",
+      "subtext": "Your advisor confirms the inclusions in writing before you commit.",
+      "link": "https://weddedwonderland.com/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=honeymoon-planning-service&utm_content=secondary",
+      "placement": "Existing final sentence of 'Questions to ask any planner before you agree' (line 107), for readers who have just finished the checklist. Unchanged."
+    },
+    "lead_magnet": {
+      "name": "Wedded Wonderland digital magazines",
+      "link": "https://weddedwonderland.com/magazine?utm_source=blog&utm_medium=content&utm_campaign=honeymoon-planning-service&utm_content=magnet",
+      "placement": "Existing final line of 'Start with a conversation' (line 133), for readers still comparing or yet to choose a destination. Unchanged.",
+      "exists": true
+    },
+    "closing_cta": {
+      "text": "Speak with Wedded Concierge",
+      "subtext": "Your advisor works in your time zone and quotes in AUD.",
+      "link": "https://weddedwonderland.com/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=honeymoon-planning-service&utm_content=closing",
+      "placement": "Existing closing paragraph under 'Start with a conversation' (line 133), after the one-advisor, fee and inclusions line. Unchanged."
+    },
+    "tracking": [
+      "https://weddedwonderland.com/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=honeymoon-planning-service&utm_content=primary",
+      "https://weddedwonderland.com/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=honeymoon-planning-service&utm_content=secondary",
+      "https://weddedwonderland.com/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=honeymoon-planning-service&utm_content=closing",
+      "https://weddedwonderland.com/magazine?utm_source=blog&utm_medium=content&utm_campaign=honeymoon-planning-service&utm_content=magnet"
+    ],
+    "copy_changes": [],
+    "rationale": "Brief journey_stage is 'comparing': the couple is weighing a honeymoon planning service against booking it themselves, so the invitation is a Wedded Concierge consultation at /wonderland-concierge, which honeymoon-only planning shares (same Wedded Advisor process, confirmed 2026-11-16). The panel's 'maybe' reactions centred on cost and commitment, and also flagged the fee line as over-repeated in the body, so each CTA subtext carries a different brand-facts reassurance once: fee in writing (primary), inclusions in writing (secondary), time zone and AUD (closing). No perks, Privileges, availability, prices or call-first wording. All four tracked links already appear once each with correct UTMs, so no copy change is made. A printable 'questions to ask a honeymoon planner' checklist or a honeymoon destinations guide would be a better-matched magnet; none is known to exist, so it is a backlog suggestion only and not placed."
+  },
+  "next_agent": [
+    "distribution"
+  ]
+}
