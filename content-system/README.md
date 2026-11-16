@@ -57,7 +57,7 @@ Every stage writes a JSON **envelope** (`schemas/envelope.schema.json`) into `co
 | `seo/` | Link map (site URL inventory) |
 | `images/` | Image register, sources policy, permission email template |
 | `cms/` | CMS field map (filled by `/wedded-cms-discovery`) and publish checklist |
-| `templates/` | Run report, backlinks to-do |
+| `templates/` | Run report, backlinks to-do, and the "How to Get Married in {Place}" series template (`getting-married-in-country.md`) |
 | `connectors/` | How each data tool is connected, and the `.mcp.json` example |
 | `scripts/` | Validation, link map builder, image preparation |
 
