@@ -1,0 +1,201 @@
+{
+ "agent": "visual-curator",
+ "task_id": "honeymoon-planner-vs-travel-agent",
+ "stage": "04",
+ "status": "needs_input",
+ "round": 1,
+ "inputs_used": [
+  "CLAUDE.md",
+  "content/posts/honeymoon-planner-vs-travel-agent/00-input.json",
+  "01-brief.json, 02-seo.json, 02-research/report.md, 03-source-pack.json (not present at run time)",
+  "content/posts/honeymoon-planner-cost/04-images.json (format model)",
+  "content-system/images/library-index.csv (header only, no rows)"
+ ],
+ "self_qa": {
+  "checks": [
+   {
+    "check": "Zero reference-only or competitor images in slots",
+    "pass": true,
+    "note": "reference_only empty; nothing downloaded."
+   },
+   {
+    "check": "Every approved image has location, licence, alt, caption, fit_reason",
+    "pass": true,
+    "note": "No approved images this run."
+   },
+   {
+    "check": "No AI image depicting a real place, resort, wedding or person",
+    "pass": true,
+    "note": "No AI generated. Only four neutral still lifes may become AI with Wedded Wonderland approval and an 'Illustrative image' label. side-by-side-questions (people) is never AI."
+   },
+   {
+    "check": "No travel agency shopfronts, logos or branding",
+    "pass": true,
+    "note": "Every brief forbids shopfronts, signage, logos and brand material."
+   },
+   {
+    "check": "No money or figures",
+    "pass": true,
+    "note": "Every brief forbids money, price tags, cards, invoices and visible figures."
+   },
+   {
+    "check": "Featured image exists (approved or needed with brief)",
+    "pass": true,
+    "note": "Needed, with brief: two notebooks and passports on linen."
+   },
+   {
+    "check": "5 slots",
+    "pass": true,
+    "note": "Hero plus the four requested sections."
+   },
+   {
+    "check": "Alt text Australian English, no em dashes, 125 chars or fewer",
+    "pass": true,
+    "note": "Checked by script."
+   }
+  ],
+  "confidence": 0.7
+ },
+ "open_questions": [
+  {
+   "to": "user",
+   "question": "Does Wedded Wonderland approve AI still lifes (featured, why-labels-blur, after-destination-wedding, doing-it-yourself) labelled 'Illustrative image' if no library, Canva or licensed asset is found?",
+   "blocking": false
+  },
+  {
+   "to": "user",
+   "question": "Is there a consented library photo of a couple planning together (side-by-side-questions), or should licensed model-released stock be bought?",
+   "blocking": false
+  }
+ ],
+ "assumptions": [
+  "Placement follows the four sections in the order given by the orchestrator (after_h2:1 to 4); 02-seo.json is not yet written, so the writer confirms after_h2 positions.",
+  "No property or destination is shown because the post compares planning services, not places, and 03-source-pack does not exist.",
+  "Fast mode: repo register only, no Drive, own-site scrape, Canva, Gmail or Lens checks run.",
+  "Alt text is drafted for planned images and must be rechecked against the final image."
+ ],
+ "verify_items": [
+  "[[IMAGE NEEDED]] featured: library, Canva or stock; AI only with Wedded Wonderland approval, labelled 'Illustrative image'",
+  "[[IMAGE NEEDED]] why-labels-blur: library, Canva or stock; AI only with Wedded Wonderland approval, labelled 'Illustrative image'",
+  "[[IMAGE NEEDED]] side-by-side-questions: consented library shoot or model-released stock, never AI",
+  "[[IMAGE NEEDED]] after-destination-wedding: library, Canva or stock; AI only with Wedded Wonderland approval, labelled 'Illustrative image'",
+  "[[IMAGE NEEDED]] doing-it-yourself: library, Canva or stock; AI only with Wedded Wonderland approval, labelled 'Illustrative image'",
+  "[[VERIFY licence]] every library, stock or Canva image: licence, credit line and expiry recorded in library-index.csv before use",
+  "[[VERIFY: no money, figures, travel agency shopfronts, logos or branding, and no readable passport, booking or personal details in any final image]]"
+ ],
+ "tools_used": [
+  "Bash (cat/python)"
+ ],
+ "next_agent": [
+  "luxury-writer"
+ ],
+ "payload": {
+  "slots": [
+   {
+    "slot_id": "featured",
+    "placement": "featured",
+    "purpose": "Hero and social share image: two ways of planning one honeymoon, side by side, calm and considered rather than transactional.",
+    "shot_brief": "Landscape 3:2 with negative space on one side for the title. Overhead still life on warm linen: two closed notebooks side by side (one leather, one cloth), a fountain pen across the gap between them, two passports with plain covers and a sprig of olive or dried flowers, soft morning window light, warm neutral palette, no people. No travel agency shopfronts, signage, logos or branding, and no airline, hotel, resort, cruise or card brand material visible anywhere. No money, price tags, currency notes, cards, invoices, calculators or any visible figures. No readable names, passport numbers, booking references, barcodes or personal details. Source: library register, Canva brand asset or licensed stock. AI only if Wedded Wonderland approves, and then labelled 'Illustrative image'. Never competitor or search-result images.",
+    "status": "needed",
+    "file": "content/posts/honeymoon-planner-vs-travel-agent/images/honeymoon-planner-vs-travel-agent-two-notebooks-passports-linen.webp",
+    "source": {
+     "type": "library",
+     "origin": "not yet sourced",
+     "credit": "[[VERIFY licence]]"
+    },
+    "location": {
+     "venue": "none (studio still life)",
+     "town": "not applicable",
+     "verified_by": "not applicable: no real place depicted"
+    },
+    "licence_note": "[[IMAGE NEEDED]] Library register has no rows. Still life may be AI only with Wedded Wonderland approval, labelled 'Illustrative image'.",
+    "alt": "Two closed notebooks side by side on linen with a pen, two passports and a sprig of dried flowers"
+   },
+   {
+    "slot_id": "why-labels-blur",
+    "placement": "after_h2:1",
+    "purpose": "Visual cue that the roles overlap: planning tools mixed together rather than two neat categories.",
+    "shot_brief": "Landscape 3:2. 45 degree still life on a pale timber or linen surface: an open notebook with handwritten notes kept deliberately out of focus and unreadable, a folded paper map with no legible place names, a pair of reading glasses and a cup of coffee, overlapping items, soft side light, no people. No travel agency shopfronts, signage, logos or branding, and no airline, hotel, resort, cruise or card brand material visible anywhere. No money, price tags, currency notes, cards, invoices, calculators or any visible figures. No readable names, passport numbers, booking references, barcodes or personal details. Source: library register, Canva brand asset or licensed stock. AI only if Wedded Wonderland approves, and then labelled 'Illustrative image'. Never competitor or search-result images.",
+    "status": "needed",
+    "file": "content/posts/honeymoon-planner-vs-travel-agent/images/honeymoon-planner-vs-travel-agent-open-notebook-folded-map-coffee.webp",
+    "source": {
+     "type": "library",
+     "origin": "not yet sourced",
+     "credit": "[[VERIFY licence]]"
+    },
+    "location": {
+     "venue": "none (studio still life)",
+     "town": "not applicable",
+     "verified_by": "not applicable: no real place depicted"
+    },
+    "licence_note": "[[IMAGE NEEDED]] Library register has no rows. Still life may be AI only with Wedded Wonderland approval, labelled 'Illustrative image'. Map must not show a real, legible destination.",
+    "alt": "An open notebook, a folded paper map, reading glasses and a cup of coffee overlapping on linen"
+   },
+   {
+    "slot_id": "side-by-side-questions",
+    "placement": "after_h2:2",
+    "purpose": "Supports the question-led comparison: a couple weighing their options together.",
+    "shot_brief": "Landscape 3:2. A couple in their 30s seated together at a table in a light-filled home or neutral lounge, seen from behind or over the shoulder so faces are not the focus, one holding a notebook, relaxed and conversational, natural daylight, no screens with readable content, no identifiable resort or destination. No travel agency shopfronts, signage, logos or branding, and no airline, hotel, resort, cruise or card brand material visible anywhere. No money, price tags, currency notes, cards, invoices, calculators or any visible figures. No readable names, passport numbers, booking references, barcodes or personal details. Source: consented real shoot from the library or model-released licensed stock only. Never AI (people). Never competitor or search-result images.",
+    "status": "needed",
+    "file": "content/posts/honeymoon-planner-vs-travel-agent/images/honeymoon-planner-vs-travel-agent-couple-planning-at-table.webp",
+    "source": {
+     "type": "stock",
+     "origin": "not yet sourced",
+     "credit": "[[VERIFY licence]]"
+    },
+    "location": {
+     "venue": "none (no identifiable resort or destination)",
+     "town": "not applicable",
+     "verified_by": "not applicable: no real place depicted"
+    },
+    "licence_note": "[[IMAGE NEEDED]] Library register has no rows. People: consented library shoot or model-released stock only, never AI.",
+    "alt": "A couple sitting together at a sunlit table talking through their plans with a notebook"
+   },
+   {
+    "slot_id": "after-destination-wedding",
+    "placement": "after_h2:3",
+    "purpose": "Bridges the wedding and the honeymoon: the moment after the celebration, before travelling on.",
+    "shot_brief": "Landscape 3:2. Still life on linen: a folded wedding veil or ribbon, a bouquet of soft neutral flowers past their best, and two passports tucked under a plain unbranded envelope, golden late afternoon light, no people, no recognisable venue, resort or destination in shot. No travel agency shopfronts, signage, logos or branding, and no airline, hotel, resort, cruise or card brand material visible anywhere. No money, price tags, currency notes, cards, invoices, calculators or any visible figures. No readable names, passport numbers, booking references, barcodes or personal details. Source: library register, Canva brand asset or licensed stock. AI only if Wedded Wonderland approves, and then labelled 'Illustrative image'. Never competitor or search-result images.",
+    "status": "needed",
+    "file": "content/posts/honeymoon-planner-vs-travel-agent/images/honeymoon-planner-vs-travel-agent-veil-bouquet-passports-linen.webp",
+    "source": {
+     "type": "library",
+     "origin": "not yet sourced",
+     "credit": "[[VERIFY licence]]"
+    },
+    "location": {
+     "venue": "none (studio still life)",
+     "town": "not applicable",
+     "verified_by": "not applicable: no real place depicted"
+    },
+    "licence_note": "[[IMAGE NEEDED]] Library register has no rows. Still life may be AI only with Wedded Wonderland approval, labelled 'Illustrative image'. No real wedding or venue depicted, so AI is permitted only as a neutral still life.",
+    "alt": "A folded veil and a bouquet of soft neutral flowers beside two passports and an envelope on linen"
+   },
+   {
+    "slot_id": "doing-it-yourself",
+    "placement": "after_h2:4",
+    "purpose": "Shows the self-planned route honestly: the work of researching and organising a trip yourselves.",
+    "shot_brief": "Landscape 3:2. Still life on a desk: passports with plain covers and a printed itinerary on linen, the itinerary text blurred and unreadable, a closed laptop with no logo visible, a pen and a small stack of sticky notes with no writing, soft daylight, no people. No travel agency shopfronts, signage, logos or branding, and no airline, hotel, resort, cruise or card brand material visible anywhere. No money, price tags, currency notes, cards, invoices, calculators or any visible figures. No readable names, passport numbers, booking references, barcodes or personal details. Source: library register, Canva brand asset or licensed stock. AI only if Wedded Wonderland approves, and then labelled 'Illustrative image'. Never competitor or search-result images.",
+    "status": "needed",
+    "file": "content/posts/honeymoon-planner-vs-travel-agent/images/honeymoon-planner-vs-travel-agent-passports-itinerary-desk.webp",
+    "source": {
+     "type": "library",
+     "origin": "not yet sourced",
+     "credit": "[[VERIFY licence]]"
+    },
+    "location": {
+     "venue": "none (studio still life)",
+     "town": "not applicable",
+     "verified_by": "not applicable: no real place depicted"
+    },
+    "licence_note": "[[IMAGE NEEDED]] Library register has no rows. Still life may be AI only with Wedded Wonderland approval, labelled 'Illustrative image'.",
+    "alt": "Two passports and a printed itinerary on linen beside a closed laptop, a pen and blank sticky notes"
+   }
+  ],
+  "reference_only": [],
+  "permission_requests": [],
+  "drive_findings": [
+   "Not searched: fast mode, repo library register only per orchestrator instruction. library-index.csv has a header and no rows."
+  ]
+ }
+}
