@@ -199,6 +199,13 @@ URL until a human confirms the other resolves.
 | `/a-two-day-wedding-celebration-in-greece` | A Two-Day Wedding Celebration in Greece | two day wedding greece |
 | `/13-reasons-we-all-want-to-get-married-in-santorini` | 13 Reasons We All Want to Get Married in Santorini | married in santorini |
 
+## France articles (Firecrawl map, 16 Nov 2026)
+
+| URL | Title | Owns |
+|---|---|---|
+| `/10-stunning-chateau-venues-in-france-to-consider-for-your-destination-wedding` | 10 Stunning Chateau Venues in France | chateau wedding venues france |
+| `/the-most-timeless-destination-weddings-in-france` | The Most Timeless Destination Weddings in France | destination weddings in france |
+
 ## 9. Rings and Jewellery cluster (Firecrawl map, 27 Oct 2026)
 
 Hub: `/style-advice/celebrity-engagement-rings` (in production). Spokes:
