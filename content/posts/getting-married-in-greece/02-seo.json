@@ -1,0 +1,456 @@
+{
+  "agent": "seo-researcher",
+  "task_id": "getting-married-in-greece",
+  "stage": "02",
+  "status": "complete",
+  "round": 1,
+  "inputs_used": [
+    "CLAUDE.md",
+    "00-input.json",
+    "content-system/research/locations.yaml",
+    "content-system/seo/link-map.csv",
+    "content-system/schemas/02-seo.schema.json",
+    "content/posts/best-time-to-get-married-in-greece/02-seo.json (format model)",
+    "sister 02-seo.json: greece-wedding-venues, greece-wedding-packages, same-sex-marriage-greece, greek-orthodox-wedding",
+    "scratchpad greece-sisters.txt"
+  ],
+  "tools_used": [
+    "DataForSEO serp_organic_live_advanced: Sydney, Melbourne, New York, Dubai, Singapore, all ok first try, 2026-11-16",
+    "DataForSEO kw_data_google_ads_search_volume (AU, US; 7 keywords)",
+    "DataForSEO dataforseo_labs_bulk_keyword_difficulty (US)",
+    "DataForSEO dataforseo_labs_google_ranked_keywords (weddedwonderland.com, AU, %greece%)",
+    "Apify web-fetch: Sydney #1 esim.holafly.com read (HTTP 200); #2 ionianweddings only a redirect, guessed path 404, not retried; #3 Facebook not fetchable",
+    "curl link checks: blocked by container network (no HTTP response for any host)",
+    "GSC: not read (fast mode)"
+  ],
+  "self_qa": {
+    "checks": [
+      {
+        "check": ">= 7 of 10 locations returned results",
+        "pass": false,
+        "note": "Fast mode: 5 locations requested, 5 of 5 returned."
+      },
+      {
+        "check": "Every outline H2 maps to a real query or must-include",
+        "pass": true
+      },
+      {
+        "check": "Every internal and external link verified live today",
+        "pass": false,
+        "note": "Container network blocked live checks; hub, /wonderland-concierge, /magazine verified 2026-11-13; 19 sisters are drafts; expert-advice pages from link map; externals pending planner-sme."
+      },
+      {
+        "check": "No competitor links; no noindex targets",
+        "pass": true
+      },
+      {
+        "check": "Meta lengths within limits; H2s carry no pasted keyword, no 'best', no figures; no em dashes",
+        "pass": true
+      }
+    ],
+    "confidence": 0.75
+  },
+  "open_questions": [
+    {
+      "to": "planner-sme",
+      "question": "Confirm the exact Australian Embassy Athens marriages URL, Smartraveller Greece section and the AGD overseas-marriage recognition page; quote CNI, notice and registration rules; set verified_live.",
+      "blocking": false
+    },
+    {
+      "to": "editor",
+      "question": "Confirm all 19 sister drafts are published before this pillar goes live, or drop links to unpublished ones. Place the three backlinks.",
+      "blocking": false
+    },
+    {
+      "to": "orchestrator",
+      "question": "Decide on /how-to-plan-a-greek-wedding (refocus or 301) and add it to link-map.csv.",
+      "blocking": false
+    }
+  ],
+  "next_agent": [
+    "planner-sme",
+    "visual-curator"
+  ],
+  "payload": {
+    "primary_keyword": "getting married in greece",
+    "secondary_keywords": [
+      "how to get married in greece",
+      "legal requirements to get married in greece",
+      "getting married in greece as an australian",
+      "civil wedding greece",
+      "destination wedding greece",
+      "getting married in greece paperwork",
+      "getting married in greece from australia"
+    ],
+    "secondary_keyword_notes": "Google Ads volume (DataForSEO, 2026-11-16) AU / US monthly: getting married in greece 10 / 90; how to get married in greece 10 / 20; greece wedding 210 / 1,300 (Labs AU 390); destination wedding greece 30 / 480; civil wedding greece 10 / 10; legal requirements to get married in greece and getting married in greece as an australian: no data (below threshold) in both. Difficulty (Labs bulk KD, US): primary 0, how to 0, destination wedding greece 0, greece wedding 14, others no value. 'paperwork' and 'from australia' wording from Sydney/Melbourne related searches (no volume pulled). 'greece wedding' is assigned to the hub, not this pillar.",
+    "intent": "informational",
+    "slug": "getting-married-in-greece",
+    "url_path": "/destination-weddings/getting-married-in-greece",
+    "meta_title": "Getting Married in Greece: A Legal Guide for Australians",
+    "meta_title_alt": "Getting Married in Greece: How It Works for Australians",
+    "meta_description": "How to marry legally in Greece from Australia: civil, church or symbolic ceremonies, the CNI, apostilles, translations and registering your marriage.",
+    "outline": [
+      {
+        "h2": "Can Australians marry legally in Greece?",
+        "answers": "Primary keyword; Melbourne PAA 'Can a foreigner get married in Greece?' and 'Are you legally married if you marry in Greece?'; Sydney FB 'requirements for Australians'",
+        "notes": "Direct answer in first 100 words: yes, civil or religious ceremony is legally binding; symbolic option for couples who marry at home. 4 Key takeaways, no figures. Source: Australian Embassy Athens."
+      },
+      {
+        "h2": "Legal, religious or symbolic: choosing your ceremony",
+        "answers": "NY AI overview ceremony split; brief must_include ceremony types; secondary 'civil wedding greece'",
+        "h3": [
+          "A civil ceremony at the town hall",
+          "A Greek Orthodox church wedding",
+          "Other religious ceremonies",
+          "A symbolic celebration after marrying at home"
+        ],
+        "notes": "Links greek-orthodox-wedding, same-sex-marriage-greece (link only, no legal position), greek-wedding-traditions. Carries the one body Advisor line to /wonderland-concierge."
+      },
+      {
+        "h2": "The documents you will need",
+        "answers": "Secondary 'legal requirements to get married in greece'; related search 'getting married in Greece paperwork'; Sydney FB 'what documents/certificates we need'",
+        "h3": [
+          "Certificate of No Impediment",
+          "Apostille stamps",
+          "Greek translations",
+          "If either of you was married before",
+          "Passports and witnesses"
+        ],
+        "notes": "Every requirement sourced to Australian Embassy Athens or municipality; [[VERIFY]] otherwise. Links CNI and apostille expert pages."
+      },
+      {
+        "h2": "How the process runs, from home to the ceremony",
+        "answers": "Secondary 'how to get married in greece'; Melbourne PAA 'Is it difficult to get married in Greece?'",
+        "h3": [
+          "Before you leave Australia",
+          "When you arrive in Greece",
+          "Notice and the marriage licence",
+          "On the day"
+        ],
+        "notes": "Timeline in plain steps; any day counts or lead times only from official sources ([[VERIFY]]); no figures in headings."
+      },
+      {
+        "h2": "After the wedding: registration and recognition at home",
+        "answers": "Singapore PAA on registering a marriage at home; NY AI overview registration step; competitor claim on recognition unsourced (gap)",
+        "h3": [
+          "Registering the marriage in Greece",
+          "Using your Greek certificate in Australia"
+        ],
+        "notes": "AGD and Smartraveller wording; links register-overseas-marriage and overseas-marriage-certificate expert pages."
+      },
+      {
+        "h2": "Where to marry: islands and the mainland",
+        "answers": "NY AI overview locations; Singapore SERP venue-led results; secondary 'destination wedding greece'",
+        "h3": [
+          "Santorini, Mykonos and Paros",
+          "Crete",
+          "Rhodes and Corfu",
+          "Athens and the mainland"
+        ],
+        "notes": "Summary only; link down to every island sister once plus greece-wedding-venues and the hub. No venue lists here (venue intent belongs to the hub and greece-wedding-venues)."
+      },
+      {
+        "h2": "Timing, budget and packages",
+        "answers": "Singapore PAA 'best month'; PAA 'How much would it be to have a wedding in Greece?'",
+        "notes": "Short orientation, no prices, no month named as best; link best-time, greece-wedding-packages, all-inclusive, Santorini and Crete packages."
+      },
+      {
+        "h2": "Frequently asked questions",
+        "answers": "PAA and forum questions",
+        "notes": "See faq_questions; FAQPage schema."
+      },
+      {
+        "h2": "Plan your Greek wedding with a Wedded Advisor",
+        "answers": "Close and primary CTA",
+        "notes": "/wonderland-concierge (closing UTM) and /magazine (magnet UTM)."
+      }
+    ],
+    "faq_questions": [
+      "Can a foreigner get married in Greece?",
+      "Are you legally married if you marry in Greece?",
+      "Is it difficult to get married in Greece?",
+      "Do we need to register a Greek marriage in Australia?",
+      "Can we marry in a Greek Orthodox church if we are not Orthodox?",
+      "How long does a Greek wedding ceremony go for?"
+    ],
+    "faq_demand_notes": "Q1, Q2, Q3 Melbourne PAA; Q4 Singapore PAA (UK wording, adapted for Australia) plus related search 'from australia'; Q5 Sydney FB thread on legal process when not baptised; Q6 Sydney and Dubai PAA. Cost and US citizen PAA excluded (cost goes to packages guides; US out of audience).",
+    "internal_links": [
+      {
+        "anchor": "Wedded Concierge consultation",
+        "target": "https://weddedwonderland.com/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=getting-married-in-greece&utm_content=primary",
+        "type": "commercial",
+        "placement": "Ceremony choice section (one body Advisor line); closing link uses utm_content=closing",
+        "verified_live": "verified live 2026-11-13 (best-time 02-seo, DataForSEO on_page_instant_pages, HTTP 200); not re-fetched today, container network blocked"
+      },
+      {
+        "anchor": "our Greece wedding collection",
+        "target": "https://weddedwonderland.com/destinations/europe/greece",
+        "type": "hub",
+        "placement": "Where to marry intro, once",
+        "verified_live": "verified live 2026-11-13 (best-time 02-seo, HTTP 200, canonical self); not re-fetched today"
+      },
+      {
+        "anchor": "our free digital wedding magazines",
+        "target": "https://weddedwonderland.com/magazine?utm_source=blog&utm_medium=content&utm_campaign=getting-married-in-greece&utm_content=magnet",
+        "type": "commercial",
+        "placement": "Close",
+        "verified_live": "verified live 2026-11-13 (best-time 02-seo, HTTP 200); not re-fetched today"
+      },
+      {
+        "anchor": "what a Certificate of No Impediment is and who issues it",
+        "target": "https://weddedwonderland.com/expert-advice/what-is-a-certificate-of-no-impediment-and-who-issues-it",
+        "type": "related",
+        "placement": "Documents, CNI",
+        "verified_live": "link-map.csv lists as live (last_seen 2026-10-20); live HTTP check blocked from this container 2026-11-16; confirm before publish"
+      },
+      {
+        "anchor": "when your paperwork needs an apostille",
+        "target": "https://weddedwonderland.com/expert-advice/what-is-an-apostille-and-does-my-paperwork-need-one",
+        "type": "related",
+        "placement": "Documents, apostille",
+        "verified_live": "link-map.csv lists as live (last_seen 2026-10-20); live HTTP check blocked from this container 2026-11-16; confirm before publish"
+      },
+      {
+        "anchor": "whether you need to register an overseas marriage at home",
+        "target": "https://weddedwonderland.com/expert-advice/do-you-have-to-register-an-overseas-marriage-at-home",
+        "type": "related",
+        "placement": "After the wedding",
+        "verified_live": "link-map.csv lists as live (last_seen 2026-10-20); live HTTP check blocked from this container 2026-11-16; confirm before publish"
+      },
+      {
+        "anchor": "using your overseas marriage certificate in Australia",
+        "target": "https://weddedwonderland.com/expert-advice/overseas-marriage-certificate",
+        "type": "related",
+        "placement": "After the wedding",
+        "verified_live": "link-map.csv lists as live (last_seen 2026-10-20); live HTTP check blocked from this container 2026-11-16; confirm before publish"
+      },
+      {
+        "anchor": "what a Greek Orthodox church wedding requires",
+        "target": "https://weddedwonderland.com/destination-weddings/greek-orthodox-wedding",
+        "type": "related",
+        "placement": "Ceremony choice, Orthodox",
+        "verified_live": "draft per link-map.csv (last_seen 2026-11-12); live HTTP check blocked from this container 2026-11-16; confirm live before publish"
+      },
+      {
+        "anchor": "same-sex marriage in Greece",
+        "target": "https://weddedwonderland.com/destination-weddings/same-sex-marriage-greece",
+        "type": "related",
+        "placement": "Ceremony choice, civil (link only, no legal position stated here)",
+        "verified_live": "draft per link-map.csv (last_seen 2026-11-12); live HTTP check blocked from this container 2026-11-16; confirm live before publish"
+      },
+      {
+        "anchor": "Greek wedding traditions to weave into the day",
+        "target": "https://weddedwonderland.com/expert-advice/greek-wedding-traditions",
+        "type": "related",
+        "placement": "Ceremony choice, symbolic",
+        "verified_live": "draft per link-map.csv (last_seen 2026-11-05); live HTTP check blocked from this container 2026-11-16; confirm live before publish"
+      },
+      {
+        "anchor": "Greece wedding venues from the islands to Athens",
+        "target": "https://weddedwonderland.com/destination-weddings/greece-wedding-venues",
+        "type": "hub",
+        "placement": "Where to marry intro",
+        "verified_live": "draft per link-map.csv (last_seen 2026-11-10); live HTTP check blocked from this container 2026-11-16; confirm live before publish"
+      },
+      {
+        "anchor": "how to plan a Santorini wedding",
+        "target": "https://weddedwonderland.com/destination-weddings/santorini-wedding",
+        "type": "related",
+        "placement": "Where to marry, Cyclades",
+        "verified_live": "draft per link-map.csv (last_seen 2026-11-11); live HTTP check blocked from this container 2026-11-16; confirm live before publish"
+      },
+      {
+        "anchor": "Santorini wedding venues",
+        "target": "https://weddedwonderland.com/destination-weddings/santorini-wedding-venues",
+        "type": "related",
+        "placement": "Where to marry, Cyclades",
+        "verified_live": "draft per link-map.csv (last_seen 2026-11-12); live HTTP check blocked from this container 2026-11-16; confirm live before publish"
+      },
+      {
+        "anchor": "planning a Mykonos wedding",
+        "target": "https://weddedwonderland.com/destination-weddings/mykonos-wedding",
+        "type": "related",
+        "placement": "Where to marry, Cyclades",
+        "verified_live": "draft per link-map.csv (last_seen 2026-11-11); live HTTP check blocked from this container 2026-11-16; confirm live before publish"
+      },
+      {
+        "anchor": "Mykonos wedding venues",
+        "target": "https://weddedwonderland.com/destination-weddings/mykonos-wedding-venues",
+        "type": "related",
+        "placement": "Where to marry, Cyclades",
+        "verified_live": "draft per link-map.csv (last_seen 2026-11-11); live HTTP check blocked from this container 2026-11-16; confirm live before publish"
+      },
+      {
+        "anchor": "Paros wedding venues",
+        "target": "https://weddedwonderland.com/destination-weddings/paros-wedding-venues",
+        "type": "related",
+        "placement": "Where to marry, Cyclades",
+        "verified_live": "draft per link-map.csv (last_seen 2026-11-11); live HTTP check blocked from this container 2026-11-16; confirm live before publish"
+      },
+      {
+        "anchor": "Santorini or Mykonos for your wedding",
+        "target": "https://weddedwonderland.com/destination-weddings/santorini-or-mykonos-wedding",
+        "type": "related",
+        "placement": "Where to marry, Cyclades",
+        "verified_live": "draft per link-map.csv (last_seen 2026-11-12); live HTTP check blocked from this container 2026-11-16; confirm live before publish"
+      },
+      {
+        "anchor": "planning a wedding in Crete",
+        "target": "https://weddedwonderland.com/destination-weddings/wedding-in-crete",
+        "type": "related",
+        "placement": "Where to marry, Crete",
+        "verified_live": "draft per link-map.csv (last_seen 2026-11-11); live HTTP check blocked from this container 2026-11-16; confirm live before publish"
+      },
+      {
+        "anchor": "Crete wedding venues",
+        "target": "https://weddedwonderland.com/destination-weddings/crete-wedding-venues",
+        "type": "related",
+        "placement": "Where to marry, Crete",
+        "verified_live": "draft per link-map.csv (last_seen 2026-11-10); live HTTP check blocked from this container 2026-11-16; confirm live before publish"
+      },
+      {
+        "anchor": "Rhodes wedding venues",
+        "target": "https://weddedwonderland.com/destination-weddings/rhodes-wedding-venues",
+        "type": "related",
+        "placement": "Where to marry, Rhodes",
+        "verified_live": "draft per link-map.csv (last_seen 2026-11-12); live HTTP check blocked from this container 2026-11-16; confirm live before publish"
+      },
+      {
+        "anchor": "Corfu wedding venues",
+        "target": "https://weddedwonderland.com/destination-weddings/corfu-wedding-venues",
+        "type": "related",
+        "placement": "Where to marry, Corfu",
+        "verified_live": "draft per link-map.csv (last_seen 2026-11-11); live HTTP check blocked from this container 2026-11-16; confirm live before publish"
+      },
+      {
+        "anchor": "Greek weather and dates month by month",
+        "target": "https://weddedwonderland.com/destination-weddings/best-time-to-get-married-in-greece",
+        "type": "related",
+        "placement": "Timing and packages",
+        "verified_live": "draft per link-map.csv (last_seen 2026-11-13); live HTTP check blocked from this container 2026-11-16; confirm live before publish"
+      },
+      {
+        "anchor": "what Greece wedding packages include",
+        "target": "https://weddedwonderland.com/destination-weddings/greece-wedding-packages",
+        "type": "related",
+        "placement": "Timing and packages",
+        "verified_live": "draft per link-map.csv (last_seen 2026-11-11); live HTTP check blocked from this container 2026-11-16; confirm live before publish"
+      },
+      {
+        "anchor": "all-inclusive packages compared",
+        "target": "https://weddedwonderland.com/destination-weddings/greece-wedding-packages-all-inclusive",
+        "type": "related",
+        "placement": "Timing and packages",
+        "verified_live": "draft per link-map.csv (last_seen 2026-11-12); live HTTP check blocked from this container 2026-11-16; confirm live before publish"
+      },
+      {
+        "anchor": "Santorini wedding packages",
+        "target": "https://weddedwonderland.com/destination-weddings/santorini-wedding-packages",
+        "type": "related",
+        "placement": "Timing and packages",
+        "verified_live": "draft per link-map.csv (last_seen 2026-11-12); live HTTP check blocked from this container 2026-11-16; confirm live before publish"
+      },
+      {
+        "anchor": "Crete wedding packages",
+        "target": "https://weddedwonderland.com/destination-weddings/crete-wedding-packages",
+        "type": "related",
+        "placement": "Timing and packages",
+        "verified_live": "draft per link-map.csv (last_seen 2026-11-12); live HTTP check blocked from this container 2026-11-16; confirm live before publish"
+      }
+    ],
+    "internal_links_excluded": [
+      "/how-to-plan-a-greek-wedding (live, not in link map; competes on planning terms; see cannibalisation)",
+      "/7-must-see-santorini-destination-wedding-venues (recommended 301 to Santorini venues guide)",
+      "/8-greek-wedding-traditions-you-didnt-know-about (link the refreshed /expert-advice/greek-wedding-traditions instead)"
+    ],
+    "external_links": [
+      {
+        "anchor": "Australian Embassy in Greece: marriages in Greece",
+        "url": "https://greece.embassy.gov.au/athn/marriages.html",
+        "type": "authority",
+        "rel": "noopener",
+        "verified_live": "ranked #2 Melbourne SERP 2026-11-16 (DataForSEO); exact path pending: container cannot fetch; planner-sme to confirm URL and quote CNI wording"
+      },
+      {
+        "anchor": "Smartraveller Greece",
+        "url": "https://www.smartraveller.gov.au/destinations/europe/greece",
+        "type": "authority",
+        "rel": "noopener",
+        "verified_live": "pending: not fetched (container network blocked); planner-sme to confirm and quote the marriage/local laws section"
+      },
+      {
+        "anchor": "Attorney-General's Department: overseas marriages",
+        "url": "https://www.ag.gov.au/families-and-marriage/marriage/overseas-marriages",
+        "type": "authority",
+        "rel": "noopener",
+        "verified_live": "pending: path not confirmed; planner-sme to find the AGD page on recognition of overseas marriages and correct the URL"
+      }
+    ],
+    "backlinks_to_add": [
+      {
+        "from": "/destinations/europe/greece",
+        "anchor": "how to get married in Greece, step by step",
+        "sentence": "Hub intro or any legal/paperwork mention; editor to place after confirming live copy (not fetched today)"
+      },
+      {
+        "from": "/destination-weddings/santorini-wedding",
+        "anchor": "the legal steps for marrying in Greece",
+        "sentence": "Paperwork/legal step section of 08-final.md; editor to place"
+      },
+      {
+        "from": "/destination-weddings/paros-wedding-venues",
+        "anchor": "marrying legally in Greece as an Australian",
+        "sentence": "Legal section of the Paros guide; editor to place"
+      }
+    ],
+    "serp_source": "dataforseo",
+    "serp_summary": {
+      "locations_checked": [
+        "Sydney",
+        "Melbourne",
+        "New York",
+        "Dubai",
+        "Singapore"
+      ],
+      "locations_failed": [
+        "Fast mode: orchestrator limited the run to 5 locations; all 5 returned first try. Los Angeles, Abu Dhabi, Riyadh, Doha, Hong Kong not run; Arabic queries and AU secondary-keyword SERPs skipped."
+      ],
+      "common_angles": [
+        "Legal requirement checklists (CNI, apostille, translation, notice) on planner and generic sites",
+        "Ceremony type split: civil, religious, symbolic",
+        "Facebook Greece Weddings Group threads hold 2 to 4 of the top 10 in Sydney and Singapore",
+        "Package and cost pages rank for the how-to query",
+        "Official pages rank in Melbourne (Greek Consulate QLD, Australian Embassy Athens) and US Embassy appears in Melbourne and the NY AI overview"
+      ],
+      "gaps": [
+        "No commercial or editorial result gives the Australian path end to end (DFAT CNI, Embassy Athens, AGD recognition)",
+        "Top Sydney result mislabels a US Embassy page as a Greek government source and claims no re-registration at home without a source",
+        "Australian forum demand (NSW couples, non-baptised couples) unanswered by any article",
+        "No result links each step to the official source",
+        "No result separates legal intent from venue intent; venue lists crowd the legal answer"
+      ],
+      "regional_differences": [
+        "Sydney: forum-heavy, eSIM brand at #1, AU couples asking for document lists",
+        "Melbourne: most authoritative (consulate, Australian Embassy, US Embassy, Wikipedia)",
+        "New York: expanded AI overview with legal checklist; generic and planner pages",
+        "Dubai: Greek planners and a Pinterest pin; paid ads for legal paperwork services",
+        "Singapore: venue and cost led; PAA on registering at home and best month"
+      ],
+      "recommended_scope": "au_focus"
+    },
+    "cannibalisation": [
+      "No weddedwonderland.com URL ranks for the primary or variants (ranked_keywords AU, %greece%, 10 rows: 8-greek-wedding-traditions #19/#32, /destinations/europe/greece #64-65 for 'greece wedding' and 'weddings in greece', /how-to-plan-a-greek-wedding #77-90 for plan/planning a wedding in greece, /7-must-see-santorini #95-97).",
+      "/destinations/europe/greece (live hub, venue intent): keep 'greece wedding', 'weddings in greece' and venue browsing; it should link down to this pillar for legal questions and not carry a paperwork section.",
+      "/destination-weddings/greece-wedding-venues (draft): owns 'greece wedding venues' and venue-list variants; this pillar summarises islands in one H2 and links down, with no venue names listed.",
+      "/how-to-plan-a-greek-wedding (live, not in link map): ranks #77-90 for plan/planning a wedding in greece and is about Greek-heritage traditions. Mild overlap with how-to intent. Recommend refocusing it on Greek-heritage weddings at home or 301 to this pillar after review; add it to link-map.csv.",
+      "/destination-weddings/santorini-wedding, /mykonos-wedding, /paros-wedding-venues: own island-level legal variants; this pillar owns Greece-wide legal and how-to intent and links down.",
+      "/destination-weddings/greek-orthodox-wedding and /same-sex-marriage-greece own their ceremony-specific legal terms; this pillar names them and links, without restating rules."
+    ]
+  },
+  "assumptions": [
+    "Fast mode: 5 SERP locations, no GSC, one competitor page read.",
+    "Sister drafts treated as linkable on publish; live status confirmed by link map only.",
+    "recommended_scope au_focus: US volume is higher but the reader is Australian."
+  ],
+  "verify_items": []
+}
