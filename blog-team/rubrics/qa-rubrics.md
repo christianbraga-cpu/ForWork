@@ -46,7 +46,7 @@ failed re-review, stop and report the open issues.
 
 ### `accuracy` (fact-checker)
 - `claims_verified`: every claim in the register traced to a source that says it
-- `legal_current`: legal claims from official sources within 12 months, with the Advisor caveat
+- `legal_current`: legal claims from official sources within 12 months, with a caveat to confirm requirements for your own passports with the deciding authority (celebrant, registry, DFAT, the destination's town hall, consulate or embassy), never the Wedded Advisor
 - `no_inventions`: no invented weddings, quotes, prices, capacities or stats
 - `prices_rule`: every price is "From AUD", flagged for Nic
 - `no_guarantees`: no promises about weather, availability or outcomes
