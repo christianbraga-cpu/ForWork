@@ -1,0 +1,213 @@
+{
+ "agent": "visual-curator",
+ "task_id": "getting-married-in-greece",
+ "stage": "04",
+ "status": "needs_input",
+ "round": 1,
+ "inputs_used": [
+  "CLAUDE.md",
+  "content/posts/getting-married-in-greece/00-input.json",
+  "01-brief.json, 02-seo.json, 02-research/report.md, 03-source-pack.json (not present at run time)",
+  "content/posts/best-time-to-get-married-in-greece/04-images.json (format model)",
+  "content-system/images/library-index.csv (header only, no rows)",
+  "content-system/schemas/04-images.schema.json"
+ ],
+ "self_qa": {
+  "checks": [
+   {
+    "check": "Zero reference-only or competitor images in slots",
+    "pass": true,
+    "note": "reference_only is empty; nothing downloaded."
+   },
+   {
+    "check": "Every approved image has location, licence, alt, caption, fit_reason",
+    "pass": true,
+    "note": "No approved images this run."
+   },
+   {
+    "check": "No AI image depicting a real place, wedding, ceremony or person",
+    "pass": true,
+    "note": "No AI generated. Only the documents still life may become ai_illustrative, with approval and an 'Illustrative image' label."
+   },
+   {
+    "check": "Featured image exists (approved or needed with brief)",
+    "pass": true,
+    "note": "Needed, with brief: Greek island ceremony terrace at a named venue."
+   },
+   {
+    "check": "Six slots as requested",
+    "pass": true,
+    "note": "featured, three-routes, documents, Orthodox detail, when to marry, choose your island."
+   },
+   {
+    "check": "Australian English, no em dashes",
+    "pass": true,
+    "note": "Checked by script."
+   }
+  ],
+  "confidence": 0.7
+ },
+ "open_questions": [
+  {
+   "to": "user",
+   "question": "Do you approve an AI documents still life (passports and folder on linen, no readable details) labelled 'Illustrative image' if no Canva or licensed asset is found?",
+   "blocking": false
+  },
+  {
+   "to": "user",
+   "question": "Do you hold licensed Greek wedding or venue photos (with month taken and couple consent) for the hero, routes, Orthodox, timing or island slots?",
+   "blocking": false
+  },
+  {
+   "to": "planner-sme",
+   "question": "Confirm featured venues and chapels (03-source-pack) so each place slot can be tied to a named venue and press contact.",
+   "blocking": false
+  }
+ ],
+ "assumptions": [
+  "Placement is by section name because 02-seo.json is not yet written; the writer maps it to after_h2 positions.",
+  "No venue is named because 03-source-pack does not exist; nothing was guessed.",
+  "Fast mode: repo register only, no Drive, own-site, Canva, Gmail or Lens checks run."
+ ],
+ "verify_items": [
+  "[[IMAGE NEEDED]] featured: Greek island ceremony terrace at a named venue, licensed",
+  "[[IMAGE NEEDED]] three-routes: named venue ceremony space, licensed or press kit",
+  "[[IMAGE NEEDED]] documents-step-by-step: Canva or licensed stock; AI only with Wedded Wonderland approval, labelled 'Illustrative image'",
+  "[[IMAGE NEEDED]] orthodox-ceremony-detail: named Orthodox chapel, stefana or candles, licensed, parish photo permission",
+  "[[IMAGE NEEDED]] when-to-marry: named island venue, shoulder season, month recorded, not reused from the best-time guide",
+  "[[IMAGE NEEDED]] choose-your-island: named venue wide view showing island character, licensed",
+  "[[VERIFY licence]] every venue, stock or own-site image: written permission, credit line and expiry recorded in library-index.csv before use",
+  "[[VERIFY: couple consent for any real-wedding photo, and guest or clergy consent if identifiable]]"
+ ],
+ "tools_used": [
+  "Bash (cat/python)"
+ ],
+ "next_agent": [
+  "luxury-writer"
+ ],
+ "payload": {
+  "slots": [
+   {
+    "slot_id": "featured",
+    "placement": "featured",
+    "purpose": "Hero and social share image: a Greek island wedding setting that signals luxury and sets up a practical how-to guide.",
+    "shot_brief": "Landscape 3:2, room for a title overlay. Ceremony set-up on a sea-view terrace or clifftop at a real, named Greek island venue (Cycladic whitewash or Ionian green), late afternoon light, calm sea, white florals and olive branches, no signage. Couple optional and small in frame. People only from a licensed real wedding with written couple consent (and guest consent if identifiable) recorded in library-index.csv; never AI people, never stock models presented as a real couple. Source: the venue's own media kit with written permission (Gmail draft request, never sent by an agent), or licensed premium stock bought by a human and added to library-index.csv. Never AI, never a competitor, directory, planner, photographer-blog or search-result image. Location proven by the media kit, register row or EXIF, never by appearance.",
+    "status": "needed",
+    "file": "content/posts/getting-married-in-greece/images/getting-married-in-greece-island-venue-ceremony-terrace.webp",
+    "source": {
+     "type": "venue_press",
+     "origin": "not yet sourced",
+     "credit": "[[VERIFY licence]]"
+    },
+    "location": {
+     "venue": "a named Greek island venue (to be confirmed)",
+     "town": "Greek island (to be confirmed)",
+     "verified_by": "pending: media kit, register row or EXIF"
+    },
+    "licence_note": "[[IMAGE NEEDED]] Library register has no rows (header only). Move to pending_permission once a permission draft exists."
+   },
+   {
+    "slot_id": "three-routes",
+    "placement": "section: the three routes (civil, Greek Orthodox, symbolic) (writer maps to after_h2:<n>)",
+    "purpose": "Visual anchor for the comparison of civil, religious and symbolic ceremonies: an intimate ceremony space that reads as a real, legal-ready setting.",
+    "shot_brief": "Landscape 3:2. A real, named venue's ceremony space shown empty or with a consented couple: aisle and chairs, or a simple arch facing the sea; neutral styling that does not imply one route over another. No officiant faces unless consented. People only from a licensed real wedding with written couple consent (and guest consent if identifiable) recorded in library-index.csv; never AI people, never stock models presented as a real couple. Source: the venue's own media kit with written permission (Gmail draft request, never sent by an agent), or licensed premium stock bought by a human and added to library-index.csv. Never AI, never a competitor, directory, planner, photographer-blog or search-result image. Location proven by the media kit, register row or EXIF, never by appearance.",
+    "status": "needed",
+    "file": "content/posts/getting-married-in-greece/images/getting-married-in-greece-venue-ceremony-space.webp",
+    "source": {
+     "type": "venue_press",
+     "origin": "not yet sourced",
+     "credit": "[[VERIFY licence]]"
+    },
+    "location": {
+     "venue": "a named Greek venue (to be confirmed)",
+     "town": "to be confirmed",
+     "verified_by": "pending: media kit, register row or EXIF"
+    },
+    "licence_note": "[[IMAGE NEEDED]] Library register has no rows (header only). Move to pending_permission once a permission draft exists."
+   },
+   {
+    "slot_id": "documents-step-by-step",
+    "placement": "section: documents step by step (writer maps to after_h2:<n>)",
+    "purpose": "Make the paperwork section feel calm and organised: a planning still life, not a place.",
+    "shot_brief": "Landscape 3:2 or 4:3. Overhead still life: two closed passports, a linen-bound folder of papers, a fountain pen, a sprig of olive, on natural linen in soft daylight. No readable names, numbers, crests that identify a real document, flags or text of any kind; no hands or faces. Order of sources: Canva brand asset, then licensed stock added to library-index.csv, then a Wedded Wonderland own shoot. AI (Higgsfield) is allowed for this slot only, and only after Wedded Wonderland approves; if used, source.type becomes ai_illustrative and the caption must read 'Illustrative image'.",
+    "status": "needed",
+    "file": "content/posts/getting-married-in-greece/images/getting-married-in-greece-documents-still-life-linen.webp",
+    "source": {
+     "type": "canva",
+     "origin": "not yet sourced (fast mode: Canva not searched)",
+     "credit": "[[VERIFY licence]]"
+    },
+    "location": {
+     "venue": "none (studio still life)",
+     "town": "none",
+     "verified_by": "not applicable: no real place depicted"
+    },
+    "alt": "Two closed passports and a linen folder of papers beside an olive sprig on natural linen",
+    "caption": "Illustrative image (only if AI is approved; otherwise credit the stock or Canva source).",
+    "licence_note": "[[IMAGE NEEDED]] AI only with Wedded Wonderland approval, labelled 'Illustrative image'. Never depicts a real place, person or readable document."
+   },
+   {
+    "slot_id": "orthodox-ceremony-detail",
+    "placement": "section: Greek Orthodox ceremony (writer maps to after_h2:<n>)",
+    "purpose": "Show one respectful detail of the Orthodox rite so the religious route feels real and specific.",
+    "shot_brief": "Portrait 4:5 or landscape 3:2. Close detail inside or at the door of a real, named Greek Orthodox chapel used for weddings: stefana (wedding crowns joined by ribbon) on a tray, or candles and icons, natural light. Church and island named in the register or media kit. Photography must have been permitted by the parish; no clergy faces without consent. People only from a licensed real wedding with written couple consent (and guest consent if identifiable) recorded in library-index.csv; never AI people, never stock models presented as a real couple. Source: the venue's own media kit with written permission (Gmail draft request, never sent by an agent), or licensed premium stock bought by a human and added to library-index.csv. Never AI, never a competitor, directory, planner, photographer-blog or search-result image. Location proven by the media kit, register row or EXIF, never by appearance.",
+    "status": "needed",
+    "file": "content/posts/getting-married-in-greece/images/getting-married-in-greece-orthodox-chapel-stefana-detail.webp",
+    "source": {
+     "type": "venue_press",
+     "origin": "not yet sourced",
+     "credit": "[[VERIFY licence]]"
+    },
+    "location": {
+     "venue": "a named Greek Orthodox chapel (to be confirmed)",
+     "town": "to be confirmed",
+     "verified_by": "pending: media kit, register row or EXIF"
+    },
+    "licence_note": "[[IMAGE NEEDED]] Library register has no rows (header only). Move to pending_permission once a permission draft exists."
+   },
+   {
+    "slot_id": "when-to-marry",
+    "placement": "section: when to marry (writer maps to after_h2:<n>; links the best-time sister guide)",
+    "purpose": "Signal season and light for the timing section without overlapping the sister guide's seasonal set.",
+    "shot_brief": "Landscape 3:2. A real, named island venue at golden hour in shoulder season (May, June, September or early October), table or ceremony set-up, no crowds. Month taken must be recorded in the register or EXIF so the caption never implies a season the photo does not show. Do not reuse an image already slotted in best-time-to-get-married-in-greece. People only from a licensed real wedding with written couple consent (and guest consent if identifiable) recorded in library-index.csv; never AI people, never stock models presented as a real couple. Source: the venue's own media kit with written permission (Gmail draft request, never sent by an agent), or licensed premium stock bought by a human and added to library-index.csv. Never AI, never a competitor, directory, planner, photographer-blog or search-result image. Location proven by the media kit, register row or EXIF, never by appearance.",
+    "status": "needed",
+    "file": "content/posts/getting-married-in-greece/images/getting-married-in-greece-island-venue-golden-hour-shoulder-season.webp",
+    "source": {
+     "type": "venue_press",
+     "origin": "not yet sourced",
+     "credit": "[[VERIFY licence]]"
+    },
+    "location": {
+     "venue": "a named Greek island venue (to be confirmed)",
+     "town": "to be confirmed",
+     "verified_by": "pending: media kit, register row or EXIF"
+    },
+    "licence_note": "[[IMAGE NEEDED]] Library register has no rows (header only). Move to pending_permission once a permission draft exists."
+   },
+   {
+    "slot_id": "choose-your-island",
+    "placement": "section: choose your island (writer maps to after_h2:<n>)",
+    "purpose": "Help couples picture the difference between islands: a wide view that shows island character.",
+    "shot_brief": "Landscape 16:9 or 3:2. Wide view from or of a real, named venue that shows its island's character (for example caldera cliffs, Ionian olive hills or a Cretan estate), daylight, no people needed. Island and venue proven by media kit, register row or EXIF. People only from a licensed real wedding with written couple consent (and guest consent if identifiable) recorded in library-index.csv; never AI people, never stock models presented as a real couple. Source: the venue's own media kit with written permission (Gmail draft request, never sent by an agent), or licensed premium stock bought by a human and added to library-index.csv. Never AI, never a competitor, directory, planner, photographer-blog or search-result image. Location proven by the media kit, register row or EXIF, never by appearance.",
+    "status": "needed",
+    "file": "content/posts/getting-married-in-greece/images/getting-married-in-greece-island-venue-wide-view.webp",
+    "source": {
+     "type": "venue_press",
+     "origin": "not yet sourced",
+     "credit": "[[VERIFY licence]]"
+    },
+    "location": {
+     "venue": "a named Greek island venue (to be confirmed)",
+     "town": "to be confirmed",
+     "verified_by": "pending: media kit, register row or EXIF"
+    },
+    "licence_note": "[[IMAGE NEEDED]] Library register has no rows (header only). Move to pending_permission once a permission draft exists."
+   }
+  ],
+  "reference_only": [],
+  "permission_requests": [],
+  "drive_findings": [
+   "Not searched: fast mode, repo library register only per orchestrator instruction. library-index.csv has a header and no rows."
+  ]
+ }
+}
