@@ -1,0 +1,205 @@
+{
+ "agent": "visual-curator",
+ "task_id": "honeymoon-planner-cost",
+ "stage": "04",
+ "status": "needs_input",
+ "round": 1,
+ "inputs_used": [
+  "CLAUDE.md",
+  "content/posts/honeymoon-planner-cost/00-input.json",
+  "01-brief.json, 02-seo.json, 02-research/report.md, 03-source-pack.json (not present at run time)",
+  "content/posts/honeymoon-planning-service/04-images.json (format model)",
+  "content-system/images/library-index.csv (header only, no rows)"
+ ],
+ "self_qa": {
+  "checks": [
+   {
+    "check": "Zero reference-only or competitor images in slots",
+    "pass": true,
+    "note": "reference_only empty; nothing downloaded."
+   },
+   {
+    "check": "Every approved image has location, licence, alt, caption, fit_reason",
+    "pass": true,
+    "note": "No approved images this run."
+   },
+   {
+    "check": "No AI image depicting a real place, resort, wedding or person",
+    "pass": true,
+    "note": "No AI generated. Only the four still lifes may become AI, with Wedded Wonderland approval and an 'Illustrative image' label. what-you-pay-for (people) is never AI."
+   },
+   {
+    "check": "No money, price tags, currency notes or figures in any shot",
+    "pass": true,
+    "note": "Every brief forbids money, price tags, cards, invoices and visible figures."
+   },
+   {
+    "check": "No hotel, airline or resort branding in shot briefs",
+    "pass": true,
+    "note": "Every brief forbids brand logos and readable personal details."
+   },
+   {
+    "check": "Featured image exists (approved or needed with brief)",
+    "pass": true,
+    "note": "Needed, with brief: passports and itinerary notebook on linen."
+   },
+   {
+    "check": "5 slots",
+    "pass": true,
+    "note": "Hero plus one per requested section."
+   },
+   {
+    "check": "Alt text Australian English, no em dashes, 125 chars or fewer",
+    "pass": true,
+    "note": "Checked by script."
+   }
+  ],
+  "confidence": 0.7
+ },
+ "open_questions": [
+  {
+   "to": "user",
+   "question": "Does Wedded Wonderland approve AI still lifes (featured, what-shapes-cost, fee-should-cover, protecting-what-you-pay) labelled 'Illustrative image' if no library, Canva or licensed asset is found?",
+   "blocking": false
+  },
+  {
+   "to": "user",
+   "question": "Is there a consented real-shoot photo of a Wedded Advisor with a couple licensed for web and social (what-you-pay-for slot)? The same asset could serve honeymoon-planning-service.",
+   "blocking": false
+  }
+ ],
+ "assumptions": [
+  "Placement follows the four sections in the order given by the orchestrator; 02-seo.json is not yet written, so the writer confirms after_h2 positions.",
+  "No property or destination is shown because the post is about fees, not places, and 03-source-pack does not exist.",
+  "Fast mode: repo register only, no Drive, own-site scrape, Canva, Gmail or Lens checks run.",
+  "Alt text is drafted for planned images and must be rechecked against the final image."
+ ],
+ "verify_items": [
+  "[[IMAGE NEEDED]] featured: library, Canva or stock; AI only with Wedded Wonderland approval, labelled 'Illustrative image'",
+  "[[IMAGE NEEDED]] what-you-pay-for: consented real shoot or released stock, never AI",
+  "[[IMAGE NEEDED]] what-shapes-cost: library, Canva or stock; AI only with Wedded Wonderland approval, labelled 'Illustrative image'",
+  "[[IMAGE NEEDED]] fee-should-cover: library, Canva or stock; AI only with Wedded Wonderland approval, labelled 'Illustrative image'",
+  "[[IMAGE NEEDED]] protecting-what-you-pay: library, Canva or stock; AI only with Wedded Wonderland approval, labelled 'Illustrative image'",
+  "[[VERIFY licence]] every library, stock or Canva image: licence, credit line and expiry recorded in library-index.csv before use",
+  "[[VERIFY: no money, price tags, figures, airline, hotel or resort logos, and no readable passport, booking or personal details in any final image]]"
+ ],
+ "tools_used": [
+  "Bash (cat/python)"
+ ],
+ "next_agent": [
+  "luxury-writer"
+ ],
+ "payload": {
+  "slots": [
+   {
+    "slot_id": "featured",
+    "placement": "featured",
+    "purpose": "Hero and social share image: a calm, considered honeymoon being shaped with care, signalling value and planning rather than price.",
+    "shot_brief": "Landscape 3:2 with negative space on one side for a title. Overhead or 45 degree still life on natural linen: two passports (plain covers or face down), a closed leather notebook with a written itinerary page just visible but unreadable, a fountain pen, a pair of sunglasses and a sprig of olive or frangipani. Soft morning window light, warm neutral palette, no people. No airline, hotel, resort, cruise, card or travel brand logos or branding visible anywhere. No money, price tags, currency notes, cards, invoices with figures, calculators showing numbers or any visible figures. No readable names, passport numbers, booking references, barcodes or personal details. Source: library register, Canva brand asset or licensed stock. AI only if Wedded Wonderland approves, and then labelled 'Illustrative image'. Never competitor or search-result images.",
+    "status": "needed",
+    "file": "content/posts/honeymoon-planner-cost/images/honeymoon-planner-cost-passports-itinerary-notebook-linen-hero.webp",
+    "source": {
+     "type": "library",
+     "origin": "not yet sourced",
+     "credit": "[[VERIFY licence]]"
+    },
+    "location": {
+     "venue": "none (studio still life)",
+     "town": "not applicable",
+     "verified_by": "not applicable: no real place depicted"
+    },
+    "licence_note": "[[IMAGE NEEDED]] Library register has no rows. Still life may be AI only with Wedded Wonderland approval, labelled 'Illustrative image'.",
+    "alt": "Two passports and a leather notebook with a handwritten itinerary on soft linen in morning light"
+   },
+   {
+    "slot_id": "what-you-pay-for",
+    "placement": "after_h2:1 (what you are paying for; writer confirms position)",
+    "purpose": "Show that the fee buys a person's time, knowledge and care: a Wedded Advisor shaping a honeymoon with the couple.",
+    "shot_brief": "Landscape 3:2. Close crop of hands at a timber table: an advisor's hand resting on an open, unbranded itinerary or blank paper map while a couple's hands rest nearby (engagement ring visible is fine), coffee cups, diffused daylight, faces optional or out of frame. Only from a consented real Wedded Wonderland shoot or licensed stock with model releases. No readable text or screens. No airline, hotel, resort, cruise, card or travel brand logos or branding visible anywhere. No money, price tags, currency notes, cards, invoices with figures, calculators showing numbers or any visible figures. No readable names, passport numbers, booking references, barcodes or personal details. Never AI (real people, places, resorts or weddings). Never competitor or search-result images.",
+    "status": "needed",
+    "file": "content/posts/honeymoon-planner-cost/images/honeymoon-planner-cost-advisor-couple-itinerary-hands.webp",
+    "source": {
+     "type": "library",
+     "origin": "not yet sourced",
+     "credit": "[[VERIFY licence]]"
+    },
+    "location": {
+     "venue": "a real shoot location or stock (to be confirmed)",
+     "town": "to be confirmed",
+     "verified_by": "pending: register row or stock licence"
+    },
+    "licence_note": "[[IMAGE NEEDED]] Model releases or written couple consent and licence required. Never AI.",
+    "consent": {
+     "people": "required: model releases or written consent covering web and social use",
+     "status": "not yet obtained"
+    },
+    "alt": "An advisor's hand rests on a printed honeymoon itinerary as a couple looks on across a timber table"
+   },
+   {
+    "slot_id": "what-shapes-cost",
+    "placement": "after_h2:2 (what shapes the cost; writer confirms position)",
+    "purpose": "Visual cue for the cost drivers (length, complexity, number of stops, timing) without showing money: a multi-stop journey taking shape.",
+    "shot_brief": "Landscape 3:2. Still life on a stone or timber desk: an unbranded paper map with no readable place names, a few blank postcards or swatch cards in sea, sand and olive tones laid out in sequence, a length of linen thread linking them, a small brass compass, diffused daylight, no people (hands only at most). The map must not identify a real destination. No airline, hotel, resort, cruise, card or travel brand logos or branding visible anywhere. No money, price tags, currency notes, cards, invoices with figures, calculators showing numbers or any visible figures. No readable names, passport numbers, booking references, barcodes or personal details. Source: library register, Canva brand asset or licensed stock. AI only if Wedded Wonderland approves, and then labelled 'Illustrative image'. Never competitor or search-result images.",
+    "status": "needed",
+    "file": "content/posts/honeymoon-planner-cost/images/honeymoon-planner-cost-multi-stop-journey-map-postcards-desk.webp",
+    "source": {
+     "type": "canva",
+     "origin": "not yet sourced",
+     "credit": "[[VERIFY licence]]"
+    },
+    "location": {
+     "venue": "none (studio still life)",
+     "town": "not applicable",
+     "verified_by": "not applicable: no real place depicted"
+    },
+    "licence_note": "[[IMAGE NEEDED]] Library register has no rows. Still life may be AI only with Wedded Wonderland approval, labelled 'Illustrative image'.",
+    "alt": "Blank postcards linked by linen thread across an unmarked paper map, suggesting a honeymoon with several stops"
+   },
+   {
+    "slot_id": "fee-should-cover",
+    "placement": "after_h2:3 (what the fee should cover, agreed in writing; writer confirms position)",
+    "purpose": "Reinforce the brand fact that the fee and what it covers are agreed in writing before work begins: a written agreement, calmly reviewed.",
+    "shot_brief": "Landscape 3:2. Close up of a single cream letter page with soft-focus, unreadable typed lines, a fountain pen resting beside it ready to sign, a closed leather notebook and a cup of tea on a timber desk, diffused daylight, no people (one hand holding the pen at most). The page must show no figures, totals, logos or readable terms. No airline, hotel, resort, cruise, card or travel brand logos or branding visible anywhere. No money, price tags, currency notes, cards, invoices with figures, calculators showing numbers or any visible figures. No readable names, passport numbers, booking references, barcodes or personal details. Source: library register, Canva brand asset or licensed stock. AI only if Wedded Wonderland approves, and then labelled 'Illustrative image'. Never competitor or search-result images.",
+    "status": "needed",
+    "file": "content/posts/honeymoon-planner-cost/images/honeymoon-planner-cost-written-agreement-pen-desk.webp",
+    "source": {
+     "type": "stock",
+     "origin": "not yet sourced",
+     "credit": "[[VERIFY licence]]"
+    },
+    "location": {
+     "venue": "none (studio still life)",
+     "town": "not applicable",
+     "verified_by": "not applicable: no real place depicted"
+    },
+    "licence_note": "[[IMAGE NEEDED]] Library register has no rows. Still life may be AI only with Wedded Wonderland approval, labelled 'Illustrative image'.",
+    "alt": "A cream letter page with a fountain pen resting beside it on a timber desk, ready to be signed"
+   },
+   {
+    "slot_id": "protecting-what-you-pay",
+    "placement": "after_h2:4 (protecting what you pay; writer confirms position)",
+    "purpose": "Visual cue for keeping records and protecting the booking: documents organised, safe and in order before travel.",
+    "shot_brief": "Landscape 3:2. Still life on linen: a closed leather document wallet with two passports tucked in (plain covers, nothing readable), a neat stack of plain unbranded envelopes tied with ribbon, a small brass key or padlock-free travel lock and a pair of reading glasses, soft side light, warm neutral palette, no people. No insurance, bank, card or travel brand material. No airline, hotel, resort, cruise, card or travel brand logos or branding visible anywhere. No money, price tags, currency notes, cards, invoices with figures, calculators showing numbers or any visible figures. No readable names, passport numbers, booking references, barcodes or personal details. Source: library register, Canva brand asset or licensed stock. AI only if Wedded Wonderland approves, and then labelled 'Illustrative image'. Never competitor or search-result images.",
+    "status": "needed",
+    "file": "content/posts/honeymoon-planner-cost/images/honeymoon-planner-cost-travel-document-wallet-envelopes-linen.webp",
+    "source": {
+     "type": "library",
+     "origin": "not yet sourced",
+     "credit": "[[VERIFY licence]]"
+    },
+    "location": {
+     "venue": "none (studio still life)",
+     "town": "not applicable",
+     "verified_by": "not applicable: no real place depicted"
+    },
+    "licence_note": "[[IMAGE NEEDED]] Library register has no rows. Still life may be AI only with Wedded Wonderland approval, labelled 'Illustrative image'.",
+    "alt": "A leather travel wallet holding two passports beside ribbon-tied envelopes on linen in soft light"
+   }
+  ],
+  "reference_only": [],
+  "permission_requests": [],
+  "drive_findings": [
+   "Not searched: fast mode, repo library register only per orchestrator instruction. library-index.csv has a header and no rows."
+  ]
+ }
+}
