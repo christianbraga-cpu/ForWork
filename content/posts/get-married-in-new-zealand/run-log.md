@@ -7,3 +7,4 @@
 06:54 05 first draft done (~3,290 words, 0 VERIFY).
 06:55 07 five readers done (enquire 1 to 3).
 06:56 06 editor 4.29 pass_with_edits, 6 edits applied to 05-draft-r2.md.
+06:57 07b panel revise (enquire 1.9), 4 must-fix.
