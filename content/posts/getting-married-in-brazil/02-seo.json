@@ -1,0 +1,348 @@
+{
+ "agent": "seo-researcher",
+ "task_id": "getting-married-in-brazil",
+ "stage": "02",
+ "status": "complete",
+ "round": 1,
+ "inputs_used": [
+  "CLAUDE.md",
+  "content/posts/getting-married-in-brazil/00-input.json (01-brief.json not present; fast mode)",
+  "content/posts/get-married-in-new-zealand/02-seo.json (format model)",
+  "content-system/schemas/02-seo.schema.json",
+  "content-system/schemas/envelope.schema.json",
+  "content-system/seo/link-map.csv",
+  "content-system/seo/priority-link-targets.md",
+  "content-system/research/locations.yaml",
+  "content-system/templates/getting-married-in-country.md"
+ ],
+ "tools_used": [
+  "DataForSEO serp_organic_live_advanced: Sydney, Melbourne, New York, Dubai, Singapore all ok first try; 2026-11-17",
+  "DataForSEO kw_data_google_ads_search_volume (Australia, United States; 7 keywords)",
+  "DataForSEO dataforseo_labs_bulk_keyword_difficulty (Australia): no data returned",
+  "DataForSEO dataforseo_labs_google_ranked_keywords (weddedwonderland.com, AU, %brazil%): 3 rows, all /6-brazilian-wedding-traditions-you-didnt-know-about",
+  "Apify web-fetch: britishexpats thread, abroadmarry archive, /expert-advice/brazilian-wedding-traditions, /wonderland-concierge, /magazine (all 200)",
+  "GSC: not read in fast mode (no Drive export opened)"
+ ],
+ "next_agent": [
+  "planner-sme",
+  "visual-curator"
+ ],
+ "self_qa": {
+  "checks": [
+   {
+    "check": ">= 7 of 10 locations returned results",
+    "pass": false,
+    "note": "Fast mode: 5 cities by instruction; all 5 returned."
+   },
+   {
+    "check": "Every outline H2 maps to a real query or must-include",
+    "pass": true,
+    "note": "Each H2 cites the PAA, related search, keyword or template H2."
+   },
+   {
+    "check": "Every internal and external link verified live today",
+    "pass": false,
+    "note": "Verified 200: concierge, magazine, brazilian-wedding-traditions. Series sisters are drafts. External official links not fetched within the 10-minute budget."
+   },
+   {
+    "check": "No competitor links; no noindex targets",
+    "pass": true,
+    "note": "Official sources only; /destinations/latin-america-caribbean excluded."
+   },
+   {
+    "check": "Meta lengths within limits",
+    "pass": true,
+    "note": "Title 43/60, description 145/155; no 'best'."
+   }
+  ],
+  "confidence": 0.7
+ },
+ "open_questions": [
+  {
+   "to": "planner-sme",
+   "question": "Verify every external link live and find exact deep pages: Smartraveller Brazil, brazil.embassy.gov.au notarial/marriage page, CNJ Resolution 175, Arpen Brasil habilitação guidance, the gov.br parent of despacho-de-casamento.pdf.",
+   "blocking": true
+  },
+  {
+   "to": "planner-sme",
+   "question": "Habilitação notice period, approval validity, witness count and age, sworn translation and interpreter rules from official Brazilian sources. The AI Overview figures (30-45 days, 90 days, witnesses over 21) are not a source.",
+   "blocking": true
+  },
+  {
+   "to": "strategist",
+   "question": "/expert-advice/brazilian-wedding-traditions already has a full legal section and two legal FAQs targeting this query: trim it once this guide is live. It also links /destinations/latin-america-caribbean (do-not-link).",
+   "blocking": false
+  }
+ ],
+ "assumptions": [
+  "'Wedded Concierge' used in anchors per series template.",
+  "/magazine left without UTMs per caller instruction."
+ ],
+ "verify_items": [
+  "Habilitação steps, notice period and validity",
+  "Documents, apostille and sworn translation rules",
+  "Witness count and age",
+  "CNI acceptance by cartório",
+  "Religious ceremony with civil effect",
+  "Recognition and apostille for Australian use"
+ ],
+ "payload": {
+  "primary_keyword": "getting married in brazil",
+  "secondary_keywords": [
+   "marriage in brazil for foreigners",
+   "getting married in brazil as a foreigner",
+   "brazil destination wedding",
+   "rio de janeiro wedding",
+   "brazil wedding"
+  ],
+  "secondary_keyword_notes": [
+   "Google Ads 12-month average, fetched 2026-11-17. AU: brazil wedding 50; getting married in brazil 10; marriage in brazil for foreigners 10; rio de janeiro wedding 10; brazil destination wedding 10; brazil wedding requirements no data; civil marriage brazil no data. US: brazil wedding 590; rio de janeiro wedding 40; brazil destination wedding 40; getting married in brazil 30 (spike 170 in May 2026); marriage in brazil for foreigners 10; brazil wedding requirements and civil marriage brazil no data.",
+   "Keyword difficulty (DataForSEO Labs, AU): no data returned for any of the 7 keywords.",
+   "'getting married in brazil as a foreigner' is a Singapore related search (no volume checked). 'brazil wedding' US 590 is mixed intent (traditions, celebrity) and served in the intro/H1 only."
+  ],
+  "intent": "informational",
+  "slug": "getting-married-in-brazil",
+  "url_path": "/destination-weddings/getting-married-in-brazil",
+  "meta_title": "How to Get Married in Brazil as a Foreigner",
+  "meta_title_alt": "Getting Married in Brazil: A Guide for Foreign Couples",
+  "meta_description": "How foreign couples marry legally in Brazil: the cartório, habilitação, apostilled and translated documents, witnesses and recognition back home.",
+  "meta_notes": "Title 43/60, description 145/155; no 'best'.",
+  "outline": [
+   {
+    "h2": "Can foreigners legally marry in Brazil?",
+    "answers": "PAA 'Can foreigners get married in Brazil?' (Singapore); related 'Getting married in brazil as a foreigner'; 'marriage in brazil for foreigners' AU 10 / US 10; template H2",
+    "notes": "Two-sentence answer, 4 takeaways, 'as at November 2026' once. Civil marriage at the cartório de registro civil is what makes it legal [[VERIFY: gov.br / Arpen]]. Residency claims seen in SERP (ribeirocavalcante) are not to be repeated."
+   },
+   {
+    "h2": "What are the legal requirements for getting married in Brazil?",
+    "answers": "PAA (New York) verbatim; template H2",
+    "h3": [
+     "Habilitação at the cartório",
+     "Public notice and how long approval lasts",
+     "Same-sex couples"
+    ],
+    "notes": "Notice period and validity [[VERIFY: Arpen / Código Civil via gov.br]]. AI Overview's 30-45 days and 90-day window are NOT a source. CNJ Resolution 175 for same-sex marriage (series rule permitting, it is a legal fact on cnj.jus.br)."
+   },
+   {
+    "h2": "What documents do you need to marry in Brazil?",
+    "answers": "NY YouTube result 'What documents are needed to get married in Brazil?'; related 'Certificate of no impediment' (Singapore); template H2",
+    "h3": [
+     "Apostille",
+     "Sworn Portuguese translation",
+     "Certificate of No Impediment (Australians)",
+     "Witnesses and an interpreter"
+    ],
+    "notes": "Australian side clearly marked: CNI from DFAT; Embassy in Brasília/Consulate-General São Paulo notarial services by appointment [[VERIFY: brazil.embassy.gov.au]]. Link /expert-advice/what-is-an-apostille only if in link map (not checked)."
+   },
+   {
+    "h2": "Civil ceremony, religious ceremony or both?",
+    "answers": "PAA 'customs and traditions associated with getting married in Brazil' (New York); Dubai/Sydney Rio wedding threads",
+    "notes": "Religious ceremony with civil effect [[VERIFY: Arpen]]. Link Brazilian wedding traditions here once; do not repeat its content."
+   },
+   {
+    "h2": "Will a Brazilian marriage be recognised in Australia?",
+    "answers": "Gap: no page-one result in any city covers recognition at home; template H2",
+    "notes": "Smartraveller getting married overseas; certificate apostille for Australian use [[VERIFY]]."
+   },
+   {
+    "h2": "Before you fly: visa, safety and timing",
+    "answers": "PAA '$2000 rule in Brazil' (Singapore) reframed to entry rules; template H2",
+    "notes": "Smartraveller Brazil read live on the day: advice level, visa before arrival, wet seasons by region. No best month."
+   },
+   {
+    "h2": "How much does it cost to get married in Brazil?",
+    "answers": "PAA (Singapore) verbatim; 'brazil destination wedding' US 40",
+    "notes": "No figures. What drives cost; cartório fees not published here, ask the cartório. Any AUD price needs Nic sign-off."
+   },
+   {
+    "h2": "Choosing where to celebrate: Rio de Janeiro and beyond",
+    "answers": "'rio de janeiro wedding' US 40 / AU 10; Tripadvisor 'Wedding in Rio De Janeiro' (Sydney, Dubai)",
+    "h3": [
+     "Rio de Janeiro",
+     "Paraty and the Costa Verde",
+     "Bahia and the north-east"
+    ],
+    "notes": "Visit Brasil only, no venue names or rankings."
+   },
+   {
+    "h2": "Venues and planning",
+    "answers": "Audience 150k+ AUD; template H2",
+    "notes": "Primary Wedded Concierge CTA, magazine, series sisters."
+   },
+   {
+    "h2": "Plan your Brazil wedding with Wedded Concierge",
+    "answers": "Closing CTA per series template",
+    "notes": "utm_content=closing. FAQ before close."
+   }
+  ],
+  "faq_questions": [
+   "Can foreigners get married in Brazil?",
+   "How much does it cost to get married in Brazil?",
+   "Can same-sex couples marry in Brazil as foreigners?",
+   "Do we need a Certificate of No Impediment to marry in Brazil?",
+   "Is a religious wedding in Brazil legally binding?"
+  ],
+  "faq_notes": "First two are live PAA wording (Singapore). Others from the cartório/CNI/same-sex related searches.",
+  "internal_links": [
+   {
+    "anchor": "Speak with Wedded Concierge",
+    "target": "https://weddedwonderland.com/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=getting-married-in-brazil&utm_content=primary",
+    "type": "commercial",
+    "placement": "Venues and planning (primary)",
+    "verified_live": "verified live 2026-11-17 (apify web-fetch HTTP 200)"
+   },
+   {
+    "anchor": "plan it with Wedded Concierge",
+    "target": "https://weddedwonderland.com/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=getting-married-in-brazil&utm_content=closing",
+    "type": "commercial",
+    "placement": "Closing CTA",
+    "verified_live": "verified live 2026-11-17 (HTTP 200)"
+   },
+   {
+    "anchor": "Brazilian wedding traditions",
+    "target": "https://weddedwonderland.com/expert-advice/brazilian-wedding-traditions",
+    "type": "related",
+    "placement": "Civil and religious ceremony H2",
+    "verified_live": "verified live 2026-11-17 (HTTP 200; link map marks draft but page serves 200)"
+   },
+   {
+    "anchor": "our digital magazine",
+    "target": "https://weddedwonderland.com/magazine",
+    "type": "hub",
+    "placement": "Venues and planning",
+    "verified_live": "verified live 2026-11-17 (HTTP 200)"
+   },
+   {
+    "anchor": "getting married in Hawaii",
+    "target": "https://weddedwonderland.com/destination-weddings/getting-married-in-hawaii",
+    "type": "related",
+    "placement": "Venues and planning (series cross-link once live)",
+    "verified_live": "draft in link map (series sister), not fetched"
+   },
+   {
+    "anchor": "a Mauritius wedding",
+    "target": "https://weddedwonderland.com/destination-weddings/mauritius-wedding",
+    "type": "related",
+    "placement": "Venues and planning (series cross-link once live)",
+    "verified_live": "draft in link map (series sister), not fetched"
+   },
+   {
+    "anchor": "getting married in the Seychelles",
+    "target": "https://weddedwonderland.com/destination-weddings/getting-married-in-seychelles",
+    "type": "related",
+    "placement": "Venues and planning (series cross-link once live)",
+    "verified_live": "draft in link map (series sister), not fetched"
+   },
+   {
+    "anchor": "getting married in Costa Rica",
+    "target": "https://weddedwonderland.com/destination-weddings/getting-married-in-costa-rica",
+    "type": "related",
+    "placement": "Venues and planning (series cross-link once live)",
+    "verified_live": "draft in link map (series sister), not fetched"
+   },
+   {
+    "anchor": "getting married in New Zealand",
+    "target": "https://weddedwonderland.com/destination-weddings/get-married-in-new-zealand",
+    "type": "related",
+    "placement": "Venues and planning (series cross-link once live)",
+    "verified_live": "draft in link map (series sister), not fetched"
+   }
+  ],
+  "external_links": [
+   {
+    "anchor": "Smartraveller Brazil advice",
+    "url": "https://www.smartraveller.gov.au/destinations/americas/brazil",
+    "type": "authority",
+    "rel": "noopener",
+    "verified_live": "not fetched within 10-minute budget; planner-sme to verify live before use"
+   },
+   {
+    "anchor": "getting married overseas (Smartraveller)",
+    "url": "https://www.smartraveller.gov.au/planning-trip/advice-your-planned-activities/getting-married-overseas",
+    "type": "authority",
+    "rel": "noopener",
+    "verified_live": "not fetched within 10-minute budget; planner-sme to verify live before use"
+   },
+   {
+    "anchor": "Australian Embassy in Brasília",
+    "url": "https://brazil.embassy.gov.au/",
+    "type": "authority",
+    "rel": "noopener",
+    "verified_live": "not fetched within 10-minute budget; planner-sme to verify live before use"
+   },
+   {
+    "anchor": "CNJ Resolution 175",
+    "url": "https://www.cnj.jus.br/",
+    "type": "authority",
+    "rel": "noopener",
+    "verified_live": "not fetched within 10-minute budget; planner-sme to verify live before use; find the exact resolution page"
+   },
+   {
+    "anchor": "Arpen Brasil (civil registrars)",
+    "url": "https://www.arpenbrasil.org.br/",
+    "type": "authority",
+    "rel": "noopener",
+    "verified_live": "not fetched within 10-minute budget; planner-sme to verify live before use"
+   },
+   {
+    "anchor": "Brazilian Government services (gov.br)",
+    "url": "https://www.gov.br/",
+    "type": "authority",
+    "rel": "noopener",
+    "verified_live": "not fetched within 10-minute budget; planner-sme to verify live before use; gov.br despacho-de-casamento.pdf ranks Sydney/Melbourne #6, identify its HTML parent"
+   },
+   {
+    "anchor": "Visit Brasil",
+    "url": "https://visitbrasil.com/",
+    "type": "authority",
+    "rel": "noopener",
+    "verified_live": "not fetched within 10-minute budget; planner-sme to verify live before use"
+   }
+  ],
+  "backlinks_to_add": [
+   {
+    "from": "/expert-advice/brazilian-wedding-traditions",
+    "anchor": "how to get married in Brazil",
+    "sentence": "Live page read 2026-11-17. In 'Marrying Legally in Brazil as an Australian', after 'In Brazil, start with the cartório de registro civil (the civil registry office).' add: 'Our step-by-step guide to how to get married in Brazil covers the full process.'"
+   },
+   {
+    "from": "/destination-weddings/getting-married-in-costa-rica",
+    "anchor": "getting married in Brazil",
+    "sentence": "Series sister (draft): cross-link in 'Venues and planning' once both are live."
+   }
+  ],
+  "serp_source": "dataforseo",
+  "serp_summary": {
+   "locations_checked": [
+    "sydney",
+    "melbourne",
+    "new_york",
+    "dubai",
+    "singapore"
+   ],
+   "locations_failed": [],
+   "locations_failed_reason": "None. Fast mode: 5 of 10 locations by instruction, all returned first try. No Arabic or secondary SERPs.",
+   "common_angles": [
+    "AI Overview present in all 5; text only in New York (cartório, habilitação, apostille, sworn translation, witnesses, união estável).",
+    "Page one is forums (Reddit, British Expats, HiNative, JustAnswer), social posts, Brazilian law-firm pages and stale blogs.",
+    "Government pages ranking: gov.br despacho-de-casamento.pdf at Sydney #6 and Melbourne #6; GOV.UK #3, NetherlandsWorldwide #5 and Ireland.ie #6 in Singapore. No Australian government page ranks anywhere.",
+    "PAA is off-topic (relationship anxiety) in Sydney, Melbourne and Dubai."
+   ],
+   "gaps": [
+    "No current, structured guide for Australian or other foreign couples on page one.",
+    "Recognition back home is not covered by any result.",
+    "No result separates the Brazilian steps from the home-country steps."
+   ]
+  },
+  "sydney_top3_read": [
+   "instagram.com lawyer video: not fetchable (login)",
+   "britishexpats.com forum 2003: read, anecdotal",
+   "abroadmarrycomsite.wordpress.com 2016: archive page read, outdated, unsourced"
+  ],
+  "cannibalisation": [
+   "https://weddedwonderland.com/expert-advice/brazilian-wedding-traditions (high risk): Live 2026-11-17 (HTTP 200). Meta description ends 'plus how Australians can marry legally in Brazil' and the body has a full H2 'Marrying Legally in Brazil as an Australian' (habilitação, CNI, apostille, recognition, Smartraveller, consular help) and FAQ 'What happens if I marry a Brazilian in Brazil?' and 'How much does it cost to get married in Brazil?'. Action: Strategist: once this guide is live, cut that H2 to 2-3 sentences linking here, drop the two legal FAQs, and remove 'plus how Australians can marry legally' from its meta. Note it links /destinations/latin-america-caribbean (do-not-link list).",
+   "https://weddedwonderland.com/6-brazilian-wedding-traditions-you-didnt-know-about (medium risk): DataForSEO ranked_keywords AU: 'weddings in brazil' #5 (vol 50), 'brazilian wedding' #7 (50), 'brazilian wedding ceremony' #8 (50). Also appears via a Pinterest pin at Sydney #8 / Melbourne #8 for the primary keyword. Old URL (link map: HTTP 200). Action: Confirm it 301s or canonicals to /expert-advice/brazilian-wedding-traditions; otherwise two traditions URLs plus this guide compete.",
+   "https://weddedwonderland.com/trending/ricky-montgomery-jess-johos-gothic-wedding-in-brazil (low risk): Link map only; news, different intent. Action: None."
+  ]
+ }
+}

@@ -1,0 +1,713 @@
+{
+ "agent": "planner-sme",
+ "task_id": "getting-married-in-brazil",
+ "stage": "03",
+ "status": "complete",
+ "round": 1,
+ "inputs_used": [
+  "mcp__Apify__apify--web-search, 17 November 2026, two queries (habilitacao for foreigners on gov.br/CNJ/Arpen/TJ domains; CNJ apostille). Used to locate pages; one CNJ snippet recorded (fact_07).",
+  "mcp__Apify__apify--web-fetch, one parallel round, 17 November 2026, no retries: https://www.planalto.gov.br/ccivil_03/leis/2002/l10406compilada.htm (200 but truncated at about 233,000 characters, ending at art. 910; arts. 1.511 to 1.542 NOT read); https://www.gov.br/pf/pt-br/assuntos/imigracao/duvidas-frequentes/autorizacao-de-residencia-e-registro-nacional-migratorio-rnm/e-necessaria-a-legalizacao-e (200, read in full); https://www.cnj.jus.br/poder-judiciario/relacoes-internacionais/apostila-da-haia/ (200, read in full); https://atos.cnj.jus.br/atos/detalhar/2524 (200, read in full)",
+  "content/posts/getting-married-in-brazil/00-input.json",
+  "content/posts/get-married-in-new-zealand/03-source-pack.json (structure reference)",
+  "content/posts/brazilian-wedding-traditions/03-source-pack.json and 03-source-pack-part-1.json (fact_105 to fact_112 copied as fact_100 to fact_107, same sources and dates; CNJ Resolution 175 and fact_113/fact_114 not copied)",
+  "content/posts/get-married-in-new-zealand/03-source-pack.json (fact_100 to fact_109 copied as fact_108 to fact_117, same sources and dates)",
+  "content/posts/get-married-in-new-zealand/03-source-pack-part-1.json (format reference)",
+  "mcp__Apify__apify--web-fetch, 17 November 2026: https://www.smartraveller.gov.au/destinations/americas/brazil (200, read in full); https://visitbrasil.com/en/experience/sun-beach/ (200); https://portal.inmet.gov.br/normais (200, index only, no figures)",
+  "mcp__Apify__apify--web-search, 17 November 2026: visitbrasil.com and INMET normals pages located",
+  "mcp__Apify__apify--web-search (17 November 2026), two queries: tse.go.cr marriage of foreigners; dnn.go.cr / rree.go.cr notary and apostille. Results used to locate official pages; two snippet-only facts recorded (fact_22, fact_23).",
+  "mcp__Apify__apify--web-fetch, one parallel round, 17 November 2026, no retries, all 200 and read in full: https://www.tse.go.cr/pdf/requisitosytramites/Celebracion-Matrimonio-Civil.pdf; https://www.tse.go.cr/pdf/requisitosytramites/Inscripcion-de-matrimonio-civil-o-catolico.pdf; https://www.rree.go.cr/?sec=servicios&cat=autenticaciones; https://www.rree.go.cr/?sec=servicios&cat=autenticaciones&cont=1016",
+  "content/posts/getting-married-in-costa-rica/00-input.json (no 01-brief.json, 02-seo.json or 02-research/report.md; must_include derived from the orchestrator's task)",
+  "content/posts/getting-married-in-seychelles/03-source-pack.json (format reference only)"
+ ],
+ "self_qa": {
+  "checks": [
+   {
+    "check": "Every fact has a source and date",
+    "pass": true
+   },
+   {
+    "check": "No price without a source; all prices in needs_signoff",
+    "pass": true,
+    "note": "No amounts recorded."
+   },
+   {
+    "check": "Every must-include covered or [[VERIFY]]",
+    "pass": true,
+    "note": "All cartorio / habilitacao items are [[VERIFY]] because the Civil Code text was truncated."
+   },
+   {
+    "check": "No invented quotes, statistics or real weddings",
+    "pass": true
+   }
+  ],
+  "confidence": 0.25
+ },
+ "open_questions": [
+  {
+   "to": "luxury-writer",
+   "question": "Core marriage process now sourced from Lei 6.015/1973 as amended (fact_200-212, read live by the orchestrator): application (habilitação) at the civil registry of the district where one of you resides; electronic publication of the banns; certificate of habilitação within up to 5 days; marry at any registry office of your choice within the validity period set by the Civil Code (no number: not read); ceremony on the day, time and place requested and set by the registrar; at least two witnesses; religious ceremony registered within 30 days. Write as questions for the cartório: the exact document list for foreigners, how the residence-district rule applies when neither of you lives in Brazil, how long the habilitação stays valid, timing from arrival. Foreign documents generally need an apostille and a sworn translation done in Brazil (fact_01-03, Federal Police, general rule: present as a general rule and tell couples to confirm with the cartório). Regions: name places only, no descriptive tourism claims (Visit Brasil lines not sourced); seasons only from Smartraveller's regional wet-season lines; no INMET figures. Never fee amounts. No same-sex legal position. Do not mention videoconference ceremonies.",
+   "blocking": false
+  }
+ ],
+ "assumptions": [
+  "Must-include list taken from the orchestrator's batch A task (Brazilian legal side only); no 01-brief.json, 02-seo.json or 02-research/report.md exists.",
+  "Facts dated 17 November 2026, the date of reading; Portuguese translated faithfully without adding to the text.",
+  "fact_01 to fact_03 come from a Policia Federal migration FAQ; their application to the marriage habilitacao is an inference flagged as [[VERIFY]].",
+  "Provimento 62/2017 recorded only to note that it is largely revoked; its revoked articles are not used as facts.",
+  "No same-sex position recorded, per task.",
+  "Live facts dated 2026-11-17 (read date); copied facts keep their original dates.",
+  "Smartraveller page showed 'Still current at 18 November 2026' when read on 17 November 2026 (UTC/AEDT difference).",
+  "No same-sex position recorded, by instruction.",
+  "Visit Brasil lines are neutral destination colour; no businesses named.",
+  "Must-include list taken from the orchestrator's batch A task, as no 01-brief.json exists.",
+  "Facts dated 17 November 2026 (the date of reading). All sources are Costa Rican government pages, translated from Spanish without interpretation.",
+  "The TSE celebration sheet (fact_01 to fact_12) covers marriage celebrated before the Registro Civil. It does not cover notary-celebrated marriages; facts are not extended to that route.",
+  "The file was written once after both read rounds rather than every 3 facts, as all reads completed in a single parallel round."
+ ],
+ "verify_items": [],
+ "tools_used": [
+  "mcp__Apify__apify--web-search",
+  "mcp__Apify__apify--web-fetch",
+  "Bash"
+ ],
+ "next_agent": [
+  "luxury-writer"
+ ],
+ "payload": {
+  "facts": [
+   {
+    "fact_id": "fact_01",
+    "claim": "Federal Police (Policia Federal) FAQ, in the context of migration regularisation: as a general rule, documents issued abroad must be legalised and translated according to the established rules (page updated 3 November 2026).",
+    "source": "https://www.gov.br/pf/pt-br/assuntos/imigracao/duvidas-frequentes/autorizacao-de-residencia-e-registro-nacional-migratorio-rnm/e-necessaria-a-legalizacao-e",
+    "source_type": "government",
+    "checked": "2026-11-17",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_02",
+    "claim": "Policia Federal FAQ: apostille (apostilamento) is a faster form of legalisation that removes the separate legalisation and consular steps; under the Hague Apostille Convention, in force in Brazil since 2016, documents from member countries are accepted with a single apostille.",
+    "source": "https://www.gov.br/pf/pt-br/assuntos/imigracao/duvidas-frequentes/autorizacao-de-residencia-e-registro-nacional-migratorio-rnm/e-necessaria-a-legalizacao-e",
+    "source_type": "government",
+    "checked": "2026-11-17",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_03",
+    "claim": "Policia Federal FAQ: in Brazil, foreign documents, even when apostilled, must be translated by a sworn translator (tradutor juramentado) to be valid; this translation can only be done in Brazil and is regulated by art. 192 of the Code of Civil Procedure and art. 27 of Law 14.195 of 26 August 2021.",
+    "source": "https://www.gov.br/pf/pt-br/assuntos/imigracao/duvidas-frequentes/autorizacao-de-residencia-e-registro-nacional-migratorio-rnm/e-necessaria-a-legalizacao-e",
+    "source_type": "government",
+    "checked": "2026-11-17",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_04",
+    "claim": "CNJ: the National Council of Justice (CNJ) coordinates and regulates the application of the Hague Apostille Convention in Brazil, which came into force in August 2016.",
+    "source": "https://www.cnj.jus.br/poder-judiciario/relacoes-internacionais/apostila-da-haia/",
+    "source_type": "government",
+    "checked": "2026-11-17",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_05",
+    "claim": "CNJ: an apostille is a certificate issued under the Apostille Convention that authenticates the origin of a public document; the CNJ page offers a search for cartorios authorised to issue it, by state and city.",
+    "source": "https://www.cnj.jus.br/poder-judiciario/relacoes-internacionais/apostila-da-haia/",
+    "source_type": "government",
+    "checked": "2026-11-17",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_06",
+    "claim": "CNJ: the Convention applies to public documents, including documents from an authority or court official, administrative documents, notarial acts and official declarations such as notes of registration; it does not apply to documents made by diplomatic or consular agents.",
+    "source": "https://www.cnj.jus.br/poder-judiciario/relacoes-internacionais/apostila-da-haia/",
+    "source_type": "government",
+    "checked": "2026-11-17",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_07",
+    "claim": "CNJ (search-result snippet only, page not read): apostilles issued in the Apostil system can be validated at apostil.cnj.jus.br/pt/validation.",
+    "source": "https://www.cnj.jus.br/poder-judiciario/relacoes-internacionais/apostila-da-haia/validacao-de-apostila/",
+    "source_type": "government",
+    "checked": "2026-11-17",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_08",
+    "claim": "CNJ Provimento 62 of 14 November 2017 standardised apostille procedures for public documents produced in Brazil; its status is 'Alterado' and most of its articles are marked as revoked by Provimento CN 149 of 30 August 2023, so it is not a current source for apostille steps.",
+    "source": "https://atos.cnj.jus.br/atos/detalhar/2524",
+    "source_type": "government",
+    "checked": "2026-11-17",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_100",
+    "claim": "[Copied from brazilian-wedding-traditions 03-source-pack, same source and date.] Smartraveller (DFAT), page last updated 1 October 2026: a Certificate of No Impediment to Marriage (CNI) is a DFAT document issued in support of an intended marriage overseas, for when local authorities ask you to prove you are not already married. DFAT issues CNIs through Australian Passport Offices in Australia, through Australian embassies, high commissions and consulates overseas, and by mail. At least one partner must be an Australian citizen or permanent resident.",
+    "source": "https://www.smartraveller.gov.au/our-role/notarial-services/how-get-certificate-no-impediment-marriage",
+    "source_type": "government",
+    "checked": "2026-11-03",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_101",
+    "claim": "[Copied from brazilian-wedding-traditions 03-source-pack, same source and date.] Smartraveller (DFAT): DFAT charges fees for CNI and notarial services (fees rise with CPI on 1 January each year) and the fee is paid when the application is submitted. A fee applies; no amount to be stated in the article.",
+    "source": "https://www.smartraveller.gov.au/our-role/notarial-services/how-get-certificate-no-impediment-marriage",
+    "source_type": "government",
+    "checked": "2026-11-03",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_102",
+    "claim": "[Copied from brazilian-wedding-traditions 03-source-pack, same source and date.] Smartraveller (DFAT): DFAT cannot advise on another country's legal processes; couples must confirm with the local authority (or that country's embassy in Australia) whether they need a CNI at all (some accept a Single Status Certificate or No Record Result Certificate from a state or territory births, deaths and marriages registry), whether it must be issued in the country of marriage (if so, the Australian embassy or consulate there can issue it), whether it needs an apostille or authentication, and what other documents are needed (e.g. birth certificate, divorce certificate, deceased partner's death certificate).",
+    "source": "https://www.smartraveller.gov.au/our-role/notarial-services/how-get-certificate-no-impediment-marriage",
+    "source_type": "government",
+    "checked": "2026-11-03",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_103",
+    "claim": "[Copied from brazilian-wedding-traditions 03-source-pack, same source and date.] Smartraveller (DFAT): the CNI form must be signed in front of an authorised witness (in Australia, e.g. a Justice of the Peace or an Australian Passports official; overseas, a consular official). Supporting documents not in English need an English translation by a professional translator. Incomplete requests cannot be processed, and checks with issuing authorities can cause delays.",
+    "source": "https://www.smartraveller.gov.au/our-role/notarial-services/how-get-certificate-no-impediment-marriage",
+    "source_type": "government",
+    "checked": "2026-11-03",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_104",
+    "claim": "[Copied from brazilian-wedding-traditions 03-source-pack, same source and date.] Australian Embassy Brasília (notarial services page, last update 25 March 2025): notarial (document legalisation) services for Australians in Brazil are provided from the Embassy in Brasília and the Consulate-General in São Paulo, by appointment only (outside São Paulo, book with Brasília). Services include certifying copies, witnessing signatures, legalising documents (apostille) and Certificates of No Impediment to Marriage (CNI). Fees apply ('We charge fees for our service'; legislatively required, CPI-indexed each 1 January). Notarial services are only for documents Australian in origin or intended for use in Australia.",
+    "source": "https://brazil.embassy.gov.au/bras/notarialservices.html",
+    "source_type": "government",
+    "checked": "2026-11-03",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_105",
+    "claim": "[Copied from brazilian-wedding-traditions 03-source-pack, same source and date.] Australian Embassy Brasília: staff will not advise which documents are needed; you must ask the receiving authority directly. CNI applications may be mailed from within Brazil only if the signature was witnessed by a local notary (cartório); signatures witnessed by other Australian-qualified witnesses are not accepted for CNI purposes in Brazil. The Embassy aims to return mailed documents within five working days.",
+    "source": "https://brazil.embassy.gov.au/bras/notarialservices.html",
+    "source_type": "government",
+    "checked": "2026-11-03",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_106",
+    "claim": "[Copied from brazilian-wedding-traditions 03-source-pack, same source and date.] Australian Embassy Brasília: Honorary Consulate staff in Rio de Janeiro are not authorised to perform notarial services (consistent with Smartraveller).",
+    "source": "https://brazil.embassy.gov.au/bras/notarialservices.html",
+    "source_type": "government",
+    "checked": "2026-11-03",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_107",
+    "claim": "[Copied from brazilian-wedding-traditions 03-source-pack, same source and date.] CNJ (Conselho Nacional de Justiça) coordinates and regulates the Hague Apostille Convention in Brazil; the Convention entered into force in Brazil in August 2016. An apostille is a certificate issued under the Convention that authenticates the origin of a public document, allowing mutual recognition of foreign documents in Brazil. CNJ lists cartórios authorised to issue apostilles by state.",
+    "source": "https://www.cnj.jus.br/poder-judiciario/relacoes-internacionais/apostila-da-haia/",
+    "source_type": "government",
+    "checked": "2026-11-03",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_108",
+    "claim": "[Copied from get-married-in-new-zealand 03-source-pack, same source and date.] As at November 2026, Smartraveller (read live 11 November 2026) says DFAT can issue a CNI in Australia, but some local authorities only accept CNIs issued in their country, so ask the destination's embassy or consulate whether you need a CNI, whether you can get it in Australia, and whether it also needs an authentication or apostille. The Wedded Advisor confirms current requirements.",
+    "source": "https://www.smartraveller.gov.au/planning-trip/advice-your-planned-activities/getting-married-overseas",
+    "source_type": "government",
+    "checked": "2026-11-11",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_109",
+    "claim": "[Copied from get-married-in-new-zealand 03-source-pack, same source and date.] As at November 2026, Smartraveller 'Getting married overseas' (last updated 18/08/2026, read live 12 November 2026): some countries ask you to prove you aren't already married; the most common documents are a Certificate of No Impediment to Marriage (CNI) and certificates from a registry of births, deaths and marriages; the country may have more rules (for example a residence period); 'We can't tell you what you will need'; contact your destination's embassy or consulate. The Wedded Advisor confirms current requirements.",
+    "source": "https://www.smartraveller.gov.au/planning-trip/advice-your-planned-activities/getting-married-overseas",
+    "source_type": "government",
+    "checked": "2026-11-12",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_110",
+    "claim": "[Copied from get-married-in-new-zealand 03-source-pack, same source and date.] As at November 2026, Smartraveller 'Getting married overseas' (read live 12 November 2026): your registry of births, deaths and marriages can give a statement that there's no record you have been married before, a Single Status certificate or a No Record Result certificate; local authorities may also ask for divorce papers, the death certificate of a deceased spouse, and your original birth certificate and passport.",
+    "source": "https://www.smartraveller.gov.au/planning-trip/advice-your-planned-activities/getting-married-overseas",
+    "source_type": "government",
+    "checked": "2026-11-12",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_111",
+    "claim": "[Copied from get-married-in-new-zealand 03-source-pack, same source and date.] As at November 2026, Smartraveller 'Getting married overseas' (read live 12 November 2026): Australia doesn't recognise overseas marriages where one or both people are already married to someone else, not old enough to get married, too closely related, or forced to get married.",
+    "source": "https://www.smartraveller.gov.au/planning-trip/advice-your-planned-activities/getting-married-overseas",
+    "source_type": "government",
+    "checked": "2026-11-12",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_112",
+    "claim": "[Copied from get-married-in-new-zealand 03-source-pack, same source and date.] As at November 2026, Smartraveller (read live 11 November 2026) says you cannot register an overseas marriage in Australia, but in most cases it is legally recognised if, when it took place, it was valid under the law of the country where it happened and would have been valid under Australian law had it occurred in Australia. A foreign marriage certificate is usually accepted as proof of the marriage but may not work as proof of a name change (check with your local registry of births, deaths and marriages), and Smartraveller suggests talking to a lawyer to confirm the certificate is valid in Australia. The Wedded Advisor confirms current requirements.",
+    "source": "https://www.smartraveller.gov.au/planning-trip/advice-your-planned-activities/getting-married-overseas",
+    "source_type": "government",
+    "checked": "2026-11-11",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_113",
+    "claim": "[Copied from get-married-in-new-zealand 03-source-pack, same source and date.] As at November 2026, the Attorney-General's Department (read live 12 November 2026): if Australia recognises your overseas marriage, you can't get married again in Australia, but you may choose to hold another type of ceremony, such as a confirmation of vows or a recommitment ceremony.",
+    "source": "https://www.ag.gov.au/families-and-marriage/marriage/marriage-equality-australia",
+    "source_type": "government",
+    "checked": "2026-11-12",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_114",
+    "claim": "[Copied from get-married-in-new-zealand 03-source-pack, same source and date.] Smartraveller (DFAT), 'How to get your documents legalised' (last updated 30/09/2026): ask the overseas authority which documents they need and which must be legalised; DFAT 'can't tell you what they may want'. Find out from the intended authority or legal representative whether you need an apostille or an authentication certificate.",
+    "source": "https://www.smartraveller.gov.au/our-role/notarial-services/how-get-your-documents-legalised",
+    "source_type": "government",
+    "checked": "2026-11-11",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_115",
+    "claim": "[Copied from get-married-in-new-zealand 03-source-pack, same source and date.] Smartraveller: documents that are not original Australian public documents must first be notarised by an Australian Notary Public; the apostille or authentication certificate is applied directly to the document, so if you don't want originals marked, get a notarised copy legalised (and check the overseas authority accepts it).",
+    "source": "https://www.smartraveller.gov.au/our-role/notarial-services/how-get-your-documents-legalised",
+    "source_type": "government",
+    "checked": "2026-11-11",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_116",
+    "claim": "[Copied from get-married-in-new-zealand 03-source-pack, same source and date.] Smartraveller: requests use the Document Legalisation Request Form, signed in front of an authorised witness, and can be lodged by appointment at an Australian Passport Office, in person at many Australian embassies, high commissions and consulates overseas (not Honorary Consul consulates), or by registered mail to the Authentications Section in Melbourne or Sydney. A fee applies (amount not recorded).",
+    "source": "https://www.smartraveller.gov.au/our-role/notarial-services/how-get-your-documents-legalised",
+    "source_type": "government",
+    "checked": "2026-11-11",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_117",
+    "claim": "[Copied from get-married-in-new-zealand 03-source-pack, same source and date.] Smartraveller: processing times vary, with delays at the end of the school year and in peak holiday periods, for incomplete requests or unpaid fees, or when the issuing authority must be contacted. An Australian-issued apostille can be verified online via DFAT.",
+    "source": "https://www.smartraveller.gov.au/our-role/notarial-services/how-get-your-documents-legalised",
+    "source_type": "government",
+    "checked": "2026-11-11",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_118",
+    "claim": "As at November 2026, Smartraveller Brazil (updated 27 October 2026, still current at 18 November 2026, read 17 November 2026 AEDT): overall advice level is 'Exercise a high degree of caution' in Brazil due to the threat of violent crime. The page lists no region at a higher advice level.",
+    "source": "https://www.smartraveller.gov.au/destinations/americas/brazil",
+    "source_type": "government",
+    "checked": "2026-11-17",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_119",
+    "claim": "As at November 2026, Smartraveller Brazil: Australians need a visa to enter Brazil and must arrange it before arrival; a visa cannot be obtained at the airport or border entry point, and travellers who arrive without a required visa are sent back on the next available flight. Entry and exit conditions can change at short notice; contact an embassy or consulate of Brazil. The Wedded Advisor confirms current requirements.",
+    "source": "https://www.smartraveller.gov.au/destinations/americas/brazil",
+    "source_type": "government",
+    "checked": "2026-11-17",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_120",
+    "claim": "Smartraveller Brazil: passports are stamped on arrival and may be inspected on departure. Smartraveller notes many countries require a passport valid for at least 6 months, and advises checking expiry before travel.",
+    "source": "https://www.smartraveller.gov.au/destinations/americas/brazil",
+    "source_type": "government",
+    "checked": "2026-11-17",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_121",
+    "claim": "Smartraveller Brazil: dual nationals must enter and exit Brazil on their Brazilian passport (and carry both passports or a valid Brazilian visa in the Australian passport); dual-national males over 18 may have to do military service. Brazilian and dual-national children need written consent from any non-accompanying parent to depart Brazil.",
+    "source": "https://www.smartraveller.gov.au/destinations/americas/brazil",
+    "source_type": "government",
+    "checked": "2026-11-17",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_122",
+    "claim": "Smartraveller Brazil (health): you may need a valid yellow fever vaccination certificate to enter Brazil, and some airlines may ask for a copy when you depart to Australia or other countries. Yellow fever, dengue, malaria and zika are common insect-borne diseases; get vaccinated against yellow fever where possible; risk is highest in the wet season, poorer urban areas and regional areas with stagnant water such as the Pantanal or Amazon. Brazil has recurrent measles outbreaks.",
+    "source": "https://www.smartraveller.gov.au/destinations/americas/brazil",
+    "source_type": "government",
+    "checked": "2026-11-17",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_123",
+    "claim": "Smartraveller Brazil (health): drink boiled or bottled water and avoid ice and raw or undercooked food. Private health care in larger cities is often similar or superior to Australia but very expensive; travel insurance must cover all medical costs including evacuation.",
+    "source": "https://www.smartraveller.gov.au/destinations/americas/brazil",
+    "source_type": "government",
+    "checked": "2026-11-17",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_124",
+    "claim": "Smartraveller Brazil (safety): violent crime including mugging, armed robbery and carjacking is common, more often in large cities and during festivals such as Carnival. Rio de Janeiro crime hotspots named: Copacabana Beach, Ipanema Beach, the Pedra do Sal area, Santa Teresa, Lapa, the Christ the Redeemer statue and the Corcovado Trail. Advice: don't go out alone at night, avoid isolated areas including beaches, leave valuables and passports in a hotel safe, and don't enter favelas, even with a tour group.",
+    "source": "https://www.smartraveller.gov.au/destinations/americas/brazil",
+    "source_type": "government",
+    "checked": "2026-11-17",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_125",
+    "claim": "Smartraveller Brazil (safety): São Paulo crime hotspots named include around the Cathedral, Pinacoteca, Estação da Luz, Princess Isabel Square, the Central Market and Avenida Paulista; in Brasília, the central bus station and two adjacent shopping centres. Western and northern border areas (Amazonas, Acre, Rondônia, Mato Grosso, Roraima, Pará, Amapá, Amazon river travel and the Foz do Iguaçu tri-border area) carry drug-trafficking-related crime risk.",
+    "source": "https://www.smartraveller.gov.au/destinations/americas/brazil",
+    "source_type": "government",
+    "checked": "2026-11-17",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_126",
+    "claim": "Smartraveller Brazil (transport): use only prepaid or official taxis or app rideshare, matching plate and driver name; check card amounts. Australians can drive for up to 180 days on a valid Australian licence (a translation is recommended); blood-alcohol limit effectively 0%. Road hazards include aggressive driving and poorly maintained roads. Domestic and international flight delays are common and airport strikes occur.",
+    "source": "https://www.smartraveller.gov.au/destinations/americas/brazil",
+    "source_type": "government",
+    "checked": "2026-11-17",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_127",
+    "claim": "Smartraveller Brazil (natural hazards): wet season is January to July in the north, November to March in the south and south-east, and April to July in the north-east; heavy rain can occur all year. Landslides and flooding occur and severe storms often delay flights. Wildfires are common May to September, especially July and August. Many beaches, including in Rio de Janeiro and Fortaleza, have strong rips; shark attacks are possible at north-eastern beaches such as Recife.",
+    "source": "https://www.smartraveller.gov.au/destinations/americas/brazil",
+    "source_type": "government",
+    "checked": "2026-11-17",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_128",
+    "claim": "Smartraveller Brazil: drink spiking and methanol poisoning are risks; drink only branded, sealed drinks. Large-scale protests are common and can disrupt traffic; the presidential inauguration is in Brasília on 5 January 2027 with possible gatherings and increased security around it.",
+    "source": "https://www.smartraveller.gov.au/destinations/americas/brazil",
+    "source_type": "government",
+    "checked": "2026-11-17",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_129",
+    "claim": "Smartraveller Brazil (consular): consular help is from the Australian Embassy in Brasília and the Australian Consulate-General in São Paulo. The Honorary Consulate in Rio de Janeiro provides only limited services (for example passport interviews) and does not provide notarial (document legalisation) services. 24-hour Consular Emergency Centre: +61 2 6261 3305 from overseas, 1300 555 135 in Australia. Local emergency numbers: 190 police, 192 medical, 193 fire and rescue. English-speaking Tourist Police operate in Rio de Janeiro, São Paulo and some major airports.",
+    "source": "https://www.smartraveller.gov.au/destinations/americas/brazil",
+    "source_type": "government",
+    "checked": "2026-11-17",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_130",
+    "claim": "Smartraveller Brazil (money): local currency is the Brazilian real (BRL); amounts above a set threshold must be declared on arrival and departure (threshold not restated here). Credit cards are widely accepted; credit card fraud is widespread.",
+    "source": "https://www.smartraveller.gov.au/destinations/americas/brazil",
+    "source_type": "government",
+    "checked": "2026-11-17",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_131",
+    "claim": "INMET (Instituto Nacional de Meteorologia) publishes Brazil's official climatological normals for 1961-1990, 1981-2010 and 1991-2020 by station (temperature, precipitation, humidity and more). The index page read gives no station figures; figures sit in linked station tables not read this round.",
+    "source": "https://portal.inmet.gov.br/normais",
+    "source_type": "government",
+    "checked": "2026-11-17",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_132",
+    "claim": "Visit Brasil (Embratur), Sun & Beach page: describes Brazil's long coastline 'from north to south', citing 'the paradise-like scenery of Fernando de Noronha', 'the famous Copacabana beach in Rio de Janeiro' and 'the unspoiled beaches of Florianópolis', with 'crystal-clear waters, white sands and a vibrant atmosphere'.",
+    "source": "https://visitbrasil.com/en/experience/sun-beach/",
+    "source_type": "tourism_board",
+    "checked": "2026-11-17",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_133",
+    "claim": "Visit Brasil (Embratur), Sun & Beach page: lists Rio de Janeiro, Trancoso, Paraty, Florianópolis, Fernando de Noronha, Salvador, Búzios and Praia do Forte among its sun and beach destinations (destination list only; individual destination pages not read this round).",
+    "source": "https://visitbrasil.com/en/experience/sun-beach/",
+    "source_type": "tourism_board",
+    "checked": "2026-11-17",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_200",
+    "claim": "Lei 6.015/1973 (Public Registries Law), as amended by Lei 14.382/2022, read live 17 November 2026 (translated from Portuguese): Art. 67: for the marriage application (habilitação), the couple present the documents required by the civil law and ask the civil registrar of the district where one of them resides to certify that they are cleared to marry.",
+    "source": "https://www.planalto.gov.br/ccivil_03/leis/l6015compilada.htm",
+    "source_type": "government",
+    "checked": "2026-11-17",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_201",
+    "claim": "Lei 6.015/1973 (Public Registries Law), as amended by Lei 14.382/2022, read live 17 November 2026 (translated from Portuguese): Art. 67 §1: if the documents are in order, the registrar publishes the application electronically and issues the certificate of habilitação within up to 5 days; the couple can then marry before any civil registry office of their choice, within the validity period set by the Civil Code (art. 1.532).",
+    "source": "https://www.planalto.gov.br/ccivil_03/leis/l6015compilada.htm",
+    "source_type": "government",
+    "checked": "2026-11-17",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_202",
+    "claim": "Lei 6.015/1973 (Public Registries Law), as amended by Lei 14.382/2022, read live 17 November 2026 (translated from Portuguese): Art. 67 §4-A: identification of the couple and presentation of the documents for the application may be done electronically, with proof of authorship and integrity of the documents.",
+    "source": "https://www.planalto.gov.br/ccivil_03/leis/l6015compilada.htm",
+    "source_type": "government",
+    "checked": "2026-11-17",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_203",
+    "claim": "Lei 6.015/1973 (Public Registries Law), as amended by Lei 14.382/2022, read live 17 November 2026 (translated from Portuguese): Art. 67 §5: if an impediment or objection is raised, the registrar tells the couple, the matter goes to a judge with the Public Prosecutor's office informed, and the judge decides.",
+    "source": "https://www.planalto.gov.br/ccivil_03/leis/l6015compilada.htm",
+    "source_type": "government",
+    "checked": "2026-11-17",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_204",
+    "claim": "Lei 6.015/1973 (Public Registries Law), as amended by Lei 14.382/2022, read live 17 November 2026 (translated from Portuguese): Art. 67 §7: once the certificate of habilitação is issued, the marriage is celebrated on the day, time and place requested by the couple and set by the registrar.",
+    "source": "https://www.planalto.gov.br/ccivil_03/leis/l6015compilada.htm",
+    "source_type": "government",
+    "checked": "2026-11-17",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_205",
+    "claim": "Lei 6.015/1973 (Public Registries Law), as amended by Lei 14.382/2022, read live 17 November 2026 (translated from Portuguese): Art. 67 §8: at the couple's request, the marriage ceremony may be held electronically by videoconference in which the free will of both can be verified.",
+    "source": "https://www.planalto.gov.br/ccivil_03/leis/l6015compilada.htm",
+    "source_type": "government",
+    "checked": "2026-11-17",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_206",
+    "claim": "Lei 6.015/1973 (Public Registries Law), as amended by Lei 14.382/2022, read live 17 November 2026 (translated from Portuguese): Art. 69: the electronic publication of the banns (proclamas) can be dispensed with in cases provided by law, if the couple petition the registrar with proof of urgency; the registrar decides within 24 hours.",
+    "source": "https://www.planalto.gov.br/ccivil_03/leis/l6015compilada.htm",
+    "source_type": "government",
+    "checked": "2026-11-17",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_207",
+    "claim": "Lei 6.015/1973 (Public Registries Law), as amended by Lei 14.382/2022, read live 17 November 2026 (translated from Portuguese): Art. 70: immediately after the marriage, a record is drawn up and signed by the person presiding, the spouses, the witnesses and the registrar; it records the couple's details, the date of the banns and of the ceremony, the documents presented and the marriage property regime.",
+    "source": "https://www.planalto.gov.br/ccivil_03/leis/l6015compilada.htm",
+    "source_type": "government",
+    "checked": "2026-11-17",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_208",
+    "claim": "Lei 6.015/1973 (Public Registries Law), as amended by Lei 14.382/2022, read live 17 November 2026 (translated from Portuguese): Art. 70, sole paragraph: there must be at least two witnesses unless the law provides otherwise.",
+    "source": "https://www.planalto.gov.br/ccivil_03/leis/l6015compilada.htm",
+    "source_type": "government",
+    "checked": "2026-11-17",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_209",
+    "claim": "Lei 6.015/1973 (Public Registries Law), as amended by Lei 14.382/2022, read live 17 November 2026 (translated from Portuguese): Art. 71: couples cleared to marry may ask the registrar for the certificate of habilitação so they can marry before a religious authority or minister; it states the legal validity period of the habilitação.",
+    "source": "https://www.planalto.gov.br/ccivil_03/leis/l6015compilada.htm",
+    "source_type": "government",
+    "checked": "2026-11-17",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_210",
+    "claim": "Lei 6.015/1973 (Public Registries Law), as amended by Lei 14.382/2022, read live 17 November 2026 (translated from Portuguese): Art. 72: the record of a religious marriage is signed by the celebrant, the couple and two witnesses.",
+    "source": "https://www.planalto.gov.br/ccivil_03/leis/l6015compilada.htm",
+    "source_type": "government",
+    "checked": "2026-11-17",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_211",
+    "claim": "Lei 6.015/1973 (Public Registries Law), as amended by Lei 14.382/2022, read live 17 November 2026 (translated from Portuguese): Art. 73: within 30 days of a religious ceremony, the celebrant or any interested party may ask the registry office that issued the certificate to register the religious marriage; the registrar registers it within 24 hours of the request.",
+    "source": "https://www.planalto.gov.br/ccivil_03/leis/l6015compilada.htm",
+    "source_type": "government",
+    "checked": "2026-11-17",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_212",
+    "claim": "Lei 6.015/1973 (Public Registries Law), as amended by Lei 14.382/2022, read live 17 November 2026 (translated from Portuguese): Art. 75: registration takes legal effect from the date of the ceremony.",
+    "source": "https://www.planalto.gov.br/ccivil_03/leis/l6015compilada.htm",
+    "source_type": "government",
+    "checked": "2026-11-17",
+    "is_price": false
+   }
+  ],
+  "insider_details": [
+   {
+    "detail": "Order matters for foreign documents: apostille them in Australia first, then have them translated by a sworn translator in Brazil, because the official position is that even apostilled foreign documents need a Brazilian sworn translation, which can only be done in Brazil. Build time in Brazil for this before the cartorio appointment.",
+    "fact_ids": [
+     "fact_02",
+     "fact_03"
+    ]
+   },
+   {
+    "detail": "For the Brazilian marriage certificate to be used back in Australia, the apostille is added in Brazil by an authorised cartorio; CNJ lists authorised cartorios by state and city, and apostilles can be checked online.",
+    "fact_ids": [
+     "fact_04",
+     "fact_05",
+     "fact_07"
+    ]
+   },
+   {
+    "detail": "Treat every Brazilian legal step as something the Wedded Advisor confirms with the chosen cartorio at the time of booking, as at November 2026: the national sources read here cover documents and apostilles, not the cartorio habilitacao itself.",
+    "fact_ids": [
+     "fact_01",
+     "fact_03",
+     "fact_08"
+    ]
+   }
+  ],
+  "quotes": [],
+  "real_weddings": [],
+  "verify_items": [
+   "[[VERIFY: habilitacao para o casamento requirements for foreigners at a Cartorio de Registro Civil das Pessoas Naturais (passport, birth certificate, proof of single status, any registration of foreign documents in Titulos e Documentos), from Codigo Civil arts. 1.525 to 1.532 (planalto.gov.br) and the chosen cartorio; Civil Code page was truncated before these articles]]",
+   "[[VERIFY: proclamas / edital: how long it is published and whether it can be waived (Codigo Civil art. 1.527)]]",
+   "[[VERIFY: how long the habilitacao certificate is valid (Codigo Civil art. 1.532)]]",
+   "[[VERIFY: number of witnesses and who performs the ceremony (juiz de paz), and whether it may be held outside the cartorio, e.g. another building (Codigo Civil arts. 1.533 to 1.535)]]",
+   "[[VERIFY: registration of the marriage (assento) and issue of the certidao de casamento (Codigo Civil art. 1.536)]]",
+   "[[VERIFY: religious marriage with civil effect, prior or later habilitacao and registration deadline (Codigo Civil arts. 1.515 and 1.516)]]",
+   "[[VERIFY: that Australia is on the CNJ list of Apostille Convention signatory countries (cnj.jus.br/poder-judiciario/relacoes-internacionais/apostila-da-haia/paises-signatarios/), not read]]",
+   "[[VERIFY: whether the cartorio requires foreign documents to be apostilled and sworn-translated for the habilitacao specifically; the official translation rule read (fact_03) is stated on a Policia Federal migration page]]",
+   "[[VERIFY: station-labelled INMET 1991-2020 normals (e.g. Rio de Janeiro, Salvador, Florianópolis stations) from https://portal.inmet.gov.br/normais station tables, not read. Until then use only Smartraveller's regional wet-season months (fact_127, fact_131).]]",
+   "[[VERIFY: one neutral line each for Bahia / Trancoso, Fernando de Noronha, Florianópolis / Santa Catarina and Paraty from their individual visitbrasil.com destination pages, not read; only the Sun & Beach listing (fact_132, fact_133) was read.]]",
+   "[[VERIFY: Brazilian visa type and process for Australians from a Brazilian government source (gov.br / Brazilian embassy in Canberra); Smartraveller only says a visa is needed before arrival.]]",
+   "[[VERIFY: Brazil's own civil marriage requirements for foreigners (habilitação at a cartório, documents, translations, timing) from a Brazilian government source; not researched in this batch.]]"
+  ],
+  "needs_signoff": [],
+  "must_include_coverage": [
+   {
+    "item": "Civil marriage at a Cartorio de Registro Civil: habilitacao application",
+    "covered_by": [
+     "[[VERIFY: habilitacao para o casamento requirements for foreigners at a Cartorio de Registro Civil das Pessoas Naturais (passport, birth certificate, proof of single status, any registration of foreign documents in Titulos e Documentos), from Codigo Civil arts. 1.525 to 1.532 (planalto.gov.br) and the chosen cartorio; Civil Code page was truncated before these articles]]"
+    ]
+   },
+   {
+    "item": "Documents a foreigner needs (passport, birth certificate, single status)",
+    "covered_by": [
+     "[[VERIFY: habilitacao para o casamento requirements for foreigners at a Cartorio de Registro Civil das Pessoas Naturais (passport, birth certificate, proof of single status, any registration of foreign documents in Titulos e Documentos), from Codigo Civil arts. 1.525 to 1.532 (planalto.gov.br) and the chosen cartorio; Civil Code page was truncated before these articles]]"
+    ]
+   },
+   {
+    "item": "Apostille of foreign documents",
+    "covered_by": [
+     "fact_02",
+     "fact_04",
+     "fact_06",
+     "[[VERIFY: whether the cartorio requires foreign documents to be apostilled and sworn-translated for the habilitacao specifically; the official translation rule read (fact_03) is stated on a Policia Federal migration page]]"
+    ]
+   },
+   {
+    "item": "Traducao juramentada (sworn translation)",
+    "covered_by": [
+     "fact_03",
+     "[[VERIFY: whether the cartorio requires foreign documents to be apostilled and sworn-translated for the habilitacao specifically; the official translation rule read (fact_03) is stated on a Policia Federal migration page]]"
+    ]
+   },
+   {
+    "item": "Registration of foreign documents",
+    "covered_by": [
+     "[[VERIFY: habilitacao para o casamento requirements for foreigners at a Cartorio de Registro Civil das Pessoas Naturais (passport, birth certificate, proof of single status, any registration of foreign documents in Titulos e Documentos), from Codigo Civil arts. 1.525 to 1.532 (planalto.gov.br) and the chosen cartorio; Civil Code page was truncated before these articles]]"
+    ]
+   },
+   {
+    "item": "Proclamas / edital and how long it runs",
+    "covered_by": [
+     "[[VERIFY: proclamas / edital: how long it is published and whether it can be waived (Codigo Civil art. 1.527)]]"
+    ]
+   },
+   {
+    "item": "Validity of the habilitacao",
+    "covered_by": [
+     "[[VERIFY: how long the habilitacao certificate is valid (Codigo Civil art. 1.532)]]"
+    ]
+   },
+   {
+    "item": "Witnesses, juiz de paz, place of ceremony",
+    "covered_by": [
+     "[[VERIFY: number of witnesses and who performs the ceremony (juiz de paz), and whether it may be held outside the cartorio, e.g. another building (Codigo Civil arts. 1.533 to 1.535)]]"
+    ]
+   },
+   {
+    "item": "Registration and certidao de casamento",
+    "covered_by": [
+     "[[VERIFY: registration of the marriage (assento) and issue of the certidao de casamento (Codigo Civil art. 1.536)]]"
+    ]
+   },
+   {
+    "item": "Religious marriage with civil effect",
+    "covered_by": [
+     "[[VERIFY: religious marriage with civil effect, prior or later habilitacao and registration deadline (Codigo Civil arts. 1.515 and 1.516)]]"
+    ]
+   },
+   {
+    "item": "Apostille for a Brazilian certificate (CNJ / cartorios)",
+    "covered_by": [
+     "fact_04",
+     "fact_05",
+     "fact_07",
+     "fact_08",
+     "[[VERIFY: that Australia is on the CNJ list of Apostille Convention signatory countries (cnj.jus.br/poder-judiciario/relacoes-internacionais/apostila-da-haia/paises-signatarios/), not read]]"
+    ]
+   },
+   {
+    "item": "Australian recognition, CNI, apostille and legalisation",
+    "covered_by": [
+     "fact_100",
+     "fact_101",
+     "fact_102",
+     "fact_103",
+     "fact_104",
+     "fact_105",
+     "fact_106",
+     "fact_107",
+     "fact_108",
+     "fact_109",
+     "fact_110",
+     "fact_111",
+     "fact_112",
+     "fact_113",
+     "fact_114",
+     "fact_115",
+     "fact_116",
+     "fact_117"
+    ]
+   },
+   {
+    "item": "Entry requirements for Australians",
+    "covered_by": [
+     "fact_119",
+     "fact_120",
+     "fact_121",
+     "[[VERIFY: Brazilian visa type and process for Australians from a Brazilian government source (gov.br / Brazilian embassy in Canberra); Smartraveller only says a visa is needed before arrival.]]"
+    ]
+   },
+   {
+    "item": "Health (yellow fever etc.)",
+    "covered_by": [
+     "fact_122",
+     "fact_123"
+    ]
+   },
+   {
+    "item": "Safety in Rio de Janeiro and other cities",
+    "covered_by": [
+     "fact_118",
+     "fact_124",
+     "fact_125",
+     "fact_126",
+     "fact_128",
+     "fact_130"
+    ]
+   },
+   {
+    "item": "Climate and seasons",
+    "covered_by": [
+     "fact_127",
+     "fact_131",
+     "[[VERIFY: station-labelled INMET 1991-2020 normals (e.g. Rio de Janeiro, Salvador, Florianópolis stations) from https://portal.inmet.gov.br/normais station tables, not read. Until then use only Smartraveller's regional wet-season months (fact_127, fact_131).]]"
+    ]
+   },
+   {
+    "item": "Destinations: Rio, Bahia/Trancoso, Fernando de Noronha, Florianópolis, Paraty",
+    "covered_by": [
+     "fact_132",
+     "fact_133",
+     "[[VERIFY: one neutral line each for Bahia / Trancoso, Fernando de Noronha, Florianópolis / Santa Catarina and Paraty from their individual visitbrasil.com destination pages, not read; only the Sun & Beach listing (fact_132, fact_133) was read.]]"
+    ]
+   },
+   {
+    "item": "Consular help",
+    "covered_by": [
+     "fact_104",
+     "fact_105",
+     "fact_106",
+     "fact_129"
+    ]
+   }
+  ]
+ }
+}

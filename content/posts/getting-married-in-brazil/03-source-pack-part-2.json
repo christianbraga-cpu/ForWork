@@ -1,0 +1,165 @@
+{
+ "agent": "planner-sme",
+ "task_id": "br-top-up",
+ "stage": "03",
+ "status": "complete",
+ "round": 1,
+ "inputs_used": [
+  "mcp__Apify__apify--web-search (17 November 2026), two queries: tse.go.cr marriage of foreigners; dnn.go.cr / rree.go.cr notary and apostille. Results used to locate official pages; two snippet-only facts recorded (fact_22, fact_23).",
+  "mcp__Apify__apify--web-fetch, one parallel round, 17 November 2026, no retries, all 200 and read in full: https://www.tse.go.cr/pdf/requisitosytramites/Celebracion-Matrimonio-Civil.pdf; https://www.tse.go.cr/pdf/requisitosytramites/Inscripcion-de-matrimonio-civil-o-catolico.pdf; https://www.rree.go.cr/?sec=servicios&cat=autenticaciones; https://www.rree.go.cr/?sec=servicios&cat=autenticaciones&cont=1016",
+  "content/posts/getting-married-in-costa-rica/00-input.json (no 01-brief.json, 02-seo.json or 02-research/report.md; must_include derived from the orchestrator's task)",
+  "content/posts/getting-married-in-seychelles/03-source-pack.json (format reference only)"
+ ],
+ "self_qa": {
+  "checks": [
+   {
+    "check": "Every fact has a source and date",
+    "pass": true
+   },
+   {
+    "check": "No price without a source; all prices in needs_signoff",
+    "pass": true,
+    "note": "No amounts recorded. The rree.go.cr snippet states a stamp amount; deliberately not recorded (task rule). The TSE statement that the Registro Civil service is free is recorded as a statement, not a price."
+   },
+   {
+    "check": "Every must-include covered or [[VERIFY]]",
+    "pass": true
+   },
+   {
+    "check": "No invented quotes, statistics or real weddings",
+    "pass": true
+   }
+  ],
+  "confidence": 0.6
+ },
+ "open_questions": [],
+ "assumptions": [
+  "Must-include list taken from the orchestrator's batch A task, as no 01-brief.json exists.",
+  "Facts dated 17 November 2026 (the date of reading). All sources are Costa Rican government pages, translated from Spanish without interpretation.",
+  "The TSE celebration sheet (fact_01 to fact_12) covers marriage celebrated before the Registro Civil. It does not cover notary-celebrated marriages; facts are not extended to that route.",
+  "The file was written once after both read rounds rather than every 3 facts, as all reads completed in a single parallel round."
+ ],
+ "verify_items": [],
+ "tools_used": [
+  "mcp__Apify__apify--web-search",
+  "mcp__Apify__apify--web-fetch",
+  "Bash"
+ ],
+ "next_agent": [
+  "luxury-writer"
+ ],
+ "payload": {
+  "facts": [
+   {
+    "fact_id": "fact_200",
+    "claim": "Lei 6.015/1973 (Public Registries Law), as amended by Lei 14.382/2022, read live 17 November 2026 (translated from Portuguese): Art. 67: for the marriage application (habilitação), the couple present the documents required by the civil law and ask the civil registrar of the district where one of them resides to certify that they are cleared to marry.",
+    "source": "https://www.planalto.gov.br/ccivil_03/leis/l6015compilada.htm",
+    "source_type": "government",
+    "checked": "2026-11-17",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_201",
+    "claim": "Lei 6.015/1973 (Public Registries Law), as amended by Lei 14.382/2022, read live 17 November 2026 (translated from Portuguese): Art. 67 §1: if the documents are in order, the registrar publishes the application electronically and issues the certificate of habilitação within up to 5 days; the couple can then marry before any civil registry office of their choice, within the validity period set by the Civil Code (art. 1.532).",
+    "source": "https://www.planalto.gov.br/ccivil_03/leis/l6015compilada.htm",
+    "source_type": "government",
+    "checked": "2026-11-17",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_202",
+    "claim": "Lei 6.015/1973 (Public Registries Law), as amended by Lei 14.382/2022, read live 17 November 2026 (translated from Portuguese): Art. 67 §4-A: identification of the couple and presentation of the documents for the application may be done electronically, with proof of authorship and integrity of the documents.",
+    "source": "https://www.planalto.gov.br/ccivil_03/leis/l6015compilada.htm",
+    "source_type": "government",
+    "checked": "2026-11-17",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_203",
+    "claim": "Lei 6.015/1973 (Public Registries Law), as amended by Lei 14.382/2022, read live 17 November 2026 (translated from Portuguese): Art. 67 §5: if an impediment or objection is raised, the registrar tells the couple, the matter goes to a judge with the Public Prosecutor's office informed, and the judge decides.",
+    "source": "https://www.planalto.gov.br/ccivil_03/leis/l6015compilada.htm",
+    "source_type": "government",
+    "checked": "2026-11-17",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_204",
+    "claim": "Lei 6.015/1973 (Public Registries Law), as amended by Lei 14.382/2022, read live 17 November 2026 (translated from Portuguese): Art. 67 §7: once the certificate of habilitação is issued, the marriage is celebrated on the day, time and place requested by the couple and set by the registrar.",
+    "source": "https://www.planalto.gov.br/ccivil_03/leis/l6015compilada.htm",
+    "source_type": "government",
+    "checked": "2026-11-17",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_205",
+    "claim": "Lei 6.015/1973 (Public Registries Law), as amended by Lei 14.382/2022, read live 17 November 2026 (translated from Portuguese): Art. 67 §8: at the couple's request, the marriage ceremony may be held electronically by videoconference in which the free will of both can be verified.",
+    "source": "https://www.planalto.gov.br/ccivil_03/leis/l6015compilada.htm",
+    "source_type": "government",
+    "checked": "2026-11-17",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_206",
+    "claim": "Lei 6.015/1973 (Public Registries Law), as amended by Lei 14.382/2022, read live 17 November 2026 (translated from Portuguese): Art. 69: the electronic publication of the banns (proclamas) can be dispensed with in cases provided by law, if the couple petition the registrar with proof of urgency; the registrar decides within 24 hours.",
+    "source": "https://www.planalto.gov.br/ccivil_03/leis/l6015compilada.htm",
+    "source_type": "government",
+    "checked": "2026-11-17",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_207",
+    "claim": "Lei 6.015/1973 (Public Registries Law), as amended by Lei 14.382/2022, read live 17 November 2026 (translated from Portuguese): Art. 70: immediately after the marriage, a record is drawn up and signed by the person presiding, the spouses, the witnesses and the registrar; it records the couple's details, the date of the banns and of the ceremony, the documents presented and the marriage property regime.",
+    "source": "https://www.planalto.gov.br/ccivil_03/leis/l6015compilada.htm",
+    "source_type": "government",
+    "checked": "2026-11-17",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_208",
+    "claim": "Lei 6.015/1973 (Public Registries Law), as amended by Lei 14.382/2022, read live 17 November 2026 (translated from Portuguese): Art. 70, sole paragraph: there must be at least two witnesses unless the law provides otherwise.",
+    "source": "https://www.planalto.gov.br/ccivil_03/leis/l6015compilada.htm",
+    "source_type": "government",
+    "checked": "2026-11-17",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_209",
+    "claim": "Lei 6.015/1973 (Public Registries Law), as amended by Lei 14.382/2022, read live 17 November 2026 (translated from Portuguese): Art. 71: couples cleared to marry may ask the registrar for the certificate of habilitação so they can marry before a religious authority or minister; it states the legal validity period of the habilitação.",
+    "source": "https://www.planalto.gov.br/ccivil_03/leis/l6015compilada.htm",
+    "source_type": "government",
+    "checked": "2026-11-17",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_210",
+    "claim": "Lei 6.015/1973 (Public Registries Law), as amended by Lei 14.382/2022, read live 17 November 2026 (translated from Portuguese): Art. 72: the record of a religious marriage is signed by the celebrant, the couple and two witnesses.",
+    "source": "https://www.planalto.gov.br/ccivil_03/leis/l6015compilada.htm",
+    "source_type": "government",
+    "checked": "2026-11-17",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_211",
+    "claim": "Lei 6.015/1973 (Public Registries Law), as amended by Lei 14.382/2022, read live 17 November 2026 (translated from Portuguese): Art. 73: within 30 days of a religious ceremony, the celebrant or any interested party may ask the registry office that issued the certificate to register the religious marriage; the registrar registers it within 24 hours of the request.",
+    "source": "https://www.planalto.gov.br/ccivil_03/leis/l6015compilada.htm",
+    "source_type": "government",
+    "checked": "2026-11-17",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_212",
+    "claim": "Lei 6.015/1973 (Public Registries Law), as amended by Lei 14.382/2022, read live 17 November 2026 (translated from Portuguese): Art. 75: registration takes legal effect from the date of the ceremony.",
+    "source": "https://www.planalto.gov.br/ccivil_03/leis/l6015compilada.htm",
+    "source_type": "government",
+    "checked": "2026-11-17",
+    "is_price": false
+   }
+  ],
+  "insider_details": [],
+  "quotes": [],
+  "real_weddings": [],
+  "verify_items": [],
+  "needs_signoff": [],
+  "must_include_coverage": []
+ }
+}
