@@ -1,0 +1,224 @@
+{
+ "agent": "visual-curator",
+ "task_id": "getting-married-in-seychelles",
+ "stage": "04",
+ "status": "needs_input",
+ "round": 1,
+ "inputs_used": [
+  "CLAUDE.md",
+  "content/posts/getting-married-in-seychelles/00-input.json",
+  "01-brief.json, 02-seo.json, 02-research/report.md, 03-source-pack.json (not present at run time)",
+  "content/posts/mauritius-wedding/04-images.json (format model)",
+  "content-system/images/library-index.csv (header only, no rows)",
+  "content-system/schemas/04-images.schema.json"
+ ],
+ "self_qa": {
+  "checks": [
+   {
+    "check": "Zero reference-only or competitor images in slots",
+    "pass": true,
+    "note": "reference_only is empty; nothing downloaded."
+   },
+   {
+    "check": "Every approved image has location, licence, alt, caption, fit_reason",
+    "pass": true,
+    "note": "No approved images this run."
+   },
+   {
+    "check": "No AI image depicting a real place, wedding, ceremony or person",
+    "pass": true,
+    "note": "No AI generated. Only the documents and certificate still lifes may become ai_illustrative, with approval and an 'Illustrative image' label."
+   },
+   {
+    "check": "Featured image exists (approved or needed with brief)",
+    "pass": true,
+    "note": "Needed, with brief: granite-boulder beach ceremony set-up at a named Seychelles resort."
+   },
+   {
+    "check": "Six slots as requested",
+    "pass": true,
+    "note": "featured, documents, civil-ceremony, certificate-australia, when-to-marry, choose-your-island."
+   },
+   {
+    "check": "Australian English, no em dashes, alt 125 chars or fewer",
+    "pass": true,
+    "note": "Checked by script."
+   }
+  ],
+  "confidence": 0.7
+ },
+ "open_questions": [
+  {
+   "to": "user",
+   "question": "Do you approve an AI still life for the documents slot (passports, papers on linen, nothing readable, no seals) labelled 'Illustrative image' if no Canva or licensed asset is found? The certificate slot is planned the same way and needs the same approval.",
+   "blocking": false
+  },
+  {
+   "to": "user",
+   "question": "Do you hold licensed Seychelles wedding or venue photos (with month taken and couple consent), or should we request resort media kits and check the Seychelles Tourism Board media library terms?",
+   "blocking": false
+  },
+  {
+   "to": "planner-sme",
+   "question": "Confirm featured resorts per island (03-source-pack) so each place slot can be tied to a named venue and press contact.",
+   "blocking": false
+  }
+ ],
+ "assumptions": [
+  "Placement is by section name because 02-seo.json is not yet written; the writer maps it to after_h2 positions.",
+  "No venue or beach is named because 03-source-pack does not exist; nothing was guessed.",
+  "Fast mode: repo register only, no Drive, own-site, Canva, Gmail or Lens checks run."
+ ],
+ "verify_items": [
+  "[[IMAGE NEEDED]] featured: granite-boulder beach ceremony set-up at a named Seychelles resort, licensed or press kit",
+  "[[IMAGE NEEDED]] documents: Canva or licensed stock; AI only with Wedded Wonderland approval, labelled 'Illustrative image'",
+  "[[IMAGE NEEDED]] civil-ceremony: named resort ceremony with officiant, licensed, couple and officiant consent",
+  "[[IMAGE NEEDED]] certificate-australia: folder and rings still life, no real or imitation certificate; AI only with approval, labelled 'Illustrative image'",
+  "[[IMAGE NEEDED]] when-to-marry: named venue, month taken recorded",
+  "[[IMAGE NEEDED]] choose-your-island: named venue wide view showing island character, licensed",
+  "[[VERIFY licence]] Seychelles Tourism Board media library: confirm terms allow third-party commercial blog use, credit format and expiry before any download",
+  "[[VERIFY licence]] every venue, stock or own-site image: written permission, credit line and expiry recorded in library-index.csv before use",
+  "[[VERIFY: couple consent for any real-wedding photo, and guest or officiant consent if identifiable]]"
+ ],
+ "tools_used": [
+  "Bash (cat/python)"
+ ],
+ "next_agent": [
+  "luxury-writer"
+ ],
+ "payload": {
+  "slots": [
+   {
+    "slot_id": "featured",
+    "placement": "featured",
+    "purpose": "Hero and social share image: the Seychelles' signature granite-boulder beach as a wedding setting, signalling luxury ahead of a practical legal guide.",
+    "shot_brief": "Landscape 3:2 with room for a title overlay. Ceremony set-up (arch or aisle, white florals) on a white sand beach framed by smooth pink-grey granite boulders and clear turquoise shallows, at a real, named Seychelles resort or a beach where the venue holds ceremonies, golden-hour light, no signage. Beach and island named only if proven by the source (do not assume Anse Source d'Argent or any named beach from appearance). Couple optional and small in frame. People only from a licensed real wedding with written couple consent (and guest consent if identifiable) recorded in library-index.csv; never AI people, never stock models presented as a real couple. No cultural or religious practice shown unless from a consented real wedding. Source order: venue or resort media kit with written permission (Gmail draft request, never sent by an agent); Seychelles Tourism Board media library only if its licence terms cover commercial blog use by a third party ([[VERIFY licence]], record terms, credit and expiry in library-index.csv); licensed premium stock bought by a human and added to the register. Never AI, never a competitor, directory, planner, photographer-blog or search-result image. Location proven by media kit, register row or EXIF, never by appearance.",
+    "status": "needed",
+    "file": "content/posts/getting-married-in-seychelles/images/getting-married-in-seychelles-granite-boulder-beach-ceremony.webp",
+    "source": {
+     "type": "venue_press",
+     "origin": "not yet sourced (fast mode: repo register only, which has no rows)",
+     "credit": "[[VERIFY licence]]"
+    },
+    "location": {
+     "venue": "a named Seychelles resort or ceremony beach (to be confirmed)",
+     "town": "to be confirmed",
+     "verified_by": "pending: media kit, register row or EXIF"
+    },
+    "alt": "Wedding ceremony set-up on a white sand beach framed by granite boulders and turquoise water in the Seychelles",
+    "caption": "<Venue>, <island>, Seychelles. Photo: <credit> (fill once sourced).",
+    "licence_note": "[[IMAGE NEEDED]] library-index.csv has a header and no rows. Move to pending_permission once a permission draft exists."
+   },
+   {
+    "slot_id": "documents",
+    "placement": "section: documents step (writer maps to after_h2:<n>)",
+    "purpose": "Make the documents section feel calm and organised: a planning still life, not a place.",
+    "shot_brief": "Landscape 3:2 or 4:3. Overhead still life: two closed passports, a linen-bound folder of papers, a fountain pen, a sprig of white flowers, on natural linen in soft daylight. No readable names, numbers, seals, government crests, flags, forms or screens; nothing that imitates a Seychelles or Australian document; no hands or faces. Order of sources: Canva brand asset, then licensed stock added to library-index.csv, then a Wedded Wonderland own shoot. AI (Higgsfield) is allowed for this slot only after Wedded Wonderland approves; if used, source.type becomes ai_illustrative and the caption must read 'Illustrative image'.",
+    "status": "needed",
+    "file": "content/posts/getting-married-in-seychelles/images/getting-married-in-seychelles-documents-still-life-linen.webp",
+    "source": {
+     "type": "canva",
+     "origin": "not yet sourced (fast mode: Canva not searched)",
+     "credit": "[[VERIFY licence]]"
+    },
+    "location": {
+     "venue": "none (studio still life)",
+     "town": "none",
+     "verified_by": "not applicable: no real place depicted"
+    },
+    "alt": "Two closed passports and a linen folder of papers beside a fountain pen on natural linen",
+    "caption": "Illustrative image (only if AI is approved; otherwise credit the stock or Canva source).",
+    "licence_note": "[[IMAGE NEEDED]] AI only with Wedded Wonderland approval, labelled 'Illustrative image'. Never depicts a real place, person, official form or readable document."
+   },
+   {
+    "slot_id": "civil-ceremony",
+    "placement": "section: the civil ceremony (writer maps to after_h2:<n>)",
+    "purpose": "Show what a civil ceremony in the Seychelles looks like when held at a luxury resort.",
+    "shot_brief": "Landscape 3:2. A real civil ceremony in progress or its set-up at a named resort (beachfront, garden or terrace), officiant and couple from behind or at a distance, soft afternoon light. Civil Status Officer identifiable only with written consent; no register or documents legible. People only from a licensed real wedding with written couple consent (and guest consent if identifiable) recorded in library-index.csv; never AI people, never stock models presented as a real couple. No cultural or religious practice shown unless from a consented real wedding. Source order: venue or resort media kit with written permission (Gmail draft request, never sent by an agent); Seychelles Tourism Board media library only if its licence terms cover commercial blog use by a third party ([[VERIFY licence]], record terms, credit and expiry in library-index.csv); licensed premium stock bought by a human and added to the register. Never AI, never a competitor, directory, planner, photographer-blog or search-result image. Location proven by media kit, register row or EXIF, never by appearance.",
+    "status": "needed",
+    "file": "content/posts/getting-married-in-seychelles/images/getting-married-in-seychelles-civil-ceremony-resort-beach.webp",
+    "source": {
+     "type": "venue_press",
+     "origin": "not yet sourced (fast mode: repo register only, which has no rows)",
+     "credit": "[[VERIFY licence]]"
+    },
+    "location": {
+     "venue": "a named Seychelles resort (to be confirmed)",
+     "town": "to be confirmed",
+     "verified_by": "pending: media kit, register row or EXIF"
+    },
+    "alt": "Couple exchanging vows with an officiant on a beachfront terrace beside tropical greenery",
+    "caption": "<Venue>, <island>, Seychelles. Photo: <credit> (fill once sourced).",
+    "licence_note": "[[IMAGE NEEDED]] library-index.csv has a header and no rows. Move to pending_permission once a permission draft exists."
+   },
+   {
+    "slot_id": "certificate-australia",
+    "placement": "section: certificate for Australia (writer maps to after_h2:<n>)",
+    "purpose": "Signal the after-the-wedding paperwork for recognition in Australia without showing any real or imitation official document.",
+    "shot_brief": "Landscape 3:2. Still life: a closed cream document folder tied with ribbon, wedding rings resting on it, two closed passports, soft window light on linen. No certificate face, apostille, Republic of Seychelles or Australian Government seal, crest, wording or form layout; nothing readable. Order of sources: Canva brand asset, then licensed stock added to library-index.csv, then a Wedded Wonderland own shoot. AI (Higgsfield) is allowed for this slot only after Wedded Wonderland approves; if used, source.type becomes ai_illustrative and the caption must read 'Illustrative image'.",
+    "status": "needed",
+    "file": "content/posts/getting-married-in-seychelles/images/getting-married-in-seychelles-certificate-folder-rings-still-life.webp",
+    "source": {
+     "type": "canva",
+     "origin": "not yet sourced (fast mode: Canva not searched)",
+     "credit": "[[VERIFY licence]]"
+    },
+    "location": {
+     "venue": "none (studio still life)",
+     "town": "none",
+     "verified_by": "not applicable: no real place depicted"
+    },
+    "alt": "Wedding rings resting on a closed cream document folder tied with ribbon, beside two passports",
+    "caption": "Illustrative image (only if AI is approved; otherwise credit the stock or Canva source).",
+    "licence_note": "[[IMAGE NEEDED]] AI only with Wedded Wonderland approval, labelled 'Illustrative image'. Never depicts a real place, person, official form or readable document."
+   },
+   {
+    "slot_id": "when-to-marry",
+    "placement": "section: when to marry (writer maps to after_h2:<n>)",
+    "purpose": "Show seasonal light and sea conditions so couples can picture their month.",
+    "shot_brief": "Landscape 3:2. A named venue's ceremony or reception space photographed in a recorded month (month taken must be in the register or EXIF), late afternoon or sunset light, sea and sky conditions visible. No people needed. Do not imply a season from the image unless the month is recorded. People only from a licensed real wedding with written couple consent (and guest consent if identifiable) recorded in library-index.csv; never AI people, never stock models presented as a real couple. No cultural or religious practice shown unless from a consented real wedding. Source order: venue or resort media kit with written permission (Gmail draft request, never sent by an agent); Seychelles Tourism Board media library only if its licence terms cover commercial blog use by a third party ([[VERIFY licence]], record terms, credit and expiry in library-index.csv); licensed premium stock bought by a human and added to the register. Never AI, never a competitor, directory, planner, photographer-blog or search-result image. Location proven by media kit, register row or EXIF, never by appearance.",
+    "status": "needed",
+    "file": "content/posts/getting-married-in-seychelles/images/getting-married-in-seychelles-sunset-reception-beachfront.webp",
+    "source": {
+     "type": "venue_press",
+     "origin": "not yet sourced (fast mode: repo register only, which has no rows)",
+     "credit": "[[VERIFY licence]]"
+    },
+    "location": {
+     "venue": "a named Seychelles venue (to be confirmed)",
+     "town": "to be confirmed",
+     "verified_by": "pending: media kit, register row or EXIF"
+    },
+    "alt": "Reception tables set on a beachfront deck above calm water in warm sunset light",
+    "caption": "<Venue>, <island>, Seychelles. Photo: <credit> (fill once sourced).",
+    "licence_note": "[[IMAGE NEEDED]] library-index.csv has a header and no rows. Move to pending_permission once a permission draft exists."
+   },
+   {
+    "slot_id": "choose-your-island",
+    "placement": "section: choose your island (writer maps to after_h2:<n>)",
+    "purpose": "Help couples picture the difference between islands with a wide view that shows each island's character.",
+    "shot_brief": "Landscape 16:9 or 3:2. Wide view from or of a real, named venue that shows its island's character (for example Mahé's forested mountains, Praslin's palm-backed bays, La Digue's granite coves or a private island), daylight, no people needed. Island and venue proven by media kit, register row or EXIF. People only from a licensed real wedding with written couple consent (and guest consent if identifiable) recorded in library-index.csv; never AI people, never stock models presented as a real couple. No cultural or religious practice shown unless from a consented real wedding. Source order: venue or resort media kit with written permission (Gmail draft request, never sent by an agent); Seychelles Tourism Board media library only if its licence terms cover commercial blog use by a third party ([[VERIFY licence]], record terms, credit and expiry in library-index.csv); licensed premium stock bought by a human and added to the register. Never AI, never a competitor, directory, planner, photographer-blog or search-result image. Location proven by media kit, register row or EXIF, never by appearance.",
+    "status": "needed",
+    "file": "content/posts/getting-married-in-seychelles/images/getting-married-in-seychelles-island-venue-wide-view.webp",
+    "source": {
+     "type": "venue_press",
+     "origin": "not yet sourced (fast mode: repo register only, which has no rows)",
+     "credit": "[[VERIFY licence]]"
+    },
+    "location": {
+     "venue": "a named Seychelles venue (to be confirmed)",
+     "town": "to be confirmed",
+     "verified_by": "pending: media kit, register row or EXIF"
+    },
+    "alt": "Wide view of a resort bay with forested granite hills and turquoise water in the Seychelles",
+    "caption": "<Venue>, <island>, Seychelles. Photo: <credit> (fill once sourced).",
+    "licence_note": "[[IMAGE NEEDED]] library-index.csv has a header and no rows. Move to pending_permission once a permission draft exists."
+   }
+  ],
+  "reference_only": [],
+  "permission_requests": [],
+  "drive_findings": [
+   "Not searched: fast mode, repo library register only per orchestrator instruction. library-index.csv has a header and no rows."
+  ]
+ }
+}
