@@ -1,0 +1,772 @@
+{
+ "agent": "planner-sme",
+ "task_id": "get-married-in-new-zealand",
+ "stage": "03",
+ "status": "complete",
+ "round": 1,
+ "inputs_used": [
+  "mcp__Apify__apify--web-fetch, one parallel round, 17 November 2026, no retries: https://www.govt.nz/browse/family-and-whanau/getting-married/ (200, read in full); https://www.govt.nz/browse/family-and-whanau/getting-married/how-to-get-married-in-nz/ (200, read in full); https://www.dia.govt.nz/Authentications (415, unsupported content type, not read)",
+  "mcp__Apify__apify--web-search, 17 November 2026, two queries: DOC wedding concession; govt.nz marriage licence overseas visitors. Used to locate pages; one DOC snippet recorded (fact_10). Non-official results not used as facts.",
+  "content/posts/get-married-in-new-zealand/00-input.json",
+  "content/posts/getting-married-in-costa-rica/03-source-pack.json (structure reference)",
+  "content/posts/getting-married-in-costa-rica/03-source-pack.json (fact_100 to fact_109 copied as fact_100 to fact_109, same sources and dates; Australian-side facts only)",
+  "content/posts/getting-married-in-costa-rica/03-source-pack-part-1.json (format reference)",
+  "mcp__Apify__apify--web-fetch one parallel round, 17 November 2026, no retries: https://www.smartraveller.gov.au/destinations/pacific/new-zealand (200, read in full); https://www.newzealand.com/au/queenstown/, /au/auckland/, /au/waiheke-island/, /au/bay-of-islands/, /au/hawkes-bay/, /au/marlborough/ (all 200, read)",
+  "mcp__Apify__apify--web-search, 17 November 2026: immigration.govt.nz NZeTA pages and NIWA climate pages found; snippets only, pages not read, no facts taken from snippets",
+  "mcp__Apify__apify--web-search (17 November 2026), two queries: tse.go.cr marriage of foreigners; dnn.go.cr / rree.go.cr notary and apostille. Results used to locate official pages; two snippet-only facts recorded (fact_22, fact_23).",
+  "mcp__Apify__apify--web-fetch, one parallel round, 17 November 2026, no retries, all 200 and read in full: https://www.tse.go.cr/pdf/requisitosytramites/Celebracion-Matrimonio-Civil.pdf; https://www.tse.go.cr/pdf/requisitosytramites/Inscripcion-de-matrimonio-civil-o-catolico.pdf; https://www.rree.go.cr/?sec=servicios&cat=autenticaciones; https://www.rree.go.cr/?sec=servicios&cat=autenticaciones&cont=1016",
+  "content/posts/getting-married-in-costa-rica/00-input.json (no 01-brief.json, 02-seo.json or 02-research/report.md; must_include derived from the orchestrator's task)",
+  "content/posts/getting-married-in-seychelles/03-source-pack.json (format reference only)"
+ ],
+ "self_qa": {
+  "checks": [
+   {
+    "check": "Every fact has a source and date",
+    "pass": true
+   },
+   {
+    "check": "No price without a source; all prices in needs_signoff",
+    "pass": true,
+    "note": "No amounts recorded; pages state amounts, written as 'a fee applies'."
+   },
+   {
+    "check": "Every must-include covered or [[VERIFY]]",
+    "pass": true,
+    "note": "Most licence-process items are [[VERIFY]] because the core licence page was not read."
+   },
+   {
+    "check": "No invented quotes, statistics or real weddings",
+    "pass": true
+   }
+  ],
+  "confidence": 0.35
+ },
+ "open_questions": [
+  {
+   "to": "luxury-writer",
+   "question": "Licence, witnesses, registration and Apostille now sourced (fact_200-224, read live by the orchestrator). No NIWA station figures and no wedding-specific DOC page: keep weather to Smartraveller hazard lines and seasons as questions; outdoor or conservation-land ceremonies only as questions to ask the celebrant and venue. Never state fee amounts. No same-sex legal position.",
+   "blocking": false
+  }
+ ],
+ "assumptions": [
+  "Must-include list taken from the orchestrator's batch A task (NZ legal side only).",
+  "Facts dated 17 November 2026, the date of reading. All facts from New Zealand government pages; DOC fact_10 is snippet-only and labelled so.",
+  "Non-official search snippets (TRACE, Tripadvisor, expat.com, celebrant blogs) were not recorded as facts; the 3-working-day claim appears only inside a VERIFY item as a lead to check.",
+  "Facts dated 17 November 2026 (the date of reading) except copied facts, which keep their original dates.",
+  "Conflicts recorded: Waiheke ferry 40 vs 45 minutes; Bay of Islands drive and flight times differ between text and panel on the same Tourism NZ page.",
+  "No NZ marriage-licence (Births, Deaths and Marriages NZ) facts in this batch.",
+  "Must-include list taken from the orchestrator's batch A task, as no 01-brief.json exists.",
+  "Facts dated 17 November 2026 (the date of reading). All sources are Costa Rican government pages, translated from Spanish without interpretation.",
+  "The TSE celebration sheet (fact_01 to fact_12) covers marriage celebrated before the Registro Civil. It does not cover notary-celebrated marriages; facts are not extended to that route.",
+  "The file was written once after both read rounds rather than every 3 facts, as all reads completed in a single parallel round."
+ ],
+ "verify_items": [],
+ "tools_used": [
+  "mcp__Apify__apify--web-search",
+  "mcp__Apify__apify--web-fetch",
+  "Bash"
+ ],
+ "next_agent": [
+  "luxury-writer"
+ ],
+ "payload": {
+  "facts": [
+   {
+    "fact_id": "fact_01",
+    "claim": "As at November 2026, the New Zealand Government 'Getting married' page (govt.nz, read in full) states: before you get married, you need to apply for a marriage licence, which confirms it is legal for you to marry. A fee applies.",
+    "source": "https://www.govt.nz/browse/family-and-whanau/getting-married/",
+    "source_type": "government",
+    "checked": "2026-11-17",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_02",
+    "claim": "As at November 2026, govt.nz 'Getting married' states: only registered celebrants can perform weddings or civil unions in New Zealand.",
+    "source": "https://www.govt.nz/browse/family-and-whanau/getting-married/",
+    "source_type": "government",
+    "checked": "2026-11-17",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_03",
+    "claim": "As at November 2026, govt.nz 'Getting married' states: a New Zealand marriage certificate is an official record of the marriage; it can be ordered online and posted. A fee applies.",
+    "source": "https://www.govt.nz/browse/family-and-whanau/getting-married/",
+    "source_type": "government",
+    "checked": "2026-11-17",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_04",
+    "claim": "As at November 2026, govt.nz 'Getting married' states: if you get married overseas you usually do not need to do anything in New Zealand beforehand; check with that country's officials.",
+    "source": "https://www.govt.nz/browse/family-and-whanau/getting-married/",
+    "source_type": "government",
+    "checked": "2026-11-17",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_05",
+    "claim": "As at November 2026, govt.nz 'How to get married in NZ' (read in full) states: you must get married by a celebrant, and you choose between a personalised ceremony and a registry ceremony.",
+    "source": "https://www.govt.nz/browse/family-and-whanau/getting-married/how-to-get-married-in-nz/",
+    "source_type": "government",
+    "checked": "2026-11-17",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_06",
+    "claim": "As at November 2026, govt.nz 'How to get married in NZ' states: most marriage ceremonies in New Zealand are personalised; you work with a celebrant to design the ceremony, you can hold it at any time, date and place you want, and you write your own vows. A fee applies for the licence, plus the celebrant's own charge.",
+    "source": "https://www.govt.nz/browse/family-and-whanau/getting-married/how-to-get-married-in-nz/",
+    "source_type": "government",
+    "checked": "2026-11-17",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_07",
+    "claim": "As at November 2026, govt.nz 'How to get married in NZ' states: a registry ceremony has standard vows and must take place during business hours on a weekday (9am to 5pm, Monday to Friday), not on a public holiday.",
+    "source": "https://www.govt.nz/browse/family-and-whanau/getting-married/how-to-get-married-in-nz/",
+    "source_type": "government",
+    "checked": "2026-11-17",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_08",
+    "claim": "As at November 2026, govt.nz 'How to get married in NZ' states: for a registry ceremony a set ceremony fee applies, paid to the celebrant in advance, on top of the licence fee, and you should contact your celebrant before applying for a marriage licence to make sure they will be available.",
+    "source": "https://www.govt.nz/browse/family-and-whanau/getting-married/how-to-get-married-in-nz/",
+    "source_type": "government",
+    "checked": "2026-11-17",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_09",
+    "claim": "As at November 2026, govt.nz 'Getting married' states: anyone who thinks there are legal reasons why someone should not marry can lodge a caveat or notice of objection.",
+    "source": "https://www.govt.nz/browse/family-and-whanau/getting-married/",
+    "source_type": "government",
+    "checked": "2026-11-17",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_10",
+    "claim": "As at November 2026, the Department of Conservation (doc.govt.nz) page 'Running your business or activity on DOC land', per its search-result snippet only (page not read in full): if you want to use public conservation land to run a business or activity you must get permission from DOC in the form of a concession. The page does not, in the text seen, name weddings.",
+    "source": "https://www.doc.govt.nz/get-involved/apply-for-permits/business-or-activity/",
+    "source_type": "government",
+    "checked": "2026-11-17",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_100",
+    "claim": "[Copied from getting-married-in-costa-rica 03-source-pack, same source and date.] As at November 2026, Smartraveller (read live 11 November 2026) says DFAT can issue a CNI in Australia, but some local authorities only accept CNIs issued in their country, so ask the destination's embassy or consulate whether you need a CNI, whether you can get it in Australia, and whether it also needs an authentication or apostille. The Wedded Advisor confirms current requirements.",
+    "source": "https://www.smartraveller.gov.au/planning-trip/advice-your-planned-activities/getting-married-overseas",
+    "source_type": "government",
+    "checked": "2026-11-11",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_101",
+    "claim": "[Copied from getting-married-in-costa-rica 03-source-pack, same source and date.] As at November 2026, Smartraveller 'Getting married overseas' (last updated 18/08/2026, read live 12 November 2026): some countries ask you to prove you aren't already married; the most common documents are a Certificate of No Impediment to Marriage (CNI) and certificates from a registry of births, deaths and marriages; the country may have more rules (for example a residence period); 'We can't tell you what you will need'; contact your destination's embassy or consulate. The Wedded Advisor confirms current requirements.",
+    "source": "https://www.smartraveller.gov.au/planning-trip/advice-your-planned-activities/getting-married-overseas",
+    "source_type": "government",
+    "checked": "2026-11-12",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_102",
+    "claim": "[Copied from getting-married-in-costa-rica 03-source-pack, same source and date.] As at November 2026, Smartraveller 'Getting married overseas' (read live 12 November 2026): your registry of births, deaths and marriages can give a statement that there's no record you have been married before, a Single Status certificate or a No Record Result certificate; local authorities may also ask for divorce papers, the death certificate of a deceased spouse, and your original birth certificate and passport.",
+    "source": "https://www.smartraveller.gov.au/planning-trip/advice-your-planned-activities/getting-married-overseas",
+    "source_type": "government",
+    "checked": "2026-11-12",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_103",
+    "claim": "[Copied from getting-married-in-costa-rica 03-source-pack, same source and date.] As at November 2026, Smartraveller 'Getting married overseas' (read live 12 November 2026): Australia doesn't recognise overseas marriages where one or both people are already married to someone else, not old enough to get married, too closely related, or forced to get married.",
+    "source": "https://www.smartraveller.gov.au/planning-trip/advice-your-planned-activities/getting-married-overseas",
+    "source_type": "government",
+    "checked": "2026-11-12",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_104",
+    "claim": "[Copied from getting-married-in-costa-rica 03-source-pack, same source and date.] As at November 2026, Smartraveller (read live 11 November 2026) says you cannot register an overseas marriage in Australia, but in most cases it is legally recognised if, when it took place, it was valid under the law of the country where it happened and would have been valid under Australian law had it occurred in Australia. A foreign marriage certificate is usually accepted as proof of the marriage but may not work as proof of a name change (check with your local registry of births, deaths and marriages), and Smartraveller suggests talking to a lawyer to confirm the certificate is valid in Australia. The Wedded Advisor confirms current requirements.",
+    "source": "https://www.smartraveller.gov.au/planning-trip/advice-your-planned-activities/getting-married-overseas",
+    "source_type": "government",
+    "checked": "2026-11-11",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_105",
+    "claim": "[Copied from getting-married-in-costa-rica 03-source-pack, same source and date.] As at November 2026, the Attorney-General's Department (read live 12 November 2026): if Australia recognises your overseas marriage, you can't get married again in Australia, but you may choose to hold another type of ceremony, such as a confirmation of vows or a recommitment ceremony.",
+    "source": "https://www.ag.gov.au/families-and-marriage/marriage/marriage-equality-australia",
+    "source_type": "government",
+    "checked": "2026-11-12",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_106",
+    "claim": "[Copied from getting-married-in-costa-rica 03-source-pack, same source and date.] Smartraveller (DFAT), 'How to get your documents legalised' (last updated 30/09/2026): ask the overseas authority which documents they need and which must be legalised; DFAT 'can't tell you what they may want'. Find out from the intended authority or legal representative whether you need an apostille or an authentication certificate.",
+    "source": "https://www.smartraveller.gov.au/our-role/notarial-services/how-get-your-documents-legalised",
+    "source_type": "government",
+    "checked": "2026-11-11",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_107",
+    "claim": "[Copied from getting-married-in-costa-rica 03-source-pack, same source and date.] Smartraveller: documents that are not original Australian public documents must first be notarised by an Australian Notary Public; the apostille or authentication certificate is applied directly to the document, so if you don't want originals marked, get a notarised copy legalised (and check the overseas authority accepts it).",
+    "source": "https://www.smartraveller.gov.au/our-role/notarial-services/how-get-your-documents-legalised",
+    "source_type": "government",
+    "checked": "2026-11-11",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_108",
+    "claim": "[Copied from getting-married-in-costa-rica 03-source-pack, same source and date.] Smartraveller: requests use the Document Legalisation Request Form, signed in front of an authorised witness, and can be lodged by appointment at an Australian Passport Office, in person at many Australian embassies, high commissions and consulates overseas (not Honorary Consul consulates), or by registered mail to the Authentications Section in Melbourne or Sydney. A fee applies (amount not recorded).",
+    "source": "https://www.smartraveller.gov.au/our-role/notarial-services/how-get-your-documents-legalised",
+    "source_type": "government",
+    "checked": "2026-11-11",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_109",
+    "claim": "[Copied from getting-married-in-costa-rica 03-source-pack, same source and date.] Smartraveller: processing times vary, with delays at the end of the school year and in peak holiday periods, for incomplete requests or unpaid fees, or when the issuing authority must be contacted. An Australian-issued apostille can be verified online via DFAT.",
+    "source": "https://www.smartraveller.gov.au/our-role/notarial-services/how-get-your-documents-legalised",
+    "source_type": "government",
+    "checked": "2026-11-11",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_110",
+    "claim": "As at November 2026, Smartraveller New Zealand (updated 22 July 2026, still current at 17 November 2026, read live 17 November 2026): the overall advice level is 'Exercise normal safety precautions' (level 1, green). Crime rates are similar to those in Australia; thieves often target valuables left in cars and campervans.",
+    "source": "https://www.smartraveller.gov.au/destinations/pacific/new-zealand",
+    "source_type": "government",
+    "checked": "2026-11-17",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_111",
+    "claim": "As at November 2026, Smartraveller New Zealand (updated 22 July 2026, still current at 17 November 2026, read live 17 November 2026): most Australian citizens don't need a visa to enter New Zealand unless they have a criminal record or have been deported from any country; Australian citizens are exempt from the New Zealand Electronic Travel Authority (NZeTA), while Australian permanent residents must apply online for an NZeTA. Entry and exit conditions can change at short notice; check Immigration New Zealand before travel. The Wedded Advisor confirms current requirements.",
+    "source": "https://www.smartraveller.gov.au/destinations/pacific/new-zealand",
+    "source_type": "government",
+    "checked": "2026-11-17",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_112",
+    "claim": "As at November 2026, Smartraveller New Zealand (updated 22 July 2026, still current at 17 November 2026, read live 17 November 2026): you must complete a New Zealand Traveller Declaration (NZTD) before passport control on arrival, online or in the NZTD app, at no cost; NZ visa or NZeTA holders must also complete one. New Zealand has strict biosecurity rules: undeclared quarantine items bring an instant fine, and false statements bring heavy fines and possible prison.",
+    "source": "https://www.smartraveller.gov.au/destinations/pacific/new-zealand",
+    "source_type": "government",
+    "checked": "2026-11-17",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_113",
+    "claim": "As at November 2026, Smartraveller New Zealand (updated 22 July 2026, still current at 17 November 2026, read live 17 November 2026): earthquakes are a constant risk; about 150 to 200 quakes a year are big enough to feel, and large damaging quakes can happen at any time. All of New Zealand's coastline is at risk of a tsunami, which could arrive within minutes; move to high ground immediately without waiting for an official warning if you feel a strong or long earthquake near the coast.",
+    "source": "https://www.smartraveller.gov.au/destinations/pacific/new-zealand",
+    "source_type": "government",
+    "checked": "2026-11-17",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_114",
+    "claim": "As at November 2026, Smartraveller New Zealand (updated 22 July 2026, still current at 17 November 2026, read live 17 November 2026): New Zealand has several active volcanoes (GeoNet monitors sites including Mt Ruapehu, Mt Tongariro and White Island); alert levels may rise quickly and you may be ordered to evacuate at short notice. Natural hazards also include flash flooding and bushfires in hot, dry conditions.",
+    "source": "https://www.smartraveller.gov.au/destinations/pacific/new-zealand",
+    "source_type": "government",
+    "checked": "2026-11-17",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_115",
+    "claim": "As at November 2026, Smartraveller New Zealand (updated 22 July 2026, still current at 17 November 2026, read live 17 November 2026): weather conditions can change quickly and severe weather can leave you stranded, especially in remote areas; monitor MetService forecasts and warnings. On the roads, ice, snow, fog, high winds and roaming animals cause hazards, heavy rain can cause landslides, there are few motorways outside major cities, and mountain and ski-field roads can be narrow, unpaved, without barriers and may need snow chains or a 4WD.",
+    "source": "https://www.smartraveller.gov.au/destinations/pacific/new-zealand",
+    "source_type": "government",
+    "checked": "2026-11-17",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_116",
+    "claim": "As at November 2026, Smartraveller New Zealand (updated 22 July 2026, still current at 17 November 2026, read live 17 November 2026): you can drive for up to 12 months on an Australian driver's licence. An Australian driver's licence is not approved ID for buying alcohol or entering licensed premises; approved ID includes a current passport, a NZ driver's licence or a Kiwi Access Card.",
+    "source": "https://www.smartraveller.gov.au/destinations/pacific/new-zealand",
+    "source_type": "government",
+    "checked": "2026-11-17",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_117",
+    "claim": "As at November 2026, Smartraveller New Zealand (updated 22 July 2026, still current at 17 November 2026, read live 17 November 2026): medical facilities are of a similar standard to Australia; a reciprocal health care agreement lets Australians access public medical care (show an Australian passport and valid Medicare card), but it doesn't cover ongoing treatment of existing conditions, family accommodation or flights, or flights to Australia, and doesn't replace travel insurance. ACC covers hospital treatment for accidents on a no-fault basis and ends when you leave NZ. There is currently an increased risk of measles; make sure vaccinations are up to date.",
+    "source": "https://www.smartraveller.gov.au/destinations/pacific/new-zealand",
+    "source_type": "government",
+    "checked": "2026-11-17",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_118",
+    "claim": "As at November 2026, Smartraveller New Zealand (updated 22 July 2026, still current at 17 November 2026, read live 17 November 2026): for consular help contact the Australian High Commission in Wellington or the Australian Consulate-General in Auckland; in an emergency, the 24-hour Consular Emergency Centre is +61 2 6261 3305 from overseas. Emergency services in New Zealand: call 111. Declare currency amounts over NZ$10,000 on arrival and departure (threshold stated by Smartraveller, not a cost).",
+    "source": "https://www.smartraveller.gov.au/destinations/pacific/new-zealand",
+    "source_type": "government",
+    "checked": "2026-11-17",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_119",
+    "claim": "Tourism New Zealand (newzealand.com, read live 17 November 2026): Queenstown sits on the shore of Lake Wakatipu among alpine ranges and is 'renowned for its four distinctive seasons': winter brings crisp, blue-sky days, spring keeps the snow but brings longer, warmer days, summer offers sunshine and long twilights, and autumn brings red and gold colour. Flights are listed as about 1h 50m from Auckland; Arrowtown is about 15 minutes from central Queenstown.",
+    "source": "https://www.newzealand.com/au/queenstown/",
+    "source_type": "tourism_board",
+    "checked": "2026-11-17",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_120",
+    "claim": "Tourism New Zealand (newzealand.com, read live 17 November 2026): beyond Queenstown the Central Otago landscape includes Arrowtown's gold-mining history, vineyard stays in the Gibbston, and rural Glenorchy and Paradise Valley at the northern tip of Lake Wakatipu, a short drive from Mt Aspiring National Park.",
+    "source": "https://www.newzealand.com/au/queenstown/",
+    "source_type": "tourism_board",
+    "checked": "2026-11-17",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_121",
+    "claim": "Tourism New Zealand (newzealand.com, read live 17 November 2026): Tamaki Makaurau Auckland has three main wine-growing areas (Waiheke Island, Matakana to the north and Kumeu to the west), 26 regional parks, black-sand west coast surf beaches such as Piha and Muriwai, and harbour-side dining in the Viaduct Harbour and Wynyard Quarter.",
+    "source": "https://www.newzealand.com/au/auckland/",
+    "source_type": "tourism_board",
+    "checked": "2026-11-17",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_122",
+    "claim": "Tourism New Zealand (newzealand.com, read live 17 November 2026): Waiheke Island in the Hauraki Gulf is described as a haven of vineyards, olive groves and beaches; its ferry is described as a 40-minute ride from downtown Auckland in the page summary and listed as 45m from Auckland Central in the 'Getting there' panel. There is a car ferry, and on the island there are buses and taxis.",
+    "source": "https://www.newzealand.com/au/waiheke-island/",
+    "source_type": "tourism_board",
+    "checked": "2026-11-17",
+    "is_price": false,
+    "conflicts": "Waiheke ferry time: page summary says 40 minutes, 'Getting there' panel says 45m. Use 'about 40 to 45 minutes' or verify with the ferry operator."
+   },
+   {
+    "fact_id": "fact_123",
+    "claim": "Tourism New Zealand (newzealand.com, read live 17 November 2026): the Bay of Islands is a subtropical area of 144 islands between Cape Brett and the Purerua Peninsula, including the towns of Opua, Paihia, Russell and Kerikeri. The page gives the drive from Auckland as 'three-hour' in its text and 3h 50m in its 'Getting there' panel, and the flight as 35 minutes in text and 50m in the panel. A passenger ferry links Paihia and Russell and a vehicle ferry links Opua and Russell.",
+    "source": "https://www.newzealand.com/au/bay-of-islands/",
+    "source_type": "tourism_board",
+    "checked": "2026-11-17",
+    "is_price": false,
+    "conflicts": "Same page: drive from Auckland 'three-hour' (text) vs 3h 50m (panel); flight 35 minutes (text) vs 50m (panel). See verify item."
+   },
+   {
+    "fact_id": "fact_124",
+    "claim": "Tourism New Zealand (newzealand.com, read live 17 November 2026): Hawke's Bay is described as 'Wine Country' with a warm, temperate climate, known for cabernet sauvignon, merlot, syrah and chardonnay and 30+ cellar doors; Napier and Hastings were rebuilt in Art Deco style after the 1931 earthquake, with an Art Deco Festival each February. Flights are listed as about 1h 5m from Auckland and 1h from Wellington.",
+    "source": "https://www.newzealand.com/au/hawkes-bay/",
+    "source_type": "tourism_board",
+    "checked": "2026-11-17",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_125",
+    "claim": "Tourism New Zealand (newzealand.com, read live 17 November 2026): Marlborough is New Zealand's largest winegrowing region, known for Sauvignon Blanc, with more than 30 cellar doors; the Marlborough Sounds are a 20-minute drive away with about 1500 km of coastline, and the page calls Marlborough one of New Zealand's sunniest places. Flights are listed as 30m from Wellington and 1h 30m from Auckland.",
+    "source": "https://www.newzealand.com/au/marlborough/",
+    "source_type": "tourism_board",
+    "checked": "2026-11-17",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_200",
+    "claim": "You do not need to be a New Zealand citizen; visitors to New Zealand can marry in New Zealand.",
+    "source": "https://www.govt.nz/browse/family-and-whanau/getting-married/get-a-marriage-licence/",
+    "source_type": "official_government",
+    "checked": "2026-11-17",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_201",
+    "claim": "Before getting married you must apply for a marriage licence, which confirms it is legal for you to marry; a fee applies.",
+    "source": "https://www.govt.nz/browse/family-and-whanau/getting-married/get-a-marriage-licence/",
+    "source_type": "official_government",
+    "checked": "2026-11-17",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_202",
+    "claim": "You need to arrange the licence at least 3 working days before you marry, and it expires after 3 months.",
+    "source": "https://www.govt.nz/browse/family-and-whanau/getting-married/get-a-marriage-licence/",
+    "source_type": "official_government",
+    "checked": "2026-11-17",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_203",
+    "claim": "Anyone can apply for a marriage licence online, whether in New Zealand or not; a paper form is also available.",
+    "source": "https://www.govt.nz/browse/family-and-whanau/getting-married/get-a-marriage-licence/",
+    "source_type": "official_government",
+    "checked": "2026-11-17",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_204",
+    "claim": "Only one of the couple needs to complete the application, but it needs information about both people.",
+    "source": "https://www.govt.nz/browse/family-and-whanau/getting-married/get-a-marriage-licence/",
+    "source_type": "official_government",
+    "checked": "2026-11-17",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_205",
+    "claim": "Couples outside New Zealand use the notice of intended marriage form for parties ordinarily resident outside New Zealand (BDM 58): fill it in except the statutory declaration, sign the declaration in front of an authorised person listed on the form, and send the fee to Births, Deaths and Marriages.",
+    "source": "https://www.govt.nz/browse/family-and-whanau/getting-married/get-a-marriage-licence/",
+    "source_type": "official_government",
+    "checked": "2026-11-17",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_206",
+    "claim": "When couples from outside New Zealand arrive in New Zealand, they need to visit a registry office to sign a declaration before the ceremony; addresses are on the application form.",
+    "source": "https://www.govt.nz/browse/family-and-whanau/getting-married/get-a-marriage-licence/",
+    "source_type": "official_government",
+    "checked": "2026-11-17",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_207",
+    "claim": "Signing the declaration is not the wedding ceremony; you declare you are legally allowed to marry and have been truthful on the form.",
+    "source": "https://www.govt.nz/browse/family-and-whanau/getting-married/get-a-marriage-licence/",
+    "source_type": "official_government",
+    "checked": "2026-11-17",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_208",
+    "claim": "You cannot legally marry if already married or in a civil union (unless changing the relationship with the same person), if closely related by birth, marriage or adoption, or if under 16.",
+    "source": "https://www.govt.nz/browse/family-and-whanau/getting-married/get-a-marriage-licence/",
+    "source_type": "official_government",
+    "checked": "2026-11-17",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_209",
+    "claim": "For a personalised ceremony the couple is sent the licence and 2 copies of the Copy of Particulars of Marriage, and gives all 3 documents to the celebrant before the wedding.",
+    "source": "https://www.govt.nz/browse/family-and-whanau/getting-married/get-a-marriage-licence/",
+    "source_type": "official_government",
+    "checked": "2026-11-17",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_210",
+    "claim": "You can only have the ceremony in the places you put on the licence application, so include a back-up venue.",
+    "source": "https://www.govt.nz/browse/family-and-whanau/getting-married/get-a-marriage-licence/",
+    "source_type": "official_government",
+    "checked": "2026-11-17",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_211",
+    "claim": "Celebrants set their own fees on top of the licence fee.",
+    "source": "https://www.govt.nz/browse/family-and-whanau/getting-married/get-a-marriage-licence/",
+    "source_type": "official_government",
+    "checked": "2026-11-17",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_212",
+    "claim": "In a personalised ceremony you choose the location and can marry on any day of the week, including weekends and public holidays, at any time.",
+    "source": "https://www.govt.nz/browse/family-and-whanau/getting-married/how-to-get-married-in-nz/personalised-ceremonies/",
+    "source_type": "official_government",
+    "checked": "2026-11-17",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_213",
+    "claim": "You need to know your venue when you apply for the marriage licence.",
+    "source": "https://www.govt.nz/browse/family-and-whanau/getting-married/how-to-get-married-in-nz/personalised-ceremonies/",
+    "source_type": "official_government",
+    "checked": "2026-11-17",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_214",
+    "claim": "A marriage cannot happen virtually: the couple, celebrant and witnesses must be physically present in the same place.",
+    "source": "https://www.govt.nz/browse/family-and-whanau/getting-married/how-to-get-married-in-nz/personalised-ceremonies/",
+    "source_type": "official_government",
+    "checked": "2026-11-17",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_215",
+    "claim": "You need 2 witnesses who understand what is happening, can clearly identify both of you and are satisfied you both consent; they need not have known you for any length of time.",
+    "source": "https://www.govt.nz/browse/family-and-whanau/getting-married/how-to-get-married-in-nz/personalised-ceremonies/",
+    "source_type": "official_government",
+    "checked": "2026-11-17",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_216",
+    "claim": "If the witnesses speak a different language, an interpreter is needed who signs a declaration before the ceremony.",
+    "source": "https://www.govt.nz/browse/family-and-whanau/getting-married/how-to-get-married-in-nz/personalised-ceremonies/",
+    "source_type": "official_government",
+    "checked": "2026-11-17",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_217",
+    "claim": "The celebrant gives the couple a copy of particulars of marriage, which is not the same as a marriage certificate, and uses another copy to register the marriage with the New Zealand government.",
+    "source": "https://www.govt.nz/browse/family-and-whanau/getting-married/how-to-get-married-in-nz/personalised-ceremonies/",
+    "source_type": "official_government",
+    "checked": "2026-11-17",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_218",
+    "claim": "Couples can write their own vows as long as each says words to the effect of 'I [name] take you [name] to be my legal wife/husband/partner'.",
+    "source": "https://www.govt.nz/organisations/births-deaths-and-marriages/information-for-marriage-celebrants/performing-a-marriage-or-civil-union-ceremony/",
+    "source_type": "official_government",
+    "checked": "2026-11-17",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_219",
+    "claim": "After the ceremony the couple and witnesses sign the 2 copies of the Copy of Particulars, the couple keeps one, and the celebrant sends the other to Births, Deaths and Marriages within 10 days.",
+    "source": "https://www.govt.nz/organisations/births-deaths-and-marriages/information-for-marriage-celebrants/performing-a-marriage-or-civil-union-ceremony/",
+    "source_type": "official_government",
+    "checked": "2026-11-17",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_220",
+    "claim": "If the place changes due to unforeseen circumstances, the new location must still be within New Zealand.",
+    "source": "https://www.govt.nz/organisations/births-deaths-and-marriages/information-for-marriage-celebrants/performing-a-marriage-or-civil-union-ceremony/",
+    "source_type": "official_government",
+    "checked": "2026-11-17",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_221",
+    "claim": "Australia is listed as an Apostille country for New Zealand documents.",
+    "source": "https://www.govt.nz/browse/passports-citizenship-and-identity/proving-and-protecting-your-identity/use-your-nz-documents-overseas/",
+    "source_type": "official_government",
+    "checked": "2026-11-17",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_222",
+    "claim": "Apostilles are done by the Department of Internal Affairs Authentication Unit; a paper apostille or an electronic e-apostille can be requested, so ask the Australian organisation which it wants.",
+    "source": "https://www.govt.nz/browse/passports-citizenship-and-identity/proving-and-protecting-your-identity/use-your-nz-documents-overseas/",
+    "source_type": "official_government",
+    "checked": "2026-11-17",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_223",
+    "claim": "The Authentication Unit processes apostille applications within 15 working days, with an urgent service within 5 working days for an extra fee; a fee applies.",
+    "source": "https://www.govt.nz/browse/passports-citizenship-and-identity/proving-and-protecting-your-identity/use-your-nz-documents-overseas/",
+    "source_type": "official_government",
+    "checked": "2026-11-17",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_224",
+    "claim": "Check whether the Authentication Unit needs an original or a notarised copy, and whether the organisation receiving it has its own requirements, such as recently issued documents.",
+    "source": "https://www.govt.nz/browse/passports-citizenship-and-identity/proving-and-protecting-your-identity/use-your-nz-documents-overseas/",
+    "source_type": "official_government",
+    "checked": "2026-11-17",
+    "is_price": false
+   }
+  ],
+  "insider_details": [
+   {
+    "detail": "Choose the ceremony type before anything else. A registry ceremony is locked to weekday business hours and standard vows, so a Saturday celebration at a chosen location means a personalised ceremony with a registered celebrant.",
+    "fact_ids": [
+     "fact_05",
+     "fact_06",
+     "fact_07"
+    ]
+   },
+   {
+    "detail": "Lock in the celebrant first, then apply for the licence. The government guidance tells couples to confirm the celebrant's availability before applying.",
+    "fact_ids": [
+     "fact_02",
+     "fact_08"
+    ]
+   },
+   {
+    "detail": "Order the marriage certificate online after the wedding and allow for postage to Australia before planning any name changes or paperwork back home.",
+    "fact_ids": [
+     "fact_03"
+    ]
+   },
+   {
+    "detail": "Australian guests on an Australian passport can fly in without a visa or NZeTA, but every guest must complete the free NZ Traveller Declaration before passport control; put the link in the guest welcome pack and remind them to declare food, plants and outdoor gear given the strict biosecurity fines.",
+    "fact_ids": [
+     "fact_111",
+     "fact_112"
+    ]
+   },
+   {
+    "detail": "Build weather flexibility into any outdoor or alpine ceremony: Smartraveller warns conditions change quickly and mountain roads can need snow chains or a 4WD, so book coach transfers with drivers who know the route and keep an undercover option for every outdoor moment.",
+    "fact_ids": [
+     "fact_115"
+    ]
+   },
+   {
+    "detail": "Queenstown is a real four-season destination: crisp blue-sky winters, long summer twilights and red-gold autumns, so pick the season for the photos you want, and use Arrowtown (about 15 minutes away) or the Gibbston for quieter guest accommodation.",
+    "fact_ids": [
+     "fact_119",
+     "fact_120"
+    ]
+   },
+   {
+    "detail": "For an island or bay wedding, the ferry is part of the timeline: Waiheke is about 40 to 45 minutes from downtown Auckland and Russell is reached by passenger ferry from Paihia or vehicle ferry from Opua, so schedule last sailings into the evening plan.",
+    "fact_ids": [
+     "fact_122",
+     "fact_123"
+    ]
+   },
+   {
+    "detail": "Australian guests should still buy travel insurance: the reciprocal health agreement and ACC help with public treatment and accidents, but don't cover flights home or family accommodation. And remind guests that an Australian driver's licence won't get them into licensed venues; carry a passport.",
+    "fact_ids": [
+     "fact_116",
+     "fact_117"
+    ]
+   }
+  ],
+  "quotes": [],
+  "real_weddings": [],
+  "verify_items": [
+   "[[VERIFY: Marriage licence application detail. The govt.nz 'Get a marriage licence' page was not read: online vs paper application, statutory declaration, ID documents, how far ahead to apply, any waiting period (a non-official snippet says 3 working days), licence validity period, and whether non-residents can apply.]]",
+   "[[VERIFY: Whether overseas visitors need any minimum stay or residency to marry in New Zealand. No official page read states this.]]",
+   "[[VERIFY: Witness requirement (two witnesses), signing on the day and how the celebrant returns the paperwork for registration. Not on the pages read.]]",
+   "[[VERIFY: Certificate types (e.g. printout vs certificate), processing time after the ceremony, and Apostille process and timing from the DIA Authentication Unit. dia.govt.nz/Authentications did not return readable text.]]",
+   "[[VERIFY: Whether a wedding ceremony on public conservation land needs a DOC concession or a one-off permit, and lead time. Only a DOC search snippet was seen; no wedding-specific DOC page read.]]",
+   "[[VERIFY: station-labelled climate figures for Queenstown, Auckland and other regions from NIWA (https://niwa.co.nz/climate-and-weather/climate-data-and-activities, found by search but not read). Until read, the weather section may only use Tourism NZ's Queenstown season description (fact_119) and Smartraveller's 'weather can change quickly' (fact_115).]]",
+   "[[VERIFY: Bay of Islands travel time from Auckland: Tourism NZ text says about three hours by road and 35 minutes by air; its panel says 3h 50m and 50m. Confirm before stating a figure, or give a range.]]",
+   "[[VERIFY: whether Australian permanent residents need an NZeTA (Smartraveller says yes; immigration.govt.nz page not read). Only mention if confirmed.]]"
+  ],
+  "needs_signoff": [],
+  "must_include_coverage": [
+   {
+    "item": "Who can marry; overseas visitors / non-residents, no residency",
+    "covered_by": [
+     "[[VERIFY: Marriage licence application detail. The govt.nz 'Get a marriage licence' page was not read: online vs paper application, statutory declaration, ID documents, how far ahead to apply, any waiting period (a non-official snippet says 3 working days), licence validity period, and whether non-residents can apply.]]",
+     "[[VERIFY: Whether overseas visitors need any minimum stay or residency to marry in New Zealand. No official page read states this.]]"
+    ]
+   },
+   {
+    "item": "Applying for a marriage licence (online or paper), lead time, waiting period",
+    "covered_by": [
+     "fact_01",
+     "fact_08",
+     "[[VERIFY: Marriage licence application detail. The govt.nz 'Get a marriage licence' page was not read: online vs paper application, statutory declaration, ID documents, how far ahead to apply, any waiting period (a non-official snippet says 3 working days), licence validity period, and whether non-residents can apply.]]"
+    ]
+   },
+   {
+    "item": "Statutory declaration and documents / ID",
+    "covered_by": [
+     "[[VERIFY: Marriage licence application detail. The govt.nz 'Get a marriage licence' page was not read: online vs paper application, statutory declaration, ID documents, how far ahead to apply, any waiting period (a non-official snippet says 3 working days), licence validity period, and whether non-residents can apply.]]"
+    ]
+   },
+   {
+    "item": "Licence validity period",
+    "covered_by": [
+     "[[VERIFY: Marriage licence application detail. The govt.nz 'Get a marriage licence' page was not read: online vs paper application, statutory declaration, ID documents, how far ahead to apply, any waiting period (a non-official snippet says 3 working days), licence validity period, and whether non-residents can apply.]]"
+    ]
+   },
+   {
+    "item": "Who performs it (registered celebrant or registry ceremony)",
+    "covered_by": [
+     "fact_02",
+     "fact_05",
+     "fact_06",
+     "fact_07",
+     "fact_08"
+    ]
+   },
+   {
+    "item": "Two witnesses",
+    "covered_by": [
+     "[[VERIFY: Witness requirement (two witnesses), signing on the day and how the celebrant returns the paperwork for registration. Not on the pages read.]]"
+    ]
+   },
+   {
+    "item": "Where the ceremony can take place",
+    "covered_by": [
+     "fact_06",
+     "fact_07"
+    ]
+   },
+   {
+    "item": "After the ceremony: signing, registration, certificate, timing; certificate types",
+    "covered_by": [
+     "fact_03",
+     "[[VERIFY: Witness requirement (two witnesses), signing on the day and how the celebrant returns the paperwork for registration. Not on the pages read.]]",
+     "[[VERIFY: Certificate types (e.g. printout vs certificate), processing time after the ceremony, and Apostille process and timing from the DIA Authentication Unit. dia.govt.nz/Authentications did not return readable text.]]"
+    ]
+   },
+   {
+    "item": "Fees ('a fee applies')",
+    "covered_by": [
+     "fact_01",
+     "fact_03",
+     "fact_06",
+     "fact_08"
+    ]
+   },
+   {
+    "item": "Apostille for an NZ certificate (DIA Authentication Unit)",
+    "covered_by": [
+     "[[VERIFY: Certificate types (e.g. printout vs certificate), processing time after the ceremony, and Apostille process and timing from the DIA Authentication Unit. dia.govt.nz/Authentications did not return readable text.]]"
+    ]
+   },
+   {
+    "item": "DOC concessions on conservation land",
+    "covered_by": [
+     "fact_10",
+     "[[VERIFY: Whether a wedding ceremony on public conservation land needs a DOC concession or a one-off permit, and lead time. Only a DOC search snippet was seen; no wedding-specific DOC page read.]]"
+    ]
+   },
+   {
+    "item": "Australian recognition, apostille/legalisation and CNI",
+    "covered_by": [
+     "fact_100",
+     "fact_101",
+     "fact_102",
+     "fact_103",
+     "fact_104",
+     "fact_105",
+     "fact_106",
+     "fact_107",
+     "fact_108",
+     "fact_109"
+    ]
+   },
+   {
+    "item": "Entry requirements for Australians (visa, NZeTA, NZTD)",
+    "covered_by": [
+     "fact_111",
+     "fact_112",
+     "[[VERIFY: whether Australian permanent residents need an NZeTA (Smartraveller says yes; immigration.govt.nz page not read). Only mention if confirmed.]]"
+    ]
+   },
+   {
+    "item": "Natural hazards, health and consular help",
+    "covered_by": [
+     "fact_110",
+     "fact_113",
+     "fact_114",
+     "fact_115",
+     "fact_117",
+     "fact_118"
+    ]
+   },
+   {
+    "item": "Weather by season and station",
+    "covered_by": [
+     "fact_119",
+     "[[VERIFY: station-labelled climate figures for Queenstown, Auckland and other regions from NIWA (https://niwa.co.nz/climate-and-weather/climate-data-and-activities, found by search but not read). Until read, the weather section may only use Tourism NZ's Queenstown season description (fact_119) and Smartraveller's 'weather can change quickly' (fact_115).]]"
+    ]
+   },
+   {
+    "item": "Regions: Queenstown / Central Otago, Auckland and Waiheke, Bay of Islands, Hawke's Bay, Marlborough",
+    "covered_by": [
+     "fact_119",
+     "fact_120",
+     "fact_121",
+     "fact_122",
+     "fact_123",
+     "fact_124",
+     "fact_125",
+     "[[VERIFY: Bay of Islands travel time from Auckland: Tourism NZ text says about three hours by road and 35 minutes by air; its panel says 3h 50m and 50m. Confirm before stating a figure, or give a range.]]"
+    ]
+   }
+  ]
+ }
+}

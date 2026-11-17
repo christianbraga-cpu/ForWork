@@ -1,0 +1,261 @@
+{
+ "agent": "planner-sme",
+ "task_id": "nz-top-up",
+ "stage": "03",
+ "status": "complete",
+ "round": 1,
+ "inputs_used": [
+  "mcp__Apify__apify--web-search (17 November 2026), two queries: tse.go.cr marriage of foreigners; dnn.go.cr / rree.go.cr notary and apostille. Results used to locate official pages; two snippet-only facts recorded (fact_22, fact_23).",
+  "mcp__Apify__apify--web-fetch, one parallel round, 17 November 2026, no retries, all 200 and read in full: https://www.tse.go.cr/pdf/requisitosytramites/Celebracion-Matrimonio-Civil.pdf; https://www.tse.go.cr/pdf/requisitosytramites/Inscripcion-de-matrimonio-civil-o-catolico.pdf; https://www.rree.go.cr/?sec=servicios&cat=autenticaciones; https://www.rree.go.cr/?sec=servicios&cat=autenticaciones&cont=1016",
+  "content/posts/getting-married-in-costa-rica/00-input.json (no 01-brief.json, 02-seo.json or 02-research/report.md; must_include derived from the orchestrator's task)",
+  "content/posts/getting-married-in-seychelles/03-source-pack.json (format reference only)"
+ ],
+ "self_qa": {
+  "checks": [
+   {
+    "check": "Every fact has a source and date",
+    "pass": true
+   },
+   {
+    "check": "No price without a source; all prices in needs_signoff",
+    "pass": true,
+    "note": "No amounts recorded. The rree.go.cr snippet states a stamp amount; deliberately not recorded (task rule). The TSE statement that the Registro Civil service is free is recorded as a statement, not a price."
+   },
+   {
+    "check": "Every must-include covered or [[VERIFY]]",
+    "pass": true
+   },
+   {
+    "check": "No invented quotes, statistics or real weddings",
+    "pass": true
+   }
+  ],
+  "confidence": 0.6
+ },
+ "open_questions": [],
+ "assumptions": [
+  "Must-include list taken from the orchestrator's batch A task, as no 01-brief.json exists.",
+  "Facts dated 17 November 2026 (the date of reading). All sources are Costa Rican government pages, translated from Spanish without interpretation.",
+  "The TSE celebration sheet (fact_01 to fact_12) covers marriage celebrated before the Registro Civil. It does not cover notary-celebrated marriages; facts are not extended to that route.",
+  "The file was written once after both read rounds rather than every 3 facts, as all reads completed in a single parallel round."
+ ],
+ "verify_items": [],
+ "tools_used": [
+  "mcp__Apify__apify--web-search",
+  "mcp__Apify__apify--web-fetch",
+  "Bash"
+ ],
+ "next_agent": [
+  "luxury-writer"
+ ],
+ "payload": {
+  "facts": [
+   {
+    "fact_id": "fact_200",
+    "claim": "You do not need to be a New Zealand citizen; visitors to New Zealand can marry in New Zealand.",
+    "source": "https://www.govt.nz/browse/family-and-whanau/getting-married/get-a-marriage-licence/",
+    "source_type": "official_government",
+    "checked": "2026-11-17",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_201",
+    "claim": "Before getting married you must apply for a marriage licence, which confirms it is legal for you to marry; a fee applies.",
+    "source": "https://www.govt.nz/browse/family-and-whanau/getting-married/get-a-marriage-licence/",
+    "source_type": "official_government",
+    "checked": "2026-11-17",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_202",
+    "claim": "You need to arrange the licence at least 3 working days before you marry, and it expires after 3 months.",
+    "source": "https://www.govt.nz/browse/family-and-whanau/getting-married/get-a-marriage-licence/",
+    "source_type": "official_government",
+    "checked": "2026-11-17",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_203",
+    "claim": "Anyone can apply for a marriage licence online, whether in New Zealand or not; a paper form is also available.",
+    "source": "https://www.govt.nz/browse/family-and-whanau/getting-married/get-a-marriage-licence/",
+    "source_type": "official_government",
+    "checked": "2026-11-17",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_204",
+    "claim": "Only one of the couple needs to complete the application, but it needs information about both people.",
+    "source": "https://www.govt.nz/browse/family-and-whanau/getting-married/get-a-marriage-licence/",
+    "source_type": "official_government",
+    "checked": "2026-11-17",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_205",
+    "claim": "Couples outside New Zealand use the notice of intended marriage form for parties ordinarily resident outside New Zealand (BDM 58): fill it in except the statutory declaration, sign the declaration in front of an authorised person listed on the form, and send the fee to Births, Deaths and Marriages.",
+    "source": "https://www.govt.nz/browse/family-and-whanau/getting-married/get-a-marriage-licence/",
+    "source_type": "official_government",
+    "checked": "2026-11-17",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_206",
+    "claim": "When couples from outside New Zealand arrive in New Zealand, they need to visit a registry office to sign a declaration before the ceremony; addresses are on the application form.",
+    "source": "https://www.govt.nz/browse/family-and-whanau/getting-married/get-a-marriage-licence/",
+    "source_type": "official_government",
+    "checked": "2026-11-17",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_207",
+    "claim": "Signing the declaration is not the wedding ceremony; you declare you are legally allowed to marry and have been truthful on the form.",
+    "source": "https://www.govt.nz/browse/family-and-whanau/getting-married/get-a-marriage-licence/",
+    "source_type": "official_government",
+    "checked": "2026-11-17",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_208",
+    "claim": "You cannot legally marry if already married or in a civil union (unless changing the relationship with the same person), if closely related by birth, marriage or adoption, or if under 16.",
+    "source": "https://www.govt.nz/browse/family-and-whanau/getting-married/get-a-marriage-licence/",
+    "source_type": "official_government",
+    "checked": "2026-11-17",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_209",
+    "claim": "For a personalised ceremony the couple is sent the licence and 2 copies of the Copy of Particulars of Marriage, and gives all 3 documents to the celebrant before the wedding.",
+    "source": "https://www.govt.nz/browse/family-and-whanau/getting-married/get-a-marriage-licence/",
+    "source_type": "official_government",
+    "checked": "2026-11-17",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_210",
+    "claim": "You can only have the ceremony in the places you put on the licence application, so include a back-up venue.",
+    "source": "https://www.govt.nz/browse/family-and-whanau/getting-married/get-a-marriage-licence/",
+    "source_type": "official_government",
+    "checked": "2026-11-17",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_211",
+    "claim": "Celebrants set their own fees on top of the licence fee.",
+    "source": "https://www.govt.nz/browse/family-and-whanau/getting-married/get-a-marriage-licence/",
+    "source_type": "official_government",
+    "checked": "2026-11-17",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_212",
+    "claim": "In a personalised ceremony you choose the location and can marry on any day of the week, including weekends and public holidays, at any time.",
+    "source": "https://www.govt.nz/browse/family-and-whanau/getting-married/how-to-get-married-in-nz/personalised-ceremonies/",
+    "source_type": "official_government",
+    "checked": "2026-11-17",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_213",
+    "claim": "You need to know your venue when you apply for the marriage licence.",
+    "source": "https://www.govt.nz/browse/family-and-whanau/getting-married/how-to-get-married-in-nz/personalised-ceremonies/",
+    "source_type": "official_government",
+    "checked": "2026-11-17",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_214",
+    "claim": "A marriage cannot happen virtually: the couple, celebrant and witnesses must be physically present in the same place.",
+    "source": "https://www.govt.nz/browse/family-and-whanau/getting-married/how-to-get-married-in-nz/personalised-ceremonies/",
+    "source_type": "official_government",
+    "checked": "2026-11-17",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_215",
+    "claim": "You need 2 witnesses who understand what is happening, can clearly identify both of you and are satisfied you both consent; they need not have known you for any length of time.",
+    "source": "https://www.govt.nz/browse/family-and-whanau/getting-married/how-to-get-married-in-nz/personalised-ceremonies/",
+    "source_type": "official_government",
+    "checked": "2026-11-17",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_216",
+    "claim": "If the witnesses speak a different language, an interpreter is needed who signs a declaration before the ceremony.",
+    "source": "https://www.govt.nz/browse/family-and-whanau/getting-married/how-to-get-married-in-nz/personalised-ceremonies/",
+    "source_type": "official_government",
+    "checked": "2026-11-17",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_217",
+    "claim": "The celebrant gives the couple a copy of particulars of marriage, which is not the same as a marriage certificate, and uses another copy to register the marriage with the New Zealand government.",
+    "source": "https://www.govt.nz/browse/family-and-whanau/getting-married/how-to-get-married-in-nz/personalised-ceremonies/",
+    "source_type": "official_government",
+    "checked": "2026-11-17",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_218",
+    "claim": "Couples can write their own vows as long as each says words to the effect of 'I [name] take you [name] to be my legal wife/husband/partner'.",
+    "source": "https://www.govt.nz/organisations/births-deaths-and-marriages/information-for-marriage-celebrants/performing-a-marriage-or-civil-union-ceremony/",
+    "source_type": "official_government",
+    "checked": "2026-11-17",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_219",
+    "claim": "After the ceremony the couple and witnesses sign the 2 copies of the Copy of Particulars, the couple keeps one, and the celebrant sends the other to Births, Deaths and Marriages within 10 days.",
+    "source": "https://www.govt.nz/organisations/births-deaths-and-marriages/information-for-marriage-celebrants/performing-a-marriage-or-civil-union-ceremony/",
+    "source_type": "official_government",
+    "checked": "2026-11-17",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_220",
+    "claim": "If the place changes due to unforeseen circumstances, the new location must still be within New Zealand.",
+    "source": "https://www.govt.nz/organisations/births-deaths-and-marriages/information-for-marriage-celebrants/performing-a-marriage-or-civil-union-ceremony/",
+    "source_type": "official_government",
+    "checked": "2026-11-17",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_221",
+    "claim": "Australia is listed as an Apostille country for New Zealand documents.",
+    "source": "https://www.govt.nz/browse/passports-citizenship-and-identity/proving-and-protecting-your-identity/use-your-nz-documents-overseas/",
+    "source_type": "official_government",
+    "checked": "2026-11-17",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_222",
+    "claim": "Apostilles are done by the Department of Internal Affairs Authentication Unit; a paper apostille or an electronic e-apostille can be requested, so ask the Australian organisation which it wants.",
+    "source": "https://www.govt.nz/browse/passports-citizenship-and-identity/proving-and-protecting-your-identity/use-your-nz-documents-overseas/",
+    "source_type": "official_government",
+    "checked": "2026-11-17",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_223",
+    "claim": "The Authentication Unit processes apostille applications within 15 working days, with an urgent service within 5 working days for an extra fee; a fee applies.",
+    "source": "https://www.govt.nz/browse/passports-citizenship-and-identity/proving-and-protecting-your-identity/use-your-nz-documents-overseas/",
+    "source_type": "official_government",
+    "checked": "2026-11-17",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_224",
+    "claim": "Check whether the Authentication Unit needs an original or a notarised copy, and whether the organisation receiving it has its own requirements, such as recently issued documents.",
+    "source": "https://www.govt.nz/browse/passports-citizenship-and-identity/proving-and-protecting-your-identity/use-your-nz-documents-overseas/",
+    "source_type": "official_government",
+    "checked": "2026-11-17",
+    "is_price": false
+   }
+  ],
+  "insider_details": [],
+  "quotes": [],
+  "real_weddings": [],
+  "verify_items": [],
+  "needs_signoff": [],
+  "must_include_coverage": []
+ }
+}
