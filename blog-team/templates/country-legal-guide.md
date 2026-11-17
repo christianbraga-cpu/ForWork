@@ -47,4 +47,19 @@ from the France guide (articles/2026-11-16-getting-married-in-france, 16 Nov
   contact until the user supplies CONCIERGE-PAY.
 - Destination link: /destinations/<region>/<country>; plus the country's live
   inspiration articles from link-map.md.
-- 1,900 to 2,500 reader words.
+- 1,900 to 2,500 reader words. Writers overshoot: brief for 2,300 and do not
+  repeat body paragraphs in the FAQ.
+- (Vietnam, 17 Nov 2026) The timeline table must agree with the one-month NOIM
+  rule and the destination's processing time: on the marry-in-Australia route,
+  the NOIM goes in about 12 months out and the legal ceremony happens a few
+  weeks before you fly; the destination week holds no legal step.
+- (Vietnam) When a country has more than one Australian mission, state each
+  mission's CNI procedure separately; never extend one post's fee, language or
+  timing to another ("Ask the Embassy" when unsourced).
+- (Vietnam) No research-method language in reader copy ("search snippets",
+  "we could not read"); write "We last reviewed these sources in <month year>",
+  never a single-day "we checked every source" claim.
+- (Vietnam) When the legal answer is uncertain, advise not to pay venue
+  deposits until the deciding authority answers in writing.
+- Categories: the primary category only unless categories.md confirms others.
+  SEO title 60 characters or fewer, no year unless the content is dated to it.
