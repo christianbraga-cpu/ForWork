@@ -19,4 +19,6 @@
 - Links: /destinations/asia/bali (live), /destination-wedding-packages, /wonderland-concierge, 2 or 3 related; no DRAFT siblings; no Wedded World plug.
 
 ## Stages
-- **Stage 0 + 1 fast (strategist, research A brand, research B legal and travel):** running.
+- **Stage 1 fast research A (brand):** DONE. 18 facts from our live pages. Our three Bali packages (Akohara, Regent Canggu, Apurva) publish no prices. Only priced listing: Conrad Bali (100 guests AUD 34,513, but header "From USD 7,050"). Conflicts on our own site: concierge page now shows US$200, "Starting from US$5,500" and US$3,000 (brand-profile.md says $250 and $3,500); the Bali page calls Concierge "complimentary" while the concierge page charges; Bali page budget "AUD $5,000-$50,000" vs our 2026 cost guide USD 38,000-84,000 for 100 guests; AYANA ballroom 1,260 vs 2,300 seated; 800+ vs 10,000+ weddings.
+- **Decision (default, change if you want):** the article quotes no package or Concierge prices and no wedding-count claim, and does not call Concierge complimentary, until marketing and Nic resolve the site conflicts (SITE-CONFLICTS). It names our three Bali packages and describes their inclusions as our pages word them, with "ask for an itemised quote". Conrad's figures are not used (currency conflict).
+- **Stage 0 + 1 fast (strategist, research B):** running.
