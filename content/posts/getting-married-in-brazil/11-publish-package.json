@@ -1,0 +1,306 @@
+{
+  "agent": "cms-publisher",
+  "task_id": "getting-married-in-brazil",
+  "stage": "11",
+  "status": "complete",
+  "round": 1,
+  "inputs_used": [
+    "CLAUDE.md",
+    "content-system/schemas/11-publish-package.schema.json",
+    "content/posts/getting-married-in-brazil/01-brief.json",
+    "content/posts/getting-married-in-brazil/02-seo.json",
+    "content/posts/getting-married-in-brazil/04-images.json",
+    "content/posts/getting-married-in-brazil/08-final.md",
+    "content/posts/getting-married-in-brazil/09-cro.json",
+    "content/posts/get-married-in-new-zealand/11-publish-package.json (format model)"
+  ],
+  "self_qa": {
+    "checks": [
+      {
+        "check": "Front matter and all <!-- fact_xx --> markers removed; H1 is the title; 6 image-slot comments kept verbatim; links and UTM links unchanged",
+        "pass": true
+      },
+      {
+        "check": "Exactly 4 key takeaways and 6 FAQ pairs verbatim from the body",
+        "pass": true
+      },
+      {
+        "check": "Meta title and description from 02-seo.json; no prices, no em dashes",
+        "pass": true
+      },
+      {
+        "check": "primary_category equals categories[0] (Destination Weddings)",
+        "pass": true
+      },
+      {
+        "check": "status draft; nothing uploaded, saved or published",
+        "pass": true
+      }
+    ],
+    "confidence": 0.88
+  },
+  "open_questions": [
+    {
+      "to": "orchestrator",
+      "question": "CMS upload not attempted: FAST MODE package only, no Chrome in this session and the field map is not confirmed. A human saves as Draft and clicks Publish, or run /wedded-blog resume=getting-married-in-brazil once the field map is confirmed.",
+      "blocking": true
+    },
+    {
+      "to": "orchestrator",
+      "question": "The /destination-weddings folder and the Destination Weddings category must exist in the CMS before the draft is saved; Brazil, Latin America & Caribbean and Planning Guides categories are inferred.",
+      "blocking": true
+    },
+    {
+      "to": "orchestrator",
+      "question": "Series sister links (Hawaii, Mauritius, Seychelles, Costa Rica, New Zealand) point to draft posts: publish together or remove that sentence.",
+      "blocking": true
+    }
+  ],
+  "assumptions": [
+    "H1 and Article headline from 08-final.md front matter; meta title and description from 02-seo.json unchanged.",
+    "Excerpt is the first two sentences of the opening paragraph, shortened to the 300-character limit (district clause dropped).",
+    "JSON-LD is Article + BreadcrumbList (Home > Destination Weddings > post) + FAQPage (link markup stripped from answers).",
+    "Image order follows 04-images.json; alt and caption from 04-images.json.",
+    "08-final.md has no <!-- CTA: primary --> marker; CTAs are the existing inline links, recorded in cta, secondary_cta.",
+    "Byline Wedded Wonderland (organisation)."
+  ],
+  "verify_items": [],
+  "tools_used": [
+    "Bash (python3 -I)"
+  ],
+  "next_agent": [
+    "orchestrator"
+  ],
+  "payload": {
+    "title": "How to Get Married in Brazil as a Foreigner",
+    "slug": "getting-married-in-brazil",
+    "url_path": "/destination-weddings/getting-married-in-brazil",
+    "content_type": "planning_guide",
+    "categories": [
+      "Destination Weddings",
+      "Brazil",
+      "Latin America & Caribbean",
+      "Planning Guides"
+    ],
+    "primary_category": "Destination Weddings",
+    "tags": [
+      "Getting Married in Brazil",
+      "Getting Married in {Country}",
+      "Brazil",
+      "Cartório de Registro Civil",
+      "Legal requirements",
+      "Apostille",
+      "Certificate of No Impediment",
+      "Wedding planning"
+    ],
+    "excerpt": "Getting married in Brazil legally means the civil process at a Cartório de Registro Civil, the civil registry office. You apply to be cleared to marry, a step called the habilitação, then marry on a day, at a time and in a place the registrar sets with you.",
+    "key_takeaways": [
+      "Brazilian law ties the marriage application, the habilitação, to the civil registry of the district where one of you resides, so your first question for the cartório, before flights or a venue, is whether and how a couple living abroad can apply.",
+      "Foreign documents generally need an apostille at home and then a sworn Portuguese translation that can only be done in Brazil, so build time in Brazil for it.",
+      "A religious ceremony can carry civil effect when the couple are cleared first and the marriage is registered within 30 days of the ceremony.",
+      "For Australians, a Certificate of No Impediment comes from DFAT or the Australian Embassy in Brasília, and an overseas marriage is in most cases recognised at home if it was valid where it took place."
+    ],
+    "body_markdown_file": "content/posts/getting-married-in-brazil/11-body.md",
+    "faq": [
+      {
+        "q": "Can foreigners get married in Brazil?",
+        "a": "The legal route is the civil process at a Cartório de Registro Civil. You apply for the habilitação with the documents the civil law requires, at the civil registry of the district where one of you resides. If neither of you lives in Brazil, the first question for the cartório is whether and how you can apply, then how long to allow in Brazil."
+      },
+      {
+        "q": "How much does it cost to get married in Brazil?",
+        "a": "It depends on your venue, guest numbers and dates. A fee applies for an Australian CNI and for the Embassy's notarial services, and the official pages linked in the cost section show the current amounts. Ask the cartório and the sworn translator for their charges in writing."
+      },
+      {
+        "q": "Do we need a Certificate of No Impediment to marry in Brazil?",
+        "a": "For Australians: ask the cartório. DFAT advises confirming with the local authority whether a CNI is needed, whether a state or territory single status certificate will do instead, and whether it must be issued in Brazil or apostilled. The Australian Embassy in Brasília and the Consulate-General in São Paulo issue CNIs by appointment."
+      },
+      {
+        "q": "Is a religious wedding in Brazil legally binding?",
+        "a": "It can be. You obtain the certificate of habilitação first, and the religious marriage is registered within 30 days of the ceremony at the registry office that issued it. Registration takes legal effect from the date of the ceremony."
+      },
+      {
+        "q": "How many witnesses do we need?",
+        "a": "At least two, unless the law provides otherwise. Ask the cartório what it requires of them."
+      },
+      {
+        "q": "Can we get married on a beach in Brazil?",
+        "a": "The civil marriage is held on the day, at the time and in the place you request and the registrar sets. Ask the cartório whether the presiding officer will come to the beach, and ask your venue who gives permission to use it."
+      }
+    ],
+    "images": [
+      {
+        "slot_id": "featured",
+        "file": "content/posts/getting-married-in-brazil/images/getting-married-in-brazil-beach-ceremony-setup-golden-hour.webp",
+        "role": "featured",
+        "alt": "Wedding ceremony set-up on a tropical beach lined with palms at golden hour in Brazil",
+        "caption": "<Place>, <town>, Brazil. Photo: <credit> (fill once sourced).",
+        "status": "needed"
+      },
+      {
+        "slot_id": "documents",
+        "file": "content/posts/getting-married-in-brazil/images/getting-married-in-brazil-documents-still-life-linen.webp",
+        "role": "inline",
+        "alt": "Two closed passports and a linen folder of papers beside a fountain pen on natural linen",
+        "caption": "Illustrative image (if AI, after approval) or Photo: <credit> (fill once sourced).",
+        "status": "needed"
+      },
+      {
+        "slot_id": "civil-ceremony",
+        "file": "content/posts/getting-married-in-brazil/images/getting-married-in-brazil-civil-ceremony-officiant-garden.webp",
+        "role": "inline",
+        "alt": "Couple exchanging vows with an officiant at a small table in a tropical garden",
+        "caption": "<Place>, <town>, Brazil. Photo: <credit> (fill once sourced).",
+        "status": "needed"
+      },
+      {
+        "slot_id": "certificate-australia",
+        "file": "content/posts/getting-married-in-brazil/images/getting-married-in-brazil-certificate-folder-rings-still-life.webp",
+        "role": "inline",
+        "alt": "Wedding rings resting on a closed cream document folder tied with ribbon, beside two passports",
+        "caption": "Illustrative image (if AI, after approval) or Photo: <credit> (fill once sourced).",
+        "status": "needed"
+      },
+      {
+        "slot_id": "when-to-marry",
+        "file": "content/posts/getting-married-in-brazil/images/getting-married-in-brazil-seasonal-terrace-reception-sunset.webp",
+        "role": "inline",
+        "alt": "Long reception table on a terrace overlooking the ocean at sunset under a clear sky",
+        "caption": "<Place>, <town>, Brazil. Photo: <credit> (fill once sourced; month taken recorded).",
+        "status": "needed"
+      },
+      {
+        "slot_id": "choose-your-region",
+        "file": "content/posts/getting-married-in-brazil/images/getting-married-in-brazil-region-coastline-wide-view.webp",
+        "role": "inline",
+        "alt": "Wide view of a green tropical coastline and calm turquoise bay on a clear day in Brazil",
+        "caption": "<Place>, <town>, Brazil. Photo: <credit> (fill once sourced).",
+        "status": "needed"
+      }
+    ],
+    "cta": {
+      "text": "Speak with Wedded Concierge",
+      "subtext": "One Wedded Advisor, with the fee agreed in writing before any work begins.",
+      "link": "https://weddedwonderland.com/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=getting-married-in-brazil&utm_content=primary",
+      "placement": "Existing inline link at the end of 'Venues and planning' (line 193, anchor 'speak with Wedded Concierge'), after the legal steps, documents, recognition, costs and regions are covered. Unchanged."
+    },
+    "secondary_cta": {
+      "text": "Ask Wedded Concierge",
+      "subtext": "Your Wedded Advisor is your single point of contact from start to finish.",
+      "link": "https://weddedwonderland.com/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=getting-married-in-brazil&utm_content=secondary",
+      "placement": "Existing final line of 'How much does it cost to get married in Brazil?' (line 167, anchor 'ask Wedded Concierge'), where the reader wants the picture costed on their own dates. Unchanged."
+    },
+    "seo": {
+      "meta_title": "How to Get Married in Brazil as a Foreigner",
+      "meta_description": "How foreign couples marry legally in Brazil: the cartório, habilitação, apostilled and translated documents, witnesses and recognition back home.",
+      "focus_keyword": "getting married in brazil",
+      "canonical": "https://weddedwonderland.com/destination-weddings/getting-married-in-brazil",
+      "og_image_slot": "featured"
+    },
+    "schema_jsonld": {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Article",
+          "@id": "https://weddedwonderland.com/destination-weddings/getting-married-in-brazil#article",
+          "headline": "How to Get Married in Brazil as a Foreigner",
+          "description": "How foreign couples marry legally in Brazil: the cartório, habilitação, apostilled and translated documents, witnesses and recognition back home.",
+          "author": {
+            "@type": "Organization",
+            "name": "Wedded Wonderland",
+            "url": "https://weddedwonderland.com/"
+          },
+          "publisher": {
+            "@type": "Organization",
+            "name": "Wedded Wonderland",
+            "url": "https://weddedwonderland.com/"
+          },
+          "datePublished": "",
+          "mainEntityOfPage": "https://weddedwonderland.com/destination-weddings/getting-married-in-brazil",
+          "inLanguage": "en-AU"
+        },
+        {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Home",
+              "item": "https://weddedwonderland.com/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Destination Weddings",
+              "item": "https://weddedwonderland.com/destination-weddings"
+            },
+            {
+              "@type": "ListItem",
+              "position": 3,
+              "name": "How to Get Married in Brazil as a Foreigner",
+              "item": "https://weddedwonderland.com/destination-weddings/getting-married-in-brazil"
+            }
+          ]
+        },
+        {
+          "@type": "FAQPage",
+          "@id": "https://weddedwonderland.com/destination-weddings/getting-married-in-brazil#faq",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "Can foreigners get married in Brazil?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "The legal route is the civil process at a Cartório de Registro Civil. You apply for the habilitação with the documents the civil law requires, at the civil registry of the district where one of you resides. If neither of you lives in Brazil, the first question for the cartório is whether and how you can apply, then how long to allow in Brazil."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "How much does it cost to get married in Brazil?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "It depends on your venue, guest numbers and dates. A fee applies for an Australian CNI and for the Embassy's notarial services, and the official pages linked in the cost section show the current amounts. Ask the cartório and the sworn translator for their charges in writing."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Do we need a Certificate of No Impediment to marry in Brazil?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "For Australians: ask the cartório. DFAT advises confirming with the local authority whether a CNI is needed, whether a state or territory single status certificate will do instead, and whether it must be issued in Brazil or apostilled. The Australian Embassy in Brasília and the Consulate-General in São Paulo issue CNIs by appointment."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Is a religious wedding in Brazil legally binding?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "It can be. You obtain the certificate of habilitação first, and the religious marriage is registered within 30 days of the ceremony at the registry office that issued it. Registration takes legal effect from the date of the ceremony."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "How many witnesses do we need?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "At least two, unless the law provides otherwise. Ask the cartório what it requires of them."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Can we get married on a beach in Brazil?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "The civil marriage is held on the day, at the time and in the place you request and the registrar sets. Ask the cartório whether the presiding officer will come to the beach, and ask your venue who gives permission to use it."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    "author": "Wedded Wonderland",
+    "status": "draft",
+    "verify_items": [],
+    "needs_signoff": [],
+    "draft_note": "DRAFT. Do not publish until checked: no [[VERIFY]] items in the article copy; no prices or fee amounts (CNI, notarial, legalisation, cartório and translation fees are described as fees that apply, with links to official pages or a prompt to ask), nothing for Nic to sign off. Image slots needed (6 of 6, none approved): featured, documents, civil-ceremony, certificate-australia, when-to-marry, choose-your-region. featured, civil-ceremony, when-to-marry and choose-your-region: real places or a licensed real wedding with written consent, location proven by media kit, register or EXIF, never AI; documents and certificate-australia are still lifes (AI only with Wedded Wonderland approval, captioned 'Illustrative image'). Visit Brasil / Embratur media only once its licence is confirmed to cover third-party commercial blog use. Captions with place and credit to fill once sourced. Series sister links to Hawaii, Mauritius, Seychelles, Costa Rica and New Zealand point to draft posts: publish together or remove that sentence. CMS setup: the /destination-weddings folder and the Destination Weddings category must exist before the draft is saved. Do not Publish or Schedule; a human clicks Publish."
+  }
+}
