@@ -1,0 +1,106 @@
+{
+  "agent": "cro-specialist",
+  "task_id": "getting-married-in-costa-rica",
+  "stage": "09",
+  "status": "complete",
+  "round": 1,
+  "inputs_used": [
+    "CLAUDE.md",
+    "content/posts/getting-married-in-costa-rica/01-brief.json",
+    "content/posts/getting-married-in-costa-rica/07-panel.json (summary)",
+    "content/posts/getting-married-in-costa-rica/07-icp/*.json (cta_reaction)",
+    "content/posts/getting-married-in-costa-rica/08-final.md",
+    "content/posts/getting-married-in-seychelles/09-cro.json (format model)"
+  ],
+  "self_qa": {
+    "checks": [
+      {
+        "check": "Primary CTA 6 words or fewer, no 'click here', no exclamation mark",
+        "pass": true,
+        "note": "'Speak with Wedded Concierge' (4 words), matching the existing anchor on line 171."
+      },
+      {
+        "check": "utm_content primary, secondary, closing, magnet each appear exactly once",
+        "pass": true,
+        "note": "Checked by grep on 08-final.md: 1 each, 4 UTM links in total."
+      },
+      {
+        "check": "UTMs only on /wonderland-concierge (3) and /magazine (1)",
+        "pass": true
+      },
+      {
+        "check": "Primary /wonderland-concierge anchor names Wedded Concierge",
+        "pass": true,
+        "note": "Line 171 'speak with Wedded Concierge'; secondary (line 156) 'talk them through with Wedded Concierge'; closing (line 201) 'start a conversation with Wedded Concierge'."
+      },
+      {
+        "check": "CTA copy only from brand facts 'Claims we can make': single point of contact, inclusions in writing, time zone and AUD quotes, fee agreed in writing before work begins",
+        "pass": true,
+        "note": "No figures or prices in any CTA text or subtext."
+      },
+      {
+        "check": "No legal paperwork help, 'free' or no-cost wording, perks, Wedded Privileges, availability promises, call-first, em dashes; Australian English; 08-final.md not edited",
+        "pass": true,
+        "note": "08-final.md has no <!-- CTA: ... --> markers and none were added."
+      }
+    ],
+    "confidence": 0.85
+  },
+  "open_questions": [
+    {
+      "to": "orchestrator",
+      "question": "Panel cta_reactions: planner_couple, funding_parent and sceptic 'maybe'; search_visitor and uhnw 'no'. The sceptic wants to know how the fee is worked out before enquiring, and uhnw will not enquire through a public blog link; neither answer is in brand facts, so nothing was added. search_visitor came for the legal steps and is served by the /magazine magnet. Re-run cro-specialist if fee structure wording or a private enquiry route is confirmed.",
+      "blocking": false
+    },
+    {
+      "to": "orchestrator",
+      "question": "08-final.md contains no <!-- CTA: primary --> marker; placements rely on the existing inline links.",
+      "blocking": false
+    }
+  ],
+  "assumptions": [
+    "FAST MODE: persona cta_reactions read in summary only; placements follow the existing inline links and the getting-married-in-seychelles model."
+  ],
+  "verify_items": [],
+  "tools_used": [
+    "Bash (grep, python3 -I)"
+  ],
+  "payload": {
+    "journey_stage": "planning",
+    "primary_cta": {
+      "text": "Speak with Wedded Concierge",
+      "subtext": "One Wedded Advisor confirms the inclusions in writing before you commit.",
+      "link": "https://weddedwonderland.com/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=getting-married-in-costa-rica&utm_content=primary",
+      "placement": "Existing inline link in 'Venues and planning' (line 171, anchor 'speak with Wedded Concierge'), after the legal steps, certificate, ceremony settings, seasons and region chooser are done and the post turns to comparing resorts. Unchanged."
+    },
+    "secondary_cta": {
+      "text": "Talk your coast through",
+      "subtext": "Your Wedded Advisor is your single point of contact from start to finish.",
+      "link": "https://weddedwonderland.com/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=getting-married-in-costa-rica&utm_content=secondary",
+      "placement": "Existing final line of 'Choosing your region' (line 156, anchor 'talk them through with Wedded Concierge'), where the reader is weighing Guanacaste, the Central Pacific, the Caribbean and the Central Valley. Unchanged."
+    },
+    "lead_magnet": {
+      "name": "Wedded Wonderland magazine",
+      "link": "https://weddedwonderland.com/magazine?utm_source=blog&utm_medium=content&utm_campaign=getting-married-in-costa-rica&utm_content=magnet",
+      "placement": "Existing final line of 'Venues and planning' (line 173), for readers gathering ideas before they enquire. Unchanged.",
+      "exists": true
+    },
+    "closing_cta": {
+      "text": "Start a conversation with Wedded Concierge",
+      "subtext": "Quotes in AUD, in your time zone, with the fee agreed in writing before any work begins.",
+      "link": "https://weddedwonderland.com/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=getting-married-in-costa-rica&utm_content=closing",
+      "placement": "Existing closing paragraph under 'Plan your Costa Rica wedding with Wedded Concierge' (line 201). Unchanged."
+    },
+    "tracking": [
+      "https://weddedwonderland.com/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=getting-married-in-costa-rica&utm_content=primary",
+      "https://weddedwonderland.com/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=getting-married-in-costa-rica&utm_content=secondary",
+      "https://weddedwonderland.com/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=getting-married-in-costa-rica&utm_content=closing",
+      "https://weddedwonderland.com/magazine?utm_source=blog&utm_medium=content&utm_campaign=getting-married-in-costa-rica&utm_content=magnet"
+    ],
+    "copy_changes": [],
+    "rationale": "Brief journey_stage is 'planning': the couple has Costa Rica on the shortlist and needs the legal sequence before they commit to a resort or coast, so the invitation to Wedded Concierge appears only once the Registro Civil and notary steps, certificate and recognition are covered and the post turns to regions, venues and planning. The Wedded Advisor is positioned for planning only, never for legal paperwork, notary arrangements, registration, apostilles or translations. Each subtext carries one brand-facts reassurance: inclusions in writing (primary), single point of contact (secondary), AUD quotes, time zone and fee in writing (closing). No figures, 'free', perks, Privileges, availability or call-first wording. All four tracked links already appear once each with correct UTMs, so no copy change is made. A printable Costa Rica legal-steps checklist would be a better-matched magnet; none is known to exist, so it is a backlog suggestion only and not placed."
+  },
+  "next_agent": [
+    "distribution"
+  ]
+}
