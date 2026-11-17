@@ -19,4 +19,6 @@
 - Legal sources: Registrar General's Department (rgd.gov.jm), Ministry of Justice laws (Marriage Act), Jamaica High Commission, Smartraveller, DFAT.
 
 ## Stages
-- **Stage 0 + 1 fast (strategist, research A, research B in parallel):** running (relaunched after a worker restart; nothing had started).
+- **Stage 0 fast (strategist):** DONE. AU volumes all 10/month; UK "jamaica wedding" 390. Top results in all four cities are listing blogs, Facebook and Reddit threads and 2009 to 2023 posts that contradict each other (blood test, documents, 24 vs 48 hours); none covers the Australian side or the marry-at-home route. Brief: 11 template H2s, 6-step numbered overview in H2 1, 2,300 words, 5 FAQs, SEO title "Getting Married in Jamaica: Step-by-Step Legal Guide" (52). No cannibalisation.
+- **Decision (default, change if you want):** five live related URLs added to link-map (Jamaican traditions, where you can legally marry abroad, wedding visa, January destinations, best locations). JAMAICA-PAGE open (home page meta mentions Jamaica; check by hand). Malta link conditional (DRAFT).
+- **Stage 1 fast (research A and B):** running.

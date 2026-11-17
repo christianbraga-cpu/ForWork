@@ -226,6 +226,18 @@ No Vietnam destination page exists yet (open item VIETNAM-PAGE); link `/destinat
 
 No Malta destination page exists yet (open item MALTA-PAGE); link `/destinations/europe`.
 
+## Jamaica and destination-legal articles (Firecrawl map, 17 Nov 2026)
+
+| URL | Title | Owns |
+|---|---|---|
+| `/6-jamaican-wedding-traditions-you-might-not-know-about` | 6 Jamaican Wedding Traditions | jamaican wedding traditions |
+| `/expert-advice/weddings-abroad-where-can-you-legally-get-married` | Weddings Abroad: Where Can You Legally Get Married | where can you legally get married abroad |
+| `/expert-advice/do-you-need-a-wedding-visa-to-get-married-abroad` | Do You Need a Wedding Visa to Get Married Abroad | wedding visa |
+| `/destination-weddings/wedding-destinations-january` | Wedding Destinations for January | wedding destinations january |
+| `/trending/best-destination-wedding-locations` | Best Destination Wedding Locations | best destination wedding locations |
+
+No Jamaica destination page found (open item JAMAICA-PAGE; the home page meta mentions Jamaica, so check by hand). `/destinations/latin-america-caribbean` is hidden: link `/destinations` and `/destination-wedding-packages`.
+
 ## 9. Rings and Jewellery cluster (Firecrawl map, 27 Oct 2026)
 
 Hub: `/style-advice/celebrity-engagement-rings` (in production). Spokes:
