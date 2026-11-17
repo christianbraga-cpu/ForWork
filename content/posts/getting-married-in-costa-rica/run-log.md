@@ -9,3 +9,4 @@
 03:18 06 edit 4.14 pass_with_edits, 11 edits applied (intro wording, single-status and notary venue as questions, unsourced fee lines cut); 07 readers enquire 1 to 3; two-trips question raised by 3.
 03:20 07b panel: revise, weighted enquire 1.9; 3 must-fix (two-trips answer, calmer safety ordering, broader security wording).
 03:21 08 final copy done: 2,213 words, 0 VERIFY, scan clean.
+03:22 09 CRO and 10 distribution done.
