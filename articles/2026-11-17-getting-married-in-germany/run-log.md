@@ -28,4 +28,5 @@
 - **Stage 2 fast (writer):** DONE. 03-draft-v1.md (uses all 17 batch A facts). --check: 2,887 reader words (387 over the 2,500 cap), 0 dashes, 0 placeholders, 9 domains, none blocked. YAML valid; 41 claims, 32 links (heavy).
 - **Stage 3 fast (3 reviews):** DONE. Accuracy 3.8 (blocker: Embassy CNI change not as sourced; majors: "replaces the CNI" cell, passport row, FAQ fees without year or city, residents-only alternative-location line, Munich translation rule from a use_note). SEO 3.8 (meta 160 chars; 11 related links, 4 to DRAFT pages; 487-word cut plan). Reader (couple) relevance 2, trust 3, clarity 3, would_enquire 2 (Italy-led persona; Munich window vs timeline; statute-heavy start; faceless concierge). Merged request: 04-reviews/v1/merged.md.
 - **Decision (default, change if you want):** links cut to about 22 (no DRAFT siblings in this guide, so no publish-order dependency); Standesamt I aside dropped; dated line back to the template wording; template updated with these lessons.
-- **Stage 4 fast (writer v2):** running.
+- **Stage 4 fast (writer v2):** DONE. 03-draft-v2.md. --check: 2,356 reader words, 0 dashes, 0 placeholders, 9 domains, none blocked. YAML valid; 38 claims, 22 links (6 internal, 16 external). All blockers, majors and cuts applied; no DRAFT sibling links.
+- **Stage 6 fast (copy editor):** running.
