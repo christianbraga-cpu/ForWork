@@ -77,5 +77,12 @@ from the France guide (articles/2026-11-16-getting-married-in-france, 16 Nov
 - (Jamaica) Do not define legal terms (banns, apostille) unless a fact in the
   pack defines them, and never close an open question in the same sentence
   that sends it to the authority.
+- (Germany, 17 Nov 2026) Related links: the map's 2 or 3 plus the
+  concierge, destination and one service page; never link DRAFT siblings in a
+  country guide (they become 404s if publish order slips). Brief writers for
+  about 22 links in total.
+- (Germany) Where rules are set city by city, name the city in every sentence
+  (Berlin, Munich) and never generalise to the country; quote embassy changes
+  with their exact date wording ("from 1 December 2021") and every post named.
 - Categories: the primary category only unless categories.md confirms others.
   SEO title 60 characters or fewer, no year unless the content is dated to it.
