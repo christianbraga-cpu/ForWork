@@ -217,6 +217,15 @@ URL until a human confirms the other resolves.
 
 No Vietnam destination page exists yet (open item VIETNAM-PAGE); link `/destinations/asia`.
 
+## Malta articles and venues (Firecrawl map, 17 Nov 2026)
+
+| URL | Title | Owns |
+|---|---|---|
+| `/delta-goodrem-gets-wedded-in-malta` | Delta Goodrem's wedding in Malta | (celebrity wedding story) |
+| `/venue/the-phoenicia-malta` | The Phoenicia Malta (venue profile) | (venue profile; link per rule 5) |
+
+No Malta destination page exists yet (open item MALTA-PAGE); link `/destinations/europe`.
+
 ## 9. Rings and Jewellery cluster (Firecrawl map, 27 Oct 2026)
 
 Hub: `/style-advice/celebrity-engagement-rings` (in production). Spokes:

@@ -19,4 +19,6 @@
 - Legal sources: Malta Public Registry / Identity Malta, gov.mt and servizz.gov.mt, Maltese High Commission in Canberra, Australian High Commission in Malta, Smartraveller, DFAT.
 
 ## Stages
-- **Stage 0 + 1 fast (strategist, research A, research B in parallel):** running.
+- **Stage 0 fast (strategist):** DONE. Volumes AU: malta wedding 50, malta wedding venues 70; UK 480 and 720; "malta wedding legal requirements" no data. AI overview gives the rules (no residency requirement, RZ1/RZ2 forms 6 weeks to 3 months ahead, two witnesses) but cites UK operators and blogs; nobody covers the Australian side. Brief: template's 11 H2s, one venue-selection H3 in the wedding-week section, 2,300 words, 5 FAQs, SEO title "Malta Wedding: Legal Requirements and Paperwork". No cannibalisation. Brisbane SERP not run; competitor pages not read (snippets only).
+- **Decision (default, change if you want):** Malta URLs added to link-map (Delta Goodrem story, /venue/the-phoenicia-malta; venue profiles are linkable per link-map rule 5). MALTA-PAGE open item.
+- **Stage 1 fast (research A and B):** running.
