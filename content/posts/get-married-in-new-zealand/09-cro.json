@@ -1,0 +1,106 @@
+{
+  "agent": "cro-specialist",
+  "task_id": "get-married-in-new-zealand",
+  "stage": "09",
+  "status": "complete",
+  "round": 1,
+  "inputs_used": [
+    "CLAUDE.md",
+    "content/posts/get-married-in-new-zealand/01-brief.json",
+    "content/posts/get-married-in-new-zealand/07-icp/*.json (cta_reaction)",
+    "content/posts/get-married-in-new-zealand/08-final.md",
+    "content-system/seo/link-map.csv (/wonderland-concierge, /magazine)",
+    "content/posts/getting-married-in-costa-rica/09-cro.json (format model)"
+  ],
+  "self_qa": {
+    "checks": [
+      {
+        "check": "Primary CTA 6 words or fewer, no 'click here', no exclamation mark",
+        "pass": true,
+        "note": "'Speak with Wedded Concierge' (4 words), matching the existing anchor on line 198."
+      },
+      {
+        "check": "utm_content primary, secondary, closing, magnet each appear exactly once",
+        "pass": true,
+        "note": "Checked by grep on 08-final.md: 1 each, 4 UTM links in total."
+      },
+      {
+        "check": "UTMs only on /wonderland-concierge (3) and /magazine (1)",
+        "pass": true
+      },
+      {
+        "check": "/wonderland-concierge anchors name Wedded Concierge",
+        "pass": true,
+        "note": "Secondary line 182 'ask Wedded Concierge'; primary line 198 'speak with Wedded Concierge'; closing line 230 'talk to Wedded Concierge'."
+      },
+      {
+        "check": "CTA copy only from brand facts 'Claims we can make': single point of contact, inclusions in writing, time zone and AUD quotes, fee agreed in writing before work begins",
+        "pass": true,
+        "note": "No figures or prices in any CTA text or subtext."
+      },
+      {
+        "check": "No 'free' or no-cost wording, perks, Wedded Privileges, availability promises, em dashes; Australian English; 08-final.md not edited",
+        "pass": true,
+        "note": "08-final.md has no <!-- CTA: ... --> markers and none were added."
+      }
+    ],
+    "confidence": 0.85
+  },
+  "open_questions": [
+    {
+      "to": "orchestrator",
+      "question": "Panel cta_reactions: funding_parent, planner_couple and sceptic 'maybe'; search_visitor and uhnw 'no'. uhnw will not enquire through a public blog link and search_visitor came for the legal steps (served by the /magazine magnet). No answer to these is in brand facts, so nothing was added. Re-run cro-specialist if a private enquiry route is confirmed.",
+      "blocking": false
+    },
+    {
+      "to": "orchestrator",
+      "question": "08-final.md contains no <!-- CTA: primary --> marker; placements rely on the existing inline links.",
+      "blocking": false
+    }
+  ],
+  "assumptions": [
+    "FAST MODE: persona cta_reactions read in summary only; placements follow the existing inline links and the getting-married-in-costa-rica model."
+  ],
+  "verify_items": [],
+  "tools_used": [
+    "Bash (grep, python3 -I)"
+  ],
+  "payload": {
+    "journey_stage": "planning",
+    "primary_cta": {
+      "text": "Speak with Wedded Concierge",
+      "subtext": "One Wedded Advisor, with the fee agreed in writing before any work begins.",
+      "link": "https://weddedwonderland.com/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=get-married-in-new-zealand&utm_content=primary",
+      "placement": "Existing inline link at the end of 'Venues and planning' (line 198, anchor 'speak with Wedded Concierge'), after the licence, recognition, conservation land, seasons and regions are covered and the reader turns to comparing lodges and estates. Unchanged."
+    },
+    "secondary_cta": {
+      "text": "Weigh your regions together",
+      "subtext": "Your Wedded Advisor is your single point of contact from start to finish.",
+      "link": "https://weddedwonderland.com/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=get-married-in-new-zealand&utm_content=secondary",
+      "placement": "Existing final line of 'Choosing your region' (line 182, anchor 'ask Wedded Concierge'), where the reader is weighing regions against the guest list. Unchanged."
+    },
+    "lead_magnet": {
+      "name": "Wedded Wonderland magazine",
+      "link": "https://weddedwonderland.com/magazine?utm_source=blog&utm_medium=content&utm_campaign=get-married-in-new-zealand&utm_content=magnet",
+      "placement": "Existing line after the primary CTA in 'Venues and planning' (line 200), for readers gathering ideas before they enquire. Unchanged.",
+      "exists": true
+    },
+    "closing_cta": {
+      "text": "Talk to Wedded Concierge",
+      "subtext": "Quotes in AUD, in your time zone, with inclusions confirmed in writing before you commit.",
+      "link": "https://weddedwonderland.com/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=get-married-in-new-zealand&utm_content=closing",
+      "placement": "Existing closing paragraph under 'Plan your New Zealand wedding with Wedded Concierge' (line 230). Unchanged."
+    },
+    "tracking": [
+      "https://weddedwonderland.com/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=get-married-in-new-zealand&utm_content=primary",
+      "https://weddedwonderland.com/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=get-married-in-new-zealand&utm_content=secondary",
+      "https://weddedwonderland.com/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=get-married-in-new-zealand&utm_content=closing",
+      "https://weddedwonderland.com/magazine?utm_source=blog&utm_medium=content&utm_campaign=get-married-in-new-zealand&utm_content=magnet"
+    ],
+    "copy_changes": [],
+    "rationale": "Brief journey_stage is 'planning': the couple is drawn to New Zealand and needs the licence, celebrant, recognition and outdoor-ceremony steps before committing to a region or lodge, so the invitations to Wedded Concierge appear only once those are covered and the post turns to regions, venues and planning. The Wedded Advisor is positioned for planning only, never for the licence or legal paperwork. Each subtext carries one brand-facts reassurance: fee in writing (primary), single point of contact (secondary), AUD quotes, time zone and inclusions in writing (closing). No figures, 'free', perks, Privileges or availability wording. All four tracked links already appear once each with correct UTMs, so no copy change is made. A printable New Zealand licence-steps checklist would be a better-matched magnet; none is known to exist, so it is a backlog suggestion only and not placed."
+  },
+  "next_agent": [
+    "distribution"
+  ]
+}
