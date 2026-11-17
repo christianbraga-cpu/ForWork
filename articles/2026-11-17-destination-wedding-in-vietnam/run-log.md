@@ -27,4 +27,11 @@
 - **Stage 3 fast (3 reviews):** DONE. Accuracy 3.5 (blocker: timeline put the NOIM in arrival week; majors: HCMC CNI procedure applied to Hanoi, "checked every source on 17 Nov" untrue, 2027 in title). SEO 3.6 (title 64 and meta 157 chars, 377 words over; 418-word cut plan). Reader (couple) relevance 4, trust 3, clarity 3, would_enquire 3 (timeline contradicts itself, research-method language in copy, no Hoi An, CONCIERGE-PAY). Merged request: 04-reviews/v1/merged.md.
 - **Decision (default, change if you want):** new writer.md "Never" rules: no research-method language in reader copy, no single-date "checked every source" claim, no advisor as legal confirmer. Categories set to Destination Weddings only (Asia Weddings not in categories.md). Statutory fees stay exact with year (not "from AUD").
 - **Stage 4 fast (writer v2):** DONE. 03-draft-v2.md. --check: 2,320 reader words, 0 dashes, 0 placeholders, 8 domains, none blocked. YAML valid; 39 claims, 21 links (externals rel noopener). Method language gone; Hoi An named; deposits line in the opening answer.
-- **Stage 6 fast (copy editor):** running.
+- **Stage 6 fast (copy editor):** DONE. final.md 2,325 reader words, 0 dashes, 0 placeholders, none blocked; publish-package.json valid (10 open items, DOMAIN-CHECK closed, Nic sign-off AUD 181 and AUD 105, 2026 fees); chrome-upload-prompt.md (draft only). article.docx built by the orchestrator (the copy-editor prompt passed final.md instead of the folder). Copy editor pointed readers to the provincial Department of Justice only (the deciding office) and folded DOSSIER, ATTENDANCE, APOSTILLE-ROUTE, HANOI-CNI and LAW-CHANGE into NONRESIDENT-CHECK. Image file names are placeholders.
+
+## Must-fix before publish
+1. NONRESIDENT-CHECK: written answer from a provincial Department of Justice in Vietnam (or Embassy Hanoi) on whether two non-resident Australians can register; also dossier, attendance, apostille route, Hanoi CNI process.
+2. Nic signs off DFAT fees (AUD 181, AUD 105; 2026).
+3. Open the 12 external links in a browser (session network blocks them).
+4. PILLAR-LINK: publish /expert-advice/marriage-licence-requirements first, or apply the fallback.
+5. CONCIERGE-PAY, IMAGE-RIGHTS, AUTHOR, CMS-URL; VIETNAM-PAGE (no Vietnam destination page yet).
