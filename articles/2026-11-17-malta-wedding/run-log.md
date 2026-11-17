@@ -28,4 +28,12 @@
 - **Stage 3 fast (3 reviews):** DONE. Accuracy 3.8 (majors: "sets no residency rule" overstates the guideline; unsourced apostille definition; Phoenicia "in Valletta" unsourced). SEO 4.6, approved (minors: title 56 chars for Australians, H2 rename, FAQ repeats, Wedded World plug to delete). Reader (couple) relevance 2, trust 3, clarity 3, would_enquire 2 (Italy-led persona; H2 3 heading contradicts body; repeated "ask the Registry"; jargon; concierge brochure language). Merged request: 04-reviews/v1/merged.md.
 - **Decision (default, change if you want):** H2 3 adapted for an open country ("Prefer to marry in Australia?"); Delta Goodrem link kept as inspiration; Wedded World sentence removed (house rule). Template updated with these lessons.
 - **Stage 4 fast (writer v2):** DONE. 03-draft-v2.md. --check: 2,238 reader words, 0 dashes, 0 placeholders, 7 domains, none blocked. YAML valid; 40 claims, 23 links. All 27 merged items applied; overstated residency, apostille definition, Valletta, Wedded World plug and the contradicting H2 all gone.
-- **Stage 6 fast (copy editor):** running.
+- **Stage 6 fast (copy editor):** DONE. final.md 2,237 reader words, 0 dashes, 0 placeholders, none blocked; publish-package.json valid (SEO title "Malta Wedding: Legal Requirements for Australian Couples", 12 open items); chrome-upload-prompt.md (draft only); article.docx built. Light edits only; research gaps folded into REGISTRY-QUESTIONS. Image file names are placeholders.
+
+## Must-fix before publish
+1. REGISTRY-QUESTIONS: ask the Public Registry (Identita) whether Australians bring a DFAT CNI or an affidavit, whether the notarised RZ2 needs an apostille, certificate copies after the wedding, the Gozo office, church rules.
+2. Nic signs off the Registry fees (EUR 76.95, 102.60, 51.30; schedule published 2024, no year printed) and DFAT fees (AUD 181, AUD 105; 2026).
+3. LINK-CHECK: open every external link in a browser (session network blocks them), especially the Smartraveller notarial URL and the 2024 fee PDF.
+4. Publish after /expert-advice/marriage-licence-requirements and /expert-advice/wedding-witnesses, or apply the PILLAR-LINK and WITNESS-LINK fallbacks.
+5. VENUE-LINK (confirm The Phoenicia profile may be linked editorially), MALTA-PAGE, CONCIERGE-PAY, IMAGE-RIGHTS, AUTHOR, CMS-URL.
+6. Research hygiene: 02-research-B.json reused facts carry 17 Nov checked dates and "Wedded Advisor confirms" summary lines; clean before reuse.
