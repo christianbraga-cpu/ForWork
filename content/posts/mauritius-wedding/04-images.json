@@ -1,0 +1,224 @@
+{
+ "agent": "visual-curator",
+ "task_id": "mauritius-wedding",
+ "stage": "04",
+ "status": "needs_input",
+ "round": 1,
+ "inputs_used": [
+  "CLAUDE.md",
+  "content/posts/mauritius-wedding/00-input.json",
+  "01-brief.json, 02-seo.json, 02-research/report.md, 03-source-pack.json (not present at run time)",
+  "content/posts/getting-married-in-hawaii/04-images.json (format model)",
+  "content-system/images/library-index.csv (header only, no rows)",
+  "content-system/schemas/04-images.schema.json"
+ ],
+ "self_qa": {
+  "checks": [
+   {
+    "check": "Zero reference-only or competitor images in slots",
+    "pass": true,
+    "note": "reference_only is empty; nothing downloaded."
+   },
+   {
+    "check": "Every approved image has location, licence, alt, caption, fit_reason",
+    "pass": true,
+    "note": "No approved images this run."
+   },
+   {
+    "check": "No AI image depicting a real place, wedding, ceremony or person",
+    "pass": true,
+    "note": "No AI generated. Only the documents and certificate still lifes may become ai_illustrative, with approval and an 'Illustrative image' label."
+   },
+   {
+    "check": "Featured image exists (approved or needed with brief)",
+    "pass": true,
+    "note": "Needed, with brief: Mauritius lagoon beachfront ceremony set-up at a named resort."
+   },
+   {
+    "check": "Six slots as requested",
+    "pass": true,
+    "note": "featured, documents, civil-ceremony, certificate-australia, when-to-marry, choose-your-region."
+   },
+   {
+    "check": "Australian English, no em dashes, alt 125 chars or fewer",
+    "pass": true,
+    "note": "Checked by script."
+   }
+  ],
+  "confidence": 0.7
+ },
+ "open_questions": [
+  {
+   "to": "user",
+   "question": "Do you approve AI still lifes for the documents and certificate slots (passports, folder, rings on linen, nothing readable, no official seals) labelled 'Illustrative image' if no Canva or licensed asset is found?",
+   "blocking": false
+  },
+  {
+   "to": "user",
+   "question": "Do you hold licensed Mauritius wedding or venue photos (with month taken and couple consent), or should we request resort media kits and check the MTPA media library terms?",
+   "blocking": false
+  },
+  {
+   "to": "planner-sme",
+   "question": "Confirm featured resorts per region (03-source-pack) so each place slot can be tied to a named venue and press contact.",
+   "blocking": false
+  }
+ ],
+ "assumptions": [
+  "Placement is by section name because 02-seo.json is not yet written; the writer maps it to after_h2 positions.",
+  "No venue is named because 03-source-pack does not exist; nothing was guessed.",
+  "Fast mode: repo register only, no Drive, own-site, Canva, Gmail or Lens checks run."
+ ],
+ "verify_items": [
+  "[[IMAGE NEEDED]] featured: Mauritius lagoon or coastline ceremony set-up at a named resort, licensed or press kit",
+  "[[IMAGE NEEDED]] documents: Canva or licensed stock; AI only with Wedded Wonderland approval, labelled 'Illustrative image'",
+  "[[IMAGE NEEDED]] civil-ceremony: named resort ceremony with officiant, licensed, couple and officiant consent",
+  "[[IMAGE NEEDED]] certificate-australia: folder and rings still life, no real or imitation certificate; AI only with approval, labelled 'Illustrative image'",
+  "[[IMAGE NEEDED]] when-to-marry: named venue, month taken recorded",
+  "[[IMAGE NEEDED]] choose-your-region: named venue wide view showing regional character, licensed",
+  "[[VERIFY licence]] Mauritius Tourism Promotion Authority media library: confirm terms allow third-party commercial blog use, credit format and expiry before any download",
+  "[[VERIFY licence]] every venue, stock or own-site image: written permission, credit line and expiry recorded in library-index.csv before use",
+  "[[VERIFY: couple consent for any real-wedding photo, and guest or officiant consent if identifiable]]"
+ ],
+ "tools_used": [
+  "Bash (cat/python)"
+ ],
+ "next_agent": [
+  "luxury-writer"
+ ],
+ "payload": {
+  "slots": [
+   {
+    "slot_id": "featured",
+    "placement": "featured",
+    "purpose": "Hero and social share image: a Mauritius lagoon or coastline wedding setting that signals luxury and sets up a practical legal guide.",
+    "shot_brief": "Landscape 3:2 with room for a title overlay. Ceremony set-up on a beachfront lawn, jetty or terrace at a real, named Mauritian resort, turquoise lagoon and white sand in frame (Le Morne Brabant in the background only if the venue is on the south-west coast and proven), golden-hour light, calm water, white florals, no signage. Couple optional and small in frame. People only from a licensed real wedding with written couple consent (and guest consent if identifiable) recorded in library-index.csv; never AI people, never stock models presented as a real couple. No temples, shrines or religious sites (for example Grand Bassin) used as decoration, and no cultural or religious practice shown unless from a consented real wedding. Source order: venue or resort media kit with written permission (Gmail draft request, never sent by an agent); Mauritius Tourism Promotion Authority (MTPA) media library only if its licence terms cover commercial blog use by a third party ([[VERIFY licence]], record terms, credit and expiry in library-index.csv); licensed premium stock bought by a human and added to the register. Never AI, never a competitor, directory, planner, photographer-blog or search-result image. Location proven by media kit, register row or EXIF, never by appearance.",
+    "status": "needed",
+    "file": "content/posts/mauritius-wedding/images/mauritius-wedding-lagoon-ceremony-beachfront.webp",
+    "source": {
+     "type": "venue_press",
+     "origin": "not yet sourced (fast mode: repo register only, which has no rows)",
+     "credit": "[[VERIFY licence]]"
+    },
+    "location": {
+     "venue": "a named Mauritian beachfront resort (to be confirmed)",
+     "town": "to be confirmed",
+     "verified_by": "pending: media kit, register row or EXIF"
+    },
+    "alt": "Wedding ceremony set-up on a white sand beach beside a turquoise lagoon in Mauritius at golden hour",
+    "caption": "<Venue>, <town>, Mauritius. Photo: <credit> (fill once sourced).",
+    "licence_note": "[[IMAGE NEEDED]] library-index.csv has a header and no rows. Move to pending_permission once a permission draft exists."
+   },
+   {
+    "slot_id": "documents",
+    "placement": "section: documents step (writer maps to after_h2:<n>)",
+    "purpose": "Make the documents section feel calm and organised: a planning still life, not a place.",
+    "shot_brief": "Landscape 3:2 or 4:3. Overhead still life: two closed passports, a linen-bound folder of papers, a fountain pen, a sprig of white flowers, on natural linen in soft daylight. No readable names, numbers, seals, government crests, flags, forms or screens; nothing that imitates a Mauritian or Australian document; no hands or faces. Order of sources: Canva brand asset, then licensed stock added to library-index.csv, then a Wedded Wonderland own shoot. AI (Higgsfield) is allowed for this slot only after Wedded Wonderland approves; if used, source.type becomes ai_illustrative and the caption must read 'Illustrative image'.",
+    "status": "needed",
+    "file": "content/posts/mauritius-wedding/images/mauritius-wedding-documents-still-life-linen.webp",
+    "source": {
+     "type": "canva",
+     "origin": "not yet sourced (fast mode: Canva not searched)",
+     "credit": "[[VERIFY licence]]"
+    },
+    "location": {
+     "venue": "none (studio still life)",
+     "town": "none",
+     "verified_by": "not applicable: no real place depicted"
+    },
+    "alt": "Two closed passports and a linen folder of papers beside a fountain pen on natural linen",
+    "caption": "Illustrative image (only if AI is approved; otherwise credit the stock or Canva source).",
+    "licence_note": "[[IMAGE NEEDED]] AI only with Wedded Wonderland approval, labelled 'Illustrative image'. Never depicts a real place, person, official form or readable document."
+   },
+   {
+    "slot_id": "civil-ceremony",
+    "placement": "section: the civil ceremony (writer maps to after_h2:<n>)",
+    "purpose": "Show what a civil ceremony in Mauritius looks like when held at a luxury resort.",
+    "shot_brief": "Landscape 3:2. A real civil ceremony in progress or the ceremony set-up at a named resort (garden, pavilion or beachfront), officiant and couple from behind or at a distance, soft afternoon light. Officiant (Civil Status Officer) identifiable only with written consent; no official register or documents legible. People only from a licensed real wedding with written couple consent (and guest consent if identifiable) recorded in library-index.csv; never AI people, never stock models presented as a real couple. No temples, shrines or religious sites (for example Grand Bassin) used as decoration, and no cultural or religious practice shown unless from a consented real wedding. Source order: venue or resort media kit with written permission (Gmail draft request, never sent by an agent); Mauritius Tourism Promotion Authority (MTPA) media library only if its licence terms cover commercial blog use by a third party ([[VERIFY licence]], record terms, credit and expiry in library-index.csv); licensed premium stock bought by a human and added to the register. Never AI, never a competitor, directory, planner, photographer-blog or search-result image. Location proven by media kit, register row or EXIF, never by appearance.",
+    "status": "needed",
+    "file": "content/posts/mauritius-wedding/images/mauritius-wedding-civil-ceremony-resort-garden.webp",
+    "source": {
+     "type": "venue_press",
+     "origin": "not yet sourced (fast mode: repo register only, which has no rows)",
+     "credit": "[[VERIFY licence]]"
+    },
+    "location": {
+     "venue": "a named Mauritian resort (to be confirmed)",
+     "town": "to be confirmed",
+     "verified_by": "pending: media kit, register row or EXIF"
+    },
+    "alt": "Couple exchanging vows with an officiant in a tropical garden facing the lagoon",
+    "caption": "<Venue>, <town>, Mauritius. Photo: <credit> (fill once sourced).",
+    "licence_note": "[[IMAGE NEEDED]] library-index.csv has a header and no rows. Move to pending_permission once a permission draft exists."
+   },
+   {
+    "slot_id": "certificate-australia",
+    "placement": "section: certificate for Australia (writer maps to after_h2:<n>)",
+    "purpose": "Signal the after-the-wedding paperwork for recognition in Australia without showing any real or imitation official document.",
+    "shot_brief": "Landscape 3:2. Still life: a closed cream document folder tied with ribbon, wedding rings resting on it, two closed passports, soft window light on linen. No certificate face, apostille, Republic of Mauritius or Australian Government seal, crest, wording or form layout; nothing readable. Order of sources: Canva brand asset, then licensed stock added to library-index.csv, then a Wedded Wonderland own shoot. AI (Higgsfield) is allowed for this slot only after Wedded Wonderland approves; if used, source.type becomes ai_illustrative and the caption must read 'Illustrative image'.",
+    "status": "needed",
+    "file": "content/posts/mauritius-wedding/images/mauritius-wedding-certificate-folder-rings-still-life.webp",
+    "source": {
+     "type": "canva",
+     "origin": "not yet sourced (fast mode: Canva not searched)",
+     "credit": "[[VERIFY licence]]"
+    },
+    "location": {
+     "venue": "none (studio still life)",
+     "town": "none",
+     "verified_by": "not applicable: no real place depicted"
+    },
+    "alt": "Wedding rings resting on a closed cream document folder tied with ribbon, beside two passports",
+    "caption": "Illustrative image (only if AI is approved; otherwise credit the stock or Canva source).",
+    "licence_note": "[[IMAGE NEEDED]] AI only with Wedded Wonderland approval, labelled 'Illustrative image'. Never depicts a real place, person, official form or readable document."
+   },
+   {
+    "slot_id": "when-to-marry",
+    "placement": "section: when to marry (writer maps to after_h2:<n>)",
+    "purpose": "Show seasonal light and conditions so couples can picture their month.",
+    "shot_brief": "Landscape 3:2. A named venue's ceremony or reception space photographed in a recorded month (month taken must be in the register or EXIF), late afternoon or sunset light, lagoon and sky conditions visible. No people needed. People only from a licensed real wedding with written couple consent (and guest consent if identifiable) recorded in library-index.csv; never AI people, never stock models presented as a real couple. No temples, shrines or religious sites (for example Grand Bassin) used as decoration, and no cultural or religious practice shown unless from a consented real wedding. Source order: venue or resort media kit with written permission (Gmail draft request, never sent by an agent); Mauritius Tourism Promotion Authority (MTPA) media library only if its licence terms cover commercial blog use by a third party ([[VERIFY licence]], record terms, credit and expiry in library-index.csv); licensed premium stock bought by a human and added to the register. Never AI, never a competitor, directory, planner, photographer-blog or search-result image. Location proven by media kit, register row or EXIF, never by appearance.",
+    "status": "needed",
+    "file": "content/posts/mauritius-wedding/images/mauritius-wedding-sunset-reception-lagoon.webp",
+    "source": {
+     "type": "venue_press",
+     "origin": "not yet sourced (fast mode: repo register only, which has no rows)",
+     "credit": "[[VERIFY licence]]"
+    },
+    "location": {
+     "venue": "a named Mauritian venue (to be confirmed)",
+     "town": "to be confirmed",
+     "verified_by": "pending: media kit, register row or EXIF"
+    },
+    "alt": "Reception tables set on a beachfront terrace above the lagoon in warm sunset light",
+    "caption": "<Venue>, <town>, Mauritius. Photo: <credit> (fill once sourced).",
+    "licence_note": "[[IMAGE NEEDED]] library-index.csv has a header and no rows. Move to pending_permission once a permission draft exists."
+   },
+   {
+    "slot_id": "choose-your-region",
+    "placement": "section: choose your region (writer maps to after_h2:<n>)",
+    "purpose": "Help couples picture the difference between coasts with a wide view that shows regional character.",
+    "shot_brief": "Landscape 16:9 or 3:2. Wide view from or of a real, named venue that shows its region's character (for example Le Morne peninsula in the south-west, the calm east-coast lagoon at Belle Mare, the north near Grand Baie or the west-coast sunsets), daylight, no people needed. Region and venue proven by media kit, register row or EXIF. People only from a licensed real wedding with written couple consent (and guest consent if identifiable) recorded in library-index.csv; never AI people, never stock models presented as a real couple. No temples, shrines or religious sites (for example Grand Bassin) used as decoration, and no cultural or religious practice shown unless from a consented real wedding. Source order: venue or resort media kit with written permission (Gmail draft request, never sent by an agent); Mauritius Tourism Promotion Authority (MTPA) media library only if its licence terms cover commercial blog use by a third party ([[VERIFY licence]], record terms, credit and expiry in library-index.csv); licensed premium stock bought by a human and added to the register. Never AI, never a competitor, directory, planner, photographer-blog or search-result image. Location proven by media kit, register row or EXIF, never by appearance.",
+    "status": "needed",
+    "file": "content/posts/mauritius-wedding/images/mauritius-wedding-region-venue-wide-view.webp",
+    "source": {
+     "type": "venue_press",
+     "origin": "not yet sourced (fast mode: repo register only, which has no rows)",
+     "credit": "[[VERIFY licence]]"
+    },
+    "location": {
+     "venue": "a named Mauritian venue (to be confirmed)",
+     "town": "to be confirmed",
+     "verified_by": "pending: media kit, register row or EXIF"
+    },
+    "alt": "Wide view of a resort beach and lagoon with a mountain peninsula on the Mauritius coastline",
+    "caption": "<Venue>, <town>, Mauritius. Photo: <credit> (fill once sourced).",
+    "licence_note": "[[IMAGE NEEDED]] library-index.csv has a header and no rows. Move to pending_permission once a permission draft exists."
+   }
+  ],
+  "reference_only": [],
+  "permission_requests": [],
+  "drive_findings": [
+   "Not searched: fast mode, repo library register only per orchestrator instruction. library-index.csv has a header and no rows."
+  ]
+ }
+}
