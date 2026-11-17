@@ -7,3 +7,4 @@
 03:12 02 SEO done: costa rica wedding US 1,000 / AU 20; getting married in costa rica AU 10 / US 50; no government page on page one; no cannibalisation.
 03:16 05 first draft done: about 2,960 words, 0 VERIFY, scan clean; first-draft docx sent.
 03:18 06 edit 4.14 pass_with_edits, 11 edits applied (intro wording, single-status and notary venue as questions, unsourced fee lines cut); 07 readers enquire 1 to 3; two-trips question raised by 3.
+03:20 07b panel: revise, weighted enquire 1.9; 3 must-fix (two-trips answer, calmer safety ordering, broader security wording).
