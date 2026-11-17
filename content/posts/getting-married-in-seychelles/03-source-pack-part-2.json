@@ -1,0 +1,141 @@
+{
+  "agent": "planner-sme",
+  "task_id": "getting-married-in-seychelles",
+  "stage": "03",
+  "status": "complete",
+  "round": 1,
+  "inputs_used": [
+    "mcp__Apify__apify--web-search (17 November 2026), one query; results used only to locate official pages (no snippet-only facts recorded)",
+    "mcp__Apify__apify--web-fetch, 17 November 2026, no retries: https://www.ics.gov.sc/civil-status/getting-married (200, read in full); https://mauritius.highcommission.gov.au/plut/MarrySeychelles.html (200, read in full; Australian Government page, undated, contact details suggest it is out of date)",
+    "content/posts/getting-married-in-seychelles/00-input.json (no 01-brief.json, 02-seo.json or 02-research/report.md; must_include derived from the orchestrator's task)",
+    "content/posts/mauritius-wedding/03-source-pack.json (format reference only)"
+  ],
+  "self_qa": {
+    "checks": [
+      {
+        "check": "Every fact has a source and date",
+        "pass": true
+      },
+      {
+        "check": "No price without a source; all prices in needs_signoff",
+        "pass": true,
+        "note": "No prices recorded. Both pages state fee amounts; deliberately not recorded (task rule). Referenced as 'a fee applies'."
+      },
+      {
+        "check": "Every must-include covered or [[VERIFY]]",
+        "pass": true
+      },
+      {
+        "check": "No invented quotes, statistics or real weddings",
+        "pass": true
+      }
+    ],
+    "confidence": 0.6
+  },
+  "open_questions": [
+    {
+      "to": "orchestrator",
+      "question": "The official two-foreigner procedure linked from https://www.ics.gov.sc/civil-status/getting-married ('Click Here for the new Procedure For Civil Marriages Involving Two Foreigners In Seychelles') was not read (read-round limit). The ics.gov.sc page itself was read in full and covers foreigner-and-foreigner documents, so this is not blocking, but the linked procedure should be read before the legal section is finalised.",
+      "blocking": false
+    },
+    {
+      "to": "luxury-writer",
+      "question": "State Seychelles marriage rules 'as at November 2026' with the line that the Wedded Advisor confirms current requirements. Never state a fee amount. No same-sex legal facts. Treat Australian High Commission facts (fact_09 to fact_18) as possibly dated: prefer ics.gov.sc wording where they overlap, and do not name hotels or planners.",
+      "blocking": false
+    },
+    {
+      "to": "Wedded Advisor",
+      "question": "Confirm what proof of single status Australians must bring (Celibacy Certificate vs no-impediment document vs affidavit signed in Seychelles), and whether Australian documents need DFAT apostilles.",
+      "blocking": false
+    }
+  ],
+  "assumptions": [
+    "Must-include list taken from the orchestrator's batch A task, as no 01-brief.json exists.",
+    "Facts dated 17 November 2026 (the date of reading).",
+    "The Australian High Commission page is an Australian Government source; it is undated and treated as possibly out of date, with conflicts recorded against ics.gov.sc.",
+    "Conflicts recorded: Proof of single status: Celibacy Certificate (ics.gov.sc, foreigner marrying a Seychellois) vs no-impediment document or affidavit in Seychelles (Australian High Commission). See verify item. | Document certification: apostilled and authenticated (ics.gov.sc) vs originals or certified copies (Australian High Commission). See verify item. | Short-notice route: 'marriage licence' subject to Chief Officer approval (ics.gov.sc) vs 'Special Licence' normally issued within two days (Australian High Commission). Same concept, different detail; use the ics.gov.sc wording. | Contact details: ics.gov.sc lists email info@civilstatus.gov.sc and current office numbers; the Australian High Commission page lists an older website (seychelles.net/civilstatus) and different phone numbers, suggesting it is out of date. Use ics.gov.sc contacts only."
+  ],
+  "verify_items": [
+    "[[VERIFY: The ics.gov.sc 'new Procedure For Civil Marriages Involving Two Foreigners In Seychelles' (linked from the Getting Married page) was not read. Confirm the current two-foreigner document list, application route and lead time before the legal section is final.]]",
+    "[[VERIFY: Proof of single status for two foreigners. ics.gov.sc lists a Celibacy Certificate only for a foreigner marrying a Seychellois (fact_05); the Australian High Commission page lists a no-impediment document or affidavit signed in Seychelles (fact_16). Confirm what Australians must bring.]]",
+    "[[VERIFY: Certification standard for supporting documents. ics.gov.sc says all documents for two foreigners should be apostilled and authenticated (fact_04); the Australian High Commission page says originals or certified copies, translated into English or French (fact_17).]]",
+    "[[VERIFY: Whether ceremonies at the Civil Status Office are still on Wednesdays and Thursdays 0900 to 1100 with two witnesses supplied by the couple (fact_13), and the current witness requirement, as only the possibly outdated Australian High Commission page states this.]]",
+    "[[VERIFY: Apostille of the Seychelles marriage certificate at the Supreme Court Registrar (fact_15) comes from the possibly outdated Australian High Commission page; no current Seychelles government page read states it.]]",
+    "[[VERIFY: Marriage certificate issue and how to order certified copies; no official page read states this.]]",
+    "[[VERIFY: Lead time: two months recommended and presence in Seychelles at least 2 days before (fact_10) are from the possibly outdated Australian High Commission page; ics.gov.sc states only the eleven-day banns (fact_03).]]"
+  ],
+  "tools_used": [
+    "mcp__Apify__apify--web-search",
+    "mcp__Apify__apify--web-fetch",
+    "Bash"
+  ],
+  "next_agent": [
+    "luxury-writer"
+  ],
+  "payload": {
+    "facts": [
+      {
+        "fact_id": "fact_200",
+        "claim": "Immigration and Civil Status Seychelles, FAQ 'Marriage Registrar': the marriage certificate issued by the Civil Status office of Seychelles is a legal document and is valid worldwide; before leaving the country, couples should ensure the certificate is apostilled by the Seychelles Supreme Court and issued with a letter of authentication by the Seychelles Ministry of Foreign Affairs. (Read live by the orchestrator, 17 November 2026.)",
+        "source": "https://www.ics.gov.sc/faq/civil-services/marriage-registrar",
+        "source_type": "government",
+        "checked": "2026-11-17",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_201",
+        "claim": "Immigration and Civil Status Seychelles, FAQ 'Marriage Registrar': all documents issued overseas must be translated into English or French and be apostilled. (Read live by the orchestrator, 17 November 2026.)",
+        "source": "https://www.ics.gov.sc/faq/civil-services/marriage-registrar",
+        "source_type": "government",
+        "checked": "2026-11-17",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_202",
+        "claim": "Immigration and Civil Status Seychelles, FAQ 'Marriage Registrar': documents for a wedding between foreigners: birth certificates of both parties; death certificate of a previous spouse if widowed; divorce certificates if applicable; clear passport copies of both parties; a duly filled marriage application form. (Read live by the orchestrator, 17 November 2026.)",
+        "source": "https://www.ics.gov.sc/faq/civil-services/marriage-registrar",
+        "source_type": "government",
+        "checked": "2026-11-17",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_203",
+        "claim": "Immigration and Civil Status Seychelles, FAQ 'Marriage Registrar': wedding registration is made in the office and both parties should be present; the age to marry is 18 and over. (Read live by the orchestrator, 17 November 2026.)",
+        "source": "https://www.ics.gov.sc/faq/civil-services/marriage-registrar",
+        "source_type": "government",
+        "checked": "2026-11-17",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_204",
+        "claim": "Immigration and Civil Status Seychelles, FAQ 'Marriage Registrar': the banns are published for 11 days before the date of marriage; this period may be exempted by applying for a special marriage licence, normally issued within two days of the application, and a fee applies. (Read live by the orchestrator, 17 November 2026.)",
+        "source": "https://www.ics.gov.sc/faq/civil-services/marriage-registrar",
+        "source_type": "government",
+        "checked": "2026-11-17",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_205",
+        "claim": "Immigration and Civil Status Seychelles, FAQ 'Marriage Registrar': foreigners may contact the Civil Status office at Independence House (Victoria, Mahé) or by email, or make arrangements through a local wedding agent or their hotel or place of accommodation, to register their wedding eleven days in advance. (Read live by the orchestrator, 17 November 2026.)",
+        "source": "https://www.ics.gov.sc/faq/civil-services/marriage-registrar",
+        "source_type": "government",
+        "checked": "2026-11-17",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_206",
+        "claim": "Immigration and Civil Status Seychelles, FAQ 'Marriage Registrar': a fee applies when both parties are foreigners, on Mahé, Praslin and La Digue and at a higher rate on other islands; on other islands the couple also bears the Civil Status Officer's transport, accommodation and meals. (Read live by the orchestrator, 17 November 2026.)",
+        "source": "https://www.ics.gov.sc/faq/civil-services/marriage-registrar",
+        "source_type": "government",
+        "checked": "2026-11-17",
+        "is_price": false
+      }
+    ],
+    "insider_details": [],
+    "quotes": [],
+    "real_weddings": [],
+    "verify_items": [],
+    "needs_signoff": [],
+    "must_include_coverage": []
+  }
+}

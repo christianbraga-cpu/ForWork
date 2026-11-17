@@ -2,3 +2,4 @@
 02:14 container restart lost brief, SEO, both fact batches and images before any file was saved; all five relaunched.
 02:14 04 images done: 6 placeholder slots; STB media licence check.
 02:15 01 brief done: steps in the order Australians act; no cannibalisation.
+02:26 03 done: batch A 18 facts (ics.gov.sc Getting Married + Australian High Commission page, possibly dated); batch B 24 facts (Smartraveller Seychelles + reused; MET and tourism pages failed). Orchestrator read the ICS Marriage Registrar FAQ live (7 facts, part-2): two-foreigner documents, apostille and MFA authentication of the certificate, 11-day banns or special licence, fees apply (no amounts). Where ICS and the High Commission page differ, ICS governs. Merged; verify items cleared (gaps left out of copy).

@@ -1,0 +1,364 @@
+{
+  "agent": "planner-sme",
+  "task_id": "getting-married-in-seychelles",
+  "stage": "03",
+  "status": "complete",
+  "round": 1,
+  "inputs_used": [
+    "content/posts/mauritius-wedding/03-source-pack.json (fact_100 to fact_109 copied as fact_100 to fact_109, same sources and dates)",
+    "mcp__Apify__apify--web-fetch one parallel round, 17 November 2026, no retries: https://www.smartraveller.gov.au/destinations/africa/seychelles (200, read in full); https://www.meteo.gov.sc/climate (404, not read); https://www.seychelles.travel/en/discover/the-islands/inner-islands/mahe, /praslin, /la-digue (all timed out at 60s, not read)"
+  ],
+  "self_qa": {
+    "checks": [
+      {
+        "check": "Every fact has a source and date",
+        "pass": true
+      },
+      {
+        "check": "No price without a source; all prices in needs_signoff",
+        "pass": true,
+        "note": "No prices. The DTA fee and the cash declaration threshold on Smartraveller were deliberately not recorded (task rule: no amounts)."
+      },
+      {
+        "check": "Every must-include covered or [[VERIFY]]",
+        "pass": true
+      },
+      {
+        "check": "No invented quotes, statistics or real weddings",
+        "pass": true,
+        "note": "No same-sex legal facts and no vendor or hotel names recorded."
+      }
+    ],
+    "confidence": 0.5
+  },
+  "open_questions": [
+    {
+      "to": "orchestrator",
+      "question": "Seychelles Meteorological Authority climate page not found (meteo.gov.sc/climate 404). Smartraveller links https://www.meteo.sc/; a fetch there is needed for station-labelled figures.",
+      "blocking": false
+    },
+    {
+      "to": "orchestrator",
+      "question": "seychelles.travel island pages (Mahé, Praslin, La Digue) all timed out; not retried per fast-mode rule. Island descriptions remain [[VERIFY]].",
+      "blocking": false
+    },
+    {
+      "to": "Wedded Advisor",
+      "question": "Seychelles marriage procedure for non-residents (ics.gov.sc) not read in this batch; confirm whether a CNI is required from Australians.",
+      "blocking": false
+    }
+  ],
+  "assumptions": [
+    "Facts are stated 'as at November 2026' and the writer adds that the Wedded Advisor confirms current requirements."
+  ],
+  "verify_items": [
+    "[[VERIFY: Seychelles Meteorological Authority climate data (station-labelled figures, e.g. Seychelles International Airport / Pointe Larue, and its own statement of monsoon / trade-wind seasons). https://www.meteo.gov.sc/climate returned 404; Smartraveller links meteo.sc, not read. Only Smartraveller's 'monsoon season November to March' is sourced (fact_117).]]",
+    "[[VERIFY: General facts for Mahé, Praslin and La Digue from the Seychelles Tourism Board (seychelles.travel). All three island pages timed out at 60s and were not retried.]]",
+    "[[VERIFY: Seychelles marriage requirements for non-residents (documents, notice period, CNI) from the Seychelles Immigration and Civil Status office (ics.gov.sc). Not read in this batch; fact_100 to fact_102 only say to ask the destination's authorities.]]"
+  ],
+  "tools_used": [
+    "mcp__Apify__apify--web-fetch",
+    "Bash"
+  ],
+  "next_agent": [
+    "luxury-writer"
+  ],
+  "payload": {
+    "facts": [
+      {
+        "fact_id": "fact_100",
+        "claim": "[Copied from mauritius-wedding 03-source-pack, same source and date.] As at November 2026, Smartraveller (read live 11 November 2026) says DFAT can issue a CNI in Australia, but some local authorities only accept CNIs issued in their country, so ask the destination's embassy or consulate whether you need a CNI, whether you can get it in Australia, and whether it also needs an authentication or apostille. The Wedded Advisor confirms current requirements.",
+        "source": "https://www.smartraveller.gov.au/planning-trip/advice-your-planned-activities/getting-married-overseas",
+        "source_type": "government",
+        "checked": "2026-11-11",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_101",
+        "claim": "[Copied from mauritius-wedding 03-source-pack, same source and date.] As at November 2026, Smartraveller 'Getting married overseas' (last updated 18/08/2026, read live 12 November 2026): some countries ask you to prove you aren't already married; the most common documents are a Certificate of No Impediment to Marriage (CNI) and certificates from a registry of births, deaths and marriages; the country may have more rules (for example a residence period); 'We can't tell you what you will need'; contact your destination's embassy or consulate. The Wedded Advisor confirms current requirements.",
+        "source": "https://www.smartraveller.gov.au/planning-trip/advice-your-planned-activities/getting-married-overseas",
+        "source_type": "government",
+        "checked": "2026-11-12",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_102",
+        "claim": "[Copied from mauritius-wedding 03-source-pack, same source and date.] As at November 2026, Smartraveller 'Getting married overseas' (read live 12 November 2026): your registry of births, deaths and marriages can give a statement that there's no record you have been married before, a Single Status certificate or a No Record Result certificate; local authorities may also ask for divorce papers, the death certificate of a deceased spouse, and your original birth certificate and passport.",
+        "source": "https://www.smartraveller.gov.au/planning-trip/advice-your-planned-activities/getting-married-overseas",
+        "source_type": "government",
+        "checked": "2026-11-12",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_103",
+        "claim": "[Copied from mauritius-wedding 03-source-pack, same source and date.] As at November 2026, Smartraveller 'Getting married overseas' (read live 12 November 2026): Australia doesn't recognise overseas marriages where one or both people are already married to someone else, not old enough to get married, too closely related, or forced to get married.",
+        "source": "https://www.smartraveller.gov.au/planning-trip/advice-your-planned-activities/getting-married-overseas",
+        "source_type": "government",
+        "checked": "2026-11-12",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_104",
+        "claim": "[Copied from mauritius-wedding 03-source-pack, same source and date.] As at November 2026, Smartraveller (read live 11 November 2026) says you cannot register an overseas marriage in Australia, but in most cases it is legally recognised if, when it took place, it was valid under the law of the country where it happened and would have been valid under Australian law had it occurred in Australia. A foreign marriage certificate is usually accepted as proof of the marriage but may not work as proof of a name change (check with your local registry of births, deaths and marriages), and Smartraveller suggests talking to a lawyer to confirm the certificate is valid in Australia. The Wedded Advisor confirms current requirements.",
+        "source": "https://www.smartraveller.gov.au/planning-trip/advice-your-planned-activities/getting-married-overseas",
+        "source_type": "government",
+        "checked": "2026-11-11",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_105",
+        "claim": "[Copied from mauritius-wedding 03-source-pack, same source and date.] As at November 2026, the Attorney-General's Department (read live 12 November 2026): if Australia recognises your overseas marriage, you can't get married again in Australia, but you may choose to hold another type of ceremony, such as a confirmation of vows or a recommitment ceremony.",
+        "source": "https://www.ag.gov.au/families-and-marriage/marriage/marriage-equality-australia",
+        "source_type": "government",
+        "checked": "2026-11-12",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_106",
+        "claim": "[Copied from mauritius-wedding 03-source-pack, same source and date.] Smartraveller (DFAT), 'How to get your documents legalised' (last updated 30/09/2026): ask the overseas authority which documents they need and which must be legalised; DFAT 'can't tell you what they may want'. Find out from the intended authority or legal representative whether you need an apostille or an authentication certificate.",
+        "source": "https://www.smartraveller.gov.au/our-role/notarial-services/how-get-your-documents-legalised",
+        "source_type": "government",
+        "checked": "2026-11-11",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_107",
+        "claim": "[Copied from mauritius-wedding 03-source-pack, same source and date.] Smartraveller: documents that are not original Australian public documents must first be notarised by an Australian Notary Public; the apostille or authentication certificate is applied directly to the document, so if you don't want originals marked, get a notarised copy legalised (and check the overseas authority accepts it).",
+        "source": "https://www.smartraveller.gov.au/our-role/notarial-services/how-get-your-documents-legalised",
+        "source_type": "government",
+        "checked": "2026-11-11",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_108",
+        "claim": "[Copied from mauritius-wedding 03-source-pack, same source and date.] Smartraveller: requests use the Document Legalisation Request Form, signed in front of an authorised witness, and can be lodged by appointment at an Australian Passport Office, in person at many Australian embassies, high commissions and consulates overseas (not Honorary Consul consulates), or by registered mail to the Authentications Section in Melbourne or Sydney. A fee applies (amount not recorded).",
+        "source": "https://www.smartraveller.gov.au/our-role/notarial-services/how-get-your-documents-legalised",
+        "source_type": "government",
+        "checked": "2026-11-11",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_109",
+        "claim": "[Copied from mauritius-wedding 03-source-pack, same source and date.] Smartraveller: processing times vary, with delays at the end of the school year and in peak holiday periods, for incomplete requests or unpaid fees, or when the issuing authority must be contacted. An Australian-issued apostille can be verified online via DFAT.",
+        "source": "https://www.smartraveller.gov.au/our-role/notarial-services/how-get-your-documents-legalised",
+        "source_type": "government",
+        "checked": "2026-11-11",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_110",
+        "claim": "As at November 2026, Smartraveller Seychelles (updated 28 October 2026, still current at 17 November 2026, read live 17 November 2026): the overall advice level is 'Exercise normal safety precautions' (level 1). Crime is generally low, but petty and opportunistic crime can occur in tourist areas.",
+        "source": "https://www.smartraveller.gov.au/destinations/africa/seychelles",
+        "source_type": "government",
+        "checked": "2026-11-17",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_111",
+        "claim": "As at November 2026, Smartraveller Seychelles (updated 28 October 2026, still current at 17 November 2026, read live 17 November 2026): Australians visiting as tourists don't need a visa, but must apply online for a Digital Travel Authorisation before travel, pay a fee (amount not recorded) and upload supporting documents such as proof of accommodation and return or onward travel. Approval may take up to 24 hours depending on the option selected, and applications can be submitted up to 30 days before travel. The Wedded Advisor confirms current requirements.",
+        "source": "https://www.smartraveller.gov.au/destinations/africa/seychelles",
+        "source_type": "government",
+        "checked": "2026-11-17",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_112",
+        "claim": "As at November 2026, Smartraveller Seychelles (updated 28 October 2026, still current at 17 November 2026, read live 17 November 2026): on arrival visitors get a visitor's permit for up to three months, extendable every three months up to one year, and may have to show evidence of sufficient funds, accommodation, onward travel and travel insurance.",
+        "source": "https://www.smartraveller.gov.au/destinations/africa/seychelles",
+        "source_type": "government",
+        "checked": "2026-11-17",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_113",
+        "claim": "As at November 2026, Smartraveller Seychelles (updated 28 October 2026, still current at 17 November 2026, read live 17 November 2026): Seychelles has entry restrictions and public health measures for travellers recently in the Democratic Republic of the Congo (Ebola outbreak); foreign nationals travelling from the DRC must spend at least 21 days outside the DRC before entering. Check the latest requirements with your airline or travel provider.",
+        "source": "https://www.smartraveller.gov.au/destinations/africa/seychelles",
+        "source_type": "government",
+        "checked": "2026-11-17",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_114",
+        "claim": "As at November 2026, Smartraveller Seychelles (updated 28 October 2026, still current at 17 November 2026, read live 17 November 2026): travellers coming from a country with yellow fever need a valid yellow fever vaccination certificate to enter Seychelles; it isn't needed if you only transit a yellow fever endemic country's airport for less than 12 hours.",
+        "source": "https://www.smartraveller.gov.au/destinations/africa/seychelles",
+        "source_type": "government",
+        "checked": "2026-11-17",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_115",
+        "claim": "As at November 2026, Smartraveller Seychelles (updated 28 October 2026, still current at 17 November 2026, read live 17 November 2026): outbreaks of dengue and chikungunya occur, particularly during and after the rainy season; use insect repellent, insect-proof accommodation and ask your doctor about health risks and vaccines before you go.",
+        "source": "https://www.smartraveller.gov.au/destinations/africa/seychelles",
+        "source_type": "government",
+        "checked": "2026-11-17",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_116",
+        "claim": "As at November 2026, Smartraveller Seychelles (updated 28 October 2026, still current at 17 November 2026, read live 17 November 2026): medical facilities are limited outside the main island of Mahé. Seychelles Hospital on Mahé is the main public hospital; other hospital clinics on Mahé, Praslin and La Digue provide only very limited treatment. There is no free-healthcare agreement with Australia, tourists pay for all care, and travel insurance should cover medical evacuation.",
+        "source": "https://www.smartraveller.gov.au/destinations/africa/seychelles",
+        "source_type": "government",
+        "checked": "2026-11-17",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_117",
+        "claim": "As at November 2026, Smartraveller Seychelles (updated 28 October 2026, still current at 17 November 2026, read live 17 November 2026): heavy rain can occur, especially during the monsoon season from November to March, causing flooding and landslides that damage roads and infrastructure; if travelling in the wet season, check with operators whether services are affected. Smartraveller links to the Seychelles Meteorological Authority (meteo.sc).",
+        "source": "https://www.smartraveller.gov.au/destinations/africa/seychelles",
+        "source_type": "government",
+        "checked": "2026-11-17",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_118",
+        "claim": "As at November 2026, Smartraveller Seychelles (updated 28 October 2026, still current at 17 November 2026, read live 17 November 2026): many beaches have strong currents and rips with few lifeguards or warning signs, especially at Beau Vallon when the sea is rough; currents change quickly and differ by season. Get expert local advice before swimming.",
+        "source": "https://www.smartraveller.gov.au/destinations/africa/seychelles",
+        "source_type": "government",
+        "checked": "2026-11-17",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_119",
+        "claim": "As at November 2026, Smartraveller Seychelles (updated 28 October 2026, still current at 17 November 2026, read live 17 November 2026): Australia doesn't have an embassy, high commission or consulate in Seychelles. For consular and passport services, contact the Australian High Commission in Port Louis, Mauritius; in an emergency the 24-hour Consular Emergency Centre is +61 2 6261 3305 from overseas.",
+        "source": "https://www.smartraveller.gov.au/destinations/africa/seychelles",
+        "source_type": "government",
+        "checked": "2026-11-17",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_120",
+        "claim": "As at November 2026, Smartraveller Seychelles (updated 28 October 2026, still current at 17 November 2026, read live 17 November 2026): you can only drive on Mahé and Praslin; public buses operate only on Mahé and Praslin, from early morning to early evening, with limited and sometimes unreliable schedules; registered taxis run on Mahé, Praslin and some parts of La Digue, fares are not usually metered (agree the price first) and there are no internationally recognised ride-sharing apps.",
+        "source": "https://www.smartraveller.gov.au/destinations/africa/seychelles",
+        "source_type": "government",
+        "checked": "2026-11-17",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_121",
+        "claim": "As at November 2026, Smartraveller Seychelles (updated 28 October 2026, still current at 17 November 2026, read live 17 November 2026): most of the inner islands can be reached by ferry, and weather conditions can make boat travel dangerous; check sea and weather conditions and wear a life jacket.",
+        "source": "https://www.smartraveller.gov.au/destinations/africa/seychelles",
+        "source_type": "government",
+        "checked": "2026-11-17",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_122",
+        "claim": "As at November 2026, Smartraveller Seychelles (updated 28 October 2026, still current at 17 November 2026, read live 17 November 2026): people in Seychelles are usually very traditional: don't sunbathe topless or be naked on public beaches, and avoid public displays of affection, especially in rural or traditional places.",
+        "source": "https://www.smartraveller.gov.au/destinations/africa/seychelles",
+        "source_type": "government",
+        "checked": "2026-11-17",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_123",
+        "claim": "As at November 2026, Smartraveller Seychelles (updated 28 October 2026, still current at 17 November 2026, read live 17 November 2026): the currency is the Seychellois Rupee (SCR); ATMs are at the international airport and major tourist areas (local currency only); most hotels, restaurants and tourist services accept major cards, but some smaller hotels and guesthouses may prefer cash, euros or US dollars.",
+        "source": "https://www.smartraveller.gov.au/destinations/africa/seychelles",
+        "source_type": "government",
+        "checked": "2026-11-17",
+        "is_price": false
+      }
+    ],
+    "insider_details": [
+      {
+        "detail": "Treat the Digital Travel Authorisation as a guest-communications item: every guest applies online before flying (up to 30 days ahead, approval up to 24 hours), so put it in the save-the-date follow-up rather than leaving it to the week of travel.",
+        "fact_ids": [
+          "fact_111",
+          "fact_112"
+        ]
+      },
+      {
+        "detail": "Wedding dates from November to March fall in what Smartraveller calls the monsoon season, with heavy rain, flooding and landslides possible, so a covered wet-weather option and flexible inter-island transfer timing belong in the plan for those months.",
+        "fact_ids": [
+          "fact_117",
+          "fact_121"
+        ]
+      },
+      {
+        "detail": "Where the ceremony sits shapes transfer planning: self-drive is possible only on Mahé and Praslin, buses stop by early evening, and La Digue has only some taxis, so evening guest movements need pre-arranged transport, and inter-island legs depend on ferries and sea conditions.",
+        "fact_ids": [
+          "fact_120",
+          "fact_121"
+        ]
+      },
+      {
+        "detail": "Hospital-level care is concentrated on Mahé and Australia has no mission in Seychelles (the High Commission in Port Louis covers it), so ask every guest to hold travel insurance that includes medical evacuation, especially for weddings on Praslin or La Digue.",
+        "fact_ids": [
+          "fact_116",
+          "fact_119"
+        ]
+      },
+      {
+        "detail": "Brief guests on beach etiquette and swim safety in the welcome pack: no topless sunbathing, low-key public affection, and local advice before swimming because rips are common and lifeguards are few.",
+        "fact_ids": [
+          "fact_118",
+          "fact_122"
+        ]
+      }
+    ],
+    "quotes": [],
+    "real_weddings": [],
+    "verify_items": [
+      "[[VERIFY: Seychelles Meteorological Authority climate data (station-labelled figures, e.g. Seychelles International Airport / Pointe Larue, and its own statement of monsoon / trade-wind seasons). https://www.meteo.gov.sc/climate returned 404; Smartraveller links meteo.sc, not read. Only Smartraveller's 'monsoon season November to March' is sourced (fact_117).]]",
+      "[[VERIFY: General facts for Mahé, Praslin and La Digue from the Seychelles Tourism Board (seychelles.travel). All three island pages timed out at 60s and were not retried.]]",
+      "[[VERIFY: Seychelles marriage requirements for non-residents (documents, notice period, CNI) from the Seychelles Immigration and Civil Status office (ics.gov.sc). Not read in this batch; fact_100 to fact_102 only say to ask the destination's authorities.]]"
+    ],
+    "needs_signoff": [],
+    "must_include_coverage": [
+      {
+        "item": "Australian recognition of an overseas marriage",
+        "covered_by": [
+          "fact_103",
+          "fact_104",
+          "fact_105"
+        ]
+      },
+      {
+        "item": "Documents and legalisation from Australia (CNI, apostille)",
+        "covered_by": [
+          "fact_100",
+          "fact_101",
+          "fact_102",
+          "fact_106",
+          "fact_107",
+          "fact_108",
+          "fact_109"
+        ]
+      },
+      {
+        "item": "Entry and travel authorisation for couple and guests",
+        "covered_by": [
+          "fact_111",
+          "fact_112",
+          "fact_113",
+          "fact_114"
+        ]
+      },
+      {
+        "item": "Best time to marry / weather",
+        "covered_by": [
+          "fact_117",
+          "[[VERIFY: Seychelles Meteorological Authority climate data (station-labelled figures, e.g. Seychelles International Airport / Pointe Larue, and its own statement of monsoon / trade-wind seasons). https://www.meteo.gov.sc/climate returned 404; Smartraveller links meteo.sc, not read. Only Smartraveller's 'monsoon season November to March' is sourced (fact_117).]]"
+        ]
+      },
+      {
+        "item": "Islands: Mahé, Praslin, La Digue",
+        "covered_by": [
+          "fact_116",
+          "fact_120",
+          "fact_121",
+          "[[VERIFY: General facts for Mahé, Praslin and La Digue from the Seychelles Tourism Board (seychelles.travel). All three island pages timed out at 60s and were not retried.]]"
+        ]
+      },
+      {
+        "item": "Health, safety and consular support",
+        "covered_by": [
+          "fact_110",
+          "fact_115",
+          "fact_116",
+          "fact_118",
+          "fact_119"
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,697 @@
+{
+  "agent": "planner-sme",
+  "task_id": "getting-married-in-seychelles",
+  "stage": "03",
+  "status": "complete",
+  "round": 1,
+  "inputs_used": [
+    "mcp__Apify__apify--web-search (17 November 2026), one query; results used only to locate official pages (no snippet-only facts recorded)",
+    "mcp__Apify__apify--web-fetch, 17 November 2026, no retries: https://www.ics.gov.sc/civil-status/getting-married (200, read in full); https://mauritius.highcommission.gov.au/plut/MarrySeychelles.html (200, read in full; Australian Government page, undated, contact details suggest it is out of date)",
+    "content/posts/getting-married-in-seychelles/00-input.json (no 01-brief.json, 02-seo.json or 02-research/report.md; must_include derived from the orchestrator's task)",
+    "content/posts/mauritius-wedding/03-source-pack.json (format reference only)",
+    "content/posts/mauritius-wedding/03-source-pack.json (fact_100 to fact_109 copied as fact_100 to fact_109, same sources and dates)",
+    "mcp__Apify__apify--web-fetch one parallel round, 17 November 2026, no retries: https://www.smartraveller.gov.au/destinations/africa/seychelles (200, read in full); https://www.meteo.gov.sc/climate (404, not read); https://www.seychelles.travel/en/discover/the-islands/inner-islands/mahe, /praslin, /la-digue (all timed out at 60s, not read)"
+  ],
+  "self_qa": {
+    "checks": [
+      {
+        "check": "Every fact has a source and date",
+        "pass": true
+      },
+      {
+        "check": "No price without a source; all prices in needs_signoff",
+        "pass": true,
+        "note": "No prices recorded. Both pages state fee amounts; deliberately not recorded (task rule). Referenced as 'a fee applies'."
+      },
+      {
+        "check": "Every must-include covered or [[VERIFY]]",
+        "pass": true
+      },
+      {
+        "check": "No invented quotes, statistics or real weddings",
+        "pass": true
+      }
+    ],
+    "confidence": 0.5
+  },
+  "open_questions": [
+    {
+      "to": "orchestrator",
+      "question": "The official two-foreigner procedure linked from https://www.ics.gov.sc/civil-status/getting-married ('Click Here for the new Procedure For Civil Marriages Involving Two Foreigners In Seychelles') was not read (read-round limit). The ics.gov.sc page itself was read in full and covers foreigner-and-foreigner documents, so this is not blocking, but the linked procedure should be read before the legal section is finalised.",
+      "blocking": false
+    },
+    {
+      "to": "luxury-writer",
+      "question": "State Seychelles marriage rules 'as at November 2026' with the line that the Wedded Advisor confirms current requirements. Never state a fee amount. No same-sex legal facts. Treat Australian High Commission facts (fact_09 to fact_18) as possibly dated: prefer ics.gov.sc wording where they overlap, and do not name hotels or planners.",
+      "blocking": false
+    },
+    {
+      "to": "Wedded Advisor",
+      "question": "Confirm what proof of single status Australians must bring (Celibacy Certificate vs no-impediment document vs affidavit signed in Seychelles), and whether Australian documents need DFAT apostilles.",
+      "blocking": false
+    },
+    {
+      "to": "orchestrator",
+      "question": "Seychelles Meteorological Authority climate page not found (meteo.gov.sc/climate 404). Smartraveller links https://www.meteo.sc/; a fetch there is needed for station-labelled figures.",
+      "blocking": false
+    },
+    {
+      "to": "orchestrator",
+      "question": "seychelles.travel island pages (Mahé, Praslin, La Digue) all timed out; not retried per fast-mode rule. Island descriptions remain [[VERIFY]].",
+      "blocking": false
+    },
+    {
+      "to": "Wedded Advisor",
+      "question": "Seychelles marriage procedure for non-residents (ics.gov.sc) not read in this batch; confirm whether a CNI is required from Australians.",
+      "blocking": false
+    }
+  ],
+  "assumptions": [
+    "Must-include list taken from the orchestrator's batch A task, as no 01-brief.json exists.",
+    "Facts dated 17 November 2026 (the date of reading).",
+    "The Australian High Commission page is an Australian Government source; it is undated and treated as possibly out of date, with conflicts recorded against ics.gov.sc.",
+    "Conflicts recorded: Proof of single status: Celibacy Certificate (ics.gov.sc, foreigner marrying a Seychellois) vs no-impediment document or affidavit in Seychelles (Australian High Commission). See verify item. | Document certification: apostilled and authenticated (ics.gov.sc) vs originals or certified copies (Australian High Commission). See verify item. | Short-notice route: 'marriage licence' subject to Chief Officer approval (ics.gov.sc) vs 'Special Licence' normally issued within two days (Australian High Commission). Same concept, different detail; use the ics.gov.sc wording. | Contact details: ics.gov.sc lists email info@civilstatus.gov.sc and current office numbers; the Australian High Commission page lists an older website (seychelles.net/civilstatus) and different phone numbers, suggesting it is out of date. Use ics.gov.sc contacts only.",
+    "Facts are stated 'as at November 2026' and the writer adds that the Wedded Advisor confirms current requirements."
+  ],
+  "verify_items": [
+    "[[VERIFY: The ics.gov.sc 'new Procedure For Civil Marriages Involving Two Foreigners In Seychelles' (linked from the Getting Married page) was not read. Confirm the current two-foreigner document list, application route and lead time before the legal section is final.]]",
+    "[[VERIFY: Proof of single status for two foreigners. ics.gov.sc lists a Celibacy Certificate only for a foreigner marrying a Seychellois (fact_05); the Australian High Commission page lists a no-impediment document or affidavit signed in Seychelles (fact_16). Confirm what Australians must bring.]]",
+    "[[VERIFY: Certification standard for supporting documents. ics.gov.sc says all documents for two foreigners should be apostilled and authenticated (fact_04); the Australian High Commission page says originals or certified copies, translated into English or French (fact_17).]]",
+    "[[VERIFY: Whether ceremonies at the Civil Status Office are still on Wednesdays and Thursdays 0900 to 1100 with two witnesses supplied by the couple (fact_13), and the current witness requirement, as only the possibly outdated Australian High Commission page states this.]]",
+    "[[VERIFY: Apostille of the Seychelles marriage certificate at the Supreme Court Registrar (fact_15) comes from the possibly outdated Australian High Commission page; no current Seychelles government page read states it.]]",
+    "[[VERIFY: Marriage certificate issue and how to order certified copies; no official page read states this.]]",
+    "[[VERIFY: Lead time: two months recommended and presence in Seychelles at least 2 days before (fact_10) are from the possibly outdated Australian High Commission page; ics.gov.sc states only the eleven-day banns (fact_03).]]",
+    "[[VERIFY: Seychelles Meteorological Authority climate data (station-labelled figures, e.g. Seychelles International Airport / Pointe Larue, and its own statement of monsoon / trade-wind seasons). https://www.meteo.gov.sc/climate returned 404; Smartraveller links meteo.sc, not read. Only Smartraveller's 'monsoon season November to March' is sourced (fact_117).]]",
+    "[[VERIFY: General facts for Mahé, Praslin and La Digue from the Seychelles Tourism Board (seychelles.travel). All three island pages timed out at 60s and were not retried.]]",
+    "[[VERIFY: Seychelles marriage requirements for non-residents (documents, notice period, CNI) from the Seychelles Immigration and Civil Status office (ics.gov.sc). Not read in this batch; fact_100 to fact_102 only say to ask the destination's authorities.]]"
+  ],
+  "tools_used": [
+    "mcp__Apify__apify--web-search",
+    "mcp__Apify__apify--web-fetch",
+    "Bash"
+  ],
+  "next_agent": [
+    "luxury-writer"
+  ],
+  "payload": {
+    "facts": [
+      {
+        "fact_id": "fact_01",
+        "claim": "As at November 2026, the Immigration and Civil Status Seychelles page 'Getting Married' (ics.gov.sc, read in full 17 November 2026) states: the majority age for a man or woman to contract marriage is eighteen years and over, and any person in accordance with the Laws of Seychelles can get married.",
+        "source": "https://www.ics.gov.sc/civil-status/getting-married",
+        "source_type": "government",
+        "checked": "2026-11-17",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_02",
+        "claim": "As at November 2026, the Immigration and Civil Status Seychelles page 'Getting Married' (ics.gov.sc, read in full 17 November 2026) states: couples wishing to marry in Seychelles may call at the Civil Status office at Independence House (Victoria, Mahe) or make arrangements through their local travel agent or hotel, and provide the listed documents. Civil Status offices are listed on Mahe (central office), Praslin and La Digue; contact email info@civilstatus.gov.sc.",
+        "source": "https://www.ics.gov.sc/civil-status/getting-married",
+        "source_type": "government",
+        "checked": "2026-11-17",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_03",
+        "claim": "As at November 2026, the Immigration and Civil Status Seychelles page 'Getting Married' (ics.gov.sc, read in full 17 November 2026) states: before the marriage can take place, the banns are published for eleven days prior to the date of marriage.",
+        "source": "https://www.ics.gov.sc/civil-status/getting-married",
+        "source_type": "government",
+        "checked": "2026-11-17",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_04",
+        "claim": "As at November 2026, the Immigration and Civil Status Seychelles page 'Getting Married' (ics.gov.sc, read in full 17 November 2026) states: for 'Foreigner and foreigner' couples the documents are: the completed Registration form; birth certificates of both parties; divorce certificates if applicable; a clear copy of the passports of both parties; the death certificate of a previous spouse if widow or widower. 'All Document should be apostille and Authenticated.'",
+        "source": "https://www.ics.gov.sc/civil-status/getting-married",
+        "source_type": "government",
+        "checked": "2026-11-17",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_05",
+        "claim": "As at November 2026, the Immigration and Civil Status Seychelles page 'Getting Married' (ics.gov.sc, read in full 17 November 2026) states: for a foreigner marrying a Seychellois (not two foreigners), the foreigner provides: original birth certificate (apostilled; if the country is not a member of the Apostille Convention, authenticated by the Department of Foreign Affairs in that country); a Celibacy Certificate (same certification); divorce certificate where applicable; death certificate of a previous spouse if widow or widower; police character certificate; permit of stay in Seychelles; one passport-size photo. This list is not stated for two foreigners.",
+        "source": "https://www.ics.gov.sc/civil-status/getting-married",
+        "source_type": "government",
+        "checked": "2026-11-17",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_06",
+        "claim": "As at November 2026, the Immigration and Civil Status Seychelles page 'Getting Married' (ics.gov.sc, read in full 17 November 2026) states: the couple who wish to register their marriage should be present in the Civil Status office; if the couple wish to register their marriage at home, they should inform the Civil Status office at least a week before the marriage takes place.",
+        "source": "https://www.ics.gov.sc/civil-status/getting-married",
+        "source_type": "government",
+        "checked": "2026-11-17",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_07",
+        "claim": "As at November 2026, the Immigration and Civil Status Seychelles page 'Getting Married' (ics.gov.sc, read in full 17 November 2026) states: where a couple intends to marry before the full eleven-day publication period, a marriage licence should be applied for, subject to the approval of the Chief Officer of Civil Status; a fee applies.",
+        "source": "https://www.ics.gov.sc/civil-status/getting-married",
+        "source_type": "government",
+        "checked": "2026-11-17",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_08",
+        "claim": "As at November 2026, the Immigration and Civil Status Seychelles page 'Getting Married' (ics.gov.sc, read in full 17 November 2026) states: a separate linked document sets out the 'new Procedure For Civil Marriages Involving Two Foreigners In Seychelles'. That linked procedure was not read in this batch.",
+        "source": "https://www.ics.gov.sc/civil-status/getting-married",
+        "source_type": "government",
+        "checked": "2026-11-17",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_09",
+        "claim": "As at November 2026, the Australian High Commission in Mauritius page 'Australians Wishing to get Married in Seychelles' (read in full 17 November 2026; the page is undated and lists an older Civil Status Office website and phone numbers, so it may be out of date) states: a church wedding without a civil ceremony is not recognised as legal, so the parties must contract a civil wedding before the religious ceremony; couples organising their own wedding apply to the Seychelles Civil Status Office in Victoria, Mahe, for the civil ceremony and to the relevant church body for the religious ceremony.",
+        "source": "https://mauritius.highcommission.gov.au/plut/MarrySeychelles.html",
+        "source_type": "government",
+        "checked": "2026-11-17",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_10",
+        "claim": "As at November 2026, the Australian High Commission in Mauritius page 'Australians Wishing to get Married in Seychelles' (read in full 17 November 2026; the page is undated and lists an older Civil Status Office website and phone numbers, so it may be out of date) states: it is advisable to plan the wedding at least two months in advance to allow for processing of documentation, and the couple must be present in Seychelles at least 2 days before the civil ceremony.",
+        "source": "https://mauritius.highcommission.gov.au/plut/MarrySeychelles.html",
+        "source_type": "government",
+        "checked": "2026-11-17",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_11",
+        "claim": "As at November 2026, the Australian High Commission in Mauritius page 'Australians Wishing to get Married in Seychelles' (read in full 17 November 2026; the page is undated and lists an older Civil Status Office website and phone numbers, so it may be out of date) states: couples must advise the Civil Status Office of their wedding date at least eleven calendar days in advance; this period may be exempted by applying for a Special Licence, normally issued within two days of application (a fee applies).",
+        "source": "https://mauritius.highcommission.gov.au/plut/MarrySeychelles.html",
+        "source_type": "government",
+        "checked": "2026-11-17",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_12",
+        "claim": "As at November 2026, the Australian High Commission in Mauritius page 'Australians Wishing to get Married in Seychelles' (read in full 17 November 2026; the page is undated and lists an older Civil Status Office website and phone numbers, so it may be out of date) states: civil ceremonies may be conducted around the hotel property with permission from both the hotel and the Civil Registrar; weddings outside the hotel property can only be performed in private and authorised places, with authorisation from the Civil Registrar.",
+        "source": "https://mauritius.highcommission.gov.au/plut/MarrySeychelles.html",
+        "source_type": "government",
+        "checked": "2026-11-17",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_13",
+        "claim": "As at November 2026, the Australian High Commission in Mauritius page 'Australians Wishing to get Married in Seychelles' (read in full 17 November 2026; the page is undated and lists an older Civil Status Office website and phone numbers, so it may be out of date) states: weddings can also be performed in the Civil Status Office on Wednesdays and Thursdays between 0900 and 1100, in the presence of two witnesses provided by the parties themselves.",
+        "source": "https://mauritius.highcommission.gov.au/plut/MarrySeychelles.html",
+        "source_type": "government",
+        "checked": "2026-11-17",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_14",
+        "claim": "As at November 2026, the Australian High Commission in Mauritius page 'Australians Wishing to get Married in Seychelles' (read in full 17 November 2026; the page is undated and lists an older Civil Status Office website and phone numbers, so it may be out of date) states: fees apply for marrying outside the Civil Status Office, with higher fees for some islands (named examples include Fregate and Outer Islands such as Alphonse and Desroches) and for ceremonies after 1700 on a weekday or at any time on a weekend; the couple covers the Registrar officer's transport to Inner and Outer Islands; the Civil Status Office has offices on Praslin and La Digue. Fees are subject to change.",
+        "source": "https://mauritius.highcommission.gov.au/plut/MarrySeychelles.html",
+        "source_type": "government",
+        "checked": "2026-11-17",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_15",
+        "claim": "As at November 2026, the Australian High Commission in Mauritius page 'Australians Wishing to get Married in Seychelles' (read in full 17 November 2026; the page is undated and lists an older Civil Status Office website and phone numbers, so it may be out of date) states: a special stamp (apostille) is required to validate the marriage certificate obtained after the civil ceremony for all nationalities except British nationals; it is available at the Registrar's office at the Supreme Court (a fee applies).",
+        "source": "https://mauritius.highcommission.gov.au/plut/MarrySeychelles.html",
+        "source_type": "government",
+        "checked": "2026-11-17",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_16",
+        "claim": "As at November 2026, the Australian High Commission in Mauritius page 'Australians Wishing to get Married in Seychelles' (read in full 17 November 2026; the page is undated and lists an older Civil Status Office website and phone numbers, so it may be out of date) states: documents required: birth certificate or certified copy; decree of divorce if divorced; death certificate of the former spouse if widowed; legal proof of any name change; copies of the first 2 pages of both valid passports; a document showing there is no impediment or lawful hindrance to the marriage (if this cannot be obtained, an affidavit is signed in Seychelles after a solemn declaration).",
+        "source": "https://mauritius.highcommission.gov.au/plut/MarrySeychelles.html",
+        "source_type": "government",
+        "checked": "2026-11-17",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_17",
+        "claim": "As at November 2026, the Australian High Commission in Mauritius page 'Australians Wishing to get Married in Seychelles' (read in full 17 November 2026; the page is undated and lists an older Civil Status Office website and phone numbers, so it may be out of date) states: all documents must be originals or copies duly certified before departure from the home country, and translated into English or French if not already.",
+        "source": "https://mauritius.highcommission.gov.au/plut/MarrySeychelles.html",
+        "source_type": "government",
+        "checked": "2026-11-17",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_18",
+        "claim": "As at November 2026, the Australian High Commission in Mauritius page 'Australians Wishing to get Married in Seychelles' (read in full 17 November 2026; the page is undated and lists an older Civil Status Office website and phone numbers, so it may be out of date) states: there are no nationality requirements, and legally conducted marriages in Seychelles are recognised under European laws.",
+        "source": "https://mauritius.highcommission.gov.au/plut/MarrySeychelles.html",
+        "source_type": "government",
+        "checked": "2026-11-17",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_100",
+        "claim": "[Copied from mauritius-wedding 03-source-pack, same source and date.] As at November 2026, Smartraveller (read live 11 November 2026) says DFAT can issue a CNI in Australia, but some local authorities only accept CNIs issued in their country, so ask the destination's embassy or consulate whether you need a CNI, whether you can get it in Australia, and whether it also needs an authentication or apostille. The Wedded Advisor confirms current requirements.",
+        "source": "https://www.smartraveller.gov.au/planning-trip/advice-your-planned-activities/getting-married-overseas",
+        "source_type": "government",
+        "checked": "2026-11-11",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_101",
+        "claim": "[Copied from mauritius-wedding 03-source-pack, same source and date.] As at November 2026, Smartraveller 'Getting married overseas' (last updated 18/08/2026, read live 12 November 2026): some countries ask you to prove you aren't already married; the most common documents are a Certificate of No Impediment to Marriage (CNI) and certificates from a registry of births, deaths and marriages; the country may have more rules (for example a residence period); 'We can't tell you what you will need'; contact your destination's embassy or consulate. The Wedded Advisor confirms current requirements.",
+        "source": "https://www.smartraveller.gov.au/planning-trip/advice-your-planned-activities/getting-married-overseas",
+        "source_type": "government",
+        "checked": "2026-11-12",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_102",
+        "claim": "[Copied from mauritius-wedding 03-source-pack, same source and date.] As at November 2026, Smartraveller 'Getting married overseas' (read live 12 November 2026): your registry of births, deaths and marriages can give a statement that there's no record you have been married before, a Single Status certificate or a No Record Result certificate; local authorities may also ask for divorce papers, the death certificate of a deceased spouse, and your original birth certificate and passport.",
+        "source": "https://www.smartraveller.gov.au/planning-trip/advice-your-planned-activities/getting-married-overseas",
+        "source_type": "government",
+        "checked": "2026-11-12",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_103",
+        "claim": "[Copied from mauritius-wedding 03-source-pack, same source and date.] As at November 2026, Smartraveller 'Getting married overseas' (read live 12 November 2026): Australia doesn't recognise overseas marriages where one or both people are already married to someone else, not old enough to get married, too closely related, or forced to get married.",
+        "source": "https://www.smartraveller.gov.au/planning-trip/advice-your-planned-activities/getting-married-overseas",
+        "source_type": "government",
+        "checked": "2026-11-12",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_104",
+        "claim": "[Copied from mauritius-wedding 03-source-pack, same source and date.] As at November 2026, Smartraveller (read live 11 November 2026) says you cannot register an overseas marriage in Australia, but in most cases it is legally recognised if, when it took place, it was valid under the law of the country where it happened and would have been valid under Australian law had it occurred in Australia. A foreign marriage certificate is usually accepted as proof of the marriage but may not work as proof of a name change (check with your local registry of births, deaths and marriages), and Smartraveller suggests talking to a lawyer to confirm the certificate is valid in Australia. The Wedded Advisor confirms current requirements.",
+        "source": "https://www.smartraveller.gov.au/planning-trip/advice-your-planned-activities/getting-married-overseas",
+        "source_type": "government",
+        "checked": "2026-11-11",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_105",
+        "claim": "[Copied from mauritius-wedding 03-source-pack, same source and date.] As at November 2026, the Attorney-General's Department (read live 12 November 2026): if Australia recognises your overseas marriage, you can't get married again in Australia, but you may choose to hold another type of ceremony, such as a confirmation of vows or a recommitment ceremony.",
+        "source": "https://www.ag.gov.au/families-and-marriage/marriage/marriage-equality-australia",
+        "source_type": "government",
+        "checked": "2026-11-12",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_106",
+        "claim": "[Copied from mauritius-wedding 03-source-pack, same source and date.] Smartraveller (DFAT), 'How to get your documents legalised' (last updated 30/09/2026): ask the overseas authority which documents they need and which must be legalised; DFAT 'can't tell you what they may want'. Find out from the intended authority or legal representative whether you need an apostille or an authentication certificate.",
+        "source": "https://www.smartraveller.gov.au/our-role/notarial-services/how-get-your-documents-legalised",
+        "source_type": "government",
+        "checked": "2026-11-11",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_107",
+        "claim": "[Copied from mauritius-wedding 03-source-pack, same source and date.] Smartraveller: documents that are not original Australian public documents must first be notarised by an Australian Notary Public; the apostille or authentication certificate is applied directly to the document, so if you don't want originals marked, get a notarised copy legalised (and check the overseas authority accepts it).",
+        "source": "https://www.smartraveller.gov.au/our-role/notarial-services/how-get-your-documents-legalised",
+        "source_type": "government",
+        "checked": "2026-11-11",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_108",
+        "claim": "[Copied from mauritius-wedding 03-source-pack, same source and date.] Smartraveller: requests use the Document Legalisation Request Form, signed in front of an authorised witness, and can be lodged by appointment at an Australian Passport Office, in person at many Australian embassies, high commissions and consulates overseas (not Honorary Consul consulates), or by registered mail to the Authentications Section in Melbourne or Sydney. A fee applies (amount not recorded).",
+        "source": "https://www.smartraveller.gov.au/our-role/notarial-services/how-get-your-documents-legalised",
+        "source_type": "government",
+        "checked": "2026-11-11",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_109",
+        "claim": "[Copied from mauritius-wedding 03-source-pack, same source and date.] Smartraveller: processing times vary, with delays at the end of the school year and in peak holiday periods, for incomplete requests or unpaid fees, or when the issuing authority must be contacted. An Australian-issued apostille can be verified online via DFAT.",
+        "source": "https://www.smartraveller.gov.au/our-role/notarial-services/how-get-your-documents-legalised",
+        "source_type": "government",
+        "checked": "2026-11-11",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_110",
+        "claim": "As at November 2026, Smartraveller Seychelles (updated 28 October 2026, still current at 17 November 2026, read live 17 November 2026): the overall advice level is 'Exercise normal safety precautions' (level 1). Crime is generally low, but petty and opportunistic crime can occur in tourist areas.",
+        "source": "https://www.smartraveller.gov.au/destinations/africa/seychelles",
+        "source_type": "government",
+        "checked": "2026-11-17",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_111",
+        "claim": "As at November 2026, Smartraveller Seychelles (updated 28 October 2026, still current at 17 November 2026, read live 17 November 2026): Australians visiting as tourists don't need a visa, but must apply online for a Digital Travel Authorisation before travel, pay a fee (amount not recorded) and upload supporting documents such as proof of accommodation and return or onward travel. Approval may take up to 24 hours depending on the option selected, and applications can be submitted up to 30 days before travel. The Wedded Advisor confirms current requirements.",
+        "source": "https://www.smartraveller.gov.au/destinations/africa/seychelles",
+        "source_type": "government",
+        "checked": "2026-11-17",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_112",
+        "claim": "As at November 2026, Smartraveller Seychelles (updated 28 October 2026, still current at 17 November 2026, read live 17 November 2026): on arrival visitors get a visitor's permit for up to three months, extendable every three months up to one year, and may have to show evidence of sufficient funds, accommodation, onward travel and travel insurance.",
+        "source": "https://www.smartraveller.gov.au/destinations/africa/seychelles",
+        "source_type": "government",
+        "checked": "2026-11-17",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_113",
+        "claim": "As at November 2026, Smartraveller Seychelles (updated 28 October 2026, still current at 17 November 2026, read live 17 November 2026): Seychelles has entry restrictions and public health measures for travellers recently in the Democratic Republic of the Congo (Ebola outbreak); foreign nationals travelling from the DRC must spend at least 21 days outside the DRC before entering. Check the latest requirements with your airline or travel provider.",
+        "source": "https://www.smartraveller.gov.au/destinations/africa/seychelles",
+        "source_type": "government",
+        "checked": "2026-11-17",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_114",
+        "claim": "As at November 2026, Smartraveller Seychelles (updated 28 October 2026, still current at 17 November 2026, read live 17 November 2026): travellers coming from a country with yellow fever need a valid yellow fever vaccination certificate to enter Seychelles; it isn't needed if you only transit a yellow fever endemic country's airport for less than 12 hours.",
+        "source": "https://www.smartraveller.gov.au/destinations/africa/seychelles",
+        "source_type": "government",
+        "checked": "2026-11-17",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_115",
+        "claim": "As at November 2026, Smartraveller Seychelles (updated 28 October 2026, still current at 17 November 2026, read live 17 November 2026): outbreaks of dengue and chikungunya occur, particularly during and after the rainy season; use insect repellent, insect-proof accommodation and ask your doctor about health risks and vaccines before you go.",
+        "source": "https://www.smartraveller.gov.au/destinations/africa/seychelles",
+        "source_type": "government",
+        "checked": "2026-11-17",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_116",
+        "claim": "As at November 2026, Smartraveller Seychelles (updated 28 October 2026, still current at 17 November 2026, read live 17 November 2026): medical facilities are limited outside the main island of Mahé. Seychelles Hospital on Mahé is the main public hospital; other hospital clinics on Mahé, Praslin and La Digue provide only very limited treatment. There is no free-healthcare agreement with Australia, tourists pay for all care, and travel insurance should cover medical evacuation.",
+        "source": "https://www.smartraveller.gov.au/destinations/africa/seychelles",
+        "source_type": "government",
+        "checked": "2026-11-17",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_117",
+        "claim": "As at November 2026, Smartraveller Seychelles (updated 28 October 2026, still current at 17 November 2026, read live 17 November 2026): heavy rain can occur, especially during the monsoon season from November to March, causing flooding and landslides that damage roads and infrastructure; if travelling in the wet season, check with operators whether services are affected. Smartraveller links to the Seychelles Meteorological Authority (meteo.sc).",
+        "source": "https://www.smartraveller.gov.au/destinations/africa/seychelles",
+        "source_type": "government",
+        "checked": "2026-11-17",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_118",
+        "claim": "As at November 2026, Smartraveller Seychelles (updated 28 October 2026, still current at 17 November 2026, read live 17 November 2026): many beaches have strong currents and rips with few lifeguards or warning signs, especially at Beau Vallon when the sea is rough; currents change quickly and differ by season. Get expert local advice before swimming.",
+        "source": "https://www.smartraveller.gov.au/destinations/africa/seychelles",
+        "source_type": "government",
+        "checked": "2026-11-17",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_119",
+        "claim": "As at November 2026, Smartraveller Seychelles (updated 28 October 2026, still current at 17 November 2026, read live 17 November 2026): Australia doesn't have an embassy, high commission or consulate in Seychelles. For consular and passport services, contact the Australian High Commission in Port Louis, Mauritius; in an emergency the 24-hour Consular Emergency Centre is +61 2 6261 3305 from overseas.",
+        "source": "https://www.smartraveller.gov.au/destinations/africa/seychelles",
+        "source_type": "government",
+        "checked": "2026-11-17",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_120",
+        "claim": "As at November 2026, Smartraveller Seychelles (updated 28 October 2026, still current at 17 November 2026, read live 17 November 2026): you can only drive on Mahé and Praslin; public buses operate only on Mahé and Praslin, from early morning to early evening, with limited and sometimes unreliable schedules; registered taxis run on Mahé, Praslin and some parts of La Digue, fares are not usually metered (agree the price first) and there are no internationally recognised ride-sharing apps.",
+        "source": "https://www.smartraveller.gov.au/destinations/africa/seychelles",
+        "source_type": "government",
+        "checked": "2026-11-17",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_121",
+        "claim": "As at November 2026, Smartraveller Seychelles (updated 28 October 2026, still current at 17 November 2026, read live 17 November 2026): most of the inner islands can be reached by ferry, and weather conditions can make boat travel dangerous; check sea and weather conditions and wear a life jacket.",
+        "source": "https://www.smartraveller.gov.au/destinations/africa/seychelles",
+        "source_type": "government",
+        "checked": "2026-11-17",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_122",
+        "claim": "As at November 2026, Smartraveller Seychelles (updated 28 October 2026, still current at 17 November 2026, read live 17 November 2026): people in Seychelles are usually very traditional: don't sunbathe topless or be naked on public beaches, and avoid public displays of affection, especially in rural or traditional places.",
+        "source": "https://www.smartraveller.gov.au/destinations/africa/seychelles",
+        "source_type": "government",
+        "checked": "2026-11-17",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_123",
+        "claim": "As at November 2026, Smartraveller Seychelles (updated 28 October 2026, still current at 17 November 2026, read live 17 November 2026): the currency is the Seychellois Rupee (SCR); ATMs are at the international airport and major tourist areas (local currency only); most hotels, restaurants and tourist services accept major cards, but some smaller hotels and guesthouses may prefer cash, euros or US dollars.",
+        "source": "https://www.smartraveller.gov.au/destinations/africa/seychelles",
+        "source_type": "government",
+        "checked": "2026-11-17",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_200",
+        "claim": "Immigration and Civil Status Seychelles, FAQ 'Marriage Registrar': the marriage certificate issued by the Civil Status office of Seychelles is a legal document and is valid worldwide; before leaving the country, couples should ensure the certificate is apostilled by the Seychelles Supreme Court and issued with a letter of authentication by the Seychelles Ministry of Foreign Affairs. (Read live by the orchestrator, 17 November 2026.)",
+        "source": "https://www.ics.gov.sc/faq/civil-services/marriage-registrar",
+        "source_type": "government",
+        "checked": "2026-11-17",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_201",
+        "claim": "Immigration and Civil Status Seychelles, FAQ 'Marriage Registrar': all documents issued overseas must be translated into English or French and be apostilled. (Read live by the orchestrator, 17 November 2026.)",
+        "source": "https://www.ics.gov.sc/faq/civil-services/marriage-registrar",
+        "source_type": "government",
+        "checked": "2026-11-17",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_202",
+        "claim": "Immigration and Civil Status Seychelles, FAQ 'Marriage Registrar': documents for a wedding between foreigners: birth certificates of both parties; death certificate of a previous spouse if widowed; divorce certificates if applicable; clear passport copies of both parties; a duly filled marriage application form. (Read live by the orchestrator, 17 November 2026.)",
+        "source": "https://www.ics.gov.sc/faq/civil-services/marriage-registrar",
+        "source_type": "government",
+        "checked": "2026-11-17",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_203",
+        "claim": "Immigration and Civil Status Seychelles, FAQ 'Marriage Registrar': wedding registration is made in the office and both parties should be present; the age to marry is 18 and over. (Read live by the orchestrator, 17 November 2026.)",
+        "source": "https://www.ics.gov.sc/faq/civil-services/marriage-registrar",
+        "source_type": "government",
+        "checked": "2026-11-17",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_204",
+        "claim": "Immigration and Civil Status Seychelles, FAQ 'Marriage Registrar': the banns are published for 11 days before the date of marriage; this period may be exempted by applying for a special marriage licence, normally issued within two days of the application, and a fee applies. (Read live by the orchestrator, 17 November 2026.)",
+        "source": "https://www.ics.gov.sc/faq/civil-services/marriage-registrar",
+        "source_type": "government",
+        "checked": "2026-11-17",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_205",
+        "claim": "Immigration and Civil Status Seychelles, FAQ 'Marriage Registrar': foreigners may contact the Civil Status office at Independence House (Victoria, Mahé) or by email, or make arrangements through a local wedding agent or their hotel or place of accommodation, to register their wedding eleven days in advance. (Read live by the orchestrator, 17 November 2026.)",
+        "source": "https://www.ics.gov.sc/faq/civil-services/marriage-registrar",
+        "source_type": "government",
+        "checked": "2026-11-17",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_206",
+        "claim": "Immigration and Civil Status Seychelles, FAQ 'Marriage Registrar': a fee applies when both parties are foreigners, on Mahé, Praslin and La Digue and at a higher rate on other islands; on other islands the couple also bears the Civil Status Officer's transport, accommodation and meals. (Read live by the orchestrator, 17 November 2026.)",
+        "source": "https://www.ics.gov.sc/faq/civil-services/marriage-registrar",
+        "source_type": "government",
+        "checked": "2026-11-17",
+        "is_price": false
+      }
+    ],
+    "insider_details": [
+      {
+        "detail": "Lock the date with the eleven-day banns in mind: the banns run for eleven days before the civil marriage, and a shorter timeline needs a marriage licence approved by the Chief Officer of Civil Status. Lodge paperwork well ahead rather than relying on the short-notice route.",
+        "fact_ids": [
+          "fact_03",
+          "fact_07",
+          "fact_11"
+        ]
+      },
+      {
+        "detail": "Start Australian paperwork early: Seychelles asks for documents of two foreigners to be apostilled and authenticated, and DFAT apostilles add time. Order birth certificates and any divorce or death certificates first, then apostille them.",
+        "fact_ids": [
+          "fact_04",
+          "fact_17"
+        ]
+      },
+      {
+        "detail": "A beach or garden civil ceremony needs the Civil Registrar's authorisation (and the hotel's permission on hotel grounds), and extra fees plus the Registrar's travel apply for outer and some inner islands. Build the island choice and ceremony time into the budget early; weekend and after-5pm ceremonies cost more.",
+        "fact_ids": [
+          "fact_12",
+          "fact_14",
+          "fact_06"
+        ]
+      },
+      {
+        "detail": "Plan the blessing after the legal part: a church wedding alone is not legally recognised, so the civil marriage must come first, then the religious ceremony with the relevant church body.",
+        "fact_ids": [
+          "fact_09"
+        ]
+      },
+      {
+        "detail": "Australians should plan to apostille the Seychelles marriage certificate before flying home, so it is ready to use back in Australia (requirement shown on the Australian High Commission page; confirm current process).",
+        "fact_ids": [
+          "fact_15"
+        ]
+      },
+      {
+        "detail": "Treat the Digital Travel Authorisation as a guest-communications item: every guest applies online before flying (up to 30 days ahead, approval up to 24 hours), so put it in the save-the-date follow-up rather than leaving it to the week of travel.",
+        "fact_ids": [
+          "fact_111",
+          "fact_112"
+        ]
+      },
+      {
+        "detail": "Wedding dates from November to March fall in what Smartraveller calls the monsoon season, with heavy rain, flooding and landslides possible, so a covered wet-weather option and flexible inter-island transfer timing belong in the plan for those months.",
+        "fact_ids": [
+          "fact_117",
+          "fact_121"
+        ]
+      },
+      {
+        "detail": "Where the ceremony sits shapes transfer planning: self-drive is possible only on Mahé and Praslin, buses stop by early evening, and La Digue has only some taxis, so evening guest movements need pre-arranged transport, and inter-island legs depend on ferries and sea conditions.",
+        "fact_ids": [
+          "fact_120",
+          "fact_121"
+        ]
+      },
+      {
+        "detail": "Hospital-level care is concentrated on Mahé and Australia has no mission in Seychelles (the High Commission in Port Louis covers it), so ask every guest to hold travel insurance that includes medical evacuation, especially for weddings on Praslin or La Digue.",
+        "fact_ids": [
+          "fact_116",
+          "fact_119"
+        ]
+      },
+      {
+        "detail": "Brief guests on beach etiquette and swim safety in the welcome pack: no topless sunbathing, low-key public affection, and local advice before swimming because rips are common and lifeguards are few.",
+        "fact_ids": [
+          "fact_118",
+          "fact_122"
+        ]
+      }
+    ],
+    "quotes": [],
+    "real_weddings": [],
+    "verify_items": [],
+    "needs_signoff": [],
+    "must_include_coverage": [
+      {
+        "item": "Who can marry in Seychelles (non-residents / two foreigners)",
+        "covered_by": [
+          "fact_01",
+          "fact_02",
+          "fact_08",
+          "fact_18",
+          "[[VERIFY: The ics.gov.sc 'new Procedure For Civil Marriages Involving Two Foreigners In Seychelles' (linked from the Getting Married page) was not read. Confirm the current two-foreigner document list, application route and lead time before the legal section is final.]]"
+        ]
+      },
+      {
+        "item": "Documents (passports, birth certificates, proof of single status, divorce or death documents, translations, certification)",
+        "covered_by": [
+          "fact_04",
+          "fact_05",
+          "fact_16",
+          "fact_17",
+          "[[VERIFY: Proof of single status for two foreigners. ics.gov.sc lists a Celibacy Certificate only for a foreigner marrying a Seychellois (fact_05); the Australian High Commission page lists a no-impediment document or affidavit signed in Seychelles (fact_16). Confirm what Australians must bring.]]",
+          "[[VERIFY: Certification standard for supporting documents. ics.gov.sc says all documents for two foreigners should be apostilled and authenticated (fact_04); the Australian High Commission page says originals or certified copies, translated into English or French (fact_17).]]"
+        ]
+      },
+      {
+        "item": "How and how far ahead to apply",
+        "covered_by": [
+          "fact_02",
+          "fact_10",
+          "[[VERIFY: Lead time: two months recommended and presence in Seychelles at least 2 days before (fact_10) are from the possibly outdated Australian High Commission page; ics.gov.sc states only the eleven-day banns (fact_03).]]"
+        ]
+      },
+      {
+        "item": "Notice or publication period",
+        "covered_by": [
+          "fact_03",
+          "fact_07",
+          "fact_11"
+        ]
+      },
+      {
+        "item": "Civil Status Officer and where ceremonies may take place (registry, hotel, beach)",
+        "covered_by": [
+          "fact_06",
+          "fact_12",
+          "fact_13",
+          "fact_14"
+        ]
+      },
+      {
+        "item": "Witnesses",
+        "covered_by": [
+          "fact_13",
+          "[[VERIFY: Whether ceremonies at the Civil Status Office are still on Wednesdays and Thursdays 0900 to 1100 with two witnesses supplied by the couple (fact_13), and the current witness requirement, as only the possibly outdated Australian High Commission page states this.]]"
+        ]
+      },
+      {
+        "item": "Marriage certificate and certified copies",
+        "covered_by": [
+          "[[VERIFY: Marriage certificate issue and how to order certified copies; no official page read states this.]]"
+        ]
+      },
+      {
+        "item": "Apostille of a Seychelles marriage certificate",
+        "covered_by": [
+          "fact_15",
+          "[[VERIFY: Apostille of the Seychelles marriage certificate at the Supreme Court Registrar (fact_15) comes from the possibly outdated Australian High Commission page; no current Seychelles government page read states it.]]"
+        ]
+      },
+      {
+        "item": "Religious marriage with civil effect",
+        "covered_by": [
+          "fact_09"
+        ]
+      },
+      {
+        "item": "Australian recognition of an overseas marriage",
+        "covered_by": [
+          "fact_103",
+          "fact_104",
+          "fact_105"
+        ]
+      },
+      {
+        "item": "Documents and legalisation from Australia (CNI, apostille)",
+        "covered_by": [
+          "fact_100",
+          "fact_101",
+          "fact_102",
+          "fact_106",
+          "fact_107",
+          "fact_108",
+          "fact_109"
+        ]
+      },
+      {
+        "item": "Entry and travel authorisation for couple and guests",
+        "covered_by": [
+          "fact_111",
+          "fact_112",
+          "fact_113",
+          "fact_114"
+        ]
+      },
+      {
+        "item": "Best time to marry / weather",
+        "covered_by": [
+          "fact_117",
+          "[[VERIFY: Seychelles Meteorological Authority climate data (station-labelled figures, e.g. Seychelles International Airport / Pointe Larue, and its own statement of monsoon / trade-wind seasons). https://www.meteo.gov.sc/climate returned 404; Smartraveller links meteo.sc, not read. Only Smartraveller's 'monsoon season November to March' is sourced (fact_117).]]"
+        ]
+      },
+      {
+        "item": "Islands: Mahé, Praslin, La Digue",
+        "covered_by": [
+          "fact_116",
+          "fact_120",
+          "fact_121",
+          "[[VERIFY: General facts for Mahé, Praslin and La Digue from the Seychelles Tourism Board (seychelles.travel). All three island pages timed out at 60s and were not retried.]]"
+        ]
+      },
+      {
+        "item": "Health, safety and consular support",
+        "covered_by": [
+          "fact_110",
+          "fact_115",
+          "fact_116",
+          "fact_118",
+          "fact_119"
+        ]
+      }
+    ]
+  }
+}
