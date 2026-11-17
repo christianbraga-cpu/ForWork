@@ -1,0 +1,108 @@
+{
+  "agent": "planner-sme",
+  "task_id": "getting-married-in-costa-rica",
+  "stage": "03",
+  "status": "complete",
+  "round": 1,
+  "inputs_used": [
+    "mcp__Apify__apify--web-search (17 November 2026), two queries: tse.go.cr marriage of foreigners; dnn.go.cr / rree.go.cr notary and apostille. Results used to locate official pages; two snippet-only facts recorded (fact_22, fact_23).",
+    "mcp__Apify__apify--web-fetch, one parallel round, 17 November 2026, no retries, all 200 and read in full: https://www.tse.go.cr/pdf/requisitosytramites/Celebracion-Matrimonio-Civil.pdf; https://www.tse.go.cr/pdf/requisitosytramites/Inscripcion-de-matrimonio-civil-o-catolico.pdf; https://www.rree.go.cr/?sec=servicios&cat=autenticaciones; https://www.rree.go.cr/?sec=servicios&cat=autenticaciones&cont=1016",
+    "content/posts/getting-married-in-costa-rica/00-input.json (no 01-brief.json, 02-seo.json or 02-research/report.md; must_include derived from the orchestrator's task)",
+    "content/posts/getting-married-in-seychelles/03-source-pack.json (format reference only)"
+  ],
+  "self_qa": {
+    "checks": [
+      {
+        "check": "Every fact has a source and date",
+        "pass": true
+      },
+      {
+        "check": "No price without a source; all prices in needs_signoff",
+        "pass": true,
+        "note": "No amounts recorded. The rree.go.cr snippet states a stamp amount; deliberately not recorded (task rule). The TSE statement that the Registro Civil service is free is recorded as a statement, not a price."
+      },
+      {
+        "check": "Every must-include covered or [[VERIFY]]",
+        "pass": true
+      },
+      {
+        "check": "No invented quotes, statistics or real weddings",
+        "pass": true
+      }
+    ],
+    "confidence": 0.6
+  },
+  "open_questions": [
+    {
+      "to": "orchestrator",
+      "question": "No Dirección Nacional de Notariado (dnn.go.cr) page on notaries celebrating marriages of foreigners was found in search. Notary role is evidenced only by TSE registration sheet (fact_13, fact_14). A read of https://www.tse.go.cr/matrimonio_condiciones.htm (linked from the TSE sheet) and a dnn.go.cr page is needed before the 'who officiates' section is final.",
+      "blocking": false
+    },
+    {
+      "to": "luxury-writer",
+      "question": "State Costa Rica rules 'as at November 2026' with the line that the Wedded Advisor confirms current requirements. Never state a fee amount. No same-sex legal facts. Do not name hotels, planners or law firms. The 4 to 6 month timeline (fact_11) is stated for marriage before the Registro Civil only; do not apply it to notary ceremonies without the VERIFY being resolved.",
+      "blocking": false
+    },
+    {
+      "to": "Wedded Advisor",
+      "question": "Confirm the usual route for Australian couples (Registro Civil vs notary), whether ceremonies at a venue are permitted for that route, and which Australian single-status document satisfies the one-month 'certificado de estado civil' rule.",
+      "blocking": false
+    }
+  ],
+  "assumptions": [
+    "Must-include list taken from the orchestrator's batch A task, as no 01-brief.json exists.",
+    "Facts dated 17 November 2026 (the date of reading). All sources are Costa Rican government pages, translated from Spanish without interpretation.",
+    "The TSE celebration sheet (fact_01 to fact_12) covers marriage celebrated before the Registro Civil. It does not cover notary-celebrated marriages; facts are not extended to that route.",
+    "The file was written once after both read rounds rather than every 3 facts, as all reads completed in a single parallel round."
+  ],
+  "verify_items": [
+    "[[VERIFY: Who may officiate for two foreign tourists. The TSE pages read describe celebration before the Registro Civil and registration of marriages celebrated before notaries; no official page read states whether judges officiate, or the rules for notaries marrying foreigners. Dirección Nacional de Notariado (dnn.go.cr) page not found.]]",
+    "[[VERIFY: Divorce or death documents for previously married foreigners. The TSE celebration sheet lists only a civil status certificate; confirm what a divorced or widowed foreigner must bring.]]",
+    "[[VERIFY: Where a notary-led civil ceremony may legally take place (e.g. a beach or venue). No official page read states this; the TSE sheet only gives Registro Civil office hours for Registro Civil ceremonies.]]",
+    "[[VERIFY: How to obtain a marriage certificate (certificación) from the Registro Civil after registration, and lead time. Not read on an official page.]]",
+    "[[VERIFY: Whether the La Gaceta edict requirement and the 4 to 6 month timeline also apply to notary-celebrated marriages, or only to marriages before the Registro Civil.]]",
+    "[[VERIFY: Australian-side proof of single status document accepted as the 'certificado de estado civil' (and its one-month validity), and whether DFAT apostilles are needed for each Australian document.]]"
+  ],
+  "tools_used": [
+    "mcp__Apify__apify--web-search",
+    "mcp__Apify__apify--web-fetch",
+    "Bash"
+  ],
+  "next_agent": [
+    "luxury-writer"
+  ],
+  "payload": {
+    "facts": [
+      {
+        "fact_id": "fact_200",
+        "claim": "Tribunal Supremo de Elecciones (Costa Rica), 'Sistema de Declaración de Matrimonio en Línea' (translated from Spanish): notaries (personas notarias) celebrate marriages and must declare them to the Registro Civil through the TSE's mandatory online declaration system, which replaced the earlier 'Matrimonio Digital' system. (Read live by the orchestrator, 17 November 2026.)",
+        "source": "https://www.tse.go.cr/matrimonioenlinea.html",
+        "source_type": "government",
+        "checked": "2026-11-17",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_201",
+        "claim": "Tribunal Supremo de Elecciones (Costa Rica), 'Sistema de Declaración de Matrimonio en Línea' (translated from Spanish): automatic immediate registration applies only when both spouses are Costa Rican by birth; when either spouse is a foreigner, the notary must upload an image of that spouse's identity document so the identity can be verified and the registration process can continue. (Read live by the orchestrator, 17 November 2026.)",
+        "source": "https://www.tse.go.cr/matrimonioenlinea.html",
+        "source_type": "government",
+        "checked": "2026-11-17",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_202",
+        "claim": "Tribunal Supremo de Elecciones (Costa Rica), 'Sistema de Declaración de Matrimonio en Línea' (translated from Spanish): the online declaration does not change or exempt notaries from the requirements of the Family Code (Código de Familia) for celebrating a marriage, and a notary must not celebrate marriages while suspended or barred by the Dirección Nacional de Notariado. (Read live by the orchestrator, 17 November 2026.)",
+        "source": "https://www.tse.go.cr/matrimonioenlinea.html",
+        "source_type": "government",
+        "checked": "2026-11-17",
+        "is_price": false
+      }
+    ],
+    "insider_details": [],
+    "quotes": [],
+    "real_weddings": [],
+    "verify_items": [],
+    "needs_signoff": [],
+    "must_include_coverage": []
+  }
+}

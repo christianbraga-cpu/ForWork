@@ -1,0 +1,730 @@
+{
+  "agent": "planner-sme",
+  "task_id": "getting-married-in-costa-rica",
+  "stage": "03",
+  "status": "complete",
+  "round": 1,
+  "inputs_used": [
+    "mcp__Apify__apify--web-search (17 November 2026), two queries: tse.go.cr marriage of foreigners; dnn.go.cr / rree.go.cr notary and apostille. Results used to locate official pages; two snippet-only facts recorded (fact_22, fact_23).",
+    "mcp__Apify__apify--web-fetch, one parallel round, 17 November 2026, no retries, all 200 and read in full: https://www.tse.go.cr/pdf/requisitosytramites/Celebracion-Matrimonio-Civil.pdf; https://www.tse.go.cr/pdf/requisitosytramites/Inscripcion-de-matrimonio-civil-o-catolico.pdf; https://www.rree.go.cr/?sec=servicios&cat=autenticaciones; https://www.rree.go.cr/?sec=servicios&cat=autenticaciones&cont=1016",
+    "content/posts/getting-married-in-costa-rica/00-input.json (no 01-brief.json, 02-seo.json or 02-research/report.md; must_include derived from the orchestrator's task)",
+    "content/posts/getting-married-in-seychelles/03-source-pack.json (format reference only)",
+    "content/posts/getting-married-in-seychelles/03-source-pack.json (fact_100 to fact_109 copied as fact_100 to fact_109, same sources and dates; format reference)",
+    "content/posts/getting-married-in-costa-rica/00-input.json and 01-brief.json (must_include)",
+    "mcp__Apify__apify--web-fetch one parallel round, 17 November 2026, no retries: https://www.smartraveller.gov.au/destinations/americas/costa-rica (200, read in full); https://www.imn.ac.cr/clima-en-costa-rica (200, read in full; index page only, regional PDFs not read); https://www.visitcostarica.com/en/costa-rica/places-to-go/guanacaste, /central-pacific, /caribbean, /central-valley (all 404, not read)"
+  ],
+  "self_qa": {
+    "checks": [
+      {
+        "check": "Every fact has a source and date",
+        "pass": true
+      },
+      {
+        "check": "No price without a source; all prices in needs_signoff",
+        "pass": true,
+        "note": "No amounts recorded. The rree.go.cr snippet states a stamp amount; deliberately not recorded (task rule). The TSE statement that the Registro Civil service is free is recorded as a statement, not a price."
+      },
+      {
+        "check": "Every must-include covered or [[VERIFY]]",
+        "pass": true
+      },
+      {
+        "check": "No invented quotes, statistics or real weddings",
+        "pass": true
+      }
+    ],
+    "confidence": 0.5
+  },
+  "open_questions": [
+    {
+      "to": "orchestrator",
+      "question": "No Dirección Nacional de Notariado (dnn.go.cr) page on notaries celebrating marriages of foreigners was found in search. Notary role is evidenced only by TSE registration sheet (fact_13, fact_14). A read of https://www.tse.go.cr/matrimonio_condiciones.htm (linked from the TSE sheet) and a dnn.go.cr page is needed before the 'who officiates' section is final.",
+      "blocking": false
+    },
+    {
+      "to": "luxury-writer",
+      "question": "State Costa Rica rules 'as at November 2026' with the line that the Wedded Advisor confirms current requirements. Never state a fee amount. No same-sex legal facts. Do not name hotels, planners or law firms. The 4 to 6 month timeline (fact_11) is stated for marriage before the Registro Civil only; do not apply it to notary ceremonies without the VERIFY being resolved.",
+      "blocking": false
+    },
+    {
+      "to": "Wedded Advisor",
+      "question": "Confirm the usual route for Australian couples (Registro Civil vs notary), whether ceremonies at a venue are permitted for that route, and which Australian single-status document satisfies the one-month 'certificado de estado civil' rule.",
+      "blocking": false
+    },
+    {
+      "to": "orchestrator",
+      "question": "ICT region pages 404 at /en/costa-rica/places-to-go/<region> (site redirects to /places-to-go/<region>, also 404). Start from https://www.visitcostarica.com/where-to-go to find live region URLs.",
+      "blocking": false
+    },
+    {
+      "to": "orchestrator",
+      "question": "IMN climate index read; station and season facts sit in the linked regional PDFs (e.g. https://www.imn.ac.cr/documents/10179/31165/PacificoNorte.pdf/4a0e8960-8c51-4390-8a8d-73d9d825d59b and the Valle Central, Pacífico Central and Vertiente del Caribe PDFs). Read them for station-labelled figures.",
+      "blocking": false
+    },
+    {
+      "to": "luxury-writer",
+      "question": "State travel facts 'as at November 2026' with the Wedded Advisor line. No same-sex legal facts (Smartraveller's LGBTQIA+ line deliberately not recorded). No amounts. Do not present fact_114 (6-month passport validity) as a Costa Rica rule.",
+      "blocking": false
+    }
+  ],
+  "assumptions": [
+    "Must-include list taken from the orchestrator's batch A task, as no 01-brief.json exists.",
+    "Facts dated 17 November 2026 (the date of reading). All sources are Costa Rican government pages, translated from Spanish without interpretation.",
+    "The TSE celebration sheet (fact_01 to fact_12) covers marriage celebrated before the Registro Civil. It does not cover notary-celebrated marriages; facts are not extended to that route.",
+    "The file was written once after both read rounds rather than every 3 facts, as all reads completed in a single parallel round.",
+    "Facts dated 17 November 2026 (the date of reading).",
+    "Conflicts recorded: Smartraveller season windows June to November (hurricane and rainy) vs April to November (wet, health section). See verify item."
+  ],
+  "verify_items": [
+    "[[VERIFY: Who may officiate for two foreign tourists. The TSE pages read describe celebration before the Registro Civil and registration of marriages celebrated before notaries; no official page read states whether judges officiate, or the rules for notaries marrying foreigners. Dirección Nacional de Notariado (dnn.go.cr) page not found.]]",
+    "[[VERIFY: Divorce or death documents for previously married foreigners. The TSE celebration sheet lists only a civil status certificate; confirm what a divorced or widowed foreigner must bring.]]",
+    "[[VERIFY: Where a notary-led civil ceremony may legally take place (e.g. a beach or venue). No official page read states this; the TSE sheet only gives Registro Civil office hours for Registro Civil ceremonies.]]",
+    "[[VERIFY: How to obtain a marriage certificate (certificación) from the Registro Civil after registration, and lead time. Not read on an official page.]]",
+    "[[VERIFY: Whether the La Gaceta edict requirement and the 4 to 6 month timeline also apply to notary-celebrated marriages, or only to marriages before the Registro Civil.]]",
+    "[[VERIFY: Australian-side proof of single status document accepted as the 'certificado de estado civil' (and its one-month validity), and whether DFAT apostilles are needed for each Australian document.]]",
+    "[[VERIFY: IMN station-labelled climate figures and IMN's own statement of the dry and wet seasons. https://www.imn.ac.cr/clima-en-costa-rica (read) only links regional PDFs (Valle Central, Pacífico Norte, Pacífico Central, Vertiente del Caribe and others) and 'El clima y las regiones climáticas'; those PDFs were not read. Read them before the weather section states any figure or season by region.]]",
+    "[[VERIFY: Season window. Smartraveller gives 'hurricane and rainy season June to November' (fact_115) and 'wet season April to November' (fact_116) on the same page. Confirm against IMN before the article states when the dry season is; if unresolved, write only what each source says, attributed.]]",
+    "[[VERIFY: Region lines for Guanacaste, the Central Pacific, the Caribbean and the Central Valley from the Instituto Costarricense de Turismo. visitcostarica.com /en/costa-rica/places-to-go/guanacaste, /central-pacific, /caribbean and /central-valley all returned 404 (redirected to /places-to-go/...); not retried per fast-mode rule. Try https://www.visitcostarica.com/where-to-go.]]"
+  ],
+  "tools_used": [
+    "mcp__Apify__apify--web-search",
+    "mcp__Apify__apify--web-fetch",
+    "Bash"
+  ],
+  "next_agent": [
+    "luxury-writer"
+  ],
+  "payload": {
+    "facts": [
+      {
+        "fact_id": "fact_01",
+        "claim": "As at November 2026, the Tribunal Supremo de Elecciones (TSE) Registro Civil procedure sheet 'Celebración de Matrimonio Civil' (tse.go.cr, read in full 17 November 2026; translated from Spanish) states: the procedure is the request for and celebration of a civil marriage before the authorities of the Registro Civil, handled by the Sección de Inscripciones (Unidad de Matrimonios).",
+        "source": "https://www.tse.go.cr/pdf/requisitosytramites/Celebracion-Matrimonio-Civil.pdf",
+        "source_type": "government",
+        "checked": "2026-11-17",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_02",
+        "claim": "As at November 2026, the Tribunal Supremo de Elecciones (TSE) Registro Civil procedure sheet 'Celebración de Matrimonio Civil' (tse.go.cr, read in full 17 November 2026; translated from Spanish) states: the two applicants (contrayentes) must present themselves together and both sign the request for the celebration of the civil marriage.",
+        "source": "https://www.tse.go.cr/pdf/requisitosytramites/Celebracion-Matrimonio-Civil.pdf",
+        "source_type": "government",
+        "checked": "2026-11-17",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_03",
+        "claim": "As at November 2026, the Tribunal Supremo de Elecciones (TSE) Registro Civil procedure sheet 'Celebración de Matrimonio Civil' (tse.go.cr, read in full 17 November 2026; translated from Spanish) states: foreign applicants must provide the original and a legible copy of their identity document issued by the Dirección General de Migración y Extranjería, or their passport, valid and in good condition.",
+        "source": "https://www.tse.go.cr/pdf/requisitosytramites/Celebracion-Matrimonio-Civil.pdf",
+        "source_type": "government",
+        "checked": "2026-11-17",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_04",
+        "claim": "As at November 2026, the Tribunal Supremo de Elecciones (TSE) Registro Civil procedure sheet 'Celebración de Matrimonio Civil' (tse.go.cr, read in full 17 November 2026; translated from Spanish) states: foreign applicants must provide a birth certificate from their country of origin, apostilled, and if it is in a language other than Spanish, with an official translation. It has no expiry, except where it is not in good condition or contains a correction to substantial data affecting identity.",
+        "source": "https://www.tse.go.cr/pdf/requisitosytramites/Celebracion-Matrimonio-Civil.pdf",
+        "source_type": "government",
+        "checked": "2026-11-17",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_05",
+        "claim": "As at November 2026, the Tribunal Supremo de Elecciones (TSE) Registro Civil procedure sheet 'Celebración de Matrimonio Civil' (tse.go.cr, read in full 17 November 2026; translated from Spanish) states: foreign applicants must provide a civil status certificate, apostilled, and if it is in a language other than Spanish, with an official translation. It is valid for the period it expressly states; if none is stated, it must have been issued no more than one month before it is presented.",
+        "source": "https://www.tse.go.cr/pdf/requisitosytramites/Celebracion-Matrimonio-Civil.pdf",
+        "source_type": "government",
+        "checked": "2026-11-17",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_06",
+        "claim": "As at November 2026, the Tribunal Supremo de Elecciones (TSE) Registro Civil procedure sheet 'Celebración de Matrimonio Civil' (tse.go.cr, read in full 17 November 2026; translated from Spanish) states: the applicants must supply details of the two people who will act as witnesses: full name and identity document number, phone and email, exact address, profession or occupation, and current civil status. A foreign witness must attach a complete copy of their document and send it to the Unidad de Matrimonios email address.",
+        "source": "https://www.tse.go.cr/pdf/requisitosytramites/Celebracion-Matrimonio-Civil.pdf",
+        "source_type": "government",
+        "checked": "2026-11-17",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_07",
+        "claim": "As at November 2026, the Tribunal Supremo de Elecciones (TSE) Registro Civil procedure sheet 'Celebración de Matrimonio Civil' (tse.go.cr, read in full 17 November 2026; translated from Spanish) states: on the day, the two witnesses named in the request must attend with a valid identity document (for foreigners: passport, DIMEX or another official document issued by the Dirección General de Migración y Extranjería, or Foreign Ministry diplomatic or international mission cards), be sworn in during the ceremony, and know that the couple are free to marry with no legal impediment. Witnesses attend only on the day of the ceremony.",
+        "source": "https://www.tse.go.cr/pdf/requisitosytramites/Celebracion-Matrimonio-Civil.pdf",
+        "source_type": "government",
+        "checked": "2026-11-17",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_08",
+        "claim": "As at November 2026, the Tribunal Supremo de Elecciones (TSE) Registro Civil procedure sheet 'Celebración de Matrimonio Civil' (tse.go.cr, read in full 17 November 2026; translated from Spanish) states: an edict (notice) must be published in the official gazette, Diario Oficial La Gaceta, through the Imprenta Nacional platform; the applicants must handle the quotation and bear the cost of publishing the edict.",
+        "source": "https://www.tse.go.cr/pdf/requisitosytramites/Celebracion-Matrimonio-Civil.pdf",
+        "source_type": "government",
+        "checked": "2026-11-17",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_09",
+        "claim": "As at November 2026, the Tribunal Supremo de Elecciones (TSE) Registro Civil procedure sheet 'Celebración de Matrimonio Civil' (tse.go.cr, read in full 17 November 2026; translated from Spanish) states: to start the procedure the applicants must give an email address for notifications and a mobile phone number. On the day of the marriage the couple and witnesses must attend with their valid identity documents in good condition.",
+        "source": "https://www.tse.go.cr/pdf/requisitosytramites/Celebracion-Matrimonio-Civil.pdf",
+        "source_type": "government",
+        "checked": "2026-11-17",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_10",
+        "claim": "As at November 2026, the Tribunal Supremo de Elecciones (TSE) Registro Civil procedure sheet 'Celebración de Matrimonio Civil' (tse.go.cr, read in full 17 November 2026; translated from Spanish) states: requests are received at the central office (Unidad de Matrimonios) Monday to Friday 7:00 to 10:00 am with 10 places per day, and at regional offices nationwide 7:00 am to 2:00 pm. Marriages are celebrated by appointment, Monday to Friday between 7:00 am and 2:00 pm, at the central office or the respective regional office.",
+        "source": "https://www.tse.go.cr/pdf/requisitosytramites/Celebracion-Matrimonio-Civil.pdf",
+        "source_type": "government",
+        "checked": "2026-11-17",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_11",
+        "claim": "As at November 2026, the Tribunal Supremo de Elecciones (TSE) Registro Civil procedure sheet 'Celebración de Matrimonio Civil' (tse.go.cr, read in full 17 November 2026; translated from Spanish) states: the average time for this procedure is 4 to 6 months, depending on diary availability once the request and requirements are complete and the edict has been published.",
+        "source": "https://www.tse.go.cr/pdf/requisitosytramites/Celebracion-Matrimonio-Civil.pdf",
+        "source_type": "government",
+        "checked": "2026-11-17",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_12",
+        "claim": "As at November 2026, the Tribunal Supremo de Elecciones (TSE) Registro Civil procedure sheet 'Celebración de Matrimonio Civil' (tse.go.cr, read in full 17 November 2026; translated from Spanish) states: the Registro Civil states this service (celebration of civil marriage before the Registro Civil) is free of charge ('Este servicio es gratuito'). The separate cost of publishing the edict is borne by the applicants (see fact_08).",
+        "source": "https://www.tse.go.cr/pdf/requisitosytramites/Celebracion-Matrimonio-Civil.pdf",
+        "source_type": "government",
+        "checked": "2026-11-17",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_13",
+        "claim": "As at November 2026, the TSE Registro Civil procedure sheet 'Inscripción de Matrimonio Civil o Católico' (tse.go.cr, read in full 17 November 2026; translated from Spanish) states: this is the procedure to register marriages celebrated in Costa Rican territory (at notarial offices, parishes or consular offices).",
+        "source": "https://www.tse.go.cr/pdf/requisitosytramites/Inscripcion-de-matrimonio-civil-o-catolico.pdf",
+        "source_type": "government",
+        "checked": "2026-11-17",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_14",
+        "claim": "As at November 2026, the TSE Registro Civil procedure sheet 'Inscripción de Matrimonio Civil o Católico' (tse.go.cr, read in full 17 November 2026; translated from Spanish) states: the celebrating authority must complete, sign and seal the marriage declaration certificate supplied by the Sección de Inscripciones; for marriages celebrated before notaries, registration must use the digital marriage platform ('Matrimonio digital'), and the notary must have an enabled user in that system before the ceremony.",
+        "source": "https://www.tse.go.cr/pdf/requisitosytramites/Inscripcion-de-matrimonio-civil-o-catolico.pdf",
+        "source_type": "government",
+        "checked": "2026-11-17",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_15",
+        "claim": "As at November 2026, the TSE Registro Civil procedure sheet 'Inscripción de Matrimonio Civil o Católico' (tse.go.cr, read in full 17 November 2026; translated from Spanish) states: for civil marriages where one or both parties are foreign, a certified copy of the valid identity document in good condition must also be provided with the marriage declaration.",
+        "source": "https://www.tse.go.cr/pdf/requisitosytramites/Inscripcion-de-matrimonio-civil-o-catolico.pdf",
+        "source_type": "government",
+        "checked": "2026-11-17",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_16",
+        "claim": "As at November 2026, the TSE Registro Civil procedure sheet 'Inscripción de Matrimonio Civil o Católico' (tse.go.cr, read in full 17 November 2026; translated from Spanish) states: registration of a marriage between a Costa Rican and a foreigner, or between foreigners, takes 25 working days from receipt at the Sección de Inscripciones, as it involves a study verifying the identity of the foreign party (8 to 15 working days between Costa Ricans). The registration service is stated to be free.",
+        "source": "https://www.tse.go.cr/pdf/requisitosytramites/Inscripcion-de-matrimonio-civil-o-catolico.pdf",
+        "source_type": "government",
+        "checked": "2026-11-17",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_17",
+        "claim": "As at November 2026, the Ministerio de Relaciones Exteriores y Culto, Departamento de Autenticaciones page (rree.go.cr, read in full 17 November 2026; translated from Spanish) states: documents that arrive apostilled from abroad do not require any further approval from the Ministry to be recognised in Costa Rica. Documents in a language other than Spanish need an official translator, found through the Ministry's website, and that translation does not need to be authenticated.",
+        "source": "https://www.rree.go.cr/?sec=servicios&cat=autenticaciones",
+        "source_type": "government",
+        "checked": "2026-11-17",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_18",
+        "claim": "As at November 2026, the Ministerio de Relaciones Exteriores y Culto, Departamento de Autenticaciones page (rree.go.cr, read in full 17 November 2026; translated from Spanish) states: a public document issued in another State has no effect in Costa Rica unless it has been legalised by the Ministry or apostilled in the issuing State. The Apostille certifies only the authenticity of the signature, the capacity of the signatory and the seal, not the content of the document.",
+        "source": "https://www.rree.go.cr/?sec=servicios&cat=autenticaciones",
+        "source_type": "government",
+        "checked": "2026-11-17",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_19",
+        "claim": "As at November 2026, the Ministerio de Relaciones Exteriores y Culto, Departamento de Autenticaciones page (rree.go.cr, read in full 17 November 2026; translated from Spanish) states: all Costa Rican public documents that are to have legal effect in another State must be authenticated; for a country party to the Hague Apostille Convention the person obtains an Apostille attached to the physical document, which is also digitised for online verification. Documents issued by the Tribunal Supremo de Elecciones and documents made before a Notario Público are among the documents the department authenticates.",
+        "source": "https://www.rree.go.cr/?sec=servicios&cat=autenticaciones",
+        "source_type": "government",
+        "checked": "2026-11-17",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_20",
+        "claim": "As at November 2026, the Ministerio de Relaciones Exteriores y Culto, Departamento de Autenticaciones page (rree.go.cr, read in full 17 November 2026; translated from Spanish) states: the Departamento de Autenticaciones in San José works by appointment only, Monday to Friday; the procedure is not personal, so a third party can lodge documents without authorisation; documents are returned within 1 to 10 working days.",
+        "source": "https://www.rree.go.cr/?sec=servicios&cat=autenticaciones",
+        "source_type": "government",
+        "checked": "2026-11-17",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_21",
+        "claim": "As at November 2026, the Ministerio de Relaciones Exteriores y Culto page 'Requisitos para autenticar / apostillar' (rree.go.cr, read in full 17 November 2026; translated from Spanish) states: every document must show the public institution and the name of the public official who signs it, and the signature must be handwritten. Appointments are booked online.",
+        "source": "https://www.rree.go.cr/?sec=servicios&cat=autenticaciones&cont=1016",
+        "source_type": "government",
+        "checked": "2026-11-17",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_22",
+        "claim": "Snippet only (search result, not read in full; translated from Spanish): the Ministerio de Relaciones Exteriores y Culto appointment page for authentications states that for each document legalised or apostilled the law requires payment of a stamp (timbre). A fee applies; amount not recorded.",
+        "source": "https://www.rree.go.cr/?sec=servicios&cat=autenticaciones&cont=734",
+        "source_type": "government",
+        "checked": "2026-11-17",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_23",
+        "claim": "Snippet only (search result, not read in full; translated from Spanish): the TSE notary manual 'Matrimonio Civil Digital' indicates that where a party is foreign the notary selects 'extranjero' as nationality and enters all of that party's details in the system.",
+        "source": "https://www.tse.go.cr/pdf/varios/manual_matrimoniodigital.pdf",
+        "source_type": "government",
+        "checked": "2026-11-17",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_100",
+        "claim": "[Copied from getting-married-in-seychelles 03-source-pack, same source and date.] As at November 2026, Smartraveller (read live 11 November 2026) says DFAT can issue a CNI in Australia, but some local authorities only accept CNIs issued in their country, so ask the destination's embassy or consulate whether you need a CNI, whether you can get it in Australia, and whether it also needs an authentication or apostille. The Wedded Advisor confirms current requirements.",
+        "source": "https://www.smartraveller.gov.au/planning-trip/advice-your-planned-activities/getting-married-overseas",
+        "source_type": "government",
+        "checked": "2026-11-11",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_101",
+        "claim": "[Copied from getting-married-in-seychelles 03-source-pack, same source and date.] As at November 2026, Smartraveller 'Getting married overseas' (last updated 18/08/2026, read live 12 November 2026): some countries ask you to prove you aren't already married; the most common documents are a Certificate of No Impediment to Marriage (CNI) and certificates from a registry of births, deaths and marriages; the country may have more rules (for example a residence period); 'We can't tell you what you will need'; contact your destination's embassy or consulate. The Wedded Advisor confirms current requirements.",
+        "source": "https://www.smartraveller.gov.au/planning-trip/advice-your-planned-activities/getting-married-overseas",
+        "source_type": "government",
+        "checked": "2026-11-12",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_102",
+        "claim": "[Copied from getting-married-in-seychelles 03-source-pack, same source and date.] As at November 2026, Smartraveller 'Getting married overseas' (read live 12 November 2026): your registry of births, deaths and marriages can give a statement that there's no record you have been married before, a Single Status certificate or a No Record Result certificate; local authorities may also ask for divorce papers, the death certificate of a deceased spouse, and your original birth certificate and passport.",
+        "source": "https://www.smartraveller.gov.au/planning-trip/advice-your-planned-activities/getting-married-overseas",
+        "source_type": "government",
+        "checked": "2026-11-12",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_103",
+        "claim": "[Copied from getting-married-in-seychelles 03-source-pack, same source and date.] As at November 2026, Smartraveller 'Getting married overseas' (read live 12 November 2026): Australia doesn't recognise overseas marriages where one or both people are already married to someone else, not old enough to get married, too closely related, or forced to get married.",
+        "source": "https://www.smartraveller.gov.au/planning-trip/advice-your-planned-activities/getting-married-overseas",
+        "source_type": "government",
+        "checked": "2026-11-12",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_104",
+        "claim": "[Copied from getting-married-in-seychelles 03-source-pack, same source and date.] As at November 2026, Smartraveller (read live 11 November 2026) says you cannot register an overseas marriage in Australia, but in most cases it is legally recognised if, when it took place, it was valid under the law of the country where it happened and would have been valid under Australian law had it occurred in Australia. A foreign marriage certificate is usually accepted as proof of the marriage but may not work as proof of a name change (check with your local registry of births, deaths and marriages), and Smartraveller suggests talking to a lawyer to confirm the certificate is valid in Australia. The Wedded Advisor confirms current requirements.",
+        "source": "https://www.smartraveller.gov.au/planning-trip/advice-your-planned-activities/getting-married-overseas",
+        "source_type": "government",
+        "checked": "2026-11-11",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_105",
+        "claim": "[Copied from getting-married-in-seychelles 03-source-pack, same source and date.] As at November 2026, the Attorney-General's Department (read live 12 November 2026): if Australia recognises your overseas marriage, you can't get married again in Australia, but you may choose to hold another type of ceremony, such as a confirmation of vows or a recommitment ceremony.",
+        "source": "https://www.ag.gov.au/families-and-marriage/marriage/marriage-equality-australia",
+        "source_type": "government",
+        "checked": "2026-11-12",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_106",
+        "claim": "[Copied from getting-married-in-seychelles 03-source-pack, same source and date.] Smartraveller (DFAT), 'How to get your documents legalised' (last updated 30/09/2026): ask the overseas authority which documents they need and which must be legalised; DFAT 'can't tell you what they may want'. Find out from the intended authority or legal representative whether you need an apostille or an authentication certificate.",
+        "source": "https://www.smartraveller.gov.au/our-role/notarial-services/how-get-your-documents-legalised",
+        "source_type": "government",
+        "checked": "2026-11-11",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_107",
+        "claim": "[Copied from getting-married-in-seychelles 03-source-pack, same source and date.] Smartraveller: documents that are not original Australian public documents must first be notarised by an Australian Notary Public; the apostille or authentication certificate is applied directly to the document, so if you don't want originals marked, get a notarised copy legalised (and check the overseas authority accepts it).",
+        "source": "https://www.smartraveller.gov.au/our-role/notarial-services/how-get-your-documents-legalised",
+        "source_type": "government",
+        "checked": "2026-11-11",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_108",
+        "claim": "[Copied from getting-married-in-seychelles 03-source-pack, same source and date.] Smartraveller: requests use the Document Legalisation Request Form, signed in front of an authorised witness, and can be lodged by appointment at an Australian Passport Office, in person at many Australian embassies, high commissions and consulates overseas (not Honorary Consul consulates), or by registered mail to the Authentications Section in Melbourne or Sydney. A fee applies (amount not recorded).",
+        "source": "https://www.smartraveller.gov.au/our-role/notarial-services/how-get-your-documents-legalised",
+        "source_type": "government",
+        "checked": "2026-11-11",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_109",
+        "claim": "[Copied from getting-married-in-seychelles 03-source-pack, same source and date.] Smartraveller: processing times vary, with delays at the end of the school year and in peak holiday periods, for incomplete requests or unpaid fees, or when the issuing authority must be contacted. An Australian-issued apostille can be verified online via DFAT.",
+        "source": "https://www.smartraveller.gov.au/our-role/notarial-services/how-get-your-documents-legalised",
+        "source_type": "government",
+        "checked": "2026-11-11",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_110",
+        "claim": "As at November 2026, Smartraveller Costa Rica (updated 12 March 2026, still current at 17 November 2026, read live 17 November 2026): the overall advice level is 'Exercise a high degree of caution' (level 2) due to the threat of violent crime; carjackings and 'express kidnappings' are increasingly common.",
+        "source": "https://www.smartraveller.gov.au/destinations/americas/costa-rica",
+        "source_type": "government",
+        "checked": "2026-11-17",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_111",
+        "claim": "As at November 2026, Smartraveller Costa Rica (updated 12 March 2026, still current at 17 November 2026, read live 17 November 2026): criminals often target tourist areas, resorts, transport hubs and public transport; plan to arrive at or leave the airport during daylight hours; use established tour operators and officially registered taxis.",
+        "source": "https://www.smartraveller.gov.au/destinations/americas/costa-rica",
+        "source_type": "government",
+        "checked": "2026-11-17",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_112",
+        "claim": "As at November 2026, Smartraveller Costa Rica (updated 12 March 2026, still current at 17 November 2026, read live 17 November 2026): on an Australian passport you don't need a visa for a tourist visit of less than 90 days; you might be refused entry if you can't show you'll return home or travel onwards; entry and exit conditions can change at short notice, so contact the Embassy of Costa Rica or your airline for the latest details. The Wedded Advisor confirms current requirements.",
+        "source": "https://www.smartraveller.gov.au/destinations/americas/costa-rica",
+        "source_type": "government",
+        "checked": "2026-11-17",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_113",
+        "claim": "As at November 2026, Smartraveller Costa Rica (updated 12 March 2026, still current at 17 November 2026, read live 17 November 2026): you must pay a departure tax to leave Costa Rica, which might be included in your airline ticket (amount not recorded). If travelling via the US, meet US entry or transit requirements; via Canada, an eTA is needed.",
+        "source": "https://www.smartraveller.gov.au/destinations/americas/costa-rica",
+        "source_type": "government",
+        "checked": "2026-11-17",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_114",
+        "claim": "As at November 2026, Smartraveller Costa Rica (updated 12 March 2026, still current at 17 November 2026, read live 17 November 2026): many countries require a passport to be valid for at least 6 months before entering or departing, including for transit; check your passport's expiry before you go (general Smartraveller guidance, not a Costa Rica-specific rule).",
+        "source": "https://www.smartraveller.gov.au/destinations/americas/costa-rica",
+        "source_type": "government",
+        "checked": "2026-11-17",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_115",
+        "claim": "As at November 2026, Smartraveller Costa Rica (updated 12 March 2026, still current at 17 November 2026, read live 17 November 2026): the hurricane and rainy season is from June to November; hurricanes can cause landslides, mudslides and flooding, and tropical storms and hurricanes can happen in other months. During a storm flights may be delayed or cancelled and road travel and services disrupted.",
+        "source": "https://www.smartraveller.gov.au/destinations/americas/costa-rica",
+        "source_type": "government",
+        "checked": "2026-11-17",
+        "is_price": false,
+        "conflicts": "Same page gives two season windows: 'hurricane and rainy season ... June to November' (Safety) vs 'wet season from April to November' (Health). IMN's own season statement not read. See verify item."
+      },
+      {
+        "fact_id": "fact_116",
+        "claim": "As at November 2026, Smartraveller Costa Rica (updated 12 March 2026, still current at 17 November 2026, read live 17 November 2026): the risk of mosquito-borne illnesses (dengue, chikungunya and others) increases during the wet season from April to November; malaria is a serious risk in Limon and Puntarenas, including near the border with Panama; Zika virus is widespread, and pregnant travellers should discuss plans with their doctor.",
+        "source": "https://www.smartraveller.gov.au/destinations/americas/costa-rica",
+        "source_type": "government",
+        "checked": "2026-11-17",
+        "is_price": false,
+        "conflicts": "Same page gives two season windows: 'hurricane and rainy season ... June to November' (Safety) vs 'wet season from April to November' (Health). IMN's own season statement not read. See verify item."
+      },
+      {
+        "fact_id": "fact_117",
+        "claim": "As at November 2026, Smartraveller Costa Rica (updated 12 March 2026, still current at 17 November 2026, read live 17 November 2026): Costa Rica can experience hurricanes, landslides, earthquakes, volcanic activity, tsunamis and mudslides; volcanic ash can disrupt flights and close airports.",
+        "source": "https://www.smartraveller.gov.au/destinations/americas/costa-rica",
+        "source_type": "government",
+        "checked": "2026-11-17",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_118",
+        "claim": "As at November 2026, Smartraveller Costa Rica (updated 12 March 2026, still current at 17 November 2026, read live 17 November 2026): strong coastal currents and rip tides occur on the Caribbean and Pacific coasts; lifeguards and warning signs may be absent on public beaches; crocodile attacks have been reported on the Pacific Coast; get local advice before swimming.",
+        "source": "https://www.smartraveller.gov.au/destinations/americas/costa-rica",
+        "source_type": "government",
+        "checked": "2026-11-17",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_119",
+        "claim": "As at November 2026, Smartraveller Costa Rica (updated 12 March 2026, still current at 17 November 2026, read live 17 November 2026): public medical facilities are reasonable in San José but limited in smaller towns and rural areas; private facilities are well equipped but expensive; seriously ill or injured travellers may need medical evacuation (the summary names the US), so travel insurance must cover evacuation.",
+        "source": "https://www.smartraveller.gov.au/destinations/americas/costa-rica",
+        "source_type": "government",
+        "checked": "2026-11-17",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_120",
+        "claim": "As at November 2026, Smartraveller Costa Rica (updated 12 March 2026, still current at 17 November 2026, read live 17 November 2026): Australia has a consulate in San José headed by an Honorary Consul, providing limited consular assistance (it can conduct passport interviews and provide provisional travel documents but can't issue passports); full consular assistance comes from the Australian Embassy in Mexico City.",
+        "source": "https://www.smartraveller.gov.au/destinations/americas/costa-rica",
+        "source_type": "government",
+        "checked": "2026-11-17",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_121",
+        "claim": "As at November 2026, Smartraveller Costa Rica (updated 12 March 2026, still current at 17 November 2026, read live 17 November 2026): roads between tourist locations are usually in good or acceptable condition, roads in isolated areas are unsealed (a 4WD is a good choice), and travellers should avoid driving at night; you can drive for up to 3 months on an Australian licence.",
+        "source": "https://www.smartraveller.gov.au/destinations/americas/costa-rica",
+        "source_type": "government",
+        "checked": "2026-11-17",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_122",
+        "claim": "As at November 2026, Smartraveller Costa Rica (updated 12 March 2026, still current at 17 November 2026, read live 17 November 2026): use ride-share or registered official taxis, preferably arranged through your hotel, and book in advance if travelling at night; official airport taxis are orange and prepaid vouchers are sold in front of the San José airport terminal.",
+        "source": "https://www.smartraveller.gov.au/destinations/americas/costa-rica",
+        "source_type": "government",
+        "checked": "2026-11-17",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_123",
+        "claim": "As at November 2026, Smartraveller Costa Rica (updated 12 March 2026, still current at 17 November 2026, read live 17 November 2026): the local currency is the Costa Rican Colon (CRC); Australian money can't be exchanged in Costa Rica but US dollars can; credit cards are widely accepted, and carry cash for rural areas.",
+        "source": "https://www.smartraveller.gov.au/destinations/americas/costa-rica",
+        "source_type": "government",
+        "checked": "2026-11-17",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_124",
+        "claim": "As at November 2026, Smartraveller Costa Rica (updated 12 March 2026, still current at 17 November 2026, read live 17 November 2026): nationwide strikes and roadblocks have occurred; make alternative transport plans in case of disruptions. It is illegal for foreigners to take part in political demonstrations.",
+        "source": "https://www.smartraveller.gov.au/destinations/americas/costa-rica",
+        "source_type": "government",
+        "checked": "2026-11-17",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_125",
+        "claim": "As at November 2026, Smartraveller Costa Rica (updated 12 March 2026, still current at 17 November 2026, read live 17 November 2026): be alert to drink spiking and methanol poisoning; only drink branded, sealed drinks. Get permission before photographing anyone, especially women, children and Indigenous people.",
+        "source": "https://www.smartraveller.gov.au/destinations/americas/costa-rica",
+        "source_type": "government",
+        "checked": "2026-11-17",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_126",
+        "claim": "Instituto Meteorológico Nacional (IMN), 'Clima en Costa Rica' page (last modified 31/10/2023, read live 17 November 2026; Spanish, translated): IMN publishes climate analyses by region for the Valle Central (Central Valley), Pacífico Norte (North Pacific), Pacífico Central (Central Pacific), Pacífico Sur (South Pacific), Vertiente del Caribe (Caribbean slope) and Zona Norte (Northern Zone). The page itself states no station figures and no dry or wet season dates; it describes a study of precipitation and temperature for the 1961-1990 baseline and 1991-2006.",
+        "source": "https://www.imn.ac.cr/clima-en-costa-rica",
+        "source_type": "government",
+        "checked": "2026-11-17",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_200",
+        "claim": "Tribunal Supremo de Elecciones (Costa Rica), 'Sistema de Declaración de Matrimonio en Línea' (translated from Spanish): notaries (personas notarias) celebrate marriages and must declare them to the Registro Civil through the TSE's mandatory online declaration system, which replaced the earlier 'Matrimonio Digital' system. (Read live by the orchestrator, 17 November 2026.)",
+        "source": "https://www.tse.go.cr/matrimonioenlinea.html",
+        "source_type": "government",
+        "checked": "2026-11-17",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_201",
+        "claim": "Tribunal Supremo de Elecciones (Costa Rica), 'Sistema de Declaración de Matrimonio en Línea' (translated from Spanish): automatic immediate registration applies only when both spouses are Costa Rican by birth; when either spouse is a foreigner, the notary must upload an image of that spouse's identity document so the identity can be verified and the registration process can continue. (Read live by the orchestrator, 17 November 2026.)",
+        "source": "https://www.tse.go.cr/matrimonioenlinea.html",
+        "source_type": "government",
+        "checked": "2026-11-17",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_202",
+        "claim": "Tribunal Supremo de Elecciones (Costa Rica), 'Sistema de Declaración de Matrimonio en Línea' (translated from Spanish): the online declaration does not change or exempt notaries from the requirements of the Family Code (Código de Familia) for celebrating a marriage, and a notary must not celebrate marriages while suspended or barred by the Dirección Nacional de Notariado. (Read live by the orchestrator, 17 November 2026.)",
+        "source": "https://www.tse.go.cr/matrimonioenlinea.html",
+        "source_type": "government",
+        "checked": "2026-11-17",
+        "is_price": false
+      }
+    ],
+    "insider_details": [
+      {
+        "detail": "Order the single-status document last. Costa Rica's Registro Civil accepts a civil status certificate only for the period it states or, if none, for one month from issue, and it must be apostilled and officially translated into Spanish. Time the request so it is still current on lodgement day.",
+        "fact_ids": [
+          "fact_05",
+          "fact_17"
+        ]
+      },
+      {
+        "detail": "Build in real lead time. For a marriage before the Registro Civil, the TSE gives an average of 4 to 6 months, including publishing a notice in La Gaceta, and registration involving foreigners takes a further 25 working days.",
+        "fact_ids": [
+          "fact_08",
+          "fact_11",
+          "fact_16"
+        ]
+      },
+      {
+        "detail": "Plan for two witnesses who can be present in person on the day with valid ID; foreign witnesses' documents are sent ahead by email. If guests are flying in, choose witnesses whose passport details can be supplied early.",
+        "fact_ids": [
+          "fact_06",
+          "fact_07"
+        ]
+      },
+      {
+        "detail": "Registro Civil ceremonies run by appointment on weekdays between 7am and 2pm, so a Saturday sunset ceremony is a celebration, not the legal step, unless another authorised route is confirmed.",
+        "fact_ids": [
+          "fact_10"
+        ]
+      },
+      {
+        "detail": "For use back home, the Costa Rican marriage certificate needs a Costa Rican Apostille from the Foreign Ministry in San José (appointment only, 1 to 10 working days), and a third party can lodge it for you.",
+        "fact_ids": [
+          "fact_19",
+          "fact_20",
+          "fact_21"
+        ]
+      },
+      {
+        "detail": "Schedule guest arrivals and departures at San José airport in daylight and book transfers through the hotel or an established operator: Smartraveller advises daylight airport movements, official or hotel-arranged transport, and avoiding driving at night.",
+        "fact_ids": [
+          "fact_111",
+          "fact_121",
+          "fact_122"
+        ]
+      },
+      {
+        "detail": "Build weather contingency into any date in the June to November window: Smartraveller names it the hurricane and rainy season, with possible flight cancellations and road disruption, so plan a covered ceremony option and a buffer day for guest travel.",
+        "fact_ids": [
+          "fact_115",
+          "fact_117"
+        ]
+      },
+      {
+        "detail": "Brief guests that beach swimming on both coasts can be dangerous (rip tides, no lifeguards, crocodiles reported on the Pacific Coast), so keep any beach welcome event to the sand unless local advice says otherwise.",
+        "fact_ids": [
+          "fact_118"
+        ]
+      },
+      {
+        "detail": "Tell guests to bring US dollars or cards rather than Australian cash, and to check their insurance covers medical evacuation, as private care is expensive and serious cases may be evacuated.",
+        "fact_ids": [
+          "fact_119",
+          "fact_123"
+        ]
+      },
+      {
+        "detail": "Start Australian paperwork early: Smartraveller says DFAT can't tell you what the overseas authority will want, and legalisation processing slows at the end of the school year and in peak holidays, so confirm the Costa Rican document list first, then apostille.",
+        "fact_ids": [
+          "fact_101",
+          "fact_106",
+          "fact_109"
+        ]
+      }
+    ],
+    "quotes": [],
+    "real_weddings": [],
+    "verify_items": [],
+    "needs_signoff": [],
+    "must_include_coverage": [
+      {
+        "item": "Who can marry (foreigners/tourists)",
+        "covered_by": [
+          "fact_03",
+          "fact_04",
+          "fact_05",
+          "fact_15",
+          "fact_16"
+        ]
+      },
+      {
+        "item": "Who performs the civil marriage (Registro Civil officer, judge or notary)",
+        "covered_by": [
+          "fact_01",
+          "fact_13",
+          "fact_14",
+          "fact_23",
+          "[[VERIFY: Who may officiate for two foreign tourists. The TSE pages read describe celebration before the Registro Civil and registration of marriages celebrated before notaries; no official page read states whether judges officiate, or the rules for notaries marrying foreigners. Dirección Nacional de Notariado (dnn.go.cr) page not found.]]"
+        ]
+      },
+      {
+        "item": "Documents (passports, birth certificates, proof of single status, divorce or death documents, apostille and official translation)",
+        "covered_by": [
+          "fact_03",
+          "fact_04",
+          "fact_05",
+          "fact_17",
+          "fact_18",
+          "[[VERIFY: Divorce or death documents for previously married foreigners. The TSE celebration sheet lists only a civil status certificate; confirm what a divorced or widowed foreigner must bring.]]",
+          "[[VERIFY: Australian-side proof of single status document accepted as the 'certificado de estado civil' (and its one-month validity), and whether DFAT apostilles are needed for each Australian document.]]"
+        ]
+      },
+      {
+        "item": "Witnesses",
+        "covered_by": [
+          "fact_06",
+          "fact_07"
+        ]
+      },
+      {
+        "item": "Notice or publication periods",
+        "covered_by": [
+          "fact_08",
+          "fact_11",
+          "[[VERIFY: Whether the La Gaceta edict requirement and the 4 to 6 month timeline also apply to notary-celebrated marriages, or only to marriages before the Registro Civil.]]"
+        ]
+      },
+      {
+        "item": "Where ceremonies may take place",
+        "covered_by": [
+          "fact_10",
+          "fact_13",
+          "[[VERIFY: Where a notary-led civil ceremony may legally take place (e.g. a beach or venue). No official page read states this; the TSE sheet only gives Registro Civil office hours for Registro Civil ceremonies.]]"
+        ]
+      },
+      {
+        "item": "Registration with the Registro Civil and how to get the certificate",
+        "covered_by": [
+          "fact_14",
+          "fact_15",
+          "fact_16",
+          "[[VERIFY: How to obtain a marriage certificate (certificación) from the Registro Civil after registration, and lead time. Not read on an official page.]]"
+        ]
+      },
+      {
+        "item": "Apostille of a Costa Rican certificate",
+        "covered_by": [
+          "fact_19",
+          "fact_20",
+          "fact_21",
+          "fact_22"
+        ]
+      },
+      {
+        "item": "Australian recognition, apostille/legalisation and CNI (never state Costa Rica requires a CNI unless officially sourced)",
+        "covered_by": [
+          "fact_100",
+          "fact_101",
+          "fact_102",
+          "fact_103",
+          "fact_104",
+          "fact_105",
+          "fact_106",
+          "fact_107",
+          "fact_108",
+          "fact_109"
+        ]
+      },
+      {
+        "item": "Weather from the IMN labelled by station",
+        "covered_by": [
+          "fact_115",
+          "fact_116",
+          "fact_126",
+          "[[VERIFY: IMN station-labelled climate figures and IMN's own statement of the dry and wet seasons. https://www.imn.ac.cr/clima-en-costa-rica (read) only links regional PDFs (Valle Central, Pacífico Norte, Pacífico Central, Vertiente del Caribe and others) and 'El clima y las regiones climáticas'; those PDFs were not read. Read them before the weather section states any figure or season by region.]]",
+          "[[VERIFY: Season window. Smartraveller gives 'hurricane and rainy season June to November' (fact_115) and 'wet season April to November' (fact_116) on the same page. Confirm against IMN before the article states when the dry season is; if unresolved, write only what each source says, attributed.]]"
+        ]
+      },
+      {
+        "item": "Region lines for Guanacaste, Central Pacific, Caribbean and Central Valley from the ICT",
+        "covered_by": [
+          "[[VERIFY: Region lines for Guanacaste, the Central Pacific, the Caribbean and the Central Valley from the Instituto Costarricense de Turismo. visitcostarica.com /en/costa-rica/places-to-go/guanacaste, /central-pacific, /caribbean and /central-valley all returned 404 (redirected to /places-to-go/...); not retried per fast-mode rule. Try https://www.visitcostarica.com/where-to-go.]]"
+        ]
+      },
+      {
+        "item": "Travel, entry and safety context for guests (part 1 support)",
+        "covered_by": [
+          "fact_110",
+          "fact_111",
+          "fact_112",
+          "fact_113",
+          "fact_114",
+          "fact_117",
+          "fact_118",
+          "fact_119",
+          "fact_120",
+          "fact_121",
+          "fact_122",
+          "fact_123",
+          "fact_124",
+          "fact_125"
+        ]
+      }
+    ]
+  }
+}
