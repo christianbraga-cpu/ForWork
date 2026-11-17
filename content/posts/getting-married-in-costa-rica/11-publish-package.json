@@ -1,0 +1,335 @@
+{
+  "agent": "cms-publisher",
+  "task_id": "getting-married-in-costa-rica",
+  "stage": "11",
+  "status": "complete",
+  "round": 1,
+  "inputs_used": [
+    "CLAUDE.md",
+    "content-system/schemas/11-publish-package.schema.json",
+    "content/posts/getting-married-in-costa-rica/01-brief.json",
+    "content/posts/getting-married-in-costa-rica/02-seo.json",
+    "content/posts/getting-married-in-costa-rica/04-images.json",
+    "content/posts/getting-married-in-costa-rica/08-final.md",
+    "content/posts/getting-married-in-costa-rica/09-cro.json",
+    "content/posts/getting-married-in-costa-rica/10-distribution.json",
+    "content/posts/getting-married-in-seychelles/11-body.md, 11-publish-package.json, 12-cms-report.md, booking-checklist.md (format model)"
+  ],
+  "self_qa": {
+    "checks": [
+      {
+        "check": "Front matter and all <!-- fact_xx --> markers removed; H1 is the title; 6 image-slot comments kept; all links and the 4 UTM links unchanged; no CTA marker comments; no [[VERIFY]] markers in the copy",
+        "pass": true
+      },
+      {
+        "check": "Each utm_content (primary, secondary, closing, magnet) appears exactly once in 11-body.md",
+        "pass": true
+      },
+      {
+        "check": "Exactly 4 key takeaways and 5 FAQ pairs taken verbatim from the body",
+        "pass": true
+      },
+      {
+        "check": "Meta title and description from 02-seo.json, no prices, no em dashes",
+        "pass": true,
+        "note": "title 46, description 149 characters"
+      },
+      {
+        "check": "primary_category equals categories[0] (Destination Weddings)",
+        "pass": true
+      },
+      {
+        "check": "08-final.md stable across checks and already includes the final-check fixes; built from it as is",
+        "pass": true
+      },
+      {
+        "check": "No em dashes; Australian English; /destinations/latin-america-caribbean not linked",
+        "pass": true
+      },
+      {
+        "check": "status draft; nothing uploaded, saved or published",
+        "pass": true
+      }
+    ],
+    "confidence": 0.9
+  },
+  "open_questions": [
+    {
+      "to": "orchestrator",
+      "question": "CMS upload not attempted: FAST MODE package only, no browser in this session and the field map is not confirmed. A human saves as Draft and clicks Publish, or run /wedded-blog resume=getting-married-in-costa-rica once the field map is confirmed.",
+      "blocking": true
+    },
+    {
+      "to": "orchestrator",
+      "question": "The /destination-weddings folder and the Destination Weddings category must exist in the CMS before the draft is saved.",
+      "blocking": true
+    },
+    {
+      "to": "orchestrator",
+      "question": "The Seychelles, Mauritius and Hawaii sister links in \"Venues and planning\" point to draft posts. Publish the series together, or remove that sentence before publishing.",
+      "blocking": true
+    }
+  ],
+  "assumptions": [
+    "H1 and Article headline \"How to Get Married in Costa Rica Step by Step\"; meta title and description from 02-seo.json unchanged.",
+    "Slug getting-married-in-costa-rica and URL /destination-weddings/getting-married-in-costa-rica from 02-seo.json.",
+    "Excerpt is the first two sentences of the opening paragraph.",
+    "Categories and tags from 01-brief.json; primary category Destination Weddings. Brief tag \"Getting Married in {Country}\" kept as given.",
+    "JSON-LD is Article + BreadcrumbList (Home > Destination Weddings > post) + FAQPage (5 pairs from the body FAQ; link markup stripped from answers).",
+    "Image order follows the slot order in 04-images.json; alt and caption from 04-images.json.",
+    "Byline Wedded Wonderland (organisation), as instructed.",
+    "verify_items and needs_signoff empty: no [[VERIFY]] markers and no price or fee amounts in the copy."
+  ],
+  "verify_items": [],
+  "tools_used": [
+    "Bash (python3 -I)"
+  ],
+  "next_agent": [
+    "orchestrator"
+  ],
+  "payload": {
+    "title": "How to Get Married in Costa Rica Step by Step",
+    "slug": "getting-married-in-costa-rica",
+    "url_path": "/destination-weddings/getting-married-in-costa-rica",
+    "content_type": "planning_guide",
+    "categories": [
+      "Destination Weddings",
+      "Costa Rica",
+      "Latin America & Caribbean",
+      "Planning Guides"
+    ],
+    "primary_category": "Destination Weddings",
+    "tags": [
+      "Getting Married in Costa Rica",
+      "Getting Married in {Country}",
+      "Costa Rica",
+      "Registro Civil",
+      "Legal requirements",
+      "Apostille",
+      "Central America",
+      "Beach weddings",
+      "Wedding planning"
+    ],
+    "excerpt": "Costa Rica is on your shortlist, and before you choose a coast or a resort you want to know one thing: will the marriage stand? In most cases, yes: Australia generally recognises a marriage that was valid where it took place and would have been valid under Australian law.",
+    "key_takeaways": [
+      "Two Australians can marry legally in Costa Rica, either before the Registro Civil or before a Costa Rican notary who declares the marriage to the Registro Civil online.",
+      "For the Registro Civil, each of you brings a valid passport plus a birth certificate and a civil status certificate, both apostilled and officially translated into Spanish.",
+      "The Registro Civil route starts with both of you lodging the request together in person, with the ceremony on average 4 to 6 months later, depending on the diary.",
+      "Registration takes 25 working days when either spouse is foreign, so build that wait into the time you need before the certificate can be apostilled for home."
+    ],
+    "body_markdown_file": "content/posts/getting-married-in-costa-rica/11-body.md",
+    "faq": [
+      {
+        "q": "Is a Costa Rica marriage recognised in Australia?",
+        "a": "In most cases, yes. An overseas marriage is generally recognised in Australia if it was valid where it took place and would have been valid under Australian law. You cannot register it in Australia, and your Costa Rican certificate is usually accepted as proof of the marriage."
+      },
+      {
+        "q": "Who can legally marry us in Costa Rica?",
+        "a": "The Registro Civil celebrates civil marriages by appointment at its central and regional offices. Costa Rican notaries also celebrate marriages and declare them to the Registro Civil online."
+      },
+      {
+        "q": "Do we need our own witnesses?",
+        "a": "Yes. You name two witnesses in the Registro Civil request, and both attend on the day, are sworn in, and must know you are free to marry. If you marry before a notary, ask how many witnesses the notary needs."
+      },
+      {
+        "q": "Do our documents need to be translated into Spanish?",
+        "a": "Yes. Your apostilled birth certificate and civil status certificate each need an official Spanish translation. Official translators are found through the Ministry of Foreign Affairs website, and the translation needs no further authentication."
+      },
+      {
+        "q": "How much does it cost to get married in Costa Rica?",
+        "a": "There is no charge for the registry service of celebrating a civil marriage before the Registro Civil. You pay to publish the notice in La Gaceta, and a fee applies to apostilling your Australian documents. Ask any notary and official translator for their fees in writing before you commit."
+      }
+    ],
+    "images": [
+      {
+        "slot_id": "featured",
+        "file": "content/posts/getting-married-in-costa-rica/images/getting-married-in-costa-rica-pacific-coast-rainforest-ceremony.webp",
+        "role": "featured",
+        "alt": "Wedding ceremony set-up on a lawn above the Pacific, framed by tropical rainforest in golden light in Costa Rica",
+        "caption": "<Place>, <town>, Costa Rica. Photo: <credit> (fill once sourced).",
+        "status": "needed"
+      },
+      {
+        "slot_id": "documents",
+        "file": "content/posts/getting-married-in-costa-rica/images/getting-married-in-costa-rica-documents-still-life-linen.webp",
+        "role": "inline",
+        "alt": "Two closed passports and a linen folder of papers beside a fountain pen on natural linen",
+        "caption": "Illustrative image (if AI, after approval) or Photo: <credit> (fill once sourced).",
+        "status": "needed"
+      },
+      {
+        "slot_id": "civil-ceremony",
+        "file": "content/posts/getting-married-in-costa-rica/images/getting-married-in-costa-rica-civil-ceremony-garden-terrace.webp",
+        "role": "inline",
+        "alt": "Couple exchanging vows with an officiant on a garden terrace surrounded by tropical greenery",
+        "caption": "<Place>, <town>, Costa Rica. Photo: <credit> (fill once sourced).",
+        "status": "needed"
+      },
+      {
+        "slot_id": "certificate-australia",
+        "file": "content/posts/getting-married-in-costa-rica/images/getting-married-in-costa-rica-certificate-folder-rings-still-life.webp",
+        "role": "inline",
+        "alt": "Wedding rings resting on a closed cream document folder tied with ribbon, beside two passports",
+        "caption": "Illustrative image (if AI, after approval) or Photo: <credit> (fill once sourced).",
+        "status": "needed"
+      },
+      {
+        "slot_id": "when-to-marry",
+        "file": "content/posts/getting-married-in-costa-rica/images/getting-married-in-costa-rica-dry-season-sunset-reception.webp",
+        "role": "inline",
+        "alt": "Long reception table set on a deck above the ocean under clear skies in warm sunset light",
+        "caption": "<Place>, <town>, Costa Rica. Photo: <credit> (fill once sourced; month taken recorded).",
+        "status": "needed"
+      },
+      {
+        "slot_id": "choose-your-region",
+        "file": "content/posts/getting-married-in-costa-rica/images/getting-married-in-costa-rica-region-wide-view.webp",
+        "role": "inline",
+        "alt": "Wide view of a forested Pacific bay with calm water and green hills in Costa Rica",
+        "caption": "<Place>, <town>, Costa Rica. Photo: <credit> (fill once sourced).",
+        "status": "needed"
+      }
+    ],
+    "cta": {
+      "text": "Speak with Wedded Concierge",
+      "subtext": "One Wedded Advisor confirms the inclusions in writing before you commit.",
+      "link": "https://weddedwonderland.com/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=getting-married-in-costa-rica&utm_content=primary",
+      "placement": "Existing inline link in 'Venues and planning' (line 171, anchor 'speak with Wedded Concierge'), after the legal steps, certificate, ceremony settings, seasons and region chooser are done and the post turns to comparing resorts. Unchanged."
+    },
+    "secondary_cta": {
+      "text": "Talk your coast through",
+      "subtext": "Your Wedded Advisor is your single point of contact from start to finish.",
+      "link": "https://weddedwonderland.com/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=getting-married-in-costa-rica&utm_content=secondary",
+      "placement": "Existing final line of 'Choosing your region' (line 156, anchor 'talk them through with Wedded Concierge'), where the reader is weighing Guanacaste, the Central Pacific, the Caribbean and the Central Valley. Unchanged."
+    },
+    "closing_cta": {
+      "text": "Start a conversation with Wedded Concierge",
+      "subtext": "Quotes in AUD, in your time zone, with the fee agreed in writing before any work begins.",
+      "link": "https://weddedwonderland.com/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=getting-married-in-costa-rica&utm_content=closing",
+      "placement": "Existing closing paragraph under 'Plan your Costa Rica wedding with Wedded Concierge' (line 201). Unchanged."
+    },
+    "lead_magnet": {
+      "name": "Wedded Wonderland magazine",
+      "link": "https://weddedwonderland.com/magazine?utm_source=blog&utm_medium=content&utm_campaign=getting-married-in-costa-rica&utm_content=magnet",
+      "placement": "Existing final line of 'Venues and planning' (line 173), for readers gathering ideas before they enquire. Unchanged."
+    },
+    "tracking_links": [
+      "https://weddedwonderland.com/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=getting-married-in-costa-rica&utm_content=primary",
+      "https://weddedwonderland.com/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=getting-married-in-costa-rica&utm_content=secondary",
+      "https://weddedwonderland.com/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=getting-married-in-costa-rica&utm_content=closing",
+      "https://weddedwonderland.com/magazine?utm_source=blog&utm_medium=content&utm_campaign=getting-married-in-costa-rica&utm_content=magnet"
+    ],
+    "seo": {
+      "meta_title": "How to Get Married in Costa Rica, Step by Step",
+      "meta_description": "How Australians marry legally in Costa Rica: who can officiate, the documents and translations you need, the ceremony, and readying your certificate.",
+      "focus_keyword": "getting married in costa rica",
+      "canonical": "https://weddedwonderland.com/destination-weddings/getting-married-in-costa-rica",
+      "og_image_slot": "featured"
+    },
+    "schema_jsonld": {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Article",
+          "@id": "https://weddedwonderland.com/destination-weddings/getting-married-in-costa-rica#article",
+          "headline": "How to Get Married in Costa Rica Step by Step",
+          "description": "How Australians marry legally in Costa Rica: who can officiate, the documents and translations you need, the ceremony, and readying your certificate.",
+          "author": {
+            "@type": "Organization",
+            "name": "Wedded Wonderland",
+            "url": "https://weddedwonderland.com/"
+          },
+          "publisher": {
+            "@type": "Organization",
+            "name": "Wedded Wonderland",
+            "url": "https://weddedwonderland.com/"
+          },
+          "datePublished": "",
+          "mainEntityOfPage": "https://weddedwonderland.com/destination-weddings/getting-married-in-costa-rica",
+          "inLanguage": "en-AU"
+        },
+        {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Home",
+              "item": "https://weddedwonderland.com/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Destination Weddings",
+              "item": "https://weddedwonderland.com/destination-weddings"
+            },
+            {
+              "@type": "ListItem",
+              "position": 3,
+              "name": "How to Get Married in Costa Rica Step by Step",
+              "item": "https://weddedwonderland.com/destination-weddings/getting-married-in-costa-rica"
+            }
+          ]
+        },
+        {
+          "@type": "FAQPage",
+          "@id": "https://weddedwonderland.com/destination-weddings/getting-married-in-costa-rica#faq",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "Is a Costa Rica marriage recognised in Australia?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "In most cases, yes. An overseas marriage is generally recognised in Australia if it was valid where it took place and would have been valid under Australian law. You cannot register it in Australia, and your Costa Rican certificate is usually accepted as proof of the marriage."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Who can legally marry us in Costa Rica?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "The Registro Civil celebrates civil marriages by appointment at its central and regional offices. Costa Rican notaries also celebrate marriages and declare them to the Registro Civil online."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Do we need our own witnesses?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes. You name two witnesses in the Registro Civil request, and both attend on the day, are sworn in, and must know you are free to marry. If you marry before a notary, ask how many witnesses the notary needs."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Do our documents need to be translated into Spanish?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes. Your apostilled birth certificate and civil status certificate each need an official Spanish translation. Official translators are found through the Ministry of Foreign Affairs website, and the translation needs no further authentication."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "How much does it cost to get married in Costa Rica?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "There is no charge for the registry service of celebrating a civil marriage before the Registro Civil. You pay to publish the notice in La Gaceta, and a fee applies to apostilling your Australian documents. Ask any notary and official translator for their fees in writing before you commit."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    "author": "Wedded Wonderland",
+    "status": "draft",
+    "verify_items": [],
+    "needs_signoff": [],
+    "redirect": null,
+    "redirects_recommended": [],
+    "series": {
+      "name": "Getting Married in {Country}",
+      "position": 4,
+      "template": "content-system/templates/getting-married-in-country.md"
+    },
+    "draft_note": "DRAFT. Do not publish until checked: no [[VERIFY]] items in the copy; no prices or fee amounts (the La Gaceta notice, the Australian legalisation fee, notaries and official translators are described as costs or fees that apply, with each to confirm amounts in writing), nothing for Nic to sign off. Image slots needed (6 of 6, none approved): featured, documents, civil-ceremony, certificate-australia, when-to-marry, choose-your-region. featured and civil-ceremony show real weddings: licensed real wedding with written consent only, never AI, officiant identifiable only with written consent; when-to-marry and choose-your-region must be real places proven by media kit, register or EXIF, never AI (when-to-marry records the month taken); documents and certificate-australia are still lifes (Canva, licensed stock or own shoot; AI only with Wedded Wonderland approval, captioned 'Illustrative image'), with nothing readable and nothing that imitates a Costa Rican or Australian document. Instituto Costarricense de Turismo (ICT) media only if its licence covers third-party commercial blog use. Captions with place and credit to fill once sourced. Series sister links: the body links to /destination-weddings/getting-married-in-seychelles, /destination-weddings/mauritius-wedding and /destination-weddings/getting-married-in-hawaii, which are still drafts. Publish the four posts together, or remove that sentence before publishing. Do not link /destinations/latin-america-caribbean. CMS setup: the /destination-weddings folder and the Destination Weddings category must exist before the draft is saved. Do not Publish or Schedule; a human clicks Publish."
+  }
+}
