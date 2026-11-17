@@ -28,4 +28,12 @@
 - **Stage 3 fast (3 reviews):** DONE. Accuracy 3.8 (majors: DFAT CNI fee read as the Bali Consulate fee; "then registered" generalised to Muslim KUA marriages; unsourced "most likely" takeaway). SEO 4.3 (meta 159 chars; small anchor and FAQ fixes; cannibalisation 5). Reader (couple) relevance 2, trust 3, clarity 3, would_enquire 2 (Italy-led persona; praised the tables and questions; no prices or names; booking-fee line). Merged request: 04-reviews/v1/merged.md.
 - **Stage 4 fast (writer v2):** DONE. 03-draft-v2.md. --check: 2,377 reader words, 0 dashes, 0 placeholders, 5 domains, none blocked. YAML valid; 26 claims, 20 links. All findings applied ("consortia" cut and "apostille" left undefined, since no fact defines them).
 - **Decision (default):** dated line standardised to "Sources current as at <month year>" in both templates, matching writer.md (the two had disagreed since Vietnam).
-- **Stage 6 fast (copy editor):** running.
+- **Stage 6 fast (copy editor):** DONE. final.md 2,382 reader words, 0 dashes, 0 placeholders, none blocked; YAML valid (26 claims, 20 links); publish-package.json valid (meta 150 chars, 11 open items); chrome-upload-prompt.md (draft only; tells the uploader to override the shared CTA block if it says "complimentary"); article.docx built. The CTA library's "complimentary" body copy swapped for "free" under SITE-CONFLICTS. Image file names are placeholders.
+
+## Must-fix before publish
+1. SITE-CONFLICTS (marketing and Nic): Concierge prices (concierge page US$200, US$5,500, US$3,000 vs brand-profile $250 and $3,500); Bali page calls Concierge "complimentary"; Bali page budget AUD 5,000 to 50,000 vs cost guide USD 38,000 to 84,000; Conrad AUD vs USD; AYANA 1,260 vs 2,300 seated; 800+ vs 10,000+ weddings. Also update brand-profile.md and the CTA library's "complimentary" wording once decided.
+2. PACKAGE-PRICES: our three Bali packages publish no prices; add "From AUD" only after Nic signs off.
+3. Nic signs off: DFAT from AUD 181 (CNI issued in Australia) and from AUD 105 (apostille), 2026; e-VOA IDR 500,000; Bali levy IDR 150,000.
+4. CONSULATE-FEE and REGISTRY-QUESTIONS: Consulate-General Bali CNI fee; Indonesian Civil Registry steps, recognised religions list, witness rules, certificate and apostille.
+5. LINK-CHECK (all externals in a browser), CONCIERGE-PAY, CLIMATE, RETRO-LINKS, IMAGE-RIGHTS, AUTHOR, CMS-URL.
+No publish-order dependency (no DRAFT sibling links).
