@@ -236,6 +236,17 @@ No Malta destination page exists yet (open item MALTA-PAGE); link `/destinations
 | `/destination-weddings/wedding-destinations-january` | Wedding Destinations for January | wedding destinations january |
 | `/trending/best-destination-wedding-locations` | Best Destination Wedding Locations | best destination wedding locations |
 
+## Bali cluster (Firecrawl map and Apify, 17 Nov 2026)
+
+| URL | Title | Owns |
+|---|---|---|
+| `/destinations/asia/bali` | Bali destination hub (title includes "Packages") | bali destination wedding (partial overlap with "bali wedding packages": link as the hub, never with an exact "bali wedding packages" anchor) |
+| `/expert-advice/bali-wedding-cost-the-complete-2026-guide` | Bali Wedding Cost: The Complete 2026 Guide | bali wedding cost (link for costs; do not repeat its figures; its USD range conflicts with the Bali hub's AUD range, SITE-CONFLICTS) |
+| `/the-ultimate-destination-wedding-guide-bali` | The Ultimate Destination Wedding Guide: Bali | bali destination wedding guide |
+| `/real-weddings/australian-couple-bali-toni-jay-destination-wedding` | Real wedding: Toni and Jay, Bali | (real wedding) |
+| `/real-weddings/julia-noah-bohemian-bali-wedding` | Real wedding: Julia and Noah, Bali | (real wedding) |
+| `/venue/ayana-bali`, `/venue/alila-villas-uluwatu`, `/venue/conrad-bali`, `/venue/nirjhara-bali-waterfall-weddings` | Bali venue profiles (rule 5) | (venue profiles; Conrad has 3 duplicate URLs and a currency conflict, check before linking) |
+
 ## Germany articles (Firecrawl map, 17 Nov 2026)
 
 | URL | Title | Owns |
