@@ -4,3 +4,4 @@
 23:07 03 batch A partial (Civil Code cut off; apostille and Federal Police translation facts); batch B 34 facts (CNI, Embassy Brasilia, recognition, Smartraveller Brazil 'high degree of caution'; no INMET figures; Visit Brasil lines unsourced). Orchestrator top-up fact_200-212 from Lei 6.015/1973 arts 67-75. SEO done: US 'brazil wedding' 590, AU 50; traditions page overlaps legal section.
 23:11 05 first draft done (~3,130 words, 3 VERIFY: non-resident eligibility, juiz de paz, certidao).
 23:12 07 five readers done (enquire 1 to 3).
+23:13 06 editor 4.14 pass_with_edits, 13 edits applied (3 VERIFY resolved by rewording).
