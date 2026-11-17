@@ -20,3 +20,4 @@
 - Legal sources: chinhphu.vn, moj.gov.vn, dichvucong.gov.vn, the Embassy of Vietnam in Australia, the Australian Embassy in Hanoi, Smartraveller Vietnam.
 
 ## Stages
+- **Stage 0 fast (strategist):** DONE. AU volumes: wedding in vietnam 110; vietnam wedding packages 70; destination wedding in vietnam 40; hoi an wedding 20; getting married in vietnam 10. "Can foreigners get married in Vietnam?" is the top PAA in all cities. SERP: venue listicles; law firms writing for foreigner plus Vietnamese citizen; nobody covers two non-resident Australians or recognition at home; snippets conflict on minimum age (18 vs 20). No cannibalisation. Brief: the 11 template H2s, 1,900 to 2,500 words, 6 FAQs. **Decisions (default):** three Vietnam articles added to link-map; the /featured/ Hyatt Da Nang page held (may be a paid placement) until marketing confirms.

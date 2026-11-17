@@ -206,6 +206,17 @@ URL until a human confirms the other resolves.
 | `/10-stunning-chateau-venues-in-france-to-consider-for-your-destination-wedding` | 10 Stunning Chateau Venues in France | chateau wedding venues france |
 | `/the-most-timeless-destination-weddings-in-france` | The Most Timeless Destination Weddings in France | destination weddings in france |
 
+## Vietnam articles (Firecrawl map, 17 Nov 2026)
+
+| URL | Title | Owns |
+|---|---|---|
+| `/da-nang-vietnam-wedding-destination` | Da Nang as a wedding destination | da nang wedding |
+| `/sunset-love-in-vietnam` | Sunset Love in Vietnam (real wedding or feature) | (inspiration) |
+| `/top-10-vietnamese-wedding-traditions-cultural-insights-and-celebrations` | Top 10 Vietnamese Wedding Traditions | vietnamese wedding traditions |
+| `/featured/the-destination-wedding-venue-in-vietnam` | Featured venue (Hyatt Da Nang) | HOLD: /featured/ pages may be paid placements; do not link editorially until marketing confirms |
+
+No Vietnam destination page exists yet (open item VIETNAM-PAGE); link `/destinations/asia`.
+
 ## 9. Rings and Jewellery cluster (Firecrawl map, 27 Oct 2026)
 
 Hub: `/style-advice/celebrity-engagement-rings` (in production). Spokes:
