@@ -1,0 +1,381 @@
+{
+ "agent": "seo-researcher",
+ "task_id": "getting-married-in-seychelles",
+ "stage": "02",
+ "status": "complete",
+ "round": 1,
+ "inputs_used": [
+  "CLAUDE.md",
+  "content/posts/getting-married-in-seychelles/00-input.json (no 01-brief.json on disk; run-log says it was lost in a container restart)",
+  "content-system/templates/getting-married-in-country.md",
+  "content-system/schemas/02-seo.schema.json",
+  "content-system/seo/link-map.csv",
+  "content-system/seo/priority-link-targets.md",
+  "content/posts/mauritius-wedding/02-seo.json (format model)"
+ ],
+ "tools_used": [
+  "DataForSEO serp_organic_live_advanced: Sydney, Melbourne, New York, Dubai, Singapore all ok first try; 2026-11-17",
+  "DataForSEO kw_data_google_ads_search_volume (Australia, United States; 7 keywords)",
+  "DataForSEO dataforseo_labs_bulk_keyword_difficulty (AU, US)",
+  "DataForSEO dataforseo_labs_google_ranked_keywords (weddedwonderland.com, AU, %seychelles%): 0 results",
+  "Apify web-fetch (one round): Sydney #1 ics.gov.sc, #2 AU High Commission, #3 wed-in-seychelles.com (all 200); /destinations/africa, /wonderland-concierge, /magazine, /honeymoon-ideas/african-honeymoon (200); Smartraveller Seychelles (200); seychelles.travel to seychelles.com (200); meteo.gov.sc redirect page (200)",
+  "GSC: not read in fast mode (no Drive export opened)"
+ ],
+ "next_agent": [
+  "planner-sme",
+  "visual-curator"
+ ],
+ "self_qa": {
+  "checks": [
+   {
+    "check": ">= 7 of 10 locations returned results",
+    "pass": false,
+    "note": "Fast mode: 5 cities by instruction; all 5 returned first try."
+   },
+   {
+    "check": "Every outline H2 maps to a real query or must-include",
+    "pass": true,
+    "note": "Each H2 cites the PAA, related search, keyword or template H2 it serves."
+   },
+   {
+    "check": "Every internal and external link verified live today",
+    "pass": false,
+    "note": "Verified 200 today: /wonderland-concierge, /magazine, /honeymoon-ideas/african-honeymoon, ics.gov.sc, High Commission page, Smartraveller Seychelles, seychelles.com. Expert-advice pages, Smartraveller getting-married-overseas and meteo.sc pending; Mauritius and Hawaii sisters are drafts."
+   },
+   {
+    "check": "No competitor links; no noindex targets",
+    "pass": true,
+    "note": "/destinations/africa excluded (hidden from Google per priority-link-targets.md). Planner and package sites are reference only."
+   },
+   {
+    "check": "Meta lengths within limits",
+    "pass": true,
+    "note": "Title 50/60, description 150/155."
+   }
+  ],
+  "confidence": 0.75
+ },
+ "open_questions": [
+  {
+   "to": "planner-sme",
+   "question": "Read ics.gov.sc and its linked 'Procedure for Civil Marriages Involving Two Foreigners' page: notice period, special licence, arrival lead time, document list (two lists differ), apostille issuer. Page one contradicts itself on all of these.",
+   "blocking": true
+  },
+  {
+   "to": "planner-sme",
+   "question": "The Australian High Commission Seychelles page looks dated (old Civil Status web address, fees differ). Confirm before linking; confirm expert-advice pages, Smartraveller getting-married-overseas and meteo.sc live.",
+   "blocking": false
+  },
+  {
+   "to": "person",
+   "question": "/destinations/africa is on the do-not-link list (hidden from Google), so it is not linked here despite the brief. The Mauritius 02-seo links it; fix there too?",
+   "blocking": false
+  }
+ ],
+ "assumptions": [
+  "'Wedded Concierge' used for anchors per series template; brand-facts.md not re-read."
+ ],
+ "payload": {
+  "primary_keyword": "getting married in seychelles",
+  "secondary_keywords": [
+   "wedding in seychelles",
+   "seychelles wedding",
+   "seychelles wedding requirements",
+   "seychelles beach wedding",
+   "can you get married in seychelles"
+  ],
+  "secondary_keyword_notes": [
+   "Google Ads 12-month average, fetched 2026-11-17. AU: getting married in seychelles 10; seychelles wedding 10; wedding in seychelles 10; seychelles wedding packages 10; seychelles beach wedding 10; seychelles wedding requirements and legal wedding seychelles no data. US: seychelles wedding 50 (peak 70 Mar 2026); wedding in seychelles 50; seychelles wedding packages 20; getting married in seychelles 10; seychelles wedding requirements 10; seychelles beach wedding 10; legal wedding seychelles no data.",
+   "Keyword difficulty (DataForSEO Labs): US getting married in seychelles 42; seychelles wedding, wedding in seychelles, seychelles wedding packages 0; others no data. AU: no data for any.",
+   "'Can you (legally) get married in (the) Seychelles?' is a PAA in Sydney, Melbourne, New York and Singapore; also a related search in Sydney. No volume pulled.",
+   "'legal wedding seychelles' has no volume in AU or US: dropped as a target; the legal angle is carried by the PAA wording.",
+   "'seychelles wedding packages' not targeted (overlap call): handled as a question to ask the resort or planner in Venues and planning."
+  ],
+  "intent": "informational",
+  "slug": "getting-married-in-seychelles",
+  "url_path": "/destination-weddings/getting-married-in-seychelles",
+  "meta_title": "How to Get Married in the Seychelles, Step by Step",
+  "meta_title_alt": "How to Get Married in the Seychelles",
+  "meta_description": "How Australians marry legally in the Seychelles: Civil Status Office steps, apostilled documents, the ceremony and readying your certificate for home.",
+  "meta_notes": "Title 50 chars (series wording); alt 36 (input title). Description 150 chars. Australian English, no figures, no 'best', no em dashes.",
+  "outline": [
+   {
+    "h2": "Can Australians marry legally in the Seychelles?",
+    "answers": "PAA 'Can you legally get married in the Seychelles?' (Sydney) and 'Can you get married in Seychelles?' (Melbourne, New York, Singapore); template H2 2",
+    "h3": [
+     "Civil, religious or symbolic"
+    ],
+    "notes": "Intro before this H2: direct answer in two sentences, exactly 4 one-sentence takeaways, 'as at November 2026' once. The High Commission page says a church wedding alone is not legally recognised and a civil ceremony must come first [[VERIFY: ics.gov.sc]]. No same-sex legal position (Dubai PAA raises it; out of scope)."
+   },
+   {
+    "h2": "Before you go: entry and documents",
+    "answers": "PAA 'What is needed to marry a foreigner?' (Melbourne, New York, Dubai, Singapore); Smartraveller Seychelles (read today); template H2 3",
+    "notes": "Smartraveller: exercise normal safety precautions; no visa but a Digital Travel Authorisation before travel (read 2026-11-17). Documents only from ics.gov.sc (foreigner list) [[VERIFY: two lists on the page differ]]; apostille on Australian documents (DFAT); translation into English or French. CNI or impediment affidavit per High Commission page [[VERIFY]]."
+   },
+   {
+    "h2": "Step by step with the Civil Status Office",
+    "answers": "'seychelles wedding requirements' US 10; related 'Getting married in seychelles for foreigners' (Sydney); template H2 4",
+    "h3": [
+     "Sending your documents ahead",
+     "The notice period and a special licence",
+     "Registering in person",
+     "Who performs the ceremony, and where",
+     "Witnesses"
+    ],
+    "notes": "Every step from ics.gov.sc and its 'Procedure for civil marriages involving two foreigners' page. Notice period, special licence and arrival lead time conflict across page one: all [[VERIFY: ics.gov.sc]]. No fees (template rule: 'a fee applies'). Link wedding-witnesses and who-can-perform-a-marriage."
+   },
+   {
+    "h2": "Getting your certificate ready for Australia",
+    "answers": "Related 'Seychelles marriage certificate' (Sydney); gap: no result covers recognition in Australia; template H2 5",
+    "h3": [
+     "Apostille",
+     "Recognition and registering at home"
+    ],
+    "notes": "High Commission page names the Supreme Court registry for the apostille [[VERIFY]]. Smartraveller 'Getting married overseas' for recognition. Link apostille, register-overseas-marriage and overseas-marriage-certificate pages."
+   },
+   {
+    "h2": "Ceremonies on the beach, at your resort or on another island",
+    "answers": "'seychelles beach wedding' AU 10 / US 10; High Commission: ceremonies at hotel property or authorised places with Civil Registrar permission; template H2 6",
+    "notes": "No permit claim beyond what ics.gov.sc or the High Commission states; officer travel to other islands as a cost the couple covers [[VERIFY]]. Otherwise 'ask your resort'."
+   },
+   {
+    "h2": "When to marry in the Seychelles",
+    "answers": "Smartraveller: heavy rain and monsoon season November to March (read today); template H2 7",
+    "notes": "Seychelles Meteorological Authority figures labelled by station [[VERIFY: meteo.sc]]. No best month. Swimming-safety line from Smartraveller if useful."
+   },
+   {
+    "h2": "Choosing your island",
+    "answers": "Related 'Seychelles wedding venues' (Sydney); Civil Status offices on Mahe, Praslin and La Digue (ics.gov.sc); template H2 8",
+    "h3": [
+     "Mahe",
+     "Praslin",
+     "La Digue",
+     "Private and outer islands"
+    ],
+    "notes": "One or two lines each from Seychelles Tourism Board (seychelles.com). No venue names, no ranking."
+   },
+   {
+    "h2": "Venues and planning",
+    "answers": "Commercial step; audience 150k+ AUD; 'seychelles wedding packages' (US 20) handled as a question to ask",
+    "notes": "One Wedded Concierge line (primary CTA). Ask whether a resort package covers the civil formalities, the officer's attendance and the apostille. Link the African honeymoon page (Indian Ocean Islands), Mauritius sister guide once live, /magazine as magnet."
+   },
+   {
+    "h2": "Plan your Seychelles wedding with Wedded Concierge",
+    "answers": "Closing CTA per series template",
+    "notes": "utm_content=closing. FAQ block (5 questions) sits before the close."
+   }
+  ],
+  "faq_questions": [
+   "Is a Seychelles marriage recognised in Australia?",
+   "How early do we need to arrive in the Seychelles before the wedding?",
+   "Can we marry on the beach in the Seychelles?",
+   "Do we need our own witnesses?",
+   "Do our documents need an apostille?"
+  ],
+  "faq_notes": "Recognition and documents from PAA and related searches; arrival lead time is the most contradictory claim on page one, answer only from ics.gov.sc. GSC wording not checked (fast mode).",
+  "internal_links": [
+   {
+    "anchor": "Speak with Wedded Concierge",
+    "target": "https://weddedwonderland.com/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=getting-married-in-seychelles&utm_content=primary",
+    "type": "commercial",
+    "placement": "Venues and planning (primary); closing H2 uses utm_content=closing",
+    "verified_live": "verified live 2026-11-17 (apify web-fetch HTTP 200)"
+   },
+   {
+    "anchor": "free digital magazines",
+    "target": "https://weddedwonderland.com/magazine?utm_source=blog&utm_medium=content&utm_campaign=getting-married-in-seychelles&utm_content=magnet",
+    "type": "hub",
+    "placement": "Venues and planning, once as magnet",
+    "verified_live": "verified live 2026-11-17 (apify web-fetch HTTP 200)"
+   },
+   {
+    "anchor": "an Indian Ocean finish after safari",
+    "target": "https://weddedwonderland.com/honeymoon-ideas/african-honeymoon",
+    "type": "related",
+    "placement": "Venues and planning, honeymoon line",
+    "verified_live": "verified live 2026-11-17 (apify web-fetch HTTP 200); section 'The Indian Ocean Islands' names the Seychelles"
+   },
+   {
+    "anchor": "getting married in Mauritius",
+    "target": "https://weddedwonderland.com/destination-weddings/mauritius-wedding",
+    "type": "related",
+    "placement": "Venues and planning (series sister)",
+    "verified_live": "not live: draft (stage 02 done 2026-11-17). Add only after it is published; otherwise drop."
+   },
+   {
+    "anchor": "getting married in Hawaii",
+    "target": "https://weddedwonderland.com/destination-weddings/getting-married-in-hawaii",
+    "type": "related",
+    "placement": "Venues and planning (series sister)",
+    "verified_live": "not live: draft in link map (2026-11-16). Add only after it is published; otherwise drop."
+   },
+   {
+    "anchor": "who your wedding witnesses can be",
+    "target": "https://weddedwonderland.com/expert-advice/wedding-witnesses",
+    "type": "related",
+    "placement": "H3 Witnesses",
+    "verified_live": "linked from live /magazine 2026-11-17; not fetched directly"
+   },
+   {
+    "anchor": "who can perform a marriage",
+    "target": "https://weddedwonderland.com/expert-advice/who-can-perform-a-marriage",
+    "type": "related",
+    "placement": "H3 Who performs the ceremony, and where",
+    "verified_live": "linked from live /magazine 2026-11-17; not fetched directly"
+   },
+   {
+    "anchor": "what an apostille is",
+    "target": "https://weddedwonderland.com/expert-advice/what-is-an-apostille-and-does-my-paperwork-need-one",
+    "type": "related",
+    "placement": "H3 Apostille",
+    "verified_live": "pending: link map last_seen 2026-10-20; not fetched today (fast-mode budget)"
+   },
+   {
+    "anchor": "registering an overseas marriage at home",
+    "target": "https://weddedwonderland.com/expert-advice/do-you-have-to-register-an-overseas-marriage-at-home",
+    "type": "related",
+    "placement": "H3 Recognition and registering at home",
+    "verified_live": "pending: link map last_seen 2026-10-20; not fetched today (fast-mode budget)"
+   },
+   {
+    "anchor": "your overseas marriage certificate",
+    "target": "https://weddedwonderland.com/expert-advice/overseas-marriage-certificate",
+    "type": "related",
+    "placement": "Getting your certificate ready for Australia",
+    "verified_live": "pending: link map last_seen 2026-10-20; not fetched today (fast-mode budget)"
+   },
+   {
+    "anchor": "Certificate of No Impediment",
+    "target": "https://weddedwonderland.com/expert-advice/what-is-a-certificate-of-no-impediment-and-who-issues-it",
+    "type": "related",
+    "placement": "Before you go: entry and documents",
+    "verified_live": "pending: link map last_seen 2026-10-20; not fetched today (fast-mode budget)"
+   },
+   {
+    "anchor": "marry legally abroad or have a symbolic ceremony",
+    "target": "https://weddedwonderland.com/expert-advice/should-you-marry-legally-abroad-or-have-a-symbolic-ceremony",
+    "type": "related",
+    "placement": "Can Australians marry legally H2",
+    "verified_live": "pending: link map last_seen 2026-10-20; not fetched today (fast-mode budget)"
+   }
+  ],
+  "external_links": [
+   {
+    "anchor": "Seychelles Civil Status marriage information",
+    "url": "https://www.ics.gov.sc/civil-status/getting-married",
+    "type": "authority",
+    "rel": "noopener",
+    "verified_live": "verified live 2026-11-17 (apify web-fetch HTTP 200); Immigration and Civil Status Seychelles"
+   },
+   {
+    "anchor": "Australian High Commission guidance on marrying in Seychelles",
+    "url": "https://mauritius.highcommission.gov.au/plut/MarrySeychelles.html",
+    "type": "authority",
+    "rel": "noopener",
+    "verified_live": "verified live 2026-11-17 (apify web-fetch HTTP 200); content looks dated (old Civil Status web address, fees differ from ics.gov.sc). Link only if planner-sme confirms it is current; otherwise cite ics.gov.sc."
+   },
+   {
+    "anchor": "Smartraveller Seychelles advice",
+    "url": "https://www.smartraveller.gov.au/destinations/africa/seychelles",
+    "type": "authority",
+    "rel": "noopener",
+    "verified_live": "verified live 2026-11-17 (apify web-fetch HTTP 200); 'Exercise normal safety precautions', still current at 17 November 2026"
+   },
+   {
+    "anchor": "getting married overseas",
+    "url": "https://www.smartraveller.gov.au/planning-trip/advice-your-planned-activities/getting-married-overseas",
+    "type": "authority",
+    "rel": "noopener",
+    "verified_live": "same URL used in mauritius-wedding 02-seo; not fetched today"
+   },
+   {
+    "anchor": "Seychelles Meteorological Authority",
+    "url": "https://www.meteo.sc/",
+    "type": "authority",
+    "rel": "noopener",
+    "verified_live": "meteo.gov.sc (linked from Smartraveller) fetched 2026-11-17, HTTP 200 redirect page pointing to meteo.sc; final page not fetched"
+   },
+   {
+    "anchor": "Seychelles Tourism Board",
+    "url": "https://www.seychelles.com/",
+    "type": "authority",
+    "rel": "noopener",
+    "verified_live": "verified live 2026-11-17 (apify web-fetch HTTP 200) (seychelles.travel redirects here; title 'Official Tourism Website of the Seychelles')"
+   }
+  ],
+  "backlinks_to_add": [
+   {
+    "from": "/honeymoon-ideas/african-honeymoon",
+    "anchor": "getting married in the Seychelles",
+    "sentence": "Section 'The Indian Ocean Islands' (live 2026-11-17) opens with the Seychelles, Mauritius and Mozambique: add a line for couples who want to marry there before the honeymoon."
+   },
+   {
+    "from": "/destination-weddings/mauritius-wedding",
+    "anchor": "getting married in the Seychelles",
+    "sentence": "Series sister (draft): cross-link in 'Venues and planning' once both are live."
+   },
+   {
+    "from": "/destination-weddings/getting-married-in-hawaii",
+    "anchor": "getting married in the Seychelles",
+    "sentence": "Series sister (draft): cross-link in 'Venues and planning' once both are live."
+   }
+  ],
+  "serp_source": "dataforseo",
+  "serp_summary": {
+   "locations_checked": [
+    "sydney",
+    "melbourne",
+    "new_york",
+    "dubai",
+    "singapore"
+   ],
+   "locations_failed": [],
+   "locations_failed_reason": "None. Fast mode: 5 of 10 locations by instruction, all returned first try, no retries needed. No Arabic or secondary-keyword SERPs.",
+   "common_angles": [
+    "Outside Sydney, page one is a travel blog plus one planner network selling online or proxy marriage (several URLs each), festadiluci.com, marryonchain.com, social posts and forums.",
+    "AI Overview present in all 5 cities (text not returned).",
+    "'Can you get married in Seychelles?' PAA in 4 of 5 cities; 'What is needed to marry a foreigner?' in 4 of 5.",
+    "Snippets lead with age, documents, witnesses and arrival lead time; figures conflict between pages."
+   ],
+   "gaps": [
+    "Official pages (ics.gov.sc, Australian High Commission) rank only in Sydney; no page joins them into one dated walkthrough.",
+    "Nothing written for Australians: Digital Travel Authorisation, apostille on Australian documents, recognition at home, High Commission in Port Louis.",
+    "Legal timing claims conflict (notice period, arrival lead time, stay length); an ics.gov.sc-sourced answer settles them.",
+    "No island-choice or guest-list angle; everything is elopement or package framed."
+   ],
+   "regional_differences": [
+    "AU: Sydney is the only city with government results in the top 2; Melbourne is blog and planner-network led.",
+    "US (New York): forum and Facebook threads plus the same planner network.",
+    "Dubai: planners serving GCC residents; PAA on UAE resident visas and LGBTQ travel.",
+    "Singapore: blog, planners, a hotel operator page and a wiki."
+   ],
+   "recommended_scope": "au_focus"
+  },
+  "sydney_top3_read": [
+   {
+    "rank": 1,
+    "url": "https://www.ics.gov.sc/civil-status/getting-married",
+    "notes_file": "02-research/pages/ics-gov-sc-getting-married.md",
+    "status": "read 2026-11-17 (HTTP 200)"
+   },
+   {
+    "rank": 2,
+    "url": "https://mauritius.highcommission.gov.au/plut/MarrySeychelles.html",
+    "notes_file": "02-research/pages/highcommission-gov-au-marry-seychelles.md",
+    "status": "read 2026-11-17 (HTTP 200)"
+   },
+   {
+    "rank": 3,
+    "url": "https://wed-in-seychelles.com/documentation/",
+    "notes_file": "02-research/pages/wed-in-seychelles-documentation.md",
+    "status": "read 2026-11-17 (HTTP 200); gaps only, no wording reused"
+   }
+  ],
+  "cannibalisation": [
+   "NONE: weddedwonderland.com ranks for no Seychelles keyword (ranked_keywords AU, %seychelles%: 0) and no link-map row targets Seychelles.",
+   "LOW: /destinations/africa names the Seychelles in its meta description and FAQ only (live 2026-11-17). It is a hub, and hidden from Google per priority-link-targets.md, so it cannot compete; not linked from this post (do-not-link rule).",
+   "LOW: /honeymoon-ideas/african-honeymoon covers the Seychelles as a honeymoon stop (honeymoon intent). Link from it to this post.",
+   "GSC not checked (fast mode)."
+  ]
+ }
+}
