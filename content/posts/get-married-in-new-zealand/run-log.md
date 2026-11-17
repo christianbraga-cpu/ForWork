@@ -10,3 +10,4 @@
 06:57 07b panel revise (enquire 1.9), 4 must-fix.
 06:58 08 final copy done (~2,740 words), 4 must-fix applied.
 06:59 06b final check: 2 fixes applied and confirmed; CRO and distribution done.
+07:02 11 package, checklist, docx, link map, calendar row 68, run report done.

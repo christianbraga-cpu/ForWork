@@ -1,0 +1,299 @@
+{
+  "agent": "cms-publisher",
+  "task_id": "get-married-in-new-zealand",
+  "stage": "11",
+  "status": "complete",
+  "round": 1,
+  "inputs_used": [
+    "CLAUDE.md",
+    "content-system/schemas/11-publish-package.schema.json",
+    "content/posts/get-married-in-new-zealand/01-brief.json",
+    "content/posts/get-married-in-new-zealand/02-seo.json",
+    "content/posts/get-married-in-new-zealand/04-images.json",
+    "content/posts/get-married-in-new-zealand/08-final.md",
+    "content/posts/get-married-in-new-zealand/09-cro.json",
+    "content/posts/getting-married-in-costa-rica/11-publish-package.json (format model)"
+  ],
+  "self_qa": {
+    "checks": [
+      {
+        "check": "Front matter and all <!-- fact_xx --> markers removed; H1 is the title; 6 image-slot comments kept verbatim; links and 4 UTM links unchanged",
+        "pass": true
+      },
+      {
+        "check": "Exactly 4 key takeaways and 5 FAQ pairs verbatim from the body",
+        "pass": true
+      },
+      {
+        "check": "Meta title and description from 02-seo.json; no prices, no em dashes",
+        "pass": true
+      },
+      {
+        "check": "primary_category equals categories[0] (Destination Weddings)",
+        "pass": true
+      },
+      {
+        "check": "status draft; nothing uploaded, saved or published",
+        "pass": true
+      }
+    ],
+    "confidence": 0.88
+  },
+  "open_questions": [
+    {
+      "to": "orchestrator",
+      "question": "CMS upload not attempted: FAST MODE package only, no Chrome in this session and the field map is not confirmed. A human saves as Draft and clicks Publish, or run /wedded-blog resume=get-married-in-new-zealand once the field map is confirmed.",
+      "blocking": true
+    },
+    {
+      "to": "orchestrator",
+      "question": "The /destination-weddings folder and the Destination Weddings category must exist in the CMS before the draft is saved.",
+      "blocking": true
+    },
+    {
+      "to": "orchestrator",
+      "question": "Image-slot comments (featured, civil-ceremony, when-to-marry, choose-your-region) keep a [[VERIFY licence]] note on Tourism New Zealand media from 04-images.json. It is an internal comment, not copy, so verify_items is empty as instructed; resolve before any Tourism NZ image is used.",
+      "blocking": false
+    },
+    {
+      "to": "orchestrator",
+      "question": "Series sister links (Hawaii, Mauritius, Seychelles, Costa Rica) point to draft posts: publish together or remove that sentence.",
+      "blocking": true
+    }
+  ],
+  "assumptions": [
+    "H1 and Article headline from 08-final.md front matter; meta title and description from 02-seo.json unchanged.",
+    "Excerpt is the first two sentences of the opening paragraph.",
+    "JSON-LD is Article + BreadcrumbList (Home > Destination Weddings > post) + FAQPage (link markup stripped from answers).",
+    "Image order follows 04-images.json; alt and caption from 04-images.json.",
+    "Byline Wedded Wonderland (organisation)."
+  ],
+  "verify_items": [],
+  "tools_used": [
+    "Bash (python3 -I)"
+  ],
+  "next_agent": [
+    "orchestrator"
+  ],
+  "payload": {
+    "title": "How to Get Married in New Zealand as an Australian",
+    "slug": "get-married-in-new-zealand",
+    "url_path": "/destination-weddings/get-married-in-new-zealand",
+    "content_type": "planning_guide",
+    "categories": [
+      "Destination Weddings",
+      "New Zealand",
+      "Australia & Pacific",
+      "Planning Guides"
+    ],
+    "primary_category": "Destination Weddings",
+    "tags": [
+      "Getting Married in New Zealand",
+      "Getting Married in {Country}",
+      "New Zealand",
+      "Births Deaths and Marriages",
+      "Marriage licence",
+      "Legal requirements",
+      "Apostille",
+      "Oceania",
+      "Wedding planning"
+    ],
+    "excerpt": "Yes, you can get married in New Zealand as Australians, and you do not need to be New Zealand citizens: visitors to New Zealand can marry there. What you need is a marriage licence, which confirms it is legal for you to marry, and a registered celebrant to marry you.",
+    "key_takeaways": [
+      "Australians can marry legally in New Zealand with a marriage licence and a registered celebrant, and neither of you needs to be a New Zealand citizen.",
+      "From Australia you apply with the overseas notice of intended marriage form, sign its declaration before an authorised person, and then visit a registry office in New Zealand before the ceremony.",
+      "The licence must be in place at least 3 working days before the wedding, lasts 3 months, and only covers the venues you name on it, so name a back-up.",
+      "The Copy of Particulars you sign on the day is not a marriage certificate, so order the certificate afterwards and ask any Australian organisation receiving it whether it wants an Apostille."
+    ],
+    "body_markdown_file": "content/posts/get-married-in-new-zealand/11-body.md",
+    "faq": [
+      {
+        "q": "Do we need to be New Zealand residents to marry there?",
+        "a": "No. You do not need to be a New Zealand citizen, and visitors to New Zealand can marry in New Zealand. Couples who live outside New Zealand apply with the BDM 58 form."
+      },
+      {
+        "q": "How do we get a marriage licence in New Zealand from Australia?",
+        "a": "Complete the BDM 58 form except for the statutory declaration, sign that declaration before one of the authorised people listed on the form, and send the fee to Births, Deaths and Marriages. Arrange the licence at least 3 working days before the wedding, as it expires after 3 months. When you arrive, visit a registry office to sign a declaration before the ceremony."
+      },
+      {
+        "q": "Can we get married in New Zealand without witnesses?",
+        "a": "No. You need 2 witnesses who understand what is happening, can clearly identify you both and are satisfied you both consent. They must be physically present with you and your celebrant."
+      },
+      {
+        "q": "Is a New Zealand marriage legal in Australia?",
+        "a": "In most cases, yes. An overseas marriage is generally recognised in Australia if it was valid where it took place and would have been valid under Australian law, though you cannot register it in Australia. Australia is an Apostille country for New Zealand documents, so ask the organisation receiving your certificate whether it wants one."
+      },
+      {
+        "q": "Can we elope in a national park in New Zealand?",
+        "a": "Ask your celebrant and the [Department of Conservation](https://www.doc.govt.nz/) before you choose the spot, including whether permission is needed and who applies for it. Whatever you decide, the location goes on your licence application with a back-up venue."
+      }
+    ],
+    "images": [
+      {
+        "slot_id": "featured",
+        "file": "content/posts/get-married-in-new-zealand/images/get-married-in-new-zealand-lakeside-alpine-ceremony.webp",
+        "role": "featured",
+        "alt": "Wedding ceremony set-up on a lakeside lawn with snow-capped mountains behind in golden light in New Zealand",
+        "caption": "<Place>, <town>, New Zealand. Photo: <credit> (fill once sourced).",
+        "status": "needed"
+      },
+      {
+        "slot_id": "documents",
+        "file": "content/posts/get-married-in-new-zealand/images/get-married-in-new-zealand-documents-still-life-linen.webp",
+        "role": "inline",
+        "alt": "Two closed passports and a linen folder of papers beside a fountain pen on natural linen",
+        "caption": "Illustrative image (if AI, after approval) or Photo: <credit> (fill once sourced).",
+        "status": "needed"
+      },
+      {
+        "slot_id": "civil-ceremony",
+        "file": "content/posts/get-married-in-new-zealand/images/get-married-in-new-zealand-celebrant-ceremony-garden.webp",
+        "role": "inline",
+        "alt": "Couple exchanging vows with a celebrant on a garden lawn surrounded by native greenery",
+        "caption": "<Place>, <town>, New Zealand. Photo: <credit> (fill once sourced).",
+        "status": "needed"
+      },
+      {
+        "slot_id": "certificate-australia",
+        "file": "content/posts/get-married-in-new-zealand/images/get-married-in-new-zealand-certificate-folder-rings-still-life.webp",
+        "role": "inline",
+        "alt": "Wedding rings resting on a closed cream document folder tied with ribbon, beside two passports",
+        "caption": "Illustrative image (if AI, after approval) or Photo: <credit> (fill once sourced).",
+        "status": "needed"
+      },
+      {
+        "slot_id": "when-to-marry",
+        "file": "content/posts/get-married-in-new-zealand/images/get-married-in-new-zealand-seasonal-vineyard-reception.webp",
+        "role": "inline",
+        "alt": "Long reception table on a vineyard terrace with golden autumn trees and hills behind",
+        "caption": "<Place>, <town>, New Zealand. Photo: <credit> (fill once sourced; month taken recorded).",
+        "status": "needed"
+      },
+      {
+        "slot_id": "choose-your-region",
+        "file": "content/posts/get-married-in-new-zealand/images/get-married-in-new-zealand-region-wide-view.webp",
+        "role": "inline",
+        "alt": "Wide view of a calm alpine lake ringed by mountains on a clear day in New Zealand",
+        "caption": "<Place>, <town>, New Zealand. Photo: <credit> (fill once sourced).",
+        "status": "needed"
+      }
+    ],
+    "cta": {
+      "text": "Speak with Wedded Concierge",
+      "subtext": "One Wedded Advisor, with the fee agreed in writing before any work begins.",
+      "link": "https://weddedwonderland.com/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=get-married-in-new-zealand&utm_content=primary",
+      "placement": "Existing inline link at the end of 'Venues and planning' (line 198, anchor 'speak with Wedded Concierge'), after the licence, recognition, conservation land, seasons and regions are covered and the reader turns to comparing lodges and estates. Unchanged."
+    },
+    "secondary_cta": {
+      "text": "Weigh your regions together",
+      "subtext": "Your Wedded Advisor is your single point of contact from start to finish.",
+      "link": "https://weddedwonderland.com/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=get-married-in-new-zealand&utm_content=secondary",
+      "placement": "Existing final line of 'Choosing your region' (line 182, anchor 'ask Wedded Concierge'), where the reader is weighing regions against the guest list. Unchanged."
+    },
+    "seo": {
+      "meta_title": "How to Get Married in New Zealand, Step by Step",
+      "meta_description": "How Australians marry legally in New Zealand: the marriage licence, your celebrant and witnesses, outdoor permits and your certificate back home.",
+      "focus_keyword": "get married in new zealand",
+      "canonical": "https://weddedwonderland.com/destination-weddings/get-married-in-new-zealand",
+      "og_image_slot": "featured"
+    },
+    "schema_jsonld": {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Article",
+          "@id": "https://weddedwonderland.com/destination-weddings/get-married-in-new-zealand#article",
+          "headline": "How to Get Married in New Zealand as an Australian",
+          "description": "How Australians marry legally in New Zealand: the marriage licence, your celebrant and witnesses, outdoor permits and your certificate back home.",
+          "author": {
+            "@type": "Organization",
+            "name": "Wedded Wonderland",
+            "url": "https://weddedwonderland.com/"
+          },
+          "publisher": {
+            "@type": "Organization",
+            "name": "Wedded Wonderland",
+            "url": "https://weddedwonderland.com/"
+          },
+          "datePublished": "",
+          "mainEntityOfPage": "https://weddedwonderland.com/destination-weddings/get-married-in-new-zealand",
+          "inLanguage": "en-AU"
+        },
+        {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Home",
+              "item": "https://weddedwonderland.com/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Destination Weddings",
+              "item": "https://weddedwonderland.com/destination-weddings"
+            },
+            {
+              "@type": "ListItem",
+              "position": 3,
+              "name": "How to Get Married in New Zealand as an Australian",
+              "item": "https://weddedwonderland.com/destination-weddings/get-married-in-new-zealand"
+            }
+          ]
+        },
+        {
+          "@type": "FAQPage",
+          "@id": "https://weddedwonderland.com/destination-weddings/get-married-in-new-zealand#faq",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "Do we need to be New Zealand residents to marry there?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "No. You do not need to be a New Zealand citizen, and visitors to New Zealand can marry in New Zealand. Couples who live outside New Zealand apply with the BDM 58 form."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "How do we get a marriage licence in New Zealand from Australia?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Complete the BDM 58 form except for the statutory declaration, sign that declaration before one of the authorised people listed on the form, and send the fee to Births, Deaths and Marriages. Arrange the licence at least 3 working days before the wedding, as it expires after 3 months. When you arrive, visit a registry office to sign a declaration before the ceremony."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Can we get married in New Zealand without witnesses?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "No. You need 2 witnesses who understand what is happening, can clearly identify you both and are satisfied you both consent. They must be physically present with you and your celebrant."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Is a New Zealand marriage legal in Australia?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "In most cases, yes. An overseas marriage is generally recognised in Australia if it was valid where it took place and would have been valid under Australian law, though you cannot register it in Australia. Australia is an Apostille country for New Zealand documents, so ask the organisation receiving your certificate whether it wants one."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Can we elope in a national park in New Zealand?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Ask your celebrant and the Department of Conservation before you choose the spot, including whether permission is needed and who applies for it. Whatever you decide, the location goes on your licence application with a back-up venue."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    "author": "Wedded Wonderland",
+    "status": "draft",
+    "verify_items": [],
+    "needs_signoff": [],
+    "draft_note": "DRAFT. Do not publish until checked: no [[VERIFY]] items in the article copy; no prices or fee amounts (licence, registry ceremony, certificate and Apostille fees are described as fees that apply, with links to the official pages), nothing for Nic to sign off. Image slots needed (6 of 6, none approved): featured, documents, civil-ceremony, certificate-australia, when-to-marry, choose-your-region. featured, civil-ceremony, when-to-marry and choose-your-region: real places or a licensed real wedding with written consent, location proven by media kit, register or EXIF, never AI; documents and certificate-australia are still lifes (AI only with Wedded Wonderland approval, captioned 'Illustrative image'). Tourism New Zealand media only once its licence is confirmed to cover third-party commercial blog use (licence check noted in the image-slot comments). Captions with place and credit to fill once sourced. Series sister links to Hawaii, Mauritius, Seychelles and Costa Rica point to draft posts: publish together or remove that sentence. CMS setup: the /destination-weddings folder and the Destination Weddings category must exist before the draft is saved. Do not Publish or Schedule; a human clicks Publish."
+  }
+}
