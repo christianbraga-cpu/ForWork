@@ -9,3 +9,4 @@
 02:36 07b panel: revise, weighted enquire 1.9; 2 must-fix (plain beach answer, contract questions).
 02:37 08 final copy done: 2,966 words, 0 VERIFY, scan clean.
 02:38 09 CRO and 10 distribution done.
+02:39 08b final check: 5 blocking fixes applied and confirmed (recognition condition; 'officer at your hotel' claim cut where it rested on fact_206, beach answer now rests on fact_06 'at home' with notice).

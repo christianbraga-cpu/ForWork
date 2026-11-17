@@ -7,7 +7,7 @@ round: 2
 
 <!-- IMAGE SLOT featured: Landscape 3:2 with room for a title overlay. Ceremony set-up (arch or aisle, white florals) on a white sand beach framed by smooth pink-grey granite boulders and clear turquoise shallows, at a real, named Seychelles resort or a beach where the venue holds ceremonies, golden-hour light, no signage. Beach and island named only if proven by the source. Couple optional and small in frame, only from a licensed real wedding with written consent. Source: venue media kit with written permission, Seychelles Tourism Board library only if its licence covers third-party commercial blog use, or licensed stock bought by a human. Location proven by media kit, register row or EXIF. Never AI. -->
 
-The Seychelles is on your shortlist, and before you choose a bay or a resort you want to know one thing: will the marriage stand? In most cases, yes. Getting married in Seychelles is open to two Australians aged 18 and over, and Australia generally recognises a marriage that was valid where it took place. <!-- fact_01 --> <!-- fact_104 --> The Civil Status office registers the marriage with you both present, once the banns have run or a special licence has been granted. <!-- fact_203 --> <!-- fact_204 -->
+The Seychelles is on your shortlist, and before you choose a bay or a resort you want to know one thing: will the marriage stand? In most cases, yes. Getting married in Seychelles is open to two Australians aged 18 and over, and Australia generally recognises a marriage that was valid where it took place and would have been valid under Australian law. <!-- fact_01 --> <!-- fact_104 --> The Civil Status office registers the marriage with you both present, once the banns have run or a special licence has been granted. <!-- fact_203 --> <!-- fact_204 -->
 
 This guide takes each step in the order you will meet it, from the papers you gather at home to the certificate you carry back to Australia.
 
@@ -90,11 +90,11 @@ Arrive closer to the date and the licence is the route, so ask the office what i
 
 ### Registering in person
 
-Both of you should be present for the registration, which by default takes place at the office. <!-- fact_203 --> It need not stay there. A Civil Status Officer can hold the legal civil ceremony outside the office, for example at your hotel, and a fee applies. <!-- fact_206 --> The official wording calls this registering your marriage "at home", which means somewhere other than the office, and asks for at least a week's notice to the office. <!-- fact_06 --> Confirm the exact location with the office before you settle the setting.
+Both of you should be present for the registration, which by default takes place at the office. <!-- fact_203 --> It need not stay there. The official wording calls this registering your marriage "at home", which means somewhere other than the office, and asks for at least a week's notice to the office. <!-- fact_06 --> Confirm the exact location with the office before you settle the setting.
 
 ### Who performs the ceremony, and where
 
-A Civil Status Officer conducts the civil ceremony and the Civil Status office registers your marriage. <!-- fact_203 --> When both of you are foreigners and the ceremony is held outside the office, a fee applies. It applies on Mahé, Praslin and La Digue, and at a higher rate on other islands, where you also cover the officer's transport, accommodation and meals. <!-- fact_206 -->
+The Civil Status office registers your marriage. <!-- fact_203 --> When both of you are foreigners, a fee applies. It applies on Mahé, Praslin and La Digue, and at a higher rate on other islands, where you also cover the officer's transport, accommodation and meals. <!-- fact_206 -->
 
 Put three questions to the office once your date is set. Which officer attends, at what time of day, and how long the formal part of the ceremony takes.
 
@@ -126,7 +126,7 @@ If Australia recognises your marriage, you cannot marry again here. You can hold
 
 ## Ceremonies on the beach, at your resort or on another island
 
-The beach is the picture most couples hold, and the legal ceremony can follow you there. A Civil Status Officer can hold the civil ceremony outside the office, for example at your hotel, and a fee applies. <!-- fact_206 --> In the official wording this is registering your marriage "at home", meaning somewhere other than the office, with at least a week's notice to the office. <!-- fact_06 -->
+The beach is the picture most couples hold, and the legal ceremony can follow you there. The official wording allows you to register your marriage "at home", meaning somewhere other than the office, with at least a week's notice to the office. <!-- fact_06 --> When both of you are foreigners, a fee applies. <!-- fact_206 -->
 
 The [Australian High Commission in Port Louis](https://mauritius.highcommission.gov.au/plut/MarrySeychelles.html) says civil ceremonies may be held around the hotel property with permission from both the hotel and the Civil Registrar. <!-- fact_12 --> Confirm the exact location with the office ahead, and keep the answer in writing.
 
@@ -197,7 +197,7 @@ The banns run for eleven days before the wedding, and a special marriage licence
 
 ### Can we marry on the beach in the Seychelles?
 
-Yes, with notice. A Civil Status Officer can hold the legal civil ceremony outside the office, for example at your hotel, and a fee applies. <!-- fact_206 --> The official wording calls this registering your marriage "at home", meaning somewhere other than the office, and asks for at least a week's notice to the office. <!-- fact_06 --> The Australian High Commission says ceremonies may be held around the hotel with permission from the hotel and the Civil Registrar. <!-- fact_12 --> Confirm the exact location with the office ahead.
+Yes, with notice. The official wording calls this registering your marriage "at home", meaning somewhere other than the office, and asks for at least a week's notice to the office. <!-- fact_06 --> The Australian High Commission says ceremonies may be held around the hotel with permission from the hotel and the Civil Registrar. <!-- fact_12 --> Confirm the exact location with the office ahead.
 
 ### Do we need our own witnesses?
 
