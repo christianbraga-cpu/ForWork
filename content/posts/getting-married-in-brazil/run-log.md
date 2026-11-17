@@ -5,3 +5,4 @@
 23:11 05 first draft done (~3,130 words, 3 VERIFY: non-resident eligibility, juiz de paz, certidao).
 23:12 07 five readers done (enquire 1 to 3).
 23:13 06 editor 4.14 pass_with_edits, 13 edits applied (3 VERIFY resolved by rewording).
+23:15 07b panel revise (enquire 1.9), 5 must-fix.
