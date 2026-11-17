@@ -6,3 +6,4 @@
 03:11 03 done: batch A 23 facts (TSE Registro Civil celebration and registration PDFs, Foreign Ministry apostille pages; translated from Spanish); orchestrator read the TSE online marriage declaration page (3 facts, part-2: notaries celebrate and declare marriages; foreign spouse ID upload; Family Code requirements still apply). Merged; open points (notary venues, divorced/widowed documents, certificate copies, which Australian single-status document) left as questions in copy.
 03:12 02 SEO done: costa rica wedding US 1,000 / AU 20; getting married in costa rica AU 10 / US 50; no government page on page one; no cannibalisation.
 03:16 05 first draft done: about 2,960 words, 0 VERIFY, scan clean; first-draft docx sent.
+03:18 06 edit 4.14 pass_with_edits, 11 edits applied (intro wording, single-status and notary venue as questions, unsourced fee lines cut); 07 readers enquire 1 to 3; two-trips question raised by 3.
