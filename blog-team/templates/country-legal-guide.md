@@ -57,7 +57,7 @@ from the France guide (articles/2026-11-16-getting-married-in-france, 16 Nov
   mission's CNI procedure separately; never extend one post's fee, language or
   timing to another ("Ask the Embassy" when unsourced).
 - (Vietnam) No research-method language in reader copy ("search snippets",
-  "we could not read"); write "We last reviewed these sources in <month year>",
+  "we could not read"); write "Sources current as at <month year>" (matches writer.md),
   never a single-day "we checked every source" claim.
 - (Vietnam) When the legal answer is uncertain, advise not to pay venue
   deposits until the deciding authority answers in writing.

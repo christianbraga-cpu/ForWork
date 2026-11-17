@@ -23,7 +23,7 @@ Built from the first spoke, `articles/2026-11-17-bali-wedding-packages/00-brief.
 7. **When bespoke planning fits** (Wonderland Concierge and a Wedded Advisor; soft CTA).
 8. **FAQ** (5 questions, 40 to 60 words, FAQPage schema, each adds a fact not in the body).
 
-Plus: key takeaways block after the intro; mid-article soft CTA; closing discovery_call CTA; "We last reviewed these sources in <Month Year>".
+Plus: key takeaways block after the intro; mid-article soft CTA; closing discovery_call CTA; "Sources current as at <Month Year>" (matches writer.md).
 
 ## Sourcing rules
 - Competitor pages are read for structure and gaps only. No competitor prices, inclusion lists, package names or brand names in briefs or copy. Images seen there are reference only.
