@@ -64,7 +64,7 @@ Anyone can apply for a marriage licence, whether in New Zealand or not, and you 
 
 Only registered celebrants can perform weddings or civil unions in New Zealand. <!-- fact_02 --> Celebrants set their own fees on top of the licence fee. <!-- fact_211 --> The New Zealand Government keeps a page on [registered celebrants](https://www.govt.nz/browse/family-and-whanau/getting-married/celebrants/), and our guide explains [who can legally marry you](https://weddedwonderland.com/expert-advice/who-can-perform-a-marriage) more generally.
 
-Choose your celebrant before you lodge the licence application. For a registry ceremony this is a stated step. <!-- fact_08 --> For a personalised ceremony it simply makes sense: the celebrant shapes the ceremony, receives your licence papers and registers the marriage. Ask them:
+Choose your celebrant before you lodge the licence application. For a registry ceremony this is part of the process. <!-- fact_08 --> For a personalised ceremony it simply makes sense: the celebrant shapes the ceremony, receives your licence papers and registers the marriage. Ask them:
 
 - Are you registered to perform marriages in New Zealand?
 - What does your fee include, and when is it paid?
@@ -183,7 +183,7 @@ If you would like help weighing two regions against your guest list, [ask Wedded
 
 ## Venues and planning
 
-Lodges, vineyard estates and private homes are the usual settings for a New Zealand wedding, and each prices differently. What drives the cost is the season, the number of nights you take the property, how many guests stay on site, how remote the setting is, and how much has to travel in. Ask every venue to set its quote out in writing, line by line.
+Whether you choose a lodge, a vineyard estate or a private home, ask how the season, the number of nights you take the property, how many guests stay on site, how remote the setting is and how much has to travel in shape the price. Ask every venue to set its quote out in writing, line by line.
 
 Before you sign, put these questions to the lodge or estate:
 
