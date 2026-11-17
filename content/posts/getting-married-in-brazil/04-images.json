@@ -1,0 +1,219 @@
+{
+ "agent": "visual-curator",
+ "task_id": "getting-married-in-brazil",
+ "stage": "04",
+ "status": "needs_input",
+ "round": 1,
+ "inputs_used": [
+  "CLAUDE.md",
+  "content/posts/getting-married-in-brazil/00-input.json",
+  "01-brief.json, 02-seo.json, 02-research/report.md, 03-source-pack.json (not present at run time)",
+  "content/posts/get-married-in-new-zealand/04-images.json (format model)",
+  "content-system/images/library-index.csv (header only, no rows)",
+  "content-system/schemas/04-images.schema.json"
+ ],
+ "self_qa": {
+  "checks": [
+   {
+    "check": "Zero reference-only or competitor images in slots",
+    "pass": true,
+    "note": "reference_only is empty; nothing downloaded."
+   },
+   {
+    "check": "Every approved image has location, licence, alt, caption, fit_reason",
+    "pass": true,
+    "note": "No approved images this run."
+   },
+   {
+    "check": "No AI image depicting a real place, wedding, ceremony or person",
+    "pass": true,
+    "note": "No AI generated. Only the documents and certificate still lifes may become ai_illustrative, with approval and an 'Illustrative image' label."
+   },
+   {
+    "check": "Featured image exists (approved or needed with brief)",
+    "pass": true,
+    "note": "Needed, with brief: tropical beach ceremony set-up."
+   },
+   {
+    "check": "Six slots as requested",
+    "pass": true,
+    "note": "featured, documents, civil-ceremony, certificate-australia, when-to-marry, choose-your-region."
+   },
+   {
+    "check": "No venue names; Australian English, no em dashes, alt 125 chars or fewer",
+    "pass": true,
+    "note": "Checked by script."
+   }
+  ],
+  "confidence": 0.7
+ },
+ "open_questions": [
+  {
+   "to": "user",
+   "question": "Do you approve an AI still life for the documents and certificate slots (passports, papers or folder on linen, nothing readable, no seals, apostilles or crests) labelled 'Illustrative image' if no Canva or licensed asset is found?",
+   "blocking": false
+  },
+  {
+   "to": "user",
+   "question": "Do you hold licensed Brazil wedding or landscape photos (with month taken and couple consent), or should we request hotel media kits and check the Visit Brasil / Embratur media library licence terms for commercial blog use?",
+   "blocking": false
+  }
+ ],
+ "assumptions": [
+  "Placement is by section name because 02-seo.json is not yet written; the writer maps it to after_h2 positions.",
+  "No venue is named; captions keep <Place>, <town> placeholders until a licensed source proves the location.",
+  "Fast mode: repo register only, no Drive, own-site, Canva, Gmail or Lens checks run; Visit Brasil / Embratur site not visited."
+ ],
+ "verify_items": [
+  "[[IMAGE NEEDED]] featured: tropical beach or coastal ceremony set-up in Brazil, licensed or media kit",
+  "[[IMAGE NEEDED]] documents: Canva or licensed stock; AI only with Wedded Wonderland approval, labelled 'Illustrative image'",
+  "[[IMAGE NEEDED]] civil-ceremony: licensed real civil ceremony with officiant, couple and officiant consent",
+  "[[IMAGE NEEDED]] certificate-australia: folder and rings still life, no real or imitation certificate or apostille; AI only with approval, labelled 'Illustrative image'",
+  "[[IMAGE NEEDED]] when-to-marry: seasonal Brazil scene, region and month taken recorded",
+  "[[IMAGE NEEDED]] choose-your-region: wide regional view, region proven by source, licensed",
+  "[[VERIFY licence]] Visit Brasil / Embratur media library: might allow use, but confirm its terms cover third-party commercial blog use (not only editorial or travel promotion), registration requirements, credit format, any expiry and per-photographer restrictions before any download. Not checked or downloaded this run.",
+  "[[VERIFY licence]] every venue, stock or own-site image: written permission, credit line and expiry recorded in library-index.csv before use",
+  "[[VERIFY: couple consent for any real-wedding photo, and guest or officiant consent if identifiable]]"
+ ],
+ "tools_used": [
+  "Bash (cat/python)"
+ ],
+ "next_agent": [
+  "luxury-writer"
+ ],
+ "payload": {
+  "slots": [
+   {
+    "slot_id": "featured",
+    "placement": "featured",
+    "purpose": "Hero and social share image: Brazil's tropical coastline, signalling a luxury beach or garden wedding ahead of a practical legal guide.",
+    "shot_brief": "Landscape 16:9, at least 2000px wide. A Brazilian coastal setting (for example Trancoso in Bahia, Paraty or the Rio de Janeiro coast): an elegant, understated ceremony set-up (aisle or arch, tropical florals) on sand, a clifftop lawn or a garden, golden hour, ocean or rainforest behind. No people needed; a distant consented couple is acceptable. No venue named in copy or caption until 03-source-pack confirms one. Location proven by media kit, register row or EXIF, never by appearance. People only from a licensed real wedding with written couple consent (and guest or officiant consent if identifiable) recorded in library-index.csv; never AI people, never stock models presented as a real couple. Source order: venue or hotel media kit with written permission (Gmail draft request, never sent by an agent); Visit Brasil / Embratur media library only if its licence covers third-party commercial blog use ([[VERIFY licence]]: terms may limit use to promoting travel to Brazil, require a credit, set an expiry or restrict individual photographers; record all of this in library-index.csv before any download); licensed premium stock bought by a human and added to the register. Never AI, never a competitor, directory, planner, photographer-blog or search-result image.",
+    "status": "needed",
+    "file": "content/posts/getting-married-in-brazil/images/getting-married-in-brazil-beach-ceremony-setup-golden-hour.webp",
+    "source": {
+     "type": "venue_press",
+     "origin": "not yet sourced (fast mode: repo register only, which has no rows)",
+     "credit": "[[VERIFY licence]]"
+    },
+    "location": {
+     "venue": "not named (no venue confirmed for this post)",
+     "town": "to be confirmed",
+     "verified_by": "pending: media kit, register row or EXIF"
+    },
+    "alt": "Wedding ceremony set-up on a tropical beach lined with palms at golden hour in Brazil",
+    "caption": "<Place>, <town>, Brazil. Photo: <credit> (fill once sourced).",
+    "licence_note": "[[IMAGE NEEDED]] library-index.csv has a header and no rows."
+   },
+   {
+    "slot_id": "documents",
+    "placement": "section: documents step (writer maps to after_h2:<n>)",
+    "purpose": "Make the paperwork step (documents, apostilles, sworn translations) feel calm and organised rather than bureaucratic.",
+    "shot_brief": "Landscape 3:2 or 4:3. Overhead still life: two closed passports, a linen-bound folder of papers, a fountain pen, a sprig of white flowers, on natural linen in soft daylight. No readable names, numbers, seals, apostille stamps, government crests, flags, forms or screens; nothing that imitates a Brazilian or Australian document; no hands or faces. Source order: Canva brand asset, then licensed stock added to library-index.csv, then a Wedded Wonderland own shoot. AI (Higgsfield) allowed for this slot only after Wedded Wonderland approves; if used, source.type becomes ai_illustrative and the caption must read 'Illustrative image'.",
+    "status": "needed",
+    "file": "content/posts/getting-married-in-brazil/images/getting-married-in-brazil-documents-still-life-linen.webp",
+    "source": {
+     "type": "canva",
+     "origin": "not yet sourced (fast mode: Canva not searched)",
+     "credit": "[[VERIFY licence]]"
+    },
+    "location": {
+     "venue": "n/a (studio still life, no real place)",
+     "town": "n/a",
+     "verified_by": "n/a"
+    },
+    "alt": "Two closed passports and a linen folder of papers beside a fountain pen on natural linen",
+    "caption": "Illustrative image (if AI, after approval) or Photo: <credit> (fill once sourced).",
+    "licence_note": "[[IMAGE NEEDED]] Not a place image, so AI is permissible only with Wedded Wonderland approval."
+   },
+   {
+    "slot_id": "civil-ceremony",
+    "placement": "section: the civil ceremony (writer maps to after_h2:<n>)",
+    "purpose": "Show what the legal civil ceremony looks like in practice: intimate and simple, with an officiant.",
+    "shot_brief": "Landscape 3:2. A real, consented civil ceremony in Brazil with an officiant: couple with officiant at a small table or under a simple arch, garden, terrace or beach setting, soft afternoon light. No readable documents, seals or registry signage; do not imply a specific registry office (cartorio) unless the source proves it. No venue named in copy or caption until 03-source-pack confirms one. Location proven by media kit, register row or EXIF, never by appearance. People only from a licensed real wedding with written couple consent (and guest or officiant consent if identifiable) recorded in library-index.csv; never AI people, never stock models presented as a real couple. Source order: venue or hotel media kit with written permission (Gmail draft request, never sent by an agent); Visit Brasil / Embratur media library only if its licence covers third-party commercial blog use ([[VERIFY licence]]: terms may limit use to promoting travel to Brazil, require a credit, set an expiry or restrict individual photographers; record all of this in library-index.csv before any download); licensed premium stock bought by a human and added to the register. Never AI, never a competitor, directory, planner, photographer-blog or search-result image.",
+    "status": "needed",
+    "file": "content/posts/getting-married-in-brazil/images/getting-married-in-brazil-civil-ceremony-officiant-garden.webp",
+    "source": {
+     "type": "venue_press",
+     "origin": "not yet sourced (fast mode: repo register only, which has no rows)",
+     "credit": "[[VERIFY licence]]"
+    },
+    "location": {
+     "venue": "not named (no venue confirmed for this post)",
+     "town": "to be confirmed",
+     "verified_by": "pending: media kit, register row or EXIF"
+    },
+    "alt": "Couple exchanging vows with an officiant at a small table in a tropical garden",
+    "caption": "<Place>, <town>, Brazil. Photo: <credit> (fill once sourced).",
+    "licence_note": "[[IMAGE NEEDED]] library-index.csv has a header and no rows."
+   },
+   {
+    "slot_id": "certificate-australia",
+    "placement": "section: certificate for Australia (writer maps to after_h2:<n>)",
+    "purpose": "Signal the final admin step (certificate, apostille and recognition back home) without showing any real or imitation certificate.",
+    "shot_brief": "Landscape 3:2. Still life: wedding rings resting on a closed cream document folder tied with ribbon, beside two closed passports, on linen or timber in soft daylight. No certificate, seal, apostille, crest, flag, stamp or readable text. Source order: Canva brand asset, then licensed stock added to library-index.csv, then a Wedded Wonderland own shoot. AI (Higgsfield) allowed for this slot only after Wedded Wonderland approves; if used, source.type becomes ai_illustrative and the caption must read 'Illustrative image'.",
+    "status": "needed",
+    "file": "content/posts/getting-married-in-brazil/images/getting-married-in-brazil-certificate-folder-rings-still-life.webp",
+    "source": {
+     "type": "canva",
+     "origin": "not yet sourced (fast mode: Canva not searched)",
+     "credit": "[[VERIFY licence]]"
+    },
+    "location": {
+     "venue": "n/a (studio still life, no real place)",
+     "town": "n/a",
+     "verified_by": "n/a"
+    },
+    "alt": "Wedding rings resting on a closed cream document folder tied with ribbon, beside two passports",
+    "caption": "Illustrative image (if AI, after approval) or Photo: <credit> (fill once sourced).",
+    "licence_note": "[[IMAGE NEEDED]] Not a place image, so AI is permissible only with Wedded Wonderland approval."
+   },
+   {
+    "slot_id": "when-to-marry",
+    "placement": "section: when to marry (writer maps to after_h2:<n>)",
+    "purpose": "Illustrate seasonal conditions (for example clear dry-season skies on the coast) to support the timing section.",
+    "shot_brief": "Landscape 3:2. A seasonal Brazilian wedding or landscape scene (for example a clear-sky beach reception or a long table on a terrace at sunset). Month taken must be recorded so any season or weather claim is true; seasons differ by region, so the caption names the region. No venue named in copy or caption until 03-source-pack confirms one. Location proven by media kit, register row or EXIF, never by appearance. People only from a licensed real wedding with written couple consent (and guest or officiant consent if identifiable) recorded in library-index.csv; never AI people, never stock models presented as a real couple. Source order: venue or hotel media kit with written permission (Gmail draft request, never sent by an agent); Visit Brasil / Embratur media library only if its licence covers third-party commercial blog use ([[VERIFY licence]]: terms may limit use to promoting travel to Brazil, require a credit, set an expiry or restrict individual photographers; record all of this in library-index.csv before any download); licensed premium stock bought by a human and added to the register. Never AI, never a competitor, directory, planner, photographer-blog or search-result image.",
+    "status": "needed",
+    "file": "content/posts/getting-married-in-brazil/images/getting-married-in-brazil-seasonal-terrace-reception-sunset.webp",
+    "source": {
+     "type": "venue_press",
+     "origin": "not yet sourced (fast mode: repo register only, which has no rows)",
+     "credit": "[[VERIFY licence]]"
+    },
+    "location": {
+     "venue": "not named (no venue confirmed for this post)",
+     "town": "to be confirmed",
+     "verified_by": "pending: media kit, register row or EXIF"
+    },
+    "alt": "Long reception table on a terrace overlooking the ocean at sunset under a clear sky",
+    "caption": "<Place>, <town>, Brazil. Photo: <credit> (fill once sourced; month taken recorded).",
+    "licence_note": "[[IMAGE NEEDED]] library-index.csv has a header and no rows."
+   },
+   {
+    "slot_id": "choose-your-region",
+    "placement": "section: choose your region (writer maps to after_h2:<n>)",
+    "purpose": "Help couples picture regional character, for example Rio de Janeiro's bays, Bahia's beaches around Trancoso, colonial Paraty or Fernando de Noronha.",
+    "shot_brief": "Landscape 3:2, wide view, daylight, no people needed. One region clearly shown (for example Rio de Janeiro's coastline, a Bahia beach, Paraty's bay or Fernando de Noronha), with the region proven by source. If the writer compares regions, more images may be added later under the same rules. No venue named in copy or caption until 03-source-pack confirms one. Location proven by media kit, register row or EXIF, never by appearance. People only from a licensed real wedding with written couple consent (and guest or officiant consent if identifiable) recorded in library-index.csv; never AI people, never stock models presented as a real couple. Source order: venue or hotel media kit with written permission (Gmail draft request, never sent by an agent); Visit Brasil / Embratur media library only if its licence covers third-party commercial blog use ([[VERIFY licence]]: terms may limit use to promoting travel to Brazil, require a credit, set an expiry or restrict individual photographers; record all of this in library-index.csv before any download); licensed premium stock bought by a human and added to the register. Never AI, never a competitor, directory, planner, photographer-blog or search-result image.",
+    "status": "needed",
+    "file": "content/posts/getting-married-in-brazil/images/getting-married-in-brazil-region-coastline-wide-view.webp",
+    "source": {
+     "type": "venue_press",
+     "origin": "not yet sourced (fast mode: repo register only, which has no rows)",
+     "credit": "[[VERIFY licence]]"
+    },
+    "location": {
+     "venue": "not named (no venue confirmed for this post)",
+     "town": "to be confirmed",
+     "verified_by": "pending: media kit, register row or EXIF"
+    },
+    "alt": "Wide view of a green tropical coastline and calm turquoise bay on a clear day in Brazil",
+    "caption": "<Place>, <town>, Brazil. Photo: <credit> (fill once sourced).",
+    "licence_note": "[[IMAGE NEEDED]] library-index.csv has a header and no rows."
+   }
+  ],
+  "reference_only": [],
+  "permission_requests": [],
+  "drive_findings": [
+   "Not searched: fast mode, repo library register only per orchestrator instruction. library-index.csv has a header and no rows (no Brazil images)."
+  ]
+ }
+}
