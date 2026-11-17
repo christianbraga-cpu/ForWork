@@ -6,3 +6,4 @@
 00:29 05 first draft done: 2,935 words, 0 VERIFY, scan clean; first-draft docx sent.
 00:32 06 edit 4.14 pass_with_edits, 8 edits applied (intro 'in most cases', religious civil-effect implication cut, CNI H3 cut, unsourced lines cut); 07 readers enquire 1 to 2.
 00:33 07b panel: revise, weighted enquire 1.7; 2 must-fix (fee pointer, resort questions).
+00:34 08 final copy done: 2,555 words, 0 VERIFY, scan clean.
