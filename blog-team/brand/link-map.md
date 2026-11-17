@@ -236,6 +236,18 @@ No Malta destination page exists yet (open item MALTA-PAGE); link `/destinations
 | `/destination-weddings/wedding-destinations-january` | Wedding Destinations for January | wedding destinations january |
 | `/trending/best-destination-wedding-locations` | Best Destination Wedding Locations | best destination wedding locations |
 
+## Germany articles (Firecrawl map, 17 Nov 2026)
+
+| URL | Title | Owns |
+|---|---|---|
+| `/expert-advice/german-wedding-traditions` | German Wedding Traditions | german wedding traditions |
+| `/a-cross-cultural-destination-wedding-in-germany` | A Cross-Cultural Destination Wedding in Germany | (real wedding or feature) |
+| `/12-magical-european-castles-you-can-get-married-in` | 12 Magical European Castles You Can Get Married In | european castle wedding (not a legal source; names Neuschwanstein, human check) |
+| `/expert-advice/where-can-same-sex-couples-legally-marry-abroad` | Where Can Same-Sex Couples Legally Marry Abroad | same-sex marriage abroad |
+| `/expert-advice/traditional-wedding-vows` | Traditional Wedding Vows | traditional wedding vows |
+
+No Germany destination page exists (open item GERMANY-PAGE); link `/destinations/europe`.
+
 No Jamaica destination page found (open item JAMAICA-PAGE; the home page meta mentions Jamaica, so check by hand). `/destinations/latin-america-caribbean` is hidden: link `/destinations` and `/destination-wedding-packages`.
 
 ## 9. Rings and Jewellery cluster (Firecrawl map, 27 Oct 2026)

@@ -19,4 +19,6 @@
 - Legal sources: Standesamt city portals, Auswärtiges Amt, gesetze-im-internet.de (BGB, PStG), German Embassy Canberra, Smartraveller, DFAT.
 
 ## Stages
-- **Stage 0 + 1 fast (strategist, research A, research B in parallel):** running.
+- **Stage 0 fast (strategist):** DONE. AU volumes 10/month per keyword; UK "getting married in germany" 30. Ranking pages target expats and people marrying a German; no government page in any top 3. Angle: two non-resident Australians. Brief: 11 template H2s, 2,300 words, 5 FAQs, SEO title "Getting Married in Germany: A Legal Guide for Foreigners" (56). Castle intent 10/month: no castle H3, criteria-only sentence and FAQ, no named venues. No cannibalisation.
+- **Decision (default, change if you want):** five Germany-related site URLs added to link-map (traditions, cross-cultural Germany wedding, castles list, same-sex abroad, vows). Our castles page names Neuschwanstein as a venue: flagged for a human check, not used as a source.
+- **Stage 1 fast (research A and B):** running.
