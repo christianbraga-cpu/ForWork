@@ -10,3 +10,4 @@
 03:20 07b panel: revise, weighted enquire 1.9; 3 must-fix (two-trips answer, calmer safety ordering, broader security wording).
 03:21 08 final copy done: 2,213 words, 0 VERIFY, scan clean.
 03:22 09 CRO and 10 distribution done.
+03:22 08b final check: 3 blocking fixes applied and confirmed ('two visits' inference reworded to the facts; recognition condition; extra Advisor line cut).
