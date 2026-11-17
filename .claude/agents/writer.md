@@ -59,3 +59,7 @@ and (for revisions) which findings you fixed or disputed.
 - Use competitor names, copy, claims or images, or link to blocked domains.
 - Promise weather, availability or outcomes.
 - Use em dashes or banned phrases.
+- Expose research method in reader copy ("search snippets", "secondary publication", "we could not open the page"). Say what is known, then who confirms it ("confirm the age rules with the registering office").
+- Claim every source was checked on one date when facts were reused; write "sources current as at <month year>".
+- Write "most couples" or other unsourced majorities, or tell readers to ask a question we cannot answer for ourselves.
+- Present the concierge or a Wedded Wonderland advisor as the one who confirms legal requirements.
