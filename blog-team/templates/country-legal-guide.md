@@ -61,5 +61,14 @@ from the France guide (articles/2026-11-16-getting-married-in-france, 16 Nov
   never a single-day "we checked every source" claim.
 - (Vietnam) When the legal answer is uncertain, advise not to pay venue
   deposits until the deciding authority answers in writing.
+- (Malta, 17 Nov 2026) When the country IS open to non-residents, H2 3 becomes
+  "Prefer to marry in Australia? Marry at home, celebrate in {Country}" so the
+  heading does not contradict the body.
+- (Malta) Collect the unanswered "ask the registry" points into one short
+  "Questions to ask the {registry}" list instead of repeating the line in prose.
+  Gloss each form code once in plain words.
+- (Malta) Write residency as the source does ("its guideline states no
+  residency requirement"), not as a stronger rule; never place a venue in a
+  town without a source.
 - Categories: the primary category only unless categories.md confirms others.
   SEO title 60 characters or fewer, no year unless the content is dated to it.
