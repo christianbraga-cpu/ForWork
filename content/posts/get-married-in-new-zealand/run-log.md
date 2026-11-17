@@ -5,3 +5,4 @@
 06:52 02 seo done: 5/5 cities; head term AU 40 / US 20; govt.nz ranks Sydney #2/#4, Dubai #5/#9; no cannibalisation; validate ok.
 06:51 02 SEO done: AU 40/US 20 head term; elopement 590 AU; govt.nz ranks Sydney/Dubai only; no cannibalisation.
 06:54 05 first draft done (~3,290 words, 0 VERIFY).
+06:55 07 five readers done (enquire 1 to 3).
