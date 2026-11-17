@@ -88,7 +88,7 @@ The marriage record is signed by the person presiding, the two of you, your witn
 
 Once the certificate of habilitação is issued, the civil marriage is celebrated on the day, at the time and in the place you request and the registrar sets. <!-- fact_204 --> Ask the cartório who will conduct your ceremony, because the person presiding signs your marriage record with you. <!-- fact_207 -->
 
-Straight after the ceremony, a record is drawn up and signed. It notes your details, the date of the banns and of the ceremony, the documents you presented and your marriage property regime. <!-- fact_207 --> Ask the cartório to explain the property regime options before the day, so you choose rather than default. Its registration takes legal effect from the ceremony date. <!-- fact_212 --> Ask the cartório how and when you receive your certidão de casamento, the marriage certificate.
+Straight after the ceremony, a record is drawn up and signed. It notes your details, the date of the banns and of the ceremony, the documents you presented and your marriage property regime. <!-- fact_207 --> Ask the cartório to explain the property regime options before the day. Ask the cartório how and when you receive your certidão de casamento, the marriage certificate.
 
 ### A religious ceremony with civil effect
 

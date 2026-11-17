@@ -7,3 +7,4 @@
 23:13 06 editor 4.14 pass_with_edits, 13 edits applied (3 VERIFY resolved by rewording).
 23:15 07b panel revise (enquire 1.9), 5 must-fix.
 23:16 08 final copy done (~2,620 words), 5 must-fix applied.
+23:17 06b final check: 1 fix applied and confirmed (civil record and property regime wording); CRO and distribution done.
