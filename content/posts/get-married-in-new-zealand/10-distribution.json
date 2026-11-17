@@ -1,0 +1,142 @@
+{
+ "agent": "distribution-lead",
+ "task_id": "get-married-in-new-zealand",
+ "stage": "10",
+ "status": "complete",
+ "round": 1,
+ "inputs_used": [
+  "CLAUDE.md",
+  "content/posts/getting-married-in-costa-rica/10-distribution.json (format model)",
+  "content/posts/get-married-in-new-zealand/08-final.md (copy and image slot markers)",
+  "content/posts/get-married-in-new-zealand/02-seo.json",
+  "content/posts/get-married-in-new-zealand/04-images.json",
+  "content-system/brand/banned-phrases.md"
+ ],
+ "self_qa": {
+  "checks": [
+   {
+    "check": "3 pins tied to image slots in 04-images.json / 08-final.md",
+    "pass": true,
+    "note": "featured, documents, certificate-australia; images not yet sourced"
+   },
+   {
+    "check": "Pin titles <= 100, descriptions <= 500",
+    "pass": true,
+    "note": "76/372, 74/388, 64/431"
+   },
+   {
+    "check": "UTM per channel: pinterest/social, instagram via bio link, newsletter/email; utm_campaign=get-married-in-new-zealand",
+    "pass": true,
+    "note": "per agent spec and Costa Rica model; utm_source=blog&utm_medium=content stays on the in-article CTA links only"
+   },
+   {
+    "check": "8-slide carousel, hook first, Wedded Advisor conversation last",
+    "pass": true
+   },
+   {
+    "check": "Caption <= 2,200 chars, 5 to 10 hashtags",
+    "pass": true,
+    "note": "1877 chars, 9 hashtags"
+   },
+   {
+    "check": "Newsletter subject <= 60, preview <= 110, blurb 60 to 100 words",
+    "pass": true,
+    "note": "52/100 chars, 76 words"
+   },
+   {
+    "check": "Facts only from 08-final.md; no prices or fee amounts, best, venue names, same-sex legal position, Advisor claims beyond the copy, last dance, [[VERIFY]] content",
+    "pass": true
+   },
+   {
+    "check": "Australian English; no em dashes; no banned phrases",
+    "pass": true
+   }
+  ],
+  "confidence": 0.85
+ },
+ "open_questions": [
+  {
+   "to": "orchestrator",
+   "question": "Images for featured, documents and certificate-australia (and carousel backgrounds) are not yet sourced and need a licence covering social use. Tourism New Zealand media is [[VERIFY licence]] in 08-final.md and must not be used on social until cleared. Never AI for location or people shots.",
+   "blocking": true
+  },
+  {
+   "to": "orchestrator",
+   "question": "Confirm Pinterest board names (Destination Weddings, Wedding Planning Advice) match existing boards.",
+   "blocking": false
+  },
+  {
+   "to": "orchestrator",
+   "question": "Instagram bio link should be https://weddedwonderland.com/destination-weddings/get-married-in-new-zealand?utm_source=instagram&utm_medium=social&utm_campaign=get-married-in-new-zealand&utm_content=bio-link.",
+   "blocking": false
+  }
+ ],
+ "assumptions": [
+  "Post URL follows the series pattern: https://weddedwonderland.com/destination-weddings/get-married-in-new-zealand",
+  "Board names are proposals.",
+  "Hazard and safety content (earthquakes, volcanoes, Smartraveller) omitted from social assets rather than paraphrased.",
+  "Seasons and costs left out of social assets to avoid best-month and money claims."
+ ],
+ "verify_items": [],
+ "tools_used": [
+  "Bash"
+ ],
+ "next_agent": [
+  "cms-publisher"
+ ],
+ "payload": {
+  "pinterest": [
+   {
+    "title": "Get Married in New Zealand: The Legal Steps for Australian Couples, in Order",
+    "description": "You can get married in New Zealand as Australians, and neither of you needs to be a New Zealand citizen. You need a marriage licence and a registered celebrant. Sign the BDM 58 declaration before an authorised person in Australia, visit a registry office in New Zealand before the ceremony, then marry with 2 witnesses physically present. Read the full step-by-step guide.",
+    "image_slot": "featured",
+    "board": "Destination Weddings",
+    "link": "https://weddedwonderland.com/destination-weddings/get-married-in-new-zealand?utm_source=pinterest&utm_medium=social&utm_campaign=get-married-in-new-zealand&utm_content=pin-steps"
+   },
+   {
+    "title": "New Zealand Marriage Licence Checklist for Couples Planning From Australia",
+    "description": "Arrange your New Zealand marriage licence at least 3 working days before the wedding. It expires after 3 months, so time it carefully. The ceremony can only take place at the places named on your application, so name a back-up venue, which doubles as your wet-weather plan. Give the licence and both copies of the Copy of Particulars to your celebrant before the day. Read the full guide.",
+    "image_slot": "documents",
+    "board": "Wedding Planning Advice",
+    "link": "https://weddedwonderland.com/destination-weddings/get-married-in-new-zealand?utm_source=pinterest&utm_medium=social&utm_campaign=get-married-in-new-zealand&utm_content=pin-licence"
+   },
+   {
+    "title": "New Zealand Marriage Certificate: Getting It Ready for Australia",
+    "description": "The Copy of Particulars you sign on the day is not a marriage certificate. Once your celebrant registers the marriage, order the certificate online. Australia is an Apostille country for New Zealand documents, so ask any Australian organisation receiving it whether it wants a paper Apostille or an e-apostille. You cannot register an overseas marriage in Australia, but in most cases it is legally recognised. Read the full guide.",
+    "image_slot": "certificate-australia",
+    "board": "Wedding Planning Advice",
+    "link": "https://weddedwonderland.com/destination-weddings/get-married-in-new-zealand?utm_source=pinterest&utm_medium=social&utm_campaign=get-married-in-new-zealand&utm_content=pin-certificate"
+   }
+  ],
+  "instagram_carousel": {
+   "slides": [
+    "Thinking of getting married in New Zealand? Here is the legal sequence for Australian couples, step by step.",
+    "Good news first: you do not need to be New Zealand citizens. You need a marriage licence and a registered celebrant.",
+    "Step 1: From Australia, complete the BDM 58 form, sign its statutory declaration before an authorised person, and send it to Births, Deaths and Marriages.",
+    "Timing tip: the licence must be in place at least 3 working days before the wedding and expires after 3 months.",
+    "Step 2: Name your venue and a back-up. The ceremony can only take place at the places on your application.",
+    "Step 3: On arrival, visit a registry office to sign a declaration before the ceremony. It is not the wedding itself.",
+    "Step 4: Marry with your celebrant and 2 witnesses, all physically present. Then order your certificate, as the Copy of Particulars is not one.",
+    "Weighing regions, lodges or guest travel? Message us to talk it through with a Wedded Advisor. Link in bio."
+   ],
+   "caption": "New Zealand is just across the Tasman, but the paperwork will not look after itself. Here is how the legal side works for Australian couples.\n\nYou do not need to be New Zealand citizens: visitors can marry in New Zealand. You need a marriage licence and a registered celebrant.\n\n1. Choose your celebrant before you lodge the licence application. Personalised ceremonies let you choose the time, date and place and write your own vows.\n2. Complete the BDM 58 form, the notice of intended marriage for couples living outside New Zealand. Sign its statutory declaration in front of an authorised person listed on the form, then send it to Births, Deaths and Marriages.\n3. Time it right. The licence must be arranged at least 3 working days before the wedding and expires after 3 months.\n4. Name your venue and a back-up. The ceremony can only take place at the places on your application, so for an outdoor wedding the back-up is your wet-weather plan in legal form.\n5. On arrival, visit a registry office to sign a declaration before the ceremony.\n6. On the day, you need 2 witnesses, and you, your celebrant and your witnesses must be physically present in the same place.\n7. Afterwards, the Copy of Particulars you sign is not a marriage certificate. Order the certificate once the marriage is registered, and ask any Australian organisation receiving it whether it wants an Apostille.\n\nBack home, you cannot register an overseas marriage in Australia, but in most cases it is legally recognised if it was valid where it took place and would have been valid under Australian law.\n\nDreaming of alpine lakes, island vineyards or a subtropical bay? Ask your celebrant and venue who gives permission for a ceremony on a beach, in a park or on conservation land.\n\nReady to weigh regions and lodges? Message us to talk it through with a Wedded Advisor. Full guide at the link in bio.",
+   "hashtags": [
+    "#newzealandwedding",
+    "#nzwedding",
+    "#queenstownwedding",
+    "#destinationwedding",
+    "#australianbride",
+    "#weddingplanning",
+    "#newzealandelopement",
+    "#overseaswedding",
+    "#weddedwonderland"
+   ]
+  },
+  "newsletter": {
+   "subject": "Get married in New Zealand: the legal steps in order",
+   "preview": "Licence, registry office visit, witnesses and your certificate: the sequence for Australian couples.",
+   "blurb": "New Zealand on your list? Our new guide sets out the legal sequence for Australian couples: the BDM 58 form signed before you leave, a licence in place at least 3 working days before the wedding, a registry office visit on arrival, your celebrant and 2 witnesses on the day, then your certificate and an Apostille if an Australian organisation asks for one. It also covers recognition in Australia, conservation land, seasons and choosing your region.",
+   "link": "https://weddedwonderland.com/destination-weddings/get-married-in-new-zealand?utm_source=newsletter&utm_medium=email&utm_campaign=get-married-in-new-zealand&utm_content=newsletter"
+  }
+ }
+}
