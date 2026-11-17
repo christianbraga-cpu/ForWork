@@ -9,3 +9,4 @@
 00:34 08 final copy done: 2,555 words, 0 VERIFY, scan clean.
 00:35 09 CRO and 10 distribution done.
 00:36 08b final check: 3 blocking fixes applied and confirmed in 08-final (recognition condition, fee sentence, research-talk line).
+00:38 11 package, checklist, docx, link map, calendar row 65, run report done.
