@@ -1,0 +1,335 @@
+{
+  "agent": "cms-publisher",
+  "task_id": "getting-married-in-seychelles",
+  "stage": "11",
+  "status": "complete",
+  "round": 1,
+  "inputs_used": [
+    "CLAUDE.md",
+    "content-system/schemas/11-publish-package.schema.json",
+    "content/posts/getting-married-in-seychelles/01-brief.json",
+    "content/posts/getting-married-in-seychelles/02-seo.json",
+    "content/posts/getting-married-in-seychelles/04-images.json",
+    "content/posts/getting-married-in-seychelles/08-final.md",
+    "content/posts/getting-married-in-seychelles/09-cro.json",
+    "content/posts/getting-married-in-seychelles/10-distribution.json",
+    "content/posts/mauritius-wedding/11-body.md, 11-publish-package.json, 12-cms-report.md, booking-checklist.md (format model)"
+  ],
+  "self_qa": {
+    "checks": [
+      {
+        "check": "Front matter and all <!-- fact_xx --> markers removed; H1 is the title; 6 image-slot comments kept; all links and the 4 UTM links unchanged; no CTA marker comments; no [[VERIFY]] markers in the copy",
+        "pass": true
+      },
+      {
+        "check": "Each utm_content (primary, secondary, closing, magnet) appears exactly once in 11-body.md",
+        "pass": true
+      },
+      {
+        "check": "Exactly 4 key takeaways and 5 FAQ pairs taken verbatim from the body",
+        "pass": true
+      },
+      {
+        "check": "Meta title and description from 02-seo.json, no prices, no em dashes",
+        "pass": true,
+        "note": "title 50, description 150 characters"
+      },
+      {
+        "check": "primary_category equals categories[0] (Destination Weddings)",
+        "pass": true
+      },
+      {
+        "check": "08-final.md stable across checks and already includes the final-check fixes; built from it as is",
+        "pass": true
+      },
+      {
+        "check": "No em dashes; Australian English",
+        "pass": true
+      },
+      {
+        "check": "status draft; nothing uploaded, saved or published",
+        "pass": true
+      }
+    ],
+    "confidence": 0.9
+  },
+  "open_questions": [
+    {
+      "to": "orchestrator",
+      "question": "CMS upload not attempted: FAST MODE package only, no browser in this session and the field map is not confirmed. A human saves as Draft and clicks Publish, or run /wedded-blog resume=getting-married-in-seychelles once the field map is confirmed.",
+      "blocking": true
+    },
+    {
+      "to": "orchestrator",
+      "question": "The /destination-weddings folder and the Destination Weddings category must exist in the CMS before the draft is saved.",
+      "blocking": true
+    },
+    {
+      "to": "orchestrator",
+      "question": "The Mauritius and Hawaii sister links in \"Venues and planning\" point to draft posts. Publish the series together, or remove that sentence before publishing.",
+      "blocking": true
+    }
+  ],
+  "assumptions": [
+    "H1 and Article headline \"How to Get Married in the Seychelles\"; meta title and description from 02-seo.json unchanged.",
+    "Slug getting-married-in-seychelles and URL /destination-weddings/getting-married-in-seychelles from 02-seo.json.",
+    "Excerpt is the first two sentences of the opening paragraph.",
+    "Categories and tags from 01-brief.json; primary category Destination Weddings. Brief tag \"Getting Married in {Country}\" kept as given.",
+    "JSON-LD is Article + BreadcrumbList (Home > Destination Weddings > post) + FAQPage (5 pairs from the body FAQ; link markup stripped from answers).",
+    "Image order follows the slot order in 04-images.json; alt and caption from 04-images.json.",
+    "Byline Wedded Wonderland (organisation), as instructed.",
+    "verify_items and needs_signoff empty: no [[VERIFY]] markers and no price or fee amounts in the copy."
+  ],
+  "verify_items": [],
+  "tools_used": [
+    "Bash (python3 -I)"
+  ],
+  "next_agent": [
+    "orchestrator"
+  ],
+  "payload": {
+    "title": "How to Get Married in the Seychelles",
+    "slug": "getting-married-in-seychelles",
+    "url_path": "/destination-weddings/getting-married-in-seychelles",
+    "content_type": "planning_guide",
+    "categories": [
+      "Destination Weddings",
+      "Seychelles",
+      "Africa",
+      "Planning Guides"
+    ],
+    "primary_category": "Destination Weddings",
+    "tags": [
+      "Getting Married in Seychelles",
+      "Getting Married in {Country}",
+      "Seychelles",
+      "Civil Status Office",
+      "Legal requirements",
+      "Apostille",
+      "Indian Ocean",
+      "Island weddings",
+      "Wedding planning"
+    ],
+    "excerpt": "The Seychelles is on your shortlist, and before you choose a bay or a resort you want to know one thing: will the marriage stand? In most cases, yes.",
+    "key_takeaways": [
+      "Two Australians can marry legally in the Seychelles through a civil marriage registered by the Civil Status office, and in most cases Australia recognises it.",
+      "Every document you bring from home must be in English or French and carry an apostille.",
+      "The banns run for eleven days before the wedding, or a special marriage licence is normally issued within two days of applying.",
+      "Have your marriage certificate apostilled by the Supreme Court and authenticated by the Ministry of Foreign Affairs before you fly home."
+    ],
+    "body_markdown_file": "content/posts/getting-married-in-seychelles/11-body.md",
+    "faq": [
+      {
+        "q": "Is a Seychelles marriage recognised in Australia?",
+        "a": "In most cases, yes. An overseas marriage is generally recognised in Australia if it was valid where it took place and would have been valid under Australian law. You cannot register it in Australia, and your Seychelles certificate is usually accepted as proof of the marriage."
+      },
+      {
+        "q": "How early do we need to arrive in the Seychelles before the wedding?",
+        "a": "The banns run for eleven days before the wedding, and a special marriage licence, normally issued within two days, can shorten that wait. Arrange the registration with the Civil Status office before you fly, arrive at least two days before the ceremony, as the Australian High Commission advises, and leave time after it for the apostille."
+      },
+      {
+        "q": "Can we marry on the beach in the Seychelles?",
+        "a": "Yes, with notice. The official wording calls this registering your marriage \"at home\", meaning somewhere other than the office, and asks for at least a week's notice to the office. The Australian High Commission says ceremonies may be held around the hotel with permission from the hotel and the Civil Registrar. Confirm the exact location with the office ahead."
+      },
+      {
+        "q": "Do we need our own witnesses?",
+        "a": "Witnesses are a question for the Civil Status office. Ask whether they are needed, how many, whether you provide them yourselves and what identification they should bring, and settle it before you travel."
+      },
+      {
+        "q": "Do our documents need an apostille?",
+        "a": "Yes. Every document issued overseas must be translated into English or French and apostilled. Your marriage certificate also needs an apostille from the Seychelles Supreme Court and a letter of authentication from the Ministry of Foreign Affairs before you leave."
+      }
+    ],
+    "images": [
+      {
+        "slot_id": "featured",
+        "file": "content/posts/getting-married-in-seychelles/images/getting-married-in-seychelles-granite-boulder-beach-ceremony.webp",
+        "role": "featured",
+        "alt": "Wedding ceremony set-up on a white sand beach framed by granite boulders and turquoise water in the Seychelles",
+        "caption": "<Venue>, <island>, Seychelles. Photo: <credit> (fill once sourced).",
+        "status": "needed"
+      },
+      {
+        "slot_id": "documents",
+        "file": "content/posts/getting-married-in-seychelles/images/getting-married-in-seychelles-documents-still-life-linen.webp",
+        "role": "inline",
+        "alt": "Two closed passports and a linen folder of papers beside a fountain pen on natural linen",
+        "caption": "Illustrative image (only if AI is approved; otherwise credit the stock or Canva source).",
+        "status": "needed"
+      },
+      {
+        "slot_id": "civil-ceremony",
+        "file": "content/posts/getting-married-in-seychelles/images/getting-married-in-seychelles-civil-ceremony-resort-beach.webp",
+        "role": "inline",
+        "alt": "Couple exchanging vows with an officiant on a beachfront terrace beside tropical greenery",
+        "caption": "<Venue>, <island>, Seychelles. Photo: <credit> (fill once sourced).",
+        "status": "needed"
+      },
+      {
+        "slot_id": "certificate-australia",
+        "file": "content/posts/getting-married-in-seychelles/images/getting-married-in-seychelles-certificate-folder-rings-still-life.webp",
+        "role": "inline",
+        "alt": "Wedding rings resting on a closed cream document folder tied with ribbon, beside two passports",
+        "caption": "Illustrative image (only if AI is approved; otherwise credit the stock or Canva source).",
+        "status": "needed"
+      },
+      {
+        "slot_id": "when-to-marry",
+        "file": "content/posts/getting-married-in-seychelles/images/getting-married-in-seychelles-sunset-reception-beachfront.webp",
+        "role": "inline",
+        "alt": "Reception tables set on a beachfront deck above calm water in warm sunset light",
+        "caption": "<Venue>, <island>, Seychelles. Photo: <credit> (fill once sourced).",
+        "status": "needed"
+      },
+      {
+        "slot_id": "choose-your-island",
+        "file": "content/posts/getting-married-in-seychelles/images/getting-married-in-seychelles-island-venue-wide-view.webp",
+        "role": "inline",
+        "alt": "Wide view of a resort bay with forested granite hills and turquoise water in the Seychelles",
+        "caption": "<Venue>, <island>, Seychelles. Photo: <credit> (fill once sourced).",
+        "status": "needed"
+      }
+    ],
+    "cta": {
+      "text": "Speak with Wedded Concierge",
+      "subtext": "One Wedded Advisor confirms the inclusions in writing before you commit.",
+      "link": "https://weddedwonderland.com/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=getting-married-in-seychelles&utm_content=primary",
+      "placement": "Existing inline link in 'Venues and planning for getting married in Seychelles' (line 184, anchor 'Speak with Wedded Concierge'), after the legal steps, certificate, seasons and island chooser are done and the post turns to planning decisions. Unchanged."
+    },
+    "secondary_cta": {
+      "text": "Talk your island through",
+      "subtext": "Your Wedded Advisor is your single point of contact from start to finish.",
+      "link": "https://weddedwonderland.com/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=getting-married-in-seychelles&utm_content=secondary",
+      "placement": "Existing final line of 'Choosing your island' (line 178, anchor 'talk it through with Wedded Concierge'), where the reader is weighing Mahé, Praslin and La Digue against a guest list. Unchanged."
+    },
+    "closing_cta": {
+      "text": "Start a conversation with Wedded Concierge",
+      "subtext": "Quotes in AUD, in your time zone, with the fee agreed in writing before any work begins.",
+      "link": "https://weddedwonderland.com/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=getting-married-in-seychelles&utm_content=closing",
+      "placement": "Existing closing paragraph under 'Plan your Seychelles wedding with Wedded Concierge' (line 214). Unchanged."
+    },
+    "lead_magnet": {
+      "name": "Wedded Wonderland magazine",
+      "link": "https://weddedwonderland.com/magazine?utm_source=blog&utm_medium=content&utm_campaign=getting-married-in-seychelles&utm_content=magnet",
+      "placement": "Existing final line of 'Venues and planning for getting married in Seychelles' (line 186), for readers gathering ideas before they enquire. Unchanged."
+    },
+    "tracking_links": [
+      "https://weddedwonderland.com/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=getting-married-in-seychelles&utm_content=primary",
+      "https://weddedwonderland.com/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=getting-married-in-seychelles&utm_content=secondary",
+      "https://weddedwonderland.com/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=getting-married-in-seychelles&utm_content=closing",
+      "https://weddedwonderland.com/magazine?utm_source=blog&utm_medium=content&utm_campaign=getting-married-in-seychelles&utm_content=magnet"
+    ],
+    "seo": {
+      "meta_title": "How to Get Married in the Seychelles, Step by Step",
+      "meta_description": "How Australians marry legally in the Seychelles: Civil Status Office steps, apostilled documents, the ceremony and readying your certificate for home.",
+      "focus_keyword": "getting married in seychelles",
+      "canonical": "https://weddedwonderland.com/destination-weddings/getting-married-in-seychelles",
+      "og_image_slot": "featured"
+    },
+    "schema_jsonld": {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Article",
+          "@id": "https://weddedwonderland.com/destination-weddings/getting-married-in-seychelles#article",
+          "headline": "How to Get Married in the Seychelles",
+          "description": "How Australians marry legally in the Seychelles: Civil Status Office steps, apostilled documents, the ceremony and readying your certificate for home.",
+          "author": {
+            "@type": "Organization",
+            "name": "Wedded Wonderland",
+            "url": "https://weddedwonderland.com/"
+          },
+          "publisher": {
+            "@type": "Organization",
+            "name": "Wedded Wonderland",
+            "url": "https://weddedwonderland.com/"
+          },
+          "datePublished": "",
+          "mainEntityOfPage": "https://weddedwonderland.com/destination-weddings/getting-married-in-seychelles",
+          "inLanguage": "en-AU"
+        },
+        {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Home",
+              "item": "https://weddedwonderland.com/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Destination Weddings",
+              "item": "https://weddedwonderland.com/destination-weddings"
+            },
+            {
+              "@type": "ListItem",
+              "position": 3,
+              "name": "How to Get Married in the Seychelles",
+              "item": "https://weddedwonderland.com/destination-weddings/getting-married-in-seychelles"
+            }
+          ]
+        },
+        {
+          "@type": "FAQPage",
+          "@id": "https://weddedwonderland.com/destination-weddings/getting-married-in-seychelles#faq",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "Is a Seychelles marriage recognised in Australia?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "In most cases, yes. An overseas marriage is generally recognised in Australia if it was valid where it took place and would have been valid under Australian law. You cannot register it in Australia, and your Seychelles certificate is usually accepted as proof of the marriage."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "How early do we need to arrive in the Seychelles before the wedding?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "The banns run for eleven days before the wedding, and a special marriage licence, normally issued within two days, can shorten that wait. Arrange the registration with the Civil Status office before you fly, arrive at least two days before the ceremony, as the Australian High Commission advises, and leave time after it for the apostille."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Can we marry on the beach in the Seychelles?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes, with notice. The official wording calls this registering your marriage \"at home\", meaning somewhere other than the office, and asks for at least a week's notice to the office. The Australian High Commission says ceremonies may be held around the hotel with permission from the hotel and the Civil Registrar. Confirm the exact location with the office ahead."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Do we need our own witnesses?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Witnesses are a question for the Civil Status office. Ask whether they are needed, how many, whether you provide them yourselves and what identification they should bring, and settle it before you travel."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Do our documents need an apostille?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes. Every document issued overseas must be translated into English or French and apostilled. Your marriage certificate also needs an apostille from the Seychelles Supreme Court and a letter of authentication from the Ministry of Foreign Affairs before you leave."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    "author": "Wedded Wonderland",
+    "status": "draft",
+    "verify_items": [],
+    "needs_signoff": [],
+    "redirect": null,
+    "redirects_recommended": [],
+    "series": {
+      "name": "Getting Married in {Country}",
+      "position": 3,
+      "template": "content-system/templates/getting-married-in-country.md"
+    },
+    "draft_note": "DRAFT. Do not publish until checked: no [[VERIFY]] items in the copy; no prices or fee amounts (fees for the special licence, the foreigners' registration and apostilles are described as applying, with the offices to confirm amounts), nothing for Nic to sign off. Image slots needed (6 of 6, none approved): featured, documents, civil-ceremony, certificate-australia, when-to-marry, choose-your-island. featured and civil-ceremony show real weddings: licensed real wedding with written consent only, never AI, Civil Status Officer identifiable only with written consent; when-to-marry and choose-your-island must be real, named venues proven by media kit, register or EXIF, never AI; documents and certificate-australia are still lifes (Canva, licensed stock or own shoot; AI only with Wedded Wonderland approval, captioned 'Illustrative image'), with nothing readable and nothing that imitates a Seychelles or Australian document. Seychelles Tourism Board library only if its licence covers third-party commercial blog use. Captions with venue and credit to fill once sourced. Series sister links: the body links to /destination-weddings/mauritius-wedding and /destination-weddings/getting-married-in-hawaii, which are still drafts. Publish the three posts together, or remove that sentence before publishing. CMS setup: the /destination-weddings folder and the Destination Weddings category must exist before the draft is saved. Do not Publish or Schedule; a human clicks Publish."
+  }
+}
