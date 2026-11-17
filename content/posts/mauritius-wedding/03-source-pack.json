@@ -1,0 +1,638 @@
+{
+  "agent": "planner-sme",
+  "task_id": "mauritius-wedding",
+  "stage": "03",
+  "status": "complete",
+  "round": 1,
+  "inputs_used": [
+    "mcp__Apify__apify--web-search (17 November 2026) on govmu.org: result snippets used for fact_12 to fact_14, marked 'Snippet only'",
+    "mcp__Apify__apify--web-fetch, 17 November 2026, no retries: https://civilstatus.govmu.org/ and https://civilstatus.govmu.org/civilstatus/?page_id=209 (both timed out at 60s, not read; the Division's live site is csd.govmu.org)",
+    "mcp__Apify__apify--web-fetch, 17 November 2026: https://csd.govmu.org/Pages/Registration/Residence-Permit-Wedding.aspx (200, read in full); https://csd.govmu.org/Pages/Registration/Marriage.aspx (200, read in full); https://csd.govmu.org/Pages/Registration/Religious-Marriage-having-civil-effect.aspx (200, read in full); https://pmo.govmu.org/Pages/Apostille/Types-of-Documents.aspx (200, read in full)",
+    "content/posts/mauritius-wedding/00-input.json (no 01-brief.json, 02-seo.json or 02-research/report.md; must_include derived from the orchestrator's task)",
+    "content/posts/getting-married-in-hawaii/03-source-pack.json (fact_100 to fact_109 copied as fact_100 to fact_109)",
+    "mcp__Apify__apify--web-fetch one parallel round, 17 November 2026, no retries: https://www.smartraveller.gov.au/destinations/africa/mauritius (200); https://mauritius.embassy.gov.au/ (200, home page only, no CNI content); http://metservice.intnet.mu/climate-services/climate-of-mauritius.php (200, island-wide only); https://www.mauritiusnow.com/ (200, home page only, no region overviews)"
+  ],
+  "self_qa": {
+    "checks": [
+      {
+        "check": "Every fact has a source and date",
+        "pass": true
+      },
+      {
+        "check": "No price without a source; all prices in needs_signoff",
+        "pass": true,
+        "note": "No prices recorded. The Residence Permit Wedding page states a fee amount for weddings outside the Office; deliberately not recorded (task rule). Referenced as 'a fee applies'."
+      },
+      {
+        "check": "Every must-include covered or [[VERIFY]]",
+        "pass": true
+      },
+      {
+        "check": "No invented quotes, statistics or real weddings",
+        "pass": true
+      }
+    ],
+    "confidence": 0.55
+  },
+  "open_questions": [
+    {
+      "to": "orchestrator",
+      "question": "The Civil Status Division's own page for two non-citizens ('Marriage of two Non Citizens', listed on https://csd.govmu.org/Pages/index.aspx) was not read in full. The core legal section for Australian couples rests on the Residence Permit Wedding page, which covers permit holders. A targeted fetch of that page (find its URL from the CSD index) is needed before the legal section is written. RESOLVED 2026-11-17: orchestrator read the Marriage of two Non Citizens page live (fact_200 to fact_207).",
+      "blocking": false
+    },
+    {
+      "to": "orchestrator",
+      "question": "civilstatus.govmu.org timed out twice (not retried); the live Civil Status Division site is csd.govmu.org. Also worth reading: the Oct 2022 checklist PDF (fact_13), the CSD FAQ (fact_14) and https://csd.govmu.org/Pages/About%20Us/Services.aspx.",
+      "blocking": false
+    },
+    {
+      "to": "luxury-writer",
+      "question": "State Mauritius marriage rules 'as at November 2026' with the line that the Wedded Advisor confirms current requirements. Never state a fee amount. No same-sex legal facts. Do not present fact_01 to fact_05 as the tourist (two non-citizen) process until the blocking item is cleared.",
+      "blocking": false
+    },
+    {
+      "to": "Wedded Advisor",
+      "question": "Do Mauritian civil status authorities require a CNI from Australian citizens, and does the Australian High Commission in Port Louis issue one? Neither source read says.",
+      "blocking": false
+    },
+    {
+      "to": "planner-sme",
+      "question": "Read the MMS official cyclone season page and the regional station PDFs (Medine, Pamplemousses, Fuel, Plaisance, Vacoas) for station-labelled monthly figures.",
+      "blocking": false
+    },
+    {
+      "to": "orchestrator",
+      "question": "mauritiusnow.com region overviews (north, east, south-west, west) were not read in this batch; only the home page was fetched. Run them in a later batch or leave regions as [[VERIFY]].",
+      "blocking": false
+    }
+  ],
+  "assumptions": [
+    "Must-include list taken from the orchestrator's batch A task (non-citizen marriage, documents, applying, publication, ceremony, witnesses, certificate and copies, apostille, religious marriage), as no 01-brief.json exists.",
+    "Facts dated 17 November 2026 (the date of reading); the orchestrator's instruction said 2026-11-17.",
+    "Batch B part 1 only: legal and visa content is from Australian Government sources; Mauritian civil marriage requirements are for another batch."
+  ],
+  "verify_items": [
+    "[[VERIFY: Documents and procedure for two non-citizens (tourists) marrying in Mauritius. The Civil Status Division page 'Marriage of two Non Citizens' was not read; fact_01 to fact_05 come from the 'Residence Permit Wedding' page, which covers foreigners holding work/residence or other permits.]]",
+    "[[VERIFY: Whether a certificate of non-citizenship, or any residence authorisation from the Prime Minister's Office, is required for two non-citizens, and how long it takes. No official page read on 17 November 2026 mentions it.]]",
+    "[[VERIFY: How and how far in advance to apply (by post, email or in person before arrival) for two non-citizens, and processing time for the publication letter.]]",
+    "[[VERIFY: Proof of single status (certificate of no impediment or statutory declaration) for Australians. Not listed on the pages read; fact_02 lists only divorce/widow/change-of-name documents.]]",
+    "[[VERIFY: Whether foreign divorce and death documents must be apostilled when both parties are non-citizens (fact_09 is stated for Mauritian citizens).]]",
+    "[[VERIFY: How to obtain certified copies of the Mauritian marriage certificate after the wedding (fact_14 is a snippet only).]]",
+    "[[VERIFY: Whether two non-citizens can have a Religious Marriage Having Civil Effect; the official page (fact_10) does not address non-citizens.]]",
+    "[[VERIFY: Official cyclone season dates from Mauritius Meteorological Services. Only Smartraveller's 'November to May' was read; MMS season page not read in this batch.]]",
+    "[[VERIFY: Station-labelled monthly figures (e.g. Vacoas, Plaisance) from the MMS regional PDFs; only island-wide climate figures were read.]]",
+    "[[VERIFY: Whether Mauritian authorities need a CNI from Australians and whether the Australian High Commission in Port Louis issues one; neither the High Commission home page nor Smartraveller Mauritius says.]]",
+    "[[VERIFY: MTPA (mauritiusnow.com) region overviews for north, east, south-west and west; only the home page was read and it has no region text.]]"
+  ],
+  "tools_used": [
+    "mcp__Apify__apify--web-search",
+    "mcp__Apify__apify--web-fetch",
+    "Bash"
+  ],
+  "next_agent": [
+    "luxury-writer"
+  ],
+  "payload": {
+    "facts": [
+      {
+        "fact_id": "fact_01",
+        "claim": "As at November 2026, the Civil Status Division (csd.govmu.org) page 'Residence Permit Wedding' (read in full 17 November 2026) applies to two foreigners with work/residence permits or other permits, or two foreigners where only one of them has a work/residence permit. It does not state that it covers two tourists with no permit.",
+        "source": "https://csd.govmu.org/Pages/Registration/Residence-Permit-Wedding.aspx",
+        "source_type": "government",
+        "checked": "2026-11-17",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_02",
+        "claim": "As at November 2026, the Civil Status Division (csd.govmu.org) 'Residence Permit Wedding' page lists documents required: (a) passports of both parties (first three pages including the stamp affixed by the Mauritius Immigration Office, 2 copies); (b) birth certificates, duly translated into English or French, issued within the last 3 months; (c) any other documents relating to divorce, widow/widower status or change of name; (d) valid residence or work permits; (e) a coversheet (available in the Office) stating the intention to marry in Mauritius.",
+        "source": "https://csd.govmu.org/Pages/Registration/Residence-Permit-Wedding.aspx",
+        "source_type": "government",
+        "checked": "2026-11-17",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_03",
+        "claim": "As at November 2026, the Civil Status Division (csd.govmu.org) 'Residence Permit Wedding' page: the Office contacts the couple to collect a letter at the Central Civil Status Office authorising them to proceed with publication of marriage banns once processed; the intending spouses must then call in person at the Central Civil Status Office with all relevant documents in original (issued within the last three months) for the publication of banns, and fill in the coversheet in person.",
+        "source": "https://csd.govmu.org/Pages/Registration/Residence-Permit-Wedding.aspx",
+        "source_type": "government",
+        "checked": "2026-11-17",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_04",
+        "claim": "As at November 2026, the Civil Status Division (csd.govmu.org) 'Residence Permit Wedding' and 'Marriage' pages: the marriage can be celebrated in the Office, a marriage hall, hotels or any private/non-private premises by a Civil Status Officer after 10 days of publication.",
+        "source": "https://csd.govmu.org/Pages/Registration/Residence-Permit-Wedding.aspx ; https://csd.govmu.org/Pages/Registration/Marriage.aspx",
+        "source_type": "government",
+        "checked": "2026-11-17",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_05",
+        "claim": "As at November 2026, the Civil Status Division (csd.govmu.org) 'Residence Permit Wedding' page: no payment is required for a wedding held in the Office; a fee applies if it is celebrated in hotels or any private/non-private premises (amount deliberately not recorded). The parties should provide a means of conveyance for the Officer to and from private/non-private premises if requested.",
+        "source": "https://csd.govmu.org/Pages/Registration/Residence-Permit-Wedding.aspx",
+        "source_type": "government",
+        "checked": "2026-11-17",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_06",
+        "claim": "As at November 2026, the Civil Status Division (csd.govmu.org) 'Marriage' page (read in full): a publication of an intended civil marriage must be made by both parties in the Civil Status Office of the district where the marriage is to take place, and also in the Office of the district in which each party has resided for 7 days immediately preceding publication. A civil marriage may be celebrated after 10 days of publication; if it is not celebrated within 3 months, a fresh publication is needed.",
+        "source": "https://csd.govmu.org/Pages/Registration/Marriage.aspx",
+        "source_type": "government",
+        "checked": "2026-11-17",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_07",
+        "claim": "As at November 2026, the Civil Status Division (csd.govmu.org) 'Marriage' page: two witnesses are required to be present at the marriage ceremony. The legal age to marry is 18 years.",
+        "source": "https://csd.govmu.org/Pages/Registration/Marriage.aspx",
+        "source_type": "government",
+        "checked": "2026-11-17",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_08",
+        "claim": "As at November 2026, the Civil Status Division (csd.govmu.org) 'Marriage' page: there are 3 matrimonial regimes (legal community of goods and property; legal separation of goods and property; a marriage settlement in a notarial deed). At the celebration of a civil marriage the parties inform the Civil Status Officer which regime they choose, for insertion in the marriage entry.",
+        "source": "https://csd.govmu.org/Pages/Registration/Marriage.aspx",
+        "source_type": "government",
+        "checked": "2026-11-17",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_09",
+        "claim": "As at November 2026, the Civil Status Division (csd.govmu.org) 'Marriage' page (Note 1, written for marriages involving Mauritian citizens): a marriage certificate, death certificate and divorce decree issued abroad should be produced in original and should be apostilled. The page does not state whether this applies to two non-citizens.",
+        "source": "https://csd.govmu.org/Pages/Registration/Marriage.aspx",
+        "source_type": "government",
+        "checked": "2026-11-17",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_10",
+        "claim": "As at November 2026, the Civil Status Division (csd.govmu.org) 'Religious Marriage having civil effect' page (read in full): persons authorised by the Registrar of Civil Status may celebrate a Religious Marriage Having Civil Effect; where the celebrant is not authorised, a Civil Status Officer may be designated to assist and register it. Such marriages have the same legal effect as civil marriages; two witnesses are required; a publication must be made at the Central Civil Status Office. Documents listed: birth certificates, previous marriage or death certificates where relevant, and National Identity Cards, each issued within the last three months. The page does not address non-citizens.",
+        "source": "https://csd.govmu.org/Pages/Registration/Religious-Marriage-having-civil-effect.aspx",
+        "source_type": "government",
+        "checked": "2026-11-17",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_11",
+        "claim": "As at November 2026, the Prime Minister's Office Apostille page 'Types of Documents' (read in full 17 November 2026): Apostille is issued only to public documents; documents from the Civil Status Office, including the Marriage Certificate and Publication of Marriage, are listed as common public documents. Documents must be originals signed and stamped by the recognised body; copies are not accepted unless certified by a notary and the Supreme Court. Acceptance rests with the Apostille Office.",
+        "source": "https://pmo.govmu.org/Pages/Apostille/Types-of-Documents.aspx",
+        "source_type": "government",
+        "checked": "2026-11-17",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_12",
+        "claim": "Snippet only (web search result, 17 November 2026, page not read): the Civil Status Division index lists a separate page 'Marriage of two Non Citizens' alongside 'Marriage between Mauritian Citizen and Non Citizen'. Its content (documents, any Prime Minister's Office authorisation or certificate, timing) was not read.",
+        "source": "https://csd.govmu.org/Pages/index.aspx",
+        "source_type": "government",
+        "checked": "2026-11-17",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_13",
+        "claim": "Snippet only (web search result, 17 November 2026, PDF not read): a Civil Status Division checklist titled 'Civil marriage of a non citizen to a ...' (dated Oct 2022) lists a passport (original) plus 5 photocopies of the photograph page and of the page of last arrival in Mauritius, and a birth certificate issued within a stated period. It concerns a non-citizen marrying a citizen, not two non-citizens.",
+        "source": "https://csd.govmu.org/Documents/New%20Checklist%20Oct%202022%20English%20280423.pdf",
+        "source_type": "government",
+        "checked": "2026-11-17",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_14",
+        "claim": "Snippet only (web search result, 17 November 2026, page not read): the Civil Status Division FAQ states death and marriage records from 2001 to date are available on the Civil Status Database and these civil status documents are delivered instantly.",
+        "source": "https://csd.govmu.org/Pages/FAQ.aspx",
+        "source_type": "government",
+        "checked": "2026-11-17",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_100",
+        "claim": "[Copied from getting-married-in-hawaii 03-source-pack, same source and date.] As at November 2026, Smartraveller (read live 11 November 2026) says DFAT can issue a CNI in Australia, but some local authorities only accept CNIs issued in their country, so ask the destination's embassy or consulate whether you need a CNI, whether you can get it in Australia, and whether it also needs an authentication or apostille. The Wedded Advisor confirms current requirements.",
+        "source": "https://www.smartraveller.gov.au/planning-trip/advice-your-planned-activities/getting-married-overseas",
+        "source_type": "government",
+        "checked": "2026-11-11",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_101",
+        "claim": "[Copied from getting-married-in-hawaii 03-source-pack, same source and date.] As at November 2026, Smartraveller 'Getting married overseas' (last updated 18/08/2026, read live 12 November 2026): some countries ask you to prove you aren't already married; the most common documents are a Certificate of No Impediment to Marriage (CNI) and certificates from a registry of births, deaths and marriages; the country may have more rules (for example a residence period); 'We can't tell you what you will need'; contact your destination's embassy or consulate. The Wedded Advisor confirms current requirements.",
+        "source": "https://www.smartraveller.gov.au/planning-trip/advice-your-planned-activities/getting-married-overseas",
+        "source_type": "government",
+        "checked": "2026-11-12",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_102",
+        "claim": "[Copied from getting-married-in-hawaii 03-source-pack, same source and date.] As at November 2026, Smartraveller 'Getting married overseas' (read live 12 November 2026): your registry of births, deaths and marriages can give a statement that there's no record you have been married before, a Single Status certificate or a No Record Result certificate; local authorities may also ask for divorce papers, the death certificate of a deceased spouse, and your original birth certificate and passport.",
+        "source": "https://www.smartraveller.gov.au/planning-trip/advice-your-planned-activities/getting-married-overseas",
+        "source_type": "government",
+        "checked": "2026-11-12",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_103",
+        "claim": "[Copied from getting-married-in-hawaii 03-source-pack, same source and date.] As at November 2026, Smartraveller 'Getting married overseas' (read live 12 November 2026): Australia doesn't recognise overseas marriages where one or both people are already married to someone else, not old enough to get married, too closely related, or forced to get married.",
+        "source": "https://www.smartraveller.gov.au/planning-trip/advice-your-planned-activities/getting-married-overseas",
+        "source_type": "government",
+        "checked": "2026-11-12",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_104",
+        "claim": "[Copied from getting-married-in-hawaii 03-source-pack, same source and date.] As at November 2026, Smartraveller (read live 11 November 2026) says you cannot register an overseas marriage in Australia, but in most cases it is legally recognised if, when it took place, it was valid under the law of the country where it happened and would have been valid under Australian law had it occurred in Australia. A foreign marriage certificate is usually accepted as proof of the marriage but may not work as proof of a name change (check with your local registry of births, deaths and marriages), and Smartraveller suggests talking to a lawyer to confirm the certificate is valid in Australia. The Wedded Advisor confirms current requirements.",
+        "source": "https://www.smartraveller.gov.au/planning-trip/advice-your-planned-activities/getting-married-overseas",
+        "source_type": "government",
+        "checked": "2026-11-11",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_105",
+        "claim": "[Copied from getting-married-in-hawaii 03-source-pack, same source and date.] As at November 2026, the Attorney-General's Department (read live 12 November 2026): if Australia recognises your overseas marriage, you can't get married again in Australia, but you may choose to hold another type of ceremony, such as a confirmation of vows or a recommitment ceremony.",
+        "source": "https://www.ag.gov.au/families-and-marriage/marriage/marriage-equality-australia",
+        "source_type": "government",
+        "checked": "2026-11-12",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_106",
+        "claim": "[Copied from getting-married-in-hawaii 03-source-pack, same source and date.] Smartraveller (DFAT), 'How to get your documents legalised' (last updated 30/09/2026): ask the overseas authority which documents they need and which must be legalised; DFAT 'can't tell you what they may want'. Find out from the intended authority or legal representative whether you need an apostille or an authentication certificate.",
+        "source": "https://www.smartraveller.gov.au/our-role/notarial-services/how-get-your-documents-legalised",
+        "source_type": "government",
+        "checked": "2026-11-11",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_107",
+        "claim": "[Copied from getting-married-in-hawaii 03-source-pack, same source and date.] Smartraveller: documents that are not original Australian public documents must first be notarised by an Australian Notary Public; the apostille or authentication certificate is applied directly to the document, so if you don't want originals marked, get a notarised copy legalised (and check the overseas authority accepts it).",
+        "source": "https://www.smartraveller.gov.au/our-role/notarial-services/how-get-your-documents-legalised",
+        "source_type": "government",
+        "checked": "2026-11-11",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_108",
+        "claim": "[Copied from getting-married-in-hawaii 03-source-pack, same source and date.] Smartraveller: requests use the Document Legalisation Request Form, signed in front of an authorised witness, and can be lodged by appointment at an Australian Passport Office, in person at many Australian embassies, high commissions and consulates overseas (not Honorary Consul consulates), or by registered mail to the Authentications Section in Melbourne or Sydney. A fee applies (amount not recorded).",
+        "source": "https://www.smartraveller.gov.au/our-role/notarial-services/how-get-your-documents-legalised",
+        "source_type": "government",
+        "checked": "2026-11-11",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_109",
+        "claim": "[Copied from getting-married-in-hawaii 03-source-pack, same source and date.] Smartraveller: processing times vary, with delays at the end of the school year and in peak holiday periods, for incomplete requests or unpaid fees, or when the issuing authority must be contacted. An Australian-issued apostille can be verified online via DFAT.",
+        "source": "https://www.smartraveller.gov.au/our-role/notarial-services/how-get-your-documents-legalised",
+        "source_type": "government",
+        "checked": "2026-11-11",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_110",
+        "claim": "As at November 2026, Smartraveller Mauritius (updated 09 November 2026, read live 17 November 2026) advises 'Exercise normal safety precautions' in Mauritius. It notes localised demonstrations and community unrest in October, that further demonstrations may occur at short notice and disrupt traffic and public transport, and that curfews could be reinstated with little warning.",
+        "source": "https://www.smartraveller.gov.au/destinations/africa/mauritius",
+        "source_type": "government",
+        "checked": "2026-11-17",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_111",
+        "claim": "Smartraveller Mauritius (read live 17 November 2026): cyclone season in Mauritius is from November to May, but cyclones can occur throughout the year, bringing gale force winds, heavy rain, floods and disruption to power and water. During cyclones the airport may close and flights may be cancelled or delayed, so check travel insurance covers this.",
+        "source": "https://www.smartraveller.gov.au/destinations/africa/mauritius",
+        "source_type": "government",
+        "checked": "2026-11-17",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_112",
+        "claim": "As at November 2026, Smartraveller Mauritius (read live 17 November 2026): if you're staying less than 60 days, a visa is provided free of charge on arrival; other visit types need a visa applied for before travel. Travellers should complete the Mauritius All-in-One Travel Digital Form online before travel or on arrival at the airport. Entry conditions can change at short notice. The Wedded Advisor confirms current requirements.",
+        "source": "https://www.smartraveller.gov.au/destinations/africa/mauritius",
+        "source_type": "government",
+        "checked": "2026-11-17",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_113",
+        "claim": "As at November 2026, Smartraveller Mauritius (read live 17 November 2026): travellers coming from or transiting a country with yellow fever transmission risk may need a valid yellow fever certificate to enter Mauritius; border health screening measures are also in place for travellers who have recently visited the DRC or South Sudan. The Wedded Advisor confirms current requirements.",
+        "source": "https://www.smartraveller.gov.au/destinations/africa/mauritius",
+        "source_type": "government",
+        "checked": "2026-11-17",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_114",
+        "claim": "Smartraveller Mauritius (read live 17 November 2026): insect-borne diseases occur in Mauritius, particularly in the warmer months from October to May, and there have been cases of dengue and chikungunya.",
+        "source": "https://www.smartraveller.gov.au/destinations/africa/mauritius",
+        "source_type": "government",
+        "checked": "2026-11-17",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_115",
+        "claim": "Smartraveller Mauritius (read live 17 November 2026): the Australian High Commission in Mauritius is open to the public for passport, consular and notarial services by appointment only, requested by email. The High Commission's own home page (read live 17 November 2026) says it is also accredited to Seychelles, Comoros and Madagascar, with consular accreditation to Reunion Island; it does not mention a CNI.",
+        "source": "https://www.smartraveller.gov.au/destinations/africa/mauritius",
+        "source_type": "government",
+        "checked": "2026-11-17",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_116",
+        "claim": "Mauritius Meteorological Services, 'Climate of Mauritius' (read live 17 November 2026): Mauritius has a mild tropical maritime climate with two seasons, a warm humid summer from November to April and a relatively cool dry winter from June to September; October and May are transition months. Mean summer temperature is 24.7 degrees Celsius and mean winter temperature 20.4 degrees Celsius (island-wide, not station-labelled).",
+        "source": "https://metservice.intnet.mu/climate-services/climate-of-mauritius.php",
+        "source_type": "government",
+        "checked": "2026-11-17",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_117",
+        "claim": "Mauritius Meteorological Services (read live 17 November 2026): the warmest months are January and February, with average day maximum reaching 29.2 degrees Celsius; the coolest are July and August, when average night minimum drops to 16.4 degrees Celsius (island-wide figures). MMS names Medine, Pamplemousses, Fuel, Plaisance and Vacoas as representative stations for the West, North, East, South and Centre; the station PDFs were not read.",
+        "source": "https://metservice.intnet.mu/climate-services/climate-of-mauritius.php",
+        "source_type": "government",
+        "checked": "2026-11-17",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_118",
+        "claim": "Mauritius Meteorological Services (read live 17 November 2026): long-term mean annual rainfall (1971 to 2000) is 2010 mm; the wettest months are February and March and the driest is October; about 67% of annual rainfall falls in summer, though there is no marked rainy season.",
+        "source": "https://metservice.intnet.mu/climate-services/climate-of-mauritius.php",
+        "source_type": "government",
+        "checked": "2026-11-17",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_119",
+        "claim": "Mauritius Meteorological Services (read live 17 November 2026): the island gets 6.5 to above 8 hours of bright sunshine daily. In summer coastal regions get 7.5 to over 8 hours versus around 6 hours on the high grounds; in winter the Central Plateau gets around 5 hours while the coast gets above 7.5 hours.",
+        "source": "https://metservice.intnet.mu/climate-services/climate-of-mauritius.php",
+        "source_type": "government",
+        "checked": "2026-11-17",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_120",
+        "claim": "Smartraveller Mauritius (read live 17 November 2026): Mauritius has a zero-tolerance policy on alcohol consumption and driving, with penalties including licence suspension, heavy fines or imprisonment; road conditions vary.",
+        "source": "https://www.smartraveller.gov.au/destinations/africa/mauritius",
+        "source_type": "government",
+        "checked": "2026-11-17",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_200",
+        "claim": "Civil Status Division (Mauritius), 'Marriage of two Non Citizens': an application for a certificate issued under the authority of the Prime Minister, for the publication of a civil marriage of two non-citizens/non-residents, should reach the Central Civil Status Office in Port Louis at least one month before the intended date of marriage; the page also notes documents should be forwarded 6 to 8 weeks before the wedding. (Read live by the orchestrator, 17 November 2026.)",
+        "source": "https://csd.govmu.org/Pages/Registration/Marriage-of-two-Non-Citizens.aspx",
+        "source_type": "government",
+        "checked": "2026-11-17",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_201",
+        "claim": "Civil Status Division (Mauritius), 'Marriage of two Non Citizens': on arrival in Mauritius, the couple should call at the Central Civil Status Office for verification of the original documents. (Read live by the orchestrator, 17 November 2026.)",
+        "source": "https://csd.govmu.org/Pages/Registration/Marriage-of-two-Non-Citizens.aspx",
+        "source_type": "government",
+        "checked": "2026-11-17",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_202",
+        "claim": "Civil Status Division (Mauritius), 'Marriage of two Non Citizens': documents: a filled coversheet; two photocopies of each birth certificate drawn up in English or French, issued not more than 3 months earlier; two photocopies of each passport (photo page and pages with the applicant's details); relevant documents for divorce, widowhood or change of name. (Read live by the orchestrator, 17 November 2026.)",
+        "source": "https://csd.govmu.org/Pages/Registration/Marriage-of-two-Non-Citizens.aspx",
+        "source_type": "government",
+        "checked": "2026-11-17",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_203",
+        "claim": "Civil Status Division (Mauritius), 'Marriage of two Non Citizens': a Certificate of Authority certifying that the non-citizen is also a non-resident is issued to the parties in Mauritius after verification of their documents. (Read live by the orchestrator, 17 November 2026.)",
+        "source": "https://csd.govmu.org/Pages/Registration/Marriage-of-two-Non-Citizens.aspx",
+        "source_type": "government",
+        "checked": "2026-11-17",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_204",
+        "claim": "Civil Status Division (Mauritius), 'Marriage of two Non Citizens': the marriage can be celebrated in the Office, a marriage hall, hotels or any private or non-private premises by a Civil Status Officer after a publication of 24 hours. (Read live by the orchestrator, 17 November 2026.)",
+        "source": "https://csd.govmu.org/Pages/Registration/Marriage-of-two-Non-Citizens.aspx",
+        "source_type": "government",
+        "checked": "2026-11-17",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_205",
+        "claim": "Civil Status Division (Mauritius), 'Marriage of two Non Citizens': if a party cannot produce a civil status document, they may instead produce an affidavit sworn in their country of residence or in a form the Registrar of Civil Status approves. (Read live by the orchestrator, 17 November 2026.)",
+        "source": "https://csd.govmu.org/Pages/Registration/Marriage-of-two-Non-Citizens.aspx",
+        "source_type": "government",
+        "checked": "2026-11-17",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_206",
+        "claim": "Civil Status Division (Mauritius), 'Marriage of two Non Citizens': no payment is required for a wedding held in the Office; a fee applies for a wedding in a hotel or other premises, paid at the Central Civil Status Office. (Read live by the orchestrator, 17 November 2026.)",
+        "source": "https://csd.govmu.org/Pages/Registration/Marriage-of-two-Non-Citizens.aspx",
+        "source_type": "government",
+        "checked": "2026-11-17",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_207",
+        "claim": "Civil Status Division (Mauritius), 'Marriage of two Non Citizens': the parties should provide transport for the Officer to and from the premises if requested, and two witnesses must be present at the ceremony. (Read live by the orchestrator, 17 November 2026.)",
+        "source": "https://csd.govmu.org/Pages/Registration/Marriage-of-two-Non-Citizens.aspx",
+        "source_type": "government",
+        "checked": "2026-11-17",
+        "is_price": false
+      }
+    ],
+    "insider_details": [
+      {
+        "detail": "Build the itinerary around the 10-day publication period: the civil ceremony cannot happen until 10 days after banns are published, and the couple must attend the Central Civil Status Office in person with original documents for that publication. In practice that means arriving in Mauritius well before the wedding date, not a few days out (process shown for permit holders; confirm for tourists).",
+        "fact_ids": [
+          "fact_03",
+          "fact_04",
+          "fact_06"
+        ]
+      },
+      {
+        "detail": "Order birth certificates late, not early: they must be issued within the last 3 months, and Australian certificates in English still need to meet that window. Ask the registry for a fresh certificate once the date is fixed.",
+        "fact_ids": [
+          "fact_02",
+          "fact_06"
+        ]
+      },
+      {
+        "detail": "A beach or hotel ceremony is possible with a Civil Status Officer, but a fee applies outside the Office and the couple may have to arrange the Officer's transport to and from the venue. Put the Officer's transfer on the run sheet.",
+        "fact_ids": [
+          "fact_04",
+          "fact_05"
+        ]
+      },
+      {
+        "detail": "Line up two witnesses aged 18 or over before the trip (if guests are coming, choose them early), and decide on the matrimonial regime beforehand, since the Officer asks for it at the ceremony.",
+        "fact_ids": [
+          "fact_07",
+          "fact_08"
+        ]
+      },
+      {
+        "detail": "If the certificate is needed back in Australia, plan for an Apostille from the Prime Minister's Office on the original Civil Status Office certificate; photocopies are not accepted.",
+        "fact_ids": [
+          "fact_11"
+        ]
+      },
+      {
+        "detail": "For outdoor ceremonies, the cool dry months of June to September give the lowest humidity and less rain, while February and March are the wettest. Treat October as the driest month and a strong shoulder-season pick, and always hold a covered rain plan.",
+        "fact_ids": [
+          "fact_116",
+          "fact_118"
+        ]
+      },
+      {
+        "detail": "A November to May date sits inside cyclone season, and the airport can close during a cyclone. Build a spare day into guest itineraries and make sure every guest's travel insurance covers cyclone disruption.",
+        "fact_ids": [
+          "fact_111"
+        ]
+      },
+      {
+        "detail": "Book ceremonies on the coast rather than the Central Plateau if sunshine matters: MMS records more than 7.5 hours of daily sunshine on the coast in winter versus about 5 hours inland.",
+        "fact_ids": [
+          "fact_119"
+        ]
+      },
+      {
+        "detail": "Zero tolerance on drink driving means every guest transfer after the reception should be pre-booked with a sober driver or coach; nobody self-drives from the party.",
+        "fact_ids": [
+          "fact_120"
+        ]
+      },
+      {
+        "detail": "Tell guests to complete the All-in-One Travel Digital Form before they fly to save time at the airport, and pack insect repellent for October to May dates.",
+        "fact_ids": [
+          "fact_112",
+          "fact_114"
+        ]
+      }
+    ],
+    "quotes": [],
+    "real_weddings": [],
+    "verify_items": [],
+    "needs_signoff": [],
+    "must_include_coverage": [
+      {
+        "item": "Marriage of non-citizens in Mauritius (who the process applies to)",
+        "covered_by": [
+          "fact_01",
+          "fact_12",
+          "[[VERIFY: Documents and procedure for two non-citizens (tourists) marrying in Mauritius. The Civil Status Division page 'Marriage of two Non Citizens' was not read; fact_01 to fact_05 come from the 'Residence Permit Wedding' page, which covers foreigners holding work/residence or other permits.]]"
+        ]
+      },
+      {
+        "item": "Documents required (passports, birth certificates, proof of single status or divorce/death)",
+        "covered_by": [
+          "fact_02",
+          "fact_09",
+          "fact_13",
+          "[[VERIFY: Proof of single status (certificate of no impediment or statutory declaration) for Australians. Not listed on the pages read; fact_02 lists only divorce/widow/change-of-name documents.]]",
+          "[[VERIFY: Whether foreign divorce and death documents must be apostilled when both parties are non-citizens (fact_09 is stated for Mauritian citizens).]]"
+        ]
+      },
+      {
+        "item": "Certificate of non-citizenship or residence authorisation from the Prime Minister's Office",
+        "covered_by": [
+          "[[VERIFY: Whether a certificate of non-citizenship, or any residence authorisation from the Prime Minister's Office, is required for two non-citizens, and how long it takes. No official page read on 17 November 2026 mentions it.]]"
+        ]
+      },
+      {
+        "item": "How and when to apply",
+        "covered_by": [
+          "fact_03",
+          "[[VERIFY: How and how far in advance to apply (by post, email or in person before arrival) for two non-citizens, and processing time for the publication letter.]]"
+        ]
+      },
+      {
+        "item": "Publication / notice",
+        "covered_by": [
+          "fact_03",
+          "fact_06"
+        ]
+      },
+      {
+        "item": "Civil ceremony (where it can be held, officer, fee applies)",
+        "covered_by": [
+          "fact_04",
+          "fact_05",
+          "fact_08"
+        ]
+      },
+      {
+        "item": "Witnesses and legal age",
+        "covered_by": [
+          "fact_07"
+        ]
+      },
+      {
+        "item": "Marriage certificate and certified copies",
+        "covered_by": [
+          "fact_14",
+          "[[VERIFY: How to obtain certified copies of the Mauritian marriage certificate after the wedding (fact_14 is a snippet only).]]"
+        ]
+      },
+      {
+        "item": "Apostille or legalisation of a Mauritian certificate",
+        "covered_by": [
+          "fact_11"
+        ]
+      },
+      {
+        "item": "Religious marriage",
+        "covered_by": [
+          "fact_10",
+          "[[VERIFY: Whether two non-citizens can have a Religious Marriage Having Civil Effect; the official page (fact_10) does not address non-citizens.]]"
+        ]
+      },
+      {
+        "item": "Legal recognition of an overseas marriage in Australia",
+        "covered_by": [
+          "fact_103",
+          "fact_104",
+          "fact_105"
+        ]
+      },
+      {
+        "item": "CNI and document legalisation",
+        "covered_by": [
+          "fact_100",
+          "fact_101",
+          "fact_102",
+          "fact_106",
+          "fact_107",
+          "fact_108",
+          "fact_109",
+          "fact_115",
+          "[[VERIFY: Whether Mauritian authorities need a CNI from Australians and whether the Australian High Commission in Port Louis issues one; neither the High Commission home page nor Smartraveller Mauritius says.]]"
+        ]
+      },
+      {
+        "item": "Entry, visa and travel advice for Australians",
+        "covered_by": [
+          "fact_110",
+          "fact_112",
+          "fact_113"
+        ]
+      },
+      {
+        "item": "Best time to marry, weather and cyclone season",
+        "covered_by": [
+          "fact_111",
+          "fact_116",
+          "fact_117",
+          "fact_118",
+          "fact_119",
+          "[[VERIFY: Official cyclone season dates from Mauritius Meteorological Services. Only Smartraveller's 'November to May' was read; MMS season page not read in this batch.]]",
+          "[[VERIFY: Station-labelled monthly figures (e.g. Vacoas, Plaisance) from the MMS regional PDFs; only island-wide climate figures were read.]]"
+        ]
+      },
+      {
+        "item": "Regions of Mauritius (north, east, south-west, west)",
+        "covered_by": [
+          "[[VERIFY: MTPA (mauritiusnow.com) region overviews for north, east, south-west and west; only the home page was read and it has no region text.]]"
+        ]
+      }
+    ]
+  }
+}
