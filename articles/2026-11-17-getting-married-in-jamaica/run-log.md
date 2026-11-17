@@ -28,4 +28,13 @@
 - **Stage 3 fast (3 reviews):** DONE. Accuracy 3.4 (blockers: unsourced banns sentence; "Minister's Licence either way" answers an open question; majors: 24-hour rule reworded, DFAT fees missing "from" as the source states, apostille definition, unsourced court name, "older articles" line). SEO 4.1 (meta 156 chars, 96 words over; 213-word cut plan). Reader (couple) relevance 2, trust 3, clarity 3, would_enquire 2 (Italy-led persona; declarant step confusing; faceless concierge). Merged request: 04-reviews/v1/merged.md.
 - **Decision (default, change if you want):** DFAT fees written "from AUD 181 / from AUD 105 (2026 fee)" because DFAT's page says "from"; Port of Spain fees cut from the copy (cut plan; fewer items for Nic); jis.gov.jm kept as a follow link (government source; it ranks for our keyword, flag for a human). Template and link map updated.
 - **Stage 4 fast (writer v2):** DONE. 03-draft-v2.md. --check: 2,359 reader words, 0 dashes, 0 placeholders, 8 domains, none blocked. YAML valid; 37 claims, 26 links. All blockers, majors and cuts applied; banned phrases gone.
-- **Stage 6 fast (copy editor):** running.
+- **Stage 6 fast (copy editor):** DONE. final.md 2,357 reader words, 0 dashes, 0 placeholders, none blocked; publish-package.json valid (14 open items); chrome-upload-prompt.md (draft only); article.docx built. Date line now "Sources current as at November 2026". Image file names are placeholders.
+
+## Must-fix before publish
+1. MOJ-QUESTIONS: ask Jamaica's Ministry of Justice or a Marriage Officer the eight listed points (CNI need, who the declarant is and when, Australian apostilles, venue and hours rules, witness age and ID, whether a church wedding is legal on its own, certificate fee and timing, Jamaican apostille office).
+2. Nic signs off: DFAT from AUD 181 and from AUD 105 (2026 fees); J$4,000 stamp duty (subject to change).
+3. LINK-CHECK: open all 13 external links in a browser (session network blocks them).
+4. JAMAICA-PAGE: the home page meta mentions Jamaica; check whether a Jamaica page exists and swap the /destinations link if so.
+5. JIS-NOFOLLOW: jis.gov.jm ranks for our keyword; keep as a follow link or add nofollow.
+6. Publish after the licence pillar, witnesses and Malta articles, or apply the link fallbacks.
+7. CONCIERGE-PAY, RETRO-LINKS, IMAGE-RIGHTS, AUTHOR, CMS-URL, CLIMATE.
