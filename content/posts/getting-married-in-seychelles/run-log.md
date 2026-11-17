@@ -7,3 +7,4 @@
 02:32 05 first draft done: about 2,950 words, 0 VERIFY, scan clean; magazine magnet UTM added by orchestrator; first-draft docx sent.
 02:34 06 edit 4.14 pass_with_edits, 12 edits applied (recognition wording, officer-travel inference cut, witnesses as questions, HC timing figures credited); 07 readers enquire 1 to 3; beach question flagged by 4.
 02:36 07b panel: revise, weighted enquire 1.9; 2 must-fix (plain beach answer, contract questions).
+02:37 08 final copy done: 2,966 words, 0 VERIFY, scan clean.
