@@ -8,3 +8,4 @@
 00:33 07b panel: revise, weighted enquire 1.7; 2 must-fix (fee pointer, resort questions).
 00:34 08 final copy done: 2,555 words, 0 VERIFY, scan clean.
 00:35 09 CRO and 10 distribution done.
+00:36 08b final check: 3 blocking fixes applied and confirmed in 08-final (recognition condition, fee sentence, research-talk line).

@@ -7,7 +7,7 @@ round: 2
 
 <!-- IMAGE SLOT featured: Landscape 3:2 with room for a title overlay. Ceremony set-up on a beachfront lawn, jetty or terrace at a real, named Mauritian resort, turquoise lagoon and white sand in frame (Le Morne Brabant only if the venue is on the south-west coast and proven), golden-hour light, calm water, white florals, no signage. Couple optional and small in frame, only from a licensed real wedding with written consent. No temples, shrines or religious sites as decoration. Source: venue media kit with written permission, MTPA library only if its licence covers third-party commercial blog use, or licensed stock bought by a human. Location proven by media kit, register row or EXIF. Never AI. -->
 
-Mauritius is on the shortlist, and before you fall for a lagoon you want to know one thing: will the marriage count? In most cases, yes. A Mauritius wedding for two Australians follows the Civil Status Division's process for two non-citizens, and Australia generally recognises a marriage that was valid where it took place. <!-- fact_104 --> You post your documents to the Division's Central Civil Status Office in Port Louis well ahead, have the originals checked there in person when you land, and marry before a Civil Status Officer after a 24-hour publication. <!-- fact_200 --> <!-- fact_201 --> <!-- fact_204 -->
+Mauritius is on the shortlist, and before you fall for a lagoon you want to know one thing: will the marriage count? In most cases, yes. A Mauritius wedding for two Australians follows the Civil Status Division's process for two non-citizens, and Australia generally recognises a marriage that was valid where it took place and would have been valid under Australian law. <!-- fact_104 --> You post your documents to the Division's Central Civil Status Office in Port Louis well ahead, have the originals checked there in person when you land, and marry before a Civil Status Officer after a 24-hour publication. <!-- fact_200 --> <!-- fact_201 --> <!-- fact_204 -->
 
 This guide takes each step in the order you will meet it, from the papers you post from home to the certificate you carry back to Australia.
 
@@ -49,7 +49,7 @@ For two non-citizens, the Division lists these documents: <!-- fact_202 -->
 - **Two photocopies of each passport,** showing the photo page and the pages with your details.
 - **Documents for any divorce, widowhood or change of name,** where they apply to either of you.
 
-The Division's page for two non-citizens does not list a certificate of no impediment.
+A certificate of no impediment is not on this list.
 
 The 3-month window is the detail that catches couples out. Order fresh birth certificates from your state or territory registry once the date is fixed, not a year ahead.
 
@@ -89,7 +89,7 @@ Put this visit at the start of the trip, before the welcome drinks and the spa d
 
 A Civil Status Officer celebrates the marriage. The ceremony can be held in the Office, a marriage hall, a hotel or any private or non-private premises. <!-- fact_204 -->
 
-There is no payment for a ceremony held at the Office. A fee applies for a wedding in a hotel or other premises, set by the Civil Status Division and paid at the Office; the [Division's page](https://csd.govmu.org/Pages/Registration/Marriage-of-two-Non-Citizens.aspx) is where it is set out. <!-- fact_206 --> If the Officer requests it, you provide transport to and from your venue. <!-- fact_207 -->
+There is no payment for a ceremony held at the Office. A fee applies for a wedding in a hotel or other premises, paid at the Central Civil Status Office, so ask the Office for the current amount when you apply. <!-- fact_206 --> If the Officer requests it, you provide transport to and from your venue. <!-- fact_207 -->
 
 Treat the Officer's transport as part of the run sheet, with a car and a driver.
 
