@@ -1,0 +1,219 @@
+{
+ "agent": "visual-curator",
+ "task_id": "getting-married-in-costa-rica",
+ "stage": "04",
+ "status": "needs_input",
+ "round": 1,
+ "inputs_used": [
+  "CLAUDE.md",
+  "content/posts/getting-married-in-costa-rica/00-input.json",
+  "01-brief.json, 02-seo.json, 02-research/report.md, 03-source-pack.json (not present at run time)",
+  "content/posts/getting-married-in-seychelles/04-images.json (format model)",
+  "content-system/images/library-index.csv (header only, no rows)",
+  "content-system/schemas/04-images.schema.json"
+ ],
+ "self_qa": {
+  "checks": [
+   {
+    "check": "Zero reference-only or competitor images in slots",
+    "pass": true,
+    "note": "reference_only is empty; nothing downloaded."
+   },
+   {
+    "check": "Every approved image has location, licence, alt, caption, fit_reason",
+    "pass": true,
+    "note": "No approved images this run."
+   },
+   {
+    "check": "No AI image depicting a real place, wedding, ceremony or person",
+    "pass": true,
+    "note": "No AI generated. Only the documents and certificate still lifes may become ai_illustrative, with approval and an 'Illustrative image' label."
+   },
+   {
+    "check": "Featured image exists (approved or needed with brief)",
+    "pass": true,
+    "note": "Needed, with brief: Pacific coast rainforest-edge ceremony set-up."
+   },
+   {
+    "check": "Six slots as requested",
+    "pass": true,
+    "note": "featured, documents, civil-ceremony, certificate-australia, when-to-marry, choose-your-region."
+   },
+   {
+    "check": "No venue names; Australian English, no em dashes, alt 125 chars or fewer",
+    "pass": true,
+    "note": "Checked by script."
+   }
+  ],
+  "confidence": 0.7
+ },
+ "open_questions": [
+  {
+   "to": "user",
+   "question": "Do you approve an AI still life for the documents slot (passports, papers on linen, nothing readable, no seals) labelled 'Illustrative image' if no Canva or licensed asset is found? The certificate slot is planned the same way and needs the same approval.",
+   "blocking": false
+  },
+  {
+   "to": "user",
+   "question": "Do you hold licensed Costa Rica wedding or coastline photos (with month taken and couple consent), or should we request resort media kits and check the Instituto Costarricense de Turismo media licence terms?",
+   "blocking": false
+  }
+ ],
+ "assumptions": [
+  "Placement is by section name because 02-seo.json is not yet written; the writer maps it to after_h2 positions.",
+  "No venue is named, per instruction; captions keep <Place>, <town> placeholders until a licensed source proves the location.",
+  "Fast mode: repo register only, no Drive, own-site, Canva, Gmail or Lens checks run."
+ ],
+ "verify_items": [
+  "[[IMAGE NEEDED]] featured: Pacific coast or rainforest-edge ceremony set-up in Costa Rica, licensed or press kit",
+  "[[IMAGE NEEDED]] documents: Canva or licensed stock; AI only with Wedded Wonderland approval, labelled 'Illustrative image'",
+  "[[IMAGE NEEDED]] civil-ceremony: licensed real ceremony with officiant, couple and officiant consent",
+  "[[IMAGE NEEDED]] certificate-australia: folder and rings still life, no real or imitation certificate; AI only with approval, labelled 'Illustrative image'",
+  "[[IMAGE NEEDED]] when-to-marry: Pacific coast dry-season scene, month taken recorded",
+  "[[IMAGE NEEDED]] choose-your-region: wide regional view, region proven by source, licensed",
+  "[[VERIFY licence]] Instituto Costarricense de Turismo media: confirm terms allow third-party commercial blog use, credit format and expiry before any download",
+  "[[VERIFY licence]] every venue, stock or own-site image: written permission, credit line and expiry recorded in library-index.csv before use",
+  "[[VERIFY: couple consent for any real-wedding photo, and guest or officiant consent if identifiable]]"
+ ],
+ "tools_used": [
+  "Bash (cat/python)"
+ ],
+ "next_agent": [
+  "luxury-writer"
+ ],
+ "payload": {
+  "slots": [
+   {
+    "slot_id": "featured",
+    "placement": "featured",
+    "purpose": "Hero and social share image: Costa Rica's Pacific coast where rainforest meets the sea, signalling a luxury, nature-led wedding ahead of a practical legal guide.",
+    "shot_brief": "Landscape 16:9, at least 2000px wide. A Pacific coastline or rainforest-edge setting in Costa Rica (for example Guanacaste or the central Pacific): an elegant, understated ceremony set-up (arch or aisle, natural florals) on a headland lawn or beach edge with tropical forest behind and ocean beyond, golden hour, dry-season light. No people needed; a distant consented couple is acceptable. No venue named in copy or caption until 03-source-pack confirms one. Location proven by media kit, register row or EXIF, never by appearance. People only from a licensed real wedding with written couple consent (and guest or officiant consent if identifiable) recorded in library-index.csv; never AI people, never stock models presented as a real couple. Source order: venue or resort media kit with written permission (Gmail draft request, never sent by an agent); Instituto Costarricense de Turismo (ICT) media only if its licence covers third-party commercial blog use ([[VERIFY licence]], record terms, credit and expiry in library-index.csv); licensed premium stock bought by a human and added to the register. Never AI, never a competitor, directory, planner, photographer-blog or search-result image.",
+    "status": "needed",
+    "file": "content/posts/getting-married-in-costa-rica/images/getting-married-in-costa-rica-pacific-coast-rainforest-ceremony.webp",
+    "source": {
+     "type": "venue_press",
+     "origin": "not yet sourced (fast mode: repo register only, which has no rows)",
+     "credit": "[[VERIFY licence]]"
+    },
+    "location": {
+     "venue": "not named (no venue names in this post)",
+     "town": "to be confirmed",
+     "verified_by": "pending: media kit, register row or EXIF"
+    },
+    "alt": "Wedding ceremony set-up on a lawn above the Pacific, framed by tropical rainforest in golden light in Costa Rica",
+    "caption": "<Place>, <town>, Costa Rica. Photo: <credit> (fill once sourced).",
+    "licence_note": "[[IMAGE NEEDED]] library-index.csv has a header and no rows."
+   },
+   {
+    "slot_id": "documents",
+    "placement": "section: documents step (writer maps to after_h2:<n>)",
+    "purpose": "Make the paperwork step feel calm and organised rather than bureaucratic.",
+    "shot_brief": "Landscape 3:2 or 4:3. Overhead still life: two closed passports, a linen-bound folder of papers, a fountain pen, a sprig of white flowers, on natural linen in soft daylight. No readable names, numbers, seals, government crests, flags, forms or screens; nothing that imitates a Costa Rican or Australian document; no hands or faces. Source order: Canva brand asset, then licensed stock added to library-index.csv, then a Wedded Wonderland own shoot. AI (Higgsfield) allowed for this slot only after Wedded Wonderland approves; if used, source.type becomes ai_illustrative and the caption must read 'Illustrative image'.",
+    "status": "needed",
+    "file": "content/posts/getting-married-in-costa-rica/images/getting-married-in-costa-rica-documents-still-life-linen.webp",
+    "source": {
+     "type": "canva",
+     "origin": "not yet sourced (fast mode: Canva not searched)",
+     "credit": "[[VERIFY licence]]"
+    },
+    "location": {
+     "venue": "n/a (studio still life, no real place)",
+     "town": "n/a",
+     "verified_by": "n/a"
+    },
+    "alt": "Two closed passports and a linen folder of papers beside a fountain pen on natural linen",
+    "caption": "Illustrative image (if AI, after approval) or Photo: <credit> (fill once sourced).",
+    "licence_note": "[[IMAGE NEEDED]] Not a place image, so AI is permissible only with Wedded Wonderland approval."
+   },
+   {
+    "slot_id": "civil-ceremony",
+    "placement": "section: the civil ceremony (writer maps to after_h2:<n>)",
+    "purpose": "Show what the legal ceremony looks like in practice: intimate, outdoors, with an officiant.",
+    "shot_brief": "Landscape 3:2. A real, consented civil ceremony in Costa Rica: couple with officiant at a small table or under a simple arch, garden or ocean-view terrace with tropical greenery, soft afternoon light. No readable documents or seals. No venue named in copy or caption until 03-source-pack confirms one. Location proven by media kit, register row or EXIF, never by appearance. People only from a licensed real wedding with written couple consent (and guest or officiant consent if identifiable) recorded in library-index.csv; never AI people, never stock models presented as a real couple. Source order: venue or resort media kit with written permission (Gmail draft request, never sent by an agent); Instituto Costarricense de Turismo (ICT) media only if its licence covers third-party commercial blog use ([[VERIFY licence]], record terms, credit and expiry in library-index.csv); licensed premium stock bought by a human and added to the register. Never AI, never a competitor, directory, planner, photographer-blog or search-result image.",
+    "status": "needed",
+    "file": "content/posts/getting-married-in-costa-rica/images/getting-married-in-costa-rica-civil-ceremony-garden-terrace.webp",
+    "source": {
+     "type": "venue_press",
+     "origin": "not yet sourced (fast mode: repo register only, which has no rows)",
+     "credit": "[[VERIFY licence]]"
+    },
+    "location": {
+     "venue": "not named (no venue names in this post)",
+     "town": "to be confirmed",
+     "verified_by": "pending: media kit, register row or EXIF"
+    },
+    "alt": "Couple exchanging vows with an officiant on a garden terrace surrounded by tropical greenery",
+    "caption": "<Place>, <town>, Costa Rica. Photo: <credit> (fill once sourced).",
+    "licence_note": "[[IMAGE NEEDED]] library-index.csv has a header and no rows."
+   },
+   {
+    "slot_id": "certificate-australia",
+    "placement": "section: certificate for Australia (writer maps to after_h2:<n>)",
+    "purpose": "Signal the final admin step (certificate and recognition back home) without showing any real or imitation certificate.",
+    "shot_brief": "Landscape 3:2. Still life: wedding rings resting on a closed cream document folder tied with ribbon, beside two closed passports, on linen or timber in soft daylight. No certificate, seal, crest, flag, stamp or readable text. Source order: Canva brand asset, then licensed stock added to library-index.csv, then a Wedded Wonderland own shoot. AI (Higgsfield) allowed for this slot only after Wedded Wonderland approves; if used, source.type becomes ai_illustrative and the caption must read 'Illustrative image'.",
+    "status": "needed",
+    "file": "content/posts/getting-married-in-costa-rica/images/getting-married-in-costa-rica-certificate-folder-rings-still-life.webp",
+    "source": {
+     "type": "canva",
+     "origin": "not yet sourced (fast mode: Canva not searched)",
+     "credit": "[[VERIFY licence]]"
+    },
+    "location": {
+     "venue": "n/a (studio still life, no real place)",
+     "town": "n/a",
+     "verified_by": "n/a"
+    },
+    "alt": "Wedding rings resting on a closed cream document folder tied with ribbon, beside two passports",
+    "caption": "Illustrative image (if AI, after approval) or Photo: <credit> (fill once sourced).",
+    "licence_note": "[[IMAGE NEEDED]] Not a place image, so AI is permissible only with Wedded Wonderland approval."
+   },
+   {
+    "slot_id": "when-to-marry",
+    "placement": "section: when to marry (writer maps to after_h2:<n>)",
+    "purpose": "Illustrate dry-season conditions: clear skies and warm light on the Pacific coast.",
+    "shot_brief": "Landscape 3:2. A Pacific-coast reception or sunset scene in Costa Rica under clear dry-season skies: long table on a deck or lawn above the ocean, warm sunset light. Month taken must be recorded so the season claim is true. No venue named in copy or caption until 03-source-pack confirms one. Location proven by media kit, register row or EXIF, never by appearance. People only from a licensed real wedding with written couple consent (and guest or officiant consent if identifiable) recorded in library-index.csv; never AI people, never stock models presented as a real couple. Source order: venue or resort media kit with written permission (Gmail draft request, never sent by an agent); Instituto Costarricense de Turismo (ICT) media only if its licence covers third-party commercial blog use ([[VERIFY licence]], record terms, credit and expiry in library-index.csv); licensed premium stock bought by a human and added to the register. Never AI, never a competitor, directory, planner, photographer-blog or search-result image.",
+    "status": "needed",
+    "file": "content/posts/getting-married-in-costa-rica/images/getting-married-in-costa-rica-dry-season-sunset-reception.webp",
+    "source": {
+     "type": "venue_press",
+     "origin": "not yet sourced (fast mode: repo register only, which has no rows)",
+     "credit": "[[VERIFY licence]]"
+    },
+    "location": {
+     "venue": "not named (no venue names in this post)",
+     "town": "to be confirmed",
+     "verified_by": "pending: media kit, register row or EXIF"
+    },
+    "alt": "Long reception table set on a deck above the ocean under clear skies in warm sunset light",
+    "caption": "<Place>, <town>, Costa Rica. Photo: <credit> (fill once sourced; month taken recorded).",
+    "licence_note": "[[IMAGE NEEDED]] library-index.csv has a header and no rows."
+   },
+   {
+    "slot_id": "choose-your-region",
+    "placement": "section: choose your region (writer maps to after_h2:<n>)",
+    "purpose": "Help couples picture regional character, for example dry Guanacaste coast versus lush rainforest or cloud-forest settings.",
+    "shot_brief": "Landscape 3:2, wide view, daylight, no people needed. One region clearly shown (for example a Guanacaste bay or a rainforest-edge valley), with the region proven by source. If the writer compares two regions, a second image may be added later under the same rules. No venue named in copy or caption until 03-source-pack confirms one. Location proven by media kit, register row or EXIF, never by appearance. People only from a licensed real wedding with written couple consent (and guest or officiant consent if identifiable) recorded in library-index.csv; never AI people, never stock models presented as a real couple. Source order: venue or resort media kit with written permission (Gmail draft request, never sent by an agent); Instituto Costarricense de Turismo (ICT) media only if its licence covers third-party commercial blog use ([[VERIFY licence]], record terms, credit and expiry in library-index.csv); licensed premium stock bought by a human and added to the register. Never AI, never a competitor, directory, planner, photographer-blog or search-result image.",
+    "status": "needed",
+    "file": "content/posts/getting-married-in-costa-rica/images/getting-married-in-costa-rica-region-wide-view.webp",
+    "source": {
+     "type": "venue_press",
+     "origin": "not yet sourced (fast mode: repo register only, which has no rows)",
+     "credit": "[[VERIFY licence]]"
+    },
+    "location": {
+     "venue": "not named (no venue names in this post)",
+     "town": "to be confirmed",
+     "verified_by": "pending: media kit, register row or EXIF"
+    },
+    "alt": "Wide view of a forested Pacific bay with calm water and green hills in Costa Rica",
+    "caption": "<Place>, <town>, Costa Rica. Photo: <credit> (fill once sourced).",
+    "licence_note": "[[IMAGE NEEDED]] library-index.csv has a header and no rows."
+   }
+  ],
+  "reference_only": [],
+  "permission_requests": [],
+  "drive_findings": [
+   "Not searched: fast mode, repo library register only per orchestrator instruction. library-index.csv has a header and no rows."
+  ]
+ }
+}
