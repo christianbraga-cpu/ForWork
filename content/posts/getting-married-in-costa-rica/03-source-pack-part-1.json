@@ -1,0 +1,388 @@
+{
+  "agent": "planner-sme",
+  "task_id": "getting-married-in-costa-rica",
+  "stage": "03",
+  "status": "complete",
+  "round": 1,
+  "inputs_used": [
+    "content/posts/getting-married-in-seychelles/03-source-pack.json (fact_100 to fact_109 copied as fact_100 to fact_109, same sources and dates; format reference)",
+    "content/posts/getting-married-in-costa-rica/00-input.json and 01-brief.json (must_include)",
+    "mcp__Apify__apify--web-fetch one parallel round, 17 November 2026, no retries: https://www.smartraveller.gov.au/destinations/americas/costa-rica (200, read in full); https://www.imn.ac.cr/clima-en-costa-rica (200, read in full; index page only, regional PDFs not read); https://www.visitcostarica.com/en/costa-rica/places-to-go/guanacaste, /central-pacific, /caribbean, /central-valley (all 404, not read)"
+  ],
+  "self_qa": {
+    "checks": [
+      {
+        "check": "Every fact has a source and date",
+        "pass": true
+      },
+      {
+        "check": "No price without a source; all prices in needs_signoff",
+        "note": "No prices recorded. Departure tax mentioned without amount.",
+        "pass": true
+      },
+      {
+        "check": "Every must-include covered or [[VERIFY]]",
+        "note": "Part 1 covers recognition, weather and region items only; Costa Rican civil process (TSE / Registro Civil) is for another batch.",
+        "pass": true
+      },
+      {
+        "check": "No invented quotes, statistics or real weddings",
+        "pass": true
+      }
+    ],
+    "confidence": 0.5
+  },
+  "open_questions": [
+    {
+      "to": "orchestrator",
+      "question": "ICT region pages 404 at /en/costa-rica/places-to-go/<region> (site redirects to /places-to-go/<region>, also 404). Start from https://www.visitcostarica.com/where-to-go to find live region URLs.",
+      "blocking": false
+    },
+    {
+      "to": "orchestrator",
+      "question": "IMN climate index read; station and season facts sit in the linked regional PDFs (e.g. https://www.imn.ac.cr/documents/10179/31165/PacificoNorte.pdf/4a0e8960-8c51-4390-8a8d-73d9d825d59b and the Valle Central, Pacífico Central and Vertiente del Caribe PDFs). Read them for station-labelled figures.",
+      "blocking": false
+    },
+    {
+      "to": "luxury-writer",
+      "question": "State travel facts 'as at November 2026' with the Wedded Advisor line. No same-sex legal facts (Smartraveller's LGBTQIA+ line deliberately not recorded). No amounts. Do not present fact_114 (6-month passport validity) as a Costa Rica rule.",
+      "blocking": false
+    }
+  ],
+  "assumptions": [
+    "Facts dated 17 November 2026 (the date of reading).",
+    "Conflicts recorded: Smartraveller season windows June to November (hurricane and rainy) vs April to November (wet, health section). See verify item."
+  ],
+  "verify_items": [
+    "[[VERIFY: IMN station-labelled climate figures and IMN's own statement of the dry and wet seasons. https://www.imn.ac.cr/clima-en-costa-rica (read) only links regional PDFs (Valle Central, Pacífico Norte, Pacífico Central, Vertiente del Caribe and others) and 'El clima y las regiones climáticas'; those PDFs were not read. Read them before the weather section states any figure or season by region.]]",
+    "[[VERIFY: Season window. Smartraveller gives 'hurricane and rainy season June to November' (fact_115) and 'wet season April to November' (fact_116) on the same page. Confirm against IMN before the article states when the dry season is; if unresolved, write only what each source says, attributed.]]",
+    "[[VERIFY: Region lines for Guanacaste, the Central Pacific, the Caribbean and the Central Valley from the Instituto Costarricense de Turismo. visitcostarica.com /en/costa-rica/places-to-go/guanacaste, /central-pacific, /caribbean and /central-valley all returned 404 (redirected to /places-to-go/...); not retried per fast-mode rule. Try https://www.visitcostarica.com/where-to-go.]]"
+  ],
+  "tools_used": [
+    "mcp__Apify__apify--web-fetch",
+    "Bash"
+  ],
+  "next_agent": [
+    "luxury-writer"
+  ],
+  "payload": {
+    "facts": [
+      {
+        "fact_id": "fact_100",
+        "claim": "[Copied from getting-married-in-seychelles 03-source-pack, same source and date.] As at November 2026, Smartraveller (read live 11 November 2026) says DFAT can issue a CNI in Australia, but some local authorities only accept CNIs issued in their country, so ask the destination's embassy or consulate whether you need a CNI, whether you can get it in Australia, and whether it also needs an authentication or apostille. The Wedded Advisor confirms current requirements.",
+        "source": "https://www.smartraveller.gov.au/planning-trip/advice-your-planned-activities/getting-married-overseas",
+        "source_type": "government",
+        "checked": "2026-11-11",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_101",
+        "claim": "[Copied from getting-married-in-seychelles 03-source-pack, same source and date.] As at November 2026, Smartraveller 'Getting married overseas' (last updated 18/08/2026, read live 12 November 2026): some countries ask you to prove you aren't already married; the most common documents are a Certificate of No Impediment to Marriage (CNI) and certificates from a registry of births, deaths and marriages; the country may have more rules (for example a residence period); 'We can't tell you what you will need'; contact your destination's embassy or consulate. The Wedded Advisor confirms current requirements.",
+        "source": "https://www.smartraveller.gov.au/planning-trip/advice-your-planned-activities/getting-married-overseas",
+        "source_type": "government",
+        "checked": "2026-11-12",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_102",
+        "claim": "[Copied from getting-married-in-seychelles 03-source-pack, same source and date.] As at November 2026, Smartraveller 'Getting married overseas' (read live 12 November 2026): your registry of births, deaths and marriages can give a statement that there's no record you have been married before, a Single Status certificate or a No Record Result certificate; local authorities may also ask for divorce papers, the death certificate of a deceased spouse, and your original birth certificate and passport.",
+        "source": "https://www.smartraveller.gov.au/planning-trip/advice-your-planned-activities/getting-married-overseas",
+        "source_type": "government",
+        "checked": "2026-11-12",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_103",
+        "claim": "[Copied from getting-married-in-seychelles 03-source-pack, same source and date.] As at November 2026, Smartraveller 'Getting married overseas' (read live 12 November 2026): Australia doesn't recognise overseas marriages where one or both people are already married to someone else, not old enough to get married, too closely related, or forced to get married.",
+        "source": "https://www.smartraveller.gov.au/planning-trip/advice-your-planned-activities/getting-married-overseas",
+        "source_type": "government",
+        "checked": "2026-11-12",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_104",
+        "claim": "[Copied from getting-married-in-seychelles 03-source-pack, same source and date.] As at November 2026, Smartraveller (read live 11 November 2026) says you cannot register an overseas marriage in Australia, but in most cases it is legally recognised if, when it took place, it was valid under the law of the country where it happened and would have been valid under Australian law had it occurred in Australia. A foreign marriage certificate is usually accepted as proof of the marriage but may not work as proof of a name change (check with your local registry of births, deaths and marriages), and Smartraveller suggests talking to a lawyer to confirm the certificate is valid in Australia. The Wedded Advisor confirms current requirements.",
+        "source": "https://www.smartraveller.gov.au/planning-trip/advice-your-planned-activities/getting-married-overseas",
+        "source_type": "government",
+        "checked": "2026-11-11",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_105",
+        "claim": "[Copied from getting-married-in-seychelles 03-source-pack, same source and date.] As at November 2026, the Attorney-General's Department (read live 12 November 2026): if Australia recognises your overseas marriage, you can't get married again in Australia, but you may choose to hold another type of ceremony, such as a confirmation of vows or a recommitment ceremony.",
+        "source": "https://www.ag.gov.au/families-and-marriage/marriage/marriage-equality-australia",
+        "source_type": "government",
+        "checked": "2026-11-12",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_106",
+        "claim": "[Copied from getting-married-in-seychelles 03-source-pack, same source and date.] Smartraveller (DFAT), 'How to get your documents legalised' (last updated 30/09/2026): ask the overseas authority which documents they need and which must be legalised; DFAT 'can't tell you what they may want'. Find out from the intended authority or legal representative whether you need an apostille or an authentication certificate.",
+        "source": "https://www.smartraveller.gov.au/our-role/notarial-services/how-get-your-documents-legalised",
+        "source_type": "government",
+        "checked": "2026-11-11",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_107",
+        "claim": "[Copied from getting-married-in-seychelles 03-source-pack, same source and date.] Smartraveller: documents that are not original Australian public documents must first be notarised by an Australian Notary Public; the apostille or authentication certificate is applied directly to the document, so if you don't want originals marked, get a notarised copy legalised (and check the overseas authority accepts it).",
+        "source": "https://www.smartraveller.gov.au/our-role/notarial-services/how-get-your-documents-legalised",
+        "source_type": "government",
+        "checked": "2026-11-11",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_108",
+        "claim": "[Copied from getting-married-in-seychelles 03-source-pack, same source and date.] Smartraveller: requests use the Document Legalisation Request Form, signed in front of an authorised witness, and can be lodged by appointment at an Australian Passport Office, in person at many Australian embassies, high commissions and consulates overseas (not Honorary Consul consulates), or by registered mail to the Authentications Section in Melbourne or Sydney. A fee applies (amount not recorded).",
+        "source": "https://www.smartraveller.gov.au/our-role/notarial-services/how-get-your-documents-legalised",
+        "source_type": "government",
+        "checked": "2026-11-11",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_109",
+        "claim": "[Copied from getting-married-in-seychelles 03-source-pack, same source and date.] Smartraveller: processing times vary, with delays at the end of the school year and in peak holiday periods, for incomplete requests or unpaid fees, or when the issuing authority must be contacted. An Australian-issued apostille can be verified online via DFAT.",
+        "source": "https://www.smartraveller.gov.au/our-role/notarial-services/how-get-your-documents-legalised",
+        "source_type": "government",
+        "checked": "2026-11-11",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_110",
+        "claim": "As at November 2026, Smartraveller Costa Rica (updated 12 March 2026, still current at 17 November 2026, read live 17 November 2026): the overall advice level is 'Exercise a high degree of caution' (level 2) due to the threat of violent crime; carjackings and 'express kidnappings' are increasingly common.",
+        "source": "https://www.smartraveller.gov.au/destinations/americas/costa-rica",
+        "source_type": "government",
+        "checked": "2026-11-17",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_111",
+        "claim": "As at November 2026, Smartraveller Costa Rica (updated 12 March 2026, still current at 17 November 2026, read live 17 November 2026): criminals often target tourist areas, resorts, transport hubs and public transport; plan to arrive at or leave the airport during daylight hours; use established tour operators and officially registered taxis.",
+        "source": "https://www.smartraveller.gov.au/destinations/americas/costa-rica",
+        "source_type": "government",
+        "checked": "2026-11-17",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_112",
+        "claim": "As at November 2026, Smartraveller Costa Rica (updated 12 March 2026, still current at 17 November 2026, read live 17 November 2026): on an Australian passport you don't need a visa for a tourist visit of less than 90 days; you might be refused entry if you can't show you'll return home or travel onwards; entry and exit conditions can change at short notice, so contact the Embassy of Costa Rica or your airline for the latest details. The Wedded Advisor confirms current requirements.",
+        "source": "https://www.smartraveller.gov.au/destinations/americas/costa-rica",
+        "source_type": "government",
+        "checked": "2026-11-17",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_113",
+        "claim": "As at November 2026, Smartraveller Costa Rica (updated 12 March 2026, still current at 17 November 2026, read live 17 November 2026): you must pay a departure tax to leave Costa Rica, which might be included in your airline ticket (amount not recorded). If travelling via the US, meet US entry or transit requirements; via Canada, an eTA is needed.",
+        "source": "https://www.smartraveller.gov.au/destinations/americas/costa-rica",
+        "source_type": "government",
+        "checked": "2026-11-17",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_114",
+        "claim": "As at November 2026, Smartraveller Costa Rica (updated 12 March 2026, still current at 17 November 2026, read live 17 November 2026): many countries require a passport to be valid for at least 6 months before entering or departing, including for transit; check your passport's expiry before you go (general Smartraveller guidance, not a Costa Rica-specific rule).",
+        "source": "https://www.smartraveller.gov.au/destinations/americas/costa-rica",
+        "source_type": "government",
+        "checked": "2026-11-17",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_115",
+        "claim": "As at November 2026, Smartraveller Costa Rica (updated 12 March 2026, still current at 17 November 2026, read live 17 November 2026): the hurricane and rainy season is from June to November; hurricanes can cause landslides, mudslides and flooding, and tropical storms and hurricanes can happen in other months. During a storm flights may be delayed or cancelled and road travel and services disrupted.",
+        "source": "https://www.smartraveller.gov.au/destinations/americas/costa-rica",
+        "source_type": "government",
+        "checked": "2026-11-17",
+        "is_price": false,
+        "conflicts": "Same page gives two season windows: 'hurricane and rainy season ... June to November' (Safety) vs 'wet season from April to November' (Health). IMN's own season statement not read. See verify item."
+      },
+      {
+        "fact_id": "fact_116",
+        "claim": "As at November 2026, Smartraveller Costa Rica (updated 12 March 2026, still current at 17 November 2026, read live 17 November 2026): the risk of mosquito-borne illnesses (dengue, chikungunya and others) increases during the wet season from April to November; malaria is a serious risk in Limon and Puntarenas, including near the border with Panama; Zika virus is widespread, and pregnant travellers should discuss plans with their doctor.",
+        "source": "https://www.smartraveller.gov.au/destinations/americas/costa-rica",
+        "source_type": "government",
+        "checked": "2026-11-17",
+        "is_price": false,
+        "conflicts": "Same page gives two season windows: 'hurricane and rainy season ... June to November' (Safety) vs 'wet season from April to November' (Health). IMN's own season statement not read. See verify item."
+      },
+      {
+        "fact_id": "fact_117",
+        "claim": "As at November 2026, Smartraveller Costa Rica (updated 12 March 2026, still current at 17 November 2026, read live 17 November 2026): Costa Rica can experience hurricanes, landslides, earthquakes, volcanic activity, tsunamis and mudslides; volcanic ash can disrupt flights and close airports.",
+        "source": "https://www.smartraveller.gov.au/destinations/americas/costa-rica",
+        "source_type": "government",
+        "checked": "2026-11-17",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_118",
+        "claim": "As at November 2026, Smartraveller Costa Rica (updated 12 March 2026, still current at 17 November 2026, read live 17 November 2026): strong coastal currents and rip tides occur on the Caribbean and Pacific coasts; lifeguards and warning signs may be absent on public beaches; crocodile attacks have been reported on the Pacific Coast; get local advice before swimming.",
+        "source": "https://www.smartraveller.gov.au/destinations/americas/costa-rica",
+        "source_type": "government",
+        "checked": "2026-11-17",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_119",
+        "claim": "As at November 2026, Smartraveller Costa Rica (updated 12 March 2026, still current at 17 November 2026, read live 17 November 2026): public medical facilities are reasonable in San José but limited in smaller towns and rural areas; private facilities are well equipped but expensive; seriously ill or injured travellers may need medical evacuation (the summary names the US), so travel insurance must cover evacuation.",
+        "source": "https://www.smartraveller.gov.au/destinations/americas/costa-rica",
+        "source_type": "government",
+        "checked": "2026-11-17",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_120",
+        "claim": "As at November 2026, Smartraveller Costa Rica (updated 12 March 2026, still current at 17 November 2026, read live 17 November 2026): Australia has a consulate in San José headed by an Honorary Consul, providing limited consular assistance (it can conduct passport interviews and provide provisional travel documents but can't issue passports); full consular assistance comes from the Australian Embassy in Mexico City.",
+        "source": "https://www.smartraveller.gov.au/destinations/americas/costa-rica",
+        "source_type": "government",
+        "checked": "2026-11-17",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_121",
+        "claim": "As at November 2026, Smartraveller Costa Rica (updated 12 March 2026, still current at 17 November 2026, read live 17 November 2026): roads between tourist locations are usually in good or acceptable condition, roads in isolated areas are unsealed (a 4WD is a good choice), and travellers should avoid driving at night; you can drive for up to 3 months on an Australian licence.",
+        "source": "https://www.smartraveller.gov.au/destinations/americas/costa-rica",
+        "source_type": "government",
+        "checked": "2026-11-17",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_122",
+        "claim": "As at November 2026, Smartraveller Costa Rica (updated 12 March 2026, still current at 17 November 2026, read live 17 November 2026): use ride-share or registered official taxis, preferably arranged through your hotel, and book in advance if travelling at night; official airport taxis are orange and prepaid vouchers are sold in front of the San José airport terminal.",
+        "source": "https://www.smartraveller.gov.au/destinations/americas/costa-rica",
+        "source_type": "government",
+        "checked": "2026-11-17",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_123",
+        "claim": "As at November 2026, Smartraveller Costa Rica (updated 12 March 2026, still current at 17 November 2026, read live 17 November 2026): the local currency is the Costa Rican Colon (CRC); Australian money can't be exchanged in Costa Rica but US dollars can; credit cards are widely accepted, and carry cash for rural areas.",
+        "source": "https://www.smartraveller.gov.au/destinations/americas/costa-rica",
+        "source_type": "government",
+        "checked": "2026-11-17",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_124",
+        "claim": "As at November 2026, Smartraveller Costa Rica (updated 12 March 2026, still current at 17 November 2026, read live 17 November 2026): nationwide strikes and roadblocks have occurred; make alternative transport plans in case of disruptions. It is illegal for foreigners to take part in political demonstrations.",
+        "source": "https://www.smartraveller.gov.au/destinations/americas/costa-rica",
+        "source_type": "government",
+        "checked": "2026-11-17",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_125",
+        "claim": "As at November 2026, Smartraveller Costa Rica (updated 12 March 2026, still current at 17 November 2026, read live 17 November 2026): be alert to drink spiking and methanol poisoning; only drink branded, sealed drinks. Get permission before photographing anyone, especially women, children and Indigenous people.",
+        "source": "https://www.smartraveller.gov.au/destinations/americas/costa-rica",
+        "source_type": "government",
+        "checked": "2026-11-17",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_126",
+        "claim": "Instituto Meteorológico Nacional (IMN), 'Clima en Costa Rica' page (last modified 31/10/2023, read live 17 November 2026; Spanish, translated): IMN publishes climate analyses by region for the Valle Central (Central Valley), Pacífico Norte (North Pacific), Pacífico Central (Central Pacific), Pacífico Sur (South Pacific), Vertiente del Caribe (Caribbean slope) and Zona Norte (Northern Zone). The page itself states no station figures and no dry or wet season dates; it describes a study of precipitation and temperature for the 1961-1990 baseline and 1991-2006.",
+        "source": "https://www.imn.ac.cr/clima-en-costa-rica",
+        "source_type": "government",
+        "checked": "2026-11-17",
+        "is_price": false
+      }
+    ],
+    "insider_details": [
+      {
+        "detail": "Schedule guest arrivals and departures at San José airport in daylight and book transfers through the hotel or an established operator: Smartraveller advises daylight airport movements, official or hotel-arranged transport, and avoiding driving at night.",
+        "fact_ids": [
+          "fact_111",
+          "fact_121",
+          "fact_122"
+        ]
+      },
+      {
+        "detail": "Build weather contingency into any date in the June to November window: Smartraveller names it the hurricane and rainy season, with possible flight cancellations and road disruption, so plan a covered ceremony option and a buffer day for guest travel.",
+        "fact_ids": [
+          "fact_115",
+          "fact_117"
+        ]
+      },
+      {
+        "detail": "Brief guests that beach swimming on both coasts can be dangerous (rip tides, no lifeguards, crocodiles reported on the Pacific Coast), so keep any beach welcome event to the sand unless local advice says otherwise.",
+        "fact_ids": [
+          "fact_118"
+        ]
+      },
+      {
+        "detail": "Tell guests to bring US dollars or cards rather than Australian cash, and to check their insurance covers medical evacuation, as private care is expensive and serious cases may be evacuated.",
+        "fact_ids": [
+          "fact_119",
+          "fact_123"
+        ]
+      },
+      {
+        "detail": "Start Australian paperwork early: Smartraveller says DFAT can't tell you what the overseas authority will want, and legalisation processing slows at the end of the school year and in peak holidays, so confirm the Costa Rican document list first, then apostille.",
+        "fact_ids": [
+          "fact_101",
+          "fact_106",
+          "fact_109"
+        ]
+      }
+    ],
+    "quotes": [],
+    "real_weddings": [],
+    "verify_items": [
+      "[[VERIFY: IMN station-labelled climate figures and IMN's own statement of the dry and wet seasons. https://www.imn.ac.cr/clima-en-costa-rica (read) only links regional PDFs (Valle Central, Pacífico Norte, Pacífico Central, Vertiente del Caribe and others) and 'El clima y las regiones climáticas'; those PDFs were not read. Read them before the weather section states any figure or season by region.]]",
+      "[[VERIFY: Season window. Smartraveller gives 'hurricane and rainy season June to November' (fact_115) and 'wet season April to November' (fact_116) on the same page. Confirm against IMN before the article states when the dry season is; if unresolved, write only what each source says, attributed.]]",
+      "[[VERIFY: Region lines for Guanacaste, the Central Pacific, the Caribbean and the Central Valley from the Instituto Costarricense de Turismo. visitcostarica.com /en/costa-rica/places-to-go/guanacaste, /central-pacific, /caribbean and /central-valley all returned 404 (redirected to /places-to-go/...); not retried per fast-mode rule. Try https://www.visitcostarica.com/where-to-go.]]"
+    ],
+    "needs_signoff": [],
+    "must_include_coverage": [
+      {
+        "item": "Australian recognition, apostille/legalisation and CNI (never state Costa Rica requires a CNI unless officially sourced)",
+        "covered_by": [
+          "fact_100",
+          "fact_101",
+          "fact_102",
+          "fact_103",
+          "fact_104",
+          "fact_105",
+          "fact_106",
+          "fact_107",
+          "fact_108",
+          "fact_109"
+        ]
+      },
+      {
+        "item": "Weather from the IMN labelled by station",
+        "covered_by": [
+          "fact_115",
+          "fact_116",
+          "fact_126",
+          "[[VERIFY: IMN station-labelled climate figures and IMN's own statement of the dry and wet seasons. https://www.imn.ac.cr/clima-en-costa-rica (read) only links regional PDFs (Valle Central, Pacífico Norte, Pacífico Central, Vertiente del Caribe and others) and 'El clima y las regiones climáticas'; those PDFs were not read. Read them before the weather section states any figure or season by region.]]",
+          "[[VERIFY: Season window. Smartraveller gives 'hurricane and rainy season June to November' (fact_115) and 'wet season April to November' (fact_116) on the same page. Confirm against IMN before the article states when the dry season is; if unresolved, write only what each source says, attributed.]]"
+        ]
+      },
+      {
+        "item": "Region lines for Guanacaste, Central Pacific, Caribbean and Central Valley from the ICT",
+        "covered_by": [
+          "[[VERIFY: Region lines for Guanacaste, the Central Pacific, the Caribbean and the Central Valley from the Instituto Costarricense de Turismo. visitcostarica.com /en/costa-rica/places-to-go/guanacaste, /central-pacific, /caribbean and /central-valley all returned 404 (redirected to /places-to-go/...); not retried per fast-mode rule. Try https://www.visitcostarica.com/where-to-go.]]"
+        ]
+      },
+      {
+        "item": "Travel, entry and safety context for guests (part 1 support)",
+        "covered_by": [
+          "fact_110",
+          "fact_111",
+          "fact_112",
+          "fact_113",
+          "fact_114",
+          "fact_117",
+          "fact_118",
+          "fact_119",
+          "fact_120",
+          "fact_121",
+          "fact_122",
+          "fact_123",
+          "fact_124",
+          "fact_125"
+        ]
+      }
+    ]
+  }
+}
