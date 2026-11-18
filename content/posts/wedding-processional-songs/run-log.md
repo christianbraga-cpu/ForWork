@@ -13,3 +13,4 @@
 06:43 07b panel revise (enquire 1.2), 2 must-fix.
 06:43 08 final copy done (~3,250 words, 40 songs), 2 must-fix applied.
 06:45 06b final check: 5 fixes applied and confirmed (church and hymn context claims trimmed to facts); CRO and distribution done.
+06:47 11 package, checklist, docx, link map, calendar row 73, run report done.
