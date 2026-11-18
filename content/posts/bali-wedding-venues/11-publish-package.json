@@ -1,0 +1,400 @@
+{
+  "agent": "cms-publisher",
+  "task_id": "bali-wedding-venues",
+  "stage": "11",
+  "status": "complete",
+  "round": 1,
+  "inputs_used": [
+    "CLAUDE.md",
+    "content-system/schemas/11-publish-package.schema.json",
+    "content/posts/bali-wedding-venues/01-brief.json",
+    "content/posts/bali-wedding-venues/02-seo.json",
+    "content/posts/bali-wedding-venues/03-source-pack.json",
+    "content/posts/bali-wedding-venues/04-images.json",
+    "content/posts/bali-wedding-venues/08-final.md",
+    "content/posts/bali-wedding-venues/09-cro.json",
+    "content/posts/santorini-wedding-venues/11-publish-package.json (format model)"
+  ],
+  "self_qa": {
+    "checks": [
+      {
+        "check": "Front matter and all <!-- fact_xx --> markers removed; H1 is the title; 6 image-slot comments kept; no [[VERIFY]] markers in the copy",
+        "pass": true
+      },
+      {
+        "check": "Exactly 4 key takeaways and 5 FAQ pairs taken verbatim from the body",
+        "pass": true
+      },
+      {
+        "check": "15 venues in body table and ItemList (official URLs from 03-source-pack)",
+        "pass": true
+      },
+      {
+        "check": "Each UTM link from 09-cro.json appears exactly once in 11-body.md",
+        "pass": true
+      },
+      {
+        "check": "primary_category equals categories[0] (Destination Weddings)",
+        "pass": true
+      },
+      {
+        "check": "No em dashes, no prices, no 'last dance'",
+        "pass": true
+      },
+      {
+        "check": "status draft; nothing uploaded, saved or published",
+        "pass": true
+      }
+    ],
+    "confidence": 0.9
+  },
+  "open_questions": [
+    {
+      "to": "orchestrator",
+      "question": "CMS upload not attempted: no browser in this session and content-system/cms/field-map.md is not CONFIRMED. Run /wedded-cms-discovery locally, then /wedded-blog resume=bali-wedding-venues.",
+      "blocking": true
+    },
+    {
+      "to": "orchestrator",
+      "question": "No author named in any input; package uses \"Wedded Wonderland\" (organisation). Confirm the byline.",
+      "blocking": false
+    }
+  ],
+  "assumptions": [
+    "08-final.md has no <!-- CTA: primary --> marker; the primary CTA is the existing inline link per 09-cro.json, so the body text is unchanged apart from removing front matter and fact markers and adding the H1.",
+    "Meta title drops \"Best\" (02-seo.json meta_title).",
+    "Excerpt is the first sentence of the opening paragraph.",
+    "Tags and categories from 01-brief.json; content_type set to Guide and cluster to Getting Married in Bali to mirror the Santorini package (brief has content_type comparison, no cluster).",
+    "verify_items and needs_signoff left empty per the orchestrator; open venue questions go to booking-checklist.md.",
+    "ItemList names carry the area only where the body names it."
+  ],
+  "verify_items": [],
+  "tools_used": [
+    "Bash (python3 -I)"
+  ],
+  "next_agent": [
+    "orchestrator"
+  ],
+  "payload": {
+    "title": "15 Best Bali Wedding Venues From Clifftops to Beaches",
+    "slug": "bali-wedding-venues",
+    "url_path": "/destination-weddings/bali-wedding-venues",
+    "content_type": "Guide",
+    "cluster": "Getting Married in Bali",
+    "categories": [
+      "Destination Weddings",
+      "Bali",
+      "Venues"
+    ],
+    "primary_category": "Destination Weddings",
+    "tags": [
+      "Getting Married in Bali",
+      "Bali",
+      "Bali wedding venues",
+      "Uluwatu",
+      "Nusa Dua",
+      "Jimbaran",
+      "Seminyak",
+      "Ubud",
+      "Indonesia"
+    ],
+    "excerpt": "Bali wedding venues fall into four areas: the clifftops of the Bukit and Uluwatu, the beaches of Nusa Dua and Jimbaran, the west coast at Seminyak, and the river valleys around Ubud.",
+    "key_takeaways": [
+      "Choose the area first and the venue second, because a clifftop chapel, a Nusa Dua ballroom and an Ubud river lawn suit very different guest lists.",
+      "Published capacities range from a 16-guest hidden room in Seminyak to garden and ballroom spaces for well over a thousand in Nusa Dua and at AYANA, so match the space to your numbers before you fall for the view.",
+      "Only Samabe and COMO Uma Ubud publish a full resort buy-out, so ask every other venue in writing whether the property can be closed to other guests.",
+      "Bali's wet season usually runs from around October to April, and Smartraveller advises a high degree of caution in Indonesia, so build weather and travel fallbacks into your plans."
+    ],
+    "body_markdown_file": "content/posts/bali-wedding-venues/11-body.md",
+    "faq": [
+      {
+        "q": "Can I legally marry in Bali?",
+        "a": "Yes, if you meet Indonesia's requirements. Both parties must hold the same recognised religion, Australians need a Certificate of No Impediment, and non-Muslim marriages must be registered with the Civil Registry Office to be legal. Check the details with the Australian Embassy and Indonesian authorities before you book."
+      },
+      {
+        "q": "Which Bali venues have a wedding chapel?",
+        "a": "AYANA has Tresna Chapel above the Indian Ocean, The Mulia a floating glass chapel, The St. Regis the beachfront Cloud Nine Chapel, The Apurva Kempinski the glass Kimaya Chapel, and Bvlgari lists a chapel wedding."
+      },
+      {
+        "q": "Which Bali venues can host 100 guests?",
+        "a": "Four Seasons Jimbaran Bay's Gili Jimbaran, The Mulia's Oceanfront Glass House and a COMO Uma Ubud buy-out each take up to 100. For more, Grand Hyatt, The St. Regis, W Bali Seminyak and AYANA publish larger spaces."
+      },
+      {
+        "q": "Can we book a private villa or the whole resort for a Bali wedding?",
+        "a": "Some venues publish it. Samabe offers a buy-out of the entire resort, and COMO Uma Ubud a resort buy-out for up to 100. For a villa wedding, The Edge, Mandapa and Four Seasons Jimbaran Bay's Imperial Villa all host the ceremony at a villa."
+      },
+      {
+        "q": "How far is Ubud from Bali's airport?",
+        "a": "COMO Uma Ubud is 90 minutes by car from Ngurah Rai International Airport. Ask each venue for the journey time on your guests' arrival day."
+      }
+    ],
+    "images": [
+      {
+        "slot_id": "featured",
+        "file": "content/posts/bali-wedding-venues/images/bali-wedding-venues-uluwatu-clifftop-ceremony-hero.webp",
+        "role": "featured",
+        "status": "needed"
+      },
+      {
+        "slot_id": "area-bukit-uluwatu",
+        "file": "content/posts/bali-wedding-venues/images/bali-wedding-venues-bukit-uluwatu-clifftop-lawn.webp",
+        "role": "inline",
+        "status": "needed"
+      },
+      {
+        "slot_id": "area-nusa-dua-jimbaran",
+        "file": "content/posts/bali-wedding-venues/images/bali-wedding-venues-nusa-dua-jimbaran-beach-ceremony.webp",
+        "role": "inline",
+        "status": "needed"
+      },
+      {
+        "slot_id": "area-seminyak-canggu-tanah-lot",
+        "file": "content/posts/bali-wedding-venues/images/bali-wedding-venues-seminyak-canggu-villa-sunset-reception.webp",
+        "role": "inline",
+        "status": "needed"
+      },
+      {
+        "slot_id": "area-ubud-highlands",
+        "file": "content/posts/bali-wedding-venues/images/bali-wedding-venues-ubud-jungle-valley-pavilion.webp",
+        "role": "inline",
+        "status": "needed"
+      },
+      {
+        "slot_id": "practical-when-to-marry",
+        "file": "content/posts/bali-wedding-venues/images/bali-wedding-venues-dry-season-sunset-dinner-table.webp",
+        "role": "inline",
+        "status": "needed"
+      }
+    ],
+    "cta": {
+      "text": "Confirm it through Wedded Concierge",
+      "subtext": "Your Wedded Advisor confirms inclusions in writing before you sign.",
+      "link": "https://weddedwonderland.com/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=bali-wedding-venues&utm_content=primary",
+      "placement": "Existing inline link (anchor 'Wedded Concierge') closing 'Security and privacy: questions for any couple', per 09-cro.json. 08-final.md has no <!-- CTA: primary --> marker, so the body is unchanged; add a CTA block there only if the CMS needs one."
+    },
+    "secondary_cta": {
+      "text": "See real options with Wedded Concierge",
+      "link": "https://weddedwonderland.com/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=bali-wedding-venues&utm_content=secondary",
+      "placement": "Existing inline link in 'How do guests get to Bali and between the areas?'."
+    },
+    "closing_cta": {
+      "text": "Shortlist your Bali venues",
+      "link": "https://weddedwonderland.com/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=bali-wedding-venues&utm_content=closing",
+      "placement": "Existing inline link at the end of 'Shortlist your Bali venues with a Wedded Advisor'."
+    },
+    "lead_magnet": {
+      "name": "Wedded Wonderland magazine",
+      "link": "https://weddedwonderland.com/magazine?utm_source=blog&utm_medium=content&utm_campaign=bali-wedding-venues&utm_content=magnet",
+      "placement": "Existing closing line of 'Which part of Bali suits your wedding?'."
+    },
+    "tracking_links": [
+      "https://weddedwonderland.com/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=bali-wedding-venues&utm_content=primary",
+      "https://weddedwonderland.com/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=bali-wedding-venues&utm_content=secondary",
+      "https://weddedwonderland.com/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=bali-wedding-venues&utm_content=closing",
+      "https://weddedwonderland.com/magazine?utm_source=blog&utm_medium=content&utm_campaign=bali-wedding-venues&utm_content=magnet"
+    ],
+    "seo": {
+      "meta_title": "15 Bali Wedding Venues From Clifftops to Beaches",
+      "meta_description": "Bali wedding venues by area, from Uluwatu clifftops and Nusa Dua beaches to Seminyak, Canggu and Ubud, compared on setting, capacity, rooms and sunset.",
+      "focus_keyword": "bali wedding venues",
+      "canonical": "https://weddedwonderland.com/destination-weddings/bali-wedding-venues",
+      "og_image_slot": "featured"
+    },
+    "schema_jsonld": {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Article",
+          "@id": "https://weddedwonderland.com/destination-weddings/bali-wedding-venues#article",
+          "headline": "15 Best Bali Wedding Venues From Clifftops to Beaches",
+          "description": "Bali wedding venues by area, from Uluwatu clifftops and Nusa Dua beaches to Seminyak, Canggu and Ubud, compared on setting, capacity, rooms and sunset.",
+          "author": {
+            "@type": "Organization",
+            "name": "Wedded Wonderland",
+            "url": "https://weddedwonderland.com/"
+          },
+          "publisher": {
+            "@type": "Organization",
+            "name": "Wedded Wonderland",
+            "url": "https://weddedwonderland.com/"
+          },
+          "datePublished": "",
+          "mainEntityOfPage": "https://weddedwonderland.com/destination-weddings/bali-wedding-venues",
+          "inLanguage": "en-AU"
+        },
+        {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Home",
+              "item": "https://weddedwonderland.com/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Destination Weddings",
+              "item": "https://weddedwonderland.com/destination-weddings"
+            },
+            {
+              "@type": "ListItem",
+              "position": 3,
+              "name": "15 Best Bali Wedding Venues From Clifftops to Beaches",
+              "item": "https://weddedwonderland.com/destination-weddings/bali-wedding-venues"
+            }
+          ]
+        },
+        {
+          "@type": "ItemList",
+          "@id": "https://weddedwonderland.com/destination-weddings/bali-wedding-venues#venues",
+          "name": "15 Best Bali Wedding Venues From Clifftops to Beaches",
+          "numberOfItems": 15,
+          "itemListOrder": "https://schema.org/ItemListUnordered",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "AYANA Bali, Bukit Peninsula",
+              "url": "https://www.ayana.com/bali/weddings/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Bvlgari Resort Bali, Bukit Peninsula",
+              "url": "https://www.bulgarihotels.com/en_US/bali/weddings"
+            },
+            {
+              "@type": "ListItem",
+              "position": 3,
+              "name": "Jumeirah Bali, Uluwatu",
+              "url": "https://www.jumeirah.com/en/article/stories/bali/the-most-spectacular-wedding-venues"
+            },
+            {
+              "@type": "ListItem",
+              "position": 4,
+              "name": "Samabe Bali Suites & Villas, Bukit Peninsula",
+              "url": "https://www.samabe.com/en/events/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 5,
+              "name": "The Edge Bali",
+              "url": "https://theedgebali.com/weddings/the-sea-wedding/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 6,
+              "name": "The Mulia, Nusa Dua",
+              "url": "https://www.themulia.com/bali/bali-wedding-offers/the-art-of-celebration"
+            },
+            {
+              "@type": "ListItem",
+              "position": 7,
+              "name": "Four Seasons Resort Bali at Jimbaran Bay, Jimbaran",
+              "url": "https://www.fourseasons.com/jimbaranbay/weddings/venues/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 8,
+              "name": "Raffles Bali",
+              "url": "https://www.raffles.com/bali/occasions/weddings/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 9,
+              "name": "Grand Hyatt Bali, Nusa Dua",
+              "url": "https://www.hyatt.com/grand-hyatt/en-US/balgh-grand-hyatt-bali/weddings"
+            },
+            {
+              "@type": "ListItem",
+              "position": 10,
+              "name": "The Apurva Kempinski Bali",
+              "url": "https://www.kempinski.com/en/the-apurva-kempinski-bali/weddings/venues/kimaya-chapel"
+            },
+            {
+              "@type": "ListItem",
+              "position": 11,
+              "name": "The St. Regis Bali Resort, Nusa Dua",
+              "url": "https://www.marriott.com/en-us/hotels/dpsxr-the-st-regis-bali-resort/events/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 12,
+              "name": "W Bali Seminyak, Seminyak",
+              "url": "https://www.marriott.com/en-us/hotels/dpswh-w-bali-seminyak/events/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 13,
+              "name": "The Oberoi, Bali, Seminyak",
+              "url": "https://www.oberoihotels.com/hotels-in-bali/events/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 14,
+              "name": "COMO Uma Ubud, Ubud",
+              "url": "https://www.comohotels.com/bali/como-uma-ubud/occasions/weddings"
+            },
+            {
+              "@type": "ListItem",
+              "position": 15,
+              "name": "Mandapa, a Ritz-Carlton Reserve, Ubud",
+              "url": "https://www.ritzcarlton.com/en/hotels/dpsub-mandapa-a-ritz-carlton-reserve/weddings/"
+            }
+          ]
+        },
+        {
+          "@type": "FAQPage",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "Can I legally marry in Bali?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes, if you meet Indonesia's requirements. Both parties must hold the same recognised religion, Australians need a Certificate of No Impediment, and non-Muslim marriages must be registered with the Civil Registry Office to be legal. Check the details with the Australian Embassy and Indonesian authorities before you book."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Which Bali venues have a wedding chapel?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "AYANA has Tresna Chapel above the Indian Ocean, The Mulia a floating glass chapel, The St. Regis the beachfront Cloud Nine Chapel, The Apurva Kempinski the glass Kimaya Chapel, and Bvlgari lists a chapel wedding."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Which Bali venues can host 100 guests?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Four Seasons Jimbaran Bay's Gili Jimbaran, The Mulia's Oceanfront Glass House and a COMO Uma Ubud buy-out each take up to 100. For more, Grand Hyatt, The St. Regis, W Bali Seminyak and AYANA publish larger spaces."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Can we book a private villa or the whole resort for a Bali wedding?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Some venues publish it. Samabe offers a buy-out of the entire resort, and COMO Uma Ubud a resort buy-out for up to 100. For a villa wedding, The Edge, Mandapa and Four Seasons Jimbaran Bay's Imperial Villa all host the ceremony at a villa."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "How far is Ubud from Bali's airport?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "COMO Uma Ubud is 90 minutes by car from Ngurah Rai International Airport. Ask each venue for the journey time on your guests' arrival day."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    "author": "Wedded Wonderland",
+    "status": "draft",
+    "verify_items": [],
+    "needs_signoff": [],
+    "draft_note": "DRAFT ONLY. A human clicks Publish; no agent publishes or schedules this post.\n\n1. [[VERIFY]] items in the copy: none.\n\n2. Nic sign-off prices: none (the post states no prices or amounts).\n\n3. Image slots needed (6): featured, area-bukit-uluwatu, area-nusa-dua-jimbaran, area-seminyak-canggu-tanah-lot, area-ubud-highlands, practical-when-to-marry. No licensed or permissioned image yet; never AI, competitor or search-result images.\n\n4. Before publishing: confirm the byline. See booking-checklist.md for venue details and legal steps to confirm in writing."
+  }
+}

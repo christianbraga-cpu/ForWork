@@ -16,3 +16,4 @@
 01:32 07b panel revise (enquire 1.9), 4 must-fix.
 01:34 08 final copy done (~4,760 words), 4 must-fix applied.
 01:36 06b final check: 14 fixes applied and confirmed (capacity conflicts, Samabe accommodation, Grand Hyatt ballroom, unsourced lines); CRO and distribution done.
+01:38 11 package, checklist, docx, link map, calendar row 70, run report done.
