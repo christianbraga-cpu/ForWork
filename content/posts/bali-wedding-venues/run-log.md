@@ -13,3 +13,4 @@
 01:27 05 first draft done (~4,680 words, 15 venues, 0 VERIFY).
 01:29 07 five readers done (enquire 1 to 3); takeaway COMO error flagged.
 01:30 06 editor 4.0 pass_with_edits, 25 of 26 edits applied (title kept as given with 'Best'; The Edge area now not published; COMO takeaway fixed). search_visitor JSON repaired.
+01:32 07b panel revise (enquire 1.9), 4 must-fix.
