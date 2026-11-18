@@ -8,3 +8,4 @@
 01:59 Top-up D: none qualify (Padma no weddings statement; Anantara, Pullman, Bali Mandira 404; Royal Beach timed out). 7 venues qualify; title changed to '7 Seminyak Wedding Venues for Beachside Vows' (5 beachfront, 2 villa/poolside). Merged pack.
 02:02 05 first draft done (~3,780 words, 7 venues, 0 VERIFY).
 02:03 07 five readers done (enquire 1 to 4); Hotel Indigo venue count mismatch flagged.
+02:04 06 editor 4.0 pass_with_edits, 17 edits applied.
