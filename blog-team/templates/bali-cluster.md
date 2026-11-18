@@ -29,6 +29,11 @@ Lessons (villa spoke, 18 Nov 2026):
 - Spokes must not repeat the parent's grids, tables, questions, FAQs or legal detail: one legal paragraph that links up, and FAQs the parent does not already answer.
 - Confirm Indonesian requirements with the Civil Registry Office, the CNI with the Consulate-General in Bali; DFAT missions cannot advise on Indonesian requirements.
 
+Lessons (religion guide, 18 Nov 2026):
+- On Indonesian legal points quote the Embassy and the Court exactly (keep qualifiers such as "Generally"; "province", not "regency"); never say who performs a marriage beyond what F-001, F-003 and F-008 state.
+- Never name a legal instrument (e.g. SEMA 2/2023) without a saved fact; ask a general question instead.
+- Sensitive topics: no advice to convert, no comment on any faith; conversion appears only inside the Embassy quote.
+
 Plus: key takeaways block after the intro; mid-article soft CTA; closing discovery_call CTA; "Sources current as at <Month Year>" (matches writer.md).
 
 ## Sourcing rules
