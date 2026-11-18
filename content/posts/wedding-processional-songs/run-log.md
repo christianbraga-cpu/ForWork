@@ -4,3 +4,4 @@
 06:15 03 batch B: only 2 of 24 sourced (Perfect; At Last without year). Top-ups C (instrumental) and D (modern) launched.
 06:24 03 batch A: 3 hymns sourced (Hymnary); IMSLP fetches failed (bad URL suffix). Top-up E (classical and remaining church) launched.
 06:25 Top-up D: 5 modern sourced (Perri, Adele, At Last 1961, Rascal Flatts, Russell Dickerson; some from official-body snippets); Elvis, Beatles, Sleeping at Last, Dylan, Sara Evans missing.
+06:26 02 SEO done: wedding processional songs US 9,900 / AU 320; walking down the aisle songs US 2,900 / AU 480; old page ranks #27-37; instrumental guide keeps instrumental queries. Top-up C: 4 facts (Up Oscar, Amelie 2001); most instrumental pieces unsourced. Top-up E waiting on permission prompt.
