@@ -1,0 +1,276 @@
+{
+  "agent": "planner-sme",
+  "task_id": "bali-wedding-venues",
+  "stage": "03",
+  "status": "complete",
+  "round": 1,
+  "inputs_used": [
+    "content/posts/getting-married-in-brazil/03-source-pack-part-1.json (format reference)",
+    "mcp__Apify__apify--web-search, 18 November 2026: official URLs located for Mulia, Four Seasons Jimbaran Bay, Raffles Bali, Grand Hyatt Bali, The Apurva Kempinski Bali; Conrad Bali and Samabe returned only third-party results",
+    "mcp__Apify__apify--web-fetch, 18 November 2026 (200): https://www.themulia.com/bali/bali-wedding-offers/the-art-of-celebration; https://www.fourseasons.com/jimbaranbay/weddings/venues/; https://www.raffles.com/bali/occasions/weddings/; https://www.hyatt.com/grand-hyatt/en-US/balgh-grand-hyatt-bali/weddings; https://www.kempinski.com/en/the-apurva-kempinski-bali/weddings/venues/kimaya-chapel",
+    "mcp__Apify__apify--web-fetch, 18 November 2026: https://www.hilton.com/en/hotels/dpscici-conrad-bali/events/weddings/ (timed out); https://www.samabe.com/wedding (404)"
+  ],
+  "self_qa": {
+    "checks": [
+      {
+        "check": "Every fact has a source and date",
+        "pass": true
+      },
+      {
+        "check": "No price without a source; all prices in needs_signoff",
+        "pass": true,
+        "note": "No amounts recorded. Mulia page shows IDR offers; deliberately not captured."
+      },
+      {
+        "check": "Every must-include covered or [[VERIFY]]",
+        "pass": true,
+        "note": "Batch B covers venue facts only for 5 qualified venues; 2 failed venues are verify items."
+      },
+      {
+        "check": "No invented quotes, statistics or real weddings",
+        "pass": true
+      }
+    ],
+    "confidence": 0.6
+  },
+  "open_questions": [
+    {
+      "to": "orchestrator",
+      "question": "Batch B qualified (official weddings page read live): The Mulia / Mulia Bali (Nusa Dua), Four Seasons Resort Bali at Jimbaran Bay, Raffles Bali (Jimbaran), Grand Hyatt Bali (Nusa Dua), The Apurva Kempinski Bali (Nusa Dua).",
+      "blocking": false
+    },
+    {
+      "to": "orchestrator",
+      "question": "Batch B failed: Conrad Bali (hilton.com weddings URL fetch timed out; search returned only third-party pages, which do not qualify). Samabe Bali Suites & Villas (samabe.com/wedding returned 404; no official weddings page found). No retries in fast mode. Reserves St Regis Bali and The Ritz-Carlton Bali not attempted (time limit).",
+      "blocking": false
+    },
+    {
+      "to": "luxury-writer",
+      "question": "No prices. Attribute venue self-descriptions ('the hotel says'). Do not use package guest counts as venue capacity.",
+      "blocking": false
+    }
+  ],
+  "assumptions": [
+    "All facts read live on 2026-11-18 from each venue's own site.",
+    "BOOKING CHECKLIST: Mulia Bali: curfew, minimum nights, rain plan, set-up times not published on the page read.",
+    "BOOKING CHECKLIST: Four Seasons Jimbaran Bay: curfew, rain plan for Gili Jimbaran and Coconut Grove, set-up times not published.",
+    "BOOKING CHECKLIST: Raffles Bali: ceremony capacity beyond the Presidential Villa (30), curfew, exclusive use, minimum nights not published.",
+    "BOOKING CHECKLIST: Grand Hyatt Bali: beach ceremony curfew, rain plan, set-up times not published.",
+    "BOOKING CHECKLIST: The Apurva Kempinski Bali: other chapels and outdoor venues, curfew, rain plan not read in this batch.",
+    "No venue page read states exclusive-use buyouts; treat as not published."
+  ],
+  "verify_items": [
+    "[[VERIFY: Mulia Bali chapel name (Harmony Chapel vs floating glass chapel) and whether chapel weddings continue after December 2026]]",
+    "[[VERIFY: Mulia Bali real ceremony capacity of the glass chapel; '200 guests' is a package label]]",
+    "[[VERIFY: The Apurva Kempinski Bali Kimaya Chapel ceremony capacity, 20 (text) vs 50 theatre (table)]]",
+    "[[VERIFY: Grand Hyatt Bali 'longest shoreline in Nusa Dua' is the hotel's claim; attribute or drop]]",
+    "[[VERIFY: Conrad Bali and Samabe Bali Suites & Villas official wedding pages not read; do not include until read]]"
+  ],
+  "tools_used": [
+    "mcp__Apify__apify--web-search",
+    "mcp__Apify__apify--web-fetch",
+    "Bash"
+  ],
+  "next_agent": [
+    "luxury-writer"
+  ],
+  "payload": {
+    "facts": [
+      {
+        "fact_id": "fact_100",
+        "claim": "Mulia Bali hosts weddings: its own page says Unity Garden and Mulia Glass House are 'nestled along the beachfront of Nusa Dua' with 'picturesque coastal views'.",
+        "source": "https://www.themulia.com/bali/bali-wedding-offers/the-art-of-celebration",
+        "source_type": "official_venue",
+        "checked": "2026-11-18",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_101",
+        "claim": "Mulia Bali lists wedding packages by guest count on its own site: an Oceanfront Glass House wedding 'for up to 100 guests', an Eden Garden package 'for 100 guests' ('a lush, tropical garden wedding... just steps from the beach'), and a weekday glass chapel wedding listed 'for 200 guests'.",
+        "source": "https://www.themulia.com/bali/bali-wedding-offers/the-art-of-celebration",
+        "source_type": "official_venue",
+        "checked": "2026-11-18",
+        "is_price": false,
+        "conflicts": "Package guest counts are per package, not venue maximums; the 200-guest figure sits on a chapel package, so confirm actual chapel seating."
+      },
+      {
+        "fact_id": "fact_102",
+        "claim": "Mulia Bali names a 'floating glass chapel' (Harmony Chapel is named in the current offer) and says its weekday glass chapel wedding is 'available only through December 2026'; it has a dedicated wedding team contact (Mulia Weddings, wedding@themulia.com).",
+        "source": "https://www.themulia.com/bali/bali-wedding-offers/the-art-of-celebration",
+        "source_type": "official_venue",
+        "checked": "2026-11-18",
+        "is_price": false,
+        "conflicts": "Page names both 'Harmony Chapel' and 'floating glass chapel'; confirm they are the same space and whether chapel ceremonies continue in 2027."
+      },
+      {
+        "fact_id": "fact_103",
+        "claim": "Four Seasons Resort Bali at Jimbaran Bay describes its wedding venues as 'beautiful botanical gardens', 'romantic private beaches' and 'an elevated hill overlooking the Indian Ocean'.",
+        "source": "https://www.fourseasons.com/jimbaranbay/weddings/venues/",
+        "source_type": "official_venue",
+        "checked": "2026-11-18",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_104",
+        "claim": "Four Seasons Resort Bali at Jimbaran Bay: Gili Jimbaran is a 'secluded private-island venue' for up to 100 guests; the Pool Terrace has '180-degree ocean views from 35 metres above the sea'; the Imperial Villa (two storeys, infinity pool, dedicated private team) can host wedding, reception and honeymoon in one place.",
+        "source": "https://www.fourseasons.com/jimbaranbay/weddings/venues/",
+        "source_type": "official_venue",
+        "checked": "2026-11-18",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_105",
+        "claim": "Four Seasons Resort Bali at Jimbaran Bay: Sundara has an over-water aisle across its 57-metre pool. The venue table lists the beachfront Coconut Grove (593 m2) at banquet 210 and reception 250, and the Pool Terrace at reception 220.",
+        "source": "https://www.fourseasons.com/jimbaranbay/weddings/venues/",
+        "source_type": "official_venue",
+        "checked": "2026-11-18",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_106",
+        "claim": "Raffles Bali hosts weddings: its weddings page describes 'a ribbon of pristine sand... lapped by the cerulean Indian Ocean' and lists beachfront, garden and private villa venues, with indoor and sheltered options.",
+        "source": "https://www.raffles.com/bali/occasions/weddings/",
+        "source_type": "official_venue",
+        "checked": "2026-11-18",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_107",
+        "claim": "Raffles Bali offers ceremonies in its Presidential Villa for an intimate wedding and party of 30 guests, with a wedding arch in the villa's private tropical garden and ocean views.",
+        "source": "https://www.raffles.com/bali/occasions/weddings/",
+        "source_type": "official_venue",
+        "checked": "2026-11-18",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_108",
+        "claim": "Raffles Bali 'at a glance' on its weddings page: 32 private villas, 57 acres of grounds, a secluded private beach, a beachside lawn, Raffles Wellbeing Butler Service and private limousine transfers; it notes dedicated wedding planning support.",
+        "source": "https://www.raffles.com/bali/occasions/weddings/",
+        "source_type": "official_venue",
+        "checked": "2026-11-18",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_109",
+        "claim": "Grand Hyatt Bali hosts weddings 'from beautifully manicured gardens to a beachfront sanctuary' and claims 'the longest shoreline in the Nusa Dua area'.",
+        "source": "https://www.hyatt.com/grand-hyatt/en-US/balgh-grand-hyatt-bali/weddings",
+        "source_type": "official_venue",
+        "checked": "2026-11-18",
+        "is_price": false,
+        "conflicts": "'Longest shoreline in Nusa Dua' is the hotel's own claim; attribute it, do not state as fact."
+      },
+      {
+        "fact_id": "fact_110",
+        "claim": "Grand Hyatt Bali: the Grand Ballroom (1,202 sq m, pillar-less) takes up to 1,140 theatre style or 736 seated banquet; the Karangasem ballroom up to 480 theatre or 320 banquet; the outdoor wedding space (1,341 sq m) is listed at 1,500 guests.",
+        "source": "https://www.hyatt.com/grand-hyatt/en-US/balgh-grand-hyatt-bali/weddings",
+        "source_type": "official_venue",
+        "checked": "2026-11-18",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_111",
+        "claim": "Grand Hyatt Bali lists an on-site wedding planner (Wedding Specialist), an in-house florist, exclusive group room rates and complimentary use of the hotel for pre-wedding and family photos.",
+        "source": "https://www.hyatt.com/grand-hyatt/en-US/balgh-grand-hyatt-bali/weddings",
+        "source_type": "official_venue",
+        "checked": "2026-11-18",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_112",
+        "claim": "The Apurva Kempinski Bali hosts weddings: Kimaya Chapel is 'a stunning glass chapel situated in a cliff building' with the Indian Ocean as backdrop and natural light through glass walls.",
+        "source": "https://www.kempinski.com/en/the-apurva-kempinski-bali/weddings/venues/kimaya-chapel",
+        "source_type": "official_venue",
+        "checked": "2026-11-18",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_113",
+        "claim": "The Apurva Kempinski Bali says Kimaya Chapel (65 m2, indoor, upper floor) accommodates up to 20 persons; the same page's configuration table lists theatre 50 and banquet 40. A wedding planner is listed under services.",
+        "source": "https://www.kempinski.com/en/the-apurva-kempinski-bali/weddings/venues/kimaya-chapel",
+        "source_type": "official_venue",
+        "checked": "2026-11-18",
+        "is_price": false,
+        "conflicts": "Up to 20 (text) vs theatre 50 / banquet 40 (table); confirm ceremony seating."
+      }
+    ],
+    "insider_details": [
+      {
+        "detail": "For a beach-and-banquet wedding over 200 guests at Four Seasons Jimbaran Bay, the beachfront Coconut Grove (reception 250) and Pool Terrace (reception 220) are the listed spaces; the private-island Gili Jimbaran caps at 100.",
+        "fact_ids": [
+          "fact_104",
+          "fact_105"
+        ]
+      },
+      {
+        "detail": "Mulia Bali prices and sizes by package; a package label is not a room capacity, so ask for a seating plan for the chapel before promising guest numbers.",
+        "fact_ids": [
+          "fact_101",
+          "fact_102"
+        ]
+      },
+      {
+        "detail": "Raffles Bali suits small weddings: the Presidential Villa takes 30 and the resort has 32 villas, so a full buyout of guest accommodation is a realistic question to ask.",
+        "fact_ids": [
+          "fact_107",
+          "fact_108"
+        ]
+      },
+      {
+        "detail": "Grand Hyatt Bali is the large-guest-list option in Nusa Dua, with a ballroom seating 736 for dinner as a wet-weather fallback to its garden and beach spaces.",
+        "fact_ids": [
+          "fact_109",
+          "fact_110"
+        ]
+      },
+      {
+        "detail": "Kempinski's Kimaya Chapel is indoor, air-conditioned and on an upper floor, a useful heat and rain plan for elopements and small ceremonies.",
+        "fact_ids": [
+          "fact_112",
+          "fact_113"
+        ]
+      }
+    ],
+    "quotes": [],
+    "real_weddings": [],
+    "verify_items": [
+      "[[VERIFY: Mulia Bali chapel name (Harmony Chapel vs floating glass chapel) and whether chapel weddings continue after December 2026]]",
+      "[[VERIFY: Mulia Bali real ceremony capacity of the glass chapel; '200 guests' is a package label]]",
+      "[[VERIFY: The Apurva Kempinski Bali Kimaya Chapel ceremony capacity, 20 (text) vs 50 theatre (table)]]",
+      "[[VERIFY: Grand Hyatt Bali 'longest shoreline in Nusa Dua' is the hotel's claim; attribute or drop]]",
+      "[[VERIFY: Conrad Bali and Samabe Bali Suites & Villas official wedding pages not read; do not include until read]]"
+    ],
+    "needs_signoff": [],
+    "must_include_coverage": [
+      {
+        "item": "Nusa Dua beach venues (batch B)",
+        "covered_by": [
+          "fact_100",
+          "fact_101",
+          "fact_102",
+          "fact_109",
+          "fact_110",
+          "fact_111",
+          "fact_112",
+          "fact_113"
+        ]
+      },
+      {
+        "item": "Jimbaran beach venues (batch B)",
+        "covered_by": [
+          "fact_103",
+          "fact_104",
+          "fact_105",
+          "fact_106",
+          "fact_107",
+          "fact_108"
+        ]
+      },
+      {
+        "item": "Conrad Bali, Samabe Bali",
+        "covered_by": [
+          "[[VERIFY: Conrad Bali and Samabe Bali Suites & Villas official wedding pages not read; do not include until read]]"
+        ]
+      }
+    ]
+  }
+}
