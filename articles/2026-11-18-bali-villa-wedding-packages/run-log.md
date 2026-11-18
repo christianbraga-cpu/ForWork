@@ -18,4 +18,6 @@
 - **Decision (default):** the link up to the packages article is conditional (DRAFT); both are held until SITE-CONFLICTS is resolved.
 
 ## Stages
-- **Stage 0 + 1 fast (strategist, combined research batch):** running.
+- **Stage 0 fast (strategist):** DONE. AU volumes: bali villa wedding packages 30/month, bali villa wedding 210 (carried in H2 2). Top results are villa listings, social posts and a 2024 inspiration page; none compares villa vs resort, lists villa exclusions, explains banjar fees or capacity. Brief: villa-only spoke, about 2,100 words, 7 H2s, 5 new FAQs, SEO title "Bali Villa Wedding Packages: What They Cover and Leave Out" (58). No cannibalisation.
+- **Decision (default, change if you want):** about 16 to 17 links accepted rather than adding unrelated pages (Lake Como villa, multi-day) to reach 18 to 20.
+- **Stage 1 fast (combined research):** running; at 01:14 it was waiting on a user permission prompt for an MCP tool.
