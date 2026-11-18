@@ -7,3 +7,4 @@
 06:26 02 SEO done: wedding processional songs US 9,900 / AU 320; walking down the aisle songs US 2,900 / AU 480; old page ranks #27-37; instrumental guide keeps instrumental queries. Top-up C: 4 facts (Up Oscar, Amelie 2001); most instrumental pieces unsourced. Top-up E waiting on permission prompt.
 06:32 Top-up E: 5 classical sourced (Lohengrin, Vivaldi, Debussy, Schubert, Elgar). About 15 of 40 sourced in total. Last top-ups F (classical and church) and G (instrumental and modern, official release pages) launched.
 06:36 Top-ups F and G plus my three searches: all 40 songs have a sourced title and composer or artist (many via official-site search snippets; years only where original). Merged pack.
+06:39 05 first draft done (~2,990 words, 40 songs in 4 groups, 0 VERIFY).
