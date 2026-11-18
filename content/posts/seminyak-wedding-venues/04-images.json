@@ -1,0 +1,179 @@
+{
+ "agent": "visual-curator",
+ "task_id": "seminyak-wedding-venues",
+ "stage": "04",
+ "status": "needs_input",
+ "round": 1,
+ "inputs_used": [
+  "CLAUDE.md",
+  "content/posts/seminyak-wedding-venues/00-input.json",
+  "01-brief.json, 02-seo.json, 03-source-pack.json (not present at run time)",
+  "content/posts/bali-wedding-venues/04-images.json (format model)",
+  "content-system/images/library-index.csv (no Seminyak or Bali rows)",
+  "content-system/schemas/04-images.schema.json"
+ ],
+ "self_qa": {
+  "checks": [
+   {
+    "check": "Zero reference-only or competitor images in slots",
+    "pass": true,
+    "note": "reference_only is empty; no images downloaded."
+   },
+   {
+    "check": "Every approved image has location, licence, alt, caption, fit_reason",
+    "pass": true,
+    "note": "No approved images this run; alt and caption are written once a licensed file exists."
+   },
+   {
+    "check": "No AI image depicting a real place",
+    "pass": true,
+    "note": "No AI used; no slot allows AI for a venue, place, wedding or person."
+   },
+   {
+    "check": "Featured image exists (approved or needed with brief)",
+    "pass": true,
+    "note": "Needed, with brief: beachside sunset ceremony at a confirmed Seminyak venue."
+   },
+   {
+    "check": "Slots cover hero, venue types and when to marry",
+    "pass": true,
+    "note": "5 slots: featured, beachfront resorts, beach clubs, villas, when to marry."
+   }
+  ],
+  "confidence": 0.7
+ },
+ "open_questions": [
+  {
+   "to": "planner-sme",
+   "question": "Confirm the qualifying Seminyak venues (03-source-pack) so each slot, and each venue entry, can be tied to a named venue.",
+   "blocking": false
+  },
+  {
+   "to": "orchestrator",
+   "question": "Should a human find each confirmed venue's press contact and create the Gmail permission drafts, or should the curator do it in a non-fast run?",
+   "blocking": false
+  }
+ ],
+ "assumptions": [
+  "Placement is by section name because 02-seo.json is not yet written; the writer maps it to after_h2 positions.",
+  "Each named venue entry may take one venue-supplied press image (status pending_permission) once written permission is recorded in library-index.csv; these optional per-venue slots are added after 03-source-pack confirms the list.",
+  "No image is assumed licensed until the register says so."
+ ],
+ "verify_items": [
+  "[[IMAGE NEEDED]] featured: beachside sunset ceremony hero from a confirmed Seminyak venue",
+  "[[IMAGE NEEDED]] beachfront-resorts, beach-clubs, villas: official venue image or licensed stock",
+  "[[IMAGE NEEDED]] practical-when-to-marry: official venue image or licensed stock",
+  "[[VERIFY licence]] every venue press-kit image (including optional per-venue entry images): written permission, credit line and expiry recorded in library-index.csv before use",
+  "[[VERIFY: official press or media contact page for each confirmed venue, on its own site]]"
+ ],
+ "tools_used": [
+  "Bash (cat/python)"
+ ],
+ "next_agent": [
+  "luxury-writer"
+ ],
+ "payload": {
+  "slots": [
+   {
+    "slot_id": "featured",
+    "placement": "featured",
+    "purpose": "Hero and social share image: a beachside ceremony on the Seminyak coast at sunset, matching the title's promise of beachside vows.",
+    "shot_brief": "Official image from a confirmed Seminyak venue whose own site places it by the beach: an ocean-facing ceremony set-up (aisle, arch or lawn edge) with the Indian Ocean and west-coast sunset behind, dry season (roughly April to October, month recorded from EXIF or media kit). No people or only distant unidentifiable figures. Room for a title crop. Landscape 3:2. Source: the venue's own media kit or press office with written permission (Gmail draft request, never sent by an agent), or licensed premium stock bought by a human and added to library-index.csv. Never AI, never a competitor, directory, planner, photographer-blog or search-result image. Location proven by the media kit, register row or EXIF, never by appearance.",
+    "status": "needed",
+    "file": "content/posts/seminyak-wedding-venues/images/seminyak-wedding-venues-beachside-sunset-ceremony-hero.webp",
+    "source": {
+     "type": "venue_press",
+     "origin": "not yet sourced",
+     "credit": "[[VERIFY licence]]"
+    },
+    "location": {
+     "venue": "one confirmed Seminyak beachfront venue (to be named from 03-source-pack)",
+     "town": "Seminyak, Badung, Bali",
+     "verified_by": "pending: venue media kit, register row or EXIF"
+    },
+    "licence_note": "[[IMAGE NEEDED]] Library register has no Seminyak or Bali rows. Move to pending_permission once a permission draft exists. Name the venue only once it is confirmed on its own official site (03-source-pack)."
+   },
+   {
+    "slot_id": "beachfront-resorts",
+    "placement": "venues section: beachfront resorts (H2 opener)",
+    "purpose": "Shows the beachfront resort option: ceremony lawns and decks steps from the sand, with resort facilities close by.",
+    "shot_brief": "Official image from a resort confirmed in Seminyak with a beachfront ceremony lawn or deck: aisle set for a wedding, sand and surf beyond, late-afternoon light, no sunbathers or identifiable guests. Landscape 3:2. Source: the venue's own media kit or press office with written permission (Gmail draft request, never sent by an agent), or licensed premium stock bought by a human and added to library-index.csv. Never AI, never a competitor, directory, planner, photographer-blog or search-result image. Location proven by the media kit, register row or EXIF, never by appearance.",
+    "status": "needed",
+    "file": "content/posts/seminyak-wedding-venues/images/seminyak-wedding-venues-beachfront-resort-ceremony-lawn.webp",
+    "source": {
+     "type": "venue_press",
+     "origin": "not yet sourced",
+     "credit": "[[VERIFY licence]]"
+    },
+    "location": {
+     "venue": "one confirmed Seminyak beachfront resort",
+     "town": "Seminyak, Bali",
+     "verified_by": "pending: venue media kit, register row or EXIF"
+    },
+    "licence_note": "[[IMAGE NEEDED]] Library register has no Seminyak or Bali rows. Move to pending_permission once a permission draft exists. Name the venue only once it is confirmed on its own official site (03-source-pack)."
+   },
+   {
+    "slot_id": "beach-clubs",
+    "placement": "venues section: beach clubs (H2 opener)",
+    "purpose": "Shows the beach-club style: a social, sunset-facing reception space for a party-led celebration.",
+    "shot_brief": "Official image from a beach club confirmed in Seminyak that states it hosts private weddings or events: reception tables or a lounge set for a private event, sunset over the ocean, no public-club crowds, no identifiable guests. Landscape 3:2. Source: the venue's own media kit or press office with written permission (Gmail draft request, never sent by an agent), or licensed premium stock bought by a human and added to library-index.csv. Never AI, never a competitor, directory, planner, photographer-blog or search-result image. Location proven by the media kit, register row or EXIF, never by appearance.",
+    "status": "needed",
+    "file": "content/posts/seminyak-wedding-venues/images/seminyak-wedding-venues-beach-club-sunset-reception.webp",
+    "source": {
+     "type": "venue_press",
+     "origin": "not yet sourced",
+     "credit": "[[VERIFY licence]]"
+    },
+    "location": {
+     "venue": "one confirmed Seminyak beach club offering private events",
+     "town": "Seminyak, Bali",
+     "verified_by": "pending: venue media kit, register row or EXIF"
+    },
+    "licence_note": "[[IMAGE NEEDED]] Library register has no Seminyak or Bali rows. Move to pending_permission once a permission draft exists. Name the venue only once it is confirmed on its own official site (03-source-pack). Do not show a public trading day; private-event set-ups only."
+   },
+   {
+    "slot_id": "villas",
+    "placement": "venues section: private villas (H2 opener)",
+    "purpose": "Shows the private villa option: an intimate lawn or pool terrace for a smaller wedding with exclusive use.",
+    "shot_brief": "Official image from a private villa confirmed in Seminyak that states it hosts weddings: lawn or pool terrace set for a ceremony or long-table dinner, tropical garden, golden-hour or candlelit dusk light, no people. Only call it beachside if the villa's own site says so. Landscape 3:2. Source: the venue's own media kit or press office with written permission (Gmail draft request, never sent by an agent), or licensed premium stock bought by a human and added to library-index.csv. Never AI, never a competitor, directory, planner, photographer-blog or search-result image. Location proven by the media kit, register row or EXIF, never by appearance.",
+    "status": "needed",
+    "file": "content/posts/seminyak-wedding-venues/images/seminyak-wedding-venues-private-villa-pool-terrace-dinner.webp",
+    "source": {
+     "type": "venue_press",
+     "origin": "not yet sourced",
+     "credit": "[[VERIFY licence]]"
+    },
+    "location": {
+     "venue": "one confirmed Seminyak wedding villa",
+     "town": "Seminyak, Bali",
+     "verified_by": "pending: venue media kit, register row or EXIF"
+    },
+    "licence_note": "[[IMAGE NEEDED]] Library register has no Seminyak or Bali rows. Move to pending_permission once a permission draft exists. Name the venue only once it is confirmed on its own official site (03-source-pack)."
+   },
+   {
+    "slot_id": "practical-when-to-marry",
+    "placement": "when to marry (section opener)",
+    "purpose": "Sets the season and light for the timing section: what a dry-season Seminyak sunset evening looks like.",
+    "shot_brief": "Official image from a featured venue: west-facing ocean view at dusk from a venue terrace or beach edge, empty table set for dinner in the foreground, month recorded from EXIF or the media kit. No people. Landscape 3:2. Source: the venue's own media kit or press office with written permission (Gmail draft request, never sent by an agent), or licensed premium stock bought by a human and added to library-index.csv. Never AI, never a competitor, directory, planner, photographer-blog or search-result image. Location proven by the media kit, register row or EXIF, never by appearance.",
+    "status": "needed",
+    "file": "content/posts/seminyak-wedding-venues/images/seminyak-wedding-venues-dry-season-sunset-dinner-table.webp",
+    "source": {
+     "type": "venue_press",
+     "origin": "not yet sourced",
+     "credit": "[[VERIFY licence]]"
+    },
+    "location": {
+     "venue": "one featured venue (to be named from 03-source-pack)",
+     "town": "Seminyak, Bali",
+     "verified_by": "pending: venue media kit, register row or EXIF"
+    },
+    "licence_note": "[[IMAGE NEEDED]] Library register has no Seminyak or Bali rows. Move to pending_permission once a permission draft exists. Name the venue only once it is confirmed on its own official site (03-source-pack). Record the month taken; do not imply a 'best month' the writer has not sourced."
+   }
+  ],
+  "reference_only": [],
+  "permission_requests": [],
+  "drive_findings": [
+   "Not searched: fast mode, repo library register only per orchestrator instruction. library-index.csv has no Seminyak or Bali rows."
+  ]
+ }
+}
