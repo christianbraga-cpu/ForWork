@@ -1,0 +1,142 @@
+{
+ "agent": "distribution-lead",
+ "task_id": "bali-wedding-venues",
+ "stage": "10",
+ "status": "complete",
+ "round": 1,
+ "inputs_used": [
+  "CLAUDE.md",
+  "content/posts/getting-married-in-brazil/10-distribution.json (format model)",
+  "content/posts/bali-wedding-venues/08-final.md (copy and image slot markers)",
+  "content/posts/bali-wedding-venues/02-seo.json",
+  "content/posts/bali-wedding-venues/04-images.json"
+ ],
+ "self_qa": {
+  "checks": [
+   {
+    "check": "3 pins tied to image slots in 04-images.json / 08-final.md",
+    "pass": true,
+    "note": "featured, area-bukit-uluwatu, area-nusa-dua-jimbaran; images not yet sourced"
+   },
+   {
+    "check": "Pin titles <= 100, descriptions <= 500",
+    "pass": true,
+    "note": "66/390, 70/385, 51/421"
+   },
+   {
+    "check": "UTM per channel: pinterest/social, instagram via bio link, newsletter/email; utm_campaign=bali-wedding-venues",
+    "pass": true,
+    "note": "same pattern as Brazil model"
+   },
+   {
+    "check": "8-slide carousel, hook first, Wedded Advisor conversation last",
+    "pass": true
+   },
+   {
+    "check": "Caption <= 2,200 chars, 5 to 10 hashtags",
+    "pass": true,
+    "note": "1386 chars, 9 hashtags"
+   },
+   {
+    "check": "Newsletter subject <= 60, preview <= 110, blurb 60 to 100 words",
+    "pass": true,
+    "note": "48/93 chars, 70 words"
+   },
+   {
+    "check": "Facts only from 08-final.md; no prices, ranking or best, same-sex legal position, Advisor claims beyond the copy, last dance, [[VERIFY]] content",
+    "pass": true,
+    "note": "venue names used only as in the copy; legal, safety and visa content omitted"
+   },
+   {
+    "check": "Australian English; no em dashes; no banned phrases",
+    "pass": true
+   }
+  ],
+  "confidence": 0.85
+ },
+ "open_questions": [
+  {
+   "to": "orchestrator",
+   "question": "Images for featured, area-bukit-uluwatu and area-nusa-dua-jimbaran (and carousel backgrounds) are not yet sourced and need a licence covering social use. Venue press-kit images need written permission that covers social. Never AI for venue or location shots.",
+   "blocking": true
+  },
+  {
+   "to": "orchestrator",
+   "question": "Confirm Pinterest board names (Destination Weddings, Bali Weddings) match existing boards.",
+   "blocking": false
+  },
+  {
+   "to": "orchestrator",
+   "question": "Instagram bio link should be https://weddedwonderland.com/destination-weddings/bali-wedding-venues?utm_source=instagram&utm_medium=social&utm_campaign=bali-wedding-venues&utm_content=bio-link.",
+   "blocking": false
+  }
+ ],
+ "assumptions": [
+  "Post URL from 02-seo.json url_path: https://weddedwonderland.com/destination-weddings/bali-wedding-venues",
+  "Board names are proposals.",
+  "Legal, visa, safety and season detail beyond the wet-season window omitted from social assets rather than paraphrased.",
+  "Venue names appear only with descriptions taken from the copy."
+ ],
+ "verify_items": [],
+ "tools_used": [
+  "Bash"
+ ],
+ "next_agent": [
+  "cms-publisher"
+ ],
+ "payload": {
+  "pinterest": [
+   {
+    "title": "Bali Wedding Venues by Area: Clifftops, Beaches, Seminyak and Ubud",
+    "description": "Bali wedding venues fall into four areas: the Bukit and Uluwatu clifftops, the beaches of Nusa Dua and Jimbaran, the west coast at Seminyak, and the river valleys around Ubud. Choose the area first and the venue second, then match the space to your guest numbers before you fall for the view. Our guide sets out 15 luxury venues on the same terms, by area, not by rank. Read the full guide.",
+    "image_slot": "featured",
+    "board": "Destination Weddings",
+    "link": "https://weddedwonderland.com/destination-weddings/bali-wedding-venues?utm_source=pinterest&utm_medium=social&utm_campaign=bali-wedding-venues&utm_content=pin-areas"
+   },
+   {
+    "title": "Clifftop Bali Wedding Venues: Chapels and Decks Above the Indian Ocean",
+    "description": "On the Bukit and Uluwatu clifftops, the ocean sits below you rather than at your feet. AYANA's Tresna Chapel rises above the Indian Ocean, Bvlgari sits atop a cliff, and Jumeirah looks over Dreamland Beach. Options run from a 30-guest ceremony on AYANA's KISIK Pier to a whole-resort buy-out at Samabe. Plan the move between ceremony and dinner as part of the day. Read the full guide.",
+    "image_slot": "area-bukit-uluwatu",
+    "board": "Bali Weddings",
+    "link": "https://weddedwonderland.com/destination-weddings/bali-wedding-venues?utm_source=pinterest&utm_medium=social&utm_campaign=bali-wedding-venues&utm_content=pin-clifftops"
+   },
+   {
+    "title": "Beach Wedding Venues in Bali: Nusa Dua and Jimbaran",
+    "description": "Choose Nusa Dua and Jimbaran for a ceremony on the sand with a chapel or ballroom close by. The Mulia's garden and glass house sit on the Nusa Dua beachfront, The St. Regis has its Cloud Nine Chapel on the beachfront, and Four Seasons Jimbaran Bay has private beaches and a private-island venue. Bali's wet season usually runs from around October to April, so ask about an indoor or covered fallback. Read the full guide.",
+    "image_slot": "area-nusa-dua-jimbaran",
+    "board": "Bali Weddings",
+    "link": "https://weddedwonderland.com/destination-weddings/bali-wedding-venues?utm_source=pinterest&utm_medium=social&utm_campaign=bali-wedding-venues&utm_content=pin-beaches"
+   }
+  ],
+  "instagram_carousel": {
+   "slides": [
+    "Planning a Bali wedding? Choose the area first and the venue second.",
+    "Bukit and Uluwatu clifftops: chapels, decks and villa terraces with the ocean below you.",
+    "Nusa Dua and Jimbaran: a ceremony on the sand, with a chapel or ballroom close by.",
+    "Seminyak: the west coast for sunset and a sociable evening.",
+    "Ubud and the highlands: valleys, rice paddies and a smaller guest list.",
+    "Match the space to your numbers: published capacities run from a 16-guest room in Seminyak to spaces for well over a thousand.",
+    "Only Samabe and COMO Uma Ubud publish a full resort buy-out. Ask every other venue in writing.",
+    "Shortlisting Bali venues? Message us to talk it through with a Wedded Advisor. Link in bio."
+   ],
+   "caption": "Bali is on your list? Start with the area, not the venue.\n\nBali wedding venues fall into four areas, and each answers a different question about the day.\n\n1. Bukit and Uluwatu clifftops. Height and a horizon. AYANA's Tresna Chapel rises above the Indian Ocean, Bvlgari sits atop a cliff, and Jumeirah looks over Dreamland Beach.\n2. Nusa Dua and Jimbaran. A ceremony on the sand with a chapel or ballroom close by. This is also where the largest published spaces are.\n3. Seminyak. The west coast for sunset and a sociable evening, at W Bali Seminyak or The Oberoi.\n4. Ubud and the highlands. Valleys, rice paddies and a smaller guest list at COMO Uma Ubud or Mandapa. COMO Uma Ubud is 90 minutes by car from the airport, so most guests will want to stay on site or nearby.\n\nBefore you fall for the view:\n- Match the space to your guest numbers.\n- Ask whether the wedding spaces, or the whole property, can be closed to other guests. Only Samabe and COMO Uma Ubud publish a full resort buy-out.\n- Ask whether you can bring your own planner, stylist, florist and photographer.\n- Bali's wet season usually runs from around October to April, so ask about an indoor or covered fallback.\n\nOur guide sets out 15 luxury venues on the same terms, by area, not by rank.\n\nReady to narrow it to three or four names? Message us to talk it through with a Wedded Advisor. Full guide at the link in bio.",
+   "hashtags": [
+    "#baliwedding",
+    "#baliweddingvenue",
+    "#destinationwedding",
+    "#australianbride",
+    "#weddingplanning",
+    "#uluwatuwedding",
+    "#ubudwedding",
+    "#overseaswedding",
+    "#weddedwonderland"
+   ]
+  },
+  "newsletter": {
+   "subject": "Bali wedding venues: clifftops, beaches and Ubud",
+   "preview": "15 luxury venues across four areas, set out on the same terms so you can compare them fairly.",
+   "blurb": "Bali on your list? Our new guide sets out 15 luxury Bali wedding venues across four areas: the Bukit and Uluwatu clifftops, the beaches of Nusa Dua and Jimbaran, Seminyak on the west coast and the valleys around Ubud. Each is set out on the same terms, with ceremony spaces and published guest numbers, plus the questions to ask about buy-outs, your own suppliers, wet-season fallbacks and getting guests there.",
+   "link": "https://weddedwonderland.com/destination-weddings/bali-wedding-venues?utm_source=newsletter&utm_medium=email&utm_campaign=bali-wedding-venues&utm_content=newsletter"
+  }
+ }
+}
