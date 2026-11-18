@@ -1,366 +1,942 @@
 {
-  "agent": "wedding-planner-sme",
-  "task_id": "wedding-processional-songs",
-  "stage": "03",
-  "status": "needs_input",
-  "round": 1,
-  "next_agent": [
-    "luxury-writer"
-  ],
-  "inputs_used": [
-    "CLAUDE.md",
-    "content/posts/wedding-processional-songs/00-input.json",
-    "content-system/schemas/envelope.schema.json",
-    "content-system/schemas/03-source-pack.schema.json",
-    "content/posts/samoan-wedding-traditions/03-source-pack.json (format model)",
-    "https://hymnary.org/text/be_thou_my_vision_o_lord_of_my_heart (Apify web-fetch 2026-11-18, HTTP 200)",
-    "https://hymnary.org/text/amazing_grace_how_sweet_the_sound (Apify web-fetch 2026-11-18, HTTP 200)",
-    "https://hymnary.org/text/joyful_joyful_we_adore_thee (Apify web-fetch 2026-11-18, HTTP 200)"
-  ],
-  "assumptions": [
-    "Batch A ran in fast mode with one parallel read round; no second round was started.",
-    "All 17 IMSLP fetches used '?action=raw' and returned HTTP 404 (the fetcher treated the query as part of the page title), so no classical piece is sourced.",
-    "Hymnary.org pages for Morning Has Broken and Love Divine returned HTTP 415 (unsupported content type) and were not read.",
-    "One web search for Purcell Trumpet Tune returned only sheet-music file links, none used as a source.",
-    "Hymnary.org is typed 'editorial'. No lyrics recorded beyond titles and first lines as titles.",
-    "No Australian diocese page on wedding music was read."
-  ],
-  "open_questions": [
-    {
-      "to": "orchestrator",
-      "blocking": true,
-      "question": "Re-run batch A for the 18 classical pieces and 2 hymns using plain IMSLP or Britannica page URLs (no '?action=raw') and web-fetch without the 'text' format for Hymnary.org, so the brief has about 22 sourced pieces?"
-    },
-    {
-      "to": "orchestrator",
-      "blocking": false,
-      "question": "Should a follow-up read one Catholic or Anglican Australian diocese page on music at weddings?"
-    }
-  ],
-  "tools_used": [
-    "mcp__Apify__apify--web-fetch",
-    "mcp__Apify__apify--web-search"
-  ],
-  "verify_items": [
-    "[[VERIFY: exact title, composer, year or era and parent work for Pachelbel Canon in D; not sourced in batch A]]",
-    "[[VERIFY: exact title, composer, year or era and parent work for Wagner Bridal Chorus (Lohengrin); not sourced in batch A]]",
-    "[[VERIFY: exact title, composer, year or era and parent work for Mendelssohn Wedding March (A Midsummer Night's Dream); not sourced in batch A]]",
-    "[[VERIFY: exact title, composer, year or era and parent work for Clarke Prince of Denmark's March (Trumpet Voluntary); not sourced in batch A]]",
-    "[[VERIFY: exact title, composer, year or era and parent work for Handel Arrival of the Queen of Sheba (Solomon); not sourced in batch A]]",
-    "[[VERIFY: exact title, composer, year or era and parent work for Handel Water Music (Air or Hornpipe); not sourced in batch A]]",
-    "[[VERIFY: exact title, composer, year or era and parent work for Bach Air on the G String (Orchestral Suite No. 3); not sourced in batch A]]",
-    "[[VERIFY: exact title, composer, year or era and parent work for Bach Jesu, Joy of Man's Desiring (BWV 147); not sourced in batch A]]",
-    "[[VERIFY: exact title, composer, year or era and parent work for Bach Sheep May Safely Graze (BWV 208); not sourced in batch A]]",
-    "[[VERIFY: exact title, composer, year or era and parent work for Schubert Ave Maria; not sourced in batch A]]",
-    "[[VERIFY: exact title, composer, year or era and parent work for Bach/Gounod Ave Maria; not sourced in batch A]]",
-    "[[VERIFY: exact title, composer, year or era and parent work for Debussy Clair de Lune; not sourced in batch A]]",
-    "[[VERIFY: exact title, composer, year or era and parent work for Vivaldi Spring (The Four Seasons); not sourced in batch A]]",
-    "[[VERIFY: exact title, composer, year or era and parent work for Purcell Trumpet Tune; not sourced in batch A]]",
-    "[[VERIFY: exact title, composer, year or era and parent work for Mouret Rondeau; not sourced in batch A]]",
-    "[[VERIFY: exact title, composer, year or era and parent work for Charpentier Te Deum prelude; not sourced in batch A]]",
-    "[[VERIFY: exact title, composer, year or era and parent work for Elgar Salut d'Amour; not sourced in batch A]]",
-    "[[VERIFY: exact title, composer, year or era and parent work for Satie Gymnopedie No. 1; not sourced in batch A]]",
-    "[[VERIFY: exact title, composer, year or era and parent work for Morning Has Broken (hymn); not sourced in batch A]]",
-    "[[VERIFY: exact title, composer, year or era and parent work for Love Divine, All Loves Excelling (hymn); not sourced in batch A]]"
-  ],
-  "self_qa": {
-    "checks": [
-      {
-        "check": "Every fact has a source URL and date",
-        "pass": true,
-        "note": "9 facts, all Hymnary.org read live 2026-11-18."
-      },
-      {
-        "check": "No prices",
-        "pass": true
-      },
-      {
-        "check": "Every candidate covered or marked [[VERIFY]]",
-        "pass": true,
-        "note": "3 hymns sourced; 20 candidates are [[VERIFY]]."
-      },
-      {
-        "check": "About 22 pieces sourced",
-        "pass": false,
-        "note": "Only 3 of 23 sourced; see open_questions."
-      },
-      {
-        "check": "No invented quotes, statistics or real weddings",
-        "pass": true
-      }
-    ],
-    "confidence": 0.4
-  },
-  "payload": {
-    "facts": [
-      {
-        "fact_id": "fact_01",
-        "claim": "Hymnary.org lists 'Be Thou my vision, O Lord of my heart' with versifier Eleanor Henrietta Hull and translator Mary E. Byrne (1905), sung to the tune SLANE.",
-        "source": "https://hymnary.org/text/be_thou_my_vision_o_lord_of_my_heart",
-        "source_type": "editorial",
-        "checked": "2026-11-18",
-        "is_price": false
-      },
-      {
-        "fact_id": "fact_02",
-        "claim": "Hymnary.org's worship notes say the source is an Irish poem attributed to the monk Dallan Forgaill, translated into English by Mary Elizabeth Byrne in the early 20th century and versified by Eleanor Hull in 1912; one hymnal instance gives the source as 'Irish, c. 8th century'.",
-        "source": "https://hymnary.org/text/be_thou_my_vision_o_lord_of_my_heart",
-        "source_type": "editorial",
-        "checked": "2026-11-18",
-        "is_price": false
-      },
-      {
-        "fact_id": "fact_03",
-        "claim": "Hymnary.org says SLANE is an old Irish folk tune, arranged by David Evans and set to 'Be Thou My Vision' in the Church Hymnary (1927).",
-        "source": "https://hymnary.org/text/be_thou_my_vision_o_lord_of_my_heart",
-        "source_type": "editorial",
-        "checked": "2026-11-18",
-        "is_price": false
-      },
-      {
-        "fact_id": "fact_04",
-        "claim": "Hymnary.org lists 'Amazing grace! (how sweet the sound)' by John Newton (1779), sung to the tune NEW BRITAIN.",
-        "source": "https://hymnary.org/text/amazing_grace_how_sweet_the_sound",
-        "source_type": "editorial",
-        "checked": "2026-11-18",
-        "is_price": false
-      },
-      {
-        "fact_id": "fact_05",
-        "claim": "Hymnary.org says Newton published the hymn in 1779 in the Olney Hymns, a collaboration with William Cowper, under the original title 'Faith's Review and Expectations'.",
-        "source": "https://hymnary.org/text/amazing_grace_how_sweet_the_sound",
-        "source_type": "editorial",
-        "checked": "2026-11-18",
-        "is_price": false
-      },
-      {
-        "fact_id": "fact_06",
-        "claim": "Hymnary.org describes NEW BRITAIN (also known as AMAZING GRACE) as an Appalachian folk tune that first appeared in Southern Harmony; the modern harmonisation is credited to Edwin Othello Excell.",
-        "source": "https://hymnary.org/text/amazing_grace_how_sweet_the_sound",
-        "source_type": "editorial",
-        "checked": "2026-11-18",
-        "is_price": false
-      },
-      {
-        "fact_id": "fact_07",
-        "claim": "Hymnary.org lists 'Joyful, joyful, we adore Thee' by Henry Van Dyke (1907), sung to the tune HYMN TO JOY.",
-        "source": "https://hymnary.org/text/joyful_joyful_we_adore_thee",
-        "source_type": "editorial",
-        "checked": "2026-11-18",
-        "is_price": false,
-        "conflicts": "Hymnary.org header dates the text 1907; its worship notes say 'around 1908'. Use 1907 (header) or 'early 1900s'."
-      },
-      {
-        "fact_id": "fact_08",
-        "claim": "Hymnary.org says HYMN TO JOY (ODE TO JOY) adapts the final movement of Beethoven's Ninth Symphony as a congregational melody, and that Van Dyke wrote his text to be sung to Beethoven's 'Hymn to Joy'.",
-        "source": "https://hymnary.org/text/joyful_joyful_we_adore_thee",
-        "source_type": "editorial",
-        "checked": "2026-11-18",
-        "is_price": false
-      },
-      {
-        "fact_id": "fact_09",
-        "claim": "Hymnary.org gives the tune's meter as 87.87.D.",
-        "source": "https://hymnary.org/text/joyful_joyful_we_adore_thee",
-        "source_type": "editorial",
-        "checked": "2026-11-18",
-        "is_price": false
-      }
-    ],
-    "insider_details": [
-      {
-        "detail": "Amazing Grace is short in common meter and Hymnary.org notes most hymnals print four of Newton's stanzas plus a later anonymous fifth; for a ceremony, agree with the musician which verses to sing so the hymn fits the signing or a reflection moment.",
-        "fact_ids": [
-          "fact_04",
-          "fact_05"
-        ]
-      },
-      {
-        "detail": "Joyful, Joyful, We Adore Thee uses Beethoven's Ode to Joy melody, so it works for guests who don't know hymns: they will recognise the tune even if the words are new. Print the words in the order of service.",
-        "fact_ids": [
-          "fact_07",
-          "fact_08"
-        ]
-      },
-      {
-        "detail": "Be Thou My Vision is sung to an Irish folk tune (SLANE), which suits couples wanting an Irish or Celtic thread in a church ceremony, and is often played slowly; ask the musician to keep the tempo moving so it doesn't drag.",
-        "fact_ids": [
-          "fact_01",
-          "fact_03"
-        ]
-      }
-    ],
-    "quotes": [],
-    "real_weddings": [],
-    "budget_range_aud": [],
-    "verify_items": [
-      "[[VERIFY: exact title, composer, year or era and parent work for Pachelbel Canon in D; not sourced in batch A]]",
-      "[[VERIFY: exact title, composer, year or era and parent work for Wagner Bridal Chorus (Lohengrin); not sourced in batch A]]",
-      "[[VERIFY: exact title, composer, year or era and parent work for Mendelssohn Wedding March (A Midsummer Night's Dream); not sourced in batch A]]",
-      "[[VERIFY: exact title, composer, year or era and parent work for Clarke Prince of Denmark's March (Trumpet Voluntary); not sourced in batch A]]",
-      "[[VERIFY: exact title, composer, year or era and parent work for Handel Arrival of the Queen of Sheba (Solomon); not sourced in batch A]]",
-      "[[VERIFY: exact title, composer, year or era and parent work for Handel Water Music (Air or Hornpipe); not sourced in batch A]]",
-      "[[VERIFY: exact title, composer, year or era and parent work for Bach Air on the G String (Orchestral Suite No. 3); not sourced in batch A]]",
-      "[[VERIFY: exact title, composer, year or era and parent work for Bach Jesu, Joy of Man's Desiring (BWV 147); not sourced in batch A]]",
-      "[[VERIFY: exact title, composer, year or era and parent work for Bach Sheep May Safely Graze (BWV 208); not sourced in batch A]]",
-      "[[VERIFY: exact title, composer, year or era and parent work for Schubert Ave Maria; not sourced in batch A]]",
-      "[[VERIFY: exact title, composer, year or era and parent work for Bach/Gounod Ave Maria; not sourced in batch A]]",
-      "[[VERIFY: exact title, composer, year or era and parent work for Debussy Clair de Lune; not sourced in batch A]]",
-      "[[VERIFY: exact title, composer, year or era and parent work for Vivaldi Spring (The Four Seasons); not sourced in batch A]]",
-      "[[VERIFY: exact title, composer, year or era and parent work for Purcell Trumpet Tune; not sourced in batch A]]",
-      "[[VERIFY: exact title, composer, year or era and parent work for Mouret Rondeau; not sourced in batch A]]",
-      "[[VERIFY: exact title, composer, year or era and parent work for Charpentier Te Deum prelude; not sourced in batch A]]",
-      "[[VERIFY: exact title, composer, year or era and parent work for Elgar Salut d'Amour; not sourced in batch A]]",
-      "[[VERIFY: exact title, composer, year or era and parent work for Satie Gymnopedie No. 1; not sourced in batch A]]",
-      "[[VERIFY: exact title, composer, year or era and parent work for Morning Has Broken (hymn); not sourced in batch A]]",
-      "[[VERIFY: exact title, composer, year or era and parent work for Love Divine, All Loves Excelling (hymn); not sourced in batch A]]"
-    ],
-    "needs_signoff": [],
-    "must_include_coverage": [
-      {
-        "item": "Be Thou My Vision",
-        "covered_by": [
-          "fact_01",
-          "fact_02",
-          "fact_03"
-        ]
-      },
-      {
-        "item": "Amazing Grace (John Newton)",
-        "covered_by": [
-          "fact_04",
-          "fact_05",
-          "fact_06"
-        ]
-      },
-      {
-        "item": "Joyful, Joyful, We Adore Thee (Ode to Joy tune)",
-        "covered_by": [
-          "fact_07",
-          "fact_08",
-          "fact_09"
-        ]
-      },
-      {
-        "item": "Pachelbel Canon in D",
-        "covered_by": [
-          "[[VERIFY: exact title, composer, year or era and parent work for Pachelbel Canon in D; not sourced in batch A]]"
-        ]
-      },
-      {
-        "item": "Wagner Bridal Chorus (Lohengrin)",
-        "covered_by": [
-          "[[VERIFY: exact title, composer, year or era and parent work for Wagner Bridal Chorus (Lohengrin); not sourced in batch A]]"
-        ]
-      },
-      {
-        "item": "Mendelssohn Wedding March (A Midsummer Night's Dream)",
-        "covered_by": [
-          "[[VERIFY: exact title, composer, year or era and parent work for Mendelssohn Wedding March (A Midsummer Night's Dream); not sourced in batch A]]"
-        ]
-      },
-      {
-        "item": "Clarke Prince of Denmark's March (Trumpet Voluntary)",
-        "covered_by": [
-          "[[VERIFY: exact title, composer, year or era and parent work for Clarke Prince of Denmark's March (Trumpet Voluntary); not sourced in batch A]]"
-        ]
-      },
-      {
-        "item": "Handel Arrival of the Queen of Sheba (Solomon)",
-        "covered_by": [
-          "[[VERIFY: exact title, composer, year or era and parent work for Handel Arrival of the Queen of Sheba (Solomon); not sourced in batch A]]"
-        ]
-      },
-      {
-        "item": "Handel Water Music (Air or Hornpipe)",
-        "covered_by": [
-          "[[VERIFY: exact title, composer, year or era and parent work for Handel Water Music (Air or Hornpipe); not sourced in batch A]]"
-        ]
-      },
-      {
-        "item": "Bach Air on the G String (Orchestral Suite No. 3)",
-        "covered_by": [
-          "[[VERIFY: exact title, composer, year or era and parent work for Bach Air on the G String (Orchestral Suite No. 3); not sourced in batch A]]"
-        ]
-      },
-      {
-        "item": "Bach Jesu, Joy of Man's Desiring (BWV 147)",
-        "covered_by": [
-          "[[VERIFY: exact title, composer, year or era and parent work for Bach Jesu, Joy of Man's Desiring (BWV 147); not sourced in batch A]]"
-        ]
-      },
-      {
-        "item": "Bach Sheep May Safely Graze (BWV 208)",
-        "covered_by": [
-          "[[VERIFY: exact title, composer, year or era and parent work for Bach Sheep May Safely Graze (BWV 208); not sourced in batch A]]"
-        ]
-      },
-      {
-        "item": "Schubert Ave Maria",
-        "covered_by": [
-          "[[VERIFY: exact title, composer, year or era and parent work for Schubert Ave Maria; not sourced in batch A]]"
-        ]
-      },
-      {
-        "item": "Bach/Gounod Ave Maria",
-        "covered_by": [
-          "[[VERIFY: exact title, composer, year or era and parent work for Bach/Gounod Ave Maria; not sourced in batch A]]"
-        ]
-      },
-      {
-        "item": "Debussy Clair de Lune",
-        "covered_by": [
-          "[[VERIFY: exact title, composer, year or era and parent work for Debussy Clair de Lune; not sourced in batch A]]"
-        ]
-      },
-      {
-        "item": "Vivaldi Spring (The Four Seasons)",
-        "covered_by": [
-          "[[VERIFY: exact title, composer, year or era and parent work for Vivaldi Spring (The Four Seasons); not sourced in batch A]]"
-        ]
-      },
-      {
-        "item": "Purcell Trumpet Tune",
-        "covered_by": [
-          "[[VERIFY: exact title, composer, year or era and parent work for Purcell Trumpet Tune; not sourced in batch A]]"
-        ]
-      },
-      {
-        "item": "Mouret Rondeau",
-        "covered_by": [
-          "[[VERIFY: exact title, composer, year or era and parent work for Mouret Rondeau; not sourced in batch A]]"
-        ]
-      },
-      {
-        "item": "Charpentier Te Deum prelude",
-        "covered_by": [
-          "[[VERIFY: exact title, composer, year or era and parent work for Charpentier Te Deum prelude; not sourced in batch A]]"
-        ]
-      },
-      {
-        "item": "Elgar Salut d'Amour",
-        "covered_by": [
-          "[[VERIFY: exact title, composer, year or era and parent work for Elgar Salut d'Amour; not sourced in batch A]]"
-        ]
-      },
-      {
-        "item": "Satie Gymnopedie No. 1",
-        "covered_by": [
-          "[[VERIFY: exact title, composer, year or era and parent work for Satie Gymnopedie No. 1; not sourced in batch A]]"
-        ]
-      },
-      {
-        "item": "Morning Has Broken (hymn)",
-        "covered_by": [
-          "[[VERIFY: exact title, composer, year or era and parent work for Morning Has Broken (hymn); not sourced in batch A]]"
-        ]
-      },
-      {
-        "item": "Love Divine, All Loves Excelling (hymn)",
-        "covered_by": [
-          "[[VERIFY: exact title, composer, year or era and parent work for Love Divine, All Loves Excelling (hymn); not sourced in batch A]]"
-        ]
-      }
-    ]
+ "agent": "wedding-planner-sme",
+ "task_id": "wedding-processional-songs",
+ "stage": "03",
+ "status": "complete",
+ "round": 1,
+ "next_agent": [
+  "luxury-writer"
+ ],
+ "inputs_used": [
+  "CLAUDE.md",
+  "content/posts/wedding-processional-songs/00-input.json",
+  "content-system/schemas/envelope.schema.json",
+  "content-system/schemas/03-source-pack.schema.json",
+  "content/posts/samoan-wedding-traditions/03-source-pack.json (format model)",
+  "https://hymnary.org/text/be_thou_my_vision_o_lord_of_my_heart (Apify web-fetch 2026-11-18, HTTP 200)",
+  "https://hymnary.org/text/amazing_grace_how_sweet_the_sound (Apify web-fetch 2026-11-18, HTTP 200)",
+  "https://hymnary.org/text/joyful_joyful_we_adore_thee (Apify web-fetch 2026-11-18, HTTP 200)",
+  "content/posts/samoan-wedding-traditions/03-source-pack-part-1.json",
+  "https://www.officialcharts.com/songs/ed-sheeran-perfect/",
+  "https://www.britannica.com/biography/Etta-James",
+  "content/posts/wedding-processional-songs/03-source-pack-part-1.json",
+  "https://www.oscars.org/oscars/ceremonies/2010",
+  "https://www.britannica.com/topic/Amelie",
+  "https://www.britannica.com/biography/Ennio-Morricone",
+  "https://www.britannica.com/biography/Joe-Hisaishi (404)",
+  "https://www.britannica.com/biography/Ludovico-Einaudi (404)",
+  "https://www.britannica.com/topic/Up-film-2009 (404)",
+  "https://www.officialcharts.com/songs/christina-perri-a-thousand-years/",
+  "https://www.officialcharts.com/songs/adele-make-you-feel-my-love/",
+  "https://www.officialcharts.com/songs/elvis-presley-cant-help-falling-in-love/",
+  "https://www.loc.gov/programs/national-recording-preservation-board/recording-registry/complete-national-recording-registry-listing/",
+  "https://www.loc.gov/static/portals/about/reports-and-budgets/documents/annual-reports/fy2009.pdf",
+  "https://www.grammy.com/news/rascal-flatts-grammycom-first-listen/",
+  "https://www.billboard.com/music/music-news/qa-rascal-flatts-58767/",
+  "https://www.russelldickerson.com/",
+  "https://www.billboard.com/pro/russell-dickerson-emerging-artists-chart-number-one-yours/",
+  "content/posts/wedding-processional-songs/03-source-pack.json",
+  "content/posts/wedding-processional-songs/03-source-pack-part-4.json",
+  "content/posts/wedding-processional-songs/01-brief.json",
+  "https://classical.music.apple.com/ne/work/yiruma-1978-pp12",
+  "https://classical.music.apple.com/us/album/1440762051",
+  "https://music.apple.com/bg/song/love-theme-from-cinema-paradiso/1153495154",
+  "https://music.apple.com/bh/song/arrival-of-the-birds/712881575",
+  "https://music.apple.com/by/album/the-blessed-unrest/1440504715",
+  "https://music.apple.com/ca/song/gabriels-oboe-from-the-mission/1620146577",
+  "https://music.apple.com/gb/song/merry-go-round-of-life-from-howls-moving-castle/1680459417",
+  "https://music.apple.com/is/song/here-comes-the-sun-take-9/1474834632",
+  "https://music.apple.com/pe/album/turning-page-single/532884479?l=en-GB",
+  "https://music.apple.com/us/album/in-a-time-lapse/1440772612",
+  "https://music.apple.com/us/album/kiss-the-rain/1761162569",
+  "https://music.apple.com/us/album/married-life-single/1751993482",
+  "https://music.apple.com/us/album/time-out-of-mind/190392344",
+  "https://music.apple.com/us/song/cant-help-falling-in-love/949550091",
+  "https://music.apple.com/us/song/comptine-dun-autre-%C3%A9t%C3%A9-lapr%C3%A8s-midi/1575400467",
+  "https://music.apple.com/us/song/kiss-the-rain/1576663126"
+ ],
+ "assumptions": [
+  "Batch A ran in fast mode with one parallel read round; no second round was started.",
+  "All 17 IMSLP fetches used '?action=raw' and returned HTTP 404 (the fetcher treated the query as part of the page title), so no classical piece is sourced.",
+  "Hymnary.org pages for Morning Has Broken and Love Divine returned HTTP 415 (unsupported content type) and were not read.",
+  "One web search for Purcell Trumpet Tune returned only sheet-music file links, none used as a source.",
+  "Hymnary.org is typed 'editorial'. No lyrics recorded beyond titles and first lines as titles.",
+  "No Australian diocese page on wedding music was read.",
+  "Release year for 'Perfect' taken as 2017 from its first UK chart date; no lyrics or song meaning recorded.",
+  "Oscars ceremony page (oscars.org) treated as the Academy's official record; source_type 'other' as no award type exists in the enum.",
+  "Fast mode: one parallel read round. Official Charts pages for Perri and Adele were read in full; LoC, GRAMMY, Billboard and Russell Dickerson facts come from search-result snippets of those official pages.",
+  "Chord Overstreet's 'Yours' not researched; Russell Dickerson version used as instructed.",
+  "Batch E (classical and church pieces) top-up. Facts record only what each fetched source states; no lyrics reproduced.",
+  "Batch F top-up. Facts drawn from IMSLP, Britannica and Hymnary search-result snippets, recorded with a snippet prefix. Titles, composers, years and parent works only; no lyrics.",
+  "Brief names Sara Bareilles for I Choose You (not Sara Evans); researched Sara Bareilles. Apple Music listings used for title, artist, album and release date only."
+ ],
+ "open_questions": [
+  {
+   "to": "luxury-writer",
+   "question": "All 40 songs in the brief now have a sourced title and composer or artist (66 facts). State a year ONLY where a fact gives the original year; many recording facts are later reissues or re-recordings (for example Kiss the Rain 2021, Married Life 2024, the Morricone and Hisaishi orchestral recordings): never present those dates as original release years; omit the year instead. Here Comes the Sun: use only The Beatles and the album Abbey Road, no year. Love Divine, All Loves Excelling: title only, no author. Bridal Chorus: 'Bridal Chorus' from Wagner's opera Lohengrin (first performed 1850). Prince of Denmark's March: Jeremiah Clarke, also known as the Trumpet Voluntary. Never name a streaming platform, record label as a shop, cover group or arranger in the copy, and do not link music.apple.com. No lyrics (titles only), no meaning claims, no chart claims beyond the facts. Church rules: 'ask your officiant or music director'.",
+   "blocking": false
   }
+ ],
+ "tools_used": [
+  "mcp__Apify__apify--web-fetch",
+  "mcp__Apify__apify--web-search"
+ ],
+ "verify_items": [],
+ "self_qa": {
+  "checks": [
+   {
+    "check": "Every fact has a source URL and date",
+    "pass": true,
+    "note": "9 facts, all Hymnary.org read live 2026-11-18."
+   },
+   {
+    "check": "No prices",
+    "pass": true
+   },
+   {
+    "check": "Every candidate covered or marked [[VERIFY]]",
+    "pass": true,
+    "note": "3 hymns sourced; 20 candidates are [[VERIFY]]."
+   },
+   {
+    "check": "About 22 pieces sourced",
+    "pass": false,
+    "note": "Only 3 of 23 sourced; see open_questions."
+   },
+   {
+    "check": "No invented quotes, statistics or real weddings",
+    "pass": true
+   }
+  ],
+  "confidence": 0.4
+ },
+ "payload": {
+  "facts": [
+   {
+    "fact_id": "fact_01",
+    "claim": "Hymnary.org lists 'Be Thou my vision, O Lord of my heart' with versifier Eleanor Henrietta Hull and translator Mary E. Byrne (1905), sung to the tune SLANE.",
+    "source": "https://hymnary.org/text/be_thou_my_vision_o_lord_of_my_heart",
+    "source_type": "editorial",
+    "checked": "2026-11-18",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_02",
+    "claim": "Hymnary.org's worship notes say the source is an Irish poem attributed to the monk Dallan Forgaill, translated into English by Mary Elizabeth Byrne in the early 20th century and versified by Eleanor Hull in 1912; one hymnal instance gives the source as 'Irish, c. 8th century'.",
+    "source": "https://hymnary.org/text/be_thou_my_vision_o_lord_of_my_heart",
+    "source_type": "editorial",
+    "checked": "2026-11-18",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_03",
+    "claim": "Hymnary.org says SLANE is an old Irish folk tune, arranged by David Evans and set to 'Be Thou My Vision' in the Church Hymnary (1927).",
+    "source": "https://hymnary.org/text/be_thou_my_vision_o_lord_of_my_heart",
+    "source_type": "editorial",
+    "checked": "2026-11-18",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_04",
+    "claim": "Hymnary.org lists 'Amazing grace! (how sweet the sound)' by John Newton (1779), sung to the tune NEW BRITAIN.",
+    "source": "https://hymnary.org/text/amazing_grace_how_sweet_the_sound",
+    "source_type": "editorial",
+    "checked": "2026-11-18",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_05",
+    "claim": "Hymnary.org says Newton published the hymn in 1779 in the Olney Hymns, a collaboration with William Cowper, under the original title 'Faith's Review and Expectations'.",
+    "source": "https://hymnary.org/text/amazing_grace_how_sweet_the_sound",
+    "source_type": "editorial",
+    "checked": "2026-11-18",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_06",
+    "claim": "Hymnary.org describes NEW BRITAIN (also known as AMAZING GRACE) as an Appalachian folk tune that first appeared in Southern Harmony; the modern harmonisation is credited to Edwin Othello Excell.",
+    "source": "https://hymnary.org/text/amazing_grace_how_sweet_the_sound",
+    "source_type": "editorial",
+    "checked": "2026-11-18",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_07",
+    "claim": "Hymnary.org lists 'Joyful, joyful, we adore Thee' by Henry Van Dyke (1907), sung to the tune HYMN TO JOY.",
+    "source": "https://hymnary.org/text/joyful_joyful_we_adore_thee",
+    "source_type": "editorial",
+    "checked": "2026-11-18",
+    "is_price": false,
+    "conflicts": "Hymnary.org header dates the text 1907; its worship notes say 'around 1908'. Use 1907 (header) or 'early 1900s'."
+   },
+   {
+    "fact_id": "fact_08",
+    "claim": "Hymnary.org says HYMN TO JOY (ODE TO JOY) adapts the final movement of Beethoven's Ninth Symphony as a congregational melody, and that Van Dyke wrote his text to be sung to Beethoven's 'Hymn to Joy'.",
+    "source": "https://hymnary.org/text/joyful_joyful_we_adore_thee",
+    "source_type": "editorial",
+    "checked": "2026-11-18",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_09",
+    "claim": "Hymnary.org gives the tune's meter as 87.87.D.",
+    "source": "https://hymnary.org/text/joyful_joyful_we_adore_thee",
+    "source_type": "editorial",
+    "checked": "2026-11-18",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_100",
+    "claim": "'Perfect' is performed by Ed Sheeran and is taken from his third studio album, ÷.",
+    "source": "https://www.officialcharts.com/songs/ed-sheeran-perfect/",
+    "source_type": "other",
+    "checked": "2026-11-18",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_101",
+    "claim": "'Perfect' by Ed Sheeran first entered the UK Official Singles Chart on 16/03/2017 (2017 release year), on the Asylum label.",
+    "source": "https://www.officialcharts.com/songs/ed-sheeran-perfect/",
+    "source_type": "other",
+    "checked": "2026-11-18",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_102",
+    "claim": "'Perfect' entered the UK Official Singles Chart at Number 4 and climbed to Number 1, where it stayed for six weeks; it was Ed Sheeran's fourth UK Number 1 single.",
+    "source": "https://www.officialcharts.com/songs/ed-sheeran-perfect/",
+    "source_type": "other",
+    "checked": "2026-11-18",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_103",
+    "claim": "The Official Charts Company notes versions of 'Perfect' released as a duet with Beyoncé and with Andrea Bocelli.",
+    "source": "https://www.officialcharts.com/songs/ed-sheeran-perfect/",
+    "source_type": "other",
+    "checked": "2026-11-18",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_104",
+    "claim": "'At Last' is a song by Etta James, one of the songs that made her Chess Records' first major female star after she signed with Chess in 1960.",
+    "source": "https://www.britannica.com/biography/Etta-James",
+    "source_type": "editorial",
+    "checked": "2026-11-18",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_105",
+    "claim": "Etta James received four Grammy Awards, including a 2003 lifetime achievement award, and was inducted into the Grammy Hall of Fame (1999 and 2008) and the Rock and Roll Hall of Fame (1993).",
+    "source": "https://www.britannica.com/biography/Etta-James",
+    "source_type": "editorial",
+    "checked": "2026-11-18",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_200",
+    "claim": "Michael Giacchino won the Academy Award for Music (Original Score) for 'Up' at the 82nd Academy Awards, held Sunday 7 March 2010 and honouring movies released in 2009.",
+    "source": "https://www.oscars.org/oscars/ceremonies/2010",
+    "source_type": "other",
+    "checked": "2026-11-18",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_201",
+    "claim": "'Up' received 5 nominations and 2 wins at the 82nd Academy Awards: Music (Original Score) for Michael Giacchino and Animated Feature Film for Pete Docter.",
+    "source": "https://www.oscars.org/oscars/ceremonies/2010",
+    "source_type": "other",
+    "checked": "2026-11-18",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_202",
+    "claim": "'Amélie' (also known as 'Le Fabuleux Destin d'Amélie Poulain') is a 2001 film directed by Jean-Pierre Jeunet.",
+    "source": "https://www.britannica.com/topic/Amelie",
+    "source_type": "editorial",
+    "checked": "2026-11-18",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_203",
+    "claim": "Ennio Morricone was an Italian composer, conductor and orchestrator.",
+    "source": "https://www.britannica.com/biography/Ennio-Morricone",
+    "source_type": "editorial",
+    "checked": "2026-11-18",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_300",
+    "claim": "'A Thousand Years' is performed by Christina Perri; it first entered the UK Official Singles Chart on 19/11/2011 on the Atlantic label (2011 release year).",
+    "source": "https://www.officialcharts.com/songs/christina-perri-a-thousand-years/",
+    "source_type": "other",
+    "checked": "2026-11-18",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_301",
+    "claim": "'A Thousand Years' by Christina Perri peaked at Number 11 on the UK Official Singles Chart (peak week 28/09/2013).",
+    "source": "https://www.officialcharts.com/songs/christina-perri-a-thousand-years/",
+    "source_type": "other",
+    "checked": "2026-11-18",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_302",
+    "claim": "'A Thousand Years' by Christina Perri peaked at Number 10 on the UK Official Singles Downloads Chart and at Number 13 on the UK Official Singles Sales Chart.",
+    "source": "https://www.officialcharts.com/songs/christina-perri-a-thousand-years/",
+    "source_type": "other",
+    "checked": "2026-11-18",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_303",
+    "claim": "Adele's recording of 'Make You Feel My Love' first entered the UK Official Singles Chart on 25/10/2008 on the XL Recordings label (2008 release year).",
+    "source": "https://www.officialcharts.com/songs/adele-make-you-feel-my-love/",
+    "source_type": "other",
+    "checked": "2026-11-18",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_304",
+    "claim": "Adele's 'Make You Feel My Love' peaked at Number 4 on the UK Official Singles Chart (peak week 09/10/2010) and reached Number 1 on the UK Official Independent Singles Chart.",
+    "source": "https://www.officialcharts.com/songs/adele-make-you-feel-my-love/",
+    "source_type": "other",
+    "checked": "2026-11-18",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_305",
+    "claim": "The Library of Congress National Recording Registry lists 'At Last' (single) by Etta James with the year 1961, in the R&B category.",
+    "source": "https://www.loc.gov/programs/national-recording-preservation-board/recording-registry/complete-national-recording-registry-listing/",
+    "source_type": "government",
+    "checked": "2026-11-18",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_306",
+    "claim": "The Library of Congress FY2009 annual report states Etta James's 'At Last!' was named to the National Recording Registry in June 2009.",
+    "source": "https://www.loc.gov/static/portals/about/reports-and-budgets/documents/annual-reports/fy2009.pdf",
+    "source_type": "government",
+    "checked": "2026-11-18",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_307",
+    "claim": "GRAMMY.com states Rascal Flatts' 'Bless The Broken Road' earned the group a GRAMMY nomination for 2005 for Best Country Performance By A Duo Or Group With Vocal.",
+    "source": "https://www.grammy.com/news/rascal-flatts-grammycom-first-listen/",
+    "source_type": "editorial",
+    "checked": "2026-11-18",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_308",
+    "claim": "Billboard reports Rascal Flatts' 'Bless the Broken Road' spent five weeks at No. 1 on Billboard's Hot Country Songs chart.",
+    "source": "https://www.billboard.com/music/music-news/qa-rascal-flatts-58767/",
+    "source_type": "editorial",
+    "checked": "2026-11-18",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_309",
+    "claim": "Russell Dickerson's official site lists 'Yours' among his No. 1 hits and describes it as 3X Platinum.",
+    "source": "https://www.russelldickerson.com/",
+    "source_type": "other",
+    "checked": "2026-11-18",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_310",
+    "claim": "Billboard describes 'Yours' as Russell Dickerson's debut hit and reports it reached No. 1 on Billboard's Country Airplay chart (two weeks from January 2018).",
+    "source": "https://www.billboard.com/music/chart-beat/russell-dickerson-happen-to-me-number-1-country-airplay-1236065367/",
+    "source_type": "editorial",
+    "checked": "2026-11-18",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_400",
+    "claim": "Britannica describes Lohengrin as an opera by Richard Wagner, first performed on 28 August 1850 at Weimar, given by Franz Liszt.",
+    "source": "https://www.britannica.com/topic/Lohengrin-opera-by-Wagner",
+    "source_type": "editorial",
+    "checked": "2026-11-18",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_401",
+    "claim": "Britannica describes The Four Seasons (Le quattro stagioni) as a group of four violin concerti by Antonio Vivaldi, written about 1720 and published in 1725 (Amsterdam) within Il cimento dell'armonia e dell'inventione; Spring is Concerto No. 1 in E major, in three movements (Allegro, Largo e pianissimo sempre, Allegro).",
+    "source": "https://www.britannica.com/topic/The-Four-Seasons-by-Vivaldi",
+    "source_type": "editorial",
+    "checked": "2026-11-18",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_402",
+    "claim": "Britannica describes Clair de lune as the third movement of Suite bergamasque, a four-movement piano suite by Claude Debussy, begun in 1890 and revised and published in 1905.",
+    "source": "https://www.britannica.com/topic/Clair-de-lune-by-Debussy",
+    "source_type": "editorial",
+    "checked": "2026-11-18",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_403",
+    "claim": "IMSLP lists Franz Schubert's Ave Maria (alternative title Ellens Gesang III / Hymne an die Jungfrau), D.839, Op.52 No.6, for voice and piano, composed April 1825 and first published 1826; text is Adam Storck's German translation after Walter Scott's The Lady of the Lake (1810).",
+    "source": "https://imslp.org/wiki/Ave_Maria,_D.839_(Schubert,_Franz)",
+    "source_type": "editorial",
+    "checked": "2026-11-18",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_404",
+    "claim": "IMSLP lists Edward Elgar's Salut d'amour (Love's Greeting; Liebesgruss), Op.12, for violin and piano, composed 1888, first published 1889 (London: Schott), dedicated to Caroline Alice Elgar.",
+    "source": "https://imslp.org/wiki/Salut_d'amour,_Op.12_(Elgar,_Edward)",
+    "source_type": "editorial",
+    "checked": "2026-11-18",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_500",
+    "claim": "(search-result snippet from imslp.org) Canon and Gigue in D major, P.37 is catalogued by IMSLP as a work by Johann Pachelbel.",
+    "source": "https://imslp.org/wiki/Canon_and_Gigue_in_D_major%2C_P.37_(Pachelbel%2C_Johann)",
+    "source_type": "editorial",
+    "checked": "2026-11-18",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_501",
+    "claim": "(search-result snippet from imslp.org) IMSLP lists the Suite No.3 in D major, BWV 1068 as a work by Johann Sebastian Bach (1685-1750).",
+    "source": "https://ks15.imslp.org/files/imglnks/usimg/1/17/IMSLP357195-PMLP100008-Bach;_Suite_3_D_maj_BWV_1068.pdf",
+    "source_type": "editorial",
+    "checked": "2026-11-18",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_502",
+    "claim": "(search-result snippet from imslp.org) IMSLP lists the chorale 'Jesus bleibet meine Freude' as part of Johann Sebastian Bach's Cantata BWV 147, Herz und Mund und Tat und Leben.",
+    "source": "https://imslp.org/wiki/Cantatas,_BWV_141-150_(Bach,_Johann_Sebastian)",
+    "source_type": "editorial",
+    "checked": "2026-11-18",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_503",
+    "claim": "(search-result snippet from britannica.com) Britannica describes Jeremiah Clarke (born c. 1674, London; died 1 December 1707, London) as an English organist and composer, mainly of religious music.",
+    "source": "https://kids.britannica.com/kids/article/Ernest-John-Moeran/53173/related/main?page=3",
+    "source_type": "editorial",
+    "checked": "2026-11-18",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_504",
+    "claim": "(search-result snippet from imslp.org) IMSLP lists 'Arrival of the Queen of Sheba' as an Act III number in Solomon, HWV 67 by George Frideric Handel.",
+    "source": "https://imslp.org/wiki/Solomon,_HWV_67_(Handel,_George_Frideric)",
+    "source_type": "editorial",
+    "checked": "2026-11-18",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_505",
+    "claim": "(search-result snippet from imslp.org) An IMSLP score identifies the Rondeau as from Suite 1, movement 1 of Jean-Joseph Mouret's (1682-1738) Symphonies de Fanfares.",
+    "source": "https://s9.imslp.org/files/imglnks/usimg/5/57/IMSLP475431-PMLP63368-E185846_etc-WIMA.54f3-MouSco.pdf",
+    "source_type": "editorial",
+    "checked": "2026-11-18",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_506",
+    "claim": "(search-result snippet from imslp.org) IMSLP catalogues Ave Maria, CG 89 under Charles Gounod and states Gounod revised the work into its present form setting the Ave Maria text in 1859.",
+    "source": "https://imslp.org/wiki/Ave_Maria,_CG_89_(Gounod,_Charles)",
+    "source_type": "editorial",
+    "checked": "2026-11-18",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_507",
+    "claim": "(search-result snippet from imslp.org) IMSLP catalogues Trumpet Tune in C major, ZT 678 under Henry Purcell, with composition year 1696.",
+    "source": "https://imslp.org/wiki/Trumpet_Tune_in_C_major,_ZT_678_(Purcell,_Henry)",
+    "source_type": "editorial",
+    "checked": "2026-11-18",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_508",
+    "claim": "(search-result snippet from imslp.org) An IMSLP score identifies Panis Angelicus by Cesar Franck (1822-1890) as an extract from the Messe solennelle, Op. 12, FWV 61, 1860.",
+    "source": "https://s9.imslp.org/files/imglnks/usimg/e/e4/IMSLP593347-PMLP29861-FRANCK_Panis_Angelicus_(arr._S-cl_original).pdf",
+    "source_type": "editorial",
+    "checked": "2026-11-18",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_509",
+    "claim": "(search-result snippet from hymnary.org) Hymnary.org lists Morning Has Broken with author Eleanor Farjeon (1931), place of origin England.",
+    "source": "https://hymnary.org/text/morning_has_broken",
+    "source_type": "editorial",
+    "checked": "2026-11-18",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_510",
+    "claim": "(search-result snippet from hymnary.org) Hymnary.org lists Morning Has Broken (Eleanor Farjeon, 1881-1965) set to the tune BUNESSAN, arranged by David Evans.",
+    "source": "https://hymnary.org/hymn/HOP2015/11",
+    "source_type": "editorial",
+    "checked": "2026-11-18",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_511",
+    "claim": "(search-result snippet from hymnary.org) Hymnary.org lists The Lord's my Shepherd, I'll not want set to the tune CRIMOND, composer Jessie Seymour Irvine (1836-87), arranger David Grant (1833-93).",
+    "source": "https://hymnary.org/hymn/TIS1999/10",
+    "source_type": "editorial",
+    "checked": "2026-11-18",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_600",
+    "claim": "(search-result snippet from music.apple.com) 'Kiss The Rain' is listed as a song by Yiruma (piano) on the album SOLO, release date July 30, 2021.",
+    "source": "https://music.apple.com/us/song/kiss-the-rain/1576663126",
+    "source_type": "other",
+    "checked": "2026-11-18",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_601",
+    "claim": "(search-result snippet from music.apple.com) 'Kiss The Rain' is also listed as an album by Yiruma, dated August 7, 2024, phonographic line '(P) 2026 UMG Recordings, Inc.' (a later release, not the original).",
+    "source": "https://music.apple.com/us/album/kiss-the-rain/1761162569",
+    "source_type": "other",
+    "checked": "2026-11-18",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_602",
+    "claim": "(search-result snippet from music.apple.com) 'River Flows In You' by Yiruma is listed on Apple Music Classical as an Editor's Choice work page showing a Yiruma recording dated 2021; original release year not shown.",
+    "source": "https://classical.music.apple.com/ne/work/yiruma-1978-pp12",
+    "source_type": "other",
+    "checked": "2026-11-18",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_603",
+    "claim": "(search-result snippet from music.apple.com) Ludovico Einaudi's album 'Una Mattina' (Decca) is dated 2004, (P) 2004 Ludovico Einaudi, 13 tracks, and lists 'Nuvole Bianche'.",
+    "source": "https://classical.music.apple.com/us/album/1440762051",
+    "source_type": "other",
+    "checked": "2026-11-18",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_604",
+    "claim": "Ludovico Einaudi's album 'In a Time Lapse' is dated January 1, 2013, 19 songs, (P) 2013 Ludovico Einaudi under exclusive licence to Decca, and names the track 'Experience' (violin solo by Daniel Hope).",
+    "source": "https://music.apple.com/us/album/in-a-time-lapse/1440772612",
+    "source_type": "other",
+    "checked": "2026-11-18",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_605",
+    "claim": "(search-result snippet from music.apple.com) 'Comptine d'un autre ete, l'apres-midi' by Yann Tiersen is listed on the album 'Le Fabuleux destin d'Amelie Poulain (Bande originale du film)', dated April 23, 2001.",
+    "source": "https://music.apple.com/us/song/comptine-dun-autre-%C3%A9t%C3%A9-lapr%C3%A8s-midi/1575400467",
+    "source_type": "other",
+    "checked": "2026-11-18",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_606",
+    "claim": "'Gabriel's Oboe (From \"The Mission\")' is listed by Ennio Morricone with the Czech National Symphony Orchestra on 'Morricone - The Maestro (Secret Morricone)', dated November 11, 2016 (a later recording). The page also lists the album 'The Mission (Original Sound Track from the Film)'; its date was not read.",
+    "source": "https://music.apple.com/ca/song/gabriels-oboe-from-the-mission/1620146577",
+    "source_type": "other",
+    "checked": "2026-11-18",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_607",
+    "claim": "'Love Theme (From \"Cinema Paradiso\")' is listed by Ennio Morricone with the Orchestra dell'Accademia Nazionale di Santa Cecilia on 'Morricone conducts Morricone - His Greatest Hits', dated 1 January 1999 (a later recording); Andrea Morricone is credited as composer.",
+    "source": "https://music.apple.com/bg/song/love-theme-from-cinema-paradiso/1153495154",
+    "source_type": "other",
+    "checked": "2026-11-18",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_608",
+    "claim": "(search-result snippet from music.apple.com) 'Married Life' by Michael Giacchino is listed as a single dated 2024, (P) 2024, and the artist page lists 'Up (Soundtrack from the Motion Picture)'; the original soundtrack release date was not shown.",
+    "source": "https://music.apple.com/us/album/married-life-single/1751993482",
+    "source_type": "other",
+    "checked": "2026-11-18",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_609",
+    "claim": "'Merry-Go-Round of Life (From \"Howl's Moving Castle\")' is listed by Joe Hisaishi with the Royal Philharmonic Orchestra on 'A Symphonic Celebration (Music from the Studio Ghibli Films of Hayao Miyazaki)', dated 31 March 2023 (a later recording).",
+    "source": "https://music.apple.com/gb/song/merry-go-round-of-life-from-howls-moving-castle/1680459417",
+    "source_type": "other",
+    "checked": "2026-11-18",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_610",
+    "claim": "'Arrival of the Birds' by The Cinematic Orchestra is listed on 'The Crimson Wing: Mystery of the Flamingos (Original Soundtrack)', dated 1 January 2008.",
+    "source": "https://music.apple.com/bh/song/arrival-of-the-birds/712881575",
+    "source_type": "other",
+    "checked": "2026-11-18",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_611",
+    "claim": "(search-result snippet from music.apple.com) 'Can't Help Falling In Love' by Elvis Presley is listed on 'Blue Hawaii (Original Soundtrack)', dated October 1, 1961.",
+    "source": "https://music.apple.com/us/song/cant-help-falling-in-love/949550091",
+    "source_type": "other",
+    "checked": "2026-11-18",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_612",
+    "claim": "(search-result snippet from music.apple.com) 'Here Comes the Sun (Take 9)' by The Beatles is listed on 'Abbey Road (Super Deluxe Edition) [2019 Remix & Remaster]', dated 26 September 1969.",
+    "source": "https://music.apple.com/is/song/here-comes-the-sun-take-9/1474834632",
+    "source_type": "other",
+    "checked": "2026-11-18",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_613",
+    "claim": "(search-result snippet from music.apple.com) 'Turning Page - Single' by Sleeping At Last is dated 18 June 2012, (P) 2012 Sleeping At Last; a 'Turning Page (Instrumental)' is listed on 'The Twilight Saga: Breaking Dawn, Pt. 1 (Original Motion Picture Soundtrack)'.",
+    "source": "https://music.apple.com/pe/album/turning-page-single/532884479?l=en-GB",
+    "source_type": "other",
+    "checked": "2026-11-18",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_614",
+    "claim": "Bob Dylan's album 'Time Out of Mind' is dated September 30, 1997, 11 songs, (P) 1997 Sony Music Entertainment Inc., and the album notes name 'Make You Feel My Love' as one of its songs.",
+    "source": "https://music.apple.com/us/album/time-out-of-mind/190392344",
+    "source_type": "other",
+    "checked": "2026-11-18",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_615",
+    "claim": "(search-result snippet from music.apple.com) 'I Choose You' by Sara Bareilles is track 9 on 'The Blessed Unrest', dated 16 July 2013, 12 songs, (P) 2013 Epic Records, a division of Sony Music Entertainment.",
+    "source": "https://music.apple.com/by/album/the-blessed-unrest/1440504715",
+    "source_type": "other",
+    "checked": "2026-11-18",
+    "is_price": false
+   }
+  ],
+  "insider_details": [
+   {
+    "detail": "Amazing Grace is short in common meter and Hymnary.org notes most hymnals print four of Newton's stanzas plus a later anonymous fifth; for a ceremony, agree with the musician which verses to sing so the hymn fits the signing or a reflection moment.",
+    "fact_ids": [
+     "fact_04",
+     "fact_05"
+    ]
+   },
+   {
+    "detail": "Joyful, Joyful, We Adore Thee uses Beethoven's Ode to Joy melody, so it works for guests who don't know hymns: they will recognise the tune even if the words are new. Print the words in the order of service.",
+    "fact_ids": [
+     "fact_07",
+     "fact_08"
+    ]
+   },
+   {
+    "detail": "Be Thou My Vision is sung to an Irish folk tune (SLANE), which suits couples wanting an Irish or Celtic thread in a church ceremony, and is often played slowly; ask the musician to keep the tempo moving so it doesn't drag.",
+    "fact_ids": [
+     "fact_01",
+     "fact_03"
+    ]
+   },
+   {
+    "detail": "If a couple loves 'Perfect' but wants a gentler walk, the Official Charts Company lists duet versions with Beyoncé and with Andrea Bocelli, so check which recording the musicians or DJ will play before the day.",
+    "fact_ids": [
+     "fact_103"
+    ]
+   }
+  ],
+  "quotes": [],
+  "real_weddings": [],
+  "verify_items": [
+   "[[VERIFY: exact title, composer, year or era and parent work for Pachelbel Canon in D; not sourced in batch A]]",
+   "[[VERIFY: exact title, composer, year or era and parent work for Wagner Bridal Chorus (Lohengrin); not sourced in batch A]]",
+   "[[VERIFY: exact title, composer, year or era and parent work for Mendelssohn Wedding March (A Midsummer Night's Dream); not sourced in batch A]]",
+   "[[VERIFY: exact title, composer, year or era and parent work for Clarke Prince of Denmark's March (Trumpet Voluntary); not sourced in batch A]]",
+   "[[VERIFY: exact title, composer, year or era and parent work for Handel Arrival of the Queen of Sheba (Solomon); not sourced in batch A]]",
+   "[[VERIFY: exact title, composer, year or era and parent work for Handel Water Music (Air or Hornpipe); not sourced in batch A]]",
+   "[[VERIFY: exact title, composer, year or era and parent work for Bach Air on the G String (Orchestral Suite No. 3); not sourced in batch A]]",
+   "[[VERIFY: exact title, composer, year or era and parent work for Bach Jesu, Joy of Man's Desiring (BWV 147); not sourced in batch A]]",
+   "[[VERIFY: exact title, composer, year or era and parent work for Bach Sheep May Safely Graze (BWV 208); not sourced in batch A]]",
+   "[[VERIFY: exact title, composer, year or era and parent work for Schubert Ave Maria; not sourced in batch A]]",
+   "[[VERIFY: exact title, composer, year or era and parent work for Bach/Gounod Ave Maria; not sourced in batch A]]",
+   "[[VERIFY: exact title, composer, year or era and parent work for Debussy Clair de Lune; not sourced in batch A]]",
+   "[[VERIFY: exact title, composer, year or era and parent work for Vivaldi Spring (The Four Seasons); not sourced in batch A]]",
+   "[[VERIFY: exact title, composer, year or era and parent work for Purcell Trumpet Tune; not sourced in batch A]]",
+   "[[VERIFY: exact title, composer, year or era and parent work for Mouret Rondeau; not sourced in batch A]]",
+   "[[VERIFY: exact title, composer, year or era and parent work for Charpentier Te Deum prelude; not sourced in batch A]]",
+   "[[VERIFY: exact title, composer, year or era and parent work for Elgar Salut d'Amour; not sourced in batch A]]",
+   "[[VERIFY: exact title, composer, year or era and parent work for Satie Gymnopedie No. 1; not sourced in batch A]]",
+   "[[VERIFY: exact title, composer, year or era and parent work for Morning Has Broken (hymn); not sourced in batch A]]",
+   "[[VERIFY: exact title, composer, year or era and parent work for Love Divine, All Loves Excelling (hymn); not sourced in batch A]]",
+   "[[VERIFY: release year of Etta James 'At Last' not stated on Britannica page (fact_104 gives Chess signing 1960 only)]]",
+   "[[VERIFY: title, artist/composer and release year for Yiruma 'River Flows in You' not read from an official artist, label, chart, award or Britannica source]]",
+   "[[VERIFY: title, artist/composer and release year for Ludovico Einaudi 'Nuvole Bianche' (official site discography URL returned 404) not read from an official artist, label, chart, award or Britannica source]]",
+   "[[VERIFY: title, artist/composer and release year for Ludovico Einaudi 'Una Mattina' not read from an official artist, label, chart, award or Britannica source]]",
+   "[[VERIFY: title, artist/composer and release year for Max Richter 'On the Nature of Daylight' not read from an official artist, label, chart, award or Britannica source]]",
+   "[[VERIFY: title, artist/composer and release year for Ennio Morricone 'Gabriel's Oboe' (The Mission; search returned only social posts) not read from an official artist, label, chart, award or Britannica source]]",
+   "[[VERIFY: title, artist/composer and release year for Alexandre Desplat / Thomas Newman / John Williams / Hans Zimmer / Rachel Portman themes not read from an official artist, label, chart, award or Britannica source]]",
+   "[[VERIFY: title, artist/composer and release year for Christina Perri 'A Thousand Years' (and piano versions) not read from an official artist, label, chart, award or Britannica source]]",
+   "[[VERIFY: title, artist/composer and release year for John Legend 'All of Me' not read from an official artist, label, chart, award or Britannica source]]",
+   "[[VERIFY: title, artist/composer and release year for Elvis Presley 'Can't Help Falling in Love' not read from an official artist, label, chart, award or Britannica source]]",
+   "[[VERIFY: title, artist/composer and release year for Train 'Marry Me' not read from an official artist, label, chart, award or Britannica source]]",
+   "[[VERIFY: title, artist/composer and release year for 'Bless the Broken Road' (performer to confirm) not read from an official artist, label, chart, award or Britannica source]]",
+   "[[VERIFY: title, artist/composer and release year for Bruno Mars 'Marry You' not read from an official artist, label, chart, award or Britannica source]]",
+   "[[VERIFY: title, artist/composer and release year for Coldplay 'Yellow' not read from an official artist, label, chart, award or Britannica source]]",
+   "[[VERIFY: title, artist/composer and release year for Lana Del Rey 'Young and Beautiful' not read from an official artist, label, chart, award or Britannica source]]",
+   "[[VERIFY: title, artist/composer and release year for Calum Scott 'You Are the Reason' not read from an official artist, label, chart, award or Britannica source]]",
+   "[[VERIFY: title, artist/composer and release year for Shania Twain 'From This Moment On' not read from an official artist, label, chart, award or Britannica source]]",
+   "[[VERIFY: title, artist/composer and release year for Jason Mraz 'I Won't Give Up' not read from an official artist, label, chart, award or Britannica source]]",
+   "[[VERIFY: title, artist/composer and release year for Sara Bareilles (song to choose) not read from an official artist, label, chart, award or Britannica source]]",
+   "[[VERIFY: title, artist/composer and release year for Taylor Swift 'Lover' not read from an official artist, label, chart, award or Britannica source]]",
+   "[[VERIFY: title, artist/composer and release year for Andrea Bocelli 'Con te partirò' not read from an official artist, label, chart, award or Britannica source]]",
+   "[[VERIFY: title, artist/composer and release year for Florence + the Machine (song to choose) not read from an official artist, label, chart, award or Britannica source]]",
+   "[[VERIFY: title, artist/composer and release year for Ben E. King 'Stand by Me' (Britannica fetch timed out) not read from an official artist, label, chart, award or Britannica source]]",
+   "[[VERIFY: Yiruma 'River Flows in You': album (First Love?) and year (2001?) not read from an official artist, label, chart or Britannica source]]",
+   "[[VERIFY: Yiruma 'Kiss the Rain': title, album and year not sourced]]",
+   "[[VERIFY: Ludovico Einaudi 'Nuvole Bianche': album (Una Mattina?) and year (2004?) not read from Decca or the composer's official site]]",
+   "[[VERIFY: Ludovico Einaudi 'Experience': album (In a Time Lapse?) and year (2013?) not read from Decca or the composer's official site]]",
+   "[[VERIFY: Yann Tiersen as composer of 'Comptine d'un autre été, l'après-midi' and its use in Amélie (2001 film, fact_202) not confirmed by an authoritative page]]",
+   "[[VERIFY: Ennio Morricone 'Gabriel's Oboe' from The Mission (1986?) not sourced; Britannica page (fact_203) does not list it]]",
+   "[[VERIFY: Ennio Morricone 'Love Theme' from Cinema Paradiso (1988?) and its credited composer(s) not sourced]]",
+   "[[VERIFY: 'Married Life' as a track title on Giacchino's Up score not confirmed (Oscar win only, fact_200)]]",
+   "[[VERIFY: Joe Hisaishi 'Merry-Go-Round of Life' from Howl's Moving Castle (2004?) not sourced; Britannica has no Hisaishi page]]",
+   "[[VERIFY: The Cinematic Orchestra 'Arrival of the Birds': album and year not read from Ninja Tune or other official source]]",
+   "[[VERIFY: Etta James 'At Last' release year. LoC registry listing says 1961; widely cited as 1960. Also LoC listing shows a 2008 selection column vs annual report 'named June 2009'.]]",
+   "[[VERIFY: Elvis Presley 'Can't Help Falling in Love' title, release year (1961?) and chart fact; Official Charts page returned no chart data.]]",
+   "[[VERIFY: The Beatles 'Here Comes the Sun' (Abbey Road, 1969?) not sourced; Official Charts URL 404.]]",
+   "[[VERIFY: Sleeping at Last 'Turning Page' artist, writer and release year (2011?) not sourced.]]",
+   "[[VERIFY: Bob Dylan 'Make You Feel My Love' original release (Time Out of Mind, 1997?) not sourced; only Adele's 2008 recording sourced.]]",
+   "[[VERIFY: Sara Evans 'I Choose You' or brief-named version not sourced.]]",
+   "[[VERIFY: Rascal Flatts 'Bless the Broken Road' release year and writers not sourced; Billboard snippet also mentions an award ('named best...') not confirmed.]]",
+   "[[VERIFY: Russell Dickerson 'Yours' release year not sourced; Billboard 'Yours' Country Airplay No. 1 detail taken from search snippet, re-read page.]]",
+   "[[VERIFY: Pachelbel Canon in D: title, composer/author, year and parent work not yet sourced (Britannica /topic/Canon-in-D returned 404)]]",
+   "[[VERIFY: Bach Air (Orchestral Suite No. 3, BWV 1068): title, composer/author, year and parent work not yet sourced (not fetched in fast-mode round)]]",
+   "[[VERIFY: Bach Jesu, Joy of Man's Desiring (BWV 147): title, composer/author, year and parent work not yet sourced (not fetched)]]",
+   "[[VERIFY: Jeremiah Clarke Prince of Denmark's March: title, composer/author, year and parent work not yet sourced (not fetched)]]",
+   "[[VERIFY: Handel Arrival of the Queen of Sheba (Solomon): title, composer/author, year and parent work not yet sourced (not fetched)]]",
+   "[[VERIFY: Mouret Rondeau (Suite de symphonies): title, composer/author, year and parent work not yet sourced (not fetched)]]",
+   "[[VERIFY: Bach/Gounod Ave Maria: title, composer/author, year and parent work not yet sourced (not fetched)]]",
+   "[[VERIFY: Purcell Trumpet Tune: title, composer/author, year and parent work not yet sourced (not fetched)]]",
+   "[[VERIFY: Franck Panis Angelicus: title, composer/author, year and parent work not yet sourced (not fetched)]]",
+   "[[VERIFY: Morning Has Broken (Eleanor Farjeon, BUNESSAN): title, composer/author, year and parent work not yet sourced (Hymnary fetch timed out)]]",
+   "[[VERIFY: Love Divine, All Loves Excelling (Charles Wesley): title, composer/author, year and parent work not yet sourced (Hymnary fetch returned unsupported content type (415) for text format)]]",
+   "[[VERIFY: The Lord's My Shepherd (CRIMOND): title, composer/author, year and parent work not yet sourced (Hymnary fetch timed out)]]",
+   "[[VERIFY: Wagner Bridal Chorus: title, composer/author, year and parent work not yet sourced (Britannica Lohengrin page confirms opera and 1850 premiere but does not name the Bridal Chorus or its act)]]",
+   "[[VERIFY: Love Divine, All Loves Excelling: author (Charles Wesley) and year not sourced; Hymnary search snippets showed only hymnal entries, no author line]]",
+   "[[VERIFY: Facts fact_500 to fact_511 rest on search-result snippets from IMSLP, Britannica and Hymnary; pages not fetched in fast mode. Orchestrator to judge or re-fetch.]]",
+   "[[VERIFY: Pachelbel Canon composition year not sourced (IMSLP snippet gives title, composer and catalogue number only)]]",
+   "[[VERIFY: Bach Air: IMSLP snippet confirms Suite No.3 BWV 1068 but does not name the Air movement or a year]]",
+   "[[VERIFY: Yiruma 'River Flows in You' original album and release year not sourced; only a 2021 Apple Music Classical listing.]]",
+   "[[VERIFY: Yiruma 'Kiss the Rain' original release year; Apple Music shows SOLO (2021) and a 2024 album only, both later than the original.]]",
+   "[[VERIFY: Ennio Morricone 'Gabriel's Oboe' original release date of The Mission soundtrack not read; only a 2016 re-recording sourced.]]",
+   "[[VERIFY: Cinema Paradiso love theme original soundtrack date not sourced; only a 1999 recording. Credit lists Andrea Morricone as composer; confirm credit wording.]]",
+   "[[VERIFY: Michael Giacchino 'Married Life' Up soundtrack original release date not sourced; only a 2024 single.]]",
+   "[[VERIFY: Joe Hisaishi 'Merry-Go-Round of Life' original Howl's Moving Castle soundtrack date not sourced; only a 2023 recording.]]",
+   "[[VERIFY: 'Here Comes the Sun' date taken from a Take 9 (2019 Super Deluxe) snippet; confirm on the standard Abbey Road album page.]]"
+  ],
+  "needs_signoff": [],
+  "must_include_coverage": [
+   {
+    "item": "Be Thou My Vision",
+    "covered_by": [
+     "fact_01",
+     "fact_02",
+     "fact_03"
+    ]
+   },
+   {
+    "item": "Amazing Grace (John Newton)",
+    "covered_by": [
+     "fact_04",
+     "fact_05",
+     "fact_06"
+    ]
+   },
+   {
+    "item": "Joyful, Joyful, We Adore Thee (Ode to Joy tune)",
+    "covered_by": [
+     "fact_07",
+     "fact_08",
+     "fact_09"
+    ]
+   },
+   {
+    "item": "Pachelbel Canon in D",
+    "covered_by": [
+     "[[VERIFY: exact title, composer, year or era and parent work for Pachelbel Canon in D; not sourced in batch A]]"
+    ]
+   },
+   {
+    "item": "Wagner Bridal Chorus (Lohengrin)",
+    "covered_by": [
+     "[[VERIFY: exact title, composer, year or era and parent work for Wagner Bridal Chorus (Lohengrin); not sourced in batch A]]"
+    ]
+   },
+   {
+    "item": "Mendelssohn Wedding March (A Midsummer Night's Dream)",
+    "covered_by": [
+     "[[VERIFY: exact title, composer, year or era and parent work for Mendelssohn Wedding March (A Midsummer Night's Dream); not sourced in batch A]]"
+    ]
+   },
+   {
+    "item": "Clarke Prince of Denmark's March (Trumpet Voluntary)",
+    "covered_by": [
+     "[[VERIFY: exact title, composer, year or era and parent work for Clarke Prince of Denmark's March (Trumpet Voluntary); not sourced in batch A]]"
+    ]
+   },
+   {
+    "item": "Handel Arrival of the Queen of Sheba (Solomon)",
+    "covered_by": [
+     "[[VERIFY: exact title, composer, year or era and parent work for Handel Arrival of the Queen of Sheba (Solomon); not sourced in batch A]]"
+    ]
+   },
+   {
+    "item": "Handel Water Music (Air or Hornpipe)",
+    "covered_by": [
+     "[[VERIFY: exact title, composer, year or era and parent work for Handel Water Music (Air or Hornpipe); not sourced in batch A]]"
+    ]
+   },
+   {
+    "item": "Bach Air on the G String (Orchestral Suite No. 3)",
+    "covered_by": [
+     "[[VERIFY: exact title, composer, year or era and parent work for Bach Air on the G String (Orchestral Suite No. 3); not sourced in batch A]]"
+    ]
+   },
+   {
+    "item": "Bach Jesu, Joy of Man's Desiring (BWV 147)",
+    "covered_by": [
+     "[[VERIFY: exact title, composer, year or era and parent work for Bach Jesu, Joy of Man's Desiring (BWV 147); not sourced in batch A]]"
+    ]
+   },
+   {
+    "item": "Bach Sheep May Safely Graze (BWV 208)",
+    "covered_by": [
+     "[[VERIFY: exact title, composer, year or era and parent work for Bach Sheep May Safely Graze (BWV 208); not sourced in batch A]]"
+    ]
+   },
+   {
+    "item": "Schubert Ave Maria",
+    "covered_by": [
+     "[[VERIFY: exact title, composer, year or era and parent work for Schubert Ave Maria; not sourced in batch A]]"
+    ]
+   },
+   {
+    "item": "Bach/Gounod Ave Maria",
+    "covered_by": [
+     "[[VERIFY: exact title, composer, year or era and parent work for Bach/Gounod Ave Maria; not sourced in batch A]]"
+    ]
+   },
+   {
+    "item": "Debussy Clair de Lune",
+    "covered_by": [
+     "[[VERIFY: exact title, composer, year or era and parent work for Debussy Clair de Lune; not sourced in batch A]]"
+    ]
+   },
+   {
+    "item": "Vivaldi Spring (The Four Seasons)",
+    "covered_by": [
+     "[[VERIFY: exact title, composer, year or era and parent work for Vivaldi Spring (The Four Seasons); not sourced in batch A]]"
+    ]
+   },
+   {
+    "item": "Purcell Trumpet Tune",
+    "covered_by": [
+     "[[VERIFY: exact title, composer, year or era and parent work for Purcell Trumpet Tune; not sourced in batch A]]"
+    ]
+   },
+   {
+    "item": "Mouret Rondeau",
+    "covered_by": [
+     "[[VERIFY: exact title, composer, year or era and parent work for Mouret Rondeau; not sourced in batch A]]"
+    ]
+   },
+   {
+    "item": "Charpentier Te Deum prelude",
+    "covered_by": [
+     "[[VERIFY: exact title, composer, year or era and parent work for Charpentier Te Deum prelude; not sourced in batch A]]"
+    ]
+   },
+   {
+    "item": "Elgar Salut d'Amour",
+    "covered_by": [
+     "[[VERIFY: exact title, composer, year or era and parent work for Elgar Salut d'Amour; not sourced in batch A]]"
+    ]
+   },
+   {
+    "item": "Satie Gymnopedie No. 1",
+    "covered_by": [
+     "[[VERIFY: exact title, composer, year or era and parent work for Satie Gymnopedie No. 1; not sourced in batch A]]"
+    ]
+   },
+   {
+    "item": "Morning Has Broken (hymn)",
+    "covered_by": [
+     "[[VERIFY: exact title, composer, year or era and parent work for Morning Has Broken (hymn); not sourced in batch A]]"
+    ]
+   },
+   {
+    "item": "Love Divine, All Loves Excelling (hymn)",
+    "covered_by": [
+     "[[VERIFY: exact title, composer, year or era and parent work for Love Divine, All Loves Excelling (hymn); not sourced in batch A]]"
+    ]
+   },
+   {
+    "item": "Instrumental processional songs (title, composer, year)",
+    "covered_by": [
+     "[[VERIFY: title, artist/composer and release year for Yiruma 'River Flows in You' not read from an official artist, label, chart, award or Britannica source]]",
+     "[[VERIFY: title, artist/composer and release year for Ludovico Einaudi 'Nuvole Bianche' (official site discography URL returned 404) not read from an official artist, label, chart, award or Britannica source]]",
+     "[[VERIFY: title, artist/composer and release year for Ludovico Einaudi 'Una Mattina' not read from an official artist, label, chart, award or Britannica source]]",
+     "[[VERIFY: title, artist/composer and release year for Max Richter 'On the Nature of Daylight' not read from an official artist, label, chart, award or Britannica source]]",
+     "[[VERIFY: title, artist/composer and release year for Ennio Morricone 'Gabriel's Oboe' (The Mission; search returned only social posts) not read from an official artist, label, chart, award or Britannica source]]",
+     "[[VERIFY: title, artist/composer and release year for Alexandre Desplat / Thomas Newman / John Williams / Hans Zimmer / Rachel Portman themes not read from an official artist, label, chart, award or Britannica source]]"
+    ]
+   },
+   {
+    "item": "Modern processional songs (title, artist, year)",
+    "covered_by": [
+     "fact_100",
+     "fact_101",
+     "fact_102",
+     "fact_104",
+     "[[VERIFY: title, artist/composer and release year for Christina Perri 'A Thousand Years' (and piano versions) not read from an official artist, label, chart, award or Britannica source]]",
+     "[[VERIFY: title, artist/composer and release year for John Legend 'All of Me' not read from an official artist, label, chart, award or Britannica source]]",
+     "[[VERIFY: title, artist/composer and release year for Elvis Presley 'Can't Help Falling in Love' not read from an official artist, label, chart, award or Britannica source]]",
+     "[[VERIFY: title, artist/composer and release year for Train 'Marry Me' not read from an official artist, label, chart, award or Britannica source]]",
+     "[[VERIFY: title, artist/composer and release year for 'Bless the Broken Road' (performer to confirm) not read from an official artist, label, chart, award or Britannica source]]",
+     "[[VERIFY: title, artist/composer and release year for Bruno Mars 'Marry You' not read from an official artist, label, chart, award or Britannica source]]",
+     "[[VERIFY: title, artist/composer and release year for Coldplay 'Yellow' not read from an official artist, label, chart, award or Britannica source]]",
+     "[[VERIFY: title, artist/composer and release year for Lana Del Rey 'Young and Beautiful' not read from an official artist, label, chart, award or Britannica source]]",
+     "[[VERIFY: title, artist/composer and release year for Calum Scott 'You Are the Reason' not read from an official artist, label, chart, award or Britannica source]]",
+     "[[VERIFY: title, artist/composer and release year for Shania Twain 'From This Moment On' not read from an official artist, label, chart, award or Britannica source]]",
+     "[[VERIFY: title, artist/composer and release year for Jason Mraz 'I Won't Give Up' not read from an official artist, label, chart, award or Britannica source]]",
+     "[[VERIFY: title, artist/composer and release year for Sara Bareilles (song to choose) not read from an official artist, label, chart, award or Britannica source]]",
+     "[[VERIFY: title, artist/composer and release year for Taylor Swift 'Lover' not read from an official artist, label, chart, award or Britannica source]]",
+     "[[VERIFY: title, artist/composer and release year for Andrea Bocelli 'Con te partirò' not read from an official artist, label, chart, award or Britannica source]]",
+     "[[VERIFY: title, artist/composer and release year for Florence + the Machine (song to choose) not read from an official artist, label, chart, award or Britannica source]]",
+     "[[VERIFY: title, artist/composer and release year for Ben E. King 'Stand by Me' (Britannica fetch timed out) not read from an official artist, label, chart, award or Britannica source]]"
+    ]
+   },
+   {
+    "item": "Instrumental processional songs (title, composer, year)",
+    "covered_by": [
+     "fact_200",
+     "fact_201",
+     "fact_202",
+     "fact_203",
+     "[[VERIFY: Yiruma 'River Flows in You': album (First Love?) and year (2001?) not read from an official artist, label, chart or Britannica source]]",
+     "[[VERIFY: Yiruma 'Kiss the Rain': title, album and year not sourced]]",
+     "[[VERIFY: Ludovico Einaudi 'Nuvole Bianche': album (Una Mattina?) and year (2004?) not read from Decca or the composer's official site]]",
+     "[[VERIFY: Ludovico Einaudi 'Experience': album (In a Time Lapse?) and year (2013?) not read from Decca or the composer's official site]]",
+     "[[VERIFY: Yann Tiersen as composer of 'Comptine d'un autre été, l'après-midi' and its use in Amélie (2001 film, fact_202) not confirmed by an authoritative page]]",
+     "[[VERIFY: Ennio Morricone 'Gabriel's Oboe' from The Mission (1986?) not sourced; Britannica page (fact_203) does not list it]]",
+     "[[VERIFY: Ennio Morricone 'Love Theme' from Cinema Paradiso (1988?) and its credited composer(s) not sourced]]",
+     "[[VERIFY: 'Married Life' as a track title on Giacchino's Up score not confirmed (Oscar win only, fact_200)]]",
+     "[[VERIFY: Joe Hisaishi 'Merry-Go-Round of Life' from Howl's Moving Castle (2004?) not sourced; Britannica has no Hisaishi page]]",
+     "[[VERIFY: The Cinematic Orchestra 'Arrival of the Birds': album and year not read from Ninja Tune or other official source]]"
+    ]
+   }
+  ]
+ }
 }
