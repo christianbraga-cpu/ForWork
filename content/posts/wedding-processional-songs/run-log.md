@@ -12,3 +12,4 @@
 06:41 06 editor 4.29 pass_with_edits, 6 edits applied (church rule, venue claim, 3 cut-off sentences, Elvis year).
 06:43 07b panel revise (enquire 1.2), 2 must-fix.
 06:43 08 final copy done (~3,250 words, 40 songs), 2 must-fix applied.
+06:45 06b final check: 5 fixes applied and confirmed (church and hymn context claims trimmed to facts); CRO and distribution done.

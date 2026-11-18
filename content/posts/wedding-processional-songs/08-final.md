@@ -104,7 +104,7 @@ Elgar composed Salut d'amour for violin and piano in 1888 and dedicated it to Ca
 
 *Suits:* the couple, with a string trio or quartet.
 
-### 10. Rondeau (from Suite de symphonies), Jean-Joseph Mouret
+### 10. Rondeau (from Symphonies de Fanfares), Jean-Joseph Mouret
 
 The Rondeau is the first movement of Suite 1 of Jean-Joseph Mouret's Symphonies de Fanfares. <!-- fact_505 --> Its fanfare opening announces an entrance clearly, and it works on trumpet and organ or as a brass ensemble piece.
 
@@ -112,7 +112,7 @@ The Rondeau is the first movement of Suite 1 of Jean-Joseph Mouret's Symphonies 
 
 ## What can you walk down the aisle to in a church?
 
-Hymns and sacred pieces sit comfortably in a church service, and many can be played by the organist without rehearsal. Ask your officiant or music director early whether a particular piece, or any secular song, suits your service.
+Hymns and sacred pieces sit comfortably in a church service. Ask your officiant or music director early whether a particular piece, or any secular song, suits your service.
 
 <!-- IMAGE SLOT church: Real, licensed photo of a chapel or church aisle dressed for a wedding, pews and altar visible, empty or with consenting guests, soft daylight. Church named and permission for interior use confirmed. Never AI. -->
 
@@ -138,7 +138,7 @@ Purcell's Trumpet Tune in C major dates from 1696. <!-- fact_507 --> It is short
 
 Panis Angelicus is an extract from Franck's Messe solennelle, 1860. <!-- fact_508 --> It is calm and lyrical, for voice or strings.
 
-*Suits:* the wedding party, in Catholic ceremonies; ask your officiant or music director.
+*Suits:* the wedding party, in a church ceremony; ask your officiant or music director.
 
 ### 15. Amazing Grace, words by John Newton
 
@@ -160,7 +160,7 @@ Eleanor Farjeon wrote the words in 1931, <!-- fact_509 --> and the hymn is sung 
 
 ### 18. Love Divine, All Loves Excelling
 
-A hymn many congregations know, <!-- fact_702 --> it has a broad, singable melody. Suggest it to your music director if you want guests to sing as the wedding party enters.
+This hymn <!-- fact_702 --> has a broad, singable melody. Suggest it to your music director if you want guests to sing as the wedding party enters.
 
 *Suits:* the wedding party, as a hymn the congregation can sing.
 
@@ -174,7 +174,7 @@ Henry van Dyke wrote these words in 1907 <!-- fact_07 --> to be sung to Beethove
 
 The tune Crimond is by Jessie Seymour Irvine. <!-- fact_511 --> It is steady and dignified, for organ or congregation.
 
-*Suits:* the wedding party, in Scottish or Presbyterian ceremonies.
+*Suits:* the wedding party, with organ or a congregation singing.
 
 ## Which instrumental songs work for the processional?
 
