@@ -1,0 +1,101 @@
+{
+  "agent": "cro-specialist",
+  "task_id": "bali-wedding-venues",
+  "stage": "09",
+  "status": "complete",
+  "round": 1,
+  "inputs_used": [
+    "CLAUDE.md",
+    "content/posts/bali-wedding-venues/01-brief.json",
+    "content/posts/bali-wedding-venues/07-panel.json (cta_reaction)",
+    "content/posts/bali-wedding-venues/08-final.md",
+    "content-system/brand/brand-facts.md",
+    "content/posts/getting-married-in-brazil/09-cro.json (format model)"
+  ],
+  "self_qa": {
+    "checks": [
+      {
+        "check": "Primary CTA 6 words or fewer, no 'click here', no exclamation mark",
+        "pass": true,
+        "note": "'Confirm it through Wedded Concierge' (5 words), matching the existing anchor on line 287."
+      },
+      {
+        "check": "utm_content primary, secondary, closing, magnet each appear exactly once",
+        "pass": true,
+        "note": "Checked by grep on 08-final.md: 4 UTM links in total, 1 each."
+      },
+      {
+        "check": "UTMs only on /wonderland-concierge (3) and /magazine (1)",
+        "pass": true
+      },
+      {
+        "check": "/wonderland-concierge anchors name Wedded Concierge",
+        "pass": true,
+        "note": "Primary line 287 'Wedded Concierge'; secondary line 319 'see real options with Wedded Concierge'; closing line 376 'shortlist your Bali venues through Wedded Concierge'."
+      },
+      {
+        "check": "CTA copy only from brand facts claims: single point of contact, inclusions in writing, time zone and AUD quotes, fee agreed in writing before work begins",
+        "pass": true,
+        "note": "No figures or prices in any CTA text or subtext."
+      },
+      {
+        "check": "No 'free' or no-cost wording, perks, Wedded Privileges, availability promises, em dashes; Australian English; 08-final.md not edited",
+        "pass": true,
+        "note": "08-final.md has no <!-- CTA: ... --> markers and none were added."
+      }
+    ],
+    "confidence": 0.85
+  },
+  "open_questions": [
+    {
+      "to": "orchestrator",
+      "question": "08-final.md contains no <!-- CTA: primary --> marker; placements rely on the existing inline links.",
+      "blocking": false
+    }
+  ],
+  "assumptions": [
+    "FAST MODE: persona cta_reactions read in summary only; placements follow the existing inline links and the getting-married-in-brazil model."
+  ],
+  "verify_items": [],
+  "tools_used": [
+    "Bash (grep, python3 -I)"
+  ],
+  "payload": {
+    "journey_stage": "comparing",
+    "primary_cta": {
+      "text": "Confirm it through Wedded Concierge",
+      "subtext": "Your Wedded Advisor confirms inclusions in writing before you sign.",
+      "link": "https://weddedwonderland.com/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=bali-wedding-venues&utm_content=primary",
+      "placement": "Existing inline link closing 'Security and privacy: questions for any couple' (line 287, anchor 'Wedded Concierge'), right after the like-for-like comparison and the 'Not published' questions to ask each venue, where the reader's open question peaks. Unchanged."
+    },
+    "secondary_cta": {
+      "text": "See real options with Wedded Concierge",
+      "subtext": "One Wedded Advisor weighs venues, dates and travel side by side.",
+      "link": "https://weddedwonderland.com/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=bali-wedding-venues&utm_content=secondary",
+      "placement": "Existing line in 'How do guests get to Bali and between the areas?' (line 319, anchor 'see real options with Wedded Concierge'), once areas and travel are covered. Unchanged."
+    },
+    "lead_magnet": {
+      "name": "Wedded Wonderland magazine",
+      "link": "https://weddedwonderland.com/magazine?utm_source=blog&utm_medium=content&utm_campaign=bali-wedding-venues&utm_content=magnet",
+      "placement": "Existing closing line of 'Which part of Bali suits your wedding?' (line 301), for readers still gathering ideas before they enquire. Unchanged.",
+      "exists": true
+    },
+    "closing_cta": {
+      "text": "Shortlist your Bali venues",
+      "subtext": "Quotes in AUD, in your time zone, with the fee agreed in writing before any work begins.",
+      "link": "https://weddedwonderland.com/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=bali-wedding-venues&utm_content=closing",
+      "placement": "Existing closing paragraph under 'Shortlist your Bali venues with a Wedded Advisor' (line 376, anchor 'shortlist your Bali venues through Wedded Concierge'). Unchanged."
+    },
+    "tracking": [
+      "https://weddedwonderland.com/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=bali-wedding-venues&utm_content=primary",
+      "https://weddedwonderland.com/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=bali-wedding-venues&utm_content=secondary",
+      "https://weddedwonderland.com/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=bali-wedding-venues&utm_content=closing",
+      "https://weddedwonderland.com/magazine?utm_source=blog&utm_medium=content&utm_campaign=bali-wedding-venues&utm_content=magnet"
+    ],
+    "copy_changes": [],
+    "rationale": "Brief journey_stage is 'comparing': the couple is weighing Bali venues and areas, so the primary invitation sits straight after the like-for-like comparison and the list of details venues do not publish, where the reader most needs answers in writing. The secondary follows areas and travel, the magazine serves earlier-stage readers, and the closing CTA ends the post. Each subtext carries one brand-facts reassurance: inclusions in writing (primary), single point of contact (secondary), AUD quotes, time zone and fee in writing (closing). No figures, 'free', perks, Privileges or availability wording. All four tracked links already appear once each with correct UTMs, so no copy change is made. A printable Bali venue comparison checklist would be a better-matched magnet; none is known to exist, so it is a backlog suggestion only and not placed."
+  },
+  "next_agent": [
+    "distribution"
+  ]
+}
