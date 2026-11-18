@@ -1,0 +1,277 @@
+{
+ "agent": "planner-sme",
+ "task_id": "best-time-to-get-married-in-bali",
+ "stage": "03",
+ "status": "complete",
+ "round": 1,
+ "inputs_used": [
+  "mcp__Apify__apify--web-fetch, 18 November 2026: https://www.kemenkopmk.go.id/pemerintah-tetapkan-18-hari-libur-nasional-dan-8-cuti-bersama-tahun-2027 (200)",
+  "mcp__Apify__apify--web-search, 18 November 2026: SKB 2027 holidays (kemenkopmk.go.id found), Nyepi traveller notice on .go.id (not found), Galungan/Kuningan 2027 on Bali .go.id (not found)",
+  "content/posts/bali-wedding-venues/03-source-pack.json (fact_310, fact_311, fact_313, fact_314, fact_04, fact_102, fact_106, fact_112, fact_202, fact_401, fact_514 copied as fact_103 to fact_113)",
+  "content/posts/seminyak-wedding-venues/03-source-pack.json (fact_15 copied as fact_114)"
+ ],
+ "self_qa": {
+  "checks": [
+   {
+    "check": "Every fact has a source and date",
+    "pass": true
+   },
+   {
+    "check": "No price without a source; all prices in needs_signoff",
+    "pass": true,
+    "note": "No amounts recorded."
+   },
+   {
+    "check": "Every must-include covered or [[VERIFY]]",
+    "pass": true,
+    "note": "Batch B: dates, Smartraveller, venue wet-season options; Nyepi travel rules and Galungan are verify items."
+   },
+   {
+    "check": "No invented quotes, statistics or real weddings",
+    "pass": true
+   }
+  ],
+  "confidence": 0.7
+ },
+ "open_questions": [
+  {
+   "to": "orchestrator",
+   "question": "No official Bali government or airport page on Nyepi traveller rules was read; source one or keep the article to the holiday date only.",
+   "blocking": false
+  },
+  {
+   "to": "orchestrator",
+   "question": "Galungan and Kuningan 2027 dates have no official Bali government source yet; omit specific dates or source them.",
+   "blocking": false
+  }
+ ],
+ "assumptions": [
+  "Live facts dated 2026-11-18 (read date); copied facts keep their original 2026-11-03 dates.",
+  "No same-sex position recorded, by instruction.",
+  "Fast mode: one read round, no retries."
+ ],
+ "verify_items": [
+  "[[VERIFY: what Nyepi (8 March 2027) means for travellers in Bali, e.g. Ngurah Rai airport closure and guests staying inside hotels, from a Bali Provincial Government or airport operator (InJourney Airports) page; searches on 18 November 2026 found no official traveller notice.]]",
+  "[[VERIFY: 2027 Galungan and Kuningan dates from a Bali government (baliprov.go.id or regency .go.id) page; none found on 18 November 2026.]]",
+  "[[VERIFY: Idul Fitri (10 to 11 March 2027) and Idul Adha (17 May 2027) dates are subject to a later Minister of Religious Affairs decision; recheck before publishing.]]"
+ ],
+ "tools_used": [
+  "mcp__Apify__apify--web-fetch",
+  "mcp__Apify__apify--web-search",
+  "Bash"
+ ],
+ "next_agent": [
+  "luxury-writer"
+ ],
+ "payload": {
+  "facts": [
+   {
+    "fact_id": "fact_100",
+    "claim": "Kemenko PMK (Indonesian Coordinating Ministry for Human Development and Culture), press release of 16 September 2026: the Government set 18 national public holidays and 8 collective leave (cuti bersama) days for 2027 under the SKB of the Minister of Religious Affairs, Minister of Manpower and Minister of State Apparatus Empowerment and Bureaucratic Reform (No. 1205/2026, No. 3/2026, No. 2/2026). Hari Suci Nyepi (Tahun Baru Saka 1949) is listed on 8 March 2027 (Monday).",
+    "source": "https://www.kemenkopmk.go.id/pemerintah-tetapkan-18-hari-libur-nasional-dan-8-cuti-bersama-tahun-2027",
+    "source_type": "government",
+    "checked": "2026-11-18",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_101",
+    "claim": "Kemenko PMK 2027 national holidays as listed: 1 Jan New Year; 5 Jan Isra Mikraj 1448 H; 6 Feb Chinese New Year 2578; 8 Mar Nyepi; 10 to 11 Mar Idul Fitri 1448 H; 26 Mar Good Friday; 28 Mar Easter Sunday; 1 May Labour Day; 6 May Ascension Day; 17 May Idul Adha 1448 H; 20 May Waisak 2571 BE; 1 Jun Pancasila Day; 6 Jun Islamic New Year 1449 H; 15 Aug Maulid Nabi; 17 Aug Independence Day; 25 Dec Christmas; 26 Dec Isra Mikraj 1449 H. The release notes the 1 Ramadan, Idul Fitri and Idul Adha dates are set by a separate Minister of Religious Affairs decision (per the SKB PDF snippet).",
+    "source": "https://www.kemenkopmk.go.id/pemerintah-tetapkan-18-hari-libur-nasional-dan-8-cuti-bersama-tahun-2027",
+    "source_type": "government",
+    "checked": "2026-11-18",
+    "is_price": false,
+    "conflicts": "Search snippet of the SKB PDF says Idul Fitri and Idul Adha dates are confirmed by a later ministerial decision, so these two dates may shift."
+   },
+   {
+    "fact_id": "fact_102",
+    "claim": "Kemenko PMK 2027 collective leave (cuti bersama): 5 Feb (Chinese New Year); 9, 12 and 15 Mar (Idul Fitri); 25 Mar (Good Friday); 18 May (Idul Adha); 19 May (Waisak); 24 Dec (Christmas). Cuti bersama applies to civil servants (ASN) and is optional for private employers. Nyepi on 8 Mar sits beside the Idul Fitri holidays and leave (9 to 15 Mar).",
+    "source": "https://www.kemenkopmk.go.id/pemerintah-tetapkan-18-hari-libur-nasional-dan-8-cuti-bersama-tahun-2027",
+    "source_type": "government",
+    "checked": "2026-11-18",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_103",
+    "claim": "[Copied from bali-wedding-venues 03-source-pack, same source and date.] Smartraveller Indonesia: weather can change quickly during the wet season (usually around October to April; it can differ in Eastern Indonesia). Heavy rains can cause significant flooding in urban areas including Bali, disrupting roads and transport. No temperature or rainfall figures are given.",
+    "source": "https://www.smartraveller.gov.au/destinations/asia/indonesia",
+    "source_type": "government",
+    "checked": "2026-11-18",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_104",
+    "claim": "[Copied from bali-wedding-venues 03-source-pack, same source and date.] Smartraveller Indonesia: volcanic activity may escalate with little or no notice, causing flight delays, cancellations or airport closures, including in surrounding provinces; Mount Agung in Bali Province is listed among volcanoes to watch, and trekking routes on or near Mount Agung and Mount Batur are named. Indonesia uses a 4-level volcano alert system (Normal, Advisory, Watch, Warning). Contact your airline for the latest flight information.",
+    "source": "https://www.smartraveller.gov.au/destinations/asia/indonesia",
+    "source_type": "government",
+    "checked": "2026-11-18",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_105",
+    "claim": "[Copied from bali-wedding-venues 03-source-pack, same source and date.] Smartraveller Indonesia: Indonesia is in an active earthquake region with a high level of earthquake activity that sometimes triggers tsunamis; high wave events can happen in coastal regions. Know the emergency plans at your accommodation. Australians have drowned in rough seas and rip currents at popular beaches including in Bali.",
+    "source": "https://www.smartraveller.gov.au/destinations/asia/indonesia",
+    "source_type": "government",
+    "checked": "2026-11-18",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_106",
+    "claim": "[Copied from bali-wedding-venues 03-source-pack, same source and date.] Smartraveller Indonesia: rabies is throughout Indonesia and 100% fatal once symptoms develop; get vaccinated before travel, avoid contact with dogs, cats, monkeys and bats, and get urgent care if bitten or scratched; rabies treatment may be limited. Dengue occurs including in Bali, and periodic measles outbreaks are reported including in Bali.",
+    "source": "https://www.smartraveller.gov.au/destinations/asia/indonesia",
+    "source_type": "government",
+    "checked": "2026-11-18",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_107",
+    "claim": "[Copied from bali-wedding-venues 03-source-pack, same source and date.] AYANA Bali lists indoor wedding venues: Tresna Chapel, described as a white chapel that rises above the Indian Ocean (ceremony 70 / reception 50); Astina Pavilion, a glass-walled venue with 180-degree Indian Ocean views (ceremony 40); Orchid, a garden and glass greenhouse (ceremony 22 / reception 40); Amara Ballroom (ceremony 390 / reception 200 to 600); RIMBA Ballroom (ceremony 200 / reception 400).",
+    "source": "https://www.ayana.com/bali/weddings/",
+    "source_type": "official_venue",
+    "checked": "2026-11-18",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_108",
+    "claim": "[Copied from bali-wedding-venues 03-source-pack, same source and date.] Mulia Bali names a 'floating glass chapel' (Harmony Chapel is named in the current offer) and says its weekday glass chapel wedding is 'available only through December 2026'; it has a dedicated wedding team contact (Mulia Weddings, wedding@themulia.com).",
+    "source": "https://www.themulia.com/bali/bali-wedding-offers/the-art-of-celebration",
+    "source_type": "official_venue",
+    "checked": "2026-11-18",
+    "is_price": false,
+    "conflicts": "Page names both 'Harmony Chapel' and 'floating glass chapel'; confirm they are the same space and whether chapel ceremonies continue in 2027."
+   },
+   {
+    "fact_id": "fact_109",
+    "claim": "[Copied from bali-wedding-venues 03-source-pack, same source and date.] The Apurva Kempinski Bali hosts weddings: Kimaya Chapel is 'a stunning glass chapel situated in a cliff building' with the Indian Ocean as backdrop and natural light through glass walls.",
+    "source": "https://www.kempinski.com/en/the-apurva-kempinski-bali/weddings/venues/kimaya-chapel",
+    "source_type": "official_venue",
+    "checked": "2026-11-18",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_110",
+    "claim": "[Copied from bali-wedding-venues 03-source-pack, same source and date.] COMO Uma Ubud: the Yoga Pavilion is an open-air pavilion for up to 25 people overlooking the Tjampuhan Valley; the Yoga Studio takes up to 40 guests and is the stated wet weather option for events in Uma Bar.",
+    "source": "https://www.comohotels.com/bali/como-uma-ubud/occasions/weddings",
+    "source_type": "official_venue",
+    "checked": "2026-11-18",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_111",
+    "claim": "[Copied from bali-wedding-venues 03-source-pack, same source and date.] The St. Regis Bali Resort describes the Cloud Nine Chapel as 'nestled on our exclusive beachfront' with Swarovski crystal chandeliers and ocean views, surrounded by a pond and cascading steps, with a wooden terrace beyond the pond for pre-dinner canapés and drinks.",
+    "source": "https://www.marriott.com/en-us/hotels/dpsxr-the-st-regis-bali-resort/events/",
+    "source_type": "official_venue",
+    "checked": "2026-11-18",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_112",
+    "claim": "[Copied from bali-wedding-venues 03-source-pack, same source and date.] Raffles Bali hosts weddings: its weddings page describes 'a ribbon of pristine sand... lapped by the cerulean Indian Ocean' and lists beachfront, garden and private villa venues, with indoor and sheltered options.",
+    "source": "https://www.raffles.com/bali/occasions/weddings/",
+    "source_type": "official_venue",
+    "checked": "2026-11-18",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_113",
+    "claim": "[Copied from bali-wedding-venues 03-source-pack, same source and date.] Alila Seminyak states its indoor venues, open-air terraces and event lawns can accommodate up to 250 guests (stated under Gatherings).",
+    "source": "https://www.hyatt.com/alila-hotels-and-resorts/en-US/dpsas-alila-seminyak",
+    "source_type": "official_venue",
+    "checked": "2026-11-18",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_114",
+    "claim": "[Copied from seminyak-wedding-venues 03-source-pack, same source and date.] The Seminyak Beach Resort & Spa: Purnama Chapel is an elegant pavilion on Seminyak Beach with ocean views, described as the 'longest beach front chapel', for up to 90 invited guests.",
+    "source": "https://www.theseminyak.com/offers/offers-weddings/",
+    "source_type": "official_venue",
+    "checked": "2026-11-18",
+    "is_price": false
+   }
+  ],
+  "insider_details": [
+   {
+    "detail": "Nyepi falls on Monday 8 March 2027, right before the Idul Fitri holidays and collective leave (9 to 15 March), so avoid that fortnight for a wedding weekend and book flights early if guests travel then.",
+    "fact_ids": [
+     "fact_100",
+     "fact_102"
+    ]
+   },
+   {
+    "detail": "Smartraveller puts Bali's wet season at around October to April with fast-changing weather and urban flooding, so a wet-season date needs a covered or indoor ceremony back-up and generous transfer buffers.",
+    "fact_ids": [
+     "fact_103"
+    ]
+   },
+   {
+    "detail": "Glass and clifftop chapels (AYANA Tresna, Mulia, Apurva Kempinski Kimaya, St. Regis Cloud Nine) keep the ocean view under cover, but published seating is small, so confirm capacity before treating one as the rain plan.",
+    "fact_ids": [
+     "fact_107",
+     "fact_108",
+     "fact_109",
+     "fact_111"
+    ]
+   },
+   {
+    "detail": "Volcanic ash can close airports with little notice, so build a spare day before the wedding into guest travel advice.",
+    "fact_ids": [
+     "fact_104"
+    ]
+   }
+  ],
+  "quotes": [],
+  "real_weddings": [],
+  "verify_items": [
+   "[[VERIFY: what Nyepi (8 March 2027) means for travellers in Bali, e.g. Ngurah Rai airport closure and guests staying inside hotels, from a Bali Provincial Government or airport operator (InJourney Airports) page; searches on 18 November 2026 found no official traveller notice.]]",
+   "[[VERIFY: 2027 Galungan and Kuningan dates from a Bali government (baliprov.go.id or regency .go.id) page; none found on 18 November 2026.]]",
+   "[[VERIFY: Idul Fitri (10 to 11 March 2027) and Idul Adha (17 May 2027) dates are subject to a later Minister of Religious Affairs decision; recheck before publishing.]]"
+  ],
+  "needs_signoff": [],
+  "must_include_coverage": [
+   {
+    "item": "Dates to plan around (2027 public holidays, Nyepi)",
+    "covered_by": [
+     "fact_100",
+     "fact_101",
+     "fact_102"
+    ]
+   },
+   {
+    "item": "Nyepi impact on travel",
+    "covered_by": [
+     "[[VERIFY: what Nyepi (8 March 2027) means for travellers in Bali, e.g. Ngurah Rai airport closure and guests staying inside hotels, from a Bali Provincial Government or airport operator (InJourney Airports) page; searches on 18 November 2026 found no official traveller notice.]]"
+    ]
+   },
+   {
+    "item": "Galungan and Kuningan",
+    "covered_by": [
+     "[[VERIFY: 2027 Galungan and Kuningan dates from a Bali government (baliprov.go.id or regency .go.id) page; none found on 18 November 2026.]]"
+    ]
+   },
+   {
+    "item": "Wet season, volcanic, earthquake and health advice (Smartraveller)",
+    "covered_by": [
+     "fact_103",
+     "fact_104",
+     "fact_105",
+     "fact_106"
+    ]
+   },
+   {
+    "item": "Wet-season venue options (chapels, indoor, covered)",
+    "covered_by": [
+     "fact_107",
+     "fact_108",
+     "fact_109",
+     "fact_110",
+     "fact_111",
+     "fact_112",
+     "fact_113",
+     "fact_114"
+    ]
+   }
+  ],
+  "assumptions": [
+   "BOOKING CHECKLIST: for each venue confirm the wet-weather plan, covered capacity and decision deadline for moving indoors."
+  ]
+ }
+}

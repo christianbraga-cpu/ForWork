@@ -1,0 +1,287 @@
+{
+ "agent": "seo-researcher",
+ "task_id": "best-time-to-get-married-in-bali",
+ "stage": "02",
+ "status": "complete",
+ "round": 1,
+ "inputs_used": [
+  "CLAUDE.md",
+  "00-input.json",
+  "content-system/research/locations.yaml",
+  "content-system/seo/link-map.csv",
+  "content-system/seo/priority-link-targets.md",
+  "content-system/schemas/02-seo.schema.json",
+  "content/posts/best-time-to-get-married-in-greece/02-seo.json (format model)"
+ ],
+ "tools_used": [
+  "DataForSEO serp_organic_live_advanced: Sydney, Melbourne, New York, Dubai, Singapore all ok first try; 2026-11-18",
+  "DataForSEO kw_data_google_ads_search_volume (AU, US; 8 keywords)",
+  "DataForSEO dataforseo_labs_bulk_keyword_difficulty (AU; values only for 3 weather terms)",
+  "DataForSEO dataforseo_labs_google_ranked_keywords (weddedwonderland.com, AU, %bali%, 42 rows)",
+  "Apify web-fetch: hotels.com Bali guide (Sydney #3). Sydney #1 bali.love and #2 tirtha.com returned as google.com/goto redirects; not read",
+  "Internal link fetch: weddedwonderland.com refused by session egress proxy",
+  "GSC: not read (fast mode)"
+ ],
+ "self_qa": {
+  "checks": [
+   {
+    "check": ">= 7 of 10 locations returned results",
+    "pass": false,
+    "note": "Fast mode: 5 locations requested, 5 of 5 returned."
+   },
+   {
+    "check": "Every outline H2 maps to a real query or must-include",
+    "pass": true
+   },
+   {
+    "check": "Every internal and external link verified live today",
+    "pass": false,
+    "note": "weddedwonderland.com blocked by egress proxy; two venue drafts and traditions draft not live yet; externals pending planner-sme."
+   },
+   {
+    "check": "No competitor links; no noindex targets; do-not-link list obeyed",
+    "pass": true
+   },
+   {
+    "check": "Meta lengths within limits; no 'best' in H2s; description names no month",
+    "pass": true
+   }
+  ],
+  "confidence": 0.7
+ },
+ "open_questions": [
+  {
+   "to": "planner-sme",
+   "question": "Confirm BMKG Bali station climate page, Smartraveller Indonesia wording, and official 2027 SKB holiday list (Nyepi, Galungan); set verified_live.",
+   "blocking": false
+  },
+  {
+   "to": "editor",
+   "question": "Add backlinks_to_add; confirm internal links live (proxy blocked fetch).",
+   "blocking": false
+  }
+ ],
+ "next_agent": [
+  "planner-sme",
+  "visual-curator"
+ ],
+ "payload": {
+  "primary_keyword": "best time to get married in bali",
+  "secondary_keywords": [
+   "bali weather by month",
+   "bali rainy season",
+   "bali dry season",
+   "best month to get married in bali",
+   "nyepi 2027"
+  ],
+  "secondary_keyword_notes": "Google Ads (DataForSEO 2026-11-18): primary AU 20/mo, US 10/mo; best month to get married in bali AU 10, US 10; bali rainy season AU 5,400, US 1,600; bali weather by month AU 880, US 720; bali dry season AU 880, US 320. No data: best time to visit bali for wedding, bali wedding season, nyepi 2027. KD (AU): rainy season 0, dry season 0, weather by month 1; none for the rest.",
+  "intent": "informational",
+  "slug": "best-time-to-get-married-in-bali",
+  "url_path": "/destination-weddings/best-time-to-get-married-in-bali",
+  "meta_title": "Best Time to Get Married in Bali by Month",
+  "meta_title_alt": "Best Time to Get Married in Bali, Month by Month",
+  "meta_description": "Bali's dry and wet seasons month by month, BMKG station figures, Nyepi and holiday dates, and wet-season plans to help you choose your wedding month.",
+  "meta_notes": "Title 41 chars; description 149 chars, no month named, no prices, no em dashes.",
+  "outline": [
+   {
+    "h2": "When do couples usually marry in Bali?",
+    "answers": "Primary keyword; AI overview and every page-one result",
+    "notes": "Direct answer in first 100 words: no single right month; dry and wet seasons, venue, guests and holidays decide. Key takeaways without naming a best month."
+   },
+   {
+    "h2": "What are Bali's dry and wet seasons?",
+    "answers": "PAA 'What is the rainy season in Bali?' (Sydney, NY, Dubai, Singapore); 'bali rainy season' AU 5,400/mo, 'bali dry season' AU 880/mo",
+    "notes": "Season windows from BMKG only, labelled by station (e.g. Ngurah Rai/Denpasar). [[VERIFY: BMKG season onset wording]]."
+   },
+   {
+    "h2": "Bali weather by month for a wedding",
+    "answers": "'bali weather by month' AU 880, US 720; SERP titles 'month-by-month'",
+    "notes": "Table: month, station, avg max temp, rainfall/rain days, planning note. Blank or [[VERIFY]] where BMKG does not publish."
+   },
+   {
+    "h2": "Month by month",
+    "answers": "PAA 'What is the best and worst month to visit Bali?' (Melbourne); forum 'Wedding in April or July?', 'Is December a good time for a wedding in Bali during wet season?'",
+    "h3": [
+     "January to March",
+     "April to June",
+     "July and August",
+     "September and October",
+     "November and December"
+    ],
+    "notes": "Describe each window; no month called best."
+   },
+   {
+    "h2": "Which dates should you plan around?",
+    "answers": "AI overview Nyepi warning; secondary 'nyepi 2027'",
+    "h3": [
+     "Nyepi, the Day of Silence",
+     "Galungan and Kuningan",
+     "Indonesian public holidays and Australian school holidays"
+    ],
+    "notes": "Official dates only (Indonesian government SKB holiday list). Nyepi 2027 date [[VERIFY: official SKB]]; airport closure wording [[VERIFY]]."
+   },
+   {
+    "h2": "How do you plan a wet-season wedding?",
+    "answers": "SERP results silverlaceweddings, varawedding, lizhayescelebrant, baliweddingprices rainy-season pages",
+    "notes": "Covered ceremony spaces, timing, written rain plan with the venue; link venue drafts."
+   },
+   {
+    "h2": "Which months suit your wedding?",
+    "answers": "AI overview follow-up prompts (venue style, time of year); brief note",
+    "h3": [
+     "Beach and clifftop ceremonies",
+     "Ubud and the highlands",
+     "Larger guest lists travelling from Australia"
+    ],
+    "notes": "Decision guide by priority, not a verdict."
+   },
+   {
+    "h2": "Frequently asked questions",
+    "answers": "PAA and forum questions",
+    "notes": "Use faq_questions."
+   }
+  ],
+  "faq_questions": [
+   "What is the rainy season in Bali?",
+   "What is the best and worst month to visit Bali?",
+   "Is December a good time for a wedding in Bali during wet season?",
+   "When is Nyepi in 2027?",
+   "What time of day are Bali wedding ceremonies held?",
+   "How far ahead should you book a Bali wedding venue?"
+  ],
+  "faq_demand_notes": "From PAA (5 cities) and forum titles in Sydney/Melbourne/NY/Dubai SERPs.",
+  "internal_links": [
+   {
+    "anchor": "Bali wedding venues from clifftops to beaches",
+    "target": "https://weddedwonderland.com/destination-weddings/bali-wedding-venues",
+    "type": "related",
+    "placement": "Which months suit your wedding? / wet-season plans",
+    "verified_live": "draft 2026-11-18 per link-map; live at publish only"
+   },
+   {
+    "anchor": "Seminyak wedding venues for beachside vows",
+    "target": "https://weddedwonderland.com/destination-weddings/seminyak-wedding-venues",
+    "type": "related",
+    "placement": "Beach and clifftop ceremonies",
+    "verified_live": "draft 2026-11-18 per link-map; live at publish only"
+   },
+   {
+    "anchor": "getting married in Bali",
+    "target": "https://weddedwonderland.com/destinations/asia/bali",
+    "type": "hub",
+    "placement": "Intro",
+    "verified_live": "pending: weddedwonderland.com fetch refused by session egress proxy 2026-11-18; confirm before publish"
+   },
+   {
+    "anchor": "Indonesian wedding traditions",
+    "target": "https://weddedwonderland.com/expert-advice/indonesian-wedding-traditions",
+    "type": "related",
+    "placement": "Galungan and Kuningan",
+    "verified_live": "draft 2026-11-03 per link-map; live at publish only"
+   },
+   {
+    "anchor": "talk to Wedded Concierge about your dates",
+    "target": "https://weddedwonderland.com/wonderland-concierge?utm_source=blog&utm_medium=content",
+    "type": "commercial",
+    "placement": "After month table and closing CTA",
+    "verified_live": "pending: weddedwonderland.com fetch refused by session egress proxy 2026-11-18; confirm before publish"
+   },
+   {
+    "anchor": "free Wedded Wonderland magazines",
+    "target": "https://weddedwonderland.com/magazine",
+    "type": "related",
+    "placement": "Closing",
+    "verified_live": "pending: weddedwonderland.com fetch refused by session egress proxy 2026-11-18; confirm before publish"
+   }
+  ],
+  "internal_links_excluded": [
+   "/destination-wedding-guide-bali and /tips-for-getting-married-bali-weddings-2024: not in the allowed list for this brief",
+   "/10-of-the-most-captivating-wedding-traditions-in-indonesia: to be 301'd; link the new traditions URL"
+  ],
+  "external_links": [
+   {
+    "anchor": "BMKG climate data",
+    "url": "https://www.bmkg.go.id/",
+    "type": "authority",
+    "rel": "noopener",
+    "verified_live": "pending: not fetched (budget); planner-sme to find Bali station climate page"
+   },
+   {
+    "anchor": "Smartraveller Indonesia",
+    "url": "https://www.smartraveller.gov.au/destinations/asia/indonesia",
+    "type": "authority",
+    "rel": "noopener",
+    "verified_live": "pending: not fetched; planner-sme to confirm Nyepi and wet-season advice"
+   },
+   {
+    "anchor": "Indonesian national holidays (SKB)",
+    "url": "https://www.kemenkopmk.go.id/",
+    "type": "authority",
+    "rel": "noopener",
+    "verified_live": "pending: planner-sme to locate the official 2027 SKB holiday decree page"
+   }
+  ],
+  "backlinks_to_add": [
+   {
+    "from": "/destination-weddings/bali-wedding-venues",
+    "anchor": "Bali weather and wedding dates month by month",
+    "sentence": "Draft season/when-to-book section; editor to place"
+   },
+   {
+    "from": "/destination-weddings/seminyak-wedding-venues",
+    "anchor": "when to get married in Bali",
+    "sentence": "Draft season or FAQ section; editor to place"
+   },
+   {
+    "from": "/destinations/asia/bali",
+    "anchor": "Bali wedding months and dates to plan around",
+    "sentence": "Hub page; not fetched (proxy); editor to place"
+   }
+  ],
+  "serp_source": "dataforseo",
+  "serp_summary": {
+   "locations_checked": [
+    "Sydney",
+    "Melbourne",
+    "New York",
+    "Dubai",
+    "Singapore"
+   ],
+   "locations_failed": [
+    "Fast mode: 5 of 10 locations run; all returned first try. Arabic and secondary queries skipped."
+   ],
+   "common_angles": [
+    "AI overview (AU, NY) names May, June and September and dry season May to October with no official source",
+    "Nyepi flagged as 'usually in March' with no date",
+    "Forums and Facebook groups in every city",
+    "Foreign-language and off-topic pages (Polish, Malay, 'right age to marry') fill page one in Melbourne, NY, Singapore"
+   ],
+   "gaps": [
+    "No page-one result cites BMKG or labels figures by station",
+    "No result gives official Nyepi or Galungan dates for a given year",
+    "Few month tables; wet-season planning covered only by small vendor blogs"
+   ],
+   "regional_differences": [
+    "AU: AI overview plus Tirtha/bali.love guides",
+    "US: forums and honeymoon pages",
+    "Dubai: Bali vendor blogs incl. wet-season page",
+    "Singapore: weak SERP, agoda bot pages"
+   ],
+   "recommended_scope": "au_focus"
+  },
+  "cannibalisation": [
+   "No weddedwonderland.com URL ranks for the primary or variants (ranked_keywords AU %bali%, 42 rows).",
+   "/destination-wedding-guide-bali ranks 65-92 for bali wedding, bali bridal, bali wedding location/places: broad guide, not timing; mild overlap if it has a season section.",
+   "/tips-for-getting-married-bali-weddings-2024 ranks 37 for 'bali wedding planning': planning tips; keep timing detail here and link down if refreshed.",
+   "Other Bali rankings (/top-25-bali-honeymoon-hotels-and-resorts, /bali-wedding-cost-the-complete-2026-guide, /how-to-plan-the-perfect-engagement-in-bali) do not overlap."
+  ]
+ },
+ "assumptions": [
+  "Organic URLs in SERP are google.com/goto redirects; domains taken from breadcrumbs."
+ ],
+ "verify_items": [
+  "BMKG Bali station monthly figures",
+  "Nyepi 2027 date (official SKB)",
+  "Galungan/Kuningan 2027 dates"
+ ]
+}

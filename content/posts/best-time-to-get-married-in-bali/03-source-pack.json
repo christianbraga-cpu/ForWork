@@ -1,0 +1,201 @@
+{
+  "agent": "planner-sme",
+  "task_id": "best-time-to-get-married-in-bali",
+  "stage": "03",
+  "status": "complete",
+  "round": 1,
+  "inputs_used": [
+    "content/posts/best-time-to-get-married-in-bali/00-input.json",
+    "Live round 2026-11-18 (apify web-search x2, web-fetch x3, fast mode, no retries): staklim-bali.bmkg.go.id home (200, used); bmkg.go.id/iklim/prakiraan-musim (404, not used); Staklim Bali Buletin Iklim May 2024 PDF (200 text, used; tables are images)."
+  ],
+  "self_qa": {
+    "checks": [
+      {
+        "check": "Every fact has a source and date",
+        "pass": true
+      },
+      {
+        "check": "No price without a source; all prices in needs_signoff",
+        "pass": true,
+        "note": "No prices recorded."
+      },
+      {
+        "check": "Every must-include covered or [[VERIFY]]",
+        "pass": true
+      },
+      {
+        "check": "No invented quotes, statistics or real weddings",
+        "pass": true
+      },
+      {
+        "check": "Every figure labelled with station/area and period",
+        "pass": true
+      }
+    ],
+    "confidence": 0.5
+  },
+  "open_questions": [
+    {
+      "to": "orchestrator",
+      "question": "No BMKG station normals could be read (bulletin tables are images; dataonline.bmkg.go.id not reached in fast mode). Run a follow-up batch for Ngurah Rai or Jembrana normals, or keep the article qualitative?",
+      "blocking": false
+    },
+    {
+      "to": "orchestrator",
+      "question": "Staklim Bali links 'Prediksi Awal Musim Hujan 2026-2027' (not read). Fetch that document (likely PDF) in a later run for Bali onset and peak by ZOM?",
+      "blocking": false
+    },
+    {
+      "to": "orchestrator",
+      "question": "Search snippets (Kompas, CNBC Indonesia via Facebook) say BMKG forecast Bali's 2026 dry season from March and a late 2026/2027 rainy season onset from November. Editorial and social snippets only, not read; confirm from BMKG before use.",
+      "blocking": false
+    }
+  ],
+  "assumptions": [
+    "Bulletin figures are single-month observations or single-year forecasts, not long-term normals.",
+    "Indonesian translated faithfully; 'Sifat Hujan' rendered as rainfall character (Above Normal over 115%, Normal 85 to 115%, Below Normal under 85% of normal)."
+  ],
+  "verify_items": [
+    "[[VERIFY: Monthly climate normals (rainfall mm, rain days, temperature, humidity) for a named Bali station such as Ngurah Rai or Stasiun Klimatologi Jembrana. No BMKG page read on 18 November 2026 gave station normals; the May 2024 bulletin tables and micro-climate charts are images. Do not state monthly Bali rainfall, rain days, temperatures or humidity.]]",
+    "[[VERIFY: 2026/2027 rainy season onset and peak for Bali (Prakiraan Musim Hujan 2026/2027). Staklim Bali links a 'Prediksi Awal Musim Hujan 2026-2027' document that was not read; do not state onset or peak months.]]",
+    "[[VERIFY: Bali's usual wet season and dry season months. BMKG text read gives only notation examples (November I to II for rainy onset, June I to III for dry onset), not a Bali statement; source a BMKG Bali season bulletin before naming months.]]"
+  ],
+  "tools_used": [
+    "Bash",
+    "mcp__Apify__apify--web-search",
+    "mcp__Apify__apify--web-fetch"
+  ],
+  "next_agent": [
+    "luxury-writer"
+  ],
+  "payload": {
+    "facts": [
+      {
+        "fact_id": "fact_01",
+        "claim": "Stasiun Klimatologi Kelas II Bali (BMKG Climatology Station, Bali), at Jl. Lely No. 9, Negara, Jembrana, is the BMKG technical unit that handles climate and air quality information for Bali Province. It publishes 10-day rainfall forecasts, a monthly bulletin (rainfall analysis and 3-month outlook) and a season bulletin (forecast onset of the rainy or dry season).",
+        "source": "https://staklim-bali.bmkg.go.id/",
+        "source_type": "government",
+        "checked": "2026-11-18",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_02",
+        "claim": "Stasiun Klimatologi Bali, Buletin Iklim Bali, May 2024 edition (definitions page): 'Normal monthly rainfall' is the average rainfall for each month over a 30-year period; 'average monthly rainfall' uses a minimum 10-year period. Bali's monthly analysis and forecasts use rain-gauge posts across 20 season zones (Zona Musim, ZOM), the zoning set in 2021. A ZOM is an area whose average rainfall pattern shows a clear difference between the dry-season period and the rainy-season period; areas without that clear difference are 'non-ZOM'.",
+        "source": "https://staklim-bali.bmkg.go.id/wp-content/uploads/2024/05/Buletin-Mei-2024_compressed.pdf",
+        "source_type": "government",
+        "checked": "2026-11-18",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_03",
+        "claim": "Stasiun Klimatologi Bali, Buletin Iklim Bali, May 2024 (definitions): season onset is stated in dasarian (10-day periods: days 1 to 10, 11 to 20, 21 to month end). The bulletin's worked examples read: 'rainy season onset around November I to November II = 1 to 20 November' and 'dry season onset around June I to June III = 1 to 30 June'. These are given as examples of the notation, not as a Bali forecast.",
+        "source": "https://staklim-bali.bmkg.go.id/wp-content/uploads/2024/05/Buletin-Mei-2024_compressed.pdf",
+        "source_type": "government",
+        "checked": "2026-11-18",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_04",
+        "claim": "Stasiun Klimatologi Bali, Buletin Iklim Bali, May 2024 (definitions): daily rain intensity categories are very light under 5 mm in 24 hours, light 5 to 20 mm, moderate 20 to 50 mm, heavy 50 to 100 mm, very heavy over 100 mm.",
+        "source": "https://staklim-bali.bmkg.go.id/wp-content/uploads/2024/05/Buletin-Mei-2024_compressed.pdf",
+        "source_type": "government",
+        "checked": "2026-11-18",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_05",
+        "claim": "Stasiun Klimatologi Bali, Buletin Iklim Bali, May 2024 (forecast for 2024 only, Bali Province): June 2024 rainfall generally 0 to 100 mm, July 2024 generally 0 to 150 mm, August 2024 generally 0 to 100 mm, with rainfall character generally Below Normal for all three months. This is a single-year forecast, not a long-term normal.",
+        "source": "https://staklim-bali.bmkg.go.id/wp-content/uploads/2024/05/Buletin-Mei-2024_compressed.pdf",
+        "source_type": "government",
+        "checked": "2026-11-18",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_06",
+        "claim": "Stasiun Klimatologi Bali, Buletin Iklim Bali, May 2024 (analysis of April 2024 only): the highest monthly rainfall in Bali in April 2024 was 592.2 mm with 20 rain days in southern Buleleng (Sukasada district); the most rain days was 24 in southern Karangasem (Selat district); the highest one-day total was 160.0 mm in Klungkung district. Rainfall character for April 2024 was generally Above Normal. Single-month observations, not normals.",
+        "source": "https://staklim-bali.bmkg.go.id/wp-content/uploads/2024/05/Buletin-Mei-2024_compressed.pdf",
+        "source_type": "government",
+        "checked": "2026-11-18",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_07",
+        "claim": "Stasiun Klimatologi Bali home page, news item 'Ringkasan Informasi Iklim Bulan Agustus 2026': analysed rainfall across Bali Province for July 2026 was 0 to 425.5 mm for the month (single-month observation; the full item was not read).",
+        "source": "https://staklim-bali.bmkg.go.id/",
+        "source_type": "government",
+        "checked": "2026-11-18",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_08",
+        "claim": "Stasiun Klimatologi Bali home page (read 18 November 2026) carries a link titled 'Prediksi Awal Musim Hujan 2026-2027' (Rainy season onset prediction 2026-2027). The linked document's content was not read in this pack, so no onset or peak dates are recorded.",
+        "source": "https://staklim-bali.bmkg.go.id/",
+        "source_type": "government",
+        "checked": "2026-11-18",
+        "is_price": false
+      }
+    ],
+    "insider_details": [
+      {
+        "detail": "BMKG times season onset in 10-day blocks (dasarian) and by season zone, and Bali has 20 zones, so onset can differ between, say, Jembrana and Karangasem. Ask the Wedded Advisor to check the zone for your venue, not just 'Bali'.",
+        "fact_ids": [
+          "fact_02",
+          "fact_03"
+        ]
+      },
+      {
+        "detail": "Even in a month BMKG rates wet, totals vary hugely across the island (April 2024: up to 592.2 mm in Sukasada, with a 160 mm single day in Klungkung). Plan a covered or indoor wet-weather option whatever month you choose.",
+        "fact_ids": [
+          "fact_06"
+        ]
+      },
+      {
+        "detail": "Staklim Bali publishes a 3-month rainfall outlook every month; check the latest bulletin about 90 days out to sense-check your date and rain plan.",
+        "fact_ids": [
+          "fact_01",
+          "fact_05"
+        ]
+      }
+    ],
+    "quotes": [],
+    "real_weddings": [],
+    "verify_items": [
+      "[[VERIFY: Monthly climate normals (rainfall mm, rain days, temperature, humidity) for a named Bali station such as Ngurah Rai or Stasiun Klimatologi Jembrana. No BMKG page read on 18 November 2026 gave station normals; the May 2024 bulletin tables and micro-climate charts are images. Do not state monthly Bali rainfall, rain days, temperatures or humidity.]]",
+      "[[VERIFY: 2026/2027 rainy season onset and peak for Bali (Prakiraan Musim Hujan 2026/2027). Staklim Bali links a 'Prediksi Awal Musim Hujan 2026-2027' document that was not read; do not state onset or peak months.]]",
+      "[[VERIFY: Bali's usual wet season and dry season months. BMKG text read gives only notation examples (November I to II for rainy onset, June I to III for dry onset), not a Bali statement; source a BMKG Bali season bulletin before naming months.]]"
+    ],
+    "needs_signoff": [],
+    "must_include_coverage": [
+      {
+        "item": "Monthly Bali weather figures (rainfall, rain days, temperature, humidity) by named station",
+        "covered_by": [
+          "[[VERIFY: Monthly climate normals (rainfall mm, rain days, temperature, humidity) for a named Bali station such as Ngurah Rai or Stasiun Klimatologi Jembrana. No BMKG page read on 18 November 2026 gave station normals; the May 2024 bulletin tables and micro-climate charts are images. Do not state monthly Bali rainfall, rain days, temperatures or humidity.]]"
+        ]
+      },
+      {
+        "item": "Wet and dry season definition and usual onset",
+        "covered_by": [
+          "fact_02",
+          "fact_03",
+          "[[VERIFY: Bali's usual wet season and dry season months. BMKG text read gives only notation examples (November I to II for rainy onset, June I to III for dry onset), not a Bali statement; source a BMKG Bali season bulletin before naming months.]]"
+        ]
+      },
+      {
+        "item": "2026/2027 rainy season outlook for Bali",
+        "covered_by": [
+          "fact_08",
+          "[[VERIFY: 2026/2027 rainy season onset and peak for Bali (Prakiraan Musim Hujan 2026/2027). Staklim Bali links a 'Prediksi Awal Musim Hujan 2026-2027' document that was not read; do not state onset or peak months.]]"
+        ]
+      },
+      {
+        "item": "Rain intensity and recent observed rainfall context",
+        "covered_by": [
+          "fact_04",
+          "fact_05",
+          "fact_06",
+          "fact_07"
+        ]
+      }
+    ]
+  }
+}
