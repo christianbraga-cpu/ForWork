@@ -1,0 +1,72 @@
+{
+  "agent": "cro-specialist",
+  "task_id": "wedding-processional-songs",
+  "stage": "09",
+  "status": "complete",
+  "round": 1,
+  "inputs_used": [
+    "CLAUDE.md",
+    "content/posts/wedding-processional-songs/01-brief.json",
+    "content/posts/wedding-processional-songs/08-final.md",
+    "content-system/brand/brand-facts.md",
+    "content-system/seo/link-map.csv (/wonderland-concierge, /magazine)",
+    "content/posts/best-time-to-get-married-in-bali/09-cro.json (format model)"
+  ],
+  "self_qa": {
+    "checks": [
+      {"check": "Primary CTA 6 words or fewer, no 'click here', no exclamation mark", "pass": true, "note": "Anchor 'Wedded Concierge' (2 words), line 332."},
+      {"check": "utm_content primary, secondary, closing, magnet each appear exactly once", "pass": true, "note": "Checked by grep on 08-final.md: lines 332, 330, 364, 362."},
+      {"check": "UTMs only on /wonderland-concierge (3) and /magazine (1)", "pass": true},
+      {"check": "/wonderland-concierge anchors name Wedded Concierge", "pass": true, "note": "Lines 330, 332 and 364 all use the anchor 'Wedded Concierge'."},
+      {"check": "CTA copy only from brand facts claims, no prices or figures", "pass": true, "note": "Line 330 'standardised industry rates ... never quoted a marked-up price' matches brand-facts step 4; line 332 and 364 use single point of contact and fee agreed in writing."},
+      {"check": "No 'free' or no-cost wording, perks, Wedded Privileges, em dashes; 08-final.md not edited", "pass": true, "note": "No link text contains 'free'. The only 'free' in the copy is 'step-free route' on line 324 (accessibility, not an offer). No em dashes."}
+    ],
+    "confidence": 0.85
+  },
+  "open_questions": [
+    {"to": "orchestrator", "question": "08-final.md contains no <!-- CTA: primary --> marker; placements rely on the existing inline links.", "blocking": false},
+    {"to": "orchestrator", "question": "The secondary link (line 330) sits directly above the primary (line 332), so a reader meets the secondary first. Acceptable as both are in the same CTA block; swapping the utm_content values would make reporting cleaner. Optional only.", "blocking": false}
+  ],
+  "assumptions": [
+    "FAST MODE: 07-panel.json cta_reactions not re-read; placements follow the existing inline links.",
+    "Copy uses relative links; recorded here with the weddedwonderland.com domain for tracking."
+  ],
+  "verify_items": [],
+  "tools_used": ["Bash (grep, python3 -I)"],
+  "payload": {
+    "journey_stage": "planning",
+    "primary_cta": {
+      "text": "Wedded Concierge",
+      "subtext": "The fee is agreed in writing before any work begins.",
+      "link": "https://weddedwonderland.com/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=wedding-processional-songs&utm_content=primary",
+      "placement": "Existing inline link on line 332, after the venue and musician questions and booking checklist, where the reader is thinking about who coordinates the musicians. Unchanged."
+    },
+    "secondary_cta": {
+      "text": "Wedded Concierge",
+      "subtext": "Suppliers are paid at standardised industry rates, so you are never quoted a marked-up price.",
+      "link": "https://weddedwonderland.com/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=wedding-processional-songs&utm_content=secondary",
+      "placement": "Existing line 330, directly before the primary in the same CTA block. Unchanged."
+    },
+    "lead_magnet": {
+      "name": "Wedded Wonderland magazine",
+      "link": "https://weddedwonderland.com/magazine?utm_source=blog&utm_medium=content&utm_campaign=wedding-processional-songs&utm_content=magnet",
+      "placement": "Existing line 362 (anchor 'Wedded Wonderland magazine'), in the closing section for readers still gathering ideas. Unchanged.",
+      "exists": true
+    },
+    "closing_cta": {
+      "text": "Wedded Concierge",
+      "subtext": "A Wedded Advisor is your single point of contact, with the fee agreed in writing before any work begins.",
+      "link": "https://weddedwonderland.com/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=wedding-processional-songs&utm_content=closing",
+      "placement": "Existing closing paragraph line 364. Unchanged."
+    },
+    "tracking": [
+      "https://weddedwonderland.com/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=wedding-processional-songs&utm_content=primary",
+      "https://weddedwonderland.com/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=wedding-processional-songs&utm_content=secondary",
+      "https://weddedwonderland.com/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=wedding-processional-songs&utm_content=closing",
+      "https://weddedwonderland.com/magazine?utm_source=blog&utm_medium=content&utm_campaign=wedding-processional-songs&utm_content=magnet"
+    ],
+    "copy_changes": [],
+    "rationale": "Brief journey_stage is 'planning': the couple is choosing processional music, and the commercial question peaks once they reach the venue and musician logistics (sound limits, power, back-up plan). The primary and secondary invitations sit there, the closing CTA ends the post, and the magazine serves readers still collecting ideas. Subtexts use only brand-facts claims: fee agreed in writing, single Wedded Advisor, standardised supplier rates. No prices, perks, Wedded Privileges, 'free' or availability wording. A printable ceremony music running-order sheet would be a better-matched magnet; none is known to exist, so it is a backlog suggestion only and not placed."
+  },
+  "next_agent": ["distribution"]
+}
