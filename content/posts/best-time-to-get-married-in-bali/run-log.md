@@ -6,3 +6,4 @@
 05:54 05 first draft done (~2,230 words, 0 VERIFY, no month table).
 05:55 07 five readers done (enquire 1 to 3).
 05:56 06 editor 4.14 pass_with_edits, 12 edits applied (dry-season overclaims cut, Nyepi wording, 2 holiday-date errors fixed).
+05:57 07b panel revise (enquire 1.9), 5 must-fix (the 'no figures readable' line overridden as research talk; replaced by a pointer to BMKG's seasonal outlook).
