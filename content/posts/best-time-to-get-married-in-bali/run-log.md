@@ -8,3 +8,4 @@
 05:56 06 editor 4.14 pass_with_edits, 12 edits applied (dry-season overclaims cut, Nyepi wording, 2 holiday-date errors fixed).
 05:57 07b panel revise (enquire 1.9), 5 must-fix (the 'no figures readable' line overridden as research talk; replaced by a pointer to BMKG's seasonal outlook).
 05:58 08 final copy done (~2,355 words), panel fixes applied.
+06:00 06b final check: 5 fixes applied and confirmed (a best-months reading cut, Nyepi wording kept to the holiday list, a venue capacity claim cut); CRO and distribution done.

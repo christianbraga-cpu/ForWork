@@ -7,7 +7,7 @@ round: 1
 
 <!-- IMAGE SLOT featured: Landscape 3:2, room for a title. Ceremony set-up or real ceremony at a real, named Bali venue (Uluwatu clifftop, Seminyak beachfront or Ubud jungle garden), late afternoon to sunset, clear sky, tropical florals, no signage. Couple optional and small in frame. People only from a licensed real wedding with written couple consent (and guest consent if identifiable) recorded in library-index.csv; never AI people, never stock models presented as a real couple. Source: the venue's own media kit with written permission (Gmail draft request, never sent by an agent), or licensed premium stock bought by a human and added to library-index.csv. Never AI, never a competitor, directory, planner, photographer-blog or search-result image. Location proven by media kit, register row or EXIF, never by appearance. Month taken must be known (register date_taken or EXIF date) so any season claim in the caption is true; if the month is unknown the caption makes no season claim. -->
 
-Smartraveller says Indonesia's wet season usually runs around October to April, so May to September gives an outdoor ceremony in Bali the most room. <!-- fact_103 --> Whatever month you choose, every date still needs a covered plan.
+Smartraveller says Indonesia's wet season usually runs around October to April, so May to September sits outside that window. <!-- fact_103 --> Whatever month you choose, every date still needs a covered plan.
 
 There is no single right time beyond that. The month that suits you rests on the seasons, the official dates in your year, where you want to stand for the ceremony and how far your guests are travelling. Here is how each month reads, which 2027 dates to plan around, and what a wet-season plan looks like. For the wider picture of [getting married in Bali](https://weddedwonderland.com/destinations/asia/bali), start with our destination guide.
 
@@ -85,11 +85,11 @@ Once you have two or three months in mind, [talk to Wedded Concierge about your 
 
 As at November 2026, the Indonesian Government has set 18 national public holidays and 8 collective leave days for 2027. <!-- fact_100 --> The [official 2027 holiday announcement](https://www.kemenkopmk.go.id/pemerintah-tetapkan-18-hari-libur-nasional-dan-8-cuti-bersama-tahun-2027) lists them all.
 
-### Nyepi, the Day of Silence
+### Nyepi, the Saka New Year
 
-Nyepi, the Hindu New Year (Saka 1949), falls on Monday 8 March 2027. <!-- fact_100 --> It sits directly beside the Idul Fitri holidays and collective leave from 9 to 15 March. <!-- fact_102 -->
+Nyepi, the Saka New Year 1949, falls on Monday 8 March 2027. <!-- fact_100 --> It sits directly beside the Idul Fitri holidays and collective leave from 9 to 15 March. <!-- fact_102 -->
 
-Nyepi is the Day of Silence that opens the Saka new year. <!-- fact_100 --> If your preferred dates fall in early March, ask these questions before you hold a date:
+If your preferred dates fall in early March, ask these questions before you hold a date:
 
 - What happens at the resort on Nyepi itself, and on the evening before?
 - Which days around 8 March suit guest arrivals and departures?
@@ -147,7 +147,7 @@ A wet-season date works when the covered plan is as considered as the outdoor on
 - **Alila Seminyak** says its indoor venues, open-air terraces and event lawns hold up to 250 guests. <!-- fact_113 -->
 - **COMO Uma Ubud** names its Yoga Studio, for up to 40 guests, as the wet weather option for events in Uma Bar. <!-- fact_110 -->
 
-Notice the capacities. A chapel for 70 and a lawn for 250 suit very different guest lists, and the covered space needs to hold everyone, not only the ceremony.
+Notice the capacities. A chapel for 70 and spaces for up to 250 suit very different guest lists, and the covered space needs to hold everyone, not only the ceremony.
 
 ### Questions to ask your venue
 
