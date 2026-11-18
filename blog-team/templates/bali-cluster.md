@@ -23,6 +23,12 @@ Built from the first spoke, `articles/2026-11-17-bali-wedding-packages/00-brief.
 7. **When bespoke planning fits** (Wonderland Concierge and a Wedded Advisor; soft CTA).
 8. **FAQ** (5 questions, 40 to 60 words, FAQPage schema, each adds a fact not in the body).
 
+Lessons (villa spoke, 18 Nov 2026):
+- Our site lists no private villas in Bali (all Bali venues are resorts or hotels); never imply villa partners. Say so upfront.
+- Never describe what a type of package "usually" includes without a source; frame inclusions as a checklist of questions.
+- Spokes must not repeat the parent's grids, tables, questions, FAQs or legal detail: one legal paragraph that links up, and FAQs the parent does not already answer.
+- Confirm Indonesian requirements with the Civil Registry Office, the CNI with the Consulate-General in Bali; DFAT missions cannot advise on Indonesian requirements.
+
 Plus: key takeaways block after the intro; mid-article soft CTA; closing discovery_call CTA; "Sources current as at <Month Year>" (matches writer.md).
 
 ## Sourcing rules

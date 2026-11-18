@@ -26,4 +26,13 @@
 - **Stage 3 fast (3 reviews):** DONE. Accuracy 3.8 (majors: unsourced villa generalisations, invented villa inclusions, unsourced exclusive-use definitions, confirmation sent to a DFAT mission for Indonesian rules, selective Nirjhara list with "celebrant", invented "we ask for an itemised quote" process). SEO 4.0 (meta 162 chars, 138 words over, FAQ 5 and three passages repeat the parent). Reader (couple) relevance 1, trust 3, clarity 4, would_enquire 1; its "wrong destination" blocker overruled as the Italy-led persona limitation. Merged request: 04-reviews/v1/merged.md.
 - **Decision (default, change if you want):** SEO title changed to "Bali Villa Wedding Packages: Villa vs Resort and What to Ask" to separate it from the parent in search results.
 - **Stage 4 fast (writer v2):** DONE. 03-draft-v2.md. --check: 2,180 reader words (inside 1,800 to 2,300), 0 dashes, 0 placeholders, 4 domains, none blocked. YAML valid; 27 claims, 16 links. All 22 merged items applied; flagged phrases remain only in front matter notes and the change log.
-- **Stage 6 fast (copy editor):** running.
+- **Stage 6 fast (copy editor):** DONE. final.md 2,186 reader words, 0 dashes, 0 placeholders, none blocked; publish-package.json valid (11 open items); chrome-upload-prompt.md (draft only; CTA "complimentary" override); article.docx built. Light edits only. Image file names are placeholders.
+
+## Must-fix before publish
+1. SITE-CONFLICTS (same as the Bali packages article): Concierge prices, "complimentary", Bali budget range, Conrad currency, AYANA capacity, wedding counts.
+2. VILLA-PARTNERS: do we have private villa partners in Bali? If yes, feature them in a revision.
+3. AKOHARA-PAGE: /venue/akohara returns 404 though Akohara is one of our Bali packages.
+4. VILLA-RULES: no official source on villa event permits, banjar contributions, noise or current licensing (only a 2017 Badung regulation); kept as villa-manager questions.
+5. PARENT-LINK: publish after /destination-weddings/bali-wedding-packages, or apply the fallback.
+6. Nic: Nirjhara "from USD 28,000" left out; decide whether to show it.
+7. LINK-CHECK (esp. the BPK PDF), CONCIERGE-PAY, RETRO-LINKS, IMAGE-RIGHTS, AUTHOR, CMS-URL.
