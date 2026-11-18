@@ -5,3 +5,4 @@
 05:52 Top-up by orchestrator: BMKG 2026-2027 onset bulletin is an embedded document (not readable as text); Nyepi traveller search failed (service error, not retried). Monthly table dropped as planned. Merged pack.
 05:54 05 first draft done (~2,230 words, 0 VERIFY, no month table).
 05:55 07 five readers done (enquire 1 to 3).
+05:56 06 editor 4.14 pass_with_edits, 12 edits applied (dry-season overclaims cut, Nyepi wording, 2 holiday-date errors fixed).
