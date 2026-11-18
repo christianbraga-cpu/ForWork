@@ -10,3 +10,4 @@
 06:39 05 first draft done (~2,990 words, 40 songs in 4 groups, 0 VERIFY).
 06:41 07 five readers done (enquire 1 to 2); all flag three cut-off sentences (entries 7, 21, 28).
 06:41 06 editor 4.29 pass_with_edits, 6 edits applied (church rule, venue claim, 3 cut-off sentences, Elvis year).
+06:43 07b panel revise (enquire 1.2), 2 must-fix.
