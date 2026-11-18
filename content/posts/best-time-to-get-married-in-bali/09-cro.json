@@ -1,0 +1,72 @@
+{
+  "agent": "cro-specialist",
+  "task_id": "best-time-to-get-married-in-bali",
+  "stage": "09",
+  "status": "complete",
+  "round": 1,
+  "inputs_used": [
+    "CLAUDE.md",
+    "content/posts/best-time-to-get-married-in-bali/01-brief.json",
+    "content/posts/best-time-to-get-married-in-bali/07-panel.json",
+    "content/posts/best-time-to-get-married-in-bali/08-final.md",
+    "content-system/brand/brand-facts.md",
+    "content-system/seo/link-map.csv (/wonderland-concierge, /magazine)",
+    "content/posts/seminyak-wedding-venues/09-cro.json (format model)"
+  ],
+  "self_qa": {
+    "checks": [
+      {"check": "Primary CTA 6 words or fewer, no 'click here', no exclamation mark", "pass": true, "note": "'Talk to Wedded Concierge about your dates' (6 words), matching the existing anchor on line 80."},
+      {"check": "utm_content primary, secondary, closing, magnet each appear exactly once", "pass": true, "note": "Checked by grep on 08-final.md: lines 80, 187, 219, 221."},
+      {"check": "UTMs only on /wonderland-concierge (3) and /magazine (1)", "pass": true},
+      {"check": "/wonderland-concierge anchors name Wedded Concierge", "pass": true, "note": "Line 80 'talk to Wedded Concierge about your dates'; line 187 'Talk to Wedded Concierge about your dates'; line 219 'Start planning with Wedded Concierge'."},
+      {"check": "CTA copy only from brand facts claims, no prices or figures", "pass": true},
+      {"check": "No 'free' or no-cost wording, perks, Wedded Privileges, em dashes; 08-final.md not edited", "pass": true, "note": "No link text contains 'free'. The only 'free' in the copy is 'step-free route' on line 78 (accessibility, not an offer)."}
+    ],
+    "confidence": 0.85
+  },
+  "open_questions": [
+    {"to": "orchestrator", "question": "08-final.md contains no <!-- CTA: primary --> marker; placements rely on the existing inline links.", "blocking": false},
+    {"to": "orchestrator", "question": "Primary (line 80) and secondary (line 187) share the anchor 'Talk to Wedded Concierge about your dates'. Acceptable, but a varied secondary anchor would read better. Optional copy change only.", "blocking": false}
+  ],
+  "assumptions": [
+    "FAST MODE: persona cta_reactions not re-read in detail; placements follow the existing inline links and the seminyak-wedding-venues model."
+  ],
+  "verify_items": [],
+  "tools_used": ["Bash (grep, python3 -I)"],
+  "payload": {
+    "journey_stage": "planning",
+    "primary_cta": {
+      "text": "Talk to Wedded Concierge about your dates",
+      "subtext": "The fee is agreed in writing before any work begins.",
+      "link": "https://weddedwonderland.com/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=best-time-to-get-married-in-bali&utm_content=primary",
+      "placement": "Existing inline link on line 80, after the month-by-month guide and venue questions, once the reader has two or three months in mind. Unchanged."
+    },
+    "secondary_cta": {
+      "text": "Talk to Wedded Concierge about your dates",
+      "subtext": "One Wedded Advisor weighs dates, venues and travel side by side.",
+      "link": "https://weddedwonderland.com/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=best-time-to-get-married-in-bali&utm_content=secondary",
+      "placement": "Existing line 187, after the wet-season plan and guest travel advice. Unchanged."
+    },
+    "lead_magnet": {
+      "name": "Wedded Wonderland digital magazines",
+      "link": "https://weddedwonderland.com/magazine?utm_source=blog&utm_medium=content&utm_campaign=best-time-to-get-married-in-bali&utm_content=magnet",
+      "placement": "Existing line 221 (anchor 'our digital wedding magazines'), for readers still gathering ideas before they enquire. Unchanged.",
+      "exists": true
+    },
+    "closing_cta": {
+      "text": "Start planning with Wedded Concierge",
+      "subtext": "Quotes in AUD, in your time zone, with one Wedded Advisor from start to finish.",
+      "link": "https://weddedwonderland.com/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=best-time-to-get-married-in-bali&utm_content=closing",
+      "placement": "Existing closing paragraph line 219. Unchanged."
+    },
+    "tracking": [
+      "https://weddedwonderland.com/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=best-time-to-get-married-in-bali&utm_content=primary",
+      "https://weddedwonderland.com/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=best-time-to-get-married-in-bali&utm_content=secondary",
+      "https://weddedwonderland.com/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=best-time-to-get-married-in-bali&utm_content=closing",
+      "https://weddedwonderland.com/magazine?utm_source=blog&utm_medium=content&utm_campaign=best-time-to-get-married-in-bali&utm_content=magnet"
+    ],
+    "copy_changes": [],
+    "rationale": "Brief journey_stage is 'planning': the couple is choosing a month, so the primary invitation sits where they have narrowed to two or three months and need dates a venue can hold. The secondary follows the wet-season and guest travel sections, the closing CTA ends the post, and the magazine serves earlier-stage readers. Subtexts use only brand-facts reassurances: fee agreed in writing, single Wedded Advisor, AUD quotes and time zone. No prices, perks, Privileges, 'free' or availability wording. A printable Bali month-by-month planning checklist would be a better-matched magnet; none is known to exist, so it is a backlog suggestion only and not placed."
+  },
+  "next_agent": ["distribution"]
+}
