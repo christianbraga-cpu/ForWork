@@ -1,0 +1,190 @@
+{
+ "agent": "visual-curator",
+ "task_id": "best-time-to-get-married-in-bali",
+ "stage": "04",
+ "status": "needs_input",
+ "round": 1,
+ "inputs_used": [
+  "CLAUDE.md",
+  "content/posts/best-time-to-get-married-in-bali/00-input.json",
+  "01-brief.json, 02-seo.json, 02-research/report.md, 03-source-pack.json (not present at run time)",
+  "content/posts/best-time-to-get-married-in-greece/04-images.json (format model)",
+  "content-system/images/library-index.csv (header only, no rows)",
+  "content-system/schemas/04-images.schema.json"
+ ],
+ "self_qa": {
+  "checks": [
+   {
+    "check": "Zero reference-only or competitor images in slots",
+    "pass": true,
+    "note": "reference_only is empty; no images downloaded."
+   },
+   {
+    "check": "Every approved image has location, licence, alt, caption, fit_reason",
+    "pass": true,
+    "note": "No approved images this run."
+   },
+   {
+    "check": "No AI image depicting a real place, wedding, ceremony or person",
+    "pass": true,
+    "note": "No AI generated. Only the planning still life may become ai_illustrative, with user approval and an 'Illustrative image' label; never a Nyepi ceremony or person."
+   },
+   {
+    "check": "Featured image exists (approved or needed with brief)",
+    "pass": true,
+    "note": "Needed, with brief: Bali venue ceremony in late light."
+   },
+   {
+    "check": "Seasonal captions accurate",
+    "pass": true,
+    "note": "Every place brief requires the month taken from register or EXIF so any dry or wet season claim is true."
+   },
+   {
+    "check": "About 5 slots",
+    "pass": true,
+    "note": "5 slots."
+   }
+  ],
+  "confidence": 0.7
+ },
+ "open_questions": [
+  {
+   "to": "user",
+   "question": "Do you approve an AI planning still life labelled 'Illustrative image' for the dates-to-plan-around slot if no Canva or licensed asset is found?",
+   "blocking": false
+  },
+  {
+   "to": "user",
+   "question": "Do you hold licensed Bali wedding photos (with month taken and couple consent) for the featured, dry season, wet season or reception slots?",
+   "blocking": false
+  },
+  {
+   "to": "planner-sme",
+   "question": "Confirm featured Bali venues (03-source-pack) so each slot can be tied to a named place and press contact.",
+   "blocking": false
+  }
+ ],
+ "assumptions": [
+  "Placement is by section name because 02-seo.json is not yet written; the writer maps it to after_h2 positions.",
+  "No venue is named because 03-source-pack does not exist; nothing was guessed.",
+  "Fast mode: repo register only, no Drive, own-site, Canva, Gmail or Lens checks run."
+ ],
+ "verify_items": [
+  "[[IMAGE NEEDED]] featured: Bali venue ceremony in late light, licensed, month taken recorded",
+  "[[IMAGE NEEDED]] dry-season, wet-season, which-months-suit-you: official venue image or licensed stock with month taken recorded",
+  "[[IMAGE NEEDED]] dates-to-plan-around: Canva brand asset or licensed stock; AI still life only with user approval, labelled 'Illustrative image'",
+  "[[VERIFY licence]] every venue or own-site image: written permission, credit line and expiry recorded in library-index.csv before use",
+  "[[VERIFY: month taken for every place image, so season captions are true]]",
+  "[[VERIFY: couple consent for any real-wedding photo, and guest consent if identifiable]]"
+ ],
+ "tools_used": [
+  "Bash (cat/python)"
+ ],
+ "next_agent": [
+  "luxury-writer"
+ ],
+ "payload": {
+  "slots": [
+   {
+    "slot_id": "featured",
+    "placement": "featured",
+    "purpose": "Hero and social share image: a Bali clifftop or garden ceremony in warm late light, setting the tone for a month-by-month timing guide.",
+    "shot_brief": "Landscape 3:2, room for a title. Ceremony set-up or real ceremony at a real, named Bali venue (Uluwatu clifftop, Seminyak beachfront or Ubud jungle garden), late afternoon to sunset, clear sky, tropical florals, no signage. Couple optional and small in frame. People only from a licensed real wedding with written couple consent (and guest consent if identifiable) recorded in library-index.csv; never AI people, never stock models presented as a real couple. Source: the venue's own media kit with written permission (Gmail draft request, never sent by an agent), or licensed premium stock bought by a human and added to library-index.csv. Never AI, never a competitor, directory, planner, photographer-blog or search-result image. Location proven by media kit, register row or EXIF, never by appearance. Month taken must be known (register date_taken or EXIF date) so any season claim in the caption is true; if the month is unknown the caption makes no season claim.",
+    "status": "needed",
+    "file": "content/posts/best-time-to-get-married-in-bali/images/best-time-to-get-married-in-bali-bali-venue-sunset-ceremony-hero.webp",
+    "source": {
+     "type": "venue_press",
+     "origin": "not yet sourced",
+     "credit": "[[VERIFY licence]]"
+    },
+    "location": {
+     "venue": "a named Bali venue (to be confirmed from 03-source-pack; Bali and Seminyak venue drafts are candidates)",
+     "town": "Bali (to be confirmed)",
+     "verified_by": "pending: media kit, register row or EXIF (month taken required)"
+    },
+    "licence_note": "[[IMAGE NEEDED]] Library register has no rows (header only). Move to pending_permission once a permission draft exists."
+   },
+   {
+    "slot_id": "dry-season",
+    "placement": "section: dry season months (H2 opener; writer maps to after_h2:<n>)",
+    "purpose": "Show dry-season conditions: clear skies, calm ocean, outdoor ceremony feasible.",
+    "shot_brief": "Landscape 3:2. Outdoor ceremony or reception set-up at a real, named Bali venue photographed in a dry-season month (month must match the months the article calls dry season per its BMKG source), blue sky, ocean or garden, no crowds, no people or consented couple only. People only from a licensed real wedding with written couple consent (and guest consent if identifiable) recorded in library-index.csv; never AI people, never stock models presented as a real couple. Source: the venue's own media kit with written permission (Gmail draft request, never sent by an agent), or licensed premium stock bought by a human and added to library-index.csv. Never AI, never a competitor, directory, planner, photographer-blog or search-result image. Location proven by media kit, register row or EXIF, never by appearance. Month taken must be known (register date_taken or EXIF date) so any season claim in the caption is true; if the month is unknown the caption makes no season claim.",
+    "status": "needed",
+    "file": "content/posts/best-time-to-get-married-in-bali/images/best-time-to-get-married-in-bali-bali-venue-dry-season-outdoor-ceremony.webp",
+    "source": {
+     "type": "venue_press",
+     "origin": "not yet sourced",
+     "credit": "[[VERIFY licence]]"
+    },
+    "location": {
+     "venue": "a named Bali venue (to be confirmed)",
+     "town": "Bali (to be confirmed)",
+     "verified_by": "pending: media kit, register row or EXIF (month taken required)"
+    },
+    "licence_note": "[[IMAGE NEEDED]] Library register has no rows (header only). Move to pending_permission once a permission draft exists."
+   },
+   {
+    "slot_id": "wet-season",
+    "placement": "section: wet season months (H2 opener; writer maps to after_h2:<n>)",
+    "purpose": "Show the wet season honestly and its upside: lush greenery and covered or wet-weather-ready settings.",
+    "shot_brief": "Landscape 3:2. Covered pavilion, bale or glasshouse reception at a real, named Bali venue photographed in a wet-season month, lush green rice terraces or jungle, soft overcast light; signals a wet-weather plan. No people or consented guests only. No dramatic storm imagery implying unsafe conditions. People only from a licensed real wedding with written couple consent (and guest consent if identifiable) recorded in library-index.csv; never AI people, never stock models presented as a real couple. Source: the venue's own media kit with written permission (Gmail draft request, never sent by an agent), or licensed premium stock bought by a human and added to library-index.csv. Never AI, never a competitor, directory, planner, photographer-blog or search-result image. Location proven by media kit, register row or EXIF, never by appearance. Month taken must be known (register date_taken or EXIF date) so any season claim in the caption is true; if the month is unknown the caption makes no season claim.",
+    "status": "needed",
+    "file": "content/posts/best-time-to-get-married-in-bali/images/best-time-to-get-married-in-bali-bali-venue-wet-season-covered-pavilion.webp",
+    "source": {
+     "type": "venue_press",
+     "origin": "not yet sourced",
+     "credit": "[[VERIFY licence]]"
+    },
+    "location": {
+     "venue": "a named Bali venue (to be confirmed)",
+     "town": "Bali (to be confirmed)",
+     "verified_by": "pending: media kit, register row or EXIF (month taken required)"
+    },
+    "licence_note": "[[IMAGE NEEDED]] Library register has no rows (header only). Move to pending_permission once a permission draft exists."
+   },
+   {
+    "slot_id": "dates-to-plan-around",
+    "placement": "section: dates to plan around, e.g. Nyepi and holidays (H2 opener; writer maps to after_h2:<n>)",
+    "purpose": "Break up the holiday and Nyepi detail with a calm planning visual, without depicting any real ceremony, temple or person.",
+    "shot_brief": "Landscape 3:2 or 4:5. Still life, no people, no identifiable place, no temple, no real ritual or offering presented as a real Balinese ceremony: linen planner or calendar, handwritten notes, frangipani flowers, a woven fan, soft natural light on stone or timber, Wedded Wonderland palette. No logos, no venue names, no holiday dates shown as fact in the image. Source order: Canva brand asset, then licensed stock bought by a human. AI still life only if the user approves, labelled 'Illustrative image' in the caption, never depicting a real place, wedding, ceremony (including Nyepi) or person. Month taken not relevant (no season claim made); caption must make no season claim.",
+    "status": "needed",
+    "file": "content/posts/best-time-to-get-married-in-bali/images/best-time-to-get-married-in-bali-planning-still-life-calendar-frangipani.webp",
+    "source": {
+     "type": "canva",
+     "origin": "not yet sourced",
+     "credit": "[[VERIFY licence]]"
+    },
+    "location": {
+     "venue": "none (still life, no place depicted)",
+     "town": "n/a",
+     "verified_by": "n/a: no place depicted"
+    },
+    "licence_note": "[[IMAGE NEEDED]] Canva brand asset or licensed stock; AI still life only with user approval, labelled 'Illustrative image'."
+   },
+   {
+    "slot_id": "which-months-suit-you",
+    "placement": "section: which months suit you (H2 opener; writer maps to after_h2:<n>)",
+    "purpose": "Close the guide with an intimate reception scene that helps couples picture their own date.",
+    "shot_brief": "Landscape 3:2. Evening reception table at a real, named Bali venue (villa or resort), candlelight, tropical florals, ocean or jungle beyond, blue hour. No people or consented guests only. Caption names the month only if register or EXIF proves it. People only from a licensed real wedding with written couple consent (and guest consent if identifiable) recorded in library-index.csv; never AI people, never stock models presented as a real couple. Source: the venue's own media kit with written permission (Gmail draft request, never sent by an agent), or licensed premium stock bought by a human and added to library-index.csv. Never AI, never a competitor, directory, planner, photographer-blog or search-result image. Location proven by media kit, register row or EXIF, never by appearance. Month taken must be known (register date_taken or EXIF date) so any season claim in the caption is true; if the month is unknown the caption makes no season claim.",
+    "status": "needed",
+    "file": "content/posts/best-time-to-get-married-in-bali/images/best-time-to-get-married-in-bali-bali-villa-evening-reception-table.webp",
+    "source": {
+     "type": "venue_press",
+     "origin": "not yet sourced",
+     "credit": "[[VERIFY licence]]"
+    },
+    "location": {
+     "venue": "a named Bali villa or resort (to be confirmed)",
+     "town": "Bali (to be confirmed)",
+     "verified_by": "pending: media kit, register row or EXIF (month taken required)"
+    },
+    "licence_note": "[[IMAGE NEEDED]] Library register has no rows (header only). Move to pending_permission once a permission draft exists."
+   }
+  ],
+  "reference_only": [],
+  "permission_requests": [],
+  "drive_findings": [
+   "Not searched: fast mode, repo library register only per orchestrator instruction. library-index.csv has a header and no rows."
+  ]
+ }
+}
