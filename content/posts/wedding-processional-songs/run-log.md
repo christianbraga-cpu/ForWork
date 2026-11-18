@@ -8,3 +8,4 @@
 06:32 Top-up E: 5 classical sourced (Lohengrin, Vivaldi, Debussy, Schubert, Elgar). About 15 of 40 sourced in total. Last top-ups F (classical and church) and G (instrumental and modern, official release pages) launched.
 06:36 Top-ups F and G plus my three searches: all 40 songs have a sourced title and composer or artist (many via official-site search snippets; years only where original). Merged pack.
 06:39 05 first draft done (~2,990 words, 40 songs in 4 groups, 0 VERIFY).
+06:41 07 five readers done (enquire 1 to 2); all flag three cut-off sentences (entries 7, 21, 28).
