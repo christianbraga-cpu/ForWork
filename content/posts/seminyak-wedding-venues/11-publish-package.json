@@ -1,0 +1,342 @@
+{
+  "agent": "cms-publisher",
+  "task_id": "seminyak-wedding-venues",
+  "stage": "11",
+  "status": "complete",
+  "round": 1,
+  "inputs_used": [
+    "CLAUDE.md",
+    "content-system/schemas/11-publish-package.schema.json",
+    "content/posts/seminyak-wedding-venues/01-brief.json",
+    "content/posts/seminyak-wedding-venues/02-seo.json",
+    "content/posts/seminyak-wedding-venues/03-source-pack.json",
+    "content/posts/seminyak-wedding-venues/04-images.json",
+    "content/posts/seminyak-wedding-venues/08-final.md",
+    "content/posts/seminyak-wedding-venues/09-cro.json",
+    "content/posts/bali-wedding-venues/11-publish-package.json (format model)"
+  ],
+  "self_qa": {
+    "checks": [
+      {
+        "check": "Front matter and all <!-- fact_xx --> markers removed; H1 is the title; 5 image-slot comments kept; no [[VERIFY]] markers in the copy",
+        "pass": true
+      },
+      {
+        "check": "Exactly 4 key takeaways and 5 FAQ pairs taken verbatim from the body",
+        "pass": true
+      },
+      {
+        "check": "7 venues in body table and ItemList (official URLs from 03-source-pack and the body)",
+        "pass": true
+      },
+      {
+        "check": "Each UTM link from 09-cro.json appears exactly once in 11-body.md",
+        "pass": true
+      },
+      {
+        "check": "primary_category equals categories[0] (Destination Weddings)",
+        "pass": true
+      },
+      {
+        "check": "No em dashes, no prices, no 'free', no 'last dance'",
+        "pass": true
+      },
+      {
+        "check": "status draft; nothing uploaded, saved or published",
+        "pass": true
+      }
+    ],
+    "confidence": 0.85
+  },
+  "open_questions": [
+    {
+      "to": "orchestrator",
+      "question": "CMS upload not attempted: no browser in this session and content-system/cms/field-map.md is not CONFIRMED. Run /wedded-cms-discovery locally, then /wedded-blog resume=seminyak-wedding-venues.",
+      "blocking": true
+    }
+  ],
+  "assumptions": [
+    "08-final.md has no <!-- CTA: primary --> marker; the primary CTA is the existing inline link per 09-cro.json, so the body text is unchanged apart from removing front matter and fact markers and adding the H1.",
+    "The 'free' magnet anchor flagged in 09-cro.json is already gone from 08-final.md ('browse the Wedded Wonderland magazines').",
+    "Title set to '7 Seminyak Wedding Venues for Beachside Vows' per the orchestrator (brief still says 10).",
+    "Excerpt is the first two sentences of the opening paragraph.",
+    "Tags and categories from 01-brief.json; content_type Guide and cluster Getting Married in Bali mirror the Bali package.",
+    "verify_items and needs_signoff left empty per the orchestrator; open venue questions go to booking-checklist.md."
+  ],
+  "verify_items": [],
+  "tools_used": [
+    "Bash (python3 -I)"
+  ],
+  "next_agent": [
+    "orchestrator"
+  ],
+  "payload": {
+    "title": "7 Seminyak Wedding Venues for Beachside Vows",
+    "slug": "seminyak-wedding-venues",
+    "url_path": "/destination-weddings/seminyak-wedding-venues",
+    "content_type": "Guide",
+    "cluster": "Getting Married in Bali",
+    "categories": [
+      "Destination Weddings",
+      "Bali",
+      "Venues"
+    ],
+    "primary_category": "Destination Weddings",
+    "tags": [
+      "Getting Married in Bali",
+      "Bali",
+      "Seminyak",
+      "Seminyak wedding venues",
+      "Bali beach wedding",
+      "Petitenget",
+      "Legian",
+      "Indonesia"
+    ],
+    "excerpt": "Seminyak sits on Bali's southwest coast, on the beach that stretches north from Kuta and Legian. The Seminyak wedding venues worth a shortlist split into two groups: five resorts that describe themselves as beachfront, and two addresses built around a pool rather than the sand.",
+    "key_takeaways": [
+      "Five of the seven venues describe themselves as beachfront: W Bali Seminyak, The Oberoi, Bali, Alila Seminyak, The Seminyak Beach Resort & Spa and Hotel Indigo Bali Seminyak Beach.",
+      "Published wedding spaces run from a 16-guest hidden room at W Bali Seminyak to a deck that takes 300 for a reception, so match the space to your guest list before you fall for the view.",
+      "None of these seven venues publishes wedding pricing or exclusive use online, so ask each for a written quote that states whether your spaces can be closed to other guests.",
+      "Bali's wet season usually runs from around October to April, so every beach ceremony needs a covered fallback agreed before you sign."
+    ],
+    "body_markdown_file": "content/posts/seminyak-wedding-venues/11-body.md",
+    "faq": [
+      {
+        "q": "Can you get married on the beach in Seminyak?",
+        "a": "Yes. W Bali Seminyak, The Oberoi, Bali, Alila Seminyak, The Seminyak Beach Resort & Spa and Hotel Indigo Bali Seminyak Beach all describe themselves as beachfront and host weddings. The Seminyak Beach Resort's Purnama Chapel stands on Seminyak Beach itself."
+      },
+      {
+        "q": "Which Seminyak venues offer exclusive use?",
+        "a": "None of the seven publishes exclusive use of the whole property. Hotel Indigo invites larger parties to ask about room blocks, and Mrs Sippy hosts private functions, so ask each venue in writing what private hire covers."
+      },
+      {
+        "q": "How many guests can a Seminyak venue hold?",
+        "a": "From 16 in W Bali Seminyak's 1 BELOW to 300 for a reception on its WET Deck. In between, The Oberoi's garden takes 50, Hotel Indigo's venues take 80 each, and Purnama Chapel takes 90."
+      },
+      {
+        "q": "Can Australians legally marry in Bali?",
+        "a": "Yes, if you meet Indonesia's requirements. Both parties must hold the same recognised religion, Australians need a Certificate of No Impediment, and non-Muslim marriages must be registered with the Civil Registry Office to be legal. Check the details with the Australian Embassy and Indonesian authorities, as at November 2026, before you book."
+      },
+      {
+        "q": "Is Seminyak's wet season a problem for a beach wedding?",
+        "a": "It needs a plan rather than a different destination. The wet season usually runs from around October to April, and weather can change quickly, so agree an indoor or covered space with your venue before you sign."
+      }
+    ],
+    "images": [
+      {
+        "slot_id": "featured",
+        "file": "content/posts/seminyak-wedding-venues/images/seminyak-wedding-venues-beachside-sunset-ceremony-hero.webp",
+        "role": "featured",
+        "status": "needed"
+      },
+      {
+        "slot_id": "beachfront-resorts",
+        "file": "content/posts/seminyak-wedding-venues/images/seminyak-wedding-venues-beachfront-resort-ceremony-lawn.webp",
+        "role": "inline",
+        "status": "needed"
+      },
+      {
+        "slot_id": "beach-clubs",
+        "file": "content/posts/seminyak-wedding-venues/images/seminyak-wedding-venues-beach-club-sunset-reception.webp",
+        "role": "inline",
+        "status": "needed"
+      },
+      {
+        "slot_id": "villas",
+        "file": "content/posts/seminyak-wedding-venues/images/seminyak-wedding-venues-private-villa-pool-terrace-dinner.webp",
+        "role": "inline",
+        "status": "needed"
+      },
+      {
+        "slot_id": "practical-when-to-marry",
+        "file": "content/posts/seminyak-wedding-venues/images/seminyak-wedding-venues-dry-season-sunset-dinner-table.webp",
+        "role": "inline",
+        "status": "needed"
+      }
+    ],
+    "cta": {
+      "text": "Confirm it through Wedded Concierge",
+      "subtext": "Your Wedded Advisor confirms inclusions in writing before you sign.",
+      "link": "https://weddedwonderland.com/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=seminyak-wedding-venues&utm_content=primary",
+      "placement": "Existing inline link (anchor 'Wedded Concierge') closing 'Security and privacy: questions for any couple', per 09-cro.json. 08-final.md has no <!-- CTA: primary --> marker, so the body is unchanged; add a CTA block there only if the CMS needs one."
+    },
+    "secondary_cta": {
+      "text": "See real options with Wedded Concierge",
+      "subtext": "One Wedded Advisor weighs venues, dates and travel side by side.",
+      "link": "https://weddedwonderland.com/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=seminyak-wedding-venues&utm_content=secondary",
+      "placement": "Existing inline link in 'How do guests get to Seminyak?'."
+    },
+    "closing_cta": {
+      "text": "Shortlist your Seminyak venues",
+      "subtext": "Quotes in AUD, in your time zone, with the fee agreed in writing before any work begins.",
+      "link": "https://weddedwonderland.com/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=seminyak-wedding-venues&utm_content=closing",
+      "placement": "Existing inline link at the end of 'Shortlist your Seminyak venues with a Wedded Advisor'."
+    },
+    "lead_magnet": {
+      "name": "Wedded Wonderland magazine",
+      "link": "https://weddedwonderland.com/magazine?utm_source=blog&utm_medium=content&utm_campaign=seminyak-wedding-venues&utm_content=magnet",
+      "placement": "Existing closing line of 'Resort, villa or pool club: which setting suits you?'."
+    },
+    "tracking_links": [
+      "https://weddedwonderland.com/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=seminyak-wedding-venues&utm_content=primary",
+      "https://weddedwonderland.com/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=seminyak-wedding-venues&utm_content=secondary",
+      "https://weddedwonderland.com/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=seminyak-wedding-venues&utm_content=closing",
+      "https://weddedwonderland.com/magazine?utm_source=blog&utm_medium=content&utm_campaign=seminyak-wedding-venues&utm_content=magnet"
+    ],
+    "seo": {
+      "meta_title": "7 Seminyak Wedding Venues for Beachside Vows in Bali",
+      "meta_description": "Compare 7 Seminyak wedding venues, five beachfront resorts plus a pool villa and a poolside club, with capacity, setting and how to get there.",
+      "focus_keyword": "seminyak wedding venues",
+      "canonical": "https://weddedwonderland.com/destination-weddings/seminyak-wedding-venues",
+      "og_image_slot": "featured"
+    },
+    "schema_jsonld": {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Article",
+          "@id": "https://weddedwonderland.com/destination-weddings/seminyak-wedding-venues#article",
+          "headline": "7 Seminyak Wedding Venues for Beachside Vows",
+          "description": "Compare 7 Seminyak wedding venues, five beachfront resorts plus a pool villa and a poolside club, with capacity, setting and how to get there.",
+          "author": {
+            "@type": "Organization",
+            "name": "Wedded Wonderland",
+            "url": "https://weddedwonderland.com/"
+          },
+          "publisher": {
+            "@type": "Organization",
+            "name": "Wedded Wonderland",
+            "url": "https://weddedwonderland.com/"
+          },
+          "datePublished": "",
+          "mainEntityOfPage": "https://weddedwonderland.com/destination-weddings/seminyak-wedding-venues",
+          "inLanguage": "en-AU"
+        },
+        {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Home",
+              "item": "https://weddedwonderland.com/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Destination Weddings",
+              "item": "https://weddedwonderland.com/destination-weddings"
+            },
+            {
+              "@type": "ListItem",
+              "position": 3,
+              "name": "7 Seminyak Wedding Venues for Beachside Vows",
+              "item": "https://weddedwonderland.com/destination-weddings/seminyak-wedding-venues"
+            }
+          ]
+        },
+        {
+          "@type": "ItemList",
+          "@id": "https://weddedwonderland.com/destination-weddings/seminyak-wedding-venues#venues",
+          "name": "7 Seminyak Wedding Venues for Beachside Vows",
+          "numberOfItems": 7,
+          "itemListOrder": "https://schema.org/ItemListUnordered",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "W Bali Seminyak",
+              "url": "https://www.marriott.com/en-us/hotels/dpswh-w-bali-seminyak/events/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "The Oberoi, Bali",
+              "url": "https://www.oberoihotels.com/hotels-in-bali/events/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 3,
+              "name": "Alila Seminyak",
+              "url": "https://www.hyatt.com/alila-hotels-and-resorts/en-US/dpsas-alila-seminyak/weddings"
+            },
+            {
+              "@type": "ListItem",
+              "position": 4,
+              "name": "The Seminyak Beach Resort & Spa",
+              "url": "https://www.theseminyak.com/offers/offers-weddings/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 5,
+              "name": "Hotel Indigo Bali Seminyak Beach",
+              "url": "https://seminyak.hotelindigo.com/en/wedding"
+            },
+            {
+              "@type": "ListItem",
+              "position": 6,
+              "name": "The Elysian",
+              "url": "https://theelysian.com/weddings/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 7,
+              "name": "Mrs Sippy Bali",
+              "url": "https://mrssippybali.com/"
+            }
+          ]
+        },
+        {
+          "@type": "FAQPage",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "Can you get married on the beach in Seminyak?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes. W Bali Seminyak, The Oberoi, Bali, Alila Seminyak, The Seminyak Beach Resort & Spa and Hotel Indigo Bali Seminyak Beach all describe themselves as beachfront and host weddings. The Seminyak Beach Resort's Purnama Chapel stands on Seminyak Beach itself."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Which Seminyak venues offer exclusive use?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "None of the seven publishes exclusive use of the whole property. Hotel Indigo invites larger parties to ask about room blocks, and Mrs Sippy hosts private functions, so ask each venue in writing what private hire covers."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "How many guests can a Seminyak venue hold?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "From 16 in W Bali Seminyak's 1 BELOW to 300 for a reception on its WET Deck. In between, The Oberoi's garden takes 50, Hotel Indigo's venues take 80 each, and Purnama Chapel takes 90."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Can Australians legally marry in Bali?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes, if you meet Indonesia's requirements. Both parties must hold the same recognised religion, Australians need a Certificate of No Impediment, and non-Muslim marriages must be registered with the Civil Registry Office to be legal. Check the details with the Australian Embassy and Indonesian authorities, as at November 2026, before you book."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Is Seminyak's wet season a problem for a beach wedding?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "It needs a plan rather than a different destination. The wet season usually runs from around October to April, and weather can change quickly, so agree an indoor or covered space with your venue before you sign."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    "author": "Wedded Wonderland",
+    "status": "draft",
+    "verify_items": [],
+    "needs_signoff": [],
+    "draft_note": "DRAFT ONLY. A human clicks Publish; no agent publishes or schedules this post.\n\n1. [[VERIFY]] items in the copy: none.\n\n2. Nic sign-off prices: none (the post states no prices or amounts).\n\n3. Image slots needed (5): featured, beachfront-resorts, beach-clubs, villas, practical-when-to-marry. No licensed or permissioned image yet; never AI, competitor or search-result images.\n\n"
+  }
+}

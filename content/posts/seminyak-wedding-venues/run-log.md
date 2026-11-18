@@ -12,3 +12,4 @@
 02:06 07b panel revise (enquire 2.1), 4 must-fix.
 02:07 08 final copy done (~3,170 words), 4 must-fix applied.
 02:08 06b final check: 12 fixes applied and confirmed; 'free' removed from the magazine link; CRO and distribution done.
+02:11 11 package, checklist, docx, link map, calendar row 71, run report done (meta fixed to match 7 venues).
