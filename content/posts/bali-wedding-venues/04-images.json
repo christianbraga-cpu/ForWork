@@ -1,0 +1,203 @@
+{
+ "agent": "visual-curator",
+ "task_id": "bali-wedding-venues",
+ "stage": "04",
+ "status": "needs_input",
+ "round": 1,
+ "inputs_used": [
+  "CLAUDE.md",
+  "content/posts/bali-wedding-venues/00-input.json",
+  "01-brief.json, 02-seo.json, 03-source-pack.json (not present at run time)",
+  "content/posts/santorini-wedding-venues/04-images.json (format model)",
+  "content-system/images/library-index.csv (no Bali rows)",
+  "content-system/schemas/04-images.schema.json"
+ ],
+ "self_qa": {
+  "checks": [
+   {
+    "check": "Zero reference-only or competitor images in slots",
+    "pass": true,
+    "note": "reference_only is empty; no images downloaded."
+   },
+   {
+    "check": "Every approved image has location, licence, alt, caption, fit_reason",
+    "pass": true,
+    "note": "No approved images this run; alt and caption are written once a licensed file exists."
+   },
+   {
+    "check": "No AI image depicting a real place",
+    "pass": true,
+    "note": "No AI used; no slot allows AI for a venue, destination, wedding or person."
+   },
+   {
+    "check": "Featured image exists (approved or needed with brief)",
+    "pass": true,
+    "note": "Needed, with brief: clifftop ceremony at a confirmed Uluwatu or Bukit venue."
+   },
+   {
+    "check": "One slot per area plus when-to-marry",
+    "pass": true,
+    "note": "6 slots: featured, 4 areas (Bukit/Uluwatu; Nusa Dua/Jimbaran; Seminyak/Canggu/Tanah Lot; Ubud and highlands), when to marry."
+   }
+  ],
+  "confidence": 0.7
+ },
+ "open_questions": [
+  {
+   "to": "planner-sme",
+   "question": "Confirm the 15 qualifying Bali venues (03-source-pack) so each slot, and each venue entry, can be tied to a named venue.",
+   "blocking": false
+  },
+  {
+   "to": "orchestrator",
+   "question": "Should a human find each confirmed venue's press contact and create the Gmail permission drafts, or should the curator do it in a non-fast run?",
+   "blocking": false
+  },
+  {
+   "to": "orchestrator",
+   "question": "Is there budget for licensed premium stock if press kits do not respond in time?",
+   "blocking": false
+  }
+ ],
+ "assumptions": [
+  "Placement is by section name because 02-seo.json is not yet written; the writer maps it to after_h2 positions.",
+  "Each of the 15 named venue entries may take one venue-supplied press image (status pending_permission) once written permission is recorded in library-index.csv; these optional per-venue slots are added after 03-source-pack confirms the list.",
+  "Venues with existing profiles (AYANA, Conrad, Grand Hyatt, Jumeirah, Samabe, Bulgari) are first candidates for press requests; no image is assumed licensed until the register says so."
+ ],
+ "verify_items": [
+  "[[IMAGE NEEDED]] featured: clifftop ceremony hero from a confirmed Uluwatu or Bukit venue",
+  "[[IMAGE NEEDED]] area-bukit-uluwatu, area-nusa-dua-jimbaran, area-seminyak-canggu-tanah-lot, area-ubud-highlands: official venue image or licensed stock",
+  "[[IMAGE NEEDED]] practical-when-to-marry: official venue image or licensed stock",
+  "[[VERIFY licence]] every venue press-kit image (including optional per-venue entry images): written permission, credit line and expiry recorded in library-index.csv before use",
+  "[[VERIFY: official press or media contact page for each confirmed venue, on its own site]]"
+ ],
+ "tools_used": [
+  "Bash (cat/python)"
+ ],
+ "next_agent": [
+  "luxury-writer"
+ ],
+ "payload": {
+  "slots": [
+   {
+    "slot_id": "featured",
+    "placement": "featured",
+    "purpose": "Hero and social share image: a clifftop ceremony over the Indian Ocean at a confirmed Bukit Peninsula venue, signalling the luxury clifftop-to-beach range the title promises.",
+    "shot_brief": "Official image from a confirmed Uluwatu or Bukit clifftop venue: an ocean-facing ceremony space (chapel, lawn or deck) set for a wedding, Indian Ocean and cliff line behind, dry season (roughly April to October, month recorded from EXIF or media kit), golden-hour light. No people or only distant unidentifiable figures. Landscape 3:2 with room for a title crop. Source: the venue's own media kit or press office with written permission (Gmail draft request, never sent by an agent), or licensed premium stock bought by a human and added to library-index.csv. Never AI, never a competitor, directory, planner, photographer-blog or search-result image. Location proven by the media kit, register row or EXIF, never by appearance.",
+    "status": "needed",
+    "file": "content/posts/bali-wedding-venues/images/bali-wedding-venues-uluwatu-clifftop-ceremony-hero.webp",
+    "source": {
+     "type": "venue_press",
+     "origin": "not yet sourced",
+     "credit": "[[VERIFY licence]]"
+    },
+    "location": {
+     "venue": "one confirmed Bukit or Uluwatu clifftop venue (to be named from 03-source-pack)",
+     "town": "Uluwatu, Bukit Peninsula, Bali",
+     "verified_by": "pending: venue media kit, register row or EXIF"
+    },
+    "licence_note": "[[IMAGE NEEDED]] Library register has no Bali rows. Move to pending_permission once a permission draft exists. Name the venue only once it is confirmed on its own official site (03-source-pack)."
+   },
+   {
+    "slot_id": "area-bukit-uluwatu",
+    "placement": "venues section: Bukit Peninsula and Uluwatu clifftops (area H2 opener)",
+    "purpose": "Shows the limestone clifftops of the southern Bukit: ceremony spaces perched high above the surf.",
+    "shot_brief": "Official image from a venue confirmed in Uluwatu, Pecatu or Ungasan: a clifftop ceremony deck, glass chapel or lawn with the ocean far below, late-afternoon light, no identifiable guests. Landscape 3:2. Source: the venue's own media kit or press office with written permission (Gmail draft request, never sent by an agent), or licensed premium stock bought by a human and added to library-index.csv. Never AI, never a competitor, directory, planner, photographer-blog or search-result image. Location proven by the media kit, register row or EXIF, never by appearance.",
+    "status": "needed",
+    "file": "content/posts/bali-wedding-venues/images/bali-wedding-venues-bukit-uluwatu-clifftop-lawn.webp",
+    "source": {
+     "type": "venue_press",
+     "origin": "not yet sourced",
+     "credit": "[[VERIFY licence]]"
+    },
+    "location": {
+     "venue": "one confirmed venue on the Bukit Peninsula",
+     "town": "Uluwatu or Ungasan, Bali",
+     "verified_by": "pending: venue media kit, register row or EXIF"
+    },
+    "licence_note": "[[IMAGE NEEDED]] Library register has no Bali rows. Move to pending_permission once a permission draft exists. Name the venue only once it is confirmed on its own official site (03-source-pack)."
+   },
+   {
+    "slot_id": "area-nusa-dua-jimbaran",
+    "placement": "venues section: Nusa Dua and Jimbaran beaches (area H2 opener)",
+    "purpose": "Shows the calmer bay and resort beaches: beachfront ceremonies with sand underfoot and resort facilities close by.",
+    "shot_brief": "Official image from a venue confirmed in Nusa Dua, Sawangan or Jimbaran: a beachfront or ocean-lawn ceremony set-up (aisle, arch) on calm water, soft morning or sunset light, no sunbathers or identifiable guests. Landscape 3:2. Source: the venue's own media kit or press office with written permission (Gmail draft request, never sent by an agent), or licensed premium stock bought by a human and added to library-index.csv. Never AI, never a competitor, directory, planner, photographer-blog or search-result image. Location proven by the media kit, register row or EXIF, never by appearance.",
+    "status": "needed",
+    "file": "content/posts/bali-wedding-venues/images/bali-wedding-venues-nusa-dua-jimbaran-beach-ceremony.webp",
+    "source": {
+     "type": "venue_press",
+     "origin": "not yet sourced",
+     "credit": "[[VERIFY licence]]"
+    },
+    "location": {
+     "venue": "one confirmed venue in Nusa Dua or Jimbaran",
+     "town": "Nusa Dua or Jimbaran, Bali",
+     "verified_by": "pending: venue media kit, register row or EXIF"
+    },
+    "licence_note": "[[IMAGE NEEDED]] Library register has no Bali rows. Move to pending_permission once a permission draft exists. Name the venue only once it is confirmed on its own official site (03-source-pack)."
+   },
+   {
+    "slot_id": "area-seminyak-canggu-tanah-lot",
+    "placement": "venues section: Seminyak, Canggu and Tanah Lot (area H2 opener)",
+    "purpose": "Shows the west-coast villa and beach-club style: private villas and sunset-facing coastline for relaxed, social celebrations.",
+    "shot_brief": "Official image from a venue confirmed in Seminyak, Canggu or the Tanah Lot coast: a private villa lawn or pool terrace set for a reception, west-coast sunset, no beach-club crowds, no identifiable guests. Only show Tanah Lot temple if the venue states the view. Landscape 3:2. Source: the venue's own media kit or press office with written permission (Gmail draft request, never sent by an agent), or licensed premium stock bought by a human and added to library-index.csv. Never AI, never a competitor, directory, planner, photographer-blog or search-result image. Location proven by the media kit, register row or EXIF, never by appearance.",
+    "status": "needed",
+    "file": "content/posts/bali-wedding-venues/images/bali-wedding-venues-seminyak-canggu-villa-sunset-reception.webp",
+    "source": {
+     "type": "venue_press",
+     "origin": "not yet sourced",
+     "credit": "[[VERIFY licence]]"
+    },
+    "location": {
+     "venue": "one confirmed venue in Seminyak, Canggu or Tanah Lot",
+     "town": "Seminyak, Canggu or Tabanan, Bali",
+     "verified_by": "pending: venue media kit, register row or EXIF"
+    },
+    "licence_note": "[[IMAGE NEEDED]] Library register has no Bali rows. Move to pending_permission once a permission draft exists. Name the venue only once it is confirmed on its own official site (03-source-pack). Do not show temple ceremonies or worshippers."
+   },
+   {
+    "slot_id": "area-ubud-highlands",
+    "placement": "venues section: Ubud and the highlands (area H2 opener)",
+    "purpose": "Shows the jungle and river-valley side of Bali: rainforest, rice terraces and open-air pavilions away from the coast.",
+    "shot_brief": "Official image from a venue confirmed in Ubud or the central highlands: an open-air pavilion or jungle-edge ceremony space over a river valley or rice terraces, soft morning mist or late light, no people. Landscape 3:2. Source: the venue's own media kit or press office with written permission (Gmail draft request, never sent by an agent), or licensed premium stock bought by a human and added to library-index.csv. Never AI, never a competitor, directory, planner, photographer-blog or search-result image. Location proven by the media kit, register row or EXIF, never by appearance.",
+    "status": "needed",
+    "file": "content/posts/bali-wedding-venues/images/bali-wedding-venues-ubud-jungle-valley-pavilion.webp",
+    "source": {
+     "type": "venue_press",
+     "origin": "not yet sourced",
+     "credit": "[[VERIFY licence]]"
+    },
+    "location": {
+     "venue": "one confirmed venue in Ubud or the highlands",
+     "town": "Ubud, Gianyar, Bali",
+     "verified_by": "pending: venue media kit, register row or EXIF"
+    },
+    "licence_note": "[[IMAGE NEEDED]] Library register has no Bali rows. Move to pending_permission once a permission draft exists. Name the venue only once it is confirmed on its own official site (03-source-pack). Only show rice terraces if they are visible from the venue as stated by the venue."
+   },
+   {
+    "slot_id": "practical-when-to-marry",
+    "placement": "when to marry (section opener)",
+    "purpose": "Sets the season and light for the timing section: what a dry-season Bali wedding evening looks like.",
+    "shot_brief": "Official image from a featured venue: ocean or valley view at dusk from a venue terrace, empty table set for dinner in the foreground, month recorded from EXIF or the media kit. No people. Landscape 3:2. Source: the venue's own media kit or press office with written permission (Gmail draft request, never sent by an agent), or licensed premium stock bought by a human and added to library-index.csv. Never AI, never a competitor, directory, planner, photographer-blog or search-result image. Location proven by the media kit, register row or EXIF, never by appearance.",
+    "status": "needed",
+    "file": "content/posts/bali-wedding-venues/images/bali-wedding-venues-dry-season-sunset-dinner-table.webp",
+    "source": {
+     "type": "venue_press",
+     "origin": "not yet sourced",
+     "credit": "[[VERIFY licence]]"
+    },
+    "location": {
+     "venue": "one featured venue (to be named from 03-source-pack)",
+     "town": "Bali",
+     "verified_by": "pending: venue media kit, register row or EXIF"
+    },
+    "licence_note": "[[IMAGE NEEDED]] Library register has no Bali rows. Move to pending_permission once a permission draft exists. Name the venue only once it is confirmed on its own official site (03-source-pack). Record the month taken; do not imply a 'best month' the writer has not sourced."
+   }
+  ],
+  "reference_only": [],
+  "permission_requests": [],
+  "drive_findings": [
+   "Not searched: fast mode, repo library register only per orchestrator instruction. library-index.csv has no Bali rows."
+  ]
+ }
+}
