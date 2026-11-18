@@ -1,0 +1,315 @@
+{
+  "agent": "planner-sme",
+  "task_id": "seminyak-wedding-venues",
+  "stage": "03",
+  "status": "complete",
+  "round": 1,
+  "inputs_used": [
+    "content/posts/bali-wedding-venues/03-source-pack-part-2.json (format reference)",
+    "content/posts/bali-wedding-venues/03-source-pack.json (prior W, Oberoi, Alila facts; superseded by live re-reads)",
+    "mcp__Apify__apify--web-fetch, 18 November 2026: https://www.marriott.com/en-us/hotels/dpswh-w-bali-seminyak/events/ (200); https://www.oberoihotels.com/hotels-in-bali/events/ (200); https://www.hyatt.com/alila-hotels-and-resorts/en-US/dpsas-alila-seminyak (200); https://www.theseminyak.com/offers/offers-weddings/ (200)",
+    "mcp__Apify__apify--web-search, 18 November 2026: 'The Legian Seminyak Bali weddings official' (third-party only); 'The Seminyak Beach Resort & Spa weddings' (found theseminyak.com)"
+  ],
+  "self_qa": {
+    "checks": [
+      {
+        "check": "Every fact has a source and date",
+        "pass": true
+      },
+      {
+        "check": "No price without a source; all prices in needs_signoff",
+        "pass": true,
+        "note": "No amounts recorded; Alila page shows IDR experience prices, deliberately not recorded."
+      },
+      {
+        "check": "Every must-include covered or [[VERIFY]]",
+        "pass": true,
+        "note": "Batch A covers five named venues only."
+      },
+      {
+        "check": "No invented quotes, statistics or real weddings",
+        "pass": true
+      }
+    ],
+    "confidence": 0.7
+  },
+  "open_questions": [
+    {
+      "to": "orchestrator",
+      "question": "QUALIFIED (own official page read live 18 Nov 2026, weddings stated): W Bali - Seminyak (fact_01 to fact_06), The Oberoi, Bali (fact_07 to fact_09), Alila Seminyak (fact_10 to fact_13), The Seminyak Beach Resort & Spa (fact_14 to fact_19). All four use 'beachfront' or 'beach' plus 'ocean' in their own words.",
+      "blocking": false
+    },
+    {
+      "to": "orchestrator",
+      "question": "FAILED: The Legian Seminyak. One search returned only Facebook (Legian Beach Hotel, a different property), Tripadvisor and third-party pages; no official weddings page found. Snippets do not qualify it.",
+      "blocking": false
+    },
+    {
+      "to": "luxury-writer",
+      "question": "No prices or room totals recorded. The Oberoi and Alila room counts and exclusive use are not published on the pages read: write 'not published'.",
+      "blocking": false
+    }
+  ],
+  "assumptions": [
+    "All facts dated 2026-11-18 (read date). W, Oberoi and Alila were re-read live, so no copied facts were needed.",
+    "BOOKING CHECKLIST: W Bali - Seminyak - curfew, exclusive use, minimum nights, rain plan for Ice Garden and WET Deck not published.",
+    "BOOKING CHECKLIST: The Oberoi, Bali - curfew, minimum nights, rain plan for Serenity by the Sea, set-up times not published.",
+    "BOOKING CHECKLIST: Alila Seminyak - wedding-specific capacities, curfew, rain plan, minimum nights not published.",
+    "BOOKING CHECKLIST: The Seminyak Beach Resort & Spa - curfew, exclusive use, rain plan, minimum nights not published."
+  ],
+  "verify_items": [
+    "[[VERIFY: W Bali - Seminyak Great Room wedding capacity: weddings section says 260, venue description, FAQ and chart say 330 reception, 180 banquet. Confirm with the hotel.]]",
+    "[[VERIFY: Indonesian legal marriage requirements for Australian couples must come from a government or embassy source (as at November 2026). The Seminyak Beach Resort & Spa statement (fact_19) is a venue claim only; the Wedded Advisor confirms current requirements.]]",
+    "[[VERIFY: The Legian Seminyak has no official weddings page found (one search, third-party results only). Do not feature it unless the venue's own site confirms weddings.]]"
+  ],
+  "tools_used": [
+    "mcp__Apify__apify--web-search",
+    "mcp__Apify__apify--web-fetch",
+    "Bash"
+  ],
+  "next_agent": [
+    "luxury-writer"
+  ],
+  "payload": {
+    "facts": [
+      {
+        "fact_id": "fact_01",
+        "claim": "W Bali - Seminyak: its official events FAQ answers 'Yes, W Bali - Seminyak provides wedding services', and its Weddings & Occasions section invites couples to say 'I Do' at its 'luxury Bali wedding venue on the Seminyak beachfront with iconic sunset views'. Setting words used: beachfront, beach, ocean.",
+        "source": "https://www.marriott.com/en-us/hotels/dpswh-w-bali-seminyak/events/",
+        "source_type": "official_venue",
+        "checked": "2026-11-18",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_02",
+        "claim": "W Bali - Seminyak: Starfish Bloo, its signature beachfront restaurant overlooking the ocean, is described as a luxury Bali wedding venue on Seminyak's beachfront accommodating up to 200 guests.",
+        "source": "https://www.marriott.com/en-us/hotels/dpswh-w-bali-seminyak/events/",
+        "source_type": "official_venue",
+        "checked": "2026-11-18",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_03",
+        "claim": "W Bali - Seminyak: the Ice Garden is described as a 'Bali beachfront wedding reception venue in Seminyak' for up to 100 guests (capacity chart: 100 reception, 70 banquet); the WET Deck is charted at 300 reception, 200 banquet.",
+        "source": "https://www.marriott.com/en-us/hotels/dpswh-w-bali-seminyak/events/",
+        "source_type": "official_venue",
+        "checked": "2026-11-18",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_04",
+        "claim": "W Bali - Seminyak: the Great Room is pillarless with a Batu Alam stone wall, a spiral ceiling, Indian Ocean sunset views and a connecting pre-function terrace; the venue description and FAQ give up to 330 guests, while the weddings section says 'Dance all night with 260 of your nearest and dearest'.",
+        "source": "https://www.marriott.com/en-us/hotels/dpswh-w-bali-seminyak/events/",
+        "source_type": "official_venue",
+        "checked": "2026-11-18",
+        "is_price": false,
+        "conflicts": "Great Room: weddings section says 260; venue description, FAQ and chart say 330 reception, 180 banquet."
+      },
+      {
+        "fact_id": "fact_05",
+        "claim": "W Bali - Seminyak: 1 BELOW is a hidden 50 square metre venue for up to 16 guests, concealed behind cascading water, with a dedicated chef; the page also lists 9 event rooms and 1,811 square metres of event space.",
+        "source": "https://www.marriott.com/en-us/hotels/dpswh-w-bali-seminyak/events/",
+        "source_type": "official_venue",
+        "checked": "2026-11-18",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_06",
+        "claim": "W Bali - Seminyak: its named wedding styling line is 'Wed Your Way' ('From iconic venues to bespoke styling'), and it mentions packages including rates on group bookings. Room count and exclusive use are not stated on this page.",
+        "source": "https://www.marriott.com/en-us/hotels/dpswh-w-bali-seminyak/events/",
+        "source_type": "official_venue",
+        "checked": "2026-11-18",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_07",
+        "claim": "The Oberoi, Bali: its official events page says it offers 'stunning beachfront venues' for 'a dreamy destination wedding under the open sky', with al fresco seaside, garden and poolside venues. Setting words used: beachfront, seaside, ocean.",
+        "source": "https://www.oberoihotels.com/hotels-in-bali/events/",
+        "source_type": "official_venue",
+        "checked": "2026-11-18",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_08",
+        "claim": "The Oberoi, Bali: Serenity by the Sea is described as 'an intimate Bali wedding venue', an open garden with ocean vistas, capacity 50 guests.",
+        "source": "https://www.oberoihotels.com/hotels-in-bali/events/",
+        "source_type": "official_venue",
+        "checked": "2026-11-18",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_09",
+        "claim": "The Oberoi, Bali: Bale Banjar is 112 square metres, for up to 50 guests standing cocktail and 24 to 32 at round tables. Room or villa count and exclusive use are not stated on the events page.",
+        "source": "https://www.oberoihotels.com/hotels-in-bali/events/",
+        "source_type": "official_venue",
+        "checked": "2026-11-18",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_10",
+        "claim": "Alila Seminyak: its official page has a 'Weddings & Celebrations' section inviting couples to 'Say I do' with 'the ocean as your witness' and to exchange vows overlooking the Indian Ocean in customisable spaces with a celebration tailor-made for them.",
+        "source": "https://www.hyatt.com/alila-hotels-and-resorts/en-US/dpsas-alila-seminyak",
+        "source_type": "official_venue",
+        "checked": "2026-11-18",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_11",
+        "claim": "Alila Seminyak describes itself as 'A Secluded Beachfront Sanctuary Steps from the Indian Ocean' and a 'beachfront resort' on Bali's southwest coast, at the quieter end of the beach stretching north from Kuta and Legian. Setting words used: beachfront, beach, ocean.",
+        "source": "https://www.hyatt.com/alila-hotels-and-resorts/en-US/dpsas-alila-seminyak",
+        "source_type": "official_venue",
+        "checked": "2026-11-18",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_12",
+        "claim": "Alila Seminyak: under Gatherings it states indoor venues, open-air terraces and event lawns can accommodate up to 250 guests (stated for meetings and occasions, not specifically weddings).",
+        "source": "https://www.hyatt.com/alila-hotels-and-resorts/en-US/dpsas-alila-seminyak",
+        "source_type": "official_venue",
+        "checked": "2026-11-18",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_13",
+        "claim": "Alila Seminyak: it has five infinity pools and its own Segara Temple on the resort, and is near Pura Petitenget; its accommodation is rooms and suites up to the Alila Penthouse (no total count stated).",
+        "source": "https://www.hyatt.com/alila-hotels-and-resorts/en-US/dpsas-alila-seminyak",
+        "source_type": "official_venue",
+        "checked": "2026-11-18",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_14",
+        "claim": "The Seminyak Beach Resort & Spa: its official Weddings & Events page says it is 'a charming venue for couples to exchange vows of commitment on the white sands beach side', surrounded by the infinity pool and tropical garden. Setting words used: beach, beachfront, ocean.",
+        "source": "https://www.theseminyak.com/offers/offers-weddings/",
+        "source_type": "official_venue",
+        "checked": "2026-11-18",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_15",
+        "claim": "The Seminyak Beach Resort & Spa: Purnama Chapel is an elegant pavilion on Seminyak Beach with ocean views, described as the 'longest beach front chapel', for up to 90 invited guests.",
+        "source": "https://www.theseminyak.com/offers/offers-weddings/",
+        "source_type": "official_venue",
+        "checked": "2026-11-18",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_16",
+        "claim": "The Seminyak Beach Resort & Spa: it lists garden or beachside venues facing Indian Ocean sunsets, plus The Banjar Function Room, and says its wedding planners blend Balinese and Western styles.",
+        "source": "https://www.theseminyak.com/offers/offers-weddings/",
+        "source_type": "official_venue",
+        "checked": "2026-11-18",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_17",
+        "claim": "The Seminyak Beach Resort & Spa: its named packages are Beach Romance, Pink Blush and Truly Lovely Oasis; Truly Lovely Oasis includes Balinese-costumed flower girls and umbrella boys and a choir or Balinese Rindik bamboo music option.",
+        "source": "https://www.theseminyak.com/offers/offers-weddings/",
+        "source_type": "official_venue",
+        "checked": "2026-11-18",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_18",
+        "claim": "The Seminyak Beach Resort & Spa: its accommodation menu lists Garden Room, Beach Room, Ocean Suites with Jacuzzi, One Bedroom Garden and Ocean Pool Villas and a Two Bedroom Garden Pool Villa (no total count on this page). Exclusive use is not stated.",
+        "source": "https://www.theseminyak.com/offers/offers-weddings/",
+        "source_type": "official_venue",
+        "checked": "2026-11-18",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_19",
+        "claim": "The Seminyak Beach Resort & Spa: its wedding packages are 'offered for non-legal marriage arrangements only', and it states foreign couples must perform a religious ceremony acknowledged by the Indonesian government followed by a civil legal ceremony upon registration.",
+        "source": "https://www.theseminyak.com/offers/offers-weddings/",
+        "source_type": "official_venue",
+        "checked": "2026-11-18",
+        "is_price": false
+      }
+    ],
+    "insider_details": [
+      {
+        "detail": "W Bali - Seminyak publishes separate wedding spaces from 16 guests (1 BELOW) to 200 seated on the WET Deck, so one venue can host a welcome dinner, ceremony and reception in different spaces.",
+        "fact_ids": [
+          "fact_03",
+          "fact_05"
+        ]
+      },
+      {
+        "detail": "The Oberoi, Bali caps its wedding garden, Serenity by the Sea, at 50 guests, so it suits intimate weddings rather than large guest lists.",
+        "fact_ids": [
+          "fact_08",
+          "fact_09"
+        ]
+      },
+      {
+        "detail": "The Seminyak Beach Resort & Spa says its packages are non-legal only, so couples should plan the legal marriage separately; the Wedded Advisor confirms current requirements.",
+        "fact_ids": [
+          "fact_19"
+        ]
+      },
+      {
+        "detail": "Several Seminyak venues pitch sunset views over the Indian Ocean, so time beachfront ceremonies around golden hour and confirm the rain plan on the booking checklist.",
+        "fact_ids": [
+          "fact_01",
+          "fact_11",
+          "fact_16"
+        ]
+      }
+    ],
+    "quotes": [],
+    "real_weddings": [],
+    "verify_items": [
+      "[[VERIFY: W Bali - Seminyak Great Room wedding capacity: weddings section says 260, venue description, FAQ and chart say 330 reception, 180 banquet. Confirm with the hotel.]]",
+      "[[VERIFY: Indonesian legal marriage requirements for Australian couples must come from a government or embassy source (as at November 2026). The Seminyak Beach Resort & Spa statement (fact_19) is a venue claim only; the Wedded Advisor confirms current requirements.]]",
+      "[[VERIFY: The Legian Seminyak has no official weddings page found (one search, third-party results only). Do not feature it unless the venue's own site confirms weddings.]]"
+    ],
+    "needs_signoff": [],
+    "must_include_coverage": [
+      {
+        "item": "W Bali - Seminyak",
+        "covered_by": [
+          "fact_01",
+          "fact_02",
+          "fact_03",
+          "fact_04",
+          "fact_05",
+          "fact_06"
+        ]
+      },
+      {
+        "item": "The Oberoi, Bali",
+        "covered_by": [
+          "fact_07",
+          "fact_08",
+          "fact_09"
+        ]
+      },
+      {
+        "item": "Alila Seminyak",
+        "covered_by": [
+          "fact_10",
+          "fact_11",
+          "fact_12",
+          "fact_13"
+        ]
+      },
+      {
+        "item": "The Seminyak Beach Resort & Spa",
+        "covered_by": [
+          "fact_14",
+          "fact_15",
+          "fact_16",
+          "fact_17",
+          "fact_18",
+          "fact_19"
+        ]
+      },
+      {
+        "item": "The Legian Seminyak",
+        "covered_by": [
+          "[[VERIFY: The Legian Seminyak has no official weddings page found (one search, third-party results only). Do not feature it unless the venue's own site confirms weddings.]]"
+        ]
+      }
+    ]
+  }
+}

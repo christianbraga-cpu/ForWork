@@ -1,0 +1,182 @@
+{
+  "agent": "planner-sme",
+  "task_id": "seminyak-wedding-venues",
+  "stage": "03",
+  "status": "complete",
+  "round": 1,
+  "inputs_used": [
+    "content/posts/bali-wedding-venues/03-source-pack-part-2.json (format reference)",
+    "mcp__Apify__apify--web-search, 18 November 2026: official URLs sought for Anantara Seminyak, Double-Six Luxury Hotel, Hotel Indigo Bali Seminyak Beach, The Elysian, Batu Belig/Petitenget beachfront villas",
+    "mcp__Apify__apify--web-fetch, 18 November 2026 (one round, no retries): https://seminyak.hotelindigo.com/en/wedding (200); https://theelysian.com/weddings/ (200); https://www.double-six.com/weddings (200, served general hotel content, no weddings statement); https://www.anantara.com/en/seminyak-bali/weddings (404); https://villa-tenang.com/weddings/ (200, empty body)"
+  ],
+  "self_qa": {
+    "checks": [
+      {
+        "check": "Every fact has a source and date",
+        "pass": true
+      },
+      {
+        "check": "No price without a source; all prices in needs_signoff",
+        "pass": true,
+        "note": "No amounts recorded. Hotel Indigo page shows IDR package prices; deliberately not recorded per batch instruction."
+      },
+      {
+        "check": "Every must-include covered or [[VERIFY]]",
+        "pass": true,
+        "note": "Batch C covers Seminyak venues only; only two qualified."
+      },
+      {
+        "check": "No invented quotes, statistics or real weddings",
+        "pass": true,
+        "note": "Hotel Indigo page shows guest testimonials; not recorded as quotes or real weddings (not published by Wedded Wonderland)."
+      }
+    ],
+    "confidence": 0.6
+  },
+  "open_questions": [
+    {
+      "to": "orchestrator",
+      "question": "QUALIFIED (official page read live, weddings stated): Hotel Indigo Bali Seminyak Beach (fact_200 to fact_205), The Elysian (fact_206 to fact_208).",
+      "blocking": false
+    },
+    {
+      "to": "orchestrator",
+      "question": "FAILED: Anantara Seminyak Bali Resort (official weddings URL 404; search gave only third-party pages). Double-Six Luxury Hotel (official /weddings URL served general hotel content with no weddings statement). Batu Belig/Petitenget beachfront private villas (no official villa weddings page found; villa-tenang.com/weddings returned empty). Snippets do not qualify any of these.",
+      "blocking": false
+    },
+    {
+      "to": "orchestrator",
+      "question": "Only two Seminyak venues qualified in this batch; a follow-up batch is needed if the article needs more, including a beachfront private villa with exclusive use.",
+      "blocking": true
+    },
+    {
+      "to": "luxury-writer",
+      "question": "Do not state prices for these venues. Hotel Indigo's celebrant is non-legal: do not imply a legal ceremony. Do not describe The Elysian as beachfront; its page does not say so.",
+      "blocking": false
+    }
+  ],
+  "assumptions": [
+    "All facts dated 2026-11-18 (read date).",
+    "BOOKING CHECKLIST: Hotel Indigo Bali Seminyak Beach - noise curfew, minimum nights, exclusive use, set-up times and confirmed rain plan not published (FAQ says the events team advises on backup options).",
+    "BOOKING CHECKLIST: The Elysian (Seminyak) - capacity, exclusive use, curfew, minimum nights, rain plan and set-up times not published on the weddings page."
+  ],
+  "verify_items": [
+    "[[VERIFY: Hotel Indigo Bali Seminyak Beach - page lists four venues up to 80 guests each, but its FAQ says 'two main settings' (Pool Deck, Secret Garden Pool); confirm which spaces host ceremonies vs receptions]]",
+    "[[VERIFY: Hotel Indigo Bali Seminyak Beach - FAQ says tailored proposal 'rather than a single fixed package' while the page lists named packages; confirm current offer]]",
+    "[[VERIFY: The Elysian (Seminyak) - guest capacity, villa count and exclusive-use option not stated on weddings page]]"
+  ],
+  "tools_used": [
+    "mcp__Apify__apify--web-search",
+    "mcp__Apify__apify--web-fetch"
+  ],
+  "next_agent": [
+    "luxury-writer"
+  ],
+  "payload": {
+    "facts": [
+      {
+        "fact_id": "fact_200",
+        "claim": "Hotel Indigo Bali Seminyak Beach hosts weddings; its weddings page is headed 'Luxury Beach Front Weddings' and invites couples to 'celebrate a Bali wedding by Seminyak Beach'.",
+        "source": "https://seminyak.hotelindigo.com/en/wedding",
+        "source_type": "official_venue",
+        "checked": "2026-11-18",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_201",
+        "claim": "Hotel Indigo Bali Seminyak Beach describes its wedding settings in its own words as 'beachfront and garden settings' (it uses the words beachfront and beach; ocean appears in venue view labels).",
+        "source": "https://seminyak.hotelindigo.com/en/wedding",
+        "source_type": "official_venue",
+        "checked": "2026-11-18",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_202",
+        "claim": "Hotel Indigo Bali Seminyak Beach lists four wedding venues: Secret Garden Pool (up to 80 guests, ocean and sunset view), Tree Bar (up to 80 guests, ocean and sunset view), SugarSand Sunset Terrace (up to 80 guests, sunset view) and Kamaveda and Neighborhood Gallery (up to 80 guests).",
+        "source": "https://seminyak.hotelindigo.com/en/wedding",
+        "source_type": "official_venue",
+        "checked": "2026-11-18",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_203",
+        "claim": "Hotel Indigo Bali Seminyak Beach names its ceremony venue choices in packages as the Secret Garden Pool, the Pool Deck and the SugarSand Sunset Terrace, and its FAQ describes a sunset beachfront wedding at the Pool Deck or an intimate garden-style ceremony at the Secret Garden Pool.",
+        "source": "https://seminyak.hotelindigo.com/en/wedding",
+        "source_type": "official_venue",
+        "checked": "2026-11-18",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_204",
+        "claim": "Hotel Indigo Bali Seminyak Beach offers Rooms, Suites and private-pool Villas (One Bedroom and Two Bedroom Villas) so guests can stay in the same resort, and suggests larger parties speak to the events or reservations team about room blocks.",
+        "source": "https://seminyak.hotelindigo.com/en/wedding",
+        "source_type": "official_venue",
+        "checked": "2026-11-18",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_205",
+        "claim": "Hotel Indigo Bali Seminyak Beach says a dedicated events team (the Gathering & Events team) manages full planning, from venue set-up and catering to wedding-day coordination; its packages include a wedding celebrant described as non-legal.",
+        "source": "https://seminyak.hotelindigo.com/en/wedding",
+        "source_type": "official_venue",
+        "checked": "2026-11-18",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_206",
+        "claim": "The Elysian (Seminyak) hosts weddings; its weddings page invites couples to 'celebrate your Bali wedding with a beautiful intimate ceremony at The Elysian'.",
+        "source": "https://theelysian.com/weddings/",
+        "source_type": "official_venue",
+        "checked": "2026-11-18",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_207",
+        "claim": "The Elysian (Seminyak) says its pool villas are transformed with flowers and touches of Bali for the wedding; its site lists 1 BR and 2 BR Villas. The weddings page does not use the words beachfront, beach, ocean or sea.",
+        "source": "https://theelysian.com/weddings/",
+        "source_type": "official_venue",
+        "checked": "2026-11-18",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_208",
+        "claim": "The Elysian (Seminyak) offers a Wedding Package and a 'menu' of options covering event planning, flower arrangements, banquet menus, and hair and make-up for the bride and bridal party, with a dedicated team.",
+        "source": "https://theelysian.com/weddings/",
+        "source_type": "official_venue",
+        "checked": "2026-11-18",
+        "is_price": false
+      }
+    ],
+    "insider_details": [],
+    "needs_signoff": [],
+    "real_weddings": [],
+    "quotes": [],
+    "must_include_coverage": [
+      {
+        "item": "Seminyak venues (Batch C)",
+        "covered_by": [
+          "fact_200",
+          "fact_201",
+          "fact_202",
+          "fact_203",
+          "fact_204",
+          "fact_205",
+          "fact_206",
+          "fact_207",
+          "fact_208"
+        ]
+      },
+      {
+        "item": "Seminyak beachfront private villa with exclusive use",
+        "covered_by": [
+          "[[VERIFY: a Petitenget or Batu Belig beachfront villa whose own official site offers weddings and exclusive use]]"
+        ]
+      }
+    ],
+    "verify_items": [
+      "[[VERIFY: Hotel Indigo Bali Seminyak Beach - page lists four venues up to 80 guests each, but its FAQ says 'two main settings' (Pool Deck, Secret Garden Pool); confirm which spaces host ceremonies vs receptions]]",
+      "[[VERIFY: Hotel Indigo Bali Seminyak Beach - FAQ says tailored proposal 'rather than a single fixed package' while the page lists named packages; confirm current offer]]",
+      "[[VERIFY: The Elysian (Seminyak) - guest capacity, villa count and exclusive-use option not stated on weddings page]]"
+    ]
+  }
+}
