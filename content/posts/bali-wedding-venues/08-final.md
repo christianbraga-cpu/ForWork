@@ -34,18 +34,18 @@ The table follows the same order as the guide: clifftops, then beaches, then Sem
 | AYANA Bali <!-- fact_01 --> | Clifftops | Chapel, pier, gardens, villa <!-- fact_02 --> <!-- fact_03 --> <!-- fact_04 --> | Up to 3,000 (reception) <!-- fact_02 --> |
 | Bvlgari Resort Bali <!-- fact_10 --> | Clifftops | Mansion, terrace, chapel, villa <!-- fact_10 --> | Not published |
 | Jumeirah Bali <!-- fact_07 --> | Uluwatu | Fountain (one real wedding) <!-- fact_09 --> | Not published |
-| Samabe Bali Suites & Villas <!-- fact_700 --> | Clifftops | Not published | Buy-out, rooms for 260 <!-- fact_702 --> |
+| Samabe Bali Suites & Villas <!-- fact_700 --> | Clifftops | Not published | Buy-out, accommodation for 260 <!-- fact_702 --> |
 | The Edge Bali <!-- fact_600 --> | Not published | Blessing at the villa <!-- fact_601 --> <!-- fact_603 --> | Up to 50 <!-- fact_600 --> |
-| The Mulia <!-- fact_100 --> | Nusa Dua | Glass chapel, garden, glass house <!-- fact_101 --> <!-- fact_102 --> | Up to 100 <!-- fact_101 --> |
+| The Mulia <!-- fact_100 --> | Nusa Dua | Glass chapel, garden, glass house <!-- fact_101 --> <!-- fact_102 --> | Ask in writing |
 | Four Seasons Jimbaran Bay <!-- fact_103 --> | Jimbaran | Island, pool aisle, villa <!-- fact_104 --> <!-- fact_105 --> | Up to 250 (reception) <!-- fact_105 --> |
 | Raffles Bali <!-- fact_106 --> | Beaches | Beach, garden, villa <!-- fact_106 --> | 30 (Presidential Villa) <!-- fact_107 --> |
-| Grand Hyatt Bali <!-- fact_109 --> | Nusa Dua | Gardens, beach, ballrooms <!-- fact_109 --> <!-- fact_110 --> | Up to 1,500 (outdoor) <!-- fact_110 --> |
+| Grand Hyatt Bali <!-- fact_109 --> | Nusa Dua | Gardens, beach, outdoor space <!-- fact_109 --> <!-- fact_110 --> | Up to 1,500 (outdoor) <!-- fact_110 --> |
 | The Apurva Kempinski Bali <!-- fact_112 --> | Not published | Kimaya Chapel <!-- fact_112 --> | Ask in writing |
 | The St. Regis Bali Resort <!-- fact_400 --> | Nusa Dua | Chapel, beach, amphitheatre <!-- fact_401 --> <!-- fact_403 --> <!-- fact_404 --> | Up to 250 (reception) <!-- fact_406 --> |
-| W Bali Seminyak <!-- fact_210 --> | Seminyak | Starfish Bloo <!-- fact_211 --> | Up to 300 (reception) <!-- fact_212 --> |
+| W Bali Seminyak <!-- fact_210 --> | Seminyak | Not published | Up to 300 (reception) <!-- fact_212 --> |
 | The Oberoi, Bali <!-- fact_509 --> | Seminyak | Garden by the sea <!-- fact_510 --> | Up to 50 <!-- fact_510 --> <!-- fact_511 --> |
 | COMO Uma Ubud <!-- fact_200 --> | Ubud | Sundeck, pool, lawn <!-- fact_200 --> | Buy-out, up to 100 <!-- fact_201 --> |
-| Mandapa, a Ritz-Carlton Reserve <!-- fact_503 --> | Ubud | Temple lawn, riverside, villa <!-- fact_504 --> | Up to 100 (seated) <!-- fact_504 --> |
+| Mandapa, a Ritz-Carlton Reserve <!-- fact_503 --> | Ubud | Temple lawn, riverside, villa <!-- fact_504 --> | Ask in writing |
 
 ### Guest count by space
 
@@ -55,7 +55,7 @@ Use this table to narrow by guest numbers. Each figure is the venue's own, for t
 |---|---|
 | Up to 30 | W 1 BELOW (16), COMO Uma Yoga Pavilion (25), AYANA KISIK Pier (30), Raffles Presidential Villa (30), St. Regis Cloud Nine Chapel (30), Mandapa Rice Terrace Deck (30) <!-- fact_214 --> <!-- fact_202 --> <!-- fact_03 --> <!-- fact_107 --> <!-- fact_402 --> <!-- fact_504 --> |
 | 30 to 80 | Oberoi Serenity by the Sea (50), The Edge (50), COMO Uma Kemiri (70), AYANA Tresna Chapel (70 ceremony), AYANA SKY (80 ceremony) <!-- fact_510 --> <!-- fact_600 --> <!-- fact_203 --> <!-- fact_04 --> <!-- fact_02 --> |
-| 80 to 150 | Mulia Oceanfront Glass House (up to 100), Four Seasons Gili Jimbaran (100), COMO Uma buy-out (100), Mandapa Ayung Riverside (100 seated), St. Regis Astor Ballroom (150 banquet) <!-- fact_101 --> <!-- fact_104 --> <!-- fact_201 --> <!-- fact_504 --> <!-- fact_407 --> |
+| 80 to 150 | Mulia Oceanfront Glass House (up to 100), Four Seasons Gili Jimbaran (100), COMO Uma buy-out (100), St. Regis Astor Ballroom (150 banquet) <!-- fact_101 --> <!-- fact_104 --> <!-- fact_201 --> <!-- fact_407 --> |
 | 150 and more | W Starfish Bloo (200), Four Seasons Coconut Grove (250 reception), St. Regis Cloud Nine Terrace (250 reception), Samabe buy-out (accommodation for 260), Grand Hyatt Grand Ballroom (736 banquet), AYANA Champa Garden (3,000 reception) <!-- fact_211 --> <!-- fact_105 --> <!-- fact_406 --> <!-- fact_702 --> <!-- fact_110 --> <!-- fact_02 --> |
 
 ## Which Bali venues sit on the Bukit and Uluwatu clifftops?
@@ -83,7 +83,7 @@ Bvlgari Resort Bali sits atop a dramatic cliff with views across the Indian Ocea
 - **Suits:** A clifftop wedding with guests in villas and mansions. <!-- fact_606 --> <!-- fact_607 -->
 - **Setting:** A clifftop resort of villas and mansions above the Indian Ocean. <!-- fact_606 --> <!-- fact_607 -->
 - **Ceremony options:** The Bvlgari Mansion Wedding, La Terrazza Wedding, The Bvlgari Chapel Wedding and The Bvlgari Villa Wedding, plus smaller celebrations. <!-- fact_10 -->
-- **Reception spaces and rooms:** Villas and mansions. <!-- fact_607 --> Not published: capacity, room count, exclusive use.
+- **Reception spaces and rooms:** Guests stay in villas and mansions. <!-- fact_607 --> Not published: reception spaces, capacity, room count, exclusive use.
 - **Standout:** The beach and beachside restaurant below the cliff are reserved for in-house guests and reached only by the resort's inclined elevator. <!-- fact_607 -->
 
 ### Jumeirah Bali
@@ -113,7 +113,7 @@ Site visits are by appointment, and whether a minimum spend or rental fee applie
 [The Edge Bali](https://theedgebali.com/weddings/) offers The Sea Wedding among its wedding packages, for up to 50 guests. <!-- fact_600 -->
 
 - **Suits:** An intimate villa blessing for up to 50. <!-- fact_600 --> <!-- fact_601 -->
-- **Setting:** Private villas, named The villa and The view. <!-- fact_602 -->
+- **Setting:** A one-bedroom villa (The villa) and a five-bedroom villa (The view). <!-- fact_602 -->
 - **Ceremony options:** The ceremony is a celebrant blessing at The villa, which the venue describes as non-legal, with a commemorative wedding certificate. <!-- fact_601 --> <!-- fact_603 --> Plan any legal marriage separately.
 - **Reception spaces and rooms:** The reception is at The venue, as a seated dinner or standing cocktails for up to 50. The package includes a stay in a one-bedroom villa and a five-bedroom villa with 24-hour butler service. <!-- fact_601 --> <!-- fact_602 --> Not published: location, outlook, exclusive use.
 - **Standout:** Ceremony, reception and the couple's villa all on one property, sized for an intimate guest list. <!-- fact_601 --> <!-- fact_602 -->
@@ -122,13 +122,13 @@ Site visits are by appointment, and whether a minimum spend or rental fee applie
 
 <!-- IMAGE SLOT area-nusa-dua-jimbaran: Official image from a venue confirmed in Nusa Dua, Sawangan or Jimbaran: a beachfront or ocean-lawn ceremony set-up (aisle, arch) on calm water, soft morning or sunset light, no sunbathers or identifiable guests. Landscape 3:2. Source: the venue's own media kit or press office with written permission (Gmail draft request, never sent by an agent), or licensed premium stock bought by a human and added to library-index.csv. Never AI, never a competitor, directory, planner, photographer-blog or search-result image. Location proven by the media kit, register row or EXIF, never by appearance. -->
 
-The east side of the Bukit and the curve of Jimbaran Bay bring the ceremony down to the sand. Most of the six venues here also hold a chapel or a ballroom, which matters in a wet-season month.
+The east side of the Bukit and the curve of Jimbaran Bay bring the ceremony down to the sand. Most of the six venues here also hold a chapel or a ballroom, which matters in a wet-season month. The Apurva Kempinski does not publish its area, so confirm the location when you enquire.
 
 ### The Mulia
 
 [The Mulia](https://www.themulia.com/bali/weddings) places Unity Garden and the Mulia Glass House along the beachfront of Nusa Dua, with coastal views. <!-- fact_100 -->
 
-- **Suits:** A glass chapel or beachfront garden for up to 100. <!-- fact_102 --> <!-- fact_101 -->
+- **Suits:** A floating glass chapel, or a beachfront garden for up to 100. <!-- fact_102 --> <!-- fact_101 -->
 - **Setting:** A beachfront garden and a glass house on the Nusa Dua shore. <!-- fact_100 -->
 - **Ceremony options:** A floating glass chapel, the Oceanfront Glass House and the Eden Garden, a tropical garden steps from the beach. <!-- fact_102 --> <!-- fact_101 -->
 - **Reception spaces and rooms:** The Oceanfront Glass House package is for up to 100 guests and the Eden Garden package for 100. <!-- fact_101 --> For the glass chapel, ask for capacity in writing. Not published: room count, exclusive use.
@@ -242,7 +242,7 @@ Mandapa, a Ritz-Carlton Reserve sets its weddings among rolling hills, a gentle 
 
 - **Suits:** A riverside or temple-lawn wedding among rice paddies. <!-- fact_504 --> <!-- fact_503 -->
 - **Setting:** Hills, river and rice paddies in Ubud. <!-- fact_503 -->
-- **Ceremony options:** The Temple Lawn, Ayung Riverside (Kubu Riverside) for up to 100 seated, an In-Villa Wedding for up to 10 and the Rice Terrace Deck for up to 30. <!-- fact_504 --> For the Temple Lawn, ask for capacity in writing.
+- **Ceremony options:** The Temple Lawn, Ayung Riverside (Kubu Riverside), an In-Villa Wedding for up to 10 and the Rice Terrace Deck for up to 30. <!-- fact_504 --> For the Temple Lawn and Ayung Riverside, ask for capacity in writing.
 - **Reception spaces and rooms:** The Rice Terrace Deck seats 30, and the Pool Bar and the Library take 30 each, with Dining Beyond for two. <!-- fact_506 --> Its three-bedroom pool villas can host bridal preparations, the ceremony and a cocktail reception. <!-- fact_508 --> Not published: total room count, exclusive use.
 - **Standout:** The Temple Lawn ceremony faces the hundred-year-old Pengiyasan Temple, which stood before the resort was built. <!-- fact_505 -->
 
@@ -270,7 +270,7 @@ If you want the day to feel less like a resort package, Samabe offers customisab
 
 ### Money and contracts: questions to ask each venue
 
-None of these venues publishes wedding pricing online, so ask each for a written quote, then ask:
+Ask each venue for a written quote, then ask:
 
 - Whose name is on the contract, and in what currency is it written and paid?
 - How much deposit is due, when, and at what point does it become non-refundable?
@@ -292,7 +292,7 @@ Each area answers a different question about the day.
 
 **Bukit and Uluwatu clifftops.** Choose the cliffs for height and a horizon. Bvlgari sits atop a cliff over the Indian Ocean, Jumeirah looks over Dreamland Beach in Uluwatu, and AYANA's Tresna Chapel rises above the water. <!-- fact_606 --> <!-- fact_07 --> <!-- fact_04 --> The range runs from a 30-guest ceremony on AYANA's KISIK Pier to a whole-resort buy-out at Samabe. <!-- fact_03 --> <!-- fact_702 -->
 
-**Nusa Dua and Jimbaran.** Choose the beaches for a ceremony on the sand with a chapel or ballroom close by. The Mulia's garden and glass house sit on the Nusa Dua beachfront, The St. Regis has a chapel on its beachfront, and Four Seasons Jimbaran Bay has private beaches and a private-island venue. <!-- fact_100 --> <!-- fact_401 --> <!-- fact_103 --> <!-- fact_104 --> This is also where the largest published spaces are. <!-- fact_110 -->
+**Nusa Dua and Jimbaran.** Choose the beaches for a ceremony on the sand with a chapel or ballroom close by. The Mulia's garden and glass house sit on the Nusa Dua beachfront, The St. Regis has a chapel on its beachfront, and Four Seasons Jimbaran Bay has private beaches and a private-island venue. <!-- fact_100 --> <!-- fact_401 --> <!-- fact_103 --> <!-- fact_104 --> Grand Hyatt's outdoor wedding space is listed for 1,500 guests. <!-- fact_110 -->
 
 **Seminyak.** Choose the west coast for sunset and a sociable evening. W Bali Seminyak sits on the beachfront with sunset views, and The Oberoi offers seaside, garden and poolside spaces. <!-- fact_210 --> <!-- fact_509 -->
 
@@ -359,7 +359,7 @@ AYANA has Tresna Chapel above the Indian Ocean, The Mulia a floating glass chape
 
 ### Which Bali venues can host 100 guests?
 
-Four Seasons Jimbaran Bay's Gili Jimbaran, The Mulia's Oceanfront Glass House, a COMO Uma Ubud buy-out and Mandapa's Ayung Riverside each take up to 100. <!-- fact_104 --> <!-- fact_101 --> <!-- fact_201 --> <!-- fact_504 --> For more, Grand Hyatt, The St. Regis, W Bali Seminyak and AYANA publish larger spaces. <!-- fact_110 --> <!-- fact_406 --> <!-- fact_211 --> <!-- fact_02 -->
+Four Seasons Jimbaran Bay's Gili Jimbaran, The Mulia's Oceanfront Glass House and a COMO Uma Ubud buy-out each take up to 100. <!-- fact_104 --> <!-- fact_101 --> <!-- fact_201 --> For more, Grand Hyatt, The St. Regis, W Bali Seminyak and AYANA publish larger spaces. <!-- fact_110 --> <!-- fact_406 --> <!-- fact_211 --> <!-- fact_02 -->
 
 ### Can we book a private villa or the whole resort for a Bali wedding?
 
