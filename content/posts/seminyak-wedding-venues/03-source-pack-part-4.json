@@ -1,0 +1,59 @@
+{
+  "agent": "planner-sme",
+  "task_id": "seminyak-wedding-venues",
+  "stage": "03",
+  "status": "complete",
+  "round": 1,
+  "inputs_used": [
+    "content/posts/bali-wedding-venues/03-source-pack-part-2.json (format reference)",
+    "mcp__Apify__apify--web-search, 18 November 2026: official URLs sought for The Royal Beach Seminyak Bali, Padma Resort Legian, Pullman Bali Legian Beach, Bali Mandira Beach Resort, Anantara Seminyak Bali Resort, Villa Kayu Raja. Results were third-party only (aggregators, Instagram, Tripadvisor, a competitor); none used.",
+    "mcp__Apify__apify--web-fetch, 18 November 2026 (one round, no retries): https://www.padmaresortlegian.com/weddings (200, served resort overview, no weddings statement); https://www.villakayuraja.com/ (200, homepage, no weddings statement); https://www.anantara.com/en/seminyak-bali/weddings (404); https://www.pullmanbalilegianbeach.com/weddings (404); https://www.balimandira.com/wedding (404); https://www.theroyalbeachseminyak.com/weddings (timed out)"
+  ],
+  "self_qa": {
+    "checks": [
+      {"check": "Every fact has a source and date", "pass": true},
+      {"check": "No price without a source; all prices in needs_signoff", "pass": true, "note": "No amounts recorded. Villa Kayu Raja homepage shows an IDR promotional offer; deliberately not recorded."},
+      {"check": "Every must-include covered or [[VERIFY]]", "pass": true, "note": "Batch D found no venue whose own page states it hosts weddings; gap flagged in verify_items."},
+      {"check": "No invented quotes, statistics or real weddings", "pass": true}
+    ],
+    "confidence": 0.5
+  },
+  "open_questions": [
+    {"to": "orchestrator", "question": "QUALIFIED: none. No venue in batch D had an official page read live that states it hosts weddings.", "blocking": false},
+    {"to": "orchestrator", "question": "FAILED: Padma Resort Legian (official /weddings URL returned the resort overview; it says beachfront and Legian and mentions event spaces but never weddings; facts fact_400 to fact_402 recorded for context only, do not list as a wedding venue until a weddings statement is read). Villa Kayu Raja (official homepage names Seminyak and pool villas but offers no weddings or exclusive use; fact_403 to fact_404 context only). Anantara Seminyak Bali Resort (/en/seminyak-bali/weddings 404). Pullman Bali Legian Beach (/weddings 404). Bali Mandira Beach Resort (/wedding 404). The Royal Beach Seminyak Bali MGallery (fetch timed out). Searches returned no official URLs for any of these.", "blocking": false},
+    {"to": "orchestrator", "question": "If more Seminyak or Legian venues are needed, a retry should first locate each official weddings URL (for example via firecrawl_map on the official domain) rather than guessing paths.", "blocking": false}
+  ],
+  "assumptions": [
+    "All facts dated 2026-11-18 (read date).",
+    "Facts fact_400 to fact_404 describe setting only; neither venue qualifies as a wedding venue on this evidence.",
+    "No capacity, ceremony space, room count or named wedding service was stated on the pages read, so none are recorded."
+  ],
+  "verify_items": [
+    "[[VERIFY: Padma Resort Legian hosts weddings. Its official /weddings URL served the resort overview, which mentions event spaces but not weddings. Confirm on a live official weddings page before listing.]]",
+    "[[VERIFY: official weddings pages for The Royal Beach Seminyak Bali (MGallery), Pullman Bali Legian Beach, Bali Mandira Beach Resort and Anantara Seminyak Bali Resort. None could be read live on 18 November 2026.]]",
+    "[[VERIFY: a Seminyak or Petitenget private villa estate whose own site offers weddings with exclusive use. Villa Kayu Raja's homepage does not.]]"
+  ],
+  "tools_used": ["mcp__Apify__apify--web-search", "mcp__Apify__apify--web-fetch"],
+  "next_agent": ["luxury-writer"],
+  "payload": {
+    "facts": [
+      {"fact_id": "fact_400", "claim": "Padma Resort Legian: its official site describes a prime beachfront location in the heart of Legian, an area it says is renowned for its sunsets. (The page does not mention the sea or ocean by name, and does not name Seminyak.)", "source": "https://www.padmaresortlegian.com/weddings", "source_type": "official_venue", "checked": "2026-11-18", "is_price": false},
+      {"fact_id": "fact_401", "claim": "Padma Resort Legian: its official site states it sits in 9.6 hectares of manicured tropical gardens with water features, swimming pools and public art, and describes itself as a luxury five-star resort.", "source": "https://www.padmaresortlegian.com/weddings", "source_type": "official_venue", "checked": "2026-11-18", "is_price": false},
+      {"fact_id": "fact_402", "claim": "Padma Resort Legian: its official site mentions event spaces and lists room types including the Deluxe Chalet, Lagoon Access Room (private steps into the Lagoon Pool) and Family Room. It does not state that it hosts weddings on the page read.", "source": "https://www.padmaresortlegian.com/weddings", "source_type": "official_venue", "checked": "2026-11-18", "is_price": false},
+      {"fact_id": "fact_403", "claim": "Villa Kayu Raja: its official homepage describes it as nestled in the heart of Seminyak, with secluded One Bedroom and Two Bedroom Pool Villas. It does not say beachfront, beach, ocean or sea.", "source": "https://www.villakayuraja.com/", "source_type": "official_venue", "checked": "2026-11-18", "is_price": false},
+      {"fact_id": "fact_404", "claim": "Villa Kayu Raja: its official homepage lists Daimyo (Japanese), Raja Restaurant and a Pool Bar, and makes no mention of weddings or exclusive use.", "source": "https://www.villakayuraja.com/", "source_type": "official_venue", "checked": "2026-11-18", "is_price": false}
+    ],
+    "insider_details": [],
+    "quotes": [],
+    "real_weddings": [],
+    "verify_items": [
+      "[[VERIFY: Padma Resort Legian hosts weddings. Its official /weddings URL served the resort overview, which mentions event spaces but not weddings. Confirm on a live official weddings page before listing.]]",
+      "[[VERIFY: official weddings pages for The Royal Beach Seminyak Bali (MGallery), Pullman Bali Legian Beach, Bali Mandira Beach Resort and Anantara Seminyak Bali Resort. None could be read live on 18 November 2026.]]",
+      "[[VERIFY: a Seminyak or Petitenget private villa estate whose own site offers weddings with exclusive use. Villa Kayu Raja's homepage does not.]]"
+    ],
+    "needs_signoff": [],
+    "must_include_coverage": [
+      {"item": "Seminyak and Legian beach strip venues (batch D)", "covered_by": ["[[VERIFY: no batch D venue qualified; see verify_items]]"]}
+    ]
+  }
+}
