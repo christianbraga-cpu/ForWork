@@ -2,3 +2,4 @@
 05:36 04 images done: 5 placeholder slots (month taken required).
 05:36 01 brief done: no best month; BMKG station figures, official dates, wet-season plans, scenarios. Research stages waiting on tool permission prompts.
 05:49 Container restart after research finished; all research files survived. 02 SEO: head term AU 20 / US 10; bali rainy season AU 5,400. 03 batch A: no station normals readable (images); definitions only. Batch B: 2027 holidays (Nyepi 8 March), Smartraveller and venue wet-season facts copied.
+05:52 Top-up by orchestrator: BMKG 2026-2027 onset bulletin is an embedded document (not readable as text); Nyepi traveller search failed (service error, not retried). Monthly table dropped as planned. Merged pack.
