@@ -18,4 +18,6 @@
 - **Decision (default):** same-sex couples: one factual, sourced sentence plus a link to /expert-advice/where-can-same-sex-couples-legally-marry-abroad.
 
 ## Stages
-- **Stage 0 + 1 fast (strategist, research):** running.
+- **Stage 0 fast (strategist):** DONE. SERP for Sydney and Brisbane only (Melbourne and Perth failed with DataForSEO error 40101). Only "legal wedding in bali" returned AU volume (10/month). Top 3: an unreadable university record, an Indonesian-language official PDF, an unsourced Instagram post; none written for Australians. Brief: 8 H2s, about 2,100 words, 5 FAQs, SEO title "Bali Marriage Religion Requirement: What the Law Says" (52), about 17 links, two DRAFT siblings conditional. No page targets the keyword.
+- **Site issues found:** the weddings-abroad article appears at /destination-weddings/ on the live site but /expert-advice/ in link-map (check path); our "ultimate Bali guide" claims, unsourced, that the religious and civil ceremonies must happen in the same place on the same day (added to SITE-CONFLICTS).
+- **Stage 1 fast (research):** running; at about 01:58 it was waiting on a user permission prompt for an MCP tool.
