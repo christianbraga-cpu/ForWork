@@ -25,4 +25,5 @@
 - **Stage 2 fast (writer):** DONE. 03-draft-v1.md. --check: 2,438 reader words (138 over the 2,300 cap; writer estimated 2,050), 0 dashes, 0 placeholders, 4 domains, none blocked. YAML valid; 26 claims, 16 links (parent link conditional).
 - **Stage 3 fast (3 reviews):** DONE. Accuracy 3.8 (majors: unsourced villa generalisations, invented villa inclusions, unsourced exclusive-use definitions, confirmation sent to a DFAT mission for Indonesian rules, selective Nirjhara list with "celebrant", invented "we ask for an itemised quote" process). SEO 4.0 (meta 162 chars, 138 words over, FAQ 5 and three passages repeat the parent). Reader (couple) relevance 1, trust 3, clarity 4, would_enquire 1; its "wrong destination" blocker overruled as the Italy-led persona limitation. Merged request: 04-reviews/v1/merged.md.
 - **Decision (default, change if you want):** SEO title changed to "Bali Villa Wedding Packages: Villa vs Resort and What to Ask" to separate it from the parent in search results.
-- **Stage 4 fast (writer v2):** running.
+- **Stage 4 fast (writer v2):** DONE. 03-draft-v2.md. --check: 2,180 reader words (inside 1,800 to 2,300), 0 dashes, 0 placeholders, 4 domains, none blocked. YAML valid; 27 claims, 16 links. All 22 merged items applied; flagged phrases remain only in front matter notes and the change log.
+- **Stage 6 fast (copy editor):** running.
