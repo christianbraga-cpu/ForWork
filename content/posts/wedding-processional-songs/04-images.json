@@ -1,0 +1,212 @@
+{
+  "agent": "visual-curator",
+  "task_id": "wedding-processional-songs",
+  "stage": "04",
+  "status": "needs_input",
+  "round": 1,
+  "inputs_used": [
+    "CLAUDE.md",
+    "content/posts/wedding-processional-songs/00-input.json",
+    "content-system/images/library-index.csv (header only, no rows)",
+    "content-system/schemas/04-images.schema.json",
+    "content/posts/samoan-wedding-traditions/04-images.json (format)"
+  ],
+  "self_qa": {
+    "checks": [
+      {
+        "check": "Zero reference-only or competitor images in slots",
+        "pass": true
+      },
+      {
+        "check": "Every approved image has verified location, licence, alt, caption, fit_reason",
+        "pass": true,
+        "note": "No approved images; all 5 slots needed."
+      },
+      {
+        "check": "No AI image of a real wedding, person or place",
+        "pass": true,
+        "note": "AI offered only as a still-life fallback for the instrumental slot, not generated, pending approval, labelled 'Illustrative image'."
+      },
+      {
+        "check": "Old-page images not reused without confirmed licence",
+        "pass": true,
+        "note": "Old page images not reviewed in fast mode; excluded until licence confirmed."
+      },
+      {
+        "check": "Featured image exists (approved or needed with brief)",
+        "pass": true,
+        "note": "Needed with brief."
+      },
+      {
+        "check": "Placements match final H2 numbering",
+        "pass": false,
+        "note": "02-seo.json not available; after_h2 assumes 1 classical, 2 church, 3 instrumental, 4 modern."
+      }
+    ],
+    "confidence": 0.6
+  },
+  "open_questions": [
+    {
+      "to": "Nic",
+      "question": "Confirm licence and couple consent for the old /top-24-wedding-processional-songs-in-2024 page images before any reuse? Default: not reused.",
+      "blocking": false
+    },
+    {
+      "to": "Nic",
+      "question": "Source licensed photos for 5 slots (client weddings with signed consent, partner photographers or musicians, licensed stock with releases)? Repo register has no rows.",
+      "blocking": true
+    },
+    {
+      "to": "Nic",
+      "question": "Approve or decline an AI illustrative still life (harp or sheet music on a ceremony chair; no people or real place), captioned 'Illustrative image', for the instrumental slot if no licensed photo is found?",
+      "blocking": false
+    },
+    {
+      "to": "seo-researcher",
+      "question": "Confirm H2 numbering once the outline exists and remap after_h2 placements.",
+      "blocking": false
+    }
+  ],
+  "assumptions": [
+    "Repo register only (per brief); Google Drive, own site, Canva, press kits and Google Lens not run in fast mode.",
+    "No venue in scope, so no permission emails drafted.",
+    "Musicians and church interiors need consent or permission as well as couples and guests."
+  ],
+  "verify_items": [
+    "[[IMAGE NEEDED]] featured: bride walking a ceremony aisle, consented couple",
+    "[[IMAGE NEEDED]] classical: string quartet or organist at a ceremony, consented or licensed",
+    "[[IMAGE NEEDED]] church: chapel aisle dressed for a wedding, church permission",
+    "[[IMAGE NEEDED]] instrumental: piano or harp at a ceremony (or approved illustrative still life)",
+    "[[IMAGE NEEDED]] modern: outdoor or beach aisle at golden hour",
+    "[[VERIFY licence]] old-page images: licence scope and couple consent",
+    "[[VERIFY licence]] every sourced photo: credit, scope, model and property releases",
+    "[[VERIFY: any AI illustrative still life approved by Nic before generation]]"
+  ],
+  "next_agent": [
+    "luxury-writer"
+  ],
+  "payload": {
+    "slots": [
+      {
+        "slot_id": "featured",
+        "placement": "featured",
+        "purpose": "Hero: the emotional aisle moment the whole list serves.",
+        "shot_brief": "Real, licensed photo of a bride (with or without escort) walking down a ceremony aisle toward the altar, guests turned, soft natural light, luxury destination feel. Consenting couple; venue identified and named from source. Never AI.",
+        "status": "needed",
+        "file": "content/posts/wedding-processional-songs/images/wedding-processional-songs-aisle-walk-hero.webp",
+        "source": {
+          "type": "library",
+          "origin": "[[IMAGE NEEDED]] library-index.csv has header only, no rows; old-page images reused only if licence confirmed",
+          "credit": "[[VERIFY licence]]"
+        },
+        "consent": {
+          "couple": "required, signed",
+          "guests": "required if identifiable",
+          "venue": "required if interior identifiable"
+        },
+        "alt": "Bride walking down a flower-lined ceremony aisle as guests turn to watch",
+        "caption": "<Venue>, <town>. Photo: [[VERIFY credit]]",
+        "lens_check": "Not run: no candidate image.",
+        "location": {
+          "venue": "[[VERIFY: venue]]",
+          "town": "[[VERIFY: town]]",
+          "verified_by": "[[VERIFY: register, EXIF GPS or source page]]"
+        }
+      },
+      {
+        "slot_id": "classical",
+        "placement": "after_h2:1",
+        "purpose": "Show live classical music at a ceremony for the classical songs group.",
+        "shot_brief": "Real, licensed photo of a string quartet or organist playing at a wedding ceremony, instruments in focus, musicians consented (or licensed stock with model release). Never AI.",
+        "status": "needed",
+        "file": "content/posts/wedding-processional-songs/images/wedding-processional-songs-string-quartet-ceremony.webp",
+        "source": {
+          "type": "library",
+          "origin": "[[IMAGE NEEDED]] library-index.csv has header only, no rows; old-page images reused only if licence confirmed",
+          "credit": "[[VERIFY licence]]"
+        },
+        "consent": {
+          "musicians": "required, signed or model release",
+          "guests": "required if identifiable",
+          "venue": "required if interior identifiable"
+        },
+        "alt": "String quartet playing beside the aisle during a wedding ceremony",
+        "caption": "<Venue>, <town>. Photo: [[VERIFY credit]]",
+        "lens_check": "Not run: no candidate image."
+      },
+      {
+        "slot_id": "church",
+        "placement": "after_h2:2",
+        "purpose": "Ground the church processional group in a real chapel aisle.",
+        "shot_brief": "Real, licensed photo of a chapel or church aisle dressed for a wedding, pews and altar visible, empty or with consenting guests, soft daylight. Church named and permission for interior use confirmed. Never AI.",
+        "status": "needed",
+        "file": "content/posts/wedding-processional-songs/images/wedding-processional-songs-chapel-aisle.webp",
+        "source": {
+          "type": "library",
+          "origin": "[[IMAGE NEEDED]] library-index.csv has header only, no rows; old-page images reused only if licence confirmed",
+          "credit": "[[VERIFY licence]]"
+        },
+        "consent": {
+          "venue": "required (church interior)",
+          "guests": "required if identifiable"
+        },
+        "alt": "Chapel aisle with dressed pews leading to the altar before a wedding ceremony",
+        "caption": "<Church>, <town>. Photo: [[VERIFY credit]]",
+        "lens_check": "Not run: no candidate image.",
+        "location": {
+          "venue": "[[VERIFY: church]]",
+          "town": "[[VERIFY: town]]",
+          "verified_by": "[[VERIFY: register, EXIF GPS or source page]]"
+        }
+      },
+      {
+        "slot_id": "instrumental",
+        "placement": "after_h2:3",
+        "purpose": "Set the mood for the instrumental group (link to the instrumental wedding songs post).",
+        "shot_brief": "Real, licensed photo of a piano or harp at a ceremony setting, musician optional (consented). Fallback, only if Nic approves: AI still life of a harp or piano keys with sheet music on a ceremony chair, no people, no real place, captioned 'Illustrative image'.",
+        "status": "needed",
+        "file": "content/posts/wedding-processional-songs/images/wedding-processional-songs-harp-ceremony.webp",
+        "source": {
+          "type": "library",
+          "origin": "[[IMAGE NEEDED]] library-index.csv has header only, no rows; old-page images reused only if licence confirmed",
+          "credit": "[[VERIFY licence]]"
+        },
+        "consent": {
+          "musician": "required if identifiable",
+          "venue": "required if identifiable"
+        },
+        "alt": "Harp set up beside ceremony chairs ready for the processional",
+        "caption": "<Venue>, <town>. Photo: [[VERIFY credit]]",
+        "lens_check": "Not run: no candidate image."
+      },
+      {
+        "slot_id": "modern",
+        "placement": "after_h2:4",
+        "purpose": "Show a relaxed outdoor or beach aisle for the modern and pop songs group.",
+        "shot_brief": "Real, licensed photo of a couple or bride walking an outdoor garden or beach aisle at golden hour, destination setting named. Consenting couple and guests. Never AI.",
+        "status": "needed",
+        "file": "content/posts/wedding-processional-songs/images/wedding-processional-songs-beach-aisle-modern.webp",
+        "source": {
+          "type": "library",
+          "origin": "[[IMAGE NEEDED]] library-index.csv has header only, no rows; old-page images reused only if licence confirmed",
+          "credit": "[[VERIFY licence]]"
+        },
+        "consent": {
+          "couple": "required, signed",
+          "guests": "required if identifiable",
+          "venue": "required if interior identifiable"
+        },
+        "alt": "Bride walking a sandy beach aisle at golden hour toward the ceremony arch",
+        "caption": "<Beach or venue>, <town>. Photo: [[VERIFY credit]]",
+        "lens_check": "Not run: no candidate image.",
+        "location": {
+          "venue": "[[VERIFY: venue or beach]]",
+          "town": "[[VERIFY: town]]",
+          "verified_by": "[[VERIFY: register, EXIF GPS or source page]]"
+        }
+      }
+    ],
+    "reference_only": [],
+    "permission_requests": []
+  }
+}
