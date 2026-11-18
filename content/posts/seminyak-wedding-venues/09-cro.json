@@ -1,0 +1,108 @@
+{
+  "agent": "cro-specialist",
+  "task_id": "seminyak-wedding-venues",
+  "stage": "09",
+  "status": "needs_input",
+  "round": 1,
+  "inputs_used": [
+    "CLAUDE.md",
+    "content/posts/seminyak-wedding-venues/01-brief.json",
+    "content/posts/seminyak-wedding-venues/07-panel.json (cta_reaction)",
+    "content/posts/seminyak-wedding-venues/08-final.md",
+    "content-system/brand/brand-facts.md",
+    "content-system/seo/link-map.csv (/wonderland-concierge, /magazine)",
+    "content/posts/bali-wedding-venues/09-cro.json (format model)"
+  ],
+  "self_qa": {
+    "checks": [
+      {
+        "check": "Primary CTA 6 words or fewer, no 'click here', no exclamation mark",
+        "pass": true,
+        "note": "'Confirm it through Wedded Concierge' (5 words), matching the existing anchor on line 190."
+      },
+      {
+        "check": "utm_content primary, secondary, closing, magnet each appear exactly once",
+        "pass": true,
+        "note": "Checked by grep on 08-final.md: 4 UTM links, 1 each (lines 190, 224, 281, 206)."
+      },
+      {
+        "check": "UTMs only on /wonderland-concierge (3) and /magazine (1)",
+        "pass": true
+      },
+      {
+        "check": "/wonderland-concierge anchors name Wedded Concierge",
+        "pass": true,
+        "note": "Line 190 'Wedded Concierge'; line 224 'see real options with Wedded Concierge'; line 281 'shortlist your Seminyak venues through Wedded Concierge'."
+      },
+      {
+        "check": "CTA copy only from brand facts claims, no prices or figures",
+        "pass": true
+      },
+      {
+        "check": "No 'free' or no-cost wording, perks, Wedded Privileges, em dashes; 08-final.md not edited",
+        "pass": false,
+        "note": "Magnet anchor on line 206 reads 'free Wedded Wonderland magazines'. 08-final.md not edited per instruction; copy change flagged to orchestrator. CTA text recorded here omits 'free'."
+      }
+    ],
+    "confidence": 0.8
+  },
+  "open_questions": [
+    {
+      "to": "orchestrator",
+      "question": "08-final.md line 206 magnet anchor contains 'free' ('browse the free Wedded Wonderland magazines'). Suggested replacement anchor: 'Wedded Wonderland magazine'. Needs a one-word copy edit before CMS.",
+      "blocking": true
+    },
+    {
+      "to": "orchestrator",
+      "question": "08-final.md contains no <!-- CTA: primary --> marker; placements rely on the existing inline links.",
+      "blocking": false
+    }
+  ],
+  "assumptions": [
+    "FAST MODE: persona cta_reactions not re-read in detail; placements follow the existing inline links and the bali-wedding-venues model."
+  ],
+  "verify_items": [],
+  "tools_used": [
+    "Bash (grep, python3 -I)"
+  ],
+  "payload": {
+    "journey_stage": "comparing",
+    "primary_cta": {
+      "text": "Confirm it through Wedded Concierge",
+      "subtext": "Your Wedded Advisor confirms inclusions in writing before you sign.",
+      "link": "https://weddedwonderland.com/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=seminyak-wedding-venues&utm_content=primary",
+      "placement": "Existing inline link on line 190 (anchor 'Wedded Concierge'), right after the 'Not published' details from capacity to private hire, where the reader's open question peaks. Unchanged."
+    },
+    "secondary_cta": {
+      "text": "See real options with Wedded Concierge",
+      "subtext": "One Wedded Advisor weighs venues, dates and travel side by side.",
+      "link": "https://weddedwonderland.com/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=seminyak-wedding-venues&utm_content=secondary",
+      "placement": "Existing line 224 (anchor 'see real options with Wedded Concierge'), once venues and travel are covered. Unchanged."
+    },
+    "lead_magnet": {
+      "name": "Wedded Wonderland magazine",
+      "link": "https://weddedwonderland.com/magazine?utm_source=blog&utm_medium=content&utm_campaign=seminyak-wedding-venues&utm_content=magnet",
+      "placement": "Existing line 206, for readers still gathering ideas before they enquire. Anchor currently includes 'free'; copy change requested (see open_questions).",
+      "exists": true
+    },
+    "closing_cta": {
+      "text": "Shortlist your Seminyak venues",
+      "subtext": "Quotes in AUD, in your time zone, with the fee agreed in writing before any work begins.",
+      "link": "https://weddedwonderland.com/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=seminyak-wedding-venues&utm_content=closing",
+      "placement": "Existing closing paragraph line 281 (anchor 'shortlist your Seminyak venues through Wedded Concierge'). Unchanged."
+    },
+    "tracking": [
+      "https://weddedwonderland.com/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=seminyak-wedding-venues&utm_content=primary",
+      "https://weddedwonderland.com/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=seminyak-wedding-venues&utm_content=secondary",
+      "https://weddedwonderland.com/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=seminyak-wedding-venues&utm_content=closing",
+      "https://weddedwonderland.com/magazine?utm_source=blog&utm_medium=content&utm_campaign=seminyak-wedding-venues&utm_content=magnet"
+    ],
+    "copy_changes": [
+      "Line 206: replace anchor 'free Wedded Wonderland magazines' with 'Wedded Wonderland magazine' (removes 'free'; link and UTM unchanged)."
+    ],
+    "rationale": "Brief journey_stage is 'comparing': the couple is weighing Seminyak beachfront resorts, villas and beach clubs, so the primary invitation sits after the list of details venues do not publish, where answers in writing matter most. The secondary follows venues and travel, the magazine serves earlier-stage readers, and the closing CTA ends the post. Subtexts use only brand-facts reassurances: inclusions in writing, single point of contact, AUD quotes, time zone and fee agreed in writing. No prices, perks, Privileges or availability wording. A printable Seminyak venue comparison checklist would be a better-matched magnet; none is known to exist, so it is a backlog suggestion only and not placed."
+  },
+  "next_agent": [
+    "distribution"
+  ]
+}
