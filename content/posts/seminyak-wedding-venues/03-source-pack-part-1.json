@@ -1,0 +1,121 @@
+{
+  "agent": "planner-sme",
+  "task_id": "seminyak-wedding-venues",
+  "stage": "03",
+  "status": "complete",
+  "round": 1,
+  "inputs_used": [
+    "content/posts/bali-wedding-venues/03-source-pack-part-2.json (format reference)",
+    "mcp__Apify__apify--web-search, 18 November 2026: official URLs sought for Katamama, Potato Head Seminyak, KU DE TA, Mrs Sippy, The Samaya Seminyak (results were third-party, social or marketplace only)",
+    "mcp__Apify__apify--web-fetch, 18 November 2026 (one round, no retries): https://mrssippybali.com/ (200); https://www.kudeta.com/events (200, public events calendar, no weddings statement); https://seminyak.potatohead.co/weddings (404); https://katamama.com/ (timed out); https://www.thesamayabali.com/seminyak/weddings/ (timed out)"
+  ],
+  "self_qa": {
+    "checks": [
+      {"check": "Every fact has a source and date", "pass": true},
+      {"check": "No price without a source; all prices in needs_signoff", "pass": true, "note": "No amounts recorded. Mrs Sippy homepage shows a pool club entry fee in IDR; deliberately not recorded per batch instruction."},
+      {"check": "Every must-include covered or [[VERIFY]]", "pass": true, "note": "Batch B: only Mrs Sippy qualified; the other four are flagged in verify_items."},
+      {"check": "No invented quotes, statistics or real weddings", "pass": true}
+    ],
+    "confidence": 0.5
+  },
+  "open_questions": [
+    {
+      "to": "orchestrator",
+      "question": "QUALIFIED (official page read live, weddings stated): Mrs Sippy Bali (fact_100 to fact_103). Its own site states it is poolside 'in the heart of Seminyak'; it does NOT say beachfront, beach, ocean or sea for this venue (only its separate sister venue Sunset Beach by Mrs Sippy, not assessed).",
+      "blocking": false
+    },
+    {
+      "to": "orchestrator",
+      "question": "FAILED: Potato Head Seminyak (guessed official weddings URL returned 404). KU DE TA (official events page read; public events calendar only, no weddings or private wedding statement). Katamama (official site fetch timed out). The Samaya Seminyak (guessed official weddings URL timed out). Search returned only third-party, social and marketplace pages for all five; snippets do not qualify any venue.",
+      "blocking": true
+    },
+    {
+      "to": "luxury-writer",
+      "question": "Do not describe Mrs Sippy as a beach or beachfront venue, and do not state prices, capacities or room counts for it; none were published on the page read.",
+      "blocking": false
+    }
+  ],
+  "assumptions": [
+    "All facts dated 2026-11-18 (read date).",
+    "BOOKING CHECKLIST: Mrs Sippy Bali - wedding capacity, exclusive use or buy-out terms, ceremony space, music curfew (public hours published as 10 am to 9 pm), rain plan and set-up times not published on the page read.",
+    "No rooms or villas: Mrs Sippy is a pool club, restaurant and bar with no accommodation stated on the page read."
+  ],
+  "verify_items": [
+    "[[VERIFY: Potato Head Seminyak and Katamama official weddings or events pages (404 or timed out). Confirm from their own sites whether they host private weddings, and setting wording (beachfront or not).]]",
+    "[[VERIFY: The Samaya Seminyak official weddings page (timed out). Confirm weddings, setting wording, ceremony spaces, capacity and villa count from its own site.]]",
+    "[[VERIFY: KU DE TA private weddings. Its official events page lists only public events; confirm from an official private events or weddings page before including it.]]"
+  ],
+  "tools_used": [
+    "mcp__Apify__apify--web-search",
+    "mcp__Apify__apify--web-fetch",
+    "Bash"
+  ],
+  "next_agent": [
+    "luxury-writer"
+  ],
+  "payload": {
+    "facts": [
+      {
+        "fact_id": "fact_100",
+        "claim": "Mrs Sippy Bali: its official site lists 'your dream wedding' among the private functions it hosts (with hen's or bucks parties and birthdays), with an expert team and canape and set menu options for events.",
+        "source": "https://mrssippybali.com/",
+        "source_type": "official_venue",
+        "checked": "2026-11-18",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_101",
+        "claim": "Mrs Sippy Bali: its own site describes it as located 'in the heart of Seminyak', a 'unique poolside sanctuary' and an architectural masterpiece with rustic sandstone walls, polished cement floors and dusty pink vintage tiles. The site does not describe this venue as beachfront, beach, ocean or sea.",
+        "source": "https://mrssippybali.com/",
+        "source_type": "official_venue",
+        "checked": "2026-11-18",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_102",
+        "claim": "Mrs Sippy Bali: the standout feature on its site is an iconic triple-tier dive tower into the pool, set among shady palms and daybeds; chefs fuse Mediterranean and charcoal cuisine from an open-air, wood-fired kitchen.",
+        "source": "https://mrssippybali.com/",
+        "source_type": "official_venue",
+        "checked": "2026-11-18",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_103",
+        "claim": "Mrs Sippy Bali: the site lists opening hours of 10 am to 9 pm daily, an address on Jl. Taman Ganesha, Gang Gagak 8, Kerobokan Kelod, Seminyak, and amenities including valet parking and airport transfer booking.",
+        "source": "https://mrssippybali.com/",
+        "source_type": "official_venue",
+        "checked": "2026-11-18",
+        "is_price": false
+      }
+    ],
+    "insider_details": [
+      {
+        "detail": "Mrs Sippy publishes public hours of 10 am to 9 pm and runs as a daily pool club, so ask early about buy-out or private hire terms and how late music can run for a wedding.",
+        "fact_ids": ["fact_100", "fact_103"]
+      },
+      {
+        "detail": "Mrs Sippy is a poolside venue, not a beach one, so frame it as a pool-party style reception rather than a sunset beach ceremony.",
+        "fact_ids": ["fact_101", "fact_102"]
+      }
+    ],
+    "quotes": [],
+    "real_weddings": [],
+    "verify_items": [
+      "[[VERIFY: Potato Head Seminyak and Katamama official weddings or events pages (404 or timed out). Confirm from their own sites whether they host private weddings, and setting wording (beachfront or not).]]",
+      "[[VERIFY: The Samaya Seminyak official weddings page (timed out). Confirm weddings, setting wording, ceremony spaces, capacity and villa count from its own site.]]",
+      "[[VERIFY: KU DE TA private weddings. Its official events page lists only public events; confirm from an official private events or weddings page before including it.]]"
+    ],
+    "needs_signoff": [],
+    "must_include_coverage": [
+      {
+        "item": "Seminyak venues (Batch B: Katamama, Potato Head, KU DE TA, Mrs Sippy, The Samaya Seminyak)",
+        "covered_by": [
+          "fact_100", "fact_101", "fact_102", "fact_103",
+          "[[VERIFY: Potato Head Seminyak and Katamama official weddings or events pages (404 or timed out). Confirm from their own sites whether they host private weddings, and setting wording (beachfront or not).]]",
+          "[[VERIFY: The Samaya Seminyak official weddings page (timed out). Confirm weddings, setting wording, ceremony spaces, capacity and villa count from its own site.]]",
+          "[[VERIFY: KU DE TA private weddings. Its official events page lists only public events; confirm from an official private events or weddings page before including it.]]"
+        ]
+      }
+    ]
+  }
+}
