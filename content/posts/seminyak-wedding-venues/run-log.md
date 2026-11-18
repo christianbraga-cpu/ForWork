@@ -10,3 +10,4 @@
 02:03 07 five readers done (enquire 1 to 4); Hotel Indigo venue count mismatch flagged.
 02:04 06 editor 4.0 pass_with_edits, 17 edits applied.
 02:06 07b panel revise (enquire 2.1), 4 must-fix.
+02:07 08 final copy done (~3,170 words), 4 must-fix applied.
