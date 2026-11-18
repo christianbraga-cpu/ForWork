@@ -1,0 +1,149 @@
+{
+ "agent": "distribution-lead",
+ "task_id": "seminyak-wedding-venues",
+ "stage": "10",
+ "status": "complete",
+ "round": 1,
+ "inputs_used": [
+  "CLAUDE.md",
+  "content/posts/bali-wedding-venues/10-distribution.json (format model)",
+  "content/posts/seminyak-wedding-venues/08-final.md (copy and image slot markers)",
+  "content/posts/seminyak-wedding-venues/02-seo.json",
+  "content/posts/seminyak-wedding-venues/04-images.json",
+  "content-system/brand/banned-phrases.md"
+ ],
+ "self_qa": {
+  "checks": [
+   {
+    "check": "3 pins tied to image slots in 04-images.json / 08-final.md",
+    "pass": true,
+    "note": "featured, beachfront-resorts, villas; images not yet sourced"
+   },
+   {
+    "check": "Pin titles <= 100, descriptions <= 500",
+    "pass": true,
+    "note": "69/402, 58/424, 62/388"
+   },
+   {
+    "check": "UTM per channel: pinterest/social, instagram via bio link, newsletter/email; utm_campaign=seminyak-wedding-venues",
+    "pass": true,
+    "note": "same pattern as Bali model"
+   },
+   {
+    "check": "8-slide carousel, hook first, Wedded Advisor conversation last",
+    "pass": true
+   },
+   {
+    "check": "Caption <= 2,200 chars, 5 to 10 hashtags",
+    "pass": true,
+    "note": "1409 chars, 8 hashtags"
+   },
+   {
+    "check": "Newsletter subject <= 60, preview <= 110, blurb 60 to 100 words",
+    "pass": true,
+    "note": "50/86/70 words"
+   },
+   {
+    "check": "Only facts in 08-final.md; no prices; no ranking or 'best'; no [[VERIFY]]",
+    "pass": true
+   },
+   {
+    "check": "The Elysian and Mrs Sippy never called beachside; 'beachside' not used anywhere",
+    "pass": true
+   },
+   {
+    "check": "No same-sex legal position; no Advisor claims beyond the copy; never 'last dance'",
+    "pass": true
+   },
+   {
+    "check": "Australian English, no em or en dashes, no banned phrases",
+    "pass": true
+   }
+  ],
+  "confidence": 0.9
+ },
+ "open_questions": [
+  {
+   "to": "orchestrator",
+   "question": "Images for featured, beachfront-resorts and villas (and carousel backgrounds) are not yet sourced and need a licence covering social use. Venue press-kit images need written permission that covers social. Never AI for venue or location shots.",
+   "blocking": true
+  },
+  {
+   "to": "orchestrator",
+   "question": "Confirm Pinterest board names (Destination Weddings, Bali Weddings) match existing boards.",
+   "blocking": false
+  },
+  {
+   "to": "orchestrator",
+   "question": "Instagram bio link should be https://weddedwonderland.com/destination-weddings/seminyak-wedding-venues?utm_source=instagram&utm_medium=social&utm_campaign=seminyak-wedding-venues&utm_content=bio-link while the carousel runs.",
+   "blocking": false
+  }
+ ],
+ "assumptions": [
+  "Post URL from 02-seo.json url_path: https://weddedwonderland.com/destination-weddings/seminyak-wedding-venues",
+  "Board names are proposals.",
+  "Legal, visa and safety detail omitted from social assets beyond 'plan the legal marriage separately'.",
+  "Venue names appear only as written in the copy, with descriptions taken from it."
+ ],
+ "verify_items": [],
+ "tools_used": [
+  "Bash"
+ ],
+ "next_agent": [
+  "cms-publisher"
+ ],
+ "payload": {
+  "pinterest": [
+   {
+    "title": "Seminyak Wedding Venues: 7 Beachfront Resorts, Villas and a Pool Club",
+    "description": "Seminyak sits on Bali's southwest coast, on the beach that runs north from Kuta and Legian. Our guide sets out seven Seminyak wedding venues on the same terms: five resorts that describe themselves as beachfront, plus a pool villa and a pool club for a day around the water rather than on the sand. Published spaces run from a 16-guest hidden room to a deck for 300 at a reception. Read the full guide.",
+    "image_slot": "featured",
+    "board": "Bali Weddings",
+    "link": "https://weddedwonderland.com/destination-weddings/seminyak-wedding-venues?utm_source=pinterest&utm_medium=social&utm_campaign=seminyak-wedding-venues&utm_content=pin-overview"
+   },
+   {
+    "title": "Seminyak Beach Wedding: Five Beachfront Resorts to Compare",
+    "description": "For a Seminyak beach wedding, five resorts describe themselves as beachfront: W Bali Seminyak, The Oberoi, Bali, Alila Seminyak, The Seminyak Beach Resort & Spa and Hotel Indigo Bali Seminyak Beach. Purnama Chapel stands on Seminyak Beach itself for up to 90 guests, and The Oberoi's garden takes 50. The wet season usually runs from around October to April, so agree a covered fallback before you sign. Read the full guide.",
+    "image_slot": "beachfront-resorts",
+    "board": "Destination Weddings",
+    "link": "https://weddedwonderland.com/destination-weddings/seminyak-wedding-venues?utm_source=pinterest&utm_medium=social&utm_campaign=seminyak-wedding-venues&utm_content=pin-beachfront"
+   },
+   {
+    "title": "Seminyak Villa Wedding or Pool Club? Two Poolside Alternatives",
+    "description": "Not every Seminyak wedding needs the sand. The Elysian hosts intimate ceremonies at its pool villas, dressed with flowers and Balinese touches, so the whole day can happen behind one villa wall. Mrs Sippy Bali is a poolside venue in the heart of Seminyak that hosts private functions, weddings among them. Ask how many guests each can seat and how private hire works. Read the full guide.",
+    "image_slot": "villas",
+    "board": "Bali Weddings",
+    "link": "https://weddedwonderland.com/destination-weddings/seminyak-wedding-venues?utm_source=pinterest&utm_medium=social&utm_campaign=seminyak-wedding-venues&utm_content=pin-villas"
+   }
+  ],
+  "instagram_carousel": {
+   "slides": [
+    "Planning a Seminyak wedding? Decide on sand or pool before you pick the venue.",
+    "Five resorts describe themselves as beachfront: W Bali Seminyak, The Oberoi, Alila Seminyak, The Seminyak Beach Resort and Hotel Indigo.",
+    "Two poolside alternatives: The Elysian's pool villas and Mrs Sippy Bali's pool club.",
+    "Match the space to your guest list: from a 16-guest hidden room at W Bali Seminyak to a deck for 300 at a reception.",
+    "None of the seven publishes wedding pricing or exclusive use online. Ask each for a written quote.",
+    "The wet season usually runs from around October to April. Agree a covered fallback before you sign.",
+    "Want a symbolic beach ceremony? Plan the legal marriage separately.",
+    "Shortlisting Seminyak venues? Message us to talk it through with a Wedded Advisor. Link in bio."
+   ],
+   "caption": "Seminyak on your list? Start with sand or pool.\n\nOur new guide sets out seven Seminyak wedding venues on the same terms.\n\nOn the beachfront:\n1. W Bali Seminyak. A space for almost every part of a long weekend, from 1 BELOW, a hidden room for 16, to the WET Deck for 300 at a reception.\n2. The Oberoi, Bali. Serenity by the Sea, an open garden with ocean views, takes 50.\n3. Alila Seminyak. A secluded beachfront resort near Pura Petitenget, with spaces overlooking the Indian Ocean.\n4. The Seminyak Beach Resort & Spa. Purnama Chapel, a pavilion on Seminyak Beach, takes up to 90 invited guests.\n5. Hotel Indigo Bali Seminyak Beach. Four wedding venues, each for up to 80 guests.\n\nAround the pool:\n6. The Elysian. Intimate ceremonies at its pool villas.\n7. Mrs Sippy Bali. A poolside venue in the heart of Seminyak that hosts private functions, weddings among them.\n\nBefore you fall for the view:\n- Ask each venue for a written quote that states whether your spaces can be closed to other guests.\n- Ask whether the ceremony space is on the resort's own grounds or the public beach in front of it.\n- The wet season usually runs from around October to April, so agree a covered fallback before you sign.\n- Some packaged ceremonies are non-legal, so plan the legal marriage separately.\n\nReady to narrow it to two or three names? Message us to talk it through with a Wedded Advisor. Full guide at the link in bio.",
+   "hashtags": [
+    "#seminyakwedding",
+    "#baliwedding",
+    "#baliweddingvenue",
+    "#destinationwedding",
+    "#australianbride",
+    "#weddingplanning",
+    "#overseaswedding",
+    "#weddedwonderland"
+   ]
+  },
+  "newsletter": {
+   "subject": "Seminyak wedding venues: beachfront, villa or pool",
+   "preview": "Seven venues set out on the same terms, from a 16-guest hidden room to a deck for 300.",
+   "blurb": "Seminyak on your list? Our new guide sets out seven Seminyak wedding venues on the same terms: five resorts that describe themselves as beachfront, plus a pool villa and a pool club for a day around the water rather than on the sand. You will find ceremony spaces and published guest numbers for each, plus the questions to ask about private hire, contracts, wet-season fallbacks and getting guests to Bali.",
+   "link": "https://weddedwonderland.com/destination-weddings/seminyak-wedding-venues?utm_source=newsletter&utm_medium=email&utm_campaign=seminyak-wedding-venues&utm_content=newsletter"
+  }
+ }
+}
