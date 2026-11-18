@@ -1,0 +1,298 @@
+{
+  "agent": "planner-sme",
+  "task_id": "bali-wedding-venues",
+  "stage": "03",
+  "status": "complete",
+  "round": 1,
+  "inputs_used": [
+    "content/posts/bali-wedding-venues/03-source-pack-part-2.json (format reference)",
+    "mcp__Apify__apify--web-search, 18 November 2026, official domains only, for 6 venues",
+    "mcp__Apify__apify--web-fetch, 18 November 2026 (one round): https://capellahotels.com/en/capella-ubud/event-enquiry (200); https://www.ritzcarlton.com/en/hotels/dpsub-mandapa-a-ritz-carlton-reserve/weddings/ (200); https://www.oberoihotels.com/hotels-in-bali/events/ (200); https://www.hyatt.com/alila-hotels-and-resorts/en-US/dpsas-alila-seminyak (200); https://www.comohotels.com/bali/como-canggu/occasions/weddings (200); https://www.thelegianbali.com/ (timed out, not retried)"
+  ],
+  "self_qa": {
+    "checks": [
+      {
+        "check": "Every fact has a source and date",
+        "pass": true
+      },
+      {
+        "check": "No price without a source; all prices in needs_signoff",
+        "pass": true,
+        "note": "No amounts recorded; Mandapa and Alila pages show IDR figures, deliberately omitted."
+      },
+      {
+        "check": "Every must-include covered or [[VERIFY]]",
+        "pass": true,
+        "note": "Batch F covers Ubud, Seminyak and Canggu only."
+      },
+      {
+        "check": "No invented quotes, statistics or real weddings",
+        "pass": true
+      }
+    ],
+    "confidence": 0.6
+  },
+  "open_questions": [
+    {
+      "to": "orchestrator",
+      "question": "QUALIFIED (official page read live, weddings stated): Capella Ubud (fact_500 to fact_502, enquiry form only, thin), Mandapa, a Ritz-Carlton Reserve (fact_503 to fact_508, current URL uses dpsub not dpssr), The Oberoi, Bali (fact_509 to fact_511), Alila Seminyak (fact_512 to fact_515, hotel overview page on hyatt.com), COMO Canggu, formerly COMO Uma Canggu (fact_516 to fact_519).",
+      "blocking": false
+    },
+    {
+      "to": "orchestrator",
+      "question": "FAILED: The Legian Seminyak (official-domain search returned no Legian page; homepage fetch timed out, not retried).",
+      "blocking": false
+    },
+    {
+      "to": "orchestrator",
+      "question": "COMO Uma Canggu now appears on the official site as 'COMO Canggu'. Confirm which name the article uses.",
+      "blocking": false
+    }
+  ],
+  "assumptions": [
+    "BOOKING CHECKLIST: Capella Ubud - venues, capacity, curfew, rain plan and minimum nights not published.",
+    "BOOKING CHECKLIST: Mandapa - curfew, rain plan, minimum nights, exclusive use not published.",
+    "BOOKING CHECKLIST: The Oberoi, Bali - curfew, rain plan, wedding-specific capacity beyond 50 not published.",
+    "BOOKING CHECKLIST: Alila Seminyak - named ceremony venues, curfew, rain plan not published.",
+    "BOOKING CHECKLIST: COMO Canggu - curfew, rain plan, minimum nights for buy-out not published."
+  ],
+  "verify_items": [
+    "[[VERIFY: Mandapa Temple Lawn capacity, venue section says 100 seated, Garden Wedding package text says up to 150 guests]]",
+    "[[VERIFY: Mandapa Kubu Riverside capacity, venue section says 100 seated, Riverside package text says up to 30 guests]]",
+    "[[VERIFY: Alila Seminyak 250-guest figure is stated for gatherings; confirm wedding capacity with the resort]]",
+    "[[VERIFY: Capella Ubud wedding venues and capacity, official page is an enquiry form only]]",
+    "[[VERIFY: COMO Canggu resort buy-out capped at 80 guests vs dining area seating 100; confirm wedding maximum]]"
+  ],
+  "tools_used": [
+    "mcp__Apify__apify--web-search",
+    "mcp__Apify__apify--web-fetch",
+    "Bash"
+  ],
+  "next_agent": [
+    "luxury-writer"
+  ],
+  "payload": {
+    "facts": [
+      {
+        "fact_id": "fact_500",
+        "claim": "Capella Ubud, Bali publishes a 'Request for Proposal - Weddings & Special Occasions' form on its official site, offering wedding types Ceremony, Reception, Ceremony & Reception, Photoshoot Journey and Tailored.",
+        "source": "https://capellahotels.com/en/capella-ubud/event-enquiry",
+        "source_type": "official_venue",
+        "checked": "2026-11-18",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_501",
+        "claim": "Capella Ubud, Bali lists 'Ballroom' as the preferred venue option on its official wedding enquiry form; no other ceremony spaces, capacities or wedding service details are published on that page.",
+        "source": "https://capellahotels.com/en/capella-ubud/event-enquiry",
+        "source_type": "official_venue",
+        "checked": "2026-11-18",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_502",
+        "claim": "Capella Ubud, Bali gives its address as Jl. Raya Dalem, Banjar Triwangsa, Desa Keliki, Kecamatan Tegallalang, Ubud, Gianyar, Bali.",
+        "source": "https://capellahotels.com/en/capella-ubud/event-enquiry",
+        "source_type": "official_venue",
+        "checked": "2026-11-18",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_503",
+        "claim": "Mandapa, a Ritz-Carlton Reserve describes its setting as 'rolling hills, a gentle river and verdant rice paddies' and offers bridal preparations, ceremony and reception at its Ubud venues.",
+        "source": "https://www.ritzcarlton.com/en/hotels/dpsub-mandapa-a-ritz-carlton-reserve/weddings/",
+        "source_type": "official_venue",
+        "checked": "2026-11-18",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_504",
+        "claim": "Mandapa, a Ritz-Carlton Reserve lists ceremony venues Temple Lawn (maximum 100 seated), Ayung Riverside/Kubu Riverside (maximum 100 seated), In-Villa Wedding (maximum 10 seated) and Rice Terrace Deck (maximum 30).",
+        "source": "https://www.ritzcarlton.com/en/hotels/dpsub-mandapa-a-ritz-carlton-reserve/weddings/",
+        "source_type": "official_venue",
+        "checked": "2026-11-18",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_505",
+        "claim": "Mandapa, a Ritz-Carlton Reserve states the Temple Lawn ceremony backdrop is the hundred-year-old Pengiyasan Temple, which stood before the resort was built.",
+        "source": "https://www.ritzcarlton.com/en/hotels/dpsub-mandapa-a-ritz-carlton-reserve/weddings/",
+        "source_type": "official_venue",
+        "checked": "2026-11-18",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_506",
+        "claim": "Mandapa, a Ritz-Carlton Reserve lists reception venues Temple Lawn (maximum 100 seated), Rice Terrace Deck (maximum 30 seated), and the Pool Bar and Library (maximum 30 each), plus Dining Beyond for two.",
+        "source": "https://www.ritzcarlton.com/en/hotels/dpsub-mandapa-a-ritz-carlton-reserve/weddings/",
+        "source_type": "official_venue",
+        "checked": "2026-11-18",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_507",
+        "claim": "Mandapa, a Ritz-Carlton Reserve names Marriott Certified Wedding Planners and dedicated Wedding Planners, and offers a dedicated personal assistant for the couple.",
+        "source": "https://www.ritzcarlton.com/en/hotels/dpsub-mandapa-a-ritz-carlton-reserve/weddings/",
+        "source_type": "official_venue",
+        "checked": "2026-11-18",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_508",
+        "claim": "Mandapa, a Ritz-Carlton Reserve states wedding packages include a non-legal wedding celebrant, and that its three-bedroom pool villas can host bridal preparations, ceremony and cocktail reception.",
+        "source": "https://www.ritzcarlton.com/en/hotels/dpsub-mandapa-a-ritz-carlton-reserve/weddings/",
+        "source_type": "official_venue",
+        "checked": "2026-11-18",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_509",
+        "claim": "The Oberoi, Bali describes itself as offering stunning beachfront venues for destination weddings, with al fresco seaside, garden and poolside venues.",
+        "source": "https://www.oberoihotels.com/hotels-in-bali/events/",
+        "source_type": "official_venue",
+        "checked": "2026-11-18",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_510",
+        "claim": "The Oberoi, Bali lists Serenity by the Sea, an open garden 'intimate Bali wedding venue' with ocean vistas, capacity 50 guests.",
+        "source": "https://www.oberoihotels.com/hotels-in-bali/events/",
+        "source_type": "official_venue",
+        "checked": "2026-11-18",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_511",
+        "claim": "The Oberoi, Bali lists Bale Banjar, 112 square metres, with up to 50 guests for a standing cocktail and 24 to 32 at round tables.",
+        "source": "https://www.oberoihotels.com/hotels-in-bali/events/",
+        "source_type": "official_venue",
+        "checked": "2026-11-18",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_512",
+        "claim": "Alila Seminyak describes itself as a beachfront resort on Bali's southwest coast, steps from the Indian Ocean, at the quieter end of the beach stretching north from Kuta and Legian.",
+        "source": "https://www.hyatt.com/alila-hotels-and-resorts/en-US/dpsas-alila-seminyak",
+        "source_type": "official_venue",
+        "checked": "2026-11-18",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_513",
+        "claim": "Alila Seminyak states couples can exchange vows overlooking the Indian Ocean in customisable spaces, with a celebration tailor-made for them.",
+        "source": "https://www.hyatt.com/alila-hotels-and-resorts/en-US/dpsas-alila-seminyak",
+        "source_type": "official_venue",
+        "checked": "2026-11-18",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_514",
+        "claim": "Alila Seminyak states its indoor venues, open-air terraces and event lawns can accommodate up to 250 guests (stated under Gatherings).",
+        "source": "https://www.hyatt.com/alila-hotels-and-resorts/en-US/dpsas-alila-seminyak",
+        "source_type": "official_venue",
+        "checked": "2026-11-18",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_515",
+        "claim": "Alila Seminyak has its own Segara Temple on the resort and is near Pura Petitenget.",
+        "source": "https://www.hyatt.com/alila-hotels-and-resorts/en-US/dpsas-alila-seminyak",
+        "source_type": "official_venue",
+        "checked": "2026-11-18",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_516",
+        "claim": "COMO Canggu (formerly COMO Uma Canggu) describes itself as 'the perfect destination for free-spirited weddings on Bali's sun-kissed southern coast', from a weekend for two to a resort buy-out.",
+        "source": "https://www.comohotels.com/bali/como-canggu/occasions/weddings",
+        "source_type": "official_venue",
+        "checked": "2026-11-18",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_517",
+        "claim": "COMO Canggu lists two wedding venues: COMO Beach Club (deck and lawn up to 50 seated each, dining area 100) and COMO Penthouse (40 total, private rooftop pool).",
+        "source": "https://www.comohotels.com/bali/como-canggu/occasions/weddings",
+        "source_type": "official_venue",
+        "checked": "2026-11-18",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_518",
+        "claim": "COMO Canggu states it hosts up to 80 guests for a resort buy-out and offers planning assistance, styling and entertainment services on request.",
+        "source": "https://www.comohotels.com/bali/como-canggu/occasions/weddings",
+        "source_type": "official_venue",
+        "checked": "2026-11-18",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_519",
+        "claim": "COMO Canggu states it is 60 minutes from Ngurah Rai International Airport.",
+        "source": "https://www.comohotels.com/bali/como-canggu/occasions/weddings",
+        "source_type": "official_venue",
+        "checked": "2026-11-18",
+        "is_price": false
+      }
+    ],
+    "insider_details": [
+      {
+        "detail": "Mandapa's ceremony spaces are small-to-mid scale (largest published 100 seated), so it suits intimate Ubud weddings rather than large guest lists.",
+        "fact_ids": [
+          "fact_504",
+          "fact_506"
+        ]
+      },
+      {
+        "detail": "Mandapa's packages use a non-legal celebrant, so couples should plan the legal marriage separately.",
+        "fact_ids": [
+          "fact_508"
+        ]
+      },
+      {
+        "detail": "COMO Canggu's buy-out tops out at 80 guests and it is about an hour from the airport, so plan airport transfers as a group movement.",
+        "fact_ids": [
+          "fact_518",
+          "fact_519"
+        ]
+      }
+    ],
+    "quotes": [],
+    "real_weddings": [],
+    "verify_items": [
+      "[[VERIFY: Mandapa Temple Lawn capacity, venue section says 100 seated, Garden Wedding package text says up to 150 guests]]",
+      "[[VERIFY: Mandapa Kubu Riverside capacity, venue section says 100 seated, Riverside package text says up to 30 guests]]",
+      "[[VERIFY: Alila Seminyak 250-guest figure is stated for gatherings; confirm wedding capacity with the resort]]",
+      "[[VERIFY: Capella Ubud wedding venues and capacity, official page is an enquiry form only]]",
+      "[[VERIFY: COMO Canggu resort buy-out capped at 80 guests vs dining area seating 100; confirm wedding maximum]]"
+    ],
+    "needs_signoff": [],
+    "must_include_coverage": {
+      "Ubud venues": [
+        "fact_500",
+        "fact_501",
+        "fact_502",
+        "fact_503",
+        "fact_504",
+        "fact_505",
+        "fact_506",
+        "fact_507",
+        "fact_508"
+      ],
+      "Seminyak venues": [
+        "fact_509",
+        "fact_510",
+        "fact_511",
+        "fact_512",
+        "fact_513",
+        "fact_514",
+        "fact_515"
+      ],
+      "Canggu venues": [
+        "fact_516",
+        "fact_517",
+        "fact_518",
+        "fact_519"
+      ]
+    }
+  }
+}

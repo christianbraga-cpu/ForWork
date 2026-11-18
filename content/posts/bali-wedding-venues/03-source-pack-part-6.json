@@ -1,0 +1,158 @@
+{
+  "agent": "planner-sme",
+  "task_id": "bali-wedding-venues",
+  "stage": "03",
+  "status": "complete",
+  "round": 1,
+  "inputs_used": [
+    "content/posts/bali-wedding-venues/03-source-pack-part-2.json (format reference)",
+    "mcp__Apify__apify--web-search, 18 November 2026: Alila Villas Uluwatu, Six Senses Bali, Banyan Tree Ungasan, Anantara Uluwatu, The edge Bali, Renaissance Bali Uluwatu, Bvlgari Resort Bali",
+    "mcp__Apify__apify--web-fetch, 18 November 2026: https://theedgebali.com/weddings/the-sea-wedding/ (200); https://www.marriott.com/en-us/hotels/dpsuw-renaissance-bali-uluwatu-resort-and-spa/events/weddings/ (200); https://www.bulgarihotels.com/en_US/bali (200); https://www.banyantree.com/weddings-honeymoons (200, brand page, no Ungasan mention); https://www.alilahotels.com/uluwatu/weddings-events (timed out); https://www.sixsenses.com/en/hotels-resorts/asia-the-pacific/indonesia/bali/meetings-events/ (404); https://www.anantara.com/en/uluwatu-bali/weddings (404)"
+  ],
+  "self_qa": {
+    "checks": [
+      {
+        "check": "Every fact has a source and date",
+        "pass": true
+      },
+      {
+        "check": "No price without a source; all prices in needs_signoff",
+        "pass": true,
+        "note": "No amounts recorded. The edge page shows an IDR package price; deliberately not recorded."
+      },
+      {
+        "check": "Every must-include covered or [[VERIFY]]",
+        "pass": true,
+        "note": "Batch G covers Bukit and Uluwatu clifftop venues only."
+      },
+      {
+        "check": "No invented quotes, statistics or real weddings",
+        "pass": true
+      }
+    ],
+    "confidence": 0.6
+  },
+  "open_questions": [
+    {
+      "to": "orchestrator",
+      "question": "QUALIFIED (official page read live, weddings stated): The edge Bali (fact_600 to fact_603), Renaissance Bali Uluwatu Resort & Spa (fact_604 to fact_605). Bvlgari Resort Bali setting added (fact_606 to fact_607); chapel not described on page read.",
+      "blocking": false
+    },
+    {
+      "to": "orchestrator",
+      "question": "FAILED: Alila Villas Uluwatu (alilahotels.com/uluwatu/weddings-events timed out; search gave only third-party pages). Six Senses Bali (guessed meetings-events URL 404). Banyan Tree Ungasan (brand weddings page read but does not name Ungasan; property page not found). Anantara Uluwatu (/en/uluwatu-bali/weddings 404; weddings only seen in snippets).",
+      "blocking": false
+    }
+  ],
+  "assumptions": [
+    "BOOKING CHECKLIST: The edge Bali: music curfew, rain plan, set-up times not published.",
+    "BOOKING CHECKLIST: Renaissance Bali Uluwatu: venue capacities, curfew, rain plan not published on weddings home page.",
+    "BOOKING CHECKLIST: Bvlgari Resort Bali: chapel capacity, curfew, exclusive-use terms not published on page read."
+  ],
+  "verify_items": [
+    "[[VERIFY: The edge Bali Sea Wedding blessing is non-legal; confirm civil registration route for couples who want a legal Bali marriage]]",
+    "[[VERIFY: Renaissance Bali Uluwatu chapel and beach venue capacities, not stated on weddings home page]]",
+    "[[VERIFY: Bvlgari Resort Bali wedding chapel and ceremony capacity; official pages read did not describe the chapel]]"
+  ],
+  "tools_used": [
+    "mcp__Apify__apify--web-search",
+    "mcp__Apify__apify--web-fetch"
+  ],
+  "next_agent": [
+    "luxury-writer"
+  ],
+  "payload": {
+    "facts": [
+      {
+        "fact_id": "fact_600",
+        "claim": "The edge Bali presents The Sea Wedding as one of its wedding packages, with a stated wedding capacity of up to 50 guests.",
+        "source": "https://theedgebali.com/weddings/the-sea-wedding/",
+        "source_type": "official_venue",
+        "checked": "2026-11-18",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_601",
+        "claim": "The edge Bali's Sea Wedding places the ceremony at The villa and the reception at The venue, with a seated dinner or standing cocktail set-up for up to 50 guests.",
+        "source": "https://theedgebali.com/weddings/the-sea-wedding/",
+        "source_type": "official_venue",
+        "checked": "2026-11-18",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_602",
+        "claim": "The edge Bali's Sea Wedding includes a stay in a 1-bedroom villa (The villa) and a 5-bedroom villa (The view), with 24-hour butler service and airport and hotel transfers for in-house guests.",
+        "source": "https://theedgebali.com/weddings/the-sea-wedding/",
+        "source_type": "official_venue",
+        "checked": "2026-11-18",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_603",
+        "claim": "The edge Bali's Sea Wedding includes a celebrant blessing ceremony that the venue describes as non-legal, with a commemorative wedding certificate.",
+        "source": "https://theedgebali.com/weddings/the-sea-wedding/",
+        "source_type": "official_venue",
+        "checked": "2026-11-18",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_604",
+        "claim": "Renaissance Bali Uluwatu Resort & Spa states couples can say their vows in an enchanting chapel or on the beach, and describes its Bali outdoor wedding venues for ceremonies and receptions.",
+        "source": "https://www.marriott.com/en-us/hotels/dpsuw-renaissance-bali-uluwatu-resort-and-spa/events/weddings/",
+        "source_type": "official_venue",
+        "checked": "2026-11-18",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_605",
+        "claim": "Renaissance Bali Uluwatu Resort & Spa offers personalised Uluwatu wedding packages, tailored catering and an expert team of planners, with a dedicated wedding expert contact.",
+        "source": "https://www.marriott.com/en-us/hotels/dpsuw-renaissance-bali-uluwatu-resort-and-spa/events/weddings/",
+        "source_type": "official_venue",
+        "checked": "2026-11-18",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_606",
+        "claim": "Bvlgari Resort Bali describes itself as uniquely positioned atop a dramatic cliff with unrivalled views across the Indian Ocean.",
+        "source": "https://www.bulgarihotels.com/en_US/bali",
+        "source_type": "official_venue",
+        "checked": "2026-11-18",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_607",
+        "claim": "Bvlgari Resort Bali states its beach and beachside restaurant are exclusive to in-house guests and reached only through the resort's inclined elevator; accommodation is in villas and mansions.",
+        "source": "https://www.bulgarihotels.com/en_US/bali",
+        "source_type": "official_venue",
+        "checked": "2026-11-18",
+        "is_price": false
+      }
+    ],
+    "insider_details": [
+      {
+        "detail": "The edge Bali's Sea Wedding blessing is non-legal, so couples wanting a legally recognised marriage should plan the legal step separately.",
+        "fact_ids": [
+          "fact_603"
+        ]
+      }
+    ],
+    "quotes": [],
+    "real_weddings": [],
+    "verify_items": [
+      "[[VERIFY: The edge Bali Sea Wedding blessing is non-legal; confirm civil registration route for couples who want a legal Bali marriage]]",
+      "[[VERIFY: Renaissance Bali Uluwatu chapel and beach venue capacities, not stated on weddings home page]]",
+      "[[VERIFY: Bvlgari Resort Bali wedding chapel and ceremony capacity; official pages read did not describe the chapel]]"
+    ],
+    "needs_signoff": [],
+    "must_include_coverage": [
+      {
+        "item": "Bukit and Uluwatu clifftop venues",
+        "covered_by": [
+          "fact_600",
+          "fact_604",
+          "fact_606"
+        ]
+      }
+    ]
+  }
+}
