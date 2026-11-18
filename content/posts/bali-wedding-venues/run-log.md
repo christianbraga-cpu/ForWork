@@ -10,3 +10,4 @@
 01:20 Top-up E: St Regis qualifies; Ritz-Carlton, Conrad 404. Orchestrator read Samabe events page: qualifies (cliffside, whole-resort buyout, 260 guests). Count 13; F and G running.
 01:23 Top-up G: The Edge and Renaissance Uluwatu qualify; Bvlgari clifftop setting added; Alila timeout, Six Senses/Anantara 404, Banyan Tree page does not name Ungasan. Count 15; F running.
 01:23 Top-up F: Capella (thin), Mandapa, Oberoi, Alila Seminyak, COMO Canggu qualify; Legian fails. 20 qualify; 15 chosen for spread and fit, 5 reserves. Merged pack; verify items cleared (capacity conflicts written as 'ask in writing').
+01:27 05 first draft done (~4,680 words, 15 venues, 0 VERIFY).
