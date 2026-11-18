@@ -1,0 +1,274 @@
+{
+  "agent": "planner-sme",
+  "task_id": "bali-wedding-venues",
+  "stage": "03",
+  "status": "complete",
+  "round": 1,
+  "inputs_used": [
+    "content/posts/getting-married-in-brazil/03-source-pack-part-1.json (format reference)",
+    "mcp__Apify__apify--web-search, 18 November 2026: official URLs sought for Capella Ubud, Mandapa, COMO Uma Ubud, Hanging Gardens of Bali, Four Seasons Sayan, The Legian Seminyak, Alila Seminyak, COMO Uma Canggu, W Bali - Seminyak",
+    "mcp__Apify__apify--web-fetch, 18 November 2026 (one round, no retries): https://www.comohotels.com/bali/como-uma-ubud/occasions/weddings (200); https://www.fourseasons.com/sayan/weddings/ (200); https://www.marriott.com/en-us/hotels/dpswh-w-bali-seminyak/events/ (200); https://hanginggardensofbali.com/ (200, homepage, no weddings statement); https://capellahotels.com/en/capella-ubud/weddings (404); https://www.ritzcarlton.com/en/hotels/dpssr-mandapa-a-ritz-carlton-reserve/events/ (404); https://www.comohotels.com/bali/como-uma-canggu/occasions/weddings (timed out)"
+  ],
+  "self_qa": {
+    "checks": [
+      {
+        "check": "Every fact has a source and date",
+        "pass": true
+      },
+      {
+        "check": "No price without a source; all prices in needs_signoff",
+        "pass": true,
+        "note": "No amounts recorded. COMO Uma Ubud page shows an IDR package price; deliberately not recorded per batch instruction."
+      },
+      {
+        "check": "Every must-include covered or [[VERIFY]]",
+        "pass": true,
+        "note": "Batch C covers Seminyak and Ubud only; Canggu and Tanah Lot have no qualified venue, flagged in verify_items."
+      },
+      {
+        "check": "No invented quotes, statistics or real weddings",
+        "pass": true
+      }
+    ],
+    "confidence": 0.6
+  },
+  "open_questions": [
+    {
+      "to": "orchestrator",
+      "question": "QUALIFIED (official page read live, weddings stated): COMO Uma Ubud (fact_200 to fact_205), Four Seasons Resort Bali at Sayan (fact_206 to fact_209), W Bali - Seminyak (fact_210 to fact_214).",
+      "blocking": false
+    },
+    {
+      "to": "orchestrator",
+      "question": "FAILED: Capella Ubud (guessed official weddings URL returned 404; search gave only Instagram and a 2019 press PDF). Mandapa, a Ritz-Carlton Reserve (official events URL 404; search gave only third-party pages). Hanging Gardens of Bali (official homepage read; no weddings statement on it). COMO Uma Canggu (official weddings URL fetch timed out; not retried). The Legian Seminyak and Alila Seminyak (no official page found in search; third-party only). Snippets do not qualify any of these.",
+      "blocking": false
+    },
+    {
+      "to": "orchestrator",
+      "question": "No Canggu or Tanah Lot venue qualified in this batch. A follow-up batch is needed if the article must cover those areas.",
+      "blocking": true
+    },
+    {
+      "to": "luxury-writer",
+      "question": "Do not state prices or rooms counts for these venues; neither was recorded. COMO's celebrant is described as non-legal: do not imply a legal ceremony.",
+      "blocking": false
+    }
+  ],
+  "assumptions": [
+    "All facts dated 2026-11-18 (read date).",
+    "BOOKING CHECKLIST: COMO Uma Ubud - noise curfew, minimum nights, set-up times and legal ceremony options not published on the weddings page.",
+    "BOOKING CHECKLIST: Four Seasons Resort Bali at Sayan - venue capacities, exclusive use, curfew, minimum nights and rain plan not published on the weddings page.",
+    "BOOKING CHECKLIST: W Bali - Seminyak - curfew, minimum nights, rain plan for beachfront venues and set-up times not published on the events page.",
+    "Room and villa counts were not stated on the pages read, so none are recorded."
+  ],
+  "verify_items": [
+    "[[VERIFY: W Bali - Seminyak Great Room wedding capacity. The events page states 'Dance all night with 260 of your nearest and dearest in the Great Room' but its capacity chart and FAQ give 330 (reception) and 180 (banquet). Confirm the wedding figure with the hotel.]]",
+    "[[VERIFY: a qualified Canggu venue (e.g. COMO Uma Canggu official weddings page, which timed out) and a Tanah Lot venue, from their own official sites.]]",
+    "[[VERIFY: Capella Ubud, Mandapa a Ritz-Carlton Reserve, The Legian Seminyak and Alila Seminyak official weddings pages, not read (404 or not found).]]"
+  ],
+  "tools_used": [
+    "mcp__Apify__apify--web-search",
+    "mcp__Apify__apify--web-fetch",
+    "Bash"
+  ],
+  "next_agent": [
+    "luxury-writer"
+  ],
+  "payload": {
+    "facts": [
+      {
+        "fact_id": "fact_200",
+        "claim": "COMO Uma Ubud: its official weddings page states it hosts tropical weddings, either as a resort buy-out or as a more intimate celebration on a private sundeck, beside the pool, or on a lawn lit by lanterns.",
+        "source": "https://www.comohotels.com/bali/como-uma-ubud/occasions/weddings",
+        "source_type": "official_venue",
+        "checked": "2026-11-18",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_201",
+        "claim": "COMO Uma Ubud: the official page lists five wedding venues, two restaurants, and a capacity of up to 100 guests for a resort buy-out.",
+        "source": "https://www.comohotels.com/bali/como-uma-ubud/occasions/weddings",
+        "source_type": "official_venue",
+        "checked": "2026-11-18",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_202",
+        "claim": "COMO Uma Ubud: the Yoga Pavilion is an open-air pavilion for up to 25 people overlooking the Tjampuhan Valley; the Yoga Studio takes up to 40 guests and is the stated wet weather option for events in Uma Bar.",
+        "source": "https://www.comohotels.com/bali/como-uma-ubud/occasions/weddings",
+        "source_type": "official_venue",
+        "checked": "2026-11-18",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_203",
+        "claim": "COMO Uma Ubud: Uma Bar extends from the bar to the 25m pool; Kemiri is available for exclusive hire, seating 70 in an open-air, alang-alang-roofed space beside a waterfall-fed pond (private dining bale seats up to six); Uma Cucina (Italian) takes private groups of up to 70.",
+        "source": "https://www.comohotels.com/bali/como-uma-ubud/occasions/weddings",
+        "source_type": "official_venue",
+        "checked": "2026-11-18",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_204",
+        "claim": "COMO Uma Ubud: the page states it is 90 minutes by car from Ngurah Rai International Airport, and lists planning assistance, styling and entertainment services on request, plus a DJ beside the pool for cocktails.",
+        "source": "https://www.comohotels.com/bali/como-uma-ubud/occasions/weddings",
+        "source_type": "official_venue",
+        "checked": "2026-11-18",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_205",
+        "claim": "COMO Uma Ubud: the published wedding package includes the services of an English-speaking marriage celebrant described as non-legal, and a commemorative certificate from the resort.",
+        "source": "https://www.comohotels.com/bali/como-uma-ubud/occasions/weddings",
+        "source_type": "official_venue",
+        "checked": "2026-11-18",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_206",
+        "claim": "Four Seasons Resort Bali at Sayan: its official Bali Weddings page describes weddings in Ubud 'high above the forest treetops', with the suspension bridge as the aisle and the elliptical lotus pond as the ceremony backdrop.",
+        "source": "https://www.fourseasons.com/sayan/weddings/",
+        "source_type": "official_venue",
+        "checked": "2026-11-18",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_207",
+        "claim": "Four Seasons Resort Bali at Sayan: named venues on the weddings page are the infinity-edge Rooftop Lotus Pond, the open-air Riverside Pool Terrace (described with panoramic valley forest views), and Jati Bar and Ayung Terrace for canapes, cocktails and a traditional Balinese performance.",
+        "source": "https://www.fourseasons.com/sayan/weddings/",
+        "source_type": "official_venue",
+        "checked": "2026-11-18",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_208",
+        "claim": "Four Seasons Resort Bali at Sayan: the page states an experienced wedding manager and a dedicated wedding planner from initial enquiry, with the catering and events team, and offers curated wedding packages and wedding and vow renewal services.",
+        "source": "https://www.fourseasons.com/sayan/weddings/",
+        "source_type": "official_venue",
+        "checked": "2026-11-18",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_209",
+        "claim": "Four Seasons Resort Bali at Sayan: honeymoon villas are described as private, with rooftop entrances and a below-ground design for seclusion and jungle views; honeymoon experiences are also offered with sister property Four Seasons Resort Bali at Jimbaran Bay.",
+        "source": "https://www.fourseasons.com/sayan/weddings/",
+        "source_type": "official_venue",
+        "checked": "2026-11-18",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_210",
+        "claim": "W Bali - Seminyak: its official Marriott events page answers 'Yes, W Bali - Seminyak provides wedding services' and describes itself as a luxury Bali wedding venue on the Seminyak beachfront with iconic sunset views.",
+        "source": "https://www.marriott.com/en-us/hotels/dpswh-w-bali-seminyak/events/",
+        "source_type": "official_venue",
+        "checked": "2026-11-18",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_211",
+        "claim": "W Bali - Seminyak: Starfish Bloo, its beachfront restaurant overlooking the ocean, is described as a wedding venue accommodating up to 200 guests.",
+        "source": "https://www.marriott.com/en-us/hotels/dpswh-w-bali-seminyak/events/",
+        "source_type": "official_venue",
+        "checked": "2026-11-18",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_212",
+        "claim": "W Bali - Seminyak: the Ice Garden is described as a beachfront wedding reception venue for up to 100 guests (capacity chart: 100 reception, 70 banquet); the WET Deck is charted at 300 reception, 200 banquet.",
+        "source": "https://www.marriott.com/en-us/hotels/dpswh-w-bali-seminyak/events/",
+        "source_type": "official_venue",
+        "checked": "2026-11-18",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_213",
+        "claim": "W Bali - Seminyak: the Great Room is pillarless with a Batu Alam stone wall, a spiral ceiling and Indian Ocean sunset views, with a connecting pre-function terrace.",
+        "source": "https://www.marriott.com/en-us/hotels/dpswh-w-bali-seminyak/events/",
+        "source_type": "official_venue",
+        "checked": "2026-11-18",
+        "is_price": false,
+        "conflicts": "Great Room: page text says 260 for dancing; capacity chart says 330 reception, 180 banquet."
+      },
+      {
+        "fact_id": "fact_214",
+        "claim": "W Bali - Seminyak: 1 BELOW is a 50 square metre hidden venue for up to 16 guests, concealed behind cascading water, with a dedicated chef; the page also describes styling under the line 'Wed Your Way'.",
+        "source": "https://www.marriott.com/en-us/hotels/dpswh-w-bali-seminyak/events/",
+        "source_type": "official_venue",
+        "checked": "2026-11-18",
+        "is_price": false
+      }
+    ],
+    "insider_details": [
+      {
+        "detail": "COMO Uma Ubud publishes the Yoga Studio as its wet weather option for Uma Bar events, so a poolside ceremony there has a named indoor fallback for up to 40 guests.",
+        "fact_ids": [
+          "fact_202",
+          "fact_203"
+        ]
+      },
+      {
+        "detail": "COMO Uma Ubud states the drive from Ngurah Rai International Airport is about 90 minutes, so build guest arrival transfers and a rest gap into the welcome-day timeline.",
+        "fact_ids": [
+          "fact_204"
+        ]
+      },
+      {
+        "detail": "Four Seasons Sayan's aisle is a suspension bridge to the Rooftop Lotus Pond; plan for guests (and anyone with limited mobility) crossing a bridge to reach the ceremony.",
+        "fact_ids": [
+          "fact_206",
+          "fact_207"
+        ]
+      },
+      {
+        "detail": "At W Bali - Seminyak the beachfront venues (Starfish Bloo, Ice Garden, WET Deck) face the sunset, so time the ceremony and drinks around sunset and confirm the indoor Great Room as a rain plan.",
+        "fact_ids": [
+          "fact_210",
+          "fact_211",
+          "fact_212",
+          "fact_213"
+        ]
+      }
+    ],
+    "quotes": [],
+    "real_weddings": [],
+    "verify_items": [
+      "[[VERIFY: W Bali - Seminyak Great Room wedding capacity. The events page states 'Dance all night with 260 of your nearest and dearest in the Great Room' but its capacity chart and FAQ give 330 (reception) and 180 (banquet). Confirm the wedding figure with the hotel.]]",
+      "[[VERIFY: a qualified Canggu venue (e.g. COMO Uma Canggu official weddings page, which timed out) and a Tanah Lot venue, from their own official sites.]]",
+      "[[VERIFY: Capella Ubud, Mandapa a Ritz-Carlton Reserve, The Legian Seminyak and Alila Seminyak official weddings pages, not read (404 or not found).]]"
+    ],
+    "needs_signoff": [],
+    "must_include_coverage": [
+      {
+        "item": "Ubud venues (jungle, river valley)",
+        "covered_by": [
+          "fact_200",
+          "fact_201",
+          "fact_202",
+          "fact_203",
+          "fact_204",
+          "fact_205",
+          "fact_206",
+          "fact_207",
+          "fact_208",
+          "fact_209"
+        ]
+      },
+      {
+        "item": "Seminyak venues (beach)",
+        "covered_by": [
+          "fact_210",
+          "fact_211",
+          "fact_212",
+          "fact_213",
+          "fact_214"
+        ]
+      },
+      {
+        "item": "Canggu and Tanah Lot venues",
+        "covered_by": [
+          "[[VERIFY: a qualified Canggu venue (e.g. COMO Uma Canggu official weddings page, which timed out) and a Tanah Lot venue, from their own official sites.]]"
+        ]
+      }
+    ]
+  }
+}

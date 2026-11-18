@@ -1,0 +1,221 @@
+{
+  "agent": "planner-sme",
+  "task_id": "bali-wedding-venues",
+  "stage": "03",
+  "status": "needs_input",
+  "round": 1,
+  "inputs_used": [
+    "content/posts/getting-married-in-brazil/03-source-pack-part-1.json (format reference)",
+    "mcp__Apify__apify--web-search, 18 November 2026: six venue searches; one (Bulgari) timed out; only Jumeirah returned an official URL, others returned third-party results only (not used)",
+    "mcp__Apify__apify--web-fetch, 18 November 2026: https://www.ayana.com/bali/weddings/ (200); https://www.jumeirah.com/en/article/stories/bali/the-most-spectacular-wedding-venues (200); https://www.bulgarihotels.com/en_US/bali/weddings (200, listing only); https://www.alilahotels.com/uluwatu/weddings (timed out); https://www.sixsenses.com/en/hotels-resorts/asia-the-pacific/indonesia/uluwatu/weddings-celebrations/ (404); https://www.banyantree.com/indonesia/ungasan-bali/weddings (404)"
+  ],
+  "self_qa": {
+    "checks": [
+      {
+        "check": "Every fact has a source and date",
+        "pass": true
+      },
+      {
+        "check": "No price without a source; all prices in needs_signoff",
+        "pass": true,
+        "note": "No amounts recorded. AYANA page notes prices quoted in IDR; not captured."
+      },
+      {
+        "check": "Every must-include covered or [[VERIFY]]",
+        "pass": true,
+        "note": "Batch A only; 3 of 6 venues failed the official-page test."
+      },
+      {
+        "check": "No invented quotes, statistics or real weddings",
+        "pass": true,
+        "note": "Jumeirah couple story is on jumeirah.com, not a Wedded Wonderland page: not recorded as a real wedding or quote."
+      }
+    ],
+    "confidence": 0.5
+  },
+  "open_questions": [
+    {
+      "to": "orchestrator",
+      "question": "QUALIFIED (official page read live): AYANA Bali (fact_01 to fact_06, full venue list and capacities); Jumeirah Bali (fact_07 to fact_09, official jumeirah.com wedding story, no capacities or ceremony-space list); Bvlgari Resort Bali (fact_10, weddings page lists four wedding options only; setting, capacity and villa count not stated on the page read).",
+      "blocking": false
+    },
+    {
+      "to": "orchestrator",
+      "question": "FAILED: Alila Villas Uluwatu (fetch of alilahotels.com/uluwatu/weddings timed out, search gave only third-party results); Six Senses Uluwatu (guessed sixsenses.com weddings URL returned 404; the site's destination menu lists 'Six Senses Bali', so the property may be renamed: check before writing it up); Banyan Tree Ungasan (banyantree.com weddings URL returned 404). Reserves Anantara Uluwatu, Renaissance Uluwatu and The Edge Bali not attempted (time limit). No retries, per instruction.",
+      "blocking": true
+    },
+    {
+      "to": "orchestrator",
+      "question": "Bvlgari Resort Bali and Jumeirah Bali need a second official page (resort overview or venue detail pages) for setting, capacity, room/villa count and exclusive use before they can carry a full venue entry.",
+      "blocking": false
+    },
+    {
+      "to": "luxury-writer",
+      "question": "No prices, no legal claims. Quote Jumeirah's couple story only as the brand's own published story, not as a Wedded Wonderland real wedding.",
+      "blocking": false
+    }
+  ],
+  "assumptions": [
+    "Facts dated 2026-11-18 (read date).",
+    "Bvlgari is spelt 'Bvlgari' by the brand; candidate list used 'Bulgari'.",
+    "BOOKING CHECKLIST: AYANA Bali - music curfew, rain plan for outdoor venues (Champa Garden, SKY, KISIK Pier, Rock Bar), set-up times and minimum spend not published on the page read.",
+    "BOOKING CHECKLIST: Jumeirah Bali - ceremony spaces, capacities, curfew, fireworks permission, rain plan and exclusive-use terms not published on the page read.",
+    "BOOKING CHECKLIST: Bvlgari Resort Bali - capacities, curfew, rain plan and exclusive-use terms not published on the page read."
+  ],
+  "verify_items": [
+    "[[VERIFY: Alila Villas Uluwatu weddings - official alilahotels.com page not read (timeout).]]",
+    "[[VERIFY: Six Senses Uluwatu weddings - official page 404; property may now be listed as 'Six Senses Bali'. Confirm name and wedding offer.]]",
+    "[[VERIFY: Banyan Tree Ungasan weddings - official banyantree.com page 404.]]",
+    "[[VERIFY: Bvlgari Resort Bali setting, ceremony capacities, villa count and exclusive use - not stated on the weddings listing read.]]",
+    "[[VERIFY: Jumeirah Bali ceremony spaces, capacities and villa count from an official venue page; the page read is a couple story.]]"
+  ],
+  "tools_used": [
+    "mcp__Apify__apify--web-search",
+    "mcp__Apify__apify--web-fetch",
+    "Bash"
+  ],
+  "next_agent": [
+    "luxury-writer"
+  ],
+  "payload": {
+    "facts": [
+      {
+        "fact_id": "fact_01",
+        "claim": "AYANA Bali hosts weddings: its official weddings page describes an expert wedding team and dedicated planners who guide couples through details such as cake and florals, working with the resort's chefs and restaurants.",
+        "source": "https://www.ayana.com/bali/weddings/",
+        "source_type": "official_venue",
+        "checked": "2026-11-18",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_02",
+        "claim": "AYANA Bali lists outdoor wedding venues with stated capacities: Champa Garden (ceremony 800 / reception 3000), SKY, described as an open stage overlooking the sea and sky (ceremony 80 / reception 300), AYANA Villa, described with panoramic 180-degree views of the Indian Ocean (ceremony 80 / reception 350).",
+        "source": "https://www.ayana.com/bali/weddings/",
+        "source_type": "official_venue",
+        "checked": "2026-11-18",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_03",
+        "claim": "AYANA Bali lists further outdoor venues: KISIK Pier, described as a ceremony bathed in the glow of a sunset (ceremony 30 / reception 80); Asmara Gazebo, a gazebo from the Javanese royal palace (ceremony 50 / reception 70); Bale Kencana, with stone pathways and a traditional Balinese split gate (ceremony 30 / reception 50); Rock Bar, described as exchanging vows privately above the ocean (reception 20, no ceremony figure).",
+        "source": "https://www.ayana.com/bali/weddings/",
+        "source_type": "official_venue",
+        "checked": "2026-11-18",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_04",
+        "claim": "AYANA Bali lists indoor wedding venues: Tresna Chapel, described as a white chapel that rises above the Indian Ocean (ceremony 70 / reception 50); Astina Pavilion, a glass-walled venue with 180-degree Indian Ocean views (ceremony 40); Orchid, a garden and glass greenhouse (ceremony 22 / reception 40); Amara Ballroom (ceremony 390 / reception 200 to 600); RIMBA Ballroom (ceremony 200 / reception 400).",
+        "source": "https://www.ayana.com/bali/weddings/",
+        "source_type": "official_venue",
+        "checked": "2026-11-18",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_05",
+        "claim": "AYANA Bali names four wedding packages on its weddings page: AYANA Villa Wedding, SKY is the Limit, Sweet Escape at KISIK Pier, and Tresna dream wedding by the cliff. It also lists spa treatments for the couple, music and entertainment, and themed wedding cakes.",
+        "source": "https://www.ayana.com/bali/weddings/",
+        "source_type": "official_venue",
+        "checked": "2026-11-18",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_06",
+        "claim": "AYANA Bali's own wedding venue list states ceremony and reception capacities separately for each space, from Rock Bar (reception 20) to Champa Garden (reception 3000).",
+        "source": "https://www.ayana.com/bali/weddings/",
+        "source_type": "official_venue",
+        "checked": "2026-11-18",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_07",
+        "claim": "Jumeirah Bali, on the brand's official site, describes itself as a wedding destination set against the backdrop of Dreamland Beach, overlooking Dreamland Beach on Bali's southern coast in Uluwatu.",
+        "source": "https://www.jumeirah.com/en/article/stories/bali/the-most-spectacular-wedding-venues",
+        "source_type": "official_venue",
+        "checked": "2026-11-18",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_08",
+        "claim": "Jumeirah Bali describes its resort as a Javanese-Hindu water palace-inspired haven with spacious villas and private pools for guests, and invites couples to speak to its luxury wedding experts to create a wedding package.",
+        "source": "https://www.jumeirah.com/en/article/stories/bali/the-most-spectacular-wedding-venues",
+        "source_type": "official_venue",
+        "checked": "2026-11-18",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_09",
+        "claim": "Jumeirah Bali's official wedding story features a couple who held their ceremony at the resort's fountain and their reception at Akasa, with villa categories named as Ocean Villa (2-bedroom), Panoramic Ocean Villa, Garden Villas and Sunset Villas. These are the couple's words on the brand's page, not a published venue specification.",
+        "source": "https://www.jumeirah.com/en/article/stories/bali/the-most-spectacular-wedding-venues",
+        "source_type": "official_venue",
+        "checked": "2026-11-18",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_10",
+        "claim": "Bvlgari Resort Bali's official weddings page lists wedding options named The Bvlgari Mansion Wedding, La Terrazza Wedding, The Bvlgari Chapel Wedding and The Bvlgari Villa Wedding, plus Celebrations.",
+        "source": "https://www.bulgarihotels.com/en_US/bali/weddings",
+        "source_type": "official_venue",
+        "checked": "2026-11-18",
+        "is_price": false
+      }
+    ],
+    "insider_details": [
+      {
+        "detail": "AYANA publishes ceremony and reception capacities separately for every space, so a 60-guest ceremony fits Tresna Chapel (70) but a seated reception for the same group needs another space (Tresna reception 50). Plan the ceremony-to-reception move as part of the timeline.",
+        "fact_ids": [
+          "fact_04",
+          "fact_06"
+        ]
+      },
+      {
+        "detail": "For intimate weddings at AYANA, KISIK Pier (ceremony 30), Bale Kencana (30) and Orchid (22) are sized for small groups, while Champa Garden and the ballrooms suit large celebrations on the same estate.",
+        "fact_ids": [
+          "fact_02",
+          "fact_03",
+          "fact_04"
+        ]
+      },
+      {
+        "detail": "Jumeirah Bali positions its weddings around Dreamland Beach and its water-palace architecture; ask for the official venue list and capacities, as the brand's published wedding page is a couple story rather than a specification.",
+        "fact_ids": [
+          "fact_07",
+          "fact_08",
+          "fact_09"
+        ]
+      }
+    ],
+    "quotes": [],
+    "real_weddings": [],
+    "verify_items": [
+      "[[VERIFY: Alila Villas Uluwatu weddings - official alilahotels.com page not read (timeout).]]",
+      "[[VERIFY: Six Senses Uluwatu weddings - official page 404; property may now be listed as 'Six Senses Bali'. Confirm name and wedding offer.]]",
+      "[[VERIFY: Banyan Tree Ungasan weddings - official banyantree.com page 404.]]",
+      "[[VERIFY: Bvlgari Resort Bali setting, ceremony capacities, villa count and exclusive use - not stated on the weddings listing read.]]",
+      "[[VERIFY: Jumeirah Bali ceremony spaces, capacities and villa count from an official venue page; the page read is a couple story.]]"
+    ],
+    "needs_signoff": [],
+    "must_include_coverage": [
+      {
+        "item": "Bukit and Uluwatu clifftop venues (Batch A)",
+        "covered_by": [
+          "fact_01",
+          "fact_02",
+          "fact_03",
+          "fact_04",
+          "fact_05",
+          "fact_06",
+          "fact_07",
+          "fact_08",
+          "fact_09",
+          "fact_10",
+          "[[VERIFY: Alila Villas Uluwatu weddings - official alilahotels.com page not read (timeout).]]",
+          "[[VERIFY: Six Senses Uluwatu weddings - official page 404; property may now be listed as 'Six Senses Bali'. Confirm name and wedding offer.]]",
+          "[[VERIFY: Banyan Tree Ungasan weddings - official banyantree.com page 404.]]",
+          "[[VERIFY: Bvlgari Resort Bali setting, ceremony capacities, villa count and exclusive use - not stated on the weddings listing read.]]",
+          "[[VERIFY: Jumeirah Bali ceremony spaces, capacities and villa count from an official venue page; the page read is a couple story.]]"
+        ]
+      }
+    ]
+  }
+}
