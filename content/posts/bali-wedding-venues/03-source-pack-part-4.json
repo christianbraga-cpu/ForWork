@@ -1,0 +1,231 @@
+{
+  "agent": "planner-sme",
+  "task_id": "bali-wedding-venues",
+  "stage": "03",
+  "status": "complete",
+  "round": 1,
+  "inputs_used": [
+    "content/posts/bali-wedding-venues/03-source-pack-part-1.json (format reference)",
+    "mcp__Apify__apify--web-fetch, 18 November 2026 (200): https://www.marriott.com/en-us/hotels/dpsxr-the-st-regis-bali-resort/events/",
+    "mcp__Apify__apify--web-fetch, 18 November 2026 (404): https://www.ritzcarlton.com/en/hotels/dpsrz-the-ritz-carlton-bali/weddings/; https://www.samabe.com/weddings; https://www.conradbali.com/weddings",
+    "mcp__Apify__apify--web-search, 18 November 2026: St Regis returned only third-party results (not used); site:samabe.com returned https://www.samabe.com/en/events/ (not fetched, snippet not used)"
+  ],
+  "self_qa": {
+    "checks": [
+      {
+        "check": "Every fact has a source and date",
+        "pass": true
+      },
+      {
+        "check": "No price without a source; all prices in needs_signoff",
+        "pass": true,
+        "note": "No amounts recorded. St Regis page shows IDR photo-tour prices; deliberately not captured."
+      },
+      {
+        "check": "Every must-include covered or [[VERIFY]]",
+        "pass": true,
+        "note": "Batch E: 1 of 4 venues qualified."
+      },
+      {
+        "check": "No invented quotes, statistics or real weddings",
+        "pass": true
+      }
+    ],
+    "confidence": 0.6
+  },
+  "open_questions": [
+    {
+      "to": "orchestrator",
+      "question": "Batch E qualified (official page read live): The St. Regis Bali Resort (Nusa Dua), source marriott.com events page.",
+      "blocking": false
+    },
+    {
+      "to": "orchestrator",
+      "question": "Batch E failed: The Ritz-Carlton Bali (ritzcarlton.com weddings URL 404; no official URL found in one round). Samabe Bali Suites & Villas (samabe.com/weddings 404; search shows official https://www.samabe.com/en/events/ which mentions weddings and resort buy-out, but it was not fetched, so does not qualify yet). Conrad Bali (conradbali.com/weddings 404 after earlier hilton.com timeout; no further retries).",
+      "blocking": false
+    },
+    {
+      "to": "luxury-writer",
+      "question": "No prices. Attribute St Regis self-descriptions ('the resort says'). Room or villa count and exclusive use are not on the page read; do not state them.",
+      "blocking": false
+    }
+  ],
+  "assumptions": [
+    "All facts read live on 2026-11-18 from the venue's own site.",
+    "BOOKING CHECKLIST: The St. Regis Bali Resort: room/villa count for guest block, exclusive use, minimum nights, curfew for Cloud Nine Terrace and beach, rain plan, set-up times not published on the page read."
+  ],
+  "verify_items": [
+    "[[VERIFY: St. Regis Bali Amphitheatre ceremony capacity: wedding text says up to 80 theatre style, capacity chart says 150 theatre style]]",
+    "[[VERIFY: Ritz-Carlton Bali, Samabe Bali Suites & Villas and Conrad Bali official wedding pages not read in batch E; do not include until read]]"
+  ],
+  "tools_used": [
+    "mcp__Apify__apify--web-search",
+    "mcp__Apify__apify--web-fetch",
+    "Bash"
+  ],
+  "next_agent": [
+    "luxury-writer"
+  ],
+  "payload": {
+    "facts": [
+      {
+        "fact_id": "fact_400",
+        "claim": "The St. Regis Bali Resort hosts weddings: its own events page answers 'Does The St. Regis Bali Resort provide wedding services?' with 'Yes', and describes its 'Nusa Dua beach wedding venues, each inspired by Bali's natural beauty'.",
+        "source": "https://www.marriott.com/en-us/hotels/dpsxr-the-st-regis-bali-resort/events/",
+        "source_type": "official_venue",
+        "checked": "2026-11-18",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_401",
+        "claim": "The St. Regis Bali Resort describes the Cloud Nine Chapel as 'nestled on our exclusive beachfront' with Swarovski crystal chandeliers and ocean views, surrounded by a pond and cascading steps, with a wooden terrace beyond the pond for pre-dinner canapés and drinks.",
+        "source": "https://www.marriott.com/en-us/hotels/dpsxr-the-st-regis-bali-resort/events/",
+        "source_type": "official_venue",
+        "checked": "2026-11-18",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_402",
+        "claim": "The St. Regis Bali Resort capacity chart lists the Cloud Nine Chapel at 43.6 sq m, seating 30 theatre style and 18 banquet.",
+        "source": "https://www.marriott.com/en-us/hotels/dpsxr-the-st-regis-bali-resort/events/",
+        "source_type": "official_venue",
+        "checked": "2026-11-18",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_403",
+        "claim": "The St. Regis Bali Resort offers beachfront wedding ceremonies 'on our soft white sands', with floral styling such as Balinese frangipani or ivory roses.",
+        "source": "https://www.marriott.com/en-us/hotels/dpsxr-the-st-regis-bali-resort/events/",
+        "source_type": "official_venue",
+        "checked": "2026-11-18",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_404",
+        "claim": "The St. Regis Bali Resort's wedding text says the garden Amphitheatre suits 'larger gatherings of up to 80 guests in theatre-style seating', with soft background music 'available until 7 PM'.",
+        "source": "https://www.marriott.com/en-us/hotels/dpsxr-the-st-regis-bali-resort/events/",
+        "source_type": "official_venue",
+        "checked": "2026-11-18",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_405",
+        "claim": "The St. Regis Bali Resort capacity chart lists the Amphitheatre (338 sq m, outdoor) at 150 theatre style and 100 reception.",
+        "source": "https://www.marriott.com/en-us/hotels/dpsxr-the-st-regis-bali-resort/events/",
+        "source_type": "official_venue",
+        "checked": "2026-11-18",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_406",
+        "claim": "The St. Regis Bali Resort lists Cloud Nine Terrace (300 sq m, outdoor, Indian Ocean backdrop) at 250 reception and 250 banquet; its FAQ names it the largest-capacity event space.",
+        "source": "https://www.marriott.com/en-us/hotels/dpsxr-the-st-regis-bali-resort/events/",
+        "source_type": "official_venue",
+        "checked": "2026-11-18",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_407",
+        "claim": "The St. Regis Bali Resort lists the Astor Ballroom (290 sq m, garden views, adjoining wood terrace) at 150 banquet and 180 theatre style.",
+        "source": "https://www.marriott.com/en-us/hotels/dpsxr-the-st-regis-bali-resort/events/",
+        "source_type": "official_venue",
+        "checked": "2026-11-18",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_408",
+        "claim": "The St. Regis Bali Resort names The Dulang, in the resort's Tropical Park, as a wedding venue 'inspired by Bali's royal traditions' and lit with torches.",
+        "source": "https://www.marriott.com/en-us/hotels/dpsxr-the-st-regis-bali-resort/events/",
+        "source_type": "official_venue",
+        "checked": "2026-11-18",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_409",
+        "claim": "The St. Regis Bali Resort offers the Mezzanine of Kayuputi, a semi-private upper level of its fine-dining restaurant, for up to 20 guests, and promotes private venues for rehearsal dinners.",
+        "source": "https://www.marriott.com/en-us/hotels/dpsxr-the-st-regis-bali-resort/events/",
+        "source_type": "official_venue",
+        "checked": "2026-11-18",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_410",
+        "claim": "The St. Regis Bali Resort names a 'St. Regis Wedding Specialist' to manage florals, décor and guest accommodation, and offers a dedicated St. Regis butler on the wedding day.",
+        "source": "https://www.marriott.com/en-us/hotels/dpsxr-the-st-regis-bali-resort/events/",
+        "source_type": "official_venue",
+        "checked": "2026-11-18",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_411",
+        "claim": "The St. Regis Bali Resort says bespoke wedding cakes are made under its French maître pâtissier, and its signature hand bouquet is round white roses adorned with pearls.",
+        "source": "https://www.marriott.com/en-us/hotels/dpsxr-the-st-regis-bali-resort/events/",
+        "source_type": "official_venue",
+        "checked": "2026-11-18",
+        "is_price": false
+      }
+    ],
+    "insider_details": [
+      {
+        "detail": "At The St. Regis Bali Resort, the Cloud Nine Chapel seats only 30 (18 banquet), so a larger guest list either uses the beach or Amphitheatre for the ceremony, then moves to Cloud Nine Terrace (banquet 250) for dinner.",
+        "fact_ids": [
+          "fact_402",
+          "fact_403",
+          "fact_404",
+          "fact_406"
+        ]
+      },
+      {
+        "detail": "The St. Regis Bali Resort publishes a 7 PM limit for background music at the Amphitheatre, so plan garden ceremonies for late afternoon and move the party to another space for the evening; confirm music rules for the terrace at booking.",
+        "fact_ids": [
+          "fact_404"
+        ]
+      },
+      {
+        "detail": "The St. Regis Bali Resort has an indoor fallback: the Astor Ballroom seats 150 banquet, useful as a rain plan for an outdoor terrace reception of up to 150.",
+        "fact_ids": [
+          "fact_406",
+          "fact_407"
+        ]
+      },
+      {
+        "detail": "For a welcome or rehearsal dinner for close family at The St. Regis Bali Resort, the Mezzanine of Kayuputi takes up to 20 guests.",
+        "fact_ids": [
+          "fact_409"
+        ]
+      }
+    ],
+    "quotes": [],
+    "real_weddings": [],
+    "verify_items": [
+      "[[VERIFY: St. Regis Bali Amphitheatre ceremony capacity: wedding text says up to 80 theatre style, capacity chart says 150 theatre style]]",
+      "[[VERIFY: Ritz-Carlton Bali, Samabe Bali Suites & Villas and Conrad Bali official wedding pages not read in batch E; do not include until read]]"
+    ],
+    "needs_signoff": [],
+    "must_include_coverage": [
+      {
+        "item": "Nusa Dua beach venues (batch E)",
+        "covered_by": [
+          "fact_400",
+          "fact_401",
+          "fact_402",
+          "fact_403",
+          "fact_404",
+          "fact_405",
+          "fact_406",
+          "fact_407",
+          "fact_408",
+          "fact_409",
+          "fact_410",
+          "fact_411"
+        ]
+      },
+      {
+        "item": "Ritz-Carlton Bali, Samabe Bali, Conrad Bali",
+        "covered_by": [
+          "[[VERIFY: Ritz-Carlton Bali, Samabe Bali Suites & Villas and Conrad Bali official wedding pages not read in batch E; do not include until read]]"
+        ]
+      }
+    ]
+  }
+}
