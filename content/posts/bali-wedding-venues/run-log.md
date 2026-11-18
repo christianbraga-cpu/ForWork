@@ -6,3 +6,4 @@
 01:18 03 batch B done: 5 qualify (Mulia, Four Seasons Jimbaran, Raffles, Grand Hyatt, Apurva Kempinski); Conrad timed out, Samabe 404; reserves not tried.
 01:18 03 batch C done: 3 qualify (COMO Uma Ubud, Four Seasons Sayan, W Bali Seminyak); Capella and Mandapa 404, Hanging Gardens no weddings, Legian/Alila no official page, COMO Canggu timeout.
 01:19 03 batch A done: 3 qualify (AYANA, Jumeirah via its own real-wedding page, Bvlgari types only); Alila Uluwatu timeout, Six Senses and Banyan Tree 404. Count 11 so far; top-ups E (Nusa Dua), F (Ubud/Seminyak), G (Uluwatu) launched.
+01:19 02 SEO done: bali wedding venues AU 720 / US 390 (KD 7); no site page ranks; old Bali guide indexed with utm URL.
