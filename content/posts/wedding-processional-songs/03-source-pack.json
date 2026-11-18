@@ -1,0 +1,366 @@
+{
+  "agent": "wedding-planner-sme",
+  "task_id": "wedding-processional-songs",
+  "stage": "03",
+  "status": "needs_input",
+  "round": 1,
+  "next_agent": [
+    "luxury-writer"
+  ],
+  "inputs_used": [
+    "CLAUDE.md",
+    "content/posts/wedding-processional-songs/00-input.json",
+    "content-system/schemas/envelope.schema.json",
+    "content-system/schemas/03-source-pack.schema.json",
+    "content/posts/samoan-wedding-traditions/03-source-pack.json (format model)",
+    "https://hymnary.org/text/be_thou_my_vision_o_lord_of_my_heart (Apify web-fetch 2026-11-18, HTTP 200)",
+    "https://hymnary.org/text/amazing_grace_how_sweet_the_sound (Apify web-fetch 2026-11-18, HTTP 200)",
+    "https://hymnary.org/text/joyful_joyful_we_adore_thee (Apify web-fetch 2026-11-18, HTTP 200)"
+  ],
+  "assumptions": [
+    "Batch A ran in fast mode with one parallel read round; no second round was started.",
+    "All 17 IMSLP fetches used '?action=raw' and returned HTTP 404 (the fetcher treated the query as part of the page title), so no classical piece is sourced.",
+    "Hymnary.org pages for Morning Has Broken and Love Divine returned HTTP 415 (unsupported content type) and were not read.",
+    "One web search for Purcell Trumpet Tune returned only sheet-music file links, none used as a source.",
+    "Hymnary.org is typed 'editorial'. No lyrics recorded beyond titles and first lines as titles.",
+    "No Australian diocese page on wedding music was read."
+  ],
+  "open_questions": [
+    {
+      "to": "orchestrator",
+      "blocking": true,
+      "question": "Re-run batch A for the 18 classical pieces and 2 hymns using plain IMSLP or Britannica page URLs (no '?action=raw') and web-fetch without the 'text' format for Hymnary.org, so the brief has about 22 sourced pieces?"
+    },
+    {
+      "to": "orchestrator",
+      "blocking": false,
+      "question": "Should a follow-up read one Catholic or Anglican Australian diocese page on music at weddings?"
+    }
+  ],
+  "tools_used": [
+    "mcp__Apify__apify--web-fetch",
+    "mcp__Apify__apify--web-search"
+  ],
+  "verify_items": [
+    "[[VERIFY: exact title, composer, year or era and parent work for Pachelbel Canon in D; not sourced in batch A]]",
+    "[[VERIFY: exact title, composer, year or era and parent work for Wagner Bridal Chorus (Lohengrin); not sourced in batch A]]",
+    "[[VERIFY: exact title, composer, year or era and parent work for Mendelssohn Wedding March (A Midsummer Night's Dream); not sourced in batch A]]",
+    "[[VERIFY: exact title, composer, year or era and parent work for Clarke Prince of Denmark's March (Trumpet Voluntary); not sourced in batch A]]",
+    "[[VERIFY: exact title, composer, year or era and parent work for Handel Arrival of the Queen of Sheba (Solomon); not sourced in batch A]]",
+    "[[VERIFY: exact title, composer, year or era and parent work for Handel Water Music (Air or Hornpipe); not sourced in batch A]]",
+    "[[VERIFY: exact title, composer, year or era and parent work for Bach Air on the G String (Orchestral Suite No. 3); not sourced in batch A]]",
+    "[[VERIFY: exact title, composer, year or era and parent work for Bach Jesu, Joy of Man's Desiring (BWV 147); not sourced in batch A]]",
+    "[[VERIFY: exact title, composer, year or era and parent work for Bach Sheep May Safely Graze (BWV 208); not sourced in batch A]]",
+    "[[VERIFY: exact title, composer, year or era and parent work for Schubert Ave Maria; not sourced in batch A]]",
+    "[[VERIFY: exact title, composer, year or era and parent work for Bach/Gounod Ave Maria; not sourced in batch A]]",
+    "[[VERIFY: exact title, composer, year or era and parent work for Debussy Clair de Lune; not sourced in batch A]]",
+    "[[VERIFY: exact title, composer, year or era and parent work for Vivaldi Spring (The Four Seasons); not sourced in batch A]]",
+    "[[VERIFY: exact title, composer, year or era and parent work for Purcell Trumpet Tune; not sourced in batch A]]",
+    "[[VERIFY: exact title, composer, year or era and parent work for Mouret Rondeau; not sourced in batch A]]",
+    "[[VERIFY: exact title, composer, year or era and parent work for Charpentier Te Deum prelude; not sourced in batch A]]",
+    "[[VERIFY: exact title, composer, year or era and parent work for Elgar Salut d'Amour; not sourced in batch A]]",
+    "[[VERIFY: exact title, composer, year or era and parent work for Satie Gymnopedie No. 1; not sourced in batch A]]",
+    "[[VERIFY: exact title, composer, year or era and parent work for Morning Has Broken (hymn); not sourced in batch A]]",
+    "[[VERIFY: exact title, composer, year or era and parent work for Love Divine, All Loves Excelling (hymn); not sourced in batch A]]"
+  ],
+  "self_qa": {
+    "checks": [
+      {
+        "check": "Every fact has a source URL and date",
+        "pass": true,
+        "note": "9 facts, all Hymnary.org read live 2026-11-18."
+      },
+      {
+        "check": "No prices",
+        "pass": true
+      },
+      {
+        "check": "Every candidate covered or marked [[VERIFY]]",
+        "pass": true,
+        "note": "3 hymns sourced; 20 candidates are [[VERIFY]]."
+      },
+      {
+        "check": "About 22 pieces sourced",
+        "pass": false,
+        "note": "Only 3 of 23 sourced; see open_questions."
+      },
+      {
+        "check": "No invented quotes, statistics or real weddings",
+        "pass": true
+      }
+    ],
+    "confidence": 0.4
+  },
+  "payload": {
+    "facts": [
+      {
+        "fact_id": "fact_01",
+        "claim": "Hymnary.org lists 'Be Thou my vision, O Lord of my heart' with versifier Eleanor Henrietta Hull and translator Mary E. Byrne (1905), sung to the tune SLANE.",
+        "source": "https://hymnary.org/text/be_thou_my_vision_o_lord_of_my_heart",
+        "source_type": "editorial",
+        "checked": "2026-11-18",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_02",
+        "claim": "Hymnary.org's worship notes say the source is an Irish poem attributed to the monk Dallan Forgaill, translated into English by Mary Elizabeth Byrne in the early 20th century and versified by Eleanor Hull in 1912; one hymnal instance gives the source as 'Irish, c. 8th century'.",
+        "source": "https://hymnary.org/text/be_thou_my_vision_o_lord_of_my_heart",
+        "source_type": "editorial",
+        "checked": "2026-11-18",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_03",
+        "claim": "Hymnary.org says SLANE is an old Irish folk tune, arranged by David Evans and set to 'Be Thou My Vision' in the Church Hymnary (1927).",
+        "source": "https://hymnary.org/text/be_thou_my_vision_o_lord_of_my_heart",
+        "source_type": "editorial",
+        "checked": "2026-11-18",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_04",
+        "claim": "Hymnary.org lists 'Amazing grace! (how sweet the sound)' by John Newton (1779), sung to the tune NEW BRITAIN.",
+        "source": "https://hymnary.org/text/amazing_grace_how_sweet_the_sound",
+        "source_type": "editorial",
+        "checked": "2026-11-18",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_05",
+        "claim": "Hymnary.org says Newton published the hymn in 1779 in the Olney Hymns, a collaboration with William Cowper, under the original title 'Faith's Review and Expectations'.",
+        "source": "https://hymnary.org/text/amazing_grace_how_sweet_the_sound",
+        "source_type": "editorial",
+        "checked": "2026-11-18",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_06",
+        "claim": "Hymnary.org describes NEW BRITAIN (also known as AMAZING GRACE) as an Appalachian folk tune that first appeared in Southern Harmony; the modern harmonisation is credited to Edwin Othello Excell.",
+        "source": "https://hymnary.org/text/amazing_grace_how_sweet_the_sound",
+        "source_type": "editorial",
+        "checked": "2026-11-18",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_07",
+        "claim": "Hymnary.org lists 'Joyful, joyful, we adore Thee' by Henry Van Dyke (1907), sung to the tune HYMN TO JOY.",
+        "source": "https://hymnary.org/text/joyful_joyful_we_adore_thee",
+        "source_type": "editorial",
+        "checked": "2026-11-18",
+        "is_price": false,
+        "conflicts": "Hymnary.org header dates the text 1907; its worship notes say 'around 1908'. Use 1907 (header) or 'early 1900s'."
+      },
+      {
+        "fact_id": "fact_08",
+        "claim": "Hymnary.org says HYMN TO JOY (ODE TO JOY) adapts the final movement of Beethoven's Ninth Symphony as a congregational melody, and that Van Dyke wrote his text to be sung to Beethoven's 'Hymn to Joy'.",
+        "source": "https://hymnary.org/text/joyful_joyful_we_adore_thee",
+        "source_type": "editorial",
+        "checked": "2026-11-18",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_09",
+        "claim": "Hymnary.org gives the tune's meter as 87.87.D.",
+        "source": "https://hymnary.org/text/joyful_joyful_we_adore_thee",
+        "source_type": "editorial",
+        "checked": "2026-11-18",
+        "is_price": false
+      }
+    ],
+    "insider_details": [
+      {
+        "detail": "Amazing Grace is short in common meter and Hymnary.org notes most hymnals print four of Newton's stanzas plus a later anonymous fifth; for a ceremony, agree with the musician which verses to sing so the hymn fits the signing or a reflection moment.",
+        "fact_ids": [
+          "fact_04",
+          "fact_05"
+        ]
+      },
+      {
+        "detail": "Joyful, Joyful, We Adore Thee uses Beethoven's Ode to Joy melody, so it works for guests who don't know hymns: they will recognise the tune even if the words are new. Print the words in the order of service.",
+        "fact_ids": [
+          "fact_07",
+          "fact_08"
+        ]
+      },
+      {
+        "detail": "Be Thou My Vision is sung to an Irish folk tune (SLANE), which suits couples wanting an Irish or Celtic thread in a church ceremony, and is often played slowly; ask the musician to keep the tempo moving so it doesn't drag.",
+        "fact_ids": [
+          "fact_01",
+          "fact_03"
+        ]
+      }
+    ],
+    "quotes": [],
+    "real_weddings": [],
+    "budget_range_aud": [],
+    "verify_items": [
+      "[[VERIFY: exact title, composer, year or era and parent work for Pachelbel Canon in D; not sourced in batch A]]",
+      "[[VERIFY: exact title, composer, year or era and parent work for Wagner Bridal Chorus (Lohengrin); not sourced in batch A]]",
+      "[[VERIFY: exact title, composer, year or era and parent work for Mendelssohn Wedding March (A Midsummer Night's Dream); not sourced in batch A]]",
+      "[[VERIFY: exact title, composer, year or era and parent work for Clarke Prince of Denmark's March (Trumpet Voluntary); not sourced in batch A]]",
+      "[[VERIFY: exact title, composer, year or era and parent work for Handel Arrival of the Queen of Sheba (Solomon); not sourced in batch A]]",
+      "[[VERIFY: exact title, composer, year or era and parent work for Handel Water Music (Air or Hornpipe); not sourced in batch A]]",
+      "[[VERIFY: exact title, composer, year or era and parent work for Bach Air on the G String (Orchestral Suite No. 3); not sourced in batch A]]",
+      "[[VERIFY: exact title, composer, year or era and parent work for Bach Jesu, Joy of Man's Desiring (BWV 147); not sourced in batch A]]",
+      "[[VERIFY: exact title, composer, year or era and parent work for Bach Sheep May Safely Graze (BWV 208); not sourced in batch A]]",
+      "[[VERIFY: exact title, composer, year or era and parent work for Schubert Ave Maria; not sourced in batch A]]",
+      "[[VERIFY: exact title, composer, year or era and parent work for Bach/Gounod Ave Maria; not sourced in batch A]]",
+      "[[VERIFY: exact title, composer, year or era and parent work for Debussy Clair de Lune; not sourced in batch A]]",
+      "[[VERIFY: exact title, composer, year or era and parent work for Vivaldi Spring (The Four Seasons); not sourced in batch A]]",
+      "[[VERIFY: exact title, composer, year or era and parent work for Purcell Trumpet Tune; not sourced in batch A]]",
+      "[[VERIFY: exact title, composer, year or era and parent work for Mouret Rondeau; not sourced in batch A]]",
+      "[[VERIFY: exact title, composer, year or era and parent work for Charpentier Te Deum prelude; not sourced in batch A]]",
+      "[[VERIFY: exact title, composer, year or era and parent work for Elgar Salut d'Amour; not sourced in batch A]]",
+      "[[VERIFY: exact title, composer, year or era and parent work for Satie Gymnopedie No. 1; not sourced in batch A]]",
+      "[[VERIFY: exact title, composer, year or era and parent work for Morning Has Broken (hymn); not sourced in batch A]]",
+      "[[VERIFY: exact title, composer, year or era and parent work for Love Divine, All Loves Excelling (hymn); not sourced in batch A]]"
+    ],
+    "needs_signoff": [],
+    "must_include_coverage": [
+      {
+        "item": "Be Thou My Vision",
+        "covered_by": [
+          "fact_01",
+          "fact_02",
+          "fact_03"
+        ]
+      },
+      {
+        "item": "Amazing Grace (John Newton)",
+        "covered_by": [
+          "fact_04",
+          "fact_05",
+          "fact_06"
+        ]
+      },
+      {
+        "item": "Joyful, Joyful, We Adore Thee (Ode to Joy tune)",
+        "covered_by": [
+          "fact_07",
+          "fact_08",
+          "fact_09"
+        ]
+      },
+      {
+        "item": "Pachelbel Canon in D",
+        "covered_by": [
+          "[[VERIFY: exact title, composer, year or era and parent work for Pachelbel Canon in D; not sourced in batch A]]"
+        ]
+      },
+      {
+        "item": "Wagner Bridal Chorus (Lohengrin)",
+        "covered_by": [
+          "[[VERIFY: exact title, composer, year or era and parent work for Wagner Bridal Chorus (Lohengrin); not sourced in batch A]]"
+        ]
+      },
+      {
+        "item": "Mendelssohn Wedding March (A Midsummer Night's Dream)",
+        "covered_by": [
+          "[[VERIFY: exact title, composer, year or era and parent work for Mendelssohn Wedding March (A Midsummer Night's Dream); not sourced in batch A]]"
+        ]
+      },
+      {
+        "item": "Clarke Prince of Denmark's March (Trumpet Voluntary)",
+        "covered_by": [
+          "[[VERIFY: exact title, composer, year or era and parent work for Clarke Prince of Denmark's March (Trumpet Voluntary); not sourced in batch A]]"
+        ]
+      },
+      {
+        "item": "Handel Arrival of the Queen of Sheba (Solomon)",
+        "covered_by": [
+          "[[VERIFY: exact title, composer, year or era and parent work for Handel Arrival of the Queen of Sheba (Solomon); not sourced in batch A]]"
+        ]
+      },
+      {
+        "item": "Handel Water Music (Air or Hornpipe)",
+        "covered_by": [
+          "[[VERIFY: exact title, composer, year or era and parent work for Handel Water Music (Air or Hornpipe); not sourced in batch A]]"
+        ]
+      },
+      {
+        "item": "Bach Air on the G String (Orchestral Suite No. 3)",
+        "covered_by": [
+          "[[VERIFY: exact title, composer, year or era and parent work for Bach Air on the G String (Orchestral Suite No. 3); not sourced in batch A]]"
+        ]
+      },
+      {
+        "item": "Bach Jesu, Joy of Man's Desiring (BWV 147)",
+        "covered_by": [
+          "[[VERIFY: exact title, composer, year or era and parent work for Bach Jesu, Joy of Man's Desiring (BWV 147); not sourced in batch A]]"
+        ]
+      },
+      {
+        "item": "Bach Sheep May Safely Graze (BWV 208)",
+        "covered_by": [
+          "[[VERIFY: exact title, composer, year or era and parent work for Bach Sheep May Safely Graze (BWV 208); not sourced in batch A]]"
+        ]
+      },
+      {
+        "item": "Schubert Ave Maria",
+        "covered_by": [
+          "[[VERIFY: exact title, composer, year or era and parent work for Schubert Ave Maria; not sourced in batch A]]"
+        ]
+      },
+      {
+        "item": "Bach/Gounod Ave Maria",
+        "covered_by": [
+          "[[VERIFY: exact title, composer, year or era and parent work for Bach/Gounod Ave Maria; not sourced in batch A]]"
+        ]
+      },
+      {
+        "item": "Debussy Clair de Lune",
+        "covered_by": [
+          "[[VERIFY: exact title, composer, year or era and parent work for Debussy Clair de Lune; not sourced in batch A]]"
+        ]
+      },
+      {
+        "item": "Vivaldi Spring (The Four Seasons)",
+        "covered_by": [
+          "[[VERIFY: exact title, composer, year or era and parent work for Vivaldi Spring (The Four Seasons); not sourced in batch A]]"
+        ]
+      },
+      {
+        "item": "Purcell Trumpet Tune",
+        "covered_by": [
+          "[[VERIFY: exact title, composer, year or era and parent work for Purcell Trumpet Tune; not sourced in batch A]]"
+        ]
+      },
+      {
+        "item": "Mouret Rondeau",
+        "covered_by": [
+          "[[VERIFY: exact title, composer, year or era and parent work for Mouret Rondeau; not sourced in batch A]]"
+        ]
+      },
+      {
+        "item": "Charpentier Te Deum prelude",
+        "covered_by": [
+          "[[VERIFY: exact title, composer, year or era and parent work for Charpentier Te Deum prelude; not sourced in batch A]]"
+        ]
+      },
+      {
+        "item": "Elgar Salut d'Amour",
+        "covered_by": [
+          "[[VERIFY: exact title, composer, year or era and parent work for Elgar Salut d'Amour; not sourced in batch A]]"
+        ]
+      },
+      {
+        "item": "Satie Gymnopedie No. 1",
+        "covered_by": [
+          "[[VERIFY: exact title, composer, year or era and parent work for Satie Gymnopedie No. 1; not sourced in batch A]]"
+        ]
+      },
+      {
+        "item": "Morning Has Broken (hymn)",
+        "covered_by": [
+          "[[VERIFY: exact title, composer, year or era and parent work for Morning Has Broken (hymn); not sourced in batch A]]"
+        ]
+      },
+      {
+        "item": "Love Divine, All Loves Excelling (hymn)",
+        "covered_by": [
+          "[[VERIFY: exact title, composer, year or era and parent work for Love Divine, All Loves Excelling (hymn); not sourced in batch A]]"
+        ]
+      }
+    ]
+  }
+}

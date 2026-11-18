@@ -1,0 +1,267 @@
+{
+ "agent": "seo-researcher",
+ "task_id": "wedding-processional-songs",
+ "stage": "02",
+ "status": "complete",
+ "round": 1,
+ "inputs_used": [
+  "00-input.json",
+  "CLAUDE.md",
+  "content-system/research/locations.yaml",
+  "content-system/schemas/02-seo.schema.json",
+  "content-system/seo/link-map.csv (grep)",
+  "content-system/seo/priority-link-targets.md",
+  "content/posts/samoan-wedding-traditions/02-seo.json (format model)"
+ ],
+ "self_qa": {
+  "checks": [
+   {
+    "check": ">= 7 of 10 locations",
+    "pass": false,
+    "note": "Fast mode: 5 of 5 requested returned results, no retries needed."
+   },
+   {
+    "check": "Every H2 maps to a real query or must-include",
+    "pass": true,
+    "note": "outline[].answers"
+   },
+   {
+    "check": "Old page ranking queries kept",
+    "pass": true,
+    "note": "All 5 US old-page queries and AU 'bride processional songs' mapped to H2s."
+   },
+   {
+    "check": "Links verified live today",
+    "pass": false,
+    "note": "Only /expert-advice/instrumental-wedding-songs fetched (200). Others pending."
+   },
+   {
+    "check": "No competitor links; no noindex; do-not-link list obeyed",
+    "pass": true,
+    "note": "No external links proposed; none of the internal targets are on the do-not-link list."
+   },
+   {
+    "check": "Meta lengths",
+    "pass": true,
+    "note": "title 55, description 149"
+   },
+   {
+    "check": "Sydney top 3 read",
+    "pass": false,
+    "note": "#2 and #3 read; #1 is a Pinterest pin, skipped."
+   }
+  ],
+  "confidence": 0.7
+ },
+ "open_questions": [
+  {
+   "to": "person",
+   "question": "Confirm 301 /top-24-wedding-processional-songs-in-2024 -> /expert-advice/wedding-processional-songs at publish.",
+   "blocking": false
+  },
+  {
+   "to": "person",
+   "question": "Confirm /instrumental-wedding-songs-bridal-march already 301s to /expert-advice/instrumental-wedding-songs (DataForSEO still records the old URL ranking in the US).",
+   "blocking": false
+  },
+  {
+   "to": "wedding-planner-sme",
+   "question": "Source composer/artist for all 40 songs and any church rule; no lyrics.",
+   "blocking": false
+  }
+ ],
+ "next_agent": [
+  "planner-sme",
+  "visual-curator"
+ ],
+ "tools_used": [
+  "DataForSEO serp_organic_live_advanced x5 (Sydney, Melbourne, New York, Dubai, Singapore)",
+  "DataForSEO kw_data_google_ads_search_volume (AU, US)",
+  "DataForSEO dataforseo_labs_bulk_keyword_difficulty (US)",
+  "DataForSEO dataforseo_labs_google_ranked_keywords weddedwonderland.com AU and US, filtered processional/aisle/instrumental",
+  "Apify web-fetch x3 (djing.ca, weddingsbuzz.com, weddedwonderland.com instrumental guide)",
+  "GSC: not read (fast mode); no export date recorded"
+ ],
+ "assumptions": [
+  "Fast mode: 5 SERP cities, no GSC, no Arabic query, links mostly not fetched",
+  "KD from US database only",
+  "Scope global: US volume (9,900) far outweighs AU (320)"
+ ],
+ "payload": {
+  "primary_keyword": "wedding processional songs",
+  "secondary_keywords": [
+   "walking down the aisle songs",
+   "wedding aisle songs",
+   "bridal entrance songs",
+   "bride processional songs",
+   "classical wedding processional songs",
+   "modern wedding processional songs",
+   "church wedding processional songs",
+   "love songs to walk down the aisle",
+   "songs to walk down the aisle to groom",
+   "processional song ideas"
+  ],
+  "intent": "informational",
+  "slug": "wedding-processional-songs",
+  "url_path": "/expert-advice/wedding-processional-songs",
+  "meta_title": "40 Wedding Processional Songs to Walk Down the Aisle To",
+  "meta_description": "40 wedding processional songs by style: classical, church hymns, instrumental and modern picks, plus how to choose and time your walk down the aisle.",
+  "outline": [
+   {
+    "h2": "What are wedding processional songs?",
+    "answers": "wedding processional songs (US 9,900, AU 320, KD 0); PAA 'What do you call the song when the bride walks down the aisle?' (Sydney, Melbourne, Dubai)",
+    "notes": "Intro: define processional, say the list has 40 songs in 4 groups, link the instrumental guide once."
+   },
+   {
+    "h2": "How do you choose a song to walk down the aisle to?",
+    "answers": "walking down the aisle songs (US 2,900, AU 480); wedding aisle songs (US 1,000, AU 390); PAA 'What is the correct order for a wedding processional?' (all 5 cities); AIO tempo/timing theme",
+    "h3": [
+     "Who walks first, and does each group need its own song?",
+     "How long should a processional song be?"
+    ],
+    "notes": "Order and timing only as sourced; no invented BPM or minute counts without a source."
+   },
+   {
+    "h2": "Which classical pieces suit a wedding processional?",
+    "answers": "classical wedding processional songs (US 320, AU 10, KD 0); AIO classical block in Sydney, Melbourne, New York",
+    "notes": "Composer for every piece. Overlap with instrumental guide allowed only for the canonical pieces (Canon in D, Bridal Chorus, Trumpet Voluntary); describe differently."
+   },
+   {
+    "h2": "What can you walk down the aisle to in a church?",
+    "answers": "church wedding processional songs (US 20, AU 10); related 'Wedding processional songs church' and 'traditional' (Singapore)",
+    "notes": "Hymns and organ pieces; say rules vary by parish, so check with the celebrant. [[VERIFY]] any denominational rule."
+   },
+   {
+    "h2": "Which instrumental songs work for the processional?",
+    "answers": "instrumental processional wedding songs (US 480, AU 10); related 'Wedding processional songs instrumental' (all cities). Owned by /expert-advice/instrumental-wedding-songs",
+    "notes": "Keep short (3 to 5 picks not in the instrumental guide's list) and hand off to the instrumental guide as the main resource."
+   },
+   {
+    "h2": "What are some modern wedding processional songs?",
+    "answers": "modern wedding processional songs (US 140, AU 10, KD 0; old page ranks US #37); bride processional songs (AU 320, old page #27); bridal entrance songs (US 1,600, AU 140, KD 0); love songs to walk down the aisle (old page US #30)",
+    "h3": [
+     "Songs for the bridal party",
+     "Songs for the bride's entrance",
+     "Songs for the groom"
+    ],
+    "notes": "Covers 'songs to walk down the aisle to groom' (old page US #36). Artist for every song; no lyrics quoted."
+   },
+   {
+    "h2": "How does a destination ceremony change your processional music?",
+    "answers": "Gap in all 5 SERPs (no result covers destination logistics); audience 150k+ AUD destination couples",
+    "notes": "Live musicians abroad, outdoor sound and power, beach or clifftop aisle length, sending tracks to local musicians early. Link /wonderland-concierge."
+   },
+   {
+    "h2": "Wedding processional songs FAQ",
+    "answers": "PAA across cities",
+    "notes": "Use faq_questions."
+   }
+  ],
+  "faq_questions": [
+   "What is the most popular song to walk down the aisle to?",
+   "What is the correct order for a wedding processional?",
+   "What do you call the song when the bride walks down the aisle?",
+   "Does each part of the bridal party need its own processional song?",
+   "Can you walk down the aisle to a modern song in a church?"
+  ],
+  "internal_links": [
+   {
+    "anchor": "instrumental wedding songs",
+    "target": "/expert-advice/instrumental-wedding-songs",
+    "type": "related",
+    "placement": "intro and Instrumental section",
+    "verified_live": "2026-11-18"
+   },
+   {
+    "anchor": "wedding entrance songs",
+    "target": "/top-50-wedding-entrance-dance-songs",
+    "type": "related",
+    "placement": "modern section, reception entrance hand-off",
+    "verified_live": "pending: in link map 2026-10-20, not fetched this run"
+   },
+   {
+    "anchor": "first dance songs",
+    "target": "/expert-advice/first-dance-songs",
+    "type": "related",
+    "placement": "closing, rest of the day's music",
+    "verified_live": "pending: linked live from instrumental guide 2026-11-18, not fetched directly"
+   },
+   {
+    "anchor": "father-daughter dance songs",
+    "target": "/expert-advice/father-daughter-dance-songs",
+    "type": "related",
+    "placement": "closing",
+    "verified_live": "pending: in link map 2026-10-20, not fetched"
+   },
+   {
+    "anchor": "wedding dance floor songs",
+    "target": "/expert-advice/wedding-dance-floor-songs",
+    "type": "related",
+    "placement": "closing",
+    "verified_live": "pending: linked live from instrumental guide 2026-11-18, not fetched directly"
+   },
+   {
+    "anchor": "Wedded Concierge",
+    "target": "/wonderland-concierge?utm_source=blog&utm_medium=content",
+    "type": "commercial",
+    "placement": "destination section CTA",
+    "verified_live": "pending: in link map 2026-10-20, not fetched"
+   },
+   {
+    "anchor": "Wedded Wonderland magazine",
+    "target": "/magazine",
+    "type": "hub",
+    "placement": "closing",
+    "verified_live": "pending: in link map 2026-10-20, not fetched"
+   }
+  ],
+  "external_links": [],
+  "backlinks_to_add": [
+   {
+    "from": "/expert-advice/instrumental-wedding-songs",
+    "anchor": "wedding processional songs",
+    "sentence": "Add to the 'Processional Songs for the Bridal Party' intro: for vocal and modern picks, see our wedding processional songs."
+   },
+   {
+    "from": "/top-50-wedding-entrance-dance-songs",
+    "anchor": "songs to walk down the aisle to",
+    "sentence": "pending: page not scraped; place near the intro distinguishing ceremony from reception entrance."
+   }
+  ],
+  "serp_source": "dataforseo",
+  "serp_summary": {
+   "locations_checked": [
+    "sydney",
+    "melbourne",
+    "new_york",
+    "dubai",
+    "singapore"
+   ],
+   "locations_failed": [],
+   "common_angles": [
+    "Numbered lists of 10 to 150 songs grouped by style",
+    "Classical canon: Pachelbel, Wagner, Clarke, Bach, Debussy",
+    "Modern picks: A Thousand Years, Can't Help Falling in Love, Turning Page",
+    "AI overview in Sydney, Melbourne and New York splits classical / modern / indie plus tempo and timing tips"
+   ],
+   "gaps": [
+    "No result covers destination ceremonies (live musicians abroad, outdoor sound, aisle length)",
+    "Few explain processional order with music per group",
+    "Church guidance is thin",
+    "Many pages dated 2024 or older; forums and Pinterest rank in top 10"
+   ],
+   "regional_differences": [
+    "AU results lean on AU sites (Gabbinbar, Paperlust, Yeah Weddings)",
+    "US SERP heavy on forums (WeddingWire, Reddit, Facebook)",
+    "Dubai and Singapore returned weaker, older results; AIO not returned"
+   ],
+   "recommended_scope": "global"
+  },
+  "recommended_scope": "global",
+  "cannibalisation": [
+   "/top-24-wedding-processional-songs-in-2024: the page being refreshed; 301 to new URL",
+   "/expert-advice/instrumental-wedding-songs (formerly /instrumental-wedding-songs-bridal-march): owns all 'instrumental' processional queries, incl. instrumental wedding processional songs (US 480, #11-12) and instrumental music for wedding processional (US 590, #6). Processional page must not target 'instrumental' in title, H1 or meta.",
+   "/who-walks-down-the-aisle-and-in-what-order: ranks US #22 'who walks brides mom down the aisle'; the processional order H3 should stay brief and could link it after it is checked live"
+  ]
+ }
+}

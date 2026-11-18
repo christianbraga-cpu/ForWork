@@ -2,3 +2,4 @@
 06:14 04 images done: 5 placeholder slots; old-page images only if licence confirmed.
 06:15 01 brief done: old page read (24 songs, 10 kept in Modern, one cover mis-credit fixed); 40 songs in four groups of 10. Research stages waiting on tool permission prompts.
 06:15 03 batch B: only 2 of 24 sourced (Perfect; At Last without year). Top-ups C (instrumental) and D (modern) launched.
+06:24 03 batch A: 3 hymns sourced (Hymnary); IMSLP fetches failed (bad URL suffix). Top-up E (classical and remaining church) launched.
