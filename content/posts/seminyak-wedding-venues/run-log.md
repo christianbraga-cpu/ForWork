@@ -11,3 +11,4 @@
 02:04 06 editor 4.0 pass_with_edits, 17 edits applied.
 02:06 07b panel revise (enquire 2.1), 4 must-fix.
 02:07 08 final copy done (~3,170 words), 4 must-fix applied.
+02:08 06b final check: 12 fixes applied and confirmed; 'free' removed from the magazine link; CRO and distribution done.

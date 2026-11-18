@@ -61,16 +61,16 @@ These five resorts each describe themselves as beachfront. <!-- fact_01 --> <!--
 
 #### W Bali Seminyak
 
-W Bali Seminyak provides wedding services and calls itself a wedding venue on the Seminyak beachfront, with sunset views. <!-- fact_01 --> It has a space for almost every part of a long weekend, from a 16-seat hidden room to a deck for 300. <!-- fact_03 --> <!-- fact_05 --> Details sit on [W Bali Seminyak events and weddings](https://www.marriott.com/en-us/hotels/dpswh-w-bali-seminyak/events/).
+W Bali Seminyak provides wedding services and calls itself a wedding venue on the Seminyak beachfront, with sunset views. <!-- fact_01 --> It lists nine event rooms, from a 16-guest hidden room to a deck that takes 300 for a reception. <!-- fact_03 --> <!-- fact_05 --> Details sit on [W Bali Seminyak events and weddings](https://www.marriott.com/en-us/hotels/dpswh-w-bali-seminyak/events/).
 
-- **Suits:** A big, sociable weekend where the welcome dinner, ceremony and reception each have their own room. <!-- fact_03 --> <!-- fact_05 -->
+- **Suits:** A big, sociable wedding that wants more than one event space to choose from. <!-- fact_03 --> <!-- fact_05 -->
 - **Setting:** Beachfront, with the ocean in view. <!-- fact_01 -->
 - **Ceremony options:** Starfish Bloo, the beachfront restaurant overlooking the ocean, is named as a wedding venue. <!-- fact_02 --> Not published: a dedicated ceremony space.
 - **Reception spaces and rooms:** Starfish Bloo takes up to 200 guests. <!-- fact_02 --> The Ice Garden, described as a beachfront reception venue, takes 100 for a reception or 70 for a banquet. <!-- fact_03 -->
   - The WET Deck takes 300 for a reception or 200 for a banquet. <!-- fact_03 -->
   - The pillarless Great Room has a Batu Alam stone wall, a spiral ceiling, Indian Ocean sunset views and a pre-function terrace; ask for its wedding capacity in writing. <!-- fact_04 --> The resort lists nine event rooms and 1,811 square metres of event space in all. <!-- fact_05 -->
   - Not published: room count, exclusive use. Ask whether room blocks are held for your guests.
-- **Standout:** 1 BELOW, a 50-square-metre room concealed behind cascading water, seats 16 with its own chef: a rehearsal dinner few guests will have seen before. <!-- fact_05 -->
+- **Standout:** 1 BELOW, a 50-square-metre room concealed behind cascading water, takes up to 16 guests with a dedicated chef. <!-- fact_05 -->
 
 #### The Oberoi, Bali
 
@@ -80,13 +80,13 @@ The Oberoi, Bali offers beachfront venues for weddings under the open sky, with 
 - **Setting:** Beachfront, seaside, garden and poolside. <!-- fact_07 -->
 - **Ceremony options:** Serenity by the Sea, an open garden with ocean views, described as an intimate wedding venue. <!-- fact_08 -->
 - **Reception spaces and rooms:** Serenity by the Sea takes 50 guests. <!-- fact_08 --> Bale Banjar, at 112 square metres, takes up to 50 for standing cocktails or 24 to 32 at round tables. <!-- fact_09 --> Not published: room or villa count, exclusive use.
-- **Standout:** A garden ceremony with the ocean beyond, sized so that every guest is close enough to hear the vows. <!-- fact_08 -->
+- **Standout:** Serenity by the Sea, an open garden with ocean vistas, described as an intimate wedding venue for 50 guests. <!-- fact_08 -->
 
 #### Alila Seminyak
 
 Alila Seminyak describes itself as a secluded beachfront resort steps from the Indian Ocean, at the quieter end of the beach that runs north from Kuta and Legian. <!-- fact_11 --> Its Weddings and Celebrations offer invites couples to exchange vows overlooking the ocean in spaces shaped around them. <!-- fact_10 --> See [Alila Seminyak weddings](https://www.hyatt.com/alila-hotels-and-resorts/en-US/dpsas-alila-seminyak/weddings).
 
-- **Suits:** A couple who wants the beachfront with a calmer feel than the middle of the strip. <!-- fact_11 -->
+- **Suits:** A couple who wants a secluded beachfront resort at the quieter end of the beach. <!-- fact_11 -->
 - **Setting:** Beachfront, near Pura Petitenget. <!-- fact_11 --> <!-- fact_13 -->
 - **Ceremony options:** Customisable spaces overlooking the Indian Ocean. <!-- fact_10 --> Not published: named ceremony spaces.
 - **Reception spaces and rooms:** Indoor venues, open-air terraces and event lawns take up to 250 guests, a figure given for gatherings in general rather than weddings. <!-- fact_12 --> Rooms and suites run up to the Alila Penthouse. <!-- fact_13 --> Not published: total room count, exclusive use.
@@ -98,7 +98,7 @@ The Seminyak Beach Resort & Spa invites couples to exchange vows on the white-sa
 
 - **Suits:** A couple who wants a beachfront chapel and a ceremony with Balinese touches. <!-- fact_15 --> <!-- fact_17 -->
 - **Setting:** Beach side, garden and pool. <!-- fact_14 -->
-- **Ceremony options:** Purnama Chapel, a pavilion on Seminyak Beach with ocean views, plus garden and beachside venues. <!-- fact_15 --> <!-- fact_16 --> Ceremonies can include a choir or Balinese rindik bamboo music. <!-- fact_17 -->
+- **Ceremony options:** Purnama Chapel, a pavilion on Seminyak Beach with ocean views, plus garden and beachside venues. <!-- fact_15 --> <!-- fact_16 --> Its Truly Lovely Oasis package includes a choir or Balinese rindik bamboo music option. <!-- fact_17 -->
 - **Reception spaces and rooms:** Purnama Chapel takes up to 90 invited guests, and The Banjar Function Room is listed alongside the outdoor venues. <!-- fact_15 --> <!-- fact_16 --> Guests can stay in Garden and Beach Rooms, Ocean Suites with Jacuzzi, One Bedroom Garden and Ocean Pool Villas, or a Two Bedroom Garden Pool Villa. <!-- fact_18 --> The resort's wedding packages are offered for non-legal arrangements only. <!-- fact_19 --> Not published: reception capacity, total room count, exclusive use.
 - **Standout:** Purnama Chapel, a pavilion on Seminyak Beach itself, with the ocean in view for up to 90 guests. <!-- fact_15 -->
 
@@ -110,7 +110,7 @@ Hotel Indigo Bali Seminyak Beach hosts weddings by Seminyak Beach and describes 
 - **Setting:** Beachfront and garden. <!-- fact_201 -->
 - **Ceremony options:** A sunset beachfront ceremony at the Pool Deck, or a garden-style ceremony at the Secret Garden Pool; packages also name the SugarSand Sunset Terrace. <!-- fact_203 --> Its packaged celebrant ceremony is non-legal. <!-- fact_205 -->
 - **Reception spaces and rooms:** The resort lists four wedding venues, each for up to 80 guests: the Secret Garden Pool and the Tree Bar, each with ocean and sunset views; the SugarSand Sunset Terrace, with sunset views; and Kamaveda and Neighborhood Gallery. <!-- fact_202 --> Confirm in writing which spaces take the ceremony and which the reception. Rooms, suites and one and two bedroom private-pool villas let guests stay on site, and larger parties can ask about room blocks. <!-- fact_204 --> Not published: exclusive use.
-- **Standout:** Four spaces that each take up to 80, so the ceremony, cocktails and dinner can each move to a fresh setting. <!-- fact_202 -->
+- **Standout:** Four named wedding venues, each for up to 80 guests, three of them with sunset views. <!-- fact_202 -->
 
 ## Would a villa or poolside wedding suit you better?
 
@@ -124,21 +124,21 @@ These two are not beachside venues. They suit a couple who would rather celebrat
 
 The Elysian hosts intimate wedding ceremonies, and its pool villas are dressed with flowers and Balinese touches for the day. <!-- fact_206 --> <!-- fact_207 -->
 
-- **Suits:** A small wedding where the ceremony happens at the villa you are staying in. <!-- fact_206 --> <!-- fact_207 -->
+- **Suits:** A small, intimate ceremony at a pool villa. <!-- fact_206 --> <!-- fact_207 -->
 - **Setting:** Pool villas. <!-- fact_207 -->
 - **Ceremony options:** At a pool villa. <!-- fact_207 -->
 - **Reception spaces and rooms:** One and two bedroom villas. <!-- fact_207 --> A Wedding Package and a menu of options cover event planning, flowers, banquet menus, and hair and make-up for the bride and bridal party, with a dedicated team. <!-- fact_208 --> Not published: guest capacity, villa count, exclusive use.
-- **Standout:** The whole day, from getting ready to the vows, can happen behind one villa wall. <!-- fact_207 --> <!-- fact_208 -->
+- **Standout:** Pool villas transformed with flowers and touches of Bali for the wedding, with hair and make-up for the bride and bridal party on the menu. <!-- fact_207 --> <!-- fact_208 -->
 
 #### Mrs Sippy Bali
 
 Mrs Sippy Bali is a poolside venue in the heart of Seminyak that hosts private functions, weddings among them, with canapé and set menu options. <!-- fact_100 --> <!-- fact_101 --> Sandstone walls, polished cement floors and dusty pink vintage tiles set the look. <!-- fact_101 -->
 
-- **Suits:** A pool-party reception for a crowd that will swim before dinner. <!-- fact_100 --> <!-- fact_102 -->
+- **Suits:** A poolside celebration among shady palms and daybeds. <!-- fact_100 --> <!-- fact_102 -->
 - **Setting:** Poolside, among shady palms and daybeds. <!-- fact_101 --> <!-- fact_102 -->
 - **Ceremony options:** Not published.
-- **Reception spaces and rooms:** Canapé and set menus from an open-air, wood-fired kitchen that pairs Mediterranean and charcoal cooking. <!-- fact_100 --> <!-- fact_102 --> It opens to the public from 10am to 9pm daily, so ask early about private hire and how late music can run. <!-- fact_103 --> Not published: capacity, rooms, exclusive use.
-- **Standout:** A triple-tier dive tower into the pool, which your guests will find before you do. <!-- fact_102 -->
+- **Reception spaces and rooms:** Canapé and set menu options for events, and chefs who fuse Mediterranean and charcoal cuisine in an open-air, wood-fired kitchen. <!-- fact_100 --> <!-- fact_102 --> It opens to the public from 10am to 9pm daily, so ask early about private hire and how late music can run. <!-- fact_103 --> Not published: capacity, rooms, exclusive use.
+- **Standout:** A triple-tier dive tower into the pool. <!-- fact_102 -->
 
 ## How do the venues compare like for like?
 
@@ -203,7 +203,7 @@ Each type answers a different question about the weekend.
 
 Whichever you choose, Balinese elements can sit inside the day. The Seminyak Beach Resort blends Balinese and Western styles. <!-- fact_16 --> For the wider customs you might borrow, read about [Indonesian wedding traditions](https://weddedwonderland.com/expert-advice/indonesian-wedding-traditions).
 
-For real weddings and settings to compare, browse the [free Wedded Wonderland magazines](https://weddedwonderland.com/magazine?utm_source=blog&utm_medium=content&utm_campaign=seminyak-wedding-venues&utm_content=magnet).
+For real weddings and settings to compare, browse the [Wedded Wonderland magazines](https://weddedwonderland.com/magazine?utm_source=blog&utm_medium=content&utm_campaign=seminyak-wedding-venues&utm_content=magnet).
 
 ## How do guests get to Seminyak?
 
