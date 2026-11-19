@@ -65,9 +65,9 @@ images:
   - { slot: "delivery", file_name: "couple-shared-look-after-vows-golden-hour-01.webp", file_name_status: "placeholder", featured: false }
 images_note: "No photo curator this run. Our own gallery or licensed stock only; no real couple's vows shown (no readable vow text anywhere); identifiable people only with written consent. All file names are placeholders (IMAGE-RIGHTS)."
 claims_register:
-  - { id: "C-01", text: "Marriage Act 1961 s 45(2) vow words quoted exactly, 'or words to that effect'; said to each other in the presence of the celebrant and the witnesses, where the celebrant is not a minister of religion.", fact_ref: "F-002; F-003", status: "sourced (official, quoted; re-read live per N-001)" }
+  - { id: "C-01", text: "Marriage Act 1961 s 45(2) vow words quoted exactly, 'or words to that effect'; said to each other in the presence of the celebrant and the witnesses, where the celebrant is not a minister of religion.", fact_ref: "F-001", status: "sourced (official, quoted; re-read in compilation C2026C00129 on 19 Nov 2026, wording matches)" }
   - { id: "C-02", text: "A minister of religion may use the form or ceremony recognised by their religious body (s 45(1)).", fact_ref: "F-002", status: "sourced (official, medium)" }
-  - { id: "C-03", text: "Monitum s 46(1) quoted exactly, glossed as 'the celebrant's set statement'.", fact_ref: "F-001; F-003", status: "sourced (official, quoted; re-read live per N-001)" }
+  - { id: "C-03", text: "Monitum s 46(1) quoted exactly, glossed as 'the celebrant's set statement'.", fact_ref: "F-001; F-003", status: "sourced (official, quoted; re-read in compilation C2026C00129 on 19 Nov 2026, wording matches)" }
   - { id: "C-04", text: "An Australian-authorised celebrant cannot perform a marriage overseas; a ceremony they lead abroad is symbolic.", fact_ref: "F-005", status: "sourced (official)" }
   - { id: "C-05", text: "An overseas marriage is generally recognised in Australia if valid where it took place and would have been valid here; the local registry or embassy confirms the local rules.", fact_ref: "F-005", status: "sourced (official)" }
   - { id: "C-06", text: "NOIM given to an authorised celebrant at least one month and no more than 18 months before the wedding.", fact_ref: "F-006", status: "sourced (official)" }
@@ -75,7 +75,7 @@ claims_register:
   - { id: "C-08", text: "Because a symbolic ceremony is not a legal marriage, the s 45 words are not required there.", fact_ref: "F-004; F-005; F-002", status: "inference from official facts; worded as such" }
   - { id: "C-09", text: "Wedded Wonderland Concierge description (brand wording).", fact_ref: "brand-profile.md", status: "sourced (brand); scope check CONCIERGE-PAY" }
   - { id: "C-10", text: "Wonderland Studio is a free planning suite including a wedding website.", fact_ref: "brand-profile.md", status: "sourced (brand)" }
-  - { id: "C-11", text: "Vow length guidance of about one minute, roughly 120 to 180 words, each.", fact_ref: "none (editorial guidance)", status: "framed as our guidance" }
+  - { id: "C-11", text: "Our guide to writing your own vows suggests 250 to 300 words, which usually takes about two minutes to read aloud.", fact_ref: "late F-202 (our How Do You Write Your Own Wedding Vows guide, checked 2026-11-19)", status: "framed as our guidance" }
 links_register:
   - { id: "L-01", url: "/expert-advice/traditional-wedding-vows", anchor: "the standard vow wording, line by line", type: "internal" }
   - { id: "L-02", url: "/expert-advice/simple-wedding-ceremony-script", anchor: "a simple ceremony script with the legal lines marked", type: "internal" }
@@ -93,6 +93,7 @@ links_register:
   - { id: "L-15", url: "https://www.ag.gov.au/families-and-marriage/marriage/get-married", anchor: "The Attorney-General's Department says; at least one month and no more than 18 months before", type: "external", rel: "noopener" }
   - { id: "L-16", url: "https://www.ag.gov.au/sites/default/files/2020-03/guidelines-marriage-act-1961-authorised-celebrants.pdf", anchor: "Attorney-General's Department guidelines for celebrants", type: "external", rel: "noopener", status: "2018 edition; swap for the 2021 edition URL if N-002 confirms" }
   - { id: "L-17", url: "/celebration-ideas/vow-renewal-vows", anchor: "guide to writing vows for a renewal", type: "internal" }
+  - { id: "L-18", url: "/how-to-write-wedding-vows", anchor: "our guide to writing your own vows", type: "internal" }
 open_items:
   - "CMS-TITLE: the SEO plugin must not append ' - Wedded Wonderland'; use '|' or no suffix so the title tag has no dash."
   - "N-002: confirm the 2021 celebrant Guidelines against C-07 and swap the PDF link (L-16)."
@@ -107,6 +108,8 @@ changes_from_previous:
   - "CTA body: 'complimentary' became 'free' (SITE-CONFLICTS); 'free Discovery Call' kept."
   - "Six [IMAGE: slot] markers replaced with placeholder file names."
   - "No other wording changed; Marriage Act quotations, official inline links, illustration label and celebrant-confirms wording kept exactly."
+  - "Late research fix (19 Nov 2026): N-001 closed; Marriage Act ss 45(2) and 46(1) re-read in compilation C2026C00129 (28 March 2026), quoted wording matches late F-001 and F-003 and is unchanged; both inline links and L-14 swapped to https://www.legislation.gov.au/C1961A00012/latest/text. Vow length aligned with late F-202: FAQ answer now 'Our guide to writing your own vows suggests 250 to 300 words, which usually takes about two minutes to read aloud.' (no link, as an FAQ answer) and '150-word vow' became 'vow'; C-11 updated."
+  - "Added one sentence in 'How to write funny wedding vows in four parts': 'For the full method, see our guide to writing your own vows.' linking to /how-to-write-wedding-vows (L-18; no existing words suited a word-neutral link). C-01 fact_ref corrected to F-001."
 ---
 # Funny Wedding Vows That Still Mean Something
 
@@ -159,7 +162,7 @@ In this order:
 
 Agree on tone and length with your partner, not the words. If one of you writes a stand-up routine and the other writes a sonnet, the ceremony can feel lopsided. A five-minute conversation ("one or two jokes each, then serious") keeps the words a surprise and the ceremony even.
 
-Write the promise first. It is the hardest part and the most important, and once it exists you will know which jokes set it up and which are just noise. For more examples by recipient, browse [vows written for her](/expert-advice/wedding-vows-for-her) and [vows written for him](/expert-advice/wedding-vows-for-him).
+Write the promise first. It is the hardest part and the most important, and once it exists you will know which jokes set it up and which are just noise. For the full method, see [our guide to writing your own vows](/how-to-write-wedding-vows). For more examples by recipient, browse [vows written for her](/expert-advice/wedding-vows-for-her) and [vows written for him](/expert-advice/wedding-vows-for-him).
 
 ## Humour that lands and humour to avoid
 
