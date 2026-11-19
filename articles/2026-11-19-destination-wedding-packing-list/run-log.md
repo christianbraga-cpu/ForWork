@@ -33,3 +33,4 @@
   - **Live checks:** the destination checklist lives at /expert-advice/destination-wedding-checklist. The cluster head /expert-advice/wedding-planning-checklist is live. WW-202 is not live, so /honeymoon-essentials-checklist is linked and WW-202 becomes a RETRO-LINK.
   - **Link map:** new section added.
 - **Decision (default):** H2 2 loses its colon (house style). H2 7 (what the Wedded Advisor arranges) must use only live brand wording, or be cut back to the Concierge's sourced travel wording.
+- **Stage 1 fast (research):** PARTIAL at 23:58. The agent is waiting on an MCP permission prompt; 28 official facts are saved (Smartraveller, ABF duty free and cash, CASA batteries, TGA medicines, passports). Not yet in: biosecurity, our own pages. **Decision (default):** the writer started at 23:58 on the saved facts and re-reads the pack before writing.
