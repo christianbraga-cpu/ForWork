@@ -1,0 +1,167 @@
+{
+  "agent": "planner-sme",
+  "task_id": "short-wedding-vows",
+  "stage": "03",
+  "status": "needs_input",
+  "round": 1,
+  "inputs_used": [
+    "content/posts/short-wedding-vows/00-input.json",
+    "content/posts/get-married-in-new-zealand/03-source-pack.json",
+    "https://www.legislation.gov.au/C1961A00012/latest/text"
+  ],
+  "self_qa": {
+    "checks": [
+      {
+        "check": "Every fact has a source and date",
+        "pass": true
+      },
+      {
+        "check": "No price without a source; all prices in needs_signoff",
+        "pass": true,
+        "note": "No amounts recorded."
+      },
+      {
+        "check": "Every must-include covered or [[VERIFY]]",
+        "pass": true,
+        "note": "Australian s45(2) vows and s46 monitum wording are [[VERIFY]]: legislation.gov.au rendered only the table of contents on 19 November 2026."
+      },
+      {
+        "check": "No invented quotes, statistics or real weddings",
+        "pass": true
+      }
+    ],
+    "confidence": 0.3
+  },
+  "open_questions": [
+    {
+      "to": "orchestrator",
+      "question": "Re-run a read of Marriage Act 1961 ss45-46 text (e.g. the compilation's Word/PDF download on legislation.gov.au, or AGD celebrant guidelines) to replace the s45(2) and s46 VERIFY items with quoted wording.",
+      "blocking": true
+    }
+  ],
+  "assumptions": [
+    "Legal content is phrased 'as at November 2026'; the Wedded Advisor confirms current requirements.",
+    "No same-sex position and no amounts recorded, per orchestrator instruction."
+  ],
+  "verify_items": [
+    "[[VERIFY: exact wording of Marriage Act 1961 s45(2) vows (each party's words) from the current compilation C2026C00129 on legislation.gov.au; the live page rendered only the table of contents on 19 November 2026]]",
+    "[[VERIFY: exact wording of the s46 monitum the authorised celebrant must say, from the current compilation C2026C00129 or the AGD Guidelines on the Marriage Act 1961 for marriage celebrants]]",
+    "[[VERIFY: that the official text allows the rest of an Australian ceremony to be personalised, quoting the Act or AGD guidance]]",
+    "[[VERIFY: New Zealand vows guidance (fact_02 to fact_05) was read 17 November 2026 for another post; Wedded Advisor confirms current requirements]]"
+  ],
+  "tools_used": [
+    "mcp__Apify__apify--web-search",
+    "mcp__Apify__apify--web-fetch",
+    "Bash"
+  ],
+  "next_agent": [
+    "luxury-writer"
+  ],
+  "payload": {
+    "facts": [
+      {
+        "fact_id": "fact_01",
+        "claim": "As at November 2026, the Federal Register of Legislation lists the current compilation of the Marriage Act 1961 (No. 12, 1961) as C2026C00129, compilation 34, dated 28 March 2026, administered by the Attorney-General's Department; Part IV Division 2 includes section 45 'Form of ceremony' and section 46 'Certain authorised celebrants to explain nature of marriage relationship'.",
+        "source": "https://www.legislation.gov.au/C1961A00012/latest/text",
+        "source_type": "government",
+        "checked": "2026-11-19",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_02",
+        "claim": "[Copied from get-married-in-new-zealand 03-source-pack, same source and date.] Couples can write their own vows as long as each says words to the effect of 'I [name] take you [name] to be my legal wife/husband/partner'.",
+        "source": "https://www.govt.nz/organisations/births-deaths-and-marriages/information-for-marriage-celebrants/performing-a-marriage-or-civil-union-ceremony/",
+        "source_type": "government",
+        "checked": "2026-11-17",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_03",
+        "claim": "[Copied from get-married-in-new-zealand 03-source-pack, same source and date.] As at November 2026, govt.nz 'How to get married in NZ' states: most marriage ceremonies in New Zealand are personalised; you work with a celebrant to design the ceremony, you can hold it at any time, date and place you want, and you write your own vows.",
+        "source": "https://www.govt.nz/browse/family-and-whanau/getting-married/how-to-get-married-in-nz/",
+        "source_type": "government",
+        "checked": "2026-11-17",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_04",
+        "claim": "[Copied from get-married-in-new-zealand 03-source-pack, same source and date.] As at November 2026, govt.nz 'How to get married in NZ' states: a registry ceremony has standard vows and must take place during business hours on a weekday (9am to 5pm, Monday to Friday), not on a public holiday.",
+        "source": "https://www.govt.nz/browse/family-and-whanau/getting-married/how-to-get-married-in-nz/",
+        "source_type": "government",
+        "checked": "2026-11-17",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_05",
+        "claim": "[Copied from get-married-in-new-zealand 03-source-pack, same source and date.] As at November 2026, govt.nz 'Getting married' states: only registered celebrants can perform weddings or civil unions in New Zealand.",
+        "source": "https://www.govt.nz/browse/family-and-whanau/getting-married/",
+        "source_type": "government",
+        "checked": "2026-11-17",
+        "is_price": false
+      }
+    ],
+    "insider_details": [
+      {
+        "detail": "Short personalised vows still need the legal core: in New Zealand each person must say words to the effect of 'I [name] take you [name] to be my legal wife/husband/partner', so build short vows around that line.",
+        "fact_ids": [
+          "fact_02",
+          "fact_03"
+        ]
+      },
+      {
+        "detail": "If you want short standard vows in New Zealand, a registry ceremony uses set vows but is limited to weekday business hours, which rarely suits a destination wedding day; most couples choose a personalised ceremony with a registered celebrant.",
+        "fact_ids": [
+          "fact_03",
+          "fact_04",
+          "fact_05"
+        ]
+      },
+      {
+        "detail": "In Australia the ceremony form sits in s45 and the celebrant's explanation in s46 of the Marriage Act 1961 (current compilation 28 March 2026); confirm the exact legal words with your celebrant before writing short vows.",
+        "fact_ids": [
+          "fact_01"
+        ]
+      }
+    ],
+    "quotes": [],
+    "real_weddings": [],
+    "verify_items": [
+      "[[VERIFY: exact wording of Marriage Act 1961 s45(2) vows (each party's words) from the current compilation C2026C00129 on legislation.gov.au; the live page rendered only the table of contents on 19 November 2026]]",
+      "[[VERIFY: exact wording of the s46 monitum the authorised celebrant must say, from the current compilation C2026C00129 or the AGD Guidelines on the Marriage Act 1961 for marriage celebrants]]",
+      "[[VERIFY: that the official text allows the rest of an Australian ceremony to be personalised, quoting the Act or AGD guidance]]",
+      "[[VERIFY: New Zealand vows guidance (fact_02 to fact_05) was read 17 November 2026 for another post; Wedded Advisor confirms current requirements]]"
+    ],
+    "needs_signoff": [],
+    "must_include_coverage": [
+      {
+        "item": "Australian legal vows wording (Marriage Act 1961 s45(2))",
+        "covered_by": [
+          "fact_01",
+          "[[VERIFY: exact wording of Marriage Act 1961 s45(2) vows (each party's words) from the current compilation C2026C00129 on legislation.gov.au; the live page rendered only the table of contents on 19 November 2026]]"
+        ]
+      },
+      {
+        "item": "Celebrant monitum (s46)",
+        "covered_by": [
+          "fact_01",
+          "[[VERIFY: exact wording of the s46 monitum the authorised celebrant must say, from the current compilation C2026C00129 or the AGD Guidelines on the Marriage Act 1961 for marriage celebrants]]"
+        ]
+      },
+      {
+        "item": "Rest of ceremony can be personalised",
+        "covered_by": [
+          "[[VERIFY: that the official text allows the rest of an Australian ceremony to be personalised, quoting the Act or AGD guidance]]"
+        ]
+      },
+      {
+        "item": "New Zealand vows wording and celebrant",
+        "covered_by": [
+          "fact_02",
+          "fact_03",
+          "fact_04",
+          "fact_05"
+        ]
+      }
+    ]
+  }
+}

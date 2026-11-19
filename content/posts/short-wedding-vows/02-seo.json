@@ -1,0 +1,268 @@
+{
+ "agent": "seo-researcher",
+ "task_id": "short-wedding-vows",
+ "stage": "02",
+ "status": "complete",
+ "round": 1,
+ "inputs_used": [
+  "00-input.json",
+  "CLAUDE.md",
+  "content-system/research/locations.yaml",
+  "content-system/seo/link-map.csv (grep)",
+  "content-system/seo/priority-link-targets.md",
+  "content/posts/wedding-processional-songs/02-seo.json (format model)"
+ ],
+ "self_qa": {
+  "checks": [
+   {
+    "check": ">= 7 of 10 locations",
+    "pass": false,
+    "note": "Fast mode: 5 of 5 requested cities returned results, no retries needed."
+   },
+   {
+    "check": "Every H2 maps to a real query or must-include",
+    "pass": true,
+    "note": "outline[].answers"
+   },
+   {
+    "check": "Links verified live today",
+    "pass": false,
+    "note": "/how-to-write-wedding-vows and /expert-advice/traditional-wedding-vows fetched 200 on 2026-11-19; others pending."
+   },
+   {
+    "check": "No competitor links; no noindex; do-not-link list obeyed",
+    "pass": true,
+    "note": "External links official only; no internal target is on the do-not-link list; draft rows not used."
+   },
+   {
+    "check": "Meta lengths",
+    "pass": true,
+    "note": "title 57, description 150; title keyword first, no colon or dash, not a question"
+   },
+   {
+    "check": "Sydney top 3 read",
+    "pass": false,
+    "note": "#1 fetched (metadata and links only); #2 Pinterest skipped; #3 redirect fetch failed (415)."
+   }
+  ],
+  "confidence": 0.7
+ },
+ "open_questions": [
+  {
+   "to": "person",
+   "question": "Length conflict: /how-to-write-wedding-vows says 250 to 300 words, about two minutes. This post will advise short vows of about one minute or less. Align the how-to page wording so the two pages do not contradict each other.",
+   "blocking": false
+  },
+  {
+   "to": "person",
+   "question": "DataForSEO records the traditional vows pages at /traditional-wedding-vows and /what-are-the-traditional-wedding-vows (root paths), while the link map lists /expert-advice/traditional-wedding-vows and /featured/what-are-the-traditional-wedding-vows. Confirm the root paths 301 to the link-map URLs, and consider merging /featured/what-are-the-traditional-wedding-vows into /expert-advice/traditional-wedding-vows.",
+   "blocking": false
+  },
+  {
+   "to": "wedding-planner-sme",
+   "question": "Source the legally required vow wording from the Marriage Act 1961 s45(2) and the AGD celebrant guidance; [[VERIFY: exact wording and that it must be said in the presence of an authorised celebrant and two witnesses]].",
+   "blocking": false
+  }
+ ],
+ "next_agent": [
+  "planner-sme",
+  "visual-curator"
+ ],
+ "tools_used": [
+  "DataForSEO serp_organic_live_advanced x5 (Sydney, Melbourne, New York, Dubai, Singapore)",
+  "DataForSEO kw_data_google_ads_search_volume (Australia, United States)",
+  "DataForSEO dataforseo_labs_bulk_keyword_difficulty (Australia)",
+  "DataForSEO dataforseo_labs_google_ranked_keywords weddedwonderland.com Australia, filtered %vow%",
+  "Apify web-fetch x4 (kerriwatkinscelebrant.com.au, weddedwonderland.com/how-to-write-wedding-vows, weddedwonderland.com/expert-advice/traditional-wedding-vows, legislation.gov.au)",
+  "GSC: not read (fast mode); no export file or date recorded"
+ ],
+ "assumptions": [
+  "Fast mode: 5 SERP cities, no GSC, no Arabic query, no secondary keyword SERPs",
+  "KD from Australia database; ranked keywords AU only (US not run)",
+  "Scope global: US volume far above AU, but the legal section is Australian",
+  "AI Overview recorded only; article will not cite it"
+ ],
+ "payload": {
+  "primary_keyword": "short wedding vows",
+  "secondary_keywords": [
+   "how long should wedding vows be",
+   "simple wedding vows",
+   "short and sweet wedding vows",
+   "short vows for him",
+   "short vows for her",
+   "funny short wedding vows",
+   "one minute wedding vows",
+   "what are the shortest wedding vows"
+  ],
+  "intent": "informational",
+  "slug": "short-wedding-vows",
+  "url_path": "/expert-advice/short-wedding-vows",
+  "meta_title": "Short Wedding Vows Examples You Can Say in Under a Minute",
+  "meta_description": "Short wedding vows by style, from romantic to funny, with a one-minute template, the legal words Australia requires and tips for saying them out loud.",
+  "outline": [
+   {
+    "h2": "How long should short wedding vows be?",
+    "answers": "how long should wedding vows be (US 1,300, AU 140, KD 0); PAA 'How many minutes should wedding vows be?' (Sydney, Melbourne, New York, Dubai); AIO advises 20 to 40 seconds (AU) and 15 to 40 seconds (US)",
+    "notes": "Our advice in our own words: about one minute or less. Do not attribute to the AI Overview. Give a word-count range only with a stated speaking-rate basis. Link /how-to-write-wedding-vows for full-length vows."
+   },
+   {
+    "h2": "What words do you legally have to say when you marry in Australia?",
+    "answers": "PAA 'What are the shortest wedding vows?' and 'What are basic marriage vows?' (Singapore); must-include legal words in Australia",
+    "notes": "Marriage Act 1961 s45(2) wording from legislation.gov.au, AGD guidance from ag.gov.au, both linked inline. [[VERIFY]] wording. Say personal vows are optional extras on top of the legal words. Link /expert-advice/traditional-wedding-vows."
+   },
+   {
+    "h2": "What are some good short wedding vows?",
+    "answers": "short wedding vows (US 480, AU 50, KD 0); PAA 'What are some good short wedding vows?' (Singapore); simple wedding vows (US 720, AU 40, KD 0); short and sweet wedding vows (US 110, AU 10, KD 47)",
+    "h3": [
+     "Short and sweet vows",
+     "Simple vows that borrow from tradition",
+     "Funny short vows",
+     "Short vows for him",
+     "Short vows for her",
+     "Short vows for a destination or elopement ceremony"
+    ],
+    "notes": "All examples original writing; never reuse competitor or SERP examples. 'For him' 110 US / 20 AU, 'for her' 90 US / 10 AU, funny 10 / 10. Keep 'for her' H3 brief and link the existing for-her page if added to the link map."
+   },
+   {
+    "h2": "How do you write a one-minute wedding vow?",
+    "answers": "one minute wedding vows (no Google Ads volume returned); PAA 'What are 3-5 promises you can make to your partner?' (4 cities); SERP titles 'under a minute' (Sydney #7)",
+    "notes": "Fill-in template: name, one specific detail, two or three promises, closing line. Original structure."
+   },
+   {
+    "h2": "How do you say your vows without freezing up?",
+    "answers": "AIO delivery-tips block (Sydney, Melbourne); PAA 'What to say instead of vows?' (Sydney, Melbourne, Dubai)",
+    "notes": "Card or repeat-after-celebrant option, match length with partner, pause and breathe. Link /expert-advice/what-happens-in-a-wedding-ceremony for where vows fall."
+   },
+   {
+    "h2": "Short wedding vows FAQ",
+    "answers": "PAA questions across cities",
+    "notes": "See faq_questions."
+   }
+  ],
+  "faq_questions": [
+   "How many minutes should wedding vows be?",
+   "What are the shortest wedding vows?",
+   "What do wedding vows usually say?",
+   "What to say instead of vows?",
+   "Do both partners' vows need to be the same length?"
+  ],
+  "internal_links": [
+   {
+    "anchor": "how to write your own wedding vows",
+    "target": "/how-to-write-wedding-vows",
+    "type": "related",
+    "placement": "How long section, for longer vows",
+    "verified_live": "2026-11-19"
+   },
+   {
+    "anchor": "traditional wedding vows",
+    "target": "/expert-advice/traditional-wedding-vows",
+    "type": "related",
+    "placement": "legal words section",
+    "verified_live": "2026-11-19"
+   },
+   {
+    "anchor": "what happens in a wedding ceremony",
+    "target": "/expert-advice/what-happens-in-a-wedding-ceremony",
+    "type": "related",
+    "placement": "delivery section",
+    "verified_live": "pending: in link map 2026-10-20, not fetched"
+   },
+   {
+    "anchor": "how long a wedding ceremony takes",
+    "target": "/expert-advice/how-long-is-a-wedding-ceremony",
+    "type": "related",
+    "placement": "How long section",
+    "verified_live": "pending: in link map 2026-10-20, not fetched"
+   },
+   {
+    "anchor": "choosing a wedding celebrant",
+    "target": "/expert-advice/how-to-choose-a-wedding-celebrant",
+    "type": "related",
+    "placement": "legal words section",
+    "verified_live": "pending: in link map 2026-10-20, not fetched"
+   },
+   {
+    "anchor": "vow renewal ideas",
+    "target": "/expert-advice/vow-renewal-ideas",
+    "type": "related",
+    "placement": "closing",
+    "verified_live": "pending: in link map 2026-10-20, not fetched"
+   },
+   {
+    "anchor": "Wedded Concierge",
+    "target": "/wonderland-concierge?utm_source=blog&utm_medium=content",
+    "type": "commercial",
+    "placement": "destination H3 CTA",
+    "verified_live": "pending: in link map 2026-10-20, not fetched"
+   }
+  ],
+  "external_links": [
+   {
+    "anchor": "Marriage Act 1961, section 45",
+    "url": "https://www.legislation.gov.au/C1961A00012/latest/text",
+    "type": "authority",
+    "verified_live": "pending: [[VERIFY: register ID and section]]; legislation.gov.au reachable 2026-11-19"
+   },
+   {
+    "anchor": "Attorney-General's Department guidance on getting married",
+    "url": "https://www.ag.gov.au/families-and-marriage/marriage",
+    "type": "authority",
+    "verified_live": "pending: not fetched"
+   }
+  ],
+  "backlinks_to_add": [
+   {
+    "from": "/how-to-write-wedding-vows",
+    "anchor": "short wedding vows",
+    "sentence": "In 'How Long Should Wedding Vows Be?', after the 250 to 300 words line: if you would rather keep it under a minute, see our short wedding vows."
+   },
+   {
+    "from": "/expert-advice/traditional-wedding-vows",
+    "anchor": "short wedding vows",
+    "sentence": "pending: page fetched (links only); place near the section on adding personal vows."
+   },
+   {
+    "from": "/expert-advice/vow-renewal-ideas",
+    "anchor": "short vows",
+    "sentence": "pending: page not fetched."
+   }
+  ],
+  "serp_source": "dataforseo",
+  "serp_summary": {
+   "locations_checked": [
+    "sydney",
+    "melbourne",
+    "new_york",
+    "dubai",
+    "singapore"
+   ],
+   "locations_failed": [],
+   "common_angles": [
+    "Numbered example lists (14 to 50) grouped by tone: heartfelt, traditional, funny",
+    "Length guidance: AIO 20 to 40 seconds (AU), 15 to 40 seconds (US); Pinterest snippet 1 to 2 minutes",
+    "Delivery tips: match length, read from a card, pause"
+   ],
+   "gaps": [
+    "No result gives the Australian legal wording alongside short personal vows (only a celebrant archive quotes it)",
+    "No destination or elopement angle beyond one 'under a minute' list",
+    "Results heavy on Pinterest and thin or hidden pages (thriftbooks, unmeasuredevents)"
+   ],
+   "regional_differences": [
+    "AU SERPs include AU celebrants (Kerri Watkins, Michael Janz, Elope Australia, Vogue Ballroom)",
+    "Singapore SERP is the cleanest editorial set (Paperlust, Young Hip & Married, The Perfect Wedding)",
+    "Dubai and Singapore AIO asynchronous, text not returned"
+   ],
+   "recommended_scope": "global"
+  },
+  "recommended_scope": "global",
+  "cannibalisation": [
+   "/expert-advice/wedding-vows-for-her (not in link map): ranks AU #24 for 'short wedding vows' via its 43-word example. Split: it keeps 'vows for her'; this post owns 'short', 'simple', 'one minute' and 'short vows for him/her' only as H3s.",
+   "/how-to-write-wedding-vows: no AU vow rankings recorded; has a 'How Long Should Wedding Vows Be?' section (250 to 300 words, about two minutes). Split: how-to owns the writing process and full-length guidance; this post owns short-vow length and must not target 'how to write wedding vows'. Align length wording.",
+   "/expert-advice/traditional-wedding-vows (recorded as /traditional-wedding-vows): AU #55 'traditional marriage vows', #61 'christian wedding vows traditional', #73 'anglican church wedding vows'.",
+   "/featured/what-are-the-traditional-wedding-vows (recorded as /what-are-the-traditional-wedding-vows): AU #34 'what is the traditional wedding vow', #51 'marriage vows christian traditional'. The two traditional pages compete with each other on the same intent; recommend merging into /expert-advice/traditional-wedding-vows with a 301. This post only summarises the legal words and links out.",
+   "/expert-advice/vow-renewal-ideas: no vow rankings recorded; no conflict.",
+   "/the-best-wedding-vows-of-all-time (not in link map): AU #60 to #80 for 'best vows' variants; examples overlap, different intent."
+  ]
+ }
+}
