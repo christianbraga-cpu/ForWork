@@ -5,3 +5,4 @@
 23:34 02 SEO done: head cluster US 50 / AU 10 (grouped, not additive; input note's ~200 overstates); how-to seating chart URL lands on /expert-advice/wedding-seating-chart (one page, confirm 301).
 23:37 05 first draft done (~2,180 words, 0 VERIFY).
 23:41 06 editor pass_with_edits (4.14), 12/12 applied to 05-draft-r2.md; 07 five readers done.
+23:44 07b panel revise (enquire 1.6 vs 3.8, deferred business asks), 10/10 edits applied to 08-final.md.
