@@ -1,0 +1,178 @@
+{
+  "agent": "visual-curator",
+  "task_id": "short-wedding-vows",
+  "stage": "04",
+  "status": "needs_input",
+  "round": 1,
+  "inputs_used": [
+    "CLAUDE.md",
+    "content/posts/short-wedding-vows/00-input.json",
+    "content-system/images/library-index.csv (header only, no rows)",
+    "content-system/schemas/04-images.schema.json",
+    "content/posts/wedding-processional-songs/04-images.json (format)"
+  ],
+  "self_qa": {
+    "checks": [
+      {
+        "check": "Zero reference-only or competitor images in slots",
+        "pass": true
+      },
+      {
+        "check": "Every approved image has verified location, licence, alt, caption, fit_reason",
+        "pass": true,
+        "note": "No approved images; all 4 slots needed."
+      },
+      {
+        "check": "No AI image of a real wedding, person or place",
+        "pass": true,
+        "note": "AI offered only for the vow cards still life, not generated, pending Nic's approval, labelled 'Illustrative image'."
+      },
+      {
+        "check": "Featured image exists (approved or needed with brief)",
+        "pass": true,
+        "note": "Needed with brief."
+      },
+      {
+        "check": "Placements match final H2 numbering",
+        "pass": false,
+        "note": "02-seo.json not available; after_h2 assumes 1 examples, 3 destination/outdoor, 5 renewal."
+      }
+    ],
+    "confidence": 0.6
+  },
+  "open_questions": [
+    {
+      "to": "Nic",
+      "question": "Source licensed photos for the hero, destination ceremony and renewal slots (client weddings with signed consent, partner photographers, licensed stock with releases)? Repo register has no rows.",
+      "blocking": true
+    },
+    {
+      "to": "Nic",
+      "question": "Approve or decline an AI illustrative still life of handwritten vow cards (no people, no real place), captioned 'Illustrative image', if no licensed photo is found?",
+      "blocking": false
+    },
+    {
+      "to": "seo-researcher",
+      "question": "Confirm H2 numbering once the outline exists and remap after_h2 placements.",
+      "blocking": false
+    }
+  ],
+  "assumptions": [
+    "Repo register only (per brief); Google Drive, own site, Canva, press kits and Google Lens not run in fast mode.",
+    "No venue in scope, so no permission emails drafted."
+  ],
+  "verify_items": [
+    "[[IMAGE NEEDED]] featured: couple exchanging vows at the altar, consented couple",
+    "[[IMAGE NEEDED]] vow-cards: handwritten vow cards still life (or approved AI illustrative)",
+    "[[IMAGE NEEDED]] destination-ceremony: outdoor vows at a named destination, consented",
+    "[[IMAGE NEEDED]] renewal: couple renewing vows, consented",
+    "[[VERIFY licence]] every sourced photo: credit, scope, model and property releases",
+    "[[VERIFY: any AI illustrative still life approved by Nic before generation]]"
+  ],
+  "next_agent": [
+    "luxury-writer"
+  ],
+  "payload": {
+    "slots": [
+      {
+        "slot_id": "featured",
+        "placement": "featured",
+        "purpose": "Hero: the vow exchange moment the whole article serves.",
+        "shot_brief": "Real, licensed photo of a couple facing each other at the altar, one reading short vows from a small card, celebrant soft in the background, natural light, luxury destination ceremony. Consenting couple; venue named from source. Never AI.",
+        "status": "needed",
+        "file": "content/posts/short-wedding-vows/images/short-wedding-vows-couple-exchanging-vows-hero.webp",
+        "source": {
+          "type": "library",
+          "origin": "[[IMAGE NEEDED]] library-index.csv has header only, no rows",
+          "credit": "[[VERIFY licence]]"
+        },
+        "consent": {
+          "couple": "required, signed",
+          "guests": "required if identifiable",
+          "venue": "required if interior identifiable"
+        },
+        "alt": "Couple holding hands at the altar as one reads short wedding vows from a card",
+        "caption": "<Venue>, <town>. Photo: [[VERIFY credit]]",
+        "lens_check": "Not run: no candidate image.",
+        "location": {
+          "venue": "[[VERIFY: venue]]",
+          "town": "[[VERIFY: town]]",
+          "verified_by": "[[VERIFY: register, EXIF GPS or source page]]"
+        }
+      },
+      {
+        "slot_id": "vow-cards",
+        "placement": "after_h2:1",
+        "purpose": "Show how short vows look written out on cards, supporting the examples section.",
+        "shot_brief": "Still life of two handwritten vow cards or a small vow booklet on linen with rings and a pen, soft window light, no people, no legible real names, no identifiable venue. Preferred: licensed or own photo. AI fallback only if Nic approves; caption 'Illustrative image'.",
+        "status": "needed",
+        "file": "content/posts/short-wedding-vows/images/short-wedding-vows-handwritten-vow-cards.webp",
+        "source": {
+          "type": "library",
+          "origin": "[[IMAGE NEEDED]] no register rows; ai_illustrative fallback pending Nic's approval, not generated",
+          "credit": "[[VERIFY licence]]"
+        },
+        "consent": {
+          "people": "none depicted"
+        },
+        "alt": "Two handwritten vow cards on linen beside a pair of wedding rings",
+        "caption": "Illustrative image (if AI-approved) or Photo: [[VERIFY credit]]",
+        "lens_check": "Not run: no candidate image."
+      },
+      {
+        "slot_id": "destination-ceremony",
+        "placement": "after_h2:3",
+        "purpose": "Show short vows in an outdoor or destination ceremony where brevity suits wind, heat and sound.",
+        "shot_brief": "Real, licensed photo of a couple saying vows outdoors at a named destination (clifftop, garden or beach), golden hour, guests seated, view in frame. Consenting couple and guests. Never AI.",
+        "status": "needed",
+        "file": "content/posts/short-wedding-vows/images/short-wedding-vows-outdoor-destination-ceremony.webp",
+        "source": {
+          "type": "library",
+          "origin": "[[IMAGE NEEDED]] library-index.csv has header only, no rows",
+          "credit": "[[VERIFY licence]]"
+        },
+        "consent": {
+          "couple": "required, signed",
+          "guests": "required if identifiable",
+          "venue": "required if interior identifiable"
+        },
+        "alt": "Couple saying vows at an outdoor clifftop ceremony at golden hour with guests seated",
+        "caption": "<Venue>, <town>. Photo: [[VERIFY credit]]",
+        "lens_check": "Not run: no candidate image.",
+        "location": {
+          "venue": "[[VERIFY: venue]]",
+          "town": "[[VERIFY: town]]",
+          "verified_by": "[[VERIFY: register, EXIF GPS or source page]]"
+        }
+      },
+      {
+        "slot_id": "renewal",
+        "placement": "after_h2:5",
+        "purpose": "Illustrate the vow renewal examples with a real renewal moment.",
+        "shot_brief": "Real, licensed photo of an established couple renewing vows, intimate setting, relaxed and joyful, small guest group or none, destination or garden. Consenting couple. Never AI.",
+        "status": "needed",
+        "file": "content/posts/short-wedding-vows/images/short-wedding-vows-vow-renewal-couple.webp",
+        "source": {
+          "type": "library",
+          "origin": "[[IMAGE NEEDED]] library-index.csv has header only, no rows",
+          "credit": "[[VERIFY licence]]"
+        },
+        "consent": {
+          "couple": "required, signed",
+          "guests": "required if identifiable",
+          "venue": "required if interior identifiable"
+        },
+        "alt": "Couple smiling as they renew their vows in a small garden ceremony",
+        "caption": "<Venue>, <town>. Photo: [[VERIFY credit]]",
+        "lens_check": "Not run: no candidate image.",
+        "location": {
+          "venue": "[[VERIFY: venue]]",
+          "town": "[[VERIFY: town]]",
+          "verified_by": "[[VERIFY: register, EXIF GPS or source page]]"
+        }
+      }
+    ],
+    "reference_only": [],
+    "permission_requests": []
+  }
+}
