@@ -25,4 +25,5 @@
 ## Stages
 - **Stage 0 fast (strategist):** DONE. AU volumes: funny wedding vows 70/month, personal wedding vows 70. Page one is Pinterest, Facebook, Reddit and joke lists; none mentions the Marriage Act s 45 words or the monitum. Brief: writing guide (not a joke list), about 1,900 words, 5 FAQs, H1 and SEO title "Funny Wedding Vows That Still Mean Something" (44), Expert Advice only, discovery_call CTA, about 16 internal links plus official links at the claim.
 - **Decision (default, change if you want):** five live vow and ceremony pages added to link-map (traditional vows, vows for her, vows for him, humorous ceremony script, simple ceremony script); they partly overlap but none targets "funny wedding vows", so the new page stands.
-- **Stage 1 fast (research):** running; waiting on a user permission prompt for an MCP tool at about 00:40.
+- **Stage 1 fast (research):** BLOCKED on a user permission prompt since about 00:40; nothing saved by 00:49. **Decision (default):** writer builds 02-research.json from facts already verified in earlier packs (s 45(2) vows and s 46(1) monitum from the 13 Nov licence and witnesses packs; commitment ceremonies; overseas celebrant rule and NOIM timing from the 18 Nov Bali religion pack), then drafts. If the research agent finishes, its facts feed the revision.
+- **Stage 2 fast (writer):** running.
