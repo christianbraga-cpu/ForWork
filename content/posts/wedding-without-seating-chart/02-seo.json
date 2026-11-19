@@ -1,0 +1,315 @@
+{
+ "agent": "seo-researcher",
+ "task_id": "wedding-without-seating-chart",
+ "stage": "02",
+ "status": "complete",
+ "round": 1,
+ "inputs_used": [
+  "00-input.json",
+  "CLAUDE.md",
+  "content-system/research/locations.yaml",
+  "content-system/seo/link-map.csv (grep)",
+  "content-system/seo/priority-link-targets.md",
+  "content-system/rubrics/link-rules.md",
+  "content/posts/average-cost-wedding-photographer/02-seo.json (format model)"
+ ],
+ "self_qa": {
+  "checks": [
+   {
+    "check": ">= 7 of 10 locations",
+    "pass": false,
+    "note": "Fast mode: 5 of 5 requested cities returned results."
+   },
+   {
+    "check": "Every H2 maps to a real query or must-include",
+    "pass": true,
+    "note": "outline[].answers"
+   },
+   {
+    "check": "Links verified live today",
+    "pass": true,
+    "note": "All 7 internal targets and the 1 external link fetched with Apify web-fetch on 2026-11-19 (HTTP 200). /what-is-a-micro-wedding resolves to /expert-advice/micro-wedding (see open questions)."
+   },
+   {
+    "check": "No competitor links; no noindex; do-not-link list obeyed",
+    "pass": true,
+    "note": "No /vendor/ pages, no /destinations/africa or /destinations/latin-america-caribbean. External link is FSANZ (government) only."
+   },
+   {
+    "check": "Meta lengths and rules",
+    "pass": true,
+    "note": "Title 55 chars, keyword first, no colon or dash, not a question. Description 152 chars, no figures, no 'most' or 'usually'."
+   },
+   {
+    "check": "No statistics or figures in outline, meta or FAQ",
+    "pass": true,
+    "note": "SERP guest-count thresholds (The Knot, Facebook) kept in 02-research only."
+   },
+   {
+    "check": "Top 3 read per location",
+    "pass": false,
+    "note": "Fast mode: analysed from SERP snippets only; no competitor pages scraped. Our own two seating chart pages were scraped for cannibalisation."
+   }
+  ],
+  "confidence": 0.75
+ },
+ "open_questions": [
+  {
+   "to": "person",
+   "question": "/expert-advice/how-to-make-a-wedding-seating-chart already resolves to /expert-advice/wedding-seating-chart (same title, same canonical, fetched 2026-11-19). The brief asks to link both seating chart pages prominently, but they are now one page, and link rules forbid linking the same URL twice. This post links the canonical URL once, prominently in the first H2. Confirm the hop is a permanent 301 (not a 302 or rewrite) and mark the old row as a redirect in the link map.",
+   "blocking": false
+  },
+  {
+   "to": "person",
+   "question": "/what-is-a-micro-wedding (link-map row) resolves to /expert-advice/micro-wedding (canonical). The draft links the link-map path; please add /expert-advice/micro-wedding to the link map so the writer can link the final URL directly and skip the hop.",
+   "blocking": false
+  },
+  {
+   "to": "person",
+   "question": "Input note estimated 'about 200 US combined' for the grouped variants. Google Ads returns the same grouped figure for 'wedding without seating chart', 'no seating plan at wedding' and 'no seating chart for wedding' (one cluster), so the volumes are not additive. Expectation should be modest; value is topical depth for the seating chart cluster.",
+   "blocking": false
+  },
+  {
+   "to": "wedding-planner-sme",
+   "question": "Allergy and buffet point: source to FSANZ 'Food allergens - information for consumers' (guests should disclose allergies to staff; buffet meals carry cross-contamination risk). Keep the claim to what that page says; [[VERIFY: wording at time of drafting]].",
+   "blocking": false
+  }
+ ],
+ "next_agent": [
+  "planner-sme",
+  "visual-curator"
+ ],
+ "tools_used": [
+  "DataForSEO serp_organic_live_advanced x5 (Sydney, Melbourne, New York, Dubai, Singapore), keyword 'wedding without seating chart', en, desktop, depth 10",
+  "DataForSEO kw_data_google_ads_search_volume (Australia, United States), 8 keywords",
+  "DataForSEO dataforseo_labs_google_ranked_keywords weddedwonderland.com, Australia and United States, filter keyword like %seat%",
+  "Apify web-fetch x9 (2 seating chart pages, wedding-menu, guest list, micro wedding, plan-your-destination-wedding, wonderland-concierge, wonderland-studio, FSANZ x2 incl. one 404 at /consumer/food-allergies)",
+  "GSC: not read (fast mode); no export file or date recorded"
+ ],
+ "assumptions": [
+  "Fast mode: 5 SERP cities, no GSC, no Arabic query, no secondary-keyword SERPs, no KD call, no competitor pages scraped",
+  "AI Overviews asynchronous in all 5 cities; text not returned and not cited",
+  "Scope global: US volume above AU, SERPs near identical across regions; allergy source Australian (FSANZ) per brief",
+  "Meta title uses 'Wedding Without a Seating Chart' (natural phrasing, matches the article title) rather than the exact keyword without 'a'; Google treats the article as a stopword-level variant. Exact-phrase alternative: 'Wedding Without Seating Chart and How to Make It Work' (53 chars)"
+ ],
+ "payload": {
+  "primary_keyword": "wedding without seating chart",
+  "secondary_keywords": [
+   "no seating chart for wedding",
+   "no seating plan at wedding",
+   "is a seating chart necessary",
+   "do you need a seating chart for a wedding",
+   "open seating wedding",
+   "no assigned seating wedding",
+   "wedding seating alternatives",
+   "is it okay to not have assigned seating at a wedding",
+   "what to do instead of a seating chart"
+  ],
+  "keyword_data": [
+   {"keyword": "wedding without seating chart", "us": 50, "au": 10, "intent": "informational (decision)", "note": "Ads groups with the next two keywords; identical data"},
+   {"keyword": "no seating plan at wedding", "us": 50, "au": 10, "intent": "informational (decision)", "note": "grouped with head term"},
+   {"keyword": "no seating chart for wedding", "us": 50, "au": 10, "intent": "informational (decision)", "note": "grouped with head term"},
+   {"keyword": "open seating wedding", "us": 20, "au": 10, "intent": "informational"},
+   {"keyword": "no assigned seating wedding", "us": 10, "au": 10, "intent": "informational, some commercial (signage)"},
+   {"keyword": "is a seating chart necessary", "us": null, "au": null, "intent": "informational (no Ads data)"},
+   {"keyword": "do you need a seating chart for a wedding", "us": null, "au": null, "intent": "informational (no Ads data; appears as related search in Sydney and Dubai)"},
+   {"keyword": "wedding seating alternatives", "us": null, "au": null, "intent": "informational (no Ads data; Paperlust ranks with 'seating chart alternatives')"}
+  ],
+  "intent": "informational",
+  "slug": "wedding-without-seating-chart",
+  "url_path": "/expert-advice/wedding-without-seating-chart",
+  "meta_title": "Wedding Without a Seating Chart and How to Make It Work",
+  "meta_description": "Thinking of skipping the seating chart? When open seating works, when it backfires, and the simple alternatives that keep guests and your caterer happy.",
+  "outline": [
+   {
+    "h2": "Do you need a seating chart for a wedding?",
+    "answers": "do you need a seating chart for a wedding; is a seating chart necessary; PAA 'Should you have a seating chart at a wedding?' (Sydney), 'Should a wedding have a seating chart?' (Dubai); Quora 'Do we need a seating chart at our wedding?' (Singapore)",
+    "notes": "Short answer up top: no rule says you must; it depends on the meal service, the room and how well guests know each other. Link the full how-to guide (/expert-advice/wedding-seating-chart) for couples who decide they do want one. No statistics or guest-count thresholds."
+   },
+   {
+    "h2": "When a wedding without a seating chart works",
+    "answers": "wedding without seating chart; no seating chart for wedding; Instagram 'reasons to skip' (Singapore); Jamaica Observer 'more relaxed and modern' (Melbourne, Singapore)",
+    "h3": [
+     "Cocktail-style or canapé receptions",
+     "Buffet, family-style and food-station dinners",
+     "A guest list who already know each other",
+     "One long table or a micro wedding",
+     "Welcome drinks and after-parties at a destination wedding"
+    ],
+    "notes": "Link /expert-advice/wedding-menu in the service-style H3 and /what-is-a-micro-wedding in the long-table H3."
+   },
+   {
+    "h2": "When skipping the seating chart backfires",
+    "answers": "Reddit 'Does this have unforeseen consequences' (Sydney, Dubai); WeddingWire 'Tips for no seating chart' (Dubai); Facebook 'awkward number of seats left at tables' (Melbourne); fb-answers 'split-up groups' (Melbourne)",
+    "h3": [
+     "Plated dinners with pre-chosen meals",
+     "Guests with allergies and dietary needs",
+     "Older or less mobile guests",
+     "Blended families and guests who need space",
+     "Guests who only know the two of you"
+    ],
+    "notes": "Allergy H3: link FSANZ consumer allergen page inline for 'tell staff about the allergy' and 'buffets carry cross-contamination risk'. Advice only; no figures."
+   },
+   {
+    "h2": "What to do instead of a seating chart",
+    "answers": "PAA 'What to do instead of a seating chart?' (Sydney, Dubai); wedding seating alternatives; Paperlust 'seating chart alternatives' (Sydney, Dubai); Reddit 'Skipping the chart for individual escort cards? Go for it' (Singapore)",
+    "h3": [
+     "Assign tables, not seats",
+     "Reserve tables for family and the wedding party only",
+     "Long feasting tables with open seating",
+     "Lounge and standing areas instead of a full sit-down",
+     "A digital table finder for guests"
+    ],
+    "notes": "Digital finder H3 links /wonderland-studio (seating planner and guest QR). Keep the alternatives original; do not mirror Paperlust's list or order."
+   },
+   {
+    "h2": "How to make open seating work on the day",
+    "answers": "open seating wedding; no assigned seating wedding; Reddit 'No seating chart, how many extra seats are too many?' (Singapore); Facebook 'Do I need table numbers without a seating plan?' (Singapore); Weddingbee 'more seats than you need' (Sydney, Dubai)",
+    "h3": [
+     "Set more seats than guests",
+     "Tell guests before the day",
+     "Reserve the tables that matter",
+     "Brief your venue coordinator and MC",
+     "Give your caterer a plan for dietary meals"
+    ],
+    "notes": "Extra seats: advise asking the venue how many to add for the room; no number. Guest communication: wording on the wedding website and a welcome sign. Link /expert-advice/how-to-make-a-wedding-guest-list where RSVPs and dietary notes are captured."
+   },
+   {
+    "h2": "Is it rude to have no seating chart at a wedding?",
+    "answers": "PAA 'Is it okay to not have assigned seating at a wedding?' (Sydney, Dubai); PAA 'What are four outdated wedding etiquette rules that no longer apply?' (Melbourne, Singapore, New York); Weddingbee 'No seating plan...tacky?' (Sydney)",
+    "notes": "Etiquette framing: not rude if guests are looked after (elders seated, families together, clear signage). Cultural note: some families read placement as respect; tie to the cross-cultural point without repeating the seating chart page's section."
+   },
+   {
+    "h2": "Open seating at a destination or multi-day wedding",
+    "answers": "Audience fit (luxury destination couples, brief); related search 'Do you put top table on wedding seating plan' (Sydney)",
+    "notes": "Mix formats across the weekend: open seating at welcome drinks and recovery lunch, a light plan for the main dinner. Ask the venue or resort what its catering team needs. Link /plan-your-destination-wedding and the Wedded Concierge CTA (/wonderland-concierge)."
+   },
+   {
+    "h2": "Wedding without a seating chart FAQ",
+    "answers": "PAA and forum questions across cities",
+    "notes": "See faq_questions. Answers give no figures."
+   }
+  ],
+  "faq_questions": [
+   "Is it okay to not have assigned seating at a wedding?",
+   "What to do instead of a seating chart?",
+   "Do you need table numbers without a seating plan?",
+   "How many extra seats do you need with no seating chart?",
+   "Should the couple have their own table if there is open seating?"
+  ],
+  "faq_note": "Q1 and Q2 are PAA wording (Sydney, Dubai). Q3 and Q4 are adapted from forum titles surfaced in Singapore (Facebook, Reddit); Q4 is answered without a number (ask the venue for the room). Q5 answers the related search on top tables.",
+  "internal_links": [
+   {
+    "anchor": "how to make a wedding seating chart",
+    "target": "/expert-advice/wedding-seating-chart",
+    "type": "related",
+    "placement": "first H2 (prominent, above the fold) for couples who decide they want a chart",
+    "verified_live": "2026-11-19"
+   },
+   {
+    "anchor": "choosing a wedding food service style",
+    "target": "/expert-advice/wedding-menu",
+    "type": "related",
+    "placement": "'When it works' H2, buffet and family-style H3",
+    "verified_live": "2026-11-19"
+   },
+   {
+    "anchor": "planning a micro wedding",
+    "target": "/what-is-a-micro-wedding",
+    "type": "related",
+    "placement": "'When it works' H2, long table H3",
+    "verified_live": "2026-11-19 (resolves to /expert-advice/micro-wedding)"
+   },
+   {
+    "anchor": "build and track your guest list",
+    "target": "/expert-advice/how-to-make-a-wedding-guest-list",
+    "type": "related",
+    "placement": "'On the day' H2, dietary meals H3",
+    "verified_live": "2026-11-19"
+   },
+   {
+    "anchor": "planning a wedding abroad",
+    "target": "/plan-your-destination-wedding",
+    "type": "hub",
+    "placement": "destination H2",
+    "verified_live": "2026-11-19"
+   },
+   {
+    "anchor": "free seating planner and guest table finder",
+    "target": "/wonderland-studio",
+    "type": "commercial",
+    "placement": "'Instead of a chart' H2, digital table finder H3",
+    "verified_live": "2026-11-19"
+   },
+   {
+    "anchor": "Wedded Concierge",
+    "target": "/wonderland-concierge?utm_source=blog&utm_medium=content",
+    "type": "commercial",
+    "placement": "destination H2 CTA",
+    "verified_live": "2026-11-19"
+   }
+  ],
+  "external_links": [
+   {
+    "anchor": "Food Standards Australia New Zealand advice on food allergies",
+    "url": "https://www.foodstandards.gov.au/consumer/foodallergies/food-allergen-portal/Food-allergens-information-for-consumers",
+    "type": "authority",
+    "claim_supported": "Guests with food allergies should tell staff about the specific allergy; buffet meals carry a risk of cross-contamination.",
+    "verified_live": "2026-11-19 (HTTP 200; page last updated 25 February 2025). Note: /consumer/food-allergies returns 404, use the URL above."
+   }
+  ],
+  "backlinks_to_add": [
+   {
+    "from": "/expert-advice/wedding-seating-chart",
+    "anchor": "a wedding without a seating chart",
+    "sentence": "FAQ 'Do you have to have a seating chart at a wedding?', after 'A middle ground is assigning tables but not individual seats.': add 'If you are weighing up a wedding without a seating chart, here is when it works.'"
+   },
+   {
+    "from": "/expert-advice/wedding-menu",
+    "anchor": "skip the seating chart",
+    "sentence": "In 'Which wedding food service style should you choose?', after 'Many weddings mix them: canapés during cocktail hour, a plated main, then a dessert station and a late-night food truck.': add 'With buffet or family-style service, some couples skip the seating chart altogether.'"
+   },
+   {
+    "from": "/what-is-a-micro-wedding",
+    "anchor": "open seating",
+    "sentence": "Idea 10 'One long candlelit table', after 'Whatever the room, seat everyone at one table.': add 'At this size, open seating often works better than a formal chart.'"
+   }
+  ],
+  "serp_source": "dataforseo",
+  "serp_summary": {
+   "locations_checked": ["sydney", "melbourne", "new_york", "dubai", "singapore"],
+   "locations_failed": [],
+   "common_angles": [
+    "Forums and Facebook groups dominate every city (Reddit r/weddingplanning, Facebook groups, Weddingbee, WeddingWire forums)",
+    "Pros and cons framing (Complete Weddings + Events, Jamaica Observer, fb-answers)",
+    "Alternatives list (Paperlust 12 ideas with a decision table, July 2026)",
+    "Etiquette pages that argue for a chart above a guest-count threshold (The Knot, Bustle, Peppermint and Co)",
+    "Image packs and Pinterest/Etsy for 'no seating plan' signs"
+   ],
+   "gaps": [
+    "No result gives a clear decision framework tied to meal service style, room and guest mix",
+    "Few current editorial results; many forum threads are years old (Weddingbee 2012, WeddingWire 2010, Burgh Brides 2019)",
+    "No result covers allergies and dietary meals with open seating, or links an official source",
+    "No result covers destination or multi-day weddings, where open seating suits welcome and recovery events",
+    "No luxury framing; results skew casual and backyard"
+   ],
+   "regional_differences": [
+    "AU: forums plus Paperlust (AU stationery brand) and an AU-relevant Facebook group in Singapore results (Brisbane)",
+    "US (New York): more 'do I need a seating chart' editorial (Peppermint and Co, Bustle) and a seating-app blog (tryseatfinder, Nov 2026)",
+    "Dubai and Singapore: English SERPs near identical to AU/US; no local results",
+    "AI Overview present in all 5 cities, asynchronous (no text returned)"
+   ],
+   "recommended_scope": "global"
+  },
+  "recommended_scope": "global",
+  "cannibalisation": [
+   "/expert-advice/wedding-seating-chart: live 200, self-canonical, title 'How to Make a Wedding Seating Chart Step by Step', keyword 'wedding seating chart'. It owns the how-to, table sizes, who sits where and tools. Its FAQ 'Do you have to have a seating chart at a wedding?' touches this post's intent: keep that answer short and add the backlink above so the 'is it necessary / without a chart' intent flows here. Do not expand that FAQ into a section.",
+   "/expert-advice/how-to-make-a-wedding-seating-chart: fetched 2026-11-19, lands on /expert-advice/wedding-seating-chart with the same title and canonical. The two do not compete live; they are already one page. Split recommendation: /expert-advice/wedding-seating-chart owns 'wedding seating chart' and 'how to make a wedding seating chart' (and templates, table sizes, alphabetical vs by table). Confirm the old URL is a 301 and update the link map so writers stop treating them as two pages.",
+   "This post owns: wedding without seating chart, no seating chart for wedding, no seating plan at wedding, is a seating chart necessary, do you need a seating chart for a wedding, open seating wedding, no assigned seating wedding, wedding seating alternatives.",
+   "/expert-advice/prismm-vs-wonderland-studio: tool comparison intent; no conflict. Not linked (commercial comparison, one commercial tool link already).",
+   "/our-favourite-interactive-seating-charts: not in link map; DataForSEO ranks it US #16 for 'interactive wedding seating chart'. Different intent (tools roundup); no conflict. Add to link map.",
+   "/wedding-seating-chart (root): linked from /expert-advice/wedding-menu; not fetched. Likely a redirect to the /expert-advice/ URL; update that internal link to the canonical to remove a hop.",
+   "No site URL ranks for any target variant (ranked keywords filter %seat%: AU 0 rows, US 1 row, the interactive page above)."
+  ]
+ }
+}
