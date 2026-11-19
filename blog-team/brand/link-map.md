@@ -321,6 +321,16 @@ Hub: `/style-advice/celebrity-engagement-rings` (in production). Spokes:
 
 Planned (not live, retro-links after publish): WW-322, WW-335, N-107.
 
+## Wedding planning checklist and packing pages (Firecrawl map, 19 Nov 2026)
+| URL | Title | Keyword it appears to own |
+|---|---|---|
+| `/expert-advice/wedding-planning-checklist` | Wedding planning checklist | wedding planning checklist (cluster head) |
+| `/expert-advice/destination-wedding-checklist` | Destination wedding checklist | destination wedding checklist (ranks #3 in AU for "destination wedding packing list"; note the live URL is under /expert-advice/, not /destination-wedding-checklist) |
+| `/how-to-pack-for-a-destination-wedding` | How to Pack for a Destination Wedding: Style and Travel Essentials | pack for a destination wedding (styling advice; partial overlap with the packing list; non-exact anchor only) |
+| `/what-to-pack-for-a-destination-wedding` | What to pack for a destination wedding | what to pack for a destination wedding (generic list; overlaps the packing list; do not link; 301 decision for the user) |
+| `/pack-for-your-destination-wedding` | Pack for your destination wedding | (generic list; overlaps the packing list; do not link; 301 decision for the user) |
+| `/honeymoon-essentials-checklist` | Honeymoon essentials checklist | honeymoon essentials checklist (older page; link for honeymoon packing until WW-202 is live) |
+
 ## Do not link from blogs
 
 | URL | Reason |

@@ -26,3 +26,10 @@
 - **Decision (default):** no brand claims beyond live wording; no Wedded World plug; no DRAFT links.
 
 ## Stages
+- **Stage 0 fast (strategist):** DONE.
+  - **Volumes (AU, per month):** keyword 10; guests variant 10; what to pack 10; wedding packing list 40.
+  - **SERP:** weak (Pinterest, Etsy, Facebook, a 2020 brand blog). Our /expert-advice/destination-wedding-checklist already ranks #3 in all three Australian cities.
+  - **Overlap:** /how-to-pack-for-a-destination-wedding is live (styling advice; partial overlap; non-exact anchor). Two more live generic lists overlap most, /what-to-pack-for-a-destination-wedding and /pack-for-your-destination-wedding: not linked; 301 decision for the user.
+  - **Live checks:** the destination checklist lives at /expert-advice/destination-wedding-checklist. The cluster head /expert-advice/wedding-planning-checklist is live. WW-202 is not live, so /honeymoon-essentials-checklist is linked and WW-202 becomes a RETRO-LINK.
+  - **Link map:** new section added.
+- **Decision (default):** H2 2 loses its colon (house style). H2 7 (what the Wedded Advisor arranges) must use only live brand wording, or be cut back to the Concierge's sourced travel wording.
