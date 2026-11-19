@@ -30,4 +30,11 @@
 - **Stage 3 fast (3 reviews):** DONE. Accuracy 3.8 (majors: "sold at a premium", "five time zones", unsourced inclusions as what we "usually" do, no own-passports caveat, "room and view settled" promise). SEO 4.0 (title rule pass; majors: cluster head not linked, gg.gov.au unlisted). Reader (private client) relevance 2, trust 3, clarity 4, would_enquire 2: "competent mid-market packages, no discretion offering"; privacy blocker overruled as a claim and turned into checklist questions. Merged request: 04-reviews/v1/merged.md.
 - **Decision (default, change if you want):** gg.gov.au approved in domains.md (official Governor-General site); cluster head, 25th, 50th and itinerary pages linked; /destination-packages and the honeymoon link dropped to stay at 18 links.
 - **Stage 4 fast (writer v2):** DONE. 03-draft-v2.md. --check: 2,038 reader words, 0 dashes, 0 placeholders, 3 official domains, none blocked. YAML valid; 29 claims, 18 links (cluster head, 25th, 50th and itinerary template added; /destination-packages and the honeymoon link dropped). All 17 merged items applied; "A free Discovery Call" kept (CTA library wording).
-- **Stage 6 fast (copy editor):** running.
+- **Stage 6 fast (copy editor):** DONE. final.md 2,038 reader words, 0 dashes, 0 placeholders, official sources inline; publish-package.json valid (18 links, 11 open items, site conflicts listed for Nic); chrome-upload-prompt.md (draft only; title-tag dash check); article.docx built. v2 change log removed from final.md front matter (it contained "complimentary" and "guaranteed"). The /packages tile CTA is not in the CTA library: upload as a second CTA or button block. Image file names are placeholders.
+
+## Must-fix before publish
+1. SITE-CONFLICTS for Nic: "ATAS and IATA accredited, A19892" (unverified; ATIA retired the ATAS name in 2024); proof points 17+ years / 120,000+ / 10,000+ / 800+; "complimentary night" and "guaranteed late checkout"; Wedded Privileges vs Wonderland Benefits; US$ concierge tiers.
+2. N-005: who plans and books anniversary travel (in-house or referred).
+3. PACKAGES-MAP: /packages is live but missing from the site map; BALI-LIVE: the two Bali packages articles show as live though held for SITE-CONFLICTS.
+4. CMS-TITLE, CONCIERGE-PAY, LINK-CHECK, RETRO-LINKS, IMAGE-RIGHTS, AUTHOR, CMS-URL.
+No publish-order dependency.
