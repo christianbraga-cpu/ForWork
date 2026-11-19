@@ -19,4 +19,8 @@
 - **Decision (default):** secondary persona private_client instead of paying_parent (anniversary trips are for established couples).
 
 ## Stages
-- **Stage 0 + 1 fast (strategist, research):** running.
+- **Stage 0 fast (strategist):** DONE. AU volumes small: packages for couples 70/month (not 320), romantic getaway packages 50, anniversary trip packages 10. Sydney and Melbourne show retailer catalogues; Brisbane and Perth weak (Facebook thread, budget blog, a for-sale domain at #1). Gap: what an anniversary package includes, package vs DIY vs advisor, booking checklist. Brief: title as given, 7 H2s, 5 FAQs, about 1,900 words, 18 links, discovery_call CTA plus /destination-packages.
+- **/packages is not live** (two Firecrawl maps): linking /destination-packages; PACKAGES-PAGE logged for the user.
+- **Decision (default):** three live anniversary pages added to link-map (anniversary trip ideas, marking a big anniversary, anniversary party venues); this piece stays commercial and never uses "anniversary trip ideas" as an anchor.
+- **Note:** the map shows the two Bali packages articles as live although link-map lists them as DRAFT (held for SITE-CONFLICTS). Flagged to the user.
+- **Stage 1 fast (research):** running.

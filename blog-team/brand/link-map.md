@@ -254,6 +254,16 @@ No Malta destination page exists yet (open item MALTA-PAGE); link `/destinations
 | `/celebration-ideas/vow-renewal-vows` | Vow Renewal Vows | vow renewal vows |
 | `/celebration-ideas/vow-renewal-etiquette` | Vow Renewal Etiquette | vow renewal etiquette |
 
+## Anniversary and celebration pages (Firecrawl map, 19 Nov 2026)
+
+| URL | Title | Owns |
+|---|---|---|
+| `/celebration-ideas/anniversary-trip-ideas` | Anniversary Trip Ideas | anniversary trip ideas (partial overlap with anniversary trip packages: link, never an exact "anniversary trip ideas" anchor from a packages page) |
+| `/celebration-ideas/how-do-you-mark-a-big-anniversary` | How Do You Mark a Big Anniversary | big anniversary ideas |
+| `/expert-advice/where-do-you-hold-an-anniversary-party` | Where Do You Hold an Anniversary Party | anniversary party venue |
+
+`/packages` is still NOT LIVE (19 Nov 2026 map): link `/destination-packages` (open item PACKAGES-PAGE).
+
 ## Bali cluster (Firecrawl map and Apify, 17 Nov 2026)
 
 | URL | Title | Owns |
