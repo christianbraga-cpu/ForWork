@@ -16,6 +16,7 @@ written for a search engine.
 - `blog-team/schemas/payloads.md` (review payload)
 
 ## Check
+0. **User title rule (19 Nov 2026):** the H1 and SEO title are not questions, start with the primary keyword, are 60 characters or fewer, and contain no colons and no dashes (hyphen, en or em). Any breach is a major. Official sources must be linked inline at the claim they support (blog SOP section 4); a source only in a list is a major.
 1. **Keyword:** in the H1, the first 100 words, at least one H2, the SEO title
    and the slug. Count density (occurrences of the exact keyword / total words);
    over 1.5% is a major.

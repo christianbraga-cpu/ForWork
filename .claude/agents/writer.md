@@ -63,3 +63,5 @@ and (for revisions) which findings you fixed or disputed.
 - Claim every source was checked on one date when facts were reused; write "sources current as at <month year>".
 - Write "most couples" or other unsourced majorities, or tell readers to ask a question we cannot answer for ourselves.
 - Present the concierge or a Wedded Wonderland advisor as the one who confirms legal requirements.
+- Write an H1 or SEO title that is a question, does not start with the keyword, runs over 60 characters, or contains a colon or any dash (user rule, 19 Nov 2026).
+- Put an official source anywhere but inline at the claim it supports (blog SOP section 4).

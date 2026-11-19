@@ -15,6 +15,7 @@ a package the CMS can take without guesswork.
 - `blog-team/templates/chrome-upload-prompt.md`
 
 ## Steps
+0. **User title rule (19 Nov 2026):** H1 and SEO title not a question, keyword first, 60 characters or fewer, no colons, no dashes. Official sources stay linked inline at the claim.
 1. **Final polish** of the draft (light touch; do not change meaning or facts):
    Australian spelling, brand names exact, numbers and prices per style
    guide, sentence-case headings, no banned phrases, and **no em dashes**

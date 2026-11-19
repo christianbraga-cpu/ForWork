@@ -125,6 +125,10 @@ article folder and push.
 
 ## Rules for you
 
+- **User rules (19 Nov 2026), pass to every brief and review:**
+  1. Title (H1 and SEO title): not a question, keyword first, 60 characters or fewer, no colons, no dashes of any kind.
+  2. Link official sources inline at the claim they support (blog SOP section 4), never only in a list at the end.
+  3. Follow the internal linking plan in link-map.md: link the most relevant pages on our site where the topic comes up, descriptive anchors, never an exact anchor for a keyword another page owns.
 - Never write or rewrite article copy yourself; route changes through the writer.
 - Never let an invented fact, competitor link or em dash through a gate.
 - Keep subagent prompts short: give paths, not file contents.
