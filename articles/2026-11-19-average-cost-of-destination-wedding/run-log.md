@@ -20,3 +20,11 @@
 - **Decision (default):** WW-322, WW-335 and N-107 are planned and not live. They are not linked; they are recorded as RETRO-LINKS.
 
 ## Stages
+- **Stage 0 fast (strategist):** DONE. Australian volumes per month: primary 10; "cost destination wedding" 20 (the user gave 720); "how much does destination wedding cost" 10 (the user gave 480); "destination wedding cost" 20; "average wedding cost australia" 1,300.
+  - The SERP top results are forums and blocked marketplaces, all at budget tier. None compares costs by region for Australians or covers the luxury band.
+  - The brief has 7 H2s and 5 FAQs.
+- **Cannibalisation:** the live page /destination-weddings/destination-wedding-vs-home-cost already covers the destination vs home comparison, leading with US figures.
+- **Decision (default, change if you want):** keep this article, since the user requested it. It is the regional average piece. The comparison with home is one short section that links to the vs-home page. Updating that page with Australian figures is offered to the user as a follow-up.
+- **Other findings:**
+  - /expert-advice/how-much-does-the-average-wedding-cost may already head the "average wedding cost" cluster. Linked as the hub.
+  - /expert-advice/wedding-cost-per-guest quotes A$38,252, likely from Easy Weddings, a blocked source. Added to SITE-CONFLICTS for the user; this article will not quote it.
