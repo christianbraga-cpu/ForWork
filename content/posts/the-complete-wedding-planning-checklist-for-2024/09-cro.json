@@ -1,0 +1,71 @@
+{
+  "agent": "cro-specialist",
+  "task_id": "the-complete-wedding-planning-checklist-for-2024",
+  "stage": "09",
+  "status": "complete",
+  "round": 1,
+  "inputs_used": [
+    "CLAUDE.md",
+    "content/posts/the-complete-wedding-planning-checklist-for-2024/01-brief.json",
+    "content/posts/the-complete-wedding-planning-checklist-for-2024/08-final.md",
+    "content-system/brand/brand-facts.md",
+    "content/posts/wedding-processional-songs/09-cro.json (format model)"
+  ],
+  "self_qa": {
+    "checks": [
+      {"check": "Primary CTA 6 words or fewer, no 'click here', no exclamation mark", "pass": true, "note": "Anchor 'Speak with Wedded Concierge' (4 words), line 122."},
+      {"check": "utm_content primary, secondary, closing, magnet each appear exactly once", "pass": true, "note": "Checked by grep on 08-final.md: lines 122, 238, 285, 38."},
+      {"check": "UTMs only on /wonderland-concierge (3) and /magazine (1)", "pass": true, "note": "4 UTM links in total."},
+      {"check": "/wonderland-concierge anchors name Wedded Concierge", "pass": true, "note": "Lines 122, 238 and 285: 'Speak with', 'ask', 'talk to' Wedded Concierge."},
+      {"check": "CTA copy only from brand-facts claims, no prices or figures", "pass": true, "note": "Single Wedded Advisor, time zone, AUD quoting, fee and inclusions in writing all match brand-facts lines 25 to 28."},
+      {"check": "No 'free' in link text, no perks, Wedded Privileges, em dashes; 08-final.md not edited", "pass": true, "note": "No link text contains 'free'. Other 'free' hits are 'step-free route' (accessibility)."}
+    ],
+    "confidence": 0.85
+  },
+  "open_questions": [
+    {"to": "orchestrator", "question": "08-final.md has no <!-- CTA: primary --> marker; placements follow the existing inline links.", "blocking": false},
+    {"to": "orchestrator", "question": "Folder slug says 2024 while the UTM campaign is 12-month-wedding-checklist; confirm the campaign name is intended.", "blocking": false}
+  ],
+  "assumptions": [
+    "FAST MODE: 07-panel.json cta_reactions not re-read; placements follow the existing inline links.",
+    "Links recorded with the weddedwonderland.com domain as they appear in the copy."
+  ],
+  "verify_items": [],
+  "tools_used": ["Bash (grep, python3 -I)"],
+  "payload": {
+    "journey_stage": "planning",
+    "primary_cta": {
+      "text": "Speak with Wedded Concierge",
+      "subtext": "The fee is agreed in writing before any work begins.",
+      "link": "https://weddedwonderland.com/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=12-month-wedding-checklist&utm_content=primary",
+      "placement": "Existing inline link on line 122, after the 9 to 10 month block, where venue, suppliers and guest travel start to depend on one another. Unchanged."
+    },
+    "secondary_cta": {
+      "text": "ask Wedded Concierge",
+      "subtext": "One Wedded Advisor is your single point of contact, start to finish.",
+      "link": "https://weddedwonderland.com/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=12-month-wedding-checklist&utm_content=secondary",
+      "placement": "Existing line 238, at the end of the final-month overseas confirmations. Unchanged."
+    },
+    "lead_magnet": {
+      "name": "Wedded Wonderland magazine",
+      "link": "https://weddedwonderland.com/magazine?utm_source=blog&utm_medium=content&utm_campaign=12-month-wedding-checklist&utm_content=magnet",
+      "placement": "Existing line 38, after the at-a-glance table, for readers still gathering ideas. Unchanged.",
+      "exists": true
+    },
+    "closing_cta": {
+      "text": "talk to Wedded Concierge",
+      "subtext": "Your Wedded Advisor quotes in AUD and confirms inclusions in writing before you commit.",
+      "link": "https://weddedwonderland.com/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=12-month-wedding-checklist&utm_content=closing",
+      "placement": "Existing closing paragraph line 285. Unchanged."
+    },
+    "tracking": [
+      "https://weddedwonderland.com/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=12-month-wedding-checklist&utm_content=primary",
+      "https://weddedwonderland.com/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=12-month-wedding-checklist&utm_content=secondary",
+      "https://weddedwonderland.com/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=12-month-wedding-checklist&utm_content=closing",
+      "https://weddedwonderland.com/magazine?utm_source=blog&utm_medium=content&utm_campaign=12-month-wedding-checklist&utm_content=magnet"
+    ],
+    "copy_changes": [],
+    "rationale": "Brief journey_stage is 'planning'. The commercial question peaks once bookings start to interlock (line 122), so the primary sits there; the secondary meets readers handing off overseas confirmations; the closing CTA ends the post; the magazine serves early-stage readers. Subtexts use only brand-facts claims. No prices, perks, Wedded Privileges, 'free' or availability wording. A printable month-by-month checklist would be a better-matched magnet; none is known to exist, so it is a backlog suggestion only and not placed."
+  },
+  "next_agent": ["distribution"]
+}
