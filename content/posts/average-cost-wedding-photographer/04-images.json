@@ -1,0 +1,104 @@
+{
+  "agent": "visual-curator",
+  "task_id": "average-cost-wedding-photographer",
+  "stage": "04",
+  "status": "needs_input",
+  "round": 1,
+  "inputs_used": [
+    "CLAUDE.md",
+    "content/posts/average-cost-wedding-photographer/00-input.json",
+    "content-system/images/library-index.csv (header only, no rows)",
+    "content/posts/short-wedding-vows/04-images.json (format)"
+  ],
+  "self_qa": {
+    "checks": [
+      {"check": "Zero reference-only or competitor images in slots", "pass": true},
+      {"check": "Every approved image has verified location, licence, alt, caption, fit_reason", "pass": true, "note": "No approved images; all 4 slots needed."},
+      {"check": "No AI image of a real wedding, person or place", "pass": true, "note": "No AI images planned. The album still life must also be a licensed photo; AI only with Nic's approval and then captioned 'Illustrative image'."},
+      {"check": "Featured image exists (approved or needed with brief)", "pass": true, "note": "Needed with brief."},
+      {"check": "No vendor names in alt, caption or brief", "pass": true},
+      {"check": "Placements match final H2 numbering", "pass": false, "note": "02-seo.json not available in fast mode; after_h2 assumes 1 what shapes the cost, 2 what packages include, 4 destination coverage."}
+    ],
+    "confidence": 0.6
+  },
+  "open_questions": [
+    {"to": "Nic", "question": "Source licensed photos for all four slots (client weddings with signed consent and photographer licence, or licensed stock with model and property releases)? Repo register has no rows.", "blocking": true},
+    {"to": "Nic", "question": "Photographer credit in captions names the photographer, which conflicts with the 'no vendor names' rule for this post. Credit as 'Photo: Wedded Wonderland' (own or licensed stock) or allow a plain photographer credit line only?", "blocking": false},
+    {"to": "seo-researcher", "question": "Confirm H2 numbering once the outline exists and remap after_h2 placements.", "blocking": false}
+  ],
+  "assumptions": [
+    "Repo register only (fast mode); Google Drive, own site, Canva, press kits and Google Lens not run.",
+    "No venue in scope, so no permission emails drafted.",
+    "User chose no figures: no image shows price lists, quotes or amounts."
+  ],
+  "verify_items": [
+    "[[IMAGE NEEDED]] featured: photographer capturing a couple at a luxury destination wedding, consented",
+    "[[IMAGE NEEDED]] cost-factors: photographer and second shooter working a full wedding day, consented",
+    "[[IMAGE NEEDED]] package-inclusions: fine art album and prints still life, licensed",
+    "[[IMAGE NEEDED]] destination-coverage: couple portrait at a named destination, consented",
+    "[[VERIFY licence]] every sourced photo: credit, scope, model and property releases",
+    "[[VERIFY: credit wording that respects the no vendor names rule]]"
+  ],
+  "next_agent": ["luxury-writer"],
+  "payload": {
+    "slots": [
+      {
+        "slot_id": "featured",
+        "placement": "featured",
+        "purpose": "Hero: show a wedding photographer at work so the reader instantly sees what they are paying for.",
+        "shot_brief": "Real, licensed photo taken from behind or beside a photographer (face not the focus, no logo or branded strap) framing a couple at a luxury destination ceremony or golden hour portrait, warm natural light, couple soft in the background. Consenting couple and photographer. No visible branding. Never AI.",
+        "status": "needed",
+        "file": "content/posts/average-cost-wedding-photographer/images/average-cost-wedding-photographer-photographer-at-work-hero.webp",
+        "source": {"type": "library", "origin": "[[IMAGE NEEDED]] library-index.csv has header only, no rows", "credit": "[[VERIFY licence]]"},
+        "consent": {"couple": "required, signed", "photographer": "required, signed", "venue": "required if interior identifiable"},
+        "alt": "Photographer framing a couple at golden hour during a luxury destination wedding",
+        "caption": "<Venue>, <town>. Photo: [[VERIFY credit]]",
+        "lens_check": "Not run: no candidate image.",
+        "location": {"venue": "[[VERIFY: venue]]", "town": "[[VERIFY: town]]", "verified_by": "[[VERIFY: register, EXIF GPS or source page]]"}
+      },
+      {
+        "slot_id": "cost-factors",
+        "placement": "after_h2:1",
+        "purpose": "Support what shapes the cost: hours of coverage, a second shooter and the scale of the day.",
+        "shot_brief": "Real, licensed candid of two photographers covering different angles of a ceremony or reception (lead and second shooter), guests and couple in frame, evening or reception light to suggest a long coverage day. Consenting couple, guests and photographers. No logos, no price lists or numbers. Never AI.",
+        "status": "needed",
+        "file": "content/posts/average-cost-wedding-photographer/images/average-cost-wedding-photographer-second-shooter-coverage.webp",
+        "source": {"type": "library", "origin": "[[IMAGE NEEDED]] library-index.csv has header only, no rows", "credit": "[[VERIFY licence]]"},
+        "consent": {"couple": "required, signed", "guests": "required if identifiable", "photographers": "required, signed", "venue": "required if interior identifiable"},
+        "alt": "Two photographers capturing a wedding reception from different angles as guests celebrate",
+        "caption": "<Venue>, <town>. Photo: [[VERIFY credit]]",
+        "lens_check": "Not run: no candidate image.",
+        "location": {"venue": "[[VERIFY: venue]]", "town": "[[VERIFY: town]]", "verified_by": "[[VERIFY: register, EXIF GPS or source page]]"}
+      },
+      {
+        "slot_id": "package-inclusions",
+        "placement": "after_h2:2",
+        "purpose": "Show tangible package inclusions: a fine art album and printed images.",
+        "shot_brief": "Still life of an open linen or leather wedding album beside a small stack of fine art prints and a USB or gallery card, soft window light, neutral tones. No people, no legible names, no maker or vendor branding, no prices. Preferred: licensed or own photo. AI fallback only if Nic approves; caption 'Illustrative image'.",
+        "status": "needed",
+        "file": "content/posts/average-cost-wedding-photographer/images/average-cost-wedding-photographer-album-and-prints.webp",
+        "source": {"type": "library", "origin": "[[IMAGE NEEDED]] no register rows; ai_illustrative fallback only with Nic's approval, not generated", "credit": "[[VERIFY licence]]"},
+        "consent": {"people": "none depicted", "artwork": "photos shown inside the album need the same couple consent"},
+        "alt": "Open wedding album with fine art prints laid beside it on a linen tablecloth",
+        "caption": "Photo: [[VERIFY credit]] (or 'Illustrative image' if AI approved)",
+        "lens_check": "Not run: no candidate image."
+      },
+      {
+        "slot_id": "destination-coverage",
+        "placement": "after_h2:4",
+        "purpose": "Illustrate destination wedding coverage, where travel and multi-day events shape the package.",
+        "shot_brief": "Real, licensed portrait of a couple at a named destination (Italian countryside, coastal Greece or Bali clifftop), landscape dominant, golden hour, relaxed editorial pose. Location must be verified from register, EXIF or source page. Consenting couple. Never AI.",
+        "status": "needed",
+        "file": "content/posts/average-cost-wedding-photographer/images/average-cost-wedding-photographer-destination-couple-portrait.webp",
+        "source": {"type": "library", "origin": "[[IMAGE NEEDED]] library-index.csv has header only, no rows", "credit": "[[VERIFY licence]]"},
+        "consent": {"couple": "required, signed", "venue": "required if interior identifiable"},
+        "alt": "Couple walking through a hillside vineyard at sunset on their destination wedding day",
+        "caption": "<Venue>, <town>. Photo: [[VERIFY credit]]",
+        "lens_check": "Not run: no candidate image.",
+        "location": {"venue": "[[VERIFY: venue]]", "town": "[[VERIFY: town]]", "verified_by": "[[VERIFY: register, EXIF GPS or source page]]"}
+      }
+    ],
+    "reference_only": [],
+    "permission_requests": []
+  }
+}
