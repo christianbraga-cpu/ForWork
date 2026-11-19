@@ -9,7 +9,7 @@ round: 1
 
 Some couples want to speak for five minutes. Others would rather say something true, say it well and hand the moment back to the ceremony. Short wedding vows suit that instinct, and a few honest lines can carry as much weight as a long speech.
 
-Below are 20 original examples, each written to be spoken in well under a minute, grouped by tone and occasion. One is three promises: "I will listen. I will laugh with you, often. And I will show up every day, especially the hard ones." There is a fill-in-the-blanks template, a few delivery notes, and the words Australian law asks you to say alongside your own. For the full method, see our guide on [how to write your own wedding vows](/how-to-write-wedding-vows).
+Below are 20 original examples, each written to be spoken in well under a minute, grouped by tone and occasion. One is three promises: "I will listen. I will laugh with you, often. And I will show up every day, especially the hard ones." There is a fill-in-the-blanks template, a few delivery notes, and the legal words you say alongside your own. For the full method, see our guide on [how to write your own wedding vows](/how-to-write-wedding-vows).
 
 ## Key takeaways
 
@@ -162,7 +162,7 @@ You can say matching vows or write your own separately. If you write separately,
 
 ### What are the shortest wedding vows?
 
-Example 8 is the shortest in this guide: three promises and a closing line. For the words the law asks of you in Australia, see the legal section above.
+Example 8 is the shortest in this guide: three promises and a closing line. For the legal words in Australia, see the legal section above.
 
 ## Saying it in your own words
 

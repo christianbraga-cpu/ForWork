@@ -6,3 +6,4 @@
 02:55 05 first draft done (~2,535 words, 20 original vows, template, 0 VERIFY).
 02:59 06 editor pass_with_edits (4.29), 14/14 applied to 05-draft-r2.md; 07 five readers done.
 03:05 07b panel revise (enquiry 1.2 vs 3.8, deferred business asks), 13/13 edits applied to 08-final.md; legal section moved below examples.
+03:08 final check pass_with_edits 2/2 applied; 09 CRO, 10 distribution done ('law asks' softened in social copy); 02-seo legislation link aligned.
