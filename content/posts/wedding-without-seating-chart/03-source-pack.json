@@ -1,0 +1,136 @@
+{
+ "agent": "orchestrator",
+ "task_id": "sc_a",
+ "stage": "03",
+ "status": "complete",
+ "round": 1,
+ "inputs_used": [
+  "https://www.foodstandards.gov.au/business/labelling/allergen-labelling",
+  "https://www.foodstandards.gov.au/consumer/labelling/allergen-labelling",
+  "https://www.qld.gov.au/__data/assets/pdf_file/0030/470865/queensland-government-accessible-events-guide.pdf"
+ ],
+ "self_qa": {
+  "checks": [
+   {
+    "check": "Every fact has a source and date",
+    "pass": true
+   },
+   {
+    "check": "No price without a source",
+    "pass": true,
+    "note": "No prices, figures or vendor names recorded."
+   },
+   {
+    "check": "No invented quotes, statistics or real weddings",
+    "pass": true
+   }
+  ],
+  "confidence": 0.85
+ },
+ "open_questions": [
+  {
+   "to": "luxury-writer",
+   "question": "FSANZ pages describe obligations on food businesses (the caterer or venue), not couples. Frame allergen points as 'ask your caterer for allergen information', not as legal advice. The FSANZ list is for Australia (and the Food Standards Code); do not apply it to overseas venues.",
+   "blocking": false
+  },
+  {
+   "to": "luxury-writer",
+   "question": "fact_104 and fact_105 come from a Queensland Government guide for events generally, not a national law or a wedding-specific rule. Attribute it as Queensland Government guidance. The guide also suggests a table-spacing distance; it is not recorded here (no figures in this batch), so do not state one.",
+   "blocking": false
+  },
+  {
+   "to": "luxury-writer",
+   "question": "Writer note: link each official claim at the claim. Allergens (fact_100 to 103): FSANZ business allergen labelling page; frame as 'in Australia, food businesses must be able to tell you about allergens, so give your caterer the list early', never legal advice, not applied to overseas venues (ask the venue). Accessible seating (fact_104, 105): credit 'Queensland Government's accessible events guide', link the PDF; no distances. Everything else is advice: no statistics, no figures, no 'free'.",
+   "blocking": false
+  }
+ ],
+ "assumptions": [
+  "Australian Human Rights Commission Accessible Events Guide is a .doc file; not fetched (time limit). The Queensland Government guide was used instead.",
+  "FSANZ business page states the allergen rules are set out in Standard 1.2.3 and Schedule 9 of the Food Standards Code; transitional dates on the page are not used."
+ ],
+ "verify_items": [],
+ "tools_used": [
+  "apify--web-search",
+  "apify--web-fetch"
+ ],
+ "next_agent": [
+  "luxury-writer"
+ ],
+ "payload": {
+  "facts": [
+   {
+    "fact_id": "fact_100",
+    "claim": "FSANZ, Allergen labelling for food businesses (read 19 November 2026; page last updated 30 September 2025): 'For food not required to bear a label (such as food provided at a caf\u00e9 or takeaway), declarations must be displayed in connection with the food or provided to the purchaser upon request using the required names.'",
+    "source": "https://www.foodstandards.gov.au/business/labelling/allergen-labelling",
+    "source_type": "government",
+    "checked": "2026-11-19",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_101",
+    "claim": "FSANZ, Allergen labelling for food businesses: the Food Standards Code requires these to be declared using these names: wheat, fish, crustacean, mollusc, egg, milk, lupin, peanut, soy (soya, soybean), sesame, almond, Brazil nut, cashew, hazelnut, macadamia, pecan, pistachio, pine nut, walnut, barley, oats, rye and sulphites. 'Barley, oats and rye must be declared if they contain gluten.' Sulphites are declared above a set added amount stated on the page.",
+    "source": "https://www.foodstandards.gov.au/business/labelling/allergen-labelling",
+    "source_type": "government",
+    "checked": "2026-11-19",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_102",
+    "claim": "FSANZ, Allergen labelling for food businesses: 'the Food Standards Code requires certain food and substances to be declared when they are present in a food as ingredients including food additives or processing aids.' Food allergy reactions can include 'anaphylaxis'.",
+    "source": "https://www.foodstandards.gov.au/business/labelling/allergen-labelling",
+    "source_type": "government",
+    "checked": "2026-11-19",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_103",
+    "claim": "FSANZ, Allergen labelling for consumers (read 19 November 2026; page last updated 26 November 2025): 'If the food is not in packaging or does not need to have a label, the information must be displayed with the food or can be requested from the supplier.'",
+    "source": "https://www.foodstandards.gov.au/consumer/labelling/allergen-labelling",
+    "source_type": "government",
+    "checked": "2026-11-19",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_104",
+    "claim": "Queensland Government Accessible Events Guide (read 19 November 2026), Seating: 'If the event has table seating, do not place people too close to each other and ensure chairs are removed so that people who use wheelchairs can access the tables.' The same section advises 'ensuring you do not put everyone who uses a wheelchair together as this reinforces segregation and discrimination.'",
+    "source": "https://www.qld.gov.au/__data/assets/pdf_file/0030/470865/queensland-government-accessible-events-guide.pdf",
+    "source_type": "government",
+    "checked": "2026-11-19",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_105",
+    "claim": "Queensland Government Accessible Events Guide: 'Ensure positive or neutral language is used when providing particular seating areas for those with accessibility requirements. For example \u201caccessible seating\u201d or \u201creserved seating\u201d.'",
+    "source": "https://www.qld.gov.au/__data/assets/pdf_file/0030/470865/queensland-government-accessible-events-guide.pdf",
+    "source_type": "government",
+    "checked": "2026-11-19",
+    "is_price": false
+   }
+  ],
+  "insider_details": [],
+  "quotes": [],
+  "real_weddings": [],
+  "verify_items": [],
+  "needs_signoff": [],
+  "must_include_coverage": [
+   {
+    "item": "FSANZ allergen obligations for food businesses",
+    "status": "covered",
+    "covered_by": [
+     "fact_100",
+     "fact_101",
+     "fact_102",
+     "fact_103"
+    ]
+   },
+   {
+    "item": "Australian government accessible events guidance (seating/access)",
+    "status": "covered",
+    "covered_by": [
+     "fact_104",
+     "fact_105"
+    ]
+   }
+  ]
+ }
+}
