@@ -7,7 +7,7 @@ url: "/expert-advice/average-cost-of-destination-wedding"
 full_url: "https://weddedwonderland.com/expert-advice/average-cost-of-destination-wedding"
 status: "draft"
 version: "final"
-source_draft: "03-draft-v2.md"
+source_draft: "03-draft-v3.md"
 seo_title: "Average Cost of a Destination Wedding for Australians"
 seo_title_length: 53
 meta_description: "The average cost of a destination wedding by region, with dated figures for Italy and Lake Como, how it compares with home and the costs averages omit."
@@ -32,7 +32,7 @@ tags:
   - "asia pacific"
   - "currency"
 author: "[[NEEDS: named author]]"
-language: "Australian English; every figure in its original currency (EUR) with its year or update date; no conversions, no AUD approximations, no computed totals"
+language: "Australian English; every figure in its original currency (EUR, USD, FJD) with its year or publication date; no conversions, no AUD approximations, no computed totals"
 sources_checked: "Sources current as at November 2026"
 cta:
   primary: "discovery_call"
@@ -75,7 +75,7 @@ images:
   - { slot: "asia_pacific", file_name: "bali-clifftop-lawn-ceremony-setup-01.webp", file_name_status: "placeholder", featured: false }
   - { slot: "hidden_costs", file_name: "italian-lake-jetty-guest-transfer-boats-01.webp", file_name_status: "placeholder", featured: false }
   - { slot: "method", file_name: "wonderland-studio-multi-currency-budget-screenshot-01.webp", file_name_status: "placeholder", featured: false }
-images_note: "No photo curator this run. Our own gallery or licensed stock only; identifiable people only with written consent. All six file names are placeholders until the files exist in the media library. Method slot needs an own-product screenshot with dummy data."
+images_note: "No photo curator this run. Our own gallery or licensed stock only; identifiable people only with written consent. All six file names are placeholders until the files exist in the media library. Method slot needs an own-product screenshot with dummy data. Europe image sits after the Lake Como paragraph in the H2 'Europe, from Italy and Lake Como to the Greek islands'; the asia_pacific image sits after the further afield paragraph, below the new Maldives and Fiji paragraph."
 claims_register:
   - { id: "C-01", text: "Our Italy cost guide reports that foreign couples spent an average of €67,000 per wedding in Italy in 2025, citing Florence's Centro Studi Turistici.", fact_ref: "F-01", status: "sourced (own page citing Centro Studi Turistici; primary study not opened, see CSTUDI-PRIMARY; Nic sign-off)" }
   - { id: "C-02", text: "That figure was a rise of almost 9% on the previous year.", fact_ref: "F-01", status: "sourced (own page; Nic sign-off)" }
@@ -95,20 +95,27 @@ claims_register:
   - { id: "C-16", text: "Bali costs vary widely with scope; no figure quoted.", fact_ref: "F-08; F-09 (SITE-CONFLICT-01)", status: "statement of variation only; neither range quoted" }
   - { id: "C-17", text: "Smartraveller explains that an overseas marriage is generally recognised in Australia if it was valid where it took place and would have been valid here, and that a foreign certificate may not work as proof of a name change.", fact_ref: "F-R1", status: "sourced (official, Smartraveller, page dated 18 Aug 2026; linked inline at the claim)" }
   - { id: "C-18", text: "Smartraveller calls the right travel insurance as essential as a passport, and suggests reading the Product Disclosure Statement before you buy.", fact_ref: "F-R3; F-R4", status: "sourced (official, Smartraveller, page dated 18 Aug 2026; linked inline at the claim)" }
+  - { id: "C-19", text: "Our Amalfi Coast cost guide puts a wedding for 60 to 80 guests at €60,000 to €110,000 or more, with luxury multi-day celebrations at landmark villas running €150,000 to €450,000 or more. The guide was published in November 2026.", fact_ref: "F-14", status: "sourced (own page, published 2026-11-17; EUR; Nic sign-off)" }
+  - { id: "C-20", text: "Our Santorini cost breakdown runs from €4,000 for an elopement to €55,000 or more, depending on guest count and style. Published in November 2026, it is written for weddings in 2027.", fact_ref: "F-13", status: "sourced (own page, published 2026-11-17, titled for 2027; EUR; Nic sign-off)" }
+  - { id: "C-21", text: "Our Maldives cost guide puts a resort wedding for 20 guests at US$25,000 to US$60,000 all-in.", fact_ref: "F-12", status: "sourced (own page, published 2026-11-16; USD; Nic sign-off)" }
+  - { id: "C-22", text: "Our Fiji cost breakdown gives a typical range of FJD 10,000 to 30,000, in Fijian dollars.", fact_ref: "F-11", status: "sourced (own page, published 2026-11-17; FJD only; the page's USD and AUD equivalents not repeated; Nic sign-off)" }
+  - { id: "C-23", text: "Both pages were published in November 2026; the Maldives figure is for 20 guests, so neither is a like-for-like comparison with the larger Italy weddings above.", fact_ref: "F-11; F-12; F-03", status: "sourced (publication dates and 20-guest scope from own pages; comparison is editorial framing)" }
+  - { id: "C-24", text: "Our guide to how planners charge explains that planners quote in two main ways, a flat fee for a written scope or a percentage of the budget, commonly 10 to 15%, with some luxury planners at 18 to 20%.", fact_ref: "F-18", status: "sourced (own page, published 2026-10-21; Nic sign-off on percentages)" }
+  - { id: "C-25", text: "Smartraveller notes that medical assistance is usually the highest unexpected cost for Australians overseas.", fact_ref: "F-23", status: "sourced (official, Smartraveller, last updated 18 Aug 2026; linked inline at the claim)" }
 links_register:
   - { id: "L-01", type: "internal", anchor: "our Italy cost guide", url: "/expert-advice/how-much-does-a-wedding-in-italy-cost" }
   - { id: "L-02", type: "internal", anchor: "our Lake Como budget guide", url: "/expert-advice/how-much-does-a-lake-como-wedding-cost" }
-  - { id: "L-03", type: "internal", anchor: "our line-by-line comparison of overseas and home budgets", url: "/destination-weddings/destination-wedding-vs-home-cost" }
+  - { id: "L-03", type: "internal", anchor: "our line-by-line comparison of overseas and home budgets", url: "/destination-weddings/destination-wedding-vs-home-cost", note: "WW-335, live (published 2026-11-13); body and FAQ 3" }
   - { id: "L-04", type: "internal", anchor: "our overview of what weddings cost overall", url: "/expert-advice/how-much-does-the-average-wedding-cost", note: "hub" }
-  - { id: "L-05", type: "internal", anchor: "Greece", url: "/destinations/europe/greece" }
+  - { id: "L-05", type: "internal", anchor: "Greece", url: "/destinations/europe/greece", note: "In the Greek islands paragraph" }
   - { id: "L-06", type: "internal", anchor: "our Bali cost guide", url: "/expert-advice/bali-wedding-cost-the-complete-2026-guide", note: "Link only; no figures repeated (SITE-CONFLICTS)" }
   - { id: "L-07", type: "internal", anchor: "planning a wedding in Bali", url: "/destinations/asia/bali" }
-  - { id: "L-08", type: "internal", anchor: "Fiji", url: "/destinations/oceania/fiji" }
+  - { id: "L-08", type: "internal", anchor: "Fiji", url: "/destinations/oceania/fiji", note: "In the Maldives and Fiji paragraph" }
   - { id: "L-09", type: "internal", anchor: "Ras Al Khaimah", url: "/destinations/middle-east/ras-al-khaimah" }
   - { id: "L-10", type: "internal", anchor: "Qatar", url: "/get-wedded-in-qatar" }
   - { id: "L-11", type: "internal", anchor: "Mexico", url: "/destinations/latin-america-caribbean/mexico" }
   - { id: "L-12", type: "internal", anchor: "guest travel and room blocks", url: "/travel" }
-  - { id: "L-13", type: "internal", anchor: "our guide to how planners charge", url: "/expert-advice/cost-of-wedding-planner" }
+  - { id: "L-13", type: "internal", anchor: "how planners charge", url: "/expert-advice/cost-of-wedding-planner", note: "Supports C-24" }
   - { id: "L-14", type: "internal", anchor: "what all-inclusive really covers", url: "/all-inclusive-wedding-cost" }
   - { id: "L-15", type: "internal", anchor: "Wedded Wonderland Concierge; Discovery Call (soft CTA); CTA block", url: "/wonderland-concierge" }
   - { id: "L-16", type: "internal", anchor: "Wonderland Studio", url: "/wonderland-studio" }
@@ -118,17 +125,22 @@ links_register:
   - { id: "L-20", type: "internal", anchor: "marrying in Italy", url: "/destinations/europe/italy" }
   - { id: "L-21", type: "external", anchor: "an overseas marriage is generally recognised in Australia", url: "https://www.smartraveller.gov.au/planning-trip/advice-your-planned-activities/getting-married-overseas", rel: "noopener" }
   - { id: "L-22", type: "external", anchor: "the right travel insurance", url: "https://www.smartraveller.gov.au/travel-essentials/travel-insurance", rel: "noopener" }
+  - { id: "L-23", type: "internal", anchor: "Amalfi Coast cost guide", url: "/real-weddings/amalfi-coast-wedding-cost", note: "Supports C-19; confirm in link-map" }
+  - { id: "L-24", type: "internal", anchor: "Santorini cost breakdown", url: "/real-weddings/santorini-wedding-cost-breakdown", note: "Supports C-20; confirm in link-map" }
+  - { id: "L-25", type: "internal", anchor: "Maldives cost guide", url: "/real-weddings/maldives-wedding-cost", note: "Supports C-21; confirm in link-map" }
+  - { id: "L-26", type: "internal", anchor: "Fiji cost breakdown", url: "/real-weddings/fiji-wedding-cost", note: "Supports C-22; confirm in link-map" }
+  - { id: "L-27", type: "external", anchor: "medical assistance is usually the highest unexpected cost for Australians overseas", url: "https://www.smartraveller.gov.au/travel-essentials/travel-insurance", rel: "noopener", note: "Same page as L-22, linked again at its own claim C-25" }
 retro_links:
-  - { from: "WW-322", anchor: "average cost of a destination wedding by region (descriptive variant)", url: "/expert-advice/average-cost-of-destination-wedding", status: "planned; add link when published" }
-  - { from: "WW-335", anchor: "how destination wedding costs compare by region", url: "/expert-advice/average-cost-of-destination-wedding", status: "planned; add link when published" }
-  - { from: "N-107", anchor: "what destination weddings cost around the world", url: "/expert-advice/average-cost-of-destination-wedding", status: "planned; add link when published" }
+  - { from: "WW-322", title: "Destination Wedding Cost per Guest Explained", url: "/destination-weddings/destination-wedding-cost-per-guest", anchor: "average cost of a destination wedding by region (descriptive variant)", status: "planned, not live (due 26 Nov 2026). Not linked from this article. On publish: link it from this article's per-guest passage, and link from it to here." }
+  - { from: "WW-335", title: "Destination Wedding vs Home Wedding Cost Compared", url: "/destination-weddings/destination-wedding-vs-home-cost", anchor: "how destination wedding costs compare by region", status: "live and linked from this article as L-03. Add its link back to here once this article is live." }
+  - { from: "N-107", title: "not found", url: "not found", anchor: "n/a", status: "Not found in Zoho; strategist to confirm what N-107 refers to." }
 open_items:
   - "CMS-TITLE, NIC-SIGNOFF, HOME-AVERAGE, SITE-CONFLICTS, RETRO-LINKS, AGENZIA-VAT, CSTUDI-PRIMARY, CONCIERGE-PAY, LINK-CHECK, AUTHOR, IMAGE-RIGHTS, CMS-URL: see publish-package.json open_items."
 copy_edit:
   - "Step 0 title rule checked: H1 'Average Cost of a Destination Wedding by Region' (47 characters) and SEO title 'Average Cost of a Destination Wedding for Australians' (53 characters) are not questions, lead with the keyword, and have no colon or dash."
-  - "Image markers replaced with placeholder file names from the slot briefs."
-  - "v2 change log and reviewer notes removed from front matter (see 03-draft-v2.md)."
-  - "Checked: Australian spelling, brand names exact (Wedded Wonderland Concierge, Wonderland Studio, Wonderland Benefits, Discovery Call), sentence-case headings, no banned phrases, no em or en dashes, every figure in EUR with its year or update date, no AUD conversions, no Concierge or package prices, no proof-point counts or accreditation claims. Smartraveller links stay inline at the claim. Body wording otherwise unchanged."
+  - "Rebuilt from 03-draft-v3.md. Image markers replaced with placeholder file names from the slot briefs."
+  - "v3 change log, image slot briefs and reviewer notes removed from front matter (see 03-draft-v3.md)."
+  - "Checked: Australian spelling, brand names exact (Wedded Wonderland Concierge, Wonderland Studio, Wonderland Benefits, Discovery Call), sentence-case headings, no banned phrases, no em or en dashes, every figure in its original currency (EUR, USD, FJD) with its year or publication date, no AUD conversions, no Concierge or package prices. Smartraveller links (three) stay inline at the claim. Body wording otherwise unchanged from v3."
 ---
 # Average Cost of a Destination Wedding by Region
 
@@ -168,7 +180,7 @@ The honest answer is that an overseas wedding is shaped differently rather than 
 
 **Who pays for what.** No rule binds you here, so decide early and say it plainly. Write down which of flights, rooms, transfers and the welcome dinner you will cover, and which your guests will book themselves, then put it on your wedding website well before invitations go out. Guests plan around clarity, and so does whoever is paying.
 
-## Europe, from Italy to Lake Como
+## Europe, from Italy and Lake Como to the Greek islands
 
 Europe is where our most detailed cost guides sit, and where the picture of long tables, old villas and evenings that run late tends to begin. The figures below come from our own cost guides, each in euros and dated.
 
@@ -180,19 +192,25 @@ Figures here stay in the currency each guide uses. Convert at the rate on the da
 
 [IMAGE: lake-como-terrace-ceremony-setup-01.webp]
 
+**Amalfi Coast.** Our [Amalfi Coast cost guide](/real-weddings/amalfi-coast-wedding-cost) puts a wedding for 60 to 80 guests at €60,000 to €110,000 or more, with luxury multi-day celebrations at landmark villas running €150,000 to €450,000 or more. The guide was published in November 2026.
+
+**Greek islands.** Our [Santorini cost breakdown](/real-weddings/santorini-wedding-cost-breakdown) runs from €4,000 for an elopement to €55,000 or more, depending on guest count and style. Published in November 2026, it is written for weddings in 2027. For the wider picture, start with our page on [Greece](/destinations/europe/greece).
+
 ## Bali, the Pacific and further afield
 
 Closer to home, the questions change. Instead of a villa weekend in euros, you are weighing villa buyouts, resort minimums and how many of your guests will fly.
 
 **Bali.** Bali costs vary widely, from an intimate ceremony to a full estate event with production brought in, and any single range means little without its scope. The detail sits in [our Bali cost guide](/expert-advice/bali-wedding-cost-the-complete-2026-guide). For venues, seasons and the legal side, start with our page on [planning a wedding in Bali](/destinations/asia/bali).
 
-**Further afield.** The same discipline applies whether you are drawn to [Greece](/destinations/europe/greece), [Fiji](/destinations/oceania/fiji), [Ras Al Khaimah](/destinations/middle-east/ras-al-khaimah), [Qatar](/get-wedded-in-qatar) or [Mexico](/destinations/latin-america-caribbean/mexico). For destinations without a published cost guide, ask for an itemised quote. Get the inclusions, any minimum spend and the currency of the contract on paper, ask how guests reach the venue and who pays for that transfer, then add the costs in the next section.
+**The Maldives and Fiji.** Our [Maldives cost guide](/real-weddings/maldives-wedding-cost) puts a resort wedding for 20 guests at US$25,000 to US$60,000 all-in. For [Fiji](/destinations/oceania/fiji), our [Fiji cost breakdown](/real-weddings/fiji-wedding-cost) gives a typical range of FJD 10,000 to 30,000, in Fijian dollars. Both were published in November 2026. The Maldives figure is for 20 guests, so neither is a like-for-like comparison with the larger Italy weddings above.
+
+**Further afield.** The same discipline applies whether you are drawn to [Ras Al Khaimah](/destinations/middle-east/ras-al-khaimah), [Qatar](/get-wedded-in-qatar) or [Mexico](/destinations/latin-america-caribbean/mexico). For destinations without a published cost guide, ask for an itemised quote. Get the inclusions, any minimum spend and the currency of the contract on paper, ask how guests reach the venue and who pays for that transfer, then add the costs in the next section.
 
 [IMAGE: bali-clifftop-lawn-ceremony-setup-01.webp]
 
 ## The costs no average includes
 
-Every figure above leaves something out. This is the part of the budget that rarely appears in a headline number, and it is where an overseas wedding either holds its shape or drifts. Budget for travel insurance too: Smartraveller calls [the right travel insurance](https://www.smartraveller.gov.au/travel-essentials/travel-insurance) as essential as a passport, and suggests reading the Product Disclosure Statement before you buy.
+Every figure above leaves something out. This is the part of the budget that rarely appears in a headline number, and it is where an overseas wedding either holds its shape or drifts. Budget for travel insurance too: Smartraveller calls [the right travel insurance](https://www.smartraveller.gov.au/travel-essentials/travel-insurance) as essential as a passport, and suggests reading the Product Disclosure Statement before you buy. Smartraveller notes that [medical assistance is usually the highest unexpected cost for Australians overseas](https://www.smartraveller.gov.au/travel-essentials/travel-insurance).
 
 ### Currency and deposits
 
@@ -228,7 +246,7 @@ Smartraveller explains that [an overseas marriage is generally recognised in Aus
 
 ### Planners and all-inclusive packages
 
-A planner's fee may sit inside a quote or on top of it, and the structure varies. Planners charge in different ways, so ask how the fee is calculated and what it covers; [our guide to how planners charge](/expert-advice/cost-of-wedding-planner) sets out the common models. If you are weighing a resort package, read [what all-inclusive really covers](/all-inclusive-wedding-cost) before comparing it with a villa quote.
+A planner's fee may sit inside a quote or on top of it. Our guide to [how planners charge](/expert-advice/cost-of-wedding-planner) explains that planners quote in two main ways, a flat fee for a written scope or a percentage of the budget, commonly 10 to 15%, with some luxury planners at 18 to 20%. If you are weighing a resort package, read [what all-inclusive really covers](/all-inclusive-wedding-cost) before comparing it with a villa quote.
 
 ### Who keeps it together
 

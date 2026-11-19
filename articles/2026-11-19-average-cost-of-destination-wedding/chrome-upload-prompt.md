@@ -18,9 +18,10 @@ to log in; never enter, read or store a password.
 3. **Body:** paste the article below. Convert headings to Heading blocks (H2,
    H3), bullet and numbered lists to List blocks, and FAQ to the FAQ block if the
    site has one. Replace each `[IMAGE: file]` line with that image (see step 6).
-   Keep every link as given; external links (smartraveller.gov.au) get
-   rel="noopener"; internal links get no rel. Keep every euro figure exactly as
-   written; do not convert currencies or add figures.
+   Keep all 27 links as given; external links (smartraveller.gov.au) get
+   rel="noopener"; internal links get no rel. Keep every figure exactly as
+   written, in its own currency (EUR, USD, FJD); do not convert currencies or add
+   figures.
 4. **Key Takeaways:** insert the reusable "Key Takeaways" block right after the
    intro paragraph, with these bullets:
    - There is no single honest average for a destination wedding, because published figures mix elopements, resort packages and full three-day celebrations.
@@ -30,9 +31,9 @@ to log in; never enter, read or store a password.
 5. **CTA:** insert the reusable CTA block "discovery_call" at the `[CTA: discovery_call]`
    marker at the end of the article. Heading: "Not sure where to start? Book a free Discovery Call". Body: "A free, no-obligation call with a Wedded Wonderland advisor to talk through your wedding and point you toward the right next step." Button:
    "Book a free call" linking to /wonderland-concierge.
-   **If the shared block shows the word "complimentary" anywhere, override the
-   body on this post with the exact body above.** Do not edit the shared block
-   itself.
+   **If the shared block body differs from the exact body above in any word,
+   override the body on this post with the exact body above.** Do not edit the
+   shared block itself.
    At the `[CTA: packages]` marker directly after it, add a second CTA (shared CTA
    block or button block): Heading: "Explore destination wedding packages". Body:
    "Browse destination wedding packages by place and style, then bring your shortlist to a Discovery Call." Button: "See the packages" linking to /packages.
@@ -46,8 +47,8 @@ to log in; never enter, read or store a password.
    |---|---|---|---|
    | hero (featured) | destination-wedding-cost-italy-villa-terrace-table-01.webp | A long wedding dinner table set on an Italian villa terrace at golden hour | Every figure is a starting point. Ask what it includes. |
    | comparison | couple-planning-wedding-budget-sydney-table-01.webp | A couple plan their wedding budget with a notebook at a table by a window | Shaped differently, rather than reliably cheaper. |
-   | europe | lake-como-terrace-ceremony-setup-01.webp | Rows of ceremony chairs on a lakeside terrace in Italy before guests arrive | Figures stay in euros and dated. Convert on the day you pay. |
-   | asia_pacific | bali-clifftop-lawn-ceremony-setup-01.webp | A ceremony set up on a clifftop lawn above the ocean in late afternoon light | Any single range means little without its scope. |
+   | europe | lake-como-terrace-ceremony-setup-01.webp | Rows of ceremony chairs on a lakeside terrace at Lake Como before guests arrive | From Lake Como to the Greek islands, every figure stays in euros and dated. |
+   | asia_pacific | bali-clifftop-lawn-ceremony-setup-01.webp | A wedding ceremony set up on a clifftop lawn in Bali above the ocean in late afternoon light | Each figure keeps its own currency and its own guest count. |
    | hidden_costs | italian-lake-jetty-guest-transfer-boats-01.webp | Guest transfer boats wait at a lakeside jetty in early evening | Price every leg, including the late return after dinner. |
    | method | wonderland-studio-multi-currency-budget-screenshot-01.webp | Wonderland Studio budget planner showing line items in more than one currency | Keep every line, and every currency, in one place. |
 
@@ -60,14 +61,15 @@ to log in; never enter, read or store a password.
 11. **Author:** [[NEEDS: named author]] (leave the default author if none is given, and list it)
 12. **Save as draft. Do not publish.** Never click Publish, Schedule or Update on a live post.
 
-Then open the preview and check: every image loaded and has alt text; every
-link works; the Key Takeaways block and both CTA blocks are present, and no CTA
-shows the word "complimentary"; the breadcrumb shows Expert Advice; the SEO
-fields are filled. **Check the rendered title tag (view source or the browser tab
-title): it must read "Average Cost of a Destination Wedding for Australians" with no
-dash and no dashed site suffix such as " - Wedded Wonderland". If the SEO plugin
-adds one, list it; do not change site-wide settings.** Take a desktop and a mobile
-screenshot. List anything that did not work.
+Then open the preview and check: every image loaded and has alt text; all 27
+links work, including the four /real-weddings/ cost pages and the three
+Smartraveller links; the Key Takeaways block and both CTA blocks are present, and
+the discovery_call body matches the exact body in step 5; the breadcrumb shows
+Expert Advice; the SEO fields are filled. **Check the rendered title tag (view
+source or the browser tab title): it must read "Average Cost of a Destination
+Wedding for Australians" with no dash and no site-name suffix after a separator.
+If the SEO plugin adds one, list it; do not change site-wide settings.** Take a
+desktop and a mobile screenshot. List anything that did not work.
 
 ---
 
@@ -109,7 +111,7 @@ The honest answer is that an overseas wedding is shaped differently rather than 
 
 **Who pays for what.** No rule binds you here, so decide early and say it plainly. Write down which of flights, rooms, transfers and the welcome dinner you will cover, and which your guests will book themselves, then put it on your wedding website well before invitations go out. Guests plan around clarity, and so does whoever is paying.
 
-## Europe, from Italy to Lake Como
+## Europe, from Italy and Lake Como to the Greek islands
 
 Europe is where our most detailed cost guides sit, and where the picture of long tables, old villas and evenings that run late tends to begin. The figures below come from our own cost guides, each in euros and dated.
 
@@ -121,19 +123,25 @@ Figures here stay in the currency each guide uses. Convert at the rate on the da
 
 [IMAGE: lake-como-terrace-ceremony-setup-01.webp]
 
+**Amalfi Coast.** Our [Amalfi Coast cost guide](/real-weddings/amalfi-coast-wedding-cost) puts a wedding for 60 to 80 guests at €60,000 to €110,000 or more, with luxury multi-day celebrations at landmark villas running €150,000 to €450,000 or more. The guide was published in November 2026.
+
+**Greek islands.** Our [Santorini cost breakdown](/real-weddings/santorini-wedding-cost-breakdown) runs from €4,000 for an elopement to €55,000 or more, depending on guest count and style. Published in November 2026, it is written for weddings in 2027. For the wider picture, start with our page on [Greece](/destinations/europe/greece).
+
 ## Bali, the Pacific and further afield
 
 Closer to home, the questions change. Instead of a villa weekend in euros, you are weighing villa buyouts, resort minimums and how many of your guests will fly.
 
 **Bali.** Bali costs vary widely, from an intimate ceremony to a full estate event with production brought in, and any single range means little without its scope. The detail sits in [our Bali cost guide](/expert-advice/bali-wedding-cost-the-complete-2026-guide). For venues, seasons and the legal side, start with our page on [planning a wedding in Bali](/destinations/asia/bali).
 
-**Further afield.** The same discipline applies whether you are drawn to [Greece](/destinations/europe/greece), [Fiji](/destinations/oceania/fiji), [Ras Al Khaimah](/destinations/middle-east/ras-al-khaimah), [Qatar](/get-wedded-in-qatar) or [Mexico](/destinations/latin-america-caribbean/mexico). For destinations without a published cost guide, ask for an itemised quote. Get the inclusions, any minimum spend and the currency of the contract on paper, ask how guests reach the venue and who pays for that transfer, then add the costs in the next section.
+**The Maldives and Fiji.** Our [Maldives cost guide](/real-weddings/maldives-wedding-cost) puts a resort wedding for 20 guests at US$25,000 to US$60,000 all-in. For [Fiji](/destinations/oceania/fiji), our [Fiji cost breakdown](/real-weddings/fiji-wedding-cost) gives a typical range of FJD 10,000 to 30,000, in Fijian dollars. Both were published in November 2026. The Maldives figure is for 20 guests, so neither is a like-for-like comparison with the larger Italy weddings above.
+
+**Further afield.** The same discipline applies whether you are drawn to [Ras Al Khaimah](/destinations/middle-east/ras-al-khaimah), [Qatar](/get-wedded-in-qatar) or [Mexico](/destinations/latin-america-caribbean/mexico). For destinations without a published cost guide, ask for an itemised quote. Get the inclusions, any minimum spend and the currency of the contract on paper, ask how guests reach the venue and who pays for that transfer, then add the costs in the next section.
 
 [IMAGE: bali-clifftop-lawn-ceremony-setup-01.webp]
 
 ## The costs no average includes
 
-Every figure above leaves something out. This is the part of the budget that rarely appears in a headline number, and it is where an overseas wedding either holds its shape or drifts. Budget for travel insurance too: Smartraveller calls [the right travel insurance](https://www.smartraveller.gov.au/travel-essentials/travel-insurance) as essential as a passport, and suggests reading the Product Disclosure Statement before you buy.
+Every figure above leaves something out. This is the part of the budget that rarely appears in a headline number, and it is where an overseas wedding either holds its shape or drifts. Budget for travel insurance too: Smartraveller calls [the right travel insurance](https://www.smartraveller.gov.au/travel-essentials/travel-insurance) as essential as a passport, and suggests reading the Product Disclosure Statement before you buy. Smartraveller notes that [medical assistance is usually the highest unexpected cost for Australians overseas](https://www.smartraveller.gov.au/travel-essentials/travel-insurance).
 
 ### Currency and deposits
 
@@ -169,7 +177,7 @@ Smartraveller explains that [an overseas marriage is generally recognised in Aus
 
 ### Planners and all-inclusive packages
 
-A planner's fee may sit inside a quote or on top of it, and the structure varies. Planners charge in different ways, so ask how the fee is calculated and what it covers; [our guide to how planners charge](/expert-advice/cost-of-wedding-planner) sets out the common models. If you are weighing a resort package, read [what all-inclusive really covers](/all-inclusive-wedding-cost) before comparing it with a villa quote.
+A planner's fee may sit inside a quote or on top of it. Our guide to [how planners charge](/expert-advice/cost-of-wedding-planner) explains that planners quote in two main ways, a flat fee for a written scope or a percentage of the budget, commonly 10 to 15%, with some luxury planners at 18 to 20%. If you are weighing a resort package, read [what all-inclusive really covers](/all-inclusive-wedding-cost) before comparing it with a villa quote.
 
 ### Who keeps it together
 
