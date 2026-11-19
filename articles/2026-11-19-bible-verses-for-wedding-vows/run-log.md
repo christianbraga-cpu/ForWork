@@ -29,4 +29,11 @@
 - **Stage 3 fast (3 reviews):** DONE. Accuracy 4.2 (all 13 verses and the Act quotes exact; majors: "the best known example" and "many ceremonies stop at verse 8a" unsourced). SEO 3.7 (title rule pass; majors: keyword in no H2, FAQs repeat the body, no destination page link). Reader (couple) relevance 2, trust 3, clarity 4, would_enquire 2: "surprisingly careful"; repeated "celebrant confirms"; lowercase keyword phrasing; translation doubt. Merged request: 04-reviews/v1/merged.md.
 - **Decision (default, change if you want):** "wedding vows scripture" written naturally ("Scripture in your wedding vows"), since the exact phrase is ungrammatical and has 10 searches a month; Concierge described without "matchmaking"; readers told they can read the verse from their own church's translation.
 - **Stage 4 fast (writer v2):** DONE. 03-draft-v2.md. --check: 1,921 reader words, 0 dashes, 0 placeholders, 3 domains, none blocked. YAML valid; 25 claims, 21 links, 6 FAQs (1 Corinthians 13 FAQ added, none removed). H2 "Short Bible verses for wedding vows"; theme labels now H3s; Italy destination page linked; "trusted planners" kept (brand-profile wording), "matchmaking" cut.
-- **Stage 6 fast (copy editor):** running.
+- **Stage 6 fast (copy editor):** DONE. final.md 1,921 reader words, 0 dashes, 0 placeholders, none blocked; publish-package.json valid (21 links, 6 FAQs, 10 open items); chrome-upload-prompt.md (draft only; title-tag dash check); article.docx built. One copy fix: "Set me as a seal" capitalised as in the WEB. final.md front matter omits links_register (links are in the body and in publish-package.json). Image file names are placeholders.
+
+## Must-fix before publish
+1. KJV-STATUS: no Australian legal source on KJV copyright (KJV named, not quoted).
+2. ORDER-OF-SERVICE-PAGE: our order-of-service page says civil ceremonies cannot include religious readings (UK wording); check for Australia.
+3. VOLUME-NOTE: the user's 880/month for "wedding vows in the bible" and "wedding vows scripture" vs 10/month in DataForSEO.
+4. CMS-TITLE (no dash suffix in the title tag), LINK-CHECK (ebible.org and government links in a browser), CONCIERGE-PAY, RETRO-LINKS, IMAGE-RIGHTS, AUTHOR, CMS-URL.
+No publish-order dependency.
