@@ -1,0 +1,153 @@
+{
+ "agent": "distribution-lead",
+ "task_id": "short-wedding-vows",
+ "stage": "10",
+ "status": "complete",
+ "round": 1,
+ "inputs_used": [
+  "CLAUDE.md",
+  "content-system/brand/voice-guide.md",
+  "content-system/brand/banned-phrases.md",
+  "content-system/schemas/10-distribution.schema.json",
+  "content/posts/wedding-processional-songs/10-distribution.json (format model)",
+  "content/posts/short-wedding-vows/08-final.md (copy and image slot markers)",
+  "content/posts/short-wedding-vows/04-images.json",
+  "content/posts/short-wedding-vows/02-seo.json",
+  "content/posts/short-wedding-vows/00-input.json (post URL)",
+  "content/posts/short-wedding-vows/09-cro.json (read after it appeared mid-run)"
+ ],
+ "self_qa": {
+  "checks": [
+   {
+    "check": "3 pins tied to image slots in 04-images.json / 08-final.md",
+    "pass": true,
+    "note": "featured, destination-ceremony, renewal (all real-photo slots, never AI); vow-cards slot not used for pins because its only fallback is AI pending Nic's approval; images not yet sourced"
+   },
+   {
+    "check": "Pin titles <= 100, descriptions <= 500",
+    "pass": true,
+    "note": "70/406, 45/394, 53/339"
+   },
+   {
+    "check": "UTM per channel: pinterest/social, instagram via bio link, newsletter/email; utm_campaign=short-wedding-vows",
+    "pass": true
+   },
+   {
+    "check": "8-slide carousel, hook first, Wedded Advisor conversation last",
+    "pass": true
+   },
+   {
+    "check": "Caption <= 2,200 chars, 5 to 10 hashtags",
+    "pass": true,
+    "note": "1432 chars, 9 hashtags"
+   },
+   {
+    "check": "Newsletter subject <= 60, preview <= 110, blurb 60 to 100 words",
+    "pass": true,
+    "note": "48/107/74 words"
+   },
+   {
+    "check": "Only facts in 08-final.md; quotes are our own original example vows (8, 6, 12, 17, 20) verbatim; no lyrics or film lines; no [[VERIFY]]",
+    "pass": true
+   },
+   {
+    "check": "Legal: only 'your own words sit alongside the words the law asks you to say' and 'legal wording follows that country', both stated in the copy; no section quotes, no same-sex legal position",
+    "pass": true
+   },
+   {
+    "check": "No prices, 'best', 'free', 'perfect', 'last dance' or vendor names",
+    "pass": true,
+    "note": "scripted string check"
+   },
+   {
+    "check": "Australian English, no em or en dashes, no banned phrases",
+    "pass": true
+   }
+  ],
+  "confidence": 0.87
+ },
+ "open_questions": [
+  {
+   "to": "orchestrator",
+   "question": "Images for featured, destination-ceremony and renewal (and carousel backgrounds) are not yet sourced and need a licence covering social use; consenting couples and guests only. Never AI for a real wedding, person or venue. If the vow-cards still life is later used as a carousel background, it must be a licensed photo or Nic-approved AI captioned 'Illustrative image'.",
+   "blocking": true
+  },
+  {
+   "to": "orchestrator",
+   "question": "Confirm Pinterest board names (Wedding Vows, Destination Weddings) match existing boards; 'Wedding Vows' may need creating.",
+   "blocking": false
+  },
+  {
+   "to": "orchestrator",
+   "question": "Instagram bio link should be https://weddedwonderland.com/expert-advice/short-wedding-vows?utm_source=instagram&utm_medium=social&utm_campaign=short-wedding-vows&utm_content=bio-link while the carousel runs.",
+   "blocking": false
+  }
+ ],
+ "tools_used": [
+  "Bash"
+ ],
+ "next_agent": [
+  "cms-publisher"
+ ],
+ "payload": {
+  "pinterest": [
+   {
+    "title": "Short Wedding Vows: 20 Original Examples You Can Say in Under a Minute",
+    "description": "Short wedding vows grouped by tone: classic, romantic, modern and simple, light and funny, for him, for her, for a destination ceremony and for a renewal. Every example is original and yours to adapt. One is three promises: \"I will listen. I will laugh with you, often. And I will show up every day, especially the hard ones.\" Includes a fill-in-the-blanks template and delivery notes. Read the full guide.",
+    "image_slot": "featured",
+    "board": "Wedding Vows",
+    "link": "https://weddedwonderland.com/expert-advice/short-wedding-vows?utm_source=pinterest&utm_medium=social&utm_campaign=short-wedding-vows&utm_content=pin-overview"
+   },
+   {
+    "title": "Short Wedding Vows for a Destination Ceremony",
+    "description": "Short wedding vows written for couples who have flown everyone somewhere far from home: \"We travelled a long way to stand here, and I would travel twice as far to stand anywhere with you.\" Outdoors, wind and waves swallow voices, so ask your venue whether a microphone is available and test it at the rehearsal. Keep your vows to 1 to 2 minutes at most and time them aloud. Read the full guide.",
+    "image_slot": "destination-ceremony",
+    "board": "Destination Weddings",
+    "link": "https://weddedwonderland.com/expert-advice/short-wedding-vows?utm_source=pinterest&utm_medium=social&utm_campaign=short-wedding-vows&utm_content=pin-destination"
+   },
+   {
+    "title": "Short Vow Renewal Examples to Adapt and Make Your Own",
+    "description": "For a vow renewal, the length of your marriage is the detail that does the work. Two short, original renewal vows to adapt, including one that ends: \"The first time, I hoped. This time, I know.\" Plus a five-part template for writing a vow in under a minute: one memory, promises you can keep, and a short closing line. Read the full guide.",
+    "image_slot": "renewal",
+    "board": "Wedding Vows",
+    "link": "https://weddedwonderland.com/expert-advice/short-wedding-vows?utm_source=pinterest&utm_medium=social&utm_campaign=short-wedding-vows&utm_content=pin-renewal"
+   }
+  ],
+  "instagram_carousel": {
+   "slides": [
+    "Short wedding vows: a few honest lines can carry as much weight as a long speech.",
+    "Our advice: 1 to 2 minutes at most. Don't count words. Read yours aloud, with pauses, and time it on your phone.",
+    "\"I will listen. I will laugh with you, often. And I will show up every day, especially the hard ones.\"",
+    "Five parts are enough: a name, one specific memory, two or three promises, a small habit you love and a closing line.",
+    "One memory, not a history. Promises you can keep. End on a short line, because the last words are the ones guests hear.",
+    "Outdoors, wind and waves swallow voices. Ask your venue about a microphone and test it at the rehearsal.",
+    "In Australia, your own vows sit alongside the words the law asks you to say. Ask your celebrant how they fit together.",
+    "Marrying far from home? Message us to talk it through with a Wedded Advisor. Link in bio."
+   ],
+   "caption": "Some couples want to speak for five minutes. Others would rather say something true, say it well and hand the moment back to the ceremony.\n\nOur new guide, Short Wedding Vows Examples Under One Minute, has 20 original examples grouped by tone: classic, romantic, modern and simple, light and funny, for him, for her, for a destination ceremony and for a renewal. Each one is yours to adapt.\n\nA few lines from the list:\n\"I promise you the long view. Not only today, with everyone dressed up and the light just right, but the Tuesday nights, the airport queues and the years our hair turns grey.\"\n\"Our dog approved of you before I did, and she has excellent judgement.\"\n\"The first time, I hoped. This time, I know.\"\n\nHow to keep yours short:\n- Aim for 1 to 2 minutes at most. Read it aloud at the pace you would use in front of guests and time it.\n- One memory, not a history. A road trip or a burnt dinner says more than a timeline.\n- Make promises you can keep. \"I will make the coffee on weekdays\" beats a promise about the stars.\n- Agree on a similar length with your partner, and share both with your celebrant before the day.\n\nIn Australia, your own words sit alongside the words the law asks you to say, so ask your celebrant how they fit together. If you marry legally overseas, the legal wording follows that country.\n\nMarrying far from home? Message us to talk it through with a Wedded Advisor. Full guide at the link in bio.",
+   "hashtags": [
+    "#weddingvows",
+    "#shortweddingvows",
+    "#writingvows",
+    "#weddingceremony",
+    "#vowrenewal",
+    "#destinationwedding",
+    "#weddingplanning",
+    "#australianwedding",
+    "#weddedwonderland"
+   ]
+  },
+  "newsletter": {
+   "subject": "Short wedding vows you can say in under a minute",
+   "preview": "20 original examples by tone, a fill-in-the-blanks template and a few notes on saying them with confidence.",
+   "blurb": "Want to say something true without a five-minute speech? Our new guide has 20 original short wedding vows, each written to be spoken in well under a minute and grouped by tone, from classic and romantic to light and funny, plus vows for a destination ceremony and a renewal. You will also find a fill-in-the-blanks template, tips on cards, microphones and timing, and the words Australian law asks you to say alongside your own.",
+   "link": "https://weddedwonderland.com/expert-advice/short-wedding-vows?utm_source=newsletter&utm_medium=email&utm_campaign=short-wedding-vows&utm_content=newsletter"
+  }
+ },
+ "assumptions": [
+  "Post URL taken from 00-input.json: /expert-advice/short-wedding-vows.",
+  "09-cro.json read: social CTAs point to a conversation with a Wedded Advisor, consistent with its Wedded Concierge CTAs; no CRO subtext reused (the closing subtext contains 'last dance').",
+  "Fast mode: copy checked against 08-final.md only; no new sources."
+ ],
+ "verify_items": []
+}

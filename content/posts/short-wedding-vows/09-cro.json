@@ -1,0 +1,114 @@
+{
+  "agent": "cro-specialist",
+  "task_id": "short-wedding-vows",
+  "stage": "09",
+  "status": "complete",
+  "round": 1,
+  "inputs_used": [
+    "CLAUDE.md",
+    "content/posts/short-wedding-vows/01-brief.json",
+    "content/posts/short-wedding-vows/07-panel.json (cta notes, deferred, conflicts_resolved)",
+    "content/posts/short-wedding-vows/08-final.md",
+    "content-system/brand/brand-facts.md (lines 19 to 28)",
+    "content-system/seo/link-map.csv (/wonderland-concierge, /magazine)",
+    "content/posts/wedding-processional-songs/09-cro.json (format model)"
+  ],
+  "self_qa": {
+    "checks": [
+      {
+        "check": "Primary CTA 6 words or fewer, no 'click here', no exclamation mark",
+        "pass": true,
+        "note": "Anchor 'Wedded Concierge' (2 words), line 133."
+      },
+      {
+        "check": "utm_content primary, secondary, closing, magnet each appear exactly once",
+        "pass": true,
+        "note": "Checked by grep on 08-final.md: primary line 133, secondary line 85, closing line 169, magnet line 169."
+      },
+      {
+        "check": "UTMs only on /wonderland-concierge (3) and /magazine (1)",
+        "pass": true,
+        "note": "Both targets exist in link-map.csv."
+      },
+      {
+        "check": "/wonderland-concierge anchors name Wedded Concierge",
+        "pass": true,
+        "note": "Lines 85, 133 and 169 all use the anchor 'Wedded Concierge'."
+      },
+      {
+        "check": "CTA subtexts use only brand-facts lines 19 to 28",
+        "pass": true,
+        "note": "Single point of contact (line 25), start to finish (line 25), time zone (line 26), inclusions confirmed in writing (line 28). Step 2, 3 and 4 money wording not used, in line with the panel's deferred list."
+      },
+      {
+        "check": "CTA copy clear of every term on the task's banned list (money terms, availability, guest-room perks, superlatives, em dashes); 08-final.md not edited",
+        "pass": true,
+        "note": "Checked by grep on 08-final.md and this file's payload. 'available' appears once in 08-final.md, line 141, about a venue microphone (a question to ask the venue, not a service claim)."
+      }
+    ],
+    "confidence": 0.85
+  },
+  "open_questions": [
+    {
+      "to": "orchestrator",
+      "question": "08-final.md contains no <!-- CTA: primary --> marker; placements document the existing inline links.",
+      "blocking": false
+    },
+    {
+      "to": "orchestrator",
+      "question": "The secondary link (line 85, destination examples intro) comes before the primary (line 133), so readers meet the secondary first. The panel kept it deliberately for destination readers; noted for reporting only.",
+      "blocking": false
+    },
+    {
+      "to": "orchestrator",
+      "question": "Panel weighted enquiry likelihood is 1.2; readers' main asks (money basis, payments, who handles celebrants and paperwork) are deferred and cannot be answered from brand facts. CTA placement cannot close that gap; record the shortfall in the run report.",
+      "blocking": false
+    }
+  ],
+  "assumptions": [
+    "Copy uses relative links; recorded here with the weddedwonderland.com domain for tracking.",
+    "Subtexts are reporting notes for the CTAs as they stand; no copy changes are proposed."
+  ],
+  "verify_items": [],
+  "tools_used": [
+    "Bash (grep, sed, python3 -I)"
+  ],
+  "payload": {
+    "journey_stage": "planning",
+    "primary_cta": {
+      "text": "Wedded Concierge",
+      "subtext": "Your Wedded Advisor confirms inclusions in writing before you commit.",
+      "link": "https://weddedwonderland.com/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=short-wedding-vows&utm_content=primary",
+      "placement": "Existing inline link on line 133, at the end of the legal section after the 'Marrying overseas' note, where the reader has just learned the place, guests and travel are the bigger puzzle. Follows the vow examples and template, as the panel required. Unchanged."
+    },
+    "secondary_cta": {
+      "text": "Wedded Concierge",
+      "subtext": "One Wedded Advisor, start to finish, as your single point of contact.",
+      "link": "https://weddedwonderland.com/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=short-wedding-vows&utm_content=secondary",
+      "placement": "Existing line 85, introducing the destination vow examples, for the couple already planning to fly guests somewhere far from home. Makes no Advisor claim in the copy. Unchanged."
+    },
+    "lead_magnet": {
+      "name": "Wedded Wonderland magazine",
+      "link": "https://weddedwonderland.com/magazine?utm_source=blog&utm_medium=content&utm_campaign=short-wedding-vows&utm_content=magnet",
+      "placement": "Existing closing paragraph line 169 (anchor 'Wedded Wonderland magazine'), for readers still gathering ceremony ideas. Unchanged.",
+      "exists": true
+    },
+    "closing_cta": {
+      "text": "Wedded Concierge",
+      "subtext": "Your Wedded Advisor works in your time zone, start to finish.",
+      "link": "https://weddedwonderland.com/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=short-wedding-vows&utm_content=closing",
+      "placement": "Existing closing paragraph line 169, 'Start a conversation through Wedded Concierge', directly before the magazine link. Unchanged."
+    },
+    "tracking": [
+      "https://weddedwonderland.com/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=short-wedding-vows&utm_content=primary",
+      "https://weddedwonderland.com/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=short-wedding-vows&utm_content=secondary",
+      "https://weddedwonderland.com/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=short-wedding-vows&utm_content=closing",
+      "https://weddedwonderland.com/magazine?utm_source=blog&utm_medium=content&utm_campaign=short-wedding-vows&utm_content=magnet"
+    ],
+    "copy_changes": [],
+    "rationale": "Brief journey_stage is 'planning'. A vows post is low commercial intent, so the commercial question only peaks once the reader reaches where they will marry and who will travel to hear the vows. The panel moved the legal section below the examples so the primary invitation follows the evidence and sits beside the overseas note; it stays the only Advisor claim in the body, with the closing CTA ending the post and the magazine serving readers still collecting ideas. The secondary in the destination examples intro was kept by the panel for destination readers. Subtexts use only brand-facts lines 19 to 28: single point of contact, start to finish, time zone, inclusions confirmed in writing. All money, rate, payment and availability wording is left out, matching the panel's deferred list. A printable short vows template card would be a better-matched magnet; none is known to exist, so it is a backlog suggestion only and not placed."
+  },
+  "next_agent": [
+    "distribution"
+  ]
+}
