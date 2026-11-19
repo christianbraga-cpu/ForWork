@@ -1,0 +1,108 @@
+{
+  "agent": "visual-curator",
+  "task_id": "wedding-without-seating-chart",
+  "stage": "04",
+  "status": "needs_input",
+  "round": 1,
+  "inputs_used": [
+    "CLAUDE.md",
+    "content/posts/wedding-without-seating-chart/00-input.json",
+    "content-system/images/library-index.csv (header only, no rows)",
+    "content/posts/average-cost-wedding-photographer/04-images.json (format)"
+  ],
+  "self_qa": {
+    "checks": [
+      {"check": "Zero reference-only or competitor images in slots", "pass": true},
+      {"check": "Every approved image has verified location, licence, alt, caption, fit_reason", "pass": true, "note": "No approved images; all 4 slots needed."},
+      {"check": "No AI image of a real wedding, person, venue or place", "pass": true, "note": "No AI images planned. Every slot shows real guests or real settings, so all four must be licensed photos with consent."},
+      {"check": "Featured image exists (approved or needed with brief)", "pass": true, "note": "Needed with brief."},
+      {"check": "No vendor names in alt, caption or brief", "pass": true},
+      {"check": "Alt text in Australian English, no em dashes, 125 characters or fewer", "pass": true},
+      {"check": "No figures or statistics shown in images", "pass": true, "note": "Briefs exclude legible menus, place cards with names, signage and prices."},
+      {"check": "Placements match final H2 numbering", "pass": false, "note": "02-seo.json not available in fast mode; after_h2 assumes 1 why skip a seating chart, 2 how to make open seating work (reserved tables), 3 reception formats that suit no chart, 5 destination weddings."}
+    ],
+    "confidence": 0.6
+  },
+  "open_questions": [
+    {"to": "Nic", "question": "Source licensed photos for all four slots (client weddings with signed couple consent and photographer licence, or licensed stock with model and property releases)? Repo register has no rows.", "blocking": true},
+    {"to": "Nic", "question": "Photographer credit in captions names the photographer, which conflicts with the 'no vendor names' rule. Credit as 'Photo: Wedded Wonderland' (own or licensed stock) or allow a plain photographer credit line only?", "blocking": false},
+    {"to": "seo-researcher", "question": "Confirm H2 numbering once the outline exists and remap after_h2 placements.", "blocking": false}
+  ],
+  "assumptions": [
+    "Repo register only (fast mode); Google Drive, own site, Canva, press kits and Google Lens not run.",
+    "No venue in scope, so no permission emails drafted.",
+    "Advice-led post with no figures: no image shows menus, prices, guest names or numbers.",
+    "Competitor or search-result images were not collected; any found later are reference only and go in reference-only/."
+  ],
+  "verify_items": [
+    "[[IMAGE NEEDED]] featured: relaxed long-table or lounge reception with guests mingling freely, consented",
+    "[[IMAGE NEEDED]] reserved-family-table: open seating with one reserved family table, consented",
+    "[[IMAGE NEEDED]] cocktail-reception: cocktail or food-station reception, consented",
+    "[[IMAGE NEEDED]] destination-welcome-dinner: destination welcome dinner at a verified location, consented",
+    "[[VERIFY licence]] every sourced photo: credit, scope, model and property releases",
+    "[[VERIFY: credit wording that respects the no vendor names rule]]"
+  ],
+  "next_agent": ["luxury-writer"],
+  "payload": {
+    "slots": [
+      {
+        "slot_id": "featured",
+        "placement": "featured",
+        "purpose": "Hero: show that a reception without a seating chart still feels considered and luxurious, with guests moving and mixing freely.",
+        "shot_brief": "Real, licensed photo of a relaxed luxury reception: either a long candlelit communal table or a lounge setting with low sofas and side tables, guests standing, leaning in and mixing across groups, couple visible but not posed. Warm dusk or candlelight, garden, terrace or villa courtyard, late spring to summer. No place cards with legible names, no seating chart signage, no logos. Consenting couple and identifiable guests. Never AI.",
+        "status": "needed",
+        "file": "content/posts/wedding-without-seating-chart/images/wedding-without-seating-chart-long-table-lounge-reception-hero.webp",
+        "source": {"type": "library", "origin": "[[IMAGE NEEDED]] library-index.csv has header only, no rows", "credit": "[[VERIFY licence]]"},
+        "consent": {"couple": "required, signed", "guests": "required if identifiable", "venue": "required if interior or grounds identifiable"},
+        "alt": "Guests mingling around a candlelit long table and lounge area at a relaxed evening wedding reception",
+        "caption": "<Venue>, <town>. Photo: [[VERIFY credit]]",
+        "lens_check": "Not run: no candidate image.",
+        "location": {"venue": "[[VERIFY: venue]]", "town": "[[VERIFY: town]]", "verified_by": "[[VERIFY: register, EXIF GPS or source page]]"}
+      },
+      {
+        "slot_id": "reserved-family-table",
+        "placement": "after_h2:2",
+        "purpose": "Support the advice that open seating works best with a reserved table for immediate family and the couple, so key guests are looked after.",
+        "shot_brief": "Real, licensed photo of an open-seating reception where one table is visibly set apart for family: a small 'Reserved' card or distinct floral arrangement (no legible names), parents or grandparents seated and smiling while other guests choose their own seats in the background. Soft evening or indoor reception light, elegant tableware. No vendor or venue branding. Consenting family and guests. Never AI.",
+        "status": "needed",
+        "file": "content/posts/wedding-without-seating-chart/images/wedding-without-seating-chart-reserved-family-table.webp",
+        "source": {"type": "library", "origin": "[[IMAGE NEEDED]] library-index.csv has header only, no rows", "credit": "[[VERIFY licence]]"},
+        "consent": {"couple": "required, signed", "family": "required, signed", "guests": "required if identifiable", "venue": "required if interior identifiable"},
+        "alt": "Family seated at a reserved table while other guests choose their own seats at an open seating reception",
+        "caption": "<Venue>, <town>. Photo: [[VERIFY credit]]",
+        "lens_check": "Not run: no candidate image.",
+        "location": {"venue": "[[VERIFY: venue]]", "town": "[[VERIFY: town]]", "verified_by": "[[VERIFY: register, EXIF GPS or source page]]"}
+      },
+      {
+        "slot_id": "cocktail-reception",
+        "placement": "after_h2:3",
+        "purpose": "Illustrate the reception formats that suit no seating chart: a cocktail-style or food-station reception where guests graze and move.",
+        "shot_brief": "Real, licensed photo of a cocktail or food-station reception: guests holding drinks and small plates around a styled grazing or chef station, high bar tables and some soft seating, natural movement between groups. Golden hour outdoors or warm indoor light. Food and styling visible but no legible menus, prices or caterer branding. Consenting guests. Never AI.",
+        "status": "needed",
+        "file": "content/posts/wedding-without-seating-chart/images/wedding-without-seating-chart-cocktail-food-station.webp",
+        "source": {"type": "library", "origin": "[[IMAGE NEEDED]] library-index.csv has header only, no rows", "credit": "[[VERIFY licence]]"},
+        "consent": {"couple": "required if depicted", "guests": "required if identifiable", "venue": "required if interior identifiable"},
+        "alt": "Wedding guests with drinks and small plates gathered around a grazing station at a cocktail reception",
+        "caption": "<Venue>, <town>. Photo: [[VERIFY credit]]",
+        "lens_check": "Not run: no candidate image.",
+        "location": {"venue": "[[VERIFY: venue]]", "town": "[[VERIFY: town]]", "verified_by": "[[VERIFY: register, EXIF GPS or source page]]"}
+      },
+      {
+        "slot_id": "destination-welcome-dinner",
+        "placement": "after_h2:5",
+        "purpose": "Show how a destination welcome dinner lets guests meet before the wedding, which makes free seating on the day feel natural.",
+        "shot_brief": "Real, licensed photo of a destination welcome dinner at a named, verifiable location (for example an Italian countryside terrace, a Greek island taverna setting or a Bali clifftop), long shared tables, guests talking across the table, landscape or sea view at sunset, string lights or candles. Location must be verified from register, EXIF or source page. Consenting couple and guests. Never AI.",
+        "status": "needed",
+        "file": "content/posts/wedding-without-seating-chart/images/wedding-without-seating-chart-destination-welcome-dinner.webp",
+        "source": {"type": "library", "origin": "[[IMAGE NEEDED]] library-index.csv has header only, no rows", "credit": "[[VERIFY licence]]"},
+        "consent": {"couple": "required, signed", "guests": "required if identifiable", "venue": "required if interior or grounds identifiable"},
+        "alt": "Guests sharing a long table at a sunset welcome dinner on a terrace before a destination wedding",
+        "caption": "<Venue>, <town>. Photo: [[VERIFY credit]]",
+        "lens_check": "Not run: no candidate image.",
+        "location": {"venue": "[[VERIFY: venue]]", "town": "[[VERIFY: town]]", "verified_by": "[[VERIFY: register, EXIF GPS or source page]]"}
+      }
+    ],
+    "reference_only": [],
+    "permission_requests": []
+  }
+}
