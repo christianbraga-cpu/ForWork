@@ -1,0 +1,115 @@
+{
+  "agent": "cro-specialist",
+  "task_id": "average-cost-wedding-photographer",
+  "stage": "09",
+  "status": "complete",
+  "round": 1,
+  "inputs_used": [
+    "CLAUDE.md",
+    "content/posts/average-cost-wedding-photographer/01-brief.json",
+    "content/posts/average-cost-wedding-photographer/07-panel.json (weighted_enquiry_likelihood, conflicts_resolved, deferred)",
+    "content/posts/average-cost-wedding-photographer/08-final.md",
+    "content-system/brand/brand-facts.md (lines 19 to 30)",
+    "content-system/seo/link-map.csv (/wonderland-concierge, /magazine)",
+    "content-system/schemas/09-cro.schema.json",
+    "content/posts/short-wedding-vows/09-cro.json (format model)"
+  ],
+  "self_qa": {
+    "checks": [
+      {
+        "check": "Primary CTA 6 words or fewer, no 'click here', no exclamation mark",
+        "pass": true,
+        "note": "Anchor 'Wedded Concierge' (2 words), line 120."
+      },
+      {
+        "check": "utm_content primary, secondary, closing, magnet each appear exactly once",
+        "pass": true,
+        "note": "Checked by grep on 08-final.md: primary line 120, secondary line 196, closing line 224, magnet line 224."
+      },
+      {
+        "check": "UTMs only on /wonderland-concierge (3) and /magazine (1)",
+        "pass": true,
+        "note": "Both targets exist in link-map.csv (rows 656 and 307)."
+      },
+      {
+        "check": "/wonderland-concierge anchors name Wedded Concierge",
+        "pass": true,
+        "note": "Lines 120, 196 and 224 all use the anchor 'Wedded Concierge'."
+      },
+      {
+        "check": "CTA subtexts use only brand-facts lines 19 to 30",
+        "pass": true,
+        "note": "Single point of contact, start to finish (line 25); time zone (line 26, AUD wording not used); inclusions confirmed in writing (line 28); venue, travel and vendors (line 30, 'payments' dropped as the panel did). Lines 19 to 21, 27 and 29 (money, guest-room perks) not used."
+      },
+      {
+        "check": "CTA copy clear of every term on the task's banned list (money terms, booking-status claims, guest-room perks, superlatives, em dashes); 08-final.md not edited",
+        "pass": true,
+        "note": "Checked on this file's payload. 08-final.md was read only. In 08-final.md, the only money wording near a CTA is the line 224 lead-in (see open_questions); line 69 is body advice about the photographer's own charges. No em dashes in 08-final.md."
+      }
+    ],
+    "confidence": 0.85
+  },
+  "open_questions": [
+    {
+      "to": "orchestrator",
+      "question": "08-final.md contains no <!-- CTA: primary --> marker; placements document the existing inline links.",
+      "blocking": false
+    },
+    {
+      "to": "orchestrator",
+      "question": "The closing paragraph (line 224) states the Advisor's charge is agreed in writing before work begins. It matches brand-facts line 27, but the panel deferred the amount and basis of that charge, and the sceptic reads any mention of it as an unanswered question about supplier mark-ups. No copy change made here; the editor may prefer the line 28 wording ('confirms inclusions in writing before you commit') if money wording should stay out of CTA copy.",
+      "blocking": false
+    },
+    {
+      "to": "orchestrator",
+      "question": "Panel weighted enquiry likelihood is 1.8; readers' main asks (basis of the Advisor's charge, supplier mark-ups, deposit protection, whether the Advisor vets photographers) are deferred and cannot be answered from brand facts. CTA placement cannot close that gap; record the shortfall in the run report.",
+      "blocking": false
+    }
+  ],
+  "assumptions": [
+    "Copy uses relative links; recorded here with the weddedwonderland.com domain for tracking.",
+    "Subtexts are reporting notes for the CTAs as they stand; no copy changes are proposed."
+  ],
+  "verify_items": [],
+  "tools_used": [
+    "Bash (grep, sed, python3 -I)"
+  ],
+  "payload": {
+    "journey_stage": "planning",
+    "primary_cta": {
+      "text": "Wedded Concierge",
+      "subtext": "Your Wedded Advisor confirms inclusions in writing before you commit.",
+      "link": "https://weddedwonderland.com/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=average-cost-wedding-photographer&utm_content=primary",
+      "placement": "Existing inline link on line 120, closing the 'Photographing a destination wedding' section, straight after the overseas refund note and the Italy cost links, where the reader has just seen how many moving parts a wedding abroad has. The brief places the primary after the destination section and the panel kept it there. Unchanged."
+    },
+    "secondary_cta": {
+      "text": "Wedded Concierge",
+      "subtext": "One Wedded Advisor, start to finish, as your single point of contact.",
+      "link": "https://weddedwonderland.com/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=average-cost-wedding-photographer&utm_content=secondary",
+      "placement": "Existing line 196, end of 'How to compare quotes in writing', after the seven-point comparison list, for the couple weighing photography against everything else a wedding abroad involves, 'before you sign'. Unchanged."
+    },
+    "lead_magnet": {
+      "name": "Wedded Wonderland magazine",
+      "link": "https://weddedwonderland.com/magazine?utm_source=blog&utm_medium=content&utm_campaign=average-cost-wedding-photographer&utm_content=magnet",
+      "placement": "Existing closing paragraph line 224 (anchor 'Wedded Wonderland magazine'), for readers still gathering planning ideas. Unchanged.",
+      "exists": true
+    },
+    "closing_cta": {
+      "text": "Wedded Concierge",
+      "subtext": "Your Wedded Advisor plans the venue, travel and vendors, in your time zone.",
+      "link": "https://weddedwonderland.com/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=average-cost-wedding-photographer&utm_content=closing",
+      "placement": "Existing closing paragraph line 224, under 'Planning the rest of the picture', 'Start a conversation through Wedded Concierge', directly before the magazine link. Unchanged."
+    },
+    "tracking": [
+      "https://weddedwonderland.com/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=average-cost-wedding-photographer&utm_content=primary",
+      "https://weddedwonderland.com/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=average-cost-wedding-photographer&utm_content=secondary",
+      "https://weddedwonderland.com/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=average-cost-wedding-photographer&utm_content=closing",
+      "https://weddedwonderland.com/magazine?utm_source=blog&utm_medium=content&utm_campaign=average-cost-wedding-photographer&utm_content=magnet"
+    ],
+    "copy_changes": [],
+    "rationale": "Brief journey_stage is 'planning'. The post gives no figures by decision, so the commercial question peaks where the reader realises a wedding abroad means many suppliers and contracts at once: the end of the destination section (primary), and again after the quote comparison checklist, just before signing (secondary). The closing CTA ends the post and the magazine serves readers still collecting ideas. Per the panel, 'payments' was dropped and accountability rests on inclusions confirmed in writing, so the primary subtext uses that line. Subtexts use only brand-facts lines 25, 26, 28 and 30: single point of contact, start to finish, time zone, inclusions confirmed in writing, and venue, travel and vendors. All money, rate, currency, payment and booking-status wording is left out, matching the panel's deferred list. A printable photographer quote comparison checklist would be a better-matched magnet; none is known to exist, so it is a backlog suggestion only and not placed."
+  },
+  "next_agent": [
+    "distribution"
+  ]
+}

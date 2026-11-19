@@ -1,0 +1,153 @@
+{
+ "agent": "distribution-lead",
+ "task_id": "average-cost-wedding-photographer",
+ "stage": "10",
+ "status": "complete",
+ "round": 1,
+ "inputs_used": [
+  "CLAUDE.md",
+  "content-system/brand/voice-guide.md",
+  "content-system/brand/banned-phrases.md",
+  "content-system/schemas/10-distribution.schema.json",
+  "content/posts/short-wedding-vows/10-distribution.json (format model)",
+  "content/posts/average-cost-wedding-photographer/08-final.md (copy and image slot markers)",
+  "content/posts/average-cost-wedding-photographer/04-images.json",
+  "content/posts/average-cost-wedding-photographer/02-seo.json",
+  "content/posts/average-cost-wedding-photographer/00-input.json (post URL, no-figures instruction)"
+ ],
+ "self_qa": {
+  "checks": [
+   {
+    "check": "3 pins tied to image slots in 04-images.json / 08-final.md",
+    "pass": true,
+    "note": "featured, cost-factors, destination-coverage (all real-photo, never-AI slots); package-inclusions not used because its only fallback is AI pending Nic's approval; no images sourced yet"
+   },
+   {
+    "check": "Pin titles <= 100, descriptions <= 500",
+    "pass": true,
+    "note": "72/405, 85/406, 74/365"
+   },
+   {
+    "check": "UTM per channel: pinterest/social, instagram via bio link, newsletter/email; utm_campaign=average-cost-wedding-photographer; base URL https://weddedwonderland.com/expert-advice/average-cost-wedding-photographer",
+    "pass": true
+   },
+   {
+    "check": "8-slide carousel, hook first (frames what shapes a quote, no promised average), Wedded Advisor conversation last",
+    "pass": true
+   },
+   {
+    "check": "Caption <= 2,200 chars, 5 to 10 hashtags",
+    "pass": true,
+    "note": "1667 chars, 8 hashtags"
+   },
+   {
+    "check": "Newsletter subject <= 60, preview <= 110, blurb 60 to 100 words",
+    "pass": true,
+    "note": "42/103/77 words"
+   },
+   {
+    "check": "No figures of any kind: no digits, prices, ranges, averages, percentages or AUD in any social copy",
+    "pass": true,
+    "note": "scripted digit check over all copy (URLs and hashtags excluded, neither contains a figure)"
+   },
+   {
+    "check": "Legal only as stated in 08-final.md and always 'in Australia': copyright default for commissioned private or domestic photos under the Copyright Act, can be excluded or modified by agreement; ACCC consumer guarantees (acceptable care and skill, rights can't be taken away). Caption says general information, not legal advice. No section numbers quoted",
+    "pass": true
+   },
+   {
+    "check": "Only facts in 08-final.md; no [[VERIFY]]; no 'best', 'free', 'perfect', 'last dance', 'budget', vendor or competitor names",
+    "pass": true,
+    "note": "scripted string check"
+   },
+   {
+    "check": "Australian English, no em or en dashes, no banned phrases",
+    "pass": true
+   }
+  ],
+  "confidence": 0.86
+ },
+ "open_questions": [
+  {
+   "to": "orchestrator",
+   "question": "Images for featured, cost-factors and destination-coverage (and any carousel backgrounds) are not yet sourced; 04-images.json lists all as [[IMAGE NEEDED]]. Each needs a licence covering social use and signed consent from couple, photographers and identifiable guests. Never AI for a real wedding, person or place. If the package-inclusions still life is later used as a carousel background, it must be a licensed photo or Nic-approved AI captioned 'Illustrative image'.",
+   "blocking": true
+  },
+  {
+   "to": "orchestrator",
+   "question": "Confirm Pinterest board names (Wedding Photography, Wedding Planning, Destination Weddings) match existing boards; 'Wedding Photography' may need creating.",
+   "blocking": false
+  },
+  {
+   "to": "orchestrator",
+   "question": "Instagram bio link should be https://weddedwonderland.com/expert-advice/average-cost-wedding-photographer?utm_source=instagram&utm_medium=social&utm_campaign=average-cost-wedding-photographer&utm_content=bio-link while the carousel runs.",
+   "blocking": false
+  }
+ ],
+ "tools_used": [
+  "Bash"
+ ],
+ "next_agent": [
+  "cms-publisher"
+ ],
+ "payload": {
+  "pinterest": [
+   {
+    "title": "Wedding Photographer Cost: What Shapes a Quote and What Packages Include",
+    "description": "A single average cost for a wedding photographer says very little about the quote you will receive for a wedding like yours. Coverage, team, travel, albums and image rights shape every quote. Our guide explains what a package should spell out in writing, the extras that sit outside it, and how to compare quotes line by line once every photographer has quoted against the same brief. Read the full guide.",
+    "image_slot": "featured",
+    "board": "Wedding Photography",
+    "link": "https://weddedwonderland.com/expert-advice/average-cost-wedding-photographer?utm_source=pinterest&utm_medium=social&utm_campaign=average-cost-wedding-photographer&utm_content=pin-overview"
+   },
+   {
+    "title": "Coverage Hours, Second Shooters and Albums: What Moves a Wedding Photographer's Quote",
+    "description": "A photographer's quote is a sum of decisions, most of them yours. Hours of coverage, a second shooter who covers what one person physically can't, travel, an engagement session, albums, editing and delivery timing, and how the images may be used all change it. Sketch your day first, share the timeline with every photographer, and ask how overtime is charged if the evening runs late. Read the full guide.",
+    "image_slot": "cost-factors",
+    "board": "Wedding Planning",
+    "link": "https://weddedwonderland.com/expert-advice/average-cost-wedding-photographer?utm_source=pinterest&utm_medium=social&utm_campaign=average-cost-wedding-photographer&utm_content=pin-cost-factors"
+   },
+   {
+    "title": "Booking a Destination Wedding Photographer: Questions to Settle in Writing",
+    "description": "A wedding abroad changes a photographer's quote. Settle who books and pays for flights and transfers, the currency of the quote, where the photographer stays, which events are covered across the weekend, venue rules on flash and drones, permits for beaches, piazzas or heritage sites, and who replaces the photographer if a flight is cancelled. Read the full guide.",
+    "image_slot": "destination-coverage",
+    "board": "Destination Weddings",
+    "link": "https://weddedwonderland.com/expert-advice/average-cost-wedding-photographer?utm_source=pinterest&utm_medium=social&utm_campaign=average-cost-wedding-photographer&utm_content=pin-destination"
+   }
+  ],
+  "instagram_carousel": {
+   "slides": [
+    "What actually shapes a wedding photographer's quote, and what a package should spell out in writing.",
+    "Read the coverage line first. Two quotes that look alike can hide very different hours.",
+    "One photographer or a team? A second shooter covers what one person physically can't: both sets of preparations, guests' faces during the vows, the room while you are outside for portraits.",
+    "A clear package states coverage, people, any pre-wedding session, the online gallery, edited images, delivery dates, album details, usage and copyright, and a backup plan. If it isn't written down, treat it as not included.",
+    "Ask about the extras: overtime, additional events, travel and accommodation, permits, album upgrades, rush editing and raw files.",
+    "In Australia, under the Copyright Act, a couple who commissions and pays for wedding photos for a private or domestic purpose owns the copyright by default. The agreement can exclude or modify that rule, so read the usage clause before you sign.",
+    "Compare quotes line by line: hours, people, deliverables, timing, rights, extras and terms. Only then look at the totals.",
+    "Planning a wedding abroad? Message us to talk it through with a Wedded Advisor. Link in bio."
+   ],
+   "caption": "A single average says very little about the quote you will receive for a wedding like yours. It blends a short registry signing with a celebration over several days abroad, one photographer with a full team, a digital gallery with a hand-bound album.\n\nOur new guide explains what actually shapes a wedding photographer's quote, what a package should spell out in writing, and what tends to sit outside it.\n\nBefore you ask for quotes:\n- Sketch the day: getting ready, the ceremony, portraits, the reception and the moment you want the camera to stop.\n- Send every photographer the same written brief: date, venue, guest numbers, timeline, events and the products you want.\n- Ask who exactly will photograph your wedding, and whether their name is in the contract.\n- Ask how many edited images to expect, and the date the full gallery will be delivered. Get that date in writing.\n\nWhere you stand in Australia:\n- Under the consumer guarantees, a photographer must use an acceptable level of care and skill, and those basic rights can't be taken away by anything the business says or does.\n- Under the Copyright Act, a couple who commissions and pays for wedding photos for a private or domestic purpose owns the copyright by default, but the agreement can exclude or modify that rule.\nThis is general information, not legal advice, so read the usage and copyright clause before you sign.\n\nA lower headline price with fewer hours and a slower delivery date is a different product, not a saving. Decide which images matter most, and protect those hours first.\n\nPlanning a wedding abroad? Message us to talk it through with a Wedded Advisor. Full guide at the link in bio.",
+   "hashtags": [
+    "#weddingphotographer",
+    "#weddingphotography",
+    "#weddingplanning",
+    "#destinationwedding",
+    "#weddingadvice",
+    "#australianwedding",
+    "#luxurywedding",
+    "#weddedwonderland"
+   ]
+  },
+  "newsletter": {
+   "subject": "What shapes a wedding photographer's quote",
+   "preview": "What a package should spell out, the extras that sit outside it and how to compare quotes line by line.",
+   "blurb": "Wondering what to expect from a wedding photographer's quote? Our new guide skips the national average and looks at what actually shapes the price: hours of coverage, a second shooter, travel, albums, delivery timing and who may use the images. You will find a plain checklist of what a package should spell out, the extras that sit outside it, questions to ask before you book, and where you stand in Australia on copyright and the consumer guarantees.",
+   "link": "https://weddedwonderland.com/expert-advice/average-cost-wedding-photographer?utm_source=newsletter&utm_medium=email&utm_campaign=average-cost-wedding-photographer&utm_content=newsletter"
+  }
+ },
+ "assumptions": [
+  "Post URL taken from 00-input.json and the task brief: /expert-advice/average-cost-wedding-photographer.",
+  "09-cro.json does not exist yet; social CTAs point to a conversation with a Wedded Advisor, consistent with the Wedded Concierge CTAs in 08-final.md.",
+  "Pin and carousel hooks use 'wedding photographer cost' rather than promising an average, per the no-figures instruction; the keyword idea appears in pin 1's description framed as why a single average says little.",
+  "Fast mode: copy checked against 08-final.md only; no new sources. 08-final.md not edited."
+ ],
+ "verify_items": []
+}
