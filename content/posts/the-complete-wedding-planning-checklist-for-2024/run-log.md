@@ -9,3 +9,4 @@
 00:44 07b panel revise (enquire 1.9), 6 must-fix.
 00:45 08 final copy done (~3,300 words), 6 must-fix applied; orchestrator removed a deferred brand claim (standardised supplier rates, awaiting Nic) and restored the secondary Concierge link.
 00:47 06b final check: 0 blocking, no edits; CRO and distribution done.
+00:49 11 package (URL kept, URL-move warning), checklist, docx, link map row updated, timeline added, calendar row 74, run report done.
