@@ -26,7 +26,7 @@ In our view, the question behind an average is really what you will get for what
 
 <!-- IMAGE SLOT cost-factors: Real, licensed candid of two photographers covering different angles of a ceremony or reception (lead and second shooter), guests and couple in frame, evening or reception light to suggest a long coverage day. Consenting couple, guests and photographers. No logos, no price lists or numbers. Never AI. -->
 
-A photographer's quote is a sum of decisions, most of them yours. Change one and the figure moves.
+A photographer's quote is a sum of decisions about your day. Change one and the figure moves.
 
 ### Hours of coverage and the shape of your day
 
@@ -193,7 +193,7 @@ When the quotes come back, lay them side by side and work through them line by l
 
 Only then look at the totals. A lower headline price with fewer hours and a slower delivery date is a different product, not a saving. Decide which images matter most, and protect those hours first.
 
-If you are weighing photography against everything else a wedding abroad involves, speak with [Wedded Concierge](/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=average-cost-wedding-photographer&utm_content=secondary) before you sign.
+If you are weighing photography against everything else a wedding abroad involves, speak with [Wedded Concierge](/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=average-cost-wedding-photographer&utm_content=secondary) about the rest of the plan.
 
 ## Frequently asked questions
 
