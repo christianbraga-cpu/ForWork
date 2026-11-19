@@ -70,7 +70,7 @@ In Australia, for food that doesn't carry a label, [allergen declarations must b
 
 Grandparents and guests with limited mobility shouldn't have to compete for the chairs closest to the door, the bathrooms and the speeches.
 
-[Queensland Government guidance on accessible events](https://www.qld.gov.au/__data/assets/pdf_file/0030/470865/queensland-government-accessible-events-guide.pdf) advises that at events with table seating, people shouldn't be placed too close to each other, and chairs should be removed so guests who use wheelchairs can reach the tables. <!-- fact_104 --> The same guidance advises against seating everyone who uses a wheelchair together. <!-- fact_104 --> A reserved table with clear access, close to the action, solves both.
+[Queensland Government guidance on accessible events](https://www.qld.gov.au/__data/assets/pdf_file/0030/470865/queensland-government-accessible-events-guide.pdf) advises that at events with table seating, people shouldn't be placed too close to each other, and chairs should be removed so guests who use wheelchairs can reach the tables. <!-- fact_104 --> The same guidance advises against seating everyone who uses a wheelchair together. <!-- fact_104 --> Reserved seats with clear access, close to the action and at the same tables as their own family and friends, answer both.
 
 ### Blended families and guests who need space
 
