@@ -23,4 +23,6 @@
 - **/packages is not live** (two Firecrawl maps): linking /destination-packages; PACKAGES-PAGE logged for the user.
 - **Decision (default):** three live anniversary pages added to link-map (anniversary trip ideas, marking a big anniversary, anniversary party venues); this piece stays commercial and never uses "anniversary trip ideas" as an anchor.
 - **Note:** the map shows the two Bali packages articles as live although link-map lists them as DRAFT (held for SITE-CONFLICTS). Flagged to the user.
-- **Stage 1 fast (research):** running.
+- **Stage 1 fast (research):** DONE. 50 facts (23 reused, 25 our live pages, 2 official). **/packages loads (HTTP 200)** with an Anniversaries tile, although the Firecrawl map missed it: linked as the user asked; link-map updated. No page publishes an anniversary package or AUD price; no authoritative list of gift themes by year. New site conflicts: "ATAS and IATA accredited, A19892" (unverified; ATIA retired the ATAS name in 2024), proof points 17+ years / 120,000+ / 10,000+ / 800+, "complimentary night", "guaranteed late checkout", Wedded Privileges vs Wonderland Benefits naming; concierge US$ tiers (Nic).
+- **Decision (default, change if you want):** none of the conflicting claims, counts, accreditation or prices appear in the copy; Wedded Privileges quoted with "Benefits vary by property and booking."
+- **Stage 2 fast (writer):** running.

@@ -262,7 +262,7 @@ No Malta destination page exists yet (open item MALTA-PAGE); link `/destinations
 | `/celebration-ideas/how-do-you-mark-a-big-anniversary` | How Do You Mark a Big Anniversary | big anniversary ideas |
 | `/expert-advice/where-do-you-hold-an-anniversary-party` | Where Do You Hold an Anniversary Party | anniversary party venue |
 
-`/packages` is still NOT LIVE (19 Nov 2026 map): link `/destination-packages` (open item PACKAGES-PAGE).
+`/packages` is LIVE (HTTP 200 on 19 Nov 2026; title 'Destination Wedding Packages'; has Anniversaries and Vow renewals tiles), although the Firecrawl map does not list it. Link it for celebration and anniversary trips; `/destination-packages` remains the wedding and honeymoon package page.
 
 ## Bali cluster (Firecrawl map and Apify, 17 Nov 2026)
 
@@ -319,7 +319,7 @@ Hub: `/style-advice/celebrity-engagement-rings` (in production). Spokes:
 | Adelaide, Brisbane, Canberra, Gold Coast, Hobart and Perth vendor pages | Hidden from Google |
 | Fiji magazine | Link `/destinations/oceania/fiji` instead |
 | Get Wedded in Australia pre-register page | Still says "Coming This Spring"; check it is current before linking |
-| `/concierge`, `/marketplace`, `/privileges`, `/destinations/italy`, `/packages`, `/packages/italy`, `/packages/italy/tuscany`, `/packages/italy/tuscany/*` | **NOT LIVE.** Draft site structure from the Cappuccina page build; do not link until launched |
+| `/concierge`, `/marketplace`, `/privileges`, `/destinations/italy`, `/packages/italy`, `/packages/italy/tuscany`, `/packages/italy/tuscany/*` | **NOT LIVE.** Draft site structure from the Cappuccina page build; do not link until launched |
 
 ## URL patterns for new articles
 
