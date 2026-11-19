@@ -35,3 +35,10 @@
   - YAML valid: 16 claims, 19 links (all internal).
   - Figures: EUR only, from the Italy and Lake Como guides. No Bali range. No home average ([[NEEDS]] in front matter).
   - Link map: new "Average wedding cost cluster" section added, covering the hub, the vs-home page, the cost-per-guest conflict and planned retro-links.
+- **Stage 3 fast (3 reviews):** DONE.
+  - **Accuracy 3.6:** one blocker, "in 2026" added to the per-guest figure. Majors: the 70 to 110 band, the scope of the average, "biggest lever", "most quoted figures", and unsourced legal lines.
+  - **SEO 3.3:** majors on meta length, SEO title length, no inline official source for the legal claim, and the H1 not being keyword-first. The Lake Como tier table repeats its spoke.
+  - **Reader (couple):** relevance 3, trust 3, clarity 4, would_enquire 3, decision "save". The euro-only figures lack AUD context, and the regions without figures read as padding.
+  - The merged request is in 04-reviews/v1/merged.md.
+- **Decision (default, change if you want):** the H1 becomes "Average Cost of a Destination Wedding by Region", to meet the user's keyword-first title rule. The SEO title is "Average Cost of a Destination Wedding for Australians" (53 characters, meeting the 50 to 60 meta range).
+- **Decision (default):** official Smartraveller facts are reused from earlier packs with their original dates (02-research-reused.json) so the legal and insurance claims carry inline sources. The secondary CTA stays /packages, as the user's brief asks.
