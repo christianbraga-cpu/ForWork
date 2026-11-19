@@ -236,6 +236,16 @@ No Malta destination page exists yet (open item MALTA-PAGE); link `/destinations
 | `/destination-weddings/wedding-destinations-january` | Wedding Destinations for January | wedding destinations january |
 | `/trending/best-destination-wedding-locations` | Best Destination Wedding Locations | best destination wedding locations |
 
+## Wedding vows and ceremony cluster (Firecrawl map, 19 Nov 2026)
+
+| URL | Title | Owns |
+|---|---|---|
+| `/expert-advice/traditional-wedding-vows` | Traditional Wedding Vows | traditional wedding vows |
+| `/expert-advice/wedding-vows-for-her` | Wedding Vows for Her | wedding vows for her |
+| `/expert-advice/wedding-vows-for-him` | Wedding Vows for Him | wedding vows for him |
+| `/expert-advice/humorous-wedding-ceremony-script` | Humorous Wedding Ceremony Script | humorous wedding ceremony script (partial overlap with funny vows: link, never an exact "funny wedding vows" anchor) |
+| `/expert-advice/simple-wedding-ceremony-script` | Simple Wedding Ceremony Script | simple wedding ceremony script |
+
 ## Bali cluster (Firecrawl map and Apify, 17 Nov 2026)
 
 | URL | Title | Owns |
