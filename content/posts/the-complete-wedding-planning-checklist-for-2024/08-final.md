@@ -235,7 +235,7 @@ The aim now is to step back. Every job that can be passed to someone else should
 - Pack passports, documents, insurance details and the rings in hand luggage.
 - Share the local contact details and on-the-ground plan with the wedding party.
 
-If you would rather hand the overseas confirmations to one person, a Wedded Advisor can plan the venue, travel and suppliers with you. [Ask Wedded Concierge](https://weddedwonderland.com/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=12-month-wedding-checklist&utm_content=secondary) how it would work for your dates.
+If you would rather hand the overseas confirmations to one person, [ask Wedded Concierge](https://weddedwonderland.com/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=12-month-wedding-checklist&utm_content=secondary) how it would work for your dates.
 
 ## The week of the wedding
 
