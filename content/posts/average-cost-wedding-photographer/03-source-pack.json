@@ -1,0 +1,254 @@
+{
+ "agent": "planner-sme",
+ "task_id": "photographer-cost-pc_a",
+ "stage": "03",
+ "status": "needs_input",
+ "round": 1,
+ "inputs_used": [
+  "content/posts/average-cost-wedding-photographer/00-input.json",
+  "content/posts/honeymoon-planner-cost/03-source-pack.json",
+  "content/posts/travel-advisor-benefits/03-source-pack.json",
+  "https://classic.austlii.edu.au/au/legis/cth/consol_act/ca1968133/s35.html",
+  "apify--web-fetch, one parallel read round, 19 November 2026, no retries: AustLII Copyright Act 1968 s35 (200); accc.gov.au/consumers/consumer-rights-and-guarantees/consumer-guarantees (404); accc.gov.au/consumers/buying-products-and-services/deposits (404); accc.gov.au/consumers/contracts-and-agreements/unfair-contract-terms (404); accc.gov.au/consumers/consumer-rights-and-guarantees/repair-replace-refund (404); moneysmart.gov.au/life-events-and-your-money/getting-married (404)",
+  "https://www.accc.gov.au/consumers/buying-products-and-services/consumer-rights-and-guarantees",
+  "https://www.accc.gov.au/consumers/problem-with-a-product-or-service-you-bought/repair-replace-refund-cancel"
+ ],
+ "self_qa": {
+  "checks": [
+   {
+    "check": "Every fact has a source and date",
+    "pass": true
+   },
+   {
+    "check": "No price without a source; all prices in needs_signoff",
+    "pass": true,
+    "note": "No amounts, figures or percentages recorded (user's choice)."
+   },
+   {
+    "check": "Every must-include covered or [[VERIFY]]",
+    "pass": true,
+    "note": "Copyright covered from the Act (AustLII). All four ACCC topics and the Moneysmart page returned 404 and are [[VERIFY]]."
+   },
+   {
+    "check": "No invented quotes, statistics or real weddings",
+    "pass": true
+   }
+  ],
+  "confidence": 0.6
+ },
+ "open_questions": [
+  {
+   "to": "orchestrator",
+   "question": "ACCC facts in honeymoon-planner-cost and travel-advisor-benefits come from the travel-delays-and-cancellations page (checked 15/16 November 2026, not 19 November) and are about travel services only. They were not reused: different date and they do not describe photography services. Do not repurpose them for photographer deposits or cancellations.",
+   "blocking": false
+  },
+  {
+   "to": "luxury-writer",
+   "question": "s35 is Australian law. Do not state whether it applies to a photographer engaged overseas or under a foreign-law contract; advise couples to ask and get usage rights in writing.",
+   "blocking": false
+  },
+  {
+   "to": "luxury-writer",
+   "question": "The ACCC repair page says a minor problem must be fixed 'for free'; do not use that word (house rule). Do not state how ACL applies to photographers engaged overseas beyond fact_206.",
+   "blocking": false
+  },
+  {
+   "to": "luxury-writer",
+   "question": "Writer note: link each legal or consumer claim at the claim. Copyright: quote s35(5), its proviso and s35(7) (fact_102 to 104) exactly, link the AustLII s35 page and https://www.legislation.gov.au/C1968A00063/latest/text, and say the default can be changed by agreement (s35(3), fact_101), so read the usage and copyright clause before signing. Consumer guarantees: facts 200 to 207, link the ACCC page at each claim. No legal advice; say 'ask for advice on your own contract'. Never say the Wedded Advisor confirms legal requirements. Deposits and unfair contract terms: not sourced, do not state rules; write 'ask how the deposit and cancellation terms work, in writing'. No figures, no 'free'.",
+   "blocking": false
+  }
+ ],
+ "assumptions": [
+  "Legal content is phrased 'as at November 2026'; the Wedded Advisor confirms current requirements. General information only, not legal advice.",
+  "AustLII is used as the reproduction of the Copyright Act 1968 (Cth), as in the short-wedding-vows pack (source_type other). legislation.gov.au was not read in this round.",
+  "No prices, figures, percentages or vendor names recorded, per orchestrator and user instruction.",
+  "ACCC deposit, unfair contract terms and Moneysmart pages not found at the batch's URLs; not used."
+ ],
+ "verify_items": [],
+ "tools_used": [
+  "mcp__Apify__apify--web-fetch",
+  "Bash",
+  "apify--web-search",
+  "apify--web-fetch"
+ ],
+ "next_agent": [
+  "luxury-writer"
+ ],
+ "payload": {
+  "facts": [
+   {
+    "fact_id": "fact_100",
+    "claim": "Copyright Act 1968 (Cth) s35(2), as reproduced on AustLII (read 19 November 2026): 'Subject to this section, the author of a literary, dramatic, musical or artistic work is the owner of any copyright subsisting in the work by virtue of this Part.'",
+    "source": "https://classic.austlii.edu.au/au/legis/cth/consol_act/ca1968133/s35.html",
+    "source_type": "other",
+    "checked": "2026-11-19",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_101",
+    "claim": "Copyright Act 1968 (Cth) s35(3), as reproduced on AustLII (read 19 November 2026): 'The operation of any of the next three succeeding subsections in relation to copyright in a particular work may be excluded or modified by agreement.' (This covers s35(4) to (6), including the commissioned-photograph rule in s35(5).)",
+    "source": "https://classic.austlii.edu.au/au/legis/cth/consol_act/ca1968133/s35.html",
+    "source_type": "other",
+    "checked": "2026-11-19",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_102",
+    "claim": "Copyright Act 1968 (Cth) s35(5), as reproduced on AustLII (read 19 November 2026): where 'a person makes, for valuable consideration, an agreement with another person for the taking of a photograph for a private or domestic purpose' (or the painting or drawing of a portrait or making of an engraving) and 'the work is made in pursuance of the agreement', 'the first-mentioned person is the owner of any copyright subsisting in the work by virtue of this Part'.",
+    "source": "https://classic.austlii.edu.au/au/legis/cth/consol_act/ca1968133/s35.html",
+    "source_type": "other",
+    "checked": "2026-11-19",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_103",
+    "claim": "Copyright Act 1968 (Cth) s35(5), continued (AustLII, read 19 November 2026): 'but, if at the time the agreement was made that person made known, expressly or by implication, to the author of the work the purpose for which the work was required, the author is entitled to restrain the doing, otherwise than for that purpose, of any act comprised in the copyright in the work.'",
+    "source": "https://classic.austlii.edu.au/au/legis/cth/consol_act/ca1968133/s35.html",
+    "source_type": "other",
+    "checked": "2026-11-19",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_104",
+    "claim": "Copyright Act 1968 (Cth) s35(7), as reproduced on AustLII (read 19 November 2026): '\"private or domestic purpose\" includes a portrait of family members, a wedding party or children.'",
+    "source": "https://classic.austlii.edu.au/au/legis/cth/consol_act/ca1968133/s35.html",
+    "source_type": "other",
+    "checked": "2026-11-19",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_200",
+    "claim": "ACCC, Consumer rights and guarantees (read 19 November 2026), Due care and skill: 'Service providers must carry out all services using an acceptable level of care and skill. Their work must be at least as good as what a competent service provider with average skills and experience would provide.'",
+    "source": "https://www.accc.gov.au/consumers/buying-products-and-services/consumer-rights-and-guarantees",
+    "source_type": "government",
+    "checked": "2026-11-19",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_201",
+    "claim": "ACCC, Consumer rights and guarantees: for services, 'Services provided, and any resulting products, must be fit for any stated purpose.' This applies when 'a consumer tells a service provider they want to use their service for a particular purpose'.",
+    "source": "https://www.accc.gov.au/consumers/buying-products-and-services/consumer-rights-and-guarantees",
+    "source_type": "government",
+    "checked": "2026-11-19",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_202",
+    "claim": "ACCC, Consumer rights and guarantees: 'Services must be supplied within a reasonable time, if there's no agreed time frame.'",
+    "source": "https://www.accc.gov.au/consumers/buying-products-and-services/consumer-rights-and-guarantees",
+    "source_type": "government",
+    "checked": "2026-11-19",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_203",
+    "claim": "ACCC, Consumer rights and guarantees: 'The basic rights covered by consumer guarantees can't be taken away by anything a business says or does.' Example given: a business can't take them away by 'saying they aren't responsible for problems with a product or service'.",
+    "source": "https://www.accc.gov.au/consumers/buying-products-and-services/consumer-rights-and-guarantees",
+    "source_type": "government",
+    "checked": "2026-11-19",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_204",
+    "claim": "ACCC, Repair, replace, refund, cancel (read 19 November 2026): 'When a service has a major problem, a consumer can choose to: cancel the contract and get a refund. This may not be a full refund, as the consumer needs to pay a reasonable amount for any work done so far and as expected, or keep the contract, but pay a lower price that takes the problem into account.'",
+    "source": "https://www.accc.gov.au/consumers/problem-with-a-product-or-service-you-bought/repair-replace-refund-cancel",
+    "source_type": "government",
+    "checked": "2026-11-19",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_205",
+    "claim": "ACCC, Repair, replace, refund, cancel: consumers are not entitled to a repair, replacement or refund under the consumer guarantees if 'they got what they asked for but simply changed their mind'. 'However, if a business has a change of mind policy, they must follow it.'",
+    "source": "https://www.accc.gov.au/consumers/problem-with-a-product-or-service-you-bought/repair-replace-refund-cancel",
+    "source_type": "government",
+    "checked": "2026-11-19",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_206",
+    "claim": "ACCC, Consumer rights and guarantees, Products from overseas businesses: 'When an overseas business sells products directly to consumers in Australia, the business must follow the Australian Consumer Law, including the consumer guarantees.' 'In practice it can be difficult to get a repair, replacement or refund from an overseas business if there's a problem with the product or service', and 'you should ask the consumer protection agency where the seller is based if it can help you.'",
+    "source": "https://www.accc.gov.au/consumers/buying-products-and-services/consumer-rights-and-guarantees",
+    "source_type": "government",
+    "checked": "2026-11-19",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_207",
+    "claim": "ACCC, Consumer rights and guarantees: 'We don't provide legal advice about what consumers are entitled to.'",
+    "source": "https://www.accc.gov.au/consumers/buying-products-and-services/consumer-rights-and-guarantees",
+    "source_type": "government",
+    "checked": "2026-11-19",
+    "is_price": false
+   }
+  ],
+  "insider_details": [
+   {
+    "detail": "Under Australian law a wedding is named as a private or domestic purpose, and the default rule gives copyright in commissioned photos to the person who paid for them, but the Act lets the contract change that. Read the usage and copyright clause before you sign, and ask for what you need (print, share, album, publication) in writing.",
+    "fact_ids": [
+     "fact_101",
+     "fact_102",
+     "fact_104"
+    ]
+   },
+   {
+    "detail": "Even where the couple owns the copyright, the photographer can restrain use beyond the purpose made known when the agreement was made, so if you might want images for something beyond the wedding itself, say so at booking and have it written into the agreement.",
+    "fact_ids": [
+     "fact_103"
+    ]
+   }
+  ],
+  "quotes": [],
+  "real_weddings": [],
+  "verify_items": [],
+  "needs_signoff": [],
+  "must_include_coverage": [
+   {
+    "item": "Copyright in commissioned wedding photographs (Copyright Act 1968 s35)",
+    "covered_by": [
+     "fact_100",
+     "fact_101",
+     "fact_102",
+     "fact_103",
+     "fact_104"
+    ]
+   },
+   {
+    "item": "ACCC consumer guarantees for services",
+    "covered_by": [
+     "[[VERIFY: ACCC consumer guarantees for services (acceptable care and skill, fit for purpose, reasonable time) as currently worded. ACCC consumer-guarantees URL returned 404 on 19 November 2026; nothing sourced. Do not state the guarantees until read.]]"
+    ]
+   },
+   {
+    "item": "ACCC deposits, prepayments and cancellations",
+    "covered_by": [
+     "[[VERIFY: ACCC position on deposits, prepayments and refunds when a business or the consumer cancels. ACCC deposits URL returned 404 on 19 November 2026; nothing sourced. Advise couples to read cancellation and deposit terms and get them in writing, without attributing a rule to the ACCC.]]"
+    ]
+   },
+   {
+    "item": "Written agreements and unfair contract terms (ACCC)",
+    "covered_by": [
+     "[[VERIFY: ACCC guidance on unfair contract terms in standard form consumer contracts. URL returned 404 on 19 November 2026; nothing sourced.]]"
+    ]
+   },
+   {
+    "item": "Moneysmart wedding budgeting (optional)",
+    "covered_by": [
+     "[[VERIFY: Moneysmart wedding budgeting guidance (for example getting quotes in writing). Moneysmart getting-married URL returned 404 on 19 November 2026; do not attribute any wedding advice to Moneysmart.]]"
+    ]
+   },
+   {
+    "item": "ACCC consumer guarantees, cancellations",
+    "status": "covered",
+    "covered_by": [
+     "fact_200",
+     "fact_201",
+     "fact_202",
+     "fact_203",
+     "fact_204",
+     "fact_205",
+     "fact_206"
+    ]
+   }
+  ]
+ }
+}
