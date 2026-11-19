@@ -1,0 +1,195 @@
+{
+  "agent": "visual-curator",
+  "task_id": "the-complete-wedding-planning-checklist-for-2024",
+  "stage": "04",
+  "status": "needs_input",
+  "round": 1,
+  "inputs_used": [
+    "CLAUDE.md",
+    "content/posts/the-complete-wedding-planning-checklist-for-2024/00-input.json",
+    "content-system/images/library-index.csv (header only, no rows)",
+    "content-system/schemas/04-images.schema.json",
+    "content/posts/wedding-processional-songs/04-images.json (format)"
+  ],
+  "self_qa": {
+    "checks": [
+      {
+        "check": "Zero reference-only or competitor images in slots",
+        "pass": true
+      },
+      {
+        "check": "Every approved image has verified location, licence, alt, caption, fit_reason",
+        "pass": true,
+        "note": "No approved images; all 5 slots needed."
+      },
+      {
+        "check": "No AI image of a real wedding, person or place",
+        "pass": true,
+        "note": "AI offered only for hero and final-month still lifes, not generated, pending Nic's approval, labelled 'Illustrative image'."
+      },
+      {
+        "check": "Old-page images not reused without confirmed licence",
+        "pass": true,
+        "note": "Not reviewed in fast mode; excluded until licence confirmed."
+      },
+      {
+        "check": "Featured image exists (approved or needed with brief)",
+        "pass": true,
+        "note": "Needed with brief."
+      },
+      {
+        "check": "Placements match final H2 numbering",
+        "pass": false,
+        "note": "02-seo.json not available; after_h2 assumes 1 = 12 months, 3 = 6 months, 5 = final month, 6 = week of."
+      }
+    ],
+    "confidence": 0.6
+  },
+  "open_questions": [
+    {
+      "to": "Nic",
+      "question": "Confirm licence and consent for the old /the-complete-wedding-planning-checklist-for-2024 page images before any reuse? Default: not reused.",
+      "blocking": false
+    },
+    {
+      "to": "Nic",
+      "question": "Source licensed photos for 5 slots (client weddings with signed consent, partner venues, stationers, licensed stock with releases)? Repo register has no rows.",
+      "blocking": true
+    },
+    {
+      "to": "Nic",
+      "question": "Approve or decline an AI illustrative planning still life (notebook, calendar, swatches; no people, place or brand) for the hero and final-month slots, captioned 'Illustrative image'?",
+      "blocking": false
+    },
+    {
+      "to": "seo-researcher",
+      "question": "Confirm H2 numbering once the outline exists and remap after_h2 placements.",
+      "blocking": false
+    }
+  ],
+  "assumptions": [
+    "Repo register only (per brief); Google Drive, own site, Canva, press kits and Google Lens not run in fast mode.",
+    "No venue in scope, so no permission emails drafted."
+  ],
+  "verify_items": [
+    "[[IMAGE NEEDED]] featured: planning still life (notebook, calendar, swatches)",
+    "[[IMAGE NEEDED]] 12-months: venue site visit, consented couple, venue permission",
+    "[[IMAGE NEEDED]] 6-months: invitation suite or attire fitting detail",
+    "[[IMAGE NEEDED]] final-month: run sheet and confirmations still life",
+    "[[IMAGE NEEDED]] week-of: venue setup the day before, venue permission",
+    "[[VERIFY licence]] old-page images: licence scope and consent",
+    "[[VERIFY licence]] every sourced photo: credit, scope, model and property releases",
+    "[[VERIFY: any AI illustrative still life approved by Nic before generation]]"
+  ],
+  "next_agent": [
+    "luxury-writer"
+  ],
+  "payload": {
+    "slots": [
+      {
+        "slot_id": "featured",
+        "placement": "featured",
+        "purpose": "Hero: the calm, organised start to a year of planning.",
+        "shot_brief": "Planning still life, top-down: linen-bound planner or notebook open to a month-by-month list, printed calendar, fabric and paper swatches, fountain pen, soft natural window light, neutral luxury palette. No people, no identifiable place or brand. Prefer a licensed photo; AI only if Nic approves, captioned 'Illustrative image'.",
+        "status": "needed",
+        "file": "content/posts/the-complete-wedding-planning-checklist-for-2024/images/12-month-wedding-checklist-planner-still-life-hero.webp",
+        "source": {
+          "type": "library",
+          "origin": "[[IMAGE NEEDED]] library-index.csv has header only, no rows; old-page images reused only if licence confirmed",
+          "credit": "[[VERIFY licence]]"
+        },
+        "alt": "Open wedding planner with a monthly checklist, calendar and fabric swatches on a linen table",
+        "caption": "Photo: [[VERIFY credit]] (or 'Illustrative image' if an approved AI still life)",
+        "lens_check": "Not run: no candidate image."
+      },
+      {
+        "slot_id": "12-months",
+        "placement": "after_h2:1",
+        "purpose": "Show the 12 months out task that sets everything else: choosing the venue.",
+        "shot_brief": "Real, licensed photo of a couple (or Wedded Concierge with a couple) walking a destination venue's ceremony lawn or terrace on a site visit, daylight, venue named from source. Consenting people; venue permission. Never AI.",
+        "status": "needed",
+        "file": "content/posts/the-complete-wedding-planning-checklist-for-2024/images/12-month-wedding-checklist-venue-site-visit.webp",
+        "source": {
+          "type": "library",
+          "origin": "[[IMAGE NEEDED]] library-index.csv has header only, no rows; old-page images reused only if licence confirmed",
+          "credit": "[[VERIFY licence]]"
+        },
+        "consent": {
+          "couple": "required, signed",
+          "venue": "required"
+        },
+        "alt": "Couple walking a hillside venue terrace on a site visit before booking",
+        "caption": "<Venue>, <town>. Photo: [[VERIFY credit]]",
+        "lens_check": "Not run: no candidate image.",
+        "location": {
+          "venue": "[[VERIFY: venue]]",
+          "town": "[[VERIFY: town]]",
+          "verified_by": "[[VERIFY: register, EXIF GPS or source page]]"
+        }
+      },
+      {
+        "slot_id": "6-months",
+        "placement": "after_h2:3",
+        "purpose": "Mark the six months out milestones: invitations and attire.",
+        "shot_brief": "Real, licensed flat lay of a letterpress invitation suite with envelope liner and wax seal, or a bridal gown fitting detail (hands, fabric, no face needed). Stationer or designer credited and permission held. No competitor or search-result images.",
+        "status": "needed",
+        "file": "content/posts/the-complete-wedding-planning-checklist-for-2024/images/12-month-wedding-checklist-invitation-suite.webp",
+        "source": {
+          "type": "library",
+          "origin": "[[IMAGE NEEDED]] library-index.csv has header only, no rows; old-page images reused only if licence confirmed",
+          "credit": "[[VERIFY licence]]"
+        },
+        "consent": {
+          "stationer_or_designer": "required",
+          "person": "required if identifiable"
+        },
+        "alt": "Letterpress wedding invitation suite with wax seal and envelope on linen",
+        "caption": "Photo: [[VERIFY credit]]",
+        "lens_check": "Not run: no candidate image."
+      },
+      {
+        "slot_id": "final-month",
+        "placement": "after_h2:5",
+        "purpose": "Show the final month confirmations: supplier calls, run sheet, seating.",
+        "shot_brief": "Real, licensed photo of a run sheet, seating plan or supplier confirmation list on a desk with a phone and pen, soft light, no readable personal data. Licensed photo preferred; an AI still life only if Nic approves, labelled 'Illustrative image'.",
+        "status": "needed",
+        "file": "content/posts/the-complete-wedding-planning-checklist-for-2024/images/12-month-wedding-checklist-final-month-run-sheet.webp",
+        "source": {
+          "type": "library",
+          "origin": "[[IMAGE NEEDED]] library-index.csv has header only, no rows; old-page images reused only if licence confirmed",
+          "credit": "[[VERIFY licence]]"
+        },
+        "alt": "Wedding run sheet and seating plan on a desk beside a phone and pen",
+        "caption": "Photo: [[VERIFY credit]] (or 'Illustrative image' if approved AI)",
+        "lens_check": "Not run: no candidate image."
+      },
+      {
+        "slot_id": "week-of",
+        "placement": "after_h2:6",
+        "purpose": "Capture the week of: setup and arrival at the destination.",
+        "shot_brief": "Real, licensed photo of the reception or ceremony being set up the day before (florals, long table, candles) at a named destination venue, late afternoon light, staff unidentifiable or consenting. Venue permission. Never AI.",
+        "status": "needed",
+        "file": "content/posts/the-complete-wedding-planning-checklist-for-2024/images/12-month-wedding-checklist-week-of-venue-setup.webp",
+        "source": {
+          "type": "library",
+          "origin": "[[IMAGE NEEDED]] library-index.csv has header only, no rows; old-page images reused only if licence confirmed",
+          "credit": "[[VERIFY licence]]"
+        },
+        "consent": {
+          "venue": "required",
+          "staff": "required if identifiable"
+        },
+        "alt": "Long reception table being dressed with florals and candles the day before a wedding",
+        "caption": "<Venue>, <town>. Photo: [[VERIFY credit]]",
+        "lens_check": "Not run: no candidate image.",
+        "location": {
+          "venue": "[[VERIFY: venue]]",
+          "town": "[[VERIFY: town]]",
+          "verified_by": "[[VERIFY: register, EXIF GPS or source page]]"
+        }
+      }
+    ],
+    "reference_only": [],
+    "permission_requests": []
+  }
+}
