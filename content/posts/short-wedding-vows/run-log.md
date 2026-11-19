@@ -5,3 +5,4 @@
 02:52 Worker restart; resumed. Orchestrator read Marriage Act ss45 and 46 on AustLII (legislation.gov.au loaded TOC only): fact_100-103. Merged pack.
 02:55 05 first draft done (~2,535 words, 20 original vows, template, 0 VERIFY).
 02:59 06 editor pass_with_edits (4.29), 14/14 applied to 05-draft-r2.md; 07 five readers done.
+03:05 07b panel revise (enquiry 1.2 vs 3.8, deferred business asks), 13/13 edits applied to 08-final.md; legal section moved below examples.
