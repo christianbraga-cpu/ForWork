@@ -3,3 +3,4 @@
 23:29 04 images done: 4 placeholder slots.
 23:30 03 batch sc_a: FSANZ allergens (fact_100-103), Queensland Government accessible events guide (fact_104-105). Merged, verify cleared, writer note.
 23:34 02 SEO done: head cluster US 50 / AU 10 (grouped, not additive; input note's ~200 overstates); how-to seating chart URL lands on /expert-advice/wedding-seating-chart (one page, confirm 301).
+23:37 05 first draft done (~2,180 words, 0 VERIFY).
