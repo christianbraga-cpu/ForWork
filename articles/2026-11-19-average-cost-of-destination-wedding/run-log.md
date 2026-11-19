@@ -63,3 +63,7 @@
 6. AGENZIA-VAT, CSTUDI-PRIMARY, CONCIERGE-PAY, LINK-CHECK, AUTHOR, IMAGE-RIGHTS, CMS-URL.
 
 No publish-order dependency.
+
+## Late research and v3
+- **Research:** COMPLETE at 23:30 (24 facts). No authoritative Australian home average (Moneysmart and ABS give none; our 2017 survey is not independent). New own-page figures: Amalfi, Santorini, Maldives, Fiji, planner fee models. Zoho: WW-322 planned ("Destination Wedding Cost per Guest Explained"); WW-335 is the live vs-home page, already linked; N-107 not found. abs.gov.au and moneysmart.gov.au added to domains.md.
+- **Decision (default):** v3 adds Amalfi, Santorini, Maldives and Fiji (original currencies, our own pages, Nic sign-off), the planner fee models and the Smartraveller medical-cost line, and optionally the ABS marriages fact. Not used: Thailand (old, low confidence), the all-inclusive page's Knot and DestinationWeddings.com figures (blocked source chain), the Mexico micro figure, the 2017 survey.
