@@ -43,3 +43,23 @@
 - **Decision (default, change if you want):** the H1 becomes "Average Cost of a Destination Wedding by Region", to meet the user's keyword-first title rule. The SEO title is "Average Cost of a Destination Wedding for Australians" (53 characters, meeting the 50 to 60 meta range).
 - **Decision (default):** official Smartraveller facts are reused from earlier packs with their original dates (02-research-reused.json) so the legal and insurance claims carry inline sources. The secondary CTA stays /packages, as the user's brief asks.
 - **Stage 4 fast (writer v2):** DONE. 03-draft-v2.md. --check: 2,260 reader words, 0 dashes, 0 placeholders, 1 official domain (Smartraveller, inline at the claim), none blocked. YAML valid; 18 claims, 22 links. All 24 merged items applied. H1 is now keyword-first; SEO title is 53 characters; Lake Como tiers cut to one sentence; regions without figures merged; AUD guidance added with no conversion.
+- **Stage 6 fast (copy editor):** DONE.
+  - final.md: 2,260 reader words, 0 dashes (checked with Unicode code points; an earlier grep matched the bytes of € by mistake), 0 placeholders, Smartraveller inline at the claim.
+  - publish-package.json: valid; 22 links, 12 open items.
+  - chrome-upload-prompt.md: draft only.
+  - article.docx: built.
+  - Link-map DRAFT row added.
+  - Research agent: still held on an MCP permission prompt; 10 facts saved. Late facts (home average, Zoho titles) can go into an optional v3.
+
+## Must-fix before publish
+1. NIC-SIGNOFF: every EUR figure (7 groups) from our Italy and Lake Como guides.
+2. HOME-AVERAGE: no authoritative Australian average wedding cost was sourced, so the article compares cost categories.
+3. SITE-CONFLICTS:
+   - Bali cost guide (USD 38,000 to 84,000) vs the Bali hub (AUD 5,000 to 50,000+).
+   - /expert-advice/wedding-cost-per-guest quotes A$38,252, likely from Easy Weddings (blocked).
+   - Earlier items still open.
+4. CMS-TITLE: H1 changed from "Average Destination Wedding Cost by Region" to keyword-first. Revert if the user prefers.
+5. RETRO-LINKS: WW-322, WW-335, N-107 (titles not retrieved).
+6. AGENZIA-VAT, CSTUDI-PRIMARY, CONCIERGE-PAY, LINK-CHECK, AUTHOR, IMAGE-RIGHTS, CMS-URL.
+
+No publish-order dependency.
