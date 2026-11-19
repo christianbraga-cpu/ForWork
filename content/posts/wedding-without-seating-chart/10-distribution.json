@@ -1,0 +1,158 @@
+{
+ "agent": "distribution-lead",
+ "task_id": "wedding-without-seating-chart",
+ "stage": "10",
+ "status": "complete",
+ "round": 1,
+ "inputs_used": [
+  "CLAUDE.md",
+  "content-system/brand/voice-guide.md",
+  "content-system/brand/banned-phrases.md",
+  "content-system/schemas/10-distribution.schema.json",
+  "content/posts/average-cost-wedding-photographer/10-distribution.json (format model)",
+  "content/posts/wedding-without-seating-chart/08-final.md (copy and image slot markers)",
+  "content/posts/wedding-without-seating-chart/04-images.json",
+  "content/posts/wedding-without-seating-chart/02-seo.json",
+  "content/posts/wedding-without-seating-chart/00-input.json (post URL, no-figures instruction)"
+ ],
+ "self_qa": {
+  "checks": [
+   {
+    "check": "3 pins tied to image slots in 04-images.json / 08-final.md",
+    "pass": true,
+    "note": "featured, reserved-family-table, destination-welcome-dinner (all real licensed photo, never-AI slots); cocktail-reception held back; no images sourced yet"
+   },
+   {
+    "check": "Pin titles <= 100, descriptions <= 500",
+    "pass": true,
+    "note": "75/435, 63/373, 77/462"
+   },
+   {
+    "check": "UTM per channel: pinterest/social, instagram via bio link, newsletter/email; utm_campaign=wedding-without-seating-chart; base URL https://weddedwonderland.com/expert-advice/wedding-without-seating-chart",
+    "pass": true
+   },
+   {
+    "check": "8-slide carousel, hook first, Wedded Advisor conversation last",
+    "pass": true
+   },
+   {
+    "check": "Caption <= 2,200 chars, 5 to 10 hashtags",
+    "pass": true,
+    "note": "1574 chars, 8 hashtags"
+   },
+   {
+    "check": "Newsletter subject <= 60, preview <= 110, blurb 60 to 100 words",
+    "pass": true,
+    "note": "43/106/74 words"
+   },
+   {
+    "check": "Advice only: no digits, figures, rules of thumb or statistics in any social copy",
+    "pass": true,
+    "note": "scripted digit check over all copy (URLs and hashtags excluded, neither contains a figure); 'set more seats than guests' given without any ratio, as in 08-final.md"
+   },
+   {
+    "check": "Allergen point only as the article states it: in Australia, food businesses must be able to provide allergen information; give your caterer the list early. Marked general information, not legal advice. Appears in the Instagram caption only",
+    "pass": true
+   },
+   {
+    "check": "Only facts in 08-final.md; no [[VERIFY]]; no 'best', 'free', 'last dance', 'perfect', 'budget', vendor or competitor names",
+    "pass": true,
+    "note": "scripted string check"
+   },
+   {
+    "check": "Australian English, no em or en dashes, no banned phrases",
+    "pass": true
+   }
+  ],
+  "confidence": 0.85
+ },
+ "open_questions": [
+  {
+   "to": "orchestrator",
+   "question": "Images for featured, reserved-family-table and destination-welcome-dinner (and any carousel backgrounds) are not yet sourced; 04-images.json lists all four slots as [[IMAGE NEEDED]]. Each needs a licence covering social use and signed consent from couple, family and identifiable guests. The destination-welcome-dinner location must be verified before the pin runs. Never AI for a real wedding, person or place.",
+   "blocking": true
+  },
+  {
+   "to": "orchestrator",
+   "question": "09-cro.json was not present at run time; social CTAs invite a conversation with a Wedded Advisor, consistent with the Wedded Concierge CTAs in 08-final.md. Re-check once CRO output exists.",
+   "blocking": false
+  },
+  {
+   "to": "orchestrator",
+   "question": "Confirm Pinterest board names (Wedding Planning, Wedding Reception Ideas, Destination Weddings) match existing boards; 'Wedding Reception Ideas' may need creating.",
+   "blocking": false
+  },
+  {
+   "to": "orchestrator",
+   "question": "Instagram bio link should be https://weddedwonderland.com/expert-advice/wedding-without-seating-chart?utm_source=instagram&utm_medium=social&utm_campaign=wedding-without-seating-chart&utm_content=bio-link while the carousel runs.",
+   "blocking": false
+  }
+ ],
+ "tools_used": [
+  "Bash"
+ ],
+ "next_agent": [
+  "cms-publisher"
+ ],
+ "payload": {
+  "pinterest": [
+   {
+    "title": "Wedding Without a Seating Chart: When Open Seating Works and How to Plan It",
+    "description": "A wedding without a seating chart can feel relaxed and generous, or leave older guests hovering with a plate. The difference is the meal service, the room and how well your guests know each other. Open seating suits cocktail receptions, shared or station dinners, one long table and welcome drinks. Our guide explains when to skip the chart, when to keep a light plan, and how to make open seating feel considered. Read the full guide.",
+    "image_slot": "featured",
+    "board": "Wedding Planning",
+    "link": "https://weddedwonderland.com/expert-advice/wedding-without-seating-chart?utm_source=pinterest&utm_medium=social&utm_campaign=wedding-without-seating-chart&utm_content=pin-overview"
+   },
+   {
+    "title": "Open Seating at a Wedding: Reserve Tables for Family and Elders",
+    "description": "Open seating doesn't have to be all or nothing. Reserve a table or two for parents, grandparents and the wedding party, or assign tables rather than seats, and let everyone else sit where they like. Set more seats than guests, mark reserved tables with warm, neutral wording, tell guests on your wedding website and brief your MC and venue coordinator. Read the full guide.",
+    "image_slot": "reserved-family-table",
+    "board": "Wedding Reception Ideas",
+    "link": "https://weddedwonderland.com/expert-advice/wedding-without-seating-chart?utm_source=pinterest&utm_medium=social&utm_campaign=wedding-without-seating-chart&utm_content=pin-reserved-tables"
+   },
+   {
+    "title": "Seating at a Destination Wedding: Open Welcome Dinner, Planned Wedding Dinner",
+    "description": "A wedding abroad can stretch across several days, so mix your seating. Let the welcome dinner be open, with long shared tables where guests from different cities meet. Keep a light plan for the wedding dinner: reserved tables for family, assigned tables for everyone else. Before you decide, ask the venue whether the kitchen needs table numbers for plated service, how special meals reach the right guest and which layouts suit the terrace. Read the full guide.",
+    "image_slot": "destination-welcome-dinner",
+    "board": "Destination Weddings",
+    "link": "https://weddedwonderland.com/expert-advice/wedding-without-seating-chart?utm_source=pinterest&utm_medium=social&utm_campaign=wedding-without-seating-chart&utm_content=pin-destination"
+   }
+  ],
+  "instagram_carousel": {
+   "slides": [
+    "Thinking about a wedding without a seating chart? Here is how to tell if open seating suits your wedding.",
+    "No rule says a wedding needs a seating chart. The decision rests on how dinner is served, the shape of the room and how well your guests know each other.",
+    "Open seating suits cocktail receptions, shared or station dinners, one long table, and welcome drinks or after parties.",
+    "It struggles with plated meals chosen in advance, guests with allergies, older or less mobile guests, blended families and guests who only know the two of you.",
+    "The middle ground: assign tables, not seats. Or reserve a table or two for family, elders and the wedding party, and leave the rest open.",
+    "On the day: set more seats than guests, tell guests before the day, mark reserved tables clearly and give your caterer a plan for dietary meals.",
+    "At a destination wedding, let the welcome dinner be open and keep a light plan for the wedding dinner. By then, fewer guests are strangers.",
+    "Planning a wedding abroad? Message us to talk it through with a Wedded Advisor. Link in bio."
+   ],
+   "caption": "The seating chart can become the job that never quite ends. No wonder a wedding where guests simply sit where they like sounds so appealing.\n\nIt can work beautifully. It can also leave an elderly aunt hovering with a plate while younger guests claim the good tables. Our new guide explains how to tell which wedding you are planning, and how to make open seating feel considered.\n\nAsk yourself:\n- Will guests be served a plated meal at a set time?\n- Is the guest list made up of groups who don't know each other?\n- Do some family members need to be seated with care?\nIf every answer is no, let guests sit where they like. If any answer is yes, a light plan or a full one will make the evening easier.\n\nIf you go open:\n- Reserve tables for parents, grandparents and the wedding party, with clear access for older or less mobile guests.\n- Set more seats than guests, and ask your venue where the spare places and extra chairs will be.\n- Say it on your wedding website and a welcome sign, and ask your MC to repeat it.\n- Collect dietary needs and allergies with your RSVPs. In Australia, food businesses must be able to provide allergen information, so give your caterer the list early and agree how special meals will reach the right guest. This is general information, not legal advice.\n\nIn some families and cultures, where you place a parent, grandparent or elder is a sign of respect. If that is true for yours, reserve their table and tell them ahead of time.\n\nPlanning a wedding abroad? Message us to talk it through with a Wedded Advisor. Full guide at the link in bio.",
+   "hashtags": [
+    "#weddingplanning",
+    "#weddingreception",
+    "#weddingseating",
+    "#destinationwedding",
+    "#weddingadvice",
+    "#australianwedding",
+    "#luxurywedding",
+    "#weddedwonderland"
+   ]
+  },
+  "newsletter": {
+   "subject": "Do you really need a wedding seating chart?",
+   "preview": "When open seating works, when it backfires and how to look after family, elders and guests with allergies.",
+   "blurb": "Thinking of letting guests sit where they like? Our new guide explains when a wedding without a seating chart works, from cocktail receptions to long feasting tables, and when it backfires, with plated dinners, blended families and guests who need extra care. You will find the middle ground between a full chart and open seating, how to make it work on the day, and how to mix seating formats across a destination wedding weekend.",
+   "link": "https://weddedwonderland.com/expert-advice/wedding-without-seating-chart?utm_source=newsletter&utm_medium=email&utm_campaign=wedding-without-seating-chart&utm_content=newsletter"
+  }
+ },
+ "assumptions": [
+  "Post URL taken from 00-input.json and the task brief: /expert-advice/wedding-without-seating-chart.",
+  "Pin 1 title uses the keyword with natural grammar ('Wedding Without a Seating Chart').",
+  "Allergen and accessibility points kept to what 08-final.md states; Queensland Government accessibility guidance paraphrased as 'clear access' only, not quoted.",
+  "Fast mode: copy checked against 08-final.md only; no new sources. 08-final.md not edited."
+ ],
+ "verify_items": []
+}

@@ -1,0 +1,116 @@
+{
+  "agent": "cro-specialist",
+  "task_id": "wedding-without-seating-chart",
+  "stage": "09",
+  "status": "complete",
+  "round": 1,
+  "inputs_used": [
+    "CLAUDE.md",
+    "content/posts/wedding-without-seating-chart/01-brief.json (journey_stage)",
+    "content/posts/wedding-without-seating-chart/07-panel.json (weighted_enquiry_likelihood, must_fix CTA items, conflicts_resolved, deferred, not_added)",
+    "content/posts/wedding-without-seating-chart/08-final.md",
+    "content-system/brand/brand-facts.md (lines 19 to 30)",
+    "content-system/seo/link-map.csv (/wonderland-concierge, /magazine)",
+    "content-system/schemas/09-cro.schema.json",
+    "content/posts/average-cost-wedding-photographer/09-cro.json (format model)"
+  ],
+  "self_qa": {
+    "checks": [
+      {
+        "check": "Primary CTA 6 words or fewer, no 'click here', no exclamation mark",
+        "pass": true,
+        "note": "Anchor 'Wedded Concierge' (2 words), line 163."
+      },
+      {
+        "check": "utm_content primary, secondary, closing, magnet each appear exactly once",
+        "pass": true,
+        "note": "Checked by grep on 08-final.md: secondary line 135, primary line 163, closing line 189, magnet line 189."
+      },
+      {
+        "check": "UTMs only on /wonderland-concierge (3) and /magazine (1)",
+        "pass": true,
+        "note": "Both targets exist in link-map.csv (rows 656 and 307). No new positions or UTMs added."
+      },
+      {
+        "check": "/wonderland-concierge anchors name Wedded Concierge",
+        "pass": true,
+        "note": "Lines 135, 163 and 189 all use the anchor 'Wedded Concierge'."
+      },
+      {
+        "check": "CTA subtexts use only brand-facts lines 19 to 30",
+        "pass": true,
+        "note": "Inclusions confirmed in writing (line 28), time zone (line 26, AUD wording not used), venue, travel and vendors anywhere in the world (line 30, 'payments' dropped). Lines 19 to 21, 27 and 29 (money and guest-room wording) not used."
+      },
+      {
+        "check": "CTA copy clear of every term on the task's banned list (money terms, booking-status claims, guest-room perks, superlatives, em dashes); 08-final.md not edited",
+        "pass": true,
+        "note": "Checked on this file by grep. 08-final.md was read only and has no em dashes. In 08-final.md, the only money wording near a CTA is the line 189 lead-in (see open_questions)."
+      }
+    ],
+    "confidence": 0.85
+  },
+  "open_questions": [
+    {
+      "to": "orchestrator",
+      "blocking": false,
+      "question": "08-final.md contains no <!-- CTA: primary --> marker; placements document the existing inline links."
+    },
+    {
+      "to": "orchestrator",
+      "blocking": false,
+      "question": "The closing paragraph (line 189) states the Advisor quotes in AUD and agrees the charge in writing before any work begins. It matches brand-facts lines 26 and 27 and the panel kept it, but the panel deferred the basis and amount of that charge and the sceptic reads any mention of it as an unanswered question at the close. No copy change made here; the editor may prefer the line 28 wording if money wording should stay out of CTA copy."
+    },
+    {
+      "to": "orchestrator",
+      "blocking": false,
+      "question": "Panel weighted enquiry likelihood is 1.6; readers' main asks (basis of the Advisor's charge, supplier mark-ups, whether the Advisor builds the seating plan or briefs the venue, MC and kitchen, who is on site on the night, whether couples living outside Australia are served) are deferred and cannot be answered from brand facts. CTA placement cannot close that gap; record the shortfall in the run report."
+    }
+  ],
+  "assumptions": [
+    "Copy uses relative links; recorded here with the weddedwonderland.com domain for tracking.",
+    "Subtexts are reporting notes for the CTAs as they stand; no copy changes are proposed.",
+    "The panel's secondary_bridge and concierge_body CTA edits are already applied in 08-final.md (lines 135 and 163)."
+  ],
+  "verify_items": [],
+  "tools_used": [
+    "Bash (grep, sed, python3 -I)"
+  ],
+  "payload": {
+    "journey_stage": "planning",
+    "primary_cta": {
+      "text": "Wedded Concierge",
+      "subtext": "Your Wedded Advisor confirms inclusions in writing before you commit.",
+      "link": "https://weddedwonderland.com/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=wedding-without-seating-chart&utm_content=primary",
+      "placement": "Existing inline link on line 163, closing the 'Open seating at a destination wedding across several days' section, straight after the venue questions and the planning abroad guide link, where the reader has just seen how many parties a weekend abroad involves. The panel kept the single Advisor claim line here. Unchanged."
+    },
+    "secondary_cta": {
+      "text": "Wedded Concierge",
+      "subtext": "Your Wedded Advisor works in your time zone.",
+      "link": "https://weddedwonderland.com/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=wedding-without-seating-chart&utm_content=secondary",
+      "placement": "Existing line 135, end of 'Give your caterer a plan for dietary meals', after the bridging sentence 'That is a lot of briefing to manage from another time zone', for the couple organising from overseas. The panel kept this position (planner_couple: 'well placed, not pushy') with the bridge already applied. Unchanged."
+    },
+    "lead_magnet": {
+      "name": "Wedded Wonderland magazine",
+      "link": "https://weddedwonderland.com/magazine?utm_source=blog&utm_medium=content&utm_campaign=wedding-without-seating-chart&utm_content=magnet",
+      "placement": "Existing closing paragraph line 189 (anchor 'Wedded Wonderland magazine'), for readers still gathering planning ideas. Unchanged.",
+      "exists": true
+    },
+    "closing_cta": {
+      "text": "Wedded Concierge",
+      "subtext": "Your Wedded Advisor plans the venue, travel and vendors, anywhere in the world.",
+      "link": "https://weddedwonderland.com/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=wedding-without-seating-chart&utm_content=closing",
+      "placement": "Existing closing paragraph line 189, under 'Planning the rest of the weekend', 'Start a conversation through Wedded Concierge', directly before the magazine link. Unchanged."
+    },
+    "tracking": [
+      "https://weddedwonderland.com/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=wedding-without-seating-chart&utm_content=primary",
+      "https://weddedwonderland.com/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=wedding-without-seating-chart&utm_content=secondary",
+      "https://weddedwonderland.com/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=wedding-without-seating-chart&utm_content=closing",
+      "https://weddedwonderland.com/magazine?utm_source=blog&utm_medium=content&utm_campaign=wedding-without-seating-chart&utm_content=magnet"
+    ],
+    "copy_changes": [],
+    "rationale": "Brief journey_stage is 'planning'. The commercial question peaks twice: after the day-of briefing work (venue coordinator, MC, caterer), when a couple planning from overseas sees how much there is to manage from another time zone (secondary), and at the end of the destination weekend section, after the venue questions (primary). The closing CTA ends the post and the magazine serves readers still collecting ideas. Per the panel, accountability rests on inclusions confirmed in writing, so the primary subtext uses that line; the secondary subtext echoes the time zone bridge; the closing subtext uses 'anywhere in the world' to answer the search_visitor and uhnw concern that the page excluded readers outside Australia, without claiming who is served. Subtexts use only brand-facts lines 26, 28 and 30. All money, rate, currency, payment and booking-status wording is left out, matching the panel's deferred list. A printable open seating checklist (reserved tables, spare seats, signage, dietary plan, venue questions) would be a better-matched magnet; none is known to exist, so it is a backlog suggestion only and not placed. Wonderland Studio (seating chart, RSVP) is a natural fit for this topic but no page for it was confirmed, so it is not placed."
+  },
+  "next_agent": [
+    "distribution"
+  ]
+}
