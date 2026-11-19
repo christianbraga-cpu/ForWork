@@ -312,6 +312,15 @@ Hub: `/style-advice/celebrity-engagement-rings` (in production). Spokes:
 | `/inside-zo-kravitzs-500k-engagement-ring-from-harry-styles` | Inside Zoe Kravitz's Engagement Ring | (single-ring spoke) |
 | `/trending/post-malone-engagement-ring-for-christy-lee-is-officially-20-plus-carats` | Inside Post Malone's Engagement Ring | (single-ring spoke) |
 
+## Average wedding cost cluster (Firecrawl map, 19 Nov 2026)
+| URL | Title | Keyword it appears to own |
+|---|---|---|
+| `/expert-advice/how-much-does-the-average-wedding-cost` | How much does the average wedding cost | average wedding cost (cluster hub) |
+| `/destination-weddings/destination-wedding-vs-home-cost` | Destination wedding vs home cost | destination wedding vs home cost (owns the side-by-side comparison; its snippet leads with US figures) |
+| `/expert-advice/wedding-cost-per-guest` | Wedding cost per guest | wedding cost per guest (SITE-CONFLICTS: quotes A$38,252, likely from Easy Weddings, a blocked source; do not link or quote until fixed) |
+
+Planned (not live, retro-links after publish): WW-322, WW-335, N-107.
+
 ## Do not link from blogs
 
 | URL | Reason |

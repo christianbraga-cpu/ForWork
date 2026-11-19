@@ -30,3 +30,8 @@
   - /expert-advice/wedding-cost-per-guest quotes A$38,252, likely from Easy Weddings, a blocked source. Added to SITE-CONFLICTS for the user; this article will not quote it.
 - **Stage 1 fast (research):** PARTIAL. The research agent was held on an MCP permission prompt; 10 facts were saved by 22:56 (our Italy, Lake Como and Bali guides). No home average yet.
 - **Decision (default):** the writer started at 23:12 on the saved facts. Late facts, such as a home average or the Zoho titles, go into v2. Neither Bali range is quoted (F-08 USD vs F-09 AUD, SITE-CONFLICTS).
+- **Stage 2 fast (writer):** DONE. 03-draft-v1.md.
+  - --check: 2,228 reader words, 0 dashes, 0 placeholders, 0 external domains.
+  - YAML valid: 16 claims, 19 links (all internal).
+  - Figures: EUR only, from the Italy and Lake Como guides. No Bali range. No home average ([[NEEDS]] in front matter).
+  - Link map: new "Average wedding cost cluster" section added, covering the hub, the vs-home page, the cost-per-guest conflict and planned retro-links.
