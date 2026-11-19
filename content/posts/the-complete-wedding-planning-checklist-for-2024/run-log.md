@@ -6,3 +6,4 @@
 00:41 05 first draft done (~3,080 words, 10 months with core and destination tracks, 0 VERIFY).
 00:42 07 five readers done (enquire 1 to 3).
 00:43 06 editor 4.29 pass_with_edits, 6 edits applied (research talk, passport timing, Studio to a plain link, 3 markers corrected).
+00:44 07b panel revise (enquire 1.9), 6 must-fix.
