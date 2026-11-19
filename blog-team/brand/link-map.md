@@ -261,6 +261,11 @@ No Malta destination page exists yet (open item MALTA-PAGE); link `/destinations
 | `/celebration-ideas/anniversary-trip-ideas` | Anniversary Trip Ideas | anniversary trip ideas (partial overlap with anniversary trip packages: link, never an exact "anniversary trip ideas" anchor from a packages page) |
 | `/celebration-ideas/how-do-you-mark-a-big-anniversary` | How Do You Mark a Big Anniversary | big anniversary ideas |
 | `/expert-advice/where-do-you-hold-an-anniversary-party` | Where Do You Hold an Anniversary Party | anniversary party venue |
+| `/celebration-ideas/wedding-anniversary-gifts` | Wedding Anniversary Gifts (cluster head for "wedding anniversary gifts") | wedding anniversary gifts |
+| `/celebration-ideas/25th-wedding-anniversary-ideas` | 25th Wedding Anniversary Ideas | 25th wedding anniversary ideas |
+| `/celebration-ideas/50th-wedding-anniversary` | 50th Wedding Anniversary | 50th wedding anniversary |
+| `/celebration-ideas/celebrations-we-plan` | Celebrations We Plan | celebrations we plan |
+| `/travel-guides/weekly-itinerary-template` | Weekly Itinerary Template | weekly itinerary template |
 
 `/packages` is LIVE (HTTP 200 on 19 Nov 2026; title 'Destination Wedding Packages'; has Anniversaries and Vow renewals tiles), although the Firecrawl map does not list it. Link it for celebration and anniversary trips; `/destination-packages` remains the wedding and honeymoon package page.
 
