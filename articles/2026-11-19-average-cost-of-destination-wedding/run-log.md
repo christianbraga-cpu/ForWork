@@ -28,3 +28,5 @@
 - **Other findings:**
   - /expert-advice/how-much-does-the-average-wedding-cost may already head the "average wedding cost" cluster. Linked as the hub.
   - /expert-advice/wedding-cost-per-guest quotes A$38,252, likely from Easy Weddings, a blocked source. Added to SITE-CONFLICTS for the user; this article will not quote it.
+- **Stage 1 fast (research):** PARTIAL. The research agent was held on an MCP permission prompt; 10 facts were saved by 22:56 (our Italy, Lake Como and Bali guides). No home average yet.
+- **Decision (default):** the writer started at 23:12 on the saved facts. Late facts, such as a home average or the Zoho titles, go into v2. Neither Bali range is quoted (F-08 USD vs F-09 AUD, SITE-CONFLICTS).
