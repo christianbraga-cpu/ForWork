@@ -245,6 +245,8 @@ No Malta destination page exists yet (open item MALTA-PAGE); link `/destinations
 | `/expert-advice/wedding-vows-for-him` | Wedding Vows for Him | wedding vows for him |
 | `/expert-advice/humorous-wedding-ceremony-script` | Humorous Wedding Ceremony Script | humorous wedding ceremony script (partial overlap with funny vows: link, never an exact "funny wedding vows" anchor) |
 | `/expert-advice/simple-wedding-ceremony-script` | Simple Wedding Ceremony Script | simple wedding ceremony script |
+| `/how-to-write-wedding-vows` | How Do You Write Your Own Wedding Vows (guide; says 250 to 300 words, about two minutes) | how to write wedding vows (parent guide for the vows cluster) |
+| `/expert-advice/catholic-wedding-vows` | Catholic Wedding Vows Word for Word | catholic wedding vows |
 | `/celebration-ideas/vow-renewal-vows` | Vow Renewal Vows | vow renewal vows |
 | `/celebration-ideas/vow-renewal-etiquette` | Vow Renewal Etiquette | vow renewal etiquette |
 
