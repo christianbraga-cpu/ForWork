@@ -7,3 +7,4 @@
 23:04 06 editor pass_with_edits (4.14), 11/11 applied to 05-draft-r2.md; 07 five readers done.
 23:08 07b panel revise (enquire 1.8 vs 3.8: no-figures choice and deferred business asks), 14/14 edits applied to 08-final.md.
 23:10 final check pass_with_edits 2/2 applied; meta description 'usually' removed; 09 CRO and 10 distribution done.
+23:13 11 package done; final docx; run report; link map and calendar row 76.
