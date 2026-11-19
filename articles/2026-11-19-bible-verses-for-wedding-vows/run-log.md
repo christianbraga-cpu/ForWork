@@ -20,4 +20,7 @@
 - **Decision (default):** research saves to its own file (02-research-new.json) so it cannot overwrite a pack the writer uses.
 
 ## Stages
-- **Stage 0 + 1 fast (strategist, research):** running.
+- **Stage 0 fast (strategist):** DONE. Sydney and Melbourne page one weak (Pinterest, devotional sites); Brisbane and London held by large wedding publishers. Gap: Australian legal words (s 45, s 46), church ceremonies, public-domain verse text, readings at destination and symbolic ceremonies. Brief: 7 H2s, 5 FAQs, 1,900 to 2,200 words, H1 and SEO title as given (51), Expert Advice only.
+- **Volume check:** DataForSEO shows "wedding vows in the bible" and "wedding vows scripture" at 10/month each in AU and UK, not 880. Real volume: "bible readings for weddings" (AU 390, UK 1,600) and "christian wedding vows" (AU 170, UK 480), added as secondaries. **Decision (default):** keep the user's secondaries in the copy too; flag the volume difference to the user.
+- **Decision (default):** four live pages added to link-map (which readings work at a wedding, order of service, what happens in a ceremony, Orthodox Christian wedding); the order-of-service page's "civil ceremonies cannot include religious readings" is UK wording and must not appear as an Australian rule.
+- **Stage 1 fast (research):** running.

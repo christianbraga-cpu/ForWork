@@ -247,6 +247,10 @@ No Malta destination page exists yet (open item MALTA-PAGE); link `/destinations
 | `/expert-advice/simple-wedding-ceremony-script` | Simple Wedding Ceremony Script | simple wedding ceremony script |
 | `/how-to-write-wedding-vows` | How Do You Write Your Own Wedding Vows (guide; says 250 to 300 words, about two minutes) | how to write wedding vows (parent guide for the vows cluster) |
 | `/expert-advice/catholic-wedding-vows` | Catholic Wedding Vows Word for Word | catholic wedding vows |
+| `/expert-advice/which-readings-work-at-a-wedding` | Which Readings Work at a Wedding | wedding readings (partial overlap with bible verses: link, never an exact "bible readings for weddings" anchor) |
+| `/expert-advice/wedding-order-of-service` | Wedding Order of Service | wedding order of service (its claim that civil ceremonies cannot include religious readings is UK wording; do not repeat as an Australian rule) |
+| `/expert-advice/what-happens-in-a-wedding-ceremony` | What Happens in a Wedding Ceremony | what happens in a wedding ceremony |
+| `/how-to-plan-an-orthodox-christian-wedding` | How to Plan an Orthodox Christian Wedding | orthodox christian wedding |
 | `/celebration-ideas/vow-renewal-vows` | Vow Renewal Vows | vow renewal vows |
 | `/celebration-ideas/vow-renewal-etiquette` | Vow Renewal Etiquette | vow renewal etiquette |
 
