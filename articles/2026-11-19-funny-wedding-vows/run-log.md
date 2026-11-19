@@ -30,4 +30,11 @@
 - **Stage 3 fast (3 reviews):** DONE. Accuracy 3.5 (blocker: unsourced "personal vows can come before or after the legal words"; majors: no confirm-with-the-destination-authority line, NOIM timing not linked at the claim, vow-renewal FAQ misstates the Guidelines). SEO 4.0 (title rule pass; majors: keyword in no H2, NOIM link). Reader (couple) relevance 3, trust 3, clarity 4, would_enquire 2: would save and forward; two back-to-back Concierge paragraphs felt bolted on. Merged request: 04-reviews/v1/merged.md.
 - **Decision (default, change if you want):** SEO title stays the user's 44-character title (rubric prefers 50 to 60; user rule is 60 max). Vow-renewal pages added to link-map and linked in the FAQ. CMS-TITLE open item: the SEO plugin must not add " - Wedded Wonderland" (dash) to the title tag.
 - **Stage 4 fast (writer v2):** DONE. 03-draft-v2.md. --check: 1,992 reader words, 0 dashes, 0 placeholders, 2 official domains inline, none blocked. YAML valid; 11 claims, 16 links. Keyword now in H2 "How to write funny wedding vows in four parts"; NOIM timing linked at the claim; Concierge paragraphs merged; vow-renewal guide linked ("guide to writing vows for a renewal").
-- **Stage 6 fast (copy editor):** running. Research agent still blocked on the permission prompt.
+- **Stage 6 fast (copy editor):** DONE. final.md 1,992 reader words, 0 dashes, 0 placeholders, official sources inline; publish-package.json valid (10 open items); chrome-upload-prompt.md (draft only; title-tag dash check); article.docx built. The copy editor ran one extra ls before its two commands (no harm). The research agent never got past its permission prompt; the article uses facts verified on 13 and 16 Nov.
+
+## Must-fix before publish
+1. N-001: re-read Marriage Act ss 45 and 46 in the current compilation and swap the link to the "latest" compilation (the draft links the 9 July 2024 one).
+2. N-002: confirm the vow-renewal FAQ against the 2021 celebrant Guidelines and swap the PDF link.
+3. CMS-TITLE: the SEO plugin must not add " - Wedded Wonderland" to the title tag (no-dash rule).
+4. LINK-CHECK, CONCIERGE-PAY, RETRO-LINKS (from traditional vows, humorous script, vows for her and him), IMAGE-RIGHTS, AUTHOR, CMS-URL.
+No publish-order dependency.
