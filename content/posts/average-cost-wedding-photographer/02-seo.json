@@ -1,0 +1,367 @@
+{
+ "agent": "seo-researcher",
+ "task_id": "average-cost-wedding-photographer",
+ "stage": "02",
+ "status": "complete",
+ "round": 1,
+ "inputs_used": [
+  "00-input.json",
+  "CLAUDE.md",
+  "content-system/research/locations.yaml",
+  "content-system/seo/link-map.csv (grep)",
+  "content-system/seo/priority-link-targets.md",
+  "content-system/rubrics/link-rules.md",
+  "content/posts/short-wedding-vows/02-seo.json (format model)"
+ ],
+ "self_qa": {
+  "checks": [
+   {
+    "check": ">= 7 of 10 locations",
+    "pass": false,
+    "note": "Fast mode: 5 of 5 requested cities returned results."
+   },
+   {
+    "check": "Every H2 maps to a real query or must-include",
+    "pass": true,
+    "note": "outline[].answers"
+   },
+   {
+    "check": "Links verified live today",
+    "pass": false,
+    "note": "/expert-advice/what-does-an-italy-wedding-photographer-cost fetched 200 on 2026-11-19; other internal and all external links pending (curl blocked by proxy; fast mode limited fetches)."
+   },
+   {
+    "check": "No competitor links; no noindex; do-not-link list obeyed",
+    "pass": true,
+    "note": "No /vendor/, /au/vendors-in-sydney, /destinations/africa or /destinations/latin-america-caribbean. Drafts not used. External links official only."
+   },
+   {
+    "check": "Meta lengths",
+    "pass": true,
+    "note": "title 59 (keyword first, no colon or dash, not a question), description 150, no figures"
+   },
+   {
+    "check": "No figures in outline, meta or FAQ",
+    "pass": true,
+    "note": "SERP price angles kept in 02-research only"
+   },
+   {
+    "check": "Top 3 read per location",
+    "pass": false,
+    "note": "Fast mode: analysed from SERP snippets only; no competitor pages scraped."
+   }
+  ],
+  "confidence": 0.7
+ },
+ "open_questions": [
+  {
+   "to": "person",
+   "question": "N-508 (destination photographer cost) URL is not known. The draft uses a placeholder link; please supply the URL or confirm the planned slug before publishing.",
+   "blocking": false
+  },
+  {
+   "to": "person",
+   "question": "/what-does-an-italy-wedding-photographer-cost resolves to /expert-advice/what-does-an-italy-wedding-photographer-cost (same content and canonical). Confirm it is a permanent 301, not a 302 or rewrite; if not, add a 301. Then drop the root row from the link map.",
+   "blocking": false
+  },
+  {
+   "to": "person",
+   "question": "The Italy photographer page is figure-led (euro ranges in key takeaways and FAQ schema). This post gives no figures by choice. Accept that the two pages differ in approach, or align later.",
+   "blocking": false
+  },
+  {
+   "to": "wedding-planner-sme",
+   "question": "Source the copyright point (who owns wedding photos by default when a couple commissions them, and what a licence covers) from the Copyright Act 1968 and Attorney-General's Department copyright guidance; [[VERIFY: commissioned photographs rule after the 1998 amendments and any later changes]].",
+   "blocking": false
+  },
+  {
+   "to": "wedding-planner-sme",
+   "question": "Source deposit, cancellation and unfair contract terms points from the ACCC (consumer guarantees, unfair contract terms) and NSW Fair Trading; [[VERIFY: current pages and wording]].",
+   "blocking": false
+  }
+ ],
+ "next_agent": [
+  "planner-sme",
+  "visual-curator"
+ ],
+ "tools_used": [
+  "DataForSEO serp_organic_live_advanced x5 (Sydney, Melbourne, New York, Dubai, Singapore)",
+  "DataForSEO kw_data_google_ads_search_volume (Australia, United States), 8 keywords",
+  "DataForSEO dataforseo_labs_google_ranked_keywords weddedwonderland.com Australia, filtered %photograph%",
+  "Apify web-fetch x2 (weddedwonderland.com Italy photographer cost page, root and /expert-advice/ paths)",
+  "GSC: not read (fast mode); no export file or date recorded"
+ ],
+ "assumptions": [
+  "Fast mode: 5 SERP cities, no GSC, no Arabic query, no secondary keyword SERPs, no KD call, no competitor pages scraped",
+  "Ranked keywords AU only (US not run)",
+  "'average wedding picture cost' returns identical Google Ads data to the head term; treated as a close variant, not a separate target",
+  "AI Overviews asynchronous in all 5 cities; text not returned and not cited",
+  "Scope global: US volume far above AU; contract and consumer sources Australian"
+ ],
+ "payload": {
+  "primary_keyword": "average cost wedding photographer",
+  "secondary_keywords": [
+   "wedding photographer cost",
+   "average wedding picture cost",
+   "how much is a wedding photographer",
+   "how much does a wedding photographer cost",
+   "wedding photography packages",
+   "what do wedding photographer packages include",
+   "wedding photographer cost australia"
+  ],
+  "keyword_data": [
+   {
+    "keyword": "average cost wedding photographer",
+    "us": 5400,
+    "au": 210,
+    "intent": "informational, commercial investigation"
+   },
+   {
+    "keyword": "average wedding picture cost",
+    "us": 5400,
+    "au": 210,
+    "intent": "informational (Ads groups with head term)"
+   },
+   {
+    "keyword": "wedding photographer cost",
+    "us": 3600,
+    "au": 320,
+    "intent": "commercial investigation"
+   },
+   {
+    "keyword": "how much is a wedding photographer",
+    "us": 2900,
+    "au": 170,
+    "intent": "informational"
+   },
+   {
+    "keyword": "how much does a wedding photographer cost",
+    "us": 2900,
+    "au": 170,
+    "intent": "informational"
+   },
+   {
+    "keyword": "wedding photography packages",
+    "us": 2400,
+    "au": 320,
+    "intent": "commercial investigation"
+   },
+   {
+    "keyword": "what do wedding photographer packages include",
+    "us": null,
+    "au": null,
+    "intent": "informational (no Ads data)"
+   },
+   {
+    "keyword": "wedding photographer cost australia",
+    "us": 10,
+    "au": 10,
+    "intent": "informational"
+   }
+  ],
+  "intent": "informational",
+  "slug": "average-cost-wedding-photographer",
+  "url_path": "/expert-advice/average-cost-wedding-photographer",
+  "meta_title": "Average Cost Wedding Photographer and What Packages Include",
+  "meta_description": "What shapes a wedding photographer quote, what packages usually include and the questions to ask before you sign, whether you marry at home or abroad.",
+  "outline": [
+   {
+    "h2": "Why there is no single average cost for a wedding photographer",
+    "answers": "average cost wedding photographer (US 5,400, AU 210); average wedding picture cost (US 5,400); PAA 'What is the average cost of a wedding photographer in Australia?' (Melbourne); Pinterest snippet 'it depends' (Sydney, Melbourne)",
+    "notes": "Explain why published averages mislead (different hours, team, deliverables, region) without quoting any. No figures. Point readers to compare inclusions, not headline price."
+   },
+   {
+    "h2": "What shapes a wedding photographer's quote",
+    "answers": "wedding photographer cost (US 3,600, AU 320); how much is a wedding photographer (US 2,900, AU 170); SERP angle 'why are wedding photographers expensive' (Sydney, Melbourne); PAA 'How many photos for a 2 hour event?'",
+    "h3": [
+     "Hours of coverage and the shape of your day",
+     "One photographer or a team",
+     "Experience, style and demand for your date",
+     "Editing time and how long delivery takes",
+     "Travel, accommodation and destination weddings"
+    ],
+    "notes": "Destination H3 is short and links to N-508 (placeholder) for destination photographer cost. Link /expert-advice/wedding-day-timeline in the hours H3. No figures."
+   },
+   {
+    "h2": "What do wedding photographer packages include?",
+    "answers": "wedding photography packages (US 2,400, AU 320); what do wedding photographer packages include (must-include); Dubai booqit.ae rate table with 'what's included'",
+    "h3": [
+     "Coverage hours and a second shooter",
+     "Engagement or pre-wedding session",
+     "The online gallery, edited image count and turnaround",
+     "Albums, prints and heirloom products",
+     "Raw files, usage rights and copyright"
+    ],
+    "notes": "Copyright and usage H3: link Copyright Act 1968 (legislation.gov.au) and AGD copyright guidance inline; [[VERIFY]] commissioned-photo rule. No figures."
+   },
+   {
+    "h2": "Extras that sit outside the headline package",
+    "answers": "SERP angle 'hidden costs' (bestlah.sg, instagram Singapore); PAA 'Is $1000 for a wedding photographer good?' (New York, answered without figures: depends on inclusions)",
+    "notes": "Overtime, extra days (welcome drinks, morning after), travel, location permit fees, album upgrades, rush editing. Link /all-inclusive-wedding-cost for wider package logic."
+   },
+   {
+    "h2": "Questions to ask before you book a wedding photographer",
+    "answers": "forum and perspectives threads on fair price and going rate (New York, Melbourne, Singapore); must-include questions to ask",
+    "notes": "Checklist format. Contract points: deposit, payment schedule, cancellation and postponement terms, backup photographer, insurance, image ownership. Link ACCC (consumer guarantees, unfair contract terms) and NSW Fair Trading inline; Moneysmart for budgeting. [[VERIFY]] each claim against source."
+   },
+   {
+    "h2": "How to fit photography into your wedding budget",
+    "answers": "PAA 'What is a realistic budget for a 100 person wedding?' (Sydney, New York); PAA 'How much should I pay for a photographer?' (Dubai, Singapore)",
+    "notes": "Priorities, not percentages. Decide what images matter most, trim hours not quality, book early for peak dates. Link /expert-advice/wedding-planning-checklist and Moneysmart wedding budgeting. Wedded Concierge CTA."
+   },
+   {
+    "h2": "Wedding photographer cost FAQ",
+    "answers": "PAA questions across cities",
+    "notes": "See faq_questions. Answers give no figures."
+   }
+  ],
+  "faq_questions": [
+   "What is the average cost of a wedding photographer in Australia?",
+   "How much should I pay for a photographer?",
+   "What do wedding photographer packages include?",
+   "Who owns the copyright in our wedding photos?",
+   "How far ahead should we book a wedding photographer?"
+  ],
+  "faq_note": "Q1 and Q2 are real PAA wording; answer by explaining what moves the price and why quotes must be compared on inclusions. No numbers.",
+  "internal_links": [
+   {
+    "anchor": "Wedded Concierge",
+    "target": "/wonderland-concierge?utm_source=blog&utm_medium=content",
+    "type": "commercial",
+    "placement": "budget section CTA",
+    "verified_live": "pending: in link map 2026-10-20, not fetched"
+   },
+   {
+    "anchor": "destination wedding destinations",
+    "target": "/destinations",
+    "type": "hub",
+    "placement": "destination H3",
+    "verified_live": "pending: hub in link map, not fetched"
+   },
+   {
+    "anchor": "what an Italy wedding photographer costs",
+    "target": "/expert-advice/what-does-an-italy-wedding-photographer-cost",
+    "type": "related",
+    "placement": "destination H3, as the regional example",
+    "verified_live": "2026-11-19"
+   },
+   {
+    "anchor": "destination wedding photographer cost",
+    "target": "[[N-508 URL placeholder]]",
+    "type": "related",
+    "placement": "destination H3",
+    "verified_live": "pending: planned post, URL unknown"
+   },
+   {
+    "anchor": "plan your wedding day timeline",
+    "target": "/expert-advice/wedding-day-timeline",
+    "type": "related",
+    "placement": "hours of coverage H3",
+    "verified_live": "pending: in link map 2026-10-20, not fetched"
+   },
+   {
+    "anchor": "all-inclusive wedding packages explained",
+    "target": "/all-inclusive-wedding-cost",
+    "type": "related",
+    "placement": "extras section",
+    "verified_live": "pending: in link map 2026-10-20, not fetched"
+   },
+   {
+    "anchor": "wedding planning checklist",
+    "target": "/expert-advice/wedding-planning-checklist",
+    "type": "related",
+    "placement": "budget section",
+    "verified_live": "pending: in link map 2026-10-20, not fetched"
+   }
+  ],
+  "external_links": [
+   {
+    "anchor": "Copyright Act 1968",
+    "url": "https://www.legislation.gov.au/C1968A00063/latest/text",
+    "type": "authority",
+    "verified_live": "pending: [[VERIFY: register ID and section on commissioned photographs]]; not fetched"
+   },
+   {
+    "anchor": "Attorney-General's Department copyright guidance",
+    "url": "https://www.ag.gov.au/rights-and-protections/copyright",
+    "type": "authority",
+    "verified_live": "pending: not fetched"
+   },
+   {
+    "anchor": "ACCC guidance on consumer guarantees and unfair contract terms",
+    "url": "https://www.accc.gov.au/consumers/consumer-rights-and-guarantees",
+    "type": "authority",
+    "verified_live": "pending: not fetched"
+   },
+   {
+    "anchor": "NSW Fair Trading",
+    "url": "https://www.nsw.gov.au/departments-and-agencies/fair-trading",
+    "type": "authority",
+    "verified_live": "pending: not fetched; swap for the reader's state agency if scope changes"
+   },
+   {
+    "anchor": "Moneysmart wedding budgeting",
+    "url": "https://moneysmart.gov.au/life-events-and-you/getting-married",
+    "type": "authority",
+    "verified_live": "pending: [[VERIFY: exact Moneysmart path]]; not fetched"
+   }
+  ],
+  "backlinks_to_add": [
+   {
+    "from": "/expert-advice/what-does-an-italy-wedding-photographer-cost",
+    "anchor": "what wedding photography packages include",
+    "sentence": "In 'What Is Usually Included In a Photography Package?', after 'Any details you need should be provided for in writing': for a fuller checklist, see what wedding photography packages include."
+   },
+   {
+    "from": "/all-inclusive-wedding-cost",
+    "anchor": "wedding photographer cost",
+    "sentence": "pending: page not fetched; place where photography is listed as a package inclusion."
+   },
+   {
+    "from": "/expert-advice/wedding-planning-checklist",
+    "anchor": "questions to ask a wedding photographer",
+    "sentence": "pending: page not fetched; place at the book-your-photographer step."
+   }
+  ],
+  "serp_source": "dataforseo",
+  "serp_summary": {
+   "locations_checked": [
+    "sydney",
+    "melbourne",
+    "new_york",
+    "dubai",
+    "singapore"
+   ],
+   "locations_failed": [],
+   "common_angles": [
+    "Number-first: local currency ranges, 'start at' packages, hourly rates (all cities)",
+    "Why photographers are expensive: editing hours, equipment, insurance (Sydney, Melbourne)",
+    "Single-photographer sales pages pricing their own packages dominate",
+    "Forums and social threads on fair price (New York perspectives, Melbourne and Singapore discussions)"
+   ],
+   "gaps": [
+    "No neutral, non-vendor guide explaining how to read and compare a quote",
+    "No result covers copyright, usage rights or contract and consumer protections with official sources",
+    "No luxury or destination framing (multi-day, team, travel) in AU results",
+    "Several weak results: Pinterest 'Client Challenge', content farm (pixnet), dated HubPages 2018"
+   ],
+   "regional_differences": [
+    "AU: local photographers and expo blogs; a competitor directory at Sydney #7 (reference only)",
+    "US: heavy forum and perspectives presence; state and city ranges",
+    "Dubai: AED rate tables and hourly pricing",
+    "Singapore: pre-wedding shoot vs actual-day split; package listicles",
+    "AI Overview present in all 5 cities, asynchronous (no text returned)"
+   ],
+   "price_angles_research_only": "See 02-research/serp-*.json price_angle fields. Not for use in draft, meta or FAQ (user choice: no figures).",
+   "recommended_scope": "global"
+  },
+  "recommended_scope": "global",
+  "cannibalisation": [
+   "/expert-advice/what-does-an-italy-wedding-photographer-cost: live 200, self-canonical, Italy-specific with euro ranges. No AU rankings recorded. Split: it owns Italy photographer cost; this post owns the generic head term and packages; link between them.",
+   "/what-does-an-italy-wedding-photographer-cost: resolves to the /expert-advice/ URL with the same content and canonical, so not a live duplicate. Confirm the hop is a 301 (add one if it is a 302 or rewrite) and remove the root row from the link map.",
+   "/top-31-sydney-wedding-photographers-2: only site URL ranking for photographer terms in AU (e.g. 'wedding photography sydney' #11, 'best photographers in sydney' #2). Vendor-list intent, no cost terms; no conflict. Not linked (vendor list).",
+   "No site URL ranks in AU for any cost variant (ranked keywords filter %photograph%, 13 rows).",
+   "Planned N-508 (destination photographer cost, URL unknown): proposed split. N-508 owns 'destination wedding photographer cost', travel and accommodation fees, multi-day coverage abroad, local vs flown-in photographer. This post owns the head term, 'wedding photographer cost', 'how much is/does a wedding photographer cost', 'wedding photography packages', 'what packages include' and 'wedding photographer cost australia', with one short destination H3 linking to N-508. N-508 should link back here for package inclusions and to the Italy page as its worked example."
+  ]
+ }
+}
