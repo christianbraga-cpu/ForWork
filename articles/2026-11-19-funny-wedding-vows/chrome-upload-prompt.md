@@ -92,7 +92,7 @@ The test: if a line could appear in someone else's vows unchanged, rewrite it un
 
 You can make your vows as funny as you like, but at a legal ceremony in Australia they sit alongside the words the law requires, never instead of them.
 
-Under [section 45(2) of the Marriage Act 1961](https://www.legislation.gov.au/C1961A00012/2024-07-09/2024-07-09/text/original/epub/OEBPS/document_1/document_1.html), where the celebrant is not a minister of religion, each of you says to the other, in the presence of the celebrant and the witnesses:
+Under [section 45(2) of the Marriage Act 1961](https://www.legislation.gov.au/C1961A00012/latest/text), where the celebrant is not a minister of religion, each of you says to the other, in the presence of the celebrant and the witnesses:
 
 > "I call upon the persons here present to witness that I, A.B. (or C.D.), take thee, C.D. (or A.B.), to be my lawful wedded wife (or husband, or spouse)"
 
@@ -100,7 +100,7 @@ or words to that effect. A.B. and C.D. stand for your names. A minister of relig
 
 [IMAGE: wedding-vow-book-hands-rings-detail-01.webp]
 
-Before that, a celebrant who is not a minister of religion of a recognised denomination says the celebrant's set statement (the monitum), set out in [section 46(1)](https://www.legislation.gov.au/C1961A00012/2024-07-09/2024-07-09/text/original/epub/OEBPS/document_1/document_1.html), in front of you and your witnesses:
+Before that, a celebrant who is not a minister of religion of a recognised denomination says the celebrant's set statement (the monitum), set out in [section 46(1)](https://www.legislation.gov.au/C1961A00012/latest/text), in front of you and your witnesses:
 
 > "I am duly authorised by law to solemnise marriages according to law. Before you are joined in marriage in my presence and in the presence of these witnesses, I am to remind you of the solemn and binding nature of the relationship into which you are now about to enter. Marriage, according to law in Australia, is the union of 2 people to the exclusion of all others, voluntarily entered into for life."
 
@@ -121,7 +121,7 @@ In this order:
 
 Agree on tone and length with your partner, not the words. If one of you writes a stand-up routine and the other writes a sonnet, the ceremony can feel lopsided. A five-minute conversation ("one or two jokes each, then serious") keeps the words a surprise and the ceremony even.
 
-Write the promise first. It is the hardest part and the most important, and once it exists you will know which jokes set it up and which are just noise. For more examples by recipient, browse [vows written for her](/expert-advice/wedding-vows-for-her) and [vows written for him](/expert-advice/wedding-vows-for-him).
+Write the promise first. It is the hardest part and the most important, and once it exists you will know which jokes set it up and which are just noise. For the full method, see [our guide to writing your own vows](/how-to-write-wedding-vows). For more examples by recipient, browse [vows written for her](/expert-advice/wedding-vows-for-her) and [vows written for him](/expert-advice/wedding-vows-for-him).
 
 ## Humour that lands and humour to avoid
 
@@ -194,7 +194,7 @@ Yes. The legal words in an Australian ceremony are a few set sentences; everythi
 
 ### How long should funny wedding vows be?
 
-Our guidance is about one minute each when spoken, roughly 120 to 180 words. Laughter adds time, so a 150-word vow with two good laughs can run longer than you expect. Time yourself reading aloud, then cut the weakest joke rather than the promise.
+Our guide to writing your own vows suggests 250 to 300 words, which usually takes about two minutes to read aloud. Laughter adds time, so a vow with two good laughs can run longer than you expect. Time yourself reading aloud, then cut the weakest joke rather than the promise.
 
 ### Should we tell each other our vows before the wedding?
 

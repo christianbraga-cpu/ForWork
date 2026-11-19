@@ -98,7 +98,7 @@ open_items:
   - "CMS-TITLE: the SEO plugin must not append ' - Wedded Wonderland'; use '|' or no suffix so the title tag has no dash."
   - "N-002: confirm the 2021 celebrant Guidelines against C-07 and swap the PDF link (L-16)."
   - "CONCIERGE-PAY: no Concierge prices or fees in copy; Nic to confirm the deposits, payments and currency scope."
-  - "LINK-CHECK: human browser check of all 16 links."
+  - "LINK-CHECK: human browser check of all 17 links."
   - "RETRO-LINKS: link to this page from traditional vows, the humorous ceremony script, and vows for her and him."
   - "IMAGE-RIGHTS: six placeholder file names; credit, licence and consent open."
   - "AUTHOR: named author needed."

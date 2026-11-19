@@ -32,8 +32,11 @@
 - **Stage 4 fast (writer v2):** DONE. 03-draft-v2.md. --check: 1,992 reader words, 0 dashes, 0 placeholders, 2 official domains inline, none blocked. YAML valid; 11 claims, 16 links. Keyword now in H2 "How to write funny wedding vows in four parts"; NOIM timing linked at the claim; Concierge paragraphs merged; vow-renewal guide linked ("guide to writing vows for a renewal").
 - **Stage 6 fast (copy editor):** DONE. final.md 1,992 reader words, 0 dashes, 0 placeholders, official sources inline; publish-package.json valid (10 open items); chrome-upload-prompt.md (draft only; title-tag dash check); article.docx built. The copy editor ran one extra ls before its two commands (no harm). The research agent never got past its permission prompt; the article uses facts verified on 13 and 16 Nov.
 
+- **Late research (research agent finished after its permission prompt cleared):** 15 facts in 02-research-late.json (kept separate; it had overwritten the pack the draft cites, which was restored). Marriage Act ss 45(1), 45(2), 46(1) re-read in compilation C2026C00129 (28 Mar 2026): wording matches. Our /how-to-write-wedding-vows guide says 250 to 300 words, about two minutes, which conflicted with the draft's "one minute, 120 to 180 words".
+- **v3 fix pass (copy editor):** DONE. Act links swapped to the latest compilation (N-001 closed); vow length now quotes our guide; /how-to-write-wedding-vows linked in the structure H2 (one added sentence); C-01 fact_ref fixed; chrome-upload-prompt.md matched. --check 2,010 words, 0 dashes; JSON and YAML valid; 17 links.
+
 ## Must-fix before publish
-1. N-001: re-read Marriage Act ss 45 and 46 in the current compilation and swap the link to the "latest" compilation (the draft links the 9 July 2024 one).
+1. (Closed) N-001.
 2. N-002: confirm the vow-renewal FAQ against the 2021 celebrant Guidelines and swap the PDF link.
 3. CMS-TITLE: the SEO plugin must not add " - Wedded Wonderland" to the title tag (no-dash rule).
 4. LINK-CHECK, CONCIERGE-PAY, RETRO-LINKS (from traditional vows, humorous script, vows for her and him), IMAGE-RIGHTS, AUTHOR, CMS-URL.
