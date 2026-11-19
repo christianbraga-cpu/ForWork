@@ -49,7 +49,7 @@ faq:
   - q: "Can wedding vows be funny and still legal in Australia?"
     a: "Yes. The legal words in an Australian ceremony are a few set sentences; everything else, including your vows to each other, can carry as much humour as you like."
   - q: "How long should funny wedding vows be?"
-    a: "Our guidance is about one minute each when spoken, roughly 120 to 180 words. Laughter adds time, so a 150-word vow with two good laughs can run longer than you expect. Time yourself reading aloud, then cut the weakest joke rather than the promise."
+    a: "Our guide to writing your own vows suggests 250 to 300 words, which usually takes about two minutes to read aloud. Laughter adds time, so a vow with two good laughs can run longer than you expect. Time yourself reading aloud, then cut the weakest joke rather than the promise."
   - q: "Should we tell each other our vows before the wedding?"
     a: "It is your call. Some couples like the surprise; others want no surprises at all. A middle path: keep the words private, but each send your vows to your celebrant, who can check that the two are a similar length and tone without spoiling either."
   - q: "Can we use funny vows at a vow renewal?"
@@ -89,13 +89,12 @@ links_register:
   - { id: "L-11", url: "/wonderland-concierge", anchor: "Wedded Wonderland Concierge (soft CTA); Discovery Call (CTA block)", type: "internal" }
   - { id: "L-12", url: "/expert-advice/humorous-wedding-ceremony-script", anchor: "a full ceremony with the jokes written in", type: "internal" }
   - { id: "L-13", url: "/wonderland-studio", anchor: "Wonderland Studio", type: "internal" }
-  - { id: "L-14", url: "https://www.legislation.gov.au/C1961A00012/2024-07-09/2024-07-09/text/original/epub/OEBPS/document_1/document_1.html", anchor: "section 45(2) of the Marriage Act 1961; section 46(1)", type: "external", rel: "noopener", status: "swap to https://www.legislation.gov.au/C1961A00012/latest/text after a live re-read (N-001)" }
+  - { id: "L-14", url: "https://www.legislation.gov.au/C1961A00012/latest/text", anchor: "section 45(2) of the Marriage Act 1961; section 46(1)", type: "external", rel: "noopener", status: "re-read in compilation C2026C00129 on 19 Nov 2026" }
   - { id: "L-15", url: "https://www.ag.gov.au/families-and-marriage/marriage/get-married", anchor: "The Attorney-General's Department says; at least one month and no more than 18 months before", type: "external", rel: "noopener" }
   - { id: "L-16", url: "https://www.ag.gov.au/sites/default/files/2020-03/guidelines-marriage-act-1961-authorised-celebrants.pdf", anchor: "Attorney-General's Department guidelines for celebrants", type: "external", rel: "noopener", status: "2018 edition; swap for the 2021 edition URL if N-002 confirms" }
   - { id: "L-17", url: "/celebration-ideas/vow-renewal-vows", anchor: "guide to writing vows for a renewal", type: "internal" }
 open_items:
   - "CMS-TITLE: the SEO plugin must not append ' - Wedded Wonderland'; use '|' or no suffix so the title tag has no dash."
-  - "N-001: re-read Marriage Act ss 45 and 46 in the current compilation, then swap L-14 to https://www.legislation.gov.au/C1961A00012/latest/text."
   - "N-002: confirm the 2021 celebrant Guidelines against C-07 and swap the PDF link (L-16)."
   - "CONCIERGE-PAY: no Concierge prices or fees in copy; Nic to confirm the deposits, payments and currency scope."
   - "LINK-CHECK: human browser check of all 16 links."
@@ -131,7 +130,7 @@ The test: if a line could appear in someone else's vows unchanged, rewrite it un
 
 You can make your vows as funny as you like, but at a legal ceremony in Australia they sit alongside the words the law requires, never instead of them.
 
-Under [section 45(2) of the Marriage Act 1961](https://www.legislation.gov.au/C1961A00012/2024-07-09/2024-07-09/text/original/epub/OEBPS/document_1/document_1.html), where the celebrant is not a minister of religion, each of you says to the other, in the presence of the celebrant and the witnesses:
+Under [section 45(2) of the Marriage Act 1961](https://www.legislation.gov.au/C1961A00012/latest/text), where the celebrant is not a minister of religion, each of you says to the other, in the presence of the celebrant and the witnesses:
 
 > "I call upon the persons here present to witness that I, A.B. (or C.D.), take thee, C.D. (or A.B.), to be my lawful wedded wife (or husband, or spouse)"
 
@@ -139,7 +138,7 @@ or words to that effect. A.B. and C.D. stand for your names. A minister of relig
 
 [IMAGE: wedding-vow-book-hands-rings-detail-01.webp]
 
-Before that, a celebrant who is not a minister of religion of a recognised denomination says the celebrant's set statement (the monitum), set out in [section 46(1)](https://www.legislation.gov.au/C1961A00012/2024-07-09/2024-07-09/text/original/epub/OEBPS/document_1/document_1.html), in front of you and your witnesses:
+Before that, a celebrant who is not a minister of religion of a recognised denomination says the celebrant's set statement (the monitum), set out in [section 46(1)](https://www.legislation.gov.au/C1961A00012/latest/text), in front of you and your witnesses:
 
 > "I am duly authorised by law to solemnise marriages according to law. Before you are joined in marriage in my presence and in the presence of these witnesses, I am to remind you of the solemn and binding nature of the relationship into which you are now about to enter. Marriage, according to law in Australia, is the union of 2 people to the exclusion of all others, voluntarily entered into for life."
 
@@ -233,7 +232,7 @@ Yes. The legal words in an Australian ceremony are a few set sentences; everythi
 
 ### How long should funny wedding vows be?
 
-Our guidance is about one minute each when spoken, roughly 120 to 180 words. Laughter adds time, so a 150-word vow with two good laughs can run longer than you expect. Time yourself reading aloud, then cut the weakest joke rather than the promise.
+Our guide to writing your own vows suggests 250 to 300 words, which usually takes about two minutes to read aloud. Laughter adds time, so a vow with two good laughs can run longer than you expect. Time yourself reading aloud, then cut the weakest joke rather than the promise.
 
 ### Should we tell each other our vows before the wedding?
 
