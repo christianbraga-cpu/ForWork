@@ -1,0 +1,70 @@
+{
+  "agent": "cro",
+  "task_id": "22-amazing-table-settings-for-every-wedding-theme",
+  "stage": "09",
+  "status": "complete",
+  "round": 1,
+  "inputs_used": [
+    "content-system/brand/services.md",
+    "content-system/brand/brand-facts.md",
+    "content/posts/22-amazing-table-settings-for-every-wedding-theme/01-brief.json",
+    "content/posts/22-amazing-table-settings-for-every-wedding-theme/07-panel.json",
+    "content/posts/22-amazing-table-settings-for-every-wedding-theme/07-icp/*.json (cta_reaction, unanswered_questions)",
+    "content/posts/22-amazing-table-settings-for-every-wedding-theme/08-final.md",
+    "content-system/seo/link-map.csv",
+    "content-system/schemas/09-cro.schema.json",
+    "CLAUDE.md"
+  ],
+  "self_qa": {
+    "confidence": 0.85,
+    "checks": [
+      {"check": "/wonderland-concierge and /magazine exist in link-map.csv", "pass": true},
+      {"check": "All four CTA links in 08-final.md recorded exactly as they appear (three /wonderland-concierge, one /magazine)", "pass": true, "note": "08-final.md lines 139 (secondary), 156 (primary), 180 (magnet), 210 (closing)."},
+      {"check": "UTMs use utm_source=blog, utm_medium=content, utm_campaign=22-amazing-table-settings-for-every-wedding-theme and the right utm_content", "pass": true},
+      {"check": "Primary text 6 words or fewer, no exclamation mark, no 'click here'", "pass": true, "note": "Anchor 'Wedded Concierge', 2 words."},
+      {"check": "No added CTAs, CTA marker comments or copy changes proposed", "pass": true},
+      {"check": "No prices, fees, availability or banned terms; brand terms correct; Australian English; no em dashes", "pass": true},
+      {"check": "Lead magnet only placed if it exists on the site", "pass": true, "note": "Booking checklist has no page, so exists: false and it is not placed."}
+    ]
+  },
+  "assumptions": [
+    "The schema holds one primary and one secondary CTA, so the third Concierge link (utm_content=closing) is recorded in tracking and rationale rather than as its own CTA object.",
+    "The /magazine link (utm_content=magnet) is recorded in tracking; the lead_magnet object describes the booking checklist, as instructed, and is not placed.",
+    "Subtext fields quote the sentence already in the copy beside each link; nothing new is written."
+  ],
+  "open_questions": [
+    {"to": "Nic", "question": "Should the booking checklist (place setting pieces and venue questions) become a downloadable page? Four of five personas said they would bookmark rather than enquire; a checklist they can keep would capture that intent. Not placed until a page exists.", "blocking": false},
+    {"to": "Nic", "question": "planner_couple and uhnw both said a real overseas reception (venue, place setting laid) shown before the Concierge links would move them from 'no' or 'maybe' towards a click. Is there a sourced real wedding to link in a later refresh?", "blocking": false},
+    {"to": "orchestrator", "question": "Panel-deferred questions (Concierge fee model, who sources and pays for hire-in, who is on the ground on the day) are the main brake on the CTAs. They stay deferred; no copy change from this stage.", "blocking": false}
+  ],
+  "verify_items": [],
+  "tools_used": ["Bash"],
+  "next_agent": ["distribution"],
+  "payload": {
+    "journey_stage": "planning",
+    "primary_cta": {
+      "text": "Wedded Concierge",
+      "subtext": "Your Wedded Advisor confirms inclusions in writing before you commit.",
+      "link": "https://weddedwonderland.com/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=22-amazing-table-settings-for-every-wedding-theme&utm_content=primary",
+      "placement": "Inline, end of 'Table settings for a destination wedding', straight after the venue question list (08-final.md line 156). This is where the panel's question peaks: the reader has just seen what to ask the venue, and the line offers to take those questions on. Kept as is."
+    },
+    "secondary_cta": {
+      "text": "Wedded Concierge",
+      "link": "https://weddedwonderland.com/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=22-amazing-table-settings-for-every-wedding-theme&utm_content=secondary",
+      "placement": "Inline, end of 'Table settings by theme', after 'Playful and retro' (08-final.md line 139), for a reader who has a venue in mind and wants to know which looks it can carry. Kept as is."
+    },
+    "lead_magnet": {
+      "name": "Booking checklist: place setting pieces and venue questions",
+      "link": "",
+      "placement": "Not placed. No page on the site.",
+      "exists": false
+    },
+    "tracking": [
+      "https://weddedwonderland.com/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=22-amazing-table-settings-for-every-wedding-theme&utm_content=secondary",
+      "https://weddedwonderland.com/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=22-amazing-table-settings-for-every-wedding-theme&utm_content=primary",
+      "https://weddedwonderland.com/magazine?utm_source=blog&utm_medium=content&utm_campaign=22-amazing-table-settings-for-every-wedding-theme&utm_content=magnet",
+      "https://weddedwonderland.com/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=22-amazing-table-settings-for-every-wedding-theme&utm_content=closing"
+    ],
+    "rationale": "Brief sets journey_stage 'planning' and the goal as a conversation with a Wedded Advisor via /wonderland-concierge, which services.md lists as the Wedded Concierge page. The copy already carries the CTAs and they are recorded as written: secondary after the themes (line 139), primary after the destination venue questions (line 156), a magnet link to /magazine in 'Planning your table settings' (line 180) for the earlier-stage reader, and a closing Concierge link under 'Plan your reception with a Wedded Advisor' (line 210). All use anchor 'Wedded Concierge' and the agreed UTMs. Panel cta_reactions: funding_parent and uhnw 'maybe', planner_couple, sceptic and search_visitor 'no', mostly 'bookmark, not enquire' because table settings come later in planning. The primary sits after the 'in writing' advice and the hire-in cost question the panel asked for, so what readers wanted to see first already comes before it. Lead magnet suggestion: a booking checklist of place setting pieces and venue questions would suit the bookmarking reader, but it has no page on the site, so exists is false and it is not placed."
+  }
+}
