@@ -58,3 +58,11 @@
   - **Reader (couple):** relevance 2 (expected: a home-wedding article read by an Italy persona), trust 3, clarity 4, would_enquire 2. Majors: the partnered-planner line and the one-line "planning from abroad" answer.
   - Merged request: 04-reviews/v1/merged.md.
 - **Stage 4 fast (writer v2):** DONE. 03-draft-v2.md: 2,259 reader words, 0 dashes, 0 placeholders, ABS, Moneysmart and ACCC inline. YAML valid: 24 claims, 27 links. All 17 items applied. Answer-first paragraph added; FAQ 6 on the cheapest month (ABS, no price claim); no Australian average figure.
+- **Stage 6 fast (copy editor):** DONE. final.md 2,308 reader words, 0 dashes, 0 placeholders; publish-package.json valid; chrome-upload-prompt.md is draft only, updates the existing post in place and never touches the merged URLs; article.docx built. EUR and USD used per the style guide.
+
+## Must-fix before publish
+1. MERGE-301 (user approval): 301 /the-average-cost-of-an-australian-wedding-in-2020 and /the-cost-of-a-wedding-in-australia-2019 to /this-is-how-much-an-average-wedding-costs-in-australia at publish.
+2. RANK-WATCH: the 2020 page ranks #2 with a figure. Watch GSC for 8 weeks after the 301.
+3. HUB-POINTER: cut the Australia paragraph on /expert-advice/how-much-does-the-average-wedding-cost to a pointer here.
+4. DEST-REGION-PAGE: confirm whether /expert-advice/average-destination-wedding-cost-by-region is the published 19 Nov draft.
+5. NIC-SIGNOFF (8 destination figures), LINK-CHECK, AUTHOR, IMAGE-RIGHTS, CMS-URL.
