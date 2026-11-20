@@ -39,3 +39,11 @@
   - **Cannibalisation:** partial with the hub /expert-advice/how-much-does-the-average-wedding-cost, which is US-led. **Decision (default):** do not merge the hub; suggest the user cut its Australia paragraph to a pointer here (HUB-POINTER).
   - **Brief:** 7 H2s and 5 FAQs.
 - **Flag for the user:** a live page, /expert-advice/average-destination-wedding-cost-by-region, matches the topic of the 19 Nov draft. Was that draft published at this URL? Added to link-map.
+- **Stage 1 fast (research):** DONE. 24 facts: 11 reused, 13 new (Moneysmart and ACCC 7, ABS 6); 4 legal (ACCC); 9 figures for Nic.
+  - **Old pages:** 14 claims; 12 outdated, 1 unsupported, 1 supported (averages are skewed). They rest only on our own 2017, 2019 and 2020 surveys and on staff opinion, with no marketplace data.
+  - **Confirmed:**
+    - Moneysmart gives no average and offers a free budget planner.
+    - ACCC: major-problem refunds, no change-of-mind cover, no deposits for services that cannot be supplied.
+    - ABS 2025: count, median ages, peak seasons and days, state counts. Celebrant share just over 80% (2021).
+  - **Gaps:** no official cost categories; ACCC unfair contract terms page not read; consumer law for overseas suppliers not checked.
+- **Stage 2:** writer launched.
