@@ -41,3 +41,9 @@
   - BIOSECURITY: a fallback line with no link.
   - The last H2 was renamed by the writer to "What your planning team arranges"; the reviewers check its service claims.
 - **Decision (default):** tga.gov.au, casa.gov.au and agriculture.gov.au are approved in domains.md (official government). The dress, guest guide and what-not-to-wear pages from the brief are added to link-map (live per the Firecrawl map).
+- **Stage 3 fast (3 reviews):** DONE.
+  - **Accuracy 3.4:** blockers on invented on-site services and an outcome promise in the last H2, and on the PBS rule overstated twice. Majors: the 50,000-vendors count, and the advisor image slot and takeaway.
+  - **SEO 3.9:** title rule passes. Majors: 36% over length, three brief pages not linked, biosecurity unlinked, and several official claims not linked at the claim.
+  - **Reader (couple):** relevance 2, trust 3, clarity 3, would_enquire 2, "save". The partnered-network funnel line, the unsupported "answer to planning from afar", and too many brand names.
+  - Merged request: 04-reviews/v1/merged.md.
+- **Decision (default):** the last H2 becomes questions to ask the planner and venue (no implied services). Biosecurity stays unlinked until the research agent, still waiting on its permission prompt, supplies a Department of Agriculture fact.
