@@ -1,0 +1,128 @@
+{
+ "agent": "orchestrator",
+ "task_id": "fl_a",
+ "stage": "03",
+ "status": "complete",
+ "round": 1,
+ "inputs_used": [
+  "https://www.agriculture.gov.au/biosecurity-trade/policy/risk-analysis/memos/ba2018-12",
+  "https://www.agriculture.gov.au/biosecurity/legislation/fresh-cut-flowers-mainland",
+  "https://bicon.agriculture.gov.au/BiconWeb4.0/ImportConditions/Conditions/CasePathwaySection?EvaluatableElementId=850047&Path=UNDEFINED&UserContext=External&EvaluationStateId=ea0e3bbd-802a-4628-8755-17f7073e5842&caseElementPk=2576255&HasAlerts=True&HasChangeNotices=True&PathwayPk=7180&ConditionElementPK=2187202",
+  "https://agrifutures.com.au/related-projects/farm-based-methods-for-control-of-flowering-in-waratahs/"
+ ],
+ "self_qa": {
+  "checks": [
+   {"check": "Every fact has a source and date", "pass": true},
+   {"check": "No price without a source", "pass": true, "note": "No prices, figures or vendor names recorded."},
+   {"check": "No invented quotes, statistics or real weddings", "pass": true},
+   {"check": "Every requested item covered or listed as open", "pass": false, "note": "BoM season months not found (page 404, not retried). Only one flower/season pair found from a non-vendor source."}
+  ],
+  "confidence": 0.7
+ },
+ "open_questions": [
+  {
+   "to": "orchestrator",
+   "question": "Bureau of Meteorology page on Australian season months was not found: http://www.bom.gov.au/climate/glossary/seasons.shtml returned 404 and the search returned no bom.gov.au result. Southern hemisphere season months (e.g. summer = December to February) are unsourced. Run another search for a current BoM URL, or the writer must mark season months [[VERIFY]].",
+   "blocking": false
+  },
+  {
+   "to": "orchestrator",
+   "question": "Only one authoritative non-vendor flower/season pair was found (waratah, spring, fact_104). No Flowers Australia, Hort Innovation or state agriculture month-by-month availability list was read in this batch. A seasonal availability table in the article needs another source or [[VERIFY]] markers.",
+   "blocking": false
+  },
+  {
+   "to": "luxury-writer",
+   "question": "fact_103 is a quote from a Google search snippet of a BICON import-conditions page (session-specific URL, not fetched). Do not quote it verbatim in the article until confirmed; phrase as 'imported cut flowers are inspected on arrival' with [[VERIFY]]. Import rules are for importers, not couples: frame as why imported stems carry biosecurity steps, not as advice to import flowers personally. Add 'as at November 2026; your Wedded Advisor confirms current requirements'.",
+   "blocking": false
+  },
+  {
+   "to": "luxury-writer",
+   "question": "No source found in this batch for fumigation or other treatment of imported cut flowers. Do not state that imported flowers are fumigated unless another batch sources it.",
+   "blocking": false
+  }
+ ],
+ "assumptions": [
+  "The 2018 Biosecurity Advice (fact_100, fact_101) is dated 11 July 2018; it states import conditions were amended from 1 March 2018 and refers to BICON for current conditions. It is historical context, not current requirements.",
+  "The 2018 Biosecurity Advice also states a share of cut flowers sold in Australia that are imported and inspection failure rates; these figures are not recorded (no figures beyond months in this batch).",
+  "The AgriFutures page is a research project summary (University of Sydney, project closed 2014); it states a waratah flowering window in weeks, which is not recorded (no figures beyond months).",
+  "BICON detail and the species list PDF/DOCX were not fetched (one read round, time limit)."
+ ],
+ "verify_items": [
+  "[[VERIFY: BICON cut flowers and foliage pathway wording that goods 'must be inspected' on arrival; read from search snippet only, page not fetched]]",
+  "[[VERIFY: Australian season months (summer December to February, autumn March to May, winter June to August, spring September to November) from a Bureau of Meteorology page]]",
+  "[[VERIFY: month-by-month or season availability of Australian-grown wedding flowers from an industry body or state agriculture source]]",
+  "[[VERIFY: whether imported cut flowers may require treatment such as fumigation, from agriculture.gov.au or BICON]]"
+ ],
+ "tools_used": ["apify--web-search", "apify--web-fetch"],
+ "next_agent": ["luxury-writer"],
+ "payload": {
+  "facts": [
+   {
+    "fact_id": "fact_100",
+    "claim": "Department of Agriculture, Biosecurity Advice 2018-12 (11 July 2018): 'Import conditions require importers to manage biosecurity risk before they send cut flowers and foliage to Australia, thereby reducing the number of pests that arrive at our borders.' The same page: 'With this trade comes the potential to introduce unwanted pests and diseases into Australia.'",
+    "source": "https://www.agriculture.gov.au/biosecurity-trade/policy/risk-analysis/memos/ba2018-12",
+    "source_type": "government",
+    "checked": "2026-11-20",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_101",
+    "claim": "Department of Agriculture, Biosecurity Advice 2018-12: 'An analysis of inspection records showed that a high proportion of imported fresh cut flowers and foliage have been infested with quarantine pests (including thrips, aphids and mites)'. 'The amended import conditions are available on the Biosecurity Import Conditions system (BICON).'",
+    "source": "https://www.agriculture.gov.au/biosecurity-trade/policy/risk-analysis/memos/ba2018-12",
+    "source_type": "government",
+    "checked": "2026-11-20",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_102",
+    "claim": "Department of Agriculture, Fisheries and Forestry, List of species of fresh cut flowers and foliage with alternative conditions for import (mainland): the list 'contains conditionally non-prohibited goods which as subject to specific conditions of import' and 'Importers should consult BICON for the full range of import conditions for all goods intended for import.'",
+    "source": "https://www.agriculture.gov.au/biosecurity/legislation/fresh-cut-flowers-mainland",
+    "source_type": "government",
+    "checked": "2026-11-20",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_103",
+    "claim": "BICON import conditions (cut flowers and foliage pathway), as shown in the search-result snippet only: 'On arrival in Australian territory, the goods must be inspected to verify that they are free of live insects, seeds or fruit/berries (unless specifically ...'. Page not fetched; wording unconfirmed.",
+    "source": "https://bicon.agriculture.gov.au/BiconWeb4.0/ImportConditions/Conditions/CasePathwaySection?EvaluatableElementId=850047&Path=UNDEFINED&UserContext=External&EvaluationStateId=ea0e3bbd-802a-4628-8755-17f7073e5842&caseElementPk=2576255&HasAlerts=True&HasChangeNotices=True&PathwayPk=7180&ConditionElementPK=2187202",
+    "source_type": "government",
+    "checked": "2026-11-20",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_104",
+    "claim": "AgriFutures Australia, project 'Farm-based methods for control of flowering in Waratahs' (The University of Sydney, closed): waratah flowering is concentrated in spring; expected outcomes include 'reduction of oversupply in Spring and ability to capitalise on early and late season prices'. The project aimed to extend flowering 'to meet peak demand periods, such as Christmas and Valentine's Day'.",
+    "source": "https://agrifutures.com.au/related-projects/farm-based-methods-for-control-of-flowering-in-waratahs/",
+    "source_type": "editorial",
+    "checked": "2026-11-20",
+    "is_price": false
+   }
+  ],
+  "conflicts": [],
+  "insider_details": [
+   {
+    "detail": "Imported stems travel through a biosecurity system: the department's own records found a high proportion of imported cut flowers carried quarantine pests such as thrips, aphids and mites, and importers must manage that risk before shipping. Ask your florist early how imported varieties are sourced so a held or failed consignment doesn't leave a gap in your arrangements.",
+    "fact_ids": ["fact_100", "fact_101", "fact_102"]
+   },
+   {
+    "detail": "Waratahs are a spring flower in Australia, and growers have long tried to stretch the season because supply peaks then. A spring wedding is the natural time to feature them locally grown.",
+    "fact_ids": ["fact_104"]
+   }
+  ],
+  "legal_visa": [
+   {
+    "item": "Imported cut flowers and foliage are subject to Australian biosecurity import conditions set out in BICON (as at November 2026). Your Wedded Advisor confirms current requirements.",
+    "fact_ids": ["fact_100", "fact_102", "fact_103"]
+   }
+  ],
+  "needs_signoff": [],
+  "real_weddings": [],
+  "quotes": [],
+  "must_include_coverage": [
+   {"item": "Import conditions for cut flowers and foliage (agriculture.gov.au)", "status": "covered", "covered_by": ["fact_100", "fact_101", "fact_102", "fact_103"]},
+   {"item": "Inspection on arrival / treatment such as fumigation", "status": "verify", "covered_by": ["fact_103", "[[VERIFY: BICON inspection wording; fumigation or treatment not sourced]]"]},
+   {"item": "Australian seasonal flower availability by month or season (non-vendor)", "status": "partial", "covered_by": ["fact_104", "[[VERIFY: month-by-month or season availability of Australian-grown wedding flowers from an industry body or state agriculture source]]"]},
+   {"item": "Australian season months (Bureau of Meteorology)", "status": "verify", "covered_by": ["[[VERIFY: Australian season months from a Bureau of Meteorology page]]"]}
+  ]
+ }
+}

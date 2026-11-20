@@ -1,0 +1,81 @@
+{
+ "agent": "orchestrator",
+ "task_id": "fl_b",
+ "stage": "03",
+ "status": "complete",
+ "round": 1,
+ "inputs_used": [
+  "https://www.bom.gov.au/news-and-media/solstices-equinoxes-and-the-seasons"
+ ],
+ "self_qa": {
+  "checks": [
+   {
+    "check": "Every fact has a source and date",
+    "pass": true
+   }
+  ],
+  "confidence": 0.85
+ },
+ "open_questions": [
+  {
+   "to": "luxury-writer",
+   "question": "The en dash inside fact_200 is the source's punctuation; do not reproduce dashes in copy, paraphrase as 'summer is December, January and February'.",
+   "blocking": false
+  }
+ ],
+ "assumptions": [
+  "Sydney Markets seasonal availability page did not render its table (read once, not retried); no month-by-month flower list from an authoritative non-vendor source was found."
+ ],
+ "verify_items": [],
+ "tools_used": [
+  "apify--web-search",
+  "apify--web-fetch"
+ ],
+ "next_agent": [
+  "luxury-writer"
+ ],
+ "payload": {
+  "facts": [
+   {
+    "fact_id": "fact_200",
+    "claim": "Bureau of Meteorology, Solstices, equinoxes and the seasons (updated 17 September 2026, read 20 November 2026): 'Australian summer, autumn, winter and spring are defined as: summer \u2013 the warmest 3 months: December, January and February; winter \u2013 the coolest 3 months: June, July and August; spring and autumn \u2013 the 3-month transition periods between summer and winter.'",
+    "source": "https://www.bom.gov.au/news-and-media/solstices-equinoxes-and-the-seasons",
+    "source_type": "government",
+    "checked": "2026-11-20",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_201",
+    "claim": "Bureau of Meteorology, same page: 'for Australia it's a better fit with our temperatures to use 1 March, 1 June, 1 September and 1 December' to start each season.",
+    "source": "https://www.bom.gov.au/news-and-media/solstices-equinoxes-and-the-seasons",
+    "source_type": "government",
+    "checked": "2026-11-20",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_202",
+    "claim": "Bureau of Meteorology, same page: 'For Australia's northern tropics ... the European 4-season model isn't relevant.' The year is divided into a 'wet season' (October to April) and a 'dry season' (May to September).",
+    "source": "https://www.bom.gov.au/news-and-media/solstices-equinoxes-and-the-seasons",
+    "source_type": "government",
+    "checked": "2026-11-20",
+    "is_price": false
+   }
+  ],
+  "insider_details": [],
+  "quotes": [],
+  "real_weddings": [],
+  "verify_items": [],
+  "needs_signoff": [],
+  "must_include_coverage": [
+   {
+    "item": "Australian season months (BOM)",
+    "status": "covered",
+    "covered_by": [
+     "fact_200",
+     "fact_201",
+     "fact_202"
+    ]
+   }
+  ]
+ }
+}
