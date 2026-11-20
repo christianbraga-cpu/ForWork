@@ -47,3 +47,4 @@
   - **Reader (couple):** relevance 2, trust 3, clarity 3, would_enquire 2, "save". The partnered-network funnel line, the unsupported "answer to planning from afar", and too many brand names.
   - Merged request: 04-reviews/v1/merged.md.
 - **Decision (default):** the last H2 becomes questions to ask the planner and venue (no implied services). Biosecurity stays unlinked until the research agent, still waiting on its permission prompt, supplies a Department of Agriculture fact.
+- **Research:** COMPLETE (38 facts: Agriculture biosecurity F-31 to F-35, ABF, TGA, CASA, Smartraveller). Biosecurity penalty figures conflict ($7,280 vs $6,600), so none is quoted. Writer v2 told to link biosecurity at the claim.
