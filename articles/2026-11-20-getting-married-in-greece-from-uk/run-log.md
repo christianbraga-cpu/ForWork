@@ -36,3 +36,18 @@
   - **Brief:** 9 H2s and 5 FAQs.
 - **Flag for the user:** the site map lists /destination-weddings/greece-marriage-licence with a live-looking title, although link-map says DRAFT. **Decision (default):** link it conditionally, and the user confirms whether it is published (GREECE-LICENCE-LIVE).
 - **Decision (default):** H2 1 loses its colon (house style). It becomes "Can British couples marry legally in Greece".
+- **Stage 1 fast (research):** DONE. 32 facts: 19 Greek-side reused from the 12 Nov pack, 13 new UK facts. 7 legal; 6 prices for Nic.
+  - **Old article:** outdated. 6 of 20 claims still hold. Errors corrected in the rewrite:
+    - same-sex marriage (legal in Greece since 2024)
+    - civil ceremony by the mayor or town hall, not a celebrant
+    - the translation office replaced in 2021
+    - the newspaper notice and 40-day registration fine are unsourced
+    - fees are unsourced
+  - **UK steps confirmed on gov.uk:**
+    - online CNI or equivalent, £50
+    - paper apostille £45, up to 25 working days
+    - a marriage abroad is recognised but not registered in the UK
+    - passport name change £102 online
+    - Greece entry passport rules
+  - **Gaps:** the Greece-specific document details are visible only inside the gov.uk application; Santorini and Mykonos town halls; Scotland and NI records pages; church conditions; the apostille on the Greek certificate.
+- **Stage 2:** writer launched.
