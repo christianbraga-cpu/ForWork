@@ -1,0 +1,469 @@
+{
+ "agent": "seo-researcher",
+ "task_id": "fashionable-flowers-opt-for-in-season-or-order-imported",
+ "stage": "02",
+ "status": "complete",
+ "round": 1,
+ "inputs_used": [
+  "00-input.json",
+  "content-system/research/locations.yaml",
+  "content-system/seo/link-map.csv (grep flower/season: no monthly posts listed)",
+  "content-system/schemas/02-seo.schema.json",
+  "content/posts/the-complete-wedding-planning-checklist-for-2024/02-seo.json (format model)",
+  "weddedwonderland.com/sitemap.xml index + post-0..3.xml"
+ ],
+ "self_qa": {
+  "checks": [
+   {
+    "check": ">= 7 of 10 locations",
+    "pass": false,
+    "note": "Fast mode: 5 of 5 requested cities returned results (Sydney, Melbourne, New York, Dubai, Singapore). No Arabic query, no secondary AU queries."
+   },
+   {
+    "check": "Every H2 maps to a real query or must-include",
+    "pass": true,
+    "note": "outline[].answers"
+   },
+   {
+    "check": "Links verified live today",
+    "pass": false,
+    "note": "All 8 content internal targets and 2 DAFF external pages fetched 200 on 2026-11-20. Not verified: /wonderland-concierge CTA; Sydney Markets seasonal availability page (TLS error twice, firecrawl and Apify)."
+   },
+   {
+    "check": "No competitor links; no noindex; no vendor or excluded destination pages",
+    "pass": true,
+    "note": "All internal targets robots 'index, follow'; no /vendor, /destinations/africa or /destinations/latin-america-caribbean."
+   },
+   {
+    "check": "Meta lengths and rules",
+    "pass": true,
+    "note": "title 54 chars, keyword first, no colon/dash/question; description 145 chars, no figures"
+   },
+   {
+    "check": "Top 3 pages read per location",
+    "pass": false,
+    "note": "Not read: DataForSEO returned google.com/goto redirect URLs only; fast-mode budget spent on the monthly-post inventory (the priority task)."
+   }
+  ],
+  "confidence": 0.7
+ },
+ "open_questions": [
+  {
+   "to": "person",
+   "question": "/quick-guide-the-right-flowers-for-your-wedding-season (2017, all four seasons) competes directly with the new hub. Consolidate it (301 into this URL) or keep and link?",
+   "blocking": false
+  },
+  {
+   "to": "person",
+   "question": "The 2015 winter post /7-blooms-you-need-in-your-2015-winter-wedding overlaps the July and August posts. Keep as the winter link, or retitle/consolidate later?",
+   "blocking": false
+  },
+  {
+   "to": "person",
+   "question": "After saving, confirm the live URL stays /fashionable-flowers-opt-for-in-season-or-order-imported (primary category bug).",
+   "blocking": false
+  }
+ ],
+ "assumptions": [
+  "Fast mode: 5 SERP cities, no GSC read, no Arabic query, competitor pages not read",
+  "Scope au_focus: title chosen by user is Australia by month; US volume is higher but its seasons are reversed",
+  "Months with no monthly post (Jan to Jun, Sep, Oct) get 'ask your florist' unless the planner finds an authoritative source"
+ ],
+ "verify_items": [
+  "Every flower-to-month pairing the hub states needs a source (Sydney Markets seasonal availability page, unverified TLS) or becomes 'ask your florist'",
+  "Existing monthly posts (2016) list flowers without sources; do not copy their lists into the hub as facts",
+  "DAFF personal-use limit (up to 6 small boxes, florist packages or bouquets, must be declared) quoted from the DAFF page fetched 2026-11-20"
+ ],
+ "tools_used": [
+  "DataForSEO serp_organic_live_advanced x5 (Sydney, Melbourne, New York, Dubai, Singapore)",
+  "DataForSEO kw_data_google_ads_search_volume (Australia, United States)",
+  "DataForSEO dataforseo_labs_google_ranked_keywords weddedwonderland.com AU and US filtered flower/bloom; old URL AU and US (no rankings)",
+  "Firecrawl map x7 (site search for in-season/month/season posts)",
+  "Firecrawl scrape x8 (summary + metadata: status, title, robots)",
+  "Apify web-fetch: sitemap index and post-0..3.xml (post-0, 1, 2 cut at 262 KB), DAFF pages x3 (one 404 guess), Sydney Markets (TLS fail)",
+  "Apify web-search x1 (DAFF cut flowers pages)",
+  "GSC: not read (fast mode); no export date recorded"
+ ],
+ "next_agent": [
+  "planner-sme",
+  "visual-curator"
+ ],
+ "payload": {
+  "primary_keyword": "wedding flowers in season",
+  "secondary_keywords": [
+   "wedding flowers in season australia",
+   "wedding flowers by month",
+   "seasonal wedding flowers australia",
+   "what flowers are in season for a wedding",
+   "best wedding flowers in season",
+   "imported wedding flowers",
+   "when should I order wedding flowers"
+  ],
+  "keyword_data": {
+   "wedding flowers in season": {
+    "au": 30,
+    "us": 390,
+    "note": "US peaks Jan (1000) and Apr (880); AU peaks Jan (50)"
+   },
+   "wedding flowers by month": {
+    "au": 10,
+    "us": 20
+   },
+   "seasonal wedding flowers australia": {
+    "au": null,
+    "us": null,
+    "note": "no volume returned"
+   },
+   "what flowers are in season for a wedding": {
+    "au": null,
+    "us": null
+   },
+   "imported wedding flowers": {
+    "au": null,
+    "us": null
+   },
+   "wedding flowers in season australia": {
+    "note": "Google related search in Melbourne; no volume returned"
+   },
+   "july wedding flowers": {
+    "au": 10,
+    "us": 170
+   },
+   "august wedding flowers": {
+    "au": 10,
+    "us": 320
+   },
+   "november wedding flowers": {
+    "au": 10,
+    "us": 320
+   },
+   "december wedding flowers": {
+    "au": 10,
+    "us": 170
+   },
+   "spring wedding flowers": {
+    "au": 40,
+    "us": 1000
+   },
+   "winter wedding flowers": {
+    "note": "no volume returned"
+   }
+  },
+  "intent": "informational",
+  "slug": "fashionable-flowers-opt-for-in-season-or-order-imported",
+  "url_path": "/fashionable-flowers-opt-for-in-season-or-order-imported",
+  "meta_title": "Wedding Flowers in Season in Australia, Month by Month",
+  "meta_description": "Which wedding flowers are in season in Australia each month, when imported blooms make sense, and how to brief your florist for a luxury wedding.",
+  "outline": [
+   {
+    "h2": "Why choose wedding flowers in season?",
+    "answers": "wedding flowers in season (AU 30, US 390); PAA 'Which is the best season for flowers?' (all 5 cities)",
+    "notes": "Freshness, availability, fit with venue and light. No prices. Link /style-advice/wedding-flowers-cost once for budget."
+   },
+   {
+    "h2": "Wedding flowers in season in Australia by month",
+    "answers": "wedding flowers by month (AU 10, US 20); related search 'wedding flowers in season australia' (Melbourne)",
+    "h3": [
+     "Spring: September, October and November",
+     "Summer: December, January and February",
+     "Autumn: March, April and May",
+     "Winter: June, July and August"
+    ],
+    "notes": "Hub table: month, season, what to ask your florist, link to the month's post where one exists (spring, July, August, November, December, winter). Each flower-month pair needs a source or becomes 'ask your florist'. Do not reuse 2016 monthly lists as facts. Do not put '<month> wedding flowers' in H2/H3 text; monthly posts own those terms."
+   },
+   {
+    "h2": "What flowers bloom in summer in Australia?",
+    "answers": "PAA 'What flowers bloom in summer in Australia?' (Sydney, Melbourne)",
+    "notes": "Short answer then point to the summer rows; December post link."
+   },
+   {
+    "h2": "In season or imported: when flown-in flowers make sense",
+    "answers": "old title intent ('opt for in-season or order imported'); imported wedding flowers",
+    "notes": "Signature blooms out of season, colour matching, destination couples. DAFF trade page: Australia imports fresh cut flowers year-round from approved countries under conditions; most local cut flowers grown in Victoria (cite DAFF)."
+   },
+   {
+    "h2": "How imported flowers reach Australia",
+    "answers": "must-include: Department of Agriculture import conditions",
+    "notes": "Commercial imports need pre-export treatment and inspection on arrival; personal-use flowers must be declared (cite DAFF importing page). Destination-wedding note: flowers may not be allowed into another country, link /destination-weddings/what-is-a-destination-wedding only if verified in stage 03."
+   },
+   {
+    "h2": "When should you order your wedding flowers?",
+    "answers": "PAA 'When should I order wedding flowers?' (Sydney, Melbourne)",
+    "notes": "Timing as [[VERIFY]] or from Wedded Wonderland's own florist guide; season affects lead time."
+   },
+   {
+    "h2": "How to brief your florist on seasonal flowers",
+    "answers": "gap: no top-10 result gives a luxury briefing angle",
+    "notes": "Questions to ask, substitutes, venue climate. Wedded Concierge CTA."
+   },
+   {
+    "h2": "Seasonal wedding flower questions",
+    "answers": "PAA across cities",
+    "notes": "FAQ block, see faq_questions."
+   }
+  ],
+  "faq_questions": [
+   "Which is the best season for wedding flowers in Australia?",
+   "When should I order wedding flowers?",
+   "What flowers bloom in summer in Australia?",
+   "What flowers are still blooming in October?",
+   "Can I bring flowers into Australia for my wedding?"
+  ],
+  "internal_links": [
+   {
+    "anchor": "spring wedding flowers",
+    "target": "/in-season-flowers-for-your-spring-wedding",
+    "type": "related",
+    "placement": "spring section",
+    "covers": "spring (September to November)",
+    "page_title": "These Are the Most Trending Flowers For Your Spring Wedding",
+    "verified_live": "2026-11-20",
+    "http_status": 200,
+    "robots": "index, follow"
+   },
+   {
+    "anchor": "July wedding flowers",
+    "target": "/7-in-season-wedding-flowers-for-the-july-bride",
+    "type": "related",
+    "placement": "winter section, July",
+    "covers": "July",
+    "page_title": "7 IN-SEASON WEDDING FLOWERS FOR THE JULY BRIDE",
+    "verified_live": "2026-11-20",
+    "http_status": 200,
+    "robots": "index, follow"
+   },
+   {
+    "anchor": "August wedding flowers",
+    "target": "/7-gorgeous-in-season-wedding-flowers-for-the-august-bride",
+    "type": "related",
+    "placement": "winter section, August",
+    "covers": "August",
+    "page_title": "7 GORGEOUS IN-SEASON WEDDING FLOWERS FOR THE AUGUST BRIDE",
+    "verified_live": "2026-11-20",
+    "http_status": 200,
+    "robots": "index, follow"
+   },
+   {
+    "anchor": "November wedding flowers",
+    "target": "/7-in-season-flowers-for-the-november-bride",
+    "type": "related",
+    "placement": "spring section, November",
+    "covers": "November",
+    "page_title": "7 in-season flowers for the November Bride",
+    "verified_live": "2026-11-20",
+    "http_status": 200,
+    "robots": "index, follow"
+   },
+   {
+    "anchor": "December wedding flowers",
+    "target": "/8-in-season-flowers-for-december",
+    "type": "related",
+    "placement": "summer section, December",
+    "covers": "December",
+    "page_title": "8 In Season Flowers for December",
+    "verified_live": "2026-11-20",
+    "http_status": 200,
+    "robots": "index, follow"
+   },
+   {
+    "anchor": "winter wedding blooms",
+    "target": "/7-blooms-you-need-in-your-2015-winter-wedding",
+    "type": "related",
+    "placement": "winter section intro",
+    "covers": "winter (June to August)",
+    "page_title": "7 BLOOMS YOU NEED IN YOUR 2015 WINTER WEDDING",
+    "verified_live": "2026-11-20",
+    "http_status": 200,
+    "robots": "index, follow"
+   },
+   {
+    "anchor": "Quick guide to flowers by wedding season",
+    "target": "/quick-guide-the-right-flowers-for-your-wedding-season",
+    "type": "related",
+    "placement": "optional; only if not consolidated (see cannibalisation)",
+    "covers": "all four seasons",
+    "page_title": "Quick Guide: The Right Flowers for Your Wedding Season",
+    "verified_live": "2026-11-20",
+    "http_status": 200,
+    "robots": "index, follow"
+   },
+   {
+    "anchor": "what wedding flowers cost",
+    "target": "/style-advice/wedding-flowers-cost",
+    "type": "related",
+    "placement": "budget paragraph in the in-season vs imported section",
+    "page_title": "Wedding Flowers Cost in 2026 and What Drives the Price",
+    "verified_live": "2026-11-20",
+    "http_status": 200,
+    "robots": "index, follow"
+   },
+   {
+    "anchor": "Wedded Concierge",
+    "target": "/wonderland-concierge?utm_source=blog&utm_medium=content",
+    "type": "commercial",
+    "placement": "florist brief section and closing CTA",
+    "note": "Not fetched this run; standard CTA target from the reference post. Confirm live before draft."
+   }
+  ],
+  "link_map_additions": [
+   {
+    "path": "/in-season-flowers-for-your-spring-wedding",
+    "url": "https://weddedwonderland.com/in-season-flowers-for-your-spring-wedding",
+    "type": "article",
+    "title": "These Are the Most Trending Flowers For Your Spring Wedding",
+    "covers": "spring (September to November)",
+    "topic": "wedding flowers",
+    "verified_live": "2026-11-20"
+   },
+   {
+    "path": "/7-in-season-wedding-flowers-for-the-july-bride",
+    "url": "https://weddedwonderland.com/7-in-season-wedding-flowers-for-the-july-bride",
+    "type": "article",
+    "title": "7 IN-SEASON WEDDING FLOWERS FOR THE JULY BRIDE",
+    "covers": "July",
+    "topic": "wedding flowers",
+    "verified_live": "2026-11-20"
+   },
+   {
+    "path": "/7-gorgeous-in-season-wedding-flowers-for-the-august-bride",
+    "url": "https://weddedwonderland.com/7-gorgeous-in-season-wedding-flowers-for-the-august-bride",
+    "type": "article",
+    "title": "7 GORGEOUS IN-SEASON WEDDING FLOWERS FOR THE AUGUST BRIDE",
+    "covers": "August",
+    "topic": "wedding flowers",
+    "verified_live": "2026-11-20"
+   },
+   {
+    "path": "/7-in-season-flowers-for-the-november-bride",
+    "url": "https://weddedwonderland.com/7-in-season-flowers-for-the-november-bride",
+    "type": "article",
+    "title": "7 in-season flowers for the November Bride",
+    "covers": "November",
+    "topic": "wedding flowers",
+    "verified_live": "2026-11-20"
+   },
+   {
+    "path": "/8-in-season-flowers-for-december",
+    "url": "https://weddedwonderland.com/8-in-season-flowers-for-december",
+    "type": "article",
+    "title": "8 In Season Flowers for December",
+    "covers": "December",
+    "topic": "wedding flowers",
+    "verified_live": "2026-11-20"
+   },
+   {
+    "path": "/7-blooms-you-need-in-your-2015-winter-wedding",
+    "url": "https://weddedwonderland.com/7-blooms-you-need-in-your-2015-winter-wedding",
+    "type": "article",
+    "title": "7 BLOOMS YOU NEED IN YOUR 2015 WINTER WEDDING",
+    "covers": "winter (June to August)",
+    "topic": "wedding flowers",
+    "verified_live": "2026-11-20"
+   },
+   {
+    "path": "/quick-guide-the-right-flowers-for-your-wedding-season",
+    "url": "https://weddedwonderland.com/quick-guide-the-right-flowers-for-your-wedding-season",
+    "type": "article",
+    "title": "Quick Guide: The Right Flowers for Your Wedding Season",
+    "covers": "all four seasons",
+    "topic": "wedding flowers",
+    "verified_live": "2026-11-20"
+   },
+   {
+    "path": "/style-advice/wedding-flowers-cost",
+    "url": "https://weddedwonderland.com/style-advice/wedding-flowers-cost",
+    "type": "article",
+    "title": "Wedding Flowers Cost in 2026 and What Drives the Price",
+    "covers": "cost (no month)",
+    "topic": "wedding flowers",
+    "primary_keyword": "wedding flowers cost",
+    "verified_live": "2026-11-20"
+   }
+  ],
+  "external_links": [
+   {
+    "anchor": "import conditions for cut flowers and foliage",
+    "url": "https://www.agriculture.gov.au/biosecurity-trade/import/goods/plant-products/cut-flowers-foliage",
+    "type": "authority",
+    "verified_live": "2026-11-20",
+    "title": "Importing cut flowers and foliage - DAFF"
+   },
+   {
+    "anchor": "Department of Agriculture's cut flower review",
+    "url": "https://www.agriculture.gov.au/biosecurity-trade/policy/risk-analysis/plant/cut-flowers",
+    "type": "authority",
+    "verified_live": "2026-11-20",
+    "title": "Cut flowers and foliage - DAFF",
+    "note": "Source for local production regions, year-round growing with Feb/May/Dec peaks, and import origins (Hort Innovation 2023/24 figures)"
+   },
+   {
+    "anchor": "Sydney Flower Market seasonal availability guide",
+    "url": "https://www.sydneymarkets.com.au/markets/flowers-market/seasonal-availability.html",
+    "type": "authority",
+    "note": "Found via Firecrawl map (title 'Seasonal Availability of Flowers - Sydney Markets'); fetch failed twice with a TLS certificate error, so NOT verified. Planner must confirm it loads before citing month pairs from it."
+   }
+  ],
+  "backlinks_to_add": [
+   {
+    "from": "/7-in-season-wedding-flowers-for-the-july-bride",
+    "anchor": "wedding flowers in season",
+    "sentence": "Fits the opening line 'No matter what time of year you're getting Married in Australia, there are always some beautiful in-season floral options available.' (page fetched 2026-11-20)"
+   },
+   {
+    "from": "/7-in-season-flowers-for-the-november-bride",
+    "anchor": "in-season wedding flowers month by month",
+    "sentence": "Fits after the intro 'here's a sneak peek into the upcoming floral trends for Brides getting Married in November.' (fetched 2026-11-20)"
+   },
+   {
+    "from": "/8-in-season-flowers-for-december",
+    "anchor": "what's in season each month",
+    "sentence": "Fits the intro 'especially when you don't know what's in season!' (fetched 2026-11-20)"
+   },
+   {
+    "from": "/style-advice/wedding-flowers-cost",
+    "anchor": "wedding flowers in season",
+    "sentence": "[[VERIFY: place at the 'Choose flowers by season' line after reading full page]]"
+   }
+  ],
+  "serp_source": "dataforseo",
+  "serp_summary": {
+   "locations_checked": [
+    "sydney",
+    "melbourne",
+    "new_york",
+    "dubai",
+    "singapore"
+   ],
+   "locations_failed": [],
+   "common_angles": [
+    "Season-by-season flower lists (spring, summer, autumn, winter)",
+    "Pinterest pins and image packs dominate",
+    "Florist blogs selling their own service",
+    "A few month-by-month lists (US: bestforbride 2015; Singapore: rinlongflower 2026)"
+   ],
+   "gaps": [
+    "No AU result gives a sourced month-by-month table",
+    "No result covers imported vs local or Australian import rules",
+    "Most results are dated (2015 to 2023) or florist sales pages",
+    "No luxury or destination-couple angle"
+   ],
+   "regional_differences": [
+    "AU: local florists (Templem, Feeling Floral, Lime Tree Bower), WeddingNSW; related search 'wedding flowers in season australia'",
+    "US: older evergreen month lists and Pinterest; Northern seasons",
+    "Dubai: UAE florists with Dubai season guides (cooler months Nov to Mar)",
+    "Singapore: local florists, trend pieces; PAA 'What seasonal flowers are in season in November?'"
+   ],
+   "recommended_scope": "au_focus"
+  },
+  "cannibalisation": [
+   "Hub (this URL) owns 'wedding flowers in season', 'wedding flowers by month', 'wedding flowers in season australia'. DataForSEO shows the old URL ranks for nothing in AU or US, so no equity to protect.",
+   "Monthly posts own their month: /7-in-season-flowers-for-the-november-bride ranks US #20 'what flowers are in season in november for weddings', #36 'november wedding flowers' (US 320), #40 'november flowers bouquet', #61 'flowers in season november'; /7-gorgeous-in-season-wedding-flowers-for-the-august-bride ranks US #58 'august wedding flowers' (US 320), #59, #64, #65 'in season flowers august', #67. July, December, spring and winter 2015 posts: no flower rankings found. Hub must not use month names in title, H2 or H3, and links to each month post with the month as anchor.",
+   "Note: November and August posts rank in the US, where those months are autumn and summer, but the posts describe Australian seasons. Intent mismatch for US searchers; flag for a later refresh of those posts, not this one.",
+   "Overlap needing a decision: /quick-guide-the-right-flowers-for-your-wedding-season targets general by-season intent (same as the hub). Recommend 301 into this hub or de-optimise; human call.",
+   "Overlap: /in-season-flowers-for-your-spring-wedding vs /inspiration-for-the-perfect-spring-wedding-bouquets (in sitemap, not fetched); spring post is the season owner.",
+   "Overlap: /7-blooms-you-need-in-your-2015-winter-wedding covers June to August alongside the July and August posts.",
+   "Possible duplicate pair seen in Firecrawl map: /top-20-wedding-bouquets-for-2023-and-their-season and /top-20-wedding-bouquets-ideas-for-2023-and-their-season (not fetched).",
+   "/style-advice/wedding-flowers-cost owns 'wedding flowers cost'; link only, no prices here."
+  ]
+ }
+}
