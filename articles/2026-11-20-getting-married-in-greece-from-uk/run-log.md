@@ -63,3 +63,11 @@
   - Merged request: 04-reviews/v1/merged.md.
 - **Link map:** six Greece pages from the strategist's map added to the Greece section: best time, packages, same-sex, venues, the CNI explainer, and an older Greece planning page marked do-not-link.
 - **Stage 4 fast (writer v2):** DONE. 03-draft-v2.md: 2,376 reader words, 0 dashes, 0 placeholders, 7 official domains inline, none blocked. YAML valid: 42 claims, 30 links. All 28 merged items applied. No [[NEEDS]] in the body. Santorini and Mykonos are covered honestly (no published requirements found), and the venue question goes into the municipality question list.
+- **Stage 6 fast (copy editor):** DONE. final.md 2,376 reader words, 0 dashes, 0 placeholders, 7 official domains inline; publish-package.json valid; chrome-upload-prompt.md is draft only and never touches the old URL; article.docx built. Template lessons added to country-legal-guide.md. The Greece licence article's retro-link sentence is in, and its docx rebuilt.
+
+## Must-fix before publish
+1. CIRCULAR-READ: a Greek reader confirms the 2019 Interior Ministry circular (a free-to-marry document naming the partner counts as the licence). This is the article's central legal point.
+2. REDIRECT-301: after publish, 301 /if-youre-thinking-of-getting-married-in-greece-you-need-to-know-this to the new URL (user approval).
+3. GREECE-LICENCE-LIVE: confirm whether /destination-weddings/greece-marriage-licence is published (link-map says DRAFT; the site map shows it). It now links here, so publish the UK guide first or together.
+4. NIC-SIGNOFF: GBP 50, 45, 102, 115.50; EUR 10, 10, 100, 150 (official fees).
+5. LINK-CHECK (gov.uk and Greek hosts not reachable in the session), CONCIERGE-PAY, AUTHOR, IMAGE-RIGHTS, CMS-URL.

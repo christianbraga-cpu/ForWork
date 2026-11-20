@@ -86,3 +86,13 @@ from the France guide (articles/2026-11-16-getting-married-in-france, 16 Nov
   with their exact date wording ("from 1 December 2021") and every post named.
 - Categories: the primary category only unless categories.md confirms others.
   SEO title 60 characters or fewer, no year unless the content is dated to it.
+
+## Lessons from the UK Greece refresh (20 Nov 2026)
+- **Nationality variants (UK, US):** swap every home-country step for that country's official sources (gov.uk, FCDO, the register offices), and give fees in that country's currency as sourced. No Australian content at all. H2 3 becomes "Prefer to marry in the UK?" (or the home country).
+- **UK nations:** notice periods and birth-certificate issuers differ between England and Wales, Scotland and Northern Ireland. Unless each nation's page is sourced, send readers to "the register office where your birth was registered" and "the register office where you will marry". Never name the issuer for a nation without a source.
+- **Refreshes:**
+  - Read the old article and grade each of its claims as supported, outdated or unsupported.
+  - Correct the errors by stating current rules. Never mention the old page.
+  - Log REDIRECT-301 for the CMS, and never touch the old URL without the user's approval.
+- **Hand-decoded foreign-language legal sources:** keep "indicates", tell readers to confirm in writing, and log a native-reader check (e.g. CIRCULAR-READ) before publish.
+- **Islands without published rules:** say plainly that no requirements could be confirmed, and make the venue question the first item in the municipality question list.
