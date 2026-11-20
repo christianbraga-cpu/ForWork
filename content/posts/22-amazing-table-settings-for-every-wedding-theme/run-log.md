@@ -2,3 +2,4 @@
 - 02:29 04 visual-curator needs_input 4 slots needed; AI place setting awaits Nic
 02:29 01 content-strategist complete brief written
 - 02:30 03 source pack: 9 facts from Emily Post Institute table setting guide (US etiquette authority; write as widely used conventions); bread plate side and place card position not sourced, written as practice.
+- 02:41 02 SEO done: AU 260 / US 1,600; decor page live; King's Table and table design 2025 posts live; two trend pages show conflicting noindex (not linked); old URL no rankings; old post links 3 vendor pages (remove).
