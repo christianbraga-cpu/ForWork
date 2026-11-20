@@ -52,3 +52,8 @@
   - YAML valid; 27 claims, 24 links.
   - No Australian average dollar figure anywhere (checked by grep). Destination figures come from our guides, in their original currencies.
   - Amalfi and Maldives cost pages added to link-map.
+- **Stage 3 fast (3 reviews):** DONE.
+  - **Accuracy 3.9:** user decision met (no Australian figure). Majors: the ACCC rule drops "should know"; no deciding authority named and the overseas-supplier line is unclear; "no government body" is universal; the "middle of the range" misstatement; unsourced "more than anything else" and "usually bundles".
+  - **SEO 4.3, APPROVED with minors:** add an answer-first paragraph for snippets and AI citations; add a cheapest-month FAQ from ABS data; small trims. Risk: rankings may dip after the 301 of the 2020 page, which ranked #2 with a figure (RANK-WATCH).
+  - **Reader (couple):** relevance 2 (expected: a home-wedding article read by an Italy persona), trust 3, clarity 4, would_enquire 2. Majors: the partnered-planner line and the one-line "planning from abroad" answer.
+  - Merged request: 04-reviews/v1/merged.md.
