@@ -5,3 +5,4 @@
 - 02:07 02 SEO done: 7 live in-season posts found (spring, July, August, November, December, 2015 winter, quick-guide by season); cost page live; old URL has no rankings; report.md saved by orchestrator (agent blocked).
 - 02:10 05 first draft: about 2,430 words, 4 takeaways, only waratah named, 6 monthly posts + cost page linked; first-draft docx built.
 - 02:13 06 editor pass_with_edits 4.43, 9 of 9 applied -> 05-draft-r2.md; 5 readers done (enquiry 1 to 2); planner_couple envelope fields completed by orchestrator.
+- 02:16 07b panel revise (enquiry 1.7 v 3.8 gate; deferred business details); 10 of 10 edits applied -> 08-final.md.
