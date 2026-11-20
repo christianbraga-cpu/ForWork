@@ -327,6 +327,10 @@ Hub: `/style-advice/celebrity-engagement-rings` (in production). Spokes:
 | `/destination-weddings/destination-wedding-vs-home-cost` | Destination wedding vs home cost | destination wedding vs home cost (owns the side-by-side comparison; its snippet leads with US figures) |
 | `/expert-advice/wedding-cost-per-guest` | Wedding cost per guest | wedding cost per guest (SITE-CONFLICTS: quotes A$38,252, likely from Easy Weddings, a blocked source; do not link or quote until fixed) |
 
+| `/expert-advice/average-destination-wedding-cost-by-region` | Average destination wedding cost by region | average destination wedding cost (live per Firecrawl map 20 Nov 2026; same topic as the 19 Nov draft /expert-advice/average-cost-of-destination-wedding: user to confirm whether that draft was published here) |
+| `/this-is-how-much-an-average-wedding-costs-in-australia` | Average Wedding Cost in Australia and What Drives It (merge, 20 Nov 2026) | average wedding cost australia | being refreshed; kept URL |
+| `/the-average-cost-of-an-australian-wedding-in-2020`, `/the-cost-of-a-wedding-in-australia-2019` | Old Australian cost pages | merged into the kept URL above; do not link; 301 after publish (user approval) |
+
 Planned (not live, retro-links after publish): WW-322, WW-335, N-107.
 
 ## Wedding planning checklist and packing pages (Firecrawl map, 19 Nov 2026)

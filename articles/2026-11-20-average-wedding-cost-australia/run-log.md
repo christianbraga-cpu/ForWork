@@ -32,3 +32,10 @@
   - Do not link /expert-advice/wedding-cost-per-guest (SITE-CONFLICTS) or the 19 Nov destination cost DRAFT (retro-link later).
 
 ## Stages
+- **Stage 0 fast (strategist):** DONE.
+  - **Volumes (AU, per month):** average wedding cost australia 1,300; average cost of a wedding in australia 1,300; how much does a wedding cost australia 390; average wedding cost 480.
+  - **SERP:** the AI Overview and top results rest on the $38,252 industry survey (Easy Weddings, blocked), unsourced vendor numbers and second-hand Moneysmart claims. None links ABS. Our 2020 page ranks #2 in Sydney and Brisbane.
+  - **URLs:** all three are live.
+  - **Cannibalisation:** partial with the hub /expert-advice/how-much-does-the-average-wedding-cost, which is US-led. **Decision (default):** do not merge the hub; suggest the user cut its Australia paragraph to a pointer here (HUB-POINTER).
+  - **Brief:** 7 H2s and 5 FAQs.
+- **Flag for the user:** a live page, /expert-advice/average-destination-wedding-cost-by-region, matches the topic of the 19 Nov draft. Was that draft published at this URL? Added to link-map.
