@@ -51,3 +51,8 @@
     - Greece entry passport rules
   - **Gaps:** the Greece-specific document details are visible only inside the gov.uk application; Santorini and Mykonos town halls; Scotland and NI records pages; church conditions; the apostille on the Greek certificate.
 - **Stage 2:** writer launched.
+- **Stage 2 fast (writer):** DONE. 03-draft-v1.md.
+  - --check: 3,209 reader words (over the brief; v2 trims), 0 dashes, 3 visible [[NEEDS]] markers for UK nation pages (to resolve in v2).
+  - 8 official domains inline (gov.uk, mfa.gr, ypes.gr, mitos.gov.gr, municipality sites); none blocked.
+  - YAML valid; 49 claims (45 sourced), 24 links.
+  - Link map: Santorini cost breakdown row and this page's DRAFT row (the UK route) added.

@@ -198,6 +198,8 @@ URL until a human confirms the other resolves.
 |---|---|---|
 | `/a-two-day-wedding-celebration-in-greece` | A Two-Day Wedding Celebration in Greece | two day wedding greece |
 | `/13-reasons-we-all-want-to-get-married-in-santorini` | 13 Reasons We All Want to Get Married in Santorini | married in santorini |
+| `/real-weddings/santorini-wedding-cost-breakdown` | Santorini wedding cost breakdown | santorini wedding cost (live; read 19 Nov 2026 for the cost article) |
+| `/destination-weddings/getting-married-in-greece-from-uk` | Getting Married in Greece from the UK Step by Step | getting married in greece from uk (the UK route in the Greece cluster: Greece pieces send British readers here) | DRAFT (20 Nov 2026; replaces /if-youre-thinking-of-getting-married-in-greece-you-need-to-know-this, 301 after publish) |
 
 ## France articles (Firecrawl map, 16 Nov 2026)
 
