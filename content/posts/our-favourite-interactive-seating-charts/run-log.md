@@ -6,3 +6,5 @@
 - 05:30 06 editor pass_with_edits 4.14; 5 of 5 applied -> r2; 5 readers done.
 - 05:34 07b panel revise (enquiry 1.7 v 3.8; deferred business details); 15 of 15 applied -> 08-final.md.
 - 05:36 Final check pass_with_edits 4.14; 1 of 1 applied (Advisor line trimmed to brand-facts wording). 09 CRO done.
+- 05:38 11 cms-publisher package only: 11-body.md, 11-publish-package.json, 12-cms-report.md, booking-checklist.md; not uploaded (package-only run, field map not confirmed); URL-move warning carried; validate All valid.
+- 05:38 11 package done; final docx and run report written.
