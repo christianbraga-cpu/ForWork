@@ -156,7 +156,7 @@ Your Wedded Advisor confirms inclusions in writing before you commit, so the set
 
 ## Planning your table settings
 
-### What to check at the table mock-up
+### What to check at the trial table
 
 A mock-up is one table laid exactly as it will be on the day, and it is the hour that settles the reception. At a wedding abroad, ask for clear photos or a video walk-through if you cannot be there.
 
