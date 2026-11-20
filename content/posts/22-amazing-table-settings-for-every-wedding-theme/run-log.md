@@ -8,3 +8,5 @@
 - 02:47 07b panel-chair revise: weighted enquiry 1.9; 3 must, 3 should, 6 consider applied as 13 edits against r2.
 - 02:48 07b panel revise (enquiry 1.9 v 3.8; deferred business details); 13 of 13 edits applied -> 08-final.md.
 - 02:49 Final check pass_with_edits 4.36; 2 of 2 applied (name card and menu as advice; no spacing claim). 09 CRO and 10 distribution done.
+- 02:51 11 cms-publisher package only: 11-body, 11-publish-package (valid), booking-checklist, 12-cms-report; not uploaded (no browser, field map not confirmed); URL-move warning flagged.
+- 02:52 11 package done; final docx and run report written.
