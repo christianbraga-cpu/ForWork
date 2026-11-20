@@ -1,0 +1,217 @@
+{
+  "agent": "editor",
+  "task_id": "our-favourite-interactive-seating-charts",
+  "stage": "06",
+  "status": "complete",
+  "round": 1,
+  "inputs_used": [
+    "content/posts/our-favourite-interactive-seating-charts/05-draft.md",
+    "content/posts/our-favourite-interactive-seating-charts/01-brief.json",
+    "content/posts/our-favourite-interactive-seating-charts/02-seo.json",
+    "content/posts/our-favourite-interactive-seating-charts/03-source-pack.json",
+    "content-system/brand/brand-facts.md",
+    "content-system/seo/link-map.csv",
+    "content-system/schemas/06-edit.schema.json"
+  ],
+  "self_qa": {
+    "checks": [
+      {
+        "check": "scan_copy.py run",
+        "pass": true,
+        "note": "0 banned, 0 flagged, 0 dashes, 0 overlaps"
+      },
+      {
+        "check": "Every factual sentence logged",
+        "pass": true,
+        "note": "13 entries"
+      },
+      {
+        "check": "Each edit old occurs exactly once; all apply cleanly",
+        "pass": true,
+        "note": "5 edits, verified by script"
+      },
+      {
+        "check": "Keyword in title, first 100 words and one H2 after edit",
+        "pass": true
+      },
+      {
+        "check": "Exactly 4 one-sentence takeaways",
+        "pass": true
+      },
+      {
+        "check": "Body word count 1,500 to 2,200",
+        "pass": true,
+        "note": "about 2,180 body words excl. comments and URLs; edits are length neutral"
+      },
+      {
+        "check": "Headings: no colons, dashes, hyphens or question headings outside FAQ after edit",
+        "pass": true
+      },
+      {
+        "check": "Decision consistent with scores",
+        "pass": true
+      }
+    ],
+    "confidence": 0.85
+  },
+  "open_questions": [
+    {
+      "to": "orchestrator",
+      "question": "link-map.csv is stale: add /expert-advice/where-to-print-wedding-seating-chart and move /22-amazing-table-settings-for-every-wedding-theme to /style-advice/ (both confirmed in 02-seo) via /wedded-linkmap.",
+      "blocking": false
+    },
+    {
+      "to": "orchestrator",
+      "question": "Link slug /expert-advice/prismm-vs-wonderland-studio carries a third-party app name in the URL (not in visible copy). Kept per 02-seo; Nic to confirm.",
+      "blocking": false
+    },
+    {
+      "to": "orchestrator",
+      "question": "Image slots are descriptive comments, not 04-images slot ids; check against 04-images before CMS.",
+      "blocking": false
+    }
+  ],
+  "assumptions": [
+    "Protected H3s kept: A Sweet Touch, Escort Cards as Table Decor, A Glass of Champagne, A Pop of Colour to Take Home, Tropical Wedding Seating Chart, A Personal Touch with Photos and a Message, The Art of Technology."
+  ],
+  "verify_items": [],
+  "tools_used": [
+    "Bash"
+  ],
+  "next_agent": [
+    "icp-reader"
+  ],
+  "payload": {
+    "draft_file": "content/posts/our-favourite-interactive-seating-charts/05-draft.md",
+    "rubric": {
+      "voice": 4,
+      "expertise": 4,
+      "accuracy": 5,
+      "seo_fit": 4,
+      "commercial_link": 4,
+      "structure": 4,
+      "brief_fit": 4
+    },
+    "average": 4.14,
+    "blocking_issues": [],
+    "decision": "pass_with_edits",
+    "edits": [
+      {
+        "location": "H2 after Key takeaways",
+        "issue": "H2 reads as an unanswered question outside the FAQ. Keeps the keyword phrase in an H2.",
+        "fix": "Replace exactly: ## What Is an Interactive Wedding Seating Chart WITH: ## Interactive Wedding Seating Charts Explained",
+        "old": "## What Is an Interactive Wedding Seating Chart",
+        "new": "## Interactive Wedding Seating Charts Explained"
+      },
+      {
+        "location": "A Map Seating Chart, para 1",
+        "issue": "Quotation marks around a phrase; brief bans quoted wording. Rephrase without quotes.",
+        "fix": "Replace exactly: A large illustrated map with each table marked on it becomes a \"where in the world are you sitting\" display. WITH: A large illustrated map with each table marked on it shows guests where in the world they are sitting.",
+        "old": "A large illustrated map with each table marked on it becomes a \"where in the world are you sitting\" display.",
+        "new": "A large illustrated map with each table marked on it shows guests where in the world they are sitting."
+      },
+      {
+        "location": "Alphabetical or by Table",
+        "issue": "'usually wins' is a generalisation claim with no source. Make it direct advice.",
+        "fix": "Replace exactly: For a large wedding, alphabetical order usually wins; for a small one, by table is fine. WITH: For a large wedding, choose alphabetical order; for a small one, by table is fine.",
+        "old": "For a large wedding, alphabetical order usually wins; for a small one, by table is fine.",
+        "new": "For a large wedding, choose alphabetical order; for a small one, by table is fine."
+      },
+      {
+        "location": "The Art of Technology",
+        "issue": "Repeats the mirror idea already covered under A Mirror or Glass Seating Chart. Give it its own example.",
+        "fix": "Replace exactly: such as a framed mirror with names on it or a lit screen set into a styled backdrop, WITH: such as a lit screen set into a styled backdrop or a large frame guests can step behind,",
+        "old": "such as a framed mirror with names on it or a lit screen set into a styled backdrop,",
+        "new": "such as a lit screen set into a styled backdrop or a large frame guests can step behind,"
+      },
+      {
+        "location": "Accessibility, closing para",
+        "issue": "'first half hour' is a timing spec not in the guide; tie it to arrival instead (fact_09 covers early seating with staff).",
+        "fix": "Replace exactly: ask a host or a member of the bridal party to stand nearby for the first half hour. WITH: ask a host or a member of the bridal party to stand nearby while guests arrive.",
+        "old": "ask a host or a member of the bridal party to stand nearby for the first half hour.",
+        "new": "ask a host or a member of the bridal party to stand nearby while guests arrive."
+      }
+    ],
+    "fact_check_log": [
+      {
+        "claim": "Signage should be clear, logical, accurate and accessible (Queensland guide)",
+        "fact_id": "fact_03",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Consistent sign size, colour, placement; few pieces of info per sign; people glance rather than read",
+        "fact_id": "fact_04",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Signs apart from clutter and distinguishable from surroundings",
+        "fact_id": "fact_05",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Viewable at all heights incl. wheelchair users, children, tall people; tested in a crowd",
+        "fact_id": "fact_06",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Pictures or icons help",
+        "fact_id": "fact_07",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Open, flat, clear pathways to entrances and exits",
+        "fact_id": "fact_08",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Remove chairs for wheelchair access at tables; do not group all wheelchair users together",
+        "fact_id": "fact_01",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Neutral wording such as reserved seating",
+        "fact_id": "fact_02",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Early seating with staff directing guests",
+        "fact_id": "fact_09",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Wonderland Studio is our planning app for seating charts and RSVPs",
+        "fact_id": "brand-facts line 14",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Your Wedded Advisor confirms inclusions in writing before you commit",
+        "fact_id": "brand-facts claims we can make",
+        "status": "confirmed"
+      },
+      {
+        "claim": "One Wedded Advisor, start to finish, single point of contact",
+        "fact_id": "brand-facts claims we can make",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Advisor works in your time zone; plans venue, travel, vendors and payments, anywhere in the world",
+        "fact_id": "brand-facts claims we can make",
+        "status": "confirmed"
+      }
+    ],
+    "compliance": {
+      "pass": true,
+      "issues": [
+        "No prices, statistics, trend claims, 'best', 'free', 'last dance', research talk or third-party names in visible copy; one comparison link slug (/expert-advice/prismm-vs-wonderland-studio) names a third-party app in the URL only, kept because 02-seo requires it.",
+        "Accessibility facts 01 to 09 paraphrased, unquoted, credited to Queensland guidance and linked at the claim; no measurements.",
+        "UTMs primary, secondary, closing and magnet each once; Concierge anchors read 'Wedded Concierge'."
+      ]
+    },
+    "originality": {
+      "pass": true,
+      "matches": []
+    },
+    "banned_phrases_found": [],
+    "needs_signoff": []
+  }
+}
