@@ -330,6 +330,9 @@ Planned (not live, retro-links after publish): WW-322, WW-335, N-107.
 | `/what-to-pack-for-a-destination-wedding` | What to pack for a destination wedding | what to pack for a destination wedding (generic list; overlaps the packing list; do not link; 301 decision for the user) |
 | `/pack-for-your-destination-wedding` | Pack for your destination wedding | (generic list; overlaps the packing list; do not link; 301 decision for the user) |
 | `/honeymoon-essentials-checklist` | Honeymoon essentials checklist | honeymoon essentials checklist (older page; link for honeymoon packing until WW-202 is live) |
+| `/destination-weddings/how-to-travel-with-wedding-dress` | How to travel with a wedding dress | travel with wedding dress (live per Firecrawl map 19 Nov 2026;) |
+| `/destination-weddings/destination-wedding-guest-guide` | Destination wedding guest guide | destination wedding guest guide (live per Firecrawl map 19 Nov 2026) |
+| `/expert-advice/what-not-to-wear-to-a-wedding` | What not to wear to a wedding | what not to wear to a wedding (live per Firecrawl map 19 Nov 2026) |
 
 ## Do not link from blogs
 

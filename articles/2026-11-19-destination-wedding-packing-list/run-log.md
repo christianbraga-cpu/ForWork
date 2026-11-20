@@ -34,3 +34,10 @@
   - **Link map:** new section added.
 - **Decision (default):** H2 2 loses its colon (house style). H2 7 (what the Wedded Advisor arranges) must use only live brand wording, or be cut back to the Concierge's sourced travel wording.
 - **Stage 1 fast (research):** PARTIAL at 23:58. The agent is waiting on an MCP permission prompt; 28 official facts are saved (Smartraveller, ABF duty free and cash, CASA batteries, TGA medicines, passports). Not yet in: biosecurity, our own pages. **Decision (default):** the writer started at 23:58 on the saved facts and re-reads the pack before writing.
+- **Stage 2 fast (writer):** DONE. 03-draft-v1.md.
+  - --check: 2,995 reader words, over the brief, so v2 trims to about 2,300.
+  - 0 dashes, 0 placeholders. Official domains inline: ABF, CASA, Passports, Smartraveller, TGA. None blocked.
+  - YAML valid; 33 claims, 20 links.
+  - BIOSECURITY: a fallback line with no link.
+  - The last H2 was renamed by the writer to "What your planning team arranges"; the reviewers check its service claims.
+- **Decision (default):** tga.gov.au, casa.gov.au and agriculture.gov.au are approved in domains.md (official government). The dress, guest guide and what-not-to-wear pages from the brief are added to link-map (live per the Firecrawl map).
