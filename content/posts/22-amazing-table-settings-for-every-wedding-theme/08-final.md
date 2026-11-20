@@ -60,7 +60,7 @@ That choice makes the napkin the easiest place to carry a theme: a flat fold in 
 
 ### Name card and menu
 
-The name card sits at the top of the setting, above the plate or on the napkin, where a guest finds it before they pull out their chair. A printed menu either rests on the charger, tucked under the napkin, or stands at the top of the setting beside the name card.
+Set the name card at the top of the setting, above the plate or on the napkin, where a guest finds it before they pull out their chair. A printed menu can rest on the charger, tucked under the napkin, or stand at the top of the setting beside the name card.
 
 Name cards are the last piece to be finalised, because they follow the seating plan. Once your guest list settles, [make your wedding seating chart](https://weddedwonderland.com/expert-advice/wedding-seating-chart) first, then the cards follow from it.
 
@@ -72,7 +72,7 @@ The style of service changes the setting more than any theme. Decide it with you
 
 **Shared or family-style.** Platters are passed along the table, so each place needs less: a dinner plate, a fork and knife, perhaps a spoon, and the glasses. Leave room in the middle for the platters and keep centrepieces narrow.
 
-**Long banquet tables.** A single long table, or several in a row, turns the room into one dinner party. Settings sit closer together and the eye reads the table as a whole, so repetition does the work. If you are drawn to this look, see [the King's Table](https://weddedwonderland.com/trend-report-the-kings-table) for how it is styled.
+**Long banquet tables.** A single long table, or several in a row, turns the room into one dinner party. The settings run in one continuous line and the eye reads the table as a whole, so repetition does the work. If you are drawn to this look, see [the King's Table](https://weddedwonderland.com/trend-report-the-kings-table) for how it is styled.
 
 ## Wedding table settings by theme
 
