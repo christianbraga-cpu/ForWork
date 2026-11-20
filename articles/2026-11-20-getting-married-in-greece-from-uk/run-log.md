@@ -62,3 +62,4 @@
   - **Reader (uk_couple):** relevance 5, trust 4, clarity 3, would_enquire 3, "save and forward". Majors: the placeholders; nothing on Santorini or Mykonos; the venue question left open.
   - Merged request: 04-reviews/v1/merged.md.
 - **Link map:** six Greece pages from the strategist's map added to the Greece section: best time, packages, same-sex, venues, the CNI explainer, and an older Greece planning page marked do-not-link.
+- **Stage 4 fast (writer v2):** DONE. 03-draft-v2.md: 2,376 reader words, 0 dashes, 0 placeholders, 7 official domains inline, none blocked. YAML valid: 42 claims, 30 links. All 28 merged items applied. No [[NEEDS]] in the body. Santorini and Mykonos are covered honestly (no published requirements found), and the venue question goes into the municipality question list.
