@@ -38,3 +38,4 @@ A first attempt (12 Nov 2026) was cancelled by the user before stage 0 ran, beca
 6. **Images:** pick files; credit, licence and consent for all 6 slots; update alt text to the chosen files.
 7. **CMS:** author, CMS admin URL; secondary category "Planning Advice" kept from the brief but categories.md says it is for pieces not tied to one country; drop it or use Greece Weddings if that category exists.
 8. Not confirmed: Santorini (Thira) and Mykonos practice, Orthodox church conditions, CNI and apostille processing times.
+- **20 Nov 2026 retro-link:** one sentence added under "The Australian documents" H2, sending British readers to /destination-weddings/getting-married-in-greece-from-uk (the user rule on the UK Greece refresh). article.docx rebuilt. Publish the UK guide first, or remove the sentence if this page goes live before it.
