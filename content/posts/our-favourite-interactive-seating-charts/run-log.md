@@ -5,3 +5,4 @@
 - 05:29 05 first draft 2,147 words; orchestrator reworded a 'not published at most venues' line (implied a statistic) into a venue question; docx sent.
 - 05:30 06 editor pass_with_edits 4.14; 5 of 5 applied -> r2; 5 readers done.
 - 05:34 07b panel revise (enquiry 1.7 v 3.8; deferred business details); 15 of 15 applied -> 08-final.md.
+- 05:36 Final check pass_with_edits 4.14; 1 of 1 applied (Advisor line trimmed to brand-facts wording). 09 CRO done.

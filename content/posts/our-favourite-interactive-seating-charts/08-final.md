@@ -150,7 +150,7 @@ Overseas, the venue's rules decide which styles are possible. Before you settle 
 - Can printed or fragile pieces be delivered ahead, and where will they be stored?
 - Should the display carry a second language for international guests?
 
-Setup windows, outdoor display rules and power access are details the venue has to confirm directly. Your Wedded Advisor confirms inclusions in writing before you commit, so these answers are settled before the design is.
+Setup windows, outdoor display rules and power access are details the venue has to confirm directly. Your Wedded Advisor confirms inclusions in writing before you commit.
 
 For more destination inspiration, browse the latest issue of our [Wedded Wonderland magazine](https://weddedwonderland.com/magazine?utm_source=blog&utm_medium=content&utm_campaign=our-favourite-interactive-seating-charts&utm_content=magnet).
 
