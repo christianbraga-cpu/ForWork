@@ -7,3 +7,4 @@
 - 02:13 06 editor pass_with_edits 4.43, 9 of 9 applied -> 05-draft-r2.md; 5 readers done (enquiry 1 to 2); planner_couple envelope fields completed by orchestrator.
 - 02:16 07b panel revise (enquiry 1.7 v 3.8 gate; deferred business details); 10 of 10 edits applied -> 08-final.md.
 - 02:18 Final check pass 4.43, 0 edits; 09 CRO and 10 distribution done.
+- 02:21 11 package done; checklist UTM removed; final docx and run report written.
