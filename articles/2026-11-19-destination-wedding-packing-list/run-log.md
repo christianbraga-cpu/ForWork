@@ -49,3 +49,12 @@
 - **Decision (default):** the last H2 becomes questions to ask the planner and venue (no implied services). Biosecurity stays unlinked until the research agent, still waiting on its permission prompt, supplies a Department of Agriculture fact.
 - **Research:** COMPLETE (38 facts: Agriculture biosecurity F-31 to F-35, ABF, TGA, CASA, Smartraveller). Biosecurity penalty figures conflict ($7,280 vs $6,600), so none is quoted. Writer v2 told to link biosecurity at the claim.
 - **Stage 4 fast (writer v2):** DONE. 03-draft-v2.md: 2,247 reader words, 0 dashes, 0 placeholders, 6 official domains inline (ABF, Agriculture, CASA, Passports, Smartraveller, TGA), none blocked. YAML valid: 27 claims, 22 links. Last H2 is now questions for the planner and venue. Biosecurity is linked at the claim (F-31), with no penalty figure. /honeymoon-essentials-checklist was dropped to stay at 22 links.
+- **Stage 6 fast (copy editor):** DONE. final.md 2,249 reader words, 0 dashes, 0 placeholders, 6 official .gov.au domains inline; publish-package.json valid (22 links); chrome-upload-prompt.md draft only; article.docx built. AUD900 changed to AUD 900 (style guide). Link-map DRAFT row added.
+
+## Must-fix before publish
+1. 301-LEGACY: user decides whether /what-to-pack-for-a-destination-wedding and /pack-for-your-destination-wedding redirect here after publish.
+2. LINK-CHECK: the gov.au links could not be fetched in the session; check by hand.
+3. NIC: AUD 900 / AUD 450 duty free, AUD 10,000 cash and AUD 11,000 PBS penalty are government figures; Nic sign-off per house rule.
+4. RETRO-LINKS: WW-202 honeymoon packing (link /honeymoon-essentials-checklist until it is live). LINK-MAP-ADD: the etiquette page.
+5. SITE-CONFLICTS ("complimentary concierge" vs paid tiers), CONCIERGE-PAY, AUTHOR, IMAGE-RIGHTS, CMS-URL; Wedded World exception.
+No publish-order dependency.
