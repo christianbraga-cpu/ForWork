@@ -57,3 +57,4 @@
   - **SEO 4.3, APPROVED with minors:** add an answer-first paragraph for snippets and AI citations; add a cheapest-month FAQ from ABS data; small trims. Risk: rankings may dip after the 301 of the 2020 page, which ranked #2 with a figure (RANK-WATCH).
   - **Reader (couple):** relevance 2 (expected: a home-wedding article read by an Italy persona), trust 3, clarity 4, would_enquire 2. Majors: the partnered-planner line and the one-line "planning from abroad" answer.
   - Merged request: 04-reviews/v1/merged.md.
+- **Stage 4 fast (writer v2):** DONE. 03-draft-v2.md: 2,259 reader words, 0 dashes, 0 placeholders, ABS, Moneysmart and ACCC inline. YAML valid: 24 claims, 27 links. All 17 items applied. Answer-first paragraph added; FAQ 6 on the cheapest month (ABS, no price claim); no Australian average figure.
