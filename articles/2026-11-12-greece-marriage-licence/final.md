@@ -113,8 +113,6 @@ For couples living abroad, the Chania and Heraklion lists show no Greek licence 
 
 ## The Australian documents and where each one comes from
 
-Marrying from the UK instead? British passport holders follow a different route, set out in our guide to [getting married in Greece from the UK](/destination-weddings/getting-married-in-greece-from-uk).
-
 For the residents' licence, gov.gr says documents from Hague Convention countries such as Australia are accepted only with an apostille (the Hague Convention certificate one member country uses to accept another's documents) and a Greek translation. Ask your town hall which of your documents need one.
 
 [IMAGE: australian-passports-certificate-greek-newspaper-flat-lay-01.webp]
