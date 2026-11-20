@@ -56,3 +56,9 @@
   - 8 official domains inline (gov.uk, mfa.gr, ypes.gr, mitos.gov.gr, municipality sites); none blocked.
   - YAML valid; 49 claims (45 sourced), 24 links.
   - Link map: Santorini cost breakdown row and this page's DRAFT row (the UK route) added.
+- **Stage 3 fast (3 reviews):** DONE.
+  - **Accuracy 3.4:** blocker on FAQ 5's unsourced UK-nation issuers and its visible [[NEEDS]]. Majors: two more [[NEEDS]]; the licence rule's wording; the visa-free qualifier; the unsourced Greek apostille step; the hand-decoded 2019 circular (CIRCULAR-READ).
+  - **SEO 4.0:** title rule passes. Majors: meta 161 characters; 3,209 words, with a cut plan to about 2,300.
+  - **Reader (uk_couple):** relevance 5, trust 4, clarity 3, would_enquire 3, "save and forward". Majors: the placeholders; nothing on Santorini or Mykonos; the venue question left open.
+  - Merged request: 04-reviews/v1/merged.md.
+- **Link map:** six Greece pages from the strategist's map added to the Greece section: best time, packages, same-sex, venues, the CNI explainer, and an older Greece planning page marked do-not-link.
