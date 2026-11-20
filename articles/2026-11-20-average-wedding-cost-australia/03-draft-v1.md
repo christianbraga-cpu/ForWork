@@ -292,7 +292,7 @@ On [Lake Como](/expert-advice/how-much-does-a-lake-como-wedding-cost), many 60-g
 
 Closer to home, our [Maldives cost guide](/real-weddings/maldives-wedding-cost) puts a resort wedding for 20 guests at US$25,000 to US$60,000 all-in, and [our Bali cost guide](/expert-advice/bali-wedding-cost-the-complete-2026-guide) sets out how scope changes the total there. All these guides were current in November 2026. Convert at the rate on the day you pay, not the day you plan.
 
-Planning from the other side of the world is the part that worries families most. Through [Wedded Wonderland Concierge](/wonderland-concierge), your concierge manages vendors across countries and coordinates deposits, payments and currency across borders, with one dedicated point of contact for both the wedding and the travel.
+Planning from the other side of the world is a fair worry. Through [Wedded Wonderland Concierge](/wonderland-concierge), your concierge manages vendors across countries and coordinates deposits, payments and currency across borders, with one dedicated point of contact for both the wedding and the travel.
 
 ## How to set a realistic budget for your own wedding
 

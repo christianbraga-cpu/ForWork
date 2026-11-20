@@ -47,3 +47,8 @@
     - ABS 2025: count, median ages, peak seasons and days, state counts. Celebrant share just over 80% (2021).
   - **Gaps:** no official cost categories; ACCC unfair contract terms page not read; consumer law for overseas suppliers not checked.
 - **Stage 2:** writer launched.
+- **Stage 2 fast (writer):** DONE. 03-draft-v1.md.
+  - --check: 2,333 reader words, 0 dashes, 0 placeholders. Official domains inline: ABS, Moneysmart, ACCC. None blocked.
+  - YAML valid; 27 claims, 24 links.
+  - No Australian average dollar figure anywhere (checked by grep). Destination figures come from our guides, in their original currencies.
+  - Amalfi and Maldives cost pages added to link-map.

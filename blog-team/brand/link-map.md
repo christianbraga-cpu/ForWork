@@ -204,6 +204,8 @@ URL until a human confirms the other resolves.
 | `/destination-weddings/greece-wedding-venues` | Greece wedding venues | greece wedding venues (live per Firecrawl map 20 Nov 2026) |
 | `/expert-advice/what-is-a-certificate-of-no-impediment-and-who-issues-it` | What is a certificate of no impediment and who issues it | certificate of no impediment (live per Firecrawl map 20 Nov 2026) |
 | `/how-to-plan-a-destination-wedding-in-greece-if-youre-overseas` | How to plan a destination wedding in Greece if you're overseas | plan greece wedding from overseas (older page; do not link) |
+| `/real-weddings/amalfi-coast-wedding-cost` | Amalfi Coast wedding cost | amalfi coast wedding cost (live; read 19 Nov 2026 for the cost article) |
+| `/real-weddings/maldives-wedding-cost` | Maldives wedding cost | maldives wedding cost (live; read 19 Nov 2026 for the cost article) |
 | `/real-weddings/santorini-wedding-cost-breakdown` | Santorini wedding cost breakdown | santorini wedding cost (live; read 19 Nov 2026 for the cost article) |
 | `/destination-weddings/getting-married-in-greece-from-uk` | Getting Married in Greece from the UK Step by Step | getting married in greece from uk | DRAFT (20 Nov 2026; replaces /if-youre-thinking-of-getting-married-in-greece-you-need-to-know-this, 301 after publish) |
 
