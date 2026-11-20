@@ -1,0 +1,113 @@
+{
+  "agent": "visual-curator",
+  "task_id": "fashionable-flowers-opt-for-in-season-or-order-imported",
+  "stage": "04",
+  "status": "needs_input",
+  "round": 1,
+  "inputs_used": [
+    "CLAUDE.md",
+    "content/posts/fashionable-flowers-opt-for-in-season-or-order-imported/00-input.json",
+    "content-system/images/library-index.csv (header only, no rows, no flower or bouquet entries)",
+    "content/posts/wedding-without-seating-chart/04-images.json (format)"
+  ],
+  "self_qa": {
+    "checks": [
+      {"check": "Zero reference-only or competitor images in slots", "pass": true},
+      {"check": "Every approved image has verified location, licence, alt, caption, fit_reason", "pass": true, "note": "No approved images; all 4 slots needed."},
+      {"check": "No AI image of a real wedding, person, venue or place", "pass": true, "note": "Featured, florist bench and destination ceremony slots are licensed photos only. The month-by-month still life is the only slot where AI is permitted, and only with Nic's approval, captioned 'Illustrative image'."},
+      {"check": "Featured image exists (approved or needed with brief)", "pass": true, "note": "Needed with brief."},
+      {"check": "Flowers shown are in season in Australia for any stated month, or no month is claimed", "pass": true, "note": "No alt or caption names a month. Any month claim added later must match a flower-month pair sourced in the article; otherwise it stays 'ask your florist'."},
+      {"check": "No vendor names in alt, caption or brief", "pass": true},
+      {"check": "Alt text in Australian English, no em dashes, 125 characters or fewer", "pass": true},
+      {"check": "No prices or figures shown in images", "pass": true, "note": "Briefs exclude price tags, buckets with labels, invoices and legible signage (input says no prices)."},
+      {"check": "Placements match final H2 numbering", "pass": false, "note": "02-seo.json not available in fast mode; after_h2 assumes 1 why in-season flowers matter, 2 month-by-month guide, 3 local versus imported, 5 destination wedding flowers."}
+    ],
+    "confidence": 0.6
+  },
+  "open_questions": [
+    {"to": "Nic", "question": "Source licensed photos for the featured, florist bench and destination ceremony slots (client weddings with signed couple consent and photographer licence, or licensed stock with model and property releases)? Repo register has no rows.", "blocking": true},
+    {"to": "Nic", "question": "Approve an AI-generated flower still life for the month-by-month slot (no people, no place, no text, captioned 'Illustrative image'), or source a licensed still-life photo instead? Default is licensed photo.", "blocking": false},
+    {"to": "Nic", "question": "Photographer credit in captions names the photographer, which conflicts with the 'no vendor names' rule. Credit as 'Photo: Wedded Wonderland' (own or licensed stock) or allow a plain photographer credit line only?", "blocking": false},
+    {"to": "planner-sme", "question": "Confirm which stems are in season in Australia for the months the images may imply (featured bouquet and still life), with an authoritative source per flower-month pair, so the chosen photos match the article.", "blocking": false},
+    {"to": "seo-researcher", "question": "Confirm H2 numbering once the outline exists and remap after_h2 placements.", "blocking": false}
+  ],
+  "assumptions": [
+    "Repo register only (fast mode); Google Drive, own site, Canva, press kits and Google Lens not run.",
+    "No venue in scope, so no permission emails drafted.",
+    "Refresh in place: any image on the current live post was not reviewed; if reused it must pass licence and seasonality checks like any new image.",
+    "No image or caption claims a month unless the flowers shown are sourced as in season in Australia for that month.",
+    "Competitor or search-result images were not collected; any found later are reference only and go in reference-only/."
+  ],
+  "verify_items": [
+    "[[IMAGE NEEDED]] featured: seasonal Australian bridal bouquet, stems confirmed in season, licensed, consented",
+    "[[IMAGE NEEDED]] month-by-month-still-life: seasonal flower still life, licensed photo or AI only with Nic's approval, captioned 'Illustrative image'",
+    "[[IMAGE NEEDED]] local-vs-imported-bench: local and imported stems on a florist's bench, no branding, licensed",
+    "[[IMAGE NEEDED]] destination-ceremony-florals: ceremony florals at a verified destination location, licensed, consented",
+    "[[VERIFY licence]] every sourced photo: credit, scope, model and property releases",
+    "[[VERIFY: every stem in the featured and still life images is in season in Australia for any month the image, alt or caption implies]]",
+    "[[VERIFY: credit wording that respects the no vendor names rule]]"
+  ],
+  "next_agent": ["luxury-writer"],
+  "payload": {
+    "slots": [
+      {
+        "slot_id": "featured",
+        "placement": "featured",
+        "purpose": "Hero: show the beauty of a bouquet built from flowers in season in Australia, setting up the month-by-month hub.",
+        "shot_brief": "Real, licensed photo of a bride holding a loose, garden-style bouquet made only of stems that are in season in Australia at the time of the shoot (for example late spring stems such as garden roses, peonies or sweet peas, only if the season is confirmed from the shoot date and an authoritative source). Soft natural daylight, outdoors, bouquet in sharp focus, face cropped or turned away is fine. No florist tags, ribbons with logos or vendor branding. Consenting bride. Never AI.",
+        "status": "needed",
+        "file": "content/posts/fashionable-flowers-opt-for-in-season-or-order-imported/images/wedding-flowers-in-season-bridal-bouquet-hero.webp",
+        "source": {"type": "library", "origin": "[[IMAGE NEEDED]] library-index.csv has header only, no rows", "credit": "[[VERIFY licence]]"},
+        "consent": {"couple": "required, signed", "venue": "required if interior or grounds identifiable"},
+        "alt": "Bride holding a loose garden-style bouquet of seasonal flowers in soft natural light",
+        "caption": "<Place>, <town>. Photo: [[VERIFY credit]]",
+        "lens_check": "Not run: no candidate image.",
+        "location": {"venue": "[[VERIFY: venue]]", "town": "[[VERIFY: town]]", "verified_by": "[[VERIFY: register, EXIF GPS or source page]]"}
+      },
+      {
+        "slot_id": "month-by-month-still-life",
+        "placement": "after_h2:2",
+        "purpose": "Visual anchor for the month-by-month guide: show how the palette of available flowers shifts across the Australian seasons.",
+        "shot_brief": "Flower still life on a neutral linen or stone surface: small groups of stems arranged left to right by Australian season (spring, summer, autumn, winter), no people, no place, no text, labels or month names in the image. Every stem must be one the article sources as in season in Australia for that season; if unsourced, leave it out. Soft window light, overhead or three-quarter angle. Preferred: licensed photo. AI allowed only if Nic approves, and then captioned 'Illustrative image' with no month claim.",
+        "status": "needed",
+        "file": "content/posts/fashionable-flowers-opt-for-in-season-or-order-imported/images/wedding-flowers-in-season-seasonal-still-life.webp",
+        "source": {"type": "library", "origin": "[[IMAGE NEEDED]] library-index.csv has header only, no rows; ai_illustrative only with Nic's approval", "credit": "[[VERIFY licence]]"},
+        "consent": {"people": "none depicted"},
+        "alt": "Still life of seasonal flowers arranged in groups on a linen surface, from spring blooms to winter stems",
+        "caption": "Seasonal flowers, arranged by season. Photo: [[VERIFY credit]] (if AI: 'Illustrative image')",
+        "lens_check": "Not run: no candidate image.",
+        "location": {"venue": "n/a (still life, no place depicted)", "town": "n/a", "verified_by": "n/a"}
+      },
+      {
+        "slot_id": "local-vs-imported-bench",
+        "placement": "after_h2:3",
+        "purpose": "Illustrate the local versus imported choice: freshly cut local stems beside imported blooms as a florist sorts them.",
+        "shot_brief": "Real, licensed photo of a florist's workbench: on one side loosely bunched, just-cut local stems with garden texture, on the other neat sleeved bunches of imported blooms, florist's hands trimming stems. Natural studio light. No shop name, logos, boxes or sleeves with legible branding, no price tags, labels or country-of-origin text. Hands only or consenting florist. Never AI.",
+        "status": "needed",
+        "file": "content/posts/fashionable-flowers-opt-for-in-season-or-order-imported/images/wedding-flowers-in-season-local-imported-florist-bench.webp",
+        "source": {"type": "library", "origin": "[[IMAGE NEEDED]] library-index.csv has header only, no rows", "credit": "[[VERIFY licence]]"},
+        "consent": {"florist": "required if identifiable", "premises": "required if studio identifiable"},
+        "alt": "Florist trimming fresh local stems beside sleeved bunches of imported flowers on a workbench",
+        "caption": "Local and imported stems on a florist's bench. Photo: [[VERIFY credit]]",
+        "lens_check": "Not run: no candidate image.",
+        "location": {"venue": "[[VERIFY: studio, not named in caption]]", "town": "[[VERIFY: town]]", "verified_by": "[[VERIFY: register, EXIF GPS or source page]]"}
+      },
+      {
+        "slot_id": "destination-ceremony-florals",
+        "placement": "after_h2:5",
+        "purpose": "Show how florals work at a destination ceremony, where what grows locally shapes the design.",
+        "shot_brief": "Real, licensed photo of ceremony florals at a named, verifiable destination location (for example an Italian countryside terrace, a Greek island setting or a Bali clifftop): a floral arch or aisle arrangements using flowers local to that destination, view behind, no guests or consenting guests only. Golden hour light. Location verified from register, EXIF or source page. No vendor or venue branding. Venue permission if grounds identifiable. Never AI.",
+        "status": "needed",
+        "file": "content/posts/fashionable-flowers-opt-for-in-season-or-order-imported/images/wedding-flowers-in-season-destination-ceremony-arch.webp",
+        "source": {"type": "library", "origin": "[[IMAGE NEEDED]] library-index.csv has header only, no rows", "credit": "[[VERIFY licence]]"},
+        "consent": {"couple": "required if depicted", "guests": "required if identifiable", "venue": "required if grounds identifiable"},
+        "alt": "Floral ceremony arch of local blooms framing a scenic view at a destination wedding",
+        "caption": "<Place>, <town>. Photo: [[VERIFY credit]]",
+        "lens_check": "Not run: no candidate image.",
+        "location": {"venue": "[[VERIFY: venue]]", "town": "[[VERIFY: town]]", "verified_by": "[[VERIFY: register, EXIF GPS or source page]]"}
+      }
+    ],
+    "reference_only": [],
+    "permission_requests": []
+  }
+}
