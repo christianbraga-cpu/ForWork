@@ -7,3 +7,4 @@
 - 23:52 07b panel revise (enquiry 1.6 v 3.8; deferred business details); 16 of 16 applied -> 08-final.md.
 - 23:54 09 CRO and 10 distribution done.
 - 23:54 Final check pass_with_edits 4.29; 4 of 4 applied (legal wording and links at the claim).
+- 23:57 11 package done; final docx and run report written.
