@@ -45,3 +45,4 @@
   - **Reader (couple):** relevance 3, trust 3, clarity 4, would_enquire 2, "save". Majors: Australian fire-ban detail outweighs the overseas line; the unproven concierge paragraph.
   - Merged request: 04-reviews/v1/merged.md. Conflict on fireworks resolved by deleting the sentence (off-topic).
 - **Decision (default):** blog-team/brand/cta-library.md discovery_call body changed from "A complimentary, no-obligation call" to "A free, no-obligation call", in line with the standing never-"complimentary" rule. This affects future articles only.
+- **Stage 4 fast (writer v2):** DONE. 03-draft-v2.md: 2,165 reader words, 0 dashes, 0 placeholders. Official domains inline: RFS, CFA, QFD, Product Safety, Energy Safe Victoria. YAML valid: 30 claims, 18 links. All 26 items applied. The overseas fire rule leads the safety section; fireworks and sparklers sentences cut; Dubai now reads "ask your hotel in writing".
