@@ -254,6 +254,10 @@ No Malta destination page exists yet (open item MALTA-PAGE); link `/destinations
 | `/expert-advice/wedding-vows-for-her` | Wedding Vows for Her | wedding vows for her |
 | `/expert-advice/wedding-vows-for-him` | Wedding Vows for Him | wedding vows for him |
 | `/expert-advice/humorous-wedding-ceremony-script` | Humorous Wedding Ceremony Script | humorous wedding ceremony script (partial overlap with funny vows: link, never an exact "funny wedding vows" anchor) |
+| `/planning/elopement-vows` | Elopement vows | elopement vows (live per research 22 Nov 2026) |
+| `/expert-advice/elopement` | Elopement | elopement (live per research 22 Nov 2026) |
+| `/destination-weddings/elopement-ideas` | Elopement ideas | elopement ideas (live per research 22 Nov 2026; user to confirm whether this is the planned WW-321) |
+| `/expert-advice/elopement-ceremony-script` | Elopement Ceremony Script for Two | elopement ceremony script | DRAFT (22 Nov 2026; URL was 404, new post) |
 | `/expert-advice/simple-wedding-ceremony-script` | Simple Wedding Ceremony Script | simple wedding ceremony script |
 | `/how-to-write-wedding-vows` | How Do You Write Your Own Wedding Vows (guide; says 250 to 300 words, about two minutes) | how to write wedding vows (parent guide for the vows cluster) |
 | `/expert-advice/catholic-wedding-vows` | Catholic Wedding Vows Word for Word | catholic wedding vows |
