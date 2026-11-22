@@ -50,7 +50,7 @@ Read aloud at an unhurried pace, this whole sand ceremony wedding script takes a
 
 Place the sand ceremony after the vows and the exchange of rings, just before the celebrant pronounces them married.
 
-You can also pour straight after the welcome, so the ritual sets the tone. What matters is that the pour never sits inside the legal lines, which are said on their own, clearly, in front of your witnesses.
+You can also pour straight after the welcome, so the ritual sets the tone. What matters is that the pour never interrupts the legal lines, so your celebrant can say them clearly.
 
 For the overall shape, read [what happens in a wedding ceremony, step by step](/expert-advice/what-happens-in-a-wedding-ceremony). Still choosing who will marry you? Our guide on [how to choose a wedding celebrant](/expert-advice/how-to-choose-a-wedding-celebrant) covers the questions to ask.
 
@@ -188,9 +188,9 @@ From another time zone, one person to call makes the difference. Through [Wedded
 
 ## A sand ceremony and the legal words
 
-A sand ceremony is symbolic. The legal part of your wedding is spoken, and in Australia the words come from the Marriage Act 1961.
+A sand ceremony is symbolic. The legal part of your wedding is spoken, and in Australia the words come from the [Marriage Act 1961](https://www.legislation.gov.au/C1961A00012/latest/text).
 
-As at November 2026, section 45 of the [Marriage Act 1961](https://www.legislation.gov.au/C1961A00012/latest/text) is headed "Form of ceremony" and section 46 is headed "Certain authorised celebrants to explain nature of marriage relationship". <!-- fact_01 -->
+As at November 2026, section 45 of the Act is headed "Form of ceremony" and section 46 is headed "Certain authorised celebrants to explain nature of marriage relationship". <!-- fact_01 -->
 
 When your celebrant is not a minister of religion, it is sufficient for each of you to say to the other, in the presence of the celebrant and the witnesses, the words in [section 45(2)](https://classic.austlii.edu.au/au/legis/cth/consol_act/ma196185/s45.html):
 
@@ -200,7 +200,7 @@ Before the marriage is solemnised, a celebrant who is not a minister of religion
 
 > "I am duly authorised by law to solemnise marriages according to law. Before you are joined in marriage in my presence and in the presence of these witnesses, I am to remind you of the solemn and binding nature of the relationship into which you are now about to enter. Marriage, according to law in Australia, is the union of 2 people to the exclusion of all others, voluntarily entered into for life."; or words to that effect. <!-- fact_102 -->
 
-Under [section 46(2)](https://classic.austlii.edu.au/au/legis/cth/consol_act/ma196185/s46.html), the Minister may exempt certain celebrants from section 46(1) where satisfied that their form of ceremony sufficiently states the nature and obligations of marriage. <!-- fact_103 --> Under [section 45(1)](https://classic.austlii.edu.au/au/legis/cth/consol_act/ma196185/s45.html), when a minister of religion marries you, the marriage may be solemnised according to any form and ceremony recognised as sufficient for the purpose by the religious body or organisation of which they are a minister. <!-- fact_100 --> Either way, ask your celebrant which legal lines they will say, and build the pour around them.
+Under [section 46(2)](https://classic.austlii.edu.au/au/legis/cth/consol_act/ma196185/s46.html), the Minister may exempt certain celebrants authorised under subsection 39(2) from section 46(1) where satisfied that their form of ceremony sufficiently states the nature and obligations of marriage. <!-- fact_103 --> Under [section 45(1)](https://classic.austlii.edu.au/au/legis/cth/consol_act/ma196185/s45.html), when a minister of religion marries you, the marriage may be solemnised according to any form and ceremony recognised as sufficient for the purpose by the religious body or organisation of which they are a minister. <!-- fact_100 --> Either way, ask your celebrant which legal lines they will say, and build the pour around them.
 
 If you marry overseas, [Smartraveller](https://www.smartraveller.gov.au/planning-trip/advice-your-planned-activities/getting-married-overseas) notes that you can't register an overseas marriage in Australia. To be recognised here, the marriage must have been valid under the law of the country where it happened, and valid under Australian law had it taken place in Australia. Talk to a lawyer to confirm your overseas marriage certificate is valid in Australia. <!-- fact_104 -->
 
