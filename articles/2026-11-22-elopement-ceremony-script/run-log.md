@@ -34,3 +34,4 @@
   - **Reader (couple):** relevance 3, trust 3, clarity 4, would_enquire 2, "save". The blocker on planner vetting is downgraded (out of scope); "trusted planners" is cut to live wording.
   - Merged request: 04-reviews/v1/merged.md.
 - **Conflict resolved:** the SEO reviewer asked to drop the Italy link, but the reader and the user's destination-edge brief want it, so it is kept with one sentence. No Wedded World plug (standing rule).
+- **Stage 4 fast (writer v2):** DONE. 03-draft-v2.md: 2,064 reader words, 0 dashes, 0 placeholders, 3 official domains inline (AGD, legislation, Smartraveller). YAML valid: 16 claims, 12 links. All 20 items applied. Recognition FAQ now sourced (F-R1); Italy sentence kept; photographer line now says ask your celebrant. Strategist still held on a permission prompt.
