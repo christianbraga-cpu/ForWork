@@ -1,0 +1,116 @@
+{
+  "agent": "cro",
+  "task_id": "sand-ceremony-script",
+  "stage": "09",
+  "status": "complete",
+  "round": 1,
+  "inputs_used": [
+    "content-system/brand/services.md",
+    "content-system/brand/brand-facts.md",
+    "content/posts/sand-ceremony-script/01-brief.json",
+    "content/posts/sand-ceremony-script/07-panel.json",
+    "content/posts/sand-ceremony-script/07-icp/ (cta_reaction from all five personas)",
+    "content/posts/sand-ceremony-script/08-final.md",
+    "content-system/seo/link-map.csv",
+    "content-system/schemas/09-cro.schema.json",
+    "Orchestrator task message (fast mode: record existing CTAs only)"
+  ],
+  "payload": {
+    "journey_stage": "planning",
+    "primary_cta": {
+      "text": "Wedded Concierge",
+      "subtext": "Your Wedded Advisor plans the venue, travel and vendors with you as a single point of contact.",
+      "link": "/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=sand-ceremony-script&utm_content=primary",
+      "placement": "Existing inline link (anchor 'Wedded Concierge') in the last paragraph of 'A sand ceremony at a beach or destination wedding', just before 'A sand ceremony and the legal words', as the brief asks (after the beach and destination practicalities). Recorded as it stands; no marker comment, no wording change. Subtext is the sentence already around the link, not new copy."
+    },
+    "secondary_cta": {
+      "text": "Wedded Concierge",
+      "subtext": "Brings the venue, travel and vendors together in one plan.",
+      "link": "/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=sand-ceremony-script&utm_content=secondary",
+      "placement": "Existing inline link at the end of 'A template to fill in', just before 'What you need for a sand ceremony'. Already trimmed per panel should_fix 'secondary_cta_trim' (', anywhere in the world' is gone). Recorded as it stands. Note: in reading order it appears before the primary link."
+    },
+    "closing_cta": {
+      "text": "Wedded Concierge",
+      "subtext": "The fee is agreed in writing before any work begins, and inclusions are confirmed in writing before you commit.",
+      "link": "/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=sand-ceremony-script&utm_content=closing",
+      "placement": "Existing inline link ending the close, 'Planning the ceremony around the pour'. Fee line is the brand-facts.md line 27 claim already added per panel should_fix 'close_fee'; nothing added beyond it."
+    },
+    "existing_magnet_link": {
+      "name": "Wedded Wonderland magazine",
+      "link": "/magazine?utm_source=blog&utm_medium=content&utm_campaign=sand-ceremony-script&utm_content=magnet",
+      "placement": "Existing inline link in 'Sand ceremony or another unity ritual', just before 'Frequently asked questions'. Target /magazine exists in link-map.csv. Recorded as it stands.",
+      "exists": true
+    },
+    "lead_magnet": {
+      "name": "Sand ceremony booking checklist (sand ceremony planning, plus questions for the celebrant and venue)",
+      "link": "",
+      "placement": "Not placed. No page exists on the site (not in link-map.csv). The checklist content stays in the post body.",
+      "exists": false
+    },
+    "tracking": [
+      "/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=sand-ceremony-script&utm_content=secondary",
+      "/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=sand-ceremony-script&utm_content=primary",
+      "/magazine?utm_source=blog&utm_medium=content&utm_campaign=sand-ceremony-script&utm_content=magnet",
+      "/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=sand-ceremony-script&utm_content=closing"
+    ],
+    "rationale": "Planning-stage how-to reader (brief), so Wedded Concierge leads, per the brief goal and services.md. All four CTAs were already in 08-final.md with correct UTMs (utm_campaign=sand-ceremony-script; utm_content primary, secondary, closing, magnet), and both targets (/wonderland-concierge, /magazine) exist in link-map.csv; fast mode, so they are recorded unchanged, with no added CTAs, marker comments, prices, availability or new fee claims. Panel weighted enquiry likelihood is 1.6 (two 'maybe', three 'no'), which supports keeping the asks soft and inline rather than adding a harder ask. Panel cta_reactions: funding_parent wants to know whether 'start the conversation' means a call or a form; planner_couple wants a real wedding first; sceptic wants the fee model and commissions; uhnw wants a referral route and scale proof. All are deferred in brand-facts.md or 07-panel.json deferred, so none is answered here; they are listed as open questions. The two panel should_fix items owned by CRO (secondary trim, close fee line) are already in 08-final.md. Suggestion only: a downloadable sand ceremony booking checklist (planning steps and questions for the celebrant and venue) would suit this reader better than the general magazine, but it has no page, so exists is false and it is not placed."
+  },
+  "self_qa": {
+    "confidence": 0.85,
+    "checks": [
+      {
+        "check": "All CTA targets exist in link-map.csv (/wonderland-concierge, /magazine)",
+        "pass": true
+      },
+      {
+        "check": "Each recorded link occurs exactly once in 08-final.md",
+        "pass": true
+      },
+      {
+        "check": "UTMs follow services.md format with utm_campaign=sand-ceremony-script",
+        "pass": true
+      },
+      {
+        "check": "CTA text 6 words or fewer, no exclamation mark, no 'click here'",
+        "pass": true
+      },
+      {
+        "check": "No added CTAs, markers, prices, availability, 'free' or 'last dance'; no em dashes",
+        "pass": true
+      },
+      {
+        "check": "Lead magnet without a page set exists:false and not placed",
+        "pass": true
+      }
+    ]
+  },
+  "assumptions": [
+    "Schema allows only primary and secondary CTA objects, so the closing CTA and the existing magazine link are recorded as extra payload fields (closing_cta, existing_magnet_link) and in tracking.",
+    "Subtexts quote the copy already around each link; they are not new copy for insertion."
+  ],
+  "open_questions": [
+    {
+      "to": "orchestrator",
+      "question": "Placement: the secondary Concierge link (after the template) appears in reading order before the primary link (end of the beach and destination section). Keep as is, or swap the utm_content values so 'primary' is the first or the brief-specified one? Currently primary matches the brief's placement."
+    },
+    {
+      "to": "orchestrator",
+      "question": "Placement: three Concierge links in one how-to post. Panel did not flag the count (search_visitor said the asks do not get in the way), but planner_couple and sceptic found the mid-post secondary a pitch inside the how-to before the trim. Keep all three?"
+    },
+    {
+      "to": "orchestrator",
+      "question": "Placement: the magazine link sits directly before the FAQ, about 30 lines before the closing Concierge link. No change proposed; confirm it is fine."
+    },
+    {
+      "to": "Nic",
+      "question": "funding_parent asks whether 'Start the conversation' leads to a phone call or a form. Can brand-facts.md confirm what happens after an enquiry? Not added until confirmed."
+    },
+    {
+      "to": "Nic",
+      "question": "Should a sand ceremony (or ceremony) booking checklist page be built as a lead magnet? It does not exist now, so it is not placed."
+    }
+  ],
+  "next_agent": [
+    "distribution"
+  ]
+}
