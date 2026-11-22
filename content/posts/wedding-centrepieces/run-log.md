@@ -6,3 +6,4 @@
 - 22:53 06 editor pass_with_edits 4.29; 5 of 5 applied -> r2; uhnw reader envelope fixed by orchestrator.
 - 22:57 07b panel revise (enquiry 1.9 v 3.8; deferred business details); 19 of 19 applied -> 08-final.md.
 - 22:59 Final check pass_with_edits 4.36; 1 of 1 applied (Advisor line trimmed). 09 CRO done.
+- 22:59 10 distribution done (pins on hold until licensed images).
