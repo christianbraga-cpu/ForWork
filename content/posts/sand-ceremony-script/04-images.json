@@ -1,0 +1,94 @@
+{
+  "agent": "visual-curator",
+  "task_id": "sand-ceremony-script",
+  "stage": "04",
+  "status": "complete",
+  "round": 1,
+  "inputs_used": [
+    "content/posts/sand-ceremony-script/00-input.json",
+    "content-system/images/sources-policy.md",
+    "content-system/rubrics/image-checklist.md",
+    "content-system/images/library-index.csv",
+    "content-system/schemas/04-images.schema.json"
+  ],
+  "payload": {
+    "slots": [
+      {
+        "slot_id": "featured",
+        "placement": "featured",
+        "purpose": "Hero image that shows the ritual the script is written for: the couple pouring sand together during the ceremony.",
+        "shot_brief": "Real Wedded Wonderland or partner-supplied wedding. Couple at the ceremony table, mid-pour, two streams of coloured sand meeting in one clear glass vessel. Celebrant softly in frame or out of focus. Outdoor, late-afternoon golden light, light and editorial grading, uncluttered backdrop (garden, terrace or beach). Faces may be visible only with written couple consent recorded in the register. Landscape 3:2, room for title overlay on one side. No guests' faces identifiable unless consented.",
+        "status": "needed",
+        "file": "content/posts/sand-ceremony-script/images/sand-ceremony-script-couple-pouring-sand.webp",
+        "consent": {"couple_consent": "required", "identifiable_guests": "required if visible", "children_present": "avoid"},
+        "alt": "Couple pouring two colours of sand into one glass vessel during their wedding ceremony",
+        "caption": "[[IMAGE NEEDED]] <Place>, <town>. Photo: <credit>"
+      },
+      {
+        "slot_id": "vessels-still-life",
+        "placement": "after_h2:2",
+        "purpose": "Shows readers what they need to set up: vessels, coloured sand and the small ceremony table. Supports the 'what you need' or 'how it works' section.",
+        "shot_brief": "Still life, no people, no venue or destination identifiable. Small linen-draped side table with one large clear glass vessel and two or three smaller pouring carafes filled with sand in soft neutral and one accent colour (ivory, blush, sea blue). Simple greenery or a single stem. Soft natural window light, shallow depth of field, light editorial palette. Preferred source: own library or Canva brand assets. Fallback only if Nic approves: AI illustrative still life (Higgsfield), captioned 'Illustrative image', with no venue, landscape or wedding implied.",
+        "status": "needed",
+        "file": "content/posts/sand-ceremony-script/images/sand-ceremony-script-vessels-coloured-sand.webp",
+        "consent": {"people": "none in frame"},
+        "alt": "Glass sand ceremony vessels filled with ivory, blush and blue sand on a small linen-covered table",
+        "caption": "Illustrative image (use this caption only if the AI still life is approved; otherwise <Place>, <town>. Photo: <credit>)"
+      },
+      {
+        "slot_id": "family-pour",
+        "placement": "after_h2:4",
+        "purpose": "Illustrates the family or blended-family sand ceremony wording, where children add their own colour.",
+        "shot_brief": "Real wedding. Couple with one or two children each pouring a separate colour into the shared vessel. Hands and vessel as the focus; children photographed from behind, side or hands-only unless the register records written parental consent for identifiable children. Outdoor ceremony, soft daylight, warm and candid rather than posed. Landscape or 4:5.",
+        "status": "needed",
+        "file": "content/posts/sand-ceremony-script/images/sand-ceremony-script-family-pour-children.webp",
+        "consent": {"couple_consent": "required", "children_present": "yes: written parental or guardian consent required for any identifiable child; otherwise hands-only or faces not visible"},
+        "alt": "Couple and their children pouring coloured sand into one vessel together at a wedding ceremony",
+        "caption": "[[IMAGE NEEDED]] <Place>, <town>. Photo: <credit>"
+      },
+      {
+        "slot_id": "beach-destination",
+        "placement": "after_h2:5",
+        "purpose": "Connects the ritual to the destination and beach weddings this audience plans, supporting the beach or destination script section.",
+        "shot_brief": "Real destination wedding at a named venue the register or partner supply agreement can prove (location verified by register, EXIF GPS or source page, never appearance). Sand ceremony table set on or beside the beach, ocean behind, couple pouring or the finished vessel in the foreground. Late afternoon or sunset light, light editorial grading, guests out of focus or not identifiable. Ideal: a Wedded Wonderland partner venue (for example a Bali, Fiji or Mediterranean property) supplied for blog use. Never AI for this slot.",
+        "status": "needed",
+        "file": "content/posts/sand-ceremony-script/images/sand-ceremony-script-<venue>-beach-ceremony.webp",
+        "consent": {"couple_consent": "required", "identifiable_guests": "required if visible"},
+        "alt": "Sand ceremony table on the beach with the ocean behind during a destination wedding",
+        "caption": "[[IMAGE NEEDED]] <Venue>, <town>. Photo: <credit>"
+      }
+    ],
+    "reference_only": [],
+    "permission_requests": []
+  },
+  "self_qa": {
+    "checks": [
+      {"check": "Zero reference-only or competitor images in slots", "pass": true, "note": "No images placed in any slot; reference_only is empty."},
+      {"check": "Every approved image has verified location, licence, alt, caption and fit_reason", "pass": true, "note": "No slot is approved, so nothing to verify. All four slots are needed with shot briefs."},
+      {"check": "No AI image depicting a real place", "pass": true, "note": "No AI generated. The still-life slot allows AI only as a non-place illustrative image after Nic approves, captioned 'Illustrative image'. The beach slot forbids AI."},
+      {"check": "Featured image exists (approved or needed with brief)", "pass": true, "note": "Featured slot is needed with a full shot brief."},
+      {"check": "Consent rules for identifiable people and children written into briefs", "pass": true},
+      {"check": "Library searched", "pass": false, "note": "library-index.csv has a header row only (no registered images). The Google Drive shared drive 'Wedded Wonderland' was found, but the Drive file search tool is not available in this session, so the Wedded Image Library folder could not be searched."},
+      {"check": "Placements tied to the outline", "pass": false, "note": "01-brief.json, 02-seo.json and 02-research/report.md do not exist yet (fast mode). after_h2 numbers are provisional."}
+    ],
+    "confidence": 0.7
+  },
+  "open_questions": [
+    {"to": "Nic", "question": "Do you approve an AI illustrative still life (vessels and coloured sand on a small table, no people, no venue) for the vessels slot, captioned 'Illustrative image'? It will not be generated until you say yes.", "blocking": false},
+    {"to": "human", "question": "Please check the Google Drive 'Wedded Image Library' for sand ceremony, beach ceremony or family ceremony images with licence and consent, and add any to library-index.csv. The Drive search tool was not available to this agent.", "blocking": false},
+    {"to": "luxury-writer", "question": "after_h2 placements (2: what you need, 4: family wording, 5: beach or destination wording) are provisional because no outline existed. Move the image markers to the matching H2s.", "blocking": false}
+  ],
+  "assumptions": [
+    "No outline existed at stage 04, so H2 positions were assumed from a typical sand ceremony script guide structure.",
+    "Image register empty means no licensed, consented images are on record for this topic."
+  ],
+  "verify_items": [
+    "[[IMAGE NEEDED]] featured: couple pouring sand into a shared vessel (real wedding, couple consent)",
+    "[[IMAGE NEEDED]] vessels-still-life: vessels and coloured sand on a small table (library or Canva first; AI illustrative only with Nic's approval, captioned 'Illustrative image')",
+    "[[IMAGE NEEDED]] family-pour: family pour with children (written parental consent for any identifiable child)",
+    "[[IMAGE NEEDED]] beach-destination: beach or destination sand ceremony at a proven, licensed venue (no AI)",
+    "[[VERIFY licence]] any partner or own-site image used to fill these slots must have a supply agreement covering blog use"
+  ],
+  "tools_used": ["Bash", "mcp__Google_Drive__list_shared_drives"],
+  "next_agent": ["luxury-writer"]
+}
