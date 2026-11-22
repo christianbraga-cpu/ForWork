@@ -4,3 +4,4 @@
 - 22:48 02 SEO done: URL free; AU 390 / US 12,100; flowers hub and seating charts posts have MOVED (root paths redirect); alternatives and cake posts indexable; 2017 overlap post found; report.md saved by orchestrator; vendor external link rejected.
 - 22:51 05 first draft about 2,760 words, 30 ideas; orchestrator replaced 'Works best on' (30x) with 'Suits' and 'luxurious' with 'refined'; docx sent.
 - 22:53 06 editor pass_with_edits 4.29; 5 of 5 applied -> r2; uhnw reader envelope fixed by orchestrator.
+- 22:57 07b panel revise (enquiry 1.9 v 3.8; deferred business details); 19 of 19 applied -> 08-final.md.
