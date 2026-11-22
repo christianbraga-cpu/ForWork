@@ -5,3 +5,4 @@
 - 23:46 05 first draft 2,756 words; orchestrator removed 'most couples' and 'usually' statistic-style phrasing (6 places); docx sent.
 - 23:49 06 editor pass_with_edits 4.29; 14 of 14 applied -> r2; orchestrator removed the airport and hand-luggage keepsake line (implied bringing sand across borders, unsourced); funding_parent envelope fixed.
 - 23:52 07b panel revise (enquiry 1.6 v 3.8; deferred business details); 16 of 16 applied -> 08-final.md.
+- 23:54 09 CRO and 10 distribution done.
