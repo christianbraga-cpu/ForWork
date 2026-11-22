@@ -1,0 +1,72 @@
+{
+  "agent": "cro-specialist",
+  "task_id": "wedding-centrepieces",
+  "stage": "09",
+  "status": "complete",
+  "round": 1,
+  "inputs_used": [
+    "content-system/brand/services.md",
+    "content-system/brand/brand-facts.md",
+    "content/posts/wedding-centrepieces/01-brief.json",
+    "content/posts/wedding-centrepieces/07-panel.json",
+    "content/posts/wedding-centrepieces/07-icp/funding_parent.json",
+    "content/posts/wedding-centrepieces/07-icp/planner_couple.json",
+    "content/posts/wedding-centrepieces/07-icp/sceptic.json",
+    "content/posts/wedding-centrepieces/07-icp/search_visitor.json",
+    "content/posts/wedding-centrepieces/07-icp/uhnw.json",
+    "content/posts/wedding-centrepieces/08-final.md",
+    "content-system/seo/link-map.csv",
+    "content-system/schemas/09-cro.schema.json",
+    "content-system/schemas/envelope.schema.json"
+  ],
+  "payload": {
+    "journey_stage": "planning",
+    "primary_cta": {
+      "text": "Wedded Concierge",
+      "subtext": "Your Wedded Advisor confirms inclusions in writing before you commit (existing copy in the sentence before the link; no new wording added).",
+      "link": "/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=wedding-centrepieces&utm_content=primary",
+      "placement": "As in 08-final.md: end of 'Practical details', in the sentence 'To talk these choices through, our Wedded Concierge team can help you plan the tables.', directly after the written-inclusions line (moved there at stage 07 from 'Where the money goes'). Recorded as is."
+    },
+    "secondary_cta": {
+      "text": "Wedded Concierge",
+      "link": "/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=wedding-centrepieces&utm_content=secondary",
+      "placement": "As in 08-final.md: end of 'Centrepieces for a destination wedding', after the venue and florist question lists, in 'For help planning the tables from afar, our Wedded Concierge team is a good first conversation.' Recorded as is."
+    },
+    "lead_magnet": {
+      "name": "Booking checklist: centrepiece planning plus florist and venue questions",
+      "placement": "Not placed. No page exists for it; suggestion only.",
+      "exists": false
+    },
+    "tracking": [
+      "/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=wedding-centrepieces&utm_content=primary",
+      "/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=wedding-centrepieces&utm_content=secondary",
+      "/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=wedding-centrepieces&utm_content=closing",
+      "/magazine?utm_source=blog&utm_medium=content&utm_campaign=wedding-centrepieces&utm_content=magnet"
+    ],
+    "rationale": "Journey stage is 'planning' per 01-brief.json; the brief's goal is a soft hand-off to the Wedded Concierge page. All four CTAs already sit in 08-final.md and are recorded exactly as written, with no added CTAs, markers or wording. Anchor text 'Wedded Concierge' is two words, has no 'click here' and no exclamation mark. Both target pages exist in content-system/seo/link-map.csv (/wonderland-concierge is the default commercial CTA target; /magazine is tagged lead magnet). The schema has only primary and secondary slots, so the third Concierge link (utm_content=closing, last line of 'Planning the table with a Wedded Advisor': 'Begin the conversation with our Wedded Concierge team.') and the /magazine link (utm_content=magnet, after the secondary CTA in the destination section) are recorded in tracking. Panel cta_reactions: four personas said maybe and search_visitor said no. Their main conditions (fee model, real weddings, phone call with a named Advisor, who briefs local florists, on-the-day contact) were deferred at stage 07 as business details with no facts in brand-facts.md, so no copy change is requested here; the CTAs already follow the useful material and the written-inclusions line the sceptic credited. Lead magnet suggestion: the booking checklist (centrepiece planning, florist questions, venue questions) has no page on the site, so exists is false and it is not placed. The /magazine link remains the only placed magnet-style link."
+  },
+  "self_qa": {
+    "checks": [
+      {"check": "journey_stage taken from brief", "pass": true, "note": "planning"},
+      {"check": "CTA text 6 words or fewer, no 'click here', no exclamation mark", "pass": true},
+      {"check": "UTMs match services.md format and utm_campaign=wedding-centrepieces", "pass": true, "note": "primary, secondary, closing, magnet each appear once in 08-final.md"},
+      {"check": "Target pages exist in link-map.csv", "pass": true, "note": "/wonderland-concierge and /magazine"},
+      {"check": "Lead magnet only placed if it exists", "pass": true, "note": "booking checklist has no page; exists false, not placed"},
+      {"check": "No added CTAs, markers, prices, fees, availability or banned terms", "pass": true},
+      {"check": "Australian English, no em dashes", "pass": true}
+    ],
+    "confidence": 0.85
+  },
+  "open_questions": [
+    {"to": "orchestrator", "question": "Placement note only: the secondary Concierge link and the /magazine link sit in consecutive paragraphs at the end of the destination section, and the closing Concierge link follows a few sections later, so three of four CTAs fall in the last third of the page. Keep as is, or would a human like to space them differently? No change made.", "blocking": false},
+    {"to": "orchestrator", "question": "Placement note only: search_visitor (ideas stage) would not click a Concierge CTA; the /magazine link is the only lighter option and sits mid-page after the secondary CTA. Confirm that is acceptable for earlier-stage readers.", "blocking": false},
+    {"to": "nic", "question": "Lead magnet suggestion: should a booking checklist page (centrepiece planning, florist questions, venue questions) be created? It does not exist, so it is not placed in this post.", "blocking": false}
+  ],
+  "assumptions": [
+    "The 'closing' utm_content value is kept as written in 08-final.md even though services.md lists position values generically; it is recorded in tracking because the schema has no third CTA slot.",
+    "Primary CTA subtext quotes existing copy only and adds nothing to the page."
+  ],
+  "verify_items": [],
+  "tools_used": ["Bash"],
+  "next_agent": ["distribution"]
+}
