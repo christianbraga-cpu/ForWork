@@ -35,7 +35,7 @@ tags:
 author: "[[NEEDS: named author]]"
 language: "Australian English (en-AU). No prices, no product, brand or supplier names."
 sources_checked: "Sources current as at November 2026"
-content_note: "Official sources (energysafe.vic.gov.au, rfs.nsw.gov.au, cfa.vic.gov.au, fire.qld.gov.au, productsafety.gov.au) linked inline at the claim. No 'complimentary', no prices, no brands or suppliers, no proof-point counts, no accreditation, no 'most couples', no /marketplace."
+content_note: "Official sources (energysafe.vic.gov.au, rfs.nsw.gov.au, cfa.vic.gov.au, fire.qld.gov.au, productsafety.gov.au) linked inline at the claim. No banned brand words, no prices, no brands or suppliers, no proof-point counts, no accreditation, no 'most couples', no /marketplace."
 cta:
   primary: "discovery_call"
   primary_placement: "Closing CTA block, marker [CTA: discovery_call] after the FAQ section"
