@@ -35,3 +35,7 @@
   - **Confirmed:** NSW RFS fire ban rules; CFA (tents count as open air; fire pits banned on ban days); Queensland Fire Department; ACCC national sky lantern ban; SafeWork NSW fireworks licence; Energy Safe Victoria on decorative lights and generators. Six domains added.
   - **Gaps:** whether candles count as "fire in the open"; sparklers; destination rules; other states; event electrical rules.
 - **Stage 2:** writer launched.
+- **Stage 2 fast (writer):** DONE. 03-draft-v1.md.
+  - --check: 2,704 reader words (over the brief; v2 trims), 0 dashes, 0 placeholders. Official domains inline: RFS, CFA, QFD, Product Safety, SafeWork NSW, Energy Safe Victoria. None blocked.
+  - YAML valid; 33 claims, 21 links (over the 14 to 18 target).
+  - Front matter CTA body says "complimentary"; v2 removes it.
