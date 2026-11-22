@@ -26,3 +26,4 @@
 - **Decision (default):** N-521 and WW-321 are planned, so they are not linked. Their titles are looked up in Zoho and recorded as RETRO-LINKS. Live ceremony-script siblings (simple, humorous) and the vows cluster are linked with non-exact anchors. No Wedded World plug, no DRAFT links.
 
 ## Stages
+- **23:28 check-in:** the strategist and the researcher are both held on MCP permission prompts (about 15 minutes). The research pack has 10 official facts (s 44, s 45, s 46, AGD celebrant presence, NOIM). **Decision (default):** per the 10-minute rule, the writer started on the saved facts with an inline brief (7 H2s). The strategist brief, volumes and Zoho titles will go into v2 when they land.
