@@ -38,3 +38,15 @@
 - **Research:** COMPLETE (22 facts; 16 legal, 15 reused). /expert-advice/elopement-ceremony-script returns 404, so it is a new post. Confirmed: the s 45(2) and s 46(1) wording; the minimum present (couple, celebrant, 2 witnesses 18+, physically present); NOIM rules; Smartraveller recognition; a symbolic ceremony needs no witnesses (2018 guidelines, medium). These match the v2 draft.
 - **Gaps:** whether the celebrant can also be a witness; the 2021 guidelines unread; no sourced ceremony length.
 - **Found live:** /planning/elopement-vows, /expert-advice/elopement, /destination-weddings/elopement-ideas. All added to link-map. **Question for the user:** is /destination-weddings/elopement-ideas the planned WW-321? If so, link it after publish (RETRO-LINKS).
+- **Stage 0 (strategist, late):** DONE after the permission hold.
+  - **Volumes:** all five terms 10 a month in AU (Zoho plan: US 170, difficulty 0).
+  - **SERP:** an AI Overview, then Pinterest, Reddit, Instagram and small US officiant sites. None has the Australian legal words or a legal vs symbolic split. The draft already matches this angle.
+  - **Zoho:** WW-321 (WC3-T323) "25 Elopement Ideas for an Intimate Wedding" is LIVE at /destination-weddings/elopement-ideas (published 19 Nov). N-521 has no task (title and URL unknown).
+- **Stage 6 fast (copy editor):** DONE. final.md, publish-package.json and chrome-upload-prompt.md (draft only; URL-STATUS: check for an existing post, else create a new one) written; article.docx built.
+- **Orchestrator:** added one sentence linking WW-321 (L-19) in "Setting and timing", in final.md, the package and the Chrome prompt; docx rebuilt.
+
+## Must-fix before publish
+1. URL-STATUS: /expert-advice/elopement-ceremony-script is 404. Create a new post (after checking the CMS for an existing slug). Zoho task WC3-T961 is In Progress.
+2. RETRO-LINKS: N-521 (symbolic ceremony script) has no Zoho task. Link it after publish. Add a link from WW-321 back to this script.
+3. LINK-CHECK (gov.au pages not reachable in the session), AUTHOR, IMAGE-RIGHTS, CMS-URL.
+Nothing for Nic (no prices).
