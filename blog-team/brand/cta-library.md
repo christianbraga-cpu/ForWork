@@ -9,7 +9,7 @@ into the body. Never put a price in a CTA (see brand-profile, Prices).
 
 | ID | Use when | Heading | Body | Button | URL |
 |---|---|---|---|---|---|
-| `discovery_call` | Default for consideration and decision pieces | Not sure where to start? Book a free Discovery Call | A complimentary, no-obligation call with a Wedded Wonderland advisor to talk through your wedding and point you toward the right next step. | Book a free call | `/wonderland-concierge` |
+| `discovery_call` | Default for consideration and decision pieces | Not sure where to start? Book a free Discovery Call | A free, no-obligation call with a Wedded Wonderland advisor to talk through your wedding and point you toward the right next step. | Book a free call | `/wonderland-concierge` |
 | `concierge_enquiry` | Readers ready to act; planner and venue sourcing pieces | Start your enquiry | Tell us about your celebration and we will match you with your concierge: one expert team to source your venue, your planner, your vendors and your guest travel. | Start your enquiry | `/wonderland-concierge` |
 | `planner_match` | Pieces about choosing a planner or vendors | Let us match you with the right planner | Depending on your wedding, your concierge may recommend a partnered planner from our vetted network, or help you move forward confidently without one. | Talk to a concierge | `/wonderland-concierge` |
 | `destination_explore` | Awareness pieces, early-stage readers | Explore weddings in [Destination] | See venues, seasons, getting there and marrying legally, all in one place. | Explore [Destination] | `/destinations/<region>/<country>[/<area>-wedding]` (see link map) |

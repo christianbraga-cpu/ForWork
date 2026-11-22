@@ -39,3 +39,9 @@
   - --check: 2,704 reader words (over the brief; v2 trims), 0 dashes, 0 placeholders. Official domains inline: RFS, CFA, QFD, Product Safety, SafeWork NSW, Energy Safe Victoria. None blocked.
   - YAML valid; 33 claims, 21 links (over the 14 to 18 target).
   - Front matter CTA body says "complimentary"; v2 removes it.
+- **Stage 3 fast (3 reviews):** DONE.
+  - **Accuracy 3.6:** blocker on the Dubai Civil Defence claim (own page only). Majors: Queensland fireworks wording; "venue's insurance decide"; the concierge outcome promise. Minors: state-rule precision, a recheck-in-the-wedding-week line, hedges.
+  - **SEO 4.0:** title rule passes. Majors: 2,704 words (cut about 520); 22 links (drop 4); the fireworks claim not linked at the claim.
+  - **Reader (couple):** relevance 3, trust 3, clarity 4, would_enquire 2, "save". Majors: Australian fire-ban detail outweighs the overseas line; the unproven concierge paragraph.
+  - Merged request: 04-reviews/v1/merged.md. Conflict on fireworks resolved by deleting the sentence (off-topic).
+- **Decision (default):** blog-team/brand/cta-library.md discovery_call body changed from "A complimentary, no-obligation call" to "A free, no-obligation call", in line with the standing never-"complimentary" rule. This affects future articles only.
