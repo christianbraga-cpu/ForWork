@@ -28,3 +28,9 @@
 ## Stages
 - **23:28 check-in:** the strategist and the researcher are both held on MCP permission prompts (about 15 minutes). The research pack has 10 official facts (s 44, s 45, s 46, AGD celebrant presence, NOIM). **Decision (default):** per the 10-minute rule, the writer started on the saved facts with an inline brief (7 H2s). The strategist brief, volumes and Zoho titles will go into v2 when they land.
 - **Stage 2 fast (writer):** DONE. 03-draft-v1.md. --check: 2,351 reader words (over; v2 trims), 0 dashes, 0 placeholders, ag.gov.au and legislation.gov.au inline. YAML valid: 13 claims, 16 links. Gaps: overseas recognition (reuse Smartraveller F-R1 in v2) and who can be a witness. Reviews launched (SEO pulls its own volumes, since the strategist is still held).
+- **Stage 3 fast (3 reviews):** DONE.
+  - **Accuracy 4.4:** majors on the unqualified set-passages takeaway and an implied witness rule (photographer). Minors: symbolic "declare you married"; Smartraveller recognition fact (F-R1) for the FAQ; NOIM and s 44 link targets.
+  - **SEO 4.2:** on-page only (no SERP tool; strategist held). Majors: 2,351 words; 9 related links.
+  - **Reader (couple):** relevance 3, trust 3, clarity 4, would_enquire 2, "save". The blocker on planner vetting is downgraded (out of scope); "trusted planners" is cut to live wording.
+  - Merged request: 04-reviews/v1/merged.md.
+- **Conflict resolved:** the SEO reviewer asked to drop the Italy link, but the reader and the user's destination-edge brief want it, so it is kept with one sentence. No Wedded World plug (standing rule).
