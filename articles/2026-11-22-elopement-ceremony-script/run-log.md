@@ -27,3 +27,4 @@
 
 ## Stages
 - **23:28 check-in:** the strategist and the researcher are both held on MCP permission prompts (about 15 minutes). The research pack has 10 official facts (s 44, s 45, s 46, AGD celebrant presence, NOIM). **Decision (default):** per the 10-minute rule, the writer started on the saved facts with an inline brief (7 H2s). The strategist brief, volumes and Zoho titles will go into v2 when they land.
+- **Stage 2 fast (writer):** DONE. 03-draft-v1.md. --check: 2,351 reader words (over; v2 trims), 0 dashes, 0 placeholders, ag.gov.au and legislation.gov.au inline. YAML valid: 13 claims, 16 links. Gaps: overseas recognition (reuse Smartraveller F-R1 in v2) and who can be a witness. Reviews launched (SEO pulls its own volumes, since the strategist is still held).
