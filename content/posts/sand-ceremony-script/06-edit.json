@@ -1,0 +1,279 @@
+{
+  "agent": "editor",
+  "task_id": "sand-ceremony-script",
+  "stage": "06",
+  "status": "complete",
+  "round": 1,
+  "inputs_used": [
+    "/home/user/ForWork/content/posts/sand-ceremony-script/05-draft.md",
+    "/home/user/ForWork/content/posts/sand-ceremony-script/01-brief.json",
+    "/home/user/ForWork/content/posts/sand-ceremony-script/02-seo.json",
+    "/home/user/ForWork/content/posts/sand-ceremony-script/03-source-pack.json",
+    "/home/user/ForWork/content/posts/sand-ceremony-script/04-images.json",
+    "content-system/brand/brand-facts.md",
+    "content-system/seo/link-map.csv",
+    "content-system/schemas/06-edit.schema.json"
+  ],
+  "self_qa": {
+    "checks": [
+      {
+        "check": "scan_copy.py run",
+        "pass": true,
+        "note": "0 banned, 0 flagged, 0 dashes, 0 overlaps"
+      },
+      {
+        "check": "Every factual sentence logged",
+        "pass": true,
+        "note": "14 entries"
+      },
+      {
+        "check": "Each edit old occurs exactly once in 05-draft.md; all apply cleanly",
+        "pass": true,
+        "note": "14 edits, verified by script"
+      },
+      {
+        "check": "Word count 2,000 to 2,800 after edits",
+        "pass": true,
+        "note": "2750 body words excluding comments and URLs"
+      },
+      {
+        "check": "Exactly 4 one-sentence takeaways; keyword in title, first 100 words, H2",
+        "pass": true
+      },
+      {
+        "check": "UTMs secondary, primary, magnet, closing once each; concierge anchors 'Wedded Concierge'",
+        "pass": true
+      },
+      {
+        "check": "Hub linked in first H2; no processional songs link; WW-051 LINK comment present",
+        "pass": true
+      },
+      {
+        "check": "Image slots match 04-images; no reference-only",
+        "pass": true,
+        "note": "4 slots, all status needed"
+      },
+      {
+        "check": "Decision consistent with scores",
+        "pass": true
+      }
+    ],
+    "confidence": 0.85
+  },
+  "open_questions": [
+    {
+      "to": "orchestrator",
+      "question": "/expert-advice/wedding-ceremony-script and /expert-advice/simple-wedding-ceremony-script are verified live in 02-seo.json but missing from link-map.csv; add via /wedded-linkmap.",
+      "blocking": false
+    },
+    {
+      "to": "orchestrator",
+      "question": "/magazine magnet link is a brand-facts URL, not listed in 02-seo.json internal links; confirm it is wanted.",
+      "blocking": false
+    }
+  ],
+  "assumptions": [
+    "'A couple of minutes' for the pour is practical guidance, not a sourced statistic."
+  ],
+  "verify_items": [],
+  "tools_used": [
+    "Bash"
+  ],
+  "next_agent": [
+    "icp-reader"
+  ],
+  "payload": {
+    "draft_file": "content/posts/sand-ceremony-script/05-draft.md",
+    "rubric": {
+      "voice": 4,
+      "expertise": 4,
+      "accuracy": 4,
+      "seo_fit": 5,
+      "commercial_link": 4,
+      "structure": 5,
+      "brief_fit": 4
+    },
+    "average": 4.29,
+    "blocking_issues": [],
+    "decision": "pass_with_edits",
+    "edits": [
+      {
+        "location": "Key takeaways, bullet 1",
+        "issue": "Legal claim in a takeaway with no link at the claim, and 'have to be said' overstates s45(2), which says it is 'sufficient' if the words are said. Make the takeaway non-legal.",
+        "fix": "- A sand ceremony is symbolic, so it sits beside the legal words of your ceremony and never takes their place.",
+        "old": "- A sand ceremony is a symbolic ritual, so in Australia the legal words under sections 45 and 46 of the Marriage Act 1961 still have to be said around it.",
+        "new": "- A sand ceremony is symbolic, so it sits beside the legal words of your ceremony and never takes their place."
+      },
+      {
+        "location": "Key takeaways, bullet 2",
+        "issue": "'sits well after' reads as 'long after'. Ambiguous placement advice.",
+        "fix": "- The pour fits neatly after the vows and rings and before the pronouncement, and your celebrant sets the final order.",
+        "old": "- The pour sits well after the vows and rings and before the pronouncement, and your celebrant sets the final order.",
+        "new": "- The pour fits neatly after the vows and rings and before the pronouncement, and your celebrant sets the final order."
+      },
+      {
+        "location": "Where the sand ceremony goes, para 2",
+        "issue": "'Others' has no antecedent and implies a common practice (statistic-style framing).",
+        "fix": "You can also pour straight after the welcome, so the ritual sets the tone. Both work.",
+        "old": "Others pour straight after the welcome, so the ritual sets the tone. Both work.",
+        "new": "You can also pour straight after the welcome, so the ritual sets the tone. Both work."
+      },
+      {
+        "location": "Short version H3, note",
+        "issue": "'15 minutes or less' is an unsourced duration. No new facts.",
+        "fix": "This suits a pared-back ceremony. Pair it",
+        "old": "This suits a pared-back ceremony of 15 minutes or less. Pair it",
+        "new": "This suits a pared-back ceremony. Pair it"
+      },
+      {
+        "location": "Beach H2, wind bullet",
+        "issue": "'usually' is banned statistic language.",
+        "fix": "At what time of day does the breeze pick up there?",
+        "old": "What time of day does the breeze usually pick up?",
+        "new": "At what time of day does the breeze pick up there?"
+      },
+      {
+        "location": "Legal H2, opening para",
+        "issue": "'has no legal effect' and 'it happens whether or not' are legal assertions not in the source pack and not linked. Replace with a plain statement that leads into the linked facts.",
+        "fix": "A sand ceremony is symbolic. The legal part of your wedding is spoken, and in Australia the words come from the Marriage Act 1961.",
+        "old": "A sand ceremony has no legal effect. In Australia, the legal part of your wedding is said in words, not poured, and it happens whether or not you have sand on the table.",
+        "new": "A sand ceremony is symbolic. The legal part of your wedding is spoken, and in Australia the words come from the Marriage Act 1961."
+      },
+      {
+        "location": "Legal H2, fact_01 sentence",
+        "issue": "Section headings should be quoted exactly as fact_01 gives them.",
+        "fix": "As at November 2026, section 45 of the [Marriage Act 1961](https://www.legislation.gov.au/C1961A00012/latest/text) is headed \"Form of ceremony\" and section 46 is headed \"Certain authorised celebrants to explain nature of marriage relationship\". <!-- fact_01 -->",
+        "old": "As at November 2026, the form of ceremony sits in section 45 of the [Marriage Act 1961](https://www.legislation.gov.au/C1961A00012/latest/text), and the celebrant's explanation sits in section 46. <!-- fact_01 -->",
+        "new": "As at November 2026, section 45 of the [Marriage Act 1961](https://www.legislation.gov.au/C1961A00012/latest/text) is headed \"Form of ceremony\" and section 46 is headed \"Certain authorised celebrants to explain nature of marriage relationship\". <!-- fact_01 -->"
+      },
+      {
+        "location": "Legal H2, s46(1) lead-in",
+        "issue": "fact_102 says the celebrant 'shall say'; 'says' softens a legal duty. Keep the lead-in neutral and exact; no commentary on the quoted words.",
+        "fix": "Before the marriage is solemnised, a celebrant who is not a minister of religion of a recognised denomination shall say these words to you, in the presence of the witnesses, under [section 46(1)]",
+        "old": "Before the marriage is solemnised, a celebrant who is not a minister of religion of a recognised denomination says these words to you, in the presence of the witnesses, under [section 46(1)]",
+        "new": "Before the marriage is solemnised, a celebrant who is not a minister of religion of a recognised denomination shall say these words to you, in the presence of the witnesses, under [section 46(1)]"
+      },
+      {
+        "location": "Legal H2, fact_103 and fact_100 sentences",
+        "issue": "fact_103: 'can be exempted ... already states' does not match 'the Minister may exempt certain celebrants ... sufficiently states'. fact_100: wording paraphrased loosely ('any form recognised as sufficient by their religious body'). Neither is linked at the claim.",
+        "fix": "Under [section 46(2)](https://classic.austlii.edu.au/au/legis/cth/consol_act/ma196185/s46.html), the Minister may exempt certain celebrants from section 46(1) where satisfied that their form of ceremony sufficiently states the nature and obligations of marriage. <!-- fact_103 --> Under [section 45(1)](https://classic.austlii.edu.au/au/legis/cth/consol_act/ma196185/s45.html), when a minister of religion marries you, the marriage may be solemnised according to any form and ceremony recognised as sufficient for the purpose by the religious body or organisation of which they are a minister. <!-- fact_100 -->",
+        "old": "Some celebrants can be exempted from saying the section 46 words where their form of ceremony already states the nature and obligations of marriage. <!-- fact_103 --> When a minister of religion marries you, the ceremony may follow any form recognised as sufficient by their religious body. <!-- fact_100 -->",
+        "new": "Under [section 46(2)](https://classic.austlii.edu.au/au/legis/cth/consol_act/ma196185/s46.html), the Minister may exempt certain celebrants from section 46(1) where satisfied that their form of ceremony sufficiently states the nature and obligations of marriage. <!-- fact_103 --> Under [section 45(1)](https://classic.austlii.edu.au/au/legis/cth/consol_act/ma196185/s45.html), when a minister of religion marries you, the marriage may be solemnised according to any form and ceremony recognised as sufficient for the purpose by the religious body or organisation of which they are a minister. <!-- fact_100 -->"
+      },
+      {
+        "location": "Legal H2, fact_104 paragraph",
+        "issue": "Link sits after the claim, not at it; omits the source's 'you can't register an overseas marriage in Australia'; 'so speak to a lawyer to confirm your certificate' loosely paraphrased.",
+        "fix": "If you marry overseas, [Smartraveller](https://www.smartraveller.gov.au/planning-trip/advice-your-planned-activities/getting-married-overseas) notes that you can't register an overseas marriage in Australia. To be recognised here, the marriage must have been valid under the law of the country where it happened, and valid under Australian law had it taken place in Australia. Talk to a lawyer to confirm your overseas marriage certificate is valid in Australia. <!-- fact_104 -->",
+        "old": "If you marry overseas, the marriage must be valid under the law of the country where it happens, and valid under Australian law had it taken place here, to be recognised in Australia, so speak to a lawyer to confirm your certificate. You can read the detail on [Smartraveller's getting married overseas page](https://www.smartraveller.gov.au/planning-trip/advice-your-planned-activities/getting-married-overseas). <!-- fact_104 -->",
+        "new": "If you marry overseas, [Smartraveller](https://www.smartraveller.gov.au/planning-trip/advice-your-planned-activities/getting-married-overseas) notes that you can't register an overseas marriage in Australia. To be recognised here, the marriage must have been valid under the law of the country where it happened, and valid under Australian law had it taken place in Australia. Talk to a lawyer to confirm your overseas marriage certificate is valid in Australia. <!-- fact_104 -->"
+      },
+      {
+        "location": "FAQ, before or after the vows",
+        "issue": "Same 'sits well after' ambiguity as takeaway 2.",
+        "fix": "The pour fits neatly after the vows and rings, just before the pronouncement, or straight after the welcome.",
+        "old": "The pour sits well after the vows and rings, just before the pronouncement, or straight after the welcome.",
+        "new": "The pour fits neatly after the vows and rings, just before the pronouncement, or straight after the welcome."
+      },
+      {
+        "location": "FAQ, is the sand ceremony biblical",
+        "issue": "fact_100 restated in the FAQ without exact wording or a link. Remove the legal restatement; the legal H2 already carries it.",
+        "fix": "If a minister of religion is marrying you, ask where a sand moment can sit within their rite.",
+        "old": "If a minister of religion is marrying you, the ceremony follows the form their religious body recognises, so ask where a sand moment can sit within it. <!-- fact_100 -->",
+        "new": "If a minister of religion is marrying you, ask where a sand moment can sit within their rite."
+      },
+      {
+        "location": "Closing H2, first para",
+        "issue": "'who reads the words' next to the Advisor line implies the Advisor finds celebrants. Also trims words.",
+        "fix": "Choosing where you marry and how your guests get there takes longer.",
+        "old": "Choosing where you marry, who reads the words and how your guests get there takes longer.",
+        "new": "Choosing where you marry and how your guests get there takes longer."
+      },
+      {
+        "location": "Keeping the sand afterwards, para 1",
+        "issue": "Trim to hold the word count after the legal additions.",
+        "fix": "Set it on the guestbook table for the evening, then carry it home wrapped in hand luggage.",
+        "old": "Some couples set it on the guestbook table for the evening, then carry it home wrapped in hand luggage.",
+        "new": "Set it on the guestbook table for the evening, then carry it home wrapped in hand luggage."
+      }
+    ],
+    "fact_check_log": [
+      {
+        "claim": "Section 45 'Form of ceremony' and section 46 headings, Marriage Act 1961, as at November 2026 (linked legislation.gov.au)",
+        "fact_id": "fact_01",
+        "status": "confirmed"
+      },
+      {
+        "claim": "s45(2): sufficient if each party says the quoted words in presence of celebrant and witnesses; quote exact (linked AustLII s45)",
+        "fact_id": "fact_101",
+        "status": "confirmed"
+      },
+      {
+        "claim": "s46(1): celebrant who is not a minister of a recognised denomination shall say the quoted words; quote exact, no commentary (linked AustLII s46)",
+        "fact_id": "fact_102",
+        "status": "confirmed"
+      },
+      {
+        "claim": "s46(2) Minister may exempt certain celebrants (after edit; linked AustLII s46)",
+        "fact_id": "fact_103",
+        "status": "confirmed"
+      },
+      {
+        "claim": "s45(1) minister of religion may use any form recognised by their religious body (after edit; linked AustLII s45)",
+        "fact_id": "fact_100",
+        "status": "confirmed"
+      },
+      {
+        "claim": "FAQ restatement of fact_100",
+        "fact_id": "fact_100",
+        "status": "removed"
+      },
+      {
+        "claim": "Overseas marriage: can't register in Australia; recognition conditions; talk to a lawyer (after edit; linked Smartraveller)",
+        "fact_id": "fact_104",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Takeaway: legal words under ss45 and 46 'still have to be said'",
+        "status": "removed"
+      },
+      {
+        "claim": "'A sand ceremony has no legal effect ... it happens whether or not you have sand'",
+        "status": "removed"
+      },
+      {
+        "claim": "Short version suits a ceremony of 15 minutes or less",
+        "status": "removed"
+      },
+      {
+        "claim": "Classic script takes a couple of minutes with the pour (practice guidance, no figure beyond 'a couple of minutes')",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Wedded Concierge brings venue, travel and vendors together in one plan, anywhere in the world",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Wedded Advisor plans venue, travel and vendors as a single point of contact, in your time zone",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Wedded Advisor is one point of contact start to finish and confirms inclusions in writing before you commit",
+        "status": "confirmed"
+      }
+    ],
+    "compliance": {
+      "pass": true,
+      "issues": [
+        "Legal paraphrases of fact_100 and fact_103 loose and unlinked at the claim (fixed by edits)",
+        "'usually' in beach bullet (fixed)",
+        "Advisor close implied help choosing who reads the words (fixed)"
+      ]
+    },
+    "originality": {
+      "pass": true,
+      "matches": []
+    },
+    "banned_phrases_found": [],
+    "needs_signoff": []
+  }
+}
