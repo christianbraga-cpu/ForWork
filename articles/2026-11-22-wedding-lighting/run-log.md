@@ -30,3 +30,8 @@
   - **Cluster:** no Decor and Florals hub. /style-advice/wedding-table-decor is the proposed head (DECOR-HUB, FLORALS-PAGE open items). The Decor and Florals section is added to link-map.
   - **Domains:** official fire-service and electrical-regulator domains approved (government); the researcher adds them.
   - **Brief:** 8 H2s.
+- **Stage 1 fast (research):** DONE. 32 facts: 18 from our pages, 14 official; 5 legal; no prices.
+  - **Old pages:** the 2017 14-ways post is a thin listicle with third-party images (full rewrite). The 2024 candlelit post has a truncated item and promises safety without a source.
+  - **Confirmed:** NSW RFS fire ban rules; CFA (tents count as open air; fire pits banned on ban days); Queensland Fire Department; ACCC national sky lantern ban; SafeWork NSW fireworks licence; Energy Safe Victoria on decorative lights and generators. Six domains added.
+  - **Gaps:** whether candles count as "fire in the open"; sparklers; destination rules; other states; event electrical rules.
+- **Stage 2:** writer launched.
