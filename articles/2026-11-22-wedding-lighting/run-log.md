@@ -46,3 +46,11 @@
   - Merged request: 04-reviews/v1/merged.md. Conflict on fireworks resolved by deleting the sentence (off-topic).
 - **Decision (default):** blog-team/brand/cta-library.md discovery_call body changed from "A complimentary, no-obligation call" to "A free, no-obligation call", in line with the standing never-"complimentary" rule. This affects future articles only.
 - **Stage 4 fast (writer v2):** DONE. 03-draft-v2.md: 2,165 reader words, 0 dashes, 0 placeholders. Official domains inline: RFS, CFA, QFD, Product Safety, Energy Safe Victoria. YAML valid: 30 claims, 18 links. All 26 items applied. The overseas fire rule leads the safety section; fireworks and sparklers sentences cut; Dubai now reads "ask your hotel in writing".
+- **Stage 6 fast (copy editor):** DONE. final.md 2,201 reader words, 0 dashes, 0 placeholders, 5 official domains inline; publish-package.json valid (19 links); chrome-upload-prompt.md is draft only, creates the new post after checking for an existing slug, and never touches the 14-ways page; article.docx built. Link-map row set to DRAFT.
+
+## Must-fix before publish
+1. NEW-URL: /style-advice/wedding-lighting returned 404. Create it as a new post, after checking in the CMS that no unpublished or trashed post holds the slug.
+2. LEGACY-301 (user approval): 301 /14-creative-ways-to-use-lighting-in-your-wedding to the new URL after publish.
+3. LINK-CHECK: the fire-service and Energy Safe pages could not be fetched in the session; check by hand.
+4. DECOR-HUB and FLORALS-PAGE (content gaps), AUTHOR, IMAGE-RIGHTS (7 slots; own gallery or licensed stock), CMS-URL.
+No prices, so nothing for Nic.

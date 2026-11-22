@@ -358,7 +358,7 @@ No dedicated Decor and Florals hub exists. The /blog/decor category page is the 
 | `/style-advice/wedding-table-decor` | Wedding Table Decor in the Order Stylists Work | wedding table decor (recommended cluster head; its snippet mentions Wedded Marketplace, which is NOT LIVE as /marketplace, so check before linking from it) |
 | `/style-advice/22-amazing-table-settings-for-every-wedding-theme` | Wedding Table Settings for Every Theme, Piece by Piece | wedding table settings |
 | `/style-advice/wedding-style-for-your-venue` | Wedding Style for Your Venue, Read From Its Stone and Light | wedding style for your venue |
-| `/style-advice/wedding-lighting` | Wedding Lighting Ideas for a Glowing Reception | wedding lighting, outdoor wedding lighting, wedding reception lighting | IN PRODUCTION (URL is 404 on 22 Nov 2026; do not link until published) |
+| `/style-advice/wedding-lighting` | Wedding Lighting Ideas for a Glowing Reception | wedding lighting, outdoor wedding lighting, wedding reception lighting | DRAFT (22 Nov 2026; new post, URL was 404; 301 the 14-ways page here after publish) |
 | `/14-creative-ways-to-use-lighting-in-your-wedding` | 14 Creative Ways to Use Lighting in Your Wedding | wedding lighting ideas (legacy; 301 to /style-advice/wedding-lighting after publish, user approval; do not link meanwhile) |
 | `/planning-tips-for-candlelit-wedding-reception` | 10 Ways to Plan a Magical Candlelit Wedding Reception | candlelit wedding reception (partial overlap with lighting; non-exact anchor) |
 | `/trending-the-magical-ambiance-of-floating-candles` | Trending: The Magical Ambiance of Floating Candles | floating candles wedding |
