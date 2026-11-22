@@ -179,7 +179,7 @@ Candles change a table more than any flower once the sun goes down. A candle is 
 
 **Reusing ceremony florals.** Aisle arrangements and urns can move to the reception, but someone has to carry them during the drinks hour. Agree who moves them, and design the ceremony pieces to fit the tables.
 
-Your Wedded Advisor confirms inclusions in writing before you commit, so these details are settled before anything is booked. To talk these choices through, our [Wedded Concierge](/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=wedding-centrepieces&utm_content=primary) team can help you plan the tables.
+Your Wedded Advisor confirms inclusions in writing before you commit. To talk these choices through, our [Wedded Concierge](/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=wedding-centrepieces&utm_content=primary) team can help you plan the tables.
 
 ## Centrepieces for a destination wedding
 
