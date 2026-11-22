@@ -348,6 +348,32 @@ Planned (not live, retro-links after publish): WW-322, WW-335, N-107.
 | `/destination-weddings/destination-wedding-guest-guide` | Destination wedding guest guide | destination wedding guest guide (live per Firecrawl map 19 Nov 2026) |
 | `/expert-advice/what-not-to-wear-to-a-wedding` | What not to wear to a wedding | what not to wear to a wedding (live per Firecrawl map 19 Nov 2026) |
 
+## Decor and Florals cluster (Firecrawl map, 22 Nov 2026)
+
+No dedicated Decor and Florals hub exists. The /blog/decor category page is the de facto hub; /style-advice/wedding-table-decor is the strongest current Style Advice page and the recommended cluster head until a hub is commissioned (open item DECOR-HUB). No Style Advice florals or tablescape guide exists (open item FLORALS-PAGE).
+
+| URL | Title | Keyword it appears to own |
+|---|---|---|
+| `/blog/decor` | Decor - Blog | (category page) |
+| `/style-advice/wedding-table-decor` | Wedding Table Decor in the Order Stylists Work | wedding table decor (recommended cluster head; its snippet mentions Wedded Marketplace, which is NOT LIVE as /marketplace, so check before linking from it) |
+| `/style-advice/22-amazing-table-settings-for-every-wedding-theme` | Wedding Table Settings for Every Theme, Piece by Piece | wedding table settings |
+| `/style-advice/wedding-style-for-your-venue` | Wedding Style for Your Venue, Read From Its Stone and Light | wedding style for your venue |
+| `/style-advice/wedding-lighting` | Wedding Lighting Ideas for a Glowing Reception | wedding lighting, outdoor wedding lighting, wedding reception lighting | IN PRODUCTION (URL is 404 on 22 Nov 2026; do not link until published) |
+| `/14-creative-ways-to-use-lighting-in-your-wedding` | 14 Creative Ways to Use Lighting in Your Wedding | wedding lighting ideas (legacy; 301 to /style-advice/wedding-lighting after publish, user approval; do not link meanwhile) |
+| `/planning-tips-for-candlelit-wedding-reception` | 10 Ways to Plan a Magical Candlelit Wedding Reception | candlelit wedding reception (partial overlap with lighting; non-exact anchor) |
+| `/trending-the-magical-ambiance-of-floating-candles` | Trending: The Magical Ambiance of Floating Candles | floating candles wedding |
+| `/7-rules-for-styling-your-reception-table` | 7 Rules for Styling Your Reception Table | reception table styling (older; overlaps table decor; prefer the Style Advice page) |
+| `/the-latest-in-floral-wedding-trends` | The Latest in Floral Wedding Trends | floral wedding trends (older page; only florals page found) |
+| `/how-to-choose-a-wedding-reception-theme` | How To Choose a Wedding Reception Theme and Style | wedding reception theme (older) |
+| `/expert-advice/wedding-stylist-vs-planner` | Wedding Stylist vs Planner and What Each One Does | wedding stylist vs planner (overlaps older /wedding-planner-vs-wedding-stylist and /the-difference-between-wedding-stylist-vs-planner-vs-co-ordinator; prefer this one) |
+| `/planning/luxury-event-stylists` | Which Luxury Event Stylists Should You Know? | luxury event stylists (names stylists; check names before linking) |
+| `/expert-advice/why-your-wedding-should-have-an-event-hire-team` | Why Your Wedding Should Have an Event Hire Team | wedding event hire |
+| `/expert-advice/wedding-mood-board-for-vendors` | Wedding Mood Board for Vendors: How to Brief Your Team | wedding mood board |
+| `/expert-advice/wedding-reception-timeline` | Wedding Reception Timeline With a Sample Running Order | wedding reception timeline |
+| `/20-essential-questions-to-ask-your-wedding-venue-before-booking` | Questions to Ask on a Wedding Venue Tour (63 to Cover) | questions to ask wedding venue |
+| `/destination-weddings/wedding-reception-in-dubai` | Wedding Reception Venues in Dubai by Style and Capacity | wedding reception dubai |
+| `/real-weddings/wedding-in-bali-cost` | Wedding in Bali Cost for 80 Guests: A Real Breakdown | wedding in bali cost (mentions styling and lighting share; do not repeat its figures) |
+
 ## Do not link from blogs
 
 | URL | Reason |

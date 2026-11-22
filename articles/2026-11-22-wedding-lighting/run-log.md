@@ -22,3 +22,11 @@
 - **Decision (default):** a Decor and Florals section is added to link-map from the Firecrawl map. No Wedded World plug, no DRAFT links. 6 to 8 image slots with tight briefs.
 
 ## Stages
+- **Stage 0 fast (strategist):** DONE.
+  - **Finding:** /style-advice/wedding-lighting returns 404 (noindex), and no map found it, so there is no live page to refresh at that URL. The real incumbent is /14-creative-ways-to-use-lighting-in-your-wedding ("14 Creative Ways to Use Lighting in Your Wedding").
+  - **Decision (default, change if you want):** publish as a new page at the user's URL /style-advice/wedding-lighting (slug wedding-lighting). Treat the 14-ways page, plus /planning-tips-for-candlelit-wedding-reception for its candle content, as the refresh source. LEGACY-301: 301 the 14-ways page to the new URL after publish, with user approval. The candlelit page stays and gets a non-exact anchor.
+  - **Volumes (AU, per month):** wedding lighting 140; fairy lights wedding 90; candle wedding decor 50; outdoor wedding lighting 40; reception lighting 20; ideas 10. Mostly high competition.
+  - **SERP:** local hire pages, Amazon, Pinterest and directories. No editorial guide in the top 3 and no PAA. Nobody covers lighting abroad. SEO title "Wedding Lighting Ideas for a Glowing Reception Abroad" (53 characters) kept.
+  - **Cluster:** no Decor and Florals hub. /style-advice/wedding-table-decor is the proposed head (DECOR-HUB, FLORALS-PAGE open items). The Decor and Florals section is added to link-map.
+  - **Domains:** official fire-service and electrical-regulator domains approved (government); the researcher adds them.
+  - **Brief:** 8 H2s.
