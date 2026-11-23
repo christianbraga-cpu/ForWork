@@ -53,3 +53,16 @@
   - SEO title "Best Value Luxury Destination Weddings Ranked With Costs" (56 characters; "by Region" was inaccurate).
   - The Fiji cost, Dubai cost and hidden-costs URLs are added to link-map (live per Firecrawl).
 - **Stage 4 fast (writer v2):** DONE. 03-draft-v2.md: 2,198 reader words, 0 dashes, 0 placeholders, Smartraveller inline. YAML valid: 30 claims, 25 links. Five cards: Santorini, Fiji, Maldives, Amalfi, Lake Como (no figure). Dubai is one unranked line with no figures; Bali is outside the ranking; the Italy hub and Puglia are linked. The copy editor relinks the planner fee sentence and trims "luxury" repeats.
+- **Stage 6 fast (copy editor):** DONE. final.md 2,198 reader words, 0 dashes, 0 placeholders; publish-package.json valid; chrome-upload-prompt.md is draft only and creates a new post after a slug check; article.docx built. Planner fee sentence linked at the claim (L-26).
+
+## Must-fix before publish
+1. NIC-SIGNOFF (11 figures) and RANKING-METHOD (Nic approves the editorial criteria).
+2. SITE-CONFLICTS:
+   - Lake Como: two of our pages give different 60-guest figures.
+   - Bali: three ranges.
+   - DUBAI-SOURCE: who published the round-up; is it a competitor?
+3. AUD-EXCEPTION: Nic confirms there is no AUD conversion (the brand profile asks for an AUD approximation).
+4. F29-VERIFY and F07-VERIFY: re-check two Italy and Lake Como sentences on the live pages.
+5. DUP-PAGE: /destination-weddings/how-much-is-a-destination-wedding duplicates the by-region page (merge or 301).
+6. CLUSTER-CHECK: Zoho cluster "Destination Wedding Guide 2026" vs the user's "average wedding cost".
+7. NEW-URL (Zoho WC3-T567, WW-269), LINK-CHECK, AUTHOR, IMAGE-RIGHTS, CMS-URL.
