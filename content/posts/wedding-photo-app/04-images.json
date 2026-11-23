@@ -1,0 +1,89 @@
+{
+  "agent": "visual-curator",
+  "task_id": "wedding-photo-app",
+  "stage": "04",
+  "status": "needs_input",
+  "round": 1,
+  "inputs_used": [
+    "content/posts/wedding-photo-app/00-input.json",
+    "content-system/images/sources-policy.md",
+    "content-system/rubrics/image-checklist.md",
+    "content-system/images/library-index.csv",
+    "content-system/schemas/04-images.schema.json"
+  ],
+  "payload": {
+    "slots": [
+      {
+        "slot_id": "featured",
+        "placement": "featured",
+        "purpose": "Hero: show guests capturing the wedding themselves, the core idea of a guest photo collection plan.",
+        "shot_brief": "Luxury reception, evening, warm candlelight and soft fairy lights. Two to four well-dressed guests at a dressed table hold phones up toward the dance floor or toasts. Phones seen from behind or at an angle so NO screen interface, app, logo or brand is visible; phone backs unbranded or out of focus. Shallow depth of field, editorial grading, uncluttered. People: adult guests only, model releases or signed guest consent required for every identifiable face; no children. Generic venue (not captioned as a named place unless the register proves it). Landscape 3:2, space at left or right for title crop.",
+        "status": "needed",
+        "file": "content/posts/wedding-photo-app/images/wedding-photo-app-reception-guests-taking-photos.webp",
+        "alt": "Wedding guests at a candlelit reception table taking photos of the couple on their phones",
+        "caption": "[[IMAGE NEEDED]] Caption to follow licensed source: \"<Place>, <town>. Photo: <credit>\""
+      },
+      {
+        "slot_id": "qr-card",
+        "placement": "after_h2:2",
+        "purpose": "Show how guests find the shared album: a QR code card on a reception table.",
+        "shot_brief": "Still life, no people. Small letterpress or foiled table card in an ivory and gold palette on a linen tablecloth beside a bud vase, candle and folded napkin. The card carries a QR code and short neutral wording such as \"Share your photos\". The QR code must be a non-functional placeholder pattern that encodes nothing and resolves nowhere. No app name, logo, URL or brand anywhere. Soft daylight or candlelight, shallow depth of field. Preferred: real styled photo (owned shoot or licensed stock). Fallback ONLY with Nic's written approval: AI illustrative still life (Higgsfield), captioned \"Illustrative image\", no real venue or wedding implied.",
+        "status": "needed",
+        "file": "content/posts/wedding-photo-app/images/wedding-photo-app-table-qr-code-card.webp",
+        "alt": "Ivory table card with a QR code for sharing photos on a linen reception table beside a candle",
+        "caption": "[[IMAGE NEEDED]] If AI fallback is approved by Nic: \"Illustrative image\". Otherwise \"<Place>, <town>. Photo: <credit>\""
+      },
+      {
+        "slot_id": "couple-album",
+        "placement": "after_h2:3",
+        "purpose": "Show the payoff after the wedding: the couple reliving guest photos together.",
+        "shot_brief": "Couple (adults, relaxed, morning after or honeymoon setting such as a terrace or sunlit suite) sitting close together looking at one phone, smiling. Phone screen angled away or blurred so NO app interface, logo or brand is visible. Natural soft light, linen and neutral tones, candid and editorial. Couple consent / model release required. Not captioned as a specific venue unless proven by register or EXIF.",
+        "status": "needed",
+        "file": "content/posts/wedding-photo-app/images/wedding-photo-app-couple-viewing-shared-album.webp",
+        "alt": "Couple sitting together on a sunlit terrace looking through wedding photos on a phone",
+        "caption": "[[IMAGE NEEDED]] Caption to follow licensed source: \"<Place>, <town>. Photo: <credit>\""
+      },
+      {
+        "slot_id": "destination-dusk",
+        "placement": "after_h2:4",
+        "purpose": "Tie the topic to destination weddings: the reception moment guests most want to capture.",
+        "shot_brief": "Real destination wedding reception at dusk (blue hour), long table under festoon lights or candles with a view (vineyard, coastline or villa garden). Guests may be present but small or not identifiable; any phones shown carry no visible screen or brand. Must be a real, licensed photograph of a named venue with location proven by register, EXIF GPS or photographer gallery. Best source: library image from a Wedded Wonderland partner venue (for example a package venue on weddedwonderland.com, licence to be confirmed) or a venue press kit after written permission. NEVER AI.",
+        "status": "needed",
+        "file": "content/posts/wedding-photo-app/images/wedding-photo-app-destination-reception-dusk.webp",
+        "alt": "Long candlelit reception table at dusk overlooking the view at a destination wedding venue",
+        "caption": "[[IMAGE NEEDED]] \"<Venue>, <town>. Photo: <credit>\" once location and licence are proven"
+      }
+    ],
+    "reference_only": [],
+    "permission_requests": []
+  },
+  "self_qa": {
+    "checks": [
+      {"check": "Zero reference-only or competitor images in slots", "pass": true, "note": "No images placed; reference_only empty."},
+      {"check": "Every approved image has location, licence, alt, caption, fit_reason", "pass": true, "note": "No slots approved, so nothing unverified is published."},
+      {"check": "No AI image depicting a real place", "pass": true, "note": "Destination slot is marked never AI. QR slot AI fallback is a non-place still life and only with Nic's approval."},
+      {"check": "Featured image exists (approved or needed with brief)", "pass": true, "note": "Needed, with brief."},
+      {"check": "No third-party app interface, logo or brand in any brief", "pass": true},
+      {"check": "Consent required for identifiable people", "pass": true, "note": "Stated in each brief with people."},
+      {"check": "Alt text 125 characters or fewer", "pass": true}
+    ],
+    "confidence": 0.7
+  },
+  "open_questions": [
+    {"to": "Nic", "question": "Do you approve an AI illustrative still life for the QR code card slot (captioned \"Illustrative image\", placeholder code, no branding) if no licensed photo is found?", "blocking": false},
+    {"to": "human", "question": "Please source licensed images for the four slots (Drive library, partner supply with blog-use licence, or purchased stock) and add them to library-index.csv with licence and consent columns filled.", "blocking": false},
+    {"to": "orchestrator", "question": "No 02-seo.json outline exists yet; after_h2 placements are provisional. Re-map once the outline is written.", "blocking": false}
+  ],
+  "assumptions": [
+    "after_h2 numbers are provisional because there is no 01-brief.json, 02-seo.json or 02-research/report.md in the post folder.",
+    "Alt text is drafted from the shot brief and must be rewritten to match the final image."
+  ],
+  "verify_items": [
+    "[[IMAGE NEEDED]] featured: guests photographing a reception on phones (licensed, consent, no app branding)",
+    "[[IMAGE NEEDED]] qr-card: QR code table card still life (photo, or AI illustrative only if Nic approves)",
+    "[[IMAGE NEEDED]] couple-album: couple viewing a shared album on a phone (licensed, consent, screen not visible)",
+    "[[IMAGE NEEDED]] destination-dusk: real destination reception at dusk, location and licence proven, never AI"
+  ],
+  "tools_used": ["Bash (read register, policy, schemas)", "ToolSearch (Google Drive search_files not available in session)"],
+  "next_agent": ["luxury-writer"]
+}
