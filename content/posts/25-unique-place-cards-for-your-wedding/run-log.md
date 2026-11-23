@@ -6,3 +6,5 @@
 - 05:37 02 SEO done: both old URLs live at root, neither ranks; US 6,600 / AU 1,000 (KD 4); strong shopping SERP; centrepieces draft 404 (not linked).
 - 05:40 05 first draft about 2,120 words, 21 ideas; primary CTA anchor fixed to 'Wedded Concierge'; docx sent.
 - 05:42 06 editor pass_with_edits 4.21; 7 of 7 applied -> r2 (incl. secondary CTA lead-in trimmed to brand facts).
+- 07b panel-chair revise: weighted enquiry 1.8 (scores relevance 2.6, trust 3.7, clarity 4.0, premium 3.6); 2 must_fix (stationer section, who sets out), 15 edits on r2, net about +9 words.
+- 05:45 07b panel revise (enquiry 1.8 v 3.8; ideas post, deferred business details); 15 of 15 applied -> 08-final.md.
