@@ -25,8 +25,9 @@
 - **Stage 1 fast (research):** DONE. 36 facts: 8 legal (Smartraveller, Passport Office); no prices.
   - **URL:** /travel-guides/honeymoon-itinerary returns 404, so this is a new post.
   - **Reused:** passport validity, 6 weeks for a passport, visas, document copies, insurance, the health check, medicines, the 6 to 9 month lead time.
-  - **Conflict:** Smartraveller says "6 to 8 weeks" (travel health) vs "at least 8 weeks" (checklist). **Decision (default):** write "at least 6 to 8 weeks before you go", linked to both.
+  - **Conflict:** Smartraveller says "6 to 8 weeks" (travel health) vs "at least 8 weeks" (checklist). **Decision (default):** quote each page as worded, each linked at its claim.
   - **Site issues for the user:**
     - /travel-guides/weekly-itinerary-template (live 18 Nov) has internal links carrying "?utm_source=chatgpt.com" (UTM-CLEANUP).
     - /destination-honeymoon-packages inclusion wording changed since 16 Nov (the earlier honeymoon planner draft may need a re-check).
 - **Stage 0:** the strategist is held on an MCP permission prompt.
+- **00:39 check-in:** the strategist is still held on a permission prompt (16 minutes). **Decision (default):** the writer started on the complete research pack with an inline 7-H2 hub brief. Zoho titles, volumes and SERP go into v2 when the strategist lands.
