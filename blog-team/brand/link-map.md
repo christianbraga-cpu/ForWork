@@ -419,7 +419,6 @@ No dedicated Decor and Florals hub exists. The /blog/decor category page is the 
 | `/7-practical-tips-to-keep-your-wedding-guest-list-under-control` | 7 Practical Tips to Keep Your Wedding Guest List Under Control (older) | overlaps the guest list cluster; do not link, consolidation candidate |
 | `/the-guest-list-issue` | THE GUEST LIST ISSUE (old) | old; do not link |
 | `/expert-advice/bridal-shower-guest-list` | Bridal Shower Guest List Etiquette and Who to Invite (WC3-T983) | bridal shower guest list, who to invite to bridal shower | DRAFT (23 Nov 2026; URL was 404, new post) |
-| `/expert-advice/bridal-shower-guest-list` | Bridal Shower Guest List Etiquette and Who to Invite | bridal shower guest list | DRAFT (23 Nov 2026; URL was 404, new post; Zoho WC3-T983, TK-068) |
 
 ## Do not link from blogs
 

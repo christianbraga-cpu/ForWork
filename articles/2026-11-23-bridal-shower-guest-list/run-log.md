@@ -47,3 +47,9 @@
   - **Conflicts:** "one firm rule" vs a softer line for small faraway weddings; our pages disagree on shower timing (TIMING-CONFLICT; no timing rule stated).
 - **Stage 2:** writer launched.
 - **Stage 2 fast (writer):** DONE. 03-draft-v1.md. --check: 2,143 reader words (over), 0 dashes, 1 visible placeholder (move to open_items), no external domains. YAML valid: 29 claims, 33 link instances to 17 URLs (too many). No guest numbers or timing rules stated. Reviews launched.
+- **Stage 3 fast (3 reviews):** DONE.
+  - **Accuracy 3.8:** majors on plus-ones stated as fact, an implied Studio shower-list feature, and three URLs (all are in link-map; hens switched to the AU page).
+  - **SEO 4.0:** majors on length (2,143 words), 33 link instances, meta 138 characters.
+  - **Reader (couple):** relevance 3, trust 3, clarity 4, would_enquire 2, "forward". The visible placeholder; the deflected answer on people not invited abroad; the bolted-on Concierge line. The planner-vetting blocker is downgraded as out of scope.
+  - Merged request: 04-reviews/v1/merged.md. Duplicate link-map row removed.
+- **Decision (default):** people at home not invited abroad get concrete options framed as our suggestions (a relaxed gathering after you are home, no gifts expected) plus "talk it through with your host". "Sources current as at" is dropped (no official sources on etiquette).
