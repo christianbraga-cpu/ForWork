@@ -1,0 +1,241 @@
+{
+ "agent": "planner-sme",
+ "task_id": "wedding-rsvp-website-rs_a",
+ "stage": "03",
+ "status": "complete",
+ "round": 1,
+ "inputs_used": [
+  "content/posts/wedding-rsvp-website/00-input.json",
+  "content/posts/wedding-photo-app/03-source-pack.json",
+  "https://www.oaic.gov.au/privacy/your-privacy-rights/your-personal-information/what-is-personal-information",
+  "https://www.cyber.gov.au/guidance/learn-about-phishing-scams",
+  "https://weddedwonderland.com/wedding-rsvp-website (live page, read for the dropped list only, not a source)"
+ ],
+ "self_qa": {
+  "checks": [
+   {
+    "check": "Every fact has a source and date",
+    "pass": true
+   },
+   {
+    "check": "No price without a source; all prices in needs_signoff",
+    "pass": true,
+    "note": "No prices. OAIC turnover threshold (fact_07) is a legal threshold, not a price."
+   },
+   {
+    "check": "Every must-include covered or [[VERIFY]]",
+    "pass": true,
+    "note": "No 01-brief.json or 02-seo.json in this folder; must-includes taken from the orchestrator task."
+   },
+   {
+    "check": "No invented quotes, statistics or real weddings",
+    "pass": true
+   }
+  ],
+  "confidence": 0.85
+ },
+ "open_questions": [
+  {
+   "to": "luxury-writer",
+   "question": "Quoted government text uses curly apostrophes and one em dash (fact_05) as published; rephrase in body copy without em dashes. OAIC does not name email addresses or dietary/allergy info; keep those as the article's framing.",
+   "blocking": false
+  },
+  {
+   "to": "orchestrator",
+   "question": "Live page claims to drop or rewrite (from a summary read of https://weddedwonderland.com/wedding-rsvp-website, 23 November 2026, unsourced): named platforms Zola, The Knot, Joy, Minted, RSVPify, Riley & Grey and comparisons between them; 'free RSVP collection' / 'what free actually includes'; platforms collect meal choices and dietary requirements; real-time updates on guest responses; simpler follow-up with non-responders; keeping the form concise increases response rates (unsourced statistic-style claim); how QR code RSVPs work (platform feature claims). The meta description also names platforms and uses 'free'.",
+   "blocking": false
+  }
+ ],
+ "assumptions": [
+  "Privacy points are general information only, not legal advice; phrase 'as at November 2026'; the Wedded Advisor confirms current requirements.",
+  "No platform names, features, prices or statistics recorded, per user instruction.",
+  "fact_05 to fact_07 reused verbatim with source and checked date from the wedding-photo-app pack (fact_11, fact_12, fact_14). fact_10 from that pack (photos as personal information) not reused as it is photo-specific; fact_13 (takedown) not relevant.",
+  "Live page read as a summary only (fast mode), so the dropped list may not be exhaustive."
+ ],
+ "verify_items": [
+  "[[VERIFY: any statement that a specific RSVP platform or website type is or is not covered by the Privacy Act, or how a platform stores, secures or shares guest data. Not sourced; leave out unless the platform's own privacy policy is read.]]",
+  "[[VERIFY: any claim about privacy laws in the destination country (e.g. EU GDPR for a European wedding). Not researched in this batch.]]"
+ ],
+ "tools_used": [
+  "mcp__Lead_MCP__firecrawl_scrape",
+  "mcp__Lead_MCP__firecrawl_search"
+ ],
+ "next_agent": [
+  "luxury-writer"
+ ],
+ "payload": {
+  "facts": [
+   {
+    "fact_id": "fact_01",
+    "claim": "OAIC, 'What is personal information?' (published 10 March 2023, modified 5 September 2024, read 23 November 2026): 'Personal information includes a broad range of information, or an opinion, that could identify an individual. What is personal information will vary, depending on whether a person can be identified or is reasonably identifiable in the circumstances.'",
+    "source": "https://www.oaic.gov.au/privacy/your-privacy-rights/your-personal-information/what-is-personal-information",
+    "source_type": "government",
+    "checked": "2026-11-23",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_02",
+    "claim": "OAIC (same page): 'For example, personal information may include: an individual's name, signature, address, phone number or date of birth', and the list also includes 'sensitive information', 'photographs', 'internet protocol (IP) addresses' and 'location information from a mobile device'. (The page does not mention email addresses by name; do not say OAIC lists email.)",
+    "source": "https://www.oaic.gov.au/privacy/your-privacy-rights/your-personal-information/what-is-personal-information",
+    "source_type": "government",
+    "checked": "2026-11-23",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_03",
+    "claim": "OAIC (same page, 'What is sensitive information?'): 'Sensitive information is personal information that includes information or an opinion about an individual's:' and the list includes 'health or genetic information'. The page does not mention dietary requirements or allergies; linking allergy questions to health information is the article's framing, not OAIC's words.",
+    "source": "https://www.oaic.gov.au/privacy/your-privacy-rights/your-personal-information/what-is-personal-information",
+    "source_type": "government",
+    "checked": "2026-11-23",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_04",
+    "claim": "OAIC (same page): 'Generally, sensitive information has a higher level of privacy protection than other personal information.'",
+    "source": "https://www.oaic.gov.au/privacy/your-privacy-rights/your-personal-information/what-is-personal-information",
+    "source_type": "government",
+    "checked": "2026-11-23",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_05",
+    "claim": "Reused from content/posts/wedding-photo-app/03-source-pack.json (fact_11). OAIC, 'Photos and videos' (page modified 26 September 2024): 'If the photo or video was taken by someone acting in a personal capacity, the Privacy Act doesn't apply — because it doesn't cover individuals.' (Context is photos; dash quoted as published, do not reuse in body copy. Apply to RSVP data only as 'the Privacy Act doesn't cover individuals acting in a personal capacity', as general information.)",
+    "source": "https://www.oaic.gov.au/privacy/your-privacy-rights/social-media-and-online-privacy/photos-and-videos",
+    "source_type": "government",
+    "checked": "2026-11-23",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_06",
+    "claim": "Reused from content/posts/wedding-photo-app/03-source-pack.json (fact_12). OAIC (same page): 'In some situations, there may be state or territory laws that prevent someone photographing your private activities without your consent.' (Context is photography; for RSVPs say only that state or territory laws may also apply.)",
+    "source": "https://www.oaic.gov.au/privacy/your-privacy-rights/social-media-and-online-privacy/photos-and-videos",
+    "source_type": "government",
+    "checked": "2026-11-23",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_07",
+    "claim": "Reused from content/posts/wedding-photo-app/03-source-pack.json (fact_14). OAIC (same page): 'The Privacy Act covers organisations with an annual turnover of more than $3 million that operate in Australia, and some other organisations.' (A legal threshold, not a price. Do not state whether any RSVP platform is covered.)",
+    "source": "https://www.oaic.gov.au/privacy/your-privacy-rights/social-media-and-online-privacy/photos-and-videos",
+    "source_type": "government",
+    "checked": "2026-11-23",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_08",
+    "claim": "Australian Cyber Security Centre, cyber.gov.au, 'Learn about phishing scams' (no last-updated date shown, read 23 November 2026): 'Quishing is a type of phishing that uses QR codes instead of text-based links. QR codes are often trusted, but cybercriminals can use them to hide harmful links.'",
+    "source": "https://www.cyber.gov.au/guidance/learn-about-phishing-scams",
+    "source_type": "government",
+    "checked": "2026-11-23",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_09",
+    "claim": "cyber.gov.au (same page): 'Quishing is harder to detect than normal phishing because QR codes are images, not text. This means security tools may miss harmful links and you can’t check the link before scanning it.'",
+    "source": "https://www.cyber.gov.au/guidance/learn-about-phishing-scams",
+    "source_type": "government",
+    "checked": "2026-11-23",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_10",
+    "claim": "cyber.gov.au (same page, 'What you can do about phishing'): 'Be careful with messages and calls: don’t click links, scan QR codes or download files you weren’t expecting.' and 'Use trusted sources: go directly to official websites or use known phone numbers instead of links in messages.'",
+    "source": "https://www.cyber.gov.au/guidance/learn-about-phishing-scams",
+    "source_type": "government",
+    "checked": "2026-11-23",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_11",
+    "claim": "cyber.gov.au (same page, workplace practices): 'Use secure QR tools: create QR codes using trusted and secure tools.' (Written for workplaces; quote as general guidance only.)",
+    "source": "https://www.cyber.gov.au/guidance/learn-about-phishing-scams",
+    "source_type": "government",
+    "checked": "2026-11-23",
+    "is_price": false
+   }
+  ],
+  "insider_details": [
+   {
+    "detail": "An RSVP form collects names, addresses and phone numbers, which OAIC gives as examples of personal information, so ask only for what the planning actually needs and keep the guest list somewhere you trust. General information, not legal advice.",
+    "fact_ids": [
+     "fact_01",
+     "fact_02"
+    ]
+   },
+   {
+    "detail": "Dietary and allergy questions can touch on health details, and OAIC lists health information as sensitive information with generally higher protection. Ask for what the caterer needs ('any allergies we should share with the chef?') rather than medical detail, and share it only with suppliers who need it. General information, not legal advice.",
+    "fact_ids": [
+     "fact_03",
+     "fact_04"
+    ]
+   },
+   {
+    "detail": "OAIC says the Privacy Act doesn't cover individuals acting in a personal capacity, but state or territory laws may apply and the platform you choose may have its own obligations. Phrase as 'as at November 2026', general information only; the Wedded Advisor confirms current requirements.",
+    "fact_ids": [
+     "fact_05",
+     "fact_06",
+     "fact_07"
+    ]
+   },
+   {
+    "detail": "On invitations and welcome signs, print the RSVP web address beside the QR code so guests can type it instead, since cyber.gov.au notes you can't check a QR link before scanning it and advises going directly to official websites.",
+    "fact_ids": [
+     "fact_09",
+     "fact_10"
+    ]
+   },
+   {
+    "detail": "Generate the QR code with a trusted tool and test-scan the printed proof before the print run; cyber.gov.au's workplace guidance is to 'create QR codes using trusted and secure tools'.",
+    "fact_ids": [
+     "fact_11"
+    ]
+   }
+  ],
+  "quotes": [],
+  "real_weddings": [],
+  "verify_items": [
+   "[[VERIFY: any statement that a specific RSVP platform or website type is or is not covered by the Privacy Act, or how a platform stores, secures or shares guest data. Not sourced; leave out unless the platform's own privacy policy is read.]]",
+   "[[VERIFY: any claim about privacy laws in the destination country (e.g. EU GDPR for a European wedding). Not researched in this batch.]]"
+  ],
+  "needs_signoff": [],
+  "must_include_coverage": [
+   {
+    "item": "Guest details on an RSVP form are personal information",
+    "covered_by": [
+     "fact_01",
+     "fact_02"
+    ]
+   },
+   {
+    "item": "Dietary and allergy questions and health information as sensitive information",
+    "covered_by": [
+     "fact_03",
+     "fact_04"
+    ]
+   },
+   {
+    "item": "Privacy Act doesn't cover individuals in a personal capacity; state or territory laws may apply",
+    "covered_by": [
+     "fact_05",
+     "fact_06",
+     "fact_07"
+    ]
+   },
+   {
+    "item": "QR codes: scam risk and checking before scanning",
+    "covered_by": [
+     "fact_08",
+     "fact_09",
+     "fact_10",
+     "fact_11"
+    ]
+   },
+   {
+    "item": "Platform names, features, tiers, prices, statistics",
+    "covered_by": [
+     "Out of scope by user choice: no platform facts recorded. Compare website types only, no prices, never 'free'."
+    ]
+   }
+  ]
+ }
+}

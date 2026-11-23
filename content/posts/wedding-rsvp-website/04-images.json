@@ -1,0 +1,96 @@
+{
+  "agent": "visual-curator",
+  "task_id": "wedding-rsvp-website",
+  "stage": "04",
+  "status": "needs_input",
+  "round": 1,
+  "inputs_used": [
+    "CLAUDE.md",
+    "content/posts/wedding-rsvp-website/00-input.json",
+    "content-system/images/sources-policy.md",
+    "content-system/rubrics/image-checklist.md",
+    "content-system/images/library-index.csv (header only, no rows)",
+    "content-system/schemas/04-images.schema.json",
+    "content-system/schemas/envelope.schema.json",
+    "https://weddedwonderland.com/wedding-rsvp-website (Firecrawl images list of the live post being refreshed)"
+  ],
+  "payload": {
+    "slots": [
+      {
+        "slot_id": "featured",
+        "placement": "featured",
+        "purpose": "Hero: show the calm, organised side of online RSVPs for a destination wedding couple, matching the title promise of collecting every reply.",
+        "shot_brief": "Licensed or owned photo of a couple in their 30s at home or on a sunny terrace, relaxed and smiling, reviewing guest replies together on a laptop or phone. Screen angled away or softly out of focus so nothing on it is legible: no app, platform, logo or guest names visible. Soft natural daylight, uncluttered editorial styling (linen, coffee cups, perhaps a printed invitation on the table). Wide 3:2 hero with headroom for a title crop. Identifiable people need a signed model release recorded in the register.",
+        "status": "needed",
+        "file": "content/posts/wedding-rsvp-website/images/wedding-rsvp-website-couple-reviewing-replies.webp",
+        "consent": {"required": true, "note": "Model release for both people before use."}
+      },
+      {
+        "slot_id": "qr-invitation",
+        "placement": "after_h2:2",
+        "purpose": "Show how a QR code on a printed invitation or details card sends guests to the RSVP page (destination features section).",
+        "shot_brief": "Still life flat-lay, no people: a luxury printed invitation suite with a small RSVP details card carrying a QR code, on textured paper with a ribbon or wax seal and soft daylight shadows. Preferred: an owned or licensed photo. Fallback only if Nic approves: an AI illustrative still life (Higgsfield), no real venue, destination or couple depicted, the QR code a non-functional placeholder pattern that points nowhere, no platform branding, logos or legible names, captioned \"Illustrative image\". Not generated in this run because approval is not on file.",
+        "status": "needed",
+        "file": "content/posts/wedding-rsvp-website/images/wedding-rsvp-website-qr-code-invitation-card.webp",
+        "caption": "Illustrative image",
+        "consent": {"required": false, "note": "No people in frame."}
+      },
+      {
+        "slot_id": "studio-rsvp-screen",
+        "placement": "after_h2:4",
+        "purpose": "Show Wonderland Studio (our own planning app) as the place to collect RSVPs and build the seating chart, without pricing.",
+        "shot_brief": "Team-supplied screenshot of the Wonderland Studio RSVP or guest list screen, filled with sample names only (no real guest or couple data), Wedded Wonderland branding only, no third-party platform screens or logos, no prices. Desktop or phone frame, cropped to the RSVP status view. Only usable once the product team supplies it and confirms the data is sample data.",
+        "status": "needed",
+        "file": "content/posts/wedding-rsvp-website/images/wedding-rsvp-website-wonderland-studio-rsvp-screen.webp",
+        "consent": {"required": false, "note": "Sample names only; confirm no real personal data on screen."}
+      },
+      {
+        "slot_id": "welcome-dinner",
+        "placement": "after_h2:5",
+        "purpose": "Illustrate multi-event RSVPs for a destination wedding: guests answer for the welcome dinner as well as the ceremony.",
+        "shot_brief": "Licensed real photo of a destination wedding welcome dinner: long dressed table outdoors at dusk with candles, festoon lights and guests mid-conversation, at a named venue and town recorded in the register or by the photographer (location proven, not judged by appearance). Never AI. Guests seen from behind or softly blurred unless couple and guest consent is recorded; no identifiable children. Partner venue images from weddedwonderland.com package pages are possible candidates only once their supply agreement is confirmed to cover blog use.",
+        "status": "needed",
+        "file": "content/posts/wedding-rsvp-website/images/wedding-rsvp-website-destination-welcome-dinner.webp",
+        "consent": {"required": true, "note": "Couple consent and guest consent if anyone is identifiable."}
+      }
+    ],
+    "reference_only": [
+      {"file": "(not downloaded: CDN host blocked by network proxy)", "source_url": "https://weddedwonderlandcustom.syd1.cdn.digitaloceanspaces.com/images/featured/1788833531186-b9lbfgviyi-wedding-rsvp-website-online-rsvps.webp", "note": "Old page featured image. Licence and content unknown; reference only unless the team confirms we own it."},
+      {"file": "(not downloaded: CDN host blocked by network proxy)", "source_url": "https://syd1.digitaloceanspaces.com/weddedwonderlandcustom/images/featured/1788407315412-ezdkk25c5ut-Screenshot_2026-09-03_at_11.48.15_AM.webp", "note": "Old page inline screenshot. May show a third-party platform (old post compared named platforms); never reuse."},
+      {"file": "(not downloaded: CDN host blocked by network proxy)", "source_url": "https://syd1.digitaloceanspaces.com/weddedwonderlandcustom/images/featured/1788854275119-go5vljgdmt-studio-invite-card-letter.webp", "note": "Old page inline 'studio invite card letter'. Possibly an owned Wonderland Studio asset that could fill qr-invitation or studio slots, but not viewed and no licence record; team to confirm ownership and add to the register."}
+    ],
+    "permission_requests": []
+  },
+  "self_qa": {
+    "checks": [
+      {"check": "Zero reference-only or competitor images in slots", "pass": true},
+      {"check": "Every approved image: location verified, licence, alt, caption, fit_reason", "pass": true, "note": "No approved images; all four slots needed."},
+      {"check": "No AI image depicting a real place", "pass": true, "note": "No AI generated. AI only allowed for qr-invitation still life, after Nic approves."},
+      {"check": "No third-party platform screens or logos", "pass": true},
+      {"check": "Featured image exists (approved or needed with brief)", "pass": true, "note": "Needed with brief."},
+      {"check": "Image register checked", "pass": true, "note": "Register has no rows."},
+      {"check": "Google Drive library searched", "pass": false, "note": "Drive search tool not available in this session."},
+      {"check": "Canva brand assets checked", "pass": false, "note": "get-assets needs asset IDs from a design; no brand asset IDs on file."}
+    ],
+    "confidence": 0.75
+  },
+  "open_questions": [
+    {"to": "Nic", "question": "Approve an AI illustrative still life (placeholder QR, no branding, captioned 'Illustrative image') for the QR invitation slot if no owned photo exists?", "blocking": false},
+    {"to": "product team", "question": "Can you supply a Wonderland Studio RSVP screenshot with sample names only?", "blocking": false},
+    {"to": "content team", "question": "Do we own the old page images (featured 'online-rsvps' and 'studio-invite-card-letter')? If yes, add them to library-index.csv with licence so they can be reconsidered.", "blocking": false},
+    {"to": "content team", "question": "Is there a licensed welcome dinner photo with location and consent records in the Drive library (Drive could not be searched this run)?", "blocking": false}
+  ],
+  "assumptions": [
+    "No 02-seo outline exists yet (fast mode); after_h2 placements assume H2 2 covers destination features/QR codes, H2 4 Wonderland Studio, H2 5 multi-event RSVPs. Writer may move them.",
+    "Old page images are treated as reference only because the register has no licence rows for them."
+  ],
+  "verify_items": [
+    "[[IMAGE NEEDED]] featured: couple reviewing guest replies on laptop or phone, screen not legible, model release",
+    "[[IMAGE NEEDED]] qr-invitation: owned photo, or AI illustrative still life only with Nic approval",
+    "[[IMAGE NEEDED]] studio-rsvp-screen: team-supplied Wonderland Studio screenshot with sample names",
+    "[[IMAGE NEEDED]] welcome-dinner: licensed destination welcome dinner photo with proven location and consent",
+    "[[VERIFY licence]] old page images (online-rsvps featured, studio-invite-card-letter) before any reuse"
+  ],
+  "tools_used": ["mcp__Lead_MCP__firecrawl_scrape", "Bash (curl, blocked by proxy)"],
+  "next_agent": ["luxury-writer"]
+}
