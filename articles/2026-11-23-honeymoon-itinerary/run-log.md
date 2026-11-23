@@ -47,3 +47,4 @@
   - Merged request: 04-reviews/v1/merged.md.
 - **Correction (orchestrator):** the brief shows WW-114 to WW-116 live under /honeymoon-ideas/ (/honeymoon-ideas/honeymoon-planner is the 16 Nov article, published). My earlier link-map rows used the wrong paths and are now corrected. /travel-guides/how-to-brief-a-travel-advisor is LIVE per Zoho WC3-T217; link-map updated.
 - **Conflict resolved:** trip lengths are framed as "we suggest" (accuracy), not as fact.
+- **Stage 4 fast (writer v2):** DONE. 03-draft-v2.md: 2,132 reader words, 0 dashes, 0 placeholders, Smartraveller and Passports inline. YAML valid: 31 claims, 22 body links. All 22 items applied: concierge wording fixed; new travel-days H2; Italy added; WW-113 to WW-116 linked under /honeymoon-ideas/.
