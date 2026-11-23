@@ -33,3 +33,12 @@
   - A link back from the sibling page is logged as RETRO-LINK.
 
 ## Stages
+- **Stage 0 fast (strategist):** DONE.
+  - **URL:** 404, so a new post. Zoho task WC3-T983 (To-Do, TK-068, due 24 Nov).
+  - **Volumes (AU / US per month):** bridal shower guest list 10 / 140; who to invite to bridal shower 30 / 1,600; bridal shower etiquette 20 / 720.
+  - **SERP:** weak (forums, Facebook, Pinterest, a 2012 column, an AU directory). Nobody covers the destination wedding, guests who cannot travel, virtual guests, a printable checklist or kitchen tea terms.
+  - **Cannibalisation:** partial only with the men, bridal shower planning, destination bridal shower and who-hosts pages (short sections with links).
+  - **Cluster:** head /wedding-guest-list-template. Primary CTA studio_free plus a soft Discovery Call.
+  - **Link map:** new "Bridal shower and guest list" section added.
+- **Decision for the user (SIBLING-SOFTEN):** the men sibling's FAQ calls "shower guests must be wedding guests" "the one firm rule"; this piece calls it a convention. Soften the sibling after publish?
+- **LINK-CHECK:** /wedding-tools/online-wedding-shower-invitations (Zoho says published; not in the site map).

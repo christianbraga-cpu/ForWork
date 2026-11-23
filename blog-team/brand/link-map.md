@@ -389,6 +389,38 @@ No dedicated Decor and Florals hub exists. The /blog/decor category page is the 
 | `/destination-weddings/wedding-reception-in-dubai` | Wedding Reception Venues in Dubai by Style and Capacity | wedding reception dubai |
 | `/real-weddings/wedding-in-bali-cost` | Wedding in Bali Cost for 80 Guests: A Real Breakdown | wedding in bali cost (mentions styling and lighting share; do not repeat its figures) |
 
+## Bridal shower and guest list (Firecrawl map, 23 Nov 2026)
+
+| URL | Title | Keyword it appears to own |
+|---|---|---|
+| `/should-men-be-invited-to-the-bridal-shower` | Are Men Invited to Bridal Showers? Etiquette Guide | are men invited to bridal showers, co-ed bridal shower (ranks top 5 per Zoho WC3-T983 brief; non-exact anchors only; its FAQ calls 'shower guests are wedding guests' 'the one firm rule') |
+| `/celebration-ideas/bridal-shower-planning` | Bridal Shower Planning Guide From Invites to Games | bridal shower planning (Bridal Showers cluster, WW-508, live 29 Oct 2026) |
+| `/celebration-ideas/who-hosts-bridal-shower` | Who Hosts a Bridal Shower, Who Pays and What It Costs | who hosts bridal shower (WW-510) |
+| `/celebration-ideas/destination-bridal-shower` | How to Host a Destination Bridal Shower | destination bridal shower (WW-507) |
+| `/celebration-ideas/bridal-shower-gifts` | Bridal Shower Gifts, 8 Ideas and How Much to Spend | bridal shower gifts (WW-511) |
+| `/celebration-ideas/bridal-shower-games` | 12 Bridal Shower Games Your Guests Will Actually Play | bridal shower games (WW-509) |
+| `/10-of-the-best-bridal-shower-games` | 20 Bridal Shower Games Your Guests Will Actually Play | duplicate of the games page (Zoho audit: refresh one, redirect the other); do not link |
+| `/everything-to-include-in-your-bridal-shower-invitations` | Everything To Include In Your Bridal Shower Invitations | bridal shower invitations |
+| `/wedding-tools/online-wedding-shower-invitations` | Online Bridal Shower Invitations and Where to Send Them | online wedding shower invitations (Zoho WC3-T978 Live/Published 18 Nov 2026; not yet seen by Firecrawl map, confirm 200) |
+| `/bridal-shower-themes` | KITCHEN TEA THEMES (old) | kitchen tea themes (old page; slug and title mismatch; do not link until refreshed) |
+| `/alternatives-to-the-traditional-kitchen-tea` | Alternatives to the Traditional Kitchen Tea (old) | kitchen tea alternatives (old; link only if refreshed) |
+| `/hotels-in-sydney-where-you-can-host-your-bridal-shower-high-tea` | Amazing Hotels in Sydney To Host Your Bridal Shower High Tea | bridal shower high tea sydney (older; check venues are current before linking) |
+| `/wedding-guest-list-template` | Need a Free Wedding Guest List Template for Sheets or Excel? | wedding guest list template (cluster head) |
+| `/expert-advice/wedding-guest-list` | Wedding Guest List Etiquette: Who Do You Have to Invite? | wedding guest list etiquette |
+| `/expert-advice/how-to-make-a-wedding-guest-list` | How to Make a Wedding Guest List (and Who to Cut First) | how to make a wedding guest list |
+| `/expert-advice/micro-wedding-guest-list` | Micro Wedding Guest List Rules and Who to Invite First | micro wedding guest list |
+| `/expert-advice/plus-one-etiquette` | Wedding Plus-One Etiquette: Rules for Your Guest List | plus one etiquette (overlaps older /the-wedded-wonderland-guide-to-deciding-which-guests-need-a-plus-one; prefer this one) |
+| `/destination-weddings/destination-wedding-guest-attendance` | Destination Wedding Guest Attendance: What to Expect | destination wedding guest attendance |
+| `/wedding-tools/what-percentage-of-wedding-guests-rsvp-no` | What Percentage of Wedding Guests RSVP No? | wedding rsvp no percentage |
+| `/expert-advice/wedding-rsvp-wording` | Wedding RSVP Wording Examples for Cards and Websites | wedding rsvp wording |
+| `/expert-advice/bachelorette-party-etiquette` | Bachelorette Party Etiquette: Budgets, Boundaries and Guests | bachelorette party etiquette (hens) |
+| `/expert-advice/what-a-hen-party-should-involve` | Hen Party Ideas: What Should the Celebration Involve? | hen party ideas |
+| `/expert-advice/how-to-plan-a-bachelorette-party` | How to Plan a Bachelorette Party: Checklist and Timeline | how to plan a bachelorette party |
+| `/7-practical-tips-to-keep-your-wedding-guest-list-under-control` | 7 Practical Tips to Keep Your Wedding Guest List Under Control (older) | overlaps the guest list cluster; do not link, consolidation candidate |
+| `/the-guest-list-issue` | THE GUEST LIST ISSUE (old) | old; do not link |
+| `/expert-advice/bridal-shower-guest-list` | Bridal Shower Guest List Etiquette and Who to Invite (WC3-T983) | bridal shower guest list, who to invite to bridal shower | DRAFT (23 Nov 2026; URL was 404, new post) |
+| `/expert-advice/bridal-shower-guest-list` | Bridal Shower Guest List Etiquette and Who to Invite | bridal shower guest list | DRAFT (23 Nov 2026; URL was 404, new post; Zoho WC3-T983, TK-068) |
+
 ## Do not link from blogs
 
 | URL | Reason |
