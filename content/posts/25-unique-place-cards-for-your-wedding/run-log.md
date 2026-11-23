@@ -10,3 +10,5 @@
 - 05:45 07b panel revise (enquiry 1.8 v 3.8; ideas post, deferred business details); 15 of 15 applied -> 08-final.md.
 - 05:47 10 distribution complete: 3 pins (on hold until slots licensed), 8-slide carousel, newsletter; validated.
 - 05:46 Final check pass_with_edits 4.21; 2 of 2 applied. 09 CRO done.
+- 05:48 11 cms-publisher package only (no browser; field map not mapped): 11-body, 11-publish-package (validated), booking-checklist, 12-cms-report; primary Expert Advice with URL-move warning; 301 from 17 post at publish.
+- 05:49 11 package done; final docx and run report written.
