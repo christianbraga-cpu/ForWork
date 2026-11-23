@@ -9,3 +9,5 @@
 - 02:47 07b panel revise (enquiry 1.7 v 3.8; deferred business details); 13 of 13 applied -> 08-final.md.
 - 02:49 Final check pass_with_edits 4.14; 2 of 2 applied.
 - 02:49 09 CRO and 10 distribution done.
+- 02:52 11 cms-publisher package only (no browser): 11-body.md, 11-publish-package.json (validates), 12-cms-report.md, booking-checklist.md; URL kept /wedding-rsvp-website, primary Expert Advice; author to confirm; 4 image slots needed
+- 02:52 11 package done; final docx and run report written.
