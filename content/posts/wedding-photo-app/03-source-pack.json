@@ -1,0 +1,343 @@
+{
+  "agent": "planner-sme",
+  "task_id": "wedding-photo-app-pa_a",
+  "stage": "03",
+  "status": "complete",
+  "round": 1,
+  "inputs_used": [
+    "content/posts/wedding-photo-app/00-input.json",
+    "content/posts/average-cost-wedding-photographer/03-source-pack.json",
+    "https://www.esafety.gov.au/young-people/consent-sharing-photos-videos",
+    "https://www.oaic.gov.au/privacy/your-privacy-rights/social-media-and-online-privacy/photos-and-videos",
+    "firecrawl_search (scrape_results) on esafety.gov.au and oaic.gov.au, one read round, 23 November 2026"
+  ],
+  "self_qa": {
+    "checks": [
+      {
+        "check": "Every fact has a source and date",
+        "pass": true
+      },
+      {
+        "check": "No price without a source; all prices in needs_signoff",
+        "pass": true,
+        "note": "No prices. OAIC's turnover threshold is a legal threshold quoted verbatim (fact_14), not a price."
+      },
+      {
+        "check": "Every must-include covered or [[VERIFY]]",
+        "pass": true,
+        "note": "Children's images is [[VERIFY]] only."
+      },
+      {
+        "check": "No invented quotes, statistics or real weddings",
+        "pass": true
+      }
+    ],
+    "confidence": 0.8
+  },
+  "open_questions": [
+    {
+      "to": "orchestrator",
+      "question": "Read an eSafety parents/carers page on sharing photos of children before the writer covers children's images?",
+      "blocking": false
+    },
+    {
+      "to": "luxury-writer",
+      "question": "Writer note: children's images are now sourced (facts 21 to 23, eSafety parents page, read by the orchestrator 23 November 2026). Rephrase quotes that contain dashes. Do not state who owns a guest's phone photos beyond the default author rule (fact_15), and do not state whether any app provider is covered by the Privacy Act. Leave out the OAIC turnover threshold figure.",
+      "blocking": false
+    }
+  ],
+  "assumptions": [
+    "Privacy and copyright points are general information only, not legal advice; phrase 'as at November 2026'; the Wedded Advisor confirms current requirements.",
+    "No app names, features, storage limits, prices or statistics recorded, per user instruction.",
+    "Copyright facts fact_15 to fact_19 are reused verbatim with source and checked date (2026-11-19) from the average-cost-wedding-photographer pack (AustLII, source_type other).",
+    "Only 00-input.json existed as a brief for this post (no 01-brief.json or 02-seo.json); must-includes taken from the orchestrator's task.",
+    "Quoted government text contains en/em dashes as published; body copy must rephrase without em dashes."
+  ],
+  "verify_items": [
+    "[[VERIFY: eSafety guidance specifically on sharing images of children (parents/carers pages). Not read in this round; the only eSafety page read is written for young people and says nothing child-image-specific for adults posting.]]",
+    "[[VERIFY: who owns copyright in a guest's own phone photos and whether a couple may reuse them. The Act text quoted (s35(2)) gives the default author rule only; any statement beyond 'the person who takes a photo is generally its author' needs a government copyright source (e.g. IP Australia or Attorney-General's Department) or legal review.]]",
+    "[[VERIFY: whether a photo-sharing app provider is an organisation covered by the Privacy Act. OAIC says this depends on turnover and other factors; do not state any provider is or is not covered.]]"
+  ],
+  "tools_used": [
+    "mcp__Lead_MCP__firecrawl_search"
+  ],
+  "next_agent": [
+    "luxury-writer"
+  ],
+  "payload": {
+    "facts": [
+      {
+        "fact_id": "fact_01",
+        "claim": "eSafety Commissioner, 'Consent for sharing photos and videos' (read 23 November 2026, a page in its Young people section): 'You should always ask for consent before sharing a photo or video.'",
+        "source": "https://www.esafety.gov.au/young-people/consent-sharing-photos-videos",
+        "source_type": "government",
+        "checked": "2026-11-23",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_02",
+        "claim": "eSafety (same page): 'If someone asks you to remove a photo or video, you should do it, no questions asked.'",
+        "source": "https://www.esafety.gov.au/young-people/consent-sharing-photos-videos",
+        "source_type": "government",
+        "checked": "2026-11-23",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_03",
+        "claim": "eSafety (same page): \"'Consent' is when someone gives their permission. To be genuine, consent has to be 'informed' and 'freely given' – that means the person is clear about it, they fully understand what they're agreeing to, and they have not been pressured into it.\" (The page's own dash is quoted as published; the writer must not reproduce it as an em dash in body copy.)",
+        "source": "https://www.esafety.gov.au/young-people/consent-sharing-photos-videos",
+        "source_type": "government",
+        "checked": "2026-11-23",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_04",
+        "claim": "eSafety (same page): 'If you're planning to share any images or videos online, it's best to make sure the person or people in the photos or videos are okay with it too.' It lists photos or videos taken with 'a phone or tablet', smart glasses, and 'any other device that can take photos or record video.'",
+        "source": "https://www.esafety.gov.au/young-people/consent-sharing-photos-videos",
+        "source_type": "government",
+        "checked": "2026-11-23",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_05",
+        "claim": "eSafety (same page): 'Also remember that consent can be reversed. So even if someone said yes to an image or video being posted, they can change their mind. If that happens you need to delete the photo or video from where it was posted, or edit them out of the shot.'",
+        "source": "https://www.esafety.gov.au/young-people/consent-sharing-photos-videos",
+        "source_type": "government",
+        "checked": "2026-11-23",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_06",
+        "claim": "eSafety (same page, Tips): 'Once you make a post or share something online, you can lose control of the content and how other people share or use it.'",
+        "source": "https://www.esafety.gov.au/young-people/consent-sharing-photos-videos",
+        "source_type": "government",
+        "checked": "2026-11-23",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_07",
+        "claim": "eSafety (same page, Tips): 'Ask before sharing photos or videos of people' and 'if they say they're uncomfortable with a photo or video being shared, then respect what they've said. Keep the photo or video to yourself or edit the person out.'",
+        "source": "https://www.esafety.gov.au/young-people/consent-sharing-photos-videos",
+        "source_type": "government",
+        "checked": "2026-11-23",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_08",
+        "claim": "eSafety (same page, Tips): 'Always follow the rules set by your school, sports team or other groups you're involved with when using social media.' (Context is young people and groups; it does not mention weddings.)",
+        "source": "https://www.esafety.gov.au/young-people/consent-sharing-photos-videos",
+        "source_type": "government",
+        "checked": "2026-11-23",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_09",
+        "claim": "eSafety (same page): 'You can be in control of what you are tagged in and update settings to either review the photos you are tagged in, or make sure that no one is able to tag you.'",
+        "source": "https://www.esafety.gov.au/young-people/consent-sharing-photos-videos",
+        "source_type": "government",
+        "checked": "2026-11-23",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_10",
+        "claim": "OAIC, 'Photos and videos' (page modified 26 September 2024, read 23 November 2026): 'Photos and videos of you are treated as personal information under the Privacy Act 1988 if your identity is clear or could reasonably be worked out. Your privacy rights for photos and videos will depend on the situation.'",
+        "source": "https://www.oaic.gov.au/privacy/your-privacy-rights/social-media-and-online-privacy/photos-and-videos",
+        "source_type": "government",
+        "checked": "2026-11-23",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_11",
+        "claim": "OAIC (same page, 'Taken without permission'): 'If the photo or video was taken by someone acting in a personal capacity, the Privacy Act doesn't apply — because it doesn't cover individuals.' (Dash quoted as published; do not reuse in body copy.)",
+        "source": "https://www.oaic.gov.au/privacy/your-privacy-rights/social-media-and-online-privacy/photos-and-videos",
+        "source_type": "government",
+        "checked": "2026-11-23",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_12",
+        "claim": "OAIC (same page): 'In some situations, there may be state or territory laws that prevent someone photographing your private activities without your consent.'",
+        "source": "https://www.oaic.gov.au/privacy/your-privacy-rights/social-media-and-online-privacy/photos-and-videos",
+        "source_type": "government",
+        "checked": "2026-11-23",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_13",
+        "claim": "OAIC (same page, 'Posted online without permission'): 'First, ask the person who posted the photo or video online to take it down. If they refuse, or you don't know who it is, contact the site's administrator and ask them to remove the photo or video.'",
+        "source": "https://www.oaic.gov.au/privacy/your-privacy-rights/social-media-and-online-privacy/photos-and-videos",
+        "source_type": "government",
+        "checked": "2026-11-23",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_14",
+        "claim": "OAIC (same page): you 'can lodge a complaint with us if the photo or video posted online is hosted by an organisation or agency covered by the Privacy Act.' The page states 'The Privacy Act covers organisations with an annual turnover of more than $3 million that operate in Australia, and some other organisations.' (A legal threshold, not a price; the writer may omit the figure.)",
+        "source": "https://www.oaic.gov.au/privacy/your-privacy-rights/social-media-and-online-privacy/photos-and-videos",
+        "source_type": "government",
+        "checked": "2026-11-23",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_15",
+        "claim": "Copyright Act 1968 (Cth) s35(2), as reproduced on AustLII (read 19 November 2026): 'Subject to this section, the author of a literary, dramatic, musical or artistic work is the owner of any copyright subsisting in the work by virtue of this Part.' (Reused from average-cost-wedding-photographer pack, fact_100, same source and date.)",
+        "source": "https://classic.austlii.edu.au/au/legis/cth/consol_act/ca1968133/s35.html",
+        "source_type": "other",
+        "checked": "2026-11-19",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_16",
+        "claim": "Copyright Act 1968 (Cth) s35(5), as reproduced on AustLII (read 19 November 2026): where 'a person makes, for valuable consideration, an agreement with another person for the taking of a photograph for a private or domestic purpose' (or the painting or drawing of a portrait or making of an engraving) and 'the work is made in pursuance of the agreement', 'the first-mentioned person is the owner of any copyright subsisting in the work by virtue of this Part'. (Reused from average-cost-wedding-photographer pack, fact_102, same source and date.)",
+        "source": "https://classic.austlii.edu.au/au/legis/cth/consol_act/ca1968133/s35.html",
+        "source_type": "other",
+        "checked": "2026-11-19",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_17",
+        "claim": "Copyright Act 1968 (Cth) s35(5), continued (AustLII, read 19 November 2026): 'but, if at the time the agreement was made that person made known, expressly or by implication, to the author of the work the purpose for which the work was required, the author is entitled to restrain the doing, otherwise than for that purpose, of any act comprised in the copyright in the work.' (Reused from average-cost-wedding-photographer pack, fact_103, same source and date.)",
+        "source": "https://classic.austlii.edu.au/au/legis/cth/consol_act/ca1968133/s35.html",
+        "source_type": "other",
+        "checked": "2026-11-19",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_18",
+        "claim": "Copyright Act 1968 (Cth) s35(7), as reproduced on AustLII (read 19 November 2026): '\"private or domestic purpose\" includes a portrait of family members, a wedding party or children.' (Reused from average-cost-wedding-photographer pack, fact_104, same source and date.)",
+        "source": "https://classic.austlii.edu.au/au/legis/cth/consol_act/ca1968133/s35.html",
+        "source_type": "other",
+        "checked": "2026-11-19",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_19",
+        "claim": "Copyright Act 1968 (Cth) s35(3), as reproduced on AustLII (read 19 November 2026): 'The operation of any of the next three succeeding subsections in relation to copyright in a particular work may be excluded or modified by agreement.' (This covers s35(4) to (6), including the commissioned-photograph rule in s35(5).) (Reused from average-cost-wedding-photographer pack, fact_101, same source and date.)",
+        "source": "https://classic.austlii.edu.au/au/legis/cth/consol_act/ca1968133/s35.html",
+        "source_type": "other",
+        "checked": "2026-11-19",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_20",
+        "claim": "Scope note, not a source claim: s35(5) as quoted (fact_16) applies where a person 'makes, for valuable consideration, an agreement with another person for the taking of a photograph'. A guest taking photos on their own phone is not described in that text; the default author rule in s35(2) (fact_15) is the only rule quoted here. No source read in this round states how s35 applies to guest phone photos.",
+        "source": "https://classic.austlii.edu.au/au/legis/cth/consol_act/ca1968133/s35.html",
+        "source_type": "other",
+        "checked": "2026-11-19",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_21",
+        "claim": "eSafety Commissioner, 'Privacy and your child' (parents), read 23 November 2026: \"Always check with other parents before posting, sharing or tagging images or videos that include their children.\"",
+        "source": "https://www.esafety.gov.au/parents/issues-and-advice/privacy-child",
+        "source_type": "government",
+        "checked": "2026-11-23",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_22",
+        "claim": "eSafety Commissioner, 'Privacy and your child' (parents), read 23 November 2026: \"Only share with people you really know and trust. Rather than posting to all your friends on social media, you can be selective and use the privacy settings to limit who can see them.\"",
+        "source": "https://www.esafety.gov.au/parents/issues-and-advice/privacy-child",
+        "source_type": "government",
+        "checked": "2026-11-23",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_23",
+        "claim": "eSafety Commissioner, 'Privacy and your child' (parents), read 23 November 2026: if a photo or video of your child has been posted online without your permission, \"As a first step, you can ask the person who posted the photo or video to delete it.\"",
+        "source": "https://www.esafety.gov.au/parents/issues-and-advice/privacy-child",
+        "source_type": "government",
+        "checked": "2026-11-23",
+        "is_price": false
+      }
+    ],
+    "insider_details": [
+      {
+        "detail": "Put a short consent line on the welcome sign or the guest QR card: ask before you share anyone else's photo, and we will take down any picture a guest asks us to remove. This mirrors eSafety's ask-first and remove-on-request guidance.",
+        "fact_ids": [
+          "fact_01",
+          "fact_02",
+          "fact_07"
+        ]
+      },
+      {
+        "detail": "Treat consent as changeable on the night and after. eSafety says a yes can be reversed, so choose a gallery set-up where the couple (or their Wedded Concierge) can delete or hide a single image quickly.",
+        "fact_ids": [
+          "fact_05"
+        ]
+      },
+      {
+        "detail": "Keep the guest gallery private and invite-only rather than public. eSafety notes that once something is shared online you can lose control of how others share or use it.",
+        "fact_ids": [
+          "fact_06"
+        ]
+      },
+      {
+        "detail": "If a guest's photo ends up posted publicly without permission, the OAIC's order of steps is: ask the person to take it down, then contact the site's administrator. Brief your planner to handle that conversation so the couple doesn't have to.",
+        "fact_ids": [
+          "fact_13"
+        ]
+      },
+      {
+        "detail": "Guest phone photos and the photographer you hire are different situations. The commissioned private or domestic photo rule in s35(5) turns on an agreement made for valuable consideration, which is why the photographer contract, not the guest gallery, is where image rights are settled. General information, not legal advice.",
+        "fact_ids": [
+          "fact_15",
+          "fact_16",
+          "fact_17",
+          "fact_18",
+          "fact_19",
+          "fact_20"
+        ]
+      }
+    ],
+    "quotes": [],
+    "real_weddings": [],
+    "verify_items": [
+      "[[VERIFY: who owns copyright in a guest's own phone photos and whether a couple may reuse them. The Act text quoted (s35(2)) gives the default author rule only; any statement beyond 'the person who takes a photo is generally its author' needs a government copyright source (e.g. IP Australia or Attorney-General's Department) or legal review.]]",
+      "[[VERIFY: whether a photo-sharing app provider is an organisation covered by the Privacy Act. OAIC says this depends on turnover and other factors; do not state any provider is or is not covered.]]"
+    ],
+    "needs_signoff": [],
+    "must_include_coverage": [
+      {
+        "item": "Consent before sharing guest photos (eSafety)",
+        "covered_by": [
+          "fact_01",
+          "fact_02",
+          "fact_03",
+          "fact_04",
+          "fact_05",
+          "fact_07"
+        ]
+      },
+      {
+        "item": "Images of children",
+        "covered_by": [
+          "[[VERIFY: eSafety guidance specifically on sharing images of children (parents/carers pages). Not read in this round; the only eSafety page read is written for young people and says nothing child-image-specific for adults posting.]]"
+        ]
+      },
+      {
+        "item": "Privacy Act and individuals acting in a personal capacity (OAIC)",
+        "covered_by": [
+          "fact_10",
+          "fact_11",
+          "fact_12",
+          "fact_13",
+          "fact_14",
+          "[[VERIFY: whether a photo-sharing app provider is an organisation covered by the Privacy Act. OAIC says this depends on turnover and other factors; do not state any provider is or is not covered.]]"
+        ]
+      },
+      {
+        "item": "Who owns the photos (Copyright Act s35)",
+        "covered_by": [
+          "fact_15",
+          "fact_16",
+          "fact_17",
+          "fact_18",
+          "fact_19",
+          "fact_20",
+          "[[VERIFY: who owns copyright in a guest's own phone photos and whether a couple may reuse them. The Act text quoted (s35(2)) gives the default author rule only; any statement beyond 'the person who takes a photo is generally its author' needs a government copyright source (e.g. IP Australia or Attorney-General's Department) or legal review.]]"
+        ]
+      }
+    ]
+  }
+}
