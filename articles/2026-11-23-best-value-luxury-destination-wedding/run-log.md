@@ -29,3 +29,15 @@
   - **New site conflict:** our two Lake Como pages give different 60-guest figures (Nic to pick).
   - **Brief:** 8 H2s, 7 destination cards.
 - **Stage 1:** the researcher is held on an MCP permission prompt.
+- **Stage 1 fast (research):** DONE. 37 facts: 17 reused, 20 new; all 22 prices flagged for Nic.
+  - **Current figures:** Italy, small Italy weddings, Lake Como, Amalfi, Santorini, Maldives, Fiji, Bali, Dubai (per person).
+  - **Unchanged:** no reused figure has changed since 19 Nov.
+  - **New conflicts (pages published 17 Nov):**
+    - Lake Como: EUR 45,000 to 90,000 vs EUR 80,000 to 150,000 for 60 guests.
+    - Bali: a third range, US$20,000 to 60,000 for 80 guests.
+  - **Gaps:** no published totals for Thailand, Mexico, France, Portugal, Crete or Puglia.
+- **Decision (default):**
+  - Lake Como and Bali are quoted with no figure (Lake Como ranked on other criteria; Bali outside the ranking).
+  - Destinations without totals are not ranked.
+  - The ranking is presented as our editorial judgement with stated criteria. Nic approves the method (RANKING-METHOD).
+- **Stage 2:** writer launched.
