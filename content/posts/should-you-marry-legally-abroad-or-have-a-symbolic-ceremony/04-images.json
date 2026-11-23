@@ -1,0 +1,90 @@
+{
+  "agent": "visual-curator",
+  "task_id": "should-you-marry-legally-abroad-or-have-a-symbolic-ceremony",
+  "stage": "04",
+  "status": "needs_input",
+  "round": 1,
+  "inputs_used": [
+    "CLAUDE.md",
+    "content/posts/should-you-marry-legally-abroad-or-have-a-symbolic-ceremony/00-input.json",
+    "content-system/images/sources-policy.md",
+    "content-system/rubrics/image-checklist.md",
+    "content-system/images/library-index.csv (header only, no rows)",
+    "content-system/schemas/04-images.schema.json",
+    "content-system/schemas/envelope.schema.json"
+  ],
+  "payload": {
+    "slots": [
+      {
+        "slot_id": "featured",
+        "placement": "featured",
+        "purpose": "Hero: show what a symbolic ceremony looks like at a destination, setting the luxury, unhurried tone for 'What Is a Symbolic Ceremony?'.",
+        "shot_brief": "Licensed documentary photo of a real symbolic ceremony at a destination: couple facing each other under a simple floral arch on a clifftop terrace above the sea (e.g. Amalfi Coast, Santorini or Bali) or in a formal garden (e.g. Tuscany), celebrant or officiant partly visible, late-afternoon golden light, guests soft in the background or absent. Wide 3:2 with headroom for a title crop. People: couple yes, with signed couple consent; location must be provable by register, EXIF or photographer gallery. Never AI.",
+        "status": "needed",
+        "file": "content/posts/should-you-marry-legally-abroad-or-have-a-symbolic-ceremony/images/symbolic-ceremony-destination-clifftop-hero.webp",
+        "source": {"type": "library", "origin": "[[IMAGE NEEDED]] library-index.csv has no rows; no Drive search tool available this session", "credit": "[[VERIFY licence]]"},
+        "lens_check": "Not run: no candidate image."
+      },
+      {
+        "slot_id": "legal-signing-australia",
+        "placement": "after_h2:2",
+        "purpose": "Illustrate the 'marry legally at home, celebrate abroad' option: a small, quiet legal signing in Australia before or after the destination celebration.",
+        "shot_brief": "Licensed photo of a real, low-key legal signing in Australia: couple signing at a table with an authorised celebrant or at a registry office (e.g. a Births, Deaths and Marriages registry room or a small garden), two witnesses at most, soft natural daylight, relaxed smart-casual styling. Hands, pen and paper in focus; documents must NOT be legible (no names, dates or certificate numbers readable, blur in camera or crop). Faces optional; if identifiable, signed consent. No government logos or crests. Location (city, state) recorded. Never AI.",
+        "status": "needed",
+        "file": "content/posts/should-you-marry-legally-abroad-or-have-a-symbolic-ceremony/images/symbolic-ceremony-australia-legal-signing-celebrant.webp",
+        "source": {"type": "library", "origin": "[[IMAGE NEEDED]] library-index.csv has no rows", "credit": "[[VERIFY licence]]"},
+        "lens_check": "Not run: no candidate image."
+      },
+      {
+        "slot_id": "ritual-moment",
+        "placement": "after_h2:3",
+        "purpose": "Show the freedom a symbolic ceremony gives: a personal ritual such as a sand ceremony, handfasting or unity candle.",
+        "shot_brief": "Licensed close-up from a real destination wedding: couple's hands bound with a ribbon or cord in a handfasting, or pouring two colours of sand into one glass vessel, or lighting a unity candle. Outdoor garden or beach light, shallow depth of field, neutral and ivory palette with greenery. Hands-only crop acceptable (no consent issue if no one is identifiable); if faces shown, signed consent. Location recorded. Never AI for a real wedding; an AI flat-lay is not acceptable here because the slot depicts a real ritual.",
+        "status": "needed",
+        "file": "content/posts/should-you-marry-legally-abroad-or-have-a-symbolic-ceremony/images/symbolic-ceremony-handfasting-ritual-hands.webp",
+        "source": {"type": "library", "origin": "[[IMAGE NEEDED]] library-index.csv has no rows", "credit": "[[VERIFY licence]]"},
+        "lens_check": "Not run: no candidate image."
+      },
+      {
+        "slot_id": "guests-destination",
+        "placement": "after_h2:5",
+        "purpose": "Show guests sharing a destination ceremony, supporting the section on guest experience and who attends which ceremony.",
+        "shot_brief": "Licensed photo of guests seated or standing at a real destination ceremony, shot from behind or the side towards the couple and view (sea, vineyard or garden), mid-afternoon or golden hour, elegant summer dress, 20 to 60 guests. Prefer backs-of-heads framing so few guests are identifiable; any identifiable guest needs consent recorded in the register; no identifiable children without consent. Venue and town provable. Never AI.",
+        "status": "needed",
+        "file": "content/posts/should-you-marry-legally-abroad-or-have-a-symbolic-ceremony/images/symbolic-ceremony-destination-guests-view.webp",
+        "source": {"type": "library", "origin": "[[IMAGE NEEDED]] library-index.csv has no rows", "credit": "[[VERIFY licence]]"},
+        "lens_check": "Not run: no candidate image."
+      }
+    ],
+    "reference_only": [],
+    "permission_requests": []
+  },
+  "self_qa": {
+    "checks": [
+      {"check": "Zero reference-only or competitor images in slots", "pass": true, "note": "No images placed; reference_only empty."},
+      {"check": "Every approved image has verified location, licence, alt, caption, fit_reason", "pass": true, "note": "No approved images; all four slots are 'needed'."},
+      {"check": "No AI image depicting a real place or wedding", "pass": true, "note": "Higgsfield not used; every slot depicts a real place or wedding so AI is excluded."},
+      {"check": "Featured image exists (approved or needed with brief)", "pass": true, "note": "Featured slot needed with a full shot brief."},
+      {"check": "Consent requirement stated for identifiable people", "pass": true},
+      {"check": "Live page images used only as reference unless licensed", "pass": true, "note": "Live page images not reused; none are in the register with a licence."}
+    ],
+    "confidence": 0.7
+  },
+  "open_questions": [
+    {"to": "orchestrator", "question": "Image library register has no rows and no Drive search or Canva asset listing tool was available. Can Nic or the team supply licensed images (own weddings or purchased stock: Stocksy, Offset, Getty) for the four briefs, add them to Drive and library-index.csv with licence and consent?", "blocking": false},
+    {"to": "orchestrator", "question": "Do the images on the live page (refresh_of URL) come from a supply agreement or purchase that covers blog use? If yes, add them to the register so they can be re-assessed for these slots.", "blocking": false}
+  ],
+  "assumptions": [
+    "01-brief.json, 02-seo.json and 02-research/report.md do not exist yet (fast mode), so placements after_h2:2, 3 and 5 are provisional; the writer or editor should move each slot to the H2 that matches its purpose.",
+    "Fast mode (8 min): own-site scrape, venue press kits and Google Lens checks were not run because no specific venue is named and no candidate image exists."
+  ],
+  "verify_items": [
+    "[[IMAGE NEEDED]] featured: symbolic ceremony at a destination (clifftop or garden), licensed, couple consent",
+    "[[IMAGE NEEDED]] legal-signing-australia: quiet signing with celebrant or registry in Australia, documents not legible",
+    "[[IMAGE NEEDED]] ritual-moment: handfasting, sand or candle ritual, licensed",
+    "[[IMAGE NEEDED]] guests-destination: guests at a destination ceremony, consent for identifiable guests",
+    "[[VERIFY licence]] live page images: confirm whether any are licensed for blog use before reuse"
+  ],
+  "tools_used": ["Bash", "ToolSearch"],
+  "next_agent": ["luxury-writer"]
+}
