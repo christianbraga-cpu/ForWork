@@ -1,0 +1,409 @@
+{
+ "agent": "panel-chair",
+ "task_id": "wedding-photo-app",
+ "stage": "07b",
+ "status": "complete",
+ "round": 1,
+ "inputs_used": [
+  "content/posts/wedding-photo-app/01-brief.json",
+  "content/posts/wedding-photo-app/05-draft.md (read by the panel)",
+  "content/posts/wedding-photo-app/05-draft-r2.md (edits anchored here)",
+  "content/posts/wedding-photo-app/03-source-pack.json",
+  "content/posts/wedding-photo-app/07-icp/planner_couple.json",
+  "content/posts/wedding-photo-app/07-icp/funding_parent.json",
+  "content/posts/wedding-photo-app/07-icp/uhnw.json",
+  "content/posts/wedding-photo-app/07-icp/sceptic.json",
+  "content/posts/wedding-photo-app/07-icp/search_visitor.json",
+  "content-system/personas/*.yaml (weights: planner_couple 0.40, funding_parent 0.20, uhnw 0.20, sceptic 0.10, search_visitor 0.10)",
+  "content-system/brand/brand-facts.md",
+  "content-system/schemas/07-panel.schema.json",
+  "CLAUDE.md"
+ ],
+ "payload": {
+  "personas_run": [
+   "planner_couple",
+   "funding_parent",
+   "uhnw",
+   "sceptic",
+   "search_visitor"
+  ],
+  "weighted_scores": {
+   "relevance_to_me": 2.9,
+   "trust": 3.6,
+   "clarity": 3.8,
+   "brand_feels_premium": 3.1,
+   "likelihood_to_enquire": 1.7
+  },
+  "weighted_enquiry_likelihood": 1.7,
+  "must_fix": [
+   {
+    "issue": "The privacy section reads as a legal pamphlet on a phone or iPad: five dense paragraphs, the OAIC paragraph mixes legal background with practical steps, and the commissioned-photo rule is one very long sentence. The practical rule is buried below the law.",
+    "flagged_by": [
+     "planner_couple",
+     "funding_parent",
+     "search_visitor",
+     "uhnw"
+    ],
+    "owner": "luxury-writer",
+    "fix": "Add a one-line plain summary under the general information line (restates fact_01, fact_02/07 and the private album point already in the section). Split the OAIC paragraph and the commissioned-photo sentence with punctuation and paragraph breaks only; wording and fact markers unchanged. Nothing added on Privacy Act coverage of app providers, reuse of guests' photos or parent-paid photographers.",
+    "edits": [
+     {
+      "id": "privacy_summary",
+      "old": "This section is general information as at November 2026, not legal advice.",
+      "new": "This section is general information as at November 2026, not legal advice. In short: ask before you share, keep the album private, and remove any photo a guest asks you to take down."
+     },
+     {
+      "id": "oaic_split",
+      "old": "may apply in some situations. <!-- fact_12 --> If a photo is posted without permission,",
+      "new": "may apply in some situations. <!-- fact_12 -->\n\nIf a photo is posted without permission,"
+     },
+     {
+      "id": "commissioned_split",
+      "old": "that person owns the copyright <!-- fact_16 --> <!-- fact_18 -->; the photographer can restrain",
+      "new": "that person owns the copyright. <!-- fact_16 --> <!-- fact_18 --> The photographer can restrain"
+     }
+    ]
+   },
+   {
+    "issue": "No apps are named and the page never says that is deliberate, so it can read as unfinished and send readers back to search.",
+    "flagged_by": [
+     "planner_couple",
+     "sceptic",
+     "search_visitor"
+    ],
+    "owner": "luxury-writer",
+    "fix": "Do not name apps (person's decision, brief avoid list). Say once, in the intro, that the guide deliberately recommends no specific apps. Rework takeaway 1 (not a fifth bullet) to name the five types so the searcher gets the answer up top.",
+    "edits": [
+     {
+      "id": "intro_neutral",
+      "old": "Here are the main types of tool, what to check,",
+      "new": "This guide deliberately recommends no specific apps. Instead, here are the main types of tool, what to check,"
+     },
+     {
+      "id": "takeaway_types",
+      "old": "alongside your professional photographer's gallery rather than instead of it.",
+      "new": "alongside your professional photographer's gallery rather than instead of it, and comes in five types: shared album apps, QR code upload pages, disposable camera style apps, live slideshow displays and your photographer's own gallery."
+     }
+    ]
+   },
+   {
+    "issue": "Cost is missing from the checklist, the column where couples get caught by upsells on full resolution downloads, video or storage.",
+    "flagged_by": [
+     "sceptic",
+     "search_visitor",
+     "planner_couple"
+    ],
+    "owner": "luxury-writer",
+    "fix": "Add cost and inclusions as a question only, with no figures, tiers or 'free'. Sceptic's 'what the free version leaves out' rewritten to avoid 'free'.",
+    "edits": [
+     {
+      "id": "takeaway_cost",
+      "old": "Check any option for browser uploads",
+      "new": "Check any option for its total cost and what is included, browser uploads"
+     },
+     {
+      "id": "cost_check",
+      "old": "### How long photos are kept",
+      "new": "### What it costs and what is included\n\nAsk for the total cost, exactly what it includes, and whether full resolution downloads, video or longer storage cost extra.\n\n### How long photos are kept"
+     }
+    ]
+   }
+  ],
+  "should_fix": [
+   {
+    "issue": "The secondary Wedded Concierge line sits in the middle of the setup steps, before the article has made its case, and reads a little eager.",
+    "flagged_by": [
+     "sceptic",
+     "uhnw"
+    ],
+    "owner": "cro-specialist",
+    "fix": "Keep the line and its secondary UTM (each UTM appears once); move it, wording unchanged, to the end of the setup steps after the download and back up step.",
+    "edits": [
+     {
+      "id": "secondary_cta_remove",
+      "old": "\n\nIf the planning load is growing faster than the guest list, our [Wedded Concierge](/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=wedding-photo-app&utm_content=secondary) service takes it on.",
+      "new": ""
+     },
+     {
+      "id": "secondary_cta_place",
+      "old": "minus anything a guest asked you to remove.",
+      "new": "minus anything a guest asked you to remove.\n\nIf the planning load is growing faster than the guest list, our [Wedded Concierge](/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=wedding-photo-app&utm_content=secondary) service takes it on."
+     }
+    ]
+   },
+   {
+    "issue": "The FAQ answer on video ('Ask before you commit') reads as a dodge.",
+    "flagged_by": [
+     "sceptic",
+     "search_visitor"
+    ],
+    "owner": "luxury-writer",
+    "fix": "Open with a direct answer that adds no claim about what tools support.",
+    "edits": [
+     {
+      "id": "faq_video",
+      "old": "Ask before you commit: check that video is supported,",
+      "new": "It depends on the tool, so check before you commit that video is supported,"
+     }
+    ]
+   },
+   {
+    "issue": "Mentioning Wonderland Studio in a photo app guide without saying whether it collects photos confused readers.",
+    "flagged_by": [
+     "planner_couple",
+     "sceptic"
+    ],
+    "owner": "luxury-writer",
+    "fix": "No copy change. Person's instruction: Wonderland Studio is described only as our planning app for seating charts and RSVPs, saying nothing on photos either way and no pricing. r2 wording already does this.",
+    "edits": []
+   }
+  ],
+  "consider": [
+   {
+    "issue": "'Please ask before sharing' assumes some public sharing is fine; there is no option for a fully private celebration.",
+    "flagged_by": [
+     "uhnw"
+    ],
+    "owner": "luxury-writer",
+    "fix": "Add a no-posting option to the welcome sign line.",
+    "edits": [
+     {
+      "id": "welcome_private",
+      "old": "and we will remove any picture on request.",
+      "new": "and we will remove any picture on request. For a fully private celebration, the line can simply ask guests not to post anything at all."
+     }
+    ]
+   },
+   {
+    "issue": "A link gets forwarded; the moderation check stops before asking about forwarding and downloading other guests' photos.",
+    "flagged_by": [
+     "uhnw"
+    ],
+    "owner": "luxury-writer",
+    "fix": "Add both as questions to ask the provider.",
+    "edits": [
+     {
+      "id": "moderation_forward",
+      "old": "Who can view the album: people with the link, guests you approve, or anyone?",
+      "new": "Who can view the album: people with the link, guests you approve, or anyone? Can the link be forwarded, and can you stop guests downloading other people's photos?"
+     }
+    ]
+   },
+   {
+    "issue": "Venue questions cover Wi-Fi but not how venue staff and suppliers are held to the photo policy.",
+    "flagged_by": [
+     "uhnw"
+    ],
+    "owner": "luxury-writer",
+    "fix": "Add as a question to ask the venue only; no claim about who briefs them.",
+    "edits": [
+     {
+      "id": "venue_staff",
+      "old": "Ask how mobile signal holds up across the grounds.",
+      "new": "Ask how mobile signal holds up across the grounds, and how venue staff and suppliers will be briefed on your photo policy."
+     }
+    ]
+   },
+   {
+    "issue": "Older guests get two lines and no warmth.",
+    "flagged_by": [
+     "funding_parent"
+    ],
+    "owner": "luxury-writer",
+    "fix": "Name grandparents; no new facts. 'so nobody is left out' not added (keeps the edit minimal).",
+    "edits": [
+     {
+      "id": "older_guests",
+      "old": "Older guests may find a new app a hurdle",
+      "new": "Older guests, grandparents included, may find a new app a hurdle"
+     }
+    ]
+   },
+   {
+    "issue": "'More than almost anything else' is an unsupported ranking in a careful checklist.",
+    "flagged_by": [
+     "sceptic"
+    ],
+    "owner": "luxury-writer",
+    "fix": "Replace with 'check this first'.",
+    "edits": [
+     {
+      "id": "clifftop",
+      "old": "On a clifftop or a boat, this matters more than almost anything else.",
+      "new": "On a clifftop or a boat, check this first."
+     }
+    ]
+   },
+   {
+    "issue": "The close repeats 'start to finish', the generic claim the primary persona is most sceptical of, already used in the destination section.",
+    "flagged_by": [
+     "planner_couple"
+    ],
+    "owner": "luxury-writer",
+    "fix": "Replace the repeat with brand-facts line 28 (inclusions confirmed in writing). Planner's 'for venue questions, guest communication and timing' rejected as Advisor tasks not confirmed in lines 19 to 30.",
+    "edits": [
+     {
+      "id": "close_advisor",
+      "old": "Your Wedded Advisor works in your time zone and stays your single point of contact, start to finish.",
+      "new": "Your Wedded Advisor works in your time zone, stays your single point of contact and confirms inclusions in writing before you commit."
+     }
+    ]
+   },
+   {
+    "issue": "The heading 'Guests and downloading an app' is vague and easy to skip.",
+    "flagged_by": [
+     "search_visitor"
+    ],
+    "owner": "luxury-writer",
+    "fix": "Use a statement heading; the suggested question heading is rejected (no questions outside the FAQ).",
+    "edits": [
+     {
+      "id": "heading_download",
+      "old": "## Guests and downloading an app",
+      "new": "## Guests who would rather not download an app"
+     }
+    ]
+   },
+   {
+    "issue": "The emotional opener comes before any facts.",
+    "flagged_by": [
+     "sceptic"
+    ],
+    "owner": "luxury-writer",
+    "fix": "No change. Praised by the primary persona and three others; see conflicts_resolved.",
+    "edits": []
+   },
+   {
+    "issue": "QR card and stationery tips read as do-it-yourself for a reader with staff.",
+    "flagged_by": [
+     "uhnw"
+    ],
+    "owner": "luxury-writer",
+    "fix": "No change. The brief's reader is a couple setting this up; the tip is practical for them.",
+    "edits": []
+   }
+  ],
+  "keep": [
+   "Intro scene: the aunt who cried at the aisle, the groomsmen at the bar (planner_couple, funding_parent, search_visitor)",
+   "'A wedding photo app gathers those pictures and videos in one private place' and the word 'private' up front (funding_parent, uhnw, search_visitor)",
+   "'Guest photos are a second layer, never a replacement' (planner_couple, funding_parent)",
+   "A stated trade-off for every type, and no 'best' anywhere (planner_couple, sceptic, search_visitor)",
+   "Live slideshow warning about reviewing uploads before they reach the screen (planner_couple, uhnw)",
+   "Browser upload advice for older and international guests (planner_couple, funding_parent, search_visitor)",
+   "'If not, what does a guest share to sign up?' (funding_parent)",
+   "Photographer's gallery: 'Ask whether it is included' (sceptic)",
+   "Downloading everything at the end, full resolution, with uploader names (sceptic, search_visitor)",
+   "How long photos are kept: download and back up before any deadline (funding_parent)",
+   "Dated general information caveat and official sources linked at each claim (sceptic, funding_parent, search_visitor)",
+   "Children paragraph from eSafety (funding_parent)",
+   "'Once something is shared online, you can lose control... private, invite-only album' (uhnw)",
+   "Welcome sign line, copy-pasteable (planner_couple, search_visitor, funding_parent)",
+   "'It turns on a paid agreement, which describes the photographer you hire, not a guest shooting on their own phone' and the 'In practice' line (sceptic, funding_parent)",
+   "Venue Wi-Fi questions, including the password on the cards (planner_couple, sceptic, funding_parent, uhnw)",
+   "Friends flying home to London or Singapore can add pictures after they land (planner_couple, uhnw)",
+   "Advisor 'works in your time zone' (funding_parent) and the destination section Advisor line",
+   "Short, direct FAQ answers; no pop-up or pushy CTA (search_visitor, planner_couple)"
+  ],
+  "conflicts_resolved": [
+   "Opener: sceptic finds the emotional intro slow; planner_couple (primary, 0.40), funding_parent and search_visitor praise it. Kept; the new tool-neutral line sits in the second paragraph so facts arrive early.",
+   "Secondary Concierge CTA: sceptic wants it deleted, uhnw finds it eager, planner_couple (primary) calls it soft and not pushy. Kept with its UTM, moved to the end of the setup steps so it no longer interrupts the instructions.",
+   "App names and prices: search_visitor and sceptic want named apps and rough costs; the brief and the person ban both. Resolved with a line that the guide deliberately recommends no specific apps and a cost and inclusions question with no figures.",
+   "Tool-neutral line placement: planner_couple suggested the checklist intro, search_visitor the intro. Placed once in the intro so both readers meet it before the types.",
+   "Takeaways: search_visitor proposed a fifth bullet; rejected (exactly 4). Takeaway 1 reworked to name the five types instead.",
+   "Close: planner_couple's 'for venue questions, guest communication and timing' rejected because brand-facts lines 19 to 30 do not confirm those Advisor tasks; brand-facts line 28 used instead. funding_parent's favourite 'works in your time zone' kept.",
+   "Privacy length: planner_couple, funding_parent, search_visitor and uhnw want it shorter; sceptic values the sourced detail. Resolved by a summary line and splits, with no facts removed.",
+   "Heading: search_visitor's question heading rejected (no questions outside FAQ); statement heading used."
+  ],
+  "deferred": [
+   "Wedded Concierge fee model, commissions and supplier mark-ups (sceptic, funding_parent): deferred in brand-facts.md",
+   "Named Advisor, phone line before booking (funding_parent): deferred",
+   "Real destination wedding to feature (planner_couple): deferred",
+   "Whether the Advisor sets up the album, QR cards, Wi-Fi check or briefs venue and security (planner_couple, uhnw): not in brand-facts lines 19 to 30",
+   "Experience at 200 to 400 guests, public figures, confidentiality agreements (uhnw): deferred",
+   "Referral or affiliate fees from apps or photographers (sceptic): deferred"
+  ],
+  "not_added": [
+   "Named apps, typical costs, tiers or upload limits (person's decision; prices and figures banned)",
+   "Who owns copyright when a parent pays the photographer (funding_parent): excluded by the person",
+   "Whether app providers are covered by the Privacy Act, or what happens to photos held by the provider (uhnw): excluded by the person",
+   "Whether Wonderland Studio collects photos, or its cost (planner_couple, sceptic): excluded by the person",
+   "Help for older guests on the night, provider liability for lost photos (funding_parent): no source",
+   "A fifth takeaway and a question heading outside the FAQ (search_visitor)",
+   "Deleting the secondary Concierge CTA (sceptic)"
+  ],
+  "edit_order": [
+   "intro_neutral",
+   "takeaway_types",
+   "takeaway_cost",
+   "older_guests",
+   "heading_download",
+   "moderation_forward",
+   "cost_check",
+   "clifftop",
+   "privacy_summary",
+   "oaic_split",
+   "commissioned_split",
+   "welcome_private",
+   "secondary_cta_remove",
+   "secondary_cta_place",
+   "venue_staff",
+   "faq_video",
+   "close_advisor"
+  ],
+  "gate": "revise"
+ },
+ "self_qa": {
+  "confidence": 0.8,
+  "checks": [
+   {
+    "check": "Weighted maths uses all five weights (sum 1.0).",
+    "pass": true
+   },
+   {
+    "check": "Every edit 'old' occurs exactly once in 05-draft-r2.md, and edits apply cleanly in edit_order.",
+    "pass": true
+   },
+   {
+    "check": "Advisor close uses brand-facts lines 26, 25 and 28 only; secondary CTA moved, not deleted; each UTM appears once.",
+    "pass": true
+   },
+   {
+    "check": "No app or company names, no new facts or figures, no prices, 'best', statistics, research talk, 'free', 'last dance', em or en dashes in new text.",
+    "pass": true
+   },
+   {
+    "check": "Title untouched; exactly 4 one-sentence takeaways; headings have no colon, dash, hyphen or question outside the FAQ.",
+    "pass": true
+   },
+   {
+    "check": "Word count after edits inside 1,600 to 2,200.",
+    "pass": true,
+    "note": "Net about +141 words by local count (2,155 to 2,296 incl. headings); about 2,080 on the caller's count of about 1,940."
+   },
+   {
+    "check": "Australian English.",
+    "pass": true
+   }
+  ]
+ },
+ "open_questions": [
+  {
+   "to": "Nic",
+   "question": "Fee model, commissions, a named Advisor and a real wedding drive most low enquiry scores. Can brand-facts.md confirm any of them? Until then they stay out of the copy.",
+   "blocking": false
+  }
+ ],
+ "assumptions": [
+  "Weighted enquiry 1.7 is below 3.8 and there are 3 must-fix items, so the gate is revise. The low score comes from deferred business questions and a low-stakes planning topic, so copy fixes alone will not reach 3.8; one revise round is allowed, after which the writer produces 08-final.md.",
+  "Readers read 05-draft.md; quoted lines were checked against 05-draft-r2.md and edits anchored to r2 text (r2 already changed the slideshow and unplugged ceremony lines).",
+  "Fast mode: 17 edits across 3 must-fix, 3 should-fix and 9 consider items; items with no edit are notes only."
+ ],
+ "verify_items": [],
+ "tools_used": [
+  "Bash",
+  "Read"
+ ],
+ "next_agent": [
+  "luxury-writer"
+ ]
+}

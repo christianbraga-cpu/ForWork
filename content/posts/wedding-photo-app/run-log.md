@@ -4,3 +4,4 @@
 - 00:39 02 SEO done: URL free; AU 140 / US 880 wedding photo app; 7 live /wedding-tools pages not in link map; 5-essential post redirects to best-wedding-planning-apps; Wonderland Studio pricing inconsistent across site pages (free vs 7-day trial): no pricing stated.
 - 00:42 05 first draft about 2,156 words; no app names; docx sent.
 - 00:45 06 editor pass_with_edits 4.29; 6 of 6 applied -> r2; sceptic envelope fixed.
+- 00:47 07b panel revise (enquiry 1.7 v 3.8; deferred business details); 17 of 17 applied -> 08-final.md.
