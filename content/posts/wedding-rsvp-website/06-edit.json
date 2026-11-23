@@ -1,0 +1,220 @@
+{
+  "agent": "editor",
+  "task_id": "wedding-rsvp-website",
+  "stage": "06",
+  "status": "complete",
+  "round": 1,
+  "inputs_used": [
+    "content/posts/wedding-rsvp-website/05-draft.md",
+    "content/posts/wedding-rsvp-website/01-brief.json",
+    "content/posts/wedding-rsvp-website/02-seo.json",
+    "content/posts/wedding-rsvp-website/03-source-pack.json",
+    "content/posts/wedding-rsvp-website/04-images.json",
+    "content-system/brand/brand-facts.md"
+  ],
+  "self_qa": {
+    "checks": [
+      {
+        "check": "scan_copy.py run",
+        "pass": true,
+        "note": "0 banned, 0 dashes, 0 overlaps; 'luxury' x1 in an image slot comment only"
+      },
+      {
+        "check": "Every factual sentence logged",
+        "pass": true,
+        "note": "12 entries (fact_01 to fact_11 less unused fact_07, plus 2 brand-facts lines)"
+      },
+      {
+        "check": "Each edit old occurs exactly once; all edits apply cleanly",
+        "pass": true,
+        "note": "8 edits, verified by script"
+      },
+      {
+        "check": "Keyword in title, first 100 words and one H2",
+        "pass": true
+      },
+      {
+        "check": "Exactly 4 one-sentence Key takeaways",
+        "pass": true
+      },
+      {
+        "check": "UTM links once each, concierge anchors 'Wedded Concierge'",
+        "pass": true
+      },
+      {
+        "check": "Word count 1,800 to 2,400 after edits",
+        "pass": true,
+        "note": "2,294 visible words"
+      },
+      {
+        "check": "Decision consistent with scores and blocking issues",
+        "pass": true,
+        "note": "avg 4.0, min 3, no blockers"
+      }
+    ],
+    "confidence": 0.85
+  },
+  "open_questions": [],
+  "assumptions": [
+    "Magazine magnet link keeps its own anchor; 'Wedded Concierge' anchor rule applied to the three concierge UTM links.",
+    "H2 'The five kinds...' kept over outline 'main types' wording: refresh, keyword present."
+  ],
+  "verify_items": [],
+  "tools_used": [
+    "scan_copy.py",
+    "validate.py"
+  ],
+  "next_agent": [
+    "icp-reader"
+  ],
+  "payload": {
+    "draft_file": "content/posts/wedding-rsvp-website/05-draft.md",
+    "rubric": {
+      "voice": 4,
+      "expertise": 4,
+      "accuracy": 3,
+      "seo_fit": 4,
+      "commercial_link": 4,
+      "structure": 5,
+      "brief_fit": 4
+    },
+    "blocking_issues": [],
+    "decision": "pass_with_edits",
+    "edits": [
+      {
+        "location": "Features H2 intro",
+        "issue": "'rarely one event' is a frequency claim (statistics rule).",
+        "fix": "A destination wedding can span a welcome dinner,",
+        "old": "A destination wedding is rarely one event. It is a welcome dinner,",
+        "new": "A destination wedding can span a welcome dinner,"
+      },
+      {
+        "location": "Paid tiers H2 intro",
+        "issue": "'Plans change often' is an unsupported frequency claim.",
+        "fix": "Plans change, so run",
+        "old": "Plans change often, so run",
+        "new": "Plans change, so run"
+      },
+      {
+        "location": "H3 Travel and accommodation questions",
+        "issue": "Room blocks are out of scope for this post (brief: nothing on room blocks); 'room numbers' implies a block.",
+        "fix": "Ask where each guest is staying and their arrival and departure dates. Those answers shape your numbers for the welcome dinner and the days around it.",
+        "old": "Ask where each guest is staying, whether they would like a room in your block, and their arrival and departure dates. Those answers shape room numbers and the welcome dinner.",
+        "new": "Ask where each guest is staying and their arrival and departure dates. Those answers shape your numbers for the welcome dinner and the days around it."
+      },
+      {
+        "location": "Primary Concierge CTA",
+        "issue": "Mentions room blocks.",
+        "fix": "Weighing several events and a guest list across time zones?",
+        "old": "Weighing several events, room blocks and a guest list across time zones?",
+        "new": "Weighing several events and a guest list across time zones?"
+      },
+      {
+        "location": "H3 Guest privacy, para 1",
+        "issue": "fact_01 claim not linked at the claim; paraphrase drops 'reasonably identifiable'. Merge with fact_02 so the OAIC link sits on the claim.",
+        "fix": "As general information as at November 2026, and not legal advice: the [Office of the Australian Information Commissioner](https://www.oaic.gov.au/privacy/your-privacy-rights/your-personal-information/what-is-personal-information) says personal information includes information or an opinion that could identify an individual, depending on whether that person can be identified or is reasonably identifiable in the circumstances. <!-- fact_01 --> It gives a name, address, phone number and date of birth as examples. <!-- fact_02 -->",
+        "old": "As general information as at November 2026, and not legal advice: personal information includes information or an opinion that could identify an individual, depending on whether that person is identifiable in the circumstances. <!-- fact_01 --> The [Office of the Australian Information Commissioner](https://www.oaic.gov.au/privacy/your-privacy-rights/your-personal-information/what-is-personal-information) gives a name, address, phone number and date of birth as examples. <!-- fact_02 -->",
+        "new": "As general information as at November 2026, and not legal advice: the [Office of the Australian Information Commissioner](https://www.oaic.gov.au/privacy/your-privacy-rights/your-personal-information/what-is-personal-information) says personal information includes information or an opinion that could identify an individual, depending on whether that person can be identified or is reasonably identifiable in the circumstances. <!-- fact_01 --> It gives a name, address, phone number and date of birth as examples. <!-- fact_02 -->"
+      },
+      {
+        "location": "H3 Guest privacy, para 2",
+        "issue": "fact_03/04 not linked at the claim; 'ask only what the caterer needs' straight after health information implies dietary details are health information.",
+        "fix": "The OAIC lists health information as [sensitive information](https://www.oaic.gov.au/privacy/your-privacy-rights/your-personal-information/what-is-personal-information) <!-- fact_03 -->, which generally has a higher level of privacy protection than other personal information. <!-- fact_04 --> On your form, ask only for the details your planning needs, and keep the list private.",
+        "old": "Health information counts as sensitive information <!-- fact_03 -->, and sensitive information generally has a higher level of privacy protection than other personal information. <!-- fact_04 --> On your form, ask only what the caterer needs, and keep the list private.",
+        "new": "The OAIC lists health information as [sensitive information](https://www.oaic.gov.au/privacy/your-privacy-rights/your-personal-information/what-is-personal-information) <!-- fact_03 -->, which generally has a higher level of privacy protection than other personal information. <!-- fact_04 --> On your form, ask only for the details your planning needs, and keep the list private."
+      },
+      {
+        "location": "QR code H2, para 2",
+        "issue": "fact_08 mismatch: source does not say 'fake QR codes exist' or 'scammers'. cyber.gov.au link sits on fact_10, not the first claim.",
+        "fix": "The [Australian Cyber Security Centre](https://www.cyber.gov.au/guidance/learn-about-phishing-scams) notes that cybercriminals can use QR codes to hide harmful links. <!-- fact_08 --> Because a QR code is an image rather than text, you can't check the link before scanning it. <!-- fact_09 --> It advises going directly to official websites rather than following links in messages. <!-- fact_10 -->",
+        "old": "Fake QR codes exist, and scammers use them to hide harmful links. <!-- fact_08 --> Because a QR code is an image rather than text, you can't check the link before scanning it. <!-- fact_09 --> The [Australian Cyber Security Centre](https://www.cyber.gov.au/guidance/learn-about-phishing-scams) advises going directly to official websites rather than following links in messages. <!-- fact_10 -->",
+        "new": "The [Australian Cyber Security Centre](https://www.cyber.gov.au/guidance/learn-about-phishing-scams) notes that cybercriminals can use QR codes to hide harmful links. <!-- fact_08 --> Because a QR code is an image rather than text, you can't check the link before scanning it. <!-- fact_09 --> It advises going directly to official websites rather than following links in messages. <!-- fact_10 -->"
+      },
+      {
+        "location": "Closing H2",
+        "issue": "'every guest is looked after' edges into on-the-ground care (brand-facts line 23, outside the allowed lines 19 to 30 claims).",
+        "fix": "Shaping the weekend around them is where a Wedded Advisor comes in:",
+        "old": "Turning them into a weekend where every guest is looked after is where a Wedded Advisor comes in:",
+        "new": "Shaping the weekend around them is where a Wedded Advisor comes in:"
+      }
+    ],
+    "fact_check_log": [
+      {
+        "claim": "Personal information definition (OAIC)",
+        "fact_id": "fact_01",
+        "status": "confirmed"
+      },
+      {
+        "claim": "OAIC examples: name, address, phone number, date of birth",
+        "fact_id": "fact_02",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Health information is sensitive information",
+        "fact_id": "fact_03",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Sensitive information generally has higher protection",
+        "fact_id": "fact_04",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Privacy Act doesn't cover individuals acting in a personal capacity",
+        "fact_id": "fact_05",
+        "status": "confirmed"
+      },
+      {
+        "claim": "State or territory laws may still apply",
+        "fact_id": "fact_06",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Cybercriminals can use QR codes to hide harmful links (was 'Fake QR codes exist, scammers')",
+        "fact_id": "fact_08",
+        "status": "confirmed"
+      },
+      {
+        "claim": "QR code is an image, can't check link before scanning",
+        "fact_id": "fact_09",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Go directly to official websites rather than links in messages",
+        "fact_id": "fact_10",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Create QR codes with trusted, secure tools",
+        "fact_id": "fact_11",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Wedded Advisor plans venue, travel, vendors and payments",
+        "fact_id": "brand-facts L30",
+        "status": "confirmed"
+      },
+      {
+        "claim": "One Wedded Advisor, start to finish, single point of contact",
+        "fact_id": "brand-facts L25",
+        "status": "confirmed"
+      }
+    ],
+    "compliance": {
+      "pass": true,
+      "issues": [
+        "Room blocks mentioned twice (fixed by edits 3 and 4).",
+        "fact_08 wording drifted from source (fixed by edit 7).",
+        "fact_01 and fact_03/04 not linked at the claim (fixed by edits 5 and 6).",
+        "No platform names other than Wonderland Studio; no 'free', no prices, no turnover figure (fact_07 unused), no deadline timing figures, no em or en dashes."
+      ]
+    },
+    "originality": {
+      "pass": true,
+      "matches": []
+    },
+    "banned_phrases_found": [],
+    "needs_signoff": [],
+    "average": 4.0
+  }
+}
