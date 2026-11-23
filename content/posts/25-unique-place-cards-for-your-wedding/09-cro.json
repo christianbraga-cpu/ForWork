@@ -1,0 +1,78 @@
+{
+  "agent": "cro",
+  "task_id": "25-unique-place-cards-for-your-wedding",
+  "stage": "09",
+  "status": "complete",
+  "round": 1,
+  "inputs_used": [
+    "content-system/brand/services.md",
+    "content-system/brand/brand-facts.md",
+    "content/posts/25-unique-place-cards-for-your-wedding/01-brief.json",
+    "content/posts/25-unique-place-cards-for-your-wedding/07-panel.json",
+    "content/posts/25-unique-place-cards-for-your-wedding/07-icp/*.json (cta_reaction, unanswered_questions)",
+    "content/posts/25-unique-place-cards-for-your-wedding/08-final.md",
+    "content-system/seo/link-map.csv",
+    "content-system/schemas/09-cro.schema.json",
+    "CLAUDE.md"
+  ],
+  "self_qa": {
+    "confidence": 0.8,
+    "checks": [
+      {"check": "/wonderland-concierge, /magazine and /wonderland-studio exist in link-map.csv", "pass": true},
+      {"check": "/marketplace exists in link-map.csv", "pass": false, "note": "No /marketplace row in link-map.csv. It is listed as the Marketplace page in services.md and brand-facts.md Key URLs, so it is recorded, but the live URL needs confirming (open question)."},
+      {"check": "All four tagged CTA links in 08-final.md recorded exactly as they appear (three /wonderland-concierge, one /magazine)", "pass": true, "note": "08-final.md lines 161 (secondary), 177 (primary), 211 (closing and magnet)."},
+      {"check": "Marketplace link recorded as in the copy, without UTM", "pass": true, "note": "08-final.md line 181, anchor 'Find a stationer on Wedded Marketplace'."},
+      {"check": "UTMs use utm_source=blog, utm_medium=content, utm_campaign=25-unique-place-cards-for-your-wedding and the right utm_content", "pass": true},
+      {"check": "Primary text 6 words or fewer, no exclamation mark, no 'click here'", "pass": true, "note": "Anchor 'Wedded Concierge', 2 words."},
+      {"check": "No added CTAs, CTA marker comments or copy changes proposed", "pass": true},
+      {"check": "No prices, fees beyond the brand-facts lines already in the close, availability, 'free', 'last dance' or vendor names", "pass": true},
+      {"check": "Brand terms correct; Australian English; no em dashes", "pass": true},
+      {"check": "Lead magnet only placed if it exists on the site", "pass": true, "note": "Booking checklist has no page, so exists: false and it is not placed."}
+    ]
+  },
+  "assumptions": [
+    "The schema holds one primary and one secondary CTA, so the closing Concierge link (utm_content=closing) is recorded in tracking and rationale rather than as its own CTA object.",
+    "The /magazine link (utm_content=magnet) is recorded in tracking; the lead_magnet object describes the booking checklist, as instructed, and is not placed.",
+    "The brief's goal (browse stationers on Wedded Marketplace) is served by the untagged /marketplace link in 'Where to Find a Stationer'. It is recorded in tracking and rationale as the goal link, while primary_cta and secondary_cta record the links the copy tags utm_content=primary and secondary.",
+    "Subtext fields quote sentences already in the copy beside each link; nothing new is written."
+  ],
+  "open_questions": [
+    {"to": "orchestrator", "question": "The brief's one action is browsing stationers on Wedded Marketplace, but the copy tags a Concierge link as utm_content=primary and the Marketplace link carries no UTM, so clicks on the goal link will not be attributed to this post in analytics. Recorded as is; confirm that is intended.", "blocking": false},
+    {"to": "orchestrator", "question": "Placement: the primary Concierge link (line 177) sits directly above 'Where to Find a Stationer' (line 181), so the Concierge invitation comes before the goal link for the DIY reader. planner_couple said the stationer section 'muddied whether Concierge actually takes this off our plate', and search_visitor said they would tap the stationer directory or seating app, not a planner. Recorded as is; no copy change from this stage.", "blocking": false},
+    {"to": "orchestrator", "question": "Placement: the secondary Concierge link (line 161) closes 'When to order', a practical section for a couple still organising the cards themselves, before the destination questions the panel cared about. Recorded as is.", "blocking": false},
+    {"to": "human", "question": "/marketplace has no row in content-system/seo/link-map.csv. Confirm the page is live (or refresh the link map with /wedded-linkmap) before the draft goes to the CMS.", "blocking": false},
+    {"to": "Nic", "question": "Should the booking checklist (place card planning, plus questions for the stationer and the venue) become a page? Readers who bookmark rather than enquire would keep it. Not placed until a page exists.", "blocking": false},
+    {"to": "orchestrator", "question": "Panel unanswered questions that brake the Concierge links (fee model, whether Marketplace listings carry commission, whether setting out cards on the day is included, phone contact, private enquiry route, real weddings) are not in brand-facts.md confirmed answers. They stay deferred; no copy change from this stage.", "blocking": false}
+  ],
+  "verify_items": [],
+  "tools_used": ["Bash"],
+  "next_agent": ["distribution"],
+  "payload": {
+    "journey_stage": "planning",
+    "primary_cta": {
+      "text": "Wedded Concierge",
+      "subtext": "Through Wedded Concierge, one Wedded Advisor is your single point of contact for the venue, travel, vendors and payments, and works in your time zone.",
+      "link": "https://weddedwonderland.com/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=25-unique-place-cards-for-your-wedding&utm_content=primary",
+      "placement": "Inline, end of 'Place Cards for a Destination Wedding', straight after the five destination questions (08-final.md line 177). Kept as is; see open questions on its position just above the Marketplace goal link."
+    },
+    "secondary_cta": {
+      "text": "Wedded Concierge",
+      "link": "https://weddedwonderland.com/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=25-unique-place-cards-for-your-wedding&utm_content=secondary",
+      "placement": "Inline, end of 'When to order' in 'How to Do Wedding Place Cards' (08-final.md line 161). Kept as is."
+    },
+    "lead_magnet": {
+      "name": "Booking checklist: place card planning and questions for the stationer and venue",
+      "link": "",
+      "placement": "Not placed. No page on the site.",
+      "exists": false
+    },
+    "tracking": [
+      "https://weddedwonderland.com/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=25-unique-place-cards-for-your-wedding&utm_content=secondary",
+      "https://weddedwonderland.com/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=25-unique-place-cards-for-your-wedding&utm_content=primary",
+      "https://weddedwonderland.com/marketplace",
+      "https://weddedwonderland.com/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=25-unique-place-cards-for-your-wedding&utm_content=closing",
+      "https://weddedwonderland.com/magazine?utm_source=blog&utm_medium=content&utm_campaign=25-unique-place-cards-for-your-wedding&utm_content=magnet"
+    ],
+    "rationale": "Brief sets journey_stage 'planning' and, because the intent is partly shopping, the goal as browsing stationers on Wedded Marketplace (services.md DIY rule: Marketplace, with Concierge as secondary). The copy already carries its links and they are recorded as written: the goal link 'Find a stationer on Wedded Marketplace' to /marketplace in 'Where to Find a Stationer' (line 181, no UTM); Concierge links with anchor 'Wedded Concierge' tagged secondary (line 161, end of 'When to order'), primary (line 177, end of the destination questions) and closing (line 211, 'Plan the table with a Wedded Advisor', beside the brand-facts lines on AUD quotes, the fee agreed in writing and inclusions confirmed in writing); and /magazine tagged magnet (line 211) for the earlier-stage reader. Panel cta_reactions: funding_parent, uhnw and planner_couple 'maybe', sceptic and search_visitor 'no'. The 'maybe' readers want to see a phone or private route, a real wedding, and whether Concierge takes the stationer brief off their plate before clicking; those answers are not in brand-facts.md, so nothing is added. search_visitor names the stationer directory and seating app as the links that answer their next question, which supports the Marketplace goal. Lead magnet suggestion: a booking checklist of place card planning and questions for the stationer and venue would suit the bookmarking reader, but it has no page, so exists is false and it is not placed."
+  }
+}
