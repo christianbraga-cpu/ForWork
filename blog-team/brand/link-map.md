@@ -280,6 +280,11 @@ No Malta destination page exists yet (open item MALTA-PAGE); link `/destinations
 | `/celebration-ideas/50th-wedding-anniversary` | 50th Wedding Anniversary | 50th wedding anniversary |
 | `/celebration-ideas/celebrations-we-plan` | Celebrations We Plan | celebrations we plan |
 | `/travel-guides/weekly-itinerary-template` | Weekly Itinerary Template | weekly itinerary template |
+| `/honeymoon-ideas/honeymoon-planning-service` | Honeymoon planning service (WW-113) | honeymoon planning service (live per Zoho and Firecrawl map 23 Nov 2026) |
+| `/honeymoon-planner` | Honeymoon planner (WW-114) | honeymoon planner (live per Zoho and Firecrawl map 23 Nov 2026) |
+| `/honeymoon-planner-cost` | Honeymoon planner cost (WW-115) | honeymoon planner cost (live 23 Nov 2026) |
+| `/honeymoon-planner-vs-travel-agent` | Honeymoon planner vs travel agent (WW-116) | honeymoon planner vs travel agent (live 23 Nov 2026) |
+| `/travel-guides/honeymoon-itinerary` | Honeymoon Itinerary Template and Two Week Sample (hub for N-646 to N-723) | honeymoon itinerary | DRAFT (23 Nov 2026; URL was 404, new post) |
 
 `/packages` is LIVE (HTTP 200 on 19 Nov 2026; title 'Destination Wedding Packages'; has Anniversaries and Vow renewals tiles), although the Firecrawl map does not list it. Link it for celebration and anniversary trips; `/destination-packages` remains the wedding and honeymoon package page.
 
@@ -413,7 +418,7 @@ No dedicated Decor and Florals hub exists. The /blog/decor category page is the 
 | `/expert-advice/wedding-witnesses` | Wedding Witnesses and How Many You Need | wedding witnesses, marriage witness | DRAFT (final.md 13 Nov 2026; publish after the requirements pillar) |
 | `/travel-guides/travel-advisor-wedding` | Wedding Travel Advisor and Why It Pays to Use One | travel advisor wedding, destination wedding travel agent, why use a travel advisor | DRAFT (final.md 15 Nov 2026) |
 | `/travel-guides/how-to-brief-a-travel-advisor` | How to Brief a Travel Advisor for Your Honeymoon | how to brief a travel advisor, questions to ask a travel agent, honeymoon brief template | DRAFT (final.md 16 Nov 2026; publish after the travel advisor article) |
-| `/honeymoon-ideas/honeymoon-planner` | Honeymoon Planner Services Explained | honeymoon planner, honeymoon planning service, honeymoon specialist | DRAFT (final.md 16 Nov 2026; publish after both travel guides) |
+| `/honeymoon-ideas/honeymoon-planner` | Honeymoon Planner Services Explained (23 Nov: the live honeymoon planner pages are WW-113 to WW-116; check whether this draft was published under another URL) | honeymoon planner, honeymoon planning service, honeymoon specialist | DRAFT (final.md 16 Nov 2026; publish after both travel guides) |
 | `/destination-weddings/getting-married-in-france` | How to Get Married in France as a Foreigner | getting married in france, get married in france as a foreigner | DRAFT (final.md 16 Nov 2026; publish after the licence pillar) |
 | `/destination-weddings/destination-wedding-in-vietnam` | Destination Wedding in Vietnam Legal Steps and Paperwork | destination wedding in vietnam, getting married in vietnam, can foreigners get married in vietnam | DRAFT (final.md 17 Nov 2026; publish after the licence pillar) |
 | `/destination-weddings/malta-wedding` | Malta Wedding Legal Requirements and Paperwork | malta wedding, getting married in malta, can foreigners get married in malta | DRAFT (final.md 17 Nov 2026; publish after the licence pillar and witnesses article) |
