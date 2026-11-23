@@ -4,3 +4,4 @@
 - 22:37 02 SEO done: page not ranking; symbolic wedding AU 20 / US 320; NOIM and sand ceremony drafts 404 (not linked); weddings-abroad page owns country legality.
 - 22:40 05 first draft 2,442 words; docx sent.
 - 22:42 06 editor pass_with_edits 4.14; 8 of 8 applied -> r2; two reader envelopes fixed.
+- 22:45 07b panel revise (enquiry 2.5 v 3.8; deferred business details); 18 of 18 applied -> 08-final.md; orchestrator removed 'someone on the ground' from the close (who is on the ground is a deferred business detail).

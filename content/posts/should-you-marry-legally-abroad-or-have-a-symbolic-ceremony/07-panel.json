@@ -1,0 +1,417 @@
+{
+ "agent": "icp-panel-chair",
+ "task_id": "should-you-marry-legally-abroad-or-have-a-symbolic-ceremony",
+ "stage": "07b",
+ "status": "complete",
+ "round": 1,
+ "inputs_used": [
+  "CLAUDE.md",
+  "content/posts/should-you-marry-legally-abroad-or-have-a-symbolic-ceremony/01-brief.json",
+  "content/posts/should-you-marry-legally-abroad-or-have-a-symbolic-ceremony/05-draft.md (read by the panel)",
+  "content/posts/should-you-marry-legally-abroad-or-have-a-symbolic-ceremony/05-draft-r2.md (edits anchored here)",
+  "content/posts/should-you-marry-legally-abroad-or-have-a-symbolic-ceremony/07-icp/planner_couple.json",
+  "content/posts/should-you-marry-legally-abroad-or-have-a-symbolic-ceremony/07-icp/funding_parent.json",
+  "content/posts/should-you-marry-legally-abroad-or-have-a-symbolic-ceremony/07-icp/uhnw.json",
+  "content/posts/should-you-marry-legally-abroad-or-have-a-symbolic-ceremony/07-icp/sceptic.json",
+  "content/posts/should-you-marry-legally-abroad-or-have-a-symbolic-ceremony/07-icp/search_visitor.json",
+  "content-system/personas/*.yaml (weights: planner_couple 0.40, funding_parent 0.20, uhnw 0.20, sceptic 0.10, search_visitor 0.10)",
+  "content-system/brand/brand-facts.md",
+  "content-system/schemas/07-panel.schema.json"
+ ],
+ "payload": {
+  "personas_run": [
+   "planner_couple",
+   "funding_parent",
+   "uhnw",
+   "sceptic",
+   "search_visitor"
+  ],
+  "weighted_scores": {
+   "relevance_to_me": 3.9,
+   "trust": 3.8,
+   "clarity": 4.4,
+   "brand_feels_premium": 3.6,
+   "likelihood_to_enquire": 2.5
+  },
+  "weighted_enquiry_likelihood": 2.5,
+  "must_fix": [
+   {
+    "issue": "Two block quotes of statute (s45, s46) sit between the reader and the comparison table, which every persona named as the at-a-glance answer. search_visitor (medium, bored and turn-off), planner_couple (primary, low: 'two block quotes of statute in a row is where James and my parents would glaze over'), funding_parent (low) and uhnw (low, turn-off). Four personas.",
+    "flagged_by": [
+     "search_visitor",
+     "planner_couple",
+     "funding_parent",
+     "uhnw"
+    ],
+    "owner": "luxury-writer",
+    "fix": "Move the existing comparison table, unchanged, to directly under the 'Symbolic Ceremony vs Legal Wedding' opening line, with one bridging sentence, and keep the dated disclaimer before the legal detail. The s45 and s46 quotes, their links and the fact comments stay verbatim and in place (planner_couple's 'one quote plus the link' is rejected: the quotes are fixed). 'What makes a ceremony symbolic' keeps its two sentences.",
+    "edits": [
+     {
+      "id": "table_up",
+      "old": "The difference is not how the day looks, but what the law asks of the ceremony and who may perform it.\n\nGeneral information as at November 2026, not legal advice.\n\n### What makes a wedding legal in Australia",
+      "new": "The difference is not how the day looks, but what the law asks of the ceremony and who may perform it. The table sums it up, and the Australian detail follows.\n\n| | Legal wedding in Australia | Symbolic ceremony |\n|---|---|---|\n| Result | You are legally married | No legal effect |\n| Notice | [Notice of Intended Marriage, 1 to 18 months ahead](https://www.ag.gov.au/families-and-marriage/marriage/get-married) | None |\n| Who leads | An authorised marriage celebrant, physically present | Anyone you choose |\n| Words | Set words or words to that effect | Your own |\n| Paperwork | Certificates signed and lodged with the registry | None |\n| Where | In Australia | Anywhere the venue allows |\n\nGeneral information as at November 2026, not legal advice.\n\n### What makes a wedding legal in Australia"
+     },
+     {
+      "id": "table_remove",
+      "old": "Everything the Act fixes for a legal ceremony becomes a creative choice.\n\n| | Legal wedding in Australia | Symbolic ceremony |\n|---|---|---|\n| Result | You are legally married | No legal effect |\n| Notice | [Notice of Intended Marriage, 1 to 18 months ahead](https://www.ag.gov.au/families-and-marriage/marriage/get-married) | None |\n| Who leads | An authorised marriage celebrant, physically present | Anyone you choose |\n| Words | Set words or words to that effect | Your own |\n| Paperwork | Certificates signed and lodged with the registry | None |\n| Where | In Australia | Anywhere the venue allows |\n",
+      "new": "Everything the Act fixes for a legal ceremony becomes a creative choice.\n"
+     }
+    ]
+   }
+  ],
+  "should_fix": [
+   {
+    "issue": "Mid-article CTA 'planned end to end' reads as the generic planner line and comes before any brand detail. planner_couple (primary, medium objection and turn-off), sceptic (medium lost_trust and turn-off).",
+    "flagged_by": [
+     "planner_couple",
+     "sceptic"
+    ],
+    "owner": "cro-specialist",
+    "fix": "Replace 'planned end to end' with the concrete brand-facts wording the close already uses (one Wedded Advisor, line 25). CTA and its utm_content=primary link kept unchanged.",
+    "edits": [
+     {
+      "id": "mid_cta",
+      "old": "want the celebration itself planned end to end, start a conversation with",
+      "new": "want one Wedded Advisor coordinating the celebration itself, start a conversation with"
+     }
+    ]
+   },
+   {
+    "issue": "Closing Advisor line leaves money and on-the-day accountability open: sceptic (medium: 'payments', margin, 'anywhere in the world' unverifiable), planner_couple (primary, medium: who runs it on the day, cost), uhnw (medium: no evidence of scale), funding_parent (wants a named person and on-the-day contact). Three-plus personas, but the underlying asks (fee model and commissions, named Advisor or phone line, real weddings, scale statistics) are deferred in brand-facts.md, so this is not a must-fix.",
+    "flagged_by": [
+     "sceptic",
+     "planner_couple",
+     "uhnw",
+     "funding_parent"
+    ],
+    "owner": "luxury-writer",
+    "fix": "Add two confirmed brand-facts lines to the close only: the fee agreed in writing before any work begins (lines 19 and 27) and someone on the ground looking after the days that matter (line 22). 'Anywhere in the world' (line 30) stays. Nothing about legal paperwork, phone calls, named Advisors, fees or commissions.",
+    "edits": [
+     {
+      "id": "close_advisor",
+      "old": "planning the venue, travel, vendors and payments, anywhere in the world. Begin with",
+      "new": "planning the venue, travel, vendors and payments, anywhere in the world. The fee is agreed in writing before any work begins, and someone on the ground looks after the days that matter. Begin with"
+     }
+    ]
+   },
+   {
+    "issue": "'On a beach, it suits the setting completely.' oversells the sand ceremony and reads as a resort package. planner_couple (primary, low lost_trust, turn-off), uhnw (medium lost_trust, turn-off).",
+    "flagged_by": [
+     "planner_couple",
+     "uhnw"
+    ],
+    "owner": "luxury-writer",
+    "fix": "Cut the clause; the sand ceremony bullet keeps its description.",
+    "edits": [
+     {
+      "id": "sand_trim",
+      "old": " and the layered glass comes home with you. On a beach, it suits the setting completely.",
+      "new": " and the layered glass comes home with you."
+     }
+    ]
+   }
+  ],
+  "consider": [
+   {
+    "issue": "Order of service lists 'A ritual' only, so rituals read like a standard menu with no room for family or cultural customs (uhnw, medium).",
+    "flagged_by": [
+     "uhnw"
+    ],
+    "owner": "luxury-writer",
+    "fix": "Welcomed wording: '6. A ritual, or a family or cultural custom'.",
+    "edits": [
+     {
+      "id": "ritual_custom",
+      "old": "6. A ritual\n",
+      "new": "6. A ritual, or a family or cultural custom\n"
+     }
+    ]
+   },
+   {
+    "issue": "Venue checklist has nothing on privacy: closing the ceremony space and controlling photography (uhnw, medium).",
+    "flagged_by": [
+     "uhnw"
+    ],
+    "owner": "luxury-writer",
+    "fix": "Add one venue question. A question for the venue only, no brand claim.",
+    "edits": [
+     {
+      "id": "venue_privacy",
+      "old": "- Does the venue host symbolic ceremonies, and in which spaces?",
+      "new": "- Does the venue host symbolic ceremonies, and in which spaces?\n- Can the ceremony space be closed to the public, and what are the photography rules?"
+     }
+    ]
+   },
+   {
+    "issue": "Self-check question on the separate legal ceremony has no privacy angle (uhnw).",
+    "flagged_by": [
+     "uhnw"
+    ],
+    "owner": "luxury-writer",
+    "fix": "Welcomed wording 'and how private should it be?'.",
+    "edits": [
+     {
+      "id": "legal_privacy",
+      "old": "- Who do we want at the legal ceremony, if it is separate?",
+      "new": "- Who do we want at the legal ceremony, if it is separate, and how private should it be?"
+     }
+    ]
+   },
+   {
+    "issue": "Venue checklist misses whose name is on the contract, the payment currency and when deposits become non-refundable (funding_parent, medium objection, money). Deposits, refunds and contracts are deferred in brand-facts.md for the brand itself, so this stays a reader-side venue question, not a must-fix.",
+    "flagged_by": [
+     "funding_parent"
+    ],
+    "owner": "luxury-writer",
+    "fix": "Add as a venue question only.",
+    "edits": [
+     {
+      "id": "venue_contract",
+      "old": "is there a rehearsal, and what is the wet weather plan?",
+      "new": "is there a rehearsal, and what is the wet weather plan?\n- Whose name is on the contract, in which currency are payments made, and when do deposits become non-refundable?"
+     }
+    ]
+   },
+   {
+    "issue": "No check on whether an older guest can reach the ceremony space (funding_parent, medium objection).",
+    "flagged_by": [
+     "funding_parent"
+    ],
+    "owner": "luxury-writer",
+    "fix": "Add a level access question to the venue list.",
+    "edits": [
+     {
+      "id": "venue_access",
+      "old": "- Which rituals and props are allowed: sand, candles, open flame, confetti?",
+      "new": "- Which rituals and props are allowed: sand, candles, open flame, confetti?\n- Is there level access to the ceremony space for older guests?"
+     }
+    ]
+   },
+   {
+    "issue": "The Smartraveller CNI paragraph is one dense block on a tablet (funding_parent, low confused and turn-off).",
+    "flagged_by": [
+     "funding_parent"
+    ],
+    "owner": "luxury-writer",
+    "fix": "Split after the fact_17 sentence. No wording change; facts 17 and 19 and their links intact.",
+    "edits": [
+     {
+      "id": "cni_split",
+      "old": "The destination's embassy or consulate is the place to ask. <!-- fact_17 --> [DFAT",
+      "new": "The destination's embassy or consulate is the place to ask. <!-- fact_17 -->\n\n[DFAT"
+     }
+    ]
+   },
+   {
+    "issue": "'shaped entirely around you' in the intro is brochure filler (sceptic, low lost_trust and turn-off). uhnw liked the intro's idea, which the fix keeps.",
+    "flagged_by": [
+     "sceptic"
+    ],
+    "owner": "luxury-writer",
+    "fix": "Replace with wording from the draft's own table and the 'What makes a ceremony symbolic' line: no notice, set words or certificates.",
+    "edits": [
+     {
+      "id": "intro_filler",
+      "old": "and the symbolic wedding abroad is shaped entirely around you.",
+      "new": "and the symbolic wedding abroad needs no notice, set words or certificates."
+     }
+    ]
+   },
+   {
+    "issue": "'This is a common route for couples planning overseas' has nothing behind 'common' (sceptic, low objection).",
+    "flagged_by": [
+     "sceptic"
+    ],
+    "owner": "luxury-writer",
+    "fix": "Cut the lead-in sentence; the numbered order stands on its own. The 'common route' takeaway stays, as the brief requires it. Also funds the word budget.",
+    "edits": [
+     {
+      "id": "route_lead_trim",
+      "old": "This is a common route for couples planning overseas, and the order of events is simple to hold in your head.\n\n1. **Choose",
+      "new": "1. **Choose"
+     }
+    ]
+   },
+   {
+    "issue": "Word budget: the additions above must be offset. Cuts chosen from unpraised lines: a sentence that repeats two venue-checklist questions (abroad experience, language), two filler lead-ins ('That opens the choice right up', 'The craft is in deciding what to keep'), a long link lead-in, and 'Both routes lead to a marriage and a celebration'.",
+    "flagged_by": [
+     "panel-chair"
+    ],
+    "owner": "luxury-writer",
+    "fix": "Trims only; no facts, links or praised lines removed. Net word change of all edits is 0 by local count (r2 2,436, after 2,436).",
+    "edits": [
+     {
+      "id": "leader_dup_trim",
+      "old": "Whoever you choose, ask whether they have led a ceremony abroad, and in which language it will be spoken. Our guide on",
+      "new": "Our guide on"
+     },
+     {
+      "id": "leader_lead_trim",
+      "old": "holds a symbolic role only. That opens the choice right up.",
+      "new": "holds a symbolic role only."
+     },
+     {
+      "id": "inside_lead_trim",
+      "old": "the ceremony becomes a blank page. The craft is in deciding what to keep, and in what order.",
+      "new": "the ceremony becomes a blank page."
+     },
+     {
+      "id": "flow_link_trim",
+      "old": "If you want a sense of how a ceremony flows from start to finish, our guide to",
+      "new": "Our guide to"
+     },
+     {
+      "id": "routes_lead_trim",
+      "old": "Both routes lead to a marriage and a celebration. The question is where",
+      "new": "The question is where"
+     }
+    ]
+   },
+   {
+    "issue": "Search visitor (low) found the Australian pivot and three legal takeaways off their intent and asked for a skip link and a 5th takeaway.",
+    "flagged_by": [
+     "search_visitor"
+    ],
+    "owner": "luxury-writer",
+    "fix": "Not applied. The bridging sentence in table_up now signals that the Australian legal detail follows the table. Takeaways stay at 4 as the brief sets them; the markdown anchor link is rejected (only plain text to an H2 anchor flagged for the CMS is allowed, and the brief's primary reader is Australian)."
+   },
+   {
+    "issue": "uhnw (low): 'Give them a script, a rehearsal and a microphone' is advice for couples running their own wedding.",
+    "flagged_by": [
+     "uhnw"
+    ],
+    "owner": "luxury-writer",
+    "fix": "No change. It serves the friend-led ceremony the brief asks for and the primary persona did not object."
+   }
+  ],
+  "keep": [
+   "First line definition: 'A symbolic ceremony is a wedding ceremony with no legal effect.' (all five personas)",
+   "Key takeaway on the common route, legal in Australia then symbolic abroad (planner_couple, funding_parent)",
+   "Dated line 'General information as at November 2026, not legal advice.' (funding_parent, sceptic, uhnw, search_visitor)",
+   "12 June 2024 change with the in-person and 2 witnesses detail and its AGD link (planner_couple, sceptic)",
+   "The comparison table and 'Everything the Act fixes for a legal ceremony becomes a creative choice.' (planner_couple, search_visitor)",
+   "'decide the route before you pay deposits' (funding_parent, planner_couple)",
+   "Name change caveat on overseas certificates and 'Check with your state or territory registry' (planner_couple, sceptic, funding_parent)",
+   "'Some couples do this before they fly and others after they come home' (funding_parent)",
+   "Commitment ceremony or blessing line (search_visitor)",
+   "Order of a symbolic ceremony list and 'A shape that works well at a destination:' (search_visitor)",
+   "Open flame and wind plan line (search_visitor)",
+   "Venue checklist, especially the local permit or notice question (planner_couple, funding_parent)",
+   "'Your Wedded Advisor confirms venue inclusions in writing before you commit.' (all five personas)",
+   "'Who do we want at the legal ceremony, if it is separate?' (funding_parent; extended, not cut)",
+   "Short, direct FAQ answers, including 'No. Anyone you choose can lead it, in a symbolic role only.' (search_visitor, sceptic)",
+   "The restrained secondary CTA wording (uhnw)",
+   "s45 and s46 quotes verbatim with their links (planner_couple)"
+  ],
+  "conflicts_resolved": [
+   "Statute quotes: planner_couple suggested cutting to one quote plus a link; the quotes are fixed, so the table moves above them instead, which solves the same complaint for the primary persona and the three others.",
+   "Mid-article CTA: sceptic wanted 'is where to ask what end-to-end planning would include'; planner_couple (primary) wanted the concrete Advisor wording. Primary wins, and 'end to end' was the phrase both disliked.",
+   "Closing line: sceptic's rewrite adds 'The legal steps stay with your celebrant and the registry', a brand statement about legal paperwork that needs Nic's sign-off, so rejected; the close gains only brand-facts lines 19 to 30. uhnw liked 'anywhere in the world' and sceptic doubted it; it is line 30, so it stays.",
+   "Intro 'shaped entirely around you': uhnw quoted the sentence positively for its idea, sceptic called the clause filler; the fix keeps the idea and swaps only the filler for the table's own facts.",
+   "Search visitor (weight 0.10) asked for a 5th takeaway and a skip link; the brief's primary persona is the Australian planner couple, takeaways are fixed at 4, and the anchor link is not the allowed plain-text form.",
+   "funding_parent asked for a phone call with a named person, and planner_couple for a real symbolic wedding and costs: these are deferred in brand-facts.md, so they go to open questions, not copy."
+  ],
+  "deferred": [
+   "Wedded Concierge fee model and commissions (sceptic, planner_couple, funding_parent)",
+   "Named Advisor, phone call, on-the-day contact (funding_parent, planner_couple)",
+   "Real weddings to feature (planner_couple, sceptic)",
+   "Scale, privacy and security capability for 200 to 400 guests (uhnw)",
+   "Whether Wedded Concierge serves couples outside Australia (search_visitor)",
+   "Any brand statement on who handles legal paperwork (funding_parent, sceptic): needs Nic's sign-off"
+  ],
+  "not_added": [
+   "5th takeaway (search_visitor)",
+   "Markdown skip link to #inside-a-symbolic-ceremony (search_visitor)",
+   "Cutting one statute quote (planner_couple)",
+   "'The legal steps stay with your celebrant and the registry' (sceptic)",
+   "Costs or price comparisons (search_visitor, sceptic)"
+  ],
+  "edit_order": [
+   "intro_filler",
+   "table_up",
+   "table_remove",
+   "cni_split",
+   "mid_cta",
+   "leader_lead_trim",
+   "leader_dup_trim",
+   "flow_link_trim",
+   "inside_lead_trim",
+   "ritual_custom",
+   "sand_trim",
+   "route_lead_trim",
+   "routes_lead_trim",
+   "legal_privacy",
+   "venue_privacy",
+   "venue_contract",
+   "venue_access",
+   "close_advisor"
+  ],
+  "gate": "revise"
+ },
+ "self_qa": {
+  "checks": [
+   {
+    "check": "Weighted maths uses all five weights (sum 1.0).",
+    "pass": true,
+    "note": "likelihood 1.2+0.6+0.4+0.2+0.1 = 2.5, below 3.8, so revise"
+   },
+   {
+    "check": "Every edit 'old' occurs exactly once in 05-draft-r2.md, and all 18 edits apply cleanly in edit_order.",
+    "pass": true
+   },
+   {
+    "check": "Title, headings and the 4 one-sentence takeaways unchanged; no new headings.",
+    "pass": true
+   },
+   {
+    "check": "Legal wording unchanged: facts 01 to 25 with links, s45 and s46 quotes verbatim; table moved unchanged; no same-sex position; no rule on which ceremony comes first.",
+    "pass": true
+   },
+   {
+    "check": "No brand statement on legal paperwork, no phone call or named Advisor; Advisor and close lines only from brand-facts lines 19 to 30.",
+    "pass": true
+   },
+   {
+    "check": "All four UTM links kept, each utm_content once (primary, magnet, secondary, closing); no skip link added.",
+    "pass": true
+   },
+   {
+    "check": "No prices, 'best', statistics, research talk, 'free', 'last dance', 'guaranteed', em or en dashes in new text; Australian English.",
+    "pass": true
+   },
+   {
+    "check": "Word count after edits 2,436 by local count (r2 2,436, net 0), inside 1,800 to 2,500.",
+    "pass": true
+   },
+   {
+    "check": "No must-fix rests on an item confirmed or deferred in brand-facts.md.",
+    "pass": true
+   }
+  ],
+  "confidence": 0.8
+ },
+ "open_questions": [
+  {
+   "to": "orchestrator",
+   "question": "For Nic: the panel's enquiry ceiling on this informational post is the deferred business detail (fee model, named Advisor or first call, on-the-day contact, a real symbolic wedding, scale for large private weddings). Can any be confirmed in brand-facts.md for a later refresh?",
+   "blocking": false
+  },
+  {
+   "to": "cms-publisher",
+   "question": "The table now sits before the s45 and s46 quotes; check the CMS renders the markdown table at that position.",
+   "blocking": false
+  }
+ ],
+ "assumptions": [
+  "Personas are provisional (not CRM-calibrated); weights as on the cards.",
+  "Enquiry likelihood of 2.5 is driven by deferred brand facts and the informational intent; copy edits alone are not expected to lift it to 3.8, so the gate is revise for the fixes, with one round allowed."
+ ],
+ "verify_items": [],
+ "tools_used": [
+  "Bash",
+  "Read"
+ ],
+ "next_agent": [
+  "luxury-writer"
+ ]
+}
