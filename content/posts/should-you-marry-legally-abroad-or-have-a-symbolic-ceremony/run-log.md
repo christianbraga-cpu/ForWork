@@ -1,2 +1,3 @@
 22:25 00 orchestrator complete input written; FAST MODE; REFRESH live page (audit merge), URL kept; question title kept by user
 22:26 04 visual-curator needs_input 4 slots needed (register empty), no images placed
+- 22:27 03 source pack: 25 facts (21 reused: Marriage Act, NOIM, celebrants, Smartraveller incl. CNI; 4 live from AGD Get married page, 23 Nov 2026). No conflicts.
