@@ -53,3 +53,4 @@
   - **Reader (couple):** relevance 3, trust 3, clarity 4, would_enquire 2, "forward". The visible placeholder; the deflected answer on people not invited abroad; the bolted-on Concierge line. The planner-vetting blocker is downgraded as out of scope.
   - Merged request: 04-reviews/v1/merged.md. Duplicate link-map row removed.
 - **Decision (default):** people at home not invited abroad get concrete options framed as our suggestions (a relaxed gathering after you are home, no gifts expected) plus "talk it through with your host". "Sources current as at" is dropped (no official sources on etiquette).
+- **Stage 4 fast (writer v2):** DONE. 03-draft-v2.md: 1,914 reader words, 0 dashes, 0 placeholders. YAML valid: 32 claims (24 sourced, 8 advice), 16 links across 15 URLs. All 19 items applied. Options for people at home not invited abroad added as advice; plus-ones as advice; Studio wording matches live copy.
