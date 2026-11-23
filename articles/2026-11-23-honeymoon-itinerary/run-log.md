@@ -39,3 +39,4 @@
   - **SERP:** off-target (visitor guides, destination lists, tour operators, Pinterest templates). No one covers trip structure.
   - **Forward risk:** the planned WC3-T925 travel itinerary template uses a 10-day honeymoon sample (overlap to watch).
   - **Link map:** WW-113 to WW-116 and this page added. The 16 Nov honeymoon planner draft row is flagged, because the live honeymoon planner pages differ.
+- **Stage 2 fast (writer):** DONE. 03-draft-v1.md. --check: 2,477 reader words (over), 0 dashes, 0 placeholders, Smartraveller and Passports inline. YAML valid: 35 claims, 30 links (over). WW-113 to WW-116 linked directly. Reviews launched.
