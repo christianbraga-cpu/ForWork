@@ -129,7 +129,7 @@ A QR code on a printed invitation or details card lets guests reach your RSVP pa
 
 The [Australian Cyber Security Centre](https://www.cyber.gov.au/guidance/learn-about-phishing-scams) notes that cybercriminals can use QR codes to hide harmful links. <!-- fact_08 --> Because a QR code is an image rather than text, you can't check the link before scanning it. <!-- fact_09 --> It advises going directly to official websites rather than following links in messages. <!-- fact_10 -->
 
-So print the RSVP web address beside the code, short and easy to type, for guests who would rather not scan. Create the code with a trusted, secure tool <!-- fact_11 -->, then test-scan the printed proof, on more than one phone, before the full print run.
+So print the RSVP web address beside the code, short and easy to type, for guests who would rather not scan. Create the code with a trusted, secure tool, as the [Australian Cyber Security Centre](https://www.cyber.gov.au/guidance/learn-about-phishing-scams) suggests <!-- fact_11 -->, then test-scan the printed proof, on more than one phone, before the full print run.
 
 <!-- IMAGE SLOT qr-invitation: Still life flat-lay, no people: a luxury printed invitation suite with a small RSVP details card carrying a QR code, on textured paper with a ribbon or wax seal and soft daylight shadows. Preferred: an owned or licensed photo. AI illustrative fallback only if Nic approves, with a non-functional placeholder code, no branding or legible names, captioned "Illustrative image". -->
 
@@ -166,7 +166,7 @@ For help shaping a guest weekend around those replies, speak with our [Wedded Co
 
 ## Where Wonderland Studio fits
 
-Wonderland Studio is our planning app for seating charts and RSVPs. It belongs to the fourth kind in the table above, for couples who would like their replies and their seating chart in the same place. Run the same tier questions on it as on any other tool. You can see it at [Wonderland Studio](/wonderland-studio).
+Wonderland Studio is our planning app for seating charts and RSVPs. It belongs to the fourth kind in the table above, for couples who would like their replies and their seating chart in the same place. Test it as a guest, as you would any other tool. You can see it at [Wonderland Studio](/wonderland-studio).
 
 <!-- IMAGE SLOT studio-rsvp-screen: Team-supplied screenshot of the Wonderland Studio RSVP or guest list screen, filled with sample names only (no real guest or couple data), Wedded Wonderland branding only, no third-party platform screens or logos, no prices. Cropped to the RSVP status view. Usable only once the product team supplies it and confirms the data is sample data. -->
 
