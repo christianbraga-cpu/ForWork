@@ -40,3 +40,10 @@
   - **Forward risk:** the planned WC3-T925 travel itinerary template uses a 10-day honeymoon sample (overlap to watch).
   - **Link map:** WW-113 to WW-116 and this page added. The 16 Nov honeymoon planner draft row is flagged, because the live honeymoon planner pages differ.
 - **Stage 2 fast (writer):** DONE. 03-draft-v1.md. --check: 2,477 reader words (over), 0 dashes, 0 placeholders, Smartraveller and Passports inline. YAML valid: 35 claims, 30 links (over). WW-113 to WW-116 linked directly. Reviews launched.
+- **Stage 3 fast (3 reviews):** DONE.
+  - **Accuracy 4.0:** blocker on the concierge line ("is already planning your wedding" contradicts the live advisory and matchmaking wording). Majors: an unsourced "two months" overlap and an unsourced "ten nights" threshold. Minors: attribution and quote fixes.
+  - **SEO 3.8:** title, keyword and meta pass. Majors: a missing H2 (travel days and invisible logistics); 2,477 words and 52 link instances; a URL conflict.
+  - **Reader (couple):** relevance 3, trust 3, clarity 4, would_enquire 2, "save". Majors: Italy missing; a thin "straight after the wedding" section.
+  - Merged request: 04-reviews/v1/merged.md.
+- **Correction (orchestrator):** the brief shows WW-114 to WW-116 live under /honeymoon-ideas/ (/honeymoon-ideas/honeymoon-planner is the 16 Nov article, published). My earlier link-map rows used the wrong paths and are now corrected. /travel-guides/how-to-brief-a-travel-advisor is LIVE per Zoho WC3-T217; link-map updated.
+- **Conflict resolved:** trip lengths are framed as "we suggest" (accuracy), not as fact.
