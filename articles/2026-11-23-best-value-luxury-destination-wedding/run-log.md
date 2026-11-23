@@ -42,3 +42,13 @@
   - The ranking is presented as our editorial judgement with stated criteria. Nic approves the method (RANKING-METHOD).
 - **Stage 2:** writer launched.
 - **Stage 2 fast (writer):** DONE. 03-draft-v1.md. --check: 2,792 reader words (over), 0 dashes, 0 placeholders, Smartraveller inline. YAML valid: 33 claims, 24 links. Ranking: 1 Santorini, 2 Fiji, 3 Dubai (per person), 4 Maldives, 5 Amalfi, 6 Lake Como (no figure); Bali outside; Italy overall not ranked. Reviews launched.
+- **Stage 3 fast (3 reviews):** DONE.
+  - **Accuracy 3.6:** blocker on Dubai figures resting on an unnamed 2026 round-up. Majors: ranking framed as calculated ("per dollar", "more room than anywhere"); several unsourced phrases; concierge wording beyond live copy.
+  - **SEO 3.7:** majors on meta length; three URLs not in link-map; cards reproducing spoke breakdowns; 2,792 words; Italy intent (link the Italy hub and Puglia).
+  - **Reader (couple):** relevance 2, trust 3, clarity 3, would_enquire 2, "save". Santorini #1 "because its table is clear" undermines the ranking; Italy at 5 and 6; Puglia excluded for an internal reason.
+  - Merged request: 04-reviews/v1/merged.md.
+- **Decision (default):**
+  - Dubai is removed from the ranking (one unranked line, no figures; DUBAI-SOURCE). The ranking is now five.
+  - Each card is ranked on destination merits "in our view", with one headline figure.
+  - SEO title "Best Value Luxury Destination Weddings Ranked With Costs" (56 characters; "by Region" was inaccurate).
+  - The Fiji cost, Dubai cost and hidden-costs URLs are added to link-map (live per Firecrawl).
