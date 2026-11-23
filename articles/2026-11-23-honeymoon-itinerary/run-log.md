@@ -22,3 +22,11 @@
 - **Decision (default):** WW-113 to WW-116 are looked up in Zoho and linked if live. The 16 Nov honeymoon planner DRAFT gets a conditional link. Smartraveller facts are reused with their original dates and linked at the claim. No Wedded World plug.
 
 ## Stages
+- **Stage 1 fast (research):** DONE. 36 facts: 8 legal (Smartraveller, Passport Office); no prices.
+  - **URL:** /travel-guides/honeymoon-itinerary returns 404, so this is a new post.
+  - **Reused:** passport validity, 6 weeks for a passport, visas, document copies, insurance, the health check, medicines, the 6 to 9 month lead time.
+  - **Conflict:** Smartraveller says "6 to 8 weeks" (travel health) vs "at least 8 weeks" (checklist). **Decision (default):** write "at least 6 to 8 weeks before you go", linked to both.
+  - **Site issues for the user:**
+    - /travel-guides/weekly-itinerary-template (live 18 Nov) has internal links carrying "?utm_source=chatgpt.com" (UTM-CLEANUP).
+    - /destination-honeymoon-packages inclusion wording changed since 16 Nov (the earlier honeymoon planner draft may need a re-check).
+- **Stage 0:** the strategist is held on an MCP permission prompt.
