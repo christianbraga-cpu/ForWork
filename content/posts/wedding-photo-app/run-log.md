@@ -5,3 +5,4 @@
 - 00:42 05 first draft about 2,156 words; no app names; docx sent.
 - 00:45 06 editor pass_with_edits 4.29; 6 of 6 applied -> r2; sceptic envelope fixed.
 - 00:47 07b panel revise (enquiry 1.7 v 3.8; deferred business details); 17 of 17 applied -> 08-final.md.
+- 00:50 Final check pass_with_edits 4.21; 7 of 9 applied. Skipped edit 9 (removed the magazine magnet link the user's UTM rule requires) and edit 1 (removed the 'no specific apps' line three readers asked for; shortened instead). Orchestrator trimmed the primary CTA lead-in to brand-facts wording (Advisor tasks not confirmed). Length about 2,190.

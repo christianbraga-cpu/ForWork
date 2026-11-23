@@ -1,0 +1,286 @@
+{
+  "agent": "editor",
+  "task_id": "wedding-photo-app",
+  "stage": "06",
+  "status": "complete",
+  "round": 1,
+  "inputs_used": [
+    "content-system/rubrics/editor-rubric.md",
+    "content-system/rubrics/compliance-checklist.md",
+    "content-system/rubrics/link-rules.md",
+    "content-system/rubrics/image-checklist.md",
+    "content-system/brand/voice-guide.md",
+    "content-system/brand/banned-phrases.md",
+    "content-system/brand/brand-facts.md (lines 19 to 30)",
+    "content-system/seo/link-map.csv",
+    "01-brief.json",
+    "02-seo.json",
+    "03-source-pack.json (incl. writer note in open_questions)",
+    "04-images.json",
+    "06-edit.json",
+    "08-final.md"
+  ],
+  "self_qa": {
+    "checks": [
+      {
+        "check": "scan_copy.py run on 08-final.md: 0 banned, 0 dashes, 0 overlaps",
+        "pass": true
+      },
+      {
+        "check": "Each edit 'old' occurs exactly once in 08-final.md (verified by script)",
+        "pass": true
+      },
+      {
+        "check": "Edits applied to a scratch copy: 2,190 visible words, 3 Concierge UTMs once each",
+        "pass": true
+      },
+      {
+        "check": "Decision consistent with scores (avg 4.21, min 4) and no blocking issues",
+        "pass": true
+      }
+    ],
+    "confidence": 0.85
+  },
+  "open_questions": [
+    {
+      "to": "orchestrator",
+      "question": "Confirm /expert-advice/average-cost-wedding-photographer is live (link map still says draft) before the CMS step.",
+      "blocking": false
+    },
+    {
+      "to": "Nic",
+      "question": "Approve AI illustrative fallback for the qr-card slot if no licensed photo is found.",
+      "blocking": false
+    }
+  ],
+  "assumptions": [
+    "Word count is visible copy including headings and FAQ, excluding front matter, comments and link URLs.",
+    "Removing the /magazine magnet link is required by the caller's UTM rule and link rule (target not in 02-seo.json); restore only if Nic confirms it is a standard close."
+  ],
+  "next_agent": [
+    "luxury-writer"
+  ],
+  "payload": {
+    "draft_file": "content/posts/wedding-photo-app/08-final.md",
+    "rubric": {
+      "voice": 4.5,
+      "expertise": 4,
+      "accuracy": 4.5,
+      "seo_fit": 4,
+      "commercial_link": 4,
+      "structure": 4.5,
+      "brief_fit": 4
+    },
+    "average": 4.21,
+    "blocking_issues": [],
+    "decision": "pass_with_edits",
+    "edits": [
+      {
+        "location": "Intro, para 2",
+        "issue": "Meta talk about the article's own method ('This guide deliberately recommends no specific apps') breaks the write-with-authority rule; state the scope confidently.",
+        "fix": "Replace exactly the 'old' text with the 'new' text.",
+        "old": "This guide deliberately recommends no specific apps. Instead, here are the main types of tool,",
+        "new": "Here are the main types of tool,"
+      },
+      {
+        "location": "Key takeaways, bullet 1",
+        "issue": "Takeaway 1 is a single sentence but overloaded with the five-type list; trimmed to stay one clean sentence and to bring the piece under 2,200 words.",
+        "fix": "Replace exactly the 'old' text with the 'new' text.",
+        "old": " rather than instead of it, and comes in five types: shared album apps, QR code upload pages, disposable camera style apps, live slideshow displays and your photographer's own gallery.",
+        "new": " rather than instead of it."
+      },
+      {
+        "location": "Privacy H2 intro",
+        "issue": "Redundant summary that repeats takeaway 3; cut for length (piece is about 2,296 visible words, over the 2,200 cap).",
+        "fix": "Replace exactly the 'old' text with the 'new' text.",
+        "old": "This section is general information as at November 2026, not legal advice. In short: ask before you share, keep the album private, and remove any photo a guest asks you to take down.",
+        "new": "This section is general information as at November 2026, not legal advice."
+      },
+      {
+        "location": "Privacy > Asking guests, para 3",
+        "issue": "Tangential fact_09 sentence (social account tagging settings) adds length without serving the album decision; cut for word count.",
+        "fix": "Replace exactly the 'old' text with the 'new' text.",
+        "old": " Guests can set their own accounts to review photos they are tagged in, or stop tagging altogether. <!-- fact_09 -->",
+        "new": ""
+      },
+      {
+        "location": "Privacy > Asking guests, children para",
+        "issue": "fact_23 duplicates the fact_13 take-down advice two paragraphs later; cut for word count.",
+        "fix": "Replace exactly the 'old' text with the 'new' text.",
+        "old": " If a child's photo is posted without permission, the first step is to ask the person who posted it to delete it. <!-- fact_23 -->",
+        "new": ""
+      },
+      {
+        "location": "Privacy > Asking guests, OAIC take-down para",
+        "issue": "OAIC take-down and complaint claims (fact_13, fact_14) are not linked at the claim; attribute and link.",
+        "fix": "Replace exactly the 'old' text with the 'new' text.",
+        "old": "If a photo is posted without permission, first ask the person who posted it to take it down, then ask the site's administrator. <!-- fact_13 -->",
+        "new": "If a photo is posted without permission, the [OAIC suggests](https://www.oaic.gov.au/privacy/your-privacy-rights/social-media-and-online-privacy/photos-and-videos) first asking the person who posted it to take it down, then the site's administrator. <!-- fact_13 -->"
+      },
+      {
+        "location": "Copyright > para 2",
+        "issue": "Commissioned-photo copyright claims (fact_16 to fact_19, s35(5)) are not linked at the claim; link the section.",
+        "fix": "Replace exactly the 'old' text with the 'new' text.",
+        "old": "A separate rule covers commissioned photos.",
+        "new": "[Section 35(5)](https://classic.austlii.edu.au/au/legis/cth/consol_act/ca1968133/s35.html) covers commissioned photos."
+      },
+      {
+        "location": "Guests who would rather not download an app",
+        "issue": "Trim for word count.",
+        "fix": "Replace exactly the 'old' text with the 'new' text.",
+        "old": "Older guests, grandparents included, may find a new app a hurdle, and international guests on roaming plans may be reluctant to download anything.",
+        "new": "Older guests may find a new app a hurdle, and international guests on roaming plans may not want to download anything."
+      },
+      {
+        "location": "Planning the rest of the day (closing)",
+        "issue": "UTM link with a non 'Wedded Concierge' anchor ('our magazine'), and /magazine is not in 02-seo.json internal_links; remove.",
+        "fix": "Replace exactly the 'old' text with the 'new' text.",
+        "old": " team when you are ready, and for ideas in the meantime, browse [our magazine](/magazine?utm_source=blog&utm_medium=content&utm_campaign=wedding-photo-app&utm_content=magnet).",
+        "new": " team when you are ready."
+      }
+    ],
+    "fact_check_log": [
+      {
+        "claim": "Always ask for consent before sharing a photo or video (eSafety, linked)",
+        "fact_id": "fact_01",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Remove a photo on request, no questions asked",
+        "fact_id": "fact_02",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Genuine consent: understood and not pressured (paraphrased, dash avoided)",
+        "fact_id": "fact_03",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Applies to phone, tablet, smart glasses or any device",
+        "fact_id": "fact_04",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Consent can be reversed; delete or edit out",
+        "fact_id": "fact_05",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Once shared online you can lose control",
+        "fact_id": "fact_06",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Respect a request; keep it to yourself or edit out",
+        "fact_id": "fact_07",
+        "status": "confirmed"
+      },
+      {
+        "claim": "OAIC: photos are personal information when identity clear or reasonably worked out (linked)",
+        "fact_id": "fact_10",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Privacy Act does not cover individuals acting in a personal capacity (paraphrased, dash avoided)",
+        "fact_id": "fact_11",
+        "status": "confirmed"
+      },
+      {
+        "claim": "State or territory laws may apply",
+        "fact_id": "fact_12",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Ask poster first, then site administrator",
+        "fact_id": "fact_13",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Complaint possible where host is a covered organisation or agency (no turnover figure)",
+        "fact_id": "fact_14",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Author owns copyright by default; for a photo generally the person who took it (s35(2), linked); also FAQ",
+        "fact_id": "fact_15",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Commissioned photo for private or domestic purpose, for valuable consideration: commissioner owns copyright",
+        "fact_id": "fact_16",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Photographer can restrain uses outside the purpose made known",
+        "fact_id": "fact_17",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Private or domestic purpose includes a wedding party portrait",
+        "fact_id": "fact_18",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Rule can be excluded or modified by agreement",
+        "fact_id": "fact_19",
+        "status": "confirmed"
+      },
+      {
+        "claim": "s35(5) turns on a paid agreement, describing the hired photographer, not a guest phone (scope note)",
+        "fact_id": "fact_20",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Check with other parents before posting, sharing or tagging children (eSafety parents, linked)",
+        "fact_id": "fact_21",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Share only with people you trust; use privacy settings",
+        "fact_id": "fact_22",
+        "status": "confirmed"
+      },
+      {
+        "claim": "eSafety advises following the rules of groups you belong to on social media (applied to a wedding photo policy)",
+        "fact_id": "fact_08",
+        "status": "removed"
+      },
+      {
+        "claim": "Wonderland Studio is our planning app for seating charts and RSVPs (no pricing or photo claim)",
+        "status": "confirmed"
+      },
+      {
+        "claim": "One Wedded Advisor, start to finish, single point of contact; works in your time zone",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Guests can set accounts to review tags (cut for length)",
+        "fact_id": "fact_09",
+        "status": "removed"
+      },
+      {
+        "claim": "Child photo posted without permission: ask poster to delete (cut, duplicates fact_13)",
+        "fact_id": "fact_23",
+        "status": "removed"
+      }
+    ],
+    "compliance": {
+      "pass": true,
+      "issues": [
+        "No app, product or company names other than Wonderland Studio (planning app for seating charts and RSVPs only, no photo-sharing or pricing claim). London and Singapore are cities only.",
+        "No prices, figures, statistics or 'free' in visible copy; cost H3 is questions only. No Privacy Act coverage of providers, guest-photo reuse rights or parent-paid copyright claim.",
+        "Privacy and copyright claims limited to facts 01 to 22 with markers; OAIC take-down (fact_13/14) and s35(5) (fact_16 to 19) now linked at the claim via edits 6 and 7.",
+        "Exactly 4 one-sentence takeaways; Advisor lines match brand-facts claims (single point of contact; time zone; inclusions in writing).",
+        "After edit 9, UTMs secondary, primary, closing appear once each, all anchored 'Wedded Concierge'; /magazine magnet removed (not in 02-seo internal_links, non-Concierge anchor).",
+        "Visible words 2,292 before edits (over 2,200 cap), about 2,190 after edits.",
+        "scan_copy: 0 banned, 0 dashes, 0 overlaps; 'luxury' flag sits in a hidden image-slot comment only."
+      ]
+    },
+    "originality": {
+      "pass": true,
+      "matches": []
+    },
+    "banned_phrases_found": [],
+    "needs_signoff": []
+  }
+}

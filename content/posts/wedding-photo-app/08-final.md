@@ -9,11 +9,11 @@ round: 1
 
 Your photographer will capture the vows, the portraits and the first dance. Your guests will capture everything else: the aunt who cried at the aisle, the groomsmen at the bar, the view from the back table as the sun went down. A wedding photo app gathers those pictures and videos in one private place, so they don't scatter across a hundred phones and group chats.
 
-This guide deliberately recommends no specific apps. Instead, here are the main types of tool, what to check, how to handle privacy and ownership, and how to make it work at a venue overseas, where Wi-Fi is never a given.
+We recommend no specific apps. Here are the main types of tool, what to check, privacy and ownership, and making it work at a venue overseas.
 
 ## Key takeaways
 
-- A wedding photo app collects your guests' candid photos and videos in one private album, alongside your professional photographer's gallery rather than instead of it, and comes in five types: shared album apps, QR code upload pages, disposable camera style apps, live slideshow displays and your photographer's own gallery.
+- A wedding photo app collects your guests' candid photos and videos in one private album, alongside your professional photographer's gallery rather than instead of it.
 - Check any option for its total cost and what is included, browser uploads with no install, full resolution, video, moderation, a full download at the end, how long photos are kept and offline uploads.
 - Ask guests before their photos are shared publicly, check with parents before sharing images of children, and remove any photo a guest asks you to take down.
 - At a destination wedding, ask the venue about Wi-Fi and data early, and choose a set-up that lets guests upload later from home.
@@ -56,7 +56,7 @@ Your photographer's delivered gallery may have room for guest uploads, keeping e
 
 ## Guests who would rather not download an app
 
-Older guests, grandparents included, may find a new app a hurdle, and international guests on roaming plans may be reluctant to download anything. A browser upload page removes that friction. If you prefer an app, offer the browser link as well, so every guest can still contribute.
+Older guests may find a new app a hurdle, and international guests on roaming plans may not want to download anything. A browser upload page removes that friction. If you prefer an app, offer the browser link as well, so every guest can still contribute.
 
 ## What to look for before you choose
 
@@ -92,7 +92,7 @@ Can photos taken with no signal send automatically once the phone reconnects? On
 
 ## Privacy, consent and who owns guest photos
 
-This section is general information as at November 2026, not legal advice. In short: ask before you share, keep the album private, and remove any photo a guest asks you to take down.
+This section is general information as at November 2026, not legal advice.
 
 ### Asking guests before you share
 
@@ -100,13 +100,13 @@ Australia's eSafety Commissioner advises that you should always [ask for consent
 
 Consent can change. If someone who said yes changes their mind, delete the photo from where it was posted or edit them out of the shot. <!-- fact_05 --> If a guest asks you to remove a photo, do it, no questions asked. <!-- fact_02 --> <!-- fact_07 -->
 
-Once something is shared online, you can lose control of how others share or use it <!-- fact_06 -->, which is the strongest argument for a private, invite-only album. A short photo policy from the two of you gives guests a clear rule. Guests can set their own accounts to review photos they are tagged in, or stop tagging altogether. <!-- fact_09 -->
+Once something is shared online, you can lose control of how others share or use it <!-- fact_06 -->, which is the strongest argument for a private, invite-only album. A short photo policy from the two of you gives guests a clear rule.
 
-Children need particular care. eSafety advises parents to [check with other parents before posting, sharing or tagging images that include their children](https://www.esafety.gov.au/parents/issues-and-advice/privacy-child) <!-- fact_21 -->, to share only with people they know and trust, and to use privacy settings to limit who sees them. <!-- fact_22 --> If a child's photo is posted without permission, the first step is to ask the person who posted it to delete it. <!-- fact_23 -->
+Children need particular care. eSafety advises parents to [check with other parents before posting, sharing or tagging images that include their children](https://www.esafety.gov.au/parents/issues-and-advice/privacy-child) <!-- fact_21 -->, to share only with people they know and trust, and to use privacy settings to limit who sees them. <!-- fact_22 -->
 
 The Office of the Australian Information Commissioner treats photos and videos as [personal information under the Privacy Act 1988](https://www.oaic.gov.au/privacy/your-privacy-rights/social-media-and-online-privacy/photos-and-videos) when a person's identity is clear or could reasonably be worked out. <!-- fact_10 --> The Act does not cover individuals, so it does not apply to photos taken by someone acting in a personal capacity <!-- fact_11 -->, though state or territory laws may apply in some situations. <!-- fact_12 -->
 
-If a photo is posted without permission, first ask the person who posted it to take it down, then ask the site's administrator. <!-- fact_13 --> A complaint to the OAIC is possible where the host is an organisation or agency covered by the Act. <!-- fact_14 -->
+If a photo is posted without permission, the [OAIC suggests](https://www.oaic.gov.au/privacy/your-privacy-rights/social-media-and-online-privacy/photos-and-videos) first asking the person who posted it to take it down, then the site's administrator. <!-- fact_13 --> A complaint to the OAIC is possible where the host is an organisation or agency covered by the Act. <!-- fact_14 -->
 
 A line on your welcome sign does a lot of work: please ask before sharing anyone else's photo publicly, and we will remove any picture on request. For a fully private celebration, the line can simply ask guests not to post anything at all.
 
@@ -114,7 +114,7 @@ A line on your welcome sign does a lot of work: please ask before sharing anyone
 
 Under [section 35(2) of the Copyright Act 1968](https://classic.austlii.edu.au/au/legis/cth/consol_act/ca1968133/s35.html), the author of an artistic work is, by default, the owner of its copyright <!-- fact_15 -->; for a photo, that is generally the person who took it. The full Act is on the [Federal Register of Legislation](https://www.legislation.gov.au/C1968A00063/latest/text).
 
-A separate rule covers commissioned photos. Where someone agrees, for valuable consideration, to have a photograph taken for a private or domestic purpose, which includes a portrait of a wedding party, that person owns the copyright. <!-- fact_16 --> <!-- fact_18 --> The photographer can restrain uses outside a purpose made known at the time <!-- fact_17 -->, and the rule can be changed by agreement. <!-- fact_19 --> It turns on a paid agreement, which describes the photographer you hire, not a guest shooting on their own phone. <!-- fact_20 -->
+[Section 35(5)](https://classic.austlii.edu.au/au/legis/cth/consol_act/ca1968133/s35.html) covers commissioned photos. Where someone agrees, for valuable consideration, to have a photograph taken for a private or domestic purpose, which includes a portrait of a wedding party, that person owns the copyright. <!-- fact_16 --> <!-- fact_18 --> The photographer can restrain uses outside a purpose made known at the time <!-- fact_17 -->, and the rule can be changed by agreement. <!-- fact_19 --> It turns on a paid agreement, which describes the photographer you hire, not a guest shooting on their own phone. <!-- fact_20 -->
 
 In practice, ask a guest before you print, frame or post their photo, and read the usage and copyright clause in your photographer's contract before you sign.
 
@@ -160,7 +160,7 @@ If signal is uncertain, choose a tool that queues photos offline, or tell guests
 
 A welcome dinner, the wedding and a farewell lunch are three sets of memories. Ask whether uploads can sort into an album per event, or label the QR cards by day.
 
-Venue questions, guest communication and timing sit more easily with one Wedded Advisor, start to finish, as your single point of contact. Speak with our [Wedded Concierge](/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=wedding-photo-app&utm_content=primary) team about planning your destination wedding.
+Planning with us means one Wedded Advisor, start to finish, as your single point of contact. Speak with our [Wedded Concierge](/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=wedding-photo-app&utm_content=primary) team about planning your destination wedding.
 
 ## Frequently asked questions
 
