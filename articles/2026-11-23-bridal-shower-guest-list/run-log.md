@@ -46,3 +46,4 @@
   - **Wonderland Studio:** free, with a guest list, RSVPs (plus-ones, dietary) and guest grouping.
   - **Conflicts:** "one firm rule" vs a softer line for small faraway weddings; our pages disagree on shower timing (TIMING-CONFLICT; no timing rule stated).
 - **Stage 2:** writer launched.
+- **Stage 2 fast (writer):** DONE. 03-draft-v1.md. --check: 2,143 reader words (over), 0 dashes, 1 visible placeholder (move to open_items), no external domains. YAML valid: 29 claims, 33 link instances to 17 URLs (too many). No guest numbers or timing rules stated. Reviews launched.
