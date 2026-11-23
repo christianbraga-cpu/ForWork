@@ -11,3 +11,4 @@
 23:29 07b panel revise (enquiry 1.7); 7/7 edits applied -> 08-final.md
 23:30 09 CRO and 10 distribution complete
 23:30 final check pass 4.71, 0 edits; magazine utm_medium aligned to content (house format)
+23:33 11 package, link map, calendar row 87, backlinks-todo, final docx, run report complete
