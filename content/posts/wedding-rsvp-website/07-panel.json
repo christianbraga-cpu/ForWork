@@ -1,0 +1,403 @@
+{
+  "agent": "panel-chair",
+  "task_id": "wedding-rsvp-website",
+  "stage": "07b",
+  "status": "complete",
+  "round": 1,
+  "inputs_used": [
+    "CLAUDE.md",
+    "content/posts/wedding-rsvp-website/01-brief.json",
+    "content/posts/wedding-rsvp-website/05-draft-r2.md",
+    "content/posts/wedding-rsvp-website/07-icp/planner_couple.json",
+    "content/posts/wedding-rsvp-website/07-icp/funding_parent.json",
+    "content/posts/wedding-rsvp-website/07-icp/uhnw.json",
+    "content/posts/wedding-rsvp-website/07-icp/sceptic.json",
+    "content/posts/wedding-rsvp-website/07-icp/search_visitor.json",
+    "content-system/personas/*.yaml (weights: planner_couple 0.40, funding_parent 0.20, uhnw 0.20, sceptic 0.10, search_visitor 0.10)",
+    "content-system/brand/brand-facts.md",
+    "content-system/schemas/07-panel.schema.json"
+  ],
+  "payload": {
+    "personas_run": [
+      "planner_couple",
+      "funding_parent",
+      "uhnw",
+      "sceptic",
+      "search_visitor"
+    ],
+    "weights": {
+      "planner_couple": 0.4,
+      "funding_parent": 0.2,
+      "uhnw": 0.2,
+      "sceptic": 0.1,
+      "search_visitor": 0.1
+    },
+    "raw_scores": {
+      "planner_couple": {
+        "relevance_to_me": 4,
+        "trust": 4,
+        "clarity": 4,
+        "brand_feels_premium": 4,
+        "likelihood_to_enquire": 2
+      },
+      "funding_parent": {
+        "relevance_to_me": 2,
+        "trust": 4,
+        "clarity": 4,
+        "brand_feels_premium": 3,
+        "likelihood_to_enquire": 2
+      },
+      "uhnw": {
+        "relevance_to_me": 2,
+        "trust": 3,
+        "clarity": 4,
+        "brand_feels_premium": 3,
+        "likelihood_to_enquire": 1
+      },
+      "sceptic": {
+        "relevance_to_me": 3,
+        "trust": 4,
+        "clarity": 4,
+        "brand_feels_premium": 3,
+        "likelihood_to_enquire": 2
+      },
+      "search_visitor": {
+        "relevance_to_me": 4,
+        "trust": 4,
+        "clarity": 4,
+        "brand_feels_premium": 4,
+        "likelihood_to_enquire": 1
+      }
+    },
+    "weighted_scores": {
+      "relevance_to_me": 3.1,
+      "trust": 3.8,
+      "clarity": 4.0,
+      "brand_feels_premium": 3.5,
+      "likelihood_to_enquire": 1.7
+    },
+    "weighted_enquiry_likelihood": 1.7,
+    "must_fix": [
+      {
+        "issue": "Intro opens on mood ('the quiet workhorse of a destination wedding') before saying what an RSVP website is.",
+        "flagged_by": [
+          "search_visitor",
+          "sceptic",
+          "uhnw"
+        ],
+        "owner": "luxury-writer",
+        "fix": "E01: one-line definition first, 'quiet workhorse' trimmed; the aunt in Perth line (praised by four personas) kept."
+      },
+      {
+        "issue": "Wonderland Studio is not held to the article's own checklist; readers ask whether it costs anything.",
+        "flagged_by": [
+          "sceptic",
+          "search_visitor",
+          "planner_couple"
+        ],
+        "owner": "luxury-writer",
+        "fix": "E11: 'Run the same tier questions on it as on any other tool.' Says nothing about whether it costs anything (user constraint)."
+      }
+    ],
+    "should_fix": [
+      {
+        "issue": "Mid-section Advisor line ('Your Wedded Advisor ...') assumes the reader is already a client; 'somewhere useful to go' is vague and reads as an ad break.",
+        "flagged_by": [
+          "planner_couple",
+          "sceptic"
+        ],
+        "owner": "luxury-writer",
+        "fix": "E05: 'If you work with a Wedded Advisor, they plan venue, travel, vendors and payments with you.' (brand-facts line 30). Planner's 'room requests you can pass straight to them' rejected: implies the Advisor takes room requests."
+      },
+      {
+        "issue": "Primary Concierge CTA lands straight after the Privacy Act paragraph, mid-information.",
+        "flagged_by": [
+          "planner_couple",
+          "sceptic"
+        ],
+        "owner": "cro-specialist",
+        "fix": "E06 and E07: move the utm_content=primary paragraph word for word to the end of 'Exporting numbers for your venue and caterer'. Sceptic's delete rejected (no Concierge CTA may be deleted)."
+      },
+      {
+        "issue": "Closing Advisor line goes generic ('start to finish') at the decision point; money and accountability questions unanswered.",
+        "flagged_by": [
+          "planner_couple",
+          "funding_parent",
+          "sceptic"
+        ],
+        "owner": "luxury-writer",
+        "fix": "E13: add 'who plans venue, travel, vendors and payments with you, with the fee agreed in writing before any work begins' (brand-facts lines 25, 27, 30). Fee amount and commission model are deferred in brand-facts, so not a must-fix and not stated."
+      }
+    ],
+    "consider": [
+      {
+        "issue": "Name the five kinds in the intro so the answer shows without scrolling.",
+        "flagged_by": [
+          "search_visitor"
+        ],
+        "owner": "luxury-writer",
+        "fix": "E02 (accepted)."
+      },
+      {
+        "issue": "No access or mobility question on the form.",
+        "flagged_by": [
+          "funding_parent"
+        ],
+        "owner": "luxury-writer",
+        "fix": "E09 (accepted): '- Any access or mobility needs we should plan for'. Not described as health information."
+      },
+      {
+        "issue": "Some guests' travel details should not sit in a shared form.",
+        "flagged_by": [
+          "uhnw"
+        ],
+        "owner": "luxury-writer",
+        "fix": "E04 (accepted): leave them off the form and gather them directly."
+      },
+      {
+        "issue": "Step 4 reads as if the couple works alone; family and assistants also see the list.",
+        "flagged_by": [
+          "uhnw"
+        ],
+        "owner": "luxury-writer",
+        "fix": "E10 (accepted): 'including family members or assistants helping you'."
+      },
+      {
+        "issue": "Offline reply answer is cold and does not speak to older relatives.",
+        "flagged_by": [
+          "funding_parent"
+        ],
+        "owner": "luxury-writer",
+        "fix": "E12 (accepted)."
+      },
+      {
+        "issue": "Tier intro sentence ('Each can decide whether a no-cost tier will see you through...') reads as package language.",
+        "flagged_by": [
+          "uhnw"
+        ],
+        "owner": "luxury-writer",
+        "fix": "E03 (accepted as a trim; also pays for the words added)."
+      },
+      {
+        "issue": "'A graceful shortcut' is emotional wording.",
+        "flagged_by": [
+          "sceptic"
+        ],
+        "owner": "luxury-writer",
+        "fix": "E08 (accepted): 'a handy shortcut'."
+      },
+      {
+        "issue": "Tier heading does not match how people search.",
+        "flagged_by": [
+          "search_visitor"
+        ],
+        "owner": "luxury-writer",
+        "fix": "Rejected: suggested heading has a colon; a 'no-cost' version needs a hyphen. Heading kept."
+      },
+      {
+        "issue": "Carry privacy tone into the closing ('a guest list deserves the same discretion...').",
+        "flagged_by": [
+          "uhnw"
+        ],
+        "owner": "luxury-writer",
+        "fix": "Declined for word budget; the privacy section already carries this."
+      },
+      {
+        "issue": "Page shows no last-updated date.",
+        "flagged_by": [
+          "search_visitor"
+        ],
+        "owner": "cro-specialist",
+        "fix": "No copy edit; check the CMS shows the updated date on publish."
+      },
+      {
+        "issue": "Wonderland Studio makes the brand feel self-service.",
+        "flagged_by": [
+          "uhnw"
+        ],
+        "owner": "luxury-writer",
+        "fix": "Rejected: see conflicts_resolved."
+      }
+    ],
+    "keep": [
+      "Intro guest geography: 'your aunt in Perth, your school friends in London and your colleague in Singapore' (planner_couple, funding_parent, uhnw, search_visitor).",
+      "Comparison table with a Trade-off column for every kind (planner_couple, sceptic, search_visitor, funding_parent).",
+      "Tier checklist, including 'Will your guests see advertising on the page?' and the password protection question (sceptic, planner_couple, search_visitor, uhnw).",
+      "'If the answers that matter sit behind a paid tier, upgrade early rather than rebuild halfway through.' (planner_couple, funding_parent).",
+      "'A guest may be at the ceremony but land too late for the welcome dinner...' (planner_couple).",
+      "Reply date written with a date and a time zone; the translated note for family (planner_couple, uhnw).",
+      "Dated, OAIC-sourced privacy section and 'Whatever the law asks, good manners ask more...' (planner_couple, sceptic, funding_parent, uhnw, search_visitor).",
+      "Print the web address beside the QR code; ACSC sourcing (funding_parent, planner_couple, sceptic, search_visitor).",
+      "'Every extra question is a reason to put the reply off.' and the short form list (search_visitor).",
+      "Step 5 test case: a couple with a child and a guest who declines one event (sceptic).",
+      "FAQ 'Yes, on a no-cost tier...' straight answer (sceptic, search_visitor).",
+      "Wonderland Studio named honestly as 'our planning app for seating charts and RSVPs' without overselling (planner_couple, sceptic, search_visitor).",
+      "'One Wedded Advisor, start to finish, as a single point of contact' (funding_parent, uhnw)."
+    ],
+    "conflicts_resolved": [
+      "Platform names wanted (planner_couple, sceptic, search_visitor): rejected. The user chose no platform names; the five kinds plus the checklist is the brief's angle.",
+      "Tier and no-cost framing: uhnw finds it budget talk, while sceptic and search_visitor rate the no-cost FAQ and checklist as the most useful part. The primary persona (planner_couple) values the checklist, so it stays; only the tier intro sentence is trimmed.",
+      "Wonderland Studio: uhnw reads it as self-service; planner_couple, sceptic and search_visitor accept it because it is labelled as ours. Kept; the brief requires it as one of the five kinds.",
+      "Mid-article CTA: sceptic wants it deleted, planner_couple wants it moved. Moved (no CTA may be deleted, each UTM stays once).",
+      "Privacy section density: search_visitor finds it heavy, planner_couple (primary) values the dating and sourcing. Kept as the editor fixed it (facts 01 to 06).",
+      "Advisor scope: planner_couple asks whether the Advisor uses RSVP arrival dates for transfers and room blocks, and uhnw asks whether the team can run RSVPs for them. Not stated: brand-facts does not support it and the user ruled it out. Phone line, deposits, fee model, scale and real weddings are deferred in brand-facts.md, so they are open questions, not must-fixes."
+    ],
+    "gate": "revise",
+    "gate_reason": "Weighted enquiry likelihood 1.7 is below 3.8 and two must-fix items remain. The low score is mostly structural (a self-serve tools guide read by non-planning personas, and deferred fee and service details), so the edits target trust and clarity rather than chasing the threshold. Not a stop: the piece meets the brief.",
+    "edit_target": "content/posts/wedding-rsvp-website/05-draft-r2.md",
+    "edit_order": [
+      "E01",
+      "E02",
+      "E03",
+      "E04",
+      "E05",
+      "E06",
+      "E07",
+      "E08",
+      "E09",
+      "E10",
+      "E11",
+      "E12",
+      "E13"
+    ],
+    "edits": [
+      {
+        "id": "E01",
+        "old": "A wedding RSVP website is the quiet workhorse of a destination wedding. It is where your aunt in Perth",
+        "new": "A wedding RSVP website is a page or form where guests reply to your invitation online. For a destination wedding, it is where your aunt in Perth"
+      },
+      {
+        "id": "E02",
+        "old": "This guide compares the five kinds of RSVP website, the questions worth asking",
+        "new": "This guide compares the five kinds of RSVP website (all-in-one wedding website, standalone RSVP tool, invitation platform, planning app, and DIY form plus spreadsheet), the questions worth asking"
+      },
+      {
+        "id": "E03",
+        "old": "Plans change, so run the same questions on any tool you are considering. Each can decide whether a no-cost tier will see you through or a paid tier is worth it.",
+        "new": "Plans change, so run the same questions on any tool you are considering."
+      },
+      {
+        "id": "E04",
+        "old": "Those answers shape your numbers for the welcome dinner and the days around it.",
+        "new": "Those answers shape your numbers for the welcome dinner and the days around it. Where a guest's travel plans should stay private, leave them off the form and gather them directly."
+      },
+      {
+        "id": "E05",
+        "old": "Your Wedded Advisor plans venue, travel, vendors and payments with you, so these answers have somewhere useful to go.",
+        "new": "If you work with a Wedded Advisor, they plan venue, travel, vendors and payments with you."
+      },
+      {
+        "id": "E06",
+        "old": "[wedding photo app](/wedding-tools/wedding-photo-app).\n\nWeighing several events and a guest list across time zones? Talk to our [Wedded Concierge](/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=wedding-rsvp-website&utm_content=primary) team about the weekend you have in mind.",
+        "new": "[wedding photo app](/wedding-tools/wedding-photo-app)."
+      },
+      {
+        "id": "E07",
+        "old": "is a useful read.",
+        "new": "is a useful read.\n\nWeighing several events and a guest list across time zones? Talk to our [Wedded Concierge](/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=wedding-rsvp-website&utm_content=primary) team about the weekend you have in mind."
+      },
+      {
+        "id": "E08",
+        "old": "It is a graceful shortcut, with one caution.",
+        "new": "It is a handy shortcut, with one caution."
+      },
+      {
+        "id": "E09",
+        "old": "- Arrival and departure dates, and where they are staying\n",
+        "new": "- Arrival and departure dates, and where they are staying\n- Any access or mobility needs we should plan for\n"
+      },
+      {
+        "id": "E10",
+        "old": "decide who on your side can see the replies.",
+        "new": "decide who on your side, including family members or assistants helping you, can see the replies."
+      },
+      {
+        "id": "E11",
+        "old": "for couples who would like their replies and their seating chart in the same place.",
+        "new": "for couples who would like their replies and their seating chart in the same place. Run the same tier questions on it as on any other tool."
+      },
+      {
+        "id": "E12",
+        "old": "Yes. Offer a phone number or email for guests who would rather reply another way, and add their answers yourself.",
+        "new": "Yes, as long as there is a gentle alternative. For older relatives, or anyone who would rather not reply online, offer a phone number or email and add their answers yourself."
+      },
+      {
+        "id": "E13",
+        "old": "one Wedded Advisor, start to finish, as a single point of contact.",
+        "new": "one Wedded Advisor, start to finish, as a single point of contact who plans venue, travel, vendors and payments with you, with the fee agreed in writing before any work begins."
+      }
+    ],
+    "word_count_check": {
+      "r2": 2294,
+      "after_edits": 2371,
+      "net_added": 77,
+      "limit": [
+        1800,
+        2400
+      ]
+    }
+  },
+  "self_qa": {
+    "checks": [
+      {
+        "check": "Weighted maths uses all five weights (sum 1.0)",
+        "pass": true
+      },
+      {
+        "check": "Every edit 'old' occurs exactly once in 05-draft-r2.md and still once at apply time in edit_order",
+        "pass": true
+      },
+      {
+        "check": "No platform names, prices, 'free', 'best', statistics, research talk, 'last dance', em or en dashes in any new text",
+        "pass": true
+      },
+      {
+        "check": "Advisor lines only from brand-facts lines 25, 27 and 30; nothing on room requests, transfers, RSVP set-up or chasing",
+        "pass": true
+      },
+      {
+        "check": "Wonderland Studio only as our planning app for seating charts and RSVPs; nothing on cost",
+        "pass": true
+      },
+      {
+        "check": "Headings unchanged; 4 takeaways unchanged; each Concierge UTM (primary, secondary, closing) still appears once",
+        "pass": true
+      },
+      {
+        "check": "Word count after edits 2,371 (within 1,800 to 2,400; net +77)",
+        "pass": true,
+        "note": "Close to the ceiling; writer should not add beyond these edits."
+      },
+      {
+        "check": "No new facts; privacy facts 01 to 06 untouched; dietary details not called health information",
+        "pass": true
+      }
+    ],
+    "confidence": 0.8
+  },
+  "open_questions": [
+    {
+      "to": "orchestrator",
+      "question": "Funding parent and UHNW readers ask about a phone line, deposits, confidential first conversations, scale (200 to 400 guests) and real multi-event weddings. All are deferred in brand-facts.md; can the business confirm any for future posts?",
+      "blocking": false
+    },
+    {
+      "to": "orchestrator",
+      "question": "Weighted enquiry likelihood is 1.7 against a 3.8 gate. For a self-serve tools guide this is expected; one revise round is allowed, so after these edits the run should proceed to 08-final rather than loop.",
+      "blocking": false
+    }
+  ],
+  "assumptions": [
+    "Persona weights are provisional (not CRM-calibrated).",
+    "Reader quotes were written against 05-draft.md; all edits were rewritten to match 05-draft-r2.md text (room blocks already removed by the editor).",
+    "Word count counts visible body text, excluding front matter, HTML comments and link URLs."
+  ],
+  "verify_items": [],
+  "tools_used": [
+    "Bash",
+    "Read"
+  ],
+  "next_agent": [
+    "luxury-writer"
+  ]
+}

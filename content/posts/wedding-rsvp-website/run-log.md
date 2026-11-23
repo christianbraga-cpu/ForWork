@@ -5,3 +5,5 @@
 - 02:40 02 SEO done: AU 720 / US 3,600; page not ranking; not moved; process guide now /expert-advice/wedding-rsvp; report.md saved by orchestrator.
 - 02:43 05 first draft about 2,364 words; orchestrator replaced a Wedded Privileges and room-block Advisor line (deferred business details) with the brand-facts line 30 wording; docx sent.
 - 02:45 06 editor pass_with_edits 4.0; 8 of 8 applied -> r2; funding_parent envelope fixed.
+- 02:47 07b panel-chair revise; weighted enquiry 1.7; 2 must_fix, 3 should_fix; 13 edits against r2 (net +77 words, ~2,371)
+- 02:47 07b panel revise (enquiry 1.7 v 3.8; deferred business details); 13 of 13 applied -> 08-final.md.
