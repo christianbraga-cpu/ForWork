@@ -42,3 +42,7 @@
   - **Link map:** new "Bridal shower and guest list" section added.
 - **Decision for the user (SIBLING-SOFTEN):** the men sibling's FAQ calls "shower guests must be wedding guests" "the one firm rule"; this piece calls it a convention. Soften the sibling after publish?
 - **LINK-CHECK:** /wedding-tools/online-wedding-shower-invitations (Zoho says published; not in the site map).
+- **Stage 1 fast (research):** DONE. 36 facts, all from our live pages and the brand profile; no legal facts, no prices. Third-party sources our pages mention (Vogue, The Knot, a US planner) are flagged so they are not cited.
+  - **Wonderland Studio:** free, with a guest list, RSVPs (plus-ones, dietary) and guest grouping.
+  - **Conflicts:** "one firm rule" vs a softer line for small faraway weddings; our pages disagree on shower timing (TIMING-CONFLICT; no timing rule stated).
+- **Stage 2:** writer launched.
