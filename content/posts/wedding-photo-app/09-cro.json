@@ -1,0 +1,139 @@
+{
+  "agent": "cro-specialist",
+  "task_id": "wedding-photo-app",
+  "stage": "09",
+  "status": "complete",
+  "round": 1,
+  "inputs_used": [
+    "CLAUDE.md",
+    "content/posts/wedding-photo-app/01-brief.json (journey_stage, goal, service_link)",
+    "content/posts/wedding-photo-app/07-panel.json (weighted_enquiry_likelihood, should_fix secondary CTA move, close_advisor edit, open_questions)",
+    "content/posts/wedding-photo-app/07-icp/*.json (cta_reaction, unanswered_questions)",
+    "content/posts/wedding-photo-app/08-final.md",
+    "content-system/brand/services.md (CTA rules, UTM format)",
+    "content-system/brand/brand-facts.md (lines 19 to 30)",
+    "content-system/seo/link-map.csv (/wonderland-concierge, /magazine, /wonderland-studio)",
+    "content-system/schemas/09-cro.schema.json",
+    "content-system/schemas/envelope.schema.json",
+    "content/posts/average-cost-wedding-photographer/09-cro.json (format model)"
+  ],
+  "self_qa": {
+    "checks": [
+      {
+        "check": "Primary CTA 6 words or fewer, no 'click here', no exclamation mark",
+        "pass": true,
+        "note": "Anchor 'Wedded Concierge' (2 words), line 163."
+      },
+      {
+        "check": "utm_content primary, secondary, closing, magnet each appear exactly once in 08-final.md, all with utm_campaign=wedding-photo-app",
+        "pass": true,
+        "note": "grep on 08-final.md: secondary line 145, primary line 163, closing and magnet line 193."
+      },
+      {
+        "check": "UTMs only on /wonderland-concierge (3) and /magazine (1); /wonderland-studio linked untagged as our planning app",
+        "pass": true,
+        "note": "All three targets exist in link-map.csv. /wonderland-studio (line 127) is described only as our planning app for seating charts and RSVPs, with no photo feature."
+      },
+      {
+        "check": "All /wonderland-concierge anchors read 'Wedded Concierge'",
+        "pass": true,
+        "note": "Lines 145, 163 and 193."
+      },
+      {
+        "check": "Secondary CTA sits after the download and back up step, as the panel moved it",
+        "pass": true,
+        "note": "Line 145 follows 'minus anything a guest asked you to remove.' at the end of 'After the wedding, download, back up and share'."
+      },
+      {
+        "check": "Lead magnet: booking checklist has no page, so exists false and not placed",
+        "pass": true,
+        "note": "Recorded as a suggestion only. The existing /magazine link is recorded as it stands under magazine_link."
+      },
+      {
+        "check": "CTA payload free of prices, fees, availability, 'free', 'last dance', em dashes and new CTAs or markers; 08-final.md not edited",
+        "pass": true,
+        "note": "Subtexts use only brand-facts lines 25, 26 and 28 (single point of contact, start to finish; time zone; inclusions confirmed in writing). 08-final.md read only; no em dashes in it."
+      }
+    ],
+    "confidence": 0.85
+  },
+  "open_questions": [
+    {
+      "to": "orchestrator",
+      "question": "08-final.md has no <!-- CTA: primary --> marker; placements document the existing inline links. No marker proposed.",
+      "blocking": false
+    },
+    {
+      "to": "orchestrator",
+      "question": "The primary CTA lead-in (line 163) says 'Venue questions, guest communication and timing sit more easily with one Wedded Advisor'. The panel rejected that same task list for the close as Advisor tasks not confirmed in brand-facts lines 19 to 30. The editor may want to trim it to 'one Wedded Advisor, start to finish, as your single point of contact' (line 25). No copy change made here.",
+      "blocking": false
+    },
+    {
+      "to": "orchestrator",
+      "question": "Placement: the primary CTA follows the destination section as the brief requires, but planner_couple, search_visitor and sceptic all said a photo app search is too low-stakes to prompt a Concierge enquiry (weighted enquiry likelihood 1.7). Placement cannot close that gap; it is driven by deferred business details (fee model, commissions, a named Advisor, a real wedding) already raised to Nic in 07-panel.json. Record the shortfall in the run report.",
+      "blocking": false
+    },
+    {
+      "to": "orchestrator",
+      "question": "Placement: the closing CTA and the magazine link share one sentence (line 193). Two persona reactions quoted that sentence; neither objected to it, but it is the only spot where the magnet appears. Left as is.",
+      "blocking": false
+    },
+    {
+      "to": "Nic",
+      "question": "A booking checklist (photo app set-up checklist plus questions for the venue and photographer) would suit this post's readers better than the magazine, but it has no page. Worth adding to the backlog?",
+      "blocking": false
+    }
+  ],
+  "assumptions": [
+    "Copy uses relative links; recorded here with the weddedwonderland.com domain for tracking.",
+    "Subtexts are reporting notes for the CTAs as they stand; no copy changes are proposed.",
+    "The /magazine link is recorded under magazine_link because the lead_magnet field holds the better-matched booking checklist, which does not exist yet."
+  ],
+  "verify_items": [],
+  "tools_used": [
+    "Bash (grep, sed, python3 -I)"
+  ],
+  "payload": {
+    "journey_stage": "planning",
+    "primary_cta": {
+      "text": "Wedded Concierge",
+      "subtext": "One Wedded Advisor, start to finish, as your single point of contact.",
+      "link": "https://weddedwonderland.com/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=wedding-photo-app&utm_content=primary",
+      "placement": "Existing inline link on line 163, closing the 'Guest photos at a destination wedding' section, after the venue Wi-Fi questions, offline uploads across time zones and multi-day celebrations, where the reader has just seen how many things must be asked of a venue abroad. The brief places the primary after this section. Unchanged."
+    },
+    "secondary_cta": {
+      "text": "Wedded Concierge",
+      "subtext": "Your Wedded Advisor works in your time zone.",
+      "link": "https://weddedwonderland.com/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=wedding-photo-app&utm_content=secondary",
+      "placement": "Existing line 145, end of the setup steps after 'After the wedding, download, back up and share', where the panel moved it (should_fix, wording unchanged) so it no longer interrupts the steps. Unchanged."
+    },
+    "closing_cta": {
+      "text": "Wedded Concierge",
+      "subtext": "Your Wedded Advisor confirms inclusions in writing before you commit.",
+      "link": "https://weddedwonderland.com/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=wedding-photo-app&utm_content=closing",
+      "placement": "Existing closing paragraph line 193 under 'Planning the rest of the day', directly before the magazine link. Unchanged."
+    },
+    "magazine_link": {
+      "text": "our magazine",
+      "link": "https://weddedwonderland.com/magazine?utm_source=blog&utm_medium=content&utm_campaign=wedding-photo-app&utm_content=magnet",
+      "placement": "Existing closing paragraph line 193, after the closing CTA, for readers still gathering ideas. Unchanged."
+    },
+    "lead_magnet": {
+      "name": "Booking checklist: guest photo app set-up checklist, plus questions for the venue and the photographer",
+      "link": "",
+      "placement": "Not placed. No page exists on the site.",
+      "exists": false
+    },
+    "tracking": [
+      "https://weddedwonderland.com/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=wedding-photo-app&utm_content=primary",
+      "https://weddedwonderland.com/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=wedding-photo-app&utm_content=secondary",
+      "https://weddedwonderland.com/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=wedding-photo-app&utm_content=closing",
+      "https://weddedwonderland.com/magazine?utm_source=blog&utm_medium=content&utm_campaign=wedding-photo-app&utm_content=magnet"
+    ],
+    "copy_changes": [],
+    "rationale": "Brief journey_stage is 'planning'. The commercial question peaks at the end of the destination section, where the reader has a list of questions to put to a venue abroad and guests spread across time zones, so the primary CTA stays there as the brief sets. The secondary sits after the setup steps, where the panel moved it, and the closing CTA ends the post with the magazine for readers not ready to enquire. Subtexts use only brand-facts lines 25, 26 and 28: single point of contact start to finish, the Advisor's time zone, and inclusions confirmed in writing. No money, fee, availability or booking-status wording is used. Wonderland Studio is recorded only as the untagged link to our planning app for seating charts and RSVPs. Persona reactions were 'no' or 'maybe'; the 'maybe' (funding_parent) wanted fees and contracts first, which are deferred business details and cannot be added before the CTA. The best-matched magnet is a booking checklist (photo app set-up steps and questions for the venue and photographer, drawn from the post's checklist and venue questions), but it has no page, so it is a backlog suggestion only and not placed."
+  },
+  "next_agent": [
+    "distribution"
+  ]
+}
