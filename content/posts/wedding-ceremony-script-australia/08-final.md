@@ -173,7 +173,7 @@ Two ways to arrange it:
 
 Read your personal vows aloud to your celebrant before the day, so they can confirm the legal line is intact around them. For examples, see our [short wedding vows](/expert-advice/short-wedding-vows); for the method, read [how to write your own wedding vows](/how-to-write-wedding-vows).
 
-For settings and styling that suit the ceremony you are writing, the [Wedded Wonderland magazine](/magazine?utm_source=blog&utm_medium=lead_magnet&utm_campaign=wedding-ceremony-script-australia&utm_content=magnet) collects ideas from weddings at home and abroad.
+For settings and styling that suit the ceremony you are writing, the [Wedded Wonderland magazine](/magazine?utm_source=blog&utm_medium=content&utm_campaign=wedding-ceremony-script-australia&utm_content=magnet) collects ideas from weddings at home and abroad.
 
 ## Witnesses, the signing and the paperwork on the day
 
