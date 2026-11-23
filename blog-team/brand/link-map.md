@@ -342,6 +342,9 @@ Hub: `/style-advice/celebrity-engagement-rings` (in production). Spokes:
 | `/this-is-how-much-an-average-wedding-costs-in-australia` | Average Wedding Cost in Australia and What Drives It (merge, 20 Nov 2026) | average wedding cost australia | being refreshed; kept URL |
 | `/the-average-cost-of-an-australian-wedding-in-2020`, `/the-cost-of-a-wedding-in-australia-2019` | Old Australian cost pages | merged into the kept URL above; do not link; 301 after publish (user approval) |
 
+| `/destination-weddings/how-much-is-a-destination-wedding` | How much is a destination wedding | how much is a destination wedding (live per Firecrawl 23 Nov 2026; duplicates /expert-advice/average-destination-wedding-cost-by-region; do not link until the user decides merge or 301) |
+| `/destination-weddings/best-value-luxury-destination-wedding` | Best Value Luxury Destination Weddings Ranked (WW-269) | best value luxury, best value luxury destination wedding | DRAFT (23 Nov 2026; URL was 404, new post) |
+
 Planned (not live, retro-links after publish): WW-322, WW-335, N-107.
 
 ## Wedding planning checklist and packing pages (Firecrawl map, 19 Nov 2026)

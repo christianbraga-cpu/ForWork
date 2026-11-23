@@ -21,3 +21,11 @@
 - **Decision (default):** this page answers "where is luxury best value". It links to the live /expert-advice/average-destination-wedding-cost-by-region and the cost guides for averages. "Value" means quality per dollar at the luxury end, not cheap.
 
 ## Stages
+- **Stage 0 fast (strategist):** DONE.
+  - **URL:** 404, so a new post. Zoho: WC3-T567, plan ref WW-269, In Progress. Zoho files it under the "Destination Wedding Guide 2026" cluster. **Decision (default):** keep the user's "average wedding cost" cluster and flag the mismatch (CLUSTER-CHECK).
+  - **Volumes (AU):** "best destination wedding locations" 30; the other four none (Zoho plan says US 450).
+  - **SERP:** a directory, an old US video, Pinterest, a quote form and old roundups. Nobody ranks by luxury value with a stated method.
+  - **Cannibalisation:** partial only. Found live and not in link-map: /destination-weddings/how-much-is-a-destination-wedding, which duplicates the by-region page (DUP-PAGE, user decision; not linked). Added to link-map.
+  - **New site conflict:** our two Lake Como pages give different 60-guest figures (Nic to pick).
+  - **Brief:** 8 H2s, 7 destination cards.
+- **Stage 1:** the researcher is held on an MCP permission prompt.
