@@ -8,3 +8,5 @@
 - 05:42 06 editor pass_with_edits 4.21; 7 of 7 applied -> r2 (incl. secondary CTA lead-in trimmed to brand facts).
 - 07b panel-chair revise: weighted enquiry 1.8 (scores relevance 2.6, trust 3.7, clarity 4.0, premium 3.6); 2 must_fix (stationer section, who sets out), 15 edits on r2, net about +9 words.
 - 05:45 07b panel revise (enquiry 1.8 v 3.8; ideas post, deferred business details); 15 of 15 applied -> 08-final.md.
+- 05:47 10 distribution complete: 3 pins (on hold until slots licensed), 8-slide carousel, newsletter; validated.
+- 05:46 Final check pass_with_edits 4.21; 2 of 2 applied. 09 CRO done.

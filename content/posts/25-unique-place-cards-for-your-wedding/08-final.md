@@ -64,7 +64,7 @@ A lemon, pear or fig with a small tag on a ribbon suits a summer table or a coas
 
 A biscuit iced with a name, a macaron in a small box, or a sweet wrapped with a tag doubles as dessert. Heat and humidity soften icing and chocolate, so check where the cards will wait before service.
 
-Food Standards Australia New Zealand notes that a food allergy reaction can include anaphylaxis, and in Australia [the Food Standards Code requires](https://www.foodstandards.gov.au/business/labelling/allergen-labelling) certain foods and substances to be declared when they are present as ingredients. <!-- fact_02 --> For food that doesn't carry a label, allergen declarations must be displayed in connection with the food or provided on request. <!-- fact_01 --> Give your caterer the list of what is in each edible card and of guests with allergies. For a wedding overseas, ask the venue how its kitchen handles allergens. This is general information rather than legal advice.
+Food Standards Australia New Zealand notes that a food allergy reaction can include anaphylaxis, and in Australia [the Food Standards Code requires](https://www.foodstandards.gov.au/business/labelling/allergen-labelling) certain foods and substances to be declared when they are present as ingredients. <!-- fact_02 --> For food that isn't required to carry a label, allergen declarations must be displayed in connection with the food or provided on request. <!-- fact_01 --> Give your caterer the list of what is in each edible card and of guests with allergies. For a wedding overseas, ask the venue how its kitchen handles allergens. This is general information rather than legal advice.
 
 ## Keepsake Place Cards That Double as Favours
 
@@ -144,7 +144,7 @@ A menu printed with each guest's name at the top doubles as the place card at a 
 
 ### Spelling, titles and preferred names
 
-Take every name from one source: your finished seating plan. Build the plan in [Wonderland Studio](/wonderland-studio), our planning app for seating charts and RSVPs, and send your stationer the names from there. Check titles and honorifics, preferred names and every surname, and agree early how senior family members are addressed. If you are still placing guests, read [how to make a wedding seating chart](/expert-advice/wedding-seating-chart) first.
+Take every name from one source: your finished seating plan. Build the plan in [Wonderland Studio](/wonderland-studio), our planning app for seating charts and RSVPs, and send your stationer the names from that plan. Check titles and honorifics, preferred names and every surname, and agree early how senior family members are addressed. If you are still placing guests, read [how to make a wedding seating chart](/expert-advice/wedding-seating-chart) first.
 
 ### Legibility in evening light
 
