@@ -41,3 +41,4 @@
   - Destinations without totals are not ranked.
   - The ranking is presented as our editorial judgement with stated criteria. Nic approves the method (RANKING-METHOD).
 - **Stage 2:** writer launched.
+- **Stage 2 fast (writer):** DONE. 03-draft-v1.md. --check: 2,792 reader words (over), 0 dashes, 0 placeholders, Smartraveller inline. YAML valid: 33 claims, 24 links. Ranking: 1 Santorini, 2 Fiji, 3 Dubai (per person), 4 Maldives, 5 Amalfi, 6 Lake Como (no figure); Bali outside; Italy overall not ranked. Reviews launched.
