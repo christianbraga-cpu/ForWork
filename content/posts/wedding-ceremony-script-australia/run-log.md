@@ -8,3 +8,4 @@
 23:22 05 draft complete (~2,490 words); first-draft docx built
 23:24 07 readers complete (5, all valid)
 23:26 06 editor pass_with_edits 4.43; 26/26 applied -> 05-draft-r2.md; Concierge utm_medium aligned to brief (content)
+23:29 07b panel revise (enquiry 1.7); 7/7 edits applied -> 08-final.md
