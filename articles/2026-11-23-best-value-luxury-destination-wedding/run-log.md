@@ -52,3 +52,4 @@
   - Each card is ranked on destination merits "in our view", with one headline figure.
   - SEO title "Best Value Luxury Destination Weddings Ranked With Costs" (56 characters; "by Region" was inaccurate).
   - The Fiji cost, Dubai cost and hidden-costs URLs are added to link-map (live per Firecrawl).
+- **Stage 4 fast (writer v2):** DONE. 03-draft-v2.md: 2,198 reader words, 0 dashes, 0 placeholders, Smartraveller inline. YAML valid: 30 claims, 25 links. Five cards: Santorini, Fiji, Maldives, Amalfi, Lake Como (no figure). Dubai is one unranked line with no figures; Bali is outside the ranking; the Italy hub and Puglia are linked. The copy editor relinks the planner fee sentence and trims "luxury" repeats.
