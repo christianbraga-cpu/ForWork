@@ -54,3 +54,15 @@
   - Merged request: 04-reviews/v1/merged.md. Duplicate link-map row removed.
 - **Decision (default):** people at home not invited abroad get concrete options framed as our suggestions (a relaxed gathering after you are home, no gifts expected) plus "talk it through with your host". "Sources current as at" is dropped (no official sources on etiquette).
 - **Stage 4 fast (writer v2):** DONE. 03-draft-v2.md: 1,914 reader words, 0 dashes, 0 placeholders. YAML valid: 32 claims (24 sourced, 8 advice), 16 links across 15 URLs. All 19 items applied. Options for people at home not invited abroad added as advice; plus-ones as advice; Studio wording matches live copy.
+- **Stage 6 fast (copy editor):** DONE. final.md 1,914 reader words, 0 dashes, 0 placeholders; publish-package.json valid (17 links incl. CTA); chrome-upload-prompt.md is draft only and creates a new post after a slug check; article.docx built.
+
+## Must-fix before publish
+1. NEW-URL: the URL was 404. Create a new post (Zoho WC3-T983, TK-068, due 24 Nov).
+2. RETRO-LINK: add a link from /should-men-be-invited-to-the-bridal-shower to this page.
+3. Decisions for the user:
+   - SIBLING-SOFTEN: the sibling calls "shower guests are wedding guests" "the one firm rule".
+   - SIBLING-FAQ: consider removing that question from the sibling's FAQ schema.
+4. DESIGN-PDF: printable checklist.
+5. TIMING-CONFLICT: our pages disagree on shower timing.
+6. LINK-CHECK (incl. /wedding-tools/online-wedding-shower-invitations, not linked), AUTHOR, IMAGE-RIGHTS, CMS-URL.
+No prices, so nothing for Nic.
