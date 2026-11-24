@@ -109,7 +109,6 @@ Europe in August means dinner outdoors and guests ready for a long weekend, at t
 
 For more planning reading, browse the [Wedded Wonderland magazine](/magazine?utm_source=blog&utm_medium=content&utm_campaign=wedding-destinations-august&utm_content=magnet).
 
-<!-- LEAD MAGNET (unchanged per 09-cro.json) -->
 
 ## Southern winter escapes in August
 
@@ -186,8 +185,6 @@ South of the equator, August trades Europe's heat for wind, showers and, in New 
 
 Weighing a terrace in Europe against a beach closer to home? Talk it through with [Wedded Concierge](/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=wedding-destinations-august&utm_content=primary).
 
-<!-- CTA BLOCK: primary: the CMS CTA block (text "Wedded Concierge", subtext "Weighing a terrace in Europe against a beach closer to home? Talk it through with Wedded Concierge.", link /wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=wedding-destinations-august&utm_content=primary) goes here if the template uses one, replacing or wrapping the sentence above so the primary link appears once, per 09-cro.json. 08-final.md had no <!-- CTA: primary --> marker, so nothing was replaced. -->
-
 ## What to plan for an August wedding abroad
 
 ### Peak season and booking
@@ -212,7 +209,6 @@ For the full sequence, follow [how to plan a destination wedding step by step](/
 
 When you are ready to turn a shortlist into dates and venues, start with [Wedded Concierge](/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=wedding-destinations-august&utm_content=secondary).
 
-<!-- CTA INLINE: secondary (unchanged per 09-cro.json) -->
 
 ## Frequently asked questions
 
@@ -242,4 +238,3 @@ Whether your August is a Riviera dinner or a winter celebration in New Zealand, 
 
 Tell us your date, your guest list, any privacy needs and anyone who needs extra care getting there, and begin with [Wedded Concierge](/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=wedding-destinations-august&utm_content=closing).
 
-<!-- CTA INLINE: closing (unchanged per 09-cro.json) -->

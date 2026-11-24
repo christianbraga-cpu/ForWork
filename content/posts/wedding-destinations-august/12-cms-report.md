@@ -72,7 +72,7 @@ None. Nothing was uploaded, so there is no preview to capture.
 ## Mismatches and open points
 
 - Field map not mapped, so no CMS labels could be compared with the package. Run `/wedded-cms-discovery` first.
-- `04-images.json` was written before `02-seo.json` and `03-source-pack.json` existed: it names no venues, and the file names for `bali` (`...bali-clifftop-venue-dry-season.webp`) and `dry-season-winter-escapes` (`...tropical-dry-season-ceremony-setup.webp`) contain "dry-season". The package copies these paths literally; rename the Bali file before upload so the file name does not call Bali dry season. Its verify items also still say "Bali ... dry season"; they are reworded in the package.
+- `04-images.json` was written before `02-seo.json` and `03-source-pack.json` existed: it names no venues, and the file names for `bali` (`...bali-clifftop-venue-august.webp`) and `dry-season-winter-escapes` (`...fiji-august-ceremony-setup.webp`) contain "dry-season". The package copies these paths literally; rename the Bali file before upload so the file name does not call Bali dry season. Its verify items also still say "Bali ... dry season"; they are reworded in the package.
 - Author: no named author in any input.
 - Breadcrumb level 2 uses https://weddedwonderland.com/destination-weddings, which is not a row in `link-map.csv`; confirm the category archive URL.
 - The Greek islands source link is `http://oldportal.emy.gr/...` (http, an old portal). Check it still resolves in preview.
