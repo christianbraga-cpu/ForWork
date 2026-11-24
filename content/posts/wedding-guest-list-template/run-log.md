@@ -11,3 +11,4 @@
 02:14 final check pass_with_edits 4.14; 5/5 applied to 08-final.md
 02:17 11 cms-publisher package only (no browser; field map NOT YET MAPPED); 11-body.md, 11-publish-package.json (validates), booking-checklist.md, 12-cms-report.md; not uploaded, nothing saved
 02:18 final docx and run report complete
+02:36 download hosted on author's work Google Drive; placeholder replaced with direct download link in 08-final, 11-body, package; docx rebuilt (link not testable from this container: proxy blocks drive.google.com)

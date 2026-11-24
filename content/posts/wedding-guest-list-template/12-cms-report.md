@@ -94,3 +94,7 @@ Privacy points (OAIC) are general information as at November 2026, not legal adv
 
 ## Mismatches
 - None checked on screen: package-only run, and the field map is not confirmed. To upload, run `/wedded-cms-discovery` in a logged-in Chrome tab, then `/wedded-blog resume=wedding-guest-list-template`.
+
+
+## Update 2026-11-24: download hosted on Google Drive
+The web team could not host the file in time, so the author put it on Google Drive (work account, Anyone with the link, Viewer). The body now links https://drive.google.com/uc?export=download&id=1sFcupK6ddDkXDAMxbIwqRG-vsYahUO2z and the DOWNLOAD comment is removed. Earlier upload steps above are superseded. Test the link in a private window before publishing.

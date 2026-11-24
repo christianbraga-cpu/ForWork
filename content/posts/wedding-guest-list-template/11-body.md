@@ -1,6 +1,6 @@
 A wedding guest list template is a spreadsheet with one row per guest, grouped by household, that holds contact details, invitation dates, replies for each event, meals and needs in one place. Ours downloads as an Excel file with no sign-up, opens in Google Sheets as well, and carries the travel columns a destination wedding needs: flights, arrival and departure, accommodation and visa letters.
 
-**[Download the wedding guest list template (.xlsx)](/downloads/wedding-guest-list-template.xlsx)** <!-- DOWNLOAD: web team uploads download/wedding-guest-list-template.xlsx as a public file and confirms this URL -->
+**[Download the wedding guest list template (.xlsx)](https://drive.google.com/uc?export=download&id=1sFcupK6ddDkXDAMxbIwqRG-vsYahUO2z)**
 
 Below, every column is explained group by group, using the names in the file. Deciding who makes the list sits in our guide on [how to make a wedding guest list](/expert-advice/how-to-make-a-wedding-guest-list); this page is about keeping that list in order once you have it.
 

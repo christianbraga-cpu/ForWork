@@ -4,13 +4,13 @@
 - **Mode:** fast mode, refresh in place with a new spreadsheet. Run log times: started 01:27 UTC, package 02:17, including a long search research step.
 - **Draft:** not uploaded (no Chrome in the cloud session; CMS field map not yet confirmed)
 - **Word file:** `guest-list-template-draft.docx`
-- **Spreadsheet:** `download/wedding-guest-list-template.xlsx` (for the web team to upload as a public, no-sign-up file)
+- **Spreadsheet:** `download/wedding-guest-list-template.xlsx`, hosted on Google Drive and linked in the post
 - **Booking checklist:** `booking-checklist.md` (guest list set-up, destination travel and privacy checklists)
 - **Authority rule:** final body has 0 uses of "free", 0 prices, 0 statistics, 0 research-talk phrases, 0 VERIFY markers, no vendor or template-site names (Excel, Google Sheets and Google Drive appear only as the tools named).
 
-## Act first: URL and the download
+## Act first: URL and the download link
 - **Keep the URL:** https://weddedwonderland.com/wedding-guest-list-template, slug `wedding-guest-list-template`, do not change it, no redirect. Primary category Expert Advice (the live page's own). The category bug has now moved /wedding-rsvp-website too, so check the URL after saving; if it moved, don't publish until a 301 is confirmed.
-- **Upload the spreadsheet:** publish `download/wedding-guest-list-template.xlsx` as a public file with no sign-up, replace the placeholder link /downloads/wedding-guest-list-template.xlsx (marked with a DOWNLOAD comment), and add a download analytics event on the link so downloads count as this post's conversion.
+- **The download is set up:** the spreadsheet is on Google Drive in your work account, shared "Anyone with the link" (Viewer), and the post links its direct download address (https://drive.google.com/uc?export=download&id=1sFcupK6ddDkXDAMxbIwqRG-vsYahUO2z). Before publishing, click it in a private window and confirm it downloads without a sign-in. Keep the file where it is and its sharing unchanged. Downloads happen on Google, so the site's analytics won't count them.
 
 ## Please note
 - **Your choices:**
@@ -75,7 +75,7 @@
 - The panel plainened the mid-page Advisor line, added walking frames and wheelchairs to access needs, linked the transport column to access needs, added a no group chats or screenshots line, and spoke to families helping to plan in the close. "Quotes in AUD" stays (the couple and parent valued it).
 
 ## Before publishing (web team)
-- **URL and download:** see "Act first".
+- **URL and download link:** see "Act first".
 - **Images:** two screenshots of the .xlsx with placeholder names (team), a licensed couple photo with a signed release (never AI), and a Wonderland Studio screen with sample names (team).
 - **Prices:** none, so nothing for Nic's price sign-off.
 - **Social:** pins and the carousel are on hold until the download is live and the images are approved.
