@@ -1,0 +1,122 @@
+{
+  "agent": "editor",
+  "task_id": "wedding-rsvp-reminder",
+  "stage": "06",
+  "status": "complete",
+  "round": 4,
+  "inputs_used": [
+    "CLAUDE.md",
+    "content-system/brand/brand-facts.md",
+    "content-system/seo/link-map.csv",
+    "content/posts/wedding-rsvp-reminder/01-brief.json",
+    "content/posts/wedding-rsvp-reminder/02-seo.json",
+    "content/posts/wedding-rsvp-reminder/03-source-pack.json",
+    "content/posts/wedding-rsvp-reminder/06-edit.json",
+    "content/posts/wedding-rsvp-reminder/07-panel.json",
+    "content/posts/wedding-rsvp-reminder/08-final.md",
+    "Competitor body text in the editor scratchpad (blissandbone, theknot, yeahweddings), not saved to 02-research"
+  ],
+  "self_qa": {
+    "checks": [
+      {
+        "check": "Every factual sentence logged",
+        "pass": true,
+        "note": "fact_01 to fact_05 each sit on a matching sentence with the government link at the claim; three brand claims checked against brand-facts.md."
+      },
+      {
+        "check": "Scan run and results reflected",
+        "pass": true,
+        "note": "scan_copy.py on 08-final.md: 0 banned, 0 flagged, 0 dashes, 0 overlaps. 7-gram check against the three saved competitor pages: 0 shared runs."
+      },
+      {
+        "check": "Decision consistent with scores and blocking issues",
+        "pass": true,
+        "note": "No blocking issues and no real defects found, so pass with no edits."
+      }
+    ],
+    "confidence": 0.9
+  },
+  "open_questions": [],
+  "assumptions": [
+    "Fast mode final check: only real defects reported; rubric scores carried from round 1 with the panel edits applied."
+  ],
+  "verify_items": [],
+  "tools_used": [
+    "Bash"
+  ],
+  "next_agent": [
+    "cms-publisher"
+  ],
+  "payload": {
+    "draft_file": "content/posts/wedding-rsvp-reminder/08-final.md",
+    "rubric": {
+      "voice": 4,
+      "expertise": 4,
+      "accuracy": 5,
+      "seo_fit": 4,
+      "commercial_link": 4,
+      "structure": 5,
+      "brief_fit": 4
+    },
+    "average": 4.29,
+    "blocking_issues": [],
+    "decision": "pass",
+    "edits": [],
+    "fact_check_log": [
+      {
+        "claim": "Names, addresses and phone numbers are all examples of personal information (OAIC link at claim; email not claimed).",
+        "fact_id": "fact_01",
+        "status": "confirmed"
+      },
+      {
+        "claim": "The Privacy Act does not cover individuals acting in a personal capacity, framed as general information as at November 2026, not legal advice (OAIC link at claim).",
+        "fact_id": "fact_02",
+        "status": "confirmed"
+      },
+      {
+        "claim": "In some situations state or territory laws may also apply (same OAIC page, same sentence).",
+        "fact_id": "fact_03",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Scammers can use QR codes to hide harmful links (ACSC link at claim).",
+        "fact_id": "fact_04",
+        "status": "confirmed"
+      },
+      {
+        "claim": "A guest cannot check where a QR code leads before scanning it.",
+        "fact_id": "fact_05",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Wedded Advisor plans venue, travel, vendors and payments as one point of contact from start to finish, working in the couple's time zone.",
+        "fact_id": "brand-facts.md",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Wedded Advisor quotes in AUD for Australian couples and confirms inclusions in writing before the couple commits.",
+        "fact_id": "brand-facts.md",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Wonderland Studio is our planning app for seating charts and RSVPs.",
+        "fact_id": "brand-facts.md",
+        "status": "confirmed"
+      }
+    ],
+    "compliance": {
+      "pass": true,
+      "issues": [
+        "No prices, 'best', 'free', statistics, day or week counts, fixed intervals, often/usually/typically/many/most, platform or vendor names, or em dashes. 'At most' is a cap, not a statistic. No Advisor line implies chasing guests or handling RSVPs. Headings have no colons, dashes or hyphens; questions only in the FAQ. Exactly 4 one-sentence takeaways. UTMs once each (primary, secondary, closing with anchor 'Wedded Concierge'; /magazine magnet), utm_medium=content. All internal links relative, in 02-seo.json and link-map.csv, none noindex."
+      ]
+    },
+    "originality": {
+      "pass": true,
+      "matches": [
+        "0 shared 7-word runs against blissandbone.md, theknot.md and yeahweddings.md; scan_copy.py 0 overlaps."
+      ]
+    },
+    "banned_phrases_found": [],
+    "needs_signoff": []
+  }
+}

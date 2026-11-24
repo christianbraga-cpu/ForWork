@@ -1,0 +1,77 @@
+{
+  "agent": "cro-specialist",
+  "task_id": "wedding-rsvp-reminder",
+  "stage": "09",
+  "status": "complete",
+  "round": 1,
+  "inputs_used": [
+    "CLAUDE.md",
+    "content-system/brand/services.md (CTA rules, UTM format)",
+    "content-system/brand/brand-facts.md (Claims we can make, Confirmed business answers)",
+    "content-system/schemas/09-cro.schema.json",
+    "content-system/seo/link-map.csv (/wonderland-concierge, /magazine, /wonderland-studio)",
+    "content/posts/wedding-rsvp-reminder/01-brief.json",
+    "content/posts/wedding-rsvp-reminder/07-panel.json",
+    "content/posts/wedding-rsvp-reminder/07-icp/*.json (cta_reaction, unanswered_questions)",
+    "content/posts/wedding-rsvp-reminder/08-final.md",
+    "Orchestrator instructions for stage 09 (fast mode): document the CTAs already placed, change nothing in 08-final.md, propose no new links or claims"
+  ],
+  "payload": {
+    "journey_stage": "planning",
+    "primary_cta": {
+      "text": "Wedded Concierge",
+      "subtext": "Existing in-copy line, no new copy: 'If your guest list spans several countries and a weekend of events, talk to Wedded Concierge about planning the celebration around it.'",
+      "link": "/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=wedding-rsvp-reminder&utm_content=primary",
+      "placement": "Already placed. Last paragraph of the H2 'Who to remind and how to reach them' (08-final.md line 62), after the overseas-guest and privacy advice, where a destination couple first sees how many countries and households the reminders span. No marker comment; not moved (panel 'consider' item from the sceptic declined by the panel chair: low weight, low severity, primary persona did not object)."
+    },
+    "secondary_cta": {
+      "text": "Wedded Concierge",
+      "subtext": "Existing in-copy line (brand-facts claims only): a Wedded Advisor plans the venue, travel, vendors and payments as one point of contact from start to finish, working in your time zone.",
+      "link": "/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=wedding-rsvp-reminder&utm_content=secondary",
+      "placement": "Already placed. Last paragraph of the H2 'Reminding guests for a destination wedding' (08-final.md line 168), opening on the multi-event weekend the section covers (panel edit E1). A third, closing Concierge link (utm_content=closing) sits in the final H2 'Ready to plan the weekend around the replies' (line 226), after the reader has all the wording and timing, matching the brief's goal of one closing Advisor line; it is listed under tracking."
+    },
+    "lead_magnet": {
+      "name": "Wedded Wonderland magazine",
+      "link": "/magazine?utm_source=blog&utm_medium=content&utm_campaign=wedding-rsvp-reminder&utm_content=magnet",
+      "placement": "Already placed. Inline anchor 'Wedded Wonderland magazine' at the end of the H2 'Keep one list so you only remind the right guests' (08-final.md line 194), beside the Wonderland Studio link, for the earlier-stage reader who wants more planning ideas.",
+      "exists": true
+    },
+    "tracking": [
+      "/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=wedding-rsvp-reminder&utm_content=primary (line 62, who to remind section)",
+      "/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=wedding-rsvp-reminder&utm_content=secondary (line 168, destination wedding section)",
+      "/magazine?utm_source=blog&utm_medium=content&utm_campaign=wedding-rsvp-reminder&utm_content=magnet (line 194, keep one list section)",
+      "/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=wedding-rsvp-reminder&utm_content=closing (line 226, closing paragraph)",
+      "Each of the four UTM links appears exactly once in 08-final.md; no other link (including /wonderland-studio and /expert-advice links) carries UTMs; no CTA marker comments remain (checked 2026-11-24)."
+    ],
+    "rationale": "Planning-stage guide (brief journey_stage 'planning'), primary persona planner_couple. Wedded Concierge is the brief's goal and the default commercial target; /wonderland-concierge, /magazine and /wonderland-studio are all in link-map.csv (last checked 2026-10-20). All three Concierge links use the anchor 'Wedded Concierge' (2 words, no exclamation mark, no 'click here'); the magnet anchor is 'Wedded Wonderland magazine' (3 words). Copy around every CTA uses only brand-facts 'Claims we can make' (single point of contact start to finish; venue, travel, vendors and payments; time zone; AUD quotes; inclusions confirmed in writing) and nothing implies the Advisor chases guests or handles RSVPs. Panel cta_reactions: planner_couple, funding_parent, sceptic and uhnw 'maybe', search_visitor 'no'; weighted enquiry likelihood 1.9, expected for a late-stage how-to, which suits low-pressure placement. Every 'I'd want to see X first' item (fee model and supplier commissions, whether money passes through Wedded Wonderland, a real person by phone, deposit protection, proof of scale and discretion, a private enquiry channel) is a deferred business detail in brand-facts and cannot be answered in this post, so no copy change is flagged; they are routed to the /wonderland-concierge page as open questions. Wonderland Studio questions (sharing by several family members, cost, guest data storage) are routed to /wonderland-studio. The fee-agreed-in-writing claim is in brand-facts but not in this post's copy; it is not added here per the orchestrator's instruction. Lead magnet idea, not placed (exists: false): a printable reminder wording and call-script sheet (the funding_parent said she would print the call script); no such asset exists on the site, noted for consideration only."
+  },
+  "self_qa": {
+    "checks": [
+      {"check": "journey_stage taken from the brief", "pass": true, "note": "planning"},
+      {"check": "CTA text 6 words or fewer, no 'click here', no exclamation mark", "pass": true, "note": "'Wedded Concierge' and 'Wedded Wonderland magazine'"},
+      {"check": "UTM format matches the agreed pattern and each link appears once", "pass": true, "note": "4 UTM links found by grep, each once (primary, secondary, closing, magnet)"},
+      {"check": "No UTMs on any other link, no CTA marker comments", "pass": true},
+      {"check": "CTA targets exist in link-map.csv", "pass": true, "note": "/wonderland-concierge and /magazine present"},
+      {"check": "Lead magnet exists on the site; non-existent magnet not placed", "pass": true, "note": "/magazine exists; printable sheet idea in rationale only"},
+      {"check": "08-final.md unchanged; no new UTM links, prices, fees, commissions, phone or named contacts, on-the-ground staff, room blocks, Privileges or availability proposed", "pass": true},
+      {"check": "Nothing implies the Advisor chases guests or handles RSVPs", "pass": true},
+      {"check": "Panel cta_reactions used; 'see X first' items handled", "pass": true, "note": "All are deferred business details, routed to /wonderland-concierge and /wonderland-studio"},
+      {"check": "Australian English, no em dashes", "pass": true}
+    ],
+    "confidence": 0.88
+  },
+  "open_questions": [
+    {"to": "orchestrator", "question": "For the /wonderland-concierge page (not this post): state how the Wedded Advisor fee is structured, whether commissions or referral fees are taken from venues or suppliers, and whether supplier payments pass through Wedded Wonderland or carry a mark-up. Raised by the sceptic as the condition for enquiring (planner_couple also asked how planning is charged). Fee model is deferred in brand-facts; needs business confirmation and Nic's sign-off.", "blocking": false},
+    {"to": "orchestrator", "question": "For the /wonderland-concierge page (not this post): say what happens after an enquiry, whether a paying parent can join the first conversation, and whether there is a private or referral way to start one. Raised by funding_parent and uhnw. Named contacts, phone line, deposits and contracts are deferred in brand-facts.", "blocking": false},
+    {"to": "orchestrator", "question": "For the /wonderland-studio page (not this post): can several family members share and update one guest list, does Wonderland Studio cost anything or come with an Advisor, and where is guest list data stored and who can see it? Raised by planner_couple and sceptic.", "blocking": false},
+    {"to": "orchestrator", "question": "Future lead magnet idea: a printable reminder wording and call-script sheet. Does not exist; not placed. Worth considering as a site asset?", "blocking": false}
+  ],
+  "assumptions": [
+    "The three Concierge links are treated as primary (line 62), secondary (line 168) and closing (line 226); the schema has no closing slot, so the closing link is documented in tracking and in the secondary placement note.",
+    "Subtext fields quote or summarise existing in-copy lines around each CTA; they are not new copy to be added.",
+    "Link-map entries are dated 2026-10-20; liveness of the targets at publish time is assumed from the link map."
+  ],
+  "verify_items": [],
+  "tools_used": ["Bash (file reads, grep)", "Write"],
+  "next_agent": ["distribution"]
+}
