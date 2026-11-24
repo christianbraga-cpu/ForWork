@@ -1,0 +1,325 @@
+{
+ "agent": "panel-chair",
+ "task_id": "wedding-timeline-4pm-ceremony",
+ "stage": "07b",
+ "status": "complete",
+ "round": 1,
+ "inputs_used": [
+  "content/posts/wedding-timeline-4pm-ceremony/01-brief.json",
+  "content/posts/wedding-timeline-4pm-ceremony/05-draft.md (read by the panel)",
+  "content/posts/wedding-timeline-4pm-ceremony/05-draft-r2.md (edits anchored here)",
+  "content/posts/wedding-timeline-4pm-ceremony/03-source-pack.json (fact_04, fact_05 wording)",
+  "content/posts/wedding-timeline-4pm-ceremony/07-icp/planner_couple.json",
+  "content/posts/wedding-timeline-4pm-ceremony/07-icp/funding_parent.json",
+  "content/posts/wedding-timeline-4pm-ceremony/07-icp/uhnw.json",
+  "content/posts/wedding-timeline-4pm-ceremony/07-icp/sceptic.json",
+  "content/posts/wedding-timeline-4pm-ceremony/07-icp/search_visitor.json",
+  "content-system/personas/*.yaml (weights: planner_couple 0.40, funding_parent 0.20, uhnw 0.20, sceptic 0.10, search_visitor 0.10)",
+  "content-system/brand/brand-facts.md (Claims we can make)",
+  "content-system/schemas/07-panel.schema.json",
+  "CLAUDE.md",
+  "Orchestrator constraints (fast mode)"
+ ],
+ "payload": {
+  "personas_run": [
+   "planner_couple",
+   "funding_parent",
+   "uhnw",
+   "sceptic",
+   "search_visitor"
+  ],
+  "weighted_scores": {
+   "relevance_to_me": 3.0,
+   "trust": 3.8,
+   "clarity": 4.6,
+   "brand_feels_premium": 3.4,
+   "likelihood_to_enquire": 1.9
+  },
+  "weighted_enquiry_likelihood": 1.9,
+  "must_fix": [
+   {
+    "issue": "The mid-page Advisor line ('A Wedded Advisor plans venue, travel, vendors and payments anywhere in the world, works in your time zone, and is your single point of contact from start to finish.') was raised by four readers: the primary persona found it generic brochure copy that does not connect to the venue questions just listed (low); sceptic read 'payments' with no fee signal as the place to look for the catch (medium, trust loss about money); search_visitor and uhnw found it unconvincing (low). Four personas plus a money-trust objection makes it must-fix.",
+    "flagged_by": [
+     "planner_couple",
+     "sceptic",
+     "search_visitor",
+     "uhnw"
+    ],
+    "owner": "luxury-writer",
+    "fix": "Add the brand-facts claim 'agrees the fee in writing before any work begins' to the line and tie it to the venue questions above (primary persona's wording). No fee model, commissions, deposits, scale or on-the-day role is stated. The primary UTM link and its 'Wedded Concierge' anchor are unchanged.",
+    "edits": [
+     {
+      "id": "advisor_mid",
+      "old": "A Wedded Advisor plans venue, travel, vendors and payments anywhere in the world, works in your time zone, and is your single point of contact from start to finish. When the questions above start to multiply,",
+      "new": "A Wedded Advisor plans venue, travel, vendors and payments anywhere in the world, works in your time zone, agrees the fee in writing before any work begins, and is your single point of contact from start to finish, so venue questions like the ones above go to one person instead of landing on you. When they start to multiply,"
+     }
+    ]
+   }
+  ],
+  "should_fix": [
+   {
+    "issue": "Older and less mobile guests are missing from the destination questions, and heat and dark paths never name them. funding_parent raised it as a medium objection and a top change; the primary persona (planner_couple) named it as a top change and their biggest worry with family flying in.",
+    "flagged_by": [
+     "funding_parent",
+     "planner_couple"
+    ],
+    "owner": "luxury-writer",
+    "fix": "One new venue question (how far the walk is, a route without steps, seating in shade or out of the cold during photos), a safety clause on the twilight path line, and older guests named on the 2pm heat line. All are questions or instructions; no measurements or facts added. The 2pm edit also splits the long paragraph funding_parent found hard on an iPad.",
+    "edits": [
+     {
+      "id": "older_guests_question",
+      "old": "Is there a quiet fallback if a flight lands late?",
+      "new": "Is there a quiet fallback if a flight lands late?\n- **Older and less mobile guests.** How far is the walk to the ceremony spot, and is there a route without steps between the ceremony, drinks and dinner spaces? Where can they sit in shade, or out of the cold, while photos are taken?"
+     },
+     {
+      "id": "path_safe",
+      "old": "The end of evening nautical twilight, at 12 degrees below the horizon, is dark for normal practical purposes. <!-- fact_05 --> If guests walk between the ceremony and reception spaces outdoors, along garden paths, terraces or a coastal road, move them before then or light the route.",
+      "new": "Later, at the end of evening nautical twilight, it is dark for normal practical purposes, with the centre of the sun 12 degrees below the horizon. <!-- fact_05 --> If guests walk between the ceremony and reception spaces outdoors, along garden paths, terraces or a coastal road, move them before then or light the route, and check the path is safe for anyone unsteady on their feet."
+     },
+     {
+      "id": "heat_older",
+      "old": "In warm months, heat is the issue: water at the guests' seats, a covered aisle or a short service. The gap before dinner is long,",
+      "new": "In warm months, heat is the issue, especially for older guests: water at the guests' seats, a covered aisle or a short service.\n\nThe gap before dinner is long,"
+     }
+    ]
+   },
+   {
+    "issue": "The twilight astronomy is too technical to skim ('when the centre of the sun is 6 degrees below the horizon'; 'The end of evening nautical twilight, at 12 degrees below the horizon, is dark for normal practical purposes'). Raised low by funding_parent and search_visitor; planner_couple called it 'a bit technical for a skim'.",
+    "flagged_by": [
+     "funding_parent",
+     "search_visitor"
+    ],
+    "owner": "luxury-writer",
+    "fix": "Lead with the practical instruction (lights on before civil twilight ends) and keep the degrees as a supporting sentence. Wording stays faithful to fact_04 and fact_05 (Geoscience Australia definitions); fact markers kept. The nautical sentence change is carried in the path_safe edit above.",
+    "edits": [
+     {
+      "id": "twilight_plain",
+      "old": "Soft light lingers after sunset, but it does not last. On the same definitions, by the end of evening civil twilight, when the centre of the sun is 6 degrees below the horizon, large objects can be seen but no detail can be made out without artificial light. <!-- fact_04 --> So have the festoons, candles and uplights on before civil twilight ends, not after guests notice the dark.",
+      "new": "Soft light lingers after sunset, but it does not last. Have the festoons, candles and uplights on before evening civil twilight ends, not after guests notice the dark. On the same definitions, by the end of civil twilight large objects can still be seen, but no detail can be made out without artificial light. That point comes when the centre of the sun is 6 degrees below the horizon. <!-- fact_04 -->"
+     }
+    ]
+   }
+  ],
+  "consider": [
+   {
+    "issue": "No clock time appears before the first timeline; the 'at a glance' section is prose ('Think of a 4pm day in four movements'). search_visitor (medium, twice: takeaways and at a glance).",
+    "flagged_by": [
+     "search_visitor"
+    ],
+    "owner": "luxury-writer",
+    "fix": "Reader's fifth takeaway is rejected (exactly 4 takeaways). Instead the at-a-glance section opens with example times taken from the two 4pm run sheets (9am or 10am, 3.30pm, 6pm or 6.30pm, 10.45pm or 11pm), framed as examples. The four movements sentence is kept after it.",
+    "edits": [
+     {
+      "id": "glance_times",
+      "old": "Think of a 4pm day in four movements. The morning belongs to getting ready.",
+      "new": "In the two example days below, hair and makeup begins at 9am with a first look or 10am without one, guests arrive at 3.30pm, the reception entrance is at 6pm or 6.30pm, and the send-off is at 10.45pm or 11pm. Around those times, think of a 4pm day in four movements. The morning belongs to getting ready."
+     }
+    ]
+   },
+   {
+    "issue": "Livestream question asks only about bandwidth, not who can see it (uhnw, medium).",
+    "flagged_by": [
+     "uhnw"
+    ],
+    "owner": "luxury-writer",
+    "fix": "Add a privacy question to the venue. It is a question; no security claim is made.",
+    "edits": [
+     {
+      "id": "livestream_private",
+      "old": "Can the venue's connection carry a livestream from the ceremony spot? What time",
+      "new": "Can the venue's connection carry a livestream from the ceremony spot, and how will access to it be kept private? What time"
+     }
+    ]
+   },
+   {
+    "issue": "The page never says seating takes longer with a large guest list (uhnw, medium).",
+    "flagged_by": [
+     "uhnw"
+    ],
+    "owner": "luxury-writer",
+    "fix": "Add an instruction to the guest arrival FAQ to ask the venue and arrive earlier. No guest numbers or durations stated; 3.30pm example unchanged.",
+    "edits": [
+     {
+      "id": "faq_seating",
+      "old": "so guests can find a seat and settle. At a destination venue,",
+      "new": "so guests can find a seat and settle. With a large guest list or formal seating, ask the venue how long seating takes and move the arrival time earlier. At a destination venue,"
+     }
+    ]
+   },
+   {
+    "issue": "Family or religious customs that fix certain times are not mentioned (uhnw).",
+    "flagged_by": [
+     "uhnw"
+    ],
+    "owner": "luxury-writer",
+    "fix": "Add one sentence to the local timing customs bullet: set those times first. Makes no claim about any country's or culture's customs.",
+    "edits": [
+     {
+      "id": "customs_first",
+      "old": "Is a late dinner normal here, and does the kitchen staff for it?",
+      "new": "Is a late dinner normal here, and does the kitchen staff for it? If family or religious customs fix any part of the day, set those times first and tell the venue early."
+     }
+    ]
+   },
+   {
+    "issue": "Secondary Concierge line reads as a redundant pitch (sceptic, low; uhnw and search_visitor would not click it).",
+    "flagged_by": [
+     "sceptic"
+    ],
+    "owner": "cro-specialist",
+    "fix": "Not cut: the three Concierge placements are required. CRO may review its wording at stage 09 without removing the link or changing the anchor."
+   },
+   {
+    "issue": "Wonderland Studio link reads as a DIY product for a different client (uhnw, low).",
+    "flagged_by": [
+     "uhnw"
+    ],
+    "owner": "luxury-writer",
+    "fix": "No change. The brief requires the link with this exact description, and it serves the primary persona."
+   },
+   {
+    "issue": "'Inclusions' and 'quotes in AUD for Australian couples' sound like a package (uhnw, low).",
+    "flagged_by": [
+     "uhnw"
+    ],
+    "owner": "luxury-writer",
+    "fix": "No change. The closing line is brand-facts wording and was praised by planner_couple, funding_parent and sceptic."
+   },
+   {
+    "issue": "No visible author or last-updated date (search_visitor).",
+    "flagged_by": [
+     "search_visitor"
+    ],
+    "owner": "luxury-writer",
+    "fix": "No copy change. Byline and date are CMS fields; flag for the cms-publisher and human reviewer."
+   },
+   {
+    "issue": "No printable or downloadable version of the timeline (search_visitor).",
+    "flagged_by": [
+     "search_visitor"
+    ],
+    "owner": "cro-specialist",
+    "fix": "Deferred; the copyable table stays. A downloadable run sheet is a lead-magnet decision for CRO, not a copy edit."
+   }
+  ],
+  "keep": [
+   "Intro line 'The one time that fixes everything else is sunset at your venue on your date, so look that up first...' (all five)",
+   "'Every clock time on this page is a planning example to adapt, not a rule.' (planner_couple, funding_parent, sceptic, search_visitor, uhnw)",
+   "Bold one-line times in the two 4pm run sheets (search_visitor, funding_parent)",
+   "'The cost is time with your guests, so ask the venue to hold canapés and a drink for you both...' (planner_couple)",
+   "Geoscience Australia calculator link and the flat-horizon caveat with 'hills, cliffs, trees or buildings to the west' and walking the site at the same hour (sceptic, planner_couple, uhnw)",
+   "Festoons, candles and uplights on before civil twilight ends, and lighting the outdoor route (planner_couple, sceptic, funding_parent)",
+   "Sunset-before-ceremony-ends logic making a first look worth a serious thought (search_visitor)",
+   "'there is shade or warmth depending on the season, and there is somewhere to sit' (funding_parent)",
+   "2pm same-day guests line about a delayed flight or a slow drive (planner_couple)",
+   "Destination questions, especially the late dinner question and 'What time will a 4pm ceremony be for family watching at home?' (planner_couple, uhnw)",
+   "Template table with the first three lines from the calculator (planner_couple, sceptic)",
+   "FAQ arrival answer and the hour-and-a-half gap answer that matches the run sheets (search_visitor, sceptic)",
+   "Closing line 'a Wedded Advisor agrees the fee in writing before any work begins, confirms inclusions in writing before you commit, and quotes in AUD for Australian couples' (funding_parent, planner_couple, sceptic)",
+   "All three Wedded Concierge UTM links and the /magazine magnet link"
+  ],
+  "conflicts_resolved": [
+   "Secondary CTA: sceptic wanted it cut; the brief's goal is a Concierge enquiry, the three placements are required, and the primary persona did not object to it. Kept unchanged; CRO may review wording only.",
+   "Twilight detail: sceptic praised the degrees as defined and sourced; funding_parent and search_visitor found them technical; planner_couple (primary) liked the practical line and found the definitions 'a bit technical for a skim'. Resolved for the primary: lead with the action, keep the degrees and the source accurately in a supporting sentence.",
+   "Closing Advisor line: uhnw disliked 'inclusions' and the AUD clause; the primary persona, funding_parent and sceptic named it the most persuasive line. Kept verbatim; the fee clause is also brought up into the mid-page line, as the primary persona asked ('I'd want this higher up').",
+   "Key times in takeaways: search_visitor (weight 0.10) wanted a fifth takeaway with times. Rejected to keep exactly 4 one-sentence takeaways; times go into the at-a-glance section instead, which no reader praised in its current form.",
+   "Scale and privacy: uhnw wanted proof of 200 to 400 guest weddings and a private referral route. Scale claims are not in brand-facts, so only the reader-neutral parts (livestream privacy, seating time for a large list, fixed family timings) are added as questions or instructions."
+  ],
+  "deferred": [
+   "Wedded Concierge fee model, fee range, commissions or mark-ups (sceptic, planner_couple)",
+   "Deposit protection, payment currency and contract language with overseas venues (funding_parent)",
+   "Phone contact, a named person, or who to ring close to the day (funding_parent)",
+   "Who is accountable on the day itself (planner_couple)",
+   "Whether the Advisor works with known vendors at the destination (planner_couple)",
+   "Travel insurance or guests with medical needs abroad (funding_parent)",
+   "Proof of large-scale weddings or a private referral route (uhnw)",
+   "Independent reviews of Wedded Concierge (sceptic)",
+   "A real 4pm wedding to link or caption: none confirmed in the link map or image register (planner_couple, sceptic)",
+   "Author and last-updated date (CMS fields), downloadable run sheet (CRO)"
+  ],
+  "not_added": [
+   "Fifth key takeaway with example times (exactly 4 takeaways)",
+   "Cutting the secondary Concierge line",
+   "How the timeline changes for late dinners in Italy or any named country (no claims about country customs)",
+   "Any fee, commission, deposit, phone, named person, scale, real wedding, room block, transfer, Privileges or on-the-day claim",
+   "FAQ 'softer light' comparison: already fixed by the editor in r2 ('gentler light than midday')"
+  ],
+  "edit_order": [
+   "glance_times",
+   "twilight_plain",
+   "path_safe",
+   "heat_older",
+   "customs_first",
+   "older_guests_question",
+   "livestream_private",
+   "advisor_mid",
+   "faq_seating"
+  ],
+  "gate": "revise"
+ },
+ "self_qa": {
+  "checks": [
+   {
+    "check": "Weighted maths uses all five weights (sum 1.0); enquiry likelihood 1.9 is below 3.8, so gate is revise.",
+    "pass": true
+   },
+   {
+    "check": "Every edit 'old' occurs exactly once in 05-draft-r2.md and all nine apply cleanly in edit_order (tested on a scratch copy).",
+    "pass": true
+   },
+   {
+    "check": "Exactly 4 one-sentence takeaways; H1, meta title and headings unchanged; no new headings.",
+    "pass": true
+   },
+   {
+    "check": "Each UTM link (primary, secondary, closing, magnet) still occurs once; 'Wedded Concierge' anchors and 'quotes in AUD for Australian couples' unchanged.",
+    "pass": true
+   },
+   {
+    "check": "Advisor wording only from brand-facts Claims we can make; nothing implies the Advisor runs the day.",
+    "pass": true
+   },
+   {
+    "check": "New clock times match the existing 4pm timelines and are framed as examples; no sunset times.",
+    "pass": true
+   },
+   {
+    "check": "No prices, statistics, 'free' (including step-free), 'best', 'often', 'usually', 'many', 'average', 'last dance', vendor names, em dashes or country customs in new text; Australian English.",
+    "pass": true
+   },
+   {
+    "check": "Twilight rewrite stays faithful to fact_04 and fact_05; fact markers retained.",
+    "pass": true
+   },
+   {
+    "check": "Word count inside the brief's 1,800 to 2,400 range.",
+    "pass": false,
+    "note": "r2 is already above 2,400 (about 2,800 by raw local count including the table); these edits add about 190 words. The editor passed r2 at its length."
+   }
+  ],
+  "confidence": 0.82
+ },
+ "open_questions": [
+  {
+   "to": "luxury-writer",
+   "question": "Final length is over the brief's 2,400 ceiling before and after these edits; trim only if the final QA requires it, and not from keep items.",
+   "blocking": false
+  },
+  {
+   "to": "cro-specialist",
+   "question": "Review the secondary Concierge line wording (sceptic found it redundant) without removing it, and decide on a downloadable run sheet.",
+   "blocking": false
+  }
+ ],
+ "assumptions": [
+  "Readers' round 1 quotes were remapped to r2 text; the FAQ light comparison is already resolved in r2.",
+  "planner_couple's older-guest concern counted as a primary-persona top change but not high severity, so the item is should_fix, not must_fix."
+ ],
+ "verify_items": [],
+ "tools_used": [
+  "Bash"
+ ],
+ "next_agent": [
+  "luxury-writer"
+ ]
+}
