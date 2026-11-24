@@ -9,3 +9,4 @@
 05:17 07b panel revise (enquiry 1.9); 12/12 applied -> 08-final.md
 05:18 10 distribution complete (orchestrator removed colons from 2 pin titles)
 05:18 09 CRO complete
+05:19 final check pass 4.29; applied 1 of 2 optional trims (kept takeaway times: search visitor asked for them)

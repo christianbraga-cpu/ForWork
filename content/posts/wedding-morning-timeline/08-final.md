@@ -39,7 +39,7 @@ The start of the first chair is the last number you work out, not the first.
 
 ### Detail photos while the last chair finishes
 
-Book the photographer to arrive while the final chair is still in progress. That leaves time for the details (rings, invitation suite, shoes, fragrance, florals) and candid frames of the room before anyone is dressed. In our 4pm example, that is 12.30pm with a first look and 1.30pm without one.
+Book the photographer to arrive while the final chair is still in progress. That leaves time for the details (rings, invitation suite, shoes, fragrance, florals) and candid frames of the room before anyone is dressed.
 
 ### Give dressing its own block
 
