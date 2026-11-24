@@ -6,3 +6,4 @@
 03:34 user chose: new page as briefed despite overlap with /expert-advice/wedding-day-timeline-template; page goes deeper on 4pm plus 2pm, 3pm, 5pm and links the template page; link map +3
 03:37 05 draft complete (~2,500 words); first-draft docx built
 03:38 07 readers complete (5)
+03:40 06 editor pass_with_edits 4.57; 16/16 applied -> 05-draft-r2.md
