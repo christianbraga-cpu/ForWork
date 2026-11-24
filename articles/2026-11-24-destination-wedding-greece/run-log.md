@@ -47,3 +47,9 @@
   - The legacy planning page is marked for a 301.
 - **Note for the user (UK-GREECE-URL):** the old URL /destination-weddings/if-youre-thinking-of-getting-married-in-greece-you-need-to-know-this now shows the title "Getting Married in Greece from the UK Step by Step". It looks as if the UK refresh was published in place at the old URL, not at /destination-weddings/getting-married-in-greece-from-uk. Please confirm which URL is live.
 - Reviews launched.
+- **Stage 3 fast (3 reviews):** DONE.
+  - **Accuracy 3.6:** majors on the unsourced Santorini cap line, "walked and confirmed" step-free routes (not a live service), timeline CNI timing, and the flights placeholder.
+  - **SEO 4.2:** majors on island cards not linking their spokes, and length with the legal section overlapping the licence spoke.
+  - **Reader (couple):** relevance 3, trust 3, clarity 4, would_enquire 2, "save and forward". Majors: the placeholder; the partner-properties Benefits line raising the commission worry.
+  - Merged request: 04-reviews/v1/merged.md.
+- **Conflict resolved:** the flights paragraph uses the accuracy wording ("check with your airline or travel advisor"), not "the islands add one more leg".
