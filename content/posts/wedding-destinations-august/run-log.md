@@ -5,3 +5,4 @@
 22:59 05 draft complete (~2,140 prose words); Mauritius link anchor made neutral; first-draft docx built
 23:00 07 readers complete (5)
 23:05 06 editor revise 4.14 (Smartraveller dates, accuracy); 42/42 applied -> 05-draft-r2.md; 02-seo meta synced; link map: Santorini, Crete, best-time Bali, symbolic page marked live, best-time Italy added
+23:08 07b panel revise (enquiry 2.1); 13/13 applied -> 08-final.md
