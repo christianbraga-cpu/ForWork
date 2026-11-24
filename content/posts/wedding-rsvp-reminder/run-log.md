@@ -5,3 +5,4 @@
 00:40 02 SEO complete (report saved by orchestrator); /wedding-rsvp-website now redirects to /expert-advice/wedding-rsvp-website (link map updated)
 00:42 05 draft complete (~2,260 words); orchestrator set CTAs to primary/secondary/closing and made internal links relative; first-draft docx built
 00:44 07 readers complete (5)
+00:49 06 editor revise 4.29 (originality: call script and 3 phrases); 10/10 applied -> 05-draft-r2.md; image caption no longer implies Studio sends reminders

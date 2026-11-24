@@ -1,0 +1,231 @@
+{
+  "agent": "editor",
+  "task_id": "wedding-rsvp-reminder",
+  "stage": "06",
+  "status": "revision",
+  "round": 1,
+  "inputs_used": [
+    "CLAUDE.md",
+    "content-system/rubrics/editor-rubric.md",
+    "content-system/rubrics/compliance-checklist.md",
+    "content-system/rubrics/link-rules.md",
+    "content-system/brand/voice-guide.md",
+    "content-system/brand/banned-phrases.md",
+    "content-system/brand/brand-facts.md",
+    "content-system/seo/link-map.csv",
+    "content/posts/wedding-rsvp-reminder/01-brief.json",
+    "content/posts/wedding-rsvp-reminder/02-seo.json",
+    "content/posts/wedding-rsvp-reminder/03-source-pack.json",
+    "content/posts/wedding-rsvp-reminder/04-images.json",
+    "content/posts/wedding-rsvp-reminder/05-draft.md",
+    "theknot.com, blissandbone.com, yeahweddings.com reminder pages (re-scraped 2026-11-24 via Firecrawl for the originality check; body text held in the editor scratchpad, not saved to 02-research)"
+  ],
+  "payload": {
+    "draft_file": "content/posts/wedding-rsvp-reminder/05-draft.md",
+    "rubric": {
+      "voice": 4,
+      "expertise": 4,
+      "accuracy": 5,
+      "seo_fit": 4,
+      "commercial_link": 4,
+      "structure": 5,
+      "brief_fit": 4
+    },
+    "average": 4.29,
+    "blocking_issues": [
+      "Originality: the call script in 'What to say when you call or see them in person' shares a 12-word run with the Bliss & Bone call script (\"and wanted to check whether you'll be able to join us no\") and mirrors it sentence by sentence. Fixed by edit 1. With all 10 edits applied, scan_copy.py reports 0 overlaps against the full re-scraped text of all three pages, and a 7-gram check finds no shared runs."
+    ],
+    "decision": "revise",
+    "edits": [
+      {
+        "location": "The call script, paragraph 2 (What to say when you call or see them in person)",
+        "issue": "Originality blocking issue. The call script matches the Bliss & Bone call script word for word for 12 consecutive words (\"and wanted to check whether you'll be able to join us no\") and follows its structure sentence by sentence (\"Hi [Name], it's [Your name]. I'm just calling about our wedding... We're finalizing the guest count... wanted to check whether you'll be able to join us. No worries at all...\"). That is close paraphrase of a whole passage. Replace it with fresh wording.",
+        "fix": "Replace exactly: \"Hi [Guest name], it's [Your name]. I'm just calling about the wedding. We're confirming numbers with the venue and wanted to check whether you'll be able to join us. No pressure at all if you need a little longer, just let me know when you'll have an answer.\"  WITH: \"Hi [Guest name], it's [Your name]. Have you got a minute? We're giving the venue our numbers soon and we'd hate to leave you off. Are you able to come? If you're still sorting out flights or leave, that's fine, just tell me when you'll know.\"",
+        "old": "\"Hi [Guest name], it's [Your name]. I'm just calling about the wedding. We're confirming numbers with the venue and wanted to check whether you'll be able to join us. No pressure at all if you need a little longer, just let me know when you'll have an answer.\"",
+        "new": "\"Hi [Guest name], it's [Your name]. Have you got a minute? We're giving the venue our numbers soon and we'd hate to leave you off. Are you able to come? If you're still sorting out flights or leave, that's fine, just tell me when you'll know.\""
+      },
+      {
+        "location": "Wedding RSVP reminder text message wording > Warm, the sample text",
+        "issue": "Originality: \"would love to know if you can join us\" (8 words) is the Bliss & Bone text and FAQ phrasing, and the draft repeats it three times (warm text, warm subject line, warm banner). Under the 12-word threshold but the brief requires all wording original; vary each one.",
+        "fix": "Replace exactly: we are counting down to [month] and would love to know if you can join us.  WITH: we are counting down to [month] and are hoping you can be there.",
+        "old": "we are counting down to [month] and would love to know if you can join us.",
+        "new": "we are counting down to [month] and are hoping you can be there."
+      },
+      {
+        "location": "RSVP reminder email wording > Subject lines, Warm",
+        "issue": "Same repeated competitor phrase as above.",
+        "fix": "Replace exactly: - Warm: \"We would love to know if you can join us\"  WITH: - Warm: \"Hoping to see you in [month]\"",
+        "old": "- Warm: \"We would love to know if you can join us\"",
+        "new": "- Warm: \"Hoping to see you in [month]\""
+      },
+      {
+        "location": "Wedding website banner wording, Warm",
+        "issue": "Same repeated competitor phrase as above.",
+        "fix": "Replace exactly: - Warm: \"We would love to know if you can join us. Please reply by [reply date].\"  WITH: - Warm: \"We are hoping to celebrate with you. Please reply by [reply date].\"",
+        "old": "- Warm: \"We would love to know if you can join us. Please reply by [reply date].\"",
+        "new": "- Warm: \"We are hoping to celebrate with you. Please reply by [reply date].\""
+      },
+      {
+        "location": "RSVP reminder email wording > Warm email, paragraph 1",
+        "issue": "\"let us know if you can make it\" echoes the Yeah Weddings late-RSVP text (\"let me know if you can make it\"). Small change for originality.",
+        "fix": "Replace exactly: could you let us know if you can make it?  WITH: could you tell us whether you will be there?",
+        "old": "could you let us know if you can make it?",
+        "new": "could you tell us whether you will be there?"
+      },
+      {
+        "location": "Intro, paragraph 2",
+        "issue": "Self-referential method talk: calling our own wording \"original\" tells the reader about how the page was made (voice guide, Write with authority). State what it is.",
+        "fix": "Replace exactly: Below is original wording for every channel in three tones, and a plain order for sending it.  WITH: Below is ready-to-send wording for every channel in three tones, and a plain order for sending it.",
+        "old": "Below is original wording for every channel in three tones, and a plain order for sending it.",
+        "new": "Below is ready-to-send wording for every channel in three tones, and a plain order for sending it."
+      },
+      {
+        "location": "Reminding guests for a destination wedding, paragraph after the multi-event sample (secondary CTA)",
+        "issue": "\"If the logistics behind these replies are piling up\" can be read as the Advisor taking over the RSVP chase. Tie the Advisor to the celebration, not the replies.",
+        "fix": "Replace exactly: If the logistics behind these replies are piling up, talk to  WITH: If you would rather hand over the planning of the weekend itself, talk to",
+        "old": "If the logistics behind these replies are piling up, talk to",
+        "new": "If you would rather hand over the planning of the weekend itself, talk to"
+      },
+      {
+        "location": "Keep one list so you only remind the right guests, paragraph 3",
+        "issue": "Wonderland Studio must be described only as \"our planning app for seating charts and RSVPs\". \"keeps that list in one place\" adds a feature claim. Keep to the approved description.",
+        "fix": "Replace exactly: [Wonderland Studio](/wonderland-studio), our planning app for seating charts and RSVPs, keeps that list in one place.  WITH: [Wonderland Studio](/wonderland-studio) is our planning app for seating charts and RSVPs.",
+        "old": "[Wonderland Studio](/wonderland-studio), our planning app for seating charts and RSVPs, keeps that list in one place.",
+        "new": "[Wonderland Studio](/wonderland-studio) is our planning app for seating charts and RSVPs."
+      },
+      {
+        "location": "Ready to plan the weekend around the replies, closing paragraph",
+        "issue": "brand-facts claim is \"quotes in AUD for Australian couples\"; the draft drops the qualifier, and the post is scoped global.",
+        "fix": "Replace exactly: quotes in AUD and confirms inclusions in writing before you commit.  WITH: quotes in AUD for Australian couples and confirms inclusions in writing before you commit.",
+        "old": "quotes in AUD and confirms inclusions in writing before you commit.",
+        "new": "quotes in AUD for Australian couples and confirms inclusions in writing before you commit."
+      },
+      {
+        "location": "IMAGE SLOT phone-reminder-message comment (after the text message wording)",
+        "issue": "The shot brief asks for a Wonderland Studio screen showing a reminder message, which implies Studio sends reminders (not an approved claim). Change the brief in the draft comment; visual-curator to update 04-images.json shot_brief and caption to match (see open question).",
+        "fix": "Replace exactly: Screen content must be a Wonderland Studio screenshot with sample names supplied by the team, composited onto a licensed or own-shot phone image;  WITH: Screen content is a plain, unbranded message with sample names supplied by the team (not presented as a Wonderland Studio screen), composited onto a licensed or own-shot phone image;",
+        "old": "Screen content must be a Wonderland Studio screenshot with sample names supplied by the team, composited onto a licensed or own-shot phone image;",
+        "new": "Screen content is a plain, unbranded message with sample names supplied by the team (not presented as a Wonderland Studio screen), composited onto a licensed or own-shot phone image;"
+      }
+    ],
+    "fact_check_log": [
+      {
+        "claim": "Names, addresses and phone numbers are all examples of personal information (OAIC link at claim; email not claimed).",
+        "fact_id": "fact_01",
+        "status": "confirmed"
+      },
+      {
+        "claim": "The Privacy Act does not cover individuals acting in a personal capacity (OAIC link at claim; framed as general information as at November 2026, not legal advice).",
+        "fact_id": "fact_02",
+        "status": "confirmed"
+      },
+      {
+        "claim": "In some situations state or territory laws may also apply.",
+        "fact_id": "fact_03",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Scammers can use QR codes to hide harmful links (ACSC cyber.gov.au link at claim).",
+        "fact_id": "fact_04",
+        "status": "confirmed"
+      },
+      {
+        "claim": "A guest cannot check where a QR code leads before scanning it.",
+        "fact_id": "fact_05",
+        "status": "confirmed"
+      },
+      {
+        "claim": "A Wedded Advisor plans venue, travel, vendors and payments anywhere in the world, one point of contact start to finish, works in your time zone.",
+        "fact_id": "brand-facts: Claims we can make",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Advisor quotes in AUD and confirms inclusions in writing before you commit.",
+        "fact_id": "brand-facts: Claims we can make",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Wonderland Studio is our planning app for seating charts and RSVPs.",
+        "fact_id": "brand-facts: Names",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Timing (before / on / after the reply date), three steps at most, household reminders, call and card advice, counting a quiet guest.",
+        "fact_id": "planning advice (03 insider_details, 00-input)",
+        "status": "confirmed"
+      }
+    ],
+    "compliance": {
+      "pass": true,
+      "issues": [
+        "No prices, no 'best', 'free', statistics, day or week counts, platform or vendor names, competitor names, Spam Act or messaging-law claims. Privacy line is marked general information as at November 2026, not legal advice; no claim that any law does or does not apply to the couple. 'at most' (Plan on three steps at most; FAQ) is a cap, not a statistic. Approved Wonderland Studio wording is enforced by edit 8, and the AUD qualifier by edit 9."
+      ]
+    },
+    "originality": {
+      "pass": false,
+      "matches": [
+        "blissandbone.com call script: 12-gram \"and wanted to check whether you'll be able to join us no\" plus sentence-by-sentence structure (edit 1).",
+        "blissandbone.com: \"would love to know if you can join us\" (8 words) appears 3 times (edits 2 to 4).",
+        "yeahweddings.com: \"let me/us know if you can make it\" (edit 5).",
+        "After the edits: 0 overlaps at 12 words or 7 words."
+      ]
+    },
+    "banned_phrases_found": [],
+    "needs_signoff": []
+  },
+  "self_qa": {
+    "checks": [
+      {
+        "check": "Every factual sentence logged",
+        "pass": true,
+        "note": "5 source-pack facts plus 3 brand claims; each <!-- fact_xx --> marker sits on a sentence that matches its claim, and the external link is at the claim."
+      },
+      {
+        "check": "Scan run and results reflected",
+        "pass": true,
+        "note": "scan_copy.py run against the stub notes in 02-research/pages (0 overlaps, since they are structure only), then against the full re-scraped body text (1 overlap at 12 words). A 6 to 8 word n-gram pass found the repeated phrases. The patched draft rescans clean."
+      },
+      {
+        "check": "Decision consistent with scores and blocking issues",
+        "pass": true,
+        "note": "Average 4.29 with no criterion below 3, but there is a blocking originality issue, so the decision is revise. All edits are exact one-occurrence replacements, checked by applying them to a copy."
+      },
+      {
+        "check": "Locked items unchanged",
+        "pass": true,
+        "note": "H1 and meta title, 4 one-sentence takeaways, heading rules (no colons, dashes or hyphens; questions only in the FAQ), each UTM once (primary, secondary and closing with anchor 'Wedded Concierge', plus the /magazine magnet), utm_medium=content, relative internal links, and the magazine link are all untouched by the edits."
+      }
+    ],
+    "confidence": 0.88
+  },
+  "open_questions": [
+    {
+      "to": "visual-curator",
+      "question": "04-images.json slot phone-reminder-message: change the shot_brief and the draft caption ('A reminder message in Wonderland Studio, shown with sample names') so the screen is not presented as Wonderland Studio sending a reminder. Studio may only be described as our planning app for seating charts and RSVPs. Suggested caption: 'A reminder message, shown with sample names.' The couple-guest-list slot (a Studio screen with sample names showing a guest list) is fine.",
+      "blocking": false
+    },
+    {
+      "to": "seo-researcher",
+      "question": "02-seo.json internal_links does not list /wonderland-concierge or /magazine (both live in the link map; the orchestrator mandates them). external_links lists only Collins (not used in the draft); add the two OAIC URLs and cyber.gov.au with checked 2026-11-23 so /wedded-refresh rechecks them. The Studio anchor in 02-seo ('...free RSVP and guest list tools') must not be used; the draft correctly uses 'Wonderland Studio'.",
+      "blocking": false
+    },
+    {
+      "to": "luxury-writer",
+      "question": "Optional, not required for pass: the brief's FAQ idea about a guest who says yes to several events late is not covered. Add one only if the word count allows (currently about 2,300 words, inside 1,800 to 2,400).",
+      "blocking": false
+    }
+  ],
+  "assumptions": [
+    "The 02-research/pages files are structure-only stubs, so originality was checked against a fresh Firecrawl scrape of the three pages, with body text extracted by the editor. Navigation, product promos and related-article lists were excluded.",
+    "FAQ 'How frequently should you remind guests to RSVP?' replaces the 02-seo wording 'How often...' to respect the orchestrator's ban on 'often'. This is accepted, at a small cost to the secondary keyword match.",
+    "/expert-advice/wedding-rsvp-website is the live path (link map 2026-11-24, verified in 02-seo), so linking it does not break the brief's rule against linking /wedding-rsvp-website unless live."
+  ],
+  "verify_items": [],
+  "tools_used": [
+    "content-system/scripts/scan_copy.py",
+    "mcp__Lead_MCP__firecrawl_scrape"
+  ],
+  "next_agent": [
+    "luxury-writer"
+  ]
+}
