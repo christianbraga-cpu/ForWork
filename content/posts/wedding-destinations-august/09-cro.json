@@ -1,0 +1,79 @@
+{
+  "agent": "cro",
+  "task_id": "wedding-destinations-august",
+  "stage": "09",
+  "status": "complete",
+  "round": 1,
+  "inputs_used": [
+    "CLAUDE.md",
+    "content-system/brand/services.md",
+    "content-system/brand/brand-facts.md",
+    "content/posts/wedding-destinations-august/01-brief.json",
+    "content/posts/wedding-destinations-august/07-panel.json",
+    "content/posts/wedding-destinations-august/07-icp/*.json (cta_reaction, unanswered_questions)",
+    "content/posts/wedding-destinations-august/08-final.md",
+    "content-system/seo/link-map.csv",
+    "content-system/schemas/09-cro.schema.json"
+  ],
+  "self_qa": {
+    "confidence": 0.85,
+    "checks": [
+      {"check": "/wonderland-concierge and /magazine exist in link-map.csv", "pass": true},
+      {"check": "Exactly four UTM-tagged links in 08-final.md, each recorded as it appears (three /wonderland-concierge, one /magazine), each utm_content used once", "pass": true, "note": "Lines 121 (magnet), 196 (primary), 220 (secondary), 248 (closing). No other link carries a UTM."},
+      {"check": "UTMs are utm_source=blog, utm_medium=content, utm_campaign=wedding-destinations-august with the right utm_content", "pass": true},
+      {"check": "No CTA marker comments in 08-final.md", "pass": true},
+      {"check": "Primary text 6 words or fewer, no exclamation mark, no 'click here'", "pass": true, "note": "Anchor 'Wedded Concierge', 2 words."},
+      {"check": "08-final.md not changed; no new CTAs, UTM links or copy edits proposed", "pass": true},
+      {"check": "No prices, fee detail, commissions, deposits, phone or named contacts, on-the-ground staff, transfers, room blocks, Wedded Privileges or availability stated", "pass": true, "note": "The only fee wording is the brand-facts claim already in the close: the fee is agreed in writing before any work begins."},
+      {"check": "Lead magnet placed only because it exists on the site", "pass": true, "note": "/magazine is in the link map (type magazine, lead magnet)."},
+      {"check": "Brand terms correct; Australian English; no em dashes", "pass": true}
+    ]
+  },
+  "assumptions": [
+    "The schema holds one primary and one secondary CTA, so the closing Concierge link (utm_content=closing) is recorded in tracking and rationale rather than as its own CTA object.",
+    "Links are recorded as relative paths, exactly as they appear in 08-final.md.",
+    "Subtext fields quote the sentence already beside each link in the copy; nothing new is written.",
+    "journey_stage is taken from 01-brief.json (comparing)."
+  ],
+  "open_questions": [
+    {"to": "/wonderland-concierge", "question": "How is the Wedded Concierge fee worked out (flat fee, percentage of budget or other), and what does it cover? Raised by sceptic, planner_couple, search_visitor and funding_parent; deferred in brand-facts.md. Every persona answered 'maybe' or 'no' to the CTA and named this as the brake.", "blocking": false},
+    {"to": "/wonderland-concierge", "question": "Does Wedded Concierge take commissions or referral fees from venues and suppliers? Raised by sceptic; deferred in brand-facts.md.", "blocking": false},
+    {"to": "/wonderland-concierge", "question": "How are deposits to overseas venues handled and protected, and in what currency and language are the contracts? Raised by funding_parent; deferred in brand-facts.md.", "blocking": false},
+    {"to": "/wonderland-concierge", "question": "Is there a private channel (not a public web form) to speak with someone senior, and is the first conversation obligation-free? Raised by uhnw (would not click), sceptic and funding_parent (wants a call with a real person before booking).", "blocking": false},
+    {"to": "/wonderland-concierge", "question": "Who answers on the day if something goes wrong, and who sits behind the single Wedded Advisor on a large wedding? Raised by funding_parent, planner_couple and uhnw; deferred in brand-facts.md.", "blocking": false},
+    {"to": "/wonderland-concierge", "question": "Real weddings and scale: can the page show real August weddings planned at these destinations, and weddings of 200 to 400 guests, with consent? Raised by planner_couple, sceptic and uhnw; deferred in brand-facts.md.", "blocking": false},
+    {"to": "orchestrator", "question": "Panel cta_reactions asked to see fee, deposits and real weddings before clicking. None can be added to the post without confirmed answers, so no copy change is flagged from this stage; the questions above go to /wonderland-concierge. search_visitor also noted no visible updated date on the page (a CMS template matter, not a CTA change).", "blocking": false}
+  ],
+  "verify_items": [],
+  "tools_used": ["Bash"],
+  "next_agent": ["distribution"],
+  "payload": {
+    "journey_stage": "comparing",
+    "primary_cta": {
+      "text": "Wedded Concierge",
+      "subtext": "Weighing a terrace in Europe against a beach closer to home? Talk it through with Wedded Concierge.",
+      "link": "/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=wedding-destinations-august&utm_content=primary",
+      "placement": "Inline, straight after the 'Wedding destinations in August at a glance' table, before 'What to plan for an August wedding abroad' (08-final.md line 196). Kept as is: this is where the hemisphere comparison peaks."
+    },
+    "secondary_cta": {
+      "text": "Wedded Concierge",
+      "subtext": "When you are ready to turn a shortlist into dates and venues, start with Wedded Concierge.",
+      "link": "/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=wedding-destinations-august&utm_content=secondary",
+      "placement": "Inline, end of 'What to plan for an August wedding abroad', after 'Guests travelling from Australia' and before the FAQ (08-final.md line 220). Kept as is."
+    },
+    "lead_magnet": {
+      "name": "Wedded Wonderland magazine",
+      "link": "/magazine?utm_source=blog&utm_medium=content&utm_campaign=wedding-destinations-august&utm_content=magnet",
+      "placement": "Inline, end of 'Northern summer in Europe' after the Switzerland entry, before 'Southern winter escapes in August' (08-final.md line 121). For the earlier-stage reader who bookmarks rather than enquires.",
+      "exists": true
+    },
+    "tracking": [
+      "line 121 | /magazine?utm_source=blog&utm_medium=content&utm_campaign=wedding-destinations-august&utm_content=magnet | anchor 'Wedded Wonderland magazine'",
+      "line 196 | /wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=wedding-destinations-august&utm_content=primary | anchor 'Wedded Concierge'",
+      "line 220 | /wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=wedding-destinations-august&utm_content=secondary | anchor 'Wedded Concierge'",
+      "line 248 | /wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=wedding-destinations-august&utm_content=closing | anchor 'Wedded Concierge' (closing section 'Plan your August wedding with Wedded Concierge')",
+      "Each tagged link appears once. No other link in 08-final.md carries a UTM. No CTA marker comments."
+    ],
+    "rationale": "The reader is comparing hemispheres for an August date, so the invitation sits where that comparison is complete: the primary Concierge link follows the at-a-glance table and frames the decision ('a terrace in Europe against a beach closer to home'). The secondary link closes the practical planning section for the reader ready to turn a shortlist into dates and venues, and the closing section repeats the invitation with the brand-facts reassurances (one Wedded Advisor, start to finish, works in your time zone, quotes in AUD, fee agreed in writing before any work begins), which funding_parent quoted as the line that made them consider clicking. The /magazine link serves the earlier-stage reader (planner_couple, search_visitor) who said they would bookmark and read more before enquiring. All four links are kept exactly as placed, with anchor 'Wedded Concierge' (2 words, no exclamation mark). Panel likelihood to enquire was 2.1: four personas said 'maybe' and uhnw said 'no', each pointing to fee model, commissions, deposits, a private channel, who answers on the day, or real weddings and scale. None of these are confirmed in brand-facts.md, so they are not answered in the post and are passed to /wonderland-concierge as open questions."
+  }
+}
