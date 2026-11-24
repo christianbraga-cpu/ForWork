@@ -9,3 +9,4 @@
 23:09 09 CRO complete
 23:09 10 distribution complete; image briefs no longer call Bali dry season
 23:11 final check pass_with_edits 4.14; 8/8 applied; image slot comments no longer call Bali dry season
+23:13 11 cms-publisher package complete, validates; NOT uploaded (no browser; field map NOT YET MAPPED); 7 image slots needed; check URL after Save Draft (category bug)

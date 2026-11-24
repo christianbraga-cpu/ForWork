@@ -1,0 +1,373 @@
+{
+ "agent": "cms-publisher",
+ "task_id": "wedding-destinations-august",
+ "stage": "11",
+ "status": "complete",
+ "round": 1,
+ "inputs_used": [
+  "CLAUDE.md",
+  "content-system/cms/field-map.md",
+  "content-system/cms/publish-checklist.md",
+  "content-system/schemas/11-publish-package.schema.json",
+  "content/posts/wedding-destinations-august/00-input.json",
+  "content/posts/wedding-destinations-august/01-brief.json",
+  "content/posts/wedding-destinations-august/02-seo.json",
+  "content/posts/wedding-destinations-august/03-source-pack.json",
+  "content/posts/wedding-destinations-august/04-images.json",
+  "content/posts/wedding-destinations-august/06-edit-final.json",
+  "content/posts/wedding-destinations-august/07-panel.json",
+  "content/posts/wedding-destinations-august/08-final.md",
+  "content/posts/wedding-destinations-august/09-cro.json",
+  "content/posts/wedding-destinations-august/10-distribution.json",
+  "content/posts/wedding-destinations-august/run-log.md",
+  "content/posts/best-time-to-get-married-in-greece/11-publish-package.json, 12-cms-report.md, booking-checklist.md (format model)"
+ ],
+ "self_qa": {
+  "checks": [
+   {
+    "check": "Front matter, META comments and all <!-- fact_xx --> markers removed; H1 is the title; 7 image-slot comments kept; prose, links and UTMs unchanged (diff against 08-final.md clean)",
+    "pass": true
+   },
+   {
+    "check": "No <!-- CTA: primary --> marker in 08-final.md, so nothing replaced; CTA positions marked per 09-cro.json; each utm_content (primary, secondary, closing, magnet) appears once in visible links",
+    "pass": true
+   },
+   {
+    "check": "Key takeaways (4) and FAQ (5) taken verbatim from the body",
+    "pass": true
+   },
+   {
+    "check": "H1/title, meta title and meta description as instructed and in 02-seo.json / 08-final.md META comment",
+    "pass": true,
+    "note": "title 60, meta title 56, description 133 characters"
+   },
+   {
+    "check": "primary_category equals categories[0] (Destination Weddings)",
+    "pass": true
+   },
+   {
+    "check": "No prices; needs_signoff empty",
+    "pass": true
+   },
+   {
+    "check": "Image alt and captions left empty (none approved; nothing invented); no AI images; Bali never captioned dry season",
+    "pass": true
+   },
+   {
+    "check": "No em dashes; Australian English",
+    "pass": true
+   },
+   {
+    "check": "status draft; nothing uploaded, saved, scheduled or published",
+    "pass": true
+   }
+  ],
+  "confidence": 0.9
+ },
+ "open_questions": [
+  {
+   "to": "orchestrator",
+   "question": "CMS upload not attempted: no browser in this cloud session, and content-system/cms/field-map.md says 'Status: NOT YET MAPPED'. A human saves as Draft (never Publish), or run /wedded-cms-discovery then /wedded-blog resume=wedding-destinations-august.",
+   "blocking": true
+  },
+  {
+   "to": "user",
+   "question": "Do the partner agreements for Villa Balbiano and Villa Pizzo allow their galleries on our site to be used in blog posts? Only then can they fill the lake-como slot.",
+   "blocking": false
+  },
+  {
+   "to": "visual-curator",
+   "question": "Rename the bali and dry-season-winter-escapes files so the Bali image file name does not say 'dry season'; confirm dry-season-winter-escapes is a Fiji venue. 04-images.json was written before 02/03 existed and still names no venues.",
+   "blocking": false
+  },
+  {
+   "to": "orchestrator",
+   "question": "No author named in any input; package uses \"Wedded Wonderland\" (organisation). Confirm the byline.",
+   "blocking": false
+  },
+  {
+   "to": "orchestrator",
+   "question": "Breadcrumb level 2 uses https://weddedwonderland.com/destination-weddings, which is not a row in link-map.csv. Confirm the category archive URL the CMS outputs.",
+   "blocking": false
+  }
+ ],
+ "assumptions": [
+  "H1/title 'Wedding Destinations in August for Summer or Winter Weddings' (60 characters); meta title and description as given, matching 02-seo.json and the META comment in 08-final.md.",
+  "Excerpt is the opening paragraph (two sentences), verbatim.",
+  "Categories and tags from 01-brief.json; primary category Destination Weddings set explicitly. New article, no redirect.",
+  "CTA links kept relative, exactly as in 09-cro.json and 08-final.md.",
+  "JSON-LD is Article + BreadcrumbList + FAQPage; FAQ answers carry no links; datePublished empty.",
+  "verify_items holds pre-publish image, licence and URL checks; the copy itself has no [[VERIFY]] markers.",
+  "Image status and file paths copied from 04-images.json; alt and caption left empty, not invented."
+ ],
+ "verify_items": [
+  "[[IMAGE NEEDED]] 7 of 7 slots, none approved: featured, summer-in-europe, greek-island, lake-como, dry-season-winter-escapes, bali, fiji. Real, named destinations only; licensed or owned; never AI.",
+  "[[VERIFY: licence and source for every image, recorded in library-index.csv]]",
+  "[[VERIFY: month taken for every image (register row or EXIF), so captions are true; captions name only the month the record supports]]",
+  "[[VERIFY: Bali image caption and alt never call Bali dry season; the post says only that August falls outside Indonesia's usual wet season]]",
+  "[[VERIFY: dry-season-winter-escapes slot is a Fiji venue (per the body slot comment), not Bali]]",
+  "[[VERIFY licence: weddedwonderland.com venue galleries (Villa Balbiano, Villa Pizzo) may fill lake-como only if the partner supply agreement allows blog use; images not yet viewed or location-verified]]",
+  "[[VERIFY: couple and guest consent for any identifiable people]]",
+  "[[VERIFY: after Save Draft, the post URL is exactly https://weddedwonderland.com/destination-weddings/wedding-destinations-august (the category bug has moved earlier posts)]]"
+ ],
+ "tools_used": [
+  "Bash",
+  "Read"
+ ],
+ "next_agent": [
+  "human: Save Draft in CMS (never Publish)"
+ ],
+ "payload": {
+  "title": "Wedding Destinations in August for Summer or Winter Weddings",
+  "slug": "wedding-destinations-august",
+  "url_path": "/destination-weddings/wedding-destinations-august",
+  "content_type": "Programmatic (list)",
+  "cluster": "Destination Wedding Guide 2026",
+  "categories": [
+   "Destination Weddings",
+   "Planning Guides"
+  ],
+  "primary_category": "Destination Weddings",
+  "tags": [
+   "August weddings",
+   "Europe",
+   "Greece",
+   "Italy",
+   "Bali",
+   "Fiji",
+   "New Zealand",
+   "wedding timing"
+  ],
+  "excerpt": "For an August wedding abroad, choose the hemisphere before the venue. Europe is at the height of its summer, with long evenings and its busiest season, while Fiji, Mauritius and New Zealand are in their cooler months and Bali sits outside its usual wet season.",
+  "key_takeaways": [
+   "The ten places are the Greek islands, Lake Como, the Amalfi Coast, the French Riviera, Portugal and Switzerland in Europe's high summer, and Bali, Fiji, New Zealand and Mauritius south of the equator.",
+   "On the Greek islands and the Riviera, August rain is slight on paper, so shade and ceremony timing matter more than a wet-weather plan.",
+   "15 August is a public holiday in Italy, so ask every Italian venue and supplier how they work on and around that date.",
+   "In Fiji and New Zealand, August 2026 weather differed sharply from coast to coast and region to region, so ask every venue for a covered or indoor option."
+  ],
+  "body_markdown_file": "content/posts/wedding-destinations-august/11-body.md",
+  "faq": [
+   {
+    "q": "Is August a good month to have a destination wedding?",
+    "a": "Yes, if you match the destination to the season: high summer in Europe, the cooler months in Fiji, Mauritius and New Zealand."
+   },
+   {
+    "q": "Where is warm but not too hot for a wedding in August?",
+    "a": "Look south. In the 1971 to 2000 normals from Mauritius Meteorological Services, Port Louis has an August mean daily maximum of 26.8°C, and the Fiji Meteorological Service described August 2026 as a winter month in the dry season. Both sources are linked in the entries above."
+   },
+   {
+    "q": "Where can you get married in Europe in August?",
+    "a": "The Greek islands, Lake Como, the Amalfi Coast, the French Riviera, Portugal and Switzerland all work, each with its own trade-off. Heat is the common thread."
+   },
+   {
+    "q": "Is August peak season for weddings in Greece and Italy?",
+    "a": "Plan as though it is. August falls in high summer in both countries, and 15 August is a public holiday in Italy, so ask venues early about availability that week and how they staff it."
+   },
+   {
+    "q": "Can Australians marry legally in these August destinations?",
+    "a": "It depends on the country, because legal requirements differ. Read the legal and symbolic ceremony guides linked above before you choose a destination."
+   }
+  ],
+  "images": [
+   {
+    "slot_id": "featured",
+    "file": "content/posts/wedding-destinations-august/images/wedding-destinations-august-european-sea-view-summer-ceremony-hero.webp",
+    "role": "featured",
+    "alt": "",
+    "caption": "",
+    "status": "needed"
+   },
+   {
+    "slot_id": "summer-in-europe",
+    "file": "content/posts/wedding-destinations-august/images/wedding-destinations-august-europe-summer-evening-reception-table.webp",
+    "role": "inline",
+    "alt": "",
+    "caption": "",
+    "status": "needed"
+   },
+   {
+    "slot_id": "dry-season-winter-escapes",
+    "file": "content/posts/wedding-destinations-august/images/wedding-destinations-august-tropical-dry-season-ceremony-setup.webp",
+    "role": "inline",
+    "alt": "",
+    "caption": "",
+    "status": "needed"
+   },
+   {
+    "slot_id": "greek-island",
+    "file": "content/posts/wedding-destinations-august/images/wedding-destinations-august-greek-island-venue-sea-terrace.webp",
+    "role": "inline",
+    "alt": "",
+    "caption": "",
+    "status": "needed"
+   },
+   {
+    "slot_id": "lake-como",
+    "file": "content/posts/wedding-destinations-august/images/wedding-destinations-august-lake-como-villa-summer-terrace.webp",
+    "role": "inline",
+    "alt": "",
+    "caption": "",
+    "status": "needed"
+   },
+   {
+    "slot_id": "bali",
+    "file": "content/posts/wedding-destinations-august/images/wedding-destinations-august-bali-clifftop-venue-dry-season.webp",
+    "role": "inline",
+    "alt": "",
+    "caption": "",
+    "status": "needed"
+   },
+   {
+    "slot_id": "fiji",
+    "file": "content/posts/wedding-destinations-august/images/wedding-destinations-august-fiji-resort-beach-ceremony.webp",
+    "role": "inline",
+    "alt": "",
+    "caption": "",
+    "status": "needed"
+   }
+  ],
+  "cta": {
+   "text": "Wedded Concierge",
+   "subtext": "Weighing a terrace in Europe against a beach closer to home? Talk it through with Wedded Concierge.",
+   "link": "/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=wedding-destinations-august&utm_content=primary",
+   "placement": "Inline, straight after the 'Wedding destinations in August at a glance' table (marked <!-- CTA BLOCK: primary --> in 11-body.md), per 09-cro.json. 08-final.md had no <!-- CTA: primary --> marker, so nothing was replaced; the existing sentence and link are unchanged."
+  },
+  "secondary_cta": {
+   "text": "Wedded Concierge",
+   "subtext": "When you are ready to turn a shortlist into dates and venues, start with Wedded Concierge.",
+   "link": "/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=wedding-destinations-august&utm_content=secondary",
+   "placement": "Existing sentence at the end of 'What to plan for an August wedding abroad', before the FAQ (marked <!-- CTA INLINE: secondary -->). Unchanged."
+  },
+  "closing_cta": {
+   "text": "Wedded Concierge",
+   "link": "/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=wedding-destinations-august&utm_content=closing",
+   "placement": "Existing link in 'Plan your August wedding with Wedded Concierge' (marked <!-- CTA INLINE: closing -->). Unchanged."
+  },
+  "lead_magnet": {
+   "name": "Wedded Wonderland magazine",
+   "link": "/magazine?utm_source=blog&utm_medium=content&utm_campaign=wedding-destinations-august&utm_content=magnet",
+   "placement": "Existing sentence at the end of 'Northern summer in Europe' (marked <!-- LEAD MAGNET -->). Unchanged."
+  },
+  "tracking_links": [
+   "/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=wedding-destinations-august&utm_content=primary",
+   "/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=wedding-destinations-august&utm_content=secondary",
+   "/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=wedding-destinations-august&utm_content=closing",
+   "/magazine?utm_source=blog&utm_medium=content&utm_campaign=wedding-destinations-august&utm_content=magnet"
+  ],
+  "seo": {
+   "meta_title": "Wedding Destinations in August for Summer or Winter Vows",
+   "meta_description": "Ten wedding destinations for August, from the Greek islands and Lake Como in summer to Bali, Fiji and Mauritius south of the equator.",
+   "focus_keyword": "wedding destinations august",
+   "canonical": "https://weddedwonderland.com/destination-weddings/wedding-destinations-august",
+   "og_image_slot": "featured"
+  },
+  "schema_jsonld": {
+   "@context": "https://schema.org",
+   "@graph": [
+    {
+     "@type": "Article",
+     "@id": "https://weddedwonderland.com/destination-weddings/wedding-destinations-august#article",
+     "headline": "Wedding Destinations in August for Summer or Winter Weddings",
+     "description": "Ten wedding destinations for August, from the Greek islands and Lake Como in summer to Bali, Fiji and Mauritius south of the equator.",
+     "author": {
+      "@type": "Organization",
+      "name": "Wedded Wonderland",
+      "url": "https://weddedwonderland.com/"
+     },
+     "publisher": {
+      "@type": "Organization",
+      "name": "Wedded Wonderland",
+      "url": "https://weddedwonderland.com/"
+     },
+     "datePublished": "",
+     "mainEntityOfPage": "https://weddedwonderland.com/destination-weddings/wedding-destinations-august",
+     "inLanguage": "en-AU"
+    },
+    {
+     "@type": "BreadcrumbList",
+     "itemListElement": [
+      {
+       "@type": "ListItem",
+       "position": 1,
+       "name": "Home",
+       "item": "https://weddedwonderland.com/"
+      },
+      {
+       "@type": "ListItem",
+       "position": 2,
+       "name": "Destination Weddings",
+       "item": "https://weddedwonderland.com/destination-weddings"
+      },
+      {
+       "@type": "ListItem",
+       "position": 3,
+       "name": "Wedding Destinations in August for Summer or Winter Weddings",
+       "item": "https://weddedwonderland.com/destination-weddings/wedding-destinations-august"
+      }
+     ]
+    },
+    {
+     "@type": "FAQPage",
+     "@id": "https://weddedwonderland.com/destination-weddings/wedding-destinations-august#faq",
+     "mainEntity": [
+      {
+       "@type": "Question",
+       "name": "Is August a good month to have a destination wedding?",
+       "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, if you match the destination to the season: high summer in Europe, the cooler months in Fiji, Mauritius and New Zealand."
+       }
+      },
+      {
+       "@type": "Question",
+       "name": "Where is warm but not too hot for a wedding in August?",
+       "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Look south. In the 1971 to 2000 normals from Mauritius Meteorological Services, Port Louis has an August mean daily maximum of 26.8°C, and the Fiji Meteorological Service described August 2026 as a winter month in the dry season. Both sources are linked in the entries above."
+       }
+      },
+      {
+       "@type": "Question",
+       "name": "Where can you get married in Europe in August?",
+       "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The Greek islands, Lake Como, the Amalfi Coast, the French Riviera, Portugal and Switzerland all work, each with its own trade-off. Heat is the common thread."
+       }
+      },
+      {
+       "@type": "Question",
+       "name": "Is August peak season for weddings in Greece and Italy?",
+       "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Plan as though it is. August falls in high summer in both countries, and 15 August is a public holiday in Italy, so ask venues early about availability that week and how they staff it."
+       }
+      },
+      {
+       "@type": "Question",
+       "name": "Can Australians marry legally in these August destinations?",
+       "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "It depends on the country, because legal requirements differ. Read the legal and symbolic ceremony guides linked above before you choose a destination."
+       }
+      }
+     ]
+    }
+   ]
+  },
+  "author": "Wedded Wonderland",
+  "status": "draft",
+  "verify_items": [
+   "[[IMAGE NEEDED]] 7 of 7 slots, none approved: featured, summer-in-europe, greek-island, lake-como, dry-season-winter-escapes, bali, fiji. Real, named destinations only; licensed or owned; never AI.",
+   "[[VERIFY: licence and source for every image, recorded in library-index.csv]]",
+   "[[VERIFY: month taken for every image (register row or EXIF), so captions are true; captions name only the month the record supports]]",
+   "[[VERIFY: Bali image caption and alt never call Bali dry season; the post says only that August falls outside Indonesia's usual wet season]]",
+   "[[VERIFY: dry-season-winter-escapes slot is a Fiji venue (per the body slot comment), not Bali]]",
+   "[[VERIFY licence: weddedwonderland.com venue galleries (Villa Balbiano, Villa Pizzo) may fill lake-como only if the partner supply agreement allows blog use; images not yet viewed or location-verified]]",
+   "[[VERIFY: couple and guest consent for any identifiable people]]",
+   "[[VERIFY: after Save Draft, the post URL is exactly https://weddedwonderland.com/destination-weddings/wedding-destinations-august (the category bug has moved earlier posts)]]"
+  ],
+  "needs_signoff": [],
+  "redirect": null,
+  "draft_note": "DRAFT. Do not publish until checked: no [[VERIFY]] markers in the copy; no prices, nothing for Nic to sign off. Image slots needed (7 of 7, none approved): featured, summer-in-europe, greek-island, lake-como, dry-season-winter-escapes, bali, fiji. Every slot shows a real destination: licensed or owned only, never AI, location proven by register row, EXIF or source page, and the month taken recorded so the caption is true. Never caption or alt-text Bali as dry season. The dry-season-winter-escapes slot should be a Fiji venue, as the slot comment says. The 04-images file names for bali and dry-season-winter-escapes contain 'dry-season': rename before upload so the Bali file name does not say dry season. lake-como: the Villa Balbiano and Villa Pizzo galleries on our site may be used only if the partner agreements allow blog use; confirm in writing first. People only with written couple and guest consent. Primary category Destination Weddings set explicitly; after saving, check the URL is exactly https://weddedwonderland.com/destination-weddings/wedding-destinations-august (category bug). Byline to confirm (package uses Wedded Wonderland). Check the at-a-glance table on mobile. Venue questions for couples are in booking-checklist.md. DRAFT ONLY. A human clicks Publish."
+ }
+}
