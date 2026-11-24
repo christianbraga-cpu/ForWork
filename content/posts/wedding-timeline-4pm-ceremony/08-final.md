@@ -25,7 +25,7 @@ Below is the 4pm day hour by hour in two versions, then what moves at 2pm, 3pm a
 
 ## Wedding timeline for a 4pm ceremony at a glance
 
-In the two example days below, hair and makeup begins at 9am with a first look or 10am without one, guests arrive at 3.30pm, the reception entrance is at 6pm or 6.30pm, and the send-off is at 10.45pm or 11pm. Around those times, think of a 4pm day in four movements. The morning belongs to getting ready. The early afternoon belongs to photos, if you choose a first look. The ceremony and drinks carry you from 4pm into the soft light, and the reception takes the evening through to the send-off.
+In the two example days below, hair and makeup begins at 9am with a first look or 10am without one, guests arrive at 3.30pm, the reception entrance is at 6pm or 6.30pm, and the send-off is at 10.45pm or 11pm.
 
 Every clock time on this page is a planning example to adapt, not a rule. Your team, your venue and your sunset will each move them.
 
@@ -128,7 +128,7 @@ A 3pm ceremony might look like this, for example: hair and makeup from 8.30am, f
 
 ## Wedding timeline for a 5pm ceremony
 
-A 5pm ceremony might look like this, for example: hair and makeup from 11am, first look at 3pm, guests arriving at 4.30pm, the ceremony at 5pm, drinks from 5.30pm, the reception at 7pm and the send-off at 11.30pm.
+A 5pm ceremony might look like this, for example: hair and makeup from 11am, first look at 3pm, guests arriving at 4.30pm, the ceremony at 5pm, drinks from 5.30pm, the reception at 7pm and the send-off at 11.45pm.
 
 **What changes.** The ceremony itself may sit in the low light, which flatters photos and is kind to guests in warm weather. In winter, sunset may come before or during the ceremony, so lighting at the ceremony site moves from optional to essential. Daylight after the ceremony may be short, which makes a first look close to necessary if you want couple and wedding party portraits in daylight. The gap before dinner matches the 4pm first look day, but the evening runs an hour later, so if the venue has an early curfew, that hour comes out of the dancing.
 
@@ -184,7 +184,7 @@ Give a copy to everyone who has to be somewhere at a set time. The words spoken 
 
 <!-- IMAGE SLOT run-sheet: Still life of a printed day-of run sheet on a table: a single elegant A4 or card page with placeholder clock times and placeholder names only (for example 'Couple A and B', 'Celebrant'), nothing that reads as a real wedding, couple or venue; a pen, a sprig of greenery or a coffee cup, soft daylight, no people, no logos. Preferred: owned photo or Canva brand asset. Fallback: AI illustrative still life (Higgsfield) ONLY with Nic's written approval, captioned 'Illustrative image', and the times on it must match the article's example timeline or be unreadable. -->
 
-If you would rather hand the venue questions to one person, [Wedded Concierge](/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=wedding-timeline-4pm-ceremony&utm_content=secondary) pairs you with a Wedded Advisor for the whole plan. For the feeling of the evening itself, browse [the Wedded Wonderland magazine](/magazine?utm_source=blog&utm_medium=content&utm_campaign=wedding-timeline-4pm-ceremony&utm_content=magnet).
+To plan it all with one person, [Wedded Concierge](/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=wedding-timeline-4pm-ceremony&utm_content=secondary) pairs you with a Wedded Advisor for the whole plan. For the feeling of the evening itself, browse [the Wedded Wonderland magazine](/magazine?utm_source=blog&utm_medium=content&utm_campaign=wedding-timeline-4pm-ceremony&utm_content=magnet).
 
 ## Frequently asked questions
 
@@ -216,4 +216,4 @@ In these examples, about an hour and a half, filled with photos and drinks, and 
 
 Start with the sunset, add the venue's curfew, and the rest of a 4pm day falls into place. Months before the day, the [wedding planning checklist](/expert-advice/wedding-planning-checklist) keeps the bigger decisions in order.
 
-If you would like to work it through with someone, a Wedded Advisor agrees the fee in writing before any work begins, confirms inclusions in writing before you commit, and quotes in AUD for Australian couples. Begin with [Wedded Concierge](/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=wedding-timeline-4pm-ceremony&utm_content=closing).
+If you would like to work it through with someone, a Wedded Advisor confirms inclusions in writing before you commit and quotes in AUD for Australian couples. Begin with [Wedded Concierge](/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=wedding-timeline-4pm-ceremony&utm_content=closing).
