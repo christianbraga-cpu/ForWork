@@ -19,3 +19,4 @@
 
 ## Stages
 - Stage 0 and 1 launched in parallel (strategist and researcher).
+- **Container restart:** the first strategist and researcher runs were lost before saving. Both relaunched (told to save early and incrementally).
