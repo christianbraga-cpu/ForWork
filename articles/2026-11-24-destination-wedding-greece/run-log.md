@@ -18,3 +18,10 @@
 - **Decision (default):** Greek legal facts (Australian route) and Smartraveller Greece facts are reused with their original dates. Santorini figures are quoted as worded in EUR (Nic). Legal confirmation goes to the municipality and the Australian embassy, never the advisor. No Wedded World plug, no DRAFT links.
 
 ## Stages
+- **Stage 1 fast (research):** DONE. 52 facts: 27 reused with original dates; 12 legal; 7 prices for Nic. The URL is 404, so a new post. All seven of our Greece pages are live and were read today. Smartraveller Greece: "exercise normal safety precautions"; up to 90 days in any 180.
+- **SITE-CONFLICTS (for the user and Nic):**
+  - Santorini capacity: four different figures across our pages.
+  - Season: May to October (hub) vs April to October (best-time page).
+  - Document age: three months (packages page, one venue's terms) vs six months (Australian Embassy Athens).
+  - The Greece hub's legal section is written for US citizens and says the advisor handles legal matters, which conflicts with our rule that legal confirmation goes to the authority.
+- **Decision (default):** none of the conflicting figures is quoted. Season is attributed to each page as worded, or given as "check the best-time guide". Document age comes from the Australian Embassy only.
