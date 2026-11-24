@@ -36,3 +36,14 @@
   - **Venue filter:** /search?tab=venues&country=Greece shows only one venue, so the plain venue search is linked.
   - SEO title 58 characters.
 - **Stage 2:** writer launched.
+- **Stage 2 fast (writer):** DONE. 03-draft-v1.md.
+  - --check: 2,597 reader words (over); 0 dashes; 1 visible [[NEEDS]] (flight routes). Seven official domains inline, none blocked.
+  - YAML valid: 43 claims, 34 links.
+  - Conflicting figures cut (Santorini capacity, document age).
+- **Link map (orchestrator, from the brief):**
+  - 15 Greece spokes and venue profiles added (Santorini, Mykonos and Crete venues, packages and cost pages; Greek Orthodox; traditions).
+  - Greece licence row set to LIVE.
+  - Duplicates and older Greece pages marked do not link.
+  - The legacy planning page is marked for a 301.
+- **Note for the user (UK-GREECE-URL):** the old URL /destination-weddings/if-youre-thinking-of-getting-married-in-greece-you-need-to-know-this now shows the title "Getting Married in Greece from the UK Step by Step". It looks as if the UK refresh was published in place at the old URL, not at /destination-weddings/getting-married-in-greece-from-uk. Please confirm which URL is live.
+- Reviews launched.

@@ -211,6 +211,25 @@ URL until a human confirms the other resolves.
 | `/destination-weddings/dubai-wedding-cost` | Dubai wedding cost | dubai wedding cost (live per Firecrawl map 23 Nov 2026) |
 | `/destination-weddings/hidden-costs-destination-wedding` | Hidden costs of a destination wedding | hidden costs destination wedding (live per Firecrawl map 23 Nov 2026) |
 | `/real-weddings/maldives-wedding-cost` | Maldives wedding cost | maldives wedding cost (live; read 19 Nov 2026 for the cost article) |
+| `/destination-weddings/santorini-wedding-venues` | Santorini wedding venues | santorini wedding venues (live per Firecrawl map 24 Nov 2026) |
+| `/destination-weddings/santorini-wedding-packages` | Santorini wedding packages | santorini wedding packages (live per Firecrawl map 24 Nov 2026) |
+| `/destination-weddings/santorini-wedding-cost` | Santorini wedding cost | santorini wedding cost by the hour (SITE-CONFLICT with /real-weddings/santorini-wedding-cost-breakdown) (live per Firecrawl map 24 Nov 2026) |
+| `/destination-weddings/santorini-or-mykonos-wedding` | Santorini or Mykonos wedding | santorini or mykonos wedding (live per Firecrawl map 24 Nov 2026) |
+| `/destination-weddings/mykonos-wedding` | Mykonos wedding | mykonos wedding (live per Firecrawl map 24 Nov 2026) |
+| `/destination-weddings/mykonos-wedding-venues` | Mykonos wedding venues | mykonos wedding venues (live per Firecrawl map 24 Nov 2026) |
+| `/real-weddings/mykonos-wedding-cost` | Mykonos wedding cost | mykonos wedding cost (live per Firecrawl map 24 Nov 2026) |
+| `/destination-weddings/wedding-in-crete` | Wedding in Crete | wedding in crete (live per Firecrawl map 24 Nov 2026) |
+| `/destination-weddings/crete-wedding-venues` | Crete wedding venues | crete wedding venues (live per Firecrawl map 24 Nov 2026) |
+| `/destination-weddings/crete-wedding-packages` | Crete wedding packages | crete wedding packages (live per Firecrawl map 24 Nov 2026) |
+| `/destination-weddings/greece-wedding-packages-all-inclusive` | Greece all-inclusive wedding packages | greece all inclusive wedding packages (live per Firecrawl map 24 Nov 2026) |
+| `/destination-weddings/greek-orthodox-wedding` | Greek Orthodox wedding | greek orthodox wedding (live per Firecrawl map 24 Nov 2026) |
+| `/expert-advice/greek-wedding-traditions` | Greek wedding traditions | greek wedding traditions (live per Firecrawl map 24 Nov 2026) |
+| `/venue/sea-view-by-en-kipo` | Sea View by En Kipo (venue profile) | venue profile, Greece (live per Firecrawl map 24 Nov 2026) |
+| `/venue/rocabella-santorini-hotel-spa` | Rocabella Santorini Hotel and Spa (venue profile) | venue profile, Santorini (live per Firecrawl map 24 Nov 2026) |
+| `/real-weddings/greece-real-wedding`, `/real-weddings/what-do-real-weddings-in-greece-look-like` | Greece Real Wedding (duplicate titles) | do not link until one is chosen |
+| `/favorite-destination-weddings-in-greece`, `/13-reasons-we-all-want-to-get-married-in-santorini` | older Greece pages | do not link; redirect candidates |
+| `/how-to-plan-a-destination-wedding-in-greece-if-youre-overseas` | older Greece planning page | do not link; 301 to /destination-weddings/destination-wedding-greece after publish (user approval) |
+| `/destination-weddings/destination-wedding-greece` | Destination Wedding in Greece Guide for Couples (WW-281) | destination wedding greece | DRAFT (24 Nov 2026; new post) |
 | `/real-weddings/santorini-wedding-cost-breakdown` | Santorini wedding cost breakdown | santorini wedding cost (live; read 19 Nov 2026 for the cost article) |
 | `/destination-weddings/getting-married-in-greece-from-uk` | Getting Married in Greece from the UK Step by Step | getting married in greece from uk | DRAFT (20 Nov 2026; replaces /if-youre-thinking-of-getting-married-in-greece-you-need-to-know-this, 301 after publish) |
 
@@ -451,7 +470,7 @@ No dedicated Decor and Florals hub exists. The /blog/decor category page is the 
 |---|---|---|---|
 | `/destination-weddings/wedding-planner-italy` | Wedding Planner Italy: How to Choose One from Australia | wedding planner italy | LIVE (seen by Firecrawl, 26 Oct 2026) |
 | `/destination-weddings/married-in-italy` | How to Get Married in Italy From the USA | married in italy | DRAFT (final.md 27 Oct 2026; not yet published) |
-| `/destination-weddings/greece-marriage-licence` | Greece Marriage Licence and the Eight-Day Wait Explained | greece marriage licence | DRAFT (final.md 12 Nov 2026; not yet published) |
+| `/destination-weddings/greece-marriage-licence` | Greece Marriage Licence for Australians: The Eight-Day Wait | greece marriage licence | LIVE (Firecrawl 24 Nov 2026) |
 | `/expert-advice/marriage-licence-requirements` | Marriage Licence Requirements in Australia | marriage licence, notice of intended marriage, noim | DRAFT (final.md 13 Nov 2026; not yet published) |
 | `/expert-advice/marriage-licence-validity` | Marriage Licence Validity and How Long It Lasts | marriage licence validity | DRAFT (final.md 13 Nov 2026; publish after the requirements pillar) |
 | `/expert-advice/wedding-witnesses` | Wedding Witnesses and How Many You Need | wedding witnesses, marriage witness | DRAFT (final.md 13 Nov 2026; publish after the requirements pillar) |
