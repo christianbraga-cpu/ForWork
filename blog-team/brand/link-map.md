@@ -229,7 +229,7 @@ URL until a human confirms the other resolves.
 | `/real-weddings/greece-real-wedding`, `/real-weddings/what-do-real-weddings-in-greece-look-like` | Greece Real Wedding (duplicate titles) | do not link until one is chosen |
 | `/favorite-destination-weddings-in-greece`, `/13-reasons-we-all-want-to-get-married-in-santorini` | older Greece pages | do not link; redirect candidates |
 | `/how-to-plan-a-destination-wedding-in-greece-if-youre-overseas` | older Greece planning page | do not link; 301 to /destination-weddings/destination-wedding-greece after publish (user approval) |
-| `/destination-weddings/destination-wedding-greece` | Destination Wedding in Greece Guide for Couples (WW-281) | destination wedding greece | DRAFT (24 Nov 2026; new post) |
+| `/destination-weddings/destination-wedding-greece` | Destination Wedding in Greece Guide for Couples (WW-281) | destination wedding greece | DRAFT (24 Nov 2026; new post; final ready, not published) |
 | `/real-weddings/santorini-wedding-cost-breakdown` | Santorini wedding cost breakdown | santorini wedding cost (live; read 19 Nov 2026 for the cost article) |
 | `/destination-weddings/getting-married-in-greece-from-uk` | Getting Married in Greece from the UK Step by Step | getting married in greece from uk | DRAFT (20 Nov 2026; replaces /if-youre-thinking-of-getting-married-in-greece-you-need-to-know-this, 301 after publish) |
 

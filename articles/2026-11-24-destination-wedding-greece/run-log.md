@@ -56,3 +56,13 @@
 - **Stage 4 fast (writer v2):** DONE. 03-draft-v2.md: 2,423 reader words, 0 dashes, 0 placeholders. Official domains: mitos.gov.gr, greece.embassy.gov.au, ag.gov.au, heraklion.gr, smartraveller.gov.au. YAML valid: 43 claims (C-07 and C-43 removed from body), 34 links. All 20 items applied; spokes linked with non-exact anchors; flights use the accuracy wording.
 - **SITE-CONFLICTS addition:** a Mykonos cost page is live, so "we have not published ranges" was cut from the body and FAQ.
 - Copy editor launched.
+- **Stage 6 fast (copy editor):** DONE. final.md 2,421 reader words, 0 dashes, 0 placeholders; publish-package.json valid (34 links, 5 FAQs, 7 image slots, 11 open items); chrome-upload-prompt.md draft only, creates a new post after a slug check; article.docx built. The orchestrator replaced "complimentary" in a final-notes line with "banned brand words" and rebuilt the docx.
+
+## Must-fix before publish
+1. NEW-URL: the URL was 404. Create a new post (Zoho WC3-T688, WW-281).
+2. NIC-SIGNOFF: 8 figures (Santorini in EUR, DFAT fees in AUD), all in original currency. AUD-EXCEPTION: confirm no conversions.
+3. SITE-CONFLICTS (for the user and Nic): Santorini capacity; season May vs April; document age 3 vs 6 months; the hub's US-focused legal section naming the advisor; the live Mykonos cost page.
+4. UK-GREECE-URL: confirm which URL carries the UK guide.
+5. HUB-KEYWORD: the hub owns "greece wedding venues", which clashes with /greece-wedding-venues.
+6. LEGACY-301: after publish, 301 /how-to-plan-a-destination-wedding-in-greece-if-youre-overseas here (user approval).
+7. FLIGHTS (optional), LINK-CHECK, AUTHOR, IMAGE-RIGHTS, CMS-URL.
