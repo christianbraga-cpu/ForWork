@@ -34,3 +34,4 @@
   - /venue (filters by city and guest count) is the primary venue-search link.
   - /search?tab=vendors is kept once, as the user asked, with the anchor "search planners, caterers and stylists among our trusted vendors", and added to link-map.
   - DESIGN-SHEET (a copyable Google Sheet or .xlsx) is logged for before publish.
+- **Stage 4 fast (writer v2):** DONE. 03-draft-v2.md: 2,006 reader words, 0 dashes, 0 placeholders, ACCC and Smartraveller inline (the generator line was dropped). YAML valid: 26 claims, 20 links. All 20 items applied. ACL wording fixed; /venue is the primary venue search; vendor search linked once as "trusted vendors". The orchestrator moved the /search?tab=vendors link-map row out of "Do not link" into section 4.
