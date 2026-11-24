@@ -20,3 +20,8 @@
 
 ## Stages
 - **00:37 check-in:** no hand-back from the strategist or the researcher after 15 minutes (likely held on permission prompts). The research pack has 10 reused facts (saved 00:22). **Decision (default):** the writer started on the saved facts with an inline 7-H2 brief. /search?tab=vendors is linked once, pending MARKETPLACE-SEARCH-CHECK (must be confirmed live before publish).
+- **Stage 2 fast (writer):** DONE. 03-draft-v1.md (the research pack had grown to 21 facts).
+  - --check: 2,342 reader words (over); 0 dashes; 3 visible [[NEEDS: AUD approximation]] placeholders (against the no-conversion rule; removed in v2). Official domains: ACCC, Energy Safe Victoria, Smartraveller.
+  - YAML: one unquoted value fixed by the orchestrator; now valid, 26 claims, 25 links.
+  - /search?tab=vendors lists vendors by category (F-19), so the anchor became "search planners, caterers and stylists in our Marketplace". The SEO review checks for a venue filter.
+  - Reviews launched. The strategist and researcher are still held on permission prompts.
