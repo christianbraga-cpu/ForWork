@@ -1,0 +1,94 @@
+{
+  "agent": "visual-curator",
+  "task_id": "wedding-rsvp-reminder",
+  "stage": "04",
+  "status": "needs_input",
+  "round": 1,
+  "inputs_used": [
+    "CLAUDE.md",
+    "content/posts/wedding-rsvp-reminder/00-input.json",
+    "content-system/images/sources-policy.md",
+    "content-system/images/library-index.csv (header only, no rows)",
+    "content-system/schemas/04-images.schema.json",
+    "content-system/schemas/envelope.schema.json",
+    "Orchestrator task message (4-slot brief, fast mode)"
+  ],
+  "payload": {
+    "slots": [
+      {
+        "slot_id": "featured",
+        "placement": "featured",
+        "purpose": "Hero: show the article's subject at a glance (a gentle, elegant RSVP reminder) in a refined, luxury tone.",
+        "shot_brief": "Still life, no people. A printed RSVP reminder card or folded note card on a styled desk: heavy cotton paper, letterpress or foil detail, neutral palette (ivory, sage, soft gold), fountain pen, wax seal or ribbon, a few stems of seasonal flowers, soft window light from one side. Card text uses placeholder names only (e.g. 'Alex & Sam') and 'Kindly reply by [date]' with no real date, no real couple, no third-party stationery branding. Wide 3:2 crop with headroom for a title overlay. Preferred source: own shoot or licensed stock added to the Drive library and register. AI is allowed only if Nic approves in writing, then captioned 'Illustrative image'.",
+        "status": "needed",
+        "file": "content/posts/wedding-rsvp-reminder/images/wedding-rsvp-reminder-card-desk-hero.webp",
+        "alt": "Printed wedding RSVP reminder card with a fountain pen and flowers on a styled desk",
+        "caption": "[[IMAGE NEEDED]] Caption depends on source: 'Photo: <credit>' for a licensed photo, or 'Illustrative image' if Nic approves an AI still life in writing."
+      },
+      {
+        "slot_id": "phone-reminder-message",
+        "placement": "after_h2:2",
+        "purpose": "Illustrate the reminder message wording section: a short, warm digital reminder as a guest would see it.",
+        "shot_brief": "Close crop of a hand holding a phone (no face, no rings or tattoos that identify anyone) showing a short reminder message with placeholder names only. Screen content must be a Wonderland Studio screenshot with sample names supplied by the team, composited onto a licensed or own-shot phone image; no third-party app screens, logos, notification badges or real contact details. Warm, natural light, linen or marble surface behind. 3:2 or 4:5 inline crop. If the team supplies the Studio screenshot alone, it can run as a plain screenshot (caption 'Wonderland Studio, sample names').",
+        "status": "needed",
+        "file": "content/posts/wedding-rsvp-reminder/images/wedding-rsvp-reminder-studio-phone-message.webp",
+        "alt": "Phone screen showing a short wedding RSVP reminder message with sample names",
+        "caption": "[[IMAGE NEEDED]] Draft: 'A reminder message in Wonderland Studio, shown with sample names.' Add photo credit if a licensed phone photo is used."
+      },
+      {
+        "slot_id": "couple-guest-list",
+        "placement": "after_h2:3",
+        "purpose": "Show the couple's side of the process: reviewing who has and hasn't replied before sending reminders.",
+        "shot_brief": "Couple in their 30s at home reviewing their guest list together: laptop or printed list on a dining table or sofa, coffee cups, relaxed and warm, late-afternoon light, stylish but lived-in interior. Screens show no third-party apps, logos or real guest names (blank, blurred or Wonderland Studio with sample names). Identifiable people need a signed model release or documented couple consent, recorded in the register. Prefer licensed stock (Stocksy/Offset) or a Wedded Wonderland shoot. Never AI (real people and a real wedding context).",
+        "status": "needed",
+        "file": "content/posts/wedding-rsvp-reminder/images/wedding-rsvp-reminder-couple-guest-list-home.webp",
+        "alt": "Couple at home reviewing their wedding guest list together on a laptop",
+        "caption": "[[IMAGE NEEDED]] Caption: 'Photo: <credit>' once licensed; record model release or consent."
+      },
+      {
+        "slot_id": "destination-welcome",
+        "placement": "after_h2:5",
+        "purpose": "Tie reminders to destination and multi-event weddings: why a firm reply date matters when guests travel and attend welcome drinks, the ceremony and a farewell event.",
+        "shot_brief": "Real destination wedding setting suggesting guests arriving: a welcome drinks terrace, aperitivo table or welcome sign at a Wedded Wonderland partner venue, golden hour, guests seen from behind or at a distance (not identifiable) or no people at all. Real place, so never AI. Source order: Drive image library (register row with licence and consent), then a weddedwonderland.com partner venue page if the supply agreement covers blog use, then a venue press kit via a Gmail draft permission request. Venue and town must be verified by register, EXIF or source page and named in the caption.",
+        "status": "needed",
+        "file": "content/posts/wedding-rsvp-reminder/images/wedding-rsvp-reminder-<venue>-welcome-drinks.webp",
+        "alt": "Welcome drinks set up on a terrace as destination wedding guests arrive at golden hour",
+        "caption": "[[IMAGE NEEDED]] Format: '<Place>, <town>. Photo: <credit>'."
+      }
+    ],
+    "reference_only": [],
+    "permission_requests": []
+  },
+  "self_qa": {
+    "checks": [
+      {"check": "Zero reference-only or competitor images in slots", "pass": true, "note": "No reference images collected in fast mode."},
+      {"check": "Every approved image has verified location, licence, alt, caption and fit_reason", "pass": true, "note": "No slot is approved; all four are 'needed' with briefs."},
+      {"check": "No AI image depicting a real place", "pass": true, "note": "No AI generated. Destination slot explicitly barred from AI; featured still life AI only with Nic's written approval and 'Illustrative image' caption."},
+      {"check": "Featured image exists (approved or needed with brief)", "pass": true, "note": "Needed, with brief."},
+      {"check": "Consent planned for identifiable people", "pass": true, "note": "Couple slot requires model release or consent; phone and destination slots avoid identifiable people."},
+      {"check": "No third-party app screens, logos or real names", "pass": true, "note": "Briefs require placeholder or sample names and Wonderland Studio screens only."},
+      {"check": "Image library searched", "pass": false, "note": "library-index.csv has no rows. Google Drive search tool was not available in this session, so Drive was not searched. Canva get-assets needs asset IDs; none known."}
+    ],
+    "confidence": 0.7
+  },
+  "open_questions": [
+    {"to": "Nic", "question": "Featured still life: approve in writing an AI-generated (Higgsfield) illustrative reminder card on a desk, captioned 'Illustrative image', or should the team shoot or buy licensed stock?", "blocking": false},
+    {"to": "team", "question": "Please supply a Wonderland Studio screenshot of a reminder message using sample names (no real guests) for the phone slot.", "blocking": false},
+    {"to": "team", "question": "Which partner venue's welcome drinks or multi-event image can we use with a blog licence? Add it to the Drive library and library-index.csv with licence and consent, or name a venue so a press-kit permission draft can be prepared.", "blocking": false},
+    {"to": "team", "question": "Couple slot: purchase licensed stock (Stocksy/Offset) with model release, or use an own shoot with signed consent?", "blocking": false}
+  ],
+  "assumptions": [
+    "Fast mode: no 01-brief.json, 02-seo.json outline or research report exists yet, so placements after_h2:2, after_h2:3 and after_h2:5 are provisional (wording/message section, tracking replies section, destination and multi-event section). The writer should map them to the final outline.",
+    "No deadline, day counts or statistics appear in any image or caption, per 00-input notes.",
+    "The destination slot filename keeps a <venue> placeholder until a venue is chosen."
+  ],
+  "verify_items": [
+    "[[IMAGE NEEDED]] featured: printed RSVP reminder card on a styled desk (licensed, own shoot, or AI still life only with Nic's written approval, captioned 'Illustrative image')",
+    "[[IMAGE NEEDED]] phone-reminder-message: Wonderland Studio screenshot with sample names, optionally on a licensed phone image",
+    "[[IMAGE NEEDED]] couple-guest-list: licensed or own photo with model release or couple consent",
+    "[[IMAGE NEEDED]] destination-welcome: licensed real-venue image, location verified, never AI",
+    "[[VERIFY licence]] any image added for these slots must have a register row with licence scope and consent before approval"
+  ],
+  "tools_used": ["Bash", "ToolSearch"],
+  "next_agent": ["luxury-writer"]
+}
