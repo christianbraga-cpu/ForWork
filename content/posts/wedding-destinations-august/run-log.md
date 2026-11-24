@@ -4,3 +4,4 @@
 22:47 02 SEO and 03 au_a complete; title corrected to 60 chars; Tuscany swapped for Mauritius; link map statuses updated; gap batch au_c (Milan, Lisbon, France, Mauritius via WMO WWIS) running
 22:59 05 draft complete (~2,140 prose words); Mauritius link anchor made neutral; first-draft docx built
 23:00 07 readers complete (5)
+23:05 06 editor revise 4.14 (Smartraveller dates, accuracy); 42/42 applied -> 05-draft-r2.md; 02-seo meta synced; link map: Santorini, Crete, best-time Bali, symbolic page marked live, best-time Italy added
