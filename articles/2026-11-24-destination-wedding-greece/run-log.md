@@ -53,3 +53,6 @@
   - **Reader (couple):** relevance 3, trust 3, clarity 4, would_enquire 2, "save and forward". Majors: the placeholder; the partner-properties Benefits line raising the commission worry.
   - Merged request: 04-reviews/v1/merged.md.
 - **Conflict resolved:** the flights paragraph uses the accuracy wording ("check with your airline or travel advisor"), not "the islands add one more leg".
+- **Stage 4 fast (writer v2):** DONE. 03-draft-v2.md: 2,423 reader words, 0 dashes, 0 placeholders. Official domains: mitos.gov.gr, greece.embassy.gov.au, ag.gov.au, heraklion.gr, smartraveller.gov.au. YAML valid: 43 claims (C-07 and C-43 removed from body), 34 links. All 20 items applied; spokes linked with non-exact anchors; flights use the accuracy wording.
+- **SITE-CONFLICTS addition:** a Mykonos cost page is live, so "we have not published ranges" was cut from the body and FAQ.
+- Copy editor launched.
