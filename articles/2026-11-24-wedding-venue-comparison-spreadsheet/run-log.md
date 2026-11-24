@@ -50,3 +50,7 @@
 3. NIC-SIGNOFF: every figure, in original currency. AUD-EXCEPTION: confirm no conversions.
 4. MARKETPLACE-HEADER: the site header links /marketplace (NOT LIVE per link-map); both /search tabs are noindex.
 5. LINK-CHECK, AUTHOR, IMAGE-RIGHTS, CMS-URL.
+- **Research (late, after the permission hold):** COMPLETE. 29 facts. F-01 to F-21, which the draft cites, are unchanged; F-22 to F-29 are appended (incl. the ACCC unfair contract terms page). No change needed to final.md.
+- **New for the user:**
+  - STUDIO-TRIAL: Studio pages conflict ("no trial clock" vs "7-day free trial" on two pages). The CTA says "no credit card required", which matches F-20.
+  - OVERLAP: /destination-weddings/all-inclusive-wedding-cost already teaches a package comparison spreadsheet (partial overlap; not linked here).
