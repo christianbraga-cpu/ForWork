@@ -19,8 +19,8 @@ The ten wedding destinations in August below are unranked, split by hemisphere a
 ## Key takeaways
 
 - The ten places are the Greek islands, Lake Como, the Amalfi Coast, the French Riviera, Portugal and Switzerland in Europe's high summer, and Bali, Fiji, New Zealand and Mauritius south of the equator.
-- On the Greek islands and the Riviera, August rain is slight on paper, so shade and ceremony timing matter more than a wet-weather plan.
-- 15 August is a public holiday in Italy, so ask every Italian venue and supplier how they work on and around that date.
+- On the Greek islands and the Riviera, August rain is slight on paper, so shade and ceremony timing matter more than a wet-weather plan. <!-- fact_002 --> <!-- fact_203 -->
+- 15 August is a public holiday in Italy, so ask every Italian venue and supplier how they work on and around that date. <!-- fact_008 -->
 - In Fiji and New Zealand, August 2026 weather differed sharply from coast to coast and region to region, so ask every venue for a covered or indoor option. <!-- fact_105 --> <!-- fact_108 -->
 
 ## August suits a destination wedding when you choose the hemisphere first
@@ -31,7 +31,7 @@ Neither is the safer choice: Europe means planning for heat and crowds; the sout
 
 ## How we chose these ten August destinations
 
-Every place here is one we plan and write about, and the list is unranked: the right answer depends on your guests, your tolerance for heat, and whether you picture a sea terrace at dusk or a mountain lodge. Each entry gives the trade-off, official August weather with station and period named, venue questions and our guide.
+Every place here is one we plan and write about. The right answer depends on your guests, your tolerance for heat, and whether you picture a sea terrace at dusk or a mountain lodge. Each entry gives the trade-off, official August weather with its station and period where the source publishes them, venue questions and our guide.
 
 A city station can differ from a villa nearby, and averaging periods and rain-day definitions vary between countries, so read each figure on its own rather than comparing destinations directly. <!-- fact_205 -->
 
@@ -78,7 +78,6 @@ Europe in August means dinner outdoors and guests ready for a long weekend, at t
 **Questions for the venue.**
 - What time does the ceremony terrace come out of full sun?
 - How do guests who find stairs hard reach the ceremony terrace and the dinner?
-- Are you open on 15 August, and do your suppliers charge differently that week?
 
 **Our guide.** Browse [Amalfi Coast wedding venues](/destinations/europe/italy/amalfi-coast-wedding).
 
@@ -122,17 +121,17 @@ For more planning reading, browse the [Wedded Wonderland magazine](/magazine?utm
 
 ## Southern winter escapes in August
 
-South of the equator, August trades Europe's heat for cooler nights and, for many Australian guests, a shorter journey. The risks become wind, showers and, in New Zealand, snow.
+South of the equator, August trades Europe's heat for wind, showers and, in New Zealand, snow.
 
-<!-- IMAGE SLOT dry-season-winter-escapes: Clear-sky tropical ceremony setup (Bali or Fiji venue we cover) in dry season light, open-air pavilion or beachfront arbour, no rain cover. No people or guests unidentifiable. Month taken June to September recorded so the dry season claim is true. -->
+<!-- IMAGE SLOT dry-season-winter-escapes: Clear-sky tropical ceremony setup (Fiji venue we cover) in August light, open-air pavilion or beachfront arbour, no rain cover. No people or guests unidentifiable. Month taken June to September recorded so the month in the caption is true. -->
 
 ### Bali
 
 **Why August.** August falls outside Indonesia's usual wet season, which makes a clifftop or garden ceremony easier to plan. <!-- fact_104 --> The trade-off: a drier outlook is not a guarantee.
 
-**August weather.** [Smartraveller](https://www.smartraveller.gov.au/destinations/asia/indonesia) puts Indonesia's wet season at usually around October to April, when weather can change quickly and heavy rain can flood roads in Bali. <!-- fact_104 --> For June to August 2026, [BMKG's Bali climate station](https://staklim-bali.bmkg.go.id/?p=3621) rated the drought and wetness outlook across the province as generally "Normal and Slightly Dry". That outlook covered 2026 only, not a long-term average, so treat it as a guide rather than a forecast for your year. <!-- fact_103 --> For the months either side, see [when to marry in Bali, month by month](/destination-weddings/best-time-to-get-married-in-bali).
+**August weather.** As at November 2026, [Smartraveller](https://www.smartraveller.gov.au/destinations/asia/indonesia) puts Indonesia's wet season at usually around October to April, when weather can change quickly and heavy rain can flood roads in Bali. <!-- fact_104 --> For June to August 2026, [BMKG's Bali climate station](https://staklim-bali.bmkg.go.id/?p=3621) rated the drought and wetness outlook across the province as generally "Normal and Slightly Dry". That outlook covered 2026 only, not a long-term average, so treat it as a guide rather than a forecast for your year. <!-- fact_103 --> For the months either side, see [when to marry in Bali, month by month](/destination-weddings/best-time-to-get-married-in-bali).
 
-<!-- IMAGE SLOT bali: Named Bali venue we cover (clifftop Uluwatu or Seminyak villa, to match the H3), dry season sky over the ocean, ceremony setup or chapel, no identifiable people. Month taken June to September recorded. -->
+<!-- IMAGE SLOT bali: Named Bali venue we cover (clifftop Uluwatu or Seminyak villa, to match the H3), clear sky over the ocean, ceremony setup or chapel, no identifiable people. Month taken June to September recorded. -->
 
 **Questions for the venue.**
 - What is the wet-weather option, even for an August date?
@@ -142,7 +141,7 @@ South of the equator, August trades Europe's heat for cooler nights and, for man
 
 ### Fiji
 
-**Why August.** The Fiji Meteorological Service counts August as a winter month and the dry season, which suits an outdoor ceremony. <!-- fact_105 --> The trade-off is wind and showers, which depend on which side of an island your venue faces.
+**Why August.** Cool nights and the dry season, as described in the met service summary below, suit an outdoor ceremony. <!-- fact_105 --> The trade-off is wind and showers, which depend on which side of an island your venue faces.
 
 **August weather.** The [Fiji Meteorological Service's August 2026 summary](https://www.met.gov.fj/media/climate_product_files/Fiji_Climate_Summary_August_2026_4hgZRFZ.pdf) calls August a winter month for Fiji and the dry season. In August 2026 it recorded cool nights, windy periods and regular trade showers, mainly on windward coasts, while the leeward sides of the larger islands were generally fine and drier. <!-- fact_105 --> Extremes that month ran from 32.7°C by day at Rarawai Mill in Ba to 9.8°C at night at Nadarivatu, an inland highland station: one month's readings, not an average. <!-- fact_106 -->
 
@@ -227,7 +226,7 @@ Yes, if you match the destination to the season: high summer in Europe, the cool
 
 ### Where is warm but not too hot for a wedding in August?
 
-Look south. Port Louis in Mauritius has an August mean daily maximum of 26.8°C (1971 to 2000 normals), <!-- fact_204 --> and Fiji's met service calls August a winter month and the dry season. <!-- fact_105 -->
+Look south. In the 1971 to 2000 normals from Mauritius Meteorological Services, Port Louis has an August mean daily maximum of 26.8°C, <!-- fact_204 --> and the Fiji Meteorological Service described August 2026 as a winter month in the dry season. <!-- fact_105 --> Both sources are linked in the entries above.
 
 ### Where can you get married in Europe in August?
 

@@ -1,0 +1,307 @@
+{
+  "agent": "editor",
+  "task_id": "wedding-destinations-august",
+  "stage": "06",
+  "status": "complete",
+  "round": 3,
+  "inputs_used": [
+    "content/posts/wedding-destinations-august/08-final.md",
+    "content/posts/wedding-destinations-august/01-brief.json",
+    "content/posts/wedding-destinations-august/02-seo.json",
+    "content/posts/wedding-destinations-august/03-source-pack.json",
+    "content/posts/wedding-destinations-august/04-images.json",
+    "content/posts/wedding-destinations-august/06-edit.json",
+    "content/posts/wedding-destinations-august/07-panel.json",
+    "content/posts/wedding-destinations-august/02-research/pages/",
+    "content-system/brand/brand-facts.md",
+    "content-system/rubrics/link-rules.md",
+    "content-system/seo/link-map.csv",
+    "content-system/schemas/06-edit.schema.json"
+  ],
+  "self_qa": {
+    "checks": [
+      {
+        "check": "Every factual sentence logged",
+        "pass": true
+      },
+      {
+        "check": "Scan run and results reflected",
+        "pass": true,
+        "note": "scan_copy clean on 08-final.md and on 08-final.md with all 8 edits applied (0 banned, 0 flagged, 0 dashes, 0 overlaps)"
+      },
+      {
+        "check": "Every old_str occurs exactly once in 08-final.md and still once when applied in order",
+        "pass": true,
+        "note": "verified by script"
+      },
+      {
+        "check": "Decision consistent with scores and blocking issues",
+        "pass": true
+      }
+    ],
+    "confidence": 0.88
+  },
+  "open_questions": [],
+  "assumptions": [
+    "Fast-mode final check: only real defects are edited; HTML image-slot comments are not reader-facing and are left to the visual curator.",
+    "The brief's 'official link at the claim' overrides the 2 to 5 external link guideline in link-rules.md."
+  ],
+  "verify_items": [],
+  "tools_used": [
+    "scan_copy.py",
+    "python uniqueness, link-count and link-map checks"
+  ],
+  "next_agent": [
+    "luxury-writer"
+  ],
+  "payload": {
+    "draft_file": "content/posts/wedding-destinations-august/08-final.md",
+    "rubric": {
+      "voice": 4,
+      "expertise": 5,
+      "accuracy": 4,
+      "seo_fit": 4,
+      "commercial_link": 4,
+      "structure": 4,
+      "brief_fit": 4
+    },
+    "average": 4.14,
+    "blocking_issues": [],
+    "decision": "pass_with_edits",
+    "edits": [
+      {
+        "location": "Bali, August weather",
+        "issue": "Must-fix (Smartraveller lines dated): the Indonesia Smartraveller line is the only one without a date (fact_104 checked 2026-11-18). NZ and the travel checklist lines already say 'As at November 2026'.",
+        "old_str": "[Smartraveller](https://www.smartraveller.gov.au/destinations/asia/indonesia) puts Indonesia's wet season",
+        "new_str": "As at November 2026, [Smartraveller](https://www.smartraveller.gov.au/destinations/asia/indonesia) puts Indonesia's wet season",
+        "fix": "Replace exactly (occurs once): OLD: \"[Smartraveller](https://www.smartraveller.gov.au/destinations/asia/indonesia) puts Indonesia's wet season\" NEW: \"As at November 2026, [Smartraveller](https://www.smartraveller.gov.au/destinations/asia/indonesia) puts Indonesia's wet season\""
+      },
+      {
+        "location": "FAQ, 'Where is warm but not too hot for a wedding in August?'",
+        "issue": "Must-fix (weather claim must name source and period; Fiji 2026 not typical): the Port Louis figure has no source named, and the Fiji line states a single-year (August 2026) summary as a general rule without its year. Both links already appear once in the entries, so name the source instead of linking again.",
+        "old_str": "Look south. Port Louis in Mauritius has an August mean daily maximum of 26.8°C (1971 to 2000 normals), <!-- fact_204 --> and Fiji's met service calls August a winter month and the dry season. <!-- fact_105 -->",
+        "new_str": "Look south. In the 1971 to 2000 normals from Mauritius Meteorological Services, Port Louis has an August mean daily maximum of 26.8°C, <!-- fact_204 --> and the Fiji Meteorological Service described August 2026 as a winter month in the dry season. <!-- fact_105 --> Both sources are linked in the entries above.",
+        "fix": "Replace exactly (occurs once): OLD: \"Look south. Port Louis in Mauritius has an August mean daily maximum of 26.8°C (1971 to 2000 normals), <!-- fact_204 --> and Fiji's met service calls August a winter month and the dry season. <!-- fact_105 -->\" NEW: \"Look south. In the 1971 to 2000 normals from Mauritius Meteorological Services, Port Louis has an August mean daily maximum of 26.8°C, <!-- fact_204 --> and the Fiji Meteorological Service described August 2026 as a winter month in the dry season. <!-- fact_105 --> Both sources are linked in the entries above.\""
+      },
+      {
+        "location": "Fiji, Why August",
+        "issue": "Repetition and unlinked claim: this sentence repeats the first sentence of the August weather paragraph almost word for word, without the link or the year. Point to the summary below instead (same pattern as the Greek islands entry). Trims about 6 words.",
+        "old_str": "**Why August.** The Fiji Meteorological Service counts August as a winter month and the dry season, which suits an outdoor ceremony. <!-- fact_105 -->",
+        "new_str": "**Why August.** Cool nights and the dry season, as described in the met service summary below, suit an outdoor ceremony. <!-- fact_105 -->",
+        "fix": "Replace exactly (occurs once): OLD: \"**Why August.** The Fiji Meteorological Service counts August as a winter month and the dry season, which suits an outdoor ceremony. <!-- fact_105 -->\" NEW: \"**Why August.** Cool nights and the dry season, as described in the met service summary below, suit an outdoor ceremony. <!-- fact_105 -->\""
+      },
+      {
+        "location": "Key takeaways, bullet 2",
+        "issue": "Fact markers missing: the rain claim for the Greek islands and the Riviera needs its facts.",
+        "old_str": "so shade and ceremony timing matter more than a wet-weather plan.",
+        "new_str": "so shade and ceremony timing matter more than a wet-weather plan. <!-- fact_002 --> <!-- fact_203 -->",
+        "fix": "Replace exactly (occurs once): OLD: \"so shade and ceremony timing matter more than a wet-weather plan.\" NEW: \"so shade and ceremony timing matter more than a wet-weather plan. <!-- fact_002 --> <!-- fact_203 -->\""
+      },
+      {
+        "location": "Key takeaways, bullet 3",
+        "issue": "Fact marker missing on the 15 August public holiday claim.",
+        "old_str": "15 August is a public holiday in Italy, so ask every Italian venue and supplier how they work on and around that date.",
+        "new_str": "15 August is a public holiday in Italy, so ask every Italian venue and supplier how they work on and around that date. <!-- fact_008 -->",
+        "fix": "Replace exactly (occurs once): OLD: \"15 August is a public holiday in Italy, so ask every Italian venue and supplier how they work on and around that date.\" NEW: \"15 August is a public holiday in Italy, so ask every Italian venue and supplier how they work on and around that date. <!-- fact_008 -->\""
+      },
+      {
+        "location": "How we chose these ten August destinations, paragraph 1",
+        "issue": "Accuracy about our own method: Switzerland (MeteoSwiss) and the New Zealand overview give no station or averaging period, so 'with station and period named' overclaims. Also trims the repeat of 'unranked' (the intro already says it, with the keyword).",
+        "old_str": "Every place here is one we plan and write about, and the list is unranked: the right answer depends on your guests, your tolerance for heat, and whether you picture a sea terrace at dusk or a mountain lodge. Each entry gives the trade-off, official August weather with station and period named, venue questions and our guide.",
+        "new_str": "Every place here is one we plan and write about. The right answer depends on your guests, your tolerance for heat, and whether you picture a sea terrace at dusk or a mountain lodge. Each entry gives the trade-off, official August weather with its station and period where the source publishes them, venue questions and our guide.",
+        "fix": "Replace exactly (occurs once): OLD: \"Every place here is one we plan and write about, and the list is unranked: the right answer depends on your guests, your tolerance for heat, and whether you picture a sea terrace at dusk or a mountain lodge. Each entry gives the trade-off, official August weather with station and period named, venue questions and our guide.\" NEW: \"Every place here is one we plan and write about. The right answer depends on your guests, your tolerance for heat, and whether you picture a sea terrace at dusk or a mountain lodge. Each entry gives the trade-off, official August weather with its station and period where the source publishes them, venue questions and our guide.\""
+      },
+      {
+        "location": "Southern winter escapes in August, intro",
+        "issue": "Trim (repetition): the H2 'August suits a destination wedding...' already says the south means a cooler season and a shorter journey for many Australian guests, and that the risks are wind, cool nights and New Zealand snow. Keep one sentence. Trims about 25 words.",
+        "old_str": "South of the equator, August trades Europe's heat for cooler nights and, for many Australian guests, a shorter journey. The risks become wind, showers and, in New Zealand, snow.",
+        "new_str": "South of the equator, August trades Europe's heat for wind, showers and, in New Zealand, snow.",
+        "fix": "Replace exactly (occurs once): OLD: \"South of the equator, August trades Europe's heat for cooler nights and, for many Australian guests, a shorter journey. The risks become wind, showers and, in New Zealand, snow.\" NEW: \"South of the equator, August trades Europe's heat for wind, showers and, in New Zealand, snow.\""
+      },
+      {
+        "location": "Amalfi Coast, Questions for the venue",
+        "issue": "Trim (repetition) and same template: the 15 August question repeats the Lake Como question and the Amalfi 'Why August' line, and gives Amalfi three questions where every other entry has two. The stairs (older-guest) question stays.",
+        "old_str": "- How do guests who find stairs hard reach the ceremony terrace and the dinner?\n- Are you open on 15 August, and do your suppliers charge differently that week?\n",
+        "new_str": "- How do guests who find stairs hard reach the ceremony terrace and the dinner?\n",
+        "fix": "Replace exactly (occurs once): OLD: \"- How do guests who find stairs hard reach the ceremony terrace and the dinner?\n- Are you open on 15 August, and do your suppliers charge differently that week?\n\" NEW: \"- How do guests who find stairs hard reach the ceremony terrace and the dinner?\n\""
+      }
+    ],
+    "fact_check_log": [
+      {
+        "claim": "Intro: Europe in summer; Fiji, Mauritius, NZ cooler months; Bali outside usual wet season",
+        "fact_id": "fact_105, fact_204, fact_107, fact_104",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Takeaway: August rain slight on paper at Greek islands and Riviera",
+        "fact_id": "fact_002, fact_203",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Takeaway: 15 August public holiday in Italy",
+        "fact_id": "fact_008",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Takeaway: Fiji and NZ August 2026 varied by coast and region (dated 2026)",
+        "fact_id": "fact_105, fact_108",
+        "status": "confirmed"
+      },
+      {
+        "claim": "WMO pages: averaging periods and rain-day definitions differ between countries",
+        "fact_id": "fact_205",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Naxos (HNMS, period not published): Aug mean 25.0 C, mean max 27.0 C",
+        "fact_id": "fact_001",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Naxos: Aug rainfall 1.6 mm over 0.3 days",
+        "fact_id": "fact_002",
+        "status": "confirmed"
+      },
+      {
+        "claim": "15 August, Assumption, public holiday set by law (linked at claim)",
+        "fact_id": "fact_008",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Milan 1971 to 2000: min 17.6 C, max 28.5 C, 88.8 mm; Milan is a city station, not lakeside",
+        "fact_id": "fact_201",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Naples 1971 to 2000: min 19.1 C, max 30.3 C, 35.5 mm, about 3 rain days; not on the Amalfi Coast",
+        "fact_id": "fact_003",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Nice 1971 to 2000: min 20.0 C, max 27.2 C, 23.9 mm over 2.9 days >=1 mm; Nice station, not wider coast or Provence",
+        "fact_id": "fact_203",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Summer 2026 hottest in France since 1900; heatwave 28 July to 19 August 2026 (labelled one summer)",
+        "fact_id": "fact_007",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Lisbon 1961 to 1990: min 17.7 C, max 27.9 C, 5.7 mm over 2.0 days >=0.1 mm",
+        "fact_id": "fact_202",
+        "status": "confirmed"
+      },
+      {
+        "claim": "MeteoSwiss: highest temps July and August in lowlands; most intense heatwaves above 30 C typically June to August",
+        "fact_id": "fact_004",
+        "status": "confirmed"
+      },
+      {
+        "claim": "MeteoSwiss: daily averages of 25 C or more possible at low altitude; Alpine thunderstorm clouds; more summer than winter precipitation in many places",
+        "fact_id": "fact_005",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Smartraveller Indonesia: wet season usually around October to April; heavy rain can flood roads in Bali (undated in 08-final; date added by edit)",
+        "fact_id": "fact_104",
+        "status": "confirmed"
+      },
+      {
+        "claim": "BMKG Bali: June to August 2026 outlook 'Normal and Slightly Dry', 2026 only",
+        "fact_id": "fact_103",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Fiji Met Service Aug 2026: winter month, dry season; cool nights, windy periods, trade showers windward, leeward fine and drier",
+        "fact_id": "fact_105",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Fiji Aug 2026 extremes: 32.7 C Rarawai Mill (Ba), 9.8 C Nadarivatu; one month, not an average",
+        "fact_id": "fact_106",
+        "status": "confirmed"
+      },
+      {
+        "claim": "NZ overview: July usually coldest, most snow in mountains, east and south of South Island may get snow",
+        "fact_id": "fact_107",
+        "status": "confirmed"
+      },
+      {
+        "claim": "NZ Aug 2026: 9.7 C, +0.7 C vs 1991 to 2020; dry North Island, very wet west and south of South Island; one year",
+        "fact_id": "fact_108",
+        "status": "confirmed"
+      },
+      {
+        "claim": "As at November 2026, Smartraveller NZ: ice, snow, fog on roads; snow chains or 4WD on mountain roads",
+        "fact_id": "fact_109",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Port Louis 1971 to 2000: min 19.1 C, max 26.8 C, 19.0 mm over 5.0 days >=1 mm; January max 31.5 C, 131.0 mm",
+        "fact_id": "fact_204",
+        "status": "confirmed"
+      },
+      {
+        "claim": "As at November 2026, Smartraveller checklist: share itinerary, hard copies, subscribe to travel advice",
+        "fact_id": "fact_110",
+        "status": "confirmed"
+      },
+      {
+        "claim": "FAQ: Port Louis 26.8 C and Fiji 'winter month and dry season' (source and year added by edit)",
+        "fact_id": "fact_204, fact_105",
+        "status": "confirmed"
+      },
+      {
+        "claim": "FAQ: 15 August public holiday in Italy",
+        "fact_id": "fact_008",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Advisor lines: confirms inclusions in writing; one Advisor start to finish, client time zone, quotes in AUD, fee agreed in writing",
+        "fact_id": "brand-facts.md",
+        "status": "confirmed"
+      }
+    ],
+    "compliance": {
+      "pass": true,
+      "issues": [
+        "Fixed by edit: Bali Smartraveller line was undated.",
+        "No prices, rankings, 'best', 'free', 'often', em dashes or country legal claims in visible copy; nothing for Nic to sign off.",
+        "Note for image stage (non-blocking, not reader-facing): slot comments 'dry-season-winter-escapes' and 'bali' describe 'dry season light/sky' for Bali, and the lake-como comment names Villa Balbiano and Villa Pizzo. Alt text and captions must not call Bali's August the dry season or name a venue unless approved."
+      ]
+    },
+    "originality": {
+      "pass": true,
+      "matches": []
+    },
+    "banned_phrases_found": [],
+    "needs_signoff": [],
+    "link_check": {
+      "internal": "20 relative internal links, each once, all in link-map.csv and live or live-noted (honeymoon page accepted in round 1); none noindex",
+      "utm": "/wonderland-concierge primary, secondary, closing once each, anchor 'Wedded Concierge', utm_medium=content; /magazine magnet once",
+      "external": "17 official sources, no competitors, each linked once at its claim"
+    },
+    "seo_check": {
+      "keyword_title": true,
+      "keyword_first_100_words": true,
+      "keyword_h2": true,
+      "headings": "no colons, dashes or hyphens; questions only in FAQ",
+      "takeaways": "4, one sentence each",
+      "entries": "10, unranked, same Why August / August weather / Questions / Our guide template (Amalfi question count aligned by edit)"
+    },
+    "image_check": {
+      "slots": [
+        "featured",
+        "summer-in-europe",
+        "greek-island",
+        "lake-como",
+        "dry-season-winter-escapes",
+        "bali",
+        "fiji"
+      ],
+      "all_in_04_images": true,
+      "reference_only_used": false
+    }
+  }
+}

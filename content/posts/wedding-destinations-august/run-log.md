@@ -8,3 +8,4 @@
 23:08 07b panel revise (enquiry 2.1); 13/13 applied -> 08-final.md
 23:09 09 CRO complete
 23:09 10 distribution complete; image briefs no longer call Bali dry season
+23:11 final check pass_with_edits 4.14; 8/8 applied; image slot comments no longer call Bali dry season
