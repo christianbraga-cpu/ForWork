@@ -1,0 +1,175 @@
+{
+ "agent": "planner-sme",
+ "task_id": "wedding-rsvp-reminder",
+ "stage": "03",
+ "status": "complete",
+ "round": 1,
+ "inputs_used": [
+  "content/posts/wedding-rsvp-reminder/00-input.json",
+  "content/posts/wedding-rsvp-website/03-source-pack.json"
+ ],
+ "self_qa": {
+  "checks": [
+   {
+    "check": "Every fact has a source and date",
+    "pass": true,
+    "note": "All five copied unchanged (claim, source, source_type, checked 2026-11-23) from the wedding-rsvp-website pack; renumbered fact_01 to fact_05. No re-reads needed."
+   },
+   {
+    "check": "No price without a source; all prices in needs_signoff",
+    "pass": true,
+    "note": "No prices, figures, platform or vendor facts."
+   },
+   {
+    "check": "Every must-include covered or [[VERIFY]]",
+    "pass": true,
+    "note": "No 01-brief.json or 02-seo.json; must-includes taken from 00-input.json and the orchestrator task."
+   },
+   {
+    "check": "No invented quotes, statistics or real weddings",
+    "pass": true
+   }
+  ],
+  "confidence": 0.85
+ },
+ "open_questions": [
+  {
+   "to": "luxury-writer",
+   "question": "fact_02 quotes OAIC with an em dash and fact_04/05 with curly apostrophes as published; rephrase in body copy without em dashes. Legal points are general information as at November 2026, not legal advice; do not write that the Wedded Advisor confirms anything legal. No Spam Act or messaging-law claims.",
+   "blocking": false
+  }
+ ],
+ "assumptions": [
+  "Mapping to wedding-rsvp-website pack: fact_01=fact_02, fact_02=fact_05, fact_03=fact_06, fact_04=fact_08, fact_05=fact_09. Not reused: fact_01, fact_03, fact_04 (definition and sensitive/health information, not specific to reminders), fact_07 (turnover threshold, a figure), fact_10, fact_11 (QR advice beyond the two requested points).",
+  "Legal points are general information as at November 2026, not legal advice.",
+  "No Spam Act or messaging-law claims: no held source states they apply to personal reminders.",
+  "Fast mode, reuse only: no new reads."
+ ],
+ "verify_items": [
+  "[[VERIFY: any claim that the Spam Act 2003 or any other messaging law does or does not apply to personal RSVP reminders sent by a couple. No source held states this; leave it out of the article unless an ACMA or other government source is read.]]",
+  "[[VERIFY: any claim about privacy laws in the destination country (e.g. EU GDPR for a European wedding). Not researched.]]"
+ ],
+ "tools_used": [],
+ "next_agent": [
+  "luxury-writer"
+ ],
+ "payload": {
+  "facts": [
+   {
+    "fact_id": "fact_01",
+    "claim": "OAIC (same page): 'For example, personal information may include: an individual's name, signature, address, phone number or date of birth', and the list also includes 'sensitive information', 'photographs', 'internet protocol (IP) addresses' and 'location information from a mobile device'. (The page does not mention email addresses by name; do not say OAIC lists email.)",
+    "source": "https://www.oaic.gov.au/privacy/your-privacy-rights/your-personal-information/what-is-personal-information",
+    "source_type": "government",
+    "checked": "2026-11-23",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_02",
+    "claim": "Reused from content/posts/wedding-photo-app/03-source-pack.json (fact_11). OAIC, 'Photos and videos' (page modified 26 September 2024): 'If the photo or video was taken by someone acting in a personal capacity, the Privacy Act doesn't apply — because it doesn't cover individuals.' (Context is photos; dash quoted as published, do not reuse in body copy. Apply to RSVP data only as 'the Privacy Act doesn't cover individuals acting in a personal capacity', as general information.)",
+    "source": "https://www.oaic.gov.au/privacy/your-privacy-rights/social-media-and-online-privacy/photos-and-videos",
+    "source_type": "government",
+    "checked": "2026-11-23",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_03",
+    "claim": "Reused from content/posts/wedding-photo-app/03-source-pack.json (fact_12). OAIC (same page): 'In some situations, there may be state or territory laws that prevent someone photographing your private activities without your consent.' (Context is photography; for RSVPs say only that state or territory laws may also apply.)",
+    "source": "https://www.oaic.gov.au/privacy/your-privacy-rights/social-media-and-online-privacy/photos-and-videos",
+    "source_type": "government",
+    "checked": "2026-11-23",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_04",
+    "claim": "Australian Cyber Security Centre, cyber.gov.au, 'Learn about phishing scams' (no last-updated date shown, read 23 November 2026): 'Quishing is a type of phishing that uses QR codes instead of text-based links. QR codes are often trusted, but cybercriminals can use them to hide harmful links.'",
+    "source": "https://www.cyber.gov.au/guidance/learn-about-phishing-scams",
+    "source_type": "government",
+    "checked": "2026-11-23",
+    "is_price": false
+   },
+   {
+    "fact_id": "fact_05",
+    "claim": "cyber.gov.au (same page): 'Quishing is harder to detect than normal phishing because QR codes are images, not text. This means security tools may miss harmful links and you can’t check the link before scanning it.'",
+    "source": "https://www.cyber.gov.au/guidance/learn-about-phishing-scams",
+    "source_type": "government",
+    "checked": "2026-11-23",
+    "is_price": false
+   }
+  ],
+  "insider_details": [
+   {
+    "detail": "A reminder list holds guests' names, addresses and phone numbers, which OAIC gives as examples of personal information. Send each reminder to the one guest (or household) it is for rather than one group message that shows everyone's details, and keep the list somewhere you trust. General information as at November 2026, not legal advice.",
+    "fact_ids": [
+     "fact_01"
+    ]
+   },
+   {
+    "detail": "OAIC says the Privacy Act doesn't cover individuals acting in a personal capacity, and that state or territory laws may apply in some situations. Phrase this as general information as at November 2026, not legal advice; do not state that any law does or does not apply to a couple's reminders.",
+    "fact_ids": [
+     "fact_02",
+     "fact_03"
+    ]
+   },
+   {
+    "detail": "If a printed reminder card or message carries a QR code to the RSVP page, print the RSVP web address beside it too. The Australian Cyber Security Centre notes scammers can use QR codes to hide harmful links and that you can't check a QR link before scanning it, so a typed address gives cautious guests another way in.",
+    "fact_ids": [
+     "fact_04",
+     "fact_05"
+    ]
+   },
+   {
+    "detail": "Timing advice (send a gentle reminder ahead of the couple's own reply date, then a personal follow-up to anyone still missing) is planning advice, not a sourced fact. Express it relative to the couple's reply date with no day counts or statistics, as 00-input.json directs.",
+    "fact_ids": [
+     "content/posts/wedding-rsvp-reminder/00-input.json"
+    ]
+   }
+  ],
+  "quotes": [],
+  "real_weddings": [],
+  "verify_items": [
+   "[[VERIFY: any claim that the Spam Act 2003 or any other messaging law does or does not apply to personal RSVP reminders sent by a couple. No source held states this; leave it out of the article unless an ACMA or other government source is read.]]",
+   "[[VERIFY: any claim about privacy laws in the destination country (e.g. EU GDPR for a European wedding). Not researched.]]"
+  ],
+  "needs_signoff": [],
+  "must_include_coverage": [
+   {
+    "item": "Guest contact details in a reminder list are personal information",
+    "covered_by": [
+     "fact_01"
+    ]
+   },
+   {
+    "item": "Privacy Act doesn't cover individuals in a personal capacity; state or territory laws may apply",
+    "covered_by": [
+     "fact_02",
+     "fact_03"
+    ]
+   },
+   {
+    "item": "QR codes on reminder cards: scam risk and checking before scanning",
+    "covered_by": [
+     "fact_04",
+     "fact_05"
+    ]
+   },
+   {
+    "item": "Reminder wording, reminder email and reminder cards",
+    "covered_by": [
+     "Planning advice and sample wording, not facts; no sources needed. No platform features, statistics or response-rate claims."
+    ]
+   },
+   {
+    "item": "When to send a reminder",
+    "covered_by": [
+     "Relative to the couple's own reply date only; no day counts, deadlines or statistics (00-input.json)."
+    ]
+   },
+   {
+    "item": "Spam Act or messaging-law rules for reminders",
+    "covered_by": [
+     "[[VERIFY: any claim that the Spam Act 2003 or any other messaging law does or does not apply to personal RSVP reminders sent by a couple. No source held states this; leave it out of the article unless an ACMA or other government source is read.]]"
+    ]
+   }
+  ]
+ }
+}
