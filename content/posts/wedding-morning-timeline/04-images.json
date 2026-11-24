@@ -1,0 +1,93 @@
+{
+  "agent": "visual-curator",
+  "task_id": "wedding-morning-timeline",
+  "stage": "04",
+  "status": "needs_input",
+  "round": 1,
+  "inputs_used": [
+    "CLAUDE.md",
+    "content/posts/wedding-morning-timeline/00-input.json",
+    "content-system/images/sources-policy.md",
+    "content-system/rubrics/image-checklist.md",
+    "content-system/images/library-index.csv (header only, no rows)",
+    "content-system/schemas/04-images.schema.json",
+    "content-system/schemas/envelope.schema.json"
+  ],
+  "payload": {
+    "slots": [
+      {
+        "slot_id": "featured",
+        "placement": "featured",
+        "purpose": "Hero: the defining moment of the getting-ready hours, hair or makeup being done in calm morning light.",
+        "shot_brief": "Licensed or owned photo from a real wedding morning: hair or makeup being applied to the person getting married (or a member of the wedding party) beside a large window, soft diffused morning light, calm editorial mood, uncluttered suite, neutral tones. Landscape 3:2 with room for a title crop. Identifiable people need written consent for web/blog use; no identifiable children unless written parental consent is held. No visible vendor branding (product logos, salon names, watermarks). Venue, town, date and photographer recorded in the register for the caption. Never AI.",
+        "status": "needed",
+        "file": "content/posts/wedding-morning-timeline/images/wedding-morning-timeline-hair-makeup-window-light.webp",
+        "source": {"type": "library", "origin": "[[IMAGE NEEDED]] library-index.csv has no rows; Google Drive is readable by file ID only in this session (no search tool); no Canva asset IDs supplied", "credit": "[[VERIFY licence]]"},
+        "consent": {"required": "written consent from every identifiable person for web/blog use; written parental consent for any child", "held": false},
+        "lens_check": "Not run: no candidate image."
+      },
+      {
+        "slot_id": "getting-ready-suite",
+        "placement": "after_h2:setting up the getting-ready space (set n once 02-seo outline exists)",
+        "purpose": "Show what a well-organised getting-ready suite looks like: outfits ready and breakfast laid out so nobody skips eating.",
+        "shot_brief": "Licensed or owned photo of a real getting-ready suite in morning light: wedding dress(es) or suits hanging on a rail, door or window frame, and a breakfast spread on a table (pastries, fruit, coffee, water). No people, or people only out of focus and not identifiable. No vendor branding, designer labels or logos legible. Inline 3:2 or 4:5. Location proven by register, EXIF or photographer gallery, never by appearance. Never AI (a real suite at a real wedding).",
+        "status": "needed",
+        "file": "content/posts/wedding-morning-timeline/images/wedding-morning-timeline-suite-outfits-breakfast.webp",
+        "source": {"type": "library", "origin": "[[IMAGE NEEDED]] no register rows; no own-site or Canva candidate found in fast mode", "credit": "[[VERIFY licence]]"},
+        "lens_check": "Not run: no candidate image."
+      },
+      {
+        "slot_id": "wedding-party-together",
+        "placement": "after_h2:getting ready with the wedding party (set n once 02-seo outline exists)",
+        "purpose": "Show the shared, relaxed energy of the wedding party getting ready together, supporting the advice on sequencing hair and makeup.",
+        "shot_brief": "Licensed or owned candid photo from a real wedding morning: the wedding party (bridesmaids, groomsmen or mixed) getting ready together in a light-filled suite, robes or partly dressed, laughing or helping with buttons, ties or touch-ups. Written consent from every identifiable adult for web/blog use. Children only with written parental consent; otherwise exclude or keep them unidentifiable. No vendor branding. Inline 3:2. Never AI (real people at a real wedding).",
+        "status": "needed",
+        "file": "content/posts/wedding-morning-timeline/images/wedding-morning-timeline-wedding-party-getting-ready.webp",
+        "source": {"type": "library", "origin": "[[IMAGE NEEDED]] no register rows with consent recorded", "credit": "[[VERIFY licence]]"},
+        "consent": {"required": "written consent from every identifiable adult; written parental consent for any child", "held": false},
+        "lens_check": "Not run: no candidate image."
+      },
+      {
+        "slot_id": "printed-schedule",
+        "placement": "after_h2:sample wedding morning timeline (set n once 02-seo outline exists)",
+        "purpose": "Visual cue for the sample timeline: a printed getting-ready schedule that readers can picture making their own.",
+        "shot_brief": "Still life of a printed getting-ready schedule on a dressing table with soft morning light, a few neutral props (perfume bottle, earrings, a coffee cup, flowers). Schedule uses placeholder names (e.g. 'Bride', 'Bridesmaid 1') and placeholder example times only; no real couple names and no times that contradict the article. No vendor branding or logos. Preferred source: owned or licensed photo, or a Canva brand-kit flat-lay. AI still life (Higgsfield) is allowed ONLY after Nic's written approval, must contain no real people, venue or wedding, and must be captioned 'Illustrative image'. Not generated in this run: approval not on file.",
+        "status": "needed",
+        "file": "content/posts/wedding-morning-timeline/images/wedding-morning-timeline-printed-schedule-dressing-table.webp",
+        "source": {"type": "ai_illustrative", "origin": "[[IMAGE NEEDED]] candidate route only; blocked pending Nic's written approval. Owned/licensed or Canva still life preferred if available.", "credit": "If AI used: caption 'Illustrative image'"},
+        "lens_check": "Not run: no candidate image."
+      }
+    ],
+    "reference_only": [],
+    "permission_requests": []
+  },
+  "self_qa": {
+    "checks": [
+      {"check": "Zero reference-only or competitor images in slots", "pass": true, "note": "No images placed; reference-only/ is empty"},
+      {"check": "Every approved image has location, licence, alt, caption, fit_reason", "pass": true, "note": "No approved images, so nothing to fail; alt and caption to be written when images are supplied"},
+      {"check": "No AI image depicting a real place, person or wedding", "pass": true, "note": "No AI generated. Only the schedule still life is eligible, and only with Nic's written approval"},
+      {"check": "Featured image exists (approved or needed with brief)", "pass": true, "note": "Needed with full shot brief"},
+      {"check": "Consent rules recorded for people slots", "pass": true, "note": "Featured and wedding-party slots state written consent and parental consent requirements"},
+      {"check": "Placements tied to outline", "pass": false, "note": "01-brief.json and 02-seo.json not present; placements named by intended section, n to be set once outline exists"}
+    ],
+    "confidence": 0.7
+  },
+  "open_questions": [
+    {"to": "Nic", "question": "Do we have licensed real-wedding getting-ready photos with written consent (hair/makeup by a window, suite with outfits and breakfast, wedding party together)? If so, add them to the Drive library and library-index.csv with licence, consent and children fields.", "blocking": false},
+    {"to": "Nic", "question": "Do you approve, in writing, an AI still life of a printed getting-ready schedule (placeholder names and times, no people or real place), captioned 'Illustrative image'? Or should we use an owned/Canva flat-lay instead?", "blocking": false},
+    {"to": "seo-researcher", "question": "02-seo.json outline missing; confirm H2 numbers for the three inline slots.", "blocking": false}
+  ],
+  "assumptions": [
+    "Fast mode: own-site scrape and venue press kits skipped because the post is a general guide with no specific venue; no candidates would be publishable without consent records.",
+    "Inline placements are matched to intended sections by name because no outline exists yet."
+  ],
+  "verify_items": [
+    "[[IMAGE NEEDED]] featured: hair or makeup by a window in soft morning light, real wedding, written consent",
+    "[[IMAGE NEEDED]] getting-ready-suite: outfits hanging and breakfast on a table, no identifiable people",
+    "[[IMAGE NEEDED]] wedding-party-together: written consent; children only with written parental consent",
+    "[[IMAGE NEEDED]] printed-schedule: owned/Canva still life, or AI still life only with Nic's written approval, captioned 'Illustrative image'",
+    "[[VERIFY licence]] all four slots: licence scope must cover web/blog use before approval"
+  ],
+  "tools_used": ["Bash"],
+  "next_agent": ["luxury-writer"]
+}
