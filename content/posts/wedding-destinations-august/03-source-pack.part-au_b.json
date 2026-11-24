@@ -1,0 +1,222 @@
+{
+  "agent": "planner-sme",
+  "task_id": "wedding-destinations-august",
+  "stage": "03",
+  "status": "complete",
+  "round": 1,
+  "inputs_used": [
+    "CLAUDE.md",
+    "content/posts/wedding-destinations-august/01-brief.json (must_include entries 8 to 10)",
+    "content-system/schemas/03-source-pack.schema.json",
+    "content/posts/best-time-to-get-married-in-bali/03-source-pack.json (fact_03, fact_05, fact_103 reused)",
+    "content/posts/get-married-in-new-zealand/03-source-pack.json (fact_115 reused)",
+    "content/posts/why-do-we-have-bridesmaids/03-source-pack.json (fact_111 reused)",
+    "firecrawl 2026-11-24: staklim-bali.bmkg.go.id/?p=3621, met.gov.fj Fiji Climate Summary August 2026 PDF, niwa.co.nz overview-new-zealands-climate, niwa.co.nz climate-summary-august-2026"
+  ],
+  "self_qa": {
+    "checks": [
+      {
+        "check": "Every fact has a source and date",
+        "pass": true,
+        "note": "fact_101 to fact_110; reused facts keep original checked dates."
+      },
+      {
+        "check": "No price without a source; all prices in needs_signoff",
+        "pass": true,
+        "note": "No prices."
+      },
+      {
+        "check": "Every must-include covered or marked [[VERIFY]]",
+        "pass": true,
+        "note": "Batch au_b scope only (Bali, Fiji, NZ, Smartraveller line). Bali 'dry season' wording flagged."
+      },
+      {
+        "check": "No invented quotes, statistics or real weddings",
+        "pass": true,
+        "note": "Figures are as the met services state them, labelled single-year."
+      }
+    ],
+    "confidence": 0.75
+  },
+  "open_questions": [
+    {
+      "to": "orchestrator",
+      "question": "Bali entry: brief labels it 'dry season' but no BMKG text read states this for August; writer should use fact_101/fact_103 wording or keep the VERIFY.",
+      "blocking": false
+    }
+  ],
+  "assumptions": [
+    "No existing Fiji source pack found in content/posts; Fiji facts read live.",
+    "Met service figures are 2026 (or 2024 forecast) single-period values, recorded as such; no long-term normals were read."
+  ],
+  "verify_items": [
+    "[[VERIFY: Bali: no BMKG page read in this run states in words that August is Bali's dry season or gives August temperatures. Sourced only: a 2024 single-year forecast of 0 to 100 mm for August (fact_101) and a June to August 2026 'Normal and Slightly Dry' outlook (fact_103). Either cite those as stated or confirm a BMKG dry-season statement (e.g. the Buletin Prakiraan Musim Kemarau on staklim-bali.bmkg.go.id) before writing 'dry season']]",
+    "[[VERIFY: Fiji and New Zealand August figures are 2026 single-month observations (fact_106, fact_108), not long-term averages; if the article gives typical August temperatures, source them from Fiji Met / Earth Sciences NZ climate normals]]"
+  ],
+  "tools_used": [
+    "Bash",
+    "mcp__Lead_MCP__firecrawl_search",
+    "mcp__Lead_MCP__firecrawl_scrape"
+  ],
+  "next_agent": [
+    "luxury-writer"
+  ],
+  "payload": {
+    "facts": [
+      {
+        "fact_id": "fact_101",
+        "claim": "[Copied from best-time-to-get-married-in-bali 03-source-pack fact_05, same source and date.] Stasiun Klimatologi Bali, Buletin Iklim Bali, May 2024 (forecast for 2024 only, Bali Province): June 2024 rainfall generally 0 to 100 mm, July 2024 generally 0 to 150 mm, August 2024 generally 0 to 100 mm, with rainfall character generally Below Normal for all three months. This is a single-year forecast, not a long-term normal.",
+        "source": "https://staklim-bali.bmkg.go.id/wp-content/uploads/2024/05/Buletin-Mei-2024_compressed.pdf",
+        "source_type": "government",
+        "checked": "2026-11-18",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_102",
+        "claim": "[Copied from best-time-to-get-married-in-bali 03-source-pack fact_03, same source and date.] Stasiun Klimatologi Bali, Buletin Iklim Bali, May 2024 (definitions): season onset is stated in dasarian (10-day periods: days 1 to 10, 11 to 20, 21 to month end). The bulletin's worked examples read: 'rainy season onset around November I to November II = 1 to 20 November' and 'dry season onset around June I to June III = 1 to 30 June'. These are given as examples of the notation, not as a Bali forecast.",
+        "source": "https://staklim-bali.bmkg.go.id/wp-content/uploads/2024/05/Buletin-Mei-2024_compressed.pdf",
+        "source_type": "government",
+        "checked": "2026-11-18",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_103",
+        "claim": "Stasiun Klimatologi Bali (BMKG), 'Ringkasan Informasi Iklim Bulan Agustus 2026' (read live 24 November 2026): the drought and wetness outlook for June to August 2026 across Bali Province was generally 'Normal dan Agak Kering' (Normal and Slightly Dry). Single-season outlook for 2026, not a long-term normal. The item does not label August as dry season in the text read.",
+        "source": "https://staklim-bali.bmkg.go.id/?p=3621",
+        "source_type": "government",
+        "checked": "2026-11-24",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_104",
+        "claim": "[Copied from best-time-to-get-married-in-bali 03-source-pack fact_103, same source and date.] Smartraveller Indonesia: weather can change quickly during the wet season (usually around October to April; it can differ in Eastern Indonesia). Heavy rains can cause significant flooding in urban areas including Bali, disrupting roads and transport. No temperature or rainfall figures are given.",
+        "source": "https://www.smartraveller.gov.au/destinations/asia/indonesia",
+        "source_type": "government",
+        "checked": "2026-11-18",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_105",
+        "claim": "Fiji Meteorological Service, Fiji Climate Summary August 2026 (read live 24 November 2026): 'August, being a winter month for Fiji, was characterized by cool, predominantly easterly and southeasterly winds, resulting in cool nights, windy periods, and regular trade showers. Generally fine and drier conditions prevailed across the leeward sides of the larger islands, while trade showers mainly affected windward areas.' Rainfall was variable, from well below normal to above normal, 'although it was the dry season'. Single-year (2026) observations.",
+        "source": "https://www.met.gov.fj/media/climate_product_files/Fiji_Climate_Summary_August_2026_4hgZRFZ.pdf",
+        "source_type": "government",
+        "checked": "2026-11-24",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_106",
+        "claim": "Fiji Meteorological Service, Fiji Climate Summary August 2026 (read live 24 November 2026): cooler temperatures persisted across most of the country in August 2026; the highest day-time temperature was 32.7°C at Rarawai Mill (Ba) on 18 August, and the lowest night-time temperature was 9.8°C at Nadarivatu (an inland highland station). Single-month 2026 extremes, not averages.",
+        "source": "https://www.met.gov.fj/media/climate_product_files/Fiji_Climate_Summary_August_2026_4hgZRFZ.pdf",
+        "source_type": "government",
+        "checked": "2026-11-24",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_107",
+        "claim": "Earth Sciences New Zealand (NIWA), 'Overview of New Zealand's climate' (read live 24 November 2026): 'In New Zealand, winter is the season of least rainfall' (stated generally; the same page notes winter is wetter in the north), the coldest month is usually July, most snow falls in mountain areas, and snow rarely falls in coastal areas of the North Island and west of the South Island, although the east and south of the South Island may get some snow in winter.",
+        "source": "https://niwa.co.nz/climate-and-weather/overview-new-zealands-climate",
+        "source_type": "government",
+        "checked": "2026-11-24",
+        "is_price": false,
+        "conflicts": "The page's general line says winter has least rainfall, while its summary also says winter is wetter in the north. Article should not make a single national rainfall claim for August."
+      },
+      {
+        "fact_id": "fact_108",
+        "claim": "Earth Sciences New Zealand (NIWA), Climate Summary for August 2026 (read live 24 November 2026): the nationwide average temperature in August 2026 was 9.7°C, 0.7°C above the 1991 to 2020 August average; August 2026 was dry for much of the North Island and very wet for the west and south of the South Island. Single-year observation.",
+        "source": "https://niwa.co.nz/climate-and-weather/monthly/climate-summary-august-2026",
+        "source_type": "government",
+        "checked": "2026-11-24",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_109",
+        "claim": "[Copied from get-married-in-new-zealand 03-source-pack fact_115, same source and date.] As at November 2026, Smartraveller New Zealand (updated 22 July 2026, still current at 17 November 2026, read live 17 November 2026): weather conditions can change quickly and severe weather can leave you stranded, especially in remote areas; monitor MetService forecasts and warnings. On the roads, ice, snow, fog, high winds and roaming animals cause hazards, heavy rain can cause landslides, there are few motorways outside major cities, and mountain and ski-field roads can be narrow, unpaved, without barriers and may need snow chains or a 4WD.",
+        "source": "https://www.smartraveller.gov.au/destinations/pacific/new-zealand",
+        "source_type": "government",
+        "checked": "2026-11-17",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_110",
+        "claim": "[Copied from why-do-we-have-bridesmaids 03-source-pack fact_111, same source and date.] Smartraveller suggests sharing your itinerary with friends or family, keeping hard copies of flight, accommodation and event bookings in case you lose your phone, and subscribing to travel advice for your destination.",
+        "source": "https://www.smartraveller.gov.au/travel-essentials/essentials-checklist",
+        "source_type": "government",
+        "checked": "2026-11-10",
+        "is_price": false,
+        "conflicts": "As at November 2026 (page last updated 18 August 2026); the Wedded Advisor confirms current requirements."
+      }
+    ],
+    "insider_details": [
+      {
+        "detail": "In Fiji, the met service describes August as a cool, windy winter month with trade showers mainly on windward sides and finer, drier conditions on the leeward sides of the larger islands, so ask the venue which side of the island it sits on and what its wet-weather ceremony option is.",
+        "fact_ids": [
+          "fact_105"
+        ]
+      },
+      {
+        "detail": "Fiji's inland highlands dropped to 9.8°C at night in August 2026 while the coast reached the low 30s by day, so for evening receptions suggest guests pack a light layer.",
+        "fact_ids": [
+          "fact_106"
+        ]
+      },
+      {
+        "detail": "New Zealand in August is winter (coldest month usually July) with snow in the mountains and possible in the east and south of the South Island; plan guest transfers in daylight and ask about road conditions, chains or 4WD for alpine venues.",
+        "fact_ids": [
+          "fact_107",
+          "fact_109"
+        ]
+      },
+      {
+        "detail": "August 2026 in New Zealand split sharply by region (dry in much of the North Island, very wet in the west and south of the South Island), so ask every NZ venue for an indoor or covered plan rather than relying on a national picture.",
+        "fact_ids": [
+          "fact_108"
+        ]
+      },
+      {
+        "detail": "For any destination, suggest guests subscribe to Smartraveller advice for the country and keep hard copies of flight, accommodation and event bookings.",
+        "fact_ids": [
+          "fact_110"
+        ]
+      }
+    ],
+    "quotes": [],
+    "real_weddings": [],
+    "needs_signoff": [],
+    "verify_items": [
+      "[[VERIFY: Bali: no BMKG page read in this run states in words that August is Bali's dry season or gives August temperatures. Sourced only: a 2024 single-year forecast of 0 to 100 mm for August (fact_101) and a June to August 2026 'Normal and Slightly Dry' outlook (fact_103). Either cite those as stated or confirm a BMKG dry-season statement (e.g. the Buletin Prakiraan Musim Kemarau on staklim-bali.bmkg.go.id) before writing 'dry season']]",
+      "[[VERIFY: Fiji and New Zealand August figures are 2026 single-month observations (fact_106, fact_108), not long-term averages; if the article gives typical August temperatures, source them from Fiji Met / Earth Sciences NZ climate normals]]"
+    ],
+    "must_include_coverage": [
+      {
+        "item": "Entry 8: Bali (dry season), August weather as BMKG states it",
+        "covered_by": [
+          "fact_101",
+          "fact_103",
+          "fact_102",
+          "[[VERIFY: Bali: no BMKG page read in this run states in words that August is Bali's dry season or gives August temperatures. Sourced only: a 2024 single-year forecast of 0 to 100 mm for August (fact_101) and a June to August 2026 'Normal and Slightly Dry' outlook (fact_103). Either cite those as stated or confirm a BMKG dry-season statement (e.g. the Buletin Prakiraan Musim Kemarau on staklim-bali.bmkg.go.id) before writing 'dry season']]"
+        ]
+      },
+      {
+        "item": "Entry 9: Fiji (dry season), August weather as Fiji Meteorological Service states it",
+        "covered_by": [
+          "fact_105",
+          "fact_106"
+        ]
+      },
+      {
+        "item": "Entry 10: New Zealand (southern winter), August weather as Earth Sciences NZ / NIWA states it",
+        "covered_by": [
+          "fact_107",
+          "fact_108",
+          "fact_109"
+        ]
+      },
+      {
+        "item": "General Smartraveller line: check / subscribe to travel advice for your destination",
+        "covered_by": [
+          "fact_110"
+        ]
+      }
+    ]
+  }
+}
