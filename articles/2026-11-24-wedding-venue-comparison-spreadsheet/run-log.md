@@ -19,3 +19,4 @@
 - **Decision (default):** the comparison table is our own template, with no invented prices or venue facts. Official sources (ACCC deposits and refunds) are used only where a fact needs one, reused with original dates. No Wedded World plug, no DRAFT links.
 
 ## Stages
+- **00:37 check-in:** no hand-back from the strategist or the researcher after 15 minutes (likely held on permission prompts). The research pack has 10 reused facts (saved 00:22). **Decision (default):** the writer started on the saved facts with an inline 7-H2 brief. /search?tab=vendors is linked once, pending MARKETPLACE-SEARCH-CHECK (must be confirmed live before publish).
