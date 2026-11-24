@@ -1,0 +1,124 @@
+{
+  "agent": "planner-sme",
+  "task_id": "wedding-timeline-4pm-ceremony",
+  "stage": "03",
+  "status": "complete",
+  "round": 1,
+  "inputs_used": [
+    "content/posts/wedding-timeline-4pm-ceremony/00-input.json",
+    "mcp__Lead_MCP__firecrawl_scrape, 24 November 2026: https://www.ga.gov.au/scientific-topics/astronomical/astronomical-information/sunrise-sunset-and-twilight (404, not used)",
+    "mcp__Lead_MCP__firecrawl_search, 24 November 2026: Geoscience Australia sunrise sunset twilight (ga.gov.au only)",
+    "mcp__Lead_MCP__firecrawl_scrape, 24 November 2026: https://www.ga.gov.au/scientific-topics/astronomical/astronomical-definitions (200, used)",
+    "mcp__Lead_MCP__firecrawl_scrape, 24 November 2026: https://www.ga.gov.au/applications/sunrise-sunset-and-twilight-times (200, redirects to https://geodesyapps.ga.gov.au/sunrise, used)",
+    "mcp__Lead_MCP__firecrawl_search result snippet, 24 November 2026: https://www.ga.gov.au/data-pubs/online-tools (tool description, used)",
+    "grep of content/posts/*/03-source-pack.json for ceremony length or timing facts (no official ceremony-length fact found; nothing copied)"
+  ],
+  "payload": {
+    "facts": [
+      {
+        "fact_id": "fact_01",
+        "claim": "Geoscience Australia's 'Sunrise, sunset and twilight times' online tool computes sunrise, sunset and twilight times using the National Gazetteer of Australia.",
+        "source": "https://www.ga.gov.au/data-pubs/online-tools",
+        "source_type": "government",
+        "checked": "2026-11-24",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_02",
+        "claim": "The Geoscience Australia tool (https://geodesyapps.ga.gov.au/sunrise) lets a user search the gazetteer for a place name, or enter a location by latitude and longitude (including locations outside Australia), choose a time zone, pick an event (sunrise/sunset, civil, nautical or astronomical twilight, sun transit time) and get results for a single day or a whole year.",
+        "source": "https://www.ga.gov.au/applications/sunrise-sunset-and-twilight-times",
+        "source_type": "government",
+        "checked": "2026-11-24",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_03",
+        "claim": "Geoscience Australia defines sunset as the instant in the evening, under ideal meteorological conditions with standard refraction of the Sun's rays, when the upper edge of the Sun's disk is coincident with an ideal horizon.",
+        "source": "https://www.ga.gov.au/scientific-topics/astronomical/astronomical-definitions",
+        "source_type": "government",
+        "checked": "2026-11-24",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_04",
+        "claim": "Geoscience Australia defines the end of evening civil twilight as the instant when the centre of the Sun is 6 degrees below an ideal horizon; at this time, without moonlight, artificial lighting or adverse atmospheric conditions, large objects may be seen but no detail is discernible.",
+        "source": "https://www.ga.gov.au/scientific-topics/astronomical/astronomical-definitions",
+        "source_type": "government",
+        "checked": "2026-11-24",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_05",
+        "claim": "Geoscience Australia defines the end of evening nautical twilight as the instant when the centre of the Sun is 12 degrees below an ideal horizon; at this time, without moonlight, artificial lighting or adverse atmospheric conditions, it is dark for normal practical purposes.",
+        "source": "https://www.ga.gov.au/scientific-topics/astronomical/astronomical-definitions",
+        "source_type": "government",
+        "checked": "2026-11-24",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_06",
+        "claim": "Geoscience Australia notes that an ideal horizon is approximated when the surrounding terrain is flat and at the same height above sea level (the published times assume an ideal horizon and ideal meteorological conditions).",
+        "source": "https://www.ga.gov.au/scientific-topics/astronomical/astronomical-definitions",
+        "source_type": "government",
+        "checked": "2026-11-24",
+        "is_price": false
+      }
+    ],
+    "insider_details": [
+      {
+        "detail": "Look up sunset for your exact venue and wedding date (single-day result) rather than relying on a general city figure, then work the photo window and dinner start back from it. For an overseas venue, enter its latitude and longitude and choose the right time zone or UTC offset.",
+        "fact_ids": ["fact_01", "fact_02"]
+      },
+      {
+        "detail": "Published sunset assumes a flat, ideal horizon. At a venue with hills, cliffs, trees or buildings to the west, the sun drops out of view earlier than the listed time, so do a site walk at the same hour or ask your photographer when the light goes at that spot.",
+        "fact_ids": ["fact_03", "fact_06"]
+      },
+      {
+        "detail": "Usable soft light carries on after sunset until the end of civil twilight, but by then detail is no longer visible without artificial light. Book golden-hour portraits to finish around sunset and plan lighting (festoons, candles, uplights) to be on before civil twilight ends.",
+        "fact_ids": ["fact_03", "fact_04"]
+      },
+      {
+        "detail": "If guests move between ceremony and reception spaces outdoors (gardens, paths, terraces, coastal roads), schedule that move well before nautical twilight ends, when it is dark for practical purposes, or light the route.",
+        "fact_ids": ["fact_05"]
+      }
+    ],
+    "quotes": [],
+    "real_weddings": [],
+    "budget_range_aud": [],
+    "verify_items": [],
+    "needs_signoff": [],
+    "must_include_coverage": [
+      {
+        "item": "Official sunset source linked at the claim (no stated sunset times)",
+        "covered_by": ["fact_01", "fact_02", "fact_03"]
+      },
+      {
+        "item": "Twilight and light fading after sunset",
+        "covered_by": ["fact_04", "fact_05"]
+      },
+      {
+        "item": "4pm ceremony timeline and 2pm, 3pm and 5pm options (clock times are planning examples, not rules or statistics)",
+        "covered_by": ["Planning advice only: no official source sets ceremony length or run-of-day timings. Present clock times as examples, not facts."]
+      }
+    ]
+  },
+  "self_qa": {
+    "checks": [
+      {"check": "Every fact has a source and date", "pass": true},
+      {"check": "No price without a source; all prices in needs_signoff", "pass": true, "note": "No prices recorded."},
+      {"check": "Every must-include covered or [[VERIFY]]", "pass": true, "note": "No 01-brief.json or 02-seo.json in folder (fast mode); must-includes taken from 00-input.json notes."},
+      {"check": "No invented quotes, statistics or real weddings", "pass": true},
+      {"check": "No stated sunset times for any place", "pass": true}
+    ],
+    "confidence": 0.85
+  },
+  "open_questions": [],
+  "assumptions": [
+    "The timeline (ceremony length, cocktail hour, photo blocks, speeches, dinner) is planning advice, not fact. The grep of existing source packs found no official source on ceremony length or timing, so nothing was copied.",
+    "The Geoscience Australia path named in the task (astronomical-information/sunrise-sunset-and-twilight) returns 404; the live tool is https://www.ga.gov.au/applications/sunrise-sunset-and-twilight-times (redirects to https://geodesyapps.ga.gov.au/sunrise). Link the article to that URL and the definitions page.",
+    "Definitions page shows 'Page last updated: 27 June 2014' (metadata modified 2024-09-30); definitions are standard astronomical ones, used as read on 24 November 2026."
+  ],
+  "verify_items": [],
+  "tools_used": ["mcp__Lead_MCP__firecrawl_scrape", "mcp__Lead_MCP__firecrawl_search", "Bash"],
+  "next_agent": ["luxury-writer"]
+}
