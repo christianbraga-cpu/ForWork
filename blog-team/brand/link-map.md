@@ -95,6 +95,7 @@ in the "Do not link" section. Propose a missing target as `[[LINK NEEDED: topic]
 |---|---|
 | `/vendor` | All vendors |
 | `/venue` | All venues |
+| `/search?tab=venues` | Exceptional Venues (Marketplace venue search) | venue search (live 200, noindex, per strategist 24 Nov 2026: 78 venues; filters by location in 7 countries, capacity and venue type; the primary venue-search link from venue content) |
 | `/search?tab=vendors` | Trusted Vendors (vendor search) | vendor search (live per F-19, 24 Nov 2026: lists vendors by category, e.g. caterers, planners, style and decor; no venue category; the user asked to link it from venue content; anchor as "search ... among our trusted vendors", never "Marketplace") |
 | `/cities` | By city |
 | `/au/venues-in-sydney` | Sydney venues |
