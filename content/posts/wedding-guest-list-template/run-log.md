@@ -9,3 +9,5 @@
 02:11 07b panel revise (enquiry 1.7); 7/7 applied -> 08-final.md
 02:13 10 distribution complete
 02:14 final check pass_with_edits 4.14; 5/5 applied to 08-final.md
+02:17 11 cms-publisher package only (no browser; field map NOT YET MAPPED); 11-body.md, 11-publish-package.json (validates), booking-checklist.md, 12-cms-report.md; not uploaded, nothing saved
+02:18 final docx and run report complete
