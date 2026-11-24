@@ -1,0 +1,364 @@
+{
+ "agent": "panel-chair",
+ "task_id": "wedding-morning-timeline",
+ "stage": "07b",
+ "status": "complete",
+ "round": 1,
+ "inputs_used": [
+  "content/posts/wedding-morning-timeline/01-brief.json",
+  "content/posts/wedding-morning-timeline/05-draft.md (read by the panel)",
+  "content/posts/wedding-morning-timeline/05-draft-r2.md (edits anchored here)",
+  "content/posts/wedding-morning-timeline/06-edit.json",
+  "content/posts/wedding-morning-timeline/07-icp/planner_couple.json",
+  "content/posts/wedding-morning-timeline/07-icp/funding_parent.json",
+  "content/posts/wedding-morning-timeline/07-icp/uhnw.json",
+  "content/posts/wedding-morning-timeline/07-icp/sceptic.json",
+  "content/posts/wedding-morning-timeline/07-icp/search_visitor.json",
+  "content-system/personas/*.yaml (weights: planner_couple 0.40, funding_parent 0.20, uhnw 0.20, sceptic 0.10, search_visitor 0.10)",
+  "content-system/brand/brand-facts.md (Claims we can make)",
+  "content/posts/wedding-timeline-4pm-ceremony/08-final.md (example times and first look definition)",
+  "content-system/schemas/07-panel.schema.json",
+  "CLAUDE.md"
+ ],
+ "payload": {
+  "personas_run": [
+   "planner_couple",
+   "funding_parent",
+   "uhnw",
+   "sceptic",
+   "search_visitor"
+  ],
+  "weighted_scores": {
+   "relevance_to_me": 2.9,
+   "trust": 3.8,
+   "clarity": 4.2,
+   "brand_feels_premium": 3.4,
+   "likelihood_to_enquire": 1.9
+  },
+  "weighted_enquiry_likelihood": 1.9,
+  "must_fix": [
+   {
+    "issue": "The example start times do not say what they depend on, and the earlier and later examples sit a different distance before each ceremony with no reason given (2pm and 3pm start 6.5 hours before, 4pm 7 hours, 5pm 6 hours). Readers could not tell whether 9am fits their own headcount, and the sceptic read the unexplained gaps as loose numbers.",
+    "flagged_by": [
+     "planner_couple",
+     "sceptic",
+     "search_visitor"
+    ],
+    "owner": "luxury-writer",
+    "fix": "Say beside the sample morning that the start depends on the number of people in the chairs and the pace the stylist and artist give, and say before the earlier and later examples that each is shaped for its own day rather than by one formula. No headcount or per-person duration is stated as fact; the example times are unchanged and still match the 4pm final.",
+    "edits": [
+     {
+      "id": "sample_headcount",
+      "old": "Every time is an example to adapt, not a rule.",
+      "new": "Every time is an example to adapt, not a rule: your own start depends on the number of people in the chairs and the pace your stylist and artist give you."
+     },
+     {
+      "id": "start_gaps",
+      "old": "As examples:",
+      "new": "These are examples, each shaped for its own day rather than worked out by one formula, so the first chair does not sit the same distance before each ceremony:"
+     }
+    ]
+   },
+   {
+    "issue": "The mid-page Advisor line reads as a stock pitch dropped after the venue questions. The primary persona asked for it to be tied to the questions above it; the sceptic flagged 'payments' as a money trust risk (does anyone take a cut) and the UHNW reader saw nothing about scale.",
+    "flagged_by": [
+     "planner_couple",
+     "sceptic",
+     "uhnw"
+    ],
+    "owner": "luxury-writer",
+    "fix": "Keep the existing brand-facts claims and tie the line to the destination questions just above it, adding 'while you plan' so it cannot read as the Advisor running the morning or being in the suite. No fee, commission, scale or discretion claim is added: those answers do not exist in brand-facts and are deferred (see open_questions).",
+    "edits": [
+     {
+      "id": "advisor_mid",
+      "old": "so questions like these go to one person.",
+      "new": "so your questions about the suite, the walk to the ceremony and the light go to one person while you plan."
+     }
+    ]
+   },
+   {
+    "issue": "Mothers and other family members are missing from the chair order. Children are mentioned but not parents or grandparents, so the funding parent could not see whether she and the grandmother are on the schedule, the planner couple asked 'plus mums?', and the UHNW reader expects a large family getting ready.",
+    "flagged_by": [
+     "funding_parent",
+     "planner_couple",
+     "uhnw"
+    ],
+    "owner": "luxury-writer",
+    "fix": "One sentence in 'Who goes first and who goes last' giving mothers or grandmothers a place in the chair order and a row on the schedule.",
+    "edits": [
+     {
+      "id": "family_chairs",
+      "old": "Children sit mid-morning, once fed and settled.",
+      "new": "Children sit mid-morning, once fed and settled. If mothers or grandmothers are having their hair or makeup done, give them a place in the chair order and a row on the schedule too."
+     }
+    ]
+   }
+  ],
+  "should_fix": [
+   {
+    "issue": "The page imagines one stylist and one artist, with a second as the furthest step. A large wedding party or a family morning needs more stylists and artists, or a second room.",
+    "flagged_by": [
+     "uhnw",
+     "funding_parent"
+    ],
+    "owner": "luxury-writer",
+    "fix": "Say 'more stylists and artists' and add one sentence asking whether a second room, with its own stylist and artist, would keep a large party on time. It is advice and a question, with no claim about who supplies the room or team.",
+    "edits": [
+     {
+      "id": "large_party",
+      "old": "the choice is an earlier start, or a second stylist or artist so more chairs run at once.",
+      "new": "the choice is an earlier start, or more stylists and artists so more chairs run at once. For a large wedding party or several family members getting ready, ask whether a second room, with its own stylist and artist, would keep the morning on time."
+     }
+    ]
+   }
+  ],
+  "consider": [
+   {
+    "issue": "'First look' is used throughout and never explained.",
+    "flagged_by": [
+     "funding_parent"
+    ],
+    "owner": "luxury-writer",
+    "fix": "Explain it on first use in the intro, in wording consistent with the 4pm final's definition.",
+    "edits": [
+     {
+      "id": "intro_first_look",
+      "old": "that can mean hair and makeup from 9am with a first look or from 10am without one.",
+      "new": "that can mean hair and makeup from 9am with a first look (a private moment before the ceremony when the couple see each other dressed) or from 10am without one."
+     }
+    ]
+   },
+   {
+    "issue": "The walk to the ceremony site considers only the person in the gown, not older relatives with limited mobility, or shade while guests wait.",
+    "flagged_by": [
+     "funding_parent"
+    ],
+    "owner": "luxury-writer",
+    "fix": "Add a question for the venue about older relatives, walking frames and a shaded seat. A question, not a claim.",
+    "edits": [
+     {
+      "id": "walk_older",
+      "old": "does it involve stairs, sand or a slope in a long gown?",
+      "new": "does it involve stairs, sand or a slope in a long gown? Can older relatives, or anyone using a walking frame, make the same trip, and is there a seat in the shade while they wait?"
+     }
+    ]
+   },
+   {
+    "issue": "The getting-ready space list has nothing on privacy, and 'a friend' as timekeeper assumes a smaller wedding.",
+    "flagged_by": [
+     "uhnw"
+    ],
+    "owner": "luxury-writer",
+    "fix": "Add a Privacy bullet (who may enter, photograph or post) and widen the timekeeper to 'someone you trust'. Neither implies the Advisor or anyone from Wedded Wonderland is in the suite.",
+    "edits": [
+     {
+      "id": "suite_privacy",
+      "old": "- **One timekeeper.** A friend who holds the schedule, calls the next person and keeps the room calm.",
+      "new": "- **Privacy.** Agree who may enter the suite, and whether anyone may photograph or post from it.\n- **One timekeeper.** Someone you trust who holds the schedule, calls the next person and keeps the room calm."
+     }
+    ]
+   },
+   {
+    "issue": "Family customs, blessings or quiet moments on the morning are not mentioned.",
+    "flagged_by": [
+     "uhnw"
+    ],
+    "owner": "luxury-writer",
+    "fix": "One neutral sentence giving any family custom or blessing its own block, without naming or stereotyping any tradition.",
+    "edits": [
+     {
+      "id": "family_customs",
+      "old": "Hand the rings to a named person early.",
+      "new": "Hand the rings to a named person early. If your families have customs, blessings or quiet moments on the morning, give each its own block on the timeline."
+     }
+    ]
+   },
+   {
+    "issue": "None of the Key takeaways contain a time, so a skimmer leaves without the 9am or 10am example.",
+    "flagged_by": [
+     "search_visitor"
+    ],
+    "owner": "luxury-writer",
+    "fix": "Add the example times to the first takeaway, keeping it one sentence and keeping exactly four takeaways.",
+    "edits": [
+     {
+      "id": "takeaway_times",
+      "old": "- Start from the ceremony time and work backwards through travel, photos and dressing to find when the first chair must begin.",
+      "new": "- Start from the ceremony time and work backwards through travel, photos and dressing to find when the first chair must begin, which in our 4pm example is 9am with a first look or 10am without one."
+     }
+    ]
+   },
+   {
+    "issue": "The sample morning, the part most readers want to save, sits several sections down with no way to jump to it on a phone.",
+    "flagged_by": [
+     "search_visitor"
+    ],
+    "owner": "luxury-writer",
+    "fix": "Add a plain same-page anchor link under the intro. The CMS heading ID must be checked (see open_questions); if the CMS creates no matching ID, drop the jump sentence rather than invent an anchor.",
+    "edits": [
+     {
+      "id": "jump_link",
+      "old": "For the rest of the day, see [how to build your full wedding day timeline](/expert-advice/wedding-day-timeline).",
+      "new": "For the example times, jump to the [sample morning for a 4pm ceremony](#a-sample-wedding-morning-timeline-for-a-4pm-ceremony). For the rest of the day, see [how to build your full wedding day timeline](/expert-advice/wedding-day-timeline)."
+     }
+    ]
+   },
+   {
+    "issue": "The hair and makeup duration section reads as a refusal with nothing to go on.",
+    "flagged_by": [
+     "search_visitor"
+    ],
+    "owner": "luxury-writer",
+    "fix": "Point to the sample mornings as a starting point until the team's own figures arrive. Still no per-person duration stated.",
+    "edits": [
+     {
+      "id": "hair_pointer",
+      "old": "Plan around your own team's figures, not a general one.",
+      "new": "Plan around your own team's figures, not a general one, and use the sample mornings below as a starting point until you have them."
+     }
+    ]
+   },
+   {
+    "issue": "'Inclusions' in the closing line sounds like package language to the UHNW reader.",
+    "flagged_by": [
+     "uhnw"
+    ],
+    "owner": "luxury-writer",
+    "fix": "No change: the wording is a brand-facts claim and three other readers named this line the most reassuring on the page (see conflicts_resolved)."
+   },
+   {
+    "issue": "The funding parent wants to know whether the enquiry leads to a person and whether quotes are in AUD; the planner couple and sceptic want the fee model; the planner couple wants a real wedding as proof.",
+    "flagged_by": [
+     "funding_parent",
+     "planner_couple",
+     "sceptic",
+     "search_visitor"
+    ],
+    "owner": "cro-specialist",
+    "fix": "No article change. Fee structure, commissions, phone contact and real weddings are outside what this page may state. The CRO specialist should check that the /wonderland-concierge page answers what happens after the enquiry and how the fee works (see deferred)."
+   }
+  ],
+  "keep": [
+   "The direct-answer intro: the method worked backwards from the ceremony, with a real example time straight away (planner_couple, uhnw, search_visitor).",
+   "The numbered work-back list and 'The start of the first chair is the last number you work out, not the first.' (search_visitor).",
+   "'allowing for a slow lift or a long walk' (funding_parent).",
+   "No invented durations: 'Plan around your own team's figures' and 'Get their figures in writing and build the morning on them.' (planner_couple, sceptic, funding_parent).",
+   "'Ask your stylist and artist which order suits them.' and the second-to-last tip so an overrun falls on someone else (sceptic, search_visitor).",
+   "The plain trade-off of an earlier start versus more chairs at once (planner_couple).",
+   "The destination venue questions: suite access, the walk in a long gown, humidity, the light (planner_couple, uhnw).",
+   "The Geoscience Australia calculator as a named, checkable source (sceptic).",
+   "The 4pm sample morning in short timed lines (search_visitor).",
+   "The morning-ceremony reality check (every time moves three hours earlier), now without '4.30am' after the editor pass (planner_couple, funding_parent, search_visitor).",
+   "The FAQ, with direct short answers (search_visitor).",
+   "The closing Advisor line (time zone, fee agreed in writing before any work begins, inclusions confirmed in writing) exactly as worded (funding_parent, sceptic, planner_couple).",
+   "The copyable morning schedule template (planner_couple)."
+  ],
+  "conflicts_resolved": [
+   "Mid-page Advisor claims: the sceptic wanted 'anywhere in the world' and 'payments' cut as unsupported, while the funding parent named 'one person, accountable, including payments' as a reason to trust. Both claims are on the brand-facts 'Claims we can make' list. The primary persona (planner_couple) asked for the line to be tied to the questions above it, not cut. Decision: keep the claims and tie the line to the questions (advisor_mid). The commission question is deferred and never answered in the article.",
+   "'Inclusions' in the closing line: the UHNW reader (weight 0.20) found it package-like; funding_parent, sceptic and planner_couple (together 0.70) called the same line the most reassuring on the page. Decision: keep it word for word.",
+   "Headcount behind the examples: the planner couple and the sceptic asked how many people the 4pm times assume. Stating a headcount would need per-person durations we do not have. Decision: say that the start depends on the number of people in the chairs and the team's pace, and leave the examples as examples (sample_headcount, start_gaps).",
+   "The editor's r2 already closed three reader issues: the 'Plan the morning with one person' heading (planner_couple, medium) is now '## Start from the ceremony'; the FAQ buffer answer the sceptic could not check is now 'For example, leave 15 minutes between the last chair and dressing.'; the '4.30am' line is gone. No further edits for these."
+  ],
+  "deferred": [
+   "Fee structure, commissions or mark-ups from suppliers (sceptic, planner_couple, search_visitor): never stated in a blog post; Concierge page and Nic.",
+   "Who to ring on the morning abroad, phone contact, a named Advisor, a private channel (funding_parent, uhnw): not in 'Claims we can make'.",
+   "Deposits to overseas suppliers and quotes in AUD (funding_parent): money detail kept off this page; 'quotes in AUD for Australian couples' is a permitted claim but adds a money line to a how-to page. Left for the CRO specialist to weigh on the Concierge page.",
+   "Real weddings as proof, scale (200 to 400 guests), security teams and discretion (planner_couple, uhnw): no sourced material; not claimed.",
+   "Who sources the destination hair and makeup team (planner_couple): covered in general by 'plans ... vendors'; no further detail claimed."
+  ],
+  "not_added": [
+   "A shaded seat for older relatives in the 3.15pm family photos line (funding_parent, low): the destination question in walk_older covers it, and the sample morning stays in sync with the 4pm final.",
+   "A template row note for parents: family_chairs already tells readers to give them a row."
+  ],
+  "edit_order": [
+   "intro_first_look",
+   "jump_link",
+   "takeaway_times",
+   "family_chairs",
+   "large_party",
+   "hair_pointer",
+   "family_customs",
+   "suite_privacy",
+   "sample_headcount",
+   "start_gaps",
+   "walk_older",
+   "advisor_mid"
+  ],
+  "gate": "revise"
+ },
+ "self_qa": {
+  "checks": [
+   {
+    "check": "Weighted maths uses all five weights (sum 1.0)",
+    "pass": true,
+    "note": "Enquiry: 2x0.4 + 3x0.2 + 1x0.2 + 2x0.1 + 1x0.1 = 1.9"
+   },
+   {
+    "check": "Every edit 'old' occurs exactly once in 05-draft-r2.md and all 12 apply cleanly in edit_order",
+    "pass": true,
+    "note": "Applied to a scratch copy and checked"
+   },
+   {
+    "check": "Example times unchanged and consistent with the 4pm final (9am/10am, 12.30pm/1.30pm, 3.30pm; 7.30am, 8.30am, 11am)",
+    "pass": true
+   },
+   {
+    "check": "Exactly 4 one-sentence Key takeaways after edits",
+    "pass": true
+   },
+   {
+    "check": "H1, meta title, headings, both LINK comments, three Wedded Concierge UTM links and the /magazine magnet unchanged",
+    "pass": true
+   },
+   {
+    "check": "No em dashes, prices, statistics, 'free', 'best', 'often', 'usually', 'many', 'average', 'last dance' or vendor names in the new text",
+    "pass": true
+   },
+   {
+    "check": "Advisor wording only from 'Claims we can make'; nothing implies the Advisor runs the morning or is in the suite",
+    "pass": true
+   },
+   {
+    "check": "No per-person duration or headcount stated as fact",
+    "pass": true
+   },
+   {
+    "check": "Word count within brief range",
+    "pass": false,
+    "note": "r2 is about 1,920 words (brief 1,300 to 1,800); the edits add about 230. The writer may tighten wording elsewhere but must not cut anything in keep."
+   }
+  ],
+  "confidence": 0.82
+ },
+ "open_questions": [
+  {
+   "to": "cms-publisher",
+   "question": "The jump_link edit uses the same-page anchor #a-sample-wedding-morning-timeline-for-a-4pm-ceremony. Check that the CMS gives the heading 'A sample wedding morning timeline for a 4pm ceremony' that exact ID in the saved Draft; if it does not, use the ID it does create or remove the jump sentence.",
+   "blocking": false
+  },
+  {
+   "to": "cro-specialist",
+   "question": "Three readers will not enquire until they know the fee model, whether suppliers pay a commission, and whether the enquiry leads to a person. Does /wonderland-concierge answer these? Nothing goes in the article.",
+   "blocking": false
+  },
+  {
+   "to": "luxury-writer",
+   "question": "The page runs over the brief's 1,800 words after these edits. Tighten if you can without cutting any keep item.",
+   "blocking": false
+  }
+ ],
+ "assumptions": [
+  "Fast mode: persona yaml files read only for weight.",
+  "Reader old strings were written against 05-draft.md; every edit here is rewritten against 05-draft-r2.md.",
+  "The 'first look' definition follows the 4pm final's wording, so the two pages agree."
+ ],
+ "verify_items": [],
+ "tools_used": [
+  "Bash (read files)",
+  "Bash (apply edits to scratch copy and check constraints)",
+  "Bash (write 07-panel.json)"
+ ],
+ "next_agent": [
+  "luxury-writer"
+ ]
+}
