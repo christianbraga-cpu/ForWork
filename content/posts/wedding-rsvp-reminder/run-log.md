@@ -2,3 +2,4 @@
 00:19 03 facts complete (5 reused, 0 new reads)
 00:19 01 brief complete
 00:19 04 images complete (4 placeholders)
+00:40 02 SEO complete (report saved by orchestrator); /wedding-rsvp-website now redirects to /expert-advice/wedding-rsvp-website (link map updated)
