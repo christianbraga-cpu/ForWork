@@ -42,3 +42,11 @@
   - **SERP:** paid templates and pin boards; nobody offers a free table, column weighting or venue-abroad columns. The draft already covers these.
   - **Cannibalisation:** go.
   - **Note:** the site header still links /marketplace, which link-map marks NOT LIVE (MARKETPLACE-HEADER, for the user).
+- **Stage 6 fast (copy editor):** DONE. final.md 2,007 reader words, 0 dashes, 0 placeholders; ACCC and Smartraveller inline. /search?tab=venues is the primary venue search (How to use step 2); /search?tab=vendors appears once. publish-package.json valid; chrome-upload-prompt.md draft only; article.docx built.
+
+## Must-fix before publish
+1. DESIGN-SHEET: a "Make a copy in Google Sheets" link and an .xlsx download (search intent is a file).
+2. URL-STATUS: the URL was 404. Create a new post (Zoho WC3-T1016, TK-106).
+3. NIC-SIGNOFF: every figure, in original currency. AUD-EXCEPTION: confirm no conversions.
+4. MARKETPLACE-HEADER: the site header links /marketplace (NOT LIVE per link-map); both /search tabs are noindex.
+5. LINK-CHECK, AUTHOR, IMAGE-RIGHTS, CMS-URL.
