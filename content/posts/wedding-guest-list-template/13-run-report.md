@@ -10,7 +10,7 @@
 
 ## Act first: URL and the download link
 - **Keep the URL:** https://weddedwonderland.com/wedding-guest-list-template, slug `wedding-guest-list-template`, do not change it, no redirect. Primary category Expert Advice (the live page's own). The category bug has now moved /wedding-rsvp-website too, so check the URL after saving; if it moved, don't publish until a 301 is confirmed.
-- **The download is set up:** the spreadsheet is on Google Drive in your work account, shared "Anyone with the link" (Viewer), and the post links its direct download address (https://drive.google.com/uc?export=download&id=1sFcupK6ddDkXDAMxbIwqRG-vsYahUO2z). Before publishing, click it in a private window and confirm it downloads without a sign-in. Keep the file where it is and its sharing unchanged. Downloads happen on Google, so the site's analytics won't count them.
+- **The download is set up:** the spreadsheet is on Google Drive in your work account, shared "Anyone with the link" (Viewer), and the post links its direct download address (https://drive.google.com/uc?export=download&id=1sFcupK6ddDkXDAMxbIwqRG-vsYahUO2z). You tested it on 24 November 2026 and it downloads. Keep the file where it is and its sharing unchanged. Downloads happen on Google, so the site's analytics won't count them.
 
 ## Please note
 - **Your choices:**
