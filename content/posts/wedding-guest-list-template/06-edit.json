@@ -1,0 +1,284 @@
+{
+ "agent": "editor",
+ "task_id": "wedding-guest-list-template",
+ "stage": "06",
+ "status": "revision",
+ "round": 1,
+ "inputs_used": [
+  "CLAUDE.md",
+  "content-system/rubrics/editor-rubric.md",
+  "content-system/rubrics/compliance-checklist.md",
+  "content-system/rubrics/link-rules.md",
+  "content-system/brand/banned-phrases.md",
+  "content-system/brand/brand-facts.md",
+  "content-system/seo/link-map.csv",
+  "content/posts/wedding-guest-list-template/01-brief.json",
+  "content/posts/wedding-guest-list-template/02-seo.json",
+  "content/posts/wedding-guest-list-template/03-source-pack.json",
+  "content/posts/wedding-guest-list-template/04-images.json",
+  "content/posts/wedding-guest-list-template/05-draft.md",
+  "content/posts/wedding-guest-list-template/download/wedding-guest-list-template.xlsx (openpyxl, read-only)",
+  "pressedlove.com, theweddingplanner.ai, girlbossbride.com guest list template pages (re-scraped 2026-11-24 via Firecrawl; the 02-research/pages files are structure-only stubs)"
+ ],
+ "self_qa": {
+  "checks": [
+   {
+    "check": "Every factual sentence logged",
+    "pass": true,
+    "note": "fact_01 to fact_05 each sit on a matching sentence with the link at the claim; brand and Studio claims logged; every copy statement about the .xlsx checked against tabs, row 5 headings, data validations, freeze, filter and Summary formulas."
+   },
+   {
+    "check": "Scan run and results reflected",
+    "pass": true,
+    "note": "scan_copy.py: 0 banned, 0 dashes, 0 overlaps, 'luxury' x1 (in an image-slot comment, fine). 7-gram check vs stubs 0; manual read against full re-scrapes finds shared ideas only (one row per person, dietary separate from meal, table filled last), no shared wording. Patched copy rescans clean."
+   },
+   {
+    "check": "Decision consistent with scores and blocking issues",
+    "pass": true,
+    "note": "Average 4.0 and no criterion below 3, but a compliance gap (visa info without an 'as at' date) is blocking, plus file-accuracy errors, so revise. All 13 edits are exact one-occurrence replacements, checked by applying them to a copy."
+   },
+   {
+    "check": "Locked items unchanged",
+    "pass": true,
+    "note": "H1 and meta title, 4 one-sentence takeaways, headings (no colons, dashes, hyphens; questions only in FAQ), download link and DOWNLOAD comment, each UTM once (primary, secondary, closing with anchor 'Wedded Concierge'; /magazine magnet), utm_medium=content, relative internal links, magazine link: untouched by the edits."
+   }
+  ],
+  "confidence": 0.88
+ },
+ "open_questions": [
+  {
+   "to": "seo-researcher",
+   "question": "02-seo.json external_links lists only the Google dropdown and Microsoft pages. Add support.google.com/docs/answer/40608 (fact_05), smartraveller.gov.au essentials checklist (fact_04) and the two OAIC pages with checked dates so /wedded-refresh rechecks them. The post now has 6 external links (rule says 2 to 5); acceptable as two are the same OAIC domain, but flag if you want one cut.",
+   "blocking": false
+  },
+  {
+   "to": "visual-curator",
+   "question": "04-images.json destination-columns shot_brief: align with edit 13 (real row 5 headings, no Welcome dinner in that crop, Yes/No only, no 'Pending'). Featured brief says 'RSVP' column; the file has per-event columns (Welcome dinner, Ceremony, Reception, Recovery brunch) instead.",
+   "blocking": false
+  }
+ ],
+ "assumptions": [
+  "Brief items mentioning room blocks, transfers and the compliance line 'Wedded Advisor confirms current requirements' are overridden by the orchestrator (no room block or transfers; nothing implying the Advisor handles visas).",
+  "Vendor names in image-slot HTML comments (stock libraries, Canva) are internal production notes and are not published copy."
+ ],
+ "verify_items": [],
+ "tools_used": [
+  "content-system/scripts/scan_copy.py",
+  "openpyxl (read-only)",
+  "mcp__Lead_MCP__firecrawl_scrape"
+ ],
+ "next_agent": [
+  "luxury-writer"
+ ],
+ "payload": {
+  "draft_file": "content/posts/wedding-guest-list-template/05-draft.md",
+  "rubric": {
+   "voice": 4,
+   "expertise": 4,
+   "accuracy": 3,
+   "seo_fit": 4,
+   "commercial_link": 4,
+   "structure": 5,
+   "brief_fit": 4
+  },
+  "average": 4.0,
+  "blocking_issues": [
+   "Compliance: visa information (fact_04, Destination wedding columns) has the Smartraveller link but no 'as at <month year>' date. Edit 6."
+  ],
+  "decision": "revise",
+  "edits": [
+   {
+    "location": "Front matter, META DESCRIPTION comment",
+    "issue": "Meta description is 159 characters, over the 155 limit, and no longer matches 02-seo.json. Restore the approved 02-seo wording (151 characters, no 'free', no figures).",
+    "fix": "Replace exactly: \"<!-- META DESCRIPTION: Download our wedding guest list template for Google Sheets or Excel with no sign-up. Every column explained, including flights, accommodation and visa letters. -->\" WITH: \"<!-- META DESCRIPTION: Download our wedding guest list template for Google Sheets or Excel with no sign-up. Every column explained, including flights, rooms and visa letters. -->\"",
+    "old": "<!-- META DESCRIPTION: Download our wedding guest list template for Google Sheets or Excel with no sign-up. Every column explained, including flights, accommodation and visa letters. -->",
+    "new": "<!-- META DESCRIPTION: Download our wedding guest list template for Google Sheets or Excel with no sign-up. Every column explained, including flights, rooms and visa letters. -->"
+   },
+   {
+    "location": "Intro, paragraph 3 (after the download link)",
+    "issue": "Accuracy against the .xlsx. Columns are not explained in file order: Destination travel (Z to AG) sits before After the day (AH, AI) and Notes (AJ) in the file, but the article explains After the day and Notes first and Destination later.",
+    "fix": "Replace exactly: \"Below, every column is explained in the order it appears in the file.\" WITH: \"Below, every column is explained group by group, using the names in the file.\"",
+    "old": "Below, every column is explained in the order it appears in the file.",
+    "new": "Below, every column is explained group by group, using the names in the file."
+   },
+   {
+    "location": "Columns in the wedding guest list template > Guest, Envelope name bullet",
+    "issue": "'rarely' is a frequency claim, the same family as the banned often/usually.",
+    "fix": "Replace exactly: \"which is rarely how you say someone's name.\" WITH: \"which is not always how you say someone's name.\"",
+    "old": "which is rarely how you say someone's name.",
+    "new": "which is not always how you say someone's name."
+   },
+   {
+    "location": "Columns in the wedding guest list template > Guest, Age group bullet",
+    "issue": "Accuracy against the .xlsx: Summary has one combined 'Children and infants' count (B8), not separate counts for each.",
+    "fix": "Replace exactly: \"Children and infants are counted separately on the Summary tab, which matters for meals and seats.\" WITH: \"The Summary tab gives children and infants a count of their own, which matters for meals and seats.\"",
+    "old": "Children and infants are counted separately on the Summary tab, which matters for meals and seats.",
+    "new": "The Summary tab gives children and infants a count of their own, which matters for meals and seats."
+   },
+   {
+    "location": "Destination wedding columns, Flights booked bullet",
+    "issue": "Accuracy: Summary 'Flights booked' (B19) is a count of Yes, so it cannot show who still needs a seat. The column filter does that.",
+    "fix": "Replace exactly: \"The Summary tab counts the yeses, so you can see who still has a seat to find.\" WITH: \"The Summary tab counts the yeses, and filtering the column for No shows who still has a seat to find.\"",
+    "old": "The Summary tab counts the yeses, so you can see who still has a seat to find.",
+    "new": "The Summary tab counts the yeses, and filtering the column for No shows who still has a seat to find."
+   },
+   {
+    "location": "Destination wedding columns, paragraph after the bullets (visa)",
+    "issue": "Compliance checklist: visa information from an official source needs an 'as at <month year>' date. fact_04 sentence has the link but no date. (The checklist line about the Wedded Advisor confirming requirements is deliberately not applied: the orchestrator rules out anything implying the Advisor handles visas.)",
+    "fix": "Replace exactly: \"as [Smartraveller advises](https://www.smartraveller.gov.au/travel-essentials/essentials-checklist). <!-- fact_04 -->\" WITH: \"as [Smartraveller advises](https://www.smartraveller.gov.au/travel-essentials/essentials-checklist) (general information as at November 2026). <!-- fact_04 -->\"",
+    "old": "as [Smartraveller advises](https://www.smartraveller.gov.au/travel-essentials/essentials-checklist). <!-- fact_04 -->",
+    "new": "as [Smartraveller advises](https://www.smartraveller.gov.au/travel-essentials/essentials-checklist) (general information as at November 2026). <!-- fact_04 -->"
+   },
+   {
+    "location": "Destination wedding columns, last paragraph (primary CTA)",
+    "issue": "Placed straight after the eight travel and visa columns, 'a logistics project' followed by 'A Wedded Advisor plans ... travel' reads as if the Advisor runs guest travel and visa letters. Separate the Advisor claim (verbatim brand-facts) from the guest columns. UTM link unchanged.",
+    "fix": "Replace exactly: \"Read across these eight columns and a destination wedding starts to look like a logistics project. A Wedded Advisor plans venue, travel, vendors and payments anywhere in the world, as your single point of contact from start to finish.\" WITH: \"Read across these eight columns and you can see how much a destination wedding asks of a plan. For the wedding itself, a Wedded Advisor plans venue, travel, vendors and payments anywhere in the world, as your single point of contact from start to finish.\"",
+    "old": "Read across these eight columns and a destination wedding starts to look like a logistics project. A Wedded Advisor plans venue, travel, vendors and payments anywhere in the world, as your single point of contact from start to finish.",
+    "new": "Read across these eight columns and you can see how much a destination wedding asks of a plan. For the wedding itself, a Wedded Advisor plans venue, travel, vendors and payments anywhere in the world, as your single point of contact from start to finish."
+   },
+   {
+    "location": "Filling it in by household, paragraph 2",
+    "issue": "Link rules: the same URL (/expert-advice/how-to-make-a-wedding-guest-list) is linked twice (intro and here). Keep the early intro link; unlink this one.",
+    "fix": "Replace exactly: \"lives in our guide on [how to make a wedding guest list](/expert-advice/how-to-make-a-wedding-guest-list).\" WITH: \"lives in the same how-to guide linked at the top of this page.\"",
+    "old": "lives in our guide on [how to make a wedding guest list](/expert-advice/how-to-make-a-wedding-guest-list).",
+    "new": "lives in the same how-to guide linked at the top of this page."
+   },
+   {
+    "location": "Excel and Google Sheets setup > Dropdowns, paragraph 1",
+    "issue": "Accuracy against the .xlsx: the event columns (Q to T) offer four options (Not invited, Invited, Attending, Declined), not five. Contradicts the Events section too.",
+    "fix": "Replace exactly: \"The four event columns offer the five reply options.\" WITH: \"The four event columns offer Not invited, Invited, Attending or Declined.\"",
+    "old": "The four event columns offer the five reply options.",
+    "new": "The four event columns offer Not invited, Invited, Attending or Declined."
+   },
+   {
+    "location": "When a spreadsheet stops being enough, last paragraph (secondary CTA)",
+    "issue": "'For couples whose guest list is turning into a travel plan ... to plan the whole weekend' implies the Advisor takes over guest travel; 'plan the whole weekend' is not in brand-facts 'Claims we can make'. Use the approved claim. UTM link and anchor unchanged.",
+    "fix": "Replace exactly: \"For couples whose guest list is turning into a travel plan, [Wedded Concierge](/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=wedding-guest-list-template&utm_content=secondary) puts one Wedded Advisor beside you to plan the whole weekend.\" WITH: \"For couples planning the wedding itself abroad, [Wedded Concierge](/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=wedding-guest-list-template&utm_content=secondary) gives you one Wedded Advisor, start to finish.\"",
+    "old": "For couples whose guest list is turning into a travel plan, [Wedded Concierge](/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=wedding-guest-list-template&utm_content=secondary) puts one Wedded Advisor beside you to plan the whole weekend.",
+    "new": "For couples planning the wedding itself abroad, [Wedded Concierge](/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=wedding-guest-list-template&utm_content=secondary) gives you one Wedded Advisor, start to finish."
+   },
+   {
+    "location": "Frequently asked questions > Can I use this template in Google Sheets and Excel?",
+    "issue": "Import steps restate fact_05 without a marker.",
+    "fix": "Replace exactly: \"and select the file, then check a dropdown to make sure it came across.\" WITH: \"and select the file, then check a dropdown to make sure it came across. <!-- fact_05 -->\"",
+    "old": "and select the file, then check a dropdown to make sure it came across.",
+    "new": "and select the file, then check a dropdown to make sure it came across. <!-- fact_05 -->"
+   },
+   {
+    "location": "Planning the weekend around your guests, paragraph 2",
+    "issue": "Brief asks for exactly one Wedded Advisor line in the close; there are two sentences of claims. Merge into one sentence, all from brand-facts 'Claims we can make'. Closing UTM link unchanged.",
+    "fix": "Replace exactly: \"A Wedded Advisor works in your time zone, quotes in AUD for Australian couples, and agrees the fee in writing before any work begins. Every inclusion is confirmed in writing before you commit.\" WITH: \"A Wedded Advisor works in your time zone, quotes in AUD for Australian couples, agrees the fee in writing before any work begins and confirms every inclusion in writing before you commit.\"",
+    "old": "A Wedded Advisor works in your time zone, quotes in AUD for Australian couples, and agrees the fee in writing before any work begins. Every inclusion is confirmed in writing before you commit.",
+    "new": "A Wedded Advisor works in your time zone, quotes in AUD for Australian couples, agrees the fee in writing before any work begins and confirms every inclusion in writing before you commit."
+   },
+   {
+    "location": "IMAGE SLOT destination-columns comment",
+    "issue": "Shot brief does not match the file: Welcome dinner is under Events (column Q), not with the destination columns, and the Yes/No columns have no 'Pending' option. Name the real row 5 headings so the screenshot matches the copy. Slot id unchanged (approved in 04-images.json).",
+    "fix": "Replace exactly: \"flights booked, accommodation, welcome dinner, visa or invitation letter needed, plus the guest name column for context. 5 to 8 rows of placeholder data with a realistic mix of entries (Yes/No/Pending,\" WITH: \"Travelling from, Flights booked, Arrival date, Departure date, Accommodation, Transport to venue needed, Visa letter needed and Visa letter sent, plus the frozen name columns for context. 5 to 8 rows of placeholder data with a realistic mix of entries (Yes/No,\"",
+    "old": "flights booked, accommodation, welcome dinner, visa or invitation letter needed, plus the guest name column for context. 5 to 8 rows of placeholder data with a realistic mix of entries (Yes/No/Pending,",
+    "new": "Travelling from, Flights booked, Arrival date, Departure date, Accommodation, Transport to venue needed, Visa letter needed and Visa letter sent, plus the frozen name columns for context. 5 to 8 rows of placeholder data with a realistic mix of entries (Yes/No,"
+   }
+  ],
+  "fact_check_log": [
+   {
+    "claim": "Google Sheets import: open a spreadsheet, File, Import, select the file, Create new spreadsheet (Download section, Google link at claim).",
+    "fact_id": "fact_05",
+    "status": "confirmed"
+   },
+   {
+    "claim": "FAQ 'Can I use this template...': same import steps (marker added by edit 11).",
+    "fact_id": "fact_05",
+    "status": "confirmed"
+   },
+   {
+    "claim": "Each guest should get the right visa for countries visited or transited and check with the destination's embassy or consulate before travel (Smartraveller link at claim; 'as at November 2026' added by edit 6). No country rules stated; visa appears only as two columns.",
+    "fact_id": "fact_04",
+    "status": "confirmed"
+   },
+   {
+    "claim": "Names, addresses, phone numbers and dates of birth count as personal information, and so does sensitive information (OAIC link at claim; email not claimed).",
+    "fact_id": "fact_01",
+    "status": "confirmed"
+   },
+   {
+    "claim": "The Privacy Act doesn't cover individuals acting in a personal capacity (OAIC link at claim; no dash).",
+    "fact_id": "fact_02",
+    "status": "confirmed"
+   },
+   {
+    "claim": "State or territory laws may still apply in some situations, followed by 'general information as at November 2026, not legal advice'.",
+    "fact_id": "fact_03",
+    "status": "confirmed"
+   },
+   {
+    "claim": "Wonderland Studio is our planning app for seating charts and RSVPs; replies, plus-ones and dietary notes arrive in its guest list (/wonderland-studio verbatim in 02-seo studio_guest_list_wording). No CSV, menu, travel-field or cost claims.",
+    "status": "confirmed"
+   },
+   {
+    "claim": "Wedded Advisor plans venue, travel, vendors and payments anywhere in the world, as a single point of contact start to finish (brand-facts Claims we can make).",
+    "status": "confirmed"
+   },
+   {
+    "claim": "Advisor works in your time zone, quotes in AUD for Australian couples, fee agreed in writing before work begins, inclusions confirmed in writing before you commit (brand-facts; merged to one sentence by edit 12).",
+    "status": "confirmed"
+   },
+   {
+    "claim": "Secondary CTA 'puts one Wedded Advisor beside you to plan the whole weekend' (not a brand-facts claim; replaced by edit 10).",
+    "status": "unsupported"
+   },
+   {
+    "claim": "File: three tabs How to use, Guest list, Summary; How to use has six numbered steps; 36 columns (A to AJ) with group headings in row 4 and names in row 5; row 6 example, guests from row 7; pale yellow input cells (stated on How to use tab); plus-one and children rule cell on How to use (A11).",
+    "status": "confirmed"
+   },
+   {
+    "claim": "File: all 36 bolded column names match row 5 exactly; eight destination columns Z to AG; no passport column.",
+    "status": "confirmed"
+   },
+   {
+    "claim": "File: dropdowns Side (Partner A, Partner B, Both), List (A, B), Age group (Adult, Teen, Child, Infant), events (Not invited, Invited, Attending, Declined), Yes/No on Flights booked, Transport to venue needed, Visa letter needed, Visa letter sent, Thank you sent; date validation on Save the date sent, Invitation sent, Arrival date, Departure date.",
+    "status": "confirmed"
+   },
+   {
+    "claim": "'The four event columns offer the five reply options' (file has four; fixed by edit 9).",
+    "status": "unsupported"
+   },
+   {
+    "claim": "File: freeze at D6 (header rows and first three columns), autofilter on row 5 A5:AJ505.",
+    "status": "confirmed"
+   },
+   {
+    "claim": "File: Summary counts guests listed, households, plus ones named, children and infants, save the dates sent, invitations sent; Invited/Attending/Declined/Not invited table for four events; flights booked, accommodation noted, transport to venue needed, visa letters needed, visa letters still to send, thank you notes sent; ranges start at row 7.",
+    "status": "confirmed"
+   },
+   {
+    "claim": "'Children and infants are counted separately on the Summary tab' (one combined count; fixed by edit 4).",
+    "status": "unsupported"
+   },
+   {
+    "claim": "'Every column is explained in the order it appears in the file' (Destination group precedes After the day in the file; fixed by edit 2).",
+    "status": "unsupported"
+   },
+   {
+    "claim": "'The Summary tab counts the yeses, so you can see who still has a seat to find' (count cannot show who; fixed by edit 5).",
+    "status": "unsupported"
+   }
+  ],
+  "compliance": {
+   "pass": false,
+   "issues": [
+    "Visa line lacks 'as at November 2026' (edit 6).",
+    "Secondary CTA 'plan the whole weekend' is outside brand-facts claims and implies guest travel handling (edit 10); primary CTA juxtaposition softened (edit 7).",
+    "Meta description 159 characters, over 155 (edit 1).",
+    "No prices, statistics, competitor or template-site names, 'free', room block or transfers. Privacy line 'general information as at November 2026, not legal advice' present."
+   ]
+  },
+  "originality": {
+   "pass": true,
+   "matches": [
+    "None at 12 words or 7 words against pressedlove, theweddingplanner.ai or girlbossbride (full re-scrape). Shared ideas only, expressed in our own words."
+   ]
+  },
+  "banned_phrases_found": [],
+  "needs_signoff": []
+ }
+}
