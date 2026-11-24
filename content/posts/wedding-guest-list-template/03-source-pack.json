@@ -1,0 +1,150 @@
+{
+  "agent": "planner-sme",
+  "task_id": "wedding-guest-list-template",
+  "stage": "03",
+  "status": "complete",
+  "round": 1,
+  "inputs_used": [
+    "content/posts/wedding-guest-list-template/00-input.json",
+    "content/posts/wedding-rsvp-reminder/03-source-pack.json",
+    "content/posts/why-do-we-have-bridesmaids/03-source-pack.json"
+  ],
+  "self_qa": {
+    "checks": [
+      {
+        "check": "Every fact has a source and date",
+        "pass": true,
+        "note": "fact_01 to fact_03 copied unchanged from wedding-rsvp-reminder fact_01 to fact_03 (OAIC, checked 2026-11-23); fact_04 copied from why-do-we-have-bridesmaids fact_110 (Smartraveller essentials checklist, checked 2026-11-10). Claims, sources, source_type and dates unchanged."
+      },
+      {
+        "check": "No price without a source; all prices in needs_signoff",
+        "pass": true,
+        "note": "No prices, figures, statistics, platform or template-site facts."
+      },
+      {
+        "check": "Every must-include covered or [[VERIFY]]",
+        "pass": true,
+        "note": "No 01-brief.json or 02-seo.json; must-includes from 00-input.json notes and the batch task."
+      },
+      {
+        "check": "No invented quotes, statistics or real weddings",
+        "pass": true
+      }
+    ],
+    "confidence": 0.85
+  },
+  "open_questions": [
+    {
+      "to": "luxury-writer",
+      "question": "Legal and visa points are general information as at November 2026, not legal advice. Never write that the Wedded Advisor confirms anything legal or handles visas. fact_02 quotes OAIC with an em dash as published; rephrase without em dashes. fact_01: OAIC does not name email addresses; do not say it lists email. Do not state any country-specific visa rule; the visa-letter column is advice to check with the destination's official authorities.",
+      "blocking": false
+    }
+  ],
+  "assumptions": [
+    "Batch gl_a, fast mode, reuse only: no new reads.",
+    "Source fact_110 carried a conflicts note saying the Wedded Advisor confirms current requirements; dropped here per the batch instruction (Wedded Advisor does not confirm legal or visa matters). Claim, quote, source, source_type and checked date kept unchanged.",
+    "Smartraveller fact is general (essentials checklist), not country-specific."
+  ],
+  "verify_items": [
+    "[[VERIFY: any claim that a specific privacy law (Australian or destination country, e.g. EU GDPR) does or does not apply to a couple's guest list. No source held states this; keep to the general OAIC points as at November 2026.]]",
+    "[[VERIFY: any country-specific entry, visa or visa-letter rule for guests. Not researched; keep the visa column as advice to check with the destination's official authorities.]]"
+  ],
+  "tools_used": [],
+  "next_agent": [
+    "luxury-writer"
+  ],
+  "payload": {
+    "facts": [
+      {
+        "fact_id": "fact_01",
+        "claim": "OAIC (same page): 'For example, personal information may include: an individual's name, signature, address, phone number or date of birth', and the list also includes 'sensitive information', 'photographs', 'internet protocol (IP) addresses' and 'location information from a mobile device'. (The page does not mention email addresses by name; do not say OAIC lists email.)",
+        "source": "https://www.oaic.gov.au/privacy/your-privacy-rights/your-personal-information/what-is-personal-information",
+        "source_type": "government",
+        "checked": "2026-11-23",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_02",
+        "claim": "Reused from content/posts/wedding-photo-app/03-source-pack.json (fact_11). OAIC, 'Photos and videos' (page modified 26 September 2024): 'If the photo or video was taken by someone acting in a personal capacity, the Privacy Act doesn't apply — because it doesn't cover individuals.' (Context is photos; dash quoted as published, do not reuse in body copy. Apply to RSVP data only as 'the Privacy Act doesn't cover individuals acting in a personal capacity', as general information.)",
+        "source": "https://www.oaic.gov.au/privacy/your-privacy-rights/social-media-and-online-privacy/photos-and-videos",
+        "source_type": "government",
+        "checked": "2026-11-23",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_03",
+        "claim": "Reused from content/posts/wedding-photo-app/03-source-pack.json (fact_12). OAIC (same page): 'In some situations, there may be state or territory laws that prevent someone photographing your private activities without your consent.' (Context is photography; for RSVPs say only that state or territory laws may also apply.)",
+        "source": "https://www.oaic.gov.au/privacy/your-privacy-rights/social-media-and-online-privacy/photos-and-videos",
+        "source_type": "government",
+        "checked": "2026-11-23",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_04",
+        "claim": "Smartraveller says to get the right visa for countries you are visiting or transiting through, and that visa conditions often change, so check with the destination's embassy or consulate before every trip.",
+        "quote": "Get the right visa for countries you're visiting or transiting through. Visa conditions often change, so check with the embassy or consulate of your destinations before every trip.",
+        "source": "https://www.smartraveller.gov.au/travel-essentials/essentials-checklist",
+        "source_type": "government",
+        "checked": "2026-11-10",
+        "is_price": false
+      }
+    ],
+    "insider_details": [
+      {
+        "detail": "A guest list holds names, addresses and phone numbers, which OAIC describes as personal information, so share the spreadsheet only with the people who need it (as general information as at November 2026, not legal advice).",
+        "fact_ids": [
+          "fact_01"
+        ]
+      },
+      {
+        "detail": "OAIC says the Privacy Act doesn't cover individuals acting in a personal capacity, but state or territory laws may apply; describe this only as general information as at November 2026, not legal advice.",
+        "fact_ids": [
+          "fact_02",
+          "fact_03"
+        ]
+      },
+      {
+        "detail": "For a destination wedding, a visa column is a prompt for each guest to check their own entry and visa requirements, since Smartraveller says visa conditions often change and to check with the destination's embassy or consulate before every trip.",
+        "fact_ids": [
+          "fact_04"
+        ]
+      }
+    ],
+    "quotes": [],
+    "real_weddings": [],
+    "verify_items": [
+      "[[VERIFY: any claim that a specific privacy law (Australian or destination country, e.g. EU GDPR) does or does not apply to a couple's guest list. No source held states this; keep to the general OAIC points as at November 2026.]]",
+      "[[VERIFY: any country-specific entry, visa or visa-letter rule for guests. Not researched; keep the visa column as advice to check with the destination's official authorities.]]"
+    ],
+    "needs_signoff": [],
+    "must_include_coverage": [
+      {
+        "item": "Privacy and handling guest personal information",
+        "covered_by": [
+          "fact_01",
+          "fact_02",
+          "fact_03"
+        ]
+      },
+      {
+        "item": "Destination columns: visa letter / visa check",
+        "covered_by": [
+          "fact_04",
+          "[[VERIFY: any country-specific entry, visa or visa-letter rule for guests. Not researched; keep the visa column as advice to check with the destination's official authorities.]]"
+        ]
+      },
+      {
+        "item": "Destination columns: flights, accommodation, welcome dinner",
+        "covered_by": [
+          "Advice only (spreadsheet columns, no factual claims); no facts needed"
+        ]
+      },
+      {
+        "item": "Template column list, Google Sheets and Excel download, Studio link",
+        "covered_by": [
+          "Not in scope for this batch (no platform or template-site facts by instruction); orchestrator-built .xlsx and live page links handled elsewhere"
+        ]
+      }
+    ]
+  }
+}
