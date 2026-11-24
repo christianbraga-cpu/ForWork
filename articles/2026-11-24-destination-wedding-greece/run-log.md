@@ -25,3 +25,14 @@
   - Document age: three months (packages page, one venue's terms) vs six months (Australian Embassy Athens).
   - The Greece hub's legal section is written for US citizens and says the advisor handles legal matters, which conflicts with our rule that legal confirmation goes to the authority.
 - **Decision (default):** none of the conflicting figures is quoted. Season is attributed to each page as worded, or given as "check the best-time guide". Document age comes from the Australian Embassy only.
+- **Stage 0 fast (strategist):** DONE.
+  - **URL:** 404, so a new post. Zoho WC3-T688 (WW-281, To-Do).
+  - **Volumes (AU / US):** destination wedding greece 30 / 480; santorini wedding 90 / 590; greece wedding cost 10 / 140.
+  - **SERP:** hotel pages, pins and hotel lists. No Australian planning overview ranks.
+  - **Cannibalisation:**
+    - The legacy /how-to-plan-a-destination-wedding-in-greece-if-youre-overseas overlaps totally (LEGACY-301 after publish, user approval).
+    - The hub overlaps partly and owns "greece wedding venues", which clashes with /greece-wedding-venues (HUB-KEYWORD).
+    - The other spokes are summarised and linked. Do not link 13-reasons or /favorite-destination-weddings-in-greece.
+  - **Venue filter:** /search?tab=venues&country=Greece shows only one venue, so the plain venue search is linked.
+  - SEO title 58 characters.
+- **Stage 2:** writer launched.
