@@ -1,3 +1,4 @@
 23:45 00 orchestrator complete input written; FAST MODE; new destination and legal guide; title kept (36 chars)
 23:46 04 visual-curator needs_input; 4 slots needed (no Punta Cana images in register; Drive search unavailable)
 23:47 01 brief complete; orchestrator removed 'Latin America & Caribbean' category
+23:50 03 batch pc_a complete (30 facts; fee fact is_price, excluded from copy; same-sex lines not to be used)
