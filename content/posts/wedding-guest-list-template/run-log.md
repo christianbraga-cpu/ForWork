@@ -7,3 +7,4 @@
 02:06 07 readers complete (5; one envelope fixed by script)
 02:09 06 editor revise 4.0 (visa line needed 'as at' date; 4 copy-vs-file errors); 13/13 applied -> 05-draft-r2.md; meta description set to 152 chars ('hotels' not 'rooms')
 02:11 07b panel revise (enquiry 1.7); 7/7 applied -> 08-final.md
+02:13 10 distribution complete
