@@ -25,3 +25,12 @@
   - YAML: one unquoted value fixed by the orchestrator; now valid, 26 claims, 25 links.
   - /search?tab=vendors lists vendors by category (F-19), so the anchor became "search planners, caterers and stylists in our Marketplace". The SEO review checks for a venue filter.
   - Reviews launched. The strategist and researcher are still held on permission prompts.
+- **Stage 3 fast (3 reviews):** DONE.
+  - **Accuracy 3.6:** two blockers, both ACL overstatements (deposit FAQ and takeaway). Majors: AUD placeholders; Dubai wording; "who shares the pool"; package inclusions caveat; "Marketplace" misnaming.
+  - **SEO 3.8:** majors on /search?tab=vendors (not in link-map, not a venue search); 2,342 words; the spreadsheet intent (competitors offer a copyable Sheet).
+  - **Reader (couple):** relevance 3, trust 3, clarity 4, would_enquire 2, "save and forward". Bali-heavy examples; visible placeholders; product names unclear. The planner-vetting blocker is downgraded as out of scope.
+  - Merged request: 04-reviews/v1/merged.md.
+- **Decision (default):**
+  - /venue (filters by city and guest count) is the primary venue-search link.
+  - /search?tab=vendors is kept once, as the user asked, with the anchor "search planners, caterers and stylists among our trusted vendors", and added to link-map.
+  - DESIGN-SHEET (a copyable Google Sheet or .xlsx) is logged for before publish.

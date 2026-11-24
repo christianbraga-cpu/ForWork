@@ -432,6 +432,7 @@ No dedicated Decor and Florals hub exists. The /blog/decor category page is the 
 | Adelaide, Brisbane, Canberra, Gold Coast, Hobart and Perth vendor pages | Hidden from Google |
 | Fiji magazine | Link `/destinations/oceania/fiji` instead |
 | Get Wedded in Australia pre-register page | Still says "Coming This Spring"; check it is current before linking |
+| `/search?tab=vendors` | Trusted Vendors (vendor search) | vendor search (live per F-19, 24 Nov 2026: lists vendors by category, e.g. caterers, planners, style and decor; no venue category; the user asked to link it from venue content; anchor as "search ... among our trusted vendors", never "Marketplace") |
 | `/concierge`, `/marketplace`, `/privileges`, `/destinations/italy`, `/packages/italy`, `/packages/italy/tuscany`, `/packages/italy/tuscany/*` | **NOT LIVE.** Draft site structure from the Cappuccina page build; do not link until launched |
 
 ## URL patterns for new articles
