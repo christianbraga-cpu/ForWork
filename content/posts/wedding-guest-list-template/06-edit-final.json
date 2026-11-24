@@ -1,0 +1,175 @@
+{
+  "agent": "editor",
+  "task_id": "wedding-guest-list-template",
+  "stage": "06",
+  "status": "complete",
+  "round": 3,
+  "inputs_used": [
+    "CLAUDE.md",
+    "content-system/brand/brand-facts.md",
+    "content-system/seo/link-map.csv",
+    "content/posts/wedding-guest-list-template/01-brief.json",
+    "content/posts/wedding-guest-list-template/02-seo.json",
+    "content/posts/wedding-guest-list-template/03-source-pack.json",
+    "content/posts/wedding-guest-list-template/06-edit.json",
+    "content/posts/wedding-guest-list-template/07-panel.json",
+    "content/posts/wedding-guest-list-template/08-final.md",
+    "content/posts/wedding-guest-list-template/download/wedding-guest-list-template.xlsx (openpyxl, read-only)",
+    "content/posts/wedding-guest-list-template/02-research/pages"
+  ],
+  "self_qa": {
+    "checks": [
+      {
+        "check": "Every factual sentence logged",
+        "pass": true,
+        "note": "fact_01 to fact_05 checked at the claim with links; takeaway 4 gets its fact_01 marker (edit 5). Every .xlsx statement checked against the 3 tabs, 36 row-5 headings (A to AJ), row-4 groups, 6 data validations, freeze D6, filter A5:AJ505, How to use steps 1 to 6 and rule cell A11, and all Summary labels and formulas (from row 7)."
+      },
+      {
+        "check": "Scan run and results reflected",
+        "pass": true,
+        "note": "scan_copy.py on 08-final.md and on the patched copy: 0 banned, 0 dashes, 0 overlaps; 'luxury' x1 in an image-slot comment only."
+      },
+      {
+        "check": "Decision consistent with scores and blocking issues",
+        "pass": true,
+        "note": "Average 4.14, no criterion below 3, no blocking issues; 5 small exact edits, each occurring once in 08-final.md, applied to a scratch copy and rescanned clean."
+      }
+    ],
+    "confidence": 0.9
+  },
+  "open_questions": [],
+  "assumptions": [
+    "Fast mode final check: only real defects listed. The H2 'Printable, Word and PDF versions' is kept: 'Word' is used as a file format, named in the brief's must_include and in the 02-seo.json outline; the orchestrator may drop it if the vendor-name rule is read strictly.",
+    "Meta description (152 characters, 'hotels' in place of 02-seo 'rooms') kept as set in round 2."
+  ],
+  "verify_items": [],
+  "tools_used": [
+    "content-system/scripts/scan_copy.py",
+    "openpyxl (read-only)"
+  ],
+  "next_agent": [
+    "luxury-writer"
+  ],
+  "payload": {
+    "draft_file": "content/posts/wedding-guest-list-template/08-final.md",
+    "rubric": {
+      "voice": 4,
+      "expertise": 4,
+      "accuracy": 4,
+      "seo_fit": 4,
+      "commercial_link": 4,
+      "structure": 5,
+      "brief_fit": 4
+    },
+    "average": 4.14,
+    "blocking_issues": [],
+    "decision": "pass_with_edits",
+    "edits": [
+      {
+        "location": "Download section, 'Open it in Google Sheets', second paragraph",
+        "issue": "Names the vendor ('Google's help page'). Only Excel, Google Sheets and Google Drive may be named.",
+        "fix": "Replace exactly: \"If one hasn't, Google's help page shows how to [add a dropdown in Google Sheets](https://support.google.com/docs/answer/186103).\" WITH: \"If one hasn't, follow the steps to [add a dropdown in Google Sheets](https://support.google.com/docs/answer/186103).\"",
+        "old": "If one hasn't, Google's help page shows how to [add a dropdown in Google Sheets](https://support.google.com/docs/answer/186103).",
+        "new": "If one hasn't, follow the steps to [add a dropdown in Google Sheets](https://support.google.com/docs/answer/186103)."
+      },
+      {
+        "location": "Excel and Google Sheets setup > Dropdowns, last paragraph",
+        "issue": "Names the vendor ('Microsoft's help'). Only Excel, Google Sheets and Google Drive may be named.",
+        "fix": "Replace exactly: \"Microsoft's help on [data validation in Excel]\" WITH: \"the help page on [data validation in Excel]\"",
+        "old": "Microsoft's help on [data validation in Excel]",
+        "new": "the help page on [data validation in Excel]"
+      },
+      {
+        "location": "Privacy and sharing with helpers, bullet 4",
+        "issue": "'If a visa letter calls for passport details' is an unsourced statement about what visa letters need. Visa content is limited to the two columns and fact_04.",
+        "fix": "Replace exactly: \"If a visa letter calls for passport details, keep them out of the shared file.\" WITH: \"Keep passport details out of the shared file.\"",
+        "old": "If a visa letter calls for passport details, keep them out of the shared file.",
+        "new": "Keep passport details out of the shared file."
+      },
+      {
+        "location": "When a spreadsheet stops being enough, Studio paragraph",
+        "issue": "'so nobody is copying answers across from emails' adds a Wonderland Studio product claim beyond the allowed wording ('our planning app for seating charts and RSVPs' plus the /wonderland-studio verbatim line on replies, plus-ones and dietary notes).",
+        "fix": "Replace exactly: \"](/wedding-planning-tools), so nobody is copying answers across from emails.\" WITH: \"](/wedding-planning-tools).\"",
+        "old": "](/wedding-planning-tools), so nobody is copying answers across from emails.",
+        "new": "](/wedding-planning-tools)."
+      },
+      {
+        "location": "Key takeaways, bullet 4",
+        "issue": "Factual claim (names, addresses and phone numbers are personal information) carries no fact marker. Source is fact_01, linked at the claim in the Privacy section.",
+        "fix": "Replace exactly: \"share the file only with the people helping you plan.\" WITH: \"share the file only with the people helping you plan. <!-- fact_01 -->\"",
+        "old": "share the file only with the people helping you plan.",
+        "new": "share the file only with the people helping you plan. <!-- fact_01 -->"
+      }
+    ],
+    "fact_check_log": [
+      {
+        "claim": "Names, addresses, phone numbers and dates of birth count as personal information, and so does sensitive information (Privacy section, OAIC link at claim).",
+        "fact_id": "fact_01",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Takeaway 4: names, addresses and phone numbers are personal information (marker added by edit 5).",
+        "fact_id": "fact_01",
+        "status": "confirmed"
+      },
+      {
+        "claim": "The Privacy Act doesn't cover individuals acting in a personal capacity (OAIC link at claim, general information as at November 2026, not legal advice).",
+        "fact_id": "fact_02",
+        "status": "confirmed"
+      },
+      {
+        "claim": "State or territory laws may still apply in some situations (same line and link).",
+        "fact_id": "fact_03",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Get the right visa for countries visited or transited, check with the destination's embassy or consulate before travel (Smartraveller link at claim, general information as at November 2026).",
+        "fact_id": "fact_04",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Google Sheets: open a spreadsheet, File, Import, select the file, Create new spreadsheet (link at claim).",
+        "fact_id": "fact_05",
+        "status": "confirmed"
+      },
+      {
+        "claim": "FAQ: same import steps.",
+        "fact_id": "fact_05",
+        "status": "confirmed"
+      },
+      {
+        "claim": "If a visa letter calls for passport details (Privacy bullet 4). (removed by edit 3)",
+        "status": "removed"
+      },
+      {
+        "claim": "Wonderland Studio: our planning app for seating charts and RSVPs; replies, plus-ones and dietary notes arrive in its guest list (02-seo studio_guest_list_wording verbatim). Tail 'so nobody is copying answers across from emails' removed by edit 4. (brand claim confirmed)",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Wedded Advisor: plans venue, travel, vendors and payments as single point of contact; one Advisor start to finish; your time zone; quotes in AUD; fee agreed in writing before work begins; inclusions confirmed in writing before you commit. (brand-facts claims confirmed; nothing implies the Advisor manages the guest list, guest travel or visas)",
+        "status": "confirmed"
+      },
+      {
+        "claim": "Template: Excel file, 3 tabs (How to use, Guest list, Summary), 36 columns under row-4 group headings, example row 6, start at row 7, six How to use steps, rule cell on How to use, dropdown options, date-only cells, first three columns and header rows frozen, filter on every row-5 heading, Summary counts as listed, counts from row 7, 8 destination columns. (matches download/wedding-guest-list-template.xlsx)",
+        "status": "confirmed"
+      }
+    ],
+    "compliance": {
+      "pass": true,
+      "issues": [
+        "Vendor names 'Google's' and 'Microsoft's' in body copy (edits 1 and 2).",
+        "Visa reference outside the columns and fact_04 (edit 3).",
+        "Studio wording beyond the allowed lines (edit 4).",
+        "Otherwise clean: no prices, statistics, 'free', often/usually/typically/many/most/rarely, room block, transfers or em dashes; exactly 4 one-sentence takeaways; headings without colons, dashes or hyphens and questions only in the FAQ; download link with DOWNLOAD comment; Concierge UTMs primary, secondary, closing once each with anchor 'Wedded Concierge' and utm_medium=content; /magazine magnet once; internal links relative, in 02-seo.json and link-map.csv, each linked once; meta description 152 characters."
+      ]
+    },
+    "originality": {
+      "pass": true,
+      "matches": [
+        "scan_copy.py: 0 overlaps against 02-research/pages; round-1 full re-scrape check found shared ideas only, no shared wording, and the round 2 and panel changes add no competitor phrasing."
+      ]
+    },
+    "banned_phrases_found": [],
+    "needs_signoff": []
+  }
+}

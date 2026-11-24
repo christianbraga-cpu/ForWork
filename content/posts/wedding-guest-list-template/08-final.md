@@ -23,7 +23,7 @@ Below, every column is explained group by group, using the names in the file. De
 - The template downloads as an Excel file with no sign-up and opens in Excel or imports straight into Google Sheets.
 - Give every guest their own row and tie the people who share an invitation together with one Household ID.
 - Eight destination columns track where guests are flying from, their flights, dates, accommodation, transport and visa letters.
-- Names, addresses and phone numbers are personal information, so share the file only with the people helping you plan.
+- Names, addresses and phone numbers are personal information, so share the file only with the people helping you plan. <!-- fact_01 -->
 
 ## Download the wedding guest list template
 
@@ -39,7 +39,7 @@ Download the file and open it as it is. The dropdowns, date cells, filters and S
 
 In Google Sheets, open a spreadsheet, choose File, then [Import](https://support.google.com/docs/answer/40608), select the file and choose Create new spreadsheet. <!-- fact_05 -->
 
-Pick a status from any cell under Events to check the dropdowns came across. If one hasn't, Google's help page shows how to [add a dropdown in Google Sheets](https://support.google.com/docs/answer/186103).
+Pick a status from any cell under Events to check the dropdowns came across. If one hasn't, follow the steps to [add a dropdown in Google Sheets](https://support.google.com/docs/answer/186103).
 
 ## Columns in the wedding guest list template
 
@@ -126,7 +126,7 @@ Side offers Partner A, Partner B or Both. List offers A or B. Age group offers A
 
 Save the date sent, Invitation sent, Arrival date and Departure date accept dates only. Type them as day/month/year.
 
-To add your own dropdown in Excel, for a new event or a second meal course, Microsoft's help on [data validation in Excel](https://support.microsoft.com/en-us/office/apply-data-validation-to-cells-29fecbcc-d1b9-42c1-9d76-eff3ce5f7249) shows the steps.
+To add your own dropdown in Excel, for a new event or a second meal course, the help page on [data validation in Excel](https://support.microsoft.com/en-us/office/apply-data-validation-to-cells-29fecbcc-d1b9-42c1-9d76-eff3ce5f7249) shows the steps.
 
 ### Frozen headings and filters
 
@@ -149,7 +149,7 @@ A few habits keep the file in good hands:
 - Share it only with the people who need it, and give view-only access to anyone who doesn't need to edit.
 - Keep it out of group chats and screenshots. Names, travel dates and where guests are staying say more than they seem to.
 - For a parent chasing one side of the family, copy the names and reply columns into a separate file rather than handing over every address.
-- The template has no passport column, and it doesn't need one. If a visa letter calls for passport details, keep them out of the shared file.
+- The template has no passport column, and it doesn't need one. Keep passport details out of the shared file.
 - After the thank you notes have gone, delete the file or move it somewhere only you, and anyone you trust to help, can open.
 
 ## Printable, Word and PDF versions
@@ -164,7 +164,7 @@ A spreadsheet is ideal while the list is still taking shape. Once invitations ar
 
 <!-- IMAGE SLOT studio-guest-list: Team-supplied screenshot of the Wonderland Studio guest list or seating screen, populated with a sample account using fictional names only (no real couples, no emails or phone numbers, no account details). Show RSVP status and table assignments if the seating view is used. Crop out browser chrome, admin menus, internal URLs and any third-party logos. Desktop capture at 2x, exported 3:2 or 16:9; optionally framed in a plain brand-colour background from the Canva brand kit (no device mock-ups of third-party brands). -->
 
-[Wonderland Studio](/wonderland-studio) is our planning app for seating charts and RSVPs. Replies, plus-ones and dietary notes arrive straight into [Wonderland Studio's guest list](/wedding-planning-tools), so nobody is copying answers across from emails. If you are weighing up how guests should reply, our guide to a [wedding RSVP website](/expert-advice/wedding-rsvp-website) sets out the options.
+[Wonderland Studio](/wonderland-studio) is our planning app for seating charts and RSVPs. Replies, plus-ones and dietary notes arrive straight into [Wonderland Studio's guest list](/wedding-planning-tools). If you are weighing up how guests should reply, our guide to a [wedding RSVP website](/expert-advice/wedding-rsvp-website) sets out the options.
 
 For couples planning the wedding itself abroad, [Wedded Concierge](/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=wedding-guest-list-template&utm_content=secondary) gives you one Wedded Advisor, start to finish. For ideas on the events themselves, browse [the Wedded Wonderland magazine](/magazine?utm_source=blog&utm_medium=content&utm_campaign=wedding-guest-list-template&utm_content=magnet).
 
