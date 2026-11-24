@@ -1,0 +1,493 @@
+{
+  "agent": "planner-sme",
+  "task_id": "wedding-destinations-august-03",
+  "stage": "03",
+  "status": "complete",
+  "round": 1,
+  "inputs_used": [
+    "CLAUDE.md",
+    "content-system/schemas/03-source-pack.schema.json",
+    "content/posts/best-time-to-get-married-in-bali/03-source-pack.json (fact_03, fact_05, fact_103 reused)",
+    "content/posts/best-time-to-get-married-in-greece/03-source-pack.json",
+    "content/posts/get-married-in-new-zealand/03-source-pack.json (fact_115 reused)",
+    "content/posts/wedding-destinations-august/00-input.json",
+    "content/posts/wedding-destinations-august/01-brief.json",
+    "content/posts/wedding-destinations-august/01-brief.json (must_include entries 8 to 10)",
+    "content/posts/why-do-we-have-bridesmaids/03-source-pack.json (fact_111 reused)",
+    "firecrawl 2026-11-24: staklim-bali.bmkg.go.id/?p=3621, met.gov.fj Fiji Climate Summary August 2026 PDF, niwa.co.nz overview-new-zealands-climate, niwa.co.nz climate-summary-august-2026",
+    "https://worldweather.wmo.int/en/city.html?cityId=1219",
+    "https://worldweather.wmo.int/en/city.html?cityId=2",
+    "https://worldweather.wmo.int/en/city.html?cityId=603",
+    "https://worldweather.wmo.int/en/city.html?cityId=902",
+    "https://worldweather.wmo.int/en/country.html?countryCode=FRA&prefix=N",
+    "https://worldweather.wmo.int/en/country.html?countryCode=MUS",
+    "https://worldweather.wmo.int/en/country.html?countryCode=PRT"
+  ],
+  "self_qa": {
+    "checks": [
+      {
+        "check": "Every fact has a source and date",
+        "pass": true,
+        "note": "fact_101 to fact_110; reused facts keep original checked dates."
+      },
+      {
+        "check": "No price without a source; all prices in needs_signoff",
+        "pass": true,
+        "note": "No prices."
+      },
+      {
+        "check": "Every must-include covered or marked [[VERIFY]]",
+        "pass": true,
+        "note": "Batch au_b scope only (Bali, Fiji, NZ, Smartraveller line). Bali 'dry season' wording flagged."
+      },
+      {
+        "check": "No invented quotes, statistics or real weddings",
+        "pass": true,
+        "note": "Figures are as the met services state them, labelled single-year."
+      }
+    ],
+    "confidence": 0.75
+  },
+  "open_questions": [
+    {
+      "to": "orchestrator",
+      "question": "Bali entry: brief labels it 'dry season' but no BMKG text read states this for August; writer should use fact_101/fact_103 wording or keep the VERIFY.",
+      "blocking": false
+    }
+  ],
+  "assumptions": [
+    "Batch au_a covers Europe entries 1 to 7 weather only; no venues, prices or statistics beyond what each source states.",
+    "Ferragosto is the common name; the official source names the day 'Assunzione di Maria' only.",
+    "No existing Fiji source pack found in content/posts; Fiji facts read live.",
+    "Met service figures are 2026 (or 2024 forecast) single-period values, recorded as such; no long-term normals were read.",
+    "Batch au_c covers WMO WWIS August climate normals for Lake Como (Milan), Portugal (Lisbon), France (Nice) and Mauritius (Port Louis) only; no venues, prices or legal claims.",
+    "fact_201 recorded as supplied by the orchestrator (already read); not re-scraped in this batch.",
+    "These facts supersede the au_a verify items for Lake Como, Portugal (Lisbon) and France (Riviera) weather normals, subject to the station and period caveats above.",
+    "Merged by orchestrator from batches au_a, au_b, au_c. Tuscany dropped after SEO (our Italy best-time page advises avoiding inland Italy in August); Mauritius added. au_a France and Portugal facts are single-year (2025/2026) observations: use the au_c normals for typical August weather."
+  ],
+  "verify_items": [
+    "[[VERIFY: au_a | Amalfi Coast | fact_003 is Napoli station, 1971-2000 normals; the article must name Napoli as the station and the period.]]",
+    "[[VERIFY: au_a | Greek islands | HNMS has no Santorini/Mykonos station on the climatology page; fact_001/002 are Naxos and the page states 'Data Period: None'. Name Naxos as the station.]]",
+    "[[VERIFY: Bali: no BMKG page read in this run states in words that August is Bali's dry season or gives August temperatures. Sourced only: a 2024 single-year forecast of 0 to 100 mm for August (fact_101) and a June to August 2026 'Normal and Slightly Dry' outlook (fact_103). Either cite those as stated or confirm a BMKG dry-season statement (e.g. the Buletin Prakiraan Musim Kemarau on staklim-bali.bmkg.go.id) before writing 'dry season']]",
+    "[[VERIFY: Fiji and New Zealand August figures are 2026 single-month observations (fact_106, fact_108), not long-term averages; if the article gives typical August temperatures, source them from Fiji Met / Earth Sciences NZ climate normals]]",
+    "[[VERIFY: au_c | All stations | Normals are city stations and older base periods (Lisbon 1961-1990; Milan, Nice, Port Louis 1971-2000). The article must name the station and period, e.g. 'Lisbon, 1961-1990 normals (IPMA via WMO)'. Do not present them as current-decade averages.]]",
+    "[[VERIFY: au_c | Lake Como | fact_201 is Milan, not a lakeside station. Do not state lake-level temperatures from it.]]",
+    "[[VERIFY: au_c | Milan rain-day definition (0.1 mm or 1 mm) as stated in the page remarks]]",
+    "[[VERIFY: au_c | Portugal | fact_202 is Lisbon only; if the article names the Algarve or Douro, a separate IPMA/WMO station is needed.]]",
+    "[[VERIFY: au_c | France | fact_203 is Nice (Riviera). No Marseille/Provence station was retrieved in this batch; do not apply Nice figures to inland Provence.]]",
+    "[[VERIFY: au_c | Mauritius | fact_204 is Port Louis (northwest coast). Plaisance (cityId=247) and Vacoas (cityId=1220) were not read; east-coast or plateau resorts may differ.]]"
+  ],
+  "tools_used": [
+    "Bash",
+    "mcp__Lead_MCP__firecrawl_search",
+    "mcp__Lead_MCP__firecrawl_scrape"
+  ],
+  "next_agent": [
+    "luxury-writer"
+  ],
+  "payload": {
+    "facts": [
+      {
+        "fact_id": "fact_001",
+        "claim": "HNMS Naxos station (lon 25.369, lat 37.081, altitude 3 m; the page states 'Data Period: None') shows monthly mean temperatures of 16.1 C in April, 19.6 C in May, 23.5 C in June, 25.1 C in July, 25.0 C in August, 23.0 C in September and 19.7 C in October. Mean maximum temperatures are 18.7, 22.1, 25.9, 27.1, 27.0, 25.1 and 21.9 C for the same months. [Copied from content/posts/mykonos-wedding/03-source-pack-part-2.json#fact_201.]",
+        "source": "http://oldportal.emy.gr/emy/en/climatology/climatology_city?perifereia=South%20Aegean&poli=Naxos",
+        "source_type": "government",
+        "checked": "2026-11-11",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_002",
+        "claim": "HNMS Naxos station shows monthly mean precipitation of 17.6 mm in April, 10.6 mm in May, 2.4 mm in June, 0.9 mm in July, 1.6 mm in August, 7.7 mm in September and 38.6 mm in October, with mean precipitation days of 6.0, 3.6, 1.1, 0.4, 0.3, 1.9 and 5.5 respectively. [Copied from content/posts/mykonos-wedding/03-source-pack-part-2.json#fact_202.]",
+        "source": "http://oldportal.emy.gr/emy/en/climatology/climatology_city?perifereia=South%20Aegean&poli=Naxos",
+        "source_type": "government",
+        "checked": "2026-11-11",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_003",
+        "claim": "[Amalfi Coast, nearest official station: Napoli] The Aeronautica Militare Servizio Meteorologico version of the WMO World Weather Information Service gives Napoli climate normals for 1971-2000: August mean daily minimum 19.1 C, mean daily maximum 30.3 C, mean total rainfall 35.5 mm, mean number of days with precipitation 3. Napoli is a city station, not on the Amalfi Coast itself.",
+        "source": "https://wwis.meteoam.it/it/city.html?cityId=604",
+        "source_type": "government",
+        "checked": "2026-11-24",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_004",
+        "claim": "[Switzerland] MeteoSwiss: 'The highest temperatures are recorded in July and August in the lower-lying regions of the country.' 'June, July and August are typically the months in which the longest and most intense heatwaves occur, with maximum daily temperatures of more than 30°C.' 'Summers are becoming hotter and drier overall.'",
+        "source": "https://www.meteoswiss.admin.ch/climate/the-climate-of-switzerland.html",
+        "source_type": "government",
+        "checked": "2026-11-24",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_005",
+        "claim": "[Switzerland] MeteoSwiss: 'In July and August, daily average temperatures of 25°C or more are possible at lower altitudes.' 'The shorter days already start to become noticeable in August.' 'Thunderstorm clouds often form along the main ridge of the Alps during the summer months, which reduces the amount of sunshine there.' 'In many places in Switzerland, more precipitation falls in the summer than in the winter.'",
+        "source": "https://www.meteoswiss.admin.ch/climate/the-climate-of-switzerland/annual-cycle-of-temperature-precipitation-and-sunshine.html",
+        "source_type": "government",
+        "checked": "2026-11-24",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_006",
+        "claim": "[Portugal, a single year, not a normal] IPMA's August 2025 climate bulletin for mainland Portugal: mean air temperature 24.40 C, an anomaly of about +1.5 C against the 1991-2020 normal (mean maximum +1.93 C, mean minimum +1.04 C above normal); total precipitation 3.0 mm, about 20% of the 1991-2020 normal ('7º agosto mais seco desde 2000'). This describes August 2025 only and must not be written as typical August conditions.",
+        "source": "https://www.ipma.pt/pt/media/noticias/news.detail.jsp?y=2025&f=boletim_clima_agosto_2025.html",
+        "source_type": "government",
+        "checked": "2026-11-24",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_007",
+        "claim": "[France, a single year, not a normal] Météo-France 'Bilan climatique de l'été 2026': summer 2026 was the hottest since 1900 (mean 24.0 C, +3.6 C); France had its third heatwave of the year from 28 July to 19 August 2026; at the start of August soil drought reached unprecedented levels nationally. This describes summer 2026 only, not typical August conditions.",
+        "source": "https://meteofrance.com/presse/bilan-climatique-de-lete-2026-juin-juillet-aout",
+        "source_type": "government",
+        "checked": "2026-11-24",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_008",
+        "claim": "[Italy, 15 August] The Italian Government's Dipartimento per il Cerimoniale dello Stato lists 15 agosto, 'Assunzione di Maria', among the giorni festivi (public holidays) 'stabiliti per legge'. The page does not use the word Ferragosto.",
+        "source": "https://presidenza.governo.it/ufficio_cerimoniale/cerimoniale/giornate.html",
+        "source_type": "government",
+        "checked": "2026-11-24",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_101",
+        "claim": "[Copied from best-time-to-get-married-in-bali 03-source-pack fact_05, same source and date.] Stasiun Klimatologi Bali, Buletin Iklim Bali, May 2024 (forecast for 2024 only, Bali Province): June 2024 rainfall generally 0 to 100 mm, July 2024 generally 0 to 150 mm, August 2024 generally 0 to 100 mm, with rainfall character generally Below Normal for all three months. This is a single-year forecast, not a long-term normal.",
+        "source": "https://staklim-bali.bmkg.go.id/wp-content/uploads/2024/05/Buletin-Mei-2024_compressed.pdf",
+        "source_type": "government",
+        "checked": "2026-11-18",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_102",
+        "claim": "[Copied from best-time-to-get-married-in-bali 03-source-pack fact_03, same source and date.] Stasiun Klimatologi Bali, Buletin Iklim Bali, May 2024 (definitions): season onset is stated in dasarian (10-day periods: days 1 to 10, 11 to 20, 21 to month end). The bulletin's worked examples read: 'rainy season onset around November I to November II = 1 to 20 November' and 'dry season onset around June I to June III = 1 to 30 June'. These are given as examples of the notation, not as a Bali forecast.",
+        "source": "https://staklim-bali.bmkg.go.id/wp-content/uploads/2024/05/Buletin-Mei-2024_compressed.pdf",
+        "source_type": "government",
+        "checked": "2026-11-18",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_103",
+        "claim": "Stasiun Klimatologi Bali (BMKG), 'Ringkasan Informasi Iklim Bulan Agustus 2026' (read live 24 November 2026): the drought and wetness outlook for June to August 2026 across Bali Province was generally 'Normal dan Agak Kering' (Normal and Slightly Dry). Single-season outlook for 2026, not a long-term normal. The item does not label August as dry season in the text read.",
+        "source": "https://staklim-bali.bmkg.go.id/?p=3621",
+        "source_type": "government",
+        "checked": "2026-11-24",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_104",
+        "claim": "[Copied from best-time-to-get-married-in-bali 03-source-pack fact_103, same source and date.] Smartraveller Indonesia: weather can change quickly during the wet season (usually around October to April; it can differ in Eastern Indonesia). Heavy rains can cause significant flooding in urban areas including Bali, disrupting roads and transport. No temperature or rainfall figures are given.",
+        "source": "https://www.smartraveller.gov.au/destinations/asia/indonesia",
+        "source_type": "government",
+        "checked": "2026-11-18",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_105",
+        "claim": "Fiji Meteorological Service, Fiji Climate Summary August 2026 (read live 24 November 2026): 'August, being a winter month for Fiji, was characterized by cool, predominantly easterly and southeasterly winds, resulting in cool nights, windy periods, and regular trade showers. Generally fine and drier conditions prevailed across the leeward sides of the larger islands, while trade showers mainly affected windward areas.' Rainfall was variable, from well below normal to above normal, 'although it was the dry season'. Single-year (2026) observations.",
+        "source": "https://www.met.gov.fj/media/climate_product_files/Fiji_Climate_Summary_August_2026_4hgZRFZ.pdf",
+        "source_type": "government",
+        "checked": "2026-11-24",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_106",
+        "claim": "Fiji Meteorological Service, Fiji Climate Summary August 2026 (read live 24 November 2026): cooler temperatures persisted across most of the country in August 2026; the highest day-time temperature was 32.7°C at Rarawai Mill (Ba) on 18 August, and the lowest night-time temperature was 9.8°C at Nadarivatu (an inland highland station). Single-month 2026 extremes, not averages.",
+        "source": "https://www.met.gov.fj/media/climate_product_files/Fiji_Climate_Summary_August_2026_4hgZRFZ.pdf",
+        "source_type": "government",
+        "checked": "2026-11-24",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_107",
+        "claim": "Earth Sciences New Zealand (NIWA), 'Overview of New Zealand's climate' (read live 24 November 2026): 'In New Zealand, winter is the season of least rainfall' (stated generally; the same page notes winter is wetter in the north), the coldest month is usually July, most snow falls in mountain areas, and snow rarely falls in coastal areas of the North Island and west of the South Island, although the east and south of the South Island may get some snow in winter.",
+        "source": "https://niwa.co.nz/climate-and-weather/overview-new-zealands-climate",
+        "source_type": "government",
+        "checked": "2026-11-24",
+        "is_price": false,
+        "conflicts": "The page's general line says winter has least rainfall, while its summary also says winter is wetter in the north. Article should not make a single national rainfall claim for August."
+      },
+      {
+        "fact_id": "fact_108",
+        "claim": "Earth Sciences New Zealand (NIWA), Climate Summary for August 2026 (read live 24 November 2026): the nationwide average temperature in August 2026 was 9.7°C, 0.7°C above the 1991 to 2020 August average; August 2026 was dry for much of the North Island and very wet for the west and south of the South Island. Single-year observation.",
+        "source": "https://niwa.co.nz/climate-and-weather/monthly/climate-summary-august-2026",
+        "source_type": "government",
+        "checked": "2026-11-24",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_109",
+        "claim": "[Copied from get-married-in-new-zealand 03-source-pack fact_115, same source and date.] As at November 2026, Smartraveller New Zealand (updated 22 July 2026, still current at 17 November 2026, read live 17 November 2026): weather conditions can change quickly and severe weather can leave you stranded, especially in remote areas; monitor MetService forecasts and warnings. On the roads, ice, snow, fog, high winds and roaming animals cause hazards, heavy rain can cause landslides, there are few motorways outside major cities, and mountain and ski-field roads can be narrow, unpaved, without barriers and may need snow chains or a 4WD.",
+        "source": "https://www.smartraveller.gov.au/destinations/pacific/new-zealand",
+        "source_type": "government",
+        "checked": "2026-11-17",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_110",
+        "claim": "[Copied from why-do-we-have-bridesmaids 03-source-pack fact_111, same source and date.] Smartraveller suggests sharing your itinerary with friends or family, keeping hard copies of flight, accommodation and event bookings in case you lose your phone, and subscribing to travel advice for your destination.",
+        "source": "https://www.smartraveller.gov.au/travel-essentials/essentials-checklist",
+        "source_type": "government",
+        "checked": "2026-11-10",
+        "is_price": false,
+        "conflicts": "As at November 2026 (page last updated 18 August 2026); the Wedded Advisor confirms current requirements."
+      },
+      {
+        "fact_id": "fact_201",
+        "claim": "[Lake Como, nearest official station: Milan] The WMO World Weather Information Service gives Milan climatological normals for 1971-2000, supplied by the Italian Air Force Department of Meteorology: August mean daily minimum 17.6 C, mean daily maximum 28.5 C, mean total rainfall 88.8 mm, mean number of rain days 7.1. Milan is a city station, not on Lake Como itself. The page does not state the rain-day threshold in the figures supplied to this batch [[VERIFY: au_c | Milan rain-day definition (0.1 mm or 1 mm) as stated in the page remarks]].",
+        "source": "https://worldweather.wmo.int/en/city.html?cityId=603",
+        "source_type": "government",
+        "checked": "2026-11-24",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_202",
+        "claim": "[Portugal: Lisbon] The WMO World Weather Information Service page for Lisboa, supplied by the Instituto Portugues do Mar e da Atmosfera (IPMA), gives August mean daily minimum 17.7 C, mean daily maximum 27.9 C, mean total rainfall 5.7 mm and mean number of rain days 2.0. The page remarks state the climatological information is based on monthly averages for the 30-year period 1961-1990, and that a rain day is a day with at least 0.1 mm of rain.",
+        "source": "https://worldweather.wmo.int/en/city.html?cityId=2",
+        "source_type": "government",
+        "checked": "2026-11-24",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_203",
+        "claim": "[France: Riviera, Nice] The WMO World Weather Information Service page for Nice, supplied by Meteo-France, gives August mean daily minimum 20.0 C, mean daily maximum 27.2 C, mean total precipitation 23.9 mm and mean number of precipitation days 2.9. The page remarks state the period is 1971-2000 and that a precipitation day is a day with at least 1 mm of precipitation. September at the same station shows 75.6 mm and 4.4 precipitation days.",
+        "source": "https://worldweather.wmo.int/en/city.html?cityId=902",
+        "source_type": "government",
+        "checked": "2026-11-24",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_204",
+        "claim": "[Mauritius: Port Louis] The WMO World Weather Information Service page for Port Louis, supplied by Mauritius Meteorological Services, gives August mean daily minimum 19.1 C, mean daily maximum 26.8 C, mean total precipitation 19.0 mm and mean number of precipitation days 5.0. The page remarks state the period is 1971-2000 and that a precipitation day is a day with at least 1 mm of precipitation. January at the same station shows a mean daily maximum of 31.5 C and 131.0 mm.",
+        "source": "https://worldweather.wmo.int/en/city.html?cityId=1219",
+        "source_type": "government",
+        "checked": "2026-11-24",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_205",
+        "claim": "Every WMO World Weather Information Service city page checked in this batch carries the remark that the averaging period and the definition of rain or precipitation days may differ between countries, so care should be taken when city climatologies are compared.",
+        "source": "https://worldweather.wmo.int/en/city.html?cityId=902",
+        "source_type": "government",
+        "checked": "2026-11-24",
+        "is_price": false
+      }
+    ],
+    "insider_details": [
+      {
+        "detail": "For an Amalfi Coast August date, the official Napoli normals put average daily highs around 30 C with about 3 rain days, so plan ceremonies for late afternoon and shade for guests rather than worrying about rain.",
+        "fact_ids": [
+          "fact_003"
+        ]
+      },
+      {
+        "detail": "15 August is a legal public holiday in Italy (Assunzione di Maria); ask any Italian venue and suppliers early whether they operate, and at what rate, on and around that date.",
+        "fact_ids": [
+          "fact_008"
+        ]
+      },
+      {
+        "detail": "In the Cyclades, the official Naxos normals show almost no August rain (1.6 mm, 0.3 rain days), so the planning risk is heat and wind, not a wet day; ask venues about wind cover for an outdoor ceremony.",
+        "fact_ids": [
+          "fact_001",
+          "fact_002"
+        ]
+      },
+      {
+        "detail": "MeteoSwiss says summer thunderstorm clouds often form along the main Alpine ridge and many places get more rain in summer than winter, so a Swiss mountain wedding in August still needs an indoor plan B.",
+        "fact_ids": [
+          "fact_005"
+        ]
+      },
+      {
+        "detail": "In Fiji, the met service describes August as a cool, windy winter month with trade showers mainly on windward sides and finer, drier conditions on the leeward sides of the larger islands, so ask the venue which side of the island it sits on and what its wet-weather ceremony option is.",
+        "fact_ids": [
+          "fact_105"
+        ]
+      },
+      {
+        "detail": "Fiji's inland highlands dropped to 9.8°C at night in August 2026 while the coast reached the low 30s by day, so for evening receptions suggest guests pack a light layer.",
+        "fact_ids": [
+          "fact_106"
+        ]
+      },
+      {
+        "detail": "New Zealand in August is winter (coldest month usually July) with snow in the mountains and possible in the east and south of the South Island; plan guest transfers in daylight and ask about road conditions, chains or 4WD for alpine venues.",
+        "fact_ids": [
+          "fact_107",
+          "fact_109"
+        ]
+      },
+      {
+        "detail": "August 2026 in New Zealand split sharply by region (dry in much of the North Island, very wet in the west and south of the South Island), so ask every NZ venue for an indoor or covered plan rather than relying on a national picture.",
+        "fact_ids": [
+          "fact_108"
+        ]
+      },
+      {
+        "detail": "For any destination, suggest guests subscribe to Smartraveller advice for the country and keep hard copies of flight, accommodation and event bookings.",
+        "fact_ids": [
+          "fact_110"
+        ]
+      },
+      {
+        "detail": "Of the four stations in this batch, Lisbon has the driest August on paper (5.7 mm, 2 rain days, 1961-1990 normals), so an outdoor ceremony there needs a shade and heat plan more than a wet-weather plan. Still book a rain option, because normals are averages, not guarantees.",
+        "fact_ids": [
+          "fact_202"
+        ]
+      },
+      {
+        "detail": "Nice has the warmest August nights of the European stations here (mean minimum 20.0 C), so evening receptions on the Riviera rarely need heaters, but guests in formal wear will feel it at dinner. Plan fans and cold water stations.",
+        "fact_ids": [
+          "fact_203",
+          "fact_201",
+          "fact_202"
+        ]
+      },
+      {
+        "detail": "Milan records 88.8 mm and 7.1 rain days in August, far wetter than Lisbon or Nice. For Lake Como, treat a covered terrace or marquee as essential, not optional, and note Milan is a city station, not the lake itself.",
+        "fact_ids": [
+          "fact_201",
+          "fact_202",
+          "fact_203"
+        ]
+      },
+      {
+        "detail": "August is Mauritius's cooler, drier season (Port Louis mean maximum 26.8 C versus 31.5 C in January), which suits Australian couples who want a tropical setting without peak heat. With about five precipitation days, keep a sheltered backup for the ceremony.",
+        "fact_ids": [
+          "fact_204"
+        ]
+      },
+      {
+        "detail": "Do not compare rain-day counts across countries as like for like: Lisbon counts days with 0.1 mm or more, while Nice and Port Louis count days with 1 mm or more, and the base periods differ (1961-1990 versus 1971-2000).",
+        "fact_ids": [
+          "fact_202",
+          "fact_203",
+          "fact_204",
+          "fact_205"
+        ]
+      }
+    ],
+    "quotes": [],
+    "real_weddings": [],
+    "needs_signoff": [],
+    "verify_items": [
+      "[[VERIFY: au_a | Amalfi Coast | fact_003 is Napoli station, 1971-2000 normals; the article must name Napoli as the station and the period.]]",
+      "[[VERIFY: au_a | Greek islands | HNMS has no Santorini/Mykonos station on the climatology page; fact_001/002 are Naxos and the page states 'Data Period: None'. Name Naxos as the station.]]",
+      "[[VERIFY: Bali: no BMKG page read in this run states in words that August is Bali's dry season or gives August temperatures. Sourced only: a 2024 single-year forecast of 0 to 100 mm for August (fact_101) and a June to August 2026 'Normal and Slightly Dry' outlook (fact_103). Either cite those as stated or confirm a BMKG dry-season statement (e.g. the Buletin Prakiraan Musim Kemarau on staklim-bali.bmkg.go.id) before writing 'dry season']]",
+      "[[VERIFY: Fiji and New Zealand August figures are 2026 single-month observations (fact_106, fact_108), not long-term averages; if the article gives typical August temperatures, source them from Fiji Met / Earth Sciences NZ climate normals]]",
+      "[[VERIFY: au_c | All stations | Normals are city stations and older base periods (Lisbon 1961-1990; Milan, Nice, Port Louis 1971-2000). The article must name the station and period, e.g. 'Lisbon, 1961-1990 normals (IPMA via WMO)'. Do not present them as current-decade averages.]]",
+      "[[VERIFY: au_c | Lake Como | fact_201 is Milan, not a lakeside station. Do not state lake-level temperatures from it.]]",
+      "[[VERIFY: au_c | Milan rain-day definition (0.1 mm or 1 mm) as stated in the page remarks]]",
+      "[[VERIFY: au_c | Portugal | fact_202 is Lisbon only; if the article names the Algarve or Douro, a separate IPMA/WMO station is needed.]]",
+      "[[VERIFY: au_c | France | fact_203 is Nice (Riviera). No Marseille/Provence station was retrieved in this batch; do not apply Nice figures to inland Provence.]]",
+      "[[VERIFY: au_c | Mauritius | fact_204 is Port Louis (northwest coast). Plaisance (cityId=247) and Vacoas (cityId=1220) were not read; east-coast or plateau resorts may differ.]]"
+    ],
+    "must_include_coverage": [
+      {
+        "item": "Entry: Greek islands, August weather from HNMS",
+        "covered_by": [
+          "fact_001",
+          "fact_002",
+          "[[VERIFY: au_a | Greek islands | HNMS has no Santorini/Mykonos station on the climatology page; fact_001/002 are Naxos and the page states 'Data Period: None'. Name Naxos as the station.]]"
+        ]
+      },
+      {
+        "item": "Entry: Lake Como, August weather from meteoam.it",
+        "covered_by": [
+          "[[VERIFY: au_a | Lake Como | No official Italian (Aeronautica Militare/meteoam.it) August climate normal for Como or the nearest station (e.g. Milano) was retrieved in this run. Do not state Lake Como August weather until sourced.]]"
+        ]
+      },
+      {
+        "item": "Entry: Amalfi Coast, August weather from meteoam.it",
+        "covered_by": [
+          "fact_003",
+          "[[VERIFY: au_a | Amalfi Coast | fact_003 is Napoli station, 1971-2000 normals; the article must name Napoli as the station and the period.]]"
+        ]
+      },
+      {
+        "item": "Entry: France, August weather from Météo-France",
+        "covered_by": [
+          "fact_007",
+          "[[VERIFY: au_a | France | Météo-France station page (Le Luc, Provence) showed annual 1991-2020 normals only, no August values. Need a Météo-France August normal for the named region; fact_007 is summer 2026 only.]]"
+        ]
+      },
+      {
+        "item": "Entry: Portugal, August weather from IPMA",
+        "covered_by": [
+          "fact_006",
+          "[[VERIFY: au_a | Portugal | IPMA climate normals page did not return station data; only the August 2025 bulletin (fact_006, single year) was retrieved. Need an IPMA 1991-2020 August normal for Lisbon/Algarve/Douro as relevant.]]"
+        ]
+      },
+      {
+        "item": "Entry: Switzerland, August weather from MeteoSwiss",
+        "covered_by": [
+          "fact_004",
+          "fact_005"
+        ]
+      },
+      {
+        "item": "Optional: Italy 15 August public holiday from official source",
+        "covered_by": [
+          "fact_008"
+        ]
+      },
+      {
+        "item": "Entry 8: Bali (dry season), August weather as BMKG states it",
+        "covered_by": [
+          "fact_101",
+          "fact_103",
+          "fact_102",
+          "[[VERIFY: Bali: no BMKG page read in this run states in words that August is Bali's dry season or gives August temperatures. Sourced only: a 2024 single-year forecast of 0 to 100 mm for August (fact_101) and a June to August 2026 'Normal and Slightly Dry' outlook (fact_103). Either cite those as stated or confirm a BMKG dry-season statement (e.g. the Buletin Prakiraan Musim Kemarau on staklim-bali.bmkg.go.id) before writing 'dry season']]"
+        ]
+      },
+      {
+        "item": "Entry 9: Fiji (dry season), August weather as Fiji Meteorological Service states it",
+        "covered_by": [
+          "fact_105",
+          "fact_106"
+        ]
+      },
+      {
+        "item": "Entry 10: New Zealand (southern winter), August weather as Earth Sciences NZ / NIWA states it",
+        "covered_by": [
+          "fact_107",
+          "fact_108",
+          "fact_109"
+        ]
+      },
+      {
+        "item": "General Smartraveller line: check / subscribe to travel advice for your destination",
+        "covered_by": [
+          "fact_110"
+        ]
+      },
+      {
+        "item": "Lake Como August weather",
+        "covered_by": [
+          "fact_201"
+        ]
+      },
+      {
+        "item": "Portugal August weather",
+        "covered_by": [
+          "fact_202"
+        ]
+      },
+      {
+        "item": "France (Riviera/Provence) August weather",
+        "covered_by": [
+          "fact_203",
+          "[[VERIFY: au_c | France | No Marseille/Provence station retrieved]]"
+        ]
+      },
+      {
+        "item": "Mauritius August weather",
+        "covered_by": [
+          "fact_204"
+        ]
+      }
+    ]
+  }
+}
