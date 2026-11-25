@@ -6,3 +6,4 @@
 00:05 02 SEO complete; meta description reworded (no 'best'); link map updated (2 redirects, Caribbean guide, 2 real weddings)
 00:09 05 draft complete (~2,360 words); orchestrator swapped primary/secondary UTM labels to page order; first-draft docx built
 00:10 07 readers complete (5)
+00:13 06 editor pass_with_edits 4.29; 28/28 applied -> 05-draft-r2.md
