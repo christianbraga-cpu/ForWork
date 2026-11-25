@@ -5,3 +5,4 @@
 23:51 03 batch pc_b complete (33 facts); merged pack 63 facts
 00:05 02 SEO complete; meta description reworded (no 'best'); link map updated (2 redirects, Caribbean guide, 2 real weddings)
 00:09 05 draft complete (~2,360 words); orchestrator swapped primary/secondary UTM labels to page order; first-draft docx built
+00:10 07 readers complete (5)
