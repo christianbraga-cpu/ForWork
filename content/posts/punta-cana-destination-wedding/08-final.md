@@ -12,13 +12,13 @@ round: 3
 
 <!-- IMAGE SLOT featured: Licensed or owned photo of a real wedding ceremony setup on a beach in Punta Cana (La Altagracia province, Dominican Republic): aisle and chairs on pale sand, a simple floral arch or chuppah-style frame, turquoise water and coconut palms behind. Late afternoon light, before guests are seated (no people, or the couple from behind only with signed consent). No resort signage, umbrellas, towels or logos in frame. Wide 3:2 with headroom for a title crop. Location must be verified by the register, EXIF GPS or the photographer's named gallery. Record the month taken so the caption and any season reference are true. -->
 
-A Punta Cana destination wedding can be legally binding if you follow the Dominican civil process, or you can marry legally in Australia first and hold a symbolic ceremony on the sand. Either way, the hurricane season, the drier months and your guests' long journey from Australia should shape the date before anything else does.
+A Punta Cana destination wedding can be legally binding if you follow the Dominican civil process, or you can marry legally in Australia first and hold a symbolic ceremony on the sand.<!-- fact_024 --> Either way, the hurricane season, the drier months and your guests' long journey from Australia should shape the date before anything else does.
 
 This guide covers the paperwork, the weather, guest travel and the questions that keep your day private. If you are still weighing islands, start with our [Caribbean destination wedding guide by island](/destination-weddings/caribbean-destination-wedding).
 
 ## Key takeaways
 
-- You can marry legally through a Dominican civil registry office, or marry at home and hold a symbolic ceremony in Punta Cana.
+- You can marry legally through a Dominican civil registry office, or marry at home and hold a symbolic ceremony in Punta Cana.<!-- fact_024 -->
 - Dominican civil weddings for foreigners need apostilled documents with Spanish translations, so the paperwork sets your lead time.<!-- fact_017 --><!-- fact_018 -->
 - February and March are the drier months, while the Atlantic hurricane season runs from 1 June to 30 November.<!-- fact_116 --><!-- fact_117 -->
 - Ask any resort about other weddings that day, beach ceremony rules, shade, access and a covered wet weather option before you sign.
@@ -27,7 +27,7 @@ This guide covers the paperwork, the weather, guest travel and the questions tha
 
 Start with where your guests will stay. When the ceremony, reception and guest rooms sit within one property, that choice shapes everything from the guest experience to how private your day feels.
 
-The appeal is ease. When guests stay where you marry, the celebration can unfold over a long weekend rather than a single evening.
+The appeal is ease, because the celebration can unfold over a long weekend rather than a single evening.
 
 ### Resort, private estate or beach club
 
@@ -49,7 +49,7 @@ You have two paths. Marry legally in the Dominican Republic through its civil re
 
 The Junta Central Electoral, which runs the civil registry, lists [the civil marriage requirements](https://ayuda.jce.gob.do/kb/a27/cuales-son-los-requisitos-para-un-matrimonio-civil.aspx). Foreigners provide a birth certificate, a passport and a certificate of single status issued in their country of origin.<!-- fact_016 --> Documents are lodged at the civil registry office when you book the wedding date.<!-- fact_021 -->
 
-As [Smartraveller's guide to getting married overseas](https://www.smartraveller.gov.au/planning-trip/advice-your-planned-activities/getting-married-overseas) explains, your state registry of births, deaths and marriages in Australia can issue a Single Status or No Record Result certificate, and DFAT can issue a Certificate of No Impediment to Marriage.<!-- fact_005 --><!-- fact_006 --> Which of these the Dominican registry accepts is a question to check with the Dominican authorities before you order anything.
+As at November 2026, [Smartraveller's guide to getting married overseas](https://www.smartraveller.gov.au/planning-trip/advice-your-planned-activities/getting-married-overseas) explains that your state registry of births, deaths and marriages in Australia can issue a Single Status or No Record Result certificate, and DFAT can issue a Certificate of No Impediment to Marriage.<!-- fact_005 --><!-- fact_006 --> Which of these the Dominican registry accepts is a question to check with the Dominican authorities before you order anything.
 
 If you plan to keep your assets separate, a separation of property deed must be executed before the wedding and given to the civil registry officer.<!-- fact_022 --> Without one, the marriage is declared under community of property.<!-- fact_028 --> Take your own legal advice on this before you book.
 
@@ -69,7 +69,7 @@ The registry asks for at least two witnesses, relatives or not, who are adults, 
 
 The registry issues a marriage certificate, and for use abroad it is recommended that it be apostilled at the Dominican Ministry of Foreign Affairs.<!-- fact_027 --> The [Attorney-General's Department](https://www.ag.gov.au/families-and-marriage/marriage/get-married) is clear that overseas marriages cannot be registered in Australia, or performed by an Australian-authorised marriage celebrant.<!-- fact_007 -->
 
-An overseas marriage is generally recognised in Australia if it was valid where it took place and would have been valid here. Some states and territories don't accept an overseas certificate for a name change.<!-- fact_007 --> Smartraveller suggests talking to a lawyer to confirm your certificate is valid in Australia.<!-- fact_001 -->
+An overseas marriage is generally recognised in Australia if it was valid where it took place and would have been valid here. Some states and territories don't accept an overseas certificate for a name change.<!-- fact_007 --> As at November 2026, [Smartraveller](https://www.smartraveller.gov.au/planning-trip/advice-your-planned-activities/getting-married-overseas) suggests talking to a lawyer to confirm your certificate is valid in Australia.<!-- fact_001 -->
 
 ### Legal at home, symbolic in Punta Cana
 
@@ -108,9 +108,9 @@ For guests in Sydney, Melbourne or Perth, this is a long journey, and the earlie
 
 As at November 2026, [Smartraveller's advice for the Dominican Republic](https://www.smartraveller.gov.au/destinations/americas/dominican-republic) is to exercise a high degree of caution, due to the threat of violent crime.<!-- fact_120 --> It says every guest must buy a tourist card on arrival and complete the electronic entry and exit form.<!-- fact_121 --><!-- fact_122 -->
 
-Entry and exit conditions can change at short notice, so guests should contact the nearest Dominican embassy or consulate for the latest details.<!-- fact_121 --> Ask about passport validity at the same time. Exit requirements apply to children under 18 travelling alone, with one parent or with another adult, so families should ask about them before travel.<!-- fact_123 --> Smartraveller advises carrying photo identification, such as a certified copy of your passport.<!-- fact_011 -->
+Entry and exit conditions can change at short notice, so guests should contact the nearest Dominican embassy or consulate for the latest details.<!-- fact_121 --> Ask about passport validity at the same time. Exit requirements apply to children under 18 travelling alone, with one parent or with another adult, so families should ask about them before travel.<!-- fact_123 --> Guests should always carry photo identification, such as a certified copy of their passport.<!-- fact_011 -->
 
-Australia has no embassy in the Dominican Republic. The Embassy of Canada in Santo Domingo provides consular help for Australians, and consular help is also available from the Australian Embassy in Mexico.<!-- fact_130 -->
+The Embassy of Canada in Santo Domingo provides consular help for Australians, and consular help is also available from the Australian Embassy in Mexico.<!-- fact_130 -->
 
 ### Safety, money and health
 
@@ -152,7 +152,7 @@ If you are marrying legally in the Dominican Republic, ask when the civil judge 
 
 Ask what language and currency the venue contract is written in, how deposits are paid and what is refunded if plans change. Ask who the venue's contact is on the day, and how to reach them out of hours.
 
-Your Wedded Advisor confirms inclusions in writing before you commit, so you can see what is and is not covered, and works in your time zone with quotes in AUD. To put these questions to the venues on your shortlist, speak with [Wedded Concierge](/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=punta-cana-destination-wedding&utm_content=secondary). For the full sequence, read [how to plan a destination wedding step by step](/expert-advice/how-to-plan-a-destination-wedding).
+Your Wedded Advisor confirms inclusions in writing before you commit, so you know exactly what each quote includes, and works in your time zone with quotes in AUD. To put these questions to the venues on your shortlist, speak with [Wedded Concierge](/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=punta-cana-destination-wedding&utm_content=secondary). For the full sequence, read [how to plan a destination wedding step by step](/expert-advice/how-to-plan-a-destination-wedding).
 
 <!-- IMAGE SLOT reception-dusk: Licensed or owned photo of a real beachfront wedding reception in Punta Cana at dusk: long or round dressed tables on sand or a beachside deck, candles and festoon or lantern lighting, sky in blue hour. No identifiable guests unless the register records consent. No resort branding, logos or signage on linen, menus or structures. Landscape 3:2. Location verified (register, EXIF GPS or photographer gallery) and month taken recorded. -->
 
@@ -162,7 +162,7 @@ For more settings, real celebrations and planning ideas, browse [the Wedded Wond
 
 ### Are you legally married if you get married in the Dominican Republic?
 
-Yes, if the marriage is performed through a Dominican civil registry office under Dominican law, which assists marriages between two foreigners.<!-- fact_024 --> Australia generally recognises an overseas marriage that was valid where it took place and would have been valid here, though it cannot be registered in Australia.<!-- fact_007 --> As at November 2026; this is general information, not legal advice.
+Yes, if the marriage is performed through a Dominican civil registry office under Dominican law, which assists marriages between two foreigners.<!-- fact_024 --> Australia generally recognises an overseas marriage that was valid where it took place and would have been valid here, though it cannot be registered in Australia.<!-- fact_007 --> General information as at November 2026, not legal advice.
 
 ### Can we have a symbolic ceremony in Punta Cana and marry legally at home?
 
