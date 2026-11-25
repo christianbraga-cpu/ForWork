@@ -12,3 +12,5 @@
 00:17 09 CRO complete
 00:18 10 distribution complete (pins on hold)
 00:19 final check pass_with_edits 4.57; 9/9 applied
+00:23 11 cms-publisher complete; package only (no browser, field map NOT YET MAPPED); 11-body.md (no CTA markers), 11-publish-package.json valid, booking-checklist.md, 12-cms-report.md; Dominican Republic category unconfirmed
+00:24 final docx and run report complete
