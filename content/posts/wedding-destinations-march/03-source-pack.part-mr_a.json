@@ -1,0 +1,215 @@
+{
+  "agent": "planner-sme",
+  "task_id": "wedding-destinations-march-03-mr_a",
+  "stage": "03",
+  "status": "complete",
+  "round": 1,
+  "inputs_used": [
+    "CLAUDE.md",
+    "content/posts/wedding-destinations-march/00-input.json",
+    "content/posts/wedding-destinations-august/03-source-pack.json (fact_001 URL, WMO city IDs)",
+    "content-system/schemas/03-source-pack.schema.json",
+    "firecrawl 2026-11-25: https://worldweather.wmo.int/en/city.html?cityId=603, https://worldweather.wmo.int/en/city.html?cityId=604, https://worldweather.wmo.int/en/city.html?cityId=902, https://worldweather.wmo.int/en/city.html?cityId=2, https://worldweather.wmo.int/en/city.html?cityId=1219, https://worldweather.wmo.int/en/city.html?cityId=596, http://oldportal.emy.gr/emy/en/climatology/climatology_city?perifereia=South%20Aegean&poli=Naxos, https://www.meteoswiss.admin.ch/climate/the-climate-of-switzerland/annual-cycle-of-temperature-precipitation-and-sunshine.html, https://www.meteoswiss.admin.ch/climate/the-climate-of-switzerland.html"
+  ],
+  "self_qa": {
+    "checks": [
+      {
+        "check": "Every fact has a source and date",
+        "pass": true,
+        "note": "fact_001 to fact_010, all scraped live 2026-11-25; no fallback copies needed"
+      },
+      {
+        "check": "No price without a source; all prices in needs_signoff",
+        "pass": true,
+        "note": "No prices in this batch"
+      },
+      {
+        "check": "Every must-include covered or marked [[VERIFY]]",
+        "pass": true,
+        "note": "Batch scope only: weather rows"
+      },
+      {
+        "check": "No invented quotes, statistics or real weddings",
+        "pass": true,
+        "note": "Values copied from the page tables, not from the LLM extraction, which had rounded rain days"
+      }
+    ],
+    "confidence": 0.9
+  },
+  "open_questions": [],
+  "assumptions": [
+    "Batch mr_a covers weather only (no venues, no prices), so there are no BOOKING CHECKLIST lines."
+  ],
+  "verify_items": [
+    "[[VERIFY: Switzerland has no official March figures in this batch. MeteoSwiss pages give only general spring statements (fact_009, fact_010). If the article needs March temperature or rainfall for a Swiss station, pull the MeteoSwiss climate normals 1991-2020 for a named station.]]",
+    "[[VERIFY: HNMS Naxos page states 'Data Period: None', so the base period for the March row (fact_008) is not published. Write 'period not stated by HNMS' rather than inventing one.]]",
+    "[[VERIFY: Lisbon and Punta Cana WMO normals are 1961-1990 while the others are 1971-2000 (fact_007). The at-a-glance table must show the period per station and must not rank the places against each other on rain days.]]"
+  ],
+  "tools_used": [
+    "mcp__Lead_MCP__firecrawl_scrape"
+  ],
+  "next_agent": [
+    "luxury-writer"
+  ],
+  "payload": {
+    "facts": [
+      {
+        "fact_id": "fact_001",
+        "claim": "[Lake Como, nearest official station: Milan] WMO World Weather Information Service, Milan (MILANO), supplied by the Italian Air Force Department of Meteorology, climatological normals for the 30-year period 1971-2000: March mean daily minimum 3.8 C, mean daily maximum 14.3 C, mean total rainfall 65.0 mm, mean number of rain days 6.7. The page does not define a rain day for this station; it carries only the general remark that the averaging period and rain-day definition may differ between countries. Milan is a city station, not on Lake Como.",
+        "source": "https://worldweather.wmo.int/en/city.html?cityId=603",
+        "source_type": "government",
+        "checked": "2026-11-25",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_002",
+        "claim": "[Amalfi Coast, nearest official station: Naples] WMO World Weather Information Service, Naples (NAPOLI), supplied by the Italian Air Force Department of Meteorology, normals for 1971-2000: March mean daily minimum 6.3 C, mean daily maximum 15.7 C, mean total rainfall 77.9 mm, mean number of rain days 8.6. No station-specific rain-day definition is stated (general remark only). Naples is a city station, not on the Amalfi Coast itself.",
+        "source": "https://worldweather.wmo.int/en/city.html?cityId=604",
+        "source_type": "government",
+        "checked": "2026-11-25",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_003",
+        "claim": "[France: Riviera, Nice] WMO World Weather Information Service, Nice, supplied by Meteo-France, normals for 1971-2000: March mean daily minimum 7.6 C, mean daily maximum 14.9 C, mean total precipitation 60.9 mm, mean number of precipitation days 5.2. Page remarks: 'Mean number of precipitation days = Mean number of days with at least 1 mm of precipitation.' 'Precipitation includes both rain and snow.'",
+        "source": "https://worldweather.wmo.int/en/city.html?cityId=902",
+        "source_type": "government",
+        "checked": "2026-11-25",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_004",
+        "claim": "[Portugal: Lisbon] WMO World Weather Information Service, Lisboa, supplied by the Instituto Portugues do Mar e da Atmosfera (IPMA), normals for the 30-year period 1961-1990: March mean daily minimum 9.9 C, mean daily maximum 17.6 C, mean total rainfall 68.9 mm, mean number of rain days 13.0. Page remark: 'Mean number of rain days = Mean number of days with at least 0.1 mm of rain.'",
+        "source": "https://worldweather.wmo.int/en/city.html?cityId=2",
+        "source_type": "government",
+        "checked": "2026-11-25",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_005",
+        "claim": "[Mauritius: Port Louis] WMO World Weather Information Service, Port Louis, supplied by Mauritius Meteorological Services, normals for 1971-2000: March mean daily minimum 23.8 C, mean daily maximum 31.5 C, mean total precipitation 83.0 mm, mean number of precipitation days 8.0. Page remark: 'Mean number of precipitation days = Mean number of days with at least 1 mm of precipitation.' (Comparison on the same page: February 160.0 mm and 10.0 days; April 87.0 mm and 7.0 days.)",
+        "source": "https://worldweather.wmo.int/en/city.html?cityId=1219",
+        "source_type": "government",
+        "checked": "2026-11-25",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_006",
+        "claim": "[Dominican Republic: Punta Cana] WMO World Weather Information Service, Punta Cana, supplied by the Oficina Nacional de Meteorologia (ONAMET), normals for the 30-year period 1961-1990: March mean daily minimum 22.0 C, mean daily maximum 28.1 C, mean total rainfall 54.2 mm, mean number of rain days 6.7. Page remark: 'Mean number of rain days = Mean number of days with at least 1 mm of rain.'",
+        "source": "https://worldweather.wmo.int/en/city.html?cityId=596",
+        "source_type": "government",
+        "checked": "2026-11-25",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_007",
+        "claim": "Every WMO World Weather Information Service city page checked in this batch (Milan, Naples, Nice, Lisbon, Port Louis, Punta Cana) carries the remark that the averaging period and the definition of 'Mean Number of Rain Days' (or Precipitation Days) 'may be different for different countries. Hence, care should be taken when city climatologies are compared.' Base periods differ in this batch: 1971-2000 for Milan, Naples, Nice and Port Louis; 1961-1990 for Lisbon and Punta Cana. Rain-day thresholds differ: at least 1 mm (Nice, Port Louis, Punta Cana), at least 0.1 mm (Lisbon), not stated (Milan, Naples).",
+        "source": "https://worldweather.wmo.int/en/city.html?cityId=902",
+        "source_type": "government",
+        "checked": "2026-11-25",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_008",
+        "claim": "[Greece: Cyclades, HNMS Naxos station] Hellenic National Meteorological Service climatic data for Naxos (lon 25.369, lat 37.081, altitude 3 m; the page states 'Data Period: None'): March minimum monthly temperature 10.4 C, monthly mean temperature 13.4 C, maximum monthly temperature 15.8 C, monthly mean precipitation height 45.7 mm, monthly mean precipitation days 9.5, monthly mean humidity 71.7%, prevailing wind direction N, monthly mean wind power 14.7 (units on the chart axis: Kt). Naxos is not Mykonos or Santorini; it is the HNMS station used on the August page.",
+        "source": "http://oldportal.emy.gr/emy/en/climatology/climatology_city?perifereia=South%20Aegean&poli=Naxos",
+        "source_type": "government",
+        "checked": "2026-11-25",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_009",
+        "claim": "[Switzerland] MeteoSwiss, annual cycle page: 'On the northern side of the Alps, the largest amounts of precipitation normally fall in the summer months, whereas on the southern side of the Alps, the peaks in precipitation tend to occur in spring and autumn.' The same page compares against the normal period 1991-2020. It gives no March-specific figures.",
+        "source": "https://www.meteoswiss.admin.ch/climate/the-climate-of-switzerland/annual-cycle-of-temperature-precipitation-and-sunshine.html",
+        "source_type": "government",
+        "checked": "2026-11-25",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_010",
+        "claim": "[Switzerland] MeteoSwiss, The climate of Switzerland: 'From late autumn through to spring, low-lying fog regularly forms, predominantly in high pressure areas. This tends to occur mostly along rivers and lakes as the air above these is very damp.' Also: the southern foehn 'occurs primarily between autumn and spring'. 'The coldest temperatures are recorded in January and February.' The page states 'Switzerland has four distinct seasons' and uses the period 1991-2020. No March-specific figures were found on the part of the page read (response truncated after the Snow section began).",
+        "source": "https://www.meteoswiss.admin.ch/climate/the-climate-of-switzerland.html",
+        "source_type": "government",
+        "checked": "2026-11-25",
+        "is_price": false
+      }
+    ],
+    "insider_details": [
+      {
+        "detail": "Rain-day counts in this batch use different definitions: Lisbon counts any day with 0.1 mm or more, so its 13 March rain days are not directly comparable with Nice's 5.2 days counted at 1 mm. Quote each station with its own definition, and keep a covered or wet-weather option in every March plan.",
+        "fact_ids": [
+          "fact_003",
+          "fact_004",
+          "fact_007"
+        ]
+      },
+      {
+        "detail": "For Lake Como and the Amalfi Coast the nearest official March figures are city stations (Milan mean daily max 14.3 C, Naples 15.7 C). Evening receptions at these temperatures need heating, wraps or an indoor fallback in the booking checklist, and the copy must say the figures are from the city station.",
+        "fact_ids": [
+          "fact_001",
+          "fact_002"
+        ]
+      },
+      {
+        "detail": "Port Louis in March averages 83.0 mm over 8 precipitation days with a mean daily max of 31.5 C, about half February's 160.0 mm. Plan shade, hydration and a rain plan, and describe March only in the source's figures, never as a 'best time'.",
+        "fact_ids": [
+          "fact_005"
+        ]
+      },
+      {
+        "detail": "On Naxos the HNMS March row shows 9.5 mean precipitation days and a northerly prevailing wind. For island ceremonies that means a wind-sheltered site and a sea-crossing contingency for guests.",
+        "fact_ids": [
+          "fact_008"
+        ]
+      },
+      {
+        "detail": "Punta Cana's March row (54.2 mm, 6.7 rain days, mean daily max 28.1 C, 1961-1990) is among the drier months on its own WMO table, but the article should state the numbers and leave the comparison to the reader.",
+        "fact_ids": [
+          "fact_006"
+        ]
+      }
+    ],
+    "quotes": [],
+    "real_weddings": [],
+    "needs_signoff": [],
+    "verify_items": [
+      "[[VERIFY: Switzerland has no official March figures in this batch. MeteoSwiss pages give only general spring statements (fact_009, fact_010). If the article needs March temperature or rainfall for a Swiss station, pull the MeteoSwiss climate normals 1991-2020 for a named station.]]",
+      "[[VERIFY: HNMS Naxos page states 'Data Period: None', so the base period for the March row (fact_008) is not published. Write 'period not stated by HNMS' rather than inventing one.]]",
+      "[[VERIFY: Lisbon and Punta Cana WMO normals are 1961-1990 while the others are 1971-2000 (fact_007). The at-a-glance table must show the period per station and must not rank the places against each other on rain days.]]"
+    ],
+    "must_include_coverage": [
+      {
+        "item": "Official March weather per station, with station, period and supplying service",
+        "covered_by": [
+          "fact_001",
+          "fact_002",
+          "fact_003",
+          "fact_004",
+          "fact_005",
+          "fact_006",
+          "fact_008"
+        ]
+      },
+      {
+        "item": "Rain-day definition and comparability caveat",
+        "covered_by": [
+          "fact_007"
+        ]
+      },
+      {
+        "item": "Switzerland spring statement (MeteoSwiss)",
+        "covered_by": [
+          "fact_009",
+          "fact_010",
+          "[[VERIFY: Switzerland has no official March figures in this batch. MeteoSwiss pages give only general spring statements (fact_009, fact_010). If the article needs March temperature or rainfall for a Swiss station, pull the MeteoSwiss climate normals 1991-2020 for a named station.]]"
+        ]
+      },
+      {
+        "item": "Naxos base period",
+        "covered_by": [
+          "[[VERIFY: HNMS Naxos page states 'Data Period: None', so the base period for the March row (fact_008) is not published. Write 'period not stated by HNMS' rather than inventing one.]]"
+        ]
+      }
+    ]
+  }
+}
