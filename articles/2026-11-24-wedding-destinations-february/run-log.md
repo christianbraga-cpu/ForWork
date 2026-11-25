@@ -20,3 +20,7 @@
 ## Stages
 - Stage 0 and 1 launched in parallel (strategist and researcher).
 - **Container restart:** the first strategist and researcher runs were lost before saving. Both relaunched (told to save early and incrementally).
+- **00:07 check-in:** both agents active (files saved 00:06), no permission hold now, so the writer waits for hand-backs.
+  - URL 404, so a new post.
+  - **Sibling series already live:** /destination-weddings/wedding-destinations-january, -may and -october, plus the honeymoon-in-february page. **Decision (default):** the February page follows the live siblings' structure, rather than a new template. The month template file records that structure.
+  - Research: 22 facts so far (Maldives, UAE, Qatar, Mexico, Bali, Fiji).
