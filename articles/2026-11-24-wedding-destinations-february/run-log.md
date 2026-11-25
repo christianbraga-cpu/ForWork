@@ -38,3 +38,9 @@
   - Ramadan dates only if sourced; otherwise "check dates" as advice, and RAMADAN-2027 is an open item.
 - **TITLE-SERIES (for the user):** the live siblings use "10 Best Wedding Destinations in <Month>" H1s. Series consistency may favour your original title over the keyword-first default.
 - Stage 2: writer launched.
+- **Stage 2 fast (writer):** DONE. 03-draft-v1.md.
+  - --check: 2,269 reader words; 0 dashes; 0 placeholders. Official domains: smartraveller.gov.au, thailand.go.th, niwa.co.nz.
+  - YAML valid: 40 claims, 35 links.
+  - Five claims rest on the brief's account of our pages; the fact-checker verifies them.
+  - Open items: FACT-GAP-TASMANIA, FACT-GAP-SWISS-ALPS, FACT-GAP-MADEIRA, FACT-GAP-GREECE, RAMADAN-2027.
+- Reviews launched (accuracy, SEO, couple reader). The researcher is still held on a permission prompt.
