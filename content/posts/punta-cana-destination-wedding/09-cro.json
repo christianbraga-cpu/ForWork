@@ -1,0 +1,79 @@
+{
+  "agent": "cro",
+  "task_id": "punta-cana-destination-wedding",
+  "stage": "09",
+  "status": "complete",
+  "round": 1,
+  "inputs_used": [
+    "CLAUDE.md",
+    "content-system/brand/services.md (Choosing the primary CTA; UTM format)",
+    "content-system/brand/brand-facts.md",
+    "content/posts/punta-cana-destination-wedding/01-brief.json",
+    "content/posts/punta-cana-destination-wedding/07-panel.json",
+    "content/posts/punta-cana-destination-wedding/07-icp/*.json (cta_reaction, unanswered_questions)",
+    "content/posts/punta-cana-destination-wedding/08-final.md",
+    "content-system/seo/link-map.csv (/wonderland-concierge, /magazine)",
+    "content-system/schemas/09-cro.schema.json",
+    "Orchestrator instructions for stage 09, fast mode"
+  ],
+  "self_qa": {
+    "confidence": 0.86,
+    "checks": [
+      {"check": "/wonderland-concierge and /magazine exist in link-map.csv", "pass": true, "note": "/wonderland-concierge is the default commercial CTA target; /magazine is type magazine, lead magnet (crawled 2026-10-20)."},
+      {"check": "Exactly four UTM-tagged links in 08-final.md, each recorded as it appears (three /wonderland-concierge, one /magazine), each utm_content used once", "pass": true, "note": "Lines 123 (primary), 155 (secondary), 159 (magnet), 189 (closing). No other link carries a UTM."},
+      {"check": "UTMs are utm_source=blog, utm_medium=content, utm_campaign=punta-cana-destination-wedding with the right utm_content", "pass": true},
+      {"check": "No CTA marker comments in 08-final.md", "pass": true},
+      {"check": "Primary text 6 words or fewer, no exclamation mark, no 'click here'", "pass": true, "note": "Anchor 'Wedded Concierge', 2 words."},
+      {"check": "08-final.md not changed; no new CTAs, UTM links or copy edits proposed", "pass": true},
+      {"check": "No prices, fee detail, commissions, deposits handled by us, phone or named contacts, on-the-ground staff, transfers, room blocks, Wedded Privileges or availability stated; nothing implies the Advisor handles legal paperwork", "pass": true, "note": "Subtexts quote only brand-facts 'Claims we can make' already in the copy. The deposits wording in 08-final.md is a venue question the couple asks, not a Wedded Wonderland claim."},
+      {"check": "Lead magnet placed only because it exists on the site", "pass": true, "note": "/magazine exists. No Dominican Republic or Caribbean magazine edition is in the link map, so none is placed (suggestion only, in rationale)."},
+      {"check": "journey_stage taken from 01-brief.json", "pass": true, "note": "comparing, so Concierge consultation per services.md."},
+      {"check": "Brand terms correct; Australian English; no em dashes", "pass": true}
+    ]
+  },
+  "assumptions": [
+    "The schema holds one primary and one secondary CTA, so the closing Concierge link (utm_content=closing) is recorded in tracking and rationale rather than as its own CTA object.",
+    "Links are recorded as relative paths, exactly as they appear in 08-final.md.",
+    "Subtext fields quote the sentence already beside each link in the copy; nothing new is written.",
+    "Line numbers refer to 08-final.md round 3 as at this stage."
+  ],
+  "open_questions": [
+    {"to": "/wonderland-concierge", "question": "How is the Wedded Advisor fee worked out (flat fee, percentage or other), what does 'start to finish' cover, and does Wedded Wonderland take a commission or margin on resort or supplier quotes (are 'quotes in AUD' the venue's own prices converted)? Raised by sceptic (high), funding_parent, planner_couple and search_visitor; deferred in brand-facts.md and already with Nic via the 07-panel [[VERIFY]]. The sceptic said a missing fee page takes Wedded Wonderland off the list.", "blocking": false},
+    {"to": "/wonderland-concierge", "question": "Who is accountable on the wedding day, is it someone the couple has met, and who answers out of hours if something goes wrong during the trip? Raised by planner_couple and funding_parent ('who do I ring at 2am'); deferred in brand-facts.md.", "blocking": false},
+    {"to": "/wonderland-concierge", "question": "Is there a private or referral-only channel to speak with someone senior rather than a general enquiry form, does the first contact start with a call, and can the paying parent join it? Raised by uhnw (would not click) and funding_parent.", "blocking": false},
+    {"to": "/wonderland-concierge", "question": "Scale and security: has Wedded Wonderland delivered weddings of 200 to 400 guests, and how does it work with a family's private security, the venue's security and photo or press leaks? Raised by uhnw; deferred in brand-facts.md.", "blocking": false},
+    {"to": "orchestrator", "question": "Panel cta_reactions were four 'maybe' and one 'no', each asking to see fee and commission, first-contact process, who is accountable on the day, a private channel or scale before clicking. None can be added without confirmed business answers, so no copy change is flagged from this stage; the CTAs already follow the evidence, as the sceptic noted. Planner_couple reads a real wedding first, which the restored real-celebration links before the planning section already serve.", "blocking": false}
+  ],
+  "verify_items": [],
+  "tools_used": ["Bash"],
+  "next_agent": ["distribution"],
+  "payload": {
+    "journey_stage": "comparing",
+    "primary_cta": {
+      "text": "Wedded Concierge",
+      "subtext": "When you are ready to shape a date around your guests' travel, start with Wedded Concierge.",
+      "link": "/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=punta-cana-destination-wedding&utm_content=primary",
+      "placement": "Inline, end of 'Guests travelling from Australia' after the 'Safety, money and health' list and the guest travel note line, before 'Planning your Punta Cana destination wedding' (08-final.md line 123). Kept as is: the date-versus-guest-travel question peaks here."
+    },
+    "secondary_cta": {
+      "text": "Wedded Concierge",
+      "subtext": "Your Wedded Advisor confirms inclusions in writing before you commit, so you can see what is and is not covered, and works in your time zone with quotes in AUD.",
+      "link": "/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=punta-cana-destination-wedding&utm_content=secondary",
+      "placement": "Inline, end of 'Planning your Punta Cana destination wedding' after the six venue-question H3s (ending 'Contracts, deposits and who to call'), anchored in 'To put these questions to the venues on your shortlist, speak with Wedded Concierge' (08-final.md line 155). Kept as is."
+    },
+    "lead_magnet": {
+      "name": "Wedded Wonderland magazine",
+      "link": "/magazine?utm_source=blog&utm_medium=content&utm_campaign=punta-cana-destination-wedding&utm_content=magnet",
+      "placement": "Inline, after the planning section and the reception-dusk image slot, before 'Frequently asked questions' (08-final.md line 159). For the earlier-stage reader who bookmarks and reads more before enquiring.",
+      "exists": true
+    },
+    "tracking": [
+      "line 123 | /wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=punta-cana-destination-wedding&utm_content=primary | anchor 'Wedded Concierge'",
+      "line 155 | /wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=punta-cana-destination-wedding&utm_content=secondary | anchor 'Wedded Concierge'",
+      "line 159 | /magazine?utm_source=blog&utm_medium=content&utm_campaign=punta-cana-destination-wedding&utm_content=magnet | anchor 'the Wedded Wonderland magazine'",
+      "line 189 | /wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=punta-cana-destination-wedding&utm_content=closing | anchor 'Wedded Concierge' (closing section 'Start with a conversation')",
+      "Each tagged link appears once. No other link in 08-final.md carries a UTM. No CTA marker comments."
+    ],
+    "rationale": "The reader is comparing (01-brief.json), so every commercial invitation goes to a Wedded Concierge consultation at /wonderland-concierge, and each sits after the evidence it follows, which the sceptic named as right. The primary link closes the guest travel section, where the long-haul journey, entry rules and Smartraveller safety advice have raised the question of how to set a date that works for guests from Australia. The secondary link follows the six venue questions and turns them into a concrete reason to talk ('put these questions to the venues on your shortlist'); its lead-in carries the brand-facts reassurances (inclusions confirmed in writing, your time zone, quotes in AUD), with the panel's 'advisor_covered' edit answering planner_couple's hidden-costs fear from an allowed claim. The closing section repeats the invitation with 'one Wedded Advisor, start to finish, as your single point of contact'. The /magazine link serves planner_couple and search_visitor, who said they would read more or bookmark before enquiring. All four links are kept exactly as placed, anchor 'Wedded Concierge' (2 words, no exclamation mark). Panel likelihood to enquire was 2.4: four personas said 'maybe' and uhnw said 'no', the brakes being the Advisor fee and commission, who is accountable on the day, a private channel and scale and security. None is confirmed in brand-facts.md, so none is answered in the post; they go to /wonderland-concierge as open questions. Lead magnet suggestion only (exists: false, not placed): a Dominican Republic or Caribbean edition of the magazine, like the existing Fiji and Dubai guides, would suit readers of this post if the business produces one."
+  }
+}
