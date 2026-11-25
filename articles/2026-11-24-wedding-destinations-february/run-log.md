@@ -44,3 +44,17 @@
   - Five claims rest on the brief's account of our pages; the fact-checker verifies them.
   - Open items: FACT-GAP-TASMANIA, FACT-GAP-SWISS-ALPS, FACT-GAP-MADEIRA, FACT-GAP-GREECE, RAMADAN-2027.
 - Reviews launched (accuracy, SEO, couple reader). The researcher is still held on a permission prompt.
+- **Stage 3 fast (3 reviews):** DONE.
+  - **Accuracy 3:** two blockers. (1) The own-page claims were unverified because the fact-checker's session could not reach the sites. The orchestrator verified all five verbatim via Firecrawl, plus RAK "12-18 months". (2) The Tasmania "no paperwork" wording.
+    - Majors: use BoM for Tasmania; Swiss wording; Madeira unsupported for February; the Mexico room-block line.
+  - **SEO 4:** majors on thailand.go.th not being in domains.md, and the RAK fog claim not linked at the claim. Minors: meta wording; the volume variant; sibling travel-February link. TITLE-SERIES: keep keyword-first.
+  - **Reader (couple):** relevance 1 (the persona is Italy-only), trust 3, clarity 4, would_enquire 2. Fixes: one Italy line; Smartraveller lines moved to the end of each card; brochure line cut; a reason for the Greece wait.
+  - Merged request: 04-reviews/v1/merged.md.
+- **Decisions (default):**
+  - Madeira stays at rank 10 with no February weather claim unless an official fact lands (FACT-GAP-MADEIRA).
+  - Ramadan is attributed to our Dubai best-time page ("fall in February and March in 2027") plus advice to check dates; RAMADAN-2027 stays open for an official source.
+- **SITE-CONFLICTS (for the user):**
+  - The honeymoon-February page gives 6 to 9 months in its body and 9 to 12 months in its FAQ.
+  - The Dubai best-time page links a competitor (thecelebrantdirectory.com) and a third-party weather site.
+- The researcher was asked for IPMA Madeira, Ramadan from an official source, and TMD Thailand. It is held on a permission prompt again.
+- Stage 4: writer v2 launched.
