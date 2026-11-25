@@ -8,3 +8,5 @@
 - 01:45 Editor revise 3.86, 47 edits applied to 05-draft-r2.md; 5 readers in (enquire 1 to 2). Lake Como shot_brief de-named.
 - 01:49 Panel revise (weighted enquire 1.8, deferred business details); 13 edits applied to 08-final.md; accepted after one round.
 - 01:52 Final check pass_with_edits 4.29; 9 of 10 applied (kept step-free per house rule).
+- 01:55 11 cms-publisher complete (package only, not uploaded; validates clean)
+- 01:55 Final docx and run report written.
