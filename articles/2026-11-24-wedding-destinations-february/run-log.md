@@ -64,3 +64,11 @@
   - **Ramadan:** no official 2027 date (Smartraveller shows 2026 only), so RAMADAN-2027 stays open.
   - **Conflicts:** Smartraveller Switzerland and Portugal show "normal precautions" in the body but YELLOW in the meta (VERBATIM-CHECK). Our RAK hub calls the cooler months "ideal" while Smartraveller warns of December to May storms.
   - The writer was told about the new facts.
+- **Stage 4 fast (writer v2):** DONE. 03-draft-v2.md.
+  - --check: 2,603 reader words (over the cap; the copy editor trims to about 2,300); 0 dashes; 0 placeholders. Official domains: BoM, IPMA, TMD, Smartraveller, NIWA.
+  - YAML valid: 46 claims, 37 links.
+  - FACT-GAP-MADEIRA and DOMAIN-CHECK closed (IPMA and TMD sourced).
+  - The Swiss quote was shortened to avoid the banned word "fairytale".
+- **ITALY-SEASON closed:** the orchestrator verified the Italy month guide live (Firecrawl, 25 Nov): "Late May to June and September to early October are the two sweet spots..." and "...many coastal and lakeside venues close for the season." (OP-4)
+- **Worker restart:** no work lost (v2 was saved and committed).
+- Stage 6: copy editor launched (trim, Italy line, package, upload prompt, month template).
