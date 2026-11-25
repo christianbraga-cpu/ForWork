@@ -27,7 +27,7 @@ The ten wedding destinations in March below are unranked and grouped by what the
 
 All ten are places we plan in and have a guide for. <!-- LINK: /destination-weddings/wedding-destinations-august when live -->
 
-A city or island station can read differently from a villa a short drive away, and averaging periods and rain-day counts vary between countries, so the [WMO advises care when comparing city climates](https://worldweather.wmo.int/en/city.html?cityId=902). Read each place on its own. <!-- fact_007 --> <!-- fact_115 -->
+A city or island station can read differently from a villa a short drive away, and base periods and rain-day counts vary between countries, so the [WMO advises care when comparing city climates](https://worldweather.wmo.int/en/city.html?cityId=902). Read each place on its own. <!-- fact_007 --> <!-- fact_115 -->
 
 ## Early spring in the northern hemisphere
 
@@ -109,7 +109,7 @@ South of the equator, March means autumn in New Zealand and, in the tropics, hea
 
 **The March trade-off.** Settled autumn spells, but one storm can change a week, as it did in March 2026. <!-- fact_101 --> <!-- fact_102 -->
 
-**March weather.** The [Earth Sciences New Zealand climate summary for March 2026](https://niwa.co.nz/climate-and-weather/monthly/climate-summary-march-2026) covers one year, not an average. It called the month a dry start to autumn for much of the country, mild and mostly settled, with rainfall below or well below normal in Central Otago, most of Wellington and Hawke's Bay. The month's highest temperature was 30.9°C at Alexandra on 7 March and its lowest minus 2.6°C at Pūkaki Airport on 3 March. <!-- fact_101 --> On 25 and 26 March a deep subtropical low brought heavy rain and flooding, with states of emergency and road closures from Northland to the Bay of Plenty. <!-- fact_102 --> As at November 2026, [Smartraveller](https://www.smartraveller.gov.au/destinations/pacific/new-zealand) warns that weather can change quickly and that severe weather can leave travellers stranded, especially in remote areas. <!-- fact_103 -->
+**March weather.** The [Earth Sciences New Zealand climate summary for March 2026](https://niwa.co.nz/climate-and-weather/monthly/climate-summary-march-2026) covers one year, not a long-term normal. It called the month a dry start to autumn for much of the country, mild and largely settled, with rainfall below or well below normal in Central Otago, much of Wellington and Hawke's Bay. The month's highest temperature was 30.9°C at Alexandra on 7 March and its lowest minus 2.6°C at Pūkaki Airport on 3 March. <!-- fact_101 --> On 25 and 26 March a deep subtropical low brought heavy rain and flooding, with states of emergency and road closures from Northland to the Bay of Plenty. <!-- fact_102 --> As at November 2026, [Smartraveller](https://www.smartraveller.gov.au/destinations/pacific/new-zealand) warns that weather can change quickly and that severe weather can leave travellers stranded, especially in remote areas. <!-- fact_103 -->
 
 <!-- IMAGE SLOT new-zealand: Named New Zealand venue we cover (Queenstown or Central Otago lodge or vineyard, to match the H3 and get-married-in-new-zealand guide), autumn foliage or golden vines, mountains or lake behind, no identifiable people. Month taken (March to May) recorded; autumn captioned only if the post's sources state it. -->
 
@@ -145,9 +145,9 @@ South of the equator, March means autumn in New Zealand and, in the tropics, hea
 
 ### Bali
 
-**The March trade-off.** Clifftop and garden ceremonies, but March sits inside Indonesia's usual wet season, so the plan needs a roof. <!-- fact_107 -->
+**The March trade-off.** Clifftop and garden ceremonies, but March sits inside Indonesia's wet season, so the plan needs a roof. <!-- fact_107 -->
 
-**March weather.** [Smartraveller](https://www.smartraveller.gov.au/destinations/asia/indonesia), as at November 2026, describes Indonesia's wet season as usually around October to April (it can differ in Eastern Indonesia), with weather that can change quickly. Heavy rain can cause significant flooding in urban areas including Bali, disrupting roads and transport. <!-- fact_107 --> To see March beside the other eleven months, read [when to marry in Bali, month by month](/destination-weddings/best-time-to-get-married-in-bali).
+**March weather.** [Smartraveller](https://www.smartraveller.gov.au/destinations/asia/indonesia), as at November 2026, puts Indonesia's wet season at around October to April (it can differ in Eastern Indonesia), with weather that can change quickly. Heavy rain can cause significant flooding in urban areas including Bali, disrupting roads and transport. <!-- fact_107 --> To see March beside the other eleven months, read [when to marry in Bali, month by month](/destination-weddings/best-time-to-get-married-in-bali).
 
 <!-- IMAGE SLOT tropical: Named Bali or Fiji venue we cover, open-air pavilion, clifftop or beachfront ceremony setup, sky and ocean in frame, no identifiable people. Month taken recorded. Never caption March weather or season (for example dry or wet season) unless the post's official weather sources state it. -->
 
@@ -161,7 +161,7 @@ South of the equator, March means autumn in New Zealand and, in the tropics, hea
 
 **The March trade-off.** Lagoons and island resorts, but March is in Fiji's wet season and its cyclone season. <!-- fact_104 --> <!-- fact_105 -->
 
-**March weather.** The [Fiji Meteorological Service's March 2026 summary](https://www.met.gov.fj/media/climate_product_files/Fiji_Climate_Summary_March_2026_wUpxcQh.pdf) covers one year only. It called March the wet season, with rainfall from well below to above average, most stations drier than usual, and the month's highest total of 640.3 mm at Rarawai Mill in Ba. <!-- fact_104 --> As at November 2026, [Smartraveller](https://www.smartraveller.gov.au/destinations/pacific/fiji) states that November to April is cyclone season, though cyclones may occur at other times, and that flights can be delayed or suspended. <!-- fact_105 --> It adds that flooding is common, especially in downtown Nadi and on the Coral Coast, and can cut road access to the airport. <!-- fact_106 -->
+**March weather.** The [Fiji Meteorological Service's March 2026 summary](https://www.met.gov.fj/media/climate_product_files/Fiji_Climate_Summary_March_2026_wUpxcQh.pdf) covers one year only. It called March the wet season, with rainfall varying widely, 15 of its 26 rainfall stations below or well below their long-term figures, and the month's highest total of 640.3 mm at Rarawai Mill in Ba. <!-- fact_104 --> As at November 2026, [Smartraveller](https://www.smartraveller.gov.au/destinations/pacific/fiji) states that November to April is cyclone season, though cyclones may occur at other times, and that flights can be delayed or suspended. <!-- fact_105 --> It adds that flooding is common, especially in downtown Nadi and on the Coral Coast, and can cut road access to the airport. <!-- fact_106 -->
 
 **Questions for the venue.**
 - What are the wet-weather and cyclone plans, and will you set them out in writing?
@@ -178,10 +178,10 @@ South of the equator, March means autumn in New Zealand and, in the tropics, hea
 | Amalfi Coast, Italy | Cool and changeable at the Naples city station | Rain on an outdoor, stepped coast |
 | French Riviera | Cool evenings at the Nice station | A roof for the reception |
 | Portugal | Mild days with frequent showers at the Lisbon station | Frequent showers to plan around |
-| New Zealand | A mild, mostly settled March in 2026, ending in a major storm | One storm can change a week |
+| New Zealand | A mild, largely settled March in 2026, ending in a major storm | One storm can change a week |
 | Mauritius | Hot at Port Louis, in a humid summer and the wettest part of the year | Cyclone season |
 | Seychelles | Hot and wet at Victoria | Monsoon season rain |
-| Bali | Inside the usual wet season | Rain and flooded roads |
+| Bali | Inside Indonesia's wet season | Rain and flooded roads |
 | Fiji | Wet season, cyclone season | Cyclones and flooding |
 
 Torn between a cool European spring and a warm, wet island? Weigh the two through [Wedded Concierge](/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=wedding-destinations-march&utm_content=primary) with a Wedded Advisor, who confirms in writing what each venue includes before you commit.
@@ -228,7 +228,7 @@ Yes. As at November 2026, Smartraveller puts Fiji's cyclone season from November
 
 ### Is March autumn in New Zealand?
 
-Yes. Earth Sciences New Zealand described March 2026 as a dry start to autumn for much of the country, a single year's reading rather than an average. <!-- fact_101 -->
+Yes. Earth Sciences New Zealand described March 2026 as a dry start to autumn for much of the country, a single year's reading rather than a long-term normal. <!-- fact_101 -->
 
 ## Plan your March wedding with Wedded Concierge
 
