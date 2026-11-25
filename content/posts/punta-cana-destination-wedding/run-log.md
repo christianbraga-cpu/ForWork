@@ -7,3 +7,5 @@
 00:09 05 draft complete (~2,360 words); orchestrator swapped primary/secondary UTM labels to page order; first-draft docx built
 00:10 07 readers complete (5)
 00:13 06 editor pass_with_edits 4.29; 28/28 applied -> 05-draft-r2.md
+00:16 07b panel-chair complete; gate revise; weighted enquiry 2.4; 11 edits vs r2 (4 must_fix, 6 should_fix, 11 consider); fee/commission question to Nic
+00:16 07b panel revise (enquiry 2.4); 11/11 applied -> 08-final.md
