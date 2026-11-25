@@ -58,3 +58,9 @@
   - The Dubai best-time page links a competitor (thecelebrantdirectory.com) and a third-party weather site.
 - The researcher was asked for IPMA Madeira, Ramadan from an official source, and TMD Thailand. It is held on a permission prompt again.
 - Stage 4: writer v2 launched.
+- **Stage 1 fast (research):** DONE. 42 facts.
+  - **Official February sources:** BoM Hobart, IPMA Funchal, TMD Phuket.
+  - **No official February source:** Maldives, UAE, Qatar, Mexico, Queenstown, Swiss Alps (our own pages are quoted as worded).
+  - **Ramadan:** no official 2027 date (Smartraveller shows 2026 only), so RAMADAN-2027 stays open.
+  - **Conflicts:** Smartraveller Switzerland and Portugal show "normal precautions" in the body but YELLOW in the meta (VERBATIM-CHECK). Our RAK hub calls the cooler months "ideal" while Smartraveller warns of December to May storms.
+  - The writer was told about the new facts.
