@@ -459,7 +459,7 @@ No dedicated Decor and Florals hub exists. The /blog/decor category page is the 
 | `/destination-weddings/getting-married-in-oman` | How to Get Married in Oman as a Foreigner | getting married in oman (LIVE, HTTP 200, published 24 Nov 2026) |
 | `/destinations/europe/switzerland` | Get Wedded in Switzerland | (LIVE, HTTP 200, 24 Nov 2026; FAQ: winter December to March) |
 | `/get-wedded-in-qatar` | Get Wedded in Qatar | (LIVE, HTTP 200, 24 Nov 2026; FAQ: best time November to April; on-page enquiry form shows "Form Not Found", flag to web team) |
-| `/destination-weddings/wedding-destinations-february` | Wedding Destinations in February and Our 10 Best Picks (WC3-T703, WW-287) | wedding destinations february, february wedding destinations, best places to get married in february | DRAFT (24 Nov 2026; URL was 404, new post) |
+| `/destination-weddings/wedding-destinations-february` | Wedding Destinations in February and Our 10 Best Picks (WC3-T703, WW-287) | wedding destinations february, february wedding destinations, best places to get married in february | DRAFT (24 Nov 2026; URL was 404, new post; final ready 25 Nov, not published) |
 
 ## Do not link from blogs
 

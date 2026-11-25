@@ -72,3 +72,20 @@
 - **ITALY-SEASON closed:** the orchestrator verified the Italy month guide live (Firecrawl, 25 Nov): "Late May to June and September to early October are the two sweet spots..." and "...many coastal and lakeside venues close for the season." (OP-4)
 - **Worker restart:** no work lost (v2 was saved and committed).
 - Stage 6: copy editor launched (trim, Italy line, package, upload prompt, month template).
+- **Stage 6 fast (copy editor):** DONE. final.md 2,280 reader words, 0 dashes, 0 placeholders, no blocked domains. YAML 46 claims, 37 links.
+  - publish-package.json valid (12 open items, incl. the new QATAR-FORM). chrome-upload-prompt.md is draft only and creates a new post after a slug check. article.docx built.
+  - Month template saved: blog-team/templates/month-destinations.md.
+  - The orchestrator removed "complimentary" from a final-notes line and a template line, then rebuilt the docx.
+
+## Must-fix before publish
+1. NEW-URL: the URL was 404. Create a new post (Zoho WC3-T703, WW-287, due 25 Nov).
+2. TITLE-SERIES (for the user): the H1 puts the keyword first. The live siblings use "10 Best Wedding Destinations in <Month>". Choose one pattern for the series.
+3. RAMADAN-2027: no official 2027 date yet; the article attributes the timing to our Dubai page and tells couples to check.
+4. QATAR-FORM: /get-wedded-in-qatar shows "Form Not Found" on its enquiry form (web team).
+5. VERBATIM-CHECK: Smartraveller wording, incl. the Switzerland and Portugal level (body vs meta).
+6. SITE-CONFLICTS:
+   - the honeymoon-February lead times (6 to 9 vs 9 to 12 months)
+   - the Dubai best-time page links a competitor and a third-party weather site
+   - the RAK hub's "ideal" line vs Smartraveller's December to May storms
+7. CATEGORY-CHECK, PERSONA-WIDEN, LINK-CHECK (incl. the NIWA PDF), AUTHOR, IMAGE-RIGHTS, CMS-URL.
+No prices, so nothing for Nic.
