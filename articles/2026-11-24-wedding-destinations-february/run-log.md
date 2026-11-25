@@ -32,3 +32,9 @@
   - **Cannibalisation:** partial only (the honeymoon and travel February pages). Write it new.
 - **RAMADAN-2027:** Ramadan likely falls in February 2027, which affects the three Gulf picks. It needs an official source. The researcher has been asked for one.
 - The researcher is held on an MCP permission prompt. The shortlist was sent to it with priorities (Thailand, NZ, Tasmania, Switzerland, Madeira).
+- **00:19 check-in:** the researcher is still held on MCP permission prompts. 32 facts saved (last save 00:14), covering Maldives, UAE, Qatar, Mexico, Phuket, Queenstown and the wait list. Tasmania, the Swiss Alps, Madeira and the Ramadan 2027 dates are not covered yet.
+- **Decision (10-minute rule):** the writer started on the saved facts with an inline brief, and re-reads the research before saving.
+  - Missing destinations use our own page wording only; otherwise advice only, with FACT-GAP open items.
+  - Ramadan dates only if sourced; otherwise "check dates" as advice, and RAMADAN-2027 is an open item.
+- **TITLE-SERIES (for the user):** the live siblings use "10 Best Wedding Destinations in <Month>" H1s. Series consistency may favour your original title over the keyword-first default.
+- Stage 2: writer launched.
