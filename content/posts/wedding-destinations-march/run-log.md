@@ -6,3 +6,4 @@
 01:33 02 SEO complete; meta description rewritten to match the 10 (no Hawaii); link map +honeymoon-in-March page
 01:38 05 draft complete (~2,275 prose words); first-draft docx built
 - 01:45 Editor revise 3.86, 47 edits applied to 05-draft-r2.md; 5 readers in (enquire 1 to 2). Lake Como shot_brief de-named.
+- 01:49 Panel revise (weighted enquire 1.8, deferred business details); 13 edits applied to 08-final.md; accepted after one round.
