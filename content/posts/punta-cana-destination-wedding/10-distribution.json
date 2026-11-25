@@ -1,0 +1,160 @@
+{
+ "agent": "distribution-lead",
+ "task_id": "punta-cana-destination-wedding",
+ "stage": "10",
+ "status": "needs_input",
+ "round": 1,
+ "inputs_used": [
+  "CLAUDE.md",
+  "content-system/brand/banned-phrases.md",
+  "content/posts/getting-married-in-costa-rica/10-distribution.json (format model)",
+  "content/posts/punta-cana-destination-wedding/01-brief.json",
+  "content/posts/punta-cana-destination-wedding/02-seo.json (url_path)",
+  "content/posts/punta-cana-destination-wedding/04-images.json (all slots needed)",
+  "content/posts/punta-cana-destination-wedding/08-final.md (round 3, copy and image slots)",
+  "Orchestrator instructions for stage 10, fast mode",
+  "content/posts/punta-cana-destination-wedding/09-cro.json (CTAs)"
+ ],
+ "self_qa": {
+  "checks": [
+   {
+    "check": "3 pins tied to image slots in 08-final.md and 04-images.json",
+    "pass": true,
+    "note": "featured, wet-weather-ceremony, reception-dusk; all slots status needed, so every pin is on hold"
+   },
+   {
+    "check": "Pin titles <= 100 and no colons; descriptions <= 500",
+    "pass": true,
+    "note": "59/442, 52/415, 59/410"
+   },
+   {
+    "check": "UTM per channel: pinterest/social, instagram/social via bio link, newsletter/email; utm_campaign=punta-cana-destination-wedding",
+    "pass": true
+   },
+   {
+    "check": "8-slide carousel, hook first, Wedded Advisor conversation last",
+    "pass": true
+   },
+   {
+    "check": "Caption <= 2,200 chars, 5 to 10 hashtags",
+    "pass": true,
+    "note": "1967 chars, 8 hashtags"
+   },
+   {
+    "check": "Newsletter subject <= 60, preview <= 110, blurb 60 to 100 words",
+    "pass": true,
+    "note": "56/93 chars, 78 words"
+   },
+   {
+    "check": "Legal points carry 'General information as at November 2026, not legal advice'",
+    "pass": true,
+    "note": "pin 1, slides 2 and 3, caption legal paragraph, newsletter blurb"
+   },
+   {
+    "check": "Climate only as the post states it, crediting WMO/ONAMET (1961 to 1990 normals) and the US National Hurricane Center; Smartraveller points dated as at November 2026",
+    "pass": true
+   },
+   {
+    "check": "Facts only from 08-final.md; no prices, fees, same-sex statements, rankings, best/top, free, last dance, resort, venue or vendor names, [[VERIFY]] content",
+    "pass": true
+   },
+   {
+    "check": "Australian English; no em dashes; no banned phrases",
+    "pass": true
+   }
+  ],
+  "confidence": 0.85
+ },
+ "open_questions": [
+  {
+   "to": "orchestrator",
+   "question": "All three pins (featured, wet-weather-ceremony, reception-dusk) and the carousel backgrounds are on hold: 04-images.json has every slot as needed. Each needs a licensed or owned photo of a real Punta Cana location with social use rights, location verified and month taken recorded. Never AI; no identifiable guests without consent; no resort branding.",
+   "blocking": true
+  },
+  {
+   "to": "orchestrator",
+   "question": "Confirm Pinterest board names (Destination Weddings, Wedding Planning Advice) match existing boards.",
+   "blocking": false
+  },
+  {
+   "to": "orchestrator",
+   "question": "Instagram captions have no clickable links; set the bio link to https://weddedwonderland.com/destination-weddings/punta-cana-destination-wedding?utm_source=instagram&utm_medium=social&utm_campaign=punta-cana-destination-wedding&utm_content=bio-link when the carousel goes out.",
+   "blocking": false
+  }
+ ],
+ "assumptions": [
+  "Post URL from 02-seo.json url_path: https://weddedwonderland.com/destination-weddings/punta-cana-destination-wedding",
+  "09-cro.json (written in parallel) checked: the carousel and caption close on a Wedded Advisor conversation, consistent with its Wedded Concierge CTAs; social links use their own UTM sources, not the blog CTA links.",
+  "Smartraveller's 'high degree of caution' level and the safety list are left out of social assets rather than paraphrased out of context; entry points are kept and dated.",
+  "Board names are proposals.",
+  "Status is needs_input only because the images are unlicensed; all copy is final."
+ ],
+ "verify_items": [],
+ "tools_used": [
+  "Bash"
+ ],
+ "next_agent": [
+  "cms-publisher"
+ ],
+ "payload": {
+  "pinterest": [
+   {
+    "title": "Punta Cana Destination Wedding Guide for Australian Couples",
+    "description": "Planning a Punta Cana destination wedding from Australia? You can marry legally through a Dominican civil registry office, or marry at home and hold a symbolic ceremony on the sand. Dominican civil weddings for foreigners need apostilled documents with Spanish translations, so the paperwork sets your lead time. General information as at November 2026, not legal advice. Read the guide for the legal steps, the drier months and guest travel.",
+    "image_slot": "featured",
+    "board": "Destination Weddings",
+    "link": "https://weddedwonderland.com/destination-weddings/punta-cana-destination-wedding?utm_source=pinterest&utm_medium=social&utm_campaign=punta-cana-destination-wedding&utm_content=pin-guide",
+    "status": "on_hold",
+    "hold_reason": "Featured image not yet sourced. Needs a licensed or owned photo of a real Punta Cana location with social use rights; never AI."
+   },
+   {
+    "title": "When to Plan a Punta Cana Wedding Around the Weather",
+    "description": "On the WMO's 1961 to 1990 climate normals for Punta Cana, supplied by ONAMET, February and March are the driest months and October is the wettest. The US National Hurricane Center gives the Atlantic hurricane season as 1 June to 30 November. As at November 2026, Smartraveller notes that tropical storms and hurricanes can happen in other months, so confirm a covered ceremony space in writing. Read the full guide.",
+    "image_slot": "wet-weather-ceremony",
+    "board": "Destination Weddings",
+    "link": "https://weddedwonderland.com/destination-weddings/punta-cana-destination-wedding?utm_source=pinterest&utm_medium=social&utm_campaign=punta-cana-destination-wedding&utm_content=pin-weather",
+    "status": "on_hold",
+    "hold_reason": "wet-weather-ceremony image not yet sourced. Licensed real Punta Cana photo only; caption must not imply a season unless the month taken is known."
+   },
+   {
+    "title": "Questions to Ask Before You Book a Punta Cana Wedding Venue",
+    "description": "Ask how many weddings the property holds on your date, and whether any share your ceremony site, reception space or photo spots. Ask what the venue allows on the sand, what shade sits over the guests' seats, how older guests reach the ceremony and to see the covered wet weather option, not just hear about it. Get every inclusion in writing before you sign. Read the full Punta Cana destination wedding guide.",
+    "image_slot": "reception-dusk",
+    "board": "Wedding Planning Advice",
+    "link": "https://weddedwonderland.com/destination-weddings/punta-cana-destination-wedding?utm_source=pinterest&utm_medium=social&utm_campaign=punta-cana-destination-wedding&utm_content=pin-questions",
+    "status": "on_hold",
+    "hold_reason": "reception-dusk image not yet sourced. Licensed real Punta Cana photo only, no identifiable guests without consent, no resort branding."
+   }
+  ],
+  "instagram_carousel": {
+   "slides": [
+    "Planning a Punta Cana destination wedding from Australia? Four things to settle before you choose a date.",
+    "1. Legal or symbolic. Marry legally through a Dominican civil registry office, or marry at home and hold a symbolic ceremony in Punta Cana. General information as at November 2026, not legal advice.",
+    "2. The paperwork sets your lead time. Foreigners provide a birth certificate, a passport and a certificate of single status, apostilled, with Spanish translations. General information as at November 2026, not legal advice.",
+    "3. The weather. On the WMO's 1961 to 1990 climate normals for Punta Cana, supplied by ONAMET, February and March are the driest months and October is the wettest.",
+    "Hurricane season. The US National Hurricane Center gives the Atlantic season as 1 June to 30 November. As at November 2026, Smartraveller notes tropical storms and hurricanes can happen in other months.",
+    "4. Your guests. As at November 2026, Smartraveller says every guest must buy a tourist card on arrival and complete the electronic entry and exit form. Rules can change at short notice.",
+    "Before you sign, ask any venue about other weddings that day, beach ceremony rules, shade for older guests and a covered wet weather option.",
+    "Want to put these questions to the venues on your shortlist? Message us to start a conversation with a Wedded Advisor. Link in bio."
+   ],
+   "caption": "Punta Cana is on the shortlist. Here is what to settle first if you are planning from Australia.\n\nLegal or symbolic. You can marry legally through a Dominican civil registry office, or marry legally in Australia with a celebrant and hold a symbolic ceremony on the sand. If you marry in the Dominican Republic, foreigners provide a birth certificate, a passport and a certificate of single status, legalised and apostilled in their country of origin, and any document not in Spanish needs a translation. Allow time for each step. Both of you must attend in person, and overseas marriages cannot be registered in Australia. General information as at November 2026, not legal advice.\n\nThe weather. On the World Meteorological Organization's 1961 to 1990 climate normals for Punta Cana, supplied by ONAMET, February and March are the driest months and October is the wettest. There is no cool season to wait for, so ceremony time and shade matter in every month.\n\nHurricane season. The US National Hurricane Center gives the Atlantic hurricane season as 1 June to 30 November. As at November 2026, Smartraveller notes that tropical storms and hurricanes can happen in other months, so a covered option and good travel insurance matter in any month.\n\nYour guests. As at November 2026, Smartraveller says every guest must buy a tourist card on arrival and complete the electronic entry and exit form. Entry conditions can change at short notice, so guests should check with the nearest Dominican embassy or consulate. Put it all in a guest travel note that goes out with the save the date.\n\nBefore you sign, ask any venue how many weddings it holds on your date, what it allows on the sand, what shade sits over the guests' seats, how older guests reach the ceremony, and to see the covered wet weather option, not just hear about it.\n\nReady to put these questions to your shortlist? Message us to start a conversation with a Wedded Advisor. Full guide at the link in bio.",
+   "hashtags": [
+    "#puntacanawedding",
+    "#dominicanrepublicwedding",
+    "#destinationwedding",
+    "#caribbeanwedding",
+    "#beachwedding",
+    "#australianbride",
+    "#weddingplanning",
+    "#weddedwonderland"
+   ],
+   "bio_link": "https://weddedwonderland.com/destination-weddings/punta-cana-destination-wedding?utm_source=instagram&utm_medium=social&utm_campaign=punta-cana-destination-wedding&utm_content=bio-link"
+  },
+  "newsletter": {
+   "subject": "Planning a Punta Cana destination wedding from Australia",
+   "preview": "Legal or symbolic, the drier months, hurricane season, guest entry and what to ask any venue.",
+   "blurb": "Punta Cana on your list? Our new guide sets out the choice Australian couples face: marry legally through a Dominican civil registry office with apostilled, translated documents, or marry at home and hold a symbolic ceremony on the sand. It covers the drier months on official climate normals, hurricane season, what guests need on arrival as at November 2026, and the questions to ask any venue before you sign. General information as at November 2026, not legal advice.",
+   "link": "https://weddedwonderland.com/destination-weddings/punta-cana-destination-wedding?utm_source=newsletter&utm_medium=email&utm_campaign=punta-cana-destination-wedding&utm_content=newsletter"
+  }
+ }
+}
