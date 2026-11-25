@@ -10,3 +10,4 @@
 00:16 07b panel-chair complete; gate revise; weighted enquiry 2.4; 11 edits vs r2 (4 must_fix, 6 should_fix, 11 consider); fee/commission question to Nic
 00:16 07b panel revise (enquiry 2.4); 11/11 applied -> 08-final.md
 00:17 09 CRO complete
+00:18 10 distribution complete (pins on hold)
