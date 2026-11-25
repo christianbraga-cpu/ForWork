@@ -24,3 +24,11 @@
   - URL 404, so a new post.
   - **Sibling series already live:** /destination-weddings/wedding-destinations-january, -may and -october, plus the honeymoon-in-february page. **Decision (default):** the February page follows the live siblings' structure, rather than a new template. The month template file records that structure.
   - Research: 22 facts so far (Maldives, UAE, Qatar, Mexico, Bali, Fiji).
+- **Stage 0 fast (strategist):** DONE.
+  - **URL:** 404, so a new post. Zoho WC3-T703 (WW-287, To-Do, due 25 Nov). The honeymoon sibling redirects to /expert-advice/where-to-go-on-honeymoon-in-february.
+  - **Volumes:** "wedding destinations february" has no data in AU or US. "best places to get married in february" is 10 AU and 20 US.
+  - **SERP:** Sydney, Melbourne and Brisbane rank winter, honeymoon and Instagram pages; nothing answers the query. London failed twice.
+  - **Shortlist:** Maldives, Phuket, Dubai, Ras Al Khaimah, Doha, Mexico, Queenstown, Tasmania, Swiss Alps, Madeira. Wait list: Bali, Fiji, Greece.
+  - **Cannibalisation:** partial only (the honeymoon and travel February pages). Write it new.
+- **RAMADAN-2027:** Ramadan likely falls in February 2027, which affects the three Gulf picks. It needs an official source. The researcher has been asked for one.
+- The researcher is held on an MCP permission prompt. The shortlist was sent to it with priorities (Thailand, NZ, Tasmania, Switzerland, Madeira).

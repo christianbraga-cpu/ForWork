@@ -441,6 +441,26 @@ No dedicated Decor and Florals hub exists. The /blog/decor category page is the 
 | `/the-guest-list-issue` | THE GUEST LIST ISSUE (old) | old; do not link |
 | `/expert-advice/bridal-shower-guest-list` | Bridal Shower Guest List Etiquette and Who to Invite (WC3-T983) | bridal shower guest list, who to invite to bridal shower | DRAFT (23 Nov 2026; URL was 404, new post) |
 
+## February destinations (Firecrawl map and scrape, 24 Nov 2026)
+
+| URL | Title | Owns |
+|---|---|---|
+| `/destination-weddings/wedding-destinations-may` | 10 Best Wedding Destinations in May | wedding destinations may (month series; in Firecrawl map) |
+| `/destination-weddings/wedding-destinations-october` | 10 Best Wedding Destinations in October | wedding destinations october (month series; in Firecrawl map) |
+| `/destination-weddings/january-wedding-destinations-summer-and-winter` | January Wedding Destinations for Summer Sun and Winter Light | (duplicates /destination-weddings/wedding-destinations-january; do not link; user to decide 301) |
+| `/expert-advice/where-to-go-on-honeymoon-in-february` | A Guide to the Best Honeymoon Destinations in February | honeymoon in february (LIVE, HTTP 200; /expert-advice/a-guide-on-where-to-go-on-honeymoon-in-february redirects here; link this final URL) |
+| `/travel-guides/best-places-to-travel-in-february` | 15 Best Places to Travel in February | where to travel in february (live per Zoho WC3-T290 and Firecrawl map) |
+| `/destination-weddings/best-time-wedding-dubai` | Best Time for a Dubai Wedding by Month | best time wedding dubai (in Firecrawl map; snippet: February among the most comfortable months) |
+| `/destination-weddings/best-time-to-get-married-in-bali` | Best Time to Get Married in Bali by Month | best time to get married in bali (in Firecrawl map) |
+| `/destination-weddings/best-time-to-get-married-in-italy` | Best Time to Get Married in Italy: Month-by-Month Guide | best time to get married in italy (in Firecrawl map) |
+| `/destination-weddings/mexico-destination-wedding-guide` | Mexico Destination Wedding Guide by Region and Season | mexico destination wedding (in Firecrawl map) |
+| `/destination-weddings/europe-wedding-destinations` | 20 Europe Wedding Destinations | europe wedding destinations (in Firecrawl map) |
+| `/destination-weddings/north-america-wedding-destinations` | 15 North America Wedding Destinations for Aussie Couples | north america wedding destinations (in Firecrawl map) |
+| `/destination-weddings/getting-married-in-oman` | How to Get Married in Oman as a Foreigner | getting married in oman (LIVE, HTTP 200, published 24 Nov 2026) |
+| `/destinations/europe/switzerland` | Get Wedded in Switzerland | (LIVE, HTTP 200, 24 Nov 2026; FAQ: winter December to March) |
+| `/get-wedded-in-qatar` | Get Wedded in Qatar | (LIVE, HTTP 200, 24 Nov 2026; FAQ: best time November to April; on-page enquiry form shows "Form Not Found", flag to web team) |
+| `/destination-weddings/wedding-destinations-february` | Wedding Destinations in February and Our 10 Best Picks (WC3-T703, WW-287) | wedding destinations february, february wedding destinations, best places to get married in february | DRAFT (24 Nov 2026; URL was 404, new post) |
+
 ## Do not link from blogs
 
 | URL | Reason |
