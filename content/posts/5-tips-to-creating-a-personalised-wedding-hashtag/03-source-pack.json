@@ -1,0 +1,354 @@
+{
+ "agent": "planner-sme",
+ "task_id": "5-tips-to-creating-a-personalised-wedding-hashtag",
+ "stage": "03",
+ "status": "complete",
+ "round": 1,
+ "inputs_used": [
+  "content/posts/5-tips-to-creating-a-personalised-wedding-hashtag/00-input.json",
+  "content/posts/wedding-photo-app/03-source-pack.json",
+  "https://help.instagram.com/351460621611097",
+  "content-system/schemas/03-source-pack.schema.json",
+  "content-system/schemas/envelope.schema.json"
+ ],
+ "self_qa": {
+  "checks": [
+   {
+    "check": "Every fact has a source and date",
+    "pass": true
+   },
+   {
+    "check": "No price without a source; all prices in needs_signoff",
+    "pass": true,
+    "note": "No prices recorded. needs_signoff empty."
+   },
+   {
+    "check": "Every must-include covered or [[VERIFY]]",
+    "pass": true,
+    "note": "Must-includes taken from 00-input.json notes and the orchestrator task (no 01-brief.json, 02-seo.json or research report exist)."
+   },
+   {
+    "check": "No invented quotes, statistics or real weddings",
+    "pass": true,
+    "note": "No statistics, no app or generator feature claims, no real weddings, no quotes."
+   }
+  ],
+  "confidence": 0.8
+ },
+ "open_questions": [
+  {
+   "to": "luxury-writer",
+   "question": "The OAIC Privacy Act quote in fact_09 (dash as published) must be rephrased without dashes. Hashtag rules are Instagram-only as at November 2026; name the platform and do not extend them to others. Privacy points are general information only, not legal advice.",
+   "blocking": false
+  },
+  {
+   "to": "orchestrator",
+   "question": "Read help.instagram.com/273447449440719 (Who can see private Instagram posts with hashtags) if the article will say who sees private-account tagged posts?",
+   "blocking": false
+  }
+ ],
+ "assumptions": [
+  "Batch ht_a, one read round, 26 November 2026.",
+  "eSafety and OAIC facts reused verbatim from content/posts/wedding-photo-app/03-source-pack.json (original fact id noted in each fact's conflicts field); renumbered fact_01 to fact_14. No assumption or Wedded Advisor lines copied from that pack.",
+  "Instagram Help Centre recorded with source_type 'other' (schema has no platform category).",
+  "Hashtag examples in the article use placeholder names only; no real couples or tags.",
+  "No booking checklist items: this post covers no venue."
+ ],
+ "verify_items": [
+  "[[VERIFY: who can see posts from private Instagram accounts that use a hashtag (for example, approved followers). The 'Use hashtags' page only says private-profile posts won't appear publicly on hashtag pages; the related article 'Who can see private Instagram posts with hashtags' (help.instagram.com/273447449440719) was not read in this round.]]",
+  "[[VERIFY: hashtag and privacy behaviour on any platform other than Instagram (for example TikTok or Facebook). Only the Instagram Help Centre page was read; do not generalise its rules to other platforms.]]",
+  "[[VERIFY: whether a hashtag can be 'reserved' or checked as unused. Not stated on the page read; the article must not claim a tag is unique or owned.]]"
+ ],
+ "tools_used": [
+  "mcp__Lead_MCP__firecrawl_scrape",
+  "Bash"
+ ],
+ "next_agent": [
+  "luxury-writer"
+ ],
+ "payload": {
+  "facts": [
+   {
+    "fact_id": "fact_01",
+    "claim": "eSafety Commissioner, 'Consent for sharing photos and videos' (read 23 November 2026, a page in its Young people section): 'You should always ask for consent before sharing a photo or video.'",
+    "source": "https://www.esafety.gov.au/young-people/consent-sharing-photos-videos",
+    "source_type": "government",
+    "checked": "2026-11-23",
+    "is_price": false,
+    "conflicts": "None. Reused verbatim (claim, source, checked date) from content/posts/wedding-photo-app/03-source-pack.json fact_01."
+   },
+   {
+    "fact_id": "fact_02",
+    "claim": "eSafety (same page): 'If someone asks you to remove a photo or video, you should do it, no questions asked.'",
+    "source": "https://www.esafety.gov.au/young-people/consent-sharing-photos-videos",
+    "source_type": "government",
+    "checked": "2026-11-23",
+    "is_price": false,
+    "conflicts": "None. Reused verbatim (claim, source, checked date) from content/posts/wedding-photo-app/03-source-pack.json fact_02."
+   },
+   {
+    "fact_id": "fact_03",
+    "claim": "eSafety (same page): 'If you're planning to share any images or videos online, it's best to make sure the person or people in the photos or videos are okay with it too.' It lists photos or videos taken with 'a phone or tablet', smart glasses, and 'any other device that can take photos or record video.'",
+    "source": "https://www.esafety.gov.au/young-people/consent-sharing-photos-videos",
+    "source_type": "government",
+    "checked": "2026-11-23",
+    "is_price": false,
+    "conflicts": "None. Reused verbatim (claim, source, checked date) from content/posts/wedding-photo-app/03-source-pack.json fact_04."
+   },
+   {
+    "fact_id": "fact_04",
+    "claim": "eSafety (same page): 'Also remember that consent can be reversed. So even if someone said yes to an image or video being posted, they can change their mind. If that happens you need to delete the photo or video from where it was posted, or edit them out of the shot.'",
+    "source": "https://www.esafety.gov.au/young-people/consent-sharing-photos-videos",
+    "source_type": "government",
+    "checked": "2026-11-23",
+    "is_price": false,
+    "conflicts": "None. Reused verbatim (claim, source, checked date) from content/posts/wedding-photo-app/03-source-pack.json fact_05."
+   },
+   {
+    "fact_id": "fact_05",
+    "claim": "eSafety (same page, Tips): 'Once you make a post or share something online, you can lose control of the content and how other people share or use it.'",
+    "source": "https://www.esafety.gov.au/young-people/consent-sharing-photos-videos",
+    "source_type": "government",
+    "checked": "2026-11-23",
+    "is_price": false,
+    "conflicts": "None. Reused verbatim (claim, source, checked date) from content/posts/wedding-photo-app/03-source-pack.json fact_06."
+   },
+   {
+    "fact_id": "fact_06",
+    "claim": "eSafety (same page, Tips): 'Ask before sharing photos or videos of people' and 'if they say they're uncomfortable with a photo or video being shared, then respect what they've said. Keep the photo or video to yourself or edit the person out.'",
+    "source": "https://www.esafety.gov.au/young-people/consent-sharing-photos-videos",
+    "source_type": "government",
+    "checked": "2026-11-23",
+    "is_price": false,
+    "conflicts": "None. Reused verbatim (claim, source, checked date) from content/posts/wedding-photo-app/03-source-pack.json fact_07."
+   },
+   {
+    "fact_id": "fact_07",
+    "claim": "eSafety (same page): 'You can be in control of what you are tagged in and update settings to either review the photos you are tagged in, or make sure that no one is able to tag you.'",
+    "source": "https://www.esafety.gov.au/young-people/consent-sharing-photos-videos",
+    "source_type": "government",
+    "checked": "2026-11-23",
+    "is_price": false,
+    "conflicts": "None. Reused verbatim (claim, source, checked date) from content/posts/wedding-photo-app/03-source-pack.json fact_09."
+   },
+   {
+    "fact_id": "fact_08",
+    "claim": "OAIC, 'Photos and videos' (page modified 26 September 2024, read 23 November 2026): 'Photos and videos of you are treated as personal information under the Privacy Act 1988 if your identity is clear or could reasonably be worked out. Your privacy rights for photos and videos will depend on the situation.'",
+    "source": "https://www.oaic.gov.au/privacy/your-privacy-rights/social-media-and-online-privacy/photos-and-videos",
+    "source_type": "government",
+    "checked": "2026-11-23",
+    "is_price": false,
+    "conflicts": "None. Reused verbatim (claim, source, checked date) from content/posts/wedding-photo-app/03-source-pack.json fact_10."
+   },
+   {
+    "fact_id": "fact_09",
+    "claim": "OAIC (same page, 'Taken without permission'): 'If the photo or video was taken by someone acting in a personal capacity, the Privacy Act doesn't apply — because it doesn't cover individuals.' (Dash quoted as published; do not reuse in body copy.)",
+    "source": "https://www.oaic.gov.au/privacy/your-privacy-rights/social-media-and-online-privacy/photos-and-videos",
+    "source_type": "government",
+    "checked": "2026-11-23",
+    "is_price": false,
+    "conflicts": "None. Reused verbatim (claim, source, checked date) from content/posts/wedding-photo-app/03-source-pack.json fact_11."
+   },
+   {
+    "fact_id": "fact_10",
+    "claim": "OAIC (same page): 'In some situations, there may be state or territory laws that prevent someone photographing your private activities without your consent.'",
+    "source": "https://www.oaic.gov.au/privacy/your-privacy-rights/social-media-and-online-privacy/photos-and-videos",
+    "source_type": "government",
+    "checked": "2026-11-23",
+    "is_price": false,
+    "conflicts": "None. Reused verbatim (claim, source, checked date) from content/posts/wedding-photo-app/03-source-pack.json fact_12."
+   },
+   {
+    "fact_id": "fact_11",
+    "claim": "OAIC (same page, 'Posted online without permission'): 'First, ask the person who posted the photo or video online to take it down. If they refuse, or you don't know who it is, contact the site's administrator and ask them to remove the photo or video.'",
+    "source": "https://www.oaic.gov.au/privacy/your-privacy-rights/social-media-and-online-privacy/photos-and-videos",
+    "source_type": "government",
+    "checked": "2026-11-23",
+    "is_price": false,
+    "conflicts": "None. Reused verbatim (claim, source, checked date) from content/posts/wedding-photo-app/03-source-pack.json fact_13."
+   },
+   {
+    "fact_id": "fact_12",
+    "claim": "eSafety Commissioner, 'Privacy and your child' (parents), read 23 November 2026: \"Always check with other parents before posting, sharing or tagging images or videos that include their children.\"",
+    "source": "https://www.esafety.gov.au/parents/issues-and-advice/privacy-child",
+    "source_type": "government",
+    "checked": "2026-11-23",
+    "is_price": false,
+    "conflicts": "None. Reused verbatim (claim, source, checked date) from content/posts/wedding-photo-app/03-source-pack.json fact_21."
+   },
+   {
+    "fact_id": "fact_13",
+    "claim": "eSafety Commissioner, 'Privacy and your child' (parents), read 23 November 2026: \"Only share with people you really know and trust. Rather than posting to all your friends on social media, you can be selective and use the privacy settings to limit who can see them.\"",
+    "source": "https://www.esafety.gov.au/parents/issues-and-advice/privacy-child",
+    "source_type": "government",
+    "checked": "2026-11-23",
+    "is_price": false,
+    "conflicts": "None. Reused verbatim (claim, source, checked date) from content/posts/wedding-photo-app/03-source-pack.json fact_22."
+   },
+   {
+    "fact_id": "fact_14",
+    "claim": "eSafety Commissioner, 'Privacy and your child' (parents), read 23 November 2026: if a photo or video of your child has been posted online without your permission, \"As a first step, you can ask the person who posted the photo or video to delete it.\"",
+    "source": "https://www.esafety.gov.au/parents/issues-and-advice/privacy-child",
+    "source_type": "government",
+    "checked": "2026-11-23",
+    "is_price": false,
+    "conflicts": "None. Reused verbatim (claim, source, checked date) from content/posts/wedding-photo-app/03-source-pack.json fact_23."
+   },
+   {
+    "fact_id": "fact_15",
+    "claim": "Instagram Help Centre, 'Use hashtags on Instagram' (read 26 November 2026): 'You can add hashtags in the caption or comments of your post. If you have a public account and add hashtags to a post, the post will be visible on the corresponding hashtag page.'",
+    "source": "https://help.instagram.com/351460621611097",
+    "source_type": "other",
+    "checked": "2026-11-26",
+    "is_price": false,
+    "conflicts": "None found. Official platform help page (Meta), recorded as stated; source_type 'other' because the schema has no platform category."
+   },
+   {
+    "fact_id": "fact_16",
+    "claim": "Instagram Help Centre (same page, Things to keep in mind): 'When people with private profiles tag posts, they won't appear publicly on hashtag pages.'",
+    "source": "https://help.instagram.com/351460621611097",
+    "source_type": "other",
+    "checked": "2026-11-26",
+    "is_price": false,
+    "conflicts": "None found. Official platform help page (Meta), recorded as stated; source_type 'other' because the schema has no platform category."
+   },
+   {
+    "fact_id": "fact_17",
+    "claim": "Instagram Help Centre (same page): 'After you tag your post with a hashtag, you'll be able to click the hashtag to see a page that shows all photos and videos people have uploaded with that hashtag.'",
+    "source": "https://help.instagram.com/351460621611097",
+    "source_type": "other",
+    "checked": "2026-11-26",
+    "is_price": false,
+    "conflicts": "None found. Official platform help page (Meta), recorded as stated; source_type 'other' because the schema has no platform category."
+   },
+   {
+    "fact_id": "fact_18",
+    "claim": "Instagram Help Centre (same page): 'Numbers are allowed in hashtags. However, spaces and special characters, like $ or %, won't work.'",
+    "source": "https://help.instagram.com/351460621611097",
+    "source_type": "other",
+    "checked": "2026-11-26",
+    "is_price": false,
+    "conflicts": "None found. Official platform help page (Meta), recorded as stated; source_type 'other' because the schema has no platform category."
+   },
+   {
+    "fact_id": "fact_19",
+    "claim": "Instagram Help Centre (same page): 'You can only tag your own posts. You can't tag other people's photos/videos.' and 'If you want to add a hashtag to a post you've already uploaded, edit the caption or include your hashtag in a comment on your photo.'",
+    "source": "https://help.instagram.com/351460621611097",
+    "source_type": "other",
+    "checked": "2026-11-26",
+    "is_price": false,
+    "conflicts": "None found. Official platform help page (Meta), recorded as stated; source_type 'other' because the schema has no platform category."
+   },
+   {
+    "fact_id": "fact_20",
+    "claim": "Instagram Help Centre (same page): 'You can use up to 5 tags on a post. If you include more than 5 tags on a single photo/video, your comment won't post.' (Platform rule as published on the day read; may change. Writer may omit.)",
+    "source": "https://help.instagram.com/351460621611097",
+    "source_type": "other",
+    "checked": "2026-11-26",
+    "is_price": false,
+    "conflicts": "None found. Official platform help page (Meta), recorded as stated; source_type 'other' because the schema has no platform category."
+   }
+  ],
+  "insider_details": [
+   {
+    "detail": "Tell guests that a public post with your tag appears on the tag's page for anyone to see, while posts from private profiles won't show there publicly. Couples who want a quieter gallery should say so on the invitation or welcome note rather than rely on the tag.",
+    "fact_ids": [
+     "fact_15",
+     "fact_16",
+     "fact_17"
+    ]
+   },
+   {
+    "detail": "Build the tag from letters and numbers only (a wedding year works); spaces and symbols such as $ or % break it on Instagram, so test the exact spelling before it goes on stationery.",
+    "fact_ids": [
+     "fact_18"
+    ]
+   },
+   {
+    "detail": "Pair the hashtag with a short consent line for guests: ask before posting people, take a photo down if asked, and check with parents before posting children. These come straight from eSafety guidance.",
+    "fact_ids": [
+     "fact_01",
+     "fact_02",
+     "fact_06",
+     "fact_12"
+    ]
+   },
+   {
+    "detail": "Set expectations that a hashtag gathers posts but doesn't control them: once shared, content can be reshared, and the OAIC notes the Privacy Act doesn't cover individuals posting in a personal capacity. A guest who wants an image removed should first ask the person who posted it.",
+    "fact_ids": [
+     "fact_05",
+     "fact_09",
+     "fact_11"
+    ]
+   },
+   {
+    "detail": "Guests can manage what they're tagged in through their own settings, so mention this in the welcome pack for anyone who prefers not to be identified.",
+    "fact_ids": [
+     "fact_07"
+    ]
+   }
+  ],
+  "quotes": [],
+  "real_weddings": [],
+  "verify_items": [
+   "[[VERIFY: who can see posts from private Instagram accounts that use a hashtag (for example, approved followers). The 'Use hashtags' page only says private-profile posts won't appear publicly on hashtag pages; the related article 'Who can see private Instagram posts with hashtags' (help.instagram.com/273447449440719) was not read in this round.]]",
+   "[[VERIFY: hashtag and privacy behaviour on any platform other than Instagram (for example TikTok or Facebook). Only the Instagram Help Centre page was read; do not generalise its rules to other platforms.]]",
+   "[[VERIFY: whether a hashtag can be 'reserved' or checked as unused. Not stated on the page read; the article must not claim a tag is unique or owned.]]"
+  ],
+  "needs_signoff": [],
+  "must_include_coverage": [
+   {
+    "item": "How hashtags work and how public vs private accounts affect who sees tagged posts (one platform help page)",
+    "covered_by": [
+     "fact_15",
+     "fact_16",
+     "fact_17",
+     "[[VERIFY: who can see posts from private Instagram accounts that use a hashtag (for example, approved followers). The 'Use hashtags' page only says private-profile posts won't appear publicly on hashtag pages; the related article 'Who can see private Instagram posts with hashtags' (help.instagram.com/273447449440719) was not read in this round.]]"
+    ]
+   },
+   {
+    "item": "Practical tag formatting rules (as stated by the platform)",
+    "covered_by": [
+     "fact_18",
+     "fact_19",
+     "fact_20"
+    ]
+   },
+   {
+    "item": "eSafety guidance on sharing images of people (consent, removal)",
+    "covered_by": [
+     "fact_01",
+     "fact_02",
+     "fact_03",
+     "fact_04",
+     "fact_05",
+     "fact_06",
+     "fact_07"
+    ]
+   },
+   {
+    "item": "eSafety guidance on sharing images of children",
+    "covered_by": [
+     "fact_12",
+     "fact_13",
+     "fact_14"
+    ]
+   },
+   {
+    "item": "OAIC: photos as personal information and whether the Privacy Act covers individuals acting privately",
+    "covered_by": [
+     "fact_08",
+     "fact_09",
+     "fact_10",
+     "fact_11"
+    ]
+   },
+   {
+    "item": "Other platforms' hashtag/privacy rules",
+    "covered_by": [
+     "[[VERIFY: hashtag and privacy behaviour on any platform other than Instagram (for example TikTok or Facebook). Only the Instagram Help Centre page was read; do not generalise its rules to other platforms.]]"
+    ]
+   }
+  ]
+ }
+}
