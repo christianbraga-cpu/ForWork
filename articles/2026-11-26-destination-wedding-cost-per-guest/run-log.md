@@ -37,3 +37,4 @@
   - **SITE-CONFLICTS:** the Maldives green tax is "per night" on one page and "per day" on another.
   - Firecrawl credits ran out (FIRECRAWL-CREDITS); Apify used instead.
 - **Decision (default, changed):** the primary category is Destination Weddings, because Zoho WC3-T324 and categories.md both say so. Real Weddings is dropped as primary (CATEGORY-SWITCH: revert if you want Real Weddings).
+- **23:23 check-in:** the researcher is held on an MCP permission prompt. 67 facts saved (23:20) across 14 of our cost pages, plus ACCC and Smartraveller. Above the threshold of 4 pages, so the writer started on the saved facts with an inline brief.
