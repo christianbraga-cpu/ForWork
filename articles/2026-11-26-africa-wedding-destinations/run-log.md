@@ -38,3 +38,11 @@
   - Link-map "Africa destinations" section added.
 - The researcher is held on an MCP permission prompt.
 - **05:50 check-in:** the researcher is intermittently held on MCP permission prompts. 16 facts across 4 countries (Seychelles, Kenya, Tanzania, South Africa). Below the 8-country threshold, so the writer waits.
+- **Stage 1 fast (research):** DONE. 35 facts on the final shortlist.
+  - **Per country:** Seychelles 6, Mauritius 5, Kenya 4, Tanzania 4, South Africa 4, Morocco 3, Egypt 3, Botswana 2, Zambia 1, Zimbabwe 1, plus 2 shared.
+  - **Official legal facts:** South Africa, Kenya, Seychelles, Morocco, Egypt, Tanzania.
+  - **FACT-GAP-LEGAL:** Mauritius, Botswana, Zambia, Zimbabwe, Zanzibar, Morocco (no Moroccan government page).
+  - **Conflicts:** the Seychelles licence fee (SR500 vs SR100); the SA certificate fees vs our page; the Cape Town season is unconfirmed (needs SAWS).
+  - Weather lines are Firecrawl extractions (recheck). 4 government fees are flagged for Nic.
+- **Decision (default):** no government fees are stated in this overview (the legal pages are linked instead), so no conflicting figure appears.
+- Stage 2: writer launched.
