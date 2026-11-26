@@ -186,7 +186,7 @@ Link when the topic matches:
 `/expert-advice/how-long-is-a-honeymoon-a-guide-by-destination`,
 `/expert-advice/a-guide-on-where-to-go-on-honeymoon-in-<month>` (january to december),
 `/expert-advice/best-asia-honeymoon-destinations-where-to-go-and-when-to-visit`,
-`/expert-advice/african-honeymoons-private-safari-and-island-escapes-by-season`,
+`/expert-advice/african-honeymoons-private-safari-and-island-escapes-by-season` (REDIRECTS to /honeymoon-ideas/african-honeymoon, 26 Nov 2026; link the target),
 `/trending/how-was-dolly-partons-lost-wedding-dress-found`,
 `/trending/inside-bella-hadids-30th-birthday-weekend-at-blackberry-farm`.
 
@@ -482,6 +482,27 @@ No dedicated Decor and Florals hub exists. The /blog/decor category page is the 
 | `/destinations/europe/switzerland` | Get Wedded in Switzerland | (LIVE, HTTP 200, 24 Nov 2026; FAQ: winter December to March) |
 | `/get-wedded-in-qatar` | Get Wedded in Qatar | (LIVE, HTTP 200, 24 Nov 2026; FAQ: best time November to April; on-page enquiry form shows "Form Not Found", flag to web team) |
 | `/destination-weddings/wedding-destinations-february` | Wedding Destinations in February and Our 10 Best Picks (WC3-T703, WW-287) | wedding destinations february, february wedding destinations, best places to get married in february | DRAFT (24 Nov 2026; URL was 404, new post; final ready 25 Nov, not published) |
+
+## Africa destinations (Firecrawl map and scrape, 26 Nov 2026)
+
+All rows below were scraped on 26 Nov 2026: HTTP 200 and og:url equal to the URL unless marked.
+
+| URL | Title | Owns |
+|---|---|---|
+| `/destination-weddings/weddings-in-south-africa` | Weddings in South Africa: Legal Steps for Foreign Couples | weddings in south africa (LIVE, published 23 Nov 2026, Zoho WC3-T319) |
+| `/destination-weddings/getting-married-in-seychelles` | How to Get Married in the Seychelles, Step by Step | getting married in seychelles (LIVE) |
+| `/destination-weddings/mauritius-wedding` | Mauritius Wedding: Legal Requirements and Steps | mauritius wedding (LIVE; page is tagged "East Africa") |
+| `/honeymoon-ideas/african-honeymoon` | African Honeymoons: Private Safari and Island Escapes by Season | african honeymoons, safari honeymoon (LIVE, Zoho WC3-T444) |
+| `/expert-advice/african-honeymoons-private-safari-and-island-escapes-by-season` | African Honeymoons (REDIRECT) | (none) | REDIRECTS to /honeymoon-ideas/african-honeymoon (Firecrawl, 26 Nov 2026); link the target, not this URL |
+| `/expert-advice/middle-east-honeymoon` | The 10 Best Middle East Honeymoon Destinations for Couples | middle east honeymoon destinations (LIVE; covers Marrakech and Egypt) |
+| `/enchanting-desert-destinations-for-a-middle-eastern-wedding` | Enchanting Desert Destinations for a Middle Eastern Wedding | desert wedding destinations (LIVE, 2023; Morocco and Egypt venues) |
+| `/glam-south-african-winery-makes-perfect-destination-wedding` | Glam South African Winery Makes Perfect Destination Wedding | (real wedding, MolenVliet, Cape Winelands; LIVE, 2018) |
+| `/a-dreamy-wedding-at-la-roche-estate-south-africa` | A Dreamy Wedding at La Roche Estate, South Africa | (real wedding; LIVE, 2023) |
+| `/top-5-honeymoon-destinations-in-south-africa-for-newlyweds` | Top 5 Honeymoon Destinations in South Africa for Newlyweds | (LIVE, 2024; older, use sparingly) |
+| `/destinations/africa/south-africa`, `/destinations/africa/mauritius`, `/destinations/africa/seychelles`, `/destinations/africa/morocco` | Destination pages (Zoho WC3-T1144, T1126, T1138, T1133 in Review) | NOT LIVE: 404 "Destination Not Found" on 26 Nov 2026; do not link until launched |
+| `/destination-weddings/africa-wedding-destinations` | Africa Wedding Destinations From Safari to Coast (WC3-T198, WW-300) | africa wedding destinations, african destination wedding, safari wedding, wedding in africa | DRAFT (26 Nov 2026; URL was 404, new post) |
+
+Note: `/destinations/africa` stays in "Do not link" (hidden). Also seen in the map, not checked: `/blog/africa` (tag listing), `/expert-advice/where-to-go-on-honeymoon-in-june` and `-july` (safari season mentions).
 
 ## Do not link from blogs
 

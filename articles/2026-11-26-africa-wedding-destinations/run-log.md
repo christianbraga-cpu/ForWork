@@ -27,3 +27,13 @@
 
 ## Stages
 - Stage 0 and 1 launched in parallel (both save early).
+- **Stage 0 fast (strategist):** DONE.
+  - **URL:** 404, so a new post. Zoho WC3-T198 (To-Do, WW-300).
+  - **Live pages:** the South Africa, Seychelles and Mauritius legal pages; the African honeymoon page (the old expert-advice URL redirects to it).
+  - **AFRICA-HUB-404 (for the user):** the four /destinations/africa/* country pages return 404, although Zoho shows them in Review. Not linked.
+  - **Volumes:** the head term has no data in AU or US. AU about 10 a month per variant. US: african destination wedding 30, safari wedding 90, wedding in africa 40.
+  - **SERP:** weak in all four cities (Pinterest, Instagram, old blogs). The SERP URLs came back as redirect links (null in 01-serp.json).
+  - **Gap:** nobody gives legal steps, the advice level or guest logistics per destination.
+  - **Titles:** SEO title "Africa Wedding Destinations From Safari Camps to the Coast". Meta 155 characters.
+  - Link-map "Africa destinations" section added.
+- The researcher is held on an MCP permission prompt.
