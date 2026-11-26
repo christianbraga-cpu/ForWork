@@ -28,3 +28,10 @@
 
 ## Stages
 - Stage 0 and 1 launched in parallel (both save early).
+- **Stage 1 fast (research):** DONE. 99 facts (71 reused, 28 new); superseded Lake Como facts dropped. 22 price rows; 57 facts for Nic; 10 conflicts; needs N-01 to N-11.
+  - **Usable split:** Italy 35/21/17/27%, from our Italy page, which cites an Italian research body (ITALY-SPLIT-SOURCE).
+  - The Studio 45 to 50% split is only a sample chatbot answer, so it is not used.
+  - Moneysmart covers paying in foreign currency.
+  - **CONTINGENCY-GAP:** no page gives a contingency figure.
+  - **SITE-CONFLICTS:** the vs-home page still shows the old Lake Como figures.
+- Stage 2: writer launched (the strategist is still running; the writer re-reads the brief before saving).
