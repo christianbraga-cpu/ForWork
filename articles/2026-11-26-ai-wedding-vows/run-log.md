@@ -62,3 +62,14 @@
   - YAML valid: 24 claims, 12 links.
   - All 13 items applied. The Concierge line uses brand-profile wording. The login-gated ai-chat link was dropped. OAIC is not linked (advice only).
 - Stage 6: copy editor launched.
+- **Stage 6 fast (copy editor):** DONE. final.md 1,524 reader words, 0 dashes, 0 placeholders; YAML 24 claims, 12 links.
+  - publish-package.json valid (13 open items). chrome-upload-prompt.md is draft only and creates a new post after a slug check. article.docx built.
+- The researcher was still held on a permission prompt at the end; the article did not need its remaining work.
+
+## Must-fix before publish
+1. NEW-URL: the URL was 404. Create a new post (Zoho WC3-T1003).
+2. NIC-SIGNOFF (STUDIO-AI-PRICE): "free" for Studio (the primary live page says free; another page says a 7-day trial, then paid). Fallback: "our planning hub" and "Start planning".
+3. VOWS-URL (for the user): /how-to-write-wedding-vows vs /planning/how-to-write-wedding-vows. The /planning/ URL is canonical and linked.
+4. LINK-CHECK: live checks failed in review. Re-check legislation.gov.au, ag.gov.au and our quoted vows and Studio pages on publish day.
+5. WEB-TEAM: the how-to-write page's Concierge box uses a banned brand word.
+6. STUDIO-AI-LOGIN (ai-chat is login-gated, not linked), CATEGORY-CHECK (Wedding Tools), CONCIERGE-PAY, AUTHOR, IMAGE-RIGHTS, CMS-URL.
