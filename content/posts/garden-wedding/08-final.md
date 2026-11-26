@@ -61,7 +61,7 @@ In Dubai, [Rasha and Mahmoud](/a-vibrant-garden-wedding-in-dubai) split their we
 
 ### Helen and Trent
 
-[Helen and Trent](/helen-and-trents-intimate-garden-wedding) exchanged vows on her family's private estate in Victoria. Their garden reception sat beneath a white marquee that the couple styled themselves, with hanging foliage and paper lanterns.
+[Helen and Trent](/helen-and-trents-intimate-garden-wedding) married on a private estate that belongs to her family in Victoria. For the garden reception, the couple styled a white marquee themselves with hanging foliage and paper lanterns.
 
 ## Garden wedding ideas for the ceremony
 
@@ -222,7 +222,7 @@ A garden abroad asks every question above, with distance added.
 
 For venues closer to home, start with [weddings across Oceania](/destinations/oceania). To set the order of decisions, read [how to plan a destination wedding](/expert-advice/how-to-plan-a-destination-wedding), and if sand appeals as much as lawn, compare our [beach wedding ideas](/real-weddings/beach-wedding).
 
-Through [Wedded Concierge](/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=garden-wedding&utm_content=secondary), a Wedded Advisor works in your time zone, quotes in AUD and confirms inclusions in writing before you commit.
+Through [Wedded Concierge](/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=garden-wedding&utm_content=secondary), a Wedded Advisor works in your time zone, quotes in AUD for Australian couples and confirms inclusions in writing before you commit.
 
 ## Frequently asked questions
 

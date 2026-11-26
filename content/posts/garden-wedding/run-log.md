@@ -7,3 +7,4 @@
 22:42 07 readers complete (enquire 1 to 3)
 22:45 06 editor pass_with_edits 4.21; 13 of 14 applied (kept live marquee link; added it to link map; centrepieces marked live)
 22:49 07b panel revise (weighted enquire 2.1); 12 edits applied to 08-final.md; accepted after one round
+22:51 final check pass_with_edits 4.36; 1 edit applied; body Advisor line set to exact brand-facts wording (for Australian couples)
