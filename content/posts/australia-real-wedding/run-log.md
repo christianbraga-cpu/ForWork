@@ -4,3 +4,4 @@
 23:08 03 au_a complete (9 reused facts: AGD, BoM Hamilton Island, Cancer Council)
 23:28 02 seo complete; 12 stories mapped; decisions on Samira and Tom, Nick and Lauren, Hayman card wording; link map updated
 23:32 05 draft complete (~2,085 words); first-draft docx built
+23:34 07 readers complete (enquire 1 to 2)
