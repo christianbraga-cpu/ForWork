@@ -35,3 +35,10 @@
   - **CONTINGENCY-GAP:** no page gives a contingency figure.
   - **SITE-CONFLICTS:** the vs-home page still shows the old Lake Como figures.
 - Stage 2: writer launched (the strategist is still running; the writer re-reads the brief before saving).
+- **Stage 0 fast (strategist):** DONE.
+  - **URL:** 404, so a new post. Partial overlap; the closest is the live /expert-advice/wedding-budget. The planned WC3-T944 line-item checklist is on hold (keep it domestic).
+  - **Studio wording:** "Set a budget, log deposits and see what is left in every category" (no multi-currency claim).
+  - **Volumes:** AU 10, US 110; variants 10 or no data. **SERP:** weak and dated in all four cities. Competitor pages were not opened (Firecrawl credits out).
+  - **ZOHO-TASK:** none found; please create one.
+  - **Outline:** 9 H2s. SEO title "Destination Wedding Budget Planned Line by Line for 2027" (56 characters). Meta 153 characters.
+  - The writer was told about these.
