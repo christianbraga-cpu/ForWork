@@ -8,3 +8,5 @@
 22:45 06 editor pass_with_edits 4.21; 13 of 14 applied (kept live marquee link; added it to link map; centrepieces marked live)
 22:49 07b panel revise (weighted enquire 2.1); 12 edits applied to 08-final.md; accepted after one round
 22:51 final check pass_with_edits 4.36; 1 edit applied; body Advisor line set to exact brand-facts wording (for Australian couples)
+22:53 11 cms-publisher complete package-only; 11-body.md, 11-publish-package.json, 12-cms-report.md, booking-checklist.md; not uploaded (field map not mapped); 6 image slots needed; real wedding consent to confirm
+22:54 final docx and run report written
