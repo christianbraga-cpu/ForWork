@@ -48,3 +48,9 @@
     - Mykonos: the page arithmetic does not add up.
   - **Gaps:** no real client breakdown; no welcome dinner price; mira.gov.mv blocked.
   - The conflicts were sent to the writer (no conflicting figure stated as fact).
+- **Stage 2 fast (writer):** DONE. 03-draft-v1.md.
+  - --check: 3,069 reader words (over the 2,800 cap); 0 dashes; 0 visible placeholders. External: accc.gov.au, smartraveller.gov.au.
+  - YAML valid: 46 claims, 29 links. The front matter author field is a [[NEEDS]] (AUTHOR).
+  - All figures are in nic_signoff. Conflicts are kept out of the copy. Both Santorini drinks rates were cut (EUR 20 vs EUR 25 low end).
+  - The Phuket figure is unlinked (the page is not in link-map).
+- Reviews launched (accuracy, SEO, couple reader).
