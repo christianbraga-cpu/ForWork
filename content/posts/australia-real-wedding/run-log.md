@@ -8,3 +8,4 @@
 23:48 06 editor pass_with_edits 4.14; 18 edits applied to r2 (card details checked against live stories; Hayman Island named as the story names it, as a place)
 23:51 07b panel-chair revision; weighted enquire 1.7 (gate 3.8); 7 must_fix (3 open on deferred business facts / brief card rule); 11 edits p01 to p11 against r2; fact_09 dropped; validate.py all valid
 23:51 07b panel revise (weighted enquire 1.7); 11 edits applied to 08-final.md; accepted after one round (p03 'same venue' supported by editor's live read)
+23:53 10 distribution-lead complete; 3 pins (featured, country-vineyard, coast), 8 slides, newsletter; all assets on hold (slots needed); CTAs match 09-cro; validate.py all valid
