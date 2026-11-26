@@ -88,7 +88,7 @@ claims_register:
   - { id: C-35, text: "Our pages word website timing two ways: live first, since the card points to it (timeline page), and launch it when save-the-dates go out (planning tools page). No single rule stated.", fact_ref: "WW-07; WW-08", status: "sourced (own pages, quoted; TIMING-CONFLICT; WW-10 not used as it is medium confidence)" }
   - { id: C-36, text: "Our timeline page: invitations posted 4 to 6 months out and the reply-by date 10 to 12 weeks before the day.", fact_ref: WW-06, status: "sourced (own page)" }
   - { id: C-37, text: "Wedded Wonderland Concierge is based in Sydney and offers guest travel and accommodation concierge, one dedicated point of contact, and handles deposits, payments and currency across borders.", fact_ref: "BRAND: brand-profile.md 'Who we are', 'What we offer', proof points (/wonderland-concierge)", status: "sourced (brand)" }
-  - { id: C-38, text: "The Discovery Call is free, with a Wedded Wonderland advisor.", fact_ref: "BRAND: cta-library.md discovery_call; brand-profile.md", status: "sourced (brand; 'complimentary' not used)" }
+  - { id: C-38, text: "The Discovery Call is free, with a Wedded Wonderland advisor.", fact_ref: "BRAND: cta-library.md discovery_call; brand-profile.md", status: "sourced (brand)" }
   - { id: C-39, text: "Privacy line: read each platform's privacy policy before uploading a guest list; send a file individually or by BCC.", fact_ref: "EDITORIAL (L-04: advice only, no legal claim)", status: "advice, no legal claim" }
   - { id: C-40, text: "Online save the date and digital save the date mean the same thing.", fact_ref: "EDITORIAL (definition; secondary keyword)", status: "editorial" }
 links_register:
