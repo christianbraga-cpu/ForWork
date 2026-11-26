@@ -1,0 +1,130 @@
+{
+  "agent": "cro-specialist",
+  "task_id": "5-tips-to-creating-a-personalised-wedding-hashtag",
+  "stage": "09",
+  "status": "complete",
+  "round": 1,
+  "inputs_used": [
+    "CLAUDE.md",
+    "content-system/brand/services.md",
+    "content-system/brand/brand-facts.md",
+    "content-system/schemas/09-cro.schema.json",
+    "content-system/schemas/envelope.schema.json",
+    "content/posts/5-tips-to-creating-a-personalised-wedding-hashtag/01-brief.json (journey_stage, internal_links)",
+    "content/posts/5-tips-to-creating-a-personalised-wedding-hashtag/07-panel.json (must_fix, deferred, open_questions, gate)",
+    "content/posts/5-tips-to-creating-a-personalised-wedding-hashtag/07-icp/*.json (cta_reaction, likelihood_to_enquire)",
+    "content/posts/5-tips-to-creating-a-personalised-wedding-hashtag/08-final.md",
+    "content-system/seo/link-map.csv (/wonderland-concierge, /magazine)",
+    "content/posts/marriage-licence/09-cro.json (format model)"
+  ],
+  "self_qa": {
+    "checks": [
+      {
+        "check": "CTA text 6 words or fewer, no 'click here', no exclamation mark",
+        "pass": true,
+        "note": "Primary 'Begin with Wedded Concierge' (4 words), secondary 'Plan the weekend with Wedded Concierge' (6), closing 'Tell Wedded Concierge your date' (5), magnet 'Browse our digital magazine' (4)."
+      },
+      {
+        "check": "utm_content primary, secondary, closing and magnet each appear exactly once, all utm_medium=content, utm_campaign is the slug",
+        "pass": true,
+        "note": "grep on 08-final.md: magnet line 110, primary line 129, secondary line 194, closing line 206; 4 x utm_medium=content; campaign is 5-tips-to-creating-a-personalised-wedding-hashtag in all four (the older 'wedding-hashtag-generator' campaign quoted in the reader files is gone). No UTM link added."
+      },
+      {
+        "check": "Primary appears before secondary in the post",
+        "pass": true,
+        "note": "Primary line 129 (end of 'Hashtags for a wedding weekend'), secondary line 194 (FAQ 'Should we use one hashtag for the whole wedding weekend?')."
+      },
+      {
+        "check": "Every /wonderland-concierge anchor reads exactly 'Wedded Concierge'",
+        "pass": true,
+        "note": "All three anchors checked by grep."
+      },
+      {
+        "check": "Targets exist in the link map",
+        "pass": true,
+        "note": "/wonderland-concierge (commercial, default CTA target) and /magazine (lead magnet) both listed."
+      },
+      {
+        "check": "Advisor wording only from brand-facts 'Claims we can make'",
+        "pass": true,
+        "note": "Subtexts use 'single point of contact, start to finish', 'venue, travel, vendors and payments, anywhere in the world' and 'works in your time zone and quotes in AUD'. No fee wording in this file's subtexts."
+      },
+      {
+        "check": "No fees, commissions, deposits, availability, transfers, on-the-ground staff, room blocks, Wedded Privileges, phone lines, named people, prices, 'free', 'best', tool or AI claims added; no em dashes; no CTA marker comments",
+        "pass": true,
+        "note": "grep -i on 08-final.md found none of these terms in or near any CTA (the only hit, 'no questions asked', is in the eSafety paragraph). The closing paragraph's 'fee is agreed in writing before any work begins' is existing approved copy from brand-facts Claims we can make, set by the panel; this stage does not reuse or extend it. Magnet named without the services.md default 'free' wording. No <!-- CTA --> marker added. The magazine anchor 'our digital magazine' makes no tool claim, and the FAQ 'Do we need a wedding hashtag generator?' offers no tool."
+      },
+      {
+        "check": "08-final.md unchanged",
+        "pass": true,
+        "note": "Read only; md5 cfb30bb5c853fd04457393375d257e49 before and after; copy_changes is empty."
+      }
+    ],
+    "confidence": 0.87
+  },
+  "open_questions": [
+    {
+      "to": "orchestrator",
+      "question": "For the run report (answers the panel's open question to cro-specialist): the fee model, supplier commissions or mark-ups, deposits (and whose account payments pass through, protection if a supplier fails), a first phone call with a real person, on-the-day contact overseas, experience at scale (200 to 400 guests) and confidentiality or discretion belong on /wonderland-concierge, not in this post. These are what funding_parent, sceptic, planner_couple and uhnw said they would need before enquiring; all are deferred in brand-facts 'Confirmed business answers'. Raise with the business (Nic for anything priced) and re-run cro-specialist once confirmed.",
+      "blocking": false
+    },
+    {
+      "to": "orchestrator",
+      "question": "For the run report, open product decision: search_visitor came for a 'wedding hashtag generator' and the primary keyword implies a tool, but Wedded Wonderland offers none, so the post frames the method as 'a generator you run yourselves' and makes no tool claim. Whether to build a real on-site hashtag generator (for example inside Wonderland Studio) is a product decision for the business. If one ships and is listed in the link map, it would be the natural magnet or secondary for this post and cro-specialist should be re-run.",
+      "blocking": false
+    },
+    {
+      "to": "orchestrator",
+      "question": "08-final.md has no <!-- CTA: primary --> marker; placements rely on the existing inline links, as briefed. If the CMS template needs a CTA block anchor, handle it at the CMS stage. No copy change made.",
+      "blocking": false
+    }
+  ],
+  "assumptions": [
+    "Placements kept as they are: the primary already sits where the panel showed the planning question peaks (a weekend of events abroad, straight after the per-event suffix examples), and the readers' 'maybe, I'd want X first' items (fee model, commissions, a phone call with a person, a real multi-day wedding) cannot be added to this post, so moving CTAs would not change them.",
+    "CTA text and subtext fields describe the CMS button or summary for each existing link; the in-copy anchors stay 'Wedded Concierge' and 'our digital magazine'.",
+    "Journey stage 'planning' from 01-brief.json; the post is low intent (weighted enquiry 1.6 against the 3.8 gate, accepted by the panel chair as expected for the topic), so the magnet is the realistic conversion for most readers and Concierge serves the destination-weekend reader."
+  ],
+  "verify_items": [],
+  "tools_used": [
+    "Bash (cat, grep, md5sum, python3 -I validate.py)",
+    "Write"
+  ],
+  "payload": {
+    "journey_stage": "planning",
+    "primary_cta": {
+      "text": "Begin with Wedded Concierge",
+      "subtext": "One Wedded Advisor, start to finish, as your single point of contact.",
+      "link": "https://weddedwonderland.com/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=5-tips-to-creating-a-personalised-wedding-hashtag&utm_content=primary",
+      "placement": "Existing inline link closing 'Hashtags for a wedding weekend' (line 129: 'For a weekend of events in another country, one Wedded Advisor plans the venue, travel, vendors and payments... Begin with Wedded Concierge.'), directly after the welcome dinner, ceremony and farewell lunch suffix examples. This is where the reader's question turns from naming a weekend to planning one, and the panel's advisor_anchor edit already tied the line to that section. Unchanged."
+    },
+    "secondary_cta": {
+      "text": "Plan the weekend with Wedded Concierge",
+      "subtext": "Venue, travel, vendors and payments, planned anywhere in the world.",
+      "link": "https://weddedwonderland.com/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=5-tips-to-creating-a-personalised-wedding-hashtag&utm_content=secondary",
+      "placement": "Existing closing sentence of the FAQ answer 'Should we use one hashtag for the whole wedding weekend?' (line 194: 'For the events themselves, start with Wedded Concierge.'). Catches FAQ and featured-snippet readers who skip the body and land on the weekend question. Unchanged."
+    },
+    "closing_cta": {
+      "text": "Tell Wedded Concierge your date",
+      "subtext": "Your Wedded Advisor works in your time zone and quotes in AUD.",
+      "link": "https://weddedwonderland.com/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=5-tips-to-creating-a-personalised-wedding-hashtag&utm_content=closing",
+      "placement": "Existing final paragraph under 'Your wedding, planned around you' (line 206), after the time zone and AUD line. funding_parent and planner_couple both named this line as the calm, reassuring one. Unchanged."
+    },
+    "lead_magnet": {
+      "name": "Wedded Wonderland digital magazine",
+      "link": "https://weddedwonderland.com/magazine?utm_source=blog&utm_medium=content&utm_campaign=5-tips-to-creating-a-personalised-wedding-hashtag&utm_content=magnet",
+      "placement": "Existing line at the end of 'Destination and travel hashtags' (line 110: 'For places worth building a tag around, browse our digital magazine.'), for readers still choosing where to marry. search_visitor named it the one link they might tap. Unchanged.",
+      "exists": true
+    },
+    "tracking": [
+      "https://weddedwonderland.com/magazine?utm_source=blog&utm_medium=content&utm_campaign=5-tips-to-creating-a-personalised-wedding-hashtag&utm_content=magnet",
+      "https://weddedwonderland.com/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=5-tips-to-creating-a-personalised-wedding-hashtag&utm_content=primary",
+      "https://weddedwonderland.com/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=5-tips-to-creating-a-personalised-wedding-hashtag&utm_content=secondary",
+      "https://weddedwonderland.com/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=5-tips-to-creating-a-personalised-wedding-hashtag&utm_content=closing"
+    ],
+    "copy_changes": [],
+    "rationale": "Brief journey_stage is 'planning' and the brief routes the post to /wonderland-concierge (primary and closing) with /magazine as the magnet, which fits services.md for a planning-stage post with early-stage readers in the mix. All four tracked links already exist once each with utm_medium=content and the slug as campaign, primary before secondary, every concierge anchor reads 'Wedded Concierge', and both targets are in the link map, so no link, marker or copy is added and 08-final.md is untouched. The primary sits at the natural question peak (planning a multi-event weekend abroad) and the secondary answers the same question for FAQ readers. Panel cta_reactions: two 'maybe' (funding_parent, planner_couple) and three 'no' (sceptic, search_visitor, uhnw), weighted enquiry 1.6. What the 'maybe' readers want first is a conversation with a real person before any money changes hands, the fee model and commissions, and proof from a real multi-day wedding abroad; all are deferred business details that belong on /wonderland-concierge and are logged for the run report, so nothing can be moved ahead of the CTAs in this post. Subtexts use only brand-facts 'Claims we can make' and avoid fee, price and availability wording. The magnet is the realistic conversion for search_visitor and is already placed beside the destination ideas. Backlog suggestion: a printable 'hashtag and photo etiquette' welcome-sign card (the tag plus the ask-before-posting and children's photos line the post recommends) would suit this post as a magnet; none is known to exist (exists: false, not placed). Whether to build a real hashtag generator tool is an open product decision, logged for the run report."
+  },
+  "next_agent": [
+    "distribution"
+  ]
+}
