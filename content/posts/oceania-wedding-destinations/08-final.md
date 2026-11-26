@@ -14,20 +14,20 @@ round: 3
 
 Oceania wedding destinations run from the islands of Melanesia and Polynesia to New Zealand, Hawaii and Australia's own reef islands. As at November 2026, the South Pacific islands share a cyclone season that Smartraveller dates for each country, while Hawaii has its own wetter winter and New Zealand sits outside the tropics. <!-- fact_101 --> <!-- fact_112 --> <!-- fact_007 -->
 
-What separates them for a wedding is the calendar, the paperwork and how easily your guests get there. The ten below are unranked and grouped by region, each with its weather months, the legal position and two questions for a venue. For venues across the region, start with our [Pacific and Australian destination weddings](/destinations/oceania).
+What separates them for a wedding is the calendar, the paperwork and how easily your guests get there. The ten below are unranked and grouped by region, each with its weather months, the legal position and questions for a venue. For venues across the region, start with our [Pacific and Australian destination weddings](/destinations/oceania).
 
 ## Key takeaways
 
 - Ten places, unranked, in four groups: Melanesia (Fiji, Vanuatu, New Caledonia), Polynesia (Tahiti and French Polynesia, the Cook Islands, Samoa, Tonga, Hawaii), New Zealand and the Whitsundays.
 - As at November 2026, Smartraveller dates Fiji's cyclone season from November to April, so a covered ceremony space and a buffer day belong in the plan for much of the tropical South Pacific. <!-- fact_101 -->
-- The legal route differs by country, and where no official page sets out the steps, check with the destination's authorities or plan a symbolic ceremony.
+- The legal route differs by country, from a Ministry of Justice licence in the Cook Islands or a state licence in Hawaii to a symbolic ceremony in Fiji with the legal marriage at home. <!-- fact_136 --> <!-- fact_131 -->
 - For season and legal route side by side, jump to [the at-a-glance table](#oceania-wedding-destinations-at-a-glance).
 
 ## How we chose these Oceania destinations
 
 The list is grouped by region, not by merit, so read it as a map. In Fiji, Vanuatu, New Caledonia and Tonga, the legal answer is to ask the country's authorities or plan a symbolic ceremony. Six places do not yet have a guide of ours: Vanuatu, New Caledonia, Tahiti and French Polynesia, the Cook Islands, Samoa and Tonga. <!-- LINK: /destination-weddings/wedding-destinations-november when live -->
 
-Each weather figure below names its station and the years it covers, and these differ from place to place, so read each one on its own terms. <!-- fact_001 --> <!-- fact_003 --> <!-- fact_006 -->
+Rain swings widely across the region, from 46.0 mm in a Nadi July to 489.0 mm in an Apia January, so read each entry for the months you have in mind. <!-- fact_001 --> <!-- fact_003 -->
 
 ## Melanesia wedding destinations
 
@@ -78,7 +78,7 @@ Curfews and alcohol bans can come at short notice, flights may be suspended with
 
 **When to go.** The [WMO page for Noumea](https://worldweather.wmo.int/en/city.html?cityId=296), with 1961 to 1990 normals from Météo-France's regional service, records 134.6 mm in March, well under Nadi's 324.0 mm or Port Vila's 330.4 mm, and a July mean maximum of 22.6°C with 17.2°C nights, so plan wraps for an evening reception. <!-- fact_005 --> <!-- fact_001 --> <!-- fact_004 -->
 
-Smartraveller gives cyclone season as November to May, with cyclones and severe weather possible at other times. <!-- fact_110 -->
+As at November 2026, Smartraveller gives cyclone season as November to May, with cyclones and severe weather possible at other times. <!-- fact_110 -->
 
 **Getting married there.** New Caledonia is an overseas territory of France, where a mix of French and local laws apply. <!-- fact_111 --> Check with the destination's authorities, or plan a symbolic ceremony.
 
@@ -178,7 +178,7 @@ New Zealand swaps the reef for lakes, vineyards and mountains.
 
 **Why it suits a wedding.** Visitors can marry legally and apply for the licence online before they fly. <!-- fact_126 --> <!-- fact_128 --> The trade-off is a licence that ties the ceremony to the places you name on the application. <!-- fact_130 -->
 
-**When to go.** This page carries one recent month for New Zealand, not a long-term normal. For November 2025 only, [Earth Sciences New Zealand's summary of that month](https://niwa.co.nz/climate-and-weather/monthly/climate-summary-november-2025) records a nationwide 15.9°C, a new November record and 2.2°C warmer than the 1991 to 2020 normal. Low pressure carrying Coral Sea moisture soaked the upper and western North Island more than once. <!-- fact_009 --> <!-- fact_010 -->
+**When to go.** For November 2025 only, [Earth Sciences New Zealand's summary of that month](https://niwa.co.nz/climate-and-weather/monthly/climate-summary-november-2025) records a nationwide 15.9°C, a new November record and 2.2°C warmer than the 1991 to 2020 normal. Low pressure carrying Coral Sea moisture soaked the upper and western North Island more than once. <!-- fact_009 --> <!-- fact_010 -->
 
 **Getting married there.** As at November 2026, [New Zealand's marriage licence rules](https://www.govt.nz/browse/family-and-whanau/getting-married/get-a-marriage-licence/) ask you to arrange the licence at least 3 working days before the wedding, and it expires after 3 months. <!-- fact_125 --> <!-- fact_127 -->
 
@@ -192,7 +192,7 @@ On arrival you sign a declaration at a registry office, so list a covered back-u
 
 ## An Australian island wedding
 
-Closer to home, the reef islands offer warm water and Australian law, with no passport needed.
+Closer to home, the reef islands keep the wedding under Australian law, with no passport needed.
 
 <!-- IMAGE SLOT australia: Whitsunday or Great Barrier Reef island setting: white sand, reef-coloured water and green islands, an outdoor ceremony setup or no setup. No people, or a couple seen from behind or at a distance; no identifiable guests unless consent is in the register. Month taken must be recorded (register or EXIF); no season, wet season, dry season or cyclone wording in the caption unless a post source states it for that place and month. Weather lines stay in the copy (WMO or BOM station and period, Smartraveller as at November 2026), never in the caption. Location verified as Queensland islands, never inferred from appearance. Matches our Australian pages. Licensed or owned only; never AI. -->
 
@@ -216,7 +216,7 @@ August to October each sit below 30 mm, with 2.9 to 3.5 rain days. <!-- fact_006
 
 The Smartraveller cyclone months below are as at November 2026.
 
-| Destination | Region | Wet or cyclone season (as the source states it) | Getting married | Our guide |
+| Destination | Region | Wet or cyclone season | Getting married | Our guide |
 |---|---|---|---|---|
 | Fiji | Melanesia | Cyclone season November to April (Smartraveller); January to March wettest at Nadi (WMO) | Check with Fiji's authorities | [Fiji guide](/destinations/oceania/fiji) |
 | Vanuatu | Melanesia | Cyclone season November to April (Smartraveller); March wet at Port Vila (WMO) | Check with the destination's authorities | Not yet |
@@ -247,7 +247,7 @@ Our country guide to [where you can legally marry overseas](/destination-wedding
 
 An overseas marriage cannot be registered in Australia, but it is [generally recognised here](https://www.ag.gov.au/families-and-marriage/marriage/get-married) if it was valid where it took place and would have been valid here. <!-- fact_120 --> <!-- fact_124 -->
 
-Each country sets its own document list, which may include a CNI, so ask its embassy or consulate, as [Smartraveller advises for getting married overseas](https://www.smartraveller.gov.au/planning-trip/advice-your-planned-activities/getting-married-overseas). <!-- fact_122 -->
+Each country sets its own document list, which may include a CNI. As at November 2026, [Smartraveller's advice for getting married overseas](https://www.smartraveller.gov.au/planning-trip/advice-your-planned-activities/getting-married-overseas) is to ask that country's embassy or consulate. <!-- fact_122 -->
 
 ### Guests travelling from Australia
 
