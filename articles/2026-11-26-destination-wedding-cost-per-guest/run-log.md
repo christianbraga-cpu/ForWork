@@ -61,3 +61,8 @@
   - Merged request: 04-reviews/v1/merged.md.
 - /real-weddings/wedding-in-thailand-cost added to link-map (live, og:url per research).
 - Stage 4: writer v2 launched.
+- **Stage 4 fast (writer v2):** DONE. 03-draft-v2.md.
+  - --check: 2,748 reader words; 0 dashes; 0 placeholders in the body.
+  - YAML valid: 41 claims, 31 links.
+  - 22 of 23 items applied. The Dubai "valid until 30 December" was left out (it belongs to a separate Fairmont offer). The property credit line is cut.
+- Stage 6: copy editor launched.
