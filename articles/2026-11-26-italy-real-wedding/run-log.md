@@ -62,3 +62,8 @@
   - The Australian Embassy Rome marriage page is 404 (ITALY-LEGAL-OFFICIAL open).
   - /blog/real-weddings and /the-ultimate-destination-wedding-guide-italy are live (200) and were added to link-map.
 - Stage 4: writer v2 launched.
+- **Stage 4 fast (writer v2):** DONE. 03-draft-v2.md.
+  - --check: 1,829 reader words; 0 dashes; 0 placeholders.
+  - YAML valid: 24 claims, 33 links.
+  - All 18 items applied. The "See the full wedding" anchors are replaced with linked couple names.
+- Stage 6: copy editor launched (incl. facet template).
