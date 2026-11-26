@@ -66,3 +66,15 @@
   - YAML valid: 41 claims, 31 links.
   - 22 of 23 items applied. The Dubai "valid until 30 December" was left out (it belongs to a separate Fairmont offer). The property credit line is cut.
 - Stage 6: copy editor launched.
+- **Stage 6 fast (copy editor):** DONE. final.md 2,747 reader words, 0 dashes, 0 placeholders in the body; YAML 41 claims, 31 links.
+  - publish-package.json valid (14 open items, 19 nic_signoff lines; primary category Destination Weddings).
+  - chrome-upload-prompt.md is draft only: it creates a new post after a slug check, and stops and reports if the slug exists. article.docx built.
+
+## Must-fix before publish
+1. NEW-URL: the URL was 404. Create a new post (Zoho WC3-T324).
+2. CATEGORY-SWITCH (for the user): the primary is Destination Weddings, per Zoho and categories.md. You asked for Real Weddings; confirm.
+3. NIC-SIGNOFF: 19 price lines, all in their original currency as worded. AUD-EXCEPTION: confirm no conversions.
+4. SITE-CONFLICTS (for the user and Nic): the Lake Como page rewritten 25 Nov; the Maldives green tax per night vs per day; Bali three figures; Dubai minimum spend low end; Mykonos arithmetic; Santorini drinks EUR 20 vs EUR 25. None is stated as fact.
+5. WEDDING-COST-PER-GUEST-PAGE (for the user): our live /expert-advice/wedding-cost-per-guest quotes A$38,252 from a blocked source. Fix it, or 301 it to this pillar.
+6. VOLUME-CONFLICT: Zoho says 2,800 a month; DataForSEO has no data.
+7. SMALL-ITALY-RECHECK, FIRECRAWL-CREDITS (top up), CONCIERGE-PAY, LINK-CHECK (live checks failed in review), AUTHOR, IMAGE-RIGHTS, CMS-URL.

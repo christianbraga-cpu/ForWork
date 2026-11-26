@@ -510,7 +510,7 @@ All returned HTTP 200 with og:url equal to the URL below unless noted. Quote fig
 
 | URL | Title | Owns |
 |---|---|---|
-| `/destination-weddings/destination-wedding-cost-per-guest` | Destination Wedding Cost per Guest Explained (WC3-T324, WW-322) | destination wedding cost per guest, destination wedding cost per person, who pays for guests at a destination wedding | DRAFT (26 Nov 2026; URL was 404, new post; cluster pillar) |
+| `/destination-weddings/destination-wedding-cost-per-guest` | Destination Wedding Cost per Guest Explained (WC3-T324, WW-322) | destination wedding cost per guest, destination wedding cost per person, who pays for guests at a destination wedding | DRAFT (26 Nov 2026; URL was 404, new post; cluster pillar; final ready, not published) |
 | `/destination-weddings/all-inclusive-wedding-cost` | All-Inclusive Wedding Packages: Real Costs Explained | all-inclusive wedding cost (canonical; `/all-inclusive-wedding-cost` serves the same page with og:url pointing here, link this URL; page cites The Knot and Zola, do not repeat those figures) |
 | `/travel-guides/who-pays-guest-travel` | Guest Travel Costs and Who Pays at a Destination Wedding | who pays guest travel (LIVE) |
 | `/real-weddings/wedding-in-italy-cost` | Wedding in Italy Cost for 50 Guests in Tuscany | wedding in italy cost 50 guests (LIVE) |
