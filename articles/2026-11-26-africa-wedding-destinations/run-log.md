@@ -46,3 +46,11 @@
   - Weather lines are Firecrawl extractions (recheck). 4 government fees are flagged for Nic.
 - **Decision (default):** no government fees are stated in this overview (the legal pages are linked instead), so no conflicting figure appears.
 - Stage 2: writer launched.
+- **Stage 2 fast (writer):** DONE. 03-draft-v1.md.
+  - --check: 2,540 reader words (slightly over); 0 dashes; 0 placeholders.
+  - YAML valid: 59 claims, 47 links (13 internal, 34 external).
+  - **Official domains:** smartraveller.gov.au; Australian embassy and high commission pages (Egypt, Mauritius, Morocco); dirco.gov.za; ics.gov.sc; statelaw.go.ke; in.tzembassy.go.tz.
+  - **DOMAINS-ADD (for the user):** four African government domains are not in domains.md.
+  - No fees, no Cape Town months, no banned links.
+  - Malaria, light-aircraft and Morocco and Egypt same-sex caveats point to Smartraveller only (no facts).
+- Reviews launched (accuracy, SEO, couple reader).
