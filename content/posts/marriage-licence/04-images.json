@@ -1,0 +1,173 @@
+{
+ "agent": "visual-curator",
+ "task_id": "marriage-licence",
+ "stage": "04",
+ "status": "needs_input",
+ "round": 1,
+ "inputs_used": [
+  "CLAUDE.md",
+  "content/posts/marriage-licence/00-input.json",
+  "/root/.claude/plans/understanding-all-that-ive-moonlit-hopper.md (marriage licence section)",
+  "content-system/images/sources-policy.md",
+  "content-system/rubrics/image-checklist.md",
+  "content-system/images/library-index.csv (header only, no rows)",
+  "content-system/schemas/04-images.schema.json",
+  "content/posts/notice-of-intended-marriage/04-images.json (format model)",
+  "01-brief.json, 02-seo.json, 02-research/report.md, 03-source-pack.json (not present at run time; fast mode runs in parallel)"
+ ],
+ "self_qa": {
+  "checks": [
+   {
+    "check": "Zero reference-only or competitor images in slots",
+    "pass": true,
+    "note": "No images downloaded; reference_only empty."
+   },
+   {
+    "check": "Every approved image has location, licence, alt, caption, fit_reason",
+    "pass": true,
+    "note": "No approved images this run (register has no rows)."
+   },
+   {
+    "check": "No AI image depicting a real place, wedding, ceremony or person",
+    "pass": true,
+    "note": "No AI generated. Only featured and certificate-still-life (flat-lays, no place or person) may become ai_illustrative, with user approval and an 'Illustrative image' label. Signing and destination slots are never AI."
+   },
+   {
+    "check": "Featured image exists (approved or needed with brief)",
+    "pass": true,
+    "note": "Needed, with full brief."
+   },
+   {
+    "check": "No real names, numbers or legible official documents",
+    "pass": true,
+    "note": "Every paperwork brief requires blank or illegible papers, no crest, closed passports."
+   },
+   {
+    "check": "No venue names in briefs unless from our own pages",
+    "pass": true,
+    "note": "No venue named; destinations limited to New Zealand and Hawaii, which we have guides for."
+   },
+   {
+    "check": "About 4 slots",
+    "pass": true,
+    "note": "4 slots."
+   }
+  ],
+  "confidence": 0.7
+ },
+ "open_questions": [
+  {
+   "to": "user",
+   "question": "Do you approve AI still lifes (featured rings and paperwork; certificate still life) labelled 'Illustrative image' if no Canva or licensed stock asset is found? The NOIM post asked the same; one answer can cover both.",
+   "blocking": false
+  },
+  {
+   "to": "user",
+   "question": "Do you hold a real couple-signing photo with a celebrant, with written couple and celebrant consent? The same image could serve the NOIM and who-can-perform pages if the licence allows.",
+   "blocking": false
+  },
+  {
+   "to": "user",
+   "question": "Is there a licensed New Zealand or Hawaii ceremony image from our partners (own-site or Drive library) we can register for the destination slot?",
+   "blocking": false
+  }
+ ],
+ "assumptions": [
+  "Placement is by section name because 02-seo.json is not yet written; the writer maps sections to after_h2 positions.",
+  "No venue is named because no own-site or register source exists for this post; nothing was guessed.",
+  "Fast mode: repo register only. Drive, own-site scrape, Canva, Gmail and Lens checks not run; no image candidates exist to verify."
+ ],
+ "verify_items": [
+  "[[IMAGE NEEDED]] featured: rings, pen, ribbon-tied folder and closed passports still life (Canva or licensed stock; AI only with user approval, labelled 'Illustrative image')",
+  "[[IMAGE NEEDED]] signing-register-celebrant: real couple with celebrant, written consent required, never AI",
+  "[[IMAGE NEEDED]] certificate-still-life: blank or illegible certificate-style sheet with generic seal (Canva or licensed stock; AI only with user approval, labelled 'Illustrative image')",
+  "[[IMAGE NEEDED]] destination-ceremony: licensed New Zealand or Hawaii ceremony image, venue only from our own pages or register, never AI",
+  "[[VERIFY licence]] every stock, own-site or venue image: licence scope, credit line and expiry recorded in library-index.csv before use",
+  "[[VERIFY: couple, celebrant and guest consent for any real-wedding or signing photo]]",
+  "[[VERIFY: no legible certificate, register, crest, passport data page or personal details in any final image]]"
+ ],
+ "tools_used": [
+  "Bash (cat/python)"
+ ],
+ "next_agent": [
+  "luxury-writer"
+ ],
+ "payload": {
+  "slots": [
+   {
+    "slot_id": "featured",
+    "placement": "featured",
+    "purpose": "Hero and social share image: a calm, elegant paperwork moment that says 'this is straightforward' to a luxury destination-wedding reader, bridging home and abroad.",
+    "shot_brief": "Landscape 3:2 with clear space on one side for the title. Overhead or 45 degree still life on cream linen or pale stone: a pair of wedding rings, a fine fountain pen, a plain ivory document folder tied with silk ribbon, two closed passports (covers only, country-neutral), a sprig of olive or white florals. Soft natural window light, warm neutral palette, no people, no hands. No real, readable government form or certificate: no legible registry text, crest, coat of arms, names, dates, registration numbers, signatures, barcodes or photos. Any paperwork must be blank, softly out of focus or turned so nothing is legible. No passport data page. Source order: library register, Canva brand asset, or licensed premium stock bought by a human and added to library-index.csv. Never a competitor, directory, celebrant-blog, registry or search-result image. An AI still life is allowed under sources-policy.md (flat-lay, no real place, person or wedding) only if the user approves, labelled 'Illustrative image' in the caption.",
+    "status": "needed",
+    "file": "content/posts/marriage-licence/images/marriage-licence-rings-pen-paperwork-hero.webp",
+    "source": {
+     "type": "canva",
+     "origin": "not yet sourced",
+     "credit": "[[VERIFY licence]]"
+    },
+    "location": {
+     "venue": "not applicable (studio still life, no real place)",
+     "town": "not applicable",
+     "verified_by": "not applicable: no place depicted"
+    }
+   },
+   {
+    "slot_id": "signing-register-celebrant",
+    "placement": "section: what stands in for a licence in Australia (after the authorised celebrant and legal words paragraphs)",
+    "purpose": "Show the moment the marriage is made official in Australia: the couple signing with an authorised celebrant, which is the step readers expect a 'licence' for.",
+    "shot_brief": "Landscape 3:2. A real couple at a signing table with their celebrant beside them, just after the ceremony, natural light, relaxed and joyful, shallow depth of field. Focus on hands, pen and the couple's expressions; the register and certificates must be out of focus or angled so no names, numbers or signatures are legible. Outdoor garden or elegant interior, place not named in the caption unless the register proves it. Real people only: licensed real wedding with written couple and celebrant consent (guest consent if identifiable). Source: library register, own-site image with licence verified, or a photographer's licensed image added to the register. Never AI, never stock presented as a real wedding, never a competitor or celebrant-blog image.",
+    "status": "needed",
+    "file": "content/posts/marriage-licence/images/marriage-licence-couple-signing-celebrant.webp",
+    "source": {
+     "type": "library",
+     "origin": "not yet sourced",
+     "credit": "[[VERIFY licence]]"
+    },
+    "location": {
+     "venue": "to be confirmed from register row (not named unless proven)",
+     "town": "to be confirmed",
+     "verified_by": "pending: register row, photographer gallery or EXIF"
+    }
+   },
+   {
+    "slot_id": "certificate-still-life",
+    "placement": "section: marriage licence and marriage certificate (H2 opener)",
+    "purpose": "Make the licence versus certificate difference visual: an ivory certificate-style document as the record that follows the wedding.",
+    "shot_brief": "Landscape 3:2 or 4:5. Close still life of a blank or illegible ivory certificate-style sheet with a generic gold foil seal shape (not any real registry crest or coat of arms), a fountain pen, a ribbon and a single ring box, on a marble or walnut desk, soft side light, no people. No real, readable government form or certificate: no legible registry text, crest, coat of arms, names, dates, registration numbers, signatures, barcodes or photos. Any paperwork must be blank, softly out of focus or turned so nothing is legible. No passport data page. Source order: library register, Canva brand asset, or licensed premium stock bought by a human and added to library-index.csv. Never a competitor, directory, celebrant-blog, registry or search-result image. An AI still life is allowed under sources-policy.md (flat-lay, no real place, person or wedding) only if the user approves, labelled 'Illustrative image' in the caption.",
+    "status": "needed",
+    "file": "content/posts/marriage-licence/images/marriage-licence-certificate-still-life.webp",
+    "source": {
+     "type": "canva",
+     "origin": "not yet sourced",
+     "credit": "[[VERIFY licence]]"
+    },
+    "location": {
+     "venue": "not applicable (studio still life, no real place)",
+     "town": "not applicable",
+     "verified_by": "not applicable: no place depicted"
+    }
+   },
+   {
+    "slot_id": "destination-ceremony",
+    "placement": "section: licences overseas (after the New Zealand and Hawaii paragraphs) or choosing where to marry legally",
+    "purpose": "Pay off the overseas section with the moment the paperwork makes possible: a real ceremony at a real destination our guides cover.",
+    "shot_brief": "Landscape 3:2. A real couple's ceremony moment at a real destination we have a guide for (New Zealand alpine or lakeside setting, or a Hawaii coastline at golden hour), natural and editorial, or the same venue's ceremony set-up with no people. Venue named only if it comes from our own weddedwonderland.com pages or the register. People only from a licensed real wedding with written couple consent (guest consent if identifiable). Source: library register, own-site image with licence verified, or the venue's own media kit with written permission (Gmail draft request, never sent by an agent). Never AI. Location proven by register row, media kit or EXIF, never by appearance.",
+    "status": "needed",
+    "file": "content/posts/marriage-licence/images/marriage-licence-destination-ceremony.webp",
+    "source": {
+     "type": "venue_press",
+     "origin": "not yet sourced",
+     "credit": "[[VERIFY licence]]"
+    },
+    "location": {
+     "venue": "to be confirmed (from our own pages or register only)",
+     "town": "to be confirmed",
+     "verified_by": "pending: register row, media kit or EXIF"
+    }
+   }
+  ],
+  "reference_only": [],
+  "permission_requests": []
+ }
+}
