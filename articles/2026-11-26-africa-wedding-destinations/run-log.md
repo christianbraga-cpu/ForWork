@@ -54,3 +54,11 @@
   - No fees, no Cape Town months, no banned links.
   - Malaria, light-aircraft and Morocco and Egypt same-sex caveats point to Smartraveller only (no facts).
 - Reviews launched (accuracy, SEO, couple reader).
+- **Container restart:** the accuracy and SEO review results were recovered (hand-back message and subagent transcript). No work lost.
+- **Stage 3 fast (3 reviews):** DONE.
+  - **Accuracy 3.4, revise:** the blocker is the Mauritius legal steps sourced from our own page. Majors: Concierge perks, unregistered superlatives, the honeymoon-page country mapping, unverified extractions.
+  - **SEO 4.2:** majors on DOMAINS-ADD; cut plan given; keep all Smartraveller links.
+  - **Reader (couple):** relevance 1 (the Italy persona), trust 2, clarity 3, would_enquire 1. Fixes: the embassy line once, real weddings as featured, cut the hedges.
+  - Merged request: 04-reviews/v1/merged.md.
+- **Orchestrator Firecrawl check:** the Smartraveller Zimbabwe level is verified live.
+- Stage 4: writer v2 launched.
