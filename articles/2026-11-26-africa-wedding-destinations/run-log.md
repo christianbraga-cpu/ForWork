@@ -37,3 +37,4 @@
   - **Titles:** SEO title "Africa Wedding Destinations From Safari Camps to the Coast". Meta 155 characters.
   - Link-map "Africa destinations" section added.
 - The researcher is held on an MCP permission prompt.
+- **05:50 check-in:** the researcher is intermittently held on MCP permission prompts. 16 facts across 4 countries (Seychelles, Kenya, Tanzania, South Africa). Below the 8-country threshold, so the writer waits.
