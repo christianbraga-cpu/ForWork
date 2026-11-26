@@ -43,3 +43,4 @@
   - That page cites s45(2) of the Marriage Act on legislation.gov.au and the AG's Department.
   - **Web team:** the page's Concierge box uses "complimentary".
   - **VOWS-URL (for the user):** /how-to-write-wedding-vows vs /planning/how-to-write-wedding-vows. The /planning/ URL is canonical and used here.
+- **03:03 check-in:** the researcher is held on an MCP permission prompt; 22 facts saved: the Marriage Act s45 and s46 (legislation.gov.au), the AG's Department get-married page, our how-to-write page, and the Studio and ChatGPT-vs pages. No OAIC fact and no third-party tool facts yet. **Decision (10-minute rule):** the writer started on the saved facts with an inline brief. Privacy is advice only; no third-party AI tools are named unless facts land.
