@@ -32,3 +32,14 @@
 
 ## Stages
 - Stage 0 and 1 launched in parallel (both save early).
+- **Stage 0 fast (strategist):** DONE.
+  - **URL:** 404, so a new post. Zoho WC3-T1003 (In Progress).
+  - **Studio AI:** /wonderland-studio/ai-chat is live but login-gated. Live wording: "Ask your AI Planning Assistant. Timing, budgets, destinations, etiquette. Ask anything, any hour." Our comparison page says Studio is "not a writing studio" for vows. **Decision (default):** link /wonderland-studio in the body and the ai-chat page only as a secondary "try it" link. Do not claim it writes vows.
+  - **STUDIO-AI-PRICE conflict:** "free with a message allowance" vs "7-day trial, then paid". No price is stated.
+  - **Volumes (AU / US):** ai wedding vows 20 / 140; chatgpt wedding vows 40 / 260.
+  - **SERP:** expects named tools. **Decision (default):** name tools only as examples (no ranking), with facts only from their own pages.
+- **Orchestrator Firecrawl check (26 Nov):** the funny vows URL redirects to /planning/how-to-write-wedding-vows, and the bible verses URL redirects to /expert-advice/traditional-wedding-vows; link-map rows updated.
+  - The how-to-write page now says "about 150 words, a minute out loud" and "300 words is the most we would suggest" (quote this, not 250 to 300).
+  - That page cites s45(2) of the Marriage Act on legislation.gov.au and the AG's Department.
+  - **Web team:** the page's Concierge box uses "complimentary".
+  - **VOWS-URL (for the user):** /how-to-write-wedding-vows vs /planning/how-to-write-wedding-vows. The /planning/ URL is canonical and used here.
