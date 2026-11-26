@@ -37,3 +37,12 @@
   - These weddings are already published on our site as real weddings, so the primary category stays Real Weddings, as you asked.
   - They are framed as "featured by Wedded Wonderland", never as our planning work. Confirm consent covers a roundup.
 - **22:36 check-in:** the research file holds 25 real weddings (payload.weddings, saved 22:30); the researcher is still running. Above the threshold of 6, so the writer started on the saved weddings and re-reads them before saving.
+- **Stage 1 fast (research):** DONE. 25 Italy weddings captured from live pages, including all core picks. No redirects.
+  - **By region:** Amalfi 7, Lake Como 6, Tuscany 6, Sicily 2, plus one each in Puglia, Umbria, Rome and near Milan. 4 couples are named as Australian.
+  - **Conflicts:**
+    - The brief's months and places (February, December, winter, summer, Lenno, Val d'Orcia) are not on our pages and are not used.
+    - Villa del Balbianello is not /venue/villa-balbiano.
+    - Three pages call planners "partners", but link-map says hold (PARTNER-HOLD).
+  - **Gaps:** five pages lack a featured image (IMAGE-GAP); 11 reserve pages unread; no official Australian marriage source. No prices.
+  - **Also captured:** the best-time sweet spots line, the legal vs symbolic line, and Smartraveller Italy "Exercise normal safety precautions".
+  - Corrections were sent to the writer.
