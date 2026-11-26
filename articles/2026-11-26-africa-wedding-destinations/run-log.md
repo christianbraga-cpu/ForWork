@@ -68,3 +68,18 @@
   - All 13 items applied. The Mauritius High Commission link is gone with the Mauritius legal fix.
   - The writer dropped HEALTH-FACTS; the orchestrator restores it in the package.
 - Stage 6: copy editor launched (incl. region template).
+- **Stage 6 fast (copy editor):** DONE. final.md 2,364 reader words, 0 dashes, 0 placeholders; YAML 57 claims, 45 links.
+  - publish-package.json valid (17 open items, incl. HEALTH-FACTS). chrome-upload-prompt.md is draft only and creates a new post after a slug check. article.docx built.
+  - Region template saved: blog-team/templates/region-destinations.md.
+
+## Must-fix before publish
+1. NEW-URL: the URL was 404. Create a new post (Zoho WC3-T198, plan ref WW-300).
+2. TITLE-SERIES (for the user): the H1 puts the keyword first; your title started with "12".
+3. DOMAINS-ADD (for the user): approve dirco.gov.za, statelaw.go.ke, tzembassy.go.tz missions and ics.gov.sc as official sources.
+4. FACT-GAP-LEGAL: Mauritius, Botswana, Zambia, Zimbabwe, Zanzibar island process and Morocco say "confirm with the embassy".
+5. VERBATIM-CHECK and SEASON-CHECK: Smartraveller and weather lines are extractions (Zimbabwe verified live); confirm the Cape Town season with SAWS.
+6. HONEYMOON-COUNTRY-CHECK: confirm on the live African honeymoon page which country each quoted months line belongs to.
+7. AFRICA-HUB-404: four /destinations/africa/* pages 404 although in Review in Zoho.
+8. SITE-CONFLICTS: the Seychelles licence fee (SR500 vs SR100) and the SA certificate fees vs our page. No fees are stated in this article.
+9. SAME-SEX-FACTS (Morocco, Egypt), HEALTH-FACTS, LINK-MAP-ADD, PERSONA-WIDEN, LINK-CHECK, AUTHOR, IMAGE-RIGHTS, CMS-URL.
+No prices, so nothing for Nic.

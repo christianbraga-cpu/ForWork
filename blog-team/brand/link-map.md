@@ -500,7 +500,7 @@ All rows below were scraped on 26 Nov 2026: HTTP 200 and og:url equal to the URL
 | `/a-dreamy-wedding-at-la-roche-estate-south-africa` | A Dreamy Wedding at La Roche Estate, South Africa | (real wedding; LIVE, 2023) |
 | `/top-5-honeymoon-destinations-in-south-africa-for-newlyweds` | Top 5 Honeymoon Destinations in South Africa for Newlyweds | (LIVE, 2024; older, use sparingly) |
 | `/destinations/africa/south-africa`, `/destinations/africa/mauritius`, `/destinations/africa/seychelles`, `/destinations/africa/morocco` | Destination pages (Zoho WC3-T1144, T1126, T1138, T1133 in Review) | NOT LIVE: 404 "Destination Not Found" on 26 Nov 2026; do not link until launched |
-| `/destination-weddings/africa-wedding-destinations` | Africa Wedding Destinations From Safari to Coast (WC3-T198, WW-300) | africa wedding destinations, african destination wedding, safari wedding, wedding in africa | DRAFT (26 Nov 2026; URL was 404, new post) |
+| `/destination-weddings/africa-wedding-destinations` | Africa Wedding Destinations From Safari to Coast (WC3-T198, WW-300) | africa wedding destinations, african destination wedding, safari wedding, wedding in africa | DRAFT (26 Nov 2026; URL was 404, new post; final ready, not published) |
 
 Note: `/destinations/africa` stays in "Do not link" (hidden). Also seen in the map, not checked: `/blog/africa` (tag listing), `/expert-advice/where-to-go-on-honeymoon-in-june` and `-july` (safari season mentions).
 
