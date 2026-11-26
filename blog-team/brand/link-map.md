@@ -504,6 +504,25 @@ All rows below were scraped on 26 Nov 2026: HTTP 200 and og:url equal to the URL
 
 Note: `/destinations/africa` stays in "Do not link" (hidden). Also seen in the map, not checked: `/blog/africa` (tag listing), `/expert-advice/where-to-go-on-honeymoon-in-june` and `-july` (safari season mentions).
 
+## Destination Wedding Costs cluster (Firecrawl map, batch scrape and Apify fetch, 26 Nov 2026)
+
+All returned HTTP 200 with og:url equal to the URL below unless noted. Quote figures only as worded on the page, with currency and guest count.
+
+| URL | Title | Owns |
+|---|---|---|
+| `/destination-weddings/destination-wedding-cost-per-guest` | Destination Wedding Cost per Guest Explained (WC3-T324, WW-322) | destination wedding cost per guest, destination wedding cost per person, who pays for guests at a destination wedding | DRAFT (26 Nov 2026; URL was 404, new post; cluster pillar) |
+| `/destination-weddings/all-inclusive-wedding-cost` | All-Inclusive Wedding Packages: Real Costs Explained | all-inclusive wedding cost (canonical; `/all-inclusive-wedding-cost` serves the same page with og:url pointing here, link this URL; page cites The Knot and Zola, do not repeat those figures) |
+| `/travel-guides/who-pays-guest-travel` | Guest Travel Costs and Who Pays at a Destination Wedding | who pays guest travel (LIVE) |
+| `/real-weddings/wedding-in-italy-cost` | Wedding in Italy Cost for 50 Guests in Tuscany | wedding in italy cost 50 guests (LIVE) |
+| `/destination-weddings/small-wedding-in-italy-cost` | Small Wedding in Italy Cost and What It Includes | small wedding in italy cost (LIVE; states per-guest bands) |
+| `/destination-weddings/mexico-destination-wedding` | Mexico vs Thailand Destination Wedding Costs Compared | mexico vs thailand destination wedding cost (LIVE) |
+| `/real-weddings/yarra-valley-estate-wedding-prices` | Yarra Valley Estate Wedding Prices From a Real Couple | yarra valley wedding prices (LIVE; domestic) |
+| `/real-weddings/lake-como-wedding-cost` | (REDIRECT) | REDIRECTS to /expert-advice/how-much-does-a-lake-como-wedding-cost (Apify, 26 Nov 2026); link the target |
+| `/who-pays-for-what-a-guide-to-cost-splitting-for-a-destination-wedding` | Who Pays for What? A Guide to Cost-Splitting (2023) | do not link; duplicates /travel-guides/who-pays-guest-travel; redirect candidate (user decision) |
+| `/expert-advice/cost-of-catering-for-wedding` | Cost of Catering for Wedding Guests per Person in 2026 | catering cost per person (LIVE; quotes Zola and Bridebook, do not link from destination posts) |
+
+Also confirmed LIVE with og:url unchanged on 26 Nov 2026: `/expert-advice/average-destination-wedding-cost-by-region`, `/destination-weddings/hidden-costs-destination-wedding`, `/destination-weddings/destination-wedding-vs-home-cost`, `/expert-advice/how-much-does-a-wedding-in-italy-cost`, `/expert-advice/how-much-does-a-lake-como-wedding-cost`, `/real-weddings/amalfi-coast-wedding-cost`, `/real-weddings/santorini-wedding-cost-breakdown`, `/destination-weddings/santorini-wedding-cost`, `/real-weddings/mykonos-wedding-cost`, `/real-weddings/maldives-wedding-cost`, `/real-weddings/fiji-wedding-cost`, `/destination-weddings/dubai-wedding-cost`, `/real-weddings/wedding-in-bali-cost`, `/expert-advice/bali-wedding-cost-the-complete-2026-guide`, `/destination-wedding-packages`. `/expert-advice/wedding-cost-per-guest` is LIVE (Zoho WC3-T636) but stays do-not-link. SITE-CONFLICT (26 Nov 2026): Maldives green tax reads "per person per night" on /real-weddings/maldives-wedding-cost and "per person per day" on /destination-weddings/hidden-costs-destination-wedding.
+
 ## Do not link from blogs
 
 | URL | Reason |
