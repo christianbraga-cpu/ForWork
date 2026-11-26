@@ -22,8 +22,8 @@ The ten below are unranked, each with its weather, trade-off and questions to as
 
 - This list covers the Greek islands, Portugal, the Amalfi Coast, the French Riviera and Hawaii in the northern autumn, and New Zealand, Mauritius, the Seychelles, Fiji and Bali in the southern spring and early summer.
 - Europe is at the close of its season, so first settle whether your venue is open on the date and how the evening works as the air cools. <!-- fact_002 --> <!-- fact_003 --> <!-- fact_004 --> <!-- fact_008 -->
-- Fiji, Mauritius and the Seychelles enter the cyclone or monsoon season Smartraveller describes from November, and Bali and Hawaii are inside their wet windows, so book covered space and a buffer day. <!-- fact_108 --> <!-- fact_115 --> <!-- fact_112 --> <!-- fact_110 --> <!-- fact_113 -->
-- Pick the November trade-off you can live with, whether that is a quieter European coast, a changeable New Zealand spring or a tropical island in its wet or cyclone season.
+- Fiji, Mauritius and the Seychelles begin their Smartraveller cyclone or monsoon seasons in November, and Bali and Hawaii are inside their wet windows, so book covered space and a buffer day. <!-- fact_108 --> <!-- fact_115 --> <!-- fact_112 --> <!-- fact_110 --> <!-- fact_113 -->
+- Pick the November trade-off that suits your guests, whether that is a quieter European coast, a changeable New Zealand spring or a tropical island in its wet or cyclone season.
 
 ## Why November works for a destination wedding
 
@@ -37,7 +37,7 @@ For Australian guests, November also lands before the summer break at home, so a
 
 We plan weddings in all ten, and each one has a live guide on this site. They are grouped by what November actually is in each, not by merit. <!-- LINK: /destination-weddings/wedding-destinations-august when live --> <!-- LINK: /destination-weddings/wedding-destinations-march when live --> <!-- LINK: /destination-weddings/punta-cana-destination-wedding when live; add as an entry (Atlantic hurricane season ends 30 November per NHC, fact_117) -->
 
-Each weather service measures over its own run of years and counts a rain day its own way, and the [WMO asks for care when city climates are set side by side](https://worldweather.wmo.int/en/city.html?cityId=603), so read each figure on its own. <!-- fact_009 --> <!-- fact_119 -->
+Each weather service measures over its own run of years and counts a rain day its own way, and the [WMO asks for care when city climates are set side by side](https://worldweather.wmo.int/en/city.html?cityId=603), so treat each figure as standing alone. <!-- fact_009 --> <!-- fact_119 -->
 
 ## Autumn in the northern hemisphere
 
@@ -79,7 +79,7 @@ Naples is a city station on the bay, not the coast road. <!-- fact_002 --> For o
 
 **The November trade-off.** A quieter promenade, with evenings cool enough to move the reception under a heated roof. <!-- fact_003 -->
 
-**November weather.** Météo-France's [1971 to 2000 normals for Nice](https://worldweather.wmo.int/en/city.html?cityId=902) record a November mean daily minimum of 8.8°C, a mean daily maximum of 16.3°C and 94.3 mm of precipitation over 6.6 days with at least 1 mm. <!-- fact_003 --> This is a city station, not a reading for the hill villages.
+**November weather.** Météo-France's [1971 to 2000 normals for Nice](https://worldweather.wmo.int/en/city.html?cityId=902) record a November mean daily minimum of 8.8°C, a mean daily maximum of 16.3°C and 94.3 mm of precipitation over 6.6 days with at least 1 mm. <!-- fact_003 --> The station sits in the city, so it says little about the hill villages.
 
 **Questions for the venue.**
 - Is the venue open in November, or does its season end before our date?
@@ -91,7 +91,7 @@ Naples is a city station on the bay, not the coast road. <!-- fact_002 --> For o
 
 **The November trade-off.** Mild nights near Lisbon, paired with frequent rain days to work around. <!-- fact_004 -->
 
-**November weather.** [Lisbon's climate normals for 1961 to 1990](https://worldweather.wmo.int/en/city.html?cityId=2), supplied by IPMA, give a November mean daily minimum of 11.2°C, a mean daily maximum of 17.8°C and 113.5 mm of rain over 14.0 rain days. <!-- fact_004 --> IPMA counts any day with 0.1 mm or more, so a damp morning qualifies. <!-- fact_004 --> These are older city normals, not a reading for Sintra.
+**November weather.** IPMA's [1961 to 1990 figures for Lisbon](https://worldweather.wmo.int/en/city.html?cityId=2) record a November mean daily minimum of 11.2°C, a mean daily maximum of 17.8°C and 113.5 mm of rain over 14.0 rain days. <!-- fact_004 --> IPMA counts any day with 0.1 mm or more, so a damp morning qualifies. <!-- fact_004 --> These are older city normals, not a reading for Sintra.
 
 **Questions for the venue.**
 - Is the venue open in November, and is the whole property ours for the weekend?
@@ -108,7 +108,7 @@ Naples is a city station on the bay, not the coast road. <!-- fact_002 --> For o
 Its heaviest rains come from winter storms in that window. Windward coasts catch far more cloud and rain, while leeward areas, where the air descends, tend to be sunny and dry. <!-- fact_114 --> The description is statewide, so the side of the island matters.
 
 **Questions for the venue.**
-- Is the venue on the leeward or windward side of the island, and where does the ceremony go in a winter storm?
+- Which side of the island is the venue on, leeward or windward, and where does the ceremony go in a winter storm?
 - If a storm delays inter-island flights, what is the plan for guests still on their way?
 
 **Our guide.** Read the [legal steps for a Hawaii wedding](/destination-weddings/getting-married-in-hawaii).
@@ -125,9 +125,9 @@ Below the equator, November is late spring in New Zealand. On the tropical islan
 
 <!-- IMAGE SLOT new-zealand: New Zealand lodge, vineyard or lakeside lawn (to match the H3 and our New Zealand guide), green vines or lawns, mountains or lake behind, clear light, no identifiable people. Month taken (October to December) recorded; 'spring' captioned only if the post's sources state it. Weather claims stay in the copy (Earth Sciences NZ November 2025 summary, one year only), never in the caption. -->
 
-**November weather.** The [Earth Sciences New Zealand climate summary for November 2025](https://niwa.co.nz/climate-and-weather/monthly/climate-summary-november-2025) describes one year, not a long-term normal. That month was the country's warmest November on record, with a nationwide mean of 15.9°C, 2.2°C above the 1991 to 2020 November normal. <!-- fact_101 --> It opened with a settled week under high pressure. <!-- fact_101 -->
+**November weather.** The [Earth Sciences New Zealand climate summary for November 2025](https://niwa.co.nz/climate-and-weather/monthly/climate-summary-november-2025) covers that single month, so read it as a snapshot of one year rather than a long-run pattern. That month was the country's warmest November on record, with a nationwide mean of 15.9°C, 2.2°C above the 1991 to 2020 November normal. <!-- fact_101 --> It opened with a settled week under high pressure. <!-- fact_101 -->
 
-Later in the month, lows drawing moisture from the Coral Sea brought several periods of heavy rain to the upper and western North Island. <!-- fact_102 --> As at November 2026, [Smartraveller](https://www.smartraveller.gov.au/destinations/pacific/new-zealand) notes that conditions can change quickly and severe weather can strand travellers in remote areas. <!-- fact_104 -->
+Lows drawing moisture from the Coral Sea also brought several periods of heavy rain to the upper and western North Island. <!-- fact_102 --> As at November 2026, [Smartraveller](https://www.smartraveller.gov.au/destinations/pacific/new-zealand) notes that conditions can change quickly and severe weather can strand travellers in remote areas. <!-- fact_104 -->
 
 **Questions for the venue.**
 - If the forecast turns in our wedding week, which covered space holds the ceremony and dinner?
@@ -145,7 +145,7 @@ Later in the month, lows drawing moisture from the Coral Sea brought several per
 
 **Questions for the venue.**
 - Where is the shaded or covered ceremony space, and is the dinner room cooled?
-- If a cyclone closes the airport that week, what happens to the date and the rooms?
+- Should a cyclone shut the airport in our wedding week, what happens to the date and the rooms?
 
 **Our guide.** See [how Australians marry legally in Mauritius](/destination-weddings/mauritius-wedding).
 
@@ -155,11 +155,11 @@ Later in the month, lows drawing moisture from the Coral Sea brought several per
 
 **November weather.** [Victoria's climate normals for 1981 to 2010](https://worldweather.wmo.int/en/city.html?cityId=253), supplied by the Seychelles Meteorological Authority, give a November mean daily minimum of 24.4°C, a mean daily maximum of 30.3°C and 192.5 mm of rain over 16.0 days with at least 0.1 mm. <!-- fact_006 -->
 
-The [Seychelles Meteorological Authority's November guide](https://www.meteo.sc/services/climate/seychelles-climate-guide/) says the rains set in during November, though the winds drop and swing to the west and conditions at sea are quite pleasant. <!-- fact_111 --> As at November 2026, [Smartraveller](https://www.smartraveller.gov.au/destinations/africa/seychelles) warns of heavy rain, especially in the monsoon season from November to March, with flooding and landslides that can damage roads. <!-- fact_112 -->
+The [Seychelles Meteorological Authority's November guide](https://www.meteo.sc/services/climate/seychelles-climate-guide/) says the rains set in during November, though the winds drop and swing to the west and conditions at sea are quite pleasant. <!-- fact_111 --> As at November 2026, [Smartraveller](https://www.smartraveller.gov.au/destinations/africa/seychelles) warns of heavy rain, especially from November to March, its monsoon season, with flooding and landslides that can damage roads. <!-- fact_112 -->
 
 **Questions for the venue.**
 - Is there a sheltered spot on the property for the ceremony, and can it be dressed the day before?
-- If guests cross between islands by boat, who calls off a rough crossing?
+- When guests travel to another island by boat, who calls off a rough crossing?
 
 **Our guide.** Plan the islands with our guide to [getting married in the Seychelles](/destination-weddings/getting-married-in-seychelles).
 
@@ -167,12 +167,12 @@ The [Seychelles Meteorological Authority's November guide](https://www.meteo.sc/
 
 **The November trade-off.** Open-air ceremony spaces, inside Indonesia's wet season. <!-- fact_110 -->
 
-**November weather.** As at November 2026, [Smartraveller](https://www.smartraveller.gov.au/destinations/asia/indonesia) describes Indonesia's wet season as running around October to April, when weather can change quickly. Heavy rain can flood urban areas including Bali and disrupt roads and transport. <!-- fact_110 --> Read [when to marry in Bali, month by month](/destination-weddings/best-time-to-get-married-in-bali) to compare November with the other eleven months.
+**November weather.** As at November 2026, [Smartraveller](https://www.smartraveller.gov.au/destinations/asia/indonesia) describes Indonesia's wet season as running around October to April, a stretch of fast-changing weather. Heavy rain can flood urban areas including Bali and disrupt roads and transport. <!-- fact_110 --> Read [when to marry in Bali, month by month](/destination-weddings/best-time-to-get-married-in-bali) to compare November with the other eleven months.
 
 <!-- IMAGE SLOT tropical: Open-air pavilion, clifftop or beachfront ceremony setup at the tropical destination of the H3, sky and ocean in frame, no identifiable people. Month taken recorded. Never caption November weather, wet season or cyclone season; the post's Smartraveller and official weather lines carry that, not the image. -->
 
 **Questions for the venue.**
-- Is there a roofed pavilion for every guest, and how late on the day can the ceremony move there?
+- Is there a roofed pavilion for every guest, and what is the latest hour the ceremony can move there?
 - If heavy rain floods the roads, how long does the drive from the airport or the guests' hotel take?
 
 **Our guide.** Weigh clifftop, jungle and beach options in [Bali wedding venues and costs](/destinations/asia/bali).
@@ -197,7 +197,7 @@ The [Seychelles Meteorological Authority's November guide](https://www.meteo.sc/
 |---|---|---|
 | Greek islands | Mild days, a prevailing north wind and regular precipitation days at the HNMS Naxos station | The island season is closing |
 | Amalfi Coast | Mild days in the wettest month on the Naples city station's table | Wet weather on steep, open terraces |
-| French Riviera | Mild days and cool evenings at the Nice station | A heated room for the reception |
+| French Riviera | Mild days at the Nice station, with evenings cool enough to need a heated room | A heated room for the reception |
 | Portugal | Mild nights and frequent rain days at the Lisbon station | Showers to work around |
 | Hawaii | Inside the October to April winter season of heavier rain, statewide (NWS Honolulu) | Windward rain or leeward sun |
 | New Zealand | Record warm in November 2025 (one year only), with heavy rain in the upper and western North Island | Weather that can change within a week |
@@ -214,7 +214,7 @@ Torn between a quiet Mediterranean terrace and a warm island? Weigh them against
 
 ### Wet and cyclone seasons in November
 
-In the tropics, the rain plan belongs in the contract. Ask for a covered space that seats every guest, a set time for the call to move, and a buffer day between arrival and the ceremony. Ask the venue, in writing, what happens to deposits already paid if the weather moves the date, and check that travel insurance covers it, as Smartraveller suggests for Mauritius. <!-- fact_115 -->
+In the tropics, the rain plan belongs in the contract. Ask for a covered space that seats every guest, a set time for the call to move, and a buffer day between arrival and the ceremony. Ask the venue, in writing, what happens to deposits already paid if the weather moves the date, and check that travel insurance covers cyclone closures and flight delays, as Smartraveller suggests for Mauritius. <!-- fact_115 -->
 
 ### Venues at the end of the European season
 
@@ -228,7 +228,7 @@ Rules differ by country. Check [where you can legally marry overseas](/destinati
 
 ### Guests travelling from Australia
 
-Ask each venue whether a local public holiday falls near your date, how guests who walk slowly manage wet steps, whether there is a route without steps to the ceremony and dinner, and how far the nearest doctor is.
+Ask each venue whether a local public holiday falls near your date, how guests who walk slowly manage wet steps, whether there is a route without steps to the ceremony and dinner, and how far away medical care is.
 
 A Wedded Advisor works in your time zone, quotes in AUD and confirms each venue's inclusions in writing before you commit. Once the shortlist is down to two, take it to [Wedded Concierge](/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=wedding-destinations-november&utm_content=secondary).
 
@@ -260,6 +260,6 @@ Each country has its own requirements, and some couples marry legally at home an
 
 Your Wedded Advisor is your single point of contact for the venue, travel, vendors and payments, anywhere in the world, and the fee is agreed in writing before any work begins.
 
-Staying on afterwards? See our [honeymoon destinations by month](/expert-advice/best-honeymoon-destinations-by-month).
+If the trip runs on into a honeymoon, see our [honeymoon destinations by month](/expert-advice/best-honeymoon-destinations-by-month).
 
-Through [Wedded Concierge](/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=wedding-destinations-november&utm_content=closing), tell us your November date, your guest numbers, any privacy or security needs and who will need extra care on the journey.
+Through [Wedded Concierge](/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=wedding-destinations-november&utm_content=closing), tell us your November date, how many guests are coming, any privacy or security needs and who will need extra care on the journey.

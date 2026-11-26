@@ -8,3 +8,4 @@
 06:10 05 draft complete (~2,397 prose words); first-draft docx built
 06:16 06 editor pass_with_edits 4.29; 23 edits applied to r2; readers complete (enquire 1 to 3)
 06:21 07b panel revise (weighted enquire 2.0); 15 edits applied to 08-final.md; accepted after one round
+06:25 final check pass_with_edits 4.43; 18 edits applied
