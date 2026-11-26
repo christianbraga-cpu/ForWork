@@ -61,3 +61,8 @@
   - Merged request: 04-reviews/v1/merged.md.
 - **PLATFORM-DOMAINS (for the user):** the seven platform sites are not in domains.md. **Recommended:** a domains.md row "Platform official pages: product and help pages of a platform a sites-list post describes; rel nofollow noopener; never affiliate".
 - Stage 4: writer v2 launched.
+- **Stage 4 fast (writer v2):** DONE. 03-draft-v2.md.
+  - --check: 2,261 reader words; 0 dashes; 0 placeholders.
+  - YAML valid: 38 claims, 21 links (new L-21 /expert-advice/wedding-rsvp).
+  - All 12 items applied. Coins, both RSVP lines and the Sydney Concierge line are supported by the pack.
+- Stage 6: copy editor launched.
