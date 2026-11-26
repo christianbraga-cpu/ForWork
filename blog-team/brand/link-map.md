@@ -560,7 +560,7 @@ Editorial features published by Wedded Wonderland (not claimed as our clients). 
 
 | URL | Real wedding | Region | Status |
 |---|---|---|---|
-| `/real-weddings/italy-real-wedding` | Italy Real Weddings to Inspire Your Celebration (facet hub; owns: italy real wedding) | Italy | DRAFT (brief 26 Nov 2026; URL was 404, free) |
+| `/real-weddings/italy-real-wedding` | Italy Real Weddings to Inspire Your Celebration (facet hub; owns: italy real wedding) | Italy | DRAFT (26 Nov 2026; URL was 404, new post; final ready, not published) |
 | `/a-traditional-lebanese-destination-wedding-in-lake-como-italy` | Laura and Wahib, Villa Pizzo, Como | Lake Como | LIVE |
 | `/this-australian-couple-had-a-magical-destination-wedding-in-lake-como` | Josh and Isabela, Villa del Balbianello | Lake Como | LIVE |
 | `/luxury-indian-wedding-in-lake-como` | Kinjal and Herit, Villa Balbiano, Lenno | Lake Como | LIVE |

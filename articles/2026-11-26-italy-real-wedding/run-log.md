@@ -67,3 +67,17 @@
   - YAML valid: 24 claims, 33 links.
   - All 18 items applied. The "See the full wedding" anchors are replaced with linked couple names.
 - Stage 6: copy editor launched (incl. facet template).
+- **Stage 6 fast (copy editor):** DONE. final.md 1,814 reader words, 0 dashes, 0 placeholders; YAML 24 claims, 33 links.
+  - publish-package.json valid (15 open items). chrome-upload-prompt.md is draft only and creates a new post after a slug check. article.docx built.
+  - Facet template saved: blog-team/templates/facet-real-weddings.md.
+  - The orchestrator ran the dash and banned-word checks on all files: clean.
+
+## Must-fix before publish
+1. NEW-URL: the URL was 404. Create a new post. No Zoho task found (ZOHO-TASK: create one).
+2. CATEGORY-CONSENT (for the user): confirm the couples' consent covers a roundup under Real Weddings.
+3. IMAGE-RIGHTS and PHOTOGRAPHER-CREDIT: images only from the featured weddings, with the credit as published. IMAGE-GAP for Puglia and Sicily (no featured image).
+4. ITALY-LEGAL-OFFICIAL: no official Italy marriage source (the Australian Embassy Rome page is 404); the legal lines are attributed to our guide.
+5. PARTNER-HOLD (for the user): three wedding pages call planners "partners"; not used here.
+6. VENUE-CHECK: the Grand Imperiale Hotel for Laura and Wahib.
+7. OG-URL-CHECK, SERP-PARTIAL, WEDDED-WORLD, LINK-CHECK, AUTHOR, CMS-URL.
+No prices, so nothing for Nic.
