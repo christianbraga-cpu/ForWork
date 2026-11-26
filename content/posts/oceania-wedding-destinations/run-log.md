@@ -4,3 +4,4 @@
 07:01 03 batch oc_b complete (42 facts); orchestrator removed 'Advisor confirms requirements' assumption
 07:10 03 oc_a complete (10 facts; Rarotonga and Nuku'alofa unsourced, Smartraveller only); merged pack
 07:14 02 seo complete; report saved by orchestrator
+07:21 05 draft complete (~2,800 prose words); first-draft docx built
