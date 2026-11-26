@@ -46,3 +46,10 @@
   - **Gaps:** five pages lack a featured image (IMAGE-GAP); 11 reserve pages unread; no official Australian marriage source. No prices.
   - **Also captured:** the best-time sweet spots line, the legal vs symbolic line, and Smartraveller Italy "Exercise normal safety precautions".
   - Corrections were sent to the writer.
+- **Stage 2 fast (writer):** DONE. 03-draft-v1.md.
+  - --check: 2,046 reader words (over the cap); 0 dashes; 0 placeholders. External: smartraveller.gov.au only.
+  - YAML valid: 24 claims, 33 links (31 internal).
+  - All 12 core weddings. Unsourced months and places dropped; no planners named.
+  - The Villa Balbiano profile is linked only for the Villa Balbiano wedding (not Balbianello).
+  - Puglia and Sicily image slots: IMAGE-GAP.
+- Reviews launched (accuracy, SEO, couple reader).
