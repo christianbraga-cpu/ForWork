@@ -9,3 +9,4 @@
 07:29 06 editor pass_with_edits 4.29; 24 edits applied to r2
 07:33 07b panel revise (weighted enquire 1.9); 13 edits applied to 08-final.md; accepted after one round
 07:37 final check pass_with_edits 4.43; 8 edits applied
+07:41 package, final docx and run report written

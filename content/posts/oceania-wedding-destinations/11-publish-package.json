@@ -1,0 +1,405 @@
+{
+ "agent": "cms-publisher",
+ "task_id": "oceania-wedding-destinations",
+ "stage": "11",
+ "status": "complete",
+ "round": 1,
+ "inputs_used": [
+  "CLAUDE.md",
+  "content-system/cms/field-map.md",
+  "content-system/cms/publish-checklist.md",
+  "content-system/schemas/11-publish-package.schema.json",
+  "content/posts/oceania-wedding-destinations/00-input.json",
+  "content/posts/oceania-wedding-destinations/01-brief.json (categories, tags)",
+  "content/posts/oceania-wedding-destinations/02-seo.json",
+  "content/posts/oceania-wedding-destinations/03-source-pack.json (Cook Islands page date, open VERIFY items)",
+  "content/posts/oceania-wedding-destinations/04-images.json",
+  "content/posts/oceania-wedding-destinations/08-final.md",
+  "content/posts/oceania-wedding-destinations/09-cro.json",
+  "content/posts/oceania-wedding-destinations/10-distribution.json",
+  "content/posts/oceania-wedding-destinations/run-log.md",
+  "content/posts/wedding-destinations-november/11-publish-package.json, 12-cms-report.md, booking-checklist.md (format model)"
+ ],
+ "self_qa": {
+  "checks": [
+   {
+    "check": "Front matter, META comments and all <!-- fact_xx --> markers removed; H1 is the title; 7 image-slot comments and the 2 LINK comments (November list, Samoan wedding traditions) kept; prose, links and UTMs unchanged (08-final.md minus front matter, META and fact markers diffs identical to 11-body.md)",
+    "pass": true
+   },
+   {
+    "check": "No <!-- CTA: primary --> marker in 08-final.md, so nothing replaced; no CTA marker comments added; each utm_content (primary, secondary, magnet, closing) appears once in visible links",
+    "pass": true
+   },
+   {
+    "check": "All 44 links kept exactly as in 08-final.md, same order; internal links relative; no /destinations/africa or /destinations/latin-america-caribbean link",
+    "pass": true
+   },
+   {
+    "check": "Key takeaways (4) and FAQ (5) taken verbatim from the body",
+    "pass": true
+   },
+   {
+    "check": "Title/H1 and meta title 'Oceania Wedding Destinations From Fiji to Tahiti'; meta description from 02-seo.json",
+    "pass": true,
+    "note": "title 48, description 154 characters"
+   },
+   {
+    "check": "primary_category equals categories[0] (Destination Weddings); no Latin America & Caribbean, Africa or Oceania category assigned",
+    "pass": true
+   },
+   {
+    "check": "No prices; needs_signoff empty",
+    "pass": true
+   },
+   {
+    "check": "All 7 image slots 'needed'; alt and caption left empty (nothing invented); no AI images",
+    "pass": true
+   },
+   {
+    "check": "No em dashes; Australian English",
+    "pass": true
+   },
+   {
+    "check": "status draft; nothing uploaded, saved, scheduled or published",
+    "pass": true
+   }
+  ],
+  "confidence": 0.9
+ },
+ "open_questions": [
+  {
+   "to": "orchestrator",
+   "question": "CMS upload not attempted (package-only mode; the person uploads via the Word doc). content-system/cms/field-map.md also says 'Status: NOT YET MAPPED'. A human saves as Draft, never Publish.",
+   "blocking": false
+  },
+  {
+   "to": "user",
+   "question": "Does the H2 'Oceania wedding destinations at a glance' produce the anchor #oceania-wedding-destinations-at-a-glance in the CMS? If not, remove the Key takeaways 'at-a-glance table' link.",
+   "blocking": false
+  },
+  {
+   "to": "user",
+   "question": "Does an 'Oceania' category exist in the CMS? Unconfirmed; it is not assigned. The package uses Destination Weddings (primary) and Planning Guides from 01-brief.json.",
+   "blocking": false
+  },
+  {
+   "to": "orchestrator",
+   "question": "lagoon slot: 04-images.json left the H3 open (Tahiti or the Cook Islands); 08-final.md places it in the Tahiti and French Polynesia entry. Source a French Polynesia image, or move the slot if the image shows Rarotonga.",
+   "blocking": false
+  },
+  {
+   "to": "orchestrator",
+   "question": "No author named in any input; package uses \"Wedded Wonderland\" (organisation). Confirm the byline.",
+   "blocking": false
+  },
+  {
+   "to": "orchestrator",
+   "question": "Breadcrumb level 2 uses https://weddedwonderland.com/destination-weddings; confirm the category archive URL the CMS outputs.",
+   "blocking": false
+  }
+ ],
+ "assumptions": [
+  "Body keeps the 08-final.md links as written (relative internal links; 09-cro.json lists the same relative paths and UTMs).",
+  "Excerpt is the first sentence of each of the two opening paragraphs, verbatim (236 characters); the full opening paragraph is 327 characters, over the 300 limit, and its second sentence carries a dated Smartraveller claim better left in the body.",
+  "Categories and tags from 01-brief.json; primary category Destination Weddings (also in 00-input.json). New article, no redirect.",
+  "JSON-LD is Article + BreadcrumbList + FAQPage; datePublished empty.",
+  "Image file paths copied from 04-images.json unchanged; status needed for all; alt and caption left empty.",
+  "CTA text is the anchor 'Wedded Concierge' as given in 09-cro.json.",
+  "10-distribution.json pins, carousel and newsletter image stay on hold until images are approved; nothing in it changes the package."
+ ],
+ "verify_items": [
+  "[[IMAGE NEEDED]] 7 of 7 slots, none approved: featured, melanesia, polynesia, lagoon, new-zealand, australia, planning. Real, named destinations only; licensed or owned; never AI.",
+  "[[VERIFY: licence and source for every image, recorded in library-index.csv]]",
+  "[[VERIFY: location of every place image proven by register row, EXIF or source page (Fiji, a listed Polynesian island, Tahiti or French Polynesia, New Zealand, the Whitsundays), never inferred from appearance]]",
+  "[[VERIFY: month taken for every place image (register row or EXIF); no season, wet season, dry season or cyclone wording in any caption]]",
+  "[[VERIFY licence: the Fiji venue galleries and the Hayman Island guide imagery on weddedwonderland.com may be used in blog posts only if the partner supply agreement allows it; open question, images not viewed or location-verified. Real-wedding galleries need couple consent in the register]]",
+  "[[VERIFY: lagoon slot sits in the Tahiti and French Polynesia entry; 04-images.json allows Tahiti, Bora Bora or Rarotonga. Use a French Polynesia image there, or move the slot to the Cook Islands entry if the image shows Rarotonga. Name the island only as the register or EXIF records it]]",
+  "[[VERIFY: polynesia slot opens the Polynesia group; any listed Polynesian island, licensed stock with location in the register (Hawaii is the only Polynesia entry with our guide)]]",
+  "[[VERIFY: planning slot is a styled flat-lay (no real place); owned, licensed or Wedded Wonderland Canva brand asset. Not generated; an AI illustrative flat-lay only with orchestrator approval and an 'illustrative' label]]",
+  "[[VERIFY: couple and guest consent for any identifiable people]]",
+  "[[VERIFY: the H2 'Oceania wedding destinations at a glance' renders with the anchor #oceania-wedding-destinations-at-a-glance, so the Key takeaways jump link works; otherwise remove that link]]",
+  "[[VERIFY: after Save Draft, the post URL is exactly https://weddedwonderland.com/destination-weddings/oceania-wedding-destinations (path /destination-weddings/oceania-wedding-destinations; the category bug has moved earlier posts)]]",
+  "[[VERIFY: recheck every Smartraveller line at publication (all dated 'As at November 2026'): cyclone months for Fiji, Vanuatu, New Caledonia, French Polynesia, the Cook Islands, Samoa and Tonga; Fiji National State of Disaster and water rationing; Vanuatu Santo International Airport restriction; New Caledonia advice level and latest update quotes; Samoa dengue outbreak; Tonga Meteorological Service cyclone outlook; getting married overseas advice]]",
+  "[[VERIFY: Cook Islands Ministry of Justice marriage licence page (https://www.justice.gov.ck/marriage-license/) was last modified 17 October 2022 per page metadata; at publication confirm it is current (notice in person, three-day issue, three-month expiry, place named on the licence, registered celebrant), with the Ministry if needed]]",
+  "[[VERIFY: legal content is general information as at November 2026, not legal advice; recheck the Hawaii Department of Health, New Zealand govt.nz, Consulate-General Papeete, Samoa Bureau of Statistics and ag.gov.au pages at publication]]",
+  "[[VERIFY: the New Zealand source link is niwa.co.nz (anchor names Earth Sciences New Zealand); check it resolves in preview]]",
+  "[[VERIFY: whether an 'Oceania' category exists in the CMS is unconfirmed; it is not assigned. Categories are Destination Weddings (primary) and Planning Guides only]]"
+ ],
+ "tools_used": [
+  "Bash",
+  "Read"
+ ],
+ "next_agent": [
+  "human: upload via the Word doc and Save Draft in CMS (never Publish)"
+ ],
+ "payload": {
+  "title": "Oceania Wedding Destinations From Fiji to Tahiti",
+  "slug": "oceania-wedding-destinations",
+  "url_path": "/destination-weddings/oceania-wedding-destinations",
+  "plan_ref": "WW-303",
+  "content_type": "Programmatic (list)",
+  "cluster": "Destination Wedding Guide 2026",
+  "categories": [
+   "Destination Weddings",
+   "Planning Guides"
+  ],
+  "primary_category": "Destination Weddings",
+  "tags": [
+   "Oceania",
+   "South Pacific",
+   "Fiji",
+   "Vanuatu",
+   "New Caledonia",
+   "Tahiti",
+   "French Polynesia",
+   "Cook Islands",
+   "Samoa",
+   "Tonga",
+   "Hawaii",
+   "New Zealand",
+   "Whitsundays",
+   "Great Barrier Reef",
+   "island weddings",
+   "cyclone season"
+  ],
+  "excerpt": "Oceania wedding destinations run from the islands of Melanesia and Polynesia to New Zealand, Hawaii and Australia's own reef islands. What separates them for a wedding is the calendar, the paperwork and how easily your guests get there.",
+  "key_takeaways": [
+   "Ten places, unranked, in four groups: Melanesia (Fiji, Vanuatu, New Caledonia), Polynesia (Tahiti and French Polynesia, the Cook Islands, Samoa, Tonga, Hawaii), New Zealand and the Whitsundays.",
+   "As at November 2026, Smartraveller dates Fiji's cyclone season from November to April, so a covered ceremony space and a buffer day belong in the plan for much of the tropical South Pacific.",
+   "The legal route differs by country, from a Ministry of Justice licence in the Cook Islands or a state licence in Hawaii to a symbolic ceremony in Fiji with the legal marriage at home.",
+   "For season and legal route side by side, jump to [the at-a-glance table](#oceania-wedding-destinations-at-a-glance)."
+  ],
+  "body_markdown_file": "content/posts/oceania-wedding-destinations/11-body.md",
+  "faq": [
+   {
+    "q": "Which places in Oceania suit a wedding abroad?",
+    "a": "Fiji, Vanuatu, New Caledonia, Tahiti and French Polynesia, the Cook Islands, Samoa, Tonga, Hawaii, New Zealand and the Whitsundays, each with its own season and legal route."
+   },
+   {
+    "q": "When is cyclone season in the South Pacific?",
+    "a": "As at November 2026, Smartraveller dates it from November to April for Fiji, Vanuatu, French Polynesia, the Cook Islands, Samoa and Tonga, and November to May for New Caledonia, with storms possible outside those months."
+   },
+   {
+    "q": "Can we marry legally in the Cook Islands?",
+    "a": "Yes, with a licence from the Ministry of Justice, issued three days after you both give notice in person unless a waiver is granted. The ceremony must take place at the site the licence names."
+   },
+   {
+    "q": "Is Hawaii part of Oceania?",
+    "a": "Hawaii sits in Polynesia, so it belongs here, but it is a US state north of the equator, with a wetter winter from October to April."
+   },
+   {
+    "q": "Is a wedding in Tahiti legal or symbolic?",
+    "a": "Either. For a legal marriage, the mairie of the commune advises on requirements and documents, which may include a CNI and a Certificat de Coutume."
+   }
+  ],
+  "images": [
+   {
+    "slot_id": "featured",
+    "file": "content/posts/oceania-wedding-destinations/images/oceania-wedding-destinations-island-ceremony-hero.webp",
+    "role": "featured",
+    "alt": "",
+    "caption": "",
+    "status": "needed"
+   },
+   {
+    "slot_id": "melanesia",
+    "file": "content/posts/oceania-wedding-destinations/images/oceania-wedding-destinations-fiji-beachfront-ceremony-setup.webp",
+    "role": "inline",
+    "alt": "",
+    "caption": "",
+    "status": "needed"
+   },
+   {
+    "slot_id": "polynesia",
+    "file": "content/posts/oceania-wedding-destinations/images/oceania-wedding-destinations-polynesia-volcanic-island-ceremony.webp",
+    "role": "inline",
+    "alt": "",
+    "caption": "",
+    "status": "needed"
+   },
+   {
+    "slot_id": "lagoon",
+    "file": "content/posts/oceania-wedding-destinations/images/oceania-wedding-destinations-lagoon-island-view.webp",
+    "role": "inline",
+    "alt": "",
+    "caption": "",
+    "status": "needed"
+   },
+   {
+    "slot_id": "new-zealand",
+    "file": "content/posts/oceania-wedding-destinations/images/oceania-wedding-destinations-new-zealand-lakeside-ceremony-setup.webp",
+    "role": "inline",
+    "alt": "",
+    "caption": "",
+    "status": "needed"
+   },
+   {
+    "slot_id": "australia",
+    "file": "content/posts/oceania-wedding-destinations/images/oceania-wedding-destinations-whitsundays-island-ceremony-setup.webp",
+    "role": "inline",
+    "alt": "",
+    "caption": "",
+    "status": "needed"
+   },
+   {
+    "slot_id": "planning",
+    "file": "content/posts/oceania-wedding-destinations/images/oceania-wedding-destinations-planning-stationery-flat-lay.webp",
+    "role": "inline",
+    "alt": "",
+    "caption": "",
+    "status": "needed"
+   }
+  ],
+  "cta": {
+   "text": "Wedded Concierge",
+   "subtext": "One Wedded Advisor, start to finish, as your single point of contact.",
+   "link": "/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=oceania-wedding-destinations&utm_content=primary",
+   "placement": "Existing inline link in the sentence straight after the 'Oceania wedding destinations at a glance' table ('Down to two islands and unsure which suits your guest list? Weigh them up with Wedded Concierge.'), before 'What to plan for a wedding in the Pacific', per 09-cro.json. 08-final.md has no <!-- CTA: primary --> marker, so nothing was replaced and no CTA marker comments were added; the sentence and link are unchanged."
+  },
+  "secondary_cta": {
+   "text": "Wedded Concierge",
+   "subtext": "One Wedded Advisor plans the venue, travel, vendors and payments anywhere in the world.",
+   "link": "/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=oceania-wedding-destinations&utm_content=secondary",
+   "placement": "Existing closing sentence of 'Guests travelling from Australia' ('When the shortlist is settled, bring it to Wedded Concierge.'), before the magnet line. Unchanged."
+  },
+  "closing_cta": {
+   "text": "Wedded Concierge",
+   "link": "/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=oceania-wedding-destinations&utm_content=closing",
+   "placement": "Existing final paragraph under 'Plan your Oceania wedding with Wedded Concierge'. Unchanged."
+  },
+  "lead_magnet": {
+   "name": "Wedded Wonderland digital magazine",
+   "link": "/magazine?utm_source=blog&utm_medium=content&utm_campaign=oceania-wedding-destinations&utm_content=magnet",
+   "placement": "Existing line after the secondary CTA in 'Guests travelling from Australia', anchor 'our digital magazine'. Unchanged."
+  },
+  "tracking_links": [
+   "/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=oceania-wedding-destinations&utm_content=primary",
+   "/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=oceania-wedding-destinations&utm_content=secondary",
+   "/magazine?utm_source=blog&utm_medium=content&utm_campaign=oceania-wedding-destinations&utm_content=magnet",
+   "/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=oceania-wedding-destinations&utm_content=closing"
+  ],
+  "seo": {
+   "meta_title": "Oceania Wedding Destinations From Fiji to Tahiti",
+   "meta_description": "Oceania wedding destinations from Fiji and Vanuatu to Tahiti, the Cook Islands, Hawaii and New Zealand, with cyclone season and legal or symbolic options.",
+   "focus_keyword": "oceania wedding destinations",
+   "canonical": "https://weddedwonderland.com/destination-weddings/oceania-wedding-destinations",
+   "og_image_slot": "featured"
+  },
+  "schema_jsonld": {
+   "@context": "https://schema.org",
+   "@graph": [
+    {
+     "@type": "Article",
+     "@id": "https://weddedwonderland.com/destination-weddings/oceania-wedding-destinations#article",
+     "headline": "Oceania Wedding Destinations From Fiji to Tahiti",
+     "description": "Oceania wedding destinations from Fiji and Vanuatu to Tahiti, the Cook Islands, Hawaii and New Zealand, with cyclone season and legal or symbolic options.",
+     "author": {
+      "@type": "Organization",
+      "name": "Wedded Wonderland",
+      "url": "https://weddedwonderland.com/"
+     },
+     "publisher": {
+      "@type": "Organization",
+      "name": "Wedded Wonderland",
+      "url": "https://weddedwonderland.com/"
+     },
+     "datePublished": "",
+     "mainEntityOfPage": "https://weddedwonderland.com/destination-weddings/oceania-wedding-destinations",
+     "inLanguage": "en-AU"
+    },
+    {
+     "@type": "BreadcrumbList",
+     "itemListElement": [
+      {
+       "@type": "ListItem",
+       "position": 1,
+       "name": "Home",
+       "item": "https://weddedwonderland.com/"
+      },
+      {
+       "@type": "ListItem",
+       "position": 2,
+       "name": "Destination Weddings",
+       "item": "https://weddedwonderland.com/destination-weddings"
+      },
+      {
+       "@type": "ListItem",
+       "position": 3,
+       "name": "Oceania Wedding Destinations From Fiji to Tahiti",
+       "item": "https://weddedwonderland.com/destination-weddings/oceania-wedding-destinations"
+      }
+     ]
+    },
+    {
+     "@type": "FAQPage",
+     "@id": "https://weddedwonderland.com/destination-weddings/oceania-wedding-destinations#faq",
+     "mainEntity": [
+      {
+       "@type": "Question",
+       "name": "Which places in Oceania suit a wedding abroad?",
+       "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Fiji, Vanuatu, New Caledonia, Tahiti and French Polynesia, the Cook Islands, Samoa, Tonga, Hawaii, New Zealand and the Whitsundays, each with its own season and legal route."
+       }
+      },
+      {
+       "@type": "Question",
+       "name": "When is cyclone season in the South Pacific?",
+       "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "As at November 2026, Smartraveller dates it from November to April for Fiji, Vanuatu, French Polynesia, the Cook Islands, Samoa and Tonga, and November to May for New Caledonia, with storms possible outside those months."
+       }
+      },
+      {
+       "@type": "Question",
+       "name": "Can we marry legally in the Cook Islands?",
+       "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, with a licence from the Ministry of Justice, issued three days after you both give notice in person unless a waiver is granted. The ceremony must take place at the site the licence names."
+       }
+      },
+      {
+       "@type": "Question",
+       "name": "Is Hawaii part of Oceania?",
+       "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Hawaii sits in Polynesia, so it belongs here, but it is a US state north of the equator, with a wetter winter from October to April."
+       }
+      },
+      {
+       "@type": "Question",
+       "name": "Is a wedding in Tahiti legal or symbolic?",
+       "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Either. For a legal marriage, the mairie of the commune advises on requirements and documents, which may include a CNI and a Certificat de Coutume."
+       }
+      }
+     ]
+    }
+   ]
+  },
+  "author": "Wedded Wonderland",
+  "status": "draft",
+  "verify_items": [
+   "[[IMAGE NEEDED]] 7 of 7 slots, none approved: featured, melanesia, polynesia, lagoon, new-zealand, australia, planning. Real, named destinations only; licensed or owned; never AI.",
+   "[[VERIFY: licence and source for every image, recorded in library-index.csv]]",
+   "[[VERIFY: location of every place image proven by register row, EXIF or source page (Fiji, a listed Polynesian island, Tahiti or French Polynesia, New Zealand, the Whitsundays), never inferred from appearance]]",
+   "[[VERIFY: month taken for every place image (register row or EXIF); no season, wet season, dry season or cyclone wording in any caption]]",
+   "[[VERIFY licence: the Fiji venue galleries and the Hayman Island guide imagery on weddedwonderland.com may be used in blog posts only if the partner supply agreement allows it; open question, images not viewed or location-verified. Real-wedding galleries need couple consent in the register]]",
+   "[[VERIFY: lagoon slot sits in the Tahiti and French Polynesia entry; 04-images.json allows Tahiti, Bora Bora or Rarotonga. Use a French Polynesia image there, or move the slot to the Cook Islands entry if the image shows Rarotonga. Name the island only as the register or EXIF records it]]",
+   "[[VERIFY: polynesia slot opens the Polynesia group; any listed Polynesian island, licensed stock with location in the register (Hawaii is the only Polynesia entry with our guide)]]",
+   "[[VERIFY: planning slot is a styled flat-lay (no real place); owned, licensed or Wedded Wonderland Canva brand asset. Not generated; an AI illustrative flat-lay only with orchestrator approval and an 'illustrative' label]]",
+   "[[VERIFY: couple and guest consent for any identifiable people]]",
+   "[[VERIFY: the H2 'Oceania wedding destinations at a glance' renders with the anchor #oceania-wedding-destinations-at-a-glance, so the Key takeaways jump link works; otherwise remove that link]]",
+   "[[VERIFY: after Save Draft, the post URL is exactly https://weddedwonderland.com/destination-weddings/oceania-wedding-destinations (path /destination-weddings/oceania-wedding-destinations; the category bug has moved earlier posts)]]",
+   "[[VERIFY: recheck every Smartraveller line at publication (all dated 'As at November 2026'): cyclone months for Fiji, Vanuatu, New Caledonia, French Polynesia, the Cook Islands, Samoa and Tonga; Fiji National State of Disaster and water rationing; Vanuatu Santo International Airport restriction; New Caledonia advice level and latest update quotes; Samoa dengue outbreak; Tonga Meteorological Service cyclone outlook; getting married overseas advice]]",
+   "[[VERIFY: Cook Islands Ministry of Justice marriage licence page (https://www.justice.gov.ck/marriage-license/) was last modified 17 October 2022 per page metadata; at publication confirm it is current (notice in person, three-day issue, three-month expiry, place named on the licence, registered celebrant), with the Ministry if needed]]",
+   "[[VERIFY: legal content is general information as at November 2026, not legal advice; recheck the Hawaii Department of Health, New Zealand govt.nz, Consulate-General Papeete, Samoa Bureau of Statistics and ag.gov.au pages at publication]]",
+   "[[VERIFY: the New Zealand source link is niwa.co.nz (anchor names Earth Sciences New Zealand); check it resolves in preview]]",
+   "[[VERIFY: whether an 'Oceania' category exists in the CMS is unconfirmed; it is not assigned. Categories are Destination Weddings (primary) and Planning Guides only]]"
+  ],
+  "needs_signoff": [],
+  "redirect": null,
+  "draft_note": "DRAFT. Do not publish until checked: no [[VERIFY]] markers in the copy; no prices, nothing for Nic to sign off. Image slots needed (7 of 7, none approved): featured, melanesia, polynesia, lagoon, new-zealand, australia, planning. Every place slot shows a real, named destination: licensed or owned only, never AI, location proven by register row, EXIF or source page, and month taken recorded; no season, wet season, dry season or cyclone wording in any caption. Our own Fiji venue galleries and Hayman Island guide imagery may be used only if the partner agreements allow blog use (open question; confirm in writing first). lagoon: the slot sits in the Tahiti and French Polynesia entry; use a French Polynesia image, or move it to the Cook Islands entry if the image shows Rarotonga. planning: flat-lay, no real place; owned, licensed or Canva brand asset; AI only with orchestrator approval and an 'illustrative' label. People only with written couple and guest consent. Check the H2 'Oceania wedding destinations at a glance' gives the anchor #oceania-wedding-destinations-at-a-glance so the Key takeaways jump link works; if not, remove that link. Keep the two hidden LINK comments: /destination-weddings/wedding-destinations-november (How we chose these Oceania destinations) and /expert-advice/samoan-wedding-traditions (Samoa entry); add each link once the page is live. Primary category Destination Weddings set explicitly; no Oceania category assigned (whether one exists is unconfirmed). After saving, check the URL is exactly https://weddedwonderland.com/destination-weddings/oceania-wedding-destinations (category bug). At publication, recheck every Smartraveller line (dated 'As at November 2026') and confirm the Cook Islands Ministry of Justice marriage licence page is still current (page metadata last modified 17 October 2022). Legal content is general information as at November 2026, not legal advice. Byline to confirm (package uses Wedded Wonderland). Check the five-column at-a-glance table on mobile. Plan ref WW-303. Questions for couples are in booking-checklist.md. DRAFT ONLY. A human clicks Publish."
+ }
+}
