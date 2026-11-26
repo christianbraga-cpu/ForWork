@@ -12,7 +12,7 @@ round: 3
 
 <!-- IMAGE SLOT featured: Landscape 3:2 with clear space on one side for the title. Overhead or 45 degree still life on cream linen or pale stone: a pair of wedding rings, a fine fountain pen, a plain ivory document folder tied with silk ribbon, two closed passports (covers only, country-neutral), a sprig of olive or white florals. Soft natural window light, warm neutral palette, no people, no hands. No real, readable government form or certificate: no legible registry text, crest, coat of arms, names, dates, registration numbers, signatures, barcodes or photos. Source order: library register, Canva brand asset, or licensed premium stock bought by a human and added to library-index.csv. An AI still life only if the user approves, labelled 'Illustrative image' in the caption. -->
 
-If you are searching for a marriage licence in Australia, there is none to apply for. As at November 2026, you [give a notice of intended marriage to an authorised marriage celebrant](https://www.ag.gov.au/families-and-marriage/marriage/get-married) at least 1 month and no more than 18 months before the wedding. You then marry before that celebrant and 2 witnesses. Within 14 days, the celebrant submits the marriage paperwork to the registry of births, deaths and marriages in your state or territory. <!-- fact_01 --> <!-- fact_04 -->
+If you are searching for a marriage licence in Australia, there is none to apply for. As at November 2026, you [give a notice of intended marriage to an authorised marriage celebrant](https://www.ag.gov.au/families-and-marriage/marriage/get-married) at least 1 month and no more than 18 months before the wedding. You then marry before that celebrant and 2 witnesses. Within 14 days, the celebrant submits the marriage paperwork to the registry of births, deaths and marriages in the state or territory where you married. <!-- fact_01 --> <!-- fact_04 -->
 
 Marry abroad and the destination's law takes over, and some places do issue licences, so the first decision is which country makes your marriage legal. This is general information as at November 2026, not legal advice.
 
@@ -29,7 +29,7 @@ In Australia the notice, not a licence, is the step that comes before the weddin
 
 ### Why Australia issues no licence
 
-The Marriage Act 1961 and the Marriage Regulations 2017 set the rules for marrying in Australia, and the [Attorney-General's Department guidance on getting married](https://www.ag.gov.au/families-and-marriage/marriage/get-married) does not use the term marriage licence. <!-- fact_01 --> <!-- fact_08 --> In its place, the guidance describes giving a notice of intended marriage form to an authorised marriage celebrant. <!-- fact_08 -->
+The Marriage Act 1961 and the Marriage Regulations 2017 set the rules for marrying in Australia. <!-- fact_01 --> Under the [Attorney-General's Department guidance on getting married](https://www.ag.gov.au/families-and-marriage/marriage/get-married), the step before the wedding is giving a notice of intended marriage form to an authorised marriage celebrant, not applying for a licence. <!-- fact_01 --> <!-- fact_08 -->
 
 ### The Notice of Intended Marriage
 
@@ -41,7 +41,7 @@ The practical lesson: lodge the notice once your date and celebrant are settled,
 
 You must be married by an authorised marriage celebrant to be legally married in Australia. <!-- fact_17 --> The [four types listed by the Attorney-General's Department](https://www.ag.gov.au/families-and-marriage/marriage/find-marriage-celebrant) are Commonwealth-registered marriage celebrants, Commonwealth-registered religious marriage celebrants, ministers of religion from a recognised denomination, and state and territory officers. <!-- fact_17 -->
 
-Until a person is a Commonwealth-registered celebrant, they [cannot accept a notice of intended marriage or solemnise a marriage](https://www.ag.gov.au/families-and-marriage/marriage/become-marriage-celebrant/apply-be-marriage-celebrant). <!-- fact_19 --> For more on this, see [who can legally perform a marriage in Australia](/expert-advice/who-can-perform-a-marriage).
+Someone applying to become a Commonwealth-registered celebrant [cannot accept a notice of intended marriage or solemnise a marriage](https://www.ag.gov.au/families-and-marriage/marriage/become-marriage-celebrant/apply-be-marriage-celebrant) until they are registered. <!-- fact_19 --> For more on this, see [who can legally perform a marriage in Australia](/expert-advice/who-can-perform-a-marriage).
 
 ### The words the law requires
 
@@ -155,7 +155,7 @@ Not in Australia. Two witnesses aged over 18 sign the marriage certificates, and
 
 ### Is a marriage licence from New Zealand or Hawaii recognised in Australia?
 
-What is recognised is the marriage, not the licence. [An overseas marriage](https://www.smartraveller.gov.au/planning-trip/advice-your-planned-activities/getting-married-overseas) is recognised in Australia if it was valid under the law of the country where it happened and would have been valid under Australian law. <!-- fact_41 --> It cannot be registered here. <!-- fact_06 -->
+What is recognised is the marriage, not the licence. [An overseas marriage](https://www.smartraveller.gov.au/planning-trip/advice-your-planned-activities/getting-married-overseas) is generally recognised in Australia if it was valid under the law of the country where it happened and would have been valid under Australian law. <!-- fact_06 --> <!-- fact_41 --> It cannot be registered here. <!-- fact_06 -->
 
 ## Plan your wedding abroad with Wedded Concierge
 
