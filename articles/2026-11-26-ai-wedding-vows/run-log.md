@@ -50,3 +50,10 @@
   - No AI tools named. The vows parent is /planning/how-to-write-wedding-vows.
   - The Concierge line uses brand-profile wording (CONCIERGE-CEREMONY). Studio is called "our free planning hub" (STUDIO-AI-PRICE pending).
 - Reviews launched (accuracy, SEO, couple reader).
+- **Stage 3 fast (3 reviews):** DONE.
+  - **Accuracy 4:** majors on the s45(2) wording (it applies to civil celebrants only) and the "no credit card" and "free" price terms (STUDIO-AI-PRICE). Judged on the pack, because live fetches failed.
+  - **SEO 4.0:** majors on too many related links, and "chatgpt wedding vows" and "ai vow generator" are missing.
+  - **Reader (couple):** relevance 2, trust 3, clarity 4, would_enquire 2, "save". Adds an Italy legal link and a plainer Concierge line.
+  - Merged request: 04-reviews/v1/merged.md.
+- **Decision (default, AI-TOOL-NAMES):** ChatGPT is named only through our own comparison page's wording (S-06), with no ranking. "Free" stays for Studio (the primary live page), with Nic's sign-off.
+- Stage 4: writer v2 launched. The researcher is still held on a permission prompt.
