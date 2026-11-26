@@ -57,3 +57,8 @@
   - Merged request: 04-reviews/v1/merged.md.
 - **Decision (default, AI-TOOL-NAMES):** ChatGPT is named only through our own comparison page's wording (S-06), with no ranking. "Free" stays for Studio (the primary live page), with Nic's sign-off.
 - Stage 4: writer v2 launched. The researcher is still held on a permission prompt.
+- **Stage 4 fast (writer v2):** DONE. 03-draft-v2.md.
+  - --check: 1,524 reader words; 0 dashes; 0 placeholders. Official: legislation.gov.au, ag.gov.au.
+  - YAML valid: 24 claims, 12 links.
+  - All 13 items applied. The Concierge line uses brand-profile wording. The login-gated ai-chat link was dropped. OAIC is not linked (advice only).
+- Stage 6: copy editor launched.
