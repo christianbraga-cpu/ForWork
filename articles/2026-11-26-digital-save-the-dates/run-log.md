@@ -39,3 +39,11 @@
   - Link-map "Online invitations and save the dates" section added.
 - **BROKEN-LIVE (for the web team):** /destination-weddings/destination-wedding-save-the-date is Live in Zoho (WC3-T398) but returns 404. Not linked.
 - Shortlist sent to the researcher.
+- **Stage 1 fast (research):** DONE. 40 facts, all read live on 26 Nov; 4 legal. All prices are USD (Nic).
+  - **Shortlist coverage:** Paperless Post 3, Greenvelope 5, Bliss & Bone 3, Canva 2, Greetings Island 1, Etsy 1 (marketplace help page), Zazzle 1. Dropped platforms are kept but marked dropped.
+  - **Studio:** a website with RSVP and a guest list (dietary, travel, CSV); no save-the-date maker.
+  - **Conflicts:**
+    - TIMING-CONFLICT: the tools page says launch the website "when" save the dates go out; two other WW pages say "before". The platform timing pages disagree too.
+    - STUDIO-CAP-CONFLICT: the free guest cap is "50 guests" in one snippet but "generous" elsewhere.
+  - **Decision (default):** neither conflicting figure is stated as a rule.
+- Stage 2: writer launched.
