@@ -1,0 +1,123 @@
+{
+  "agent": "cro-specialist",
+  "task_id": "marriage-licence",
+  "stage": "09",
+  "status": "complete",
+  "round": 1,
+  "inputs_used": [
+    "CLAUDE.md",
+    "content-system/brand/services.md",
+    "content-system/brand/brand-facts.md",
+    "content-system/schemas/09-cro.schema.json",
+    "content-system/schemas/envelope.schema.json",
+    "content/posts/marriage-licence/01-brief.json (journey_stage, service_link)",
+    "content/posts/marriage-licence/07-panel.json (must_fix, should_fix, consider, deferred)",
+    "content/posts/marriage-licence/07-icp/*.json (cta_reaction)",
+    "content/posts/marriage-licence/08-final.md",
+    "content-system/seo/link-map.csv (/wonderland-concierge, /magazine)",
+    "content/posts/who-can-perform-a-marriage/09-cro.json (format model)"
+  ],
+  "self_qa": {
+    "checks": [
+      {
+        "check": "Primary CTA 6 words or fewer, no 'click here', no exclamation mark",
+        "pass": true,
+        "note": "'Begin with Wedded Concierge' (4 words). Secondary 'Plan with Wedded Concierge' (4), closing 'Tell Wedded Concierge your date' (5)."
+      },
+      {
+        "check": "utm_content primary, secondary, closing and magnet each appear exactly once, all utm_medium=content",
+        "pass": true,
+        "note": "grep on 08-final.md: 1 each, 4 UTM links in total, 4 x utm_medium=content. No UTM link added."
+      },
+      {
+        "check": "Primary appears before secondary in the post",
+        "pass": true,
+        "note": "Primary at line 126 ('Marry at home and celebrate abroad'), secondary at line 132 ('Marry legally in your destination'), closing at line 164. The magnet (line 116) sits earlier for early-stage readers."
+      },
+      {
+        "check": "Every /wonderland-concierge anchor reads exactly 'Wedded Concierge'",
+        "pass": true,
+        "note": "All three anchors checked by grep."
+      },
+      {
+        "check": "Targets exist in the link map",
+        "pass": true,
+        "note": "/wonderland-concierge (commercial, default CTA target) and /magazine (lead magnet) both listed."
+      },
+      {
+        "check": "Advisor wording only from brand-facts 'Claims we can make'; nothing implies the Advisor handles legal paperwork",
+        "pass": true,
+        "note": "Subtexts use 'fee agreed in writing before any work begins', 'venue, travel, vendors and payments' and 'time zone, quotes in AUD'. The post states 'The paperwork stays with you, your celebrant and the registry' directly before the primary CTA, and the secondary follows the destination's own legal steps."
+      },
+      {
+        "check": "No fees, commissions, deposits, availability, transfers, on-the-ground staff, room blocks, Wedded Privileges, phone lines, named people, prices, 'free' or 'best'; no em dashes; no CTA marker comments",
+        "pass": true,
+        "note": "grep on 08-final.md found none; this file adds none. Magnet named without the services.md default wording. No <!-- CTA --> marker added."
+      },
+      {
+        "check": "08-final.md unchanged",
+        "pass": true,
+        "note": "Read only; copy_changes is empty."
+      }
+    ],
+    "confidence": 0.86
+  },
+  "open_questions": [
+    {
+      "to": "orchestrator",
+      "question": "For the run report: the fee model, supplier commissions or mark-ups, deposits (and refunds/contracts), a first step as a phone call with a real person, and on-the-day contact overseas belong on /wonderland-concierge, not in this post. These are what funding_parent, sceptic, planner_couple and search_visitor said they would need to see before enquiring; all are deferred in brand-facts 'Confirmed business answers'. Raise with the business (and Nic for anything priced) and re-run cro-specialist once confirmed.",
+      "blocking": false
+    },
+    {
+      "to": "orchestrator",
+      "question": "08-final.md has no <!-- CTA: primary --> marker; placements rely on the existing inline links, as briefed. If the CMS template needs a CTA block anchor, handle it at the CMS stage. No copy change made.",
+      "blocking": false
+    }
+  ],
+  "assumptions": [
+    "Placements kept as they are: the panel's cta_reactions ask for fee model, deposits and a phone call before an enquiry, none of which can be added to this post, so moving CTAs would not change that; the approved 'fee agreed in writing' line already sits directly before the closing CTA (panel closing_fee_first edit).",
+    "CTA text and subtext fields describe the CMS button/summary for each existing link; the in-copy anchors stay 'Wedded Concierge'."
+  ],
+  "verify_items": [],
+  "tools_used": [
+    "Bash (grep, python3 -I)"
+  ],
+  "payload": {
+    "journey_stage": "planning",
+    "primary_cta": {
+      "text": "Begin with Wedded Concierge",
+      "subtext": "The fee is agreed in writing before any work begins.",
+      "link": "https://weddedwonderland.com/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=marriage-licence&utm_content=primary",
+      "placement": "Existing inline link at the end of 'Marry at home and celebrate abroad' ('For the celebration abroad, one Wedded Advisor plans the venue, travel, vendors and payments anywhere in the world... Begin with Wedded Concierge.'), straight after 'The paperwork stays with you, your celebrant and the registry'. This is where the reader's question turns from paperwork to planning the celebration. Unchanged."
+    },
+    "secondary_cta": {
+      "text": "Plan with Wedded Concierge",
+      "subtext": "One Wedded Advisor plans the venue, travel, vendors and payments.",
+      "link": "https://weddedwonderland.com/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=marriage-licence&utm_content=secondary",
+      "placement": "Existing closing sentence of 'Marry legally in your destination' ('Once the country is chosen, the planning around it begins with Wedded Concierge.'), after the destination's legal steps and the name-change caution. Serves couples choosing the legal-abroad path. Unchanged."
+    },
+    "lead_magnet": {
+      "name": "Get Wedded destination wedding magazines",
+      "link": "https://weddedwonderland.com/magazine?utm_source=blog&utm_medium=content&utm_campaign=marriage-licence&utm_content=magnet",
+      "placement": "Existing line at the end of 'Recognition back in Australia' ('For the places themselves, browse our destination wedding magazines'), for readers still deciding where to marry. Unchanged.",
+      "exists": true
+    },
+    "closing_cta": {
+      "text": "Tell Wedded Concierge your date",
+      "subtext": "One Wedded Advisor works in your time zone and quotes in AUD.",
+      "link": "https://weddedwonderland.com/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=marriage-licence&utm_content=closing",
+      "placement": "Existing final paragraph under 'Plan your wedding abroad with Wedded Concierge', directly after the approved fee-in-writing line and with the panel's 'or that you are still deciding' wording. Unchanged."
+    },
+    "tracking": [
+      "https://weddedwonderland.com/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=marriage-licence&utm_content=primary",
+      "https://weddedwonderland.com/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=marriage-licence&utm_content=secondary",
+      "https://weddedwonderland.com/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=marriage-licence&utm_content=closing",
+      "https://weddedwonderland.com/magazine?utm_source=blog&utm_medium=content&utm_campaign=marriage-licence&utm_content=magnet"
+    ],
+    "copy_changes": [],
+    "rationale": "Brief journey_stage is 'planning' and service_link is /wonderland-concierge, so per services.md the primary goal is a Wedded Concierge consultation, with the magazine as the early-stage magnet. All four tracked links already exist once each with utm_medium=content, primary before secondary, every concierge anchor reads 'Wedded Concierge', and both targets are in the link map, so no link, marker or copy is added and 08-final.md is untouched. Both concierge links in the body sit after the legal side is framed as the couple's (celebrant and registry at home, or the destination's own authorities), so neither implies the Advisor handles legal paperwork. Panel cta_reactions: three readers said 'maybe' and two 'no' (weighted enquiry 1.7); what they want to see first is the fee model, commissions, deposits, a phone call with a person and on-the-day contact, all deferred business details that belong on /wonderland-concierge and are logged for the run report. The one approved answer to the money worry, 'the fee is agreed in writing before any work begins', already precedes the closing CTA and is used as the primary subtext. Subtexts use only brand-facts 'Claims we can make'. Backlog magnet suggestion: a 'marrying legally abroad: questions to ask the embassy' checklist would match this post better; none is known to exist (exists: false, not placed)."
+  },
+  "next_agent": [
+    "distribution"
+  ]
+}
