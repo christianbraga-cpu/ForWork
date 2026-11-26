@@ -1,0 +1,133 @@
+{
+  "agent": "cro-specialist",
+  "task_id": "wedding-destinations-november",
+  "stage": "09",
+  "status": "complete",
+  "round": 1,
+  "inputs_used": [
+    "CLAUDE.md",
+    "content-system/brand/services.md",
+    "content-system/brand/brand-facts.md",
+    "content-system/schemas/09-cro.schema.json",
+    "content-system/schemas/envelope.schema.json",
+    "content/posts/wedding-destinations-november/01-brief.json (journey_stage, service_link)",
+    "content/posts/wedding-destinations-november/07-panel.json (must_fix, consider, deferred, keep, open_questions, verify_items)",
+    "content/posts/wedding-destinations-november/07-icp/*.json (cta_reaction, unanswered_questions)",
+    "content/posts/wedding-destinations-november/08-final.md",
+    "content-system/seo/link-map.csv (/wonderland-concierge, /magazine)",
+    "content/posts/5-tips-to-creating-a-personalised-wedding-hashtag/09-cro.json (format model)"
+  ],
+  "self_qa": {
+    "checks": [
+      {
+        "check": "CTA text 6 words or fewer, no 'click here', no exclamation mark",
+        "pass": true,
+        "note": "Primary 'Weigh them with Wedded Concierge' (5), secondary 'Take your shortlist to Wedded Concierge' (6), closing 'Tell Wedded Concierge your date' (5), magnet 'Browse our digital magazine' (4)."
+      },
+      {
+        "check": "utm_content primary, secondary, magnet and closing each appear exactly once, all utm_medium=content, utm_campaign is the slug",
+        "pass": true,
+        "note": "grep on 08-final.md: primary line 209, secondary line 233, magnet line 235, closing line 265; 4 x utm_medium=content; campaign wedding-destinations-november in all four. No UTM link added."
+      },
+      {
+        "check": "Primary appears before secondary in the post",
+        "pass": true,
+        "note": "Primary line 209 (after the at-a-glance table), secondary line 233 (end of 'Guests travelling from Australia')."
+      },
+      {
+        "check": "Every /wonderland-concierge anchor reads exactly 'Wedded Concierge'",
+        "pass": true,
+        "note": "All three anchors (lines 209, 233, 265) checked by grep."
+      },
+      {
+        "check": "Targets exist in the link map",
+        "pass": true,
+        "note": "/wonderland-concierge (commercial, brief service_link) and /magazine (type magazine, lead magnet) both listed."
+      },
+      {
+        "check": "Advisor wording only from brand-facts 'Claims we can make'",
+        "pass": true,
+        "note": "Subtexts use 'one Wedded Advisor, start to finish, as your single point of contact', 'confirms inclusions in writing before you commit' and 'venue, travel, vendors and payments, anywhere in the world'. No fee wording in this file's subtexts."
+      },
+      {
+        "check": "No fees, commissions, deposits, availability, transfers, on-the-ground staff, room blocks, Wedded Privileges, phone lines, named people, prices, 'free', 'best' added; no em dashes; no CTA marker comments",
+        "pass": true,
+        "note": "grep -i on 08-final.md: 'best' only inside URL slugs (lines 54, 70, 170, 263); 'price' only in the figurative 'The price of a quieter Mediterranean' (line 30); 'deposits' only as the panel-approved venue question (line 217), not a Wedded Wonderland claim; 'fee is agreed in writing before any work begins' (line 261) is existing brand-facts copy set by the panel, not reused or extended here. No 'free', no em dash, no <!-- CTA --> marker. Magnet named without the services.md default 'free' wording."
+      },
+      {
+        "check": "'Maybe' readers' prerequisites placed before the CTAs where the post can carry them",
+        "pass": true,
+        "note": "Deposit question (217), contract in English and currency (221), route without steps and nearest doctor (231) all sit before the secondary; 'our planning service' explains Wedded Concierge before the primary (209); privacy needs invited in the closing ask (265). The rest are deferred business answers and cannot go in this post."
+      },
+      {
+        "check": "08-final.md unchanged",
+        "pass": true,
+        "note": "Read only; md5 e9799f19dfe3a0bf9e153238b9fa7059 before and after; copy_changes is empty."
+      }
+    ],
+    "confidence": 0.86
+  },
+  "open_questions": [
+    {
+      "to": "orchestrator",
+      "question": "For the run report (answers the panel's open question to cro-specialist): the fee model, supplier commissions or mark-ups (and whether supplier prices pass through at cost), deposits (who holds money between couple and venue, what happens if weather moves the date), a first phone call with a real person before anything is booked, on-the-day contact overseas (who to ring at 2am), experience at scale (200 to 400 guests, non-Australian couples) and confidentiality or a private channel belong on /wonderland-concierge, not in this post. These are what funding_parent, planner_couple, sceptic, uhnw and search_visitor said they need before enquiring, and they hold weighted enquiry at 2.0. All are deferred in brand-facts 'Confirmed business answers'. Raise with the business (Nic for anything priced) and re-run cro-specialist once /wonderland-concierge answers them.",
+      "blocking": false
+    },
+    {
+      "to": "orchestrator",
+      "question": "08-final.md has no <!-- CTA: primary --> marker; placements rely on the existing inline links, as briefed. If the CMS template needs a CTA block anchor, handle it at the CMS stage. No copy change made.",
+      "blocking": false
+    }
+  ],
+  "assumptions": [
+    "Placements kept as they are: the primary sits straight after the at-a-glance table, where a comparing reader's question peaks ('which of these ten for us?'), and the panel's primary_context edit already explains the service there. Moving CTAs would not answer the readers' blocking questions, which are deferred business details.",
+    "CTA text and subtext fields describe the CMS button or summary for each existing link; the in-copy anchors stay 'Wedded Concierge' and 'our digital magazine'.",
+    "Journey stage 'comparing' from 01-brief.json, which services.md routes to a Concierge consultation as primary; the magnet serves the earlier-stage search visitor."
+  ],
+  "verify_items": [
+    "[[VERIFY: Wedded Concierge fee model, commissions, supplier pricing and deposit handling, for /wonderland-concierge only, not this post]]",
+    "[[VERIFY: first phone call, on-the-day contact, private enquiry channel, scale and confidentiality, for /wonderland-concierge only]]"
+  ],
+  "tools_used": [
+    "Bash (cat, grep, md5sum, python3 -I validate.py)",
+    "python3 (write JSON)"
+  ],
+  "payload": {
+    "journey_stage": "comparing",
+    "primary_cta": {
+      "text": "Weigh them with Wedded Concierge",
+      "subtext": "One Wedded Advisor, start to finish, as your single point of contact.",
+      "link": "https://weddedwonderland.com/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=wedding-destinations-november&utm_content=primary",
+      "placement": "Existing inline link after the 'Wedding destinations in November at a glance' table (line 209: 'Torn between a quiet Mediterranean terrace and a warm island? Weigh them against your guest list with our planning service, Wedded Concierge.'). The table is where the comparing reader has all ten side by side and the 'which one' question peaks; 'our planning service' answers search_visitor's 'what is it' before the anchor. Unchanged."
+    },
+    "secondary_cta": {
+      "text": "Take your shortlist to Wedded Concierge",
+      "subtext": "Your Wedded Advisor confirms inclusions in writing before you commit.",
+      "link": "https://weddedwonderland.com/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=wedding-destinations-november&utm_content=secondary",
+      "placement": "Existing closing sentence of 'Guests travelling from Australia' (line 233: 'Once the shortlist is down to two, take it to Wedded Concierge.'), after the time zone, AUD and inclusions line that planner_couple and funding_parent called the most persuasive, and after the deposit, contract-in-English and access questions funding_parent wanted first. Catches readers who skipped the list for the planning section. Unchanged."
+    },
+    "closing_cta": {
+      "text": "Tell Wedded Concierge your date",
+      "subtext": "Venue, travel, vendors and payments, planned anywhere in the world.",
+      "link": "https://weddedwonderland.com/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=wedding-destinations-november&utm_content=closing",
+      "placement": "Existing final paragraph under 'Plan your November wedding with Wedded Concierge' (line 265), asking for date, guest numbers, privacy or security needs and who needs extra care on the journey. funding_parent and planner_couple both named 'extra care on the journey' as the line that spoke to them; the privacy invitation answers uhnw. Unchanged."
+    },
+    "lead_magnet": {
+      "name": "Wedded Wonderland digital magazine",
+      "link": "https://weddedwonderland.com/magazine?utm_source=blog&utm_medium=content&utm_campaign=wedding-destinations-november&utm_content=magnet",
+      "placement": "Existing line after the secondary in 'Guests travelling from Australia' (line 235: 'For the full sequence, follow our guide on how to plan a destination wedding, or browse our digital magazine.'), for readers not ready to enquire. Unchanged.",
+      "exists": true
+    },
+    "tracking": [
+      "https://weddedwonderland.com/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=wedding-destinations-november&utm_content=primary",
+      "https://weddedwonderland.com/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=wedding-destinations-november&utm_content=secondary",
+      "https://weddedwonderland.com/magazine?utm_source=blog&utm_medium=content&utm_campaign=wedding-destinations-november&utm_content=magnet",
+      "https://weddedwonderland.com/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=wedding-destinations-november&utm_content=closing"
+    ],
+    "copy_changes": [],
+    "rationale": "Brief journey_stage is 'comparing' (a ten-destination comparison for a 150k+ AUD audience), which services.md routes to a Wedded Concierge consultation as primary, with the brief's service_link /wonderland-concierge. All four tracked links already exist once each with utm_medium=content and the slug as campaign, primary before secondary, every concierge anchor reads 'Wedded Concierge', and both targets are in the link map, so no link, marker or copy is added and 08-final.md is untouched. The primary sits at the question peak, straight after the at-a-glance table; the secondary follows the Advisor line and the venue questions on deposits, contracts and access; the closing invites date, guests and privacy needs. Panel cta_reactions: three 'maybe' (funding_parent, planner_couple, sceptic) and two 'no' (search_visitor, uhnw), weighted enquiry 2.0. Of what the 'maybe' readers want first, the post now carries everything it can before the CTAs (deposit and contract questions to the venue, access and medical questions, a plain line on what Wedded Concierge is). The rest (fee model, commissions, deposits held, a first phone call, on-the-day contact, scale and confidentiality) are deferred business answers that belong on /wonderland-concierge and are logged for the run report. Subtexts use only brand-facts 'Claims we can make' and avoid fee, price and availability wording. Backlog suggestion: a 'destination weddings by month' or November weather-and-questions checklist magnet (the ten venue question sets in one printable) would suit this post; none is known to exist in the link map (exists: false, not placed). A consented real November wedding page, asked for by planner_couple and sceptic, would also lift enquiry and is already a VERIFY item at panel stage."
+  },
+  "next_agent": [
+    "distribution"
+  ]
+}
