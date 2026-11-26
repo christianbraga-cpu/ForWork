@@ -275,10 +275,10 @@ No Malta destination page exists yet (open item MALTA-PAGE); link `/destinations
 | URL | Title | Owns |
 |---|---|---|
 | `/expert-advice/traditional-wedding-vows` | Traditional Wedding Vows | traditional wedding vows |
-| `/expert-advice/wedding-vows-for-her` | Wedding Vows for Her | wedding vows for her |
-| `/expert-advice/wedding-vows-for-him` | Wedding Vows for Him | wedding vows for him |
+| `/expert-advice/wedding-vows-for-her` | Wedding Vows for Her (REDIRECT) | (none) | REDIRECTS to /planning/how-to-write-wedding-vows (Firecrawl, 26 Nov 2026); link the target, not this URL |
+| `/expert-advice/wedding-vows-for-him` | Wedding Vows for Him (REDIRECT) | (none) | REDIRECTS to /planning/how-to-write-wedding-vows (Firecrawl, 26 Nov 2026); link the target, not this URL |
 | `/expert-advice/humorous-wedding-ceremony-script` | Humorous Wedding Ceremony Script | humorous wedding ceremony script (partial overlap with funny vows: link, never an exact "funny wedding vows" anchor) |
-| `/planning/elopement-vows` | Elopement vows | elopement vows (live per research 22 Nov 2026) |
+| `/planning/elopement-vows` | Elopement vows (REDIRECT) | (none) | REDIRECTS to /planning/how-to-write-wedding-vows (Firecrawl, 26 Nov 2026); link the target, not this URL |
 | `/expert-advice/elopement` | Elopement | elopement (live per research 22 Nov 2026) |
 | `/destination-weddings/elopement-ideas` | Elopement ideas | elopement ideas (live per research 22 Nov 2026; user to confirm whether this is the planned WW-321) |
 | `/expert-advice/elopement-ceremony-script` | Elopement Ceremony Script for Two | elopement ceremony script | DRAFT (22 Nov 2026; URL was 404, new post) |
@@ -541,9 +541,11 @@ No dedicated Decor and Florals hub exists. The /blog/decor category page is the 
 | `/wonderland-studio/ai-chat` | Wonderland Studio AI Planning Assistant (chat) | studio ai chat (LIVE but login-gated: redirects to /login, noindex, 26 Nov 2026; link /wonderland-studio in body copy, ai-chat only as a secondary "try it" link) |
 | `/expert-advice/what-is-wonderland-studio` | What Is Wonderland Studio? The Wedding Planning App | what is wonderland studio (LIVE per Firecrawl map 26 Nov 2026) |
 | `/expert-advice/wedding-planning-app-vs-spreadsheet` | Is a Wedding Planning App Better Than a Spreadsheet or Notion Template? | wedding planning app vs spreadsheet (LIVE per Firecrawl map 26 Nov 2026) |
-| `/expert-advice/short-wedding-vows` | Short Wedding Vows Examples You Can Say in Under a Minute | short wedding vows (LIVE per Firecrawl map 26 Nov 2026) |
-| `/expert-advice/wedding-ceremony-script-australia` | Wedding Ceremony Script Australia With the Legal Wording | wedding ceremony script australia (LIVE per Firecrawl map 26 Nov 2026) |
+| `/expert-advice/short-wedding-vows` | Short Wedding Vows Examples You Can Say in Under a Minute (REDIRECT) | (none) | REDIRECTS to /planning/how-to-write-wedding-vows (Firecrawl, 26 Nov 2026); link the target, not this URL |
+| `/expert-advice/wedding-ceremony-script-australia` | Wedding Ceremony Script Australia With the Legal Wording (REDIRECT) | (none) | REDIRECTS to /expert-advice/wedding-ceremony-script (Firecrawl, 26 Nov 2026); link the target, not this URL |
 | `/wedding-tools/ai-wedding-vows` | AI Wedding Vows and How to Make Them Sound Like You (WC3-T1003) | ai wedding vows, chatgpt wedding vows, ai vow generator | DRAFT (26 Nov 2026; URL was 404, new post; final ready, not published) |
 
 Note (26 Nov 2026): `/how-to-write-wedding-vows` now says about 150 words, about a minute aloud, 300 words the most (the 19 Nov row's "250 to 300 words" is out of date). `/planning/how-to-write-wedding-vows` is a second live URL on the same topic: possible duplicate, do not link until the user decides. `/expert-advice/funny-wedding-vows` and `/expert-advice/bible-verses-for-wedding-vows` appear in the Firecrawl map and Zoho marks them Live / Published: confirm HTTP 200, then change their DRAFT rows to LIVE.
 Note (26 Nov 2026, orchestrator Firecrawl): /planning/how-to-write-wedding-vows is the canonical how-to-write page (og:url; the funny vows URL redirects to it). Its live wording is "Aim for about 150 words, a minute out loud" and "300 words is the most we would suggest". Use /planning/how-to-write-wedding-vows as the vows parent link. Whether /how-to-write-wedding-vows is a duplicate or a redirect stays open (VOWS-URL, for the user). The page's Concierge box says "complimentary Discovery Call" (banned word on a live page, for the web team).
+
+| `/expert-advice/wedding-ceremony-script` | Wedding Ceremony Script: Full Wording, Simple and Funny | wedding ceremony script, wedding ceremony script australia | LIVE (og:url, Firecrawl 26 Nov 2026) |

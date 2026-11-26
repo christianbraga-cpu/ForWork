@@ -79,10 +79,9 @@ claims_note: "24 claims. Prompts and the before and after example are original W
 links_register:
   - { id: L-01, type: internal, anchor: "Our vow-writing method", url: "/planning/how-to-write-wedding-vows", role: related, note: "Vows parent (canonical per orchestrator Firecrawl, 26 Nov); non-exact anchor; supports C-01, C-04, C-05" }
   - { id: L-02, type: internal, anchor: "notes on prompting any AI assistant", url: "/expert-advice/chatgpt-vs-ai-wedding-planner", role: tool, note: "AI cluster head, first instance; no 'ai wedding planner' anchor; supports C-03" }
-  - { id: L-03, type: internal, anchor: "vows short enough for a minute", url: "/expert-advice/short-wedding-vows", role: related, note: "Owns 'short wedding vows'; non-exact anchor" }
   - { id: L-04, type: external, anchor: "use specific words during the ceremony", url: "https://www.ag.gov.au/families-and-marriage/marriage/get-married", purpose: "official source inline at C-07", rel: "noopener" }
   - { id: L-05, type: external, anchor: "section 45(2) of the Marriage Act 1961", url: "https://www.legislation.gov.au/C1961A00012/latest/text", purpose: "official source inline at C-08; also the source for C-09 and C-10 in the next paragraph", rel: "noopener" }
-  - { id: L-06, type: internal, anchor: "a full ceremony order with the legal lines in place", url: "/expert-advice/wedding-ceremony-script-australia", role: related, note: "Owns 'wedding ceremony script australia'; non-exact anchor" }
+  - { id: L-06, type: internal, anchor: "a full ceremony order with the legal lines in place", url: "/expert-advice/wedding-ceremony-script", role: related, note: "Owns 'wedding ceremony script' (the -australia URL redirects here, Firecrawl 26 Nov); non-exact anchor" }
   - { id: L-07, type: internal, anchor: "classic wording to borrow from", url: "/expert-advice/traditional-wedding-vows", role: related, note: "Owns 'traditional wedding vows'; non-exact anchor" }
   - { id: L-08, type: external, anchor: "overseas marriages cannot be performed by an Australian-authorised marriage celebrant", url: "https://www.ag.gov.au/families-and-marriage/marriage/get-married", purpose: "official source inline at C-12", rel: "noopener", note: "Same URL as L-04, linked again at a separate legal claim" }
   - { id: L-09, type: internal, anchor: "the legal steps for marrying there", url: "/expert-advice/getting-married-in-italy-the-complete-legal-guide-for-destination-couples", role: related, note: "Owns 'getting married in italy legal requirements'; non-exact anchor" }
@@ -172,7 +171,7 @@ What changed: one real memory replaced three labels, a habit does the work "best
 
 ## Check the length out loud
 
-Our guide says to "aim for about 150 words, a minute out loud, and agree the length with your partner," adding that "300 words is the most we would suggest." Give the assistant that target before it suggests anything, then read your draft aloud with a timer, because nerves change your pace. For lines that fit, browse [vows short enough for a minute](/expert-advice/short-wedding-vows).
+Our guide says to "aim for about 150 words, a minute out loud, and agree the length with your partner," adding that "300 words is the most we would suggest." Give the assistant that target before it suggests anything, then read your draft aloud with a timer, because nerves change your pace.
 
 ## Your vows and the legal words
 
@@ -182,7 +181,7 @@ In Australia, your personal vows do not replace the words the law requires. The 
 
 A minister of religion follows the form their religious body recognises, so ask your celebrant which words apply to you. The Act allows "words to that effect", and nothing in it stops you adding your own vows. So never let an AI rewrite the legal lines. Your own vows sit alongside them and must not contradict them, and your authorised celebrant confirms the final wording.
 
-Send your celebrant the finished vow early, then read it on the day from a card or a vow book, never your phone, with a spare for your celebrant. To see where they fall, here is [a full ceremony order with the legal lines in place](/expert-advice/wedding-ceremony-script-australia), and some [classic wording to borrow from](/expert-advice/traditional-wedding-vows).
+Send your celebrant the finished vow early, then read it on the day from a card or a vow book, never your phone, with a spare for your celebrant. To see where they fall, here is [a full ceremony order with the legal lines in place](/expert-advice/wedding-ceremony-script), and some [classic wording to borrow from](/expert-advice/traditional-wedding-vows).
 
 ### If you marry abroad
 

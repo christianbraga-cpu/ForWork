@@ -73,3 +73,12 @@
 4. LINK-CHECK: live checks failed in review. Re-check legislation.gov.au, ag.gov.au and our quoted vows and Studio pages on publish day.
 5. WEB-TEAM: the how-to-write page's Concierge box uses a banned brand word.
 6. STUDIO-AI-LOGIN (ai-chat is login-gated, not linked), CATEGORY-CHECK (Wedding Tools), CONCIERGE-PAY, AUTHOR, IMAGE-RIGHTS, CMS-URL.
+- **Stage 1 fast (research):** DONE after delivery. 29 facts (12 legal).
+  - The AGD Guidelines v6.0 para 4.24 say the s45(2) words "are the minimum words", which fits the article.
+  - OAIC AI guidance covers organisations only, so privacy stays advice only.
+  - The for-her, for-him and elopement vows URLs redirect to the parent.
+- **Post-delivery link fix (orchestrator):**
+  - /expert-advice/short-wedding-vows redirects to the parent, so that sentence and link (L-03) were removed.
+  - /expert-advice/wedding-ceremony-script-australia redirects, so it was repointed to /expert-advice/wedding-ceremony-script.
+  - Link-map rows marked REDIRECT, and a ceremony-script row added.
+  - final.md is now 1,513 reader words, 11 links, 0 dashes; docx rebuilt and re-sent.
