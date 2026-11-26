@@ -1,0 +1,348 @@
+{
+  "agent": "cms-publisher",
+  "task_id": "marriage-licence",
+  "stage": "11",
+  "status": "complete",
+  "round": 1,
+  "inputs_used": [
+    "CLAUDE.md",
+    "content-system/schemas/11-publish-package.schema.json",
+    "content-system/cms/field-map.md (Status: NOT YET MAPPED)",
+    "content-system/cms/publish-checklist.md",
+    "site/packages/italy/tuscany/cappuccina-country-resort/index.html (JSON-LD pattern)",
+    "content/posts/marriage-licence/00-input.json",
+    "content/posts/marriage-licence/01-brief.json (categories, tags, content_type)",
+    "content/posts/marriage-licence/02-seo.json",
+    "content/posts/marriage-licence/04-images.json",
+    "content/posts/marriage-licence/06-edit-final.json (verify_items)",
+    "content/posts/marriage-licence/08-final.md",
+    "content/posts/marriage-licence/09-cro.json",
+    "content/posts/marriage-licence/10-distribution.json",
+    "content-system/seo/link-map.csv (internal link targets live)",
+    "content/posts/who-can-perform-a-marriage/11-publish-package.json, 12-cms-report.md, booking-checklist.md (format model)"
+  ],
+  "self_qa": {
+    "checks": [
+      {
+        "check": "Front matter, META comments and all <!-- fact_xx --> markers removed; H1 is the title; image-slot comments kept; no [[VERIFY]] markers in the copy",
+        "pass": true,
+        "note": "4 image-slot comments kept"
+      },
+      {
+        "check": "Every link and UTM identical to 08-final.md (same list, same order); internal links relative",
+        "pass": true,
+        "note": "33 links compared programmatically"
+      },
+      {
+        "check": "No CTA marker comments added; 08-final.md had no <!-- CTA: primary --> marker, so nothing replaced; primary, secondary, closing and magnet links each present once",
+        "pass": true
+      },
+      {
+        "check": "Key takeaways (4) and FAQ (6 pairs) extracted verbatim from the body",
+        "pass": true
+      },
+      {
+        "check": "Title/H1, meta title, meta description (from 02-seo.json), URL and slug match the fixed values",
+        "pass": true,
+        "note": "meta title 55, description 146 characters"
+      },
+      {
+        "check": "primary_category equals categories[0] (Expert Advice)",
+        "pass": true
+      },
+      {
+        "check": "No prices or fees; needs_signoff empty; no em or en dashes",
+        "pass": true
+      },
+      {
+        "check": "All image slots 'needed'; AI allowed only for the two still lifes with the person's approval, captioned 'Illustrative image'",
+        "pass": true
+      },
+      {
+        "check": "status draft; nothing uploaded, saved or published",
+        "pass": true
+      }
+    ],
+    "confidence": 0.9
+  },
+  "open_questions": [
+    {
+      "to": "orchestrator",
+      "question": "CMS upload not attempted: package-only mode (the person uploads via the Word doc) and field-map.md is NOT YET MAPPED. A human saves as Draft and clicks Publish.",
+      "blocking": false
+    },
+    {
+      "to": "orchestrator",
+      "question": "10-distribution.json Pinterest pin 1 and the Instagram carousel (2 places) say the celebrant submits paperwork to the registry in 'your state or territory'; 08-final.md was corrected to 'the state or territory where you married'. Ask the distribution lead to align the social copy before posting.",
+      "blocking": false
+    },
+    {
+      "to": "orchestrator",
+      "question": "No author named in any input; package uses 'Wedded Wonderland' (organisation). Confirm the byline.",
+      "blocking": false
+    },
+    {
+      "to": "user",
+      "question": "Do you approve AI still lifes for featured and certificate-still-life, captioned 'Illustrative image', if no Canva or licensed stock asset is found?",
+      "blocking": false
+    }
+  ],
+  "assumptions": [
+    "Package CTA, lead magnet and tracking links use the relative form that appears in the body (09-cro.json holds the absolute form; paths and UTMs identical). Canonical and JSON-LD URLs are absolute.",
+    "Excerpt is the first two sentences of the intro, verbatim minus the link.",
+    "content_type 'planning_guide' from 01-brief.json (input type 'Guide (legal)' has no schema value); cluster Wedding Paperwork.",
+    "FAQ answers keep their markdown links in 'faq'; links are stripped to plain text in the FAQPage JSON-LD only.",
+    "No alt text or captions in 04-images.json; left empty rather than invented.",
+    "verify_items are the pre-publish checks from 06-edit-final.json and 04-images.json; none are markers in the copy."
+  ],
+  "verify_items": [
+    "[[VERIFY: govt.nz marriage licence and Hawaii DOH licence pages unchanged before publish (read 17 and 16 November 2026)]]",
+    "[[VERIFY licence]] every stock, own-site or venue image: licence scope, credit line and expiry recorded in library-index.csv before use",
+    "[[VERIFY: couple, celebrant and guest consent for any real-wedding or signing photo]]",
+    "[[VERIFY: no legible certificate, register, crest, passport data page or personal details in any final image]]"
+  ],
+  "tools_used": [
+    "Bash (python3 -I)"
+  ],
+  "next_agent": [
+    "orchestrator"
+  ],
+  "payload": {
+    "title": "How Do You Get a Marriage Licence?",
+    "h1": "How Do You Get a Marriage Licence?",
+    "slug": "marriage-licence",
+    "url_path": "/expert-advice/marriage-licence",
+    "content_type": "planning_guide",
+    "cluster": "Wedding Paperwork",
+    "categories": [
+      "Expert Advice",
+      "Destination Weddings",
+      "Planning Guides"
+    ],
+    "primary_category": "Expert Advice",
+    "tags": [
+      "Wedding Paperwork",
+      "Marriage Licence",
+      "Notice of Intended Marriage",
+      "Legal Requirements",
+      "Marrying Overseas"
+    ],
+    "excerpt": "If you are searching for a marriage licence in Australia, there is none to apply for. Marry abroad and the destination's law takes over, and some places do issue licences.",
+    "key_takeaways": [
+      "Australia has no marriage licence: the equivalent step is giving a Notice of Intended Marriage to an authorised celebrant between 1 and 18 months before the wedding.",
+      "A licence permits a marriage while a certificate records one, and in Australia the certificate that counts is the official copy from the state or territory registry, not the ceremonial one signed on the day.",
+      "New Zealand and Hawaii issue marriage licences through their own authorities, each with its own timing rules.",
+      "The decision that shapes everything else is which country makes your marriage legal: Australia, with a symbolic ceremony abroad, or your destination, under its own law."
+    ],
+    "body_markdown_file": "content/posts/marriage-licence/11-body.md",
+    "faq": [
+      {
+        "q": "Do you need a marriage licence to get married in Australia?",
+        "a": "No. As at November 2026, you give a notice of intended marriage to an authorised celebrant at least 1 month and no more than 18 months before the wedding, under [the Attorney-General's Department guidance](https://www.ag.gov.au/families-and-marriage/marriage/get-married)."
+      },
+      {
+        "q": "What is the difference between a marriage licence and a marriage certificate?",
+        "a": "A licence permits a marriage and a certificate shows that a legal marriage has been performed, as the Hawaii State Department of Health explains. In Australia there is no licence, and the certificate you need to change your name or prove your marriage is the official one from the registry."
+      },
+      {
+        "q": "How do you register your marriage in Australia?",
+        "a": "Your celebrant submits the paperwork to the registry in the state or territory where you married within 14 days of the wedding. You then apply to the registry for the official certificate, or ask your celebrant to apply for you."
+      },
+      {
+        "q": "What makes a marriage valid in Australia?",
+        "a": "As at November 2026, you must not already be married, not be marrying a parent, grandparent, child, grandchild, brother or sister, and be at least 18 (unless a court has approved a marriage where 1 person is 16 to 18). You must also understand what marriage means, agree to marry voluntarily and use specific words in the ceremony."
+      },
+      {
+        "q": "Can you get married without witnesses?",
+        "a": "Not in Australia. Two witnesses aged over 18 sign the marriage certificates, and the celebrant must be physically present with you and the witnesses. Overseas, ask the destination's embassy or consulate."
+      },
+      {
+        "q": "Is a marriage licence from New Zealand or Hawaii recognised in Australia?",
+        "a": "What is recognised is the marriage, not the licence. [An overseas marriage](https://www.smartraveller.gov.au/planning-trip/advice-your-planned-activities/getting-married-overseas) is generally recognised in Australia if it was valid under the law of the country where it happened and would have been valid under Australian law. It cannot be registered here."
+      }
+    ],
+    "images": [
+      {
+        "slot_id": "featured",
+        "file": "content/posts/marriage-licence/images/marriage-licence-rings-pen-paperwork-hero.webp",
+        "role": "featured",
+        "status": "needed",
+        "placement": "featured",
+        "ai_allowed": "only if the person approves; caption must read 'Illustrative image'"
+      },
+      {
+        "slot_id": "signing-register-celebrant",
+        "file": "content/posts/marriage-licence/images/marriage-licence-couple-signing-celebrant.webp",
+        "role": "inline",
+        "status": "needed",
+        "placement": "section: what stands in for a licence in Australia (after the authorised celebrant and legal words paragraphs)",
+        "ai_allowed": "never (real wedding or real place)"
+      },
+      {
+        "slot_id": "certificate-still-life",
+        "file": "content/posts/marriage-licence/images/marriage-licence-certificate-still-life.webp",
+        "role": "inline",
+        "status": "needed",
+        "placement": "section: marriage licence and marriage certificate (H2 opener)",
+        "ai_allowed": "only if the person approves; caption must read 'Illustrative image'"
+      },
+      {
+        "slot_id": "destination-ceremony",
+        "file": "content/posts/marriage-licence/images/marriage-licence-destination-ceremony.webp",
+        "role": "inline",
+        "status": "needed",
+        "placement": "section: licences overseas (after the New Zealand and Hawaii paragraphs) or choosing where to marry legally",
+        "ai_allowed": "never (real wedding or real place)"
+      }
+    ],
+    "cta": {
+      "text": "Begin with Wedded Concierge",
+      "subtext": "The fee is agreed in writing before any work begins.",
+      "link": "/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=marriage-licence&utm_content=primary",
+      "placement": "Existing inline link at the end of 'Marry at home and celebrate abroad' ('For the celebration abroad, one Wedded Advisor plans the venue, travel, vendors and payments anywhere in the world... Begin with Wedded Concierge.'), straight after 'The paperwork stays with you, your celebrant and the registry'. This is where the reader's question turns from paperwork to planning the celebration. Unchanged."
+    },
+    "secondary_cta": {
+      "text": "Plan with Wedded Concierge",
+      "subtext": "One Wedded Advisor plans the venue, travel, vendors and payments.",
+      "link": "/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=marriage-licence&utm_content=secondary",
+      "placement": "Existing closing sentence of 'Marry legally in your destination' ('Once the country is chosen, the planning around it begins with Wedded Concierge.'), after the destination's legal steps and the name-change caution. Serves couples choosing the legal-abroad path. Unchanged."
+    },
+    "closing_cta": {
+      "text": "Tell Wedded Concierge your date",
+      "subtext": "One Wedded Advisor works in your time zone and quotes in AUD.",
+      "link": "/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=marriage-licence&utm_content=closing",
+      "placement": "Existing final paragraph under 'Plan your wedding abroad with Wedded Concierge', directly after the approved fee-in-writing line and with the panel's 'or that you are still deciding' wording. Unchanged."
+    },
+    "lead_magnet": {
+      "name": "Get Wedded destination wedding magazines",
+      "link": "/magazine?utm_source=blog&utm_medium=content&utm_campaign=marriage-licence&utm_content=magnet",
+      "placement": "Existing line at the end of 'Recognition back in Australia' ('For the places themselves, browse our destination wedding magazines'), for readers still deciding where to marry. Unchanged.",
+      "exists": true
+    },
+    "tracking_links": [
+      "/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=marriage-licence&utm_content=primary",
+      "/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=marriage-licence&utm_content=secondary",
+      "/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=marriage-licence&utm_content=closing",
+      "/magazine?utm_source=blog&utm_medium=content&utm_campaign=marriage-licence&utm_content=magnet"
+    ],
+    "seo": {
+      "meta_title": "Marriage Licence in Australia and How It Works Overseas",
+      "meta_description": "Marriage licence rules for Australian couples, why a notice of intended marriage takes its place, and how licences work in New Zealand and Hawaii.",
+      "focus_keyword": "marriage licence",
+      "canonical": "https://weddedwonderland.com/expert-advice/marriage-licence",
+      "og_image_slot": "featured"
+    },
+    "schema_jsonld": {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Article",
+          "@id": "https://weddedwonderland.com/expert-advice/marriage-licence#article",
+          "headline": "How Do You Get a Marriage Licence?",
+          "description": "Marriage licence rules for Australian couples, why a notice of intended marriage takes its place, and how licences work in New Zealand and Hawaii.",
+          "author": {
+            "@type": "Organization",
+            "name": "Wedded Wonderland",
+            "url": "https://weddedwonderland.com/"
+          },
+          "publisher": {
+            "@type": "Organization",
+            "name": "Wedded Wonderland",
+            "url": "https://weddedwonderland.com/"
+          },
+          "datePublished": "",
+          "mainEntityOfPage": "https://weddedwonderland.com/expert-advice/marriage-licence",
+          "inLanguage": "en-AU"
+        },
+        {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Home",
+              "item": "https://weddedwonderland.com/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Expert Advice",
+              "item": "https://weddedwonderland.com/expert-advice"
+            },
+            {
+              "@type": "ListItem",
+              "position": 3,
+              "name": "How Do You Get a Marriage Licence?",
+              "item": "https://weddedwonderland.com/expert-advice/marriage-licence"
+            }
+          ]
+        },
+        {
+          "@type": "FAQPage",
+          "@id": "https://weddedwonderland.com/expert-advice/marriage-licence#faq",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "Do you need a marriage licence to get married in Australia?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "No. As at November 2026, you give a notice of intended marriage to an authorised celebrant at least 1 month and no more than 18 months before the wedding, under the Attorney-General's Department guidance."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "What is the difference between a marriage licence and a marriage certificate?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "A licence permits a marriage and a certificate shows that a legal marriage has been performed, as the Hawaii State Department of Health explains. In Australia there is no licence, and the certificate you need to change your name or prove your marriage is the official one from the registry."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "How do you register your marriage in Australia?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Your celebrant submits the paperwork to the registry in the state or territory where you married within 14 days of the wedding. You then apply to the registry for the official certificate, or ask your celebrant to apply for you."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "What makes a marriage valid in Australia?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "As at November 2026, you must not already be married, not be marrying a parent, grandparent, child, grandchild, brother or sister, and be at least 18 (unless a court has approved a marriage where 1 person is 16 to 18). You must also understand what marriage means, agree to marry voluntarily and use specific words in the ceremony."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Can you get married without witnesses?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Not in Australia. Two witnesses aged over 18 sign the marriage certificates, and the celebrant must be physically present with you and the witnesses. Overseas, ask the destination's embassy or consulate."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Is a marriage licence from New Zealand or Hawaii recognised in Australia?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "What is recognised is the marriage, not the licence. An overseas marriage is generally recognised in Australia if it was valid under the law of the country where it happened and would have been valid under Australian law. It cannot be registered here."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    "author": "Wedded Wonderland",
+    "status": "draft",
+    "verify_items": [
+      "[[VERIFY: govt.nz marriage licence and Hawaii DOH licence pages unchanged before publish (read 17 and 16 November 2026)]]",
+      "[[VERIFY licence]] every stock, own-site or venue image: licence scope, credit line and expiry recorded in library-index.csv before use",
+      "[[VERIFY: couple, celebrant and guest consent for any real-wedding or signing photo]]",
+      "[[VERIFY: no legible certificate, register, crest, passport data page or personal details in any final image]]"
+    ],
+    "needs_signoff": [],
+    "redirect": null,
+    "draft_note": "DRAFT. Do not publish until checked: [[VERIFY]] items: re-read the govt.nz marriage licence page and the Hawaii State Department of Health marriage licence page and confirm nothing has changed (read 17 and 16 November 2026); image licence, credit and expiry recorded in library-index.csv for every image; couple, celebrant and guest consent for any real-wedding or signing photo; no legible certificate, register, crest, passport data page or personal details in any image. Nic sign-off: none (no prices or fees in the post). Image slots needed (4 of 4, none approved): featured, signing-register-celebrant, certificate-still-life, destination-ceremony. featured and certificate-still-life are still lifes (Canva or licensed stock; AI only if the person approves, captioned 'Illustrative image'); signing-register-celebrant and destination-ceremony must be real and licensed with written consent, never AI. Check the saved URL is exactly /expert-advice/marriage-licence. Legal content is general information as at November 2026, not legal advice. DRAFT ONLY. A human clicks Publish."
+  }
+}
