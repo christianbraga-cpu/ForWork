@@ -554,6 +554,48 @@ Note: `/destinations/africa` stays in "Do not link" (hidden). Also seen in the m
 | `/expert-advice/average-cost-of-destination-wedding` | Average Cost of a Destination Wedding by Region | average cost of destination wedding, cost destination wedding, how much does destination wedding cost | DRAFT (19 Nov 2026; no publish-order dependency; hold for Nic sign-off on EUR figures) |
 | `/expert-advice/destination-wedding-packing-list` | Destination Wedding Packing List for Couples and Guests | destination wedding packing list, wedding guest packing list | DRAFT (20 Nov 2026; no publish-order dependency; after publish, user decides on 301s from /what-to-pack-for-a-destination-wedding and /pack-for-your-destination-wedding) |
 
+## Italy real weddings (Firecrawl map and batch scrape, 26 Nov 2026)
+
+Editorial features published by Wedded Wonderland (not claimed as our clients). All returned 200 with the final URL equal to the requested URL. Photographer credit as published on each page.
+
+| URL | Real wedding | Region | Status |
+|---|---|---|---|
+| `/real-weddings/italy-real-wedding` | Italy Real Weddings to Inspire Your Celebration (facet hub; owns: italy real wedding) | Italy | DRAFT (brief 26 Nov 2026; URL was 404, free) |
+| `/a-traditional-lebanese-destination-wedding-in-lake-como-italy` | Laura and Wahib, Villa Pizzo, Como | Lake Como | LIVE |
+| `/this-australian-couple-had-a-magical-destination-wedding-in-lake-como` | Josh and Isabela, Villa del Balbianello | Lake Como | LIVE |
+| `/luxury-indian-wedding-in-lake-como` | Kinjal and Herit, Villa Balbiano, Lenno | Lake Como | LIVE |
+| `/tiara-and-josh-had-a-picturesque-destination-wedding-in-positano-italy` | Tiara and Josh, Villa Oliviero, Positano | Amalfi Coast and Capri | LIVE |
+| `/this-italian-and-macedonian-couple-from-australia-had-a-destination-wedding-in-ravello-italy` | Loret and Franco, Villa Eva, Ravello | Amalfi Coast and Capri | LIVE |
+| `/real-wedding-dream-wedding-in-italy` | Lara and Salah, Villa Cimbrone, Ravello | Amalfi Coast and Capri | LIVE |
+| `/this-filipino-couple-had-a-cozy-fall-theme-destination-wedding-in-tuscany-italy` | Andy and Erika, La Foce, Val d'Orcia | Tuscany | LIVE |
+| `/real-wedding-a-destination-wedding-under-the-tuscan-sun-italy` | Sharlene and Craig, Villa La Vedetta, Florence | Tuscany | LIVE |
+| `/a-3-day-wedding-extravaganza-in-tuscany` | Cristina and Brett, Borgo Pignano | Tuscany | LIVE |
+| `/jenayde-and-alfonsos-three-day-wedding-extravaganza-in-manduria-italy` | Jenayde and Alfonso, Masseria Potenti, Manduria | Puglia | LIVE |
+| `/clifftop-casino-turned-villa-wedding-in-sicily` | Candice and Vincent, Villa Mon Repos, Taormina | Sicily | LIVE |
+| `/real-wedding-sana-and-hani` | Sana and Hani, Villa Aurelia, Rome | Cities (Rome, Milan, Florence) | LIVE |
+| `/this-couple-had-a-beautiful-jewish-wedding-in-lake-como-italy` | Brooke and Jerett, Villa Erba | Lake Como | LIVE |
+| `/real-wedding-loli-lesmes-sicily` | Loli and Lesmes, Villa Tasca, Palermo | Sicily | LIVE |
+| `/jolie-pauls-cinematic-wedding-at-villa-labirinto-in-italy` | Jolie and Paul, Villa Labirinto, outside Milan | Cities (Rome, Milan, Florence) | LIVE |
+| `/a-lebanese-medieval-destination-wedding-in-italy` | Luna and Cesar, Rocca di Angera | Lake Maggiore | LIVE |
+| `/a-majestic-wedding-in-a-roman-villa` | Marissa and Otbah, Villa Aurelia; same venue as Sana and Hani, use one | Rome | LIVE |
+| `/olivia-and-stefanos-jaw-dropping-wedding-in-italy` | Villa San Michele | Florence | LIVE |
+| `/a-romantic-and-intimate-wedding-overlooking-lake-como` | Sophie and John, Villa Regina Teodolinda | Lake Como | LIVE |
+| `/the-kellers-lake-como-wedding` | Grand Hotel Villa Serbelloni | Lake Como | LIVE |
+| `/destination-wedding-su-lei-pyaes-in-lake-como` | Villa Erba | Lake Como | LIVE |
+| `/lake-como-wedding-by-italian-weddings-events` | Villa Balbianello; vendor-submitted (Zoho WW6-T274) | Lake Como | LIVE |
+| `/a-grand-destination-wedding-in-southern-italy` | Dania and Florian, La Fortezza, Fasano | Puglia | LIVE |
+| `/destination-wedding-in-tuscany-by-giritaly` | Sara and Samer, Villa Vignamaggio, Chianti; vendor-submitted (Zoho WW6-T408) | Tuscany | LIVE |
+| `/luxury-wedding-in-tuscany-italy` | Stephanie and Kevin, Villa Cetinale, Siena | Tuscany | LIVE |
+| `/a-romantic-destination-wedding-against-the-backdrop-of-tuscany` | Sara and Paul, Villa Cora, Florence, September | Tuscany | LIVE |
+| `/gideon-hermosas-tuscany-wedding` | Karla and Oliver, Borgo San Luigi | Tuscany | LIVE |
+| `/this-couple-had-a-whimsical-destination-wedding-in-puglia-italy` | Castello Monaci; couple named only as Tara | Puglia | LIVE |
+| `/a-vibrant-floral-pakistani-destination-wedding-in-venice-italy` | LIVE; couple names and photographer not found; check before use | Venice | LIVE |
+| `/a-picturesque-destination-weddiing-in-italy` | Sydney couple, Roccella Ionica; slug typo | Calabria | LIVE |
+| `/this-sydney-stylists-wedding-in-sicily-is-insanely-beautiful` | LIVE but no venue or credits extracted; check before use | Sicily | LIVE |
+| `/real-wedding-a-romantic-wedding-in-italy` | Villa Cimbrone again; use Lara and Salah instead | Amalfi Coast | LIVE |
+
+Not Italy despite the title: `/this-destination-wedding-in-italy-was-filled-with-surprise-and-adventure` (Beaumont), `/a-baroque-italian-wedding-that-will-bring-your-royal-dreams-to-life` (Melbourne). Region unclear: `/real-wedding-laura-and-jason`.
+
 ## AI wedding planner cluster and Studio AI (Firecrawl map and scrape, 26 Nov 2026)
 
 | URL | Title | Owns |

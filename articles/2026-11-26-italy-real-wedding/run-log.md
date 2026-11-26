@@ -25,3 +25,14 @@
 
 ## Stages
 - Stage 0 and 1 launched in parallel (both save early).
+- **Stage 0 fast (strategist):** DONE.
+  - **URL:** 404, so a new post. No Zoho task found (ZOHO-TASK, for the user). No page targets the keyword; partial overlap with /blog/real-weddings and /the-ultimate-destination-wedding-guide-italy.
+  - **Candidates:** 38 checked; final URLs only (og:url tags not seen).
+  - **Shortlist (12 core):** Lake Como 3, Amalfi 3, Tuscany 3, Puglia 1, Taormina 1, Rome 1. 18 reserves; 3 excluded (2 not in Italy).
+  - **Volumes:** "real weddings italy" 10 AU and 10 US; the other terms have no data.
+  - **SERP:** Sydney only (mostly Pinterest); Melbourne, Brisbane and London failed twice.
+  - **SEO title:** "Italy Real Wedding Inspiration from Lake Como to Sicily" (55 characters). Meta 154 characters.
+  - Link-map section added with a DRAFT row.
+- **Decision (default, CATEGORY-CONSENT):** categories.md allows Real Weddings with client consent.
+  - These weddings are already published on our site as real weddings, so the primary category stays Real Weddings, as you asked.
+  - They are framed as "featured by Wedded Wonderland", never as our planning work. Confirm consent covers a roundup.
