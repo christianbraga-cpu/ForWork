@@ -36,3 +36,4 @@
 - **Decision (default, CATEGORY-CONSENT):** categories.md allows Real Weddings with client consent.
   - These weddings are already published on our site as real weddings, so the primary category stays Real Weddings, as you asked.
   - They are framed as "featured by Wedded Wonderland", never as our planning work. Confirm consent covers a roundup.
+- **22:36 check-in:** the research file holds 25 real weddings (payload.weddings, saved 22:30); the researcher is still running. Above the threshold of 6, so the writer started on the saved weddings and re-reads them before saving.
