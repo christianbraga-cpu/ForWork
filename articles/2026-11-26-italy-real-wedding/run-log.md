@@ -53,3 +53,12 @@
   - The Villa Balbiano profile is linked only for the Villa Balbiano wedding (not Balbianello).
   - Puglia and Sicily image slots: IMAGE-GAP.
 - Reviews launched (accuracy, SEO, couple reader).
+- **Stage 3 fast (3 reviews):** DONE.
+  - **Accuracy 3.5:** the blocker is the FAQ 2 legal line stated as fact (attributed to our guide now). Majors: florals placement, the transfer inference. Names, venues, months and credits all pass.
+  - **SEO 3.8:** majors on the 12 "See the full wedding" anchors, the Lake Como anchor owned by another page, overlap pages unlinked, and length.
+  - **Reader (couple):** relevance 3, trust 2, clarity 4, would_enquire 2, "save". Fixes: framing line, card openings, fewer links, the legal line.
+  - Merged request: 04-reviews/v1/merged.md.
+- **Orchestrator Firecrawl (26 Nov):**
+  - The Australian Embassy Rome marriage page is 404 (ITALY-LEGAL-OFFICIAL open).
+  - /blog/real-weddings and /the-ultimate-destination-wedding-guide-italy are live (200) and were added to link-map.
+- Stage 4: writer v2 launched.

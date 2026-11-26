@@ -612,3 +612,5 @@ Note (26 Nov 2026): `/how-to-write-wedding-vows` now says about 150 words, about
 Note (26 Nov 2026, orchestrator Firecrawl): /planning/how-to-write-wedding-vows is the canonical how-to-write page (og:url; the funny vows URL redirects to it). Its live wording is "Aim for about 150 words, a minute out loud" and "300 words is the most we would suggest". Use /planning/how-to-write-wedding-vows as the vows parent link. Whether /how-to-write-wedding-vows is a duplicate or a redirect stays open (VOWS-URL, for the user). The page's Concierge box says "complimentary Discovery Call" (banned word on a live page, for the web team).
 
 | `/expert-advice/wedding-ceremony-script` | Wedding Ceremony Script: Full Wording, Simple and Funny | wedding ceremony script, wedding ceremony script australia | LIVE (og:url, Firecrawl 26 Nov 2026) |
+| `/blog/real-weddings` | Real Weddings (listing) | real weddings (LIVE 200, Firecrawl 26 Nov 2026) |
+| `/the-ultimate-destination-wedding-guide-italy` | The Ultimate Destination Wedding Guide: Italy (2020, updated Sep 2026) | italy destination wedding guide (LIVE 200, og:url, Firecrawl 26 Nov 2026) |
