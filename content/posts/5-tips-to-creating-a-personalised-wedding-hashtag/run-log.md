@@ -7,3 +7,4 @@
 03:24 06 editor pass_with_edits 4.29; 18 edits applied to r2; readers complete (enquire 1 to 2)
 03:27 07b panel-chair revise (enquire 1.6 vs 3.8 gate; 4 must_fix, 16 edits vs r2; one round, continue to luxury-writer)
 03:30 final check pass_with_edits 4.43; 2 of 3 applied (kept the planned ChatGPT comparison link, neutral anchor)
+03:33 package, final docx and run report written
