@@ -28,3 +28,4 @@
 
 ## Stages
 - Stage 0 and 1 launched in parallel (strategist and researcher; both save early).
+- **01:38 check-in:** both agents are held on MCP permission prompts. Saved: 00-brief.json (URL 404, so a new post) and 9 facts (Greenvelope, Paperless Post, Canva). **Decision (default):** the writer does not start yet. A platform comparison needs facts for at least 6 sites and our Studio features, so starting now would mean rewriting most of the draft.
