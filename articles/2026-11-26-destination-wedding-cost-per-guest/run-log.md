@@ -54,3 +54,10 @@
   - All figures are in nic_signoff. Conflicts are kept out of the copy. Both Santorini drinks rates were cut (EUR 20 vs EUR 25 low end).
   - The Phuket figure is unlinked (the page is not in link-map).
 - Reviews launched (accuracy, SEO, couple reader).
+- **Stage 3 fast (3 reviews):** DONE.
+  - **Accuracy 3.5, revise:** 4 majors (an unsourced flat-cost range, the Mykonos date, the Fiji gloss, the FAQ 3 absolute). No conflicting figures used; ACCC and Smartraveller exact.
+  - **SEO 3.6:** majors on the keyword in no H2, five spokes unlinked, five double links, the Phuket source, length, and cannibalisation (Italy whole-wedding row and totals).
+  - **Reader (couple):** relevance 3, trust 3, clarity 3, would_enquire 2, "save". Cut the property credit line and the unnamed planner; one attribution per section; add a contracts line.
+  - Merged request: 04-reviews/v1/merged.md.
+- /real-weddings/wedding-in-thailand-cost added to link-map (live, og:url per research).
+- Stage 4: writer v2 launched.

@@ -633,3 +633,4 @@ Note (26 Nov 2026, orchestrator Firecrawl): /planning/how-to-write-wedding-vows 
 | `/expert-advice/wedding-ceremony-script` | Wedding Ceremony Script: Full Wording, Simple and Funny | wedding ceremony script, wedding ceremony script australia | LIVE (og:url, Firecrawl 26 Nov 2026) |
 | `/blog/real-weddings` | Real Weddings (listing) | real weddings (LIVE 200, Firecrawl 26 Nov 2026) |
 | `/the-ultimate-destination-wedding-guide-italy` | The Ultimate Destination Wedding Guide: Italy (2020, updated Sep 2026) | italy destination wedding guide (LIVE 200, og:url, Firecrawl 26 Nov 2026) |
+| `/real-weddings/wedding-in-thailand-cost` | Wedding in Thailand cost (Phuket) | wedding in thailand cost (LIVE, og:url confirmed by research 26 Nov 2026) |
