@@ -4,3 +4,4 @@
 01:54 05 draft complete (about 2,060 words); first-draft docx built
 01:56 07 readers complete (enquire 1 to 2); envelopes normalised
 01:59 06 editor pass_with_edits 4.29; 14 of 15 applied to 05-draft-r2.md (kept brand-facts 'fee agreed in writing' close line)
+02:03 07b panel revise (weighted enquire 1.7, deferred business details); 10 edits applied to 08-final.md; accepted after one round
