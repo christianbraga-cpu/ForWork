@@ -44,3 +44,9 @@
   - **Web team:** the page's Concierge box uses "complimentary".
   - **VOWS-URL (for the user):** /how-to-write-wedding-vows vs /planning/how-to-write-wedding-vows. The /planning/ URL is canonical and used here.
 - **03:03 check-in:** the researcher is held on an MCP permission prompt; 22 facts saved: the Marriage Act s45 and s46 (legislation.gov.au), the AG's Department get-married page, our how-to-write page, and the Studio and ChatGPT-vs pages. No OAIC fact and no third-party tool facts yet. **Decision (10-minute rule):** the writer started on the saved facts with an inline brief. Privacy is advice only; no third-party AI tools are named unless facts land.
+- **Stage 2 fast (writer):** DONE. 03-draft-v1.md.
+  - --check: 1,653 reader words (slightly over); 0 dashes; 0 placeholders. Official domains: legislation.gov.au, ag.gov.au.
+  - YAML valid: 24 claims, 14 links.
+  - No AI tools named. The vows parent is /planning/how-to-write-wedding-vows.
+  - The Concierge line uses brand-profile wording (CONCIERGE-CEREMONY). Studio is called "our free planning hub" (STUDIO-AI-PRICE pending).
+- Reviews launched (accuracy, SEO, couple reader).
