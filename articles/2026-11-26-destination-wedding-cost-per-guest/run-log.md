@@ -38,3 +38,13 @@
   - Firecrawl credits ran out (FIRECRAWL-CREDITS); Apify used instead.
 - **Decision (default, changed):** the primary category is Destination Weddings, because Zoho WC3-T324 and categories.md both say so. Real Weddings is dropped as primary (CATEGORY-SWITCH: revert if you want Real Weddings).
 - **23:23 check-in:** the researcher is held on an MCP permission prompt. 67 facts saved (23:20) across 14 of our cost pages, plus ACCC and Smartraveller. Above the threshold of 4 pages, so the writer started on the saved facts with an inline brief.
+- **Stage 1 fast (research):** DONE. 76 facts (28 reused, 8 official, 0 legal); 17 price lines for Nic.
+  - **Per-guest figures found:** Dubai AED 200 to 595 pp; Maldives US$250+; Fiji FJD 130 to 180+ per extra guest; Phuket US$70 to 160; Italy EUR 110 to 300+ catering; Amalfi EUR 180 to 310+; Santorini EUR 75 to 160+; Mykonos EUR 80 to 300+; Le Ciel EUR 190 per missing guest.
+  - **SITE-CONFLICTS:**
+    - The Lake Como page was rewritten on 25 Nov (now EUR 120k to 200k for 60 guests), so older packs are stale.
+    - Maldives green tax: per night vs per day.
+    - Bali: three different figures.
+    - Dubai: the minimum spend low end differs.
+    - Mykonos: the page arithmetic does not add up.
+  - **Gaps:** no real client breakdown; no welcome dinner price; mira.gov.mv blocked.
+  - The conflicts were sent to the writer (no conflicting figure stated as fact).
