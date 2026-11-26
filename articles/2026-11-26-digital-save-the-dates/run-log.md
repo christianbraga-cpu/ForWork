@@ -66,3 +66,16 @@
   - YAML valid: 38 claims, 21 links (new L-21 /expert-advice/wedding-rsvp).
   - All 12 items applied. Coins, both RSVP lines and the Sydney Concierge line are supported by the pack.
 - Stage 6: copy editor launched.
+- **Stage 6 fast (copy editor):** DONE. final.md 2,263 reader words, 0 dashes, 0 placeholders; YAML 38 claims, 21 links.
+  - publish-package.json valid (14 open items; 6 price entries for Nic; platform links rel nofollow noopener).
+  - chrome-upload-prompt.md is draft only and creates a new post after a slug check. article.docx built.
+
+## Must-fix before publish
+1. NEW-URL: the URL was 404. Create a new post (Zoho WC3-T972).
+2. PLATFORM-DOMAINS (user decision): approve the seven platform sites, ideally via a domains.md row for platform official pages (rel nofollow noopener, one link per platform, never affiliate).
+3. NIC-SIGNOFF: 6 price entries, all USD as listed ("$" unlabelled on Paperless Post, Greenvelope and Zazzle, written as US$). AUD-EXCEPTION: confirm no conversions.
+4. LINK-CHECK: live checks failed in review; re-check prices, platform features and passport lines on publish day.
+5. BROKEN-LIVE: /destination-weddings/destination-wedding-save-the-date is Live in Zoho (WC3-T398) but returns 404 (web team).
+6. RETRO-LINK: the paper save the date posts to link here.
+7. TIMING-CONFLICT and STUDIO-CAP-CONFLICT: our pages disagree on website launch timing ("when" vs "before") and on the Studio free guest cap ("50 guests" vs "generous").
+8. GV-SMS-AU, CONCIERGE-PAY, AUTHOR, IMAGE-RIGHTS, CMS-URL.

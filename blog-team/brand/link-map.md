@@ -461,7 +461,7 @@ No dedicated Decor and Florals hub exists. The /blog/decor category page is the 
 | `/10-creative-save-the-date-ideas-based-on-movie-posters` | 10 Creative Save the Date Ideas Based on Movies (old) | movie poster save the date (paper, old; RETRO-LINK candidate) |
 | `/top-5-places-to-create-online-wedding-invites` | Top 5 Places to Create Online Wedding Invites (old) | online wedding invites (old platform list; check before linking; RETRO-LINK candidate) |
 | `/destination-weddings/destination-wedding-save-the-date` | When Do You Send Save the Dates for a Destination Wedding? | destination wedding save the date (Zoho WC3-T398 says Live, but HTTP 404 on 26 Nov 2026; do not link until restored) |
-| `/wedding-tools/digital-save-the-dates` | Digital Save the Dates and the Best Sites to Send Them (WC3-T972) | digital save the dates, online save the date, electronic save the dates | DRAFT (26 Nov 2026; URL was 404, new post) |
+| `/wedding-tools/digital-save-the-dates` | Digital Save the Dates and the Best Sites to Send Them (WC3-T972) | digital save the dates, online save the date, electronic save the dates | DRAFT (26 Nov 2026; URL was 404, new post; final ready, not published) |
 
 ## February destinations (Firecrawl map and scrape, 24 Nov 2026)
 
