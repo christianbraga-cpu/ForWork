@@ -29,3 +29,13 @@
 ## Stages
 - Stage 0 and 1 launched in parallel (strategist and researcher; both save early).
 - **01:38 check-in:** both agents are held on MCP permission prompts. Saved: 00-brief.json (URL 404, so a new post) and 9 facts (Greenvelope, Paperless Post, Canva). **Decision (default):** the writer does not start yet. A platform comparison needs facts for at least 6 sites and our Studio features, so starting now would mean rewriting most of the draft.
+- **Stage 0 fast (strategist):** DONE.
+  - **URL:** 404, so a new post. Zoho WC3-T972 (In Progress). No live page targets the keyword.
+  - **Volumes (AU / US):** digital save the dates 320 / 4,400; online save the date 210 / 1,900.
+  - **Sibling format:** one H2 per site ("<Site> for <best use>"); the site named once as a plain link; free or paid, prices in original currency, channels; takeaways; 4 FAQs; no scores.
+  - **Studio:** a wedding website with RSVP, but no save-the-date maker. **Decision (default):** Studio goes first as the page the save the date links to, not as a save-the-date tool.
+  - **Shortlist:** Paperless Post, Greenvelope (not seen in these SERPs; keep only if its own pages confirm save the dates), Bliss & Bone, Greetings Island, Canva, Etsy, Zazzle. The Knot, Zola, WeddingWire and Hitched are blocked.
+  - SEO title same as the H1. Meta 152 characters.
+  - Link-map "Online invitations and save the dates" section added.
+- **BROKEN-LIVE (for the web team):** /destination-weddings/destination-wedding-save-the-date is Live in Zoho (WC3-T398) but returns 404. Not linked.
+- Shortlist sent to the researcher.

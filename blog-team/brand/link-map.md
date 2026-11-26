@@ -441,6 +441,28 @@ No dedicated Decor and Florals hub exists. The /blog/decor category page is the 
 | `/the-guest-list-issue` | THE GUEST LIST ISSUE (old) | old; do not link |
 | `/expert-advice/bridal-shower-guest-list` | Bridal Shower Guest List Etiquette and Who to Invite (WC3-T983) | bridal shower guest list, who to invite to bridal shower | DRAFT (23 Nov 2026; URL was 404, new post) |
 
+## Online invitations and save the dates (Firecrawl map and scrape, 26 Nov 2026)
+
+| URL | Title | Keyword it appears to own |
+|---|---|---|
+| `/wedding-tools/online-wedding-shower-invitations` | Online Bridal Shower Invitations and Where to Send Them | online wedding shower invitations (LIVE, HTTP 200 confirmed 26 Nov 2026; format model for sites-list posts) |
+| `/wedding-tools/how-to-make-a-digital-wedding-invitation` | How to Make a Digital Wedding Invitation Step by Step | digital wedding invitation (LIVE, HTTP 200, 26 Nov 2026) |
+| `/wedding-planning-tools` | Free Wedding Planning Tools for Couples | wedding planning tools (LIVE, HTTP 200, 26 Nov 2026; says "launch the website when save-the-dates go out") |
+| `/expert-advice/wedding-rsvp-website` | Wedding RSVP Website Guide to Collect Every Reply | wedding rsvp website (LIVE per Firecrawl map) |
+| `/expert-advice/wedding-rsvp` | How to Manage Wedding RSVPs: Deadlines, Wording, Follow-Ups | wedding rsvp (LIVE per Firecrawl map) |
+| `/expert-advice/wedding-rsvp-reminder` | Wedding RSVP Reminder Wording and When to Send It | wedding rsvp reminder (LIVE per Firecrawl map) |
+| `/expert-advice/best-wedding-website-builders` | What Is the Best Wedding Website Builder in 2027? | best wedding website builder (LIVE per Firecrawl map) |
+| `/free-wedding-website-builders-compared` | Free Wedding Website Builders Compared | free wedding website builder (LIVE per Firecrawl map; overlaps the builders post, prefer that one) |
+| `/destination-weddings/wedding-website-examples` | 25 Wedding Website Examples, Ranked by What Works (2026) | wedding website examples (LIVE per Firecrawl map) |
+| `/destination-weddings/destination-wedding-guest-guide` | Destination Wedding Guest Guide Template and Tips | destination wedding guest guide (LIVE per Firecrawl map) |
+| `/expert-advice/minted-vs-wonderland-studio` | Minted Wedding Website vs Wonderland Studio Compared | minted wedding website (LIVE per Firecrawl map) |
+| `/save-the-date-ideas` | Save the Date, But Make It You: The first impression | save the date ideas (paper; LIVE per Firecrawl map; RETRO-LINK to digital save the dates) |
+| `/7-quirky-and-fun-save-the-date-ideas-youll-love-for-your-wedding` | 7 Quirky and Fun Save the Date Ideas (old) | quirky save the date ideas (paper, old; RETRO-LINK candidate) |
+| `/10-creative-save-the-date-ideas-based-on-movie-posters` | 10 Creative Save the Date Ideas Based on Movies (old) | movie poster save the date (paper, old; RETRO-LINK candidate) |
+| `/top-5-places-to-create-online-wedding-invites` | Top 5 Places to Create Online Wedding Invites (old) | online wedding invites (old platform list; check before linking; RETRO-LINK candidate) |
+| `/destination-weddings/destination-wedding-save-the-date` | When Do You Send Save the Dates for a Destination Wedding? | destination wedding save the date (Zoho WC3-T398 says Live, but HTTP 404 on 26 Nov 2026; do not link until restored) |
+| `/wedding-tools/digital-save-the-dates` | Digital Save the Dates and the Best Sites to Send Them (WC3-T972) | digital save the dates, online save the date, electronic save the dates | DRAFT (26 Nov 2026; URL was 404, new post) |
+
 ## February destinations (Firecrawl map and scrape, 24 Nov 2026)
 
 | URL | Title | Owns |
