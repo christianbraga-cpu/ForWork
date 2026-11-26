@@ -62,3 +62,9 @@
   - Merged request: 04-reviews/v1/merged.md.
 - **Orchestrator Firecrawl check:** the Smartraveller Zimbabwe level is verified live.
 - Stage 4: writer v2 launched.
+- **Stage 4 fast (writer v2):** DONE. 03-draft-v2.md.
+  - --check: 2,392 reader words; 0 dashes; 0 placeholders.
+  - YAML valid: 57 claims, 45 links (11 internal, 34 external). No internal /destinations/africa links.
+  - All 13 items applied. The Mauritius High Commission link is gone with the Mauritius legal fix.
+  - The writer dropped HEALTH-FACTS; the orchestrator restores it in the package.
+- Stage 6: copy editor launched (incl. region template).
