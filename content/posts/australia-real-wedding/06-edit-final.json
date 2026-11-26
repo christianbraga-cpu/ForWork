@@ -1,0 +1,385 @@
+{
+ "agent": "editor",
+ "task_id": "australia-real-wedding",
+ "stage": "06",
+ "status": "complete",
+ "round": 2,
+ "inputs_used": [
+  "content/posts/australia-real-wedding/08-final.md",
+  "content/posts/australia-real-wedding/06-edit.json",
+  "content/posts/australia-real-wedding/07-panel.json",
+  "content/posts/australia-real-wedding/03-source-pack.json",
+  "content/posts/australia-real-wedding/02-seo.json",
+  "content/posts/australia-real-wedding/01-brief.json",
+  "content/posts/garden-wedding/08-final.md",
+  "content-system/brand/brand-facts.md",
+  "content-system/brand/banned-phrases.md",
+  "content-system/seo/link-map.csv",
+  "content-system/scripts/scan_copy.py output"
+ ],
+ "self_qa": {
+  "checks": [
+   {
+    "check": "Every factual sentence logged",
+    "pass": true,
+    "note": "fact_01 to fact_08 markers match the source pack; fact_09 unused; 12 cards checked against real_wedding_map and the round 1 log; 1 unsupported card detail cut (edit 5)"
+   },
+   {
+    "check": "Scan run and results reflected",
+    "pass": true,
+    "note": "scan_copy.py before and after edits: 0 banned, 0 dashes, 0 competitor overlaps; flagged 'stunning' x3 only in URL slugs"
+   },
+   {
+    "check": "Banned words (best, free, last dance, most, usually, typically, often, average, research talk) absent from visible prose",
+    "pass": true
+   },
+   {
+    "check": "Headings: no colons, dashes or hyphens; questions only in the FAQ",
+    "pass": true
+   },
+   {
+    "check": "All 24 internal links relative, in link-map.csv, none noindex; garden facet LINK comment kept; external links are AGD, BoM and Cancer Council only",
+    "pass": true
+   },
+   {
+    "check": "UTMs: primary before magnet, secondary, then closing; one magnet; utm_medium=content; Concierge anchors 'Wedded Concierge'",
+    "pass": true
+   },
+   {
+    "check": "Exactly 4 one-sentence takeaways; no prices",
+    "pass": true
+   },
+   {
+    "check": "Overlap with garden-wedding/08-final.md visible prose (6-word shingles)",
+    "pass": false,
+    "note": "Paige and Todd card, two access questions, a weather question, the FAQ weather answer, the body Advisor line and the closing CTA tail overlapped; fixed by edits 4 and 7 to 11. Remaining shared strings are SEO-prescribed anchors, the required brand phrase 'quotes in AUD for Australian couples' and the required closing Advisor line"
+   },
+   {
+    "check": "Each old string occurs exactly once in 08-final.md and still once when applied in order",
+    "pass": true,
+    "note": "11 edits applied in order to a scratch copy; rescanned clean"
+   },
+   {
+    "check": "Decision consistent with scores and blocking issues",
+    "pass": true,
+    "note": "Average 4.36, lowest 4, no blocking issues, small edits: pass_with_edits"
+   }
+  ],
+  "confidence": 0.88
+ },
+ "open_questions": [
+  {
+   "to": "orchestrator",
+   "question": "Takeaway 4 is a third Advisor mention beside the one body line and the close. It is the brief's mandated takeaway wording and within 'Claims we can make', so it is kept; cut it to a non-Advisor takeaway only if the person wants the strict one-body-line count.",
+   "blocking": false
+  },
+  {
+   "to": "orchestrator",
+   "question": "Round 1 open questions still stand (Nick and Lauren not in the Real Weddings category; Stephanie and Daniil's NSW from the category label; add the three external links to 02-seo external_links).",
+   "blocking": false
+  }
+ ],
+ "assumptions": [
+  "Shared SEO anchors ('more real weddings from our pages', 'how to plan a destination wedding') and the required brand phrase 'quotes in AUD for Australian couples' are not overlap defects."
+ ],
+ "verify_items": [],
+ "tools_used": [
+  "Bash",
+  "python3 -I content-system/scripts/scan_copy.py",
+  "python3 -I content-system/scripts/validate.py"
+ ],
+ "next_agent": [
+  "luxury-writer"
+ ],
+ "payload": {
+  "draft_file": "content/posts/australia-real-wedding/08-final.md",
+  "rubric": {
+   "voice": 4.5,
+   "expertise": 4,
+   "accuracy": 4.5,
+   "seo_fit": 4.5,
+   "commercial_link": 4,
+   "structure": 4.5,
+   "brief_fit": 4.5
+  },
+  "average": 4.36,
+  "blocking_issues": [],
+  "decision": "pass_with_edits",
+  "edits": [
+   {
+    "location": "Real weddings in country and vineyard settings > Kathryn and Ben card",
+    "issue": "Copied sentence: 'married in Newrybar, a small village between Ballina and Byron Bay' tracks the story's own sentence ('were married in Newrybar, a small village located between Ballina and Byron Bay') almost word for word. Facts unchanged.",
+    "old": "[Kathryn and Ben](/real-wedding-a-rustic-country-wedding-with-a-pop-of-colour) married in Newrybar, a small village between Ballina and Byron Bay.",
+    "new": "[Kathryn and Ben](/real-wedding-a-rustic-country-wedding-with-a-pop-of-colour) married in the small village of Newrybar, on the stretch between Ballina and Byron Bay.",
+    "fix": "Replace exactly: \"[Kathryn and Ben](/real-wedding-a-rustic-country-wedding-with-a-pop-of-colour) married in Newrybar, a small village between Ballina and Byron Bay.\" with \"[Kathryn and Ben](/real-wedding-a-rustic-country-wedding-with-a-pop-of-colour) married in the small village of Newrybar, on the stretch between Ballina and Byron Bay.\""
+   },
+   {
+    "location": "Real weddings in the city > Sarah and Damien card, second sentence",
+    "issue": "Copied sentence: mirrors the story's 'Bright pops of burgundy, blushes and a tonne of greenery set the scene for an incredible party' in structure and wording ('set the tone for the party'). Facts unchanged; does not imply the couple styled it (the bride's studio must stay unnamed).",
+    "old": "Burgundy, blush and plenty of greenery set the tone for the party that followed.",
+    "new": "The night was dressed in burgundy and blush, with plenty of greenery through the room.",
+    "fix": "Replace exactly: \"Burgundy, blush and plenty of greenery set the tone for the party that followed.\" with \"The night was dressed in burgundy and blush, with plenty of greenery through the room.\""
+   },
+   {
+    "location": "Real weddings in the city > Stephanie and Arthur card",
+    "issue": "Copied clause: 'while candles and green and white flowers filled the room' tracks the story's 'while the room was filled with candles and green and white florals'. Facts unchanged.",
+    "old": "looked out on the city skyline, while candles and green and white flowers filled the room.",
+    "new": "looked out on the city skyline, and the room itself was dressed with candles and flowers in green and white.",
+    "fix": "Replace exactly: \"looked out on the city skyline, while candles and green and white flowers filled the room.\" with \"looked out on the city skyline, and the room itself was dressed with candles and flowers in green and white.\""
+   },
+   {
+    "location": "Real weddings in Australian gardens > Paige and Todd card",
+    "issue": "Overlap with garden-wedding/08-final.md visible prose ('to a croquet lawn and a', the same Paige and Todd card on the sibling facet). Facts unchanged.",
+    "old": "took their reception to a croquet lawn and a romantically dressed marquee after the garden ceremony they had set out to find.",
+    "new": "followed the garden ceremony they had set out to find with a reception in a romantically dressed marquee beside a croquet lawn.",
+    "fix": "Replace exactly: \"took their reception to a croquet lawn and a romantically dressed marquee after the garden ceremony they had set out to find.\" with \"followed the garden ceremony they had set out to find with a reception in a romantically dressed marquee beside a croquet lawn.\""
+   },
+   {
+    "location": "Real weddings in Australian gardens > Helen and Trent card, first sentence",
+    "issue": "Unsupported card detail: 'among their closest family and friends' is not in 02-seo real_wedding_map or the round 1 fact log (which confirms only the bride's private family estate in Victoria and the self-styled marquee). Cut.",
+    "old": "exchanged vows on the bride's family estate in Victoria, among their closest family and friends.",
+    "new": "exchanged vows on the bride's private family estate in Victoria.",
+    "fix": "Replace exactly: \"exchanged vows on the bride's family estate in Victoria, among their closest family and friends.\" with \"exchanged vows on the bride's private family estate in Victoria.\""
+   },
+   {
+    "location": "Real weddings on an island > Jessica and Jarrod card, second sentence",
+    "issue": "Copied sentence: 'With surroundings like those, they kept the styling to a minimum' tracks the story's 'With the beautiful surroundings, the styling was kept to a minimum'. Facts unchanged.",
+    "old": "With surroundings like those, they kept the styling to a minimum.",
+    "new": "The setting carried the day, so the styling stayed light.",
+    "fix": "Replace exactly: \"With surroundings like those, they kept the styling to a minimum.\" with \"The setting carried the day, so the styling stayed light.\""
+   },
+   {
+    "location": "What these weddings share > Guests travelling from interstate and overseas, bullets 3 and 4",
+    "issue": "Overlap with garden-wedding/08-final.md: 'Is there a drop-off point close to the ceremony' and 'Is there a route without steps from ... to the ceremony, the reception and the bathrooms' repeat the sibling facet's venue questions almost word for word. Same questions, new wording.",
+    "old": "- Is there a drop-off point close to the ceremony for guests who arrive by coach or car?\n- Is there a route without steps from that drop-off to the ceremony, the reception and the bathrooms, for older guests or anyone using a walking frame or wheelchair?",
+    "new": "- Where do coaches and cars set guests down, and how far is that from the ceremony?\n- Can older guests, or anyone using a walking frame or wheelchair, get from there to the ceremony, to dinner and to the bathrooms without stairs?",
+    "fix": "Replace exactly: \"- Is there a drop-off point close to the ceremony for guests who arrive by coach or car?\n- Is there a route without steps from that drop-off to the ceremony, the reception and the bathrooms, for older guests or anyone using a walking frame or wheelchair?\" with \"- Where do coaches and cars set guests down, and how far is that from the ceremony?\n- Can older guests, or anyone using a walking frame or wheelchair, get from there to the ceremony, to dinner and to the bathrooms without stairs?\""
+   },
+   {
+    "location": "Planning a wedding in Australia from here > Seasons and weather, bullet 3",
+    "issue": "Overlap with garden-wedding/08-final.md ('and by what time on the day', sibling facet's weather question); also repeats the covered-plan question above. Reworded to a distinct question.",
+    "old": "- Who watches the forecast, and by what time on the day is the call made?",
+    "new": "- Who watches the forecast in the days before, and who tells us and our guests if the plan changes?",
+    "fix": "Replace exactly: \"- Who watches the forecast, and by what time on the day is the call made?\" with \"- Who watches the forecast in the days before, and who tells us and our guests if the plan changes?\""
+   },
+   {
+    "location": "Planning a wedding in Australia from here > Guests who fly in, body Advisor line",
+    "issue": "Overlap with garden-wedding/08-final.md: the sentence repeats the sibling facet's body Advisor line ('Through Wedded Concierge, a Wedded Advisor works in your time zone, quotes in AUD for Australian couples and confirms inclusions in writing before you commit') almost word for word. Reworded within brand-facts 'Claims we can make' and the brief's body line (venue, travel, vendors and payments; time zone; 'quotes in AUD for Australian couples'); secondary UTM and 'Wedded Concierge' anchor unchanged.",
+    "old": "Through [Wedded Concierge](/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=australia-real-wedding&utm_content=secondary), a Wedded Advisor plans the venue, travel, vendors and payments for a wedding in Australia or abroad, works in your time zone, quotes in AUD for Australian couples and confirms inclusions in writing before you commit.",
+    "new": "For a wedding in Australia or abroad, a Wedded Advisor at [Wedded Concierge](/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=australia-real-wedding&utm_content=secondary) plans the venue, travel, vendors and payments, keeps to your time zone and quotes in AUD for Australian couples.",
+    "fix": "Replace exactly: \"Through [Wedded Concierge](/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=australia-real-wedding&utm_content=secondary), a Wedded Advisor plans the venue, travel, vendors and payments for a wedding in Australia or abroad, works in your time zone, quotes in AUD for Australian couples and confirms inclusions in writing before you commit.\" with \"For a wedding in Australia or abroad, a Wedded Advisor at [Wedded Concierge](/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=australia-real-wedding&utm_content=secondary) plans the venue, travel, vendors and payments, keeps to your time zone and quotes in AUD for Australian couples.\""
+   },
+   {
+    "location": "Frequently asked questions > What should we ask an Australian venue about the weather?",
+    "issue": "Overlap with garden-wedding/08-final.md ('who makes the call to move' and 'and by what time', sibling facet's takeaway and FAQ). Same content, new wording.",
+    "old": "Ask where the covered option is and whether every guest can be seated there, who makes the call to move and by what time, and what shade sits over the ceremony seating at the hour you marry.",
+    "new": "Ask where the covered option is and whether it seats every guest, who decides on the move and how many hours ahead, and what shade sits over the ceremony seating at the hour you marry.",
+    "fix": "Replace exactly: \"Ask where the covered option is and whether every guest can be seated there, who makes the call to move and by what time, and what shade sits over the ceremony seating at the hour you marry.\" with \"Ask where the covered option is and whether it seats every guest, who decides on the move and how many hours ahead, and what shade sits over the ceremony seating at the hour you marry.\""
+   },
+   {
+    "location": "Plan your Australian wedding with Wedded Concierge > closing CTA",
+    "issue": "Overlap with garden-wedding/08-final.md closing CTA ('and anything about the day that needs to stay private', 9 words). Closing UTM and anchor unchanged; the required Advisor line before it is untouched.",
+    "old": "how far everyone will travel and anything about the day that needs to stay private.",
+    "new": "how far everyone will travel and any part of the day you want kept private.",
+    "fix": "Replace exactly: \"how far everyone will travel and anything about the day that needs to stay private.\" with \"how far everyone will travel and any part of the day you want kept private.\""
+   }
+  ],
+  "fact_check_log": [
+   {
+    "claim": "Key takeaway 3 / FAQ: Notice of Intended Marriage to an authorised celebrant at least 1 month and no more than 18 months before the wedding",
+    "fact_id": "fact_01",
+    "status": "confirmed"
+   },
+   {
+    "claim": "As at November 2026, Marriage Act 1961 and Marriage Regulations 2017 set the rules; general information, not legal advice",
+    "fact_id": "fact_01",
+    "status": "confirmed"
+   },
+   {
+    "claim": "NOIM reaches celebrant 1 to 18 months ahead; can be completed while overseas (edit 13 aligns wording to AGD 'if you are overseas')",
+    "fact_id": "fact_02",
+    "status": "confirmed"
+   },
+   {
+    "claim": "Less than 1 month away: talk to celebrant; prescribed authority may approve",
+    "fact_id": "fact_02",
+    "status": "confirmed"
+   },
+   {
+    "claim": "Authorised celebrant must perform the ceremony; four types listed",
+    "fact_id": "fact_04",
+    "status": "confirmed"
+   },
+   {
+    "claim": "AGD register of Commonwealth-registered celebrants, searchable by name and filterable by state",
+    "fact_id": "fact_05",
+    "status": "confirmed"
+   },
+   {
+    "claim": "3 certificates signed by couple, celebrant and 2 witnesses over 18; day certificate is ceremonial; celebrant submits to state or territory registry within 14 days",
+    "fact_id": "fact_03",
+    "status": "confirmed"
+   },
+   {
+    "claim": "Whitsundays: BoM records for an island airport show January and February far wetter, with many more rain days, than late winter and early spring (no figures quoted)",
+    "fact_id": "fact_06",
+    "status": "confirmed"
+   },
+   {
+    "claim": "'On an island in the Whitsundays, summer brings the wet months' (season interpretation, December not in fact_06; page has no season summary)",
+    "fact_id": "fact_06",
+    "status": "removed"
+   },
+   {
+    "claim": "'A reef island and a southern vineyard can sit in very different weather in the same month' (no BoM source)",
+    "status": "removed"
+   },
+   {
+    "claim": "Sun protection once UV reaches 3 or above; UV cannot be seen or felt; check UV on SunSmart app or BoM website ('forecast' corrected to UV level in edit 16)",
+    "fact_id": "fact_07",
+    "status": "confirmed"
+   },
+   {
+    "claim": "Shade reduces UV but reflection still reaches you; combine with clothing, hats, sunglasses, SPF 50 or SPF50+",
+    "fact_id": "fact_08",
+    "status": "confirmed"
+   },
+   {
+    "claim": "Sunscreen at least 20 minutes before going out; reapply every two hours or after swimming or heavy sweating (sentence cut at panel stage; fact_09 no longer used, no marker in 08-final.md)",
+    "fact_id": "fact_09",
+    "status": "removed"
+   },
+   {
+    "claim": "Intro: 12 couples on this page",
+    "status": "confirmed",
+    "fact_id": "02-seo real_wedding_map (12 featured)"
+   },
+   {
+    "claim": "Jennifer and Emrah: Wollongong, vows on a clifftop beside the beach, glamorous reception, white, black and gold theme (live story read 2026-11-26)",
+    "fact_id": "02-seo real_wedding_map",
+    "status": "confirmed"
+   },
+   {
+    "claim": "Jennifer and Emrah: 'moving on to' the reception; theme 'carried from one to the other' (story has both under one roof)",
+    "status": "removed"
+   },
+   {
+    "claim": "Stephanie and Simon: Sydney Harbour ceremony chosen for interstate and overseas guests; spring afternoon (live story)",
+    "fact_id": "02-seo real_wedding_map",
+    "status": "confirmed"
+   },
+   {
+    "claim": "Stephanie and Daniil: New South Wales (story category label shown on page), intimate and quirky wedding overlooking the vines, friends and family flew in from around the world (live story)",
+    "fact_id": "02-seo real_wedding_map",
+    "status": "confirmed"
+   },
+   {
+    "claim": "Kathryn and Ben: Newrybar between Ballina and Byron Bay; raw, natural elements, concrete, timber, linen and foliage (live story)",
+    "fact_id": "02-seo real_wedding_map",
+    "status": "confirmed"
+   },
+   {
+    "claim": "Nick and Lauren: outdoor ceremony under a gigantic tree, white florals and greenery; walking hand in hand in the Byron Hinterland as the memory (live story)",
+    "fact_id": "02-seo real_wedding_map",
+    "status": "confirmed"
+   },
+   {
+    "claim": "Sarah and Damien: winter warehouse wedding in the heart of Melbourne; burgundy, blush and greenery set the scene for the party (live story)",
+    "fact_id": "02-seo real_wedding_map",
+    "status": "confirmed"
+   },
+   {
+    "claim": "Stephanie and Arthur: South Melbourne reception using the city skyline; candles and green and white florals (live story)",
+    "fact_id": "02-seo real_wedding_map",
+    "status": "confirmed"
+   },
+   {
+    "claim": "Kristyn and Damien: Adelaide Hills; ceremony then cocktail party; guests enjoyed the warm space of the gardens (live story)",
+    "fact_id": "02-seo real_wedding_map",
+    "status": "confirmed"
+   },
+   {
+    "claim": "Paige and Todd: NSW; garden ceremony they searched for; marquee and croquet lawn reception; manicured gardens, fountain, acres for photos (live story)",
+    "fact_id": "02-seo real_wedding_map",
+    "status": "confirmed"
+   },
+   {
+    "claim": "Helen and Trent: bride's family estate in Victoria; marquee styled by the couple with foliage and paper lanterns (live story); final check: 'among their closest family and friends' unsupported, cut (edit 5)",
+    "fact_id": "02-seo real_wedding_map",
+    "status": "confirmed"
+   },
+   {
+    "claim": "Helen and Trent: 'kept their wedding close to home'; 'the two of them hung paper lanterns'",
+    "status": "removed"
+   },
+   {
+    "claim": "Samira and Tom: handcrafted archway in a green garden, luxe yet relaxed; reception styled simply with fairy lights and sparklers (live story)",
+    "fact_id": "02-seo real_wedding_map",
+    "status": "confirmed"
+   },
+   {
+    "claim": "Samira and Tom: 'Near the Gold Coast' and 'married beneath' the arch (not in story text)",
+    "status": "removed"
+   },
+   {
+    "claim": "Jessica and Jarrod: Hayman Island; classic, romantic theme with personalised touches; ceremony in a sandstone courtyard with tropical gardens and water features; styling kept to a minimum (live story)",
+    "fact_id": "02-seo real_wedding_map",
+    "status": "confirmed"
+   },
+   {
+    "claim": "Jessica and Jarrod: 'an island in the Whitsundays' and 'a reef island' (story names Hayman Island only)",
+    "status": "removed"
+   },
+   {
+    "claim": "Shared lessons: two couples with interstate or overseas guests (Stephanie and Simon, Stephanie and Daniil); spare styling (Jessica and Jarrod, Samira and Tom); Helen and Trent styled their marquee; several small by design (Stephanie and Daniil, Kathryn and Ben, Kristyn and Damien, Helen and Trent, Samira and Tom, Jennifer and Emrah)",
+    "fact_id": "02-seo real_wedding_map",
+    "status": "confirmed"
+   },
+   {
+    "claim": "'A great old tree' (story: gigantic tree, age not stated)",
+    "status": "removed"
+   },
+   {
+    "claim": "Advisor lines: plans venue, travel, vendors and payments anywhere in the world; time zone; quotes in AUD for Australian couples; single point of contact start to finish; fee agreed in writing before any work begins",
+    "fact_id": "brand-facts Claims we can make",
+    "status": "confirmed"
+   },
+   {
+    "claim": "Final check: Helen and Trent 'among their closest family and friends' (not in real_wedding_map or round 1 log)",
+    "status": "removed"
+   },
+   {
+    "claim": "Final check: every <!-- fact_xx --> marker in 08-final.md (fact_01 to fact_08) matches its sentence in 03-source-pack.json; no fact_09 marker",
+    "fact_id": "fact_01..fact_08",
+    "status": "confirmed"
+   },
+   {
+    "claim": "Final check: card details on all 12 cards within 02-seo real_wedding_map and the round 1 log; couple names as published; no venue, vendor, label or business names",
+    "fact_id": "02-seo real_wedding_map",
+    "status": "confirmed"
+   },
+   {
+    "claim": "Final check: Advisor lines, takeaway 4 (brief-mandated), body line (edit 9) and close ('anywhere in the world', 'the fee is agreed in writing before any work begins'), all within brand-facts 'Claims we can make'; no paperwork, room blocks, Wedded Privileges, transfers, availability, on-the-ground or phone claims",
+    "fact_id": "brand-facts Claims we can make",
+    "status": "confirmed"
+   }
+  ],
+  "compliance": {
+   "pass": true,
+   "issues": [
+    "No prices, so nothing for Nic to sign off.",
+    "Legal lines carry 'as at November 2026' and 'general information, not legal advice'."
+   ]
+  },
+  "originality": {
+   "pass": true,
+   "matches": [
+    "Four card sentences tracked their source stories' wording (Kathryn and Ben, Sarah and Damien, Stephanie and Arthur, Jessica and Jarrod); fixed by edits 1, 2, 3 and 6.",
+    "Seven overlaps with garden-wedding/08-final.md visible prose; fixed by edits 4 and 7 to 11.",
+    "scan_copy overlaps with competitor pages: 0."
+   ]
+  },
+  "banned_phrases_found": [],
+  "needs_signoff": []
+ }
+}

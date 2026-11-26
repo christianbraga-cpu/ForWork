@@ -23,7 +23,7 @@ After the cards come the questions these weddings raise for any Australian venue
 - Every wedding below comes from our own published stories, grouped into coast and beach, country and vineyard, city, garden and island settings, and linked to the couple's full account.
 - Before you book an Australian venue, ask where an outdoor ceremony moves if the weather turns and who makes that call on the day.
 - To marry legally in Australia, you give a Notice of Intended Marriage to an authorised celebrant at least 1 month and no more than 18 months before the wedding. <!-- fact_01 -->
-- A Wedded Advisor can plan a wedding anywhere in Australia or abroad and quotes in AUD for Australian couples.
+- What these couples share becomes a set of questions for any Australian venue, from guests travelling in to a route without steps for older guests.
 
 ## Real weddings by the coast and beach
 
@@ -53,7 +53,7 @@ In New South Wales, [Stephanie and Daniil](/real-wedding-ballet-couple-tie-the-k
 
 ### Kathryn and Ben
 
-[Kathryn and Ben](/real-wedding-a-rustic-country-wedding-with-a-pop-of-colour) married in Newrybar, a small village between Ballina and Byron Bay. Their styling leaned on raw, natural materials, with concrete and timber set against linen and foliage.
+[Kathryn and Ben](/real-wedding-a-rustic-country-wedding-with-a-pop-of-colour) married in the small village of Newrybar, on the stretch between Ballina and Byron Bay. Their styling leaned on raw, natural materials, with concrete and timber set against linen and foliage.
 
 ### Nick and Lauren
 
@@ -67,11 +67,11 @@ Both city weddings here are in Melbourne, one in a warehouse in winter and one w
 
 ### Sarah and Damien
 
-For their winter wedding, [Sarah and Damien](/real-wedding-a-winter-warehouse-wedding-in-melbourne) chose a warehouse in the heart of Melbourne. Burgundy, blush and plenty of greenery set the tone for the party that followed.
+For their winter wedding, [Sarah and Damien](/real-wedding-a-winter-warehouse-wedding-in-melbourne) chose a warehouse in the heart of Melbourne. The night was dressed in burgundy and blush, with plenty of greenery through the room.
 
 ### Stephanie and Arthur
 
-In South Melbourne, the reception of [Stephanie and Arthur](/a-modern-wedding-against-melbournes-stunning-skyline) looked out on the city skyline, while candles and green and white flowers filled the room.
+In South Melbourne, the reception of [Stephanie and Arthur](/a-modern-wedding-against-melbournes-stunning-skyline) looked out on the city skyline, and the room itself was dressed with candles and flowers in green and white.
 
 For more couples who married in the same state, browse [real weddings across Victoria](/these-real-weddings-in-victoria-are-completely-stunning).
 
@@ -87,11 +87,11 @@ In the Adelaide Hills, the vows of [Kristyn and Damien](/real-wedding-an-elegant
 
 ### Paige and Todd
 
-In New South Wales, [Paige and Todd](/an-autumn-garden-wedding-at-burnham-grove-estate) took their reception to a croquet lawn and a romantically dressed marquee after the garden ceremony they had set out to find. Clipped gardens, a fountain and acres of grounds made the backdrop for their photographs.
+In New South Wales, [Paige and Todd](/an-autumn-garden-wedding-at-burnham-grove-estate) followed the garden ceremony they had set out to find with a reception in a romantically dressed marquee beside a croquet lawn. Clipped gardens, a fountain and acres of grounds made the backdrop for their photographs.
 
 ### Helen and Trent
 
-[Helen and Trent](/helen-and-trents-intimate-garden-wedding) exchanged vows on the bride's family estate in Victoria, among their closest family and friends. They dressed the white marquee for their garden reception themselves, with paper lanterns and trailing greenery.
+[Helen and Trent](/helen-and-trents-intimate-garden-wedding) exchanged vows on the bride's private family estate in Victoria. They dressed the white marquee for their garden reception themselves, with paper lanterns and trailing greenery.
 
 ### Samira and Tom
 
@@ -105,7 +105,7 @@ On an island, the water, the planting and the light arrive before a single flowe
 
 ### Jessica and Jarrod
 
-On Hayman Island, [Jessica and Jarrod](/a-picturesque-wedding-on-hayman-island) chose a classic, romantic theme with personal touches, and married in a sandstone courtyard ringed by tropical gardens and water features. With surroundings like those, they kept the styling to a minimum.
+On Hayman Island, [Jessica and Jarrod](/a-picturesque-wedding-on-hayman-island) chose a classic, romantic theme with personal touches, and married in a sandstone courtyard ringed by tropical gardens and water features. The setting carried the day, so the styling stayed light.
 
 ## What these weddings share
 
@@ -117,8 +117,8 @@ Two of these couples had guests travelling from interstate or overseas, and dist
 
 - How do guests reach the venue from the nearest airport, and how long is the trip?
 - Where can guests stay nearby, and is there accommodation on the property?
-- Is there a drop-off point close to the ceremony for guests who arrive by coach or car?
-- Is there a route without steps from that drop-off to the ceremony, the reception and the bathrooms, for older guests or anyone using a walking frame or wheelchair?
+- Where do coaches and cars set guests down, and how far is that from the ceremony?
+- Can older guests, or anyone using a walking frame or wheelchair, get from there to the ceremony, to dinner and to the bathrooms without stairs?
 - Can the venue host a welcome drink the night before or a long lunch the day after?
 
 ### A ceremony outdoors and a covered plan
@@ -177,14 +177,14 @@ Trees and built shade cut UV, yet some still reaches guests by reflection, so tr
 
 - Which months does the venue suggest for an outdoor ceremony, and what is the fallback in the wettest ones?
 - What shade covers the ceremony seating at the hour you plan to marry, and can a sunshade or tent be added?
-- Who watches the forecast, and by what time on the day is the call made?
+- Who watches the forecast in the days before, and who tells us and our guests if the plan changes?
 - Can we set out water and sunscreen for guests near the ceremony?
 
 ### Guests who fly in
 
 If you live overseas and are coming home to marry, or are bringing guests from abroad, start with our guide on [how to plan a destination wedding](/expert-advice/how-to-plan-a-destination-wedding). If you are still weighing Australia against somewhere nearby, compare [weddings across Oceania](/destinations/oceania).
 
-Through [Wedded Concierge](/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=australia-real-wedding&utm_content=secondary), a Wedded Advisor plans the venue, travel, vendors and payments for a wedding in Australia or abroad, works in your time zone, quotes in AUD for Australian couples and confirms inclusions in writing before you commit.
+For a wedding in Australia or abroad, a Wedded Advisor at [Wedded Concierge](/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=australia-real-wedding&utm_content=secondary) plans the venue, travel, vendors and payments, keeps to your time zone and quotes in AUD for Australian couples.
 
 ## Frequently asked questions
 
@@ -206,10 +206,10 @@ At least 1 month and no more than 18 months before the wedding. If the date is c
 
 ### What should we ask an Australian venue about the weather?
 
-Ask where the covered option is and whether every guest can be seated there, who makes the call to move and by what time, and what shade sits over the ceremony seating at the hour you marry.
+Ask where the covered option is and whether it seats every guest, who decides on the move and how many hours ahead, and what shade sits over the ceremony seating at the hour you marry.
 
 ## Plan your Australian wedding with Wedded Concierge
 
 Whether you picture a clifftop, a row of vines or an island courtyard, the planning starts with the questions above. One Wedded Advisor plans the venue, travel, vendors and payments anywhere in the world as your single point of contact from start to finish, and the fee is agreed in writing before any work begins.
 
-Share with [Wedded Concierge](/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=australia-real-wedding&utm_content=closing) the setting you picture, the month you are weighing, your guest numbers, how far everyone will travel and anything about the day that needs to stay private.
+Share with [Wedded Concierge](/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=australia-real-wedding&utm_content=closing) the setting you picture, the month you are weighing, your guest numbers, how far everyone will travel and any part of the day you want kept private.
