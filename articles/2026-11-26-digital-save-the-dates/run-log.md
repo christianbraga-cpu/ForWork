@@ -54,3 +54,10 @@
   - The orchestrator removed "complimentary" from a register note.
   - New open items: PLATFORM-DOMAINS (the platform sites are not in domains.md), GV-SMS-AU, REAL-STORY.
 - Reviews launched (accuracy, SEO, couple reader).
+- **Stage 3 fast (3 reviews):** DONE.
+  - **Accuracy 4.4, approved:** 0 blockers, 0 majors, 4 wording minors. Judged on the pack, because live fetches failed (session network).
+  - **SEO 4.2:** majors on PLATFORM-DOMAINS (a user decision) and length; cut plan given. Minors: the takeaways marker, the RSVP FAQ, and the /expert-advice/wedding-rsvp link.
+  - **Reader (couple):** relevance 2, trust 3, clarity 3, would_enquire 2, "save". The planner-trust blocker is downgraded as out of scope.
+  - Merged request: 04-reviews/v1/merged.md.
+- **PLATFORM-DOMAINS (for the user):** the seven platform sites are not in domains.md. **Recommended:** a domains.md row "Platform official pages: product and help pages of a platform a sites-list post describes; rel nofollow noopener; never affiliate".
+- Stage 4: writer v2 launched.
