@@ -47,3 +47,10 @@
     - STUDIO-CAP-CONFLICT: the free guest cap is "50 guests" in one snippet but "generous" elsewhere.
   - **Decision (default):** neither conflicting figure is stated as a rule.
 - Stage 2: writer launched.
+- **Stage 2 fast (writer):** DONE. 03-draft-v1.md.
+  - --check: 2,408 reader words (over the cap); 0 dashes; 0 placeholders.
+  - External: the seven platform sites, passports.gov.au, smartraveller.gov.au.
+  - YAML valid: 40 claims, 20 links.
+  - The orchestrator removed "complimentary" from a register note.
+  - New open items: PLATFORM-DOMAINS (the platform sites are not in domains.md), GV-SMS-AU, REAL-STORY.
+- Reviews launched (accuracy, SEO, couple reader).
