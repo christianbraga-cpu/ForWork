@@ -30,3 +30,13 @@
 
 ## Stages
 - Stage 0 and 1 launched in parallel (both save early).
+- **Stage 0 fast (strategist):** DONE.
+  - **URL:** 404, so a new post. Zoho WC3-T378 (In Progress).
+  - **Volumes:** all five terms below threshold in AU and US.
+  - **SERP:** the top 3 in all four cities are Facebook, Reddit or Tripadvisor threads; no brand or official page owns the topic.
+  - **Gap:** currency risk between deposit and balance, invoice scams and cash balances, all with official sources.
+  - **Cannibalisation:** none; six live pages and the budget draft touch payments in one section each (link, do not restate).
+  - **SEO title:** "Paying Wedding Vendors Overseas Without Currency Surprises" (58). Meta 154. 8 H2s.
+  - Link map: DRAFT row added, plus four live pages confirmed 27 Nov.
+  - **BRAND-NAME (for the user):** live pages say "Wedded Concierge", the brand files say "Wonderland Concierge". The writer uses the brand-profile name and links /wonderland-concierge.
+  - **CASH-RULE:** the AUD 10,000 cash rule is unverified; stated only if the researcher finds the official page.
