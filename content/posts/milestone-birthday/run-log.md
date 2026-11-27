@@ -8,3 +8,4 @@
 02:30 07b panel revise, weighted enquiry 2.1 vs 3.8 (business details deferred); 13 edits applied, accepted after one round
 02:32 09 cro complete; 4 tracked links kept as placed
 02:32 06 final check pass_with_edits 4.57; 1 edit applied
+02:35 11 package built; 13 run report written
