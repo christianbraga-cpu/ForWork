@@ -1,0 +1,78 @@
+{
+  "agent": "cro-specialist",
+  "task_id": "milestone-birthday",
+  "stage": "09",
+  "status": "complete",
+  "round": 1,
+  "inputs_used": [
+    "CLAUDE.md",
+    "content-system/schemas/09-cro.schema.json",
+    "content-system/schemas/envelope.schema.json",
+    "content/posts/milestone-birthday/01-brief.json (journey_stage planning, goal, service_link, CRO open question on Concierge versus /magazine)",
+    "content/posts/milestone-birthday/07-panel.json (weighted enquiry 2.1, must_fix and should_fix)",
+    "content/posts/milestone-birthday/07-icp/*.json (cta_reaction for all five personas)",
+    "content/posts/milestone-birthday/08-final.md (read only)",
+    "content-system/seo/link-map.csv (/wonderland-concierge, /magazine)",
+    "content/posts/5-tips-to-creating-a-personalised-wedding-hashtag/09-cro.json (format model)",
+    "Fast mode: services.md and brand-facts.md not re-read; subtexts reuse only brand-facts wording already approved in 08-final.md"
+  ],
+  "self_qa": {
+    "checks": [
+      {"check": "CTA text 6 words or fewer, no 'click here', no exclamation mark", "pass": true, "note": "Primary 'Begin with Wedded Concierge' (4), secondary 'Begin with Wedded Concierge' (4), closing 'Start a conversation through Wedded Concierge' (5), magnet 'Browse our destination magazines' (4). Texts mirror the existing in-copy wording."},
+      {"check": "utm_content primary, magnet, secondary and closing each appear exactly once, utm_source=blog, utm_medium=content, utm_campaign=milestone-birthday", "pass": true, "note": "grep on 08-final.md: 4 UTM links; primary line 141, magnet line 163, secondary line 184, closing line 226. No tracked link added."},
+      {"check": "Primary appears before secondary and closing", "pass": true, "note": "141 < 184 < 226."},
+      {"check": "Every /wonderland-concierge anchor reads exactly 'Wedded Concierge'", "pass": true, "note": "All three checked. The /magazine anchor is 'our destination magazines' (not a Concierge link); recorded as is."},
+      {"check": "Targets exist in the link map", "pass": true, "note": "/wonderland-concierge (commercial, default CTA target) and /magazine (lead magnet) both listed, last checked 2026-10-20."},
+      {"check": "No prices, fees, commissions, phone lines, named people, availability, Wedded Privileges, room blocks, 'free', 'best', em dashes or CTA marker comments added", "pass": true, "note": "Subtexts use only single point of contact, start to finish, time zone, AUD and 'anywhere in the world' wording already in 08-final.md. The closing paragraph's existing fee-in-writing sentence is approved copy and is not reused or extended here. No <!-- CTA --> marker added."},
+      {"check": "08-final.md unchanged", "pass": true, "note": "Read only; md5 182645c2915d400774019c83f67cbf9f; copy_changes is empty."}
+    ],
+    "confidence": 0.86
+  },
+  "open_questions": [
+    {"to": "orchestrator", "question": "For the run report: what the 'maybe' readers want before enquiring (a phone call with a real person before paying, one real example of a celebration planned, proof or reviews, experience at scale and privacy for uhnw, a plain explanation of what Wedded Concierge is for search_visitor) are deferred business details that belong on /wonderland-concierge, not in this post. Raise with the business and re-run cro-specialist once confirmed.", "blocking": false},
+    {"to": "orchestrator", "question": "08-final.md has no <!-- CTA: primary --> marker; placements rely on the existing inline links as instructed. If the CMS template needs a CTA block anchor, handle it at the CMS stage.", "blocking": false}
+  ],
+  "assumptions": [
+    "Answer to the brief's CRO question: Concierge stays primary. The post promises 'How to Plan One' (planning stage) and the panel's planning question peaks at hand-over (primary) and the destination weekend (secondary). /magazine is kept as the existing magnet but is wedding-focused, so it serves destination inspiration only.",
+    "Placements kept as they are: the readers' 'maybe, I'd want X first' items cannot be added to this post without deferred business details, so moving CTAs would not change them.",
+    "CTA text and subtext fields describe the CMS button or summary for each existing link; in-copy anchors stay unchanged."
+  ],
+  "verify_items": [],
+  "tools_used": ["Bash (cat, grep, sed, md5sum, python3 -I validate.py)"],
+  "payload": {
+    "journey_stage": "planning",
+    "primary_cta": {
+      "text": "Begin with Wedded Concierge",
+      "subtext": "One Wedded Advisor, start to finish, as a single point of contact.",
+      "link": "https://weddedwonderland.com/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=milestone-birthday&utm_content=primary",
+      "placement": "Existing inline link closing 'Hand over the logistics', the last step of 'How to plan a milestone birthday step by step' (line 141: 'If you would rather hand the whole celebration to one person from the start, begin with Wedded Concierge.'). The reader has just seen the full workload, so the hand-over question peaks here. Unchanged."
+    },
+    "secondary_cta": {
+      "text": "Begin with Wedded Concierge",
+      "subtext": "Your Wedded Advisor works in your time zone and quotes in AUD.",
+      "link": "https://weddedwonderland.com/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=milestone-birthday&utm_content=secondary",
+      "placement": "Existing line ending 'Where everyone stays and one hosted dinner' in 'Planning a destination birthday weekend' (line 184), the brief's one body Advisor line. funding_parent and planner_couple both said they would click if the celebration becomes a trip away, which is this section. Unchanged."
+    },
+    "closing_cta": {
+      "text": "Start a conversation through Wedded Concierge",
+      "subtext": "Venue, travel, vendors and payments, planned anywhere in the world.",
+      "link": "https://weddedwonderland.com/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=milestone-birthday&utm_content=closing",
+      "placement": "Existing final paragraph under 'Planning a milestone birthday with Wedded Concierge' (line 226). Four of five readers quoted this line; 'start a conversation' read as low pressure. Unchanged."
+    },
+    "lead_magnet": {
+      "name": "Wedded Wonderland destination magazines",
+      "link": "https://weddedwonderland.com/magazine?utm_source=blog&utm_medium=content&utm_campaign=milestone-birthday&utm_content=magnet",
+      "placement": "Existing line in 'Choosing a place guests can reach' (line 163: 'For inspiration, browse our destination magazines.'), for readers still choosing where to go. Unchanged.",
+      "exists": true
+    },
+    "tracking": [
+      "https://weddedwonderland.com/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=milestone-birthday&utm_content=primary",
+      "https://weddedwonderland.com/magazine?utm_source=blog&utm_medium=content&utm_campaign=milestone-birthday&utm_content=magnet",
+      "https://weddedwonderland.com/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=milestone-birthday&utm_content=secondary",
+      "https://weddedwonderland.com/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=milestone-birthday&utm_content=closing"
+    ],
+    "copy_changes": [],
+    "rationale": "Brief journey_stage is 'planning' and routes the post to /wonderland-concierge. All four tracked links already exist once each with the correct UTMs, every Concierge anchor reads 'Wedded Concierge', primary comes first, and both targets are in the link map, so nothing is added and 08-final.md is untouched. Panel cta_reactions: four 'maybe' (planner_couple, funding_parent, sceptic, uhnw) and one 'no' (search_visitor), weighted enquiry 2.1. What the 'maybe' readers want first (a real person before paying, a real example, reviews, scale and privacy) are deferred business details logged for the run report. search_visitor came for ideas; the magnet is their realistic next step. Backlog suggestion: a printable milestone birthday planning checklist (guest list, venue questions, guest travel note, timeline) would suit this post as a magnet, and a non-wedding celebrations magazine would fit better than the wedding-focused /magazine; neither is known to exist, so neither is placed."
+  },
+  "next_agent": ["distribution"]
+}
