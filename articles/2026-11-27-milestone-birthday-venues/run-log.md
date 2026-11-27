@@ -44,3 +44,13 @@
   - 11 venue profiles named. The Valley Estate and all venues abroad are left out (thin facts); no yachts; no Smartraveller (no facts in the pack).
   - CTA: Discovery Call.
 - Reviews launched (accuracy, SEO, couple reader).
+- **Stage 1 fast (research):** DONE (late, after permission holds). 44 facts plus 6 reused ACCC facts, incl. 20 live venue profiles and the three sibling pages.
+  - Only Aambra mentions birthdays; Amarti and Crown Sydney say "private celebrations".
+  - 6 USD venue prices (unused).
+  - **Not found:** no yacht, winery or official page (Smartraveller returned 500).
+- **Stage 3 fast (3 reviews):** DONE.
+  - **Accuracy 3.6:** majors on the Aambra superlative, the change-of-mind wording, the unlinked unfair-terms claim, "one set of written terms", and the entry-requirements authority.
+  - **SEO 3.8:** majors on the missing demand variants (Sydney, Melbourne, 30th, 40th, 60th), length, and four venue profiles not in link-map (added by the orchestrator).
+  - **Reader (couple):** relevance 2, trust 3, clarity 4, would_enquire 2, "save". Fixes: one wedding-profile caveat; cut the Eligible stays perks line; replace the vague fee line.
+  - Merged request: 04-reviews/v1/merged.md.
+- Stage 4: writer v2 launched.
