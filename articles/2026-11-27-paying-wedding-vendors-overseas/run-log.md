@@ -47,3 +47,13 @@
   - No cash threshold (no AUSTRAC or ABF fact); the cash section is advice only.
   - No products named; the Experian figure is not used; Le Ciel once.
 - Reviews launched (accuracy incl. FIN-ADVICE-CHECK, SEO, couple reader). The researcher is still held on a permission prompt.
+- **Stage 3 fast (3 reviews):** DONE.
+  - **Accuracy 4:** two majors (the "a year or more" timing; a bracketed source note leaked into the copy). The FIN-ADVICE line is sound; the standard general-advice wording is suggested. No inventions; no products named.
+  - **SEO 4.1:** majors on the keyword in no H2 and length (cut plan). The SERP gap is covered: Italy cash balances, deposits, card vs other methods, tipping.
+  - **Reader (couple):** relevance 3, trust 3, clarity 4, would_enquire 2, "save". Blocker: the Studio "pay securely through Wedded Wonderland" line raises the commission worry (cut). Also Italy first, a contracts line, and less official quoting.
+  - Merged request: 04-reviews/v1/merged.md.
+- **Decisions (default):**
+  - The Concierge is named "Wedded Wonderland Concierge", the brand-profile name.
+  - The Studio payment line is cut.
+  - STUDIO-PAYMENTS added (for the user: does paying through Studio carry any fee or margin?).
+- Stage 4: writer v2 launched.
