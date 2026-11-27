@@ -5,3 +5,4 @@
 02:01 02 seo-researcher complete; DataForSEO SERP x5 (Sydney, Melbourne, New York); cannibalisation HIGH with /celebration-ideas/milestone-birthday-by-decade; GSC not read
 02:19 05 luxury-writer complete round 1, ~2,360 words; utm_source corrected to blog
 02:27 06 editor pass_with_edits 4.43, 4 edits applied; 07 five readers complete (enquiry 1 to 3)
+02:30 07b panel revise, weighted enquiry 2.1 vs 3.8 (business details deferred); 13 edits applied, accepted after one round
