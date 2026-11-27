@@ -4,3 +4,4 @@
 01:37 03 mb_a complete (11 reused facts); orchestrator added Smartraveller before-you-go fact_12; RSA and permits to be venue/council questions only
 02:01 02 seo-researcher complete; DataForSEO SERP x5 (Sydney, Melbourne, New York); cannibalisation HIGH with /celebration-ideas/milestone-birthday-by-decade; GSC not read
 02:19 05 luxury-writer complete round 1, ~2,360 words; utm_source corrected to blog
+02:27 06 editor pass_with_edits 4.43, 4 edits applied; 07 five readers complete (enquiry 1 to 3)
