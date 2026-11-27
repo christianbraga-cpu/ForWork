@@ -1,0 +1,181 @@
+{
+ "agent": "distribution-lead",
+ "task_id": "greece-wedding-cost",
+ "stage": "10",
+ "status": "complete",
+ "round": 1,
+ "inputs_used": [
+  "CLAUDE.md",
+  "content-system/brand/voice-guide.md",
+  "content-system/brand/banned-phrases.md",
+  "content-system/schemas/10-distribution.schema.json",
+  "content-system/schemas/envelope.schema.json",
+  "content/posts/greece-wedding-cost/00-input.json (URL, no-figures instruction)",
+  "content/posts/greece-wedding-cost/08-final.md",
+  "content/posts/greece-wedding-cost/04-images.json",
+  "content/posts/greece-wedding-cost/02-seo.json",
+  "content/posts/average-cost-wedding-photographer/10-distribution.json (format and no-figures precedent)"
+ ],
+ "tools_used": [
+  "Bash"
+ ],
+ "self_qa": {
+  "checks": [
+   {
+    "check": "3 pins tied to real-photo slots in 04-images.json",
+    "pass": true,
+    "note": "featured, guest-travel, welcome-dinner; all status 'needed', so every pin is marked image_status on_hold. The two still-life slots are not used for pins because their only fallback is AI pending Nic's approval."
+   },
+   {
+    "check": "Pin titles <= 100 chars, descriptions <= 500, keyword in titles naturally",
+    "pass": true,
+    "note": "46/386; 55/464; 63/482"
+   },
+   {
+    "check": "Pin titles, slide 1 and newsletter subject have no colons, dashes or hyphens",
+    "pass": true,
+    "note": "scripted check"
+   },
+   {
+    "check": "UTMs per channel on https://weddedwonderland.com/destination-weddings/greece-wedding-cost with utm_campaign=greece-wedding-cost",
+    "pass": true,
+    "note": "pinterest/social, instagram/social (bio link), newsletter/email"
+   },
+   {
+    "check": "Carousel 8 slides, hook first, Wedded Advisor conversation last; caption <= 2,200; 5 to 10 hashtags",
+    "pass": true,
+    "note": "caption 1588 chars, 9 hashtags"
+   },
+   {
+    "check": "Newsletter subject <= 60, preview <= 110, blurb 60 to 100 words",
+    "pass": true,
+    "note": "43/107/77 words"
+   },
+   {
+    "check": "No figures of any kind (digits, number words, prices, ranges, dates, percentages)",
+    "pass": false,
+    "note": "scripted digit and number word check over all copy; URLs and hashtags excluded and contain no figures. 'Headline figure' used only as a phrase with no number."
+   },
+   {
+    "check": "No best, rankings, free, cheap, budget, prices, most, usually, typically, often, average, perfect, last dance, em or en dashes, banned phrases",
+    "pass": true,
+    "note": "scripted string check"
+   },
+   {
+    "check": "No venue, vendor or competitor names",
+    "pass": true,
+    "note": "Only government bodies the post cites (Smartraveller, Australian Consumer Law). Rhodes worked example and its ceremony days left out of social copy to avoid any figures."
+   },
+   {
+    "check": "Legal, travel and consumer rights only as 08-final.md states them; no legal advice; caption says general information, not legal advice",
+    "pass": true,
+    "note": "Consumer guarantees (care and skill, rights can't be taken away), overseas business and ACL, Smartraveller ferries and travel insurance, civil paperwork with fees at several steps and checking with the municipality."
+   },
+   {
+    "check": "Advisor never described as handling paperwork; CTAs only invite a conversation",
+    "pass": true
+   },
+   {
+    "check": "Only facts in 08-final.md; no [[VERIFY]] content in social assets",
+    "pass": true
+   },
+   {
+    "check": "Australian English",
+    "pass": true
+   }
+  ],
+  "confidence": 0.85
+ },
+ "open_questions": [
+  {
+   "to": "Nic",
+   "question": "All pin and carousel images are on hold: featured, guest-travel and welcome-dinner are 'needed' in 04-images.json and need licensed real photos with location proven, a licence covering social use and consent for any identifiable person. Never AI for a real place. Still-life slots (quotes-still-life, planning-flat-lay) as carousel backgrounds need a licensed photo or Nic-approved AI captioned 'Illustrative image'.",
+   "blocking": true
+  },
+  {
+   "to": "orchestrator",
+   "question": "Confirm Pinterest boards 'Destination Weddings', 'Greece Weddings' and 'Wedding Planning' exist; 'Greece Weddings' may need creating.",
+   "blocking": false
+  },
+  {
+   "to": "orchestrator",
+   "question": "Set the Instagram bio link to the bio_link URL in the payload while the carousel runs.",
+   "blocking": false
+  }
+ ],
+ "assumptions": [
+  "Post URL from 00-input.json and the task brief.",
+  "09-cro.json does not exist yet; social CTAs invite a conversation with a Wedded Advisor, consistent with the post's Wedded Concierge CTAs.",
+  "Seasonal heat and wildfire points from Smartraveller left out of social copy because they need a dated 'as at' line, which would add a figure.",
+  "Extra payload keys (image_status, image_note, image_notes, bio_link) are informational; the schema allows them.",
+  "08-final.md not edited."
+ ],
+ "verify_items": [],
+ "next_agent": [
+  "cms-publisher"
+ ],
+ "payload": {
+  "pinterest": [
+   {
+    "title": "Greece Wedding Cost and What Shapes Your Total",
+    "description": "The Greece wedding cost you are quoted depends on decisions only you can make: island, venue type, month and day, guest numbers and how much of your guests' travel and accommodation you cover. Our guide explains what shapes the total, what a venue package bundles, what sits outside it and the questions to ask, so every venue quotes against the same written brief. Read the full guide.",
+    "image_slot": "featured",
+    "board": "Destination Weddings",
+    "link": "https://weddedwonderland.com/destination-weddings/greece-wedding-cost?utm_source=pinterest&utm_medium=social&utm_campaign=greece-wedding-cost&utm_content=pin-overview",
+    "image_status": "on_hold",
+    "image_note": "On hold: slot status is 'needed' in 04-images.json. Use only a licensed real photo with location proven and a licence covering social use. Never AI for a real place."
+   },
+   {
+    "title": "Greek Island Wedding Cost and Getting Your Guests There",
+    "description": "Flights from Australia come first, then the islands. Smartraveller says ferries and large catamarans carry visitors to the Greek islands, and services can be delayed or cancelled in bad weather. Before you request a quote, ask which airport or port is closest to the venue, who books and pays for transfers, who carries the cost of a cancelled ferry and an extra night, and whether less mobile guests can reach every space without steep steps. Read the full guide.",
+    "image_slot": "guest-travel",
+    "board": "Greece Weddings",
+    "link": "https://weddedwonderland.com/destination-weddings/greece-wedding-cost?utm_source=pinterest&utm_medium=social&utm_campaign=greece-wedding-cost&utm_content=pin-guest-travel",
+    "image_status": "on_hold",
+    "image_note": "On hold: slot status is 'needed' in 04-images.json. Use only a licensed real photo with location proven and a licence covering social use. Never AI for a real place. Model releases needed for any identifiable guest."
+   },
+   {
+    "title": "What a Greece Wedding Package Includes and What Sits Outside It",
+    "description": "Read the contents, not the package name. Ask whether ceremony setup, reception venue hire, catering and drinks, coordination on the day, styling and accommodation sit inside the package, are add-ons or are not offered. Then ask about items quoted separately: photography and film, music, hair and makeup, transfers, welcome and farewell events, official fees, taxes and service charges, and overtime. Treat anything not written into the package as not included. Read the full guide.",
+    "image_slot": "welcome-dinner",
+    "board": "Wedding Planning",
+    "link": "https://weddedwonderland.com/destination-weddings/greece-wedding-cost?utm_source=pinterest&utm_medium=social&utm_campaign=greece-wedding-cost&utm_content=pin-packages",
+    "image_status": "on_hold",
+    "image_note": "On hold: slot status is 'needed' in 04-images.json. Use only a licensed real photo with location proven and a licence covering social use. Never AI for a real place."
+   }
+  ],
+  "instagram_carousel": {
+   "slides": [
+    "Greece wedding cost, explained. Why a single headline figure tells you very little about your own wedding.",
+    "Your total is set by decisions only you can make. Island, venue type, month and day, guest numbers, and how much of your guests' travel and accommodation you cover.",
+    "Write your wedding down first. Island, date, guest list, events and what you will pay for on your guests' behalf. Send that same brief to every venue, so the quotes describe the same wedding.",
+    "Read the package contents, not the name. Ceremony setup, venue hire, catering and drinks, coordination on the day, styling and rooms. Is each one included, an add-on or not offered?",
+    "Ask about the items quoted separately. Photography and film, music, hair and makeup, transfers, extra events, official fees, taxes and service charges, and overtime.",
+    "Paying from Australia? Ask which currency the quote, deposit and balance are invoiced in, when each payment falls due, and what happens to money paid if plans change.",
+    "A civil wedding has its own paperwork, with fees at several steps. Check the documents, notice period and ceremony days with the municipality where you will marry.",
+    "Planning a wedding in Greece? Message us to talk it through with a Wedded Advisor. Full guide at the link in bio."
+   ],
+   "caption": "One couple marries at a town hall with a long lunch for close family. Another takes a clifftop venue for the weekend, hosts a welcome dinner and covers ferries for every guest. Same island, same month, and neither total helps the other.\n\nThat is why our new guide to the cost of a wedding in Greece gives no headline figure. It explains what shapes your total, what a venue package bundles, what sits outside it, and how paying in euro from Australia works.\n\nBefore you ask for quotes:\n- Write down your wedding: island, date, guest list, events and what you will cover for guests.\n- Send that same brief to every venue and planner.\n- Ask whether exclusive use, where your party has the site to itself, is offered for your date.\n- Ask which items are charged per guest, and when the final number is locked.\n- Ask for every contract in English, with a copy you keep.\n\nWhere you stand in Australia:\n- Under the consumer guarantees, services must be carried out with an acceptable level of care and skill, and these basic rights can't be taken away by anything a business says or does.\n- An overseas business selling directly to Australian consumers must follow the Australian Consumer Law, but a remedy can be hard to obtain in practice, so read the cancellation terms before you pay.\nThis is general information, not legal advice.\n\nSmartraveller's advice for Greece is to buy comprehensive travel insurance before you leave and read the Product Disclosure Statement closely.\n\nPlanning a wedding in Greece? Message us to talk it through with a Wedded Advisor. Full guide at the link in bio.",
+   "hashtags": [
+    "#greecewedding",
+    "#weddingingreece",
+    "#greekislandwedding",
+    "#destinationwedding",
+    "#weddingplanning",
+    "#weddingabroad",
+    "#australianwedding",
+    "#luxurywedding",
+    "#weddedwonderland"
+   ],
+   "image_status": "on_hold",
+   "image_notes": "Slide backgrounds on hold until licensed images exist. Slides 1 to 3 may use the featured or guest-travel slots, slides 4 and 5 the welcome-dinner slot (real licensed photos only, never AI). Slides 6 and 7 may use quotes-still-life or planning-flat-lay; AI illustrative only if Nic approves, captioned 'Illustrative image'. Slide 8 plain brand colour, no image needed.",
+   "bio_link": "https://weddedwonderland.com/destination-weddings/greece-wedding-cost?utm_source=instagram&utm_medium=social&utm_campaign=greece-wedding-cost&utm_content=bio-link"
+  },
+  "newsletter": {
+   "subject": "What shapes the cost of a wedding in Greece",
+   "preview": "What a venue package bundles, what sits outside it, paying in euro from Australia and the questions to ask.",
+   "blurb": "Wondering what a wedding in Greece will cost? Our new guide skips the headline figure and looks at what actually shapes your total: island, venue type, season, guest numbers and how much guest travel you cover. You will find what a venue package bundles, the items quoted separately, how paying in euro from Australia works, where you stand under the Australian Consumer Law, and the questions to ask every venue and planner before you request a quote.",
+   "link": "https://weddedwonderland.com/destination-weddings/greece-wedding-cost?utm_source=newsletter&utm_medium=email&utm_campaign=greece-wedding-cost&utm_content=newsletter"
+  }
+ }
+}

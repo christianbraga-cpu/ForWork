@@ -1,0 +1,82 @@
+{
+  "agent": "cro-specialist",
+  "task_id": "greece-wedding-cost",
+  "stage": "09",
+  "status": "complete",
+  "round": 1,
+  "inputs_used": [
+    "CLAUDE.md",
+    "content-system/brand/services.md",
+    "content-system/brand/brand-facts.md (Claims we can make)",
+    "content-system/schemas/09-cro.schema.json",
+    "content-system/schemas/envelope.schema.json",
+    "content-system/seo/link-map.csv (/wonderland-concierge, /magazine)",
+    "content/posts/greece-wedding-cost/01-brief.json",
+    "content/posts/greece-wedding-cost/07-panel.json",
+    "content/posts/greece-wedding-cost/07-icp/*.json (cta_reaction, unanswered_questions)",
+    "content/posts/greece-wedding-cost/08-final.md",
+    "content/posts/santorini-wedding-packages/09-cro.json (format model)"
+  ],
+  "self_qa": {
+    "checks": [
+      {"check": "journey_stage taken from the brief", "pass": true, "note": "'comparing', so the primary is the Wedded Concierge consultation per services.md."},
+      {"check": "Primary CTA text 6 words or fewer, no 'click here', no exclamation mark", "pass": true, "note": "'Begin with Wedded Concierge' (4 words), matching the existing sentence 'Begin with [Wedded Concierge]'."},
+      {"check": "Existing UTM links reviewed, none added: primary, secondary, closing and magnet each appear exactly once in 08-final.md with utm_medium=content", "pass": true, "note": "grep: primary line 145, secondary line 181, closing and magnet line 213. Primary sits before secondary."},
+      {"check": "Every Concierge anchor reads exactly 'Wedded Concierge'", "pass": true, "note": "3 Concierge anchors, all '[Wedded Concierge]'."},
+      {"check": "No CTA marker comments in 08-final.md and none requested", "pass": true, "note": "grep 'CTA:' returns 0. Placements are given as the existing sentences."},
+      {"check": "08-final.md not changed; no copy_changes; secondary kept", "pass": true},
+      {"check": "Advisor wording only from brand-facts 'Claims we can make'", "pass": true, "note": "Subtexts use: quotes in AUD for Australian couples; inclusions confirmed in writing before the couple commits; one Wedded Advisor, start to finish; venue, travel, vendors and payments, anywhere in the world."},
+      {"check": "CTA copy in this file carries no restricted business detail, price, figure, superlative or giveaway wording", "pass": true},
+      {"check": "Target pages exist in link-map.csv", "pass": true, "note": "/wonderland-concierge (commercial, default CTA target) and /magazine (lead magnet), both seen 2026-10-20."},
+      {"check": "Panel 'maybe, I'd want to see X first' items: X placed before the CTA where it is page copy", "pass": true, "note": "Older or less mobile guests (line 84) and deposits if a supplier cancels or stops trading (line 135) already sit before the primary at line 145. The remaining X items are business details, deferred (open_questions)."},
+      {"check": "Australian English, no em dashes", "pass": true}
+    ],
+    "confidence": 0.85
+  },
+  "open_questions": [
+    {"to": "orchestrator", "question": "For the run report: the readers' remaining hold-backs are business details brand-facts does not confirm, so they belong on /wonderland-concierge or in later content, not this post: the fee model, commissions, deposits, a first phone call, on-the-day contact, the Advisor's identity, scale, a private enquiry route, and a real Greece wedding to link (none is in link-map.csv). Re-run cro-specialist once the business confirms any of them.", "blocking": false},
+    {"to": "orchestrator", "question": "For the run report: a Greece budget question checklist (the venue and planner questions as a printable page) would be a better-matched lead magnet for a comparing reader. It does not exist on the site, so it is a backlog suggestion only and is not placed.", "blocking": false},
+    {"to": "orchestrator", "question": "The brief's service_link describes /magazine as the secondary (utm_content=secondary). 08-final.md, as accepted, uses a Concierge secondary and a /magazine magnet, which this stage keeps per instruction. Update the brief only if the record needs to match.", "blocking": false}
+  ],
+  "assumptions": [
+    "The CMS renders the CTAs as the inline links already in 08-final.md; text and subtext here are for a CTA block if the template offers one, and for distribution.",
+    "The search visitor's 'for Australian couples' hesitation is not acted on: the brief is au_focus and the panel rejected widening it."
+  ],
+  "verify_items": [],
+  "tools_used": ["Bash (grep, python3 -I)", "Write"],
+  "payload": {
+    "journey_stage": "comparing",
+    "primary_cta": {
+      "text": "Begin with Wedded Concierge",
+      "subtext": "Quotes in AUD, inclusions confirmed in writing before you commit.",
+      "link": "/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=greece-wedding-cost&utm_content=primary",
+      "placement": "Existing sentence at the end of 'Written quotes' under '## Paying for a wedding in Greece from Australia' (line 145). Unchanged. The panel moved it here from after the consumer rights section; it lands where the currency, deposit and written quote questions peak, after the deposit question it needs to follow."
+    },
+    "secondary_cta": {
+      "text": "Work through it with Wedded Concierge",
+      "subtext": "One Wedded Advisor, start to finish.",
+      "link": "/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=greece-wedding-cost&utm_content=secondary",
+      "placement": "Existing sentence closing '### Questions for the planner' (line 181). Unchanged. Catches the reader who has just read the planner questions and wants one person to put them to."
+    },
+    "closing_cta": {
+      "text": "Start a conversation with Wedded Concierge",
+      "subtext": "Venue, travel, vendors and payments, anywhere in the world.",
+      "link": "/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=greece-wedding-cost&utm_content=closing",
+      "placement": "Existing sentence under '## Planning your Greece wedding with a Wedded Advisor' (line 213). Unchanged."
+    },
+    "lead_magnet": {
+      "name": "Get Wedded digital magazine",
+      "link": "/magazine?utm_source=blog&utm_medium=content&utm_campaign=greece-wedding-cost&utm_content=magnet",
+      "placement": "Existing clause after the closing CTA in the final paragraph (line 213), for readers not ready to enquire. Unchanged.",
+      "exists": true
+    },
+    "tracking": [
+      "/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=greece-wedding-cost&utm_content=primary",
+      "/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=greece-wedding-cost&utm_content=secondary",
+      "/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=greece-wedding-cost&utm_content=closing",
+      "/magazine?utm_source=blog&utm_medium=content&utm_campaign=greece-wedding-cost&utm_content=magnet"
+    ],
+    "rationale": "The brief's journey_stage is 'comparing' (a cost guide), so the primary is a Wedded Concierge consultation. All four tracked links already exist in 08-final.md, once each, in reading order primary, secondary, closing, magnet, so this stage reviews them and changes nothing. The primary sits at the end of 'Written quotes', where the reader has just been told to get quotes in writing and ask about currency and deposits, and its subtext answers that worry with brand-facts claims only (AUD quotes, inclusions in writing). The secondary follows the planner questions and offers one person to work through them. The close restates the claims-list scope and pairs with the magazine for earlier-stage readers. Panel reactions were 'maybe' (planner couple, funding parent, sceptic) and 'no' (search visitor, UHNW). The page-copy items they wanted first, older guests' access and deposits if a supplier cancels, already sit before the primary. The rest are business details that brand-facts lists as deferred, logged in open_questions for /wonderland-concierge or later content. A Greece budget question checklist would suit this reader better as a magnet; it does not exist, so it is suggested, not placed."
+  },
+  "next_agent": ["distribution"]
+}
