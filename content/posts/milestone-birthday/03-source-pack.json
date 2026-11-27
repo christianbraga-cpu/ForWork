@@ -7,7 +7,8 @@
   "inputs_used": [
     "content/posts/milestone-birthday/00-input.json",
     "content/posts/garden-wedding/03-source-pack.json",
-    "content/posts/travel-advisor-benefits/03-source-pack.json"
+    "content/posts/travel-advisor-benefits/03-source-pack.json",
+    "content/posts/milestone-birthday/01-brief.json"
   ],
   "self_qa": {
     "checks": [
@@ -35,17 +36,22 @@
     "confidence": 0.75
   },
   "open_questions": [
-    "RSA source could not be loaded this run (firecrawl out of credits, direct fetch blocked). Re-run with a working scrape tool or drop the RSA claim from the article."
+    {
+      "to": "orchestrator",
+      "question": "RSA, council permit and general Smartraveller 'check advice / subscribe' sources could not be loaded this run (firecrawl 402 out of credits, direct fetch blocked by proxy). Re-run a small source batch with a working scrape tool, or have the writer omit those claims.",
+      "blocking": false
+    }
   ],
   "assumptions": [
-    "Fast mode, batch mb_a: 01-brief.json and 02-seo.json do not exist yet; must-includes taken from the orchestrator task and 00-input.json notes.",
+    "Fast mode, batch mb_a: must-includes taken from 01-brief.json; 02-seo.json not present at time of run.",
     "Cancer Council guidance is Australian; frame as Australian sun-safety advice, not a rule for overseas destinations.",
     "SA MFS candle fact sheet is written for homes; frame as general candle-safety guidance.",
-    "BOOKING CHECKLIST: (any venue) ask about open flame and candle rules, music curfew, BYO alcohol policy and who holds the liquor licence and RSA-trained bar staff, shade and wet-weather plan for outdoor areas."
+    "BOOKING CHECKLIST: (any venue) ask about open flame and candle rules, music curfew, BYO alcohol policy and who holds the liquor licence and RSA-trained bar staff, shade and wet-weather plan for outdoor areas.",
+    "Orchestrator 2026-11-27: RSA and council permit pages could not be sourced (the NSW RSA URL redirects to the Liquor & Gaming NSW hub). Write these only as questions for the venue or local council (who holds the liquor licence, who serves, whether a park or beach needs a permit), with no legal claims. Smartraveller subscribe line now sourced as fact_12."
   ],
   "verify_items": [
     "[[VERIFY: official Australian liquor regulator wording on responsible service of alcohol at private events or licensed venues (for example Liquor & Gaming NSW or the relevant state regulator). Live page could not be loaded on 2026-11-27 (scrape tool out of credits, direct fetch blocked by proxy); do not state any RSA rule until sourced.]]",
-    "[[VERIFY: Smartraveller general line telling travellers to check the destination travel advice and subscribe to updates before travelling. No existing pack holds this wording and the live page could not be loaded on 2026-11-27. Nearest sourced line is fact_09 (insurance should cover a rise in advice level).]]"
+    "[[VERIFY: when a private celebration in a public park or beach needs a council event permit; cite a council or state government page, stated only as it states it. Not researched in batch mb_a (no live page could be loaded on 2026-11-27).]]"
   ],
   "tools_used": [
     "mcp__Lead_MCP__firecrawl_scrape (failed: 402 insufficient credits)",
@@ -145,6 +151,14 @@
         "source_type": "government",
         "checked": "2026-11-15",
         "is_price": false
+      },
+      {
+        "fact_id": "fact_12",
+        "claim": "Smartraveller 'Before you go' (last updated 29/06/2023, read live 2026-11-27): 'We recommend you subscribe to the destinations you're visiting, including where you're transiting through.' It also points travellers to the destination travel advice and advice levels.",
+        "source": "https://www.smartraveller.gov.au/before-you-go",
+        "source_type": "government",
+        "checked": "2026-11-27",
+        "is_price": false
       }
     ],
     "insider_details": [
@@ -185,35 +199,19 @@
     "real_weddings": [],
     "verify_items": [
       "[[VERIFY: official Australian liquor regulator wording on responsible service of alcohol at private events or licensed venues (for example Liquor & Gaming NSW or the relevant state regulator). Live page could not be loaded on 2026-11-27 (scrape tool out of credits, direct fetch blocked by proxy); do not state any RSA rule until sourced.]]",
-      "[[VERIFY: Smartraveller general line telling travellers to check the destination travel advice and subscribe to updates before travelling. No existing pack holds this wording and the live page could not be loaded on 2026-11-27. Nearest sourced line is fact_09 (insurance should cover a rise in advice level).]]"
+      "[[VERIFY: when a private celebration in a public park or beach needs a council event permit; cite a council or state government page, stated only as it states it. Not researched in batch mb_a (no live page could be loaded on 2026-11-27).]]"
     ],
     "needs_signoff": [],
     "must_include_coverage": [
       {
-        "item": "Responsible service of alcohol at a private event or licensed venue (official Australian source)",
-        "covered_by": [
-          "[[VERIFY: official Australian liquor regulator wording on responsible service of alcohol at private events or licensed venues (for example Liquor & Gaming NSW or the relevant state regulator). Live page could not be loaded on 2026-11-27 (scrape tool out of credits, direct fetch blocked by proxy); do not state any RSA rule until sourced.]]"
-        ]
-      },
-      {
-        "item": "Destination birthday: check the travel advice",
+        "item": "Intro direct answer and 4 Key takeaways [brief must_include 1]",
         "covered_by": [
           "fact_09",
           "[[VERIFY: Smartraveller general line telling travellers to check the destination travel advice and subscribe to updates before travelling. No existing pack holds this wording and the live page could not be loaded on 2026-11-27. Nearest sourced line is fact_09 (insurance should cover a rise in advice level).]]"
         ]
       },
       {
-        "item": "Destination birthday: travel insurance",
-        "covered_by": [
-          "fact_07",
-          "fact_08",
-          "fact_09",
-          "fact_10",
-          "fact_11"
-        ]
-      },
-      {
-        "item": "Outdoor or daytime celebrations: sun safety",
+        "item": "Ideas by milestone: 30th, 40th, 50th, 60th and beyond [brief must_include 2]",
         "covered_by": [
           "fact_01",
           "fact_02",
@@ -221,11 +219,55 @@
         ]
       },
       {
-        "item": "Candles and table styling safety",
+        "item": "Ideas by format: long dinner, weekend away, destination trip, surprise [brief must_include 3]",
         "covered_by": [
           "fact_04",
           "fact_05",
           "fact_06"
+        ]
+      },
+      {
+        "item": "Step-by-step planning, incl. RSA link and council permit link [brief must_include 4]",
+        "covered_by": [
+          "[[VERIFY: official Australian liquor regulator wording on responsible service of alcohol at private events or licensed venues (for example Liquor & Gaming NSW or the relevant state regulator). Live page could not be loaded on 2026-11-27 (scrape tool out of credits, direct fetch blocked by proxy); do not state any RSA rule until sourced.]]",
+          "[[VERIFY: when a private celebration in a public park or beach needs a council event permit; cite a council or state government page, stated only as it states it. Not researched in batch mb_a (no live page could be loaded on 2026-11-27).]]",
+          "fact_04",
+          "fact_05",
+          "fact_06",
+          "fact_01",
+          "fact_02",
+          "fact_03"
+        ]
+      },
+      {
+        "item": "Destination milestone weekend: venue questions, guest travel, insurance, Smartraveller check [brief must_include 5]",
+        "covered_by": [
+          "fact_07",
+          "fact_08",
+          "fact_09",
+          "fact_10",
+          "fact_11",
+          "[[VERIFY: Smartraveller general line telling travellers to check the destination travel advice and subscribe to updates before travelling. No existing pack holds this wording and the live page could not be loaded on 2026-11-27. Nearest sourced line is fact_09 (insurance should cover a rise in advice level).]]"
+        ]
+      },
+      {
+        "item": "One Advisor line in the body (brand-facts wording) [brief must_include 6]",
+        "covered_by": [
+          "content-system/brand/brand-facts.md (writer uses brand-facts wording directly; not restated in this pack)"
+        ]
+      },
+      {
+        "item": "FAQ (4 to 6) [brief must_include 7]",
+        "covered_by": [
+          "fact_07",
+          "fact_09",
+          "content-system/brand/brand-facts.md (writer uses brand-facts wording directly; not restated in this pack)"
+        ]
+      },
+      {
+        "item": "Close: brand-facts Advisor line, /wonderland-concierge with UTMs [brief must_include 8]",
+        "covered_by": [
+          "content-system/brand/brand-facts.md (writer uses brand-facts wording directly; not restated in this pack)"
         ]
       }
     ]
