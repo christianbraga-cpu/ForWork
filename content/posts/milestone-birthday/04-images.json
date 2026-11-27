@@ -1,0 +1,129 @@
+{
+  "agent": "visual-curator",
+  "task_id": "milestone-birthday",
+  "stage": "04",
+  "status": "needs_input",
+  "round": 1,
+  "inputs_used": [
+    "CLAUDE.md",
+    "content/posts/milestone-birthday/00-input.json",
+    "content/posts/milestone-birthday/run-log.md",
+    "content-system/images/sources-policy.md",
+    "content-system/rubrics/image-checklist.md",
+    "content-system/images/library-index.csv (header only, no rows)",
+    "content-system/schemas/04-images.schema.json",
+    "content/posts/greece-wedding-cost/04-images.json (format precedent)"
+  ],
+  "tools_used": ["Bash"],
+  "self_qa": {
+    "checks": [
+      {"check": "Zero reference-only or competitor images in slots", "pass": true, "note": "No candidate images; reference-only/ is empty and nothing from it is slotted."},
+      {"check": "Every approved image has verified location, licence, alt, caption, fit_reason", "pass": true, "note": "No approved images; all 5 slots are needed."},
+      {"check": "No AI image depicting a real place, venue or person", "pass": true, "note": "No AI images generated. Featured, toast and destination slots are real licensed photo only. Dessert table and planning flat lay may be ai_illustrative only if approved and captioned 'Illustrative image'."},
+      {"check": "Featured image exists (approved or needed with brief)", "pass": true, "note": "Needed with full shot brief."},
+      {"check": "No venue or vendor names in shot briefs, alt or captions", "pass": true},
+      {"check": "No readable real names in any planned image", "pass": true, "note": "Invitation brief requires a placeholder name only; other briefs ban place cards, signage and readable text."},
+      {"check": "No identifiable guests without consent", "pass": true, "note": "Toast slot specifies guests from behind, silhouetted or out of focus; consent required if any face is identifiable."},
+      {"check": "No prices, figures or ranking cues visible in planned images", "pass": true, "note": "Age numerals on cake toppers or balloons are allowed as milestone cues; no prices or currency."},
+      {"check": "source.type values from the schema enum only", "pass": true, "note": "library, stock, ai_illustrative used."},
+      {"check": "Placements match final H2 numbering", "pass": false, "note": "01-brief.json and 02-seo.json not written yet (fast mode). after_h2 assumes: 1 celebration ideas, 2 destination weekend, 3 food, cake and dessert, 4 how to plan. Remap once the outline exists."}
+    ],
+    "confidence": 0.65
+  },
+  "open_questions": [
+    {"to": "Nic", "question": "Source licensed photos for the featured dinner table, toast and destination weekend slots: own client celebrations with signed consent and a photographer licence covering blog use, or premium stock (Stocksy, Offset, Getty) with model and property releases, added to the Drive library and register. The register has no rows.", "blocking": true},
+    {"to": "Nic", "question": "For the dessert table and planning flat lay still lifes, approve an AI illustrative image as a fallback if no licensed photo is found? Captioned 'Illustrative image', no real place, no real names, placeholder name only on the invitation.", "blocking": false},
+    {"to": "Nic", "question": "Captions credit the photographer, but the post names no vendors. Credit as 'Photo: Wedded Wonderland' (own or licensed stock) or a plain photographer credit line only?", "blocking": false},
+    {"to": "seo-researcher", "question": "Confirm H2 numbering once 02-seo.json exists so after_h2 placements can be remapped.", "blocking": false}
+  ],
+  "assumptions": [
+    "Fast mode: repo register only. Google Drive search, own site scrape, Canva assets, press kits and Google Lens were not run, as there is no candidate image and the post names no venues.",
+    "No venue is in scope, so no permission emails were drafted.",
+    "The destination weekend slot names no destination in the brief; the caption names the place only once a licensed image proves its location.",
+    "Filenames use keyword-subject because no venue is named (no venue segment)."
+  ],
+  "verify_items": [
+    "[[IMAGE NEEDED]] featured: long celebration dinner table at dusk, licensed, location proven",
+    "[[IMAGE NEEDED]] toast-moment: toast or speech with guests not identifiable, licensed, consent if any face is identifiable",
+    "[[IMAGE NEEDED]] destination-weekend: destination weekend setting, licensed, location proven",
+    "[[IMAGE NEEDED]] dessert-table: celebration cake or dessert table, no names visible",
+    "[[IMAGE NEEDED]] planning-flat-lay: invitations with a placeholder name, no real people",
+    "[[VERIFY licence]] every sourced photo: credit, blog scope, model and property releases",
+    "[[VERIFY: credit wording that respects the no vendor names rule]]"
+  ],
+  "next_agent": ["luxury-writer"],
+  "payload": {
+    "slots": [
+      {
+        "slot_id": "featured",
+        "placement": "featured",
+        "purpose": "Hero: show the feeling of a luxury milestone birthday, a long shared dinner as the centrepiece of the celebration.",
+        "shot_brief": "Real, licensed photo of a long celebration dinner table outdoors at dusk: white or natural linen, low florals and greenery, taper candles and lanterns lit, glassware catching the last light, festoon lights or a soft sky beyond. Warm season, blue hour or just after sunset. No people, or guests seated from behind or out of focus only, unless consented. No signage, logos, menus, place cards or readable names. Location proven by register, EXIF GPS or source page. Never AI.",
+        "status": "needed",
+        "file": "content/posts/milestone-birthday/images/milestone-birthday-dinner-table-dusk.webp",
+        "source": {"type": "library", "origin": "[[IMAGE NEEDED]] library-index.csv has header only, no rows; premium stock acceptable after purchase", "credit": "[[VERIFY licence]]"},
+        "consent": {"people": "required, signed, if identifiable", "venue": "property release required if the venue is identifiable"},
+        "alt": "Long candlelit dinner table with linen and flowers set outdoors for a milestone birthday at dusk",
+        "caption": "<Place>, <town>. Photo: [[VERIFY credit]]",
+        "lens_check": "Not run: no candidate image.",
+        "location": {"venue": "[[VERIFY: not named in post]]", "town": "[[VERIFY: town]]", "verified_by": "[[VERIFY: register, EXIF GPS or source page]]"}
+      },
+      {
+        "slot_id": "toast-moment",
+        "placement": "after_h2:1",
+        "purpose": "Support the celebration ideas section: speeches and toasts as the emotional high point of the night.",
+        "shot_brief": "Real, licensed photo of a toast or speech at an evening celebration: raised champagne glasses in the foreground, a standing speaker seen from behind or in silhouette, seated guests out of focus, warm candlelight. No identifiable faces unless every identifiable person has signed consent; no children. No readable names, banners, signage or logos. Location proven by register, EXIF GPS or source page if the caption names a place. Never AI.",
+        "status": "needed",
+        "file": "content/posts/milestone-birthday/images/milestone-birthday-toast-glasses.webp",
+        "source": {"type": "stock", "origin": "[[IMAGE NEEDED]] no register rows; own client celebration or premium stock with model releases", "credit": "[[VERIFY licence]]"},
+        "consent": {"guests": "model releases required if identifiable", "children": "none"},
+        "alt": "Guests raising champagne glasses during a candlelit birthday toast, faces out of focus",
+        "caption": "<Place>, <town>. Photo: [[VERIFY credit]]",
+        "lens_check": "Not run: no candidate image.",
+        "location": {"town": "[[VERIFY: town, or omit place from caption]]", "verified_by": "[[VERIFY: register, EXIF GPS or source page]]"}
+      },
+      {
+        "slot_id": "destination-weekend",
+        "placement": "after_h2:2",
+        "purpose": "Show what a destination weekend celebration can look like, so readers picture taking the milestone away with close friends.",
+        "shot_brief": "Real, licensed photo of a destination weekend setting for a small group: a private villa terrace or pool deck with sun loungers and a set long lunch table, or a terrace looking out over sea, vineyard or hills, late afternoon light, warm season. No people, or a few guests from behind at a distance unless consented. No signage, logos, booking details or readable names. Destination not chosen in this brief; caption names it only once location is proven by register, EXIF GPS or source page. Never AI.",
+        "status": "needed",
+        "file": "content/posts/milestone-birthday/images/milestone-birthday-destination-villa-terrace.webp",
+        "source": {"type": "library", "origin": "[[IMAGE NEEDED]] library-index.csv has header only, no rows; premium stock acceptable after purchase", "credit": "[[VERIFY licence]]"},
+        "consent": {"people": "required, signed, if identifiable", "venue": "property release required if the property is identifiable"},
+        "alt": "Villa terrace with a set lunch table overlooking the view in late afternoon light",
+        "caption": "<Place>, <town>. Photo: [[VERIFY credit]]",
+        "lens_check": "Not run: no candidate image.",
+        "location": {"venue": "[[VERIFY: not named in post]]", "town": "[[VERIFY: town and destination]]", "verified_by": "[[VERIFY: register, EXIF GPS or source page]]"}
+      },
+      {
+        "slot_id": "dessert-table",
+        "placement": "after_h2:3",
+        "purpose": "Illustrate the food and cake section: a styled cake or dessert table as a focal point.",
+        "shot_brief": "Styled celebration cake or dessert table: a tiered cake with fresh flowers or a simple gold age numeral topper, small plated desserts, a champagne tower or coupes, soft neutral and blush palette, natural or warm evening light, plain backdrop. No people. No readable names, messages, bakery branding or signage. No real place identifiable. Preferred: licensed or own photo. AI fallback (ai_illustrative) only if approved, captioned 'Illustrative image'.",
+        "status": "needed",
+        "file": "content/posts/milestone-birthday/images/milestone-birthday-cake-dessert-table.webp",
+        "source": {"type": "stock", "origin": "[[IMAGE NEEDED]] no register rows; ai_illustrative fallback only with approval, not generated", "credit": "[[VERIFY licence]]"},
+        "consent": {"people": "none depicted"},
+        "alt": "Tiered birthday cake with fresh flowers beside small desserts and champagne coupes",
+        "caption": "Photo: [[VERIFY credit]] (or 'Illustrative image' if AI approved)",
+        "lens_check": "Not run: no candidate image."
+      },
+      {
+        "slot_id": "planning-flat-lay",
+        "placement": "after_h2:4",
+        "purpose": "Support the how to plan section: invitations, timeline and details gathered in one place.",
+        "shot_brief": "Overhead flat lay on linen or textured paper: a printed celebration invitation with a placeholder name only (for example 'Your Name' or 'Guest Name'), never a real person's name, plus envelopes, a wax seal, an open notebook with blurred handwriting, a pen, a ribbon and a few loose flowers, soft natural light, neutral palette. No people, hands optional and anonymous. No real names, addresses, dates tied to real people, prices or logos legible. No real place shown. Preferred: licensed or own photo, or a Canva brand asset if available. AI fallback (ai_illustrative) only if approved, captioned 'Illustrative image'.",
+        "status": "needed",
+        "file": "content/posts/milestone-birthday/images/milestone-birthday-invitation-flat-lay.webp",
+        "source": {"type": "library", "origin": "[[IMAGE NEEDED]] no register rows; ai_illustrative fallback only with approval, not generated", "credit": "[[VERIFY licence]]"},
+        "consent": {"people": "none depicted"},
+        "alt": "Overhead flat lay of birthday invitations, envelopes, a wax seal, notebook and flowers on linen",
+        "caption": "Photo: [[VERIFY credit]] (or 'Illustrative image' if AI approved)",
+        "lens_check": "Not run: no candidate image."
+      }
+    ],
+    "reference_only": [],
+    "permission_requests": []
+  }
+}
