@@ -531,6 +531,24 @@ All returned HTTP 200 with og:url equal to the URL below unless noted. Quote fig
 
 Also confirmed LIVE with og:url unchanged on 26 Nov 2026: `/expert-advice/average-destination-wedding-cost-by-region`, `/destination-weddings/hidden-costs-destination-wedding`, `/destination-weddings/destination-wedding-vs-home-cost`, `/expert-advice/how-much-does-a-wedding-in-italy-cost`, `/expert-advice/how-much-does-a-lake-como-wedding-cost`, `/real-weddings/amalfi-coast-wedding-cost`, `/real-weddings/santorini-wedding-cost-breakdown`, `/destination-weddings/santorini-wedding-cost`, `/real-weddings/mykonos-wedding-cost`, `/real-weddings/maldives-wedding-cost`, `/real-weddings/fiji-wedding-cost`, `/destination-weddings/dubai-wedding-cost`, `/real-weddings/wedding-in-bali-cost`, `/expert-advice/bali-wedding-cost-the-complete-2026-guide`, `/destination-wedding-packages`. `/expert-advice/wedding-cost-per-guest` is LIVE (Zoho WC3-T636) but stays do-not-link. In the post sitemap on 26 Nov 2026 but not fetched (Apify sitemap read, partial): `/expert-advice/wedding-budget-app` (LIVE per Zoho WC3-T589), `/expert-advice/wedding-expenses-spreadsheet`, `/expert-advice/wedding-cost-breakdown-category`, `/expert-advice/hidden-wedding-costs`, `/expert-advice/micro-wedding-cost`, `/expert-advice/who-pays-for-the-wedding`, `/expert-advice/how-to-save-money-on-a-wedding`. Legacy `/destination-wedding-cost-versus-traditional-weddings` is also in the sitemap: do not link (likely duplicate of /destination-weddings/destination-wedding-vs-home-cost; redirect candidate, user decision). Planned, not live: `/expert-advice/wedding-budget-checklist` (WC3-T944, On Hold). Studio budget wording live on /wonderland-studio (26 Nov 2026): "Set a budget, log deposits and see what is left in every category." The page does not say the budget is multi-currency. SITE-CONFLICT (26 Nov 2026): Maldives green tax reads "per person per night" on /real-weddings/maldives-wedding-cost and "per person per day" on /destination-weddings/hidden-costs-destination-wedding.
 
+## Milestone Birthdays (live sitemap via Apify and Zoho Projects, 27 Nov 2026)
+
+Firecrawl was out of credits; pages were confirmed from the live post and venue sitemaps and fetched with Apify (HTTP 200, og:url unchanged) on 27 Nov 2026. This cluster is live: link these pages instead of the rule 4 fallbacks.
+
+| URL | Title | Owns |
+|---|---|---|
+| `/celebration-ideas/milestone-birthday-party-ideas` | 30 Milestone Birthday Party Ideas (WC3-T383) | milestone birthday party ideas (LIVE, published 12 Nov 2026) |
+| `/celebration-ideas/milestone-birthday-by-decade` | Milestone Birthday Ideas for 40th, 50th and 60th (WC3-T391) | milestone birthday by decade, milestone birthday ideas (LIVE, published 13 Nov 2026) |
+| `/celebration-ideas/milestone-birthday-trip` | 15 Milestone Birthday Trip Ideas Around the World (WC3-T432) | milestone birthday trip (LIVE, published 12 Nov 2026) |
+| `/travel-guides/experiences-by-occasion` | Experiences by occasion | experiences by occasion (in post sitemap; linked from the by-decade page; not fetched) |
+| `/celebration-ideas/milestone-birthday-venues` | Milestone Birthday Venues for a Party to Remember (WC3-T434) | milestone birthday venues, 30th birthday venues, 40th birthday venues, 60th birthday party venues | DRAFT (27 Nov 2026; URL was 404, new post) |
+
+Planned, not live (do not link): `/celebration-ideas/milestone-birthday` (WC3-T388, In Progress; cluster pillar for "milestone birthday"), `/celebrations/milestone-birthdays` (WC3-T1111 commercial sub-hub, in Review, 404).
+
+Venue profiles suitable for private parties (in the live venue sitemap, 27 Nov 2026; read the profile before naming a venue, rule 5): Sydney `/venue/crown-sydney`, `/venue/yallamundi-rooms-sydney-opera-house`, `/venue/weddings-and-events-at-taronga`, `/venue/park-hyatt-sydney`, `/venue/four-seasons-hotel-sydney`, `/venue/w-sydney`, `/venue/the-langham-sydney`; Melbourne `/venue/w-melbourne`; regional and resort `/venue/mona-farm`, `/venue/greyleigh`, `/venue/intercontinental-hayman-great-barrier-reef-by-ihg`, `/venue/intercontinental-sanctuary-cove-resort-by-ihg`; abroad `/venue/villa-balbiano`, `/venue/villa-pizzo`, `/venue/ayana-bali`, `/venue/the-wakaya-club-spa`, `/venue/the-phoenicia-malta`.
+
+Possible broken link (for the web team): the party ideas page links `/expert-advice/surprise-anniversary-party`, but the sitemap lists `/celebration-ideas/surprise-anniversary-party`. Not fetched.
+
 ## Do not link from blogs
 
 | URL | Reason |

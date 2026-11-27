@@ -29,3 +29,11 @@
 ## Stages
 - Stage 0 and 1 launched in parallel (both save early).
 - **01:53 check-in:** both agents are held on MCP permission prompts. Saved: a 00-brief.json stub and 19 facts (our celebration, packages, travel and venue-search pages, plus ACCC). No /venue profiles captured yet. **Decision (default):** the writer waits. A venues guide needs real venue profiles, and starting now would mean a rewrite.
+- **Stage 0 fast (strategist):** DONE.
+  - **URL:** 404, so a new post. Zoho WC3-T434 (In Progress).
+  - **The cluster is not new:** three milestone birthday pages are live (party ideas, by decade, trip). None targets venues, so the overlap is partial. Link each once with non-exact anchors; do not repeat the ideas list.
+  - **Volumes:** the head term has no data. AU: 30th birthday venues 260, 40th 140, 60th party 30, birthday venues sydney 320, melbourne 480. US: 30th 210, 60th 110.
+  - **SERP:** marketplaces and single-venue pages; no AU page explains how to choose (the gap).
+  - **SEO title:** "Milestone Birthday Venues for 30th, 40th and 60th Parties" (57). Meta 152.
+  - Venue profiles were confirmed from the sitemap via Apify but not read (Firecrawl out). The researcher was asked to read each profile before any venue is named.
+  - Link map: Milestone Birthdays section added.
