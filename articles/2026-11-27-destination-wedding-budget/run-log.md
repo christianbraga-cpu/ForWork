@@ -63,3 +63,15 @@
   - All 19 items applied except the DFAT link (not in the pack).
 - **Orchestrator fix:** Smartraveller "Getting married overseas" (official; source 18 Aug 2026, checked 12 Nov 2026) was reused from the Italy real weddings pack as R-SMART-MARRY. DFAT is now linked at the claim (L-29), and LEGAL-OFFICIAL is closed. YAML valid: 39 claims, 29 links.
 - Stage 6: copy editor launched.
+- **Stage 6 fast (copy editor):** DONE. final.md 2,389 reader words, 0 dashes, 0 placeholders; YAML 39 claims, 29 links (6 official).
+  - publish-package.json valid (18 open items, 14 nic_signoff lines).
+  - chrome-upload-prompt.md is draft only and creates a new post after a slug check. article.docx built.
+
+## Must-fix before publish
+1. NEW-URL: the URL was 404. Create a new post. No Zoho task found (ZOHO-TASK: create one).
+2. TITLE-RULE (for the user): the H1 is "Destination Wedding Budget Planned Line by Line"; your title did not start with the keyword.
+3. NIC-SIGNOFF: 14 price and percentage lines, incl. the contingency figures (Amalfi about 10%; small Italy 8 to 10%) and the Italy 35/21/17/27% split. AUD-EXCEPTION: confirm no conversions.
+4. ITALY-SPLIT-SOURCE: the split comes from Centro Studi Turistici research cited by our Italy guide; confirm the year and source.
+5. SITE-CONFLICTS: the vs-home page still shows the old Lake Como figures; the Amalfi florals figure vs that page's total; plus the conflicts inherited from the cost-per-guest pack.
+6. PILLAR-LINK and RETRO-LINK: once the cost-per-guest pillar is live, link the two pages both ways.
+7. SMALL-ITALY-RECHECK, VENUE-PROFILE-CHECK (Le Ciel), WEDDED-WORLD, CONCIERGE-PAY, FIRECRAWL-CREDITS, LINK-CHECK, AUTHOR, IMAGE-RIGHTS, CMS-URL.
