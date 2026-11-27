@@ -2,3 +2,5 @@
 00:38 04 visual-curator needs_input 5 slots all needed (register empty); no AI, no figures
 00:38 01 strategist complete brief written; no figures; Destination Weddings primary; au_focus; validate.py all valid
 00:39 03 gc_a complete (46 reused facts, no figures); orchestrator removed 'Advisor confirms requirements' instruction
+00:52 02 seo-researcher complete: DataForSEO 8 SERPs (Sydney, Melbourne, New York), URL free (404), packages page live and ranking for cost in Sydney, all internal links live; GSC not read
+00:53 02 seo complete; packages pages live; legal route via greece-wedding-venues anchor; link map updated
