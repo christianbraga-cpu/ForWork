@@ -660,3 +660,7 @@ Note (26 Nov 2026, orchestrator Firecrawl): /planning/how-to-write-wedding-vows 
 | `/blog/real-weddings` | Real Weddings (listing) | real weddings (LIVE 200, Firecrawl 26 Nov 2026) |
 | `/the-ultimate-destination-wedding-guide-italy` | The Ultimate Destination Wedding Guide: Italy (2020, updated Sep 2026) | italy destination wedding guide (LIVE 200, og:url, Firecrawl 26 Nov 2026) |
 | `/real-weddings/wedding-in-thailand-cost` | Wedding in Thailand cost (Phuket) | wedding in thailand cost (LIVE, og:url confirmed by research 26 Nov 2026) |
+| `/venue/aambra` | Aambra (venue profile) | (venue profile; read live 27 Nov 2026 for the milestone birthday venues guide) |
+| `/venue/bennys` | Bennys (venue profile) | (venue profile; read live 27 Nov 2026) |
+| `/venue/woodburn-homestead` | Woodburn Homestead (venue profile) | (venue profile; read live 27 Nov 2026) |
+| `/venue/amarti` | Amarti (venue profile) | (venue profile; read live 27 Nov 2026) |

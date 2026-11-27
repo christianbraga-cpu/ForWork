@@ -3,12 +3,14 @@
   "stage": "research",
   "agent": "research-lead",
   "version": 1,
-  "status": "in_progress_fast",
+  "status": "complete_fast",
   "checked": "2026-11-27",
   "inputs_used": [
     "run-log.md",
     "blog-team/brand/link-map.md",
-    "2026-11-24-wedding-venue-comparison-spreadsheet/02-research-new.json"
+    "2026-11-24-wedding-venue-comparison-spreadsheet/02-research-new.json",
+    "00-brief.json (venue_profile_pool)",
+    "weddedwonderland.com live pages via Apify web-fetch (Firecrawl 402, out of credits)"
   ],
   "method_note": "FAST MODE stage 1. Reused facts keep original checked dates. New facts verbatim from our live weddedwonderland.com pages and official pages only. No competitor venue lists. No invented capacities, prices or perks; figures in original currency.",
   "payload": {
@@ -737,14 +739,76 @@
       "/celebration-ideas/celebrations-we-plan section 8 Milestone Birthdays (2026-11-27)",
       "/packages Milestone birthdays tile 'A birthday worth flying for' (2026-11-27)",
       "/travel eligible-stay perks and group-terms FAQ (2026-11-27)",
-      "/celebration-ideas/milestone-birthday-party-ideas, /milestone-birthday-trip, /milestone-birthday-by-decade live 27 Nov 2026 (link, do not repeat)"
+      "/celebration-ideas/milestone-birthday-party-ideas, /milestone-birthday-trip, /milestone-birthday-by-decade live 27 Nov 2026 (link, do not repeat)",
+      "/destination-packages nine-resort edit (2026-11-27)"
     ],
-    "needs": [],
+    "needs": [
+      {
+        "id": "NEED-01",
+        "what": "Sign-off on every venue price (all shown 'From USD' on Australian profiles; no AUD figure exists) or confirm the article carries no prices (recommended)",
+        "who": "Nic"
+      },
+      {
+        "id": "NEED-02",
+        "what": "Confirm which profiled venues accept private birthday bookings (only Aambra states birthdays) and whether Amarti's Wedded Perks brunch applies to birthdays",
+        "who": "Nic / partnerships"
+      },
+      {
+        "id": "NEED-03",
+        "what": "A real milestone birthday we planned (with consent): venue, guest count, what was arranged",
+        "who": "planning team"
+      },
+      {
+        "id": "NEED-04",
+        "what": "A named yacht or charter partner with a /venue or /vendor profile, if the yacht section should name one",
+        "who": "Nic / partnerships"
+      },
+      {
+        "id": "NEED-05",
+        "what": "Align lead-time wording across our celebration pages (CONF-06) and venue counts (CONF-01, CONF-05)",
+        "who": "Nic / content team"
+      },
+      {
+        "id": "NEED-06",
+        "what": "Allow liquorandgaming.nsw.gov.au, vic.gov.au (liquor) and smartraveller.gov.au in the session network if official BYO, private function or travel facts are wanted; add to domains.md",
+        "who": "user (environment) / Nic"
+      }
+    ],
     "gaps": [
       {
         "id": "G-01",
         "topic": "NSW BYO and private function liquor rules",
         "finding": "liquorandgaming.nsw.gov.au BYO URL tried via Apify returned the L&GNSW homepage only (no BYO content). WebFetch and curl blocked by session proxy. No official liquor fact recorded; writer advises 'ask the venue whether BYO is allowed and what corkage applies' without citing law."
+      },
+      {
+        "id": "G-02",
+        "topic": "Yachts",
+        "finding": "No /venue profile describes a yacht hire. Benny's carries a 'Yachts' type tag with no supporting text. /packages mentions 'Vows on board the Panwa Princess' (Cape Panwa, Phuket wedding offer) only. Write yachts as a venue type with questions to ask, naming no yacht venue."
+      },
+      {
+        "id": "G-03",
+        "topic": "Rooftops",
+        "finding": "Only Taronga ('Gili Rooftop', capacities stated) and Four Seasons Hotel Sydney ('rooftop terrace', no capacity) mention a rooftop. W Melbourne profile does not."
+      },
+      {
+        "id": "G-04",
+        "topic": "Wineries",
+        "finding": "No profile is a winery. Woodburn Homestead is 'amongst rolling vineyards' in Langhorne Creek. Do not call any profile a winery."
+      },
+      {
+        "id": "G-05",
+        "topic": "Birthday wording on profiles",
+        "finding": "Only Aambra names 'birthdays and milestone dinners'. Amarti and Crown Sydney say 'private celebrations'. All other profiles are wedding-worded; frame them as 'ask whether they take private celebrations'."
+      },
+      {
+        "id": "G-06",
+        "topic": "Smartraveller and accessibility",
+        "finding": "Smartraveller returned HTTP 500 via Apify and is outside the session network. No verbatim official travel or accessibility fact recorded. Our sibling pages already say 'Check entry requirements for every guest on Smartraveller' (S-02); writer may link smartraveller.gov.au as advice without quoting it. Only Amarti states 'Wheelchair accessible'."
+      },
+      {
+        "id": "G-07",
+        "topic": "Not read in FAST mode",
+        "finding": "Shortlisted profiles not fetched: W Sydney, The Langham Sydney, Hyatt Regency Sydney, InterContinental Sydney, The Brighton Hotel Sydney, Navarra Venues, Clarence House, The Jackson Ranch, InterContinental Sanctuary Cove, The Langham Gold Coast, W Brisbane, Villa d'Este, Villa San Michele, The Phoenicia Malta, AYANA Bali, Hotel du Cap-Eden-Roc, The Connaught, Leeds Castle, Bvlgari Resort Dubai, Anantara Mina Ras Al Khaimah, W Doha. Do not name them unless read."
       }
     ],
     "conflicts": [
@@ -813,6 +877,17 @@
       }
     ]
   },
-  "self_qa": {},
+  "self_qa": {
+    "every_fact_has_source_url_type_checked": true,
+    "no_competitor_or_aggregator_sources": true,
+    "reused_facts_keep_original_dates": true,
+    "no_invented_capacities_prices_perks": true,
+    "figures_in_original_currency": true,
+    "em_dashes": "none in our fields; en dashes appear only inside verbatim quotes from our pages (e.g. '150–160')",
+    "site_drafts_used": false,
+    "fact_count": 44,
+    "legal_count": 6,
+    "prices_flagged": 6
+  },
   "handoff_to": "writer"
 }
