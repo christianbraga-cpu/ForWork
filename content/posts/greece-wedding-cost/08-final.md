@@ -19,9 +19,9 @@ Below is what shapes the total, what a package bundles, how paying in euro from 
 ## Key takeaways
 
 - The total for a wedding in Greece is set by island, venue type, season, guest numbers and how much guest travel you cover, so ask every venue to quote against the same written brief.
-- A civil wedding has its own paperwork, and in Rhodes that means documents officially translated into Greek, an Apostille on Australian documents and fees at several steps. <!-- fact_01 --> <!-- fact_02 --> <!-- fact_04 -->
+- A civil wedding has its own paperwork: as at November 2026, Rhodes asks for documents officially translated into Greek, an Apostille on Australian documents and fees at several steps (general information, not legal advice). <!-- fact_01 --> <!-- fact_02 --> <!-- fact_04 -->
 - Ask each supplier which currency the quote, deposit and balance are invoiced in, when each payment falls due and what happens to money paid if plans change.
-- An overseas business selling directly to Australian consumers must follow the Australian Consumer Law, but a remedy can be difficult to obtain in practice, so read the cancellation terms before you pay. <!-- fact_45 -->
+- As general information as at November 2026, an overseas business selling directly to Australian consumers must follow the Australian Consumer Law, but a remedy can be difficult to obtain in practice, so read the cancellation terms before you pay. <!-- fact_45 -->
 
 ## Why there is no single Greece wedding cost
 
@@ -47,7 +47,7 @@ Some venues close to other guests for your wedding; others host your ceremony wh
 
 As at November 2026, Smartraveller says heatwaves are frequent in Greece over the summer months, and wildfires occur in the extended summer period from June to September. <!-- fact_32 --> <!-- fact_33 --> In the May to October tourist season, expect high temperatures and large crowds at popular seaports. <!-- fact_35 --> Each carries a cost: shade, water for guests, a weather plan, a buffer day. Our guide to [when to marry in Greece, month by month](/destination-weddings/best-time-to-get-married-in-greece) goes further.
 
-Ask whether the venue's rates change between months, and between a Saturday and a weekday. The legal ceremony can set the day too: in Rhodes, the town hall ceremony takes place every Wednesday and Friday. <!-- fact_05 -->
+Ask whether the venue's rates change between months, and between a Saturday and a weekday. The legal ceremony can set the day too: as general information as at November 2026, the town hall ceremony in Rhodes takes place every Wednesday and Friday. <!-- fact_05 -->
 
 For a Greek Orthodox wedding, settle the church date first. The Greek Orthodox Archdiocese of Australia does not permit weddings during several periods of the church year, including the first half of August and from Great Lent until Easter Sunday. <!-- fact_29 --> Confirm the calendar with the parish in Greece.
 
@@ -76,7 +76,7 @@ For the steps in order, read [getting legally married in Greece as Australians](
 
 ### Getting there and getting around
 
-Flights from Australia come first, then the islands. Smartraveller says ferries and large catamarans carry visitors to the Greek islands, that services can be delayed or cancelled in bad weather, mainly due to strong winds, and that a coach or taxi should be arranged in advance. <!-- fact_35 --> Ask early:
+Flights from Australia come first, then the islands. As at November 2026, Smartraveller says ferries and large catamarans carry visitors to the Greek islands, that services can be delayed or cancelled in bad weather, mainly due to strong winds, and that a coach or taxi should be arranged in advance. <!-- fact_35 --> Ask early:
 
 - Which airport or port is closest to the venue, and how do guests get between them?
 - Who books and pays for transfers on the day, and for arrivals and departures?
@@ -85,7 +85,7 @@ Flights from Australia come first, then the islands. Smartraveller says ferries 
 
 ### Accommodation for guests
 
-Decide early who pays for guest rooms: the whole stay, the wedding night, or none. Ask how many rooms the venue has, whether a minimum stay applies, and when unbooked rooms are released. A civil ceremony can add nights for the couple: in Rhodes, you return to the registry office the next working day to sign and have the marriage certificate drawn up. <!-- fact_05 -->
+Decide early who pays for guest rooms: the whole stay, the wedding night, or none. Ask how many rooms the venue has, whether a minimum stay applies, and when unbooked rooms are released. A civil ceremony can add nights for the couple: in Rhodes, as general information as at November 2026, you return to the registry office the next working day to sign and have the marriage certificate drawn up. <!-- fact_05 -->
 
 ### Welcome and farewell events
 
@@ -142,7 +142,7 @@ Ask for every contract in English, with a copy you keep. If the binding version 
 
 Ask for a written quote listing every inclusion, the guest number it assumes, the date and the payment terms. Only written quotes built on the same brief compare line by line.
 
-Your Wedded Advisor quotes in AUD for Australian couples and has inclusions confirmed in writing before you commit. Begin with [Wedded Concierge](/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=greece-wedding-cost&utm_content=primary).
+Your Wedded Advisor quotes in AUD for Australian couples and confirms inclusions in writing before you commit. Begin with [Wedded Concierge](/wonderland-concierge?utm_source=blog&utm_medium=content&utm_campaign=greece-wedding-cost&utm_content=primary).
 
 ### Your consumer rights
 
@@ -200,11 +200,11 @@ Ask about photography, music, hair and make-up, transfers, extra events, officia
 
 ### How much does it cost to marry legally in Greece?
 
-Fees apply at several steps, and each body sets its own. In Rhodes, a fee applies at the registry office, <!-- fact_04 --> the Australian Embassy in Athens charges for notarial services, <!-- fact_07 --> and DFAT charges to legalise Australian documents. <!-- fact_18 --> Confirm each with the authority.
+As general information as at November 2026, fees apply at several steps, and each body sets its own. In Rhodes, a fee applies at the registry office, <!-- fact_04 --> the Australian Embassy in Athens charges for notarial services, <!-- fact_07 --> and DFAT charges to legalise Australian documents. <!-- fact_18 --> Confirm each with the authority.
 
 ### Can foreigners get married in Greece?
 
-Yes. The Municipality of Rhodes, for example, publishes the documents foreign nationals need for a civil marriage. <!-- fact_01 --> As at November 2026, Smartraveller says an overseas marriage can't be registered in Australia, but to be recognised here it must have been valid under the law of the country where it took place and valid under Australian law had it taken place in Australia. <!-- fact_14 -->
+Yes. As general information as at November 2026, the Municipality of Rhodes, for example, publishes the documents foreign nationals need for a civil marriage. <!-- fact_01 --> Smartraveller says an overseas marriage can't be registered in Australia, but it is generally recognised here if it was valid under the law of the country where it took place and would have been valid under Australian law had it taken place in Australia. <!-- fact_14 -->
 
 ## Planning your Greece wedding with a Wedded Advisor
 
