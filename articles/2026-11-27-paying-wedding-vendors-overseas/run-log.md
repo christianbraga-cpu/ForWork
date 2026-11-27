@@ -57,3 +57,8 @@
   - The Studio payment line is cut.
   - STUDIO-PAYMENTS added (for the user: does paying through Studio carry any fee or margin?).
 - Stage 4: writer v2 launched.
+- **Stage 1 fast (research):** DONE (late, after a permission hold). 29 facts (21 reused); 2 legal (AUSTRAC A$10,000 physical currency declaration); 5 prices and 9 facts for Nic.
+  - **Conflicts:** the Experian 1 to 3% figure; the word "free"; Stripe named on the Studio page. None is used.
+  - **Not verified verbatim:** the Scamwatch page (503; the ACCC release is used instead), the Smartraveller money page, dynamic currency conversion.
+  - **Needs:** allow the three blocked gov.au hosts; Nic sign-offs; FIN-ADVICE wording; advisor invoicing and tipping practice; an optional client story.
+  - The writer was told to use the AUSTRAC fact if verbatim and to close CASH-RULE.
