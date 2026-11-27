@@ -48,3 +48,13 @@
   - Contingency is given with no percentage, but F-04 (about 10%) and F-20 (8 to 10%) exist in the pack; the fact-checker is checking them.
   - The Amalfi florals figure was left out (it looks inconsistent with that page's total; SITE-CONFLICTS).
 - Reviews launched (accuracy, SEO, couple reader).
+- **Stage 3 fast (3 reviews):** DONE.
+  - **Accuracy 3.8, revise:** majors on the "only split" claim, the missing passport-authority legal line, and EUR prices pending AUD-EXCEPTION. Contingency: two of our pages do give figures (Amalfi about 10%; small Italy 8 to 10%).
+  - **SEO 4.0:** major on length; H2 renames; SEO title drops 2027 (the figures are 2026).
+  - **Reader (couple):** relevance 3, trust 3, clarity 3, would_enquire 2, "save". Fixes: fewer self-citations, Italy first, a planner references line.
+  - Merged request: 04-reviews/v1/merged.md.
+- **Conflict resolved:** the SEO reviewer wanted the "nothing is converted" line cut, but the reader trusted it, so it stays in shortened form.
+- **Decisions (default):**
+  - Contingency is now quoted from our two pages (Nic sign-off); CONTINGENCY-GAP closed.
+  - SEO title "Destination Wedding Budget Template Planned Line by Line".
+- Stage 4: writer v2 launched.
