@@ -38,3 +38,9 @@
   - Venue profiles were confirmed from the sitemap via Apify but not read (Firecrawl out). The researcher was asked to read each profile before any venue is named.
   - Link map: Milestone Birthdays section added.
 - **02:10 check-in:** the research file holds 33 facts incl. 12 live /venue profiles (Aambra, Amarti, Bennys, Crown Sydney, Greyleigh, InterContinental Hayman, Mona Farm, Park Hyatt Sydney, The Valley Estate, W Melbourne, Woodburn Homestead, Yallamundi Rooms). Above the threshold of 5, so the writer started; it re-reads the research before saving.
+- **Stage 2 fast (writer):** DONE. 03-draft-v1.md.
+  - --check: 2,234 reader words (over the cap); 0 dashes; 0 placeholders. External: accc.gov.au only.
+  - YAML valid: 32 claims, 28 links.
+  - 11 venue profiles named. The Valley Estate and all venues abroad are left out (thin facts); no yachts; no Smartraveller (no facts in the pack).
+  - CTA: Discovery Call.
+- Reviews launched (accuracy, SEO, couple reader).
