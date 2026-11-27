@@ -567,7 +567,7 @@ Possible broken link (for the web team): the party ideas page links `/expert-adv
 | `/expert-advice/best-european-honeymoon-destinations` | Best European honeymoon destinations (title not fetched) | best european honeymoon destinations (linked from live /experiences-by-occasion) |
 | `/honeymoon-ideas/luxury-honeymoon-packages` | 15 Luxury Honeymoon Packages Worth Booking in 2027 | luxury honeymoon packages (LIVE per Google index) |
 | `/honeymoon-ideas/short-honeymoon` | Short Honeymoon Ideas for a Three-Day Minimoon | short honeymoon (LIVE per Google index) |
-| `/travel-guides/couples-experiences` | Couples Experiences Worth Travelling For (WC3-T441, WW-343) | couples experiences, unique couples experiences, romantic experiences for couples, bucket list experiences for couples | DRAFT (27 Nov 2026; URL was 404, new post) |
+| `/travel-guides/couples-experiences` | Couples Experiences Worth Travelling For (WC3-T441, WW-343) | couples experiences, unique couples experiences, romantic experiences for couples, bucket list experiences for couples | DRAFT, final ready, not published (27 Nov 2026; URL was 404, new post) |
 
 `/wedded-wonderland-experiences` is LIVE but is the B2B event platforms page (Wedded Connect, Summit, Gala, Wedded World): do not link from consumer travel posts. The site nav has a "Tours & Experiences" menu with "Private Tours and Experiences".
 

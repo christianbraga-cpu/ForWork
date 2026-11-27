@@ -13,7 +13,7 @@ tags: ["couples experiences", "honeymoon", "anniversary travel", "luxury travel"
 cta: { primary: "discovery_call", soft: "A free Discovery Call with a Wedded Wonderland advisor is a quick way to test your shortlist." }
 status: "draft"
 stage: "final (copy editor, 27 Nov 2026)"
-word_count_reader: 2510
+word_count_reader: 2511
 key_takeaways:
   - "Each of the 20 experiences sits in a destination we plan; where we give a season, it is worded as our destination guides or an official source give it."
   - "Cheaper or quieter months are often the wet ones: our Maldives cost guide calls May to October the low season, and Smartraveller puts the monsoon at mid-May to November."
@@ -145,7 +145,7 @@ changes_from_previous:
   - "Closing CTA: the typed heading, body and 'Book a free call' link (L-51) were removed from the body and replaced by the [CTA: discovery_call] marker after the FAQ, because cta-library.md places CTAs with the shared CTA block and never types them into the body. The confidentiality and 24-hour reply line (C-53) stays in the planning section as 'Every enquiry is fully confidential, with a reply in 24 hours.' Body links 47 to 46; L-51 is now the CTA block button."
   - "Brand naming: 'Your concierge can match' became 'The Wedded Wonderland Concierge can match', so the service is named in full on first mention (style guide). C-51 updated."
   - "Images: each [IMAGE: slot] marker now carries a proposed file name; there is no 05-assets.json yet (IMAGE-ASSETS)."
-  - "Checked: Australian spelling, sentence-case H2 and H3, numbers per style guide, one use of 'luxury', no banned words, no 'complimentary', no 'most couples', 0 em dashes, 0 en dashes, no visible placeholders, every YAML value with a colon quoted."
+  - "Checked: Australian spelling, sentence-case H2 and H3, numbers per style guide, one use of 'luxury', no banned words, none of the phrases on the merged.md Never line, 0 em dashes, 0 en dashes, no visible placeholders, every YAML value with a colon quoted."
 open_items:
   - "NEW-URL: /travel-guides/couples-experiences returned 404 on 27 Nov 2026 (new post). Zoho WC3-T441, plan ref WW-343. Check the CMS for the slug before creating."
   - "TITLE-SERIES: the user's title '20 Couples Experiences Worth Travelling For' starts with the number, so the H1 drops it to stay keyword first and the number sits in the H2 'Our 20 couples experiences'. Revert if preferred."

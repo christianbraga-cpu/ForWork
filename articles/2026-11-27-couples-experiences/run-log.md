@@ -47,3 +47,17 @@
 - 03-draft-v2.md: 2,544 reader words, 0 dashes, 0 placeholders, YAML ok (57 claims, 47 links). All 27 merged items applied. Como moved to Culture and place (card 12), Ras Al Khaimah is card 11. Travel advice lines at card ends.
 - Researcher stopped: it was held on an MCP permission prompt and its facts are no longer needed after v2.
 - Copy editor started (Write tool only, two Bash commands; also saves blog-team/templates/experiences-list.md).
+
+## Stage 6 (done) and delivery
+- final.md: 2,511 reader words, 0 dashes, 0 placeholders, YAML ok (57 claims, 47 links), no "complimentary" or "most couples". publish-package.json loads. chrome-upload-prompt.md is draft only, with a CMS slug check before a new post. article.docx built. Template saved: blog-team/templates/experiences-list.md.
+- CTA moved to the CMS block marker (cta-library rule); block text says "your wedding" (CTA-WORDING, marketing to confirm).
+- link-map row: final ready, not published.
+
+### Must fix before publish
+1. DOMAINS-ADD: approve gbrmpa.gov.au (reef charge source) and webstatic.niwa.co.nz, or cut those claims.
+2. LINK-CHECK: no session could reach smartraveller.gov.au, gbrmpa.gov.au, NIWA or weddedwonderland.com; check all 46 links and the verbatim Smartraveller lines (VERBATIM-RECHECK, R-14-RECHECK).
+3. NIC-SIGNOFF: AUD 8.50 and AUD 9.00 reef charge; EUR 1,150 a night Villa d'Este.
+4. VENUE-NAMING and ORIENT-EXPRESS: confirm /venue profiles count; train left generic.
+5. LINK-MAP-ADD: /honeymoon-ideas/oceania-honeymoon (source for seven cards, not linked).
+6. IMAGE-RIGHTS and IMAGE-ASSETS; CMS-URL; AUTHOR.
+7. After publish: RETRO-LINK from /travel-guides/private-tours and /travel-guides/experiences-by-occasion.
