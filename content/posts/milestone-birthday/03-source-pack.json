@@ -1,0 +1,233 @@
+{
+  "agent": "planner-sme",
+  "task_id": "milestone-birthday",
+  "stage": "03",
+  "status": "complete",
+  "round": 1,
+  "inputs_used": [
+    "content/posts/milestone-birthday/00-input.json",
+    "content/posts/garden-wedding/03-source-pack.json",
+    "content/posts/travel-advisor-benefits/03-source-pack.json"
+  ],
+  "self_qa": {
+    "checks": [
+      {
+        "check": "Every fact has a source and date",
+        "pass": true,
+        "note": "All facts reused from earlier packs with their original checked dates."
+      },
+      {
+        "check": "No price without a source; all prices in needs_signoff",
+        "pass": true,
+        "note": "No prices recorded."
+      },
+      {
+        "check": "Every must-include covered or marked [[VERIFY]]",
+        "pass": true,
+        "note": "RSA and the general Smartraveller travel-advice line are [[VERIFY]]."
+      },
+      {
+        "check": "No invented quotes, statistics or real weddings",
+        "pass": true,
+        "note": "No statistics, quotes, vendors or real events. No Advisor lines copied from older packs."
+      }
+    ],
+    "confidence": 0.75
+  },
+  "open_questions": [
+    "RSA source could not be loaded this run (firecrawl out of credits, direct fetch blocked). Re-run with a working scrape tool or drop the RSA claim from the article."
+  ],
+  "assumptions": [
+    "Fast mode, batch mb_a: 01-brief.json and 02-seo.json do not exist yet; must-includes taken from the orchestrator task and 00-input.json notes.",
+    "Cancer Council guidance is Australian; frame as Australian sun-safety advice, not a rule for overseas destinations.",
+    "SA MFS candle fact sheet is written for homes; frame as general candle-safety guidance.",
+    "BOOKING CHECKLIST: (any venue) ask about open flame and candle rules, music curfew, BYO alcohol policy and who holds the liquor licence and RSA-trained bar staff, shade and wet-weather plan for outdoor areas."
+  ],
+  "verify_items": [
+    "[[VERIFY: official Australian liquor regulator wording on responsible service of alcohol at private events or licensed venues (for example Liquor & Gaming NSW or the relevant state regulator). Live page could not be loaded on 2026-11-27 (scrape tool out of credits, direct fetch blocked by proxy); do not state any RSA rule until sourced.]]",
+    "[[VERIFY: Smartraveller general line telling travellers to check the destination travel advice and subscribe to updates before travelling. No existing pack holds this wording and the live page could not be loaded on 2026-11-27. Nearest sourced line is fact_09 (insurance should cover a rise in advice level).]]"
+  ],
+  "tools_used": [
+    "mcp__Lead_MCP__firecrawl_scrape (failed: 402 insufficient credits)",
+    "Bash"
+  ],
+  "next_agent": [
+    "luxury-writer"
+  ],
+  "payload": {
+    "facts": [
+      {
+        "fact_id": "fact_01",
+        "claim": "Copied from garden-wedding pack (fact_01, checked 2026-11-26). Cancer Council Australia, 'Be SunSmart': 'Sun protection is recommended whenever UV levels reach 3 or higher.' and 'Unlike the sun's heat and light, we can't see or feel UV radiation, so check the UV for your location on the free SunSmart app or on the Bureau of Meteorology website.'",
+        "source": "https://www.cancer.org.au/cancer-information/causes-and-prevention/sun-safety/be-sunsmart",
+        "source_type": "other",
+        "checked": "2026-11-26",
+        "is_price": false,
+        "conflicts": "Cancer Council Australia is a national health charity (SunSmart program), not a government body. Page is Australian guidance; frame as Australian sun-safety advice, not as a rule for overseas destinations."
+      },
+      {
+        "fact_id": "fact_02",
+        "claim": "Copied from garden-wedding pack (fact_02, checked 2026-11-26). Cancer Council Australia, 'Be SunSmart', step 4 Seek shade: 'Use trees, built shade structures, or bring your own (such as a sunshade tent)! Shade reduces UV radiation, but it can still reach you via reflection, so make sure you use shade in combination with other sun protection measures.' The five SunSmart steps are: Slip on covering clothing; Slop on SPF 50 or SPF50+, broad-spectrum, water-resistant sunscreen; Slap on a hat; Seek shade; Slide on some sunglasses.",
+        "source": "https://www.cancer.org.au/cancer-information/causes-and-prevention/sun-safety/be-sunsmart",
+        "source_type": "other",
+        "checked": "2026-11-26",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_03",
+        "claim": "Copied from garden-wedding pack (fact_03, checked 2026-11-26). Cancer Council Australia, 'Be SunSmart': sunscreen should be applied 'at least 20 minutes before you go outside' and reapplied 'every two hours or after swimming or excessive sweating'. 'Remember, sunscreen is not a suit of armour and should be used with other sun protection measures.'",
+        "source": "https://www.cancer.org.au/cancer-information/causes-and-prevention/sun-safety/be-sunsmart",
+        "source_type": "other",
+        "checked": "2026-11-26",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_04",
+        "claim": "Copied from garden-wedding pack (fact_04, checked 2026-11-22). Originally wedding-centrepieces fact_02 2026-11-22. South Australian Metropolitan Fire Service, 'Home fire safety fact sheet: Candles': 'A candle is an open flame. It can easily ignite any combustible items nearby.' and 'Keep the immediate area around a candle clear of all items. They should be kept well away from items that can catch fire, such as clothing, books, paper, curtains, Christmas trees and flammable decorations etc.'",
+        "source": "https://www.mfs.sa.gov.au/community-safety/safety-and-education/fact-sheets/candles2/mfs-fact-sheet-candles.pdf",
+        "source_type": "government",
+        "checked": "2026-11-22",
+        "is_price": false,
+        "conflicts": "Fact sheet is written for homes, not venues. Use as general candle-safety guidance; venue open-flame rules are separate (booking checklist)."
+      },
+      {
+        "fact_id": "fact_05",
+        "claim": "Copied from garden-wedding pack (fact_05, checked 2026-11-22). Originally wedding-centrepieces fact_03 2026-11-22. SA MFS candles fact sheet: 'Make sure candles are placed in sturdy holders that will not tip over and place on a secure piece of heat-resistant furniture. Candle holders must be made of material that cannot burn.' and 'Any air movement (draughts) past a candle can cause the candle wax to melt unevenly. The candle may then become unstable and fall over.'",
+        "source": "https://www.mfs.sa.gov.au/community-safety/safety-and-education/fact-sheets/candles2/mfs-fact-sheet-candles.pdf",
+        "source_type": "government",
+        "checked": "2026-11-22",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_06",
+        "claim": "Copied from garden-wedding pack (fact_06, checked 2026-11-22). Originally wedding-centrepieces fact_04 2026-11-22. SA MFS candles fact sheet: 'Battery operated candles are a good and safe alternative to traditional candles.'",
+        "source": "https://www.mfs.sa.gov.au/community-safety/safety-and-education/fact-sheets/candles2/mfs-fact-sheet-candles.pdf",
+        "source_type": "government",
+        "checked": "2026-11-22",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_07",
+        "claim": "Copied from travel-advisor-benefits pack (fact_09, checked 2026-11-15). Smartraveller (page last updated 18/08/2026): the right travel insurance is as essential as a passport for travel overseas; get insurance regardless of who you are, where you are going and what you are doing. The Australian Government cannot pay your bills and expects all Australians travelling overseas to take out appropriate insurance.",
+        "source": "https://www.smartraveller.gov.au/travel-essentials/travel-insurance",
+        "source_type": "government",
+        "checked": "2026-11-15",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_08",
+        "claim": "Copied from travel-advisor-benefits pack (fact_10, checked 2026-11-15). Smartraveller: always read the Product Disclosure Statement (PDS) before buying a policy. It sets out what you are covered for (inclusions), what you are not covered for (exclusions), word definitions, how the claims process works and what emergency support is provided.",
+        "source": "https://www.smartraveller.gov.au/travel-essentials/travel-insurance",
+        "source_type": "government",
+        "checked": "2026-11-15",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_09",
+        "claim": "Copied from travel-advisor-benefits pack (fact_11, checked 2026-11-15). Smartraveller: choose a policy that covers every country you are travelling to, including stopovers and transit points, and check whether the policy covers cancellations if a destination's advice level goes up after you have booked.",
+        "source": "https://www.smartraveller.gov.au/travel-essentials/travel-insurance",
+        "source_type": "government",
+        "checked": "2026-11-15",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_10",
+        "claim": "Copied from travel-advisor-benefits pack (fact_12, checked 2026-11-15). Smartraveller: always declare everything upfront when you buy a policy, or you may void it; you must tell your insurer about all pre-existing health conditions.",
+        "source": "https://www.smartraveller.gov.au/travel-essentials/travel-insurance",
+        "source_type": "government",
+        "checked": "2026-11-15",
+        "is_price": false
+      },
+      {
+        "fact_id": "fact_11",
+        "claim": "Copied from travel-advisor-benefits pack (fact_14, checked 2026-11-15). Smartraveller travel insurance buying guide: if a circumstance, risk or event is known before you buy the policy, you will not be covered if it directly affects your travel. The earlier you buy travel insurance, the more likely you are to be covered if something unexpected happens at your destination before your trip.",
+        "source": "https://www.smartraveller.gov.au/choice-travel-insurance-buying-guide/what-are-you-covered",
+        "source_type": "government",
+        "checked": "2026-11-15",
+        "is_price": false
+      }
+    ],
+    "insider_details": [
+      {
+        "detail": "For an outdoor daytime milestone lunch or garden party, plan shade into the layout (trees, marquees or sunshades) rather than relying on it on the day; Cancer Council's SunSmart guidance says shade reduces UV but should be combined with other protection, so a basket of SPF50+ sunscreen and hats at the entrance is a thoughtful touch.",
+        "fact_ids": [
+          "fact_01",
+          "fact_02",
+          "fact_03"
+        ]
+      },
+      {
+        "detail": "Candlelit dinner tables are a milestone classic, but drafts on terraces and in marquees make candles unstable; use sturdy non-flammable holders well away from linen and florals, or switch to battery candles for outdoor or windy settings.",
+        "fact_ids": [
+          "fact_04",
+          "fact_05",
+          "fact_06"
+        ]
+      },
+      {
+        "detail": "For a destination birthday weekend, tell guests early to buy comprehensive travel insurance that covers every country on the itinerary, including stopovers, and to read the PDS and declare pre-existing conditions; buying early means cover is more likely to respond if something changes before the trip.",
+        "fact_ids": [
+          "fact_07",
+          "fact_08",
+          "fact_09",
+          "fact_10",
+          "fact_11"
+        ]
+      },
+      {
+        "detail": "Advice, not fact: when guests are flying in for a birthday, send one clear travel note with dates, the meeting point and a reminder to check government travel advice before they book. Wording on checking travel advice is still to be sourced.",
+        "fact_ids": [
+          "fact_09"
+        ]
+      }
+    ],
+    "quotes": [],
+    "real_weddings": [],
+    "verify_items": [
+      "[[VERIFY: official Australian liquor regulator wording on responsible service of alcohol at private events or licensed venues (for example Liquor & Gaming NSW or the relevant state regulator). Live page could not be loaded on 2026-11-27 (scrape tool out of credits, direct fetch blocked by proxy); do not state any RSA rule until sourced.]]",
+      "[[VERIFY: Smartraveller general line telling travellers to check the destination travel advice and subscribe to updates before travelling. No existing pack holds this wording and the live page could not be loaded on 2026-11-27. Nearest sourced line is fact_09 (insurance should cover a rise in advice level).]]"
+    ],
+    "needs_signoff": [],
+    "must_include_coverage": [
+      {
+        "item": "Responsible service of alcohol at a private event or licensed venue (official Australian source)",
+        "covered_by": [
+          "[[VERIFY: official Australian liquor regulator wording on responsible service of alcohol at private events or licensed venues (for example Liquor & Gaming NSW or the relevant state regulator). Live page could not be loaded on 2026-11-27 (scrape tool out of credits, direct fetch blocked by proxy); do not state any RSA rule until sourced.]]"
+        ]
+      },
+      {
+        "item": "Destination birthday: check the travel advice",
+        "covered_by": [
+          "fact_09",
+          "[[VERIFY: Smartraveller general line telling travellers to check the destination travel advice and subscribe to updates before travelling. No existing pack holds this wording and the live page could not be loaded on 2026-11-27. Nearest sourced line is fact_09 (insurance should cover a rise in advice level).]]"
+        ]
+      },
+      {
+        "item": "Destination birthday: travel insurance",
+        "covered_by": [
+          "fact_07",
+          "fact_08",
+          "fact_09",
+          "fact_10",
+          "fact_11"
+        ]
+      },
+      {
+        "item": "Outdoor or daytime celebrations: sun safety",
+        "covered_by": [
+          "fact_01",
+          "fact_02",
+          "fact_03"
+        ]
+      },
+      {
+        "item": "Candles and table styling safety",
+        "covered_by": [
+          "fact_04",
+          "fact_05",
+          "fact_06"
+        ]
+      }
+    ]
+  }
+}
