@@ -37,3 +37,4 @@
   - **SEO title:** "Milestone Birthday Venues for 30th, 40th and 60th Parties" (57). Meta 152.
   - Venue profiles were confirmed from the sitemap via Apify but not read (Firecrawl out). The researcher was asked to read each profile before any venue is named.
   - Link map: Milestone Birthdays section added.
+- **02:10 check-in:** the research file holds 33 facts incl. 12 live /venue profiles (Aambra, Amarti, Bennys, Crown Sydney, Greyleigh, InterContinental Hayman, Mona Farm, Park Hyatt Sydney, The Valley Estate, W Melbourne, Woodburn Homestead, Yallamundi Rooms). Above the threshold of 5, so the writer started; it re-reads the research before saving.
