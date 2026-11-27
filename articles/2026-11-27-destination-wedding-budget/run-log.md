@@ -58,3 +58,8 @@
   - Contingency is now quoted from our two pages (Nic sign-off); CONTINGENCY-GAP closed.
   - SEO title "Destination Wedding Budget Template Planned Line by Line".
 - Stage 4: writer v2 launched.
+- **Stage 4 fast (writer v2):** DONE. 03-draft-v2.md.
+  - --check: 2,384 reader words; 0 dashes; 0 placeholders.
+  - All 19 items applied except the DFAT link (not in the pack).
+- **Orchestrator fix:** Smartraveller "Getting married overseas" (official; source 18 Aug 2026, checked 12 Nov 2026) was reused from the Italy real weddings pack as R-SMART-MARRY. DFAT is now linked at the claim (L-29), and LEGAL-OFFICIAL is closed. YAML valid: 39 claims, 29 links.
+- Stage 6: copy editor launched.
