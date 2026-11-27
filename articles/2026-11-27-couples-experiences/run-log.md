@@ -37,3 +37,8 @@
 - 13 shortlist swaps and 7 reframes (SHORTLIST-SWAP). Meta rewritten to match the cards (META-CHANGE, 137 characters).
 - Decisions for the user: VENUE-NAMING (/venue profiles treated as allowed), ORIENT-EXPRESS (named operator with no /vendor profile), LINK-MAP-ADD /honeymoon-ideas/oceania-honeymoon, DOMAINS-ADD gbrmpa.gov.au and NIWA.
 - Fact-checker, SEO reviewer and couple reader started in parallel.
+
+## Reviews v1 (done), merged, writer v2 started
+- Accuracy 3 (6 majors: stinger attribution, reef charge wording, Como months, entry-rules framing, Orient-Express name, takeaway 3). SEO 3.5 (meta 137 to 151; gbrmpa approval; repeat links). Reader: relevance 2, trust 3, clarity 4, would enquire 2 (save, no enquiry).
+- Defaults taken: Orient-Express made generic (ORIENT-EXPRESS open); /venue hotels stay named, "profile among our venues" line cut (VENUE-NAMING open); UAE kept with a Travel advice line; 50,000+ vendors line kept (brand-profile wording); no AUD conversion.
+- merged.md saved; writer v2 started.
