@@ -31,3 +31,9 @@
 - Strategist done: URL 404 (new post), Zoho WC3-T441 (WW-343). SEO title "Couples Experiences Worth Travelling For Around the World" (57). Volumes AU 590, US 880. SERP is local date ideas and vouchers. Sibling overlap with /travel-guides/private-tours and /travel-guides/experiences-by-occasion (link both; RETRO-LINK from them). /wedded-wonderland-experiences is do-not-link. 7 safety domains need approval (DOMAINS-ADD).
 - Research at 49 facts, threshold met. Writer v1 started with an inline brief; shortlist items without facts get swapped for researched ones (SHORTLIST-SWAP).
 - Researcher still running, held on an MCP permission prompt.
+
+## Writer v1 (done) and reviews started
+- 03-draft-v1.md: 2,548 reader words, 0 dashes, 0 placeholders, YAML ok (56 claims, 53 links). External domains: smartraveller.gov.au, gbrmpa.gov.au, webstatic.niwa.co.nz.
+- 13 shortlist swaps and 7 reframes (SHORTLIST-SWAP). Meta rewritten to match the cards (META-CHANGE, 137 characters).
+- Decisions for the user: VENUE-NAMING (/venue profiles treated as allowed), ORIENT-EXPRESS (named operator with no /vendor profile), LINK-MAP-ADD /honeymoon-ideas/oceania-honeymoon, DOMAINS-ADD gbrmpa.gov.au and NIWA.
+- Fact-checker, SEO reviewer and couple reader started in parallel.
