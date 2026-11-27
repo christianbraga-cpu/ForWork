@@ -45,7 +45,7 @@ Daytime suits a mixed guest list, from young children to older relatives. A long
 
 In Australia, sun protection is recommended whenever UV levels reach 3 or higher, and UV cannot be seen or felt, so check the UV for your location before the day ([Cancer Council SunSmart guidance](https://www.cancer.org.au/cancer-information/causes-and-prevention/sun-safety/be-sunsmart)). <!-- fact_01 --> Plan shade into the layout with trees, a marquee or sunshades. Shade reduces UV but should be combined with other sun protection. <!-- fact_02 -->
 
-Leave SPF50+ sunscreen and hats at the entrance so guests can reapply every two hours through the afternoon. <!-- fact_03 --> If you are considering a park or beach rather than a private garden, ask your local council whether the gathering needs a permit.
+Leave SPF50+ sunscreen and hats at the entrance so guests can reapply every two hours, or after swimming or heavy sweating, as the same Cancer Council guidance advises. <!-- fact_02 --> <!-- fact_03 --> If you are considering a park or beach rather than a private garden, ask your local council whether the gathering needs a permit.
 
 ### A themed party
 
