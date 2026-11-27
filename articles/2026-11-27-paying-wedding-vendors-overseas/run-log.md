@@ -67,3 +67,14 @@
   - YAML valid: 23 claims, 20 links.
   - All 18 items applied. CASH-RULE closed: the AUSTRAC A$10,000 declaration is quoted exactly and linked at the claim. No Stripe, no Experian, no products named.
 - Stage 6: copy editor launched.
+- **Stage 6 fast (copy editor):** DONE. final.md 2,274 reader words, 0 dashes, 0 placeholders; YAML 23 claims, 20 links.
+  - publish-package.json valid (17 open items, 6 nic_signoff lines). chrome-upload-prompt.md is draft only and creates a new post after a slug check. article.docx built.
+
+## Must-fix before publish
+1. NEW-URL: the URL was 404. Create a new post (Zoho WC3-T378).
+2. FIN-ADVICE-CHECK (Nic or legal): confirm the general-information wording ("does not take into account your objectives, financial situation or needs...").
+3. STUDIO-PAYMENTS (for the user): does paying through Studio carry any fee or margin? The pay-through line was cut until confirmed.
+4. BRAND-NAME (for the user): live pages say "Wedded Concierge"; the brand profile says "Wedded Wonderland Concierge" (used here).
+5. NIC-SIGNOFF: Italy VAT, the Phuket "++" notation, the Le Ciel EUR 2,100 deposit, and other lines (6 in all). AUD-EXCEPTION: confirm no conversions.
+6. NETWORK-ALLOW: moneysmart.gov.au, accc.gov.au and smartraveller.gov.au are blocked in review sessions; LINK-CHECK by hand or allow them.
+7. SCAMWATCH-PAGE (503; the ACCC release is used), PILLAR-LINK and RETRO-LINK (budget guide and cost-per-guest pillar once live), CONCIERGE-PAY, WEDDED-WORLD, FIRECRAWL-CREDITS, AUTHOR, IMAGE-RIGHTS, CMS-URL.
