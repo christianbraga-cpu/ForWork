@@ -1,0 +1,175 @@
+{
+  "agent": "distribution",
+  "task_id": "milestone-birthday",
+  "stage": "10",
+  "status": "complete",
+  "round": 1,
+  "inputs_used": [
+    "CLAUDE.md",
+    "content/posts/milestone-birthday/08-final.md",
+    "content/posts/milestone-birthday/04-images.json",
+    "content-system/brand/brand-facts.md",
+    "content-system/brand/banned-phrases.md",
+    "content-system/schemas/10-distribution.schema.json",
+    "content-system/schemas/envelope.schema.json",
+    "content/posts/garden-wedding/10-distribution.json (format precedent)"
+  ],
+  "tools_used": [
+    "Bash"
+  ],
+  "self_qa": {
+    "checks": [
+      {
+        "check": "3 pins tied to 04-images.json slots (featured, destination-weekend, planning-flat-lay); all slots 'needed', so every asset marked on_hold",
+        "pass": true
+      },
+      {
+        "check": "Pin titles <= 100 chars with keyword, descriptions <= 500; titles, slides and subject have no colons, dashes or hyphens",
+        "pass": true,
+        "note": "pins [(56, 389), (50, 407), (45, 379)]; caption 1433; tags 9; subject 45; preview 90; blurb 85 words"
+      },
+      {
+        "check": "Links use the post URL with channel UTMs (pinterest/social, instagram/social bio link, newsletter/email), utm_campaign=milestone-birthday",
+        "pass": true
+      },
+      {
+        "check": "8 slides, hook first, last invites a conversation with a Wedded Advisor; caption <= 2,200; 5 to 10 hashtags",
+        "pass": true
+      },
+      {
+        "check": "Newsletter subject <= 60, preview <= 110, blurb 60 to 100 words",
+        "pass": true
+      },
+      {
+        "check": "No digits, prices, best, free, last dance, most/usually/typically/often/average, banned or flagged phrases",
+        "pass": true,
+        "note": "scripted whole-word check over all social copy (URLs and hashtags excluded)"
+      },
+      {
+        "check": "No venue, vendor, third-party brand or competitor names (government travel advice referenced generically, not by name); no named people",
+        "pass": true
+      },
+      {
+        "check": "No deferred business details (fees, commissions, transfers, room blocks, Wedded Privileges, on the ground, availability, phone)",
+        "pass": true
+      },
+      {
+        "check": "Wedded Advisor claims only from brand-facts 'Claims we can make': single point of contact start to finish; plans venue, travel, vendors and payments anywhere in the world",
+        "pass": true
+      },
+      {
+        "check": "Only facts in 08-final.md; no [[VERIFY]] content; Australian English; no em or en dashes",
+        "pass": true
+      },
+      {
+        "check": "No AI images proposed for real places or people",
+        "pass": true,
+        "note": "Only the planning flat lay notes the AI illustrative fallback already pending Nic's approval in 04-images.json."
+      }
+    ],
+    "confidence": 0.85
+  },
+  "open_questions": [
+    {
+      "to": "orchestrator",
+      "question": "Every image slot used here (featured, toast-moment, dessert-table, destination-weekend, planning-flat-lay) is 'needed' in 04-images.json, so all pin, carousel and newsletter visuals are on hold. Each needs a register row in library-index.csv with a licence scope covering social use, not only blog. Never AI for a real place or person.",
+      "blocking": true
+    },
+    {
+      "to": "orchestrator",
+      "question": "Confirm suggested Pinterest boards 'Milestone Birthday Ideas', 'Destination Celebrations' and 'Party Planning Ideas' exist or should be created, or name existing boards to use instead.",
+      "blocking": false
+    },
+    {
+      "to": "orchestrator",
+      "question": "Set the Instagram bio link to the bio_link URL while the carousel runs.",
+      "blocking": false
+    }
+  ],
+  "assumptions": [
+    "Fast mode: 09-cro.json not present; social CTA follows 08-final.md (a conversation with a Wedded Advisor via Wedded Concierge).",
+    "Post URL https://weddedwonderland.com/celebration-ideas/milestone-birthday as given by the orchestrator.",
+    "Newsletter uses utm_medium=email, following precedent posts."
+  ],
+  "verify_items": [],
+  "next_agent": [
+    "cms-publisher"
+  ],
+  "payload": {
+    "pinterest": [
+      {
+        "title": "Milestone Birthday Celebration Ideas and How to Plan One",
+        "description": "Milestone birthday ideas built around the guest of honour: an intimate dinner at home, a long lunch in the garden, an experience day or a destination weekend with close friends. Settle the guest list and your priorities first, and the date and venue follow. The guide includes a step by step plan, a planning timeline and tips for hosting a milestone for someone else. Read the full guide.",
+        "image_slot": "featured",
+        "board": "Milestone Birthday Ideas",
+        "link": "https://weddedwonderland.com/celebration-ideas/milestone-birthday?utm_source=pinterest&utm_medium=social&utm_campaign=milestone-birthday&utm_content=pin-overview",
+        "image_note": "Long candlelit dinner table outdoors at dusk, no people or guests from behind only. Asset on hold: slot status is 'needed' in 04-images.json; no licensed image registered yet. Use only a licensed or owned image registered in library-index.csv with a licence scope that covers social use; never AI for a real place or person, never a competitor or search image.",
+        "asset_status": "on_hold"
+      },
+      {
+        "title": "Milestone Birthday Weekend Away With Close Friends",
+        "description": "Taking a milestone birthday away? Choose somewhere guests can reach, tell them early, host one dinner properly and leave the rest of the weekend open. Ask every guest to check their passport and visa needs for their own passport, read the travel advice for each destination, and buy travel insurance that covers every country on the trip, including stopovers. The milestone birthday guide has the full plan.",
+        "image_slot": "destination-weekend",
+        "board": "Destination Celebrations",
+        "link": "https://weddedwonderland.com/celebration-ideas/milestone-birthday?utm_source=pinterest&utm_medium=social&utm_campaign=milestone-birthday&utm_content=pin-destination",
+        "image_note": "Villa terrace or pool deck with a set lunch table, no destination named until location is proven. Asset on hold: slot status is 'needed' in 04-images.json; no licensed image registered yet. Use only a licensed or owned image registered in library-index.csv with a licence scope that covers social use; never AI for a real place or person, never a competitor or search image.",
+        "asset_status": "on_hold"
+      },
+      {
+        "title": "How to Plan a Milestone Birthday Step by Step",
+        "description": "Milestone birthday planning, step by step. Start with the guest of honour, write the guest list before you look at a single venue, then choose the two or three things that matter and put your care there. Book the anchor event first, send save the dates, choose your speakers ahead of time and give one friend the job of answering questions on the day, so the host can be a guest.",
+        "image_slot": "planning-flat-lay",
+        "board": "Party Planning Ideas",
+        "link": "https://weddedwonderland.com/celebration-ideas/milestone-birthday?utm_source=pinterest&utm_medium=social&utm_campaign=milestone-birthday&utm_content=pin-planning",
+        "image_note": "Invitation flat lay with a placeholder name only. Licensed or owned photo preferred; an AI illustrative still life is allowed only if Nic approves it (open question in 04-images.json), captioned 'Illustrative image', no real place or person. Asset on hold: slot status is 'needed' in 04-images.json; no licensed image registered yet. Use only a licensed or owned image registered in library-index.csv with a licence scope that covers social use; never AI for a real place or person, never a competitor or search image.",
+        "asset_status": "on_hold"
+      }
+    ],
+    "instagram_carousel": {
+      "slides": [
+        "Planning a milestone birthday? Start with the guest of honour",
+        "Who do they want in the room, and how do they like to spend an evening?",
+        "Write the guest list before you look at a single venue. Its length decides the format",
+        "Ideas by style. An intimate dinner at home, a long lunch, an experience day or a weekend away",
+        "A party gathers everyone in one room. A trip gives a smaller group real time together. Some hosts do both",
+        "Going away? Tell guests early, host one dinner properly and leave the rest of the weekend open",
+        "On the day, the host should be a guest. Give one friend the job of answering questions",
+        "Want to hand over the planning? Talk to a Wedded Advisor, your single point of contact from start to finish"
+      ],
+      "caption": "A milestone birthday marks a new decade or an age that feels significant. The celebrations that land well start with the guest of honour, not a theme or a trend.\n\nAsk the people who know them well. Do they light up in a crowd or around a small table? Would they rather be fussed over at home or taken somewhere new?\n\nThen settle the guest list and your priorities. Its length decides the format and whether travel is realistic. Choose the two or three things that matter, such as the food, the setting or the music, and put your care there.\n\nA few ideas by style:\nAn intimate dinner at home with one toast rather than five\nA long lunch or garden party for a mixed guest list, with shade planned into the layout\nAn experience day, then dinner together\nA destination weekend with close friends: one anchor dinner, a long lunch and the rest left open\n\nTaking it away? Tell guests early, remind them to check their passports and to buy travel insurance that covers every country on the trip.\n\nHosting for someone else? Recruit a co-host early and give guests one source of truth, a single email or a private page.\n\nThe full guide, with a step by step plan and a planning timeline, is at the link in our bio.\n\nIf you would rather hand over the planning, a Wedded Advisor plans the venue, travel, vendors and payments with you, anywhere in the world, as one point of contact from start to finish. Send us a message to start a conversation.",
+      "hashtags": [
+        "#milestonebirthday",
+        "#milestonebirthdayideas",
+        "#birthdaycelebration",
+        "#birthdayparty",
+        "#birthdayideas",
+        "#partyplanning",
+        "#birthdayweekend",
+        "#destinationbirthday",
+        "#weddedwonderland"
+      ],
+      "slide_image_slots": [
+        "featured",
+        "toast-moment",
+        "planning-flat-lay",
+        "dessert-table",
+        "featured",
+        "destination-weekend",
+        "toast-moment",
+        "featured"
+      ],
+      "image_note": "Slide backgrounds point to slots in 04-images.json (featured, toast-moment, planning-flat-lay, dessert-table, destination-weekend), all 'needed', so every slide asset is on hold. Text-only branded slides are acceptable until licensed images are registered. Toast slot needs guests unidentifiable or signed consent. Asset on hold: slot status is 'needed' in 04-images.json; no licensed image registered yet. Use only a licensed or owned image registered in library-index.csv with a licence scope that covers social use; never AI for a real place or person, never a competitor or search image.",
+      "asset_status": "on_hold",
+      "bio_link": "https://weddedwonderland.com/celebration-ideas/milestone-birthday?utm_source=instagram&utm_medium=social&utm_campaign=milestone-birthday&utm_content=bio-link"
+    },
+    "newsletter": {
+      "subject": "Milestone birthday ideas, and how to plan one",
+      "preview": "Ideas by style, a party at home or a weekend away, and a step by step plan for hosting it.",
+      "blurb": "Turning a new decade, or hosting someone who is? Our new guide starts with the guest of honour, then the guest list, then the format. It sets out ideas by style, from an intimate dinner at home to a long lunch or an experience day, and weighs a party at home against a destination weekend with close friends. There is a step by step plan, a planning timeline, and advice on keeping a surprise, hosting with a co-host and celebrating a milestone as a couple.",
+      "link": "https://weddedwonderland.com/celebration-ideas/milestone-birthday?utm_source=newsletter&utm_medium=email&utm_campaign=milestone-birthday&utm_content=newsletter",
+      "image_slot": "featured",
+      "image_note": "Long candlelit dinner table outdoors at dusk. Asset on hold: slot status is 'needed' in 04-images.json; no licensed image registered yet. Use only a licensed or owned image registered in library-index.csv with a licence scope that covers social use; never AI for a real place or person, never a competitor or search image.",
+      "asset_status": "on_hold"
+    }
+  }
+}
