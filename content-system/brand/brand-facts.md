@@ -64,6 +64,7 @@ Add answers here once the business confirms them. Agents may state these as fact
 | Named Advisor / phone line / on-the-day contact | deferred | |
 | Real weddings we can feature (with consent) | deferred | |
 | Honeymoon-only planning | Follows the same Wedded Advisor process as Wedded Concierge (the claims above apply) | The user (marketing), 2026-11-16 |
+| Milestone birthday celebrations | Wedded Concierge plans them through the same Wedded Advisor process (the claims above apply) | The user (marketing), 2026-11-27 |
 
 ## Never
 - Mention or copy Easy Weddings or any competitor's branding, claims or images.
