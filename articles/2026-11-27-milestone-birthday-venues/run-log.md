@@ -28,3 +28,4 @@
 
 ## Stages
 - Stage 0 and 1 launched in parallel (both save early).
+- **01:53 check-in:** both agents are held on MCP permission prompts. Saved: a 00-brief.json stub and 19 facts (our celebration, packages, travel and venue-search pages, plus ACCC). No /venue profiles captured yet. **Decision (default):** the writer waits. A venues guide needs real venue profiles, and starting now would mean a rewrite.
