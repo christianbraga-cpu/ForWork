@@ -54,3 +54,8 @@
   - **Reader (couple):** relevance 2, trust 3, clarity 4, would_enquire 2, "save". Fixes: one wedding-profile caveat; cut the Eligible stays perks line; replace the vague fee line.
   - Merged request: 04-reviews/v1/merged.md.
 - Stage 4: writer v2 launched.
+- **Stage 4 fast (writer v2):** DONE. 03-draft-v2.md.
+  - --check: 2,128 reader words (28 over the cap; the copy editor trims); 0 dashes; 0 placeholders. External: accc.gov.au, smartraveller.gov.au.
+  - YAML valid: 31 claims, 30 links.
+  - All 19 items applied; the Eligible stays line is cut. Dropping "first" in C-03 is correct (N-07 does not rank the question).
+- Stage 6: copy editor launched.
