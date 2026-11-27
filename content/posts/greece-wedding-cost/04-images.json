@@ -1,0 +1,127 @@
+{
+  "agent": "visual-curator",
+  "task_id": "greece-wedding-cost",
+  "stage": "04",
+  "status": "needs_input",
+  "round": 1,
+  "inputs_used": [
+    "CLAUDE.md",
+    "content/posts/greece-wedding-cost/00-input.json",
+    "/root/.claude/plans/understanding-all-that-ive-moonlit-hopper.md (plan, article outline)",
+    "content-system/images/sources-policy.md",
+    "content-system/rubrics/image-checklist.md",
+    "content-system/images/library-index.csv (header only, no rows)",
+    "content-system/schemas/04-images.schema.json",
+    "content/posts/average-cost-wedding-photographer/04-images.json (format, no-figures precedent)"
+  ],
+  "tools_used": ["Bash"],
+  "self_qa": {
+    "checks": [
+      {"check": "Zero reference-only or competitor images in slots", "pass": true, "note": "No candidate images; reference-only/ is empty and nothing from it is slotted."},
+      {"check": "Every approved image has verified location, licence, alt, caption, fit_reason", "pass": true, "note": "No approved images; all 5 slots are needed."},
+      {"check": "No AI image depicting a real place, venue or wedding", "pass": true, "note": "No AI images generated. Featured, ferry and welcome dinner slots are real-photo only. The two still lifes may be ai_illustrative only if approved, captioned 'Illustrative image'."},
+      {"check": "Featured image exists (approved or needed with brief)", "pass": true, "note": "Needed with full shot brief."},
+      {"check": "No venue or vendor names in shot briefs, alt or captions", "pass": true},
+      {"check": "No prices, figures, currency amounts or percentages visible in any planned image", "pass": true, "note": "Every brief says so explicitly; quote and planning still lifes use blank or blurred paper."},
+      {"check": "source.type values from the schema enum only", "pass": true, "note": "library, stock, ai_illustrative used."},
+      {"check": "Placements match final H2 numbering", "pass": false, "note": "02-seo.json not written yet (parallel in fast mode). after_h2 follows the plan: 1 what shapes the cost, 2 what packages include, 3 paying from Australia, 4 how to budget."}
+    ],
+    "confidence": 0.65
+  },
+  "open_questions": [
+    {"to": "Nic", "question": "Source licensed photos for all five slots: client Greek island weddings with signed couple consent and photographer licence covering blog use, or premium stock (Stocksy, Offset, Getty) with model and property releases, added to the Drive library and register. The register has no rows.", "blocking": true},
+    {"to": "Nic", "question": "For the two still lifes (quotes, planning flat lay), approve an AI illustrative image as a fallback if no licensed photo is found? It would be captioned 'Illustrative image' and show no real place, names or figures.", "blocking": false},
+    {"to": "Nic", "question": "Captions credit the photographer, but the post names no vendors. Credit as 'Photo: Wedded Wonderland' (own or licensed stock) or allow a plain photographer credit line only?", "blocking": false},
+    {"to": "seo-researcher", "question": "Confirm H2 numbering once the outline exists so the after_h2 placements can be remapped.", "blocking": false}
+  ],
+  "assumptions": [
+    "Fast mode: repo register only. Google Drive search, the own site scrape, Canva assets, press kits and Google Lens were not run, as there is no candidate image and the post names no venues.",
+    "No venue is in scope, so no permission emails were drafted.",
+    "Person's choice of no figures applies to images too: no visible prices, totals, rates, percentages or currency amounts.",
+    "Island named in captions only once a licensed image proves its location; shot briefs name islands as options, never venues."
+  ],
+  "verify_items": [
+    "[[IMAGE NEEDED]] featured: Greek island ceremony setting, licensed, location proven",
+    "[[IMAGE NEEDED]] guest-travel: guests arriving by ferry or on an island quay, licensed, consent for identifiable people",
+    "[[IMAGE NEEDED]] welcome-dinner: welcome dinner table on a Greek island terrace, licensed, location proven",
+    "[[IMAGE NEEDED]] quotes-still-life: written quotes and contract still life, no names or figures visible",
+    "[[IMAGE NEEDED]] planning-flat-lay: planning flat lay, no names or figures visible",
+    "[[VERIFY licence]] every sourced photo: credit, blog scope, model and property releases",
+    "[[VERIFY: credit wording that respects the no vendor names rule]]"
+  ],
+  "next_agent": ["luxury-writer"],
+  "payload": {
+    "slots": [
+      {
+        "slot_id": "featured",
+        "placement": "featured",
+        "purpose": "Hero: set the scene for a luxury Greek island wedding so the reader sees the setting the cost covers.",
+        "shot_brief": "Real, licensed photo of a ceremony setting on a Greek island (Santorini, Mykonos, Crete or similar): an outdoor aisle or arbour with chairs and soft florals, whitewashed walls or a cliff edge and the Aegean behind, late afternoon or golden hour, late spring to early autumn. Empty setting or guests seen from behind only; no identifiable faces unless consented. No signage, logos or readable venue names. Location proven by register, EXIF GPS or source page. Never AI.",
+        "status": "needed",
+        "file": "content/posts/greece-wedding-cost/images/greece-wedding-cost-island-ceremony-setting.webp",
+        "source": {"type": "library", "origin": "[[IMAGE NEEDED]] library-index.csv has header only, no rows; premium stock acceptable after purchase", "credit": "[[VERIFY licence]]"},
+        "consent": {"people": "required, signed, if identifiable", "venue": "property release required if the venue is identifiable"},
+        "alt": "Outdoor wedding ceremony aisle above the sea on a Greek island at golden hour",
+        "caption": "<Place>, <island>. Photo: [[VERIFY credit]]",
+        "lens_check": "Not run: no candidate image.",
+        "location": {"venue": "[[VERIFY: not named in post]]", "town": "[[VERIFY: island and town]]", "verified_by": "[[VERIFY: register, EXIF GPS or source page]]"}
+      },
+      {
+        "slot_id": "guest-travel",
+        "placement": "after_h2:1",
+        "purpose": "Support the getting there and getting around cost driver: ferries, transfers and island hopping for guests.",
+        "shot_brief": "Real, licensed photo of wedding guests in smart summer clothes arriving by ferry or stepping onto a harbour quay on a Greek island, luggage or garment bags in hand, bright daylight, blue water. Guests from behind or at a distance unless consented. No ferry operator logos, timetables, ticket prices or readable signage. Location proven by register, EXIF GPS or source page. Never AI.",
+        "status": "needed",
+        "file": "content/posts/greece-wedding-cost/images/greece-wedding-cost-guests-ferry-arrival.webp",
+        "source": {"type": "stock", "origin": "[[IMAGE NEEDED]] no register rows; client wedding photo or premium stock with model releases", "credit": "[[VERIFY licence]]"},
+        "consent": {"guests": "model releases required if identifiable", "children": "none, or signed parental consent"},
+        "alt": "Wedding guests with luggage stepping off a ferry onto a Greek island harbour in bright sun",
+        "caption": "<Harbour>, <island>. Photo: [[VERIFY credit]]",
+        "lens_check": "Not run: no candidate image.",
+        "location": {"town": "[[VERIFY: island and harbour]]", "verified_by": "[[VERIFY: register, EXIF GPS or source page]]"}
+      },
+      {
+        "slot_id": "welcome-dinner",
+        "placement": "after_h2:2",
+        "purpose": "Show a welcome or farewell event, a common extra beyond the wedding day package.",
+        "shot_brief": "Real, licensed photo of a long welcome dinner table set on a Greek island terrace at dusk: linen, olive branches or simple florals, candles and lanterns, shared plates, sea or village lights beyond. No people, or guests from behind only unless consented. No menus, place cards with names, branding or prices visible. Location proven by register, EXIF GPS or source page. Never AI.",
+        "status": "needed",
+        "file": "content/posts/greece-wedding-cost/images/greece-wedding-cost-welcome-dinner-table.webp",
+        "source": {"type": "library", "origin": "[[IMAGE NEEDED]] library-index.csv has header only, no rows; premium stock acceptable after purchase", "credit": "[[VERIFY licence]]"},
+        "consent": {"people": "required, signed, if identifiable", "venue": "property release required if the venue is identifiable"},
+        "alt": "Long candlelit dinner table with linen and olive branches on a terrace above the sea at dusk",
+        "caption": "<Place>, <island>. Photo: [[VERIFY credit]]",
+        "lens_check": "Not run: no candidate image.",
+        "location": {"venue": "[[VERIFY: not named in post]]", "town": "[[VERIFY: island and town]]", "verified_by": "[[VERIFY: register, EXIF GPS or source page]]"}
+      },
+      {
+        "slot_id": "quotes-still-life",
+        "placement": "after_h2:3",
+        "purpose": "Illustrate paying from Australia: written quotes, contracts in English and payments falling due.",
+        "shot_brief": "Still life on a linen or stone table: a few printed pages and an envelope with text blurred or out of focus, a fountain pen, a closed calculator or none, a cup of Greek coffee, soft window light, neutral tones. No real names, logos, letterheads, amounts, currency symbols, dates or percentages legible anywhere. No real place shown. Preferred: licensed or own photo. AI fallback (ai_illustrative) only if approved, captioned 'Illustrative image'.",
+        "status": "needed",
+        "file": "content/posts/greece-wedding-cost/images/greece-wedding-cost-quotes-still-life.webp",
+        "source": {"type": "stock", "origin": "[[IMAGE NEEDED]] no register rows; ai_illustrative fallback only with approval, not generated", "credit": "[[VERIFY licence]]"},
+        "consent": {"people": "none depicted"},
+        "alt": "Printed quote pages and a fountain pen beside a cup of coffee on a linen tablecloth",
+        "caption": "Photo: [[VERIFY credit]] (or 'Illustrative image' if AI approved)",
+        "lens_check": "Not run: no candidate image."
+      },
+      {
+        "slot_id": "planning-flat-lay",
+        "placement": "after_h2:4",
+        "purpose": "Support how to budget: questions for the venue and planner, gathered in one place.",
+        "shot_brief": "Overhead flat lay: an open notebook with handwritten lines blurred or abstract, a passport with no visible details, a folded paper map with no readable place names or a plain linen swatch, sunglasses, a sprig of olive or bougainvillea, soft natural light, white and blue palette. No real names, figures, prices, logos or readable text. No real place shown. Preferred: licensed or own photo. AI fallback (ai_illustrative) only if approved, captioned 'Illustrative image'.",
+        "status": "needed",
+        "file": "content/posts/greece-wedding-cost/images/greece-wedding-cost-planning-flat-lay.webp",
+        "source": {"type": "library", "origin": "[[IMAGE NEEDED]] no register rows; ai_illustrative fallback only with approval, not generated", "credit": "[[VERIFY licence]]"},
+        "consent": {"people": "none depicted"},
+        "alt": "Overhead flat lay of a wedding planning notebook, passport, sunglasses and olive sprig on white linen",
+        "caption": "Photo: [[VERIFY credit]] (or 'Illustrative image' if AI approved)",
+        "lens_check": "Not run: no candidate image."
+      }
+    ],
+    "reference_only": [],
+    "permission_requests": []
+  }
+}
