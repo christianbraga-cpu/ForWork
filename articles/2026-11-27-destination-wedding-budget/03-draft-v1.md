@@ -11,7 +11,7 @@ full_url: "https://weddedwonderland.com/destination-weddings/destination-wedding
 url_note: "NEW-URL: 404 on 26 Nov 2026. Create a NEW draft post in Destination Weddings; no Zoho task exists (ZOHO-TASK)."
 status: "draft"
 version: 1
-reader_word_count: "about 2,450 reader words by hand count (body including table and FAQ, excluding front matter, image and CTA markers); confirm with build_docx.py --check; target 2,000 to 2,500"
+reader_word_count: "about 2,450 to 2,550 reader words by hand estimate (body including table and FAQ, excluding front matter, image and CTA markers); no script run (Write only); confirm with build_docx.py --check and trim the line notes if over 2,500; target 2,000 to 2,500"
 meta_description: "A destination wedding budget built line by line, from venue and guest rooms to transfers, legal fees and currency buffers, with what to ask for each one."
 meta_description_length: 153
 excerpt: "Every line a wedding abroad needs, what each one covers, what to ask before you sign, and the figures our own cost guides publish, quoted as they word them."
@@ -66,7 +66,7 @@ image_slots:
 claims_register:
   - { id: C-01, text: "Food and drink scale directly with guest numbers, while fixed items such as sound systems, stages and basic decor stay relatively flat regardless of head count.", fact_ref: F-42, status: "sourced (own Phuket page, paraphrased from 'with your 70 guests')" }
   - { id: C-02, text: "A destination wedding budget should reflect the cost of delivering the entire celebration, not simply the venue's opening quote.", fact_ref: B-11, status: "sourced (own hidden-costs page)" }
-  - { id: C-03, text: "Traditionally, guests pay for their own travel and couples pay for the celebration itself; four hosting levels from Essential to Fully hosted; taking on more travel and accommodation costs may mean inviting fewer guests.", fact_ref: "F-68; F-69", status: "sourced (own who-pays page)" }
+  - { id: C-03, text: "Traditionally, guests pay for their own travel and couples pay for the celebration itself; four hosting levels from Essential (events only) to Fully hosted (accommodation for every guest).", fact_ref: "F-68; F-69", status: "sourced (own who-pays page)" }
   - { id: C-04, text: "Lines that appear only overseas (venue and catering bundles, vendor travel, paperwork, planning help).", fact_ref: B-13, status: "sourced (own vs-home page; no figures quoted from it, SITE-CONFLICT-04)" }
   - { id: C-05, text: "Tuscany, 50 guests: venue hire, per day, €3,000 to €20,000 or more; indicative rates at the time of writing.", fact_ref: B-15, status: "sourced (own page; EUR; no year stated; NIC-SIGNOFF)" }
   - { id: C-06, text: "A minimum spend may contribute towards the catering budget rather than represent an additional fee.", fact_ref: B-17, status: "sourced (own page)" }

@@ -42,3 +42,9 @@
   - **ZOHO-TASK:** none found; please create one.
   - **Outline:** 9 H2s. SEO title "Destination Wedding Budget Planned Line by Line for 2027" (56 characters). Meta 153 characters.
   - The writer was told about these.
+- **Stage 2 fast (writer):** DONE. 03-draft-v1.md.
+  - --check: 2,650 reader words (over the 2,500 cap); 0 dashes; 0 placeholders. Official: moneysmart.gov.au, accc.gov.au, smartraveller.gov.au.
+  - YAML valid: 46 claims, 31 links. The cost-per-guest pillar is not linked (DRAFT).
+  - Contingency is given with no percentage, but F-04 (about 10%) and F-20 (8 to 10%) exist in the pack; the fact-checker is checking them.
+  - The Amalfi florals figure was left out (it looks inconsistent with that page's total; SITE-CONFLICTS).
+- Reviews launched (accuracy, SEO, couple reader).
