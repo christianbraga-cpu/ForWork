@@ -26,3 +26,8 @@
 
 ## Stages
 - Stage 0 and 1 launched in parallel (both save early).
+
+## 02:52 check-in and stage 1 hand-back
+- Strategist done: URL 404 (new post), Zoho WC3-T441 (WW-343). SEO title "Couples Experiences Worth Travelling For Around the World" (57). Volumes AU 590, US 880. SERP is local date ideas and vouchers. Sibling overlap with /travel-guides/private-tours and /travel-guides/experiences-by-occasion (link both; RETRO-LINK from them). /wedded-wonderland-experiences is do-not-link. 7 safety domains need approval (DOMAINS-ADD).
+- Research at 49 facts, threshold met. Writer v1 started with an inline brief; shortlist items without facts get swapped for researched ones (SHORTLIST-SWAP).
+- Researcher still running, held on an MCP permission prompt.

@@ -549,6 +549,28 @@ Venue profiles suitable for private parties (in the live venue sitemap, 27 Nov 2
 
 Possible broken link (for the web team): the party ideas page links `/expert-advice/surprise-anniversary-party`, but the sitemap lists `/celebration-ideas/surprise-anniversary-party`. Not fetched.
 
+## Tours and Experiences (Apify web-fetch and web-search, 27 Nov 2026; Firecrawl out of credits)
+
+| URL | Title | Owns |
+|---|---|---|
+| `/travel-guides/private-tours` | 15 Private Tours Worth Booking for Couples | private tours for couples (LIVE, HTTP 200, og:url unchanged, published 17 Nov 2026; its 15 days: Amalfi boat, Tuscany truffle, Como boat, Puglia cooking, Santorini sail, Douro, Cappadocia sunrise, Bernina rail, Paris museum, Bali temples, Fiji island, Kyoto tea, Yucatan cenote, RAK desert, Kenya conservancy; do not repeat them elsewhere) |
+| `/travel-guides/experiences-by-occasion` | Experiences by Occasion From Birthdays to Anniversaries | experiences by occasion (LIVE, HTTP 200, og:url unchanged, published 12 Nov 2026) |
+| `/travel-guides/private-guide-booking` | How to Arrange a Private Guide Overseas as a Couple | private guide overseas (LIVE per Google index and link from /private-tours; not fetched) |
+| `/travel-guides/romantic-getaways` | Romantic getaways (title not fetched) | romantic getaways (linked from live /private-tours; verify before linking) |
+| `/travel-guides/weekend-getaways-for-couples` | Weekend getaways for couples (title not fetched) | weekend getaways for couples (linked from live /private-tours) |
+| `/travel-guides/second-honeymoon` | Second honeymoon ideas (title not fetched) | second honeymoon (linked from live /private-tours) |
+| `/travel-guides/most-romantic-hotels` | 25 Most Romantic Hotels in the World Worth the Splurge | most romantic hotels (LIVE per Google index, dated 30 Oct 2026) |
+| `/travel-guides/romantic-winter-getaways-from-melbourne` | Romantic winter getaways from Melbourne (title not fetched) | (linked from live /experiences-by-occasion) |
+| `/celebration-ideas/private-proposal-spots-abroad` | Private proposal spots abroad (title not fetched) | private proposal spots (linked from live pages) |
+| `/celebration-ideas/babymoon` | Best babymoon destinations (title not fetched) | babymoon (linked from live /experiences-by-occasion) |
+| `/celebration-ideas/vow-renewal-15` | Vow renewal destinations (title not fetched) | vow renewal destinations (linked from live /experiences-by-occasion) |
+| `/expert-advice/best-european-honeymoon-destinations` | Best European honeymoon destinations (title not fetched) | best european honeymoon destinations (linked from live /experiences-by-occasion) |
+| `/honeymoon-ideas/luxury-honeymoon-packages` | 15 Luxury Honeymoon Packages Worth Booking in 2027 | luxury honeymoon packages (LIVE per Google index) |
+| `/honeymoon-ideas/short-honeymoon` | Short Honeymoon Ideas for a Three-Day Minimoon | short honeymoon (LIVE per Google index) |
+| `/travel-guides/couples-experiences` | Couples Experiences Worth Travelling For (WC3-T441, WW-343) | couples experiences, unique couples experiences, romantic experiences for couples, bucket list experiences for couples | DRAFT (27 Nov 2026; URL was 404, new post) |
+
+`/wedded-wonderland-experiences` is LIVE but is the B2B event platforms page (Wedded Connect, Summit, Gala, Wedded World): do not link from consumer travel posts. The site nav has a "Tours & Experiences" menu with "Private Tours and Experiences".
+
 ## Do not link from blogs
 
 | URL | Reason |
