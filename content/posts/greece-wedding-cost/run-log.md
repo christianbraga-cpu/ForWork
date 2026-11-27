@@ -10,3 +10,4 @@
 01:20 07b panel-chair revise; weighted enquire 1.9 (gate 3.8); 6 must-fix (4 fixed in copy, 2 deferred business details); 16 edits vs r2, one revise round; validate.py all valid
 01:21 07b panel revise (weighted enquire 1.9); 16 edits applied to 08-final.md; accepted after one round
 01:24 final check pass_with_edits 4.29; 8 edits applied
+01:27 final docx and run report written
