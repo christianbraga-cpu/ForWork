@@ -541,7 +541,7 @@ Firecrawl was out of credits; pages were confirmed from the live post and venue 
 | `/celebration-ideas/milestone-birthday-by-decade` | Milestone Birthday Ideas for 40th, 50th and 60th (WC3-T391) | milestone birthday by decade, milestone birthday ideas (LIVE, published 13 Nov 2026) |
 | `/celebration-ideas/milestone-birthday-trip` | 15 Milestone Birthday Trip Ideas Around the World (WC3-T432) | milestone birthday trip (LIVE, published 12 Nov 2026) |
 | `/travel-guides/experiences-by-occasion` | Experiences by occasion | experiences by occasion (in post sitemap; linked from the by-decade page; not fetched) |
-| `/celebration-ideas/milestone-birthday-venues` | Milestone Birthday Venues for a Party to Remember (WC3-T434) | milestone birthday venues, 30th birthday venues, 40th birthday venues, 60th birthday party venues | DRAFT (27 Nov 2026; URL was 404, new post) |
+| `/celebration-ideas/milestone-birthday-venues` | Milestone Birthday Venues for a Party to Remember (WC3-T434) | milestone birthday venues, 30th birthday venues, 40th birthday venues, 60th birthday party venues | DRAFT (27 Nov 2026; URL was 404, new post; final ready, not published) |
 
 Planned, not live (do not link): `/celebration-ideas/milestone-birthday` (WC3-T388, In Progress; cluster pillar for "milestone birthday"), `/celebrations/milestone-birthdays` (WC3-T1111 commercial sub-hub, in Review, 404).
 

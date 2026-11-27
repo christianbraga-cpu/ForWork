@@ -59,3 +59,14 @@
   - YAML valid: 31 claims, 30 links.
   - All 19 items applied; the Eligible stays line is cut. Dropping "first" in C-03 is correct (N-07 does not rank the question).
 - Stage 6: copy editor launched.
+- **Stage 6 fast (copy editor):** DONE. final.md 2,081 reader words, 0 dashes, 0 placeholders; YAML 31 claims, 30 links.
+  - publish-package.json valid (11 open items; no prices, so no nic_signoff lines).
+  - chrome-upload-prompt.md is draft only and creates a new post after a slug check. article.docx built.
+
+## Must-fix before publish
+1. NEW-URL: the URL was 404. Create a new post (Zoho WC3-T434).
+2. VENUE-RECHECK: the 11 venue profiles were read on 27 Nov via Apify; recheck capacities and spaces before publish.
+3. CONF-06: the sibling birthday pages give different lead times (six to nine vs six to twelve months).
+4. IMAGE-RIGHTS: venue images only with rights from the venue or our gallery.
+5. YACHT-GAP (no yacht partner or facts), CONCIERGE-PAY, WEDDED-WORLD, FIRECRAWL-CREDITS, LINK-CHECK (live checks failed in review), AUTHOR, CMS-URL.
+No prices, so nothing for Nic.
