@@ -42,3 +42,8 @@
 - Accuracy 3 (6 majors: stinger attribution, reef charge wording, Como months, entry-rules framing, Orient-Express name, takeaway 3). SEO 3.5 (meta 137 to 151; gbrmpa approval; repeat links). Reader: relevance 2, trust 3, clarity 4, would enquire 2 (save, no enquiry).
 - Defaults taken: Orient-Express made generic (ORIENT-EXPRESS open); /venue hotels stay named, "profile among our venues" line cut (VENUE-NAMING open); UAE kept with a Travel advice line; 50,000+ vendors line kept (brand-profile wording); no AUD conversion.
 - merged.md saved; writer v2 started.
+
+## Writer v2 (done), copy editor started
+- 03-draft-v2.md: 2,544 reader words, 0 dashes, 0 placeholders, YAML ok (57 claims, 47 links). All 27 merged items applied. Como moved to Culture and place (card 12), Ras Al Khaimah is card 11. Travel advice lines at card ends.
+- Researcher stopped: it was held on an MCP permission prompt and its facts are no longer needed after v2.
+- Copy editor started (Write tool only, two Bash commands; also saves blog-team/templates/experiences-list.md).
