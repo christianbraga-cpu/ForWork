@@ -41,3 +41,9 @@
   - **BRAND-NAME (for the user):** live pages say "Wedded Concierge", the brand files say "Wonderland Concierge". The writer uses the brand-profile name and links /wonderland-concierge.
   - **CASH-RULE:** the AUD 10,000 cash rule is unverified; stated only if the researcher finds the official page.
 - **01:13 check-in:** the researcher is held on an MCP permission prompt. 24 facts saved (01:02), incl. Moneysmart (sending money overseas, international transaction fee), the ACCC fake-invoice scam alert, ACCC refunds, Smartraveller insurance, our payment schedule and Studio payment wording. No AUSTRAC cash fact yet. The threshold is met, so the writer started with an inline brief. The Experian figure on our hidden-costs page is not used (third-party source).
+- **Stage 2 fast (writer):** DONE. 03-draft-v1.md.
+  - --check: 2,472 reader words (over the cap); 0 dashes; 0 placeholders. Official: moneysmart.gov.au, accc.gov.au, smartraveller.gov.au.
+  - YAML valid: 22 claims, 21 links.
+  - No cash threshold (no AUSTRAC or ABF fact); the cash section is advice only.
+  - No products named; the Experian figure is not used; Le Ciel once.
+- Reviews launched (accuracy incl. FIN-ADVICE-CHECK, SEO, couple reader). The researcher is still held on a permission prompt.
