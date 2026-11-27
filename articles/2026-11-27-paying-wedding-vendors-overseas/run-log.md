@@ -62,3 +62,8 @@
   - **Not verified verbatim:** the Scamwatch page (503; the ACCC release is used instead), the Smartraveller money page, dynamic currency conversion.
   - **Needs:** allow the three blocked gov.au hosts; Nic sign-offs; FIN-ADVICE wording; advisor invoicing and tipping practice; an optional client story.
   - The writer was told to use the AUSTRAC fact if verbatim and to close CASH-RULE.
+- **Stage 4 fast (writer v2):** DONE. 03-draft-v2.md.
+  - --check: 2,274 reader words; 0 dashes; 0 placeholders. Official: moneysmart.gov.au, accc.gov.au, austrac.gov.au (approved in domains.md), smartraveller.gov.au.
+  - YAML valid: 23 claims, 20 links.
+  - All 18 items applied. CASH-RULE closed: the AUSTRAC A$10,000 declaration is quoted exactly and linked at the claim. No Stripe, no Experian, no products named.
+- Stage 6: copy editor launched.
